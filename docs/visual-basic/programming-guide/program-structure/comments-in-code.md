@@ -15,11 +15,11 @@ helpviewer_keywords:
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
 ms.openlocfilehash: a8094397ff2a076cf474d735e65298b3d2f0a9cd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050535"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
 Při prohlížení příklady kódu, můžete často narazit na symbol komentáře (`'`). Tento symbol instruuje kompilátor jazyka Visual Basic, aby ignoroval text ním následuje nebo *komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
@@ -48,11 +48,11 @@ Při prohlížení příklady kódu, můžete často narazit na symbol komentá�
   
  Mějte na paměti následující body:  
   
--   Každou deklaraci důležité proměnné by měl předcházet komentář popisující použití této deklarované proměnné.  
+- Každou deklaraci důležité proměnné by měl předcházet komentář popisující použití této deklarované proměnné.  
   
--   Proměnné, ovládací prvky a procedury by měly být pojmenovány dostatečně výstižně, aby byly komentáře zapotřebí pouze pro složité podrobnosti implementace.  
+- Proměnné, ovládací prvky a procedury by měly být pojmenovány dostatečně výstižně, aby byly komentáře zapotřebí pouze pro složité podrobnosti implementace.  
   
--   Komentáře nemohou následovat za posloupností pokračování řádku na stejném řádku.  
+- Komentáře nemohou následovat za posloupností pokračování řádku na stejném řádku.  
   
  Můžete přidat nebo odebrat symboly komentáře bloku kódu tak, že vyberete jeden nebo více řádků kódu a zvolíte **komentář** (![tlačítko The komentář jazyka Visual Basic v sadě Visual Studio.](./media/comments-in-code/visual-basic-comment-button.gif)) a **zrušit komentář**  (![Tlačítko zrušte komentář jazyce Visual Basic v sadě Visual Studio.](./media/comments-in-code/visual-basic-uncomment-button.gif)) tlačítka **upravit** nástrojů.  
   

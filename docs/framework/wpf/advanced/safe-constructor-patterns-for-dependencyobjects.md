@@ -7,11 +7,11 @@ helpviewer_keywords:
 - FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
 ms.openlocfilehash: ba8b0a48b2b75a9191553392d5ec0a1f66575807
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053506"
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
 Obecně platí konstruktor třídy neměli volat zpětná volání, jako je například virtuální metody nebo delegátů, protože konstruktory lze volat jako základní inicializace konstruktory odvozené třídy. Zadání virtuálního může být provedeno stavu neúplná inicializace libovolný daný objekt. Však samotný systém vlastnost volá a zpřístupňuje zpětná volání interně jako součást v systému vlastností závislostí. Jednoduché operace jako nastavení hodnoty vlastnosti závislostí s <xref:System.Windows.DependencyObject.SetValue%2A> volání může potenciálně zahrnout zpětné volání někde v určení. Z tohoto důvodu byste měli být opatrní při nastavení hodnoty vlastností v těle konstruktoru, který může být problematické, pokud se typ používá jako základní třída závislostí. Neexistuje konkrétní vzor pro implementování <xref:System.Windows.DependencyObject> konstruktory, které předchází konkrétní problémy se stavy vlastnost závislostí a přináší zpětná volání, které jsou zde uvedeny.  

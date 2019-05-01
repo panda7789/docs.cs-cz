@@ -14,18 +14,18 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
 ms.openlocfilehash: 8ed3ba9050a9117a53b5f4f1cccd26381f55ab32
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013228"
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavení obrázků za běhu (Windows Forms)
 Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
   
 ### <a name="to-set-a-picture-programmatically"></a>Chcete-li nastavit obrázek prostřednictvím kódu programu  
   
--   Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.  
+- Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.  
   
      V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty. Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
   
@@ -67,7 +67,7 @@ Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms
   
 ### <a name="to-clear-a-graphic"></a>Vymazat obrázek  
   
--   Nejprve uvolnění paměti používané bitovou kopii a zrušte na obrázku. Uvolňování paměti uvolní se paměť později Pokud Správa paměti stane problém.  
+- Nejprve uvolnění paměti používané bitovou kopii a zrušte na obrázku. Uvolňování paměti uvolní se paměť později Pokud Správa paměti stane problém.  
   
     ```vb  
     If Not (PictureBox1.Image Is Nothing) Then  

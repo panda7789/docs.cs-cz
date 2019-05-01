@@ -8,11 +8,11 @@ helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
 ms.openlocfilehash: f0305807e76ca27e1979aa23bf0797c505fee566
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62048241"
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
 V následujících částech jsou osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí služby Windows Communication Foundation (WCF). Další informace o zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [aspekty zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
@@ -26,11 +26,11 @@ V následujících částech jsou osvědčené postupy, které je třeba zváži
 ## <a name="use-x509-certificates-instead-of-ntlm"></a>Používat X509 certifikáty místo protokolu NTLM  
  WCF nabízí dva mechanismy ověřování peer-to-peer: X509 certifikáty (používané protokolu peer channel) a ověřování Windows, ve kterém vyjednávání SSPI změní úroveň z protokolu Kerberos k ověřování NTLM.  Ověřování pomocí certifikátů pomocí velikostí klíče 1 024 bitů nebo více je upřednostňována před NTLM z několika důvodů:  
   
--   dostupnost vzájemného ověřování  
+- dostupnost vzájemného ověřování  
   
--   Použijte silnější kryptografické algoritmy a  
+- Použijte silnější kryptografické algoritmy a  
   
--   větší potíže využití předané X509 přihlašovací údaje.  
+- větší potíže využití předané X509 přihlašovací údaje.  
    
 ## <a name="always-revert-after-impersonation"></a>Po zosobnění se vždycky vrátit  
  Při použití rozhraní API vám umožní zosobnění klienta, je potřeba vrátit zpět na původní identitu. Například při použití <xref:System.Security.Principal.WindowsIdentity> a <xref:System.Security.Principal.WindowsImpersonationContext>, pomocí C# `using` příkazu nebo Visual Basic`Using` příkaz, jak je znázorněno v následujícím kódu. <xref:System.Security.Principal.WindowsImpersonationContext> Implementuje třída <xref:System.IDisposable> rozhraní a proto common language runtime (CLR) se automaticky vrátí původní identitu jakmile opustí kód `using` bloku.  

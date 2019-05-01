@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ
 ms.date: 07/20/2015
 ms.assetid: c82c09b4-cb0a-47ec-8cc3-a124144c2788
 ms.openlocfilehash: 662cad329f4837d26b25d56f15d323fe623b05c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58843679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62021671"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (Visual Basic)
 Výraz XPath umožňuje najít sjednocení výsledky ze dvou možných cest umístění XPath.  

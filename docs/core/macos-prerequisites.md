@@ -5,12 +5,12 @@ author: guardrex
 ms.author: adegeo
 ms.custom: updateeachvsrelease
 ms.date: 12/14/2018
-ms.openlocfilehash: cee57856c75ce4424bee8d96fccfa5a6aee2dbf5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3f5dce25ed03061d690432684975909d15bbad57
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59317867"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773860"
 ---
 # <a name="prerequisites-for-net-core-on-macos"></a>Předpoklady pro .NET Core v macOS
 
@@ -77,7 +77,7 @@ Stáhněte a nainstalujte .NET Core SDK z [.NET stáhne](https://www.microsoft.c
 
 ---
 
-## <a name="increase-the-maximum-open-file-limit-net-core-versions-before-net-core-sdk-202"></a>Zvyšte limit maximální otevření souboru (.NET Core verze starší než .NET Core SDK bodu 2.0.2) 
+## <a name="increase-the-maximum-open-file-limit-net-core-versions-before-net-core-sdk-202"></a>Zvyšte limit maximální otevření souboru (.NET Core verze starší než .NET Core SDK bodu 2.0.2)
 
 Ve starších verzích .NET Core (před .NET Core SDK bodu 2.0.2) nemusí být dostatečné pro některé úlohy .NET Core, jako je obnovení projektů nebo spouštění testů jednotek výchozí limit pro otevření souboru v systému macOS.
 
@@ -85,28 +85,28 @@ Tento limit můžete zvýšit pomocí následujících kroků:
 
 1. Pomocí textového editoru vytvořte nový soubor _/Library/LaunchDaemons/limit.maxfiles.plist_a uložte soubor tohoto obsahu:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <key>Label</key>
-    <string>limit.maxfiles</string>
-    <key>ProgramArguments</key>
-    <array>
-      <string>launchctl</string>
-      <string>limit</string>
-      <string>maxfiles</string>
-      <string>2048</string>
-      <string>4096</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>ServiceIPC</key>
-    <false/>
-  </dict>
-</plist>
-```
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+      <dict>
+        <key>Label</key>
+        <string>limit.maxfiles</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>launchctl</string>
+          <string>limit</string>
+          <string>maxfiles</string>
+          <string>2048</string>
+          <string>4096</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>ServiceIPC</key>
+        <false/>
+      </dict>
+    </plist>
+    ```
 
 2. V okně terminálu spusťte následující příkaz:
 
@@ -118,7 +118,7 @@ Tento limit můžete zvýšit pomocí následujících kroků:
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .NET Core SDK. Nicméně, pokud chcete vyvíjet aplikace .NET Core na počítači Mac v integrovaném vývojovém prostředí, můžete použít [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). 
+Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .NET Core SDK. Nicméně, pokud chcete vyvíjet aplikace .NET Core na počítači Mac v integrovaném vývojovém prostředí, můžete použít [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link).
 
 Vývoj v .NET core v systému macOS pomocí sady Visual Studio pro Mac vyžaduje:
 

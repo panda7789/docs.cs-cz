@@ -12,22 +12,22 @@ ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f7bda02e1862740e6a6328835367a6a5e9929033
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026069"
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
 Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi prostoru soubor a paměť umožňuje aplikaci, včetně více procesů, upravte soubor tak, že čtení a zápis přímo na paměť. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], spravovaný kód můžete použít pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
   
  Existují dva typy souborů mapovaných do paměti:  
   
--   Trvalé soubory mapované paměti  
+- Trvalé soubory mapované paměti  
   
      Trvalé soubory jsou soubory mapované paměti, které jsou přidruženy ke zdrojovému souboru na disku. Po dokončení práce se souborem posledního procesu, data uložena do zdrojového souboru na disku. Tyto soubory mapované paměti jsou vhodné pro práci s velmi velký zdrojové soubory.  
   
--   Netrvalé soubory mapované paměti  
+- Netrvalé soubory mapované paměti  
   
      Netrvalé soubory jsou soubory mapované paměti, které nejsou přiřazeny k souboru na disku. Po dokončení práce se souborem posledního procesu, dojde ke ztrátě dat a soubor je uvolněn systémem uvolňování paměti. Tyto soubory jsou vhodné pro vytvoření sdílené paměti pro meziprocesové komunikace (IPC).  
   
@@ -64,11 +64,11 @@ Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Tot
 ### <a name="security"></a>Zabezpečení  
  Oprávnění můžete použít při vytváření souboru mapovaných do paměti pomocí následujících metod, které provést <xref:System.IO.MemoryMappedFiles.MemoryMappedFileAccess> výčet jako parametr:  
   
--   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A?displayProperty=nameWithType>  
+- <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A?displayProperty=nameWithType>  
   
--   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A?displayProperty=nameWithType>  
+- <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A?displayProperty=nameWithType>  
   
--   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A?displayProperty=nameWithType>  
+- <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A?displayProperty=nameWithType>  
   
  Můžete zadat přístupová práva k otevření existujícího souboru mapovaných do paměti pomocí <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting%2A> metodám, které přebírají <xref:System.IO.MemoryMappedFiles.MemoryMappedFileRights> jako parametr.  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC40042
 ms.assetid: 1d6eae29-4ad3-4434-bde4-a53b6051adf5
 ms.openlocfilehash: 39054fb6bf82a344cb38613164cb42968aa632f7
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051543"
 ---
 # <a name="type-of-optional-value-for-optional-parameter-parametername-is-not-cls-compliant"></a>Typ nepovinné hodnoty pro nepovinný parametr \<parametername > není kompatibilní se Specifikací CLS
 Postup je označen jako `<CLSCompliant(True)>` deklaruje, ale [volitelné](../../../visual-basic/language-reference/modifiers/optional.md) parametr s výchozí hodnotou typu nedodržující předpisy.  
@@ -21,13 +21,13 @@ Postup je označen jako `<CLSCompliant(True)>` deklaruje, ale [volitelné](../..
   
  Následující datové typy jazyka Visual Basic nejsou kompatibilní se Specifikací CLS:  
   
--   [Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+- [Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
--   [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+- [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
   
--   [Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+- [Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
   
--   [Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+- [Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
   
  Pokud použijete <xref:System.CLSCompliantAttribute> atribut na programovací prvek, nastavíte atributu `isCompliant` buď parametr `True` nebo `False` k označení dodržování předpisů nebo při nedodržení předpisů. Neexistuje žádný výchozí hodnotou tohoto parametru, a je nutné zadat hodnotu.  
   
@@ -39,8 +39,8 @@ Postup je označen jako `<CLSCompliant(True)>` deklaruje, ale [volitelné](../..
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud volitelný parametr musí mít výchozí hodnotu tohoto konkrétního typu, odeberte <xref:System.CLSCompliantAttribute>. Procedura nemůže být kompatibilní se Specifikací CLS.  
+- Pokud volitelný parametr musí mít výchozí hodnotu tohoto konkrétního typu, odeberte <xref:System.CLSCompliantAttribute>. Procedura nemůže být kompatibilní se Specifikací CLS.  
   
--   Pokud procedura musí být kompatibilní se Specifikací CLS, změňte typ tuto výchozí hodnotu na nejbližší typ. kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
+- Pokud procedura musí být kompatibilní se Specifikací CLS, změňte typ tuto výchozí hodnotu na nejbližší typ. kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
   
--   Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `int` je často 16 bitů v jiných prostředích. Pokud přijímáte 16bitové celé číslo z takové součásti, deklarujte ho jako `Short` místo `Integer` v spravovaného kódu jazyka Visual Basic.
+- Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `int` je často 16 bitů v jiných prostředích. Pokud přijímáte 16bitové celé číslo z takové součásti, deklarujte ho jako `Short` místo `Integer` v spravovaného kódu jazyka Visual Basic.

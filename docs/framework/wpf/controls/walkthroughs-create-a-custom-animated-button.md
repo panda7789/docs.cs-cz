@@ -7,11 +7,11 @@ helpviewer_keywords:
 - animation [WPF], buttons [WPF]
 ms.assetid: e9532c72-460f-4898-9332-613fa21d746a
 ms.openlocfilehash: 3c601641a0eb1024722b4f449f0ab23e54fe93dd
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024466"
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>Návody: Vytvoření tlačítka s vlastní animací
 Jak název napovídá, se skvěle hodí pro provedení bohatý prezentační prostředí pro zákazníky, kteří Windows Presentation Foundation (WPF). Tyto podrobné postupy vám ukážou, jak přizpůsobit vzhled a chování tlačítka (včetně animacích). Toto přizpůsobení se provádí pomocí stylu a šablon, takže můžete provést toto tlačítko Vlastní snadno u tlačítka ve vaší aplikaci. Následující obrázek znázorňuje vlastní tlačítko, které vytvoří.  

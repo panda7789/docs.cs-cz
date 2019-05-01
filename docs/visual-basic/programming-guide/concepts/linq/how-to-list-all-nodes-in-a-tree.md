@@ -3,11 +3,11 @@ title: 'Postupy: Výpis všech uzlů ve stromu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
 ms.openlocfilehash: 6576beaaed00905ce7a09f338251934ea375cb7e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62021619"
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Postupy: Výpis všech uzlů ve stromu (Visual Basic)
 Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu. Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.  

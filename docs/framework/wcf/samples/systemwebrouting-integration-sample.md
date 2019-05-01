@@ -3,11 +3,11 @@ title: Ukázka integrace názvového prostoru SystemWebRouting
 ms.date: 03/30/2017
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
 ms.openlocfilehash: f4f9772583bbd66d19cc59f453489965aabf74b2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007757"
 ---
 # <a name="systemwebrouting-integration-sample"></a>Ukázka integrace názvového prostoru SystemWebRouting
 V této ukázce integration hostování vrstvy s třídami v <xref:System.Web.Routing> oboru názvů. Třídy v <xref:System.Web.Routing> oboru názvů umožňují aplikaci pro použití adresy URL, které neodpovídají přímo fyzické prostředky. Použití směrování webových umožňuje vývojářům vytvářet virtuální adresy pro protokol HTTP, které jsou pak mapována na skutečné služby WCF. To je užitečné, když bez nutnosti fyzického souboru nebo prostředku, musí být hostovaný ve službě WCF, nebo když služby musí přistupovat pomocí adresy URL, které neobsahují soubory, jako jsou HTML nebo .aspx. Tato ukázka předvádí, jak využívat <xref:System.Web.Routing.RouteTable> třídy za účelem vytvoření virtuální identifikátory URI, která je namapována na spuštění služby definované v souboru global.asax. 
@@ -58,13 +58,13 @@ Tato ukázka může již být nainstalováno ve vašem počítači. Před pokra�
   
 3. Vytvoření webové aplikace ve Správci Internetové informační služby (IIS).  
   
-    1.  Ve Správci služby IIS klikněte pravým tlačítkem myši **výchozí webový server** a vyberte **přidat aplikaci**.  
+    1. Ve Správci služby IIS klikněte pravým tlačítkem myši **výchozí webový server** a vyberte **přidat aplikaci**.  
   
-    2.  Pro **alias**, zadejte v `WebRoutingIntegration`.  
+    2. Pro **alias**, zadejte v `WebRoutingIntegration`.  
   
-    3.  Pro **fyzická cesta**, vyberte složku služby v rámci projektu.  
+    3. Pro **fyzická cesta**, vyberte složku služby v rámci projektu.  
   
-    4.  Stisknutím klávesy **OK**.  
+    4. Stisknutím klávesy **OK**.  
   
 4. Spuštění aplikace, že pravým tlačítkem myši na webovou aplikaci a vyberete **spravovat aplikaci** a potom **Procházet**.  
   

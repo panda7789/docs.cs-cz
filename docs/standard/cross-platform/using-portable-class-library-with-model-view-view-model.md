@@ -12,11 +12,11 @@ ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8b48dc67e18411d82f03d29ab244d57575d6d720
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050493"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) implementovat vzor Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
@@ -32,27 +32,27 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 ## <a name="classes-that-support-mvvm"></a>Třídy, které podporují MVVM
  Pokud cílíte [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], Silverlight nebo Windows Phone 7.5 pro vaše [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu, jsou k dispozici pro implementaci vzoru MVVM následující třídy:
 
--   <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType> Třída
+- <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType> Třída
 
--   <xref:System.Collections.ObjectModel.ReadOnlyObservableCollection%601?displayProperty=nameWithType> Třída
+- <xref:System.Collections.ObjectModel.ReadOnlyObservableCollection%601?displayProperty=nameWithType> Třída
 
--   <xref:System.Collections.Specialized.INotifyCollectionChanged?displayProperty=nameWithType> Třída
+- <xref:System.Collections.Specialized.INotifyCollectionChanged?displayProperty=nameWithType> Třída
 
--   <xref:System.Collections.Specialized.NotifyCollectionChangedAction?displayProperty=nameWithType> Třída
+- <xref:System.Collections.Specialized.NotifyCollectionChangedAction?displayProperty=nameWithType> Třída
 
--   <xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs?displayProperty=nameWithType> Třída
+- <xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs?displayProperty=nameWithType> Třída
 
--   <xref:System.Collections.Specialized.NotifyCollectionChangedEventHandler?displayProperty=nameWithType> Třída
+- <xref:System.Collections.Specialized.NotifyCollectionChangedEventHandler?displayProperty=nameWithType> Třída
 
--   <xref:System.ComponentModel.DataErrorsChangedEventArgs?displayProperty=nameWithType> Třída
+- <xref:System.ComponentModel.DataErrorsChangedEventArgs?displayProperty=nameWithType> Třída
 
--   <xref:System.ComponentModel.INotifyDataErrorInfo?displayProperty=nameWithType> Třída
+- <xref:System.ComponentModel.INotifyDataErrorInfo?displayProperty=nameWithType> Třída
 
--   <xref:System.ComponentModel.INotifyPropertyChanged?displayProperty=nameWithType> Třída
+- <xref:System.ComponentModel.INotifyPropertyChanged?displayProperty=nameWithType> Třída
 
--   <xref:System.Windows.Input.ICommand?displayProperty=nameWithType> Třída
+- <xref:System.Windows.Input.ICommand?displayProperty=nameWithType> Třída
 
--   Všechny třídy v <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType> obor názvů
+- Všechny třídy v <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType> obor názvů
 
 ## <a name="implementing-mvvm"></a>Implementace MVVM
  K implementaci MVVM, obvykle vytvoříte model a model v zobrazení [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu, protože [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] nepřenositelný projekt nemůže odkazovat na projekt. Model a model zobrazení může být ve stejném projektu nebo v samostatné projekty. Pokud používáte samostatné projekty, přidejte odkaz z projektu zobrazení modelu do projektu s modelem.

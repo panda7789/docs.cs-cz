@@ -1,5 +1,5 @@
 ---
-title: 'Skript pomocí bloky msxsl: Script'
+title: Bloky skriptu používající element msxsl:script
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,13 +9,13 @@ ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b45b8ebe048a5917019349ea3a6a357b7e90a9c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027001"
 ---
-# <a name="script-blocks-using-msxslscript"></a>Skript pomocí bloky msxsl: Script
+# <a name="script-blocks-using-msxslscript"></a>Bloky skriptu používající element msxsl:script
 <xref:System.Xml.Xsl.XslCompiledTransform> Třída podporuje vložené skripty pomocí `msxsl:script` elementu. Při načítání šablony stylů žádné definované funkce jsou kompilovaná Code Document Object Model (CodeDOM) pro jazyk Microsoft intermediate language (MSIL) a jsou spouštěny za běhu. Sestavení vygenerované z bloku vloženého skriptu je oddělená než sestavení vygenerované pro šablony stylů.  
   
 ## <a name="enable-xslt-script"></a>Povolit skriptu XSLT  
@@ -71,11 +71,11 @@ ms.locfileid: "54565641"
 #### <a name="assemblies"></a>Sestavení  
  Ve výchozím nastavení je odkazováno na následující dvě sestavení:  
   
--   System.dll  
+- System.dll  
   
--   System.Xml.dll  
+- System.Xml.dll  
   
--   Microsoft.VisualBasic.dll (je-li jazyk skriptu VB)  
+- Microsoft.VisualBasic.dll (je-li jazyk skriptu VB)  
   
  Můžete importovat další sestavení pomocí `msxsl:assembly` elementu. To zahrnuje sestavení při kompilaci šablony stylů. `msxsl:assembly` Element má následující definice:  
   
@@ -94,21 +94,21 @@ ms.locfileid: "54565641"
 #### <a name="namespaces"></a>Jmenné prostory  
  Ve výchozím nastavení jsou zahrnuty následující obory názvů:  
   
--   Systém  
+- Systém  
   
--   System.Collection  
+- System.Collection  
   
--   System.Text  
+- System.Text  
   
--   System.Text.RegularExpressions  
+- System.Text.RegularExpressions  
   
--   System.Xml  
+- System.Xml  
   
--   System.Xml.Xsl  
+- System.Xml.Xsl  
   
--   System.Xml.XPath  
+- System.Xml.XPath  
   
--   Microsoft.VisualBasic (je-li jazyk skriptu VB)  
+- Microsoft.VisualBasic (je-li jazyk skriptu VB)  
   
  Můžete přidat podporu pro další obory názvů pomocí `namespace` atribut. Hodnota atributu je název oboru názvů.  
   

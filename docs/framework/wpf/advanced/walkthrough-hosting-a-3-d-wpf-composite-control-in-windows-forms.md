@@ -9,11 +9,11 @@ helpviewer_keywords:
 - composite controls [WPF], hosting WPF in
 ms.assetid: 486369a9-606a-4a3b-b086-a06f2119c7b0
 ms.openlocfilehash: e5b98a33f29759a81ba1cbc1fefbd45c0e5bf736
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007146"
 ---
 # <a name="walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms
 
@@ -23,17 +23,17 @@ V tomto návodu budete implementovat [!INCLUDE[TLA2#tla_winclient](../../../../i
 
 Úlohy v tomto návodu zahrnují:
 
--   Vytváří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
+- Vytváří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
 
--   Vytvoření projektu Windows Forms hostitele.
+- Vytvoření projektu Windows Forms hostitele.
 
--   Hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
+- Hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
 
 ## <a name="prerequisites"></a>Požadavky
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
--   Visual Studio 2017
+- Visual Studio 2017
 
 <a name="To_Create_the_UserControl"></a>
 ## <a name="create-the-usercontrol"></a>Vytvořte uživatelský ovládací prvek
@@ -57,11 +57,11 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 3. Přidat odkazy na následující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení:
 
-    -   PresentationCore
+    - PresentationCore
 
-    -   PresentationFramework
+    - PresentationFramework
 
-    -   WindowsBase
+    - WindowsBase
 
 4. Přidejte odkaz na `HostingWpfUserControlInWf` projektu.
 

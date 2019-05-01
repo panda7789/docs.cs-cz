@@ -6,11 +6,11 @@ helpviewer_keywords:
 - TextBox control [WPF], getting collection of lines
 ms.assetid: a12f529d-b926-47f6-92bf-cad5f17b532a
 ms.openlocfilehash: b7b2f1c2e071388635fb50b1e3573fd7f44334dd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052479"
 ---
 # <a name="how-to-get-a-collection-of-lines-from-a-textbox"></a>Postupy: Získání kolekce řádků z prvku TextBox
 Tento příklad ukazuje, jak získání kolekce řádků z textu <xref:System.Windows.Controls.TextBox>.  

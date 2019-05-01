@@ -9,11 +9,11 @@ ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e56680a74bc6800242ff56d27bcf179ee372df74
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026827"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>XmlSchemaSet pro kompilaci schématu
 Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete ukládat a ověření schématu XML definice jazyk (XSD) schémata.  
@@ -37,9 +37,9 @@ Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete uklád
 ## <a name="migrating-to-the-xmlschemaset"></a>Migrace na sadě XmlSchemaSet  
  Následující příklad kódu poskytuje návod pro migraci do nového <xref:System.Xml.Schema.XmlSchemaSet> třídy z zastaralý <xref:System.Xml.Schema.XmlSchemaCollection> třídy. Příklad kódu znázorňuje následující hlavní rozdíly mezi dvěma třídami.  
   
--   Na rozdíl od <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection> třídy, schémata nejsou zkompilovány při volání <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> Metodu <xref:System.Xml.Schema.XmlSchemaSet> je explicitně volána v příkladu kódu.  
+- Na rozdíl od <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection> třídy, schémata nejsou zkompilovány při volání <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> Metodu <xref:System.Xml.Schema.XmlSchemaSet> je explicitně volána v příkladu kódu.  
   
--   K iteraci přes <xref:System.Xml.Schema.XmlSchemaSet>, je nutné použít <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet>.  
+- K iteraci přes <xref:System.Xml.Schema.XmlSchemaSet>, je nutné použít <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet>.  
   
  Tady je zastaralý <xref:System.Xml.Schema.XmlSchemaCollection> příklad kódu.  
   

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], architecture
 ms.assetid: 1c6cabf0-02ee-4bbc-9574-b54bb7f5b19e
 ms.openlocfilehash: 892168ec282fbf168c43515e0718fe5486a345a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011608"
 ---
 # <a name="datagridview-control-architecture-windows-forms"></a>Architektura ovládacího prvku DataGridView (Windows Forms)
 <xref:System.Windows.Forms.DataGridView> Ovládacího prvku a jeho souvisejícími třídami jsou navržené tak flexibilní a rozšiřitelný systém pro zobrazení a úpravy tabulková data. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů a že jsou všechny pojmenované s předponou "DataGridView".  
@@ -26,19 +26,19 @@ ms.locfileid: "59130257"
 ### <a name="datagridviewelementstates"></a>DataGridViewElementStates  
  <xref:System.Windows.Forms.DataGridViewElementStates> Výčet obsahuje následující hodnoty:  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.None>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.None>  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.Frozen>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.Frozen>  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.ReadOnly>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.ReadOnly>  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.Resizable>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.Resizable>  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.ResizableSet>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.ResizableSet>  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.Selected>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.Selected>  
   
--   <xref:System.Windows.Forms.DataGridViewElementStates.Visible>  
+- <xref:System.Windows.Forms.DataGridViewElementStates.Visible>  
   
  Hodnoty tento výčet je možné kombinovat s bitové logické operátory, takže <xref:System.Windows.Forms.DataGridViewElement.State%2A> vlastnost můžete vyjádřit najednou více než jeden stav. Například <xref:System.Windows.Forms.DataGridViewElement> může být současně <xref:System.Windows.Forms.DataGridViewElementStates.Frozen>, <xref:System.Windows.Forms.DataGridViewElementStates.Selected>, a <xref:System.Windows.Forms.DataGridViewElementStates.Visible>.  
   
@@ -58,27 +58,27 @@ ms.locfileid: "59130257"
   
  V následující seznamu jsou uvedeny třídy odvozené od <xref:System.Windows.Forms.DataGridViewCell>:  
   
--   <xref:System.Windows.Forms.DataGridViewTextBoxCell>  
+- <xref:System.Windows.Forms.DataGridViewTextBoxCell>  
   
--   <xref:System.Windows.Forms.DataGridViewButtonCell>  
+- <xref:System.Windows.Forms.DataGridViewButtonCell>  
   
--   <xref:System.Windows.Forms.DataGridViewLinkCell>  
+- <xref:System.Windows.Forms.DataGridViewLinkCell>  
   
--   <xref:System.Windows.Forms.DataGridViewCheckBoxCell>  
+- <xref:System.Windows.Forms.DataGridViewCheckBoxCell>  
   
--   <xref:System.Windows.Forms.DataGridViewComboBoxCell>  
+- <xref:System.Windows.Forms.DataGridViewComboBoxCell>  
   
--   <xref:System.Windows.Forms.DataGridViewImageCell>  
+- <xref:System.Windows.Forms.DataGridViewImageCell>  
   
--   <xref:System.Windows.Forms.DataGridViewHeaderCell>  
+- <xref:System.Windows.Forms.DataGridViewHeaderCell>  
   
--   <xref:System.Windows.Forms.DataGridViewRowHeaderCell>  
+- <xref:System.Windows.Forms.DataGridViewRowHeaderCell>  
   
--   <xref:System.Windows.Forms.DataGridViewColumnHeaderCell>  
+- <xref:System.Windows.Forms.DataGridViewColumnHeaderCell>  
   
--   <xref:System.Windows.Forms.DataGridViewTopLeftHeaderCell>  
+- <xref:System.Windows.Forms.DataGridViewTopLeftHeaderCell>  
   
--   Vaše vlastní typy  
+- Vaše vlastní typy  
   
 ### <a name="datagridviewcolumn"></a>DataGridViewColumn  
  Schéma <xref:System.Windows.Forms.DataGridView> ovládacího prvku připojené datové úložiště je vyjádřen v <xref:System.Windows.Forms.DataGridView> sloupce ovládacího prvku. Můžete přistupovat <xref:System.Windows.Forms.DataGridView> sloupce ovládacího prvku s použitím <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce. Dostanete z vybraných sloupců pomocí <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> kolekce. Následující objektový model ukazuje toto využití a ukazuje, <xref:System.Windows.Forms.DataGridViewColumn> hierarchii dědičnosti.  
@@ -89,19 +89,19 @@ ms.locfileid: "59130257"
   
  V následující seznamu jsou uvedeny třídy odvozené od <xref:System.Windows.Forms.DataGridViewColumn>:  
   
--   <xref:System.Windows.Forms.DataGridViewButtonColumn>  
+- <xref:System.Windows.Forms.DataGridViewButtonColumn>  
   
--   <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>  
+- <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>  
   
--   <xref:System.Windows.Forms.DataGridViewComboBoxColumn>  
+- <xref:System.Windows.Forms.DataGridViewComboBoxColumn>  
   
--   <xref:System.Windows.Forms.DataGridViewImageColumn>  
+- <xref:System.Windows.Forms.DataGridViewImageColumn>  
   
--   <xref:System.Windows.Forms.DataGridViewTextBoxColumn>  
+- <xref:System.Windows.Forms.DataGridViewTextBoxColumn>  
   
--   <xref:System.Windows.Forms.DataGridViewLinkColumn>  
+- <xref:System.Windows.Forms.DataGridViewLinkColumn>  
   
--   Vaše typy vlastní sloupec  
+- Vaše typy vlastní sloupec  
   
 ### <a name="datagridview-editing-controls"></a>Úpravy ovládacích prvků DataGridView  
  Buňky, které podporují pokročilé funkce pro úpravy obvykle používají hostovaného ovládacího prvku, který je odvozen z ovládacího prvku Windows Forms. Tyto ovládací prvky implementovat taky <xref:System.Windows.Forms.IDataGridViewEditingControl> rozhraní. Následující objektový model ukazuje využití těchto ovládacích prvků.  
@@ -110,9 +110,9 @@ ms.locfileid: "59130257"
   
  Následující ovládací prvky pro úpravy jsou součástí <xref:System.Windows.Forms.DataGridView> ovládacího prvku:  
   
--   <xref:System.Windows.Forms.DataGridViewComboBoxEditingControl>  
+- <xref:System.Windows.Forms.DataGridViewComboBoxEditingControl>  
   
--   <xref:System.Windows.Forms.DataGridViewTextBoxEditingControl>  
+- <xref:System.Windows.Forms.DataGridViewTextBoxEditingControl>  
   
  Informace o vytváření vlastních úprav ovládacích prvků naleznete v tématu [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](how-to-host-controls-in-windows-forms-datagridview-cells.md).  
   

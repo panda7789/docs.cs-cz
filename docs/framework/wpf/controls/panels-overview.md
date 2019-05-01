@@ -10,30 +10,30 @@ helpviewer_keywords:
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
 ms.openlocfilehash: 946e0f5ee90235498b8089732ae526ab6f35665c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051023"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel> prvky jsou komponenty, které řídí vykreslování elementů, jejich velikost a rozměry, jejich pozice a uspořádání jejich podřízený obsah. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> elementy jakož i možnost vytvořit vlastní <xref:System.Windows.Controls.Panel> elementy.  
   
  Toto téma obsahuje následující části.  
   
--   [Třídy Panel](#Panels_view_from_10000_feet)  
+- [Třídy Panel](#Panels_view_from_10000_feet)  
   
--   [Společné členy prvek panel](#Panels_declared_members)  
+- [Společné členy prvek panel](#Panels_declared_members)  
   
--   [Prvky odvozených panelů](#Panels_derived_elements)  
+- [Prvky odvozených panelů](#Panels_derived_elements)  
   
--   [Panely uživatelského rozhraní](#Panels_main_UI_elements)  
+- [Panely uživatelského rozhraní](#Panels_main_UI_elements)  
   
--   [Panel vnořené elementy](#Panels_nested_panel_elements)  
+- [Panel vnořené elementy](#Panels_nested_panel_elements)  
   
--   [Vlastní Panel elementy](#Panels_custom_panel_elements)  
+- [Vlastní Panel elementy](#Panels_custom_panel_elements)  
   
--   [Podpora lokalizace a globalizace](#Panels_global_localization)  
+- [Podpora lokalizace a globalizace](#Panels_global_localization)  
   
 <a name="Panels_view_from_10000_feet"></a>   
 ## <a name="the-panel-class"></a>Třídy Panel  

@@ -1,5 +1,5 @@
 ---
-title: Dotazy XPath a obory názvů
+title: Dotazy a obory názvů XPath
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,13 +9,13 @@ ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5f35725f5e1a08f2fcb1d6bc87765f50308c963f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026780"
 ---
-# <a name="xpath-queries-and-namespaces"></a>Dotazy XPath a obory názvů
+# <a name="xpath-queries-and-namespaces"></a>Dotazy a obory názvů XPath
 Dotazy XPath vědomi obory názvů v dokumentu XML a předpony oboru názvů můžete použít k vyfiltrování názvy prvků a atributů. Kvalifikující názvy prvků a atributů s předponu oboru názvů omezí vrácené dotaz XPath pro pouze ty uzly, které patří do konkrétní obor názvů uzly.  
   
  Například pokud předponu `books` mapuje na obor názvů `http://www.contoso.com/books`, pak následující dotaz XPath `/books:books/books:book` vybere pouze ty `book` prvky v oboru názvů `http://www.contoso.com/books`.  
@@ -25,17 +25,17 @@ Dotazy XPath vědomi obory názvů v dokumentu XML a předpony oboru názvů mů
   
  <xref:System.Xml.XmlNamespaceManager> Objekt může být použitý v dotazu v každé z následujících způsobů.  
   
--   <xref:System.Xml.XmlNamespaceManager> Objekt je spojen s existujícím <xref:System.Xml.XPath.XPathExpression> s použitím <xref:System.Xml.XPath.XPathExpression.SetContext%2A> metodu <xref:System.Xml.XPath.XPathExpression> objektu. Také může zkompilovat nový <xref:System.Xml.XPath.XPathExpression> pomocí statické <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu, která přebírá řetězec představující výraz XPath a <xref:System.Xml.XmlNamespaceManager> jako parametry a vrátí nový objekt <xref:System.Xml.XPath.XPathExpression> objektu.  
+- <xref:System.Xml.XmlNamespaceManager> Objekt je spojen s existujícím <xref:System.Xml.XPath.XPathExpression> s použitím <xref:System.Xml.XPath.XPathExpression.SetContext%2A> metodu <xref:System.Xml.XPath.XPathExpression> objektu. Také může zkompilovat nový <xref:System.Xml.XPath.XPathExpression> pomocí statické <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu, která přebírá řetězec představující výraz XPath a <xref:System.Xml.XmlNamespaceManager> jako parametry a vrátí nový objekt <xref:System.Xml.XPath.XPathExpression> objektu.  
   
--   <xref:System.Xml.XmlNamespaceManager> Samotný objekt je předán jako parametr přijímání <xref:System.Xml.XPath.XPathNavigator> metoda spolu s řetězec představující výraz XPath třídy.  
+- <xref:System.Xml.XmlNamespaceManager> Samotný objekt je předán jako parametr přijímání <xref:System.Xml.XPath.XPathNavigator> metoda spolu s řetězec představující výraz XPath třídy.  
   
  Toto jsou metody <xref:System.Xml.XPath.XPathNavigator> třídu, která typu reference přijmout objekt odvozený od <xref:System.Xml.IXmlNamespaceResolver> rozhraní jako parametr.  
   
--   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
 ### <a name="the-default-namespace"></a>Výchozí Namespace  
  V dokumentu XML, který následuje, výchozí obor názvů s prázdnou předponu slouží k deklaraci `http://www.contoso.com/books` oboru názvů.  

@@ -12,11 +12,11 @@ helpviewer_keywords:
 - sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
 ms.openlocfilehash: 1b8de27e872914ba59d73126d2a9a7c42609165e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051816"
 ---
 # <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
 Určuje, že vlastnost může zapisovat, ale nedá se číst.  
@@ -34,15 +34,15 @@ Určuje, že vlastnost může zapisovat, ale nedá se číst.
 > [!IMPORTANT]
 >  Při definování a použití `WriteOnly` vlastnost, vezměte v úvahu následující další ochranná opatření:  
   
--   **Přepsání.** Pokud je vlastnost člena třídy, mohla ve výchozím nastavení [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)a ne jeho deklarace `Overridable` nebo `MustOverride`. To brání odvozené třídy v provádění nežádoucích přístup pomocí přepsání.  
+- **Přepsání.** Pokud je vlastnost člena třídy, mohla ve výchozím nastavení [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)a ne jeho deklarace `Overridable` nebo `MustOverride`. To brání odvozené třídy v provádění nežádoucích přístup pomocí přepsání.  
   
--   **Úroveň přístupu.** Pokud jste v jedné nebo více proměnných citlivých dat vlastnost, je deklarovat [privátní](../../../visual-basic/language-reference/modifiers/private.md) tak, aby k nim může přistupovat žádný kód.  
+- **Úroveň přístupu.** Pokud jste v jedné nebo více proměnných citlivých dat vlastnost, je deklarovat [privátní](../../../visual-basic/language-reference/modifiers/private.md) tak, aby k nim může přistupovat žádný kód.  
   
--   **Šifrování.** Store všechna citlivá data v zašifrované podobě, nikoli ve formátu prostého textu. Pokud škodlivý kód nějakým způsobem získá přístup k této oblasti paměti, je obtížnější, chcete-li využívají data. Šifrování je také užitečné, pokud je nutné k serializaci citlivá data.  
+- **Šifrování.** Store všechna citlivá data v zašifrované podobě, nikoli ve formátu prostého textu. Pokud škodlivý kód nějakým způsobem získá přístup k této oblasti paměti, je obtížnější, chcete-li využívají data. Šifrování je také užitečné, pokud je nutné k serializaci citlivá data.  
   
--   **Resetuje se.** Když se ukončuje třídy, struktury nebo modul definující vlastnosti, obnovit citlivých dat na výchozí hodnoty nebo na další význam hodnoty. Díky tomu ochrany při této oblasti paměti je uvolněna obecného přístupu.  
+- **Resetuje se.** Když se ukončuje třídy, struktury nebo modul definující vlastnosti, obnovit citlivých dat na výchozí hodnoty nebo na další význam hodnoty. Díky tomu ochrany při této oblasti paměti je uvolněna obecného přístupu.  
   
--   **Trvalost.** Pokud ho se můžete vyhnout nezůstanou zachována citlivých dat, třeba na disku. Citlivé údaje taky nezapisujte do schránky.  
+- **Trvalost.** Pokud ho se můžete vyhnout nezůstanou zachována citlivých dat, třeba na disku. Citlivé údaje taky nezapisujte do schránky.  
   
  `WriteOnly` Modifikátor lze použít v tomto kontextu:  
   

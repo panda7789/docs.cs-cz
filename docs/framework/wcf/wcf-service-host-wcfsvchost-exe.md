@@ -3,11 +3,11 @@ title: Hostitel služby WCF (WcfSvcHost.exe)
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
 ms.openlocfilehash: d9a086b3a6ae0ece3b1b45161402ce058e1fb447
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052609"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
 Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožňuje spustit ladicí program sady Visual Studio (F5) automaticky hostovat a testovat službu, kterou jste implementovali. Potom můžete otestovat pomocí testovacího klienta WCF (WcfTestClient.exe) nebo vlastního klienta, můžete najít a opravit všechny potenciální chyby.  
@@ -72,32 +72,32 @@ Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožň
   
  **Hostitel služby WCF** hlavní okno obsahuje dvě nabídky:  
   
--   **Soubor**: Obsahuje **Zavřít** a **ukončovací** příkazy. Po kliknutí na **Zavřít**, **hostitel služby WCF** zavře dialogové okno, ale nadále možné hostovat služby. Po kliknutí na **ukončovací**, je také vypnout hostitele služeb WCF. Tím se zastaví také všechny hostované služby.  
+- **Soubor**: Obsahuje **Zavřít** a **ukončovací** příkazy. Po kliknutí na **Zavřít**, **hostitel služby WCF** zavře dialogové okno, ale nadále možné hostovat služby. Po kliknutí na **ukončovací**, je také vypnout hostitele služeb WCF. Tím se zastaví také všechny hostované služby.  
   
--   **Nápověda**: Obsahuje **o** příkaz, který obsahuje informace o verzi. Obsahuje taky **pomáhají** příkaz, který můžete otevřít soubor nápovědy.  
+- **Nápověda**: Obsahuje **o** příkaz, který obsahuje informace o verzi. Obsahuje taky **pomáhají** příkaz, který můžete otevřít soubor nápovědy.  
   
  Hlavní **hostitel služby WCF** okno obsahuje dvě oblasti:  
   
--   V první oblasti je **služby**. Obsahuje seznam, který zobrazuje základní informace o všech službách. Tyto informace zahrnují:  
+- V první oblasti je **služby**. Obsahuje seznam, který zobrazuje základní informace o všech službách. Tyto informace zahrnují:  
   
-    -   **Služba**: Zobrazí seznam všech služeb.  
+    - **Služba**: Zobrazí seznam všech služeb.  
   
-    -   **Stav**: Zobrazí stav služby. Platné hodnoty jsou "Spuštěno", "Stopped" a "Chyba".  
+    - **Stav**: Zobrazí stav služby. Platné hodnoty jsou "Spuštěno", "Stopped" a "Chyba".  
   
-    -   **Adresa metadat**: Zobrazí adresu metadat služby.  
+    - **Adresa metadat**: Zobrazí adresu metadat služby.  
   
--   Druhá oblast je **Další informace o**. Zobrazí se při výběru řádku konkrétní služby v podrobné vysvětlení stav služby **služby** oblasti. Pokud je ve stavu chyby, můžete zobrazit celé chybové zprávy na obrazovce.  
+- Druhá oblast je **Další informace o**. Zobrazí se při výběru řádku konkrétní služby v podrobné vysvětlení stav služby **služby** oblasti. Pokud je ve stavu chyby, můžete zobrazit celé chybové zprávy na obrazovce.  
   
 ## <a name="stopping-wcf-service-host"></a>Stopping WCF Service Host  
  Hostitel služby WCF můžete vypnout následující čtyři způsoby:  
   
--   Zastavte relaci ladění v sadě Visual Studio.  
+- Zastavte relaci ladění v sadě Visual Studio.  
   
--   Vyberte **ukončovací** z **souboru** v nabídce **hostitel služby WCF** okna.  
+- Vyberte **ukončovací** z **souboru** v nabídce **hostitel služby WCF** okna.  
   
--   Vyberte **ukončovací** z místní nabídky hostitel služby WCF na hlavním panelu ikonu v oznamovací oblasti systému.  
+- Vyberte **ukončovací** z místní nabídky hostitel služby WCF na hlavním panelu ikonu v oznamovací oblasti systému.  
   
--   Testovací klient WCF ukončete, pokud se používá.  
+- Testovací klient WCF ukončete, pokud se používá.  
   
 ## <a name="using-service-host-without-administrator-privilege"></a>Pomocí hostitele služby bez oprávnění správce  
  Pokud chcete povolit uživatelům bez oprávnění správce k vývoji služeb WCF, je vytvořen seznamu ACL portu (seznam řízení přístupu) pro obor názvů "http://+:8731/Design_Time_Addresses" během instalace sady Visual Studio. Seznam ACL je nastavena na (UI), což zahrnuje všechny interaktivní uživatelé přihlášení k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam ACL umožňuje uživatelům používat automaticky hostitel služby WCF (wcfSvcHost.exe) bez nutnosti přidělení oprávnění správce.  

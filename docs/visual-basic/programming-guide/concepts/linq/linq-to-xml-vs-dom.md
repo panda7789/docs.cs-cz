@@ -3,11 +3,11 @@ title: Technologie LINQ to XML vs. Modelu DOM (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 18c36130-d598-40b7-9007-828232252978
 ms.openlocfilehash: 282df577808342a52a70f419b2a7559752103a0f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58831264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051491"
 ---
 # <a name="linq-to-xml-vs-dom-visual-basic"></a>Technologie LINQ to XML vs. Modelu DOM (Visual Basic)
 Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající XML programování rozhraní API, W3C Document Object Model (DOM).  
@@ -79,11 +79,11 @@ Dim contacts = _
 ## <a name="working-directly-with-xml-elements"></a>Práce přímo se elementů XML  
  Když je program s XML, hlavním cílem je obvykle na prvky XML a případně na atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], může spolupracovat přímo s XML elementů a atributů. Například můžete provést následující:  
   
--   Vytvořte prvky XML bez použití objektu dokumentu vůbec. Tato funkce usnadňuje programování v případě, že máte pro práci s fragmenty stromů XML.  
+- Vytvořte prvky XML bez použití objektu dokumentu vůbec. Tato funkce usnadňuje programování v případě, že máte pro práci s fragmenty stromů XML.  
   
--   Zatížení `T:System.Xml.Linq.XElement` objekty přímo ze souboru XML.  
+- Zatížení `T:System.Xml.Linq.XElement` objekty přímo ze souboru XML.  
   
--   Serializace `T:System.Xml.Linq.XElement` objektů do souboru nebo datový proud.  
+- Serializace `T:System.Xml.Linq.XElement` objektů do souboru nebo datový proud.  
   
  Porovnejte W3C v modelu DOM, ve kterém se používá dokumentu XML jako logický kontejner pro stromové struktuře XML. V modelu DOM z uzlů XML, včetně elementů a atributů, musí být vytvořeny v rámci dokumentu XML. Tady je fragment kódu pro vytvoření názvu elementu v modelu DOM:  
   

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4d872e4a65c0556dddac468336e6a42dd7d7923c
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57477646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61986983"
 ---
 # <a name="icordebugtypegetfirsttypeparameter-method"></a>ICorDebugType::GetFirstTypeParameter – metoda
 Získá ukazatel rozhraní k ICorDebugType, který představuje první <xref:System.Type> parametr typu představovaného tímto rozhraním `ICorDebugType`.  

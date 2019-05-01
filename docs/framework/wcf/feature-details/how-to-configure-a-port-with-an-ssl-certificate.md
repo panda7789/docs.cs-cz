@@ -10,11 +10,11 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
 ms.openlocfilehash: d709123895f361c1d2268a218b4163c8d195e1b4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047956"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu s certifikátem SSL
 Při vytváření služby Windows Communication Foundation (WCF) v místním prostředí s <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu používá, musíte také nakonfigurovat port pomocí certifikátu X.509. Pokud vytváříte nejsou v místním prostředí služby, můžete hostovat vaše služba v Internetové informační služby (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
@@ -27,15 +27,15 @@ Při vytváření služby Windows Communication Foundation (WCF) v místním pro
   
  Toto téma popisuje, jak provádět několik postupů:  
   
--   Určení počítače aktuální konfiguraci portů.  
+- Určení počítače aktuální konfiguraci portů.  
   
--   Načtení kryptografického otisku certifikátu (nezbytné pro následující dva postupy).  
+- Načtení kryptografického otisku certifikátu (nezbytné pro následující dva postupy).  
   
--   Vytvoření vazby certifikátu SSL na konfiguraci portu.  
+- Vytvoření vazby certifikátu SSL na konfiguraci portu.  
   
--   Vytvoření vazby certifikátu SSL na konfigurace portů a podpůrné klientské certifikáty.  
+- Vytvoření vazby certifikátu SSL na konfigurace portů a podpůrné klientské certifikáty.  
   
--   Odstraňuje se certifikát SSL od číslo portu.  
+- Odstraňuje se certifikát SSL od číslo portu.  
   
  Všimněte si, že změna certifikáty uložené v počítači vyžaduje oprávnění správce.  
   
@@ -71,9 +71,9 @@ Při vytváření služby Windows Communication Foundation (WCF) v místním pro
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
     ```  
   
-    -   **-I** přepínač je syntaxe `IP`:`port` a dává pokyn nástroji a nastavte certifikát na port 8012 počítače. Volitelně můžete čtyři nuly, které předcházet číslo můžete také nahrazuje skutečné IP adresu počítače.  
+    - **-I** přepínač je syntaxe `IP`:`port` a dává pokyn nástroji a nastavte certifikát na port 8012 počítače. Volitelně můžete čtyři nuly, které předcházet číslo můžete také nahrazuje skutečné IP adresu počítače.  
   
-    -   **-H** přepínač určuje kryptografický otisk certifikátu.  
+    - **-H** přepínač určuje kryptografický otisk certifikátu.  
   
 2. V [!INCLUDE[wv](../../../../includes/wv-md.md)], pomocí nástroje Netsh.exe, jak je znázorněno v následujícím příkladu.  
   
@@ -81,11 +81,11 @@ Při vytváření služby Windows Communication Foundation (WCF) v místním pro
     netsh http add sslcert ipport=0.0.0.0:8000 certhash=0000000000003ed9cd0c315bbb6dc1c08da5e6 appid={00112233-4455-6677-8899-AABBCCDDEEFF}   
     ```  
   
-    -   **Certhash** parametr určuje kryptografický otisk certifikátu.  
+    - **Certhash** parametr určuje kryptografický otisk certifikátu.  
   
-    -   **Ipport** parametr určuje IP adresu a port, a funguje stejně jako **-i** přepínač nástroj Httpcfg.exe popsané.  
+    - **Ipport** parametr určuje IP adresu a port, a funguje stejně jako **-i** přepínač nástroj Httpcfg.exe popsané.  
   
-    -   **Appid** parametr je identifikátor GUID, který slouží k identifikaci vlastnící aplikace.  
+    - **Appid** parametr je identifikátor GUID, který slouží k identifikaci vlastnící aplikace.  
   
 ### <a name="to-bind-an-ssl-certificate-to-a-port-number-and-support-client-certificates"></a>Vytvoření vazby certifikátu SSL na číslo portu a podpoře klientské certifikáty  
   

@@ -11,24 +11,24 @@ helpviewer_keywords:
 - ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
 ms.openlocfilehash: 5c22c2862ae8b948787fd5e6ca16109aa2f52aef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031249"
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení nad <xref:System.Windows.Input.Stylus> vstup a vytváření digitálních inkoust <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použít na datový proud množství dat přicházejících z stylus zařízení k zajištění optimálního výkonu.  
   
  Toto téma obsahuje následující témata:  
   
--   [Architektura](#Architecture)  
+- [Architektura](#Architecture)  
   
--   [Implementace Stylus moduly plug-in](#ImplementingStylusPlugins)  
+- [Implementace Stylus moduly plug-in](#ImplementingStylusPlugins)  
   
--   [Přidat modul Plug-in k objektu InkCanvas](#AddingYourPluginToAnInkCanvas)  
+- [Přidat modul Plug-in k objektu InkCanvas](#AddingYourPluginToAnInkCanvas)  
   
--   [Závěr](#Conclusion)  
+- [Závěr](#Conclusion)  
   
 <a name="Architecture"></a>   
 ## <a name="architecture"></a>Architektura  

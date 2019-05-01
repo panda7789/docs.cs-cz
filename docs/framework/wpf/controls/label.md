@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Label control [WPF]
 ms.assetid: 241c1ce2-60f8-4613-a0ec-9b9bb25fb6af
 ms.openlocfilehash: 131eb251493b77f13b5dc59a3a03504be8868e8a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052050"
 ---
 # <a name="label"></a>Popisek
 <xref:System.Windows.Controls.Label> ovládací prvky obvykle poskytují informace [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  V minulosti <xref:System.Windows.Controls.Label> má obsahuje pouze text, ale protože <xref:System.Windows.Controls.Label> , který je součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je <xref:System.Windows.Controls.ContentControl>, může obsahovat text nebo <xref:System.Windows.UIElement>.  

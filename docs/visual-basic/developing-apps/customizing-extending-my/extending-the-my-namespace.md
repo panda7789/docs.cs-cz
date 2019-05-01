@@ -9,32 +9,32 @@ helpviewer_keywords:
 - My namespace [Visual Basic], extending
 ms.assetid: 808e8617-b01c-4135-8b21-babe87389e8e
 ms.openlocfilehash: 4d7bb6eef398746a4bd2dc4dbf3d526da1c1e0f1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014216"
 ---
 # <a name="extending-the-my-namespace-in-visual-basic"></a>Rozšíření oboru názvů My v jazyce Visual Basic
 `My` Oboru názvů v jazyce Visual Basic zveřejňuje vlastnosti a metody, které vám umožní snadno využít sílu rozhraní .NET Framework. `My` Obor názvů zjednodušuje běžné programovací problémy, často zkracuje těžký úkol jediný řádek kódu. Kromě toho `My` obor názvů je plně rozšiřitelná tak, aby si můžete přizpůsobit chování `My` a přidávat nové služby do své hierarchie umožní reagovat na potřeby konkrétní aplikace. Toto téma popisuje, jak tom, jak přizpůsobit stávající členové `My` obor názvů a přidání své vlastní třídy pro `My` oboru názvů.  
   
  **Obsah témat**  
   
--   [Přizpůsobení stávajících členů My Namespace](#customizing)  
+- [Přizpůsobení stávajících členů My Namespace](#customizing)  
   
--   [Přidávání členů do Moje objekty](#addingtoobjects)  
+- [Přidávání členů do Moje objekty](#addingtoobjects)  
   
--   [Přidání vlastních objektů do My Namespace](#addingcustom)  
+- [Přidání vlastních objektů do My Namespace](#addingcustom)  
   
--   [Přidání členů My Namespace](#addingtonamespace)  
+- [Přidání členů My Namespace](#addingtonamespace)  
   
--   [Přidání události do vlastní objekty](#addingevents)  
+- [Přidání události do vlastní objekty](#addingevents)  
   
--   [Pokyny k návrhu](#design)  
+- [Pokyny k návrhu](#design)  
   
--   [Navrhování knihoven tříd pro Moje](#designing)  
+- [Navrhování knihoven tříd pro Moje](#designing)  
   
--   [Zabalení a nasazení rozšíření](#packaging)  
+- [Zabalení a nasazení rozšíření](#packaging)  
   
 ## <a name="customizing"></a> Přizpůsobení stávajících členů My Namespace  
  `My` Oboru názvů ve Visual Basic zpřístupňuje často používané informace o vaší aplikace, počítače a další. Úplný seznam objektů v `My` obor názvů, naleznete v tématu [My Reference](../../../visual-basic/language-reference/keywords/my-reference.md). Možná budete muset upravit stávající členové `My` oboru názvů tak, aby lépe odpovídaly potřebám vaší aplikace. Nějaká vlastnost v objektu `My` obor názvů, který není jen pro čtení můžete nastavit vlastní hodnoty.  
@@ -76,22 +76,22 @@ ms.locfileid: "58814148"
 ## <a name="design"></a> Pokyny k návrhu  
  Při vývoji rozšíření pro `My` obor názvů, použijte následující pokyny a tím pomáhá minimalizovat náklady na údržbu součástí rozšíření.  
   
--   **Zahrnout pouze logiku rozšíření.** Součástí logiky `My` rozšíření oboru názvů by měl obsahovat pouze kód, který je potřeba k požadované funkci v `My` oboru názvů. Vzhledem k tomu, že vaše rozšíření se bude nacházet v projektech uživatele jako zdrojový kód, aktualizuje se rozšíření komponenty způsobuje vysoké náklady na údržbu a mělo by se vyhnout Pokud je to možné.  
+- **Zahrnout pouze logiku rozšíření.** Součástí logiky `My` rozšíření oboru názvů by měl obsahovat pouze kód, který je potřeba k požadované funkci v `My` oboru názvů. Vzhledem k tomu, že vaše rozšíření se bude nacházet v projektech uživatele jako zdrojový kód, aktualizuje se rozšíření komponenty způsobuje vysoké náklady na údržbu a mělo by se vyhnout Pokud je to možné.  
   
--   **Minimalizujte předpoklady projekt.** Při vytváření vašeho rozšíření `My` obor názvů, Nepředpokládejte sada odkazů, importů na úrovni projektu nebo specifické nastavení kompilátoru (například `Option Strict` vypnuto). Místo toho minimalizovaly závislosti a plně kvalifikovat pomocí odkazů na všechny typy `Global` – klíčové slovo. Také se ujistěte, že rozšíření kompiluje s `Option Strict` on, chcete-li minimalizovat chyby v rozšíření.  
+- **Minimalizujte předpoklady projekt.** Při vytváření vašeho rozšíření `My` obor názvů, Nepředpokládejte sada odkazů, importů na úrovni projektu nebo specifické nastavení kompilátoru (například `Option Strict` vypnuto). Místo toho minimalizovaly závislosti a plně kvalifikovat pomocí odkazů na všechny typy `Global` – klíčové slovo. Také se ujistěte, že rozšíření kompiluje s `Option Strict` on, chcete-li minimalizovat chyby v rozšíření.  
   
--   **Izolace kódu rozšíření.** Umístění kódu do jednoho souboru díky rozšíření jednoduše nasadit jako šablonu položky sady Visual Studio. Další informace najdete v tématu "Balení a nasazení rozšíření" dále v tomto tématu. Umístění všech `My` kódu rozšíření oboru názvů do jednoho souboru nebo do samostatné složky v projektu vám také pomůže uživatelům najít `My` rozšíření oboru názvů.  
+- **Izolace kódu rozšíření.** Umístění kódu do jednoho souboru díky rozšíření jednoduše nasadit jako šablonu položky sady Visual Studio. Další informace najdete v tématu "Balení a nasazení rozšíření" dále v tomto tématu. Umístění všech `My` kódu rozšíření oboru názvů do jednoho souboru nebo do samostatné složky v projektu vám také pomůže uživatelům najít `My` rozšíření oboru názvů.  
   
 ## <a name="designing"></a> Navrhování knihoven tříd pro Moje  
  Jak je tomu u většiny objektové modely, některé vzory návrhu dobře fungovaly v `My` obor názvů a jiné nikoli. Při navrhování rozšíření `My` obor názvů, zvažte následující zásady:  
   
--   **Bezstavové metody.** Metody v `My` oboru názvů by měla poskytnout kompletní řešení ke konkrétnímu úkolu. Ujistěte se, že hodnoty parametrů, které jsou předány do metody poskytují všechny vstupy potřeba provést určitý úkol. Vyhněte se vytváření metody, které spoléhají na předchozí stav, jako je otevření připojení k prostředkům.  
+- **Bezstavové metody.** Metody v `My` oboru názvů by měla poskytnout kompletní řešení ke konkrétnímu úkolu. Ujistěte se, že hodnoty parametrů, které jsou předány do metody poskytují všechny vstupy potřeba provést určitý úkol. Vyhněte se vytváření metody, které spoléhají na předchozí stav, jako je otevření připojení k prostředkům.  
   
--   **Globální instance.** Jenom stav, který se spravuje v `My` obor názvů je globální do projektu. Například `My.Application.Info` zapouzdří stav, který se sdílí v celé aplikaci.  
+- **Globální instance.** Jenom stav, který se spravuje v `My` obor názvů je globální do projektu. Například `My.Application.Info` zapouzdří stav, který se sdílí v celé aplikaci.  
   
--   **Jednoduché typy parametrů.** Zjednodušení složitých typů parametrů se vyhnout. Místo toho vytvořit metody, které buď žádný vstupní parametr přijímají nebo, která přijímá jednoduchý vstupní typy, jako jsou řetězce, primitivní typy a tak dále.  
+- **Jednoduché typy parametrů.** Zjednodušení složitých typů parametrů se vyhnout. Místo toho vytvořit metody, které buď žádný vstupní parametr přijímají nebo, která přijímá jednoduchý vstupní typy, jako jsou řetězce, primitivní typy a tak dále.  
   
--   **Metody pro vytváření objektů.** Některé typy je obtížné vytvořit instanci. Poskytuje metody pro vytváření objektů jako rozšíření `My` obor názvů umožňuje snadno objevit a používat typy, které do této kategorie patří. Je například metoda factory, která funguje dobře `My.Computer.FileSystem.OpenTextFileReader`. Existuje několik typů datového proudu k dispozici v rozhraní .NET Framework. Konkrétně zadáním textové soubory `OpenTextFileReader` pomáhá uživatelům pochopit, které datový proud použít.  
+- **Metody pro vytváření objektů.** Některé typy je obtížné vytvořit instanci. Poskytuje metody pro vytváření objektů jako rozšíření `My` obor názvů umožňuje snadno objevit a používat typy, které do této kategorie patří. Je například metoda factory, která funguje dobře `My.Computer.FileSystem.OpenTextFileReader`. Existuje několik typů datového proudu k dispozici v rozhraní .NET Framework. Konkrétně zadáním textové soubory `OpenTextFileReader` pomáhá uživatelům pochopit, které datový proud použít.  
   
  Tyto pokyny nebrání Principy návrhu obecné pro knihovny tříd. Namísto toho jsou doporučení, která jsou optimalizovaná pro vývojáře, kteří používají Visual Basic a `My` oboru názvů. Principy návrhu obecné pro vytvoření knihovny tříd, naleznete v tématu [pokyny k návrhu architektury](../../../standard/design-guidelines/index.md).  
   

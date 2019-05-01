@@ -13,11 +13,11 @@ helpviewer_keywords:
 - sorting data in views [WPF]
 ms.assetid: f4c43578-01b7-4774-a953-acb95a13b94a
 ms.openlocfilehash: 32f73d3c3ba213778654f0d1ee7bbae16b9d845b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020722"
 ---
 # <a name="how-to-sort-data-in-a-view"></a>Postupy: Řazení dat v zobrazení
 Tento příklad popisuje způsob řazení dat v zobrazení.  

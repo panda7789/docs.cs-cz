@@ -3,11 +3,11 @@ title: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
 ms.openlocfilehash: b4711d344a6ce08adc6e993c19f2c3d97f56e7b4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052089"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 Tento příklad ukazuje, jak provádět zpracování ve službě nezpracovatelných zpráv. Tato ukázka je založena na [nepodporuje transakce vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) vzorku. Tento příklad používá `netMsmqBinding`. Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.
@@ -27,13 +27,13 @@ Tento příklad ukazuje, jak provádět zpracování ve službě nezpracovateln�
 
  Jakmile zprávu je označen jako poškozen, zprávu je řešeno podle nastavení v <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> výčtu. Zdůrazňujeme možné hodnoty:
 
--   Odolnost (výchozí): K selhání naslouchací proces a také hostitele služby.
+- Odolnost (výchozí): K selhání naslouchací proces a také hostitele služby.
 
--   Přetažení: Chcete-li vyřadit zprávu.
+- Přetažení: Chcete-li vyřadit zprávu.
 
--   Přesuňte: Pro přesun zprávy do dílčí fronty nezpracovatelných zpráv. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
+- Přesuňte: Pro přesun zprávy do dílčí fronty nezpracovatelných zpráv. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
--   Odmítnout: Odmítnout zprávu poslal zpět do fronty nedoručených zpráv odesílatele. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
+- Odmítnout: Odmítnout zprávu poslal zpět do fronty nedoručených zpráv odesílatele. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
  Vzorek ukazuje použití `Move` dispozice pro nezpracovatelných zpráv. `Move` způsobí, že zpráva, kterou chcete přesunout do dílčí fronty poškozené.
 
@@ -277,15 +277,15 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
 2. Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
 
-    1.  Otevřete správce serveru v sadě Visual Studio 2012.
+    1. Otevřete správce serveru v sadě Visual Studio 2012.
 
-    2.  Rozbalte **funkce** kartu.
+    2. Rozbalte **funkce** kartu.
 
-    3.  Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
+    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
 
-    4.  Zkontrolujte, **transakční** pole.
+    4. Zkontrolujte, **transakční** pole.
 
-    5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
+    5. Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
 
 3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 

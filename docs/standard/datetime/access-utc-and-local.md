@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup k předdefinované objekty UTC a lokálního časového pásma'
+title: 'Postupy: Přístup k předdefinovaným objektům časového pásma UTC a lokálního časového pásma'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,13 +16,13 @@ ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c10c07c08a4e676cf3c84a5722814eaed85f74a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026602"
 ---
-# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: Přístup k předdefinované objekty UTC a lokálního časového pásma
+# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: Přístup k předdefinovaným objektům časového pásma UTC a lokálního časového pásma
 
 <xref:System.TimeZoneInfo> Třída poskytuje dvě vlastnosti <xref:System.TimeZoneInfo.Utc%2A> a <xref:System.TimeZoneInfo.Local%2A>, který kód přístup k předdefinované objekty časového pásma. Toto téma popisuje, jak získat přístup k <xref:System.TimeZoneInfo> objektů vrácených podle vlastností.
 

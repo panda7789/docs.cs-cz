@@ -1,5 +1,5 @@
 ---
-title: 'XSLT šablony stylů skriptování pomocí < msxsl: script >'
+title: Skriptování šablon stylů XSLT pomocí <msxsl:script >
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,11 +9,11 @@ ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 78dec0d4c3c6e7cab6e179be9dbe61cfd01dc7fc
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026637"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Šablona stylů XSLT skriptování pomocí \<msxsl: script >
 <xref:System.Xml.Xsl.XslTransform> Třída podporuje vložené skriptování pomocí `script` elementu.  
@@ -64,7 +64,7 @@ ms.locfileid: "56835249"
   
  Zadané argumenty a návratové hodnoty určené funkce skriptu musí být jeden z typů XPath World Wide Web Consortium (W3C) nebo XSLT. V následující tabulce jsou uvedeny odpovídající typy W3C ekvivalentní rozhraní .NET Framework třídy (typ) a zda W3C zadejte je XPath typ nebo typ XSLT.  
   
-|Typ|Třída ekvivalentní rozhraní .NET Framework (typ)|Výraz XPath typ nebo typ XSLT|  
+|Type|Třída ekvivalentní rozhraní .NET Framework (typ)|Výraz XPath typ nebo typ XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
 |String|System.String|XPath|  
 |Boolean|System.Boolean|XPath|  

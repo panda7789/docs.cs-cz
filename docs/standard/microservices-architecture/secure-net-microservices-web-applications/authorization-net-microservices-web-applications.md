@@ -1,17 +1,17 @@
 ---
-title: O autorizaci v mikroslužbách a webových aplikací .NET
+title: O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 description: Zabezpečení v rozhraní .NET Mikroslužeb a webových aplikací – přehled možnosti hlavní autorizace v aplikacích ASP.NET Core – na základě rolí a na základě zásad.
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
 ms.openlocfilehash: 36cd8eaf7ffe78a29762398044dc1803adc1b200
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019500"
 ---
-# <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizaci v mikroslužbách a webových aplikací .NET
+# <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 
 Po ověření ASP.NET Core webová rozhraní API nutné k autorizaci přístupu. Tento proces umožňuje službě vytvořit rozhraní API dostupné pro některé ověřeného uživatele, ale ne pro všechny. [Autorizace](/aspnet/core/security/authorization/introduction) můžete provést podle role uživatelů nebo založená na vlastní zásadu, která by mohla obsahovat kontrola deklarace identity nebo jiných heuristické metody.
 

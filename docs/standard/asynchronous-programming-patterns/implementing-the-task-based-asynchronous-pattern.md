@@ -14,11 +14,11 @@ ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a218633ed607222fec3e46629a9bcd614c3d0610
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031184"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na úlohách
 Asynchronní vzor založený na úkolech (TAP) můžete implementovat třemi způsoby: pomocí kompilátorů jazyka C# a Visual Basic v sadě Visual Studio, ručně nebo kombinací obou metod. Jednotlivé metody jsou podrobně popsány v následujících částech. Vzor TAP můžete implementovat výpočetní i vstupně-výstupní asynchronní operace. [Úlohy](#workloads) část popisuje každý typ provozu.

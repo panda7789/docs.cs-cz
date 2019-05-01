@@ -12,11 +12,11 @@ helpviewer_keywords:
 - examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
 ms.openlocfilehash: 0cadff8b44c60041e2664b1d3b70830209014301
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014021"
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Postupy: Vytvořte klíč registru a nastavení jeho hodnoty v jazyce Visual Basic
 `CreateSubKey` Metodu `My.Computer.Registry` objekt slouží k vytvoření klíče registru.  
@@ -25,7 +25,7 @@ ms.locfileid: "59312607"
   
 #### <a name="to-create-a-registry-key"></a>Vytvoření klíče registru  
   
--   Použití `CreateSubKey` metoda, která hive umístí klíč v rámci, jakož i název klíče zadáte. Parametr `Subkey` není malá a velká písmena. Tento příklad vytvoří klíče registru `MyTestKey` HKEY_CURRENT_USER.  
+- Použití `CreateSubKey` metoda, která hive umístí klíč v rámci, jakož i název klíče zadáte. Parametr `Subkey` není malá a velká písmena. Tento příklad vytvoří klíče registru `MyTestKey` HKEY_CURRENT_USER.  
   
      [!code-vb[VbResourceTasks#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#17)]  
   
@@ -57,15 +57,15 @@ ms.locfileid: "59312607"
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Uživatel nemá oprávnění k vytvoření klíče registru (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění k vytvoření klíče registru (<xref:System.Security.SecurityException>).  
   
--   Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
+- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
   
--   Klíč je uzavřen (<xref:System.IO.IOException>).  
+- Klíč je uzavřen (<xref:System.IO.IOException>).  
   
--   Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).  
+- Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Pokud chcete spustit tento proces, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.RegistryPermission> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Podobně uživatel musí mít správné seznamy ACL pro vytvoření nebo zápis do nastavení. Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md).  

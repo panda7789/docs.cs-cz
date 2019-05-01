@@ -10,11 +10,11 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: 431db851-a75b-4009-9fe2-247243d810d3
 ms.openlocfilehash: d58f25f279bf2baa1caa7744cea94b909f48866f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002063"
 ---
 # <a name="how-to-impersonate-a-client-on-a-service"></a>Postupy: Zosobnění klienta ve službě
 Zosobnění klienta ve službě Windows Communication Foundation (WCF) umožňuje službě a provádět akce jménem klienta. Pro akce v souladu s přístup ovládacího prvku seznam (ACL) kontroly, jako je například přístup k adresářů a souborů na počítači nebo přístup k databázi serveru SQL Server že je kontrola seznamu ACL pro uživatelský účet klienta. Toto téma popisuje základní kroky potřebné k povolení klientům v doméně Windows nastavte úroveň zosobnění klienta. Funkční příklad tohoto objektu, najdete v části [zosobnění klienta](../../../docs/framework/wcf/samples/impersonating-the-client.md). Další informace o zosobnění klienta najdete v tématu [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  

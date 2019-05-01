@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Windows Forms controls, positioning on form
 ms.assetid: b2d62ed8-c391-4a7e-b72e-6bbabfca73dc
 ms.openlocfilehash: 75da29036b1afe7275a19a3e1e11a33b0e266edc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954398"
 ---
 # <a name="arranging-controls-on-windows-forms"></a>Uspořádávání ovládacích prvků ve Windows Forms
 Umístěním a manipulace s ovládacích prvků ve formulářích různými způsoby, můžete vytvořit uživatelské rozhraní, které jsou výsledkem je intuitivní a funkční pro uživatele.  

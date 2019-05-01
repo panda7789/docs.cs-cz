@@ -11,11 +11,11 @@ ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 670ed89754aa9b4d2052bb1186e0139618190cd6
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018893"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 

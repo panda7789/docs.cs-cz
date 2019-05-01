@@ -9,11 +9,11 @@ helpviewer_keywords:
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
 ms.openlocfilehash: 0327c497025630747e526503556f4a1705948850
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62022380"
 ---
 # <a name="how-to-reference-com-objects-from-visual-basic"></a>Postupy: Objekty odkaz modelu COM z jazyka Visual Basic
 V jazyce Visual Basic přidávání odkazů na objekty modelu COM, které mají knihovny typů vyžaduje vytvoření sestavení vzájemné spolupráce pro knihovnu COM. Odkazy na členy objektu modelu COM jsou směrovány na sestavení vzájemné spolupráce a pak se předávají do vlastního objektu COM. Odpovědi z objektu modelu COM jsou směrovány na sestavení vzájemné spolupráce a předá vaší [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace.  
@@ -38,11 +38,11 @@ V jazyce Visual Basic přidávání odkazů na objekty modelu COM, které mají 
   
 2. Volání Tlbimp z příkazového řádku, zadejte následující informace:  
   
-    -   Název a umístění knihovny DLL, která obsahuje knihovny typů  
+    - Název a umístění knihovny DLL, která obsahuje knihovny typů  
   
-    -   Název a umístění oboru názvů, kde by měl být umístěn informace  
+    - Název a umístění oboru názvů, kde by měl být umístěn informace  
   
-    -   Název a umístění cílové sestavení vzájemné spolupráce  
+    - Název a umístění cílové sestavení vzájemné spolupráce  
   
      Následující kód představuje příklad:  
   

@@ -3,11 +3,11 @@ title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
 ms.openlocfilehash: 379b6901e835a6820d194edda1d7727df789bfd8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051959"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tento příklad ukazuje, jak pro zpracování a zpracování zpráv, které selhaly doručování. Je založen na [nepodporuje transakce vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) vzorku. Tento příklad používá `netMsmqBinding` vazby. Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.
@@ -24,15 +24,15 @@ Tento příklad ukazuje, jak pro zpracování a zpracování zpráv, které selh
 
  Fronty nedoručených zpráv v `NetMsmqBinding` vazby je vyjádřen v následující vlastnosti:
 
--   <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> Vlastnost express typ fronty nedoručených zpráv klientů. Tento výčet má následující hodnoty:
+- <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> Vlastnost express typ fronty nedoručených zpráv klientů. Tento výčet má následující hodnoty:
 
--   `None`: Žádné fronty nedoručených zpráv nevyžadovala klienta.
+- `None`: Žádné fronty nedoručených zpráv nevyžadovala klienta.
 
--   `System`: Fronty nedoručených zpráv systému se používá k ukládání nedoručené zprávy. Fronty nedoručených zpráv systému sdílí všechny aplikace spuštěné v počítači.
+- `System`: Fronty nedoručených zpráv systému se používá k ukládání nedoručené zprávy. Fronty nedoručených zpráv systému sdílí všechny aplikace spuštěné v počítači.
 
--   `Custom`: Vlastní frontu nedoručených zadat pomocí <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost se používá k ukládání nedoručené zprávy. Tato funkce je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. To se používá při aplikace musíte použít svoji vlastní frontu nedoručených zpráv místo sdílení s ostatními aplikacemi spuštěnými ve stejném počítači.
+- `Custom`: Vlastní frontu nedoručených zadat pomocí <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost se používá k ukládání nedoručené zprávy. Tato funkce je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. To se používá při aplikace musíte použít svoji vlastní frontu nedoručených zpráv místo sdílení s ostatními aplikacemi spuštěnými ve stejném počítači.
 
--   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> Vlastnost express konkrétní fronty pro použití jako fronty nedoručených zpráv. Tato možnost je dostupná jenom v [!INCLUDE[wv](../../../../includes/wv-md.md)].
+- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> Vlastnost express konkrétní fronty pro použití jako fronty nedoručených zpráv. Tato možnost je dostupná jenom v [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
  V této ukázce klient odešle dávku zpráv do služby z v rámci oboru transakce a určuje libovolně nízkou hodnotu "time-to-live" pro tyto zprávy (přibližně 2 sekundy). Klient také určuje vlastní frontu nedoručených zpráv používat k zařazení do fronty zpráv, jejichž platnost vypršela.
 
@@ -314,15 +314,15 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 
 2. Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
 
-    1.  Otevřete správce serveru v sadě Visual Studio 2012.
+    1. Otevřete správce serveru v sadě Visual Studio 2012.
 
-    2.  Rozbalte **funkce** kartu.
+    2. Rozbalte **funkce** kartu.
 
-    3.  Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
+    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
 
-    4.  Zkontrolujte, **transakční** pole.
+    4. Zkontrolujte, **transakční** pole.
 
-    5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
+    5. Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
 
 3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 

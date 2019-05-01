@@ -9,18 +9,18 @@ ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dcf869d77882810d063532b2cf0c8139be163b7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027209"
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: Provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  
   
 ### <a name="to-copy-the-xml-and-xslt-files-to-your-local-computer"></a>Kopírování souborů XML a XSLT do místního počítače  
   
--   Zkopírujte soubor XSLT do místního počítače a pojmenujte ho Transform.xsl.  
+- Zkopírujte soubor XSLT do místního počítače a pojmenujte ho Transform.xsl.  
   
     ```xml  
     <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -87,7 +87,7 @@ Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestaven�
     </xsl:stylesheet>  
     ```  
   
--   Zkopírujte soubor XML do místního počítače a pojmenujte ho `books.xml`.  
+- Zkopírujte soubor XML do místního počítače a pojmenujte ho `books.xml`.  
   
     ```xml  
     <?xml version="1.0"?>  

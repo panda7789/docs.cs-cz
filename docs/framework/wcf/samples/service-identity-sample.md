@@ -6,8 +6,8 @@ ms.openlocfilehash: 72068002572ff82d2f166ffdd79e455cec7a2961
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051426"
 ---
 # <a name="service-identity-sample"></a>Ukázka identity služby
 Tato ukázka identity služby ukazuje, jak nastavit identitu služby. V době návrhu klient může načíst identitu pomocí metadat služby a za běhu pak se klient může ověřit identitu služby. Koncept identitu služby je umožnit klient k ověření služby před voláním některé z jeho operace, a tím chrání před neověřená volání klienta. Na zabezpečeném připojení služby také ověří přihlašovací údaje klienta před povolením přístupu, ale nejedná se o fokus této ukázky. Zobrazit ukázky [klienta](../../../../docs/framework/wcf/samples/client.md) , které zobrazí ověřování serveru.
@@ -17,11 +17,11 @@ Tato ukázka identity služby ukazuje, jak nastavit identitu služby. V době n�
 
  Tato ukázka ilustruje následující funkce:
 
--   Jak nastavit různé typy identit na různých koncových bodů služby. Každý typ identity má různé možnosti. Typ identity použití je závislá na typu zabezpečovací přihlašovací údaje použité pro vazbu koncového bodu.
+- Jak nastavit různé typy identit na různých koncových bodů služby. Každý typ identity má různé možnosti. Typ identity použití je závislá na typu zabezpečovací přihlašovací údaje použité pro vazbu koncového bodu.
 
--   Identity můžete buď nastavit deklarativně v konfiguraci nebo imperativně v kódu. Obvykle byste měli klienta a služby použít konfiguraci nastavení identity.
+- Identity můžete buď nastavit deklarativně v konfiguraci nebo imperativně v kódu. Obvykle byste měli klienta a služby použít konfiguraci nastavení identity.
 
--   Jak nastavit vlastní identitu na straně klienta. Přizpůsobení existujícího typu identita, která umožňuje klientovi zkontrolujte přihlašovací údaje služby pro rozhodnutí o autorizaci před voláním služby k dispozici další informace o deklaraci identity je obvykle vlastní identitu.
+- Jak nastavit vlastní identitu na straně klienta. Přizpůsobení existujícího typu identita, která umožňuje klientovi zkontrolujte přihlašovací údaje služby pro rozhodnutí o autorizaci před voláním služby k dispozici další informace o deklaraci identity je obvykle vlastní identitu.
 
     > [!NOTE]
     >  Tato ukázka ověří identitu konkrétní certifikát nazvaný identity.com a klíče RSA, které jsou obsaženy v rámci tohoto certifikátu. Při použití typů identity certifikát a RSA v konfigurace na straně klienta, snadný způsob, jak získat tyto hodnoty je ke kontrole WSDL pro službu, kde jsou tyto hodnoty serializovat.
@@ -154,7 +154,7 @@ class CustomIdentityVerifier : IdentityVerifier
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
     >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

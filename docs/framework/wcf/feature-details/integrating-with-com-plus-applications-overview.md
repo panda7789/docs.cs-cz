@@ -6,24 +6,24 @@ helpviewer_keywords:
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
 ms.openlocfilehash: b5294080d0cc76fdb98bc0908f4273dbb011f982
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62046915"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
 Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte založených na komponentách aplikační logiky, které jsou hostované v modelu COM +, můžou využít WCF k rozšíření existující logic namísto nutnosti jeho přepsání. Běžný scénář, kdy je, když chcete vystavit existujícího modelu COM + nebo podnikové služby obchodní logiky pomocí webové služby.  
   
  Při vystavení rozhraní komponenty COM + jako webovou službu, specifikace a smlouvy z těchto služeb jsou určeny automatické mapování, která se provede v době inicializace aplikace. Následující seznam ukazuje koncepční model pro toto mapování:  
   
--   Pro každou třídu vystavených modelu COM je definována jednu službu.  
+- Pro každou třídu vystavených modelu COM je definována jednu službu.  
   
--   Kontrakt služby je odvozen přímo z definice rozhraní vybrané součásti s možností metoda vyloučení definované v konfiguraci.  
+- Kontrakt služby je odvozen přímo z definice rozhraní vybrané součásti s možností metoda vyloučení definované v konfiguraci.  
   
--   Operace v této smlouvy jsou odvozena přímo z metod v definici rozhraní komponenty.  
+- Operace v této smlouvy jsou odvozena přímo z metod v definici rozhraní komponenty.  
   
--   Parametry pro tyto operace jsou odvozena přímo z typu vzájemná funkční spolupráce modelu COM, která odpovídá na parametry metod komponenty.  
+- Parametry pro tyto operace jsou odvozena přímo z typu vzájemná funkční spolupráce modelu COM, která odpovídá na parametry metod komponenty.  
   
  Výchozí adresy a vazby přenosu pro služby v konfiguračním souboru služby. Pokud ale tyto dají nakonfigurovat tak, jako povinné.  
   
@@ -47,19 +47,19 @@ Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytvá�
 ## <a name="supported-interfaces"></a>Podporované rozhraní  
  Platí určitá omezení na typ rozhraní, která může být vystavena jako webové služby. Nejsou podporovány následující typy rozhraní:  
   
--   Rozhraní, která předat objekt odkazy jako parametry - následující odkaz přístup omezený objektu je popsané v části omezená podpora odkaz na objekt.  
+- Rozhraní, která předat objekt odkazy jako parametry - následující odkaz přístup omezený objektu je popsané v části omezená podpora odkaz na objekt.  
   
--   Rozhraní, které předávají typy, které nejsou kompatibilní s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] převody vzájemná funkční spolupráce modelu COM.  
+- Rozhraní, které předávají typy, které nejsou kompatibilní s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] převody vzájemná funkční spolupráce modelu COM.  
   
--   Rozhraní pro aplikace, které mají aplikace sdružování povolena, když jsou hostované pomocí modelu COM +.  
+- Rozhraní pro aplikace, které mají aplikace sdružování povolena, když jsou hostované pomocí modelu COM +.  
   
--   Rozhraní komponent, které jsou označeny jako soukromé do aplikace.  
+- Rozhraní komponent, které jsou označeny jako soukromé do aplikace.  
   
--   Infrastruktura rozhraní modelu COM +.  
+- Infrastruktura rozhraní modelu COM +.  
   
--   Rozhraní z aplikace v systému.  
+- Rozhraní z aplikace v systému.  
   
--   Rozhraní služby Enterprise součásti, které se nepřidaly do globální mezipaměti sestavení.  
+- Rozhraní služby Enterprise součásti, které se nepřidaly do globální mezipaměti sestavení.  
   
 ### <a name="limited-object-reference-support"></a>Podpora odkaz omezené objektu  
  Protože počet nasazených komponenty COM +. můžete použít objekty odkaz parametry, jako je například vrací objekt sady záznamů ADO integrace modelu COM + obsahuje omezenou podporu pro parametry objektů reference. Podpora je omezena na objekty, které implementují `IPersistStream` rozhraní modelu COM. To zahrnuje objekty sady záznamů ADO a může být implementováno pro objekty COM. konkrétní aplikace.  
@@ -76,15 +76,15 @@ Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytvá�
 ## <a name="selecting-the-hosting-mode"></a>Hostující režim výběru  
  COM + zveřejňuje webové služby v jednom z následujících režimů hostingu:  
   
--   COM +.-hostované  
+- COM +.-hostované  
   
      Webová služba je hostována v rámci aplikace vyhrazené modelu COM + procesu serveru (Dllhost.exe). Tento režim vyžaduje aplikace explicitně spustit předtím, než může přijímat žádosti webové služby. COM + možnosti "Spustit jako služba NT" nebo "Ponechte spuštěna při nečinnosti" je možné zabránit ukončení aplikace a její služby při nečinnosti. Tento režim poskytuje webovou službu a přístup k DCOM na server aplikace.  
   
--   Hostované webové  
+- Hostované webové  
   
      Webová služba je hostována v rámci pracovní proces webového serveru. Tento režim nevyžaduje modelu COM + jako aktivní po přijetí počáteční požadavek. Pokud aplikace není aktivní, při přijetí tohoto požadavku, se automaticky aktivuje před zpracováním žádosti. Tento režim také poskytuje webovou službu a přístup k DCOM pro serverové aplikace, ale způsobí, že proces směrování webových žádostí o službu. Obvykle vyžaduje povolení zosobnění klienta. Ve službě WCF, to lze provést pomocí <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, které je přístupné jako vlastnost Obecné <xref:System.ServiceModel.ChannelFactory%601> třídu, stejně jako <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> hodnota výčtu.  
   
--   Web hostovaný v procesu  
+- Web hostovaný v procesu  
   
      Webové služby a logika aplikace modelu COM + jsou hostovány v rámci pracovní proces webového serveru. Tímto způsobem automatickou aktivaci režimu hostované webové bez způsobení procesu směrování webových žádostí o službu. Nevýhodou je, že serverová aplikace není možné přistupovat prostřednictvím modelu DCOM.  
   

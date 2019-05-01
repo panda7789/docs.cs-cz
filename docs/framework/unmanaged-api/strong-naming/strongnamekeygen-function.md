@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a8ebecce4078ba6c2b59e6bfba2d54300ba0c4ee
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59107377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000256"
 ---
 # <a name="strongnamekeygen-function"></a>StrongNameKeyGen – funkce
 Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  
@@ -46,9 +46,9 @@ BOOLEAN StrongNameKeyGen (
  `dwFlags`  
  [in] Určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
   
--   0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
+- 0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
   
--   0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
+- 0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
   
  `ppbKeyBlob`  
  [out] Vrácený pár veřejného a privátního klíče.  

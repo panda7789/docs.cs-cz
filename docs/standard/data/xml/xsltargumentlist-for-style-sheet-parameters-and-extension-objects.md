@@ -9,11 +9,11 @@ ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e6209df7d226d7e3acb938801d1fb77afbe1249b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026594"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pro parametry šablon stylů a objektů rozšíření
 <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.  
@@ -25,13 +25,13 @@ ms.locfileid: "59322404"
   
  Následují výhody pro předávání objektů, spíše než pomocí vloženého skriptu:  
   
--   Poskytuje lepší zapouzdření a opakované použití tříd.  
+- Poskytuje lepší zapouzdření a opakované použití tříd.  
   
--   Povoluje stylů, aby bylo menší a jednodušší údržbu.  
+- Povoluje stylů, aby bylo menší a jednodušší údržbu.  
   
--   Podporuje volání metody u třídy, které patří do oborů názvů, než jsou definované v rámci sady podporované <xref:System> obory názvů.  
+- Podporuje volání metody u třídy, které patří do oborů názvů, než jsou definované v rámci sady podporované <xref:System> obory názvů.  
   
--   Podporuje předávání výsledků fragmenty stromu s použitím šablony stylů <xref:System.Xml.XPath.XPathNodeIterator>.  
+- Podporuje předávání výsledků fragmenty stromu s použitím šablony stylů <xref:System.Xml.XPath.XPathNodeIterator>.  
   
 ## <a name="xslt-style-sheet-parameters"></a>Parametry list Styl XSLT  
  Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody. Úplný název a obor názvů identifikátoru URI (Uniform Resource) jsou spojeny s parametrem objektu v daném čase.  

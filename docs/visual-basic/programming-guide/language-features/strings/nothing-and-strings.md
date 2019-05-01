@@ -5,11 +5,11 @@ helpviewer_keywords:
 - strings [Visual Basic], Nothing
 ms.assetid: 261380af-2024-4ecf-823b-43b1034d92cd
 ms.openlocfilehash: 5fbcf86261892e3eb8e43ee8eaa3728cd8e42ced
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032276"
 ---
 # <a name="nothing-and-strings-in-visual-basic"></a>Výraz Nothing a řetězce v jazyce Visual Basic
 Modul runtime jazyka Visual Basic a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyhodnotit `Nothing` jinak pokud jde o řetězce.  

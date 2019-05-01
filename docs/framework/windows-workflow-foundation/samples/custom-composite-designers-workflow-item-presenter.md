@@ -3,11 +3,11 @@ title: Návrháři vlastního skládání – místo pro položku pracovního po
 ms.date: 03/30/2017
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
 ms.openlocfilehash: f3c7620f719b8412b6b34bda7be5d607dccda75f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005227"
 ---
 # <a name="custom-composite-designers---workflow-item-presenter"></a>Návrháři vlastního skládání – místo pro položku pracovního postupu
 <xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity. Tento příklad ukazuje, jak vytvářet Návrhář aktivity tohoto zařízení Surface takovou "rozevírací zónu."
@@ -16,18 +16,18 @@ ms.locfileid: "59311120"
 
 ## <a name="demonstrates"></a>Demonstruje
 
--   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.
+- Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.
 
--   Registrace vlastní úložiště metadat pomocí návrháře.
+- Registrace vlastní úložiště metadat pomocí návrháře.
 
--   Deklarativní a imperativně programování provádění se změněným hostováním sady nástrojů.
+- Deklarativní a imperativně programování provádění se změněným hostováním sady nástrojů.
 
 ## <a name="sample-details"></a>Ukázka podrobnosti
  Kód pro tento příklad ukazuje:
 
--   Návrháři vlastních aktivit je sestaven pro `SimpleNativeActivity` třídy.
+- Návrháři vlastních aktivit je sestaven pro `SimpleNativeActivity` třídy.
 
--   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.
+- Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.
 
 ```xaml
 <sap:ActivityDesigner x:Class="Microsoft.Samples.UsingWorkflowItemPresenter.SimpleNativeDesigner"

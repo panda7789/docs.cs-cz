@@ -3,20 +3,20 @@ title: Operátory sekvence
 ms.date: 03/30/2017
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
 ms.openlocfilehash: 62cb654922af9df65b0ec9abb67bdc33fda09339
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033433"
 ---
 # <a name="sequence-operators"></a>Operátory sekvence
 Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory sekvence, které mají jednu nebo více následujících vlastností:  
   
--   Využijte výraz lambda s parametrem index.  
+- Využijte výraz lambda s parametrem index.  
   
--   Spolehněte se na vlastnosti sekvenčních řádky, jako například <xref:System.Linq.Queryable.TakeWhile%2A>.  
+- Spolehněte se na vlastnosti sekvenčních řádky, jako například <xref:System.Linq.Queryable.TakeWhile%2A>.  
   
--   Spoléhají na implementaci libovolného modulu CLR, jako je třeba <xref:System.Collections.Generic.IComparer%601>.  
+- Spoléhají na implementaci libovolného modulu CLR, jako je třeba <xref:System.Collections.Generic.IComparer%601>.  
   
 |Příklady nepodporované|  
 |-----------------------------|  

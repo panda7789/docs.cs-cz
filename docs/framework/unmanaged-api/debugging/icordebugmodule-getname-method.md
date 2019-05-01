@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b39467c067e50f2d553b35a41b0f783e0fc82156
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59176641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61988015"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName – metoda
 Získá název souboru modulu.  

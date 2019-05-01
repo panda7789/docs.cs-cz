@@ -6,11 +6,11 @@ helpviewer_keywords:
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
 ms.openlocfilehash: fc07cc23498b2079aba41dfa57c26b88944d6a8d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59126357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033082"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -27,11 +27,11 @@ ms.locfileid: "59126357"
 ## <a name="ui-automation-control-pattern-components"></a>Součásti vzor ovládacího prvku automatizace uživatelského rozhraní  
  Vzory ovládacích prvků podporují metody, vlastnosti, události a vztahy, které jsou potřebné k definování samostatná část funkce je dostupná v ovládacím prvku.  
   
--   Vztah mezi prvku automatizace uživatelského rozhraní a jeho nadřazeného, podřízené položky a na stejné úrovni popisuje strukturu prvku v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.  
+- Vztah mezi prvku automatizace uživatelského rozhraní a jeho nadřazeného, podřízené položky a na stejné úrovni popisuje strukturu prvku v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.  
   
--   Metody klientům automatizace uživatelského rozhraní pro manipulaci s ovládacího prvku.  
+- Metody klientům automatizace uživatelského rozhraní pro manipulaci s ovládacího prvku.  
   
--   Vlastnosti a události poskytují informace o funkcích vzor ovládacích prvků a informace o stavu ovládacího prvku.  
+- Vlastnosti a události poskytují informace o funkcích vzor ovládacích prvků a informace o stavu ovládacího prvku.  
   
  Vzory ovládacích prvků se týkají [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] rozhraní vztah k [!INCLUDE[TLA#tla_com](../../../includes/tlasharptla-com-md.md)] objekty. V [!INCLUDE[TLA2#tla_com](../../../includes/tla2sharptla-com-md.md)], můžete dát dotaz na objekt požádejte ji co rozhraní podporuje, a pak pomocí těchto rozhraní pro přístup k funkcím. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], klienti automatizace uživatelského rozhraní požádejte ovládací prvek, který vzorů ovládacích prvků se podporuje a pak pracovat s ovládacím prvkem vlastnosti, metody, události a struktury vystavené vzory podporovaných ovládacích prvků. Například pro pole víceřádková textová pole, implementace zprostředkovatelů automatizace uživatelského rozhraní <xref:System.Windows.Automation.Provider.IScrollProvider>. Když klient ví, <xref:System.Windows.Automation.AutomationElement> podporuje <xref:System.Windows.Automation.ScrollPattern> – vzor ovládacích prvků, může použít vlastnosti, metody a události, které jsou vystavené této – vzor ovládacích prvků k manipulovat s prvkem nebo přístup k informacím o ovládacím prvku.  
   

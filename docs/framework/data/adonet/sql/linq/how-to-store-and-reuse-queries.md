@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: a012bd79-1809-45e3-adea-0229532396cc
 ms.openlocfilehash: 1aac20c3f9c421d353938a83b9e321d35abd244e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59084190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033641"
 ---
 # <a name="how-to-store-and-reuse-queries"></a>Postupy: Uložení a opakované použití dotazů
 Až budete mít aplikaci, která se spustí v mnoha případech strukturálně podobné dotazy, můžete často zvýšit výkon kompilaci dotazu jednou a spustíte ji několikrát s různými parametry. Například aplikace může mít k načtení všech zákazníků, kteří jsou v konkrétní Město, ve kterém Město je uživatel zadá za běhu ve formuláři. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje použití *kompilaci dotazů* pro tento účel.  

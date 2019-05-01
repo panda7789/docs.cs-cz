@@ -6,8 +6,8 @@ ms.openlocfilehash: 8c769321702deb774c04613d5fe5eb2fde069063
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967905"
 ---
 # <a name="custom-stream-upgrades"></a>Vlastní upgrady streamů
 Orientovaný na Stream přenosy, jako je například TCP a pojmenované kanály pracovat nepřetržitý datový proud bajtů mezi klientem a serverem. Tento datový proud se provádí <xref:System.IO.Stream> objektu. Při upgradu datového proudu klient chce přidat volitelné protokolové vrstvě kanálu zásobníku a zeptá druhém konci komunikační kanál k tomu. Se skládá z upgradu datového proudu nahrazení původní <xref:System.IO.Stream> objekt upgradovaný sadou.  
@@ -32,35 +32,35 @@ Orientovaný na Stream přenosy, jako je například TCP a pojmenované kanály 
 ## <a name="how-to-implement-a-stream-upgrade"></a>Jak implementovat Stream upgradu  
  Windows Communication Foundation (WCF) poskytuje čtyři `abstract` třídy, které můžete implementovat:  
   
--   <xref:System.ServiceModel.Channels.StreamUpgradeInitiator?displayProperty=nameWithType>  
+- <xref:System.ServiceModel.Channels.StreamUpgradeInitiator?displayProperty=nameWithType>  
   
--   <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor?displayProperty=nameWithType>  
+- <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor?displayProperty=nameWithType>  
   
--   <xref:System.ServiceModel.Channels.StreamUpgradeProvider?displayProperty=nameWithType>  
+- <xref:System.ServiceModel.Channels.StreamUpgradeProvider?displayProperty=nameWithType>  
   
--   <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement?displayProperty=nameWithType>  
+- <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement?displayProperty=nameWithType>  
   
  K provedení upgradu na vlastní datový proud, postupujte takto. Tento postup implementuje procesu upgradu minimální datového proudu na počítačích klienta i serveru.  
   
 1. Vytvořte třídu, která implementuje <xref:System.ServiceModel.Channels.StreamUpgradeInitiator>.  
   
-    1.  Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeInitiator.InitiateUpgrade%2A> metoda do datového proudu k upgradovány a vrátí upgradovaný datového proudu. Tato metoda pracuje synchronně, hodnota jsou obdobou metody k zahájení upgradu asynchronně.  
+    1. Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeInitiator.InitiateUpgrade%2A> metoda do datového proudu k upgradovány a vrátí upgradovaný datového proudu. Tato metoda pracuje synchronně, hodnota jsou obdobou metody k zahájení upgradu asynchronně.  
   
-    2.  Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeInitiator.GetNextUpgrade%2A> metodu ke kontrole pro další upgrady.  
+    2. Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeInitiator.GetNextUpgrade%2A> metodu ke kontrole pro další upgrady.  
   
 2. Vytvořte třídu, která implementuje <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor>.  
   
-    1.  Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade%2A> metoda do datového proudu k upgradovány a vrátí upgradovaný datového proudu. Tato metoda pracuje synchronně, hodnota Potvrďte upgrade asynchronně obdobná způsoby.  
+    1. Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade%2A> metoda do datového proudu k upgradovány a vrátí upgradovaný datového proudu. Tato metoda pracuje synchronně, hodnota Potvrďte upgrade asynchronně obdobná způsoby.  
   
-    2.  Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.CanUpgrade%2A> metodou ke zjištění, pokud požadovaný upgrade podporuje tento upgrade příjemce v tuto chvíli v procesu upgradu.  
+    2. Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.CanUpgrade%2A> metodou ke zjištění, pokud požadovaný upgrade podporuje tento upgrade příjemce v tuto chvíli v procesu upgradu.  
   
 3. Vytvořte třídu implementuje <xref:System.ServiceModel.Channels.StreamUpgradeProvider>. Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeProvider.CreateUpgradeAcceptor%2A> a <xref:System.ServiceModel.Channels.StreamUpgradeProvider.CreateUpgradeInitiator%2A> metody vrátí instance dodavatel a iniciátor definovaný v kroku 2 a 1.  
   
 4. Vytvořte třídu, která implementuje <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement>.  
   
-    1.  Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement.BuildClientStreamUpgradeProvider%2A> metody na straně klienta a <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider%2A> metodu na službu.  
+    1. Přepsat <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement.BuildClientStreamUpgradeProvider%2A> metody na straně klienta a <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider%2A> metodu na službu.  
   
-    2.  Přepsat <xref:System.ServiceModel.Channels.BindingElement.BuildChannelFactory%2A> metody na straně klienta a <xref:System.ServiceModel.Channels.BindingElement.BuildChannelListener%2A> metodu na službu přidat Element upgradu vazby na <xref:System.ServiceModel.Channels.BindingContext.BindingParameters%2A>.  
+    2. Přepsat <xref:System.ServiceModel.Channels.BindingElement.BuildChannelFactory%2A> metody na straně klienta a <xref:System.ServiceModel.Channels.BindingElement.BuildChannelListener%2A> metodu na službu přidat Element upgradu vazby na <xref:System.ServiceModel.Channels.BindingContext.BindingParameters%2A>.  
   
 5. Přidáte nový element vazby upgradu datového proudu do vazby na serverových a klientských počítačích.  
   

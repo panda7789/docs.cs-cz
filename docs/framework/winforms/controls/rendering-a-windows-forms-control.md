@@ -11,24 +11,24 @@ helpviewer_keywords:
 - custom controls [Windows Forms], invalidation and painting
 ms.assetid: aae8e1e6-4786-432b-a15e-f4c44760d302
 ms.openlocfilehash: 8de87e17d1baedccfe18bfded3ccab7ab59f0a09
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012474"
 ---
 # <a name="rendering-a-windows-forms-control"></a>Vykreslení ovládacího prvku Windows Forms
 Vykreslování se vztahuje k procesu vytváření vizuální reprezentace na obrazovce uživatele. Windows Forms používá [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (nové Windows grafické knihovny) pro vykreslování. Spravované třídy, které poskytují přístup k [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] v <xref:System.Drawing?displayProperty=nameWithType> obor názvů a jeho podobory.  
   
  Tyto prvky jsou součástí vykreslování ovládacího prvku:  
   
--   Kreslení funkce poskytované službou základní třídy <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.  
+- Kreslení funkce poskytované službou základní třídy <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.  
   
--   Základní prvky [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] grafické knihovny.  
+- Základní prvky [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] grafické knihovny.  
   
--   Geometrie oblasti výkresu.  
+- Geometrie oblasti výkresu.  
   
--   Postup uvolnění grafické prostředky.  
+- Postup uvolnění grafické prostředky.  
   
 ## <a name="drawing-functionality-provided-by-control"></a>Kreslení funkce poskytované službou ovládacího prvku  
  Základní třída <xref:System.Windows.Forms.Control> poskytuje výkresu funkce prostřednictvím jeho <xref:System.Windows.Forms.Control.Paint> událostí. Ovládací prvek vyvolá <xref:System.Windows.Forms.Control.Paint> událost, kdykoliv je nutné aktualizovat zobrazení. Další informace o události v rozhraní .NET Framework najdete v tématu [Handling and Raising Events](../../../standard/events/index.md).  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
 ms.openlocfilehash: a5a32220ad1f638bf2e93051e9b436d8270aec2f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59082188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039610"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
 Standardně nastavit identitu ve službě, protože výběr typu pověření klienta Určuje typ identity v metadatech služby není nutné. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut pro Windows.  
@@ -27,24 +27,24 @@ Standardně nastavit identitu ve službě, protože výběr typu pověření kli
 > [!NOTE]
 >  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, služby uživatelský účet musí mít přístup k hlavní název služby, které je zaregistrované v doméně služby Active Directory. Můžete to udělat následujícími způsoby:  
   
--   Použití účtu NetworkService nebo LocalSystem ke spouštění vaší služby. Vzhledem k tomu, že tyto účty mají přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje elementu řádné SPN uvnitř koncového bodu služby v služby metadat (WSDL).  
+- Použití účtu NetworkService nebo LocalSystem ke spouštění vaší služby. Vzhledem k tomu, že tyto účty mají přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje elementu řádné SPN uvnitř koncového bodu služby v služby metadat (WSDL).  
   
--   Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě vytvořte název SPN pro účet domény, což lze provést pomocí nástroje Setspn.exe nástroj. Jakmile vytvoříte název SPN pro účet služby, nakonfigurujte WCF k publikování této hlavní název služby klientům služby prostřednictvím jeho metadat (WSDL). To se provádí nastavením identitě koncového bodu vystavené koncového bodu, buď prostřednictvím konfiguračního souboru aplikace nebo kódu.  
+- Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě vytvořte název SPN pro účet domény, což lze provést pomocí nástroje Setspn.exe nástroj. Jakmile vytvoříte název SPN pro účet služby, nakonfigurujte WCF k publikování této hlavní název služby klientům služby prostřednictvím jeho metadat (WSDL). To se provádí nastavením identitě koncového bodu vystavené koncového bodu, buď prostřednictvím konfiguračního souboru aplikace nebo kódu.  
   
  Další informace o SPN, protokol Kerberos a Active Directory, naleznete v tématu [Kerberos technické Supplement pro Windows](https://go.microsoft.com/fwlink/?LinkId=88330).  
   
 ### <a name="when-spn-or-upn-equals-the-empty-string"></a>Pokud hlavní název služby nebo hlavní název uživatele se rovná prázdný řetězec  
  Pokud nastavíte hlavní název služby nebo hlavní název uživatele rovna prázdný řetězec, stát, řada různých věcí v závislosti na úrovni a ověřování režimu, který používá:  
   
--   Pokud používáte zabezpečení na úrovni přenosu, je vybrán LanMan NT (NTLM) authentication.  
+- Pokud používáte zabezpečení na úrovni přenosu, je vybrán LanMan NT (NTLM) authentication.  
   
--   Pokud používáte zabezpečení na úrovni zpráv, ověřování se pravděpodobně nezdaří, v závislosti na režimu ověřování:  
+- Pokud používáte zabezpečení na úrovni zpráv, ověřování se pravděpodobně nezdaří, v závislosti na režimu ověřování:  
   
--   Pokud používáte `spnego` režimu a `AllowNtlm` atribut je nastaven na `false`, selhání ověřování.  
+- Pokud používáte `spnego` režimu a `AllowNtlm` atribut je nastaven na `false`, selhání ověřování.  
   
--   Pokud používáte `spnego` režimu a `AllowNtlm` atribut je nastaven na `true`, ověření se nezdaří, pokud hlavní název uživatele je prázdná, ale bude úspěšné, pokud hlavní název služby je prázdný.  
+- Pokud používáte `spnego` režimu a `AllowNtlm` atribut je nastaven na `true`, ověření se nezdaří, pokud hlavní název uživatele je prázdná, ale bude úspěšné, pokud hlavní název služby je prázdný.  
   
--   Pokud používáte Kerberos přímé (označované také jako "jednorázové"), ověření se nezdaří.  
+- Pokud používáte Kerberos přímé (označované také jako "jednorázové"), ověření se nezdaří.  
   
 ### <a name="using-the-identity-element-in-configuration"></a>Použití \<identity > v elementu konfigurace  
  Pokud změníte typ přihlašovacích údajů klienta ve vazbě bylo dříve uvedeno na certifikát`,` generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí pro všechny typy přihlašovacích údajů klienta jiné než Windows.  

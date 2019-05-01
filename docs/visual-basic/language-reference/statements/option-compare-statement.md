@@ -19,11 +19,11 @@ helpviewer_keywords:
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
 ms.openlocfilehash: e7c1e8e4431b7a653bb3a086589c35921f8001b9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024739"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
 Deklaruje výchozí metodu porovnání pro použití při porovnávání dat řetězců.  
@@ -75,7 +75,7 @@ Option Compare { Binary | Text }
   
 #### <a name="to-set-option-compare-on-the-command-line"></a>Nastavení Option Compare na příkazovém řádku  
   
--   Zahrnout [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) – možnost kompilátoru v **Vbc –** příkazu.  
+- Zahrnout [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) – možnost kompilátoru v **Vbc –** příkazu.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Option Compare` příkaz nastavit jako výchozí metodu porovnání řetězce binární porovnání. Chcete-li tento kód použít, Odkomentujte `Option Compare Binary` příkaz a umístěte ho na začátku zdrojového souboru.  

@@ -3,11 +3,11 @@ title: Koncové body SOAP a HTTP
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
 ms.openlocfilehash: 07f0c5a5a66683cf636595824b2ccaeaf1ab6a63
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007810"
 ---
 # <a name="soap-and-http-endpoints"></a>Koncové body SOAP a HTTP
 Tento příklad ukazuje, jak implementovat službu vzdáleného volání procedur a zpřístupnit ji ve formátu protokolu SOAP a ve formátu "Plain Old XML" (POX) s využitím modelu webového programování WCF. Zobrazit [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka podrobné informace o vazbě protokolu HTTP pro službu. Tato ukázka se zaměřuje na informace, které se týkají vystavení stejnou službu SOAP a HTTP pomocí různých vazeb.  
@@ -22,11 +22,11 @@ Tento příklad ukazuje, jak implementovat službu vzdáleného volání procedu
   
  V souboru Web.config Konfiguruje službu WCF s 3 koncové body:  
   
--   ~/Service.svc/mex koncového bodu, který zveřejňuje metadata služby pro přístup založený na protokolu SOAP klienty.  
+- ~/Service.svc/mex koncového bodu, který zveřejňuje metadata služby pro přístup založený na protokolu SOAP klienty.  
   
--   ~/Service.svc/http koncového bodu, který umožňuje klientům přístup ke službě pomocí vazby HTTP.  
+- ~/Service.svc/http koncového bodu, který umožňuje klientům přístup ke službě pomocí vazby HTTP.  
   
--   Koncový bod ~/service.svc/soap, která umožňuje klientům přístup ke službě pomocí SOAP přes vazbu protokolu HTTP.  
+- Koncový bod ~/service.svc/soap, která umožňuje klientům přístup ke službě pomocí SOAP přes vazbu protokolu HTTP.  
   
  Koncový bod HTTP, nastavena <`webHttp`> standardní koncový bod, který má `helpEnabled` nastavena na `true`. V důsledku toho služba zpřístupňuje stránku nápovědy na základě XHTML ~/service.svc/http/help, založené na protokolu HTTP klientů můžete použít pro přístup ke službě.  
   

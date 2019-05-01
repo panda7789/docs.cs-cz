@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: 78e8c3cacd89f88cbfa062cb30e5b3474c2614ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 74c31c748dd3483aa87afb2c9a7d926965c9f1ed
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517828"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773927"
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: Vývoj datové služby WCF ve službě IIS
 
@@ -23,9 +23,9 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 > [!NOTE]
 > Pokud chcete vytvořit datová služba Northwind, jste na místním počítači nainstalovali ukázkové databáze Northwind. Stáhněte si tuto ukázkovou databázi, naleznete na stránce stahování [ukázkové databáze systému SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).
 
- Toto téma ukazuje, jak vytvořit datové služby pomocí zprostředkovatele Entity Framework. Ostatní zprostředkovatelé dat služby jsou k dispozici. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).
+Toto téma ukazuje, jak vytvořit datové služby pomocí zprostředkovatele Entity Framework. Ostatní zprostředkovatelé dat služby jsou k dispozici. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).
 
- Po vytvoření služby, je nutné explicitně zadat přístup k prostředkům datové služby. Další informace najdete v tématu [jak: Povolení přístupu k datové službě](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).
+Po vytvoření služby, je nutné explicitně zadat přístup k prostředkům datové služby. Další informace najdete v tématu [jak: Povolení přístupu k datové službě](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).
 
 ## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a>Vytvoření webové aplikace ASP.NET, která běží ve službě IIS
 
@@ -35,7 +35,7 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
 3. Vyberte **webová aplikace ASP.NET** šablony.
 
-1. Zadejte `NorthwindService` jako název projektu.
+4. Zadejte `NorthwindService` jako název projektu.
 
 5. Klikněte na **OK**.
 
@@ -47,13 +47,13 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
 9. Z příkazového řádku s oprávněními správce proveďte jednu z následujících příkazů (v závislosti na operačním systému):
 
-    -   32bitové systémy:
+    - 32bitové systémy:
 
         ```console
         "%windir%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
         ```
 
-    -   64bitové systémy:
+    - 64bitové systémy:
 
         ```console
         "%windir%\Microsoft.NET\Framework64\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
@@ -63,13 +63,13 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
 10. Z příkazového řádku s oprávněními správce proveďte jednu z následujících příkazů (v závislosti na operačním systému):
 
-    -   32bitové systémy:
+    - 32bitové systémy:
 
         ```console
         "%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe" -i -enable
         ```
 
-    -   64bitové systémy:
+    - 64bitové systémy:
 
         ```console
         "%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe" -i -enable
@@ -132,11 +132,11 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
 5. Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na tlačítko **Další**:
 
-    -   Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [jak: Vytvoření připojení k databázím serveru SQL](https://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.
+    - Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [jak: Vytvoření připojení k databázím serveru SQL](https://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.
 
          \- nebo –
 
-    -   Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte v seznamu připojení toto připojení.
+    - Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte v seznamu připojení toto připojení.
 
 6. Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políček pro zobrazení a uložených procedur.
 

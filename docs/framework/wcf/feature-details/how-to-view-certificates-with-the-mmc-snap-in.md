@@ -5,11 +5,11 @@ helpviewer_keywords:
 - certificates [WCF], viewing with the MMC snap-in
 ms.assetid: 2b8782aa-ebb4-4ee7-974b-90299e356dc5
 ms.openlocfilehash: 69f79b64250ff46524e7b4720d13351774875a3f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59167502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972717"
 ---
 # <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC
 Při vytváření zabezpečeného klienta nebo služby, můžete použít [certifikát](working-with-certificates.md) jako přihlašovací údaje. Například běžný typ přihlašovacích údajů je certifikát X.509, který vytvoříte pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType> metody. 

@@ -14,18 +14,18 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
 ms.openlocfilehash: c899cfe1015a25adc25fc28ee84d0a37a397defe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54584685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62028249"
 ---
 # <a name="version-tolerant-serialization"></a>Serializace tolerantní vůči verzím verze
 Ve verzi 1.0 a 1.1 rozhraní .NET Framework byla problematický vytváření Serializovatelné typy, které by se znovu použít z jedné verze aplikace na další. V případě typu byl změněn přidáním pole navíc, by se objeví následující problémy:  
   
--   Starší verze aplikace by vyvolat výjimky dotaz k deserializaci nové verze původní typu.  
+- Starší verze aplikace by vyvolat výjimky dotaz k deserializaci nové verze původní typu.  
   
--   Novější verze aplikace by výjimku výjimky, při deserializaci starší verze typu s chybějící data.  
+- Novější verze aplikace by výjimku výjimky, při deserializaci starší verze typu s chybějící data.  
   
  Verze chybám serializace (VTS) je sada funkcí zavedena v rozhraní .NET Framework 2.0, který umožňuje snadněji v čase, chcete-li upravit Serializovatelné typy. Konkrétně jsou povoleny funkce VTS pro třídy, do kterého <xref:System.SerializableAttribute> byl použit atribut, včetně obecných typů. VTS umožňuje přidat nové pole do těchto tříd bez porušení kompatibilitu s jinými verzemi typu. Ukázkové aplikace práci, naleznete v tématu [ukázka technologie serializace odolný vůči chybám verze](../../../docs/standard/serialization/version-tolerant-serialization-technology-sample.md).  
   
@@ -36,11 +36,11 @@ Ve verzi 1.0 a 1.1 rozhraní .NET Framework byla problematický vytváření Ser
 ## <a name="feature-list"></a>Seznam funkcí  
  Sada funkcí obsahuje následující položky:  
   
--   Odchylka nadbytečná nebo neočekávaná data. To umožňuje novější verze tohoto typu k odesílání dat ke starším verzím.  
+- Odchylka nadbytečná nebo neočekávaná data. To umožňuje novější verze tohoto typu k odesílání dat ke starším verzím.  
   
--   Odchylka chybějících volitelnými daty. To umožňuje starší verze k odesílání dat do novější verze.  
+- Odchylka chybějících volitelnými daty. To umožňuje starší verze k odesílání dat do novější verze.  
   
--   Zpětná volání serializace. To umožňuje inteligentní výchozí nastavení hodnoty v případech, kdy je chybějící data.  
+- Zpětná volání serializace. To umožňuje inteligentní výchozí nastavení hodnoty v případech, kdy je chybějící data.  
   
  Kromě toho je funkce k prohlášení, pokud byl přidán nový volitelné pole. Toto je <xref:System.Runtime.Serialization.OptionalFieldAttribute.VersionAdded%2A> vlastnost <xref:System.Runtime.Serialization.OptionalFieldAttribute> atributu.  
   
@@ -257,28 +257,28 @@ End Class
 ```  
   
 ## <a name="serializationbinder"></a>SerializationBinder  
- Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace.  Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Další informace najdete v tématu [řízení serializace a deserializace pomocí SerializationBinder](../../../docs/framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).  
+ Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder> je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace.  Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Další informace najdete v tématu [řízení serializace a deserializace pomocí SerializationBinder](../../../docs/framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).  
   
 ## <a name="best-practices"></a>Osvědčené postupy  
  Chcete-li zajistit správnou verzí chování, postupujte podle těchto pravidel ke změně typu na verzi:  
   
--   Serializovaná pole nikdy odebrat.  
+- Serializovaná pole nikdy odebrat.  
   
--   Nikdy použít <xref:System.NonSerializedAttribute> atributu na pole, pokud atribut nebyl použit na pole v předchozí verzi.  
+- Nikdy použít <xref:System.NonSerializedAttribute> atributu na pole, pokud atribut nebyl použit na pole v předchozí verzi.  
   
--   Nikdy změnit název nebo typ serializovaného pole.  
+- Nikdy změnit název nebo typ serializovaného pole.  
   
--   Při přidávání nového serializovaná pole, použije **OptionalFieldAttribute** atribut.  
+- Při přidávání nového serializovaná pole, použije **OptionalFieldAttribute** atribut.  
   
--   Při odebírání **NonSerializedAttribute** atribut z pole (tj. nebyla serializovatelný v předchozí verzi), použije **OptionalFieldAttribute** atribut.  
+- Při odebírání **NonSerializedAttribute** atribut z pole (tj. nebyla serializovatelný v předchozí verzi), použije **OptionalFieldAttribute** atribut.  
   
--   U všech polí volitelné, nastavte smysluplné výchozí pomocí zpětných volání serializace, není-li 0 nebo **null** jako výchozí hodnoty jsou přijatelné.  
+- U všech polí volitelné, nastavte smysluplné výchozí pomocí zpětných volání serializace, není-li 0 nebo **null** jako výchozí hodnoty jsou přijatelné.  
   
  Chcete-li zajistit, že budou kompatibilní s budoucí serializace moduly typu, postupujte podle následujících pokynů:  
   
--   Vždycky nastavený **VersionAdded** vlastnost **OptionalFieldAttribute** atribut správně.  
+- Vždycky nastavený **VersionAdded** vlastnost **OptionalFieldAttribute** atribut správně.  
   
--   Vyhněte se větvenou správy verzí.  
+- Vyhněte se větvenou správy verzí.  
   
 ## <a name="see-also"></a>Viz také:
 

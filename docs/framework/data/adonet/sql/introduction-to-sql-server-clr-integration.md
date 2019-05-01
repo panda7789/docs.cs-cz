@@ -3,11 +3,11 @@ title: Úvod k integraci modulu CLR na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
 ms.openlocfilehash: dc7d19bf361ed5fcda1fd5edf64eeb5e4ce15a71
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033875"
 ---
 # <a name="introduction-to-sql-server-clr-integration"></a>Úvod k integraci modulu CLR na SQL Serveru
 Common language runtime (CLR) je základem rozhraní Microsoft .NET Framework a poskytuje prostředí pro spuštění pro veškerý kód rozhraní .NET Framework. Kód, který běží v rámci modulu CLR se označuje jako spravovaný kód. CLR poskytuje různé funkce a služby potřebné pro spuštění programu, včetně kompilace just-in-time (JIT), přidělování a správu paměti a vynucuje bezpečnost typů, zpracování výjimek, správa vláken a zabezpečení.  
@@ -20,7 +20,7 @@ Common language runtime (CLR) je základem rozhraní Microsoft .NET Framework a 
   
  **SQL Server Books Online**  
   
--   [Integrace přehled modelu Common Language Runtime (CLR)](https://go.microsoft.com/fwlink/?LinkId=115242)  
+- [Integrace přehled modelu Common Language Runtime (CLR)](https://go.microsoft.com/fwlink/?LinkId=115242)  
   
 ## <a name="enabling-clr-integration"></a>Povolení integrace modulu CLR  
  Běžné funkce integrace language runtime (CLR) je vypnuto ve výchozím nastavení v systému Microsoft SQL Server a musí být povolené, aby bylo možné používat objekty, které jsou implementovány pomocí integrace modulu CLR. Chcete-li povolit integraci modulu CLR pomocí příkazů jazyka Transact-SQL, použijte `clr enabled` možnost `sp_configure` uložené procedury, jak je znázorněno:  
@@ -38,7 +38,7 @@ GO
   
  **SQL Server Books Online**  
   
--   [Povolení integrace modulu CLR](https://go.microsoft.com/fwlink/?LinkId=115230)  
+- [Povolení integrace modulu CLR](https://go.microsoft.com/fwlink/?LinkId=115230)  
   
 ## <a name="deploying-a-clr-assembly"></a>Nasazení sestavení CLR  
  Jakmile základě metod modulu CLR byly testovány a ověřit na testovací server, můžete distribuovat do provozní servery s použitím skriptu nasazení. Skript nasazení můžete vygenerovat ručně nebo pomocí SQL Server Management Studio. Podrobnější informace najdete v tématu verze SQL Server Books Online pro verzi SQL serveru, který používáte.  
@@ -54,7 +54,7 @@ GO
   
  **SQL Server Books Online**  
   
--   [Zabezpečení integrace CLR](https://go.microsoft.com/fwlink/?LinkId=115234)  
+- [Zabezpečení integrace CLR](https://go.microsoft.com/fwlink/?LinkId=115234)  
   
 ## <a name="debugging-a-clr-assembly"></a>Ladění sestavení CLR  
  Microsoft SQL Server poskytuje podporu pro ladění jazyka Transact-SQL a common language runtime (CLR) objekty v databázi. Ladění napříč jazyky funguje: uživatelé můžou kroku bez problémů do CLR objekty z příkazů jazyka Transact-SQL a naopak.  
@@ -63,7 +63,7 @@ GO
   
  **SQL Server Books Online**  
   
--   [Ladění CLR databázové objekty](https://go.microsoft.com/fwlink/?LinkId=115236)  
+- [Ladění CLR databázové objekty](https://go.microsoft.com/fwlink/?LinkId=115236)  
   
 ## <a name="see-also"></a>Viz také:
 

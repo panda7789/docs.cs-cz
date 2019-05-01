@@ -3,11 +3,11 @@ title: Konfigurace Internetové informační služby 7.0 pro službu Windows Com
 ms.date: 03/30/2017
 ms.assetid: 1050d395-092e-44d3-b4ba-66be3b039ffb
 ms.openlocfilehash: 53ba48d47d30bd94ae5544920041cd430526223b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039764"
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation
 
@@ -22,11 +22,11 @@ Internetové informační služby (IIS) 7.0 má modulárního návrhu, který v�
 
  Tato funkce má následující dílčí součásti:
 
--   Prostředí .NET
+- Prostředí .NET
 
--   Rozhraní API pro konfiguraci
+- Rozhraní API pro konfiguraci
 
--   Model procesu
+- Model procesu
 
  Pokud vyberete kořenový uzel WAS, pouze **Model procesu** podřízený uzel je ve výchozím nastavení zaškrtnuto. Mějte prosím na paměti, že v této instalaci pouze instalujete WAS, protože neexistuje žádná podpora pro webový server.
 

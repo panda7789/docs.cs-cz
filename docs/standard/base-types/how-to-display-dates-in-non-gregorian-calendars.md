@@ -14,11 +14,11 @@ ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 224e8e82b7e71d7efbfdf0ce26cc4bd783cce3c8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051205"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Postupy: Zobrazování dat v jiném než gregoriánském kalendáři
 <xref:System.DateTime> a <xref:System.DateTimeOffset> typy používají jako výchozí kalendář gregoriánský kalendář. To znamená, že volání hodnoty data a času `ToString` metoda zobrazí řetězcové vyjádření data a času v gregoriánském kalendáři, a to i v případě, že datum a čas byl vytvořen pomocí jiného kalendáře. To je znázorněno v následujícím příkladu, který používá dva různé způsoby vytváření hodnoty data a času s perský kalendář, ale stále zobrazuje tyto hodnoty data a času v gregoriánském kalendáři, při volání <xref:System.DateTime.ToString%2A> metody. Tento příklad zobrazuje dvě techniky běžně používaný, ale nesprávné pro zobrazení data v konkrétním kalendáři.  
@@ -51,19 +51,19 @@ ms.locfileid: "59313304"
   
 3. Pro každý prvek datum a čas, který chcete zobrazit volání objektu kalendáře `Get`... Metoda. Jsou dostupné tyto metody:  
   
-    -   <xref:System.Globalization.Calendar.GetYear%2A>, zobrazí se rok v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetYear%2A>, zobrazí se rok v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetMonth%2A>, má zobrazit měsíc v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetMonth%2A>, má zobrazit měsíc v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetDayOfMonth%2A>, chcete-li zobrazit číslo dne v měsíci v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetDayOfMonth%2A>, chcete-li zobrazit číslo dne v měsíci v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetHour%2A>, zobrazíte hodina dne v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetHour%2A>, zobrazíte hodina dne v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetMinute%2A>, zobrazíte dobu, po které hodiny v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetMinute%2A>, zobrazíte dobu, po které hodiny v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetSecond%2A>, zobrazíte sekund za minutu v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetSecond%2A>, zobrazíte sekund za minutu v příslušném kalendáři.  
   
-    -   <xref:System.Globalization.Calendar.GetMilliseconds%2A> , chcete-li zobrazit milisekundy za sekundu v příslušném kalendáři.  
+    - <xref:System.Globalization.Calendar.GetMilliseconds%2A> , chcete-li zobrazit milisekundy za sekundu v příslušném kalendáři.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad zobrazí datum pomocí dvou různých kalendářů. Zobrazuje datum, po definování kalendář hidžra jako výchozí kalendář pro jazykovou verzi ar JO a zobrazí datum pomocí perský kalendář, který není podporován jako volitelný kalendář jazykové verze fa-IR.  
@@ -75,13 +75,13 @@ ms.locfileid: "59313304"
   
  Příklad definuje třídu nástrojů opakovaně použitelné kalendáře, `CalendarUtility`, aby zpracoval mnoho podrobností generování řetězcovou reprezentaci data pomocí konkrétního kalendáře. `CalendarUtility` Třída má následující členy:  
   
--   Parametrizovaný konstruktor, jehož jediný parametr je <xref:System.Globalization.Calendar> objektu, ve kterém je datum a nelze je reprezentovat. To je přiřazen k soukromé pole třídy.  
+- Parametrizovaný konstruktor, jehož jediný parametr je <xref:System.Globalization.Calendar> objektu, ve kterém je datum a nelze je reprezentovat. To je přiřazen k soukromé pole třídy.  
   
--   `CalendarExists`, privátní metodu, která vrací logickou hodnotu označující, zda kalendář je představováno `CalendarUtility` objekt je podporován <xref:System.Globalization.CultureInfo> objekt, který se předá metodě jako parametr. Metoda zalamuje volání <xref:System.Array.Exists%2A?displayProperty=nameWithType> metodu, ke kterému předá <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> pole.  
+- `CalendarExists`, privátní metodu, která vrací logickou hodnotu označující, zda kalendář je představováno `CalendarUtility` objekt je podporován <xref:System.Globalization.CultureInfo> objekt, který se předá metodě jako parametr. Metoda zalamuje volání <xref:System.Array.Exists%2A?displayProperty=nameWithType> metodu, ke kterému předá <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> pole.  
   
--   `HasSameName`, privátní metodu přiřazené <xref:System.Predicate%601> delegáta, který je předán jako parametr, který se <xref:System.Array.Exists%2A?displayProperty=nameWithType> metoda. Každý člen pole je předán metodě, dokud metoda vrátí `true`. Metoda určuje, zda název volitelný kalendář je stejný jako kalendář reprezentována `CalendarUtility` objektu.  
+- `HasSameName`, privátní metodu přiřazené <xref:System.Predicate%601> delegáta, který je předán jako parametr, který se <xref:System.Array.Exists%2A?displayProperty=nameWithType> metoda. Každý člen pole je předán metodě, dokud metoda vrátí `true`. Metoda určuje, zda název volitelný kalendář je stejný jako kalendář reprezentována `CalendarUtility` objektu.  
   
--   `DisplayDate`, přetížené veřejné metody, která je předána dva parametry: buď <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu vyjádřit v kalendáři reprezentována `CalendarUtility` objekt; a jazykovou verzi, jejíž pravidla formátování se mají použít. Vrací řetězec představující datum jeho chování závisí na Určuje, zda cílový kalendář je podporován jazykovou verzi, jejíž pravidla formátování se mají použít.  
+- `DisplayDate`, přetížené veřejné metody, která je předána dva parametry: buď <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu vyjádřit v kalendáři reprezentována `CalendarUtility` objekt; a jazykovou verzi, jejíž pravidla formátování se mají použít. Vrací řetězec představující datum jeho chování závisí na Určuje, zda cílový kalendář je podporován jazykovou verzi, jejíž pravidla formátování se mají použít.  
   
  Bez ohledu na použitý k vytvoření kalendáře <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu v tomto příkladu, že hodnota je obvykle vyjádřený jako gregoriánský kalendář. Je to proto, <xref:System.DateTime> a <xref:System.DateTimeOffset> typy Nezachovávat hodnotu informace o kalendáři. Interně jsou reprezentovány jako počet značek, které uplynuly od půlnoci 1. ledna 0001. Výklad tohoto čísla závisí na kalendář. Pro většinu jazykové verze výchozí kalendář nastaven na gregoriánský kalendář.  
   

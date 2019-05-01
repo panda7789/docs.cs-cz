@@ -3,11 +3,11 @@ title: Mapování na základě atributů
 ms.date: 03/30/2017
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
 ms.openlocfilehash: d7d7c14ca12e40af643d164069cf7b0f3165fa20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032965"
 ---
 # <a name="attribute-based-mapping"></a>Mapování na základě atributů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] databáze SQL serveru se mapuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model buď použití atributů nebo pomocí externího mapování souboru. Toto téma popisuje, jak přístup založený na atributu.  
@@ -71,7 +71,7 @@ ms.locfileid: "59223560"
 |Vlastnost|Type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
 |<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteOnNull%2A>|Boolean|`false`|Při umístění na přidružení obsahující cizí klíče jsou všechny Null, odstraní objekt při přidružení je nastavena na hodnotu null.|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule%2A>|String|Žádné|Přidá chování při odstraňování přidružení.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule%2A>|String|Žádný|Přidá chování při odstraňování přidružení.|  
 |<xref:System.Data.Linq.Mapping.AssociationAttribute.IsForeignKey%2A>|Boolean|`false`|Při hodnotě true se označí jako cizí klíč v přidružení reprezentující relaci databáze člena.|  
 |<xref:System.Data.Linq.Mapping.AssociationAttribute.IsUnique%2A>|Boolean|`false`|Při hodnotě true označuje omezení jedinečnosti pro cizí klíč.|  
 |<xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A>|String|ID související třídy|Jednoho nebo více členů třídy cílové entity označí jako klíčové hodnoty na druhé straně asociace.|  
@@ -114,7 +114,7 @@ ms.locfileid: "59223560"
   
 |Vlastnost|Type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.ParameterAttribute.DbType%2A>|String|Žádné|Určuje typ databáze.|  
+|<xref:System.Data.Linq.Mapping.ParameterAttribute.DbType%2A>|String|Žádný|Určuje typ databáze.|  
 |<xref:System.Data.Linq.Mapping.ParameterAttribute.Name%2A>|String|Stejný řetězec jako název parametru v databázi|Určuje název parametru.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.ParameterAttribute>.  

@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
 ms.openlocfilehash: 6ff6170fd1cdd0c69ecc8729cc8199cceea43ffa
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019708"
 ---
 # <a name="general-guidance"></a>Obecné pokyny
 
@@ -17,11 +17,11 @@ Tato část obsahuje přehled kdy zvolit .NET Core nebo .NET Framework. Společn
 
 Pro kontejnerizované aplikace Dockeru serveru byste měli použít .NET Core s Linuxem nebo Windows kontejnery, když:
 
--   Máte požadavky napříč platformami. Můžete třeba používat kontejnery Windows i Linux.
+- Máte požadavky napříč platformami. Můžete třeba používat kontejnery Windows i Linux.
 
--   Vaše aplikace architektura je založená na mikroslužbách.
+- Vaše aplikace architektura je založená na mikroslužbách.
 
--   Potřebujete rychle se pusťte do kontejnerů a aby bylo možné snížit náklady na mají malé náklady na kontejner k dosažení vyšší hustotu nebo více kontejnerů na jednotku hardwaru.
+- Potřebujete rychle se pusťte do kontejnerů a aby bylo možné snížit náklady na mají malé náklady na kontejner k dosažení vyšší hustotu nebo více kontejnerů na jednotku hardwaru.
 
 Stručně řečeno když vytvoříte nový kontejnerizované aplikace .NET, měli byste zvážit .NET Core jako výchozí volbu. Má mnoho výhod a nejlépe s filozofií kontejnery a stylu práce.
 
@@ -29,20 +29,20 @@ Další výhodou používání .NET Core je, abyste mohli spouštět souběžně
 
 Rozhraní .NET Framework byste měli použít své kontejnerizované aplikace Dockeru serveru při:
 
--   Vaše aplikace právě používá rozhraní .NET Framework a obsahuje silné závislosti na Windows.
+- Vaše aplikace právě používá rozhraní .NET Framework a obsahuje silné závislosti na Windows.
 
--   Budete muset použít rozhraní Windows API, která nepodporuje .NET Core.
+- Budete muset použít rozhraní Windows API, která nepodporuje .NET Core.
 
--   Budete muset použít .NET knihovny třetích stran nebo balíčky NuGet, které nejsou dostupné pro .NET Core.
+- Budete muset použít .NET knihovny třetích stran nebo balíčky NuGet, které nejsou dostupné pro .NET Core.
 
 Pomocí rozhraní .NET Framework v Dockeru lze vylepšit prostředí pro vaše nasazení minimalizovat potíže s nasazením. To ["metodou lift and shift" scénář](https://aka.ms/liftandshiftwithcontainersebook) je důležité pro uzavření do kontejneru starších aplikací, které byly původně vyvinuta tradiční rozhraní .NET Framework, jako je webových formulářů ASP.NET, MVC, web apps nebo WCF (Windows Communication Foundation ) služby.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **elektronická kniha: Modernizace stávajících aplikací rozhraní .NET Framework s využitím Azure a kontejnery Windows**  
+- **elektronická kniha: Modernizace stávajících aplikací rozhraní .NET Framework s využitím Azure a kontejnery Windows**  
     https://aka.ms/liftandshiftwithcontainersebook
 
--   **Ukázkové aplikace: Modernizace starší verze webových aplikací ASP.NET s využitím kontejnerů Windows**  
+- **Ukázkové aplikace: Modernizace starší verze webových aplikací ASP.NET s využitím kontejnerů Windows**  
     https://aka.ms/eshopmodernizing
 
 >[!div class="step-by-step"]

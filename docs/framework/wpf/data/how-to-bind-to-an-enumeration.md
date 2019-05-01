@@ -7,11 +7,11 @@ helpviewer_keywords:
 - enumeration [WPF]
 ms.assetid: b9091eba-1119-424e-868b-d1a4168b3732
 ms.openlocfilehash: 5026261366d6abde82790f05780d8ba2c29c4a49
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62021008"
 ---
 # <a name="how-to-bind-to-an-enumeration"></a>Postupy: Vytvoření vazby k výčtu
 Tento příklad ukazuje, jak připojení k vyčíslení navázáním metoda GetValues výčtu.  

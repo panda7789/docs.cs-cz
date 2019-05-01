@@ -8,11 +8,11 @@ helpviewer_keywords:
 - ScrollViewer control [WPF], how-to topics
 ms.assetid: 1e20804b-1d80-4b54-af41-76b3e10a6f89
 ms.openlocfilehash: fcb7809c1025997a0e78647c32590e1abee865ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971012"
 ---
 # <a name="scrollviewer-how-to-topics"></a>ScrollViewer – postupy
 Témata v této části ukazují, jak používat <xref:System.Windows.Controls.ScrollViewer> prvek, který chcete vytvořit oblasti posuvný ve svých aplikacích.  

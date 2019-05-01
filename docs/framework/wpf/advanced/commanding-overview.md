@@ -14,11 +14,11 @@ helpviewer_keywords:
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
 ms.openlocfilehash: 4071f7f08c2b25a2ec551832f57a2b9a7facc91d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59139032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037086"
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
 <a name="introduction"></a> Příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytující vstupní zpracování více sémantických úrovni, než vstupní zařízení. Příklady příkazů **kopírování**, **Vyjmout**, a **vložit** nalézt operace v mnoha aplikacích.  
@@ -27,15 +27,15 @@ ms.locfileid: "59139032"
   
  Toto téma obsahuje následující oddíly:  
   
--   [Co jsou příkazy?](#commands_at_10000_feet)  
+- [Co jsou příkazy?](#commands_at_10000_feet)  
   
--   [Příklad jednoduchého příkazu v subsystému WPF](#simple_command)  
+- [Příklad jednoduchého příkazu v subsystému WPF](#simple_command)  
   
--   [Čtyři hlavní koncepty v WPF příkazů](#Four_main_Concepts)  
+- [Čtyři hlavní koncepty v WPF příkazů](#Four_main_Concepts)  
   
--   [Knihovna příkazů](#Command_Library)  
+- [Knihovna příkazů](#Command_Library)  
   
--   [Vytváření vlastních příkazů](#creating_commands)  
+- [Vytváření vlastních příkazů](#creating_commands)  
   
 <a name="commands_at_10000_feet"></a>   
 ## <a name="what-are-commands"></a>Co jsou příkazy?  
@@ -60,13 +60,13 @@ ms.locfileid: "59139032"
 ## <a name="four-main-concepts-in-wpf-commanding"></a>Čtyři hlavní koncepty v WPF příkazů  
  Model směrování příkazu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lze rozdělit do čtyř hlavních konceptech: příkaz, příkaz zdroj, cíl příkazu a vazba příkazu:  
   
--   *Příkaz* je akce, která má být proveden.  
+- *Příkaz* je akce, která má být proveden.  
   
--   *Zdroj příkazu* je objekt, který vyvolá příkaz.  
+- *Zdroj příkazu* je objekt, který vyvolá příkaz.  
   
--   *Cíl příkazu* je objekt, který se na spuštění příkazu.  
+- *Cíl příkazu* je objekt, který se na spuštění příkazu.  
   
--   *Příkaz vazby* je objekt, který mapuje logiky příkazu pro příkaz.  
+- *Příkaz vazby* je objekt, který mapuje logiky příkazu pro příkaz.  
   
  V předchozím příkladu <xref:System.Windows.Input.ApplicationCommands.Paste%2A> příkaz je příkaz, <xref:System.Windows.Controls.MenuItem> je zdrojem příkaz <xref:System.Windows.Controls.TextBox> je cíl příkazu a poskytl vazba příkazu <xref:System.Windows.Controls.TextBox> ovládacího prvku.  Je vhodné poznamenat, že není vždy případu, který <xref:System.Windows.Input.CommandBinding> je poskytnut pomocí ovládacího prvku, který je cílovou třídu příkazu.  Poměrně často <xref:System.Windows.Input.CommandBinding> musí vytvořit vývojář aplikace, nebo <xref:System.Windows.Input.CommandBinding> může připojit k nadřazena cíli příkazu.  
   
@@ -88,11 +88,11 @@ ms.locfileid: "59139032"
   
  <xref:System.Windows.Input.ICommandSource> Zpřístupní vlastnosti pro tři: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>, a <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>:  
   
--   <xref:System.Windows.Input.ICommandSource.Command%2A> je příkaz provedený při vyvolání příkazu zdroje.  
+- <xref:System.Windows.Input.ICommandSource.Command%2A> je příkaz provedený při vyvolání příkazu zdroje.  
   
--   <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je objekt, který se má spustit příkaz.  Je vhodné poznamenat, že v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> vlastnost <xref:System.Windows.Input.ICommandSource> jde použít jenom při <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand>.  Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je nastavena na <xref:System.Windows.Input.ICommandSource> a odpovídajícího příkazu není <xref:System.Windows.Input.RoutedCommand>, cíl příkazu se ignoruje. Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> není nastaven, element s fokus klávesnice bude cíli příkazu.  
+- <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je objekt, který se má spustit příkaz.  Je vhodné poznamenat, že v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> vlastnost <xref:System.Windows.Input.ICommandSource> jde použít jenom při <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand>.  Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je nastavena na <xref:System.Windows.Input.ICommandSource> a odpovídajícího příkazu není <xref:System.Windows.Input.RoutedCommand>, cíl příkazu se ignoruje. Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> není nastaven, element s fokus klávesnice bude cíli příkazu.  
   
--   <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> implementuje uživatelsky definovaný datový typ používaný k předávání informací do obslužné rutiny příkazu.  
+- <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> implementuje uživatelsky definovaný datový typ používaný k předávání informací do obslužné rutiny příkazu.  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Třídy, které implementují <xref:System.Windows.Input.ICommandSource> jsou <xref:System.Windows.Controls.Primitives.ButtonBase>, <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Documents.Hyperlink>, a <xref:System.Windows.Input.InputBinding>.  <xref:System.Windows.Controls.Primitives.ButtonBase>, <xref:System.Windows.Controls.MenuItem>, a <xref:System.Windows.Documents.Hyperlink> vyvolat příkaz při kliknutí a vlastní <xref:System.Windows.Input.InputBinding> Vyvolá příkaz při <xref:System.Windows.Input.InputGesture> přidružené pomocí provádí.  
   

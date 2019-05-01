@@ -18,11 +18,11 @@ helpviewer_keywords:
 - minus operator [Visual Basic]
 ms.assetid: bff2c368-662d-4c92-ac87-1d9bdfd3426a
 ms.openlocfilehash: 1a5c47a2f1bc8a8b9e1b0263b90006a0e58e17bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013475"
 ---
 # <a name="--operator-visual-basic"></a>- – operátor (Visual Basic)
 Vrátí rozdíl dvou numerických výrazů nebo zápornou hodnotu číselného výrazu.  

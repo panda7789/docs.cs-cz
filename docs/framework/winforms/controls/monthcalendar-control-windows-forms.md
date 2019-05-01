@@ -8,11 +8,11 @@ helpviewer_keywords:
 - calendars
 ms.assetid: 051c6518-e0ca-426b-855c-f9bf70972970
 ms.openlocfilehash: 589eb55e001441230da3f8a0c5652c2a3dccb829
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012747"
 ---
 # <a name="monthcalendar-control-windows-forms"></a>MonthCalendar – ovládací prvek (Windows Forms)
 Windows Forms `MonthCalendar` ovládací prvek zobrazí intuitivní grafické rozhraní pro uživatele k zobrazení a nastavit informace o datu. Ovládací prvek zobrazí mřížka obsahující číslované dny v měsíci, uspořádané do sloupce pod dny v týdnu. Můžete vybrat jiného měsíce kliknutím na tlačítka se šipkami na obou stranách titulek měsíce. Na rozdíl od podobný <xref:System.Windows.Forms.DateTimePicker> ovládacího prvku, můžete zvolit rozsah kalendářních dat pomocí tohoto ovládacího prvku, ale <xref:System.Windows.Forms.DateTimePicker> ovládací prvek umožňuje nastavit dobu a také kalendářní data.  

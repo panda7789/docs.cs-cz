@@ -3,11 +3,11 @@ title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
 ms.openlocfilehash: b1d86fa57b31d1f9be12f76c28f9d042e7e28e24
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59138201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052557"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 Modul Snap-in konzoly MMC WS-AtomicTransaction konfigurace slouží ke konfiguraci část nastavení WS-AtomicTransaction na místních i vzdálených počítačích.  

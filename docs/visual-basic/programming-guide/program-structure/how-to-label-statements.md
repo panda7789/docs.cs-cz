@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Visual Basic code, labeling statements
 ms.assetid: 38f1ff43-2054-42cb-963b-1998e60c6ed4
 ms.openlocfilehash: 69ec8c7625410f140c59ba8dd492dca76857eb96
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050429"
 ---
 # <a name="how-to-label-statements-visual-basic"></a>Postupy: Popisek příkazy (Visual Basic)
 Blok příkazu jsou tvořené řádků kódu, které jsou odděleny dvojtečkami. Řádky kódu předchází identifikační řetězec nebo celé číslo se označují jako *označené*. Popisky příkazů se používá k označení řádku kódu k jeho identifikaci při použití s příkazy, jako `On Error Goto`.  
@@ -28,7 +28,7 @@ Blok příkazu jsou tvořené řádků kódu, které jsou odděleny dvojtečkami
   
 ### <a name="to-label-a-line-of-code"></a>K označení řádku kódu  
   
--   Místo identifikátoru, za nímž následuje dvojtečka, na začátek řádku zdrojového kódu.  
+- Místo identifikátoru, za nímž následuje dvojtečka, na začátek řádku zdrojového kódu.  
   
      Například následující řádky kódu jsou označeny `Jump` a `120`v uvedeném pořadí:  
   

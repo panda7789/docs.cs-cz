@@ -3,11 +3,11 @@ title: ActivityTransfer
 ms.date: 03/30/2017
 ms.assetid: fc40ef17-2a92-4ce2-853c-6ba8e5d571f3
 ms.openlocfilehash: 936e870c1ec991e2e33acf8a08ccc93975989679
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50034419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61964291"
 ---
 # <a name="activitytransfer"></a>ActivityTransfer
 Aktivita událost přenosu  
@@ -30,17 +30,17 @@ class ActivityTransfer : WSAT_TraceEvent
   
 ### <a name="activityid"></a>ID aktivity  
   
--   Datový typ: objekt  
-    Přístup k typu: jen pro čtení  
+- Datový typ: objekt  
+    Typ přístupu: jen pro čtení  
   
--   ID aktivity  
+- ID aktivity  
   
-### <a name="relatedactivityid"></a>Mít  
+### <a name="relatedactivityid"></a>RelatedActivityID  
   
--   Datový typ: objekt  
-    Přístup k typu: jen pro čtení  
+- Datový typ: objekt  
+    Typ přístupu: jen pro čtení  
   
--   ID související aktivity  
+- ID související aktivity  
   
 ## <a name="requirements"></a>Požadavky  
   

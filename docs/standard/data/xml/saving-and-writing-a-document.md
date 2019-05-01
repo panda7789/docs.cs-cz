@@ -9,28 +9,28 @@ ms.assetid: 097b0cb1-5743-4c3a-86ef-caf5cbe6750d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 83aad5d45dda1784069839662486f7dbcc307542
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027027"
 ---
 # <a name="saving-and-writing-a-document"></a>Ukládání a zápis dokumentu
 Při načtení a uložení <xref:System.Xml.XmlDocument>, uložený dokument může lišit od původních následujícími způsoby:  
   
--   Pokud <xref:System.Xml.XmlDocument.PreserveWhitespace%2A> je nastavena na `true` před <xref:System.Xml.XmlDocument.Save%2A> metoda je volána, prázdné znaky v dokumentu je zachována ve výstupu; pokud je tato vlastnost `false`, <xref:System.Xml.XmlDocument> Automatické odsazení výstupu.  
+- Pokud <xref:System.Xml.XmlDocument.PreserveWhitespace%2A> je nastavena na `true` před <xref:System.Xml.XmlDocument.Save%2A> metoda je volána, prázdné znaky v dokumentu je zachována ve výstupu; pokud je tato vlastnost `false`, <xref:System.Xml.XmlDocument> Automatické odsazení výstupu.  
   
--   Všechny prázdné znaky mezi atributy se zkrátilo na jediné místo znak.  
+- Všechny prázdné znaky mezi atributy se zkrátilo na jediné místo znak.  
   
--   Prázdné znaky mezi elementy se změní. Zachování významných mezer a nevýznamné prázdný znak není. Ale když je dokument uložen, použije <xref:System.Xml.XmlTextWriter> **Indenting** režimu ve výchozím nastavení elegantně vytisknout výstup, aby byl lépe čitelný.  
+- Prázdné znaky mezi elementy se změní. Zachování významných mezer a nevýznamné prázdný znak není. Ale když je dokument uložen, použije <xref:System.Xml.XmlTextWriter> **Indenting** režimu ve výchozím nastavení elegantně vytisknout výstup, aby byl lépe čitelný.  
   
--   Uvozovky kolem hodnot atributů použít se změní na dvojitými uvozovkami. ve výchozím nastavení. Můžete použít <xref:System.Xml.XmlTextReader.QuoteChar%2A> vlastnost <xref:System.Xml.XmlTextWriter> nastavit znak pro uvození dvojité uvozovky nebo jednoduchá uvozovka.  
+- Uvozovky kolem hodnot atributů použít se změní na dvojitými uvozovkami. ve výchozím nastavení. Můžete použít <xref:System.Xml.XmlTextReader.QuoteChar%2A> vlastnost <xref:System.Xml.XmlTextWriter> nastavit znak pro uvození dvojité uvozovky nebo jednoduchá uvozovka.  
   
--   Ve výchozím nastavení, jako je číselný znak entity `{` rozbaleny.  
+- Ve výchozím nastavení, jako je číselný znak entity `{` rozbaleny.  
   
--   Nezachová se značkou pořadí bajtů nalezen ve vstupním dokumentu. UCS-2 je uložen jako UTF-8, dokud explicitně nevytvoříte deklarace XML, který určuje jiné kódování.  
+- Nezachová se značkou pořadí bajtů nalezen ve vstupním dokumentu. UCS-2 je uložen jako UTF-8, dokud explicitně nevytvoříte deklarace XML, který určuje jiné kódování.  
   
--   Pokud chcete vypsat <xref:System.Xml.XmlDocument> do souboru nebo datového proudu zapsat výstup je stejný jako obsah dokumentu. To znamená <xref:System.Xml.XmlDeclaration> je zapsán pouze pokud je obsažena v dokumentu a kódování použité při zápisu dokument je stejný kódování podle uzlu deklarací.  
+- Pokud chcete vypsat <xref:System.Xml.XmlDocument> do souboru nebo datového proudu zapsat výstup je stejný jako obsah dokumentu. To znamená <xref:System.Xml.XmlDeclaration> je zapsán pouze pokud je obsažena v dokumentu a kódování použité při zápisu dokument je stejný kódování podle uzlu deklarací.  
   
 ## <a name="writing-an-xmldeclaration"></a>Zápis XmlDeclaration  
  <xref:System.Xml.XmlDocument> a <xref:System.Xml.XmlDeclaration> členy <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlNode.InnerXml%2A>, a <xref:System.Xml.XmlNode.WriteTo%2A>, kromě <xref:System.Xml.XmlDocument> metody <xref:System.Xml.XmlDocument.Save%2A> a <xref:System.Xml.XmlDocument.WriteContentTo%2A>, vytvořit deklaraci XML.  

@@ -3,20 +3,20 @@ title: Generování relací datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
 ms.openlocfilehash: 29c0e9ee96c376c6da392692febccbbae3c6a33f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034317"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Generování relací datové sady ze schématu XML (XSD)
 V <xref:System.Data.DataSet>, formuláře přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřízenosti a podřízenosti. Existují tři způsoby, jak reprezentaci **datovou sadu** vztahu v rámci schématu schématu XML definice jazyk (XSD):  
   
--   Zadejte vnořené komplexní typy.  
+- Zadejte vnořené komplexní typy.  
   
--   Použití **msdata:Relationship** poznámky.  
+- Použití **msdata:Relationship** poznámky.  
   
--   Zadejte **xs:keyref** bez **msdata:ConstraintOnly** poznámky.  
+- Zadejte **xs:keyref** bez **msdata:ConstraintOnly** poznámky.  
   
 ## <a name="nested-complex-types"></a>Vnořené komplexní typy  
  Vnořené komplexní typ definice ve schématu označují vztahy nadřazenosti a podřízenosti prvků. Následující fragment XML schéma ukazuje, že **OrderDetail** je podřízený prvek **pořadí** elementu.  

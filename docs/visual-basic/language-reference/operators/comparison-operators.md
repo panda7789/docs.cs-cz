@@ -31,11 +31,11 @@ helpviewer_keywords:
 - comparison operators [Visual Basic], Visual Basic
 ms.assetid: d6cb12a8-e52e-46a7-8aaf-f804d634a825
 ms.openlocfilehash: 9014cac5e2f3933b27411dfe5681fc16f4cdde30
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013579"
 ---
 # <a name="comparison-operators-visual-basic"></a>Operátory porovnání (Visual Basic)
 Níže jsou operátory porovnání, které jsou definovány v jazyce Visual Basic.  

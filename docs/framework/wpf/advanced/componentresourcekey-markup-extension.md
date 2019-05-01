@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XAML [WPF], ComponentResourceKey markup extension
 ms.assetid: d6bcdbe6-61b3-40a7-b381-4e02185b5a85
 ms.openlocfilehash: 5f72d6c3273cfda4276383cfe72f90196e5d4340
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037749"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey – rozšíření značek
 Definuje a klíče pro prostředky, které jsou načteny z externího sestavení odkazuje. To umožňuje vyhledávání prostředků zadat typ cíle v sestavení, nikoli slovníku explicitní prostředků v sestavení nebo třídy.  
@@ -52,9 +52,9 @@ Definuje a klíče pro prostředky, které jsou načteny z externího sestavení
 ## <a name="remarks"></a>Poznámky  
  Jak je znázorněno výše, použití {`ComponentResourceKey`} použití rozšíření značky se nachází na dvou místech:  
   
--   Definice klíče ve slovníku prostředků motivu, podle autora ovládacího prvku.  
+- Definice klíče ve slovníku prostředků motivu, podle autora ovládacího prvku.  
   
--   Přístup k prostředku motiv ze sestavení, když jsou retemplating ovládací prvek ale chcete použít hodnoty vlastností, které pocházejí z prostředků poskytované motivy ovládacího prvku.  
+- Přístup k prostředku motiv ze sestavení, když jsou retemplating ovládací prvek ale chcete použít hodnoty vlastností, které pocházejí z prostředků poskytované motivy ovládacího prvku.  
   
  Pro odkazování na komponenty prostředky, které pocházejí z motivy, obecně doporučujeme používat `{DynamicResource}` spíše než `{StaticResource}`. To je ukázáno uplatňovány na. `{DynamicResource}` je doporučeno, protože samotný motivu lze změnit uživatelem. Pokud chcete, aby komponenta prostředek, který nejlépe odpovídá ovládacího prvku Autor záměr pro podporu motiv, byste měli povolit odkaz na prostředek vaše komponenta také být dynamická.  
   

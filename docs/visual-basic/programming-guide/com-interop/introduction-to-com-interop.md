@@ -6,11 +6,11 @@ helpviewer_keywords:
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 ms.openlocfilehash: e4421cbc40cdccc1dbbaeb459cb12fda0ee407cf
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62022347"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních komponentách a k hostování aplikací. Zatímco objekty modelu COM byly nezbytné k programování po mnoho let Windows, aplikací navržených pro modul common language runtime (CLR) nabízí celou řadu výhod.  
@@ -28,15 +28,15 @@ Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních 
 ## <a name="type-libraries-and-assembly-manifests"></a>Manifesty sestavení a knihoven typů  
  Knihovny typů popisují vlastnosti objektů modelu COM, jako jsou názvy členů a datové typy. Manifesty sestavení provádí stejnou funkci pro [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikací. Patří mezi ně následující informace:  
   
--   Identitu sestavení, verzi, jazykovou verzi a digitální podpis.  
+- Identitu sestavení, verzi, jazykovou verzi a digitální podpis.  
   
--   Soubory, které tvoří sestavení implementace.  
+- Soubory, které tvoří sestavení implementace.  
   
--   Typy a prostředky, které tvoří sestavení. To zahrnuje ty, které jsou exportovány z něj.  
+- Typy a prostředky, které tvoří sestavení. To zahrnuje ty, které jsou exportovány z něj.  
   
--   Kompilace závislosti na ostatních sestaveních.  
+- Kompilace závislosti na ostatních sestaveních.  
   
--   Oprávnění vyžadovaná pro sestavení spuštěn správně.  
+- Oprávnění vyžadovaná pro sestavení spuštěn správně.  
   
  Další informace o sestavení a sestavení manifesty, naleznete v tématu [sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
   
@@ -57,7 +57,7 @@ Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních 
 - [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 - [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)
 - [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
-- [Sestavení v rozhraní .NET](../../../standard/assembly/index.md)
+- [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
 - [Zařazování spolupráce](../../../framework/interop/interop-marshaling.md)

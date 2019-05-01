@@ -12,11 +12,11 @@ ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 10f947fc44e69368e30614e0b41eaf7c73fb6563
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026195"
 ---
 # <a name="garbage-collection-notifications"></a>Oznámení pro kolekci paměti
 Existují situace, ve kterých může úplného uvolňování paměti kolekce (to znamená, že kolekce generace 2) modulem common language runtime nepříznivě ovlivnit výkon. To může být problém zvláště u serverů, které zpracovávají velký objem požadavků. v takovém případě dlouhé uvolnění paměti může způsobit vypršení časového limitu požadavku. Pokud chcete zabránit celé kolekce, ze které se vyskytují během kritických období, můžete být upozorněni, že úplné uvolnění paměti se blíží a pak provedete akce vedoucí k přesměrování zatížení k jiné instanci serveru. Můžete také zahájit kolekce sami, za předpokladu, že není potřeba zpracovávat požadavky na aktuální instanci serveru.  
@@ -28,26 +28,26 @@ Existují situace, ve kterých může úplného uvolňování paměti kolekce (t
   
  Chcete-li zjistit, kdy bylo vyvoláno upozornění, použijte <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody. Obvykle se používají tyto metody v `while` smyčky průběžně získat <xref:System.GCNotificationStatus> výčet, který se zobrazuje stav oznámení. Pokud je tato hodnota <xref:System.GCNotificationStatus.Succeeded>, abyste udělali toto:  
   
--   V reakci na oznámení získali díky <xref:System.GC.WaitForFullGCApproach%2A> metodu, můžete přesměrovat úlohy a potenciálně způsobit kolekce sami.  
+- V reakci na oznámení získali díky <xref:System.GC.WaitForFullGCApproach%2A> metodu, můžete přesměrovat úlohy a potenciálně způsobit kolekce sami.  
   
--   V reakci na oznámení získali díky <xref:System.GC.WaitForFullGCComplete%2A> metodu, můžete provést aktuální instance serveru k dispozici pro zpracování požadavků znovu. Může také shromažďovat informace. Například můžete použít <xref:System.GC.CollectionCount%2A> metoda k zaznamenání počtu kolekcí.  
+- V reakci na oznámení získali díky <xref:System.GC.WaitForFullGCComplete%2A> metodu, můžete provést aktuální instance serveru k dispozici pro zpracování požadavků znovu. Může také shromažďovat informace. Například můžete použít <xref:System.GC.CollectionCount%2A> metoda k zaznamenání počtu kolekcí.  
   
  <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody jsou navrženy pro práci společně. Pomocí jednoho bez nich můžete výsledky neurčitý.  
   
 ## <a name="full-garbage-collection"></a>Úplné uvolňování paměti  
  Modul runtime způsobuje úplného uvolňování paměti kolekce, když je splněna některá z následujících scénářů:  
   
--   Dostatek paměti má byla povýšeny do generace 2 způsobit další generaci 2 kolekce.  
+- Dostatek paměti má byla povýšeny do generace 2 způsobit další generaci 2 kolekce.  
   
--   Dostatek paměti byl povýšen na velkých objektových haldách způsobit další generaci 2 kolekce.  
+- Dostatek paměti byl povýšen na velkých objektových haldách způsobit další generaci 2 kolekce.  
   
--   Sběr generace 1 je eskalován jej kolekce generace 2 z důvodu dalších faktorů.  
+- Sběr generace 1 je eskalován jej kolekce generace 2 z důvodu dalších faktorů.  
   
  Prahové hodnoty, které zadáte <xref:System.GC.RegisterForFullGCNotification%2A> metoda platí pro první dva scénáře. První scénář, nebude však vždycky dostat oznámení v době úměrná prahové hodnoty, kterou zadáte pro dva důvody:  
   
--   Modul runtime nekontroluje každý přidělení malých objektů (z důvodů výkonu).  
+- Modul runtime nekontroluje každý přidělení malých objektů (z důvodů výkonu).  
   
--   Pouze generace 1 kolekce propagace paměti do 2. generace.  
+- Pouze generace 1 kolekce propagace paměti do 2. generace.  
   
  Třetí scénář také přispívá ke nejistota když bude oznámení zasláno. I když to není zárukou, že bude užitečný způsob, jak zmírnit efekty nevhodnou úplného uvolňování přesměrování požadavků během této doby nebo nevyvolá kolekci, sami když ho může lépe vyhovovat.  
   
@@ -70,7 +70,7 @@ Existují situace, ve kterých může úplného uvolňování paměti kolekce (t
   
  <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody volání svých metod uživatele zpracování událostí při vyvolání oznámení:  
   
--   `OnFullGCApproachNotify`  
+- `OnFullGCApproachNotify`  
   
      Tato metoda volá `RedirectRequests` metody uživatele, který nastaví server služby Řízení front žádost o pozastavení odesílání požadavku na server. To se simuluje nastavením proměnné úrovni třídy `bAllocate` k `false` tak, aby se přidělují žádné další objekty.  
   
@@ -78,7 +78,7 @@ Existují situace, ve kterých může úplného uvolňování paměti kolekce (t
   
      Uvolňování paměti je vyvolaných finally, protože je zatížení světla.  
   
--   `OnFullGCCompleteNotify`  
+- `OnFullGCCompleteNotify`  
   
      Tato metoda volá metodu uživatele `AcceptRequests` obnovit přijímá žádosti, protože na serveru už není náchylné k úplné uvolnění paměti. Tato akce se simuluje tak, že nastavíte `bAllocate` proměnnou `true` tak, aby objekty může pokračovat se přidávají do <xref:System.Collections.Generic.List%601> kolekce.  
   

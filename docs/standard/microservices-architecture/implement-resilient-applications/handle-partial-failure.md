@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/16/2018
 ms.openlocfilehash: 16b6237f79d6b4bc2bc9152ba6eb023ffbd3899f
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61977675"
 ---
 # <a name="handle-partial-failure"></a>Zpracování částečného selhání
 

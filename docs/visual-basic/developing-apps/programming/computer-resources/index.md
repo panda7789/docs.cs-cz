@@ -7,26 +7,26 @@ helpviewer_keywords:
 - computer resources [Visual Basic], accessing
 ms.assetid: 75b81c88-f7c0-46e0-95c8-0c006d2120f9
 ms.openlocfilehash: 7128a71f28d1755a14fcda5f09bee11202ab4154
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014538"
 ---
 # <a name="accessing-computer-resources-visual-basic"></a>Přístup k prostředkům počítače (Visual Basic)
 
 `My.Computer` Objektu je jednou tři centrální objektů v `My`, poskytuje přístup k informacím a běžně používané funkce. `My.Computer` poskytuje metody, vlastnosti a události pro přístup k počítači, na kterém je aplikace spuštěna. Jeho objekty patří:  
   
--   <xref:Microsoft.VisualBasic.Devices.Audio>
--   Schránka (<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>)
--   <xref:Microsoft.VisualBasic.Devices.Clock>
--   <xref:Microsoft.VisualBasic.FileIO.FileSystem>
--   <xref:Microsoft.VisualBasic.Devices.ServerComputer.Info%2A>
--   <xref:Microsoft.VisualBasic.Devices.Keyboard>
--   <xref:Microsoft.VisualBasic.Devices.Mouse>
--   <xref:Microsoft.VisualBasic.Devices.Network>
--   <xref:Microsoft.VisualBasic.Devices.Ports>
--   Registr (<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>)
+- <xref:Microsoft.VisualBasic.Devices.Audio>
+- Schránka (<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>)
+- <xref:Microsoft.VisualBasic.Devices.Clock>
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem>
+- <xref:Microsoft.VisualBasic.Devices.ServerComputer.Info%2A>
+- <xref:Microsoft.VisualBasic.Devices.Keyboard>
+- <xref:Microsoft.VisualBasic.Devices.Mouse>
+- <xref:Microsoft.VisualBasic.Devices.Network>
+- <xref:Microsoft.VisualBasic.Devices.Ports>
+- Registr (<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>)
   
 ## <a name="in-this-section"></a>V tomto oddílu
 

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - layout pass [WPF]
 ms.assetid: 005f4cda-a849-448b-916b-38d14d9a96fe
 ms.openlocfilehash: 8a76dd5de9f374d77345eeab3d259624546fed7c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59107065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050217"
 ---
 # <a name="optimizing-performance-layout-and-design"></a>Optimalizace výkonu: Rozložení a návrh
 Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci může ovlivnit její výkon tak, že vytvoříte zbytečnou režii v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu, mohou ovlivnit charakteristiky výkonu vaší aplikace.  
@@ -26,25 +26,25 @@ Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-w
   
  Systém rozložení dokončení dva průchody pro každý podřízený člen v kolekci: míra pass a průchodu uspořádat. Každý podřízený objekt poskytuje vlastní přepsané provádění <xref:System.Windows.UIElement.Measure%2A> a <xref:System.Windows.UIElement.Arrange%2A> metody za účelem zajišťují vlastní chování specifické rozložení. V nejjednodušším rozložení je rekurzivní, která vede k elementu se velikost, umístěn a vykreslit na obrazovce.  
   
--   Podřízený <xref:System.Windows.UIElement> objekt zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
+- Podřízený <xref:System.Windows.UIElement> objekt zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
   
--   Objektu <xref:System.Windows.FrameworkElement> vlastnosti, které se vztahují na velikost, například <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>, jsou vyhodnocovány.  
+- Objektu <xref:System.Windows.FrameworkElement> vlastnosti, které se vztahují na velikost, například <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>, jsou vyhodnocovány.  
   
--   <xref:System.Windows.Controls.Panel>– Logika specifická pro použití, jako <xref:System.Windows.Controls.DockPanel.Dock%2A> vlastnost <xref:System.Windows.Controls.DockPanel>, nebo <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost <xref:System.Windows.Controls.StackPanel>.  
+- <xref:System.Windows.Controls.Panel>– Logika specifická pro použití, jako <xref:System.Windows.Controls.DockPanel.Dock%2A> vlastnost <xref:System.Windows.Controls.DockPanel>, nebo <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost <xref:System.Windows.Controls.StackPanel>.  
   
--   Obsah je uspořádat nebo po změření všechny podřízené objekty umístěny.  
+- Obsah je uspořádat nebo po změření všechny podřízené objekty umístěny.  
   
--   Kolekce podřízených objektů vykreslením na obrazovku.  
+- Kolekce podřízených objektů vykreslením na obrazovku.  
   
  Proces průchodu rozložení je znovu vyvolána, pokud kterákoli z následujících akcí:  
   
--   Podřízený objekt se přidá do kolekce.  
+- Podřízený objekt se přidá do kolekce.  
   
--   A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije na podřízený objekt.  
+- A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije na podřízený objekt.  
   
--   <xref:System.Windows.UIElement.UpdateLayout%2A> Metoda je volána pro podřízený objekt.  
+- <xref:System.Windows.UIElement.UpdateLayout%2A> Metoda je volána pro podřízený objekt.  
   
--   Když dojde k hodnotě vlastnosti závislosti, která je označená pomocí metadat by to mělo dopad měření nebo uspořádání předá ke změně.  
+- Když dojde k hodnotě vlastnosti závislosti, která je označená pomocí metadat by to mělo dopad měření nebo uspořádání předá ke změně.  
   
 ### <a name="use-the-most-efficient-panel-where-possible"></a>Použít Panel nejúčinnější, kde je to možné  
  Složitost procesu rozložení je přímo založena na chování rozložení <xref:System.Windows.Controls.Panel>-odvozené elementy, které používáte. Například <xref:System.Windows.Controls.Grid> nebo <xref:System.Windows.Controls.StackPanel> řízení poskytuje výrazně víc funkcí než <xref:System.Windows.Controls.Canvas> ovládacího prvku. Cena za toto větší zvýšení funkce je větší zvýšení nákladů na výkon. Ale pokud nechcete, aby funkce, která <xref:System.Windows.Controls.Grid> poskytuje ovládací prvek, jako byste měli použít méně nákladnější alternativy <xref:System.Windows.Controls.Canvas> nebo vlastní panel.  

@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 44a4b5903cec2249eb1e176381fe3d8e600dd5e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59145870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62046108"
 ---
 # <a name="corcallingconvention-enumeration"></a>CorCallingConvention – výčet
 Obsahuje hodnoty, které popisují typy konvence volání, které probíhají ve spravovaném kódu.  

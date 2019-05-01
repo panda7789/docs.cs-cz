@@ -14,11 +14,11 @@ helpviewer_keywords:
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
 ms.openlocfilehash: b6f625f76e230b7d6bf0488bfa75c227de31a5d0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62030300"
 ---
 # <a name="property-change-events"></a>Události změny vlastnosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] definuje několik událostí, které jsou vyvolány v reakci na změnu v hodnotě vlastnosti. Vlastnost je často vlastnost závislosti. Samotné události je někdy směrované události a v některých případech je standard [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Definice události se liší v závislosti na scénáři, protože některé změny vlastností se více odpovídajícím způsobem směrovaná přes stromu, zatímco jiné změny vlastností jsou obecně jen zájmu změnou vlastnosti objektu.  

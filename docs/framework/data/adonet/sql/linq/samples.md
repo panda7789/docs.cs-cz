@@ -3,11 +3,11 @@ title: Ukázky
 ms.date: 03/30/2017
 ms.assetid: 3fcc0c4a-b952-4cfe-9e09-0c0cf874ba2c
 ms.openlocfilehash: d06fe74280b713130142d6d7a881c97849598ce4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59107169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033407"
 ---
 # <a name="samples"></a>Ukázky
 Toto téma obsahuje odkazy na řešení jazyka Visual Basic a C#, které obsahují [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ukázkový kód.  
@@ -21,11 +21,11 @@ Toto téma obsahuje odkazy na řešení jazyka Visual Basic a C#, které obsahuj
   
  Postupujte podle těchto pokynů vyhledejte další příklady [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kód a aplikace:  
   
--   Hledání pro specifické problémy na Microsoft Docs  
+- Hledání pro specifické problémy na Microsoft Docs  
   
--   Účastnit [LINQ fórum](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete diskutovat o složitějších tématech podrobně s odborníky.  
+- Účastnit [LINQ fórum](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete diskutovat o složitějších tématech podrobně s odborníky.  
   
--   Studie v dokumentu white paper podrobně popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, s příklady kódu jazyka Visual Basic a C#. Další informace najdete v tématu [technologie LINQ to SQL: .NET Language-Integrated dotazu pro relační Data](https://go.microsoft.com/fwlink/?LinkId=93205).  
+- Studie v dokumentu white paper podrobně popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, s příklady kódu jazyka Visual Basic a C#. Další informace najdete v tématu [technologie LINQ to SQL: .NET Language-Integrated dotazu pro relační Data](https://go.microsoft.com/fwlink/?LinkId=93205).  
   
 ## <a name="see-also"></a>Viz také:
 

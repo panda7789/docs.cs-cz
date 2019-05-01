@@ -3,11 +3,11 @@ title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
 ms.openlocfilehash: a2c70f5243dc3506a26824c83beb3ff454482f10
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037697"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
 V technologii LINQ to SQL datový model relační databáze mapuje na objektový model vyjádřený v programovacím jazyce podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL integrovaný jazyk dotazů v objektovém modelu převádí na SQL a odesílá je do databáze pro spuštění. Když databázi vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, které můžete pracovat s vlastními programovací jazyk.  
@@ -16,23 +16,23 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
   
  Toto téma popisuje následující body:  
   
--   [Výchozí typ mapování](#DefaultTypeMapping)  
+- [Výchozí typ mapování](#DefaultTypeMapping)  
   
--   [Typ mapování matice chování za běhu](#BehaviorMatrix)  
+- [Typ mapování matice chování za běhu](#BehaviorMatrix)  
   
--   [Rozdíly v chování modulu CLR a provedení SQL](#BehaviorDiffs)  
+- [Rozdíly v chování modulu CLR a provedení SQL](#BehaviorDiffs)  
   
--   [Mapování výčtu](#EnumMapping)  
+- [Mapování výčtu](#EnumMapping)  
   
--   [Číselné mapování](#NumericMapping)  
+- [Číselné mapování](#NumericMapping)  
   
--   [Text a mapování XML](#TextMapping)  
+- [Text a mapování XML](#TextMapping)  
   
--   [Datum a čas mapování](#DateMapping)  
+- [Datum a čas mapování](#DateMapping)  
   
--   [Binární mapování](#BinaryMapping)  
+- [Binární mapování](#BinaryMapping)  
   
--   [Různé mapování](#MiscMapping)  
+- [Různé mapování](#MiscMapping)  
   
 <a name="DefaultTypeMapping"></a>   
 ## <a name="default-type-mapping"></a>Výchozí typ mapování  
@@ -58,21 +58,21 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
   
  Následující příklad, jsou určité rozdíly v chování mezi CLR a systému SQL Server:  
   
--   Některé typy dat systému SQL Server odlišně od datového typu ekvivalentní objednávky v CLR. Například data systému SQL Server typu `UNIQUEIDENTIFIER` jinak než typ dat CLR je seřazen <xref:System.Guid?displayProperty=nameWithType>.  
+- Některé typy dat systému SQL Server odlišně od datového typu ekvivalentní objednávky v CLR. Například data systému SQL Server typu `UNIQUEIDENTIFIER` jinak než typ dat CLR je seřazen <xref:System.Guid?displayProperty=nameWithType>.  
   
--   SQL Server provede některé operace porovnání řetězců jinak než CLR. V systému SQL Server chování porovnání řetězců závisí na nastavení řazení na serveru. Další informace najdete v tématu [práce s kolací](https://go.microsoft.com/fwlink/?LinkId=115330) v Online knihách systému Microsoft SQL Server.  
+- SQL Server provede některé operace porovnání řetězců jinak než CLR. V systému SQL Server chování porovnání řetězců závisí na nastavení řazení na serveru. Další informace najdete v tématu [práce s kolací](https://go.microsoft.com/fwlink/?LinkId=115330) v Online knihách systému Microsoft SQL Server.  
   
--   SQL Server může vracet různé hodnoty pro některé z namapované funkce než CLR. Například se bude lišit rovnosti funkce, protože systém SQL Server považuje dva řetězce rovny, pokud se liší pouze v prázdný znak; bude Zatímco CLR je považuje za se nesmí rovnat.  
+- SQL Server může vracet různé hodnoty pro některé z namapované funkce než CLR. Například se bude lišit rovnosti funkce, protože systém SQL Server považuje dva řetězce rovny, pokud se liší pouze v prázdný znak; bude Zatímco CLR je považuje za se nesmí rovnat.  
   
 <a name="EnumMapping"></a>   
 ## <a name="enum-mapping"></a>Mapování výčtu  
  Technologie LINQ to SQL podporuje mapování CLR <xref:System.Enum?displayProperty=nameWithType> typu na typy serveru SQL Server dvěma způsoby:  
   
--   Mapování na číselné typy SQL (`TINYINT`, `SMALLINT`, `INT`, `BIGINT`)  
+- Mapování na číselné typy SQL (`TINYINT`, `SMALLINT`, `INT`, `BIGINT`)  
   
      Při mapování modul CLR <xref:System.Enum?displayProperty=nameWithType> typu na číselný typ SQL, můžete namapovat základní celočíselnou hodnotu CLR <xref:System.Enum?displayProperty=nameWithType> k hodnotě sloupce databáze systému SQL Server. Například pokud <xref:System.Enum?displayProperty=nameWithType> s názvem `DaysOfWeek` obsahuje člen s názvem `Tue` se základní hodnotou celé číslo 3, tento člen mapuje na databázi hodnotu 3.  
   
--   Mapování typů SQL textu (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`)  
+- Mapování typů SQL textu (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`)  
   
      Při mapování modul CLR <xref:System.Enum?displayProperty=nameWithType> typu na typ textu SQL, hodnota databáze SQL se mapuje na název modulu CLR <xref:System.Enum?displayProperty=nameWithType> členy. Například pokud <xref:System.Enum?displayProperty=nameWithType> s názvem `DaysOfWeek` obsahuje člen s názvem `Tue` se základní hodnotou celé číslo 3, tento člen mapuje na hodnotu databáze `Tue`.  
   
@@ -154,13 +154,13 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
 ### <a name="xml-types"></a>Typy XML  
  SQL Server `XML` datový typ je k dispozici od verze Microsoft SQL Server 2005. SQL Server můžete namapovat `XML` datový typ, který <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XDocument>, nebo <xref:System.String>. Pokud sloupec obsahuje fragmenty XML, které nelze načíst do <xref:System.Xml.Linq.XElement>, sloupec musí být namapována na <xref:System.String> aby nedocházelo k chybám za běhu. Fragmenty XML, které musí být namapována na <xref:System.String> patří následující:  
   
--   Sekvence elementů XML  
+- Sekvence elementů XML  
   
--   Atributy  
+- Atributy  
   
--   Veřejné identifikátory (PÍ)  
+- Veřejné identifikátory (PÍ)  
   
--   Komentáře  
+- Komentáře  
   
  I když můžete namapovat <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> k systému SQL Server, jak je znázorněno [matice chování čas spuštění mapování typu](#BehaviorMatrix), <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda nemá žádné výchozí mapování typu SQL Server pro tyto typy.  
   

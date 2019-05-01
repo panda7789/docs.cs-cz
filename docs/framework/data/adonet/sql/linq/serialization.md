@@ -6,35 +6,35 @@ dev_langs:
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
 ms.openlocfilehash: b6778522b5757c0ece899f7465d3ab500038fc49
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037034"
 ---
 # <a name="serialization"></a>Serializace
 Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] možnosti serializace. Odstavců, které následují poskytují informace o tom, jak přidat serializace při generování kódu v době návrhu a chování za běhu serializace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] třídy.  
   
  Můžete přidat serializačního kódu v době návrhu jeden z následujících metod:  
   
--   V [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], změnit **režim serializace** vlastnost **jednosměrný**.  
+- V [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], změnit **režim serializace** vlastnost **jednosměrný**.  
   
--   Na příkazovém řádku SQLMetal přidejte **/serialization** možnost. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+- Na příkazovém řádku SQLMetal přidejte **/serialization** možnost. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Přehled  
  Kód vygenerovaný [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje možnosti pro odložené načítání ve výchozím nastavení. Odložené načítání je velmi vhodné na střední vrstvě pro transparentní načtení dat na vyžádání. Je však problematické pro serializaci, protože serializátoru, který se aktivuje odložené načítání, jestli je určený pro odložené načítání, nebo ne. V důsledku toho pokud je objekt serializován, jeho tranzitivní uzavření v seznamu všechny odchozí odkazy pozdržet načtené serializován.  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Serializace funkce řeší tento problém, primárně prostřednictvím dvou mechanismů:  
   
--   A <xref:System.Data.Linq.DataContext> režimu pro vypnutí odloženého načítání (<xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A>). Další informace naleznete v tématu <xref:System.Data.Linq.DataContext>.  
+- A <xref:System.Data.Linq.DataContext> režimu pro vypnutí odloženého načítání (<xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A>). Další informace naleznete v tématu <xref:System.Data.Linq.DataContext>.  
   
--   Generování kódu přepínače ke generování <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.DataMemberAttribute?displayProperty=nameWithType> atributy u vygenerované entit. Tento aspekt, včetně chování odložit načítání tříd v části serializace, je hlavní předmětem tohoto tématu.  
+- Generování kódu přepínače ke generování <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.DataMemberAttribute?displayProperty=nameWithType> atributy u vygenerované entit. Tento aspekt, včetně chování odložit načítání tříd v části serializace, je hlavní předmětem tohoto tématu.  
   
 ### <a name="definitions"></a>Definice  
   
--   *Serializátor kontraktu dat DataContract*: Výchozí serializátor používaný připojením komponentu Windows Communication Framework (WCF) na rozhraní .NET Framework 3.0 nebo novější verze.  
+- *Serializátor kontraktu dat DataContract*: Výchozí serializátor používaný připojením komponentu Windows Communication Framework (WCF) na rozhraní .NET Framework 3.0 nebo novější verze.  
   
--   *Jednosměrný serializace*: Serializovaná verze třídu, která obsahuje pouze jednosměrná přidružení vlastnosti (aby se zabránilo cyklus). Vlastnost u nadřazené straně vztahu primární cizího klíče je podle konvence označen pro serializaci. Druhé straně obousměrné přidružení není provedena.  
+- *Jednosměrný serializace*: Serializovaná verze třídu, která obsahuje pouze jednosměrná přidružení vlastnosti (aby se zabránilo cyklus). Vlastnost u nadřazené straně vztahu primární cizího klíče je podle konvence označen pro serializaci. Druhé straně obousměrné přidružení není provedena.  
   
      Jednosměrný serializace je jediný typ serializace nepodporuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   

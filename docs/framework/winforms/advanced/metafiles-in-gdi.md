@@ -10,11 +10,11 @@ helpviewer_keywords:
 - metafiles
 ms.assetid: 51da872c-c783-440f-8bf6-1e580a966c31
 ms.openlocfilehash: bb972f158496192aa38f10564209bb2781837414
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010021"
 ---
 # <a name="metafiles-in-gdi"></a>Metasoubory v rozhraní GDI+
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Imaging.Metafile> třídy, aby mohli zaznamenat a zobrazení metasouborů. Metasoubor zkratka bitovou kopii vektoru je obrázek, který se ukládá jako posloupnost kreslení příkazy a nastavení. Příkazy a nastavení popsané v <xref:System.Drawing.Imaging.Metafile> objektu lze uložit v paměti nebo uložit do souboru nebo datového proudu.  
@@ -22,11 +22,11 @@ ms.locfileid: "59119857"
 ## <a name="metafile-formats"></a>Formáty metasoubor  
  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete zobrazit metasoubory, které jsou uložené v následujících formátech:  
   
--   Windows Metafile (WMF)  
+- Windows Metafile (WMF)  
   
--   EMF (Enhanced Metafile)  
+- EMF (Enhanced Metafile)  
   
--   EMF+  
+- EMF+  
   
  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete zaznamenat metasoubory v EMF a EMF + formáty, ale není ve formátu WMF.  
   

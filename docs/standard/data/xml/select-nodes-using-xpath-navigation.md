@@ -9,11 +9,11 @@ ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 9e02dd304893e4d9354144c5b412dfd145161c6e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45596946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026975"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Výběr uzlů pomocí navigace XPath
 XML Document Object Model (DOM) obsahuje metody, které vám umožní použít navigační jazyk XML Path (XPath) dotaz na informace v modelu DOM. Výraz XPath můžete použít k vyhledání jednoho, konkrétní uzel nebo najít všechny uzly, které odpovídají kritérií.  

@@ -9,11 +9,11 @@ ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 376dd9df4666193f8e5a6be83f3fcaf5dc32f1a6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027261"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na datové typy rozhraní .NET Framework
 Pokud chcete pro převod řetězce na datový typ rozhraní .NET Framework, použijte **XmlConvert** metodu, která vyhovuje potřebám aplikace. Pro všechny metody převodu k dispozici v seznamu **XmlConvert** najdete v tématu <xref:System.Xml.XmlConvert>.  

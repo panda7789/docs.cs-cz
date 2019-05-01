@@ -1,18 +1,18 @@
 ---
-title: Navigace XPath Namespace
+title: Navigace oboru názvů XPath
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: cbc45d2c6587f5ff94c5cfbe0251d4b0ebca4231
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026793"
 ---
-# <a name="xpath-namespace-navigation"></a>Navigace XPath Namespace
+# <a name="xpath-namespace-navigation"></a>Navigace oboru názvů XPath
 Používat dotazy jazyka XPath dokumentů XML, budete muset správnému adresování obory názvů XML a elementů obsažených ve obory názvů. Obory názvů zabraňují nejasnostem, které může dojít, když názvy se používají ve více než jednom kontextu; například název `ID` mohou odkazovat na více než jeden identifikátor přidružený k jiné prvky dokumentu XML. Syntaxe Namespace určuje identifikátory URI, názvů a předpony, které rozlišení prvků dokumentu XML.  
   
  V příkladu v tomto tématu ukazuje použití předpony v navigaci dokument XML s <xref:System.Xml.XPath.XPathNavigator>. Další informace o syntaxi a obory názvů, naleznete v tématu [soubory XML: Principy obory názvů XML](https://docs.microsoft.com/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  

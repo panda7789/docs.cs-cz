@@ -9,22 +9,22 @@ helpviewer_keywords:
 - data grids [Windows Forms], edit mode
 ms.assetid: 93e117e8-94c4-411b-ba31-645e475ed85c
 ms.openlocfilehash: 7cb9278cd311d211ef95df238b930970ae472d05
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012942"
 ---
 # <a name="how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control"></a>Postupy: Určení režimu úprav pro ovládací prvek Windows Forms DataGridView
 Ve výchozím nastavení, uživatelé mohou upravovat obsah aktuální <xref:System.Windows.Forms.DataGridView> buňka s textem pole zadáním v ní nebo stisknutím klávesy F2. To umístí buňku v režimu úprav Pokud jsou splněny všechny následující podmínky:  
   
--   Podkladový zdroj dat podporuje úpravy.  
+- Podkladový zdroj dat podporuje úpravy.  
   
--   <xref:System.Windows.Forms.DataGridView> Je ovládací prvek povolený.  
+- <xref:System.Windows.Forms.DataGridView> Je ovládací prvek povolený.  
   
--   <xref:System.Windows.Forms.DataGridView.EditMode%2A> Hodnota vlastnosti není <xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>.  
+- <xref:System.Windows.Forms.DataGridView.EditMode%2A> Hodnota vlastnosti není <xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>.  
   
--   `ReadOnly` Vlastnosti buněk, řádků, sloupců a ovládacího prvku jsou nastaveny na `false`.  
+- `ReadOnly` Vlastnosti buněk, řádků, sloupců a ovládacího prvku jsou nastaveny na `false`.  
   
  Uživatel v režimu úprav, můžete změnit hodnotu buňky a stisknutím ENTERU Potvrdit změnu nebo klávesou ESC Operaci vrátit na původní hodnotu buňky.  
   
@@ -32,7 +32,7 @@ Ve výchozím nastavení, uživatelé mohou upravovat obsah aktuální <xref:Sys
   
 ### <a name="to-change-the-edit-mode-of-a-datagridview-control"></a>Chcete-li změnit režim úprav ovládacího prvku DataGridView  
   
--   Nastavte <xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType> vlastnosti na příslušné <xref:System.Windows.Forms.DataGridViewEditMode> výčtu.  
+- Nastavte <xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType> vlastnosti na příslušné <xref:System.Windows.Forms.DataGridViewEditMode> výčtu.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#067](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#067)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#067](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#067)]  
@@ -40,9 +40,9 @@ Ve výchozím nastavení, uživatelé mohou upravovat obsah aktuální <xref:Sys
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
--   Odkazy <xref:System> a <xref:System.Windows.Forms> sestavení.  
+- Odkazy <xref:System> a <xref:System.Windows.Forms> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

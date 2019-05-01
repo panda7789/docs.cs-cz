@@ -7,11 +7,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], formatting data
 ms.assetid: 07bf558d-3748-42ba-8ba0-37fdef924081
 ms.openlocfilehash: b5c055bdd12a4bede6e77233726c697de424a055
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59158637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011416"
 ---
 # <a name="data-formatting-in-the-windows-forms-datagridview-control"></a>Formátování dat v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení poskytuje automatický převod mezi hodnot v buňkách a datové typy, které zobrazují nadřazené sloupce. Textové pole sloupce, například zobrazit řetězcové reprezentace datum, čas, čísla a hodnoty výčtu a převod na typy potřebné v úložišti dat uživatel zadal řetězcové hodnoty.  

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3d3cf2947380a7d48a261faf1bbc24ec5773b970
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61994874"
 ---
 # <a name="icordebugmodulegeteditandcontinuesnapshot-method"></a>ICorDebugModule::GetEditAndContinueSnapshot – metoda
 Zastaralé  
@@ -36,7 +36,7 @@ HRESULT GetEditAndContinueSnapshot(
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

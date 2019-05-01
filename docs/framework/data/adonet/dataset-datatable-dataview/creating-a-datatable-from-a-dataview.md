@@ -6,18 +6,18 @@ dev_langs:
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
 ms.openlocfilehash: 784072ecd133333dec13509d0ac10c69b2161cf8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034395"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Vytvoření datové tabulky ze zobrazení dat
 Po načtení dat ze zdroje dat a vyplnili <xref:System.Data.DataTable> s daty, můžete chtít řadit, filtrovat nebo jinak omezit vrácená data bez načtení znovu. <xref:System.Data.DataView> Třídy to kvůli tomu je to možné. Kromě toho, pokud je potřeba vytvořit nový <xref:System.Data.DataTable> z <xref:System.Data.DataView>, můžete použít <xref:System.Data.DataView.ToTable%2A> metoda zkopírovat všechny řádky a sloupce nebo podmnožinu dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení:  
   
--   Vytvoření <xref:System.Data.DataTable> sloupců, které jsou podmnožinu sloupců v obsahující <xref:System.Data.DataView>.  
+- Vytvoření <xref:System.Data.DataTable> sloupců, které jsou podmnožinu sloupců v obsahující <xref:System.Data.DataView>.  
   
--   Vytvoření <xref:System.Data.DataTable> , který obsahuje pouze jedinečné sloupce z <xref:System.Data.DataView>, analogicky k klíčové slovo DISTINCT v příkazů jazyka Transact-SQL.  
+- Vytvoření <xref:System.Data.DataTable> , který obsahuje pouze jedinečné sloupce z <xref:System.Data.DataView>, analogicky k klíčové slovo DISTINCT v příkazů jazyka Transact-SQL.  
   
 ## <a name="example"></a>Příklad  
  Vytvoří v následujícím příkladu aplikace konzoly <xref:System.Data.DataTable> , který obsahuje data z **Person.Contact** v tabulku **AdventureWorks** ukázkovou databázi. V dalším kroku v příkladu se vytvoří seřazený a filtrovaný <xref:System.Data.DataView> na základě <xref:System.Data.DataTable>. Po zobrazení obsahu <xref:System.Data.DataTable> a <xref:System.Data.DataView>, v příkladu se vytvoří nový <xref:System.Data.DataTable> z <xref:System.Data.DataView> voláním <xref:System.Data.DataView.ToTable%2A> metoda vybrat pouze podmnožinu dostupných sloupců. Nakonec v příkladu se zobrazí obsah nového <xref:System.Data.DataTable>.  

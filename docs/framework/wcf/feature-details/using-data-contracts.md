@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
 ms.openlocfilehash: 28033e3e90c5010eee63f35791b0c3c77e64d1ec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050659"
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
 A *kontraktu dat* je oficiální smlouvu mezi službou a klienta, který abstraktně popisuje data, jenž bude vyměněn. To znamená ke komunikaci, klienta a služby nemusíte sdílejí stejné typy stejné kontraktů dat. Přesně definuje kontrakt dat, pro každý parametr nebo návratový typ, jaká data se serializovat (převedena na XML) mají vyměnit.  
@@ -38,21 +38,21 @@ A *kontraktu dat* je oficiální smlouvu mezi službou a klienta, který abstrak
 ### <a name="notes"></a>Poznámky  
  Následující poznámky k zajištění položek můžete zvážit při vytváření kontraktů dat:  
   
--   <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> Atribut zachovaný pouze při použití s zrušeno označení typy. To zahrnuje typy, které nejsou označené s jedním z <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>, nebo <xref:System.Runtime.Serialization.EnumMemberAttribute> atributy nebo označen jako serializovatelný jiným způsobem (třeba <xref:System.Xml.Serialization.IXmlSerializable>).  
+- <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> Atribut zachovaný pouze při použití s zrušeno označení typy. To zahrnuje typy, které nejsou označené s jedním z <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>, nebo <xref:System.Runtime.Serialization.EnumMemberAttribute> atributy nebo označen jako serializovatelný jiným způsobem (třeba <xref:System.Xml.Serialization.IXmlSerializable>).  
   
--   Můžete použít <xref:System.Runtime.Serialization.DataMemberAttribute> atributu na pole a vlastnosti.  
+- Můžete použít <xref:System.Runtime.Serialization.DataMemberAttribute> atributu na pole a vlastnosti.  
   
--   Úrovně přístupnosti člena (interní, privátní, chráněné nebo veřejný) nemají vliv na kontraktu dat žádným způsobem.  
+- Úrovně přístupnosti člena (interní, privátní, chráněné nebo veřejný) nemají vliv na kontraktu dat žádným způsobem.  
   
--   <xref:System.Runtime.Serialization.DataMemberAttribute> Atribut se ignoruje, pokud se použije na statické členy.  
+- <xref:System.Runtime.Serialization.DataMemberAttribute> Atribut se ignoruje, pokud se použije na statické členy.  
   
--   Během serializace je volána kód vlastnost get pro vlastnost datové členy k získání hodnoty vlastnosti, které mají být serializován.  
+- Během serializace je volána kód vlastnost get pro vlastnost datové členy k získání hodnoty vlastnosti, které mají být serializován.  
   
--   Během deserializace je Neinicializovaný objekt nejprve vytvořen, bez volání žádné konstruktory u typu. Všechny datové členy jsou poté deserializován.  
+- Během deserializace je Neinicializovaný objekt nejprve vytvořen, bez volání žádné konstruktory u typu. Všechny datové členy jsou poté deserializován.  
   
--   Během deserializace se nazývá nastavenou vlastnost kódu pro vlastnost datové členy nastavte vlastnosti na hodnotu deserializován.  
+- Během deserializace se nazývá nastavenou vlastnost kódu pro vlastnost datové členy nastavte vlastnosti na hodnotu deserializován.  
   
--   Pro kontrakt data platná musí být možné k serializaci všechny její datové členy. Úplný seznam Serializovatelné typy, najdete v části [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+- Pro kontrakt data platná musí být možné k serializaci všechny její datové členy. Úplný seznam Serializovatelné typy, najdete v části [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
      Obecné typy jsou zpracovány přesně stejným způsobem jako obecné typy. Neexistují žádné zvláštní požadavky na obecné parametry. Zvažte například následující typ.  
   

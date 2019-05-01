@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
 ms.openlocfilehash: 73e984193f87b20e0e00d8ab92a7c0fd67f7968f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62046562"
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpečení zpráv s klientem uživatelského jména
 Následující obrázek znázorňuje služby Windows Communication Foundation (WCF) a služby klientů, které jsou zabezpečené pomocí zabezpečení na úrovni zprávy. Služba se ověřuje pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  
@@ -33,9 +33,9 @@ Následující obrázek znázorňuje služby Windows Communication Foundation (W
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení zpráv.  

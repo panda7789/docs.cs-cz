@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f9d537f7713233d363f7d408b1cef0485d99d981
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000165"
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi – funkce
 
@@ -48,7 +48,7 @@ HRESULT PutClassWmi (
 `lFlags`\
 [in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud sada WMI neukládá všechny kvalifikátory s upravenou charakter. <br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou uloženy s touto instancí. |
 | `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte třídu, pokud ho neexistuje, nebo ho přepíše, pokud již existuje. |
@@ -70,7 +70,7 @@ HRESULT PutClassWmi (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k vytvoření nebo úpravě třídy. |
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |

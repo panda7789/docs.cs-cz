@@ -12,11 +12,11 @@ helpviewer_keywords:
 - playback of media [WPF], controlling with Storyboards
 ms.assetid: 6128ca77-b826-4e36-b968-6f237157c543
 ms.openlocfilehash: ae785e11b1da0f2c408b24021ad46ab071419378
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032225"
 ---
 # <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Postupy: Řízení elementu MediaElement pomocí scénáře
 Tento příklad ukazuje, jak řídit <xref:System.Windows.Controls.MediaElement> pomocí <xref:System.Windows.Media.MediaTimeline> v <xref:System.Windows.Media.Animation.Storyboard>.  

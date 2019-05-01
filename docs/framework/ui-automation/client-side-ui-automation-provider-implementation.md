@@ -7,11 +7,11 @@ helpviewer_keywords:
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
 ms.openlocfilehash: e68cf69830aef88f46ff2e288c5aad548db39bdc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032374"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]
@@ -39,13 +39,13 @@ ms.locfileid: "59224457"
   
  Implementovat v kódu klienta Vlastní zprostředkovatelé jsou registrované pomocí <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviders%2A>. Tato metoda přebírá jako argument pole <xref:System.Windows.Automation.ClientSideProviderDescription> struktury, z nichž každý určuje následující vlastnosti:  
   
--   Funkce zpětného volání, která vytvoří objekt zprostředkovatele.  
+- Funkce zpětného volání, která vytvoří objekt zprostředkovatele.  
   
--   Název třídy pro ovládací prvky, které bude sloužit zprostředkovatele.  
+- Název třídy pro ovládací prvky, které bude sloužit zprostředkovatele.  
   
--   Název bitové kopie aplikace (obvykle celý název spustitelného souboru), který bude použit zprostředkovatel.  
+- Název bitové kopie aplikace (obvykle celý název spustitelného souboru), který bude použit zprostředkovatel.  
   
--   Příznaky, které řídí, jak je název třídy hledána třídy okna v cílové aplikaci.  
+- Příznaky, které řídí, jak je název třídy hledána třídy okna v cílové aplikaci.  
   
  Poslední dva parametry jsou volitelné. Klient může zadejte název image cílové aplikace, když ji chce používat různé zprostředkovatele pro různé aplikace. Například může klient použít jednoho poskytovatele pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] seznamu ovládací prvek zobrazení ve známých aplikaci, která podporuje model více zobrazení a druhý pro podobně jako ovládací prvek v jiné známé aplikaci, která neexistuje.  
   

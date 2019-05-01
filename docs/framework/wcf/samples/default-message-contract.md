@@ -6,10 +6,10 @@ helpviewer_keywords:
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
 ms.openlocfilehash: 267cdffdc532aaa2b31de835c31d23e93aca8c54
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990337"
 ---
 # <a name="default-message-contract"></a>Výchozí kontrakt zprávy
 Výchozí kontrakt zprávy ukázce služby, kde je předán vlastní uživatelsky definovanou zprávu do a z operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje rozhraní kalkulačku jako služba typu. Místo operace jednotlivé služby pro sčítání, odčítání, násobení a dělení používané [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), tento příklad předává vlastní zprávu, která obsahuje operandy a operátor a vrátí výsledek aritmetické výpočtu.  

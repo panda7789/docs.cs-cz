@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fb5a26fccf7ceb56089aae4bd4f0732b8a405ba0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62049268"
 ---
 # <a name="compareto-function"></a>Funkce CompareTo
 
@@ -73,7 +73,7 @@ Tato funkce zalamuje volání na [IWbemClassObject::CompareTo](/windows/desktop/
 
 Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu. Vlastnosti jednotlivých součástí porovnání můžete zadat tak, že zadáte bitová kombinace hodnot následující příznaky:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorujte zdroje (serveru a oboru názvů, které pocházejí z). |
 | `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorovat všechny kvalifikátory (včetně **klíč** a **dynamické**) |
@@ -84,7 +84,7 @@ Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definov�
 
 Nebo můžete zadat jeden složený příznak následujícím způsobem:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Vezměte v úvahu všechny funkce v porovnání. |
 

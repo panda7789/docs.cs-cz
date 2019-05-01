@@ -9,24 +9,24 @@ helpviewer_keywords:
 - files [Visual Basic], transferring
 ms.assetid: ac479f81-c0e2-4b99-af73-217f446b73da
 ms.openlocfilehash: bebb40a732415312742116b0b94743495049c477
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014008"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>Postupy: Stáhněte si soubor v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> Metodu je možné stáhnout soubor vzdálené a uloží je do určitého umístění. Pokud `ShowUI` parametr je nastaven na `True`, zobrazí se dialogové okno zobrazuje průběh stahování a uživatelé si můžou na zrušení operace. Ve výchozím nastavení nejsou přepsány existující soubory se stejným názvem. Pokud chcete přepsat existující soubory, nastavte `overwrite` parametr `True`.  
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název disku je neplatný (<xref:System.ArgumentException>).  
+- Název disku je neplatný (<xref:System.ArgumentException>).  
   
--   Nebyla zadána potřebné ověřovací (<xref:System.UnauthorizedAccessException> nebo <xref:System.Security.SecurityException>).  
+- Nebyla zadána potřebné ověřovací (<xref:System.UnauthorizedAccessException> nebo <xref:System.Security.SecurityException>).  
   
--   Server neobjeví odpověď během zadaného `connectionTimeout` (<xref:System.TimeoutException>).  
+- Server neobjeví odpověď během zadaného `connectionTimeout` (<xref:System.TimeoutException>).  
   
--   Požadavek se zamítne na webu (<xref:System.Net.WebException>).  
+- Požadavek se zamítne na webu (<xref:System.Net.WebException>).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -35,19 +35,19 @@ ms.locfileid: "58826641"
   
 ### <a name="to-download-a-file"></a>Ke stažení souboru  
   
--   Použití `DownloadFile` metoda ke stažení souboru, zadáte umístění cílového souboru jako řetězec nebo identifikátor URI a zadání umístění, kam chcete soubor uložit. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`:  
+- Použití `DownloadFile` metoda ke stažení souboru, zadáte umístění cílového souboru jako řetězec nebo identifikátor URI a zadání umístění, kam chcete soubor uložit. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`:  
   
      [!code-vb[VbResourceTasks#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#9)]  
   
 ### <a name="to-download-a-file-specifying-a-time-out-interval"></a>Ke stažení souboru, intervalem časového limitu  
   
--   Použití `DownloadFile` metoda ke stažení souboru, určení umístění cílového souboru jako řetězec nebo identifikátor URI, zadáte umístění, kam chcete uložit soubor a intervalem časového limitu v milisekundách (výchozí hodnota je 1000). Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, intervalem časového limitu 500 MS:  
+- Použití `DownloadFile` metoda ke stažení souboru, určení umístění cílového souboru jako řetězec nebo identifikátor URI, zadáte umístění, kam chcete uložit soubor a intervalem časového limitu v milisekundách (výchozí hodnota je 1000). Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, intervalem časového limitu 500 MS:  
   
      [!code-vb[VbResourceTasks#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#10)]  
   
 ### <a name="to-download-a-file-supplying-a-user-name-and-password"></a>Ke stažení souboru, zadávání uživatelského jména a hesla  
   
--   Použití `DownLoadFile` metoda ke stažení souboru, zadáte umístění cílového souboru jako řetězec nebo identifikátor URI a určení umístění, kam chcete uložit soubor, uživatelské jméno a heslo. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, s uživatelským jménem `anonymous` a heslo necháte prázdné.  
+- Použití `DownLoadFile` metoda ke stažení souboru, zadáte umístění cílového souboru jako řetězec nebo identifikátor URI a určení umístění, kam chcete uložit soubor, uživatelské jméno a heslo. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, s uživatelským jménem `anonymous` a heslo necháte prázdné.  
   
      [!code-vb[VbResourceTasks#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#11)]  
   

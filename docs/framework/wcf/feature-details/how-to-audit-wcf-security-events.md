@@ -8,11 +8,11 @@ helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
 ms.openlocfilehash: 634489ced9b437d7b273eb5fa1092165cc6a935f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047961"
 ---
 # <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: Auditování událostí zabezpečení služby Windows Communication Foundation
 Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpečení do protokolu událostí Windows, který lze zobrazit pomocí prohlížeče událostí Windows. Toto téma vysvětluje, jak nastavit aplikaci tak, aby protokoly událostí zabezpečení. Další informace o auditování WCF najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  

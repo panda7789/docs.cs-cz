@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 80bf9de3eb274bf536b2794ba2ed14e7e9b553cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050048"
 ---
 # <a name="imetadataemitsetclasslayout-method"></a>IMetaDataEmit::SetClassLayout – metoda
 Dokončení rozložení polí pro třídu, která je definována v předchozím volání [definetypedef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
@@ -56,9 +56,9 @@ HRESULT SetClassLayout (
   
  Však můžete chtít pole neuplatní uspořádání nespravovaný kód používá. V tomto případě zvolte sekvenční nebo explicitní rozložení a volání `SetClassLayout` dokončete rozložení polí:  
   
--   Sekvenční rozložení: Zadejte velikost komprimace. Pole je zarovnán podle jeho fyzické velikosti nebo velikosti komprimace, podle toho, která má za následek menší posun pole. Nastavte `rFieldOffsets` a `ulClassSize` na nulu.  
+- Sekvenční rozložení: Zadejte velikost komprimace. Pole je zarovnán podle jeho fyzické velikosti nebo velikosti komprimace, podle toho, která má za následek menší posun pole. Nastavte `rFieldOffsets` a `ulClassSize` na nulu.  
   
--   Explicitní rozložení: Zadejte posun každé pole nebo určit třídu velikost a velikost komprimace.  
+- Explicitní rozložení: Zadejte posun každé pole nebo určit třídu velikost a velikost komprimace.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

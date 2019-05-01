@@ -6,22 +6,22 @@ dev_langs:
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
 ms.openlocfilehash: d9b1c1242fe2686a66e41b777f904a71898159ea
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050646"
 ---
 # <a name="using-the-message-class"></a>Používání třídy Message
 <xref:System.ServiceModel.Channels.Message> Třída je základní na Windows Communication Foundation (WCF). Veškerá komunikace mezi klienty a služby, přílišnou <xref:System.ServiceModel.Channels.Message> instancí se odeslané a přijaté.  
   
  By obvykle interakci s <xref:System.ServiceModel.Channels.Message> třídy přímo. Místo toho WCF service model konstruktorů, jako jsou kontrakty dat, kontrakty zpráv a operace smlouvy, se používají k popisu příchozí a odchozí zprávy. Nicméně některé pokročilé scénáře, které můžete naprogramovat pomocí <xref:System.ServiceModel.Channels.Message> třídy přímo. Například můžete chtít použít <xref:System.ServiceModel.Channels.Message> třídy:  
   
--   Pokud potřebujete alternativní způsob vytváření obsah odchozí zprávy (například vytváření zprávy přímo ze souboru na disku) namísto serializace [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
+- Pokud potřebujete alternativní způsob vytváření obsah odchozí zprávy (například vytváření zprávy přímo ze souboru na disku) namísto serializace [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
   
--   Pokud potřebujete alternativní způsob použití obsahu příchozí zprávy (třeba když chcete použití transformace XSLT nezpracovaný obsah XML) namísto deserializaci do [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
+- Pokud potřebujete alternativní způsob použití obsahu příchozí zprávy (třeba když chcete použití transformace XSLT nezpracovaný obsah XML) namísto deserializaci do [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
   
--   Pokud potřebujete řešit zprávy obecným způsobem bez ohledu na obsah zprávy (třeba když směrovat nebo předávat zprávy při sestavování směrovač, nástroje pro vyrovnávání zatížení nebo publikování-odběru systému).  
+- Pokud potřebujete řešit zprávy obecným způsobem bez ohledu na obsah zprávy (třeba když směrovat nebo předávat zprávy při sestavování směrovač, nástroje pro vyrovnávání zatížení nebo publikování-odběru systému).  
   
  Před použitím <xref:System.ServiceModel.Channels.Message> třídy, seznamte se s architekturou přenos WCF data v [strukturální Přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md).  
   
@@ -30,11 +30,11 @@ ms.locfileid: "58409598"
 ## <a name="using-the-message-class-in-operations"></a>Používání třídy Message v operacích  
  Můžete použít <xref:System.ServiceModel.Channels.Message> třídy jako vstupní parametr operace, návratový typ operace, nebo obojí. Pokud <xref:System.ServiceModel.Channels.Message> je použít kdekoli v operaci, platí následující omezení:  
   
--   Operace nesmí obsahovat žádné `out` nebo `ref` parametry.  
+- Operace nesmí obsahovat žádné `out` nebo `ref` parametry.  
   
--   Nemůže existovat více než jeden `input` parametru. Pokud je přítomen parametr, musí být typ kontraktu zprávy nebo zprávy.  
+- Nemůže existovat více než jeden `input` parametru. Pokud je přítomen parametr, musí být typ kontraktu zprávy nebo zprávy.  
   
--   Návratový typ musí být buď `void`, `Message`, nebo typ kontraktu zprávy.  
+- Návratový typ musí být buď `void`, `Message`, nebo typ kontraktu zprávy.  
   
  Následující příklad obsahuje kontrakt platná operace.  
   
@@ -78,11 +78,11 @@ ms.locfileid: "58409598"
 ## <a name="extracting-message-body-data"></a>Extrahování dat těla zprávy  
  `Message` Třídy podporuje více způsobů extrahování informací z jeho textu. Ty je možné rozdělit do těchto kategorií:  
   
--   Získávání těla celá zpráva zapsat najednou do zapisovače XML. To se označuje jako *zápisu zprávy*.  
+- Získávání těla celá zpráva zapsat najednou do zapisovače XML. To se označuje jako *zápisu zprávy*.  
   
--   Získání čtecí funkce XML v textu zprávy. To vám umožní pro pozdější přístup zprávu textu část jednotlivé podle potřeby. To se označuje jako *čtení zprávy*.  
+- Získání čtecí funkce XML v textu zprávy. To vám umožní pro pozdější přístup zprávu textu část jednotlivé podle potřeby. To se označuje jako *čtení zprávy*.  
   
--   Celá zpráva, včetně jeho obsah, je možné zkopírovat do vyrovnávacích pamětí o <xref:System.ServiceModel.Channels.MessageBuffer> typu. To se označuje jako *kopírování zprávu*.  
+- Celá zpráva, včetně jeho obsah, je možné zkopírovat do vyrovnávacích pamětí o <xref:System.ServiceModel.Channels.MessageBuffer> typu. To se označuje jako *kopírování zprávu*.  
   
  Můžete přístup k textu `Message` jenom jednou, bez ohledu na to, jak je přístupný. Objekt zprávy má `State` vlastnost, která je zpočátku nastaven na vytvořit. Tři přístupové metody popsané v předchozím seznamu nastavit stav na Written, čtení a zkopírovaných, v uvedeném pořadí. Kromě toho `Close` metoda můžete nastavit stav na Uzavřeno, když obsah zprávy se už nevyžadují. Text zprávy je přístupná pouze ve stavu vytvořen. proto neexistuje žádný způsob, jak přejít zpět do stavu vytvořeno po změně stavu.  
   
@@ -96,9 +96,9 @@ ms.locfileid: "58409598"
   
  Dva další pomocné metody zapsat určitým SOAP počáteční element značky. Tyto metody nemají přístup k textu zprávy, a proto nemění stav zprávy. Zde jsou některé z nich:  
   
--   <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A> zapíše element počáteční body, například `<soap:Body>`.  
+- <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A> zapíše element počáteční body, například `<soap:Body>`.  
   
--   <xref:System.ServiceModel.Channels.Message.WriteStartEnvelope%2A> zapíše počáteční element obálky, například `<soap:Envelope>`.  
+- <xref:System.ServiceModel.Channels.Message.WriteStartEnvelope%2A> zapíše počáteční element obálky, například `<soap:Envelope>`.  
   
  Chcete-li zapsat odpovídající konci značky elementu, zavolejte `WriteEndElement` odpovídající zapisovače XML. Tyto metody jsou zřídka volat přímo.  
   
@@ -138,15 +138,15 @@ ms.locfileid: "58409598"
 ## <a name="accessing-other-message-parts"></a>Přístup k další části zprávy  
  Různé vlastnosti jsou k dispozici přístup k informacím o zprávě než jeho obsah. Ale tyto nelze volat, poté, co je zpráva byla zavřena.:  
   
--   <xref:System.ServiceModel.Channels.Message.Headers%2A> Vlastnost představuje záhlaví zpráv. Viz oddíl "Práce s záhlaví" dále v tomto tématu.  
+- <xref:System.ServiceModel.Channels.Message.Headers%2A> Vlastnost představuje záhlaví zpráv. Viz oddíl "Práce s záhlaví" dále v tomto tématu.  
   
--   <xref:System.ServiceModel.Channels.Message.Properties%2A> Vlastnost představuje vlastnosti zprávy, které jsou pojmenované dat připojen ke zprávě, která není obecně získat, protože ho při odeslání zprávy. V části "Práce s vlastností" dále v tomto tématu.  
+- <xref:System.ServiceModel.Channels.Message.Properties%2A> Vlastnost představuje vlastnosti zprávy, které jsou pojmenované dat připojen ke zprávě, která není obecně získat, protože ho při odeslání zprávy. V části "Práce s vlastností" dále v tomto tématu.  
   
--   <xref:System.ServiceModel.Channels.Message.Version%2A> Vlastnost označuje verzi protokolu SOAP a WS-Addressing spojený se zprávou, nebo `None` Pokud SOAP je zakázaná.  
+- <xref:System.ServiceModel.Channels.Message.Version%2A> Vlastnost označuje verzi protokolu SOAP a WS-Addressing spojený se zprávou, nebo `None` Pokud SOAP je zakázaná.  
   
--   <xref:System.ServiceModel.Channels.Message.IsFault%2A> Vrátí vlastnost `true` Pokud zpráva je zprávou chybu protokolu SOAP.  
+- <xref:System.ServiceModel.Channels.Message.IsFault%2A> Vrátí vlastnost `true` Pokud zpráva je zprávou chybu protokolu SOAP.  
   
--   <xref:System.ServiceModel.Channels.Message.IsEmpty%2A> Vrátí vlastnost `true` Pokud zpráva je prázdná.  
+- <xref:System.ServiceModel.Channels.Message.IsEmpty%2A> Vrátí vlastnost `true` Pokud zpráva je prázdná.  
   
  Můžete použít <xref:System.ServiceModel.Channels.Message.GetBodyAttribute%28System.String%2CSystem.String%29> metody přístup konkrétní atribut na element obálky textu (například `<soap:Body>`) identifikovat podle konkrétního názvu a oboru názvů. Pokud není nalezen takový atribut, `null` je vrácena. Tuto metodu lze volat pouze tehdy, když `Message` je ve stavu Created (text zprávy ještě nepřistupovalo).  
   

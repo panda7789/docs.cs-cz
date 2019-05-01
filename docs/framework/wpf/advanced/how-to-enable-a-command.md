@@ -9,11 +9,11 @@ helpviewer_keywords:
 - commanding [WPF]
 ms.assetid: d8016266-58d9-48f7-8298-a86b7ed49fbd
 ms.openlocfilehash: bf01066a35672e1996f193abc6d76153e5e9dd46
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031991"
 ---
 # <a name="how-to-enable-a-command"></a>Postupy: Povolení příkazu
 Následující příklad ukazuje, jak pomocí příkazů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Tento příklad ukazuje, jak přidružit <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Button>, vytvořit <xref:System.Windows.Input.CommandBinding>a vytváření obslužných rutin událostí, které implementují <xref:System.Windows.Input.RoutedCommand>.  Další informace o příkazů najdete v tématu [přehled příkazů](commanding-overview.md).  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - key frames [WPF], animating objects with
 ms.assetid: b1f15ba9-cac7-4cea-8699-5c6b55c05c5e
 ms.openlocfilehash: b0a0f7c00125a43228a2658415b72f4d541f37be
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020150"
 ---
 # <a name="how-to-animate-an-object-by-using-key-frames"></a>Postupy: Animace objektu pomocí klíčových snímků
 Tento příklad ukazuje, jak pro animaci objektu, který v tomto příkladu je <xref:System.Windows.Controls.Page.Background%2A> vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku s použitím klíčových snímků.  

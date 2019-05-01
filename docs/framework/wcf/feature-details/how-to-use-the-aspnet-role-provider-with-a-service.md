@@ -3,11 +3,11 @@ title: 'Postupy: Použití zprostředkovatele rolí ASP.NET se službou'
 ms.date: 03/30/2017
 ms.assetid: 88d33a81-8ac7-48de-978c-5c5b1257951e
 ms.openlocfilehash: 8f3fadc60645ef81d2683c63fda0ddd5bf24c982
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047240"
 ---
 # <a name="how-to-use-the-aspnet-role-provider-with-a-service"></a>Postupy: Použití zprostředkovatele rolí ASP.NET se službou
 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Zprostředkovatel rolí (ve spojení s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatel členství) je funkce, která umožňuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojářům vytvářet weby, které uživatelům umožní vytvoření účtu s lokalitou a přiřadit role pro autorizaci účely. Pomocí této funkce může každý uživatel zřídit účet s lokalitou a přihlaste pro výhradní přístup k webu a jeho služeb. To se liší od zabezpečení Windows, což vyžaduje, aby uživatelé mají účty v doméně Windows. Každý uživatel, který dodává své přihlašovací údaje (kombinaci uživatelského jména/hesla) můžete místo toho použijte webu a jeho služeb.  

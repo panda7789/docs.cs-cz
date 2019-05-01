@@ -3,11 +3,11 @@ title: Zabezpečení v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
 ms.openlocfilehash: 6af073a86b0feaba2fdcd9facd9474bb334096e7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59078141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62036995"
 ---
 # <a name="security-in-linq-to-sql"></a>Zabezpečení v LINQ to SQL
 Bezpečnostní rizika jsou vždy k dispozici, když se připojíte k databázi. I když LINQ to SQL může zahrnovat některé nové způsoby, jak pracovat s daty v systému SQL Server, neposkytuje žádné další bezpečnostní mechanismy.  
@@ -25,13 +25,13 @@ Bezpečnostní rizika jsou vždy k dispozici, když se připojíte k databázi. 
   
  Chybí integrované zabezpečení bude potřeba heslo prostého textu v připojovacím řetězci. Nejlepší způsob, jak zabezpečit připojovací řetězec, ve vzestupném pořadí podle rizika, vypadá takto:  
   
--   Použijte integrované zabezpečení.  
+- Použijte integrované zabezpečení.  
   
--   Zabezpečený připojovací řetězce s hesly a minimalizovat předávání kolem připojovací řetězce.  
+- Zabezpečený připojovací řetězce s hesly a minimalizovat předávání kolem připojovací řetězce.  
   
--   Použití <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> třídy místo připojovacího řetězce, protože omezuje trvání vystavení. Technologie LINQ to SQL <xref:System.Data.Linq.DataContext?displayProperty=nameWithType> můžete vytvořit instanci třídy pomocí <xref:System.Data.SqlClient.SqlConnection>.  
+- Použití <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> třídy místo připojovacího řetězce, protože omezuje trvání vystavení. Technologie LINQ to SQL <xref:System.Data.Linq.DataContext?displayProperty=nameWithType> můžete vytvořit instanci třídy pomocí <xref:System.Data.SqlClient.SqlConnection>.  
   
--   Minimalizovat životnosti a dotykového ovládání bodů pro všechny řetězce připojení.  
+- Minimalizovat životnosti a dotykového ovládání bodů pro všechny řetězce připojení.  
   
 ## <a name="see-also"></a>Viz také:
 

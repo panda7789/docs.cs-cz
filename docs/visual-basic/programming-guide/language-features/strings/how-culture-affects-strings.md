@@ -6,11 +6,11 @@ helpviewer_keywords:
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
 ms.openlocfilehash: d3c7ae9da9c18e53da393928e34dcfbf04fc891c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024687"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
 Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace o jazykové verzi provádět převody řetězce a porovnávání řetězců.  
@@ -29,9 +29,9 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
   
  `Str` (Převádí čísla na řetězce) a `Val` (převede řetězců na čísla) funkce nepoužívejte informace o jazykové verzi aplikace, když převod mezi řetězci a čísla. Místo toho jsou pouze tečkou (.) rozpoznán jako platný oddělovač desetinných míst. V kulturách s ohledem na analogy z těchto funkcí jsou:  
   
--   **Převody, které používají aktuální jazykovou verzi.** `CStr` a `Format` funkcí převede číslo na řetězec a `CDbl` a `CInt` funkce převádějí řetězec na číslo.  
+- **Převody, které používají aktuální jazykovou verzi.** `CStr` a `Format` funkcí převede číslo na řetězec a `CDbl` a `CInt` funkce převádějí řetězec na číslo.  
   
--   **Převody, které používají konkrétní jazykovou verzi.** Má každé číslo objekt `ToString(IFormatProvider)` metodu, která převede číslo na řetězec a `Parse(String, IFormatProvider)` metodu, která převede řetězec na číslo. Například `Double` typ poskytuje <xref:System.Double.ToString%28System.IFormatProvider%29> a <xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29> metody.  
+- **Převody, které používají konkrétní jazykovou verzi.** Má každé číslo objekt `ToString(IFormatProvider)` metodu, která převede číslo na řetězec a `Parse(String, IFormatProvider)` metodu, která převede řetězec na číslo. Například `Double` typ poskytuje <xref:System.Double.ToString%28System.IFormatProvider%29> a <xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29> metody.  
   
  Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Conversion.Str%2A> a <xref:Microsoft.VisualBasic.Conversion.Val%2A>.  
   
@@ -52,9 +52,9 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
 ## <a name="comparing-strings"></a>Porovnávání řetězců  
  Existují dvě důležité situace, kde jsou potřeba porovnávání řetězců:  
   
--   **Řazení dat v zobrazení pro uživatele.** Použití operací na základě aktuální jazykovou verzi tak řazení řetězců odpovídajícím způsobem.  
+- **Řazení dat v zobrazení pro uživatele.** Použití operací na základě aktuální jazykovou verzi tak řazení řetězců odpovídajícím způsobem.  
   
--   **Určení, pokud dva řetězce interní aplikace přesně odpovídat (obvykle pro účely zabezpečení).** Pomocí operace, které ignorovat aktuální jazykové verze.  
+- **Určení, pokud dva řetězce interní aplikace přesně odpovídat (obvykle pro účely zabezpečení).** Pomocí operace, které ignorovat aktuální jazykové verze.  
   
  Oba typy porovnání s jazykem Visual Basic můžete provádět <xref:Microsoft.VisualBasic.Strings.StrComp%2A> funkce. Zadejte nepovinný `Compare` argument řídit typ porovnání: `Text` pro většinu vstupů a výstupů `Binary` pro určení přesné shody.  
   

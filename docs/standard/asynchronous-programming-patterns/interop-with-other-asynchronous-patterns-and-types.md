@@ -15,22 +15,22 @@ ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4f6cb2d387e3b979ed0d4407e17287fb93fa0a20
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031210"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interoperabilita s jinými asynchronními vzory a typy
 Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak známé jako [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md), nebo `Begin/End` vzor.  Přidání rozhraní .NET Framework 2.0 [události asynchronní vzor založený (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  Od verze rozhraní .NET Framework 4 [úkolově orientovanou asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) nahrazuje funkce APM a protokolu EAP, ale umožňuje snadno vytvářet migraci rutin z předchozích vzory.  
   
  V tomto tématu:  
   
--   [Úlohy a APM](#APM) ([z APM klepnutím](#ApmToTap) nebo [z klepnutím APM](#TapToApm))  
+- [Úlohy a APM](#APM) ([z APM klepnutím](#ApmToTap) nebo [z klepnutím APM](#TapToApm))  
   
--   [Úlohy a protokolu EAP](#EAP)  
+- [Úlohy a protokolu EAP](#EAP)  
   
--   [Úkoly a obslužné rutiny čekání](#WaitHandles) ([z obslužné rutiny čekání klepnutím](#WHToTap) nebo [z klepněte sem a můžete obslužné rutiny čekání](#TapToWH))  
+- [Úkoly a obslužné rutiny čekání](#WaitHandles) ([z obslužné rutiny čekání klepnutím](#WHToTap) nebo [z klepněte sem a můžete obslužné rutiny čekání](#TapToWH))  
   
 <a name="APM"></a>   
 ## <a name="tasks-and-the-asynchronous-programming-model-apm"></a>Úlohy a Model asynchronního programování (APM)  

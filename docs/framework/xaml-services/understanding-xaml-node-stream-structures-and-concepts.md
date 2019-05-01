@@ -7,11 +7,11 @@ helpviewer_keywords:
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
 ms.openlocfilehash: babf98b7dd30cd60e72e310ae8ba8c9a42d9125f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954086"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
 
@@ -45,13 +45,13 @@ Základní čtení uzlu smyčky pro zkoumání datový proud uzlu XAML se sklád
 
 - Závislosti na němž <xref:System.Xaml.XamlNodeType> se ohlásí jako aktuální uzel nebo aktuální záznam volat jednu z následujících k získání informací o obsah uzlu:
 
-    - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartMember> nebo <xref:System.Xaml.XamlNodeType.EndMember>, volání <xref:System.Xaml.XamlXmlReader.Member%2A> získat <xref:System.Xaml.XamlMember> informace o členu. Všimněte si, že může být člen <xref:System.Xaml.XamlDirective>, a proto nemusí být nutně konvenční člen definován typ předchozí objektu. Například `x:Name` u objektu se zobrazí jako člena XAML kde <xref:System.Xaml.XamlMember.IsDirective%2A> má hodnotu true a <xref:System.Xaml.XamlMember.Name%2A> člena je `Name`, s jinými vlastnostmi označující, že tato direktiva je v oboru názvů XAML jazyka XAML.
+  - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartMember> nebo <xref:System.Xaml.XamlNodeType.EndMember>, volání <xref:System.Xaml.XamlXmlReader.Member%2A> získat <xref:System.Xaml.XamlMember> informace o členu. Všimněte si, že může být člen <xref:System.Xaml.XamlDirective>, a proto nemusí být nutně konvenční člen definován typ předchozí objektu. Například `x:Name` u objektu se zobrazí jako člena XAML kde <xref:System.Xaml.XamlMember.IsDirective%2A> má hodnotu true a <xref:System.Xaml.XamlMember.Name%2A> člena je `Name`, s jinými vlastnostmi označující, že tato direktiva je v oboru názvů XAML jazyka XAML.
 
-    - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartObject> nebo <xref:System.Xaml.XamlNodeType.EndObject>, volání <xref:System.Xaml.XamlXmlReader.Type%2A> získat <xref:System.Xaml.XamlType> informace o objektu.
+  - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartObject> nebo <xref:System.Xaml.XamlNodeType.EndObject>, volání <xref:System.Xaml.XamlXmlReader.Type%2A> získat <xref:System.Xaml.XamlType> informace o objektu.
 
-    - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.Value>, volání <xref:System.Xaml.XamlXmlReader.Value%2A>. Uzel je hodnota pouze v případě, že je nejjednodušší výraz hodnotu člena nebo textové inicializace pro objekt (ale byste měli vědět o chování převodu typu, jak je uvedeno v následující části tohoto tématu).
+  - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.Value>, volání <xref:System.Xaml.XamlXmlReader.Value%2A>. Uzel je hodnota pouze v případě, že je nejjednodušší výraz hodnotu člena nebo textové inicializace pro objekt (ale byste měli vědět o chování převodu typu, jak je uvedeno v následující části tohoto tématu).
 
-    - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.NamespaceDeclaration>, volání <xref:System.Xaml.XamlXmlReader.Namespace%2A> získat informace o oboru názvů pro uzel oboru názvů.
+  - Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.NamespaceDeclaration>, volání <xref:System.Xaml.XamlXmlReader.Namespace%2A> získat informace o oboru názvů pro uzel oboru názvů.
 
 - Volání <xref:System.Xaml.XamlXmlReader.Read%2A> čtečky XAML, přejděte k dalšímu uzlu v datovém proudu uzlu XAML, a opakujte znovu kroky.
 
@@ -140,15 +140,15 @@ V datovém proudu uzlu XAML se spoléháte na toto chování:
 
 - A `Value` samotná hodnota představuje uzel; není žádný "EndValue". To může následovat pouze `EndMember`.
 
-    - Text XAML inicializace objektu by mohly používat konstrukce nemá za následek struktury hodnotu objektu. Místo toho uzel vyhrazené člena pro člena s názvem `_Initialization` se vytvoří. a tento člen uzel obsahuje inicializační řetězec hodnoty. Pokud existuje, `_Initialization` je vždy první `StartMember`. `_Initialization` může být kvalifikovaný v některých služeb reprezentace XAML s obor namescope XAML jazyka XAML pro vysvětlení, že `_Initialization` se nenachází ve vlastnosti definované v typy zálohování.
+  - Text XAML inicializace objektu by mohly používat konstrukce nemá za následek struktury hodnotu objektu. Místo toho uzel vyhrazené člena pro člena s názvem `_Initialization` se vytvoří. a tento člen uzel obsahuje inicializační řetězec hodnoty. Pokud existuje, `_Initialization` je vždy první `StartMember`. `_Initialization` může být kvalifikovaný v některých služeb reprezentace XAML s obor namescope XAML jazyka XAML pro vysvětlení, že `_Initialization` se nenachází ve vlastnosti definované v typy zálohování.
 
-    - Hodnota člena kombinaci představuje nastavení atributu hodnoty. Nakonec pravděpodobně převaděč hodnot při zpracování tato hodnota a hodnota je prostý řetězec. Nicméně, který není vyhodnocen, dokud zapisovače objektu XAML zpracuje tento datový proud uzlu. Objekt zapisovače XAML má potřebné kontext schématu XAML, mapování typu systému a další podporu potřebné pro převody hodnot.
+  - Hodnota člena kombinaci představuje nastavení atributu hodnoty. Nakonec pravděpodobně převaděč hodnot při zpracování tato hodnota a hodnota je prostý řetězec. Nicméně, který není vyhodnocen, dokud zapisovače objektu XAML zpracuje tento datový proud uzlu. Objekt zapisovače XAML má potřebné kontext schématu XAML, mapování typu systému a další podporu potřebné pro převody hodnot.
 
 - `EndMember` Uzlu může být následován znakem `StartMember` uzel pro následující člen, nebo podle `EndObject` uzlu vlastníka člena.
 
 - `EndObject` Uzlu může být následován `EndMember` uzlu. To může být následován znakem `StartObject` uzel pro případy, ve kterém jsou objekty partnerské uzly v položky kolekce. Nebo může být následován znakem `Namespace` uzlu, která se vztahuje na nadcházející `StartObject`.
 
-    - Pro jedinečný případ ukončení datový proud celého uzlu `EndObject` z kořenové nenásleduje nic; čtecí modul je nyní end souboru, a <xref:System.Xaml.XamlReader.Read%2A> vrátí `false`.
+  - Pro jedinečný případ ukončení datový proud celého uzlu `EndObject` z kořenové nenásleduje nic; čtecí modul je nyní end souboru, a <xref:System.Xaml.XamlReader.Read%2A> vrátí `false`.
 
 <a name="value_converters_and_the_xaml_node_stream"></a>
 

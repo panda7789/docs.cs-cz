@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
 ms.openlocfilehash: 9cfb8ceb4fa1b95603ccc9aa006dd6ee3e8e8b3a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025467"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 

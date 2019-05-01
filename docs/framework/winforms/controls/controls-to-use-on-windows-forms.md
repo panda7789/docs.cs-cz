@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
 ms.openlocfilehash: 11790e14ed1fde9a42e642400161cfb92bf33293
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011750"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje abecední seznam ovládacích prvků a komponent, které lze použít v modelu Windows Forms. Kromě ovládacích prvků Windows Forms uvedenými v této části můžete přidat ovládací prvky ActiveX a vlastních ovládacích prvků do formulářů Windows. Pokud zjistíte, že ovládací prvek, který je třeba zde uvedeny, můžete také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj prvky Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku potřebujete, přečtěte si [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  

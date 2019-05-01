@@ -5,11 +5,11 @@ helpviewer_keywords:
 - operators [Visual Basic]
 ms.assetid: d1fb027c-872b-4ccc-afc8-2380e3f65d4a
 ms.openlocfilehash: 7e65e8e015c88c95c527e148aca6ecb2641afa61
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62028649"
 ---
 # <a name="operators-listed-by-functionality-visual-basic"></a>Operátory uvedené podle funkce (Visual Basic)
 Najdete v jednom z kategorií uvedených níže, nebo otevřete Tato část nápovědy tabulky obsahu, chcete-li zobrazit abecední seznam operátory jazyka Visual Basic.  

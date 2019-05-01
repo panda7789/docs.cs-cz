@@ -5,11 +5,11 @@ helpviewer_keywords:
 - metadata [WCF]
 ms.assetid: 66a61bd0-18d3-4e7e-bf8b-177a10ac2f60
 ms.openlocfilehash: 10b93f94a5a5193513e20eed4571aaf8f6c882a5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59174015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039075"
 ---
 # <a name="metadata"></a>Metadata
 Windows Communication Foundation (WCF) poskytuje infrastrukturu pro export, publikování, načítání a import metadat služby. Služby WCF pomocí metadata popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, můžete automaticky vygenerovat kód klienta pro přístupu ke službě.  

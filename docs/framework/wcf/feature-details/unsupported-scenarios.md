@@ -3,11 +3,11 @@ title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
 ms.openlocfilehash: 12012f3e0c0c3b0d10c5faebfb2de881f5de3917
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59178773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050750"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním Windows na této platformě. Jiné ověřovací mechanismy, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP/HTTPS se nepodporuje při spuštění WCF v části Windows XP Home Edition.  
@@ -20,13 +20,13 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Windows XP a zabezpečené kontextu Token souboru Cookie povolené  
  WCF nepodporuje zosobnění a <xref:System.InvalidOperationException> je vyvolána při dodržení následujících podmínek:  
   
--   Operační systém je [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+- Operační systém je [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
--   Režim ověřování výsledkem identita Windows.  
+- Režim ověřování výsledkem identita Windows.  
   
--   <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> Vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute> je nastavena na <xref:System.ServiceModel.ImpersonationOption.Required>.  
+- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> Vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute> je nastavena na <xref:System.ServiceModel.ImpersonationOption.Required>.  
   
--   Vytvoří token kontextu zabezpečení na základě stavu (SCT) (ve výchozím nastavení, je zakázáno vytváření).  
+- Vytvoří token kontextu zabezpečení na základě stavu (SCT) (ve výchozím nastavení, je zakázáno vytváření).  
   
  Základě stavu SCT lze vytvořit pouze použití vlastní vazby. Další informace najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).) V kódu, je tak, že vytvoříte element vazby zabezpečení povoleno token (buď <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> metoda a nastavení `requireCancellation` parametr `false`. Parametr odkazuje na ukládání do mezipaměti SCT. Nastavením této hodnoty na `false` povolí tuto funkci SCT na základě stavu.  
   
@@ -68,18 +68,18 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
   
  Existují dva možné způsoby, jak zjistit, pokud certifikát využívá KSP:  
   
--   Proveďte `p/invoke` z `CertGetCertificateContextProperty`a zkontrolujte `dwProvType` na vrácený `CertGetCertificateContextProperty`.  
+- Proveďte `p/invoke` z `CertGetCertificateContextProperty`a zkontrolujte `dwProvType` na vrácený `CertGetCertificateContextProperty`.  
   
--   Použití `certutil` příkazu z příkazového řádku pro dotazování na certifikáty. Další informace najdete v tématu [úkoly programu Certutil pro řešení problémů s certifikáty](https://go.microsoft.com/fwlink/?LinkId=120056).  
+- Použití `certutil` příkazu z příkazového řádku pro dotazování na certifikáty. Další informace najdete v tématu [úkoly programu Certutil pro řešení problémů s certifikáty](https://go.microsoft.com/fwlink/?LinkId=120056).  
   
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>Zpráva zabezpečení nezdaří, pokud pomocí zosobnění technologie ASP.NET a režim kompatibility ASP.NET je vyžadován  
  WCF nepodporuje následující kombinaci nastavení, protože nebrání ověření klienta před:  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Je povoleno zosobnění. To se provádí v souboru Web.config tak, že nastavíte `impersonate` atribut <`identity`> element `true`.  
+- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Je povoleno zosobnění. To se provádí v souboru Web.config tak, že nastavíte `impersonate` atribut <`identity`> element `true`.  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility se povoluje nastavením `aspNetCompatibilityEnabled` atribut [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) k `true`.  
+- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility se povoluje nastavením `aspNetCompatibilityEnabled` atribut [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) k `true`.  
   
--   Režim zabezpečení zprávy se používá.  
+- Režim zabezpečení zprávy se používá.  
   
  Vyřešit se vypnout [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility. Nebo, pokud [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] se vyžaduje režim kompatibility, zakažte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zosobnění běží na procesorech a místo toho použijte zosobnění poskytované WCF. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   

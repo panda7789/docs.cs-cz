@@ -10,30 +10,30 @@ helpviewer_keywords:
 - age of cached resources
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
 ms.openlocfilehash: 18a73a46bc4b463d0a5f5690afe6d1109e06171c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62036475"
 ---
 # <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>Interakce zásad mezipaměti – maximální stáří a maximální neaktuálnost
 K zajištění, že nejčerstvější obsah se vrátí do klientské aplikace, interakce vždy klienta mezipaměti zásad serveru opětovné ověření požadavků a výsledkem nejrestriktivnější zásady ukládání do mezipaměti. Všechny příklady v tomto tématu ilustrují zásady ukládání do mezipaměti pro prostředek, který se uloží do mezipaměti na 1. ledna a končí 4. ledna.  
   
  V následujících příkladech hodnota maximální neaktuálnost (`maxStale`) se používá ve spojení s maximální stáří (`maxAge`):  
   
--   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a nemá `maxStale` hodnoty, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Nicméně podle požadavků na opětovné ověření serveru, platnost obsahu vyprší dne od 4. Protože datum vypršení platnosti obsahu je konzervativnější (dřív), má přednost před `maxAge` zásad. Proto obsahu vyprší dne 4 a musí ověřit, i když nedosáhla své maximální stáří.  
+- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a nemá `maxStale` hodnoty, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Nicméně podle požadavků na opětovné ověření serveru, platnost obsahu vyprší dne od 4. Protože datum vypršení platnosti obsahu je konzervativnější (dřív), má přednost před `maxAge` zásad. Proto obsahu vyprší dne 4 a musí ověřit, i když nedosáhla své maximální stáří.  
   
--   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 3 dny, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Podle `maxStale` hodnotu, je obsah použitelné až do ledna 7. Proto získá obsah ověřit v lednu 6.  
+- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 3 dny, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Podle `maxStale` hodnotu, je obsah použitelné až do ledna 7. Proto získá obsah ověřit v lednu 6.  
   
--   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 1 den, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Podle `maxStale` hodnotu, je obsah použitelné až do ledna 5. Proto získá ověřit obsah na 5. ledna.  
+- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 1 den, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Podle `maxStale` hodnotu, je obsah použitelné až do ledna 5. Proto získá ověřit obsah na 5. ledna.  
   
  Při maximální stáří je menší než datum vypršení platnosti obsahu, vždycky existuje konzervativnější chování ukládání do mezipaměti a maximální neaktuálnost hodnota nemá žádný vliv. Následující příklady znázorňují účinek nastavení maximální neaktuálnost (`maxStale`) hodnotu v případě maximální stáří (`maxAge`) je dosažen předtím, než vyprší platnost obsahu:  
   
--   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a nemá hodnotu `maxStale` hodnotu, obsah je ověřit na 2. ledna i v případě, že nevypršela jeho platnost.  
+- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a nemá hodnotu `maxStale` hodnotu, obsah je ověřit na 2. ledna i v případě, že nevypršela jeho platnost.  
   
--   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a `maxStale` = 3 dny, obsah je ověřit na 2. ledna konzervativnější nastavení zásad vynucovat.  
+- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a `maxStale` = 3 dny, obsah je ověřit na 2. ledna konzervativnější nastavení zásad vynucovat.  
   
--   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a `maxStale` = 1 den, obsah je ověřit na 2. ledna.  
+- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a `maxStale` = 1 den, obsah je ověřit na 2. ledna.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -10,32 +10,32 @@ helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
 ms.openlocfilehash: 4e005ea96df45da8326386f8b43aa5640ce810b1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050610"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načíst soubory mnoha způsoby, včetně následujících:  
   
--   Zadání [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] zobrazit při prvním spuštění aplikace.  
+- Zadání [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] zobrazit při prvním spuštění aplikace.  
   
--   Načtení obrázků.  
+- Načtení obrázků.  
   
--   Přejděte na stránky.  
+- Přejděte na stránky.  
   
--   Načítají se soubory dat – spustitelný soubor.  
+- Načítají se soubory dat – spustitelný soubor.  
   
  Kromě toho [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] slouží k identifikaci a nahrajte soubory z různých umístěních, včetně následujících:  
   
--   Aktuální sestavení.  
+- Aktuální sestavení.  
   
--   Odkazované sestavení.  
+- Odkazované sestavení.  
   
--   Umístění relativně k sestavení.  
+- Umístění relativně k sestavení.  
   
--   Aplikace webovou stránku původu.  
+- Aplikace webovou stránku původu.  
   
  K zajištění konzistentní mechanismus pro identifikaci a načítání těchto typů souborů z těchto míst [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá rozšiřitelnosti aplikace *schéma URI balíku*. Toto téma obsahuje základní informace o schématu, popisuje, jak vytvořit balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro širokou škálu scénářů, tento článek popisuje absolutní a relativní [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] a [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení před zobrazením jak používat balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] z obou značek a kódu.  
 
@@ -59,15 +59,15 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  Balíčky a části jsou podobná aplikace a soubory, kde aplikace (balíček) může obsahovat jeden nebo více souborů (částí), včetně:  
   
--   Soubory prostředků, které jsou kompilovány do místní sestavení.  
+- Soubory prostředků, které jsou kompilovány do místní sestavení.  
   
--   Soubory prostředků, které jsou kompilovány do odkazované sestavení.  
+- Soubory prostředků, které jsou kompilovány do odkazované sestavení.  
   
--   Soubory prostředků, které jsou kompilovány do odkazující sestavení.  
+- Soubory prostředků, které jsou kompilovány do odkazující sestavení.  
   
--   Soubory obsahu.  
+- Soubory obsahu.  
   
--   Lokalita zdroje souborů.  
+- Lokalita zdroje souborů.  
   
  Pro přístup k tyto typy souborů, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje dva orgány: aplikace: / / / / / a siteoforigin: / / / / /. Aplikace: / / / / / autority identifikuje datové soubory aplikace, která jsou známá v době kompilace, včetně souborů prostředků a obsahu. Siteoforigin: / / / / / autority identifikuje lokality původní soubory. Rozsah každé oprávnění je znázorněno na následujícím obrázku.  
   
@@ -86,9 +86,9 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
 ### <a name="local-assembly-resource-file"></a>Soubor prostředků místní sestavení  
  Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředek soubor, který se zkompiluje do místní sestavení používá následující autority a cesta:  
   
--   **Autorita**: aplikace: / / / / /.  
+- **Autorita**: aplikace: / / / / /.  
   
--   **Cesta**: Název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce místní sestavení projektu.  
+- **Cesta**: Název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce místní sestavení projektu.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který se nachází v kořenové složce místní sestavení projektu.  
   
@@ -102,21 +102,21 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
 ### <a name="referenced-assembly-resource-file"></a>Soubor prostředků odkazovaných sestavení  
  Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředek soubor, který se zkompiluje do odkazované sestavení používá následující autority a cesta:  
   
--   **Autorita**: aplikace: / / / / /.  
+- **Autorita**: aplikace: / / / / /.  
   
--   **Cesta**: Název zdrojového souboru, který se zkompiluje do odkazovaných sestavení. Cestou musí být v následujícím formátu:  
+- **Cesta**: Název zdrojového souboru, který se zkompiluje do odkazovaných sestavení. Cestou musí být v následujícím formátu:  
   
      *AssemblyShortName*{*; Verze*] {*; PublicKey*]; component /*cesta*  
   
-    -   **AssemblyShortName**: krátký název odkazovaného sestavení.  
+    - **AssemblyShortName**: krátký název odkazovaného sestavení.  
   
-    -   **; Verze** [volitelný]: verze odkazovaného sestavení, která obsahuje soubor prostředků. To se používá, když dva nebo víc odkazovaných sestavení se stejným názvem, short jsou načteny.  
+    - **; Verze** [volitelný]: verze odkazovaného sestavení, která obsahuje soubor prostředků. To se používá, když dva nebo víc odkazovaných sestavení se stejným názvem, short jsou načteny.  
   
-    -   **; PublicKey** [volitelný]: veřejný klíč, který se použil k podepsání odkazovaných sestavení. To se používá, když dva nebo víc odkazovaných sestavení se stejným názvem, short jsou načteny.  
+    - **; PublicKey** [volitelný]: veřejný klíč, který se použil k podepsání odkazovaných sestavení. To se používá, když dva nebo víc odkazovaných sestavení se stejným názvem, short jsou načteny.  
   
-    -   **; součást**: Určuje, že se z místní sestavení odkazuje sestavení, který se odkazuje.  
+    - **; součást**: Určuje, že se z místní sestavení odkazuje sestavení, který se odkazuje.  
   
-    -   **/ Cesta**: název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce projektu odkazované sestavení.  
+    - **/ Cesta**: název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce projektu odkazované sestavení.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který se nachází v kořenové složce projektu odkazované sestavení.  
   
@@ -138,9 +138,9 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
 ## <a name="content-file-pack-uris"></a>Identifikátory URI souboru balíčku obsahu  
  Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro soubor s obsahem používá následující autority a cesta:  
   
--   **Autorita**: aplikace: / / / / /.  
+- **Autorita**: aplikace: / / / / /.  
   
--   **Cesta**: Název souboru obsahu, včetně jeho cesty relativní k umístění systému souboru hlavního spustitelného sestavení aplikace.  
+- **Cesta**: Název souboru obsahu, včetně jeho cesty relativní k umístění systému souboru hlavního spustitelného sestavení aplikace.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahu soubor umístěný ve stejné složce jako spustitelného sestavení.  
   
@@ -157,9 +157,9 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
 ## <a name="site-of-origin-pack-uris"></a>Lokality identifikátorů URI zdroje balíčku  
  Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] ke stránce původu soubor používá následující autority a cesta:  
   
--   **Autorita**: siteoforigin: / / / / /.  
+- **Autorita**: siteoforigin: / / / / /.  
   
--   **Cesta**: Název lokality zdrojový soubor, včetně jeho cesty relativní k umístění, ze kterého byl spuštěn spustitelný soubor sestavení.  
+- **Cesta**: Název lokality zdrojový soubor, včetně jeho cesty relativní k umístění, ze kterého byl spuštěn spustitelný soubor sestavení.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokality zdrojový soubor, uložené v umístění, ze kterého je spuštěn spustitelný soubor sestavení.  
   
@@ -175,17 +175,17 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které jsou běžně nakonfigurována jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky mají jeden z následujících jako jeho kořenový element:  
   
--   <xref:System.Windows.Window?displayProperty=nameWithType>  
+- <xref:System.Windows.Window?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Controls.Page?displayProperty=nameWithType>  
+- <xref:System.Windows.Controls.Page?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Navigation.PageFunction%601?displayProperty=nameWithType>  
+- <xref:System.Windows.Navigation.PageFunction%601?displayProperty=nameWithType>  
   
--   <xref:System.Windows.ResourceDictionary?displayProperty=nameWithType>  
+- <xref:System.Windows.ResourceDictionary?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Documents.FlowDocument?displayProperty=nameWithType>  
+- <xref:System.Windows.Documents.FlowDocument?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType>  
+- <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType>  
   
 <a name="Absolute_vs_Relative_Pack_URIs"></a>   
 ## <a name="absolute-vs-relative-pack-uris"></a>Absolutní vs. Identifikátory relativních Pack URI  
@@ -246,11 +246,11 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení se nedá použít pro [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které odkazují na následující:  
   
--   Obsah souborů v odkazovaných sestaveních: Služba nepodporuje tyto typy souborů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+- Obsah souborů v odkazovaných sestaveních: Služba nepodporuje tyto typy souborů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
   
--   Vložené soubory v odkazovaných sestaveních: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] poznají, která jsou jedinečná, vzhledem k tomu, aby obsahovaly název odkazovaného sestavení a `;component` příponu.  
+- Vložené soubory v odkazovaných sestaveních: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] poznají, která jsou jedinečná, vzhledem k tomu, aby obsahovaly název odkazovaného sestavení a `;component` příponu.  
   
--   Lokality původu souborů: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] poznají, které byly jedinečné, protože jsou pouze soubory, které lze identifikovat podle sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které obsahují siteoforigin: / / / / / autority.  
+- Lokality původu souborů: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] poznají, které byly jedinečné, protože jsou pouze soubory, které lze identifikovat podle sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které obsahují siteoforigin: / / / / / autority.  
   
  Jeden zápis, který pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení umožňuje, je pro kód je poněkud nezávislé na umístění prostředků a obsahu souborů. Například, pokud máte soubor prostředků v místním sestavení, které je překonfigurovat tak, aby se soubor s obsahem, sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředku zůstala stejná, stejně jako kód, který používá sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].  
   
@@ -258,17 +258,17 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
 ## <a name="programming-with-pack-uris"></a>Programování s identifikátory Pack URI  
  Mnoho [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] třídy implementovat vlastnosti, které lze nastavit s aktualizací Service pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], včetně:  
   
--   <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Controls.Frame.Source%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Controls.Frame.Source%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Documents.Hyperlink.NavigateUri%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Documents.Hyperlink.NavigateUri%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Window.Icon%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Window.Icon%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Controls.Image.Source%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Controls.Image.Source%2A?displayProperty=nameWithType>  
   
  Tyto vlastnosti můžete nastavit od značek a kódu. Tato část ukazuje základní konstrukce pro oba a potom jsou uvedeny příklady běžným scénářům.  
   

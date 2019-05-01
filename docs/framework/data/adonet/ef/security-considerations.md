@@ -3,11 +3,11 @@ title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
 ms.openlocfilehash: 1e3c1f74c1bf30da47fb38b6799bff11090cf31a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033966"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Měli postupovat také podle doporučení pro vytváření zabezpečených [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -18,11 +18,11 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 #### <a name="use-only-trusted-data-source-providers"></a>Použijte pouze poskytovatelé zdrojů důvěryhodná data.  
  Ke komunikaci se zdrojem dat, musíte udělat následující zprostředkovatele:  
   
--   Zobrazit připojovací řetězec z [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+- Zobrazit připojovací řetězec z [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
--   Převede uzel stromu příkazů na zdroj dat nativní dotazovací jazyk.  
+- Převede uzel stromu příkazů na zdroj dat nativní dotazovací jazyk.  
   
--   Sestavení a vrátit sad výsledků dotazu.  
+- Sestavení a vrátit sad výsledků dotazu.  
   
  Během přihlášení informace, které je založená na heslo uživatele se předává k serveru knihovny sítě podkladového zdroje dat. Škodlivý poskytovatele může ukrást přihlašovací údaje uživatele, generovat škodlivý dotazy nebo manipulovat s sadu výsledků dotazu.  
   
@@ -32,19 +32,19 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 #### <a name="secure-the-connection-string"></a>Zabezpečený připojovací řetězec.  
  Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečování aplikace. Připojovací řetězec představuje potenciální ohrožení zabezpečení, není-li zabezpečena, nebo pokud je nesprávně vytvořen. Při ukládání informací o připojení ve formátu prostého textu nebo jej zachovat v paměti, riskujete tím bylo narušeno celého systému. Dál jsou uvedené doporučené metody pro zabezpečení připojovací řetězce:  
   
--   Použijte ověřování Windows se zdrojem dat serveru SQL Server.  
+- Použijte ověřování Windows se zdrojem dat serveru SQL Server.  
   
      Pokud používáte ověřování Windows pro připojení ke zdroji dat SQL serveru, připojovací řetězec neobsahuje informace o přihlášení a hesla.  
   
--   Šifrování pomocí chráněné konfigurace oddíly konfiguračního souboru.  
+- Šifrování pomocí chráněné konfigurace oddíly konfiguračního souboru.  
   
      Technologie ASP.NET poskytuje funkci s názvem chráněné konfigurace, která umožňuje šifrování citlivých informací v konfiguračním souboru. Přestože primárně určený pro technologii ASP.NET, můžete také použít chráněné konfigurace šifrování oddíly konfiguračních souborů aplikace Windows. Podrobný popis nových funkcí chráněné konfigurace najdete v tématu [šifrování konfigurační informace pomocí Protected Configuration](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
   
--   Store připojovací řetězce v zabezpečené konfigurační soubory.  
+- Store připojovací řetězce v zabezpečené konfigurační soubory.  
   
      Ve zdrojovém kódu by nikdy vložit připojovací řetězce. Můžete ukládání připojovacích řetězců v konfiguračních souborech, které eliminuje potřebu vložení do kódu vaší aplikace. Ve výchozím nastavení ukládá Průvodce datovým modelem Entity připojovací řetězce v konfiguračním souboru aplikace. Tomuto souboru zabráníte neoprávněnému přístupu musíte zabezpečit.  
   
--   Tvůrci připojovacích řetězců používejte pro dynamicky vytváření připojení.  
+- Tvůrci připojovacích řetězců používejte pro dynamicky vytváření připojení.  
   
      Pokud je nutné vytvořit připojovací řetězce za běhu, použijte <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídy. Tato třída Tvůrce řetězec pomáhá zabránit útoky prostřednictvím injektáže připojovací řetězec tak, že ověřování a uvozovací znaky neplatné vstupní informace. Další informace najdete v tématu [jak: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md). Třídu Tvůrce příslušného řetězcového také použít k vytvoření připojovacího řetězce datového zdroje, který je součástí [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] připojovací řetězec. Informace o tvůrci připojovacích řetězců pro poskytovatele ADO.NET, naleznete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
   
@@ -65,15 +65,15 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 #### <a name="run-applications-with-the-minimum-permissions"></a>Spouštění aplikací s minimálními oprávněními.  
  Když povolíte spravované aplikace na spuštění pomocí oprávnění plné důvěryhodnosti, [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] neomezuje přístup aplikace k vašemu počítači. To může umožnit ohrožení zabezpečení v aplikaci k ohrožení celý systém. Zabezpečení přístupu kódu a další mechanismy zabezpečení ve [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)], by měl spouštět aplikace s částečným vztahem důvěryhodnosti oprávněními a s minimální sadu oprávnění, která jsou potřebná k povolení aplikace pro funkce. Minimální oprávnění jsou následující přístupová oprávnění kódu vaší [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] potřeby aplikace:  
   
--   <xref:System.Security.Permissions.FileIOPermission>: <xref:System.Security.Permissions.FileIOPermissionAccess.Write> k otevírání souborů Zadaná metadata nebo <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery> adresáři pro soubory metadat.  
+- <xref:System.Security.Permissions.FileIOPermission>: <xref:System.Security.Permissions.FileIOPermissionAccess.Write> k otevírání souborů Zadaná metadata nebo <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery> adresáři pro soubory metadat.  
   
--   <xref:System.Security.Permissions.ReflectionPermission>: <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> podporovat LINQ dotazů entity.  
+- <xref:System.Security.Permissions.ReflectionPermission>: <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> podporovat LINQ dotazů entity.  
   
--   <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> k zařazení <xref:System.Transactions> <xref:System.Transactions.Transaction>.  
+- <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> k zařazení <xref:System.Transactions> <xref:System.Transactions.Transaction>.  
   
--   <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimky pomocí <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
+- <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimky pomocí <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
   
--   Oprávnění k otevření připojení k databázi a spusťte příkazy na databázi, jako například <xref:System.Data.SqlClient.SqlClientPermission> pro databázi serveru SQL Server.  
+- Oprávnění k otevření připojení k databázi a spusťte příkazy na databázi, jako například <xref:System.Data.SqlClient.SqlClientPermission> pro databázi serveru SQL Server.  
   
  Další informace najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md).  
   
@@ -94,31 +94,31 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 #### <a name="prevent-sql-injection-attacks"></a>Zabránění útokům prostřednictvím injektáže SQL.  
  Aplikace často trvat, než externí vstup (uživatele nebo jiné externí agenta) a provádět akce na základě těchto informací. Žádné vstup, který je přímo nebo nepřímo odvozen od uživatele nebo externí agenta může mít obsah, který používá syntaxi cílový jazyk k vykonávání neoprávněným akcím. Pokud cílový jazyk je jazyk SQL (Structured Query), například [!INCLUDE[tsql](../../../../../includes/tsql-md.md)], tato manipulace se označuje jako útok prostřednictvím injektáže SQL. Uživatel se zlými úmysly může vložit příkazy přímo do dotazu a vyřadit tabulku databáze, způsobit odepření služby nebo jinak změnit druh operace právě probíhá.  
   
--   [!INCLUDE[esql](../../../../../includes/esql-md.md)] útoky prostřednictvím injektáže:  
+- [!INCLUDE[esql](../../../../../includes/esql-md.md)] útoky prostřednictvím injektáže:  
   
      Útoky prostřednictvím injektáže SQL lze provádět v [!INCLUDE[esql](../../../../../includes/esql-md.md)] zadáním škodlivého zadání hodnoty, které se používají v predikátu dotazu a názvy parametrů. Aby nedošlo k ohrožení útok prostřednictvím injektáže SQL, byste nikdy neměli kombinovat vstupu uživatele s [!INCLUDE[esql](../../../../../includes/esql-md.md)] text příkazu.  
   
      [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy přijímají parametry všude, že se přijímají literály. Parametrizované dotazy byste měli použít místo vloženého literály z externí agenta přímo do dotazu. Měli byste také zvážit použití [metody Tvůrce dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100)) bezpečně vytvořit Entity SQL.  
   
--   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] útoky prostřednictvím injektáže:  
+- [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] útoky prostřednictvím injektáže:  
   
      I když sestavení dotazu je možné v [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)], se provádí prostřednictvím rozhraní API objektu modelu. Na rozdíl od [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy, [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] dotazy nejsou skládá pomocí zacházení s řetězci nebo zřetězení a nejsou náchylný k tradiční útoky prostřednictvím injektáže SQL.  
   
 #### <a name="prevent-very-large-result-sets"></a>Zabraňte velmi velké množství výsledků.  
  Výsledek velmi velké sady může způsobit, že systém klienta pro vypnutí klient je provádění operací, které spotřebovávají prostředky přímo úměrná velikosti sady výsledků dotazu. Velké množství výsledků neočekávaně může dojít za následujících podmínek:  
   
--   V dotazech ve velké databázi, které neobsahují podmínek příslušný filtr.  
+- V dotazech ve velké databázi, které neobsahují podmínek příslušný filtr.  
   
--   V dotazech, které vytvářejí Kartézském spojení na serveru.  
+- V dotazech, které vytvářejí Kartézském spojení na serveru.  
   
--   Ve vnořené [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy.  
+- Ve vnořené [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy.  
   
  Při přijímání vstupu uživatele, musíte se ujistit, že vstup nemůže způsobit sad výsledků dotazu se větší, než co může systém zpracovat. Můžete také použít <xref:System.Linq.Queryable.Take%2A> metoda [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] nebo [LIMIT](../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md) operátor v [!INCLUDE[esql](../../../../../includes/esql-md.md)] omezení velikosti sady výsledků dotazu.  
   
 #### <a name="avoid-returning-iqueryable-results-when-exposing-methods-to-potentially-untrusted-callers"></a>Vyhněte se vrací typ IQueryable výsledky při zpřístupňuje metody pro potenciálně nedůvěryhodných volajících.  
  Vyhněte se vracení <xref:System.Linq.IQueryable%601> typy z metod, které jsou vystaveny potenciálně nedůvěryhodných volajících z následujících důvodů:  
   
--   Příjemce dotaz, který poskytuje <xref:System.Linq.IQueryable%601> typ může volat metody ve výsledku, který vystavit zabezpečených dat, případně zvyšte velikost sady výsledků dotazu. Představte si třeba následující podpis metody:  
+- Příjemce dotaz, který poskytuje <xref:System.Linq.IQueryable%601> typ může volat metody ve výsledku, který vystavit zabezpečených dat, případně zvyšte velikost sady výsledků dotazu. Představte si třeba následující podpis metody:  
   
     ```  
     public IQueryable<Customer> GetCustomer(int customerId)  
@@ -126,7 +126,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
      Příjemce tento dotaz lze zavolat `.Include("Orders")` na vrácený `IQueryable<Customer>` data, která dotaz neměl v úmyslu ke zveřejnění. To se můžete vyhnout tak, že změníte návratový typ metody, která <xref:System.Collections.Generic.IEnumerable%601> a volání metody (například `.ToList()`), který bude realizována výsledky.  
   
--   Protože <xref:System.Linq.IQueryable%601> dotazy jsou spouštěny, když jsou procházen výsledky, příjemce dotaz, který poskytuje <xref:System.Linq.IQueryable%601> typ může zachytit výjimky, které jsou vyvolány. Výjimky mohou obsahovat informace, které nejsou určeny pro spotřebitele.  
+- Protože <xref:System.Linq.IQueryable%601> dotazy jsou spouštěny, když jsou procházen výsledky, příjemce dotaz, který poskytuje <xref:System.Linq.IQueryable%601> typ může zachytit výjimky, které jsou vyvolány. Výjimky mohou obsahovat informace, které nejsou určeny pro spotřebitele.  
   
 ## <a name="security-considerations-for-entities"></a>Důležité informace o zabezpečení pro entity  
  Při vytváření a práci s typy entit, platí následující aspekty zabezpečení.  

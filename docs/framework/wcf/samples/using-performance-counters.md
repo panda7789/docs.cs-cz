@@ -3,11 +3,11 @@ title: Použití čítačů výkonu
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
 ms.openlocfilehash: 2c5042d497a09984a6f6c398a943b443ee9aafb9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007601"
 ---
 # <a name="using-performance-counters"></a>Použití čítačů výkonu
 Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Communication Foundation (WCF) a jak vytvořit uživatelsky definovaným výkonem čítače. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  

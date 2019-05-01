@@ -5,11 +5,11 @@ dev_langs:
 - vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
 ms.openlocfilehash: 326caf550e8b138b4b968f0021a7fc475dc58c8d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037008"
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Návod: Jednoduchý objektový model a dotaz (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář s minimálními složitosti. Vytvořte třídu entity, která modeluje tabulku Customers v ukázkové databázi Northwind. Pak vytvoříte jednoduchý dotaz do seznamu zákazníků, kteří jsou umístěny v Londýně.  
@@ -22,24 +22,24 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 ## <a name="prerequisites"></a>Požadavky  
   
--   Tento návod používá vyhrazené složky ("c:\linqtest") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
+- Tento návod používá vyhrazené složky ("c:\linqtest") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
   
--   Tento návod vyžaduje ukázkové databáze Northwind. Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft download. Pokyny najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze, zkopírujte soubor do složky c:\linqtest.  
+- Tento návod vyžaduje ukázkové databáze Northwind. Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft download. Pokyny najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze, zkopírujte soubor do složky c:\linqtest.  
   
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá z šesti hlavních úloh:  
   
--   Vytváření [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
+- Vytváření [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
   
--   Mapování třídy do databázové tabulky.  
+- Mapování třídy do databázové tabulky.  
   
--   Určení vlastnosti na třídu, představují sloupce databáze.  
+- Určení vlastnosti na třídu, představují sloupce databáze.  
   
--   Zadání připojení k databázi Northwind.  
+- Zadání připojení k databázi Northwind.  
   
--   Vytvoření jednoduchého dotazu ke spuštění na databázi.  
+- Vytvoření jednoduchého dotazu ke spuštění na databázi.  
   
--   Provádění dotazu a sledování výsledky.  
+- Provádění dotazu a sledování výsledky.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření LINQ to SQL řešení  
  V této první úloze vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
@@ -80,22 +80,22 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-an-entity-class-and-map-it-to-a-database-table"></a>Chcete-li vytvořit třídu entity a jejich mapování na tabulku databáze  
   
--   Zadejte nebo vložte následující kód do Module1.vb okamžitě výše `Sub Main`:  
+- Zadejte nebo vložte následující kód do Module1.vb okamžitě výše `Sub Main`:  
   
      [!code-vb[DLinqWalk1VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk1VB/vb/Module1.vb#2)]  
   
 ## <a name="designating-properties-on-the-class-to-represent-database-columns"></a>Určení vlastnosti na třídu, představují sloupce databáze  
  V tomto kroku můžete provést několik úloh.  
   
--   Můžete použít <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut k určení `CustomerID` a `City` vlastnosti v entitě tříd jako sloupce v tabulce databáze.  
+- Můžete použít <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut k určení `CustomerID` a `City` vlastnosti v entitě tříd jako sloupce v tabulce databáze.  
   
--   Můžete určit `CustomerID` vlastnost jako sloupec primárního klíče v databázi.  
+- Můžete určit `CustomerID` vlastnost jako sloupec primárního klíče v databázi.  
   
--   Určíte `_CustomerID` a `_City` polí privátního úložiště. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Můžete pak ukládat a načítat hodnoty přímo, namísto použití veřejnou přistupující objekty, které mohou obsahovat obchodní logiku.  
+- Určíte `_CustomerID` a `_City` polí privátního úložiště. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Můžete pak ukládat a načítat hodnoty přímo, namísto použití veřejnou přistupující objekty, které mohou obsahovat obchodní logiku.  
   
 #### <a name="to-represent-characteristics-of-two-database-columns"></a>K reprezentaci charakteristiky dva sloupce databáze  
   
--   Zadejte nebo vložte následující kód do Module1.vb těsně před `End Class`:  
+- Zadejte nebo vložte následující kód do Module1.vb těsně před `End Class`:  
   
      [!code-vb[DLinqWalk1VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk1VB/vb/Module1.vb#3)]  
   
@@ -106,7 +106,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-specify-the-database-connection"></a>K určení připojení k databázi  
   
--   Zadejte nebo vložte následující kód do `Sub Main` metody.  
+- Zadejte nebo vložte následující kód do `Sub Main` metody.  
   
      Všimněte si, že `northwnd.mdf` soubor je považován za ve složce linqtest. Další informace najdete v oddílu požadavky dříve v tomto návodu.  
   
@@ -119,7 +119,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-a-simple-query"></a>Vytvoření jednoduchého dotazu  
   
--   Zadejte nebo vložte následující kód do `Sub Main` za `Table(Of Customer)` deklarace:  
+- Zadejte nebo vložte následující kód do `Sub Main` za `Table(Of Customer)` deklarace:  
   
      [!code-vb[DLinqWalk1AVB#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk1AVB/vb/Module1.vb#5)]  
   

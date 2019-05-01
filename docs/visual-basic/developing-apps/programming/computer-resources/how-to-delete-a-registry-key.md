@@ -12,11 +12,11 @@ helpviewer_keywords:
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
 ms.openlocfilehash: fdb61fee8a790000c53b6c9a0188999bc0cb09ae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014362"
 ---
 # <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Postupy: Odstranění klíče z registru v jazyce Visual Basic
 <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> a <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> metody slouží k odstranění klíče registru.  
@@ -25,7 +25,7 @@ ms.locfileid: "58840317"
   
 #### <a name="to-delete-a-registry-key"></a>Odstranit klíč registru  
   
--   Použití `DeleteSubKey` metodu k odstranění klíče z registru. Tento příklad odstraní klíč softwaru/TestApp v CurrentUser hive. Můžete změnit v kódu na odpovídající řetězec nebo vycházet z uživatelem zadané informace.  
+- Použití `DeleteSubKey` metodu k odstranění klíče z registru. Tento příklad odstraní klíč softwaru/TestApp v CurrentUser hive. Můžete změnit v kódu na odpovídající řetězec nebo vycházet z uživatelem zadané informace.  
   
      [!code-vb[VbResourceTasks#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#19)]  
   
@@ -34,20 +34,19 @@ ms.locfileid: "58840317"
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Uživatel nemá oprávnění k odstranění klíče registru (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění k odstranění klíče registru (<xref:System.Security.SecurityException>).  
   
--   Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
+- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
   
--   Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).  
+- Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Volání registru selhat, pokud nejsou udělena buď dostatečná oprávnění za běhu (<xref:System.Security.Permissions.RegistryPermission>) nebo pokud uživatel nemá správný přístup (jako seznamy ACL) pro vytvoření nebo zápis do nastavení. Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému.  
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
 - <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
 - <xref:Microsoft.Win32.RegistryKey>
 - [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)

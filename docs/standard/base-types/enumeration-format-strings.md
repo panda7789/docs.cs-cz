@@ -13,11 +13,11 @@ ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2c71592537a31527bda6db08da8c36e798270d5a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032835"
 ---
 # <a name="enumeration-format-strings"></a>Výčet řetězců formátu
 
@@ -46,7 +46,7 @@ Zobrazí výčet položku jako celočíselnou hodnotu v nejkratší možné repr
 [!code-csharp[Formatting.Enum#3](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)]
 [!code-vb[Formatting.Enum#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)]
 
-## <a name="x-or-x"></a>X nebo x
+## <a name="x-or-x"></a>X or x
 
 Zobrazí výčet položku jako šestnáctková hodnota. Hodnota je reprezentován počátečními nulami podle potřeby zajistit, že hodnota je minimální osm číslic v délce. Následující příklad ukazuje specifikátor formátu X.
 

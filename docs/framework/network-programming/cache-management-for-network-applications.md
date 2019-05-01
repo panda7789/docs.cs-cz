@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Internet, caching
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
 ms.openlocfilehash: 265b4e451ebb76dbabe0d3e0df065504a3891f32
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033160"
 ---
 # <a name="cache-management-for-network-applications"></a>Správa mezipaměti pro síťové aplikace
 Toto téma a další související části popisují, ukládání do mezipaměti pro prostředky získané s použitím <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>, a <xref:System.Net.FtpWebRequest> třídy.  

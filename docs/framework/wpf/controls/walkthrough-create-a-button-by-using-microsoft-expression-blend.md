@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Expression Blend [WPF Designer]
 ms.assetid: ff5037c2-bba7-4cae-8abb-6475b686c48e
 ms.openlocfilehash: 3cf9d133aee5a2c3d93c1a464c96fdaebcf230f3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018185"
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>Návod: Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend
 Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] přizpůsobené tlačítka pomocí Microsoft Expression Blend.  
@@ -117,17 +117,17 @@ Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf]
   
 10. **Ujistěte se, glassCube vypadat lupy:** Nastavte <xref:System.Windows.Shapes.Shape.Fill%2A> sklovitě vzhledu pomocí lineárního přechodu, který je 75 % neprůhledných a střídá bílou barvu a Transparent více než 6 přibližně rovnoměrně rozmístěné intervalech. Toto je co mají nastavit ukončení přechodu:  
   
-    -   Přechodové 1: Prázdné hodnoty alfa 75 %  
+    - Přechodové 1: Prázdné hodnoty alfa 75 %  
   
-    -   Přechodové 2: Transparentní  
+    - Přechodové 2: Transparentní  
   
-    -   Přechodové 3: Prázdné hodnoty alfa 75 %  
+    - Přechodové 3: Prázdné hodnoty alfa 75 %  
   
-    -   Přechodové 4: Transparentní  
+    - Přechodové 4: Transparentní  
   
-    -   Přechodové 5: Prázdné hodnoty alfa 75 %  
+    - Přechodové 5: Prázdné hodnoty alfa 75 %  
   
-    -   Přechodové 6: Transparentní  
+    - Přechodové 6: Transparentní  
   
      Tím se vytvoří "vlnovkou" skla vzhled.  
   
@@ -173,9 +173,9 @@ Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf]
   
 6. **Vytvořte aktivační proceduru vlastností pro IsFocused:** Stejným postupem jako u <xref:System.Windows.UIElement.IsMouseOver%2A> (viz prvním krokem v této části), vytvořte jinou aktivační procedura vlastností pro <xref:System.Windows.UIElement.IsFocused%2A> vlastnost. Zatímco **aktivační události – nahrávání je zapnuté**, přidejte následující akce aktivační události:  
   
-    -   **glassCube** získá <xref:System.Windows.UIElement.Opacity%2A> 100 %.  
+    - **glassCube** získá <xref:System.Windows.UIElement.Opacity%2A> 100 %.  
   
-    -   **outerRectangle** získá <xref:System.Windows.Shapes.Shape.Stroke%2A> hodnota vlastní vlastnosti "{DynamicResource {x: Static SystemColors.HighlightBrushKey}}".  
+    - **outerRectangle** získá <xref:System.Windows.Shapes.Shape.Stroke%2A> hodnota vlastní vlastnosti "{DynamicResource {x: Static SystemColors.HighlightBrushKey}}".  
   
  Jako poslední krok v tomto podrobném návodu přidáme animace k tlačítku. Tyto animace budete se aktivuje událostmi – konkrétně <xref:System.Windows.UIElement.MouseEnter> a <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události.  
   
@@ -208,19 +208,19 @@ Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf]
   
 5. **Vytvořte další aktivační události a přidružit různé animace:** Přidejme jeden další kroky animace. Použijte podobným způsobem můžete použít k vytvoření předchozí animace aktivační události:  
   
-    1.  Vytvořit novou pomocí aktivační události <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+    1. Vytvořit novou pomocí aktivační události <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
-    2.  Přidružit nové časové osy s <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+    2. Přidružit nové časové osy s <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
      ![Jak vytvořit nové časové osy](./media/custom-button-blend-clickeventtrigger1.png "custom_button_blend_ClickEventTrigger1")  
   
-    1.  Pro tato časová osa vytvořte dva klíčové snímky, zrovna 0.0 sekund a druhý na 0,3 sekund.  
+    1. Pro tato časová osa vytvořte dva klíčové snímky, zrovna 0.0 sekund a druhý na 0,3 sekund.  
   
-    2.  Klíčový snímek na zvýrazněnou 0,3 sekund, nastavte **úhel otočení transformace** do 360 stupňů.  
+    2. Klíčový snímek na zvýrazněnou 0,3 sekund, nastavte **úhel otočení transformace** do 360 stupňů.  
   
      ![Postup vytvoření transformace rotace](./media/custom-button-blend-rotatetransform.gif "custom_button_blend_RotateTransform")  
   
-    1.  Stisknutím klávesy F5 spusťte aplikaci. Klikněte na tlačítko. Všimněte si, že vrstvy skla přede kolem.  
+    1. Stisknutím klávesy F5 spusťte aplikaci. Klikněte na tlačítko. Všimněte si, že vrstvy skla přede kolem.  
   
 ## <a name="conclusion"></a>Závěr  
  Dokončili jste vlastní tlačítka. Provedli jste pomocí šablony tlačítka, které byly použity na všechny tlačítka v aplikaci. Pokud necháte režimu úprav šablony (viz následující obrázek) a vytvořit další tlačítka, zobrazí se, že jejich vzhled a chování jako vlastní tlačítko, nikoli jako výchozího tlačítka.  
@@ -237,15 +237,15 @@ Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf]
   
  Na závěr právě přizpůsobení šablony tlačítka jste se naučili, jak proveďte postup v aplikaci Microsoft Expression Blend:  
   
--   Přizpůsobení vzhledu ovládacího prvku.  
+- Přizpůsobení vzhledu ovládacího prvku.  
   
--   Nastavit aktivační procedury vlastností. Aktivační procedury vlastností jsou velmi užitečné, protože je možné u většiny objektů, ne jen ovládací prvky.  
+- Nastavit aktivační procedury vlastností. Aktivační procedury vlastností jsou velmi užitečné, protože je možné u většiny objektů, ne jen ovládací prvky.  
   
--   Nastavení aktivační události. Aktivační události jsou velmi užitečné, protože je možné u většiny objektů, ne jen ovládací prvky.  
+- Nastavení aktivační události. Aktivační události jsou velmi užitečné, protože je možné u většiny objektů, ne jen ovládací prvky.  
   
--   Vytváření animací.  
+- Vytváření animací.  
   
--   Různé: vytvoření přechody, přidejte BitmapEffects, použití transformací a nastavte základní vlastnosti objektů.  
+- Různé: vytvoření přechody, přidejte BitmapEffects, použití transformací a nastavte základní vlastnosti objektů.  
   
 ## <a name="see-also"></a>Viz také:
 

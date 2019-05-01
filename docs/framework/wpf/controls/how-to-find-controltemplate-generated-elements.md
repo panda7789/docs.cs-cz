@@ -9,11 +9,11 @@ helpviewer_keywords:
 - finding ControlTemplate elements [WPF]
 ms.assetid: d7b25447-ceff-4bb4-9be5-fd7c40ef00af
 ms.openlocfilehash: 426f6c93433711ac72fe67eff2ee3006aa4d9166
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59092106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037136"
 ---
 # <a name="how-to-find-controltemplate-generated-elements"></a>Postupy: Vyhledávání elementů generovaných objektem ControlTemplate
 Tento příklad ukazuje, jak najít prvky, které jsou generovány <xref:System.Windows.Controls.ControlTemplate>.  

@@ -5,11 +5,11 @@ dev_langs:
 - vb
 ms.assetid: a7da43e3-769f-4e07-bcd6-552b8bde66f4
 ms.openlocfilehash: abd4941697639ec7bdda545b1ead8d57091e9e7f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62038438"
 ---
 # <a name="walkthrough-querying-across-relationships-visual-basic"></a>Návod: Dotazování napříč relacemi (Visual Basic)
 Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
@@ -24,18 +24,18 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá ze tří hlavních úloh:  
   
--   Přidání entity třídy představující v tabulce objednávky v ukázkové databázi Northwind.  
+- Přidání entity třídy představující v tabulce objednávky v ukázkové databázi Northwind.  
   
--   Poznámky k doplnění `Customer` třídy k vylepšení vztah mezi `Customer` a `Order` třídy.  
+- Poznámky k doplnění `Customer` třídy k vylepšení vztah mezi `Customer` a `Order` třídy.  
   
--   Vytváření a spouštění dotazů otestovat proces získávání `Order` informace s použitím `Customer` třídy.  
+- Vytváření a spouštění dotazů otestovat proces získávání `Order` informace s použitím `Customer` třídy.  
   
 ## <a name="mapping-relationships-across-tables"></a>Mapování relací mezi tabulkami  
  Po `Customer` definici třídy, vytvořte `Order` definici třídy, která obsahuje následující kód, což znamená, že `Orders.Customer` souvisí jako cizí klíč k `Customers.CustomerID`.  
   
 #### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat pořadí třída entity  
   
--   Zadejte nebo vložte následující kód za `Customer` třídy:  
+- Zadejte nebo vložte následující kód za `Customer` třídy:  
   
      [!code-vb[DLinqWalk2VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#1)]  
   
@@ -44,7 +44,7 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
   
 #### <a name="to-annotate-the-customer-class"></a>K přidání poznámek ke třídě zákazníka  
   
--   Zadejte nebo vložte následující kód do `Customer` třídy:  
+- Zadejte nebo vložte následující kód do `Customer` třídy:  
   
      [!code-vb[DLinqWalk2VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#2)]  
   

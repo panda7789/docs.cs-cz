@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
 ms.openlocfilehash: 254f486fa19d8af30759d9a9fd6642a1a40e82a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59165175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034356"
 ---
 # <a name="datatable-constraints"></a>Omezení datových tabulek
 Můžete vynutit omezení na datech z tohoto omezení <xref:System.Data.DataTable>, aby bylo možné udržovat tak integritu dat. Omezení je automatické pravidlo použít na sloupec nebo souvisejících sloupců, která určuje kurz akce při hodnota řádku je nějakým způsobem změněna. Jsou vynucena omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> téma referenčních informací.  

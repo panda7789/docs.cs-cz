@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
 ms.openlocfilehash: 2f15bf569da6127d6c9d27be255590ce3784d7a5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59174613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050698"
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
 Zprávy ve frontě může selhat doručování. Tyto zprávy se nezdařilo se zaznamenávají do fronty nedoručených zpráv. Selhání doručení může být způsobeno důvodů, jako je například selhání sítě, frontu odstranil, plné frontě, ověřování se nezdařilo nebo selhání na včasném poskytnutí výsledků.  
@@ -30,18 +30,18 @@ Zprávy ve frontě může selhat doručování. Tyto zprávy se nezdařilo se za
   
  Vazba má následující vlastnosti fronty nedoručených zpráv:  
   
--   <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>  
+- <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>  
   
--   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>  
+- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>  
   
 ## <a name="reading-messages-from-the-dead-letter-queue"></a>Přečte zprávy z fronty nedoručených zpráv  
  Aplikace, která čte zprávy z fronty nedoručených zpráv je podobný služby WCF, která čte z fronty služby aplikace, s výjimkou následujících drobné rozdíly:  
   
--   Ke čtení zpráv z fronty nedoručených zpráv transakcí systému, identifikátor URI (Uniform Resource) musí být ve tvaru: net.msmq://localhost/system$; DeadXact.  
+- Ke čtení zpráv z fronty nedoručených zpráv transakcí systému, identifikátor URI (Uniform Resource) musí být ve tvaru: net.msmq://localhost/system$; DeadXact.  
   
--   Ke čtení zpráv ze systému netransakční fronta nedoručených zpráv, identifikátor URI musí být ve tvaru: net.msmq://localhost/system$; nedoručených zpráv.  
+- Ke čtení zpráv ze systému netransakční fronta nedoručených zpráv, identifikátor URI musí být ve tvaru: net.msmq://localhost/system$; nedoručených zpráv.  
   
--   Ke čtení zpráv z vlastní frontu nedoručených zpráv, musí být identifikátor URI formuláře: net.msmq://localhost/private/\<*Vlastní DLQ se názvy*> kde *Vlastní DLQ se názvy* je název nástroje custom fronty nedoručených zpráv.  
+- Ke čtení zpráv z vlastní frontu nedoručených zpráv, musí být identifikátor URI formuláře: net.msmq://localhost/private/\<*Vlastní DLQ se názvy*> kde *Vlastní DLQ se názvy* je název nástroje custom fronty nedoručených zpráv.  
   
  Další informace o tom, jak adresa fronty, naleznete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   

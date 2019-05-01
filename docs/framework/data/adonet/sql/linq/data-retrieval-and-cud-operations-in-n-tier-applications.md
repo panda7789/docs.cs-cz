@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
 ms.openlocfilehash: d55c85ae0af567c5af0fd421b612809eaf5bb789
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037918"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
 Při serializaci objektů entity jako je například Zákazníci a objednávky na klienta přes síť, tyto entity jsou odpojeny od jejich místní data. Datový kontext již sleduje jejich změny nebo jejich přidružení s jinými objekty. To není problém, tak dlouho, dokud klienti jsou jen ke čtení data. Také je poměrně jednoduchá, aby mohli klienti k přidání nových řádků do databáze. Nicméně pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je nutné připojit entity k nový kontext dat před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Navíc pokud použijete kontrolu optimistického řízení souběžnosti s původní hodnoty, pak musíte také poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metody jsou k dispozici umožňuje entity přejde do nového kontextu dat byla odpojena.  
@@ -85,9 +85,9 @@ private void GetProdsByCat_Click(object sender, EventArgs e)
 ### <a name="middle-tier-implementation"></a>Implementace střední vrstvy  
  Následující příklad ukazuje implementaci metody rozhraní ve střední vrstvě. Tady jsou dva hlavní body k mějte na paměti:  
   
--   <xref:System.Data.Linq.DataContext> Je deklarována v rozsahu metody.  
+- <xref:System.Data.Linq.DataContext> Je deklarována v rozsahu metody.  
   
--   Metoda vrátí <xref:System.Collections.IEnumerable> kolekce skutečné výsledky. Serializátor spustí dotaz pro výsledky odeslat zpět do klienta a prezentační vrstvy. Pro přístup k místně ve střední vrstvě. výsledky dotazu, můžete vynutit spuštění voláním `ToList` nebo `ToArray` v proměnné dotazu. Potom tento seznam nebo pole jako `IEnumerable`.  
+- Metoda vrátí <xref:System.Collections.IEnumerable> kolekce skutečné výsledky. Serializátor spustí dotaz pro výsledky odeslat zpět do klienta a prezentační vrstvy. Pro přístup k místně ve střední vrstvě. výsledky dotazu, můžete vynutit spuštění voláním `ToList` nebo `ToArray` v proměnné dotazu. Potom tento seznam nebo pole jako `IEnumerable`.  
   
 ```vb  
 Public Function GetProductsByCategory(ByVal categoryID As Integer) _  
@@ -210,11 +210,11 @@ public void DeleteOrder(Order order)
 ## <a name="updating-data"></a>Aktualizace dat  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v těchto scénářích zahrnující optimistického řízení souběžnosti podporuje aktualizace:  
   
--   Optimistického řízení souběžnosti na základě časových razítek nebo RowVersion čísla.  
+- Optimistického řízení souběžnosti na základě časových razítek nebo RowVersion čísla.  
   
--   Optimistického řízení souběžnosti založené na původní hodnoty podmnožinu vlastností entity.  
+- Optimistického řízení souběžnosti založené na původní hodnoty podmnožinu vlastností entity.  
   
--   Optimistického řízení souběžnosti založené na dokončení původní a změny entity.  
+- Optimistického řízení souběžnosti založené na dokončení původní a změny entity.  
   
  Aktualizace nebo odstranění můžete provést také s entitou společně s jeho vztahy, například zákazník a kolekce jejích přidružených objektů pořadí. Pokud provedete změny v klientském počítači do grafu objekty entity a jejich podřízené (`EntitySet`) kolekce a kontroly optimistického řízení souběžnosti vyžadují původní hodnoty, klient musí poskytnout tyto původní hodnoty pro každou entitu a <xref:System.Data.Linq.EntitySet%601> objekt. Pokud chcete povolit klientským počítačům provádět sadu související aktualizace, odstranění a vložení v rámci jednoho volání metody, je nutné zadat klienta způsob, jak určit, jaký typ operace se má provést u každé entity. Ve střední vrstvě, pak musíte volat odpovídající <xref:System.Data.Linq.ITable.Attach%2A> metodu a poté <xref:System.Data.Linq.ITable.InsertOnSubmit%2A>, <xref:System.Data.Linq.ITable.DeleteAllOnSubmit%2A>, nebo <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> (bez `Attach`, pro vložení) pro každou entitu před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A>. Nelze načíst data z databáze jako způsob, jak získat původní hodnoty, než se pokusíte aktualizace.  
   
@@ -379,11 +379,11 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
 ### <a name="expected-entity-members"></a>Členové očekávanou entitu  
  Jak bylo uvedeno dříve, jsou jen některé členy objektu entity musí být nastavena dříve než zavoláte `Attach` metody. Členové entit, které je potřeba nastavit musí splňovat následující kritéria:  
   
--   Být součástí identity subjektu.  
+- Být součástí identity subjektu.  
   
--   Očekávat, že se změnil.  
+- Očekávat, že se změnil.  
   
--   Časové razítko nebo má jeho <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> atribut nastaven na něco kromě `Never`.  
+- Časové razítko nebo má jeho <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> atribut nastaven na něco kromě `Never`.  
   
  Pokud tabulka používá číslo verze nebo časové razítko pro kontrolu optimistického řízení souběžnosti, musíte nastavit tyto členy před voláním <xref:System.Data.Linq.ITable.Attach%2A>. Člen je vyhrazený pro optimistického řízení souběžnosti při kontrole <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> je nastavena na hodnotu true u tohoto sloupce atributu. Všechny požadované aktualizace budou odeslány pouze v případě, že hodnoty, číslo nebo časového razítka verze jsou stejné pro databázi.  
   

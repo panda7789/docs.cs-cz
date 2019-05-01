@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
 ms.openlocfilehash: 613b85e18109faa2a4386090e91aaddcfd8e0b68
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62038581"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Zabezpečení zpráv s anonymním klientem
 
@@ -25,7 +25,7 @@ Ukázková aplikace, najdete v části [zprávu zabezpečení anonymní](../../.
 |Režim zabezpečení|Zpráva|
 |Interoperabilita|Pouze WCF|
 |Ověření (Server)|Počáteční vyjednávání vyžaduje ověřování serveru, ale ne ověření klienta|
-|Ověření (klient)|Žádná|
+|Ověření (klient)|Žádný|
 |Integrita|Ano, pomocí sdíleného bezpečnostní kontext|
 |Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|
 |Přenos|HTTP|

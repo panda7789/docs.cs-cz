@@ -8,11 +8,11 @@ helpviewer_keywords:
 - CapsLock property
 ms.assetid: aa37d54c-5c98-4b44-b98a-c26d2a03c038
 ms.openlocfilehash: 00cdf18d057ca8a5c59cde02759b5c8c572a8bba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014333"
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>Přístup ke klávesnici (Visual Basic)
 `My.Computer.Keyboard` Objekt obsahuje vlastnosti pro přístup k aktuálním stavu klávesnice, jako jsou klíče, které jsou aktuálně stisknutí a představuje způsob, jak odeslat stisknutí kláves do aktivního okna.  

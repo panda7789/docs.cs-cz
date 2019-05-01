@@ -9,11 +9,11 @@ ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ced76a0bb28a91824676f496b28143a921b987de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027248"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 

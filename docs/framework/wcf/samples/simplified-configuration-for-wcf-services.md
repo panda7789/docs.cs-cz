@@ -3,11 +3,11 @@ title: Zjednodušená konfigurace pro služby WCF
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
 ms.openlocfilehash: 47af8dcba35ba31f25597c946596b0cbcac93b4d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007848"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Zjednodušená konfigurace pro služby WCF
 Tento příklad ukazuje, jak implementovat a konfigurovat typické službu a klienta s použitím Windows Communication Foundation (WCF). Tato ukázka představuje základ pro všechny další ukázky základní technologii.  
@@ -63,11 +63,11 @@ Tento příklad ukazuje, jak implementovat a konfigurovat typické službu a kli
   
 3. Spusťte ukázku pomocí následujících kroků:  
   
-    1.  Klikněte pravým tlačítkem myši **služby** projektu a vyberte **nastavit jako spouštěný projekt**, stiskněte klávesu **Ctrl + F5**.  
+    1. Klikněte pravým tlačítkem myši **služby** projektu a vyberte **nastavit jako spouštěný projekt**, stiskněte klávesu **Ctrl + F5**.  
   
-    2.  Vyčkat, než bude výstup konzoly potvrzení, zda je služba nahoru a spouštění.  
+    2. Vyčkat, než bude výstup konzoly potvrzení, zda je služba nahoru a spouštění.  
   
-    3.  Klikněte pravým tlačítkem myši **klienta** projektu a vyberte **nastavit jako spouštěný projekt**, stiskněte klávesu **Ctrl + F5**.  
+    3. Klikněte pravým tlačítkem myši **klienta** projektu a vyberte **nastavit jako spouštěný projekt**, stiskněte klávesu **Ctrl + F5**.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

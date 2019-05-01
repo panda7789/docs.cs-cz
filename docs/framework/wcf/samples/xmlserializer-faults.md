@@ -3,11 +3,11 @@ title: XmlSerializer – zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: c6b80f14-64f4-4162-ae76-71664cf42fd3
 ms.openlocfilehash: a64a28e7a0105f5133ba2b0cd3abf72d97d5a3e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006379"
 ---
 # <a name="xmlserializer-faults"></a>XmlSerializer – zpracování chyb
 <xref:System.Xml.Serialization.XmlSerializer> Selhání smlouvy Ukázka předvádí, jak ke sdělování informací chyby ze služby klienta pomocí <xref:System.Xml.Serialization.XmlSerializer>. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat do služby k převodu výjimku interní chybu. Klient se pokusí provádět dělení nulou vynutit chybový stav služby.  

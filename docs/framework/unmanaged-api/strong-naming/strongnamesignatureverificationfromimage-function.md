@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 54b1d35d1c40289bad465978750ba738acf28c90
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000568"
 ---
 # <a name="strongnamesignatureverificationfromimage-function"></a>StrongNameSignatureVerificationFromImage – funkce
 Ověřuje, že je platný pro přidružené veřejný klíč sestavení, které je již namapováno na paměť.  
@@ -49,22 +49,22 @@ BOOLEAN StrongNameSignatureVerificationFromImage (
  `dwInFlags`  
  [in] Příznaky, které ovlivňují chování ověřování. Podporovány jsou následující hodnoty:  
   
--   `SN_INFLAG_FORCE_VER` (0x00000001) – vynutí ověření i v případě, že je potřeba přepsat nastavení registru.  
+- `SN_INFLAG_FORCE_VER` (0x00000001) – vynutí ověření i v případě, že je potřeba přepsat nastavení registru.  
   
--   `SN_INFLAG_INSTALL` (0x00000002) - určuje, že se jedná o první ověřování prováděné na tomto obrázku.  
+- `SN_INFLAG_INSTALL` (0x00000002) - určuje, že se jedná o první ověřování prováděné na tomto obrázku.  
   
--   `SN_INFLAG_ADMIN_ACCESS` (0x00000004) - určuje, že mezipaměť bude umožňovat přístup pouze uživatelům, kteří mají oprávnění správce.  
+- `SN_INFLAG_ADMIN_ACCESS` (0x00000004) - určuje, že mezipaměť bude umožňovat přístup pouze uživatelům, kteří mají oprávnění správce.  
   
--   `SN_INFLAG_USER_ACCESS` (0x00000008) - určuje, zda sestavení přístupné pouze pro aktuálního uživatele.  
+- `SN_INFLAG_USER_ACCESS` (0x00000008) - určuje, zda sestavení přístupné pouze pro aktuálního uživatele.  
   
--   `SN_INFLAG_ALL_ACCESS` (0x00000010) - určuje, že mezipaměť bude poskytovat žádné záruky omezení přístupu.  
+- `SN_INFLAG_ALL_ACCESS` (0x00000010) - určuje, že mezipaměť bude poskytovat žádné záruky omezení přístupu.  
   
--   `SN_INFLAG_RUNTIME` (0x80000000) – vyhrazené pro interní ladění.  
+- `SN_INFLAG_RUNTIME` (0x80000000) – vyhrazené pro interní ladění.  
   
  `pdwOutFlags`  
  [out] Příznak pro další výstupní informace. Je podporován následující hodnotu:  
   
--   `SN_OUTFLAG_WAS_VERIFIED` (0x00000001) – Tato hodnota nastavená na `false` k určení, že ověření proběhlo úspěšně z důvodu nastavení registru.  
+- `SN_OUTFLAG_WAS_VERIFIED` (0x00000001) – Tato hodnota nastavená na `false` k určení, že ověření proběhlo úspěšně z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  `true` Při úspěšném dokončení; v opačném případě `false`.  

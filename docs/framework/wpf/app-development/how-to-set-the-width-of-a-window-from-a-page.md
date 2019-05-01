@@ -7,11 +7,11 @@ helpviewer_keywords:
 - pages [WPF], setting window width from
 ms.assetid: 31601c92-7889-472a-b07e-bf675ad21c92
 ms.openlocfilehash: fee6d4c9ae9dae03e81cc4be56576763cb59958b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006712"
 ---
 # <a name="how-to-set-the-width-of-a-window-from-a-page"></a>Postupy: Nastavení šířky okna ze stránky
 Tento příklad ukazuje, jak nastavit šířku okna z <xref:System.Windows.Controls.Page>.  

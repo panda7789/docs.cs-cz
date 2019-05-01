@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
 ms.openlocfilehash: 0493e7c08a742abed26ff00ce84b9d77da73ea63
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025629"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 

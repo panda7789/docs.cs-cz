@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Label control [Windows Forms], about Label control
 ms.assetid: dcad7f44-11b7-4c55-b0c0-d984ade43d7d
 ms.openlocfilehash: cc38b0f3ded9e3c2a5a4146eb6bb474921d1e19f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012854"
 ---
 # <a name="label-control-overview-windows-forms"></a>Přehled ovládacího prvku Popisek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky se používají k zobrazení textu nebo obrázků, které nemůže být upraven uživatelem. Slouží k identifikaci objektů ve formuláři – zadejte popis ovládacího prvku jaké určité doporučení dělají, když kliknutí, například nebo zobrazení informací v reakci na událost za běhu nebo procesu ve vaší aplikaci. Například můžete použít popisky přidat popisný popisků textových polí, pole se seznamem, pole se seznamem a tak dále. Můžete také napsat kód, který změní text, zobrazený popisek v reakci na události v době běhu. Například pokud vaše aplikace trvá několik minut zpracovávat změny, můžete zobrazit stav zpracování zpráv v popisku.  

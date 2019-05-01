@@ -1,17 +1,17 @@
 ---
-title: Pomocí Azure Service Fabric
+title: Použití platformy Azure Service Fabric
 description: Zjistěte, jaké modely aplikace Azure Service Fabric můžete kromě identifikace podle představuje pro orchestraci kontejnerů.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
 ms.openlocfilehash: b29be05f5ab353ddfae0d23211efaf57979d0604
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025753"
 ---
-# <a name="using-azure-service-fabric"></a>Pomocí Azure Service Fabric
+# <a name="using-azure-service-fabric"></a>Použití platformy Azure Service Fabric
 
 Azure Service Fabric nástroji od Microsoftu pro přechod z současném dodávání produktů pole, které byly obvykle monolitické ve stylu, k zajištění služeb. Prostředí pro sestavování a provoz velkých služeb ve velkém měřítku, jako je například Azure SQL Database, Azure Cosmos DB, Azure Service Bus nebo asistentky Cortana back-endu, ve tvaru Service Fabric. Platforma se v čase, jako další a další služby přijal. Co je důležité Service Fabric museli spouštět pouze v Azure, ale také v samostatných nasazeních systému Windows Server.
 

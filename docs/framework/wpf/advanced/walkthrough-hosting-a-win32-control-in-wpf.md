@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
 ms.openlocfilehash: 834160358d7b3e8e7f4c7c4f4fd06d403086e7e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032336"
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 ve WPF
 Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytváření aplikací. Ale pokud máte značné investice v kódu Win32, může být efektivnější opakovaně používat alespoň některé tohoto kódu v aplikaci WPF spíše než přepíše zcela. WPF poskytuje jednoduchý mechanismus pro hostování okně Win32, na stránce WPF.  
@@ -47,9 +47,9 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
 6. Zpracování vybrané zprávy odeslané do okna hostitele, jako jsou oznámení z podřízených ovládacích prvků. Existují dva způsoby, jak to provést.  
   
-    -   Pokud chcete zpracovávat zprávy v hostující třídy, má přednost před <xref:System.Windows.Interop.HwndHost.WndProc%2A> metodu <xref:System.Windows.Interop.HwndHost> třídy.  
+    - Pokud chcete zpracovávat zprávy v hostující třídy, má přednost před <xref:System.Windows.Interop.HwndHost.WndProc%2A> metodu <xref:System.Windows.Interop.HwndHost> třídy.  
   
-    -   Pokud chcete mít WPF slouží ke zpracování zpráv, nastavte popisovač <xref:System.Windows.Interop.HwndHost> třídy <xref:System.Windows.Interop.HwndHost.MessageHook> události do vašeho kódu. Pro každou zprávu, která se zobrazila v okně prostředí dojde k této události. Pokud zvolíte tuto možnost, je nutné přepsat <xref:System.Windows.Interop.HwndHost.WndProc%2A>, ale potřebujete jenom minimální implementaci.  
+    - Pokud chcete mít WPF slouží ke zpracování zpráv, nastavte popisovač <xref:System.Windows.Interop.HwndHost> třídy <xref:System.Windows.Interop.HwndHost.MessageHook> události do vašeho kódu. Pro každou zprávu, která se zobrazila v okně prostředí dojde k této události. Pokud zvolíte tuto možnost, je nutné přepsat <xref:System.Windows.Interop.HwndHost.WndProc%2A>, ale potřebujete jenom minimální implementaci.  
   
 7. Přepsat <xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A> a <xref:System.Windows.Interop.HwndHost.WndProc%2A> metody <xref:System.Windows.Interop.HwndHost>. Je nutné přepsat tyto metody splňovat <xref:System.Windows.Interop.HwndHost> smlouvy, ale může být pouze nutné zadat minimální implementaci.  
   
@@ -129,13 +129,13 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
 ## <a name="implement-communication-between-the-control-and-the-page"></a>Implementace komunikace mezi ovládacím prvkem a na stránce  
  Manipulovat s prvkem odesíláním zpráv Windows. Ovládací prvek vás upozorní, když uživatel pracuje s jejich odesláním oznámení na jeho hostitelské okno. [Hostování ovládacího prvku ListBox Win32 v subsystému WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control) ukázka zahrnuje uživatelské rozhraní, které obsahuje několik příkladů toho, jak to funguje:  
   
--   Připojte položku do seznamu.  
+- Připojte položku do seznamu.  
   
--   Odstranit vybranou položku ze seznamu  
+- Odstranit vybranou položku ze seznamu  
   
--   Zobrazte text vybrané položky.  
+- Zobrazte text vybrané položky.  
   
--   Zobrazte počet položek v seznamu.  
+- Zobrazte počet položek v seznamu.  
   
  Uživatele můžete také vybrat položku v seznamu kliknutím na ni, stejně jako běžné aplikace Win32. Zobrazená data se aktualizují pokaždé, když uživatel změní stav pole se seznamem vyberete, přidáte nebo přidávání položky.  
   

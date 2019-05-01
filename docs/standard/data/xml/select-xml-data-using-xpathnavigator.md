@@ -9,11 +9,11 @@ ms.assetid: c268c49e-32b9-4171-b782-dcb7b065fa73
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5a7aebc98627a079d08870b59e4a848a51dbfaaf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54520110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026962"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a>Výběr dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které jsou použity k výběru sada uzlů v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath. Po výběru neprovedete iteraci vybrané sady uzlů.  
@@ -24,9 +24,9 @@ ms.locfileid: "54520110"
 ### <a name="selecting-nodes-using-xpath-expressions"></a>Výběr uzlů pomocí výrazů XPath  
  Vybrat sadu uzlů pomocí výraz XPath, použijte jednu z následujících metod výběr.  
   
--   <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
  Při volání těchto metod vrátí sadu uzlů, které můžete přejít pomocí volně <xref:System.Xml.XPath.XPathNodeIterator> objektu nebo <xref:System.Xml.XPath.XPathNavigator> objektu v případě jednoho vybraného uzlu.  
   

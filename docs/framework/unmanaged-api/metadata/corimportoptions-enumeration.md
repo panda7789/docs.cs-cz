@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a2f71a277484adbbfe3628222c635528cdab03e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59156127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62045744"
 ---
 # <a name="corimportoptions-enumeration"></a>CorImportOptions – výčet
 Obsahuje příznak hodnoty, které řídí chování během import sestavení mimo aktuální rozsah.  

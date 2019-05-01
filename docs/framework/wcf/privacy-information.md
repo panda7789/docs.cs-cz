@@ -7,11 +7,11 @@ helpviewer_keywords:
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
 ms.openlocfilehash: e506908299109f94be6d190017b381fe7b4ee044
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032982"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Při vytvoření aplikace využívající Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaše koncové uživatele o ochraně osobních údajů. Například vaše aplikace explicitně shromažďovat informace o uživateli, nebo může požádat o nebo odeslat informace přes Internet k vašemu webovému serveru. Pokud vložíte technologie společnosti Microsoft ve vaší aplikaci, tato technologie může mít svůj vlastní chování, které můžou ovlivnit ochranu osobních údajů. WCF neodešle žádné informace o společnosti Microsoft z vaší aplikace Pokud vy nebo koncový uživatel se rozhodnete odeslat na nás.  
@@ -38,9 +38,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Ověřování se provádí pomocí přihlašovacích údajů mezi klienty a služby. Ověřování může být buď prostřednictvím zabezpečení na úrovni přenosu nebo prostřednictvím protokolu SOAP zprávy zabezpečení na úrovni, následujícím způsobem:  
   
--   V zabezpečení zpráv SOAP provádí se ověření pomocí přihlašovacích údajů, jako je uživatelské jméno a hesla, certifikáty X.509, lístky protokolu Kerberos a tokeny SAML, které mohou obsahovat osobní informace, podle toho, že vystavitel.  
+- V zabezpečení zpráv SOAP provádí se ověření pomocí přihlašovacích údajů, jako je uživatelské jméno a hesla, certifikáty X.509, lístky protokolu Kerberos a tokeny SAML, které mohou obsahovat osobní informace, podle toho, že vystavitel.  
   
--   Pomocí zabezpečení přenosu, ověření se provádí pomocí tradičního přenosu ověřovací mechanismy, jako jsou schémata HTTP ověřování (Basic, Digest, Negotiate, integrované ověřování Windows, protokolu NTLM, None a anonymní) a ověření formuláře.  
+- Pomocí zabezpečení přenosu, ověření se provádí pomocí tradičního přenosu ověřovací mechanismy, jako jsou schémata HTTP ověřování (Basic, Digest, Negotiate, integrované ověřování Windows, protokolu NTLM, None a anonymní) a ověření formuláře.  
   
  Ověřování může vést k zabezpečenou relaci mezi komunikujícími koncových bodů. Relace je identifikován identifikátor GUID, který trvá životnost relace zabezpečení. Následující tabulka uvádí, co se ukládají a kdekoli.  
   

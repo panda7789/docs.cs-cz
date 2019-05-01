@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
 ms.openlocfilehash: 5b3aca6a71f88762084934d0d9c7cea15b5366c8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034460"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
 **WriteXml** metodu <xref:System.Data.DataSet> umožňuje psát obsah **datovou sadu** jako XML data. Běžnou úlohou je potom převede tento XML do jiného formátu pomocí transformace XSL (XSLT). Ale synchronizace **datovou sadu** s <xref:System.Xml.XmlDataDocument> vám umožní aplikovat šablonu stylů XSLT s obsahem **datovou sadu** bez nutnosti nejprve psát obsah  **Datová sada** jako dat XML pomocí **WriteXml**.  

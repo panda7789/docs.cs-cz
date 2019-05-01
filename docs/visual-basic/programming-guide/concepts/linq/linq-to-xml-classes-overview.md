@@ -3,11 +3,11 @@ title: Přehled LINQ to XML třídy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f11b62b5-d522-4c23-92ae-23186dc16447
 ms.openlocfilehash: bd6990c387da3c687335561d1e13b7ec62fb5b84
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58822827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051517"
 ---
 # <a name="linq-to-xml-classes-overview-visual-basic"></a>Přehled LINQ to XML třídy (Visual Basic)
 Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tříd v <xref:System.Xml.Linq> obor názvů a krátký popis každého.  
@@ -26,9 +26,9 @@ Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]
 ### <a name="xcontainer-class"></a>Třída XContainer  
  <xref:System.Xml.Linq.XContainer> je abstraktní základní třída pro všechny uzly, které mohou obsahovat podřízené uzly. Následující třídy odvozovat <xref:System.Xml.Linq.XContainer> třídy:  
   
--   <xref:System.Xml.Linq.XElement>  
+- <xref:System.Xml.Linq.XElement>  
   
--   <xref:System.Xml.Linq.XDocument>  
+- <xref:System.Xml.Linq.XDocument>  
   
 ### <a name="xdeclaration-class"></a>Třída XDeclaration  
  <xref:System.Xml.Linq.XDeclaration> reprezentuje deklaraci XML. Deklarace XML se používá k deklaraci XML version a kódování dokumentu. Deklarace XML kromě toho určuje, zda je samostatný dokumentu XML. Pokud je dokument samostatné, nejsou žádné deklarací externích značek v externí specifikaci DTD nebo externí parametr entity na něj odkazovat z interní podmnožinu.  
@@ -55,15 +55,15 @@ Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]
 ### <a name="xnode-class"></a>Třída XNode  
  <xref:System.Xml.Linq.XNode> je abstraktní třída představující uzly stromu XML. Následující třídy odvozovat <xref:System.Xml.Linq.XNode> třídy:  
   
--   <xref:System.Xml.Linq.XText>  
+- <xref:System.Xml.Linq.XText>  
   
--   <xref:System.Xml.Linq.XContainer>  
+- <xref:System.Xml.Linq.XContainer>  
   
--   <xref:System.Xml.Linq.XComment>  
+- <xref:System.Xml.Linq.XComment>  
   
--   <xref:System.Xml.Linq.XProcessingInstruction>  
+- <xref:System.Xml.Linq.XProcessingInstruction>  
   
--   <xref:System.Xml.Linq.XDocumentType>  
+- <xref:System.Xml.Linq.XDocumentType>  
   
 ### <a name="xnodedocumentordercomparer-class"></a>Třída XNodeDocumentOrderComparer  
  <xref:System.Xml.Linq.XNodeDocumentOrderComparer> poskytuje funkce pro porovnání uzly, aby se jejich pořadí dokumentů.  

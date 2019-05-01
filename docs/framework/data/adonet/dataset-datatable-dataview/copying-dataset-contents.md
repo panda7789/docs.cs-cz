@@ -6,20 +6,20 @@ dev_langs:
 - vb
 ms.assetid: cb846617-2b1a-44ff-bd7f-5835f5ea37fa
 ms.openlocfilehash: cb2a172ac4e6a0ce4852f4c7cf7044583d9ab6c4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59077757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034423"
 ---
 # <a name="copying-dataset-contents"></a>Kopírování obsahu datové sady
 Můžete vytvořit kopii <xref:System.Data.DataSet> tak, aby můžete pracovat s daty, aniž by to ovlivnilo původní data ani pracovní obsahující jenom určitou podmnožinu dat z **datovou sadu**. Při kopírování **datovou sadu**, můžete:  
   
--   Vytvoření přesnou kopii **datovou sadu**, včetně schéma, data, informace o stavu řádků a verze řádků.  
+- Vytvoření přesnou kopii **datovou sadu**, včetně schéma, data, informace o stavu řádků a verze řádků.  
   
--   Vytvoření **datovou sadu** , která obsahuje schéma z existujícího **datovou sadu**, ale pouze řádky, které byly změněny. Vrátí všechny řádky, které byly změněny, nebo zadat konkrétní **hodnotou DataRowState**. Další informace o stavy řádků, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
+- Vytvoření **datovou sadu** , která obsahuje schéma z existujícího **datovou sadu**, ale pouze řádky, které byly změněny. Vrátí všechny řádky, které byly změněny, nebo zadat konkrétní **hodnotou DataRowState**. Další informace o stavy řádků, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
   
--   Kopie schématu nebo relační struktury **datovou sadu** pouze, bez kopírování žádné řádky. Řádky se dají importovat do existující <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.ImportRow%2A>.  
+- Kopie schématu nebo relační struktury **datovou sadu** pouze, bez kopírování žádné řádky. Řádky se dají importovat do existující <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.ImportRow%2A>.  
   
  K vytvoření přesnou kopii **datovou sadu** , který obsahuje schéma a data, použijte <xref:System.Data.DataSet.Copy%2A> metodu **datovou sadu**. Následující příklad kódu ukazuje, jak vytvořit přesnou kopii **datovou sadu**.  
   

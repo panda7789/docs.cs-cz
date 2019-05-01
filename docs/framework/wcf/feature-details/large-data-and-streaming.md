@@ -3,11 +3,11 @@ title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
 ms.openlocfilehash: 25ecc1db8218dfb49f591998140d86f551c5a0d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59176329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62038602"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený na formátu XML. Protože XML data je běžně zakódován do formátu standardního textu definované v [specifikace XML 1.0](https://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojářům a architektům jsou obvykle, které zajímá nároky na místo při přenosu (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje zvláštní výzev pro efektivní přenos binární data.  
@@ -48,11 +48,11 @@ Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený
   
  Nejběžnější scénář, ve kterém takový obsah velkých objemů dat, přenosy dojít, jsou přenosy binárních dat objektů, které:  
   
--   Nelze se rozdělit snadno do zprávy sekvence.  
+- Nelze se rozdělit snadno do zprávy sekvence.  
   
--   Musí doručit včas.  
+- Musí doručit včas.  
   
--   Nejsou k dispozici v plné výši při zahájení přenosu.  
+- Nejsou k dispozici v plné výši při zahájení přenosu.  
   
  Pro data, která těchto omezení nemá je obvykle vhodnější odeslat pořadí zpráv v rámci oboru relace než velkých zpráv. Další informace najdete v části "Streamovaná Data" dále v tomto tématu.  
   
@@ -112,9 +112,9 @@ class MyData
   
  Při použití MTOM předchozí kontraktu dat. je serializována podle následujících pravidel:  
   
--   Pokud `binaryBuffer` není `null` a jednotlivě obsahuje dostatek dat k vysvětlení režii externalizace MTOM (hlavičky MIME a tak dále) ve srovnání s Base64 kódování, data se externalized a provádět s touto zprávou jako binární část MIME. Pokud není překročena prahová hodnota, data kódovaná jako Base64.  
+- Pokud `binaryBuffer` není `null` a jednotlivě obsahuje dostatek dat k vysvětlení režii externalizace MTOM (hlavičky MIME a tak dále) ve srovnání s Base64 kódování, data se externalized a provádět s touto zprávou jako binární část MIME. Pokud není překročena prahová hodnota, data kódovaná jako Base64.  
   
--   Řetězec (a všechny ostatní typy, které nejsou binární) je vždy reprezentována jako řetězec v textu zprávy, bez ohledu na velikost.  
+- Řetězec (a všechny ostatní typy, které nejsou binární) je vždy reprezentována jako řetězec v textu zprávy, bez ohledu na velikost.  
   
  Vliv na kódování MTOM je stejné, zda je používán kontrakt explicitní data, jak je znázorněno v předchozím příkladu použít seznam parametrů v operaci, mají vnořených datových kontraktů nebo převést objekt kontraktu dat v kolekci. Bajtová pole jsou vždy kandidáty na optimalizaci a jsou optimalizované, pokud se dosažení prahové hodnoty optimalizace.  
   
@@ -129,21 +129,21 @@ class MyData
 ### <a name="restrictions"></a>Omezení  
  Velký počet funkcí WCF nelze použít, pokud je povoleno vysílání datového proudu:  
   
--   Digitální podpisy pro text zprávy nejde provést, protože vyžadují výpočtu hodnoty hash přes obsah celé zprávy. Díky streamování, obsah není plně k dispozici při vytvořena a posílat záhlaví zpráv, a proto nelze vypočítat digitální podpis.  
+- Digitální podpisy pro text zprávy nejde provést, protože vyžadují výpočtu hodnoty hash přes obsah celé zprávy. Díky streamování, obsah není plně k dispozici při vytvořena a posílat záhlaví zpráv, a proto nelze vypočítat digitální podpis.  
   
--   Šifrování závisí na digitálních podpisů k ověření, že data byla rekonstruována správně.  
+- Šifrování závisí na digitálních podpisů k ověření, že data byla rekonstruována správně.  
   
--   Spolehlivé relace musí vyrovnávací paměti odeslaných zpráv na straně klienta pro opakované dodání Pokud zpráva získá ztrátě při přenosu a musí obsahovat zpráv ve službě ještě před jejich k implementaci služby pro zachování pořadí zpráv v případě, že jsou zprávy přijímány mimo pořadí.  
+- Spolehlivé relace musí vyrovnávací paměti odeslaných zpráv na straně klienta pro opakované dodání Pokud zpráva získá ztrátě při přenosu a musí obsahovat zpráv ve službě ještě před jejich k implementaci služby pro zachování pořadí zpráv v případě, že jsou zprávy přijímány mimo pořadí.  
   
  Kvůli těmto omezením funkční můžete použít pouze zabezpečení transportní vrstvy, které možnosti pro streamování a nelze zapnout spolehlivé relace. Streamování je k dispozici pouze u následujících vazeb definovaných systémem:  
   
--   <xref:System.ServiceModel.BasicHttpBinding>  
+- <xref:System.ServiceModel.BasicHttpBinding>  
   
--   <xref:System.ServiceModel.NetTcpBinding>  
+- <xref:System.ServiceModel.NetTcpBinding>  
   
--   <xref:System.ServiceModel.NetNamedPipeBinding>  
+- <xref:System.ServiceModel.NetNamedPipeBinding>  
   
--   <xref:System.ServiceModel.WebHttpBinding>  
+- <xref:System.ServiceModel.WebHttpBinding>  
   
  Protože základní přenosy z <xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding> přináší spolehlivé doručování a relace na základě připojení podporovat, na rozdíl od protokolu HTTP, tyto dvě vazby jsou pouze nejméně ovlivněný zahlcením těmto omezením, v praxi.  
   
@@ -160,11 +160,11 @@ class MyData
 ### <a name="enabling-streaming"></a>Povolení streamování  
  Můžete povolit datové proudy následujícími způsoby:  
   
--   Odesílání a příjem požadavků v režim tvorby datového proudu a přijmout a vrácení odpovědi v režimu vyrovnávací paměti (<xref:System.ServiceModel.TransferMode.StreamedRequest>).  
+- Odesílání a příjem požadavků v režim tvorby datového proudu a přijmout a vrácení odpovědi v režimu vyrovnávací paměti (<xref:System.ServiceModel.TransferMode.StreamedRequest>).  
   
--   Odesílání a příjem požadavků v režimu vyrovnávací paměti a přijímají a vrací odpovědi v režimu proudu (<xref:System.ServiceModel.TransferMode.StreamedResponse>).  
+- Odesílání a příjem požadavků v režimu vyrovnávací paměti a přijímají a vrací odpovědi v režimu proudu (<xref:System.ServiceModel.TransferMode.StreamedResponse>).  
   
--   Odesílat a přijímat požadavky a odpovědi v režimu proudu v obou směrech. (<xref:System.ServiceModel.TransferMode.Streamed>).  
+- Odesílat a přijímat požadavky a odpovědi v režimu proudu v obou směrech. (<xref:System.ServiceModel.TransferMode.Streamed>).  
   
  Vám může zcela vypnout streamování nastavením je režim přenosu na <xref:System.ServiceModel.TransferMode.Buffered>, což je výchozí nastavení na všechny vazby. Následující kód ukazuje, jak nastavit režim přenosu v konfiguraci.  
   

@@ -1,14 +1,14 @@
 ---
-title: Použít zavřít a přerušení k uvolnění prostředků klienta WCF
+title: Použití metod Close a Abort k uvolnění prostředků klienta WCF
 description: Dispose může selhat a vyvolání výjimky, pokud se nezdaří v síti. To může způsobit nežádoucí chování. Místo toho použijte zavřít a přerušení k uvolnění prostředků klienta, když k chybě sítě.
 ms.date: 11/12/2018
 ms.assetid: aff82a8d-933d-4bdc-b0c2-c2f7527204fb
 ms.openlocfilehash: 58f828d9cd85806f5f04c349a7de18828ab5f6f2
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007570"
 ---
 # <a name="close-and-abort-release-resources-safely-when-network-connections-have-dropped"></a>Zavřít a přerušení uvolnění prostředků bezpečně vynechali síťová připojení
 

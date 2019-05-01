@@ -10,11 +10,11 @@ helpviewer_keywords:
 - lines [Windows Forms], dashed
 ms.assetid: cd0ed96a-cce4-47b9-b58a-3bae2e3d1bee
 ms.openlocfilehash: 8dc1ad41cf8067bea5b811ca126ad29f5a600f69
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59109184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004355"
 ---
 # <a name="how-to-draw-a-custom-dashed-line"></a>Postupy: Kreslení vlastní přerušované čáry
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje několik styly čar, které jsou uvedeny v <xref:System.Drawing.Drawing2D.DashStyle> výčtu. Pokud tyto styly standardní dash nevyhovují vašim potřebám, můžete vytvořit vlastní dash vzor.  

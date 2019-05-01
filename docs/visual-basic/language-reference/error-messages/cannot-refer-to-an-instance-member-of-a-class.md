@@ -9,11 +9,11 @@ helpviewer_keywords:
 - BC30369
 ms.assetid: 39d9466b-c1f3-4406-91a5-3d6c52d23a3d
 ms.openlocfilehash: aad068b5857eb956ded63fa2a57cb163d3cf5c58
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013839"
 ---
 # <a name="cannot-refer-to-an-instance-member-of-a-class-from-within-a-shared-method-or-shared-member-initializer-without-an-explicit-instance-of-the-class"></a>V rámci sdílené metody nebo inicializační procedury sdíleného člena nelze odkazovat na instanci členu, aniž by byla k dispozici explicitní instance třídy.
 Pokusili jste se odkazovat na nesdílený člen třídy z v rámci sdílené procedury. Následující příklad ukazuje takovou situaci.  

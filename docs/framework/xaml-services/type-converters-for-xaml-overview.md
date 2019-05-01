@@ -7,11 +7,11 @@ helpviewer_keywords:
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
 ms.openlocfilehash: 7a5ec731eacda8017c307a0ffa8ec282da78c40f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59095721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025454"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Přehled převaděčů typů pro jazyk XAML
 Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede z řetězce v kódu XAML na konkrétní objekty v grafu objektů. V rozhraní .NET Framework XAML Services musí být převaděč typu třída, která je odvozena z <xref:System.ComponentModel.TypeConverter>. Některé převaděče také podporují XAML cesta pro uložení a je možné serializovat objekt do formátu řetězce v kódu serializace. Toto téma popisuje, jak a kdy jsou vyvolány převaděče typů v XAML a obsahuje implementace doporučení pro metody přepsání <xref:System.ComponentModel.TypeConverter>.  
@@ -45,13 +45,13 @@ Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede 
   
  <xref:System.ComponentModel.TypeConverter> definuje čtyři členy, které jsou relevantní pro převod na řetězec a z řetězce pro účely zpracování XAML:  
   
--   <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>  
+- <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>  
   
--   <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>  
+- <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>  
   
--   <xref:System.ComponentModel.TypeConverter.ConvertTo%2A>  
+- <xref:System.ComponentModel.TypeConverter.ConvertTo%2A>  
   
--   <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>  
+- <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>  
   
  Z těchto členů je nejdůležitější způsob <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>, který převede vstupní řetězec na typ požadovaný objekt. <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> Metoda opatření jsou potřebná k používání nástroje většímu počtu typů převést na zamýšlený cílový typ převaděče. Proto může posloužit účely, které přesahují XAML, jako je například podpory převodů za běhu. Ale pro použití XAML, pouze do cesty kódu, která dokáže zpracovávat <xref:System.String> vstup je důležité.  
   

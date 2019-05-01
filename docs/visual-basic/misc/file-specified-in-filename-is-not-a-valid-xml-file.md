@@ -3,11 +3,11 @@ title: Soubor zadaný v názvu souboru není platný soubor XML
 ms.date: 07/20/2015
 ms.assetid: c4c30bf3-e0ad-4bc8-89e0-2c3e49e9793b
 ms.openlocfilehash: 89499b07e767bd0b3a777db4e5155f64a4357f0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052310"
 ---
 # <a name="file-specified-in-filename-is-not-a-valid-xml-file"></a>Soubor zadaný v názvu souboru není platný soubor XML
 

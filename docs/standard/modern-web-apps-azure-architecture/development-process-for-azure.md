@@ -5,18 +5,18 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
 ms.openlocfilehash: b7a6ae343feae7c28fb7debdc8a6b617872d262f
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019376"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
 > _"S cloudem, jednotlivce a malé firmy můžete Přichytit jejich prsty a okamžitě nastavit služby na podnikové úrovni."_  
 > _- Roy Stephan_
 
-## <a name="vision"></a>Obraz
+## <a name="vision"></a>Vision
 
 > *Vyvíjejte aplikace dobře navržené ASP .NET Core způsobem, který vám vyhovuje, pomocí sady Visual Studio nebo rozhraní příkazového řádku dotnet a Visual Studio Code nebo vašem editoru podle výběru.*
 

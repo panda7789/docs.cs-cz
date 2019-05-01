@@ -5,11 +5,11 @@ helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 2c997092-72c6-4767-bc84-74267f4eee72
 ms.openlocfilehash: 0cd69a4d2d6087c1ebf93bb5931511f32a4c9c5f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59110055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032055"
 ---
 # <a name="base-elements-overview"></a>Přehled základních elementů
 Vysoké procento třídy v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jsou odvozeny z čtyři třídy, které se běžně označují v [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] dokumentaci jako základní prvek třídy. Tyto třídy jsou <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>, a <xref:System.Windows.FrameworkContentElement>. <xref:System.Windows.DependencyObject> Třídy se také vztahuje, protože je obecná základní třída obou <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>  
@@ -31,49 +31,49 @@ Vysoké procento třídy v [!INCLUDE[TLA#tla_winclient](../../../../includes/tla
   
  Pokud vytvoříte třídu, která je odvozena z <xref:System.Windows.DependencyObject>, abyste dědili následující funkce:  
   
--   <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> podporu a podporu systému obecné vlastnosti.  
+- <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> podporu a podporu systému obecné vlastnosti.  
   
--   Možnost používat vlastnosti závislosti a připojené vlastnosti, které jsou implementovány jako vlastnosti závislosti.  
+- Možnost používat vlastnosti závislosti a připojené vlastnosti, které jsou implementovány jako vlastnosti závislosti.  
   
  Pokud vytvoříte třídu, která je odvozena z <xref:System.Windows.UIElement>, abyste dědili kromě toho poskytuje následující funkce <xref:System.Windows.DependencyObject>:  
   
--   Podpora pro hodnoty animované vlastnosti na úrovni Basic. Další informace najdete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
+- Podpora pro hodnoty animované vlastnosti na úrovni Basic. Další informace najdete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
   
--   Základní událost vstupu podporu a podporu řídicího. Další informace najdete v tématu [vstup přehled](input-overview.md) a [přehled příkazů](commanding-overview.md).  
+- Základní událost vstupu podporu a podporu řídicího. Další informace najdete v tématu [vstup přehled](input-overview.md) a [přehled příkazů](commanding-overview.md).  
   
--   Virtuální metody, které mohou být potlačena za účelem obsahují informace, které systém rozložení.  
+- Virtuální metody, které mohou být potlačena za účelem obsahují informace, které systém rozložení.  
   
  Pokud vytvoříte třídu, která je odvozena z <xref:System.Windows.FrameworkElement>, abyste dědili kromě toho poskytuje následující funkce <xref:System.Windows.UIElement>:  
   
--   Podpora pro používání stylů pro prvky a scénáři. Další informace najdete v tématu <xref:System.Windows.Style> a [přehled scénářů](../graphics-multimedia/storyboards-overview.md).  
+- Podpora pro používání stylů pro prvky a scénáři. Další informace najdete v tématu <xref:System.Windows.Style> a [přehled scénářů](../graphics-multimedia/storyboards-overview.md).  
   
--   Podpora pro vytváření datových vazeb. Další informace najdete v tématu [přehled datových vazeb](../data/data-binding-overview.md).  
+- Podpora pro vytváření datových vazeb. Další informace najdete v tématu [přehled datových vazeb](../data/data-binding-overview.md).  
   
--   Podpora pro dynamický prostředek odkazy. Další informace najdete v tématu [prostředky XAML](xaml-resources.md).  
+- Podpora pro dynamický prostředek odkazy. Další informace najdete v tématu [prostředky XAML](xaml-resources.md).  
   
--   Podpora dědičnosti hodnotu vlastnosti a další příznaky v metadatech, které pomáhají podmínky sestavy o vlastnostech framework služeb, jako je vytváření datových vazeb, styly nebo rozložení při implementaci rozhraní. Další informace najdete v tématu [Metadata vlastnosti architektury](framework-property-metadata.md).  
+- Podpora dědičnosti hodnotu vlastnosti a další příznaky v metadatech, které pomáhají podmínky sestavy o vlastnostech framework služeb, jako je vytváření datových vazeb, styly nebo rozložení při implementaci rozhraní. Další informace najdete v tématu [Metadata vlastnosti architektury](framework-property-metadata.md).  
   
--   Konceptu logického stromu. Další informace najdete v tématu [stromy v subsystému WPF](trees-in-wpf.md).  
+- Konceptu logického stromu. Další informace najdete v tématu [stromy v subsystému WPF](trees-in-wpf.md).  
   
--   Podpora pro praktické implementace úrovni rozhraní WPF rozložení systému, včetně <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> přepsání, které může zjistit změny vlastností rozložení tohoto vliv.  
+- Podpora pro praktické implementace úrovni rozhraní WPF rozložení systému, včetně <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> přepsání, které může zjistit změny vlastností rozložení tohoto vliv.  
   
  Pokud vytvoříte třídu, která je odvozena z <xref:System.Windows.ContentElement>, abyste dědili kromě toho poskytuje následující funkce <xref:System.Windows.DependencyObject>:  
   
--   Podpora pro animace. Další informace najdete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
+- Podpora pro animace. Další informace najdete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
   
--   Základní událost vstupu podporu a podporu řídicího. Další informace najdete v tématu [vstup přehled](input-overview.md) a [přehled příkazů](commanding-overview.md).  
+- Základní událost vstupu podporu a podporu řídicího. Další informace najdete v tématu [vstup přehled](input-overview.md) a [přehled příkazů](commanding-overview.md).  
   
  Pokud vytvoříte třídu, která je odvozena z <xref:System.Windows.FrameworkContentElement>, získáte následující funkce kromě toho poskytuje <xref:System.Windows.ContentElement>:  
   
--   Podpora pro používání stylů pro prvky a scénáři. Další informace najdete v tématu <xref:System.Windows.Style> a [přehled animace](../graphics-multimedia/animation-overview.md).  
+- Podpora pro používání stylů pro prvky a scénáři. Další informace najdete v tématu <xref:System.Windows.Style> a [přehled animace](../graphics-multimedia/animation-overview.md).  
   
--   Podpora pro vytváření datových vazeb. Další informace najdete v tématu [přehled datových vazeb](../data/data-binding-overview.md).  
+- Podpora pro vytváření datových vazeb. Další informace najdete v tématu [přehled datových vazeb](../data/data-binding-overview.md).  
   
--   Podpora pro dynamický prostředek odkazy. Další informace najdete v tématu [prostředky XAML](xaml-resources.md).  
+- Podpora pro dynamický prostředek odkazy. Další informace najdete v tématu [prostředky XAML](xaml-resources.md).  
   
--   Podpora dědičnosti hodnotu vlastnosti a další příznaky v metadatech, které pomáhají podmínky sestavy o vlastnostech framework služeb, jako je vytváření datových vazeb, styly nebo rozložení při implementaci rozhraní. Další informace najdete v tématu [Metadata vlastnosti architektury](framework-property-metadata.md).  
+- Podpora dědičnosti hodnotu vlastnosti a další příznaky v metadatech, které pomáhají podmínky sestavy o vlastnostech framework služeb, jako je vytváření datových vazeb, styly nebo rozložení při implementaci rozhraní. Další informace najdete v tématu [Metadata vlastnosti architektury](framework-property-metadata.md).  
   
--   Nedědit přístup pro úpravy rozložení systému (například <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>). Implementace systému rozložení dostupné jen na <xref:System.Windows.FrameworkElement>. Nicméně, abyste dědili <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> přepsání, které může zjistit změny vlastností, které ovlivňují rozložení a nahlaste je na všechny hostitele obsahu.  
+- Nedědit přístup pro úpravy rozložení systému (například <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>). Implementace systému rozložení dostupné jen na <xref:System.Windows.FrameworkElement>. Nicméně, abyste dědili <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> přepsání, které může zjistit změny vlastností, které ovlivňují rozložení a nahlaste je na všechny hostitele obsahu.  
   
  Modely obsahu jsou popsány pro různé třídy. Model obsahu pro třídu je jediný faktor možná byste měli zvážit, pokud chcete najít odpovídající třídu odvodit z. Další informace najdete v tématu [Model obsahu WPF](../controls/wpf-content-model.md).  
   

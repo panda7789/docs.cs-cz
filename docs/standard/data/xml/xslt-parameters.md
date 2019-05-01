@@ -9,11 +9,11 @@ ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e76e0f35dd95c34d3a6fc81c2f6f3504591387cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026650"
 ---
 # <a name="xslt-parameters"></a>Parametry XSLT
 Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody. Úplný název a identifikátor URI oboru názvů jsou spojeny s parametrem objektu v daném čase.  

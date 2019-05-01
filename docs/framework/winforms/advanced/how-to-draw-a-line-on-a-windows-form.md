@@ -13,11 +13,11 @@ helpviewer_keywords:
 - drawing lines
 ms.assetid: 55c1dbeb-75d0-430c-9814-a24b8971ad8c
 ms.openlocfilehash: aab04b9236175cedd154b817db5a6f6450503105
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004156"
 ---
 # <a name="how-to-draw-a-line-on-a-windows-form"></a>Postupy: Kreslení čáry na formuláři Windows
 V tomto příkladu nakreslí čáru na formuláři. Obvykle při kreslení ve formuláři je zpracovat formuláře <xref:System.Windows.Forms.Control.Paint> události a provádět kreslení pomocí <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost <xref:System.Windows.Forms.PaintEventArgs>, jak je znázorněno v tomto příkladu  

@@ -19,11 +19,11 @@ helpviewer_keywords:
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
 ms.openlocfilehash: 0bcb0e7369345aaae39d99a005a07304aaad7043
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62036462"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtížné dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože s více vlákny jsou složité a těžko ladění, mělo by se vyhnout při existují řešení s jedním vláknem.  
@@ -114,14 +114,14 @@ ms.locfileid: "59200347"
   
  Následují některé podrobnosti zaznamenán.  
   
--   Vytvoření obslužné rutiny tlačítko  
+- Vytvoření obslužné rutiny tlačítko  
   
      [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherButtonHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherbuttonhandler)]
      [!code-vb[ThreadingWeatherForecast#ThreadingWeatherButtonHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherbuttonhandler)]  
   
  Při kliknutí na tlačítko můžeme zobrazit kreslení hodiny a spustit animaci. Tlačítko Zakážeme. Jsme vyvolat `FetchWeatherFromServer` metoda v nové vlákno a pak jsme vrácení, což <xref:System.Windows.Threading.Dispatcher> kvůli zpracování událostí, zatímco čekáme shromažďovat předpovědí počasí.  
   
--   Načítají se počasí  
+- Načítají se počasí  
   
      [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherFetchWeather](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherfetchweather)]
      [!code-vb[ThreadingWeatherForecast#ThreadingWeatherFetchWeather](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherfetchweather)]  
@@ -130,7 +130,7 @@ ms.locfileid: "59200347"
   
  Po dokončení zpoždění a náhodně jsme vybrali naše předpovědí počasí, je čas zprávy zpět [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Provedeme to pomocí plánování volání `UpdateUserInterface` v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vláken pomocí bylo vlákno <xref:System.Windows.Threading.Dispatcher>. Můžeme předat řetězec popisující počasí pro toto volání metody naplánované.  
   
--   Aktualizuje se [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
+- Aktualizuje se [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
   
      [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherupdateui)]
      [!code-vb[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherupdateui)]  

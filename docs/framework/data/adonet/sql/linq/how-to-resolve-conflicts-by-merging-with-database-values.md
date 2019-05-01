@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 1988b79c-3bfc-4c5c-a08a-86cf638bbe17
 ms.openlocfilehash: 429bca7501bd58440ee894345855141a2a2ed12c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033706"
 ---
 # <a name="how-to-resolve-conflicts-by-merging-with-database-values"></a>Postupy: Řešení konfliktů sloučením s hodnotami v databázi
 Sjednocení rozdílů mezi hodnotami očekávaných a aktuálních databáze, než se pokusíte znovu odeslat změny, můžete použít <xref:System.Data.Linq.RefreshMode.KeepChanges> sloučit hodnot v databázi pomocí aktuálních hodnot členů klienta. Další informace najdete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  

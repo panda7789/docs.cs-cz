@@ -4,10 +4,10 @@ ms.date: 03/30/2017
 ms.assetid: 9997eba5-29ec-48db-86f3-fa77b241fb1a
 ms.openlocfilehash: 8141ee85fa1d38c3f190688981ce66a9dd9c88f4
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007523"
 ---
 # <a name="ws-dual-http"></a>WS Dual Http
 Duální Http Ukázka předvádí, jak nakonfigurovat `WSDualHttpBinding` vazby. Tento příklad se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba implementuje duplexního kontraktu. Smlouva je definován `ICalculatorDuplex` rozhraní, které zveřejňuje matematických operací (Přidat odečíst, násobení a dělení). V této ukázce `ICalculatorDuplex` rozhraní umožňuje klientovi k provádění matematických operací spuštěných výsledek výpočtu přes relaci. Nezávisle na sobě, služba vrátí výsledky v `ICalculatorDuplexCallback` rozhraní. Duplexní kontrakt vyžaduje relaci, protože kontext musí být stanovena ke korelaci sadu zprávy odesílané mezi klientem a službou. `WSDualHttpBinding` Vazba podporuje duplexní komunikaci.  

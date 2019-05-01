@@ -15,11 +15,11 @@ helpviewer_keywords:
 - automatic sizing
 ms.assetid: b6706efb-d7a4-45ec-8cf4-08fa993e3afb
 ms.openlocfilehash: 57abf3527af146f1ce918bcabbc6a5a34bfb9b34
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011725"
 ---
 # <a name="best-practices-for-the-tablelayoutpanel-control"></a>Doporučené postupy pro ovládací prvek TableLayoutPanel
 <xref:System.Windows.Forms.TableLayoutPanel> Ovládacího prvku poskytuje výkonné rozložení funkce, které byste měli pečlivě zvážit před použitím ve formulářích Windows.  
@@ -30,17 +30,17 @@ ms.locfileid: "59773828"
 ### <a name="targeted-use"></a>Cílové použití  
  Použití <xref:System.Windows.Forms.TableLayoutPanel> řídit opatrně. Nepoužívejte ho ve všech situacích, které vyžadují umožňující změnu velikosti rozložení. Následující seznam popisuje rozložení, která je nejužitečnější u použití <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku:  
   
--   Rozložení, ve kterém se více částí formuláře, které proporcionálně k sobě navzájem.  
+- Rozložení, ve kterém se více částí formuláře, které proporcionálně k sobě navzájem.  
   
--   Rozložení, které budou změněny nebo dynamicky generované v době běhu, jako je například formulářích pro zadávání dat, které mají uživatelsky přizpůsobitelnými pole přičíst nebo odečíst podle preferencí.  
+- Rozložení, které budou změněny nebo dynamicky generované v době běhu, jako je například formulářích pro zadávání dat, které mají uživatelsky přizpůsobitelnými pole přičíst nebo odečíst podle preferencí.  
   
--   Rozložení, které by měla zůstat na celkové pevné velikosti. Například můžete mít dialogové okno, které by měla zůstat menší než 800 × 600, ale budete potřebovat k podpoře lokalizovaných řetězců.  
+- Rozložení, které by měla zůstat na celkové pevné velikosti. Například můžete mít dialogové okno, které by měla zůstat menší než 800 × 600, ale budete potřebovat k podpoře lokalizovaných řetězců.  
   
  Následující seznam popisuje rozložení, které nejsou nijak přínosné výrazně pomocí <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku:  
   
--   Jednoduchá datová položka formy s jedním sloupcem popisky a jedním sloupcem textového vstupu oblastí.  
+- Jednoduchá datová položka formy s jedním sloupcem popisky a jedním sloupcem textového vstupu oblastí.  
   
--   Formuláře pomocí jediného velké zobrazit oblast, která by měla zaplnit veškeré dostupné místo, když dojde k Změna velikosti. Příkladem je formulář, který se zobrazí jedna <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku. V takovém případě použijte ukotvení, protože nic jiného by měli rozbalit při změně velikosti formuláře.  
+- Formuláře pomocí jediného velké zobrazit oblast, která by měla zaplnit veškeré dostupné místo, když dojde k Změna velikosti. Příkladem je formulář, který se zobrazí jedna <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku. V takovém případě použijte ukotvení, protože nic jiného by měli rozbalit při změně velikosti formuláře.  
   
  Pečlivě zvolit, jaké ovládací prvky musí být v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Pokud máte místo pro text zvětší o 30 % pomocí ukotvení, zvažte použití <xref:System.Windows.Forms.Control.Anchor%2A> pouze vlastnost. Pokud chcete-li odhadnout místo vyžadované rozložení, použijte <xref:System.Windows.Forms.Control.Dock%2A> a <xref:System.Windows.Forms.Control.Anchor%2A> je snazší než odhad podrobnosti zbývajícího místa a <xref:System.Windows.Forms.Control.AutoSize%2A> chování.  
   

@@ -14,22 +14,22 @@ ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6dcd8e47fcbbee1e17e9e9ca1cb93f6076b4475
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026226"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
   
--   Umožňuje vývoj aplikace, aniž by bylo nutné uvolnit paměť.  
+- Umožňuje vývoj aplikace, aniž by bylo nutné uvolnit paměť.  
   
--   Efektivně přiděluje objekty ve spravované haldě.  
+- Efektivně přiděluje objekty ve spravované haldě.  
   
--   Uvolní objekty, které jsou již nejsou déle používány, vymaže jejich paměť a udržuje k dispozici pro budoucí přidělení paměti. Spravované objekty automaticky se získat čistý obsah, takže jejich konstruktory nemusejí inicializovat všechna datová pole.  
+- Uvolní objekty, které jsou již nejsou déle používány, vymaže jejich paměť a udržuje k dispozici pro budoucí přidělení paměti. Spravované objekty automaticky se získat čistý obsah, takže jejich konstruktory nemusejí inicializovat všechna datová pole.  
   
--   Zajišťuje bezpečnost paměti a ujistěte se, že objekt nemůže použít obsah jiného objektu.  
+- Zajišťuje bezpečnost paměti a ujistěte se, že objekt nemůže použít obsah jiného objektu.  
   
  Toto téma popisuje základní koncepty uvolňování paměti. 
  
@@ -37,25 +37,25 @@ ms.locfileid: "58826597"
 ## <a name="fundamentals-of-memory"></a>Základní informace o paměti  
  Následující seznam shrnuje důležité pojmy paměti CLR.  
   
--   Každý proces má svůj vlastní samostatný virtuální adresní prostor. Všechny procesy ve stejném počítači sdílejí stejnou fyzickou paměť a stránkovací soubor sdílet, pokud existuje.  
+- Každý proces má svůj vlastní samostatný virtuální adresní prostor. Všechny procesy ve stejném počítači sdílejí stejnou fyzickou paměť a stránkovací soubor sdílet, pokud existuje.  
   
--   Každý proces má ve výchozím nastavení se na 32bitových počítačích uživatelského režimu 2 GB virtuálního adresového prostoru.  
+- Každý proces má ve výchozím nastavení se na 32bitových počítačích uživatelského režimu 2 GB virtuálního adresového prostoru.  
   
--   Jako vývojář aplikace pracujete pouze s virtuálním adresovým prostorem a nikdy pracovat přímo s fyzickou paměť. Uvolňování paměti přiděluje a uvolňuje virtuální paměť můžete na spravované haldě.  
+- Jako vývojář aplikace pracujete pouze s virtuálním adresovým prostorem a nikdy pracovat přímo s fyzickou paměť. Uvolňování paměti přiděluje a uvolňuje virtuální paměť můžete na spravované haldě.  
   
      Při psaní nativního kódu používáte funkce Win32 pro práci s virtuálním adresovým prostorem. Tyto funkce přidělují a uvolňují virtuální paměť pro vás na nativních haldách.  
   
--   Virtuální paměť může být ve třech stavech:  
+- Virtuální paměť může být ve třech stavech:  
   
-    -   Zdarma. Blok paměti nemá žádné odkazy a je k dispozici pro přidělení.  
+    - Zdarma. Blok paměti nemá žádné odkazy a je k dispozici pro přidělení.  
   
-    -   Vyhrazená. Blok paměti je k dispozici pro použití a nelze použít pro všechny další požadavky na přidělení. Dokud nebude potvrzena změna, ale nemůže uložit data do tohoto bloku paměti.  
+    - Vyhrazená. Blok paměti je k dispozici pro použití a nelze použít pro všechny další požadavky na přidělení. Dokud nebude potvrzena změna, ale nemůže uložit data do tohoto bloku paměti.  
   
-    -   Potvrzené. Blok paměti je přiřazen fyzickému úložišti.  
+    - Potvrzené. Blok paměti je přiřazen fyzickému úložišti.  
   
--   Virtuální adresový prostor se může fragmentovat. To znamená, že existují volné blokuje známé také jako otvory v adresním prostoru. Pokud se požaduje přidělení virtuální paměti, správce virtuální paměti musí najít jeden volný blok, který je dostatečně velký, aby splňují tento požadavek na přidělení. I v případě, že máte 2 GB volného místa, přidělení vyžadující 2 GB neúspěšné, pokud je všechno toto volné místo je v jednom bloku adres.  
+- Virtuální adresový prostor se může fragmentovat. To znamená, že existují volné blokuje známé také jako otvory v adresním prostoru. Pokud se požaduje přidělení virtuální paměti, správce virtuální paměti musí najít jeden volný blok, který je dostatečně velký, aby splňují tento požadavek na přidělení. I v případě, že máte 2 GB volného místa, přidělení vyžadující 2 GB neúspěšné, pokud je všechno toto volné místo je v jednom bloku adres.  
   
--   Můžete zjistit nedostatek paměti Pokud vyčerpáte virtuálního adresového prostoru pro rezervaci nebo fyzické místo pro potvrzení.  
+- Můžete zjistit nedostatek paměti Pokud vyčerpáte virtuálního adresového prostoru pro rezervaci nebo fyzické místo pro potvrzení.  
   
  Stránkovací soubor se používá i v případě, že je nízký tlak fyzické paměti (to znamená poptávka po fyzické paměti). Při prvním vaše tlak fyzické paměti je vysoké, operační systém musí uvolnit prostor fyzické paměti k ukládání dat a jejich zálohování a některá data, která je ve fyzické paměti stránkovacího souboru. Že data nejsou stránkována, dokud není třeba, takže je možné se setkat stránkování v situacích, kde je velmi nízký tlak fyzické paměti. 
  
@@ -65,11 +65,11 @@ ms.locfileid: "58826597"
 ## <a name="conditions-for-a-garbage-collection"></a>Podmínky pro uvolnění paměti  
  Uvolnění paměti dojde, pokud je splněna jedna z následujících podmínek:  
   
--   Systém má nedostatek fyzické paměti. To zjistí oznámení nedostatek paměti z operačního systému nebo nedostatek paměti indikován hostitele.
+- Systém má nedostatek fyzické paměti. To zjistí oznámení nedostatek paměti z operačního systému nebo nedostatek paměti indikován hostitele.
   
--   Paměť, která se používají přidělené objekty na spravované haldě překročí přijatelný práh. Tento práh se neustále upravuje, proces běží.  
+- Paměť, která se používají přidělené objekty na spravované haldě překročí přijatelný práh. Tento práh se neustále upravuje, proces běží.  
   
--   <xref:System.GC.Collect%2A?displayProperty=nameWithType> Metoda je volána. V téměř všech případech není nutné volat tuto metodu, protože systému uvolňování paměti běží nepřetržitě. Tato metoda se používá především pro unikátní situace a testování.  
+- <xref:System.GC.Collect%2A?displayProperty=nameWithType> Metoda je volána. V téměř všech případech není nutné volat tuto metodu, protože systému uvolňování paměti běží nepřetržitě. Tato metoda se používá především pro unikátní situace a testování.  
   
  [Zpět na začátek](#top)  
   
@@ -100,15 +100,15 @@ ms.locfileid: "58826597"
 ## <a name="generations"></a>Generace  
  Haldy jsou uspořádány do generací, takže mohou zpracovat objekty s dlouhou a krátkou životností. Uvolňování paměti dochází především u regenerace krátkodobých objektů, které obvykle zabírají pouze malou část haldy. Existují tři generace objektů na haldě:  
   
--   **Generace 0**. To je nejmladší generace a obsahuje krátkodobé objekty. Příkladem objektu krátkodobou je dočasná proměnná. Uvolňování paměti dochází nejčastěji v této generaci.  
+- **Generace 0**. To je nejmladší generace a obsahuje krátkodobé objekty. Příkladem objektu krátkodobou je dočasná proměnná. Uvolňování paměti dochází nejčastěji v této generaci.  
   
      Nově přidělené objekty tvoří novou generaci objektů a jsou implicitně kolekcemi generace 0, pokud se nejedná o velké objekty, ve kterémžto případě přejdou na haldy pro velké objekty v kolekci generace 2.  
   
      Většina objektů je získána pro uvolnění paměti v generaci 0 a nepřežije do další generace.  
   
--   **1. generace**. Tato generace obsahuje krátkodobé objekty a slouží jako vyrovnávací paměť mezi krátkodobými a dlouhodobými objekty.  
+- **1. generace**. Tato generace obsahuje krátkodobé objekty a slouží jako vyrovnávací paměť mezi krátkodobými a dlouhodobými objekty.  
   
--   **2. generace**. Tato generace obsahuje objekty s dlouhým poločasem rozpadu. Příkladem objektu s dlouhým poločasem rozpadu je objekt v serverové aplikaci obsahující statická data, která jsou živá po dobu trvání procesu.  
+- **2. generace**. Tato generace obsahuje objekty s dlouhým poločasem rozpadu. Příkladem objektu s dlouhým poločasem rozpadu je objekt v serverové aplikaci obsahující statická data, která jsou živá po dobu trvání procesu.  
   
  Důvodu podmínek, dojde k uvolnění paměti u konkrétních generací. Sběr generace znamená shromažďování objektů dané generace a všech mladších generací. Uvolnění paměti generace 2 se také nazývá úplné uvolnění paměti, protože ji získají všechny objekty ve všech generacích (to znamená, že všechny objekty ve spravované haldě).  
   
@@ -141,11 +141,11 @@ ms.locfileid: "58826597"
 ## <a name="what-happens-during-a-garbage-collection"></a>Co se stane během uvolňování paměti  
  Uvolnění paměti má následující fáze:  
   
--   Fáze označení, která zjistí a vytvoří seznam všech živých objektů.  
+- Fáze označení, která zjistí a vytvoří seznam všech živých objektů.  
   
--   Fáze přemístění, která aktualizuje odkazy na objekty, které budou komprimovány.  
+- Fáze přemístění, která aktualizuje odkazy na objekty, které budou komprimovány.  
   
--   Komprimační fáze, která uvolňuje místo obsazené nepoužívanými objekty a komprimuje zbývající objekty. Fáze komprimace přesune objekty, které mají zůstat naživu při uvolňování paměti ve starším konci segmentu.  
+- Komprimační fáze, která uvolňuje místo obsazené nepoužívanými objekty a komprimuje zbývající objekty. Fáze komprimace přesune objekty, které mají zůstat naživu při uvolňování paměti ve starším konci segmentu.  
   
      Protože kolekce generace 2 mohou zabírat více segmentů, objekty, které jsou povýšeny do generace 2 je přesunout do starší segmentu. Generace 1 i 2 zachovalých můžete přesunout do jiného segmentu, protože jsou povýšeny do generace 2.  
   
@@ -153,11 +153,11 @@ ms.locfileid: "58826597"
   
  Uvolňování paměti používá tyto informace k určení, zda jsou objekty živé:  
   
--   **Kořeny zásobníku**. Proměnné zásobníku poskytované just-in-time (JIT) kompilátorem a zásobníkem. Všimněte si, že optimalizace JIT může prodloužit nebo zkrátit oblasti kódu v rámci které zásobníku proměnné hlášení do systému uvolňování paměti.
+- **Kořeny zásobníku**. Proměnné zásobníku poskytované just-in-time (JIT) kompilátorem a zásobníkem. Všimněte si, že optimalizace JIT může prodloužit nebo zkrátit oblasti kódu v rámci které zásobníku proměnné hlášení do systému uvolňování paměti.
   
--   **Obslužné rutiny uvolnění paměti**. Zajišťuje, že směrující na spravované objekty a které mohou být přiděleny podle uživatelského kódu nebo modul common language runtime.  
+- **Obslužné rutiny uvolnění paměti**. Zajišťuje, že směrující na spravované objekty a které mohou být přiděleny podle uživatelského kódu nebo modul common language runtime.  
   
--   **Statická data**. Statické objekty v aplikačních doménách, které by mohly odkazovat na jiné objekty. Každá aplikační doména uchovává informace o svých statických objektech.  
+- **Statická data**. Statické objekty v aplikačních doménách, které by mohly odkazovat na jiné objekty. Každá aplikační doména uchovává informace o svých statických objektech.  
   
  Před zahájením procesu uvolnění paměti jsou všechna spravovaná vlákna pozastavena, s výjimkou vlákna, které spustí uvolnění.  
   
@@ -182,13 +182,13 @@ Podproces, který spustí uvolnění paměti
 ## <a name="workstation-and-server-garbage-collection"></a>Uvolňování paměti pracovní stanice a serveru  
  Uvolňování je samoobslužné a může fungovat v široké škály scénářů. Soubor nastavení konfigurace můžete použít k nastavení typu uvolňování paměti kolekce založené na ukazatelích pracovního zatížení. CLR poskytuje následující typy uvolňování paměti:  
   
--   Uvolnění paměti pracovní stanice, která je pro všechny pracovní stanice klienta a samostatné počítače. Toto je výchozí nastavení [ \<gcServer > element](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) ve schématu konfigurace modulu runtime.  
+- Uvolnění paměti pracovní stanice, která je pro všechny pracovní stanice klienta a samostatné počítače. Toto je výchozí nastavení [ \<gcServer > element](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) ve schématu konfigurace modulu runtime.  
   
      Uvolnění paměti pracovní stanice může být souběžné nebo nesouběžné. Souběžné uvolňování umožňuje spravovaným vláknům pokračovat v operaci během uvolňování paměti.  
   
      Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], uvolňování paměti na pozadí nahrazuje souběžné uvolňování paměti.  
   
--   Uvolnění paměti serveru, který je určen pro serverové aplikace, které vyžadují vysoký výkon a škálovatelnost. Uvolnění paměti serveru může být nesouběžné nebo pozadí.  
+- Uvolnění paměti serveru, který je určen pro serverové aplikace, které vyžadují vysoký výkon a škálovatelnost. Uvolnění paměti serveru může být nesouběžné nebo pozadí.  
   
  Následující ilustrace znázorňují vyhrazená vlákna, které vykonávají uvolňování paměti na serveru.  
   
@@ -205,23 +205,23 @@ Uvolnění paměti serveru
 ### <a name="comparing-workstation-and-server-garbage-collection"></a>Porovnání uvolňování paměti pracovní stanice a serveru  
  Následující je práce s vlákny a posouzení výkonu pro uvolnění paměti pracovní stanice:  
   
--   Kolekce probíhá u uživatele vlákna, která spouští uvolnění paměti a zůstává na stejné prioritě. Protože uživatelská vlákna obvykle běží s normální prioritou, uvolňování paměti (který se spouští ve vláknu s normální prioritou) musí soutěžit s ostatními vlákny o čas procesoru.  
+- Kolekce probíhá u uživatele vlákna, která spouští uvolnění paměti a zůstává na stejné prioritě. Protože uživatelská vlákna obvykle běží s normální prioritou, uvolňování paměti (který se spouští ve vláknu s normální prioritou) musí soutěžit s ostatními vlákny o čas procesoru.  
   
      Vlákna, která spouští nativní kód, nejsou pozastavena.  
   
--   Uvolnění paměti pracovní stanice je vždy použita v počítači, který má pouze jeden procesor, bez ohledu na to [ \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) nastavení. Pokud zadáte uvolnění paměti serveru, používá modul CLR uvolnění paměti pracovní stanice se zakázanou souběžností.  
+- Uvolnění paměti pracovní stanice je vždy použita v počítači, který má pouze jeden procesor, bez ohledu na to [ \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) nastavení. Pokud zadáte uvolnění paměti serveru, používá modul CLR uvolnění paměti pracovní stanice se zakázanou souběžností.  
   
  Následující je práce s vlákny a posouzení výkonu pro uvolnění paměti serveru:  
   
--   Kolekce se vyskytují ve více vyhrazených podprocesech spuštěných na `THREAD_PRIORITY_HIGHEST` úroveň priority.  
+- Kolekce se vyskytují ve více vyhrazených podprocesech spuštěných na `THREAD_PRIORITY_HIGHEST` úroveň priority.  
   
--   Halda a vyhrazené vlákno pro provádění uvolnění paměti jsou k dispozici pro každý procesor a haldy jsou shromažďovány ve stejnou dobu. Každá halda obsahuje malou a velkou objektovou haldu, a všechny haldy lze využívat pomocí uživatelského kódu. Objekty v různých haldách mohou odkazovat na sebe navzájem.  
+- Halda a vyhrazené vlákno pro provádění uvolnění paměti jsou k dispozici pro každý procesor a haldy jsou shromažďovány ve stejnou dobu. Každá halda obsahuje malou a velkou objektovou haldu, a všechny haldy lze využívat pomocí uživatelského kódu. Objekty v různých haldách mohou odkazovat na sebe navzájem.  
   
--   Protože více vláken uvolňování paměti spolupracuje, uvolnění paměti serveru je rychlejší než uvolnění paměti pracovní stanice na stejnou velikostí haldy.  
+- Protože více vláken uvolňování paměti spolupracuje, uvolnění paměti serveru je rychlejší než uvolnění paměti pracovní stanice na stejnou velikostí haldy.  
   
--   Uvolnění paměti serveru často zahrnuje větší velikosti segmentů. Pamatujte však, že se jedná pouze generalizace: velikost segmentu je specifický pro implementaci a můžou podléhat změnám. Měli byste zajistit žádné předpoklady o velikosti segmentů přidělaná systému uvolňování paměti při ladění aplikace.  
+- Uvolnění paměti serveru často zahrnuje větší velikosti segmentů. Pamatujte však, že se jedná pouze generalizace: velikost segmentu je specifický pro implementaci a můžou podléhat změnám. Měli byste zajistit žádné předpoklady o velikosti segmentů přidělaná systému uvolňování paměti při ladění aplikace.  
   
--   Uvolnění paměti serveru může být náročná. Například pokud máte 12 procesů spuštěných v počítači, který má 4 procesory, bude existovat 48 vyhrazených vláken pro uvolnění se použití uvolnění paměti serveru. V situaci, načítání velkého množství paměti všechny procesy zahájí uvolnění paměti, bude mít systému uvolňování paměti naplánovat 48 vláken.  
+- Uvolnění paměti serveru může být náročná. Například pokud máte 12 procesů spuštěných v počítači, který má 4 procesory, bude existovat 48 vyhrazených vláken pro uvolnění se použití uvolnění paměti serveru. V situaci, načítání velkého množství paměti všechny procesy zahájí uvolnění paměti, bude mít systému uvolňování paměti naplánovat 48 vláken.  
   
  Pokud používáte stovky instancí aplikace, zvažte použití uvolňování paměti pracovní stanice se zakázaným souběžným uvolňováním. Výsledkem bude méně přepínání kontextu, což může zlepšit výkon.  
   

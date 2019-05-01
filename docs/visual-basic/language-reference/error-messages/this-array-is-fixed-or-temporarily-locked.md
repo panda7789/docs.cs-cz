@@ -5,20 +5,20 @@ f1_keywords:
 - vbrID10
 ms.assetid: de6713a6-51d7-4edb-8515-d5fb544e2091
 ms.openlocfilehash: c74d9524ff64101ba6002e133b93c9b80e8f50a9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982446"
 ---
 # <a name="this-array-is-fixed-or-temporarily-locked-visual-basic"></a>Toto pole nelze upravovat nebo je dočasně uzamčeno (Visual Basic).
 Tato chyba má následující možné příčiny:  
   
--   Pomocí `ReDim` Chcete-li změnit počet elementů pole s pevnou velikostí.  
+- Pomocí `ReDim` Chcete-li změnit počet elementů pole s pevnou velikostí.  
   
--   Redimensioning úrovni modulu dynamické pole, ve kterém jeden prvek byl předán jako argument procedury. Pokud je předán element, aby se zabránilo je uzamčen pole zrušení přidělení paměti pro referenční parametr v rámci procesu.  
+- Redimensioning úrovni modulu dynamické pole, ve kterém jeden prvek byl předán jako argument procedury. Pokud je předán element, aby se zabránilo je uzamčen pole zrušení přidělení paměti pro referenční parametr v rámci procesu.  
   
--   Pokus o přiřazení hodnoty k `Variant` proměnnou obsahující pole, ale `Variant` je aktuálně uzamčen.  
+- Pokus o přiřazení hodnoty k `Variant` proměnnou obsahující pole, ale `Variant` je aktuálně uzamčen.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   

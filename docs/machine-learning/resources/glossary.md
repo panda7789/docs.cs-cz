@@ -4,11 +4,11 @@ description: Glosář důležité terminologie strojového učení, které jsou 
 ms.custom: seodec18
 ms.date: 03/05/2019
 ms.openlocfilehash: cc236aaa99fd8a7b05af666a5b96f657d8bd3ad4
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019175"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Machine learning Glosář termínů důležité
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
 ms.openlocfilehash: 9adcd19ea48d62f4fdcab3380252ae8ec8398296
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010537"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a> Toto téma vysvětluje, jak fungování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje prioritu, ve které aspekty vlastnost systému použít na platnou hodnotu vlastnosti.  
@@ -47,9 +47,9 @@ ms.locfileid: "59315683"
   
 4. **Vlastnosti šablony TemplatedParent.** Element má <xref:System.Windows.FrameworkElement.TemplatedParent%2A> Pokud byl vytvořen jako součást šablony ( <xref:System.Windows.Controls.ControlTemplate> nebo <xref:System.Windows.DataTemplate>). Podrobnosti o tom, kdy se to používá, najdete v části [TemplatedParent](#templatedparent) dále v tomto tématu. V rámci šablony platí následující priority:  
   
-    1.  Aktivační události od <xref:System.Windows.FrameworkElement.TemplatedParent%2A> šablony.  
+    1. Aktivační události od <xref:System.Windows.FrameworkElement.TemplatedParent%2A> šablony.  
   
-    2.  Sady vlastností (obvykle až [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] atributy) v <xref:System.Windows.FrameworkElement.TemplatedParent%2A> šablony.  
+    2. Sady vlastností (obvykle až [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] atributy) v <xref:System.Windows.FrameworkElement.TemplatedParent%2A> šablony.  
   
 5. **Implicitní styl.** Platí jenom pro `Style` vlastnost. `Style` Vlastnost sestavil prostředek stylu s klíčem, který odpovídá typu daného prvku. Tento prostředek stylu musí existovat ve stránce nebo aplikaci. vyhledávání pro prostředek implicitní styl nebude pokračovat do motivy.  
   
@@ -61,9 +61,9 @@ ms.locfileid: "59315683"
   
 9. **Styl výchozí (motiv).** Podrobnosti o při takovém se vztah styly motivů a šablon v rámci stylů motivů, naleznete v tématu [výchozí (motiv) styly](#themestyles) dále v tomto tématu. Ve výchozím stylu platí následující pořadí priorit:  
   
-    1.  Aktivní triggery ve stylu motivu.  
+    1. Aktivní triggery ve stylu motivu.  
   
-    2.  Metody setter ve stylu motivu.  
+    2. Metody setter ve stylu motivu.  
   
 10. **Dědičnost.** Několik vlastností závislostí jejich hodnoty dědí z nadřazeného elementu pro podřízené prvky tak, že není nutné nastavovat zvlášť na každý prvek v celé aplikaci. Podrobnosti najdete v tématu [dědičnost hodnoty vlastnosti](property-value-inheritance.md).  
   
@@ -77,11 +77,11 @@ ms.locfileid: "59315683"
 ## <a name="the-style-property"></a>Vlastnost stylu  
  Pořadí vyhledávání bylo popsáno dříve se vztahuje na všechny vlastnosti možné závislosti, s výjimkou jednoho: <xref:System.Windows.FrameworkElement.Style%2A> vlastnost. <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost je jedinečný, v tom, že se nemůže sám být ve stylu, takže prioritu položek 5 až 8 se nedá použít. Navíc animace nebo podřízenému <xref:System.Windows.FrameworkElement.Style%2A> se nedoporučuje (a animaci <xref:System.Windows.FrameworkElement.Style%2A> by vyžadovaly vlastní animace třídy). Kvůli tomu tři způsoby, které <xref:System.Windows.FrameworkElement.Style%2A> může být nastavena vlastnost:  
   
--   **Explicitní styl.** <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost nastavena přímo. Ve většině scénářů si styl není definována vložením, ale místo toho se odkazuje jako prostředek, explicitní klíčem. V tomto případě samotné vlastnosti stylu se chová jako kdyby byly místní hodnota priority položky 3.  
+- **Explicitní styl.** <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost nastavena přímo. Ve většině scénářů si styl není definována vložením, ale místo toho se odkazuje jako prostředek, explicitní klíčem. V tomto případě samotné vlastnosti stylu se chová jako kdyby byly místní hodnota priority položky 3.  
   
--   **Implicitní styl.** <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost není nastavena přímo. Ale <xref:System.Windows.FrameworkElement.Style%2A> existuje na určité úrovni v pořadí vyhledávání prostředků (stránka, aplikace) a je nastaven pomocí klíče prostředku, který odpovídá typu styl se použije k. V takovém případě <xref:System.Windows.FrameworkElement.Style%2A> samotné vlastnosti funguje podle priority podle pořadí jako položka 5. Tento stav můžete zjistit pomocí <xref:System.Windows.DependencyPropertyHelper> proti <xref:System.Windows.FrameworkElement.Style%2A> vlastnost a hledáte <xref:System.Windows.BaseValueSource.ImplicitStyleReference> ve výsledcích.  
+- **Implicitní styl.** <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost není nastavena přímo. Ale <xref:System.Windows.FrameworkElement.Style%2A> existuje na určité úrovni v pořadí vyhledávání prostředků (stránka, aplikace) a je nastaven pomocí klíče prostředku, který odpovídá typu styl se použije k. V takovém případě <xref:System.Windows.FrameworkElement.Style%2A> samotné vlastnosti funguje podle priority podle pořadí jako položka 5. Tento stav můžete zjistit pomocí <xref:System.Windows.DependencyPropertyHelper> proti <xref:System.Windows.FrameworkElement.Style%2A> vlastnost a hledáte <xref:System.Windows.BaseValueSource.ImplicitStyleReference> ve výsledcích.  
   
--   **Výchozí styl**, označované také jako **stylu motivu.** <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost není nastavena přímo a bude ve skutečnosti číst jako `null` až běhu. V tomto případě styl pochází z hodnocení motiv, který je součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace modul.  
+- **Výchozí styl**, označované také jako **stylu motivu.** <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost není nastavena přímo a bude ve skutečnosti číst jako `null` až běhu. V tomto případě styl pochází z hodnocení motiv, který je součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace modul.  
   
  Pro implicitní styly není v motivy, typ musí odpovídat přesně – `MyButton` `Button`-odvozené třídy implicitně nepoužije styl `Button`.  
   

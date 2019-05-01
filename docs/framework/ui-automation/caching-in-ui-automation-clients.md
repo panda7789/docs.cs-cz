@@ -6,11 +6,11 @@ helpviewer_keywords:
 - caching, UI Automation clients
 ms.assetid: 94c15031-4975-43cc-bcd5-c9439ed21c9c
 ms.openlocfilehash: 4c403fa6f0de34e970eb0c74df13d807e92f8a05
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59175822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032354"
 ---
 # <a name="caching-in-ui-automation-clients"></a>Práce s mezipamětí u klientů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -64,9 +64,9 @@ ms.locfileid: "59175822"
 ## <a name="retrieving-cached-properties"></a>Načítání vlastností do mezipaměti  
  V mezipaměti vlastnosti elementu můžete načíst pomocí následující metody a vlastnosti.  
   
--   <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>  
+- <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>  
   
--   <xref:System.Windows.Automation.AutomationElement.Cached%2A>  
+- <xref:System.Windows.Automation.AutomationElement.Cached%2A>  
   
  Pokud požadovaná vlastnost není v mezipaměti, je vyvolána výjimka.  
   
@@ -76,9 +76,9 @@ ms.locfileid: "59175822"
 ## <a name="retrieving-cached-control-patterns"></a>Načítání vzorů ovládacích prvků do mezipaměti  
  Vzory uložené v mezipaměti ovládacího prvku můžete načíst pomocí následujících metod.  
   
--   <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A>  
+- <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A>  
   
--   <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A>  
+- <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A>  
   
  Pokud vzor není v mezipaměti, <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> vyvolá výjimku, a <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> vrátí `false`.  
   

@@ -18,20 +18,20 @@ helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
 ms.openlocfilehash: 075f70e3ef053507dfe3d408246d179bb57c5891
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032250"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace jsou často závislé na souborech, které obsahují data – spustitelný soubor, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikaci a použití těchto typů datových souborů, které se nazývají datových souborů aplikací. Tato podpora zásadní kolem konkrétní sadu typů souborů dat aplikace, včetně:  
   
--   **Soubory prostředků**: Datové soubory, které jsou kompilovány do spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+- **Soubory prostředků**: Datové soubory, které jsou kompilovány do spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
--   **Obsah souborů**: Samostatné datové soubory, které mají přidružený spustitelný soubor k explicitní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+- **Obsah souborů**: Samostatné datové soubory, které mají přidružený spustitelný soubor k explicitní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
--   **Lokality původu souborů**: Samostatné datové soubory, které mají žádné jejich spojení se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+- **Lokality původu souborů**: Samostatné datové soubory, které mají žádné jejich spojení se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
  Jeden rozlišení, aby se mezi tyto tři typy souborů je, že jsou zdrojové soubory a soubory obsahu v okamžiku sestavení; známé sestavení má explicitní znalosti z nich. Ke stránce původu soubory, ale sestavení můžou nemají žádné informace o jejich vůbec, nebo implicitní znalosti prostřednictvím sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkazu; v případě, není zaručeno, že odkazované web zdrojový soubor skutečně existuje.  
   
@@ -45,11 +45,11 @@ ms.locfileid: "59211918"
   
  Měli byste použít prostředek souborů při:  
   
--   Není nutné aktualizovat obsah souboru prostředků po kompilaci do sestavení.  
+- Není nutné aktualizovat obsah souboru prostředků po kompilaci do sestavení.  
   
--   Chcete zjednodušit složitost distribuce aplikací snížením počtu závislostem.  
+- Chcete zjednodušit složitost distribuce aplikací snížením počtu závislostem.  
   
--   Datový soubor aplikace musí být lokalizovatelný (viz [přehled WPF globalizace a lokalizace](../advanced/wpf-globalization-and-localization-overview.md)).  
+- Datový soubor aplikace musí být lokalizovatelný (viz [přehled WPF globalizace a lokalizace](../advanced/wpf-globalization-and-localization-overview.md)).  
   
 > [!NOTE]
 >  Soubory prostředků, které jsou popsané v této části se liší podle soubory prostředků [prostředky XAML](../advanced/xaml-resources.md) a jiné než vložené nebo propojené prostředky podle [Správa prostředků aplikace (.NET) ](/visualstudio/ide/managing-application-resources-dotnet).  
@@ -175,13 +175,13 @@ ms.locfileid: "59211918"
 ## <a name="site-of-origin-files"></a>Lokality původu souborů  
  Soubory prostředků mají explicitního vztahu s sestavení, která se distribuují podél, podle definice <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>. Ale existují situace, kdy můžete chtít vytvořit buď implicitní nebo neexistuje vztah sestavení a soubor dat aplikace, včetně:  
   
--   Soubor neexistuje v době kompilace.  
+- Soubor neexistuje v době kompilace.  
   
--   Nevíte, jaké soubory sestavení bude vyžadovat až do spuštění.  
+- Nevíte, jaké soubory sestavení bude vyžadovat až do spuštění.  
   
--   Chcete mít možnost aktualizovat soubory bez nutnosti rekompilace sestavení, které jsou přidruženy.  
+- Chcete mít možnost aktualizovat soubory bez nutnosti rekompilace sestavení, které jsou přidruženy.  
   
--   Vaše aplikace používá velkých datových souborů, jako je například zvuku a videa, a chcete jenom uživatelé si je stáhnout, pokud se rozhodnete.  
+- Vaše aplikace používá velkých datových souborů, jako je například zvuku a videa, a chcete jenom uživatelé si je stáhnout, pokud se rozhodnete.  
   
  Je možné načíst tyto typy souborů s využitím tradičních [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schémata, jako jsou schémata file:/// a http://.  
   

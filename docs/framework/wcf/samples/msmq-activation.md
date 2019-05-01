@@ -3,11 +3,11 @@ title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
 ms.openlocfilehash: d83759f321abe7fa7e39202daadd4ceda82d8f23
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051478"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation Service (), které se načítají z fronty zpráv. Tento příklad používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) vzorku. Služby v tomto případě je hostované webové aplikace a klient je v místním prostředí a vypíše do konzoly sledovat stav nákupní objednávky odeslané.  
@@ -219,15 +219,15 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:  
   
-    1.  Z **Start** nabídce zvolte **ovládací panely**.  
+    1. Z **Start** nabídce zvolte **ovládací panely**.  
   
-    2.  Vyberte **programy a funkce**.  
+    2. Vyberte **programy a funkce**.  
   
-    3.  Klikněte na tlačítko **zapnout nebo vypnout funkce Windows**.  
+    3. Klikněte na tlačítko **zapnout nebo vypnout funkce Windows**.  
   
-    4.  V části **Souhrn funkcí**, klikněte na tlačítko **přidat funkce**.  
+    4. V části **Souhrn funkcí**, klikněte na tlačítko **přidat funkce**.  
   
-    5.  Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontrolu **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
+    5. Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontrolu **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
   
 3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
@@ -235,21 +235,21 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 5. Aktivační služba MSMQ je ve výchozím nastavení spouští jako síťová služba. Proto musí mít fronty, který se používá k aktivaci aplikace přijímat a náhled oprávnění pro síťovou službu. Jde přidat pomocí konzoly MMC služby Řízení front zpráv:  
   
-    1.  Z **Start** nabídky, klikněte na tlačítko **spustit**, zadejte `Compmgmt.msc` a stiskněte klávesu ENTER.  
+    1. Z **Start** nabídky, klikněte na tlačítko **spustit**, zadejte `Compmgmt.msc` a stiskněte klávesu ENTER.  
   
-    2.  V části **služeb a aplikací**, rozbalte **služby Řízení front zpráv**.  
+    2. V části **služeb a aplikací**, rozbalte **služby Řízení front zpráv**.  
   
-    3.  Klikněte na tlačítko **soukromé fronty**.  
+    3. Klikněte na tlačítko **soukromé fronty**.  
   
-    4.  Klikněte pravým tlačítkem na fronty (servicemodelsamples/Service.svc) a zvolte **vlastnosti**.  
+    4. Klikněte pravým tlačítkem na fronty (servicemodelsamples/Service.svc) a zvolte **vlastnosti**.  
   
-    5.  Na **zabezpečení** klikněte na tlačítko **přidat** a poskytnout náhled a přijímat oprávnění pro síťovou službu.  
+    5. Na **zabezpečení** klikněte na tlačítko **přidat** a poskytnout náhled a přijímat oprávnění pro síťovou službu.  
   
 6. Konfigurace Windows WAS Process Activation Service () pro podporu aktivace služby MSMQ.  
   
      Pro zjednodušení následující kroky jsou implementovány v dávkovém souboru volá AddMsmqSiteBinding.cmd nachází v adresáři ukázkové.  
   
-    1.  Kvůli podpoře aktivace net.msmq, musíte ji nejdřív svázat výchozí webový server net.msmq protokolu. To lze provést pomocí appcmd.exe, která se instaluje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] sada nástrojů pro správu. Z příkazového řádku se zvýšenými oprávněními (správce) spusťte následující příkaz.  
+    1. Kvůli podpoře aktivace net.msmq, musíte ji nejdřív svázat výchozí webový server net.msmq protokolu. To lze provést pomocí appcmd.exe, která se instaluje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] sada nástrojů pro správu. Z příkazového řádku se zvýšenými oprávněními (správce) spusťte následující příkaz.  
   
         ```console  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
@@ -261,7 +261,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
          Tento příkaz přidá vazbu webu net.msmq výchozí webový server.  
   
-    2.  Přestože všechny aplikace v rámci lokality sdílejí společné net.msmq vazby, každá aplikace můžete povolit podporu net.msmq jednotlivě. Pokud chcete povolit net.msmq /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku se zvýšenými oprávněními.  
+    2. Přestože všechny aplikace v rámci lokality sdílejí společné net.msmq vazby, každá aplikace můžete povolit podporu net.msmq jednotlivě. Pokud chcete povolit net.msmq /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku se zvýšenými oprávněními.  
   
         ```console  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.msmq  
@@ -284,7 +284,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Pro zjednodušení následující kroky jsou implementovány v dávkovém souboru volá RemoveMsmqSiteBinding.cmd nachází v adresáři ukázkové:  
   
-    1.  Odeberte net.msmq ze seznamu povolených protokolů spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
+    1. Odeberte net.msmq ze seznamu povolených protokolů spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
   
         ```console  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http  
@@ -293,7 +293,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         > [!NOTE]
         >  Tento příkaz je jeden řádek textu.  
   
-    2.  Odeberte vazbu webu net.msmq spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
+    2. Odeberte vazbu webu net.msmq spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
   
         ```console  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" --bindings.[protocol='net.msmq',bindingInformation='localhost']  
@@ -330,17 +330,17 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Chcete-li změnit identitu, která poběží pracovní proces v části:  
   
-    1.  Run Inetmgr.exe.  
+    1. Run Inetmgr.exe.  
   
-    2.  V části **fondy aplikací**, klikněte pravým tlačítkem myši **fondu aplikací** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
+    2. V části **fondy aplikací**, klikněte pravým tlačítkem myši **fondu aplikací** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
   
-    3.  Změňte vlastnosti Identity pro použití konkrétního uživatelského účtu.  
+    3. Změňte vlastnosti Identity pro použití konkrétního uživatelského účtu.  
   
      Chcete-li změnit identita, pod kterým běží služba Aktivace:  
   
-    1.  Run Services.msc.  
+    1. Run Services.msc.  
   
-    2.  Klikněte pravým tlačítkem myši **Net.MsmqListener adaptér**a zvolte **vlastnosti**.  
+    2. Klikněte pravým tlačítkem myši **Net.MsmqListener adaptér**a zvolte **vlastnosti**.  
   
 4. Změna účtu v **přihlášení** kartu.  
   

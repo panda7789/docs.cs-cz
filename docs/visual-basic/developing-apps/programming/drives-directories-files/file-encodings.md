@@ -8,11 +8,11 @@ helpviewer_keywords:
 - file encoding
 ms.assetid: ea2c5f5f-bbb1-4150-9928-b9951fa6bc57
 ms.openlocfilehash: c22e8046a8b88890f25bc6b671825eb6d68ec6b8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61960183"
 ---
 # <a name="file-encodings-visual-basic"></a>Kódování souborů (Visual Basic)
 Kódování souborů, označované také jako kódování znaků, určete, jak reprezentaci znaků při zpracování textu. Kódování může být vhodnější před jiným z hlediska znaků jazyka může nebo nemůže zpracovat, i když je obvykle ve formátu Unicode.  
@@ -27,7 +27,7 @@ Kódování souborů, označované také jako kódování znaků, určete, jak r
 ## <a name="encoding-class"></a>Kódování třídy  
  <xref:System.Text.Encoding> Třída představuje kódování znaků. Tato tabulka uvádí typ kódování, které jsou k dispozici a popisuje všechny.  
   
-|Name|Popis|
+|Název|Popis|
 |---|---|    
 |<xref:System.Text.ASCIIEncoding>|Představuje kódování znaků ASCII znaků Unicode.|  
 |<xref:System.Text.UnicodeEncoding>|Představuje kódování UTF-16 znaků Unicode.|  

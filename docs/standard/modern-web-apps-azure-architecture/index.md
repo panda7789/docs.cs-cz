@@ -5,11 +5,11 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
 ms.openlocfilehash: 27212045d9870c9f2fc15509d76f3e9b07d8657f
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019335"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
@@ -85,7 +85,7 @@ Tato příručka obsahuje pokyny k začátku do konce vytváření *monolitické
 
 Tento průvodce je pouze doplnění ["_Mikroslužby .NET. Architektura pro Kontejnerizovaných aplikací .NET_"](../microservices-architecture/index.md) který se zaměřuje další on Docker, Mikroslužby a nasazení kontejnerů pro hostování podnikových aplikací.
 
-### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET
+### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 
 - **(elektronická kniha)**  
   <https://aka.ms/MicroservicesEbook>

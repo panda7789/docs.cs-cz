@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 81f4d5219865bf7f7c9e6d284d74d0c249729dfc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59194419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62040531"
 ---
 # <a name="spawnderivedclass-function"></a>SpawnDerivedClass – funkce
 Vytvoří objekt nově odvozené třídy ze zadaného objektu.    
@@ -56,7 +56,7 @@ HRESULT SpawnDerivedClass (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | Neplatná operace, jako je například vytvoření třídy z instance, byl požadován. |

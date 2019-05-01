@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Button control [Windows Forms]
 ms.assetid: d38bc40c-8040-4f19-9e88-2c665b0ab80b
 ms.openlocfilehash: a71079b45259aab54480a5b97c09844b73be1661
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61961587"
 ---
 # <a name="button-control-windows-forms"></a>Ovládací prvek Tlačítko (Windows Forms)
 Windows Forms `Button` ovládací prvek umožňuje uživateli klikněte na něj k provedení akce. `Button` Ovládací prvek mohl zobrazit text a obrázky. Při kliknutí na tlačítko vypadat jako v případě, že je se vložil do a všeobecně dostupné.  

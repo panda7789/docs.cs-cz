@@ -9,11 +9,11 @@ helpviewer_keywords:
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
 ms.openlocfilehash: 274ec2e8ef16190da53061bb197bc3b1a1fadcf8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024055"
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid
 
@@ -23,9 +23,9 @@ V tomto podrobném návodu, načtení dat z databáze SQL serveru a zobrazit tat
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
--   Visual Studio.
+- Visual Studio.
 
--   Přístup ke spuštěné instanci systému SQL Server nebo SQL Server Express, která obsahuje ukázkovou databázi AdventureWorks, který se k němu připojená. Můžete stáhnout z databáze AdventureWorks [Githubu](https://github.com/Microsoft/sql-server-samples/releases).
+- Přístup ke spuštěné instanci systému SQL Server nebo SQL Server Express, která obsahuje ukázkovou databázi AdventureWorks, který se k němu připojená. Můžete stáhnout z databáze AdventureWorks [Githubu](https://github.com/Microsoft/sql-server-samples/releases).
 
 ## <a name="create-entity-classes"></a>Vytvoření tříd entit
 

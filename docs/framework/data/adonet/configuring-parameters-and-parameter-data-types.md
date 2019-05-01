@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
 ms.openlocfilehash: e4414e33efb077e00e4b38e3e53d218ecd7343a7
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034551"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 
@@ -50,16 +50,16 @@ Datový typ parametru je specifické pro [!INCLUDE[dnprdnshort](../../../../incl
 
 |Typ rozhraní .NET Framework|DbType|SqlDbType|OleDbType|OdbcType|OracleType|
 |-------------------------|------------|---------------|---------------|--------------|----------------|
-|<xref:System.Boolean>|Boolean|Bit|Boolean|Bit|Byte|
+|<xref:System.Boolean>|Boolean|bit|Boolean|bit|Byte|
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|
 |Byte|binární|VarBinary. Toto implicitní převod selže, pokud bajtové pole je větší než maximální velikost parametru VarBinary, což je 8 000 bajtů. Bajtová pole větší než 8 000 bajtů, explicitně nastavit <xref:System.Data.SqlDbType>.|VarBinary|binární|nezpracované|
 |<xref:System.Char>| |Odvození <xref:System.Data.SqlDbType> z char není podporován.|Char|Char|Byte|
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|
 |<xref:System.DateTimeOffset>|DateTimeOffset|DateTimeOffset v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z DateTimeOffset není podporován ve verzích systému SQL Server starších než SQL Server 2008.|||DateTime|
-|<xref:System.Decimal>|Desetinné číslo|Desetinné číslo|Desetinné číslo|Čísla|Číslo|
+|<xref:System.Decimal>|Desetinné číslo|Desetinné číslo|Desetinné číslo|Numeric|Číslo|
 |<xref:System.Double>|Double|Float|Double|Double|Double|
 |<xref:System.Single>|Single|Skutečné|Single|Skutečné|Float|
-|<xref:System.Guid>|Guid|UniqueIdentifier|Guid|UniqueIdentifier|nezpracované|
+|<xref:System.Guid>|Guid|uniqueidentifier|Guid|uniqueidentifier|nezpracované|
 |<xref:System.Int16>|Int16|SmallInt|SmallInt|SmallInt|Int16|
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Číslo|
@@ -67,11 +67,11 @@ Datový typ parametru je specifické pro [!INCLUDE[dnprdnshort](../../../../incl
 |<xref:System.String>|String|NVarChar. Toto implicitní převod se nezdaří, pokud řetězec je větší než maximální velikost NVarChar, což je 4000 znaků. Pro řetězce je větší než 4000 znaků, explicitně nastavit <xref:System.Data.SqlDbType>.|VarWChar|NVarChar|NVarChar|
 |<xref:System.TimeSpan>|Čas|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z TimeSpan není podporován ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Čas|DateTime|
 |<xref:System.UInt16>|UInt16|Odvození <xref:System.Data.SqlDbType> z UInt16 se nepodporuje.|UnsignedSmallInt|Int|UInt16|
-|<xref:System.UInt32>|UInt32|Odvození <xref:System.Data.SqlDbType> z UInt32 se nepodporuje.|celé číslo bez znaménka|BigInt|UInt32|
-|<xref:System.UInt64>|UInt64|Odvození <xref:System.Data.SqlDbType> z UInt64 se nepodporuje.|UnsignedBigInt|Čísla|Číslo|
+|<xref:System.UInt32>|UInt32|Odvození <xref:System.Data.SqlDbType> z UInt32 se nepodporuje.|UnsignedInt|BigInt|UInt32|
+|<xref:System.UInt64>|UInt64|Odvození <xref:System.Data.SqlDbType> z UInt64 se nepodporuje.|UnsignedBigInt|Numeric|Číslo|
 ||AnsiString|VarChar|VarChar|VarChar|VarChar|
 ||AnsiStringFixedLength|Char|Char|Char|Char|
-||Měna|peníze|Měna|Odvození `OdbcType` z `Currency` se nepodporuje.|Číslo|
+||Měna|money|Měna|Odvození `OdbcType` z `Currency` se nepodporuje.|Číslo|
 ||Datum|Datum v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od data není podporováno ve verzích systému SQL Server starších než SQL Server 2008.|DBDate|Datum|DateTime|
 ||SByte|Odvození <xref:System.Data.SqlDbType> z SByte se nepodporuje.|TinyInt|Odvození `OdbcType` z SByte se nepodporuje.|SByte|
 ||StringFixedLength|nChar|WChar|nChar|nChar|

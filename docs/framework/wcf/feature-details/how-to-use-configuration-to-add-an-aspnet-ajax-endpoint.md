@@ -3,11 +3,11 @@ title: 'Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX
 ms.date: 03/30/2017
 ms.assetid: 7cd0099e-dc3a-47e4-a38c-6e10f997f6ea
 ms.openlocfilehash: db5085d01dbed841109ac46fe4e8b2a0143352e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039114"
 ---
 # <a name="how-to-use-configuration-to-add-an-aspnet-ajax-endpoint"></a>Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX
 Windows Communication Foundation (WCF) umožňuje vytvořit službu, která umožňuje použití technologie ASP.NET AJAX koncový bod k dispozici, který může být volána z jazyka JavaScript na webové stránce klienta. Vytvořit takové koncový bod, můžete použít konfigurační soubor, stejně jako všechny ostatní koncové body Windows Communication Foundation (WCF) nebo používat metodu, která nevyžaduje žádné konfigurační prvky. Toto téma popisuje postup konfigurace.  

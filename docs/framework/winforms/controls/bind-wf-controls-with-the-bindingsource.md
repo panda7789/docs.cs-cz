@@ -7,11 +7,11 @@ helpviewer_keywords:
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 391ae170-de5c-40f8-8233-91cb2ee4683a
 ms.openlocfilehash: a4f87303954494e8e32d32e68fb3f1244f25680a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011709"
 ---
 # <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře
 Po přidání ovládacích prvků do formuláře a určit uživatelského rozhraní pro vaši aplikaci, lze svázat ovládací prvky zdroje dat, tak, aby v době běhu, uživatelé mohou změnit a uložit data související s aplikací.  
@@ -31,9 +31,9 @@ Po přidání ovládacích prvků do formuláře a určit uživatelského rozhra
   
 2. V **vlastnosti** okno:  
   
-    1.  Rozbalte **(DataBindings)** uzlu.  
+    1. Rozbalte **(DataBindings)** uzlu.  
   
-    2.  Klikněte na šipku vedle položky <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
+    2. Klikněte na šipku vedle položky <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
   
          **DataSource** otevře editor typu uživatelského rozhraní.  
   

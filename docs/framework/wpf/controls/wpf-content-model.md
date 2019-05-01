@@ -12,11 +12,11 @@ helpviewer_keywords:
 - ContentControl class [WPF], displaying content
 ms.assetid: 214da5ef-547a-4cf8-9b07-4aa8a0e52cdd
 ms.openlocfilehash: 4f866e0366a7781c287b3ebae7b668c2b296a5cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62023886"
 ---
 # <a name="wpf-content-model"></a>Model obsahu WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je prezentační platforma, která nabízí mnoho ovládacích prvků a typů ovládacího prvku, jejichž primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek k odvození z, měli byste porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládací prvek.  
@@ -43,45 +43,45 @@ ms.locfileid: "59134587"
 ### <a name="controls-that-contain-a-single-arbitrary-object"></a>Ovládací prvky, které obsahují jednoho libovolného objektu  
  <xref:System.Windows.Controls.ContentControl> Třída obsahuje jediný libovolný obsah. Jeho vlastnost obsahu má <xref:System.Windows.Controls.ContentControl.Content%2A>. Následující ovládací prvky automaticky dědí z <xref:System.Windows.Controls.ContentControl> a použijte svůj model obsahu:  
   
--   <xref:System.Windows.Controls.Button>  
+- <xref:System.Windows.Controls.Button>  
   
--   <xref:System.Windows.Controls.Primitives.ButtonBase>  
+- <xref:System.Windows.Controls.Primitives.ButtonBase>  
   
--   <xref:System.Windows.Controls.CheckBox>  
+- <xref:System.Windows.Controls.CheckBox>  
   
--   <xref:System.Windows.Controls.ComboBoxItem>  
+- <xref:System.Windows.Controls.ComboBoxItem>  
   
--   <xref:System.Windows.Controls.ContentControl>  
+- <xref:System.Windows.Controls.ContentControl>  
   
--   <xref:System.Windows.Controls.Frame>  
+- <xref:System.Windows.Controls.Frame>  
   
--   <xref:System.Windows.Controls.GridViewColumnHeader>  
+- <xref:System.Windows.Controls.GridViewColumnHeader>  
   
--   <xref:System.Windows.Controls.GroupItem>  
+- <xref:System.Windows.Controls.GroupItem>  
   
--   <xref:System.Windows.Controls.Label>  
+- <xref:System.Windows.Controls.Label>  
   
--   <xref:System.Windows.Controls.ListBoxItem>  
+- <xref:System.Windows.Controls.ListBoxItem>  
   
--   <xref:System.Windows.Controls.ListViewItem>  
+- <xref:System.Windows.Controls.ListViewItem>  
   
--   <xref:System.Windows.Navigation.NavigationWindow>  
+- <xref:System.Windows.Navigation.NavigationWindow>  
   
--   <xref:System.Windows.Controls.RadioButton>  
+- <xref:System.Windows.Controls.RadioButton>  
   
--   <xref:System.Windows.Controls.Primitives.RepeatButton>  
+- <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
--   <xref:System.Windows.Controls.ScrollViewer>  
+- <xref:System.Windows.Controls.ScrollViewer>  
   
--   <xref:System.Windows.Controls.Primitives.StatusBarItem>  
+- <xref:System.Windows.Controls.Primitives.StatusBarItem>  
   
--   <xref:System.Windows.Controls.Primitives.ToggleButton>  
+- <xref:System.Windows.Controls.Primitives.ToggleButton>  
   
--   <xref:System.Windows.Controls.ToolTip>  
+- <xref:System.Windows.Controls.ToolTip>  
   
--   <xref:System.Windows.Controls.UserControl>  
+- <xref:System.Windows.Controls.UserControl>  
   
--   <xref:System.Windows.Window>  
+- <xref:System.Windows.Window>  
   
  Následující obrázek znázorňuje čtyři tlačítka, jehož <xref:System.Windows.Controls.ContentControl.Content%2A> nastavený na řetězec, <xref:System.DateTime> objektu, <xref:System.Windows.Shapes.Rectangle>a <xref:System.Windows.Controls.Panel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>:  
   
@@ -94,11 +94,11 @@ ms.locfileid: "59134587"
   
  Následující ovládací prvky automaticky dědí z <xref:System.Windows.Controls.HeaderedContentControl> a použijte svůj model obsahu:  
   
--   <xref:System.Windows.Controls.Expander>  
+- <xref:System.Windows.Controls.Expander>  
   
--   <xref:System.Windows.Controls.GroupBox>  
+- <xref:System.Windows.Controls.GroupBox>  
   
--   <xref:System.Windows.Controls.TabItem>  
+- <xref:System.Windows.Controls.TabItem>  
   
  Následující obrázek ukazuje dva <xref:System.Windows.Controls.TabItem> objekty. První <xref:System.Windows.Controls.TabItem> má <xref:System.Windows.UIElement> objektů, jako <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a <xref:System.Windows.Controls.ContentControl.Content%2A>. <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> Je nastavena na <xref:System.Windows.Controls.StackPanel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>. <xref:System.Windows.Controls.ContentControl.Content%2A> Je nastavena na <xref:System.Windows.Controls.StackPanel> , která obsahuje <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Controls.Label>. Druhá <xref:System.Windows.Controls.TabItem> má řetězec <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a <xref:System.Windows.Controls.TextBlock> v <xref:System.Windows.Controls.ContentControl.Content%2A>.  
   
@@ -111,37 +111,37 @@ ms.locfileid: "59134587"
   
  Následující ovládací prvky automaticky dědí z <xref:System.Windows.Controls.ItemsControl> a použijte svůj model obsahu:  
   
--   <xref:System.Windows.Controls.Menu>  
+- <xref:System.Windows.Controls.Menu>  
   
--   <xref:System.Windows.Controls.Primitives.MenuBase>  
+- <xref:System.Windows.Controls.Primitives.MenuBase>  
   
--   <xref:System.Windows.Controls.ContextMenu>  
+- <xref:System.Windows.Controls.ContextMenu>  
   
--   <xref:System.Windows.Controls.ComboBox>  
+- <xref:System.Windows.Controls.ComboBox>  
   
--   <xref:System.Windows.Controls.ItemsControl>  
+- <xref:System.Windows.Controls.ItemsControl>  
   
--   <xref:System.Windows.Controls.ListBox>  
+- <xref:System.Windows.Controls.ListBox>  
   
--   <xref:System.Windows.Controls.ListView>  
+- <xref:System.Windows.Controls.ListView>  
   
--   <xref:System.Windows.Controls.TabControl>  
+- <xref:System.Windows.Controls.TabControl>  
   
--   <xref:System.Windows.Controls.TreeView>  
+- <xref:System.Windows.Controls.TreeView>  
   
--   <xref:System.Windows.Controls.Primitives.Selector>  
+- <xref:System.Windows.Controls.Primitives.Selector>  
   
--   <xref:System.Windows.Controls.Primitives.StatusBar>  
+- <xref:System.Windows.Controls.Primitives.StatusBar>  
   
  Následující ilustrace ukazuje <xref:System.Windows.Controls.ListBox> , která obsahuje tyto typy položek:  
   
--   Řetězec.  
+- Řetězec.  
   
--   A <xref:System.DateTime> objektu.  
+- A <xref:System.DateTime> objektu.  
   
--   A <xref:System.Windows.UIElement>.  
+- A <xref:System.Windows.UIElement>.  
   
--   A <xref:System.Windows.Controls.Panel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>.  
+- A <xref:System.Windows.Controls.Panel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>.  
   
  ![Snímek obrazovky zobrazující prvku ListBox s čtyři typy obsahu.](./media/wpf-content-model/control-content-model-listbox.png)  
   
@@ -150,11 +150,11 @@ ms.locfileid: "59134587"
   
  Následující ovládací prvky automaticky dědí z <xref:System.Windows.Controls.HeaderedItemsControl> a použijte svůj model obsahu:  
   
--   <xref:System.Windows.Controls.MenuItem>  
+- <xref:System.Windows.Controls.MenuItem>  
   
--   <xref:System.Windows.Controls.ToolBar>  
+- <xref:System.Windows.Controls.ToolBar>  
   
--   <xref:System.Windows.Controls.TreeViewItem>  
+- <xref:System.Windows.Controls.TreeViewItem>  
   
 <a name="classes_that_contain_a_collection_of_uielement_objects"></a>   
 ## <a name="classes-that-contain-a-collection-of-uielement-objects"></a>Třídy, které obsahují kolekci objektů UIElement  
@@ -162,27 +162,27 @@ ms.locfileid: "59134587"
   
  Následující třídy dědí <xref:System.Windows.Controls.Panel> třídy a použijte svůj model obsahu:  
   
--   <xref:System.Windows.Controls.Canvas>  
+- <xref:System.Windows.Controls.Canvas>  
   
--   <xref:System.Windows.Controls.DockPanel>  
+- <xref:System.Windows.Controls.DockPanel>  
   
--   <xref:System.Windows.Controls.Grid>  
+- <xref:System.Windows.Controls.Grid>  
   
--   <xref:System.Windows.Controls.Primitives.TabPanel>  
+- <xref:System.Windows.Controls.Primitives.TabPanel>  
   
--   <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>  
+- <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>  
   
--   <xref:System.Windows.Controls.Primitives.ToolBarPanel>  
+- <xref:System.Windows.Controls.Primitives.ToolBarPanel>  
   
--   <xref:System.Windows.Controls.Primitives.UniformGrid>  
+- <xref:System.Windows.Controls.Primitives.UniformGrid>  
   
--   <xref:System.Windows.Controls.StackPanel>  
+- <xref:System.Windows.Controls.StackPanel>  
   
--   <xref:System.Windows.Controls.VirtualizingPanel>  
+- <xref:System.Windows.Controls.VirtualizingPanel>  
   
--   <xref:System.Windows.Controls.VirtualizingStackPanel>  
+- <xref:System.Windows.Controls.VirtualizingStackPanel>  
   
--   <xref:System.Windows.Controls.WrapPanel>  
+- <xref:System.Windows.Controls.WrapPanel>  
   
  Další informace najdete v tématu [přehled panelů](panels-overview.md).  
   
@@ -190,23 +190,23 @@ ms.locfileid: "59134587"
 ## <a name="classes-that-affect-the-appearance-of-a-uielement"></a>Třídy, které mají vliv na vzhled elementu UIElement  
  <xref:System.Windows.Controls.Decorator> Použije vizuální efekty na nebo okolo jednu podřízenou třídu <xref:System.Windows.UIElement>. Jeho vlastnost obsahu má <xref:System.Windows.Controls.Decorator.Child%2A>. Následující třídy dědí <xref:System.Windows.Controls.Decorator> a použijte svůj model obsahu:  
   
--   <xref:System.Windows.Documents.AdornerDecorator>  
+- <xref:System.Windows.Documents.AdornerDecorator>  
   
--   <xref:System.Windows.Controls.Border>  
+- <xref:System.Windows.Controls.Border>  
   
--   <xref:System.Windows.Controls.Primitives.BulletDecorator>  
+- <xref:System.Windows.Controls.Primitives.BulletDecorator>  
   
--   <xref:Microsoft.Windows.Themes.ButtonChrome>  
+- <xref:Microsoft.Windows.Themes.ButtonChrome>  
   
--   <xref:Microsoft.Windows.Themes.ClassicBorderDecorator>  
+- <xref:Microsoft.Windows.Themes.ClassicBorderDecorator>  
   
--   <xref:System.Windows.Controls.InkPresenter>  
+- <xref:System.Windows.Controls.InkPresenter>  
   
--   <xref:Microsoft.Windows.Themes.ListBoxChrome>  
+- <xref:Microsoft.Windows.Themes.ListBoxChrome>  
   
--   <xref:Microsoft.Windows.Themes.SystemDropShadowChrome>  
+- <xref:Microsoft.Windows.Themes.SystemDropShadowChrome>  
   
--   <xref:System.Windows.Controls.Viewbox>  
+- <xref:System.Windows.Controls.Viewbox>  
   
  Následující ilustrace ukazuje <xref:System.Windows.Controls.TextBox> , který má (je doplněn) <xref:System.Windows.Controls.Border> kolem něj.  
   

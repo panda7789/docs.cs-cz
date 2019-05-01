@@ -10,11 +10,11 @@ helpviewer_keywords:
 - TabControl control [Windows Forms], disabling pages
 ms.assetid: adcc6618-8a34-4ee1-bbe3-47e732de6a59
 ms.openlocfilehash: 21592fdd74c43d40310e0fcbc96af6565a42e08b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013449"
 ---
 # <a name="how-to-disable-tab-pages"></a>Postupy: Zakázání karet
 V některých případech budete chtít omezit přístup k datům, která je k dispozici v rámci vaší aplikace Windows Forms. Jedním z příkladů může být, pokud máte data zobrazí na stránkách kartu ovládacího prvku karta; Správce může mít informace na stránce kartu, kterou chcete omezit z hosta nebo uživatelé na nižší úrovni.  

@@ -5,11 +5,11 @@ author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
 ms.openlocfilehash: 0894465858e3503e2eddb5299b404f7ba95fdd6a
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019662"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zabezpečení Mikroslužby .NET a webové aplikace
 

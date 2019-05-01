@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 48055103b49b4c61bb7561f2d4aa6c8daae07ae2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59128905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62044210"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent – metoda
 Vytvoří definici pro události s podpisem Zadaná metadata a získá token pro tuto definici událostí.  

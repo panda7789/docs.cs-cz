@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 2b73d60a-6049-446a-85a7-3e5a68b183e2
 ms.openlocfilehash: 7035c96208f6cad1f606727894e9d05aa51024a9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033927"
 ---
 # <a name="how-to-bind-a-dataview-object-to-a-windows-forms-datagridview-control"></a>Postupy: Připojení objektu DataView k ovládacímu prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládacího prvku poskytuje výkonný a flexibilní způsob, jak zobrazit data ve formátu tabulky. <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje standardní Windows Forms datový model vazby, proto vytvoří vazbu <xref:System.Data.DataView> a širokou škálu zdrojů dat. Ve většině případů však můžete vytvoří vazbu <xref:System.Windows.Forms.BindingSource> komponenta, která bude spravovat podrobnosti o práci se zdrojem dat.  

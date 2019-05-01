@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Control class [WPF], TreeView [WPF], creating
 ms.assetid: 1defbb78-b8e7-4c0e-b650-576453ac828d
 ms.openlocfilehash: 7edb4933ebcc0f0d2cb02754238c2342ee9dd4a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59205144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031912"
 ---
 # <a name="how-to-create-simple-or-complex-treeviews"></a>Postupy: Vytvoření jednoduchého nebo složitého zobrazení TreeViews
 Tento příklad ukazuje, jak vytvořit jednoduché nebo složité <xref:System.Windows.Controls.TreeView> ovládacích prvků.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
 ms.openlocfilehash: 0f06ca2251ae1bf9bd5e199562eff116614e7117
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59140228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973836"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>Známé identifikátory GUID pro vlastní místa dialogového okna souboru
 Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] známé složky při přidání složek do <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce. Známé identifikátory GUID složky nejsou velká a malá písmena a jsou definovány v souboru KnownFolders.h [!INCLUDE[winSDK](../../../../includes/winsdk-md.md)].  
@@ -58,7 +58,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  CommonTemplates  
  B94237E7-57AC-4347-9151-B08C6C32D1F7  
   
- Počítač  
+ Computer  
  0AC0837C-BBF8-452A-850D-79D08E667CA7  
   
  Konflikt  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
 ms.openlocfilehash: ca6b028ef20095d6faeb125151772eedf1500fa0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62038724"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Nezabezpečený internetový klient a služba
 Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby:  
@@ -30,9 +30,9 @@ Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta 
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod se zabezpečení. Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> má režim zabezpečení nastavený na <xref:System.ServiceModel.BasicHttpSecurityMode.None>.  
@@ -70,9 +70,9 @@ Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta 
 ## <a name="client"></a>Klient  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
+- Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
   
--   Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
+- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  

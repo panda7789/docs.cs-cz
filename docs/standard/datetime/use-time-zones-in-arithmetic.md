@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Používání časových pásem v aritmetice kalendářních a časových'
+title: 'Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,13 +13,13 @@ ms.assetid: 83dd898d-1338-415d-8cd6-445377ab7871
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 053ca2d10deadf58d5bb8b4628fb5dee815d82c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54682690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026494"
 ---
-# <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: Používání časových pásem v aritmetice kalendářních a časových
+# <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů
 
 Obvykle při provádění datum a čas aritmetické pomocí <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnot, výsledek neodráží všechna pravidla úpravy časového pásma. To platí i v případě, časovém pásmu z hodnoty data a času je jasně údaje (například když <xref:System.DateTime.Kind%2A> je nastavena na <xref:System.DateTimeKind.Local>). Toto téma ukazuje, jak provádět aritmetické operace na hodnoty data a času, které patří do určitého časového pásma. Výsledky aritmetické operace bude odrážet pravidla úpravy časového pásma.
 

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
 ms.openlocfilehash: fae1513e7a7ead98318d907b220b7510758c9ffe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037599"
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>Postupy: Načtení informací o konfliktech členů
 Můžete použít <xref:System.Data.Linq.MemberChangeConflict> třídy k načtení informací o jednotlivých členů v konfliktu. V tomto kontextu stejné můžete zadat vlastní zpracování konflikt pro žádného člena. Další informace najdete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  

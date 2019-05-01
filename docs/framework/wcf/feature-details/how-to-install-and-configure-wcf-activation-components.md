@@ -5,18 +5,18 @@ helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
 ms.openlocfilehash: 2677c57c825675c884d057827e065f05d7c8bf30
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039140"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
 Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windows (WAS) na [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služby, které nekomunikují přes protokol HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
   
--   Nainstalovat (nebo potvrďte instalaci) aktivačních komponent WCF.  
+- Nainstalovat (nebo potvrďte instalaci) aktivačních komponent WCF.  
   
--   Konfigurace WAS pro podporu protokolu jiným protokolem než HTTP. Následující postup umožňuje konfiguraci [!INCLUDE[wv](../../../../includes/wv-md.md)] pro Aktivace protokolem TCP.  
+- Konfigurace WAS pro podporu protokolu jiným protokolem než HTTP. Následující postup umožňuje konfiguraci [!INCLUDE[wv](../../../../includes/wv-md.md)] pro Aktivace protokolem TCP.  
   
  Po instalaci a konfiguraci služby WAS, naleznete v tématu [jak: Hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) postupy k vytvoření služby WCF, který zpřístupňuje koncový bod jiným protokolem než HTTP, která používá WAS.  
   
@@ -57,7 +57,7 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
   
      V zájmu usnadnění práce následující dva kroky jsou implementovány v dávkovém souboru volá RemoveNetTcpSiteBinding.cmd nachází v adresáři ukázkové.  
   
-    1.  Odeberte net.tcp ze seznamu povolených protokolů spuštěním následujícího příkazu v okně příkazového řádku úrovni správce.  
+    1. Odeberte net.tcp ze seznamu povolených protokolů spuštěním následujícího příkazu v okně příkazového řádku úrovni správce.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app   
@@ -67,7 +67,7 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
         > [!NOTE]
         >  Tento příkaz je jeden řádek textu.  
   
-    2.  Odeberte vazbu webu net.tcp spuštěním následujícího příkazu v okně příkazového řádku se zvýšenými oprávněními:  
+    2. Odeberte vazbu webu net.tcp spuštěním následujícího příkazu v okně příkazového řádku se zvýšenými oprávněními:  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   

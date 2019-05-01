@@ -8,11 +8,11 @@ helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
 ms.openlocfilehash: a962f7cce961b1ee6829702a6815ba02c534efb4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050308"
 ---
 # <a name="mysettings-object"></a>My.Settings – objekt
 Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.  
@@ -25,13 +25,13 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
   
  Každé nastavení má **název**, **typ**, **oboru**, a **hodnota**, a tato nastavení určují, jak vlastnost, která má přístup ke každé nastavení Zobrazí se v `My.Settings` objektu:  
   
--   **Název** Určuje název vlastnosti.  
+- **Název** Určuje název vlastnosti.  
   
--   **Typ** Určuje typ vlastnosti.  
+- **Typ** Určuje typ vlastnosti.  
   
--   **Obor** značí, zda je vlastnost jen pro čtení. Pokud je hodnota **aplikace**, vlastnost je jen pro čtení; Pokud je hodnota **uživatele**, je vlastnost pro čtení i zápis.  
+- **Obor** značí, zda je vlastnost jen pro čtení. Pokud je hodnota **aplikace**, vlastnost je jen pro čtení; Pokud je hodnota **uživatele**, je vlastnost pro čtení i zápis.  
   
--   **Hodnota** je výchozí hodnota vlastnosti.  
+- **Hodnota** je výchozí hodnota vlastnosti.  
   
 ## <a name="methods"></a>Metody  
   

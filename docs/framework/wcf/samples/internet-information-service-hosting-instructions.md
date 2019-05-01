@@ -3,11 +3,11 @@ title: Pokyny k hostování služby IIS
 ms.date: 03/30/2017
 ms.assetid: 959a21c8-9d9d-4757-b255-4e57793ae9d6
 ms.openlocfilehash: f5aa276bc1178f3e7c61af7505fcf54df8b934e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954853"
 ---
 # <a name="internet-information-service-hosting-instructions"></a>Pokyny k hostování služby IIS
 Ke spuštění ukázky, které jsou hostované v Internetové informační služby (IIS), musí se ujistěte, že IIS je správně nainstalován a běží.  
@@ -46,13 +46,13 @@ Ke spuštění ukázky, které jsou hostované v Internetové informační služ
   
 8. Ujistěte se, zda že jsou vybrány následující položky:  
   
-    1.  **Rozšiřitelnost rozhraní .NET**  
+    1. **Rozšiřitelnost rozhraní .NET**  
   
-    2.  **ASP.NET**  
+    2. **ASP.NET**  
   
-    3.  **Rozšíření ISAPI**  
+    3. **Rozšíření ISAPI**  
   
-    4.  **Filtry ISAPI**  
+    4. **Filtry ISAPI**  
   
 9. V části položky označené **webové služby**, rozbalte **společné funkce protokolu Http**.  
   
@@ -104,13 +104,13 @@ Ke spuštění ukázky, které jsou hostované v Internetové informační služ
   
 8. Ujistěte se, zda že jsou vybrány následující položky:  
   
-    1.  **Rozšiřitelnost rozhraní .NET**  
+    1. **Rozšiřitelnost rozhraní .NET**  
   
-    2.  **ASP.NET**  
+    2. **ASP.NET**  
   
-    3.  **Rozšíření ISAPI**  
+    3. **Rozšíření ISAPI**  
   
-    4.  **Filtry ISAPI**  
+    4. **Filtry ISAPI**  
   
 9. Rozbalte položky označené **nástroje webové správy**a pak vyberte **konzolu pro správu IIS**.  
   

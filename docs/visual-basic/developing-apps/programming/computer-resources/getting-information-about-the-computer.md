@@ -5,11 +5,11 @@ helpviewer_keywords:
 - My.Computer.Info object [Visual Basic], tasks
 ms.assetid: 13c145bc-5c85-4fea-a5dd-2ca8681a0252
 ms.openlocfilehash: 00e6acd7cdbb41d8d763ae2a948bf9c108d54d59
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014047"
 ---
 # <a name="getting-information-about-the-computer-visual-basic"></a>Získání informací o počítači (Visual Basic)
 `My.Computer.Info` Objekt poskytuje vlastnosti pro získání informací o paměť, načtená sestavení, název a operační systém počítače.  

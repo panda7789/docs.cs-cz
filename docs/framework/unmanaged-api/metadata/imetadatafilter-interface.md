@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4196ff2cb2d4ebc401076f603a8a7fdc9b9c76ea
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59143790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62049957"
 ---
 # <a name="imetadatafilter-interface"></a>IMetaDataFilter – rozhraní
 Poskytuje metody pro označení a filtrování tokeny metadat předcházet opakování akce, které již byly provedeny.  

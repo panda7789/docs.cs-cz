@@ -3,22 +3,22 @@ title: Ukázková tabulka UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 5dd1d38f-1989-4c64-820d-821f5a02216a
 ms.openlocfilehash: 4543d4676344d10c3e380c3522a7ca5a6a8d6294
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006444"
 ---
 # <a name="uritemplate-table-sample"></a>Ukázková tabulka UriTemplate
 <xref:System.UriTemplateTable> Třída poskytuje strukturu jako slovník asociativní tabulky pro práci se sadou `UriTemplate` instancí. Konkrétní Uniform Resource Identifier (identifikátory URI) mohou být efektivně hledána všechny šablony v tabulce, a je možné načíst data přidružená k šabloně odpovídající.  
   
  Tato ukázka demonstruje následující klíčové koncepty týkající `UriTemplateTable` třídy:  
   
--   Syntaxe pro vytvoření instance `UriTemplateTable`.  
+- Syntaxe pro vytvoření instance `UriTemplateTable`.  
   
--   Sestavování `UriTemplateTable` sadu dvojic klíč/hodnota.  
+- Sestavování `UriTemplateTable` sadu dvojic klíč/hodnota.  
   
--   Odpovídající kandidát identifikátor URI pro tabulku s využitím <xref:System.UriTemplateTable.MatchSingle%2A>.  
+- Odpovídající kandidát identifikátor URI pro tabulku s využitím <xref:System.UriTemplateTable.MatchSingle%2A>.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   

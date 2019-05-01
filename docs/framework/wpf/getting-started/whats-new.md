@@ -6,44 +6,44 @@ helpviewer_keywords:
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
 ms.openlocfilehash: 03f785da018cacdec643fa196bdd0c6d5d7c7f70
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020306"
 ---
 # <a name="whats-new-in-wpf-version-45"></a>Novinky ve verzi 4.5 grafického subsystému WPF
 <a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
   
  Toto téma obsahuje následující oddíly:  
   
--   [Ovládací prvek pásu karet](#ribbon_control)  
+- [Ovládací prvek pásu karet](#ribbon_control)  
   
--   [Vylepšili jsme výkon při zobrazování velkých sad seskupených dat](#grouped_virtualization)  
+- [Vylepšili jsme výkon při zobrazování velkých sad seskupených dat](#grouped_virtualization)  
   
--   [Nové funkce pro VirtualizingPanel](#VirtualizingPanel)  
+- [Nové funkce pro VirtualizingPanel](#VirtualizingPanel)  
   
--   [Vytvoření vazby na statické vlastnosti](#static_properties)  
+- [Vytvoření vazby na statické vlastnosti](#static_properties)  
   
--   [Přístupem ke kolekcím v uživatelském rozhraní vláken](#xthread_access)  
+- [Přístupem ke kolekcím v uživatelském rozhraní vláken](#xthread_access)  
   
--   [Synchronní a asynchronní ověření dat.](#INotifyDataErrorInfo)  
+- [Synchronní a asynchronní ověření dat.](#INotifyDataErrorInfo)  
   
--   [Automatické aktualizace zdrojové datové vazby](#delay)  
+- [Automatické aktualizace zdrojové datové vazby](#delay)  
   
--   [Vytvoření vazby na typy ICustomTypeProvider této implementace](#ICustomTypeProvider)  
+- [Vytvoření vazby na typy ICustomTypeProvider této implementace](#ICustomTypeProvider)  
   
--   [Načítání informací o vázání dat z vazbového výrazu](#binding_state)  
+- [Načítání informací o vázání dat z vazbového výrazu](#binding_state)  
   
--   [Kontrolují se platný objekt kontextu DataContext](#DisconnectedSource)  
+- [Kontrolují se platný objekt kontextu DataContext](#DisconnectedSource)  
   
--   [Přemístění dat při změně dat hodnot (živé tvarování)](#live_shaping)  
+- [Přemístění dat při změně dat hodnot (živé tvarování)](#live_shaping)  
   
--   [Vylepšená podpora pro stanovení Slabý odkaz na událost](#weak_event_pattern)  
+- [Vylepšená podpora pro stanovení Slabý odkaz na událost](#weak_event_pattern)  
   
--   [Nové metody pro třídu dispečer](#async)  
+- [Nové metody pro třídu dispečer](#async)  
   
--   [Rozšíření značek pro události](#events_markup_extenions)  
+- [Rozšíření značek pro události](#events_markup_extenions)  
   
 <a name="ribbon_control"></a>   
 ## <a name="ribbon-control"></a>Ovládací prvek pásu karet  
@@ -64,9 +64,9 @@ ms.locfileid: "59325823"
 ## <a name="binding-to-static-properties"></a>Vytvoření vazby na statické vlastnosti  
  Statické vlastnosti můžete použít jako zdroj datové vazby. Modul vazby dat rozpozná při změně hodnoty vlastnosti Pokud statické událost se vyvolá.  Například pokud třída `SomeClass` definuje statickou vlastnost s názvem `MyProperty`, `SomeClass` můžete definovat statické události, která se vyvolá se, když hodnota `MyProperty` změny.  Statické události můžete použít kteroukoli z následující signatury.  
   
--   `public static event EventHandler MyPropertyChanged;`  
+- `public static event EventHandler MyPropertyChanged;`  
   
--   `public static event EventHandler<PropertyChangedEventArgs> StaticPropertyChanged;`  
+- `public static event EventHandler<PropertyChangedEventArgs> StaticPropertyChanged;`  
   
  Všimněte si, že v prvním případě zpřístupní třídu statické událost s názvem *PropertyName* `Changed` , který předá <xref:System.EventArgs> obslužné rutiny události.  V druhém případě třída zveřejňuje statické událost s názvem `StaticPropertyChanged` , který předá <xref:System.ComponentModel.PropertyChangedEventArgs> obslužné rutiny události. Třídu, která implementuje statickou vlastnost můžete zvolit vytváření vlastnost – oznámení o změnách pomocí některé z metod.  
   

@@ -4,10 +4,10 @@ ms.date: 03/30/2017
 ms.assetid: 3ea381ee-ac7d-4d62-8c6c-12dc3650879f
 ms.openlocfilehash: 1eee814b17a7547bbbc07e17dd675c5f37860341
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002739"
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>Klient ASMX se službou WCF
 Tento příklad ukazuje, jak vytvořit službu pomocí Windows Communication Foundation (WCF) a potom z klienta bez WCF, jako je například klient ASMX se přístup ke službě.  

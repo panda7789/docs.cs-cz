@@ -8,11 +8,11 @@ helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
 ms.openlocfilehash: 6b710df45379ccce4daf340b4dbe2701d3c96604
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019075"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement>, která slouží k poskytování vizuální upozornění na uživatele. Mimo jiné účely je možné přidat funkční zpracovává na prvky nebo poskytují informace o ovládací prvek stavu doplňků pro úpravy.  
@@ -23,13 +23,13 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
   
  Běžné aplikace pro doplňky pro úpravy patří:  
   
--   Přidání funkčnosti popisovače <xref:System.Windows.UIElement> , který umožní uživateli manipulovat s elementu nějakým způsobem (Změna velikosti, otáčení, změna umístění atd.).  
+- Přidání funkčnosti popisovače <xref:System.Windows.UIElement> , který umožní uživateli manipulovat s elementu nějakým způsobem (Změna velikosti, otáčení, změna umístění atd.).  
   
--   Vizuální zpětnou vazbu k označení různých státech nebo v reakci na různé události.  
+- Vizuální zpětnou vazbu k označení různých státech nebo v reakci na různé události.  
   
--   Překryv visual dekorace na <xref:System.Windows.UIElement>.  
+- Překryv visual dekorace na <xref:System.Windows.UIElement>.  
   
--   Vizuálně maskování nebo přepsat některá nebo všechna <xref:System.Windows.UIElement>.  
+- Vizuálně maskování nebo přepsat některá nebo všechna <xref:System.Windows.UIElement>.  
   
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje základní rozhraní pro adorning vizuální prvky. Následující tabulka uvádí hlavní typy používané při adorning objekty a jejich účel. Postupujte podle několik příkladů použití.  
   

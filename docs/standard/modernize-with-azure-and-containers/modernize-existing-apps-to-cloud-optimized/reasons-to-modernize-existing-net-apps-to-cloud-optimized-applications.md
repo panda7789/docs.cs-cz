@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
 ms.openlocfilehash: 8a59a78bbf7ec38f32b14e67d4cb35a9c2375e94
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012023"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovat existující aplikace .NET pro aplikace optimalizované pro Cloud
 
@@ -33,13 +33,13 @@ Pro dosažení flexibility, musíte také automatizované procesy DevOps, které
 
 Následující seznam popisuje hlavní principy nebo postupy pro aplikace optimalizované pro Cloud. Mějte na paměti, přijímat všechny nebo pouze některé z těchto zásad v rámci postupného nebo přírůstkové přístupu:
 
--   **Kontejnery**. Kontejnery nabízejí možnosti zahrnují závislosti aplikace s vlastní aplikace. Kontejnerizace výrazně snižuje počet problémy, se kterými se můžete setkat při nasazení do produkčního prostředí nebo testování v pracovním prostředí. Nakonec kontejnery, zlepší se pružnost doručování aplikací.
+- **Kontejnery**. Kontejnery nabízejí možnosti zahrnují závislosti aplikace s vlastní aplikace. Kontejnerizace výrazně snižuje počet problémy, se kterými se můžete setkat při nasazení do produkčního prostředí nebo testování v pracovním prostředí. Nakonec kontejnery, zlepší se pružnost doručování aplikací.
 
--   **Odolné a škálovatelné cloudové**. Cloud poskytuje platformu, která je spravovaná, pružná, škálovatelnou a odolnou. Tyto vlastnosti jsou zásadní pro získání vylepšení náklady a dodávat vysoce dostupných a spolehlivých aplikací průběžné doručování. Spravované služby, jako jsou spravované databáze spravované mezipaměti jako služby (CaaS) a spravovaného úložiště jsou základní části jako prostředek pro zmírnění náklady na údržbu aplikace.
+- **Odolné a škálovatelné cloudové**. Cloud poskytuje platformu, která je spravovaná, pružná, škálovatelnou a odolnou. Tyto vlastnosti jsou zásadní pro získání vylepšení náklady a dodávat vysoce dostupných a spolehlivých aplikací průběžné doručování. Spravované služby, jako jsou spravované databáze spravované mezipaměti jako služby (CaaS) a spravovaného úložiště jsou základní části jako prostředek pro zmírnění náklady na údržbu aplikace.
 
--   **Monitorování**. Nemůže mít spolehlivé aplikace bez nutnosti vhodný způsob, jak detekovat a diagnostikovat výjimky a problémy s výkonem aplikací. Budete muset získat užitečné přehledy prostřednictvím správy výkonu aplikací a okamžitých analýz.
+- **Monitorování**. Nemůže mít spolehlivé aplikace bez nutnosti vhodný způsob, jak detekovat a diagnostikovat výjimky a problémy s výkonem aplikací. Budete muset získat užitečné přehledy prostřednictvím správy výkonu aplikací a okamžitých analýz.
 
--   **DevOps jazykovou verzi a průběžné doručování**. Přijetí postupy DevOps vyžaduje kulturní změnu, ve kterém týmy už nebude fungovat v nezávislých sila. Kanály CI/CD jsou možné pouze v případě, že je lepší spolupráce mezi vývojovou a provozní týmy IT, podporuje kontejnery a nástroje CI/CD.
+- **DevOps jazykovou verzi a průběžné doručování**. Přijetí postupy DevOps vyžaduje kulturní změnu, ve kterém týmy už nebude fungovat v nezávislých sila. Kanály CI/CD jsou možné pouze v případě, že je lepší spolupráce mezi vývojovou a provozní týmy IT, podporuje kontejnery a nástroje CI/CD.
 
 Obrázek 4-2 je znázorněný hlavní pilíře volitelná aplikace optimalizované pro Cloud. Další pilíře implementujete, tím lepší bude vaše aplikace k úspěšnému v souladu s očekávání vašich zákazníků.
 
@@ -55,13 +55,13 @@ Vaše organizace může přijmout tyto technologie a přístupy postupně. Není
 
 Převod existující aplikace do optimalizovaných Cloudů (bez změna architektury nebo kódování), můžete získat následující výhody:
 
--   **Nižší náklady, protože je spravovaná infrastruktura zpracována od poskytovatele cloudu**. Aplikace optimalizované pro cloud získáte výhody cloudu s využitím elasticity out-of-the-box v cloudu, automatické škálování a vysokou dostupnost. Výhody se vztahují pouze k funkcím výpočetní prostředky (virtuální počítače a kontejnery), ale také závisí na prostředky v cloudu, jako DBaaS CaaS a jakékoliv infrastruktury mohou potřebné aplikace.
+- **Nižší náklady, protože je spravovaná infrastruktura zpracována od poskytovatele cloudu**. Aplikace optimalizované pro cloud získáte výhody cloudu s využitím elasticity out-of-the-box v cloudu, automatické škálování a vysokou dostupnost. Výhody se vztahují pouze k funkcím výpočetní prostředky (virtuální počítače a kontejnery), ale také závisí na prostředky v cloudu, jako DBaaS CaaS a jakékoliv infrastruktury mohou potřebné aplikace.
 
--   **Odolné aplikace a infrastrukturu**. Když provádíte migraci do cloudu, budete potřebovat pro zpracování přechodných selhání; dojde k chybám v cloudu. Cloudové infrastruktury a hardware jsou také "nahraditelné," což zvyšuje úroveň příležitosti pro přechodné výpadky. Ve stejnou dobu vývojářských technik určité aplikace, které implementují odolnost proti chybám a automatizovat obnovení a možnosti vnitřní cloudu to značně zjednodušují zotavení z neočekávaných chyb v cloudu.
+- **Odolné aplikace a infrastrukturu**. Když provádíte migraci do cloudu, budete potřebovat pro zpracování přechodných selhání; dojde k chybám v cloudu. Cloudové infrastruktury a hardware jsou také "nahraditelné," což zvyšuje úroveň příležitosti pro přechodné výpadky. Ve stejnou dobu vývojářských technik určité aplikace, které implementují odolnost proti chybám a automatizovat obnovení a možnosti vnitřní cloudu to značně zjednodušují zotavení z neočekávaných chyb v cloudu.
 
--   **Podrobnější přehled o výkonu aplikace**. Monitorování nástroje, jako je Azure Application Insights poskytuje vizualizace pro správu stavu, protokolování a oznámení v cloudu. Protokoly auditu vytvářejte aplikace snadno ladit a auditovat, základní spolehlivých cloudových aplikací.
+- **Podrobnější přehled o výkonu aplikace**. Monitorování nástroje, jako je Azure Application Insights poskytuje vizualizace pro správu stavu, protokolování a oznámení v cloudu. Protokoly auditu vytvářejte aplikace snadno ladit a auditovat, základní spolehlivých cloudových aplikací.
 
--   **Přenositelnost aplikací s agilním nasazení**. Kontejnery (Linux nebo Windows kontejnerů na základě modul Docker) nabízí nejlepší řešení pro vyloučení je uzamčen cloudové aplikace. Pomocí kontejnerů, hostitelů Docker a multicloudové orchestrátory můžete snadno přesouvat z jednoho prostředí nebo cloudu do jiného. Kontejnery eliminovat řešit zádrhele spojené s, který obvykle probíhá nasazení do libovolného prostředí (fáze/testovací/produkční).
+- **Přenositelnost aplikací s agilním nasazení**. Kontejnery (Linux nebo Windows kontejnerů na základě modul Docker) nabízí nejlepší řešení pro vyloučení je uzamčen cloudové aplikace. Pomocí kontejnerů, hostitelů Docker a multicloudové orchestrátory můžete snadno přesouvat z jednoho prostředí nebo cloudu do jiného. Kontejnery eliminovat řešit zádrhele spojené s, který obvykle probíhá nasazení do libovolného prostředí (fáze/testovací/produkční).
 
 Všechny tyto výhody nakonec zadejte snížení nákladů klíče pro váš životní cyklus aplikace začátku do konce.
 

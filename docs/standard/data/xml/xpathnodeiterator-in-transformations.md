@@ -9,22 +9,22 @@ ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6f71d409729707f4af93fd7f8d5b82a99404579b
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026715"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>XPathNodeIterator v transformacích
 <xref:System.Xml.XPath.XPathNodeIterator> Poskytuje metody k iteraci v rámci sady uzlů, které jsou vytvořené jako výsledek dotazu jazyk XML Path (XPath) nebo fragment stromu výsledek převeden na uzlu nastavte pomocí metody sada uzlů. <xref:System.Xml.XPath.XPathNodeIterator> Umožňuje iterovat přes uzly v rámci této sady uzlu. Jakmile se načte sadu uzlu, <xref:System.Xml.XPath.XPathNodeIterator> třída poskytuje jen pro čtení, dopředné kurzoru vybrané sady uzlů. Sada uzlů je vytvořen v pořadí dokumentů, takže volání této metody přesune na další uzel v pořadí dokumentů. <xref:System.Xml.XPath.XPathNodeIterator> uzel stromu všech uzlů v sadě nesestaví. Místo toho poskytuje okno s jedním uzlem data, odhalují základní uzel, na který odkazuje na při pohybu ve stromové struktuře. Metody a vlastnosti, které jsou k dispozici <xref:System.Xml.XPath.XPathNodeIterator> třídy umožňují získat informace z aktuálního uzlu. Seznam dostupných metod a vlastností najdete v tématu <xref:System.Windows.Forms.ToolBar>.  
   
  Protože <xref:System.Xml.XPath.XPathNodeIterator> přejde v rámci sady uzlů vytvořené z dotazu XPath a přesune pouze vpřed, je způsob, jak přesunout pomocí <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> metody. Návratový typ této metody je `Boolean`, vracející `true` Pokud je přesune k dalšímu vybraného uzlu, a `false` Pokud neexistují žádné další vybrané uzly. Vrátí-li `true`, v následujícím seznamu jsou uvedeny dostupné vlastnosti:  
   
--   <xref:System.Xml.XPath.XPathNodeIterator.Current%2A>  
+- <xref:System.Xml.XPath.XPathNodeIterator.Current%2A>  
   
--   <xref:System.Xml.XPath.XPathNodeIterator.CurrentPosition%2A>  
+- <xref:System.Xml.XPath.XPathNodeIterator.CurrentPosition%2A>  
   
--   <xref:System.Xml.XPath.XPathNodeIterator.Count%2A>  
+- <xref:System.Xml.XPath.XPathNodeIterator.Count%2A>  
   
  Při hledání v uzlu nastavení při prvním volání <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> třeba umístit <xref:System.Xml.XPath.XPathNodeIterator> na prvním uzlu vybrané sady. To umožňuje nějakou smyčku, která má být proveden zápis.  
   
@@ -142,7 +142,7 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 </xsl:stylesheet>  
 ```  
   
-## <a name="testxml"></a>test.XML  
+## <a name="testxml"></a>test.xml  
   
 ```xml  
 <Title attr="Test">this is a test</Title>  

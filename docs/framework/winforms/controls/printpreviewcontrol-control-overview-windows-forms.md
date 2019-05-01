@@ -8,11 +8,11 @@ helpviewer_keywords:
 - PrintPreviewControl control
 ms.assetid: 4513c6c7-5e9b-4f4c-82ca-00f993a26955
 ms.openlocfilehash: e9f1c2ae912b6beeba70c318b94a3052e2f99acb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012592"
 ---
 # <a name="printpreviewcontrol-control-overview-windows-forms"></a>PrintPreviewControl – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PrintPreviewControl> slouží k zobrazení [PrintDocument](printdocument-component-windows-forms.md) jak bude vypadat po vytištění. Tento ovládací prvek nemá žádné tlačítka nebo další prvky uživatelského rozhraní, proto obvykle použijete <xref:System.Windows.Forms.PrintPreviewControl> pouze v případě, že chcete napsat vlastní náhled tisku uživatelské rozhraní. Pokud chcete, aby se standardní uživatelské rozhraní, použijte <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek; viz [printpreviewdialog – Přehled ovládacího prvku](printpreviewdialog-control-overview-windows-forms.md) Přehled.  

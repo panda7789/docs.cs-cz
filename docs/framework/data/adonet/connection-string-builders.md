@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
 ms.openlocfilehash: 17ef057fccbea48da698e0ecfa5c789e125adbb0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034538"
 ---
 # <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců
 V dřívějších verzích [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], kompilace kontrola připojovacích řetězců s spojený řetězec hodnoty nedošlo, tak, aby v době běhu, vygeneruje nesprávná klíčové slovo <xref:System.ArgumentException>. Každá z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat nepodporuje jinou syntaxi pro klíčová slova řetězec připojení, které vytváření obtížné platný připojovací řetězce, je-li provést ručně. Chcete-li vyřešit tento problém [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedeny nové tvůrci připojovacích řetězců pro každou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb. Každý poskytovatel dat zahrnuje třídu Tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulce jsou uvedeny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatelé dat a jejich přidružený připojovací řetězec Tvůrce třídy.  

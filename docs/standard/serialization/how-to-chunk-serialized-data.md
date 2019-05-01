@@ -14,11 +14,11 @@ helpviewer_keywords:
 - binary serialization, examples
 ms.assetid: 22f1b818-7e0d-428a-8680-f17d6ebdd185
 ms.openlocfilehash: 65e332d229da8fe51ad9c3e9850603471b1dfb12
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018096"
 ---
 # <a name="how-to-chunk-serialized-data"></a>Postupy: bloku dat serializovaná data
 
@@ -56,7 +56,7 @@ Následující příklad kódu ukazuje metodu webové na straně klienta, který
   
 ## <a name="compiling-the-code"></a>Kompilování kódu  
   
--   Kód používá následující obory názvů: <xref:System>, <xref:System.Runtime.Serialization>, <xref:System.Web.Services>, <xref:System.Web.Services.Protocols>, <xref:System.Xml>, <xref:System.Xml.Serialization>, a <xref:System.Xml.Schema>.  
+- Kód používá následující obory názvů: <xref:System>, <xref:System.Runtime.Serialization>, <xref:System.Web.Services>, <xref:System.Web.Services.Protocols>, <xref:System.Xml>, <xref:System.Xml.Serialization>, a <xref:System.Xml.Schema>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
 ms.openlocfilehash: dd5625fd3f2c0cc2e1e2a261b091a029cd4226ed
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039413"
 ---
 # <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby modelu COM+
 Když rozhraním aplikace přidá nebo odebere pomocí nástroje Konfigurace služby COM +, aktualizuje se konfigurace webové služby v konfiguračním souboru aplikace. V režimu hostovány COM +, souboru Application.config nachází v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení). V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.  

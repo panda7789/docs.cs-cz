@@ -1,17 +1,17 @@
 ---
-title: Kontejnery dockeru, obrázky a registry
+title: Registry, image a kontejnery Dockeru
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Kontejnery dockeru, obrázky a registry
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
 ms.openlocfilehash: f10d7d03bbf88ed8f7a89a5d3919a39b3c124ae0
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025536"
 ---
-# <a name="docker-containers-images-and-registries"></a>Kontejnery dockeru, obrázky a registry
+# <a name="docker-containers-images-and-registries"></a>Registry, image a kontejnery Dockeru
 
 Při použití Dockeru, vytvoří vývojář aplikace nebo služby a balíčky a jeho závislosti do image kontejneru. Bitovou je statických reprezentace aplikace nebo služby a jeho konfiguraci a závislostech.
 
@@ -29,9 +29,9 @@ Vložení imagí v registru umožňuje ukládat bits statické a neměnné aplik
 
 Privátní image registrů, buď hostovaný místně nebo v cloudu, se doporučuje při:
 
--   Bitové kopie nesmí veřejně sdílené z důvodu důvěrnost.
+- Bitové kopie nesmí veřejně sdílené z důvodu důvěrnost.
 
--   Chcete mít minimální latence mezi vašich imagí a prostředí pro vybrané nasazení. Například pokud vaše produkční prostředí cloudu Azure, pravděpodobně chcete ukládat Image v [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) tak, že bude minimální latence sítě. Podobným způsobem Pokud je v místním prostředí produkčního prostředí můžete chtít mít místní Docker Trusted Registry k dispozici v rámci stejné místní síti.
+- Chcete mít minimální latence mezi vašich imagí a prostředí pro vybrané nasazení. Například pokud vaše produkční prostředí cloudu Azure, pravděpodobně chcete ukládat Image v [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) tak, že bude minimální latence sítě. Podobným způsobem Pokud je v místním prostředí produkčního prostředí můžete chtít mít místní Docker Trusted Registry k dispozici v rámci stejné místní síti.
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-terminology.md)

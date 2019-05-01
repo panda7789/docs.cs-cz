@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2a49252d00f75b4d0b6325aeae0aab22f8ada5e4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000321"
 ---
 # <a name="strongnamecompareassemblies-function"></a>StrongNameCompareAssemblies – funkce
 Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem.  
@@ -48,11 +48,11 @@ BOOLEAN StrongNameCompareAssemblies (
  `pdwResult`  
  [out] Jeden z následujících hodnot:  
   
--   `SN_CMP_DIFFERENT` (0) – určuje, zda sestavení obsahovat různé datové.  
+- `SN_CMP_DIFFERENT` (0) – určuje, zda sestavení obsahovat různé datové.  
   
--   `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
+- `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
   
--   `SN_CMP_SIGONLY` (2) – určuje, že sestavení liší pouze v podpisu a kontrolního součtu.  
+- `SN_CMP_SIGONLY` (2) – určuje, že sestavení liší pouze v podpisu a kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  `true` Při úspěšném dokončení; v opačném případě `false`.  

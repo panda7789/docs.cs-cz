@@ -22,11 +22,11 @@ helpviewer_keywords:
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
 ms.openlocfilehash: dba2f8b07134560abd77832293ce2a81e55e4875
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59209707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053441"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] umožňuje vývojářům zobrazit, transformaci a formátu Image.  
@@ -37,19 +37,19 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
   
  Existují dva způsoby přístupu k [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], spravované a nespravované součásti. Nespravované součásti poskytuje následující funkce.  
   
--   Model rozšiřitelnosti pro nové nebo speciální obrázků ve formátu.  
+- Model rozšiřitelnosti pro nové nebo speciální obrázků ve formátu.  
   
--   Vylepšili jsme výkon a zabezpečení na nativních bitových kopií formátů, včetně [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)], [!INCLUDE[TLA#tla_jpegorg](../../../../includes/tlasharptla-jpegorg-md.md)], [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)], [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)], [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)], [!INCLUDE[TLA#tla_gif](../../../../includes/tlasharptla-gif-md.md)]a ikony (ICO).  
+- Vylepšili jsme výkon a zabezpečení na nativních bitových kopií formátů, včetně [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)], [!INCLUDE[TLA#tla_jpegorg](../../../../includes/tlasharptla-jpegorg-md.md)], [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)], [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)], [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)], [!INCLUDE[TLA#tla_gif](../../../../includes/tlasharptla-gif-md.md)]a ikony (ICO).  
   
--   Zachování dat vysoké bitové hloubky obrázků až 8 bitů na kanál (32 bitů na pixel).  
+- Zachování dat vysoké bitové hloubky obrázků až 8 bitů na kanál (32 bitů na pixel).  
   
--   Škálování nedestruktivní image, oříznutí a otočení.  
+- Škálování nedestruktivní image, oříznutí a otočení.  
   
--   Zjednodušená správa barev.  
+- Zjednodušená správa barev.  
   
--   Podpora metadat v souboru a specializované.  
+- Podpora metadat v souboru a specializované.  
   
--   Spravovaná komponenta využívá nespravované infrastruktura, která poskytuje bezproblémovou integraci imagí s jinými [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkce, jako [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a grafiky. Spravované součásti taky další výhody z Windows Presentation Foundation (WPF) pro zpracování obrázků kodek model rozšiřitelnosti umožňující automatické rozpoznávání nové formátů obrázku v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
+- Spravovaná komponenta využívá nespravované infrastruktura, která poskytuje bezproblémovou integraci imagí s jinými [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkce, jako [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a grafiky. Spravované součásti taky další výhody z Windows Presentation Foundation (WPF) pro zpracování obrázků kodek model rozšiřitelnosti umožňující automatické rozpoznávání nové formátů obrázku v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
  Většina spravovanou [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou umístěny v <xref:System.Windows.Media.Imaging?displayProperty=nameWithType> obor názvů, i když některé důležité typy, jako <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.ImageDrawing> jsou umístěny v <xref:System.Windows.Media?displayProperty=nameWithType> obor názvů a <xref:System.Windows.Controls.Image> se nachází v <xref:System.Windows.Controls?displayProperty=nameWithType> oboru názvů.  
   
@@ -132,13 +132,13 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
 #### <a name="stretching-images"></a>Roztažení obrázků  
  <xref:System.Windows.Controls.Image.Stretch%2A> Vlastnost určuje, jak je obrázek roztažený tak, aby vyplnil svého kontejneru. <xref:System.Windows.Controls.Image.Stretch%2A> Vlastnost přijímá následující hodnoty, které jsou definované <xref:System.Windows.Media.Stretch> výčtu:  
   
--   <xref:System.Windows.Media.Stretch.None>: Obrázek není roztažená tak, aby vyplnil výstupní oblasti. Pokud je větší než výstupní oblast bitovou kopii, bitovou kopii linie výstupní oblasti oříznutí, co se nevejde.  
+- <xref:System.Windows.Media.Stretch.None>: Obrázek není roztažená tak, aby vyplnil výstupní oblasti. Pokud je větší než výstupní oblast bitovou kopii, bitovou kopii linie výstupní oblasti oříznutí, co se nevejde.  
   
--   <xref:System.Windows.Media.Stretch.Fill>: Na obrázku se přizpůsobí výstupní oblasti. Protože jsou nezávisle image výšku a šířku, nemusí být zachovaná původní poměr stran obrázku. To znamená může být pokřivení bitovou kopii pro úplně naplnění výstupní kontejner.  
+- <xref:System.Windows.Media.Stretch.Fill>: Na obrázku se přizpůsobí výstupní oblasti. Protože jsou nezávisle image výšku a šířku, nemusí být zachovaná původní poměr stran obrázku. To znamená může být pokřivení bitovou kopii pro úplně naplnění výstupní kontejner.  
   
--   <xref:System.Windows.Media.Stretch.Uniform>: Na obrázku je škálovat tak, aby zcela v rámci výstupní oblasti. Poměr stran obrázku je zachován.  
+- <xref:System.Windows.Media.Stretch.Uniform>: Na obrázku je škálovat tak, aby zcela v rámci výstupní oblasti. Poměr stran obrázku je zachován.  
   
--   <xref:System.Windows.Media.Stretch.UniformToFill>: Na obrázku je škálovat tak, že zcela vyplní výstupní oblasti současně v něm zachovat původní poměr stran obrázku.  
+- <xref:System.Windows.Media.Stretch.UniformToFill>: Na obrázku je škálovat tak, že zcela vyplní výstupní oblasti současně v něm zachovat původní poměr stran obrázku.  
   
  Následující příklad používá všechny dostupné <xref:System.Windows.Media.Stretch> výčty do <xref:System.Windows.Controls.Image>.  
   

@@ -3,11 +3,11 @@ title: Proces nákupu v podniku
 ms.date: 03/30/2017
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
 ms.openlocfilehash: 346d4b58d8d59c416fbdd51f5fbe02b54f9e078f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005391"
 ---
 # <a name="corporate-purchase-process"></a>Proces nákupu v podniku
 Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces nákupu návrhy (RFP) na základě s automatický výběr nejlepší návrh. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastní aktivitu pro vytvoření pracovního postupu, který představuje proces.
@@ -16,27 +16,27 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
 
 ## <a name="requirements"></a>Požadavky
 
--   Visual Studio 2012.
+- Visual Studio 2012.
 
--   [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].
+- [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].
 
 ## <a name="demonstrates"></a>Demonstruje
 
--   Vlastní aktivity.
+- Vlastní aktivity.
 
--   Složení aktivit.
+- Složení aktivit.
 
--   Záložky.
+- Záložky.
 
--   Trvalost.
+- Trvalost.
 
--   Schematizovanými trvalosti.
+- Schematizovanými trvalosti.
 
--   Trasování.
+- Trasování.
 
--   Sledování.
+- Sledování.
 
--   Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových aplikací a aplikací WinForms).
+- Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových aplikací a aplikací WinForms).
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -52,21 +52,21 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
   
 1. Zaměstnanec společnosti X vytvoří žádost pro návrh (RFP).  
   
-    1.  Typy zaměstnanců poptávku (RFP) název a popis.  
+    1. Typy zaměstnanců poptávku (RFP) název a popis.  
   
-    2.  Zaměstnanec vybere dodavatelů, které chce odeslat návrhy pozvat.  
+    2. Zaměstnanec vybere dodavatelů, které chce odeslat návrhy pozvat.  
   
 2. Zaměstnanec odešle návrh.  
   
-    1.  Je vytvořena instance pracovního postupu.  
+    1. Je vytvořena instance pracovního postupu.  
   
-    2.  Pracovní postup čeká všichni dodavatelé odesílat své návrhy.  
+    2. Pracovní postup čeká všichni dodavatelé odesílat své návrhy.  
   
 3. Po přijetí jsou všechny návrhy, pracovní postup projde všechny přijaté návrhy a vybere ten nejvhodnější.  
   
-    1.  Jednotlivých dodavatelů má pověst (Tato ukázka ukládá seznam pověst VendorRepository.cs).  
+    1. Jednotlivých dodavatelů má pověst (Tato ukázka ukládá seznam pověst VendorRepository.cs).  
   
-    2.  Celková hodnota návrh je určeno (hodnotu zadanou v dodavatelem) * (dodavatele uživatele zaznamenaná pověst) / 100.  
+    2. Celková hodnota návrh je určeno (hodnotu zadanou v dodavatelem) * (dodavatele uživatele zaznamenaná pověst) / 100.  
   
 4. Původní žadatel můžete zobrazit všechny odeslané návrhy. Nejlepší návrh se zobrazí v části speciální v sestavě.  
   
@@ -155,20 +155,20 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
   
 ### <a name="web-client-options"></a>Možnosti webového klienta  
   
--   **Vytvořit nový poptávku (RFP)**: Vytvoří novou žádost o, pro návrhy (RFP) a spustí pracovní postup procesu nákupu.  
+- **Vytvořit nový poptávku (RFP)**: Vytvoří novou žádost o, pro návrhy (RFP) a spustí pracovní postup procesu nákupu.  
   
--   **Aktualizovat**: Aktualizuje seznam aktivních a dokončení RFPs v hlavním okně.  
+- **Aktualizovat**: Aktualizuje seznam aktivních a dokončení RFPs v hlavním okně.  
   
--   **Zobrazení**: Zobrazí obsah existujícího poptávku (RFP). Dodavatelé mohou odesílat své návrhy (Pokud pozváni nebo není dokončen poptávku (RFP)).  
+- **Zobrazení**: Zobrazí obsah existujícího poptávku (RFP). Dodavatelé mohou odesílat své návrhy (Pokud pozváni nebo není dokončen poptávku (RFP)).  
   
--   Zobrazte jako: Má uživatel přístup poptávku (RFP) pomocí jiné identity tak, že vyberete požadovaný účastník **zobrazit jako** – pole se seznamem v mřížce RFPs aktivní.  
+- Zobrazte jako: Má uživatel přístup poptávku (RFP) pomocí jiné identity tak, že vyberete požadovaný účastník **zobrazit jako** – pole se seznamem v mřížce RFPs aktivní.  
   
 ### <a name="winforms-client-options"></a>Možnosti klienta WinForms  
   
--   **Vytvoření poptávku (RFP)**: Vytvoří novou žádost o, pro návrhy (RFP) a spustí pracovní postup procesu nákupu.  
+- **Vytvoření poptávku (RFP)**: Vytvoří novou žádost o, pro návrhy (RFP) a spustí pracovní postup procesu nákupu.  
   
--   **Aktualizovat**: Aktualizuje seznam aktivních a dokončení RFPs v hlavním okně.  
+- **Aktualizovat**: Aktualizuje seznam aktivních a dokončení RFPs v hlavním okně.  
   
--   **Zobrazit poptávku (RFP)**: Zobrazí obsah existujícího poptávku (RFP). Dodavatelé mohou odesílat své návrhy (Pokud pozváni nebo není dokončen poptávku (RFP))  
+- **Zobrazit poptávku (RFP)**: Zobrazí obsah existujícího poptávku (RFP). Dodavatelé mohou odesílat své návrhy (Pokud pozváni nebo není dokončen poptávku (RFP))  
   
--   **Připojte se jako**: Má uživatel přístup poptávku (RFP) pomocí jiné identity tak, že vyberete požadovaný účastník **zobrazit jako** – pole se seznamem v mřížce RFPs aktivní.
+- **Připojte se jako**: Má uživatel přístup poptávku (RFP) pomocí jiné identity tak, že vyberete požadovaný účastník **zobrazit jako** – pole se seznamem v mřížce RFPs aktivní.

@@ -3,11 +3,11 @@ title: Porovnání webových služeb ASP.NET se službou WCF na základě účel
 ms.date: 03/30/2017
 ms.assetid: d3890278-fa9b-4902-91ea-8da73b7143cc
 ms.openlocfilehash: f57e895680b5cc043dad365b9f25f32477f42e72
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62048059"
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used"></a>Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů
 Webových služeb ASP.NET s vyvinutý pro vytváření aplikací, které odesílání a příjem zpráv pomocí jednoduchý objekt přístup protokolu (SOAP) přes protokol HTTP. Lze definovat strukturu zpráv pomocí schématu XML a poskytuje nástroje k usnadnění serializace zprávy do a z objektů v rozhraní .NET Framework. Tato technologie může automaticky generovat metadata pro popis webových služeb v na webové služby WSDL (Description Language) a druhý nástroj je k dispozici pro generování klientů pro webové služby z jazyka WSDL.  

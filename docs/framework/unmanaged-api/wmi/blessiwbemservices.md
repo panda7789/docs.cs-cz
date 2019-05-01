@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 23b72856015d028e50c1e3bfd4a12e0f220291c3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62049320"
 ---
 # <a name="blessiwbemservices-function"></a>Funkce BlessIWbemServices
 Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) třídy.   
@@ -65,7 +65,7 @@ HRESULT BlessIWbemServices (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0x80070057 | Jeden nebo více argumentů nejsou platné. |
 | `E_POINTER` | 0x80004003 | `pIWbemServices` je `null`. | 

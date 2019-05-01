@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
 ms.openlocfilehash: b8284f45d769f018655ee35a5f0b067703963634
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034486"
 ---
 # <a name="dataadapter-parameters"></a>Parametry adaptéru dat
 <xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Vlastnost musí být nastavena dříve než zavoláte `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavena před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny s daty v <xref:System.Data.DataTable>. Například, pokud byl přidán počet řádků `InsertCommand` musí být nastavena dříve než zavoláte `Update`. Když `Update` zpracovává vložený, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá funkcím `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádku je předán `Command` objektu `Parameters` kolekce.  

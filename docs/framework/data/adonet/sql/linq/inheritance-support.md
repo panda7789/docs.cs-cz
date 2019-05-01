@@ -3,11 +3,11 @@ title: Podpora dědičnosti
 ms.date: 03/30/2017
 ms.assetid: 19bb2794-b4e7-402e-8307-1d1517381a08
 ms.openlocfilehash: 668f4f1dd284550e644ce6b8a4491ca47105575e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033550"
 ---
 # <a name="inheritance-support"></a>Podpora dědičnosti
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje *jedné tabulky mapování*. Jinými slovy hierarchie dědičnosti dokončete je uložena v tabulce izolované databáze. Tabulka obsahuje sloučené sjednocení všechny možné datové sloupce pro celou hierarchii. (Sjednocení je výsledkem kombinace dvou tabulek do jedné tabulky, který má řádky, které byly k dispozici v některém z původní tabulky.) Každý řádek obsahuje hodnoty Null do sloupců, které se nevztahují na typ instance reprezentována řádku.  

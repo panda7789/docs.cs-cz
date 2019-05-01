@@ -1,15 +1,15 @@
 ---
-title: Použití zjednodušené vzorů CQRS a DDD v mikroslužbě
+title: Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Seznamte se s celkový vztah mezi vzorů CQRS a DDD.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
 ms.openlocfilehash: ef3260143c91c2500becd7c8c1a6cd0b81dbf3d2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020098"
 ---
 # <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Použít zjednodušený vzorů CQRS a DDD v mikroslužbě
 

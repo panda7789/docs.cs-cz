@@ -9,11 +9,11 @@ helpviewer_keywords:
 - providers, UI Automation
 ms.assetid: 88bc4212-3f4e-4bac-bae0-faef31944b71
 ms.openlocfilehash: 559c2c3f13aa92f5d4e27504e37fd886334e69bf
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033047"
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>Postupy: Témata zprostředkovatelů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

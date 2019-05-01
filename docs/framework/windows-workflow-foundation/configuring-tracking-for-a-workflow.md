@@ -3,11 +3,11 @@ title: Konfigurace sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
 ms.openlocfilehash: c3e73c3801a41a9401ac2e636fda6362487a05af
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58126198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052765"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Konfigurace sledování pracovního postupu
 

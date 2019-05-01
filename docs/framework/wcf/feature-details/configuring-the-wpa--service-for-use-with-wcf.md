@@ -3,22 +3,22 @@ title: Konfigurace služby aktivace procesu Windows pro použití s Windows Comm
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
 ms.openlocfilehash: a4c331465087c6910cb67a71d2153e08f82a6cd6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039699"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služby, které nekomunikují přes protokol HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
   
--   Nainstalovat (nebo potvrďte instalaci) aktivačních komponent WCF vyžaduje.  
+- Nainstalovat (nebo potvrďte instalaci) aktivačních komponent WCF vyžaduje.  
   
--   Vytvoření webu WAS se vazeb síťových protokolů, které chcete použít, nebo přidat novou vazbu protokolu o stávající web.  
+- Vytvoření webu WAS se vazeb síťových protokolů, které chcete použít, nebo přidat novou vazbu protokolu o stávající web.  
   
--   Vytvořte aplikaci pro hostování služeb a povolte tuto aplikaci používat požadované protokoly.  
+- Vytvořte aplikaci pro hostování služeb a povolte tuto aplikaci používat požadované protokoly.  
   
--   Vytvoření služby WCF, který zpřístupňuje koncový bod jiným protokolem než HTTP.  
+- Vytvoření služby WCF, který zpřístupňuje koncový bod jiným protokolem než HTTP.  
   
 ## <a name="configuring-a-site-with-non-http-bindings"></a>Konfigurace sítě s vazbami jiným protokolem než HTTP  
  Pro použití vazby jiným protokolem než HTTP s WAS, musí přidat vazbu webu do konfigurace WAS. Konfigurace úložiště pro WAS je soubor applicationHost.config umístěný v adresáři %windir%\system32\inetsrv\config. Tato konfigurace úložiště je sdílen WAS a IIS 7.0.  

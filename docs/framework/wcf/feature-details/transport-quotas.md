@@ -5,11 +5,11 @@ helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
 ms.openlocfilehash: 12c266a473aa7c20ab35d6047fedafbfa04dac4a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050711"
 ---
 # <a name="transport-quotas"></a>Přenosové kvóty
 Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom, kdy připojení spotřebovává přemíru prostředků. Kvóta je pevný limit, který brání použití další zdroje informací po překročení hodnoty kvóty. Přenosové kvóty zabránit škodlivým nebo neúmyslným útoky s cílem odepření služby.  
@@ -19,11 +19,11 @@ Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom
 ## <a name="types-of-transport-quotas"></a>Typy přenosové kvóty  
  Přenosy WCF mají tři typy kvót:  
   
--   *Vypršení časových limitů* zmírnit útoky na dostupnost služby, které využívají obsadit prostředků delší dobu.  
+- *Vypršení časových limitů* zmírnit útoky na dostupnost služby, které využívají obsadit prostředků delší dobu.  
   
--   *Omezení přidělení paměti* zabránit jediné připojení z vyčerpáním systémové paměti a odepření služby do jiné připojení.  
+- *Omezení přidělení paměti* zabránit jediné připojení z vyčerpáním systémové paměti a odepření služby do jiné připojení.  
   
--   *Limity velikosti kolekce* vázán spotřebu prostředků, která nepřímo alokovat paměť nebo jsou v nějak omezený.  
+- *Limity velikosti kolekce* vázán spotřebu prostředků, která nepřímo alokovat paměť nebo jsou v nějak omezený.  
   
 ## <a name="transport-quota-descriptions"></a>Přenosové kvóty popisy  
  Tato část popisuje, k dispozici pro standardní přenosy WCF přenosové kvóty: HTTP (S), protokolu TCP/IP a pojmenovaných kanálů. Vlastní přenosy můžete zveřejnit své vlastní konfigurovatelné kvóty nejsou zahrnuty v tomto seznamu. V dokumentaci pro vlastní přenos najdete informace o jeho kvóty.  

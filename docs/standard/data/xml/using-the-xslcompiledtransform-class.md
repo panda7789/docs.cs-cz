@@ -6,11 +6,11 @@ ms.assetid: f9b074f6-d6f4-49dd-a093-df510bf0cf7b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ce9a06c14141bb658eb665e643d8da27e18dd94f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026845"
 ---
 # <a name="using-the-xslcompiledtransform-class"></a>Používání třídy XslCompiledTransform
 <xref:System.Xml.Xsl.XslCompiledTransform> Procesoru Microsoft .NET Framework XSLT je třída. Tato třída se používá ke kompilaci šablony stylů a provedení transformace XSLT.  

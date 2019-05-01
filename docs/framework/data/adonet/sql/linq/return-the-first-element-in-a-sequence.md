@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ccdc3777-b2c2-44e3-a627-abef8d79a555
 ms.openlocfilehash: dca917b3c12b0f9923cc9ea34a2568c412a09831
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033446"
 ---
 # <a name="return-the-first-element-in-a-sequence"></a>Vrácení prvního prvku v posloupnosti
 Použití <xref:System.Linq.Enumerable.First%2A> operátor vrátí první prvek v sekvenci. Dotazy, které používají <xref:System.Linq.Enumerable.First%2A> provádějí okamžitě.  

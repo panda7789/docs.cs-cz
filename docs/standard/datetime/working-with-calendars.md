@@ -16,11 +16,11 @@ ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a0113ef84c2b3e42f6d14d25747f7fdbb836a212
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59055310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026481"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -243,7 +243,7 @@ Pokud volný rozsah kontroly nežádoucí, můžete obnovit rozsah striktní kon
    |  |  |
    |--|--|
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Name | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
+   |Název | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
    |Type | REG_SZ |
    |Value | 1 |
 
@@ -318,7 +318,7 @@ Pokud toto chování nežádoucí v operacích formátování, můžete obnovit 
    |  |  |
    |--|--|
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Name | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
+   |Název | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
    |Type | REG_SZ |
    |Value | 1 |
 
@@ -356,7 +356,7 @@ Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
    |  |  |
    |--|--|  
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Name | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
+   |Název | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
    |Type | REG_SZ |
    |Value | 1 | 
 

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c34b5012-aee9-4994-9364-1d99d12b7463
 ms.openlocfilehash: c8a4c29b1faa3c05f2cf32e9a60104b43a9b1c40
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033511"
 ---
 # <a name="local-method-calls"></a>Volání místních metod
 Volání místních metod je ten, který se spouští v objektovém modelu. Volání vzdálené metody je jeden, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se přeloží na SQL a odesílá do databázového stroje pro spuštění. Volání místních metod jsou potřeba při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nemůže překládat volání do SQL. V opačném případě <xref:System.InvalidOperationException> je vyvolána výjimka.  

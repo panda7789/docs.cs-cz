@@ -3,11 +3,11 @@ title: 'Postupy: Verze služby'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
 ms.openlocfilehash: afc1a690cae020ded3988cfd41f0e926a2e86f1e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59346285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047474"
 ---
 # <a name="how-to-service-versioning"></a>Postupy: Verze služby
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která směruje zprávy na různé verze stejné službě. V tomto příkladu zprávy jsou směrovány na dvě různé verze služby Kalkulačka `roundingCalc` (v1) a `regularCalc` (v2). Obou implementacích podporují stejné operace; ale službu starší `roundingCalc`, zaokrouhlí na nejbližší celočíselnou hodnotu všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete používat novější `regularCalc` služby.  
@@ -17,13 +17,13 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
   
  Operace vystavené obě služby jsou:  
   
--   Přidejte  
+- Přidejte  
   
--   Odečíst  
+- Odečíst  
   
--   Násobení  
+- Násobení  
   
--   Dělení  
+- Dělení  
   
  Protože obou implementacích služby zpracování stejné operace a jsou v podstatě totožné než data, která vrátí, základní data obsažená ve zprávách odesílaných z klientských aplikací není dostatečně jedinečných, aby bylo možné určit, jak se směrují požadavek. Filtry akcí například nelze použít, protože výchozí akce pro obě služby jsou stejné.  
   

@@ -5,22 +5,22 @@ helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
 ms.openlocfilehash: e28c91a8cc1798a4d0cd690f72e503b687af0108
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62046442"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
 Témata v této části popisují podpora Windows Communication Foundation (WCF) fronty. WCF poskytuje podporu pro službu Řízení front ve využívání Microsoft služby Řízení front zpráv (dříve označovanou jako MSMQ) jako přenosového mechanismu a podporuje následující scénáře:  
   
--   Volně propojených aplikací. Odesílání aplikace mohou odesílat zprávy do front, aniž by museli vědět, jestli je k dispozici pro zpracování zprávy přijímající aplikace. Fronta obsahuje nezávislost zpracování, který umožňuje odeslání aplikace pro odesílání zpráv do fronty s rychlostí, která nezávisí na rychlost přijímací aplikace dokáže zpracovat zprávy. Celková dostupnost systému zvýší při odesílání zpráv do fronty není pevně pro zpracování zpráv.  
+- Volně propojených aplikací. Odesílání aplikace mohou odesílat zprávy do front, aniž by museli vědět, jestli je k dispozici pro zpracování zprávy přijímající aplikace. Fronta obsahuje nezávislost zpracování, který umožňuje odeslání aplikace pro odesílání zpráv do fronty s rychlostí, která nezávisí na rychlost přijímací aplikace dokáže zpracovat zprávy. Celková dostupnost systému zvýší při odesílání zpráv do fronty není pevně pro zpracování zpráv.  
   
--   Selhání izolace. Aplikace, odesílání a příjem zpráv do fronty může selhat a vzájemného ovlivnění. Pokud například přijímající aplikace selže, odesílací aplikace nadále odesílat zprávy do fronty. Když příjemce opět nahoru, dokáže zpracovat zprávy z fronty. Selhání izolace zvyšuje celkovou spolehlivost systému a dostupnost.  
+- Selhání izolace. Aplikace, odesílání a příjem zpráv do fronty může selhat a vzájemného ovlivnění. Pokud například přijímající aplikace selže, odesílací aplikace nadále odesílat zprávy do fronty. Když příjemce opět nahoru, dokáže zpracovat zprávy z fronty. Selhání izolace zvyšuje celkovou spolehlivost systému a dostupnost.  
   
--   Vyrovnávání zátěže. Odeslání aplikace můžou zahlcovat přijímající aplikace pomocí zpráv. Fronty můžete spravovat počty produkčního prostředí a spotřebu neodpovídající zpráv tak, aby není předešla zahlcení příjemce.  
+- Vyrovnávání zátěže. Odeslání aplikace můžou zahlcovat přijímající aplikace pomocí zpráv. Fronty můžete spravovat počty produkčního prostředí a spotřebu neodpovídající zpráv tak, aby není předešla zahlcení příjemce.  
   
--   Odpojené operace. Odesílání, příjem a zpracování může odpojují při komunikaci přes vysokou latencí sítě nebo omezená dostupnost sítě, jako například v případě mobilních zařízení. Fronty umožní tyto operace pokračovat, i když nejste připojení koncových bodů. Když se obnoví připojení, předává fronty zpráv do přijímající aplikace.  
+- Odpojené operace. Odesílání, příjem a zpracování může odpojují při komunikaci přes vysokou latencí sítě nebo omezená dostupnost sítě, jako například v případě mobilních zařízení. Fronty umožní tyto operace pokračovat, i když nejste připojení koncových bodů. Když se obnoví připojení, předává fronty zpráv do přijímající aplikace.  
   
  Chcete-li použít funkci fronty ve WCF aplikaci, můžete použít jednu standardní vazby nebo můžete vytvořit vlastní vazby, pokud jedna z vazeb standardní nevyhovuje vašim požadavkům. Další informace o příslušné standardní vazby a jak zvolit jednu, naleznete v tématu [jak: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md). Další informace o vytváření vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   

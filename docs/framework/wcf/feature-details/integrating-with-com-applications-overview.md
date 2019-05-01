@@ -5,11 +5,11 @@ helpviewer_keywords:
 - COM [WCF], integration overview
 ms.assetid: 02c5697f-6e2e-47d6-b715-f3a28aebfbd5
 ms.openlocfilehash: 182e5f41498d8f5e3fcbc4b84aa7e86b67ce3ccc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047006"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Přehled integrace s aplikacemi modelu COM
 Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kódu s bohaté prostředí pro vytváření propojených aplikací. Nicméně pokud máte značné investice v nespravovaném kódu na základě modelu COM a nechcete, aby k migraci, můžete stále integrovat webových služeb WCF přímo do vašeho existujícího kódu pomocí monikeru služby WCF. Moniker služby je možné z široký rozsah COM vývoj prostředí, jako je například Office VBA, Visual Basic 6.0 nebo Visual C++ 6.0.  
@@ -21,11 +21,11 @@ Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kó
   
  Společné s ostatními WCF klienty, při použití monikeru zadejte aplikace, adresa, vazba a kontrakt ke komunikaci se službou. Kontrakt lze zadat v jednom z následujících způsobů:  
   
--   Typu kontraktu – smlouvy je zaregistrovaný jako typ viditelné modelu COM v klientském počítači.  
+- Typu kontraktu – smlouvy je zaregistrovaný jako typ viditelné modelu COM v klientském počítači.  
   
--   Smlouva WSDL – smlouvy se dodává ve formě dokument WSDL.  
+- Smlouva WSDL – smlouvy se dodává ve formě dokument WSDL.  
   
--   Smlouva MEX – smlouvy je načten v době běhu z koncového bodu metadat Exchange (MEX).  
+- Smlouva MEX – smlouvy je načten v době běhu z koncového bodu metadat Exchange (MEX).  
   
 ## <a name="parameters-supported-by-the-service-moniker"></a>Parametry nepodporuje Monikeru služby  
  V následující tabulce jsou uvedeny parametry, které jsou podporovány monikeru služby.  

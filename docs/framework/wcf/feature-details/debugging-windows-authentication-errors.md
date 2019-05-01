@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
 ms.openlocfilehash: 28c70ca860083808c93fa58b498e22ea4e4ca6cb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62048046"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení, rozhraní zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Když dojde k chybě zabezpečení ve vrstvě rozhraní SSPI, zobrazují se ve Windows Communication Foundation (WCF). Toto téma obsahuje rozhraní framework a sadu otázky, které vám umožní diagnostikovat chyby.  
@@ -45,13 +45,13 @@ Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení,
   
  Konkrétně čtyři typy účtů patří:  
   
--   Místní uživatel: Profil uživatele jenom pro počítače. Příklad: `MachineName\Administrator` nebo `MachineName\ProfileName`.  
+- Místní uživatel: Profil uživatele jenom pro počítače. Příklad: `MachineName\Administrator` nebo `MachineName\ProfileName`.  
   
--   Místní systém: Předdefinovaný účet systému na počítači, který není připojený k doméně.  
+- Místní systém: Předdefinovaný účet systému na počítači, který není připojený k doméně.  
   
--   Domain User: Uživatelský účet v doméně Windows. Například: `DomainName\ProfileName`.  
+- Domain User: Uživatelský účet v doméně Windows. Například: `DomainName\ProfileName`.  
   
--   Domain Machine: Zpracování pomocí identitu počítače spuštěné na počítači připojený k doméně Windows. Například: `MachineName\Network Service`.  
+- Domain Machine: Zpracování pomocí identitu počítače spuštěné na počítači připojený k doméně Windows. Například: `MachineName\Network Service`.  
   
 > [!NOTE]
 >  Přihlašovací údaje služby jsou zachyceny při <xref:System.ServiceModel.ICommunicationObject.Open%2A> metodu <xref:System.ServiceModel.ServiceHost> třída se nazývá. Čtení přihlašovacích údajů klienta vždy, když klient odešle zprávu.  
@@ -85,15 +85,15 @@ Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení,
   
 2. Vyžadovat vyjednávání SSPI:  
   
-    1.  Pokud používáte standardní vazby, nastavte `NegotiateServiceCredential` vlastnost `true`.  
+    1. Pokud používáte standardní vazby, nastavte `NegotiateServiceCredential` vlastnost `true`.  
   
-    2.  Pokud používáte vlastní vazby, nastavte `AuthenticationMode` atribut `Security` elementu `SspiNegotiated`.  
+    2. Pokud používáte vlastní vazby, nastavte `AuthenticationMode` atribut `Security` elementu `SspiNegotiated`.  
   
 3. Vyžadovat vyjednávání SSPI pro použití protokolu Kerberos zakázáním použít protokol NTLM:  
   
-    1.  To lze proveďte v kódu, pomocí následujícího příkazu: `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
+    1. To lze proveďte v kódu, pomocí následujícího příkazu: `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   
-    2.  Nebo můžete provést v konfiguračním souboru tak, že nastavíte `allowNtlm` atribut `false`. Tento atribut je součástí [ \<windows >](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md).  
+    2. Nebo můžete provést v konfiguračním souboru tak, že nastavíte `allowNtlm` atribut `false`. Tento atribut je součástí [ \<windows >](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md).  
   
 ### <a name="ntlm-protocol"></a>Protokol NTLM  
   
