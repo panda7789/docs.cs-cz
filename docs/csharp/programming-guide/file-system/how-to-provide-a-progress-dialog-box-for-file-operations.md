@@ -6,32 +6,32 @@ helpviewer_keywords:
 - progress dialog [C#]
 ms.assetid: 01b71fe7-8178-4dc8-aeb1-12053be7b51c
 ms.openlocfilehash: 882e4ea71331fe0513f3be71c371bbc0f714b44f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61975195"
 ---
-# <a name="how-to-provide-a-progress-dialog-box-for-file-operations-c-programming-guide"></a><span data-ttu-id="a5941-102">Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory (C# Průvodce programováním v)</span><span class="sxs-lookup"><span data-stu-id="a5941-102">How to: Provide a Progress Dialog Box for File Operations (C# Programming Guide)</span></span>
-<span data-ttu-id="a5941-103">Můžete zadat standardní dialogové okno, který znázorňuje průběh operací se soubory ve Windows, pokud použijete <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%28System.String%2CSystem.String%2CMicrosoft.VisualBasic.FileIO.UIOption%29> metodu <xref:Microsoft.VisualBasic?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="a5941-103">You can provide a standard dialog box that shows progress on file operations in Windows if you use the <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%28System.String%2CSystem.String%2CMicrosoft.VisualBasic.FileIO.UIOption%29> method in the <xref:Microsoft.VisualBasic?displayProperty=nameWithType> namespace.</span></span>  
+# <a name="how-to-provide-a-progress-dialog-box-for-file-operations-c-programming-guide"></a><span data-ttu-id="c1f6c-102">Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory (C# Průvodce programováním v)</span><span class="sxs-lookup"><span data-stu-id="c1f6c-102">How to: Provide a Progress Dialog Box for File Operations (C# Programming Guide)</span></span>
+<span data-ttu-id="c1f6c-103">Můžete zadat standardní dialogové okno, který znázorňuje průběh operací se soubory ve Windows, pokud použijete <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%28System.String%2CSystem.String%2CMicrosoft.VisualBasic.FileIO.UIOption%29> metodu <xref:Microsoft.VisualBasic?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-103">You can provide a standard dialog box that shows progress on file operations in Windows if you use the <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%28System.String%2CSystem.String%2CMicrosoft.VisualBasic.FileIO.UIOption%29> method in the <xref:Microsoft.VisualBasic?displayProperty=nameWithType> namespace.</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-add-a-reference-in-visual-studio"></a><span data-ttu-id="a5941-104">Chcete-li přidat odkaz v sadě Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a5941-104">To add a reference in Visual Studio</span></span>  
+### <a name="to-add-a-reference-in-visual-studio"></a><span data-ttu-id="c1f6c-104">Chcete-li přidat odkaz v sadě Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c1f6c-104">To add a reference in Visual Studio</span></span>  
   
-1. <span data-ttu-id="a5941-105">V panelu nabídky zvolte **projektu**, **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="a5941-105">On the menu bar, choose **Project**, **Add Reference**.</span></span>  
+1. <span data-ttu-id="c1f6c-105">V panelu nabídky zvolte **projektu**, **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-105">On the menu bar, choose **Project**, **Add Reference**.</span></span>  
   
-     <span data-ttu-id="a5941-106">**Správce odkazů** zobrazí se dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="a5941-106">The **Reference Manager** dialog box appears.</span></span>  
+     <span data-ttu-id="c1f6c-106">**Správce odkazů** zobrazí se dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-106">The **Reference Manager** dialog box appears.</span></span>  
   
-2. <span data-ttu-id="a5941-107">V **sestavení** oblasti, zvolte **Framework** Pokud není již vybrána.</span><span class="sxs-lookup"><span data-stu-id="a5941-107">In the **Assemblies** area, choose **Framework** if it isn’t already chosen.</span></span>  
+2. <span data-ttu-id="c1f6c-107">V **sestavení** oblasti, zvolte **Framework** Pokud není již vybrána.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-107">In the **Assemblies** area, choose **Framework** if it isn’t already chosen.</span></span>  
   
-3. <span data-ttu-id="a5941-108">Vyberte v seznamu názvů **Microsoft.VisualBasic** zaškrtněte políčko a klikněte na tlačítko **OK** tlačítka zavřete dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="a5941-108">In the list of names, select the **Microsoft.VisualBasic** check box, and then choose the **OK** button to close the dialog box.</span></span>  
+3. <span data-ttu-id="c1f6c-108">Vyberte v seznamu názvů **Microsoft.VisualBasic** zaškrtněte políčko a klikněte na tlačítko **OK** tlačítka zavřete dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-108">In the list of names, select the **Microsoft.VisualBasic** check box, and then choose the **OK** button to close the dialog box.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="a5941-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="a5941-109">Example</span></span>  
- <span data-ttu-id="a5941-110">Následující kód zkopíruje adresář, který `sourcePath` určuje do adresáře, který `destinationPath` určuje.</span><span class="sxs-lookup"><span data-stu-id="a5941-110">The following code copies the directory that `sourcePath` specifies into the directory that `destinationPath` specifies.</span></span> <span data-ttu-id="a5941-111">Tento kód také poskytuje standardní dialogové okno zobrazující odhadovanou výši zbývajícího času před dokončením operace.</span><span class="sxs-lookup"><span data-stu-id="a5941-111">This code also provides a standard dialog box that shows the estimated amount of time remaining before the operation finishes.</span></span>  
+## <a name="example"></a><span data-ttu-id="c1f6c-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="c1f6c-109">Example</span></span>  
+ <span data-ttu-id="c1f6c-110">Následující kód zkopíruje adresář, který `sourcePath` určuje do adresáře, který `destinationPath` určuje.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-110">The following code copies the directory that `sourcePath` specifies into the directory that `destinationPath` specifies.</span></span> <span data-ttu-id="c1f6c-111">Tento kód také poskytuje standardní dialogové okno zobrazující odhadovanou výši zbývajícího času před dokončením operace.</span><span class="sxs-lookup"><span data-stu-id="c1f6c-111">This code also provides a standard dialog box that shows the estimated amount of time remaining before the operation finishes.</span></span>  
   
  [!code-csharp[csFilesandFolders#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#11)]  
   
-## <a name="see-also"></a><span data-ttu-id="a5941-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a5941-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c1f6c-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c1f6c-112">See also</span></span>
 
-- [<span data-ttu-id="a5941-113">Systém souborů a registr (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="a5941-113">File System and the Registry (C# Programming Guide)</span></span>](../../../csharp/programming-guide/file-system/index.md)
+- [<span data-ttu-id="c1f6c-113">Systém souborů a registr (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="c1f6c-113">File System and the Registry (C# Programming Guide)</span></span>](../../../csharp/programming-guide/file-system/index.md)

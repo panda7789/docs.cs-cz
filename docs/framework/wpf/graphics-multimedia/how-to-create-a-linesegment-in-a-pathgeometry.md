@@ -9,36 +9,36 @@ helpviewer_keywords:
 - graphics [WPF], line segments
 ms.assetid: 0155ed47-a20d-49a7-a306-186d8e07fbc4
 ms.openlocfilehash: a50c98ccc3f6d517e0917cb774af4d49d2bfa7a3
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054546"
 ---
-# <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a><span data-ttu-id="f73a6-102">Postupy: Vytvoření LineSegment v PathGeometry</span><span class="sxs-lookup"><span data-stu-id="f73a6-102">How to: Create a LineSegment in a PathGeometry</span></span>
+# <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a><span data-ttu-id="64966-102">Postupy: Vytvoření LineSegment v PathGeometry</span><span class="sxs-lookup"><span data-stu-id="64966-102">How to: Create a LineSegment in a PathGeometry</span></span>
 
-<span data-ttu-id="f73a6-103">Tento příklad ukazuje, jak vytvořit úsek čáry.</span><span class="sxs-lookup"><span data-stu-id="f73a6-103">This example shows how to create a line segment.</span></span> <span data-ttu-id="f73a6-104">Chcete-li vytvořit úsek čáry, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.LineSegment> třídy.</span><span class="sxs-lookup"><span data-stu-id="f73a6-104">To create a line segment, use the <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, and <xref:System.Windows.Media.LineSegment> classes.</span></span>
+<span data-ttu-id="64966-103">Tento příklad ukazuje, jak vytvořit úsek čáry.</span><span class="sxs-lookup"><span data-stu-id="64966-103">This example shows how to create a line segment.</span></span> <span data-ttu-id="64966-104">Chcete-li vytvořit úsek čáry, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.LineSegment> třídy.</span><span class="sxs-lookup"><span data-stu-id="64966-104">To create a line segment, use the <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, and <xref:System.Windows.Media.LineSegment> classes.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f73a6-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="f73a6-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="64966-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="64966-105">Example</span></span>
 
-<span data-ttu-id="f73a6-106">Následující příklady nakreslit <xref:System.Windows.Media.LineSegment> z (10, 50) na (200, 70).</span><span class="sxs-lookup"><span data-stu-id="f73a6-106">The following examples draw a <xref:System.Windows.Media.LineSegment> from (10, 50) to (200, 70).</span></span> <span data-ttu-id="f73a6-107">Následující obrázek znázorňuje výsledný <xref:System.Windows.Media.LineSegment>; mřížky na pozadí byla přidána do souřadnicový systém zobrazení.</span><span class="sxs-lookup"><span data-stu-id="f73a6-107">The following illustration shows the resulting <xref:System.Windows.Media.LineSegment>; a grid background was added to show the coordinate system.</span></span>
+<span data-ttu-id="64966-106">Následující příklady nakreslit <xref:System.Windows.Media.LineSegment> z (10, 50) na (200, 70).</span><span class="sxs-lookup"><span data-stu-id="64966-106">The following examples draw a <xref:System.Windows.Media.LineSegment> from (10, 50) to (200, 70).</span></span> <span data-ttu-id="64966-107">Následující obrázek znázorňuje výsledný <xref:System.Windows.Media.LineSegment>; mřížky na pozadí byla přidána do souřadnicový systém zobrazení.</span><span class="sxs-lookup"><span data-stu-id="64966-107">The following illustration shows the resulting <xref:System.Windows.Media.LineSegment>; a grid background was added to show the coordinate system.</span></span>
 
-<span data-ttu-id="f73a6-108">![LineSegment v PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") A LineSegment vykreslovány z (10,50) (200,70)</span><span class="sxs-lookup"><span data-stu-id="f73a6-108">![A LineSegment in a PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") A LineSegment drawn from (10,50) to (200,70)</span></span>
+<span data-ttu-id="64966-108">![LineSegment v PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") A LineSegment vykreslovány z (10,50) (200,70)</span><span class="sxs-lookup"><span data-stu-id="64966-108">![A LineSegment in a PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") A LineSegment drawn from (10,50) to (200,70)</span></span>
 
-<span data-ttu-id="f73a6-109">[xaml]</span><span class="sxs-lookup"><span data-stu-id="f73a6-109">[xaml]</span></span>
+<span data-ttu-id="64966-109">[xaml]</span><span class="sxs-lookup"><span data-stu-id="64966-109">[xaml]</span></span>
 
-<span data-ttu-id="f73a6-110">V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete použít syntaxi atributů k popisu cesty.</span><span class="sxs-lookup"><span data-stu-id="f73a6-110">In [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], you may use attribute syntax to describe a path.</span></span>
+<span data-ttu-id="64966-110">V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete použít syntaxi atributů k popisu cesty.</span><span class="sxs-lookup"><span data-stu-id="64966-110">In [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], you may use attribute syntax to describe a path.</span></span>
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1"
   Data="M 10,50 L 200,70" />
 ```
 
-<span data-ttu-id="f73a6-111">[xaml]</span><span class="sxs-lookup"><span data-stu-id="f73a6-111">[xaml]</span></span>
+<span data-ttu-id="64966-111">[xaml]</span><span class="sxs-lookup"><span data-stu-id="64966-111">[xaml]</span></span>
 
-<span data-ttu-id="f73a6-112">(Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>.</span><span class="sxs-lookup"><span data-stu-id="f73a6-112">(Note that this attribute syntax actually creates a <xref:System.Windows.Media.StreamGeometry>, a lighter-weight version of a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="f73a6-113">Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)</span><span class="sxs-lookup"><span data-stu-id="f73a6-113">For more information, see the [Path Markup Syntax](path-markup-syntax.md) page.)</span></span>
+<span data-ttu-id="64966-112">(Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>.</span><span class="sxs-lookup"><span data-stu-id="64966-112">(Note that this attribute syntax actually creates a <xref:System.Windows.Media.StreamGeometry>, a lighter-weight version of a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="64966-113">Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)</span><span class="sxs-lookup"><span data-stu-id="64966-113">For more information, see the [Path Markup Syntax](path-markup-syntax.md) page.)</span></span>
 
-<span data-ttu-id="f73a6-114">V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], mohou také nakreslit úsek čáry pomocí syntaxe elementu objektu.</span><span class="sxs-lookup"><span data-stu-id="f73a6-114">In [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], you may also draw a line segment by using object element syntax.</span></span> <span data-ttu-id="f73a6-115">Tady je ekvivalentní předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.</span><span class="sxs-lookup"><span data-stu-id="f73a6-115">The following is equivalent to the previous [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] example.</span></span>
+<span data-ttu-id="64966-114">V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], mohou také nakreslit úsek čáry pomocí syntaxe elementu objektu.</span><span class="sxs-lookup"><span data-stu-id="64966-114">In [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], you may also draw a line segment by using object element syntax.</span></span> <span data-ttu-id="64966-115">Tady je ekvivalentní předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.</span><span class="sxs-lookup"><span data-stu-id="64966-115">The following is equivalent to the previous [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] example.</span></span>
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1">
@@ -100,12 +100,12 @@ myPath.StrokeThickness = 1
 myPath.Data = myPathGeometry
 ```
 
-<span data-ttu-id="f73a6-116">V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).</span><span class="sxs-lookup"><span data-stu-id="f73a6-116">This example is part of larger sample; for the complete sample, see the [Geometries Sample](https://go.microsoft.com/fwlink/?LinkID=159989).</span></span>
+<span data-ttu-id="64966-116">V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).</span><span class="sxs-lookup"><span data-stu-id="64966-116">This example is part of larger sample; for the complete sample, see the [Geometries Sample](https://go.microsoft.com/fwlink/?LinkID=159989).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f73a6-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f73a6-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="64966-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="64966-117">See also</span></span>
 
 - <xref:System.Windows.Media.PathFigure>
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Media.GeometryDrawing>
 - <xref:System.Windows.Shapes.Path>
-- [<span data-ttu-id="f73a6-118">Přehled geometrie</span><span class="sxs-lookup"><span data-stu-id="f73a6-118">Geometry Overview</span></span>](geometry-overview.md)
+- [<span data-ttu-id="64966-118">Přehled geometrie</span><span class="sxs-lookup"><span data-stu-id="64966-118">Geometry Overview</span></span>](geometry-overview.md)

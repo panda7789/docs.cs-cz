@@ -9,28 +9,28 @@ helpviewer_keywords:
 - reusing commonly defined objects [WPF]
 ms.assetid: 12ae4b67-cd0c-4c4d-a188-2c3de173bbb9
 ms.openlocfilehash: 3097fe627377e98ab283a5b6178acb9f74fc487c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981887"
 ---
-# <a name="resources-wpf"></a><span data-ttu-id="c7af6-102">Zdroje (WPF)</span><span class="sxs-lookup"><span data-stu-id="c7af6-102">Resources (WPF)</span></span>
-<span data-ttu-id="c7af6-103">Prostředek je objekt, který je možné využít v různých míst ve své aplikaci.</span><span class="sxs-lookup"><span data-stu-id="c7af6-103">A resource is an object that can be reused in different places in your application.</span></span> <span data-ttu-id="c7af6-104">WPF podporuje různé typy prostředků.</span><span class="sxs-lookup"><span data-stu-id="c7af6-104">WPF supports different types of resources.</span></span> <span data-ttu-id="c7af6-105">Tyto prostředky jsou primárně dva typy prostředků: Prostředky XAML a datové soubory prostředků.</span><span class="sxs-lookup"><span data-stu-id="c7af6-105">These resources are primarily two types of resources: XAML resources and resource data files.</span></span> <span data-ttu-id="c7af6-106">Příklady prostředků XAML: štětce a styly.</span><span class="sxs-lookup"><span data-stu-id="c7af6-106">Examples of XAML resources include brushes and styles.</span></span> <span data-ttu-id="c7af6-107">Datové soubory prostředků jsou nespustitelném datových souborů, které aplikace potřebuje.</span><span class="sxs-lookup"><span data-stu-id="c7af6-107">Resource data files are non-executable data files that an application needs.</span></span>  
+# <a name="resources-wpf"></a><span data-ttu-id="f2e8a-102">Zdroje (WPF)</span><span class="sxs-lookup"><span data-stu-id="f2e8a-102">Resources (WPF)</span></span>
+<span data-ttu-id="f2e8a-103">Prostředek je objekt, který je možné využít v různých míst ve své aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f2e8a-103">A resource is an object that can be reused in different places in your application.</span></span> <span data-ttu-id="f2e8a-104">WPF podporuje různé typy prostředků.</span><span class="sxs-lookup"><span data-stu-id="f2e8a-104">WPF supports different types of resources.</span></span> <span data-ttu-id="f2e8a-105">Tyto prostředky jsou primárně dva typy prostředků: Prostředky XAML a datové soubory prostředků.</span><span class="sxs-lookup"><span data-stu-id="f2e8a-105">These resources are primarily two types of resources: XAML resources and resource data files.</span></span> <span data-ttu-id="f2e8a-106">Příklady prostředků XAML: štětce a styly.</span><span class="sxs-lookup"><span data-stu-id="f2e8a-106">Examples of XAML resources include brushes and styles.</span></span> <span data-ttu-id="f2e8a-107">Datové soubory prostředků jsou nespustitelném datových souborů, které aplikace potřebuje.</span><span class="sxs-lookup"><span data-stu-id="f2e8a-107">Resource data files are non-executable data files that an application needs.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="c7af6-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c7af6-108">In This Section</span></span>  
- [<span data-ttu-id="c7af6-109">Prostředky XAML</span><span class="sxs-lookup"><span data-stu-id="c7af6-109">XAML Resources</span></span>](xaml-resources.md)  
- [<span data-ttu-id="c7af6-110">Prostředek, obsah a datové soubory aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="c7af6-110">WPF Application Resource, Content, and Data Files</span></span>](../app-development/wpf-application-resource-content-and-data-files.md)  
- [<span data-ttu-id="c7af6-111">Sbalení URI v technologii WPF</span><span class="sxs-lookup"><span data-stu-id="c7af6-111">Pack URIs in WPF</span></span>](../app-development/pack-uris-in-wpf.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f2e8a-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f2e8a-108">In This Section</span></span>  
+ [<span data-ttu-id="f2e8a-109">Prostředky XAML</span><span class="sxs-lookup"><span data-stu-id="f2e8a-109">XAML Resources</span></span>](xaml-resources.md)  
+ [<span data-ttu-id="f2e8a-110">Prostředek, obsah a datové soubory aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="f2e8a-110">WPF Application Resource, Content, and Data Files</span></span>](../app-development/wpf-application-resource-content-and-data-files.md)  
+ [<span data-ttu-id="f2e8a-111">Sbalení URI v technologii WPF</span><span class="sxs-lookup"><span data-stu-id="f2e8a-111">Pack URIs in WPF</span></span>](../app-development/pack-uris-in-wpf.md)  
   
-## <a name="reference"></a><span data-ttu-id="c7af6-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c7af6-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="f2e8a-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f2e8a-112">Reference</span></span>  
  <xref:System.Windows.ResourceDictionary>  
   
- [<span data-ttu-id="c7af6-113">Rozšíření značek StaticResource</span><span class="sxs-lookup"><span data-stu-id="c7af6-113">StaticResource Markup Extension</span></span>](staticresource-markup-extension.md)  
+ [<span data-ttu-id="f2e8a-113">Rozšíření značek StaticResource</span><span class="sxs-lookup"><span data-stu-id="f2e8a-113">StaticResource Markup Extension</span></span>](staticresource-markup-extension.md)  
   
- [<span data-ttu-id="c7af6-114">Rozšíření značek DynamicResource</span><span class="sxs-lookup"><span data-stu-id="c7af6-114">DynamicResource Markup Extension</span></span>](dynamicresource-markup-extension.md)  
+ [<span data-ttu-id="f2e8a-114">Rozšíření značek DynamicResource</span><span class="sxs-lookup"><span data-stu-id="f2e8a-114">DynamicResource Markup Extension</span></span>](dynamicresource-markup-extension.md)  
   
- [<span data-ttu-id="c7af6-115">x:Key – direktiva</span><span class="sxs-lookup"><span data-stu-id="c7af6-115">x:Key Directive</span></span>](../../xaml-services/x-key-directive.md)  
+ [<span data-ttu-id="f2e8a-115">x:Key – direktiva</span><span class="sxs-lookup"><span data-stu-id="f2e8a-115">x:Key Directive</span></span>](../../xaml-services/x-key-directive.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="c7af6-116">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c7af6-116">Related Sections</span></span>  
- [<span data-ttu-id="c7af6-117">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="c7af6-117">XAML in WPF</span></span>](xaml-in-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="f2e8a-116">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f2e8a-116">Related Sections</span></span>  
+ [<span data-ttu-id="f2e8a-117">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="f2e8a-117">XAML in WPF</span></span>](xaml-in-wpf.md)

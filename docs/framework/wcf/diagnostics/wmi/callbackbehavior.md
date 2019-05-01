@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
 ms.openlocfilehash: 9d8f4335c304d164daafeb0ad4de5b4e3bba4590
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61963953"
 ---
-# <a name="callbackbehavior"></a><span data-ttu-id="91fe7-102">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="91fe7-102">CallbackBehavior</span></span>
-<span data-ttu-id="91fe7-103">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="91fe7-103">CallbackBehavior</span></span>  
+# <a name="callbackbehavior"></a><span data-ttu-id="43d33-102">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="43d33-102">CallbackBehavior</span></span>
+<span data-ttu-id="43d33-103">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="43d33-103">CallbackBehavior</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="91fe7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="91fe7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="43d33-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="43d33-104">Syntax</span></span>  
   
 ```csharp
 class CallbackBehavior : Behavior  
@@ -27,66 +27,66 @@ class CallbackBehavior : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="91fe7-105">Metody</span><span class="sxs-lookup"><span data-stu-id="91fe7-105">Methods</span></span>  
- <span data-ttu-id="91fe7-106">Třída CallbackBehavior nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="91fe7-106">The CallbackBehavior class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="43d33-105">Metody</span><span class="sxs-lookup"><span data-stu-id="43d33-105">Methods</span></span>  
+ <span data-ttu-id="43d33-106">Třída CallbackBehavior nedefinuje žádné metody.</span><span class="sxs-lookup"><span data-stu-id="43d33-106">The CallbackBehavior class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="91fe7-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="91fe7-107">Properties</span></span>  
- <span data-ttu-id="91fe7-108">Třída CallbackBehavior má následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="91fe7-108">The CallbackBehavior class has the following properties:</span></span>  
+## <a name="properties"></a><span data-ttu-id="43d33-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="43d33-107">Properties</span></span>  
+ <span data-ttu-id="43d33-108">Třída CallbackBehavior má následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="43d33-108">The CallbackBehavior class has the following properties:</span></span>  
   
-### <a name="automaticsessionshutdown"></a><span data-ttu-id="91fe7-109">AutomaticSessionShutdown</span><span class="sxs-lookup"><span data-stu-id="91fe7-109">AutomaticSessionShutdown</span></span>  
- <span data-ttu-id="91fe7-110">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="91fe7-110">Data type: boolean</span></span>  
+### <a name="automaticsessionshutdown"></a><span data-ttu-id="43d33-109">AutomaticSessionShutdown</span><span class="sxs-lookup"><span data-stu-id="43d33-109">AutomaticSessionShutdown</span></span>  
+ <span data-ttu-id="43d33-110">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="43d33-110">Data type: boolean</span></span>  
   
- <span data-ttu-id="91fe7-111">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="43d33-111">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-112">V případě hodnoty true relace je automaticky uzavřena poté, co služba uzavře oboustrannou relaci.</span><span class="sxs-lookup"><span data-stu-id="91fe7-112">When true, the session is automatically closed when a service closes a duplex session.</span></span>  
+ <span data-ttu-id="43d33-112">V případě hodnoty true relace je automaticky uzavřena poté, co služba uzavře oboustrannou relaci.</span><span class="sxs-lookup"><span data-stu-id="43d33-112">When true, the session is automatically closed when a service closes a duplex session.</span></span>  
   
-### <a name="concurrencymode"></a><span data-ttu-id="91fe7-113">ConcurrencyMode</span><span class="sxs-lookup"><span data-stu-id="91fe7-113">ConcurrencyMode</span></span>  
- <span data-ttu-id="91fe7-114">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="91fe7-114">Data type: string</span></span>  
-<span data-ttu-id="91fe7-115">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-115">Access type: Read-only</span></span>  
+### <a name="concurrencymode"></a><span data-ttu-id="43d33-113">ConcurrencyMode</span><span class="sxs-lookup"><span data-stu-id="43d33-113">ConcurrencyMode</span></span>  
+ <span data-ttu-id="43d33-114">Datový typ: řetězec</span><span class="sxs-lookup"><span data-stu-id="43d33-114">Data type: string</span></span>  
+<span data-ttu-id="43d33-115">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-115">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-116">Určuje, zda služba podporuje jedno vlákno, několik vláken nebo znovu zadaných volání.</span><span class="sxs-lookup"><span data-stu-id="91fe7-116">Specifies whether the service supports one thread, multiple threads, or reentrant calls.</span></span>  
+ <span data-ttu-id="43d33-116">Určuje, zda služba podporuje jedno vlákno, několik vláken nebo znovu zadaných volání.</span><span class="sxs-lookup"><span data-stu-id="43d33-116">Specifies whether the service supports one thread, multiple threads, or reentrant calls.</span></span>  
   
-### <a name="ignoreextensiondataobject"></a><span data-ttu-id="91fe7-117">IgnoreExtensionDataObject</span><span class="sxs-lookup"><span data-stu-id="91fe7-117">IgnoreExtensionDataObject</span></span>  
- <span data-ttu-id="91fe7-118">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="91fe7-118">Data type: boolean</span></span>  
+### <a name="ignoreextensiondataobject"></a><span data-ttu-id="43d33-117">IgnoreExtensionDataObject</span><span class="sxs-lookup"><span data-stu-id="43d33-117">IgnoreExtensionDataObject</span></span>  
+ <span data-ttu-id="43d33-118">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="43d33-118">Data type: boolean</span></span>  
   
- <span data-ttu-id="91fe7-119">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-119">Access type: Read-only</span></span>  
+ <span data-ttu-id="43d33-119">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-119">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-120">Hodnota, která určuje, zda mají data neznámé serializace přenosu.</span><span class="sxs-lookup"><span data-stu-id="91fe7-120">A value that specifies whether to send unknown serialization data onto the wire.</span></span>  
+ <span data-ttu-id="43d33-120">Hodnota, která určuje, zda mají data neznámé serializace přenosu.</span><span class="sxs-lookup"><span data-stu-id="43d33-120">A value that specifies whether to send unknown serialization data onto the wire.</span></span>  
   
-### <a name="includeexceptiondetailinfaults"></a><span data-ttu-id="91fe7-121">Třídu IncludeExceptionDetailInFaults</span><span class="sxs-lookup"><span data-stu-id="91fe7-121">IncludeExceptionDetailInFaults</span></span>  
- <span data-ttu-id="91fe7-122">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="91fe7-122">Data type: boolean</span></span>  
+### <a name="includeexceptiondetailinfaults"></a><span data-ttu-id="43d33-121">Třídu IncludeExceptionDetailInFaults</span><span class="sxs-lookup"><span data-stu-id="43d33-121">IncludeExceptionDetailInFaults</span></span>  
+ <span data-ttu-id="43d33-122">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="43d33-122">Data type: boolean</span></span>  
   
- <span data-ttu-id="91fe7-123">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-123">Access type: Read-only</span></span>  
+ <span data-ttu-id="43d33-123">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-123">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-124">Při povolené, podrobnosti o výjimkách odvolání připojeny k chybám vrácených službě.</span><span class="sxs-lookup"><span data-stu-id="91fe7-124">When enabled, details about exceptions on the callback are attached to the faults returned to the service.</span></span>  
+ <span data-ttu-id="43d33-124">Při povolené, podrobnosti o výjimkách odvolání připojeny k chybám vrácených službě.</span><span class="sxs-lookup"><span data-stu-id="43d33-124">When enabled, details about exceptions on the callback are attached to the faults returned to the service.</span></span>  
   
-### <a name="maxitemsinobjectgraph"></a><span data-ttu-id="91fe7-125">MaxItemsInObjectGraph</span><span class="sxs-lookup"><span data-stu-id="91fe7-125">MaxItemsInObjectGraph</span></span>  
- <span data-ttu-id="91fe7-126">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="91fe7-126">Data type: boolean</span></span>  
+### <a name="maxitemsinobjectgraph"></a><span data-ttu-id="43d33-125">MaxItemsInObjectGraph</span><span class="sxs-lookup"><span data-stu-id="43d33-125">MaxItemsInObjectGraph</span></span>  
+ <span data-ttu-id="43d33-126">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="43d33-126">Data type: boolean</span></span>  
   
- <span data-ttu-id="91fe7-127">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-127">Access type: Read-only</span></span>  
+ <span data-ttu-id="43d33-127">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-127">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-128">Maximální počet položek povolených v serializovaném objektu.</span><span class="sxs-lookup"><span data-stu-id="91fe7-128">The maximum number of items allowed in a serialized object.</span></span>  
+ <span data-ttu-id="43d33-128">Maximální počet položek povolených v serializovaném objektu.</span><span class="sxs-lookup"><span data-stu-id="43d33-128">The maximum number of items allowed in a serialized object.</span></span>  
   
-### <a name="usesynchronizationcontext"></a><span data-ttu-id="91fe7-129">UseSynchronizationContext</span><span class="sxs-lookup"><span data-stu-id="91fe7-129">UseSynchronizationContext</span></span>  
- <span data-ttu-id="91fe7-130">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="91fe7-130">Data type: boolean</span></span>  
+### <a name="usesynchronizationcontext"></a><span data-ttu-id="43d33-129">UseSynchronizationContext</span><span class="sxs-lookup"><span data-stu-id="43d33-129">UseSynchronizationContext</span></span>  
+ <span data-ttu-id="43d33-130">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="43d33-130">Data type: boolean</span></span>  
   
- <span data-ttu-id="91fe7-131">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-131">Access type: Read-only</span></span>  
+ <span data-ttu-id="43d33-131">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-131">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-132">Určuje, jestli se má použít aktuální synchronizační kontext pro výběr vlákna exekuce.</span><span class="sxs-lookup"><span data-stu-id="91fe7-132">Specifies whether to use the current synchronization context to choose the thread of execution.</span></span>  
+ <span data-ttu-id="43d33-132">Určuje, jestli se má použít aktuální synchronizační kontext pro výběr vlákna exekuce.</span><span class="sxs-lookup"><span data-stu-id="43d33-132">Specifies whether to use the current synchronization context to choose the thread of execution.</span></span>  
   
-### <a name="validatemustunderstand"></a><span data-ttu-id="91fe7-133">ValidateMustUnderstand</span><span class="sxs-lookup"><span data-stu-id="91fe7-133">ValidateMustUnderstand</span></span>  
- <span data-ttu-id="91fe7-134">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="91fe7-134">Data type: boolean</span></span>  
+### <a name="validatemustunderstand"></a><span data-ttu-id="43d33-133">ValidateMustUnderstand</span><span class="sxs-lookup"><span data-stu-id="43d33-133">ValidateMustUnderstand</span></span>  
+ <span data-ttu-id="43d33-134">Datový typ: boolean</span><span class="sxs-lookup"><span data-stu-id="43d33-134">Data type: boolean</span></span>  
   
- <span data-ttu-id="91fe7-135">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="91fe7-135">Access type: Read-only</span></span>  
+ <span data-ttu-id="43d33-135">Typ přístupu: jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="43d33-135">Access type: Read-only</span></span>  
   
- <span data-ttu-id="91fe7-136">Určuje, zda systém nebo aplikace uplatňuje zpracování záhlaví SOAP MustUnderstand.</span><span class="sxs-lookup"><span data-stu-id="91fe7-136">Specifies whether the system or the application enforces SOAP MustUnderstand header processing.</span></span>  
+ <span data-ttu-id="43d33-136">Určuje, zda systém nebo aplikace uplatňuje zpracování záhlaví SOAP MustUnderstand.</span><span class="sxs-lookup"><span data-stu-id="43d33-136">Specifies whether the system or the application enforces SOAP MustUnderstand header processing.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="91fe7-137">Požadavky</span><span class="sxs-lookup"><span data-stu-id="91fe7-137">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="43d33-137">Požadavky</span><span class="sxs-lookup"><span data-stu-id="43d33-137">Requirements</span></span>  
   
-|<span data-ttu-id="91fe7-138">SOUBOR MOF</span><span class="sxs-lookup"><span data-stu-id="91fe7-138">MOF</span></span>|<span data-ttu-id="91fe7-139">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="91fe7-139">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="43d33-138">SOUBOR MOF</span><span class="sxs-lookup"><span data-stu-id="43d33-138">MOF</span></span>|<span data-ttu-id="43d33-139">Deklarované v Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="43d33-139">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="91fe7-140">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="91fe7-140">Namespace</span></span>|<span data-ttu-id="91fe7-141">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="91fe7-141">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="43d33-140">Obor názvů</span><span class="sxs-lookup"><span data-stu-id="43d33-140">Namespace</span></span>|<span data-ttu-id="43d33-141">Definované v root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="43d33-141">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="91fe7-142">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91fe7-142">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="43d33-142">Viz také:</span><span class="sxs-lookup"><span data-stu-id="43d33-142">See also</span></span>
 
 - <xref:System.ServiceModel.CallbackBehaviorAttribute>

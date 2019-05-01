@@ -4,26 +4,26 @@ description: Zjistěte, jak zkontrolovat hodnoty skutečné dočasných dat běh
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: 362cb9351c3cb77b6aa67d59154854e882869ad9
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57843413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61968711"
 ---
-# <a name="inspect-intermediate-data-values-during-mlnet-pipeline-processing"></a><span data-ttu-id="3928d-103">Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET</span><span class="sxs-lookup"><span data-stu-id="3928d-103">Inspect intermediate data values during ML.NET pipeline processing</span></span>
+# <a name="inspect-intermediate-data-values-during-mlnet-pipeline-processing"></a><span data-ttu-id="6adde-103">Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET</span><span class="sxs-lookup"><span data-stu-id="6adde-103">Inspect intermediate data values during ML.NET pipeline processing</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3928d-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="3928d-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="3928d-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="3928d-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
+> <span data-ttu-id="6adde-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="6adde-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="6adde-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="6adde-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-<span data-ttu-id="3928d-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="3928d-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="3928d-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="3928d-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
+<span data-ttu-id="6adde-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="6adde-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="6adde-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="6adde-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="3928d-108">Během testu můžete sledovat a ověřte výsledky zpracování dat v časovém okamžiku.</span><span class="sxs-lookup"><span data-stu-id="3928d-108">During the experiment, you may want to observe and validate the data processing results at a given point.</span></span> <span data-ttu-id="3928d-109">To není snadné, protože operace ML.NET jsou opožděná, vytváření objektů, které jsou "příslibů" dat.</span><span class="sxs-lookup"><span data-stu-id="3928d-109">This isn't easy since ML.NET operations are lazy, constructing objects that are 'promises' of data.</span></span>
+<span data-ttu-id="6adde-108">Během testu můžete sledovat a ověřte výsledky zpracování dat v časovém okamžiku.</span><span class="sxs-lookup"><span data-stu-id="6adde-108">During the experiment, you may want to observe and validate the data processing results at a given point.</span></span> <span data-ttu-id="6adde-109">To není snadné, protože operace ML.NET jsou opožděná, vytváření objektů, které jsou "příslibů" dat.</span><span class="sxs-lookup"><span data-stu-id="6adde-109">This isn't easy since ML.NET operations are lazy, constructing objects that are 'promises' of data.</span></span>
 
-<span data-ttu-id="3928d-110">`GetColumn<T>` – Metoda rozšíření umožňuje kontrolovat zprostředkující data.</span><span class="sxs-lookup"><span data-stu-id="3928d-110">The `GetColumn<T>` extension method lets you inspect the intermediate data.</span></span> <span data-ttu-id="3928d-111">Vrátí obsah jako jeden datový sloupec `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="3928d-111">It returns the contents of one data column as an `IEnumerable`.</span></span>
+<span data-ttu-id="6adde-110">`GetColumn<T>` – Metoda rozšíření umožňuje kontrolovat zprostředkující data.</span><span class="sxs-lookup"><span data-stu-id="6adde-110">The `GetColumn<T>` extension method lets you inspect the intermediate data.</span></span> <span data-ttu-id="6adde-111">Vrátí obsah jako jeden datový sloupec `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="6adde-111">It returns the contents of one data column as an `IEnumerable`.</span></span>
 
-<span data-ttu-id="3928d-112">Následující příklad ukazuje způsob použití `GetColumn<T>` – metoda rozšíření:</span><span class="sxs-lookup"><span data-stu-id="3928d-112">The following example shows how to use the `GetColumn<T>` extension method:</span></span>
+<span data-ttu-id="6adde-112">Následující příklad ukazuje způsob použití `GetColumn<T>` – metoda rozšíření:</span><span class="sxs-lookup"><span data-stu-id="6adde-112">The following example shows how to use the `GetColumn<T>` extension method:</span></span>
 
-<span data-ttu-id="3928d-113">[Příklad souboru](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span><span class="sxs-lookup"><span data-stu-id="3928d-113">[Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span></span>
+<span data-ttu-id="6adde-113">[Příklad souboru](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span><span class="sxs-lookup"><span data-stu-id="6adde-113">[Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span></span>
 
 <!-- markdownlint-disable MD010 -->
 ```
@@ -36,7 +36,7 @@ Label   Workclass   education   marital-status
 ```
 <!-- markdownlint-enable MD010 -->
 
-<span data-ttu-id="3928d-114">Naše třída je definována takto:</span><span class="sxs-lookup"><span data-stu-id="3928d-114">Our class is defined as follows:</span></span>
+<span data-ttu-id="6adde-114">Naše třída je definována takto:</span><span class="sxs-lookup"><span data-stu-id="6adde-114">Our class is defined as follows:</span></span>
 
 ```csharp
 public class InspectedRow

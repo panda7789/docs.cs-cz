@@ -8,24 +8,24 @@ helpviewer_keywords:
 - serialization [WPF]
 ms.assetid: 2d8ef436-d559-4c3e-86de-5a160d5f87d2
 ms.openlocfilehash: 7227e61dd8140ec9b1560fbc12e4ba4dd3e0d843
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61962473"
 ---
-# <a name="element-tree-and-serialization-how-to-topics"></a><span data-ttu-id="2d4d9-102">Postupy: Strom prvku a serializace</span><span class="sxs-lookup"><span data-stu-id="2d4d9-102">Element Tree and Serialization How-to Topics</span></span>
-<span data-ttu-id="2d4d9-103">Témata v této části popisují způsob použití strom prvku WPF.</span><span class="sxs-lookup"><span data-stu-id="2d4d9-103">The topics in this section describe how to use the WPF element tree.</span></span>  
+# <a name="element-tree-and-serialization-how-to-topics"></a><span data-ttu-id="cf61e-102">Postupy: Strom prvku a serializace</span><span class="sxs-lookup"><span data-stu-id="cf61e-102">Element Tree and Serialization How-to Topics</span></span>
+<span data-ttu-id="cf61e-103">Témata v této části popisují způsob použití strom prvku WPF.</span><span class="sxs-lookup"><span data-stu-id="cf61e-103">The topics in this section describe how to use the WPF element tree.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="2d4d9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2d4d9-104">In This Section</span></span>  
- [<span data-ttu-id="2d4d9-105">Hledání elementu podle názvu</span><span class="sxs-lookup"><span data-stu-id="2d4d9-105">Find an Element by Its Name</span></span>](how-to-find-an-element-by-its-name.md)  
- [<span data-ttu-id="2d4d9-106">Přepsání logického stromu</span><span class="sxs-lookup"><span data-stu-id="2d4d9-106">Override the Logical Tree</span></span>](how-to-override-the-logical-tree.md)  
+## <a name="in-this-section"></a><span data-ttu-id="cf61e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="cf61e-104">In This Section</span></span>  
+ [<span data-ttu-id="cf61e-105">Hledání elementu podle názvu</span><span class="sxs-lookup"><span data-stu-id="cf61e-105">Find an Element by Its Name</span></span>](how-to-find-an-element-by-its-name.md)  
+ [<span data-ttu-id="cf61e-106">Přepsání logického stromu</span><span class="sxs-lookup"><span data-stu-id="cf61e-106">Override the Logical Tree</span></span>](how-to-override-the-logical-tree.md)  
   
-## <a name="reference"></a><span data-ttu-id="2d4d9-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="2d4d9-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="cf61e-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="cf61e-107">Reference</span></span>  
  <xref:System.Windows.LogicalTreeHelper>  
   
  <xref:System.Windows.Media.VisualTreeHelper>  
   
  <xref:System.Windows.Markup>  
   
-## <a name="related-sections"></a><span data-ttu-id="2d4d9-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="2d4d9-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="cf61e-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="cf61e-108">Related Sections</span></span>

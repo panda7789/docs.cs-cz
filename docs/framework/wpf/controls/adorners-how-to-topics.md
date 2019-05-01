@@ -7,23 +7,23 @@ helpviewer_keywords:
 - adorners [WPF], how-to topics
 ms.assetid: e29d7516-d5e6-4500-bd4f-775e6f830984
 ms.openlocfilehash: 930d0834570529bd958006818cddb8f5692066d7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981679"
 ---
-# <a name="adorners-how-to-topics"></a><span data-ttu-id="55268-102">Postupy: Témata doplňků</span><span class="sxs-lookup"><span data-stu-id="55268-102">Adorners How-to Topics</span></span>
-<span data-ttu-id="55268-103">Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhraní pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="55268-103">The following examples demonstrate how to accomplish common tasks using the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] adorner framework.</span></span>  
+# <a name="adorners-how-to-topics"></a><span data-ttu-id="18cd9-102">Postupy: Témata doplňků</span><span class="sxs-lookup"><span data-stu-id="18cd9-102">Adorners How-to Topics</span></span>
+<span data-ttu-id="18cd9-103">Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhraní pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="18cd9-103">The following examples demonstrate how to accomplish common tasks using the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] adorner framework.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="55268-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="55268-104">In This Section</span></span>  
- [<span data-ttu-id="55268-105">Implementace doplňku pro úpravy</span><span class="sxs-lookup"><span data-stu-id="55268-105">Implement an Adorner</span></span>](how-to-implement-an-adorner.md)  
- [<span data-ttu-id="55268-106">Svázání doplňku pro úpravy s elementem</span><span class="sxs-lookup"><span data-stu-id="55268-106">Bind an Adorner to an Element</span></span>](how-to-bind-an-adorner-to-an-element.md)  
- [<span data-ttu-id="55268-107">Doplnění podřízených položek panelu</span><span class="sxs-lookup"><span data-stu-id="55268-107">Adorn the Children of a Panel</span></span>](how-to-adorn-the-children-of-a-panel.md)  
- [<span data-ttu-id="55268-108">Odebrání doplňku pro úpravy z elementu</span><span class="sxs-lookup"><span data-stu-id="55268-108">Remove an Adorner from an Element</span></span>](how-to-remove-an-adorner-from-an-element.md)  
- [<span data-ttu-id="55268-109">Odebrání všech doplňků pro úpravy z elementu</span><span class="sxs-lookup"><span data-stu-id="55268-109">Remove all Adorners from an Element</span></span>](how-to-remove-all-adorners-from-an-element.md)  
+## <a name="in-this-section"></a><span data-ttu-id="18cd9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="18cd9-104">In This Section</span></span>  
+ [<span data-ttu-id="18cd9-105">Implementace doplňku pro úpravy</span><span class="sxs-lookup"><span data-stu-id="18cd9-105">Implement an Adorner</span></span>](how-to-implement-an-adorner.md)  
+ [<span data-ttu-id="18cd9-106">Svázání doplňku pro úpravy s elementem</span><span class="sxs-lookup"><span data-stu-id="18cd9-106">Bind an Adorner to an Element</span></span>](how-to-bind-an-adorner-to-an-element.md)  
+ [<span data-ttu-id="18cd9-107">Doplnění podřízených položek panelu</span><span class="sxs-lookup"><span data-stu-id="18cd9-107">Adorn the Children of a Panel</span></span>](how-to-adorn-the-children-of-a-panel.md)  
+ [<span data-ttu-id="18cd9-108">Odebrání doplňku pro úpravy z elementu</span><span class="sxs-lookup"><span data-stu-id="18cd9-108">Remove an Adorner from an Element</span></span>](how-to-remove-an-adorner-from-an-element.md)  
+ [<span data-ttu-id="18cd9-109">Odebrání všech doplňků pro úpravy z elementu</span><span class="sxs-lookup"><span data-stu-id="18cd9-109">Remove all Adorners from an Element</span></span>](how-to-remove-all-adorners-from-an-element.md)  
   
-## <a name="reference"></a><span data-ttu-id="55268-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="55268-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="18cd9-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="18cd9-110">Reference</span></span>  
  <xref:System.Windows.Controls.AdornedElementPlaceholder>  
   
  <xref:System.Windows.Documents.Adorner>  
@@ -34,4 +34,4 @@ ms.locfileid: "57359247"
   
  <xref:System.Windows.Documents.AdornerLayer>  
   
-## <a name="related-sections"></a><span data-ttu-id="55268-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="55268-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="18cd9-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="18cd9-111">Related Sections</span></span>

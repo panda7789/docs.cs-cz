@@ -10,17 +10,17 @@ helpviewer_keywords:
 - content [WPF], Frame control
 ms.assetid: 1588f9bf-9001-4437-a8fc-cc57ef50561c
 ms.openlocfilehash: f530fa04e25bfa18095fc3b2a182d3d624789f54
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054897"
 ---
-# <a name="frame"></a><span data-ttu-id="74d43-102">Rámec</span><span class="sxs-lookup"><span data-stu-id="74d43-102">Frame</span></span>
-<span data-ttu-id="74d43-103"><xref:System.Windows.Controls.Frame> Ovládací prvek podporuje navigaci v obsahu v rámci obsahu.</span><span class="sxs-lookup"><span data-stu-id="74d43-103">The <xref:System.Windows.Controls.Frame> control supports content navigation within content.</span></span> <span data-ttu-id="74d43-104"><xref:System.Windows.Controls.Frame> mohou být hostovány systémem kořenový element jako <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Controls.UserControl>, <xref:System.Windows.Documents.FlowDocument>, nebo jako ostrůvku v rámci stromu obsahu, který patří do kořenového prvku.</span><span class="sxs-lookup"><span data-stu-id="74d43-104"><xref:System.Windows.Controls.Frame> can be hosted by a root element like <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Controls.UserControl>, <xref:System.Windows.Documents.FlowDocument>, or as an island within a content tree that belongs to a root element.</span></span>  
+# <a name="frame"></a><span data-ttu-id="9a24f-102">Rámec</span><span class="sxs-lookup"><span data-stu-id="9a24f-102">Frame</span></span>
+<span data-ttu-id="9a24f-103"><xref:System.Windows.Controls.Frame> Ovládací prvek podporuje navigaci v obsahu v rámci obsahu.</span><span class="sxs-lookup"><span data-stu-id="9a24f-103">The <xref:System.Windows.Controls.Frame> control supports content navigation within content.</span></span> <span data-ttu-id="9a24f-104"><xref:System.Windows.Controls.Frame> mohou být hostovány systémem kořenový element jako <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Controls.UserControl>, <xref:System.Windows.Documents.FlowDocument>, nebo jako ostrůvku v rámci stromu obsahu, který patří do kořenového prvku.</span><span class="sxs-lookup"><span data-stu-id="9a24f-104"><xref:System.Windows.Controls.Frame> can be hosted by a root element like <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Controls.UserControl>, <xref:System.Windows.Documents.FlowDocument>, or as an island within a content tree that belongs to a root element.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="74d43-105">Odkaz</span><span class="sxs-lookup"><span data-stu-id="74d43-105">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="9a24f-105">Odkaz</span><span class="sxs-lookup"><span data-stu-id="9a24f-105">Reference</span></span>  
  <xref:System.Windows.Controls.Frame>  
   
-## <a name="related-sections"></a><span data-ttu-id="74d43-106">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="74d43-106">Related Sections</span></span>  
- [<span data-ttu-id="74d43-107">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="74d43-107">Navigation Overview</span></span>](../app-development/navigation-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="9a24f-106">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="9a24f-106">Related Sections</span></span>  
+ [<span data-ttu-id="9a24f-107">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="9a24f-107">Navigation Overview</span></span>](../app-development/navigation-overview.md)

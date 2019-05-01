@@ -10,25 +10,25 @@ helpviewer_keywords:
 - controls [WPF], ScrollViewer
 ms.assetid: 2163666e-04da-4036-841f-40947c9c034d
 ms.openlocfilehash: 5e8b1b30fc50318882ca7a7f5ed2a4827d5446c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59128658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61970999"
 ---
-# <a name="scrollviewer"></a><span data-ttu-id="3896c-102">ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="3896c-102">ScrollViewer</span></span>
-<span data-ttu-id="3896c-103"><xref:System.Windows.Controls.ScrollViewer> Ovládací prvek vytvoří rolovací oblast, ve které obsah můžete posouvat vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="3896c-103">The <xref:System.Windows.Controls.ScrollViewer> control creates a scrollable region wherein content can be scrolled horizontally or vertically.</span></span>  
+# <a name="scrollviewer"></a><span data-ttu-id="5c585-102">ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="5c585-102">ScrollViewer</span></span>
+<span data-ttu-id="5c585-103"><xref:System.Windows.Controls.ScrollViewer> Ovládací prvek vytvoří rolovací oblast, ve které obsah můžete posouvat vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="5c585-103">The <xref:System.Windows.Controls.ScrollViewer> control creates a scrollable region wherein content can be scrolled horizontally or vertically.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="3896c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3896c-104">In This Section</span></span>  
- [<span data-ttu-id="3896c-105">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="3896c-105">ScrollViewer Overview</span></span>](scrollviewer-overview.md)  
- [<span data-ttu-id="3896c-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="3896c-106">How-to Topics</span></span>](scrollviewer-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="5c585-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5c585-104">In This Section</span></span>  
+ [<span data-ttu-id="5c585-105">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="5c585-105">ScrollViewer Overview</span></span>](scrollviewer-overview.md)  
+ [<span data-ttu-id="5c585-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="5c585-106">How-to Topics</span></span>](scrollviewer-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="3896c-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="3896c-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="5c585-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="5c585-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   
  <xref:System.Windows.Controls.ScrollViewer>  
   
-## <a name="see-also"></a><span data-ttu-id="3896c-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3896c-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5c585-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5c585-108">See also</span></span>
 
-- [<span data-ttu-id="3896c-109">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="3896c-109">Panels Overview</span></span>](panels-overview.md)
-- [<span data-ttu-id="3896c-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="3896c-110">Layout</span></span>](../advanced/layout.md)
+- [<span data-ttu-id="5c585-109">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="5c585-109">Panels Overview</span></span>](panels-overview.md)
+- [<span data-ttu-id="5c585-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="5c585-110">Layout</span></span>](../advanced/layout.md)

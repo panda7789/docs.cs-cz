@@ -3,27 +3,27 @@ title: Atomizované objekty XName a Xnamespace (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 21ee7585-7df9-40b4-8c76-a12bb5f29bb3
 ms.openlocfilehash: fe0c4429c89e0028b3b012c87684bd14048de27a
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57843439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61951928"
 ---
-# <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a><span data-ttu-id="277d2-102">Atomizované objekty XName a Xnamespace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="277d2-102">Atomized XName and XNamespace Objects (LINQ to XML) (Visual Basic)</span></span>
+# <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a><span data-ttu-id="7fe51-102">Atomizované objekty XName a Xnamespace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7fe51-102">Atomized XName and XNamespace Objects (LINQ to XML) (Visual Basic)</span></span>
 
-<span data-ttu-id="277d2-103"><xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomizované objekty*; to znamená, pokud obsahují stejné kvalifikovaný název, odkazují na stejný objekt.</span><span class="sxs-lookup"><span data-stu-id="277d2-103"><xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> objects are *atomized*; that is, if they contain the same qualified name, they refer to the same object.</span></span> <span data-ttu-id="277d2-104">To poskytuje výhody výkon pro dotazy: Při porovnávání rovnosti dvou atomizované objekty názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt.</span><span class="sxs-lookup"><span data-stu-id="277d2-104">This yields performance benefits for queries: When you compare two atomized names for equality, the underlying intermediate language only has to determine whether the two references point to the same object.</span></span> <span data-ttu-id="277d2-105">Základní kód nemusí řetězec porovnání, které by byly časově náročné.</span><span class="sxs-lookup"><span data-stu-id="277d2-105">The underlying code does not have to do string comparisons, which would be time consuming.</span></span>
+<span data-ttu-id="7fe51-103"><xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomizované objekty*; to znamená, pokud obsahují stejné kvalifikovaný název, odkazují na stejný objekt.</span><span class="sxs-lookup"><span data-stu-id="7fe51-103"><xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> objects are *atomized*; that is, if they contain the same qualified name, they refer to the same object.</span></span> <span data-ttu-id="7fe51-104">To poskytuje výhody výkon pro dotazy: Při porovnávání rovnosti dvou atomizované objekty názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt.</span><span class="sxs-lookup"><span data-stu-id="7fe51-104">This yields performance benefits for queries: When you compare two atomized names for equality, the underlying intermediate language only has to determine whether the two references point to the same object.</span></span> <span data-ttu-id="7fe51-105">Základní kód nemusí řetězec porovnání, které by byly časově náročné.</span><span class="sxs-lookup"><span data-stu-id="7fe51-105">The underlying code does not have to do string comparisons, which would be time consuming.</span></span>
 
-## <a name="atomization-semantics"></a><span data-ttu-id="277d2-106">Sémantika atomizace</span><span class="sxs-lookup"><span data-stu-id="277d2-106">Atomization Semantics</span></span>
+## <a name="atomization-semantics"></a><span data-ttu-id="7fe51-106">Sémantika atomizace</span><span class="sxs-lookup"><span data-stu-id="7fe51-106">Atomization Semantics</span></span>
 
-<span data-ttu-id="277d2-107">Atomizace znamená, že pokud dva <xref:System.Xml.Linq.XName> objekty mají stejný název místní a jsou ve stejném oboru názvů, sdílejí stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="277d2-107">Atomization means that if two <xref:System.Xml.Linq.XName> objects have the same local name, and they are in the same namespace, they share the same instance.</span></span> <span data-ttu-id="277d2-108">Stejným způsobem, pokud dva <xref:System.Xml.Linq.XNamespace> objekty mají stejný obor názvů URI, které sdílejí stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="277d2-108">In the same way, if two <xref:System.Xml.Linq.XNamespace> objects have the same namespace URI, they share the same instance.</span></span>
+<span data-ttu-id="7fe51-107">Atomizace znamená, že pokud dva <xref:System.Xml.Linq.XName> objekty mají stejný název místní a jsou ve stejném oboru názvů, sdílejí stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="7fe51-107">Atomization means that if two <xref:System.Xml.Linq.XName> objects have the same local name, and they are in the same namespace, they share the same instance.</span></span> <span data-ttu-id="7fe51-108">Stejným způsobem, pokud dva <xref:System.Xml.Linq.XNamespace> objekty mají stejný obor názvů URI, které sdílejí stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="7fe51-108">In the same way, if two <xref:System.Xml.Linq.XNamespace> objects have the same namespace URI, they share the same instance.</span></span>
 
-<span data-ttu-id="277d2-109">V případě třídy umožňující atomizované objekty objekty musí být konstruktor pro třídu soukromé, není veřejné.</span><span class="sxs-lookup"><span data-stu-id="277d2-109">For a class to enable atomized objects, the constructor for the class must be private, not public.</span></span> <span data-ttu-id="277d2-110">Je to proto, že pokud konstruktor public, můžete vytvořit objekt neatomizovaném.</span><span class="sxs-lookup"><span data-stu-id="277d2-110">This is because if the constructor were public, you could create a non-atomized object.</span></span> <span data-ttu-id="277d2-111"><xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> Operátor implicitního převodu k převedení řetězce na implementaci třídy <xref:System.Xml.Linq.XName> nebo <xref:System.Xml.Linq.XNamespace>.</span><span class="sxs-lookup"><span data-stu-id="277d2-111">The <xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> classes implement an implicit conversion operator to convert a string into an <xref:System.Xml.Linq.XName> or <xref:System.Xml.Linq.XNamespace>.</span></span> <span data-ttu-id="277d2-112">To je, jak získat instanci z těchto objektů.</span><span class="sxs-lookup"><span data-stu-id="277d2-112">This is how you get an instance of these objects.</span></span> <span data-ttu-id="277d2-113">Pomocí konstruktoru, nelze získat instanci, protože konstruktor není dostupný.</span><span class="sxs-lookup"><span data-stu-id="277d2-113">You cannot get an instance by using a constructor, because the constructor is inaccessible.</span></span>
+<span data-ttu-id="7fe51-109">V případě třídy umožňující atomizované objekty objekty musí být konstruktor pro třídu soukromé, není veřejné.</span><span class="sxs-lookup"><span data-stu-id="7fe51-109">For a class to enable atomized objects, the constructor for the class must be private, not public.</span></span> <span data-ttu-id="7fe51-110">Je to proto, že pokud konstruktor public, můžete vytvořit objekt neatomizovaném.</span><span class="sxs-lookup"><span data-stu-id="7fe51-110">This is because if the constructor were public, you could create a non-atomized object.</span></span> <span data-ttu-id="7fe51-111"><xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> Operátor implicitního převodu k převedení řetězce na implementaci třídy <xref:System.Xml.Linq.XName> nebo <xref:System.Xml.Linq.XNamespace>.</span><span class="sxs-lookup"><span data-stu-id="7fe51-111">The <xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> classes implement an implicit conversion operator to convert a string into an <xref:System.Xml.Linq.XName> or <xref:System.Xml.Linq.XNamespace>.</span></span> <span data-ttu-id="7fe51-112">To je, jak získat instanci z těchto objektů.</span><span class="sxs-lookup"><span data-stu-id="7fe51-112">This is how you get an instance of these objects.</span></span> <span data-ttu-id="7fe51-113">Pomocí konstruktoru, nelze získat instanci, protože konstruktor není dostupný.</span><span class="sxs-lookup"><span data-stu-id="7fe51-113">You cannot get an instance by using a constructor, because the constructor is inaccessible.</span></span>
 
-<span data-ttu-id="277d2-114"><xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> také implementovat operátory rovnosti a nerovnosti, chcete-li zjistit, zda dva objekty porovnávané jsou odkazy na stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="277d2-114"><xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> also implement the equality and inequality operators, to determine whether the two objects being compared are references to the same instance.</span></span>
+<span data-ttu-id="7fe51-114"><xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> také implementovat operátory rovnosti a nerovnosti, chcete-li zjistit, zda dva objekty porovnávané jsou odkazy na stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="7fe51-114"><xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> also implement the equality and inequality operators, to determine whether the two objects being compared are references to the same instance.</span></span>
 
-## <a name="example"></a><span data-ttu-id="277d2-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="277d2-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="7fe51-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="7fe51-115">Example</span></span>
 
-<span data-ttu-id="277d2-116">Následující kód vytvoří některé <xref:System.Xml.Linq.XElement> objektů a ukazuje, že stejné názvy sdílet stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="277d2-116">The following code creates some <xref:System.Xml.Linq.XElement> objects and demonstrates that identical names share the same instance.</span></span>
+<span data-ttu-id="7fe51-116">Následující kód vytvoří některé <xref:System.Xml.Linq.XElement> objektů a ukazuje, že stejné názvy sdílet stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="7fe51-116">The following code creates some <xref:System.Xml.Linq.XElement> objects and demonstrates that identical names share the same instance.</span></span>
 
 ```vb
 Dim r1 As New XElement("Root", "data1")
@@ -44,16 +44,16 @@ Else
 End If
 ```
 
-<span data-ttu-id="277d2-117">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="277d2-117">This example produces the following output:</span></span>
+<span data-ttu-id="7fe51-117">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7fe51-117">This example produces the following output:</span></span>
 
 ```
 r1 and r2 have names that refer to the same instance.
 The name of r1 and the name in 'n' refer to the same instance.
 ```
 
-<span data-ttu-id="277d2-118">Jak už bylo zmíněno dříve, výhodou atomizované objekty objekty je, že při použití jedné z metod osy, můžou <xref:System.Xml.Linq.XName> jako parametr metody osy má jenom k určení, že dva názvy odkaz na stejnou instanci k výběru požadované prvky.</span><span class="sxs-lookup"><span data-stu-id="277d2-118">As mentioned earlier, the benefit of atomized objects is that when you use one of the axis methods that take an <xref:System.Xml.Linq.XName> as a parameter, the axis method only has to determine that two names reference the same instance to select the desired elements.</span></span>
+<span data-ttu-id="7fe51-118">Jak už bylo zmíněno dříve, výhodou atomizované objekty objekty je, že při použití jedné z metod osy, můžou <xref:System.Xml.Linq.XName> jako parametr metody osy má jenom k určení, že dva názvy odkaz na stejnou instanci k výběru požadované prvky.</span><span class="sxs-lookup"><span data-stu-id="7fe51-118">As mentioned earlier, the benefit of atomized objects is that when you use one of the axis methods that take an <xref:System.Xml.Linq.XName> as a parameter, the axis method only has to determine that two names reference the same instance to select the desired elements.</span></span>
 
-<span data-ttu-id="277d2-119">Následující příklad předá <xref:System.Xml.Linq.XName> k <xref:System.Xml.Linq.XContainer.Descendants%2A> volání metody, která pak má lepší výkon z důvodu atomizace vzor.</span><span class="sxs-lookup"><span data-stu-id="277d2-119">The following example passes an <xref:System.Xml.Linq.XName> to the <xref:System.Xml.Linq.XContainer.Descendants%2A> method call, which then has better performance because of the atomization pattern.</span></span>
+<span data-ttu-id="7fe51-119">Následující příklad předá <xref:System.Xml.Linq.XName> k <xref:System.Xml.Linq.XContainer.Descendants%2A> volání metody, která pak má lepší výkon z důvodu atomizace vzor.</span><span class="sxs-lookup"><span data-stu-id="7fe51-119">The following example passes an <xref:System.Xml.Linq.XName> to the <xref:System.Xml.Linq.XContainer.Descendants%2A> method call, which then has better performance because of the atomization pattern.</span></span>
 
 ```vb
 Dim root As New XElement("Root", New XElement("C1", 1), New XElement("Z1", New XElement("C1", 2), New XElement("C1", 1)))
@@ -65,13 +65,13 @@ For Each z As var In query
 Next
 ```
 
-<span data-ttu-id="277d2-120">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="277d2-120">This example produces the following output:</span></span>
+<span data-ttu-id="7fe51-120">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7fe51-120">This example produces the following output:</span></span>
 
 ```xml
 <C1>1</C1>
 <C1>1</C1>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="277d2-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="277d2-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7fe51-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7fe51-121">See also</span></span>
 
-- [<span data-ttu-id="277d2-122">Výkon (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="277d2-122">Performance (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)
+- [<span data-ttu-id="7fe51-122">Výkon (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7fe51-122">Performance (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)

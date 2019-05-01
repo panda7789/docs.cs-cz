@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b291521b667954a4118d5319547e90c4cc988a8b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59179735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61986879"
 ---
-# <a name="icordebugvaluecreatebreakpoint-method"></a><span data-ttu-id="dda11-102">ICorDebugValue::CreateBreakpoint – metoda</span><span class="sxs-lookup"><span data-stu-id="dda11-102">ICorDebugValue::CreateBreakpoint Method</span></span>
-<span data-ttu-id="dda11-103">`CreateBreakpoint` Metoda není aktuálně implementována.</span><span class="sxs-lookup"><span data-stu-id="dda11-103">The `CreateBreakpoint` method is currently not implemented.</span></span>  
+# <a name="icordebugvaluecreatebreakpoint-method"></a><span data-ttu-id="c35ed-102">ICorDebugValue::CreateBreakpoint – metoda</span><span class="sxs-lookup"><span data-stu-id="c35ed-102">ICorDebugValue::CreateBreakpoint Method</span></span>
+<span data-ttu-id="c35ed-103">`CreateBreakpoint` Metoda není aktuálně implementována.</span><span class="sxs-lookup"><span data-stu-id="c35ed-103">The `CreateBreakpoint` method is currently not implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dda11-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dda11-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c35ed-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c35ed-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateBreakpoint (  
@@ -35,13 +35,13 @@ HRESULT CreateBreakpoint (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="dda11-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dda11-105">Requirements</span></span>  
- <span data-ttu-id="dda11-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dda11-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c35ed-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c35ed-105">Requirements</span></span>  
+ <span data-ttu-id="c35ed-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c35ed-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dda11-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="dda11-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c35ed-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c35ed-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="dda11-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="dda11-108">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c35ed-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c35ed-108">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="dda11-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dda11-109">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c35ed-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c35ed-109">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dda11-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dda11-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c35ed-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c35ed-110">See also</span></span>

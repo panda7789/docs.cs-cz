@@ -7,22 +7,22 @@ helpviewer_keywords:
 - navigation [WPF]
 ms.assetid: f804648e-558c-4f60-8e48-d11f4a23c436
 ms.openlocfilehash: 4d1cfd1388e68ff6a5f8c6a6b209dc38dd2f80d3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981692"
 ---
-# <a name="navigation-how-to-topics"></a><span data-ttu-id="ee54a-102">Postupy: Témata navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-102">Navigation How-to Topics</span></span>
-<span data-ttu-id="ee54a-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigace.</span><span class="sxs-lookup"><span data-stu-id="ee54a-103">The following topics show how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigation.</span></span>  
+# <a name="navigation-how-to-topics"></a><span data-ttu-id="67514-102">Postupy: Témata navigace</span><span class="sxs-lookup"><span data-stu-id="67514-102">Navigation How-to Topics</span></span>
+<span data-ttu-id="67514-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigace.</span><span class="sxs-lookup"><span data-stu-id="67514-103">The following topics show how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigation.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ee54a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ee54a-104">In This Section</span></span>  
- [<span data-ttu-id="ee54a-105">Volání funkce stránky</span><span class="sxs-lookup"><span data-stu-id="ee54a-105">Call a Page Function</span></span>](how-to-call-a-page-function.md)  
-  [<span data-ttu-id="ee54a-106">Načtení návratové hodnoty funkce stránky</span><span class="sxs-lookup"><span data-stu-id="ee54a-106">Get the Return Value of a Page Function</span></span>](how-to-get-the-return-value-of-a-page-function.md)  
-  [<span data-ttu-id="ee54a-107">Přecházení vpřed a zpět v historii navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-107">Navigate Forward or Back Through Navigation History</span></span>](how-to-navigate-forward-or-back-through-navigation-history.md)  
-  [<span data-ttu-id="ee54a-108">Vrácení z funkce stránky</span><span class="sxs-lookup"><span data-stu-id="ee54a-108">Return from a Page Function</span></span>](how-to-return-from-a-page-function.md)  
+## <a name="in-this-section"></a><span data-ttu-id="67514-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="67514-104">In This Section</span></span>  
+ [<span data-ttu-id="67514-105">Volání funkce stránky</span><span class="sxs-lookup"><span data-stu-id="67514-105">Call a Page Function</span></span>](how-to-call-a-page-function.md)  
+  [<span data-ttu-id="67514-106">Načtení návratové hodnoty funkce stránky</span><span class="sxs-lookup"><span data-stu-id="67514-106">Get the Return Value of a Page Function</span></span>](how-to-get-the-return-value-of-a-page-function.md)  
+  [<span data-ttu-id="67514-107">Přecházení vpřed a zpět v historii navigace</span><span class="sxs-lookup"><span data-stu-id="67514-107">Navigate Forward or Back Through Navigation History</span></span>](how-to-navigate-forward-or-back-through-navigation-history.md)  
+  [<span data-ttu-id="67514-108">Vrácení z funkce stránky</span><span class="sxs-lookup"><span data-stu-id="67514-108">Return from a Page Function</span></span>](how-to-return-from-a-page-function.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="ee54a-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ee54a-109">Related Sections</span></span>  
- [<span data-ttu-id="ee54a-110">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-110">Navigation Overview</span></span>](navigation-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="67514-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="67514-109">Related Sections</span></span>  
+ [<span data-ttu-id="67514-110">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="67514-110">Navigation Overview</span></span>](navigation-overview.md)  
   
- [<span data-ttu-id="ee54a-111">Přehled strukturované navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-111">Structured Navigation Overview</span></span>](structured-navigation-overview.md)
+ [<span data-ttu-id="67514-111">Přehled strukturované navigace</span><span class="sxs-lookup"><span data-stu-id="67514-111">Structured Navigation Overview</span></span>](structured-navigation-overview.md)
