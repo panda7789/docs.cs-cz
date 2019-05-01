@@ -8,42 +8,42 @@ helpviewer_keywords:
 - animation [WPF]
 ms.assetid: 587e36f6-1957-424e-9d89-c43724f26d84
 ms.openlocfilehash: 4936ba7bcd78c4867dae99df8bad11776cf655db
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010316"
 ---
-# <a name="animation-and-timing-how-to-topics"></a><span data-ttu-id="97dd1-102">Postupy: Témata animace a časování</span><span class="sxs-lookup"><span data-stu-id="97dd1-102">Animation and Timing How-to Topics</span></span>
-<span data-ttu-id="97dd1-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časování systému ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="97dd1-103">The following topics demonstrate how to use the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animation and timing system in your applications.</span></span>  
+# <a name="animation-and-timing-how-to-topics"></a><span data-ttu-id="9bab1-102">Postupy: Témata animace a časování</span><span class="sxs-lookup"><span data-stu-id="9bab1-102">Animation and Timing How-to Topics</span></span>
+<span data-ttu-id="9bab1-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časování systému ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="9bab1-103">The following topics demonstrate how to use the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animation and timing system in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="97dd1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="97dd1-104">In This Section</span></span>  
- [<span data-ttu-id="97dd1-105">Zrychlení a zpomalení animace</span><span class="sxs-lookup"><span data-stu-id="97dd1-105">Accelerate or Decelerate an Animation</span></span>](how-to-accelerate-or-decelerate-an-animation.md)  
- [<span data-ttu-id="97dd1-106">Kumulování hodnot animace při opakujících se cyklech</span><span class="sxs-lookup"><span data-stu-id="97dd1-106">Accumulate Animation Values During Repeat Cycles</span></span>](how-to-accumulate-animation-values-during-repeat-cycles.md)  
- [<span data-ttu-id="97dd1-107">Přidání výstupní hodnoty animace do počáteční hodnoty animace</span><span class="sxs-lookup"><span data-stu-id="97dd1-107">Add an Animation Output Value to an Animation Starting Value</span></span>](how-to-add-an-animation-output-value-to-an-animation-starting-value.md)  
- [<span data-ttu-id="97dd1-108">Animace vlastnosti pomocí scénáře</span><span class="sxs-lookup"><span data-stu-id="97dd1-108">Animate a Property by Using a Storyboard</span></span>](how-to-animate-a-property-by-using-a-storyboard.md)  
- [<span data-ttu-id="97dd1-109">Animace vlastnosti bez pomoci scénáře</span><span class="sxs-lookup"><span data-stu-id="97dd1-109">Animate a Property Without Using a Storyboard</span></span>](how-to-animate-a-property-without-using-a-storyboard.md)  
- [<span data-ttu-id="97dd1-110">Animace v objektu ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="97dd1-110">Animate in a ControlTemplate</span></span>](how-to-animate-in-a-controltemplate.md)  
- [<span data-ttu-id="97dd1-111">Animace ve stylu</span><span class="sxs-lookup"><span data-stu-id="97dd1-111">Animate in a Style</span></span>](how-to-animate-in-a-style.md)  
- [<span data-ttu-id="97dd1-112">Animace krytí elementu nebo štětce</span><span class="sxs-lookup"><span data-stu-id="97dd1-112">Animate the Opacity of an Element or Brush</span></span>](how-to-animate-the-opacity-of-an-element-or-brush.md)  
- [<span data-ttu-id="97dd1-113">Změna rychlosti hodin bez úpravy rychlosti časové osy</span><span class="sxs-lookup"><span data-stu-id="97dd1-113">Change the Speed of a Clock Without Changing the Speed of Its Timeline</span></span>](change-the-speed-of-a-clock.md)  
- [<span data-ttu-id="97dd1-114">Kontrola scénáře po jeho spuštění pomocí interaktivních metod</span><span class="sxs-lookup"><span data-stu-id="97dd1-114">Control a Storyboard After It Starts Using Its Interactive Methods</span></span>](how-to-control-a-storyboard-after-it-starts.md)  
- [<span data-ttu-id="97dd1-115">Řízení animací pomocí polí Od, Komu a Kdo</span><span class="sxs-lookup"><span data-stu-id="97dd1-115">Control an Animation using From, To, and By</span></span>](how-to-control-an-animation-using-from-to-and-by.md)  
- [<span data-ttu-id="97dd1-116">Definování rozsahu názvů</span><span class="sxs-lookup"><span data-stu-id="97dd1-116">Define a Name Scope</span></span>](how-to-define-a-name-scope.md)  
- [<span data-ttu-id="97dd1-117">Obdržení oznámení při změně stavu hodin</span><span class="sxs-lookup"><span data-stu-id="97dd1-117">Receive Notification When a Clock's State Changes</span></span>](how-to-receive-notification-when-clock-state-changes.md)  
- [<span data-ttu-id="97dd1-118">Opakování animace</span><span class="sxs-lookup"><span data-stu-id="97dd1-118">Repeat an Animation</span></span>](how-to-repeat-an-animation.md)  
- [<span data-ttu-id="97dd1-119">Hledání ve scénáři</span><span class="sxs-lookup"><span data-stu-id="97dd1-119">Seek a Storyboard</span></span>](how-to-seek-a-storyboard.md)  
- [<span data-ttu-id="97dd1-120">Synchronní hledání ve scénáři</span><span class="sxs-lookup"><span data-stu-id="97dd1-120">Seek a Storyboard Synchronously</span></span>](how-to-seek-a-storyboard-synchronously.md)  
- [<span data-ttu-id="97dd1-121">Nastavení trvání pro animaci</span><span class="sxs-lookup"><span data-stu-id="97dd1-121">Set a Duration for an Animation</span></span>](how-to-set-a-duration-for-an-animation.md)  
- [<span data-ttu-id="97dd1-122">Nastavení vlastnosti po animaci pomocí scénáře</span><span class="sxs-lookup"><span data-stu-id="97dd1-122">Set a Property After Animating It with a Storyboard</span></span>](how-to-set-a-property-after-animating-it-with-a-storyboard.md)  
- [<span data-ttu-id="97dd1-123">Zjednodušení aplikací pomocí podřízených časových os</span><span class="sxs-lookup"><span data-stu-id="97dd1-123">Simplify Animations by Using Child Timelines</span></span>](how-to-simplify-animations-by-using-child-timelines.md)  
- [<span data-ttu-id="97dd1-124">Určení HandoffBehavior mezi animacemi scénáře</span><span class="sxs-lookup"><span data-stu-id="97dd1-124">Specify HandoffBehavior Between Storyboard Animations</span></span>](how-to-specify-handoffbehavior-between-storyboard-animations.md)  
- [<span data-ttu-id="97dd1-125">Určení FillBehavior pro časovou osu, která dosáhla konce aktivního období</span><span class="sxs-lookup"><span data-stu-id="97dd1-125">Specify the FillBehavior for a Timeline that has Reached the End of Its Active Period</span></span>](specify-the-fillbehavior-for-a-timeline.md)  
- [<span data-ttu-id="97dd1-126">Určení automatického otočení časové osy</span><span class="sxs-lookup"><span data-stu-id="97dd1-126">Specify Whether a Timeline Automatically Reverses</span></span>](how-to-specify-whether-a-timeline-automatically-reverses.md)  
- [<span data-ttu-id="97dd1-127">Spuštění animace při změně hodnoty vlastnosti</span><span class="sxs-lookup"><span data-stu-id="97dd1-127">Trigger an Animation When a Property Value Changes</span></span>](how-to-trigger-an-animation-when-a-property-value-changes.md)  
- [<span data-ttu-id="97dd1-128">Použití aktivačních událostí pro řízení scénáře po spuštění</span><span class="sxs-lookup"><span data-stu-id="97dd1-128">Use Event Triggers to Control a Storyboard After It Starts</span></span>](how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9bab1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9bab1-104">In This Section</span></span>  
+ [<span data-ttu-id="9bab1-105">Zrychlení a zpomalení animace</span><span class="sxs-lookup"><span data-stu-id="9bab1-105">Accelerate or Decelerate an Animation</span></span>](how-to-accelerate-or-decelerate-an-animation.md)  
+ [<span data-ttu-id="9bab1-106">Kumulování hodnot animace při opakujících se cyklech</span><span class="sxs-lookup"><span data-stu-id="9bab1-106">Accumulate Animation Values During Repeat Cycles</span></span>](how-to-accumulate-animation-values-during-repeat-cycles.md)  
+ [<span data-ttu-id="9bab1-107">Přidání výstupní hodnoty animace do počáteční hodnoty animace</span><span class="sxs-lookup"><span data-stu-id="9bab1-107">Add an Animation Output Value to an Animation Starting Value</span></span>](how-to-add-an-animation-output-value-to-an-animation-starting-value.md)  
+ [<span data-ttu-id="9bab1-108">Animace vlastnosti pomocí scénáře</span><span class="sxs-lookup"><span data-stu-id="9bab1-108">Animate a Property by Using a Storyboard</span></span>](how-to-animate-a-property-by-using-a-storyboard.md)  
+ [<span data-ttu-id="9bab1-109">Animace vlastnosti bez pomoci scénáře</span><span class="sxs-lookup"><span data-stu-id="9bab1-109">Animate a Property Without Using a Storyboard</span></span>](how-to-animate-a-property-without-using-a-storyboard.md)  
+ [<span data-ttu-id="9bab1-110">Animace v objektu ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="9bab1-110">Animate in a ControlTemplate</span></span>](how-to-animate-in-a-controltemplate.md)  
+ [<span data-ttu-id="9bab1-111">Animace ve stylu</span><span class="sxs-lookup"><span data-stu-id="9bab1-111">Animate in a Style</span></span>](how-to-animate-in-a-style.md)  
+ [<span data-ttu-id="9bab1-112">Animace krytí elementu nebo štětce</span><span class="sxs-lookup"><span data-stu-id="9bab1-112">Animate the Opacity of an Element or Brush</span></span>](how-to-animate-the-opacity-of-an-element-or-brush.md)  
+ [<span data-ttu-id="9bab1-113">Změna rychlosti hodin bez úpravy rychlosti časové osy</span><span class="sxs-lookup"><span data-stu-id="9bab1-113">Change the Speed of a Clock Without Changing the Speed of Its Timeline</span></span>](change-the-speed-of-a-clock.md)  
+ [<span data-ttu-id="9bab1-114">Kontrola scénáře po jeho spuštění pomocí interaktivních metod</span><span class="sxs-lookup"><span data-stu-id="9bab1-114">Control a Storyboard After It Starts Using Its Interactive Methods</span></span>](how-to-control-a-storyboard-after-it-starts.md)  
+ [<span data-ttu-id="9bab1-115">Řízení animací pomocí polí Od, Komu a Kdo</span><span class="sxs-lookup"><span data-stu-id="9bab1-115">Control an Animation using From, To, and By</span></span>](how-to-control-an-animation-using-from-to-and-by.md)  
+ [<span data-ttu-id="9bab1-116">Definování rozsahu názvů</span><span class="sxs-lookup"><span data-stu-id="9bab1-116">Define a Name Scope</span></span>](how-to-define-a-name-scope.md)  
+ [<span data-ttu-id="9bab1-117">Obdržení oznámení při změně stavu hodin</span><span class="sxs-lookup"><span data-stu-id="9bab1-117">Receive Notification When a Clock's State Changes</span></span>](how-to-receive-notification-when-clock-state-changes.md)  
+ [<span data-ttu-id="9bab1-118">Opakování animace</span><span class="sxs-lookup"><span data-stu-id="9bab1-118">Repeat an Animation</span></span>](how-to-repeat-an-animation.md)  
+ [<span data-ttu-id="9bab1-119">Hledání ve scénáři</span><span class="sxs-lookup"><span data-stu-id="9bab1-119">Seek a Storyboard</span></span>](how-to-seek-a-storyboard.md)  
+ [<span data-ttu-id="9bab1-120">Synchronní hledání ve scénáři</span><span class="sxs-lookup"><span data-stu-id="9bab1-120">Seek a Storyboard Synchronously</span></span>](how-to-seek-a-storyboard-synchronously.md)  
+ [<span data-ttu-id="9bab1-121">Nastavení trvání pro animaci</span><span class="sxs-lookup"><span data-stu-id="9bab1-121">Set a Duration for an Animation</span></span>](how-to-set-a-duration-for-an-animation.md)  
+ [<span data-ttu-id="9bab1-122">Nastavení vlastnosti po animaci pomocí scénáře</span><span class="sxs-lookup"><span data-stu-id="9bab1-122">Set a Property After Animating It with a Storyboard</span></span>](how-to-set-a-property-after-animating-it-with-a-storyboard.md)  
+ [<span data-ttu-id="9bab1-123">Zjednodušení aplikací pomocí podřízených časových os</span><span class="sxs-lookup"><span data-stu-id="9bab1-123">Simplify Animations by Using Child Timelines</span></span>](how-to-simplify-animations-by-using-child-timelines.md)  
+ [<span data-ttu-id="9bab1-124">Určení HandoffBehavior mezi animacemi scénáře</span><span class="sxs-lookup"><span data-stu-id="9bab1-124">Specify HandoffBehavior Between Storyboard Animations</span></span>](how-to-specify-handoffbehavior-between-storyboard-animations.md)  
+ [<span data-ttu-id="9bab1-125">Určení FillBehavior pro časovou osu, která dosáhla konce aktivního období</span><span class="sxs-lookup"><span data-stu-id="9bab1-125">Specify the FillBehavior for a Timeline that has Reached the End of Its Active Period</span></span>](specify-the-fillbehavior-for-a-timeline.md)  
+ [<span data-ttu-id="9bab1-126">Určení automatického otočení časové osy</span><span class="sxs-lookup"><span data-stu-id="9bab1-126">Specify Whether a Timeline Automatically Reverses</span></span>](how-to-specify-whether-a-timeline-automatically-reverses.md)  
+ [<span data-ttu-id="9bab1-127">Spuštění animace při změně hodnoty vlastnosti</span><span class="sxs-lookup"><span data-stu-id="9bab1-127">Trigger an Animation When a Property Value Changes</span></span>](how-to-trigger-an-animation-when-a-property-value-changes.md)  
+ [<span data-ttu-id="9bab1-128">Použití aktivačních událostí pro řízení scénáře po spuštění</span><span class="sxs-lookup"><span data-stu-id="9bab1-128">Use Event Triggers to Control a Storyboard After It Starts</span></span>](how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)  
   
-## <a name="reference"></a><span data-ttu-id="97dd1-129">Odkaz</span><span class="sxs-lookup"><span data-stu-id="97dd1-129">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="9bab1-129">Odkaz</span><span class="sxs-lookup"><span data-stu-id="9bab1-129">Reference</span></span>  
  <xref:System.Windows.Media.Animation.Timeline>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  
@@ -54,5 +54,5 @@ ms.locfileid: "57358493"
   
  <xref:System.Windows.Media.Animation>  
   
-## <a name="related-sections"></a><span data-ttu-id="97dd1-130">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="97dd1-130">Related Sections</span></span>  
- [<span data-ttu-id="97dd1-131">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="97dd1-131">Graphics and Multimedia</span></span>](index.md)
+## <a name="related-sections"></a><span data-ttu-id="9bab1-130">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="9bab1-130">Related Sections</span></span>  
+ [<span data-ttu-id="9bab1-131">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="9bab1-131">Graphics and Multimedia</span></span>](index.md)

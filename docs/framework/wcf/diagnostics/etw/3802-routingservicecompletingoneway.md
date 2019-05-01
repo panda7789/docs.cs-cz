@@ -1,39 +1,28 @@
 ---
 title: 3802 - RoutingServiceCompletingOneWay
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 34bfe6c6-b6d0-4b38-854f-4ad245e90e15
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f37550a296f2619ace2d224177c641215553b257
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6f31b2682b3ec39466c8f71576edccb9a1baef22
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61999801"
 ---
-# <a name="3802---routingservicecompletingoneway"></a><span data-ttu-id="8da1a-102">3802 - RoutingServiceCompletingOneWay</span><span class="sxs-lookup"><span data-stu-id="8da1a-102">3802 - RoutingServiceCompletingOneWay</span></span>
-## <a name="properties"></a><span data-ttu-id="8da1a-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="8da1a-103">Properties</span></span>  
+# <a name="3802---routingservicecompletingoneway"></a><span data-ttu-id="d651b-102">3802 - RoutingServiceCompletingOneWay</span><span class="sxs-lookup"><span data-stu-id="d651b-102">3802 - RoutingServiceCompletingOneWay</span></span>
+## <a name="properties"></a><span data-ttu-id="d651b-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="d651b-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="8da1a-104">ID</span><span class="sxs-lookup"><span data-stu-id="8da1a-104">ID</span></span>|<span data-ttu-id="8da1a-105">3802</span><span class="sxs-lookup"><span data-stu-id="8da1a-105">3802</span></span>|  
-|<span data-ttu-id="8da1a-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="8da1a-106">Keywords</span></span>|<span data-ttu-id="8da1a-107">RoutingServices</span><span class="sxs-lookup"><span data-stu-id="8da1a-107">RoutingServices</span></span>|  
-|<span data-ttu-id="8da1a-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="8da1a-108">Level</span></span>|<span data-ttu-id="8da1a-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="8da1a-109">Information</span></span>|  
-|<span data-ttu-id="8da1a-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="8da1a-110">Channel</span></span>|<span data-ttu-id="8da1a-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="8da1a-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="d651b-104">ID</span><span class="sxs-lookup"><span data-stu-id="d651b-104">ID</span></span>|<span data-ttu-id="d651b-105">3802</span><span class="sxs-lookup"><span data-stu-id="d651b-105">3802</span></span>|  
+|<span data-ttu-id="d651b-106">klíčová slova</span><span class="sxs-lookup"><span data-stu-id="d651b-106">Keywords</span></span>|<span data-ttu-id="d651b-107">RoutingServices</span><span class="sxs-lookup"><span data-stu-id="d651b-107">RoutingServices</span></span>|  
+|<span data-ttu-id="d651b-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="d651b-108">Level</span></span>|<span data-ttu-id="d651b-109">Informace o</span><span class="sxs-lookup"><span data-stu-id="d651b-109">Information</span></span>|  
+|<span data-ttu-id="d651b-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="d651b-110">Channel</span></span>|<span data-ttu-id="d651b-111">Aplikace Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="d651b-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="8da1a-112">Popis</span><span class="sxs-lookup"><span data-stu-id="8da1a-112">Description</span></span>  
- <span data-ttu-id="8da1a-113">Tato událost je vygenerované při dokončování směrovací služby jedním ze způsobů zprávy.</span><span class="sxs-lookup"><span data-stu-id="8da1a-113">This event is emitted when the Routing Service one way message is completing.</span></span>  
+## <a name="description"></a><span data-ttu-id="d651b-112">Popis</span><span class="sxs-lookup"><span data-stu-id="d651b-112">Description</span></span>  
+ <span data-ttu-id="d651b-113">Tato událost je vygenerován při jednosměrná zpráva směrovací služby se dokončuje.</span><span class="sxs-lookup"><span data-stu-id="d651b-113">This event is emitted when the Routing Service one way message is completing.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="8da1a-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="8da1a-114">Message</span></span>  
- <span data-ttu-id="8da1a-115">Jedním ze způsobů zprávu směrovací služby je dokončení.</span><span class="sxs-lookup"><span data-stu-id="8da1a-115">A Routing Service one way message is completing.</span></span>  
+## <a name="message"></a><span data-ttu-id="d651b-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="d651b-114">Message</span></span>  
+ <span data-ttu-id="d651b-115">Jednosměrná zpráva směrovací služby se dokončuje.</span><span class="sxs-lookup"><span data-stu-id="d651b-115">A Routing Service one way message is completing.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="8da1a-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="8da1a-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="d651b-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="d651b-116">Details</span></span>

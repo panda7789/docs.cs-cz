@@ -18,41 +18,41 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 64c212d064ad658678926690d1e680afe27c7c99
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59219236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61993249"
 ---
-# <a name="iclrmetahostexitprocess-method"></a><span data-ttu-id="59a0f-102">ICLRMetaHost::ExitProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="59a0f-102">ICLRMetaHost::ExitProcess Method</span></span>
-<span data-ttu-id="59a0f-103">Pokusí se korektně vypnout všechny načtené moduly runtime a poté ukončí proces.</span><span class="sxs-lookup"><span data-stu-id="59a0f-103">Attempts to shut down all loaded runtimes gracefully and then terminates the process.</span></span> <span data-ttu-id="59a0f-104">Nahrazuje [corexitprocess –](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="59a0f-104">Supersedes the [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) function.</span></span>  
+# <a name="iclrmetahostexitprocess-method"></a><span data-ttu-id="17058-102">ICLRMetaHost::ExitProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="17058-102">ICLRMetaHost::ExitProcess Method</span></span>
+<span data-ttu-id="17058-103">Pokusí se korektně vypnout všechny načtené moduly runtime a poté ukončí proces.</span><span class="sxs-lookup"><span data-stu-id="17058-103">Attempts to shut down all loaded runtimes gracefully and then terminates the process.</span></span> <span data-ttu-id="17058-104">Nahrazuje [corexitprocess –](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="17058-104">Supersedes the [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="59a0f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="59a0f-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="17058-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17058-105">Syntax</span></span>  
   
 ```  
 HRESULT ExitProcess (  
     [in] INT32 iExitCode);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="59a0f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="59a0f-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="17058-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="17058-106">Parameters</span></span>  
  `iExitCode`  
- <span data-ttu-id="59a0f-107">[in] Ukončovací kód procesu.</span><span class="sxs-lookup"><span data-stu-id="59a0f-107">[in] The exit code for the process.</span></span>  
+ <span data-ttu-id="17058-107">[in] Ukončovací kód procesu.</span><span class="sxs-lookup"><span data-stu-id="17058-107">[in] The exit code for the process.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="59a0f-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="59a0f-108">Return Value</span></span>  
- <span data-ttu-id="59a0f-109">Tato metoda nikdy nevrátí, tak její návratová hodnota není definována.</span><span class="sxs-lookup"><span data-stu-id="59a0f-109">This method never returns, so its return value is undefined.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="17058-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="17058-108">Return Value</span></span>  
+ <span data-ttu-id="17058-109">Tato metoda nikdy nevrátí, tak její návratová hodnota není definována.</span><span class="sxs-lookup"><span data-stu-id="17058-109">This method never returns, so its return value is undefined.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="59a0f-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="59a0f-110">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="17058-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="17058-110">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="59a0f-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="59a0f-111">Requirements</span></span>  
- <span data-ttu-id="59a0f-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="59a0f-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="17058-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17058-111">Requirements</span></span>  
+ <span data-ttu-id="17058-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17058-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="59a0f-113">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="59a0f-113">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="17058-113">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="17058-113">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="59a0f-114">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="59a0f-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="17058-114">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="17058-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="59a0f-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="59a0f-115">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="17058-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17058-115">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="59a0f-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="59a0f-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="17058-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17058-116">See also</span></span>
 
-- [<span data-ttu-id="59a0f-117">ICLRMetaHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="59a0f-117">ICLRMetaHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
-- [<span data-ttu-id="59a0f-118">Hostování</span><span class="sxs-lookup"><span data-stu-id="59a0f-118">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [<span data-ttu-id="17058-117">ICLRMetaHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17058-117">ICLRMetaHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
+- [<span data-ttu-id="17058-118">Hostování</span><span class="sxs-lookup"><span data-stu-id="17058-118">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)

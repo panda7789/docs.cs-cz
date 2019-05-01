@@ -3,20 +3,20 @@ title: Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished
 ms.date: 03/30/2017
 ms.assetid: 54b677f7-03ad-40f2-9c5d-297a8ad9bf90
 ms.openlocfilehash: 7f37cb5d9ee3d2d9d56519f785388f278b3333b9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61997877"
 ---
-# <a name="microsofttransactionstransactionbridgeparticipantstatemachinefinished"></a><span data-ttu-id="b5705-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span><span class="sxs-lookup"><span data-stu-id="b5705-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span></span>
-<span data-ttu-id="b5705-103">Stavový počítač pro zapsání účastníka přešla do konečného stavu.</span><span class="sxs-lookup"><span data-stu-id="b5705-103">The state machine for a participant enlistment entered the finished state.</span></span>  
+# <a name="microsofttransactionstransactionbridgeparticipantstatemachinefinished"></a><span data-ttu-id="cbd72-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span><span class="sxs-lookup"><span data-stu-id="cbd72-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span></span>
+<span data-ttu-id="cbd72-103">Stavový počítač pro zapsání účastníka přešla do konečného stavu.</span><span class="sxs-lookup"><span data-stu-id="cbd72-103">The state machine for a participant enlistment entered the finished state.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="b5705-104">Popis</span><span class="sxs-lookup"><span data-stu-id="b5705-104">Description</span></span>  
- <span data-ttu-id="b5705-105">Trasovaná po dokončení zpracování 2pc podřízené zapsání účastníka.</span><span class="sxs-lookup"><span data-stu-id="b5705-105">Traced when a subordinate participant enlistment has completed 2pc processing.</span></span> <span data-ttu-id="b5705-106">Výsledek pro zařazení může být potvrzeno nebo bylo přerušeno.</span><span class="sxs-lookup"><span data-stu-id="b5705-106">The outcome for the enlistment can be Committed or Aborted.</span></span> <span data-ttu-id="b5705-107">Také se trasován, pokud každý účastník hlasů jen pro čtení během přípravy.</span><span class="sxs-lookup"><span data-stu-id="b5705-107">It is also traced if any participant votes ReadOnly during Prepare.</span></span>  
+## <a name="description"></a><span data-ttu-id="cbd72-104">Popis</span><span class="sxs-lookup"><span data-stu-id="cbd72-104">Description</span></span>  
+ <span data-ttu-id="cbd72-105">Trasovaná po dokončení zpracování 2pc podřízené zapsání účastníka.</span><span class="sxs-lookup"><span data-stu-id="cbd72-105">Traced when a subordinate participant enlistment has completed 2pc processing.</span></span> <span data-ttu-id="cbd72-106">Výsledek pro zařazení může být potvrzeno nebo bylo přerušeno.</span><span class="sxs-lookup"><span data-stu-id="cbd72-106">The outcome for the enlistment can be Committed or Aborted.</span></span> <span data-ttu-id="cbd72-107">Také se trasován, pokud každý účastník hlasů jen pro čtení během přípravy.</span><span class="sxs-lookup"><span data-stu-id="cbd72-107">It is also traced if any participant votes ReadOnly during Prepare.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5705-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5705-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cbd72-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cbd72-108">See also</span></span>
 
-- [<span data-ttu-id="b5705-109">Trasování</span><span class="sxs-lookup"><span data-stu-id="b5705-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="b5705-110">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="b5705-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="b5705-111">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="b5705-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="cbd72-109">Trasování</span><span class="sxs-lookup"><span data-stu-id="cbd72-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [<span data-ttu-id="cbd72-110">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="cbd72-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="cbd72-111">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="cbd72-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

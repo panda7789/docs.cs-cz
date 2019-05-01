@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 859abdd713fb19bbb3698d0da72cbff33cfbc6fa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61995578"
 ---
-# <a name="icordebugilframegetstackvalue-method"></a><span data-ttu-id="c032d-102">ICorDebugILFrame::GetStackValue – metoda</span><span class="sxs-lookup"><span data-stu-id="c032d-102">ICorDebugILFrame::GetStackValue Method</span></span>
-<span data-ttu-id="c032d-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="c032d-103">This method has not been implemented.</span></span>  
+# <a name="icordebugilframegetstackvalue-method"></a><span data-ttu-id="03f07-102">ICorDebugILFrame::GetStackValue – metoda</span><span class="sxs-lookup"><span data-stu-id="03f07-102">ICorDebugILFrame::GetStackValue Method</span></span>
+<span data-ttu-id="03f07-103">Tato metoda není implementovaná.</span><span class="sxs-lookup"><span data-stu-id="03f07-103">This method has not been implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c032d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c032d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="03f07-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="03f07-104">Syntax</span></span>  
   
 ```  
 HRESULT GetStackValue (  
@@ -36,5 +36,5 @@ HRESULT GetStackValue (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="c032d-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c032d-105">Requirements</span></span>  
- <span data-ttu-id="c032d-106">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c032d-106">**Header:** CorDebug.idl, CorDebug.h</span></span>
+## <a name="requirements"></a><span data-ttu-id="03f07-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="03f07-105">Requirements</span></span>  
+ <span data-ttu-id="03f07-106">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="03f07-106">**Header:** CorDebug.idl, CorDebug.h</span></span>

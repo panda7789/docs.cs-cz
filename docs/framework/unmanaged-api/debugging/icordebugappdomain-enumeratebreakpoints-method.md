@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b00afc900a27aea94389ee81065ea22ae359440d
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61996265"
 ---
-# <a name="icordebugappdomainenumeratebreakpoints-method"></a><span data-ttu-id="6c3c3-102">ICorDebugAppDomain::EnumerateBreakpoints – metoda</span><span class="sxs-lookup"><span data-stu-id="6c3c3-102">ICorDebugAppDomain::EnumerateBreakpoints Method</span></span>
-<span data-ttu-id="6c3c3-103">Získá enumerátor pro všechny zarážky aktivní v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="6c3c3-103">Gets an enumerator for all active breakpoints in the application domain.</span></span>  
+# <a name="icordebugappdomainenumeratebreakpoints-method"></a><span data-ttu-id="a29ee-102">ICorDebugAppDomain::EnumerateBreakpoints – metoda</span><span class="sxs-lookup"><span data-stu-id="a29ee-102">ICorDebugAppDomain::EnumerateBreakpoints Method</span></span>
+<span data-ttu-id="a29ee-103">Získá enumerátor pro všechny zarážky aktivní v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="a29ee-103">Gets an enumerator for all active breakpoints in the application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6c3c3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6c3c3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a29ee-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a29ee-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateBreakpoints (  
@@ -35,18 +35,18 @@ HRESULT EnumerateBreakpoints (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="6c3c3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6c3c3-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a29ee-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a29ee-105">Parameters</span></span>  
  `ppBreakpoints`  
- <span data-ttu-id="6c3c3-106">[out] Ukazatel na adresu icordebugbreakpointenum – objekt, který je výčet všech aktivních zarážek v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="6c3c3-106">[out] A pointer to the address of an ICorDebugBreakpointEnum object that is the enumerator for all active breakpoints in the application domain.</span></span>  
+ <span data-ttu-id="a29ee-106">[out] Ukazatel na adresu icordebugbreakpointenum – objekt, který je výčet všech aktivních zarážek v doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="a29ee-106">[out] A pointer to the address of an ICorDebugBreakpointEnum object that is the enumerator for all active breakpoints in the application domain.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6c3c3-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6c3c3-107">Remarks</span></span>  
- <span data-ttu-id="6c3c3-108">Enumerátor zahrnují všechny typy zarážky, včetně zarážky funkcí a datové zarážky.</span><span class="sxs-lookup"><span data-stu-id="6c3c3-108">The enumerator includes all types of breakpoints, including function breakpoints and data breakpoints.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a29ee-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a29ee-107">Remarks</span></span>  
+ <span data-ttu-id="a29ee-108">Enumerátor zahrnují všechny typy zarážky, včetně zarážky funkcí a datové zarážky.</span><span class="sxs-lookup"><span data-stu-id="a29ee-108">The enumerator includes all types of breakpoints, including function breakpoints and data breakpoints.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6c3c3-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6c3c3-109">Requirements</span></span>  
- <span data-ttu-id="6c3c3-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6c3c3-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a29ee-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a29ee-109">Requirements</span></span>  
+ <span data-ttu-id="a29ee-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a29ee-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6c3c3-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6c3c3-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="a29ee-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a29ee-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="6c3c3-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6c3c3-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a29ee-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a29ee-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6c3c3-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6c3c3-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="a29ee-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a29ee-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

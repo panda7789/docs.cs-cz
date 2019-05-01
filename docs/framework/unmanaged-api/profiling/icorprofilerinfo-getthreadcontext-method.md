@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f26fd93d42a709249936815d3c29ae572482f427
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61992040"
 ---
-# <a name="icorprofilerinfogetthreadcontext-method"></a><span data-ttu-id="9e091-102">ICorProfilerInfo::GetThreadContext – metoda</span><span class="sxs-lookup"><span data-stu-id="9e091-102">ICorProfilerInfo::GetThreadContext Method</span></span>
-<span data-ttu-id="9e091-103">Získá kontext identity aktuálně přiřazen k zadané vlákno.</span><span class="sxs-lookup"><span data-stu-id="9e091-103">Gets the context identity currently associated with the specified thread.</span></span>  
+# <a name="icorprofilerinfogetthreadcontext-method"></a><span data-ttu-id="5cae1-102">ICorProfilerInfo::GetThreadContext – metoda</span><span class="sxs-lookup"><span data-stu-id="5cae1-102">ICorProfilerInfo::GetThreadContext Method</span></span>
+<span data-ttu-id="5cae1-103">Získá kontext identity aktuálně přiřazen k zadané vlákno.</span><span class="sxs-lookup"><span data-stu-id="5cae1-103">Gets the context identity currently associated with the specified thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9e091-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9e091-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5cae1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5cae1-104">Syntax</span></span>  
   
 ```  
 HRESULT GetThreadContext(  
@@ -35,22 +35,22 @@ HRESULT GetThreadContext(
     [out] ContextID *pContextId);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9e091-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9e091-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5cae1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5cae1-105">Parameters</span></span>  
  `threadId`  
- <span data-ttu-id="9e091-106">[in] ID vlákna.</span><span class="sxs-lookup"><span data-stu-id="9e091-106">[in] The ID of the thread.</span></span>  
+ <span data-ttu-id="5cae1-106">[in] ID vlákna.</span><span class="sxs-lookup"><span data-stu-id="5cae1-106">[in] The ID of the thread.</span></span>  
   
  `pContextId`  
- <span data-ttu-id="9e091-107">[out] Ukazatel na ID kontextu, který je aktuálně přiřazen k zadané vlákno.</span><span class="sxs-lookup"><span data-stu-id="9e091-107">[out] A pointer to the context ID currently associated with the specified thread.</span></span> <span data-ttu-id="9e091-108">Pokud vlákno nemá žádný kontext aktuálně přidružen, tato funkce vrátí CORPROF_E_DATAINCOMPLETE.</span><span class="sxs-lookup"><span data-stu-id="9e091-108">If the thread has no context currently associated with it, this function will return CORPROF_E_DATAINCOMPLETE.</span></span>  
+ <span data-ttu-id="5cae1-107">[out] Ukazatel na ID kontextu, který je aktuálně přiřazen k zadané vlákno.</span><span class="sxs-lookup"><span data-stu-id="5cae1-107">[out] A pointer to the context ID currently associated with the specified thread.</span></span> <span data-ttu-id="5cae1-108">Pokud vlákno nemá žádný kontext aktuálně přidružen, tato funkce vrátí CORPROF_E_DATAINCOMPLETE.</span><span class="sxs-lookup"><span data-stu-id="5cae1-108">If the thread has no context currently associated with it, this function will return CORPROF_E_DATAINCOMPLETE.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9e091-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9e091-109">Requirements</span></span>  
- <span data-ttu-id="9e091-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9e091-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5cae1-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5cae1-109">Requirements</span></span>  
+ <span data-ttu-id="5cae1-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5cae1-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9e091-111">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="9e091-111">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="5cae1-111">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="5cae1-111">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="9e091-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9e091-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="5cae1-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5cae1-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="9e091-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9e091-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="5cae1-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5cae1-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9e091-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9e091-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5cae1-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5cae1-114">See also</span></span>
 
-- [<span data-ttu-id="9e091-115">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9e091-115">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="5cae1-115">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5cae1-115">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

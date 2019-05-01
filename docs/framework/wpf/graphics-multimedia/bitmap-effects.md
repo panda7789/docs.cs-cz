@@ -10,27 +10,27 @@ helpviewer_keywords:
 - images [WPF], bitmap
 ms.assetid: be180b56-ca6e-4da3-a839-f6b0bf482f7d
 ms.openlocfilehash: eb81644bc69edcd1465cf43224eb6af369b5fb3d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010225"
 ---
-# <a name="bitmap-effects"></a><span data-ttu-id="eb7e5-102">Bitmapové efekty</span><span class="sxs-lookup"><span data-stu-id="eb7e5-102">Bitmap Effects</span></span>
-<span data-ttu-id="eb7e5-103">Témata v této části popisují, jak použít vizuálních efektů bitmap obrázků s využitím [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="eb7e5-103">The topics in this section describe how to apply visual effects to bitmap images using [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="bitmap-effects"></a><span data-ttu-id="070a1-102">Bitmapové efekty</span><span class="sxs-lookup"><span data-stu-id="070a1-102">Bitmap Effects</span></span>
+<span data-ttu-id="070a1-103">Témata v této části popisují, jak použít vizuálních efektů bitmap obrázků s využitím [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="070a1-103">The topics in this section describe how to apply visual effects to bitmap images using [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="eb7e5-104">V [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] nebo novější, <xref:System.Windows.Media.Effects.BitmapEffect> třída je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="eb7e5-104">In the [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] or later, the <xref:System.Windows.Media.Effects.BitmapEffect> class is obsolete.</span></span> <span data-ttu-id="eb7e5-105">Pokud se pokusíte použít <xref:System.Windows.Media.Effects.BitmapEffect> třídy, obdržíte výjimku zastaralé.</span><span class="sxs-lookup"><span data-stu-id="eb7e5-105">If you try to use the <xref:System.Windows.Media.Effects.BitmapEffect> class, you will get an obsolete exception.</span></span> <span data-ttu-id="eb7e5-106">Nezastaralou alternativou k <xref:System.Windows.Media.Effects.BitmapEffect> třída je <xref:System.Windows.Media.Effects.Effect> třídy.</span><span class="sxs-lookup"><span data-stu-id="eb7e5-106">The non-obsolete alternative to the <xref:System.Windows.Media.Effects.BitmapEffect> class is the <xref:System.Windows.Media.Effects.Effect> class.</span></span> <span data-ttu-id="eb7e5-107">Ve většině případů <xref:System.Windows.Media.Effects.Effect> třída je výrazně rychlejší.</span><span class="sxs-lookup"><span data-stu-id="eb7e5-107">In most situations, the <xref:System.Windows.Media.Effects.Effect> class is significantly faster.</span></span>  
+>  <span data-ttu-id="070a1-104">V [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] nebo novější, <xref:System.Windows.Media.Effects.BitmapEffect> třída je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="070a1-104">In the [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] or later, the <xref:System.Windows.Media.Effects.BitmapEffect> class is obsolete.</span></span> <span data-ttu-id="070a1-105">Pokud se pokusíte použít <xref:System.Windows.Media.Effects.BitmapEffect> třídy, obdržíte výjimku zastaralé.</span><span class="sxs-lookup"><span data-stu-id="070a1-105">If you try to use the <xref:System.Windows.Media.Effects.BitmapEffect> class, you will get an obsolete exception.</span></span> <span data-ttu-id="070a1-106">Nezastaralou alternativou k <xref:System.Windows.Media.Effects.BitmapEffect> třída je <xref:System.Windows.Media.Effects.Effect> třídy.</span><span class="sxs-lookup"><span data-stu-id="070a1-106">The non-obsolete alternative to the <xref:System.Windows.Media.Effects.BitmapEffect> class is the <xref:System.Windows.Media.Effects.Effect> class.</span></span> <span data-ttu-id="070a1-107">Ve většině případů <xref:System.Windows.Media.Effects.Effect> třída je výrazně rychlejší.</span><span class="sxs-lookup"><span data-stu-id="070a1-107">In most situations, the <xref:System.Windows.Media.Effects.Effect> class is significantly faster.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="eb7e5-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="eb7e5-108">In This Section</span></span>  
- [<span data-ttu-id="eb7e5-109">Přehled efektů bitmap</span><span class="sxs-lookup"><span data-stu-id="eb7e5-109">Bitmap Effects Overview</span></span>](bitmap-effects-overview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="070a1-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="070a1-108">In This Section</span></span>  
+ [<span data-ttu-id="070a1-109">Přehled efektů bitmap</span><span class="sxs-lookup"><span data-stu-id="070a1-109">Bitmap Effects Overview</span></span>](bitmap-effects-overview.md)  
   
-## <a name="reference"></a><span data-ttu-id="eb7e5-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="eb7e5-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="070a1-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="070a1-110">Reference</span></span>  
  <xref:System.Windows.Media.Effects.BitmapEffect>  
   
  <xref:System.Windows.Media.Effects>  
   
-## <a name="related-sections"></a><span data-ttu-id="eb7e5-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="eb7e5-111">Related Sections</span></span>  
- [<span data-ttu-id="eb7e5-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="eb7e5-112">Graphics and Multimedia</span></span>](index.md)  
+## <a name="related-sections"></a><span data-ttu-id="070a1-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="070a1-111">Related Sections</span></span>  
+ [<span data-ttu-id="070a1-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="070a1-112">Graphics and Multimedia</span></span>](index.md)  
   
- [<span data-ttu-id="eb7e5-113">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="eb7e5-113">Imaging Overview</span></span>](imaging-overview.md)
+ [<span data-ttu-id="070a1-113">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="070a1-113">Imaging Overview</span></span>](imaging-overview.md)

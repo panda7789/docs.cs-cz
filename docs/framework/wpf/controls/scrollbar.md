@@ -8,19 +8,19 @@ helpviewer_keywords:
 - controls [WPF], ScrollBar
 ms.assetid: 60f27d35-8f7b-4285-89d2-28336a4c073a
 ms.openlocfilehash: 242dbdeeed5408815878aa30ef276019e1ccc2c4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971038"
 ---
-# <a name="scrollbar"></a><span data-ttu-id="bea54-102">ScrollBar</span><span class="sxs-lookup"><span data-stu-id="bea54-102">ScrollBar</span></span>
-<span data-ttu-id="bea54-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> vám umožní zobrazit obsah, který je mimo aktuální oblast zobrazení posunutím <xref:System.Windows.Controls.Primitives.Thumb> zajistit pro obsah viditelný.</span><span class="sxs-lookup"><span data-stu-id="bea54-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> allows you to view content that is outside of the current viewing area by sliding the <xref:System.Windows.Controls.Primitives.Thumb> to make the content visible.</span></span>  
+# <a name="scrollbar"></a><span data-ttu-id="9c507-102">ScrollBar</span><span class="sxs-lookup"><span data-stu-id="9c507-102">ScrollBar</span></span>
+<span data-ttu-id="9c507-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> vám umožní zobrazit obsah, který je mimo aktuální oblast zobrazení posunutím <xref:System.Windows.Controls.Primitives.Thumb> zajistit pro obsah viditelný.</span><span class="sxs-lookup"><span data-stu-id="9c507-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> allows you to view content that is outside of the current viewing area by sliding the <xref:System.Windows.Controls.Primitives.Thumb> to make the content visible.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="bea54-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="bea54-104">In This Section</span></span>  
- [<span data-ttu-id="bea54-105">Přizpůsobení velikosti jezdce v prvku ScrollBar</span><span class="sxs-lookup"><span data-stu-id="bea54-105">Customize the Thumb Size on a ScrollBar</span></span>](how-to-customize-the-thumb-size-on-a-scrollbar.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9c507-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9c507-104">In This Section</span></span>  
+ [<span data-ttu-id="9c507-105">Přizpůsobení velikosti jezdce v prvku ScrollBar</span><span class="sxs-lookup"><span data-stu-id="9c507-105">Customize the Thumb Size on a ScrollBar</span></span>](how-to-customize-the-thumb-size-on-a-scrollbar.md)  
   
-## <a name="reference"></a><span data-ttu-id="bea54-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="bea54-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="9c507-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="9c507-106">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   <xref:System.Windows.Controls.Primitives.Track>  
   <xref:System.Windows.Controls.Primitives.Thumb>  

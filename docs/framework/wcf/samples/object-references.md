@@ -3,22 +3,22 @@ title: Odkazy na objekty
 ms.date: 03/30/2017
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
 ms.openlocfilehash: 2a2da82d913d43aa9bc3ccfeb9f1f1eda12b0562
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008056"
 ---
-# <a name="object-references"></a><span data-ttu-id="bc4f1-102">Odkazy na objekty</span><span class="sxs-lookup"><span data-stu-id="bc4f1-102">Object References</span></span>
-<span data-ttu-id="bc4f1-103">Tento příklad ukazuje, jak předat objekty podle odkazů mezi serverem a klientem.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-103">This sample demonstrates how to pass objects by references between server and client.</span></span> <span data-ttu-id="bc4f1-104">Ukázka používá simulované *sociálních sítí*.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-104">The sample uses simulated *social networks*.</span></span> <span data-ttu-id="bc4f1-105">Sociální síť se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých každý typu friend je instance `Person` třídy s vlastním seznamu přátel.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-105">A social network consists of a `Person` class that contains a list of friends in which each friend is an instance of the `Person` class, with its own list of friends.</span></span> <span data-ttu-id="bc4f1-106">Tím se vytvoří graf objektů.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-106">This creates a graph of objects.</span></span> <span data-ttu-id="bc4f1-107">Služba zpřístupňuje operace v těchto sociálních sítích.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-107">The service exposes operations on these social networks.</span></span>  
+# <a name="object-references"></a><span data-ttu-id="7fbd0-102">Odkazy na objekty</span><span class="sxs-lookup"><span data-stu-id="7fbd0-102">Object References</span></span>
+<span data-ttu-id="7fbd0-103">Tento příklad ukazuje, jak předat objekty podle odkazů mezi serverem a klientem.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-103">This sample demonstrates how to pass objects by references between server and client.</span></span> <span data-ttu-id="7fbd0-104">Ukázka používá simulované *sociálních sítí*.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-104">The sample uses simulated *social networks*.</span></span> <span data-ttu-id="7fbd0-105">Sociální síť se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých každý typu friend je instance `Person` třídy s vlastním seznamu přátel.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-105">A social network consists of a `Person` class that contains a list of friends in which each friend is an instance of the `Person` class, with its own list of friends.</span></span> <span data-ttu-id="7fbd0-106">Tím se vytvoří graf objektů.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-106">This creates a graph of objects.</span></span> <span data-ttu-id="7fbd0-107">Služba zpřístupňuje operace v těchto sociálních sítích.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-107">The service exposes operations on these social networks.</span></span>  
   
- <span data-ttu-id="bc4f1-108">V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).</span><span class="sxs-lookup"><span data-stu-id="bc4f1-108">In this sample, the service is hosted by Internet Information Services (IIS) and the client is a console application (.exe).</span></span>  
+ <span data-ttu-id="7fbd0-108">V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).</span><span class="sxs-lookup"><span data-stu-id="7fbd0-108">In this sample, the service is hosted by Internet Information Services (IIS) and the client is a console application (.exe).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="bc4f1-109">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-109">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="7fbd0-109">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-109">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
-## <a name="service"></a><span data-ttu-id="bc4f1-110">Služba</span><span class="sxs-lookup"><span data-stu-id="bc4f1-110">Service</span></span>  
- <span data-ttu-id="bc4f1-111">`Person` Třída nemá <xref:System.Runtime.Serialization.DataContractAttribute> atribut, pomocí <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> nastaveno na `true` deklarovat jako typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-111">The `Person` class has the <xref:System.Runtime.Serialization.DataContractAttribute> attribute applied, with the <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> field set to `true` to declare it as a reference type.</span></span> <span data-ttu-id="bc4f1-112">Mají všechny vlastnosti <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-112">All properties have the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute applied.</span></span>  
+## <a name="service"></a><span data-ttu-id="7fbd0-110">Služba</span><span class="sxs-lookup"><span data-stu-id="7fbd0-110">Service</span></span>  
+ <span data-ttu-id="7fbd0-111">`Person` Třída nemá <xref:System.Runtime.Serialization.DataContractAttribute> atribut, pomocí <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> nastaveno na `true` deklarovat jako typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-111">The `Person` class has the <xref:System.Runtime.Serialization.DataContractAttribute> attribute applied, with the <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> field set to `true` to declare it as a reference type.</span></span> <span data-ttu-id="7fbd0-112">Mají všechny vlastnosti <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-112">All properties have the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute applied.</span></span>  
   
 ```csharp
 [DataContract(IsReference=true)]  
@@ -51,7 +51,7 @@ public class Person
 }  
 ```  
   
- <span data-ttu-id="bc4f1-113">`GetPeopleInNetwork` Operace přebírá parametr typu `Person` a vrátí všechny uživatele v síti; to znamená, že všichni uživatelé ve `friends` seznamu vašeho přítele přátel a tak dále, aniž by duplicitní položky.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-113">The `GetPeopleInNetwork` operation takes a parameter of type `Person` and returns all the people in the network; that is, all the people in the `friends` list, the friend's friends, and so on, without duplicates.</span></span>  
+ <span data-ttu-id="7fbd0-113">`GetPeopleInNetwork` Operace přebírá parametr typu `Person` a vrátí všechny uživatele v síti; to znamená, že všichni uživatelé ve `friends` seznamu vašeho přítele přátel a tak dále, aniž by duplicitní položky.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-113">The `GetPeopleInNetwork` operation takes a parameter of type `Person` and returns all the people in the network; that is, all the people in the `friends` list, the friend's friends, and so on, without duplicates.</span></span>  
   
 ```csharp
 public List<Person> GetPeopleInNetwork(Person p)  
@@ -63,7 +63,7 @@ public List<Person> GetPeopleInNetwork(Person p)
 }  
 ```  
   
- <span data-ttu-id="bc4f1-114">`GetMutualFriends` Operace přebírá parametr typu `Person` a vrátí všechny přátele v seznamu, kteří mají také tuto osobu v jejich `friends` seznamu.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-114">The `GetMutualFriends` operation takes a parameter of type `Person` and returns all the friends in the list who also have this person in their `friends` list.</span></span>  
+ <span data-ttu-id="7fbd0-114">`GetMutualFriends` Operace přebírá parametr typu `Person` a vrátí všechny přátele v seznamu, kteří mají také tuto osobu v jejich `friends` seznamu.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-114">The `GetMutualFriends` operation takes a parameter of type `Person` and returns all the friends in the list who also have this person in their `friends` list.</span></span>  
   
 ```csharp
 public List<Person> GetMutualFriends(Person p)  
@@ -78,7 +78,7 @@ public List<Person> GetMutualFriends(Person p)
 }  
 ```  
   
- <span data-ttu-id="bc4f1-115">`GetCommonFriends` Operace přebírá seznam typů `Person`.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-115">The `GetCommonFriends` operation takes a list of type `Person`.</span></span> <span data-ttu-id="bc4f1-116">Seznam by měl mít dvě `Person` objektů v ní.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-116">The list is expected to have two `Person` objects in it.</span></span> <span data-ttu-id="bc4f1-117">Operace vrátí seznam hodnot `Person` objekty, které jsou v `friends` oba seznamy `Person` objekty ve vstupním seznamu.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-117">The operation returns a list of `Person` objects that are in the `friends` lists of both `Person` objects in the input list.</span></span>  
+ <span data-ttu-id="7fbd0-115">`GetCommonFriends` Operace přebírá seznam typů `Person`.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-115">The `GetCommonFriends` operation takes a list of type `Person`.</span></span> <span data-ttu-id="7fbd0-116">Seznam by měl mít dvě `Person` objektů v ní.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-116">The list is expected to have two `Person` objects in it.</span></span> <span data-ttu-id="7fbd0-117">Operace vrátí seznam hodnot `Person` objekty, které jsou v `friends` oba seznamy `Person` objekty ve vstupním seznamu.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-117">The operation returns a list of `Person` objects that are in the `friends` lists of both `Person` objects in the input list.</span></span>  
   
 ```csharp
 public List<Person> GetCommonFriends(List<Person> people)  
@@ -91,29 +91,29 @@ public List<Person> GetCommonFriends(List<Person> people)
 }  
 ```  
   
-## <a name="client"></a><span data-ttu-id="bc4f1-118">Klient</span><span class="sxs-lookup"><span data-stu-id="bc4f1-118">Client</span></span>  
- <span data-ttu-id="bc4f1-119">Klient proxy je vytvořený pomocí **přidat odkaz na službu** funkce sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-119">The client proxy is created using the **Add Service Reference** feature of Visual Studio.</span></span>  
+## <a name="client"></a><span data-ttu-id="7fbd0-118">Klient</span><span class="sxs-lookup"><span data-stu-id="7fbd0-118">Client</span></span>  
+ <span data-ttu-id="7fbd0-119">Klient proxy je vytvořený pomocí **přidat odkaz na službu** funkce sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-119">The client proxy is created using the **Add Service Reference** feature of Visual Studio.</span></span>  
   
- <span data-ttu-id="bc4f1-120">Sociální sítě, která se skládá z pěti `Person` vytvořeny objekty.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-120">A social network that consists of five `Person` objects is created.</span></span> <span data-ttu-id="bc4f1-121">Klient každé ze tří metod volá ve službě.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-121">The client calls each of the three methods in the service.</span></span>  
+ <span data-ttu-id="7fbd0-120">Sociální sítě, která se skládá z pěti `Person` vytvořeny objekty.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-120">A social network that consists of five `Person` objects is created.</span></span> <span data-ttu-id="7fbd0-121">Klient každé ze tří metod volá ve službě.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-121">The client calls each of the three methods in the service.</span></span>  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="bc4f1-122">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="bc4f1-122">To set up, build, and run the sample</span></span>  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="7fbd0-122">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="7fbd0-122">To set up, build, and run the sample</span></span>  
   
-1. <span data-ttu-id="bc4f1-123">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="bc4f1-123">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1. <span data-ttu-id="7fbd0-123">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7fbd0-123">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2. <span data-ttu-id="bc4f1-124">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="bc4f1-124">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2. <span data-ttu-id="7fbd0-124">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7fbd0-124">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3. <span data-ttu-id="bc4f1-125">Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="bc4f1-125">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3. <span data-ttu-id="7fbd0-125">Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7fbd0-125">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="bc4f1-126">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="bc4f1-127">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="bc4f1-127">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="7fbd0-126">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="7fbd0-127">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="7fbd0-127">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="bc4f1-128">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="bc4f1-129">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="bc4f1-129">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="7fbd0-128">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="7fbd0-129">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="7fbd0-129">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\ObjectReferences`  
   
-## <a name="see-also"></a><span data-ttu-id="bc4f1-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc4f1-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7fbd0-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7fbd0-130">See also</span></span>
 
 - <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A>
-- [<span data-ttu-id="bc4f1-131">Interoperabilní odkazy na objekty</span><span class="sxs-lookup"><span data-stu-id="bc4f1-131">Interoperable Object References</span></span>](../../../../docs/framework/wcf/feature-details/interoperable-object-references.md)
+- [<span data-ttu-id="7fbd0-131">Interoperabilní odkazy na objekty</span><span class="sxs-lookup"><span data-stu-id="7fbd0-131">Interoperable Object References</span></span>](../../../../docs/framework/wcf/feature-details/interoperable-object-references.md)

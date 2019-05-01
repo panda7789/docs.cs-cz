@@ -8,24 +8,24 @@ helpviewer_keywords:
 - CheckBox control [WPF]
 ms.assetid: ee701cc2-968b-4683-8f81-3fafd8542700
 ms.openlocfilehash: 42d4d0e232d66c076a2f3ecfb2ae95a41b0557a5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052219"
 ---
-# <a name="checkbox"></a><span data-ttu-id="533d2-102">CheckBox</span><span class="sxs-lookup"><span data-stu-id="533d2-102">CheckBox</span></span>
-<span data-ttu-id="533d2-103">Můžete použít <xref:System.Windows.Controls.CheckBox> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vaší aplikace k reprezentaci možností, které uživatel může vybrat nebo vymazat.</span><span class="sxs-lookup"><span data-stu-id="533d2-103">You can use a <xref:System.Windows.Controls.CheckBox> in the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] of your application to represent options that a user can select or clear.</span></span> <span data-ttu-id="533d2-104">Můžete pomocí jednoho zaškrtávacího políčka nebo můžete seskupit dvou nebo více zaškrtávacích políček.</span><span class="sxs-lookup"><span data-stu-id="533d2-104">You can use a single check box or you can group two or more check boxes.</span></span>  
+# <a name="checkbox"></a><span data-ttu-id="4fbb0-102">CheckBox</span><span class="sxs-lookup"><span data-stu-id="4fbb0-102">CheckBox</span></span>
+<span data-ttu-id="4fbb0-103">Můžete použít <xref:System.Windows.Controls.CheckBox> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vaší aplikace k reprezentaci možností, které uživatel může vybrat nebo vymazat.</span><span class="sxs-lookup"><span data-stu-id="4fbb0-103">You can use a <xref:System.Windows.Controls.CheckBox> in the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] of your application to represent options that a user can select or clear.</span></span> <span data-ttu-id="4fbb0-104">Můžete pomocí jednoho zaškrtávacího políčka nebo můžete seskupit dvou nebo více zaškrtávacích políček.</span><span class="sxs-lookup"><span data-stu-id="4fbb0-104">You can use a single check box or you can group two or more check boxes.</span></span>  
   
- <span data-ttu-id="533d2-105">Následující obrázek znázorňuje různé stavy <xref:System.Windows.Controls.CheckBox>.</span><span class="sxs-lookup"><span data-stu-id="533d2-105">The following graphic shows the different states of a <xref:System.Windows.Controls.CheckBox>.</span></span>  
+ <span data-ttu-id="4fbb0-105">Následující obrázek znázorňuje různé stavy <xref:System.Windows.Controls.CheckBox>.</span><span class="sxs-lookup"><span data-stu-id="4fbb0-105">The following graphic shows the different states of a <xref:System.Windows.Controls.CheckBox>.</span></span>  
   
- <span data-ttu-id="533d2-106">![Zaškrtávací políčko stavy](./media/ss-ctl-checkbox.png "SS_CTL_checkbox")</span><span class="sxs-lookup"><span data-stu-id="533d2-106">![CheckBox states](./media/ss-ctl-checkbox.png "SS_CTL_checkbox")</span></span>  
-<span data-ttu-id="533d2-107">Ovládacích prvků CheckBox v různých stavech</span><span class="sxs-lookup"><span data-stu-id="533d2-107">CheckBox controls in different states</span></span>  
+ <span data-ttu-id="4fbb0-106">![Zaškrtávací políčko stavy](./media/ss-ctl-checkbox.png "SS_CTL_checkbox")</span><span class="sxs-lookup"><span data-stu-id="4fbb0-106">![CheckBox states](./media/ss-ctl-checkbox.png "SS_CTL_checkbox")</span></span>  
+<span data-ttu-id="4fbb0-107">Ovládacích prvků CheckBox v různých stavech</span><span class="sxs-lookup"><span data-stu-id="4fbb0-107">CheckBox controls in different states</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="533d2-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="533d2-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="4fbb0-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4fbb0-108">Reference</span></span>  
  <xref:System.Windows.Controls.CheckBox>  
   <xref:System.Windows.Controls.RadioButton>  
   <xref:System.Windows.Controls.Primitives.ButtonBase>  
   <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
-## <a name="related-sections"></a><span data-ttu-id="533d2-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="533d2-109">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="4fbb0-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4fbb0-109">Related Sections</span></span>

@@ -18,24 +18,24 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0845c4d493cb3c750931a0ae2ad92b628a255c0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61985748"
 ---
-# <a name="couninitializecor-function"></a><span data-ttu-id="64acb-102">CoUninitializeCor – funkce</span><span class="sxs-lookup"><span data-stu-id="64acb-102">CoUninitializeCor Function</span></span>
-<span data-ttu-id="64acb-103">`CoUninitializeCor` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="64acb-103">`CoUninitializeCor` is obsolete.</span></span>  
+# <a name="couninitializecor-function"></a><span data-ttu-id="0ba76-102">CoUninitializeCor – funkce</span><span class="sxs-lookup"><span data-stu-id="0ba76-102">CoUninitializeCor Function</span></span>
+<span data-ttu-id="0ba76-103">`CoUninitializeCor` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="0ba76-103">`CoUninitializeCor` is obsolete.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="64acb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="64acb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0ba76-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0ba76-104">Syntax</span></span>  
   
 ```  
 STDAPI_(void) CoUninitializeCor(void);  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="64acb-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="64acb-105">Remarks</span></span>  
- <span data-ttu-id="64acb-106">Modul common language runtime nemůže být uvolněna z procesu.</span><span class="sxs-lookup"><span data-stu-id="64acb-106">The common language runtime cannot be unloaded from a process.</span></span> <span data-ttu-id="64acb-107">Modul runtime úplně odebrat ze spuštěného procesu, je nutné vypnout tohoto procesu.</span><span class="sxs-lookup"><span data-stu-id="64acb-107">To completely remove the runtime from a running process, you must shut down that process.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0ba76-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0ba76-105">Remarks</span></span>  
+ <span data-ttu-id="0ba76-106">Modul common language runtime nemůže být uvolněna z procesu.</span><span class="sxs-lookup"><span data-stu-id="0ba76-106">The common language runtime cannot be unloaded from a process.</span></span> <span data-ttu-id="0ba76-107">Modul runtime úplně odebrat ze spuštěného procesu, je nutné vypnout tohoto procesu.</span><span class="sxs-lookup"><span data-stu-id="0ba76-107">To completely remove the runtime from a running process, you must shut down that process.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="64acb-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="64acb-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0ba76-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0ba76-108">See also</span></span>
 
-- [<span data-ttu-id="64acb-109">Globální statické funkce pro metadata</span><span class="sxs-lookup"><span data-stu-id="64acb-109">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [<span data-ttu-id="0ba76-109">Globální statické funkce pro metadata</span><span class="sxs-lookup"><span data-stu-id="0ba76-109">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
