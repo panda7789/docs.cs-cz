@@ -5,11 +5,11 @@ helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
 ms.openlocfilehash: 908a38485c879e3f28399bb7dbc8303afd4505da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62023964"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka pomocí XAML
 Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá – styly a šablony vytvořit tlačítko vlastní prostředek, umožňující opětovné použití kódu a oddělení logiky tlačítko od deklarace tlačítko. Tento návod byl napsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -421,15 +421,15 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
 ## <a name="summary"></a>Souhrn  
  V tomto návodu jste provedli následující praktická cvičení:  
   
--   Cílené <xref:System.Windows.Style> s typem objektu (<xref:System.Windows.Controls.Button>).  
+- Cílené <xref:System.Windows.Style> s typem objektu (<xref:System.Windows.Controls.Button>).  
   
--   Řídí základní vlastnosti v celé aplikaci pomocí tlačítek <xref:System.Windows.Style>.  
+- Řídí základní vlastnosti v celé aplikaci pomocí tlačítek <xref:System.Windows.Style>.  
   
--   Vytvoření zdroje, jako jsou přechody pro hodnoty vlastností <xref:System.Windows.Style> funkce setter.  
+- Vytvoření zdroje, jako jsou přechody pro hodnoty vlastností <xref:System.Windows.Style> funkce setter.  
   
--   Použití šablony tlačítka Upravit vzhled tlačítka v celé aplikaci.  
+- Použití šablony tlačítka Upravit vzhled tlačítka v celé aplikaci.  
   
--   Přizpůsobit chování pro tlačítka v reakci na akce uživatele (například <xref:System.Windows.UIElement.MouseEnter>, <xref:System.Windows.UIElement.MouseLeave>, a <xref:System.Windows.Controls.Primitives.ButtonBase.Click>), které obsahovat efekty animace.  
+- Přizpůsobit chování pro tlačítka v reakci na akce uživatele (například <xref:System.Windows.UIElement.MouseEnter>, <xref:System.Windows.UIElement.MouseLeave>, a <xref:System.Windows.Controls.Primitives.ButtonBase.Click>), které obsahovat efekty animace.  
   
 ## <a name="see-also"></a>Viz také:
 

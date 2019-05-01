@@ -4,11 +4,11 @@ description: Další informace o použití ML.NET PredictionEngine předpověď 
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: 68837888c53409b4249bbece481888fb4167a5ca
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019292"
 ---
 # <a name="use-the-predictionengine-to-make-one-prediction-at-a-time---mlnet"></a>Použití PredictionEngine předpověď jeden po druhém - ML.NET 
 

@@ -11,20 +11,20 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
 ms.openlocfilehash: 162414dbd4b0f5e15eceaf73c87c122701fefc4e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59177408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052258"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data nad tím, které aplikace funguje a zpřístupňuje funkci ke zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy, jako je panel nabídek, panelů nástrojů a stavové řádky. Aplikace nejsou v netriviálních může také zobrazit další okna provést následující kroky:  
   
--   Zobrazoval informace specifické pro uživatele.  
+- Zobrazoval informace specifické pro uživatele.  
   
--   Shromážděte informace od uživatelů.  
+- Shromážděte informace od uživatelů.  
   
--   Jak zobrazit a shromažďovat informace.  
+- Jak zobrazit a shromažďovat informace.  
   
  Tyto typy systému windows jsou označovány jako *dialogových oknech*, a existují dva typy: modální a nemodální.  
   
@@ -122,27 +122,27 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 #### <a name="configuring-a-modal-dialog-box"></a>Konfigurace modální dialogové okno  
  Uživatelské rozhraní pro typické dialogové okno obsahuje následující:  
   
--   Různé ovládací prvky, které jsou nutné shromáždit požadovaná data.  
+- Různé ovládací prvky, které jsou nutné shromáždit požadovaná data.  
   
--   Zobrazení **OK** tlačítko, že uživatelé klikněte na tlačítko pro dialogové okno zavřete, vraťte se na funkci a pokračovat ve zpracování.  
+- Zobrazení **OK** tlačítko, že uživatelé klikněte na tlačítko pro dialogové okno zavřete, vraťte se na funkci a pokračovat ve zpracování.  
   
--   Zobrazení **zrušit** tlačítko, které uživatelé kliknou na dialogové okno zavřít a zastavit funkce z další zpracování.  
+- Zobrazení **zrušit** tlačítko, které uživatelé kliknou na dialogové okno zavřít a zastavit funkce z další zpracování.  
   
--   Zobrazení **Zavřít** tlačítko v záhlaví programu.  
+- Zobrazení **Zavřít** tlačítko v záhlaví programu.  
   
--   Zobrazuje ikonu.  
+- Zobrazuje ikonu.  
   
--   Zobrazuje **minimalizovat**, **Maximalizovat**, a **obnovení** tlačítka.  
+- Zobrazuje **minimalizovat**, **Maximalizovat**, a **obnovení** tlačítka.  
   
--   Zobrazení **systému** chcete minimalizovat, maximalizovat, obnovení a zavřete dialogové okno, v nabídce.  
+- Zobrazení **systému** chcete minimalizovat, maximalizovat, obnovení a zavřete dialogové okno, v nabídce.  
   
--   Otevřete výše a v centru okna, které se otevřelo dialogové okno.  
+- Otevřete výše a v centru okna, které se otevřelo dialogové okno.  
   
--   Dialogová okna by měl být umožňující změnu velikosti, kde je to možné, zabránit dialogových oken příliš malé a uživateli poskytnout užitečné výchozí velikost, je potřeba nastavit výchozí a minimální dimenzí v uvedeném pořadí.  
+- Dialogová okna by měl být umožňující změnu velikosti, kde je to možné, zabránit dialogových oken příliš malé a uživateli poskytnout užitečné výchozí velikost, je potřeba nastavit výchozí a minimální dimenzí v uvedeném pořadí.  
   
--   Stisknutím klávesy ESC by měl být nakonfigurovaný jako klávesové zkratky, které způsobí, že **zrušit** tlačítka se aktivovala. Toho dosáhnete pomocí nastavení <xref:System.Windows.Controls.Button.IsCancel%2A> vlastnost **zrušit** tlačítko `true`.  
+- Stisknutím klávesy ESC by měl být nakonfigurovaný jako klávesové zkratky, které způsobí, že **zrušit** tlačítka se aktivovala. Toho dosáhnete pomocí nastavení <xref:System.Windows.Controls.Button.IsCancel%2A> vlastnost **zrušit** tlačítko `true`.  
   
--   Stisknutím klávesy ENTER (nebo RETURN) by měl být nakonfigurovaný jako klávesové zkratky, které způsobí, že **OK** tlačítka se aktivovala. Toho dosáhnete pomocí nastavení <xref:System.Windows.Controls.Button.IsDefault%2A> vlastnost **OK** tlačítko `true`.  
+- Stisknutím klávesy ENTER (nebo RETURN) by měl být nakonfigurovaný jako klávesové zkratky, které způsobí, že **OK** tlačítka se aktivovala. Toho dosáhnete pomocí nastavení <xref:System.Windows.Controls.Button.IsDefault%2A> vlastnost **OK** tlačítko `true`.  
   
  Následující kód ukazuje tuto konfiguraci.  
   
@@ -183,13 +183,13 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 #### <a name="validating-user-provided-data"></a>Ověřování dat uživatelem zadaný  
  Když se otevře dialogové okno a uživatel zadá požadovaná data, dialogové okno zodpovídá za to, že zadaná data nejsou platná z následujících důvodů:  
   
--   Z hlediska zabezpečení by měl být ověřen veškerý vstup.  
+- Z hlediska zabezpečení by měl být ověřen veškerý vstup.  
   
--   Z hlediska specifického pro doménu ověření dat. zabraňuje chybná data zpracovává kód, který může potenciálně vyvolat výjimky.  
+- Z hlediska specifického pro doménu ověření dat. zabraňuje chybná data zpracovává kód, který může potenciálně vyvolat výjimky.  
   
--   Z pohledu uživatelské prostředí dialogové okno můžete uživatelům pomoci tím, že zobrazuje data, která jste zadali, není platný.  
+- Z pohledu uživatelské prostředí dialogové okno můžete uživatelům pomoci tím, že zobrazuje data, která jste zadali, není platný.  
   
--   Z hlediska výkonu ověřování dat v vícevrstvou aplikaci můžete snížit počet výměn mezi klientem a aplikačních vrstev, zejména pokud se aplikace skládají z webové služby nebo databáze na serveru.  
+- Z hlediska výkonu ověřování dat v vícevrstvou aplikaci můžete snížit počet výměn mezi klientem a aplikačních vrstev, zejména pokud se aplikace skládají z webové služby nebo databáze na serveru.  
   
  K ověření vázaného ovládacího prvku v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], budete muset definovat ověřovací pravidlo a přidružte jej k vazbě. Ověřovací pravidlo představuje vlastní třídu, která je odvozena z <xref:System.Windows.Controls.ValidationRule>. Následující příklad ukazuje ověřovací pravidlo `MarginValidationRule`, která zkontroluje, vázaná hodnota <xref:System.Double> a je v rámci zadaného rozsahu.  
   
@@ -329,11 +329,11 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 #### <a name="closing-a-modeless-dialog-box"></a>Zavření nemodální dialogové okno  
  Protože <xref:System.Windows.Window.DialogResult%2A> nemusí být nastaven, nemodální dialogové okno můžete zavřít pomocí systému poskytují mechanismy, které patří:  
   
--   Kliknutím **Zavřít** tlačítko v záhlaví programu.  
+- Kliknutím **Zavřít** tlačítko v záhlaví programu.  
   
--   Stisknutím klávesy ALT + F4.  
+- Stisknutím klávesy ALT + F4.  
   
--   Výběr **Zavřít** z **systému** nabídky.  
+- Výběr **Zavřít** z **systému** nabídky.  
   
  Alternativně může váš kód volat <xref:System.Windows.Window.Close%2A> při **Zavřít** po kliknutí na tlačítko.  
   

@@ -3,11 +3,11 @@ title: ConcurrencyMode Reentrant
 ms.date: 03/30/2017
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
 ms.openlocfilehash: 2170b029f1cb4a85a1b2688fc1143ffcd1682fe6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002320"
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
 Tento příklad znázorňuje nutnost a důsledky použití ConcurrencyMode.Reentrant na implementaci služby. ConcurrencyMode.Reentrant znamená, že služba (nebo zpětného volání) zpracovává pouze jednu zprávu v daném okamžiku (obdobná `ConcurencyMode.Single`). K zajištění bezpečnosti vlákna, uzamkne Windows Communication Foundation (WCF) `InstanceContext` zpracovává zprávu tak, aby zpracovat žádné další zprávy. V případě vícenásobné režim `InstanceContext` odemknut těsně před plánovaným začátkem služby umožňuje odchozí volání a tím umožní následných volání (může to být vícenásobné, jak je uvedeno v ukázce) se získat zámek příště je k dispozici ve službě. Abychom si předvedli chování, tato ukázka vysvětluje, jak může klient a služba odesílání zpráv mezi sebou pomocí duplexního kontraktu.  

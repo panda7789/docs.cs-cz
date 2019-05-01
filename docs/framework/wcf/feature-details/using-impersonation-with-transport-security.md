@@ -3,11 +3,11 @@ title: Použití zosobnění se zabezpečením přenosu
 ms.date: 03/30/2017
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
 ms.openlocfilehash: 6209007b60effe5403caf3db8855f029d0c47a0e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050672"
 ---
 # <a name="using-impersonation-with-transport-security"></a>Použití zosobnění se zabezpečením přenosu
 *Zosobnění* je schopnost serveru aplikace, abyste mohli na identity klienta. Je běžné, že služby pro použití zosobnění při ověření přístupu k prostředkům. Serverová aplikace běží, pomocí účtu služby, ale pokud server přijme připojení klienta, klient zosobní tak, aby kontroly přístupu se provádí pomocí přihlašovacích údajů klienta. Zabezpečení přenosu sítí je mechanismus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu pomocí zosobnění funkce ve Windows Communication Foundation (WCF). Další informace o zosobnění pomocí zabezpečení zpráv, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
@@ -33,24 +33,24 @@ ms.locfileid: "59151434"
 ### <a name="named-pipe-transport"></a>S názvem kanál přenosu  
  Následující položky se používají s pojmenovaný kanál přenosu:  
   
--   Pojmenovaný kanál přenosu je určen pro použití pouze v místním počítači. Pojmenovaný kanál přenosu ve službě WCF výslovně zakazuje připojení mezi počítači.  
+- Pojmenovaný kanál přenosu je určen pro použití pouze v místním počítači. Pojmenovaný kanál přenosu ve službě WCF výslovně zakazuje připojení mezi počítači.  
   
--   Pojmenované kanály nelze použít s `Impersonate` nebo `Delegate` úroveň zosobnění. Pojmenovaný kanál nelze vynutit záruka na počítači, na těchto úrovních zosobnění.  
+- Pojmenované kanály nelze použít s `Impersonate` nebo `Delegate` úroveň zosobnění. Pojmenovaný kanál nelze vynutit záruka na počítači, na těchto úrovních zosobnění.  
   
  Další informace o pojmenovaných kanálů najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
 ### <a name="http-transport"></a>Přenos pomocí protokolu HTTP  
  Vazby, které používají přenos pomocí protokolu HTTP (<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.BasicHttpBinding>) podporují více schémat ověřování, jak je vysvětleno v [Princip ověřování HTTP](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md). Nepodporuje úroveň zosobnění závisí na schéma ověřování. Následující položky se používají s přenos pomocí protokolu HTTP:  
   
--   `Anonymous` Schéma ověřování ignoruje zosobnění.  
+- `Anonymous` Schéma ověřování ignoruje zosobnění.  
   
--   `Basic` Schéma ověřování podporuje pouze `Delegate` úroveň. Budou upgradovat všechny nižší úrovně zosobnění.  
+- `Basic` Schéma ověřování podporuje pouze `Delegate` úroveň. Budou upgradovat všechny nižší úrovně zosobnění.  
   
--   `Digest` Schéma ověřování podporuje pouze `Impersonate` a `Delegate` úrovně.  
+- `Digest` Schéma ověřování podporuje pouze `Impersonate` a `Delegate` úrovně.  
   
--   `NTLM` Schéma ověřování, lze vybrat buď přímo nebo prostřednictvím vyjednávání, podporuje jenom `Delegate` úrovně v místním počítači.  
+- `NTLM` Schéma ověřování, lze vybrat buď přímo nebo prostřednictvím vyjednávání, podporuje jenom `Delegate` úrovně v místním počítači.  
   
--   Schéma ověřování protokolu Kerberos, které lze vybrat pouze prostřednictvím vyjednávání, jde použít s libovolnou úroveň zosobnění podporované.  
+- Schéma ověřování protokolu Kerberos, které lze vybrat pouze prostřednictvím vyjednávání, jde použít s libovolnou úroveň zosobnění podporované.  
   
  Další informace o přenos pomocí protokolu HTTP, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   

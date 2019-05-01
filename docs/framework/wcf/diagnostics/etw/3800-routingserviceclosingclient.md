@@ -3,11 +3,11 @@ title: 3800 - RoutingServiceClosingClient
 ms.date: 03/30/2017
 ms.assetid: 0baf214b-fa19-4871-a314-735c5939f92c
 ms.openlocfilehash: 46da971f882ce53be156576770772d27e8daaa7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33464908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61999775"
 ---
 # <a name="3800---routingserviceclosingclient"></a>3800 - RoutingServiceClosingClient
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33464908"
 |||  
 |-|-|  
 |ID|3800|  
-|Klíčová slova|RoutingServices|  
+|klíčová slova|RoutingServices|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při směrovací služby je zavření klienta.  
+ Tato událost je vygenerován při směrovací služby zavírá klienta.  
   
 ## <a name="message"></a>Zpráva  
- Směrovací služby ukončuje klienta '%1'.  
+ Směrovací služba zavírá klienta '%1'.  
   
 ## <a name="details"></a>Podrobnosti

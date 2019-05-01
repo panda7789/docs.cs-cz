@@ -6,40 +6,40 @@ helpviewer_keywords:
 - WPF [WPF], hosting Direct3D9 content
 ms.assetid: 60983736-0ab5-42cc-8b16-e9fbde261a43
 ms.openlocfilehash: 07cfa5bed6e5af131a60a303f0702f18413043e8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007112"
 ---
 # <a name="walkthrough-hosting-direct3d9-content-in-wpf"></a>Návod: Hostování obsahu Direct3D9 ve WPF
 Tento návod ukazuje, jak k hostování obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF).  
   
  V tomto podrobném návodu můžete provádět následující úlohy:  
   
--   Vytvoření projektu WPF pro hostování obsahu Direct3D9.  
+- Vytvoření projektu WPF pro hostování obsahu Direct3D9.  
   
--   Importujte obsahu Direct3D9.  
+- Importujte obsahu Direct3D9.  
   
--   Zobrazení obsahu Direct3D9 použitím <xref:System.Windows.Interop.D3DImage> třídy.  
+- Zobrazení obsahu Direct3D9 použitím <xref:System.Windows.Interop.D3DImage> třídy.  
   
  Až budete hotovi, budete vědět, jak k hostování obsahu Direct3D9 v aplikaci WPF.  
   
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   Visual Studio.  
+- Visual Studio.  
   
--   Rozhraní DirectX SDK 9 nebo novější.  
+- Rozhraní DirectX SDK 9 nebo novější.  
   
--   Knihovna DLL, která obsahuje obsahu Direct3D9 ve formátu WPF kompatibilní. Další informace najdete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](wpf-and-direct3d9-interoperation.md) a [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
+- Knihovna DLL, která obsahuje obsahu Direct3D9 ve formátu WPF kompatibilní. Další informace najdete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](wpf-and-direct3d9-interoperation.md) a [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
   
 ## <a name="creating-the-wpf-project"></a>Vytvoření projektu WPF  
  Prvním krokem je vytvoření projektu pro aplikaci WPF.  
   
 #### <a name="to-create-the-wpf-project"></a>Vytvoření projektu WPF  
   
--   Vytvoření nového projektu aplikace WPF v jazyce Visual C# s názvem `D3DHost`. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+- Vytvoření nového projektu aplikace WPF v jazyce Visual C# s názvem `D3DHost`. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
      Otevře se v souboru MainWindow.xaml [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
   

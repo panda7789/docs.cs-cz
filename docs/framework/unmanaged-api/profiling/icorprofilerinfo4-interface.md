@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 177e5ef8054f408dc8ec3475c56043394a636bc0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59194211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62049450"
 ---
 # <a name="icorprofilerinfo4-interface"></a>ICorProfilerInfo4 – rozhraní
 Poskytuje metody, které profilery kódu se používají ke komunikaci s common language runtime (CLR), která řídí sledování událostí a informace o žádostech. . `ICorProfilerInfo4` Rozhraní je rozšířením druhým `ICorProfilerInfo` rozhraní. Poskytuje nové metody pro podporu rekompilace just-in-time (JIT), přidá [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  

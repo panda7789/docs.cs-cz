@@ -1,5 +1,5 @@
 ---
-title: Pozastavení a přerušení vlákna
+title: Pozastavení a přerušení vláken
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,13 +13,13 @@ ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce1855027e89f21d96e6cf761afcaaabb9b5138f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62015091"
 ---
-# <a name="pausing-and-interrupting-threads"></a>Pozastavení a přerušení vlákna
+# <a name="pausing-and-interrupting-threads"></a>Pozastavení a přerušení vláken
 
 Nejběžnější způsoby pro synchronizaci činností vlákna jsou bloku a verzi vlákna, nebo uzamčení objektů nebo oblasti kódu. Další informace o těchto zamykání a blokování mechanismy, naleznete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
   
@@ -45,9 +45,9 @@ Nejběžnější způsoby pro synchronizaci činností vlákna jsou bloku a verz
   
  Pokud čekání se spravované Počkejte, potom <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> obě funkce vlákno okamžitě. Při čekání na nespravované čekání (například voláním rozhraní Win32 vyvolání platformy [WaitForSingleObject](/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobject) funkce), ani <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> ani <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> může převzít kontrolu nad vlákno, dokud se vrátí do nebo volá do spravovaného kódu. Chování ve spravovaném kódu vypadá takto:  
   
--   <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadInterruptedException> vyvolání v cílové vlákno.  
+- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadInterruptedException> vyvolání v cílové vlákno.  
   
--   <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadAbortException> vyvolání ve vlákně. Podrobnosti najdete v tématu [ničení vlákna](../../../docs/standard/threading/destroying-threads.md).  
+- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadAbortException> vyvolání ve vlákně. Podrobnosti najdete v tématu [ničení vlákna](../../../docs/standard/threading/destroying-threads.md).  
   
 ## <a name="see-also"></a>Viz také:
 

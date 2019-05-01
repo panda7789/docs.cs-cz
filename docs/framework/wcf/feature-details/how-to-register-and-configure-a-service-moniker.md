@@ -6,11 +6,11 @@ helpviewer_keywords:
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
 ms.openlocfilehash: dfac833cc7517af00d0264fc5d11fc83ae543569
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000802"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: Registrace a konfigurace monikeru služby
 Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontraktu, musí zaregistrovat požadované typy s atributy s modelem COM a konfigurace aplikace modelu COM a zástupný název požadované vazby konfigurace.  
@@ -36,7 +36,7 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
   
 ### <a name="to-configure-the-com-application-and-the-moniker-with-the-required-binding-configuration"></a>Konfigurace aplikace COM a zástupný název s konfigurací požadované vazby  
   
--   Umístit definic vazeb (generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) v konfiguračním souboru aplikace generovaného klienta) v konfiguračním souboru aplikace klienta. Například pro Visual Basic 6.0 spustitelný soubor s názvem CallCenterClient.exe, by měl umístit konfiguraci do souboru s názvem CallCenterConfig.exe.config v rámci stejného adresáře jako spustitelný soubor. Klientská aplikace teď můžete použít zástupný název. Všimněte si, že konfigurace vazby není povinný, pokud pomocí jedné z standardních vazby typy poskytované službou WCF.  
+- Umístit definic vazeb (generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) v konfiguračním souboru aplikace generovaného klienta) v konfiguračním souboru aplikace klienta. Například pro Visual Basic 6.0 spustitelný soubor s názvem CallCenterClient.exe, by měl umístit konfiguraci do souboru s názvem CallCenterConfig.exe.config v rámci stejného adresáře jako spustitelný soubor. Klientská aplikace teď můžete použít zástupný název. Všimněte si, že konfigurace vazby není povinný, pokud pomocí jedné z standardních vazby typy poskytované službou WCF.  
   
      Následující typ je registrován.  
   

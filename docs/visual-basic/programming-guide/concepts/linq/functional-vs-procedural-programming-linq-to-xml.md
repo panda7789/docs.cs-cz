@@ -3,30 +3,30 @@ title: Funkční vs. Procedurální programování (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ea1015a5-d4c8-4d79-8e1e-ba17a40a4f39
 ms.openlocfilehash: 892c6b7113fe1efdb8e855749c86ac5f9da8cbe4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58813455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62028392"
 ---
 # <a name="functional-vs-procedural-programming-linq-to-xml-visual-basic"></a>Funkční vs. Procedurální programování (LINQ to XML) (Visual Basic)
 Existují různé typy aplikací XML:  
   
--   Některé aplikace trvat zdroje dokumentů XML a vytvářet nové dokumenty XML, které jsou v odlišném tvaru než dokumenty zdroje.  
+- Některé aplikace trvat zdroje dokumentů XML a vytvářet nové dokumenty XML, které jsou v odlišném tvaru než dokumenty zdroje.  
   
--   Některé aplikace trvat zdroje dokumentů XML a vytvoří výsledek dokumenty v úplně jiném formuláře, jako je HTML nebo text souborů CSV.  
+- Některé aplikace trvat zdroje dokumentů XML a vytvoří výsledek dokumenty v úplně jiném formuláře, jako je HTML nebo text souborů CSV.  
   
--   Některé aplikace trvat zdroje dokumentů XML a vkládání záznamů do databáze.  
+- Některé aplikace trvat zdroje dokumentů XML a vkládání záznamů do databáze.  
   
--   Některé aplikace vzít data z jiného zdroje, jako je například databáze a vytvářet dokumenty XML z něj.  
+- Některé aplikace vzít data z jiného zdroje, jako je například databáze a vytvářet dokumenty XML z něj.  
   
  Nejsou to všechny typy aplikací XML, ale toto jsou reprezentativní sadu typů funkcí, které má programátor XML k implementaci.  
   
  Se všemi typy aplikací se používají dva přístupy kontrastní, které vývojář může trvat:  
   
--   Funkční konstrukce pomocí deklarativního přístupu.  
+- Funkční konstrukce pomocí deklarativního přístupu.  
   
--   Změna stromu XML v paměti pomocí kódu procedury.  
+- Změna stromu XML v paměti pomocí kódu procedury.  
   
  Technologie LINQ to XML podporuje oba přístupy.  
   

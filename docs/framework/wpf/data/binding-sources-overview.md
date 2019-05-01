@@ -7,11 +7,11 @@ helpviewer_keywords:
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
 ms.openlocfilehash: 72ef84cb53c6eff1fc2fb9459b40e780869243a1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59145922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62023777"
 ---
 # <a name="binding-sources-overview"></a>Přehled zdrojů připojení
 V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z. Toto téma popisuje typy objektů, které můžete použít jako zdroj vazby.  
@@ -42,13 +42,13 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
 ### <a name="other-characteristics"></a>Další vlastnosti  
  Následující seznam uvádí další důležité si uvědomit:  
   
--   Pokud chcete vytvořit objekt v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], třídě musí mít výchozí konstruktor. V některých [!INCLUDE[TLA2#tla_net](../../../../includes/tla2sharptla-net-md.md)] jazyků, jako například C#, výchozí konstruktor může vytvořit za vás.  
+- Pokud chcete vytvořit objekt v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], třídě musí mít výchozí konstruktor. V některých [!INCLUDE[TLA2#tla_net](../../../../includes/tla2sharptla-net-md.md)] jazyků, jako například C#, výchozí konstruktor může vytvořit za vás.  
   
--   Vlastnosti, je použít jako vazbu vlastnosti zdroje pro vazby musí být veřejné vlastnosti třídy. Vlastnosti explicitně definované rozhraní není přístupná pro účely vazby ani můžete chráněné, soukromé, interní nebo virtuální vlastnosti, které nemají základní implementaci.  
+- Vlastnosti, je použít jako vazbu vlastnosti zdroje pro vazby musí být veřejné vlastnosti třídy. Vlastnosti explicitně definované rozhraní není přístupná pro účely vazby ani můžete chráněné, soukromé, interní nebo virtuální vlastnosti, které nemají základní implementaci.  
   
--   Nelze vytvořit vazbu na veřejné pole.  
+- Nelze vytvořit vazbu na veřejné pole.  
   
--   Typ proměnné deklarované ve své třídě je typ, který je předán do vazby. Typ, takže v konečném důsledku použitý vazba však závisí na typu vazby vlastnosti cílové, nikoli vlastnosti zdroje vazby. Pokud není rozdíl v typu, můžete chtít napsat převaděč pro zpracování, jak vaši vlastní vlastnost původně předána do vazby. Další informace naleznete v tématu <xref:System.Windows.Data.IValueConverter>.  
+- Typ proměnné deklarované ve své třídě je typ, který je předán do vazby. Typ, takže v konečném důsledku použitý vazba však závisí na typu vazby vlastnosti cílové, nikoli vlastnosti zdroje vazby. Pokud není rozdíl v typu, můžete chtít napsat převaděč pro zpracování, jak vaši vlastní vlastnost původně předána do vazby. Další informace naleznete v tématu <xref:System.Windows.Data.IValueConverter>.  
   
 <a name="objects"></a>   
 ## <a name="using-entire-objects-as-a-binding-source"></a>Použití celé objekty jako zdroje vazby  
@@ -80,11 +80,11 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
   
  Tato tabulka popisuje následující důležité skutečnosti týkající se požadavků na oprávnění v datové vazbě:  
   
--   Pro [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnosti, datové vazby funguje jako modul vazby je moci přistupovat k vlastnosti zdroje vazby pomocí operace reflection. V opačném případě vazby vydá upozornění, která nebyla nalezena vlastnost a používá záložní hodnotu nebo výchozí hodnotu, pokud je k dispozici.  
+- Pro [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnosti, datové vazby funguje jako modul vazby je moci přistupovat k vlastnosti zdroje vazby pomocí operace reflection. V opačném případě vazby vydá upozornění, která nebyla nalezena vlastnost a používá záložní hodnotu nebo výchozí hodnotu, pokud je k dispozici.  
   
--   Můžete navázat na vlastnosti u dynamických objektů, které jsou definované při kompilaci čas nebo běhu.  
+- Můžete navázat na vlastnosti u dynamických objektů, které jsou definované při kompilaci čas nebo běhu.  
   
--   Vždy můžete vázat na vlastnosti závislosti.  
+- Vždy můžete vázat na vlastnosti závislosti.  
   
  Požadavek na oprávnění [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] vazba je podobné. V izolovaném prostoru částečným vztahem důvěryhodnosti <xref:System.Windows.Data.XmlDataProvider> selže, pokud nemá oprávnění pro přístup k zadaná data.  
   

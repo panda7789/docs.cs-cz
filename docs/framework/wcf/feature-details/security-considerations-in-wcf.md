@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: 42055ee0-6d0c-443d-9d89-788dfc345d6d
 ms.openlocfilehash: 16b3afe9540f3e2953311f602408fce5412be2eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59112213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000763"
 ---
 # <a name="security-considerations-in-wcf"></a>Důležité informace o zabezpečení ve službě WCF
 Témata v této části obsahují různé položky, které souvisejí se zabezpečením, vzít v úvahu při navrhování aplikace Windows Communication Foundation (WCF).  

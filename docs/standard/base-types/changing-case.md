@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: ce495ce01c970fb46cc7e7e374994fd34a7730a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051569"
 ---
 # <a name="changing-case-in-net"></a>Změna velikosti písmen v .NET
 Pokud píšete aplikaci, která přijímá vstup od uživatele, nikdy lze zajistit co případ uživatel použije k zadání data. Často chcete řetězců, které mají být notaci, zejména v případě, že jsou zobrazeny v uživatelském rozhraní. Následující tabulka popisuje tři metody změny velikosti písmen. První dvě metody poskytují přetížení přijímající jazykovou verzi.  

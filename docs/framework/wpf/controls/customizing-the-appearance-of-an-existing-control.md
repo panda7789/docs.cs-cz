@@ -13,11 +13,11 @@ helpviewer_keywords:
 - templates [WPF], custom for existing controls
 ms.assetid: 678dd116-43a2-4b8c-82b5-6b826f126e31
 ms.openlocfilehash: b52a63a0531d71c784ef12f29049754f4a9efddb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62017813"
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
 <a name="introduction"></a> A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální struktury a chování ovládacího prvku visual. Můžete přizpůsobit vzhled ovládacího prvku tak, že udělíte it nový <xref:System.Windows.Controls.ControlTemplate>. Když vytvoříte <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhledu stávajícího ovládacího prvku beze změny jeho funkce. Například měli tlačítka ve vaší aplikaci round místo výchozí Čtvereček tvar, ale stále na tlačítko vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
@@ -64,11 +64,11 @@ Zaškrtávací políčko, který používá šablonu vlastního ovládacího prv
   
  V tomto příkladu vizuální struktury se skládá z následujících částí:  
   
--   A <xref:System.Windows.Controls.Border> s názvem `RootElement` , který slouží jako kořen šablony <xref:System.Windows.FrameworkElement>.  
+- A <xref:System.Windows.Controls.Border> s názvem `RootElement` , který slouží jako kořen šablony <xref:System.Windows.FrameworkElement>.  
   
--   A <xref:System.Windows.Controls.Grid> , který je podřízený `RootElement`.  
+- A <xref:System.Windows.Controls.Grid> , který je podřízený `RootElement`.  
   
--   A <xref:System.Windows.Controls.ContentPresenter> , který zobrazí obsah na tlačítko. <xref:System.Windows.Controls.ContentPresenter> Umožňuje jakéhokoli typu objektu, který se má zobrazit.  
+- A <xref:System.Windows.Controls.ContentPresenter> , který zobrazí obsah na tlačítko. <xref:System.Windows.Controls.ContentPresenter> Umožňuje jakéhokoli typu objektu, který se má zobrazit.  
   
  [!code-xaml[VSMButtonTemplate#BasicTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#basictemplate)]  
   
@@ -85,9 +85,9 @@ Zaškrtávací políčko, který používá šablonu vlastního ovládacího prv
   
  <xref:System.Windows.Controls.Control> Třída definuje několik vlastností, které musí používat šablonu ovládacího prvku mají nějaký efekt na ovládacím prvku, když jsou nastavené. Jak <xref:System.Windows.Controls.ControlTemplate> používá vlastnost závisí na vlastnost. <xref:System.Windows.Controls.ControlTemplate> Musíte použít vlastnost v jednom z následujících způsobů:  
   
--   V elementu <xref:System.Windows.Controls.ControlTemplate> šablona vytvoří vazbu na vlastnost.  
+- V elementu <xref:System.Windows.Controls.ControlTemplate> šablona vytvoří vazbu na vlastnost.  
   
--   V elementu <xref:System.Windows.Controls.ControlTemplate> dědí vlastnosti z nadřazené položky <xref:System.Windows.FrameworkElement>.  
+- V elementu <xref:System.Windows.Controls.ControlTemplate> dědí vlastnosti z nadřazené položky <xref:System.Windows.FrameworkElement>.  
   
  Následující tabulka uvádí vizuální vlastnosti zděděna z ovládacího prvku <xref:System.Windows.Controls.Control> třídy. Také to značí, zda ovládací prvek výchozí šablonu ovládacího prvku, použije se hodnota zděděné vlastnosti nebo musí být vázán šablony.  
   
@@ -167,11 +167,11 @@ Který používá šablonu vlastního ovládacího prvku ve stavu při stisknut�
   
  Můžete zadat dobu, kterou trvá animace každý hladký přechod ovládacího prvku z jednoho stavu do jiného tak, že přidáte <xref:System.Windows.VisualTransition> objektů <xref:System.Windows.Controls.ControlTemplate>. Když vytvoříte <xref:System.Windows.VisualTransition>, můžete zadat jednu nebo víc z následujících akcí:  
   
--   Čas potřebný pro přechod mezi stavy, dojde k.  
+- Čas potřebný pro přechod mezi stavy, dojde k.  
   
--   Další změny vzhled ovládacího prvku, ke kterým dochází při přechodu.  
+- Další změny vzhled ovládacího prvku, ke kterým dochází při přechodu.  
   
--   Které stavy <xref:System.Windows.VisualTransition> platí pro.  
+- Které stavy <xref:System.Windows.VisualTransition> platí pro.  
   
 ### <a name="specifying-the-duration-of-a-transition"></a>Určení doby trvání přechodu  
  Můžete určit, jak dlouho trvá přechod tak, že nastavíte <xref:System.Windows.VisualTransition.GeneratedDuration%2A> vlastnost. V předchozím příkladu má <xref:System.Windows.VisualState> , která určuje, že okraj tlačítka viditelný, při stisknutí tlačítka, ale animace trvá příliš dlouho být patrné, pokud je tlačítko rychle stisknutí a vydání. Můžete použít <xref:System.Windows.VisualTransition> určit dobu, trvá přechod do stavu při stisknutí ovládacího prvku. Následující příklad určuje, že ovládací prvek získá setiny sekundy přejde do stavu při stisknutí tlačítka.  
@@ -201,13 +201,13 @@ Který používá šablonu vlastního ovládacího prvku ve stavu při stisknut�
   
  Následující příklad ukazuje <xref:System.Windows.VisualStateGroup> pro `CommonStates`. V příkladu je definována <xref:System.Windows.VisualTransition> pro každé z následujících tlačítka přechody.  
   
--   Chcete `Pressed` stavu.  
+- Chcete `Pressed` stavu.  
   
--   Chcete `MouseOver` stavu.  
+- Chcete `MouseOver` stavu.  
   
--   Z `Pressed` do stavu `MouseOver` stavu.  
+- Z `Pressed` do stavu `MouseOver` stavu.  
   
--   Z `MouseOver` do stavu `Normal` stavu.  
+- Z `MouseOver` do stavu `Normal` stavu.  
   
  [!code-xaml[VSMButtonTemplate#VisualTransitions](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#visualtransitions)]  
   
@@ -217,11 +217,11 @@ Který používá šablonu vlastního ovládacího prvku ve stavu při stisknut�
   
  Kontrakt ovládacího prvku má tři prvky:  
   
--   Vizuální prvky, které používá logiky ovládacího prvku.  
+- Vizuální prvky, které používá logiky ovládacího prvku.  
   
--   Stavy ovládacího prvku a skupiny, do které patří každý stav.  
+- Stavy ovládacího prvku a skupiny, do které patří každý stav.  
   
--   Veřejné vlastnosti, které ovlivňují vizuální ovládací prvek.  
+- Veřejné vlastnosti, které ovlivňují vizuální ovládací prvek.  
   
 ### <a name="visual-elements-in-the-control-contract"></a>Vizuální prvky v kontrakt ovládacího prvku  
  Někdy logiky ovládacího prvku komunikuje <xref:System.Windows.FrameworkElement> , který je v <xref:System.Windows.Controls.ControlTemplate>. Například ovládací prvek může zpracovat událost jednoho z jeho prvků. Pokud se očekává, že ovládací prvek najít konkrétní <xref:System.Windows.FrameworkElement> v <xref:System.Windows.Controls.ControlTemplate>, je nutné sdělit <xref:System.Windows.Controls.ControlTemplate> Autor. Ovládací prvek používá <xref:System.Windows.TemplatePartAttribute> k předání typu prvku, který se očekává a co by měl být název elementu. <xref:System.Windows.Controls.Button> Nemá <xref:System.Windows.FrameworkElement> částí v jeho kontrakt ovládacího prvku, ale další ovládací prvky, jako <xref:System.Windows.Controls.ComboBox>, provést.  
@@ -250,9 +250,9 @@ Který používá šablonu vlastního ovládacího prvku ve stavu při stisknut�
   
  Při vytváření <xref:System.Windows.Controls.ControlTemplate>, často je nejjednodušší začít s existujícím <xref:System.Windows.Controls.ControlTemplate> a provádět změny. Můžete provést jednu z následujících akcí, chcete-li změnit existující <xref:System.Windows.Controls.ControlTemplate>:  
   
--   Použití návrháře, jako je například Expression Blend, který poskytuje grafické uživatelské rozhraní pro vytváření šablon ovládacích prvků. Další informace najdete v tématu [práce se styly ovládacího prvku, který podporuje šablony](https://go.microsoft.com/fwlink/?LinkId=161153).  
+- Použití návrháře, jako je například Expression Blend, který poskytuje grafické uživatelské rozhraní pro vytváření šablon ovládacích prvků. Další informace najdete v tématu [práce se styly ovládacího prvku, který podporuje šablony](https://go.microsoft.com/fwlink/?LinkId=161153).  
   
--   Získání výchozí <xref:System.Windows.Controls.ControlTemplate> a upravit ho. Najít výchozí šablony ovládacích prvků, které jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [výchozí WPF motivy](https://go.microsoft.com/fwlink/?LinkID=158252).  
+- Získání výchozí <xref:System.Windows.Controls.ControlTemplate> a upravit ho. Najít výchozí šablony ovládacích prvků, které jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [výchozí WPF motivy](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
 <a name="complete_example"></a>   
 ## <a name="complete-example"></a>Kompletní příklad  

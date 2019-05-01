@@ -10,11 +10,11 @@ helpviewer_keywords:
 - thumbnails [WPF], loading images as
 ms.assetid: 02e055a0-54df-499a-b8b6-ab6ff7535cff
 ms.openlocfilehash: f984293a395e925368b20cef6aa0cd902bd6fc15
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62003181"
 ---
 # <a name="how-to-load-an-image-as-a-thumbnail"></a>Postupy: Načtení obrázku jako miniatury
 Následující příklady ukazují, jak načíst <xref:System.Windows.Controls.Image> jako miniatury pro konzervaci paměti aplikace.  

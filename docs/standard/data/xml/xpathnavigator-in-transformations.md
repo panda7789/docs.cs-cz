@@ -9,11 +9,11 @@ ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 57290af1df8d370c928a97aba1622e41a6a33589
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026732"
 ---
 # <a name="xpathnavigator-in-transformations"></a>XPathNavigator v transformacích
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určený pro použití jako vstup do šablony stylů jazyk pro transformace XSLT (). Je implementován v <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>, a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datovém modelu World Wide Web Consortium (W3C), jak je popsáno v části 5 doporučení jazyk XML Path (XPath).  
@@ -57,7 +57,7 @@ ms.locfileid: "46003981"
 </xsl:stylesheet>  
 ```  
   
-## <a name="testxml"></a>test.XML  
+## <a name="testxml"></a>test.xml  
   
 ```xml  
 <root>Some text</root>  

@@ -3,11 +3,11 @@ title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
 ms.openlocfilehash: 14907dd3df66478e8f84b7735a84dd500855448b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051608"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tato ukázka demonstruje použití monikeru služby Windows Communication Foundation (WCF) k integraci webové služby do založené na modelu COM. vývojových prostředích, jako je například Microsoft Office Visual Basic for Applications (Office VBA) nebo Visual Basic 6.0. Tento příklad se skládá z klienta Windows Script Host (VBS), podpůrné klientské knihovny (DLL) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba je služba kalkulačky a klient modelu COM zavolá matematických operací – přidat, odečítání, násobení a rozdělit – ve službě. Činnost klienta je viditelný v ovládacím prvku windows pole zpráv.  
@@ -43,11 +43,11 @@ public interface ICalculator
   
  Vzorek ukazuje tři alternativní přístupy k použití monikeru:  
   
--   Typu kontraktu – smlouvy je registrován jako typ viditelné modelu COM v klientském počítači.  
+- Typu kontraktu – smlouvy je registrován jako typ viditelné modelu COM v klientském počítači.  
   
--   Smlouva WSDL – smlouvy se dodává ve formě dokument WSDL.  
+- Smlouva WSDL – smlouvy se dodává ve formě dokument WSDL.  
   
--   Kontraktů výměny metadat – smlouvy je načten v době běhu z koncového bodu metadat Exchange (MEX).  
+- Kontraktů výměny metadat – smlouvy je načten v době běhu z koncového bodu metadat Exchange (MEX).  
   
 ## <a name="typed-contract"></a>Typu kontraktu  
  Používat zástupný název typu kontraktu použití, musí být zaregistrovaný s odpovídajícím způsobem atributy typy pro kontrakt služby s modelu COM. Klient nejprve musí být generovány pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Spusťte následující příkaz z příkazového řádku v adresáři klienta ke generování typové proxy.  
@@ -87,11 +87,11 @@ contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")
   
  Zadejte parametry používané zástupný název:  
   
--   Adresa koncového bodu služby.  
+- Adresa koncového bodu služby.  
   
--   Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu. V takovém případě wsHttpBinding definované v systému se používá, i když je možné definovat vlastní vazby v konfiguračních souborů klienta. Pro použití s Windows Script Host je vlastní vazby definované v souboru Cscript.exe.config ve stejném adresáři jako Cscript.exe.  
+- Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu. V takovém případě wsHttpBinding definované v systému se používá, i když je možné definovat vlastní vazby v konfiguračních souborů klienta. Pro použití s Windows Script Host je vlastní vazby definované v souboru Cscript.exe.config ve stejném adresáři jako Cscript.exe.  
   
--   Typ smlouvy, která je podporována v koncovém bodě. Jedná se o typ, který byl generován a zaregistrován výše. Vzhledem k tomu, že skript jazyka Visual Basic neposkytuje prostředí modelu COM silného typu, je třeba zadat identifikátor pro kontrakt. Tento identifikátor GUID je `interfaceID` z CalcProxy.tlb, které lze zobrazit pomocí nástroje modelu COM, jako je například prohlížeč objektů OLE/COM (OleView.exe). Silný prostředích, jako například Office VBA nebo Visual Basic 6.0 přidat explicitní odkaz na knihovnu typů a pak deklarační typ objektu proxy použít místo parametru kontraktu. To také poskytuje podporu technologie IntelliSense při vývoji klientských aplikací.  
+- Typ smlouvy, která je podporována v koncovém bodě. Jedná se o typ, který byl generován a zaregistrován výše. Vzhledem k tomu, že skript jazyka Visual Basic neposkytuje prostředí modelu COM silného typu, je třeba zadat identifikátor pro kontrakt. Tento identifikátor GUID je `interfaceID` z CalcProxy.tlb, které lze zobrazit pomocí nástroje modelu COM, jako je například prohlížeč objektů OLE/COM (OleView.exe). Silný prostředích, jako například Office VBA nebo Visual Basic 6.0 přidat explicitní odkaz na knihovnu typů a pak deklarační typ objektu proxy použít místo parametru kontraktu. To také poskytuje podporu technologie IntelliSense při vývoji klientských aplikací.  
   
  Instance proxy s monikeru služby s vytvořen, klientská aplikace může volat metody na proxy serveru, což vede k infrastruktuře moniker služby volání odpovídající operace služby.  
   
@@ -127,13 +127,13 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
   
  Zadejte parametry používané zástupný název:  
   
--   Adresa koncového bodu služby.  
+- Adresa koncového bodu služby.  
   
--   Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu a obor názvů, ve kterém je definován, že vazba. V takovém případě `wsHttpBinding_ICalculator` se používá.  
+- Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu a obor názvů, ve kterém je definován, že vazba. V takovém případě `wsHttpBinding_ICalculator` se používá.  
   
--   WSDL, který definuje kontrakt. V tomto případě je řetězec, který byl přečten ze souboru serviceWsdl.xml.  
+- WSDL, který definuje kontrakt. V tomto případě je řetězec, který byl přečten ze souboru serviceWsdl.xml.  
   
--   Název a obor názvů kontraktu. Tato identifikace totiž jazyka WSDL může obsahovat více než jeden kontrakt.  
+- Název a obor názvů kontraktu. Tato identifikace totiž jazyka WSDL může obsahovat více než jeden kontrakt.  
   
     > [!NOTE]
     >  Ve výchozím nastavení, služby WCF generovat samostatné soubory WSDL pro každý obor názvů, který používá. Tyto jsou propojeny s použitím konstrukce importu WSDL. Protože je moniker očekává jenom jednu definici WSDL, službu buď musí používat jednoho oboru názvů, jak je ukázáno v tomto příkladu nebo samostatné soubory je potřeba sloučit ručně.  
@@ -165,13 +165,13 @@ Set mexServiceMoniker = GetObject(mexMonikerString)
   
  Zadejte parametry používané zástupný název:  
   
--   Adresa koncového bodu služby metadata exchange.  
+- Adresa koncového bodu služby metadata exchange.  
   
--   Adresa koncového bodu služby.  
+- Adresa koncového bodu služby.  
   
--   Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu a obor názvů, ve kterém je definován, že vazba. V takovém případě `wsHttpBinding_ICalculator` se používá.  
+- Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu a obor názvů, ve kterém je definován, že vazba. V takovém případě `wsHttpBinding_ICalculator` se používá.  
   
--   Název a obor názvů kontraktu. Tato identifikace totiž jazyka WSDL může obsahovat více než jeden kontrakt.  
+- Název a obor názvů kontraktu. Tato identifikace totiž jazyka WSDL může obsahovat více než jeden kontrakt.  
   
  Instance proxy s monikeru služby s vytvořen, klientská aplikace může volat metody na proxy serveru, což vede k infrastruktuře moniker služby volání odpovídající operace služby.  
   
@@ -235,4 +235,4 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Z bezpečnostních důvodů odstranit definici virtuální adresář a oprávnění udělené v kroků instalace, až budete hotovi s ukázkami.  
+- Z bezpečnostních důvodů odstranit definici virtuální adresář a oprávnění udělené v kroků instalace, až budete hotovi s ukázkami.  

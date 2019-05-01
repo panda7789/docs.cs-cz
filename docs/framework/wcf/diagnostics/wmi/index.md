@@ -3,11 +3,11 @@ title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumen
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
 ms.openlocfilehash: 9acb1b280248f8552680ea3fbba831b3de53b2c3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62048281"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
@@ -112,13 +112,13 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
   
      Tento skript Powershellu používá zabezpečení SDDL Descriptor Definition Language () k udělení přístupu integrované uživatelé skupiny k oboru názvů WMI "kořenový/servicemodel". Určuje následující seznamy ACL:  
   
-    -   Předdefinovaný účet Administrator (BA) - už měli přístup.  
+    - Předdefinovaný účet Administrator (BA) - už měli přístup.  
   
-    -   Síťová služba (NS) - už měli přístup.  
+    - Síťová služba (NS) - už měli přístup.  
   
-    -   Místní systém (LS) - už měli přístup.  
+    - Místní systém (LS) - už měli přístup.  
   
-    -   Integrované uživatelé – skupinu, kterou chcete udělit přístup k.  
+    - Integrované uživatelé – skupinu, kterou chcete udělit přístup k.  
   
 #### <a name="to-grant-provider-registration-access"></a>Poskytovatel udělit přístup k registraci  
   

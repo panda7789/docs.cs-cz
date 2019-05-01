@@ -3,11 +3,11 @@ title: Hello World se směrovací službou
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
 ms.openlocfilehash: 37d2eaffa1ca5a4cce27c4950d00987828a61196
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006600"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
 Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, která umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí služby směrování. V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovač a přesměrovala do aktuální Kalkulačka služby. Zprávy ze služby Kalkulačka odesílají zpět do směrovač, který je zase předá zpět do klienta kalkulačky.
@@ -21,9 +21,9 @@ Tato ukázka předvádí, směrovací služba Windows Communication Foundation (
     > [!NOTE]
     >  Pokud stisknete klávesu F5, spustí se automaticky Kalkulačka klienta. Pokud stisknete CTRL + SHIFT + B (sestavení), je nutné spustit následující aplikace sami.
     >
-    > 1.  Kalkulačka klienta (./CalculatorClient/bin/client.exe
-    > 2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)
-    > 3.  Služba směrování (. / RoutingService/bin/RoutingService.exe)
+    > 1. Kalkulačka klienta (./CalculatorClient/bin/client.exe
+    > 2. Kalkulačka služby (. / CalculatorService/bin/service.exe)
+    > 3. Služba směrování (. / RoutingService/bin/RoutingService.exe)
 
 3. Stisknutím klávesy ENTER klienta.
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - automatic layout [WPF], creating buttons
 ms.assetid: 96c206d0-9e77-4784-9d2d-5045aed2021c
 ms.openlocfilehash: 8eb1e93dd87c210812c9b7758c744a616ef2d862
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052388"
 ---
 # <a name="how-to-use-automatic-layout-to-create-a-button"></a>Postupy: Vytvoření tlačítka pomocí automatického rozložení
 Tento příklad popisuje, jak automatické rozložení metodu použijte, chcete-li vytvořit tlačítko v lokalizovatelných aplikacích.  

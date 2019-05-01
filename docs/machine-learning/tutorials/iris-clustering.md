@@ -7,11 +7,11 @@ ms.date: 04/08/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
 ms.openlocfilehash: 86eba0c7a3eaeed008d41ff950bf2fd7e0e5fb57
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019045"
 ---
 # <a name="tutorial-cluster-iris-flowers-using-a-clustering-learner-with-mlnet"></a>Kurz: Cluster květin iris pomocí clusteringu learner ML.NET
 

@@ -6,8 +6,8 @@ ms.openlocfilehash: c85b0701c870fe2b4a3c11dc384e890e1ed001dd
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050763"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 Tato část obsahuje běžné dotazy a řešení potíží s pomoci při používání front ve Windows Communication Foundation (WCF).  
@@ -29,11 +29,11 @@ Tato část obsahuje běžné dotazy a řešení potíží s pomoci při použí
   
  **ODPOVĚĎ:** K dispozici v MSMQ 4.0, ale ne v MSMQ 3.0 spadají následující funkce:  
   
--   Vlastní frontu nedoručených zpráv je podporován pouze v MSMQ 4.0.  
+- Vlastní frontu nedoručených zpráv je podporován pouze v MSMQ 4.0.  
   
--   Služba MSMQ 3.0 a 4.0 zpracování jinak nezpracovatelných zpráv.  
+- Služba MSMQ 3.0 a 4.0 zpracování jinak nezpracovatelných zpráv.  
   
--   Pouze služba MSMQ 4.0 podporuje vzdálené transakce čtení.  
+- Pouze služba MSMQ 4.0 podporuje vzdálené transakce čtení.  
   
  Další informace najdete v tématu [rozdíly ve funkcích služby Řízení front ve Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).  
   
@@ -60,19 +60,19 @@ Tato část obsahuje běžné dotazy a řešení potíží s pomoci při použí
   
  **ODPOVĚĎ:** Chcete-li zjistit odpověď, seznámení se základními následujícím kontrolním seznamu:  
   
--   Zkontrolujte, jestli jsou kompatibilní s záruky zadaný transakční fronty požadavků. Mějte na paměti následující zásady:  
+- Zkontrolujte, jestli jsou kompatibilní s záruky zadaný transakční fronty požadavků. Mějte na paměti následující zásady:  
   
-    -   Můžete odeslat trvalý zprávy (datagramů a relace) s "právě jednou" záruky (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) pouze pro transakční frontu.  
+    - Můžete odeslat trvalý zprávy (datagramů a relace) s "právě jednou" záruky (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) pouze pro transakční frontu.  
   
-    -   Můžete odeslat relace pouze s "právě jednou" záruky.  
+    - Můžete odeslat relace pouze s "právě jednou" záruky.  
   
-    -   Transakce se vyžaduje pro příjem zpráv v transakční frontě relaci.  
+    - Transakce se vyžaduje pro příjem zpráv v transakční frontě relaci.  
   
-    -   Můžete odesílat nebo přijímat přechodné nebo trvalé zprávy (pouze datagramy) s žádné záruky (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) pouze pro transakční frontu.  
+    - Můžete odesílat nebo přijímat přechodné nebo trvalé zprávy (pouze datagramy) s žádné záruky (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) pouze pro transakční frontu.  
   
--   Zkontrolujte fronty nedoručených zpráv. Pokud zjistíte, že zprávy, zjistit, proč se doručit.  
+- Zkontrolujte fronty nedoručených zpráv. Pokud zjistíte, že zprávy, zjistit, proč se doručit.  
   
--   Zkontrolujte fronty odesílaných zpráv pro připojení nebo řeší problémy.  
+- Zkontrolujte fronty odesílaných zpráv pro připojení nebo řeší problémy.  
   
  **DOTAZ:** Zadání vlastní frontu nedoručených zpráv, ale při spuštění aplikace odesílatele, získat výjimku, která nebyla nalezena fronty nedoručených zpráv nebo odesílací aplikace nemá oprávnění pro frontu nedoručených zpráv. Proč k tomu dochází?  
   
@@ -184,17 +184,17 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
   
  **ODPOVĚĎ:** Existují tři možné důvody:  
   
--   Pokud jste v režimu domény, vzdálené transakční přijímat vyžaduje přístup k síti Microsoft distribuované transakce koordinátor (MSDTC). Můžete povolit pomocí **přidat nebo odebrat součásti**.  
+- Pokud jste v režimu domény, vzdálené transakční přijímat vyžaduje přístup k síti Microsoft distribuované transakce koordinátor (MSDTC). Můžete povolit pomocí **přidat nebo odebrat součásti**.  
   
      ![Snímek obrazovky zobrazující povolení síťové služby DTC přístup.](./media/troubleshooting-queued-messaging/enable-distributed-transaction-coordinator-access.jpg)  
   
--   Zkontrolujte režim ověřování pro komunikaci se správcem transakcí. Pokud jste v režimu pracovní skupiny, je nutné vybrat "Ověření není vyžadováno". Pokud jste v režimu domény, musíte vybrat "Je vyžadováno vzájemné ověření".  
+- Zkontrolujte režim ověřování pro komunikaci se správcem transakcí. Pokud jste v režimu pracovní skupiny, je nutné vybrat "Ověření není vyžadováno". Pokud jste v režimu domény, musíte vybrat "Je vyžadováno vzájemné ověření".  
   
      ![Povolení transakce XA](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")  
   
--   Ujistěte se, že služba MSDTC je v seznamu výjimek v **brány Firewall pro připojení k Internetu** nastavení.  
+- Ujistěte se, že služba MSDTC je v seznamu výjimek v **brány Firewall pro připojení k Internetu** nastavení.  
   
--   Ujistěte se, že používáte [!INCLUDE[wv](../../../../includes/wv-md.md)]. MSMQ na [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje vzdálené transakce čtení. MSMQ na starších verzích Windows nepodporuje vzdálené transakce čtení.  
+- Ujistěte se, že používáte [!INCLUDE[wv](../../../../includes/wv-md.md)]. MSMQ na [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje vzdálené transakce čtení. MSMQ na starších verzích Windows nepodporuje vzdálené transakce čtení.  
   
  **DOTAZ:** Při čtení z fronty služby je síťová služba, například ve webovém hostitele, proč se zobrazí odepření přístupu výjimka je vyvolána při čtení z fronty?  
   

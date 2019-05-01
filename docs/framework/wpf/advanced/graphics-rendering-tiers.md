@@ -9,11 +9,11 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
 ms.openlocfilehash: d5924ff9336bc6e93022caf1b85d5fd98f7a617d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59197383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051582"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízení se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -22,23 +22,23 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
 ## <a name="graphics-hardware"></a>Grafický Hardware  
  Funkce, že mají největší dopad na úrovně vrstvy vykreslování grafiky hardware patří:  
   
--   **Video RAM** množství grafické paměti na hardwarovou akceleraci Určuje velikost a počet vyrovnávacích pamětí, které lze použít pro skládání grafiky.  
+- **Video RAM** množství grafické paměti na hardwarovou akceleraci Určuje velikost a počet vyrovnávacích pamětí, které lze použít pro skládání grafiky.  
   
--   **Pixel Shader** pixel shader je grafických funkce, která vypočítá účinky na základě jednotlivých pixelů. V závislosti na řešení zobrazených grafiky může být několik milionů pixelů, které potřebují ke zpracování pro každý snímek pro zobrazení.  
+- **Pixel Shader** pixel shader je grafických funkce, která vypočítá účinky na základě jednotlivých pixelů. V závislosti na řešení zobrazených grafiky může být několik milionů pixelů, které potřebují ke zpracování pro každý snímek pro zobrazení.  
   
--   **Vertex Shader** vertex shader je grafických funkce, která provádí matematických operací s daty vrcholu objektu.  
+- **Vertex Shader** vertex shader je grafických funkce, která provádí matematických operací s daty vrcholu objektu.  
   
--   **Podpora násobnou** násobnou podporu odkazuje na možnost použít dva nebo více jedinečných textury během prolnutí operace u objektu 3D grafiky. Stupeň multitexture podpory se určuje podle počtu jednotek multitexture na hardwarovou akceleraci.  
+- **Podpora násobnou** násobnou podporu odkazuje na možnost použít dva nebo více jedinečných textury během prolnutí operace u objektu 3D grafiky. Stupeň multitexture podpory se určuje podle počtu jednotek multitexture na hardwarovou akceleraci.  
   
 <a name="rendering_tier_definitions"></a>   
 ## <a name="rendering-tier-definitions"></a>Definice úrovní vykreslování  
  Funkce hardwarovou akceleraci definují možností vykreslování objektu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Systém definuje tři vrstvy vykreslování:  
   
--   **Vykreslování vrstvy 0** žádné hardwarovou akceleraci grafiky. Všechny funkce grafiky použít softwarové akcelerace. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je starší než verze 9.0.  
+- **Vykreslování vrstvy 0** žádné hardwarovou akceleraci grafiky. Všechny funkce grafiky použít softwarové akcelerace. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je starší než verze 9.0.  
   
--   **Vykreslování vrstvy 1** některé grafické funkce využívají hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
+- **Vykreslování vrstvy 1** některé grafické funkce využívají hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
   
--   **Vykreslování vrstva 2** většinu funkcí grafiky použít hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
+- **Vykreslování vrstva 2** většinu funkcí grafiky použít hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
   
  <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=nameWithType> Vlastnost umožňuje načíst úroveň vykreslování v době spuštění aplikace. Používáte k určení, jestli zařízení podporuje některé funkce grafiky hardwarově urychlené vykreslování úroveň. Vaše aplikace potom může provést různý kód cesty v době běhu v závislosti na úrovni vykreslování zařízení podporuje.  
   

@@ -3,11 +3,11 @@ title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
 ms.openlocfilehash: 8d72ab5c7d8c461cd2ce4d4003d449ac9fe7e807
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007718"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenos ve službě WCF, pomocí architektura kanálů a osvědčených postupů WCF. Postup vytvoření vlastní přenosu jsou následující:  
@@ -32,15 +32,15 @@ Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP 
 ## <a name="message-exchange-patterns"></a>Vzorky serveru Exchange zprávu  
  Prvním krokem v psaní vlastních přenosu je rozhodnout, jaké zprávy Exchange vzory (MEPs) jsou požadovány pro přenos. Existují tři MEPs lze vybírat:  
   
--   Datagram (IInputChannel/IOutputChannel)  
+- Datagram (IInputChannel/IOutputChannel)  
   
      Při použití datagram MEP, klient odešle zprávu pomocí exchange "vypal a zapomeň". A vypal a zapomeň exchange je ten, který vyžaduje out-of-band potvrzení úspěšné dodání. Zpráva může dojít ke ztrátě během přenosu a nikdy nedorazí služby. Pokud se operace odeslání se úspěšně dokončí na straně klienta, není zaručeno, že vzdálený koncový bod přijal zprávu. Datagram je základním stavebním blokem pro zasílání zpráv, jak můžete vytvářet vlastní protokoly, dojde k jeho zvýraznění – včetně protokolů spolehlivé a zabezpečené protokoly. Implementace klienta datagram kanály <xref:System.ServiceModel.Channels.IOutputChannel> implementovat rozhraní a služba datagramu kanály <xref:System.ServiceModel.Channels.IInputChannel> rozhraní.  
   
--   Request-Response (třídu IRequestChannel/IReplyChannel)  
+- Request-Response (třídu IRequestChannel/IReplyChannel)  
   
      V tomto MEP je odeslána zpráva a přijetí odpovědi. Vzor se skládá z dvojice žádost odpověď. Odpověď na požadavek volání příklady vzdálených volání procedur (RPC) a prohlížeče získá. Tento model se také označuje jako poloduplexní. V tomto MEP kanály klientů implementovat <xref:System.ServiceModel.Channels.IRequestChannel> a implementují kanály service <xref:System.ServiceModel.Channels.IReplyChannel>.  
   
--   Duplexní režim (IDuplexChannel)  
+- Duplexní režim (IDuplexChannel)  
   
      Duplexní MEP umožňuje libovolný počet zpráv pro klientem odesílat a přijímat v libovolném pořadí. Duplexní MEP je jako je telefonní hovor, kde je zpráva každého slova, se kterým se mluví. Vzhledem k tomu, že obě strany můžete odesílat a přijímat v tomto MEP, rozhraní implementované pomocí kanálů klient a služba je <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
@@ -52,17 +52,17 @@ Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP 
 ### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>Objekt ICommunicationObject a životního cyklu objektu WCF  
  WCF obsahuje běžné stavového stroje, který se používá pro správu životního cyklu objektů, jako jsou <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> , která se používají ke komunikaci. Existuje pět stavy, ve kterých lze tyto komunikace objekty existují. Tyto stavy jsou reprezentovány <xref:System.ServiceModel.CommunicationState> výčtu a jsou následujícím způsobem:  
   
--   Vytvořit: Toto je stav <xref:System.ServiceModel.ICommunicationObject> kdy je poprvé vytvořena. Vyvolá se v tomto stavu žádný vstup/výstup (vstupně-výstupní operace).  
+- Vytvořit: Toto je stav <xref:System.ServiceModel.ICommunicationObject> kdy je poprvé vytvořena. Vyvolá se v tomto stavu žádný vstup/výstup (vstupně-výstupní operace).  
   
--   Otevřít: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Open%2A> je volána. V tomto okamžiku byly neměnné vlastnosti a začít vstupu a výstupu. Tento převod je platný pouze ze stavu vytvořen.  
+- Otevřít: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Open%2A> je volána. V tomto okamžiku byly neměnné vlastnosti a začít vstupu a výstupu. Tento převod je platný pouze ze stavu vytvořen.  
   
--   Otevřít: Objekty přechod do tohoto stavu po dokončení procesu otevřít. Tento převod je platný pouze ze stavu otevření. V tomto okamžiku objektu je plně použitelné pro přenos.  
+- Otevřít: Objekty přechod do tohoto stavu po dokončení procesu otevřít. Tento převod je platný pouze ze stavu otevření. V tomto okamžiku objektu je plně použitelné pro přenos.  
   
--   Uzavření: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Close%2A> se volá pro řádné vypnutí. Tento převod je platný pouze ze stavu otevřen.  
+- Uzavření: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Close%2A> se volá pro řádné vypnutí. Tento převod je platný pouze ze stavu otevřen.  
   
--   Zavřít: V poli Uzavřeno stavu objekty už nejsou použitelné. Obecně platí je pořád přístupný pro kontrolu největší konfiguraci, ale žádná komunikace může dojít. Tento stav je ekvivalentní vyřazována.  
+- Zavřít: V poli Uzavřeno stavu objekty už nejsou použitelné. Obecně platí je pořád přístupný pro kontrolu největší konfiguraci, ale žádná komunikace může dojít. Tento stav je ekvivalentní vyřazována.  
   
--   Došlo k chybě: Objekty v chybovém stavu, jsou přístupné pro kontrolu, ale už nebude použitelná. Pokud dojde k nezotavitelné chybě, objekt přejde do tohoto stavu. Je platné pouze přechod z tohoto stavu do `Closed` stavu.  
+- Došlo k chybě: Objekty v chybovém stavu, jsou přístupné pro kontrolu, ale už nebude použitelná. Pokud dojde k nezotavitelné chybě, objekt přejde do tohoto stavu. Je platné pouze přechod z tohoto stavu do `Closed` stavu.  
   
  Existují události, které se aktivují pro každý přechod stavu. <xref:System.ServiceModel.ICommunicationObject.Abort%2A> Metoda může být volána v každém okamžiku a způsobí, že objekt přechod okamžitě v jejím aktuálním stavu do uzavřeného stavu. Volání <xref:System.ServiceModel.ICommunicationObject.Abort%2A> ukončí všechny nedokončené práce.  
   
@@ -70,13 +70,13 @@ Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP 
 ## <a name="channel-factory-and-channel-listener"></a>Objekt pro vytváření kanálů a modul pro naslouchání kanálu  
  Dalším krokem při psaní vlastních přenosu je vytvořte implementaci třídy <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klientů a jejich <xref:System.ServiceModel.Channels.IChannelListener> pro kanály service. Vrstvy kanálu používá vzor factory pro vytváření kanálů. WCF poskytuje pomocné rutiny základní třídy pro tento proces.  
   
--   <xref:System.ServiceModel.Channels.CommunicationObject> Implementuje třída <xref:System.ServiceModel.ICommunicationObject> a vynucuje stavového stroje výše popsaný v kroku 2. 
+- <xref:System.ServiceModel.Channels.CommunicationObject> Implementuje třída <xref:System.ServiceModel.ICommunicationObject> a vynucuje stavového stroje výše popsaný v kroku 2. 
 
--   <xref:System.ServiceModel.Channels.ChannelManagerBase> Implementuje třída <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotné základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třídy funguje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídy, která implementuje <xref:System.ServiceModel.Channels.IChannel>.  
+- <xref:System.ServiceModel.Channels.ChannelManagerBase> Implementuje třída <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotné základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třídy funguje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídy, která implementuje <xref:System.ServiceModel.Channels.IChannel>.  
   
--   <xref:System.ServiceModel.Channels.ChannelFactoryBase> Implementuje třída <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a slučuje `CreateChannel` přetížení do jedné `OnCreateChannel` abstraktní metody.  
+- <xref:System.ServiceModel.Channels.ChannelFactoryBase> Implementuje třída <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a slučuje `CreateChannel` přetížení do jedné `OnCreateChannel` abstraktní metody.  
   
--   <xref:System.ServiceModel.Channels.ChannelListenerBase> Implementuje třída <xref:System.ServiceModel.Channels.IChannelListener>. Postará se o správu základního stavu.  
+- <xref:System.ServiceModel.Channels.ChannelListenerBase> Implementuje třída <xref:System.ServiceModel.Channels.IChannelListener>. Postará se o správu základního stavu.  
   
  V této ukázce je implementace objektu factory součástí UdpChannelFactory.cs a naslouchací proces implementace je obsažený v UdpChannelListener.cs. <xref:System.ServiceModel.Channels.IChannel> Implementace jsou v UdpOutputChannel.cs a UdpInputChannel.cs.  
   
@@ -255,9 +255,9 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
 ## <a name="adding-a-standard-binding"></a>Přidání standardní vazbu  
  Naše element vazby lze použít v následujících dvou způsobů:  
   
--   Prostřednictvím vlastní vazby: Vlastní vazba umožňuje uživateli vytvořit své vlastní vazbu na základě libovolného sady elementů vazby.  
+- Prostřednictvím vlastní vazby: Vlastní vazba umožňuje uživateli vytvořit své vlastní vazbu na základě libovolného sady elementů vazby.  
   
--   S použitím vazeb poskytovaných systémem, který zahrnuje naše element vazby. WCF poskytuje několik z těchto vazeb definovaných systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb souvisí s dobře definovaného profilu.  
+- S použitím vazeb poskytovaných systémem, který zahrnuje naše element vazby. WCF poskytuje několik z těchto vazeb definovaných systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb souvisí s dobře definovaného profilu.  
   
  Ukázka implementuje vazba profilu v `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři elementy vazby v něm: `UdpTransportBindingElement`, `TextMessageEncodingBindingElement CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
   

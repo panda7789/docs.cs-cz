@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 30015cc6cae935c43cdbfec1a6eeae5c703ef9f2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59103204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62041818"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage – metoda
 Oznámí profileru, že proces přijal žádost o vzdálené metody volání nebo aktivace.  
@@ -39,11 +39,11 @@ HRESULT RemotingClientSendingMessage(
  `pCookie`  
  [in] Hodnotu, která bude odpovídat s hodnotou v [icorprofilercallback::remotingclientsendingmessage –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) za těchto podmínek:  
   
--   Vzdálená komunikace GUID soubory cookie jsou aktivní.  
+- Vzdálená komunikace GUID soubory cookie jsou aktivní.  
   
--   Kanál úspěšně odesílá zprávu.  
+- Kanál úspěšně odesílá zprávu.  
   
--   Identifikátor GUID soubory cookie jsou aktivní na straně klienta procesu.  
+- Identifikátor GUID soubory cookie jsou aktivní na straně klienta procesu.  
   
  To umožňuje snadno párování tvorby logické volání zásobníku a Vzdálená volání.  
   

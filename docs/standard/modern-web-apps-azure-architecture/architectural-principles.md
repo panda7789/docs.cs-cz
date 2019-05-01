@@ -5,11 +5,11 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
 ms.openlocfilehash: 7d127476e37b9eefa9ddc13d26991145b6245b45
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019557"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 

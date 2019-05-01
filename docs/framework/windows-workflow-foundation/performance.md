@@ -3,11 +3,11 @@ title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
 ms.openlocfilehash: f7590591bfac374f6de637f57fad9853b82ca20c
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006839"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 
@@ -376,25 +376,25 @@ public class Workflow1 : Activity
 
  Všimněte si, že poskytovatele trvalého chování WF4 SQL provede další práci na úrovni databáze.  Databáze SQL se může stát kritickým bodem, proto je důležité monitorovat využití procesoru a disku existuje.  Nezapomeňte uvést následující čítače výkonu z SQL database při testování aplikací pracovních postupů výkonu:
 
--   Fyzický disk\\doba čtení disku v %
+- Fyzický disk\\doba čtení disku v %
 
--   Fyzický disk\\% času disku
+- Fyzický disk\\% času disku
 
--   Fyzický disk\\čas zápisu disku v %
+- Fyzický disk\\čas zápisu disku v %
 
--   Fyzický disk\\průměrný % Délka fronty disku
+- Fyzický disk\\průměrný % Délka fronty disku
 
--   PhysicalDisk\Avg. Délka fronty disku pro čtení
+- PhysicalDisk\Avg. Délka fronty disku pro čtení
 
--   PhysicalDisk\Avg. Délka fronty disku zápisu
+- PhysicalDisk\Avg. Délka fronty disku zápisu
 
--   Délka fronty disku PhysicalDisk\Current
+- Délka fronty disku PhysicalDisk\Current
 
--   Informace o procesoru\\čas procesoru v %
+- Informace o procesoru\\čas procesoru v %
 
--   Doba čekání západky překročila SQLServer:Latches\Average (ms)
+- Doba čekání západky překročila SQLServer:Latches\Average (ms)
 
--   SQLServer:Latches\Latch čekání za sekundu
+- SQLServer:Latches\Latch čekání za sekundu
 
 ### <a name="tracking"></a>Sledování
  Sledování pracovního postupu je možné sledovat průběh pracovního postupu.  Informace, které je součástí událostí sledování je určen v rámci profilu sledování.  Složitější profilu sledování dražší sledování se změní.
@@ -407,13 +407,13 @@ public class Workflow1 : Activity
 
  K přístupu pomocí trasování událostí pro Windows pro sledování místo SQL k výhodám patří:
 
--   Kolekce sledování událostí je možné oddělit na jiný proces.  To poskytuje větší flexibilitu v tom, jak jsou zaznamenány události.
+- Kolekce sledování událostí je možné oddělit na jiný proces.  To poskytuje větší flexibilitu v tom, jak jsou zaznamenány události.
 
--   Události trasování událostí pro Windows Sledování snadno spolu se události trasování událostí pro Windows WCF nebo jiné poskytovatele trasování událostí pro Windows, např. zprostředkovatele SQL Server nebo jádra.
+- Události trasování událostí pro Windows Sledování snadno spolu se události trasování událostí pro Windows WCF nebo jiné poskytovatele trasování událostí pro Windows, např. zprostředkovatele SQL Server nebo jádra.
 
--   Autoři pracovního postupu není nutné změnit pracovní postup fungovat lépe u konkrétní sledování provádění, jako je například služba sledování WF3 SQL dávkovém režimu.
+- Autoři pracovního postupu není nutné změnit pracovní postup fungovat lépe u konkrétní sledování provádění, jako je například služba sledování WF3 SQL dávkovém režimu.
 
--   Správce může zapnout sledování nebo vypnout bez recyklace hostitelský proces.
+- Správce může zapnout sledování nebo vypnout bez recyklace hostitelský proces.
 
  Nevýhodou jsou dostupné výhody výkonu pro sledování trasování událostí pro Windows.  Události trasování událostí pro Windows může dojít ke ztrátě, pokud je systém náročnými prostředků tím snižuje jejich přetížení.  Zpracování události není určena k bloku vykonávání programu normální a proto není zaručeno, že všechny události trasování událostí pro Windows se bude vysílat jejich odběratelům.  Díky tomu trasování událostí pro Windows Sledování skvěle hodí k monitorování stavu, ale není vhodný pro auditování.
 

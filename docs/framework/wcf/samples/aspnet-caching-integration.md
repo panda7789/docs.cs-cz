@@ -3,11 +3,11 @@ title: Integrace mezipaměti ASP.NET
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
 ms.openlocfilehash: 8ed546459479e9986d6bbecf6eaca350d2d73c98
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002726"
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
 Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programovací model webových služeb HTTP WCF. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  
@@ -34,11 +34,11 @@ Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programo
 ## <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
  Ukázkový soubor obsahuje tři projekty:  
   
--   **Služba**: Projekt webové aplikace, která zahrnuje služby WCF HTTP hostované v technologii ASP.NET.  
+- **Služba**: Projekt webové aplikace, která zahrnuje služby WCF HTTP hostované v technologii ASP.NET.  
   
--   **Klient**: Projekt konzolové aplikace, která provádí volání služby.  
+- **Klient**: Projekt konzolové aplikace, která provádí volání služby.  
   
--   **Běžné**: Sdílená knihovna, která obsahuje typ zákazníka používá klienta a služby.  
+- **Běžné**: Sdílená knihovna, která obsahuje typ zákazníka používá klienta a služby.  
   
  Při spuštění aplikace konzoly klienta, klient vytvářejí požadavky na službu a zapíše relevantní informace z odpovědí do okna konzoly.  
   
