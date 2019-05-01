@@ -3,43 +3,43 @@ title: Ukázka technologie SchemaImporterExtension
 ms.date: 03/30/2017
 ms.assetid: 3f5eb78f-0ef6-433a-b095-3a63b1ce0bc9
 ms.openlocfilehash: 5027897bcf62e52dae5aab6090c01518a92636dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62028301"
 ---
-# <a name="schemaimporterextension-technology-sample"></a><span data-ttu-id="c6a0e-102">Ukázka technologie SchemaImporterExtension</span><span class="sxs-lookup"><span data-stu-id="c6a0e-102">SchemaImporterExtension Technology Sample</span></span>
-[<span data-ttu-id="c6a0e-103">Stáhněte si ukázky</span><span class="sxs-lookup"><span data-stu-id="c6a0e-103">Download Sample</span></span>](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/SchemaImporterExtension.zip.exe)  
+# <a name="schemaimporterextension-technology-sample"></a><span data-ttu-id="35ca9-102">Ukázka technologie SchemaImporterExtension</span><span class="sxs-lookup"><span data-stu-id="35ca9-102">SchemaImporterExtension Technology Sample</span></span>
+[<span data-ttu-id="35ca9-103">Stáhněte si ukázky</span><span class="sxs-lookup"><span data-stu-id="35ca9-103">Download Sample</span></span>](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/SchemaImporterExtension.zip.exe)  
   
- <span data-ttu-id="c6a0e-104">Tento příklad znázorňuje vlastní <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> , který umožňuje přesné řízení generování kódu, když je importován schématu XML.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-104">This sample demonstrates a custom <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> that allows fine control over code generation when an XML schema is imported.</span></span> <span data-ttu-id="c6a0e-105">Aplikace ukazuje, jak vytvářet, registrace a vyvolání tohoto rozšíření.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-105">The application shows how to build, register and invoke this extension.</span></span>  
+ <span data-ttu-id="35ca9-104">Tento příklad znázorňuje vlastní <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> , který umožňuje přesné řízení generování kódu, když je importován schématu XML.</span><span class="sxs-lookup"><span data-stu-id="35ca9-104">This sample demonstrates a custom <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> that allows fine control over code generation when an XML schema is imported.</span></span> <span data-ttu-id="35ca9-105">Aplikace ukazuje, jak vytvářet, registrace a vyvolání tohoto rozšíření.</span><span class="sxs-lookup"><span data-stu-id="35ca9-105">The application shows how to build, register and invoke this extension.</span></span>  
   
-### <a name="to-build-the-sample-using-the-command-prompt"></a><span data-ttu-id="c6a0e-106">K vytvoření vzorku pomocí příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="c6a0e-106">To build the sample using the command prompt</span></span>  
+### <a name="to-build-the-sample-using-the-command-prompt"></a><span data-ttu-id="35ca9-106">K vytvoření vzorku pomocí příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="35ca9-106">To build the sample using the command prompt</span></span>  
   
-1. <span data-ttu-id="c6a0e-107">Otevřete okno příkazového řádku a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-107">Open a Command Prompt window and navigate to one of the language-specific subdirectories for the sample.</span></span>  
+1. <span data-ttu-id="35ca9-107">Otevřete okno příkazového řádku a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.</span><span class="sxs-lookup"><span data-stu-id="35ca9-107">Open a Command Prompt window and navigate to one of the language-specific subdirectories for the sample.</span></span>  
   
-2. <span data-ttu-id="c6a0e-108">Typ **msbuild.exe OrderSchemaImporterExtension.sln** na příkazovém řádku.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-108">Type **msbuild.exe OrderSchemaImporterExtension.sln** at the command line.</span></span>  
+2. <span data-ttu-id="35ca9-108">Typ **msbuild.exe OrderSchemaImporterExtension.sln** na příkazovém řádku.</span><span class="sxs-lookup"><span data-stu-id="35ca9-108">Type **msbuild.exe OrderSchemaImporterExtension.sln** at the command line.</span></span>  
   
-### <a name="to-build-the-sample-using-visual-studio"></a><span data-ttu-id="c6a0e-109">K vytvoření vzorku pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c6a0e-109">To build the sample using Visual Studio</span></span>  
+### <a name="to-build-the-sample-using-visual-studio"></a><span data-ttu-id="35ca9-109">K vytvoření vzorku pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="35ca9-109">To build the sample using Visual Studio</span></span>  
   
-1. <span data-ttu-id="c6a0e-110">Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-110">Open [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] and navigate to one of the language-specific subdirectories for the sample.</span></span>  
+1. <span data-ttu-id="35ca9-110">Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.</span><span class="sxs-lookup"><span data-stu-id="35ca9-110">Open [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] and navigate to one of the language-specific subdirectories for the sample.</span></span>  
   
-2. <span data-ttu-id="c6a0e-111">Poklepejte na ikonu OrderSchemaImporterExtension.sln k otevření souboru v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-111">Double-click the icon for OrderSchemaImporterExtension.sln to open the file in Visual Studio.</span></span>  
+2. <span data-ttu-id="35ca9-111">Poklepejte na ikonu OrderSchemaImporterExtension.sln k otevření souboru v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="35ca9-111">Double-click the icon for OrderSchemaImporterExtension.sln to open the file in Visual Studio.</span></span>  
   
-3. <span data-ttu-id="c6a0e-112">Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-112">On the **Build** menu, click **Build Solution**.</span></span>  
+3. <span data-ttu-id="35ca9-112">Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.</span><span class="sxs-lookup"><span data-stu-id="35ca9-112">On the **Build** menu, click **Build Solution**.</span></span>  
   
- <span data-ttu-id="c6a0e-113">Aplikace bude vytvořen v adresáři \bin nebo \bin\Debug výchozí.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-113">The application will be built in the default \bin or \bin\Debug directory.</span></span>  
+ <span data-ttu-id="35ca9-113">Aplikace bude vytvořen v adresáři \bin nebo \bin\Debug výchozí.</span><span class="sxs-lookup"><span data-stu-id="35ca9-113">The application will be built in the default \bin or \bin\Debug directory.</span></span>  
   
-### <a name="to-run-the-sample"></a><span data-ttu-id="c6a0e-114">Chcete-li spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="c6a0e-114">To run the sample</span></span>  
+### <a name="to-run-the-sample"></a><span data-ttu-id="35ca9-114">Chcete-li spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="35ca9-114">To run the sample</span></span>  
   
-1. <span data-ttu-id="c6a0e-115">Přejděte do adresáře, který obsahuje novou spustitelný soubor, pomocí příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-115">Navigate to the directory containing the new executable, using the command prompt.</span></span>  
+1. <span data-ttu-id="35ca9-115">Přejděte do adresáře, který obsahuje novou spustitelný soubor, pomocí příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="35ca9-115">Navigate to the directory containing the new executable, using the command prompt.</span></span>  
   
-2. <span data-ttu-id="c6a0e-116">Typ **[exe name]** na příkazovém řádku.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-116">Type **[exe name]** at the command line.</span></span>  
+2. <span data-ttu-id="35ca9-116">Typ **[exe name]** na příkazovém řádku.</span><span class="sxs-lookup"><span data-stu-id="35ca9-116">Type **[exe name]** at the command line.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c6a0e-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c6a0e-117">Remarks</span></span>  
- <span data-ttu-id="c6a0e-118">Další informace o vytváření binární ukázky a registraci kroky naleznete v tématu komentáře v souborech zdrojového kódu a build.proj.</span><span class="sxs-lookup"><span data-stu-id="c6a0e-118">For more information about sample binary creation and registration steps, see the comments in the source code and build.proj files.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="35ca9-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="35ca9-117">Remarks</span></span>  
+ <span data-ttu-id="35ca9-118">Další informace o vytváření binární ukázky a registraci kroky naleznete v tématu komentáře v souborech zdrojového kódu a build.proj.</span><span class="sxs-lookup"><span data-stu-id="35ca9-118">For more information about sample binary creation and registration steps, see the comments in the source code and build.proj files.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c6a0e-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c6a0e-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35ca9-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="35ca9-119">See also</span></span>
 
 - <xref:System.CodeDom.CodeCompileUnit>
 - <xref:System.CodeDom.CodeNamespace>

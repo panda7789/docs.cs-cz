@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2d1d97e443be884f45187a2811ddfce106249515
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59183128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62044353"
 ---
-# <a name="imetadatadispenserexfindassemblymodule-method"></a><span data-ttu-id="eefd2-102">IMetaDataDispenserEx::FindAssemblyModule – metoda</span><span class="sxs-lookup"><span data-stu-id="eefd2-102">IMetaDataDispenserEx::FindAssemblyModule Method</span></span>
-<span data-ttu-id="eefd2-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="eefd2-103">This method is not implemented.</span></span> <span data-ttu-id="eefd2-104">Pokud je volána, vrátí E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="eefd2-104">If called, it returns E_NOTIMPL.</span></span>  
+# <a name="imetadatadispenserexfindassemblymodule-method"></a><span data-ttu-id="caf2c-102">IMetaDataDispenserEx::FindAssemblyModule – metoda</span><span class="sxs-lookup"><span data-stu-id="caf2c-102">IMetaDataDispenserEx::FindAssemblyModule Method</span></span>
+<span data-ttu-id="caf2c-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="caf2c-103">This method is not implemented.</span></span> <span data-ttu-id="caf2c-104">Pokud je volána, vrátí E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="caf2c-104">If called, it returns E_NOTIMPL.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="eefd2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eefd2-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="caf2c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="caf2c-105">Syntax</span></span>  
   
 ```  
 HRESULT FindAssemblyModule(  
@@ -42,41 +42,41 @@ HRESULT FindAssemblyModule(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="eefd2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="eefd2-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="caf2c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="caf2c-106">Parameters</span></span>  
  `szAppBase`  
- <span data-ttu-id="eefd2-107">[in] Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="eefd2-107">[in] Not used.</span></span>  
+ <span data-ttu-id="caf2c-107">[in] Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="caf2c-107">[in] Not used.</span></span>  
   
  `szPrivateBin`  
- <span data-ttu-id="eefd2-108">[in] Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="eefd2-108">[in] Not used.</span></span>  
+ <span data-ttu-id="caf2c-108">[in] Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="caf2c-108">[in] Not used.</span></span>  
   
  `szGlobalBin`  
- <span data-ttu-id="eefd2-109">[in] Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="eefd2-109">[in] Not used.</span></span>  
+ <span data-ttu-id="caf2c-109">[in] Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="caf2c-109">[in] Not used.</span></span>  
   
  `szAssemblyName`  
- <span data-ttu-id="eefd2-110">[in] Název modulu.</span><span class="sxs-lookup"><span data-stu-id="eefd2-110">[in] The name of the module.</span></span>  
+ <span data-ttu-id="caf2c-110">[in] Název modulu.</span><span class="sxs-lookup"><span data-stu-id="caf2c-110">[in] The name of the module.</span></span>  
   
  `szModuleName`  
- <span data-ttu-id="eefd2-111">[in] Sestavení, která se má najít.</span><span class="sxs-lookup"><span data-stu-id="eefd2-111">[in] The assembly to be found.</span></span>  
+ <span data-ttu-id="caf2c-111">[in] Sestavení, která se má najít.</span><span class="sxs-lookup"><span data-stu-id="caf2c-111">[in] The assembly to be found.</span></span>  
   
  `szName`  
- <span data-ttu-id="eefd2-112">[out] Jednoduchý název sestavení.</span><span class="sxs-lookup"><span data-stu-id="eefd2-112">[out] The simple name of the assembly.</span></span>  
+ <span data-ttu-id="caf2c-112">[out] Jednoduchý název sestavení.</span><span class="sxs-lookup"><span data-stu-id="caf2c-112">[out] The simple name of the assembly.</span></span>  
   
  `cchName`  
- <span data-ttu-id="eefd2-113">[in] Velikost v bajtech, z `szName`.</span><span class="sxs-lookup"><span data-stu-id="eefd2-113">[in] The size, in bytes, of `szName`.</span></span>  
+ <span data-ttu-id="caf2c-113">[in] Velikost v bajtech, z `szName`.</span><span class="sxs-lookup"><span data-stu-id="caf2c-113">[in] The size, in bytes, of `szName`.</span></span>  
   
  `pcName`  
- <span data-ttu-id="eefd2-114">[out] Počet znaků ve skutečnosti vrátí v `szName`.</span><span class="sxs-lookup"><span data-stu-id="eefd2-114">[out] The number of characters actually returned in `szName`.</span></span>  
+ <span data-ttu-id="caf2c-114">[out] Počet znaků ve skutečnosti vrátí v `szName`.</span><span class="sxs-lookup"><span data-stu-id="caf2c-114">[out] The number of characters actually returned in `szName`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="eefd2-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eefd2-115">Requirements</span></span>  
- <span data-ttu-id="eefd2-116">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eefd2-116">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="caf2c-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="caf2c-115">Requirements</span></span>  
+ <span data-ttu-id="caf2c-116">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="caf2c-116">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="eefd2-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="eefd2-117">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="caf2c-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="caf2c-117">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="eefd2-118">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="eefd2-118">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="caf2c-118">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="caf2c-118">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="eefd2-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eefd2-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="caf2c-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="caf2c-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eefd2-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eefd2-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="caf2c-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="caf2c-120">See also</span></span>
 
-- [<span data-ttu-id="eefd2-121">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eefd2-121">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [<span data-ttu-id="eefd2-122">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eefd2-122">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [<span data-ttu-id="caf2c-121">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="caf2c-121">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
+- [<span data-ttu-id="caf2c-122">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="caf2c-122">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

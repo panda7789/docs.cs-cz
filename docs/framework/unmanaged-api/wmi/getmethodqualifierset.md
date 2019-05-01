@@ -17,19 +17,19 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9257ba57e0d087e3d6b9c7bb995b49a6b814c5f1
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62040739"
 ---
-# <a name="getmethodqualifierset-function"></a><span data-ttu-id="06b82-103">Funkce GetMethodQualifierSet</span><span class="sxs-lookup"><span data-stu-id="06b82-103">GetMethodQualifierSet function</span></span>
+# <a name="getmethodqualifierset-function"></a><span data-ttu-id="a142b-103">Funkce GetMethodQualifierSet</span><span class="sxs-lookup"><span data-stu-id="a142b-103">GetMethodQualifierSet function</span></span>
 
-<span data-ttu-id="06b82-104">Načte kvalifikátor nastavit pro konkrétní metody.</span><span class="sxs-lookup"><span data-stu-id="06b82-104">Retrieves the qualifier set for a particular method.</span></span>
+<span data-ttu-id="a142b-104">Načte kvalifikátor nastavit pro konkrétní metody.</span><span class="sxs-lookup"><span data-stu-id="a142b-104">Retrieves the qualifier set for a particular method.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
-## <a name="syntax"></a><span data-ttu-id="06b82-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="06b82-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a142b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a142b-105">Syntax</span></span>
 
 ```cpp
 HRESULT GetMethodQualifierSet (
@@ -40,46 +40,46 @@ HRESULT GetMethodQualifierSet (
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="06b82-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="06b82-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="a142b-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="a142b-106">Parameters</span></span>
 
 `vFunc`\
-<span data-ttu-id="06b82-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="06b82-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="a142b-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="a142b-107">[in] This parameter is unused.</span></span>
 
 `ptr`\
-<span data-ttu-id="06b82-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="06b82-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
+<span data-ttu-id="a142b-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="a142b-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `wszMethod`\
-<span data-ttu-id="06b82-109">[in] Název metody.</span><span class="sxs-lookup"><span data-stu-id="06b82-109">[in] The method  name.</span></span> <span data-ttu-id="06b82-110">`wszMethod` musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="06b82-110">`wszMethod` must point to a valid `LPCWSTR`.</span></span>
+<span data-ttu-id="a142b-109">[in] Název metody.</span><span class="sxs-lookup"><span data-stu-id="a142b-109">[in] The method  name.</span></span> <span data-ttu-id="a142b-110">`wszMethod` musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="a142b-110">`wszMethod` must point to a valid `LPCWSTR`.</span></span>
 
 `ppQualSet`\
-<span data-ttu-id="06b82-111">[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory metody.</span><span class="sxs-lookup"><span data-stu-id="06b82-111">[out] Receives the interface pointer that allows access to the qualifiers of the method.</span></span> <span data-ttu-id="06b82-112">`ppQualSet` nemůže být `null`.</span><span class="sxs-lookup"><span data-stu-id="06b82-112">`ppQualSet` cannot be `null`.</span></span> <span data-ttu-id="06b82-113">Pokud dojde k chybě, není vrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`.</span><span class="sxs-lookup"><span data-stu-id="06b82-113">If an error occurs, a new object is not returned, and the pointer is set to point to `null`.</span></span>
+<span data-ttu-id="a142b-111">[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory metody.</span><span class="sxs-lookup"><span data-stu-id="a142b-111">[out] Receives the interface pointer that allows access to the qualifiers of the method.</span></span> <span data-ttu-id="a142b-112">`ppQualSet` nemůže být `null`.</span><span class="sxs-lookup"><span data-stu-id="a142b-112">`ppQualSet` cannot be `null`.</span></span> <span data-ttu-id="a142b-113">Pokud dojde k chybě, není vrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`.</span><span class="sxs-lookup"><span data-stu-id="a142b-113">If an error occurs, a new object is not returned, and the pointer is set to point to `null`.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="06b82-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="06b82-114">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="a142b-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a142b-114">Return value</span></span>
 
-<span data-ttu-id="06b82-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="06b82-115">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="a142b-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="a142b-115">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="06b82-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="06b82-116">Constant</span></span>  |<span data-ttu-id="06b82-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="06b82-117">Value</span></span>  |<span data-ttu-id="06b82-118">Popis</span><span class="sxs-lookup"><span data-stu-id="06b82-118">Description</span></span>  |
+|<span data-ttu-id="a142b-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="a142b-116">Constant</span></span>  |<span data-ttu-id="a142b-117">Value</span><span class="sxs-lookup"><span data-stu-id="a142b-117">Value</span></span>  |<span data-ttu-id="a142b-118">Popis</span><span class="sxs-lookup"><span data-stu-id="a142b-118">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_NOT_FOUND` | <span data-ttu-id="06b82-119">0x80041002</span><span class="sxs-lookup"><span data-stu-id="06b82-119">0x80041002</span></span> | <span data-ttu-id="06b82-120">Zadaná metoda neexistuje.</span><span class="sxs-lookup"><span data-stu-id="06b82-120">The specified method does not exist.</span></span> |
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="06b82-121">0x80041008</span><span class="sxs-lookup"><span data-stu-id="06b82-121">0x80041008</span></span> | <span data-ttu-id="06b82-122">Parametr je `null`.</span><span class="sxs-lookup"><span data-stu-id="06b82-122">A parameter is `null`.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="06b82-123">0</span><span class="sxs-lookup"><span data-stu-id="06b82-123">0</span></span> | <span data-ttu-id="06b82-124">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="06b82-124">The function call was successful.</span></span>  |
+|`WBEM_E_NOT_FOUND` | <span data-ttu-id="a142b-119">0x80041002</span><span class="sxs-lookup"><span data-stu-id="a142b-119">0x80041002</span></span> | <span data-ttu-id="a142b-120">Zadaná metoda neexistuje.</span><span class="sxs-lookup"><span data-stu-id="a142b-120">The specified method does not exist.</span></span> |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="a142b-121">0x80041008</span><span class="sxs-lookup"><span data-stu-id="a142b-121">0x80041008</span></span> | <span data-ttu-id="a142b-122">Parametr je `null`.</span><span class="sxs-lookup"><span data-stu-id="a142b-122">A parameter is `null`.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="a142b-123">0</span><span class="sxs-lookup"><span data-stu-id="a142b-123">0</span></span> | <span data-ttu-id="a142b-124">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="a142b-124">The function call was successful.</span></span>  |
 
-## <a name="remarks"></a><span data-ttu-id="06b82-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="06b82-125">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a142b-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a142b-125">Remarks</span></span>
 
-<span data-ttu-id="06b82-126">Tato funkce zalamuje volání na [IWbemClassObject::GetMethodQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethodqualifierset) metody.</span><span class="sxs-lookup"><span data-stu-id="06b82-126">This function wraps a call to the [IWbemClassObject::GetMethodQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethodqualifierset) method.</span></span>
+<span data-ttu-id="a142b-126">Tato funkce zalamuje volání na [IWbemClassObject::GetMethodQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethodqualifierset) metody.</span><span class="sxs-lookup"><span data-stu-id="a142b-126">This function wraps a call to the [IWbemClassObject::GetMethodQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethodqualifierset) method.</span></span>
 
-<span data-ttu-id="06b82-127">Voláním této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM.</span><span class="sxs-lookup"><span data-stu-id="06b82-127">A call to this function is supported only if the current object is a CIM class definition.</span></span> <span data-ttu-id="06b82-128">Není k dispozici pro manipulaci s metoda [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance CIM.</span><span class="sxs-lookup"><span data-stu-id="06b82-128">Method manipulation is not available for [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointers that point to CIM instances.</span></span>
+<span data-ttu-id="a142b-127">Voláním této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM.</span><span class="sxs-lookup"><span data-stu-id="a142b-127">A call to this function is supported only if the current object is a CIM class definition.</span></span> <span data-ttu-id="a142b-128">Není k dispozici pro manipulaci s metoda [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance CIM.</span><span class="sxs-lookup"><span data-stu-id="a142b-128">Method manipulation is not available for [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointers that point to CIM instances.</span></span>
 
-<span data-ttu-id="06b82-129">Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory.</span><span class="sxs-lookup"><span data-stu-id="06b82-129">Because each method may have its own qualifiers, the [IWbemQualifierSet pointer](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) lets the caller add, edit, or delete these qualifiers.</span></span>
+<span data-ttu-id="a142b-129">Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory.</span><span class="sxs-lookup"><span data-stu-id="a142b-129">Because each method may have its own qualifiers, the [IWbemQualifierSet pointer](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) lets the caller add, edit, or delete these qualifiers.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="06b82-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="06b82-130">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="a142b-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a142b-130">Requirements</span></span>
 
-<span data-ttu-id="06b82-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="06b82-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+<span data-ttu-id="a142b-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a142b-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
 
-<span data-ttu-id="06b82-132">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="06b82-132">**Header:** WMINet_Utils.idl</span></span>
+<span data-ttu-id="a142b-132">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="a142b-132">**Header:** WMINet_Utils.idl</span></span>
 
-<span data-ttu-id="06b82-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="06b82-133">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>
+<span data-ttu-id="a142b-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="a142b-133">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="06b82-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="06b82-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a142b-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a142b-134">See also</span></span>
 
-- [<span data-ttu-id="06b82-135">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="06b82-135">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+- [<span data-ttu-id="a142b-135">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="a142b-135">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

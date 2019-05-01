@@ -6,19 +6,19 @@ dev_langs:
 - vb
 ms.assetid: 626492c0-5ee3-4675-88e8-8c40379510b6
 ms.openlocfilehash: 8a69b3ae83d7f701428b3183f2b80e0d44a06537
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59103620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033771"
 ---
-# <a name="how-to-display-generated-sql"></a><span data-ttu-id="305f8-102">Postupy: Zobrazení generovaného SQL</span><span class="sxs-lookup"><span data-stu-id="305f8-102">How to: Display Generated SQL</span></span>
-<span data-ttu-id="305f8-103">Můžete zobrazit SQL kód generovaný pro dotazy a zpracování pomocí změny <xref:System.Data.Linq.DataContext.Log%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="305f8-103">You can view the SQL code generated for queries and change processing by using the <xref:System.Data.Linq.DataContext.Log%2A> property.</span></span> <span data-ttu-id="305f8-104">Tento přístup může být užitečné pro porozumění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] funkce a pro specifické problémy ladění.</span><span class="sxs-lookup"><span data-stu-id="305f8-104">This approach can be useful for understanding [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] functionality and for debugging specific problems.</span></span>  
+# <a name="how-to-display-generated-sql"></a><span data-ttu-id="955ca-102">Postupy: Zobrazení generovaného SQL</span><span class="sxs-lookup"><span data-stu-id="955ca-102">How to: Display Generated SQL</span></span>
+<span data-ttu-id="955ca-103">Můžete zobrazit SQL kód generovaný pro dotazy a zpracování pomocí změny <xref:System.Data.Linq.DataContext.Log%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="955ca-103">You can view the SQL code generated for queries and change processing by using the <xref:System.Data.Linq.DataContext.Log%2A> property.</span></span> <span data-ttu-id="955ca-104">Tento přístup může být užitečné pro porozumění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] funkce a pro specifické problémy ladění.</span><span class="sxs-lookup"><span data-stu-id="955ca-104">This approach can be useful for understanding [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] functionality and for debugging specific problems.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="305f8-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="305f8-105">Example</span></span>  
- <span data-ttu-id="305f8-106">V následujícím příkladu <xref:System.Data.Linq.DataContext.Log%2A> vlastnosti k zobrazení kódu SQL v okně konzoly předtím, než je kód spuštěn.</span><span class="sxs-lookup"><span data-stu-id="305f8-106">The following example uses the <xref:System.Data.Linq.DataContext.Log%2A> property to display SQL code in the console window before the code is executed.</span></span>  <span data-ttu-id="305f8-107">Můžete tuto vlastnost použít dotazování, vložení, aktualizace a odstranění příkazů.</span><span class="sxs-lookup"><span data-stu-id="305f8-107">You can use this property with query, insert, update, and delete commands.</span></span>  
+## <a name="example"></a><span data-ttu-id="955ca-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="955ca-105">Example</span></span>  
+ <span data-ttu-id="955ca-106">V následujícím příkladu <xref:System.Data.Linq.DataContext.Log%2A> vlastnosti k zobrazení kódu SQL v okně konzoly předtím, než je kód spuštěn.</span><span class="sxs-lookup"><span data-stu-id="955ca-106">The following example uses the <xref:System.Data.Linq.DataContext.Log%2A> property to display SQL code in the console window before the code is executed.</span></span>  <span data-ttu-id="955ca-107">Můžete tuto vlastnost použít dotazování, vložení, aktualizace a odstranění příkazů.</span><span class="sxs-lookup"><span data-stu-id="955ca-107">You can use this property with query, insert, update, and delete commands.</span></span>  
   
- <span data-ttu-id="305f8-108">Co se zobrazí po spuštění jazyka Visual Basic jsou řádky z okna konzoly nebo C# kód, který následuje.</span><span class="sxs-lookup"><span data-stu-id="305f8-108">The lines from the console window are what you see when you execute the Visual Basic or C# code that follows.</span></span>  
+ <span data-ttu-id="955ca-108">Co se zobrazí po spuštění jazyka Visual Basic jsou řádky z okna konzoly nebo C# kód, který následuje.</span><span class="sxs-lookup"><span data-stu-id="955ca-108">The lines from the console window are what you see when you execute the Visual Basic or C# code that follows.</span></span>  
   
 ```  
 SELECT [t0].[CustomerID], [t0].[CompanyName], [t0].[ContactName], [t0].[ContactT  
@@ -42,6 +42,6 @@ SEVES
  [!code-csharp[DLinqDebuggingSupport#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#1)]
  [!code-vb[DLinqDebuggingSupport#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#1)]  
   
-## <a name="see-also"></a><span data-ttu-id="305f8-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="305f8-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="955ca-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="955ca-109">See also</span></span>
 
-- [<span data-ttu-id="305f8-110">Podpora ladění</span><span class="sxs-lookup"><span data-stu-id="305f8-110">Debugging Support</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
+- [<span data-ttu-id="955ca-110">Podpora ladění</span><span class="sxs-lookup"><span data-stu-id="955ca-110">Debugging Support</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

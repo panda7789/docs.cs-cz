@@ -9,30 +9,30 @@ helpviewer_keywords:
 - drawing [Windows Forms], Bezier splines
 ms.assetid: f4f3fe30-f0a6-4743-ac91-11310cebea9f
 ms.openlocfilehash: ebb53e7df979a553ed4a44deba34345c9ecac772
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59171675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004225"
 ---
-# <a name="how-to-draw-a-single-b233zier-spline"></a><span data-ttu-id="e1658-102">Postupy: Kreslení jedné B&#233;zier křivky</span><span class="sxs-lookup"><span data-stu-id="e1658-102">How to: Draw a Single B&#233;zier Spline</span></span>
-<span data-ttu-id="e1658-103">Bézierovy křivky definoval čtyři body: počáteční bod, dva kontrolních bodů a koncový bod.</span><span class="sxs-lookup"><span data-stu-id="e1658-103">A Bézier spline is defined by four points: a start point, two control points, and an endpoint.</span></span>  
+# <a name="how-to-draw-a-single-b233zier-spline"></a><span data-ttu-id="ccccc-102">Postupy: Kreslení jedné B&#233;zier křivky</span><span class="sxs-lookup"><span data-stu-id="ccccc-102">How to: Draw a Single B&#233;zier Spline</span></span>
+<span data-ttu-id="ccccc-103">Bézierovy křivky definoval čtyři body: počáteční bod, dva kontrolních bodů a koncový bod.</span><span class="sxs-lookup"><span data-stu-id="ccccc-103">A Bézier spline is defined by four points: a start point, two control points, and an endpoint.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e1658-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="e1658-104">Example</span></span>  
- <span data-ttu-id="e1658-105">Následující příklad kreslení Bézierovy křivky s počáteční bod (10, 100) a koncového bodu (200, 100).</span><span class="sxs-lookup"><span data-stu-id="e1658-105">The following example draws a Bézier spline with start point (10, 100) and endpoint (200, 100).</span></span> <span data-ttu-id="e1658-106">Ovládací prvek body jsou (100, 10) a (150, 150).</span><span class="sxs-lookup"><span data-stu-id="e1658-106">The control points are (100, 10) and (150, 150).</span></span>  
+## <a name="example"></a><span data-ttu-id="ccccc-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="ccccc-104">Example</span></span>  
+ <span data-ttu-id="ccccc-105">Následující příklad kreslení Bézierovy křivky s počáteční bod (10, 100) a koncového bodu (200, 100).</span><span class="sxs-lookup"><span data-stu-id="ccccc-105">The following example draws a Bézier spline with start point (10, 100) and endpoint (200, 100).</span></span> <span data-ttu-id="ccccc-106">Ovládací prvek body jsou (100, 10) a (150, 150).</span><span class="sxs-lookup"><span data-stu-id="ccccc-106">The control points are (100, 10) and (150, 150).</span></span>  
   
- <span data-ttu-id="e1658-107">Následující obrázek znázorňuje výsledný Bézierovy křivky spolu s jeho počáteční bod, kontrolní body a koncový bod.</span><span class="sxs-lookup"><span data-stu-id="e1658-107">The following illustration shows the resulting Bézier spline along with its start point, control points, and endpoint.</span></span> <span data-ttu-id="e1658-108">Tento obrázek také ukazuje konvexní trupu křivky, který je tvořen čtyři body sítě s rovné čáry mnohoúhelníku.</span><span class="sxs-lookup"><span data-stu-id="e1658-108">The illustration also shows the spline's convex hull, which is a polygon formed by connecting the four points with straight lines.</span></span>  
+ <span data-ttu-id="ccccc-107">Následující obrázek znázorňuje výsledný Bézierovy křivky spolu s jeho počáteční bod, kontrolní body a koncový bod.</span><span class="sxs-lookup"><span data-stu-id="ccccc-107">The following illustration shows the resulting Bézier spline along with its start point, control points, and endpoint.</span></span> <span data-ttu-id="ccccc-108">Tento obrázek také ukazuje konvexní trupu křivky, který je tvořen čtyři body sítě s rovné čáry mnohoúhelníku.</span><span class="sxs-lookup"><span data-stu-id="ccccc-108">The illustration also shows the spline's convex hull, which is a polygon formed by connecting the four points with straight lines.</span></span>  
   
  ![Obrázek Bézierovy křivky.](./media/how-to-draw-a-single-bezier-spline/bezier-spline-illustration.png)  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#31](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#31](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#31)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="e1658-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e1658-110">Compiling the Code</span></span>  
- <span data-ttu-id="e1658-111">V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="e1658-111">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="ccccc-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="ccccc-110">Compiling the Code</span></span>  
+ <span data-ttu-id="ccccc-111">V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="ccccc-111">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e1658-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1658-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ccccc-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ccccc-112">See also</span></span>
 
 - <xref:System.Drawing.Graphics.DrawBezier%2A>
-- [<span data-ttu-id="e1658-113">Bézierovy křivky v GDI+</span><span class="sxs-lookup"><span data-stu-id="e1658-113">Bézier Splines in GDI+</span></span>](bezier-splines-in-gdi.md)
-- [<span data-ttu-id="e1658-114">Postupy: Kreslení sekvence Bézierových křivek</span><span class="sxs-lookup"><span data-stu-id="e1658-114">How to: Draw a Sequence of Bézier Splines</span></span>](how-to-draw-a-sequence-of-bezier-splines.md)
+- [<span data-ttu-id="ccccc-113">Bézierovy křivky v GDI+</span><span class="sxs-lookup"><span data-stu-id="ccccc-113">Bézier Splines in GDI+</span></span>](bezier-splines-in-gdi.md)
+- [<span data-ttu-id="ccccc-114">Postupy: Kreslení sekvence Bézierových křivek</span><span class="sxs-lookup"><span data-stu-id="ccccc-114">How to: Draw a Sequence of Bézier Splines</span></span>](how-to-draw-a-sequence-of-bezier-splines.md)

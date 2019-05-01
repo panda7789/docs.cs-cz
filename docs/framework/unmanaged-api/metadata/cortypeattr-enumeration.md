@@ -17,16 +17,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 43e7c973ee22350f26b4f86bcc8b4c4c727291ef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62045185"
 ---
-# <a name="cortypeattr-enumeration"></a><span data-ttu-id="2f852-102">CorTypeAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="2f852-102">CorTypeAttr Enumeration</span></span>
-<span data-ttu-id="2f852-103">Obsahuje hodnoty, které označují typ metadat.</span><span class="sxs-lookup"><span data-stu-id="2f852-103">Contains values that indicate type metadata.</span></span>  
+# <a name="cortypeattr-enumeration"></a><span data-ttu-id="7ff59-102">CorTypeAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="7ff59-102">CorTypeAttr Enumeration</span></span>
+<span data-ttu-id="7ff59-103">Obsahuje hodnoty, které označují typ metadat.</span><span class="sxs-lookup"><span data-stu-id="7ff59-103">Contains values that indicate type metadata.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2f852-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2f852-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7ff59-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ff59-104">Syntax</span></span>  
   
 ```  
 typedef enum CorTypeAttr {  
@@ -75,51 +75,51 @@ typedef enum CorTypeAttr {
 } CorTypeAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="2f852-105">Členové</span><span class="sxs-lookup"><span data-stu-id="2f852-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="7ff59-105">Členové</span><span class="sxs-lookup"><span data-stu-id="7ff59-105">Members</span></span>  
   
-|<span data-ttu-id="2f852-106">Člen</span><span class="sxs-lookup"><span data-stu-id="2f852-106">Member</span></span>|<span data-ttu-id="2f852-107">Popis</span><span class="sxs-lookup"><span data-stu-id="2f852-107">Description</span></span>|  
+|<span data-ttu-id="7ff59-106">Člen</span><span class="sxs-lookup"><span data-stu-id="7ff59-106">Member</span></span>|<span data-ttu-id="7ff59-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7ff59-107">Description</span></span>|  
 |------------|-----------------|  
-|`tdVisibilityMask`|<span data-ttu-id="2f852-108">Používá pro informace o viditelnosti typu.</span><span class="sxs-lookup"><span data-stu-id="2f852-108">Used for type visibility information.</span></span>|  
-|`tdNotPublic`|<span data-ttu-id="2f852-109">Určuje, že typ není v oboru veřejné.</span><span class="sxs-lookup"><span data-stu-id="2f852-109">Specifies that the type is not in public scope.</span></span>|  
-|`tdPublic`|<span data-ttu-id="2f852-110">Určuje, že typ je ve veřejné oboru.</span><span class="sxs-lookup"><span data-stu-id="2f852-110">Specifies that the type is in public scope.</span></span>|  
-|`tdNestedPublic`|<span data-ttu-id="2f852-111">Určuje, že typ je vnořená s veřejnou viditelností.</span><span class="sxs-lookup"><span data-stu-id="2f852-111">Specifies that the type is nested with public visibility.</span></span>|  
-|`tdNestedPrivate`|<span data-ttu-id="2f852-112">Určuje, že typ je vnořená s privátní viditelnost.</span><span class="sxs-lookup"><span data-stu-id="2f852-112">Specifies that the type is nested with private visibility.</span></span>|  
-|`tdNestedFamily`|<span data-ttu-id="2f852-113">Určuje, že typ je vnořená prostřednictvím řady viditelnosti.</span><span class="sxs-lookup"><span data-stu-id="2f852-113">Specifies that the type is nested with family visibility.</span></span>|  
-|`tdNestedAssembly`|<span data-ttu-id="2f852-114">Určuje, že je vnořený typ se viditelností sestavení.</span><span class="sxs-lookup"><span data-stu-id="2f852-114">Specifies that the type is nested with assembly visibility.</span></span>|  
-|`tdNestedFamANDAssem`|<span data-ttu-id="2f852-115">Určuje, že typ je vnořená family a assembly je prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="2f852-115">Specifies that the type is nested with family and assembly visibility.</span></span>|  
-|`tdNestedFamORAssem`|<span data-ttu-id="2f852-116">Určuje, že typ je vnořená family nebo assembly je prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="2f852-116">Specifies that the type is nested with family or assembly visibility.</span></span>|  
-|`tdLayoutMask`|<span data-ttu-id="2f852-117">Získá informace o rozložení typu.</span><span class="sxs-lookup"><span data-stu-id="2f852-117">Gets layout information for the type.</span></span>|  
-|`tdAutoLayout`|<span data-ttu-id="2f852-118">Určuje, zda jsou automaticky rozloženy pole tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="2f852-118">Specifies that the fields of this type are laid out automatically.</span></span>|  
-|`tdSequentialLayout`|<span data-ttu-id="2f852-119">Určuje, že pole tohoto typu jsou rozloženy postupně.</span><span class="sxs-lookup"><span data-stu-id="2f852-119">Specifies that the fields of this type are laid out sequentially.</span></span>|  
-|`tdExplicitLayout`|<span data-ttu-id="2f852-120">Určuje, že rozložení tohoto pole je explicitně zadán.</span><span class="sxs-lookup"><span data-stu-id="2f852-120">Specifies that field layout is supplied explicitly.</span></span>|  
-|`tdClassSemanticsMask`|<span data-ttu-id="2f852-121">Získá sémantické informace o typu.</span><span class="sxs-lookup"><span data-stu-id="2f852-121">Gets semantic information about the type.</span></span>|  
-|`tdClass`|<span data-ttu-id="2f852-122">Určuje, že typ je třída.</span><span class="sxs-lookup"><span data-stu-id="2f852-122">Specifies that the type is a class.</span></span>|  
-|`tdInterface`|<span data-ttu-id="2f852-123">Určuje, že je typem rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2f852-123">Specifies that the type is an interface.</span></span>|  
-|`tdAbstract`|<span data-ttu-id="2f852-124">Určuje, že typ je abstraktní.</span><span class="sxs-lookup"><span data-stu-id="2f852-124">Specifies that the type is abstract.</span></span>|  
-|`tdSealed`|<span data-ttu-id="2f852-125">Určuje, že typ nelze rozšířit.</span><span class="sxs-lookup"><span data-stu-id="2f852-125">Specifies that the type cannot be extended.</span></span>|  
-|`tdSpecialName`|<span data-ttu-id="2f852-126">Určuje, že název třídy je speciální.</span><span class="sxs-lookup"><span data-stu-id="2f852-126">Specifies that the class name is special.</span></span> <span data-ttu-id="2f852-127">Její název popisuje jak.</span><span class="sxs-lookup"><span data-stu-id="2f852-127">Its name describes how.</span></span>|  
-|`tdImport`|<span data-ttu-id="2f852-128">Určuje, že typ je importovat.</span><span class="sxs-lookup"><span data-stu-id="2f852-128">Specifies that the type is imported.</span></span>|  
-|`tdSerializable`|<span data-ttu-id="2f852-129">Určuje, že typ je serializovatelný.</span><span class="sxs-lookup"><span data-stu-id="2f852-129">Specifies that the type is serializable.</span></span>|  
-|`tdWindowsRuntime`|<span data-ttu-id="2f852-130">Určuje, jestli je tento typ [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.</span><span class="sxs-lookup"><span data-stu-id="2f852-130">Specifies that this type is a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] type.</span></span>|  
-|`tdStringFormatMask`|<span data-ttu-id="2f852-131">Získá informace o tom, jak jsou řetězce kódování a ve formátu.</span><span class="sxs-lookup"><span data-stu-id="2f852-131">Gets information about how strings are encoded and formatted.</span></span>|  
-|`tdAnsiClass`|<span data-ttu-id="2f852-132">Určuje, že tento typ interpretuje LPTSTR jako ANSI.</span><span class="sxs-lookup"><span data-stu-id="2f852-132">Specifies that this type interprets an LPTSTR as ANSI.</span></span>|  
-|`tdUnicodeClass`|<span data-ttu-id="2f852-133">Určuje, že tento typ interpretuje LPTSTR znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="2f852-133">Specifies that this type interprets an LPTSTR as Unicode.</span></span>|  
-|`tdAutoClass`|<span data-ttu-id="2f852-134">Určuje, že tento typ interpretuje LPTSTR automaticky.</span><span class="sxs-lookup"><span data-stu-id="2f852-134">Specifies that this type interprets an LPTSTR automatically.</span></span>|  
-|`tdCustomFormatClass`|<span data-ttu-id="2f852-135">Určuje, zda typ má nestandardní kódování, jak je stanoveno `CustomFormatMask`.</span><span class="sxs-lookup"><span data-stu-id="2f852-135">Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.</span></span>|  
-|`tdCustomFormatMask`|<span data-ttu-id="2f852-136">Použijte tuto masku nestandardní kódování informace pro nativní zprostředkovatele komunikace s objekty.</span><span class="sxs-lookup"><span data-stu-id="2f852-136">Use this mask to get non-standard encoding information for native interop.</span></span> <span data-ttu-id="2f852-137">Význam hodnot tyto dva bity není zadána.</span><span class="sxs-lookup"><span data-stu-id="2f852-137">The meaning of the values of these two bits is unspecified.</span></span>|  
-|`tdBeforeFieldInit`|<span data-ttu-id="2f852-138">Určuje, že typ musí být inicializován před prvním pokusu o přístup ke statickému poli.</span><span class="sxs-lookup"><span data-stu-id="2f852-138">Specifies that the type must be initialized before the first attempt to access a static field.</span></span>|  
-|`tdForwarder`|<span data-ttu-id="2f852-139">Určuje, že typ je exportovali a předávání typů.</span><span class="sxs-lookup"><span data-stu-id="2f852-139">Specifies that the type is exported, and a type forwarder.</span></span>|  
-|`tdReservedMask`|<span data-ttu-id="2f852-140">Tento příznak a příznaky níže se používá interně modulem common language runtime.</span><span class="sxs-lookup"><span data-stu-id="2f852-140">This flag and the flags below are used internally by the common language runtime.</span></span>|  
-|`tdRTSpecialName`|<span data-ttu-id="2f852-141">Určuje, že modul common language runtime by měla kontrolovat název kódování.</span><span class="sxs-lookup"><span data-stu-id="2f852-141">Specifies that the common language runtime should check the name encoding.</span></span>|  
-|`tdHasSecurity`|<span data-ttu-id="2f852-142">Určuje, že má typ zabezpečení, které s ním spojená.</span><span class="sxs-lookup"><span data-stu-id="2f852-142">Specifies that the type has security associated with it.</span></span>|  
+|`tdVisibilityMask`|<span data-ttu-id="7ff59-108">Používá pro informace o viditelnosti typu.</span><span class="sxs-lookup"><span data-stu-id="7ff59-108">Used for type visibility information.</span></span>|  
+|`tdNotPublic`|<span data-ttu-id="7ff59-109">Určuje, že typ není v oboru veřejné.</span><span class="sxs-lookup"><span data-stu-id="7ff59-109">Specifies that the type is not in public scope.</span></span>|  
+|`tdPublic`|<span data-ttu-id="7ff59-110">Určuje, že typ je ve veřejné oboru.</span><span class="sxs-lookup"><span data-stu-id="7ff59-110">Specifies that the type is in public scope.</span></span>|  
+|`tdNestedPublic`|<span data-ttu-id="7ff59-111">Určuje, že typ je vnořená s veřejnou viditelností.</span><span class="sxs-lookup"><span data-stu-id="7ff59-111">Specifies that the type is nested with public visibility.</span></span>|  
+|`tdNestedPrivate`|<span data-ttu-id="7ff59-112">Určuje, že typ je vnořená s privátní viditelnost.</span><span class="sxs-lookup"><span data-stu-id="7ff59-112">Specifies that the type is nested with private visibility.</span></span>|  
+|`tdNestedFamily`|<span data-ttu-id="7ff59-113">Určuje, že typ je vnořená prostřednictvím řady viditelnosti.</span><span class="sxs-lookup"><span data-stu-id="7ff59-113">Specifies that the type is nested with family visibility.</span></span>|  
+|`tdNestedAssembly`|<span data-ttu-id="7ff59-114">Určuje, že je vnořený typ se viditelností sestavení.</span><span class="sxs-lookup"><span data-stu-id="7ff59-114">Specifies that the type is nested with assembly visibility.</span></span>|  
+|`tdNestedFamANDAssem`|<span data-ttu-id="7ff59-115">Určuje, že typ je vnořená family a assembly je prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="7ff59-115">Specifies that the type is nested with family and assembly visibility.</span></span>|  
+|`tdNestedFamORAssem`|<span data-ttu-id="7ff59-116">Určuje, že typ je vnořená family nebo assembly je prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="7ff59-116">Specifies that the type is nested with family or assembly visibility.</span></span>|  
+|`tdLayoutMask`|<span data-ttu-id="7ff59-117">Získá informace o rozložení typu.</span><span class="sxs-lookup"><span data-stu-id="7ff59-117">Gets layout information for the type.</span></span>|  
+|`tdAutoLayout`|<span data-ttu-id="7ff59-118">Určuje, zda jsou automaticky rozloženy pole tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="7ff59-118">Specifies that the fields of this type are laid out automatically.</span></span>|  
+|`tdSequentialLayout`|<span data-ttu-id="7ff59-119">Určuje, že pole tohoto typu jsou rozloženy postupně.</span><span class="sxs-lookup"><span data-stu-id="7ff59-119">Specifies that the fields of this type are laid out sequentially.</span></span>|  
+|`tdExplicitLayout`|<span data-ttu-id="7ff59-120">Určuje, že rozložení tohoto pole je explicitně zadán.</span><span class="sxs-lookup"><span data-stu-id="7ff59-120">Specifies that field layout is supplied explicitly.</span></span>|  
+|`tdClassSemanticsMask`|<span data-ttu-id="7ff59-121">Získá sémantické informace o typu.</span><span class="sxs-lookup"><span data-stu-id="7ff59-121">Gets semantic information about the type.</span></span>|  
+|`tdClass`|<span data-ttu-id="7ff59-122">Určuje, že typ je třída.</span><span class="sxs-lookup"><span data-stu-id="7ff59-122">Specifies that the type is a class.</span></span>|  
+|`tdInterface`|<span data-ttu-id="7ff59-123">Určuje, že je typem rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7ff59-123">Specifies that the type is an interface.</span></span>|  
+|`tdAbstract`|<span data-ttu-id="7ff59-124">Určuje, že typ je abstraktní.</span><span class="sxs-lookup"><span data-stu-id="7ff59-124">Specifies that the type is abstract.</span></span>|  
+|`tdSealed`|<span data-ttu-id="7ff59-125">Určuje, že typ nelze rozšířit.</span><span class="sxs-lookup"><span data-stu-id="7ff59-125">Specifies that the type cannot be extended.</span></span>|  
+|`tdSpecialName`|<span data-ttu-id="7ff59-126">Určuje, že název třídy je speciální.</span><span class="sxs-lookup"><span data-stu-id="7ff59-126">Specifies that the class name is special.</span></span> <span data-ttu-id="7ff59-127">Její název popisuje jak.</span><span class="sxs-lookup"><span data-stu-id="7ff59-127">Its name describes how.</span></span>|  
+|`tdImport`|<span data-ttu-id="7ff59-128">Určuje, že typ je importovat.</span><span class="sxs-lookup"><span data-stu-id="7ff59-128">Specifies that the type is imported.</span></span>|  
+|`tdSerializable`|<span data-ttu-id="7ff59-129">Určuje, že typ je serializovatelný.</span><span class="sxs-lookup"><span data-stu-id="7ff59-129">Specifies that the type is serializable.</span></span>|  
+|`tdWindowsRuntime`|<span data-ttu-id="7ff59-130">Určuje, jestli je tento typ [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.</span><span class="sxs-lookup"><span data-stu-id="7ff59-130">Specifies that this type is a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] type.</span></span>|  
+|`tdStringFormatMask`|<span data-ttu-id="7ff59-131">Získá informace o tom, jak jsou řetězce kódování a ve formátu.</span><span class="sxs-lookup"><span data-stu-id="7ff59-131">Gets information about how strings are encoded and formatted.</span></span>|  
+|`tdAnsiClass`|<span data-ttu-id="7ff59-132">Určuje, že tento typ interpretuje LPTSTR jako ANSI.</span><span class="sxs-lookup"><span data-stu-id="7ff59-132">Specifies that this type interprets an LPTSTR as ANSI.</span></span>|  
+|`tdUnicodeClass`|<span data-ttu-id="7ff59-133">Určuje, že tento typ interpretuje LPTSTR znakové sady Unicode.</span><span class="sxs-lookup"><span data-stu-id="7ff59-133">Specifies that this type interprets an LPTSTR as Unicode.</span></span>|  
+|`tdAutoClass`|<span data-ttu-id="7ff59-134">Určuje, že tento typ interpretuje LPTSTR automaticky.</span><span class="sxs-lookup"><span data-stu-id="7ff59-134">Specifies that this type interprets an LPTSTR automatically.</span></span>|  
+|`tdCustomFormatClass`|<span data-ttu-id="7ff59-135">Určuje, zda typ má nestandardní kódování, jak je stanoveno `CustomFormatMask`.</span><span class="sxs-lookup"><span data-stu-id="7ff59-135">Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.</span></span>|  
+|`tdCustomFormatMask`|<span data-ttu-id="7ff59-136">Použijte tuto masku nestandardní kódování informace pro nativní zprostředkovatele komunikace s objekty.</span><span class="sxs-lookup"><span data-stu-id="7ff59-136">Use this mask to get non-standard encoding information for native interop.</span></span> <span data-ttu-id="7ff59-137">Význam hodnot tyto dva bity není zadána.</span><span class="sxs-lookup"><span data-stu-id="7ff59-137">The meaning of the values of these two bits is unspecified.</span></span>|  
+|`tdBeforeFieldInit`|<span data-ttu-id="7ff59-138">Určuje, že typ musí být inicializován před prvním pokusu o přístup ke statickému poli.</span><span class="sxs-lookup"><span data-stu-id="7ff59-138">Specifies that the type must be initialized before the first attempt to access a static field.</span></span>|  
+|`tdForwarder`|<span data-ttu-id="7ff59-139">Určuje, že typ je exportovali a předávání typů.</span><span class="sxs-lookup"><span data-stu-id="7ff59-139">Specifies that the type is exported, and a type forwarder.</span></span>|  
+|`tdReservedMask`|<span data-ttu-id="7ff59-140">Tento příznak a příznaky níže se používá interně modulem common language runtime.</span><span class="sxs-lookup"><span data-stu-id="7ff59-140">This flag and the flags below are used internally by the common language runtime.</span></span>|  
+|`tdRTSpecialName`|<span data-ttu-id="7ff59-141">Určuje, že modul common language runtime by měla kontrolovat název kódování.</span><span class="sxs-lookup"><span data-stu-id="7ff59-141">Specifies that the common language runtime should check the name encoding.</span></span>|  
+|`tdHasSecurity`|<span data-ttu-id="7ff59-142">Určuje, že má typ zabezpečení, které s ním spojená.</span><span class="sxs-lookup"><span data-stu-id="7ff59-142">Specifies that the type has security associated with it.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="2f852-143">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2f852-143">Requirements</span></span>  
- <span data-ttu-id="2f852-144">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2f852-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7ff59-143">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7ff59-143">Requirements</span></span>  
+ <span data-ttu-id="7ff59-144">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7ff59-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2f852-145">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="2f852-145">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="7ff59-145">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="7ff59-145">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="2f852-146">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2f852-146">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7ff59-146">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7ff59-146">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2f852-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2f852-147">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7ff59-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7ff59-147">See also</span></span>
 
-- [<span data-ttu-id="2f852-148">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="2f852-148">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="7ff59-148">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="7ff59-148">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

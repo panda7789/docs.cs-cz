@@ -8,21 +8,21 @@ helpviewer_keywords:
 - controls [WPF], RadioButton
 ms.assetid: 6c9ba847-eab7-4bba-9c74-6b56ef72067b
 ms.openlocfilehash: 32db3436b536cd1a27dd79e0e98cdc3e6f21c4c9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024119"
 ---
-# <a name="radiobutton"></a><span data-ttu-id="11772-102">RadioButton</span><span class="sxs-lookup"><span data-stu-id="11772-102">RadioButton</span></span>
-<span data-ttu-id="11772-103"><xref:System.Windows.Controls.RadioButton> ovládací prvky jsou obvykle seskupené s cílem zajistit uživatelům nabídnout jednoho výběru z několika možností; lze vybrat pouze jedno tlačítko najednou.</span><span class="sxs-lookup"><span data-stu-id="11772-103"><xref:System.Windows.Controls.RadioButton> controls are usually grouped together to offer users a single choice among several options; only one button at a time can be selected.</span></span>  
+# <a name="radiobutton"></a><span data-ttu-id="621d7-102">RadioButton</span><span class="sxs-lookup"><span data-stu-id="621d7-102">RadioButton</span></span>
+<span data-ttu-id="621d7-103"><xref:System.Windows.Controls.RadioButton> ovládací prvky jsou obvykle seskupené s cílem zajistit uživatelům nabídnout jednoho výběru z několika možností; lze vybrat pouze jedno tlačítko najednou.</span><span class="sxs-lookup"><span data-stu-id="621d7-103"><xref:System.Windows.Controls.RadioButton> controls are usually grouped together to offer users a single choice among several options; only one button at a time can be selected.</span></span>  
   
- <span data-ttu-id="11772-104">Následující obrázek znázorňuje příklad <xref:System.Windows.Controls.RadioButton> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="11772-104">The following illustration shows an example of a <xref:System.Windows.Controls.RadioButton> control.</span></span>  
+ <span data-ttu-id="621d7-104">Následující obrázek znázorňuje příklad <xref:System.Windows.Controls.RadioButton> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="621d7-104">The following illustration shows an example of a <xref:System.Windows.Controls.RadioButton> control.</span></span>  
   
- <span data-ttu-id="11772-105">![Přepínač stavy tlačítka](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span><span class="sxs-lookup"><span data-stu-id="11772-105">![Radio button states](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span></span>  
-<span data-ttu-id="11772-106">Typické ovládacího prvku RadioButton</span><span class="sxs-lookup"><span data-stu-id="11772-106">Typical RadioButton</span></span>  
+ <span data-ttu-id="621d7-105">![Přepínač stavy tlačítka](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span><span class="sxs-lookup"><span data-stu-id="621d7-105">![Radio button states](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span></span>  
+<span data-ttu-id="621d7-106">Typické ovládacího prvku RadioButton</span><span class="sxs-lookup"><span data-stu-id="621d7-106">Typical RadioButton</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="11772-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="11772-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="621d7-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="621d7-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ToggleButton>  
   
-## <a name="related-sections"></a><span data-ttu-id="11772-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="11772-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="621d7-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="621d7-108">Related Sections</span></span>

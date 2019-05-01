@@ -18,18 +18,18 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c0aea6185095a30aae9197c875aa9b9ac581d406
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62044964"
 ---
-# <a name="iceegengetmethodbuffer-method"></a><span data-ttu-id="d03b9-102">ICeeGen::GetMethodBuffer – metoda</span><span class="sxs-lookup"><span data-stu-id="d03b9-102">ICeeGen::GetMethodBuffer Method</span></span>
-<span data-ttu-id="d03b9-103">Získá vyrovnávací paměť o velikosti odpovídající metodu na zadané relativní virtuální adrese.</span><span class="sxs-lookup"><span data-stu-id="d03b9-103">Gets a buffer of the appropriate size for the method at the specified relative virtual address.</span></span>  
+# <a name="iceegengetmethodbuffer-method"></a><span data-ttu-id="b1a57-102">ICeeGen::GetMethodBuffer – metoda</span><span class="sxs-lookup"><span data-stu-id="b1a57-102">ICeeGen::GetMethodBuffer Method</span></span>
+<span data-ttu-id="b1a57-103">Získá vyrovnávací paměť o velikosti odpovídající metodu na zadané relativní virtuální adrese.</span><span class="sxs-lookup"><span data-stu-id="b1a57-103">Gets a buffer of the appropriate size for the method at the specified relative virtual address.</span></span>  
   
- <span data-ttu-id="d03b9-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="d03b9-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="b1a57-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="b1a57-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d03b9-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d03b9-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b1a57-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b1a57-105">Syntax</span></span>  
   
 ```  
 HRESULT GetMethodBuffer (  
@@ -38,22 +38,22 @@ HRESULT GetMethodBuffer (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d03b9-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d03b9-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b1a57-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="b1a57-106">Parameters</span></span>  
  `RVA`  
- <span data-ttu-id="d03b9-107">[in] Relativní virtuální adresu metody, pro které chcete vrátit do vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="d03b9-107">[in] The relative virtual address of the method for which to return a buffer.</span></span>  
+ <span data-ttu-id="b1a57-107">[in] Relativní virtuální adresu metody, pro které chcete vrátit do vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="b1a57-107">[in] The relative virtual address of the method for which to return a buffer.</span></span>  
   
  `lpBuffer`  
- <span data-ttu-id="d03b9-108">[out] Ukazatel na vrácený vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="d03b9-108">[out] A pointer to the returned buffer.</span></span>  
+ <span data-ttu-id="b1a57-108">[out] Ukazatel na vrácený vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="b1a57-108">[out] A pointer to the returned buffer.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d03b9-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d03b9-109">Requirements</span></span>  
- <span data-ttu-id="d03b9-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d03b9-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b1a57-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b1a57-109">Requirements</span></span>  
+ <span data-ttu-id="b1a57-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b1a57-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d03b9-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="d03b9-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="b1a57-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b1a57-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="d03b9-112">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d03b9-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b1a57-112">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b1a57-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="d03b9-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d03b9-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="b1a57-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b1a57-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d03b9-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d03b9-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b1a57-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b1a57-114">See also</span></span>
 
-- [<span data-ttu-id="d03b9-115">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d03b9-115">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [<span data-ttu-id="b1a57-115">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b1a57-115">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

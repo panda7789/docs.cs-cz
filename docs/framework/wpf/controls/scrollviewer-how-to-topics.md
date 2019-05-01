@@ -8,26 +8,26 @@ helpviewer_keywords:
 - ScrollViewer control [WPF], how-to topics
 ms.assetid: 1e20804b-1d80-4b54-af41-76b3e10a6f89
 ms.openlocfilehash: fcb7809c1025997a0e78647c32590e1abee865ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971012"
 ---
-# <a name="scrollviewer-how-to-topics"></a><span data-ttu-id="95d8c-102">ScrollViewer – postupy</span><span class="sxs-lookup"><span data-stu-id="95d8c-102">ScrollViewer How-to Topics</span></span>
-<span data-ttu-id="95d8c-103">Témata v této části ukazují, jak používat <xref:System.Windows.Controls.ScrollViewer> prvek, který chcete vytvořit oblasti posuvný ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="95d8c-103">The topics in this section demonstrate how to use the <xref:System.Windows.Controls.ScrollViewer> element to create scrollable regions in your applications.</span></span>  
+# <a name="scrollviewer-how-to-topics"></a><span data-ttu-id="e310d-102">ScrollViewer – postupy</span><span class="sxs-lookup"><span data-stu-id="e310d-102">ScrollViewer How-to Topics</span></span>
+<span data-ttu-id="e310d-103">Témata v této části ukazují, jak používat <xref:System.Windows.Controls.ScrollViewer> prvek, který chcete vytvořit oblasti posuvný ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="e310d-103">The topics in this section demonstrate how to use the <xref:System.Windows.Controls.ScrollViewer> element to create scrollable regions in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="95d8c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="95d8c-104">In This Section</span></span>  
- [<span data-ttu-id="95d8c-105">Zpracování události ScrollChanged</span><span class="sxs-lookup"><span data-stu-id="95d8c-105">Handle the ScrollChanged Event</span></span>](how-to-handle-the-scrollchanged-event.md)  
- [<span data-ttu-id="95d8c-106">Posunutí obsahu použitím rozhraní IScrollInfo</span><span class="sxs-lookup"><span data-stu-id="95d8c-106">Scroll Content by Using the IScrollInfo Interface</span></span>](how-to-scroll-content-by-using-the-iscrollinfo-interface.md)  
- [<span data-ttu-id="95d8c-107">Použití metod pro posunutí obsahu prvku ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="95d8c-107">Use the Content-Scrolling Methods of ScrollViewer</span></span>](how-to-use-the-content-scrolling-methods-of-scrollviewer.md)  
+## <a name="in-this-section"></a><span data-ttu-id="e310d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e310d-104">In This Section</span></span>  
+ [<span data-ttu-id="e310d-105">Zpracování události ScrollChanged</span><span class="sxs-lookup"><span data-stu-id="e310d-105">Handle the ScrollChanged Event</span></span>](how-to-handle-the-scrollchanged-event.md)  
+ [<span data-ttu-id="e310d-106">Posunutí obsahu použitím rozhraní IScrollInfo</span><span class="sxs-lookup"><span data-stu-id="e310d-106">Scroll Content by Using the IScrollInfo Interface</span></span>](how-to-scroll-content-by-using-the-iscrollinfo-interface.md)  
+ [<span data-ttu-id="e310d-107">Použití metod pro posunutí obsahu prvku ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="e310d-107">Use the Content-Scrolling Methods of ScrollViewer</span></span>](how-to-use-the-content-scrolling-methods-of-scrollviewer.md)  
   
-## <a name="reference"></a><span data-ttu-id="95d8c-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="95d8c-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="e310d-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e310d-108">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   
  <xref:System.Windows.Controls.ScrollViewer>  
   
-## <a name="see-also"></a><span data-ttu-id="95d8c-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="95d8c-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e310d-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e310d-109">See also</span></span>
 
-- [<span data-ttu-id="95d8c-110">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="95d8c-110">Panels Overview</span></span>](panels-overview.md)
-- [<span data-ttu-id="95d8c-111">Rozložení</span><span class="sxs-lookup"><span data-stu-id="95d8c-111">Layout</span></span>](../advanced/layout.md)
+- [<span data-ttu-id="e310d-110">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="e310d-110">Panels Overview</span></span>](panels-overview.md)
+- [<span data-ttu-id="e310d-111">Rozložení</span><span class="sxs-lookup"><span data-stu-id="e310d-111">Layout</span></span>](../advanced/layout.md)

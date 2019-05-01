@@ -8,23 +8,23 @@ helpviewer_keywords:
 - Slider control [WPF]
 ms.assetid: fb037e2a-0002-458b-9e6b-321623fe72a7
 ms.openlocfilehash: 6d8836bc91283f83c95e63a8b948eed46fc94bca
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62023846"
 ---
-# <a name="slider"></a><span data-ttu-id="a461f-102">Posuvník</span><span class="sxs-lookup"><span data-stu-id="a461f-102">Slider</span></span>
-<span data-ttu-id="a461f-103"><xref:System.Windows.Controls.Slider> Zvolit ze škály hodnot přesunutím <xref:System.Windows.Controls.Primitives.Thumb> spolu <xref:System.Windows.Controls.Primitives.Track>.</span><span class="sxs-lookup"><span data-stu-id="a461f-103">The <xref:System.Windows.Controls.Slider> allows you select from a range of values by moving a <xref:System.Windows.Controls.Primitives.Thumb> along a <xref:System.Windows.Controls.Primitives.Track>.</span></span>  
+# <a name="slider"></a><span data-ttu-id="0ff4e-102">Posuvník</span><span class="sxs-lookup"><span data-stu-id="0ff4e-102">Slider</span></span>
+<span data-ttu-id="0ff4e-103"><xref:System.Windows.Controls.Slider> Zvolit ze škály hodnot přesunutím <xref:System.Windows.Controls.Primitives.Thumb> spolu <xref:System.Windows.Controls.Primitives.Track>.</span><span class="sxs-lookup"><span data-stu-id="0ff4e-103">The <xref:System.Windows.Controls.Slider> allows you select from a range of values by moving a <xref:System.Windows.Controls.Primitives.Thumb> along a <xref:System.Windows.Controls.Primitives.Track>.</span></span>  
   
- <span data-ttu-id="a461f-104">Následující obrázek znázorňuje příklad vodorovného <xref:System.Windows.Controls.Slider> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="a461f-104">The following illustration shows an example of a horizontal <xref:System.Windows.Controls.Slider> control.</span></span>  
+ <span data-ttu-id="0ff4e-104">Následující obrázek znázorňuje příklad vodorovného <xref:System.Windows.Controls.Slider> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="0ff4e-104">The following illustration shows an example of a horizontal <xref:System.Windows.Controls.Slider> control.</span></span>  
   
- <span data-ttu-id="a461f-105">![Vodorovný posuvník s osové značky](./media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span><span class="sxs-lookup"><span data-stu-id="a461f-105">![Horizontal slider with tick marks](./media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span></span>  
+ <span data-ttu-id="0ff4e-105">![Vodorovný posuvník s osové značky](./media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span><span class="sxs-lookup"><span data-stu-id="0ff4e-105">![Horizontal slider with tick marks](./media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="a461f-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a461f-106">In This Section</span></span>  
- [<span data-ttu-id="a461f-107">Přizpůsobení dílků na posuvníku</span><span class="sxs-lookup"><span data-stu-id="a461f-107">Customize the Ticks on a Slider</span></span>](how-to-customize-the-ticks-on-a-slider.md)  
+## <a name="in-this-section"></a><span data-ttu-id="0ff4e-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0ff4e-106">In This Section</span></span>  
+ [<span data-ttu-id="0ff4e-107">Přizpůsobení dílků na posuvníku</span><span class="sxs-lookup"><span data-stu-id="0ff4e-107">Customize the Ticks on a Slider</span></span>](how-to-customize-the-ticks-on-a-slider.md)  
   
-## <a name="reference"></a><span data-ttu-id="a461f-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="a461f-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="0ff4e-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="0ff4e-108">Reference</span></span>  
  <xref:System.Windows.Controls.Slider>  
   <xref:System.Windows.Controls.Primitives.Track>  
   <xref:System.Windows.Controls.Primitives.Thumb>
