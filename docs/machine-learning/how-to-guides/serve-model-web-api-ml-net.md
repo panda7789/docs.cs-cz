@@ -3,12 +3,12 @@ title: Poskytování strojového učení modelu ve webovém rozhraní API ASP.NE
 description: Poskytování modelu strojového učení ML.NET mínění analýzy prostřednictvím Internetu pomocí webového rozhraní API ASP.NET Core
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: af51ccaac263202fc34d36e746722d2da46404f8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 53b7c4bf90a1f7179af4137fcdc1d4bb8a214aae
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321225"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807995"
 ---
 # <a name="how-to-serve-machine-learning-model-through-aspnet-core-web-api"></a>Postupy: Slouží k Machine Learning Model prostřednictvím webové rozhraní API ASP.NET Core
 
@@ -55,46 +55,46 @@ Je potřeba vytvořit některé třídy pro vstupní data a předpovědi. Přide
 2. V Průzkumníku řešení klikněte pravým tlačítkem myši *DataModels* adresář a potom vyberte možnost Přidat > Nová položka.
 3. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentData.cs*. Vyberte **přidat** tlačítko. *SentimentData.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *SentimentData.cs*:
 
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.ML.Data;
-```
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.ML.Data;
+    ```
 
-Odeberte stávající definice třídy a přidejte následující kód, který **SentimentData.cs** souboru:
+    Odeberte stávající definice třídy a přidejte následující kód, který **SentimentData.cs** souboru:
 
-```csharp
-public class SentimentData
-{
-    [LoadColumn(0)]
-    public bool Label { get; set; }
-    [LoadColumn(1)]
-    public string Text { get; set; }   
-}
-```
+    ```csharp
+    public class SentimentData
+    {
+        [LoadColumn(0)]
+        public bool Label { get; set; }
+        [LoadColumn(1)]
+        public string Text { get; set; }
+    }
+    ```
 
 4. V Průzkumníku řešení klikněte pravým tlačítkem myši *DataModels* adresář a potom vyberte možnost **Přidat > Nová položka**.
 5. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentPrediction.cs*. Vyberte tlačítko Přidat. *SentimentPrediction.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *SentimentPrediction.cs*:
 
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.ML.Data;
-```
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.ML.Data;
+    ```
 
-Odeberte stávající definice třídy a přidejte následující kód, který *SentimentPrediction.cs* souboru:
+    Odeberte stávající definice třídy a přidejte následující kód, který *SentimentPrediction.cs* souboru:
 
-```csharp
-public class SentimentPrediction
-{
-    [ColumnName("PredictedLabel")]
-    public bool Prediction { get; set; }
-}
-```
+    ```csharp
+    public class SentimentPrediction
+    {
+        [ColumnName("PredictedLabel")]
+        public bool Prediction { get; set; }
+    }
+    ```
 
 ## <a name="register-predictionengine-for-use-in-application"></a>Zaregistrujte PredictionEngine pro použití v aplikaci
 
@@ -104,43 +104,43 @@ Pod následujícím odkazem najdete další informace, pokud chcete další info
 
 1. Otevřít *Startup.cs* třídu a přidejte následující příkaz do horní části souboru:
 
-```csharp
-using System.IO;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.ML;
-using Microsoft.ML.Core.Data;
-using SentimentAnalysisWebAPI.DataModels;
-```
+    ```csharp
+    using System.IO;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.ML;
+    using Microsoft.ML.Core.Data;
+    using SentimentAnalysisWebAPI.DataModels;
+    ```
 
 2. Přidejte následující řádky kódu, který *ConfigureServices* metody:
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-    services.AddScoped<MLContext>();
-    services.AddScoped<PredictionEngine<SentimentData, SentimentPrediction>>((ctx) =>
+    ```csharp
+    public void ConfigureServices(IServiceCollection services)
     {
-        MLContext mlContext = ctx.GetRequiredService<MLContext>();
-        string modelFilePathName = "MLModels/sentiment_model.zip";
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-        //Load model from file
-        ITransformer model;
-        using (var stream = File.OpenRead(modelFilePathName))
+        services.AddScoped<MLContext>();
+        services.AddScoped<PredictionEngine<SentimentData, SentimentPrediction>>((ctx) =>
         {
-            model = mlContext.Model.Load(stream);
-        }
+            MLContext mlContext = ctx.GetRequiredService<MLContext>();
+            string modelFilePathName = "MLModels/sentiment_model.zip";
 
-        // Return prediction engine
-        return model.CreatePredictionEngine<SentimentData, SentimentPrediction>(mlContext);
-    });
-}
-```
+            //Load model from file
+            ITransformer model;
+            using (var stream = File.OpenRead(modelFilePathName))
+            {
+                model = mlContext.Model.Load(stream);
+            }
+
+            // Return prediction engine
+            return model.CreatePredictionEngine<SentimentData, SentimentPrediction>(mlContext);
+        });
+    }
+    ```
 
 > [!WARNING]
 > `PredictionEngine` není bezpečné pro vlákna. Způsob, jak můžete omezit náklady na vytvoření objektu je tím, že jeho doba platnosti služby *obor*. Objekty s vymezenou *životností* jsou stejné v rámci jednoho požadavku, ale jiné napříč různými požadavky. Navštivte následující odkaz na další informace o [služby životnosti](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1#service-lifetimes).
@@ -155,45 +155,45 @@ Ke zpracování příchozích žádostí HTTP, budete muset vytvořit řadič.
 1. V **přidat novou položku** dialogu **prázdný kontroler API** a vyberte **přidat**.
 1. Příkazový řádek změnu **názvu Kontroleru** pole *PredictController.cs*. Vyberte tlačítko Přidat. *PredictController.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *PredictController.cs*:
 
-```csharp
-using System;
-using Microsoft.AspNetCore.Mvc;
-using SentimentAnalysisWebAPI.DataModels;
-using Microsoft.ML;
-```
+    ```csharp
+    using System;
+    using Microsoft.AspNetCore.Mvc;
+    using SentimentAnalysisWebAPI.DataModels;
+    using Microsoft.ML;
+    ```
 
-Odeberte stávající definice třídy a přidejte následující kód, který *PredictController.cs* souboru:
+    Odeberte stávající definice třídy a přidejte následující kód, který *PredictController.cs* souboru:
 
-```csharp
-public class PredictController : ControllerBase
-{
-    
-    private readonly PredictionEngine<SentimentData,SentimentPrediction> _predictionEngine;
-
-    public PredictController(PredictionEngine<SentimentData, SentimentPrediction> predictionEngine)
+    ```csharp
+    public class PredictController : ControllerBase
     {
-        _predictionEngine = predictionEngine; //Define prediction engine
-    }
 
-    [HttpPost]
-    public ActionResult<string> Post([FromBody]SentimentData input)
-    {
-        if(!ModelState.IsValid)
+        private readonly PredictionEngine<SentimentData,SentimentPrediction> _predictionEngine;
+
+        public PredictController(PredictionEngine<SentimentData, SentimentPrediction> predictionEngine)
         {
-            return BadRequest();
+            _predictionEngine = predictionEngine; //Define prediction engine
         }
 
-        // Make a prediction
-        SentimentPrediction prediction = _predictionEngine.Predict(input);
+        [HttpPost]
+        public ActionResult<string> Post([FromBody]SentimentData input)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
-        //If prediction is true then it is toxic. If it is false, the it is not.
-        string isToxic = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
+            // Make a prediction
+            SentimentPrediction prediction = _predictionEngine.Predict(input);
 
-        return Ok(isToxic);
+            //If prediction is true then it is toxic. If it is false, the it is not.
+            string isToxic = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
+
+            return Ok(isToxic);
+        }
+
     }
-    
-}
-```
+    ```
 
 Toto přiřazení `PredictionEngine` předáním konstruktoru kontroleru, který můžete získat pomocí vkládání závislostí. Pak na metodu POST tento kontroler `PredictionEngine` se používá k vytváření předpovědí a výsledek se vrátí zpět na uživatele v případě úspěšného ověření.
 

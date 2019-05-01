@@ -4,12 +4,12 @@ description: Přehled nástroje dotnet svcutil Microsoft WCF, který přidá fun
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: b5dfb84f19c3748daa303c828cbe881f1582eb76
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.openlocfilehash: 665958bf4b36154f05d9f35f235b45c62f07973c
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612815"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773943"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Nástroj dotnet svcutil WCF pro .NET Core
 
@@ -53,55 +53,56 @@ Z příkazového okna Windows, macOS nebo Linux postupujte následovně:
 
 1. Vytvořte adresář _HelloSvcutil_ pro váš projekt a nastavte ji váš aktuální adresář, jako v následujícím příkladu:
 
-```console
-mkdir HelloSvcutil
-cd HelloSvcutil
-```
+    ```console
+    mkdir HelloSvcutil
+    cd HelloSvcutil
+    ```
 
 2. Vytvořte nový C# webový projekt v tomto adresáři pomocí [ `dotnet new` ](../tools/dotnet-new.md) takto:
 
-```console
-dotnet new web
-```
+    ```console
+    dotnet new web
+    ```
 
-3. Nainstalujte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako nástroj příkazového řádku:
-# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
+3. Nainstalujte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako nástroj příkazového řádku:  <!-- markdownlint-disable MD023 -->
+    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-```console
-dotnet tool install --global dotnet-svcutil
-```
+        ```console
+        dotnet tool install --global dotnet-svcutil
+        ```
 
-# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
-Otevřít `HelloSvcutil.csproj` souboru v editoru projektu, upravit `Project` prvek a přidejte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako odkaz na rozhraní příkazového řádku nástroje, pomocí následujícího kódu:
+    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
+    Otevřít `HelloSvcutil.csproj` souboru v editoru projektu, upravit `Project` prvek a přidejte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako odkaz na rozhraní příkazového řádku nástroje, pomocí následujícího kódu:
 
-```xml
-<ItemGroup>
-  <DotNetCliToolReference Include="dotnet-svcutil" Version="1.0.*" />
-</ItemGroup>
-```
+    ```xml
+    <ItemGroup>
+      <DotNetCliToolReference Include="dotnet-svcutil" Version="1.0.*" />
+    </ItemGroup>
+    ```
 
-Obnovte _dotnet svcutil_ balíček pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:
+    Obnovte _dotnet svcutil_ balíček pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:
 
-```console
-dotnet restore
-```
+    ```console
+    dotnet restore
+    ```
 
----
+    ---
 
 4. Spustit _dotnet svcutil_ příkazu vygenerujte soubor odkaz webové služby následujícím způsobem:
-# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-```console
-dotnet-svcutil http://contoso.com/SayHello.svc
-```
+    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
+    ```console
+    dotnet-svcutil http://contoso.com/SayHello.svc
+    ```
 
-```console
-dotnet svcutil http://contoso.com/SayHello.svc
-```
+    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
 
----
+    ```console
+    dotnet svcutil http://contoso.com/SayHello.svc
+    ```
+
+    ---
 
 Vygenerovaný soubor je uložen jako _HelloSvcutil/ServiceReference/Reference.cs_. _Dotnet svcutil_ nástroj také přidá do projektu odpovídající balíčky WCF vyžaduje proxy kód jako odkazy na balíček.
 
@@ -109,43 +110,43 @@ Vygenerovaný soubor je uložen jako _HelloSvcutil/ServiceReference/Reference.cs
 
 1. Obnovení balíčků WCF pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:
 
-```console
-dotnet restore
-```
+    ```console
+    dotnet restore
+    ```
 
 2. Vyhledejte název klienta, třídy a operace, kterou chcete použít. `Reference.cs` bude obsahovat třídu, která dědí z `System.ServiceModel.ClientBase`, metodami, které slouží k volání operací služby. V tomto příkladu chcete volat _SayHello_ služby _Hello_ operace. `ServiceReference.SayHelloClient` je název třídy klienta a je volána metoda `HelloAsync` , který je možné volat operaci.
 
 3. Otevřít `Startup.cs` souboru ve svém editoru a přidejte sadu pomocí příkazu pro obor názvů odkazu služby v horní části:
 
-```csharp
-using ServiceReference;
-```
+    ```csharp
+    using ServiceReference;
+    ```
 
- 4. Upravit `Configure` metoda k vyvolání webové služby. To provedete tak, že vytvoříte instanci, která dědí z třídy `ClientBase` a volání metody u objektu klienta:
+4. Upravit `Configure` metoda k vyvolání webové služby. To provedete tak, že vytvoříte instanci, která dědí z třídy `ClientBase` a volání metody u objektu klienta:
 
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    if (env.IsDevelopment())
+    ```csharp
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
-        app.UseDeveloperExceptionPage();
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+
+        app.Run(async (context) =>
+        {
+            var client = new SayHelloClient();
+            var response = await client.HelloAsync();
+            await context.Response.WriteAsync(response);
+        });
     }
 
-    app.Run(async (context) =>
-    {
-        var client = new SayHelloClient();
-        var response = await client.HelloAsync();
-        await context.Response.WriteAsync(response);
-    });
-}
-
-```
+    ```
 
 5. Spuštění aplikace pomocí [ `dotnet run` ](../tools/dotnet-run.md) takto:
 
-```console
-dotnet run
-```
+    ```console
+    dotnet run
+    ```
 
 6. Přejděte na adresu URL uvedená v konzole (například `http://localhost:5000`) ve webovém prohlížeči.
 

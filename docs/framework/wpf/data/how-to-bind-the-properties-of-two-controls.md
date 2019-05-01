@@ -6,12 +6,12 @@ helpviewer_keywords:
 - binding properties of two controls [WPF]
 - controls [WPF], binding properties of
 ms.assetid: 06318fac-6afd-4c7d-a277-6d7ef50f47bc
-ms.openlocfilehash: 0dd7b817b632758cfca8b5c45d88e333510485f6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 332e8e0dfa30ff7aff27c95652f07446baf6511a
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59222058"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63809535"
 ---
 # <a name="how-to-bind-the-properties-of-two-controls"></a>Postupy: Vytvoření vazby vlastností dvou ovládacích prvků
 Tento příklad ukazuje, jak vytvořit vazbu vlastnosti jedné instance ovládacího prvku, který z jiného pomocí <xref:System.Windows.Data.Binding.ElementName%2A> vlastnost.  
@@ -23,9 +23,10 @@ Tento příklad ukazuje, jak vytvořit vazbu vlastnosti jedné instance ovládac
   
  Při vykreslení v tomto příkladu bude vypadat nějak takto:  
   
- ![Na plátně se zeleným pozadím](./media/databindingbindingdpssample.PNG "DataBindingBindingDPsSample")  
-  
- **Poznámka:** cílovou vlastnost vazby (v tomto příkladu <xref:System.Windows.Controls.Panel.Background%2A> vlastnost) musí být vlastnost závislosti. Další informace najdete v tématu [přehled datových vazeb](data-binding-overview.md).  
+![Snímek obrazovky zobrazující pole se seznamem zaškrtnutým políčkem hodnotou zelené a zelený čtvereček.](./media/how-to-bind-the-properties-of-two-controls/data-binding-bind-background-canvas.png)
+
+> [!NOTE]
+> Vlastnost target vazby (v tomto příkladu <xref:System.Windows.Controls.Panel.Background%2A> vlastnost) musí být vlastnost závislosti. Další informace najdete v tématu [přehled datových vazeb](data-binding-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 

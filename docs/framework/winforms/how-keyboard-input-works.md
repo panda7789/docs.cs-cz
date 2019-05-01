@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
 ms.openlocfilehash: ddc2f3338b231ab3ae59e65bc82c00bb8f663540
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966964"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
 Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice v reakci na Windows zprávy. Většina aplikací Windows Forms zpracovávat vstup z klávesnice výhradně ve zpracování událostí klávesnice. Ale budete muset porozumět fungování zprávy týkající se klávesnice, abyste mohli implementovat pokročilejší scénáře vstup z klávesnice, jako je například zachycení klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíče dat, formulářů Windows rozpoznává a poskytuje přehled o tom, jak se směrují zprávy týkající se klávesnice. Informace o události klávesnice, naleznete v tématu [použití událostí klávesnice](using-keyboard-events.md).  

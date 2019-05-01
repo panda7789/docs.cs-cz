@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability [WPF], airspace
 - Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-ms.openlocfilehash: 911ba1474677f26a773ff63e958ba0ceedbefd0d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.openlocfilehash: 40ec8d033852bba5cb5ccb0739309cfe988a3ce5
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100974"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63808393"
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud více technologií prezentace se používají v aplikaci, například WPF, Win32 či DirectX, sdílejí musí vykreslování oblastí v rámci běžných okno nejvyšší úrovně. Toto téma popisuje problémy, které by mohly ovlivnit prezentace a vstup pro součinnost aplikaci WPF.  
@@ -25,23 +25,23 @@ Pokud více technologií prezentace se používají v aplikaci, například WPF,
 ### <a name="region-examples"></a>Příklady oblasti  
  Následující obrázek znázorňuje aplikaci, která kombinuje [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)], a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Jednotlivé technologie používá svůj vlastní samostatný, které se nepřekrývají sadu pixelů a nedochází k potížím oblasti.  
   
- ![Okno, které nemá žádné problémy s vzdušného prostoru](./media/migrationinteroparchitectarticle01.png "MigrationInteropArchitectArticle01")  
+ ![Příklad aplikace, který kombinuje Win32, DirectX a WPF.](./media/technology-regions-overview/win32-directx-windows-presentation-foundation-application.png)  
   
  Předpokládejme, že tato aplikace používá pozice ukazatele myši na vytvořit animaci, která se pokusí o vykreslování pomocí kteréhokoli z těchto tří oblastí. Bez ohledu na technologii, která je zodpovědná za samotný animace těmito technologiemi, by mohla narušit oblasti Další dvě. Následující obrázek znázorňuje pokusu o vykreslení kruh WPF přes oblast Win32.  
   
- ![Spolupráce diagram](./media/migrationinteroparchitectarticle02.png "MigrationInteropArchitectArticle02")  
+ ![Pokus o k vykreslení kruh WPF přes oblast Win32.](./media/technology-regions-overview/render-windows-presentation-foundation-circle-over-win32-region.png)  
   
  Jiné porušení je, pokud se pokusíte použít transparentnosti/alfa míchání mezi různými technologiemi.  Na následujícím obrázku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pole je v rozporu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] oblastech. Protože pixelů, který [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pole jsou poloprůhledného, bylo by nutné vlastnictvím obě [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], který není možné.  Takže to jiného narušení a nemůže být vytvořena.  
   
- ![Spolupráce diagram](./media/migrationinteroparchitectarticle03.png "MigrationInteropArchitectArticle03")  
+ ![Diagram znázorňující WPF pole bychom při tom porušili oblastech Win32 a rozhraní DirectX.](./media/technology-regions-overview/windows-foundation-presentation-box-violate-win32-directx-region.png)  
   
  Předchozí tři příklady používá oblasti obdélníkový, ale je možné různých tvarů.  V oblasti můžete mít například díry. Je vidět na následujícím obrázku [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] oblasti s obdélníkové hole Toto je velikost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] oblastech kombinovat.  
   
- ![Spolupráce diagram](./media/migrationinteroparchitectarticle04.png "MigrationInteropArchitectArticle04")  
+ ![Diagram zobrazující průběh Win32 oblasti obdélníkový riziko.](./media/technology-regions-overview/win32-region-rectangular-hole.png)  
   
  Oblasti lze také kompletně neobdélníkových nebo žádný obrazec describable podle [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] HRGN (oblast).  
   
- ![Spolupráce diagram](./media/migrationinteroparchitectarticle05.png "MigrationInteropArchitectArticle05")  
+ ![Diagram znázorňující vytvoření nepravoúhlého oblasti.](./media/technology-regions-overview/nonrectangular-win32-region.png)  
   
 ## <a name="transparency-and-top-level-windows"></a>Transparentnost a nejvyšší úrovně Windows  
  Správce oken ve Windows zpracovává jenom [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] HWND. Proto se každý [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> je popisovačem HWND. <xref:System.Windows.Window> HWND musí dodržovat obecná pravidla pro všechny HWND. V rámci této HWND [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kódu můžete dělat všechno, co celkové [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] podporovat. Ale pro interakce se další HWND na ploše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] musí dodržovat [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] zpracováním a vykreslováním pravidla.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje neobdélníkových oken pomocí [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]– HRGNs neobdélníkových oken a vrstvami windows pro platformu alpha jednotlivých pixelů.  
@@ -54,11 +54,11 @@ Pokud více technologií prezentace se používají v aplikaci, například WPF,
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vrstvené windows mají různé funkce v různých operačních systémech. Důvodem je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] k vykreslení, a vrstvami windows byly primárně určený pro [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] vykreslování, není [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslování.  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hardware podporuje akcelerované vrstveným windows na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] a novější. Hardware accelerated vrstveným windows na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] vyžadují podporu – od [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)], takže funkce závisí na verzi [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] v daném počítači.  
+- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hardware podporuje akcelerované vrstveným windows na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] a novější. Hardware accelerated vrstveným windows na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] vyžadují podporu – od [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)], takže funkce závisí na verzi [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] v daném počítači.  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepodporuje transparentnosti barevné klíče, protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nemůže zaručit, že přesná barva jste požádali, zejména pokud vykreslování hardwarově urychlené vykreslování.  
+- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepodporuje transparentnosti barevné klíče, protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nemůže zaručit, že přesná barva jste požádali, zejména pokud vykreslování hardwarově urychlené vykreslování.  
   
--   Pokud vaše aplikace běží na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], vrstvený windows nad [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] barvou přepínal povrchy při [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykresluje aplikace.  (Pořadí vykreslování skutečné je, že [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] potom skryje okno vrstvami [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] kreslení a potom [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] vrátí zpět vrstvami okno).  Jinou hodnotu než[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vrstvami windows také mít toto omezení.  
+- Pokud vaše aplikace běží na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], vrstvený windows nad [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] barvou přepínal povrchy při [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykresluje aplikace.  (Pořadí vykreslování skutečné je, že [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] potom skryje okno vrstvami [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] kreslení a potom [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] vrátí zpět vrstvami okno).  Jinou hodnotu než[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vrstvami windows také mít toto omezení.  
   
 ## <a name="see-also"></a>Viz také:
 

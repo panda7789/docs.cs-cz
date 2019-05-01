@@ -16,36 +16,36 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: 079cb3e969ee2c6d4e0163106769765cd96e96b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025805"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 <a name="Top"></a> Třída znaků definuje množinu znaků, které může dojít ve vstupním řetězci pro úspěšné vyhledání shody. Jazyk regulárních výrazů v .NET podporuje následující třídy znaků:  
   
--   Skupiny pozitivních znaků. Znak ve vstupním řetězci musí odpovídat jedné ze zadaných množin znaků. Další informace najdete v tématu [skupina pozitivních znaků](#PositiveGroup).  
+- Skupiny pozitivních znaků. Znak ve vstupním řetězci musí odpovídat jedné ze zadaných množin znaků. Další informace najdete v tématu [skupina pozitivních znaků](#PositiveGroup).  
   
--   Skupiny negativních znaků. Znak ve vstupním řetězci nesmí odpovídat jedné ze zadaných množin znaků. Další informace najdete v tématu [Skupina negativních znaků](#NegativeGroup).  
+- Skupiny negativních znaků. Znak ve vstupním řetězci nesmí odpovídat jedné ze zadaných množin znaků. Další informace najdete v tématu [Skupina negativních znaků](#NegativeGroup).  
   
--   Libovolný znak. `.` (Tečka) je znak v regulárním výrazu zástupným znakem, který odpovídá libovolnému znaku kromě `\n`. Další informace najdete v tématu [libovolný znak](#AnyCharacter).  
+- Libovolný znak. `.` (Tečka) je znak v regulárním výrazu zástupným znakem, který odpovídá libovolnému znaku kromě `\n`. Další informace najdete v tématu [libovolný znak](#AnyCharacter).  
   
--   Obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody musí být znak ve vstupním řetězci členem určité kategorie sady Unicode nebo musí spadat do souvislého rozsahu znaků sady Unicode. Další informace najdete v tématu [kategorie sady Unicode nebo blok standardu Unicode](#CategoryOrBlock).  
+- Obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody musí být znak ve vstupním řetězci členem určité kategorie sady Unicode nebo musí spadat do souvislého rozsahu znaků sady Unicode. Další informace najdete v tématu [kategorie sady Unicode nebo blok standardu Unicode](#CategoryOrBlock).  
   
--   Negativní obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody nesmí být znak ve vstupním řetězci členem určité kategorie sady Unicode ani nesmí spadat do souvislého rozsahu znaků sady Unicode. Další informace najdete v tématu [negativní kategorie sady Unicode nebo blok standardu Unicode](#NegativeCategoryOrBlock).  
+- Negativní obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody nesmí být znak ve vstupním řetězci členem určité kategorie sady Unicode ani nesmí spadat do souvislého rozsahu znaků sady Unicode. Další informace najdete v tématu [negativní kategorie sady Unicode nebo blok standardu Unicode](#NegativeCategoryOrBlock).  
   
--   Znak slova. Znak ve vstupním řetězci může patřit do kterékoli kategorie sady Unicode, která je vhodná pro znaky ve slovech. Další informace najdete v tématu [znaku slova](#WordCharacter).  
+- Znak slova. Znak ve vstupním řetězci může patřit do kterékoli kategorie sady Unicode, která je vhodná pro znaky ve slovech. Další informace najdete v tématu [znaku slova](#WordCharacter).  
   
--   Mimoslovní znak. Znak ve vstupním řetězci může patřit do jakékoli kategorie sady Unicode, která není znakem slova. Další informace najdete v tématu [mimoslovní znak](#NonWordCharacter).  
+- Mimoslovní znak. Znak ve vstupním řetězci může patřit do jakékoli kategorie sady Unicode, která není znakem slova. Další informace najdete v tématu [mimoslovní znak](#NonWordCharacter).  
   
--   Prázdný znak. Znakem ve vstupním řetězci může být jakýkoli oddělovací znak sady Unicode nebo některý z mnoha řídicích znaků. Další informace najdete v tématu [prázdný znak](#WhitespaceCharacter).  
+- Prázdný znak. Znakem ve vstupním řetězci může být jakýkoli oddělovací znak sady Unicode nebo některý z mnoha řídicích znaků. Další informace najdete v tématu [prázdný znak](#WhitespaceCharacter).  
   
--   Neprázdný znak. Znakem ve vstupním řetězci může být libovolný znak, který není prázdným znakem. Další informace najdete v tématu [Non-prázdný znak](#NonWhitespaceCharacter).  
+- Neprázdný znak. Znakem ve vstupním řetězci může být libovolný znak, který není prázdným znakem. Další informace najdete v tématu [Non-prázdný znak](#NonWhitespaceCharacter).  
   
--   Desítková číslice. Znakem ve vstupním řetězci může být kterýkoli ze znaků, který je klasifikován jako desítková číslice sady Unicode. Další informace najdete v tématu [znak desítkové číslice](#DigitCharacter).  
+- Desítková číslice. Znakem ve vstupním řetězci může být kterýkoli ze znaků, který je klasifikován jako desítková číslice sady Unicode. Další informace najdete v tématu [znak desítkové číslice](#DigitCharacter).  
   
--   Nedesetinné číslo. Znakem ve vstupním řetězci může být jakýkoli jiný znak než desítková číslice sady Unicode. Další informace najdete v tématu [znak desítkové číslice](#NonDigitCharacter).  
+- Nedesetinné číslo. Znakem ve vstupním řetězci může být jakýkoli jiný znak než desítková číslice sady Unicode. Další informace najdete v tématu [znak desítkové číslice](#NonDigitCharacter).  
   
  .NET podporuje výrazy odčítání třídy znaků, které vám umožní definovat množinu znaků jako výsledek vyloučení jedné třídy znaků vůči jiné třídě znaků. Další informace najdete v tématu [odčítání tříd znaků](#CharacterClassSubtraction).  
   
@@ -160,7 +160,7 @@ ms.locfileid: "54622946"
 ## <a name="any-character-"></a>Libovolný znak: .  
  Znak tečky (.) odpovídá libovolnému znaku kromě `\n` (znak nového řádku, \u000A), se dvěma následujícími kvalifikacemi:  
   
--   Pokud vzor regulárního výrazu je upraven na <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost, nebo pokud část vzoru obsahující `.` třídu znaků se změnil `s` možnost, `.` odpovídá libovolnému znaku. Další informace najdete v tématu [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md).  
+- Pokud vzor regulárního výrazu je upraven na <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost, nebo pokud část vzoru obsahující `.` třídu znaků se změnil `s` možnost, `.` odpovídá libovolnému znaku. Další informace najdete v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
   
      Následující příklad ukazuje různé chování `.` třídy znaků ve výchozím nastavení a s <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost. Regulární výraz `^.+` začne na začátku řetězce a porovnává každý znak. Standardně je porovnávání ukončeno na konci prvního řádku. vzorek regulárního výrazu porovnává návratový znak, `\r` nebo \u000D, ale neodpovídá `\n`. Vzhledem k tomu, <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost interpretuje celý vstupní řetězec jako jediný řádek, porovnává každý znak ve vstupním řetězci, včetně `\n`.  
   
@@ -170,7 +170,7 @@ ms.locfileid: "54622946"
 > [!NOTE]
 >  Vzhledem k tomu, že odpovídá libovolnému znaku kromě `\n`, `.` třída znaků odpovídá také `\r` (návratový znak, \u000D).  
   
--   Ve skupině pozitivních nebo negativních znaků je tečka považována za literální znak tečky a nikoli za třídu znaků. Další informace najdete v tématu [skupina pozitivních znaků](#PositiveGroup) a [Skupina negativních znaků](#NegativeGroup) výše v tomto tématu. Následující příklad znázorňuje definování regulárního výrazu, který obsahuje znak tečky (`.`) jako třídu znaků i jako člen skupiny pozitivních znaků. Regulární výraz `\b.*[.?!;:](\s|\z)` začíná na hranici slova, odpovídá libovolnému znaku, dokud nenarazí na jedno z pěti interpunkčních znamének, včetně tečky a poté porovnává prázdné znaky nebo konec řetězce.  
+- Ve skupině pozitivních nebo negativních znaků je tečka považována za literální znak tečky a nikoli za třídu znaků. Další informace najdete v tématu [skupina pozitivních znaků](#PositiveGroup) a [Skupina negativních znaků](#NegativeGroup) výše v tomto tématu. Následující příklad znázorňuje definování regulárního výrazu, který obsahuje znak tečky (`.`) jako třídu znaků i jako člen skupiny pozitivních znaků. Regulární výraz `\b.*[.?!;:](\s|\z)` začíná na hranici slova, odpovídá libovolnému znaku, dokud nenarazí na jedno z pěti interpunkčních znamének, včetně tečky a poté porovnává prázdné znaky nebo konec řetězce.  
   
      [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/any1.cs#4)]
      [!code-vb[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any1.vb#4)]  

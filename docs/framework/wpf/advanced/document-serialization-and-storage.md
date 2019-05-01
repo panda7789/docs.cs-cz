@@ -7,11 +7,11 @@ helpviewer_keywords:
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
 ms.openlocfilehash: dbc78db0a3b6763af5270840fc56af648c7c6efc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61962731"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování vysoce kvalitní dokumenty.  Rozšířené funkce, které podporují – dokumenty a tok dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s výkonné 2D a 3D grafické možnosti trvat aplikace rozhraní .NET Framework na zcela novou úroveň kvality a činnost koncového uživatele.  Dokáže flexibilně spravovat v paměti reprezentace dokumentu je klíčovou funkcí rozhraní .NET Framework a nebudou moct efektivně ukládat a načítat dokumenty z úložiště dat je potřeba téměř všechny aplikace.  Proces převodu dokumentu z interního vyjádření v paměti k externím úložišti, se nazývá serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit původní instance v paměti je označován deserializace.  
@@ -24,19 +24,19 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
   
 ### <a name="features-of-net-framework-30-document-serializers"></a>Funkce rozhraní .NET Framework 3.0 dokumentu Serializátorů  
   
--   Přímý přístup k objektům vysoké úrovně dokumentu (Logická stromová struktura a vizuály) umožňují efektivní úložiště stránkované obsahu, 2D a 3D elementů, obrázky, média, hypertextové odkazy, poznámky a další obsah podpory.  
+- Přímý přístup k objektům vysoké úrovně dokumentu (Logická stromová struktura a vizuály) umožňují efektivní úložiště stránkované obsahu, 2D a 3D elementů, obrázky, média, hypertextové odkazy, poznámky a další obsah podpory.  
   
--   Synchronní a asynchronní operace.  
+- Synchronní a asynchronní operace.  
   
--   Podpora pro modul plug-in serializátory s rozšířenými funkcemi:  
+- Podpora pro modul plug-in serializátory s rozšířenými funkcemi:  
   
-    -   Systémová přístup pro použití u všech aplikací rozhraní .NET Framework.  
+    - Systémová přístup pro použití u všech aplikací rozhraní .NET Framework.  
   
-    -   Modul plug-in zjistitelnost jednoduchou aplikaci.  
+    - Modul plug-in zjistitelnost jednoduchou aplikaci.  
   
-    -   Jednoduché nasazení, instalace a aktualizace pro vlastní moduly plug-in třetích stran.  
+    - Jednoduché nasazení, instalace a aktualizace pro vlastní moduly plug-in třetích stran.  
   
-    -   Podpora uživatelského rozhraní pro vlastní nastavení za běhu a možnosti.  
+    - Podpora uživatelského rozhraní pro vlastní nastavení za běhu a možnosti.  
   
 ### <a name="xps-print-path"></a>Cesta tisku XPS  
  Rozhraní Microsoft .NET Framework [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku také poskytuje rozšířitelný mechanismus pro psaní dokumenty tiskový výstup.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] slouží jako formát souboru dokument a je formát nativní zařazování tisku pro [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty můžete odeslat přímo do [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]– bez nutnosti pro převod na mezilehlého formátu kompatibilním s airprintem.  Zobrazit [přehled tisku s](printing-overview.md) Další informace o možnostech výstupní cesta tisku a funkcích.  

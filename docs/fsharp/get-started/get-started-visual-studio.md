@@ -2,12 +2,12 @@
 title: Začínáme s F# v sadě Visual Studio
 description: Další informace o použití F# pomocí sady Visual Studio.
 ms.date: 07/03/2018
-ms.openlocfilehash: 020e5d32b3aa5d5a2195c19d70d8fe684fbd56ef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9b02a5d295f982b1911dab567213fa9a2b6c4304
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331907"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63808021"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s F# v sadě Visual Studio
 
@@ -25,7 +25,7 @@ Jeden z nejzákladnější projektů v sadě Visual Studio je konzolová aplikac
 
 3. Vyberte buď **.NET Core konzolovou aplikaci** nebo **konzolovou aplikaci**.
 
-3. Zvolte **dobře** tlačítko vytvoříte F# projekt!  Teď byste měli vidět F# projekt v Průzkumníku řešení.
+4. Zvolte **dobře** tlačítko vytvoříte F# projekt!  Teď byste měli vidět F# projekt v Průzkumníku řešení.
 
 ## <a name="writing-your-code"></a>Psaní kódu
 
@@ -35,7 +35,7 @@ Začněme napsáním nějakého kódu.  Ujistěte se, že `Program.fs` soubor je
 
 V předchozí ukázce kódu, funkce `square` byla definována desetinný vstup s názvem `x` a vynásobí samostatně.  Protože F# používá [odvození typu](../language-reference/type-inference.md), typ `x` nemusí být zadán.  F# Kompilátoru rozumí typy, kde je platný násobení a to typu `x` podle toho, jak `square` je volána.  Pokud najedete myší `square`, byste měli vidět následující:
 
-```
+```fsharp
 val square: x:int -> int
 ```
 

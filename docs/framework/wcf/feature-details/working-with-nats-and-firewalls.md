@@ -6,11 +6,11 @@ helpviewer_keywords:
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
 ms.openlocfilehash: 5495d8198d30f4462fa9772f7d663664c82c6dee
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050360"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server připojení k síti často nemají přímý a otevřít cestu pro komunikaci. Pakety jsou filtrované, směrovat, analyzovat a transformovat na počítačích koncový bod a zprostředkující počítače v síti. Síť překlady adres (NAT) a brány firewall jsou běžné příklady zprostředkující aplikace, které se mohou účastnit síťové komunikace.  
@@ -45,11 +45,11 @@ Klient a server připojení k síti často nemají přímý a otevřít cestu pr
   
  Běžné topologie pro aplikace typu klient server je, aby klienti, kteří jsou za službou NAT bez Teredo se jako pouze odchozí brána firewall a server, který je přímo adresovatelnými silné firewall. V tomto scénáři, přenosu protokolu TCP s duplexní MEP a přenos pomocí protokolu HTTP s požadavek odpověď MEP fungovat dobře. Běžné topologie peer-to-peer aplikací se oba koncové body za zařízeními NAT nebo branami firewall. V tomto scénáři a ve scénářích, kde Neznámý topologii sítě zvažte tato doporučení:  
   
--   Nepoužívejte duální přenosy. Duální přenosu Otevře další připojení, což snižuje riziko připojení úspěšně.  
+- Nepoužívejte duální přenosy. Duální přenosu Otevře další připojení, což snižuje riziko připojení úspěšně.  
   
--   Podporu o kanály zpět prostřednictvím původní připojení. Používání back kanálů, jako v duplexním TCP, otevře se méně připojení, což zvyšuje šance připojení úspěšně.  
+- Podporu o kanály zpět prostřednictvím původní připojení. Používání back kanálů, jako v duplexním TCP, otevře se méně připojení, což zvyšuje šance připojení úspěšně.  
   
--   Dostupné služby pro registraci koncových bodů nebo předávání provoz využívejte. Pomocí globálně dostupné připojení služby, jako je například Teredo server, se značně zvyšuje šance úspěšně připojit v případě topologie sítě je omezující nebo neznámý.  
+- Dostupné služby pro registraci koncových bodů nebo předávání provoz využívejte. Pomocí globálně dostupné připojení služby, jako je například Teredo server, se značně zvyšuje šance úspěšně připojit v případě topologie sítě je omezující nebo neznámý.  
   
  Zkontrolujte následující tabulky jednosměrný požadavek odpověď a duplexní MEPs a standardní TCP TCP s Teredo, a přenáší standardní a duální HTTP ve službě WCF.  
   

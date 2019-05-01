@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: dcfa029f3feeafd9d75cd6cd19b36d32b0d5fce7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54615975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61951057"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 <a name="top"></a> Ke zpětnému navracení dochází, pokud vzor regulárních výrazů obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), a modul regulárních výrazů se vrátí k předchozímu uloženému stavu pokračujte jeho Vyhledání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -35,13 +35,13 @@ ms.locfileid: "54615975"
   
  Toto téma obsahuje následující oddíly:  
   
--   [Lineární porovnání bez mechanismu navracení](#linear_comparison_without_backtracking)  
+- [Lineární porovnání bez mechanismu navracení](#linear_comparison_without_backtracking)  
   
--   [Používání mechanismu zpětného navracení pomocí volitelných kvantifikátorů nebo alternace konstrukce](#backtracking_with_optional_quantifiers_or_alternation_constructs)  
+- [Používání mechanismu zpětného navracení pomocí volitelných kvantifikátorů nebo alternace konstrukce](#backtracking_with_optional_quantifiers_or_alternation_constructs)  
   
--   [Mechanismus navracení s vnořenými volitelnými kvantifikátory](#backtracking_with_nested_optional_quantifiers)  
+- [Mechanismus navracení s vnořenými volitelnými kvantifikátory](#backtracking_with_nested_optional_quantifiers)  
   
--   [Řídicí mechanismus navracení](#controlling_backtracking)  
+- [Řídicí mechanismus navracení](#controlling_backtracking)  
   
 <a name="linear_comparison_without_backtracking"></a>   
 ## <a name="linear-comparison-without-backtracking"></a>Lineární porovnání bez mechanismu navracení  
@@ -91,15 +91,15 @@ ms.locfileid: "54615975"
   
  Chcete-li provést tuto akci, používá modul regulárních výrazů mechanismus navracení takto:  
   
--   Odpovídá `.*` (což odpovídá žádným, jedním nebo více výskytů libovolného znaku) s celý vstupní řetězec.  
+- Odpovídá `.*` (což odpovídá žádným, jedním nebo více výskytů libovolného znaku) s celý vstupní řetězec.  
   
--   Pokusí se najít shodu pro písmeno „e“ ve vzoru regulárního výrazu. Vstupní řetězec však nemá žádné odpovídající zbývající znaky.  
+- Pokusí se najít shodu pro písmeno „e“ ve vzoru regulárního výrazu. Vstupní řetězec však nemá žádné odpovídající zbývající znaky.  
   
--   Navrátí se k poslední úspěšné shodě „Essential services are provided by regular expressions“ a pokusí se najít shodu pro písmeno „e“ s tečkou na konci věty. Tato shoda se nezdaří.  
+- Navrátí se k poslední úspěšné shodě „Essential services are provided by regular expressions“ a pokusí se najít shodu pro písmeno „e“ s tečkou na konci věty. Tato shoda se nezdaří.  
   
--   Bude pokračovat v navracení k předchozí úspěšné shodě vždy po jednom znaku, dokud nebude vyhledán nezávazně se shodující podřetězec „Essential services are provided by regular expr“. Poté porovná písmeno „e“ ve vzoru s druhým písmenem „e“ ve výrazu „expressions“ a najde shodu.  
+- Bude pokračovat v navracení k předchozí úspěšné shodě vždy po jednom znaku, dokud nebude vyhledán nezávazně se shodující podřetězec „Essential services are provided by regular expr“. Poté porovná písmeno „e“ ve vzoru s druhým písmenem „e“ ve výrazu „expressions“ a najde shodu.  
   
--   Porovná písmeno „s“ ve vzoru s písmenem „s“, které následuje za shodujícím se znakem „e“ (první výskyt písmene „s“ ve výrazu „expressions“). Tato shoda je úspěšná.  
+- Porovná písmeno „s“ ve vzoru s písmenem „s“, které následuje za shodujícím se znakem „e“ (první výskyt písmene „s“ ve výrazu „expressions“). Tato shoda je úspěšná.  
   
  Pokud použijete mechanismus navracení, vyžaduje shoda vzoru regulárního výrazu se vstupním řetězcem, který má 55 znaků, celkem 67 operací porovnání. Obecně platí, že pokud vzor regulárních výrazů má jedinou konstrukci alternace nebo jediný volitelný kvantifikátor, je počet operací porovnání vyžadovaný pro shodu vzoru více než dvakrát větší než počet znaků ve vstupním řetězci.  
   
@@ -114,11 +114,11 @@ ms.locfileid: "54615975"
   
  Jak výstup v příkladu znázorňuje, trvalo modulu regulárních výrazů ve srovnání s délkou trvání identifikace odpovídajícího řetězce dvakrát tak dlouho, než vyhledal, že vstupní řetězec neodpovídá vzoru. Je to proto, že neúspěšná shoda vždy představuje nejhorší případ. Modul regulárních výrazů musí prohledat všechny možné cesty dat předtím, než dojde k závěru, že shoda je neúspěšná, a vnořené závorky vytvoří velký počet dodatečných cest napříč daty. Modul regulárních výrazů dojde k závěru, že druhý řetězec neodpovídá vzoru následujícím způsobem:  
   
--   Kontroluje, že byl na začátku řetězce a pak shody prvních pěti znaků v řetězci se vzorem `a+`. Poté určí, zda řetězec neobsahuje žádné další skupiny znaků „a“. Nakonec ověří konec řetězce. Vzhledem k tomu, že v řetězci zůstává jeden další znak, shoda se nezdaří. Tato nezdařená shoda vyžaduje 9 porovnání. Modul regulárních výrazů také ukládá informace o stavu ze shody „a“ (který budeme nazývat shoda 1), „aa“ (shoda 2), „aaa“ (shoda 3) a „aaaa“ (shoda 4).  
+- Kontroluje, že byl na začátku řetězce a pak shody prvních pěti znaků v řetězci se vzorem `a+`. Poté určí, zda řetězec neobsahuje žádné další skupiny znaků „a“. Nakonec ověří konec řetězce. Vzhledem k tomu, že v řetězci zůstává jeden další znak, shoda se nezdaří. Tato nezdařená shoda vyžaduje 9 porovnání. Modul regulárních výrazů také ukládá informace o stavu ze shody „a“ (který budeme nazývat shoda 1), „aa“ (shoda 2), „aaa“ (shoda 3) a „aaaa“ (shoda 4).  
   
--   Vrátí se k předchozí uložené shodě 4. Určí, že existuje další znak „a“, který lze přiřadit dodatečné zachycené skupině. Nakonec ověří konec řetězce. Vzhledem k tomu, že v řetězci zůstává jeden další znak, shoda se nezdaří. Tato Nezdařená shoda vyžaduje 4 porovnání. Zatím bylo provedeno celkem 13 porovnání.  
+- Vrátí se k předchozí uložené shodě 4. Určí, že existuje další znak „a“, který lze přiřadit dodatečné zachycené skupině. Nakonec ověří konec řetězce. Vzhledem k tomu, že v řetězci zůstává jeden další znak, shoda se nezdaří. Tato Nezdařená shoda vyžaduje 4 porovnání. Zatím bylo provedeno celkem 13 porovnání.  
   
--   Vrátí předchozí uložené shodě 3. Určí, že existují další dva znaky „a“, které lze přiřadit dodatečné zachycené skupině. Test konce řetězce se však nezdaří. Poté se vrátí ke shodě 3 a pokusí se porovnat další dva znaky „a“ v dodatečné zachycené skupině. Test konce řetězce se však ani tentokrát nezdaří. Tyto nezdařené shody vyžadují 12 porovnání. Zatím byly provedeny celkem 25 porovnání.  
+- Vrátí předchozí uložené shodě 3. Určí, že existují další dva znaky „a“, které lze přiřadit dodatečné zachycené skupině. Test konce řetězce se však nezdaří. Poté se vrátí ke shodě 3 a pokusí se porovnat další dva znaky „a“ v dodatečné zachycené skupině. Test konce řetězce se však ani tentokrát nezdaří. Tyto nezdařené shody vyžadují 12 porovnání. Zatím byly provedeny celkem 25 porovnání.  
   
  Porovnání vstupního řetězce s regulárním výrazem pokračuje tímto způsobem, dokud se modul regulárních výrazů nepokusí vyhledat všechny možné kombinace shody, a poté dojde k závěru, že neexistuje žádná shoda. Z důvodu vnořených kvantifikátorů představuje toto porovnání je operace O (2<sup>n</sup>) nebo exponenciální operaci, kde *n* je počet znaků ve vstupním řetězci. To znamená, že v nejhorším případě vyžaduje vstupní znak o délce 30 znaků přibližně 1 073 741 824 porovnání a vstupní znak o délce 40 znaků vyžaduje přibližně 1 099 511 627 776 porovnání. Pokud používáte řetězce o této nebo větší délce, může dokončení metod regulárních výrazů trvat extrémně dlouhou dobu, pokud zpracovávají obsah, který se neshoduje se vzorem regulárního výrazu.  
   

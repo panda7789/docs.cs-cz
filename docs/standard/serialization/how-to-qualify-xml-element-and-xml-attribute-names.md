@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: zařazení – Element XML a názvy atributů XML'
+title: 'Postupy: Kvalifikace názvů elementů a atributů XML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - qualifying XML elements
 - XML namespaces, qualifying elements and names in
 ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
-ms.openlocfilehash: 3c477923387e5a28dcc14b44b0f77bb6acb686e5
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
-ms.translationtype: MT
+ms.openlocfilehash: 04e9dd3c135c516fa5554b9b547306337fb6a668
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47176731"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807824"
 ---
-# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: zařazení – Element XML a názvy atributů XML
+# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: Kvalifikace názvů elementů a atributů XML
 
 Obory názvů XML, které obsahují touto instancí <xref:System.Xml.Serialization.XmlSerializerNamespaces> třída musí odpovídat specifikaci World Wide Web Consortium (W3C) volá [obory názvů v XML](https://www.w3.org/TR/REC-xml-names/).
 
@@ -32,7 +32,7 @@ Po vytvoření instance `XmlSerializerNamespaces` a přidání dvojice názvů d
 
 3. Použít odpovídající `System.Xml.Serialization` atribut pro každého člena nebo třída, která <xref:System.Xml.Serialization.XmlSerializer> je k serializaci do dokumentu XML.
 
-  Jsou dostupné atributy: <xref:System.Xml.Serialization.XmlAnyElementAttribute>, <xref:System.Xml.Serialization.XmlArrayAttribute>, <xref:System.Xml.Serialization.XmlArrayItemAttribute>, <xref:System.Xml.Serialization.XmlAttributeAttribute>, <xref:System.Xml.Serialization.XmlElementAttribute>, <xref:System.Xml.Serialization.XmlRootAttribute>, a <xref:System.Xml.Serialization.XmlTypeAttribute>.
+    Jsou dostupné atributy: <xref:System.Xml.Serialization.XmlAnyElementAttribute>, <xref:System.Xml.Serialization.XmlArrayAttribute>, <xref:System.Xml.Serialization.XmlArrayItemAttribute>, <xref:System.Xml.Serialization.XmlAttributeAttribute>, <xref:System.Xml.Serialization.XmlElementAttribute>, <xref:System.Xml.Serialization.XmlRootAttribute>, a <xref:System.Xml.Serialization.XmlTypeAttribute>.
 
 4. Nastavte `Namespace` vlastnost každý atribut na jednu z oboru názvů hodnot z `XmlSerializerNamespaces`.
 
@@ -174,8 +174,8 @@ public class Book
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Nástroj pro definici schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)
-- [Třídy XmlSerializer](xref:System.Xml.Serialization.XmlSerializer)
+- [XmlSerializer Class](xref:System.Xml.Serialization.XmlSerializer)
 - [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
-- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Určení alternativního názvu elementu pro Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

@@ -3,11 +3,11 @@ title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
 ms.openlocfilehash: 3d396f6ecfc0eb4a884e4af0d84ef65d18c5586c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033996"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
@@ -45,18 +45,18 @@ Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporuj�
   
  Můžete napsat soubor XML, který má dvě části:  
   
--   Seznam typů poskytovatelů vyjadřují "protějšek EDM" typ úložiště nebo funkce. Typy Store mají protějšek typů modelu EDM. Funkce Store mají odpovídající funkce EDM. Například varchar je typ serveru SQL Server, ale odpovídající typ EDM je řetězec.  
+- Seznam typů poskytovatelů vyjadřují "protějšek EDM" typ úložiště nebo funkce. Typy Store mají protějšek typů modelu EDM. Funkce Store mají odpovídající funkce EDM. Například varchar je typ serveru SQL Server, ale odpovídající typ EDM je řetězec.  
   
--   Seznam funkcí podporovaných poskytovateli, ve kterém jsou parametry a návratovým typem vyjádřen v pojmech EDM.  
+- Seznam funkcí podporovaných poskytovateli, ve kterém jsou parametry a návratovým typem vyjádřen v pojmech EDM.  
   
 ### <a name="writing-a-provider-with-asymmetric-type-mapping"></a>Zápis zprostředkovatele s mapováním asymetrického typu  
  Při psaní pro zprostředkovatele úložiště dat [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], mapování pro některé typy mohou být odlišný od typu zprostředkovatele EDM mapování typů EDM zprostředkovatele. Například bez vazby modelu EDM PrimitiveTypeKind.String mohou být mapovány nvarchar(4000) na poskytovateli, zatímco nvarchar(4000) mapuje na EDM PrimitiveTypeKind.String(MaxLength=4000).  
   
  Můžete napsat soubor XML, který má dvě části:  
   
--   Seznam typů poskytovatelů vyjádřen v pojmech EDM a definovat mapování pro oba směry: EDM poskytovatele a poskytovatele EDM.  
+- Seznam typů poskytovatelů vyjádřen v pojmech EDM a definovat mapování pro oba směry: EDM poskytovatele a poskytovatele EDM.  
   
--   Seznam funkcí podporovaných poskytovateli, ve kterém jsou parametry a návratovým typem vyjádřen v pojmech EDM.  
+- Seznam funkcí podporovaných poskytovateli, ve kterém jsou parametry a návratovým typem vyjádřen v pojmech EDM.  
   
 ## <a name="provider-manifest-discoverability"></a>Zjistitelnost manifestu zprostředkovatele  
  Manifest je nepřímo používá několik typů součástí služby Entity (například nástroje nebo dotaz), ale informace přímo využíváno metadat prostřednictvím data ukládat metadata zavaděče.  
@@ -250,7 +250,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Name|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
+|Název|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
 |PrimitiveTypeKind|PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
   
 ###### <a name="function-node"></a>Uzel – funkce  
@@ -258,7 +258,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Name|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
+|Název|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
 |Vlastnost ReturnType|String|Ne|Typ void|Návratový typ funkce EDM|  
 |Aggregate|Boolean|Ne|False|Hodnota TRUE, pokud funkce je agregační funkce|  
 |BuiltIn|Boolean|Ne|Pravda|Hodnota TRUE, pokud funkce je integrovaná do úložiště dat|  
@@ -272,7 +272,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Name|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
+|Název|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
 |Type|String|Ano|není k dispozici|Typ EDM parametru.|  
 |Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -v<br />-out<br />– vstup|  
   

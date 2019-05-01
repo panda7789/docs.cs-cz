@@ -17,17 +17,17 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 1415042110a074b270cf1afd286d487ec7369747
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: dfcc11c78ffc408de71c88e2c1c7b0522ffe3732
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212411"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63808345"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
   
- ![Zabezpečení WPF – ilustrace](./media/windowplatformsecurity.PNG "windowplatformsecurity")  
+ ![Diagram zobrazující model zabezpečení WPF.](./media/wpf-security-strategy-platform-security/windows-presentation-foundation-security.png)  
   
  Zbývající část tohoto tématu jsou popsané funkce v každém z těchto úrovní, které se týkají [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zvlášť.  
 
@@ -39,9 +39,9 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
  Kromě obecné kontrolu a posílení Windows, jsou k dispozici tři klíčové funkce z [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] , který se budeme zabývat v tomto tématu:  
   
--   /GS kompilace  
+- /GS kompilace  
   
--   [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)].  
+- [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)].  
   
 #### <a name="gs-compilation"></a>/GS kompilace  
  [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] poskytuje ochranu opětovnou kompilací mnoho core systémových knihoven, včetně všech objektů [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] závislosti, jako [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], aby mohlo včas reagovat přetečení vyrovnávací paměti. Toho dosáhnete pomocí parametru /GS kompilátoru příkazového řádku jazyka C/C++. I když přetečení vyrovnávací paměti by měla být explicitně vyhnout, /GS kompilace poskytuje příklad v obrany proti potenciální ohrožení zabezpečení, které jsou vytvořeny neúmyslně nebo záměrně – podle nich.  
@@ -66,9 +66,9 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Jedním ze způsobů pro ochranu před toto ohrožení zabezpečení je ke spouštění aplikací s minimem oprávnění, které jsou požadovány. To se označuje jako Princip nejnižších oprávnění a je základní funkce [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] operačního systému. Tato funkce se nazývá řízení uživatelských účtů (UAC) a používá [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] nástroje Řízení uživatelských účtů klíčů dvěma způsoby:  
   
--   Spouštět většinu aplikací s oprávněními nástroje Řízení uživatelských účtů ve výchozím nastavení, i v případě, že uživatel je správcem; jenom aplikace, které je třeba oprávnění správce se spustí s oprávněními správce. Spustit s oprávněními správce, aplikace musí být explicitně označeny buď jejich aplikace manifestu nebo jako položka v zásadách zabezpečení.  
+- Spouštět většinu aplikací s oprávněními nástroje Řízení uživatelských účtů ve výchozím nastavení, i v případě, že uživatel je správcem; jenom aplikace, které je třeba oprávnění správce se spustí s oprávněními správce. Spustit s oprávněními správce, aplikace musí být explicitně označeny buď jejich aplikace manifestu nebo jako položka v zásadách zabezpečení.  
   
--   Pro zajištění kompatibility řešení, jako je virtualizace. Například mnoho aplikací pokusu o zápis do umístění s omezeným přístupem, například C:\Program Files. Pro aplikace spouští v rámci nástroje Řízení uživatelských účtů existuje umístění služby alternativní na uživatele, která nevyžaduje oprávnění správce pro zápis do. Pro aplikace běžící v rámci nástroje Řízení uživatelských účtů nástroje Řízení uživatelských účtů Virtualizuje C:\Program Files tak, že aplikace, kteří myslíte, že se zápis do něj jsou ve skutečnosti zápis do alternativního, umístění jednotlivých uživatelů. Tento druh kompatibility pracovní umožňuje operačnímu systému ke spouštění mnoho aplikací, které nelze spustit dříve v nástroji Řízení uživatelských účtů.  
+- Pro zajištění kompatibility řešení, jako je virtualizace. Například mnoho aplikací pokusu o zápis do umístění s omezeným přístupem, například C:\Program Files. Pro aplikace spouští v rámci nástroje Řízení uživatelských účtů existuje umístění služby alternativní na uživatele, která nevyžaduje oprávnění správce pro zápis do. Pro aplikace běžící v rámci nástroje Řízení uživatelských účtů nástroje Řízení uživatelských účtů Virtualizuje C:\Program Files tak, že aplikace, kteří myslíte, že se zápis do něj jsou ve skutečnosti zápis do alternativního, umístění jednotlivých uživatelů. Tento druh kompatibility pracovní umožňuje operačnímu systému ke spouštění mnoho aplikací, které nelze spustit dříve v nástroji Řízení uživatelských účtů.  
   
 #### <a name="code-integrity-checks"></a>Kontrola Integrity kódu  
  [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] zahrnuje lepší kontroly integrity kódu zabránit se vloží do systému souborů nebo do jádra v době zatížení nebo spustit škodlivý kód. To jde nad rámec Ochrana systému souborů.  
@@ -100,11 +100,11 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Spravované aplikace jsou zkompilovány do Microsoft Intermediate Language (MSIL). Při spuštění metody ve spravované aplikaci, jeho jazyka MSIL je kompilován do nativního kódu prostřednictvím kompilace za běhu (JIT). Kompilace JIT zahrnuje ověřovací proces, který používá mnoho pravidla zabezpečení a odolnosti, které zajistí, že kód není:  
   
--   Porušují typ smlouvy  
+- Porušují typ smlouvy  
   
--   Zavést přetečení vyrovnávací paměti  
+- Zavést přetečení vyrovnávací paměti  
   
--   Nečekaně přístup k paměti.  
+- Nečekaně přístup k paměti.  
   
  Spravovaný kód, který není v souladu s pravidly ověřování není povoleno provést, pokud bude považován za důvěryhodný kód.  
   
@@ -116,29 +116,29 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Sadu oprávnění, která spravované aplikace je [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] po jeho spuštění, provádění se označuje jako sadu oprávnění a je určena legitimací poskytovaný aplikací. Pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací, důkaz, že je k dispozici je umístění nebo oblasti, ve kterém je spuštěných aplikací. [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] identifikuje tyto oblasti:  
   
--   **Tento počítač**. Aplikace spustí z klientského počítače (plně důvěryhodná).  
+- **Tento počítač**. Aplikace spustí z klientského počítače (plně důvěryhodná).  
   
--   **Místní Intranet**. Aplikace spustí z intranetu. (Částečně důvěryhodných).  
+- **Místní Intranet**. Aplikace spustí z intranetu. (Částečně důvěryhodných).  
   
--   **Internet**. Aplikace spustí ze sítě Internet. (Nejméně důvěryhodné).  
+- **Internet**. Aplikace spustí ze sítě Internet. (Nejméně důvěryhodné).  
   
--   **Důvěryhodné servery**. Aplikace identifikován jako důvěryhodný uživatel. (Nejméně důvěryhodné).  
+- **Důvěryhodné servery**. Aplikace identifikován jako důvěryhodný uživatel. (Nejméně důvěryhodné).  
   
--   **Nedůvěryhodné weby**. Aplikace identifikovány uživatelem, jako je nedůvěryhodný. (Nedůvěryhodné).  
+- **Nedůvěryhodné weby**. Aplikace identifikovány uživatelem, jako je nedůvěryhodný. (Nedůvěryhodné).  
   
  Pro každou z těchto oblastí [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] poskytuje sadu předdefinovaných oprávnění, která zahrnuje všechna oprávnění který by odpovídal úroveň vztahu důvěryhodnosti spojené s jednotlivými. Zde jsou některé z nich:  
   
--   **FullTrust**. Pro spuštění z aplikace **tento počítač** zóny. Všechny možné oprávnění jsou udělena.  
+- **FullTrust**. Pro spuštění z aplikace **tento počítač** zóny. Všechny možné oprávnění jsou udělena.  
   
--   **LocalIntranet**. Pro spuštění z aplikace **místní Intranet** zóny. Podmnožinu oprávnění jsou udělena a zajistit tak střední přístup k prostředkům, klientský počítač, včetně izolovaného úložiště, neomezený přístup k uživatelskému rozhraní, dialogová okna neomezený souboru, omezené reflexe, omezený přístup k proměnným prostředí. Nejsou k dispozici oprávnění u důležitých prostředků jako registru.  
+- **LocalIntranet**. Pro spuštění z aplikace **místní Intranet** zóny. Podmnožinu oprávnění jsou udělena a zajistit tak střední přístup k prostředkům, klientský počítač, včetně izolovaného úložiště, neomezený přístup k uživatelskému rozhraní, dialogová okna neomezený souboru, omezené reflexe, omezený přístup k proměnným prostředí. Nejsou k dispozici oprávnění u důležitých prostředků jako registru.  
   
--   **Internet**. Pro spuštění z aplikace **Internet** nebo **Důvěryhodné servery** zóny. Podmnožina oprávnění jsou udělena zadaný omezený přístup k prostředkům, klientský počítač, včetně izolované úložiště souboru otevřete pouze a omezené uživatelského rozhraní. Toto oprávnění v podstatě nastaví izoluje aplikace od klientského počítače.  
+- **Internet**. Pro spuštění z aplikace **Internet** nebo **Důvěryhodné servery** zóny. Podmnožina oprávnění jsou udělena zadaný omezený přístup k prostředkům, klientský počítač, včetně izolované úložiště souboru otevřete pouze a omezené uživatelského rozhraní. Toto oprávnění v podstatě nastaví izoluje aplikace od klientského počítače.  
   
  Označený z aplikace **nedůvěryhodné weby** zóny jsou udělena žádná oprávnění podle [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] vůbec. V důsledku toho sada předdefinovaných oprávnění neexistuje pro ně.  
   
- Následující obrázek ukazuje vztah mezi zónami, sady oprávnění, oprávnění a prostředky.  
+ Následující obrázek ukazuje vztah mezi zónami, sady oprávnění, oprávnění a prostředky:  
   
- ![Sady oprávnění CAS](./media/caspermissionsets.png "CASPermissionSets")  
+ ![Diagram zobrazující průběh sady oprávnění certifikační Autority.](./media/wpf-security-strategy-platform-security/code-access-security-permissions-relationship.png)  
   
  Omezení internetové zóny zabezpečení sandboxu stejnou měrou vztahují na jakýkoli kód, který [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] importuje z knihovny systému, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Tím se zajistí, že každý bit kód je uzamčený, i [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Bohužel, abyste mohli provést, [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] potřebuje ke spuštění funkce, které vyžadují více oprávnění než ty, které zajišťuje sandboxu zabezpečení zóně Internet.  
   
@@ -149,11 +149,11 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Chcete-li to provést [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], základní [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód musí být spuštěn víc funkcí než je k dispozici k volání [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], včetně:  
   
--   Vytváření popisovač okna (hWnd) pro vykreslování  
+- Vytváření popisovač okna (hWnd) pro vykreslování  
   
--   Odeslání zprávy  
+- Odeslání zprávy  
   
--   Načítání Tahoma písma  
+- Načítání Tahoma písma  
   
  Z zabezpečení by katastrofickými pohledu, umožňuje přímý přístup k jakémukoli z těchto operací z aplikace v izolovaném prostoru.  
   
@@ -190,11 +190,11 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Před verzí [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)], uživatele může být v souladu s některou z následujících akcí:  
   
--   Náhodné zobrazována místní okna.  
+- Náhodné zobrazována místní okna.  
   
--   Přesměrování skript matoucí.  
+- Přesměrování skript matoucí.  
   
--   Mnoho dialogy zabezpečení v některé webové servery.  
+- Mnoho dialogy zabezpečení v některé webové servery.  
   
  V některých případech se nedůvěryhodné weby mistranslation: přimět uživatele pomocí zfalšování instalace [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] nebo opakovaně zobrazení [!INCLUDE[TLA#tla_actx](../../../includes/tlasharptla-actx-md.md)] instalace dialogové okno, i když je zrušena uživatelem. Pomocí následujících postupů, je možné, že mají byla nalákaní velký počet uživatelů, rozhodování o nízký, z kterých vzniklo s instalací aplikace spyware.  
   

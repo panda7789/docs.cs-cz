@@ -3,20 +3,20 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: b13536acf71018eb21b6930d7542a9911add8261
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: c64bbfc868268fea77d2d17317bfea43aa413b3f
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310249"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63808250"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ji používat.  
   
 ### <a name="overview-of-federated-authentication"></a>Přehled federovaného ověřování  
- Federované ověřování umožňuje Token služby zabezpečení (STS) v jedné doméně důvěryhodnosti předávat informace o ověřování do služby tokenů zabezpečení v jiné doméně důvěryhodnosti při mezi jejich dvěma doménami neexistuje vztah důvěryhodnosti. Příkladem je znázorněno na následujícím obrázku.  
+ Federované ověřování umožňuje Token služby zabezpečení (STS) v jedné doméně důvěryhodnosti předávat informace o ověřování do služby tokenů zabezpečení v jiné doméně důvěryhodnosti při mezi jejich dvěma doménami neexistuje vztah důvěryhodnosti. Příkladem je vidět na následujícím obrázku:  
   
- ![Scénář ověřování federace](../../../docs/framework/security/media/federatedauthentication.gif "FederatedAuthentication")  
+ ![Diagram znázorňující scénář federovaného ověřování.](./media/wsfederation-authentication-module-overview/federated-authentication.gif)  
   
 1. Klienta ve vztahu důvěryhodnosti domény Fabrikam odešle požadavek na aplikaci předávající strany (RP) v doméně Contoso vztah důvěryhodnosti.  
   
@@ -50,7 +50,7 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
   
  Následující diagram ukazuje celkový tok informací v případě pasivní přesměrování. Požadavek je automaticky přesměrován prostřednictvím služby STS, na navázání přihlašovací údaje bez přihlašovací stránku:  
   
- ![Diagram časování pro přihlašování&#45;pomocí pasivní přesměrování](../../../docs/framework/security/media/signinusingpassiveredirect.gif "SignInUsingPassiveRedirect")  
+ ![Diagram, který ukazuje, přihlaste se pomocí pasivní přesměrování.](./media/wsfederation-authentication-module-overview/sign-in-using-passive-redirect.gif)  
   
  Následující diagram znázorňuje více podrobností, na co se stane, když uživatel se ověřil na službu STS a jejich tokeny zabezpečení jsou zpracovány <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>:  
   
@@ -63,9 +63,9 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
 ### <a name="events"></a>Události  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>, <xref:System.IdentityModel.Services.SessionAuthenticationModule>a jejich nadřazené třídu <xref:System.IdentityModel.Services.HttpModuleBase>, vyvolat události na různé fáze zpracování požadavku HTTP. Můžete zpracovávat tyto události v `global.asax` soubor vaší [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace.  
   
--   Infrastruktura technologie ASP.NET vyvolá modulu <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> metody k inicializaci modulu.  
+- Infrastruktura technologie ASP.NET vyvolá modulu <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> metody k inicializaci modulu.  
   
--   <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType> Událost se vyvolá, když se vyvolá infrastruktury ASP.NET <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> metoda poprvé na jeden z vaší aplikace modulů, které jsou odvozeny z <xref:System.IdentityModel.Services.HttpModuleBase>. Tato metoda umožňuje přístup statické <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost, která způsobí, že konfigurace mají být načteny ze souboru Web.config. Tato událost je aktivována pouze při prvním přístupu k této vlastnosti. <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> Přistupuje prostřednictvím objektu, který se inicializuje z konfigurace <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost v obslužné rutině události. Změna konfigurace předtím, než se použije pro všechny moduly, které můžete pomocí této události. Obslužné rutiny pro tuto událost můžete přidat do metody Application_Start:  
+- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType> Událost se vyvolá, když se vyvolá infrastruktury ASP.NET <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> metoda poprvé na jeden z vaší aplikace modulů, které jsou odvozeny z <xref:System.IdentityModel.Services.HttpModuleBase>. Tato metoda umožňuje přístup statické <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost, která způsobí, že konfigurace mají být načteny ze souboru Web.config. Tato událost je aktivována pouze při prvním přístupu k této vlastnosti. <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> Přistupuje prostřednictvím objektu, který se inicializuje z konfigurace <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost v obslužné rutině události. Změna konfigurace předtím, než se použije pro všechny moduly, které můžete pomocí této události. Obslužné rutiny pro tuto událost můžete přidat do metody Application_Start:  
   
     ```  
     void Application_Start(object sender, EventArgs e)  
@@ -76,19 +76,19 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
   
      Přepíše každého modulu <xref:System.IdentityModel.Services.HttpModuleBase.InitializeModule%2A?displayProperty=nameWithType> a <xref:System.IdentityModel.Services.HttpModuleBase.InitializePropertiesFromConfiguration%2A?displayProperty=nameWithType> abstraktní metody. První z těchto metod přidá obslužné rutiny události kanálu ASP.NET, které jsou zajímavé pro modul. Ve většině případů bude stačit výchozí implementace modulu. Inicializuje druhý z těchto metod modulu vlastnosti z jeho <xref:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost. (Toto je kopie konfigurace, která byla dříve načtena.) Možná budete muset potlačí tuto metodu za druhé, pokud chcete zajistit podporu Inicializace nové vlastnosti z konfigurace v třídách, které jsou odvozeny z <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> nebo <xref:System.IdentityModel.Services.SessionAuthenticationModule>. V takových případech je také třeba odvozen od odpovídající konfiguraci objektů pro podporu přidání konfigurace vlastnosti; např. z <xref:System.IdentityModel.Configuration.IdentityConfiguration>, <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration>, nebo <xref:System.IdentityModel.Services.Configuration.FederationConfiguration>.  
   
--   Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> událost, když se zachycuje, který byl vystaví služba STS token zabezpečení.  
+- Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> událost, když se zachycuje, který byl vystaví služba STS token zabezpečení.  
   
--   Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> událost po ověřila token.  
+- Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> událost po ověřila token.  
   
--   <xref:System.IdentityModel.Services.SessionAuthenticationModule> Vyvolá <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> událostí při vytváření tokenu zabezpečení relace pro uživatele.  
+- <xref:System.IdentityModel.Services.SessionAuthenticationModule> Vyvolá <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> událostí při vytváření tokenu zabezpečení relace pro uživatele.  
   
--   <xref:System.IdentityModel.Services.SessionAuthenticationModule> Vyvolá <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> událost v případě zachycuje následné žádosti pomocí souboru cookie, který obsahuje token relace zabezpečení.  
+- <xref:System.IdentityModel.Services.SessionAuthenticationModule> Vyvolá <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> událost v případě zachycuje následné žádosti pomocí souboru cookie, který obsahuje token relace zabezpečení.  
   
--   Předtím, než služba FAM WS přesměruje uživatele na vydavatele, vyvolá <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> událostí. Žádost o přihlášení ke WS-Federation, je k dispozici prostřednictvím <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage%2A> vlastnost <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs> předané události. Můžete upravit požadavku před odesláním to a vydavatele.  
+- Předtím, než služba FAM WS přesměruje uživatele na vydavatele, vyvolá <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> událostí. Žádost o přihlášení ke WS-Federation, je k dispozici prostřednictvím <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage%2A> vlastnost <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs> předané události. Můžete upravit požadavku před odesláním to a vydavatele.  
   
--   Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn> událost v případě, že je úspěšně zapsána souboru cookie a uživatel je přihlášený.  
+- Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn> událost v případě, že je úspěšně zapsána souboru cookie a uživatel je přihlášený.  
   
--   Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut> událostí každou relaci jako relace se zavírá pro každého uživatele. Není vyvolána, pokud není zavřena relace na straně klienta (například tak, že odstraníte soubor cookie relace). V prostředí jednotného přihlašování služby STS IP požádat o každé RP odhlášení příliš. To se také vyvolat tuto událost s <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated%2A> nastavena na `true`.  
+- Vyvolá WS-FAM <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut> událostí každou relaci jako relace se zavírá pro každého uživatele. Není vyvolána, pokud není zavřena relace na straně klienta (například tak, že odstraníte soubor cookie relace). V prostředí jednotného přihlašování služby STS IP požádat o každé RP odhlášení příliš. To se také vyvolat tuto událost s <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated%2A> nastavena na `true`.  
   
 > [!NOTE]
 >  Neměli byste používat <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> vlastnost během libovolné události vyvolané službou <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> nebo <xref:System.IdentityModel.Services.SessionAuthenticationModule>. Důvodem je, že <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> nastavená po dokončení procesu ověření během události jsou vyvolány během procesu ověřování.  

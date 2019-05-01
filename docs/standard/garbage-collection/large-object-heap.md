@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ff25d2cef52a8c690f895222d69591bc53b3765e
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: d9fef3bfb070e5e87dd0f7f78e76af6e6e051967
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677165"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63809624"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 
@@ -154,9 +154,9 @@ Tyto čítače výkonu jsou obvykle dobrý první krok při zkoumání problém�
 
    Zobrazí aktuální velikost v bajtech, včetně volné místo LOH. Tento čítač je aktualizován na konci uvolnění, ne při každém přidělení.
 
-Běžný způsob, jak zobrazit čítače výkonu je pomocí sledování výkonu (perfmon.exe). Pomocí "Přidat čítače" přidat čítač zajímavé pro procesy, které vás zajímají. Data čítačů výkonu můžete uložit do souboru protokolu, jak je vidět na obrázku 4.
+Běžný způsob, jak zobrazit čítače výkonu je pomocí sledování výkonu (perfmon.exe). Pomocí "Přidat čítače" přidat čítač zajímavé pro procesy, které vás zajímají. Data čítačů výkonu můžete uložit do souboru protokolu, jak ukazuje obrázek 4:
 
-![Obrázek 4: Přidání čítačů výkonu.](media/loh/perfcounter.png)\
+![Screenshow, který ukazuje přidání čítačů výkonu.](media/large-object-heap/add-performance-counter.png)
 Obrázek 4: LOH po 2. generace GC
 
 Čítače výkonu může být dotazována také prostřednictvím kódu programu. Řada lidí je shromažďovat tímto způsobem jako součást svých rutinní proces testování. Při jejich zjištění čítače nahraďte hodnotami, které jsou neobvyklého, používají jiným způsobem získat podrobnější údaje, které pomáhají při šetření.
@@ -184,7 +184,8 @@ perfview /GCCollectOnly /AcceptEULA /nogui collect
 
 Výsledkem je přibližně takto:
 
-![Obrázek 5: Zkoumání událostí ETW pomocí nástroje PerfView](media/loh/perfview.png) obrázek 5: Události trasování událostí pro Windows zobrazí, pomocí nástroje PerfView
+![Snímek obrazovky zobrazující události trasování událostí pro Windows v PerfView.](media/large-object-heap/event-tracing-windows-perfview.png)
+Obrázek 5: Události trasování událostí pro Windows zobrazí, pomocí nástroje PerfView
 
 Jak vidíte, jsou všechny GC 2. generace GC a všechny jsou aktivované pomocí AllocLarge, což znamená, že přidělování ve velkém objektu aktivuje toto uvolňování paměti. Víme, že jsou tyto přidělení dočasné vzhledem k tomu, **míra přežití LOH %** říká sloupce 1 %.
 
@@ -196,7 +197,7 @@ perfview /GCOnly /AcceptEULA /nogui collect
 
 shromažďuje události AllocationTick, která se aktivuje přibližně každých 100 kB za přidělení. Jinými slovy událost se aktivuje pokaždé, když je přiděleno ve velkém objektu. Pak můžete se podívat na jedno zobrazení alokační haldy uvolňování paměti, které zobrazují zásobníky volání, která přidělena velké objekty:
 
-![Obrázek 6: Zobrazení alokační haldy uvolňování paměti](media/loh/perfview2.png)\
+![Snímek obrazovky, který se teď zobrazují systému uvolňování paměti haldy.](media/large-object-heap/garbage-collector-heap.png)
 Obrázek 6: Zobrazení alokační haldy uvolňování paměti
 
 Jak je vidět, to je velmi jednoduchý test, který právě přiděluje rozsáhlé objekty z jeho `Main` metoda.

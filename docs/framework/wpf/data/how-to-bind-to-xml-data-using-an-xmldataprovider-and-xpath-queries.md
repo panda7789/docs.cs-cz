@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: f6cd09279cf23d3273e7a4083950a5f42714c8bf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.openlocfilehash: 3a3df65f0c20cff49f9bd2a8790e8d9ae0032391
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097223"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63809586"
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath
 Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] data s využitím <xref:System.Windows.Data.XmlDataProvider>.  
@@ -30,19 +30,19 @@ Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../
   
  <xref:System.Windows.Controls.ListBox> Při spuštění v tomto příkladu se zobrazí následující položky. Jedná se o *název*s všech prvků v rámci *knihy* buď *akcie* hodnotu "*si*" nebo *číslo* hodnotu 3 nebo větší než nebo se rovná 8. Všimněte si, že žádné *CD* položky jsou vráceny, protože <xref:System.Windows.Data.XmlDataProvider.XPath%2A> na hodnotu set <xref:System.Windows.Data.XmlDataProvider> označuje pouze *knihy* prvky by měly být vystaveny (v podstatě nastavení filtru).  
   
- ![Příklad XPath](./media/xpathexample.PNG "XPathExample")  
+ ![Snímek obrazovky příklad XPath zobrazen titulek čtyři knihy.](./media/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries/xpath-example-listbox-details.png)  
   
  V tomto příkladu se zobrazí názvů knih, protože <xref:System.Windows.Data.Binding.XPath%2A> z <xref:System.Windows.Controls.TextBlock> vazby v <xref:System.Windows.DataTemplate> je nastavena na "*Title*". Pokud chcete zobrazit hodnotu atributu, jako *ISBN*, nastavíte, který <xref:System.Windows.Data.Binding.XPath%2A> hodnota, která se "`@ISBN`".  
   
  **XPath** vlastnosti v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XmlNode.SelectNodes metoda zpracovává. Můžete upravit **XPath** dotazů získat jiné výsledky. Tady je několik příkladů, pro <xref:System.Windows.Data.Binding.XPath%2A> dotazem na je mez <xref:System.Windows.Controls.ListBox> z předchozího příkladu:  
   
--   `XPath="Book[1]"` Vrátí první prvek book ("XML v akci"). Všimněte si, že **XPath** indexy jsou založeny na 1, není 0.  
+- `XPath="Book[1]"` Vrátí první prvek book ("XML v akci"). Všimněte si, že **XPath** indexy jsou založeny na 1, není 0.  
   
--   `XPath="Book[@*]"` Vrátí všechny knihy elementy s atributy.  
+- `XPath="Book[@*]"` Vrátí všechny knihy elementy s atributy.  
   
--   `XPath="Book[last()-1]"` Vrátí druhou na poslední prvek book ("představení rozhraní Microsoft .NET").  
+- `XPath="Book[last()-1]"` Vrátí druhou na poslední prvek book ("představení rozhraní Microsoft .NET").  
   
--   `XPath="*[position()>3]"` Vrátí všechny knihy elementy s výjimkou první 3.  
+- `XPath="*[position()>3]"` Vrátí všechny knihy elementy s výjimkou první 3.  
   
  Při spuštění **XPath** dotazování, vrátí se <xref:System.Xml.XmlNode> nebo seznam XmlNodes. <xref:System.Xml.XmlNode> je [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekt, což znamená, že můžete použít <xref:System.Windows.Data.Binding.Path%2A> vlastnost k vytvoření vazby [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti. Podívejte se na předchozí příklad znovu. Pokud zbytek v příkladu zůstane stejný a změníte <xref:System.Windows.Controls.TextBlock> vazby pro následující, se zobrazí názvy vrácené uzly XmlNodes v <xref:System.Windows.Controls.ListBox>. V takovém případě je název vrácená uzlů "*knihy*".  
   

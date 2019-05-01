@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4433f05a76d389f6dda5afcfe898d942c4e7d05f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c07747c5100f6f7b7ee80b2e7e39d22362698e4
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978520"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807834"
 ---
 # <a name="default-marshaling-for-strings"></a>Výchozí zařazování pro řetězce
 
@@ -92,6 +92,7 @@ V následující tabulce jsou uvedeny možnosti zařazování pro řetězce při
 |`UnmanagedType.BStr`|COM – styl `BSTR` s předponou délku a znaky kódování Unicode.|
 |`UnmanagedType.LPStr` (výchozí)|Ukazatel na pole zakončené znakem null znaků ANSI.|
 |`UnmanagedType.LPTStr`|Ukazatel na pole zakončené znakem null znaků závislého na platformě.|
+|`UnmanagedType.LPUTF8Str`|Ukazatel na pole zakončené znakem null UTF-8 kódování znaků.|
 |`UnmanagedType.LPWStr`|Ukazatel na pole zakončené znakem null znaků Unicode.|
 |`UnmanagedType.TBStr`|COM – styl `BSTR` s předponou délku a závislého na platformě znaků.|
 |`VBByRefStr`|Hodnota, která umožňuje Visual Basic .NET, chcete-li změnit řetězec v nespravovaných kódu a výsledky ve spravovaném kódu projeví. Tato hodnota je podporována pouze pro vyvolání platformy. Jedná se o výchozí hodnotu v jazyce Visual Basic pro `ByVal` řetězce.|
@@ -110,6 +111,8 @@ class StringLibAPI
     [DllImport("StringLib.dll")]
     public static extern void PassLPTStr([MarshalAs(UnmanagedType.LPTStr)] string s);
     [DllImport("StringLib.dll")]
+    public static extern void PassLPUTF8Str([MarshalAs(UnmanagedType.LPUTF8Str)] string s);
+    [DllImport("StringLib.dll")]
     public static extern void PassBStr([MarshalAs(UnmanagedType.BStr)] string s);
     [DllImport("StringLib.dll")]
     public static extern void PassAnsiBStr([MarshalAs(UnmanagedType.AnsiBStr)] string s);
@@ -120,18 +123,20 @@ class StringLibAPI
 
 ```vb
 Class StringLibAPI
-    Public Declare Auto Sub PassLPStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.LPStr)> s As String)
-    Public Declare Auto Sub PassLPWStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.LPWStr)> s As String)
-    Public Declare Auto Sub PassLPTStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.LPTStr)> s As String)
-    Public Declare Auto Sub PassBStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.BStr)> s As String)
-    Public Declare Auto Sub PassAnsiBStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.AnsiBStr)> s As String)
-    Public Declare Auto Sub PassTBStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.TBStr)> s As String)
+    Public Declare Auto Sub PassLPStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPStr)> s As String)
+    Public Declare Auto Sub PassLPWStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPWStr)> s As String)
+    Public Declare Auto Sub PassLPTStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPTStr)> s As String)
+    Public Declare Auto Sub PassLPUTF8Str Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPUTF8Str)> s As String)
+    Public Declare Auto Sub PassBStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.BStr)> s As String)
+    Public Declare Auto Sub PassAnsiBStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.AnsiBStr)> s As String)
+    Public Declare Auto Sub PassTBStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.TBStr)> s As String)
 End Class
 ```
 
@@ -144,6 +149,7 @@ End Class
 |`UnmanagedType.BStr`|COM – styl `BSTR` s předponou délku a znaky kódování Unicode.|
 |`UnmanagedType.LPStr` (výchozí)|Ukazatel na pole zakončené znakem null znaků ANSI.|
 |`UnmanagedType.LPTStr`|Ukazatel na pole zakončené znakem null znaků závislého na platformě.|
+|`UnmanagedType.LPUTF8Str`|Ukazatel na pole zakončené znakem null UTF-8 kódování znaků.|
 |`UnmanagedType.LPWStr`|Ukazatel na pole zakončené znakem null znaků Unicode.|
 |`UnmanagedType.ByValTStr`|Pevné délky pole znaků; Typ pole je určeno znakovou sadu obsahující struktury.|
 

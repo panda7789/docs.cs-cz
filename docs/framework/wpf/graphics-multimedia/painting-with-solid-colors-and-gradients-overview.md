@@ -10,11 +10,11 @@ helpviewer_keywords:
 - painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
 ms.openlocfilehash: 7945660f40e44596fe36a6b9d53223a0e264a064
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009428"
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>Přehled malování plnými barvami a přechody
 Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty pro malování plnými barvami, lineární přechody a radiálními přechody.  
@@ -27,15 +27,15 @@ Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush
 ### <a name="using-a-solidcolorbrush-in-xaml"></a>Použití štětce SolidColorBrush v "XAML"  
  K vykreslení oblasti plnou barvou v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte jednu z následujících možností.  
   
--   Vyberte předdefinované barvy štětce podle názvu.  Například můžete nastavit tlačítka <xref:System.Windows.Controls.Control.Background%2A> "Red" nebo "Středně modrá".  Seznam dalších předdefinovaných plnobarevné štětce, najdete v části statické vlastnosti <xref:System.Windows.Media.Brushes> třídy. Následuje příklad.  
+- Vyberte předdefinované barvy štětce podle názvu.  Například můžete nastavit tlačítka <xref:System.Windows.Controls.Control.Background%2A> "Red" nebo "Středně modrá".  Seznam dalších předdefinovaných plnobarevné štětce, najdete v části statické vlastnosti <xref:System.Windows.Media.Brushes> třídy. Následuje příklad.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
   
--   Zvolte barvu z palety barev 32-bit zadáním množství červené, zelené a modré zkombinovat do jedné plnou barvu.  Formát pro zadávání barvu z palety 32 bitů je "*#rrggbb*", kde *rr* je dvoumístné šestnáctkové číslo určující relativní červené, *gg* Určuje dobu, zelenou a *bb* určuje množství modrá.  Kromě toho lze zadat barvu jako "#*aarrggbb*" kde *aa* Určuje *alfa* hodnotu nebo průhlednost barvy. Tento přístup umožňuje vytvářet barvy, které jsou částečně transparentní.  V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na hodnotu red úplně neprůhledné pomocí šestnáctkové soustavě.  
+- Zvolte barvu z palety barev 32-bit zadáním množství červené, zelené a modré zkombinovat do jedné plnou barvu.  Formát pro zadávání barvu z palety 32 bitů je "*#rrggbb*", kde *rr* je dvoumístné šestnáctkové číslo určující relativní červené, *gg* Určuje dobu, zelenou a *bb* určuje množství modrá.  Kromě toho lze zadat barvu jako "#*aarrggbb*" kde *aa* Určuje *alfa* hodnotu nebo průhlednost barvy. Tento přístup umožňuje vytvářet barvy, které jsou částečně transparentní.  V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na hodnotu red úplně neprůhledné pomocí šestnáctkové soustavě.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
   
--   Syntaxe značek vlastnost použít k podrobnému popisu <xref:System.Windows.Media.SolidColorBrush>. Tato syntaxe je podrobnější ale umožňuje určit další nastavení, jako je například neprůhlednost štětce. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> vlastnosti dvou <xref:System.Windows.Controls.Button> prvky jsou nastaveny na hodnotu red úplně neprůhledné. Barva štětce první je popsána pomocí názvu předdefinované barvy. Barva štětce druhý je popsána pomocí šestnáctkové soustavě.  
+- Syntaxe značek vlastnost použít k podrobnému popisu <xref:System.Windows.Media.SolidColorBrush>. Tato syntaxe je podrobnější ale umožňuje určit další nastavení, jako je například neprůhlednost štětce. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> vlastnosti dvou <xref:System.Windows.Controls.Button> prvky jsou nastaveny na hodnotu red úplně neprůhledné. Barva štětce první je popsána pomocí názvu předdefinované barvy. Barva štětce druhý je popsána pomocí šestnáctkové soustavě.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushPropertyTag1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushpropertytag1xaml)]  
   
@@ -43,11 +43,11 @@ Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush
 ### <a name="painting-with-a-solidcolorbrush-in-code"></a>Kreslení pomocí štětce SolidColorBrush v kódu  
  K vykreslení oblasti plnou barvou v kódu, použijte jednu z následujících možností.  
   
--   Použijte jednu z předdefinovaných štětce poskytované <xref:System.Windows.Media.Brushes> třídy. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na <xref:System.Windows.Media.Brushes.Red%2A>.  
+- Použijte jednu z předdefinovaných štětce poskytované <xref:System.Windows.Media.Brushes> třídy. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na <xref:System.Windows.Media.Brushes.Red%2A>.  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedBrush1CSharp](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedbrush1csharp)]  
   
--   Vytvoření <xref:System.Windows.Media.SolidColorBrush> a nastavte jeho <xref:System.Windows.Media.SolidColorBrush.Color%2A> pomocí vlastnosti <xref:System.Windows.Media.Color> struktury. Můžete použít předdefinované barvy z <xref:System.Windows.Media.Colors> třídy nebo můžete vytvořit <xref:System.Windows.Media.Color> pomocí statické <xref:System.Windows.Media.Color.FromArgb%2A> metody.  
+- Vytvoření <xref:System.Windows.Media.SolidColorBrush> a nastavte jeho <xref:System.Windows.Media.SolidColorBrush.Color%2A> pomocí vlastnosti <xref:System.Windows.Media.Color> struktury. Můžete použít předdefinované barvy z <xref:System.Windows.Media.Colors> třídy nebo můžete vytvořit <xref:System.Windows.Media.Color> pomocí statické <xref:System.Windows.Media.Color.FromArgb%2A> metody.  
   
      Následující příklad ukazuje, jak nastavit <xref:System.Windows.Media.SolidColorBrush.Color%2A> vlastnost <xref:System.Windows.Media.SolidColorBrush> použití předdefinované barvy.  
   
@@ -81,9 +81,9 @@ Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush
   
  <xref:System.Windows.Media.GradientStop> Je základním stavebním blokem štětce přechodu.  Určuje Přechodové zarážky <xref:System.Windows.Media.GradientStop.Color%2A> na <xref:System.Windows.Media.GradientStop.Offset%2A> společně osu přechodu.  
   
--   Ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost určuje barvy ukončení přechodu. Může nastavit barvu pomocí předdefinované barvy (poskytované <xref:System.Windows.Media.Colors> třídy), nebo zadáním ScRGB nebo ARGB hodnot. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], šestnáctkové soustavě můžete také použít k popisu barvu. Další informace najdete v tématu <xref:System.Windows.Media.Color> struktury.  
+- Ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost určuje barvy ukončení přechodu. Může nastavit barvu pomocí předdefinované barvy (poskytované <xref:System.Windows.Media.Colors> třídy), nebo zadáním ScRGB nebo ARGB hodnot. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], šestnáctkové soustavě můžete také použít k popisu barvu. Další informace najdete v tématu <xref:System.Windows.Media.Color> struktury.  
   
--   Ukončení přechodu <xref:System.Windows.Media.GradientStop.Offset%2A> vlastnost určuje pozici barvy ukončení přechodu na ose přechodu. Posun je <xref:System.Double> , od 0 do 1. Užší hodnotu posunu ukončení přechodu je 0, čím blíž je barva na začátek přechodu. Užší hodnotu posunu přechodu je 1, čím blíž je barva na konci přechodu.  
+- Ukončení přechodu <xref:System.Windows.Media.GradientStop.Offset%2A> vlastnost určuje pozici barvy ukončení přechodu na ose přechodu. Posun je <xref:System.Double> , od 0 do 1. Užší hodnotu posunu ukončení přechodu je 0, čím blíž je barva na začátek přechodu. Užší hodnotu posunu přechodu je 1, čím blíž je barva na konci přechodu.  
   
  Barva jednotlivých bodů mezi Přechodové zarážky se lineárně interpolované jako kombinace barvu uvedené ve dvou funkcí ohraničování Přechodové zarážky. Následujícím obrázku jsou zvýrazněny ukončení přechodu v předchozím příkladu. Kruhy označení umístění Přechodové zarážky a přerušovaná čára ukazuje Osa přechodu.  
   

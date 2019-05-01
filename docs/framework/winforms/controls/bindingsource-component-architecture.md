@@ -8,28 +8,28 @@ helpviewer_keywords:
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 7bc69c90-8a11-48b1-9336-3adab5b41591
 ms.openlocfilehash: 81559444b6e3da2861e48bdc637ae01d246c0758
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59165344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61961574"
 ---
 # <a name="bindingsource-component-architecture"></a>Architektura součásti BindingSource
 S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat univerzálně svázat všechny ovládací prvky Windows Forms.  
   
  <xref:System.Windows.Forms.BindingSource> Komponenty zjednodušuje proces vytvoření vazby ovládacích prvků ke zdroji dat a poskytuje následující výhody oproti tradičním datové vazby:  
   
--   Umožňuje vytvořit vazbu doby návrhu pro obchodní objekty.  
+- Umožňuje vytvořit vazbu doby návrhu pro obchodní objekty.  
   
--   Zapouzdřuje <xref:System.Windows.Forms.CurrencyManager> funkce a zpřístupňuje <xref:System.Windows.Forms.CurrencyManager> událostí v době návrhu.  
+- Zapouzdřuje <xref:System.Windows.Forms.CurrencyManager> funkce a zpřístupňuje <xref:System.Windows.Forms.CurrencyManager> událostí v době návrhu.  
   
--   Zjednodušuje vytváření seznam, který podporuje <xref:System.ComponentModel.IBindingList> rozhraní tím, že poskytuje seznam oznámení o změně pro oznámení o změně zdroje dat, které nativně nepodporují seznamu.  
+- Zjednodušuje vytváření seznam, který podporuje <xref:System.ComponentModel.IBindingList> rozhraní tím, že poskytuje seznam oznámení o změně pro oznámení o změně zdroje dat, které nativně nepodporují seznamu.  
   
--   Představuje rozšíření pro bod <xref:System.ComponentModel.IBindingList.AddNew%2A?displayProperty=nameWithType> metody.  
+- Představuje rozšíření pro bod <xref:System.ComponentModel.IBindingList.AddNew%2A?displayProperty=nameWithType> metody.  
   
--   Poskytuje určitou úroveň dereference mezi zdrojem dat a ovládacího prvku. Tuto indirekci je důležité, pokud zdroj dat se může změnit v době běhu.  
+- Poskytuje určitou úroveň dereference mezi zdrojem dat a ovládacího prvku. Tuto indirekci je důležité, pokud zdroj dat se může změnit v době běhu.  
   
--   Spolupracuje s jinými ovládacími prvky související s daty Windows Forms konkrétně <xref:System.Windows.Forms.BindingNavigator> a <xref:System.Windows.Forms.DataGridView> ovládací prvky.  
+- Spolupracuje s jinými ovládacími prvky související s daty Windows Forms konkrétně <xref:System.Windows.Forms.BindingNavigator> a <xref:System.Windows.Forms.DataGridView> ovládací prvky.  
   
  Z těchto důvodů <xref:System.Windows.Forms.BindingSource> komponenta je upřednostňovaný způsob vazby ovládacích prvků Windows Forms ke zdrojům dat.  
   
@@ -40,38 +40,38 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
   
  Konzistentní rozhraní, poskytuje <xref:System.Windows.Forms.BindingSource> komponenty výrazně zjednodušuje proces vazba dat k ovládacím prvkům. Pro typy zdrojů dat, které poskytují oznámení, změn <xref:System.Windows.Forms.BindingSource> komponenty automaticky komunikuje mezi ovládacím prvkem a zdroj dat změny. Pro typy zdrojů dat, které neposkytují oznámení o změně události jsou k dispozici, které umožňují vytváření oznámení o změnách. Následující seznam obsahuje nepodporované funkce <xref:System.Windows.Forms.BindingSource> komponenty:  
   
--   Indirekce.  
+- Indirekce.  
   
--   Správa měny.  
+- Správa měny.  
   
--   Zdroj dat jako seznam.  
+- Zdroj dat jako seznam.  
   
--   <xref:System.Windows.Forms.BindingSource> jako <xref:System.ComponentModel.IBindingList>.  
+- <xref:System.Windows.Forms.BindingSource> jako <xref:System.ComponentModel.IBindingList>.  
   
--   Vytvoření vlastní položky.  
+- Vytvoření vlastní položky.  
   
--   Vytvoření transakční položky.  
+- Vytvoření transakční položky.  
   
--   <xref:System.Collections.IEnumerable> podpora.  
+- <xref:System.Collections.IEnumerable> podpora.  
   
--   Podpory během návrhu.  
+- Podpory během návrhu.  
   
--   Statické <xref:System.Windows.Forms.ListBindingHelper> metody.  
+- Statické <xref:System.Windows.Forms.ListBindingHelper> metody.  
   
--   Řazení a filtrování se <xref:System.ComponentModel.IBindingListView> rozhraní.  
+- Řazení a filtrování se <xref:System.ComponentModel.IBindingListView> rozhraní.  
   
--   Integrace s <xref:System.Windows.Forms.BindingNavigator>.  
+- Integrace s <xref:System.Windows.Forms.BindingNavigator>.  
   
 ### <a name="indirection"></a>Dereference  
  <xref:System.Windows.Forms.BindingSource> Součást poskytuje určitou úroveň dereference mezi ovládacího prvku a zdroji dat. Místo vytvoření vazby ovládacího prvku přímo ke zdroji dat, můžete svázat ovládací prvek <xref:System.Windows.Forms.BindingSource>, a připojení zdroje dat <xref:System.Windows.Forms.BindingSource> komponenty <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost.  
   
  S touto úrovní dereference můžete změnit zdroj dat bez resetování vazbu ovládacího prvku. To vám následující funkce:  
   
--   Můžete připojit <xref:System.Windows.Forms.BindingSource> k různým zdrojům dat. při zachování aktuální vazby ovládacího prvku.  
+- Můžete připojit <xref:System.Windows.Forms.BindingSource> k různým zdrojům dat. při zachování aktuální vazby ovládacího prvku.  
   
--   Můžete změnit položky ve zdroji dat a upozornit vázané ovládací prvky. Další informace najdete v tématu [jak: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md).  
+- Můžete změnit položky ve zdroji dat a upozornit vázané ovládací prvky. Další informace najdete v tématu [jak: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md).  
   
--   Lze svázat <xref:System.Type> místo objektu v paměti. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md). Můžete pak vytvoříte vazbu k objektu v době běhu.  
+- Lze svázat <xref:System.Type> místo objektu v paměti. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md). Můžete pak vytvoříte vazbu k objektu v době běhu.  
   
 ### <a name="currency-management"></a>Správa měn  
  <xref:System.Windows.Forms.BindingSource> Komponenta implementuje <xref:System.Windows.Forms.ICurrencyManagerProvider> rozhraní pro zpracování správy měny. S <xref:System.Windows.Forms.ICurrencyManagerProvider> rozhraní, se dá dostat taky pro správce měny pro <xref:System.Windows.Forms.BindingSource>, kromě správce měny pro jiné <xref:System.Windows.Forms.BindingSource> vázána na stejný <xref:System.Windows.Forms.BindingSource.DataMember%2A>.  
@@ -128,11 +128,11 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
 ### <a name="transactional-item-creation"></a>Vytvoření transakční položky  
  <xref:System.Windows.Forms.BindingSource> Komponenta implementuje <xref:System.ComponentModel.ICancelAddNew> rozhraní, které umožňuje vytvoření transakční položky. Po vytvoření nové položky dočasně pomocí volání <xref:System.Windows.Forms.BindingSource.AddNew%2A>, přidání mohou být potvrzena nebo vrácena zpět následujícími způsoby:  
   
--   <xref:System.ComponentModel.ICancelAddNew.EndNew%2A> Metoda explicitně potvrzení změn přidání čekajícího na zpracování.  
+- <xref:System.ComponentModel.ICancelAddNew.EndNew%2A> Metoda explicitně potvrzení změn přidání čekajícího na zpracování.  
   
--   Probíhá jiná operace kolekce, například vložení, odebrání nebo přesunutí, budou implicitně potvrzení přidání čekajícího na zpracování.  
+- Probíhá jiná operace kolekce, například vložení, odebrání nebo přesunutí, budou implicitně potvrzení přidání čekajícího na zpracování.  
   
--   <xref:System.ComponentModel.ICancelAddNew.CancelNew%2A> Metoda se vrátit zpět, přidání čekajícího na zpracování Pokud metody již nebyla potvrzena.  
+- <xref:System.ComponentModel.ICancelAddNew.CancelNew%2A> Metoda se vrátit zpět, přidání čekajícího na zpracování Pokud metody již nebyla potvrzena.  
   
 ### <a name="ienumerable-support"></a>Podpora IEnumerable  
  <xref:System.Windows.Forms.BindingSource> Komponenta povoluje vazba ovládacích prvků s <xref:System.Collections.IEnumerable> zdrojů. Tato součást je možné svázat ke zdroji dat, jako <xref:System.Data.SqlClient.SqlDataReader?displayProperty=nameWithType>.  
@@ -147,13 +147,13 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
 ### <a name="static-listbindinghelper-methods"></a>Statické ListBindingHelper metody  
  <xref:System.Windows.Forms.BindingContext?displayProperty=nameWithType>, <xref:System.Windows.Forms.CurrencyManager?displayProperty=nameWithType>, A <xref:System.Windows.Forms.BindingSource> veškerou logiku běžné sdílené složky pro vygenerování seznamu z typů `DataSource` / `DataMember` pár. Kromě toho tato běžné logika je veřejně zpřístupnit pro použití autoři ovládacího prvku a jiných třetích stran v následujícím `static` metody:  
   
--   <xref:System.Windows.Forms.ListBindingHelper.GetListItemProperties%2A>  
+- <xref:System.Windows.Forms.ListBindingHelper.GetListItemProperties%2A>  
   
--   <xref:System.Windows.Forms.ListBindingHelper.GetList%2A>.  
+- <xref:System.Windows.Forms.ListBindingHelper.GetList%2A>.  
   
--   <xref:System.Windows.Forms.ListBindingHelper.GetListName%2A>  
+- <xref:System.Windows.Forms.ListBindingHelper.GetListName%2A>  
   
--   <xref:System.Windows.Forms.ListBindingHelper.GetListItemType%2A>  
+- <xref:System.Windows.Forms.ListBindingHelper.GetListItemType%2A>  
   
 ### <a name="sorting-and-filtering-with-the-ibindinglistview-interface"></a>Řazení a filtrování pomocí rozhraní IBindingListView  
  <xref:System.Windows.Forms.BindingSource> Komponenta implementuje <xref:System.ComponentModel.IBindingListView> rozhraní, která rozšiřuje <xref:System.ComponentModel.IBindingList> rozhraní. <xref:System.ComponentModel.IBindingList> Nabízí řazení jednoho sloupce a <xref:System.ComponentModel.IBindingListView> nabízí rozšířené řazení a filtrování. S <xref:System.ComponentModel.IBindingListView>, můžete seřadit a filtrovat položky ve zdroji dat, pokud zdroj dat také implementuje jednu z těchto rozhraní. <xref:System.Windows.Forms.BindingSource> Součást neposkytuje referenční implementace těchto členů. Místo toho volání jsou předány podkladový seznam.  

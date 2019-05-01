@@ -4,12 +4,12 @@ description: Objevte, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 04/18/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 45e94e325fc4fbfaf1e71f7839d5083e44d5863e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b07668f19219040ea5a4dbfd7f175088f38357d
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973693"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63808233"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -98,7 +98,7 @@ Třída vstupní datová sada `SentimentData`, má `string` pro komentář (`Sen
 |WOW... Miluju toto místo.              |    1     |
 |Služba se velmi výzvy.              |    1     |
 
-`SentimentPrediction` je třída předpovědi používá po cvičení modelu. Má jeden datový typ boolean (`Sentiment`) a `PredictedLabel` `ColumnName` atribut. `Label` Slouží k vytvoření a trénování modelu a jeho rozdělení na testovací datové použít také k vyhodnocení modelu. `PredictedLabel` Se používá při předpovědi a vyhodnocení. Pro vyhodnocení se používají trénovací data, předpovězeným hodnotám a model.
+`SentimentPrediction` je třída předpovědi používá po cvičení modelu. Dědí z `SentimentData` pro zobrazení `SentimentText` s předpovědí. `SentimentPrediction` má jeden datový typ boolean (`Sentiment`) a `PredictedLabel` `ColumnName` atribut. `Label` Slouží k vytvoření a trénování modelu a jeho rozdělení na testovací datové použít také k vyhodnocení modelu. `PredictedLabel` Se používá při předpovědi a vyhodnocení. Pro vyhodnocení se používají trénovací data, předpovězeným hodnotám a model.
 
 [MLContext třídy](xref:Microsoft.ML.MLContext) je výchozí bod pro všechny operace ML.NET a inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně `DBContext` v Entity Framework.
 
@@ -348,11 +348,7 @@ Vytvořte hlavičku pro předpovědi pomocí následujícího kódu:
 
 [!code-csharp[OutputHeaders](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddInfoMessage "Display prediction outputs")]
 
-Před zobrazením předpokládané výsledky, kombinovat původním komentářem s jeho pomocí předpokládané subjektivního hodnocení [Zip()](xref:System.Linq.Enumerable.Zip%2A) metody:
-
-[!code-csharp[BuildTuples](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#BuildSentimentPredictionPairs "Build the pairs of sentiment data and predictions")]
-
-Teď, když `SentimentText` a `Sentiment` jsou kombinované ve třídě, zobrazit výsledky:
+Protože `SentimentPrediction` zděděno z `SentimentData`, `Transform()` metoda vyplní `SentimentText` s předpokládanou pole. Procesu ML.NET zpracovává, jednotlivé komponenty přidá sloupce, a to usnadňuje zobrazení výsledků:
 
 [!code-csharp[DisplayPredictions](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DisplayResults "Display the predictions")]
 

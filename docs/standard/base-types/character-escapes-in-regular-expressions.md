@@ -19,18 +19,18 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: 2643e6ec1edf9cd69d7530def1e2605e1af20de4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61950550"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
 Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících akcí:  
   
--   Že následující znak je speciální znaky, jak je znázorněno v tabulce v části. Například `\b` kotva, která označuje, že shoda s regulárním výrazem by měla začínat na hranici slova `\t` představuje kartu, a `\x020` představuje mezeru.  
+- Že následující znak je speciální znaky, jak je znázorněno v tabulce v části. Například `\b` kotva, která označuje, že shoda s regulárním výrazem by měla začínat na hranici slova `\t` představuje kartu, a `\x020` představuje mezeru.  
   
--   Znak, který by jinak interpretován jako znak bez řídícího jazykové konstrukce by měl být interpretován literálně. Například složenou závorku (`{`) začíná definici kvantifikátor, ale zpětné lomítko následované složená závorka (`\{`) označuje, že modul regulárních výrazů by měl odpovídat složenou závorkou. Obdobně jedno zpětné lomítko označuje začátek toho uvozený uvozovacím znakem jazykové konstrukce, ale dvě zpětná lomítka (`\\`) označuje, že modul regulárních výrazů by měl odpovídat zpětné lomítko.  
+- Znak, který by jinak interpretován jako znak bez řídícího jazykové konstrukce by měl být interpretován literálně. Například složenou závorku (`{`) začíná definici kvantifikátor, ale zpětné lomítko následované složená závorka (`\{`) označuje, že modul regulárních výrazů by měl odpovídat složenou závorkou. Obdobně jedno zpětné lomítko označuje začátek toho uvozený uvozovacím znakem jazykové konstrukce, ale dvě zpětná lomítka (`\\`) označuje, že modul regulárních výrazů by měl odpovídat zpětné lomítko.  
   
 > [!NOTE]
 >  Řídicí sekvence znaků, jsou rozpoznány ve vzorech regulárního výrazu, ale ne ve vzorech pro nahrazení.  

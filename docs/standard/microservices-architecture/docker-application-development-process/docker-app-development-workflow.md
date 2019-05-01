@@ -4,12 +4,12 @@ description: Zjistěte podrobnosti pracovního postupu pro vývoj aplikací zalo
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: f23a2352d86d5c77d2f05af2a2452fb3c944e049
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.openlocfilehash: 3d2a57c7dda722bcc39895b41c35a3a29ddd17e2
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613366"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63809150"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -181,7 +181,7 @@ Počáteční souboru Docker může vypadat přibližně takto:
  5  FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
  6  WORKDIR /src
  7  COPY src/Services/Catalog/Catalog.API/Catalog.API.csproj …
- 8  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.AspNetCore.HealthChecks … 
+ 8  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.AspNetCore.HealthChecks …
  9  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.Extensions.HealthChecks …
 10  COPY src/BuildingBlocks/EventBus/IntegrationEventLogEF/ …
 11  COPY src/BuildingBlocks/EventBus/EventBus/EventBus.csproj …
@@ -206,6 +206,7 @@ Počáteční souboru Docker může vypadat přibližně takto:
 
 A jedná se o řádek po řádku:
 
+<!-- markdownlint-disable MD029-->
 1. Začít fáze "malé" pouze modul runtime základní Image, pojmenujte ji **základní** pro referenci.
 2. Vytvoření **/app** adresáře v bitové kopii.
 3. Zveřejnit port **80**.
@@ -226,6 +227,7 @@ A jedná se o řádek po řádku:
 26. Změňte aktuální adresář na **/app**
 27. Kopírovat **/app** z fáze **publikovat** do aktuálního adresáře
 28. Definování příkazu ke spuštění při spuštění kontejneru.
+<!-- markdownlint-enable MD029-->
 
 Nyní Pojďme prozkoumat některé optimalizace pro zlepšení výkonu celého procesu, v případě aplikaci eShopOnContainers, to znamená asi 22 minut nebo déle vytvářet kompletní řešení v kontejnery Linuxu.
 
@@ -233,7 +235,7 @@ Budete využívat Docker vrstva mezipaměti funkci, která je poměrně jednoduc
 
 Tedy zaměřme se na **sestavení** řádky 5 až 6 jsou většinou stejné fázi, ale řádky 7-17 se liší pro každou službu v aplikaci eShopOnContainers, tak mají k provedení pokaždé, když jeden, ale pokud jste změnili řádky 7 – 16:
 
-```
+```Dockerfile
 COPY . .
 ```
 
@@ -245,7 +247,7 @@ Pak budou platit stejně pro každou službu budou zkopírovány celé řešení
 
 Zahrnuje další významné optimalizace `restore` příkaz proveden v řádku 17, které se také pro každou službu aplikaci eShopOnContainers. Pokud změníte tento řádek jenom:
 
-```console
+```Dockerfile
 RUN dotnet restore
 ```
 
@@ -253,13 +255,13 @@ To by obnovení balíčků pro celé řešení, ale pak znovu ji by udělat jeno
 
 Ale `dotnet restore` spuštěna pouze pokud je jeden projekt nebo soubor řešení ve složce, takže dosažení tohoto cíle je o něco složitější a způsob, jak vyřešit, aniž do příliš mnoho podrobností, je to:
 
-1) Přidejte následující řádky do **.dockerignore**:
+1. Přidejte následující řádky do **.dockerignore**:
 
    - `*.sln`, chcete-li ignorovat všechny soubory řešení ve stromové struktuře složek hlavní
 
    - `!eShopOnContainers-ServicesAndWebApps.sln`, chcete-li zahrnout pouze tento soubor řešení.
 
-2) Zahrnout `/ignoreprojectextensions:.dcproj` argument `dotnet restore`, tak také ignoruje docker-compose projektu a obnoví pouze zadané balíčky pro aplikaci eShopOnContainers ServicesAndWebApps řešení.
+2. Zahrnout `/ignoreprojectextensions:.dcproj` argument `dotnet restore`, tak také ignoruje docker-compose projektu a obnoví pouze zadané balíčky pro aplikaci eShopOnContainers ServicesAndWebApps řešení.
 
 Poslední optimalizace prostě se to děje, že řádek 20 je redundantní, jako řádku 23 také sestavení aplikace a dodává, v podstatě hned po řádku 20, takže existuje přejde jiného příkazu časově náročné.
 
@@ -542,7 +544,7 @@ Kromě toho budete muset provést krok 2 (Přidání podpory Dockeru do vašich 
 - **Steve Lasker. Vývoj na platformě .NET dockeru pomocí sady Visual Studio 2017** \
   <https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111>
 
-## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Pomocí příkazů prostředí PowerShell v souboru Dockerfile k nastavení kontejnery Windows 
+## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Pomocí příkazů prostředí PowerShell v souboru Dockerfile k nastavení kontejnery Windows
 
 [Kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/index) umožňují převést svoje stávající aplikace pro Windows do Image Dockeru a nasadit je pomocí stejných nástrojů jako ostatní ekosystému Dockeru. Pokud chcete používat kontejnery Windows, spusťte příkazy Powershellu v souboru Dockerfile, jak je znázorněno v následujícím příkladu:
 

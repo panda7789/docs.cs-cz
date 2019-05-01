@@ -2,12 +2,12 @@
 title: Zásada autorizace
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-ms.openlocfilehash: 87deedb2bd28cd86619eb48d0ff9c3e566174d31
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
-ms.translationtype: MT
+ms.openlocfilehash: 50e868645d7e7ccbcf4be697f8bdb1814dd90e9c
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332673"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807980"
 ---
 # <a name="authorization-policy"></a>Zásada autorizace
 
@@ -18,17 +18,17 @@ Tento příklad ukazuje, jak implementovat zásady autorizace vlastních deklara
 
  Stručně řečeno, tento příklad ukazuje, jak:
 
--   Klient lze ověřit pomocí uživatelského jména a hesla.
+- Klient lze ověřit pomocí uživatelského jména a hesla.
 
--   Klient lze ověřit pomocí certifikátu X.509.
+- Klient lze ověřit pomocí certifikátu X.509.
 
--   Server ověří klienta přihlašovacích údajů, kteří vlastní `UsernamePassword` program pro ověření.
+- Server ověří klienta přihlašovacích údajů, kteří vlastní `UsernamePassword` program pro ověření.
 
--   Server byl ověřovaný pomocí certifikátu X.509 serveru.
+- Server byl ověřovaný pomocí certifikátu X.509 serveru.
 
--   Server můžete použít <xref:System.ServiceModel.ServiceAuthorizationManager> pro řízení přístupu k určité metody ve službě.
+- Server můžete použít <xref:System.ServiceModel.ServiceAuthorizationManager> pro řízení přístupu k určité metody ve službě.
 
--   Jak implementovat <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.
+- Jak implementovat <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.
 
 Služba poskytuje dva koncové body služby pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Každý koncový bod se skládá z adresy, vazby a kontrakt. Jedna vazba konfigurována se standardní `wsHttpBinding` vazby, která používá ověřování uživatelským jménem WS-Security a klienta. Druhé vazby má nakonfigurovanou standardní `wsHttpBinding` vazby, která používá ověřování certifikátem WS-Security a klienta. [ \<Chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) Určuje, že má být použit pro ověřování služby jsou přihlašovací údaje uživatele. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` vlastnost jako `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
 
@@ -397,9 +397,9 @@ Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat ser
 
 Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v příslušné konfiguraci:
 
--   Vytváří se certifikát serveru.
+- Vytváří se certifikát serveru.
 
-     Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota je localhost.
+    Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota je localhost.
 
     ```
     echo ************
@@ -411,19 +411,19 @@ Následující body nabízí stručný přehled o různých částech dávkové 
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.
 
-     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je vyžadován, protože certifikáty, které jsou generovány Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
+    Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je vyžadován, protože certifikáty, které jsou generovány Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 
     ```
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
--   Vytváří se certifikát klienta.
+- Vytváří se certifikát klienta.
 
-     Následující řádky z dávkový soubor Setup.bat vytvořit klientský certifikát, který se má použít. % Proměnná % uživatelské_jméno Určuje název serveru. Tato hodnota nastavená na "test1", protože jde o název `IAuthorizationPolicy` hledá. Pokud změníte hodnotu % uživatelské_jméno musíte změnit odpovídající hodnotu v `IAuthorizationPolicy.Evaluate` metody.
+    Následující řádky z dávkový soubor Setup.bat vytvořit klientský certifikát, který se má použít. % Proměnná % uživatelské_jméno Určuje název serveru. Tato hodnota nastavená na "test1", protože jde o název `IAuthorizationPolicy` hledá. Pokud změníte hodnotu % uživatelské_jméno musíte změnit odpovídající hodnotu v `IAuthorizationPolicy.Evaluate` metody.
 
-     Certifikát je uložen v úložišti (osobních) v části CurrentUser umístění úložiště.
+    Certifikát je uložen v úložišti (osobních) v části CurrentUser umístění úložiště.
 
     ```
     echo ************
@@ -432,9 +432,9 @@ Následující body nabízí stručný přehled o různých částech dávkové 
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe
     ```
 
--   Instalaci klientského certifikátu do úložiště důvěryhodných certifikátů serveru.
+- Instalaci klientského certifikátu do úložiště důvěryhodných certifikátů serveru.
 
-     Následující řádky do dávkový soubor Setup.bat zkopírujte klientský certifikát do úložiště důvěryhodných osob. Tento krok je nutný, protože certifikáty, které jsou generovány Makecert.exe implicitně nedůvěřuje serverového systému. Pokud už máte certifikát, který je integrován v důvěryhodných kořenových certifikátů – například certifikátů vystavených Microsoftem – v tomto kroku naplnění úložiště certifikátů serveru pomocí certifikátu klienta se nevyžaduje.
+    Následující řádky do dávkový soubor Setup.bat zkopírujte klientský certifikát do úložiště důvěryhodných osob. Tento krok je nutný, protože certifikáty, které jsou generovány Makecert.exe implicitně nedůvěřuje serverového systému. Pokud už máte certifikát, který je integrován v důvěryhodných kořenových certifikátů – například certifikátů vystavených Microsoftem – v tomto kroku naplnění úložiště certifikátů serveru pomocí certifikátu klienta se nevyžaduje.
 
     ```
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople
@@ -460,7 +460,7 @@ Následující body nabízí stručný přehled o různých částech dávkové 
 
 1. Spusťte Client.exe z *\client\bin*. Činnost klienta se zobrazí na klientské aplikace konzoly.
 
-  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
 ### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích
 
@@ -474,7 +474,7 @@ Následující body nabízí stručný přehled o různých částech dávkové 
 
 5. Na serveru, spusťte `setup.bat service` v Developer Command Prompt pro sadu Visual Studio otevřeného s oprávněními správce.
 
-   Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem *Service.cer*.
+    Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem *Service.cer*.
 
 6. Upravit *Service.exe.config* tak, aby odrážely nový název certifikátu (v `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) která je stejná jako plně kvalifikovaný název domény počítače. Také změnit **computername** v \<služby > /\<baseAddresses > element z místního hostitele, plně kvalifikovaný název počítače služby.
 
@@ -482,7 +482,7 @@ Následující body nabízí stručný přehled o různých částech dávkové 
 
 8. Na straně klienta, spouštění `setup.bat client` v Developer Command Prompt pro sadu Visual Studio otevřeného s oprávněními správce.
 
-   Spuštění `setup.bat` s `client` argument vytvoří klientský certifikát s názvem **test1** a exportuje certifikát klienta do souboru s názvem *Client.cer*.
+    Spuštění `setup.bat` s `client` argument vytvoří klientský certifikát s názvem **test1** a exportuje certifikát klienta do souboru s názvem *Client.cer*.
 
 9. V *Client.exe.config* souborů v klientském počítači, změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby. To udělat tak, že nahradíte **localhost** s plně kvalifikovaný název serveru.
 
@@ -490,17 +490,17 @@ Následující body nabízí stručný přehled o různých částech dávkové 
 
 11. Na straně klienta, spouštění *ImportServiceCert.bat* v Developer Command Prompt pro sadu Visual Studio otevřeného s oprávněními správce.
 
-   Tento postup importuje certifikát služby ze souboru Service.cer do **CurrentUser - TrustedPeople** ukládat.
+    Tento postup importuje certifikát služby ze souboru Service.cer do **CurrentUser - TrustedPeople** ukládat.
 
 12. Na serveru, spusťte *ImportClientCert.bat* v Developer Command Prompt pro sadu Visual Studio otevřeného s oprávněními správce.
 
-   Tento postup importuje klientský certifikát ze souboru Client.cer do **LocalMachine - TrustedPeople** ukládat.
+    Tento postup importuje klientský certifikát ze souboru Client.cer do **LocalMachine - TrustedPeople** ukládat.
 
 13. Na počítači serveru spusťte Service.exe z okna příkazového řádku.
 
 14. Na klientském počítači spusťte Client.exe z okna příkazového řádku.
 
-   Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+    Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
 ### <a name="clean-up-after-the-sample"></a>Vyčištění po vzorku
 

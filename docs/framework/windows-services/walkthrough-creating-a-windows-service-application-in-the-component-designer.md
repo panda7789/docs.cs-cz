@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 35ef113acffbebdcd4cb585970e575f17959f75b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 8d30b7b98648e36a3008ac015f9560620f77b363
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59518029"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63809501"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Kurz: Vytvoření aplikace služby Windows
 
@@ -32,13 +32,13 @@ Pokud chcete začít, vytvořte projekt a nastavte hodnoty, které jsou požadov
 
    > [!NOTE]
    > Pokud se nezobrazí **Windows Service** šablony, je nutné nainstalovat **vývoj desktopových aplikací .NET** úlohy:
-   >  
+   >
    > V **nový projekt** dialogového okna, vyberte **otevřít instalační program Visual Studio** v levé dolní části. Vyberte **vývoj desktopových aplikací .NET** úlohy a pak vyberte **změnit**.
 
 3. Pro **název**, zadejte *MyNewService*a pak vyberte **OK**.
 
    **Návrhu** se zobrazí karta (**Service1.cs [Design]** nebo **Service1.vb [Design]**).
-   
+
    Šablona projektu zahrnuje komponentní třídu s názvem `Service1` , která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>. Obsahuje velkou část základního kódu služby, jako je například kód ke spuštění služby.
 
 ## <a name="rename-the-service"></a>Přejmenování služby
@@ -53,11 +53,11 @@ Přejmenování služby z **Service1** k **MyNewService**.
 
     ![Přejmenovat řádku](media/windows-service-rename.png "Windows service přejmenovat řádku")
 
-2. V **návrhu** kartu, vyberte možnost **vlastnosti** z místní nabídky. Z **vlastnosti** okno Změnit **ServiceName** hodnota, která se *MyNewService*.
+3. V **návrhu** kartu, vyberte možnost **vlastnosti** z místní nabídky. Z **vlastnosti** okno Změnit **ServiceName** hodnota, která se *MyNewService*.
 
     ![Vlastnosti služby](media/windows-service-properties.png "vlastností služby Windows")
 
-3. Vyberte **Uložit vše** z **souboru** nabídky.
+4. Vyberte **Uložit vše** z **souboru** nabídky.
 
 ## <a name="add-features-to-the-service"></a>Přidání funkcí do služby
 
@@ -97,7 +97,7 @@ V editoru kódu pro **MyNewService.cs** nebo **MyNewService.vb**, vyhledejte <xr
 
 #### <a name="polling"></a>Dotazování
 
-Protože aplikace služby byla navržena jako dlouhotrvající, obvykle dotazuje nebo sleduje systém, který jste vytvořili v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody. `OnStart` Metoda musí vracet v operačním systému po operaci služby tak, aby systém není blokován. 
+Protože aplikace služby byla navržena jako dlouhotrvající, obvykle dotazuje nebo sleduje systém, který jste vytvořili v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody. `OnStart` Metoda musí vracet v operačním systému po operaci služby tak, aby systém není blokován.
 
 Pokud chcete nastavit jednoduchý mechanismus dotazování, použijte <xref:System.Timers.Timer?displayProperty=nameWithType> komponenty. Časovač vyvolá <xref:System.Timers.Timer.Elapsed> události v pravidelných intervalech, po kterém můžete provádět monitorování vaší služby. Můžete použít <xref:System.Timers.Timer> komponenty následujícím způsobem:
 
@@ -173,7 +173,7 @@ Vložit řádek kódu <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metodu,
 
 ### <a name="define-other-actions-for-the-service"></a>Definování dalších akcí služby
 
-Je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, a <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> metody definovat další zpracování pro komponentu. 
+Je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, a <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> metody definovat další zpracování pro komponentu.
 
 Následující kód ukazuje, jak přepsat <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> metodu `MyNewService` třídy:
 
@@ -182,7 +182,7 @@ Následující kód ukazuje, jak přepsat <xref:System.ServiceProcess.ServiceBas
 
 ## <a name="set-service-status"></a>Nastavit stav služby
 
-Služby oznamují svůj stav na [správce řízení služeb](/windows/desktop/Services/service-control-manager) tak, aby uživatel můžete zjistit, jestli služba správně funguje. Ve výchozím nastavení, služby, která dědí z <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení stavu, které zahrnují SERVICE_STOPPED SERVICE_PAUSED a SERVICE_RUNNING sestavy. Pokud služba chvíli trvat, než se spustí, je vhodné informuje o stavu SERVICE_START_PENDING. 
+Služby oznamují svůj stav na [správce řízení služeb](/windows/desktop/Services/service-control-manager) tak, aby uživatel můžete zjistit, jestli služba správně funguje. Ve výchozím nastavení, služby, která dědí z <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení stavu, které zahrnují SERVICE_STOPPED SERVICE_PAUSED a SERVICE_RUNNING sestavy. Pokud služba chvíli trvat, než se spustí, je vhodné informuje o stavu SERVICE_START_PENDING.
 
 Nastavení stavu SERVICE_START_PENDING a SERVICE_STOP_PENDING můžete implementovat přidáním kódu, který volá Windows [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) funkce.
 
@@ -319,7 +319,7 @@ Nastavení stavu SERVICE_START_PENDING a SERVICE_STOP_PENDING můžete implement
 
     ' Update the service state to Stopped.
     serviceStatus.dwCurrentState = ServiceState.SERVICE_STOPPED
-    SetServiceStatus(Me.ServiceHandle, serviceStatus)    
+    SetServiceStatus(Me.ServiceHandle, serviceStatus)
     ```
 
 ## <a name="add-installers-to-the-service"></a>Přidání instalačních programů do služby
@@ -332,27 +332,27 @@ Před spuštěním služby Windows musíte nainstalovat, které je zaregistruje 
 
      Ve výchozím nastavení, sada Visual Studio přidá komponentní třídu s názvem `ProjectInstaller`, který obsahuje dva instalační programy, do projektu. Tyto instalační programy jsou pro vaši službu a pro služby přidruženého procesu.
 
-4. V **návrhu** zobrazit **ProjectInstaller**vyberte **serviceInstaller1** vizuálu C# projektu, nebo **ServiceInstaller1**projektu jazyka Visual Basic, zvolte **vlastnosti** z místní nabídky.
+3. V **návrhu** zobrazit **ProjectInstaller**vyberte **serviceInstaller1** vizuálu C# projektu, nebo **ServiceInstaller1**projektu jazyka Visual Basic, zvolte **vlastnosti** z místní nabídky.
 
-5. V **vlastnosti** okna, ověřte <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na **MyNewService**.
+4. V **vlastnosti** okna, ověřte <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na **MyNewService**.
 
-6. Přidejte text, který se <xref:System.ServiceProcess.ServiceInstaller.Description%2A> vlastnost, jako například *Ukázka služby*. 
+5. Přidejte text, který se <xref:System.ServiceProcess.ServiceInstaller.Description%2A> vlastnost, jako například *Ukázka služby*.
 
      Tento text se zobrazí **popis** sloupec **služby** okno a popisuje službu pro uživatele.
 
     ![Popis služby v okně služby. ](media/windows-service-description.png "Popis služby")
 
-7. Přidejte text, který má <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnost. Například *MyNewService zobrazovaný název*. 
+6. Přidejte text, který má <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnost. Například *MyNewService zobrazovaný název*.
 
      Tento text se zobrazí **zobrazovaný název** sloupec **služby** okna. Tento název se může lišit od <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost, která je název, použije systém (třeba název, který slouží pro `net start` příkaz pro spuštění služby).
 
-8. Nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost <xref:System.ServiceProcess.ServiceStartMode.Automatic> z rozevíracího seznamu.
+7. Nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost <xref:System.ServiceProcess.ServiceStartMode.Automatic> z rozevíracího seznamu.
 
-9. Jakmile budete hotovi, **vlastnosti** windows by měl vypadat jako na následujícím obrázku:
+8. Jakmile budete hotovi, **vlastnosti** windows by měl vypadat jako na následujícím obrázku:
 
      ![Vlastnosti Instalační služby systému Windows služby](media/windows-service-installer-properties.png "služby vlastnosti Instalační služby systému Windows")
 
-9. V **návrhu** zobrazit **ProjectInstaller**, zvolte **serviceProcessInstaller1** vizuálu C# projektu, nebo **ServiceProcessInstaller1**  projektu jazyka Visual Basic, zvolte **vlastnosti** z místní nabídky. Nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost <xref:System.ServiceProcess.ServiceAccount.LocalSystem> z rozevíracího seznamu. 
+9. V **návrhu** zobrazit **ProjectInstaller**, zvolte **serviceProcessInstaller1** vizuálu C# projektu, nebo **ServiceProcessInstaller1**  projektu jazyka Visual Basic, zvolte **vlastnosti** z místní nabídky. Nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost <xref:System.ServiceProcess.ServiceAccount.LocalSystem> z rozevíracího seznamu.
 
      Toto nastavení se nainstaluje službu a běží za použití místního systémového účtu.
 
@@ -364,7 +364,7 @@ Další informace o instalačních programů najdete v tématu [jak: Přidání 
 ## <a name="optional-set-startup-parameters"></a>(Volitelné) Nastavit parametry spuštění
 
 > [!NOTE]
-> Předtím, než se rozhodnete přidat parametry spuštění, zvažte, zda je nejlepší způsob, jak předávání informací do vaší služby. I když jsou snadno použitelné a analýzy a uživatel snadno je můžete přepsat, mohou být obtížnější uživatelům objevit a používat bez dokumentaci. Obecně platí Pokud vaše služba vyžaduje více než několik parametrů spuštění, měli byste použít registru nebo konfiguračního souboru místo toho. 
+> Předtím, než se rozhodnete přidat parametry spuštění, zvažte, zda je nejlepší způsob, jak předávání informací do vaší služby. I když jsou snadno použitelné a analýzy a uživatel snadno je můžete přepsat, mohou být obtížnější uživatelům objevit a používat bez dokumentaci. Obecně platí Pokud vaše služba vyžaduje více než několik parametrů spuštění, měli byste použít registru nebo konfiguračního souboru místo toho.
 
 Služba Windows může přijmout argumenty příkazového řádku, nebo parametry spuštění. Když přidáte kód do parametrů spuštění procesu, uživatele můžete začít vaši službu s vlastní vlastní spouštěcí parametry v okně Vlastnosti služby. Tyto spouštěcí parametry nejsou však zachované při příštím spuštění služby. Pokud chcete nastavit spouštěcí parametry trvale, jejich nastavení v registru.
 
@@ -480,13 +480,13 @@ Teď, když jste vytvořili službu Windows, můžete ho nainstalovat. Pro insta
     installutil MyNewService.exe
     ```
 
-    Pokud je služba nainstalována úspěšně, příkaz oznámí úspěšné dokončení. 
+    Pokud je služba nainstalována úspěšně, příkaz oznámí úspěšné dokončení.
 
     Pokud systém nemůže najít *installutil.exe*, ujistěte se, že existuje ve vašem počítači. Tento nástroj je nainstalován pomocí rozhraní .NET Framework do složky *% windir%\Microsoft.NET\Framework[64]\\&lt;verzi rozhraní framework&gt;*. Například výchozí cesta pro 64bitovou verzi je *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
-    Pokud **installutil.exe** proces selže, najdete v protokolu instalace a zjistěte, proč. Ve výchozím nastavení v protokolu je ve stejné složce jako spustitelný soubor služby. Instalace může selhat, pokud: 
+    Pokud **installutil.exe** proces selže, najdete v protokolu instalace a zjistěte, proč. Ve výchozím nastavení v protokolu je ve stejné složce jako spustitelný soubor služby. Instalace může selhat, pokud:
     - <xref:System.ComponentModel.RunInstallerAttribute> Třída není k dispozici na `ProjectInstaller` třídy.
-    -  Atribut není nastavená na `true`. 
+    - Atribut není nastavená na `true`.
     - `ProjectInstaller` Třída není definován jako `public`.
 
 Další informace najdete v tématu [jak: Instalace a odinstalace služeb](how-to-install-and-uninstall-services.md).
@@ -520,7 +520,7 @@ Další informace najdete v tématu [jak: Instalace a odinstalace služeb](how-t
 
 ## <a name="clean-up-resources"></a>Vyčištění prostředků
 
-Pokud už nepotřebujete Windows service app, můžete ho odebrat. 
+Pokud už nepotřebujete Windows service app, můžete ho odebrat.
 
 1. Otevřít **Developer Command Prompt pro sadu Visual Studio** s přihlašovacími údaji správce.
 

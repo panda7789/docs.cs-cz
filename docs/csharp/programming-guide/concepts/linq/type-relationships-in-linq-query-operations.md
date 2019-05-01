@@ -12,12 +12,12 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
-ms.openlocfilehash: b95699430a05ef9d81c705b05d04b4ab06e7abc7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3b8ae80ff17ea2cf12c3d78c092dd3233ac0751d
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307649"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63774015"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Vztahy typů v operacích dotazu LINQ (C#)
 Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v dokončeném dotazu operace všechny vzájemně souvisí. Když pochopíte tyto vztahy se snadněji pochopit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a příklady kódu v dokumentaci. Kromě toho budete rozumět co děje na pozadí, když jsou proměnné implicitně typované pomocí `var`.  
@@ -29,7 +29,7 @@ Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v
 ## <a name="queries-that-do-not-transform-the-source-data"></a>Dotazy, které Netransformují zdrojová Data  
  Následující ilustrace ukazuje [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] na objekty dotazování operace, která neslouží k transformaci na data. Zdroj obsahuje posloupnosti řetězců a výstup dotazu je také posloupnost řetězců.  
   
- ![Vztah datové typy v dotazu LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_flow1.png "LINQ_flow1")  
+ ![Diagram znázorňující vztah datových typů v dotazu LINQ.](./media/type-relationships-in-linq-query-operations/linq-query-data-type-relation.png)  
   
 1. Argument typu zdroje dat určuje typ rozsahu proměnných.  
   
@@ -40,7 +40,7 @@ Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v
 ## <a name="queries-that-transform-the-source-data"></a>Dotazy, které transformují zdrojová Data  
  Následující ilustrace ukazuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] dotazové operace, který provádí jednoduché transformaci na data. Dotaz přebírá řadu `Customer` objektů jako vstup a vybere pouze `Name` vlastnosti ve výsledku. Protože `Name` je řetězec, dotaz vyprodukuje sekvenci řetězců jako výstup.  
   
- ![Dotaz, který transformuje datový typ](../../../../csharp/programming-guide/concepts/linq/media/linq_flow2.png "LINQ_flow2")  
+ ![Diagram znázorňující, který transformuje datový typ dotazu.](./media/type-relationships-in-linq-query-operations/linq-query-transform-data-type.png)  
   
 1. Argument typu zdroje dat určuje typ rozsahu proměnných.  
   
@@ -50,7 +50,7 @@ Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v
   
  Následující obrázek znázorňuje poněkud složitější transformaci. `select` Příkaz vrátí anonymní typ, který zachycuje pouze dva členy původního `Customer` objektu.  
   
- ![Dotaz, který transformuje datový typ](../../../../csharp/programming-guide/concepts/linq/media/linq_flow3.png "LINQ_flow3")  
+ ![Diagram znázorňující komplexnější dotaz, který transformuje datový typ.](./media/type-relationships-in-linq-query-operations/linq-complex-query-transform-data-type.png)  
   
 1. Argument typu zdroje dat je vždy typ rozsahu proměnných v dotazu.  
   
@@ -61,7 +61,7 @@ Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v
 ## <a name="letting-the-compiler-infer-type-information"></a>Umožnit kompilátoru odvodit informace o typu  
  Přestože byste měli rozumět vztahům typů v operaci dotazu, máte možnost nechat kompilátor, aby udělal všechnu práci za vás. Klíčové slovo [var](../../../../csharp/language-reference/keywords/var.md) lze použít pro všechny místní proměnné v rámci operace dotazu. Na následujícím obrázku je podobně jako u příkladu 2, který byl popsán výše. Kompilátor však dodává silný typ pro každou proměnnou v operaci dotazu.  
   
- ![Typ toku s implicitního zápisu](../../../../csharp/programming-guide/concepts/linq/media/linq_flow4.png "LINQ_flow4")  
+ ![Diagram znázorňující tok typ s implicitního zápisu.](./media/type-relationships-in-linq-query-operations/linq-type-flow-implicit-typing.png)  
   
  Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   

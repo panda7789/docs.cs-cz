@@ -12,36 +12,36 @@ ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8cad67f52a4ca977606d7b5a307868ff129570e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032653"
 ---
 # <a name="qualifying-net-types-for-interoperation"></a>Kvalifikace typů .NET pro spolupráci
 Pokud chcete vystavit typy v sestavení aplikace modelu COM, zvažte požadavky na spolupráci s COM v době návrhu. Spravované typy (třída, rozhraní, struktury a výčet) bez problémů integrovat typy modelu COM při dodržovat následující pokyny:  
   
--   Třídy musí implementovat rozhraní explicitně.  
+- Třídy musí implementovat rozhraní explicitně.  
   
      Ačkoli komunikace s objekty COM poskytuje mechanismus pro automatické generování rozhraní obsahující všechny členy třídy a členy své základní třídy, je mnohem lepší poskytnout explicitní rozhraní. Automaticky generovaného rozhraní je volat rozhraní třídy. Pokyny najdete v části [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  
   
      Můžete použít v jazyce Visual Basic C#a C++ až po začlenění definice rozhraní ve vašem kódu, místo nutnosti použít rozhraní Definition Language (IDL) nebo jeho ekvivalent. Podrobnosti o syntaxi naleznete v dokumentaci jazyka.  
   
--   Spravované typy musí být veřejné.  
+- Spravované typy musí být veřejné.  
   
      Pouze veřejné typy v sestavení jsou registrovány a exportovat do knihovny typů. V důsledku toho pouze veřejné typy jsou viditelné v modelu COM.  
   
      Spravované typy zveřejňují funkce pro další spravovaný kód, který nemusí být vystaveny objektům modelu COM. Například konstruktor s parametry, statické metody a konstantní pole nejsou zveřejněné klientům modelu COM. Dále jak modul runtime zařazuje dat do a z typu, data může kopírovat nebo transformovat.  
   
--   Metody, vlastnosti, pole a události musí být veřejné.  
+- Metody, vlastnosti, pole a události musí být veřejné.  
   
      Členové veřejné typy musí být také veřejné, pokud mají být viditelné modelu COM. Můžete omezit, zda se sestavení, veřejný typ nebo veřejné členy typu public použitím <xref:System.Runtime.InteropServices.ComVisibleAttribute>. Ve výchozím nastavení jsou viditelné všechny veřejné typy a členy.  
   
--   Typy musí mít veřejný výchozí konstruktor, chcete-li aktivovat z modelu COM.  
+- Typy musí mít veřejný výchozí konstruktor, chcete-li aktivovat z modelu COM.  
   
      Spravovaná, veřejné typy jsou viditelné v modelu COM. Ale bez veřejného výchozího konstruktoru (konstruktor bez argumentů), nelze vytvořit klientům modelu COM typu. Klientům modelu COM můžete stále použít typ, pokud je aktivovaná jiným způsobem.  
   
--   Typy nemohou být abstraktní.  
+- Typy nemohou být abstraktní.  
   
      Klienti modelu COM ani klientů .NET můžete vytvořit abstraktní typy.  
   

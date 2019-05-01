@@ -4,12 +4,12 @@ description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďu
 author: richlander
 ms.date: 06/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: 3a757daab372b8be8bfe2ee27d910e21fa4e3337
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 2ef6ade36092ff5a17b0cc420dc4859409d459ce
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718035"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773848"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 
@@ -89,12 +89,12 @@ Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v tématu [Data o v
 
 ### <a name="datasets"></a>Datové sady
 
-[2016 - 3. ČTVRTLETÍ](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)  
-[2016 – 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)  
-[2017 - Q1](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q1.tsv)  
-[2017 - Q2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)  
-[2017 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q3.tsv)  
-[2017 - 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q4.tsv)  
+- [2016 - 3. ČTVRTLETÍ](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)
+- [2016 – 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)
+- [2017 - Q1](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q1.tsv)
+- [2017 - Q2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)
+- [2017 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q3.tsv)
+- [2017 - 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q4.tsv)
 
 Další datové sady jsou odeslány pomocí standardní formát adresy URL. Nahraďte `<YEAR>` rokem a nahradit `<QUARTER>` s čtvrtletí v roce (použijte `1`, `2`, `3`, nebo `4`). Soubory jsou v hodnoty oddělené tabulátorem (*TSV*) formát.
 
@@ -102,11 +102,9 @@ Další datové sady jsou odeslány pomocí standardní formát adresy URL. Nahr
 
 ## <a name="license"></a>Licence
 
-Je distribuce Microsoftu .NET Core licenci [smlouva EULA KNIHOVNY MICROSOFT .NET](https://aka.ms/dotnet-core-eula). Platnost této licence obsahuje oddíl "DATA" Povolit telemetrii (viz dole).
+Je distribuce Microsoftu .NET Core licenci [licenční podmínky pro Software společnosti Microsoft: Knihovna .NET Mirosoft](https://aka.ms/dotnet-core-eula). Podrobnosti o shromažďování dat a zpracování najdete v části s názvem "Data".
 
 [Balíčky .NET NuGet](https://www.nuget.org/profiles/dotnetframework) používají stejné licence, ale nepovolí telemetrie (naleznete v tématu [oboru](#scope)).
-
-> 2. DATA. Software může shromažďovat informace o vás a vaše užívání tohoto softwaru a zasílat je společnosti Microsoft. Microsoft může použít tyto informace k vylepšování našich produktů a služeb. Můžete získat další informace o shromažďování dat a používat v dokumentaci nápovědy a v prohlášení o ochraně osobních údajů na adrese <http://go.microsoft.com/fwlink/?LinkId=528096>. Pracuje vaše užívání tohoto softwaru vyjadřujete souhlas s těmito postupy.
 
 ## <a name="disclosure"></a>Zpřístupnění
 

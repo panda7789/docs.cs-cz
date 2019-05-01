@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - _MYTYPE
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
-ms.openlocfilehash: 743160889c4f24a9edb2d0f9799662a74c5061fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.openlocfilehash: 72b9799d1f5ba7efa37d5f8f2a633e6806a58607
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842080"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63808085"
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a>Závislost oboru názvů My na typu projektu (Visual Basic)
 `My` zpřístupní pouze ty objekty, které vyžadují konkrétní typ projektu. Například `My.Forms` objekt je k dispozici v aplikaci Windows Forms, ale není k dispozici v konzolové aplikaci. Toto téma popisuje, které `My` objekty jsou k dispozici v různých typech projektů.  
@@ -17,11 +17,11 @@ ms.locfileid: "58842080"
 ## <a name="my-in-windows-applications-and-web-sites"></a>Moje ve Windows aplikací a webů  
  `My` zpřístupňuje pouze objekty, které jsou užitečné v aktuálním typu projektu. Potlačí objekty, které se nedají použít. Například na následujícím obrázku `My` objektového modelu v projektu Windows Forms.  
   
- ![Tvar Moje v aplikaci Windows Forms](../../../visual-basic/developing-apps/development-with-my/media/myinwinform.png "MyInWinForm")  
+ ![Diagram, který ukazuje, Moje objektového modelu v aplikaci Windows Forms.](./media/how-my-depends-on-project-type/my-object-model-windows-forms.png)  
   
  V projektu webové stránky `My` zpřístupní objekty, které jsou relevantní pro Web developer (, jako `My.Request` a `My.Response` objekty) při potlačení objekty, které nejsou relevantní (například `My.Forms` objekt). Na následujícím obrázku `My` objektového modelu v projektu webové stránky:  
   
- ![Tvar Moje ve webové aplikaci](../../../visual-basic/developing-apps/development-with-my/media/myinweb.png "MyInWeb")  
+ ![Diagram zobrazující průběh Můj objektový model ve webové aplikaci.](./media/how-my-depends-on-project-type/my-object-model-web.png)  
   
 ## <a name="project-details"></a>Podrobnosti o projektu  
  Následující tabulka uvádí, které `My` objekty jsou povolené ve výchozím nastavení pro osm typů projektů: Aplikace Windows, knihovna tříd, konzolovou aplikaci, Windows Knihovna ovládacích prvků, webové Knihovna ovládacích prvků, Windows služby, prázdná a webové stránky.  

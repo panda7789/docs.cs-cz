@@ -17,11 +17,11 @@ helpviewer_keywords:
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
 ms.openlocfilehash: 147c61badd680277480226b809df97d46b636c7d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62022295"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
 Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], mohou nastat jeden nebo více z těchto běžných problémů.  
@@ -100,11 +100,11 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
 ## <a name="vbconinteroperabilitymarshalinganchor10"></a> Problémy s ovládacího prvku ActiveX  
  Většina ovládacích prvků ActiveX, které využívají službu jazyka Visual Basic 6.0 fungovat bez potíže v jazyce Visual Basic .NET. Hlavní výjimky jsou ovládací prvky kontejneru nebo ovládací prvky, které vizuálně obsahují další ovládací prvky. Některé příklady starší ovládacích prvků, které nebudou správně fungovat se sadou Visual Studio jsou následující:  
   
--   Microsoft Forms 2.0 Frame – ovládací prvek  
+- Microsoft Forms 2.0 Frame – ovládací prvek  
   
--   Ovládací prvek směrem nahoru a dolů, označované také jako otočný ovládací prvek  
+- Ovládací prvek směrem nahoru a dolů, označované také jako otočný ovládací prvek  
   
--   Ovládací prvek karty Sheridan  
+- Ovládací prvek karty Sheridan  
   
  Existuje pouze několik řešení pro nepodporované problémy ovládacího prvku ActiveX. Pokud původní zdrojový kód vlastníte, můžete migrovat existující ovládací prvky do sady Visual Studio. V opačném případě můžete kontaktovat dodavatele softwaru aktualizovaná. NET kompatibilní s verzí ovládacích prvků k nahrazení nepodporované ovládací prvky ActiveX.  
   

@@ -3,11 +3,11 @@ title: Kompatibilita funkcí s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
 ms.openlocfilehash: b0d9b7bd8bd5f33ca344ea5674d08507ced209f5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59124563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039062"
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
 Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce při spouštění v částečně důvěryhodném prostředí. Funkce podporované v částečném vztahu důvěryhodnosti jsou navržená kolem konkrétní škálu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
@@ -15,20 +15,20 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
 ## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění  
  WCF podporuje podmnožinu funkcí v aplikace spuštěné v některé z následujících sad standardní pojmenovaných oprávnění:  
   
--   Střední oprávnění důvěryhodnosti  
+- Střední oprávnění důvěryhodnosti  
   
--   Oprávnění pro zónu Internetu  
+- Oprávnění pro zónu Internetu  
   
  Pokus o použití WCF v částečně důvěryhodné aplikace s víc omezující oprávnění může vést k bezpečnostním výjimkám v době běhu.  
   
 ## <a name="contracts"></a>Kontrakty  
  Kontrakty se vztahují následující omezení při spouštění v částečném vztahu důvěryhodnosti:  
   
--   Třídu služby, který implementuje `[ServiceContract]` rozhraní musí být `public` a mít `public` konstruktoru. Pokud ho definuje `[OperationContract]` metod, musí být `public`. Pokud místo toho implementuje `[ServiceContract]` rozhraní, tyto implementace metody může být explicitní nebo `private`za předpokladu, že `[ServiceContract]` rozhraní je `public`.  
+- Třídu služby, který implementuje `[ServiceContract]` rozhraní musí být `public` a mít `public` konstruktoru. Pokud ho definuje `[OperationContract]` metod, musí být `public`. Pokud místo toho implementuje `[ServiceContract]` rozhraní, tyto implementace metody může být explicitní nebo `private`za předpokladu, že `[ServiceContract]` rozhraní je `public`.  
   
--   Při použití `[ServiceKnownType]` atribut, musí být zadaná metoda `public`.  
+- Při použití `[ServiceKnownType]` atribut, musí být zadaná metoda `public`.  
   
--   `[MessageContract]` třídy a jejich členy, může být `public`. Pokud `[MessageContract]` třída je definována v sestavení aplikace může být `internal` a mít `internal` členy.  
+- `[MessageContract]` třídy a jejich členy, může být `public`. Pokud `[MessageContract]` třída je definována v sestavení aplikace může být `internal` a mít `internal` členy.  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
  <xref:System.ServiceModel.BasicHttpBinding> a <xref:System.ServiceModel.WebHttpBinding> jsou plně podporovány v prostředí s částečnou důvěryhodností. <xref:System.ServiceModel.WSHttpBinding> Je podporováno pouze v režimu zabezpečení přenosu.  
@@ -44,11 +44,11 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
 ### <a name="encoders"></a>Kodérů  
  Jsou povoleny následující kodéry:  
   
--   Kodér textu (<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>).  
+- Kodér textu (<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>).  
   
--   Binárního kodéru (<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>).  
+- Binárního kodéru (<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>).  
   
--   Kodér zprávy Web (<xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>).  
+- Kodér zprávy Web (<xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>).  
   
  Kodérů zpráv přenosu optimalizace mechanismus (MTOM) nejsou podporovány.  
   
@@ -61,15 +61,15 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
 ## <a name="serialization"></a>Serializace  
  Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> jsou podporovány v prostředí s částečnou důvěryhodností. Nicméně použití <xref:System.Runtime.Serialization.DataContractSerializer> podléhá následující podmínky:  
   
--   Všechny serializovatelný `[DataContract]` typy musí být `public`.  
+- Všechny serializovatelný `[DataContract]` typy musí být `public`.  
   
--   Všechny serializovatelný `[DataMember]` pole nebo vlastnosti v `[DataContract]` typ musí být veřejný a čtení a zápisu. Serializace a deserializace [jen pro čtení](https://go.microsoft.com/fwlink/?LinkID=98854) polí není podporováno při spouštění v částečně důvěryhodné aplikaci WCF.  
+- Všechny serializovatelný `[DataMember]` pole nebo vlastnosti v `[DataContract]` typ musí být veřejný a čtení a zápisu. Serializace a deserializace [jen pro čtení](https://go.microsoft.com/fwlink/?LinkID=98854) polí není podporováno při spouštění v částečně důvěryhodné aplikaci WCF.  
   
--    `[Serializable]` /ISerializable programovacího modelu není podporován v částečném vztahu důvěryhodnosti prostředí.  
+-  `[Serializable]` /ISerializable programovacího modelu není podporován v částečném vztahu důvěryhodnosti prostředí.  
   
--   Známé typy je třeba zadat v kódu nebo konfigurace na úrovni počítače (machine.config). Známé typy nelze zadat v konfigurace na úrovni aplikace z bezpečnostních důvodů.  
+- Známé typy je třeba zadat v kódu nebo konfigurace na úrovni počítače (machine.config). Známé typy nelze zadat v konfigurace na úrovni aplikace z bezpečnostních důvodů.  
   
--   Typy, které implementují <xref:System.Runtime.Serialization.IObjectReference> vyvolat výjimku v částečně důvěryhodném prostředí.  
+- Typy, které implementují <xref:System.Runtime.Serialization.IObjectReference> vyvolat výjimku v částečně důvěryhodném prostředí.  
   
  V části serializace v [částečné důvěryhodnosti osvědčené postupy](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md) Další informace o zabezpečení při použití <xref:System.Runtime.Serialization.DataContractSerializer> bezpečně v částečně důvěryhodné aplikaci.  
   
@@ -88,9 +88,9 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
 ## <a name="enabling-common-behaviors-to-run"></a>Povolení společné chování pro spuštění  
  Chování služby nebo koncového bodu není označené <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut (APTCA), které jsou přidány do [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) oddílu konfiguračního souboru se nespustí, když aplikace běží v částečném vztahu důvěryhodnosti Pokud k tomu dojde, je vyvolána prostředí a žádná výjimka. Pokud chcete vynutit spuštění společné chování, musíte udělat jednu z následujících možností:  
   
--   Označit vaše běžné chování s <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut tak, aby ji můžete spustit po nasazení jako aplikace s částečnou důvěryhodností. Všimněte si, že položka registru můžete nastavit v počítači zabránit sestavení APTCA označené spouštění. .  
+- Označit vaše běžné chování s <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut tak, aby ji můžete spustit po nasazení jako aplikace s částečnou důvěryhodností. Všimněte si, že položka registru můžete nastavit v počítači zabránit sestavení APTCA označené spouštění. .  
   
--   Ujistěte se, že pokud je aplikace nasazená jako plně důvěryhodné aplikace, uživatelé nemohou upravovat nastavení zabezpečení přístupu kódu a spusťte aplikaci v prostředí s částečnou důvěryhodností. Pokud můžete, chování se nespustí a není vyvolána žádná výjimka. Aby se zajistilo to, najdete v článku **levelfinal** možnost použití [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
+- Ujistěte se, že pokud je aplikace nasazená jako plně důvěryhodné aplikace, uživatelé nemohou upravovat nastavení zabezpečení přístupu kódu a spusťte aplikaci v prostředí s částečnou důvěryhodností. Pokud můžete, chování se nespustí a není vyvolána žádná výjimka. Aby se zajistilo to, najdete v článku **levelfinal** možnost použití [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
   
  Příklad běžné chování najdete v tématu [jak: Uzamknutí koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
   
@@ -115,25 +115,25 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
   
  Podporované trasování zdroje jsou:  
   
--   <xref:System.ServiceModel>  
+- <xref:System.ServiceModel>  
   
--   <xref:System.Runtime.Serialization>  
+- <xref:System.Runtime.Serialization>  
   
--   <xref:System.IdentityModel.Claims>, <xref:System.IdentityModel.Policy>, <xref:System.IdentityModel.Selectors>, a <xref:System.IdentityModel.Tokens>.  
+- <xref:System.IdentityModel.Claims>, <xref:System.IdentityModel.Policy>, <xref:System.IdentityModel.Selectors>, a <xref:System.IdentityModel.Tokens>.  
   
  Nejsou podporovány následující zdroje trasování:  
   
--   CardSpace  
+- CardSpace  
   
--   <xref:System.IO.Log>  
+- <xref:System.IO.Log>  
 
--   [System.ServiceModel.Internal.TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
+- [System.ServiceModel.Internal.TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
   
  Následující členové <xref:System.Diagnostics.TraceOptions> by neměl být zadaný výčet:  
   
--   <xref:System.Diagnostics.TraceOptions.Callstack?displayProperty=nameWithType>  
+- <xref:System.Diagnostics.TraceOptions.Callstack?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceOptions.ProcessId?displayProperty=nameWithType>  
+- <xref:System.Diagnostics.TraceOptions.ProcessId?displayProperty=nameWithType>  
   
  Při použití trasování v částečně důvěryhodném prostředí, ujistěte se, že aplikace má dostatečná oprávnění k uložení výstupu naslouchací služby stopy. Například při použití <xref:System.Diagnostics.TextWriterTraceListener> zapisovat výstup trasování do textového souboru, ujistěte se, že aplikace má potřebné FileIOPermission vyžadovaných k zápisu úspěšně pro trasovacího souboru.  
   
@@ -148,11 +148,11 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
   
  Tyhle další funkce nejsou povoleny při spuštění indigo2 v prostředí s částečným vztahem důvěryhodnosti:  
   
--   Windows Management Instrumentation (WMI)  
+- Windows Management Instrumentation (WMI)  
   
--   Protokolování událostí je povolená jen částečně (viz diskuze v **diagnostiky** části).  
+- Protokolování událostí je povolená jen částečně (viz diskuze v **diagnostiky** části).  
   
--   Čítače výkonu  
+- Čítače výkonu  
   
  Využívání funkce WCF, které nejsou podporovány v prostředí s částečnou důvěryhodností může vést k výjimkám v době běhu.  
   

@@ -3,12 +3,12 @@ title: Nasazení modelu ML.NET na službu Azure Functions
 description: Poskytování ML.NET mínění analýzy modelu strojového učení pro predikci přes internet pomocí služby Azure Functions
 ms.date: 03/08/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 4681b37da64097dd8e537b4c956917277ecff96b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 74b75af1963ed2ce23e732608c8f7b8ede8522ee
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330633"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807996"
 ---
 # <a name="how-to-use-mlnet-model-in-azure-functions"></a>Postupy: Použití ML.NET modelu ve službě Azure Functions
 
@@ -21,12 +21,12 @@ Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) úlohy "Vývoj pro různé platformy .NET Core" a "Vývoj pro Azure" nainstalované. 
+- [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) úlohy "Vývoj pro různé platformy .NET Core" a "Vývoj pro Azure" nainstalované.
 - [Nástroje Azure Functions](/azure/azure-functions/functions-develop-vs#check-your-tools-version)
 - Powershell
-- Předem natrénovaných modelů. 
-    - Použití [kurz analýza mínění ML.NET](../tutorials/sentiment-analysis.md) sestaví vlastní model.
-    - Stáhněte si tuto aplikaci [model machine learning analýzy předem vytrénovaných mínění](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip)
+- Předem natrénovaných modelů.
+  - Použití [kurz analýza mínění ML.NET](../tutorials/sentiment-analysis.md) sestaví vlastní model.
+  - Stáhněte si tuto aplikaci [model machine learning analýzy předem vytrénovaných mínění](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip)
 
 ## <a name="create-azure-functions-project"></a>Vytvoření projektu Azure Functions
 
@@ -81,75 +81,74 @@ Je potřeba vytvořit některé třídy pro vstupní data a předpovědi. Přide
 2. V Průzkumníku řešení klikněte pravým tlačítkem myši *DataModels* adresář a potom vyberte možnost **Přidat > Nová položka**.
 3. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentData.cs*. Vyberte **přidat** tlačítko. *SentimentData.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *SentimentData.cs*:
 
-```csharp
-using Microsoft.ML.Data;
-```
+    ```csharp
+    using Microsoft.ML.Data;
+    ```
 
-Odeberte stávající definice třídy a přidejte následující kód do souboru SentimentData.cs:
+    Odeberte stávající definice třídy a přidejte následující kód do souboru SentimentData.cs:
 
-```csharp
-public class SentimentData
-{
-    [LoadColumn(0)]
-    public bool Label { get; set; }
-    [LoadColumn(1)]
-    public string Text { get; set; }
-}
-```
+    ```csharp
+    public class SentimentData
+    {
+        [LoadColumn(0)]
+        public bool Label { get; set; }
+        [LoadColumn(1)]
+        public string Text { get; set; }
+    }
+    ```
 
 4. V Průzkumníku řešení klikněte pravým tlačítkem myši *DataModels* adresář a potom vyberte možnost **Přidat > Nová položka**.
 5. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentPrediction.cs*. Vyberte **přidat** tlačítko. *SentimentPrediction.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *SentimentPrediction.cs*:
 
-```csharp
-using Microsoft.ML.Data;
-```
+    ```csharp
+    using Microsoft.ML.Data;
+    ```
 
-Odeberte stávající definice třídy a přidejte následující kód, který *SentimentPrediction.cs* souboru:
+    Odeberte stávající definice třídy a přidejte následující kód, který *SentimentPrediction.cs* souboru:
 
-```csharp
-public class SentimentPrediction
-{
-    [ColumnName("PredictedLabel")]
-    public bool Prediction { get; set; }
-}
-```
+    ```csharp
+    public class SentimentPrediction
+    {
+        [ColumnName("PredictedLabel")]
+        public bool Prediction { get; set; }
+    }
+    ```
 
 ### <a name="add-prediction-logic"></a>Přidání logiky Predikcí
 
 Nahraďte stávající implementaci *spustit* metoda *AnalyzeSentiment* třídy následujícím kódem:
 
 ```csharp
-    public static async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Function,"post", Route = null)] HttpRequest req,
-        ILogger log)
+public static async Task<IActionResult> Run(
+    [HttpTrigger(AuthorizationLevel.Function,"post", Route = null)] HttpRequest req,
+    ILogger log)
+{
+    log.LogInformation("C# HTTP trigger function processed a request.");
+
+    //Create Context
+    MLContext mlContext = new MLContext();
+
+    //Load Model
+    using (var fs = File.OpenRead("MLModels/sentiment_model.zip"))
     {
-        log.LogInformation("C# HTTP trigger function processed a request.");
-
-        //Create Context
-        MLContext mlContext = new MLContext();
-
-        //Load Model
-        using (var fs = File.OpenRead("MLModels/sentiment_model.zip"))
-        {
-            model = mlContext.Model.Load(fs);
-        }
-
-        //Parse HTTP Request Body
-        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        SentimentData data = JsonConvert.DeserializeObject<SentimentData>(requestBody);
-
-        //Create Prediction Engine
-        PredictionEngine<SentimentData, SentimentPrediction> predictionEngine = model.CreatePredictionEngine<SentimentData, SentimentPrediction>(mlContext);
-
-        //Make Prediction
-        SentimentPrediction prediction = predictionEngine.Predict(data);
-
-        //Convert prediction to string
-        string isToxic = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
-
-        //Return Prediction
-        return (ActionResult)new OkObjectResult(isToxic);
+        model = mlContext.Model.Load(fs);
     }
+
+    //Parse HTTP Request Body
+    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+    SentimentData data = JsonConvert.DeserializeObject<SentimentData>(requestBody);
+
+    //Create Prediction Engine
+    PredictionEngine<SentimentData, SentimentPrediction> predictionEngine = model.CreatePredictionEngine<SentimentData, SentimentPrediction>(mlContext);
+
+    //Make Prediction
+    SentimentPrediction prediction = predictionEngine.Predict(data);
+
+    //Convert prediction to string
+    string isToxic = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
+
+    //Return Prediction
+    return (ActionResult)new OkObjectResult(isToxic);
 }
 ```
 
@@ -158,7 +157,7 @@ Nahraďte stávající implementaci *spustit* metoda *AnalyzeSentiment* třídy 
 Teď, když je všechno nastavené, je čas k otestování aplikace:
 
 1. Spuštění aplikace
-1. Otevřete PowerShell a zobrazený kód zadejte do řádku, kde je port vaše aplikace běží na. Port, který je obvykle 7071. 
+1. Otevřete PowerShell a zobrazený kód zadejte do řádku, kde je port vaše aplikace běží na. Port, který je obvykle 7071.
 
 ```powershell
 Invoke-RestMethod "http://localhost:<PORT>/api/AnalyzeSentiment" -Method Post -Body (@{Text="This is a very rude movie"} | ConvertTo-Json) -ContentType "application/json"

@@ -28,11 +28,11 @@ ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b0185d79d8663d552378248f0e021a7fee8f0522
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50189716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61956101"
 ---
 # <a name="formatting-types-in-net"></a>Typy formátování v .NET
 <a name="Introduction"></a> Formátování je proces převodu instance třídy, struktury nebo výčtové hodnoty na řetězcové vyjádření často tak, aby výsledný řetězec, můžete zobrazovaný uživatelům nebo rekonstruován pro obnovení původního datového typu. Tento převod může představovat určité problémy:  
@@ -122,7 +122,7 @@ ms.locfileid: "50189716"
 > [!WARNING]
 >  Od verze [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[wrt](../../../includes/wrt-md.md)] zahrnuje <xref:Windows.Foundation.IStringable> rozhraní s jedinou metodu [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A), která poskytuje výchozí podporu formátování. Doporučujeme však, že se spravovanými typy neimplementují `IStringable` rozhraní. Další informace najdete v tématu " [!INCLUDE[wrt](../../../includes/wrt-md.md)] a `IStringable` rozhraní" v části <xref:System.Object.ToString%2A?displayProperty=nameWithType> referenční stránce.  
   
- Protože všechny typy jiné než rozhraní jsou odvozeny z <xref:System.Object>, tato funkce je automaticky poskytnuta vlastním třídám nebo strukturám. Však nabízí funkce ve výchozím nastavení `ToString` metoda, je omezený: i když se identifikuje typ, není schopna poskytnout žádné informace o instanci typu. Chcete-li poskytnout řetězcovou reprezentaci objektu, který obsahuje informace o tomto objektu, je nutné přepsat `ToString` metody.  
+ Protože všechny typy jiné než rozhraní jsou odvozeny z <xref:System.Object>, tato funkce je automaticky poskytnuta vlastním třídám nebo strukturám. Však nabízí funkce ve výchozím nastavení `ToString` metoda, je omezený: I když se identifikuje typ, není schopna poskytnout žádné informace o instanci typu. Chcete-li poskytnout řetězcovou reprezentaci objektu, který obsahuje informace o tomto objektu, je nutné přepsat `ToString` metody.  
   
 > [!NOTE]
 >  Struktury dědí z <xref:System.ValueType>, který je zase odvozen z <xref:System.Object>. I když <xref:System.ValueType> přepíše <xref:System.Object.ToString%2A?displayProperty=nameWithType>, jejich implementace jsou totožné.  
@@ -138,7 +138,7 @@ ms.locfileid: "50189716"
   
  V rozhraní .NET `ToString` metoda každého primitivního hodnotového typu bylo přepsáno pro zobrazení hodnotu objektu namísto jeho názvu. V následující tabulce jsou uvedeny přepsání pro každý primitivní typ. Všimněte si, že většina přepsaných metod volá jiné přetížení `ToString` metoda a předejte jí specifikátor formátu "G", který definuje obecný formát pro daný typ, a <xref:System.IFormatProvider> objekt, který představuje aktuální jazykovou verzi.  
   
-|Typ|Přetížení metody ToString|  
+|Type|Přetížení metody ToString|  
 |----------|-----------------------|  
 |<xref:System.Boolean>|Vrátí buď <xref:System.Boolean.TrueString?displayProperty=nameWithType> nebo <xref:System.Boolean.FalseString?displayProperty=nameWithType>.|  
 |<xref:System.Byte>|Volání `Byte.ToString("G", NumberFormatInfo.CurrentInfo)` k formátování <xref:System.Byte> hodnotu pro aktuální jazykovou verzi.|  
@@ -231,7 +231,7 @@ ms.locfileid: "50189716"
 ### <a name="custom-format-strings"></a>Vlastní formátovací řetězce  
  Kromě standardních formátovacích řetězců definuje rozhraní .NET vlastní formátovací řetězce pro číselné hodnoty a hodnoty data a času. Řetězec vlastního formátu se skládá z jednoho nebo více vlastního specifikátoru formátu definujících řetězcovou reprezentaci hodnoty. Například vlastní data a času naformátovat řetězec "rrrr/mm/dd hh:mm:ss.ffff t zzz" převede datum na řetězcovou reprezentaci ve tvaru "2008/11/15 07:45:00.0000 P-08: 00" pro jazykovou verzi en US. Podobně vlastní formátovací řetězec "0000" převede celočíselnou hodnotu 12 na "0012". Úplný seznam vlastních formátovacích řetězců naleznete v tématu [vlastní data a řetězce formátu časových](../../../docs/standard/base-types/custom-date-and-time-format-strings.md) a [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).  
   
- Pokud řetězec formátu obsahuje jeden vlastní specifikátor formátu, specifikátor formátu musí předcházet párový příkaz symbol procent (%), aby nedocházelo k záměně se standardním specifikátorem formátu. Následující příklad používá specifikátor vlastního formátu "M" k zobrazení jednociferného nebo dvojciferného čísla měsíce konkrétního data.  
+ Pokud řetězec formátu obsahuje jeden vlastní specifikátor formátu, by měl párový příkaz specifikátor formátu procent (%) symbol, který má nedocházelo k záměně se standardním specifikátorem formátu. Následující příklad používá specifikátor vlastního formátu "M" k zobrazení jednociferného nebo dvojciferného čísla měsíce konkrétního data.  
   
  [!code-csharp[Conceptual.Formatting.Overview#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/singlecustom1.cs#8)]
  [!code-vb[Conceptual.Formatting.Overview#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/singlecustom1.vb#8)]  
