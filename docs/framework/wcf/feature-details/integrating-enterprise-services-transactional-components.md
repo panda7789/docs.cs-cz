@@ -3,11 +3,11 @@ title: Integrace transakčních komponent služeb Enterprise Services
 ms.date: 03/30/2017
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
 ms.openlocfilehash: 33e09eab1d7ad24dc234cfff21e352611e0b2ef9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047032"
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Integrace transakčních komponent služeb Enterprise Services
 Windows Communication Foundation (WCF) poskytuje mechanismus automatického pro integraci se službami Enterprise (viz [integrace s aplikacemi modelu COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Však můžete chtít flexibilitu pro vývoj služeb, které používají interně transakčních komponent, které jsou hostované v rámci podnikové služby. Protože funkce transakce WCF je založená na <xref:System.Transactions> infrastruktury, proces pro integraci podnikových služeb s použitím technologie WCF je stejná jako pro určení vzájemná funkční spolupráce mezi <xref:System.Transactions> a podnikových služeb, jak je uvedeno v [Interoperabilita se službami Enterprise Services a transakcemi COM +](https://go.microsoft.com/fwlink/?LinkId=94949).  
@@ -17,9 +17,9 @@ Windows Communication Foundation (WCF) poskytuje mechanismus automatického pro 
 ## <a name="integrating-enterprise-services-with-a-service-operation"></a>Integrace služby Enterprise s operací služby  
  Následující kód ukazuje operaci s toku transakcí povolené, který vytvoří <xref:System.Transactions.TransactionScope> s <xref:System.Transactions.EnterpriseServicesInteropOption.Full> možnost. V tomto případě platí následující podmínky:  
   
--   Pokud klient tok transakce, provádí se operace, včetně volání na komponentu podnikové služby v rámci oboru dané transakce. Pomocí <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajistí, že transakce se synchronizují s <xref:System.EnterpriseServices> kontextu, což znamená, že okolí transakce pro <xref:System.Transactions> a <xref:System.EnterpriseServices> je stejný.  
+- Pokud klient tok transakce, provádí se operace, včetně volání na komponentu podnikové služby v rámci oboru dané transakce. Pomocí <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajistí, že transakce se synchronizují s <xref:System.EnterpriseServices> kontextu, což znamená, že okolí transakce pro <xref:System.Transactions> a <xref:System.EnterpriseServices> je stejný.  
   
--   Pokud klient není tok transakce, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> k `true` vytvoří nový obor transakce pro operace. Podobně použití <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajistí, že operace transakce je stejná jako transakce použitá uvnitř <xref:System.EnterpriseServices> kontextu komponenty.  
+- Pokud klient není tok transakce, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> k `true` vytvoří nový obor transakce pro operace. Podobně použití <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajistí, že operace transakce je stejná jako transakce použitá uvnitř <xref:System.EnterpriseServices> kontextu komponenty.  
   
  Všechna volání další metodu dojít také v rámci oboru transakce stejné operace.  
   

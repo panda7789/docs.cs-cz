@@ -3,11 +3,11 @@ title: Jednorázový postup nastavení pro ukázky Windows Communication Foundat
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
 ms.openlocfilehash: 2b9d84089cdd987f2e2b1e3d23354505520a80f8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052102"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresář. Tento postup jednorázová nastavení vytvoří složku na disk. také přidá virtuální adresář služby IIS s názvem **ServiceModelSamples**.
@@ -48,9 +48,9 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
   
 9. Spustit **Setupvroot.bat** dávkového souboru. Jsou prováděny následovně:  
   
-    -   Ve službě IIS s názvem ServiceModelSamples je vytvořen virtuální adresář.  
+    - Ve službě IIS s názvem ServiceModelSamples je vytvořen virtuální adresář.  
   
-    -   Pojmenované %SystemDrive%\Inetpub\wwwroot\ServiceModelSamples a % SystemDrive%\Inetpub\wwwroot\ServiceModelSamples\bin jsou vytvořeny nové adresáře disku.  
+    - Pojmenované %SystemDrive%\Inetpub\wwwroot\ServiceModelSamples a % SystemDrive%\Inetpub\wwwroot\ServiceModelSamples\bin jsou vytvořeny nové adresáře disku.  
   
      Pokud chcete nastavit tyto adresáře ručně, najdete v článku [pokyny k instalaci virtuálního adresáře](../../../../docs/framework/wcf/samples/virtual-directory-setup-instructions.md). Vrátit zpět všechny změny provedené v tomto kroku, spusťte po dokončení práce ukázky cleanupvroot.bat.  
   
@@ -66,11 +66,11 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
 
 12. Spusťte soubor Setupcerttool.bat. Tento soubor je umístěn v \<InstallPath > \WF_WCF_Samples\WCF\Setup\ složky.  Tento skript provede následující úlohy:
 
-    -   Nástroj FindPrivateKey sestavení.
+    - Nástroj FindPrivateKey sestavení.
 
-    -   Vytvořte adresář s názvem % ProgramFiles%\ServiceModelSampleTools.
+    - Vytvořte adresář s názvem % ProgramFiles%\ServiceModelSampleTools.
 
-    -   Nové FindPrivateKey nástroj pro kopírování do tohoto adresáře.
+    - Nové FindPrivateKey nástroj pro kopírování do tohoto adresáře.
 
      Tento nástroj vyžaduje ukázky, které používají certifikáty a jsou hostované ve službě IIS.
 

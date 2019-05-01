@@ -10,11 +10,11 @@ helpviewer_keywords:
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
 ms.openlocfilehash: fbe2aa724274022446498a89618f37787f0fa8bd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013371"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid pomocí Návrháře
 
@@ -25,11 +25,11 @@ ms.locfileid: "59333571"
   
  Existují tři základní aspekty formátování <xref:System.Windows.Forms.DataGrid> ovládacího prvku:  
   
--   Můžete nastavit vlastnosti, které chcete vytvořit výchozí styl, ve kterém se zobrazí data.  
+- Můžete nastavit vlastnosti, které chcete vytvořit výchozí styl, ve kterém se zobrazí data.  
   
--   Z této základní třídě potom můžete přizpůsobit způsob, jakým některé tabulky se zobrazí v době běhu.  
+- Z této základní třídě potom můžete přizpůsobit způsob, jakým některé tabulky se zobrazí v době běhu.  
   
--   Nakonec můžete upravit sloupce, které se zobrazí v mřížce dat, jakož i barvy a další formátování, které se zobrazí.  
+- Nakonec můžete upravit sloupce, které se zobrazí v mřížce dat, jakož i barvy a další formátování, které se zobrazí.  
   
  Jako první krok v datové mřížce formátování, můžete nastavit vlastnosti <xref:System.Windows.Forms.DataGrid> samotný. Tyto možnosti barvu a formát tvoří základ, ze kterého můžete pak provádět změny v závislosti na datových tabulek a sloupců zobrazených.  
   

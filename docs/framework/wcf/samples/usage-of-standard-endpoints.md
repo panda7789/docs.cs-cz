@@ -6,8 +6,8 @@ ms.openlocfilehash: 4ef0714acad12db1414e34fbb476b4ae7d1d9fb2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006328"
 ---
 # <a name="usage-of-standard-endpoints"></a>Používání standardních koncových bodů
 
@@ -143,13 +143,13 @@ public class CustomEndpoint : ServiceEndpoint
 
 2. Povolte více projektů se spustí.
 
-    1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení standardních koncových bodů a potom vyberte **vlastnosti**.
+    1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení standardních koncových bodů a potom vyberte **vlastnosti**.
 
-    2.  V **společné vlastnosti**vyberte **spouštěný projekt**a potom klikněte na tlačítko **více projektů po spuštění**.
+    2. V **společné vlastnosti**vyberte **spouštěný projekt**a potom klikněte na tlačítko **více projektů po spuštění**.
 
-    3.  Přesunout projekt služby na začátku seznamu, s **akce** nastavena na **Start**.
+    3. Přesunout projekt služby na začátku seznamu, s **akce** nastavena na **Start**.
 
-    4.  Přesunout projektu klienta po projekt služby také s **akce** nastavena na **Start**.
+    4. Přesunout projektu klienta po projekt služby také s **akce** nastavena na **Start**.
 
          Toto nastavení určuje, že klientský projekt je proveden po projekt služby.
 

@@ -12,18 +12,18 @@ helpviewer_keywords:
 - carriage return
 ms.assetid: 43173201-0b74-4067-a472-605029ca5f35
 ms.openlocfilehash: 47404f02a753fe143dd573bdf73143416872af9d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012916"
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a>Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox
 Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek zobrazí jeden řádek textu a posuvníky nezobrazí. Je-li text je delší než dostupný prostor, zobrazí se pouze část textu. Toto výchozí chování můžete změnit nastavením <xref:System.Windows.Forms.TextBox.Multiline%2A>, <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>, a <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnosti na odpovídající hodnoty.  
   
 ### <a name="to-display-a-carriage-return-in-the-textbox-control"></a>Chcete-li zobrazit zalomení řádku v ovládacím prvku TextBox  
   
--   Chcete-li zobrazit návrat do více řádků <xref:System.Windows.Forms.TextBox>, použijte <xref:System.Environment.NewLine%2A> vlastnost.  
+- Chcete-li zobrazit návrat do více řádků <xref:System.Windows.Forms.TextBox>, použijte <xref:System.Environment.NewLine%2A> vlastnost.  
   
      Mějte na paměti, která výklad řídicí znaky (\\) je specifické pro jazyk. Jazyk Visual Basic používá `Chr$(13) & Chr$(10)` pro návrat na začátek řádku kombinaci znaků vrácených hodnot a znak odřádkování.  
   
@@ -41,7 +41,7 @@ Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.TextBox> ovl�
   
 3. Nastavte <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> vlastnost na odpovídající hodnotu.  
   
-    |Value|Popis|  
+    |Hodnota|Popis|  
     |-----------|-----------------|  
     |`false`|Text v ovládacím prvku nebude automaticky zabalená, takže ho se posuňte doprava, dokud nebude dosaženo konce řádku. Pokud jste zvolili, používejte tuto hodnotu <xref:System.Windows.Forms.ScrollBars.Horizontal> posuvníky nebo <xref:System.Windows.Forms.ScrollBars.Both>výše.|  
     |`true` (výchozí)|Vodorovný posuvník nezobrazí. Pokud jste zvolili, používejte tuto hodnotu <xref:System.Windows.Forms.ScrollBars.Vertical> posuvníky nebo <xref:System.Windows.Forms.ScrollBars.None>, výše a zobrazte jeden nebo více odstavcích.|  

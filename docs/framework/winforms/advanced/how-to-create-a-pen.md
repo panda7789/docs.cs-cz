@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Pen object
 ms.assetid: 7fbea8b7-7ac1-4413-9c17-733a850381e3
 ms.openlocfilehash: 69fe6157c710ae63df9dbf391a5d355d1c3f9765
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004403"
 ---
 # <a name="how-to-create-a-pen"></a>Postupy: Vytvoření pera
 Tento příklad vytvoří <xref:System.Drawing.Pen> objektu.  

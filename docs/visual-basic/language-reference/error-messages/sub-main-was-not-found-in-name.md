@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Sub Main error message
 ms.assetid: a006d57d-4dd3-46a7-9026-ca9a31470da7
 ms.openlocfilehash: e48968472fea2accd85544f2360a6732e2bcbe17
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013683"
 ---
 # <a name="sub-main-was-not-found-in-name"></a>'Procedura sub Main' nebyla nalezena v '\<název > "
 `Sub Main` je pro ni nebyl zadán chybějící nebo nesprávné umístění.  

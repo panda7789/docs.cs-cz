@@ -5,11 +5,11 @@ helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
 ms.openlocfilehash: 0fba0b8814597f58018c4c5feba85082ef035e1b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59111407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031314"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 Toto téma popisuje hlavní funkce typografickém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří vylepšení kvality a výkonu při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Typografie support, rozšířené mezinárodní text, vylepšená podpora písma a rozhraní (API) nové application programming text.  
@@ -45,39 +45,39 @@ Text s ClearType směru osy y vyhlazení
 ## <a name="enhanced-international-text-support"></a>Podpora rozšířené mezinárodní Text  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje lepší mezinárodní text podporu tím, že poskytuje následující funkce:  
   
--   Automatické-řádkování ve všech systémech zápis pomocí adaptivního měření.  
+- Automatické-řádkování ve všech systémech zápis pomocí adaptivního měření.  
   
--   Rozsáhlá podpora pro mezinárodní text. Další informace najdete v tématu [globalizace pro WPF](globalization-for-wpf.md).  
+- Rozsáhlá podpora pro mezinárodní text. Další informace najdete v tématu [globalizace pro WPF](globalization-for-wpf.md).  
   
--   Řádek s asistencí jazykové slov, dělení a zarovnání.  
+- Řádek s asistencí jazykové slov, dělení a zarovnání.  
   
 <a name="Enhanced_Font_Support"></a>   
 ## <a name="enhanced-font-support"></a>Podpora rozšířené písma  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje vylepšené písma podporu tím, že poskytuje následující funkce:  
   
--   Kódování Unicode pro veškerý text. Chování písma a výběr už vyžadují znaková sada nebo znakovou stránku.  
+- Kódování Unicode pro veškerý text. Chování písma a výběr už vyžadují znaková sada nebo znakovou stránku.  
   
--   Písmo chování nezávisle na globální nastavení, jako je například národního prostředí.  
+- Písmo chování nezávisle na globální nastavení, jako je například národního prostředí.  
   
--   Samostatné <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>, a <xref:System.Windows.FontStyle> typy pro definování <xref:System.Windows.Media.FontFamily>. To poskytuje větší flexibilitu než [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] programování, ve které datový typ Boolean kombinací tučné písmo a kurzíva se používají k definování rodinu písem.  
+- Samostatné <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>, a <xref:System.Windows.FontStyle> typy pro definování <xref:System.Windows.Media.FontFamily>. To poskytuje větší flexibilitu než [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] programování, ve které datový typ Boolean kombinací tučné písmo a kurzíva se používají k definování rodinu písem.  
   
--   Zápis směr (vodorovně a svisle) zpracovává nezávisle na název písma.  
+- Zápis směr (vodorovně a svisle) zpracovává nezávisle na název písma.  
   
--   Propojování písma a zpětné volání v přenosný [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] soubor, pomocí technologie složený font. Složená písma povolit pro tvorbu plný rozsah vícejazyčné písma. Složená písma taky mělo poskytovat mechanismus, který zabraňuje zobrazování chybějící glyphs. Další informace najdete v části poznámky v <xref:System.Windows.Media.FontFamily> třídy.  
+- Propojování písma a zpětné volání v přenosný [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] soubor, pomocí technologie složený font. Složená písma povolit pro tvorbu plný rozsah vícejazyčné písma. Složená písma taky mělo poskytovat mechanismus, který zabraňuje zobrazování chybějící glyphs. Další informace najdete v části poznámky v <xref:System.Windows.Media.FontFamily> třídy.  
   
--   Mezinárodní písma od složená písma pomocí skupiny písem v jednom jazyce. Toto uloží na nákladech na prostředky při vývoji písma pro různé jazyky.  
+- Mezinárodní písma od složená písma pomocí skupiny písem v jednom jazyce. Toto uloží na nákladech na prostředky při vývoji písma pro různé jazyky.  
   
--   Složená písma vložené v dokumentu, a tím zajištění přenositelnosti dokumentu. Další informace najdete v části poznámky v <xref:System.Windows.Media.FontFamily> třídy.  
+- Složená písma vložené v dokumentu, a tím zajištění přenositelnosti dokumentu. Další informace najdete v části poznámky v <xref:System.Windows.Media.FontFamily> třídy.  
   
 <a name="New_Text_APIs"></a>   
 ## <a name="new-text-application-programming-interfaces-apis"></a>Nový Text aplikační programovací rozhraní (API)  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje několik text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] vývojáři mohou použít při vkládání textu ve svých aplikacích. Tyto [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] jsou seskupené do tří kategorií:  
   
--   **Rozložení a uživatelské rozhraní**. Pro ovládací prvky společný text [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)].  
+- **Rozložení a uživatelské rozhraní**. Pro ovládací prvky společný text [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)].  
   
--   **Zjednodušené vykreslování textu**. Umožňuje nakreslit text přímo k objektům.  
+- **Zjednodušené vykreslování textu**. Umožňuje nakreslit text přímo k objektům.  
   
--   **Pokročilé formátování textu**. Umožňuje implementovat modul s vlastním textem.  
+- **Pokročilé formátování textu**. Umožňuje implementovat modul s vlastním textem.  
   
 ### <a name="layout-and-user-interface"></a>Rozložení a uživatelského rozhraní  
  Na nejvyšší úrovni funkčnosti, text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] poskytují běžné [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládací prvky jako například <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBlock>, a <xref:System.Windows.Controls.TextBox>. Tyto ovládací prvky poskytují základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementů v rámci aplikace a nabídku snadný způsob, jak zobrazit a pracovat s textem. Ovládací prvky jako například <xref:System.Windows.Controls.RichTextBox> a <xref:System.Windows.Controls.PasswordBox> povolit více advanced nebo specializovaných zpracování textu. A třídy jako <xref:System.Windows.Documents.TextRange>, <xref:System.Windows.Documents.TextSelection>, a <xref:System.Windows.Documents.TextPointer> povolit manipulaci s textem užitečné. Tyto [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládací prvky, jako poskytují vlastnosti <xref:System.Windows.Controls.Control.FontFamily%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontStyle%2A>, které vám umožňují řídit písma, která se použije k vykreslení textu.  

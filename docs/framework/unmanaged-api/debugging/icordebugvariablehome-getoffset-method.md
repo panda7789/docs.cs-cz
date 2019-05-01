@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 864cb893511bceabd61ce0064065b3866ce01dfe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61986749"
 ---
 # <a name="icordebugvariablehomegetoffset-method"></a>ICorDebugVariableHome::GetOffset – metoda
 Získá posun od základní registrace pro proměnnou.  
@@ -42,7 +42,7 @@ HRESULT GetOffset(
 ## <a name="return-value"></a>Návratová hodnota  
  Metoda vrátí následující hodnoty:  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`S_OK`|Proměnná se nachází v umístění paměti register relativní.|  
 |`E_FAIL`|Proměnná se nenachází v paměti register relativní umístění.|  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30002
 ms.assetid: b0faf204-57fd-44de-8c05-9db027eea663
 ms.openlocfilehash: c2675d61307d92da1710368668f43af3559060a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032094"
 ---
 # <a name="type-typename-is-not-defined"></a>Typ '\<typename >' není definován
 Příkaz provedl odkaz na typ, který nebyl definován. Typ v příkazu deklarace můžete definovat jako `Enum`, `Structure`, `Class`, nebo `Interface`.  
@@ -21,15 +21,15 @@ Příkaz provedl odkaz na typ, který nebyl definován. Typ v příkazu deklarac
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zajistěte, že definice typu a jeho odkaz obou použít stejné kontroly pravopisu.  
+- Zajistěte, že definice typu a jeho odkaz obou použít stejné kontroly pravopisu.  
   
--   Ujistěte se, že definice typu je přístupné pro odkaz. Například, pokud je typ v jiném modulu a byla deklarována `Private`, přesunutí definice typu pro odkazující modul nebo ji deklarovat `Public`.  
+- Ujistěte se, že definice typu je přístupné pro odkaz. Například, pokud je typ v jiném modulu a byla deklarována `Private`, přesunutí definice typu pro odkazující modul nebo ji deklarovat `Public`.  
   
--   Ujistěte se, že obor názvů tohoto typu není předefinovat v rámci svého projektu. Pokud se jedná, použijte `Global` – klíčové slovo plně kvalifikovaný název typu. Například, pokud projekt definuje obor názvů s názvem `System`, <xref:System.Object?displayProperty=nameWithType> typ nelze přistupovat, pokud to není plně nekvalifikuje pomocí `Global` – klíčové slovo: `Global.System.Object`.  
+- Ujistěte se, že obor názvů tohoto typu není předefinovat v rámci svého projektu. Pokud se jedná, použijte `Global` – klíčové slovo plně kvalifikovaný název typu. Například, pokud projekt definuje obor názvů s názvem `System`, <xref:System.Object?displayProperty=nameWithType> typ nelze přistupovat, pokud to není plně nekvalifikuje pomocí `Global` – klíčové slovo: `Global.System.Object`.  
   
--   Pokud je typ definován, ale není registrován objekt knihovny nebo knihovny typů, ve kterém je definována v aplikaci Visual Basic, klikněte na **přidat odkaz** na **projektu** nabídky a pak vyberte příslušný objekt Knihovna nebo knihovna typů.  
+- Pokud je typ definován, ale není registrován objekt knihovny nebo knihovny typů, ve kterém je definována v aplikaci Visual Basic, klikněte na **přidat odkaz** na **projektu** nabídky a pak vyberte příslušný objekt Knihovna nebo knihovna typů.  
   
--   Zajistěte, aby byl typ v sestavení, která je součástí cíleném profilu rozhraní .NET. Další informace najdete v tématu [řešení chyb cílí na .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
+- Zajistěte, aby byl typ v sestavení, která je součástí cíleném profilu rozhraní .NET. Další informace najdete v tématu [řešení chyb cílí na .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
   
 ## <a name="see-also"></a>Viz také:
 

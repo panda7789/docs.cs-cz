@@ -16,11 +16,11 @@ ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 51e22407bd20cc6aa17b242948a83d698167590e
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025051"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
 <a name="Top"></a> Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzory pro nahrazení. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory pro nahrazení jsou poskytovány pro přetížení <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metodu, která mají `replacement` parametr a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda. Metody nahradí odpovídající vzor vzorem, který je definován `replacement` parametru.  
@@ -33,7 +33,7 @@ ms.locfileid: "54030151"
 |`${` *Jméno* `}`|Zahrnuje poslední podřetězec odpovídající pojmenované skupině, která je stanovena podle prvku `(?<` *název* `> )` v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování pojmenované skupiny](#Named).|  
 |`$$`|Zahrnuje jediný literál "$" v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování symbolu "$"](#DollarSign).|  
 |`$&`|Zahrnuje kopii celé shody v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování celé shody](#EntireMatch).|  
-|``$` ``|Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu před porovnáním](#BeforeMatch).|  
+|``$` ``| Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu před porovnáním](#BeforeMatch).|  
 |`$'`|Zahrnuje celý text vstupního řetězce po porovnání v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu po shodě](#AfterMatch).|  
 |`$+`|Zahrnuje poslední skupinu zachycenou v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování poslední zachycené skupiny](#LastGroup).|  
 |`$_`|Zahrnuje celý vstupní řetězec v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování celého vstupního řetězce](#EntireString).|  

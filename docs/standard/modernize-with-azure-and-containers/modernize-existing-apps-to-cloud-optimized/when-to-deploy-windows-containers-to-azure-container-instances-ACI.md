@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/29/2018
 ms.openlocfilehash: 03ee7c8b65e1a92dcc7fd40b44e9ba081f571487
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011980"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 

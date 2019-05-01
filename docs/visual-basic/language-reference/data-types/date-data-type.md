@@ -16,11 +16,11 @@ helpviewer_keywords:
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
 ms.openlocfilehash: 42a36351ad70bc16b6cad63450ee5fcb3ed4f1ef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971805"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 IEEE – 64bitová (8 bajtů) hodnoty, které představují data od 1. ledna 0001 roku do 31. prosince 9999 roku a časy od 12:00:00: 00 (půlnoc) obsahuje prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekund uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna roku 10000.  
@@ -61,11 +61,11 @@ Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, uvědomte si, že datum a čas v jiných prostředích typy nejsou kompatibilní s jazykem Visual Basic `Date` typu. Pokud takové součásti předáváte data a času argument, deklarujte ho jako `Double` místo `Date` v jazyce Visual Basic code a použít metody převodu <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> a <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, uvědomte si, že datum a čas v jiných prostředích typy nejsou kompatibilní s jazykem Visual Basic `Date` typu. Pokud takové součásti předáváte data a času argument, deklarujte ho jako `Double` místo `Date` v jazyce Visual Basic code a použít metody převodu <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> a <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.  
   
--   **Znaky typu.** `Date` nemá žádný – znak typu literálu nebo – znak typu identifikátoru. Ale kompilátor zpracovává literály, které jsou uzavřeny v rámci symboly čísla (`# #`) jako `Date`.  
+- **Znaky typu.** `Date` nemá žádný – znak typu literálu nebo – znak typu identifikátoru. Ale kompilátor zpracovává literály, které jsou uzavřeny v rámci symboly čísla (`# #`) jako `Date`.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.DateTime?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.DateTime?displayProperty=nameWithType> struktury.  
   
 ## <a name="example"></a>Příklad  
  Proměnnou nebo konstantu `Date` obsahuje datový typ datum a čas. Toto dokládá následující příklad.  

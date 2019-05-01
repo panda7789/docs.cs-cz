@@ -5,11 +5,11 @@ ms.custom: seodec18
 ms.date: 04/12/2019
 author: natke
 ms.openlocfilehash: bfed9cf12f8d539c4327549e5305415ce096e022
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019098"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Úlohy strojového učení v ML.NET
 

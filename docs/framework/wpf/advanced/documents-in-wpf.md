@@ -11,11 +11,11 @@ helpviewer_keywords:
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
 ms.openlocfilehash: b4057f54934fb5c7c9bb3d4fb97fe8e197e324ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051660"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkce dokumentu, které umožňují vytvářet a věrného obsah, který je navržena jako snadno používaná a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentů.  
@@ -61,11 +61,11 @@ ms.locfileid: "59313954"
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Architektura balíčku slouží jako základ pro počet klíčových technologií:  
   
--   [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty, které odpovídají [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)].  
+- [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty, které odpovídají [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)].  
   
--   Aplikace Microsoft Office "12" Otevřít formátu dokumentů XML (.docx).  
+- Aplikace Microsoft Office "12" Otevřít formátu dokumentů XML (.docx).  
   
--   Formátuje text vlastního úložiště pro návrh aplikací.  
+- Formátuje text vlastního úložiště pro návrh aplikací.  
   
  Založené na rozhraní API pro balení <xref:System.Windows.Xps.Packaging.XpsDocument> je navržená speciálně pro ukládání [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] oprava obsah dokumentů. <xref:System.Windows.Xps.Packaging.XpsDocument> Se samostatným dokumentem, který lze otevřít v prohlížeči se zobrazí v <xref:System.Windows.Controls.DocumentViewer> ovládacího prvku, směrovat do zařazování tisku nebo přímo do výstupu [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny.  
   
@@ -99,11 +99,11 @@ ms.locfileid: "59313954"
 #### <a name="packagerelationships"></a>PackageRelationships  
  A <xref:System.IO.Packaging.PackageRelationship> ("relace") poskytuje mechanismus pro přidružení k balíčku nebo jeho části v rámci balíčku Další informace. Relace je úrovni balíčku zařízení, které můžete přidružit další informace o části beze změny obsahu skutečné části. Vkládání nových dat přímo do části obsah obvykle není praktické v mnoha případech:  
   
--   Skutečný typ části a jeho obsah schématu není znám.  
+- Skutečný typ části a jeho obsah schématu není znám.  
   
--   I v případě, že známé, nemusí schéma obsahu poskytují prostředky pro přidání nové informace.  
+- I v případě, že známé, nemusí schéma obsahu poskytují prostředky pro přidání nové informace.  
   
--   Části mohou být digitálně podepsána nebo zašifrována, vyloučí všechny změny.  
+- Části mohou být digitálně podepsána nebo zašifrována, vyloučí všechny změny.  
   
  Balíček relace umožňují zjistitelné pro přidání a přiřazení další informace o jednotlivých částí nebo celý balíček. Balíček relací se používají pro dvě primární funkce:  
   
@@ -125,13 +125,13 @@ ms.locfileid: "59313954"
 ## <a name="xps-documents"></a>XPS – dokumenty  
  [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] dokument je balíček, který obsahuje jeden nebo více oprava – dokumenty společně s prostředky a informace požadované pro vykreslení.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] je také nativní [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] formát zařazování tisku souboru.  <xref:System.Windows.Xps.Packaging.XpsDocument> Je uložena v datové sadě standardní ZIP a může obsahovat kombinaci XML a binární komponenty, jako jsou soubory bitové kopie a písma. [PackageRelationships](#PackageRelationships) se používají k definování závislosti mezi obsahu a prostředků potřebných pro plně vykreslení dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> Design poskytuje jednotné, vysoce věrné dokument řešení, které podporuje více:  
   
--   Čtení, zápisu a ukládání-document obsah a prostředky jako jednu, přenosných a snadno distribuovat souboru.  
+- Čtení, zápisu a ukládání-document obsah a prostředky jako jednu, přenosných a snadno distribuovat souboru.  
   
--   Zobrazování dokumentů [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] prohlížeč.  
+- Zobrazování dokumentů [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] prohlížeč.  
   
--   Výstupu dokumentů v nativní zařazování tisku výstupního formát [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  
+- Výstupu dokumentů v nativní zařazování tisku výstupního formát [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  
   
--   Směrování přímo na dokumenty [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny.  
+- Směrování přímo na dokumenty [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny.  
   
 ## <a name="see-also"></a>Viz také:
 

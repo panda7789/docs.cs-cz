@@ -7,11 +7,11 @@ helpviewer_keywords:
 - rich edit controls
 ms.assetid: 3225f2ef-c6d9-4bd4-9d3e-2219e58edbf2
 ms.openlocfilehash: 2b1a6604df3979e83e4a815cdb4a9397ab4e67ad
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012461"
 ---
 # <a name="richtextbox-control-windows-forms"></a>RichTextBox – ovládací prvek (Windows Forms)
 Windows Forms `RichTextBox` ovládací prvek se používá pro zobrazení, zadávání a manipulace s formátování textu. `RichTextBox` Ovládací prvek provádí všechno, co <xref:System.Windows.Forms.TextBox> ovládací prvek provádí, ale můžete také zobrazit písma, barvy a odkazy; načíst text a vložené obrázky ze souboru; zpět nebo opakování operace; úprav a najít zadané znaky. `RichTextBox` Ovládací prvek se obvykle používá k poskytování manipulaci s textem a zobrazení funkce podobné aplikace zpracování textu, jako je Microsoft Word. Podobně jako <xref:System.Windows.Forms.TextBox> ovládací prvek, `RichTextBox` ovládací prvek mohl zobrazit posuvník; ale na rozdíl od <xref:System.Windows.Forms.TextBox> ovládací prvek, ve výchozím nastavení zobrazí vodorovný a svislý posuvník a má nastavení další posuvník.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
 ms.openlocfilehash: a9d01b7cebea845ad67d846af5b08f59977b8cd6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62036228"
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] komentáře lokalizace jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, získáte ho od vývojářům poskytuje pravidla a pokyny pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře obsahují dvě sady informace: lokalizovatelnosti atributy a komentáře lokalizace volného tvaru. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které mají být lokalizována. Komentáře volného tvaru jsou veškeré informace, které autor aplikace chce zahrnovat.  
@@ -27,11 +27,11 @@ ms.locfileid: "59301851"
   
 3. Je možné přiřadit hodnoty jsou:  
   
-    -   **Žádný** – jak komentářů a atributů zůstávají uvnitř sestavení a vygeneruje se žádný samostatný soubor.  
+    - **Žádný** – jak komentářů a atributů zůstávají uvnitř sestavení a vygeneruje se žádný samostatný soubor.  
   
-    -   **CommentsOnly** – odebere jenom komentářů ze sestavení a umístí je do samostatné LocFile.  
+    - **CommentsOnly** – odebere jenom komentářů ze sestavení a umístí je do samostatné LocFile.  
   
-    -   **Všechny** – odstraní komentářů a atributů ze sestavení a umístí je do samostatné LocFile.  
+    - **Všechny** – odstraní komentářů a atributů ze sestavení a umístí je do samostatné LocFile.  
   
 4. Když lokalizovatelné prostředky se extrahují z [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)], jsou dodržovány lokalizovatelnosti atributy [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] lokalizace rozhraní API.  
   
@@ -74,11 +74,11 @@ ms.locfileid: "59301851"
   
  Existují tři typy atributů:  
   
--   **Kategorie**. Určuje, zda má být hodnota z nástroje lokalizátora lze měnit. Viz <xref:System.Windows.LocalizabilityAttribute.Category%2A>.  
+- **Kategorie**. Určuje, zda má být hodnota z nástroje lokalizátora lze měnit. Viz <xref:System.Windows.LocalizabilityAttribute.Category%2A>.  
   
--   **Lepší čitelnost**. Určuje, zda by měl nástroj lokalizátora čtení (a zobrazení) hodnotu. Viz <xref:System.Windows.LocalizabilityAttribute.Readability%2A>.  
+- **Lepší čitelnost**. Určuje, zda by měl nástroj lokalizátora čtení (a zobrazení) hodnotu. Viz <xref:System.Windows.LocalizabilityAttribute.Readability%2A>.  
   
--   **Modifiability**. Určuje, zda nástroj lokalizátora umožňuje hodnota má být upraven. Viz <xref:System.Windows.LocalizabilityAttribute.Modifiability%2A>.  
+- **Modifiability**. Určuje, zda nástroj lokalizátora umožňuje hodnota má být upraven. Viz <xref:System.Windows.LocalizabilityAttribute.Modifiability%2A>.  
   
  Tyto atributy můžete zadat v libovolném pořadí oddělené mezerou. V případě, že jsou zadány duplicitní atributy, přepíše atribut posledních ty dřívější. Například Localization.Attributes = "Neupravitelných upravitelná" Nastaví Modifiability k Modifiable, protože se jedná o poslední hodnotu.  
   
@@ -88,7 +88,7 @@ ms.locfileid: "59301851"
   
 |Kategorie|Význam|  
 |--------------|-------------|  
-|Žádný|Cílová hodnota nemá žádné definované kategorie.|  
+|Žádné|Cílová hodnota nemá žádné definované kategorie.|  
 |Dědění|Cílová hodnota dědí z nadřazeného jeho kategorie.|  
 |Ignorovat|Cílová hodnota je ignorována v proces lokalizace. Ignorovat ovlivní pouze aktuální hodnotu. To nebude mít vliv na podřízené uzly.|  
 |NeverLocalize|Aktuální hodnota nemůže být lokalizována. Tato kategorie dědí podřízené objekty daného elementu.|  

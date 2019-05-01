@@ -10,11 +10,11 @@ helpviewer_keywords:
 - DrawingGroup objects [WPF]
 ms.assetid: 9b5ce5c0-e204-4320-a7a8-0b2210d62f88
 ms.openlocfilehash: c065b06e7542913ae7fb495a0f69ff09dc4238b9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020420"
 ---
 # <a name="drawing-objects-overview"></a>Přehled vykreslovaných objektů
 Toto téma představuje <xref:System.Windows.Media.Drawing> objektů a popisuje, jak se dají použít k efektivní kreslení tvarů, rastrové obrázky, text a média. Použít <xref:System.Windows.Media.Drawing> objekty při vytváření klipart, Malování <xref:System.Windows.Media.DrawingBrush>, nebo použijte <xref:System.Windows.Media.Visual> objekty.  
@@ -23,25 +23,25 @@ Toto téma představuje <xref:System.Windows.Media.Drawing> objektů a popisuje,
 ## <a name="what-is-a-drawing-object"></a>Co je objekt kreslení?  
  A <xref:System.Windows.Media.Drawing> objektu popisuje viditelného obsahu, jako je tvar, rastrový obrázek, video nebo řádek textu. Různé druhy drawings popisují různé typy obsahu. Následuje seznam typy vykreslení objektů.  
   
--   <xref:System.Windows.Media.GeometryDrawing> – Nakreslí obrazec.  
+- <xref:System.Windows.Media.GeometryDrawing> – Nakreslí obrazec.  
   
--   <xref:System.Windows.Media.ImageDrawing> – Kreslení obrázku.  
+- <xref:System.Windows.Media.ImageDrawing> – Kreslení obrázku.  
   
--   <xref:System.Windows.Media.GlyphRunDrawing> – Kreslení textu.  
+- <xref:System.Windows.Media.GlyphRunDrawing> – Kreslení textu.  
   
--   <xref:System.Windows.Media.VideoDrawing> – Přehraje zvuk nebo video soubor.  
+- <xref:System.Windows.Media.VideoDrawing> – Přehraje zvuk nebo video soubor.  
   
--   <xref:System.Windows.Media.DrawingGroup> – Kreslení jiných kreslení. Pomocí vykreslení skupiny můžete kombinovat další drawings do jednoho kompozitní kresby.  
+- <xref:System.Windows.Media.DrawingGroup> – Kreslení jiných kreslení. Pomocí vykreslení skupiny můžete kombinovat další drawings do jednoho kompozitní kresby.  
   
  <xref:System.Windows.Media.Drawing> objekty jsou univerzální; Existuje mnoho způsobů, můžete použít <xref:System.Windows.Media.Drawing> objektu.  
   
--   Můžete ho zobrazit jako bitovou kopii pomocí <xref:System.Windows.Media.DrawingImage> a <xref:System.Windows.Controls.Image> ovládacího prvku.  
+- Můžete ho zobrazit jako bitovou kopii pomocí <xref:System.Windows.Media.DrawingImage> a <xref:System.Windows.Controls.Image> ovládacího prvku.  
   
--   Můžete ji použít <xref:System.Windows.Media.DrawingBrush> k vykreslení objektu, například <xref:System.Windows.Controls.Page.Background%2A> z <xref:System.Windows.Controls.Page>.  
+- Můžete ji použít <xref:System.Windows.Media.DrawingBrush> k vykreslení objektu, například <xref:System.Windows.Controls.Page.Background%2A> z <xref:System.Windows.Controls.Page>.  
   
--   Slouží k popisu vzhled <xref:System.Windows.Media.DrawingVisual>.  
+- Slouží k popisu vzhled <xref:System.Windows.Media.DrawingVisual>.  
   
--   Slouží k vytvoření výčtu obsah <xref:System.Windows.Media.Visual>.  
+- Slouží k vytvoření výčtu obsah <xref:System.Windows.Media.Visual>.  
   
  WPF obsahuje jiné typy objektů, které jsou schopny kreslení tvarů, rastrové obrázky, text a média. Například můžete použít také <xref:System.Windows.Shapes.Shape> objektů pro kreslení tvarů a <xref:System.Windows.Controls.MediaElement> ovládací prvek obsahuje jiný způsob, jak přidat video do vaší aplikace. Takže pokud byste měli použít <xref:System.Windows.Media.Drawing> objekty? Když jste vzdát úroveň funkce framework zlepší výkon, nebo pokud potřebujete <xref:System.Windows.Freezable> funkce. Protože <xref:System.Windows.Media.Drawing> objekty neobsahují podporu pro [rozložení](../advanced/layout.md)vstup a zaměřit, poskytují výhod vyššího výkonu upgradovaného, proto je ideální pro popis pozadími, klipart a pro kreslení nižší úrovně s <xref:System.Windows.Media.Visual> objekty.  
   

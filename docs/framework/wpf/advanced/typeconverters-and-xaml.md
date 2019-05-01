@@ -5,11 +5,11 @@ helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
 ms.openlocfilehash: ec6eaadae1dd7a7db84538c24e396a14db1a65a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007294"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka XAML. V rozhraní .NET Framework <xref:System.ComponentModel.TypeConverter> třída slouží jako součást implementace pro spravovaný vlastní třídu, která lze použít jako hodnotu vlastnosti v použití atributu XAML konkrétní účel. Pokud napíšete vlastní třída a chcete, aby instance třídy má být použitelná jako hodnoty atributů nastavitelné XAML, může být potřeba použít <xref:System.ComponentModel.TypeConverterAttribute> do vaší třídy napsat vlastní <xref:System.ComponentModel.TypeConverter> třídy, nebo obojí.  
@@ -59,13 +59,13 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
   
  <xref:System.ComponentModel.TypeConverter> definuje čtyři členy, které jsou relevantní pro převod do a z řetězce pro účely zpracování XAML:  
   
--   <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>  
+- <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>  
   
--   <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>  
+- <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>  
   
--   <xref:System.ComponentModel.TypeConverter.ConvertTo%2A>  
+- <xref:System.ComponentModel.TypeConverter.ConvertTo%2A>  
   
--   <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>  
+- <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>  
   
  Z nich je nejdůležitější způsob <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>. Tato metoda převede vstupní řetězec na typ požadovaný objekt. Přesněji řečeno <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> mnohem širší škálu typy převést na typ převaděče požadovaného cíle, a proto mají účely, které přesahují XAML, jako je například podpory převodů za běhu, ale pro účely XAML může implementovat – metoda je jenom do cesty kódu, která dokáže zpracovávat <xref:System.String> vstup, který je důležité.  
   

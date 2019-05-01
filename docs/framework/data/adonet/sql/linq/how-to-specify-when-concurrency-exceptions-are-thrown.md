@@ -6,20 +6,20 @@ dev_langs:
 - vb
 ms.assetid: 344ae068-ff63-4a2e-8b00-af22e143675f
 ms.openlocfilehash: 30dd83c68472ecd3244cfc87b6df97b948b9a84f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033628"
 ---
 # <a name="how-to-specify-when-concurrency-exceptions-are-thrown"></a>Postupy: Určení, kdy se mají objevit výjimky souběžnosti
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], <xref:System.Data.Linq.ChangeConflictException> je vyvolána výjimka, pokud objekty nelze aktualizovat kvůli konfliktům optimistického řízení souběžnosti. Další informace najdete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
   
  Před odesláním změn databáze můžete zadat při by měl být vyvolání výjimky souběžnosti:  
   
--   Vyvolání výjimky v prvním selhání (<xref:System.Data.Linq.ConflictMode.FailOnFirstConflict>).  
+- Vyvolání výjimky v prvním selhání (<xref:System.Data.Linq.ConflictMode.FailOnFirstConflict>).  
   
--   Dokončit všechny pokusy aktualizovat, accumulate všechny chyby a generování sestav nahromaděné chyby do výjimky (<xref:System.Data.Linq.ConflictMode.ContinueOnConflict>).  
+- Dokončit všechny pokusy aktualizovat, accumulate všechny chyby a generování sestav nahromaděné chyby do výjimky (<xref:System.Data.Linq.ConflictMode.ContinueOnConflict>).  
   
  Při vyvolání, <xref:System.Data.Linq.ChangeConflictException> výjimek poskytuje přístup k <xref:System.Data.Linq.ChangeConflictCollection> kolekce. Tato kolekce obsahuje podrobné informace pro každý konflikt (namapované na jedné aktualizace se nezdařila zkuste), včetně přístupu ke <xref:System.Data.Linq.ObjectChangeConflict.MemberConflicts%2A> kolekce. Každý člen konflikt mapuje na jeden člen v aktualizaci, která se nezdařila se kontrola souběžnosti.  
   

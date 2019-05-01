@@ -7,11 +7,11 @@ helpviewer_keywords:
 - subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
 ms.openlocfilehash: 5b26a091dc8eb7415702c3c2853a569324def7d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013501"
 ---
 # <a name="sub-expression-visual-basic"></a>Sub – výraz (Visual Basic)
 Deklaruje parametry a kód, které definují výrazu lambda podprogram.  
@@ -40,17 +40,17 @@ End Sub
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
  Syntaxe výrazu lambda se podobá u standardní podprogram. Rozdíly jsou následující:  
   
--   Výraz lambda nemá název.  
+- Výraz lambda nemá název.  
   
--   Výraz lambda nemůže mít modifikátor, jako například `Overloads` nebo `Overrides`.  
+- Výraz lambda nemůže mít modifikátor, jako například `Overloads` nebo `Overrides`.  
   
--   Příkaz, není výraz musí být tělo tohoto výrazu lambda jednořádkového. Text se může skládat z volání procedury sub, ale není volání funkce procedury.  
+- Příkaz, není výraz musí být tělo tohoto výrazu lambda jednořádkového. Text se může skládat z volání procedury sub, ale není volání funkce procedury.  
   
--   Výraz lambda musí být buď všechny parametry zadána, že datové typy nebo všechny parametry musí být odvozený.  
+- Výraz lambda musí být buď všechny parametry zadána, že datové typy nebo všechny parametry musí být odvozený.  
   
--   Volitelné a `ParamArray` parametry nejsou povoleny ve výrazech lambda.  
+- Volitelné a `ParamArray` parametry nejsou povoleny ve výrazech lambda.  
   
--   Obecné parametry nejsou povoleny ve výrazech lambda.  
+- Obecné parametry nejsou povoleny ve výrazech lambda.  
   
 ## <a name="example"></a>Příklad  
  Následuje příklad výrazu lambda, která hodnotu zapíše do konzoly. Příklad ukazuje obě jedním řádkem a víceřádkového výrazu lambda výraz syntaxe podprogram. Další příklady najdete v tématu [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  

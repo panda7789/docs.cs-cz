@@ -3,11 +3,11 @@ title: Ukázka slabě typované serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
 ms.openlocfilehash: b0e9617ad5d616e8921fbf142085f2758f3e0cd4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006353"
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
 Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelský typ musí být k dispozici na službu nebo klienta. Obvykle k tomu, <xref:System.Runtime.Serialization.DataContractAttribute> atribut bude použit pro tyto typy definované uživatelem a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu se použije pro jejich členy. Tento mechanismus platí i v případě práce s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [jak: Serializace a deserializace dat protokolu JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  

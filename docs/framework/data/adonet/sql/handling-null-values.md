@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
 ms.openlocfilehash: 0d200ad35d3ab56bf97114b51b4f7fcc898eecdf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032471"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot null
 Hodnotu null v relační databázi se používá při neznámý nebo chybějící hodnota ve sloupci. Hodnota null není prázdný řetězec (pro datové typy znaků nebo datum a čas) ani nulovou hodnotu (pro číselné datové typy). Specifikace ANSI SQL-92 státy, s hodnotou null musí být stejný pro všechny typy dat, tak, aby všechny hodnoty Null se zpracovávají konzistentně. <xref:System.Data.SqlTypes> Obor názvů poskytuje sémantika s hodnotou null implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy, které do <xref:System.Data.SqlTypes> má vlastní `IsNull` vlastnost a `Null` hodnotu, která je možné přiřadit do instance datového typu.  
@@ -21,11 +21,11 @@ Hodnotu null v relační databázi se používá při neznámý nebo chybějíc�
 ## <a name="nulls-and-three-valued-logic"></a>Hodnoty Null a s hodnotou tři logiky  
  Povolujících hodnoty null v definicích sloupce zavádí tři vracející logiky do vaší aplikace. Porovnání lze vyhodnotit na jednu ze tří podmínek:  
   
--   Pravda  
+- Pravda  
   
--   False  
+- False  
   
--   Neznámé  
+- Neznámé  
   
  Protože null se považuje za neznámý, dvou hodnot null ve srovnání s vzájemně se nepovažují za stejné. Výrazy v použití aritmetických operátorů, pokud žádný z operandů je null, výsledek je null a.  
   

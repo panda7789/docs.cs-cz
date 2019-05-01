@@ -13,24 +13,24 @@ helpviewer_keywords:
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
 ms.openlocfilehash: 14e5a7f47c1c1f2cbaf0457be34019454ff041f4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033173"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k internetu přes proxy server
 Pokud váš web používá k zajištění přístupu k Internetu proxy server, musíte nakonfigurovat instanci proxy umožňují aplikaci komunikovat se serverem proxy webových.  
   
  Tento oddíl obsahuje následující témata:  
   
--   [Konfigurace proxy serveru](../../../docs/framework/network-programming/proxy-configuration.md)  
+- [Konfigurace proxy serveru](../../../docs/framework/network-programming/proxy-configuration.md)  
   
--   [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
+- [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
   
--   [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
+- [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
--   [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
+- [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
   
 ## <a name="see-also"></a>Viz také:
 

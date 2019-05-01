@@ -8,11 +8,11 @@ helpviewer_keywords:
 - errors [Visual Basic], trappable
 ms.assetid: f2dda05b-baef-41f5-8bb1-598bd7cf239f
 ms.openlocfilehash: 822c0f266e7dd68f063043d98a9f4af308ae93fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013813"
 ---
 # <a name="error-messages-visual-basic"></a>Chybové zprávy (Visual Basic)
 Při zápisu, kompilaci či spuštění aplikace v jazyce Visual Basic, může dojít k následující typy chyb:  

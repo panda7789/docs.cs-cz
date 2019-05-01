@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
 ms.openlocfilehash: 8dd463c895efcddfe288fe1dc8571981872d9d80
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033603"
 ---
 # <a name="how-to-use-stored-procedures-that-take-parameters"></a>Postupy: Použití uložených procedur, které přijímají parametry
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje výstupní parametry k odkazování parametrů a typů hodnot deklaruje parametr jako s možnou hodnotou Null.  

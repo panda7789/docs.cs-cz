@@ -15,11 +15,11 @@ helpviewer_keywords:
 - animations [WPF], use of system resources
 ms.assetid: e467796b-d5d4-45a6-a108-8c5d7ff69a0f
 ms.openlocfilehash: 3a22c83eb739a735d42fa0f670716a0e75bbd54c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020267"
 ---
 # <a name="animation-tips-and-tricks"></a>Tipy a triky animace
 Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], existuje několik tipů a triků, které můžete provést vašich animacích líp fungovat a uložit frustrace.  
@@ -41,11 +41,11 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  Pro <xref:System.Windows.Media.Animation.Timeline> tak, aby odrážely změny, musí se znova vygeneroval hodiny a používá k nahrazení dříve vytvořeného hodiny. Hodiny nejsou generovány pro vás automaticky. Následuje několik způsobů, jak použít časové osy:  
   
--   Pokud je na časové ose nebo patří do <xref:System.Windows.Media.Animation.Storyboard>, můžete si je změny projeví s opakováním jeho scénáře použití <xref:System.Windows.Media.Animation.BeginStoryboard> nebo <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metoda. To má za následek vedlejší také restartování animace. V kódu, můžete použít <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metodu pro scénáře, přejděte zpět na předchozí pozici.  
+- Pokud je na časové ose nebo patří do <xref:System.Windows.Media.Animation.Storyboard>, můžete si je změny projeví s opakováním jeho scénáře použití <xref:System.Windows.Media.Animation.BeginStoryboard> nebo <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metoda. To má za následek vedlejší také restartování animace. V kódu, můžete použít <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metodu pro scénáře, přejděte zpět na předchozí pozici.  
   
--   Pokud jste použili animace přímo pro vlastnost pomocí <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody, volání <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda znovu a předejte jí animace, která byla změněna.  
+- Pokud jste použili animace přímo pro vlastnost pomocí <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody, volání <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda znovu a předejte jí animace, která byla změněna.  
   
--   Při práci přímo na úrovni hodin, vytvořit a použít novou sadu hodiny a pomocí nich nahradí předchozí sadu generovanou hodiny.  
+- Při práci přímo na úrovni hodin, vytvořit a použít novou sadu hodiny a pomocí nich nahradí předchozí sadu generovanou hodiny.  
   
  Další informace o časové osy a hodiny, naleznete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   
@@ -105,13 +105,13 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  Existují různé způsoby, jak odstranit animaci. Následující postupy slouží k odebrání animace, které patří <xref:System.Windows.Media.Animation.Storyboard>.  
   
--   Chcete-li odebrat <xref:System.Windows.Media.Animation.Storyboard> začít aktivační procedura událostí naleznete v tématu [jak: Odebrat scénáře](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms749412(v=vs.90)).  
+- Chcete-li odebrat <xref:System.Windows.Media.Animation.Storyboard> začít aktivační procedura událostí naleznete v tématu [jak: Odebrat scénáře](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms749412(v=vs.90)).  
   
--   Při použití kódu odebrat <xref:System.Windows.Media.Animation.Storyboard>, najdete v článku <xref:System.Windows.Media.Animation.Storyboard.Remove%2A> metody.  
+- Při použití kódu odebrat <xref:System.Windows.Media.Animation.Storyboard>, najdete v článku <xref:System.Windows.Media.Animation.Storyboard.Remove%2A> metody.  
   
  Další postup může použít bez ohledu na to, jak spuštění animace.  
   
--   K odebrání animace z konkrétní vlastnosti, použijte <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metody. Zadejte vlastnost animované jako první parametr a `null` jako druhý. Tato akce odebere všechny hodiny animace z vlastnosti.  
+- K odebrání animace z konkrétní vlastnosti, použijte <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metody. Zadejte vlastnost animované jako první parametr a `null` jako druhý. Tato akce odebere všechny hodiny animace z vlastnosti.  
   
  Další informace o různých způsobech animace vlastností najdete v tématu [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
   
@@ -120,9 +120,9 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  Aby se zabránilo problémům s výkonem při použití velký počet hodin používání <xref:System.Windows.Media.Animation.HandoffBehavior.Compose>, byste měli odebrat vytváření hodiny z animací vlastností po jejich dokončení. Existuje několik způsobů, jak odebrat hodin.  
   
--   Chcete-li odebrat všechny hodiny z vlastnosti, použijte <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29> nebo <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metoda animovaný objekt. Zadejte vlastnost animované jako první parametr a `null` jako druhý. Tato akce odebere všechny hodiny animace z vlastnosti.  
+- Chcete-li odebrat všechny hodiny z vlastnosti, použijte <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29> nebo <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metoda animovaný objekt. Zadejte vlastnost animované jako první parametr a `null` jako druhý. Tato akce odebere všechny hodiny animace z vlastnosti.  
   
--   Odebrat konkrétní <xref:System.Windows.Media.Animation.AnimationClock> ze seznamu hodiny, použijte <xref:System.Windows.Media.Animation.Clock.Controller%2A> vlastnost <xref:System.Windows.Media.Animation.AnimationClock> k načtení <xref:System.Windows.Media.Animation.ClockController>, zavolejte <xref:System.Windows.Media.Animation.ClockController.Remove%2A> metodu <xref:System.Windows.Media.Animation.ClockController>. To se obvykle provádí <xref:System.Windows.Media.Animation.Clock.Completed> obslužné rutiny události pro hodin. Všimněte si, že se dá nastavit jenom kořenový hodiny podle <xref:System.Windows.Media.Animation.ClockController>; <xref:System.Windows.Media.Animation.Clock.Controller%2A> vrátí vlastnost hodin podřízené `null`. Všimněte si také, že <xref:System.Windows.Media.Animation.Clock.Completed> událost se nebude volat, pokud je účinné trvání hodin trvale.  V takovém případě bude uživatel muset zjistit, kdy se má volat <xref:System.Windows.Media.Animation.ClockController.Remove%2A>.  
+- Odebrat konkrétní <xref:System.Windows.Media.Animation.AnimationClock> ze seznamu hodiny, použijte <xref:System.Windows.Media.Animation.Clock.Controller%2A> vlastnost <xref:System.Windows.Media.Animation.AnimationClock> k načtení <xref:System.Windows.Media.Animation.ClockController>, zavolejte <xref:System.Windows.Media.Animation.ClockController.Remove%2A> metodu <xref:System.Windows.Media.Animation.ClockController>. To se obvykle provádí <xref:System.Windows.Media.Animation.Clock.Completed> obslužné rutiny události pro hodin. Všimněte si, že se dá nastavit jenom kořenový hodiny podle <xref:System.Windows.Media.Animation.ClockController>; <xref:System.Windows.Media.Animation.Clock.Controller%2A> vrátí vlastnost hodin podřízené `null`. Všimněte si také, že <xref:System.Windows.Media.Animation.Clock.Completed> událost se nebude volat, pokud je účinné trvání hodin trvale.  V takovém případě bude uživatel muset zjistit, kdy se má volat <xref:System.Windows.Media.Animation.ClockController.Remove%2A>.  
   
  To je především to problém pro animací na objekty, které mají dlouhou životnost.  Pokud objekt je vynuceno uvolnění paměti, jeho hodiny se také odpojí a prováděno uvolnění paměti.  
   

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 64774fb5-7447-4296-ad3b-8a94346f99a1
 ms.openlocfilehash: d75c9b9123b52b3e241bea1bbd1d302c406715e8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59190376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032705"
 ---
 # <a name="convert-a-type-to-a-generic-ienumerable"></a>Převod typu na obecnou položku IEnumerable
 Použití <xref:System.Linq.Enumerable.AsEnumerable%2A> vrátit argument obecného typu `IEnumerable`.  

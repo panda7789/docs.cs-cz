@@ -6,11 +6,11 @@ helpviewer_keywords:
 - strings [Visual Basic], Visual Basic
 ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
 ms.openlocfilehash: 856927baa06019f7827bf9751352069f0fc37829
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024583"
 ---
 # <a name="strings-in-visual-basic"></a>Řetězce v jazyce Visual Basic
 Tato část popisuje základní principy používání řetězců v jazyce Visual Basic.  

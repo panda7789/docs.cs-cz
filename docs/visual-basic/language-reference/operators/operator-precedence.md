@@ -15,11 +15,11 @@ helpviewer_keywords:
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
 ms.openlocfilehash: 568927eb4759c214311ad34a5b45e28094dd80be
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013527"
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorita operátorů v jazyce Visual Basic
 Pokud dojde k několika operací ve výrazu, každá část je vyhodnocen a vyřešené v předurčeném pořadí volá *priorita operátorů*.  
@@ -27,13 +27,13 @@ Pokud dojde k několika operací ve výrazu, každá část je vyhodnocen a vyř
 ## <a name="precedence-rules"></a>Priorita pravidla  
  Výrazy obsahovat operátory z více než jednu kategorii, jsou vyhodnocovány podle následujících pravidel:  
   
--   Zřetězení a aritmetické operátory mají pořadí podle priority je popsáno v následující části, a všechny mají vyšší prioritu než relační, logické a bitové operátory.  
+- Zřetězení a aritmetické operátory mají pořadí podle priority je popsáno v následující části, a všechny mají vyšší prioritu než relační, logické a bitové operátory.  
   
--   Všechny operátory porovnání mají stejnou prioritu a všechny mají vyšší prioritu než logické a bitové operátory, ale nižší prioritu než operátory aritmetické operace a zřetězení.  
+- Všechny operátory porovnání mají stejnou prioritu a všechny mají vyšší prioritu než logické a bitové operátory, ale nižší prioritu než operátory aritmetické operace a zřetězení.  
   
--   Logické a bitové operátory mají pořadí podle priority je popsáno v následující části, a všechny mají nižší prioritu než aritmetické, zřetězení a operátory porovnání.  
+- Logické a bitové operátory mají pořadí podle priority je popsáno v následující části, a všechny mají nižší prioritu než aritmetické, zřetězení a operátory porovnání.  
   
--   Operátorů shodné priority jsou vyhodnoceny zleva doprava v pořadí, v jakém jsou uvedeny ve výrazu.  
+- Operátorů shodné priority jsou vyhodnoceny zleva doprava v pořadí, v jakém jsou uvedeny ve výrazu.  
   
 ## <a name="precedence-order"></a>Pořadí priority  
  Operátory jsou vyhodnocovány v následujícím pořadí podle priority:  

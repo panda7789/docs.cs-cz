@@ -7,11 +7,11 @@ helpviewer_keywords:
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
 ms.openlocfilehash: ad5a14ed3baab5b25cb1ed15271474580faaf176
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59183973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033147"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
@@ -61,15 +61,15 @@ ms.locfileid: "59183973"
 ### <a name="programmatic-access"></a>Programový přístup  
  Programový přístup poskytuje možnost napodobovat prostřednictvím kódu, všechny interakce a prostředí, které jsou vystavené tradiční myš a klávesnice. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje programový přístup přes pět součástí:  
   
--   [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Usnadňuje navigaci struktura stromu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Stromu je sestaven z kolekce od hWnd. Další informace najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Usnadňuje navigaci struktura stromu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Stromu je sestaven z kolekce od hWnd. Další informace najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
   
--   Pohyb mezi elementy automatizace jsou jednotlivé komponenty v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. To může často být podrobnější než popisovačem hWnd. Další informace najdete v tématu [přehled typů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md).  
+- Pohyb mezi elementy automatizace jsou jednotlivé komponenty v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. To může často být podrobnější než popisovačem hWnd. Další informace najdete v tématu [přehled typů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md).  
   
--   Vlastnosti automatizace obsahují podrobné informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementy. Další informace najdete v tématu [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+- Vlastnosti automatizace obsahují podrobné informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementy. Další informace najdete v tématu [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
   
--   Vzory ovládacích prvků definovat konkrétní aspekt funkce ovládacího prvku. se může skládat z vlastnosti, metody, události a informace o struktuře. Další informace najdete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+- Vzory ovládacích prvků definovat konkrétní aspekt funkce ovládacího prvku. se může skládat z vlastnosti, metody, události a informace o struktuře. Další informace najdete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
   
--   Události automatizace poskytují oznámení událostí a informace. Další informace najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+- Události automatizace poskytují oznámení událostí a informace. Další informace najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
   
 <a name="Key_properties_critical_to_test_automation"></a>   
 ### <a name="key-properties-for-test-automation"></a>Klíčové vlastnosti pro automatizaci testů  
@@ -103,9 +103,9 @@ ms.locfileid: "59183973"
 ## <a name="related-tools-and-technologies"></a>Související nástroje a technologie  
  Existuje několik souvisejících nástrojů a technologií, které podporují automatizované testování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
--   Je Inspect.exe [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)] aplikaci, která slouží ke shromažďování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace pro poskytovatele a klient vývoj a ladění. Je součástí Inspect.exe [!INCLUDE[TLA#tla_winfxsdk](../../../includes/tlasharptla-winfxsdk-md.md)].  
+- Je Inspect.exe [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)] aplikaci, která slouží ke shromažďování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace pro poskytovatele a klient vývoj a ladění. Je součástí Inspect.exe [!INCLUDE[TLA#tla_winfxsdk](../../../includes/tlasharptla-winfxsdk-md.md)].  
   
--   Zpřístupňuje MSAABridge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace, které [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů. Hlavním cílem přemostění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] k [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] je, aby byl existující [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů možnost pracovat s libovolné architektury, která se má implementovat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+- Zpřístupňuje MSAABridge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace, které [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů. Hlavním cílem přemostění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] k [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] je, aby byl existující [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů možnost pracovat s libovolné architektury, která se má implementovat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Security"></a>   
 ## <a name="security"></a>Zabezpečení  

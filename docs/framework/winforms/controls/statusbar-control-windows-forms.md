@@ -6,11 +6,11 @@ helpviewer_keywords:
 - status bars [Windows Forms], creating
 ms.assetid: 6f543e27-cf78-4b7f-b4d0-6a8030155d48
 ms.openlocfilehash: 9ef6bc125a641538e7fd2da4c17c5f25dfc62709
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009653"
 ---
 # <a name="statusbar-control-windows-forms"></a>StatusBar – ovládací prvek (Windows Forms)
 > [!NOTE]

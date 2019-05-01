@@ -6,11 +6,11 @@ helpviewer_keywords:
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
 ms.openlocfilehash: 66cb28fce9485898711b9029baf8a17dd9b2c011
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62030369"
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
 Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám umožní integrovat zvuku a videa do svých aplikací a zlepšit uživatelské prostředí. Toto téma představuje multimediální funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -37,11 +37,11 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ### <a name="independent-mode"></a>Nezávislé režimu  
  V režimu nezávislé řídí mediálního obsahu přehrávání médií. Nezávislé režim umožňuje následující možnosti:  
   
--   Média <xref:System.Uri> je možné zadat přímo.  
+- Média <xref:System.Uri> je možné zadat přímo.  
   
--   Přehrávání médií je možné řídit přímo.  
+- Přehrávání médií je možné řídit přímo.  
   
--   Média <xref:System.Windows.Controls.MediaElement.Position%2A> a <xref:System.Windows.Controls.MediaElement.SpeedRatio%2A> vlastnosti je možné upravit.  
+- Média <xref:System.Windows.Controls.MediaElement.Position%2A> a <xref:System.Windows.Controls.MediaElement.SpeedRatio%2A> vlastnosti je možné upravit.  
   
  Média je načtena buď nastavením <xref:System.Windows.Controls.MediaElement> objektu <xref:System.Windows.Controls.MediaElement.Source%2A> vlastnost nebo voláním <xref:System.Windows.Media.MediaPlayer> objektu <xref:System.Windows.Media.MediaPlayer.Open%2A> metody.  
   
@@ -52,11 +52,11 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ### <a name="clock-mode"></a>Režim hodiny  
  V režimu hodiny <xref:System.Windows.Media.MediaTimeline> přehrávání médií jednotek. Hodiny režim má následující vlastnosti:  
   
--   Média <xref:System.Uri> není nastaven nepřímo prostřednictvím <xref:System.Windows.Media.MediaTimeline>.  
+- Média <xref:System.Uri> není nastaven nepřímo prostřednictvím <xref:System.Windows.Media.MediaTimeline>.  
   
--   Přehrání média mohou být řízena hodin. Metody řízení média objektu nelze použít.  
+- Přehrání média mohou být řízena hodin. Metody řízení média objektu nelze použít.  
   
--   Načtení média tak, že nastavíte <xref:System.Windows.Media.MediaTimeline> objektu <xref:System.Windows.Media.MediaTimeline.Source%2A> vlastnost, vytváření hodiny z časové osy a přiřazení hodin k objektu média. Médium se také načte tímto způsobem při <xref:System.Windows.Media.MediaTimeline> uvnitř <xref:System.Windows.Media.Animation.Storyboard> cíle <xref:System.Windows.Controls.MediaElement>.  
+- Načtení média tak, že nastavíte <xref:System.Windows.Media.MediaTimeline> objektu <xref:System.Windows.Media.MediaTimeline.Source%2A> vlastnost, vytváření hodiny z časové osy a přiřazení hodin k objektu média. Médium se také načte tímto způsobem při <xref:System.Windows.Media.MediaTimeline> uvnitř <xref:System.Windows.Media.Animation.Storyboard> cíle <xref:System.Windows.Controls.MediaElement>.  
   
  Ovládací prvek přehrávání médií v režimu hodiny <xref:System.Windows.Media.Animation.ClockController> ovládací prvek metody se musí použít. A <xref:System.Windows.Media.Animation.ClockController> se získávají z <xref:System.Windows.Media.Animation.ClockController> vlastnost <xref:System.Windows.Media.MediaClock>. Pokud se pokusíte použít metody ovládacího prvku buď <xref:System.Windows.Controls.MediaElement> nebo <xref:System.Windows.Media.MediaPlayer> objektu v režimu hodin <xref:System.InvalidOperationException> bude vyvolána výjimka.  
   

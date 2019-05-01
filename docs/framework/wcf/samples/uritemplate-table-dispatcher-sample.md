@@ -3,22 +3,22 @@ title: Ukázka dispečera tabulky UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 3b32975d-ba90-4c5c-83bc-2fbb48f11c0c
 ms.openlocfilehash: 800765c6b01e49b730414132ac64ab8eed3e9e5f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007562"
 ---
 # <a name="uritemplate-table-dispatcher-sample"></a>Ukázka dispečera tabulky UriTemplate
 <xref:System.UriTemplateTable> Třída poskytuje strukturu jako slovník asociativní tabulky pro práci se sadou <xref:System.UriTemplate> instancí. Tato ukázka demonstruje základní dispatching modul vyvíjené `UriTemplateTable`, běžný scénář využití pro `UriTemplateTable` třídy.  
   
  Tato ukázka demonstruje následující klíčové koncepty `UriTemplateTable` třídy:  
   
--   Přidružování delegátů pomocí `UriTemplates` v `UriTemplateTable`.  
+- Přidružování delegátů pomocí `UriTemplates` v `UriTemplateTable`.  
   
--   Pomocí <xref:System.UriTemplateTable.MatchSingle%2A> získat správný obslužné rutiny delegáta pro konkrétní identifikátorem URI.  
+- Pomocí <xref:System.UriTemplateTable.MatchSingle%2A> získat správný obslužné rutiny delegáta pro konkrétní identifikátorem URI.  
   
--   Vyvolání delegáta obslužné rutiny pro zpracování žádosti.  
+- Vyvolání delegáta obslužné rutiny pro zpracování žádosti.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   

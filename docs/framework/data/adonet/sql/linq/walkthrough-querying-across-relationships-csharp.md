@@ -3,11 +3,11 @@ title: 'Návod: Dotazování napříč relacemi (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
 ms.openlocfilehash: 6bd3255b49676b61a99f8416ab71c217d342e799
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033394"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Návod: Dotazování napříč relacemi (C#)
 Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
@@ -22,18 +22,18 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá ze tří hlavních úloh:  
   
--   Přidání entity třídy představující v tabulce objednávky v ukázkové databázi Northwind.  
+- Přidání entity třídy představující v tabulce objednávky v ukázkové databázi Northwind.  
   
--   Poznámky k doplnění `Customer` třídy k vylepšení vztah mezi `Customer` a `Order` třídy.  
+- Poznámky k doplnění `Customer` třídy k vylepšení vztah mezi `Customer` a `Order` třídy.  
   
--   Vytváření a spouštění dotazů k otestování získání `Order` informace s použitím `Customer` třídy.  
+- Vytváření a spouštění dotazů k otestování získání `Order` informace s použitím `Customer` třídy.  
   
 ## <a name="mapping-relationships-across-tables"></a>Mapování relací mezi tabulkami  
  Po `Customer` definici třídy, vytvořte `Order` definici třídy, která obsahuje následující kód, což znamená, že `Order.Customer` souvisí jako cizí klíč k `Customer.CustomerID`.  
   
 #### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat pořadí třída entity  
   
--   Zadejte nebo vložte následující kód za `Customer` třídy:  
+- Zadejte nebo vložte následující kód za `Customer` třídy:  
   
      [!code-csharp[DLinqWalk2CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#1)]  
   
@@ -42,7 +42,7 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
   
 #### <a name="to-annotate-the-customer-class"></a>K přidání poznámek ke třídě zákazníka  
   
--   Zadejte nebo vložte následující kód do `Customer` třídy:  
+- Zadejte nebo vložte následující kód do `Customer` třídy:  
   
      [!code-csharp[DLinqWalk2CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#2)]  
   

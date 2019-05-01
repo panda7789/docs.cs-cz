@@ -9,24 +9,24 @@ helpviewer_keywords:
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
 ms.openlocfilehash: e05d358452a247b0d071f78d19c0bf721502899a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018031"
 ---
 # <a name="serialization-in-net"></a>Serializace v .NET
 Serializace je proces převodu stav objektu do tvaru, který může být zachována nebo přenosu. Doplňkovým serializace je deserializace, která převádí na objekt datového proudu. Tyto procesy dohromady, povolit, aby snadno ukládat a přenesených údaje.  
   
-Služeb .NET features dvě technologie serializace:  
+.NET funkce dvě serializaci technologie:  
   
--   Binární serializace zachová věrnost typu, což je užitečné pro zachování stav objektu mezi různé volání aplikace. Například můžete sdílet objekt mezi různými aplikacemi pomocí jeho serializace do schránky. Může serializovat objekt do datového proudu, na disk do paměti, v síti a tak dále. Vzdálená komunikace používá serializace k předání objekty "hodnotou" z jedné domény počítače nebo aplikace do jiného.  
+- Binární serializace zachová věrnost typu, což je užitečné pro zachování stav objektu mezi různé volání aplikace. Například můžete sdílet objekt mezi různými aplikacemi pomocí jeho serializace do schránky. Může serializovat objekt do datového proudu, na disk do paměti, v síti a tak dále. Vzdálená komunikace používá serializace k předání objekty "hodnotou" z jedné domény počítače nebo aplikace do jiného.  
   
--   Serializace XML serializuje pouze veřejné vlastnosti a pole a nezachovává věrnost typu. To je užitečné, pokud chcete zadat nebo spotřebovat data bez omezení aplikace, která používá data. Protože kód XML je otevřený standard, je to atraktivní volba pro sdílení dat v rámci webu. Protokol SOAP je rovněž otevřený standard, díky čemuž je atraktivní výběru.  
+- Serializace XML serializuje pouze veřejné vlastnosti a pole a nezachovává věrnost typu. To je užitečné, pokud chcete zadat nebo spotřebovat data bez omezení aplikace, která používá data. Protože kód XML je otevřený standard, je to atraktivní volba pro sdílení dat v rámci webu. Protokol SOAP je rovněž otevřený standard, díky čemuž je atraktivní výběru.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 [Postupy: Serializace](../../../docs/standard/serialization/serialization-how-to-topics.md)  
-Obsahuje seznam odkazů na témata s postupy, které jsou obsažené v této části.
+Obsahuje odkazy na témata s postupy, které jsou obsaženy v této části.
   
 [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)  
 Popisuje binární serializace mechanismus, který je součástí common language runtime.

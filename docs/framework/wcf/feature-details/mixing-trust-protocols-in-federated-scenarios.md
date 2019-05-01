@@ -3,11 +3,11 @@ title: Smíšené používání protokolů Trust ve federovaných scénářích
 ms.date: 03/30/2017
 ms.assetid: d7b5fee9-2246-4b09-b8d7-9e63cb817279
 ms.openlocfilehash: ce5c3a1875d84d98068dcc78d8346a88bc0b28f3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50182904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62046681"
 ---
 # <a name="mixing-trust-protocols-in-federated-scenarios"></a>Smíšené používání protokolů Trust ve federovaných scénářích
 Můžou existovat scénáře, ve kterých federované klienti komunikují se službou a Token služby zabezpečení (STS), které nemají stejnou verzi vztah důvěryhodnosti. Služby mohou obsahovat WSDL `RequestSecurityTokenTemplate` kontrolní výraz se WS-Trust prvky, které jsou z různých verzí než Služba tokenů zabezpečení. V takovém případě klienta Windows Communication Foundation (WCF) převede prvky WS-Trust poslal `RequestSecurityTokenTemplate` tak, aby odpovídaly Služba tokenů zabezpečení důvěryhodnosti verze. WCF se stará verze neodpovídající důvěryhodnosti pouze pro standardní vazby. Všechny standardní algoritmus parametry, které jsou rozpoznány modulem WCF jsou součástí standardní vazbu. Toto téma popisuje chování WCF pomocí různých nastavení vztahu důvěryhodnosti mezi službou a služba tokenů zabezpečení.  
@@ -15,17 +15,17 @@ Můžou existovat scénáře, ve kterých federované klienti komunikují se slu
 ## <a name="rp-feb-2005-and-sts-feb-2005"></a>RP únor 2005 a služba tokenů zabezpečení únor 2005  
  WSDL pro předávající strany (RP) obsahuje následující prvky v rámci `RequestSecurityTokenTemplate` části:  
   
--   `CanonicalizationAlgorithm`  
+- `CanonicalizationAlgorithm`  
   
--   `EncryptionAlgorithm`  
+- `EncryptionAlgorithm`  
   
--   `EncryptWith`  
+- `EncryptWith`  
   
--   `SignWith`  
+- `SignWith`  
   
--   `KeySize`  
+- `KeySize`  
   
--   `KeyType`  
+- `KeyType`  
   
  Klient konfigurační soubor obsahuje seznam parametrů.  
   
@@ -34,19 +34,19 @@ Můžou existovat scénáře, ve kterých federované klienti komunikují se slu
 ## <a name="rp-trust-13-and-sts-trust-13"></a>Vztah důvěryhodnosti předávající strany 1.3 a služba tokenů zabezpečení důvěryhodnosti 1.3  
  Rozhraní jazyka WSDL pro poskytovatele prostředků obsahuje následující prvky v rámci `RequestSecurityTokenTemplate` části:  
   
--   `CanonicalizationAlgorithm`  
+- `CanonicalizationAlgorithm`  
   
--   `EncryptionAlgorithm`  
+- `EncryptionAlgorithm`  
   
--   `EncryptWith`  
+- `EncryptWith`  
   
--   `SignWith`  
+- `SignWith`  
   
--   `KeySize`  
+- `KeySize`  
   
--   `KeyType`  
+- `KeyType`  
   
--   `KeyWrapAlgorithm`  
+- `KeyWrapAlgorithm`  
   
  Obsahuje konfigurační soubor klienta `secondaryParameters` element, který obtéká parametry určené RP.  
   
@@ -55,17 +55,17 @@ Můžou existovat scénáře, ve kterých federované klienti komunikují se slu
 ## <a name="rp-trust-feb-2005-and-sts-trust-13"></a>1.3 vztah důvěryhodnosti předávající strany Trust Únor 2005 a služba tokenů zabezpečení  
  Obsahuje následující prvky v rozhraní jazyka WSDL pro RP `RequestSecurityTokenTemplate` části:  
   
--   `CanonicalizationAlgorithm`  
+- `CanonicalizationAlgorithm`  
   
--   `EncryptionAlgorithm`  
+- `EncryptionAlgorithm`  
   
--   `EncryptWith`  
+- `EncryptWith`  
   
--   `SignWith`  
+- `SignWith`  
   
--   `KeySize`  
+- `KeySize`  
   
--   `KeyType`  
+- `KeyType`  
   
  Klient konfigurační soubor obsahuje seznam parametrů.  
   
@@ -73,28 +73,28 @@ Můžou existovat scénáře, ve kterých federované klienti komunikují se slu
   
  Obslužné rutiny WCF `KeyType`, `KeySize`, a `TokenType` prvky následujícím způsobem:  
   
--   Stáhněte si jazyka WSDL, vytvoření vazby a přiřaďte `KeyType`, `KeySize`, a `TokenType` z parametrů předávající strany. Pak bude vygenerován soubor konfigurace klienta.  
+- Stáhněte si jazyka WSDL, vytvoření vazby a přiřaďte `KeyType`, `KeySize`, a `TokenType` z parametrů předávající strany. Pak bude vygenerován soubor konfigurace klienta.  
   
--   Klient nyní můžete měnit žádné parametry v konfiguračním souboru.  
+- Klient nyní můžete měnit žádné parametry v konfiguračním souboru.  
   
--   Za běhu, WCF, zkopíruje všechny parametry zadané pro `AdditionalTokenParameters` souboru konfigurace klientů s výjimkou `KeyType`, `KeySize` a `TokenType`, protože tyto parametry jsou zahrnuté během konfiguračního souboru generování.  
+- Za běhu, WCF, zkopíruje všechny parametry zadané pro `AdditionalTokenParameters` souboru konfigurace klientů s výjimkou `KeyType`, `KeySize` a `TokenType`, protože tyto parametry jsou zahrnuté během konfiguračního souboru generování.  
   
 ## <a name="rp-trust-13-and-sts-trust-feb-2005"></a>Vztah důvěryhodnosti předávající strany 1.3 a služba tokenů zabezpečení důvěryhodnosti únor 2005  
  Obsahuje následující prvky v rozhraní jazyka WSDL pro RP `RequestSecurityTokenTemplate` části:  
   
--   `CanonicalizationAlgorithm`  
+- `CanonicalizationAlgorithm`  
   
--   `EncryptionAlgorithm`  
+- `EncryptionAlgorithm`  
   
--   `EncryptWith`  
+- `EncryptWith`  
   
--   `SignWith`  
+- `SignWith`  
   
--   `KeySize`  
+- `KeySize`  
   
--   `KeyType`  
+- `KeyType`  
   
--   `KeyWrapAlgorithm`  
+- `KeyWrapAlgorithm`  
   
  Obsahuje konfigurační soubor klienta `secondaryParamters` element, který obtéká parametry určené RP.  
   

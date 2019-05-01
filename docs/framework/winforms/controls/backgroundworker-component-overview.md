@@ -18,26 +18,26 @@ helpviewer_keywords:
 - background operations
 ms.assetid: 64e9b3ab-7443-4a77-ab17-b8b8c0cb3f62
 ms.openlocfilehash: da535da0b0d1416597d2a62a96cec544d7be68fb
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011811"
 ---
 # <a name="backgroundworker-component-overview"></a>BackgroundWorker – přehled komponenty
 Existuje mnoho běžně provádí operace, které může trvat dlouhou dobu spuštění. Příklad:  
   
--   Soubory ke stažení bitové kopie  
+- Soubory ke stažení bitové kopie  
   
--   Volání webové služby  
+- Volání webové služby  
   
--   Soubor se stáhne a nahraje (včetně aplikace peer-to-peer)  
+- Soubor se stáhne a nahraje (včetně aplikace peer-to-peer)  
   
--   Komplexní místní výpočty  
+- Komplexní místní výpočty  
   
--   Databázové transakce  
+- Databázové transakce  
   
--   Místní disk, jeho pomalé vzhledem k přístupu do paměti udělený přístup  
+- Místní disk, jeho pomalé vzhledem k přístupu do paměti udělený přístup  
   
  Operace, jako je to může způsobit uživatelského rozhraní přestane reagovat, když jsou spuštěné. Pokud chcete, aby responzivní uživatelské rozhraní a se potýkají s dlouhým zpožděním spojené s takovými operacemi <xref:System.ComponentModel.BackgroundWorker> součást poskytuje pohodlné řešení.  
   

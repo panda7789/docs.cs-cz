@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Windows Forms, images
 ms.assetid: 7152b45b-a55c-49bc-8c78-ae002a844f71
 ms.openlocfilehash: 2ce19642b37946db7a172e61004688059dba61db
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62003935"
 ---
 # <a name="images-bitmaps-and-metafiles"></a>Obrázky, rastrové obrázky a metasoubory
 `Image` Třída je abstraktní základní třídu, která poskytuje metody pro práci s rastrové obrázky (rastrové obrázky) a vektorové obrázky (metasoubory). `Bitmap` Třídy a <xref:System.Drawing.Imaging.Metafile> obě dědí z třídy `Image` třídy. `Bitmap` Třída rozšiřuje možnosti `Image` třídy tím, že poskytuje další metody pro načítání, ukládání a manipulaci s rastrové obrázky. <xref:System.Drawing.Imaging.Metafile> Třída rozšiřuje možnosti `Image` třídy tím, že poskytuje další metody pro záznam a zkoumání vektorové obrázky.  

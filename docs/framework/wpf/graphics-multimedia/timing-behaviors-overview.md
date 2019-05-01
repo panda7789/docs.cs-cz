@@ -6,11 +6,11 @@ helpviewer_keywords:
 - behaviors [WPF], timing
 ms.assetid: 5b714d46-bd46-48b8-b467-b4be89ba3091
 ms.openlocfilehash: c3403a8602cc874e993bd649851b77d7bf652cce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002332"
 ---
 # <a name="timing-behaviors-overview"></a>Přehled chování časování
 Toto téma popisuje chování časování animací a jiných <xref:System.Windows.Media.Animation.Timeline> objekty.  
@@ -106,9 +106,9 @@ Toto téma popisuje chování časování animací a jiných <xref:System.Window
   
  Následující příklad vytvoří <xref:System.Windows.Media.Animation.Storyboard> , který má dva podřízené <xref:System.Windows.Media.Animation.DoubleAnimation> objekty. Obě <xref:System.Windows.Media.Animation.DoubleAnimation> animace objektů <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> od 0 do 100. <xref:System.Windows.Shapes.Rectangle> Elementy mají jiné animovat <xref:System.Windows.FrameworkElement.Width%2A> hodnoty 500 [zařízeních nezávislých na pixelech].  
   
--   <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> Vlastnosti prvního <xref:System.Windows.Media.Animation.DoubleAnimation> je nastavena na <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, výchozí hodnota. V důsledku toho zůstane šířkou pravoúhelníku 100 po <xref:System.Windows.Media.Animation.DoubleAnimation> skončí.  
+- <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> Vlastnosti prvního <xref:System.Windows.Media.Animation.DoubleAnimation> je nastavena na <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, výchozí hodnota. V důsledku toho zůstane šířkou pravoúhelníku 100 po <xref:System.Windows.Media.Animation.DoubleAnimation> skončí.  
   
--   <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> Vlastnost druhého <xref:System.Windows.Media.Animation.DoubleAnimation> je nastavena na <xref:System.Windows.Media.Animation.FillBehavior.Stop>. V důsledku toho <xref:System.Windows.FrameworkElement.Width%2A> druhého <xref:System.Windows.Shapes.Rectangle> se vrátí do 500 po <xref:System.Windows.Media.Animation.DoubleAnimation> skončí.  
+- <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> Vlastnost druhého <xref:System.Windows.Media.Animation.DoubleAnimation> je nastavena na <xref:System.Windows.Media.Animation.FillBehavior.Stop>. V důsledku toho <xref:System.Windows.FrameworkElement.Width%2A> druhého <xref:System.Windows.Shapes.Rectangle> se vrátí do 500 po <xref:System.Windows.Media.Animation.DoubleAnimation> skončí.  
   
  [!code-xaml[animation_ovws_snippet#TBFillBehaviorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/TimingBehaviorsExample1.xaml#tbfillbehaviorexample)]  
   
@@ -116,11 +116,11 @@ Toto téma popisuje chování časování animací a jiných <xref:System.Window
 ## <a name="properties-that-control-the-speed-of-a-timeline"></a>Vlastnosti, které řídí rychlosti časové osy  
  <xref:System.Windows.Media.Animation.Timeline> Třída poskytuje tři vlastnosti k určení jeho rychlost:  
   
--   <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> – Tento kurz, relativně k nadřazenému, jakou dobu postupuje pro Určuje <xref:System.Windows.Media.Animation.Timeline>. Hodnoty větší než jedna zvýšení rychlosti <xref:System.Windows.Media.Animation.Timeline> a jeho podřízených <xref:System.Windows.Media.Animation.Timeline> objektů; hodnoty mezi 0 a 1 zpomalit ho. Hodnota objektu znamená, že <xref:System.Windows.Media.Animation.Timeline> postupuje za stejnou sazbu jako jeho nadřazený objekt. <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> Časové osy kontejneru ovlivní všechny jeho podřízené <xref:System.Windows.Media.Animation.Timeline> také objekty.  
+- <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> – Tento kurz, relativně k nadřazenému, jakou dobu postupuje pro Určuje <xref:System.Windows.Media.Animation.Timeline>. Hodnoty větší než jedna zvýšení rychlosti <xref:System.Windows.Media.Animation.Timeline> a jeho podřízených <xref:System.Windows.Media.Animation.Timeline> objektů; hodnoty mezi 0 a 1 zpomalit ho. Hodnota objektu znamená, že <xref:System.Windows.Media.Animation.Timeline> postupuje za stejnou sazbu jako jeho nadřazený objekt. <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> Časové osy kontejneru ovlivní všechny jeho podřízené <xref:System.Windows.Media.Animation.Timeline> také objekty.  
   
--   <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> – Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy strávený zrychlení. Příklad najdete v tématu [jak: Zrychlení a zpomalení animace](how-to-accelerate-or-decelerate-an-animation.md). 
+- <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> – Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy strávený zrychlení. Příklad najdete v tématu [jak: Zrychlení a zpomalení animace](how-to-accelerate-or-decelerate-an-animation.md). 
   
--   <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> -Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy strávený zpomalení. Příklad najdete v tématu [jak: Zrychlení a zpomalení animace](how-to-accelerate-or-decelerate-an-animation.md).  
+- <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> -Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy strávený zpomalení. Příklad najdete v tématu [jak: Zrychlení a zpomalení animace](how-to-accelerate-or-decelerate-an-animation.md).  
   
 ## <a name="see-also"></a>Viz také:
 

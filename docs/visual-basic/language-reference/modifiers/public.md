@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
 ms.openlocfilehash: 0c85564503f3c83e436044cd92ee3014945f1ef3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58818381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051868"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek nemá žádné omezení přístupu.  
@@ -25,15 +25,15 @@ Určuje, že nejmíň jeden deklarovaný programový prvek nemá žádné omezen
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `Public` pouze na úrovni modulu, rozhraní nebo oboru názvů. To znamená, že deklarace kontext `Public` elementu musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídy nebo struktury a nemůže být procedurou.  
+- **Místní deklarace.** Můžete použít `Public` pouze na úrovni modulu, rozhraní nebo oboru názvů. To znamená, že deklarace kontext `Public` elementu musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídy nebo struktury a nemůže být procedurou.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** Veškerý kód, který může přistupovat k modulu, třídy nebo struktury lze přistupovat k jeho `Public` elementy.  
+- **Úroveň přístupu.** Veškerý kód, který může přistupovat k modulu, třídy nebo struktury lze přistupovat k jeho `Public` elementy.  
   
--   **Výchozí přístup.** Místní proměnná uvnitř procedury výchozí veřejný přístup, a nemůže používat žádné modifikátory přístupu na nich.  
+- **Výchozí přístup.** Místní proměnná uvnitř procedury výchozí veřejný přístup, a nemůže používat žádné modifikátory přístupu na nich.  
   
--   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+- **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `Public` Modifikátor lze použít v těchto kontextech:  
   

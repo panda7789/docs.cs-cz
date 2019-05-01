@@ -3,11 +3,11 @@ title: Důvěryhodná služba facade
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
 ms.openlocfilehash: 4921b2746b9df362a0bb3e6048602d41f3f2faaf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007692"
 ---
 # <a name="trusted-facade-service"></a>Důvěryhodná služba facade
 Tento ukázkový scénář ukazuje, jak tok volajícího informace o identitách z jedné služby do jiného pomocí Windows Communication Foundation (WCF) Infrastruktura zabezpečení.  
@@ -16,11 +16,11 @@ Tento ukázkový scénář ukazuje, jak tok volajícího informace o identitách
   
  Tento příklad se skládá z následujících součástí:  
   
--   Kalkulačka klienta  
+- Kalkulačka klienta  
   
--   Kalkulačka průčelí služby  
+- Kalkulačka průčelí služby  
   
--   Kalkulačka back-end službou  
+- Kalkulačka back-end službou  
   
  Adaptační vrstva služby zodpovídá za ověření žádosti a ověřování volající. Po úspěšném ověření a ověření předá požadavek do služby back-end pomocí řízené komunikační kanál z hraniční sítě k interní síti. Jako součást předaný požadavek průčelí služba obsahuje informace o identitu volajícího tak, aby službě back-end tyto informace můžete použít v jeho zpracování. Identita volajícího se přenáší prostřednictvím `Username` token zabezpečení ve zprávě `Security` záhlaví. Ukázka používá k přenosu a získání informací z Infrastruktura zabezpečení WCF `Security` záhlaví.  
   
@@ -234,7 +234,7 @@ Press <ENTER> to terminate client.
   
  Následující body nabízí stručný přehled o různých částech dávkové soubory.  
   
--   Vytváří se certifikát serveru.  
+- Vytváří se certifikát serveru.  
   
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít.  
   
@@ -250,7 +250,7 @@ Press <ENTER> to terminate client.
   
      `%SERVER_NAME%` Proměnné Určuje název serveru – výchozí hodnota je localhost. Certifikát je uložen v úložišti LocalMachine.  
   
--   Instalace služby průčelí certifikátu do úložiště důvěryhodných certifikátů klienta.  
+- Instalace služby průčelí certifikátu do úložiště důvěryhodných certifikátů klienta.  
   
      Následující řádek certifikát služby průčelí zkopíruje do úložiště důvěryhodných osob klienta. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   

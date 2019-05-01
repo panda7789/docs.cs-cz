@@ -3,20 +3,20 @@ title: Odvozování tabulek
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
 ms.openlocfilehash: 2c2a93d413f301dc3006b701e4bc7979a3fa7a1d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034252"
 ---
 # <a name="inferring-tables"></a>Odvozování tabulek
 Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET nejdřív zjistí prvky XML, které představují tabulky. Tabulka pro za následek následující struktury XML **datovou sadu** schématu:  
   
--   Elementy s atributy  
+- Elementy s atributy  
   
--   Elementů s podřízenými prvky  
+- Elementů s podřízenými prvky  
   
--   Opakující se elementy  
+- Opakující se elementy  
   
 ## <a name="elements-with-attributes"></a>Elementy s atributy  
  Prvky, které mají atributy určené v nich za následek odvozené tabulky. Zvažte například následující kód XML:  

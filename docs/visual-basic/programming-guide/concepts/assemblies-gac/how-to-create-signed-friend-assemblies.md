@@ -3,11 +3,11 @@ title: 'Postupy: Vytváření podepsaných přátelských sestavení (Visual Bas
 ms.date: 03/14/2018
 ms.assetid: f2afd83d-b044-484b-a56d-56d0a8a40647
 ms.openlocfilehash: 4ff32015647a565f7f68e944ae028deb7f738e28
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62022269"
 ---
 # <a name="how-to-create-signed-friend-assemblies-visual-basic"></a>Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
@@ -18,15 +18,15 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
   
 2. Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
-    1.  Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:  
+    1. Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:  
   
          `sn -k FriendAssemblies.snk`  
   
-    2.  Extrahujte veřejný klíč z FriendAssemblies.snk a vložit ho do FriendAssemblies.publickey:  
+    2. Extrahujte veřejný klíč z FriendAssemblies.snk a vložit ho do FriendAssemblies.publickey:  
   
          `sn -p FriendAssemblies.snk FriendAssemblies.publickey`  
   
-    3.  Zobrazení veřejného klíče uložené v souboru FriendAssemblies.publickey:  
+    3. Zobrazení veřejného klíče uložené v souboru FriendAssemblies.publickey:  
   
          `sn -tp FriendAssemblies.publickey`  
   

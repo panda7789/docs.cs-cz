@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
 ms.openlocfilehash: 4c1149c02c32c357c4817af539eb0cf529266181
-ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019526"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -35,11 +35,11 @@ Některé technologie rozhraní .NET Framework nejsou k dispozici v aktuální v
 
 Následující seznam obsahuje většinu technologie, které nejsou k dispozici v .NET Core 2.x:
 
--   Webové formuláře ASP.NET. Tato technologie je dostupná pouze na rozhraní .NET Framework. Aktuálně nejsou žádné plány zpřístupnit webových formulářů ASP.NET pro .NET Core.
+- Webové formuláře ASP.NET. Tato technologie je dostupná pouze na rozhraní .NET Framework. Aktuálně nejsou žádné plány zpřístupnit webových formulářů ASP.NET pro .NET Core.
 
--   Služby WCF. I když [knihovna klienta WCF](https://github.com/dotnet/wcf) je k dispozici pro využívání služeb WCF v .NET Core, podle střední 2017, implementaci serveru WCF je k dispozici pouze v rozhraní .NET Framework. Tento scénář může považovat za v budoucích verzích .NET Core, existují i některá rozhraní API zařazena [Windows Compatibility Pack](../../../core/porting/windows-compat-pack.md).
+- Služby WCF. I když [knihovna klienta WCF](https://github.com/dotnet/wcf) je k dispozici pro využívání služeb WCF v .NET Core, podle střední 2017, implementaci serveru WCF je k dispozici pouze v rozhraní .NET Framework. Tento scénář může považovat za v budoucích verzích .NET Core, existují i některá rozhraní API zařazena [Windows Compatibility Pack](../../../core/porting/windows-compat-pack.md).
 
--   Související pracovní postup služby. Windows Workflow Foundation (WF), služby pracovních postupů (WCF a WF v jedné službě) a služby WCF Data Services (dříve označované jako služby ADO.NET Data Services) jsou k dispozici pouze v rozhraní .NET Framework. Aktuálně nejsou žádné plány a vrátit je do .NET Core.
+- Související pracovní postup služby. Windows Workflow Foundation (WF), služby pracovních postupů (WCF a WF v jedné službě) a služby WCF Data Services (dříve označované jako služby ADO.NET Data Services) jsou k dispozici pouze v rozhraní .NET Framework. Aktuálně nejsou žádné plány a vrátit je do .NET Core.
 
 Kromě technologie uvedené v oficiální [.NET Core – plán](https://github.com/aspnet/Home/wiki/Roadmap), další funkce může přenést až po .NET Core. Chcete-li zobrazit úplný seznam, podívejte se na položky označené jako [port core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core) na webu CoreFX GitHub. Všimněte si, že tento seznam nepředstavuje závazek zpřístupnit tyto komponenty pro .NET Core od společnosti Microsoft – položky jednoduše zachytit požadavky od komunity. Pokud vás zajímají některé z těchto komponent uvedených výše, zvažte možnost účasti v diskusích u na Githubu tak, aby vašeho hlasu, jak můžete buďte vyslyšeni. A pokud si myslíte, něco chybí, [soubor nový problém v úložišti CoreFX](https://github.com/dotnet/corefx/issues/new).
 
@@ -53,16 +53,16 @@ Do té doby Pokud jakoukoli platformu nebo služby Azure stále nepodporuje .NET
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Průvodce platformou .NET Core**  
+- **Průvodce platformou .NET Core**  
     [https://docs.microsoft.com/dotnet/core/index](../../../core/index.md)
 
--   **Portování z rozhraní .NET Framework do .NET Core**  
+- **Portování z rozhraní .NET Framework do .NET Core**  
     [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
 
--   **Průvodce rozhraním .NET Framework v Dockeru**  
+- **Průvodce rozhraním .NET Framework v Dockeru**  
     [https://docs.microsoft.com/dotnet/framework/docker/](../../../framework/docker/index.md)
 
--   **.NET – přehled komponenty**  
+- **.NET – přehled komponenty**  
     [https://docs.microsoft.com/dotnet/standard/components](../../components.md)
 
 >[!div class="step-by-step"]

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
 ms.openlocfilehash: 702d88f844f00b86e64404bd100fd6b3d34971c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033472"
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Načítání objektů z mezipaměti identit
 Toto téma popisuje typy LINQ na SQL dotazy, které vracejí objekt z mezipaměti identit, které spravuje <xref:System.Data.Linq.DataContext>.  
@@ -24,39 +24,39 @@ Toto téma popisuje typy LINQ na SQL dotazy, které vracejí objekt z mezipamět
   
  Dotaz musí být v jednom z následujících forem obecné načíst objekt z mezipaměti identit:  
   
--   <xref:System.Data.Linq.Table%601> `.Function1(` `predicate` `)`  
+- <xref:System.Data.Linq.Table%601> `.Function1(` `predicate` `)`  
   
--   <xref:System.Data.Linq.Table%601> `.Function1(` `predicate` `).Function2()`  
+- <xref:System.Data.Linq.Table%601> `.Function1(` `predicate` `).Function2()`  
   
  V tyto obecné formuláře `Function1`, `Function2`, a `predicate` jsou definovány takto.  
   
  `Function1` může být kterýkoli z následujících:  
   
--   <xref:System.Linq.Queryable.Where%2A>  
+- <xref:System.Linq.Queryable.Where%2A>  
   
--   <xref:System.Linq.Queryable.First%2A>  
+- <xref:System.Linq.Queryable.First%2A>  
   
--   <xref:System.Linq.Queryable.FirstOrDefault%2A>  
+- <xref:System.Linq.Queryable.FirstOrDefault%2A>  
   
--   <xref:System.Linq.Queryable.Single%2A>  
+- <xref:System.Linq.Queryable.Single%2A>  
   
--   <xref:System.Linq.Queryable.SingleOrDefault%2A>  
+- <xref:System.Linq.Queryable.SingleOrDefault%2A>  
   
  `Function2` může být kterýkoli z následujících:  
   
--   <xref:System.Linq.Queryable.First%2A>  
+- <xref:System.Linq.Queryable.First%2A>  
   
--   <xref:System.Linq.Queryable.FirstOrDefault%2A>  
+- <xref:System.Linq.Queryable.FirstOrDefault%2A>  
   
--   <xref:System.Linq.Queryable.Single%2A>  
+- <xref:System.Linq.Queryable.Single%2A>  
   
--   <xref:System.Linq.Queryable.SingleOrDefault%2A>  
+- <xref:System.Linq.Queryable.SingleOrDefault%2A>  
   
  `predicate` musí být výraz, ve kterém je nastavena vlastnost primárního klíče objektu na konstantní hodnotu. Pokud má objekt definován ve více než jednu vlastnost primární klíč, každá vlastnost primárního klíče musí nastavit na konstantní hodnotu. Následují příklady formuláře `predicate` musíte provést:  
   
--   `c => c.PK == constant_value`  
+- `c => c.PK == constant_value`  
   
--   `c => c.PK1 == constant_value1 && c=> c.PK2 == constant_value2`  
+- `c => c.PK1 == constant_value1 && c=> c.PK2 == constant_value2`  
   
 ## <a name="example"></a>Příklad  
  Následující kód obsahuje příklady typů LINQ dotazy SQL, které načíst objekt z mezipaměti identit.  

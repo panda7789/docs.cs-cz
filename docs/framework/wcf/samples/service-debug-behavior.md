@@ -3,11 +3,11 @@ title: Chování ladění služby
 ms.date: 03/30/2017
 ms.assetid: 9d8fd3fb-dc39-427a-8235-336a7e7162ba
 ms.openlocfilehash: bfed164093e10c070b24832cf5a3be362ad3bc56
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007913"
 ---
 # <a name="service-debug-behavior"></a>Chování ladění služby
 Tato ukázka předvádí, jak lze konfigurovat nastavení chování ladění služby. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka explicitně definuje chování ladění služby v konfiguračním souboru. To je možné provést imperativně v kódu.  
@@ -33,12 +33,12 @@ Tato ukázka předvádí, jak lze konfigurovat nastavení chování ladění slu
   
  [\<serviceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) je prvek konfigurace, který umožňuje změnit vlastnosti chování ladění služby. Uživatel může upravit toto chování a dosáhnout následující:  
   
--   To umožňuje službě vrátit jakoukoliv výjimku, která je vyvolána kódem aplikace, i v případě, že výjimka není deklarován pomocí <xref:System.ServiceModel.FaultContractAttribute>. To se provádí nastavením `includeExceptionDetailInFaults` k `true`. Toto nastavení je užitečné při ladění v případech, kde je serveru vyvolání neočekávané výjimky.  
+- To umožňuje službě vrátit jakoukoliv výjimku, která je vyvolána kódem aplikace, i v případě, že výjimka není deklarován pomocí <xref:System.ServiceModel.FaultContractAttribute>. To se provádí nastavením `includeExceptionDetailInFaults` k `true`. Toto nastavení je užitečné při ladění v případech, kde je serveru vyvolání neočekávané výjimky.  
   
     > [!IMPORTANT]
     >  Není bezpečné zapnout toto nastavení v produkčním prostředí. Server neočekávané výjimky může mít některé informace, která není určená pro klienta a proto nastavení `includeExceptionDetailsInFaults` k `true` může vést úniku informací.  
   
--   [ \<ServiceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) také umožňuje uživatelům povolit nebo zakázat na stránce nápovědy. Každá služba Volitelně můžete zveřejnit stránce nápovědy, který obsahuje informace o službě včetně koncový bod pro získání WSDL pro službu. To se dá nastavit tak, že nastavíte `httpHelpPageEnabled` k `true`. To umožňuje na stránce nápovědy, který se má vrátit požadavek GET na základní adresu služby. Tuto adresu můžete změnit nastavením jiný atribut `httpHelpPageUrl`. Lze zvýšit tím zabezpečení pomocí protokolu HTTPS místo protokolu HTTP. To můžete udělat tak, že nastavíte `httpsHelpPageEnabled` a `httpsHelpPageUrl`.  
+- [ \<ServiceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) také umožňuje uživatelům povolit nebo zakázat na stránce nápovědy. Každá služba Volitelně můžete zveřejnit stránce nápovědy, který obsahuje informace o službě včetně koncový bod pro získání WSDL pro službu. To se dá nastavit tak, že nastavíte `httpHelpPageEnabled` k `true`. To umožňuje na stránce nápovědy, který se má vrátit požadavek GET na základní adresu služby. Tuto adresu můžete změnit nastavením jiný atribut `httpHelpPageUrl`. Lze zvýšit tím zabezpečení pomocí protokolu HTTPS místo protokolu HTTP. To můžete udělat tak, že nastavíte `httpsHelpPageEnabled` a `httpsHelpPageUrl`.  
   
  Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. První tři operace (přidání, odečíst a násobení) musí být úspěšný. Poslední operace ("dělení") se nezdaří s dělení nulovou výjimky.  
   

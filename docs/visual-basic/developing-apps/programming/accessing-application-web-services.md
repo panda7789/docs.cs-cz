@@ -7,11 +7,11 @@ helpviewer_keywords:
 - applications [Visual Basic], Web services
 ms.assetid: 8ad5405b-e771-42b1-82d3-ce97af2cea9e
 ms.openlocfilehash: 453dc05a8715d3ab096c0bdd5ed75d601bf1b181
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58818823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014385"
 ---
 # <a name="accessing-application-web-services-visual-basic"></a>Přístup k aplikačním webovým službám (Visual Basic)
 `My.WebServices` Objekt, který poskytuje instance každou webovou službu odkazuje aktuální projekt. Každá instance je vytvořena na vyžádání. Můžete k těmto webovým službám prostřednictvím vlastnosti `My.WebServices` objektu. Název vlastnosti je stejný jako název webové služby, který přistupuje k vlastnosti. Všechny třídy, která dědí z <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> je webová služba.  

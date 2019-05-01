@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
 ms.openlocfilehash: 885e6bc011041320a3dc7b17d84b2541bf030adf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59168308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033459"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrácení nebo přeskočení prvků v posloupnosti
 Použití <xref:System.Linq.Queryable.Take%2A> operátor potom přeskočit zbývající a vrátí daný počet prvků v sekvenci.  
@@ -22,9 +22,9 @@ Použití <xref:System.Linq.Queryable.Take%2A> operátor potom přeskočit zbýv
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží <xref:System.Linq.Queryable.Skip%2A> pomocí poddotazu SQL `NOT EXISTS` klauzuli. Tento překlad má následující omezení:  
   
--   Argument musí být sada. Multisets nejsou podporovány, i v případě, že řazení.  
+- Argument musí být sada. Multisets nejsou podporovány, i v případě, že řazení.  
   
--   Generování dotazu může být mnohem složitější než dotaz vygenerovaný pro základní dotaz, na kterém <xref:System.Linq.Queryable.Skip%2A> platí. Tato složitost může způsobit snížení výkonu nebo dokonce i vypršení časového limitu.  
+- Generování dotazu může být mnohem složitější než dotaz vygenerovaný pro základní dotaz, na kterém <xref:System.Linq.Queryable.Skip%2A> platí. Tato složitost může způsobit snížení výkonu nebo dokonce i vypršení časového limitu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá `Take` vybrat prvních pět `Employees` pověřili. Všimněte si, že kolekce je nejprve seřazené podle `HireDate`.  

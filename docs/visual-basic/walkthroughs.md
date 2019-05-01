@@ -8,11 +8,11 @@ helpviewer_keywords:
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
 ms.openlocfilehash: 928df9baa770185fd5d012e760ca96f3f878cf88
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62021151"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -77,5 +77,5 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Uchování objektu v jazyce Visual Basic](../visual-basic/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
  Ukazuje, jak vytvořit jednoduchý objekt a zachovat data do souboru.  
   
- [Návod: Podpora včasného testování funkcí generování před využitím](/visualstudio/ide/walkthrough-test-first-support-with-the-generate-from-usage-feature)  
+ [Návod: Podpora včasného testování s funkcí Generování před využitím](/visualstudio/ide/walkthrough-test-first-support-with-the-generate-from-usage-feature)  
  Ukazuje, jak včasného testování vývoje, ve kterém nejprve zápis testů jednotek a teprve pak píšete kód zdroj provádět testy úspěšné.

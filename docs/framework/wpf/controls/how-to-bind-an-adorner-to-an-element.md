@@ -9,11 +9,11 @@ helpviewer_keywords:
 - adorners [WPF], binding to specified UIElements
 ms.assetid: b2101611-a0ee-4137-bdb8-9b3673d2e6b9
 ms.openlocfilehash: b6909fec466c2b31a7f4156c43b21a0c724f0217
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018967"
 ---
 # <a name="how-to-bind-an-adorner-to-an-element"></a>Postupy: Svázání doplňku pro úpravy s elementem
 Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplňku k zadané <xref:System.Windows.UIElement>.  

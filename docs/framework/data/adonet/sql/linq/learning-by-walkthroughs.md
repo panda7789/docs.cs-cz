@@ -3,11 +3,11 @@ title: Učení podle návodů
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
 ms.openlocfilehash: 611644ce9d6f95bc4113b81bfff36ecaf9cf0b4a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033525"
 ---
 # <a name="learning-by-walkthroughs"></a>Učení podle návodů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace poskytuje několik návody. Toto téma řeší některé problémy obecného průvodce (včetně Poradce při potížích) a obsahuje odkazy na několik základní návody pro získání informací o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -30,20 +30,20 @@ ms.locfileid: "59329307"
 ## <a name="general"></a>Obecné  
  Tyto informace se vztahují na tyto kurzy obecně platí:  
   
--   Prostředí: Každý [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návod používá jako jeho integrované vývojové prostředí (IDE) sady Visual Studio.  
+- Prostředí: Každý [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návod používá jako jeho integrované vývojové prostředí (IDE) sady Visual Studio.  
   
--   Moduly SQL: Tyto postupy jsou zapsány do implementovaná pomocí systému SQL Server Express. Pokud nemáte SQL Server Express, můžete stáhnout zdarma. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+- Moduly SQL: Tyto postupy jsou zapsány do implementovaná pomocí systému SQL Server Express. Pokud nemáte SQL Server Express, můžete stáhnout zdarma. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
     > [!NOTE]
     >  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návody pro použití názvu souboru jako připojovací řetězec. Stačí zadat název souboru je usnadnění, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje pro uživatele systému SQL Server Express. Vždy věnujte pozornost problémy se zabezpečením. Další informace najdete v tématu [zabezpečení v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návody pro obvykle vyžadují ukázkové databáze Northwind. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návody pro obvykle vyžadují ukázkové databáze Northwind. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
--   Dialogová okna a příkazy nabídek, které se zobrazí v návodech může lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici Visual Studio. Chcete-li změnit nastavení, klikněte na tlačítko **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
+- Dialogová okna a příkazy nabídek, které se zobrazí v návodech může lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici Visual Studio. Chcete-li změnit nastavení, klikněte na tlačítko **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
--   Návody, které odkazují na víceúrovňové scénáře server se musí nacházet v počítači, který se liší od vývojového počítače a musí mít příslušná oprávnění pro přístup k serveru.  
+- Návody, které odkazují na víceúrovňové scénáře server se musí nacházet v počítači, který se liší od vývojového počítače a musí mít příslušná oprávnění pro přístup k serveru.  
   
--   Je název třídy, která obvykle představuje v tabulce objednávky v ukázkové databázi Northwind `[Order]`. Uvození se totiž `Order` je klíčové slovo v jazyce Visual Basic.  
+- Je název třídy, která obvykle představuje v tabulce objednávky v ukázkové databázi Northwind `[Order]`. Uvození se totiž `Order` je klíčové slovo v jazyce Visual Basic.  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
  Protože nemáte dostatečná oprávnění pro přístup k databází používaných v těchto kurzech, může dojít k chybám za běhu. Viz následující postup vám pomůže vyřešit nejčastější z těchto problémů.  

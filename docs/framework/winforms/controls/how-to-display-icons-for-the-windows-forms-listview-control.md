@@ -12,11 +12,11 @@ helpviewer_keywords:
 - list views [Windows Forms], displaying icons
 ms.assetid: 9d577542-8595-429b-99e5-078770ec9d35
 ms.openlocfilehash: 8e4ae744eecbe894767114179dd63651828b191b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013436"
 ---
 # <a name="how-to-display-icons-for-the-windows-forms-listview-control"></a>Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek mohl zobrazit ikony ze tří seznamů obrázků. Zobrazení seznamu, podrobnosti a SmallIcon zobrazit obrázky ze zadaného v seznamu obrázků <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnost. Zobrazení LargeIcon zobrazuje obrázky ze zadaného v seznamu obrázků <xref:System.Windows.Forms.ListView.LargeImageList%2A> vlastnost. Zobrazení seznamu můžete také zobrazit další sadu ikon, nastavte <xref:System.Windows.Forms.ListView.StateImageList%2A> vlastnost vedle velké nebo malé ikony. Další informace o seznamech image, najdete v části [komponenty ImageList](imagelist-component-windows-forms.md) a [jak: Přidání a odebrání obrázků se Windows Forms ImageList – komponenta](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  

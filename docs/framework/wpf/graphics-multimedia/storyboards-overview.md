@@ -10,11 +10,11 @@ helpviewer_keywords:
 - timelines [WPF]
 ms.assetid: 1a698c3c-30f1-4b30-ae56-57e8a39811bd
 ms.openlocfilehash: 6b178ac6b93205afebb1bea45f1b7e94826cb670
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59124836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002167"
 ---
 # <a name="storyboards-overview"></a>Přehled scénářů
 Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboard> objekty k uspořádání a použití animací. Popisuje, jak interaktivně pracovat s <xref:System.Windows.Media.Animation.Storyboard> objektů a popisuje nepřímé vlastnost cílení na syntaxi.  
@@ -29,11 +29,11 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  A <xref:System.Windows.Media.Animation.Storyboard> k typu časové osy kontejneru, který obsahuje cílení informace o časových os obsahuje. Scénář může obsahovat jakýkoli typ <xref:System.Windows.Media.Animation.Timeline>, včetně jiné časové osy kontejneru a animace. <xref:System.Windows.Media.Animation.Storyboard> objekty umožňují kombinovat časové osy, které ovlivňují celou řadu objektů a vlastností do stromu jediné časové osy, usnadňuje k uspořádání a řízení chování komplexní časování. Předpokládejme například, že chcete tlačítko, které nemá tyto tři věci.  
   
--   Růst a měnit barvy, když uživatel vybere tlačítko.  
+- Růst a měnit barvy, když uživatel vybere tlačítko.  
   
--   Zmenšit okamžitě a pak zpátky na původní velikost při kliknutí na.  
+- Zmenšit okamžitě a pak zpátky na původní velikost při kliknutí na.  
   
--   Zmenšit a má vyblednout krytí 50 procent, když bude zakázáno.  
+- Zmenšit a má vyblednout krytí 50 procent, když bude zakázáno.  
   
  V takovém případě máte víc kopií animace, které se vztahují ke stejnému objektu a chcete přehrát v různou dobu, závisí na stav tlačítka. <xref:System.Windows.Media.Animation.Storyboard> objekty umožňují organizovat animace a použít je ve skupinách na jeden nebo více objektů.  
   
@@ -43,11 +43,11 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Například můžete použít <xref:System.Windows.Media.Animation.Storyboard> můžete provádět následující:  
   
--   Animace <xref:System.Windows.Media.SolidColorBrush> (Non-framework prvek), která jsou vykreslovány na pozadí tlačítka (typ <xref:System.Windows.FrameworkElement>),  
+- Animace <xref:System.Windows.Media.SolidColorBrush> (Non-framework prvek), která jsou vykreslovány na pozadí tlačítka (typ <xref:System.Windows.FrameworkElement>),  
   
--   Animace <xref:System.Windows.Media.SolidColorBrush> (Non-framework prvek), která jsou vykreslovány výplně <xref:System.Windows.Media.GeometryDrawing> (Non-framework element) zobrazí pomocí <xref:System.Windows.Controls.Image> (<xref:System.Windows.FrameworkElement>).  
+- Animace <xref:System.Windows.Media.SolidColorBrush> (Non-framework prvek), která jsou vykreslovány výplně <xref:System.Windows.Media.GeometryDrawing> (Non-framework element) zobrazí pomocí <xref:System.Windows.Controls.Image> (<xref:System.Windows.FrameworkElement>).  
   
--   V kódu, animace <xref:System.Windows.Media.SolidColorBrush> deklarovanou třídou, která obsahuje také <xref:System.Windows.FrameworkElement>, pokud <xref:System.Windows.Media.SolidColorBrush> zaregistrovaného na jeho název, který <xref:System.Windows.FrameworkElement>.  
+- V kódu, animace <xref:System.Windows.Media.SolidColorBrush> deklarovanou třídou, která obsahuje také <xref:System.Windows.FrameworkElement>, pokud <xref:System.Windows.Media.SolidColorBrush> zaregistrovaného na jeho název, který <xref:System.Windows.FrameworkElement>.  
   
  Však nelze použít <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.Media.SolidColorBrush> nezaregistrovala stejný název jako <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>, nebo se používá k nastavení vlastností <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>.  
   
@@ -140,9 +140,9 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Where  
   
--   *ElementPropertyName* zůstává ve vlastnictví <xref:System.Windows.FrameworkElement> která <xref:System.Windows.Freezable> slouží k nastavení, a  
+- *ElementPropertyName* zůstává ve vlastnictví <xref:System.Windows.FrameworkElement> která <xref:System.Windows.Freezable> slouží k nastavení, a  
   
--   *FreezablePropertyName* zůstává ve vlastnictví <xref:System.Windows.Freezable> pro animaci.  
+- *FreezablePropertyName* zůstává ve vlastnictví <xref:System.Windows.Freezable> pro animaci.  
   
  Následující kód ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> lze nastavit  
   
@@ -186,9 +186,9 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Where  
   
--   *OwnerPropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, která obsahuje identifikátor <xref:System.Windows.FrameworkElement> vlastnosti objektu, který <xref:System.Windows.Freezable> slouží k nastavení, a  
+- *OwnerPropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, která obsahuje identifikátor <xref:System.Windows.FrameworkElement> vlastnosti objektu, který <xref:System.Windows.Freezable> slouží k nastavení, a  
   
--   *FreezablePropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, která obsahuje identifikátor vlastnosti k cíli.  
+- *FreezablePropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, která obsahuje identifikátor vlastnosti k cíli.  
   
  Následující příklad ukazuje <xref:System.Windows.PropertyPath.Path%2A> , který doprovází <xref:System.Windows.PropertyPath.PathParameters%2A> definované v předchozím příkladu.
   
@@ -225,17 +225,17 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
 ## <a name="interactively-controlling-a-storyboard-in-xaml"></a>Interaktivní řízení scénáře v XAML  
  Pro spuštění scénáře v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], je použít <xref:System.Windows.Media.Animation.BeginStoryboard> aktivovat akci. <xref:System.Windows.Media.Animation.BeginStoryboard> Animace objektů a vlastností animace a spustí scénáři distribuuje. (Podrobnosti o tomto procesu najdete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).) Pokud dáte <xref:System.Windows.Media.Animation.BeginStoryboard> název tak, že zadáte jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnost, provedete to může ovládat scénáře. Pak můžete interaktivně ovládat scénáře po jeho spuštění. Následuje seznam akcí může ovládat scénáře pomocí aktivačních procedur událostí pro řízení scénáře.  
   
--   <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénáři.  
+- <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénáři.  
   
--   <xref:System.Windows.Media.Animation.ResumeStoryboard>: Obnoví pozastavenou scénáře.  
+- <xref:System.Windows.Media.Animation.ResumeStoryboard>: Obnoví pozastavenou scénáře.  
   
--   <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní scénáře rychlost.  
+- <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní scénáře rychlost.  
   
--   <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Pokročilé funkce scénáře do konce doby výplň, má-li nějaký.  
+- <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Pokročilé funkce scénáře do konce doby výplň, má-li nějaký.  
   
--   <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénáři.  
+- <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénáři.  
   
--   <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odebere scénáři.  
+- <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odebere scénáři.  
   
  V následujícím příkladu může ovládat scénáře akce slouží k interaktivní řízení scénáře.  
   
@@ -247,17 +247,17 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Následující seznam obsahuje metody, které lze použít k manipulaci <xref:System.Windows.Media.Animation.Storyboard> po spuštění:  
   
--   <xref:System.Windows.Media.Animation.Storyboard.Pause%2A>  
+- <xref:System.Windows.Media.Animation.Storyboard.Pause%2A>  
   
--   <xref:System.Windows.Media.Animation.Storyboard.Resume%2A>  
+- <xref:System.Windows.Media.Animation.Storyboard.Resume%2A>  
   
--   <xref:System.Windows.Media.Animation.Storyboard.Seek%2A>  
+- <xref:System.Windows.Media.Animation.Storyboard.Seek%2A>  
   
--   <xref:System.Windows.Media.Animation.Storyboard.SkipToFill%2A>  
+- <xref:System.Windows.Media.Animation.Storyboard.SkipToFill%2A>  
   
--   <xref:System.Windows.Media.Animation.Storyboard.Stop%2A>  
+- <xref:System.Windows.Media.Animation.Storyboard.Stop%2A>  
   
--   <xref:System.Windows.Media.Animation.Storyboard.Remove%2A>  
+- <xref:System.Windows.Media.Animation.Storyboard.Remove%2A>  
   
  Výhodou použití těchto metod je, že není nutné vytvořit <xref:System.Windows.Trigger> nebo <xref:System.Windows.TriggerAction> objektů; je třeba odkaz na dát řídit <xref:System.Windows.Media.Animation.Storyboard> chcete pracovat.  
   
@@ -272,13 +272,13 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
 ## <a name="animate-in-a-style"></a>Animace ve stylu  
  Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů definovat animací <xref:System.Windows.Style>. Animace s <xref:System.Windows.Media.Animation.Storyboard> v <xref:System.Windows.Style> podobá se to používání <xref:System.Windows.Media.Animation.Storyboard> jinde, s následujícími třemi výjimkami:  
   
--   Nezadáte <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>; <xref:System.Windows.Media.Animation.Storyboard> vždy cílí na element, ke kterému <xref:System.Windows.Style> platí. K cíli <xref:System.Windows.Freezable> objekty, je nutné použít nepřímé cílení. Další informace o nepřímé zaměření, najdete v článku [nepřímé cílení](#pathsyntaxforchangeable) oddílu.  
+- Nezadáte <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>; <xref:System.Windows.Media.Animation.Storyboard> vždy cílí na element, ke kterému <xref:System.Windows.Style> platí. K cíli <xref:System.Windows.Freezable> objekty, je nutné použít nepřímé cílení. Další informace o nepřímé zaměření, najdete v článku [nepřímé cílení](#pathsyntaxforchangeable) oddílu.  
   
--   Nelze zadat <xref:System.Windows.EventTrigger.SourceName%2A> pro <xref:System.Windows.EventTrigger> nebo <xref:System.Windows.Trigger>.  
+- Nelze zadat <xref:System.Windows.EventTrigger.SourceName%2A> pro <xref:System.Windows.EventTrigger> nebo <xref:System.Windows.Trigger>.  
   
--   Dynamický prostředek odkazy nebo data vazbové výrazy nelze použít k nastavení <xref:System.Windows.Media.Animation.Storyboard> nebo hodnot vlastností animace. Důvodem je, že všechno, co je uvnitř <xref:System.Windows.Style> musí být bezpečná pro vlákno, a systému časování musíte <xref:System.Windows.Freezable.Freeze%2A> <xref:System.Windows.Media.Animation.Storyboard> objekty tak, aby byly bezpečné pro vlákna. A <xref:System.Windows.Media.Animation.Storyboard> nelze zmrazit, pokud ho nebo jeho podřízených časových os obsahují vazby výrazů dynamický prostředek odkazy nebo data. Další informace o mrazu a dalších <xref:System.Windows.Freezable> funkce, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
+- Dynamický prostředek odkazy nebo data vazbové výrazy nelze použít k nastavení <xref:System.Windows.Media.Animation.Storyboard> nebo hodnot vlastností animace. Důvodem je, že všechno, co je uvnitř <xref:System.Windows.Style> musí být bezpečná pro vlákno, a systému časování musíte <xref:System.Windows.Freezable.Freeze%2A> <xref:System.Windows.Media.Animation.Storyboard> objekty tak, aby byly bezpečné pro vlákna. A <xref:System.Windows.Media.Animation.Storyboard> nelze zmrazit, pokud ho nebo jeho podřízených časových os obsahují vazby výrazů dynamický prostředek odkazy nebo data. Další informace o mrazu a dalších <xref:System.Windows.Freezable> funkce, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
   
--   V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nelze deklarovat obslužné rutiny událostí pro <xref:System.Windows.Media.Animation.Storyboard> nebo události animace.  
+- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nelze deklarovat obslužné rutiny událostí pro <xref:System.Windows.Media.Animation.Storyboard> nebo události animace.  
   
  Příklad ukazuje, jak definovat ve stylu ve scénáři, najdete v článku [animace ve stylu](how-to-animate-in-a-style.md) příklad.  
   
@@ -286,13 +286,13 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
 ## <a name="animate-in-a-controltemplate"></a>Animace v objektu ControlTemplate  
  Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů definovat animací <xref:System.Windows.Controls.ControlTemplate>. Animace s <xref:System.Windows.Media.Animation.Storyboard> v <xref:System.Windows.Controls.ControlTemplate> podobá se to používání <xref:System.Windows.Media.Animation.Storyboard> jinde, s následujícími dvěma výjimkami:  
   
--   <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> Mohou odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>. Pokud <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> není zadán, animace, zaměřuje elementu, do kterého <xref:System.Windows.Controls.ControlTemplate> platí.  
+- <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> Mohou odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>. Pokud <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> není zadán, animace, zaměřuje elementu, do kterého <xref:System.Windows.Controls.ControlTemplate> platí.  
   
--   <xref:System.Windows.EventTrigger.SourceName%2A> Pro <xref:System.Windows.EventTrigger> nebo <xref:System.Windows.Trigger> mohou odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>.  
+- <xref:System.Windows.EventTrigger.SourceName%2A> Pro <xref:System.Windows.EventTrigger> nebo <xref:System.Windows.Trigger> mohou odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>.  
   
--   Dynamický prostředek odkazy nebo data vazbové výrazy nelze použít k nastavení <xref:System.Windows.Media.Animation.Storyboard> nebo hodnot vlastností animace. Důvodem je, že všechno, co je uvnitř <xref:System.Windows.Controls.ControlTemplate> musí být bezpečná pro vlákno, a systému časování musíte <xref:System.Windows.Freezable.Freeze%2A> <xref:System.Windows.Media.Animation.Storyboard> objekty tak, aby byly bezpečné pro vlákna. A <xref:System.Windows.Media.Animation.Storyboard> nelze zmrazit, pokud ho nebo jeho podřízených časových os obsahují vazby výrazů dynamický prostředek odkazy nebo data. Další informace o mrazu a dalších <xref:System.Windows.Freezable> funkce, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
+- Dynamický prostředek odkazy nebo data vazbové výrazy nelze použít k nastavení <xref:System.Windows.Media.Animation.Storyboard> nebo hodnot vlastností animace. Důvodem je, že všechno, co je uvnitř <xref:System.Windows.Controls.ControlTemplate> musí být bezpečná pro vlákno, a systému časování musíte <xref:System.Windows.Freezable.Freeze%2A> <xref:System.Windows.Media.Animation.Storyboard> objekty tak, aby byly bezpečné pro vlákna. A <xref:System.Windows.Media.Animation.Storyboard> nelze zmrazit, pokud ho nebo jeho podřízených časových os obsahují vazby výrazů dynamický prostředek odkazy nebo data. Další informace o mrazu a dalších <xref:System.Windows.Freezable> funkce, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
   
--   V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nelze deklarovat obslužné rutiny událostí pro <xref:System.Windows.Media.Animation.Storyboard> nebo události animace.  
+- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nelze deklarovat obslužné rutiny událostí pro <xref:System.Windows.Media.Animation.Storyboard> nebo události animace.  
   
  Příklad ukazuje, jak definovat scénáře v <xref:System.Windows.Controls.ControlTemplate>, najdete v článku [animace v objektu ControlTemplate](how-to-animate-in-a-controltemplate.md) příklad.  
   

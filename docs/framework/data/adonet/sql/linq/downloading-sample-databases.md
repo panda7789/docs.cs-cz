@@ -4,11 +4,11 @@ description: Stažení ukázkových databází SQL serveru použité v ukázkác
 ms.date: 01/11/2019
 ms.assetid: ef9d69a1-9461-43fe-94bb-7c836754bcb5
 ms.openlocfilehash: 5580f06f3d28ed6d70f75b619498ac8de7bc3326
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037931"
 ---
 # <a name="get-the-sample-databases-for-adonet-code-samples"></a>Získání ukázkových databází pro ukázky kódu ADO.NET
 

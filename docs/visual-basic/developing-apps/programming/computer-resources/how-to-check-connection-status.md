@@ -11,8 +11,8 @@ ms.openlocfilehash: fd618852c2d0650f168edf8dac53931216fc3a9b
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014034"
 ---
 # <a name="how-to-check-connection-status-in-visual-basic"></a>Postupy: Kontrola stavu připojení v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> Vlastnost lze použít k určení, zda má počítač funkční síť a připojení k Internetu.  
@@ -21,7 +21,7 @@ ms.locfileid: "59974445"
   
 ### <a name="to-check-whether-a-computer-has-a-working-connection"></a>Zkontrolujte, zda počítač má připojení k práci  
   
--   Určení, zda `IsAvailable` vlastnost `True` nebo `False`. Následující kód kontroluje stav vlastnosti a ohlásí ji:  
+- Určení, zda `IsAvailable` vlastnost `True` nebo `False`. Následující kód kontroluje stav vlastnosti a ohlásí ji:  
   
      [!code-vb[VbResourceTasks#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#3)]  
   

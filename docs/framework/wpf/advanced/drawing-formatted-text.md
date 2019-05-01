@@ -11,11 +11,11 @@ helpviewer_keywords:
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
 ms.openlocfilehash: a61031c36dea84449ad07175287bf834544df886
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051621"
 ---
 # <a name="drawing-formatted-text"></a>Kreslení formátovaného textu
 Toto téma obsahuje přehled funkce <xref:System.Windows.Media.FormattedText> objektu. Tento objekt lze podrobně pro kreslení textu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
@@ -95,16 +95,16 @@ Sphere následující cestu geometrii textu
 |DT_CENTER|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Použití <xref:System.Windows.Media.FormattedText.TextAlignment%2A> vlastnost nastavená na hodnotu <xref:System.Windows.TextAlignment.Center>.|  
 |DT_EDITCONTROL|Žádné|Není nutné. Šířka mezery a poslední řádek vykreslení jsou že stejné jako v rámci ovládacích prvků pro úpravy.|  
 |DT_END_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Použití <xref:System.Windows.Media.FormattedText.Trimming%2A> vlastnost s hodnotou <xref:System.Windows.TextTrimming.CharacterEllipsis>.<br /><br /> Použití <xref:System.Windows.TextTrimming.WordEllipsis> zobrazíte [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DT_END_ELLIPSIS s DT_WORD_ELIPSIS ukončit tlačítko se třemi tečkami – v takovém případě znak tlačítko se třemi tečkami dochází jenom na slova, která se nevejdou na jednom řádku.|  
-|DT_EXPAND_TABS|Žádné|Není nutné. Karty jsou automaticky rozšíří na přestane každé 4 ems, což je přibližně šířku 8 znaků nezávislým na jazyku.|  
+|DT_EXPAND_TABS|Žádný|Není nutné. Karty jsou automaticky rozšíří na přestane každé 4 ems, což je přibližně šířku 8 znaků nezávislým na jazyku.|  
 |DT_EXTERNALLEADING|Žádné|Není nutné. Externí nejlepší je vždy součástí mezer. Použití <xref:System.Windows.Media.FormattedText.LineHeight%2A> vlastnost vytvořit uživatelem definované mezer.|  
 |DT_HIDEPREFIX|Žádné|Není podporováno. Odeberte 'a' z řetězce před sestavením <xref:System.Windows.Media.FormattedText> objektu.|  
 |DT_LEFT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Toto je výchozí zarovnání textu. Použití <xref:System.Windows.Media.FormattedText.TextAlignment%2A> vlastnost nastavená na hodnotu <xref:System.Windows.TextAlignment.Left>. (Pouze WPF)|  
-|DT_MODIFYSTRING|Žádný|Není podporováno.|  
+|DT_MODIFYSTRING|Žádné|Není podporováno.|  
 |DT_NOCLIP|<xref:System.Windows.Media.Visual.VisualClip%2A>|Výstřižek neprobíhá automaticky. Pokud chcete do Galerie textu, použijte <xref:System.Windows.Media.Visual.VisualClip%2A> vlastnost.|  
 |DT_NOFULLWIDTHCHARBREAK|Žádné|Není podporováno.|  
 |DT_NOPREFIX|Žádné|Není nutné. Znak '&' v řetězcích je vždy považován za normálních znaků.|  
-|DT_PATHELLIPSIS|Žádné|Použití <xref:System.Windows.Media.FormattedText.Trimming%2A> vlastnost s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
-|DT_PREFIX|Žádné|Není podporováno. Pokud chcete použít podtržítka pro text, například klíče akcelerátoru nebo odkaz, použijte <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A> metody.|  
+|DT_PATHELLIPSIS|Žádný|Použití <xref:System.Windows.Media.FormattedText.Trimming%2A> vlastnost s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
+|DT_PREFIX|Žádný|Není podporováno. Pokud chcete použít podtržítka pro text, například klíče akcelerátoru nebo odkaz, použijte <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A> metody.|  
 |DT_PREFIXONLY|Žádné|Není podporováno.|  
 |DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Použití <xref:System.Windows.Media.FormattedText.TextAlignment%2A> vlastnost nastavená na hodnotu <xref:System.Windows.TextAlignment.Right>. (Pouze WPF)|  
 |DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Nastavte <xref:System.Windows.Media.FormattedText.FlowDirection%2A> vlastnost <xref:System.Windows.FlowDirection.RightToLeft>.|  

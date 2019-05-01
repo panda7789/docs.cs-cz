@@ -5,11 +5,11 @@ helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
 ms.openlocfilehash: 75e60a3a9b39c0dd63a24a1e71c4823e7cb0bd74
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052544"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být mnohem efektivnější Rozšiřte svoje stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] namísto jeho přepsání úplně od začátku. Běžný scénář, kdy je, když chcete vložit jednu nebo více ovládacích prvků implementovaný pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci vaší aplikace Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF v tématu [přizpůsobení ovládacího prvku](../controls/control-customization.md).  
@@ -20,9 +20,9 @@ ms.locfileid: "59322833"
   
  Úlohy v tomto návodu zahrnují:  
   
--   Implementace složeného ovládacího prvku WPF.  
+- Implementace složeného ovládacího prvku WPF.  
   
--   Implementace hostitele aplikace Windows Forms.  
+- Implementace hostitele aplikace Windows Forms.  
   
  Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [hostování složeného ovládacího prvku WPF ve Windows Forms vzorku](https://go.microsoft.com/fwlink/?LinkID=159996).  
   
@@ -54,13 +54,13 @@ Visual Studio k dokončení tohoto návodu potřebujete.
   
  Váš projekt by měl zahrnovat odkazy na tyto systémové knihovny DLL. Pokud některý z těchto knihoven DLL nejsou zahrnuty ve výchozím nastavení, můžete je přidáte do projektu.  
   
--   PresentationCore  
+- PresentationCore  
   
--   PresentationFramework  
+- PresentationFramework  
   
--   Systém  
+- Systém  
   
--   WindowsBase  
+- WindowsBase  
   
 ### <a name="creating-the-user-interface"></a>Vytvoření uživatelského rozhraní  
  [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] Pro složeného ovládacího prvku je implementováno s [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Složený ovládací prvek [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se skládá z pěti <xref:System.Windows.Controls.TextBox> elementy. Každý <xref:System.Windows.Controls.TextBox> element má přiřazený <xref:System.Windows.Controls.TextBlock> element, který slouží jako popisek. Existují dva <xref:System.Windows.Controls.Button> prvky v dolní části, **OK** a **zrušit**. Když uživatel klikne na tlačítko buď tlačítko, ovládací prvek vyvolá vlastní události k vrácení informací k hostiteli.  
@@ -139,11 +139,11 @@ namespace MyControls
 #### <a name="initializing-the-control"></a>Inicializuje se ovládací prvek  
  Následující kód implementuje několik základní úlohy:  
   
--   Deklaruje Soukromá událost `OnButtonClick`a její přidružené delegáta `MyControlEventHandler`.  
+- Deklaruje Soukromá událost `OnButtonClick`a její přidružené delegáta `MyControlEventHandler`.  
   
--   Vytvoří několik privátních globální proměnné, které ukládají data uživatele. Tato data je přístupný prostřednictvím odpovídající vlastnosti.  
+- Vytvoří několik privátních globální proměnné, které ukládají data uživatele. Tato data je přístupný prostřednictvím odpovídající vlastnosti.  
   
--   Implementuje obslužnou rutinu `Init`, ovládacího prvku <xref:System.Windows.FrameworkElement.Loaded> událostí. Tato obslužná rutina inicializuje přiřazením hodnoty definované v MyControl1.xaml globální proměnné. K tomu použije <xref:System.Windows.FrameworkElement.Name%2A> přiřazená typické <xref:System.Windows.Controls.TextBlock> elementu `nameLabel`, pro přístup k nastavení vlastností tohoto prvku.  
+- Implementuje obslužnou rutinu `Init`, ovládacího prvku <xref:System.Windows.FrameworkElement.Loaded> událostí. Tato obslužná rutina inicializuje přiřazením hodnoty definované v MyControl1.xaml globální proměnné. K tomu použije <xref:System.Windows.FrameworkElement.Name%2A> přiřazená typické <xref:System.Windows.Controls.TextBlock> elementu `nameLabel`, pro přístup k nastavení vlastností tohoto prvku.  
   
  Odstraňte existující konstruktor a přidejte následující kód, který vaše `MyControl1` třídy.  
   
@@ -152,11 +152,11 @@ namespace MyControls
 #### <a name="handling-the-buttons-click-events"></a>Zpracování na tlačítka události kliknutí  
  Uživatel označuje dokončení úkolu zadávání dat kliknutím na možnost **OK** tlačítko nebo **zrušit** tlačítko. Obě tlačítka použít stejné <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužná rutina události `ButtonClicked`. Obě tlačítka mít název, `btnOK` nebo `btnCancel`, umožňující obslužnou rutinu k určení, které tlačítko došlo ke kliknutí na porovnáním hodnoty `sender` argument. Obslužná rutina provede následující akce:  
   
--   Vytvoří `MyControlEventArgs` objekt, který obsahuje data z <xref:System.Windows.Controls.TextBox> elementy.  
+- Vytvoří `MyControlEventArgs` objekt, který obsahuje data z <xref:System.Windows.Controls.TextBox> elementy.  
   
--   Pokud uživatel klikne **zrušit** tlačítko, nastaví `MyControlEventArgs` objektu `IsOK` vlastnost `false`.  
+- Pokud uživatel klikne **zrušit** tlačítko, nastaví `MyControlEventArgs` objektu `IsOK` vlastnost `false`.  
   
--   Vyvolá `OnButtonClick` událost označující na hostitele, že uživatel dokončil a předá zpět shromážděná data.  
+- Vyvolá `OnButtonClick` událost označující na hostitele, že uživatel dokončil a předá zpět shromážděná data.  
   
  Přidejte následující kód, který vaše `MyControl1` třídy po `Init` metody.  
   
@@ -209,15 +209,15 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 4. Přidáte odkazy na následující sestavení.  
   
-    -   PresentationCore  
+    - PresentationCore  
   
-    -   PresentationFramework  
+    - PresentationFramework  
   
-    -   System.Xaml  
+    - System.Xaml  
   
-    -   WindowsBase  
+    - WindowsBase  
   
-    -   WindowsFormsIntegration  
+    - WindowsFormsIntegration  
   
 ### <a name="implementing-the-user-interface-for-the-application"></a>Implementace uživatelského rozhraní pro aplikaci  
  Uživatelské rozhraní pro aplikace Windows Form obsahuje několik ovládacích prvků pro interakci s složeného ovládacího prvku WPF.  
@@ -296,9 +296,9 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
  Zbývající dva řádky v `Form1_Load` obslužné rutiny metoda připojit dvě události ovládacích prvků:  
   
--   `OnButtonClick` je vlastní událost, která se aktivuje pomocí složeného ovládacího prvku, když uživatel klikne **OK** nebo **zrušit** tlačítko. Zpracování události odpovědi uživatele a shromažďovat žádná data, která uživatel zadal.  
+- `OnButtonClick` je vlastní událost, která se aktivuje pomocí složeného ovládacího prvku, když uživatel klikne **OK** nebo **zrušit** tlačítko. Zpracování události odpovědi uživatele a shromažďovat žádná data, která uživatel zadal.  
   
--   <xref:System.Windows.FrameworkElement.Loaded> je standardní událost, která je vyvolána [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] řídit, kdy je plně načteno. Událost je zde použita, protože v příkladu je potřeba inicializovat několika globální proměnné pomocí vlastnosti z ovládacího prvku. V době formuláře <xref:System.Windows.Forms.Form.Load> událostí, ovládací prvek není plně načten a tyto hodnoty jsou stále nastaveny na `null`. Budete muset počkat až do ovládacího prvku <xref:System.Windows.FrameworkElement.Loaded> pro přístup k těmto vlastnostem dojde k události.  
+- <xref:System.Windows.FrameworkElement.Loaded> je standardní událost, která je vyvolána [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] řídit, kdy je plně načteno. Událost je zde použita, protože v příkladu je potřeba inicializovat několika globální proměnné pomocí vlastnosti z ovládacího prvku. V době formuláře <xref:System.Windows.Forms.Form.Load> událostí, ovládací prvek není plně načten a tyto hodnoty jsou stále nastaveny na `null`. Budete muset počkat až do ovládacího prvku <xref:System.Windows.FrameworkElement.Loaded> pro přístup k těmto vlastnostem dojde k události.  
   
  <xref:System.Windows.FrameworkElement.Loaded> Obslužná rutina události se zobrazí v předchozím kódu. `OnButtonClick` Obslužná rutina je popsáno v další části.  
   

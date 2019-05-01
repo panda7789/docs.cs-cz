@@ -16,11 +16,11 @@ helpviewer_keywords:
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
 ms.openlocfilehash: 2aeafa7065b587497fb6f3b23605c21dca291cd1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59075857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051257"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají Windows Presentation Foundation (WPF) mají nové bohatou Správa systému tisku a tisk [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskovém systému jsou také k dispozici pro vývojáře vytvářející [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáře, kteří používají nespravovaný kód. V jádru služby tato nová funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku.  
@@ -43,21 +43,21 @@ Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají 
   
  Výhody [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] cesta tisku jsou významné a zahrnují:  
   
--   [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)] Podpora tisku  
+- [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)] Podpora tisku  
   
--   Nativní podpora profilů pokročilé barev, mezi které patří 32 bitů na kanál, CMYK, pojmenované barvy, barvy n a nativní podporu transparentnosti a přechody.  
+- Nativní podpora profilů pokročilé barev, mezi které patří 32 bitů na kanál, CMYK, pojmenované barvy, barvy n a nativní podporu transparentnosti a přechody.  
   
--   Zvýšení výkonu tisku pro obě rozhraní .NET Framework a [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikací založených na.  
+- Zvýšení výkonu tisku pro obě rozhraní .NET Framework a [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikací založených na.  
   
--   Standardní [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátu.  
+- Standardní [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátu.  
   
  Pro základní scénáře, tisku a jednoduché a intuitivní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] je k dispozici s jedním vstupním bodem pro odeslání uživatelského rozhraní, konfigurace a úlohy. Pro pokročilé scénáře, přidá se další podporu pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] přizpůsobení (nebo vůbec žádné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vůbec), synchronní nebo asynchronní tisku a tisk funkcí služby batch. V obou variantách nabízí podpora tisku v režimu plné nebo částečné důvěryhodnosti.  
   
  [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] byla navržena s rozšíření v úvahu. S použitím rozhraní rozšiřitelnosti, funkcí a možností lze přidat do [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] modulární způsobem. Rozšíření funkce:  
   
--   Tisk schématu. Veřejné schématu se pravidelně aktualizuje a umožňuje rychlé rozšíření funkcí zařízení. (Viz **funkce PrintTicket a printcapabilities –** níže.)  
+- Tisk schématu. Veřejné schématu se pravidelně aktualizuje a umožňuje rychlé rozšíření funkcí zařízení. (Viz **funkce PrintTicket a printcapabilities –** níže.)  
   
--   Rozšiřitelné filtr kanálu. [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] Tiskárny ovladač (XPSDrv) filtr kanálu byl navržených tak, aby s přímým přístupem a škálovatelné tisk [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty. Další informace najdete v tématu [ovladače tiskárny XPSDrv](/windows-hardware/drivers/print/xpsdrv-printer-drivers). 
+- Rozšiřitelné filtr kanálu. [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] Tiskárny ovladač (XPSDrv) filtr kanálu byl navržených tak, aby s přímým přístupem a škálovatelné tisk [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty. Další informace najdete v tématu [ovladače tiskárny XPSDrv](/windows-hardware/drivers/print/xpsdrv-printer-drivers). 
   
 ### <a name="print-path-architecture"></a>Cesta tisku architektury  
  Přestože obě [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a aplikace rozhraní .NET Framework podporují [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)], [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a používání aplikací modelu Windows Forms [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] k [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] převod, chcete-li vytvořit [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátovaný obsah pro [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)]ovladače tiskárny (XPSDrv). Tyto aplikace nemusí používat [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] cesta tisku a můžete dál používat [!INCLUDE[TLA#tla_emf](../../../../includes/tlasharptla-emf-md.md)] na základě tisk. Ale většina [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] funkce a vylepšení jsou dostupné jenom pro aplikace, které se zaměřují [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] cesta tisku.  
@@ -110,7 +110,7 @@ Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají 
 
 Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] funkce nebo podporu, aktuální [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] cesta tisku zůstane beze změny.  
   
--   Pro další referenční materiál o [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] tisk cestu a různých [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] naleznete v tématu Možnosti převodu [Microsoft XPS dokumentu převaděč (MXDC)](/windows/desktop/printdocs/microsoft-xps-document-converter--mxdc-) a [ovladače tiskárny XPSDrv](/windows-hardware/drivers/print/xpsdrv-printer-drivers).  
+- Pro další referenční materiál o [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] tisk cestu a různých [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] naleznete v tématu Možnosti převodu [Microsoft XPS dokumentu převaděč (MXDC)](/windows/desktop/printdocs/microsoft-xps-document-converter--mxdc-) a [ovladače tiskárny XPSDrv](/windows-hardware/drivers/print/xpsdrv-printer-drivers).  
   
 <a name="XPS_Driver_Model_intro"></a>   
 ## <a name="xpsdrv-driver-model"></a>Model ovladače XPSDrv  
@@ -120,19 +120,19 @@ Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes
   
  Velikosti souborů pro zařazování snižují obvykle použijete [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty, které se zaměřují [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] ovladače tiskárny (XPSDrv) ve srovnání s jejich [!INCLUDE[TLA2#tla_emf](../../../../includes/tla2sharptla-emf-md.md)] ekvivalenty; však existují výjimky:  
   
--   Vektorové grafiky, která je velmi složité, propracovat vícevrstvý nebo neefektivně písemné může být větší než rastrovými obrázky verze stejného obrázku.  
+- Vektorové grafiky, která je velmi složité, propracovat vícevrstvý nebo neefektivně písemné může být větší než rastrovými obrázky verze stejného obrázku.  
   
--   Pro účely zobrazení obrazovky soubory XPS vložení písma zařízení i počítače písma; zatímco soubory zařazování GDI Nevkládat písma zařízení. Ale oba druhy písma jsou podsady (viz níže) a ovladače tiskárny můžete odebrat písma zařízení před odesláním souborů na tiskárnu.  
+- Pro účely zobrazení obrazovky soubory XPS vložení písma zařízení i počítače písma; zatímco soubory zařazování GDI Nevkládat písma zařízení. Ale oba druhy písma jsou podsady (viz níže) a ovladače tiskárny můžete odebrat písma zařízení před odesláním souborů na tiskárnu.  
   
  Zmenšení velikosti zařazování se provádí prostřednictvím několika mechanismů:  
   
--   **Písem**. Jsou uloženy pouze znaky použít v rámci skutečné dokumentu [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] souboru.  
+- **Písem**. Jsou uloženy pouze znaky použít v rámci skutečné dokumentu [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] souboru.  
   
--   **Přidává rozšířenou podporu grafiky**. Nativní podpora pro primitiv transparentnost a přechodu se vyhnete rasterizační obsah [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumentu.  
+- **Přidává rozšířenou podporu grafiky**. Nativní podpora pro primitiv transparentnost a přechodu se vyhnete rasterizační obsah [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumentu.  
   
--   **Identifikace běžných zdrojů**. Prostředky, které jsou používány více než jednou (například obrázek), který představuje firemní logo, které jsou považovány za sdílené prostředky a jsou načteny pouze jednou.  
+- **Identifikace běžných zdrojů**. Prostředky, které jsou používány více než jednou (například obrázek), který představuje firemní logo, které jsou považovány za sdílené prostředky a jsou načteny pouze jednou.  
   
--   **Komprese ZIP**. Všechny [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty pomocí komprese formátu ZIP.  
+- **Komprese ZIP**. Všechny [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty pomocí komprese formátu ZIP.  
   
 ## <a name="see-also"></a>Viz také:
 

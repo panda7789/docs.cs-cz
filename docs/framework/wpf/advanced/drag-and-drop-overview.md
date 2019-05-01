@@ -13,11 +13,11 @@ helpviewer_keywords:
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
 ms.openlocfilehash: 2b76c8fd3e2c6961b6ebdddc9b7ff9649f5196f4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051634"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Přetáhněte myší obvykle odkazuje na metodu přenosu dat, která zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, tyto objekty přetáhnete přes některé požadovaný cíl v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
@@ -41,11 +41,11 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
 ## <a name="data-transfer"></a>Přenos dat  
  Přetažení myší je součástí obecnější části datové přenosy. Přenos dat zahrnuje operace přetažení myší a kopírování a vkládání. Operace přetažení myší je obdobou operaci kopírování a vkládání nebo vyjmutí a vložení, která se používá k přenosu dat z jednoho objektu nebo aplikace do jiné podle použití schránky systému. Vyžadují se oba typy operací:  
   
--   Zdrojový objekt, který poskytuje data.  
+- Zdrojový objekt, který poskytuje data.  
   
--   Způsob, jak dočasně ukládat přenášená data.  
+- Způsob, jak dočasně ukládat přenášená data.  
   
--   Cílový objekt, který přijímá data.  
+- Cílový objekt, který přijímá data.  
   
  V operaci kopírování a vkládání do schránky systému se používá k dočasnému uložení přenášených dat; v rámci operace přetažení myší <xref:System.Windows.DataObject> se používá k uložení dat. Entity se skládá z jednoho nebo více párů datový objekt <xref:System.Object> obsahující skutečná data a odpovídající identifikátor formát data.  
   
@@ -94,31 +94,31 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
  K implementaci základní přetažení myší, se dokončí následující úkoly:  
   
--   Prvek, který bude zdroji přetažení určete. Může být zdroji přetažení <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>.  
+- Prvek, který bude zdroji přetažení určete. Může být zdroji přetažení <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>.  
   
--   Vytvořte obslužnou rutinu události na zdroji přetažení, který opraví, zahájí se operace přetažení myší. Událost je obvykle <xref:System.Windows.UIElement.MouseMove> událostí.  
+- Vytvořte obslužnou rutinu události na zdroji přetažení, který opraví, zahájí se operace přetažení myší. Událost je obvykle <xref:System.Windows.UIElement.MouseMove> událostí.  
   
--   V obslužné rutině události zdroje přetáhněte volání <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda k zahájení operace přetažení myší. V <xref:System.Windows.DragDrop.DoDragDrop%2A> volání, zadejte zdroji přetažení, přenos dat a povolené efekty.  
+- V obslužné rutině události zdroje přetáhněte volání <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda k zahájení operace přetažení myší. V <xref:System.Windows.DragDrop.DoDragDrop%2A> volání, zadejte zdroji přetažení, přenos dat a povolené efekty.  
   
--   Identifikujte elementu, který bude cíl přetažení. Může být cíle přetažení <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>.  
+- Identifikujte elementu, který bude cíl přetažení. Může být cíle přetažení <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>.  
   
--   Na cíl, nastavte <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost `true`.  
+- Na cíl, nastavte <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost `true`.  
   
--   Vytvořte v cíl přetažení <xref:System.Windows.DragDrop.Drop> obslužná rutina události ke zpracování dat vyřazené.  
+- Vytvořte v cíl přetažení <xref:System.Windows.DragDrop.Drop> obslužná rutina události ke zpracování dat vyřazené.  
   
--   V <xref:System.Windows.DragDrop.Drop> obslužná rutina události, extrahovat data <xref:System.Windows.DragEventArgs> pomocí <xref:System.Windows.DataObject.GetDataPresent%2A> a <xref:System.Windows.DataObject.GetData%2A> metody.  
+- V <xref:System.Windows.DragDrop.Drop> obslužná rutina události, extrahovat data <xref:System.Windows.DragEventArgs> pomocí <xref:System.Windows.DataObject.GetDataPresent%2A> a <xref:System.Windows.DataObject.GetData%2A> metody.  
   
--   V <xref:System.Windows.DragDrop.Drop> obslužná rutina události, data použít k provedení požadované operace přetažení myší.  
+- V <xref:System.Windows.DragDrop.Drop> obslužná rutina události, data použít k provedení požadované operace přetažení myší.  
   
  Implementace a přetahování můžete zvýšit tak, že vytvoříte vlastní <xref:System.Windows.DataObject> a zpracováním volitelné přetáhnout zdroje a drop cíl události, jak je znázorněno v následující úkoly:  
   
--   Přenos vlastních dat nebo více datových položek, vytvoření <xref:System.Windows.DataObject> předat <xref:System.Windows.DragDrop.DoDragDrop%2A> metody.  
+- Přenos vlastních dat nebo více datových položek, vytvoření <xref:System.Windows.DataObject> předat <xref:System.Windows.DragDrop.DoDragDrop%2A> metody.  
   
--   Při přetažení provádět další akce, zpracování <xref:System.Windows.DragDrop.DragEnter>, <xref:System.Windows.DragDrop.DragOver>, a <xref:System.Windows.DragDrop.DragLeave> události na cíl přetažení.  
+- Při přetažení provádět další akce, zpracování <xref:System.Windows.DragDrop.DragEnter>, <xref:System.Windows.DragDrop.DragOver>, a <xref:System.Windows.DragDrop.DragLeave> události na cíl přetažení.  
   
--   Chcete-li změnit vzhled ukazatele myši, zpracovat <xref:System.Windows.DragDrop.GiveFeedback> události ve zdroji přetažení.  
+- Chcete-li změnit vzhled ukazatele myši, zpracovat <xref:System.Windows.DragDrop.GiveFeedback> události ve zdroji přetažení.  
   
--   Chcete-li změnit, jak je zrušena operace přetažení myší, zpracovat <xref:System.Windows.DragDrop.QueryContinueDrag> události ve zdroji přetažení.  
+- Chcete-li změnit, jak je zrušena operace přetažení myší, zpracovat <xref:System.Windows.DragDrop.QueryContinueDrag> události ve zdroji přetažení.  
   
 <a name="Drag_And_Drop_Example"></a>   
 ## <a name="drag-and-drop-example"></a>Příklad přetažení myší  
@@ -129,13 +129,13 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
 ### <a name="enabling-an-element-to-be-a-drag-source"></a>Umožňuje Element, který má jako zdroj přetažení  
  Objekt, který je zdrojem přetažení je zodpovědný za:  
   
--   Identifikace, když dojde k přetáhněte.  
+- Identifikace, když dojde k přetáhněte.  
   
--   Zahajuje se operace přetažení myší.  
+- Zahajuje se operace přetažení myší.  
   
--   Identifikuje data, která mají být převedeny.  
+- Identifikuje data, která mají být převedeny.  
   
--   Určení efekty, které může mít na přenášených dat operace přetažení myší.  
+- Určení efekty, které může mít na přenášených dat operace přetažení myší.  
   
  Zdroji přetažení může také váš názor na uživatele o povolených akcí (přesunout, kopírovat, none) a můžete zrušit operaci přetažení myší na základě zadání dalšího uživatele, například stisknutím klávesy ESC během tažení.  
   
@@ -146,11 +146,11 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
  Uvnitř <xref:System.Windows.UIElement.MouseMove> obslužná rutina události, volání <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda k zahájení operace přetažení myší. <xref:System.Windows.DragDrop.DoDragDrop%2A> Metoda přijímá tři parametry:  
   
--   `dragSource` – Odkaz na objekt závislosti, které je zdrojem přenášených dat; Toto je obvykle zdroj <xref:System.Windows.UIElement.MouseMove> událostí.  
+- `dragSource` – Odkaz na objekt závislosti, které je zdrojem přenášených dat; Toto je obvykle zdroj <xref:System.Windows.UIElement.MouseMove> událostí.  
   
--   `data` – Objekt, který obsahuje přenášených dat, který je obalen <xref:System.Windows.DataObject>.  
+- `data` – Objekt, který obsahuje přenášených dat, který je obalen <xref:System.Windows.DataObject>.  
   
--   `allowedEffects` -Jedním z <xref:System.Windows.DragDropEffects> hodnot výčtu, která určuje povolené efekty operace přetažení myší.  
+- `allowedEffects` -Jedním z <xref:System.Windows.DragDropEffects> hodnot výčtu, která určuje povolené efekty operace přetažení myší.  
   
  Může být jakýkoli serializovatelný objekt předaný `data` parametru. Je-li data již není zabalené v <xref:System.Windows.DataObject>, se automaticky uzavřou v novém <xref:System.Windows.DataObject>. Předat více položek dat, je nutné vytvořit <xref:System.Windows.DataObject> sami a předat ho metodě <xref:System.Windows.DragDrop.DoDragDrop%2A> metody. Další informace najdete v tématu [Data a datové objekty](data-and-data-objects.md).  
   
@@ -171,13 +171,13 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
 ### <a name="enabling-an-element-to-be-a-drop-target"></a>Umožňuje Element, který má být cílem vyřadit  
  Objekt, který je cíl přetažení je zodpovědný za:  
   
--   Určení, že se jedná platný cíl.  
+- Určení, že se jedná platný cíl.  
   
--   Reakce na zdroji přetažení, když ho přetáhne za cíl.  
+- Reakce na zdroji přetažení, když ho přetáhne za cíl.  
   
--   Ujistěte se, že přenášených dat ve formátu, který může přijímat.  
+- Ujistěte se, že přenášených dat ve formátu, který může přijímat.  
   
--   Zpracování vynechaných data.  
+- Zpracování vynechaných data.  
   
  Chcete-li určit, že element je cíl přetažení, nastavíte její <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost `true`. Události cíl přetažení pak bude vyvolána v elementu, aby bylo možné je zpracovat. Během operace přetažení myší dojde k následujícímu pořadí událostí na cíl přetažení:  
   

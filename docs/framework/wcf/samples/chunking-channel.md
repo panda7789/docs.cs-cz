@@ -3,11 +3,11 @@ title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
 ms.openlocfilehash: a60cae7ad3dcfdaa139b8be974ed2d3996b5211d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002364"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 Při odesílání velkých zpráv pomocí služby Windows Communication Foundation (WCF), je často žádoucí omezit množství paměti pro zprávy ve vyrovnávací paměti. Jedním z možných řešení je do datového proudu zprávy (za předpokladu, že hromadných dat je v textu). Ale některé protokoly vyžadují celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou tyto dva příklady. Další možnou příčinou je zdola nahoru objemné zprávy do menších zprávy označované jako bloky dat, odesílání jednoho bloku tyto bloky dat najednou a znovuvytvoření velkých zpráv na straně příjmu. Zrušení bloků nebo ho může používat vlastní kanál k tomu a samotná aplikace udělat tento bloků. Vytváření bloků kanál příklad ukazuje, jak vlastní protokol nebo vrstvami kanálu lze provést bloků a zrušení bloků libovolně velkých zpráv.  
@@ -240,30 +240,30 @@ interface ITestService
   
  Za zmínku několik podrobností:  
   
--   Poslat prvním volání `ThrowIfDisposedOrNotOpened` zajistit, `CommunicationState` je otevřen.  
+- Poslat prvním volání `ThrowIfDisposedOrNotOpened` zajistit, `CommunicationState` je otevřen.  
   
--   Odesílání se synchronizuje, aby tento pouze jedna zpráva byla odeslána současně pro každou relaci. Je `ManualResetEvent` s názvem `sendingDone` , která se resetuje při odesílání bloku zprávy. Jakmile je odeslána zpráva koncovým bloků dat, je tato událost nastavit. Tato událost nastavit před pokusem o odeslání odchozí zprávy čeká metody Send.  
+- Odesílání se synchronizuje, aby tento pouze jedna zpráva byla odeslána současně pro každou relaci. Je `ManualResetEvent` s názvem `sendingDone` , která se resetuje při odesílání bloku zprávy. Jakmile je odeslána zpráva koncovým bloků dat, je tato událost nastavit. Tato událost nastavit před pokusem o odeslání odchozí zprávy čeká metody Send.  
   
--   Odeslat zámky `CommunicationObject.ThisLock` zabránit nesynchronizuje, změny stavu při odesílání. Najdete v článku <xref:System.ServiceModel.Channels.CommunicationObject> dokumentaci pro další informace o <xref:System.ServiceModel.Channels.CommunicationObject> stavy a stavového stroje.  
+- Odeslat zámky `CommunicationObject.ThisLock` zabránit nesynchronizuje, změny stavu při odesílání. Najdete v článku <xref:System.ServiceModel.Channels.CommunicationObject> dokumentaci pro další informace o <xref:System.ServiceModel.Channels.CommunicationObject> stavy a stavového stroje.  
   
--   Časový limit předaný k odeslání se používá jako časový limit operace celý odeslání, který obsahuje všechny bloky dat odesílání.  
+- Časový limit předaný k odeslání se používá jako časový limit operace celý odeslání, který obsahuje všechny bloky dat odesílání.  
   
--   Vlastní <xref:System.Xml.XmlDictionaryWriter> návrh byl zvolen ke Vyhněte se ukládání do vyrovnávací paměti celý původní text zprávy. Pokud se nám získat <xref:System.Xml.XmlDictionaryReader> na text pomocí `message.GetReaderAtBodyContents` celého obsahu by být ukládány do vyrovnávací paměti. Místo toho budeme mít vlastní <xref:System.Xml.XmlDictionaryWriter> , který je předán `message.WriteBodyContents`. Jako zprávu, která volá WriteBase64 zapisovače zapisovač zabalí bloků dat do zpráv a odešle je pomocí vnitřního kanálu. WriteBase64 blokuje, dokud se nepošle bloků.  
+- Vlastní <xref:System.Xml.XmlDictionaryWriter> návrh byl zvolen ke Vyhněte se ukládání do vyrovnávací paměti celý původní text zprávy. Pokud se nám získat <xref:System.Xml.XmlDictionaryReader> na text pomocí `message.GetReaderAtBodyContents` celého obsahu by být ukládány do vyrovnávací paměti. Místo toho budeme mít vlastní <xref:System.Xml.XmlDictionaryWriter> , který je předán `message.WriteBodyContents`. Jako zprávu, která volá WriteBase64 zapisovače zapisovač zabalí bloků dat do zpráv a odešle je pomocí vnitřního kanálu. WriteBase64 blokuje, dokud se nepošle bloků.  
   
 ## <a name="implementing-the-receive-operation"></a>Implementace operace přijetí  
  Na vysoké úrovni operace obdržení nejprve zkontroluje, že příchozí zpráva není `null` a, který je akcí `ChunkingAction`. Pokud obě kritéria nesplňuje, je vrácená zpráva beze změny z parametru Receive. Jinak, vytvoří novou Receive `ChunkingReader` a nový `ChunkingMessage` zabalené kolem něj (pomocí volání `GetNewChunkingMessage`). Teprve potom se informuje, že noví `ChunkingMessage`, příjmu používá ke spouštění vláken fondu vláken `ReceiveChunkLoop`, který volá `innerChannel.Receive` ve smyčce a praktické vypnout bloků dat na `ChunkingReader` dokud přijatá zpráva ukončení bloku nebo dosažení časový limit přijetí.  
   
  Za zmínku několik podrobností:  
   
--   Jako je odesílání, příjem první volání `ThrowIfDisposedOrNotOepned` zajistit, `CommunicationState` je otevřen.  
+- Jako je odesílání, příjem první volání `ThrowIfDisposedOrNotOepned` zajistit, `CommunicationState` je otevřen.  
   
--   Zobrazí se synchronizují také tak, že pouze jeden zpráva může dostat současně z relace. To je obzvláště důležité, protože po doručení zprávy do začátku bloku dat, všechny následné přijaté zprávy jsou očekávány bloků dat v rámci tohoto nového pořadí bloků dokud přijal zprávu ukončení bloku. Přijímat nelze vytahují zprávy z vnitřního kanálu, dokud se všechny bloky dat, které patří k aktuálně Probíhá zrušení rozdělený do bloků dat zprávy jsou přijímány. Chcete-li to provést, obdržet používá `ManualResetEvent` s názvem `currentMessageCompleted`, který je nastaven při zpráva ukončení bloku dat je přijetí a resetovat při doručení zprávy do nového bloku start.  
+- Zobrazí se synchronizují také tak, že pouze jeden zpráva může dostat současně z relace. To je obzvláště důležité, protože po doručení zprávy do začátku bloku dat, všechny následné přijaté zprávy jsou očekávány bloků dat v rámci tohoto nového pořadí bloků dokud přijal zprávu ukončení bloku. Přijímat nelze vytahují zprávy z vnitřního kanálu, dokud se všechny bloky dat, které patří k aktuálně Probíhá zrušení rozdělený do bloků dat zprávy jsou přijímány. Chcete-li to provést, obdržet používá `ManualResetEvent` s názvem `currentMessageCompleted`, který je nastaven při zpráva ukončení bloku dat je přijetí a resetovat při doručení zprávy do nového bloku start.  
   
--   Na rozdíl od odeslání přijetí nezabraňuje synchronizované přechodů mezi stavy při příjmu. Například Zavřít lze volat při přijímání a čeká, až do dokončení čeká na příjem původní zpráva nebo zadaný časový limit.  
+- Na rozdíl od odeslání přijetí nezabraňuje synchronizované přechodů mezi stavy při příjmu. Například Zavřít lze volat při přijímání a čeká, až do dokončení čeká na příjem původní zpráva nebo zadaný časový limit.  
   
--   Časový limit předaný k příjmu se používá jako vypršení časového limitu pro celý přijímat operace, která zahrnuje příjem všechny bloky dat.  
+- Časový limit předaný k příjmu se používá jako vypršení časového limitu pro celý přijímat operace, která zahrnuje příjem všechny bloky dat.  
   
--   Pokud vrstva, která zpracovává zprávy spotřebovává text zprávy s rychlostí nižší než počet příchozích zpráv bloků dat `ChunkingReader` ukládá do vyrovnávací paměti tyto příchozí bloky až do limitu určeném `ChunkingBindingElement.MaxBufferedChunks`. Po dosažení tohoto limitu, nemá nečistoty, se berou z nižší vrstvě, dokud nebude využívat ve vyrovnávací paměti datových dávek nebo je dosaženo časového limitu příjmu.  
+- Pokud vrstva, která zpracovává zprávy spotřebovává text zprávy s rychlostí nižší než počet příchozích zpráv bloků dat `ChunkingReader` ukládá do vyrovnávací paměti tyto příchozí bloky až do limitu určeném `ChunkingBindingElement.MaxBufferedChunks`. Po dosažení tohoto limitu, nemá nečistoty, se berou z nižší vrstvě, dokud nebude využívat ve vyrovnávací paměti datových dávek nebo je dosaženo časového limitu příjmu.  
   
 ## <a name="communicationobject-overrides"></a>V objektu CommunicationObject přepsání  
   

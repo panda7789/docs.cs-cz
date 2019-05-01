@@ -13,11 +13,11 @@ ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 907e85d2622ea07ddbb61092f439583ed72e0c50
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62015067"
 ---
 # <a name="managed-threading-best-practices"></a>Dělení na spravovaná vlákna osvědčené postupy
 Multithreading vyžaduje pečlivé programování. V případě většiny úkolů lze omezit složitost umístěním požadavků do fronty pro spuštění pomocí vláken fondu vláken. Toto téma řeší obtížnější situace, například koordinaci práce více vláken nebo zpracování vláken, která se blokují.  
@@ -86,21 +86,21 @@ Použití <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> 
 ## <a name="general-recommendations"></a>Obecná doporučení  
  Při používání více vláken zvažte následující pokyny:  
   
--   Pro ukončení ostatních vláken nepoužívejte vlákno <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Volání **přerušit** na jiné vlákno se podobá vyvolání výjimky na, že vlákno, bez znalosti, jakého bodu vlákno bylo dosaženo zpracovávání dosáhlo.  
+- Pro ukončení ostatních vláken nepoužívejte vlákno <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Volání **přerušit** na jiné vlákno se podobá vyvolání výjimky na, že vlákno, bez znalosti, jakého bodu vlákno bylo dosaženo zpracovávání dosáhlo.  
   
--   Pro synchronizaci činností více vláken nepoužívejte vlákna <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>. Použijte vlákna <xref:System.Threading.Mutex>, <xref:System.Threading.ManualResetEvent>, <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.Monitor>.  
+- Pro synchronizaci činností více vláken nepoužívejte vlákna <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>. Použijte vlákna <xref:System.Threading.Mutex>, <xref:System.Threading.ManualResetEvent>, <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.Monitor>.  
   
--   Řízení zpracovávání pracovních vláken neprovádějte z hlavního programu (například pomocí událostí). Namísto toho je vhodné navrhnout program tak, aby pracovní vlákna byla zodpovědná za čekání, dokud není k dispozici činnost, kterou pak vykonají a oznámí ostatním částem programu, že byla dokončena. Pokud nejsou pracovní vlákna blokovací, zvažte používání vláken fondu vláken. Volání metody <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> je užitečné v situacích, kdy pracovní vlákna provádí blokování.  
+- Řízení zpracovávání pracovních vláken neprovádějte z hlavního programu (například pomocí událostí). Namísto toho je vhodné navrhnout program tak, aby pracovní vlákna byla zodpovědná za čekání, dokud není k dispozici činnost, kterou pak vykonají a oznámí ostatním částem programu, že byla dokončena. Pokud nejsou pracovní vlákna blokovací, zvažte používání vláken fondu vláken. Volání metody <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> je užitečné v situacích, kdy pracovní vlákna provádí blokování.  
   
--   Nepoužívejte typy jako objekty zámku. To znamená, že byste neměli používat kódy, jako je `lock(typeof(X))` v jazyce C# nebo `SyncLock(GetType(X))` v jazyce Visual Basic, nebo používat kód <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> s objekty <xref:System.Type>. Pro daný typ existuje pouze jedna instance <xref:System.Type?displayProperty=nameWithType> v doméně aplikace. V případě, že typ, pro který použijete zámek, je veřejný, může jej jiný kód uzamknout, což povede k zablokování. Další informace najdete v části [spolehlivost – doporučené postupy](../../../docs/framework/performance/reliability-best-practices.md).  
+- Nepoužívejte typy jako objekty zámku. To znamená, že byste neměli používat kódy, jako je `lock(typeof(X))` v jazyce C# nebo `SyncLock(GetType(X))` v jazyce Visual Basic, nebo používat kód <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> s objekty <xref:System.Type>. Pro daný typ existuje pouze jedna instance <xref:System.Type?displayProperty=nameWithType> v doméně aplikace. V případě, že typ, pro který použijete zámek, je veřejný, může jej jiný kód uzamknout, což povede k zablokování. Další informace najdete v části [spolehlivost – doporučené postupy](../../../docs/framework/performance/reliability-best-practices.md).  
   
--   Při zamykání instancí, například `lock(this)` v jazyce C# nebo `SyncLock(Me)` v jazyce Visual Basic, buďte obezřetní. Pokud jiný kód v aplikaci, který je vůči typu externí, převezme zámek objektu, může dojít k zablokování.  
+- Při zamykání instancí, například `lock(this)` v jazyce C# nebo `SyncLock(Me)` v jazyce Visual Basic, buďte obezřetní. Pokud jiný kód v aplikaci, který je vůči typu externí, převezme zámek objektu, může dojít k zablokování.  
   
--   Zajistěte, aby vlákno, které se zobrazilo v monitorovacím nástroji, jej opustilo vždy, i pokud dojde k výjimce během zobrazení vlákna v monitorovacím nástroji. C# [Zámek](~/docs/csharp/language-reference/keywords/lock-statement.md) příkazu a Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) příkaz zajišťují toto chování automaticky, když **nakonec** blok k Ujistěte se, že <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> je volá se. Pokud nelze zajistit, aby **ukončovací** bude volána, zvažte změnu návrhu a použít **Mutex**. Objekt mutex je automaticky uvolněn, pokud se ukončí vlákno, které jej vlastní.  
+- Zajistěte, aby vlákno, které se zobrazilo v monitorovacím nástroji, jej opustilo vždy, i pokud dojde k výjimce během zobrazení vlákna v monitorovacím nástroji. C# [Zámek](~/docs/csharp/language-reference/keywords/lock-statement.md) příkazu a Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) příkaz zajišťují toto chování automaticky, když **nakonec** blok k Ujistěte se, že <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> je volá se. Pokud nelze zajistit, aby **ukončovací** bude volána, zvažte změnu návrhu a použít **Mutex**. Objekt mutex je automaticky uvolněn, pokud se ukončí vlákno, které jej vlastní.  
   
--   Pro úkoly, jež vyžadují různé prostředky, používejte více vláken a zamezte přiřazení většího počtu vláken jedinému prostředku. Například všechny úkoly zahrnující vstup-výstup těží z toho, že mají vlastní vlákno, protože dané vlákno bude přerušováno během vstupně-výstupních operací, a tím umožní provedení jiných vláken. Uživatelský vstup je dalším prostředkem, který těží z vyhrazeného vlákna. Úkol, který vyžaduje intenzivní výpočty, existuje na počítači s jedním procesorem spolu s uživatelským vstupem a s úkoly, jež se týkají vstupu-výstupu, ale úkoly s vícenásobnými intenzivními výpočty si vzájemně konkurují.  
+- Pro úkoly, jež vyžadují různé prostředky, používejte více vláken a zamezte přiřazení většího počtu vláken jedinému prostředku. Například všechny úkoly zahrnující vstup-výstup těží z toho, že mají vlastní vlákno, protože dané vlákno bude přerušováno během vstupně-výstupních operací, a tím umožní provedení jiných vláken. Uživatelský vstup je dalším prostředkem, který těží z vyhrazeného vlákna. Úkol, který vyžaduje intenzivní výpočty, existuje na počítači s jedním procesorem spolu s uživatelským vstupem a s úkoly, jež se týkají vstupu-výstupu, ale úkoly s vícenásobnými intenzivními výpočty si vzájemně konkurují.  
   
--   Pro jednoduché změny stavu je třeba zvážit použití metod třídy <xref:System.Threading.Interlocked> namísto používání příkazu `lock` (`SyncLock` v jazyce Visual Basic). Příkaz `lock` je dobrý univerzální nástroj, avšak třída <xref:System.Threading.Interlocked> poskytuje lepší výkon aktualizací, které musí být atomické. Pokud neexistují žádné kolize, provede interně jedinou předponu zámku. V revizích kódu hledejte stejný kód, jaký je uveden v následujících příkladech. V prvním příkladu je zvýšena stavová proměnná:  
+- Pro jednoduché změny stavu je třeba zvážit použití metod třídy <xref:System.Threading.Interlocked> namísto používání příkazu `lock` (`SyncLock` v jazyce Visual Basic). Příkaz `lock` je dobrý univerzální nástroj, avšak třída <xref:System.Threading.Interlocked> poskytuje lepší výkon aktualizací, které musí být atomické. Pokud neexistují žádné kolize, provede interně jedinou předponu zámku. V revizích kódu hledejte stejný kód, jaký je uveden v následujících příkladech. V prvním příkladu je zvýšena stavová proměnná:  
   
     ```vb  
     SyncLock lockObject  
@@ -169,13 +169,13 @@ Použití <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> 
 ## <a name="recommendations-for-class-libraries"></a>Doporučení pro knihovny tříd  
  Při navrhování knihoven tříd pro multithreading zvažte následující pokyny:  
   
--   Pokud je to možné, synchronizaci nepoužívejte. To zejména platí pro velmi vytížený kód. Algoritmus může být například upraven pro tolerování konfliktů časování spíše než pro jejich odstranění. Zbytečná synchronizace snižuje výkon a vytvoří možnosti pro zablokování a konflikty časování.  
+- Pokud je to možné, synchronizaci nepoužívejte. To zejména platí pro velmi vytížený kód. Algoritmus může být například upraven pro tolerování konfliktů časování spíše než pro jejich odstranění. Zbytečná synchronizace snižuje výkon a vytvoří možnosti pro zablokování a konflikty časování.  
   
--   Zajistěte, aby data deklarovaná jako static (`Shared` v jazyce Visual Basic) byla ve výchozím nastavení bezpečná pro přístup z více vláken.  
+- Zajistěte, aby data deklarovaná jako static (`Shared` v jazyce Visual Basic) byla ve výchozím nastavení bezpečná pro přístup z více vláken.  
   
--   Nenastavujte data instancí ve výchozím nastavení jako bezpečná pro přístup z více vláken. Přidávání zámků za účelem vytvoření kódu bezpečného pro přístup z více vláken snižuje výkon, zvyšuje kolize zámků a vytváří možnost zablokování. V běžných modelech aplikací provádí uživatelský kód v každém okamžiku pouze jedno vlákno, což minimalizuje potřebu zabezpečení pro přístup z více vláken. Z tohoto důvodu nejsou knihovny tříd rozhraní .NET Framework ve výchozím nastavení bezpečné pro přístup z více vláken.  
+- Nenastavujte data instancí ve výchozím nastavení jako bezpečná pro přístup z více vláken. Přidávání zámků za účelem vytvoření kódu bezpečného pro přístup z více vláken snižuje výkon, zvyšuje kolize zámků a vytváří možnost zablokování. V běžných modelech aplikací provádí uživatelský kód v každém okamžiku pouze jedno vlákno, což minimalizuje potřebu zabezpečení pro přístup z více vláken. Z tohoto důvodu nejsou knihovny tříd rozhraní .NET Framework ve výchozím nastavení bezpečné pro přístup z více vláken.  
   
--   Nepoužívejte poskytování statických metod, které mění stav. V případě běžných použití serverů je statický stav sdílen napříč požadavky, což znamená, že více vláken může současně spustit tento kód. Tato skutečnost otevírá možnosti pro chyby spojené s používáním více vláken. Zvažte používání návrhového vzoru, který zapouzdřuje data do instancí, jež nejsou sdíleny napříč požadavky. Dále platí, že pokud jsou synchronizována statická data, volání mezi statickými metodami, které mění stav, může způsobit zablokování nebo redundantní synchronizaci, což nepříznivě ovlivňuje výkon.  
+- Nepoužívejte poskytování statických metod, které mění stav. V případě běžných použití serverů je statický stav sdílen napříč požadavky, což znamená, že více vláken může současně spustit tento kód. Tato skutečnost otevírá možnosti pro chyby spojené s používáním více vláken. Zvažte používání návrhového vzoru, který zapouzdřuje data do instancí, jež nejsou sdíleny napříč požadavky. Dále platí, že pokud jsou synchronizována statická data, volání mezi statickými metodami, které mění stav, může způsobit zablokování nebo redundantní synchronizaci, což nepříznivě ovlivňuje výkon.  
   
 ## <a name="see-also"></a>Viz také:
 

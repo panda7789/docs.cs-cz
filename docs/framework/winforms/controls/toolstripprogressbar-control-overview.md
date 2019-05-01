@@ -10,10 +10,10 @@ helpviewer_keywords:
 ms.assetid: ec3ab522-5fe4-4b4d-a551-bc19e84f4774
 ms.openlocfilehash: 380dabe2468ae3c7d9d7303498823d847a8d119e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59976349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009303"
 ---
 # <a name="toolstripprogressbar-control-overview"></a>ToolStripProgressBar – přehled ovládacího prvku
 <xref:System.Windows.Forms.ToolStripProgressBar> Kombinuje rafting a vykreslovací funkce všech <xref:System.Windows.Forms.ToolStrip> ovládací prvky s jeho typické funkce sledování procesu. A <xref:System.Windows.Forms.ToolStripProgressBar> nejvíce obvykle je hostovaná <xref:System.Windows.Forms.StatusStrip>a méně často podle <xref:System.Windows.Forms.ToolStrip>.  

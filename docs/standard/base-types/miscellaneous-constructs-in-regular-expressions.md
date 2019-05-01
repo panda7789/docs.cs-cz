@@ -13,11 +13,11 @@ ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8956726915ebe1c0b1c7654e62e2e28620274b4a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025077"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Různé konstrukce v regulárních výrazech
 Regulární výrazy v rozhraní .NET obsahovat tři různé jazykové konstrukce. Jeden vám umožňuje povolit nebo zakázat určité možnosti porovnávání vzoru regulárního výrazu. Zbývající dvě umožní zahrnutí komentářů v regulárním výrazu.  
@@ -42,7 +42,7 @@ Regulární výrazy v rozhraní .NET obsahovat tři různé jazykové konstrukce
  Žádné změny v možnosti regulárních výrazů, které jsou definované `(?imnsx-imnsx)` vytvořit zůstane v platnosti až do konce nadřazené skupiny.  
   
 > [!NOTE]
->  `(?imnsx-imnsx:` *Dílčí výraz* `)` seskupovací konstrukce poskytuje stejné funkce pro podvýrazu. Další informace najdete v tématu [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+>  `(?imnsx-imnsx:` *Dílčí výraz* `)` seskupovací konstrukce poskytuje stejné funkce pro podvýrazu. Další informace najdete v tématu [Seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  V následujícím příkladu `i`, `n`, a `x` možnosti pro povolení nerozlišování velikosti písmen a explicitní zachycení a pro ignorování prázdných ve vzoru regulárního výrazu uprostřed regulární výraz.  
   

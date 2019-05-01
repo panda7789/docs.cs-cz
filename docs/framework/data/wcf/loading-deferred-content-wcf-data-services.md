@@ -10,11 +10,11 @@ helpviewer_keywords:
 - WCF Data Services, loading data
 ms.assetid: 32f9b588-c832-44c4-a7e0-fcce635df59a
 ms.openlocfilehash: ee7b0b40d74d908dc4f25372273f852662370df0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59518003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037125"
 ---
 # <a name="loading-deferred-content-wcf-data-services"></a>Načtení odloženého obsahu (WCF Data Services)
 Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] omezuje množství dat, které dotaz vrátí. Můžete však explicitně načíst další data, včetně souvisejících entit, data stránkované odpovědi a binární datové proudy z datové služby, když ho nepotřebují. Toto téma popisuje, jak načíst takového odloženého obsahu do vaší aplikace.  
@@ -22,14 +22,14 @@ Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.
 ## <a name="related-entities"></a>Související entity  
  Při spouštění dotazu budou vráceny pouze entity v sadě entit adresovaný. Když dotaz proti datová služba Northwind například vrátí `Customers` entity, ve výchozím nastavení související `Orders` nejsou vráceny entity, i když existuje vztah mezi `Customers` a `Orders`. Také když je stránkování povoleno v datové službě, je nutné explicitně načíst stránky následná data ze služby. Existují dva způsoby, jak načíst související entity:  
   
--   **Předběžné načítání**: Můžete použít `$expand` možností dotazu žádosti, že dotaz vrátí entity, které se týkají přidružení k entitě nastavte požadovaný dotaz. Použití <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metodu na <xref:System.Data.Services.Client.DataServiceQuery%601> přidáte `$expand` možnost Dotaz odeslaný do služby data. Můžete požádat o více související entity sady oddělených čárkou, jako v následujícím příkladu. Všechny entity požadoval dotaz se vrátí v jedné odezvě. Následující příklad vrátí `Order_Details` a `Customers` spolu s `Orders` sady entit:  
+- **Předběžné načítání**: Můžete použít `$expand` možností dotazu žádosti, že dotaz vrátí entity, které se týkají přidružení k entitě nastavte požadovaný dotaz. Použití <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metodu na <xref:System.Data.Services.Client.DataServiceQuery%601> přidáte `$expand` možnost Dotaz odeslaný do služby data. Můžete požádat o více související entity sady oddělených čárkou, jako v následujícím příkladu. Všechny entity požadoval dotaz se vrátí v jedné odezvě. Následující příklad vrátí `Order_Details` a `Customers` spolu s `Orders` sady entit:  
   
      [!code-csharp[Astoria Northwind Client#ExpandOrderDetailsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#expandorderdetailsspecific)]
      [!code-vb[Astoria Northwind Client#ExpandOrderDetailsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#expandorderdetailsspecific)]  
   
      [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] omezuje počet sad entit, které mohou být zahrnuty v jediném dotazu pomocí 12 `$expand` možnosti dotazu.  
   
--   **Explicitní načtení**: Můžete volat <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> instance pro explicitní načtení souvisejících entit. Každé volání <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> metoda vytvoří samostatnou žádost o datové služby. Následující příklad načte explicitně `Order_Details` pro `Orders` entity:  
+- **Explicitní načtení**: Můžete volat <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> instance pro explicitní načtení souvisejících entit. Každé volání <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> metoda vytvoří samostatnou žádost o datové služby. Následující příklad načte explicitně `Order_Details` pro `Orders` entity:  
   
      [!code-csharp[Astoria Northwind Client#LoadRelatedOrderDetailsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#loadrelatedorderdetailsspecific)]
      [!code-vb[Astoria Northwind Client#LoadRelatedOrderDetailsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#loadrelatedorderdetailsspecific)]  

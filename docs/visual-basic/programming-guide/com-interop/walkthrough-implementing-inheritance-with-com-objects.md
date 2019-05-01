@@ -8,11 +8,11 @@ helpviewer_keywords:
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
 ms.openlocfilehash: 0b3977e73e3b2aa9e80e2dab08d15035283b8387
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62022321"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty COM (Visual Basic)
 Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, včetně těch, které jsou vytvořeny v dřívějších verzích jazyka Visual Basic. Vlastnosti a metody třídy dědí od objektů COM může přepsat nebo přetížené stejně jako vlastnosti a metody jiné základní třídy lze přepsat nebo přetížené. Dědičnost z objektů COM je užitečné, pokud máte existující knihovny tříd, které nechcete, aby se musela kompilovat.  
@@ -125,9 +125,9 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
   
  Vlastností a metod zděděných z tříd modelu COM, lze přepsat, což znamená, že je možné deklarovat lokální vlastnost nebo metoda, která se nahradí vlastnost nebo metoda zděděné ze základní třídy modelu COM. Pravidla pro přepsání zděděné vlastnosti modelu COM jsou podobné pravidlům pro přepsání další vlastnosti a metody s následujícími výjimkami:  
   
--   Pokud přepíšete všechny vlastnosti nebo metody, které dědí z třídy modelu COM, je nutné přepsat všechny ostatní zděděné vlastnosti a metody.  
+- Pokud přepíšete všechny vlastnosti nebo metody, které dědí z třídy modelu COM, je nutné přepsat všechny ostatní zděděné vlastnosti a metody.  
   
--   Vlastnosti, které používají `ByRef` parametry nelze přepsat.  
+- Vlastnosti, které používají `ByRef` parametry nelze přepsat.  
   
 ## <a name="see-also"></a>Viz také:
 

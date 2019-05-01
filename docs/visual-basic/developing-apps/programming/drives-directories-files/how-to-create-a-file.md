@@ -6,11 +6,11 @@ helpviewer_keywords:
 - files [Visual Basic], creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 ms.openlocfilehash: a05e73a2096c82c9299e4483bbaf69e560fc2e45
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62038061"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Postupy: Vytvořte soubor v jazyce Visual Basic
 Tento příklad vytvoří prázdný textový soubor v zadané cesty pomocí <xref:System.IO.File.Create%2A> metodu <xref:System.IO.File> třídy.  
@@ -26,17 +26,17 @@ Tento příklad vytvoří prázdný textový soubor v zadané cesty pomocí <xre
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název cesty je poškozený. Například obsahuje neplatné znaky nebo je prázdné znaky (<xref:System.ArgumentException>).  
+- Název cesty je poškozený. Například obsahuje neplatné znaky nebo je prázdné znaky (<xref:System.ArgumentException>).  
   
--   Cesta je jen pro čtení (<xref:System.IO.IOException>).  
+- Cesta je jen pro čtení (<xref:System.IO.IOException>).  
   
--   Název cesty je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název cesty je `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
+- Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
   
--   Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).  
+- Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).  
   
--   Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException>).  
+- Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  A <xref:System.Security.SecurityException> může být vyvolána v prostředí částečné důvěryhodnosti.  

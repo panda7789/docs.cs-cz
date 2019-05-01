@@ -3,11 +3,11 @@ title: Přístup k OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
 ms.openlocfilehash: c104ceb22117d7cc53050a6513a4aea58fdff8c1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005599"
 ---
 # <a name="accessing-operationcontext"></a>Přístup k OperationContext
 Tato ukázka předvádí, jak zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.Send>) je možné s aktivitou vlastní obor pro přístup k <xref:System.ServiceModel.OperationContext.Current%2A> připojit a načíst vlastní hlavičky v rámci odchozí nebo příchozí zprávy.  
@@ -28,13 +28,13 @@ Tato ukázka předvádí, jak zasílání zpráv aktivity (<xref:System.ServiceM
   
 2. Po přidání se seznamy ACL adresu URL, pomocí následujícího postupu.  
   
-    1.  Sestavte řešení.  
+    1. Sestavte řešení.  
   
-    2.  Nastavení více projektů spuštění tak, že kliknete pravým tlačítkem řešení a vyberete **nastavit projekty po spuštění**.  
+    2. Nastavení více projektů spuštění tak, že kliknete pravým tlačítkem řešení a vyberete **nastavit projekty po spuštění**.  
   
-    3.  Přidat **služby** a **klienta** (v uvedeném pořadí) jako více spuštění projektů.  
+    3. Přidat **služby** a **klienta** (v uvedeném pořadí) jako více spuštění projektů.  
   
-    4.  Spusťte aplikaci. Konzola klienta zobrazí pracovní postup spuštěn dvakrát a okno služby Service ID instance pracovních postupů.  
+    4. Spusťte aplikaci. Konzola klienta zobrazí pracovní postup spuštěn dvakrát a okno služby Service ID instance pracovních postupů.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

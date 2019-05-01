@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 85084cd9-31cc-4e95-b667-42ef01336622
 ms.openlocfilehash: cc777da65ce1c0d425404b1cc8d47e8189684a7f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039400"
 ---
 # <a name="how-to-create-a-one-way-contract"></a>Postupy: Vytvoření jednosměrného kontraktu
 Toto téma popisuje základní kroky k vytvoření metody, které používají jednosměrného kontraktu. Tyto metody vyvolání operací ve službě Windows Communication Foundation (WCF) od klienta ale Nečekejte odpověď. Tento typ smlouvy lze použít například k publikování oznámení pro mnoho předplatitele. Jednosměrné kontrakty můžete použít také při vytvoření duplexního kontraktu (obousměrné), která umožňuje klientům a serverům komunikovat mezi sebou nezávisle tak, aby buď inicializaci volání do jiné. Můžete to umožní zejména, server pro jednosměrnou volání klienta, který klient může považovat za události. Podrobné informace o zadávání jednosměrné metody, naleznete v tématu <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost a <xref:System.ServiceModel.OperationContractAttribute> třídy.  

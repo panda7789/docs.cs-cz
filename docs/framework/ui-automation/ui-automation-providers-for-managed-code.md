@@ -9,11 +9,11 @@ helpviewer_keywords:
 - providers, UI Automation
 ms.assetid: 5f82f731-f1b5-4c8b-b47c-d11279a02574
 ms.openlocfilehash: fc182a5bd16e892a693a3a6d4013473cba483b27
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032311"
 ---
 # <a name="ui-automation-providers-for-managed-code"></a>Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

@@ -6,26 +6,26 @@ helpviewer_keywords:
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
 ms.openlocfilehash: 4a77060661cb0d71b0209cbcdeba23ffc2c6e5c7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59088563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010667"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Podkladový kód a kód XAML v subsystému WPF
 <a name="introduction"></a> Použití modelu Code-behind je pojem používaný pro kód, který je spojen s objekty definovanými značkami při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka není kompilována značka. Toto téma popisuje požadavky pro použití modelu code-behind i mechanismus alternativní vloženého kódu pro kód v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  Toto téma obsahuje následující oddíly:  
   
--   [Požadavky](#Prerequisites)  
+- [Požadavky](#Prerequisites)  
   
--   [Použití modelu Code-Behind a jazyk XAML](#codebehind_and_the_xaml_language)  
+- [Použití modelu Code-Behind a jazyk XAML](#codebehind_and_the_xaml_language)  
   
--   [Použití modelu Code-behind, obslužná rutina události a požadavky na částečné třídy v subsystému WPF](#Code_behind__Event_Handler__and_Partial_Class)  
+- [Použití modelu Code-behind, obslužná rutina události a požadavky na částečné třídy v subsystému WPF](#Code_behind__Event_Handler__and_Partial_Class)  
   
--   [x:Code](#x_Code)  
+- [x:Code](#x_Code)  
   
--   [Omezení vloženého kódu](#Inline_Code_Limitations)  
+- [Omezení vloženého kódu](#Inline_Code_Limitations)  
   
 <a name="Prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
@@ -38,15 +38,15 @@ ms.locfileid: "59088563"
 <a name="Code_behind__Event_Handler__and_Partial_Class"></a>   
 ## <a name="code-behind-event-handler-and-partial-class-requirements-in-wpf"></a>Použití modelu Code-behind, obslužná rutina události a požadavky na částečné třídy v subsystému WPF  
   
--   Částečné třídy musí být odvozen od typu, který zálohuje kořenový element.  
+- Částečné třídy musí být odvozen od typu, který zálohuje kořenový element.  
   
--   Všimněte si, že v rámci výchozího chování akce sestavení kompilace kódu, můžete ponechat odvození prázdné v definici dílčí třídy na straně použití modelu code-behind. I v případě, že není zadán, bude předpokládat zkompilovaného výsledku základní typ stránky kořenový jako základ pro částečné třídy. Ale spoléhání se na toto chování není nejvhodnější.  
+- Všimněte si, že v rámci výchozího chování akce sestavení kompilace kódu, můžete ponechat odvození prázdné v definici dílčí třídy na straně použití modelu code-behind. I v případě, že není zadán, bude předpokládat zkompilovaného výsledku základní typ stránky kořenový jako základ pro částečné třídy. Ale spoléhání se na toto chování není nejvhodnější.  
   
--   Obslužné rutiny událostí, který píšete v modelu code-behind musejí být metody instance a nemůže být statické metody. Tyto metody musí být určené částečné třídy v oboru názvů CLR identifikovaný `x:Class`. Nemůže kvalifikovat název obslužné rutiny události dáte pokyn, aby [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru hledat obslužné rutiny události pro propojování událostí v oboru jinou třídu.  
+- Obslužné rutiny událostí, který píšete v modelu code-behind musejí být metody instance a nemůže být statické metody. Tyto metody musí být určené částečné třídy v oboru názvů CLR identifikovaný `x:Class`. Nemůže kvalifikovat název obslužné rutiny události dáte pokyn, aby [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru hledat obslužné rutiny události pro propojování událostí v oboru jinou třídu.  
   
--   Obslužná rutina musí odpovídat delegáta pro odpovídající události v systému typů zálohování.  
+- Obslužná rutina musí odpovídat delegáta pro odpovídající události v systému typů zálohování.  
   
--   Pro jazyk Microsoft Visual Basicu konkrétně, můžete použít konkrétní jazyk `Handles` – klíčové slovo přidružit instance a události v deklaraci obslužné rutiny místo připojování obslužné rutiny s atributy v obslužné rutiny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Tento postup však mají určitá omezení, protože `Handles` – klíčové slovo nemůže podporovat všechny konkrétní funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém událostí, jako je například určité směrují scénářů událostí nebo připojených událostí. Podrobnosti najdete v tématu [jazyka Visual Basic a WPF zpracování událostí](visual-basic-and-wpf-event-handling.md).  
+- Pro jazyk Microsoft Visual Basicu konkrétně, můžete použít konkrétní jazyk `Handles` – klíčové slovo přidružit instance a události v deklaraci obslužné rutiny místo připojování obslužné rutiny s atributy v obslužné rutiny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Tento postup však mají určitá omezení, protože `Handles` – klíčové slovo nemůže podporovat všechny konkrétní funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém událostí, jako je například určité směrují scénářů událostí nebo připojených událostí. Podrobnosti najdete v tématu [jazyka Visual Basic a WPF zpracování událostí](visual-basic-and-wpf-event-handling.md).  
   
 <a name="x_Code"></a>   
 ## <a name="xcode"></a>x: Code  

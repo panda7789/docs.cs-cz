@@ -7,11 +7,11 @@ helpviewer_keywords:
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
 ms.openlocfilehash: f7f1ed2fbca4ab8892cb6c439ae8841fa8828bf0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008964"
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
 Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovládací prvek vázaný na data pomocí **formátování a rozšířené vazby** dialogové okno.  
@@ -46,7 +46,7 @@ Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovlá
     |Typ formátu|Možnost formátování|  
     |-----------------|-----------------------|  
     |Žádné formátování|Žádné možnosti.|  
-    |Čísla|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
+    |Numeric|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
     |Měna|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
     |Datum a čas|Vyberte datum a čas by měl být zobrazení tak, že vyberete jednu z položek v **typ** výběru.|  
     |vědecké|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  

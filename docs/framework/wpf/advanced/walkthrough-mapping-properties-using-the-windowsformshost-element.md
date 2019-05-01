@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
 ms.openlocfilehash: edd9d6f698ba27cacb5e9a5eecab43f58d47b8e1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007113"
 ---
 # <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Návod: Mapování vlastností použitím elementu WindowsFormsHost
 
@@ -21,17 +21,17 @@ Tento návod ukazuje, jak používat <xref:System.Windows.Forms.Integration.Wind
 
 Úlohy v tomto návodu zahrnují:
 
--   Vytvoření projektu.
+- Vytvoření projektu.
 
--   Definování rozložení aplikace.
+- Definování rozložení aplikace.
 
--   Definování nového mapování vlastností.
+- Definování nového mapování vlastností.
 
--   Odebrání výchozí mapování vlastností.
+- Odebrání výchozí mapování vlastností.
 
--   Nahraďte výchozí mapování vlastností.
+- Nahraďte výchozí mapování vlastností.
 
--   Rozšíření výchozí mapování vlastností.
+- Rozšíření výchozí mapování vlastností.
 
 Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [mapování vlastností použitím ukázka elementu WindowsFormsHost](https://go.microsoft.com/fwlink/?LinkID=160019).
 
@@ -41,7 +41,7 @@ Až budete hotovi, budete moci mapovat [!INCLUDE[TLA2#tla_winclient](../../../..
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
--   Visual Studio 2017
+- Visual Studio 2017
 
 ## <a name="create-and-set-up-the-project"></a>Vytvoření a nastavení projektu
 
@@ -76,7 +76,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ### <a name="to-define-a-new-property-mapping"></a>Chcete-li definovat nové mapování vlastností
 
--   Zkopírujte následující kód do definice pro `Window1` třídy.
+- Zkopírujte následující kód do definice pro `Window1` třídy.
 
      [!code-csharp[PropertyMappingWithWfhSample#14](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#14)]
      [!code-vb[PropertyMappingWithWfhSample#14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#14)]
@@ -93,7 +93,7 @@ Odebrání výchozí mapování vlastností pomocí volání <xref:System.Window
 
 ### <a name="to-remove-a-default-property-mapping"></a>Chcete-li odebrat výchozí mapování vlastností
 
--   Zkopírujte následující kód do definice pro `Window1` třídy.
+- Zkopírujte následující kód do definice pro `Window1` třídy.
 
      [!code-csharp[PropertyMappingWithWfhSample#13](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#13)]
      [!code-vb[PropertyMappingWithWfhSample#13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#13)]
@@ -106,7 +106,7 @@ Nahraďte výchozí mapování vlastnosti tak, že odeberete výchozí mapován�
 
 ### <a name="to-replace-a-default-property-mapping"></a>Chcete-li nahradit výchozí mapování vlastností
 
--   Zkopírujte následující kód do definice pro `Window1` třídy.
+- Zkopírujte následující kód do definice pro `Window1` třídy.
 
      [!code-csharp[PropertyMappingWithWfhSample#12](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#12)]
      [!code-vb[PropertyMappingWithWfhSample#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#12)]
@@ -123,7 +123,7 @@ Můžete použít výchozí mapování vlastností a také rozšířit o vlastn�
 
 ### <a name="to-extend-a-default-property-mapping"></a>Chcete-li rozšířit výchozí mapování vlastností
 
--   Zkopírujte následující kód do definice pro `Window1` třídy.
+- Zkopírujte následující kód do definice pro `Window1` třídy.
 
      [!code-csharp[PropertyMappingWithWfhSample#15](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#15)]
      [!code-vb[PropertyMappingWithWfhSample#15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#15)]
@@ -145,11 +145,11 @@ Nastavení mapování vlastností pomocí volání metody bylo popsáno dříve 
 
      `WindowLoaded` Metoda obslužné rutiny <xref:System.Windows.FrameworkElement.Loaded> událostí a provádí následující inicializace.
 
-    -   Vytvoří [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.CheckBox> ovládacího prvku.
+    - Vytvoří [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.CheckBox> ovládacího prvku.
 
-    -   Volá metody, které jste definovali dříve v návodu k nastavení mapování vlastností.
+    - Volá metody, které jste definovali dříve v návodu k nastavení mapování vlastností.
 
-    -   Přiřadí počáteční hodnoty pro mapovanou vlastnosti.
+    - Přiřadí počáteční hodnoty pro mapovanou vlastnosti.
 
 2. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Klikněte na zaškrtávací políčko na vliv <xref:System.Windows.FrameworkElement.FlowDirection%2A> mapování. Po kliknutí na zaškrtávací políčko obrátí rozložení zleva doprava orientace.
 

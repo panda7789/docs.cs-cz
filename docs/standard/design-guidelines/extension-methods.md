@@ -5,11 +5,11 @@ ms.technology: dotnet-standard
 ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
 author: KrzysztofCwalina
 ms.openlocfilehash: bd5f67c3bd766625e7c22b3ca9986cfbca8854bf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54621757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026416"
 ---
 # <a name="extension-methods"></a>Metody rozšíření
 Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, která se má volat pomocí syntaxe volání metody instance. Tyto metody musí přijmout nejmíň jeden parametr, který představuje instanci, kterou metoda se má operace provést.  
@@ -22,9 +22,9 @@ Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, kt
   
  **✓ CONSIDER** metodami rozšíření v některém z následujících scénářů:  
   
--   K poskytují pomocná funkce, které jsou relevantní pro každou implementaci rozhraní, pokud se říká, že funkce může být napsán z hlediska základní rozhraní. Je to proto, že konkrétní implementace nelze přiřadit jinak rozhraní. Například `LINQ to Objects` operátory jsou implementovány jako rozšiřující metody pro všechny <xref:System.Collections.Generic.IEnumerable%601> typy. Díky tomu se některé `IEnumerable<>` implementace je automaticky povolen LINQ.  
+- K poskytují pomocná funkce, které jsou relevantní pro každou implementaci rozhraní, pokud se říká, že funkce může být napsán z hlediska základní rozhraní. Je to proto, že konkrétní implementace nelze přiřadit jinak rozhraní. Například `LINQ to Objects` operátory jsou implementovány jako rozšiřující metody pro všechny <xref:System.Collections.Generic.IEnumerable%601> typy. Díky tomu se některé `IEnumerable<>` implementace je automaticky povolen LINQ.  
   
--   Pokud by metodu instance zavést závislost na nějaký typ, ale tato závislost by narušil pravidla správy závislostí. Například závislost z <xref:System.String> k <xref:System.Uri?displayProperty=nameWithType> je pravděpodobně není žádoucí a proto `String.ToUri()` chybí metoda instance `System.Uri` by chybný návrhu z hlediska správy závislostí. Metoda statické rozšíření `Uri.ToUri(this string str)` vrácení `System.Uri` by mnohem lepší návrh.  
+- Pokud by metodu instance zavést závislost na nějaký typ, ale tato závislost by narušil pravidla správy závislostí. Například závislost z <xref:System.String> k <xref:System.Uri?displayProperty=nameWithType> je pravděpodobně není žádoucí a proto `String.ToUri()` chybí metoda instance `System.Uri` by chybný návrhu z hlediska správy závislostí. Metoda statické rozšíření `Uri.ToUri(this string str)` vrácení `System.Uri` by mnohem lepší návrh.  
   
  **X AVOID** definování rozšiřující metody na <xref:System.Object?displayProperty=nameWithType>.  
   

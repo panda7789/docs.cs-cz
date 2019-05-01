@@ -10,11 +10,11 @@ helpviewer_keywords:
 - typography [WPF], GlyphRun object
 ms.assetid: 746ca769-a331-4435-9b95-f72a883b67c1
 ms.openlocfilehash: 0e5ec2b89f015c7e061b59fea755eb368f1ac7a1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031301"
 ---
 # <a name="introduction-to-the-glyphrun-object-and-glyphs-element"></a>Úvod do objektu GlyphRun a elementu Glyph
 Toto téma popisuje <xref:System.Windows.Media.GlyphRun> objektu a <xref:System.Windows.Documents.Glyphs> elementu.  
@@ -27,13 +27,13 @@ Toto téma popisuje <xref:System.Windows.Media.GlyphRun> objektu a <xref:System.
   
 2. Tisk scénáře.  
   
-    -   [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jako jazyk tiskárny zařízení.  
+    - [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jako jazyk tiskárny zařízení.  
   
-    -   [!INCLUDE[TLA#tla_mxdw](../../../../includes/tlasharptla-mxdw-md.md)].  
+    - [!INCLUDE[TLA#tla_mxdw](../../../../includes/tlasharptla-mxdw-md.md)].  
   
-    -   Předchozí ovladače tiskárny, výstup z [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikací na pevném formátu.  
+    - Předchozí ovladače tiskárny, výstup z [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikací na pevném formátu.  
   
-    -   Formát zařazování tisku.  
+    - Formát zařazování tisku.  
   
 3. Reprezentace pevného formátu dokumentu, včetně klientů k předchozím verzím sady [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a další výpočetní zařízení.  
   
@@ -67,15 +67,15 @@ Toto téma popisuje <xref:System.Windows.Media.GlyphRun> objektu a <xref:System.
 ### <a name="indices-property"></a>Vlastnost indexů  
  <xref:System.Windows.Documents.Glyphs.Indices%2A> Vlastnost představuje řetězec piktogram specifikací. Pokud pořadí glyfů tvoří jeden cluster, předchází specifikace prvním glyfem clusteru specifikace kolik glyfů a kolik bodů kódu kombinovat a vytvoří cluster. <xref:System.Windows.Documents.Glyphs.Indices%2A> Vlastnost shromažďuje v jednom řetězci následující vlastnosti.  
   
--   Glyphs indexy  
+- Glyphs indexy  
   
--   Piktogram zálohy šířky  
+- Piktogram zálohy šířky  
   
--   Kombinování piktogram přílohy vektorů  
+- Kombinování piktogram přílohy vektorů  
   
--   Cluster mapování z bodů kódu na piktogramy  
+- Cluster mapování z bodů kódu na piktogramy  
   
--   Piktogram příznaky  
+- Piktogram příznaky  
   
  Každá specifikace piktogram má následující formát.  
   

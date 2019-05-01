@@ -3,11 +3,11 @@ title: 'Postupy: Nastavení entit jako serializovatelných'
 ms.date: 03/30/2017
 ms.assetid: a6c5bf6e-064a-4f77-b74c-76b3a5dec309
 ms.openlocfilehash: bbe40ec448bef5f62d4182d96f82c6308639e27f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033797"
 ---
 # <a name="how-to-make-entities-serializable"></a>Postupy: Nastavení entit jako serializovatelných
 Je možné nastavení entit jako serializovatelných při generování kódu. Jsou vybaveny tříd entit <xref:System.Runtime.Serialization.DataContractAttribute> atribut a sloupce s <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  

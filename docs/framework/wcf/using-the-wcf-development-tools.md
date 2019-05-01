@@ -3,11 +3,11 @@ title: Používání vývojářských nástrojů WCF
 ms.date: 03/30/2017
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
 ms.openlocfilehash: 1ffa3be4a6b8976ab978ea995e8b2c1faaacf0ae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59144635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051712"
 ---
 # <a name="using-the-wcf-development-tools"></a>Používání vývojářských nástrojů WCF
 Tato část popisuje nástroje pro vývoj sady Visual Studio, které vám mohou pomoci při vývoji vaší WCFservice.  

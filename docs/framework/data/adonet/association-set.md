@@ -3,11 +3,11 @@ title: association set
 ms.date: 03/30/2017
 ms.assetid: a65247b6-ce59-44ea-974c-14ae20a7995f
 ms.openlocfilehash: af9297d9c827b12ed8611e99930234511f7f661c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034594"
 ---
 # <a name="association-set"></a>association set
 *Sada přidružení* je logický kontejner [přidružení](../../../../docs/framework/data/adonet/association-type.md) instance stejného typu. Skupinu přidružení není konstrukce; modelování dat nepopisuje to znamená, že struktura dat nebo vztahy. Místo toho přidružení sady zajišťující konstrukci prostředí hostování nebo úložiště (například do databáze SQL serveru nebo modul common language runtime) do skupiny přidružení instance tak, že je možné mapovat do úložiště dat.  
@@ -16,11 +16,11 @@ ms.locfileid: "59204481"
   
  Definici pro skupinu přidružení obsahuje následující informace:  
   
--   Název sady přidružení. (Povinné)  
+- Název sady přidružení. (Povinné)  
   
--   Přidružení, které bude obsahovat instancí. (Povinné)  
+- Přidružení, které bude obsahovat instancí. (Povinné)  
   
--   Dvě [přidružení nastavení zakončení](../../../../docs/framework/data/adonet/association-set-end.md).  
+- Dvě [přidružení nastavení zakončení](../../../../docs/framework/data/adonet/association-set-end.md).  
   
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy`, a `WrittenBy`. I když se informace o sadách přidružení se předávají v diagramu, následující diagram znázorňuje příklad sad přidružení a sady entit na základě tohoto modelu.  

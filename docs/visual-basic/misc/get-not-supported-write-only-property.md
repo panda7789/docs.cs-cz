@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID394
 ms.assetid: bbe0b526-d6b6-430a-92e2-9e8051847595
 ms.openlocfilehash: 954d2da5b4856cda8ad3eef233eecee208aadfca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024817"
 ---
 # <a name="get-not-supported-write-only-property"></a>Získat není podporována (vlastnost je jen pro zápis)
 Vlastnost nelze číst, protože je jen pro zápis.  

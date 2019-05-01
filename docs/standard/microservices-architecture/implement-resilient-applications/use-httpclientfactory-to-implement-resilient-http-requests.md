@@ -1,17 +1,17 @@
 ---
-title: Použití HttpClientFactory k implementaci odolných požadavky HTTP
+title: Použití HttpClientFactory k implementaci odolných požadavků HTTP
 description: Další informace o použití HttpClientFactory dostupné od verze rozhraní .NET Core 2.1 pro vytvoření `HttpClient` instancí, usnadňuje použít ve svých aplikacích.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
 ms.openlocfilehash: a55181e787b5c94e13d3945a5d97a12fed61e927
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020215"
 ---
-# <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
+# <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavků HTTP
 
 `HttpClientFactory` je sebevědomý factory, dostupné od verze rozhraní .NET Core 2.1 pro vytváření <xref:System.Net.Http.HttpClient> instancí, který se má použít ve svých aplikacích.
 

@@ -3,11 +3,11 @@ title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
 ms.openlocfilehash: 157c18d1640ccf1a61f871e5e3e9fef70b6a7e79
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039088"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
 Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace procesu Windows (WAS) hostovaná služba Windows Communication Foundation (WCF). BYL je nová aktivační služba procesů, který je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. WCF rozhraní adaptér naslouchací proces používá ke komunikaci žádosti o aktivaci, které jsou přijímány prostřednictvím protokolů jiným protokolem než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby Řízení front zpráv.  
@@ -19,19 +19,19 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
   
  Při je hostování služby WCF ve WAS standardní vazby používají obvyklým způsobem. Ale při použití <xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding> konfigurace WAS hostované služby, musí splňovat omezení. Při různých koncových bodů pomocí stejného dopravy, mají nastavení vazby tak, aby odpovídaly na sedm následující vlastnosti:  
   
--   connectionBufferSize  
+- connectionBufferSize  
   
--   třídě channelInitializationTimeout  
+- třídě channelInitializationTimeout  
   
--   MaxPendingConnections  
+- MaxPendingConnections  
   
--   MaxOutputDelay  
+- MaxOutputDelay  
   
--   MaxPendingAccepts  
+- MaxPendingAccepts  
   
--   ConnectionPoolSettings.IdleTimeout  
+- ConnectionPoolSettings.IdleTimeout  
   
--   ConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint  
+- ConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint  
   
  V opačném případě koncového bodu, který je inicializován nejdřív vždy zjistí hodnoty těchto vlastností a vyvolat pozdějším přidání koncových bodů <xref:System.ServiceModel.ServiceActivationException> Pokud shodné nejsou tato nastavení.  
   

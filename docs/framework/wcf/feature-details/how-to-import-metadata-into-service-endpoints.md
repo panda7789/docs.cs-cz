@@ -3,11 +3,11 @@ title: 'Postupy: Import metadat do koncových bodů služeb'
 ms.date: 03/30/2017
 ms.assetid: b69dbe20-92a1-4911-89d8-ffbc3dad4663
 ms.openlocfilehash: afee3f2236db99b14c0e840d987e4862a260568e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047825"
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a>Postupy: Import metadat do koncových bodů služeb
 Toto téma vysvětluje, jak importovat metadata do kolekce koncových bodů služby a použití služby definované v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V tomto tématu ukazují, jak vytvořit klientskou aplikaci, která importuje metadata ze služby a volání `Add` metodu na službu.  

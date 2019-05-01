@@ -9,11 +9,11 @@ helpviewer_keywords:
 - registry [Visual Basic], reading
 ms.assetid: 775d0a57-68c9-464e-8949-9a39bd29cc64
 ms.openlocfilehash: bc71dd2e3a78454236b2f6f30c2d51aa596e5b8c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013982"
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic
 `GetValue` Metodu `My.Computer.Registry` objekt lze použít ke čtení hodnoty registru Windows.  
@@ -26,7 +26,7 @@ ms.locfileid: "58840182"
   
 ### <a name="to-read-a-value-from-a-registry-key"></a>K načtení hodnoty z klíče registru  
   
--   Použít `GetValue` metoda zadáním cesty a názvu) k načtení hodnoty z klíče registru. Následující příklad přečte hodnotu `Name` z `HKEY_CURRENT_USER\Software\MyApp` a zobrazí jej v okně se zprávou.  
+- Použít `GetValue` metoda zadáním cesty a názvu) k načtení hodnoty z klíče registru. Následující příklad přečte hodnotu `Name` z `HKEY_CURRENT_USER\Software\MyApp` a zobrazí jej v okně se zprávou.  
   
      [!code-vb[VbResourceTasks#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#4)]  
   
@@ -34,7 +34,7 @@ ms.locfileid: "58840182"
   
 ### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Chcete-li zjistit, zda je hodnota v klíči registru existuje  
   
--   Použití `GetValue` metody k načtení hodnoty. Následující kód ověří, zda hodnota existuje a vrátí zprávu, pokud tomu tak není.  
+- Použití `GetValue` metody k načtení hodnoty. Následující kód ověří, zda hodnota existuje a vrátí zprávu, pokud tomu tak není.  
   
      [!code-vb[VbResourceTasks#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#12)]  
   
@@ -43,11 +43,11 @@ ms.locfileid: "58840182"
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Uživatel nemá oprávnění ke čtení z klíče registru (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění ke čtení z klíče registru (<xref:System.Security.SecurityException>).  
   
--   Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
+- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Pokud chcete spustit tento proces, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.RegistryPermission> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Podobně uživatel musí mít správné seznamy ACL pro vytvoření nebo zápis do nastavení. Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md).  

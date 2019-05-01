@@ -7,11 +7,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
 ms.openlocfilehash: 67c87b28f04b028f329663d6cf8215370a00ef2f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59184818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009167"
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView
 Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplikaci, bude často chcete dát uživatelům možnost přidávat nové řádky dat do úložiště. <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje tuto funkci poskytnutím řádek pro nové záznamy, které je vždy zobrazen jako poslední řádek. Je označené atributem symbol hvězdičky (*) v záhlaví řádku. Následující části popisují některé z akcí, byste měli zvážit, když program s řádkem pro nové záznamy povoleno.  
@@ -29,9 +29,9 @@ Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplika
 ## <a name="the-rows-collection"></a>Kolekce řádků  
  Je součástí řádku pro nové záznamy <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce ale chová odlišně ve dvou směrech:  
   
--   Nelze odebrat řádek pro nové záznamy <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce prostřednictvím kódu programu. <xref:System.InvalidOperationException> Je vyvolána, pokud to dojde k pokusu o. Uživatel také nelze odstranit řádek pro nové záznamy. <xref:System.Windows.Forms.DataGridViewRowCollection.Clear%2A?displayProperty=nameWithType> Metoda neodebere tento řádek z <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce.  
+- Nelze odebrat řádek pro nové záznamy <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce prostřednictvím kódu programu. <xref:System.InvalidOperationException> Je vyvolána, pokud to dojde k pokusu o. Uživatel také nelze odstranit řádek pro nové záznamy. <xref:System.Windows.Forms.DataGridViewRowCollection.Clear%2A?displayProperty=nameWithType> Metoda neodebere tento řádek z <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce.  
   
--   Je možné přidat žádný řádek po řádku pro nové záznamy. <xref:System.InvalidOperationException> Dojde při pokusu o to. V důsledku toho řádku pro nové záznamy se vždycky poslední řádek v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Metody <xref:System.Windows.Forms.DataGridViewRowCollection> přidá řádků –<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopy%2A>, a <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopies%2A>– všechny interně volání metod vložení při řádku pro nové záznamy je k dispozici.  
+- Je možné přidat žádný řádek po řádku pro nové záznamy. <xref:System.InvalidOperationException> Dojde při pokusu o to. V důsledku toho řádku pro nové záznamy se vždycky poslední řádek v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Metody <xref:System.Windows.Forms.DataGridViewRowCollection> přidá řádků –<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopy%2A>, a <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopies%2A>– všechny interně volání metod vložení při řádku pro nové záznamy je k dispozici.  
   
 ## <a name="visual-customization-of-the-row-for-new-records"></a>Vizuální přizpůsobení řádku pro nové záznamy  
  Při vytvoření řádku pro nové záznamy, je založena na určeném řádku <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> vlastnost. Všechny styly buňky, které nejsou zadané pro tento řádek se dědí z dalších vlastností. Další informace o dědičnosti styl buňky, naleznete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md).  

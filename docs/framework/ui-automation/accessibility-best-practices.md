@@ -6,11 +6,11 @@ helpviewer_keywords:
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
 ms.openlocfilehash: a20ecb8fb8d2ea4efdd244c3460dc9c07e22b538
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033225"
 ---
 # <a name="accessibility-best-practices"></a>Usnadnění – doporučené postupy
 > [!NOTE]
@@ -78,9 +78,9 @@ ms.locfileid: "59074232"
   
  Aplikace by měla poskytnout následující rozhraní klávesnice:  
   
--   zarážky pro všechny ovládací prvky, které uživatelé můžou komunikovat s, jako je například tlačítka, odkazy nebo pole se seznamem  
+- zarážky pro všechny ovládací prvky, které uživatelé můžou komunikovat s, jako je například tlačítka, odkazy nebo pole se seznamem  
   
--   logické pořadí  
+- logické pořadí  
   
 <a name="Show_the_Keyboard_Focus"></a>   
 ### <a name="show-the-keyboard-focus"></a>Zobrazit fokus klávesnice  
@@ -90,11 +90,11 @@ ms.locfileid: "59074232"
   
  Aplikace by měl provést pomocí fokus klávesnice:  
   
--   jedna položka by měla vždy mít fokus klávesnice  
+- jedna položka by měla vždy mít fokus klávesnice  
   
--   fokus klávesnice by měly být viditelné a zřejmé  
+- fokus klávesnice by měly být viditelné a zřejmé  
   
--   Výběr a/nebo cílené položky by měl být vizuálně zvýrazněn  
+- Výběr a/nebo cílené položky by měl být vizuálně zvýrazněn  
   
 <a name="Support_Navigation_Standards_and_Powerful_Navigation"></a>   
 ### <a name="support-navigation-standards-and-powerful-navigation-schemes"></a>Podpora navigace standardy a schémata navigace výkonné  
@@ -102,11 +102,11 @@ ms.locfileid: "59074232"
   
  Aplikace by měla poskytnout následující rozhraní klávesnice:  
   
--   klávesové zkratky a podtržené přístupových klíčů pro všechny příkazy, nabídky a ovládací prvky  
+- klávesové zkratky a podtržené přístupových klíčů pro všechny příkazy, nabídky a ovládací prvky  
   
--   klávesové zkratky pro důležité odkazy  
+- klávesové zkratky pro důležité odkazy  
   
--   mají všechny položky nabídky přístupové klávesy; klávesové zkratky máte všechna tlačítka, všechny příkazy mají klíče akcelerátoru k.  
+- mají všechny položky nabídky přístupové klávesy; klávesové zkratky máte všechna tlačítka, všechny příkazy mají klíče akcelerátoru k.  
   
 <a name="Do_not_let_Mouse_Location_Interfere_with_Keyboard"></a>   
 ### <a name="do-not-let-mouse-location-interfere-with-keyboard-navigation"></a>Nenechte myši umístění v konfliktu s navigaci pomocí klávesnice  

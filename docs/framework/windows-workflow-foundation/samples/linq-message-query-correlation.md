@@ -6,8 +6,8 @@ ms.openlocfilehash: cc13696cfd8eb2dcdf22fdc067518c8bd55ca32d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004923"
 ---
 # <a name="linq-message-query-correlation"></a>Korelace dotazů zprávy LINQ
 Tato ukázka předvádí, jak provádět korelace na základě obsahu pomocí vlastní <xref:System.ServiceModel.Dispatcher.MessageQuery> implementace na rozdíl od poskytnuté systémem <xref:System.ServiceModel.XPathMessageQuery>.  
@@ -28,11 +28,11 @@ Tato ukázka předvádí, jak provádět korelace na základě obsahu pomocí vl
   
 2. Po přidání se seznamy ACL adresu URL, pomocí následujícího postupu.  
   
-    1.  Sestavte řešení.  
+    1. Sestavte řešení.  
   
-    2.  Nastavení více projektů spuštění tak, že kliknete pravým tlačítkem řešení a vyberete **nastavit projekty po spuštění**. Přidat **služby** a **klienta** (v uvedeném pořadí) jako více spuštění projektů.  
+    2. Nastavení více projektů spuštění tak, že kliknete pravým tlačítkem řešení a vyberete **nastavit projekty po spuštění**. Přidat **služby** a **klienta** (v uvedeném pořadí) jako více spuštění projektů.  
   
-    3.  Spusťte aplikaci. Klientské konzoly zobrazuje pracovní postup odeslání objednávky a přijímá id nákupní objednávky a následně potvrzení objednávky. V okně služby zobrazí zpracovávaných žádostí.  
+    3. Spusťte aplikaci. Klientské konzoly zobrazuje pracovní postup odeslání objednávky a přijímá id nákupní objednávky a následně potvrzení objednávky. V okně služby zobrazí zpracovávaných žádostí.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

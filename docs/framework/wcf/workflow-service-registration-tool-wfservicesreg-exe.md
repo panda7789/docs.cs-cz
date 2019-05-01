@@ -3,14 +3,14 @@ title: Nástroj WorkFlow Service Registration (WFServicesReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
 ms.openlocfilehash: 3ea0f737cc050ec3f918044e0e105a41011a3e25
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33506558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052570"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Nástroj WorkFlow Service Registration (WFServicesReg.exe)
-Nástroj pro registraci služby pracovního postupu (WFServicesReg.exe) je samostatný nástroj, který slouží k přidání, odebrání nebo opravte konfigurační prvky pro služby systému Windows Workflow Foundation (WF).  
+Nástroj pro registraci služby pracovních postupů (WFServicesReg.exe) je samostatný nástroj, který slouží k přidání, odebrání nebo opravte elementů konfigurace pro služby Windows Workflow Foundation (WF).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -19,70 +19,70 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tento nástroj najdete na [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] umístění instalace, konkrétně % windir%\Microsoft.NET\Framework\v3.5, nebo v %windir%\Microsoft.NET\Framework64\v3.5 v 64bitové počítače.  
+ Nástroj lze nalézt v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] umístění instalace, konkrétně % windir%\Microsoft.NET\Framework\v3.5, nebo na %windir%\Microsoft.NET\Framework64\v3.5 v 64bitových počítačích.  
   
- Následující tabulka popisuje možnosti, které lze použít s nástroj pro registraci služby pracovního postupu (WFServicesReg.exe).  
+ Následující tabulky popisují požadované možnosti, které je možné pomocí nástroje pro registraci služby pracovních postupů (WFServicesReg.exe).  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|`/c`|Nakonfiguruje službu pracovního postupu systému Windows. Použít v instalaci a opravte scénáře.|  
-|`/r`|Odebere konfigurace služby pracovního postupu systému Windows.|  
-|`/v`|Tisk podrobné informace (pro konfiguraci nebo odebrání).|  
-|`/m`|Umožňuje formát protokolování MSI.|  
-|`/i`|Minimalizuje okno, pokud je aplikace spuštěná.|  
+|`/c`|Nakonfiguruje služby pracovního postupu Windows. Při instalaci a opravte scénáře.|  
+|`/r`|Odebere konfigurace služby pracovního postupu Windows.|  
+|`/v`|Vytisknout podrobné informace (pro konfiguraci nebo odebrání).|  
+|`/m`|Povolí formát protokolování MSI.|  
+|`/i`|Minimalizuje okno při spuštění aplikace.|  
   
 ## <a name="registration"></a>Registrace  
- Tento nástroj kontroluje v souboru Web.config a zaregistruje následující:  
+ Nástroj zkontroluje v souboru Web.config a zaregistruje následující:  
   
--   [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] referenční sestavení.  
+- [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] referenční sestavení.  
   
--   Sestavení zprostředkovatele pro soubory XOML.  
+- Sestavení zprostředkovatele pro soubory XOML.  
   
--   Obslužné rutiny HTTP XOML a .rules souborů.  
+- Obslužné rutiny HTTP pro soubory XOML a .rules.  
   
- Tento nástroj kontroluje souboru Machine.config a zaregistruje následující rozšíření:  
+ Nástroj zkontroluje soubor Machine.config a registruje následující rozšíření:  
   
--   behaviorExtensions  
+- behaviorExtensions  
   
--   bindingElementExtensions  
+- bindingElementExtensions  
   
--   bindingExtensions  
+- bindingExtensions  
   
- Nástroj také zaregistruje následující společnosti metadata importers pro klienta:  
+ Nástroj také zaregistruje následující metadata importers klienta:  
   
--   policyImporters  
+- policyImporters  
   
--   wsdlImporters  
+- wsdlImporters  
   
  Nástroj také zaregistruje XOML a .rules mapy skriptů a obslužné rutiny v metabázi služby IIS.  
   
  Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../includes/wxp-md.md)] počítače (služba IIS 5.1 a [!INCLUDE[iis601](../../../includes/iis601-md.md)]), jedna sada XOML a .rules mapy skriptů jsou registrované.  
   
- Na 64bitových počítačích, nástroj zaregistruje mapy skriptů režimu WOW, pokud `Enable32BitAppOnWin64` přepínač je povolený nebo nativní 64bitové verze mapy skriptů, pokud `Enable32BitAppOnWin64` přepínač je zakázána.  
+ Na 64bitových počítačích, nástroj zaregistruje mapy skriptů režimu WOW, pokud `Enable32BitAppOnWin64` přepínač je povolený, nebo nativní 64bitové mapy skriptů, pokud `Enable32BitAppOnWin64` přepínač je zakázaný.  
   
- Na [!INCLUDE[wv](../../../includes/wv-md.md)] a Windows Server 2008 (služby IIS 7.0 a vyšší) jsou registrované počítače, dvě sady XOML a .rules obslužné rutiny: jeden pro integrovaný režim a jeden pro klasický režim.  
+ Na [!INCLUDE[wv](../../../includes/wv-md.md)] a Windows Server 2008 (služba IIS 7.0 a vyšší) počítače, dvě sady XOML a .rules obslužné rutiny jsou registrovány: jeden pro integrovaný režim a jeden pro klasický režim.  
   
- Na 64bitové počítače jsou registrované tři sady obslužné rutiny (bez ohledu na stav `Enable32BitAppOnWin64` přepínače): jeden pro integrovaný režim, jednu pro WOW klasickém režimu a jeden pro nativní 64bitové verze klasickém režimu.  
+ Na 64bitových počítačích jsou registrovány tři páry obslužné rutiny (bez ohledu na stav `Enable32BitAppOnWin64` přepnout): jeden pro integrovaný režim, jeden pro WOW klasického režimu a jeden pro nativní 64bitové klasickém režimu.  
   
 > [!NOTE]
->  Na rozdíl od ServiceModelreg.exe WFServicesReg.exe nepovoluje přidání, odebrání nebo opravu mapy skriptů nebo obslužné rutiny pro konkrétní web. Alternativní řešení tohoto problému najdete v části "Oprava mapy skriptů".  
+>  Na rozdíl od ServiceModelreg.exe WFServicesReg.exe neumožňuje přidání, odebrání nebo oprava mapování skriptů nebo obslužné rutiny pro určitý web. Alternativní řešení těchto potíží najdete v části "Oprava the mapy skriptů".  
   
 ## <a name="usage-scenarios"></a>Scénáře použití  
   
 ### <a name="installing-iis-after-net-framework-35-is-installed"></a>Instalace služby IIS po instalaci rozhraní .NET Framework 3.5  
- Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítače [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] je nainstalována před instalací služby IIS. Z důvodu nedostupnosti metabáze služby IIS, instalace [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] úspěšné bez instalace XOML a .rules mapy skriptů.  
+ Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítače, [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] nainstalovaný před instalací služby IIS. Kvůli nedostupnosti metabáze služby IIS, instalaci [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] bude úspěšné bez instalace XOML a .rules mapy skriptů.  
   
- Po instalaci služby IIS, můžete použít nástroj WFServicesReg.exe s `/c` přepínač tak, aby nainstalovat tyto konkrétní mapy skriptů.  
+ Po instalaci služby IIS, můžete použít nástroj WFServicesReg.exe s `/c` přepínač k instalaci těchto konkrétních mapy skriptů.  
   
-### <a name="repairing-the-scriptmaps"></a>Oprava mapy skriptů  
+### <a name="repairing-the-scriptmaps"></a>Oprava mapování skriptů  
   
-#### <a name="scriptmap-deleted-under-web-sites-node"></a>Mapování skriptů odstranit pod uzlem webové stránky  
- Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítač, XOML nebo .rules se náhodou smazala z uzlu webových serverů. To lze opravit spuštěním nástroje WFServicesReg.exe s `/c` přepínače.  
+#### <a name="scriptmap-deleted-under-web-sites-node"></a>Odstranit pod uzlem weby v mapě skriptů  
+ Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítač, XOML nebo .rules náhodně odstraní ze uzel weby. To lze opravit spuštěním nástroje WFServicesReg.exe s `/c` přepnout.  
   
 #### <a name="scriptmap-deleted-under-a-particular-web-site"></a>Mapování skriptů odstranit v rámci určitého webového serveru  
- Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítač XOML odstraněna nebo .rules je náhodně z určitého webového serveru (například výchozí web) a nikoli z uzlu webových serverů.  
+ Na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítač, XOML nebo .rules náhodně odstraní z určitého webového serveru (například výchozí web), nikoli z uzlu webových serverů.  
   
- K opravě odstraněné obslužné rutiny pro určitý web, byste měli spustit "WFServicesReg.exe r" odebrat obslužné rutiny ze všech webů, spusťte "WFServicesReg.exe c" k vytvoření odpovídající obslužné rutiny pro všechny weby.  
+ K opravě odstraněné obslužné rutiny pro určitý web, měli byste spustit "WFServicesReg.exe r" k odebrání obslužných rutin ze všech webů, spusťte "WFServicesReg.exe c" k vytvoření odpovídající obslužné rutiny pro všechny weby.  
   
-### <a name="configuring-handlers-after-switching-iis-mode"></a>Konfigurace obslužné rutiny po přepnutí režimu služby IIS  
- Pokud služby IIS je v režimu sdílené konfigurace a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] je nainstalovaná, metabáze služby IIS je nakonfigurovaný pod sdílené umístění. Pokud přejdete na režim nesdílené konfigurace služby IIS, nebude obsahovat místní metabáze požadované obslužné rutiny. Konfigurace místního metabáze správně, můžete buď importovat sdílené metabáze na místní nebo spuštění "WFServicesReg.exe /c", který nakonfiguruje místní metabáze.
+### <a name="configuring-handlers-after-switching-iis-mode"></a>Konfigurace obslužné rutiny po změně režimu služby IIS  
+ Když služba IIS pracuje v režimu sdílenou konfiguraci a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] je nainstalovaný, metabáze služby IIS je nakonfigurované v rámci sdílené umístění. Pokud přepnete do režimu bez sdílená konfigurace služby IIS, nebude obsahovat místní metabáze požadované obslužné rutiny. Pokud chcete nakonfigurovat místní metabáze správně, můžete buď importovat sdílené metabáze na místní nebo spuštění "WFServicesReg.exe /c", který konfiguruje místní metabáze.

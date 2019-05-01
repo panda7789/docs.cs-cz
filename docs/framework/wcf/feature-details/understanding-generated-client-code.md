@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c3f6e4b0-1131-4c94-aa39-a197c5c2f2ca
 ms.openlocfilehash: 226b77d1c638ec4f8505140332ad35d4029ef0b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050685"
 ---
 # <a name="understanding-generated-client-code"></a>Principy generovaného klientského kódu
 [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje kód klienta a konfiguračního souboru aplikace klienta pro použití při vytváření klientských aplikací. Toto téma poskytuje přehled příklady generovaného kódu pro scénáře, kontrakt služby standard. Další informace o vytváření klientských aplikací, který pomocí generovaného kódu najdete v tématu [přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md).  
@@ -20,15 +20,15 @@ ms.locfileid: "59189154"
   
  Protože Svcutil.exe má řadu možností, které upravují generovaný typ informací, toto téma nepopisuje všechny scénáře. Následující standardní úkoly zahrnují vyhledání generovaného kódu:  
   
--   Identifikace rozhraní kontraktu služby.  
+- Identifikace rozhraní kontraktu služby.  
   
--   Identifikační třída klienta WCF.  
+- Identifikační třída klienta WCF.  
   
--   Určení datové typy.  
+- Určení datové typy.  
   
--   Identifikace kontrakty zpětného volání pro duplexní služby.  
+- Identifikace kontrakty zpětného volání pro duplexní služby.  
   
--   Identifikace rozhraní pomocné rutiny servisní smlouvy kanálu.  
+- Identifikace rozhraní pomocné rutiny servisní smlouvy kanálu.  
   
 ### <a name="finding-service-contract-interfaces"></a>Zjištění rozhraní kontraktu služby  
  Vyhledejte rozhraní, které modelují kontraktů služby, vyhledáte rozhraní, které jsou označeny <xref:System.ServiceModel.ServiceContractAttribute?displayProperty=nameWithType> atribut. Tento atribut často může být obtížné vyhledat s rychlým číst z důvodu přítomnosti dalších atributů a explicitní vlastnosti nastavené u samotného atributu. Mějte na paměti, že rozhraní servisní smlouvy a smlouvy rozhraní klienta jsou dva různé typy. Následující příklad kódu ukazuje původní kontrakt služby.  

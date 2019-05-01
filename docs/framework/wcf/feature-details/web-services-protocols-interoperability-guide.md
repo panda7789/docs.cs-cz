@@ -3,11 +3,11 @@ title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
 ms.openlocfilehash: 647212558b6be38e9b30239f7fb71213e6eb7d86
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050347"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
 Windows Communication Foundation (WCF) implementuje řadu protokoly webové služby. Mnohé z těchto protokolů zahrnout několik možností a bodů rozšiřitelnosti ponecháno na rozhodnutí implementátora. Toto téma obsahuje seznam protokoly webové služby, které implementuje WCF. Další témata v této části poskytují podrobné informace o implementaci pro každý protokol podporován.  
@@ -76,29 +76,29 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
   
  <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <xref:System.ServiceModel.Description.WsdlExporter>, <xref:System.ServiceModel.Description.WsdlImporter>, A <xref:System.ServiceModel.Description.MetadataResolver> třídy poskytují podporu pro následující specifikace metadat:  
   
--   [XML schématu část 1: Struktury druhé vydání](https://go.microsoft.com/fwlink/?LinkId=3536)  
+- [XML schématu část 1: Struktury druhé vydání](https://go.microsoft.com/fwlink/?LinkId=3536)  
   
--   [XML schématu část 2: Datové typy druhé vydání](https://go.microsoft.com/fwlink/?LinkId=40138)  
+- [XML schématu část 2: Datové typy druhé vydání](https://go.microsoft.com/fwlink/?LinkId=40138)  
   
--   [WSDL 1.1](https://go.microsoft.com/fwlink/?LinkId=96160)  
+- [WSDL 1.1](https://go.microsoft.com/fwlink/?LinkId=96160)  
   
--   [1.2 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=96705)  
+- [1.2 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=96705)  
   
--   [1.5 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=96706)  
+- [1.5 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=96706)  
   
--   [WS-PolicyAttachment 1.2](https://go.microsoft.com/fwlink/?LinkId=96707)  
+- [WS-PolicyAttachment 1.2](https://go.microsoft.com/fwlink/?LinkId=96707)  
   
--   [WS-MetadataExchange 1.1](https://go.microsoft.com/fwlink/?LinkId=94868)  
+- [WS-MetadataExchange 1.1](https://go.microsoft.com/fwlink/?LinkId=94868)  
   
--   [Přenos WS Get pro načtení metadat](https://go.microsoft.com/fwlink/?LinkId=96708)  
+- [Přenos WS Get pro načtení metadat](https://go.microsoft.com/fwlink/?LinkId=96708)  
   
  Kromě toho jsou implementovány následující profily vzájemná funkční spolupráce mezi WCF:  
   
--   [Basic Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=69313)  
+- [Basic Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=69313)  
   
--   [Simple SOAP vazby 1.0](https://go.microsoft.com/fwlink/?LinkId=96710)  
+- [Simple SOAP vazby 1.0](https://go.microsoft.com/fwlink/?LinkId=96710)  
   
--   [1.0 pracovní profil základní zabezpečení návrhu](https://go.microsoft.com/fwlink/?LinkId=96711)  
+- [1.0 pracovní profil základní zabezpečení návrhu](https://go.microsoft.com/fwlink/?LinkId=96711)  
   
 ## <a name="see-also"></a>Viz také:
 

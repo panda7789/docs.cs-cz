@@ -5,11 +5,11 @@ helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
 ms.openlocfilehash: 7d19c32994fdfc5587c06b979886f20ab2a04508
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62048268"
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) může protokolovat události zabezpečení (úspěch, selhání nebo obě) se tato funkce. Události se zapisují do protokolu událostí systému Windows a lze jej prozkoumat pomocí prohlížeče událostí.  
@@ -21,9 +21,9 @@ Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) mů�
 ## <a name="audit-level-and-behavior"></a>Úroveň auditování a chování  
  Existují dvě úrovně auditů zabezpečení:  
   
--   Úroveň autorizace služby, ve kterém je volající oprávnění.  
+- Úroveň autorizace služby, ve kterém je volající oprávnění.  
   
--   Úroveň zprávy, ve kterém WCF kontroluje platnost zpráv a ověří volajícího.  
+- Úroveň zprávy, ve kterém WCF kontroluje platnost zpráv a ověří volajícího.  
   
  Můžete zkontrolovat obě auditu úrovně o úspěch nebo chybu, která se nazývá *auditu chování*.  
   

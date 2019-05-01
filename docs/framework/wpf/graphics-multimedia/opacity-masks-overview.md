@@ -7,11 +7,11 @@ helpviewer_keywords:
 - opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
 ms.openlocfilehash: 84525e58487ce9b0bc26f77ff8dbced734bc90a9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008422"
 ---
 # <a name="opacity-masks-overview"></a>Přehled masek krytí
 Masky krytí umožňují vytvářet elementu nebo vizuální části transparentní nebo částečně transparentní. Vytvoření masky krytí, můžete použít <xref:System.Windows.Media.Brush> k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec mapován na prvek nebo vizuální a hodnotu neprůhlednosti každý pixel štětce se používá k určení výsledného krytí pixel odpovídající element nebo visual.  
@@ -36,21 +36,21 @@ Příklad masky krytí
 ## <a name="creating-an-opacity-mask"></a>Vytvoření masky krytí  
  Vytvoření masky krytí, vytvoříte <xref:System.Windows.Media.Brush> a použít ji k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo vizuál. Můžete použít libovolný typ <xref:System.Windows.Media.Brush> jako masku neprůhlednosti.  
   
--   <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Použít k vytvoření elementu nebo visual fade ze zobrazení.  
+- <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Použít k vytvoření elementu nebo visual fade ze zobrazení.  
   
      Následující obrázek znázorňuje <xref:System.Windows.Media.LinearGradientBrush> použít jako masku neprůhlednosti.  
   
      ![Objekt s neprůhlednosti LinearGradientBrush](./media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_lineagradientopacitymasksingle")  
 Příklad maskování LinearGradientBrush krytí  
   
--   <xref:System.Windows.Media.ImageBrush>: Použít k vytvoření textury a obnovitelně nebo vytržená edge účinky.  
+- <xref:System.Windows.Media.ImageBrush>: Použít k vytvoření textury a obnovitelně nebo vytržená edge účinky.  
   
      Následující obrázek znázorňuje <xref:System.Windows.Media.ImageBrush> použít jako masku neprůhlednosti.  
   
      ![Objekt, který má masky krytí ImageBrush](./media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")  
 Příklad maskování LinearGradientBrush krytí  
   
--   <xref:System.Windows.Media.DrawingBrush>: Použitý k vytvoření masky krytí komplexní na vzory tvarů, obrázky a přechody.  
+- <xref:System.Windows.Media.DrawingBrush>: Použitý k vytvoření masky krytí komplexní na vzory tvarů, obrázky a přechody.  
   
      Následující obrázek znázorňuje <xref:System.Windows.Media.DrawingBrush> použít jako masku neprůhlednosti.  
   

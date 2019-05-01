@@ -9,24 +9,24 @@ ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 15a441ea7b0b16c83c590289d04cf0c10623fb85
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032745"
 ---
 # <a name="specifying-an-entry-point"></a>Určení vstupního bodu
 Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo řadový vstupní bod cílové funkce identifikuje v rámci spravovaného projektu funkci napříč hranicemi interoperability. Dále je možné namapovat vstupní bod na jiný název, a tak funkci účinně přejmenovat.  
   
  Následuje seznam možných důvodů přejmenování funkce knihovny DLL:  
   
--   Zamezení používání názvů funkcí rozhraní API, která rozlišují velikost písmen  
+- Zamezení používání názvů funkcí rozhraní API, která rozlišují velikost písmen  
   
--   Dodržování stávajících standardů pro zadávání názvů  
+- Dodržování stávajících standardů pro zadávání názvů  
   
--   Přizpůsobení funkcí, které přijímají různé datové typy (deklarací několika verzí stejné funkce knihovny DLL)  
+- Přizpůsobení funkcí, které přijímají různé datové typy (deklarací několika verzí stejné funkce knihovny DLL)  
   
--   Zjednodušení používání rozhraní API, která obsahují verze ANSI a Unicode  
+- Zjednodušení používání rozhraní API, která obsahují verze ANSI a Unicode  
   
  Toto téma popisuje, jakým způsobem lze přejmenovat funkci knihovny DLL ve spravovaném kódu.  
   

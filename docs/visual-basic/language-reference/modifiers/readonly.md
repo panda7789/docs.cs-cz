@@ -11,11 +11,11 @@ helpviewer_keywords:
 - read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
 ms.openlocfilehash: 6e361cbe89f4c51f28199b008de817c2d48ef326
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051855"
 ---
 # <a name="readonly-visual-basic"></a>ReadOnly (Visual Basic)
 Určuje, že proměnné nebo vlastnosti lze číst, ale není zapsána.  
@@ -24,11 +24,11 @@ Určuje, že proměnné nebo vlastnosti lze číst, ale není zapsána.
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `ReadOnly` pouze na úrovni modulu. To znamená, že deklarace kontext `ReadOnly` elementu musí být třída, struktura nebo modulu a nemůže být zdrojový soubor, obor názvů nebo proceduru.  
+- **Místní deklarace.** Můžete použít `ReadOnly` pouze na úrovni modulu. To znamená, že deklarace kontext `ReadOnly` elementu musí být třída, struktura nebo modulu a nemůže být zdrojový soubor, obor názvů nebo proceduru.  
   
--   **Kombinované modifikátory.** Nelze zadat `ReadOnly` spolu s `Static` ve stejné deklaraci.  
+- **Kombinované modifikátory.** Nelze zadat `ReadOnly` spolu s `Static` ve stejné deklaraci.  
   
--   **Přiřazení hodnoty.** Použití kódu `ReadOnly` jeho hodnotu nelze nastavit vlastnost. Ale kód, který má přístup k podkladové úložiště můžete přiřadit nebo změňte hodnotu v každém okamžiku.  
+- **Přiřazení hodnoty.** Použití kódu `ReadOnly` jeho hodnotu nelze nastavit vlastnost. Ale kód, který má přístup k podkladové úložiště můžete přiřadit nebo změňte hodnotu v každém okamžiku.  
   
      Můžete přiřadit hodnoty k `ReadOnly` proměnné pouze v jeho deklaraci nebo v konstruktoru třídy nebo struktury, ve kterém je definována.  
   

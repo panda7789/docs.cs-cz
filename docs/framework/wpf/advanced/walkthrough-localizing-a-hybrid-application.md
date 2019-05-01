@@ -6,11 +6,11 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
 ms.openlocfilehash: 01530d4ae9779934948bbaff60fbbd392de6e701
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007117"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
 
@@ -18,15 +18,15 @@ Tento návod ukazuje, jak lokalizovat [!INCLUDE[TLA2#tla_winclient](../../../../
 
 Úlohy v tomto návodu zahrnují:
 
--   Vytváří [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] projektu hostitel.
+- Vytváří [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] projektu hostitel.
 
--   Přidání lokalizovatelné obsahu.
+- Přidání lokalizovatelné obsahu.
 
--   Povoluje se lokalizace.
+- Povoluje se lokalizace.
 
--   Přiřazení identifikátory prostředků.
+- Přiřazení identifikátory prostředků.
 
--   Chcete-li vytvořit satelitní sestavení pomocí locbaml – nástroj.
+- Chcete-li vytvořit satelitní sestavení pomocí locbaml – nástroj.
 
 Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [lokalizace ukázkové aplikace hybridní](https://go.microsoft.com/fwlink/?LinkID=160015).
 
@@ -36,7 +36,7 @@ Až skončíte, bude mít lokalizované hybridní aplikace.
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
--   Visual Studio 2017
+- Visual Studio 2017
 
 ## <a name="creating-the-windows-forms-host-project"></a>Vytvoření projektu Windows Forms hostitele
 

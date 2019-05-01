@@ -8,11 +8,11 @@ helpviewer_keywords:
 - globalization [WPF], features
 ms.assetid: c4b484fb-bc90-4186-a08d-f081e7109cad
 ms.openlocfilehash: a2ab04f40a3299bc0cd5a17c0f31e4f4ee0433ad
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010290"
 ---
 # <a name="globalization-and-localization-how-to-topics"></a>Postupy: Témata globalizace a lokalizace
 Témata v této části popisují, jak vývoj světově připravených aplikací.  

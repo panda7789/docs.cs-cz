@@ -16,24 +16,24 @@ helpviewer_keywords:
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
 ms.openlocfilehash: 4784ddd563ccec0f7e6271700781ee1b5d3ac105
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013319"
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsat informace se zobrazí v jednom z několika formátů:  
   
--   Prostý text  
+- Prostý text  
   
--   Kódování Unicode ve formátu prostého textu  
+- Kódování Unicode ve formátu prostého textu  
   
--   Rich-Text Format (RTF)  
+- Rich-Text Format (RTF)  
   
--   RTF prostory místo objekty OLE  
+- RTF prostory místo objekty OLE  
   
--   Prostý text s textovou reprezentaci řetězce objekty OLE  
+- Prostý text s textovou reprezentaci řetězce objekty OLE  
   
  Chcete-li uložit soubor, zavolejte <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metody. Můžete také použít **SaveFile** metoda k ukládání dat do datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.  
   

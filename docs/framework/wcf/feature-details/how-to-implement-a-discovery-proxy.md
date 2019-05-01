@@ -3,22 +3,22 @@ title: 'Postupy: Implementace zjišťování proxy'
 ms.date: 03/30/2017
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
 ms.openlocfilehash: b3e0b5cef01998c1e509586ba1fab3924eb7bc0b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000906"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>Postupy: Implementace zjišťování proxy
 Toto téma vysvětluje, jak implementace zjišťování proxy. Další informace o funkci zjišťování v Windows Communication Foundation (WCF) najdete v tématu [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Zjišťování proxy můžete implementovat tak, že vytvoříte třídu, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídy. Existuje mnoho z jiné třídy, které podporují definovaný a použít v této ukázce. `OnResolveAsyncResult`, `OnFindAsyncResult`, a `AsyncResult`. Tyto třídy implementace <xref:System.IAsyncResult> rozhraní. Další informace o <xref:System.IAsyncResult> naleznete v tématu [rozhraní System.IAsyncResult](xref:System.IAsyncResult).
 
  Implementace proxy zjišťování je rozdělit do tří hlavních částí v tomto tématu:
 
--   Definujte třídu, která obsahuje úložiště dat a rozšiřuje abstraktní <xref:System.ServiceModel.Discovery.DiscoveryProxy> třídy.
+- Definujte třídu, která obsahuje úložiště dat a rozšiřuje abstraktní <xref:System.ServiceModel.Discovery.DiscoveryProxy> třídy.
 
--   Implementace pomocné rutiny `AsyncResult` třídy.
+- Implementace pomocné rutiny `AsyncResult` třídy.
 
--   Hostitel Proxy zjišťování.
+- Hostitel Proxy zjišťování.
 
 ### <a name="to-create-a-new-console-application-project"></a>Chcete-li vytvořit nový projekt konzolové aplikace
 
@@ -28,9 +28,9 @@ Toto téma vysvětluje, jak implementace zjišťování proxy. Další informace
 
 3. Přidejte následující odkazy do projektu
 
-    1.  System.ServiceModel.dll
+    1. System.ServiceModel.dll
 
-    2.  System.Servicemodel.Discovery.dll
+    2. System.Servicemodel.Discovery.dll
 
     > [!CAUTION]
     >  Ujistěte se, že odkazujete verze 4.0 nebo novější z těchto sestavení.

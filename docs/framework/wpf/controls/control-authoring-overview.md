@@ -9,11 +9,11 @@ helpviewer_keywords:
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
 ms.openlocfilehash: bb35a4d47f583aad710e178bdb12cb9adf6321e0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62017680"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] model řízení výrazně snižuje potřebu vytvářet nový ovládací prvek. Ale v některých případech budete stále muset vytvořit vlastní ovládací prvek. Toto téma popisuje funkce, které minimalizují potřeba k vytvoření vlastního ovládacího prvku a jiného ovládacího prvku pro vytváření modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Toto téma ukazuje, jak vytvořit nový ovládací prvek.  
@@ -22,18 +22,18 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 ## <a name="alternatives-to-writing-a-new-control"></a>Alternativy k zápisu nového ovládacího prvku  
  V minulosti Pokud chcete získat vlastní zkušenosti z existujícího ovládacího prvku, jste byli omezeni na měnící se standardní vlastnosti ovládacího prvku, jako je například velikost písma, barvu pozadí a šířku ohraničení. Pokud jste si přáli rozšířit vzhled a chování ovládacího prvku nad rámec těchto předdefinovaných parametrů, musíte vytvořit nový ovládací prvek, obvykle dědění z existujícího ovládacího prvku a přepsání metody, které jsou zodpovědné za vykreslování ovládacího prvku.  I když se pořád možnost, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vám umožňuje přizpůsobit existující ovládací prvky s využitím bohaté obsahu modelu, styly, šablony a aktivačních událostí. Následující seznam obsahuje příklady, jak tyto funkce lze vytvořit vlastní a konzistentní prostředí bez nutnosti vytvářet nový ovládací prvek.  
   
--   **Formátovaný obsah.** Mnoho standardních [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky podporují formátovaný obsah. Například vlastnost content <xref:System.Windows.Controls.Button> je typu <xref:System.Object>, takže teoreticky cokoliv mohou být zobrazeny na <xref:System.Windows.Controls.Button>.  Pokud chcete, aby tlačítko Zobrazit image a text, můžete přidat bitovou kopii a <xref:System.Windows.Controls.TextBlock> k <xref:System.Windows.Controls.StackPanel> a přiřadit <xref:System.Windows.Controls.StackPanel> k <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost. Protože ovládacích prvků můžete zobrazit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuálních prvků a libovolná data, méně nutné k vytvoření nového ovládacího prvku nebo pro úpravu existujícího ovládacího prvku pro podporu složité vizualizace. Další informace o obsahu modelu pro <xref:System.Windows.Controls.Button> a další obsah modely v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [Model obsahu WPF](wpf-content-model.md).  
+- **Formátovaný obsah.** Mnoho standardních [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky podporují formátovaný obsah. Například vlastnost content <xref:System.Windows.Controls.Button> je typu <xref:System.Object>, takže teoreticky cokoliv mohou být zobrazeny na <xref:System.Windows.Controls.Button>.  Pokud chcete, aby tlačítko Zobrazit image a text, můžete přidat bitovou kopii a <xref:System.Windows.Controls.TextBlock> k <xref:System.Windows.Controls.StackPanel> a přiřadit <xref:System.Windows.Controls.StackPanel> k <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost. Protože ovládacích prvků můžete zobrazit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuálních prvků a libovolná data, méně nutné k vytvoření nového ovládacího prvku nebo pro úpravu existujícího ovládacího prvku pro podporu složité vizualizace. Další informace o obsahu modelu pro <xref:System.Windows.Controls.Button> a další obsah modely v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [Model obsahu WPF](wpf-content-model.md).  
   
--   **Styly.** A <xref:System.Windows.Style> je kolekce hodnot, které představují vlastnosti ovládacího prvku. Pomocí stylů můžete vytvořit opakovaně použitelné reprezentace požadovaný vzhled a chování aniž byste museli napsat nový ovládací prvek. Předpokládejme například, že chcete všechny vaše <xref:System.Windows.Controls.TextBlock> ovládacích prvků na červený, Arial písmo s velikostí písma 14. Můžete vytvořit styl jako prostředek a odpovídajícím způsobem nastavit příslušné vlastnosti. Pak každý <xref:System.Windows.Controls.TextBlock> přidat do vaší aplikace bude mít stejný vzhled.  
+- **Styly.** A <xref:System.Windows.Style> je kolekce hodnot, které představují vlastnosti ovládacího prvku. Pomocí stylů můžete vytvořit opakovaně použitelné reprezentace požadovaný vzhled a chování aniž byste museli napsat nový ovládací prvek. Předpokládejme například, že chcete všechny vaše <xref:System.Windows.Controls.TextBlock> ovládacích prvků na červený, Arial písmo s velikostí písma 14. Můžete vytvořit styl jako prostředek a odpovídajícím způsobem nastavit příslušné vlastnosti. Pak každý <xref:System.Windows.Controls.TextBlock> přidat do vaší aplikace bude mít stejný vzhled.  
   
--   **Datové šablony.** A <xref:System.Windows.DataTemplate> umožňuje přizpůsobit způsob zobrazení dat v ovládacím prvku. Například <xref:System.Windows.DataTemplate> lze určit způsob zobrazení dat <xref:System.Windows.Controls.ListBox>.  Příkladem, naleznete v tématu [přehled datových šablon](../data/data-templating-overview.md).  Kromě přizpůsobení vzhledu dat, <xref:System.Windows.DataTemplate> může obsahovat prvky uživatelského rozhraní, které vám přináší značnou flexibilitu ve vlastní uživatelská rozhraní.  Například pomocí <xref:System.Windows.DataTemplate>, můžete vytvořit <xref:System.Windows.Controls.ComboBox> v kterou každá položka obsahuje zaškrtávací políčko.  
+- **Datové šablony.** A <xref:System.Windows.DataTemplate> umožňuje přizpůsobit způsob zobrazení dat v ovládacím prvku. Například <xref:System.Windows.DataTemplate> lze určit způsob zobrazení dat <xref:System.Windows.Controls.ListBox>.  Příkladem, naleznete v tématu [přehled datových šablon](../data/data-templating-overview.md).  Kromě přizpůsobení vzhledu dat, <xref:System.Windows.DataTemplate> může obsahovat prvky uživatelského rozhraní, které vám přináší značnou flexibilitu ve vlastní uživatelská rozhraní.  Například pomocí <xref:System.Windows.DataTemplate>, můžete vytvořit <xref:System.Windows.Controls.ComboBox> v kterou každá položka obsahuje zaškrtávací políčko.  
   
--   **Šablony ovládacích prvků.** Mnoho ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít <xref:System.Windows.Controls.ControlTemplate> definovat strukturu a vzhled, který odděluje vzhledu ovládacího prvku z funkce ovládací prvek ovládacího prvku. Vzhled ovládacího prvku může výrazně změnit předefinováním jeho <xref:System.Windows.Controls.ControlTemplate>.  Předpokládejme například, že chcete ovládací prvek, který bude vypadat jako semafor. Tento ovládací prvek má jednoduché uživatelské rozhraní a funkce.  Ovládací prvek je tři kruhy pouze jeden z nich můžete lit po jednom. Po nějaké reflexe mohou Pamatujte, že <xref:System.Windows.Controls.RadioButton> nabízí funkce pouze jednoho výběru v době, ale výchozí vzhled <xref:System.Windows.Controls.RadioButton> nic vypadá světla na semafor.  Protože <xref:System.Windows.Controls.RadioButton> používá šablonu ovládacího prvku k definování jeho vzhled, snadno znovu definovat <xref:System.Windows.Controls.ControlTemplate> odpovídal požadavkům ovládacího prvku a používejte přepínačů, aby vaše semafor.  
+- **Šablony ovládacích prvků.** Mnoho ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít <xref:System.Windows.Controls.ControlTemplate> definovat strukturu a vzhled, který odděluje vzhledu ovládacího prvku z funkce ovládací prvek ovládacího prvku. Vzhled ovládacího prvku může výrazně změnit předefinováním jeho <xref:System.Windows.Controls.ControlTemplate>.  Předpokládejme například, že chcete ovládací prvek, který bude vypadat jako semafor. Tento ovládací prvek má jednoduché uživatelské rozhraní a funkce.  Ovládací prvek je tři kruhy pouze jeden z nich můžete lit po jednom. Po nějaké reflexe mohou Pamatujte, že <xref:System.Windows.Controls.RadioButton> nabízí funkce pouze jednoho výběru v době, ale výchozí vzhled <xref:System.Windows.Controls.RadioButton> nic vypadá světla na semafor.  Protože <xref:System.Windows.Controls.RadioButton> používá šablonu ovládacího prvku k definování jeho vzhled, snadno znovu definovat <xref:System.Windows.Controls.ControlTemplate> odpovídal požadavkům ovládacího prvku a používejte přepínačů, aby vaše semafor.  
   
     > [!NOTE]
     >  I když <xref:System.Windows.Controls.RadioButton> můžete použít <xref:System.Windows.DataTemplate>, <xref:System.Windows.DataTemplate> nestačí v tomto příkladu.  <xref:System.Windows.DataTemplate> Definuje vzhled elementů obsahu ovládacího prvku. V případě třídy <xref:System.Windows.Controls.RadioButton>, obsah je cokoli, co se zobrazí napravo od kruhu, která určuje, zda <xref:System.Windows.Controls.RadioButton> je vybrána.  V tomto příkladu semafor přepínač musí být pouze kruh, který může "rozsvítit." Protože vzhled požadavek semafor se tak liší od výchozí vzhled <xref:System.Windows.Controls.RadioButton>, je nezbytné k předefinování <xref:System.Windows.Controls.ControlTemplate>.  Obecně platí <xref:System.Windows.DataTemplate> slouží k definování obsah (nebo dat) z ovládacího prvku a s <xref:System.Windows.Controls.ControlTemplate> slouží k definování struktury ovládacího prvku.  
   
--   **Aktivační události.** A <xref:System.Windows.Trigger> vám umožní dynamicky změnit vzhled a chování ovládacího prvku bez vytvoření nového ovládacího prvku. Předpokládejme například, že máte více <xref:System.Windows.Controls.ListBox> ovládacích prvků ve vaší aplikaci a chcete položky v každém <xref:System.Windows.Controls.ListBox> být tučné a červenou, když je tato možnost vybrána. Může být první instinct vytvořit třídu, která dědí z <xref:System.Windows.Controls.ListBox> a přepsat <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A> metodou Změna vzhledu vybrané položky, ale lepším řešením je přidání triggeru pro styl <xref:System.Windows.Controls.ListBoxItem> , který změní vzhled vybrané položky. Aktivační událost můžete změnit hodnoty vlastností nebo provádět akce na základě hodnoty vlastnosti. <xref:System.Windows.EventTrigger> Umožňuje provádět akce, když dojde k události.  
+- **Aktivační události.** A <xref:System.Windows.Trigger> vám umožní dynamicky změnit vzhled a chování ovládacího prvku bez vytvoření nového ovládacího prvku. Předpokládejme například, že máte více <xref:System.Windows.Controls.ListBox> ovládacích prvků ve vaší aplikaci a chcete položky v každém <xref:System.Windows.Controls.ListBox> být tučné a červenou, když je tato možnost vybrána. Může být první instinct vytvořit třídu, která dědí z <xref:System.Windows.Controls.ListBox> a přepsat <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A> metodou Změna vzhledu vybrané položky, ale lepším řešením je přidání triggeru pro styl <xref:System.Windows.Controls.ListBoxItem> , který změní vzhled vybrané položky. Aktivační událost můžete změnit hodnoty vlastností nebo provádět akce na základě hodnoty vlastnosti. <xref:System.Windows.EventTrigger> Umožňuje provádět akce, když dojde k události.  
   
  Další informace o styly, šablony a aktivačních událostech najdete v tématu [styly a šablony](styling-and-templating.md).  
   
@@ -51,11 +51,11 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 #### <a name="benefits-of-deriving-from-usercontrol"></a>Výhody odvozený od uživatelský ovládací prvek  
  Vezměte v úvahu odvozený od <xref:System.Windows.Controls.UserControl> Pokud všechny z následujících akcí:  
   
--   Chcete sestavit ovládacího prvku podobně jako na tom, jak sestavit aplikaci.  
+- Chcete sestavit ovládacího prvku podobně jako na tom, jak sestavit aplikaci.  
   
--   Ovládací prvek se skládá pouze z existující komponenty.  
+- Ovládací prvek se skládá pouze z existující komponenty.  
   
--   Není nutné pro podporu komplexních přizpůsobení.  
+- Není nutné pro podporu komplexních přizpůsobení.  
   
 ### <a name="deriving-from-control"></a>Odvozování z ovládacího prvku  
  Odvozování z <xref:System.Windows.Controls.Control> třídy je model využívá většina existující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků. Při vytváření ovládacího prvku, který dědí z <xref:System.Windows.Controls.Control> třída, definují jeho vzhled pomocí šablon. Díky tomu můžete oddělit provozní logiky od bude obsahovat vizuální reprezentaci. Můžete také zajistit oddělení uživatelského rozhraní a logiky pomocí příkazů a vazby místo události a nejkonkrétnější – vyhněte odkazující prvky v <xref:System.Windows.Controls.ControlTemplate> kdykoli je to možné.  Pokud jsou správně oddělení uživatelského rozhraní a logiky ovládacího prvku, uživatelského ovládacího prvku lze znovu definovat ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> přizpůsobit její vzhled. I když sestavování vlastních <xref:System.Windows.Controls.Control> není snadné – stačí vytváření <xref:System.Windows.Controls.UserControl>, vlastní <xref:System.Windows.Controls.Control> nabízí největší flexibilitu.  
@@ -63,9 +63,9 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 #### <a name="benefits-of-deriving-from-control"></a>Výhody systému vyplývajících z ovládacího prvku  
  Vezměte v úvahu odvozený od <xref:System.Windows.Controls.Control> namísto použití <xref:System.Windows.Controls.UserControl> třídy, pokud je libovolná z následujících podmínek:  
   
--   Chcete vzhled ovládacího prvku, lze přizpůsobit prostřednictvím <xref:System.Windows.Controls.ControlTemplate>.  
+- Chcete vzhled ovládacího prvku, lze přizpůsobit prostřednictvím <xref:System.Windows.Controls.ControlTemplate>.  
   
--   Chcete ovládací prvek podporovat různé motivy.  
+- Chcete ovládací prvek podporovat různé motivy.  
   
 ### <a name="deriving-from-frameworkelement"></a>Odvozený od prvku FrameworkElement  
  Ovládací prvky, které jsou odvozeny z <xref:System.Windows.Controls.UserControl> nebo <xref:System.Windows.Controls.Control> spoléhat na vytváření stávající elementy. Pro většinu scénářů, toto je přijatelného řešení, protože libovolný objekt, který dědí z <xref:System.Windows.FrameworkElement> může být v <xref:System.Windows.Controls.ControlTemplate>. Existují však situace při vzhled ovládacího prvku vyžaduje více než funkce jednoduchý prvek složení. Pro tyto scénáře založenou na komponentu <xref:System.Windows.FrameworkElement> je tou správnou volbou.  
@@ -75,11 +75,11 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 #### <a name="benefits-of-deriving-from-frameworkelement"></a>Výhody odvozený od prvku FrameworkElement  
  Vezměte v úvahu odvozený od <xref:System.Windows.FrameworkElement> Pokud některý z následujících podmínek:  
   
--   Chcete mít přesnou kontrolu nad vzhled ovládacího prvku nad rámec poskytuje jednoduchý prvek složení.  
+- Chcete mít přesnou kontrolu nad vzhled ovládacího prvku nad rámec poskytuje jednoduchý prvek složení.  
   
--   Můžete definovat vzhled ovládacího prvku tak, že definujete vlastní logiku pro vykreslení.  
+- Můžete definovat vzhled ovládacího prvku tak, že definujete vlastní logiku pro vykreslení.  
   
--   Chcete sestavit nové způsoby, který jde nad rámec toho, jaké jsou možnosti s existující prvky <xref:System.Windows.Controls.UserControl> a <xref:System.Windows.Controls.Control>.  
+- Chcete sestavit nové způsoby, který jde nad rámec toho, jaké jsou možnosti s existující prvky <xref:System.Windows.Controls.UserControl> a <xref:System.Windows.Controls.Control>.  
   
 <a name="control_authoring_basics"></a>   
 ## <a name="control-authoring-basics"></a>Základy vytváření ovládacího prvku  
@@ -88,33 +88,33 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 ### <a name="use-dependency-properties"></a>Pomocí vlastnosti závislosti  
  Pokud vlastnost vlastnost závislosti, je možné provést následující kroky:  
   
--   Nastavte vlastnost ve stylu.  
+- Nastavte vlastnost ve stylu.  
   
--   Ke zdroji dat vytvořit vazbu vlastnost.  
+- Ke zdroji dat vytvořit vazbu vlastnost.  
   
--   Dynamický prostředek použijte jako hodnotu vlastnosti.  
+- Dynamický prostředek použijte jako hodnotu vlastnosti.  
   
--   Animujte vlastnost.  
+- Animujte vlastnost.  
   
  Pokud chcete vlastnost ovládacího prvku k podpoře jakýchkoli tuto funkci, je nutné jej implementovat jako vlastnost závislosti. Následující příklad definuje vlastnost závislosti s názvem `Value` následujícím způsobem:  
   
--   Definování <xref:System.Windows.DependencyProperty> identifikátor s názvem `ValueProperty` jako `public` `static` `readonly` pole.  
+- Definování <xref:System.Windows.DependencyProperty> identifikátor s názvem `ValueProperty` jako `public` `static` `readonly` pole.  
   
--   Zaregistrovat název vlastnosti v systému vlastností voláním <xref:System.Windows.DependencyProperty.Register%2A?displayProperty=nameWithType>, zadat následující:  
+- Zaregistrovat název vlastnosti v systému vlastností voláním <xref:System.Windows.DependencyProperty.Register%2A?displayProperty=nameWithType>, zadat následující:  
   
-    -   Název vlastnosti  
+    - Název vlastnosti  
   
-    -   Typ vlastnosti.  
+    - Typ vlastnosti.  
   
-    -   Typ, který vlastní vlastnost.  
+    - Typ, který vlastní vlastnost.  
   
-    -   Metadata pro vlastnost. Výchozí hodnota vlastnosti, obsahuje metadata <xref:System.Windows.CoerceValueCallback> a <xref:System.Windows.PropertyChangedCallback>.  
+    - Metadata pro vlastnost. Výchozí hodnota vlastnosti, obsahuje metadata <xref:System.Windows.CoerceValueCallback> a <xref:System.Windows.PropertyChangedCallback>.  
   
--   Definování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obálky vlastnost s názvem `Value`, což je stejný název, který se použije k registraci vlastnost závislosti implementací vlastnosti `get` a `set` přistupující objekty. Všimněte si, že `get` a `set` přistupující objekty volat pouze <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> v uvedeném pořadí. Doporučuje se, že přistupující objekty vlastnosti závislosti není obsahovat další logiku, protože klienti a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] může obejít přístupové objekty a volání <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> přímo. Například pokud je vlastnost navázána na datový zdroj, vlastnosti `set` přistupujícího objektu není volána.  Nepřidávat další logiku na GET a přístupové objekty set, použijte <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.CoerceValueCallback>, a <xref:System.Windows.PropertyChangedCallback> delegáty odpovídají nebo zkontrolujte hodnotu při změně.  Další informace o tato zpětná volání, naleznete v tématu [vlastnost závislosti zpětné volání a ověření](../advanced/dependency-property-callbacks-and-validation.md).  
+- Definování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obálky vlastnost s názvem `Value`, což je stejný název, který se použije k registraci vlastnost závislosti implementací vlastnosti `get` a `set` přistupující objekty. Všimněte si, že `get` a `set` přistupující objekty volat pouze <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> v uvedeném pořadí. Doporučuje se, že přistupující objekty vlastnosti závislosti není obsahovat další logiku, protože klienti a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] může obejít přístupové objekty a volání <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> přímo. Například pokud je vlastnost navázána na datový zdroj, vlastnosti `set` přistupujícího objektu není volána.  Nepřidávat další logiku na GET a přístupové objekty set, použijte <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.CoerceValueCallback>, a <xref:System.Windows.PropertyChangedCallback> delegáty odpovídají nebo zkontrolujte hodnotu při změně.  Další informace o tato zpětná volání, naleznete v tématu [vlastnost závislosti zpětné volání a ověření](../advanced/dependency-property-callbacks-and-validation.md).  
   
--   Definujte metodu <xref:System.Windows.CoerceValueCallback> s názvem `CoerceValue`. `CoerceValue` zajišťuje, že `Value` je větší nebo rovna hodnotě `MinValue` a menší než nebo rovno `MaxValue`.  
+- Definujte metodu <xref:System.Windows.CoerceValueCallback> s názvem `CoerceValue`. `CoerceValue` zajišťuje, že `Value` je větší nebo rovna hodnotě `MinValue` a menší než nebo rovno `MaxValue`.  
   
--   Definujte metodu <xref:System.Windows.PropertyChangedCallback>s názvem `OnValueChanged`. `OnValueChanged` vytvoří <xref:System.Windows.RoutedPropertyChangedEventArgs%601> objektu a připraví pro vyvolání `ValueChanged` směrované události. Směrované události jsou popsány v následující části.  
+- Definujte metodu <xref:System.Windows.PropertyChangedCallback>s názvem `OnValueChanged`. `OnValueChanged` vytvoří <xref:System.Windows.RoutedPropertyChangedEventArgs%601> objektu a připraví pro vyvolání `ValueChanged` směrované události. Směrované události jsou popsány v následující části.  
   
  [!code-csharp[UserControlNumericUpDown#DependencyProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/UserControlNumericUpDown/CSharp/NumericUpDown.xaml.cs#dependencyproperty)]
  [!code-vb[UserControlNumericUpDown#DependencyProperty](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UserControlNumericUpDown/visualbasic/numericupdown.xaml.vb#dependencyproperty)]  
@@ -124,29 +124,29 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 ### <a name="use-routed-events"></a>Použití směrovaných událostí  
  Stejně jako závislost vlastnosti rozšíření pojem [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnosti s dalšími funkcemi směrovaných událostí rozšířit pojem standard [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události. Když vytvoříte nový [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacího prvku, je také vhodné implementovat vaše událostí jako směrovaných událostí, protože směrované události podporuje následující chování:  
   
--   Události mohou být zpracovávány u nadřazené položky více ovládacích prvků. Pokud je událost šíření událostí, jedné nadřazené ve stromu elementů může přihlásit k odběru události. Autoři aplikace pak můžete použít jednu obslužnou rutinu reagovat na událost několik ovládacích prvků. Například, pokud váš ovládací prvek je součástí každé položky v <xref:System.Windows.Controls.ListBox> (protože je součástí <xref:System.Windows.DataTemplate>), vývojář aplikace definovat obslužnou rutinu události pro událost ovládacího prvku na <xref:System.Windows.Controls.ListBox>. Pokaždé, když dojde k události na žádném z ovládacích prvků, je volána obslužnou rutinu události.  
+- Události mohou být zpracovávány u nadřazené položky více ovládacích prvků. Pokud je událost šíření událostí, jedné nadřazené ve stromu elementů může přihlásit k odběru události. Autoři aplikace pak můžete použít jednu obslužnou rutinu reagovat na událost několik ovládacích prvků. Například, pokud váš ovládací prvek je součástí každé položky v <xref:System.Windows.Controls.ListBox> (protože je součástí <xref:System.Windows.DataTemplate>), vývojář aplikace definovat obslužnou rutinu události pro událost ovládacího prvku na <xref:System.Windows.Controls.ListBox>. Pokaždé, když dojde k události na žádném z ovládacích prvků, je volána obslužnou rutinu události.  
   
--   Směrované události lze použít v <xref:System.Windows.EventSetter>, která vývojářům aplikací umožňuje určit obslužné rutiny události v rámci style.  
+- Směrované události lze použít v <xref:System.Windows.EventSetter>, která vývojářům aplikací umožňuje určit obslužné rutiny události v rámci style.  
   
--   Směrované události lze použít v <xref:System.Windows.EventTrigger>, což je užitečné pro animace vlastnosti pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Další informace najdete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
+- Směrované události lze použít v <xref:System.Windows.EventTrigger>, což je užitečné pro animace vlastnosti pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Další informace najdete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
   
  Následující příklad definuje směrované události následujícím způsobem:  
   
--   Definování <xref:System.Windows.RoutedEvent> identifikátor s názvem `ValueChangedEvent` jako `public` `static` `readonly` pole.  
+- Definování <xref:System.Windows.RoutedEvent> identifikátor s názvem `ValueChangedEvent` jako `public` `static` `readonly` pole.  
   
--   Zaregistrujte směrované události ve volání <xref:System.Windows.EventManager.RegisterRoutedEvent%2A?displayProperty=nameWithType> metody. Příklad určuje následující informace, když volá <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>:  
+- Zaregistrujte směrované události ve volání <xref:System.Windows.EventManager.RegisterRoutedEvent%2A?displayProperty=nameWithType> metody. Příklad určuje následující informace, když volá <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>:  
   
-    -   Je název události `ValueChanged`.  
+    - Je název události `ValueChanged`.  
   
-    -   Strategie směrování je <xref:System.Windows.RoutingStrategy.Bubble>, což znamená, že je nejdříve volána obslužnou rutinu události ve zdroji (objekt, který vyvolává událost) a potom jsou volány obslužné rutiny události na zdroje na nadřazené elementy v daný okamžik, počínaje obslužné rutiny události na nejbližšímu Nadřazený element.  
+    - Strategie směrování je <xref:System.Windows.RoutingStrategy.Bubble>, což znamená, že je nejdříve volána obslužnou rutinu události ve zdroji (objekt, který vyvolává událost) a potom jsou volány obslužné rutiny události na zdroje na nadřazené elementy v daný okamžik, počínaje obslužné rutiny události na nejbližšímu Nadřazený element.  
   
-    -   Typ obslužné rutiny události je <xref:System.Windows.RoutedPropertyChangedEventHandler%601>, vytvořený s <xref:System.Decimal> typu.  
+    - Typ obslužné rutiny události je <xref:System.Windows.RoutedPropertyChangedEventHandler%601>, vytvořený s <xref:System.Decimal> typu.  
   
-    -   Vlastnící typ události je `NumericUpDown`.  
+    - Vlastnící typ události je `NumericUpDown`.  
   
--   Veřejná událost s názvem deklarovat `ValueChanged` a obsahuje deklarace přístupového objektu události. Příklad volá <xref:System.Windows.UIElement.AddHandler%2A> v `add` deklarace přistupujícího objektu a <xref:System.Windows.UIElement.RemoveHandler%2A> v `remove` deklarace přistupujícího objektu používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] událostí služby.  
+- Veřejná událost s názvem deklarovat `ValueChanged` a obsahuje deklarace přístupového objektu události. Příklad volá <xref:System.Windows.UIElement.AddHandler%2A> v `add` deklarace přistupujícího objektu a <xref:System.Windows.UIElement.RemoveHandler%2A> v `remove` deklarace přistupujícího objektu používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] událostí služby.  
   
--   Vytvořit chráněný, virtuální metodu s názvem `OnValueChanged` , která vyvolává `ValueChanged` událostí.  
+- Vytvořit chráněný, virtuální metodu s názvem `OnValueChanged` , která vyvolává `ValueChanged` událostí.  
   
  [!code-csharp[UserControlNumericUpDown#RoutedEvent](~/samples/snippets/csharp/VS_Snippets_Wpf/UserControlNumericUpDown/CSharp/NumericUpDown.xaml.cs#routedevent)]
  [!code-vb[UserControlNumericUpDown#RoutedEvent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UserControlNumericUpDown/visualbasic/numericupdown.xaml.vb#routedevent)]  
@@ -178,11 +178,11 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
 #### <a name="attached-properties"></a>Přidružené vlastnosti  
  Měli byste implementovat připojené vlastnosti ve vlastních ovládacích prvků pomocí následujících pokynů:  
   
--   Mít `public` `static` `readonly` <xref:System.Windows.DependencyProperty> formuláře *PropertyName* `Property` , který se vytváří pomocí <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metody. Název vlastnosti, který je předán <xref:System.Windows.DependencyProperty.RegisterAttached%2A> musí odpovídat *PropertyName*.  
+- Mít `public` `static` `readonly` <xref:System.Windows.DependencyProperty> formuláře *PropertyName* `Property` , který se vytváří pomocí <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metody. Název vlastnosti, který je předán <xref:System.Windows.DependencyProperty.RegisterAttached%2A> musí odpovídat *PropertyName*.  
   
--   Implementovat pár `public` `static` CLR metody s názvem `Set` *PropertyName* a `Get` *PropertyName*. Obě metody by měla přijímat třídy odvozené od <xref:System.Windows.DependencyProperty> jako jejich první argument. `Set` *PropertyName* metoda také přijímá argument, jehož typ odpovídá typu registrované datové vlastnosti. `Get` *PropertyName* metoda by měla vracet hodnotu stejného typu. Pokud `Set` *PropertyName* chybí metoda, vlastnost je označena jako jen pro čtení.  
+- Implementovat pár `public` `static` CLR metody s názvem `Set` *PropertyName* a `Get` *PropertyName*. Obě metody by měla přijímat třídy odvozené od <xref:System.Windows.DependencyProperty> jako jejich první argument. `Set` *PropertyName* metoda také přijímá argument, jehož typ odpovídá typu registrované datové vlastnosti. `Get` *PropertyName* metoda by měla vracet hodnotu stejného typu. Pokud `Set` *PropertyName* chybí metoda, vlastnost je označena jako jen pro čtení.  
   
--   `Set` *Vlastnost PropertyName* a `Get` *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> metody na závislost cílové objektů. Návrháři může přístup k připojené vlastnosti volání prostřednictvím metody obálky nebo přímé volání cílový objekt závislosti.  
+- `Set` *Vlastnost PropertyName* a `Get` *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> metody na závislost cílové objektů. Návrháři může přístup k připojené vlastnosti volání prostřednictvím metody obálky nebo přímé volání cílový objekt závislosti.  
   
  Další informace o přidružené vlastnosti najdete v tématu [přehled připojených vlastností](../advanced/attached-properties-overview.md).  
   

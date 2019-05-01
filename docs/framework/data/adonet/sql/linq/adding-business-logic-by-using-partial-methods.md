@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 3a73991e-fd4e-4610-93fb-7ced4dc6b7f9
 ms.openlocfilehash: ea7dbc4f760a446440cb7291413d69b1202f80e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033836"
 ---
 # <a name="adding-business-logic-by-using-partial-methods"></a>Přidání obchodní logiky pomocí částečných metod
 Můžete přizpůsobit jazyka Visual Basic a C# generovaného kódu v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektů s použitím *částečné metody*. Kód, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vygeneruje podpisy definuje částečné metody v rámci jedné. Pokud chcete implementovat metodu, můžete přidat vlastní částečnou metodu. Pokud nemůžete přidat vlastní implementaci, kompilátor zahodí podpis částečné metody a volání výchozí metody [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  

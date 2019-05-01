@@ -3,22 +3,22 @@ title: Vlastní publikování WSDL
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
 ms.openlocfilehash: 2085c145a58ecaa4ad2dd8ffbd6933b92e735a6c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59771891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990584"
 ---
 # <a name="custom-wsdl-publication"></a>Vlastní publikování WSDL
 Tato ukázka předvádí, jak:  
   
--   Implementace <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> na vlastní <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> atribut exportujte vlastnosti atribut jako poznámky WSDL.  
+- Implementace <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> na vlastní <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> atribut exportujte vlastnosti atribut jako poznámky WSDL.  
   
--   Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> Import vlastního WSDL poznámky.  
+- Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> Import vlastního WSDL poznámky.  
   
--   Implementace <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> na vlastní smlouvy chování a chování vlastní operace, jako komentáře v CodeDom pro importované kontrakt a operace zápisu importované poznámky.  
+- Implementace <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> na vlastní smlouvy chování a chování vlastní operace, jako komentáře v CodeDom pro importované kontrakt a operace zápisu importované poznámky.  
   
--   Použití <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> stáhnout WSDL, <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> pro import WSDL, pomocí vlastní import WSDL a <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> ke generování kódu klienta Windows Communication Foundation (WCF) s poznámkami WSDL jako / / / / / a "" komentáře v jazyce C# a Visual Základní.  
+- Použití <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> stáhnout WSDL, <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> pro import WSDL, pomocí vlastní import WSDL a <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> ke generování kódu klienta Windows Communication Foundation (WCF) s poznámkami WSDL jako / / / / / a "" komentáře v jazyce C# a Visual Základní.  
   
 > [!NOTE]
 >  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  

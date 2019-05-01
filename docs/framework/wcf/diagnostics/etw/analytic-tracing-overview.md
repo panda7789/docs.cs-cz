@@ -5,11 +5,11 @@ helpviewer_keywords:
 - analytic tracing [WCF], overview
 ms.assetid: ae55e9cc-0809-442f-921f-d644290ebf15
 ms.openlocfilehash: 9918f07d9c26c1779a1eedfbc423c31e61659334
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44070118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62048740"
 ---
 # <a name="analytic-tracing-overview"></a>Analytické trasování – přehled
 Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] je vysoký výkon a nízkou úroveň podrobností funkce trasování nastavit nad Event Tracing for Windows (ETW). Trasování událostí pro Windows se spustí na úrovni jádra výrazně snížit nároky na operations trasování. To efektivně ukládá do vyrovnávací paměti události uživatele a jádra režimu a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování je k dispozici v případě, že generované a přijaté protokolování po něm.  
@@ -46,5 +46,5 @@ Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/
 ### <a name="message-flow-tracing"></a>Trasování toku zpráv  
  Další informace o tom, jak povolit trasování toku zpráv najdete v tématu [Konfigurace trasování toku zpráv](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md).  
   
-### <a name="keywords"></a>Klíčová slova  
+### <a name="keywords"></a>klíčová slova  
  Klíčová slova se používají k filtrování zprávy trasování a definovat jakou součást [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] událost, protože ho. Další informace najdete v tématu [dynamické povolování analytického sledování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).

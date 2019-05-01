@@ -40,11 +40,11 @@ ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 82854b87f922f9937e593d0936fb1b29e6380ec0
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025961"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
@@ -52,17 +52,17 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
   
  Typy .NET jsou základem, na které .NET jsou postaveny aplikace, komponenty a ovládací prvky. Implementace .NET patří typy, které provádějí následující funkce:  
   
--   Představují základní datové typy a výjimky.  
+- Představují základní datové typy a výjimky.  
   
--   Zapouzdření datové struktury.  
+- Zapouzdření datové struktury.  
   
--   Provádění vstupně-výstupních operací.  
+- Provádění vstupně-výstupních operací.  
   
--   Přístup k informacím o načtené typy.  
+- Přístup k informacím o načtené typy.  
   
--   Vyvolání kontroly zabezpečení rozhraní .NET Framework.  
+- Vyvolání kontroly zabezpečení rozhraní .NET Framework.  
   
--   Poskytuje přístup k datům, bohaté grafické uživatelské rozhraní na straně klienta a grafické uživatelské rozhraní se správou serveru, na straně klienta.  
+- Poskytuje přístup k datům, bohaté grafické uživatelské rozhraní na straně klienta a grafické uživatelské rozhraní se správou serveru, na straně klienta.  
   
  .NET nabízí bohatou sadu rozhraní, stejně jako abstraktní a konkrétní (neabstraktní) třídy. Můžete použít konkrétní třídy jako nebo v mnoha případech, vlastní odvozovat z nich. Pokud chcete používat funkce rozhraní, můžete vytvořit třídu, která implementuje rozhraní nebo odvodit třídu z jedné ze tříd .NET, která implementuje rozhraní.  
   
@@ -86,7 +86,7 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
   
  V následující tabulce jsou uvedeny základní typy, .NET poskytuje stručně popisuje všechny typy a označuje odpovídající typ v jazyce Visual Basic C#, C++, a F#.  
   
-|Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ jazyka C#|C + +/ CLI datový typ|F#datový typ|  
+|Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ jazyka C#|C++Nebo datový typ rozhraní příkazového řádku|F#datový typ|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
 |Integer|<xref:System.Byte>|Celé číslo bez znaménka 8 bitů.|**Bajtů**|**byte**|**unsigned char**|**byte**|  
 ||<xref:System.SByte>|8bitové celé číslo se znaménkem.<br /><br /> Není kompatibilní se Specifikací CLS.|**SByte –**|**sbyte**|**char**<br /> -nebo-<br /> **podepsané** **char**|**sbyte**|  
@@ -96,7 +96,7 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 ||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UShort**|**ushort**|**short bez znaménka**|**uint16**|  
 ||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UInteger**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**uint32**|  
 ||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**ULong**|**ulong**|**unsigned __int64**|**uint64**|  
-|Číslo s plovoucí desetinnou čárkou|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**<br> or<br>**single**|  
+|Plovoucí desetinná čárka|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**<br> or<br>**single**|  
 ||<xref:System.Double>|(64-bit) číslo s dvojitou přesnost s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**<br> or <br> **double**|  
 |Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Datový typ Boolean**|**bool**|**bool**|**bool**|  
 |Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char**|**char**|**wchar_t**|**char**|  
@@ -104,7 +104,7 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 ||<xref:System.IntPtr>|Celé číslo se znaménkem, závisí na základní platformě (32 bitů hodnotu na 32bitové platformě) a hodnotu 64-bit na 64bitové platformě.|**IntPtr**<br /><br /> Žádný předdefinovaný typ.|**IntPtr**<br /><br /> Žádný předdefinovaný typ.|**IntPtr**<br /><br /> Žádný předdefinovaný typ.|**unativeint –**|  
 ||<xref:System.UIntPtr>|Celé číslo bez znaménka, závisí na základní platformě (32 bitů hodnotu na 32bitové platformě) a hodnotu 64-bit na 64bitové platformě.<br /><br /> Není kompatibilní se Specifikací CLS.|**UIntPtr**<br /><br /> Žádný předdefinovaný typ.|**UIntPtr**<br /><br /> Žádný předdefinovaný typ.|**UIntPtr**<br /><br /> Žádný předdefinovaný typ.|**unativeint –**|  
 ||<xref:System.Object>|Kořenový objekt hierarchie.|**objekt**|**object**|**Object^**|**obj**|  
-||<xref:System.String>|Neměnné a pevnou délkou řetězec znaků Unicode.|**řetězec**|**string**|**Řetězec ^**|**string**|  
+||<xref:System.String>|Neměnné a pevnou délkou řetězec znaků Unicode.|**Řetězec**|**string**|**Řetězec ^**|**string**|  
   
  Kromě základních datových typů <xref:System> obor názvů obsahuje více než 100 třídy od třídy, které zpracovávají výjimky z třídy, které se zabývají základní koncepty runtime, jako je například domény aplikace a systému uvolňování paměti. <xref:System> Obor názvů také obsahuje mnoho oborů názvů druhé úrovně.  
   

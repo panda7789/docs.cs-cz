@@ -3,11 +3,11 @@ title: Dotazování na stromy XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 2e35c1ab-08c8-4378-9ca8-8ff344756eda
 ms.openlocfilehash: 0d3855a562ce5ec43b28fba21b2ab4db0583a2d3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62024635"
 ---
 # <a name="querying-xml-trees-visual-basic"></a>Dotazování na stromy XML (Visual Basic)
 Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  

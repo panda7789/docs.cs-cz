@@ -3,24 +3,24 @@ title: Agregační dotazy
 ms.date: 03/30/2017
 ms.assetid: 13ec5580-05ce-4a1f-9d3d-8660be7891a2
 ms.openlocfilehash: ed8624c47ca8e68646f176ff91b63577d64b6d1f
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56094123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032549"
 ---
 # <a name="aggregate-queries"></a>Agregační dotazy
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje `Average`, `Count`, `Max`, `Min`, a `Sum` agregační operátory. Mějte na paměti následující vlastnosti agregační operátory v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]:  
   
--   Agregační dotazy provádějí okamžitě.  
+- Agregační dotazy provádějí okamžitě.  
   
      Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
   
--   Agregační dotazy obvykle vrátí místo kolekce.  
+- Agregační dotazy obvykle vrátí místo kolekce.  
   
      Další informace najdete v tématu [agregační operace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb546138(v=vs.120)).  
   
--   Nelze volat agregace proti anonymních typů.  
+- Nelze volat agregace proti anonymních typů.  
   
  Příklady v následujících tématech jsou odvozeny z ukázkové databáze Northwind. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   

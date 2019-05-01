@@ -12,11 +12,11 @@ helpviewer_keywords:
 - controls [Windows Forms], composite
 ms.assetid: 3cea09e5-4344-4ccb-9858-b66ccac210ff
 ms.openlocfilehash: 765befcf88247e4b2101b13c4937352ba4b070fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009146"
 ---
 # <a name="varieties-of-custom-controls"></a>Typy vlastních ovládacích prvků
 Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovládací prvky. Funkce ovládacího prvku známé uživatelské můžete rozšířit také existující ovládací prvky prostřednictvím dědičnosti. Můžete taky psát vlastní ovládací prvky, které vlastní vykreslení.  
@@ -31,17 +31,17 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  <xref:System.Windows.Forms.Control> Třída provádí následující úkoly k poskytování vizuálního zobrazení v aplikacích Windows Forms:  
   
--   Zpřístupňuje popisovač okna.  
+- Zpřístupňuje popisovač okna.  
   
--   Spravuje směrování zpráv.  
+- Spravuje směrování zpráv.  
   
--   Poskytuje myši a klávesnice události a mnoho dalších události uživatelského rozhraní.  
+- Poskytuje myši a klávesnice události a mnoho dalších události uživatelského rozhraní.  
   
--   Poskytuje funkce Rozšířené rozložení.  
+- Poskytuje funkce Rozšířené rozložení.  
   
--   Obsahuje mnoho vlastností, které jsou specifické pro zobrazení vizuálu, jako jsou například <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, a <xref:System.Windows.Forms.Control.Width%2A>.  
+- Obsahuje mnoho vlastností, které jsou specifické pro zobrazení vizuálu, jako jsou například <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, a <xref:System.Windows.Forms.Control.Width%2A>.  
   
--   Poskytuje zabezpečení a dělení na vlákna podpory, které jsou nezbytné pro ovládací prvek Windows Forms tak, aby fungoval jako ovládací prvek ActiveX Microsoft®.  
+- Poskytuje zabezpečení a dělení na vlákna podpory, které jsou nezbytné pro ovládací prvek Windows Forms tak, aby fungoval jako ovládací prvek ActiveX Microsoft®.  
   
  Protože tolik infrastruktury poskytuje základní třídy, je poměrně snadné pro vývoj vlastních ovládacích prvků Windows Forms.  
   
@@ -61,7 +61,7 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Dědí <xref:System.Windows.Forms.UserControl> třídy, pokud:  
   
--   Je potřeba sloučit funkce několik ovládacích prvků Windows Forms do jediné opakovaně použitelné jednotky.  
+- Je potřeba sloučit funkce několik ovládacích prvků Windows Forms do jediné opakovaně použitelné jednotky.  
   
 ### <a name="extended-controls"></a>Rozšířené ovládací prvky  
  Zděděný ovládací prvek lze odvodit z jakékoli existující ovládací prvek Windows Forms. Tento přístup můžete zachovat všechny vlastní funkce ovládacího prvku Windows Forms a pak rozšířit přidáním vlastní vlastnosti, metody a další funkce, které tuto funkci. Pomocí této možnosti můžete přepsat logiku programu Malování základního ovládacího prvku a pak rozšířit tak, že změníte její vzhled uživatelského rozhraní.  
@@ -74,9 +74,9 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Dědění z ovládacího prvku Windows Forms, pokud:  
   
--   Většinu funkcí, které potřebujete, už se shoduje s existujícího ovládacího prvku Windows Forms.  
+- Většinu funkcí, které potřebujete, už se shoduje s existujícího ovládacího prvku Windows Forms.  
   
--   Není nutné vlastní grafické uživatelské rozhraní, nebo chcete provést návrh novým grafickým uživatelským rozhraním pro existující ovládací prvek.  
+- Není nutné vlastní grafické uživatelské rozhraní, nebo chcete provést návrh novým grafickým uživatelským rozhraním pro existující ovládací prvek.  
   
 ### <a name="custom-controls"></a>Vlastní ovládací prvky  
  Dalším způsobem, jak vytvořit ovládací prvek je podstatně od začátku vytvořit děděním z <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control> Třída obsahuje všechny základní funkce vyžadované ovládacích prvků, včetně myš a klávesnici zpracování událostí, ale žádné funkce specifické pro ovládací prvek nebo grafické rozhraní.  
@@ -91,9 +91,9 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Dědí <xref:System.Windows.Forms.Control> třídy, pokud:  
   
--   Chcete poskytnout vlastní grafické reprezentace ovládacího prvku.  
+- Chcete poskytnout vlastní grafické reprezentace ovládacího prvku.  
   
--   Potřebujete implementovat vlastní funkce, které nejsou k dispozici prostřednictvím standardní ovládací prvky.  
+- Potřebujete implementovat vlastní funkce, které nejsou k dispozici prostřednictvím standardní ovládací prvky.  
   
 ### <a name="activex-controls"></a>ActiveX – ovládací prvky  
  I když byla optimalizována pro infrastrukturu formulářů Windows do hostitelské ovládací prvky Windows Forms, můžete stále použít ovládací prvky ActiveX. Není poskytována podpora pro tuto úlohu v sadě Visual Studio. Další informace najdete v tématu [jak: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md).  

@@ -3,11 +3,11 @@ title: Reference k Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
 ms.openlocfilehash: 9b666b83674cb2374409e321a2b715e9910bdd0e
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034265"
 ---
 # <a name="entity-sql-reference"></a>Reference k Entity SQL
 
@@ -30,7 +30,7 @@ Aritmetické operátory provádění matematických operací na dvou výrazů je
 
 Kanonické funkce jsou podporovány všechny poskytovatele dat a mohou využívat všechny dotazy technologie. V následující tabulce jsou uvedeny kanonické funkce:
 
-|Funkce|Typ|
+|Funkce|Type|
 |--------------|----------|
 |[Kanonické funkce agregace Entity SQL](aggregate-canonical-functions.md)|Tento článek popisuje agregační kanonické funkce Entity SQL.|
 |[Matematické kanonické funkce](math-canonical-functions.md)|Tento článek popisuje matematické kanonické funkce Entity SQL.|

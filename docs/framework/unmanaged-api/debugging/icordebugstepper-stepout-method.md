@@ -18,14 +18,14 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f663f5134cf34bf9beb66da20bbb5886baff5415
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61987425"
 ---
 # <a name="icordebugstepperstepout-method"></a>ICorDebugStepper::StepOut – metoda
-Způsobí, že tento ICorDebugStepper jedním krokem přes jeho obsahující vláken a provést při aktuální rámec vrátí prvek na snímek, volání.  
+Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a dokončit, jakmile aktuální rámec vrátí řízení volající rámec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ HRESULT StepOut ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- A `StepOut` operace dokončí po návratu normálně aktuální rámec volání rámečku.  
+ A `StepOut` operace se dokončí po návratu obvykle aktuální rámec volání rámce.  
   
- Pokud `StepOut` je volána, když v nespravovaném kódu krok dokončí, když se vrátí aktuální rámec do spravovaného kódu, která je volána.  
+ Pokud `StepOut` je volána, když v nespravovaném kódu, krok dokončí aktuální rámec návratu do spravovaného kódu, která ji zavolala.  
   
- V rozhraní .NET Framework verze 2.0, nepoužívejte `StepOut` s STOP_UNMANAGED nastaven příznak vzhledem k tomu, že se nezdaří. (Použití [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) nastavit pro krokování s příznaky.) Spolupráce ladicí programy musí krok do nativního kódu sami.  
+ V rozhraní .NET Framework verze 2.0, nepoužívejte `StepOut` s STOP_UNMANAGED příznak nastaven, protože se nezdaří. (Použití [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) nastavení příznaků pro krokování.) Spolupráce ladicí programy musí Krok ven do nativního kódu sami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
 ms.openlocfilehash: 5b234a00f3194fcf40a33d25302cff16d5999b05
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59082981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039374"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují tento hostitel služby Windows Communication Foundation (WCF) aplikace. Model zpracování služby WAS zobecňuje [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelském prostředí, který podporuje aktivaci založenou na zprávách a nabízí schopnost hostovat velký počet aplikací na daném počítači.  
@@ -18,13 +18,13 @@ Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovn�
   
  Model zpracování služby WAS poskytuje několik funkcí, které umožňují aplikacím zajistit také jejich hostování způsobem, který je robustnější, snáze spravovatelné a, který efektivně využívá prostředky:  
   
--   Aktivace založená na zprávách aplikacím a aplikacím pracovní proces spuštění a zastavení dynamicky v reakci na příchozí pracovních položek, které přicházejí pomocí protokolu HTTP a jiným protokolem než HTTP síťových protokolů.  
+- Aktivace založená na zprávách aplikacím a aplikacím pracovní proces spuštění a zastavení dynamicky v reakci na příchozí pracovních položek, které přicházejí pomocí protokolu HTTP a jiným protokolem než HTTP síťových protokolů.  
   
--   Robustní aplikace a pracovní proces recykluje k údržbě stavu spuštěných aplikací.  
+- Robustní aplikace a pracovní proces recykluje k údržbě stavu spuštěných aplikací.  
   
--   Centralizované aplikace konfigurace a správa.  
+- Centralizované aplikace konfigurace a správa.  
   
--   Umožňuje aplikacím využívat výhod procesní model IIS bez nutnosti nasazení nároky úplnou instalaci služby IIS.  
+- Umožňuje aplikacím využívat výhod procesní model IIS bez nutnosti nasazení nároky úplnou instalaci služby IIS.  
   
  Další informace o funkcích WAS najdete v tématu [IIS 7.0 Beta: Správu služby IIS 7.0 webu](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
   
