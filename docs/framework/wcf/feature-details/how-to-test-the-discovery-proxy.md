@@ -3,11 +3,11 @@ title: 'Postupy: Test proxy zjišťování'
 ms.date: 03/30/2017
 ms.assetid: d96e3fa2-3c42-4e5d-8244-2694081bdc32
 ms.openlocfilehash: 856b86241299585b80d58c6d37582463736a5935
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972910"
 ---
 # <a name="how-to-test-the-discovery-proxy"></a>Postupy: Test proxy zjišťování
 Toto je čtvrtý čtyři témat, která ukazuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md), jste implementovali WCF klientská aplikace, která používá proxy zjišťování k vyhledání služby a pak zavolá služba. Toto téma popisuje postup pro ověření proxy zjišťování, služby a pracovní aplikace klienta podle očekávání.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
 ms.openlocfilehash: 0b0da7e60cb54a1c3d6eb6d2d557f7312da1e9ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61950303"
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci
 Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dokázal relace neumožňovala recyklaci služby. Například při bezstavové SCT se používá v zabezpečené relaci a obnovit Internetové informační služby (IIS), potom data relace, která souvisí se službou se ztratí. Tato data relace zahrnují SCT mezipaměť tokenu. Proto při příštím klient odešle službě bezstavové SCT vrátí chybu, protože klíč, který je přidružený k SCT nelze načíst. Pokud však použijete stavové SCT, klíč, který je přidružený k SCT obsažené v SCT. Protože klíč je součástí SCT a proto v něm obsažené, nemá vliv službu neumožňovala recyklaci, zabezpečenou relaci. Ve výchozím nastavení používá Windows Communication Foundation (WCF) bezstavové SCTs v zabezpečené relaci. Toto téma podrobně popisuje, jak použít stavová SCTs v zabezpečené relaci.  
@@ -26,15 +26,15 @@ Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dok�
   
 ### <a name="to-use-stateful-scts-in-a-secure-session"></a>Použití stavové SCTs v zabezpečené relace  
   
--   Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněné službou, která používá stavové SCT zabezpečenou relaci.  
+- Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněné službou, která používá stavové SCT zabezpečenou relaci.  
   
-    1.  Definujte vlastní vazbu tak, že přidáte [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) do konfiguračního souboru služby.  
+    1. Definujte vlastní vazbu tak, že přidáte [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) do konfiguračního souboru služby.  
   
         ```xml  
         <customBinding>  
         ```  
   
-    2.  Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) podřízený element pro [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+    2. Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) podřízený element pro [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
          Zadejte název vazby tak, že nastavíte `name` atribut jedinečný název v konfiguračním souboru.  
   
@@ -42,7 +42,7 @@ Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dok�
         <binding name="StatefulSCTSecureSession">  
         ```  
   
-    3.  Zadejte režim ověřování pro zprávy odeslané do a z této služby tak, že přidáte [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) podřízený element pro [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+    3. Zadejte režim ověřování pro zprávy odeslané do a z této služby tak, že přidáte [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) podřízený element pro [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
          Určí, že je použit zabezpečenou relaci tak, že nastavíte `authenticationMode` atribut `SecureConversation`. Určete, že se používají stavové SCTs nastavením `requireSecurityContextCancellation` atribut `false`.  
   
@@ -51,7 +51,7 @@ Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dok�
                   requireSecurityContextCancellation="false">  
         ```  
   
-    4.  Zadejte, jak je ověření klienta při vytvoření zabezpečené relace tak, že přidáte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element pro [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
+    4. Zadejte, jak je ověření klienta při vytvoření zabezpečené relace tak, že přidáte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element pro [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
   
          Zadejte, jak proběhne ověření nastavení klienta `authenticationMode` atribut.  
   
@@ -59,13 +59,13 @@ Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dok�
         <secureConversationBootstrap authenticationMode="UserNameForCertificate" />  
         ```  
   
-    5.  Určete kódování zprávy přidáním element kódování [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
+    5. Určete kódování zprávy přidáním element kódování [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
   
         ```xml  
         <textMessageEncoding />  
         ```  
   
-    6.  Zadejte přenos přidáním element přenosu [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
+    6. Zadejte přenos přidáním element přenosu [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
   
         ```xml  
         <httpTransport />  

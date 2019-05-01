@@ -9,30 +9,30 @@ helpviewer_keywords:
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
 ms.openlocfilehash: f6fd1f2f5d0a729ee5610b81d4bfdca052a6e01e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981809"
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň uživatelům poskytují přístup k podkladová data, ať používáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete datové vazby v hybridních aplikacích, které zahrnují oba [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky.  
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu.  
+- Vytvoření projektu.  
   
--   Definice šablony.  
+- Definice šablony.  
   
--   Určení rozložení formuláře.  
+- Určení rozložení formuláře.  
   
--   Určení datové vazby.  
+- Určení datové vazby.  
   
--   Zobrazení dat s využitím vzájemná spolupráce grafického subsystému.  
+- Zobrazení dat s využitím vzájemná spolupráce grafického subsystému.  
   
--   Přidání zdroje dat do projektu.  
+- Přidání zdroje dat do projektu.  
   
--   Vytvoření vazby ke zdroji dat.  
+- Vytvoření vazby ke zdroji dat.  
   
  Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [datové vazby v ukázkové aplikace hybridní](https://go.microsoft.com/fwlink/?LinkID=159983).  
   
@@ -41,9 +41,9 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   Visual Studio.  
+- Visual Studio.  
   
--   Přístup k ukázkové databázi Northwind a systémem Microsoft SQL Server.  
+- Přístup k ukázkové databázi Northwind a systémem Microsoft SQL Server.  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
   
@@ -53,9 +53,9 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 2. V Průzkumníku řešení přidejte odkazy na následující sestavení.  
   
-    -   WindowsFormsIntegration  
+    - WindowsFormsIntegration  
   
-    -   System.Windows.Forms  
+    - System.Windows.Forms  
   
 3. Otevřete soubor MainWindow.xaml v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
   
@@ -74,7 +74,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 #### <a name="to-define-the-data-template"></a>Definování šablon dat  
   
--   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
+- Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
      [!code-xaml[WPFWithWFAndDatabinding#3](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
   
@@ -83,13 +83,13 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 #### <a name="to-set-up-the-grid-layout"></a>Nastavit rozložení mřížky  
   
--   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
+- Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
      [!code-xaml[WPFWithWFAndDatabinding#4](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#4)]  
   
 #### <a name="to-set-up-the-label-controls"></a>Nastavit ovládací prvky popisku  
   
--   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
+- Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
      [!code-xaml[WPFWithWFAndDatabinding#5](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#5)]  
   
@@ -100,7 +100,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 #### <a name="to-specify-data-bindings"></a>Chcete-li určit datové vazby  
   
--   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
+- Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
      <xref:System.Windows.Data.Binding> Třídy vytvoří vazbu <xref:System.Windows.Controls.TextBox> ovládacích prvků na odpovídající pole v databázi.  
   
@@ -111,7 +111,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 #### <a name="to-display-data-in-the-datagridview-control"></a>Zobrazení dat v ovládacím prvku DataGridView  
   
--   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
+- Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
      [!code-xaml[WPFWithWFAndDatabinding#7](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
   

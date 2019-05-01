@@ -5,11 +5,11 @@ author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
 ms.openlocfilehash: 7821da546e0ed0ab5fa97d00a638aa5cc1a3089c
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973586"
 ---
 # <a name="customizing-parameter-marshalling"></a>Přizpůsobení zařazování parametru
 

@@ -3,11 +3,11 @@ title: Zabezpečení LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d99b4af2-d447-4a3b-991b-6da0231a8637
 ms.openlocfilehash: fb811b86eef9123bf079b9eb45ff1eaa29fde7b3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61955854"
 ---
 # <a name="linq-to-xml-security-visual-basic"></a>Zabezpečení LINQ to XML (Visual Basic)
 Toto téma popisuje problémy se zabezpečením související s LINQ to XML. Kromě toho poskytuje pokyny pro snížení rizik souvisejících s ohrožení zabezpečení.  
@@ -26,25 +26,25 @@ Toto téma popisuje problémy se zabezpečením související s LINQ to XML. Kro
   
  Pokud pracujete v méně zabezpečeném prostředí, existují některé problémy se zabezpečením, které jsou spojeny s XML a používání tříd v <xref:System.Xml?displayProperty=nameWithType>, <xref:System.Xml.Schema?displayProperty=nameWithType>, <xref:System.Xml.XPath?displayProperty=nameWithType>, a <xref:System.Xml.Xsl?displayProperty=nameWithType>. Tyto problémy patří, ale nejsou omezeny následující:  
   
--   XSD, XPath a XSLT jsou založené na řetězci jazyky, ve kterých můžete zadat operací, které využívají velké množství času nebo paměti. Je zodpovědností aplikace programátory, kteří přijímají řetězce XSD, XPath nebo XSLT z nedůvěryhodných zdrojů k ověření, že nejsou škodlivý, řetězce nebo k monitorování a zmírnit možnost, že vaše rozhodnutí vyzkoušet tyto řetězce může vést k nadměrné systému Spotřeba prostředků.  
+- XSD, XPath a XSLT jsou založené na řetězci jazyky, ve kterých můžete zadat operací, které využívají velké množství času nebo paměti. Je zodpovědností aplikace programátory, kteří přijímají řetězce XSD, XPath nebo XSLT z nedůvěryhodných zdrojů k ověření, že nejsou škodlivý, řetězce nebo k monitorování a zmírnit možnost, že vaše rozhodnutí vyzkoušet tyto řetězce může vést k nadměrné systému Spotřeba prostředků.  
   
--   Schémata XSD (včetně vložené schémat) jsou ze své podstaty ohroženy útoky na dostupnost služby; přijmout byste to by neměl schémata z nedůvěryhodných zdrojů.  
+- Schémata XSD (včetně vložené schémat) jsou ze své podstaty ohroženy útoky na dostupnost služby; přijmout byste to by neměl schémata z nedůvěryhodných zdrojů.  
   
--   XSD a XSLT mohou obsahovat odkazy na další soubory a odkazu může vést k útokům mezi zónami a napříč doménami.  
+- XSD a XSLT mohou obsahovat odkazy na další soubory a odkazu může vést k útokům mezi zónami a napříč doménami.  
   
--   Externí entity v DTD může vést k útokům mezi zónami a napříč doménami.  
+- Externí entity v DTD může vést k útokům mezi zónami a napříč doménami.  
   
--   Specifikace DTD se stát terčem útoků DOS.  
+- Specifikace DTD se stát terčem útoků DOS.  
   
--   Výjimečně hloubkové dokumentů XML může představovat odmítnutí problémy se službou; můžete chtít omezit hloubky dokumentů XML.  
+- Výjimečně hloubkové dokumentů XML může představovat odmítnutí problémy se službou; můžete chtít omezit hloubky dokumentů XML.  
   
--   Nepřijmout pomocné součásti, jako například <xref:System.Xml.NameTable>, <xref:System.Xml.XmlNamespaceManager>, a <xref:System.Xml.XmlResolver> objekty z nedůvěryhodného sestavení.  
+- Nepřijmout pomocné součásti, jako například <xref:System.Xml.NameTable>, <xref:System.Xml.XmlNamespaceManager>, a <xref:System.Xml.XmlResolver> objekty z nedůvěryhodného sestavení.  
   
--   Čtení dat za účelem zmírnění útoků velkém dokumentu.  
+- Čtení dat za účelem zmírnění útoků velkém dokumentu.  
   
--   Bloky skriptu v šabloně stylů XSLT mohou vystavit počet útoků.  
+- Bloky skriptu v šabloně stylů XSLT mohou vystavit počet útoků.  
   
--   Ověření pečlivě před sestavením dynamické výrazy XPath.  
+- Ověření pečlivě před sestavením dynamické výrazy XPath.  
   
 ## <a name="linq-to-xml-security-issues"></a>Technologie LINQ to XML problémy se zabezpečením  
  Problémy se zabezpečením v tomto tématu nejsou k dispozici v libovolném pořadí. Všechny problémy jsou důležité a mělo by se řešit podle potřeby.  

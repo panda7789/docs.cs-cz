@@ -7,41 +7,42 @@ helpviewer_keywords:
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
 ms.openlocfilehash: 78497de3a9aea55320639c55a151a1260a960159
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053675"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
-Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako ostatní typy objektů. Proměnné pole tvořící prvky pole a informace o počet rozměrů a délka dat obsahuje ukazatel a přiřazení zkopíruje pouze tento ukazatel.  
-  
-### <a name="to-assign-one-array-to-another-array"></a>K přiřazení jednoho pole ke druhému  
-  
-1. Ujistěte se, že dvě pole mají stejné pořadí (počet rozměrů) a kompatibilní element datové typy.  
-  
-2. Použijte standardní přiřazovací příkaz přiřaďte pole zdrojového do cílového pole. Nepostupujte podle buď název pole v závorkách.  
-  
-    ```  
-    Dim formArray() As System.Windows.Forms.Form  
-    Dim controlArray() As System.Windows.Forms.Control  
-    controlArray = formArray  
-    ```  
-  
- Při přiřazení jednoho pole do jiného, platí následující pravidla:  
-  
--   **Stejné rozměry.** Rozměr (počet rozměrů) cílového pole musí být stejné jako u zdrojového pole.  
-  
-     Pokud jsou stejné rozměry dvě pole, není potřeba rovnat dimenze. Během přiřazování můžete změnit počet prvků v dané dimenzi.  
-  
--   **Typy elementů.** Buď obě pole musí mít *odkazovat na typ* elementy nebo obě pole musí mít *typ hodnoty* elementy. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
-  
-    -   Pokud obě pole mají prvky typu hodnoty, element datové typy, které musí být přesně stejný. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvky do pole Základní typ, který `Enum`.  
-  
-    -   Pokud obě pole mít odkaz na typ prvků, typ zdrojového prvku musí být odvozen z typu cílového elementu. Pokud tomu tak, máte dvě pole stejné relaci dědičnosti jako jejich prvky. Tento postup se nazývá *kovariance polí*.  
-  
- Kompilátor hlásí chybu, pokud se výše uvedených pravidel se poruší, například pokud datové typy, které nejsou kompatibilní, nebo je pořadí nerovnost. Můžete přidat do vašeho kódu, abyste měli jistotu, že tato pole jsou kompatibilní před pokusem o přiřazení pro zpracování chyb. Můžete také použít [TryCast – operátor](../../../../visual-basic/language-reference/operators/trycast-operator.md) – klíčové slovo, pokud chcete, aby se zabránilo došlo k výjimce.  
-  
+
+Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako ostatní typy objektů. Proměnné pole tvořící prvky pole a informace o počet rozměrů a délka dat obsahuje ukazatel a přiřazení zkopíruje pouze tento ukazatel.
+
+### <a name="to-assign-one-array-to-another-array"></a>K přiřazení jednoho pole ke druhému
+
+1. Ujistěte se, že dvě pole mají stejné pořadí (počet rozměrů) a kompatibilní element datové typy.
+
+2. Použijte standardní přiřazovací příkaz přiřaďte pole zdrojového do cílového pole. Nepostupujte podle buď název pole v závorkách.
+
+    ```vb
+    Dim formArray() As System.Windows.Forms.Form
+    Dim controlArray() As System.Windows.Forms.Control
+    controlArray = formArray
+    ```
+
+Při přiřazení jednoho pole do jiného, platí následující pravidla:
+
+- **Stejné rozměry.** Rozměr (počet rozměrů) cílového pole musí být stejné jako u zdrojového pole.
+
+  Pokud jsou stejné rozměry dvě pole, není potřeba rovnat dimenze. Během přiřazování můžete změnit počet prvků v dané dimenzi.
+
+- **Typy elementů.** Buď obě pole musí mít *odkazovat na typ* elementy nebo obě pole musí mít *typ hodnoty* elementy. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
+
+  - Pokud obě pole mají prvky typu hodnoty, element datové typy, které musí být přesně stejný. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvky do pole Základní typ, který `Enum`.
+
+  - Pokud obě pole mít odkaz na typ prvků, typ zdrojového prvku musí být odvozen z typu cílového elementu. Pokud tomu tak, máte dvě pole stejné relaci dědičnosti jako jejich prvky. Tento postup se nazývá *kovariance polí*.
+
+Kompilátor hlásí chybu, pokud se výše uvedených pravidel se poruší, například pokud datové typy, které nejsou kompatibilní, nebo je pořadí nerovnost. Můžete přidat do vašeho kódu, abyste měli jistotu, že tato pole jsou kompatibilní před pokusem o přiřazení pro zpracování chyb. Můžete také použít [TryCast – operátor](../../../../visual-basic/language-reference/operators/trycast-operator.md) – klíčové slovo, pokud chcete, aby se zabránilo došlo k výjimce.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)

@@ -5,11 +5,11 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 6149e79f45422be0b4f1ebc719543efd1b0b750c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053272"
 ---
 # <a name="azure-serverless-platform"></a>Platforma Azure bez serverů
 

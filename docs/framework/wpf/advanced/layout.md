@@ -10,30 +10,30 @@ helpviewer_keywords:
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
 ms.openlocfilehash: 1ffc665cb7ec5893dddf4efff5021e600b16fc45
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054355"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
  Toto téma obsahuje následující oddíly:  
   
--   [Element ohraničující polí](#LayoutSystem_BoundingBox)  
+- [Element ohraničující polí](#LayoutSystem_BoundingBox)  
   
--   [Systém rozložení](#LayoutSystem_Overview)  
+- [Systém rozložení](#LayoutSystem_Overview)  
   
--   [Měření a uspořádání podřízených](#LayoutSystem_Measure_Arrange)  
+- [Měření a uspořádání podřízených](#LayoutSystem_Measure_Arrange)  
   
--   [Prvky panel a chování vlastní rozložení](#LayoutSystem_PanelsCustom)  
+- [Prvky panel a chování vlastní rozložení](#LayoutSystem_PanelsCustom)  
   
--   [Důležité informace o výkonu rozložení](#LayoutSystem_Performance)  
+- [Důležité informace o výkonu rozložení](#LayoutSystem_Performance)  
   
--   [Dílčí pixel vykreslování a rozložení zaokrouhlení](#LayoutSystem_LayoutRounding)  
+- [Dílčí pixel vykreslování a rozložení zaokrouhlení](#LayoutSystem_LayoutRounding)  
   
--   [Co se chystá](#LayoutSystem_whatsnext)  
+- [Co se chystá](#LayoutSystem_whatsnext)  
   
 <a name="LayoutSystem_BoundingBox"></a>   
 ## <a name="element-bounding-boxes"></a>Element ohraničující polí  
@@ -120,19 +120,19 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
 ## <a name="layout-performance-considerations"></a>Důležité informace o výkonu rozložení  
  Rozložení je rekurzivní proces. Každý podřízený prvek <xref:System.Windows.Controls.Panel.Children%2A> zpracuje kolekce při každém vyvolání systém rozložení. V důsledku toho aktivuje systém rozložení mělo by se vyhnout při není nutné. Následující aspekty pomáhá dosahovat lepšího výkonu.  
   
--   Mějte které změně hodnoty vlastnosti rekurzivní aktualizace vynutí systém rozložení.  
+- Mějte které změně hodnoty vlastnosti rekurzivní aktualizace vynutí systém rozložení.  
   
      Vlastnosti závislostí, jejichž hodnoty může způsobit, že systém rozložení inicializovat jsou označené veřejné příznaky. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné příčiny, vlastností, které vynutí změny hodnot rekurzivního aktualizovat tak, že systém rozložení. Obecně platí, by měly mít jakákoli vlastnost, která mohou ovlivnit velikost elementu ohraničující rámeček <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [přehled vlastností závislosti](dependency-properties-overview.md).  
   
--   Pokud je to možné, používat <xref:System.Windows.UIElement.RenderTransform%2A> místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
+- Pokud je to možné, používat <xref:System.Windows.UIElement.RenderTransform%2A> místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
   
      A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> může být velmi užitečný způsob, jak ovlivnit obsah [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Pokud efekt transformace není nutné mít vliv na umístění dalších prvků, je však nejvhodnější použít <xref:System.Windows.UIElement.RenderTransform%2A> místo, protože <xref:System.Windows.UIElement.RenderTransform%2A> systém rozložení se nevyvolá. <xref:System.Windows.FrameworkElement.LayoutTransform%2A> použije vlastní transformaci a vynutí aktualizaci rozložení s rekurzivní pro novou pozici ovlivněný prvek.  
   
--   Vyhněte se volání zbytečných <xref:System.Windows.UIElement.UpdateLayout%2A>.  
+- Vyhněte se volání zbytečných <xref:System.Windows.UIElement.UpdateLayout%2A>.  
   
      <xref:System.Windows.UIElement.UpdateLayout%2A> Metoda vynutí aktualizaci rozložení rekurzivní a není často nutné. Pokud si nejste jistí, že úplná aktualizace je vyžadována, využívají systém rozložení mohli volat tuto metodu za vás.  
   
--   Při práci s velkým <xref:System.Windows.Controls.Panel.Children%2A> kolekci, zvažte použití <xref:System.Windows.Controls.VirtualizingStackPanel> místo běžný <xref:System.Windows.Controls.StackPanel>.  
+- Při práci s velkým <xref:System.Windows.Controls.Panel.Children%2A> kolekci, zvažte použití <xref:System.Windows.Controls.VirtualizingStackPanel> místo běžný <xref:System.Windows.Controls.StackPanel>.  
   
      Prostřednictvím virtualizace podřízené kolekce <xref:System.Windows.Controls.VirtualizingStackPanel> pouze objekty udržuje v paměti, které jsou aktuálně v rámci nadřazeného zobrazení. V důsledku toho se podstatně výkon ve většině scénářů.  
   

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
 ms.openlocfilehash: f1f5a668c5d4f52ef7dd9f60a31c04f2173165f6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59090612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972364"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>Definování výchozích hodnot pomocí metod ShouldSerialize a Reset
 `ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat vlastnosti, pokud vlastnost není máte jednoduchý výchozí hodnotu. Pokud má vlastnost jednoduchý výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu pro atribut konstruktoru třídy. Některé z těchto mechanismů povoluje následující funkce v Návrháři:  
   
--   Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila od jeho výchozí hodnotu.  
+- Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila od jeho výchozí hodnotu.  
   
--   Uživatel může kliknout pravým tlačítkem na vlastnosti a zvolte **resetování** obnovíte jeho výchozí hodnota vlastnosti.  
+- Uživatel může kliknout pravým tlačítkem na vlastnosti a zvolte **resetování** obnovíte jeho výchozí hodnota vlastnosti.  
   
--   Návrhář vytvoří efektivnějšího kódu.  
+- Návrhář vytvoří efektivnějšího kódu.  
   
     > [!NOTE]
     >  Buď použijte <xref:System.ComponentModel.DefaultValueAttribute> nebo zadejte `Reset` *PropertyName* a `ShouldSerialize` *PropertyName* metody. Nepoužívejte obojí.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - XML [Visual Basic], accessing
 ms.assetid: 66cd704f-990c-4f8d-9b49-2b6aa76ca8fd
 ms.openlocfilehash: ce22781584ad31766058f59a7ebf3081cb5e11cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58836906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971558"
 ---
 # <a name="how-to-access-xml-attributes-visual-basic"></a>Postupy: Přístup k atributům XML (Visual Basic)
 Tento příklad ukazuje způsob použití vlastnost osy atributu pro přístup k atributům XML v elementu XML podle názvu. Konkrétně se použije `type` atribut vlastnosti OS pro přístup k atributu s názvem `type` v `phone` objektu.  

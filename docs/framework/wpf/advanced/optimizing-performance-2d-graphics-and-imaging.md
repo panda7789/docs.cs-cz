@@ -13,11 +13,11 @@ helpviewer_keywords:
 - images [WPF], optimizing performance
 ms.assetid: e335601e-28c8-4d64-ba27-778fffd55f72
 ms.openlocfilehash: 4fca9231872a268470c9bcfa73e7a0c0a26d300c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981939"
 ---
 # <a name="optimizing-performance-2d-graphics-and-imaging"></a>Optimalizace výkonu: 2D grafika a obrázky
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje širokou škálu 2D grafika a funkce pro zpracování obrázků lze optimalizovat pro potřeby vaší aplikace. Toto téma obsahuje informace o optimalizaci výkonu v těchto oblastech.  
@@ -34,13 +34,13 @@ ms.locfileid: "59074986"
   
  Existují čtyři druhy <xref:System.Windows.Media.Drawing> objekty:  
   
--   <xref:System.Windows.Media.GeometryDrawing> Nakreslí obrazec.  
+- <xref:System.Windows.Media.GeometryDrawing> Nakreslí obrazec.  
   
--   <xref:System.Windows.Media.ImageDrawing> Nakreslí obrázek.  
+- <xref:System.Windows.Media.ImageDrawing> Nakreslí obrázek.  
   
--   <xref:System.Windows.Media.GlyphRunDrawing> Kreslení textu.  
+- <xref:System.Windows.Media.GlyphRunDrawing> Kreslení textu.  
   
--   <xref:System.Windows.Media.DrawingGroup> Nakreslí jiných kreslení. Pomocí vykreslení skupiny můžete kombinovat další drawings do jednoho kompozitní kresby.  
+- <xref:System.Windows.Media.DrawingGroup> Nakreslí jiných kreslení. Pomocí vykreslení skupiny můžete kombinovat další drawings do jednoho kompozitní kresby.  
   
  <xref:System.Windows.Media.GeometryDrawing> Objektu se použije k vykreslení obsahu geometry. <xref:System.Windows.Media.Geometry> Třídy a konkrétními třídami, které jsou odvozeny z něj, jako například <xref:System.Windows.Media.CombinedGeometry>, <xref:System.Windows.Media.EllipseGeometry>, a <xref:System.Windows.Media.PathGeometry>, poskytují prostředky pro vykreslování 2D grafika, stejně jako spuštění testu a podporu oříznutí. Geometrické objekty je možné definovat oblasti ovládacího prvku, například nebo k definování oblast ústřižku použít na bitovou kopii. Geometrické objekty mohou být jednoduché oblastech, třeba obdélníky a kruhy nebo složený oblastech vytvořené ze dvou nebo více geometrické objekty. Je možné vytvořit složitější geometrické oblasti tím, že zkombinujete <xref:System.Windows.Media.PathSegment>-odvozené objekty, jako například <xref:System.Windows.Media.ArcSegment>, <xref:System.Windows.Media.BezierSegment>, a <xref:System.Windows.Media.QuadraticBezierSegment>.  
   
@@ -70,13 +70,13 @@ ms.locfileid: "59074986"
   
  Při použití bitové kopie, vezměte v úvahu následující doporučení pro získání lepší výkon:  
   
--   Pokud vaše aplikace vyžaduje, abyste k zobrazení obrázků miniatur, zvažte vytvoření snížení velikosti verzi image. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] načte bitové kopie a dekóduje na jeho plnou velikost. Pokud chcete pouze miniatury verzi image, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zbytečné dekóduje obrázek, který se jeho reklamy a škáluje ho na velikost miniatur. Abyste předešli této zbytečnou režii, můžete buď vyžádat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] k dekódování obrázku na velikost miniatur, nebo požádat o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] načíst obrázek miniatury.  
+- Pokud vaše aplikace vyžaduje, abyste k zobrazení obrázků miniatur, zvažte vytvoření snížení velikosti verzi image. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] načte bitové kopie a dekóduje na jeho plnou velikost. Pokud chcete pouze miniatury verzi image, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zbytečné dekóduje obrázek, který se jeho reklamy a škáluje ho na velikost miniatur. Abyste předešli této zbytečnou režii, můžete buď vyžádat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] k dekódování obrázku na velikost miniatur, nebo požádat o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] načíst obrázek miniatury.  
   
--   Vždy dekódování obrázku požadovaná velikost a ne výchozí velikost. Jak je uvedeno výše, požádat o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] k dekódování svou image do požadované velikosti a výchozí plnou velikost. Sníží jenom vaše aplikace pracovní sadu, ale i rychlostí provádění.  
+- Vždy dekódování obrázku požadovaná velikost a ne výchozí velikost. Jak je uvedeno výše, požádat o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] k dekódování svou image do požadované velikosti a výchozí plnou velikost. Sníží jenom vaše aplikace pracovní sadu, ale i rychlostí provádění.  
   
--   Pokud je to možné sloučit bitové kopie do jedné image, jako proužek film skládá z více bitových kopií.  
+- Pokud je to možné sloučit bitové kopie do jedné image, jako proužek film skládá z více bitových kopií.  
   
--   Další informace najdete v tématu [Imaging přehled](../graphics-multimedia/imaging-overview.md).  
+- Další informace najdete v tématu [Imaging přehled](../graphics-multimedia/imaging-overview.md).  
   
 ### <a name="bitmapscalingmode"></a>BitmapScalingMode  
  Při animaci škálování jakékoli rastrový obrázek, výchozí vysoce kvalitní bitovou kopii znovu algoritmus vzorkování spotřebovat někdy způsobit snížení frekvence snímků, účinně způsobující animace zadrhávají dostatečné systémové prostředky. Tím, že nastavíte <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A> vlastnost <xref:System.Windows.Media.RenderOptions> objektu <xref:System.Windows.Media.BitmapScalingMode.LowQuality> vytvoříte hladší animace při změně velikosti rastrový obrázek. <xref:System.Windows.Media.BitmapScalingMode.LowQuality> Určuje režim [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslovací modul přepnutí z algoritmu optimalizované kvality algoritmu optimalizované rychlost při zpracování obrázků.  

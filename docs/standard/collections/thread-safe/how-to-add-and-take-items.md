@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidat a jednotlivě převzít položek v BlockingCollection'
+title: 'Postupy: Přidávání a odebírání jednotlivých položek v BlockingCollection'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,13 +11,13 @@ ms.assetid: 38f2f3d8-15e5-4bf4-9c83-2b5b6f22bad1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0e24c6b5aa02e8bc7ca4bcbf2c69bffd06216962
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054286"
 ---
-# <a name="how-to-add-and-take-items-individually-from-a-blockingcollection"></a>Postupy: Přidat a jednotlivě převzít položek v BlockingCollection
+# <a name="how-to-add-and-take-items-individually-from-a-blockingcollection"></a>Postupy: Přidávání a odebírání jednotlivých položek v BlockingCollection
 Tento příklad ukazuje, jak přidávat a odebírat položky z <xref:System.Collections.Concurrent.BlockingCollection%601> blokování a neblokující způsobem. Další informace o <xref:System.Collections.Concurrent.BlockingCollection%601>, naleznete v tématu [BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md).  
   
  Příklad toho, jak vytvořit výčet <xref:System.Collections.Concurrent.BlockingCollection%601> dokud je prázdný a nebudou přidány žádné další prvky, naleznete v tématu [jak: Použití příkazu ForEach k odebrání položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md).

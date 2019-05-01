@@ -11,20 +11,20 @@ helpviewer_keywords:
 - Windows Forms, context-sensitive Help
 ms.assetid: 6b10c2cc-c577-4cb5-9669-e37b33416af9
 ms.openlocfilehash: 177b61cab99d21a844298632020244fa424d8d2a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59176576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971220"
 ---
 # <a name="helpprovider-component-overview-windows-forms"></a>HelpProvider – přehled komponenty (Windows Forms)
 Windows Forms [HelpProvider](helpprovider-component-windows-forms.md) komponenta se používá pro soubor nápovědy HTML Help 1.x (soubor CHM vytvořenými pomocí HTML Help Workshop, nebo soubor HTM) přidružit k aplikaci Windows. Můžete poskytnout pomoc v mnoha různými způsoby:  
   
--   Poskytují kontextové nápovědy pro ovládacích prvků ve Windows Forms.  
+- Poskytují kontextové nápovědy pro ovládacích prvků ve Windows Forms.  
   
--   Poskytují kontextové nápovědy na konkrétní dialogové okno nebo konkrétní ovládacích prvků v dialogovém okně.  
+- Poskytují kontextové nápovědy na konkrétní dialogové okno nebo konkrétní ovládacích prvků v dialogovém okně.  
   
--   Otevřete soubor nápovědy pro konkrétní oblasti, jako je hlavní stránky obsahu, Index nebo vyhledávací funkci.  
+- Otevřete soubor nápovědy pro konkrétní oblasti, jako je hlavní stránky obsahu, Index nebo vyhledávací funkci.  
   
 ## <a name="using-the-help-provider"></a>Pomocí zprostředkovatele nápovědy  
  Přidávání <xref:System.Windows.Forms.HelpProvider> komponentu do formuláře Windows umožňuje další ovládací prvky ve formuláři vystavit vlastnosti nápovědy <xref:System.Windows.Forms.HelpProvider> komponenty. To umožňuje poskytnout nápovědu pro ovládací prvky na formuláři Windows. Můžete přidružit soubor nápovědy s <xref:System.Windows.Forms.HelpProvider> pomocí komponenty <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost. Zadejte typ nápovědy k dispozici voláním <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> a získává hodnotu z <xref:System.Windows.Forms.HelpNavigator> výčtu pro zadaný ovládací prvek. Zadejte klíčové slovo nebo téma pomoc voláním <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> metody.  

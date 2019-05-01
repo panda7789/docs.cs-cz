@@ -8,11 +8,11 @@ helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
 ms.openlocfilehash: 14e3d095d50f41e5b20a79d76c464bcf28c99327
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053090"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
 Všechno, co viditelný na obrazovce je viditelné, protože byl kresleno štětce. Například štětce slouží k popisu tlačítka, text popředí a vyplnění obrazce na pozadí. Toto téma představuje koncepty Malování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stopy a příklady. Štětce umožňují vykreslení [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty se vše od jednoduchých, plné barvy pro komplexní sady vzorce a Image.  
@@ -131,9 +131,9 @@ Obdélník překreslit pomocí VisualBrush
 ## <a name="paint-using-predefined-and-system-brushes"></a>Malování pomocí předdefinované a systémových štětců  
  Pro usnadnění práce Windows Presentation Foundation (WPF) poskytuje sadu předdefinovaných a stopy systému, můžete použít k vykreslení objektů.  
   
--   Seznam dostupných předdefinovaných štětce, najdete v článku <xref:System.Windows.Media.Brushes> třídy. Příklad ukazuje, jak použít předdefinované štětce, naleznete v tématu [vykreslení oblasti plnou barvou](how-to-paint-an-area-with-a-solid-color.md).  
+- Seznam dostupných předdefinovaných štětce, najdete v článku <xref:System.Windows.Media.Brushes> třídy. Příklad ukazuje, jak použít předdefinované štětce, naleznete v tématu [vykreslení oblasti plnou barvou](how-to-paint-an-area-with-a-solid-color.md).  
   
--   Seznam dostupných systémových štětců, najdete v článku <xref:System.Windows.SystemColors> třídy. Příklad najdete v tématu [vykreslení oblasti systémovým štětcem](how-to-paint-an-area-with-a-system-brush.md).  
+- Seznam dostupných systémových štětců, najdete v článku <xref:System.Windows.SystemColors> třídy. Příklad najdete v tématu [vykreslení oblasti systémovým štětcem](how-to-paint-an-area-with-a-system-brush.md).  
   
 <a name="commonbrushfeatures"></a>   
 ## <a name="common-brush-features"></a>Společné funkce štětce  

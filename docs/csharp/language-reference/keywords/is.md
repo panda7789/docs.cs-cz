@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 9fb57caeafde9db5759300d938a85f4abf4d05f3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.openlocfilehash: 79cc59eb8de513f547a8fd87db8c95dd9af37375
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672456"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63774036"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#)
 
@@ -88,7 +88,7 @@ kde *expr* je výraz, který se vyhodnotí na instanci typu, *typ* je název typ
 
 Počínaje C# 7.1, *expr* může mít za kompilace typu definované v parametru obecného typu a jeho omezení. 
 
-Pokud *expr* je `true` a `is` se používá s `if` příkazu *název_proměnné* přiřazena a místním rozsahem v rámci `if` pouze příkaz.
+Pokud *expr* je `true` a `is` se používá s `if` příkazu *název_proměnné* přiřazují v rámci `if` pouze příkaz. Rozsah *název_proměnné* z `is` výraz na konci uzavírající blok `if` příkazu. Pomocí *název_proměnné* v jiném umístění vygeneruje chybu kompilace pro použití proměnné, která nebyla přiřazena.
 
 V následujícím příkladu `is` vzor typu k dispozici implementace typu <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> metody.
 

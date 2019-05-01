@@ -11,11 +11,11 @@ ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a89ce5786754a73f41747d13498038e081feead4
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55255221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973352"
 ---
 # <a name="exception-handling-task-parallel-library"></a>Zpracování výjimek (Task Parallel Library)
 

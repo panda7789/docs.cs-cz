@@ -22,18 +22,18 @@ helpviewer_keywords:
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
 ms.openlocfilehash: 680084c39b90d4f664f48559fa21388ce192d999
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61955620"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)
 Při psaní kódu, může být čas od času vytvoření dlouhé příkazy, které vyžadují vodorovného posouvání v editoru kódu. I když to nemá vliv způsob, jak kód poběží, to ztěžuje pro vás nebo někdo jiný kód přečíst, jak je zobrazen na monitorování. V takovém případě zvažte rozdělení jeden dlouhý příkaz na několika řádcích.  
   
 ### <a name="to-break-a-single-statement-into-multiple-lines"></a>Chcete rozdělit jeden příkaz na více řádků  
   
--   Použijte znak pro pokračování řádku, který je podtržítko (`_`), v okamžiku, kdy chcete řádek rozdělit. Podtržítka musí být bezprostředně předchází mezerou a ihned následovány znakem ukončení řádku (návrat).  
+- Použijte znak pro pokračování řádku, který je podtržítko (`_`), v okamžiku, kdy chcete řádek rozdělit. Podtržítka musí být bezprostředně předchází mezerou a ihned následovány znakem ukončení řádku (návrat).  
   
     > [!NOTE]
     >  V některých případech Pokud vynecháte znak pro pokračování řádku, kompilátor jazyka Visual Basic implicitně bude příkaz na další řádek kódu. Seznam prvky syntaxe, pro které je možné vynechat znak pro pokračování řádku naleznete v části "Implicitní pokračování řádku" v [příkazy](../../../visual-basic/programming-guide/language-features/statements.md).  
@@ -54,7 +54,7 @@ Při psaní kódu, může být čas od času vytvoření dlouhé příkazy, kter
   
 ### <a name="to-place-multiple-statements-on-the-same-line"></a>Umístit více příkazů na stejném řádku  
   
--   Oddělení příkazů s dvojtečkou (`:`), jako v následujícím příkladu.  
+- Oddělení příkazů s dvojtečkou (`:`), jako v následujícím příkladu.  
   
      [!code-vb[VbVbcnConventions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#10)]  
   

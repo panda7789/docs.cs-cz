@@ -3,11 +3,11 @@ title: Inspektoři zpráv
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
 ms.openlocfilehash: c9d2c47a816e7fd8c5d219009128ed530564b81b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989810"
 ---
 # <a name="message-inspectors"></a>Inspektoři zpráv
 Tento příklad ukazuje, jak implementovat a konfigurovat messageinspectors klienta a služby.  

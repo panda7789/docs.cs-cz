@@ -3,11 +3,11 @@ title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
 ms.openlocfilehash: c6bc16e97a87461be7b2c4877777329a0005a497
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61955230"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikace, která používá vzdálené komunikace .NET na použití služby Windows Communication Foundation (WCF). Porovná podobné koncepty mezi tyto produkty a pak popisuje, jak provádět několik běžných scénářů vzdálené komunikace v WCF.  
@@ -101,11 +101,11 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
   
  Existuje mnoho způsobů, jak nakonfigurovat a hostování služeb WCF. Toto je pouze jeden z příkladů, známé jako "v místním prostředí". Další informace naleznete v následujících tématech:  
   
--   [Postupy: Definování kontraktu služby](how-to-define-a-wcf-service-contract.md)  
+- [Postupy: Definování kontraktu služby](how-to-define-a-wcf-service-contract.md)  
   
--   [Konfigurace služeb pomocí konfiguračních souborů](configuring-services-using-configuration-files.md)  
+- [Konfigurace služeb pomocí konfiguračních souborů](configuring-services-using-configuration-files.md)  
   
--   [Služby hostování](hosting-services.md)  
+- [Služby hostování](hosting-services.md)  
   
 ### <a name="client-implementation-comparison"></a>Porovnání implementace klienta  
   
@@ -142,9 +142,9 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
   
  Tento příklad ukazuje programování na úrovni kanálu, protože je nejvíce podobně jako v příkladu vzdálené komunikace. K dispozici je také **přidat odkaz na službu** přístup v sadě Visual Studio, který generuje kód pro zjednodušení programování klienta. Další informace naleznete v následujících tématech:  
   
--   [Programování klienta na úrovni kanálu](./extending/client-channel-level-programming.md)  
+- [Programování klienta na úrovni kanálu](./extending/client-channel-level-programming.md)  
   
--   [Postupy: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
+- [Postupy: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   
 ### <a name="serialization-usage"></a>Použití serializace  
  Vzdálené komunikace .NET a WCF používat k odesílání objektů mezi klientem a serverem serializace, ale liší se v těchto důležitých směrech –:  
@@ -158,9 +158,9 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
 #### <a name="serialization-in-net-remoting"></a>Serializace v .NET Remoting  
  Vzdálené komunikace .NET podporuje dva způsoby, jak k serializaci a deserializaci objektů mezi klientem a serverem:  
   
--   *Podle hodnoty* – hodnoty objektu serializují hranicemi důvěryhodnosti úroveň a je vytvořena nová instance tohoto objektu na jiné úrovni. Všechna volání do metody nebo vlastnosti této nové instance pouze místně spouštějí a nemají vliv na původní objekt nebo úroveň.  
+- *Podle hodnoty* – hodnoty objektu serializují hranicemi důvěryhodnosti úroveň a je vytvořena nová instance tohoto objektu na jiné úrovni. Všechna volání do metody nebo vlastnosti této nové instance pouze místně spouštějí a nemají vliv na původní objekt nebo úroveň.  
   
--   *Pomocí odkazu* – speciální "odkaz na objekt" serializován hranicemi důvěryhodnosti úroveň. Při jedné vrstvy interakci s metodami nebo vlastnostmi tohoto objektu, komunikuje zpět na původní objekt na původní úroveň. Objekty podle odkazu můžete tok v obou směrech – serveru ke klientovi nebo klienta na server.  
+- *Pomocí odkazu* – speciální "odkaz na objekt" serializován hranicemi důvěryhodnosti úroveň. Při jedné vrstvy interakci s metodami nebo vlastnostmi tohoto objektu, komunikuje zpět na původní objekt na původní úroveň. Objekty podle odkazu můžete tok v obou směrech – serveru ke klientovi nebo klienta na server.  
   
  Typy podle hodnot ve vzdálené komunikace onačené atributem [Serializable] nebo implementujte rozhraní ISerializable, stejně jako v následujícím příkladu:  
   
@@ -276,36 +276,36 @@ catch (FaultException<CustomerServiceFault> fault)
 #### <a name="security-in-wcf"></a>Zabezpečení ve službě WCF  
  WCF byla navržena s na bezpečnost, v části řešení typy v .NET Remoting zjištěná ohrožení zabezpečení. WCF nabízí zabezpečení na úrovni přenosu i zprávu a nabízí celou řadu možností pro ověřování, autorizace, šifrování a tak dále. Další informace naleznete v následujících tématech:  
   
--   [Zabezpečení](./feature-details/security.md)  
+- [Zabezpečení](./feature-details/security.md)  
   
--   [Doprovodné materiály zabezpečení WCF](./feature-details/security-guidance-and-best-practices.md)  
+- [Doprovodné materiály zabezpečení WCF](./feature-details/security-guidance-and-best-practices.md)  
   
 ## <a name="migrating-to-wcf"></a>Migrace na WCF  
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>Proč migrovat Remoting do WCF?  
   
--   **Vzdálené komunikace .NET je starší verze produktu.** Jak je popsáno v [vzdálené komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), se považuje za starší verzi produktu a nedoporučuje se používat pro vývoj nových projektů. WCF a ASP.NET Web API se doporučuje pro nová a existující aplikace.  
+- **Vzdálené komunikace .NET je starší verze produktu.** Jak je popsáno v [vzdálené komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), se považuje za starší verzi produktu a nedoporučuje se používat pro vývoj nových projektů. WCF a ASP.NET Web API se doporučuje pro nová a existující aplikace.  
   
--   **WCF využívá multiplatformní standardy.** WCF byla navržena s vzájemná funkční spolupráce napříč platformami v úvahu a podporuje mnoho oborových standardů (SOAP, WS-Security, WS-Trust, atd.). Služby WCF můžete spolupráci s klienty běžící na jiných operačních systémech než Windows. Vzdálená komunikace je navržená především pro prostředí, kde server i klient aplikace běží, pomocí rozhraní .NET framework v operačním systému Windows.  
+- **WCF využívá multiplatformní standardy.** WCF byla navržena s vzájemná funkční spolupráce napříč platformami v úvahu a podporuje mnoho oborových standardů (SOAP, WS-Security, WS-Trust, atd.). Služby WCF můžete spolupráci s klienty běžící na jiných operačních systémech než Windows. Vzdálená komunikace je navržená především pro prostředí, kde server i klient aplikace běží, pomocí rozhraní .NET framework v operačním systému Windows.  
   
--   **WCF má integrované zabezpečení.** WCF byla navržena s ohledem na bezpečnost a nabízí celou řadu možností pro ověřování, zabezpečení na úrovni přenosu, zabezpečení na úrovni zpráv atd. Vzdálené komunikace byl navržen k tomu, aby pro aplikace pro spolupráci, ale nebyl navržen, aby bylo zabezpečené v nedůvěryhodné prostředí. WCF byla navržena pro práci v obou důvěryhodné a nedůvěryhodné prostředích.  
+- **WCF má integrované zabezpečení.** WCF byla navržena s ohledem na bezpečnost a nabízí celou řadu možností pro ověřování, zabezpečení na úrovni přenosu, zabezpečení na úrovni zpráv atd. Vzdálené komunikace byl navržen k tomu, aby pro aplikace pro spolupráci, ale nebyl navržen, aby bylo zabezpečené v nedůvěryhodné prostředí. WCF byla navržena pro práci v obou důvěryhodné a nedůvěryhodné prostředích.  
   
 ### <a name="migration-recommendations"></a>Doporučení pro migraci  
  Tady jsou doporučené kroky migrace z .NET Remoting do WCF:  
   
--   **Vytvoření kontraktu služby.** Definování typů rozhraní služby a označit pomocí atributu [ServiceContract]. Označte všechny metody, klienti budou moct volat [OperationContract].  
+- **Vytvoření kontraktu služby.** Definování typů rozhraní služby a označit pomocí atributu [ServiceContract]. Označte všechny metody, klienti budou moct volat [OperationContract].  
   
--   **Vytvoření kontraktu dat.** Definování typů dat, které se vyměňují mezi serverem a klientem a označit pomocí atributu [kontraktu dat DataContract]. Označte všechna pole a vlastnosti, které klienta se bude moct používat s [DataMember].  
+- **Vytvoření kontraktu dat.** Definování typů dat, které se vyměňují mezi serverem a klientem a označit pomocí atributu [kontraktu dat DataContract]. Označte všechna pole a vlastnosti, které klienta se bude moct používat s [DataMember].  
   
--   **Vytvoření kontraktu selhání (nepovinné).** Vytvoření typů, které se vyměňují mezi serverem a klientem, pokud nedojde k chybám. Označte tyto typy s [kontraktu dat DataContract] a [DataMember], aby se daly serializovatelný. Pro všechny operace služby, které jste označili [OperationContract] také označte je pomocí [FaultContract] pro označení chyb, které můžou vrátit.  
+- **Vytvoření kontraktu selhání (nepovinné).** Vytvoření typů, které se vyměňují mezi serverem a klientem, pokud nedojde k chybám. Označte tyto typy s [kontraktu dat DataContract] a [DataMember], aby se daly serializovatelný. Pro všechny operace služby, které jste označili [OperationContract] také označte je pomocí [FaultContract] pro označení chyb, které můžou vrátit.  
   
--   **Konfigurace a hostitelem služby.** Po vytvoření kontraktu služby, dalším krokem je ke konfiguraci vazby pro vystavení služby na koncový bod. Další informace najdete v tématu [koncové body: Adresy, vazby a kontrakty](./feature-details/endpoints-addresses-bindings-and-contracts.md).  
+- **Konfigurace a hostitelem služby.** Po vytvoření kontraktu služby, dalším krokem je ke konfiguraci vazby pro vystavení služby na koncový bod. Další informace najdete v tématu [koncové body: Adresy, vazby a kontrakty](./feature-details/endpoints-addresses-bindings-and-contracts.md).  
   
  Po použití vzdálené komunikace se migroval na WCF, je stále potřeba odebrat závislosti na vzdálené komunikace .NET. Tím se zajistí, že z aplikace odeberou se všechny chyby zabezpečení vzdálené komunikace. Tyto kroky zahrnují následující:  
   
--   **Přestat používat MarshalByRefObject.** Typ třídy MarshalByRefObject existuje pouze pro vzdálenou komunikaci a není používán WCF. Všechny typy aplikací, které dílčí třídy MarshalByRefObject by měla odebrat nebo změnit.  
+- **Přestat používat MarshalByRefObject.** Typ třídy MarshalByRefObject existuje pouze pro vzdálenou komunikaci a není používán WCF. Všechny typy aplikací, které dílčí třídy MarshalByRefObject by měla odebrat nebo změnit.  
   
--   **Ukončení použití [Serializable] a rozhraní ISerializable.** Atribut [Serializable] a rozhraní ISerializable byly původně navržen k serializaci typů v rámci důvěryhodného prostředí a jejich používání vzdálené komunikace. Serializace WCF spoléhá na typy, které jsou označené [kontraktu dat DataContract] a [DataMember]. Datové typy používané aplikací by měl být upraven použití [kontraktu dat DataContract] a nepoužívat ISerializable nebo [Serializable].  
+- **Ukončení použití [Serializable] a rozhraní ISerializable.** Atribut [Serializable] a rozhraní ISerializable byly původně navržen k serializaci typů v rámci důvěryhodného prostředí a jejich používání vzdálené komunikace. Serializace WCF spoléhá na typy, které jsou označené [kontraktu dat DataContract] a [DataMember]. Datové typy používané aplikací by měl být upraven použití [kontraktu dat DataContract] a nepoužívat ISerializable nebo [Serializable].  
   
 ### <a name="migration-scenarios"></a>Scénáře migrace  
  Nyní Pojďme zjistit, jak provést následující běžné scénáře vzdálené komunikace v WCF:  
@@ -524,9 +524,9 @@ public class RemotingServer : MarshalByRefObject
   
 4. Potřebujeme upravit konfigurační soubor serveru tímto způsobem následující dvě věci, jak je znázorněno v následujícím příkladu:  
   
-    1.  Deklarace \<klienta > část popisující koncový bod pro objekt s relacemi. To je nezbytné, protože server také funguje jako klient v této situaci.  
+    1. Deklarace \<klienta > část popisující koncový bod pro objekt s relacemi. To je nezbytné, protože server také funguje jako klient v této situaci.  
   
-    2.  Deklarujte koncové body pro objekt factory a který neobsahuje relace. To je potřeba povolit klienta ke komunikaci s koncovými body služby a získat EndpointAddress10 vytvořte kanál s relacemi.  
+    2. Deklarujte koncové body pro objekt factory a který neobsahuje relace. To je potřeba povolit klienta ke komunikaci s koncovými body služby a získat EndpointAddress10 vytvořte kanál s relacemi.  
   
     ```xml  
     <configuration>  
@@ -593,13 +593,13 @@ public class RemotingServer : MarshalByRefObject
   
 6. Pokud chcete vytvořit a použít tento objekt s relacemi, musí klient proveďte následující kroky:  
   
-    1.  Vytvořte kanál ke službě ISessionBoundFactory.  
+    1. Vytvořte kanál ke službě ISessionBoundFactory.  
   
-    2.  Tento kanál používaná k volání této služby k získání EndpointAddress10.  
+    2. Tento kanál používaná k volání této služby k získání EndpointAddress10.  
   
-    3.  Použijte EndpointAddress10 k vytvoření kanálu pro získání objektu s relacemi.  
+    3. Použijte EndpointAddress10 k vytvoření kanálu pro získání objektu s relacemi.  
   
-    4.  Pracovat s relacemi objekt prokázat, že zůstane stejné instance napříč více volání.  
+    4. Pracovat s relacemi objekt prokázat, že zůstane stejné instance napříč více volání.  
   
    ```csharp
    ChannelFactory<ISessionBoundFactory> channelFactory =   

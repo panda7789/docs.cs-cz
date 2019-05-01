@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], column fill mode
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
 ms.openlocfilehash: a85745d39903719ec1e44ccf70df72d472720b7c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59214725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61956278"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a>Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView
 V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací prvek změní její sloupce automaticky tak, aby Šířka oblasti k dispozici zobrazení. Ovládací prvek nezobrazí vodorovný posuvník, kromě případů, kdy je také k zachování konzistence každý sloupec, rovna nebo větší než jeho <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnotu vlastnosti.  
@@ -45,22 +45,22 @@ V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací 
 ### <a name="comments"></a>Komentáře  
  Použití této ukázkové aplikaci:  
   
--   Změňte velikost formuláře. Sledujte, jak sloupce změnit jejich šířky při zachování rozměry indikován <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> hodnot vlastností.  
+- Změňte velikost formuláře. Sledujte, jak sloupce změnit jejich šířky při zachování rozměry indikován <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> hodnot vlastností.  
   
--   Změníte velikost sloupce přetažením oddělovače sloupců pomocí myši. Podívejte se jak <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> změní hodnoty.  
+- Změníte velikost sloupce přetažením oddělovače sloupců pomocí myši. Podívejte se jak <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> změní hodnoty.  
   
--   Změnit <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnotu pro jeden sloupec a pak přetáhněte změnit velikost formuláře. Podívejte se jak, když nastavíte, dostatečně malá, formuláře <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> hodnoty se nepřenášejí níže <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnoty.  
+- Změnit <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnotu pro jeden sloupec a pak přetáhněte změnit velikost formuláře. Podívejte se jak, když nastavíte, dostatečně malá, formuláře <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> hodnoty se nepřenášejí níže <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnoty.  
   
--   Změnit <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnoty pro všechny sloupce velkému tak, aby součet hodnot být delší než šířka ovládacího prvku. Sledujte, jak se zobrazí vodorovný posuvník.  
+- Změnit <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnoty pro všechny sloupce velkému tak, aby součet hodnot být delší než šířka ovládacího prvku. Sledujte, jak se zobrazí vodorovný posuvník.  
   
--   Změnit <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> hodnoty pro některé sloupce. Při změně velikosti sloupce nebo formuláře můžete sledujte účinek.  
+- Změnit <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> hodnoty pro některé sloupce. Při změně velikosti sloupce nebo formuláře můžete sledujte účinek.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
--   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
+- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 

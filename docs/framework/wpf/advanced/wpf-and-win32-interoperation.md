@@ -8,11 +8,11 @@ helpviewer_keywords:
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
 ms.openlocfilehash: 71c454edc6a124f732f1e6b56e25c28671fa11b6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053168"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Win32
 Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spolupráci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kódu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější opakovaně používat některé z kódu.  
@@ -21,9 +21,9 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
 ## <a name="wpf-and-win32-interoperation-basics"></a>WPF a vzájemné spolupráce základy Win32  
  Existují dva základní postupy pro interoperabilitu mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kódu.  
   
--   Hostitel [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. S touto technikou, můžete použít grafické pokročilé možnosti [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci standardní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno a aplikace.  
+- Hostitel [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. S touto technikou, můžete použít grafické pokročilé možnosti [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci standardní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno a aplikace.  
   
--   Hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. S touto technikou, můžete použít existující vlastní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ovládacího prvku v kontextu jiných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu a předání dat přes hranice.  
+- Hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. S touto technikou, můžete použít existující vlastní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ovládacího prvku v kontextu jiných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu a předání dat přes hranice.  
   
  Každá z těchto postupů je koncepčně představenými v tomto tématu. Hostování více kódu objektově orientovaný ukázky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)], naleznete v tématu [názorný postup: Hostování obsahu WPF v Win32](walkthrough-hosting-wpf-content-in-win32.md). Hostování více kódu objektově orientovaný ukázky [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [názorný postup: Hostování ovládacího prvku Win32 v subsystému WPF](walkthrough-hosting-a-win32-control-in-wpf.md).  
   
@@ -33,13 +33,13 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
  Jeden komplikací na úrovni projektu je, že nejde zkompilovat [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory do [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] projektu.  Existuje několik postupů dělení projektu jako kompenzaci za to.  
   
--   Vytvořit knihovnu DLL jazyka C#, která obsahuje všechny vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky jako zkompilovaném sestavení a pak je mít vaše [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] spustitelný soubor, který patří [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] jako odkaz.  
+- Vytvořit knihovnu DLL jazyka C#, která obsahuje všechny vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky jako zkompilovaném sestavení a pak je mít vaše [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] spustitelný soubor, který patří [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] jako odkaz.  
   
--   Vytvořit C# pro spustitelný soubor [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu a jeho odkazovat [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] obsahující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] obsah.  
+- Vytvořit C# pro spustitelný soubor [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu a jeho odkazovat [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] obsahující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] obsah.  
   
--   Použití <xref:System.Windows.Markup.XamlReader.Load%2A> načíst žádné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] v době běhu, namísto kompilaci vašeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+- Použití <xref:System.Windows.Markup.XamlReader.Load%2A> načíst žádné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] v době běhu, namísto kompilaci vašeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
--   Nepoužívejte [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vůbec a zapisovat všechny vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v kódu, vytváření nahoru stromem prvků z <xref:System.Windows.Application>.  
+- Nepoužívejte [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vůbec a zapisovat všechny vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v kódu, vytváření nahoru stromem prvků z <xref:System.Windows.Application>.  
   
  Použijte jakýkoli přístup vám nejvíce vyhovuje.  
   
@@ -68,13 +68,13 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
 5. V rámci obslužné rutiny (nebo funkci, která volá obslužná rutina) postupujte takto:  
   
-    1.  Vytvořte nový <xref:System.Windows.Interop.HwndSource> objekt s nadřazené okno HWND jako jeho `parent` parametru.  
+    1. Vytvořte nový <xref:System.Windows.Interop.HwndSource> objekt s nadřazené okno HWND jako jeho `parent` parametru.  
   
-    2.  Vytvoření instance vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu třídy.  
+    2. Vytvoření instance vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu třídy.  
   
-    3.  Přiřadit odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu objektu <xref:System.Windows.Interop.HwndSource> objekt <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost.  
+    3. Přiřadit odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu objektu <xref:System.Windows.Interop.HwndSource> objekt <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost.  
   
-    4.  <xref:System.Windows.Interop.HwndSource> Objekt <xref:System.Windows.Interop.HwndSource.Handle%2A> vlastnost obsahuje popisovač okna (HWND). HWND, který vám pomůže v nespravované součástí vaší aplikace získáte přetypování `Handle.ToPointer()` k popisovačem HWND.  
+    4. <xref:System.Windows.Interop.HwndSource> Objekt <xref:System.Windows.Interop.HwndSource.Handle%2A> vlastnost obsahuje popisovač okna (HWND). HWND, který vám pomůže v nespravované součástí vaší aplikace získáte přetypování `Handle.ToPointer()` k popisovačem HWND.  
   
 6. Implementace spravované třídy, která obsahuje statické pole, která obsahuje odkaz na vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu objektu. Tato třída umožňuje získat odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt obsahu z vašeho [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kód, ale další důležité je brání vaše <xref:System.Windows.Interop.HwndSource> nebudou neúmyslně uvolněna z paměti.  
   
@@ -103,11 +103,11 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
 6. Proces vybrané okno zpráv, jako je například oznámení ovládacího prvku. Existují dva přístupy. Oba poskytují stejné přístup k datové proudy zpráv tedy do značné míry na danou programovací pohodlí podle vašeho výběru.  
   
-    -   Implementace zpracování pro všechny zprávy (nikoli pouze zprávy vypnutí) v přepsání metody zpráv <xref:System.Windows.Interop.HwndHost> metoda <xref:System.Windows.Interop.HwndHost.WndProc%2A>.  
+    - Implementace zpracování pro všechny zprávy (nikoli pouze zprávy vypnutí) v přepsání metody zpráv <xref:System.Windows.Interop.HwndHost> metoda <xref:System.Windows.Interop.HwndHost.WndProc%2A>.  
   
-    -   Mít hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element zpracování zpráv pomocí manipulace <xref:System.Windows.Interop.HwndHost.MessageHook> událostí. Tato událost je aktivována pro každou zprávu, která je odeslána do hlavního okna procedury okna prostředí.  
+    - Mít hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element zpracování zpráv pomocí manipulace <xref:System.Windows.Interop.HwndHost.MessageHook> událostí. Tato událost je aktivována pro každou zprávu, která je odeslána do hlavního okna procedury okna prostředí.  
   
-    -   Nelze zpracovat zprávy ze systému windows, které jsou mimo proces <xref:System.Windows.Interop.HwndHost.WndProc%2A>.  
+    - Nelze zpracovat zprávy ze systému windows, které jsou mimo proces <xref:System.Windows.Interop.HwndHost.WndProc%2A>.  
   
 7. Komunikovat s hostovanou okna s použitím platformy vyvolat volat nespravovanou `SendMessage` funkce.  
   
@@ -120,35 +120,35 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
 #### <a name="notable-differences-in-output-behavior"></a>Významné rozdíly v chování výstupu  
   
--   <xref:System.Windows.FrameworkElement>, což je <xref:System.Windows.Interop.HwndHost> základní třídu, má poměrně málo vlastností, které znamenají změny v uživatelském rozhraní. Tyto vlastnosti patří například <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>, které změní rozložení elementů v rámci tohoto elementu jako nadřazený. Ale většina těchto vlastností nejsou namapované na možné [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ekvivalenty, i když možná existuje takový ekvivalenty. Příliš mnoho z těchto vlastností a jejich význam jsou příliš vykreslování technologie specifické pro mapování praktické. Proto se nastavení vlastností <xref:System.Windows.FrameworkElement.FlowDirection%2A> na <xref:System.Windows.Interop.HwndHost> nemá žádný vliv.  
+- <xref:System.Windows.FrameworkElement>, což je <xref:System.Windows.Interop.HwndHost> základní třídu, má poměrně málo vlastností, které znamenají změny v uživatelském rozhraní. Tyto vlastnosti patří například <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>, které změní rozložení elementů v rámci tohoto elementu jako nadřazený. Ale většina těchto vlastností nejsou namapované na možné [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ekvivalenty, i když možná existuje takový ekvivalenty. Příliš mnoho z těchto vlastností a jejich význam jsou příliš vykreslování technologie specifické pro mapování praktické. Proto se nastavení vlastností <xref:System.Windows.FrameworkElement.FlowDirection%2A> na <xref:System.Windows.Interop.HwndHost> nemá žádný vliv.  
   
--   <xref:System.Windows.Interop.HwndHost> nemůže být otočený, škálovaná, výrazně nerovnoměrnou distribucí nebo jinak ovlivněny transformace.  
+- <xref:System.Windows.Interop.HwndHost> nemůže být otočený, škálovaná, výrazně nerovnoměrnou distribucí nebo jinak ovlivněny transformace.  
   
--   <xref:System.Windows.Interop.HwndHost> nepodporuje <xref:System.Windows.UIElement.Opacity%2A> vlastnosti (alfa míchání). Pokud je obsah uvnitř <xref:System.Windows.Interop.HwndHost> provádí <xref:System.Drawing> operace, které zahrnují alfa informace, které není samotného porušení, ale <xref:System.Windows.Interop.HwndHost> jako celek podporuje pouze krytí = 1.0 (100 %).  
+- <xref:System.Windows.Interop.HwndHost> nepodporuje <xref:System.Windows.UIElement.Opacity%2A> vlastnosti (alfa míchání). Pokud je obsah uvnitř <xref:System.Windows.Interop.HwndHost> provádí <xref:System.Drawing> operace, které zahrnují alfa informace, které není samotného porušení, ale <xref:System.Windows.Interop.HwndHost> jako celek podporuje pouze krytí = 1.0 (100 %).  
   
--   <xref:System.Windows.Interop.HwndHost> se zobrazí nad jiné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy ve stejném okně nejvyšší úrovně. Nicméně <xref:System.Windows.Controls.ToolTip> nebo <xref:System.Windows.Controls.ContextMenu> generované nabídky je okno nejvyšší úrovně samostatnou a proto se bude chovat správně s <xref:System.Windows.Interop.HwndHost>.  
+- <xref:System.Windows.Interop.HwndHost> se zobrazí nad jiné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy ve stejném okně nejvyšší úrovně. Nicméně <xref:System.Windows.Controls.ToolTip> nebo <xref:System.Windows.Controls.ContextMenu> generované nabídky je okno nejvyšší úrovně samostatnou a proto se bude chovat správně s <xref:System.Windows.Interop.HwndHost>.  
   
--   <xref:System.Windows.Interop.HwndHost> nerespektuje oblast ořezu svého nadřazeného objektu <xref:System.Windows.UIElement>. Toto je možná problém, pokud se pokusíte vložit <xref:System.Windows.Interop.HwndHost> třídy v posuvné oblasti nebo <xref:System.Windows.Controls.Canvas>.  
+- <xref:System.Windows.Interop.HwndHost> nerespektuje oblast ořezu svého nadřazeného objektu <xref:System.Windows.UIElement>. Toto je možná problém, pokud se pokusíte vložit <xref:System.Windows.Interop.HwndHost> třídy v posuvné oblasti nebo <xref:System.Windows.Controls.Canvas>.  
   
 #### <a name="notable-differences-in-input-behavior"></a>Významné rozdíly v chování vstupu  
   
--   Obecně platí, že zatímco vstupní zařízení jsou v rámci oboru <xref:System.Windows.Interop.HwndHost> hostované [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] oblast, přejít přímo na vstupní události [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  
+- Obecně platí, že zatímco vstupní zařízení jsou v rámci oboru <xref:System.Windows.Interop.HwndHost> hostované [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] oblast, přejít přímo na vstupní události [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  
   
--   Zatímco je ukazatel myši nad <xref:System.Windows.Interop.HwndHost>, aplikace nepřijímá [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] událostí myši a hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost <xref:System.Windows.UIElement.IsMouseOver%2A> bude `false`.  
+- Zatímco je ukazatel myši nad <xref:System.Windows.Interop.HwndHost>, aplikace nepřijímá [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] událostí myši a hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost <xref:System.Windows.UIElement.IsMouseOver%2A> bude `false`.  
   
--   Při <xref:System.Windows.Interop.HwndHost> má fokus klávesnice, vaše aplikace nebude dostávat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] klávesnice události a hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A> bude `false`.  
+- Při <xref:System.Windows.Interop.HwndHost> má fokus klávesnice, vaše aplikace nebude dostávat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] klávesnice události a hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A> bude `false`.  
   
--   Když je fokus v rámci <xref:System.Windows.Interop.HwndHost> a změny v jiném ovládacím prvku uvnitř <xref:System.Windows.Interop.HwndHost>, vaše aplikace nebude dostávat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události <xref:System.Windows.UIElement.GotFocus> nebo <xref:System.Windows.UIElement.LostFocus>.  
+- Když je fokus v rámci <xref:System.Windows.Interop.HwndHost> a změny v jiném ovládacím prvku uvnitř <xref:System.Windows.Interop.HwndHost>, vaše aplikace nebude dostávat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události <xref:System.Windows.UIElement.GotFocus> nebo <xref:System.Windows.UIElement.LostFocus>.  
   
--   Související stylus vlastnosti a události jsou podobná a nehlásí informace, zatímco se stylus nachází nad <xref:System.Windows.Interop.HwndHost>.  
+- Související stylus vlastnosti a události jsou podobná a nehlásí informace, zatímco se stylus nachází nad <xref:System.Windows.Interop.HwndHost>.  
   
 <a name="tabbing_mnemonics_accelerators"></a>   
 ## <a name="tabbing-mnemonics-and-accelerators"></a>Přecházení pomocí tabulátoru, klávesových zkratek a akcelerátorů  
  <xref:System.Windows.Interop.IKeyboardInputSink> a <xref:System.Windows.Interop.IKeyboardInputSite> rozhraní vám umožňují vytvářet klávesnice bezproblémové prostředí pro smíšené [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace:  
   
--   Přecházení mezi pomocí tabulátoru [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] komponenty  
+- Přecházení mezi pomocí tabulátoru [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] komponenty  
   
--   Klávesových zkratek a akcelerátory, které fungují, i když je aktivní v rámci komponenty Win32 a kdy je v rámci součásti WPF.  
+- Klávesových zkratek a akcelerátory, které fungují, i když je aktivní v rámci komponenty Win32 a kdy je v rámci součásti WPF.  
   
  <xref:System.Windows.Interop.HwndHost> a <xref:System.Windows.Interop.HwndSource> obě třídy poskytují implementace <xref:System.Windows.Interop.IKeyboardInputSink>, ale nemusí zpracovávají všechny vstupní zprávy, které chcete použít pro pokročilejší scénáře. Patřičné metody k získání chování klávesnice, které chcete přepište.  
   

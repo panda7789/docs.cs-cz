@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 734041f5921571cd11225a359e794526cbd8d0e1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59774379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62088479"
 ---
 ### <a name="systemuriiswellformeduristring-method-returns-false-for-relative-uris-with-a-colon-char-in-first-segment"></a>System.Uri.IsWellFormedUriString metoda vrátí hodnotu false pro relativní identifikátor URI se znak dvojtečky. v první segment
 

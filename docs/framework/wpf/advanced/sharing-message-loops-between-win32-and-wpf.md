@@ -8,11 +8,11 @@ helpviewer_keywords:
 - interoperability [WPF], Win32
 ms.assetid: 39ee888c-e5ec-41c8-b11f-7b851a554442
 ms.openlocfilehash: 74055ec3facb7db9145c4c0e969d57da24eccbc8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053415"
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a>Sdílení smyčky zpráv mezi systémem Win32 a platformou WPF
 Toto téma popisuje, jak implementovat smyčky zpráv pro součinnost s produktem [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], buď pomocí existující zprávu vystavení smyčky v <xref:System.Windows.Threading.Dispatcher> nebo vytvořením smyčku samostatné na [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] součinnosti kódu vedle sebe.  
@@ -29,26 +29,26 @@ Toto téma popisuje, jak implementovat smyčky zpráv pro součinnost s produkte
 ## <a name="writing-message-loops"></a>Zápis smyčky zpráv  
  Tady je kontrolní seznam <xref:System.Windows.Interop.ComponentDispatcher> členy, které budete používat při zápisu smyčku zpráv:  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.PushModal%2A>: vaše smyčky zpráv by měly volat tím, že je vlákno modální okno.  
+- <xref:System.Windows.Interop.ComponentDispatcher.PushModal%2A>: vaše smyčky zpráv by měly volat tím, že je vlákno modální okno.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.PopModal%2A>: vaše smyčky zpráv by měly volat to znamenat, že vlákno se vrátil na nonmodal.  
+- <xref:System.Windows.Interop.ComponentDispatcher.PopModal%2A>: vaše smyčky zpráv by měly volat to znamenat, že vlákno se vrátil na nonmodal.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.RaiseIdle%2A>: vaše smyčky zpráv by měly volat to označuje, že <xref:System.Windows.Interop.ComponentDispatcher> by měla vyvolat <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle> událostí. <xref:System.Windows.Interop.ComponentDispatcher> nastavení nevydá <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle> Pokud <xref:System.Windows.Interop.ComponentDispatcher.IsThreadModal%2A> je `true`, ale smyčky zpráv můžete volat <xref:System.Windows.Interop.ComponentDispatcher.RaiseIdle%2A> i v případě <xref:System.Windows.Interop.ComponentDispatcher> nemůže reagovat na něj ve modálního stavu.  
+- <xref:System.Windows.Interop.ComponentDispatcher.RaiseIdle%2A>: vaše smyčky zpráv by měly volat to označuje, že <xref:System.Windows.Interop.ComponentDispatcher> by měla vyvolat <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle> událostí. <xref:System.Windows.Interop.ComponentDispatcher> nastavení nevydá <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle> Pokud <xref:System.Windows.Interop.ComponentDispatcher.IsThreadModal%2A> je `true`, ale smyčky zpráv můžete volat <xref:System.Windows.Interop.ComponentDispatcher.RaiseIdle%2A> i v případě <xref:System.Windows.Interop.ComponentDispatcher> nemůže reagovat na něj ve modálního stavu.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.RaiseThreadMessage%2A>: vaše smyčky zpráv by měly volat tím, že je k dispozici nová zpráva. Návratová hodnota označuje, zda naslouchací proces pro <xref:System.Windows.Interop.ComponentDispatcher> událost zpracovává zprávy. Pokud <xref:System.Windows.Interop.ComponentDispatcher.RaiseThreadMessage%2A> vrátí `true` (zpracovat), dispečer by provést žádnou akci dále se zprávou. Pokud je návratová hodnota `false`, dispečer je očekává volání [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce `TranslateMessage`, poté zavolejte `DispatchMessage`.  
+- <xref:System.Windows.Interop.ComponentDispatcher.RaiseThreadMessage%2A>: vaše smyčky zpráv by měly volat tím, že je k dispozici nová zpráva. Návratová hodnota označuje, zda naslouchací proces pro <xref:System.Windows.Interop.ComponentDispatcher> událost zpracovává zprávy. Pokud <xref:System.Windows.Interop.ComponentDispatcher.RaiseThreadMessage%2A> vrátí `true` (zpracovat), dispečer by provést žádnou akci dále se zprávou. Pokud je návratová hodnota `false`, dispečer je očekává volání [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce `TranslateMessage`, poté zavolejte `DispatchMessage`.  
   
 ## <a name="using-componentdispatcher-and-existing-message-handling"></a>Pomocí ComponentDispatcher a existující zpracování zpráv  
  Tady je kontrolní seznam <xref:System.Windows.Interop.ComponentDispatcher> členy, které použijete, pokud se spoléháte na vnořeným [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] smyčku zpráv.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.IsThreadModal%2A>: vrátí, zda aplikace náramků RFID modální (například zpracování zpráv modální smyčky bylo vloženo). <xref:System.Windows.Interop.ComponentDispatcher> Tento stav můžete sledovat, protože třída udržuje počet <xref:System.Windows.Interop.ComponentDispatcher.PushModal%2A> a <xref:System.Windows.Interop.ComponentDispatcher.PopModal%2A> volání ze smyčky zpráv.  
+- <xref:System.Windows.Interop.ComponentDispatcher.IsThreadModal%2A>: vrátí, zda aplikace náramků RFID modální (například zpracování zpráv modální smyčky bylo vloženo). <xref:System.Windows.Interop.ComponentDispatcher> Tento stav můžete sledovat, protože třída udržuje počet <xref:System.Windows.Interop.ComponentDispatcher.PushModal%2A> a <xref:System.Windows.Interop.ComponentDispatcher.PopModal%2A> volání ze smyčky zpráv.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage> a <xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage> události dodržovat standardní pravidla pro vyvolání delegáta. Delegáti jsou vyvolány v nespecifikovaném pořadí a všichni Delegáti jsou vyvolány i v případě, že první z nich, označí zprávu jako zpracování.  
+- <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage> a <xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage> události dodržovat standardní pravidla pro vyvolání delegáta. Delegáti jsou vyvolány v nespecifikovaném pořadí a všichni Delegáti jsou vyvolány i v případě, že první z nich, označí zprávu jako zpracování.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle>: označuje odpovídající a efektivní čas nečinnosti zpracování (neexistují žádné čekající zprávy pro vlákno). <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle> nebude vyvolána, pokud je vlákno modální okno.  
+- <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle>: označuje odpovídající a efektivní čas nečinnosti zpracování (neexistují žádné čekající zprávy pro vlákno). <xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle> nebude vyvolána, pokud je vlákno modální okno.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage>: vyvoláno pro všechny zprávy, které zpracovává pumpu zpráv.  
+- <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage>: vyvoláno pro všechny zprávy, které zpracovává pumpu zpráv.  
   
--   <xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage>: vyvoláno pro všechny zprávy, které nebyly zpracovány během <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage>.  
+- <xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage>: vyvoláno pro všechny zprávy, které nebyly zpracovány během <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage>.  
   
  Zpráva se považuje za zpracovaný if po <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage> události nebo <xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage> událostí, `handled` parametr předaný odkazem v datech událostí je `true`. Obslužné rutiny události by měl ignorovat Pokud `handled` je `true`, protože to znamená, že různé obslužná rutina zpracovává zprávy nejprve. Obslužné rutiny událostí do obou událostí může upravit zprávu. Dispečer by měl odeslání upravené zprávy a nejsou původní zprávu beze změny. <xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage> je určena pro všechny posluchače, ale architektury záměrem je, že pouze okno nejvyšší úrovně obsahující HWND, ve kterém by měla vyvolat zprávy cílové kódu v reakci na zprávu.  
   

@@ -22,11 +22,11 @@ helpviewer_keywords:
 - Integer data type
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
 ms.openlocfilehash: b0d24027f00c4ab4ba49f4948a9f5488a2eff3fd
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054403"
 ---
 # <a name="integer-data-type-visual-basic"></a>Integer – datový typ (Visual Basic)
 Obsahuje 32bitová (4bajtová) celá čísla se znaménkem v rozsahu od -2 147 483 648 do 2 147 483 647.  
@@ -67,13 +67,13 @@ Dim number = &H_035826I
 
 ## <a name="programming-tips"></a>Tipy pro programování
 
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, jako je například objekty automatizace nebo COM, nezapomeňte, že `Integer` má v jiných prostředích odlišnou datovou šířku (16 bitů). Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `Short` místo `Integer` v váš nový kód jazyka Visual Basic.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, jako je například objekty automatizace nebo COM, nezapomeňte, že `Integer` má v jiných prostředích odlišnou datovou šířku (16 bitů). Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `Short` místo `Integer` v váš nový kód jazyka Visual Basic.  
   
--   **Rozšíření.** `Integer` Datový typ rozšiřuje na `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Integer` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `Integer` Datový typ rozšiřuje na `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Integer` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Přidávání znak typu literálu `I` k literálu se z něj stane `Integer` datového typu. Přidávání znak typu identifikátoru `%` k libovolnému identifikátoru se z něj stane `Integer`.  
+- **Znaky typu.** Přidávání znak typu literálu `I` k literálu se z něj stane `Integer` datového typu. Přidávání znak typu identifikátoru `%` k libovolnému identifikátoru se z něj stane `Integer`.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int32?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int32?displayProperty=nameWithType> struktury.  
   
 ## <a name="range"></a>Rozsah
 

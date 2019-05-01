@@ -10,11 +10,11 @@ helpviewer_keywords:
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
 ms.openlocfilehash: 0b4e7c9e253f94e1e28700c8669d28799ab69d91
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58836932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053714"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Rozměry pole v jazyce Visual Basic
 A *dimenze* je směr, ve kterém můžete měnit specifikace prvků tohoto pole. Pole, která obsahuje celkový prodej za každý den v měsíci má jednu dimenzi (den v měsíci). Pole, která obsahuje celkový prodej podle oddělení pro každý den v měsíci má dvě dimenze (číslo oddělení a den v měsíci). Počet rozměrů pole má nazývá jeho *pořadí*.  

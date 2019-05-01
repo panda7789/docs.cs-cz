@@ -9,11 +9,11 @@ helpviewer_keywords:
 - service contracts [WCF], reliable services
 ms.assetid: 07814ed0-0775-47f2-987b-d8134fdd5099
 ms.openlocfilehash: a617100e46d4bcafb9325efa99c255f2f8ee5981
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59216766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61955163"
 ---
 # <a name="reliable-services"></a>Spolehlivé služby
 Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), které implementují spolehlivé zasílání zpráv. Toto téma popisuje funkce spolehlivé zasílání zpráv služby WCF.  
@@ -22,15 +22,15 @@ Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), 
   
  Spolehlivé zasílání zpráv zajišťuje následující funkce:  
   
--   Přenese záruky pro zprávy odeslané ze zdroje do cíle bez ohledu na selhání přenosu nebo přenos zpráv.  
+- Přenese záruky pro zprávy odeslané ze zdroje do cíle bez ohledu na selhání přenosu nebo přenos zpráv.  
   
--   Odděluje zdroj a cíl od sebe navzájem. To poskytuje nezávislé selhání a obnovení zdroji a cíl, stejně jako reliable přenos a doručování zpráv, i v případě, že zdroj nebo cíl nedostupný.  
+- Odděluje zdroj a cíl od sebe navzájem. To poskytuje nezávislé selhání a obnovení zdroji a cíl, stejně jako reliable přenos a doručování zpráv, i v případě, že zdroj nebo cíl nedostupný.  
   
  Spolehlivé zasílání zpráv je často za cenu vysokou latenci. *Latence* je čas potřebný pro zprávu pro přenos dat ze zdroje do cíle. WCF, proto poskytuje spolehlivé zasílání zpráv následující typy:  
   
--   [Spolehlivé relace](../../../docs/framework/wcf/feature-details/reliable-sessions.md), která nabízí spolehlivé přenos bez nákladů na vysokou latenci.  
+- [Spolehlivé relace](../../../docs/framework/wcf/feature-details/reliable-sessions.md), která nabízí spolehlivé přenos bez nákladů na vysokou latenci.  
   
--   [Fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md), která nabízí spolehlivé přenosů a oddělení mezi zdrojem a cílem.  
+- [Fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md), která nabízí spolehlivé přenosů a oddělení mezi zdrojem a cílem.  
   
 ## <a name="reliable-sessions"></a>Spolehlivé relace  
  Spolehlivé relace poskytují začátku do konce spolehlivé přenos zpráv mezi zdrojem a cílem pomocí protokolu WS-Reliable zasílání zpráv bez ohledu na počet a typ zprostředkovatelů, které oddělují koncových bodů pro zasílání zpráv (zdrojové a cílové). To zahrnuje všechny přenosu zprostředkovatelů, které nevyužívají protokol SOAP (například proxy protokolu HTTP) nebo zprostředkovatelů, které používají protokol SOAP (například založený na protokolu SOAP směrovače nebo mosty), které jsou požadovány pro zprávy, které jsou předávány mezi koncovými body. Spolehlivé relace okno přenosu v paměti na selhání úroveň zprávy protokolu SOAP maska a znovu vytvořit připojení v případě selhání přenosu.  

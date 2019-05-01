@@ -10,11 +10,11 @@ ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: afaa8e118bb21e5c1e4f1c53b1d0d29ca6bb3bf5
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055053"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj pro různé platformy pomocí přenosné knihovny tříd
 
@@ -50,13 +50,13 @@ Pokud chcete vyhodnotit přenositelnost vašeho sestavení před provádět změ
 
 Typy a členy, které jsou k dispozici v projektech knihovny přenosných tříd jsou omezeny několika faktory kompatibility:
 
--   Musí být sdíleny napříč cíli, který jste vybrali.
+- Musí být sdíleny napříč cíli, který jste vybrali.
 
--   Musí chovat podobně napříč těmito cíli.
+- Musí chovat podobně napříč těmito cíli.
 
--   Nesmí se jednat o kandidáty na vyřazení.
+- Nesmí se jednat o kandidáty na vyřazení.
 
--   Musí dávat smysl v přenosném prostředí, zejména v případě nepřenosných podpůrných členů.
+- Musí dávat smysl v přenosném prostředí, zejména v případě nepřenosných podpůrných členů.
 
 Pokud člen je podporován v přenosné knihovny tříd a pro vybrané cíle, zobrazí se v projektu v technologii IntelliSense. Nezapomeňte však, že rozhraní API může nepodporuje v přenosné knihovně tříd, ale, zda můžete použít rozhraní API závisí na cíle, které můžete vybrat.
 
@@ -78,9 +78,9 @@ Při vytváření aplikace Universal Windows, která odkazuje na sestavení knih
 
 Když nasadíte aplikaci .NET Framework, která odkazuje na sestavení knihovny přenosných tříd, je nutné určit závislost na správnou verzi rozhraní .NET Framework. Určením této závislosti zajistíte instalaci požadované verze společně s vaší aplikací.
 
--   Vytvoření závislosti s nasazením ClickOnce: V **Průzkumníka řešení**, zvolte uzel projektu pro projekt, kterou chcete publikovat. (Jedná se o projekt, který odkazuje na projekt knihovny přenosných tříd.) V panelu nabídky zvolte **projektu** > **vlastnosti**a klikněte na tlačítko **publikovat** kartu. Na **publikovat** zvolte **požadavky**. Jako předpoklad vyberte požadovanou verzi rozhraní .NET Framework.
+- Vytvoření závislosti s nasazením ClickOnce: V **Průzkumníka řešení**, zvolte uzel projektu pro projekt, kterou chcete publikovat. (Jedná se o projekt, který odkazuje na projekt knihovny přenosných tříd.) V panelu nabídky zvolte **projektu** > **vlastnosti**a klikněte na tlačítko **publikovat** kartu. Na **publikovat** zvolte **požadavky**. Jako předpoklad vyberte požadovanou verzi rozhraní .NET Framework.
 
--   Vytvoření závislosti pomocí projektu instalace: V **Průzkumníka řešení**, vyberte projekt instalace. V panelu nabídky zvolte **projektu** > **vlastnosti** > **požadavky**. Jako předpoklad vyberte požadovanou verzi rozhraní .NET Framework.
+- Vytvoření závislosti pomocí projektu instalace: V **Průzkumníka řešení**, vyberte projekt instalace. V panelu nabídky zvolte **projektu** > **vlastnosti** > **požadavky**. Jako předpoklad vyberte požadovanou verzi rozhraní .NET Framework.
 
 Další informace o nasazení aplikací rozhraní .NET Framework najdete v tématu [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md).
 

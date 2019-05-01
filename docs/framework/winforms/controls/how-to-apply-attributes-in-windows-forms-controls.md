@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Windows Forms controls, applying attributes
 ms.assetid: af0a3f7f-155b-4ba1-83c4-9cf721331a06
 ms.openlocfilehash: e86277c06e515b28bada3331cf4fd63e536319a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59079588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052999"
 ---
 # <a name="how-to-apply-attributes-in-windows-forms-controls"></a>Postupy: Použití atributů v ovládacích prvcích Windows Forms
 K vývoji komponent a ovládacích prvků, které správně komunikují s prostředím návrhu a za běhu se správně spustit, musíte správně používat atributy třídy a členy.  
@@ -75,7 +75,7 @@ K vývoji komponent a ovládacích prvků, které správně komunikují s prost�
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Formulář, který je hostitelem `AttributesDemoControl` vyžaduje přidání odkazu na `AttributesDemoControl` sestavení k sestavení.  
+- Formulář, který je hostitelem `AttributesDemoControl` vyžaduje přidání odkazu na `AttributesDemoControl` sestavení k sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

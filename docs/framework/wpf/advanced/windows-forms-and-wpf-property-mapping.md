@@ -9,22 +9,22 @@ helpviewer_keywords:
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 999d8298-9c04-467d-a453-86e41002057d
 ms.openlocfilehash: a7d78837a141ed322da42629501cee6dcc9143e1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59088818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053129"
 ---
 # <a name="windows-forms-and-wpf-property-mapping"></a>Mapování vlastnosti Windows Forms a WPF
 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] technologie mají dva modely podobné, ale jiné vlastnosti. *Mapování vlastností* podporuje interoperabilitu mezi dvěma architektury a poskytuje následující možnosti:  
   
--   Usnadňuje mapování odpovídající vlastnost změny v prostředí hostitele do hostovaného ovládacího prvku nebo prvku.  
+- Usnadňuje mapování odpovídající vlastnost změny v prostředí hostitele do hostovaného ovládacího prvku nebo prvku.  
   
--   Poskytuje výchozí zpracování pro mapování většinu běžně používá vlastnosti.  
+- Poskytuje výchozí zpracování pro mapování většinu běžně používá vlastnosti.  
   
--   Umožňuje snadné odstranění přepsání nebo rozšíření z výchozí vlastnosti.  
+- Umožňuje snadné odstranění přepsání nebo rozšíření z výchozí vlastnosti.  
   
--   Zajišťuje, že změny hodnot vlastnosti na hostiteli jsou automaticky zjištěny a přeložit do hostovaného ovládacího prvku nebo prvku.  
+- Zajišťuje, že změny hodnot vlastnosti na hostiteli jsou automaticky zjištěny a přeložit do hostovaného ovládacího prvku nebo prvku.  
   
 > [!NOTE]
 >  Události změny vlastnosti nejsou šířeny hostující ovládací prvek nebo hierarchie elementů. Vlastnost překladu se neprovádí, pokud místní hodnota vlastnosti se nezmění z důvodu nastavení s přímým přístupem, styly, dědičnost, datové vazby nebo jiných mechanismů, které změňte hodnotu vlastnosti.  
@@ -54,66 +54,66 @@ ms.locfileid: "59088818"
 ## <a name="updates-to-parent-properties"></a>Aktualizace vlastnosti nadřazené  
  Změny vlastnosti většina nadřazené způsobit oznámení hostované podřízený ovládací prvek. Následující seznam popisuje vlastnosti, které nezpůsobí oznámení, když se změní jejich hodnoty.  
   
--   <xref:System.Windows.Controls.Control.Background%2A>  
+- <xref:System.Windows.Controls.Control.Background%2A>  
   
--   <xref:System.Windows.FrameworkElement.Cursor%2A>  
+- <xref:System.Windows.FrameworkElement.Cursor%2A>  
   
--   <xref:System.Windows.FrameworkElement.ForceCursor%2A>  
+- <xref:System.Windows.FrameworkElement.ForceCursor%2A>  
   
--   <xref:System.Windows.UIElement.Visibility%2A>  
+- <xref:System.Windows.UIElement.Visibility%2A>  
   
  Například, pokud změníte hodnotu <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu, <xref:System.Windows.Forms.Control.BackColor%2A> vlastnost ovládacího prvku prostředí se nemění.  
   
 ## <a name="property-mapping-with-the-elementhost-control"></a>Mapování vlastností pomocí ovládacího prvku ElementHost  
  Následující vlastnosti poskytují oznámení o změně integrované. Nevolejte <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> metoda při mapování těchto vlastností:  
   
--   AutoSize  
+- AutoSize  
   
--   BackColor  
+- BackColor  
   
--   BackgroundImage  
+- BackgroundImage  
   
--   BackgroundImageLayout  
+- BackgroundImageLayout  
   
--   BindingContext  
+- BindingContext  
   
--   Vlastnosti CausesValidation  
+- Vlastnosti CausesValidation  
   
--   ContextMenu  
+- ContextMenu  
   
--   ContextMenuStrip  
+- ContextMenuStrip  
   
--   Kurzor  
+- Kurzor  
   
--   Ukotvení  
+- Ukotvení  
   
--   Povoleno  
+- Povoleno  
   
--   Písma  
+- Písma  
   
--   ForeColor  
+- ForeColor  
   
--   Umístění  
+- Umístění  
   
--   Okraj  
+- Okraj  
   
--   Padding  
+- Padding  
   
--   Nadřazené  
+- Nadřazené  
   
--   Oblast  
+- Oblast  
   
--   RightToLeft  
+- RightToLeft  
   
--   Velikost  
+- Velikost  
   
--   TabIndex  
+- TabIndex  
   
--   TabStop  
+- TabStop  
   
--   Text  
+- Text  
   
--   Viditelné  
+- Viditelné  
   
  <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek přeloží výchozí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti k jejich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ekvivalenty pomocí následující tabulky překladu.  
   

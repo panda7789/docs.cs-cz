@@ -7,11 +7,11 @@ helpviewer_keywords:
 - graphics [Windows Forms], GDI+
 ms.assetid: a98a76ab-e455-49c9-891c-0491ac932f2c
 ms.openlocfilehash: b1676189582596ad69981b330ffb081539e949da
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61960950"
 ---
 # <a name="about-gdi-managed-code"></a>Informace o spravovaném kódu GDI+
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je část, která poskytuje dvojrozměrná vektorová grafika, obrázky a typografie operačního systému Windows. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] zlepšuje na [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (grafiky zařízení rozhraní zahrnuté v dřívějších verzích Windows) tak, že přidáte nové funkce a optimalizace existujících funkcí.  

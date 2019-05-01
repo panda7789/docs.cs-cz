@@ -10,11 +10,11 @@ helpviewer_keywords:
 - GDI+, rendering existing images
 ms.assetid: c128b79a-3e31-47d8-9e66-3470f570a056
 ms.openlocfilehash: e038da545bb3f56cc757710bcaa93aa2c86bfa67
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967112"
 ---
 # <a name="how-to-render-images-with-gdi"></a>Postupy: Vykreslení obrázků pomocí GDI+
 Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] k vykreslování obrázků, které existují jako soubory ve svých aplikacích. To provedete tak, že vytvoříte nový objekt <xref:System.Drawing.Image> třídy (například <xref:System.Drawing.Bitmap>), vytváření <xref:System.Drawing.Graphics> objekt, který odkazuje na návrhovém povrchu, který chcete použít a volání <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu. Image bude nutné překreslit na návrhovém povrchu reprezentovaný třídou grafiky. Můžete použít Editor obrázků můžete vytvářet a upravovat soubory obrázků v době návrhu a jejich vykreslení [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] v době běhu. Další informace najdete v tématu [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons).  

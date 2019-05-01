@@ -6,8 +6,8 @@ ms.openlocfilehash: ba9031dad96f12c7c48b03f1da4af1b3adc6dd4f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61962953"
 ---
 # <a name="peertransportbindingelement"></a>PeerTransportBindingElement
 PeerTransportBindingElement  

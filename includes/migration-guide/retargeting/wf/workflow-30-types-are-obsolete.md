@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 70acbb571921c5f72ecaa26b26136a77532ad220
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59774366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62088484"
 ---
 ### <a name="workflow-30-types-are-obsolete"></a>Typy WorkFlow 3.0 jsou zastaralé
 

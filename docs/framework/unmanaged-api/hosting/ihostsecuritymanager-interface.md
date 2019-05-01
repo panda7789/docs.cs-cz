@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f45379fe8640ef7e7b3917bac8d10ca956d75ffb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61957583"
 ---
 # <a name="ihostsecuritymanager-interface"></a>IHostSecurityManager – rozhraní
 Poskytuje metody, které umožňují přístup a kontrolu nad kontextu zabezpečení aktuálně spuštěné vlákno.  
@@ -42,13 +42,13 @@ Poskytuje metody, které umožňují přístup a kontrolu nad kontextu zabezpeč
   
  Modul CLR interně zpracovává kontext spravované vlákna. Dotazy specifické pro proces `IHostSecurityManager` v následujících situacích:  
   
--   Na finalizační podproces během spuštění finalizační metody.  
+- Na finalizační podproces během spuštění finalizační metody.  
   
--   Během provádění konstruktoru třídy a modulu.  
+- Během provádění konstruktoru třídy a modulu.  
   
--   V asynchronní body na pracovního vlákna ve voláních [ihostthreadpoolmanager::QueueUserWorkItem –](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md) metody.  
+- V asynchronní body na pracovního vlákna ve voláních [ihostthreadpoolmanager::QueueUserWorkItem –](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md) metody.  
   
--   V obslužném portů dokončení vstupně-výstupních operací.  
+- V obslužném portů dokončení vstupně-výstupních operací.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

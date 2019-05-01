@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 1ef31202d7c072ca27c21fc22db102aafa6b8de7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62088467"
 ---
 ### <a name="etw-eventlisteners-do-not-capture-events-from-providers-with-explicit-keywords-like-the-tpl-provider"></a>Trasování událostí pro Windows EventListeners nezachytí události od poskytovatelů s explicitní klíčová slova (stejně jako zprostředkovatel TPL)
 

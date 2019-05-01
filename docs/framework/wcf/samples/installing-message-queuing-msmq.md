@@ -3,11 +3,11 @@ title: Instalace služby Řízení front zpráv (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
 ms.openlocfilehash: 64736f8f0a34a53658dd2838738a3d36b3891d2d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59305088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954944"
 ---
 # <a name="installing-message-queuing-msmq"></a>Instalace služby Řízení front zpráv (MSMQ)
 Následující postupy ukazují, jak nainstalovat 4.0 služby Řízení front zpráv a 3.0 služby Řízení front zpráv.  
@@ -37,9 +37,9 @@ Následující postupy ukazují, jak nainstalovat 4.0 služby Řízení front zp
   
 3. Rozbalíte Server Microsoft Message Queue (MSMQ), rozbalte Server Core Microsoft Message Queue (MSMQ) a poté zaškrtněte políčka pro následující funkce služby Řízení front zpráv k instalaci:  
   
-    -   MSMQ domény služby integrace služby Active Directory (pro počítače připojené k doméně).  
+    - MSMQ domény služby integrace služby Active Directory (pro počítače připojené k doméně).  
   
-    -   MSMQ HTTP Support.  
+    - MSMQ HTTP Support.  
   
 4. Klikněte na **OK**.  
   

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:FieldModifier attribute
 ms.assetid: ed427cd4-2f35-4d24-bd2f-0fa7b71ec248
 ms.openlocfilehash: c20564bcf8a25b1b59887fbefe6419671e0d6c03
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59144544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971861"
 ---
 # <a name="xfieldmodifier-directive"></a>x:FieldModifier – direktiva
 Upravuje chování sestavení XAML, takže pole pro odkazy na pojmenované objekty jsou definovány pomocí <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> přístup místo <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> výchozí chování.  
@@ -36,11 +36,11 @@ Upravuje chování sestavení XAML, takže pole pro odkazy na pojmenované objek
   
  Hodnota `x:FieldModifier` atributu se liší podle programovací jazyk a jejím účelem se může lišit v konkrétní rozhraní. Řetězec, který má použít, závisí na způsob implementace každý jazyk jeho <xref:System.CodeDom.Compiler.CodeDomProvider> a vrátí k definování význam pro typ převaděče <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, a zda je daný jazyk malá a velká písmena.  
   
--   Pro jazyk C#, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je `public`.  
+- Pro jazyk C#, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je `public`.  
   
--   Pro Microsoft Visual Basic .NET, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je `Public`.  
+- Pro Microsoft Visual Basic .NET, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je `Public`.  
   
--   Pro [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)], aktuálně neexistují žádné cíle pro XAML, proto není definováno řetězec, který má předat.  
+- Pro [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)], aktuálně neexistují žádné cíle pro XAML, proto není definováno řetězec, který má předat.  
   
  Můžete také určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> (`internal` v C#, `Friend` v jazyce Visual Basic) ale zadat <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> neobvyklá protože `NotPublic` je již výchozí chování.  
   

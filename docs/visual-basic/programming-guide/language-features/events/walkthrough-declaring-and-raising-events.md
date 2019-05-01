@@ -10,11 +10,11 @@ helpviewer_keywords:
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
 ms.openlocfilehash: cab6c90947eae8abeb9387535eadb2f89e71454a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973087"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
 Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s názvem `Widget`. Po dokončení kroků se můžete chtít přečíst téma doprovodná [názorný postup: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), který ukazuje, jak používat události z `Widget` objekty poskytnout informace o stavu v aplikaci.  
@@ -44,7 +44,7 @@ Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s n�
   
 #### <a name="to-declare-an-event-for-the-widget-class"></a>Chcete-li deklarovat události pro třídu widgetu  
   
--   Použití `Event` – klíčové slovo pro deklaraci události v `Widget` třídy. Všimněte si, že událost může mít `ByVal` a `ByRef` argumenty, jako `Widget`společnosti `PercentDone` ukazuje událostí:  
+- Použití `Event` – klíčové slovo pro deklaraci události v `Widget` třídy. Všimněte si, že událost může mít `ByVal` a `ByRef` argumenty, jako `Widget`společnosti `PercentDone` ukazuje událostí:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Widget.vb#1)]  
   

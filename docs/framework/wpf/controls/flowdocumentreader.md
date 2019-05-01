@@ -8,11 +8,11 @@ helpviewer_keywords:
 - FlowDocumentReader control [WPF]
 ms.assetid: ba7aaa70-f77b-4555-a79d-68a12c8e134b
 ms.openlocfilehash: d8201eeceeb39ffea888849eba32e77ee7c25ece
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59138187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054910"
 ---
 # <a name="flowdocumentreader"></a>FlowDocumentReader
 <xref:System.Windows.Controls.FlowDocumentReader> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsah. Podporuje několik režimů zobrazení.  

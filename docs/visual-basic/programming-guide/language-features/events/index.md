@@ -6,11 +6,11 @@ helpviewer_keywords:
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 ms.openlocfilehash: 73a740d8fa9b9f293e4babb1d2edef81aaeae8aa
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973196"
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou spouštěny v pořadí, ve skutečnosti, většina programů jsou řízené událostmi – to znamená toku provádění se určuje podle externí výskyty volá *události*.  
@@ -53,11 +53,11 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
   
  `WithEvents` Příkazu a `Handles` klauzule jsou často nejlepší volbou pro obslužné rutiny událostí, protože deklarativní syntaxe používají usnadňuje zpracování událostí na kód, čtení a ladění. Nicméně, mějte na paměti následující omezení týkající se použití `WithEvents` proměnné:  
   
--   Nelze použít `WithEvents` proměnné jako objektovou proměnnou. To znamená, nelze deklarovat jako `Object`– když deklarujete proměnnou se musí zadat název třídy.  
+- Nelze použít `WithEvents` proměnné jako objektovou proměnnou. To znamená, nelze deklarovat jako `Object`– když deklarujete proměnnou se musí zadat název třídy.  
   
--   Protože sdílené události nejsou vázané na instance třídy, nemůžete použít `WithEvents` deklarativně zpracování sdílené událostí. Podobně nelze použít `WithEvents` nebo `Handles` zpracování událostí z `Structure`. V obou případech můžete použít `AddHandler` příkaz pro zpracování těchto událostí.  
+- Protože sdílené události nejsou vázané na instance třídy, nemůžete použít `WithEvents` deklarativně zpracování sdílené událostí. Podobně nelze použít `WithEvents` nebo `Handles` zpracování událostí z `Structure`. V obou případech můžete použít `AddHandler` příkaz pro zpracování těchto událostí.  
   
--   Nelze vytvořit pole `WithEvents` proměnné.  
+- Nelze vytvořit pole `WithEvents` proměnné.  
   
  `WithEvents` Proměnné umožňují jedinou událost obslužnou rutinu pro zpracování minimálně jeden typ události, nebo jeden nebo více obslužných rutin událostí ke zpracování stejný druh událostí.  
   
@@ -91,7 +91,7 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
   
 ### <a name="to-handle-events-from-a-base-class"></a>Zpracování událostí ze základní třídy  
   
--   Deklarovat přidáním obslužné rutiny události v odvozené třídě `Handles MyBase.` *eventname* příkaz řádek deklaraci procedury Obslužná rutina události, kde *eventname* je název události v Základní třída, kterou obsluhujete. Příklad:  
+- Deklarovat přidáním obslužné rutiny události v odvozené třídě `Handles MyBase.` *eventname* příkaz řádek deklaraci procedury Obslužná rutina události, kde *eventname* je název události v Základní třída, kterou obsluhujete. Příklad:  
   
      [!code-vb[VbVbalrEvents#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#12)]  
   

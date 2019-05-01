@@ -9,18 +9,18 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], adding
 ms.assetid: 2509302d-a74e-484f-9890-2acdbfa67a68
 ms.openlocfilehash: babae31a3be9775d07ca84c54e1177d297cab5cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61956257"
 ---
 # <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
 Přestože Windows Forms jsou optimalizované pro hostitelské ovládací prvky Windows Forms, je možné použít ovládací prvky ActiveX. Při plánování aplikaci používá ovládací prvky ActiveX, mít na paměti následující aspekty:  
   
--   **Zabezpečení** vylepšili jsme modul common language runtime s ohledem na zabezpečení přístupu kódu. Aplikace s Windows Forms lze spustit v plně důvěryhodném prostředí bez problému a v částečně důvěryhodném prostředí s většinou funkcí, které jsou přístupné. Ovládací prvky Windows Forms je možné hostovat v prohlížeči se žádná komplikací. Ovládací prvky ActiveX v modelu Windows Forms však nelze využít výhod těchto vylepšení zabezpečení. Používání ovládacího prvku ActiveX vyžaduje oprávnění nespravovaného kódu, který je nastavený s <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType> vlastnost. Další informace o zabezpečení a oprávnění nespravovaného kódu, naleznete v tématu <xref:System.Security.Permissions.SecurityPermissionAttribute>.  
+- **Zabezpečení** vylepšili jsme modul common language runtime s ohledem na zabezpečení přístupu kódu. Aplikace s Windows Forms lze spustit v plně důvěryhodném prostředí bez problému a v částečně důvěryhodném prostředí s většinou funkcí, které jsou přístupné. Ovládací prvky Windows Forms je možné hostovat v prohlížeči se žádná komplikací. Ovládací prvky ActiveX v modelu Windows Forms však nelze využít výhod těchto vylepšení zabezpečení. Používání ovládacího prvku ActiveX vyžaduje oprávnění nespravovaného kódu, který je nastavený s <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType> vlastnost. Další informace o zabezpečení a oprávnění nespravovaného kódu, naleznete v tématu <xref:System.Security.Permissions.SecurityPermissionAttribute>.  
   
--   **Celkové náklady na vlastnictví** přidán do formuláře Windows – ovládací prvky ActiveX jsou nasazeny pomocí formuláře Windows v plné výši, které můžete přidat výrazně velikosti souborů vytvořené. Použití ovládacích prvků ActiveX do formulářů Windows navíc vyžaduje zápis do registru. Toto je na počítači uživatele invazivnější než ovládacích prvků Windows Forms, které nevyžadují, aby to.  
+- **Celkové náklady na vlastnictví** přidán do formuláře Windows – ovládací prvky ActiveX jsou nasazeny pomocí formuláře Windows v plné výši, které můžete přidat výrazně velikosti souborů vytvořené. Použití ovládacích prvků ActiveX do formulářů Windows navíc vyžaduje zápis do registru. Toto je na počítači uživatele invazivnější než ovládacích prvků Windows Forms, které nevyžadují, aby to.  
   
     > [!NOTE]
     >  Práce s prvku ActiveX ovládací prvek vyžaduje použití obálku vzájemné spolupráce COM. Další informace najdete v tématu [interoperabilita modelů COM v jazyce Visual Basic a Visual C#](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  

@@ -6,10 +6,10 @@ ms.author: jekoritz
 ms.date: 01/18/2019
 ms.openlocfilehash: d1da6be56e14f72e17cf8fc9ba343ce148fe0931
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973502"
 ---
 # <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
@@ -38,9 +38,9 @@ public class Program
 
 V předchozím příkladu je jednoduché, ale je předvést, co je potřeba k volání nespravovaných funkcí ze spravovaného kódu. Projděme si příklad:
 
-*   Řádek #1 ukazuje na pomocí příkazu pro `System.Runtime.InteropServices` obor názvů, který obsahuje všechny položky, které jsou potřeba.
-*   Představuje řádek #7 `DllImport` atribut. Tento atribut je zásadní, protože říká modul runtime, že by se měly načíst nespravovaná knihovna DLL. Předaný řetězec je knihovna DLL je náš cíl funkce v. Kromě toho určuje, které [znaková sada](./charset.md) pro zařazování řetězce. A konečně, určuje, že tato funkce volá [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) a modul runtime sbíral tento chybový kód tak, že uživatel může načíst ho přes <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
-*   Řádek #8 je jádrem pracovní P/Invoke. Definuje spravované metody, která má **přesně stejnou signaturu** jako nespravovaný. Deklarace má nové klíčové slovo, můžete si všimnete, `extern`, který dává pokyn modulu runtime to je externí metoda a že při vyvolání jeho, modul runtime měl nacházet v knihovny DLL určené v `DllImport` atribut.
+* Řádek #1 ukazuje na pomocí příkazu pro `System.Runtime.InteropServices` obor názvů, který obsahuje všechny položky, které jsou potřeba.
+* Představuje řádek #7 `DllImport` atribut. Tento atribut je zásadní, protože říká modul runtime, že by se měly načíst nespravovaná knihovna DLL. Předaný řetězec je knihovna DLL je náš cíl funkce v. Kromě toho určuje, které [znaková sada](./charset.md) pro zařazování řetězce. A konečně, určuje, že tato funkce volá [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) a modul runtime sbíral tento chybový kód tak, že uživatel může načíst ho přes <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
+* Řádek #8 je jádrem pracovní P/Invoke. Definuje spravované metody, která má **přesně stejnou signaturu** jako nespravovaný. Deklarace má nové klíčové slovo, můžete si všimnete, `extern`, který dává pokyn modulu runtime to je externí metoda a že při vyvolání jeho, modul runtime měl nacházet v knihovny DLL určené v `DllImport` atribut.
 
 Zbývající část v příkladu je právě volání metody, stejně jako jiné spravované metody.
 
@@ -138,10 +138,10 @@ První parametr je zpětné volání. Uvedené zpětné volání má následují
 
 Nyní projděme si příklad:
 
-*   Řádek #9 v příkladu definuje delegáta, který se shoduje se signaturou zpětného volání z nespravovaného kódu. Všimněte si, jak jsou reprezentovány typy LPARAM a HWND pomocí `IntPtr` ve spravovaném kódu.
-*   Zavést řádky #13 a #14 `EnumWindows` funkce z knihovny user32.dll.
-*   Řádky #17 20 implementaci delegáta. Tento jednoduchý příklad my chceme jenom výstupní popisovač do konzoly.
-*   Nakonec v řádku #24 externí metoda je volána a předaný delegátovi.
+* Řádek #9 v příkladu definuje delegáta, který se shoduje se signaturou zpětného volání z nespravovaného kódu. Všimněte si, jak jsou reprezentovány typy LPARAM a HWND pomocí `IntPtr` ve spravovaném kódu.
+* Zavést řádky #13 a #14 `EnumWindows` funkce z knihovny user32.dll.
+* Řádky #17 20 implementaci delegáta. Tento jednoduchý příklad my chceme jenom výstupní popisovač do konzoly.
+* Nakonec v řádku #24 externí metoda je volána a předaný delegátovi.
 
 Níže jsou uvedeny příklady operačních systémů Linux a macOS. Pro ně používáme `ftw` funkce, která lze nalézt v `libc`, knihovna C. Tato funkce slouží k procházení hierarchie adresáře a bere ukazatel na funkci jako jeden ze svých parametrů. Uvedení funkce má následující podpis: `int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`.
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
 ms.openlocfilehash: 7db435e45ddc55346af5ea5fdbcce611173c774b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053532"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 <xref:System.Windows.PropertyPath> Objekt podporuje komplexní vložené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxi pro různé vlastnosti, které provést nastavení <xref:System.Windows.PropertyPath> typu jako jeho hodnotu. Toto téma dokumenty <xref:System.Windows.PropertyPath> syntaxe jako použitý pro vazbu a animace syntaxe.  
@@ -69,11 +69,11 @@ ms.locfileid: "59122912"
   
  Závorky označuje, že tato vlastnost v <xref:System.Windows.PropertyPath> třeba vytvořit pomocí částečné kvalifikace. Obor názvů XML lze najít typ s vhodné mapování. `ownerType` Hledání typy, které [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor má přístup, až <xref:System.Windows.Markup.XmlnsDefinitionAttribute> deklarací v každé sestavení. Většina aplikací má výchozí obor názvů XML namapované na [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)] obor názvů, takže předpona je obvykle potřeba, pouze pro vlastní typy nebo typy jinak mimo tento obor názvů.  `propertyName` Název vlastnosti stávajících se musí přeložit `ownerType`. Tato syntaxe je obvykle použita pro jednu z následujících případech:  
   
--   Cesta je určena v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , který je ve stylu nebo šablony, která nemá zadaný typ cíle. Kvalifikované použití obecně není platný pro případy, než to, a protože v jiných – vizuální styl, nešablonové případech vlastnost existuje instance, není typu.  
+- Cesta je určena v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , který je ve stylu nebo šablony, která nemá zadaný typ cíle. Kvalifikované použití obecně není platný pro případy, než to, a protože v jiných – vizuální styl, nešablonové případech vlastnost existuje instance, není typu.  
   
--   Vlastnost je připojené vlastnosti.  
+- Vlastnost je připojené vlastnosti.  
   
--   Jsou vytvoření vazby na statickou vlastnost.  
+- Jsou vytvoření vazby na statickou vlastnost.  
   
  Pro použití jako cíl scénáře vlastnost zadaná jako `propertyName` musí být <xref:System.Windows.DependencyProperty>.  
   
@@ -118,19 +118,19 @@ or
 ### <a name="escapes-for-property-path-strings"></a>Řídicí sekvence pro vlastnosti řetězce cesty  
  Pro některé objekty obchodní můžete setkat s případem, kde řetězec cesty vlastnost vyžaduje řídicí sekvenci, aby bylo možné správně analyzovat. Nutnost řídicí by mělo být taková situace vzácná, protože řada z těchto znaků má podobné pojmenování interakce problémy v jazycích, které by obvykle slouží k definování obchodního objektu.  
   
--   Uvnitř indexery ([]) řídící znak stříšky (^) další znak.  
+- Uvnitř indexery ([]) řídící znak stříšky (^) další znak.  
   
--   Musíte je přeskočit (s použitím entity XML) určitých znaků, které jsou pro definice jazyka XML. Použití `&` znaku "&". Použití `>` řídicí koncová značka ">".  
+- Musíte je přeskočit (s použitím entity XML) určitých znaků, které jsou pro definice jazyka XML. Použití `&` znaku "&". Použití `>` řídicí koncová značka ">".  
   
--   Musíte je přeskočit (pomocí zpětného lomítka `\`) znaky, které jsou pro WPF XAML chování analyzátor pro zpracování rozšíření značek.  
+- Musíte je přeskočit (pomocí zpětného lomítka `\`) znaky, které jsou pro WPF XAML chování analyzátor pro zpracování rozšíření značek.  
   
-    -   Zpětné lomítko (`\`) je řídicí znak samotný.  
+    - Zpětné lomítko (`\`) je řídicí znak samotný.  
   
-    -   Znaménko rovná se (`=`) odděluje název vlastnosti z hodnoty vlastnosti.  
+    - Znaménko rovná se (`=`) odděluje název vlastnosti z hodnoty vlastnosti.  
   
-    -   Čárka (`,`) odděluje vlastnosti.  
+    - Čárka (`,`) odděluje vlastnosti.  
   
-    -   Pravá složená závorka (`}`) je koncem rozšíření značek.  
+    - Pravá složená závorka (`}`) je koncem rozšíření značek.  
   
 > [!NOTE]
 >  Technicky vzato tyto řídicí sekvence fungovat pro vlastnost cestu scénáře také, ale jsou obvykle procházení objektové modely pro existující objekty WPF a uvozovací znaky by měl být zbytečné.  

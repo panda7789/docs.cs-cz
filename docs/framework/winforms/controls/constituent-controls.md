@@ -10,11 +10,11 @@ helpviewer_keywords:
 - user controls [Windows Forms], constituent controls
 ms.assetid: 5565e720-198b-4bbd-a2bd-c447ba641798
 ms.openlocfilehash: 76a5a4f9b02a71616d247a1bb0f03cc0aec1d70d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61956068"
 ---
 # <a name="constituent-controls"></a>Základní ovládací prvky
 Ovládací prvky, které tvoří uživatelský ovládací prvek nebo *základní ovládací prvky* jsou označovány jako, jsou relativně nepřizpůsobitelným při rozhodování o vykreslování grafiky vlastní. Všechny ovládací prvky Windows Forms zpracovávat své vlastní vykreslování prostřednictvím vlastní <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Vzhledem k tomu, že tato metoda je chráněný, není přístupná pro vývojáře a proto ji nelze zabránit spuštění při vykreslení ovládacího prvku. To neznamená, ale, že nemůžete přidat kód pro vliv na vzhled základních ovládacích prvků. Další vykreslování dosáhnete tak, že přidáte obslužné rutiny události. Předpokládejme například, že byly pro vytváření <xref:System.Windows.Forms.UserControl> s tlačítkem `MyButton`. Pokud jste si přáli mít další vykreslování nad rámec je zadán <xref:System.Web.UI.WebControls.Button>, by přidejte kód do vašeho uživatelského ovládacího prvku podobný následujícímu:  

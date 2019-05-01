@@ -17,11 +17,11 @@ helpviewer_keywords:
 - literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
 ms.openlocfilehash: d4dab1a72d1e240bc428b2c6b83a722584e35ecc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971792"
 ---
 # <a name="short-data-type-visual-basic"></a>Short – datový typ (Visual Basic)
 Blokování podepsané 16bitová celá čísla (2bajtových), které v rozsahu od-32 768 až 32 767.  
@@ -62,11 +62,11 @@ Dim number = &H_3264S
 
 ## <a name="programming-tips"></a>Tipy pro programování
 
--   **Rozšíření.** `Short` Datový typ rozšiřuje na `Integer`, `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Short` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `Short` Datový typ rozšiřuje na `Integer`, `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Short` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Přidávání znak typu literálu `S` k literálu se z něj stane `Short` datového typu. `Short` nemá žádné – znak typu identifikátoru.  
+- **Znaky typu.** Přidávání znak typu literálu `S` k literálu se z něj stane `Short` datového typu. `Short` nemá žádné – znak typu identifikátoru.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int16?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int16?displayProperty=nameWithType> struktury.  
   
 ## <a name="see-also"></a>Viz také:
 

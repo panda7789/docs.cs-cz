@@ -3,34 +3,34 @@ title: Směrovací služba
 ms.date: 03/30/2017
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
 ms.openlocfilehash: 905c84d801a27e588e2c539f987d6280aae7b994
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991040"
 ---
 # <a name="routing-service"></a>Směrovací služba
 Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje jako směrovač zprávy. Základní funkce služby směrování je schopnost trasy zpráv na základě obsahu zprávy, což umožní zprávy mají být předány koncový bod klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.  
   
  <xref:System.ServiceModel.Routing.RoutingService> Je implementovaný jako služba Windows Communication Foundation (WCF) v <xref:System.ServiceModel.Routing> oboru názvů. Směrovací služba zpřístupňuje jeden nebo více koncových bodů služby, které přijímají zprávy a poté trasy každou zprávu na jeden nebo více koncových bodů klienta na základě obsahu zprávy. Služba poskytuje následující funkce:  
   
--   Směrování na základě obsahu  
+- Směrování na základě obsahu  
   
-    -   Služby agregace  
+    - Služby agregace  
   
-    -   Správa verzí služby  
+    - Správa verzí služby  
   
-    -   Priorita směrování  
+    - Priorita směrování  
   
-    -   Dynamickou konfiguraci  
+    - Dynamickou konfiguraci  
   
--   Protokol přemostění  
+- Protokol přemostění  
   
--   Zpracování SOAP  
+- Zpracování SOAP  
   
--   Pokročilé zpracování chyb  
+- Pokročilé zpracování chyb  
   
--   Zálohování koncových bodů  
+- Zálohování koncových bodů  
   
  I když je možné vytvořit zprostředkující služba, která provádí jeden nebo více těchto cílů, často takové implementace se váže na konkrétní scénář nebo řešení a nedá se použít snadno do nových aplikací.  
   
@@ -48,13 +48,13 @@ Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje
   
  Prostřednictvím seskupování filtry zpráv do filtru tabulky směrování logiky lze sestavit, který umožňuje zpracovávat více scénáře, jako:  
   
--   Služby agregace  
+- Služby agregace  
   
--   Správa verzí služby  
+- Správa verzí služby  
   
--   Priorita směrování  
+- Priorita směrování  
   
--   Dynamickou konfiguraci  
+- Dynamickou konfiguraci  
   
  Další informace o filtrech zpráv a filtr tabulky najdete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md) a [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
   
@@ -97,13 +97,13 @@ Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje
 ## <a name="streaming"></a>Streamování  
  Služba Směrování úspěšně proudy zprávy Pokud nastavíte vazby podporovat datový proud.  Existují však některé podmínky, za kterých možná muset ukládány do vyrovnávací paměti zpráv:  
   
--   Vícesměrové vysílání (vyrovnávací paměti k vytvoření kopie další zpráva)  
+- Vícesměrové vysílání (vyrovnávací paměti k vytvoření kopie další zpráva)  
   
--   Převzetí služeb při selhání (v takovém případě je zprávu zapotřebí k odeslání do zálohy vyrovnávací paměti)  
+- Převzetí služeb při selhání (v takovém případě je zprávu zapotřebí k odeslání do zálohy vyrovnávací paměti)  
   
--   System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly má hodnotu false (předložit MessageFilterTable se namísto něho třídu MessageBuffer tak, aby filtry můžete kontrolovat obsah vyrovnávací paměti)  
+- System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly má hodnotu false (předložit MessageFilterTable se namísto něho třídu MessageBuffer tak, aby filtry můžete kontrolovat obsah vyrovnávací paměti)  
   
--   Dynamickou konfiguraci  
+- Dynamickou konfiguraci  
   
 ## <a name="see-also"></a>Viz také:
 

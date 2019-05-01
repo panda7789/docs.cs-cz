@@ -6,11 +6,11 @@ helpviewer_keywords:
 - mouse [Windows Forms], input
 ms.assetid: 48fc5240-75a6-44bf-9fce-6aa21b49705a
 ms.openlocfilehash: c9193ffa9ef34f1e43a92feec230fa2282264147
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59203012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966982"
 ---
 # <a name="how-mouse-input-works-in-windows-forms"></a>Jak funguje vstup myši ve Windows Forms
 Příjem a zpracování vstup z myši je důležitou součástí každé aplikace Windows. Můžete zpracovávat události myši k provedení akce ve vaší aplikaci nebo pomocí myši umístění informace o provedení volání testování nebo jiné akce. Kromě toho můžete změnit způsob, jakým ovládací prvky ve vaší aplikaci zpracovávat vstup z myši. Toto téma popisuje tyto události myši ve podrobností a získání a nastavení systému pro myš. Další informace o datech pomocí myši k dispozici jsou vyvolány události a pořadí, ve kterém události kliknutí myší, přečtěte si téma [události myši ve Windows Forms](mouse-events-in-windows-forms.md).  

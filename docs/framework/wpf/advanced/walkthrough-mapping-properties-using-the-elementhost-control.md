@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
 ms.openlocfilehash: 360f19e558f97e1807b329ad18e429fa893bbf86
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053155"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Návod: Mapování vlastností použitím ovládacího prvku ElementHost
 
@@ -21,13 +21,13 @@ Tento návod ukazuje, jak používat <xref:System.Windows.Forms.Integration.Elem
 
 Úlohy v tomto návodu zahrnují:
 
--   Vytvoření projektu.
+- Vytvoření projektu.
 
--   Definování nového mapování vlastností.
+- Definování nového mapování vlastností.
 
--   Odebrání výchozí mapování vlastností.
+- Odebrání výchozí mapování vlastností.
 
--   Rozšíření výchozí mapování vlastností.
+- Rozšíření výchozí mapování vlastností.
 
 Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [mapování vlastností použitím Ukázka ovládacího prvku ElementHost](https://go.microsoft.com/fwlink/?LinkID=160018).
 
@@ -37,7 +37,7 @@ Až budete hotovi, budete moci mapovat [!INCLUDE[TLA#tla_winforms](../../../../i
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
--   Visual Studio 2017
+- Visual Studio 2017
 
 ## <a name="creating-the-project"></a>Vytvoření projektu
 
@@ -47,13 +47,13 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 2. V **Průzkumníka řešení**, přidejte odkazy na následující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení.
 
-    -   PresentationCore
+    - PresentationCore
 
-    -   PresentationFramework
+    - PresentationFramework
 
-    -   WindowsBase
+    - WindowsBase
 
-    -   WindowsFormsIntegration
+    - WindowsFormsIntegration
 
 3. Zkopírujte následující kód do horní části `Form1` soubor kódu.
 
@@ -101,7 +101,7 @@ Odeberte výchozí mapování vlastností pomocí volání <xref:System.Windows.
 
 ### <a name="to-remove-a-default-property-mapping"></a>Chcete-li odebrat výchozí mapování vlastností
 
--   Zkopírujte následující kód do definice pro `Form1` třídy.
+- Zkopírujte následující kód do definice pro `Form1` třídy.
 
      [!code-csharp[PropertyMappingWithElementHost#13](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#13)]
      [!code-vb[PropertyMappingWithElementHost#13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#13)]
@@ -114,7 +114,7 @@ Můžete použít výchozí mapování vlastností a také rozšířit o vlastn�
 
 ### <a name="to-extend-a-default-property-mapping"></a>Chcete-li rozšířit výchozí mapování vlastností
 
--   Zkopírujte následující kód do definice pro `Form1` třídy.
+- Zkopírujte následující kód do definice pro `Form1` třídy.
 
      [!code-csharp[PropertyMappingWithElementHost#15](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#15)]
      [!code-vb[PropertyMappingWithElementHost#15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#15)]
@@ -132,11 +132,11 @@ Můžete použít výchozí mapování vlastností a také rozšířit o vlastn�
 
      `Form1_Load` Metoda obslužné rutiny <xref:System.Windows.Forms.Form.Load> událostí a provádí následující inicializace.
 
-    -   Vytvoří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> elementu.
+    - Vytvoří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> elementu.
 
-    -   Volá metody, které jste definovali dříve v návodu k nastavení mapování vlastností.
+    - Volá metody, které jste definovali dříve v návodu k nastavení mapování vlastností.
 
-    -   Přiřadí počáteční hodnoty pro mapovanou vlastnosti.
+    - Přiřadí počáteční hodnoty pro mapovanou vlastnosti.
 
 2. Stisknutím klávesy F5 sestavte a spusťte aplikaci.
 

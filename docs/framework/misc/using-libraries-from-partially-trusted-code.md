@@ -12,11 +12,11 @@ ms.assetid: dd66cd4c-b087-415f-9c3e-94e3a1835f74
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7a3bbbaa565a6c118082456a1ab6d7af59db7067
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982472"
 ---
 # <a name="using-libraries-from-partially-trusted-code"></a>Používání knihoven z částečně důvěryhodného kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -26,27 +26,27 @@ ms.locfileid: "59119272"
   
  Aplikace, které přijímají menší než úplný vztah důvěryhodnosti z jejich hostitele nebo izolovaného prostoru není povoleno volat sdílených knihoven spravovaných, pokud jim prostřednictvím zapisovače knihovny konkrétně umožňuje <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Uživatelé vytvářející obsah aplikace proto musí být vědomi, že některé knihovny nebudou k dispozici k nim z částečně důvěryhodného kontextu. Ve výchozím nastavení, veškerý kód, který se spustí v částečným vztahem důvěryhodnosti [izolovaného prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md) a není v seznamu sestavení úplné důvěryhodnosti je částečně důvěryhodné. Pokud neočekáváte váš kód, který se spustí z částečně důvěryhodného kontextu nebo volat částečně důvěryhodným kódem, není nutné mít obavy o informace v této části. Ale pokud píšete kód, který musí spolupracovat s částečně důvěryhodným kódem nebo provoz z částečně důvěryhodného kontextu, je třeba zvážit následující faktory:  
   
--   Knihovny musí být podepsané silným názvem, aby bylo možné sdílet mezi více aplikacemi. Silné názvy umožňují váš kód umístěn v globální mezipaměti sestavení, nebo se přidá do seznamu úplné důvěryhodnosti izolace (sandbox) <xref:System.AppDomain>, a umožňují uživatelům ověřit, že konkrétní mobilní kód ve skutečnosti pochází od vás.  
+- Knihovny musí být podepsané silným názvem, aby bylo možné sdílet mezi více aplikacemi. Silné názvy umožňují váš kód umístěn v globální mezipaměti sestavení, nebo se přidá do seznamu úplné důvěryhodnosti izolace (sandbox) <xref:System.AppDomain>, a umožňují uživatelům ověřit, že konkrétní mobilní kód ve skutečnosti pochází od vás.  
   
--   Ve výchozím nastavení, silným názvem [úrovně 1](../../../docs/framework/misc/security-transparent-code-level-1.md) sdílené knihovny provést implicitní [LinkDemand](../../../docs/framework/misc/link-demands.md) úplného vztahu důvěryhodnosti automaticky, bez zapisovač knihovny museli něco dělat.  
+- Ve výchozím nastavení, silným názvem [úrovně 1](../../../docs/framework/misc/security-transparent-code-level-1.md) sdílené knihovny provést implicitní [LinkDemand](../../../docs/framework/misc/link-demands.md) úplného vztahu důvěryhodnosti automaticky, bez zapisovač knihovny museli něco dělat.  
   
--   Pokud volající nemá úplný vztah důvěryhodnosti, ale přesto pokusí o volání takové knihovny, modul runtime vyvolá <xref:System.Security.SecurityException> a volající nemá povoleno propojit do knihovny.  
+- Pokud volající nemá úplný vztah důvěryhodnosti, ale přesto pokusí o volání takové knihovny, modul runtime vyvolá <xref:System.Security.SecurityException> a volající nemá povoleno propojit do knihovny.  
   
--   Aby bylo možné zakázat automatické **LinkDemand** a zabránit výjimky vyvolané, můžete umístit **AllowPartiallyTrustedCallersAttribute** atribut v oboru sestavení sdílené Knihovna. Tento atribut umožňuje volat z částečně důvěryhodného kódu spravované knihovny.  
+- Aby bylo možné zakázat automatické **LinkDemand** a zabránit výjimky vyvolané, můžete umístit **AllowPartiallyTrustedCallersAttribute** atribut v oboru sestavení sdílené Knihovna. Tento atribut umožňuje volat z částečně důvěryhodného kódu spravované knihovny.  
   
--   Částečně důvěryhodným kódem, které je udělen přístup k knihovnu se tento atribut je pořád v souladu s další omezení, které jsou definované <xref:System.AppDomain>.  
+- Částečně důvěryhodným kódem, které je udělen přístup k knihovnu se tento atribut je pořád v souladu s další omezení, které jsou definované <xref:System.AppDomain>.  
   
--   Neexistuje žádný programový způsob, jak částečně důvěryhodným kódem pro volání knihovny, který nemá **AllowPartiallyTrustedCallersAttribute** atribut.  
+- Neexistuje žádný programový způsob, jak částečně důvěryhodným kódem pro volání knihovny, který nemá **AllowPartiallyTrustedCallersAttribute** atribut.  
   
  Knihovny, které jsou privátní pro konkrétní aplikace nevyžadují silným názvem nebo **AllowPartiallyTrustedCallersAttribute** atribut a nemůže být odkazován potenciálně škodlivý kód mimo aplikaci. Takový kód je chráněn proti zneužití úmyslnému i neúmyslnému částečně důvěryhodným kódem mobilní bez developer by bylo nutné dělat nic navíc.  
   
  Měli byste zvážit explicitně povoluje použití částečně důvěryhodným kódem pro následující typy kódu:  
   
--   Kód, který byl testován usilovně pro chyby zabezpečení a je v souladu s pokyny, podle [zabezpečené kódování zásady](../../../docs/standard/security/secure-coding-guidelines.md).  
+- Kód, který byl testován usilovně pro chyby zabezpečení a je v souladu s pokyny, podle [zabezpečené kódování zásady](../../../docs/standard/security/secure-coding-guidelines.md).  
   
--   Knihovny kódu se silným názvem, které jsou určeny konkrétně pro částečně důvěryhodným scénáře.  
+- Knihovny kódu se silným názvem, které jsou určeny konkrétně pro částečně důvěryhodným scénáře.  
   
--   Všechny součásti (ať už částečně nebo zcela důvěryhodných) podepsanému pomocí silného názvu, který bude volán kód, který se stáhne z Internetu.  
+- Všechny součásti (ať už částečně nebo zcela důvěryhodných) podepsanému pomocí silného názvu, který bude volán kód, který se stáhne z Internetu.  
   
 > [!NOTE]
 >  Některé třídy v knihovně tříd rozhraní .NET Framework nemají **AllowPartiallyTrustedCallersAttribute** atribut a nemůže být volán částečně důvěryhodným kódem.  

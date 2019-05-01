@@ -1,15 +1,15 @@
 ---
-title: Aktivita Throttledparallelforeach
+title: Aktivita ThrottledParallelForEach
 ms.date: 03/30/2017
 ms.assetid: f2855b5f-e9a7-433d-96a4-40fc31025215
 ms.openlocfilehash: fd30a1ac587359a054a273b3deca2e9bb8bc2798
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004858"
 ---
-# <a name="throttled-parallel-foreach"></a>Aktivita Throttledparallelforeach
+# <a name="throttled-parallel-foreach"></a>Aktivita ThrottledParallelForEach
 
 `ThrottleParallelForEach` Aktivity se podobá <xref:System.Activities.Statements.ParallelForEach%601> činnost s jednou výjimkou, že umožňuje nastavení faktor souběžnost chcete omezit počet souběžných větve ke spuštění. `ThrottleParallelForEach` Aktivity je odvozena z <xref:System.Activities.NativeActivity>, protože je potřeba naplánovat dalších aktivit (podřízené aktivity) a to je k dispozici pouze prostřednictvím <xref:System.Activities.NativeActivityContext> třídy.
 

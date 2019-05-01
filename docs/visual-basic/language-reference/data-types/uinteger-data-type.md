@@ -17,11 +17,11 @@ helpviewer_keywords:
 - data types [Visual Basic], integral
 ms.assetid: db7ddd34-4f23-46f5-84dd-8b0f83bb8729
 ms.openlocfilehash: 4d93b1e40371b00f9d1ff69ec31ad0983beb493f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971727"
 ---
 # <a name="uinteger-data-type"></a>UInteger – datový typ
 
@@ -66,17 +66,17 @@ Dim number = &H_0FAC_14D7ui
 
  `UInteger` a `Integer` datových typů poskytuje optimální výkon na 32bitových procesorech, protože menší typy celých čísel (`UShort`, `Short`, `Byte`, a `SByte`), i když používají menší počet bitů, trvat déle načíst, uložit a načíst.  
   
--   **Záporná čísla.** Protože `UInteger` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `UInteger`, Visual Basic Převede výraz, který má `Long` první.  
+- **Záporná čísla.** Protože `UInteger` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `UInteger`, Visual Basic Převede výraz, který má `Long` první.  
   
--   **Dodržování specifikace CLS.** `UInteger` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
+- **Dodržování specifikace CLS.** `UInteger` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
   
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy, jako `uint` může mít v jiných prostředích odlišnou datovou šířku (16 bitů). Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy, jako `uint` může mít v jiných prostředích odlišnou datovou šířku (16 bitů). Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
   
--   **Rozšíření.** `UInteger` Datový typ rozšiřuje na `Long`, `ULong`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `UInteger` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `UInteger` Datový typ rozšiřuje na `Long`, `ULong`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `UInteger` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Přidávání znaky literálového typu `UI` k literálu se z něj stane `UInteger` datového typu. `UInteger` nemá žádné – znak typu identifikátoru.  
+- **Znaky typu.** Přidávání znaky literálového typu `UI` k literálu se z něj stane `UInteger` datového typu. `UInteger` nemá žádné – znak typu identifikátoru.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt32?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt32?displayProperty=nameWithType> struktury.  
   
 ## <a name="see-also"></a>Viz také:
 

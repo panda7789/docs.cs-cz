@@ -15,11 +15,11 @@ helpviewer_keywords:
 - SByte data type
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
 ms.openlocfilehash: 1da5de4971928ca23a23c4dcfc5f338c4d7a3875
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54719570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971779"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte – datový typ (Visual Basic)
 
@@ -64,13 +64,13 @@ Pokud celočíselný literál je mimo rozsah `SByte` (tj. Pokud je menší než 
 
 ## <a name="programming-tips"></a>Tipy pro programování
   
--   **Dodržování specifikace CLS.** `SByte` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
+- **Dodržování specifikace CLS.** `SByte` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
 
--   **Rozšíření.** `SByte` Datový typ rozšiřuje na `Short`, `Integer`, `Long`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `SByte` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.
+- **Rozšíření.** `SByte` Datový typ rozšiřuje na `Short`, `Integer`, `Long`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `SByte` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.
   
--   **Znaky typu.** `SByte` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
+- **Znaky typu.** `SByte` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.SByte?displayProperty=nameWithType> struktury.
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.SByte?displayProperty=nameWithType> struktury.
   
 ## <a name="see-also"></a>Viz také:
 

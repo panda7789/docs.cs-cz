@@ -19,14 +19,14 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 88fcc5959054f1cdf7c9543674584a4bde26d896
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966039"
 ---
 # <a name="coreclrdebugruntimeinfo-structure"></a>CoreClrDebugRuntimeInfo – struktura
-Představuje běžné instance jazyka runtime (CLR), který je načten do procesu ve vzdáleném počítači.  
+Představuje common language runtime (CLR) instanci, který je načten v procesu ve vzdáleném počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ struct  CoreClrDebugRuntimeInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`m_dwInternalID`|Modul runtime identifikátor, který je přiřazen nástrojem proxy vzdáleného ladění na cílovém počítači spuštěna.|  
+|`m_dwInternalID`|Identifikátor modulu runtime, která je přiřazena službou proxy vzdáleného ladění běžící na cílovém počítači.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
   
- **Knihovna:** mscordbi_macx86.dll  
+ **Library:** mscordbi_macx86.dll  
   
  **Verze rozhraní .NET framework:** 3.5 SP1

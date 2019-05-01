@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b05ba185a9ad4ab076d29d7d609734d41677b760
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59194783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61986047"
 ---
 # <a name="isymunmanagedwriteropenmethod-method"></a>ISymUnmanagedWriter::OpenMethod – metoda
 Otevře se metoda, do které symbol je vygenerován informace. Dané metody se změní aktuální metoda pro volání zadat body sekvence, parametry a lexikální obory. Existuje implicitní lexikální prostor kolem celou metodu. Znovu metodu, která dříve byla uzavřena vymaže všechny dříve definované symboly pro danou metodu. Najednou lze otevřít pouze jednu metodu.  

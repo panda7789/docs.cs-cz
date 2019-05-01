@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
 ms.openlocfilehash: 947ef3c2120377fe33e0062d1ed508ddda432314
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972455"
 ---
 # <a name="message-security-user-name"></a>Zabezpečení zpráv s uživatelským jménem
 Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Security s ověřením uživatelské jméno pro klienta a vyžaduje server ověřování pomocí certifikátu x.509 v3 serveru. Všechny zprávy aplikace mezi klientem a serverem jsou podepsaný a zašifrovaný. Ve výchozím nastavení, uživatelské jméno a heslo, které poskytl klient, slouží k přihlášení k platný účet Windows. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). Tento příklad se skládá z programu konzoly klienta (Client.exe) a knihovna služby (Service.dll) hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.  
@@ -19,9 +19,9 @@ Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Securi
   
  Tento příklad také znázorňuje:  
   
--   Výchozí mapování na účty Windows tak, že lze provést další ověření.  
+- Výchozí mapování na účty Windows tak, že lze provést další ověření.  
   
--   Jak získat přístup k identity volajícího z kódu služby.  
+- Jak získat přístup k identity volajícího z kódu služby.  
   
  Služba poskytuje jeden koncový bod pro komunikaci se službou, která je definována je používán konfigurační soubor Web.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), která ve výchozím nastavení používá zabezpečení zpráv. Tato ukázka nastaví standardní [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) používat uživatelské jméno ověřování klientů. Chování Určuje, že má být použit pro ověřování služby jsou přihlašovací údaje uživatele. Certifikát serveru musí obsahovat stejnou hodnotu pro název subjektu, jako `findValue` atribut [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
@@ -147,7 +147,7 @@ Press <ENTER> to terminate client.
   
  Následující body nabízí stručný přehled o různých částech dávkové soubory.  
   
--   Vytváří se certifikát serveru  
+- Vytváří se certifikát serveru  
   
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít.  
   
@@ -163,7 +163,7 @@ Press <ENTER> to terminate client.
   
      % Proměnná % název_serveru Určuje název serveru. Certifikát je uložen v úložišti LocalMachine. Pokud Setup.bat dávkový soubor se spustí s parametrem služby (například `setup.bat service`) název_serveru % obsahuje název plně kvalifikované domény počítače.  Jinak je výchozí hodnota je localhost.  
   
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta  
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta  
   
      Následující řádek zkopíruje certifikát serveru do úložiště důvěryhodných osob klienta. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   
@@ -171,7 +171,7 @@ Press <ENTER> to terminate client.
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
--   Udělení oprávnění pro privátní klíč certifikátu  
+- Udělení oprávnění pro privátní klíč certifikátu  
   
      Následující řádky do dávkový soubor Setup.bat uložené v úložišti LocalMachine přístupné pro certifikát serveru Ujistěte se, [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účet pracovního procesu.  
   
@@ -234,7 +234,7 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
     >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  

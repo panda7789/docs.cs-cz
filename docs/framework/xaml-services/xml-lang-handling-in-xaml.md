@@ -8,11 +8,11 @@ helpviewer_keywords:
 - standards [XAML Services], RFC 3066
 ms.assetid: 7aac0078-a1c5-41f8-b8b0-975510d9dca0
 ms.openlocfilehash: 6495e980beea8731c47a774589919f160b4551ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59163563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053597"
 ---
 # <a name="xmllang-handling-in-xaml"></a>Práce s atributem xml:lang v jazyce XAML
 `xml:lang` Atribut je [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]-definovaný atribut, který deklaruje informace o jazyk a jazykovou verzi pro element v XML. Tento stejný význam atributu přetrvává v XAML; však použít několik dalších důležitých informací.  

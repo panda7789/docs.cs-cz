@@ -7,11 +7,11 @@ helpviewer_keywords:
 - UI Automation, Toggle control pattern
 ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
 ms.openlocfilehash: cd14a20920b11cb198cfc91fd9be6ef83ca05c17
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61957518"
 ---
 # <a name="implementing-the-ui-automation-toggle-control-pattern"></a>Implementace vzoru ovládacích prvků přepínání pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -25,13 +25,13 @@ ms.locfileid: "59182142"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci vzoru ovládacích prvků přepínání, mějte na paměti následující pokyny a konvence:  
   
--   Ovládací prvky, které nemají stav při aktivaci, jako jsou tlačítka a tlačítka na panelu nástrojů, hypertextové odkazy, musí implementovat <xref:System.Windows.Automation.Provider.IInvokeProvider> místo.  
+- Ovládací prvky, které nemají stav při aktivaci, jako jsou tlačítka a tlačítka na panelu nástrojů, hypertextové odkazy, musí implementovat <xref:System.Windows.Automation.Provider.IInvokeProvider> místo.  
   
--   Ovládací prvek musí cyklicky procházet jeho <xref:System.Windows.Automation.ToggleState> v následujícím pořadí: <xref:System.Windows.Automation.ToggleState.On>, <xref:System.Windows.Automation.ToggleState.Off> a pokud se podporuje, <xref:System.Windows.Automation.ToggleState.Indeterminate>.  
+- Ovládací prvek musí cyklicky procházet jeho <xref:System.Windows.Automation.ToggleState> v následujícím pořadí: <xref:System.Windows.Automation.ToggleState.On>, <xref:System.Windows.Automation.ToggleState.Off> a pokud se podporuje, <xref:System.Windows.Automation.ToggleState.Indeterminate>.  
   
--   <xref:System.Windows.Automation.TogglePattern> neposkytuje metodu SetState(newState) kvůli problémy kolem přímé nastavení tri stav zaškrtávacího políčka bez procházením jeho odpovídající <xref:System.Windows.Automation.ToggleState> pořadí.  
+- <xref:System.Windows.Automation.TogglePattern> neposkytuje metodu SetState(newState) kvůli problémy kolem přímé nastavení tri stav zaškrtávacího políčka bez procházením jeho odpovídající <xref:System.Windows.Automation.ToggleState> pořadí.  
   
--   Ovládací prvek RadioButton neimplementuje <xref:System.Windows.Automation.Provider.IToggleProvider>, protože není schopné procházením jeho platných stavů.  
+- Ovládací prvek RadioButton neimplementuje <xref:System.Windows.Automation.Provider.IToggleProvider>, protože není schopné procházením jeho platných stavů.  
   
 <a name="Required_Members_for_IToggleProvider"></a>   
 ## <a name="required-members-for-itoggleprovider"></a>Požadované členy pro IToggleProvider  
@@ -39,7 +39,7 @@ ms.locfileid: "59182142"
   
 |Povinný člen|Typ člena|Poznámky|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.TogglePattern.Toggle%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.TogglePattern.Toggle%2A>|Metoda|Žádný|  
 |<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|Vlastnost|Žádné|  
   
  Tento model ovládací prvek nemá žádné přidružené události.  

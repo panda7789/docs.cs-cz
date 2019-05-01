@@ -5,11 +5,11 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
 ms.openlocfilehash: a6704b09a51a509cb7fbd786f9040454f78cc862
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053194"
 ---
 # <a name="common-type-system--common-language-specification"></a>Obecný systém typů a Common Language Specification
 
@@ -21,10 +21,10 @@ Chcete-li začít od začátku, mějte na paměti, že je implementace .NET _jaz
 
 Pokud to chcete udělat transparentně, musí být běžný způsob, jak popisují všechny podporované typy. To je, co běžné systém typů (CTS) má na starosti udělat. Byl proveden udělat několik věcí:
 
-*   Vytvoření rozhraní pro provádění různých jazycích.
-*   Poskytuje objektově orientovaný model pro podporu implementace různých jazyků v implementaci rozhraní .NET.
-*   Definujte sadu pravidel, které musí dodržovat všechny jazyky, při rozhodování o práci s typy.
-*   Zadejte knihovnu, která obsahuje základní primitivní typy, které se používají při vývoji aplikace (jako jsou například `Boolean`, `Byte`, `Char` atd.)
+* Vytvoření rozhraní pro provádění různých jazycích.
+* Poskytuje objektově orientovaný model pro podporu implementace různých jazyků v implementaci rozhraní .NET.
+* Definujte sadu pravidel, které musí dodržovat všechny jazyky, při rozhodování o práci s typy.
+* Zadejte knihovnu, která obsahuje základní primitivní typy, které se používají při vývoji aplikace (jako jsou například `Boolean`, `Byte`, `Char` atd.)
 
 Specifikace CTS definuje dva hlavní druhy typů, které by měla podporovat: typy odkazu a hodnotu. Jejich názvy, přejděte na jejich definice.
 
@@ -34,11 +34,11 @@ Typy hodnot jsou opak, kde jsou reprezentovány objekty podle jejich hodnoty. Po
 
 Specifikace CTS definuje několik kategorií typů, které mají své specifické sémantiku a využití:
 
-*   Třídy
-*   Struktury
-*   Výčty
-*   Rozhraní
-*   Delegáty
+* Třídy
+* Struktury
+* Výčty
+* Rozhraní
+* Delegáty
 
 Specifikace CTS definuje také všechny ostatní vlastnosti typů, jako je například modifikátory přístupu, jak co jsou členy platný typ, dědičnosti a přetížení funguje a tak dále. Bohužel budete věnovat podrobněji některé z nich je nad rámec úvodní článek takovou situaci, ale můžete konzultovat [více prostředků](#more-resources) na konci odkazy na zájem o podrobný obsah, který obsahuje tato témata.
 
@@ -52,5 +52,5 @@ Můžete konzultovat dokumenty v [více prostředků](#more-resources) dole mů�
 
 ## <a name="more-resources"></a>Další materiály
 
-*   [Obecný systém typů](./base-types/common-type-system.md)
-*   [Common Language Specification](language-independence-and-language-independent-components.md)
+* [Obecný systém typů](./base-types/common-type-system.md)
+* [Common Language Specification](language-independence-and-language-independent-components.md)

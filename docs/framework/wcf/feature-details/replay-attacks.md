@@ -3,11 +3,11 @@ title: Útoky opakováním
 ms.date: 03/30/2017
 ms.assetid: 7a17e040-93cd-4432-81b9-9f62fec78c8f
 ms.openlocfilehash: fefcb533cedb5405736ecda70c6879ebe00b8b49
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991143"
 ---
 # <a name="replay-attacks"></a>Útoky opakováním
 A *přehrát útoku* nastane, pokud útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehrává datový proud na jeden nebo více stran. Není-li minimalizovat, počítače v souladu s útoku zpracování datového proudu jako legitimní zprávy, což vede k celou řadu chybný důsledky, jako je například redundantní objednávky položku.  
@@ -17,11 +17,11 @@ A *přehrát útoku* nastane, pokud útočník zkopíruje datový proud zpráv m
   
  Reflexe útoky jsou ve výchozím nastavení zmírnit, protože model služby WCF přidá podepsanou zprávu ID zpráv požadavků a očekává, že podepsané `relates-to` záhlaví zprávy odpovědi. V důsledku toho nelze přehrály zprávy s požadavkem jako odpověď. Ve scénářích zabezpečené spolehlivé zprávy (SV) jsou útoky reflexe zmírnit, protože:  
   
--   Vytvoření pořadí a schémata zpráv odpověď vytvoření sekvence se liší.  
+- Vytvoření pořadí a schémata zpráv odpověď vytvoření sekvence se liší.  
   
--   Vzhledem k tomu, že klient nemůže rozumět takové zprávy, nelze pro nezpracovávají pořadí přehrály zprávy sekvence, které klient odešle zpět do.  
+- Vzhledem k tomu, že klient nemůže rozumět takové zprávy, nelze pro nezpracovávají pořadí přehrály zprávy sekvence, které klient odešle zpět do.  
   
--   Pro duplexní pořadí dvě pořadí identifikátory musí být jedinečný. Odchozí zpráva sekvence nemůže proto znovu přehrát zpět jako příchozí zprávy sekvence (všechny hlavičky pořadí a úřadů, které jsou podepsané, příliš).  
+- Pro duplexní pořadí dvě pořadí identifikátory musí být jedinečný. Odchozí zpráva sekvence nemůže proto znovu přehrát zpět jako příchozí zprávy sekvence (všechny hlavičky pořadí a úřadů, které jsou podepsané, příliš).  
   
  Pouze vazby, které jsou náchylné k útokům reflexe jsou bez WS-Addressing: vlastní vazby, které mají WS-Addressing zakázána a použít symetrický klíč zabezpečení. <xref:System.ServiceModel.BasicHttpBinding> Nepoužívá WS-Addressing ve výchozím nastavení, ale nepoužívá symetrický klíč zabezpečení tak, aby díky tomu bude zranitelný vůči útoku.  
   
@@ -32,9 +32,9 @@ A *přehrát útoku* nastane, pokud útočník zkopíruje datový proud zpráv m
   
  Zmírnění rizik patří:  
   
--   Režim zabezpečení zpráv pomocí tokenů kontextu zabezpečení stavové (s nebo bez zabezpečené konverzace povolené). Další informace najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+- Režim zabezpečení zpráv pomocí tokenů kontextu zabezpečení stavové (s nebo bez zabezpečené konverzace povolené). Další informace najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
--   Konfigurace služby pro použití zabezpečení na úrovni přenosu.  
+- Konfigurace služby pro použití zabezpečení na úrovni přenosu.  
   
 ## <a name="see-also"></a>Viz také:
 

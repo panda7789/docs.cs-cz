@@ -10,11 +10,11 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], about combo boxes
 ms.assetid: a58b393f-a614-45d1-8961-857a024b5acd
 ms.openlocfilehash: 80056771744c9b97828a024adf32638e545a839e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61956166"
 ---
 # <a name="combobox-control-overview-windows-forms"></a>ComboBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ComboBox> ovládacího prvku se používá k zobrazení dat v rozevíracím seznamem. Ve výchozím nastavení <xref:System.Windows.Forms.ComboBox> ovládací prvek se zobrazí ve dvou částech: hlavní část je textové pole, která umožňuje uživateli zadat položku seznamu. Druhá část je pole se seznamem, který zobrazuje seznam položek, ze kterého může uživatel vybrat jednu. Další informace o dalších styly – pole se seznamem, naleznete v tématu [kdy použít Windows Forms ComboBox Instead of ListBox](when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md).  

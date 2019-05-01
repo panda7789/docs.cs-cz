@@ -5,11 +5,11 @@ author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
 ms.openlocfilehash: b4846f2e6cd945a25ec6a747c9038d48fe115559
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973496"
 ---
 # <a name="type-marshalling"></a>Zařazování typů
 

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - event handlers [Windows Forms], about event handlers
 ms.assetid: 228112e1-1711-42ee-8ffa-ff3555bffe66
 ms.openlocfilehash: 05acbfaf427060d015c2445360a7d73ebe97d070
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966826"
 ---
 # <a name="event-handlers-overview-windows-forms"></a>Přehled obslužných rutin událostí (Windows Forms)
 Obslužná rutina události je metoda, která je vázána na událost. Když se vyvolá událost, je proveden kód v obslužné rutině události. Každá obslužná rutina události poskytuje dva parametry, které umožňují zpracovat událost správně. Následující příklad ukazuje obslužná rutina události <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> událostí.  

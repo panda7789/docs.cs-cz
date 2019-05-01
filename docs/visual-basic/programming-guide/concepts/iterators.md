@@ -3,11 +3,11 @@ title: Iterátory (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
 ms.openlocfilehash: 313ce0c79a71af1b602ecd4ccc9bd0ebceb5696e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966169"
 ---
 # <a name="iterators-visual-basic"></a>Iterátory (Visual Basic)
 *Iterátoru* slouží k procházení kolekcí, jako je seznamy a pole.  
@@ -44,21 +44,21 @@ End Function
   
  **V tomto tématu**  
   
--   [Jednoduchý iterátor](#BKMK_SimpleIterator)  
+- [Jednoduchý iterátor](#BKMK_SimpleIterator)  
   
--   [Vytvoření třídy kolekce](#BKMK_CollectionClass)  
+- [Vytvoření třídy kolekce](#BKMK_CollectionClass)  
   
--   [Bloky try](#BKMK_TryBlocks)  
+- [Bloky try](#BKMK_TryBlocks)  
   
--   [Anonymní metody](#BKMK_AnonymousMethods)  
+- [Anonymní metody](#BKMK_AnonymousMethods)  
   
--   [Používání iterátorů v obecných seznamech](#BKMK_GenericList)  
+- [Používání iterátorů v obecných seznamech](#BKMK_GenericList)  
   
--   [Informace o syntaxi](#BKMK_SyntaxInformation)  
+- [Informace o syntaxi](#BKMK_SyntaxInformation)  
   
--   [Technická implementace](#BKMK_Technical)  
+- [Technická implementace](#BKMK_Technical)  
   
--   [Používání iterátorů](#BKMK_UseOfIterators)  
+- [Používání iterátorů](#BKMK_UseOfIterators)  
   
 > [!NOTE]
 >  Všechny příklady v tomto tématu, s výjimkou příklad jednoduchý iterátor zahrnují [importy](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) příkazů `System.Collections` a `System.Collections.Generic` obory názvů.  
@@ -438,11 +438,11 @@ End Class
 ## <a name="BKMK_UseOfIterators"></a> Používání iterátorů  
  Iterátory umožňují udržovat jednoduchost `For Each` smyčky, když budete chtít použít k naplnění seznamu pořadí složitého kódu. To může být užitečné, pokud chcete provést následující kroky:  
   
--   Pořadí seznamu změnit po prvním `For Each` iterace smyčky.  
+- Pořadí seznamu změnit po prvním `For Each` iterace smyčky.  
   
--   Vyhněte se plně načítání velkých seznamu před první iteraci `For Each` smyčky. Příkladem je stránkovaného načtení načíst dávku řádků tabulky. Dalším příkladem je <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> metodu, která implementuje iterátorů v rámci rozhraní .NET Framework.  
+- Vyhněte se plně načítání velkých seznamu před první iteraci `For Each` smyčky. Příkladem je stránkovaného načtení načíst dávku řádků tabulky. Dalším příkladem je <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> metodu, která implementuje iterátorů v rámci rozhraní .NET Framework.  
   
--   Zapouzdření vytváření seznamu v iterátoru. V metodě iterátoru můžete vytvořit seznam a potom yield každého výsledku ve smyčce.  
+- Zapouzdření vytváření seznamu v iterátoru. V metodě iterátoru můžete vytvořit seznam a potom yield každého výsledku ve smyčce.  
   
 ## <a name="see-also"></a>Viz také:
 

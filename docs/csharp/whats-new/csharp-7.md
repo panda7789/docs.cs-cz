@@ -3,12 +3,12 @@ title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Získejte přehled o nové funkce ve verzi 7.0 C# jazyka.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 69e32bf6aae0da15c23e8f08da8c2bb9e3d3456e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 942a126ae026897d608c9fb077fc5f10ff73c110
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481298"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773916"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
@@ -194,7 +194,7 @@ Další informace najdete v tématu [ref – klíčové slovo](../language-refer
 
 ## <a name="local-functions"></a>Lokální funkce
 
-Řada návrhů pro třídy zahrnují metody, které se volají z jediného umístění. Tyto další metody privátní zachovat každá metoda malém rozsahu a zaměřeně. *Lokální funkce* umožňují deklarovat metody v kontextu jinou metodu. Lokální funkce usnadnění pro čtenáře třídy zobrazíte, že místní metoda je volána pouze z kontextu, ve kterém je deklarována.
+Řada návrhů pro třídy zahrnují metody, které se volají z jediného umístění. Tyto další metody privátní zachovat každá metoda malém rozsahu a zaměřeně. *Lokální funkce* umožňují deklarovat metody v kontextu jinou metodu. Lokální funkce usnadnění pro čtenáře třídy, pokud chcete zobrazit, že místní metoda je volána pouze z kontextu, ve kterém je deklarována.
 
 Existují dva běžné případy použití pro lokální funkce: veřejné iterátory a veřejné asynchronní metody. Oba typy metod generování kódu, který bude hlásit chyby později, než se dalo očekávat programátory. V metodách iterátoru, všechny výjimky, jsou dodržovány pouze při volání metody kód, který uvádí, že vrácená sekvence. V asynchronních metodách, všechny výjimky jsou pouze dodržovat při vráceného `Task` je očekáváno. Následující příklad ukazuje dělicí ověření parametru od implementace rozhraní iterátoru pomocí lokální funkce:
 

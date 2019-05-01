@@ -13,11 +13,11 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 74eb5276-5ab8-4ce0-8005-dae751d85f7c
 ms.openlocfilehash: 7f6bf1703a6536f4d22b3a2fbe412579c59d39dd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973768"
 ---
 # <a name="walkthrough-implementing-virtual-mode-in-the-windows-forms-datagridview-control"></a>Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView
 Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze nastavit <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a explicitně spravovat ovládacího prvku interakce s jeho data store. To umožňuje optimalizovat výkon ovládacího prvku v této situaci.  
@@ -112,16 +112,16 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
   
 #### <a name="to-test-the-form"></a>K otestování formuláře  
   
--   Kompilace a spuštění aplikace.  
+- Kompilace a spuštění aplikace.  
   
      Zobrazí se <xref:System.Windows.Forms.DataGridView> ovládací prvek vyplní tři záznamy o zákaznících. Můžete změnit hodnoty několika buňkami v řádku a stisknutím klávesy ESC dvakrát v režimu úprav a jednou mimo režim úprav, vrátí se celý řádek na jeho původní hodnoty. Když upravíte, přidání nebo odstranění řádků v ovládacím prvku `Customer` úpravou, přidány nebo odstraněny také objekty v úložišti dat.  
   
 ## <a name="next-steps"></a>Další kroky  
  Tato aplikace získáte základní znalosti o události, je třeba ošetřit implementace virtuálního režimu v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Můžete vylepšit tuto základní aplikaci v několika způsoby:  
   
--   Implementace úložiště dat, která ukládá do mezipaměti hodnoty z externí databáze. Mezipaměti by měla načíst a zahodit hodnoty podle potřeby tak, aby obsahoval pouze co je třeba pro zobrazení při spotřebě malé množství paměti v klientském počítači.  
+- Implementace úložiště dat, která ukládá do mezipaměti hodnoty z externí databáze. Mezipaměti by měla načíst a zahodit hodnoty podle potřeby tak, aby obsahoval pouze co je třeba pro zobrazení při spotřebě malé množství paměti v klientském počítači.  
   
--   Optimalizovat výkon úložiště dat podle vašich potřeb. Můžete například chtít kompenzovat pomalé síťové připojení, spíše než omezení paměti klientského počítače pomocí větší velikost mezipaměti a současně minimalizuje počet databázových dotazů.  
+- Optimalizovat výkon úložiště dat podle vašich potřeb. Můžete například chtít kompenzovat pomalé síťové připojení, spíše než omezení paměti klientského počítače pomocí větší velikost mezipaměti a současně minimalizuje počet databázových dotazů.  
   
  Další informace o ukládání do mezipaměti hodnoty z externí databáze najdete v tématu [jak: Implementace virtuálního režimu s načítáním dat za běhu v Windows Forms DataGridView – ovládací prvek](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).  
   

@@ -10,11 +10,11 @@ ms.assetid: a8d15139-d368-4c9c-a747-ba757781117c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 138713c4a1397369ea18792a3b2742389b107a6b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59143764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61951707"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
 Kód knihovny je potřeba volat nespravovaný kód (například nativního kódu rozhraní API, jako například Win32). Protože to znamená, že přejdete mimo zónu zabezpečení pro spravovaný kód, kvůli upozornění je povinný. Pokud váš kód je nezávislá na zabezpečení, kódu a jakýkoli kód, který volá musí mít povolení pro nespravovaný kód (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> příznak zadán).  
@@ -25,9 +25,9 @@ Kód knihovny je potřeba volat nespravovaný kód (například nativního kódu
   
  Vzhledem k tomu, že spravovaný kód, který poskytuje cestu kódu do nativního kódu je potenciální cíle škodlivý kód, určující, které nespravovaného kódu může být bezpečně používán a jak musí být použit vyžaduje extreme péči. Obecně platí nespravovaného kódu by nikdy být přímo vystavený částečně důvěryhodné volající. Existují dva primární aspekty při hodnocení zabezpečení nespravovaného kódu pomocí knihoven, které jsou volány částečně důvěryhodným kódem:  
   
--   **Funkce**. Nespravované rozhraní API poskytuje funkce, které nepovoluje volající provádět potenciálně nebezpečná operace? Zabezpečení přístupu kódu používá oprávnění vynutit přístup k prostředkům, takže zvažte, jestli rozhraní API používá soubory, uživatelské rozhraní, nebo práce s vlákny, nebo zda poskytuje chráněné informace. Pokud ano, musí obalování spravovaného kódu dříve, než ho zadat vyžadují potřebná oprávnění. Kromě toho při nechrání oprávnění, musí být přístup do paměti omezeny na přísnou bezpečnost typů.  
+- **Funkce**. Nespravované rozhraní API poskytuje funkce, které nepovoluje volající provádět potenciálně nebezpečná operace? Zabezpečení přístupu kódu používá oprávnění vynutit přístup k prostředkům, takže zvažte, jestli rozhraní API používá soubory, uživatelské rozhraní, nebo práce s vlákny, nebo zda poskytuje chráněné informace. Pokud ano, musí obalování spravovaného kódu dříve, než ho zadat vyžadují potřebná oprávnění. Kromě toho při nechrání oprávnění, musí být přístup do paměti omezeny na přísnou bezpečnost typů.  
   
--   **Kontroluje se parametr**. Běžné útoku pass neočekávané parametry do vystavených metody nespravovaného kódu rozhraní API za účelem způsobit, že provoz z specifikace. Přetečení vyrovnávací paměti pomocí index mimo rozsah nebo hodnoty posunu jsou obvyklým příkladem tento typ útoku, jako jsou všechny parametry, které může zneužít chybu v základní kód. Proto i v případě nespravovaného kódu rozhraní API je funkčně bezpečné (po nezbytné požadavky) pro částečně důvěryhodné volající, spravovaný kód musí také kontrolu platnosti parametru vyčerpávajícím způsobem zajistit, že žádné nežádoucí volání jsou z škodlivý kód pomocí managed kód obálky vrstvy.  
+- **Kontroluje se parametr**. Běžné útoku pass neočekávané parametry do vystavených metody nespravovaného kódu rozhraní API za účelem způsobit, že provoz z specifikace. Přetečení vyrovnávací paměti pomocí index mimo rozsah nebo hodnoty posunu jsou obvyklým příkladem tento typ útoku, jako jsou všechny parametry, které může zneužít chybu v základní kód. Proto i v případě nespravovaného kódu rozhraní API je funkčně bezpečné (po nezbytné požadavky) pro částečně důvěryhodné volající, spravovaný kód musí také kontrolu platnosti parametru vyčerpávajícím způsobem zajistit, že žádné nežádoucí volání jsou z škodlivý kód pomocí managed kód obálky vrstvy.  
   
 ## <a name="using-suppressunmanagedcodesecurityattribute"></a>Používání atributu SuppressUnmanagedCodeSecurityAttribute  
  Existuje aspekt výkonu uplatnění a následným voláním nespravovaného kódu. Systém zabezpečení pro každé volání, se automaticky požadavky oprávnění nespravovaného kódu, což vede k procházení zásobníku pokaždé, když. Pokud vyhodnocujete a okamžitě volat nespravovaný kód, může být procházení zásobníku nemá význam: skládá se z vašeho kontrolní výraz a volání nespravovaného kódu.  
@@ -36,11 +36,11 @@ Kód knihovny je potřeba volat nespravovaný kód (například nativního kódu
   
  Pokud používáte **SuppressUnmanagedCodeSecurityAttribute**, zkontrolujte následující body:  
   
--   Zkontrolujte vstupní bod nespravovaného kódu, interní nebo jinak nedostupná mimo váš kód.  
+- Zkontrolujte vstupní bod nespravovaného kódu, interní nebo jinak nedostupná mimo váš kód.  
   
--   Každé volání nespravovaného kódu je potenciální bezpečnostní riziko. Ujistěte se, že váš kód není na portálu pro škodlivý kód nepřímo volat nespravovaný kód a vyhnout se kontrola zabezpečení. Požadovat oprávnění, v případě potřeby.  
+- Každé volání nespravovaného kódu je potenciální bezpečnostní riziko. Ujistěte se, že váš kód není na portálu pro škodlivý kód nepřímo volat nespravovaný kód a vyhnout se kontrola zabezpečení. Požadovat oprávnění, v případě potřeby.  
   
--   Můžete explicitně určit při vytváření nebezpečné cestu do nespravovaného kódu, jak je popsáno níže v části zásady vytváření názvů...  
+- Můžete explicitně určit při vytváření nebezpečné cestu do nespravovaného kódu, jak je popsáno níže v části zásady vytváření názvů...  
   
 ## <a name="naming-convention-for-unmanaged-code-methods"></a>Zásady vytváření názvů pro metody nespravovaného kódu  
  Vytvořilo se použitelné a vysoce doporučené konvence pro pojmenovávání metody nespravovaného kódu. Všechny metody nespravovaného kódu jsou rozdělené do tří kategorií: **bezpečné**, **nativní**, a **nebezpečné**. Tato klíčová slova můžete použít jako názvy tříd, ve kterém jsou definovány různé typy vstupních bodů nespravovaného kódu. Ve zdrojovém kódu by tato klíčová slova přidat k názvu třídy jako v `Safe.GetTimeOfDay`, `Native.Xyz`, nebo `Unsafe.DangerousAPI`, např. Každá z těchto klíčových slov poskytuje zabezpečení užitečné informace pro vývojáře, kteří používají tuto třídu, jak je popsáno v následující tabulce.  

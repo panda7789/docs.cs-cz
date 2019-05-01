@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: df9cc0cc86237b1ec439a4ec4fa6a75429c416d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59111173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61985774"
 ---
 # <a name="corvalidateimage-function"></a>_CorValidateImage – funkce
 Ověřuje bitové kopie spravovaného modulu a upozorní zavaděč operačního systému po jejich načtení.  
@@ -53,23 +53,23 @@ STDAPI _CorValidateImage (
 ## <a name="remarks"></a>Poznámky  
  Ve Windows XP a novějších verzích ověřuje zavaděč operačního systému pro spravované moduly kontrolou bitu COM popisovač adresáře v společné hlavičky objektu file format (COFF). Sada bit označuje spravovaný modul. Pokud zavaděč odhalí spravovaný modul, načtení MsCorEE.dll a volání `_CorValidateImage`, který provede následující akce:  
   
--   Potvrzuje se tím, že bitová kopie je platný spravovaný modul.  
+- Potvrzuje se tím, že bitová kopie je platný spravovaný modul.  
   
--   Změní vstupní bod v bitové kopii na vstupní bod v modulu common language runtime (CLR).  
+- Změní vstupní bod v bitové kopii na vstupní bod v modulu common language runtime (CLR).  
   
--   Pro 64bitové verze systému Windows upraví obrázek, který je v paměti její transformací z formátu PE32 na formát PE32 +.  
+- Pro 64bitové verze systému Windows upraví obrázek, který je v paměti její transformací z formátu PE32 na formát PE32 +.  
   
--   Vrátí zavaděč, když jsou bitové kopie spravovaného modulu načteny.  
+- Vrátí zavaděč, když jsou bitové kopie spravovaného modulu načteny.  
   
  Pro spustitelné bitové kopie na zavaděči operačního systému pak zavolá [Funkce _CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) funkce bez ohledu na vstupní bod uvedený ve spustitelném souboru. Pro bitové kopie sestavení knihovny DLL, volání zavaděče [_cordllmain –](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) funkce.  
   
  `_CorExeMain` nebo `_CorDllMain` provede následující akce:  
   
--   Inicializuje modul CLR.  
+- Inicializuje modul CLR.  
   
--   Vyhledá spravovaný vstupní bod v záhlaví modulu CLR sestavení.  
+- Vyhledá spravovaný vstupní bod v záhlaví modulu CLR sestavení.  
   
--   Zahájí vykonávání.  
+- Zahájí vykonávání.  
   
  Volání zavaděče [_corimageunloading –](../../../../docs/framework/unmanaged-api/hosting/corimageunloading-function.md) fungovat v případě, že spravované bitové kopie modulu jsou uvolněna. Tato funkce ale neprovede žádnou akci; právě vrátí.  
   

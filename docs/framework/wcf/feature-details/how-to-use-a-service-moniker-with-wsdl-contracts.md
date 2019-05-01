@@ -3,11 +3,11 @@ title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
 ms.openlocfilehash: 2968641538bf0b4d0e136d5784bf69e5e7fcb3a0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972884"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situace. Na službu, kterou chcete volat nesmí zveřejnit koncový bod MEX a klientský WCF pro spolupráci s COM nelze registrovat knihovnu DLL. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předejte ho do monikeru služby WCF. Toto téma popisuje, jak volat získávání WCF spustit ukázku pomocí monikeru WCF WSDL.  

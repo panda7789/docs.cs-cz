@@ -5,11 +5,11 @@ helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
 ms.openlocfilehash: ac20e24eb9148ed9d403b7a9c2c260009f39d492
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967610"
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, překládá na volání metod v kódu aplikace a odesílá výsledky zpět volajícímu. Rozšíření dispečerů umožňují upravit toto zpracování.  Můžete implementovat zpráv nebo parametr kontroly, které zkontrolovat nebo změnit obsah zprávy nebo parametry.  Můžete změnit tak, jak zprávy jsou směrovány na operace nebo poskytuje některé další funkce.  
@@ -40,37 +40,37 @@ Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, 
 ## <a name="scenarios"></a>Scénáře  
  Tam několik důvodů, proč rozšíření dispečer:  
   
--   Ověření vlastní zprávu. Uživatelé můžou vynutit platnost zprávy pro určité schéma. To můžete udělat pomocí implementace rozhraní zachycování zpráv. Příklad najdete v tématu [Messageinspectors](../../../../docs/framework/wcf/samples/message-inspectors.md).  
+- Ověření vlastní zprávu. Uživatelé můžou vynutit platnost zprávy pro určité schéma. To můžete udělat pomocí implementace rozhraní zachycování zpráv. Příklad najdete v tématu [Messageinspectors](../../../../docs/framework/wcf/samples/message-inspectors.md).  
   
--   Protokolování vlastních zpráv. Uživatele můžete zkontrolovat a některé sadu zpráv aplikace, které probíhá přes koncový bod protokolu. To můžete provést také pomocí rozhraní zachycování zpráv.  
+- Protokolování vlastních zpráv. Uživatele můžete zkontrolovat a některé sadu zpráv aplikace, které probíhá přes koncový bod protokolu. To můžete provést také pomocí rozhraní zachycování zpráv.  
   
--   Vlastní zpráva transformace. Uživatele můžete použít některé transformace zprávy v modulu runtime (například Správa verzí). Toho můžete docílit, znovu s rozhraním zachycování zpráv.  
+- Vlastní zpráva transformace. Uživatele můžete použít některé transformace zprávy v modulu runtime (například Správa verzí). Toho můžete docílit, znovu s rozhraním zachycování zpráv.  
   
--   Vlastní datový Model. Uživatelé mohou mít modelem serializace dat než ty, které nepodporuje ve výchozím nastavení ve službě WCF (konkrétně <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>, <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>a nezpracované zprávy). To můžete udělat pomocí implementace rozhraní formátovací modul zpráv. Příklad najdete v tématu [formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).  
+- Vlastní datový Model. Uživatelé mohou mít modelem serializace dat než ty, které nepodporuje ve výchozím nastavení ve službě WCF (konkrétně <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>, <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>a nezpracované zprávy). To můžete udělat pomocí implementace rozhraní formátovací modul zpráv. Příklad najdete v tématu [formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).  
   
--   Ověření vlastního parametru. Uživatelé můžou vynutit, že zadané parametry jsou platné (na rozdíl od XML). To lze provést pomocí rozhraní inspektoru parametru.  
+- Ověření vlastního parametru. Uživatelé můžou vynutit, že zadané parametry jsou platné (na rozdíl od XML). To lze provést pomocí rozhraní inspektoru parametru.  
   
--   Vlastní operace odeslání. Uživatelé můžou implementovat odesílání na něco jiného než akce – třeba na body element nebo u vlastnosti vlastní zprávy. To lze provést pomocí <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozhraní. Příklad najdete v tématu [formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).  
+- Vlastní operace odeslání. Uživatelé můžou implementovat odesílání na něco jiného než akce – třeba na body element nebo u vlastnosti vlastní zprávy. To lze provést pomocí <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozhraní. Příklad najdete v tématu [formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).  
   
--   Sdružování objektů. Uživatele může vytvořit fond instancí namísto vynakládání nový účtujeme každé volání. To je možné implementovat pomocí rozhraní instance zprostředkovatele. Příklad najdete v tématu [Sdužování](../../../../docs/framework/wcf/samples/pooling.md).  
+- Sdružování objektů. Uživatele může vytvořit fond instancí namísto vynakládání nový účtujeme každé volání. To je možné implementovat pomocí rozhraní instance zprostředkovatele. Příklad najdete v tématu [Sdužování](../../../../docs/framework/wcf/samples/pooling.md).  
   
--   Instance zapůjčení. Uživatelé můžou implementovat koordinovala vzor pro instanci životnost, podobně jako u vzdálené komunikace .NET Framework. To lze provést pomocí rozhraní životnost instance kontextu.  
+- Instance zapůjčení. Uživatelé můžou implementovat koordinovala vzor pro instanci životnost, podobně jako u vzdálené komunikace .NET Framework. To lze provést pomocí rozhraní životnost instance kontextu.  
   
--   Zpracování vlastních chyb. Uživatelé můžou řídit, jak obě místní chyby se zpracovávají a jak se předávají chyby zpět klientům. Je možné takovou implementaci pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní.  
+- Zpracování vlastních chyb. Uživatelé můžou řídit, jak obě místní chyby se zpracovávají a jak se předávají chyby zpět klientům. Je možné takovou implementaci pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní.  
   
--   Vlastní autorizace chování. Uživatelé můžou implementovat řízení přístupu na vlastní rozšíření za běhu kusy smlouvy nebo operace a přidáním kontroly zabezpečení na základě tokenů ve zprávě. To lze provést pomocí zachycování zpráv nebo parametr zachycování rozhraní. Příklady najdete v tématu [rozšiřitelnost zabezpečení](../../../../docs/framework/wcf/samples/security-extensibility.md).  
+- Vlastní autorizace chování. Uživatelé můžou implementovat řízení přístupu na vlastní rozšíření za běhu kusy smlouvy nebo operace a přidáním kontroly zabezpečení na základě tokenů ve zprávě. To lze provést pomocí zachycování zpráv nebo parametr zachycování rozhraní. Příklady najdete v tématu [rozšiřitelnost zabezpečení](../../../../docs/framework/wcf/samples/security-extensibility.md).  
   
     > [!CAUTION]
     >  Protože změny vlastností zabezpečení má potenciál k ohrožení zabezpečení aplikací služby WCF, je důrazně doporučujeme, které provádějí související se zabezpečením úprav opatrně a důkladně otestovat před nasazením.  
   
--   Vlastní WCF validátory modulu Runtime. Můžete nainstalovat vlastní validátory, které zkontrolujte služby, kontrakty a vazby k vynucení zásad na úrovni rozlehlé sítě s ohledem na aplikací služby WCF. (Viz například [jak: Uzamknutí koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).)  
+- Vlastní WCF validátory modulu Runtime. Můžete nainstalovat vlastní validátory, které zkontrolujte služby, kontrakty a vazby k vynucení zásad na úrovni rozlehlé sítě s ohledem na aplikací služby WCF. (Viz například [jak: Uzamknutí koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).)  
   
 ### <a name="using-the-dispatchruntime-class"></a>Pomocí třídy DispatchRuntime  
  Použití <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy změnit výchozí chování služby nebo jednotlivé koncového bodu nebo vložit objekty, které implementují vlastní úpravy na jeden nebo oba tyto procesy služeb (nebo procesy klienta v případě duplexní klienta):  
   
--   Transformaci příchozích zpráv do objektů a uvolněním těchto objektů jako volání metod na objekt služby.  
+- Transformaci příchozích zpráv do objektů a uvolněním těchto objektů jako volání metod na objekt služby.  
   
--   Transformace objektů přijatých z odpovědi k volání operace služby do odchozích zpráv.  
+- Transformace objektů přijatých z odpovědi k volání operace služby do odchozích zpráv.  
   
  <xref:System.ServiceModel.Dispatcher.DispatchRuntime> Vám umožní zachytit a rozšířit dispečer kanálu nebo koncový bod pro všechny zprávy přes konkrétní kontraktu i v případě, že zprávy nebyl rozpoznán. Při přijetí e-mailu, který neodpovídá žádnému deklarované v kontraktu se odesílají do operace vrácené <xref:System.ServiceModel.Dispatcher.DispatchRuntime.UnhandledDispatchOperation%2A> vlastnost. Zachytit nebo přesahují všechny zprávy pro určité operace, najdete v článku <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy.  
   
@@ -84,17 +84,17 @@ Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, 
   
 4. Součásti související se zabezpečením, můžete použít následující vlastnosti:  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> Určuje, kde události auditu se zapisují.  
+    - <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> Určuje, kde události auditu se zapisují.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A> Určuje, zda se služba pokusí o zosobnění s použitím pověření poskytnutých příchozí zprávy.  
+    - <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A> Určuje, zda se služba pokusí o zosobnění s použitím pověření poskytnutých příchozí zprávy.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A> Určuje, zda úspěšně provedeného ověřování události se zapisují do protokolu událostí, které jsou určené <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A>.  
+    - <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A> Určuje, zda úspěšně provedeného ověřování události se zapisují do protokolu událostí, které jsou určené <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A>.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A> ovládací prvky jak <xref:System.Threading.Thread.CurrentPrincipal%2A> je nastavena.  
+    - <xref:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A> ovládací prvky jak <xref:System.Threading.Thread.CurrentPrincipal%2A> je nastavena.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> Určuje, jak se provádí auditování událostí autorizace.  
+    - <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> Určuje, jak se provádí auditování událostí autorizace.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A> Určuje, jestli se má potlačit nekritické výjimek, ke kterým dochází během procesu přihlášení.  
+    - <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A> Určuje, jestli se má potlačit nekritické výjimek, ke kterým dochází během procesu přihlášení.  
   
  Obvykle vlastní rozšíření objekty jsou přiřazeny k <xref:System.ServiceModel.Dispatcher.DispatchRuntime> vlastnost nebo vložení do kolekce podle chování služby (objekt, který implementuje <xref:System.ServiceModel.Description.IServiceBehavior>), smlouva chování (objekt, který implementuje <xref:System.ServiceModel.Description.IContractBehavior>), nebo koncový bod chování (objekt, který implementuje <xref:System.ServiceModel.Description.IEndpointBehavior>). Potom instalace chování objektu je přidán do příslušné kolekce chování programově nebo prostřednictvím implementace vlastního <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> objekt, má-li povolit chování, které má být vložen pomocí konfiguračního souboru aplikace.  
   
@@ -109,23 +109,23 @@ Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, 
   
  Tyto vlastnosti řídit spuštění modulu runtime na úrovni operace:  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.Action%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.ReplyAction%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.FaultContractInfos%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.IsOneWay%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.IsTerminating%2A>, A <xref:System.ServiceModel.Dispatcher.DispatchOperation.Name%2A> příslušné hodnoty pro operaci získat vlastnosti.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.Action%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.ReplyAction%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.FaultContractInfos%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.IsOneWay%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.IsTerminating%2A>, A <xref:System.ServiceModel.Dispatcher.DispatchOperation.Name%2A> příslušné hodnoty pro operaci získat vlastnosti.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.TransactionAutoComplete%2A> a <xref:System.ServiceModel.Dispatcher.DispatchOperation.TransactionRequired%2A> zadejte chování při transakci.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.TransactionAutoComplete%2A> a <xref:System.ServiceModel.Dispatcher.DispatchOperation.TransactionRequired%2A> zadejte chování při transakci.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.ReleaseInstanceBeforeCall%2A> a <xref:System.ServiceModel.Dispatcher.DispatchOperation.ReleaseInstanceAfterCall%2A> vlastnosti řídit dobu života objektu služby uživatelem definované vzhledem k <xref:System.ServiceModel.InstanceContext>.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.ReleaseInstanceBeforeCall%2A> a <xref:System.ServiceModel.Dispatcher.DispatchOperation.ReleaseInstanceAfterCall%2A> vlastnosti řídit dobu života objektu služby uživatelem definované vzhledem k <xref:System.ServiceModel.InstanceContext>.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.DeserializeRequest%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.SerializeReply%2A>a <xref:System.ServiceModel.Dispatcher.DispatchOperation.Formatter%2A> vlastnosti povolit explicitní kontrolu nad převod ze zprávy k objektům a objektů na zprávy.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.DeserializeRequest%2A>, <xref:System.ServiceModel.Dispatcher.DispatchOperation.SerializeReply%2A>a <xref:System.ServiceModel.Dispatcher.DispatchOperation.Formatter%2A> vlastnosti povolit explicitní kontrolu nad převod ze zprávy k objektům a objektů na zprávy.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation%2A> Vlastnost určuje úroveň zosobnění operace.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation%2A> Vlastnost určuje úroveň zosobnění operace.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.CallContextInitializers%2A> Vlastnost vloží vlastní volání kontextu rozšíření pro operaci.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.CallContextInitializers%2A> Vlastnost vloží vlastní volání kontextu rozšíření pro operaci.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.AutoDisposeParameters%2A> Vlastnost určuje, kdy parametr objekty jsou zničeny.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.AutoDisposeParameters%2A> Vlastnost určuje, kdy parametr objekty jsou zničeny.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.Invoker%2A> Vlastnost vložit vlastní původce volání objektu.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.Invoker%2A> Vlastnost vložit vlastní původce volání objektu.  
   
--   <xref:System.ServiceModel.Dispatcher.DispatchOperation.ParameterInspectors%2A> Vlastnost umožňuje vložit vlastní parametr inspector, můžete použít ke kontrole nebo úprava parametrů a návratové hodnoty.  
+- <xref:System.ServiceModel.Dispatcher.DispatchOperation.ParameterInspectors%2A> Vlastnost umožňuje vložit vlastní parametr inspector, můžete použít ke kontrole nebo úprava parametrů a návratové hodnoty.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
 ms.openlocfilehash: 68890a5d86d2781e3c8079c86e941144e3796ea6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972663"
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
 Chcete-li generovat třídy ze schémat, které lze použít s Windows Communication Foundation (WCF), použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a odchylky.  
@@ -148,13 +148,13 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
   
 ##### <a name="design-considerations"></a>Aspekty návrhu  
   
--   Může být obtížné pracovat přímo s slabě typované reprezentaci XML. Zvažte použití alternativní Serializační stroj, jako <xref:System.Xml.Serialization.XmlSerializer>, pro práci se schématem není kompatibilní s daty smlouvy tak silného typu. Další informace najdete v tématu [horizontálních oddílů pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+- Může být obtížné pracovat přímo s slabě typované reprezentaci XML. Zvažte použití alternativní Serializační stroj, jako <xref:System.Xml.Serialization.XmlSerializer>, pro práci se schématem není kompatibilní s daty smlouvy tak silného typu. Další informace najdete v tématu [horizontálních oddílů pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
   
--   Některé schémat nejde importovat podle <xref:System.Runtime.Serialization.XsdDataContractImporter> i v případě <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je nastavena na `true`. Znovu, zvažte použití <xref:System.Xml.Serialization.XmlSerializer> pro tyto případy.  
+- Některé schémat nejde importovat podle <xref:System.Runtime.Serialization.XsdDataContractImporter> i v případě <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je nastavena na `true`. Znovu, zvažte použití <xref:System.Xml.Serialization.XmlSerializer> pro tyto případy.  
   
--   Přesné schémat, které jsou podporované jak při <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je `true` nebo `false` jsou popsány v [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+- Přesné schémat, které jsou podporované jak při <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je `true` nebo `false` jsou popsány v [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
--   Generované schéma pro <xref:System.Xml.Serialization.IXmlSerializable> typy nezachovávají si věrnost při importovat a exportovat. To znamená export schématu z generované typy a import jako třídy vracet původnímu schématu.  
+- Generované schéma pro <xref:System.Xml.Serialization.IXmlSerializable> typy nezachovávají si věrnost při importovat a exportovat. To znamená export schématu z generované typy a import jako třídy vracet původnímu schématu.  
   
  Je možné kombinovat <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> spolu s možností <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> možnost popsaných výše. Pro typy, které mají být generován jako <xref:System.Xml.Serialization.IXmlSerializable> implementace, zkontrolujte strukturální bude přeskočena při použití <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> funkce.  
   
@@ -175,9 +175,9 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 #### <a name="import-options-advanced-options"></a>Možnosti importu: Rozšířené možnosti  
  Následující jsou rozšířené možnosti importu:  
   
--   <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> pro generování kódu pro vygenerované třídy. Pokusy o mechanismu import, aby funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastavena, kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] funkce se používá bez omezení.  
+- <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> pro generování kódu pro vygenerované třídy. Pokusy o mechanismu import, aby funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastavena, kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] funkce se používá bez omezení.  
   
--   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace se dá nastavit pomocí této vlastnosti. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí proces importu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
+- <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace se dá nastavit pomocí této vlastnosti. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí proces importu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
   
 ## <a name="see-also"></a>Viz také:
 

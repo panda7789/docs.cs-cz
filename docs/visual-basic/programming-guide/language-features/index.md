@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
 ms.openlocfilehash: 975bec73235b3b8f82088325e0d4abc50ce6b1dd
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053779"
 ---
 # <a name="visual-basic-language-features"></a>Funkce jazyka Visual Basic
 Následující témata představují a popisují nezbytné součásti jazyka Visual Basic, objektově orientovaný programovací jazyk. Po vytvoření uživatelského rozhraní pro svoji aplikaci pomocí formuláře a ovládací prvky, je nutné napsat kód, který definuje chování aplikace. Stejně jako u moderní programovací jazyk Visual Basic podporuje řadu běžné programovací konstrukce a prvky jazyka.  

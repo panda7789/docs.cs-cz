@@ -1,33 +1,33 @@
 ---
-title: 1102 - WorkflowActivityStop
+title: 1102 – WorkflowActivityStop
 ms.date: 03/30/2017
 ms.assetid: 285e5cb8-e90d-4914-ac06-e9b176ffefa2
 ms.openlocfilehash: 44617e9f53be0e601424746f83b171d33956197e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33511485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052791"
 ---
-# <a name="1102---workflowactivitystop"></a>1102 - WorkflowActivityStop
+# <a name="1102---workflowactivitystop"></a>1102 – WorkflowActivityStop
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1102|  
-|Klíčová slova|WFRuntime|  
+|klíčová slova|WFRuntime|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že aktivita pracovního postupu byla zastavena.  
+ Označuje, že aktivita pracovního postupu byl zastaven.  
   
 ## <a name="message"></a>Zpráva  
- Instance pracovního postupu Id: '%1' E2E aktivity  
+ WorkflowInstance Id: '%1' aktivita E2E  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|WorkflowInstanceId|xs:String|Id instance pracovního postupu.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|WorkflowInstanceId|xs:string|Id instance pracovního postupu.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

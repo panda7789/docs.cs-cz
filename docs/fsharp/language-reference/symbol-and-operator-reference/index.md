@@ -3,11 +3,11 @@ title: Referenční dokumentace symbolů a operátorů
 description: Další informace o symbolů a operátorů, které se používají v F# programovací jazyk.
 ms.date: 02/11/2019
 ms.openlocfilehash: 11a02792dc949b0a7a0a6e7bb59786c489b3aa9d
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982735"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
@@ -23,7 +23,7 @@ Následující tabulka popisuje symboly použité v F# jazyka, obsahuje odkazy n
 |Symbol nebo – operátor|Odkazy|Popis|
 |------------------|-----|-----------|
 |`!`|[Referenční buňky](../reference-cells.md)<br /><br />[Výpočetní výrazy](../computation-expressions.md)|<ul><li>Přístupů přes ukazatel odkazovou buňku.<br /></li><li>Za klíčovým slovem označuje upravenou verzi chování klíčového slova jako řídí pracovního postupu.<br /></li></ul>|
-|`!=`|Nelze použít.|<ul><li>Nepoužito v F#. Použití `<>` pro operace nerovnost.<br /></li></ul>|
+|`!=`|Není k dispozici.|<ul><li>Nepoužito v F#. Použití `<>` pro operace nerovnost.<br /></li></ul>|
 |`"`|[Literály](../literals.md)<br /><br />[Řetězce](../strings.md)|<ul><li>Odděluje citaci textový řetězec.<br /></li></ul>|
 |`"""`|[Řetězce](../strings.md)|Odděluje citaci doslovný řetězec. Se liší od `@"..."` , můžete určit znak uvozovky pomocí jednoduchá uvozovka v řetězci.|
 |`#`|[Direktivy kompilátoru](../compiler-directives.md)<br /><br />[Flexibilní typy](../flexible-types.md)|<ul><li>Předpony adres direktiva preprocesoru nebo kompilátor, jako například `#light`.<br /></li><li>Při použití s typem, znamená to *flexibilní typ*, který odkazuje na typ nebo v jednom z jeho odvozených typů.<br /></li></ul>|
@@ -81,7 +81,7 @@ Následující tabulka popisuje symboly použité v F# jazyka, obsahuje odkazy n
 |`<@@...@@>`|[Citace kódu](../code-quotations.md)|<ul><li>Odděluje citaci nabídky netypového kódu.<br /></li></ul>|
 |`=`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vrátí `true` Pokud rovná na levé straně na pravou stranu; v opačném případě vrátí `false`.<br /></li></ul>|
 |`=?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá "rovno" operaci po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
-|`==`|Nelze použít.|<ul><li>Nepoužito v F#. Použití `=` pro operace rovnosti.<br /></li></ul>|
+|`==`|Není k dispozici.|<ul><li>Nepoužito v F#. Použití `=` pro operace rovnosti.<br /></li></ul>|
 |`>`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vrátí `true` Pokud levé straně je větší než pravé straně; jinak vrátí hodnotu, vrátí `false`.<br /></li></ul>|
 |`>?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá "větší než" operaci po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
 |`>>`|[Funkce](../functions/index.md)|<ul><li>Vytvoří dvě funkce (operátor přesměrování sestavení).<br /></li></ul>|

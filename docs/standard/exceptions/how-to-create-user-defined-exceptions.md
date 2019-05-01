@@ -14,11 +14,11 @@ ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dca313fad896ac1c8eac37c853657bea44a8b777
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61970921"
 ---
 # <a name="how-to-create-user-defined-exceptions"></a>Jak vytvořit uživatelsky definovaných výjimek
 

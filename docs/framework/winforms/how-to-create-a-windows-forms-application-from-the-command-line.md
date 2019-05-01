@@ -12,11 +12,11 @@ ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce97089ec71fc910079910957e784605387f3e06
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966865"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: Vytvoření aplikace Windows Forms z příkazového řádku
 Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace modelu Windows Forms z příkazového řádku. Není k dispozici rozsáhlou podporu pro tyto postupy v sadě Visual Studio.  Viz také [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).  
@@ -44,11 +44,11 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
 4. Přidat `Main` metodu do třídy.  
   
-    1.  Použít <xref:System.STAThreadAttribute> jazyka C# `Main` metoda k určení aplikace Windows Forms je jednovláknový apartment. (Atribut není nutné v jazyce Visual Basic, protože aplikace Windows forms vyvinutých s využitím jazyka Visual Basic jednovláknový apartment modelu ve výchozím nastavení.)  
+    1. Použít <xref:System.STAThreadAttribute> jazyka C# `Main` metoda k určení aplikace Windows Forms je jednovláknový apartment. (Atribut není nutné v jazyce Visual Basic, protože aplikace Windows forms vyvinutých s využitím jazyka Visual Basic jednovláknový apartment modelu ve výchozím nastavení.)  
   
-    2.  Volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> pro používání stylů pro operační systém pro vaše aplikace.  
+    2. Volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> pro používání stylů pro operační systém pro vaše aplikace.  
   
-    3.  Vytvoření instance formuláře a spustíme ji.  
+    3. Vytvoření instance formuláře a spustíme ji.  
   
      [!code-csharp[System.Windows.Forms.BasicForm#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.BasicForm#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/VB/Form1.vb#5)]  
@@ -59,11 +59,11 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
 2. Zkompilujte formuláře.  
   
-    -   Pokud používáte C#, zadejte: `csc form1.cs`  
+    - Pokud používáte C#, zadejte: `csc form1.cs`  
   
          `-or-`  
   
-    -   Pokud používáte Visual Basic, zadejte: `vbc form1.vb`  
+    - Pokud používáte Visual Basic, zadejte: `vbc form1.vb`  
   
 3. Na příkazovém řádku zadejte: `Form1.exe`  
   
@@ -111,7 +111,7 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Chcete-li kód zkompilovat, postupujte podle pokynů v postupu budete pokračovat, které popisují, jak kompilace a spuštění aplikace.  
+- Chcete-li kód zkompilovat, postupujte podle pokynů v postupu budete pokračovat, které popisují, jak kompilace a spuštění aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

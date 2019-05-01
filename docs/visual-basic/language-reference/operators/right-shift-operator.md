@@ -11,11 +11,11 @@ helpviewer_keywords:
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
 ms.openlocfilehash: 8803dc2e25edde756958a243d429dd30c5c78bcf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053285"
 ---
 # <a name="-operator-visual-basic"></a>>> – Operátor (Visual Basic)
 Provede aritmetický posunutí doprava bitový vzor.  
@@ -64,15 +64,15 @@ result = pattern >> amount
   
  Výsledky v předchozím příkladu jsou následující:  
   
--   `result1` is 2560 (0000 1010 0000 0000).  
+- `result1` is 2560 (0000 1010 0000 0000).  
   
--   `result2` je 160 (0000 0000 1010 0000).  
+- `result2` je 160 (0000 0000 1010 0000).  
   
--   `result3` is 2 (0000 0000 0000 0010).  
+- `result3` is 2 (0000 0000 0000 0010).  
   
--   `result4` is 640 (0000 0010 1000 0000).  
+- `result4` is 640 (0000 0010 1000 0000).  
   
--   `result5` je 0 (posunuté 15 míst napravo).  
+- `result5` je 0 (posunuté 15 míst napravo).  
   
  Hodnota shift pro `result4` se vypočte takto: 18 a 15, které se rovná 2.  
   
@@ -82,9 +82,9 @@ result = pattern >> amount
   
  Výsledky v předchozím příkladu jsou následující:  
   
--   `negresult1` is -512 (1111 1110 0000 0000).  
+- `negresult1` is -512 (1111 1110 0000 0000).  
   
--   `negresult2` je -1 (rozšířeno na bit znaménka).  
+- `negresult2` je -1 (rozšířeno na bit znaménka).  
   
 ## <a name="see-also"></a>Viz také:
 

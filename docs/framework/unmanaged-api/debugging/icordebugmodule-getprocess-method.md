@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 97cecd66462cf6a88012b13dec82dbf617891dd5
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57493840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61987997"
 ---
 # <a name="icordebugmodulegetprocess-method"></a>ICorDebugModule::GetProcess – metoda
 Získá nadřazený proces tento modul.  

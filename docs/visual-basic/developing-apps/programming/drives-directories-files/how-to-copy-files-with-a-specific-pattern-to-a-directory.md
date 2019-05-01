@@ -8,11 +8,11 @@ helpviewer_keywords:
 - I/O [Visual Basic], copying files
 ms.assetid: f205d2ad-bbe5-4d55-8a40-acda21aa82dd
 ms.openlocfilehash: 437a7058abd9ae167fcde15d4bddbe69bc64b7e0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61960163"
 ---
 # <a name="how-to-copy-files-with-a-specific-pattern-to-a-directory-in-visual-basic"></a>Postupy: Kopírování souborů vyhovujících určitému vzoru do jiného adresáře v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> Metoda vrátí kolekci řetězců, které představují názvy cest souborů jen pro čtení. Můžete použít `wildCards` parametr k určení určitému vzoru.  
@@ -43,19 +43,19 @@ ms.locfileid: "59310769"
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Následující podmínky mohou způsobit výjimku:  
   
--   Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
   
--   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Adresáři neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
+- Adresáři neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
--   Adresář odkazuje na existující soubor (<xref:System.IO.IOException>).  
+- Adresář odkazuje na existující soubor (<xref:System.IO.IOException>).  
   
--   Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
+- Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
   
--   Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
   
--   Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>). Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>). Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

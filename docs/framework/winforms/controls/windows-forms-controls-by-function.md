@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Forms controls, list of
 ms.assetid: 5e65a6c3-5d6f-480d-beb8-b28f865f07e3
 ms.openlocfilehash: 3a82642c985b7ec1cee885cdda7b054adbe3dfee
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61969465"
 ---
 # <a name="windows-forms-controls-by-function"></a>Ovládací prvky Windows Forms podle funkce
 Windows Forms nabízí ovládací prvky a součásti, které provádějí celou řadou funkcí. V následující tabulce jsou uvedeny ovládacích prvků Windows Forms a komponentami podle toho, obecné funkce. Kromě toho tam, kde více ovládacích prvků, které slouží stejnou funkci, je uvedený doporučený ovládacího prvku s poznámky týkající se ovládací prvek, který ho nahrazuje. V samostatné tabulce následujících nahrazené ovládací prvky jsou seřazeny jejich doporučená nahrazení.  

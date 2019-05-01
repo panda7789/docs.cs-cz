@@ -11,11 +11,11 @@ ms.assetid: 613a8bc7-6a28-4795-bd6c-1abd9050478f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1e09f1464a5df751034639d8bc1cb5d79faacd0f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966462"
 ---
 # <a name="barrier"></a>Bariéra
 
@@ -44,13 +44,13 @@ A <xref:System.Threading.Barrier?displayProperty=nameWithType> je primitiv synch
 
  Vlákna provádění více fázích ve smyčkách jsou zvláště užitečné překážek. Pokud váš kód vyžaduje pouze jednu nebo dvě fáze práce, zvažte, jestli se má použít <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> objekty s jakýmkoli implicitní spojení, včetně:  
   
--   <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>  
   
--   <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType>  
   
--   <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>  
   
--   <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>  
   
  Další informace najdete v tématu [řetězení úloh pomocí úloh pokračování používání](../parallel-programming/chaining-tasks-by-using-continuation-tasks.md).  
   

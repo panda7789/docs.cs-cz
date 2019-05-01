@@ -3,11 +3,11 @@ title: Přenos
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
 ms.openlocfilehash: 4753ec85c458a0dde3db4a6b7cdad41c69185019
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61964486"
 ---
 # <a name="transfer"></a>Přenos
 Toto téma popisuje přenosu v modelu trasování aktivity Windows Communication Foundation (WCF).  
@@ -35,9 +35,9 @@ Toto téma popisuje přenosu v modelu trasování aktivity Windows Communication
 ## <a name="example-of-transfers"></a>Příklad přenosů  
  Následující seznamy dva přenos příklady.  
   
--   Při vytváření hostitele služby konstruktoru získá kontrolu dělat volající kód nebo volající kód převede do konstruktoru. Po dokončení provádění konstruktoru vrátí řízení volajícímu kódu nebo konstruktor přenosech zpět do volající kód. To platí vnořené relace.  
+- Při vytváření hostitele služby konstruktoru získá kontrolu dělat volající kód nebo volající kód převede do konstruktoru. Po dokončení provádění konstruktoru vrátí řízení volajícímu kódu nebo konstruktor přenosech zpět do volající kód. To platí vnořené relace.  
   
--   Po spuštění zpracování přenosu dat naslouchací proces vytvoří nové vlákno a předá aktivitě přijímání bajtů vhodném kontextu pro zpracování a předání řízení a data. Po dokončení zpracování žádosti bylo vlákno aktivita přijímání bajtů nic předá zpět k naslouchacímu procesu. V tomto případě máme přenosu v ale nepřenášejí žádná aktivita nové vlákno. Dvě aktivity spolu souvisejí, ale ne vnořenou.  
+- Po spuštění zpracování přenosu dat naslouchací proces vytvoří nové vlákno a předá aktivitě přijímání bajtů vhodném kontextu pro zpracování a předání řízení a data. Po dokončení zpracování žádosti bylo vlákno aktivita přijímání bajtů nic předá zpět k naslouchacímu procesu. V tomto případě máme přenosu v ale nepřenášejí žádná aktivita nové vlákno. Dvě aktivity spolu souvisejí, ale ne vnořenou.  
   
 ## <a name="activity-transfer-sequence"></a>Pořadí aktivit přenosu  
  Pořadí přenosu ve správném formátu aktivit zahrnuje následující kroky.  

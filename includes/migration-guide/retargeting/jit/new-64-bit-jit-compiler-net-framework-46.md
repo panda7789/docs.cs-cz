@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: a9363750f8090434d0c304039330eff88e4748d7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59234404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62088449"
 ---
 ### <a name="new-64-bit-jit-compiler-in-the-net-framework-46"></a>Nový 64bitový kompilátor JIT v rozhraní .NET Framework 4.6
 

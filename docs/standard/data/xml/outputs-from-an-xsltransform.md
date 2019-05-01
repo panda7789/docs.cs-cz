@@ -6,11 +6,11 @@ ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3b299f09f3dc47b5d136284d4d1d285f2e5aad5f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61950667"
 ---
 # <a name="outputs-from-an-xsltransform"></a>Výstupy z XslTransform
 Protože šablony stylů můžete určit formát výstupu pomocí `<xsl:output>` příkaz s `method` atributu, jsou popsány v následující tabulce je formát výstupu, kdy <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda se používá k zápisu výstupu a je výstupní formát deklarovat jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>.  
@@ -23,36 +23,36 @@ Protože šablony stylů můžete určit formát výstupu pomocí `<xsl:output>`
 |\<Metoda elementu xsl: Output = > atribut|Výsledný formát|  
 |-----------------------------------------|-------------------|  
 |method="xml"|XML|  
-|Metoda = "html"|HTML|  
-|Metoda = "text"|Text|  
+|method="html"|HTML|  
+|method="text"|Text|  
   
 > [!NOTE]
->  Poznámka: `<xsl:output>` příkaz je ignorován při výstupu <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter>.  
+>  Poznámka: `<xsl:output>` Příkaz je ignorován při výstupu <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter>.  
   
  Jsou podporovány následující atributy při <xref:System.Xml.Xsl.XslTransform.Transform%2A> výstupu metody je <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>:  
   
--   kódování *  
+- encoding*  
   
--   vynechat Deklarace xml  
+- omit-xml-declaration  
   
--   samostatný  
+- samostatný  
   
--   veřejná DOCTYPE  
+- doctype-public  
   
--   DOCTYPE systému  
+- doctype-system  
   
--   prvky CDATA oddílu  
+- cdata-section-elements  
   
--   odsazení  
+- Odsazení  
   
     > [!NOTE]
     >  * kódování atribut se ignoruje při <xref:System.Xml.Xsl.XslTransform.Transform%2A> odesílá svůj výstup do metody <xref:System.IO.TextWriter>. Vlastnost kódování na <xref:System.IO.TextWriter> místo ní se použije.  
   
  Tento atribut se ignoruje při <xref:System.Xml.Xsl.XslTransform.Transform%2A> výstupu metody je <xref:System.IO.Stream>:  
   
--   verze: verze je vždy 1.0  
+- verze: verze je vždy 1.0  
   
--   typ média: typ média  
+- typ média: typ média  
   
 ## <a name="escaping-special-characters"></a>Speciální uvozovací znaky  
  `<xsl:text disable-output-escaping>` Značka se používá k označení, zda musí být do formuláře XML uvozeny řídicími znaky speciální znaky (například pomocí `<&lt>` místo `"<"` symbol) nebo left ve přítomna podmínka. `disable-output-escaping` Atribut se ignoruje při transformování do <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> objektů a nemá žádný vliv na speciální znaky.  

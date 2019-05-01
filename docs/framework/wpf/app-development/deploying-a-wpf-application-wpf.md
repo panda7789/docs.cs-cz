@@ -6,11 +6,11 @@ helpviewer_keywords:
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
 ms.openlocfilehash: 0ffd4fb05a5a409d74f8a9401a5fb021db0cd99b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981502"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být nasazeny. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologie nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma nabízí stručný přehled této technologie každého nasazení, a jak se používají ve spojení s požadavky na nasazení každého [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typu aplikace.  
@@ -19,21 +19,21 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 ## <a name="deployment-technologies"></a>Technologie nasazení  
  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik nasazení technologií, včetně:  
   
--   Nasazení XCopy.  
+- Nasazení XCopy.  
   
--   [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] nasazení.  
+- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] nasazení.  
   
--   [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] nasazení.  
+- [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] nasazení.  
   
 <a name="XCopy_Deployment"></a>   
 ### <a name="xcopy-deployment"></a>Nasazení XCopy  
  Nasazení XCopy odkazuje na použití příkazu XCopy příkazového řádku programu ke kopírování souborů z jednoho umístění do druhého. Nasazení XCopy je vhodný v následujících případech:  
   
--   Je samostatná aplikace. Nemusí se k aktualizaci klienta ke spuštění.  
+- Je samostatná aplikace. Nemusí se k aktualizaci klienta ke spuštění.  
   
--   Soubory aplikace musí přesunout z jednoho umístění do druhého, například z umístění sestavení (místního disku, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílené složky a tak dále) do umístění pro publikování (webové stránky, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílené složky a tak dále).  
+- Soubory aplikace musí přesunout z jednoho umístění do druhého, například z umístění sestavení (místního disku, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílené složky a tak dále) do umístění pro publikování (webové stránky, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílené složky a tak dále).  
   
--   Aplikace nevyžaduje, aby prostředí integrace (zástupce v nabídce Start, ikony na ploše a tak dále).  
+- Aplikace nevyžaduje, aby prostředí integrace (zástupce v nabídce Start, ikony na ploše a tak dále).  
   
  I když je vhodné pro scénáře nasazení jednoduchého příkazu XCopy, je omezen při složitější možnosti nasazení jsou požadovány. Zejména pomocí příkazu XCopy často zahrnuje režii při vytváření, provádění a údržbě skriptů pro správu nasazení tak robustní. Kromě toho XCopy nepodporuje správu verzí, odinstalace nebo vrácení zpět.  
   
@@ -49,15 +49,15 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
  [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] umožňuje nasazení webových aplikací pro jiné webové aplikace. Aplikace jsou publikovaná a nasadit z webu nebo serverů. I když [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nepodporuje celý rozsah klientské funkce, které [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]-nainstalované aplikace, podporuje podmnožinu, která obsahuje následující:  
   
--   Integrace se v nabídce Start a programy v Ovládacích panelech.  
+- Integrace se v nabídce Start a programy v Ovládacích panelech.  
   
--   Správa verzí, vrácení zpět a odinstalaci.  
+- Správa verzí, vrácení zpět a odinstalaci.  
   
--   Online instalace režim, ve kterém vždy spustí aplikaci z umístění nasazení.  
+- Online instalace režim, ve kterém vždy spustí aplikaci z umístění nasazení.  
   
--   Automatické aktualizace, pokud se vydávají nové verze.  
+- Automatické aktualizace, pokud se vydávají nové verze.  
   
--   Registrace přípon souborů.  
+- Registrace přípon souborů.  
   
  Další informace o [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)], naleznete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment).  
   
@@ -65,11 +65,11 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 ## <a name="deploying-wpf-applications"></a>Nasazení aplikací WPF  
  O možnostech nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Z hlediska nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] má tři typy významných aplikací:  
   
--   Samostatné aplikace.  
+- Samostatné aplikace.  
   
--   Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikací.  
+- Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikací.  
   
--   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
+- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
   
 <a name="Deploying_Standalone_Applications"></a>   
 ### <a name="deploying-standalone-applications"></a>Nasazení samostatné aplikace  
@@ -89,11 +89,11 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 ### <a name="deploying-xaml-browser-applications"></a>Nasazení aplikace prohlížeče XAML  
  [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou kompilované aplikace, které vyžadují následující tři soubory k nasazení:  
   
--   *ApplicationName*.exe: Sestavení spustitelný soubor aplikace.  
+- *ApplicationName*.exe: Sestavení spustitelný soubor aplikace.  
   
--   *ApplicationName*.xbap: Manifest nasazení.  
+- *ApplicationName*.xbap: Manifest nasazení.  
   
--   *ApplicationName*.exe.manifest: Manifest aplikace.  
+- *ApplicationName*.exe.manifest: Manifest aplikace.  
   
 > [!NOTE]
 >  Další informace o manifesty nasazení a aplikace, najdete v části [sestavení aplikace WPF](building-a-wpf-application-wpf.md).  

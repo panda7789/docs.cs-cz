@@ -16,11 +16,11 @@ helpviewer_keywords:
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
 ms.openlocfilehash: b648d62c9128f0864d60ace1ca56700f594b78c5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59124615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967086"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Tradičně datové vazby používá v rámci aplikací využít data uložená v databázích. Pomocí Windows Forms – datová vazba, můžou k datům z databází, stejně jako data v jiných strukturách, jako jsou pole a kolekce, tak dlouho, dokud jsou splněné určité minimální požadavky.  
@@ -47,15 +47,15 @@ Tradičně datové vazby používá v rámci aplikací využít data uložená v
  [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] datové objekty  
  [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] poskytuje několik datových struktur, které jsou vhodné pro vazbu. Každý se liší v její vyspělosti a složitost.  
   
--   <xref:System.Data.DataColumn>. A <xref:System.Data.DataColumn> je základní stavební blok <xref:System.Data.DataTable>, v tom, že zahrnují počet sloupců tabulky. Každý <xref:System.Data.DataColumn> má <xref:System.Data.DataColumn.DataType%2A> vlastnost, která určuje, jaká data obsahuje sloupec (například zkontrolujte automobilu v tabulce s popisem auta). Vám může jednoduché vytvořit vazbu ovládacího prvku (například <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost) na sloupec v tabulce dat.  
+- <xref:System.Data.DataColumn>. A <xref:System.Data.DataColumn> je základní stavební blok <xref:System.Data.DataTable>, v tom, že zahrnují počet sloupců tabulky. Každý <xref:System.Data.DataColumn> má <xref:System.Data.DataColumn.DataType%2A> vlastnost, která určuje, jaká data obsahuje sloupec (například zkontrolujte automobilu v tabulce s popisem auta). Vám může jednoduché vytvořit vazbu ovládacího prvku (například <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost) na sloupec v tabulce dat.  
   
--   <xref:System.Data.DataTable>. A <xref:System.Data.DataTable> je reprezentace tabulku s řádky a sloupce v [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]. Tabulka dat obsahuje dvě kolekce: <xref:System.Data.DataColumn>, představující sloupce dat v dané tabulce (což nakonec určit druh dat, který lze zadat do tabulky), a <xref:System.Data.DataRow>, představující řádky dat z dané tabulky. Vám může komplexní Vazba ovládacího prvku na informace obsažené v tabulce dat (jako je například vazby <xref:System.Windows.Forms.DataGridView> ovládací prvek tabulka dat). Nicméně pokud svážete <xref:System.Data.DataTable>, jsou ve skutečnosti vazby do výchozího zobrazení tabulky.  
+- <xref:System.Data.DataTable>. A <xref:System.Data.DataTable> je reprezentace tabulku s řádky a sloupce v [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]. Tabulka dat obsahuje dvě kolekce: <xref:System.Data.DataColumn>, představující sloupce dat v dané tabulce (což nakonec určit druh dat, který lze zadat do tabulky), a <xref:System.Data.DataRow>, představující řádky dat z dané tabulky. Vám může komplexní Vazba ovládacího prvku na informace obsažené v tabulce dat (jako je například vazby <xref:System.Windows.Forms.DataGridView> ovládací prvek tabulka dat). Nicméně pokud svážete <xref:System.Data.DataTable>, jsou ve skutečnosti vazby do výchozího zobrazení tabulky.  
   
--   <xref:System.Data.DataView>. A <xref:System.Data.DataView> je přizpůsobené zobrazení jedné tabulky datového, která mohou filtrovat a řadit. Zobrazení dat jsou data "snímku" používané ovládací prvky vázané na komplexní. Můžete vazby jednoduché nebo komplexní vazby k datům v rámci zobrazení dat, ale mějte na paměti, že jsou vytvoření vazby na pevnou "obrázek" data spíše než zdroj čisté, aktualizace dat.  
+- <xref:System.Data.DataView>. A <xref:System.Data.DataView> je přizpůsobené zobrazení jedné tabulky datového, která mohou filtrovat a řadit. Zobrazení dat jsou data "snímku" používané ovládací prvky vázané na komplexní. Můžete vazby jednoduché nebo komplexní vazby k datům v rámci zobrazení dat, ale mějte na paměti, že jsou vytvoření vazby na pevnou "obrázek" data spíše než zdroj čisté, aktualizace dat.  
   
--   <xref:System.Data.DataSet>. A <xref:System.Data.DataSet> je kolekce tabulky, relace a omezení dat v databázi. Můžete vazby jednoduché nebo komplexní vazby k datům v datové sadě, ale mějte na paměti, že jsou vazby na výchozí hodnotu <xref:System.Data.DataViewManager> pro <xref:System.Data.DataSet> (viz následující odrážka).  
+- <xref:System.Data.DataSet>. A <xref:System.Data.DataSet> je kolekce tabulky, relace a omezení dat v databázi. Můžete vazby jednoduché nebo komplexní vazby k datům v datové sadě, ale mějte na paměti, že jsou vazby na výchozí hodnotu <xref:System.Data.DataViewManager> pro <xref:System.Data.DataSet> (viz následující odrážka).  
   
--   <xref:System.Data.DataViewManager>. A <xref:System.Data.DataViewManager> je přizpůsobené zobrazení celého <xref:System.Data.DataSet>, obdobná <xref:System.Data.DataView>, ale s vztahy zahrnuté. S <xref:System.Data.DataViewManager.DataViewSettings%2A> kolekci, můžete nastavit výchozí filtry a možnosti řazení pro všechna zobrazení, která <xref:System.Data.DataViewManager> má pro danou tabulku.  
+- <xref:System.Data.DataViewManager>. A <xref:System.Data.DataViewManager> je přizpůsobené zobrazení celého <xref:System.Data.DataSet>, obdobná <xref:System.Data.DataView>, ale s vztahy zahrnuté. S <xref:System.Data.DataViewManager.DataViewSettings%2A> kolekci, můžete nastavit výchozí filtry a možnosti řazení pro všechna zobrazení, která <xref:System.Data.DataViewManager> má pro danou tabulku.  
   
 ## <a name="see-also"></a>Viz také:
 

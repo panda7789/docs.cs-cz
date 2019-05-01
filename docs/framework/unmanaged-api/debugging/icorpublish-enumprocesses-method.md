@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eb4096b0ae083e0b6c0598ea18cc8b33c2fdfe3e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59116292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61993600"
 ---
 # <a name="icorpublishenumprocesses-method"></a>ICorPublish::EnumProcesses – metoda
 Získá enumerátor pro spravované procesy v tomto počítači spuštěna.  

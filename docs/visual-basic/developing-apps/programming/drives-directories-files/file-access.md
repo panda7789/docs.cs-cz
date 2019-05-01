@@ -15,33 +15,33 @@ helpviewer_keywords:
 - sequential access
 ms.assetid: 231533bf-d049-4345-befa-3fb78fe6517d
 ms.openlocfilehash: f9cbb255dea8c6915951b5099f40bfd0ba66c8aa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61960290"
 ---
 # <a name="file-access-with-visual-basic"></a>Přístup k souborům v jazyce Visual Basic
-`My.Computer.FileSystem` Objekt poskytuje nástroje pro práci se soubory a složky. Jeho vlastnosti, metod a události umožňují vytvářet, kopírovat, přesunout, prozkoumat a odstraňovat soubory a složky. `My.Computer.FileSystem` poskytuje lepší výkon než starší verze funkce (`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`atd), jsou poskytovány jazyka Visual Basic pro zpětnou kompatibilitu.  
+`My.Computer.FileSystem` Objekt poskytuje nástroje pro práci se soubory a složky. Jeho vlastnosti, metody a události vám umožňují vytvořit, kopírovat, přesunout, prozkoumat a odstraňování souborů a složek. `My.Computer.FileSystem` poskytuje lepší výkon než starší verze funkcí (`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`atd), které jsou k dispozici v jazyce Visual Basic z důvodu zpětné kompatibility.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- Obsahuje seznam témat týkajících se použití `My.Computer.FileSystem` objektu určeného ke čtení ze souborů  
+ Obsahuje témata týkající se použití `My.Computer.FileSystem` objektu určeného ke čtení ze souborů  
   
  [Zápis do souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
- Obsahuje seznam témat týkajících se použití `My.Computer.FileSystem` objekt pro zápis do souborů  
+ Obsahuje témata týkající se použití `My.Computer.FileSystem` objekt k zápisu do souborů  
   
  [Vytváření, odstraňování a přesouvání souborů a adresářů](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
- Obsahuje seznam témat týkajících se použití `My.Computer.FileSystem` objektu pro vytváření, kopírování, odstraňování a přesouvání souborů a složek.  
+ Obsahuje témata týkající se použití `My.Computer.FileSystem` objektu pro vytváření, kopírování, odstraňování a přesouvání souborů a složek.  
   
  [Analýza textových souborů pomocí objektu TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
- Popisuje postup použití `TextFieldReader` Analýza textových souborů, jako jsou protokoly.  
+ Tento článek popisuje způsob použití `TextFieldReader` analyzovat textové soubory, jako jsou protokoly.  
   
  [Kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
  Popisuje kódování souborů a jejich použití.  
   
- [Návod: Manipulace se soubory a adresáře v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ [Návod: Práce se soubory a adresáře v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Ukazuje, jak vytvořit nástroj, který hlásí informace o souborech a složkách.  
   
- [Řešení potíží: Čtení z textových souborů a zápis do nich](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)  
- Jsou uvedeny běžné problémy při čtení a zápis do textových souborů a navrhne opravy pro každé.
+ [Odstraňování potíží: Čtení a zápis do textových souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)  
+ Uvádí běžné problémy vzniklé při čtení a zápis do textových souborů a navrhne nápravná opatření pro každý.

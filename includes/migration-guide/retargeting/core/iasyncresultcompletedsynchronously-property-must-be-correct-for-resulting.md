@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: a841bf244b2e8920302f968344e2ef950a58b60e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60118475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62088474"
 ---
 ### <a name="iasyncresultcompletedsynchronously-property-must-be-correct-for-the-resulting-task-to-complete"></a>Vlastnost IAsyncResult.CompletedSynchronously musí být správná pro výsledné dokončení úlohy
 

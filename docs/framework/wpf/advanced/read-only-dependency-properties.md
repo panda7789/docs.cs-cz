@@ -6,11 +6,11 @@ helpviewer_keywords:
 - read-only dependency properties [WPF]
 ms.assetid: f23d6ec9-3780-4c09-a2ff-b2f0a2deddf1
 ms.openlocfilehash: 45385e3e3eb8e756008a0d9ef560e061f9a31964
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053519"
 ---
 # <a name="read-only-dependency-properties"></a>Vlastnosti závislosti jen pro čtení
 Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existující vlastnosti závislosti jen pro čtení a scénáře a postupy pro vytvoření vlastnosti vlastní závislosti jen pro čtení.  
@@ -31,11 +31,11 @@ Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existujíc�
   
  Velkou část procesu vytvoření vlastnosti závislosti jen pro čtení je stejný, jak je popsáno v [vlastní vlastnosti závislosti](custom-dependency-properties.md) a [implementace vlastnosti závislosti](how-to-implement-a-dependency-property.md) témata. Existují tři důležité rozdíly:  
   
--   Při registraci vaší vlastností, zavolejte <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A> metoda místo normální <xref:System.Windows.DependencyProperty.Register%2A> metody pro registraci vlastnost.  
+- Při registraci vaší vlastností, zavolejte <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A> metoda místo normální <xref:System.Windows.DependencyProperty.Register%2A> metody pro registraci vlastnost.  
   
--   Při implementaci [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost "zabezpečenou obálku", ujistěte se, že obálku příliš nemá implementaci sady, tak, aby se žádné nekonzistence ve stavu jen pro čtení pro veřejné obálku zveřejníte.  
+- Při implementaci [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost "zabezpečenou obálku", ujistěte se, že obálku příliš nemá implementaci sady, tak, aby se žádné nekonzistence ve stavu jen pro čtení pro veřejné obálku zveřejníte.  
   
--   Objekt vrácený rutinou registrace jen pro čtení je <xref:System.Windows.DependencyPropertyKey> spíše než <xref:System.Windows.DependencyProperty>. Stále byste měli uložit toto pole jako člen, ale obvykle by usnadňují veřejného člena typu.  
+- Objekt vrácený rutinou registrace jen pro čtení je <xref:System.Windows.DependencyPropertyKey> spíše než <xref:System.Windows.DependencyProperty>. Stále byste měli uložit toto pole jako člen, ale obvykle by usnadňují veřejného člena typu.  
   
  Jakýkoli soukromé pole nebo hodnotu, kterou jste zálohování vaší vlastnosti závislosti jen pro čtení samozřejmě může být plně zapisovat pomocí libovolné logiky rozhodnete. Nejjednodušší způsob, jak nastavit vlastnost původně nebo jako součást logiky modulu runtime je však používat systém vlastnost [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], namísto obcházení systému vlastností a nastavení privátní pomocné pole přímo. Zejména je podpis <xref:System.Windows.DependencyObject.SetValue%2A> , který přijímá parametr typu <xref:System.Windows.DependencyPropertyKey>. Jak a kde nastavíte hodnotu prostřednictvím kódu programu v rámci vaší aplikace logiky bude mít vliv na způsob nastavení přístupu na <xref:System.Windows.DependencyPropertyKey> vytvoří při první registraci vlastnost závislosti. Pokud zpracovat tuto logiku vše v rámci třídy vám může usnadnit privátní, nebo pokud chcete, aby nastavení z dalších částí sestavení, může ji nastavit interní. Jedním z přístupů je volat <xref:System.Windows.DependencyObject.SetValue%2A> v rámci třídy obslužná rutina události relevantní události, která informuje o tom, kterou je potřeba změnit hodnotu vlastnosti uloženou instanci třídy. Další možností je spojovat vlastnosti závislosti pomocí spárované <xref:System.Windows.PropertyChangedCallback> a <xref:System.Windows.CoerceValueCallback> zpětná volání jako součást těchto vlastností metadat během registrace.  
   

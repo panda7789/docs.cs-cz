@@ -7,11 +7,11 @@ helpviewer_keywords:
 - styles [WPF], focus visual style
 ms.assetid: 786ac576-011b-4d72-913b-558deccb9b35
 ms.openlocfilehash: 745c2174c54ed072f91a6d5eb3b43d5385e96b90
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59172052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053367"
 ---
 # <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a>Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje dvě paralelní mechanismy pro změnu vizuálního vzhledu ovládacího prvku, když dostane fokus klávesnice. První mechanismus je určený nastavením vlastností pro vlastnosti, jako <xref:System.Windows.UIElement.IsKeyboardFocused%2A> ve stylu nebo šablony, která platí pro ovládací prvek. Druhý mechanismus se snaží poskytnout styl samostatné jako hodnotu <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost; "zaměřit vizuální styl" vytvoří samostatné vizuálního stromu, který vykreslí nad ovládací prvek, nikoli změna vizuálním stromu ovládacího prvku nebo jiný prvek uživatelského rozhraní pro úpravy element podle jeho nahrazení. Toto téma popisuje scénáře, kde každý z těchto mechanismů je vhodné.  

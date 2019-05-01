@@ -3,11 +3,11 @@ title: 'Uvnitř CustomPeerResolverService: Registrace klienta'
 ms.date: 03/30/2017
 ms.assetid: 40236953-a916-4236-84a6-928859e1331a
 ms.openlocfilehash: b3b5e22ad29f465d82e3d925f7168745fc5d04a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59095786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972546"
 ---
 # <a name="inside-the-custompeerresolverservice-client-registrations"></a>Uvnitř CustomPeerResolverService: Registrace klienta
 Každý uzel v mřížce publikuje jeho informace o koncovém bodu k službě překládání prostřednictvím `Register` funkce. Tyto informace službě překládání ukládá jako registrační záznam. Tento záznam obsahuje jedinečný identifikátor (RegistrationID) a informace o koncovém bodu (PeerNodeAddress) pro uzel.  
@@ -26,9 +26,9 @@ Každý uzel v mřížce publikuje jeho informace o koncovém bodu k službě p�
   
  K implementaci překladače služby, budete muset napsat funkci údržby odebrat záznamy zastaralých registrace. Chcete-li to provést několika způsoby:  
   
--   **Pravidelná údržba**: Nastavte časovač pravidelně přejdete a procházení úložiště dat. Chcete-li odstranit staré záznamy. <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> Používá tuto metodu.  
+- **Pravidelná údržba**: Nastavte časovač pravidelně přejdete a procházení úložiště dat. Chcete-li odstranit staré záznamy. <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> Používá tuto metodu.  
   
--   **Pasivní odstranění**: Nemusíte aktivně hledat zastaralých záznamů v pravidelných intervalech, můžete určit a odstranit zastaralé záznamy, když vaše služba již probíhá jiné funkci. To může potenciálně zapříčinit zpomalení doby odezvy na požadavky od klientů překladače, ale eliminuje potřebu časovač a efektivnější, pokud jsou několika uzlů očekávat, chcete stránku opustit bez volání `Unregister`.  
+- **Pasivní odstranění**: Nemusíte aktivně hledat zastaralých záznamů v pravidelných intervalech, můžete určit a odstranit zastaralé záznamy, když vaše služba již probíhá jiné funkci. To může potenciálně zapříčinit zpomalení doby odezvy na požadavky od klientů překladače, ale eliminuje potřebu časovač a efektivnější, pokud jsou několika uzlů očekávat, chcete stránku opustit bez volání `Unregister`.  
   
 ## <a name="registrationlifetime-and-refresh"></a>RegistrationLifetime a aktualizace  
  Jakmile se uzel zaregistruje překladač služby, začne přijímat <xref:System.ServiceModel.PeerResolvers.RegisterResponseInfo> objekt ze služby. Zda má tento objekt `RegistrationLifetime` vlastnost, která označuje k uzlu, jak dlouho má před registraci platnost a odebere ve službě překládání. Pokud například `RegistrationLifetime` činí 2 minuty, uzlu je potřeba volat `Refresh` v záznamu zůstává čerstvé a není odstraněn, v části 2 minuty. Když se obdrží službě překládání `Refresh` vyhledá záznam a obnoví čas vypršení platnosti požadavku. Aktualizovat vrátí <xref:System.ServiceModel.PeerResolvers.RefreshResponseInfo> objektu `RegistrationLifetime` vlastnost.  

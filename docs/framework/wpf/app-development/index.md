@@ -6,22 +6,22 @@ helpviewer_keywords:
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
 ms.openlocfilehash: 3b7e1d04173741088935104e8d4225691927a27b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61951590"
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a> Windows Presentation Foundation (WPF) je prezentační architektura, která slouží k vytvoření následujících typů aplikací:  
   
--   Samostatné aplikace (tradiční styl [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace vytvořené jako spustitelný soubor sestavení, které jsou nainstalovány na a spustit z klientského počítače).  
+- Samostatné aplikace (tradiční styl [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace vytvořené jako spustitelný soubor sestavení, které jsou nainstalovány na a spustit z klientského počítače).  
   
--   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] (aplikace složené z navigace stránky, které jsou vytvořené jako spustitelný soubor sestavení a hostitelem webových prohlížečů jako [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] nebo Mozilla Firefox).  
+- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] (aplikace složené z navigace stránky, které jsou vytvořené jako spustitelný soubor sestavení a hostitelem webových prohlížečů jako [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] nebo Mozilla Firefox).  
   
--   Vlastní ovládací prvek knihovny (-spustitelný soubor sestavení, která obsahují opakovaně použitelné ovládací prvky).  
+- Vlastní ovládací prvek knihovny (-spustitelný soubor sestavení, která obsahují opakovaně použitelné ovládací prvky).  
   
--   Knihovny tříd (-spustitelný soubor sestavení, které obsahují opakovaně použitelné třídy).  
+- Knihovny tříd (-spustitelný soubor sestavení, které obsahují opakovaně použitelné třídy).  
   
 > [!NOTE]
 >  Použití typů WPF ve službě Windows se důrazně nedoporučuje. Při pokusu o použití těchto funkcí ve službě Windows, nemusí fungovat podle očekávání.  
@@ -32,21 +32,21 @@ ms.locfileid: "59211059"
 ## <a name="application-management"></a>Správa aplikací  
  Spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace obvykle vyžadují základní sadu funkcí, které zahrnují následující:  
   
--   Vytváření a správa infrastruktury běžné aplikace (včetně vytvoření metodu vstupního bodu a smyčku zpráv Windows na systém a zprávy o zadávání).  
+- Vytváření a správa infrastruktury běžné aplikace (včetně vytvoření metodu vstupního bodu a smyčku zpráv Windows na systém a zprávy o zadávání).  
   
--   Sledování a interakci s životního cyklu aplikace.  
+- Sledování a interakci s životního cyklu aplikace.  
   
--   Načítání a zpracování parametrů příkazového řádku.  
+- Načítání a zpracování parametrů příkazového řádku.  
   
--   Sdílení vlastností pro rozsah aplikace a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prostředky.  
+- Sdílení vlastností pro rozsah aplikace a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prostředky.  
   
--   Zjištění a zpracování neošetřených výjimek.  
+- Zjištění a zpracování neošetřených výjimek.  
   
--   Vrátí ukončovací kód.  
+- Vrátí ukončovací kód.  
   
--   Správa systému windows v samostatné aplikace.  
+- Správa systému windows v samostatné aplikace.  
   
--   Sledování navigace v [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]a samostatné aplikace s windows navigace a snímků.  
+- Sledování navigace v [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]a samostatné aplikace s windows navigace a snímků.  
   
  Tyto funkce jsou implementované <xref:System.Windows.Application> třídy, které přidáte do vaší aplikace s použitím *definice aplikace*.  
   
@@ -62,13 +62,13 @@ ms.locfileid: "59211059"
 ## <a name="windows-and-dialog-boxes"></a>Windows a dialogových oknech  
  Uživatelé komunikují s [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace pomocí systému windows. Účelem okna je hostovat obsah aplikace a vystavit funkčnost aplikace obvykle umožňuje uživatelům pracovat s obsahem. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], systému windows jsou zapouzdřena objektem <xref:System.Windows.Window> třídy, která podporuje:  
   
--   Vytváření a zobrazení windows.  
+- Vytváření a zobrazení windows.  
   
--   Umožňují vytvářet vlastníka/vlastní relace okna.  
+- Umožňují vytvářet vlastníka/vlastní relace okna.  
   
--   Konfigurace vzhledu okno (například velikost, umístění, ikony, text záhlaví, ohraničení).  
+- Konfigurace vzhledu okno (například velikost, umístění, ikony, text záhlaví, ohraničení).  
   
--   Sledování a interakci s životnost časového období.  
+- Sledování a interakci s životnost časového období.  
   
  Další informace najdete v tématu [přehled WPF Windows](wpf-windows-overview.md).  
   
@@ -84,23 +84,23 @@ ms.locfileid: "59211059"
 ## <a name="navigation"></a>Navigace  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje navigaci webových stránkách (<xref:System.Windows.Controls.Page>) a hypertextových odkazů (<xref:System.Windows.Documents.Hyperlink>). Navigace je implementovat v mnoha různými způsoby, které zahrnují následující:  
   
--   Samostatné stránky, které jsou hostované ve webovém prohlížeči.  
+- Samostatné stránky, které jsou hostované ve webovém prohlížeči.  
   
--   Stránky kompilovány do [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] , která je hostována ve webovém prohlížeči.  
+- Stránky kompilovány do [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] , která je hostována ve webovém prohlížeči.  
   
--   Stránky kompilovány do samostatné aplikace a hostitelem navigačním okně (<xref:System.Windows.Navigation.NavigationWindow>).  
+- Stránky kompilovány do samostatné aplikace a hostitelem navigačním okně (<xref:System.Windows.Navigation.NavigationWindow>).  
   
--   Stránky, které jsou hostovány blok (<xref:System.Windows.Controls.Frame>), které mohly být hostovány na samostatné stránce nebo stránky kompilovány do buď [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] nebo samostatné aplikace.  
+- Stránky, které jsou hostovány blok (<xref:System.Windows.Controls.Frame>), které mohly být hostovány na samostatné stránce nebo stránky kompilovány do buď [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] nebo samostatné aplikace.  
   
  Pro usnadnění navigace, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implementuje následující:  
   
--   <xref:System.Windows.Navigation.NavigationService>, sdílené navigační modul pro zpracování žádosti o navigaci pomocí, který používá <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow>, a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] pro podporu uvnitř aplikační navigace.  
+- <xref:System.Windows.Navigation.NavigationService>, sdílené navigační modul pro zpracování žádosti o navigaci pomocí, který používá <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow>, a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] pro podporu uvnitř aplikační navigace.  
   
--   Navigační metody k zahájení navigace.  
+- Navigační metody k zahájení navigace.  
   
--   Navigační události ke sledování a interakci s dobou života navigace.  
+- Navigační události ke sledování a interakci s dobou života navigace.  
   
--   Zapamatování zpět a vpřed vymazávat pomocí deníku, které lze také prozkoumat a manipulovat.  
+- Zapamatování zpět a vpřed vymazávat pomocí deníku, které lze také prozkoumat a manipulovat.  
   
  Informace najdete v tématu [Přehled navigace](navigation-overview.md).  
   

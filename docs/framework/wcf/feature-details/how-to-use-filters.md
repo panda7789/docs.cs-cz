@@ -3,22 +3,22 @@ title: 'Postupy: Používání filtrů'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
 ms.openlocfilehash: 5d3ed4a1d64edee274e60f5bf156b4294902df8c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972858"
 ---
 # <a name="how-to-use-filters"></a>Postupy: Používání filtrů
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou směrovány dvě implementace službu kalkulačky, regularCalc a roundingCalc zprávy. Obou implementacích podporují stejné operace; jedna služba ale Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopen určit, jestli se má použít zaokrouhlení verze služby; Pokud je vyjádřená žádná předvolba služby zpráva je mezi těmito dvěma službami s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  
   
--   Přidejte  
+- Přidejte  
   
--   Odečíst  
+- Odečíst  
   
--   Násobení  
+- Násobení  
   
--   Dělení  
+- Dělení  
   
  Vzhledem k tomu, že obě služby implementovat stejné operace, nemůžete použít filtr akce, protože akce určená ve zprávě nesmí být jedinečný. Místo toho je nutné provést další práce k zajištění, že zprávy jsou směrovány na jednotlivé koncové body.  
   
@@ -137,10 +137,10 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
     > [!NOTE]
     >  Filtr PrefixEndpointAddress nevyhodnocuje název hostitele při provádění shodu, protože je jeden hostitel lze odkazovat pomocí různých názvů hostitelů, které mohou všechny být platné způsoby odkazující na hostitele z klientské aplikace. Všechny tyto například může odkazovat na stejného hostitele:  
     >   
-    > -   localhost  
-    > -   127.0.0.1  
-    > -   `www.contoso.com`  
-    > -   ContosoWeb01  
+    > - localhost  
+    > - 127.0.0.1  
+    > - `www.contoso.com`  
+    > - ContosoWeb01  
   
 4. Konečné filtr musí podporovat směrování zpráv, které přicházejí na obecné koncový bod bez vlastní hlavičce. V tomto scénáři by měl alternativní zpráv mezi službami regularCalc a roundingCalc. Pro podporu "kruhové dotazování" směrování tyto zprávy, použijte vlastní filtr, který umožňuje jedna instance filtru tak, aby odpovídaly pro každou zprávu zpracovat.  Následující informace definují dvě instance RoundRobinMessageFilter, které jsou seskupeny k označení, že by měl alternativní mezi sebou.  
   

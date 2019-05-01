@@ -3,11 +3,11 @@ title: Koncepty programování – Visual Basic
 ms.date: 02/27/2017
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
 ms.openlocfilehash: 4c550002e1049fb716d2836737b6c3fa5b9df4f1
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966163"
 ---
 # <a name="programming-concepts-visual-basic"></a>Koncepty programování (Visual Basic)
 

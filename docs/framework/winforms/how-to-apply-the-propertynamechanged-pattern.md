@@ -10,11 +10,11 @@ helpviewer_keywords:
 - PropertyNameChanged pattern [Windows Forms], applying
 ms.assetid: aa47ddf6-5223-40c4-833f-a78992194836
 ms.openlocfilehash: 36670eee6235277a7fe98770192df9ae05d3dd03
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59213022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966813"
 ---
 # <a name="how-to-apply-the-propertynamechanged-pattern"></a>Postupy: Použití vzoru PropertyNameChanged
 Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vzor, který má vlastní ovládací prvek. Tento model použijte při implementaci vlastní ovládací prvky, které se používají s modulem Windows Forms datové vazby.  
@@ -26,7 +26,7 @@ Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vz
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Chcete-li zkompilovat v předchozím příkladu kódu:  
   
--   Vložte kód do prázdný soubor kódu. Je nutné použít vlastní ovládací prvek na formuláři Windows, který obsahuje `Main` metoda.  
+- Vložte kód do prázdný soubor kódu. Je nutné použít vlastní ovládací prvek na formuláři Windows, který obsahuje `Main` metoda.  
   
 ## <a name="see-also"></a>Viz také:
 

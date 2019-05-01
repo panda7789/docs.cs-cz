@@ -8,20 +8,20 @@ helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
 ms.openlocfilehash: e90e881546c12df2c8b19ff03a4d4c7304c4596c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58815872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052674"
 ---
 # <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ '\<NázevProměnné >' nelze odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.
 Jste napsali `For...Next` smyčku, ve kterém kompilátor nemůže odvodit typ dat pro řídicí proměnná smyčky for vzhledem k tomu, že jsou splněny následující podmínky:  
   
--   Není zadaný datový typ řídicí proměnná smyčky s `As` klauzuli.  
+- Není zadaný datový typ řídicí proměnná smyčky s `As` klauzuli.  
   
--   Omezení cyklu a klauzuli kroku obsahovat aspoň dva datové typy.  
+- Omezení cyklu a klauzuli kroku obsahovat aspoň dva datové typy.  
   
--   Neexistuje žádný standardní převod mezi datovými typy.  
+- Neexistuje žádný standardní převod mezi datovými typy.  
   
  Proto kompilátor nelze odvodit datový typ řídicí proměnná smyčky.  
   
@@ -42,7 +42,7 @@ Dim n = 20
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Změňte typy omezení cyklu a klauzuli kroku podle potřeby tak, aby aspoň jeden z nich je typ, který ostatní rozšířit na. V předchozím příkladu, změňte typ `stepVar` k `Integer`.  
+- Změňte typy omezení cyklu a klauzuli kroku podle potřeby tak, aby aspoň jeden z nich je typ, který ostatní rozšířit na. V předchozím příkladu, změňte typ `stepVar` k `Integer`.  
   
     ```  
     Dim stepVar = 1  
@@ -54,7 +54,7 @@ Dim n = 20
     Dim stepVar As Integer = 1  
     ```  
   
--   Převést na odpovídající typy omezení cyklu a klauzuli kroku pomocí funkce pro explicitní převod. V předchozím příkladu platí `Val` funkce `stepVar`.  
+- Převést na odpovídající typy omezení cyklu a klauzuli kroku pomocí funkce pro explicitní převod. V předchozím příkladu platí `Val` funkce `stepVar`.  
   
     ```  
     For i = 1 To 10 Step Val(stepVar)  

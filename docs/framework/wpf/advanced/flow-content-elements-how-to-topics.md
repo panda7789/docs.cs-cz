@@ -8,11 +8,11 @@ helpviewer_keywords:
 - documents [WPF], flow content reference
 ms.assetid: ef5175df-6ab9-4096-be0c-804003b44c64
 ms.openlocfilehash: 241f3736eef55fcca13d4cb9994bb04aaf4eda66
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61962523"
 ---
 # <a name="flow-content-elements-how-to-topics"></a>Postupy: Témata elementů obsahu toku
 Témata v této části popisují, jak provádět běžné úkoly pomocí různých elementů obsahu toku a související funkce.  

@@ -3,11 +3,11 @@ title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
 ms.openlocfilehash: ed6fc8f5d16ae2d604cdbdf4659ecfaaa83bfa02
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989765"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. k  
@@ -275,15 +275,15 @@ static void DisplayOrderStatus()
 
 2. Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
 
-    1.  Otevřete správce serveru v sadě Visual Studio 2012.
+    1. Otevřete správce serveru v sadě Visual Studio 2012.
 
-    2.  Rozbalte **funkce** kartu.
+    2. Rozbalte **funkce** kartu.
 
-    3.  Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
+    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
 
-    4.  Zkontrolujte, **transakční** pole.
+    4. Zkontrolujte, **transakční** pole.
 
-    5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
+    5. Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
 
 3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 

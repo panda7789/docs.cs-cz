@@ -1,18 +1,18 @@
 ---
-title: Hierarchie Model (DOM) objekt dokumentu XML
+title: Hierarchie modelu DOM (Document Object Model) dokumentu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 9d187d4f-c76e-4223-a670-cc290783ce47
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ef2b5b200f95cdfac9b08a33c328c1dfb797e59e
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46537771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61959199"
 ---
-# <a name="xml-document-object-model-dom-hierarchy"></a>Hierarchie Model (DOM) objekt dokumentu XML
+# <a name="xml-document-object-model-dom-hierarchy"></a>Hierarchie modelu DOM (Document Object Model) dokumentu XML
 Následující obrázek znázorňuje hierarchii tříd pro XML Document Object Model (DOM), s World Wide Web Consortium (W3C) název v závorka spolu s názvem třídy, kde je to relevantní.  
   
  ![Modelu objektu dokumentu XML &#40;modelu DOM&#41; hierarchie](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom_class_hierarchy")  
@@ -20,13 +20,13 @@ Hierarchie XML Document Object Model (DOM)
   
  Následující třídy nedědí z **XmlNode**:  
   
--   **XmlImplementation**  
+- **XmlImplementation**  
   
--   **XmlNamedNodeMap**  
+- **XmlNamedNodeMap**  
   
--   **XmlNodeList**  
+- **XmlNodeList**  
   
--   **XmlNodeChangedEventArgs**  
+- **XmlNodeChangedEventArgs**  
   
  **XmlImplementation** třída se používá k vytvoření dokumentu XML. Další informace najdete v tématu [vytváření dokumentů XML](../../../../docs/standard/data/xml/xml-document-creation.md).  
   

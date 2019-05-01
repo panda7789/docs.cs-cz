@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 795392bc50d4b7c5eeb82b98230a52156f273f15
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59187366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989518"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess – metoda
 Spustí proces a jeho primární vlákno pod kontrolu ladicího programu.  

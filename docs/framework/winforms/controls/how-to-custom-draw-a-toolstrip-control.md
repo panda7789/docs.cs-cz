@@ -17,20 +17,20 @@ helpviewer_keywords:
 - owner drawing
 ms.assetid: 94e7d7bd-a752-441c-b5b3-7acf98881163
 ms.openlocfilehash: 9b3d6b9391971d4c2d012345b96c2ed64d33a998
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052986"
 ---
 # <a name="how-to-custom-draw-a-toolstrip-control"></a>Postupy: Vlastní vykreslení ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> Ovládací prvky mají následující související vykreslování třídy (Malování):  
   
--   <xref:System.Windows.Forms.ToolStripSystemRenderer> poskytuje vzhled a styl operačního systému.  
+- <xref:System.Windows.Forms.ToolStripSystemRenderer> poskytuje vzhled a styl operačního systému.  
   
--   <xref:System.Windows.Forms.ToolStripProfessionalRenderer> poskytuje vzhled a stylu společnosti Microsoft Office.  
+- <xref:System.Windows.Forms.ToolStripProfessionalRenderer> poskytuje vzhled a stylu společnosti Microsoft Office.  
   
--   <xref:System.Windows.Forms.ToolStripRenderer> je abstraktní základní třída pro jiné třídy dva vykreslování.  
+- <xref:System.Windows.Forms.ToolStripRenderer> je abstraktní základní třída pro jiné třídy dva vykreslování.  
   
  Pro vlastní vykreslování (označované také jako vlastník draw) <xref:System.Windows.Forms.ToolStrip>, můžete přepsat jedné ze tříd nástroj pro vykreslování a změnit aspekt logiku pro vykreslení.  
   
@@ -38,20 +38,20 @@ ms.locfileid: "59311042"
   
 ### <a name="to-switch-between-the-provided-renderers"></a>Přepínat mezi zadaná renderery  
   
--   Nastavte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode> hodnotu, kterou chcete.  
+- Nastavte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode> hodnotu, kterou chcete.  
   
      S <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>, statické <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> určuje zobrazovací jednotky pro vaši aplikaci. Ostatní hodnoty <xref:System.Windows.Forms.ToolStripRenderMode> jsou <xref:System.Windows.Forms.ToolStripRenderMode.Custom>, <xref:System.Windows.Forms.ToolStripRenderMode.Professional>, a <xref:System.Windows.Forms.ToolStripRenderMode.System>.  
   
 ### <a name="to-change-the-microsoft-officestyle-borders-to-straight"></a>Chcete-li změnit Microsoft Office – styl ohraničení přímo  
   
--   Přepsat <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, ale Nevolejte základní třídu.  
+- Přepsat <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, ale Nevolejte základní třídu.  
   
 > [!NOTE]
 >  Je dostupná verze této metody pro <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripSystemRenderer>, a <xref:System.Windows.Forms.ToolStripProfessionalRenderer>.  
   
 ### <a name="to-change-the-professionalcolortable"></a>Chcete-li změnit professionalcolortable –  
   
--   Přepsat <xref:System.Windows.Forms.ProfessionalColorTable> a změnit barvy chcete.  
+- Přepsat <xref:System.Windows.Forms.ProfessionalColorTable> a změnit barvy chcete.  
   
     ```vb  
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As _  
@@ -115,11 +115,11 @@ ms.locfileid: "59311042"
   
 ### <a name="to-turn-off-the-microsoft-office-colors-for-the-entire-application"></a>Chcete-li vypnout barvy Microsoft Office pro celou aplikaci  
   
--   Nastavte <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> k `false`.  
+- Nastavte <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> k `false`.  
   
 ### <a name="to-turn-off-the-microsoft-office-colors-for-one-toolstrip-control"></a>Chcete-li vypnout barvy Microsoft Office pro jeden ovládací prvek ToolStrip  
   
--   Použijte kód podobně jako v následujícím příkladu kódu.  
+- Použijte kód podobně jako v následujícím příkladu kódu.  
   
     ```vb  
     Dim colorTable As ProfessionalColorTable()  

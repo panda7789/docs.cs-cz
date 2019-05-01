@@ -6,11 +6,11 @@ ms.assetid: b5e52844-4820-47c0-a61d-de2da33e9f54
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2b3a2432deb1e956060ab3615db01821658f8782
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54508676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61959238"
 ---
 # <a name="xml-document-object-model-dom"></a>model DOM (Document Object Model) dokumentu XML
 Třída XML Document Object Model (DOM) je v paměti reprezentace dokumentu XML. V modelu DOM můžete prostřednictvím kódu programu čtení, manipulaci a upravit dokument XML. **XmlReader** XML přečte třída; však poskytuje přístup bez mezipaměti, pouze vpřed, jen pro čtení. To znamená, že neexistují žádné možnosti upravit hodnoty atributu nebo obsahu elementu nebo možnost vkládat a odebrání uzlů s **XmlReader**. Pro úpravy je primární funkce modelu DOM. Je běžné a způsobem strukturovaná, že XML data reprezentované v paměti, ačkoli skutečná data XML je uložen v lineárně v souboru nebo přicházející z jiného objektu. Následuje XML data.  
@@ -39,32 +39,32 @@ Strukturu dokumentu XML
   
  V rámci struktury dokumentu XML, každý kruhu na tomto obrázku představuje uzlu, která je volána **XmlNode** objektu. **XmlNode** objekt je základní objekt ve stromové struktuře modelu DOM. **XmlDocument** třídu, která rozšiřuje **XmlNode**, podporuje metody pro provádění operací na dokument jako celek (například načtení do paměti nebo uložení souboru XML do souboru. Kromě toho **XmlDocument** poskytuje prostředky k zobrazení a manipulaci s uzly v celém dokumentu XML. Obě **XmlNode** a **XmlDocument** mají vylepšení výkonu a použitelnosti a mají metody a vlastnosti pro:  
   
--   Přístup a úpravy uzlů, které jsou specifické pro modelu DOM, jako jsou uzly element, uzly odkaz na entitu a tak dále.  
+- Přístup a úpravy uzlů, které jsou specifické pro modelu DOM, jako jsou uzly element, uzly odkaz na entitu a tak dále.  
   
--   Načte celý uzly kromě informace, které obsahuje uzel, například podle textu v uzlu elementu.  
+- Načte celý uzly kromě informace, které obsahuje uzel, například podle textu v uzlu elementu.  
   
     > [!NOTE]
     >  Pokud aplikace nevyžaduje, aby struktura nebo poskytované v modelu DOM, možností pro úpravy **XmlReader** a **XmlWriter** třídy poskytnout přístup bez mezipaměti, dopředné datový proud XML. Další informace naleznete v tématu <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.  
   
  **Uzel** objekty mají sadu metod a vlastností, jakož i základní a jasně definované vlastnosti. Zde jsou některé z těchto vlastností:  
   
--   Uzly mít jeden nadřazený uzel, nadřazený uzel je uzel přímo nad nimi. Uzel nejvyšší úrovně a obsahuje samotný dokument a fragmentů dokumentu, je pouze uzly, které nemají nadřazené kořen dokumentu.  
+- Uzly mít jeden nadřazený uzel, nadřazený uzel je uzel přímo nad nimi. Uzel nejvyšší úrovně a obsahuje samotný dokument a fragmentů dokumentu, je pouze uzly, které nemají nadřazené kořen dokumentu.  
   
--   Většina uzlů může mít více podřízených uzlů, které jsou uzly pod nimi. Následuje seznam typy uzlů, které mohou obsahovat podřízené uzly.  
+- Většina uzlů může mít více podřízených uzlů, které jsou uzly pod nimi. Následuje seznam typy uzlů, které mohou obsahovat podřízené uzly.  
   
-    -   **Dokument**  
+    - **Dokument**  
   
-    -   **DocumentFragment**  
+    - **DocumentFragment**  
   
-    -   **EntityReference**  
+    - **EntityReference**  
   
-    -   **Element**  
+    - **Element**  
   
-    -   **Atribut**  
+    - **Atribut**  
   
      **XmlDeclaration**, **Notation**, **Entity**, **CDATASection**, **Text**,  **Komentář**, **ProcessingInstruction**, a **DocumentType** uzly nemají podřízené uzly.  
   
--   Uzly, které jsou na stejné úrovni, v diagramu pomocí **knihy** a **pubinfo** uzly, jsou na stejné úrovni.  
+- Uzly, které jsou na stejné úrovni, v diagramu pomocí **knihy** a **pubinfo** uzly, jsou na stejné úrovni.  
   
  Jedna vlastnost v modelu DOM se způsob, jakým zpracovává atributy. Atributy nejsou uzly, které jsou součástí nadřazeného, podřízené a vztahy na stejné úrovni. Atributy jsou považovány za vlastnost uzlu elementu a se skládá z názvu a hodnoty pár. Například, pokud máte data XML, který se skládá z `format="dollar`"přidružené k tomuto prvku `price`, slovo `format` je název a hodnota `format` atribut je `dollar`. K načtení `format="dollar"` atribut **cena** uzlu, volání **GetAttribute** metodu, když je ukazatel myši nachází na `price` uzlu elementu. Další informace najdete v tématu [přístup k atributům v modelu DOM](../../../../docs/standard/data/xml/accessing-attributes-in-the-dom.md).  
   

@@ -8,11 +8,11 @@ ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7eb79aaf1f207d8d5ec175f32dc9a47170d604f8
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973391"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Datové struktury pro paralelní programování
 Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou užitečné pro paralelní programování, včetně sady souběžných kolekcí tříd, zjednodušené synchronizace primitiv a typy pro opožděnou inicializaci. Můžete použít tyto typy s jakýmkoli jiným kódem aplikace s více vlákny, včetně Task Parallel Library a PLINQ.  
@@ -22,7 +22,7 @@ Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou
   
  V následující tabulce jsou uvedeny nové třídy souběžných kolekcí:  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
 |<xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>|Poskytuje blokování a možnosti pro kolekce bezpečné pro vlákna, které implementují ohraničující <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType>. Výrobce vlákna blokovat, pokud nejsou dostupné žádné sloty nebo pokud kolekce je plná. Příjemce vlákna blokovat, pokud kolekce je prázdná. Tento typ podporuje také neblokující přístup tak, že příjemci a výrobci. <xref:System.Collections.Concurrent.BlockingCollection%601> lze jej použít jako základní třída nebo záložní úložiště k poskytování blokování a ohraničující pro třídy kolekce, které podporuje <xref:System.Collections.Generic.IEnumerable%601>.|  
 |<xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>|Implementace bezpečné pro vlákna kontejner objektů a dat, která poskytuje škálovatelné přidat a operacemi get.|  
@@ -37,7 +37,7 @@ Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou
   
  V následující tabulce jsou uvedeny nové typy synchronizace:  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
 |<xref:System.Threading.Barrier?displayProperty=nameWithType>|Umožňuje více vláken pro práci na algoritmus paralelně tím, že poskytuje bod, ve kterém každý úkol signalizuje, že jeho doručení a potom blokovat, dokud se objevit některé nebo všechny úlohy. Další informace najdete v tématu [bariéry](../../../docs/standard/threading/barrier.md).|  
 |<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>|Tím, že poskytuje mechanismus pro snadné potkávací zjednodušuje scénáře rozvětvení a spojení. Další informace najdete v tématu [CountdownEvent](../../../docs/standard/threading/countdownevent.md).|  
@@ -48,16 +48,16 @@ Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou
   
  Další informace naleznete v tématu:  
   
--   [Postupy: Použití SpinLock nízké úrovně synchronizace](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
+- [Postupy: Použití SpinLock nízké úrovně synchronizace](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
   
--   [Postupy: Synchronizace souběh operací pomocí bariéry](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
+- [Postupy: Synchronizace souběh operací pomocí bariéry](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
   
 ## <a name="lazy-initialization-classes"></a>Opožděná inicializace třídy  
  Pomocí opožděné inicializace není přidělena paměť pro objekt, dokud nebude potřeba. Opožděná inicializace lze vylepšit výkon rovnoměrně rozprostírá přidělení objektů na dobu životnosti programu. Můžete povolit pro všechny vlastní typy opožděná inicializace obalením typ <xref:System.Lazy%601>.  
   
  V následující tabulce jsou uvedeny typy opožděná inicializace:  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
 |<xref:System.Lazy%601?displayProperty=nameWithType>|Poskytuje odlehčený, bezpečné pro vlákna opožděné inicializace.|  
 |<xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType>|Poskytuje hodnotu laxně inicializovaný na základě vlákno každý podproces laxně – vyvolání funkce inicializace.|  

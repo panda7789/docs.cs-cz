@@ -3,11 +3,11 @@ title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
 ms.openlocfilehash: f91f603e91b1f640ebe97229a1a433446cddb0cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59771631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990207"
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.  
@@ -15,21 +15,21 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
 ## <a name="discussion"></a>Diskuse  
  Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů pro zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. Součástí WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
--   Pokud máte úložiště přihlašovacích údajů, které nelze použít předdefinovaný poskytovatel tokenů.  
+- Pokud máte úložiště přihlašovacích údajů, které nelze použít předdefinovaný poskytovatel tokenů.  
   
--   Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel poskytuje podrobnosti pro případ použití přihlašovacích údajů klienta WCF.  
+- Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel poskytuje podrobnosti pro případ použití přihlašovacích údajů klienta WCF.  
   
--   Pokud vytváříte vlastní token.  
+- Pokud vytváříte vlastní token.  
   
  Tento příklad ukazuje, jak vytvořit vlastního zprostředkovatele tokenů, který ukládá do mezipaměti tokenům vydaným službou tokenů zabezpečení služby (STS).  
   
  Souhrnně řečeno, tento příklad znázorňuje následující:  
   
--   Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.  
+- Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.  
   
--   Jak vydané tokeny můžete uložit do mezipaměti a k dispozici klienta WCF.  
+- Jak vydané tokeny můžete uložit do mezipaměti a k dispozici klienta WCF.  
   
--   Jak ověření serveru klientem pomocí certifikátu X.509 serveru.  
+- Jak ověření serveru klientem pomocí certifikátu X.509 serveru.  
   
  Tento příklad se skládá z programu konzoly klienta (Client.exe), program konzoly služby tokenů zabezpečení (Securitytokenservice.exe) a služby konzolový program (Service.exe). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (Přidat odečíst, násobení a dělení). Klient získá bezpečnostní token z tokenu služba zabezpečení (STS) a umožňuje synchronní žádosti o službu pro dané matematické operace a odpovědi služby k výsledku. Činnost klienta je vidět v okně konzoly.  
   

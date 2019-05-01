@@ -7,11 +7,11 @@ helpviewer_keywords:
 - conversions [Visual Basic], relaxed delegate
 ms.assetid: 64f371d0-5416-4f65-b23b-adcbf556e81c
 ms.openlocfilehash: 57e863d9781721a997ae49e1a5c9d8f3562a1bd0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973278"
 ---
 # <a name="relaxed-delegate-conversion-visual-basic"></a>Volný převod delegáta (Visual Basic)
 Volný převod delegáta umožňuje přiřadit typu Sub a funkce na delegáty nebo obslužné rutiny i v případě, že jejich podpisy nejsou identické. Proto vazbu na delegáty stane konzistentní s vazbou již povolena pro volání metod.  
@@ -19,7 +19,7 @@ Volný převod delegáta umožňuje přiřadit typu Sub a funkce na delegáty ne
 ## <a name="parameters-and-return-type"></a>Parametry a návratový typ  
  Místo podpis přesnou shodu volný převod vyžaduje splnění následujících podmínek při `Option Strict` je nastavena na `On`:  
   
--   Rozšiřující převod musí existovat od datového typu každý parametr delegáta na datový typ odpovídající parametr přiřazené funkce nebo `Sub`. V následujícím příkladu, delegát `Del1` má jeden parametr, `Integer`. Parametr `m` v přiřazené lambda výrazy musí mít datový typ, pro kterou je rozšiřující převod z `Integer`, jako například `Long` nebo `Double`.  
+- Rozšiřující převod musí existovat od datového typu každý parametr delegáta na datový typ odpovídající parametr přiřazené funkce nebo `Sub`. V následujícím příkladu, delegát `Del1` má jeden parametr, `Integer`. Parametr `m` v přiřazené lambda výrazy musí mít datový typ, pro kterou je rozšiřující převod z `Integer`, jako například `Long` nebo `Double`.  
   
      [!code-vb[VbVbalrRelaxedDelegates#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#1)]  
   
@@ -29,7 +29,7 @@ Volný převod delegáta umožňuje přiřadit typu Sub a funkce na delegáty ne
   
      [!code-vb[VbVbalrRelaxedDelegates#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#8)]  
   
--   Rozšiřující převod musí existovat v opačném směru z návratového typu funkce přiřazené nebo `Sub` na návratový typ delegáta. V následujících příkladech text každého přiřazené lambda výraz se musí vyhodnotit na datový typ, který rozšiřuje na `Integer` protože návratový typ `del1` je `Integer`.  
+- Rozšiřující převod musí existovat v opačném směru z návratového typu funkce přiřazené nebo `Sub` na návratový typ delegáta. V následujících příkladech text každého přiřazené lambda výraz se musí vyhodnotit na datový typ, který rozšiřuje na `Integer` protože návratový typ `del1` je `Integer`.  
   
      [!code-vb[VbVbalrRelaxedDelegates#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#3)]  
   

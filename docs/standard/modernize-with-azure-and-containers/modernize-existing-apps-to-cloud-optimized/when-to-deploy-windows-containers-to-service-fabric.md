@@ -1,25 +1,25 @@
 ---
-title: Kdy nasadit kontejnery Windows do Service Fabric
+title: Kdy nasadit kontejnery Windows do Service Fabricu
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Kdy nasadit kontejnery Windows do Service Fabric
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
 ms.openlocfilehash: 01d76f325480c7cf09fef36b02589a602e3ee11e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973642"
 ---
-# <a name="when-to-deploy-windows-containers-to-service-fabric"></a>Kdy nasadit kontejnery Windows do Service Fabric
+# <a name="when-to-deploy-windows-containers-to-service-fabric"></a>Kdy nasadit kontejnery Windows do Service Fabricu
 
 Aplikace, které jsou založeny na kontejnery Windows rychle muset použít platformy, které přepínají ještě více pryč z virtuálních počítačů IaaS. Toto je automatizované lepší škálovatelnost a vysokou škálovatelnost a získat významná vylepšení v kompletní možnosti správy pro nasazení, inovace, správu verzí, vrácení zpět a sledování stavu. Dosažení těchto cílů s nástrojem orchestrator Azure Service Fabric, k dispozici v cloudu Microsoft Azure, ale i v místním nebo dokonce i v jiném cloudu.
 
 Mnoho organizací se nepoužily a posunutí existující monolitické aplikace, aby kontejnery pro dva důvody:
 
--   Snížení nákladů, buď z důvodu konsolidace a odebrání stávající hardware nebo z aplikace spuštěné ve vyšší hustota.
+- Snížení nákladů, buď z důvodu konsolidace a odebrání stávající hardware nebo z aplikace spuštěné ve vyšší hustota.
 
--   Konzistentní nasazování kontrakt mezi vývojem a provozem.
+- Konzistentní nasazování kontrakt mezi vývojem a provozem.
 
 Snížení nákladů ovlivňovat je srozumitelný a je pravděpodobné, že jsou všechny organizace dohledávání danému cíli. Konzistentní nasazení je těžší k vyhodnocení, ale je stejně jako důležité. Kontrakt konzistentní nasazování říká, že vývojáři zvolit použití technologie, která jim vyhovuje, a provozní tým získá jeden způsob, jak nasadit a spravovat aplikace. Tato smlouva řeší problémy s operací řešit složité mnoha různých technologií, nebo vynucení vývojářům umožňuje pracovat pouze s určitým technologie. Každá aplikace je v podstatě kontejnerizovaných v bitové kopii samostatná nasazení.
 

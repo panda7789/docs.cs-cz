@@ -18,14 +18,14 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bcd7bfb52cadf740d8fe3cb92a09b071f530b7ee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61994328"
 ---
 # <a name="icordebugstepperdeactivate-method"></a>ICorDebugStepper::Deactivate – metoda
-Způsobí, že tento ICorDebugStepper zrušit příkaz poslední krok, který obdržel.  
+Způsobí, že tento icordebugstepper – zrušení příkazu poslední krok, který obdržela.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ HRESULT Deactivate ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Nový příkaz taktování může být vydaný po nedávno přijatou krok příkaz byl zrušen.  
+ Nový příkaz krokování vydávat po nedávno přijatého kroku příkaz byl zrušen.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

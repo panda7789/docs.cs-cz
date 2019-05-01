@@ -9,11 +9,11 @@ helpviewer_keywords:
 - pens [Windows Forms], setting alignment
 ms.assetid: a202af36-4d31-4401-a126-b232f51db581
 ms.openlocfilehash: bc2ac2587554215ef3b2c2580413fbbb894aa687
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967274"
 ---
 # <a name="how-to-set-pen-width-and-alignment"></a>Postupy: Nastavení šířky a pera a zarovnání
 Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako jeden z argumentů konstruktoru. Můžete také změnit šířku pera s <xref:System.Drawing.Pen.Width%2A> vlastnost <xref:System.Drawing.Pen> třídy.  
@@ -26,7 +26,7 @@ Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako j
   
 ### <a name="to-vary-the-width-of-a-pen"></a>Postup obměny šířku pera  
   
--   Nastavte hodnotu <xref:System.Drawing.Pen.Alignment%2A> vlastnost <xref:System.Drawing.Drawing2D.PenAlignment.Center> (výchozí) k určení, že bude pixelů vykreslit zelený perem teoretické řádku na střed. Následující obrázek znázorňuje výsledný řádek.  
+- Nastavte hodnotu <xref:System.Drawing.Pen.Alignment%2A> vlastnost <xref:System.Drawing.Drawing2D.PenAlignment.Center> (výchozí) k určení, že bude pixelů vykreslit zelený perem teoretické řádku na střed. Následující obrázek znázorňuje výsledný řádek.  
   
      ![Černá čára dynamického zajišťování s zelené zvýraznění.](./media/how-to-set-pen-width-and-alignment/green-pixels-centered-line.gif)  
   
@@ -37,7 +37,7 @@ Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako j
   
 ### <a name="to-change-the-alignment-of-a-pen"></a>Chcete-li změnit zarovnání pera  
   
--   Nastavte hodnotu <xref:System.Drawing.Pen.Alignment%2A> vlastnost <xref:System.Drawing.Drawing2D.PenAlignment.Center> k určení, že bude pixelů vykreslit zelený perem na hranici obdélník na střed.  
+- Nastavte hodnotu <xref:System.Drawing.Pen.Alignment%2A> vlastnost <xref:System.Drawing.Drawing2D.PenAlignment.Center> k určení, že bude pixelů vykreslit zelený perem na hranici obdélník na střed.  
   
      Výsledný obdélníku na následujícím obrázku:
   
@@ -48,7 +48,7 @@ Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako j
   
 ### <a name="to-create-an-inset-pen"></a>Vytvoření inset pera  
   
--   Změna zarovnání zelené pera tak, že upravíte třetí příkaz v předchozím příkladu kódu následujícím způsobem:  
+- Změna zarovnání zelené pera tak, že upravíte třetí příkaz v předchozím příkladu kódu následujícím způsobem:  
   
      [!code-csharp[System.Drawing.UsingAPen#43](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#43)]
      [!code-vb[System.Drawing.UsingAPen#43](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#43)]  

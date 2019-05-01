@@ -3,11 +3,11 @@ title: Zpřístupnění informací
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
 ms.openlocfilehash: b42faeb4043302e5e70379cc4e1de3cb8bd96af4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972598"
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, jaké informace jsou odhalení a určuje, zda je možné uživatele se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a způsoby zmírnění rizik pro každý.  
@@ -32,16 +32,16 @@ Zpřístupnění informací umožňuje útočníkovi získat cenné informace o 
   
  Zmírnění rizik, patří:  
   
--   Odkazy na služby, jsou považovány za důvěryhodné. Je třeba dbát pokaždé, když se přenos odkaz instance služby k zajištění, že nebylo manipulováno.  
+- Odkazy na služby, jsou považovány za důvěryhodné. Je třeba dbát pokaždé, když se přenos odkaz instance služby k zajištění, že nebylo manipulováno.  
   
--   Některé aplikace mohou představovat uživatelské prostředí, která umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v odkazu a důvěryhodnost data služby ověřené vzdáleným hostitelem. WCF poskytuje body rozšiřitelnosti pro taková zařízení, ale uživatel je musí implementovat.  
+- Některé aplikace mohou představovat uživatelské prostředí, která umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v odkazu a důvěryhodnost data služby ověřené vzdáleným hostitelem. WCF poskytuje body rozšiřitelnosti pro taková zařízení, ale uživatel je musí implementovat.  
   
 ## <a name="ntlm"></a>NTLM  
  Ve výchozím nastavení v prostředí domény Windows, Windows ověřování používá protokol Kerberos k ověřování a autorizaci uživatelů. Pokud z nějakého důvodu nelze použít protokol Kerberos, NT LAN Manager (NTLM) se používá jako záložní. Toto chování lze zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`. Problémy, které je potřeba při povolení protokolu NTLM patří:  
   
--   NTLM zpřístupňuje klientské uživatelské jméno. Pokud uživatelské jméno musí být důvěrný, nastavte `AllowNTLM` vlastnost pro vazbu k `false`.  
+- NTLM zpřístupňuje klientské uživatelské jméno. Pokud uživatelské jméno musí být důvěrný, nastavte `AllowNTLM` vlastnost pro vazbu k `false`.  
   
--   NTLM neposkytuje ověřování serveru. Klient nemůže proto ujistěte se, že při použití jako ověřovací protokol NTLM, to je nekomunikují s požadovanou službu.  
+- NTLM neposkytuje ověřování serveru. Klient nemůže proto ujistěte se, že při použití jako ověřovací protokol NTLM, to je nekomunikují s požadovanou službu.  
   
 ### <a name="specifying-client-credentials-or-invalid-identity-forces-ntlm-usage"></a>Zadání přihlašovacích údajů klienta nebo neplatná identita vynutí používání protokolu NTLM  
  Při vytváření klienta, když zadáváte přihlašovací údaje klienta bez názvu domény nebo určení identity serveru je neplatný, způsobí, že protokolu NTLM namísto protokolu Kerberos použita (Pokud `AlllowNtlm` je nastavena na `true`). Protože protokol NTLM neprovádí ověřování serveru, může být odhalena potenciálně informace.  

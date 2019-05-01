@@ -4,12 +4,12 @@ description: Služba Azure functions poskytuje funkce bez serveru v různých ja
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 2d8729276a5797bd8b89c39d8fb03c6f20646ea0
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.openlocfilehash: 4febcc01eebf3efce3fc1eb42e19c2ec6c0baa52
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145160"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807895"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
@@ -25,7 +25,7 @@ Další informace najdete v tématu [dokumentaci ke službě Azure Functions](ht
 
 Existují dvě verze modulu runtime Azure Functions: 1.x a 2.x. Verzi 1.x je všeobecně dostupná (GA). Podporuje vývoj aplikací pro .NET z portálu nebo počítače Windows a používá rozhraní .NET Framework. 1.x podporuje C#, JavaScript, a F#, experimentální podporu pro Python, PHP, TypeScript, Batch, Bash a PowerShell.
 
-Verze 2.x je ve verzi preview. Využívá rozhraní .NET Core a podporuje vývoj napříč platformami pro Windows, macOS a počítače s Linuxem. 2.x přidává prvotřídní podporu pro Javu, ale zatím nepodporuje přímo některý z následujících experimentálních jazyků. Verze 2.x používá nový model rozšiřitelnosti vazbu, která umožňuje rozšíření třetích stran na platformu, nezávislé správy verzí vazby, a vylepšené prostředí pro spuštění.
+[Verze 2.x je stejně všeobecně dostupná nyní](https://azure.microsoft.com/blog/introducing-azure-functions-2-0/). Využívá rozhraní .NET Core a podporuje vývoj napříč platformami pro Windows, macOS a počítače s Linuxem. 2.x přidává prvotřídní podporu pro Javu, ale zatím nepodporuje přímo některý z následujících experimentálních jazyků. Verze 2.x používá nový model rozšiřitelnosti vazbu, která umožňuje rozšíření třetích stran na platformu, nezávislé správy verzí vazby, a vylepšené prostředí pro spuštění.
 
 > **Je známý problém s 1.x [podpory přesměrování vazby](https://github.com/Azure/azure-functions-host/issues/992).** Tento problém je specifický pro vývoj na platformě .NET. Projekty se závislostmi na knihovny, které jsou jiné verzi z knihovny zahrnuté v modulu runtime se to týká. Funkce tým zavázal vidět konkrétní pokrok na příslušný problém. Tým bude zabývat přesměrování vazby v 2.x předtím, než se ukládá do všeobecné dostupnosti. Příkaz oficiální team s návrhy jejich oprav a alternativní řešení je k dispozici zde: [Sestavení řešení ve službě Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).
 
@@ -37,9 +37,9 @@ Jsou podporovány následující jazyky buď obecně dostupná (GA), ve verzi pr
 
 |Jazyk      |1.x         |2.x      |
 |--------------|------------|---------|
-|**C#**        |VERZE GA          |Náhled  |
-|**JavaScript**|VERZE GA          |Náhled  |
-|**F#**        |VERZE GA          |         |
+|**C#**        |GA          |Náhled  |
+|**JavaScript**|GA          |Náhled  |
+|**F#**        |GA          |         |
 |**Java**      |            |Náhled  |
 |**Python**    |Experimentální|         |
 |**PHP**       |Experimentální|         |

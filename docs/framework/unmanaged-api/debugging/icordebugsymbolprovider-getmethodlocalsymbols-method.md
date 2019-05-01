@@ -5,11 +5,11 @@ ms.assetid: 8b989e38-e779-49d1-9e90-f1f920484b08
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 99f76bd19ef274c3d4207fdd071914b736314a3a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61953319"
 ---
 # <a name="icordebugsymbolprovidergetmethodlocalsymbols-method"></a>ICorDebugSymbolProvider::GetMethodLocalSymbols – metoda
 Získá místní symboly metody uvedené relativní virtuální adresu (RVA) této metody.  

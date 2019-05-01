@@ -8,11 +8,11 @@ helpviewer_keywords:
 - directories [Visual Basic], copying
 ms.assetid: 2a370bd7-10ba-4219-afc4-4519d031eb6c
 ms.openlocfilehash: e45de705eb25d58857239cc549125c524765aaa5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61960079"
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>Postupy: Zkopírování adresáře do jiného adresáře v jazyce Visual Basic
 Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu pro zkopírování adresáře do jiného adresáře. Tato metoda zkopíruje obsah do adresáře, stejně jako adresář samotný. Pokud cílový adresář neexistuje, vytvoří se. Pokud v cílovém umístění existuje adresář se stejným názvem a `overwrite` je nastavena na `False`, sloučí obsah dva adresáře. Při operaci můžete zadat nový název pro adresář.  
@@ -21,7 +21,7 @@ Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu
   
 ### <a name="to-copy-a-directory-to-another-directory"></a>Pro zkopírování adresáře do jiného adresáře  
   
--   Použití `CopyDirectory` metoda zadání zdrojové a cílové názvy adresářů. V následujícím příkladu se zkopíruje adresář s názvem `TestDirectory1` do `TestDirectory2`, že přepíšete existující soubory.  
+- Použití `CopyDirectory` metoda zadání zdrojové a cílové názvy adresářů. V následujícím příkladu se zkopíruje adresář s názvem `TestDirectory1` do `TestDirectory2`, že přepíšete existující soubory.  
   
      [!code-vb[VbVbcnMyFileSystem#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#16)]  
   
@@ -30,35 +30,35 @@ Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Nový název adresáře obsahuje dvojtečku (:) nebo lomítka (\ nebo /) (<xref:System.ArgumentException>).  
+- Nový název adresáře obsahuje dvojtečku (:) nebo lomítka (\ nebo /) (<xref:System.ArgumentException>).  
   
--   Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
   
--   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `destinationDirectoryName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>)  
+- `destinationDirectoryName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>)  
   
--   Zdrojový adresář neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
+- Zdrojový adresář neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
--   Zdrojový adresář je kořenový adresář (<xref:System.IO.IOException>).  
+- Zdrojový adresář je kořenový adresář (<xref:System.IO.IOException>).  
   
--   Kombinované cesta odkazuje na existující soubor (<xref:System.IO.IOException>).  
+- Kombinované cesta odkazuje na existující soubor (<xref:System.IO.IOException>).  
   
--   Cesta ke zdroji a cílová cesta jsou stejné (<xref:System.IO.IOException>).  
+- Cesta ke zdroji a cílová cesta jsou stejné (<xref:System.IO.IOException>).  
   
--   `ShowUI` je nastavena na `UIOption.AllDialogs` a uživatel operaci zruší nebo nelze zkopírovat jeden nebo více souborů v adresáři (<xref:System.OperationCanceledException>).  
+- `ShowUI` je nastavena na `UIOption.AllDialogs` a uživatel operaci zruší nebo nelze zkopírovat jeden nebo více souborů v adresáři (<xref:System.OperationCanceledException>).  
   
--   Operace je cyklická (<xref:System.InvalidOperationException>).  
+- Operace je cyklická (<xref:System.InvalidOperationException>).  
   
--   Cesta obsahuje dvojtečku (:) (<xref:System.NotSupportedException>).  
+- Cesta obsahuje dvojtečku (:) (<xref:System.NotSupportedException>).  
   
--   Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
+- Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
   
--   Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
   
--   Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
--   Cílový soubor existuje, ale není přístupná (<xref:System.UnauthorizedAccessException>).  
+- Cílový soubor existuje, ale není přístupná (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -25,11 +25,11 @@ helpviewer_keywords:
 - lifetime events of objects [WPF]
 ms.assetid: face6fc7-465b-4502-bfe5-e88d2e729a78
 ms.openlocfilehash: 8ecc3f716061dfd08ac95652d1a9d8e06e26d949
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59175788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053220"
 ---
 # <a name="object-lifetime-events"></a>Události doby života objektu
 Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události, které místo fází v doba života objektu vytvoření, použití a zničení.  
@@ -66,11 +66,11 @@ Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includ
 ## <a name="lifetime-events-application-model-elements"></a>Prvky modelu aplikace události životního cyklu  
  Stavíme na běžné události doby života pro prvky jsou prvky modelu následující aplikace: <xref:System.Windows.Application>, <xref:System.Windows.Window>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>. Toto rozšíření běžné události doby života s další události, které jsou relevantní pro jejich konkrétní účel. Ty jsou podrobně popsány v následujících umístěních:  
   
--   <xref:System.Windows.Application>: [Přehled správy aplikací](../app-development/application-management-overview.md).  
+- <xref:System.Windows.Application>: [Přehled správy aplikací](../app-development/application-management-overview.md).  
   
--   <xref:System.Windows.Window>: [Přehled WPF Windows](../app-development/wpf-windows-overview.md).  
+- <xref:System.Windows.Window>: [Přehled WPF Windows](../app-development/wpf-windows-overview.md).  
   
--   <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>: [Přehled navigace](../app-development/navigation-overview.md).  
+- <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>: [Přehled navigace](../app-development/navigation-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 

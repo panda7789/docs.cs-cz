@@ -9,11 +9,11 @@ helpviewer_keywords:
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
 ms.openlocfilehash: 530f6cb8fbe80df3ad374f8ad0e4836be82830a9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054325"
 ---
 # <a name="animation-overview"></a>Přehled animace
 <a name="introduction"></a>
@@ -27,13 +27,13 @@ ms.locfileid: "59337731"
   
  Animace v počítači je podobná. Například program, který umožňuje kreslení obdélníku fade mimo zobrazení může vypadat takto.  
   
--   Program vytvoří časovač.  
+- Program vytvoří časovač.  
   
--   Program kontroluje časovače v nastavených intervalech, které chcete zobrazit, kolik času uplynulo.  
+- Program kontroluje časovače v nastavených intervalech, které chcete zobrazit, kolik času uplynulo.  
   
--   Pokaždé, když program kontroluje časovač, vypočítá aktuální hodnotu neprůhlednosti obdélníku závislosti na tom, kolik času uplynulo.  
+- Pokaždé, když program kontroluje časovač, vypočítá aktuální hodnotu neprůhlednosti obdélníku závislosti na tom, kolik času uplynulo.  
   
--   Program pak aktualizuje s použitím nové hodnoty obdélníku a překreslí ho.  
+- Program pak aktualizuje s použitím nové hodnoty obdélníku a překreslí ho.  
   
  Před verzí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] vývojáři měli k vytvoření a správě vlastních systémů časování nebo speciální vlastní knihovny. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje systém efektivní časování, který je zveřejněný prostřednictvím spravovaného kódu a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a, který se úzce integruje do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní framework. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace usnadňuje animace ovládacích prvků a jiných grafických objektů.  
   
@@ -45,11 +45,11 @@ ms.locfileid: "59337731"
   
  Pro vlastnosti a možnosti animace musí splňovat tři následující požadavky:  
   
--   Musí být vlastnost závislosti.  
+- Musí být vlastnost závislosti.  
   
--   Musíte ho zařadit do třídy, která dědí z <xref:System.Windows.DependencyObject> a implementuje <xref:System.Windows.Media.Animation.IAnimatable> rozhraní.  
+- Musíte ho zařadit do třídy, která dědí z <xref:System.Windows.DependencyObject> a implementuje <xref:System.Windows.Media.Animation.IAnimatable> rozhraní.  
   
--   K dispozici musí být typ kompatibilní animace. (Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neposkytne, můžete vytvořit svoje vlastní. Zobrazit [Přehled vlastních animací](custom-animations-overview.md).)  
+- K dispozici musí být typ kompatibilní animace. (Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neposkytne, můžete vytvořit svoje vlastní. Zobrazit [Přehled vlastních animací](custom-animations-overview.md).)  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho objektů, které mají <xref:System.Windows.Media.Animation.IAnimatable> vlastnosti. Ovládací prvky jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TabControl>a také <xref:System.Windows.Controls.Panel> a <xref:System.Windows.Shapes.Shape> objekty dědit z <xref:System.Windows.DependencyObject>. Většina jejich vlastnosti jsou vlastnosti závislosti.  
   
@@ -183,27 +183,27 @@ ms.locfileid: "59337731"
 ## <a name="animation-types"></a>Typy animací  
  Protože animace hodnoty vlastností, existují jiné typy pro typy jiné vlastnosti. Animovat vlastnost, která přijímá <xref:System.Double>, například <xref:System.Windows.FrameworkElement.Width%2A> vlastnost elementu, použijte animaci, která vytváří <xref:System.Double> hodnoty. Animovat vlastnost, která přijímá <xref:System.Windows.Point>, použijte animaci, která vytváří <xref:System.Windows.Point> hodnoty a tak dále. Kvůli řadě různých typech vlastností se několik tříd animace v <xref:System.Windows.Media.Animation> oboru názvů. Naštěstí se řídí přísné zásady vytváření názvů, které usnadňuje jejich rozlišení:  
   
--   \<*Typ*> animace  
+- \<*Typ*> animace  
   
      Známé jako "Od/Komu/kým" nebo "základní" animace, tyto animace mezi počáteční a cílové hodnoty nebo přidáním hodnoty posunu na počáteční hodnotu.  
   
-    -   Můžete zadat výchozí hodnotu, nastavte vlastnost From animace.  
+    - Můžete zadat výchozí hodnotu, nastavte vlastnost From animace.  
   
-    -   Chcete-li zadejte koncovou hodnotu, nastavte vlastnost na animace.  
+    - Chcete-li zadejte koncovou hodnotu, nastavte vlastnost na animace.  
   
-    -   K určení hodnoty posunu, nastavte vlastnost By animace.  
+    - K určení hodnoty posunu, nastavte vlastnost By animace.  
   
      Příklady v tomto přehledu použít tyto animace, protože jsou nejjednodušší na používání. Animace od/Komu/kým jsou popsány podrobně v přehledu From/To/By animace.  
   
--   \<*Type*>AnimationUsingKeyFrames  
+- \<*Type*>AnimationUsingKeyFrames  
   
      Animace klíčových snímků jsou výkonnější než animace od/Komu/kým, protože můžete zadat libovolný počet cílových hodnot a dokonce i řídit metodu interpolace. Některé typy lze animovat pouze s použitím animací klíčových snímků. Animace klíčových snímků jsou popsány podrobně [přehled animací klíčových snímků](key-frame-animations-overview.md).  
   
--   \<*Type*>AnimationUsingPath  
+- \<*Type*>AnimationUsingPath  
   
      Animace cesty umožňují použití geometrické cesty za účelem vytvoření animovaný hodnot.  
   
--   \<*Typ*> AnimationBase  
+- \<*Typ*> AnimationBase  
   
      Abstraktní třídu, která animuje při jeho, implementaci \< *typ*> hodnota. Tato třída slouží jako základní třída pro \< *typ*> animace a \< *typ*> AnimationUsingKeyFrames třídy. Budete muset řešit přímo tyto třídy pouze v případě, že chcete vytvořit vlastní animace. Jinak použijte \< *typ*> animaci nebo klíčového snímku\<*typ*> animace.  
   
@@ -216,7 +216,7 @@ ms.locfileid: "59337731"
 |<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|  
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animace <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Controls.DockPanel> nebo <xref:System.Windows.FrameworkElement.Height%2A> z <xref:System.Windows.Controls.Button>.|  
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animace <xref:System.Windows.Media.EllipseGeometry.Center%2A> pozici <xref:System.Windows.Media.EllipseGeometry>.|  
-|<xref:System.String>|Žádný|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> z <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> z <xref:System.Windows.Controls.Button>.|  
+|<xref:System.String>|Žádné|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> z <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> z <xref:System.Windows.Controls.Button>.|  
   
 <a name="animationsaretimelines"></a>   
 ### <a name="animations-are-timelines"></a>Jsou časové osy animací  
@@ -264,9 +264,9 @@ ms.locfileid: "59337731"
   
  Přiřazuje se název, který má <xref:System.Windows.FrameworkElement> se liší od přiřazení název, který má <xref:System.Windows.Freezable> objektu. Většina ovládací prvky a panelů jsou prvky rozhraní; Většina čistě grafických objektů, jako jsou štětce, transformace a geometrie, jsou však zablokovatelných objektů. Pokud si nejste jisti, zda je typ <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.Freezable>, odkazovat **hierarchie dědičnosti** část její referenční dokumentaci.  
   
--   Chcete-li <xref:System.Windows.FrameworkElement> cíl animace musíte pojmenovat je tak, že nastavíte její <xref:System.Windows.FrameworkElement.Name%2A> vlastnost. V kódu, musíte taky použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci názvu elementu na stránce, do které patří.  
+- Chcete-li <xref:System.Windows.FrameworkElement> cíl animace musíte pojmenovat je tak, že nastavíte její <xref:System.Windows.FrameworkElement.Name%2A> vlastnost. V kódu, musíte taky použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci názvu elementu na stránce, do které patří.  
   
--   Chcete-li <xref:System.Windows.Freezable> cíl animace v objektu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít [x: Name – direktiva](../../xaml-services/x-name-directive.md) přiřadit název. V kódu, vám stačí použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci objektu se stránkou, do které patří.  
+- Chcete-li <xref:System.Windows.Freezable> cíl animace v objektu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít [x: Name – direktiva](../../xaml-services/x-name-directive.md) přiřadit název. V kódu, vám stačí použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci objektu se stránkou, do které patří.  
   
  Následující části poskytují příklad názvy elementu v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Podrobnější informace o pojmenování a zacílení, najdete v článku [přehled scénářů](storyboards-overview.md).  
   
@@ -318,11 +318,11 @@ ms.locfileid: "59337731"
 ## <a name="animation-samples"></a>Ukázky animace  
  Následující ukázky vám můžou pomoct vám začít přidání animace do vašich aplikací.  
   
--   [Od, Komu a kdo ukázkové cílové hodnoty animace](https://go.microsoft.com/fwlink/?LinkID=159988)  
+- [Od, Komu a kdo ukázkové cílové hodnoty animace](https://go.microsoft.com/fwlink/?LinkID=159988)  
   
      Ukazuje různé od/Komu/kým nastavení.  
   
--   [Ukázka chování časování animace](https://go.microsoft.com/fwlink/?LinkID=159970)  
+- [Ukázka chování časování animace](https://go.microsoft.com/fwlink/?LinkID=159970)  
   
      Ukazuje různé způsoby, jak můžete řídit chování časování animace. Tento příklad také ukazuje jak k datům vazby cílové hodnoty animace.  
   

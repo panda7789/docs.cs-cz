@@ -3,11 +3,11 @@ title: Publikování kocových bodů metadat
 ms.date: 03/30/2017
 ms.assetid: 29cd8a60-dfb7-460c-bf5a-c2b31b782671
 ms.openlocfilehash: 143a46ce18a0d9dee89bbbffac9be9a467e951df
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61955152"
 ---
 # <a name="publishing-metadata-endpoints"></a>Publikování kocových bodů metadat
 Služby Windows Communication Foundation (WCF) měla být zveřejněna metadata a publikovat jednu nebo víc koncových bodů metadat. Publikování metadat služby zpřístupňuje metadata použitím standardizovaných protokolů, jako jsou žádosti o WS-MetadataExchange (MEX) a protokolu HTTP/GET. Koncové body metadat se podobně jako ostatní koncové body služby mají adresa, vazba a kontrakt a je možné je přidat k hostiteli služby prostřednictvím konfigurace nebo v kódu. Pokud chcete povolit publikování kocových bodů metadat, je nutné přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> služeb chování ve službě.  

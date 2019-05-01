@@ -14,11 +14,11 @@ ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7f180e459764d6e8e4484072218f01c8bab8a3b5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973456"
 ---
 # <a name="numerics-in-net"></a>Číslovky v technologii .NET
 
@@ -28,7 +28,7 @@ ms.locfileid: "50191145"
 
 .NET podporuje jak znaménkem a bez znaménka 8, 16, 32 a 64bitové celočíselné typy, které jsou uvedeny v následující tabulce:
   
-|Typ|Signed/Unsigned|Velikost (v bajtech)|Minimální hodnota|Maximální hodnota|  
+|Type|Signed/Unsigned|Velikost (v bajtech)|Minimální hodnota|Maximální hodnota|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
 |<xref:System.Byte?displayProperty=nameWithType>|bez znaménka|1|0|255|  
 |<xref:System.Int16?displayProperty=nameWithType>|podepsané|2|-32,768|32,767|  
@@ -54,7 +54,7 @@ Jednotlivé bitů v celočíselnou hodnotou. můžete také pracovat s použití
 
 .NET obsahuje tři primitivní typy s plovoucí čárkou, které jsou uvedeny v následující tabulce:
   
-|Typ|Velikost (v bajtech)|Přibližný rozsah|Přesnost|  
+|Type|Velikost (v bajtech)|Přibližný rozsah|Přesnost|  
 |----------|--------|---------------------|--------------------|  
 |<xref:System.Single?displayProperty=nameWithType>|4|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|  
 |<xref:System.Double?displayProperty=nameWithType>|8|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|~ 15-17 číslic|  

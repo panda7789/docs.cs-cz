@@ -10,11 +10,11 @@ helpviewer_keywords:
 - loading XML data [WPF]
 ms.assetid: 6eea9f4e-45ce-413b-a266-f08238737bf2
 ms.openlocfilehash: 4db87c5f266a9eed136f0651f48d11720abede65
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053857"
 ---
 # <a name="xaml-loading-and-dependency-properties"></a>Vlastnost závislostí a načítání XAML
 Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je ze své podstaty používající vlastnost závislosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Procesor při načítání binární soubor používá metody vlastností systému pro vlastnosti závislosti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a při zpracovávání atributů, které jsou vlastnosti závislosti. To efektivně obchází vlastnost obálky. Pokud implementujete vlastní vlastnosti závislosti, musí odpovídat tomuto chování a by měl předejde jakýkoli jiný kód v vaši Obálka vlastnosti než metody vlastností systému <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>.  

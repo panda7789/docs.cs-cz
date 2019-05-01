@@ -7,11 +7,11 @@ helpviewer_keywords:
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
 ms.openlocfilehash: 74e5908dfcd42d031464ffccedb530be4a71a3f2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61983356"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -27,13 +27,13 @@ ms.locfileid: "59125195"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci modelu řízení několika zobrazení, mějte na paměti následující pokyny a konvence:  
   
--   <xref:System.Windows.Automation.Provider.IMultipleViewProvider> musí být provedeny také na kontejner, který spravuje aktuální zobrazení, pokud se liší od ovládací prvek, který poskytuje aktuální zobrazení. Průzkumník Windows například obsahuje ovládací prvek seznamu pro aktuální obsah složky, zatímco zobrazení pro ovládací prvek spravuje se z aplikace Průzkumník Windows.  
+- <xref:System.Windows.Automation.Provider.IMultipleViewProvider> musí být provedeny také na kontejner, který spravuje aktuální zobrazení, pokud se liší od ovládací prvek, který poskytuje aktuální zobrazení. Průzkumník Windows například obsahuje ovládací prvek seznamu pro aktuální obsah složky, zatímco zobrazení pro ovládací prvek spravuje se z aplikace Průzkumník Windows.  
   
--   Ovládací prvek, který je možné seřadit její obsah se nepovažuje za pro podporu více zobrazení.  
+- Ovládací prvek, který je možné seřadit její obsah se nepovažuje za pro podporu více zobrazení.  
   
--   Kolekce prvků View musí být identické napříč instancemi.  
+- Kolekce prvků View musí být identické napříč instancemi.  
   
--   Zobrazit názvy musí být vhodný pro použití v textu na řeč, Brailleových a dalších běžně čitelné aplikací.  
+- Zobrazit názvy musí být vhodný pro použití v textu na řeč, Brailleových a dalších běžně čitelné aplikací.  
   
 <a name="Required_Members_for_IMultipleViewProvider"></a>   
 ## <a name="required-members-for-imultipleviewprovider"></a>Požadované členy pro IMultipleViewProvider  
@@ -41,8 +41,8 @@ ms.locfileid: "59125195"
   
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Vlastnost|Žádný|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Metoda|Žádné|  
   

@@ -2,12 +2,12 @@
 title: Kurzy k jazyku C#
 description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
 ms.date: 10/25/2018
-ms.openlocfilehash: a82bd8e5ff28e0e006025de96f7da66505c0aff7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 72f159311397a0f4891709c16a4a6ecc937b5952
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59214439"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773903"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 
@@ -50,6 +50,7 @@ Tento kurz předpokládá, že dokončení lekce uvedené výše.
 * [Typy s možnou hodnotou Null odkazů](nullable-reference-types.md): Popisuje způsob použití typů s povolenou hodnotou Null odkazu k vyjádření vašich představ pro odkazy s hodnotou null.
 * [Aktualizovat projekt pro použití s možnou hodnotou NULL referenční typy](upgrade-to-nullable-references.md): ukazuje techniky pro upgrade existující projekt, aby použití typů s povolenou hodnotou Null odkazu.
 * [Rozšíření možností dat pomocí porovnávání vzorů](pattern-matching.md): ukazuje, jak použít porovnávání vzorů pro rozšíření typů nad rámec svých základních funkcí.
+* [Práce s data sekvencí pomocí indexů a rozsahy adres](ranges-indexes.md): Ukazuje novou pohodlné syntaxe pro přístup k jednotlivé prvky nebo rozsahy sekvenční datového kontejneru.
 
 ## <a name="general-tutorials"></a>Obecné kurzy
 

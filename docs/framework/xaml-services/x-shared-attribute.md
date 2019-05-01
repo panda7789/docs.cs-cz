@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Shared attribute in XAML [XAML Services]
 ms.assetid: c8cff434-2785-405f-9f95-16deb34c9e64
 ms.openlocfilehash: da35f209b632bdf9e4ab2298239a505df69d6048
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982628"
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
 Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, takže požadavky s atributy prostředku vytvoření nové instance pro každý požadavek místo sdílení stejné instanci pro všechny požadavky.  
@@ -45,9 +45,9 @@ Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, tak
   
  V WPF `x:Shared` platí pouze za následujících podmínek:  
   
--   <xref:System.Windows.ResourceDictionary> , Který obsahuje položky s `x:Shared` musí být zkompilovány. <xref:System.Windows.ResourceDictionary> Nemůže být v rámci volný XAML nebo použít motivy.  
+- <xref:System.Windows.ResourceDictionary> , Který obsahuje položky s `x:Shared` musí být zkompilovány. <xref:System.Windows.ResourceDictionary> Nemůže být v rámci volný XAML nebo použít motivy.  
   
--   <xref:System.Windows.ResourceDictionary> , Který obsahuje položky nesmí být vnořen v rámci jiného <xref:System.Windows.ResourceDictionary>. Například nemůžete použít `x:Shared` pro položky v <xref:System.Windows.ResourceDictionary> , který je v rámci <xref:System.Windows.Style> , který je již <xref:System.Windows.ResourceDictionary> položky.  
+- <xref:System.Windows.ResourceDictionary> , Který obsahuje položky nesmí být vnořen v rámci jiného <xref:System.Windows.ResourceDictionary>. Například nemůžete použít `x:Shared` pro položky v <xref:System.Windows.ResourceDictionary> , který je v rámci <xref:System.Windows.Style> , který je již <xref:System.Windows.ResourceDictionary> položky.  
   
 ## <a name="see-also"></a>Viz také:
 

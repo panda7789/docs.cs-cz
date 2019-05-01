@@ -3,24 +3,24 @@ title: Chování zabezpečení ve WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
 ms.openlocfilehash: d1bffef127fe295aa41b1287da1c7104464ae0bc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59180060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990909"
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 Ve Windows Communication Foundation (WCF), chování změnit chování za běhu na úrovni služby, nebo na úrovni koncového bodu. (Další informace o chování obecné naleznete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* povolit kontrolu nad přihlašovacími údaji, ověřování, autorizace a auditování protokoly. Můžete použít chování programování nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcemi zabezpečení:  
   
--   [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
+- [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
--   [\<třídu clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).  
+- [\<třídu clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).  
   
--   [\<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md).  
+- [\<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md).  
   
--   [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md).  
+- [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md).  
   
--   [\<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md), který také umožňuje určit zabezpečení koncového bodu, který klienti mají přístup k pro metadata.  
+- [\<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md), který také umožňuje určit zabezpečení koncového bodu, který klienti mají přístup k pro metadata.  
   
 ## <a name="setting-credentials-with-behaviors"></a>Nastavení přihlašovacích údajů s chováním  
  Použití [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) a [ \<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) k nastavení hodnot přihlašovacích údajů pro službu nebo klienta. Základní vazby konfigurace určuje, zda pověření musí být nastavena. Například, pokud je režim zabezpečení nastavený na `None`, klientů a služeb nejsou navzájem ověří a vyžadují žádné přihlašovací údaje libovolného typu.  
@@ -78,9 +78,9 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
   
  Byste měli použít [ \<allowedAudienceUris >](../../../../docs/framework/configure-apps/file-schema/wcf/allowedaudienceuris.md) kolekce ve federovaných aplikací, které využívá *služby tokenů zabezpečení* (STS), který vystavuje `SamlSecurityToken` tokeny zabezpečení. Když služba tokenů zabezpečení vydá token zabezpečení, můžete určit identifikátor URI webové služby, pro které je určen token zabezpečení tak, že přidáte `SamlAudienceRestrictionCondition` do tokenu zabezpečení. Umožňuje `SamlSecurityTokenAuthenticator` pro příjemce webovou službu, chcete-li ověřit, že token vydaný zabezpečení je určený pro tuto webovou službu tak, že určíte, že tato kontrola se stane při následujícím způsobem:  
   
--   Nastavte `audienceUriMode` atribut [ \<issuedTokenAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) k `Always` nebo `BearerKeyOnly`.  
+- Nastavte `audienceUriMode` atribut [ \<issuedTokenAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) k `Always` nebo `BearerKeyOnly`.  
   
--   Zadejte sadu platné identifikátory URI, tak, že přidáte identifikátory URI do této kolekce. Chcete-li to provést, vložte [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md) pro každého identifikátoru URI  
+- Zadejte sadu platné identifikátory URI, tak, že přidáte identifikátory URI do této kolekce. Chcete-li to provést, vložte [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md) pro každého identifikátoru URI  
   
  Další informace naleznete v tématu <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
   

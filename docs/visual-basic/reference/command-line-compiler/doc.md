@@ -7,11 +7,11 @@ helpviewer_keywords:
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 ms.openlocfilehash: 13005eb55b430f6ff9b3a6408582a02e53838742
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61969205"
 ---
 # <a name="-doc"></a>-doc
 Zpracuje komentáře dokumentace do souboru XML.  
@@ -36,9 +36,9 @@ Zpracuje komentáře dokumentace do souboru XML.
   
  V souborech zdrojového kódu může dokumentační komentáře předcházet následující definice:  
   
--   Uživatelem definované typy, jako [třídy](../../../visual-basic/language-reference/statements/class-statement.md) nebo [rozhraní](../../../visual-basic/language-reference/statements/interface-statement.md)  
+- Uživatelem definované typy, jako [třídy](../../../visual-basic/language-reference/statements/class-statement.md) nebo [rozhraní](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
--   Členy, jako je například pole, [události](../../../visual-basic/language-reference/statements/event-statement.md), [vlastnost](../../../visual-basic/language-reference/statements/property-statement.md), [funkce](../../../visual-basic/language-reference/statements/function-statement.md), nebo [podprogram](../../../visual-basic/language-reference/statements/sub-statement.md).  
+- Členy, jako je například pole, [události](../../../visual-basic/language-reference/statements/event-statement.md), [vlastnost](../../../visual-basic/language-reference/statements/property-statement.md), [funkce](../../../visual-basic/language-reference/statements/function-statement.md), nebo [podprogram](../../../visual-basic/language-reference/statements/sub-statement.md).  
   
  Pomocí sady Visual Studio vygenerovaný soubor XML [IntelliSense](/visualstudio/ide/using-intellisense) funkcí, ponechte název souboru XML být stejný jako sestavení, které chcete podporovat. Ujistěte se, že soubor XML ve stejném adresáři jako sestavení tak, aby při sestavení se odkazuje v projektu sady Visual Studio, je také najít soubor .xml. Soubory dokumentace XML nejsou nutné pro technologii IntelliSense pro kód v rámci projektu nebo v rámci projektů odkazuje projekt.  
   

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - XAML [XAML Services], type converter services how-to
 ms.assetid: b4dad00f-03da-4579-a4e9-d8d72d2ccbce
 ms.openlocfilehash: 850e266aed6fc2d69722ba6dac3baa3e115678a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61953969"
 ---
 # <a name="service-contexts-available-to-type-converters-and-markup-extensions"></a>Kontexty služby dostupné pro převaděče typů a rozšíření značek
 Autoři typy, které podporují použití rozšíření typ převaděče a značky musí mít často kontextové informace o tom, kde je umístěn v kódu nebo v kolem objektu struktura využití. Informace může být nutné tak, že je správně vytvořena instance zadaného objektu, nebo tak, aby odkazy na objekty existujících objektů v grafu objektů lze provést. Při použití rozhraní .NET Framework XAML Services, kontext, který může být vyžadováno vystavena jako řadu rozhraní služeb. Kód podpory rozšíření typ pro převaděč nebo značky můžete dotazovat služby pomocí kontextu poskytovatele služby, který je k dispozici a předaných z <xref:System.Xaml.XamlObjectWriter> nebo souvisejících typů. Kontext schématu XAML je k dispozici přímo prostřednictvím jedné konkrétní služby. Toto téma popisuje, jak získat přístup k kontexty služby z implementace převodníku hodnotu a uvádí obvykle dostupných služeb a jejich rolí.  

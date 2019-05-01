@@ -11,11 +11,11 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], filling shapes with
 ms.assetid: 6d407891-6e5c-4495-a546-3da5604e9fb8
 ms.openlocfilehash: ad7b8737a63028e533cadfa6db56b063eb943f22
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59221535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954898"
 ---
 # <a name="how-to-tile-a-shape-with-an-image"></a>Postupy: Dlaždicové vyplnění obrazce pomocí obrázku
 Stejně jako dlaždice mohou být umístěny vedle sebe k pokrytí a podlaží, obdélníkové imagí umístěny vedle sebe na hodnotu fill (dlaždice) tvaru. Na dlaždici vnitřní část obrazce pomocí textury štětce. Při sestavování <xref:System.Drawing.TextureBrush> objekt, jeden z argumentů předat konstruktoru je <xref:System.Drawing.Image> objektu. Když Vymalovat vnitřní část obrazce pomocí textury štětce, tvar je vyplněn opakovaného kopírování tohoto obrázku.  
@@ -24,11 +24,11 @@ Stejně jako dlaždice mohou být umístěny vedle sebe k pokrytí a podlaží, 
   
 ### <a name="to-tile-an-image"></a>Na dlaždici bitovou kopii  
   
--   Tento příklad používá na dlaždici 200 x 200 obdélníku na následujícím obrázku 75 × 75.  
+- Tento příklad používá na dlaždici 200 x 200 obdélníku na následujícím obrázku 75 × 75.  
   
  ![Dlaždice 1](./media/tile1.gif "tile1")  
   
--   Následující obrázek znázorňuje, jak je obdélník tiled v obrázku. Všimněte si, že všechny dlaždice mají stejnou orientaci; neexistuje žádné překlopení.  
+- Následující obrázek znázorňuje, jak je obdélník tiled v obrázku. Všimněte si, že všechny dlaždice mají stejnou orientaci; neexistuje žádné překlopení.  
   
  ![Dlaždici 2](./media/tile2.gif "tile2")  
   
@@ -37,7 +37,7 @@ Stejně jako dlaždice mohou být umístěny vedle sebe k pokrytí a podlaží, 
   
 ### <a name="to-flip-an-image-horizontally-while-tiling"></a>Chcete-li Převrátit obrázek vodorovně při dělení do bloků  
   
--   Tento příklad používá stejnou bitovou kopii 75 × 75 tak, aby vyplnil 200 x 200 obdélník. Režim zalamování nastavena na Převrátit obrázek vodorovně. Následující obrázek znázorňuje, jak je obdélník tiled v obrázku. Všimněte si, že při přesunu z jedné dlaždice na další na daném řádku, je obrázek vodorovně obráceně.  
+- Tento příklad používá stejnou bitovou kopii 75 × 75 tak, aby vyplnil 200 x 200 obdélník. Režim zalamování nastavena na Převrátit obrázek vodorovně. Následující obrázek znázorňuje, jak je obdélník tiled v obrázku. Všimněte si, že při přesunu z jedné dlaždice na další na daném řádku, je obrázek vodorovně obráceně.  
   
  ![Dlaždici 3](./media/tile3.gif "tile3")  
   
@@ -46,14 +46,14 @@ Stejně jako dlaždice mohou být umístěny vedle sebe k pokrytí a podlaží, 
   
 ### <a name="to-flip-an-image-vertically-while-tiling"></a>Chcete-li Převrátit obrázek svisle při dělení do bloků  
   
--   Tento příklad používá stejnou bitovou kopii 75 × 75 tak, aby vyplnil 200 x 200 obdélník. Režim zalamování nastavena na Převrátit obrázek svisle.  
+- Tento příklad používá stejnou bitovou kopii 75 × 75 tak, aby vyplnil 200 x 200 obdélník. Režim zalamování nastavena na Převrátit obrázek svisle.  
   
      [!code-csharp[System.Drawing.UsingABrush#33](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#33)]
      [!code-vb[System.Drawing.UsingABrush#33](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#33)]  
   
 ### <a name="to-flip-an-image-horizontally-and-vertically-while-tiling"></a>Chcete-li Převrátit obrázek vodorovně a svisle při dělení do bloků  
   
--   Tento příklad používá stejnou bitovou kopii 75 × 75 na dlaždici 200 x 200 obdélník. Režim zalamování nastavena na Převrátit obrázek vodorovně i svisle. Následující obrázek znázorňuje, jak je obdélník rozložen formou dlaždic imagí. Všimněte si, že při přesunu z jedné dlaždice na další na daném řádku, je obrázek vodorovně překlopení a při přesunu z jedné dlaždice na další v daném sloupci, obrázek svisle obráceně.  
+- Tento příklad používá stejnou bitovou kopii 75 × 75 na dlaždici 200 x 200 obdélník. Režim zalamování nastavena na Převrátit obrázek vodorovně i svisle. Následující obrázek znázorňuje, jak je obdélník rozložen formou dlaždic imagí. Všimněte si, že při přesunu z jedné dlaždice na další na daném řádku, je obrázek vodorovně překlopení a při přesunu z jedné dlaždice na další v daném sloupci, obrázek svisle obráceně.  
   
  ![Dlaždici 5](./media/tile5.gif "tile5")  
   

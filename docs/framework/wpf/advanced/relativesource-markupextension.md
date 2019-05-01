@@ -8,11 +8,11 @@ helpviewer_keywords:
 - XAML [WPF], RelativeSource markup extension
 ms.assetid: 26be4721-49b5-4717-a92e-7d54ad0d3a81
 ms.openlocfilehash: a6a7d615a3a54fbc75bb86b295fdf80433a31dc5
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57476331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053493"
 ---
 # <a name="relativesource-markupextension"></a>RelativeSource MarkupExtension
 

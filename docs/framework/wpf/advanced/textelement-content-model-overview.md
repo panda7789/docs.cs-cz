@@ -10,11 +10,11 @@ helpviewer_keywords:
 - flow content elements [WPF], TextElement content model
 ms.assetid: d0a7791c-b090-438c-812f-b9d009d83ee9
 ms.openlocfilehash: 990642d288481fff8eeef900a86070d54790f151
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981874"
 ---
 # <a name="textelement-content-model-overview"></a>Přehled modelu obsahu TextElement
 Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Paragraph> Třída je typem <xref:System.Windows.Documents.TextElement>. Model obsahu popisuje objekty/prvky mohou být obsaženy v jiné. Tento přehled obsahuje souhrn modelu obsahu použít u objektů odvozené z <xref:System.Windows.Documents.TextElement>. Další informace najdete v tématu [přehled toku dokumentů](flow-document-overview.md).  
@@ -57,11 +57,11 @@ Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Do
 ## <a name="working-with-textelement-content-programmatically"></a>Práce s obsahu TextElement prostřednictvím kódu programu  
  Obsah <xref:System.Windows.Documents.TextElement> tvoří kolekce, a proto Programová práce s obsahem <xref:System.Windows.Documents.TextElement> objekty se provádí ve spolupráci s těchto kolekcí. Existují tři různé kolekce používané <xref:System.Windows.Documents.TextElement> -odvozené třídy:  
   
--   <xref:System.Windows.Documents.InlineCollection>: Představuje kolekci <xref:System.Windows.Documents.Inline> elementy. <xref:System.Windows.Documents.InlineCollection> definuje povolené podřízený obsah <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Span>, a <xref:System.Windows.Controls.TextBlock> elementy.  
+- <xref:System.Windows.Documents.InlineCollection>: Představuje kolekci <xref:System.Windows.Documents.Inline> elementy. <xref:System.Windows.Documents.InlineCollection> definuje povolené podřízený obsah <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Span>, a <xref:System.Windows.Controls.TextBlock> elementy.  
   
--   <xref:System.Windows.Documents.BlockCollection>: Představuje kolekci <xref:System.Windows.Documents.Block> elementy. <xref:System.Windows.Documents.BlockCollection> definuje povolené podřízený obsah <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.ListItem>, <xref:System.Windows.Documents.TableCell>, <xref:System.Windows.Documents.Floater>, a <xref:System.Windows.Documents.Figure> elementy.  
+- <xref:System.Windows.Documents.BlockCollection>: Představuje kolekci <xref:System.Windows.Documents.Block> elementy. <xref:System.Windows.Documents.BlockCollection> definuje povolené podřízený obsah <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.ListItem>, <xref:System.Windows.Documents.TableCell>, <xref:System.Windows.Documents.Floater>, a <xref:System.Windows.Documents.Figure> elementy.  
   
--   <xref:System.Windows.Documents.ListItemCollection>: Element content tok, který představuje určité obsahu položky v seřazená nebo neseřazené <xref:System.Windows.Documents.List>.  
+- <xref:System.Windows.Documents.ListItemCollection>: Element content tok, který představuje určité obsahu položky v seřazená nebo neseřazené <xref:System.Windows.Documents.List>.  
   
  Můžete pracovat s (Přidat nebo odebrat položky) z těchto kolekcí pomocí odpovídajících vlastností **Inlines**, **bloky**, a **položky ListItems**. Následující příklady ukazují, jak manipulovat s obsahem Span pomocí **Inlines** vlastnost.  
   

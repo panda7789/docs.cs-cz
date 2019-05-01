@@ -5,11 +5,11 @@ helpviewer_keywords:
 - defining custom types [XAML Services]
 ms.assetid: c2667cbd-2f46-4a7f-9dfc-53696e35e8e4
 ms.openlocfilehash: be9c0e26574a15279ce89af2c7862abaa8713360
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971948"
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou typy, které nemají závislost na určité rozhraní, jsou některé osvědčené postupy pro XAML, můžete postupovat podle. Pokud budete postupovat podle těchto postupů, můžete zjistit vlastnosti XAML stejného typu a přiřaďte jí vhodné vyjádření v datovém proudu uzlu XAML pomocí typu systému XAML rozhraní .NET Framework XAML Services a jeho XAML čtečky a zapisovače XAML. Toto téma popisuje osvědčené postupy pro definice typu, definice členů a zapisujících CLR typy nebo členy.  
@@ -17,9 +17,9 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 ## <a name="constructor-patterns-and-type-definitions-for-xaml"></a>Zabezpečené vzory konstruktoru a definic typů pro XAML  
  Má být vytvořena jako element objektu v XAML, vlastní třídy musí splňovat následující požadavky:  
   
--   Vlastní třída musí být veřejné a musí zveřejnit výchozí veřejný konstruktor (bez parametrů). (Viz následující části pro poznámky týkající se struktury).  
+- Vlastní třída musí být veřejné a musí zveřejnit výchozí veřejný konstruktor (bez parametrů). (Viz následující části pro poznámky týkající se struktury).  
   
--   Vlastní třída nesmí být vnořená třída. Nadbytečné "tečka" v cestě celé jméno díky dělení obor názvů třídy nejednoznačný a naruší to ostatní funkce XAML jako připojené vlastnosti.  
+- Vlastní třída nesmí být vnořená třída. Nadbytečné "tečka" v cestě celé jméno díky dělení obor názvů třídy nejednoznačný a naruší to ostatní funkce XAML jako připojené vlastnosti.  
   
  Pokud objekt může být vytvořen jako element objektu, vytvořený objekt vyplnit formu všechny vlastnosti, které získat objekt jako jeho základní typ vlastnosti elementu.  
   
@@ -72,9 +72,9 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
   
  `public static object Get` *PropertyName* `(object`  `target` `)`  
   
--   `target` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Může být využit k určení oboru využití připojitelný člen; použití mimo určený rozsah vyvolají výjimky neplatné přetypování, které jsou pak prezentované podle Chyba analýzy XAML. Název parametru `target` není povinné, ale má název `target` konvencí ve většině implementací.  
+- `target` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Může být využit k určení oboru využití připojitelný člen; použití mimo určený rozsah vyvolají výjimky neplatné přetypování, které jsou pak prezentované podle Chyba analýzy XAML. Název parametru `target` není povinné, ale má název `target` konvencí ve většině implementací.  
   
--   Návratová hodnota se dá nastavit jako konkrétnější typ ve vaší implementaci.  
+- Návratová hodnota se dá nastavit jako konkrétnější typ ve vaší implementaci.  
   
  Pro podporu <xref:System.ComponentModel.TypeConverter> povoleno textová syntaxe pro použití atributu připojitelný člen použít <xref:System.ComponentModel.TypeConverterAttribute> k `Get` *PropertyName* přistupujícího objektu. Použití `get` místo `set` se může zdát nonintuitive; tato úmluva však může podporovat koncept jen pro čtení připojitelná členů, které jsou serializovatelné, což je užitečné v situacích, návrháře.  
   
@@ -83,9 +83,9 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
   
  `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
   
--   `target` Objektu lze zadat jako konkrétnější typ v implementaci, se stejnými logiky a důsledky, jak je popsáno v předchozí části.  
+- `target` Objektu lze zadat jako konkrétnější typ v implementaci, se stejnými logiky a důsledky, jak je popsáno v předchozí části.  
   
--   `value` Objektu lze zadat jako konkrétnější typ ve vaší implementaci.  
+- `value` Objektu lze zadat jako konkrétnější typ ve vaší implementaci.  
   
  Mějte na paměti, že hodnota pro tuto metodu je vstup z využití XAML, obvykle do formuláře atributů. Z formuláře atributů musí být hodnota převaděč podporu syntaxe textu, a atribut na `Get` *PropertyName* přistupujícího objektu.  
   

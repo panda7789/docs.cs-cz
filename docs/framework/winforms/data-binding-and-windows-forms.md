@@ -13,22 +13,22 @@ helpviewer_keywords:
 - data-bound controls [Windows Forms], Windows Forms
 ms.assetid: 419aac5e-819b-4aad-88b0-73a2f8c0bd27
 ms.openlocfilehash: 3d420e5cb4d9e7f2ad6f8136b8dd33f5901326d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59095487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967034"
 ---
 # <a name="data-binding-and-windows-forms"></a>Datové vazby a rozhraní Windows Forms
 Ve Windows Forms lze svázat jenom tradičních datových zdrojů, ale také pro téměř jakoukoli strukturu, která obsahuje data. Můžete vytvořit vazbu na pole hodnot, které vypočítat v době běhu, čtení ze souboru nebo jsou odvozeny z hodnot jiných ovládacích prvků.  
   
  Kromě toho můžete vázat nějaká vlastnost libovolný ovládací prvek na zdroj dat. V tradičních datových vazbách obvykle vazby vlastnosti zobrazení – například <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku – ke zdroji dat. S [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], máte také možnost nastavení prostřednictvím vazby také další vlastnosti. Vazby můžete použít k provádění následujících úloh:  
   
--   Nastaví obrázek ovládacího prvku pro obrázek.  
+- Nastaví obrázek ovládacího prvku pro obrázek.  
   
--   Nastavení barvy pozadí jeden nebo více ovládacích prvků.  
+- Nastavení barvy pozadí jeden nebo více ovládacích prvků.  
   
--   Nastavení velikosti ovládacích prvků.  
+- Nastavení velikosti ovládacích prvků.  
   
  Datová vazba je v podstatě automatický způsob nastavení nějaká přístupné za běhu vlastnost libovolný ovládací prvek na formuláři.  
   

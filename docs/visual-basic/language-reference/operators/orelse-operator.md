@@ -12,11 +12,11 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 ms.assetid: 253803d8-05b0-47d7-b213-abd222847779
 ms.openlocfilehash: 28d1481b71979936bb16a2ecfb1140d85a674ef7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054988"
 ---
 # <a name="orelse-operator-visual-basic"></a>OrElse – operátor (Visual Basic)
 Provede zkrácenou inkluzivní logickou disjunkci dvou výrazů.  

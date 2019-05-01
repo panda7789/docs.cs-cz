@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
 author: KrzysztofCwalina
 ms.openlocfilehash: 9a4cf94ca7fcada7dfc0886422b373abc807a0fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54670170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966475"
 ---
 # <a name="capitalization-conventions"></a>Konvence pro malá a velká písmena
 Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a velká, že při použití konzistentně, zkontrolujte identifikátory pro typy, členy a parametry snadno čitelný.  
@@ -23,9 +23,9 @@ Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a
 ## <a name="capitalization-rules-for-identifiers"></a>Malá a velká písmena pravidel pro identifikátory  
  K rozlišení slova v identifikátoru, velké první písmeno první písmeno každého slova v identifikátoru. Nepoužívejte podtržítka k rozlišení slova, nebo pro tento účel, kdekoli v identifikátory. Existují dva způsoby vhodné pro velké první písmeno identifikátory, v závislosti na použití identifikátoru:  
   
--   PascalCasing  
+- PascalCasing  
   
--   camelCasing  
+- camelCasing  
   
  Konvence PascalCasing používá pro všechny identifikátory s výjimkou názvů parametrů velká první znak každého slova (včetně přes dvě písmena délku zkratky), jak je znázorněno v následujícím příkladu:  
   
@@ -51,7 +51,7 @@ Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a
 |identifikátor|Velikost písmen|Příklad|  
 |----------------|------------|-------------|  
 |Obor názvů|Pascal|`namespace System.Security { ... }`|  
-|Typ|Pascal|`public class StreamReader { ... }`|  
+|Type|Pascal|`public class StreamReader { ... }`|  
 |Rozhraní|Pascal|`public interface IEnumerable { ... }`|  
 |Metoda|Pascal|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
 |Vlastnost|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  

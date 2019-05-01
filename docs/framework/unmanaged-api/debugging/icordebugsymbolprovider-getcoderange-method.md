@@ -5,11 +5,11 @@ ms.assetid: 49a2451f-d250-4e73-aa96-9ff49d9f11c6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 52fd0e9dac1d255197909d153099d9c6f2bd8ff7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61953293"
 ---
 # <a name="icordebugsymbolprovidergetcoderange-method"></a>ICorDebugSymbolProvider::GetCodeRange – metoda
 Získá počáteční adresa metody a velikost relativní virtuální adresu (RVA) v metodě.  

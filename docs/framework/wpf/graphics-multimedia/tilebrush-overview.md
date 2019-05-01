@@ -9,11 +9,11 @@ helpviewer_keywords:
 - brushes [WPF], TileBrush
 ms.assetid: aa4a7b7e-d09d-44c2-8d61-310c50e08d68
 ms.openlocfilehash: a610acfef416a978ab8ecd9a561a135ecf3611cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973722"
 ---
 # <a name="tilebrush-overview"></a>TileBrush – přehled
 <xref:System.Windows.Media.TileBrush> objekty poskytují vám s velkou kontrolu nad jak Vymalování oblasti s obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>. Toto téma popisuje způsob použití <xref:System.Windows.Media.TileBrush> funkce, které chcete získat větší kontrolu nad jak <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> jsou vykreslovány oblasti.  
@@ -40,11 +40,11 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
 ## <a name="brush-content"></a>Obsah štětce  
  Existují tři různé typy <xref:System.Windows.Media.TileBrush> a každý Vymaluje s jiným typem obsahu.  
   
--   Pokud je štětec <xref:System.Windows.Media.ImageBrush>, tento obsah je obrázek <xref:System.Windows.Media.ImageBrush.ImageSource%2A> vlastnost určuje obsah značek <xref:System.Windows.Media.ImageBrush>.  
+- Pokud je štětec <xref:System.Windows.Media.ImageBrush>, tento obsah je obrázek <xref:System.Windows.Media.ImageBrush.ImageSource%2A> vlastnost určuje obsah značek <xref:System.Windows.Media.ImageBrush>.  
   
--   Pokud je štětce <xref:System.Windows.Media.DrawingBrush>, tento obsah je kresbu. <xref:System.Windows.Media.DrawingBrush.Drawing%2A> Vlastnost určuje obsah značek <xref:System.Windows.Media.DrawingBrush>.  
+- Pokud je štětce <xref:System.Windows.Media.DrawingBrush>, tento obsah je kresbu. <xref:System.Windows.Media.DrawingBrush.Drawing%2A> Vlastnost určuje obsah značek <xref:System.Windows.Media.DrawingBrush>.  
   
--   Pokud je štětce <xref:System.Windows.Media.VisualBrush>, tento obsah je vizuál. <xref:System.Windows.Media.VisualBrush.Visual%2A> Vlastnost určuje obsah <xref:System.Windows.Media.VisualBrush>.  
+- Pokud je štětce <xref:System.Windows.Media.VisualBrush>, tento obsah je vizuál. <xref:System.Windows.Media.VisualBrush.Visual%2A> Vlastnost určuje obsah <xref:System.Windows.Media.VisualBrush>.  
   
  Můžete zadat umístění a velikosti <xref:System.Windows.Media.TileBrush> obsahu pomocí <xref:System.Windows.Media.TileBrush.Viewbox%2A> vlastnost, i když je běžné ponechte <xref:System.Windows.Media.TileBrush.Viewbox%2A> nastavit na výchozí hodnotu. Ve výchozím nastavení <xref:System.Windows.Media.TileBrush.Viewbox%2A> konfigurován tak, aby zcela obsah na stopu. Další informace o konfiguraci <xref:System.Windows.Controls.Viewbox>, najdete v článku <xref:System.Windows.Controls.Viewbox> stránku vlastností.  
   
@@ -52,13 +52,13 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
 ## <a name="the-base-tile"></a>Základní dlaždice  
  A <xref:System.Windows.Media.TileBrush> projekty její obsah do základní dlaždice. <xref:System.Windows.Media.TileBrush.Stretch%2A> Ovládací prvky vlastnosti jak <xref:System.Windows.Media.TileBrush> je roztažený obsah tak, aby vyplnil základní dlaždice. <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost přijímá následující hodnoty, které jsou definované <xref:System.Windows.Media.Stretch> výčtu:  
   
--   <xref:System.Windows.Media.Stretch.None>: Obsah štětce není roztažená tak, aby vyplnil dlaždice.  
+- <xref:System.Windows.Media.Stretch.None>: Obsah štětce není roztažená tak, aby vyplnil dlaždice.  
   
--   <xref:System.Windows.Media.Stretch.Fill>: Nástroj štětec obsahu se přizpůsobí dlaždice. Protože jsou nezávisle výšku a šířku obsah, nemusí být zachovaná původní poměr stran obsahu. To znamená může obsah na stopu pokřivení pro úplně naplnění dlaždice výstup.  
+- <xref:System.Windows.Media.Stretch.Fill>: Nástroj štětec obsahu se přizpůsobí dlaždice. Protože jsou nezávisle výšku a šířku obsah, nemusí být zachovaná původní poměr stran obsahu. To znamená může obsah na stopu pokřivení pro úplně naplnění dlaždice výstup.  
   
--   <xref:System.Windows.Media.Stretch.Uniform>: Nástroj štětec obsah je škálovat tak, aby zcela v rámci dlaždice. Poměr stran obsahu se zachovají.  
+- <xref:System.Windows.Media.Stretch.Uniform>: Nástroj štětec obsah je škálovat tak, aby zcela v rámci dlaždice. Poměr stran obsahu se zachovají.  
   
--   <xref:System.Windows.Media.Stretch.UniformToFill>: Nástroj štětec obsah je škálovat tak, že zcela vyplní výstupní oblasti při zachování obsahu původního poměru stran obrázku.  
+- <xref:System.Windows.Media.Stretch.UniformToFill>: Nástroj štětec obsah je škálovat tak, že zcela vyplní výstupní oblasti při zachování obsahu původního poměru stran obrázku.  
   
  Následující obrázek ukazuje různé <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení.  
   
@@ -99,15 +99,15 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
 ### <a name="tiling-behavior"></a>Chování dělení do bloků  
  A <xref:System.Windows.Media.TileBrush> při jeho základní dlaždice nevyplní zcela výstupní oblasti a režim dělení do bloků další pak vytvoří vedle sebe vzor <xref:System.Windows.Media.TileMode.None> je zadán. Když dlaždici dlaždicového štětce zcela nevyplní výstupní oblasti jeho <xref:System.Windows.Media.TileBrush.TileMode%2A> vlastnost určuje, zda by měl být duplicitní základní dlaždice tak, aby vyplnil výstupní oblasti, a pokud ano, jak základní dlaždice by měl být duplicitní. <xref:System.Windows.Media.TileBrush.TileMode%2A> Vlastnost přijímá následující hodnoty, které jsou definované <xref:System.Windows.Media.TileMode> výčtu:  
   
--   <xref:System.Windows.Media.TileMode.None>: Pouze základní dlaždice se vykreslí.  
+- <xref:System.Windows.Media.TileMode.None>: Pouze základní dlaždice se vykreslí.  
   
--   <xref:System.Windows.Media.TileMode.Tile>: Základní dlaždice se vykreslí a zbývající oblast se vyplní opakováním základní dlaždice tak, že je vedle levého okraje na další a pravým okrajem jednu dlaždici podobně pro dolní a horní části.  
+- <xref:System.Windows.Media.TileMode.Tile>: Základní dlaždice se vykreslí a zbývající oblast se vyplní opakováním základní dlaždice tak, že je vedle levého okraje na další a pravým okrajem jednu dlaždici podobně pro dolní a horní části.  
   
--   <xref:System.Windows.Media.TileMode.FlipX>: Stejné jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou alternativní sloupce dlaždic Vodorovně obráceně.  
+- <xref:System.Windows.Media.TileMode.FlipX>: Stejné jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou alternativní sloupce dlaždic Vodorovně obráceně.  
   
--   <xref:System.Windows.Media.TileMode.FlipY>: Stejné jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou střídavé řádky dlaždice Svisle obráceně.  
+- <xref:System.Windows.Media.TileMode.FlipY>: Stejné jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou střídavé řádky dlaždice Svisle obráceně.  
   
--   <xref:System.Windows.Media.TileMode.FlipXY>: Kombinace <xref:System.Windows.Media.TileMode.FlipX> a <xref:System.Windows.Media.TileMode.FlipY>.  
+- <xref:System.Windows.Media.TileMode.FlipXY>: Kombinace <xref:System.Windows.Media.TileMode.FlipX> a <xref:System.Windows.Media.TileMode.FlipY>.  
   
  Následující obrázek ukazuje dělení do bloků různé režimy.  
   

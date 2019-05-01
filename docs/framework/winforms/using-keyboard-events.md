@@ -10,11 +10,11 @@ helpviewer_keywords:
 - events [Windows Forms], keyboard
 ms.assetid: d3f3e14b-a459-4ee6-9875-8957e34f8ee9
 ms.openlocfilehash: 9aefe6be17e5d72c86c2c47bf0d373d0a081ca76
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59114267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966895"
 ---
 # <a name="using-keyboard-events"></a>Použití událostí klávesnice
 Většina aplikací Windows Forms zpracovávat vstup z klávesnice ve zpracování událostí klávesnice. Toto téma obsahuje základní informace o události klávesnice, včetně podrobností o použití každé události a data, která je zadána pro každou jednotlivou událost.  Viz také [Přehled obslužných rutin událostí (Windows Forms)](event-handlers-overview-windows-forms.md) a [Přehled událostí (Windows Forms)](events-overview-windows-forms.md).  
@@ -22,11 +22,11 @@ Většina aplikací Windows Forms zpracovávat vstup z klávesnice ve zpracován
 ## <a name="keyboard-events"></a>Události klávesnice  
  Windows Forms poskytuje dvě události, ke kterým dochází, když uživatel stiskne klávesu a jedna událost, když uživatel uvolní klávesu:  
   
--   <xref:System.Windows.Forms.Control.KeyDown> Jednou dojde k události.  
+- <xref:System.Windows.Forms.Control.KeyDown> Jednou dojde k události.  
   
--   <xref:System.Windows.Forms.Control.KeyPress> Událost, která může dojít vícekrát, když uživatel obsahuje stejné klávesy.  
+- <xref:System.Windows.Forms.Control.KeyPress> Událost, která může dojít vícekrát, když uživatel obsahuje stejné klávesy.  
   
--   <xref:System.Windows.Forms.Control.KeyUp> Událost proběhne jednou, když uživatel uvolní klávesu.  
+- <xref:System.Windows.Forms.Control.KeyUp> Událost proběhne jednou, když uživatel uvolní klávesu.  
   
  Když uživatel stiskne klávesu, Windows Forms Určuje, která událost pro vyvolání podle Určuje, zda zpráva klávesnice určuje znak klíč nebo klíč do fyzické. Další informace o znak a fyzické klíče najdete v tématu [jak funguje vstup klávesnice](how-keyboard-input-works.md).  
   

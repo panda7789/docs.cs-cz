@@ -3,11 +3,11 @@ title: Prohlížení protokolů zpráv
 ms.date: 03/30/2017
 ms.assetid: 3012fa13-f650-45fb-aaea-c5cca8c7d372
 ms.openlocfilehash: 2322d2a6e0c5a6f26ad103be72230666f6bca191
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59139058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61964395"
 ---
 # <a name="viewing-message-logs"></a>Prohlížení protokolů zpráv
 Toto téma popisuje, jak můžete zobrazit protokoly zpráv.  
@@ -29,9 +29,9 @@ Toto téma popisuje, jak můžete zobrazit protokoly zpráv.
   
  Chcete-li vyřešit tento problém můžete použít jednu z následujících metod.  
   
--   Zobrazit pouze dvě ze tří protokolů zpráv v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) kdykoli.  
+- Zobrazit pouze dvě ze tří protokolů zpráv v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) kdykoli.  
   
--   Pokud si musí zobrazit všechny tři protokoly v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) ve stejnou dobu, můžete upravit se službou Relay vytvoříte tak, že vytvoříte nový <xref:System.ServiceModel.Channels.Message> instance. Tato instance musí být kopie tělo z příchozí zprávy a navíc všechny hlavičky s výjimkou `ActivityId` a `Action` záhlaví. Následující příklad kódu ukazuje, jak to provést.  
+- Pokud si musí zobrazit všechny tři protokoly v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) ve stejnou dobu, můžete upravit se službou Relay vytvoříte tak, že vytvoříte nový <xref:System.ServiceModel.Channels.Message> instance. Tato instance musí být kopie tělo z příchozí zprávy a navíc všechny hlavičky s výjimkou `ActivityId` a `Action` záhlaví. Následující příklad kódu ukazuje, jak to provést.  
   
 ```csharp
 Message outgoingMessage = Message.CreateMessage(incomingMessage.Version, incomingMessage.Headers.Action, incomingMessage.GetReaderAtBodyContents());  
@@ -50,15 +50,15 @@ incomingMessage.Headers[i].Name.Equals("Action", StringComparison.InvariantCultu
 ## <a name="exceptional-cases-for-inaccurate-message-logging-content"></a>Výjimečných případech nesprávné zpráva protokolování obsahu  
  Za následujících podmínek nemusí být právě protokolované zprávy přesnou reprezentací octet stream k dispozici na lince.  
   
--   BasicHttpBinding, hlavičky obálky se protokolují pro příchozí zprávy v / adresování/žádný obor názvů.  
+- BasicHttpBinding, hlavičky obálky se protokolují pro příchozí zprávy v / adresování/žádný obor názvů.  
   
--   Prázdné znaky může lišit.  
+- Prázdné znaky může lišit.  
   
--   Pro příchozí zprávy může být jinak reprezentována prázdné prvky. Například \<značka >\</označit > namísto \<značky / >  
+- Pro příchozí zprávy může být jinak reprezentována prázdné prvky. Například \<značka >\</označit > namísto \<značky / >  
   
--   Když je zakázáno přihlášení známého PII, buď ve výchozím nastavení nebo explicitní nastavení enableLoggingKnownPii = "true".  
+- Když je zakázáno přihlášení známého PII, buď ve výchozím nastavení nebo explicitní nastavení enableLoggingKnownPii = "true".  
   
--   Kódování je povolená pro transformaci na UTF-8.  
+- Kódování je povolená pro transformaci na UTF-8.  
   
 ## <a name="see-also"></a>Viz také:
 

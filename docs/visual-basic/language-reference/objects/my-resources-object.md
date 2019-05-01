@@ -9,11 +9,11 @@ helpviewer_keywords:
 - My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
 ms.openlocfilehash: ee4d30b82ceada5c4f3fc4ad95dc8eeedd9355b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61970830"
 ---
 # <a name="myresources-object"></a>My.Resources – objekt
 Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.  
@@ -32,11 +32,11 @@ Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.
   
  Každý prostředek má název, kategorie a hodnoty a tato nastavení prostředků určují, jak se zobrazí vlastnosti, která má přístup k prostředku v `My.Resources` objektu. Pro prostředky, přidá **Návrháře projektu**:  
   
--   Určuje název, název vlastnosti,  
+- Určuje název, název vlastnosti,  
   
--   Zdroj dat je hodnota vlastnosti,  
+- Zdroj dat je hodnota vlastnosti,  
   
--   Kategorie určuje typ vlastnosti:  
+- Kategorie určuje typ vlastnosti:  
   
 |Kategorie|Typ dat vlastnosti|  
 |---|---|  

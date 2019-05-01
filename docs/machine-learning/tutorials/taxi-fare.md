@@ -7,11 +7,11 @@ ms.date: 03/20/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
 ms.openlocfilehash: 49770672ebcff98d8779a888372b5c9f40a55b1d
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61960279"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-learner-with-mlnet"></a>Kurz: Předvídání cen pomocí learner regrese ML.NET
 

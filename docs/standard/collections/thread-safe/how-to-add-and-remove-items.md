@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání a odebrání položek v ConcurrentDictionary'
+title: 'Postupy: Přidávání a odebírání položek v ConcurrentDictionary'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,13 +11,13 @@ ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 9d8b1c63f10d1d79c3fec6cad87c9a82f03716c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052648"
 ---
-# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidání a odebrání položek v ConcurrentDictionary
+# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato kolekce třída je implementace bezpečné pro vlákna. Doporučujeme vám použít ho pokaždé, když se více vláken může být pokus o přístup k prvkům.  
   
  <xref:System.Collections.Concurrent.ConcurrentDictionary%602> nabízí několik metod pohodlí, které není nutné, aby kód nejprve zkontrolujte, jestli existuje klíč předtím, než se pokusí přidat nebo odebrat data. Následující tabulka uvádí tyto metody pohodlí a popisuje jejich použití.  

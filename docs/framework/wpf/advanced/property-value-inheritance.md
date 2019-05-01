@@ -7,11 +7,11 @@ helpviewer_keywords:
 - properties [WPF], value inheritance
 ms.assetid: d7c338f9-f2bf-48ed-832c-7be58ac390e4
 ms.openlocfilehash: 48543d2cfc11fc33dff6239cdfd7bfcd946e986a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981913"
 ---
 # <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
 Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností. Dědičnost hodnoty vlastnosti umožňuje podřízené prvky ve stromové struktuře prvků, které mají získat hodnoty konkrétní vlastnosti od nadřízené prvky, jak je nastavit kdekoli v nejbližší nadřazený element dědí tuto hodnotu. Nadřazený element může také získali jeho hodnotu prostřednictvím dědičnost hodnoty vlastnosti, tak systému recurses potenciálně až po kořen stránky. Dědičnost hodnoty vlastnosti není výchozí chování systému vlastnosti; Vlastnost musí navázat s nastavením konkrétní metadat způsobí tuto vlastnost k zahájení dědičnost hodnoty vlastnosti na podřízené prvky.  

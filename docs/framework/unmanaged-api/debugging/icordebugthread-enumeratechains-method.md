@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e01f94e9574ebc032bc45490fd88ff92e9104aa3
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61994042"
 ---
 # <a name="icordebugthreadenumeratechains-method"></a>ICorDebugThread::EnumerateChains – metoda
 Získá enumerátor icordebugchainenum –, který obsahuje všechny řetězů zásobníku v tomto objektu ICorDebugThread ukazatel rozhraní.  
@@ -42,11 +42,11 @@ HRESULT EnumerateChains (
 ## <a name="remarks"></a>Poznámky  
  Řetěz zásobníku představuje fyzické volání zásobníku pro vlákno. V následujících případech vytvoření hranice řetěz zásobníku:  
   
--   Spravované na nespravované nebo nespravovaného do spravovaného přechodu.  
+- Spravované na nespravované nebo nespravovaného do spravovaného přechodu.  
   
--   Přepnutí kontextu.  
+- Přepnutí kontextu.  
   
--   A zneužití uživatelské vlákno ladicího programu.  
+- A zneužití uživatelské vlákno ladicího programu.  
   
  V jednoduchém případě pro vlákno, na kterém běží v rámci jednoho čistě spravovaném kódu bude existovat shoda mezi vlákny a řetězů zásobníku.  
   

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
 ms.openlocfilehash: ad31d5f58ae3d22ce8760a396b1f9696912dc475
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053207"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF ve Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo přepsání původní kód. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
@@ -41,13 +41,13 @@ ms.locfileid: "59296105"
   
 4. Zpracování [WM_CREATE](/windows/desktop/winmsg/wm-create)oznámení v proceduru okna a proveďte následující akce:  
   
-    1.  Vytvořte nový <xref:System.Windows.Interop.HwndSource> objekt s nadřazené okno jako jeho `parent` parametru.  
+    1. Vytvořte nový <xref:System.Windows.Interop.HwndSource> objekt s nadřazené okno jako jeho `parent` parametru.  
   
-    2.  Vytvoření instance vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu třídy.  
+    2. Vytvoření instance vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu třídy.  
   
-    3.  Odkaz na přiřazení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu objektu <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost <xref:System.Windows.Interop.HwndSource>.  
+    3. Odkaz na přiřazení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu objektu <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost <xref:System.Windows.Interop.HwndSource>.  
   
-    4.  Získejte HWND pro obsah. <xref:System.Windows.Interop.HwndSource.Handle%2A> Vlastnost <xref:System.Windows.Interop.HwndSource> objekt obsahuje popisovač okna (HWND). HWND, který vám pomůže v nespravované součástí vaší aplikace získáte přetypování `Handle.ToPointer()` k popisovačem HWND.  
+    4. Získejte HWND pro obsah. <xref:System.Windows.Interop.HwndSource.Handle%2A> Vlastnost <xref:System.Windows.Interop.HwndSource> objekt obsahuje popisovač okna (HWND). HWND, který vám pomůže v nespravované součástí vaší aplikace získáte přetypování `Handle.ToPointer()` k popisovačem HWND.  
   
 5. Implementace spravované třídy, která obsahuje statické pole k uložení odkazu na vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Tato třída umožňuje získat odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu z vašeho [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kódu.  
   
@@ -65,13 +65,13 @@ ms.locfileid: "59296105"
  Tato část popisuje, jak hostitele [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v základní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace. Samotný obsah je implementována v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] jako spravovanou třídu. Ve většině případů je jednoduché [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování. Klíčové aspekty implementace obsahu jsou popsány v [implementace obsahu WPF](#implementing_the_wpf_page).
 
 <a name="autoNestedSectionsOUTLINE1"></a>
--   [Základní aplikace](#the_basic_application)
+- [Základní aplikace](#the_basic_application)
 
--   [Hostování obsahu WPF](#hosting_the_wpf_page)
+- [Hostování obsahu WPF](#hosting_the_wpf_page)
 
--   [Uchovávající odkaz na obsahu WPF](#holding_a_reference)
+- [Uchovávající odkaz na obsahu WPF](#holding_a_reference)
 
--   [Komunikace s obsahu WPF](#communicating_with_the_page)
+- [Komunikace s obsahu WPF](#communicating_with_the_page)
 
 <a name="the_basic_application"></a>
 ### <a name="the-basic-application"></a>Základní aplikace
@@ -87,11 +87,11 @@ ms.locfileid: "59296105"
 
  Šablona vytvoří základní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace, včetně:
 
--   Vstupní bod pro aplikaci.
+- Vstupní bod pro aplikaci.
 
--   Okno, s proceduru související okno (WndProc).
+- Okno, s proceduru související okno (WndProc).
 
--   Nabídka s **souboru** a **pomáhají** záhlaví. **Souboru** nabídka **ukončovací** položku, která slouží k ukončení aplikace. **Pomáhají** nabídka **o** položku, která spustí jednoduchých dialogového okna.
+- Nabídka s **souboru** a **pomáhají** záhlaví. **Souboru** nabídka **ukončovací** položku, která slouží k ukončení aplikace. **Pomáhají** nabídka **o** položku, která spustí jednoduchých dialogového okna.
 
  Než začnete psát kód pro hostitele [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu, je třeba provést dvě změny do základní šablony.
 
@@ -170,11 +170,11 @@ ms.locfileid: "59296105"
  Můžete hostovat a používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu bez znalosti jazyka se skutečná implementace. Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah měl byla zabalena v samostatném [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)], ho může sestavené v libovolném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyka. Tady je stručný návod [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] implementace, která se používá v ukázce. Tato část obsahuje následující témata.
 
 <a name="autoNestedSectionsOUTLINE2"></a>
--   [Rozložení](#page_layout)
+- [Rozložení](#page_layout)
 
--   [Vrací Data do okna hostitele](#returning_data_to_window)
+- [Vrací Data do okna hostitele](#returning_data_to_window)
 
--   [Nastavení vlastností WPF](#set_page_properties)
+- [Nastavení vlastností WPF](#set_page_properties)
 
 <a name="page_layout"></a>
 ### <a name="layout"></a>Rozložení

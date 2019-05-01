@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: c6e8c2cb-9ba2-4e75-a0d5-180ec9639433
 ms.openlocfilehash: 6fa00c4ced8c05d056703560e5740689c6dcfe39
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981412"
 ---
 # <a name="how-to-configure-iis-50-and-iis-60-to-deploy-wpf-applications"></a>Postupy: Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF
 

@@ -5,11 +5,11 @@ ms.assetid: f477af85-994f-4df0-ae78-404ed252bf49
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c3b0d67d390931cc92c0b6a1320f66545517cde3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61965201"
 ---
 # <a name="icordebugdatatarget3-interface"></a>Rozhraní ICorDebugDataTarget3
 Logicky rozšiřuje [icordebugdatatarget –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) rozhraní pro zadání informací o načtené moduly.  

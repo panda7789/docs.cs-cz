@@ -10,11 +10,11 @@ ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fd60916302877692ac011e6c0743fae40a10dd34
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61951947"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
 <xref:System.Xml.XmlDocument> Třídy nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schéma XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) ve výchozím nastavení; XML je jenom ověřit, být ve správném formátu.  
@@ -56,9 +56,9 @@ ms.locfileid: "59298419"
   
  Vezměte v úvahu následující při ověřování dat XML, jako je načten do modelu DOM.  
   
--   Ve výše uvedeném příkladu <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> je volána pokaždé, když se zjistil se neplatný typ. Pokud <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> není nastavená na ověřování <xref:System.Xml.XmlReader>, <xref:System.Xml.Schema.XmlSchemaValidationException> je vyvolána, když <xref:System.Xml.XmlDocument.Load%2A> je volána, pokud libovolný typ atributu nebo elementu se neshoduje s odpovídající typ zadaný v ověřování schématu.  
+- Ve výše uvedeném příkladu <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> je volána pokaždé, když se zjistil se neplatný typ. Pokud <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> není nastavená na ověřování <xref:System.Xml.XmlReader>, <xref:System.Xml.Schema.XmlSchemaValidationException> je vyvolána, když <xref:System.Xml.XmlDocument.Load%2A> je volána, pokud libovolný typ atributu nebo elementu se neshoduje s odpovídající typ zadaný v ověřování schématu.  
   
--   Po načtení dokumentu XML do <xref:System.Xml.XmlDocument> objekt s přidružené schéma, který definuje výchozí hodnoty <xref:System.Xml.XmlDocument> zpracuje tato výchozí nastavení, jako jsou uvedeny v dokumentu XML. To znamená, že <xref:System.Xml.XmlReader.IsEmptyElement%2A> vždy vrátí vlastnost `false` pro element, který byl převezme ve schématu. I v případě, že v dokumentu XML, byla zapsána jako prázdný prvek.  
+- Po načtení dokumentu XML do <xref:System.Xml.XmlDocument> objekt s přidružené schéma, který definuje výchozí hodnoty <xref:System.Xml.XmlDocument> zpracuje tato výchozí nastavení, jako jsou uvedeny v dokumentu XML. To znamená, že <xref:System.Xml.XmlReader.IsEmptyElement%2A> vždy vrátí vlastnost `false` pro element, který byl převezme ve schématu. I v případě, že v dokumentu XML, byla zapsána jako prázdný prvek.  
   
 ## <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM  
  <xref:System.Xml.XmlDocument.Validate%2A> Metodu <xref:System.Xml.XmlDocument> třídy ověří data XML, který je načten v modelu DOM pomocí schémat v <xref:System.Xml.XmlDocument> objektu <xref:System.Xml.XmlDocument.Schemas%2A> vlastnost. Po úspěšném ověření se použijí výchozí hodnoty schématu, textové hodnoty se převedou na Atomický hodnoty podle potřeby a informace o typu je přidružený k ověřených informačních položek. Typy dat XML v důsledku toho nahrazuje dříve netypový kód XML data.  

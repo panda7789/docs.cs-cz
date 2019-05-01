@@ -13,11 +13,11 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 ms.assetid: 2a5a41a3-1aa8-4236-b1f0-2382af7bf715
 ms.openlocfilehash: 4a3ef3a8254153fa8695ffacd9829ca9316d77a5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61959975"
 ---
 # <a name="object-variable-declaration-visual-basic"></a>Deklarace proměnné objektu (Visual Basic)
 Pomocí příkazu normální deklarace můžete deklarovat proměnné objektu. Pro datový typ, můžete zadat buď `Object` (to znamená, [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)) nebo konkrétnější třídy, ze kterého má být vytvořen objekt.  
@@ -49,19 +49,19 @@ Dim objC As System.OperatingSystem
 ### <a name="advantages-of-early-binding"></a>Výhody časná vazba  
  Deklarace proměnné objektu jako konkrétní třídy přináší řadu výhod:  
   
--   Kontrola automatické typu  
+- Kontrola automatické typu  
   
--   Zaručeno, že přístup všech členů určité třídy  
+- Zaručeno, že přístup všech členů určité třídy  
   
--   Podpora Microsoft IntelliSense v editoru kódu  
+- Podpora Microsoft IntelliSense v editoru kódu  
   
--   Lepší čitelnost kódu  
+- Lepší čitelnost kódu  
   
--   Méně chyb v kódu  
+- Méně chyb v kódu  
   
--   Chyby zachycena v době kompilace spíše než čas spuštění  
+- Chyby zachycena v době kompilace spíše než čas spuštění  
   
--   Rychlejší provádění kódu  
+- Rychlejší provádění kódu  
   
 ## <a name="access-to-object-variable-members"></a>Přístup k proměnné členů objektu  
  Když `Option Strict` zapnuté `On`, proměnné objektu přístupné pouze metody a vlastnosti třídy, se kterým se deklaruje. Toto dokládá následující příklad.  

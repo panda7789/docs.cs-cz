@@ -10,11 +10,11 @@ helpviewer_keywords:
 - colored pens
 ms.assetid: a9df06f9-a6d5-4d9b-a2d1-583943540775
 ms.openlocfilehash: dc067f5a131951bf3af7adc68e11b948d40fc0ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59213412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966862"
 ---
 # <a name="how-to-set-the-color-of-a-pen"></a>Postupy: Nastavení barvy pera
 V tomto příkladu změní barvu existující <xref:System.Drawing.Pen> objektu  
@@ -27,7 +27,7 @@ V tomto příkladu změní barvu existující <xref:System.Drawing.Pen> objektu
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Drawing.Pen> objekt s názvem `myPen`.  
+- A <xref:System.Drawing.Pen> objekt s názvem `myPen`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Byste měli volat <xref:System.Drawing.Pen.Dispose%2A> na objekty, které využívají systémové prostředky (například <xref:System.Drawing.Pen> objekty) po dokončení jejich používání.  

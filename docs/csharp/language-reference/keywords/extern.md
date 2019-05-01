@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DllImport attribute
 - extern keyword [C#]
 ms.assetid: 9c3f02c4-51b8-4d80-9cb2-f2b6e1ae15c7
-ms.openlocfilehash: d860f1a3c6917238a529093672dc5f2abc5ae066
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: edc513a31d348dc685ce70aa8e63577473e47d97
+ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620189"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63773865"
 ---
 # <a name="extern-c-reference"></a>extern (Referenční dokumentace jazyka C#)
 
@@ -43,46 +43,46 @@ Tento příklad znázorňuje program C#, který volá knihovnu jazyka C (nativn�
 
 1. Vytvořte následující soubor C s názvem `cmdll.c`:
 
-```c
-// cmdll.c
-// Compile with: -LD
-int __declspec(dllexport) SampleMethod(int i)
-{
-  return i*10;
-}
-```
+    ```c
+    // cmdll.c
+    // Compile with: -LD
+    int __declspec(dllexport) SampleMethod(int i)
+    {
+      return i*10;
+    }
+    ```
 
 2. Otevřete okno příkazového řádku nativních nástrojů x64 (nebo x32) sady Visual Studio z adresáře instalace sady Visual Studio a zkompilovat `cmdll.c` souboru tak, že zadáte **cl -LD cmdll.c** příkazového řádku.
 
 3. Ve stejném adresáři vytvořte následující soubor C# a pojmenujte ho `cm.cs`:
 
-```csharp
-// cm.cs
-using System;
-using System.Runtime.InteropServices;
-public class MainClass
-{
-    [DllImport("Cmdll.dll")]
-      public static extern int SampleMethod(int x);
-
-    static void Main()
+    ```csharp
+    // cm.cs
+    using System;
+    using System.Runtime.InteropServices;
+    public class MainClass
     {
-        Console.WriteLine("SampleMethod() returns {0}.", SampleMethod(5));
+        [DllImport("Cmdll.dll")]
+          public static extern int SampleMethod(int x);
+
+        static void Main()
+        {
+            Console.WriteLine("SampleMethod() returns {0}.", SampleMethod(5));
+        }
     }
-}
-```
+    ```
 
 4. Otevřete okno příkazového řádku nativních nástrojů x64 (nebo x32) sady Visual Studio z adresáře instalace sady Visual Studio a zkompilovat `cm.cs` souboru tak, že zadáte:
 
-> **CSC cm.cs** (pro x64 příkazového řádku) – nebo – **csc-platform: x 86 cm.cs** (pro x32 příkazového řádku)
+    > **CSC cm.cs** (pro x64 příkazového řádku) – nebo – **csc-platform: x 86 cm.cs** (pro x32 příkazového řádku)
 
-Tím se vytvoří spustitelný soubor `cm.exe`.
+    Tím se vytvoří spustitelný soubor `cm.exe`.
 
 5. Spusťte `cm.exe`. `SampleMethod` Metoda předává hodnota 5 souboru knihovny DLL, která vrací hodnotu vynásobenou 10.  Program vygeneruje následující výstup:
 
-```
-SampleMethod() returns 50.
-```
+    ```
+    SampleMethod() returns 50.
+    ```
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

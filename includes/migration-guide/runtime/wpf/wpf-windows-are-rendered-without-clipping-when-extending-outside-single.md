@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 3b7309347c643d89a28331c6ef3cac36085a969a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60118468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62088446"
 ---
 ### <a name="wpf-windows-are-rendered-without-clipping-when-extending-outside-a-single-monitor"></a>Vykreslení WPF windows bez oříznutí při rozšiřování mimo jednoho monitoru
 

@@ -3,11 +3,11 @@ title: Zásady rozšířené ochrany
 ms.date: 03/30/2017
 ms.assetid: e2616a10-317e-4c34-8023-0c015a80a82f
 ms.openlocfilehash: 645b48b3c7ce3daaaedac372ba5ba6fd5edfc8f8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990168"
 ---
 # <a name="extended-protection-policy"></a>Zásady rozšířené ochrany
 Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky man-in-the-middle (typu MITM). Útoky MITM je bezpečnostní hrozbu, ve kterém MITM přijímá pověření klienta a předá jej do serveru.  
@@ -34,9 +34,9 @@ Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky man-i
   
 4. Tato ukázka vyžaduje klientům navázat zabezpečené připojení k serveru, takže vyžaduje přítomnost certifikát serveru, který si můžete nainstalovat pomocí Správce Internetové informační služby (IIS).  
   
-    1.  Otevřete Správce služby IIS. Otevřít **certifikáty serveru**, který se objevuje v **zobrazení funkce** kartu, pokud je vybrána kořenový uzel (název počítače).  
+    1. Otevřete Správce služby IIS. Otevřít **certifikáty serveru**, který se objevuje v **zobrazení funkce** kartu, pokud je vybrána kořenový uzel (název počítače).  
   
-    2.  Pro účely testování této ukázce, vytvořte certifikát podepsaný svým držitelem. Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, nainstalujte certifikát do úložiště Důvěryhodné kořenové certifikační autority.  
+    2. Pro účely testování této ukázce, vytvořte certifikát podepsaný svým držitelem. Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, nainstalujte certifikát do úložiště Důvěryhodné kořenové certifikační autority.  
   
 5. Otevřít **akce** podokno pro výchozí web. Klikněte na tlačítko **upravit web**, **vazby**. Přidat jako typ protokolu HTTPS, pokud není již existuje s číslem portu 443. Přiřadíte certifikát SSL vytvořený v předchozím kroku.  
   

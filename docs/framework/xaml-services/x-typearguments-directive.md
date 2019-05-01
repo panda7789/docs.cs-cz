@@ -11,11 +11,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
 ms.openlocfilehash: 1d1b10b4da1263843bdce5447f0716569c7700e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59085802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982589"
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments – direktiva
 Předá omezení argumentů obecného konstruktoru obecného typu.  
@@ -62,13 +62,13 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
 ## <a name="xaml-2006-and-wpf-generic-xaml-usages"></a>XAML 2006 a WPF XAML obecné použití  
  Pro použití XAML 2006 a XAML, který se používá pro aplikace WPF, existují následující omezení pro `x:TypeArguments` a použití obecného typu z XAML v obecné:  
   
--   Kořenový element souboru XAML může podporovat obecný využití XAML, který odkazuje na obecném typu.  
+- Kořenový element souboru XAML může podporovat obecný využití XAML, který odkazuje na obecném typu.  
   
--   Kořenový element musí být namapovaný na obecný typ s alespoň jeden argument typu. Příklad: <xref:System.Windows.Navigation.PageFunction%601>. Funkce stránky jsou primární scénáře pro podporu obecných využití XAML v subsystému WPF.  
+- Kořenový element musí být namapovaný na obecný typ s alespoň jeden argument typu. Příklad: <xref:System.Windows.Navigation.PageFunction%601>. Funkce stránky jsou primární scénáře pro podporu obecných využití XAML v subsystému WPF.  
   
--   Kořenový prvek XAML objekt elementu obecné musí také deklarovat částečné třídy pomocí `x:Class`. To platí i v případě, že definice WPF akci sestavení.  
+- Kořenový prvek XAML objekt elementu obecné musí také deklarovat částečné třídy pomocí `x:Class`. To platí i v případě, že definice WPF akci sestavení.  
   
--   `x:TypeArguments` nemůže odkazovat na vnořených obecná omezení.  
+- `x:TypeArguments` nemůže odkazovat na vnořených obecná omezení.  
   
 ## <a name="xaml-2009-or-xaml-2006-with-no-wpf-30-or-wpf-35-dependency"></a>XAML 2009 nebo XAML 2006 bez WPF 3.0 nebo WPF 3.5 závislostí  
  V rozhraní .NET Framework XAML Services pro XAML 2006 nebo XAML 2009 jsou mírnější omezení související s WPF v použití obecného XAML. Generický objekt elementu v jakékoliv pozici v kódu XAML, které podporují základní typ systému a objekt modelu lze vytvořit instanci.  

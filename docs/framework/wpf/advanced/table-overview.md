@@ -10,34 +10,34 @@ helpviewer_keywords:
 - tables [WPF]
 ms.assetid: 5e1105f4-8fc4-473a-ba55-88c8e71386e6
 ms.openlocfilehash: 6485aa9f2094b734f796ff38a33f4e0d3434e004
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59317659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053103"
 ---
 # <a name="table-overview"></a>Přehled tabulky
 <xref:System.Windows.Documents.Table> je element úrovni bloku, který podporuje předložení mřížky plovoucího obsahu dokumentu. Flexibilita tohoto elementu je velmi užitečné, ale také umožňuje složitější pochopitelný a správně.  
   
  Toto téma obsahuje následující části.  
   
--   [Základní informace o tabulce](#table_basics)  
+- [Základní informace o tabulce](#table_basics)  
   
--   [Jaké jsou různé tabulky pak mřížky?](#table_vs_Grid)  
+- [Jaké jsou různé tabulky pak mřížky?](#table_vs_Grid)  
   
--   [Struktura základní tabulky](#basic_table_structure)  
+- [Struktura základní tabulky](#basic_table_structure)  
   
--   [Tabulka členství ve skupině](#table_containment)  
+- [Tabulka členství ve skupině](#table_containment)  
   
--   [Seskupení řádků](#row_groupings)  
+- [Seskupení řádků](#row_groupings)  
   
--   [Priorita vykreslení na pozadí](#rendering_precedence)  
+- [Priorita vykreslení na pozadí](#rendering_precedence)  
   
--   [Pokrývání uzlů řádky nebo sloupce](#spanning_rows_or_columns)  
+- [Pokrývání uzlů řádky nebo sloupce](#spanning_rows_or_columns)  
   
--   [Vytváření tabulky s kódem](#building_a_table_with_code)  
+- [Vytváření tabulky s kódem](#building_a_table_with_code)  
   
--   [Související témata] 
+- [Související témata] 
   
 <a name="table_basics"></a>   
 ## <a name="table-basics"></a>Základní informace o tabulce  
@@ -50,15 +50,15 @@ ms.locfileid: "59317659"
 ### <a name="basic-table-structure"></a>Struktura základní tabulky  
  <xref:System.Windows.Documents.Table> poskytuje prezentace na základě mřížky skládající se z sloupců (reprezentované <xref:System.Windows.Documents.TableColumn> prvky) a řádky (reprezentované <xref:System.Windows.Documents.TableRow> elementy). <xref:System.Windows.Documents.TableColumn> prvky není hostitelem obsahu; jednoduše definovat charakteristiky sloupce a sloupce. <xref:System.Windows.Documents.TableRow> elementy musí být hostovaný ve <xref:System.Windows.Documents.TableRowGroup> element, který definuje seskupení řádků v tabulce. <xref:System.Windows.Documents.TableCell> prvky, které obsahují ze skutečného obsahu, které se budou zobrazovat v tabulce, musí být hostovaný ve <xref:System.Windows.Documents.TableRow> elementu. <xref:System.Windows.Documents.TableCell> může obsahovat pouze prvky, které jsou odvozeny z <xref:System.Windows.Documents.Block>.  Platný podřízené prvky pro <xref:System.Windows.Documents.TableCell> zahrnout.  
   
--   <xref:System.Windows.Documents.BlockUIContainer>  
+- <xref:System.Windows.Documents.BlockUIContainer>  
   
--   <xref:System.Windows.Documents.List>  
+- <xref:System.Windows.Documents.List>  
   
--   <xref:System.Windows.Documents.Paragraph>  
+- <xref:System.Windows.Documents.Paragraph>  
   
--   <xref:System.Windows.Documents.Section>  
+- <xref:System.Windows.Documents.Section>  
   
--   <xref:System.Windows.Documents.Table>  
+- <xref:System.Windows.Documents.Table>  
   
 > [!NOTE]
 >  <xref:System.Windows.Documents.TableCell> elementy nemusí přímo hostovat obsah textu. Další informace o pravidlech členství ve skupině pro tok, jako jsou elementy obsahu <xref:System.Windows.Documents.TableCell>, naleznete v tématu [přehled toku dokumentů](flow-document-overview.md).  
@@ -78,19 +78,19 @@ ms.locfileid: "59317659"
 ### <a name="table-containment"></a>Tabulka členství ve skupině  
  <xref:System.Windows.Documents.Table> je odvozen od <xref:System.Windows.Documents.Block> elementu a dodržuje běžných pravidel pro <xref:System.Windows.Documents.Block> úrovně elementy.  A <xref:System.Windows.Documents.Table> prvku mohou být obsaženy pomocí některé z následujících elementů:  
   
--   <xref:System.Windows.Documents.FlowDocument>  
+- <xref:System.Windows.Documents.FlowDocument>  
   
--   <xref:System.Windows.Documents.TableCell>  
+- <xref:System.Windows.Documents.TableCell>  
   
--   <xref:System.Windows.Controls.ListBoxItem>  
+- <xref:System.Windows.Controls.ListBoxItem>  
   
--   <xref:System.Windows.Controls.ListViewItem>  
+- <xref:System.Windows.Controls.ListViewItem>  
   
--   <xref:System.Windows.Documents.Section>  
+- <xref:System.Windows.Documents.Section>  
   
--   <xref:System.Windows.Documents.Floater>  
+- <xref:System.Windows.Documents.Floater>  
   
--   <xref:System.Windows.Documents.Figure>  
+- <xref:System.Windows.Documents.Figure>  
   
 <a name="row_groupings"></a>   
 ### <a name="row-groupings"></a>Seskupení řádků  

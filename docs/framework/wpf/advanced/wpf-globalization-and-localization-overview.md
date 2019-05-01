@@ -6,11 +6,11 @@ helpviewer_keywords:
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
 ms.openlocfilehash: c97ae4f277395a75fb7522ffb74061001c10e07d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053961"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
@@ -28,43 +28,43 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
 
  Při návrhu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– na základě [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], zvažte implementaci těchto osvědčených postupů:  
   
--   Zápis vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; Vyhněte se vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v kódu. Při vytváření vašeho [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], ji zpřístupnit prostřednictvím vestavěné lokalizace rozhraní API.  
+- Zápis vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; Vyhněte se vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v kódu. Při vytváření vašeho [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], ji zpřístupnit prostřednictvím vestavěné lokalizace rozhraní API.  
   
--   Vyhněte se použití absolutní umístění a pevné velikosti pro rozložení obsahu; Místo toho použijte relativní nebo automatické nastavení velikosti.
+- Vyhněte se použití absolutní umístění a pevné velikosti pro rozložení obsahu; Místo toho použijte relativní nebo automatické nastavení velikosti.
   
-    -   Použití <xref:System.Windows.Window.SizeToContent%2A> a zachování šířky a výšky nastavena na `Auto`.  
+    - Použití <xref:System.Windows.Window.SizeToContent%2A> a zachování šířky a výšky nastavena na `Auto`.  
   
-    -   Vyhněte se použití <xref:System.Windows.Controls.Canvas> rozložení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]s.  
+    - Vyhněte se použití <xref:System.Windows.Controls.Canvas> rozložení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]s.  
   
-    -   Použití <xref:System.Windows.Controls.Grid> a jeho sdílení velikost funkce.  
+    - Použití <xref:System.Windows.Controls.Grid> a jeho sdílení velikost funkce.  
   
--   Protože lokalizovaný text často vyžaduje více místa, zadejte místo navíc je v rozpětí. Umožňuje místo navíc je možné overhanging znaky.  
+- Protože lokalizovaný text často vyžaduje více místa, zadejte místo navíc je v rozpětí. Umožňuje místo navíc je možné overhanging znaky.  
   
--   Povolit <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> na <xref:System.Windows.Controls.TextBlock> aby nedošlo k oříznutí.
+- Povolit <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> na <xref:System.Windows.Controls.TextBlock> aby nedošlo k oříznutí.
   
--   Nastavte `xml:lang` atribut. Tento atribut popisuje jazykovou verzi konkrétní elementu a jeho podřízené prvky. Hodnota této vlastnosti změní chování několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Například změní chování dělení slov, kontrolu pravopisu, číslo nahrazení, složitým tvarování a zpětné volání. Zobrazit [globalizace pro WPF](globalization-for-wpf.md) pro další informace o nastavení [XML: lang v XAML](../../xaml-services/xml-lang-handling-in-xaml.md).  
+- Nastavte `xml:lang` atribut. Tento atribut popisuje jazykovou verzi konkrétní elementu a jeho podřízené prvky. Hodnota této vlastnosti změní chování několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Například změní chování dělení slov, kontrolu pravopisu, číslo nahrazení, složitým tvarování a zpětné volání. Zobrazit [globalizace pro WPF](globalization-for-wpf.md) pro další informace o nastavení [XML: lang v XAML](../../xaml-services/xml-lang-handling-in-xaml.md).  
   
--   Vytvořte přizpůsobené složený font získat lepší kontrolu nad písma, které se používají pro různé jazyky. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá písmo GlobalUserInterface.composite ve vašem adresáři Windows\Fonts.  
+- Vytvořte přizpůsobené složený font získat lepší kontrolu nad písma, které se používají pro různé jazyky. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá písmo GlobalUserInterface.composite ve vašem adresáři Windows\Fonts.  
   
--   Při vytváření navigačních aplikací, které může být lokalizována jazykové verze, který představuje text ve formátu zprava doleva, explicitně nastavit <xref:System.Windows.FlowDirection> z každé stránky, na stránce nedědí <xref:System.Windows.FlowDirection> z <xref:System.Windows.Navigation.NavigationWindow>.  
+- Při vytváření navigačních aplikací, které může být lokalizována jazykové verze, který představuje text ve formátu zprava doleva, explicitně nastavit <xref:System.Windows.FlowDirection> z každé stránky, na stránce nedědí <xref:System.Windows.FlowDirection> z <xref:System.Windows.Navigation.NavigationWindow>.  
   
--   Když vytvoříte samostatný navigační aplikace, které jsou hostované mimo prohlížeč, nastavte <xref:System.Windows.Application.StartupUri%2A> počáteční aplikace <xref:System.Windows.Navigation.NavigationWindow> místo na stránku (například `<Application StartupUri="NavigationWindow.xaml">`). Tento návrh umožňuje změnit <xref:System.Windows.FlowDirection> okně a na navigačním panelu. Další informace a příklad najdete v tématu [globalizace Domovská stránka ukázkové](https://go.microsoft.com/fwlink/?LinkID=159990).  
+- Když vytvoříte samostatný navigační aplikace, které jsou hostované mimo prohlížeč, nastavte <xref:System.Windows.Application.StartupUri%2A> počáteční aplikace <xref:System.Windows.Navigation.NavigationWindow> místo na stránku (například `<Application StartupUri="NavigationWindow.xaml">`). Tento návrh umožňuje změnit <xref:System.Windows.FlowDirection> okně a na navigačním panelu. Další informace a příklad najdete v tématu [globalizace Domovská stránka ukázkové](https://go.microsoft.com/fwlink/?LinkID=159990).  
   
 ### <a name="best-practices-for-wpf-localization"></a>Osvědčené postupy pro lokalizaci WPF
 
  Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace, zvažte implementaci těchto osvědčených postupů:  
   
--   Lokalizace komentáře použijte k zajištění další kontext Lokalizátoři.  
+- Lokalizace komentáře použijte k zajištění další kontext Lokalizátoři.  
   
--   Použití atributů lokalizace řídit lokalizace místo selektivně vynechání <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti prvků. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md) Další informace.  
+- Použití atributů lokalizace řídit lokalizace místo selektivně vynechání <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti prvků. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md) Další informace.  
   
--   Použití `msbuild -t:updateuid` a `-t:checkuid` přidat a zkontrolujte <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti ve vaší [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Použití <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které sledují změny mezi vývojem a lokalizaci. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> Vlastnosti vám usnadní lokalizaci nové změnami vývoje. Pokud chcete ručně přidat <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které chcete [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], úloha je obvykle únavné a méně přesné.  
+- Použití `msbuild -t:updateuid` a `-t:checkuid` přidat a zkontrolujte <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti ve vaší [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Použití <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které sledují změny mezi vývojem a lokalizaci. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> Vlastnosti vám usnadní lokalizaci nové změnami vývoje. Pokud chcete ručně přidat <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které chcete [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], úloha je obvykle únavné a méně přesné.  
   
-    -   Upravit nebo změnit <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti po zahájení lokalizace.  
+    - Upravit nebo změnit <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti po zahájení lokalizace.  
   
-    -   Nepoužívejte duplicitní <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti (Nezapomeňte tento tip při použití příkazu kopírování a vkládání).  
+    - Nepoužívejte duplicitní <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti (Nezapomeňte tento tip při použití příkazu kopírování a vkládání).  
   
-    -   Nastavte `UltimateResourceFallback` umístění v AssemblyInfo.* k určení odpovídající jazyk pro použití náhradní lokality (například `[assembly: NeutralResourcesLanguage("en-US",   UltimateResourceFallbackLocation.Satellite)]`).  
+    - Nastavte `UltimateResourceFallback` umístění v AssemblyInfo.* k určení odpovídající jazyk pro použití náhradní lokality (například `[assembly: NeutralResourcesLanguage("en-US",   UltimateResourceFallbackLocation.Satellite)]`).  
   
          Pokud se rozhodnete zahrnout Zdrojový jazyk v hlavním sestavení vynecháním `<UICulture>` značky v souboru projektu, nastavte `UltimateResourceFallback` umístění jako hlavní sestavení namísto satelitní (například `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]`).  
   
@@ -72,19 +72,19 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
 
 Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, máte několik možností. Například můžete vytvořit vazbu lokalizovatelné prostředky v aplikaci [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru, uložit Lokalizovatelný text v tabulkách resx, nebo mít vaše lokalizátora použít [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory. Tato část popisuje lokalizace pracovního postupu, který používá formuláře BAML z XAML, který poskytuje několik výhod:  
   
--   Je možné lokalizovat po sestavení.  
+- Je možné lokalizovat po sestavení.  
   
--   Můžete aktualizovat na novější verzi formuláře BAML z XAML s lokalizace ze starší verze formuláře BAML z XAML tak, že je možné lokalizovat ve stejnou dobu, které vyvíjíte.  
+- Můžete aktualizovat na novější verzi formuláře BAML z XAML s lokalizace ze starší verze formuláře BAML z XAML tak, že je možné lokalizovat ve stejnou dobu, které vyvíjíte.  
   
--   Můžete ověřit původní zdrojové elementy a sémantika v době kompilace vzhledem k tomu, že je formulář BAML z XAML kompilovaný formy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+- Můžete ověřit původní zdrojové elementy a sémantika v době kompilace vzhledem k tomu, že je formulář BAML z XAML kompilovaný formy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
 ### <a name="localization-build-process"></a>Lokalizace procesu sestavení  
 
 Při vývoji [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, proces sestavení pro lokalizaci vypadá takto:  
   
--   Vývojář vytvoří a globalizuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. V projektu soubor sady pro vývojáře `<UICulture>en-US</UICulture>` tak, že když bude uložena zkompilovaná aplikace, je generována do hlavního sestavení jazykově neutrální. Toto sestavení obsahuje satelit. resources.dll soubor, který obsahuje všechny lokalizovatelné prostředky. Volitelně můžete zachovat Zdrojový jazyk v hlavním sestavení protože naše lokalizace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] podporují extrakce z hlavní sestavení.  
+- Vývojář vytvoří a globalizuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. V projektu soubor sady pro vývojáře `<UICulture>en-US</UICulture>` tak, že když bude uložena zkompilovaná aplikace, je generována do hlavního sestavení jazykově neutrální. Toto sestavení obsahuje satelit. resources.dll soubor, který obsahuje všechny lokalizovatelné prostředky. Volitelně můžete zachovat Zdrojový jazyk v hlavním sestavení protože naše lokalizace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] podporují extrakce z hlavní sestavení.  
   
--   Když je soubor zkompilovaný do sestavení, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je převedena na formuláři BAML z XAML. Jazykově neutrální `MyDialog.exe` a jazykově závislé (v angličtině) `MyDialog.resources.dll` soubory jsou k dispozici pro anglicky mluvící zákazníka.  
+- Když je soubor zkompilovaný do sestavení, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je převedena na formuláři BAML z XAML. Jazykově neutrální `MyDialog.exe` a jazykově závislé (v angličtině) `MyDialog.resources.dll` soubory jsou k dispozici pro anglicky mluvící zákazníka.  
   
 ### <a name="localization-workflow"></a>Lokalizace pracovního postupu
 
@@ -178,7 +178,7 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Pomocí oblíbeného editoru sdíleného svazku clusteru, který podporuje kódování Unicode pro úpravy tohoto souboru. Vyfiltrovat všechny položky s lokalizace kategorii "None". Zobrazí se následující položky:  
   
-|Klíč prostředku|Lokalizace kategorie|Value|  
+|Klíč prostředku|Lokalizace kategorie|Hodnota|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Zrušit|  
@@ -190,7 +190,7 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Lokalizace aplikace na němčinu by vyžadovaly následující převody:  
   
-|Klíč prostředku|Lokalizace kategorie|Value|  
+|Klíč prostředku|Lokalizace kategorie|Hodnota|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Abbrechen|  

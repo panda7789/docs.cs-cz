@@ -11,32 +11,32 @@ ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b924f281a2a543ff98e9ae681a6100150898f240
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973443"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronním programování, je běžné, že jedna asynchronní operace při dokončení vyvolá druhou operaci a předá jí data. Tradičně jsme udělali pokračování pomocí metody zpětného volání. V Task Parallel Library je stejná funkčnost zajištěna pomocí *pokračujících úloh*. Pokračující úloha (nazývaná také pouze pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se nazývá *předchůdce*, jakmile je předchůdce dokončen.  
   
  Pokračování jsou relativně snadno použitelná, ale přesto jsou výkonnější a flexibilnější. Například můžete:  
   
--   Předejte data z předchůdce do pokračování.  
+- Předejte data z předchůdce do pokračování.  
   
--   Určete přesné podmínky, za kterých bude vyvolána pokračování nebo není vyvolána.  
+- Určete přesné podmínky, za kterých bude vyvolána pokračování nebo není vyvolána.  
   
--   Zrušte pokračování před spuštěním nebo kooperativně za běhu.  
+- Zrušte pokračování před spuštěním nebo kooperativně za běhu.  
   
--   Poskytnout nápovědu, jak by měl být pokračování naplánováno.  
+- Poskytnout nápovědu, jak by měl být pokračování naplánováno.  
   
--   Vyvolejte ze stejného předchůdce více pokračování.  
+- Vyvolejte ze stejného předchůdce více pokračování.  
   
--   Vyvolejte jedno pokračování, až skončí všichni nebo jeden z více předchůdců.  
+- Vyvolejte jedno pokračování, až skončí všichni nebo jeden z více předchůdců.  
   
--   Zřetězit pokračování jedno po druhém do jakékoli libovolné délky.  
+- Zřetězit pokračování jedno po druhém do jakékoli libovolné délky.  
   
--   Použijte pokračování pro zpracování výjimek vyvolaných předchůdcem.  
+- Použijte pokračování pro zpracování výjimek vyvolaných předchůdcem.  
   
 ## <a name="about-continuations"></a>Informace o pokračování  
  Pokračování je úkol, který je vytvořen v <xref:System.Threading.Tasks.TaskStatus.WaitingForActivation> stavu. Je aktivována automaticky po dokončení jeho předchozí úlohy nebo úlohy. Volání <xref:System.Threading.Tasks.Task.Start%2A?displayProperty=nameWithType> na pokračování v uživatelském kódu vyvolá <xref:System.InvalidOperationException?displayProperty=nameWithType> výjimky.  
@@ -85,11 +85,11 @@ V asynchronním programování, je běžné, že jedna asynchronní operace při
 ## <a name="canceling-a-continuation"></a>Zrušení pokračování  
  <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> Pokračování je nastavena na <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> v následujících situacích:  
   
--   Vyvolá <xref:System.OperationCanceledException> výjimky v reakci na žádost o zrušení. Jako u každého úkolu, pokud výjimka obsahuje stejný token, který byl předán pokračování, je považován za potvrzení kooperativního zrušení.  
+- Vyvolá <xref:System.OperationCanceledException> výjimky v reakci na žádost o zrušení. Jako u každého úkolu, pokud výjimka obsahuje stejný token, který byl předán pokračování, je považován za potvrzení kooperativního zrušení.  
   
--   Pokračování je předán <xref:System.Threading.CancellationToken?displayProperty=nameWithType> jehož <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost `true`. V takovém případě pokračování nespustí a přechází do <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
+- Pokračování je předán <xref:System.Threading.CancellationToken?displayProperty=nameWithType> jehož <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost `true`. V takovém případě pokračování nespustí a přechází do <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
   
--   Pokračování nikdy nespustí, protože podmínka nastavená jeho <xref:System.Threading.Tasks.TaskContinuationOptions> argument nebyl splněn. Například, pokud předchozí přejde do <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> stavu, její pokračování, který byl předán <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted?displayProperty=nameWithType> možnost se nespustí, ale nahradí <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu.  
+- Pokračování nikdy nespustí, protože podmínka nastavená jeho <xref:System.Threading.Tasks.TaskContinuationOptions> argument nebyl splněn. Například, pokud předchozí přejde do <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> stavu, její pokračování, který byl předán <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted?displayProperty=nameWithType> možnost se nespustí, ale nahradí <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu.  
   
  Pokud úlohu a její pokračování představují dvě části stejné logické operace, můžete předat stejný token zrušení oběma úkolům, jak je znázorněno v následujícím příkladu. Zahrnuje předchůdce, který generuje seznam celých čísel, která jsou dělitelná 33, který předá do pokračování. Pokračování zase zobrazí v seznamu. Předchůdce a pokračování pozastavení pravidelně náhodných intervalech. Kromě toho <xref:System.Threading.Timer?displayProperty=nameWithType> objekt se používá ke spuštění `Elapsed` metoda po pěti sekundách časový limit. Tento příklad příkladu volá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu, která způsobí, že právě prováděnou úlohu k volání <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=nameWithType> metody. Zda <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda se volá, když je předchůdce nebo jeho pokračování provádí závisí na době trvání náhodně generované pozastaví. Pokud je předchůdce zrušen, pokračování nespustí. Pokud není předchůdce zrušen, token je stále možné pro zrušení pokračování.  
   
@@ -133,12 +133,12 @@ V asynchronním programování, je běžné, že jedna asynchronní operace při
 ## <a name="handling-exceptions-thrown-from-continuations"></a>Zpracování výjimek vyvolaných z pokračování  
  Vztah předchůdce pokračování není vztah nadřízenosti a podřízenosti. Výjimky vyvolané pokračováním nejsou šířeny do předchůdce. Proto zpracujte výjimky vyvolané v pokračování stejně jako je v libovolné jiné úloze a následujícím způsobem:  
   
--   Můžete použít <xref:System.Threading.Tasks.Task.Wait%2A>, <xref:System.Threading.Tasks.Task.WaitAll%2A>, nebo <xref:System.Threading.Tasks.Task.WaitAny%2A> metody nebo jejich obecné protějšky pro čekání na pokračování. Můžete počkat předchůdce a jeho pokračování ve stejném `try` příkaz, jak je znázorněno v následujícím příkladu.  
+- Můžete použít <xref:System.Threading.Tasks.Task.Wait%2A>, <xref:System.Threading.Tasks.Task.WaitAll%2A>, nebo <xref:System.Threading.Tasks.Task.WaitAny%2A> metody nebo jejich obecné protějšky pro čekání na pokračování. Můžete počkat předchůdce a jeho pokračování ve stejném `try` příkaz, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[TPL_Continuations#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception1.cs#6)]
      [!code-vb[TPL_Continuations#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception1.vb#6)]  
   
--   Pomocí druhého pokračování sledovat <xref:System.Threading.Tasks.Task.Exception%2A> vlastnosti prvního pokračování. V následujícím příkladu úlohu pokouší číst ze souboru neexistuje. Pokračování pak zobrazí informace o výjimce v předchozí úlohy.  
+- Pomocí druhého pokračování sledovat <xref:System.Threading.Tasks.Task.Exception%2A> vlastnosti prvního pokračování. V následujícím příkladu úlohu pokouší číst ze souboru neexistuje. Pokračování pak zobrazí informace o výjimce v předchozí úlohy.  
   
      [!code-csharp[TPL_Continuations#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#4)]
      [!code-vb[TPL_Continuations#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#4)]  
@@ -150,7 +150,7 @@ V asynchronním programování, je běžné, že jedna asynchronní operace při
   
      Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
   
--   Pokud je pokračování připojené podřízené úlohy, který byl vytvořen pomocí <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> možnost, výjimky se šířeny přes nadřízenou zpět do volajícího vlákna, stejně jako v případě v libovolného jiného připojeného podřízeného. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
+- Pokud je pokračování připojené podřízené úlohy, který byl vytvořen pomocí <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> možnost, výjimky se šířeny přes nadřízenou zpět do volajícího vlákna, stejně jako v případě v libovolného jiného připojeného podřízeného. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
   
 ## <a name="see-also"></a>Viz také:
 

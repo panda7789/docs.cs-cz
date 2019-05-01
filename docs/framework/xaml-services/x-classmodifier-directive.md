@@ -11,11 +11,11 @@ helpviewer_keywords:
 - ClassModifier attribute in XAML [XAML Services]
 ms.assetid: ef30ab78-d334-4668-917d-c9f66c3b6aea
 ms.openlocfilehash: fdbc69634e86992e71cfccdc080829b6b45f963c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971896"
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier – direktiva
 Upravuje chování kompilace XAML při `x:Class` je také k dispozici. Konkrétně, místo vytvoření částečné `class` , který má `Public` (výchozí) úroveň přístupu zadaných `x:Class` se vytvoří s `NotPublic` úroveň přístupu. Toto chování má vliv na úroveň přístupu pro třídu v vygenerované sestavení.  
@@ -40,11 +40,11 @@ Upravuje chování kompilace XAML při `x:Class` je také k dispozici. Konkrétn
 ## <a name="remarks"></a>Poznámky  
  Hodnota `x:ClassModifier` v rozhraní .NET Framework XAML Services využití se liší podle programovacího jazyka. Řetězec, který má použít, závisí na způsob implementace každý jazyk jeho <xref:System.CodeDom.Compiler.CodeDomProvider> a vrátí k definování význam pro typ převaděče <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, a zda je daný jazyk malá a velká písmena.  
   
--   Pro jazyk C#, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> je `internal`.  
+- Pro jazyk C#, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> je `internal`.  
   
--   Pro Microsoft Visual Basic .NET, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> je `Friend`.  
+- Pro Microsoft Visual Basic .NET, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> je `Friend`.  
   
--   Pro [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)], neexistují žádné cíle, které podporují kompilaci XAML; proto neurčená hodnotu pro předání.  
+- Pro [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)], neexistují žádné cíle, které podporují kompilaci XAML; proto neurčená hodnotu pro předání.  
   
  Můžete také určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> (`public` v jazyce C#, `Public` v jazyce Visual Basic), nicméně zadání <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> zřídka dochází proto <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> již je výchozí chování.  
   

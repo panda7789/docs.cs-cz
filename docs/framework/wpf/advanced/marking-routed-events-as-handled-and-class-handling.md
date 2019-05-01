@@ -18,11 +18,11 @@ helpviewer_keywords:
 - bubbling events [WPF]
 ms.assetid: 5e745508-4861-4b48-b5f6-5fc7ce5289d2
 ms.openlocfilehash: 8a21b5e69e8fb3f9781d862bd62b0db92073b1dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59172104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053870"
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>Označení směrovaných událostí jako zpracovaných a zpracování tříd
 Obslužné rutiny pro směrovanou událost můžete označit události zpracovávají v rámci data události. Zpracování události zkrátí efektivní trasy. Třídy zpracování je programovací koncept, který podporuje směrovaných událostí. Třída obslužné rutiny má možnost zpracování konkrétní směrované události na úrovni třída s obslužnou rutinou, která je volána před všechny instance obslužné rutiny na jakoukoli instanci třídy.  
@@ -57,9 +57,9 @@ Obslužné rutiny pro směrovanou událost můžete označit události zpracová
   
  Na podrobnější úrovni než směrování událostí existují také potenciálně více třídy obslužné rutiny na jakoukoli instanci dané třídy. Toto je vzhledem k tomu, že model zpracování třídy pro směrovaných událostí umožňuje všechny možné třídy v hierarchii tříd na jednotlivé registrace vlastní třídu obslužné rutiny pro každý směrované události. Každá třída obslužná rutina se přidá do interního úložiště a když se událost trasu pro aplikace, obslužné rutiny třídy jsou všechny přidány do směrování událostí. Třída obslužné rutiny jsou přidány do trasy obslužnou rutinu nejvíce odvozené třídy je nejprve vyvolána a obslužné rutiny třídy z každé po sobě jdoucích základní třídy jsou vyvolány dále. Obecně platí obslužné rutiny třídy nejsou registrovány tak, aby také reagovat na směrovaných událostí, které již byly označeny zpracována. Proto se tato třída mechanismu pro zpracování umožňuje jednomu dvě možnosti:  
   
--   Odvozené třídy můžete doplnit zpracování třídy, který je zděděn ze základní třídy, přidáním obslužné rutiny, které nejsou označeny směrované události zpracována, protože obslužnou rutinu základní třídy, který bude vyvolán nějakou dobu po obslužnou rutinu odvozené třídy.  
+- Odvozené třídy můžete doplnit zpracování třídy, který je zděděn ze základní třídy, přidáním obslužné rutiny, které nejsou označeny směrované události zpracována, protože obslužnou rutinu základní třídy, který bude vyvolán nějakou dobu po obslužnou rutinu odvozené třídy.  
   
--   Odvozené třídy můžete nahradit zpracování ze základní třídy, přidáním obslužné rutiny třídy, která označuje směrované události zpracovat třídy. Měli byste být opatrní s tímto přístupem, protože potenciálně změní určené základního ovládacího prvku návrhu v oblasti, jako jsou vizuálního vzhledu, stav logiky, vstupní zpracování a zpracování příkazu.  
+- Odvozené třídy můžete nahradit zpracování ze základní třídy, přidáním obslužné rutiny třídy, která označuje směrované události zpracovat třídy. Měli byste být opatrní s tímto přístupem, protože potenciálně změní určené základního ovládacího prvku návrhu v oblasti, jako jsou vizuálního vzhledu, stav logiky, vstupní zpracování a zpracování příkazu.  
   
 <a name="Class_Handling_of_Routed_Events"></a>   
 ## <a name="class-handling-of-routed-events-by-control-base-classes"></a>Zpracování směrované události tříd pomocí základní třídy ovládacích prvků  

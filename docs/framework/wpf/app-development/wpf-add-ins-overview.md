@@ -13,11 +13,11 @@ helpviewer_keywords:
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
 ms.openlocfilehash: 7c02ddca01260a68880630bcb014c5cc4dc4370b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971311"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a> Rozhraní .NET Framework obsahuje doplněk model, pomocí kterých mohou vývojáři vytvářet aplikace, které podporují rozšiřitelnosti doplňku. Tento model doplňku umožňuje vytvářet doplňky, které integrovat a rozšířit funkce aplikace. V některých případech také potřeba aplikace zobrazit uživatelské rozhraní, které jsou k dispozici v doplňcích. Toto téma ukazuje, jak argumentech WPF rozhraní .NET Framework – model doplňku povolit tyto scénáře a architektura stojí za to, jeho výhody a omezení.  
@@ -30,33 +30,33 @@ ms.locfileid: "59304802"
 ## <a name="add-ins-overview"></a>Přehled doplňků  
  Pokud se chcete vyhnout složitosti rekompilace aplikace a opětovné nasazení k začlenění nové funkce, aplikace implementovat mechanismy rozšiřitelnosti, které umožňují vývojářům (první strany a třetích stran) k vytvoření dalších aplikací, které Integrace s nimi. Pomocí doplňků (označované také jako "doplňky" a "moduly plug-in") je nejběžnějším způsobem podporují tento typ rozšíření. Mezi příklady z reálného světa aplikací, které zpřístupňují rozšiřitelnosti s doplňky patří:  
   
--   Doplňky aplikace Internet Explorer.  
+- Doplňky aplikace Internet Explorer.  
   
--   Windows Media Player moduly plug-in.  
+- Windows Media Player moduly plug-in.  
   
--   Visual Studio doplňky.  
+- Visual Studio doplňky.  
   
  Například model doplňku Windows Media Player umožňuje vývojářům třetích stran k implementaci "moduly plug-in", které rozšiřují Windows Media Player v celou řadu způsobů, včetně vytváření dekodérů a kodérů pro formáty multimédií, které nativně nepodporují ve Windows Media Player (například DVD, MP3), zvukové efekty a skinů v šablonách. Každý model doplňku je určený pro funkci, která je jedinečné pro aplikace, i když existuje několik entit a chování, které jsou společné pro všechny modely doplňku.  
   
  Jsou tři hlavní entity typické rozšiřitelnosti doplňku řešení *kontrakty*, *doplňky*, a *hostovat aplikace*. Kontrakty definovat, jak doplňky integrace s aplikacemi hostitele dvěma způsoby:  
   
--   Doplňky integrace s funkcí, které je implementované Hostování aplikací.  
+- Doplňky integrace s funkcí, které je implementované Hostování aplikací.  
   
--   Hostování aplikací zpřístupnění funkcí pro doplňky integrovat.  
+- Hostování aplikací zpřístupnění funkcí pro doplňky integrovat.  
   
  Doplňky se použije, hostování aplikací nutné k jejich vyhledání a načtení za běhu. Aplikace, které podporují doplňky v důsledku toho vyplývají následující dodatečné povinnosti:  
   
--   **Zjišťování**: Hledání doplňků, které se řídí kontrakty nepodporuje hostování aplikací.  
+- **Zjišťování**: Hledání doplňků, které se řídí kontrakty nepodporuje hostování aplikací.  
   
--   **Aktivace**: Načítání, spuštění a navázání komunikace s doplňky.  
+- **Aktivace**: Načítání, spuštění a navázání komunikace s doplňky.  
   
--   **Izolace**: Používání domén aplikací nebo procesů stanovit hranice izolace ochránit aplikace před potenciální zabezpečení a provádění problémy s doplňky.  
+- **Izolace**: Používání domén aplikací nebo procesů stanovit hranice izolace ochránit aplikace před potenciální zabezpečení a provádění problémy s doplňky.  
   
--   **Komunikace**: Povolení doplňky a hostovat aplikace komunikovat mezi sebou přes hranice izolace pomocí volání metody a předávání dat.  
+- **Komunikace**: Povolení doplňky a hostovat aplikace komunikovat mezi sebou přes hranice izolace pomocí volání metody a předávání dat.  
   
--   **Správa životního cyklu**: Načítání a uvolňování domény aplikace a procesy vyčistit a předvídatelným způsobem (viz [aplikačních doménách](../../app-domains/application-domains.md)).  
+- **Správa životního cyklu**: Načítání a uvolňování domény aplikace a procesy vyčistit a předvídatelným způsobem (viz [aplikačních doménách](../../app-domains/application-domains.md)).  
   
--   **Správa verzí**: Zajištění, že hostovat aplikace a doplňky stále komunikovat při vytváření nové verze buď.  
+- **Správa verzí**: Zajištění, že hostovat aplikace a doplňky stále komunikovat při vytváření nové verze buď.  
   
  Nakonec vývoj robustní model doplňku je netriviální podniku. Z tohoto důvodu rozhraní .NET Framework poskytuje infrastrukturu pro vytváření modelů po doplňku.  
   
@@ -75,27 +75,27 @@ ms.locfileid: "59304802"
   
 1. **Doplněk vrací uživatelské rozhraní**. Doplněk vrací uživatelské rozhraní pro hostitelskou aplikaci prostřednictvím volání metody, jak je definováno ve smlouvě. Tento scénář se používá v následujících případech:  
   
-    -   Vzhled uživatelského rozhraní, který je vrácen doplňku je závislá na obou data nebo podmínek, které existují pouze v době běhu, jako například dynamicky generované sestavy.  
+    - Vzhled uživatelského rozhraní, který je vrácen doplňku je závislá na obou data nebo podmínek, které existují pouze v době běhu, jako například dynamicky generované sestavy.  
   
-    -   V uživatelském rozhraní služby poskytované doplněk se liší od uživatelského rozhraní hostování aplikací, které můžete použít doplněk.  
+    - V uživatelském rozhraní služby poskytované doplněk se liší od uživatelského rozhraní hostování aplikací, které můžete použít doplněk.  
   
-    -   Doplněk primárně provádí služba pro hostitelskou aplikaci a hlásí stav do hostitelské aplikace s uživatelským rozhraním.  
+    - Doplněk primárně provádí služba pro hostitelskou aplikaci a hlásí stav do hostitelské aplikace s uživatelským rozhraním.  
   
 2. **Doplněk je uživatelským rozhraním**. Doplněk je uživatelské rozhraní, jak je definováno ve smlouvě. Tento scénář se používá v následujících případech:  
   
-    -   Doplněk neposkytuje jinými službami než zobrazení, jako je například reklamu.  
+    - Doplněk neposkytuje jinými službami než zobrazení, jako je například reklamu.  
   
-    -   V uživatelském rozhraní služby poskytované doplňku je společné pro všechny hostitelské aplikace, které můžete použít tento doplněk, jako je například Kalkulačka nebo výběr barvy.  
+    - V uživatelském rozhraní služby poskytované doplňku je společné pro všechny hostitelské aplikace, které můžete použít tento doplněk, jako je například Kalkulačka nebo výběr barvy.  
   
  Tyto scénáře vyžadují, lze předat objekty uživatelského rozhraní mezi aplikací hostitele a domény aplikace doplňku. Od verze rozhraní .NET Framework, které využívá model doplňku vzdálené komunikace pro komunikaci mezi doménami aplikace musí být objekty, které jsou předávány mezi nimi podpory vzdáleného přístupu.  
   
  Objekt lze použít vzdáleně je instance třídy, která provádí jeden nebo více z následujících akcí:  
   
--   Je odvozen od <xref:System.MarshalByRefObject> třídy.  
+- Je odvozen od <xref:System.MarshalByRefObject> třídy.  
   
--   Implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
+- Implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
   
--   Má <xref:System.SerializableAttribute> atribut.  
+- Má <xref:System.SerializableAttribute> atribut.  
   
 > [!NOTE]
 >  Další informace týkající se vytváření objektů rozhraní .NET Framework lze používat vzdáleně, naleznete v tématu [provádění lze použít vzdáleně objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100)).  
@@ -156,11 +156,11 @@ ms.locfileid: "59304802"
 ## <a name="add-ins-and-xaml-browser-applications"></a>Doplňky a aplikace prohlížeče XAML  
  V příkladech zatím hostitelská aplikace byla nainstalovaná samostatná aplikace. Ale [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] můžou hostovat taky doplňků, spolu s následující další sestavení a provádění požadavků:  
   
--   [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Manifestu aplikace musí být nakonfigurován speciálně pro stahování kanálu (složky a sestavení) a přidejte sestavení do [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] mezipaměti aplikace v klientském počítači ve stejné složce jako [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].  
+- [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Manifestu aplikace musí být nakonfigurován speciálně pro stahování kanálu (složky a sestavení) a přidejte sestavení do [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] mezipaměti aplikace v klientském počítači ve stejné složce jako [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].  
   
--   [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Kód zjišťovat a načíst doplňků musí použít [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] mezipaměti aplikace pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] jako umístění a kanálu doplňku.  
+- [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Kód zjišťovat a načíst doplňků musí použít [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] mezipaměti aplikace pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] jako umístění a kanálu doplňku.  
   
--   [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Musí načtení doplňku do kontextu zabezpečení speciální Pokud doplněk odkazuje volné soubory, které se nachází v umístění původních; když jsou hostované ve [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], doplňky mohou odkazovat pouze na volné soubory, které jsou umístěné na serveru hostitele aplikace původu.  
+- [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Musí načtení doplňku do kontextu zabezpečení speciální Pokud doplněk odkazuje volné soubory, které se nachází v umístění původních; když jsou hostované ve [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], doplňky mohou odkazovat pouze na volné soubory, které jsou umístěné na serveru hostitele aplikace původu.  
   
  Tyto úlohy jsou popsány podrobně v následujících oddílech.  
   
@@ -194,13 +194,13 @@ ms.locfileid: "59304802"
 ### <a name="using-the-pipeline-and-add-in-from-the-application-base"></a>Použití kanálu a doplněk z základ cesty aplikace  
  Když na kanálu a jsou nakonfigurované pro [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nasazení, se stáhnou do stejné [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] složku mezipaměti, jako [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. Použití kanálu a doplněk z [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] kódu nutné získat aplikace základní. Různé typy a členy rozhraní .NET Framework – doplněk modelu pro práci s kanály a doplňky poskytují zvláštní podporu pro tento scénář. Za prvé, je identifikován cestu <xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase> hodnota výčtu. Tuto hodnotu použijete s přetížení členů relevantní – doplněk pro práci s kanály, které zahrnují následující:  
   
--   <xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>  
+- <xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>  
   
--   <xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%2CSystem.String%5B%5D%29?displayProperty=nameWithType>  
+- <xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%2CSystem.String%5B%5D%29?displayProperty=nameWithType>  
   
--   <xref:System.AddIn.Hosting.AddInStore.Rebuild%28System.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>  
+- <xref:System.AddIn.Hosting.AddInStore.Rebuild%28System.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>  
   
--   <xref:System.AddIn.Hosting.AddInStore.Update%28System.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>  
+- <xref:System.AddIn.Hosting.AddInStore.Update%28System.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>  
   
 ### <a name="accessing-the-hosts-site-of-origin"></a>Přístup k serveru hostitele původu  
  Aby bylo zajištěno, že doplněk lze odkazují na soubory webu původu, doplněk musí být načten izolace zabezpečení, který je ekvivalentní k hostitele aplikace. Tato úroveň zabezpečení je identifikován <xref:System.AddIn.Hosting.AddInSecurityLevel.Host?displayProperty=nameWithType> hodnota výčtu a předat <xref:System.AddIn.Hosting.AddInToken.Activate%2A> metodu, když se aktivuje doplněk.  
@@ -213,9 +213,9 @@ ms.locfileid: "59304802"
   
  V podstatě WPF neprojde uživatelského rozhraní z doplňku pro hostitelskou aplikaci; Místo toho WPF předává popisovač okna Win32 pro uživatelské rozhraní pomocí interoperabilitu WPF. V důsledku toho pokud uživatelského rozhraní z doplňku je předán do hostitelské aplikace, dojde k následujícímu:  
   
--   Na straně doplňku WPF získá popisovač okna pro uživatelské rozhraní, který se zobrazí při hostitelskou aplikaci. Popisovač okna jsou zapouzdřena objektem interní třída WPF, která je odvozena z <xref:System.Windows.Interop.HwndSource> a implementuje <xref:System.AddIn.Contract.INativeHandleContract>. Instance této třídy je vrácený <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> a je zařazeno od doplňku na aplikační domény do domény aplikace hostitelskou aplikaci.  
+- Na straně doplňku WPF získá popisovač okna pro uživatelské rozhraní, který se zobrazí při hostitelskou aplikaci. Popisovač okna jsou zapouzdřena objektem interní třída WPF, která je odvozena z <xref:System.Windows.Interop.HwndSource> a implementuje <xref:System.AddIn.Contract.INativeHandleContract>. Instance této třídy je vrácený <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> a je zařazeno od doplňku na aplikační domény do domény aplikace hostitelskou aplikaci.  
   
--   Na straně hostitele aplikací se sbalí WPF <xref:System.Windows.Interop.HwndSource> jako interní třída WPF, která je odvozena z <xref:System.Windows.Interop.HwndHost> a využívá <xref:System.AddIn.Contract.INativeHandleContract>. Instance této třídy je vrácený <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> hostitelské aplikace.  
+- Na straně hostitele aplikací se sbalí WPF <xref:System.Windows.Interop.HwndSource> jako interní třída WPF, která je odvozena z <xref:System.Windows.Interop.HwndHost> a využívá <xref:System.AddIn.Contract.INativeHandleContract>. Instance této třídy je vrácený <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> hostitelské aplikace.  
   
  <xref:System.Windows.Interop.HwndHost> existuje, chcete-li zobrazit uživatelské rozhraní, identifikovaný popisovače okna od uživatelského rozhraní WPF. Další informace najdete v tématu [WPF a systému Win32 vzájemná spolupráce grafického subsystému](../advanced/wpf-and-win32-interoperation.md).  
   
@@ -230,51 +230,51 @@ ms.locfileid: "59304802"
 ## <a name="wpf-add-in-benefits"></a>WPF – doplněk výhody  
  Protože doplňky uživatelského rozhraní WPF se zobrazí z hostitele aplikací pomocí vnitřní třída, která je odvozena z <xref:System.Windows.Interop.HwndHost>, těchto uživatelských rozhraní jsou omezeny funkce <xref:System.Windows.Interop.HwndHost> s ohledem na rozhraní WPF služby, jako je rozložení vykreslování, datových vazeb, styly, šablony a prostředky. Ale posiluje interní WPF <xref:System.Windows.Interop.HwndHost> podtřídy doplněná o funkce, které zahrnují následující:  
   
--   Přecházení mezi uživatelského rozhraní aplikace hostitele a doplňku uživatelského rozhraní pomocí tabulátoru. Upozorňujeme, že "doplňku je uživatelské rozhraní" programovací model vyžaduje adaptér přidat v na straně přepsat <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> povolit procházení tabulátorem, zda doplněk je plně důvěryhodné nebo částečně důvěryhodné.  
+- Přecházení mezi uživatelského rozhraní aplikace hostitele a doplňku uživatelského rozhraní pomocí tabulátoru. Upozorňujeme, že "doplňku je uživatelské rozhraní" programovací model vyžaduje adaptér přidat v na straně přepsat <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> povolit procházení tabulátorem, zda doplněk je plně důvěryhodné nebo částečně důvěryhodné.  
   
--   Aby byla dodržena požadavky na usnadnění přístupu pro doplněk uživatelská rozhraní, které jsou zobrazeny z hostitele aplikace uživatelská rozhraní.  
+- Aby byla dodržena požadavky na usnadnění přístupu pro doplněk uživatelská rozhraní, které jsou zobrazeny z hostitele aplikace uživatelská rozhraní.  
   
--   Povolení aplikace WPF, které poběží bezpečně ve scénářích s více domény aplikace.  
+- Povolení aplikace WPF, které poběží bezpečně ve scénářích s více domény aplikace.  
   
--   Brání Neplatný přístup k UI doplněk zpracovává okno při spuštění doplňků izolace zabezpečení (to znamená, sandboxu částečným vztahem důvěryhodnosti zabezpečení). Volání <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> zajišťuje toto zabezpečení:  
+- Brání Neplatný přístup k UI doplněk zpracovává okno při spuštění doplňků izolace zabezpečení (to znamená, sandboxu částečným vztahem důvěryhodnosti zabezpečení). Volání <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> zajišťuje toto zabezpečení:  
   
-    -   "Add-in vrací uživatelské rozhraní" programovací model, je jediný způsob, jak předat popisovač okna pro doplněk UI napříč oddělovací hranice pro volání <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>.  
+    - "Add-in vrací uživatelské rozhraní" programovací model, je jediný způsob, jak předat popisovač okna pro doplněk UI napříč oddělovací hranice pro volání <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>.  
   
-    -   "Doplňku je uživatelské rozhraní" programovací model přepsání <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> přidat v vedle adaptéru a volání <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> (jak je znázorněno v předchozích ukázkách) je nutné, protože volá add-na straně adaptér `QueryContract` implementaci adaptér na straně hostitele.  
+    - "Doplňku je uživatelské rozhraní" programovací model přepsání <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> přidat v vedle adaptéru a volání <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> (jak je znázorněno v předchozích ukázkách) je nutné, protože volá add-na straně adaptér `QueryContract` implementaci adaptér na straně hostitele.  
   
--   Poskytování více ochrana provádění domény aplikace. Vzhledem k omezením s aplikačními doménami způsobit neošetřené výjimky, které jsou vyvolány v doplňku v aplikačních doménách celé aplikace při selhání, i když existuje oddělovací hranice. Nicméně WPF a modelu doplňku rozhraní .NET Framework poskytují jednoduchý způsob, jak tento problém vyřešit a zlepšit stabilita aplikace. Doplněk WPF, která zobrazuje uživatelské rozhraní vytvoří <xref:System.Windows.Threading.Dispatcher> pro vlákno, na které domény aplikace poběží, pokud hostitelská aplikace je aplikace WPF. Můžete zjistit všechny neošetřené výjimky, ke kterým dochází v doméně aplikace pomocí manipulace <xref:System.Windows.Threading.Dispatcher.UnhandledException> událost WPF doplňku <xref:System.Windows.Threading.Dispatcher>. Můžete získat <xref:System.Windows.Threading.Dispatcher> z <xref:System.Windows.Threading.Dispatcher.CurrentDispatcher%2A> vlastnost.  
+- Poskytování více ochrana provádění domény aplikace. Vzhledem k omezením s aplikačními doménami způsobit neošetřené výjimky, které jsou vyvolány v doplňku v aplikačních doménách celé aplikace při selhání, i když existuje oddělovací hranice. Nicméně WPF a modelu doplňku rozhraní .NET Framework poskytují jednoduchý způsob, jak tento problém vyřešit a zlepšit stabilita aplikace. Doplněk WPF, která zobrazuje uživatelské rozhraní vytvoří <xref:System.Windows.Threading.Dispatcher> pro vlákno, na které domény aplikace poběží, pokud hostitelská aplikace je aplikace WPF. Můžete zjistit všechny neošetřené výjimky, ke kterým dochází v doméně aplikace pomocí manipulace <xref:System.Windows.Threading.Dispatcher.UnhandledException> událost WPF doplňku <xref:System.Windows.Threading.Dispatcher>. Můžete získat <xref:System.Windows.Threading.Dispatcher> z <xref:System.Windows.Threading.Dispatcher.CurrentDispatcher%2A> vlastnost.  
   
 <a name="WPFAddInModelLimitations"></a>   
 ## <a name="wpf-add-in-limitations"></a>WPF – doplněk omezení  
  Kromě výhod, které WPF přidá do výchozí chování poskytnutých <xref:System.Windows.Interop.HwndSource>, <xref:System.Windows.Interop.HwndHost>a popisovače oken, existují také omezení pro doplněk uživatelská rozhraní, které jsou zobrazeny z hostitele aplikací:  
   
--   Doplňky uživatelského rozhraní zobrazí z hostitele aplikace neodpovídají chování výstřižek hostitelskou aplikaci.  
+- Doplňky uživatelského rozhraní zobrazí z hostitele aplikace neodpovídají chování výstřižek hostitelskou aplikaci.  
   
--   Konceptu *vzdušného prostoru* interoperabilitou scénáře platí také pro doplňky (viz [přehled technologických oblastí](../advanced/technology-regions-overview.md)).  
+- Konceptu *vzdušného prostoru* interoperabilitou scénáře platí také pro doplňky (viz [přehled technologických oblastí](../advanced/technology-regions-overview.md)).  
   
--   Hostitelská aplikace uživatelského rozhraní služby, například prostředků dědičnost, datových vazeb a příkazů, nejsou automaticky k dispozici pro doplněk uživatelská rozhraní. K poskytování těchto služeb add-in, budete muset aktualizovat kanálu.  
+- Hostitelská aplikace uživatelského rozhraní služby, například prostředků dědičnost, datových vazeb a příkazů, nejsou automaticky k dispozici pro doplněk uživatelská rozhraní. K poskytování těchto služeb add-in, budete muset aktualizovat kanálu.  
   
--   UI add-in nemůže být otočen, škálovat, zkosený nebo jinak ovlivněny transformaci (viz [transformuje přehled](../graphics-multimedia/transforms-overview.md)).  
+- UI add-in nemůže být otočen, škálovat, zkosený nebo jinak ovlivněny transformaci (viz [transformuje přehled](../graphics-multimedia/transforms-overview.md)).  
   
--   Uvnitř doplněk uživatelská rozhraní, které je vykreslen metodou kreslicí operace z obsahu <xref:System.Drawing> oboru názvů může zahrnovat alfa míchání. Doplňku uživatelského rozhraní a hostitelskou aplikaci uživatelského rozhraní, který ji obsahuje musí však být neprůhledné; 100 % jinými slovy `Opacity` vlastnost u obou musí být nastavena na hodnotu 1.  
+- Uvnitř doplněk uživatelská rozhraní, které je vykreslen metodou kreslicí operace z obsahu <xref:System.Drawing> oboru názvů může zahrnovat alfa míchání. Doplňku uživatelského rozhraní a hostitelskou aplikaci uživatelského rozhraní, který ji obsahuje musí však být neprůhledné; 100 % jinými slovy `Opacity` vlastnost u obou musí být nastavena na hodnotu 1.  
   
--   Pokud <xref:System.Windows.Window.AllowsTransparency%2A> okna aplikace hostitele, který obsahuje uživatelského rozhraní doplňku je nastavena na `true`, doplněk je neviditelné. To platí i v případě, že uživatelského rozhraní doplňku je 100 % neprůhledný (to znamená, `Opacity` vlastnost má hodnotu 1).  
+- Pokud <xref:System.Windows.Window.AllowsTransparency%2A> okna aplikace hostitele, který obsahuje uživatelského rozhraní doplňku je nastavena na `true`, doplněk je neviditelné. To platí i v případě, že uživatelského rozhraní doplňku je 100 % neprůhledný (to znamená, `Opacity` vlastnost má hodnotu 1).  
   
--   Doplňku uživatelského rozhraní se musí nacházet na další prvky WPF ve stejném okně nejvyšší úrovně.  
+- Doplňku uživatelského rozhraní se musí nacházet na další prvky WPF ve stejném okně nejvyšší úrovně.  
   
--   Žádná část doplňku uživatelského rozhraní může být vykreslen pomocí <xref:System.Windows.Media.VisualBrush>. Místo toho doplněk může pořídit snímek vygenerované uživatelské rozhraní vytvořit rastrový obrázek, který lze předat do hostitelské aplikace pomocí metody definované ve smlouvě.  
+- Žádná část doplňku uživatelského rozhraní může být vykreslen pomocí <xref:System.Windows.Media.VisualBrush>. Místo toho doplněk může pořídit snímek vygenerované uživatelské rozhraní vytvořit rastrový obrázek, který lze předat do hostitelské aplikace pomocí metody definované ve smlouvě.  
   
--   Multimediální soubory nelze přehrát z <xref:System.Windows.Controls.MediaElement> v Uživatelském doplňku.  
+- Multimediální soubory nelze přehrát z <xref:System.Windows.Controls.MediaElement> v Uživatelském doplňku.  
   
--   Události myši vygeneruje pro – uživatelské rozhraní nejsou přijata ani vyvolané hostitelskou aplikaci a `IsMouseOver` vlastností pro hostitele v uživatelském rozhraní aplikace má hodnotu `false`.  
+- Události myši vygeneruje pro – uživatelské rozhraní nejsou přijata ani vyvolané hostitelskou aplikaci a `IsMouseOver` vlastností pro hostitele v uživatelském rozhraní aplikace má hodnotu `false`.  
   
--   Pokud mezi ovládacími prvky v Uživatelském doplňku se pozornost zaměří `GotFocus` a `LostFocus` události nejsou přijata ani vyvolané hostitelskou aplikaci.  
+- Pokud mezi ovládacími prvky v Uživatelském doplňku se pozornost zaměří `GotFocus` a `LostFocus` události nejsou přijata ani vyvolané hostitelskou aplikaci.  
   
--   Bílé po vytištění se zobrazí část hostitelskou aplikaci, která obsahuje UI doplňku.  
+- Bílé po vytištění se zobrazí část hostitelskou aplikaci, která obsahuje UI doplňku.  
   
--   Všechny dispečerů (naleznete v tématu <xref:System.Windows.Threading.Dispatcher>) vytvořené pomocí doplňku uživatelského rozhraní musí být vypnut ručně před doplňku vlastníka je uvolněna, pokud hostitelská aplikace pokračuje v provádění kódu. Smlouvy můžete implementovat metody, které umožňují signalizuje, že doplněk před doplňku je uvolněna, což doplňků uživatelského rozhraní vypnout jeho dispečerů hostitelské aplikace.  
+- Všechny dispečerů (naleznete v tématu <xref:System.Windows.Threading.Dispatcher>) vytvořené pomocí doplňku uživatelského rozhraní musí být vypnut ručně před doplňku vlastníka je uvolněna, pokud hostitelská aplikace pokračuje v provádění kódu. Smlouvy můžete implementovat metody, které umožňují signalizuje, že doplněk před doplňku je uvolněna, což doplňků uživatelského rozhraní vypnout jeho dispečerů hostitelské aplikace.  
   
--   Pokud je uživatelského rozhraní doplňku <xref:System.Windows.Controls.InkCanvas> nebo obsahuje <xref:System.Windows.Controls.InkCanvas>, není možné uvolnit doplňku.  
+- Pokud je uživatelského rozhraní doplňku <xref:System.Windows.Controls.InkCanvas> nebo obsahuje <xref:System.Windows.Controls.InkCanvas>, není možné uvolnit doplňku.  
   
 <a name="PerformanceOptimization"></a>   
 ## <a name="performance-optimization"></a>Optimalizace výkonu  

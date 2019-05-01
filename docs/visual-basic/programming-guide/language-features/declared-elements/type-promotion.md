@@ -11,11 +11,11 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
 ms.openlocfilehash: f7ac6bfb944da8bd50e035ba97b2b513176dc661
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973300"
 ---
 # <a name="type-promotion-visual-basic"></a>Propagace typu (Visual Basic)
 Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho obor názvů obsahující modul. To se označuje jako *zadejte povýšení*.  
@@ -54,9 +54,9 @@ Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho
 ## <a name="recommendations"></a>Doporučení  
  Následující doporučení představují dobrý postup programování.  
   
--   **Jedinečné názvy.** Až budete mít plnou kontrolu nad pojmenování programovací prvky, je vždy vhodné použít všude, kde jedinečné názvy. Identické názvy vyžadovat dodatečné kvalifikace a mohou znesnadnit kódu ke čtení. Může se také vést k drobným chybám a neočekávané výsledky.  
+- **Jedinečné názvy.** Až budete mít plnou kontrolu nad pojmenování programovací prvky, je vždy vhodné použít všude, kde jedinečné názvy. Identické názvy vyžadovat dodatečné kvalifikace a mohou znesnadnit kódu ke čtení. Může se také vést k drobným chybám a neočekávané výsledky.  
   
--   **Úplné kvalifikace.** Při práci s moduly a další prvky v stejný obor názvů nejbezpečnější přístup je vždycky potřeba použít úplnou kvalifikace pro všechny programovací prvky. Propagace typu není zrušena pro člena modulu a nemáte kvalifikovanou plně tohoto člena, může nechtěně přístup různé programovací element.  
+- **Úplné kvalifikace.** Při práci s moduly a další prvky v stejný obor názvů nejbezpečnější přístup je vždycky potřeba použít úplnou kvalifikace pro všechny programovací prvky. Propagace typu není zrušena pro člena modulu a nemáte kvalifikovanou plně tohoto člena, může nechtěně přístup různé programovací element.  
   
 ## <a name="see-also"></a>Viz také:
 

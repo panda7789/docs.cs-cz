@@ -10,11 +10,11 @@ helpviewer_keywords:
 - DateTime XAML syntax [WPF], format strings for
 ms.assetid: 5901710a-609b-40c8-9d65-f0016cd9090b
 ms.openlocfilehash: d7fe5f15f79ab068e88c3fb6f7b7cac0986aa636
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59146494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052921"
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime – syntaxe v jazyce XAML
 Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>, mají vlastnosti, které používají <xref:System.DateTime> typu. I když obvykle zadat počáteční datum a čas pro tyto ovládací prvky v kódu v době běhu je zadat v XAML počáteční datum nebo čas. Analyzátor WPF XAML zpracovává analýzu <xref:System.DateTime> hodnoty pomocí předdefinovaných textová syntaxe XAML. Toto téma popisuje, jaké jsou specifikace <xref:System.DateTime> textová syntaxe XAML.  

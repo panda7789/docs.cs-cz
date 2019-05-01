@@ -9,11 +9,11 @@ helpviewer_keywords:
 - graphics [WPF], 3-D
 ms.assetid: 67f31ed4-e36b-4b02-9889-dcce245d7afc
 ms.openlocfilehash: 79dc7a3578c395ae8cdf5933e1249441f97071a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053692"
 ---
 # <a name="3-d-graphics-overview"></a>Přehled 3D grafiky
 <a name="introduction"></a> [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojářům umožňuje nakreslit, transformaci a animace 3D grafiky v kódu a procedurální kódu. Vývojáři můžou kombinovat [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] a [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] grafiku, vytvořit bohaté ovládací prvky, poskytují komplexní ilustrace znázorňující data nebo vylepšit uživatel činnost rozhraní aplikace. [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] není určená k poskytování hru Vývojová platforma plně funkční. Toto téma obsahuje přehled [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky systému.  
@@ -86,11 +86,11 @@ Perspektivy a pravoúhle projekce
   
  Chcete-li definovat vlastnosti povrchu model, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá <xref:System.Windows.Media.Media3D.Material> abstraktní třídy. Některé vlastnosti vzhledu povrchu modelu určit konkrétní podtřídy materiálu a každý také poskytuje vlastnost štětce, ke kterému lze předat SolidColorBrush, TileBrush nebo VisualBrush.  
   
--   <xref:System.Windows.Media.Media3D.DiffuseMaterial> Určuje, jestli štětec použité pro model, jakoby byly rozptýleně lit tento model. Pomocí DiffuseMaterial nejvíce podobá pomocí štětců přímo na [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] modely; zařízení Surface modelu neodráží světla, jako když shiny.  
+- <xref:System.Windows.Media.Media3D.DiffuseMaterial> Určuje, jestli štětec použité pro model, jakoby byly rozptýleně lit tento model. Pomocí DiffuseMaterial nejvíce podobá pomocí štětců přímo na [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] modely; zařízení Surface modelu neodráží světla, jako když shiny.  
   
--   <xref:System.Windows.Media.Media3D.SpecularMaterial> Určuje, jestli štětec použité pro model, jakoby povrch modelu bylo obtížné nebo zářivý a schopné odrazu světla. Do jaké míry, do kterého bude navrhovat textury tohoto reflektivní kvality nebo "lesku," můžete nastavit tak, že zadáte hodnotu <xref:System.Windows.Media.Media3D.SpecularMaterial.SpecularPower%2A> vlastnost.  
+- <xref:System.Windows.Media.Media3D.SpecularMaterial> Určuje, jestli štětec použité pro model, jakoby povrch modelu bylo obtížné nebo zářivý a schopné odrazu světla. Do jaké míry, do kterého bude navrhovat textury tohoto reflektivní kvality nebo "lesku," můžete nastavit tak, že zadáte hodnotu <xref:System.Windows.Media.Media3D.SpecularMaterial.SpecularPower%2A> vlastnost.  
   
--   <xref:System.Windows.Media.Media3D.EmissiveMaterial> Umožňuje určit, že textury se použije jako by šlo model byly generování světla rovno barvou štětce. To nepoužívá model světla; ale se bude účastnit jinak stínový provoz, než kdyby texturou DiffuseMaterial nebo SpecularMaterial.  
+- <xref:System.Windows.Media.Media3D.EmissiveMaterial> Umožňuje určit, že textury se použije jako by šlo model byly generování světla rovno barvou štětce. To nepoužívá model světla; ale se bude účastnit jinak stínový provoz, než kdyby texturou DiffuseMaterial nebo SpecularMaterial.  
   
  Pro lepší výkon, zadní plochy z <xref:System.Windows.Media.Media3D.GeometryModel3D> (tváří, které jsou mimo zobrazení, protože jde na opačnou stranu modelu z fotoaparátu/kamery) jsou vyřazeny z scény.  Chcete-li určit <xref:System.Windows.Media.Media3D.Material> Pokud chcete použít pro odstranění odvrácených modelu jako rovině, nastavte modelu <xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A> vlastnost.  
   
@@ -111,13 +111,13 @@ Perspektivy a pravoúhle projekce
   
  Tyto indikátory jsou odvozeny od základní třídy <xref:System.Windows.Media.Media3D.Light>:  
   
--   <xref:System.Windows.Media.Media3D.AmbientLight>: Poskytuje osvětlením osvětluje všechny objekty, které jsou rovnoměrně bez ohledu na jejich umístění a orientaci.  
+- <xref:System.Windows.Media.Media3D.AmbientLight>: Poskytuje osvětlením osvětluje všechny objekty, které jsou rovnoměrně bez ohledu na jejich umístění a orientaci.  
   
--   <xref:System.Windows.Media.Media3D.DirectionalLight>: Osvětluje jako vzdálené zdroje světla.  Směrové světlo mít <xref:System.Windows.Media.Media3D.DirectionalLight.Direction%2A> stanoveno Vector3D, ale žádné zadané umístění.  
+- <xref:System.Windows.Media.Media3D.DirectionalLight>: Osvětluje jako vzdálené zdroje světla.  Směrové světlo mít <xref:System.Windows.Media.Media3D.DirectionalLight.Direction%2A> stanoveno Vector3D, ale žádné zadané umístění.  
   
--   <xref:System.Windows.Media.Media3D.PointLight>: Osvětluje jako blízké světelného zdroje. PointLights polohy a přetypovat světla z této pozici. V závislosti na jejich umístění a vzdálenost s ohledem na světla jsou osvětlená objekty na scéně. <xref:System.Windows.Media.Media3D.PointLightBase> Zpřístupňuje <xref:System.Windows.Media.Media3D.PointLightBase.Range%2A> vlastnost, která určuje vzdálenost, jejichž překročení nebudou modely osvětlení světla. PointLight také poskytuje zeslabení vlastnosti, které určují, jak světla intenzita snižuje vzdálenost. Můžete určit konstantní lineární či kvadratické interpolace pro útlum světla.  
+- <xref:System.Windows.Media.Media3D.PointLight>: Osvětluje jako blízké světelného zdroje. PointLights polohy a přetypovat světla z této pozici. V závislosti na jejich umístění a vzdálenost s ohledem na světla jsou osvětlená objekty na scéně. <xref:System.Windows.Media.Media3D.PointLightBase> Zpřístupňuje <xref:System.Windows.Media.Media3D.PointLightBase.Range%2A> vlastnost, která určuje vzdálenost, jejichž překročení nebudou modely osvětlení světla. PointLight také poskytuje zeslabení vlastnosti, které určují, jak světla intenzita snižuje vzdálenost. Můžete určit konstantní lineární či kvadratické interpolace pro útlum světla.  
   
--   <xref:System.Windows.Media.Media3D.SpotLight>: dědí z <xref:System.Windows.Media.Media3D.PointLight>. Světelné kužele osvětlení jako PointLight a mít umístění a směrování. Microsoft Office project světla v oblasti ve tvaru kužel nastavil <xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A> a <xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A> vlastnosti, které jsou zadány ve stupních.  
+- <xref:System.Windows.Media.Media3D.SpotLight>: dědí z <xref:System.Windows.Media.Media3D.PointLight>. Světelné kužele osvětlení jako PointLight a mít umístění a směrování. Microsoft Office project světla v oblasti ve tvaru kužel nastavil <xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A> a <xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A> vlastnosti, které jsou zadány ve stupních.  
   
  Světla jsou <xref:System.Windows.Media.Media3D.Model3D> objekty, dají se transformovat a animovat vlastnosti světla, včetně umístění, barvy, směr a rozsah.  
   

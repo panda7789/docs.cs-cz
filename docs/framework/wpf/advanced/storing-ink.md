@@ -12,11 +12,11 @@ helpviewer_keywords:
 - Ink Serialized Format (ISF)
 ms.assetid: a3f6d16b-d682-4680-9965-907332b4d2b8
 ms.openlocfilehash: 4089aa7942105c14eb628c75edb7f53ffacfaeb0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053366"
 ---
 # <a name="storing-ink"></a>Uložení inkoustu
 <xref:System.Windows.Ink.StrokeCollection.Save%2A> Metody poskytují podporu pro uložení inkoustu jako inkoustu serializovat formátu (ISF). Konstruktory pro <xref:System.Windows.Ink.StrokeCollection> třída poskytuje podporu pro čtení dat rukopisu.  

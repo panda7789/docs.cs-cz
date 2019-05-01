@@ -9,11 +9,11 @@ ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0c382b22825512000a906af8a865b6b7c5f4c73c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44204887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61966607"
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
 **XmlNodeChangedEventArgs** zapouzdřuje argumenty předávané obslužné rutiny událostí zaregistrované na **XmlDocument** objekt pro zpracování událostí. Události a popis, když jsou vyvolávány je uveden v následující tabulce.  

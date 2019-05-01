@@ -5,13 +5,13 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 60d225d9794d5c15b0cd8e42800ccad4d7872756
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61967794"
 ---
-# <a name="serverless-architecture"></a>Architektura bez serveru
+# <a name="serverless-architecture"></a>Bezserverová architektura
 
 Existuje celá řada přístupů k použití [bez serveru](http://azure.com/serverless) architektury. Tato kapitola popisuje, příklady běžných architektur, které se integrují bez serveru. Věnuje se také, se kterými můžou představovat další výzvy, nebo vyžadují zvláštní pozornost při provádění bez serveru. Nakonec několik příkladů návrhu jsou k dispozici, které znázorňují různé případy použití bez serveru.
 

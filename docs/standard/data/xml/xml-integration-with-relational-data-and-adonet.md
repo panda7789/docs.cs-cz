@@ -6,22 +6,22 @@ ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fbc381395720b6b63a8cdfb44c55808d4608e77f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58831979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61959082"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Integrace XML s relačními daty a ADO.NET
 **XmlDataDocument** třída je odvozená třída **XmlDocument**a obsahuje XML data. Výhodou **XmlDataDocument** je, že umožňuje most mezi relačních a hierarchických dat. Je **XmlDocument** , který může být vázaný na **datovou sadu** a obě třídy se mohou synchronizovat změny pro data obsažená ve dvou tříd. **XmlDocument** , který je vázán na **datovou sadu** umožňuje XML k integraci s relačními daty a není nutné mít data reprezentována jako buď XML nebo v relačním formátu. Můžete mít obojí a nesmí být omezeny na jednoho znázornění dat.  
   
  Výhod, které nejsou k dispozici ve dvou zobrazení data jsou:  
   
--   Strukturované část dokumentu XML lze mapovat na datovou sadu a efektivně uloženy, indexovat a prohledávat.  
+- Strukturované část dokumentu XML lze mapovat na datovou sadu a efektivně uloženy, indexovat a prohledávat.  
   
--   Transformace, ověření a navigaci lze provést efektivně prostřednictvím modelu kurzoru nad daty XML, který je uložený relationally. V některých případech je možné ji provést efektivněji proti relační struktury než pokud je soubor XML uložené v **XmlDocument** modelu.  
+- Transformace, ověření a navigaci lze provést efektivně prostřednictvím modelu kurzoru nad daty XML, který je uložený relationally. V některých případech je možné ji provést efektivněji proti relační struktury než pokud je soubor XML uložené v **XmlDocument** modelu.  
   
--   **Datovou sadu** můžete uložit část souboru XML. To znamená, slouží **XPath** nebo **XslTransform** chcete **datovou sadu** pouze elementy a atributy, které vás zajímají. Odtud můžete změnit na menší, která jsou filtrovaná podmnožinu dat, se změnami šíření větší množství dat v **XmlDataDocument**.  
+- **Datovou sadu** můžete uložit část souboru XML. To znamená, slouží **XPath** nebo **XslTransform** chcete **datovou sadu** pouze elementy a atributy, které vás zajímají. Odtud můžete změnit na menší, která jsou filtrovaná podmnožinu dat, se změnami šíření větší množství dat v **XmlDataDocument**.  
   
  Můžete také spouštět transformace dat, která byla načtena do **datovou sadu** z SQL serveru. Další možností je vytvořit vazbu formuláře Windows spravovaných styl třídy rozhraní .NET Framework a ovládacích prvků webového formuláře **datovou sadu** , který se naplní ze vstupního datového proudu XML.  
   

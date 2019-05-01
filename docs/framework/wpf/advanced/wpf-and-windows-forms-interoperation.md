@@ -9,11 +9,11 @@ helpviewer_keywords:
 - hybrid control [WPF interoperability]
 ms.assetid: 9e8aa6b6-112c-4579-98d1-c974917df499
 ms.openlocfilehash: 2e3390c3e387e75168958f946472a5a24a4bd440
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053116"
 ---
 # <a name="wpf-and-windows-forms-interoperation"></a>Vzájemná spolupráce subsystémů WPF a Windows Forms
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] představovat dvě různé architektury pro vytvoření rozhraní aplikací. <xref:System.Windows.Forms.Integration?displayProperty=nameWithType> Obor názvů obsahuje třídy, které umožňují běžné scénáře vzájemné spolupráce. Jsou dvě klíčové třídy, které implementují součinnosti možnosti <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost>. Toto téma popisuje, jaké součinnosti scénáře jsou podporovány a jaké scénáře nejsou podporovány.  
@@ -25,36 +25,36 @@ ms.locfileid: "59129269"
 ## <a name="hosting-windows-forms-controls-in-wpf"></a>Ovládací prvky hostování Windows Forms v subsystému WPF  
  Jsou podporovány následující scénáře vzájemné spolupráce při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvek hostuje ovládací prvek formuláře Windows:  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Ovládací prvek může hostovat jeden nebo více [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky pomocí XAML.  
+- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Ovládací prvek může hostovat jeden nebo více [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky pomocí XAML.  
   
--   Může hostovat jeden nebo více [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky pomocí kódu.  
+- Může hostovat jeden nebo více [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky pomocí kódu.  
   
--   Může hostovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky kontejneru, které obsahují jiné [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků.  
+- Může hostovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky kontejneru, které obsahují jiné [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků.  
   
--   To může být hostitelem hlavního/podrobného formuláře pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hlavní a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] podrobnosti.  
+- To může být hostitelem hlavního/podrobného formuláře pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hlavní a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] podrobnosti.  
   
--   To může být hostitelem hlavního/podrobného formuláře pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hlavní a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podrobnosti.  
+- To může být hostitelem hlavního/podrobného formuláře pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hlavní a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podrobnosti.  
   
--   Může hostovat jeden nebo více [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] ovládacích prvků.  
+- Může hostovat jeden nebo více [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] ovládacích prvků.  
   
--   To může hostovat jeden nebo více složených ovládacích prvků.  
+- To může hostovat jeden nebo více složených ovládacích prvků.  
   
--   To může být hostitelem hybridní ovládacích prvků pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
+- To může být hostitelem hybridní ovládacích prvků pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
--   To může být hostitelem hybridní ovládacích prvků pomocí kódu.  
+- To může být hostitelem hybridní ovládacích prvků pomocí kódu.  
   
 ### <a name="layout-support"></a>Podpora rozložení  
  Následující seznam popisuje známých omezeních při <xref:System.Windows.Forms.Integration.WindowsFormsHost> element pokusí integrovat své prostředí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
   
--   V některých případech [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze změnit velikost nebo můžou mít velikost pouze na určité dimenze. Například [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> ovládací prvek podporuje pouze jeden výšku, které jsou definovány pomocí ovládacího prvku velikost písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dynamického rozložení, který předpokládá, že prvky můžete roztáhnout svisle, hostovaný <xref:System.Windows.Forms.ComboBox> ovládací prvek nebude roztáhnout podle očekávání.  
+- V některých případech [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze změnit velikost nebo můžou mít velikost pouze na určité dimenze. Například [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> ovládací prvek podporuje pouze jeden výšku, které jsou definovány pomocí ovládacího prvku velikost písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dynamického rozložení, který předpokládá, že prvky můžete roztáhnout svisle, hostovaný <xref:System.Windows.Forms.ComboBox> ovládací prvek nebude roztáhnout podle očekávání.  
   
--   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze otáčet nebo zešikmená. Například pokud vaše uživatelské rozhraní otočíte o 90 stupňů, hostované [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky se zachovávají původní pozice vzhůru.  
+- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze otáčet nebo zešikmená. Například pokud vaše uživatelské rozhraní otočíte o 90 stupňů, hostované [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky se zachovávají původní pozice vzhůru.  
   
--   Ve většině případů [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků nepodporují proporcionální škálování. I když bude možné škálovat celkové rozměry ovládacího prvku podřízených ovládacích prvků a komponent ovládacího prvku nemusí měnit velikost podle očekávání. Toto omezení závisí na tom, jak dobře se každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek podporuje škálování.  
+- Ve většině případů [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků nepodporují proporcionální škálování. I když bude možné škálovat celkové rozměry ovládacího prvku podřízených ovládacích prvků a komponent ovládacího prvku nemusí měnit velikost podle očekávání. Toto omezení závisí na tom, jak dobře se každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek podporuje škálování.  
   
--   V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelského rozhraní, můžete změnit pořadí vykreslování prvků překrývající se chování ovládacího prvku. Hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek vykreslen v samostatných HWND, takže je vždy vykreslován nad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy.  
+- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelského rozhraní, můžete změnit pořadí vykreslování prvků překrývající se chování ovládacího prvku. Hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek vykreslen v samostatných HWND, takže je vždy vykreslován nad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy.  
   
--   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu automatického škálování na základě velikosti písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelské rozhraní, změna velikosti písma se velikost celé rozložení, i když může dynamicky velikost jednotlivých prvků.  
+- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu automatického škálování na základě velikosti písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelské rozhraní, změna velikosti písma se velikost celé rozložení, i když může dynamicky velikost jednotlivých prvků.  
   
 ### <a name="ambient-properties"></a>Vedlejším vlastnostem  
  Některé vlastnosti prostředí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky mají [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ekvivalenty. Tyto vlastnosti prostředí se rozšíří na hostovanou [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky a vystavený jako veřejné vlastnosti na <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Ovládací prvek přeloží každý [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vedlejší vlastnost do jeho [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ekvivalentní.  
@@ -83,21 +83,21 @@ ms.locfileid: "59129269"
 ## <a name="hosting-wpf-controls-in-windows-forms"></a>Hostování ovládacích prvků WPF v modelu Windows Forms  
  Při hostitele ovládacího prvku Windows Forms jsou podporovány následující scénáře vzájemné spolupráce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacího prvku:  
   
--   Hostující jednu nebo více [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky pomocí kódu.  
+- Hostující jednu nebo více [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky pomocí kódu.  
   
--   Přiřazení vlastnosti list s jedním nebo více hostovaných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků.  
+- Přiřazení vlastnosti list s jedním nebo více hostovaných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků.  
   
--   Hostující jednu nebo více [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky ve formuláři.  
+- Hostující jednu nebo více [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky ve formuláři.  
   
--   Spouští se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] okna.  
+- Spouští se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] okna.  
   
--   Hostování hlavního/podrobného formuláře pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hlavní a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podrobnosti.  
+- Hostování hlavního/podrobného formuláře pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hlavní a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podrobnosti.  
   
--   Hostování hlavního/podrobného formuláře pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hlavní a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] podrobnosti.  
+- Hostování hlavního/podrobného formuláře pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hlavní a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] podrobnosti.  
   
--   Vlastní hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků.  
+- Vlastní hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků.  
   
--   Hostování ovládacích prvků hybridní.  
+- Hostování ovládacích prvků hybridní.  
   
 ### <a name="ambient-properties"></a>Vedlejším vlastnostem  
  Některé vlastnosti prostředí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky mají [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ekvivalenty. Tyto vlastnosti prostředí se rozšíří na hostovanou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky a vystavený jako veřejné vlastnosti na <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku. <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek přeloží každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vedlejší vlastnost k jeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ekvivalentní.  
