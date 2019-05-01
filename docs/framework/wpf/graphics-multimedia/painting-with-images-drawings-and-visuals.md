@@ -13,11 +13,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
 ms.openlocfilehash: 826c5a0656a9a7e7cff0e96fc6755c5c9c717993
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002275"
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>Kreslení pomocí obrázků, kreseb a vizuálních objektů
 Toto téma popisuje způsob použití <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> objekty k vykreslení oblasti obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>.  
@@ -57,15 +57,15 @@ Objekty kresleno DrawingBrush
   
  A <xref:System.Windows.Media.DrawingBrush> jsou vykreslovány v oblasti <xref:System.Windows.Media.Drawing> objektu. A <xref:System.Windows.Media.Drawing> objektu popisuje viditelného obsahu, jako je tvar, rastrový obrázek, video nebo řádek textu. Různé druhy drawings popisují různé typy obsahu. Následuje seznam typy vykreslení objektů.  
   
--   <xref:System.Windows.Media.GeometryDrawing> – Nakreslí obrazec.  
+- <xref:System.Windows.Media.GeometryDrawing> – Nakreslí obrazec.  
   
--   <xref:System.Windows.Media.ImageDrawing> – Kreslení obrázku.  
+- <xref:System.Windows.Media.ImageDrawing> – Kreslení obrázku.  
   
--   <xref:System.Windows.Media.GlyphRunDrawing> – Kreslení textu.  
+- <xref:System.Windows.Media.GlyphRunDrawing> – Kreslení textu.  
   
--   <xref:System.Windows.Media.VideoDrawing> – Přehraje zvuk nebo video soubor.  
+- <xref:System.Windows.Media.VideoDrawing> – Přehraje zvuk nebo video soubor.  
   
--   <xref:System.Windows.Media.DrawingGroup> – Kreslení jiných kreslení. Pomocí vykreslení skupiny můžete kombinovat další drawings do jednoho kompozitní kresby.  
+- <xref:System.Windows.Media.DrawingGroup> – Kreslení jiných kreslení. Pomocí vykreslení skupiny můžete kombinovat další drawings do jednoho kompozitní kresby.  
   
  Další informace o <xref:System.Windows.Media.Drawing> objekty, najdete [kreslení objekty – přehled](drawing-objects-overview.md).  
   
@@ -89,9 +89,9 @@ Objekty kresleno DrawingBrush
   
  Existují dva způsoby, jak zadat <xref:System.Windows.Media.VisualBrush.Visual%2A> obsah <xref:System.Windows.Media.VisualBrush>.  
   
--   Vytvořte nový <xref:System.Windows.Media.Visual> a použít ho nastavit <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Příklad najdete v tématu [příkladu: Vykreslení vizuálního objektu](#examplevisualbrush1) v následující části.  
+- Vytvořte nový <xref:System.Windows.Media.Visual> a použít ho nastavit <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Příklad najdete v tématu [příkladu: Vykreslení vizuálního objektu](#examplevisualbrush1) v následující části.  
   
--   Použijte existující <xref:System.Windows.Media.Visual>, která vytvoří duplicitní image cíle <xref:System.Windows.Media.Visual>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> vytvoření zajímavých efektů, jako je například reflexe a zvětšení. Příklad najdete v tématu [příkladu: Vytvoření reflexe](#examplevisualbrush2) oddílu.  
+- Použijte existující <xref:System.Windows.Media.Visual>, která vytvoří duplicitní image cíle <xref:System.Windows.Media.Visual>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> vytvoření zajímavých efektů, jako je například reflexe a zvětšení. Příklad najdete v tématu [příkladu: Vytvoření reflexe](#examplevisualbrush2) oddílu.  
   
  Při definování nového <xref:System.Windows.Media.VisualBrush.Visual%2A> pro <xref:System.Windows.Media.VisualBrush> a že <xref:System.Windows.Media.Visual> je <xref:System.Windows.UIElement> (například panel nebo ovládací prvek), poběží systém rozložení <xref:System.Windows.UIElement> a jeho podřízené prvky při <xref:System.Windows.Media.VisualBrush.AutoLayoutContent%2A> je nastavena na `true`. Ale kořenové <xref:System.Windows.UIElement> je v podstatě izolovaný od zbytku systému: styly a externí rozložení nejde navrhovaný pro SVS zahrnuje tuto hranici. Proto by měly explicitně zadat velikost kořenové <xref:System.Windows.UIElement>, protože je jeho nadřazeným pouze <xref:System.Windows.Media.VisualBrush> a proto ji nelze přizpůsobovat svou velikost automaticky do oblasti se překreslit. Další informace o rozložení v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], najdete v článku [rozložení](../advanced/layout.md).  
   

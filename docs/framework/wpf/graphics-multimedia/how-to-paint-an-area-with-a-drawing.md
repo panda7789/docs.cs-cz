@@ -10,11 +10,11 @@ helpviewer_keywords:
 - drawings [WPF], painting with
 ms.assetid: c10dc4b1-09b1-41e8-ad14-456b5fb377df
 ms.openlocfilehash: 6b204ae631912181333e2559ebadcdc37e7693b7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010071"
 ---
 # <a name="how-to-paint-an-area-with-a-drawing"></a>Postupy: Vyplnění oblasti kresbou
 Tento příklad ukazuje způsob vykreslení oblasti kresbou. Vykreslení oblasti kresbou, použijte <xref:System.Windows.Media.DrawingBrush> a jeden nebo více <xref:System.Windows.Media.Drawing> objekty.   Následující příklad používá <xref:System.Windows.Media.DrawingBrush> k vykreslení objektu kresbou dva tři tečky.  

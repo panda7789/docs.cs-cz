@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
 ms.openlocfilehash: 6ba3f29ad0ceef7f1ea9d102743df568a32c26c8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014261"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tato technika umožňuje přizpůsobit chování aplikační model a přidávat volání vlastní metody aplikace po spuštění a ukončení.  
@@ -38,11 +38,11 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
      <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A> Metoda volání těchto metod:  
   
-    1.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>. Určuje, zda má aplikace úvodní obrazovku a pokud ano, zobrazí na úvodní obrazovce na samostatném vlákně.  
+    1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>. Určuje, zda má aplikace úvodní obrazovku a pokud ano, zobrazí na úvodní obrazovce na samostatném vlákně.  
   
          <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A> Metoda obsahuje kód, který se zobrazí úvodní obrazovky pro minimální počet milisekund, které jsou určené <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A> vlastnost. Tuto funkci použít, je nutné přidat úvodní obrazovky do aplikace pomocí **Návrháře projektu** (který nastaví `My.Application.MinimumSplashScreenDisplayTime` vlastnost na dvou sekund), nebo nastavte `My.Application.MinimumSplashScreenDisplayTime` vlastnost v metodě, která přepíše <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A> nebo <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metody. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A>.  
   
-    2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>. Umožňuje generovat kód, který se inicializuje na úvodní obrazovce designeru.  
+    2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>. Umožňuje generovat kód, který se inicializuje na úvodní obrazovce designeru.  
   
          Ve výchozím nastavení tato metoda nemá žádný účinek. Pokud vyberete úvodní obrazovka pro vaši aplikaci v jazyce Visual Basic **Návrháře projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metodu s metodou, která nastavuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A> vlastnost do nové instance formuláře úvodní obrazovky .  
   
@@ -54,11 +54,11 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
      Ve výchozím nastavení, aby přešel do smyčky zpráv Windows Forms, tato metoda volá `OnCreateMainForm` (Chcete-li vytvořit hlavní formulář aplikace) a `HideSplashScreen` (pro zavření úvodní obrazovky) metody:  
   
-    1.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>. Poskytuje způsob pro návrháře a vygenerovat kód, který inicializuje hlavního formuláře.  
+    1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>. Poskytuje způsob pro návrháře a vygenerovat kód, který inicializuje hlavního formuláře.  
   
          Ve výchozím nastavení tato metoda nemá žádný účinek. Nicméně, když vyberete hlavní formulář pro vaši aplikaci v jazyce Visual Basic **Návrháře projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> metodu s metodou, která nastavuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> vlastnost na novou instanci třídy hlavního formuláře.  
   
-    2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>. Pokud má aplikace úvodní obrazovku a je otevřen, tato metoda se zavře úvodní obrazovka.  
+    2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>. Pokud má aplikace úvodní obrazovku a je otevřen, tato metoda se zavře úvodní obrazovka.  
   
          Ve výchozím nastavení tato metoda se zavře úvodní obrazovka.  
   
@@ -97,7 +97,6 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>
-- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
 - [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
 - [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

@@ -30,11 +30,11 @@ helpviewer_keywords:
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
 ms.openlocfilehash: bf4118c6e811f409715b7b6684851b8b3e8bbb25
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981367"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAML. Tyto podmínky se často používají v celé zbývající části této dokumentace, i pro WPF dokumentaci, konkrétně a pro jiná rozhraní, které využívají XAML nebo o základních konceptech XAML povolená podpora jazyka XAML na úrovni oboru názvů System.Xaml. Toto téma rozšiřuje základní terminologii zavedené v tématu [přehled XAML (WPF)](xaml-overview-wpf.md).  
@@ -58,9 +58,9 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
 ## <a name="object-element-syntax"></a>Syntaxe elementu objektu  
  *Syntaxe elementu objektu* je syntaxe značky XAML, který instancuje CLR třídu nebo strukturu deklarováním platný element XML. Tato syntaxe se podobá syntaxi elementu dalších jazycích značky, například HTML. Syntaxe elementu objektu začíná levou hranatou závorku (\<), bezprostředně následuje název typu třídy nebo struktury instance. Nula nebo více mezer, můžete postupovat podle názvu typu a mohou být deklarovány také nula nebo více atributů na elementu objektu jednoho nebo více mezer oddělení každý název atributu = "value" pár. Nakonec jeden z následujících musí mít hodnotu true:  
   
--   Element a značky musí být uzavřel lomítkem (/) okamžitě následuje ostrá závorka (>).  
+- Element a značky musí být uzavřel lomítkem (/) okamžitě následuje ostrá závorka (>).  
   
--   Počáteční značka musí dokončit ostrá závorka (>). Další elementy objektu, vlastnost prvky nebo vnitřní text, můžete postupovat podle počáteční značka. Přesně obsahu mohou být obsaženy v tomto poli je obvykle omezená objektový model elementu. Odpovídající uzavírací značka pro object element musí existovat ve správné vnoření a vyvážit s ostatní kombinace otevírací a uzavírací značka.  
+- Počáteční značka musí dokončit ostrá závorka (>). Další elementy objektu, vlastnost prvky nebo vnitřní text, můžete postupovat podle počáteční značka. Přesně obsahu mohou být obsaženy v tomto poli je obvykle omezená objektový model elementu. Odpovídající uzavírací značka pro object element musí existovat ve správné vnoření a vyvážit s ostatní kombinace otevírací a uzavírací značka.  
   
  XAML, jak je implementované .NET obsahuje sadu pravidel, která mapování elementů objektu do typů, atributů do vlastnosti nebo události a obory názvů XAML do oborů názvů CLR a sestavení. Pro WPF a .NET Framework, mapování elementů objektu XAML na [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] typy definované v odkazovaných sestavení a atributů mapování na členy z těchto typů. Při odkazování na typ CLR v XAML, máte přístup k zděděné členy tohoto typu také.  
   
@@ -154,11 +154,11 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
 ## <a name="collection-syntax"></a>Syntaxe kolekce  
  Specifikace XAML vyžaduje implementace XAML identifikovat vlastnosti, kde je typ hodnoty do kolekce. Obecná implementace procesoru XAML v rozhraní .NET je založená na spravovaném kódu a modul CLR a identifikuje kolekci typů prostřednictvím jednoho z následujících akcí:  
   
--   Typ implementuje <xref:System.Collections.IList>.  
+- Typ implementuje <xref:System.Collections.IList>.  
   
--   Typ implementuje <xref:System.Collections.IDictionary>.  
+- Typ implementuje <xref:System.Collections.IDictionary>.  
   
--   Typ je odvozen od <xref:System.Array> (Další informace o polích v XAML najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).)  
+- Typ je odvozen od <xref:System.Array> (Další informace o polích v XAML najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).)  
   
  Pokud typ vlastnosti je kolekce, pak typ odvozený kolekce nemusí být zadané ve značce jako element objektu. Místo toho prvky, které jsou určeny k položek v kolekci jsou specifikovány jako jeden nebo více podřízených elementů elementu vlastnosti. Každé takové položky vyhodnotí na objekt při načítání a přidá do kolekce se při volání `Add` metody implicitní kolekce. Například <xref:System.Windows.Style.Triggers%2A> vlastnost <xref:System.Windows.Style> přijímá typ specializované kolekce <xref:System.Windows.TriggerCollection>, která implementuje <xref:System.Collections.IList>. Není nutné k vytvoření instance <xref:System.Windows.TriggerCollection> objekt elementu v kódu. Místo toho zadat jednu nebo víc <xref:System.Windows.Trigger> položky jako prvky v rámci `Style.Triggers` vlastnost elementu, kde <xref:System.Windows.Trigger> (nebo z odvozené třídy) je očekáván jako typ položky pro silně typované a implicitní typ <xref:System.Windows.TriggerCollection>.  
   
@@ -264,9 +264,9 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
   
  Připojené vlastnosti pomocí syntaxe podobná na první pohled syntax prvku vlastnosti v tom, že zadáváte *typeName*. *Vlastnost propertyName* kombinaci. Existují dva důležité rozdíly:  
   
--   Můžete použít *typeName*. *Vlastnost propertyName* kombinaci, i když nastavení připojené vlastnosti prostřednictvím syntaxe atributu. Připojené vlastnosti jsou že pouze tam, kde kvalifikováním názvu vlastnosti je požadavek ve syntaxe atributu.  
+- Můžete použít *typeName*. *Vlastnost propertyName* kombinaci, i když nastavení připojené vlastnosti prostřednictvím syntaxe atributu. Připojené vlastnosti jsou že pouze tam, kde kvalifikováním názvu vlastnosti je požadavek ve syntaxe atributu.  
   
--   Můžete také používat syntax prvku vlastnosti pro připojené vlastnosti. Však pro syntax prvku vlastnosti typické *typeName* zadáte, je element objektu, který obsahuje element vlastnosti. Pokud odkazujete na připojené vlastnosti, pak bude *typeName* je třída, která definuje připojená vlastnost není nadřazeného elementu objektu.  
+- Můžete také používat syntax prvku vlastnosti pro připojené vlastnosti. Však pro syntax prvku vlastnosti typické *typeName* zadáte, je element objektu, který obsahuje element vlastnosti. Pokud odkazujete na připojené vlastnosti, pak bude *typeName* je třída, která definuje připojená vlastnost není nadřazeného elementu objektu.  
   
 <a name="attached_events"></a>   
 ## <a name="attached-events"></a>Přidružené události  

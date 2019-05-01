@@ -3,11 +3,11 @@ title: Flexibilní typy
 description: Další informace o použití F# anotaci typu flexibilní, což znamená, že parametr, proměnné nebo hodnota má typ, který je kompatibilní s zadaného typu.
 ms.date: 05/16/2016
 ms.openlocfilehash: 32857cc317bc6b4b7baf53b623b551e8e0733e41
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61981380"
 ---
 # <a name="flexible-types"></a>Flexibilní typy
 

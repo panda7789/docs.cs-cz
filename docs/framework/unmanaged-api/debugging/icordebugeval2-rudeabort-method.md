@@ -18,14 +18,14 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0aabff090634f1ecdeec5636336ad1fb77b8b81c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61988920"
 ---
 # <a name="icordebugeval2rudeabort-method"></a>ICorDebugEval2::RudeAbort – metoda
-Zruší výpočet které tento `ICorDebugEval2` právě provádí.  
+Zruší výpočet, který tato `ICorDebugEval2` v tuto chvíli provádí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ HRESULT RudeAbort ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `RudeAbort` neuvolní žádné zámku, která obsahuje vyhodnocování, tak zůstanou relaci ladění ve stavu unsafe. Volejte tuto metodu s velmi opatrní.  
+ `RudeAbort` neuvolní žádné zámky, které obsahuje Chyba při vyhodnocování, tak se relace ladění zůstane ve stavu unsafe. Volání této metody s nejvyšší opatrností.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

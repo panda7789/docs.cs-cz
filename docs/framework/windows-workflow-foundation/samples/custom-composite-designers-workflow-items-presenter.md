@@ -6,22 +6,22 @@ dev_langs:
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
 ms.openlocfilehash: 61f61962e06e94572b7eb564ab08b829ba2c864f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005638"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Návrháři vlastního skládání – místo pro položky pracovních postupů
 <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> Je typ klíče v WF návrháře programovací model, který umožňuje úpravy kolekci elementů obsažených. Tato ukázka předvádí, jak vytvářet návrháře aktivit, který poskytuje informace o upravitelné kolekce.
 
  V této ukázce:
 
--   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>.
+- Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>.
 
--   Vytváření návrháře aktivit se zobrazením "sbalené" a "Rozšířená".
+- Vytváření návrháře aktivit se zobrazením "sbalené" a "Rozšířená".
 
--   Přepsání výchozího návrháře v provádění se změněným hostováním aplikací.
+- Přepsání výchozího návrháře v provádění se změněným hostováním aplikací.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
 
@@ -32,15 +32,15 @@ ms.locfileid: "59344868"
 ## <a name="sample-highlights"></a>Stručný přehled ukázky
  Kód pro tento příklad ukazuje následující:
 
--   Návrhář aktivity je sestaven pro:  `Parallel`
+- Návrhář aktivity je sestaven pro:  `Parallel`
 
--   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>. Pár věcí, které upozorňují na:
+- Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>. Pár věcí, které upozorňují na:
 
-    -   Všimněte si použití datové vazby WPF vytvořit vazbu na `ModelItem.Branches`. `ModelItem` je vlastnost na `WorkflowElementDesigner` , který odkazuje na základní objekt návrháře se používá, v tomto případě naší `Parallel`.
+    - Všimněte si použití datové vazby WPF vytvořit vazbu na `ModelItem.Branches`. `ModelItem` je vlastnost na `WorkflowElementDesigner` , který odkazuje na základní objekt návrháře se používá, v tomto případě naší `Parallel`.
 
-    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.SpacerTemplate?displayProperty=nameWithType> Je možné do vizuálu zobrazit mezi jednotlivých položek v kolekci.
+    - <xref:System.Activities.Presentation.WorkflowItemsPresenter.SpacerTemplate?displayProperty=nameWithType> Je možné do vizuálu zobrazit mezi jednotlivých položek v kolekci.
 
-    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> je šablonu, která je možné poskytnout určit rozložení položek v kolekci. V takovém případě se používá panel vodorovné zásobníku.
+    - <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> je šablonu, která je možné poskytnout určit rozložení položek v kolekci. V takovém případě se používá panel vodorovné zásobníku.
 
  Tento následující příklad kódu ukazuje to.
 
@@ -60,9 +60,9 @@ ms.locfileid: "59344868"
   </sad:WorkflowItemsPresenter>
 ```
 
--   Provedení sdružení `DesignerAttribute` k `Parallel` typu a potom výstup hlášené atributy.
+- Provedení sdružení `DesignerAttribute` k `Parallel` typu a potom výstup hlášené atributy.
 
-    -   Nejprve zaregistrujte všechny výchozí návrháře.
+    - Nejprve zaregistrujte všechny výchozí návrháře.
 
  Tady je příklad kódu.
 
@@ -80,7 +80,7 @@ metadata.Register()
 RegisterCustomMetadata()
 ```
 
-    -   Potom přepsat paralelní v `RegisterCustomMetadata` metody.
+    - Potom přepsat paralelní v `RegisterCustomMetadata` metody.
 
  Následující kód ukazuje to v C# a Visual Basic.
 
@@ -101,7 +101,7 @@ Sub RegisterCustomMetadata()
 End Sub
 ```
 
--   A konečně, Všimněte si použití odlišné datové šablony a aktivační události vyberte příslušnou šablonu na základě `IsRootDesigner` vlastnost.
+- A konečně, Všimněte si použití odlišné datové šablony a aktivační události vyberte příslušnou šablonu na základě `IsRootDesigner` vlastnost.
 
  Tady je příklad kódu.
 

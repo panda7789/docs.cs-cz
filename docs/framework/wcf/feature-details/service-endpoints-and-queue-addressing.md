@@ -3,11 +3,11 @@ title: Koncové body služby a adresování front
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
 ms.openlocfilehash: 4064b13b00d44f90a372df5364406fb16c1da9fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59172520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62050386"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adres služby, které načítají z fronty a mapování koncových bodů služby do fronty. Následující obrázek znázorňuje Připomínáme, classic, že nasazení aplikace Windows Communication Foundation (WCF) zařazených do fronty.  
@@ -34,11 +34,11 @@ Toto téma popisuje, jak klienti adres služby, které načítají z fronty a ma
   
  kde:  
   
--   \<*název hostitele*> je název počítače, který je hostitelem cílové fronty.  
+- \<*název hostitele*> je název počítače, který je hostitelem cílové fronty.  
   
--   [privátní] je volitelné. Používá se při adresování cílové fronty, která je soukromé fronty. K vyřešení veřejné fronty, nesmíte zadat privátní. Všimněte si, že na rozdíl od služby MSMQ cesty, neexistuje žádný "$" ve formě identifikátoru URI WCF.  
+- [privátní] je volitelné. Používá se při adresování cílové fronty, která je soukromé fronty. K vyřešení veřejné fronty, nesmíte zadat privátní. Všimněte si, že na rozdíl od služby MSMQ cesty, neexistuje žádný "$" ve formě identifikátoru URI WCF.  
   
--   \<*Název fronty*> je název fronty. Název fronty najdete také dílčí. Thus, \<*queue-name*> = \<*name-of-queue*>[;*sub-queue-name*].  
+- \<*Název fronty*> je název fronty. Název fronty najdete také dílčí. Thus, \<*queue-name*> = \<*name-of-queue*>[;*sub-queue-name*].  
   
  Test1: K adresování soukromé fronty PurchaseOrders hostované na počítač abc atadatum.com, identifikátor URI by net.msmq://abc.adatum.com/private/PurchaseOrders.  
   
@@ -51,9 +51,9 @@ Toto téma popisuje, jak klienti adres služby, které načítají z fronty a ma
 ### <a name="multiple-contracts-in-a-queue"></a>Více kontraktů ve frontě  
  Různé smlouvy můžete implementovat zprávy ve frontě. V takovém případě je důležité, že je PRAVDA, pokud chcete úspěšně číst a zpracovávat všechny zprávy jednu z následujících:  
   
--   Zadejte koncový bod pro službu, která implementuje všechny kontrakty. Toto je doporučený postup.  
+- Zadejte koncový bod pro službu, která implementuje všechny kontrakty. Toto je doporučený postup.  
   
--   Zadejte několik koncových bodů s různé kontrakty, ale ujistěte se, že všechny koncové body používat stejné `NetMsmqBinding` objektu. Dispatching logika ServiceModel používá pumpu zpráv, který čte zprávy z přenosový kanál pro odesílání, který nakonec zrušit spojuje zprávy na základě smlouvy do různých koncových bodů. Pro dvojice identifikátoru URI/vytváření vazby vlastností listenurimode nastavenou na se vytvoří pumpu zpráv. Adresa fronty se používá jako identifikátor URI naslouchání naslouchací proces ve frontě. Všechny koncové body pomocí stejného objektu vazby zajistí, že jeden zprávy odeslané používá číst zprávy a rušit multiplexovaný do příslušných koncových bodů s podle smlouvy.  
+- Zadejte několik koncových bodů s různé kontrakty, ale ujistěte se, že všechny koncové body používat stejné `NetMsmqBinding` objektu. Dispatching logika ServiceModel používá pumpu zpráv, který čte zprávy z přenosový kanál pro odesílání, který nakonec zrušit spojuje zprávy na základě smlouvy do různých koncových bodů. Pro dvojice identifikátoru URI/vytváření vazby vlastností listenurimode nastavenou na se vytvoří pumpu zpráv. Adresa fronty se používá jako identifikátor URI naslouchání naslouchací proces ve frontě. Všechny koncové body pomocí stejného objektu vazby zajistí, že jeden zprávy odeslané používá číst zprávy a rušit multiplexovaný do příslušných koncových bodů s podle smlouvy.  
   
 ### <a name="srmp-messaging"></a>SRMP zasílání zpráv  
  Jak bylo uvedeno výše můžete použít protokol SRMP k frontě přenosů. To se běžně používá, když přenos pomocí protokolu HTTP odesílá zprávy mezi fronty přenosu a cílové fronty.  

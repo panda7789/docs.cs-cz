@@ -6,11 +6,11 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms]
 ms.assetid: e5ef455a-e049-429c-8005-30c93132fb79
 ms.openlocfilehash: 1a5378665d29e02799dd732d17705e462f40a2b1
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009497"
 ---
 # <a name="toolstrip-control-windows-forms"></a>ToolStrip – ovládací prvek (Windows Forms)
 <xref:System.Windows.Forms.ToolStrip> ovládací prvky jsou panely nástrojů, které můžete hostovat nabídek, ovládacích prvků a uživatelských ovládacích prvků v aplikacích Windows Forms.  
@@ -73,13 +73,13 @@ ms.locfileid: "57721460"
  [Postupy: Implementace vlastního prvku ToolStripRenderer](how-to-implement-a-custom-toolstriprenderer.md)  
  Popisuje, jak přizpůsobit vzhled <xref:System.Windows.Forms.ToolStrip> ovládacího prvku pomocí implementace, která je odvozena z třídy <xref:System.Windows.Forms.ToolStripRenderer>.  
   
--   [Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře](create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)  
+- [Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře](create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)  
   
--   [Postupy: Přesunutí ToolStrip mimo prvek ToolStripContainer formuláře](how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md)  
+- [Postupy: Přesunutí ToolStrip mimo prvek ToolStripContainer formuláře](how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md)  
   
--   [Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním](walkthrough-creating-a-professionally-styled-toolstrip-control.md)  
+- [Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním](walkthrough-creating-a-professionally-styled-toolstrip-control.md)  
   
--   [Návod: Vytvoření formuláře MDI se slučováním nabídek a ovládacích prvcích ToolStrip](walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)  
+- [Návod: Vytvoření formuláře MDI se slučováním nabídek a ovládacích prvcích ToolStrip](walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.ToolStrip> Třída  

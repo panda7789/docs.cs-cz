@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Invoke control pattern
 ms.assetid: e5b1e239-49f8-468e-bfec-1fba02ec9ac4
 ms.openlocfilehash: 5c9d94aca6b9b53c505fa7419406a0d2fc4a0ae7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61983343"
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -25,30 +25,30 @@ ms.locfileid: "59134781"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Pokud implementace vzoru ovládacích prvků Invoke, mějte na paměti následující pokyny a konvence:  
   
--   Implementace ovládacích prvků <xref:System.Windows.Automation.Provider.IInvokeProvider> Pokud stejné chování se nevystaví prostřednictvím jiného poskytovatele řízení vzor. Například pokud <xref:System.Windows.Automation.InvokePattern.Invoke%2A> metoda na ovládací prvek provádí stejnou akci, jako <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> metody by neměla implementovat ovládací prvek <xref:System.Windows.Automation.Provider.IInvokeProvider>.  
+- Implementace ovládacích prvků <xref:System.Windows.Automation.Provider.IInvokeProvider> Pokud stejné chování se nevystaví prostřednictvím jiného poskytovatele řízení vzor. Například pokud <xref:System.Windows.Automation.InvokePattern.Invoke%2A> metoda na ovládací prvek provádí stejnou akci, jako <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> metody by neměla implementovat ovládací prvek <xref:System.Windows.Automation.Provider.IInvokeProvider>.  
   
--   Vyvolání ovládacího prvku se obvykle provádí kliknutím nebo poklepáním nebo stisknutím klávesy ENTER, předdefinované klávesové zkratky nebo alternativní kombinaci kláves.  
+- Vyvolání ovládacího prvku se obvykle provádí kliknutím nebo poklepáním nebo stisknutím klávesy ENTER, předdefinované klávesové zkratky nebo alternativní kombinaci kláves.  
   
--   <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> je aktivována na ovládací prvek, který se aktivoval (jako odpověď na ovládací prvek jeho přidružené akce). Pokud je to možné by měl událost vyvolána po ovládací prvek dokončil akci a vrátí bez blokování. Událost vyvolaná by měla být zvýšena před obsluze žádosti Invoke v následujících scénářích:  
+- <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> je aktivována na ovládací prvek, který se aktivoval (jako odpověď na ovládací prvek jeho přidružené akce). Pokud je to možné by měl událost vyvolána po ovládací prvek dokončil akci a vrátí bez blokování. Událost vyvolaná by měla být zvýšena před obsluze žádosti Invoke v následujících scénářích:  
   
-    -   Není možné nebo praktické počkat, až se akce dokončí.  
+    - Není možné nebo praktické počkat, až se akce dokončí.  
   
-    -   Tato akce vyžaduje zásah uživatele.  
+    - Tato akce vyžaduje zásah uživatele.  
   
-    -   Tato akce je časově náročné a způsobí, že volajícího klienta a blokovat významné množství času.  
+    - Tato akce je časově náročné a způsobí, že volajícího klienta a blokovat významné množství času.  
   
--   Pokud volání ovládacího prvku má významné vedlejší účinky, tyto vedlejší účinky by měly být vystaveny prostřednictvím <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.HelpText%2A> vlastnost. Například i když <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> není přidružen k výběru, <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> může způsobit, že jiný ovládací prvek má být vybrán.  
+- Pokud volání ovládacího prvku má významné vedlejší účinky, tyto vedlejší účinky by měly být vystaveny prostřednictvím <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.HelpText%2A> vlastnost. Například i když <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> není přidružen k výběru, <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> může způsobit, že jiný ovládací prvek má být vybrán.  
   
--   Při najetí myší (nebo myší nad) účinky obecně nepředstavují vyvolaná událost. Však podporovat ovládací prvky, které provádějí akce (na rozdíl od příčina vizuální efekt). v závislosti na stavu při najetí myší <xref:System.Windows.Automation.InvokePattern> – vzor ovládacích prvků.  
+- Při najetí myší (nebo myší nad) účinky obecně nepředstavují vyvolaná událost. Však podporovat ovládací prvky, které provádějí akce (na rozdíl od příčina vizuální efekt). v závislosti na stavu při najetí myší <xref:System.Windows.Automation.InvokePattern> – vzor ovládacích prvků.  
   
 > [!NOTE]
 >  Tato implementace se považuje za problém usnadnění přístupu, pokud ovládací prvek lze vyvolat pouze v důsledku vedlejší účinek týkající se myši.  
   
--   Vyvolání ovládacího prvku se liší od výběru nějaké položky. Ale v závislosti na ovládacím prvku vyvolání může způsobit, že položka, která má být vybrána jako vedlejší efekt. Například volání [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] položky seznamu dokumentů ve složce Dokumenty vybere položka i otevře dokument.  
+- Vyvolání ovládacího prvku se liší od výběru nějaké položky. Ale v závislosti na ovládacím prvku vyvolání může způsobit, že položka, která má být vybrána jako vedlejší efekt. Například volání [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] položky seznamu dokumentů ve složce Dokumenty vybere položka i otevře dokument.  
   
--   Element může zmizí z [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu ihned po vyvolání. Žádá se informace z elementu poskytované události zpětného volání může selhat v důsledku. Předběžné načítání informací uložených v mezipaměti je doporučené řešení.  
+- Element může zmizí z [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu ihned po vyvolání. Žádá se informace z elementu poskytované události zpětného volání může selhat v důsledku. Předběžné načítání informací uložených v mezipaměti je doporučené řešení.  
   
--   Ovládací prvky můžete implementovat několik vzorů ovládacích prvků. Například barva výplně ovládacího prvku na [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] nástrojů implementuje oba <xref:System.Windows.Automation.InvokePattern> a <xref:System.Windows.Automation.ExpandCollapsePattern> řídit vzory. <xref:System.Windows.Automation.ExpandCollapsePattern> zpřístupňuje v nabídce a <xref:System.Windows.Automation.InvokePattern> vyplní aktivního výběru zvolený barvou.  
+- Ovládací prvky můžete implementovat několik vzorů ovládacích prvků. Například barva výplně ovládacího prvku na [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] nástrojů implementuje oba <xref:System.Windows.Automation.InvokePattern> a <xref:System.Windows.Automation.ExpandCollapsePattern> řídit vzory. <xref:System.Windows.Automation.ExpandCollapsePattern> zpřístupňuje v nabídce a <xref:System.Windows.Automation.InvokePattern> vyplní aktivního výběru zvolený barvou.  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
 ## <a name="required-members-for-iinvokeprovider"></a>Požadované členy pro IInvokeProvider  

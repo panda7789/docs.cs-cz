@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
 ms.openlocfilehash: 6a546a982b7c000e7fb5304daf7eac95d6da7e92
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990324"
 ---
 # <a name="default-nettcpbinding"></a>Výchozí NetTcpBinding
 Tato ukázka demonstruje použití <xref:System.ServiceModel.NetTcpBinding> vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je služba v místním prostředí. Klient a služba se konzolové aplikace.  

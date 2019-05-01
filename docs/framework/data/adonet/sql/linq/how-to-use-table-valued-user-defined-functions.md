@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 5a4ae2b4-3290-4aa1-bc95-fc70c51b54cf
 ms.openlocfilehash: eedc2e9b997e91ed9fe0038f260aa475d23a0627
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033589"
 ---
 # <a name="how-to-use-table-valued-user-defined-functions"></a>Postupy: Použití uživatelem definovaných funkcí s tabulkovými hodnotami
 Funkce vracející tabulku vrátí jednu sadu řádků (na rozdíl od uložené procedury, které může vrátit vícečetné tvary výsledků). Vzhledem k tomu, že je návratový typ funkce vracející tabulku `Table`, funkce vracející tabulku můžete použít kdekoli v SQL, můžete použít tabulku. Funkce vracející tabulku lze považovat také stejně jako tabulku.  

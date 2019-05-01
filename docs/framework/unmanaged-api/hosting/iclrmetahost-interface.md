@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a1b189b79a02f04b7f795ff2524441f12b053cec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59143946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61984630"
 ---
 # <a name="iclrmetahost-interface"></a>ICLRMetaHost – rozhraní
 Poskytuje metody, které vrátí konkrétní verzi modulu common language runtime (CLR) podle její číslo verze, seznam všech nainstalovaných CLRs, vypsat všechny moduly runtime, která jsou načtena do určeného procesu, zjistit verzi modulu CLR použitou pro kompilaci sestavení, ukončit proces vypnutí čistý modul runtime a načítání starší verze rozhraní API.  

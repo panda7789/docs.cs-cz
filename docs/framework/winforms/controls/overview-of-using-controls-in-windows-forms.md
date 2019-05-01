@@ -10,11 +10,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms]
 ms.assetid: fddbe951-4485-459d-a5fd-665ea346dbc1
 ms.openlocfilehash: 247ec4fc11f33587e77c49244b239a574c8f3cfc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012708"
 ---
 # <a name="overview-of-using-controls-in-windows-forms"></a>Přehled používání ovládacích prvků ve Windows Forms
 Toto téma popisuje základní prvky aplikace modelu Windows Forms a nabízí jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci Windows Forms.  
@@ -22,9 +22,9 @@ Toto téma popisuje základní prvky aplikace modelu Windows Forms a nabízí je
 ## <a name="simple-windows-forms-applications"></a>Aplikací jednoduché Windows Forms  
  Minimálně aplikace modelu Windows Forms obsahuje následující prvky:  
   
--   Jeden nebo více tříd, které jsou odvozeny z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.  
+- Jeden nebo více tříd, které jsou odvozeny z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.  
   
--   A `Main` metody, která vyvolá `static` (`shared` v jazyce Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> metoda a předá <xref:System.Windows.Forms.Form> instance k němu. <xref:System.Windows.Forms.Application.Run%2A> Metoda zpracovává zprávy z operačního systému do aplikace.  
+- A `Main` metody, která vyvolá `static` (`shared` v jazyce Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> metoda a předá <xref:System.Windows.Forms.Form> instance k němu. <xref:System.Windows.Forms.Application.Run%2A> Metoda zpracovává zprávy z operačního systému do aplikace.  
   
  Následující příklad kódu ukazuje základní prvky aplikace modelu Windows Forms.  
   

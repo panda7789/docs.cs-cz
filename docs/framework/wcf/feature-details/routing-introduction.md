@@ -3,11 +3,11 @@ title: Směrování – úvod
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
 ms.openlocfilehash: d0f07d0dd171de428f7d556d84dfda04e35880b2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59158675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991091"
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který je schopen směrování zpráv na základě obsahu zpráv. Ve službě Směrování můžete vytvořit komplexní logiku směrování, která umožňuje implementovat scénáře, jako je služba agregace, Správa verzí služby, priority směrování a směrování vícesměrového vysílání. Směrovací služba taky poskytuje chyba zpracování, který umožňuje nastavení seznamů zálohování koncových bodů, do které se odešlou zprávy, pokud dojde k chybě při odesílání na cílové primární koncový bod.  
@@ -156,9 +156,9 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
   
  Zatímco mnoho konfigurací směrovací služba použít exkluzivní filtr logiku, která provádí směrování zpráv do jediného určitého koncového bodu, budete muset směrování danou zprávu do více cílové koncové body. K vícesměrovému vysílání zpráv do více cílů musí být splněné následující podmínky:  
   
--   Tvar kanálu nesmí být požadavek odpověď (i když mohou být jednosměrné nebo obousměrné,) vzhledem k tomu, že pouze jednu odpověď lze přijímat pomocí klientské aplikace v odpovědi na požadavek.  
+- Tvar kanálu nesmí být požadavek odpověď (i když mohou být jednosměrné nebo obousměrné,) vzhledem k tomu, že pouze jednu odpověď lze přijímat pomocí klientské aplikace v odpovědi na požadavek.  
   
--   Několik filtrů musí vracet `true` při vyhodnocování zprávy.  
+- Několik filtrů musí vracet `true` při vyhodnocování zprávy.  
   
  Pokud jste splnili tyto podmínky se zpráva směruje na všechny koncové body všech filtrů, která se vyhodnotí `true`. Následující příklad definuje konfiguraci směrování, jejímž výsledkem zprávy směruje se oba koncové body v případě, že je adresa koncového bodu ve zprávě `http://localhost:8000/routingservice/router/rounding`.  
   
@@ -195,33 +195,33 @@ rc.FilterTable.Add(new EndpointAddressMessageFilter(new EndpointAddress(
   
  **Zpracování žádosti**  
   
--   Získejte **MessageVersion** výstupní vazbu/kanálu.  
+- Získejte **MessageVersion** výstupní vazbu/kanálu.  
   
--   Získejte čtečka textu pro původní zprávy.  
+- Získejte čtečka textu pro původní zprávy.  
   
--   Vytvořte novou zprávu o stejnou akci, čtečky textu a nový **MessageVersion**.  
+- Vytvořte novou zprávu o stejnou akci, čtečky textu a nový **MessageVersion**.  
   
--   Pokud <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing.None**, zkopírujte do, z FaultTo a záhlaví RelatesTo nové zprávy.  
+- Pokud <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing.None**, zkopírujte do, z FaultTo a záhlaví RelatesTo nové zprávy.  
   
--   Zkopírujte všechny vlastnosti zprávy do nové zprávy.  
+- Zkopírujte všechny vlastnosti zprávy do nové zprávy.  
   
--   Store původní zprávy s požadavkem pro použití při zpracování odpovědi.  
+- Store původní zprávy s požadavkem pro použití při zpracování odpovědi.  
   
--   Vrátí novou zprávu požadavku.  
+- Vrátí novou zprávu požadavku.  
   
  **Zpracování odpovědi**  
   
--   Získejte **MessageVersion** původní zprávy s požadavkem.  
+- Získejte **MessageVersion** původní zprávy s požadavkem.  
   
--   Získání čtečky textu zprávy přijaté odpovědi.  
+- Získání čtečky textu zprávy přijaté odpovědi.  
   
--   Vytvoření nové zprávy odpovědi se stejnou akci, čtečky textu a **MessageVersion** původní zprávy s požadavkem.  
+- Vytvoření nové zprávy odpovědi se stejnou akci, čtečky textu a **MessageVersion** původní zprávy s požadavkem.  
   
--   Pokud <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing.None**, zkopírujte do, z FaultTo a záhlaví RelatesTo nové zprávy.  
+- Pokud <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing.None**, zkopírujte do, z FaultTo a záhlaví RelatesTo nové zprávy.  
   
--   Zkopírujte vlastnosti zprávy do nové zprávy.  
+- Zkopírujte vlastnosti zprávy do nové zprávy.  
   
--   Vrátí nové zprávy odpovědi.  
+- Vrátí nové zprávy odpovědi.  
   
  Ve výchozím nastavení **SoapProcessingBehavior** se automaticky přidá do koncových bodů klienta podle <xref:System.ServiceModel.Routing.RoutingBehavior> při spuštění služby; však můžete řídit, zda zpracování SOAP se přidá do všech koncových bodů klienta pomocí <xref:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled%2A> vlastnost. Můžete také přidat chování přímo do určitého koncového bodu a povolit nebo zakázat toto chování na úrovni koncového bodu, pokud přesněji řídit zpracování SOAP se vyžaduje.  
   

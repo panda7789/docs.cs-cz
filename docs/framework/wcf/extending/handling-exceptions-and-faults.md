@@ -3,11 +3,11 @@ title: Zpracování výjimek a chyb
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
 ms.openlocfilehash: c29b3900a36d8d5c41fee49c408a2e3fdf67680b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991405"
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
 Výjimky se používají k předání chyby místně v rámci služby nebo implementace klienta. Chyby, na druhé straně, se používají k předání chyby přes hranice služeb, jako například ze serveru klientovi nebo naopak. Kromě chyb přenosové kanály často používají mechanismy specifické pro přenos komunikace chyb na úrovni přenosu. Například přenos pomocí protokolu HTTP používá stavové kódy, jako je například 404 ke komunikaci neexistující adresa URL koncového bodu (neexistuje žádný koncový bod má být zaslán zpět chybu). Tento dokument se skládá z tři oddíly, které poskytují pokyny pro autory vlastního kanálu. První část obsahuje pokyny k kdy a jak definovat a vyvolávat výjimky. Druhá část obsahuje pokyny týkající se vytváření a využívání chyb. Třetí část vysvětluje, jak poskytnout informace o trasování pro řešení potíží s běžící aplikací uživatele vlastního kanálu.  
@@ -309,9 +309,9 @@ public class MessageFault
 ## <a name="tracing"></a>Trasování  
  Rozhraní .NET Framework poskytuje mechanismus pro trasování spuštění programu jako způsob, jak vám pomůže diagnostiku produkčních aplikací nebo přerušované problémy, kde není možné jenom připojení ladicího programu a krokovat kód. Základní součásti tohoto mechanismu jsou v <xref:System.Diagnostics?displayProperty=nameWithType> obor názvů a obsahovat:  
   
--   <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>, což je zdroj informací trasování mají být zapsány, <xref:System.Diagnostics.TraceListener?displayProperty=nameWithType>, což je abstraktní základní třída pro konkrétní naslouchacích procesů, které zobrazí informace, které mají být vyvolány z <xref:System.Diagnostics.TraceSource> a vytvořit jeho výstup do cíle specifické pro naslouchací proces. Například <xref:System.Diagnostics.XmlWriterTraceListener> výstupy trasovací informace do souboru XML. Nakonec <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType>, která umožňuje řídit úroveň podrobností trasování uživatelů aplikace a je obvykle zadaný v konfiguraci.  
+- <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>, což je zdroj informací trasování mají být zapsány, <xref:System.Diagnostics.TraceListener?displayProperty=nameWithType>, což je abstraktní základní třída pro konkrétní naslouchacích procesů, které zobrazí informace, které mají být vyvolány z <xref:System.Diagnostics.TraceSource> a vytvořit jeho výstup do cíle specifické pro naslouchací proces. Například <xref:System.Diagnostics.XmlWriterTraceListener> výstupy trasovací informace do souboru XML. Nakonec <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType>, která umožňuje řídit úroveň podrobností trasování uživatelů aplikace a je obvykle zadaný v konfiguraci.  
   
--   Kromě základních komponent, můžete použít [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) k zobrazení a prohledávání WCF trasování. Nástroj je určený speciálně pro trasovací soubory vygenerován pomocí WCF a zapsat pomocí <xref:System.Diagnostics.XmlWriterTraceListener>. Následující obrázek znázorňuje různé součásti účastnící se trasování.  
+- Kromě základních komponent, můžete použít [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) k zobrazení a prohledávání WCF trasování. Nástroj je určený speciálně pro trasovací soubory vygenerován pomocí WCF a zapsat pomocí <xref:System.Diagnostics.XmlWriterTraceListener>. Následující obrázek znázorňuje různé součásti účastnící se trasování.  
   
  ![Zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/media/wcfc-tracinginchannelsc.gif "wcfc_TracingInChannelsc")  
   

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
 ms.openlocfilehash: 824d2a08ddd36317fcdb8caa1690decb2f9c432a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039557"
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>Postupy: Zveřejnění informačního kanálu ve formátu Atom i RSS
 Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje informačního kanálu syndikace. Toto téma popisuje, jak vytvořit služby syndikace, který zpřístupňuje kanálem syndikace Atom 1.0 i RSS 2.0. Tato služba poskytuje jeden koncový bod, který může vrátit buď souhrnný formát, který. Pro zjednodušení služby používané v tomto příkladu je nezávislý hostované. V produkčním prostředí by být hostované služby tohoto typu v rámci služby IIS nebo WAS. Další informace o různých WCF možnosti hostování naleznete v tématu [Hosting](../../../../docs/framework/wcf/feature-details/hosting.md).  

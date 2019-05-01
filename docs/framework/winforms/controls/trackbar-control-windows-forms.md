@@ -7,11 +7,11 @@ helpviewer_keywords:
 - TrackBar control [Windows Forms]
 ms.assetid: 37d6aee3-7e8a-4a10-a99c-3a6e09199553
 ms.openlocfilehash: adeb796b0411473d8e17f164f2f87bdf6ed7ae0e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009242"
 ---
 # <a name="trackbar-control-windows-forms"></a>TrackBar – ovládací prvek (Windows Forms)
 Windows Forms `TrackBar` ovládací prvek (někdy také nazývané "posuvník") se používá pro procházení velkých množství informací nebo pro úpravu vizuálně číselné nastavení. `TrackBar` Ovládací prvek má dvě části: thumb, označované také jako ovládací prvek posuvník a osové značky. Jezdce je část, kterou je možné upravit. Jeho pozice koresponduje <xref:System.Windows.Forms.TrackBar.Value%2A> vlastnost. Značky jsou visual indikátory, které jsou rozmístěné v pravidelných intervalech. Pruh sledování přesune v krocích, které zadáte a může být zarovnaný vodorovně nebo svisle. Příklad použití pruh sledování by k nastavení míry nebo myš rychlost blikání kurzoru.  

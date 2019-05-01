@@ -6,11 +6,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], customization
 ms.assetid: 01ea5d4c-a736-4596-b0e9-a67a1b86e15f
 ms.openlocfilehash: ab8d1f07c608aca4f14f5e73860f8c3e263a4610
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59091379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011405"
 ---
 # <a name="customizing-the-windows-forms-datagridview-control"></a>Přizpůsobení ovládacího prvku Windows Forms DataGridView
 `DataGridView` Ovládací prvek obsahuje několik vlastností, které vám umožní upravit vzhled a chování základní (vzhled a chování) jeho buněk, řádků a sloupců. Pokud máte zvláštní požadavky, které jde nad rámec možností <xref:System.Windows.Forms.DataGridViewCellStyle> třídy, ale můžete také implementovat kreslení pro ovládací prvek vlastníka nebo rozšířit její schopnosti tak, že vytvoříte vlastní buňky, sloupce a řádky.  

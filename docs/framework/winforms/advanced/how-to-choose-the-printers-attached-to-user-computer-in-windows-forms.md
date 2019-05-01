@@ -10,11 +10,11 @@ helpviewer_keywords:
 - printers [Windows Forms], choosing
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
 ms.openlocfilehash: efd65ff6417b1a63a7f87917c4d9a95dedc464ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004442"
 ---
 # <a name="how-to-choose-the-printers-attached-to-a-users-computer-in-windows-forms"></a>Postupy: Volba tiskáren připojených k počítači uživatele v modelu Windows Forms
 Uživatelé často chtějí vybrat tiskárnu jiné než výchozí tiskárna pro tisk. Můžete umožnit uživatelům si vybrat tiskárnu z aktuálně nainstalované pomocí <xref:System.Windows.Forms.PrintDialog> komponenty. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> komponenty, <xref:System.Windows.Forms.DialogResult> z <xref:System.Windows.Forms.PrintDialog> komponenta je zachycena a umožňuje vybrat tiskárnu.  

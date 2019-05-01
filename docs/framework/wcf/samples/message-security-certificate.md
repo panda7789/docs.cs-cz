@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WS Security
 ms.assetid: 909333b3-35ec-48f0-baff-9a50161896f6
 ms.openlocfilehash: b5a36d39e6e38f121bf3155c822681fb198f0850
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59771111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006413"
 ---
 # <a name="message-security-certificate"></a>Certifikát zabezpečení zprávy
 Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Security X.509 v3 s ověřováním pomocí certifikátu klienta a vyžaduje server ověřování pomocí certifikátu X.509 v3 na server. Tato ukázka používá výchozí nastavení tak, že jsou všechny zprávy aplikace mezi klientem a serverem podepsaný a zašifrovaný. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) a skládá se z programu konzoly klienta a knihovna služby hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.  
@@ -204,7 +204,7 @@ Press <ENTER> to terminate client.
   
  Dávkový soubor Setup.bat součástí Ukázky zabezpečení zpráv umožňuje nakonfigurovat příslušné certifikáty ke spuštění prostředí aplikace, které vyžadují zabezpečení na základě certifikátů klienta a serveru. Dávkový soubor můžete spustit v tří režimů. Ke spuštění v režimu jednoho počítače typu **setup.bat** v příkazový řádek vývojáře pro sadu Visual Studio; pro typ služby režimu **setup.bat služby**; a pro typ režimu klienta **setup.bat klienta**. Při spuštění ukázky mezi počítači, použije se režim klientem a serverem. Zobrazit postup nastavení na konci tohoto tématu, kde podrobnosti. Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v příslušné konfiguraci:  
   
--   Vytváří se certifikát klienta.  
+- Vytváří se certifikát klienta.  
   
      Následující řádek v dávkovém souboru vytvoří certifikát klienta. Zadaný název klienta se používá v názvu subjektu certifikátu vytvořili. Certifikát je uložen v `My` ukládat na `CurrentUser` umístění úložiště.  
   
@@ -215,7 +215,7 @@ Press <ENTER> to terminate client.
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
     ```  
   
--   Instalaci klientského certifikátu do důvěryhodného úložiště certifikátů serveru.  
+- Instalaci klientského certifikátu do důvěryhodného úložiště certifikátů serveru.  
   
      Následující řádek v souboru kopie služby batch klientský certifikát do serveru TrustedPeople uložit tak, aby na serveru můžete provádět odpovídající vztah důvěryhodnosti nebo rozhodnutí o důvěryhodnosti č. V objednávku na certifikát nainstalován v úložišti TrustedPeople pro důvěryhodného službou Windows Communication Foundation (WCF), musí být nastaven režim ověřování certifikátu klienta `PeerOrChainTrust` nebo `PeerTrust`. Viz předchozí ukázka konfigurace služby se dozvíte, jak to lze provést pomocí konfiguračního souboru.  
   
@@ -226,7 +226,7 @@ Press <ENTER> to terminate client.
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople   
     ```  
   
--   Vytváří se certifikát serveru.  
+- Vytváří se certifikát serveru.  
   
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít.  
   
@@ -242,7 +242,7 @@ Press <ENTER> to terminate client.
   
      % Proměnná % název_serveru Určuje název serveru. Certifikát je uložen v úložišti LocalMachine. Pokud Setup.bat dávkový soubor se spustí s parametrem služby (jako jsou například **setup.bat služby**) název_serveru % obsahuje název plně kvalifikované domény počítače. Jinak je výchozí hodnota je localhost.  
   
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.  
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.  
   
      Následující řádek zkopíruje certifikát serveru do úložiště důvěryhodných osob klienta. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   
@@ -250,7 +250,7 @@ Press <ENTER> to terminate client.
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
--   Udělení oprávnění pro privátní klíč certifikátu.  
+- Udělení oprávnění pro privátní klíč certifikátu.  
   
      Následující řádky do soubor Setup.bat uložené v úložišti LocalMachine přístupné pro certifikát serveru Ujistěte se, [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účet pracovního procesu.  
   
@@ -329,7 +329,7 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
     >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  

@@ -3,11 +3,11 @@ title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
 ms.openlocfilehash: fdff88026a49989870ee5c47f9a38a65ecad3c80
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007549"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
 Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžné virtuální adresář s názvem servicemodelsamples, která je namapována na složku %SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
@@ -59,9 +59,9 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 7. Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Read**  
+    - **Read**  
   
-    -   **Spouštění skriptů (například ASP)**  
+    - **Spouštění skriptů (například ASP)**  
   
 8. Klikněte na tlačítko **Další**a potom klikněte na tlačítko **Dokončit** kroky průvodce dokončete.  
   
@@ -84,11 +84,11 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 2. Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Read**  
+    - **Read**  
   
-    -   **Navštíví protokolu**  
+    - **Navštíví protokolu**  
   
-    -   **Xovat tento prostředek**  
+    - **Xovat tento prostředek**  
   
 3. Vyberte **procházení adresářů** zaškrtávací políčko. Umožňuje získat přístup k adresáři adresáře pomocí aplikace Internet Explorer, který pomáhá při ladění služby.  
   
@@ -130,21 +130,21 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
      Pokud není uvedená:  
   
-    1.  Klikněte na tlačítko **Start** a potom klikněte na tlačítko **ovládací panely**.  
+    1. Klikněte na tlačítko **Start** a potom klikněte na tlačítko **ovládací panely**.  
   
-    2.  Pokud se nezobrazí **uživatelské účty** ikonu, klikněte na tlačítko **přepnout na zobrazení kategorií**.  
+    2. Pokud se nezobrazí **uživatelské účty** ikonu, klikněte na tlačítko **přepnout na zobrazení kategorií**.  
   
-    3.  Klikněte na tlačítko **uživatelské účty** ikonu.  
+    3. Klikněte na tlačítko **uživatelské účty** ikonu.  
   
-    4.  V části "nebo vyberte ikonu ovládacího prvku panelu," klikněte na tlačítko **uživatelské účty**.  
+    4. V části "nebo vyberte ikonu ovládacího prvku panelu," klikněte na tlačítko **uživatelské účty**.  
   
-    5.  V **uživatelské účty** dialogové okno, klikněte na tlačítko **Upřesnit** kartu.  
+    5. V **uživatelské účty** dialogové okno, klikněte na tlačítko **Upřesnit** kartu.  
   
-    6.  Klikněte na tlačítko **Advanced**.  
+    6. Klikněte na tlačítko **Advanced**.  
   
-    7.  V **místní uživatelé a skupiny** dialogové okno, rozbalte kliknutím **uživatelé** složky.  
+    7. V **místní uživatelé a skupiny** dialogové okno, rozbalte kliknutím **uživatelé** složky.  
   
-    8.  V pravém podokně klikněte dvakrát na **účet Guest Internet**.  
+    8. V pravém podokně klikněte dvakrát na **účet Guest Internet**.  
   
     9. V **vlastnosti** dialogové okno, zkopírujte název použit jako účet guest Internet. Ve výchozím nastavení název začíná řetězcem "USR_", za nímž následuje název počítače.  
   
@@ -166,17 +166,17 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
      Pokud není uvedená síť služby:  
   
-    1.  Klikněte na **Přidat**.  
+    1. Klikněte na **Přidat**.  
   
-    2.  V **vybrat uživatele nebo skupiny** dialogové okno, zadejte název počítače, a potom je zpětným lomítkem.  
+    2. V **vybrat uživatele nebo skupiny** dialogové okno, zadejte název počítače, a potom je zpětným lomítkem.  
   
-    3.  Typ **služby** za zpětným lomítkem (bez mezer).  
+    3. Typ **služby** za zpětným lomítkem (bez mezer).  
   
-    4.  Klikněte na tlačítko **zkontrolovat názvy**.  
+    4. Klikněte na tlačítko **zkontrolovat názvy**.  
   
-    5.  Pokud je nalezeno více jmen, vyberte **síťová služba** a klikněte na tlačítko **OK**.  
+    5. Pokud je nalezeno více jmen, vyberte **síťová služba** a klikněte na tlačítko **OK**.  
   
-    6.  Klikněte na tlačítko **OK** zavřete **vybrat uživatele nebo skupiny** dialogové okno.  
+    6. Klikněte na tlačítko **OK** zavřete **vybrat uživatele nebo skupiny** dialogové okno.  
   
 6. Pokud používáte Windows XP SP2 se služba IIS 5.1, zkontrolujte, že jsou v uvedené Internet účet Guest a ASPNET **skupiny nebo jméno uživatele** pole.  
   
@@ -184,11 +184,11 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
      Chcete-li zkontrolovat, jestli ASPNET je součástí **uživatelé** skupiny zabezpečení:  
   
-    1.  Na **Start** nabídky, klikněte na tlačítko **ovládací panely**.  
+    1. Na **Start** nabídky, klikněte na tlačítko **ovládací panely**.  
   
-    2.  Klikněte na tlačítko **uživatelské účty** ikonu.  
+    2. Klikněte na tlačítko **uživatelské účty** ikonu.  
   
-    3.  V **skupiny** sloupce, zkontrolujte, že hodnota **ASPNET** "uživatelů."  
+    3. V **skupiny** sloupce, zkontrolujte, že hodnota **ASPNET** "uživatelů."  
   
 ## <a name="see-also"></a>Viz také:
 

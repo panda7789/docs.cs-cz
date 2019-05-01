@@ -3,16 +3,16 @@ title: Dispečer vlastního kanálu
 ms.date: 03/30/2017
 ms.assetid: 813acf03-9661-4d57-a3c7-eeab497321c6
 ms.openlocfilehash: 20574b4c849f312cb2cf55709d8d5e2a9b5dbca7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62003103"
 ---
 # <a name="custom-channel-dispatcher"></a>Dispečer vlastního kanálu
 Tato ukázka předvádí, jak k vytvoření kanálu zásobníku vlastním způsobem pomocí implementace <xref:System.ServiceModel.ServiceHostBase> přímo a vytvoření dispečer vlastního kanálu v prostředí webového hostitele. Dispečer kanálu komunikuje s <xref:System.ServiceModel.Channels.IChannelListener> tak, aby přijímal kanály a načte zprávy z kanálu zásobníku. Tato ukázka také poskytuje základní ukázka na ukazují, jak vytvořit kanál zásobníku v prostředí webového hostitele pomocí <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
   
-## <a name="custom-servicehostbase"></a>Vlastní ServiceHostBase  
+## <a name="custom-servicehostbase"></a>Custom ServiceHostBase  
  Tato ukázka základní typ implementuje <xref:System.ServiceModel.ServiceHostBase> místo <xref:System.ServiceModel.ServiceHost> předvést způsob implementace zásobníku Windows Communication Foundation (WCF) nahraďte vlastní zprávu zpracování vrstvu nad rámec zásobníku kanálu. Přepsat virtuální metodu <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> vytvářet moduly pro naslouchání kanálů a dispečer kanálu.  
   
  K implementaci hostované webové služby, získejte rozšíření služby <xref:System.ServiceModel.Activation.VirtualPathExtension> z <xref:System.ServiceModel.ServiceHostBase.Extensions%2A> kolekce a přidejte ho do <xref:System.ServiceModel.Channels.BindingParameterCollection> tak, aby přenosové vrstvy ví, jak nakonfigurovat modul pro naslouchání kanálu na základě hostování nastavení prostředí, která je Internetové informační služby (IIS) / nastavení Windows Process Activation Service (WAS).  

@@ -1,18 +1,18 @@
 ---
-title: Namespace vliv na rozšíření odkazu Entity pro nové uzly, který obsahují elementy a atributy
+title: Vliv oboru názvů na rozšíření odkazu na entitu pro nové uzly, který obsahují elementy a atributy
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 64359aee-aab0-4042-9a32-d19789af6ca7
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4231516848cc50212a3a6a03d101907b2f6b3920
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46585168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027105"
 ---
-# <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a>Namespace vliv na rozšíření odkazu Entity pro nové uzly, který obsahují elementy a atributy
+# <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a>Vliv oboru názvů na rozšíření odkazu na entitu pro nové uzly, který obsahují elementy a atributy
 Protože obsah entity deklarace může obsahovat prakticky cokoli, je možné, že obsah by mohl obsahovat prvky jako `<!ENTITY aname "<elem>test</elem>">`.  
   
  Když je analyzovat kód XML, `&aname;` není rozbalen jeho nahrazení obsahu při analýze. Rozšíření XML není provést, protože rozlišení oboru názvů pro element nelze provést, dokud se uzel je umístěn v dokumentu. Do té doby není k dispozici žádné znalosti z jaké obor názvů je v oboru. Pokud uzel přejde do dokumentu, pak dojde k rozlišení oboru názvů a výsledné entity obsahu je analyzován do jeho odpovídající uzly.  

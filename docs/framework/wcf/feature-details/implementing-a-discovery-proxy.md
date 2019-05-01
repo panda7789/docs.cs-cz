@@ -3,11 +3,11 @@ title: Implementace proxy zjišťování
 ms.date: 03/30/2017
 ms.assetid: dda20e79-8df3-438e-a281-69d779d978ec
 ms.openlocfilehash: 5d9296d8ba70d4c9e8d8339fa3a032d9c4c62826
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59140996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62047058"
 ---
 # <a name="implementing-a-discovery-proxy"></a>Implementace proxy zjišťování
 Tato část popisuje kroky potřebné k implementace zjišťování proxy. Zjišťování proxy je samostatná služba, která obsahuje úložiště služby. Klienti mohou odesílat dotazy na zjišťování proxy k vyhledání zjistitelné služby, které si je vědoma proxy serveru. Jak se proxy server služby vyplní záleží implementátora. Například můžete proxy zjišťování připojit k existující služby úložiště a zjistitelnost těchto informací, Správce může pomocí rozhraní API pro správu přidejte zjistitelné služby pro proxy server nebo proxy zjišťování můžete použít funkce oznámení pro Aktualizujte vnitřní mezipaměti.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
 ms.openlocfilehash: 736deb1a0c360163521b866a788f1ac077f74508
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59172091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033108"
 ---
 # <a name="asynchronous-client-socket-example"></a>Příklad asynchronního klientského soketu
 Následující ukázkový program vytvoří klienta, která se připojuje k serveru. Klient je sestavena s asynchronní soketu, takže spuštění klientské aplikace není pozastaveno, zatímco server vrátí odpověď. Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.  

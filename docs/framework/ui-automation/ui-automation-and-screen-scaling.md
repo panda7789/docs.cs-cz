@@ -11,11 +11,11 @@ helpviewer_keywords:
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
 ms.openlocfilehash: 18cb28de04737973876e70cdb7b87e720836bcba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032315"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
@@ -44,15 +44,15 @@ ms.locfileid: "59332678"
 ## <a name="scaling-in-ui-automation-clients"></a>Škálování u klientů automatizace uživatelského rozhraní  
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)] Nepoužívá logické souřadnice. Následující metody a vlastnosti vrátit fyzické souřadnice nebo předat jako parametry.  
   
--   <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A>  
+- <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A>  
   
--   <xref:System.Windows.Automation.AutomationElement.TryGetClickablePoint%2A>  
+- <xref:System.Windows.Automation.AutomationElement.TryGetClickablePoint%2A>  
   
--   <xref:System.Windows.Automation.AutomationElement.ClickablePointProperty>  
+- <xref:System.Windows.Automation.AutomationElement.ClickablePointProperty>  
   
--   <xref:System.Windows.Automation.AutomationElement.FromPoint%2A>  
+- <xref:System.Windows.Automation.AutomationElement.FromPoint%2A>  
   
--   <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.BoundingRectangle%2A>  
+- <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.BoundingRectangle%2A>  
   
  Ve výchozím nastavení, automatizace uživatelského rozhraní klientské aplikace spuštěná v non-96 - [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] prostředí nebude moct získat správné výsledky z těchto metod a vlastností. Například protože pozice kurzoru v logické souřadnice, klient nelze předat jednoduše tyto souřadnice, kde <xref:System.Windows.Automation.AutomationElement.FromPoint%2A> získat prvek, který je pod kurzorem. Kromě toho aplikace nebude možné správně umístit windows mimo jeho klientské oblasti.  
   

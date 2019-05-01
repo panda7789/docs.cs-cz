@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 46852ed8ac53c3a7720edff4833f3dc3cce42bbb
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57475785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61995524"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument – metoda
 Získá hodnotu zadaného argumentu v tento rámec zásobníku Microsoft intermediate language (MSIL).  

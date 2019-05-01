@@ -5,22 +5,22 @@ f1_keywords:
 - vbrID35
 ms.assetid: 661fdb90-ee7d-40ce-b30b-5e7267bd957a
 ms.openlocfilehash: 397648618ea3764efafb5cff41deaef320bbeff3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982433"
 ---
 # <a name="sub-or-function-not-defined-visual-basic"></a>Příkaz Sub nebo funkce není definována (Visual Basic)
 A `Sub` nebo `Function` musí být definován, aby bylo možné volat. Mezi možné příčiny této chyby patří:  
   
--   Chyba v pravopisu název procedury.  
+- Chyba v pravopisu název procedury.  
   
--   Při pokusu o volání procedury z jiného projektu bez nutnosti explicitně přidávat odkaz na tento projekt v **odkazy** dialogové okno.  
+- Při pokusu o volání procedury z jiného projektu bez nutnosti explicitně přidávat odkaz na tento projekt v **odkazy** dialogové okno.  
   
--   Určení procedury, která není viditelná pro volání procedury.  
+- Určení procedury, která není viditelná pro volání procedury.  
   
--   Deklarování rutiny Windows dynamická knihovna (DLL) nebo Macintosh kód prostředků rutiny, která není v zadané zdroje knihovny nebo kód.  
+- Deklarování rutiny Windows dynamická knihovna (DLL) nebo Macintosh kód prostředků rutiny, která není v zadané zdroje knihovny nebo kód.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   

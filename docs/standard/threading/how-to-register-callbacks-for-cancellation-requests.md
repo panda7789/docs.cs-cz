@@ -11,11 +11,11 @@ ms.assetid: 8838dd75-18ed-4b8b-b322-cd4531faac64
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e2d61ba254a76235a12ca5dda23fdecb8838ae75
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62015015"
 ---
 # <a name="how-to-register-callbacks-for-cancellation-requests"></a>Postupy: Registrace zpětných volání pro požadavky zrušení
 Následující příklad ukazuje, jak zaregistrovat delegáta, který bude vyvolán při <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost stane pravdivou kvůli volání na <xref:System.Threading.CancellationTokenSource.Cancel%2A> na objekt, který vytvoří token. Tento postup použijte pro zrušení asynchronní operace, které nativně nepodporují zrušení jednotné rozhraní framework a pro odblokování metody, které mohou čekat na dokončení asynchronní operace.  

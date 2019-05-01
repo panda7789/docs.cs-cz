@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c5d2539bc732cdc41c7514fd5d81c449ed8f17a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61992885"
 ---
 # <a name="iclrstrongnamestrongnamesignaturegenerationex-method"></a>ICLRStrongName::StrongNameSignatureGenerationEx – metoda
 Podpis silného názvu generuje pro zadané sestavení podle zadané příznaky.  
@@ -69,9 +69,9 @@ HRESULT StrongNameSignatureGenerationEx (
  `dwFlags`  
  [in] Jeden nebo více z následujících hodnot:  
   
--   `SN_SIGN_ALL_FILES` (0x00000001) - přepočítá všechny hodnoty hash pro propojený moduly.  
+- `SN_SIGN_ALL_FILES` (0x00000001) - přepočítá všechny hodnoty hash pro propojený moduly.  
   
--   `SN_TEST_SIGN` (0x00000002) - podpis testovacího sestavení.  
+- `SN_TEST_SIGN` (0x00000002) - podpis testovacího sestavení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  

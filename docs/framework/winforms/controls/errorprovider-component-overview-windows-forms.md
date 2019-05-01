@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ErrorProvider component [Windows Forms], about ErrorProvider component
 ms.assetid: ced189f2-b5c8-46a7-a6f1-37f5af95dc99
 ms.openlocfilehash: 485e7a17073d72618b9599113179cddde748e697
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972017"
 ---
 # <a name="errorprovider-component-overview-windows-forms"></a>ErrorProvider – přehled komponenty (Windows Forms)
 Windows Forms [ErrorProvider](errorprovider-component-windows-forms.md) komponenty se používá k ověření vstupu uživatele na formulář nebo ovládací prvek. To se obvykle používá ve spojení s ověřování uživatelského vstupu ve formuláři nebo zobrazování chyb v prvku dataset. Poskytovatele chyba je lepší alternativou než zobrazení chybové zprávy v okně se zprávou, protože když se zavře okno se zprávou, chybová zpráva již není viditelný. <xref:System.Windows.Forms.ErrorProvider> Komponenty zobrazuje ikonu chyby (![ErrorProvider ikonu](./media/vberrorprovidericon.gif "vbErrorProviderIcon")) vedle příslušné ovládacího prvku, jako je textové pole, když uživatel přemístí ukazatel myši ikona chyby, popisek se zobrazí, zobrazuje řetězec chybové zprávy.  

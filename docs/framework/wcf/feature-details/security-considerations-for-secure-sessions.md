@@ -3,11 +3,11 @@ title: Důležité informace o zabezpečení pro zabezpečené relace
 ms.date: 03/30/2017
 ms.assetid: 0d5be591-9a7b-4a6f-a906-95d3abafe8db
 ms.openlocfilehash: d2244ba42b1cf95f77424d32a19ebe11dd3a2a45
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990857"
 ---
 # <a name="security-considerations-for-secure-sessions"></a>Důležité informace o zabezpečení pro zabezpečené relace
 Měli byste zvážit následující položky, které mají vliv na zabezpečení při provádění zabezpečených relací. Další informace o aspektech týkajících se zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md) a [osvědčené postupy pro zabezpečení](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  

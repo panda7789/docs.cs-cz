@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
 ms.openlocfilehash: 382ecb17654377e8d37e1b3a572ed84442d76b1a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61974828"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
 Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní API Office. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předání argumentů do parametrů odkazu v metodách modelu COM, jako by byly parametry s hodnotou.  

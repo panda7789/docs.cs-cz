@@ -3,11 +3,11 @@ title: 'Postupy: Hostování služby pracovního procesu pomocí Windows Server 
 ms.date: 03/30/2017
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
 ms.openlocfilehash: d1042aca7e4127c39e59bf0bf400974f0cecb1e8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62039495"
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric
 Hostování služeb pracovních postupů v prostředcích infrastruktury aplikace je podobný hostování v rámci služby IIS nebo WAS. Jediným rozdílem je, nástroje, které poskytuje App Fabric pro nasazení, monitorování a správu služeb pracovních postupů. Toto téma používá služby pracovních postupů v vytvoří [vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md). Toto téma vás provede procesem vytvoření služby pracovních postupů. Toto téma vysvětluje, jak hostování služby pracovního postupu pomocí App Fabric. Další informace o systému Windows Server App Fabric najdete v tématu [dokumentaci k systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409). Před provedením následujících kroků zkontrolujte, že máte nainstalovaný Windows Server App Fabric.  Provedete tuto otevřete Internetová informační služba (inetmgr.exe), klikněte na název serveru v **připojení** zobrazení, klikněte na tlačítko weby a klikněte na tlačítko **výchozí webový server**. V pravém okraji obrazovky byste měli vidět část s názvem **App Fabric**. Pokud se nezobrazí v této části (bude uvedená nahoře v pravém podokně) nemáte nainstalované App Fabric. Další informace o instalaci systému Windows Server App Fabric najdete v části [instalace systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193136).  

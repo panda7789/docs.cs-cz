@@ -3,11 +3,11 @@ title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
 ms.openlocfilehash: b6224dcf883daef7b35ef50b7556fc568e433a46
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62034031"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -17,13 +17,13 @@ ms.locfileid: "59310418"
 ## <a name="general-migration-considerations"></a>Obecné aspekty  
  Při migraci jakékoli aplikace, platí následující aspekty [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]:  
   
--   Všechny aplikace používající [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1 je možné migrovat do rozhraní Entity Framework, tak dlouho, dokud zprostředkovatel dat pro zdroj dat, který používá aplikace podporuje rozhraní Entity Framework.  
+- Všechny aplikace používající [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1 je možné migrovat do rozhraní Entity Framework, tak dlouho, dokud zprostředkovatel dat pro zdroj dat, který používá aplikace podporuje rozhraní Entity Framework.  
   
--   Entity Framework nemusí podporovat všechny funkce, které jsou součástí Zprostředkovatel zdroje dat, i v případě, že tento zprostředkovatel podporuje rozhraní Entity Framework.  
+- Entity Framework nemusí podporovat všechny funkce, které jsou součástí Zprostředkovatel zdroje dat, i v případě, že tento zprostředkovatel podporuje rozhraní Entity Framework.  
   
--   Pro velké nebo složité aplikace není nutné migrovat celou aplikaci k Entity Frameworku najednou. Ale musí být libovolné části aplikace, která nepoužívá rozhraní Entity Framework změnit stále při změně zdroje dat.  
+- Pro velké nebo složité aplikace není nutné migrovat celou aplikaci k Entity Frameworku najednou. Ale musí být libovolné části aplikace, která nepoužívá rozhraní Entity Framework změnit stále při změně zdroje dat.  
   
--   Datové připojení zprostředkovatele používat Entity Framework můžete sdílet s jinými částmi aplikace, protože [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] používá [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele dat pro přístup ke zdroji dat. Například poskytovatel Sqlclienta se používá rozhraním Entity Framework pro přístup k databázi serveru SQL Server. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+- Datové připojení zprostředkovatele používat Entity Framework můžete sdílet s jinými částmi aplikace, protože [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] používá [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele dat pro přístup ke zdroji dat. Například poskytovatel Sqlclienta se používá rozhraním Entity Framework pro přístup k databázi serveru SQL Server. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="common-migration-tasks"></a>Běžné úlohy migrace  
  Cesta k migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] závisí na typu aplikace i na stávající strategie přístupu data. Však můžete vždycky musí provádět následující úkoly při migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  

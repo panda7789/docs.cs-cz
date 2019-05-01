@@ -1,15 +1,15 @@
 ---
-title: Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace
+title: Volba mezi tradičními webovými aplikacemi a jednostránkovými aplikacemi
 description: Zjistěte, jak si vybrat mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA) při vytváření webových aplikací.
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
 ms.openlocfilehash: 5b8569f2abd5160fa8a080c06441a963fb455f6b
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019409"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA)
 

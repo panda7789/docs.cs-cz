@@ -9,44 +9,44 @@ helpviewer_keywords:
 - arranging controls [WPF]
 ms.assetid: a1db8049-15c7-45d6-ae3d-36a6735cb848
 ms.openlocfilehash: 5b759baebb7192c1ee94b4aa925198864ba7a31a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007159"
 ---
 # <a name="walkthrough-arranging-windows-forms-controls-in-wpf"></a>Návod: Uspořádání ovládacích prvků Windows Forms ve WPF
 Tento návod ukazuje, jak používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkcí rozložení uspořádat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků v hybridní aplikaci.  
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu.  
+- Vytvoření projektu.  
   
--   Pomocí výchozího nastavení rozložení.  
+- Pomocí výchozího nastavení rozložení.  
   
--   Nastavení velikosti obsahu.  
+- Nastavení velikosti obsahu.  
   
--   Použití absolutní pozici.  
+- Použití absolutní pozici.  
   
--   Určení velikosti explicitně.  
+- Určení velikosti explicitně.  
   
--   Nastavení vlastnosti rozložení.  
+- Nastavení vlastnosti rozložení.  
   
--   Principy omezení pořadí vykreslování.  
+- Principy omezení pořadí vykreslování.  
   
--   Ukotvení.  
+- Ukotvení.  
   
--   Nastavení viditelnosti.  
+- Nastavení viditelnosti.  
   
--   Hostování ovládacího prvku, který není stretch.  
+- Hostování ovládacího prvku, který není stretch.  
   
--   Škálování.  
+- Škálování.  
   
--   Otáčení.  
+- Otáčení.  
   
--   Nastavení odsazení a okraje.  
+- Nastavení odsazení a okraje.  
   
--   Použití dynamického rozložení kontejnerů.  
+- Použití dynamického rozložení kontejnerů.  
   
  Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [uspořádání prvky Windows Forms v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971).  
   
@@ -64,11 +64,11 @@ Visual Studio k dokončení tohoto návodu potřebujete.
   
 2. V Průzkumníku řešení přidejte odkazy na následující sestavení.  
   
-    -   WindowsFormsIntegration  
+    - WindowsFormsIntegration  
   
-    -   System.Windows.Forms  
+    - System.Windows.Forms  
   
-    -   System.Drawing  
+    - System.Drawing  
   
 3. Poklikejte na soubor MainWindow.xaml a otevřete ho v XAML zobrazení.  
   

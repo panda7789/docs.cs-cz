@@ -8,11 +8,11 @@ helpviewer_keywords:
 - layout [Windows Forms], walkthroughs
 ms.assetid: a1744323-0316-49c2-992e-ebfc0a976b85
 ms.openlocfilehash: 81a19d063f31b3c28fc15a061b5173495e83f6fc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009120"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel"></a>Návod: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel
 Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.  
@@ -23,23 +23,23 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
   
  <xref:System.Windows.Forms.FlowLayoutPanel> Uspořádá jeho obsah v konkrétní směr: vodorovný nebo svislý. Dá zabalit obsah z jednoho řádku na další nebo z jednoho sloupce na další. Alternativně můžete místo oříznutí jeho obsah zabalena. Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu Windows Forms  
+- Vytvoření projektu Windows Forms  
   
--   Uspořádání ovládacích prvků vodorovně a svisle  
+- Uspořádání ovládacích prvků vodorovně a svisle  
   
--   Změna směru toku  
+- Změna směru toku  
   
--   Vložení toku konce  
+- Vložení toku konce  
   
--   Uspořádání ovládacích prvků pomocí odsazení a okraje  
+- Uspořádání ovládacích prvků pomocí odsazení a okraje  
   
--   Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů  
+- Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů  
   
--   Vložení ovládacího prvku kreslením obrysu  
+- Vložení ovládacího prvku kreslením obrysu  
   
--   Vkládání ovládacích prvků pomocí kurzoru  
+- Vkládání ovládacích prvků pomocí kurzoru  
   
--   Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku  
+- Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku  
   
  Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.  
   
@@ -179,13 +179,13 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
 ## <a name="next-steps"></a>Další kroky  
  Složitá rozložení pomocí kombinace panely rozložení a ovládacích prvků můžete dosáhnout. Návrhy pro další zkoumání patří:  
   
--   Změna velikosti mezi <xref:System.Windows.Forms.Button> ovládacích prvků pro větší velikost a Všimněte si vliv na rozložení.  
+- Změna velikosti mezi <xref:System.Windows.Forms.Button> ovládacích prvků pro větší velikost a Všimněte si vliv na rozložení.  
   
--   Panely rozložení může obsahovat jiné panely rozložení. Experimentu se vyřazování <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.  
+- Panely rozložení může obsahovat jiné panely rozložení. Experimentu se vyřazování <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.  
   
--   Ukotvit <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku na nadřazený formulář. Změnit velikost formuláře a sledujte vliv na rozložení.  
+- Ukotvit <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku na nadřazený formulář. Změnit velikost formuláře a sledujte vliv na rozložení.  
   
--   Nastavte <xref:System.Windows.Forms.Control.Visible%2A> vlastnost ovládací prvky pro `false` a Všimněte si, jak <xref:System.Windows.Forms.FlowLayoutPanel> přeformátuje v odpovědi.  
+- Nastavte <xref:System.Windows.Forms.Control.Visible%2A> vlastnost ovládací prvky pro `false` a Všimněte si, jak <xref:System.Windows.Forms.FlowLayoutPanel> přeformátuje v odpovědi.  
   
 ## <a name="see-also"></a>Viz také:
 

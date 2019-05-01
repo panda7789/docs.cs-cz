@@ -3,11 +3,11 @@ title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
 ms.openlocfilehash: 52c22660e56d63121181bdcb618e0bed598ca585
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006431"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy se žádná z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikaci. například když páry uživatelského jména a hesla ukládají v některé externí úložiště, například do databáze. Tento příklad ukazuje služba, která má vlastní validátor, který kontroluje dvě dvojice konkrétního uživatelského jména a hesla. Klient používá k ověření ve službě dvojici uživatelského jména a hesla.
@@ -26,11 +26,11 @@ Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor.
 
  V souhrnu Tato ukázka předvádí, jak:
 
--   Klient lze ověřit pomocí tokenu uživatelské jméno.
+- Klient lze ověřit pomocí tokenu uživatelské jméno.
 
--   Server ověří klienta přihlašovacích údajů, kteří vlastní objekt UserNamePasswordValidator a tom, jak rozšířit vlastní chyby z logiku ověřování uživatelského jména a hesla ke klientovi.
+- Server ověří klienta přihlašovacích údajů, kteří vlastní objekt UserNamePasswordValidator a tom, jak rozšířit vlastní chyby z logiku ověřování uživatelského jména a hesla ke klientovi.
 
--   Server byl ověřovaný pomocí certifikátu X.509 serveru.
+- Server byl ověřovaný pomocí certifikátu X.509 serveru.
 
  Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding` , která ve výchozím nastavení používá ověřování uživatelským jménem WS Securityand. Určuje chování služby `Custom` režimu pro ověřování klienta páry uživatelského jména a hesla společně s typem třídy program pro ověření. Také určuje chování serveru pomocí certifikátu `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
 
@@ -254,7 +254,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 
  Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.
 
--   Vytváří se certifikát serveru:
+- Vytváří se certifikát serveru:
 
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota je localhost.
 
@@ -268,7 +268,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
 
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 

@@ -12,11 +12,11 @@ helpviewer_keywords:
 - Help [Windows Forms], adding to dialog boxes
 ms.assetid: 218aa81e-e87e-4d67-af05-11627bbdce3b
 ms.openlocfilehash: f805840ea3b1a8aef6a289dba064c468a4da0cb0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004338"
 ---
 # <a name="how-to-display-pop-up-help"></a>Postupy: Zobrazení místní nápovědy
 Jedním ze způsobů pro zobrazení nápovědy v modelu Windows Forms je prostřednictvím **pomáhají** tlačítko, se nachází na pravé straně záhlaví, přístupné prostřednictvím <xref:System.Windows.Forms.Form.HelpButton%2A> vlastnost. Tento typ zobrazení nápovědy je velmi vhodná pro použití s dialogových oknech. Dialogová okna zobrazen modálně (s <xref:System.Windows.Forms.Form.ShowDialog%2A> metoda), nedaří spustit až externí Nápověda systémy, protože modálních dialogových oken muset zřejmě zavřít před fokus můžete přesunout do jiného okna. Kromě toho používání **pomáhají** tlačítko vyžaduje, aby existovala žádné **minimalizovat** tlačítko nebo **Maximalizovat** tlačítka zobrazen v záhlaví. Jedná se o standardní dialogové konvenci, zatímco formuláře mají obvykle **minimalizovat** a **Maximalizovat** tlačítka.  

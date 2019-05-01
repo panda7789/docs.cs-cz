@@ -8,11 +8,11 @@ helpviewer_keywords:
 - request-reply contracts [WCF]
 ms.assetid: 2fa710f1-47f4-4598-b063-3ab3bd22ebba
 ms.openlocfilehash: 1ff11b1cae4ec8f6fe886a55cb0add27831048d0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59177811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991117"
 ---
 # <a name="request-reply-services"></a>Služby požadavku a odpovědi
 Služby požadavku a odpovědi jsou výchozí typ operace kontraktu Windows Communication Foundation (WCF). Klienti volání operací služby a čekat na odpověď ze služby. Můžete provádět volání operace služby buď synchronně, kde blokuje, dokud klient obdrží odpověď ze služby nebo časy volání, nebo asynchronně, pokračuje v práci tam, kde klient provede volání operace služby a přijímá odpověď od služby v jiném vlákně.  

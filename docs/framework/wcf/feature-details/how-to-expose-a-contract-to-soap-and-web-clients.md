@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: zveřejnění kontraktu klientům SOAP a webovým klientům'
+title: 'Postupy: Zveřejnění kontraktu klientům SOAP a webovým klientům'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
 ms.openlocfilehash: d82c5e3fc33528eadc3c404cca59a3dcf905e0e2
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47396952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000919"
 ---
-# <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>Postupy: zveřejnění kontraktu klientům SOAP a webovým klientům
+# <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>Postupy: Zveřejnění kontraktu klientům SOAP a webovým klientům
 
-Ve výchozím nastavení Windows Communication Foundation (WCF) díky koncové body k dispozici jenom klientům SOAP. V [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), koncový bod je k dispozici pro klienty protokolu SOAP. Může nastat situace, kdy budete chtít zpřístupnit stejný kontrakt oba způsoby jako webový koncový bod a jako koncový bod SOAP. Toto téma ukazuje příklad toho, jak to provést.
+Ve výchozím nastavení Windows Communication Foundation (WCF) díky koncové body k dispozici jenom klientům SOAP. V [jak: Vytvořit základní webové služby HTTP WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), koncový bod je k dispozici pro klienty protokolu SOAP. Může nastat situace, kdy budete chtít zpřístupnit stejný kontrakt oba způsoby jako webový koncový bod a jako koncový bod SOAP. Toto téma ukazuje příklad toho, jak to provést.
 
 ## <a name="to-define-the-service-contract"></a>K definování kontraktu služby
 

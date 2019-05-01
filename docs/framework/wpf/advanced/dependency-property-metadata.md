@@ -8,11 +8,11 @@ helpviewer_keywords:
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
 ms.openlocfilehash: 98f8c6611340c89409697918ff8a16eaabe3c7a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010553"
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Vlastnost systém zahrnuje metadata vytváření sestav systém, který jde nad rámec co může být nahlášené o vlastnosti prostřednictvím reflexe a Obecné [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] charakteristiky. Metadata pro vlastnost závislosti lze také přiřadit jednoznačně podle třídy, která definuje vlastnost závislosti, můžete změnit, pokud vlastnost závislosti je přidána do jiné třídy a může být explicitně přepsáno všechny odvozené třídy, které dědí Vlastnost závislosti z definující základní třídy.  
@@ -25,11 +25,11 @@ ms.locfileid: "59170362"
 ## <a name="how-dependency-property-metadata-is-used"></a>Jak se používá Metadata vlastností závislosti  
  Metadata vlastností závislosti existuje jako objekt, který může být dotazována k prozkoumání vlastností vlastnost závislosti. Tato metadata je také často přístupné vlastnosti systému jako zpracovává všechny danou vlastnost závislosti. Objekt metadat pro vlastnost závislosti může obsahovat následující typy informací:  
   
--   Výchozí hodnota pro vlastnost závislosti, pokud žádná hodnota se dají určit pro vlastnost závislosti pomocí místní hodnoty, styl, dědičnost, atd. Důkladný rozbor jak výchozí hodnoty účastnit priority používá systémem vlastnost při přiřazování hodnot pro vlastnosti závislosti, v tématu [Priorita hodnot závislých vlastností](dependency-property-value-precedence.md).  
+- Výchozí hodnota pro vlastnost závislosti, pokud žádná hodnota se dají určit pro vlastnost závislosti pomocí místní hodnoty, styl, dědičnost, atd. Důkladný rozbor jak výchozí hodnoty účastnit priority používá systémem vlastnost při přiřazování hodnot pro vlastnosti závislosti, v tématu [Priorita hodnot závislých vlastností](dependency-property-value-precedence.md).  
   
--   Odkazy na implementace zpětného volání, které ovlivňují oznamování změn nebo konverze za chování na základě typu za vlastníka. Všimněte si, že tato zpětná volání jsou často definovány s úrovní přístupu neveřejné tak získání skutečné odkazů z metadat obecně není možné pokud odkazy nejsou v rámci vašeho oboru povolený přístup. Další informace o zpětných volání závislostí vlastnost, naleznete v tématu [vlastnost závislosti zpětné volání a ověření](dependency-property-callbacks-and-validation.md).  
+- Odkazy na implementace zpětného volání, které ovlivňují oznamování změn nebo konverze za chování na základě typu za vlastníka. Všimněte si, že tato zpětná volání jsou často definovány s úrovní přístupu neveřejné tak získání skutečné odkazů z metadat obecně není možné pokud odkazy nejsou v rámci vašeho oboru povolený přístup. Další informace o zpětných volání závislostí vlastnost, naleznete v tématu [vlastnost závislosti zpětné volání a ověření](dependency-property-callbacks-and-validation.md).  
   
--   Pokud vlastnost závislosti dotyčný se považuje za vlastnost úrovni rozhraní WPF, metadata mohou obsahovat WPF závislostí na úrovni architektury vlastnost vlastnostmi, které zaznamenávají informace a stav služeb, jako je WPF úrovni framework modul a vlastnost dědičnosti logiku rozložení. Další informace o tento aspekt metadata vlastností závislosti, naleznete v tématu [Metadata vlastnosti architektury](framework-property-metadata.md).  
+- Pokud vlastnost závislosti dotyčný se považuje za vlastnost úrovni rozhraní WPF, metadata mohou obsahovat WPF závislostí na úrovni architektury vlastnost vlastnostmi, které zaznamenávají informace a stav služeb, jako je WPF úrovni framework modul a vlastnost dědičnosti logiku rozložení. Další informace o tento aspekt metadata vlastností závislosti, naleznete v tématu [Metadata vlastnosti architektury](framework-property-metadata.md).  
   
 <a name="APIs"></a>   
 ## <a name="metadata-apis"></a>Metadata API  
@@ -62,15 +62,15 @@ ms.locfileid: "59170362"
   
  Při přepsání metadat vlastnosti rozdílná metadata jsou sloučené nebo nahradit.  
   
--   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> se sloučí. Pokud chcete přidat nový <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v přepsání, hodnota <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> povýšen jako odkaz v nejbližším podřízeném objektu, který je zadán v metadatech.  
+- <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> se sloučí. Pokud chcete přidat nový <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v přepsání, hodnota <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> povýšen jako odkaz v nejbližším podřízeném objektu, který je zadán v metadatech.  
   
--   Skutečné vlastnost chování systému pro <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> je, že se zachovají a přidá do tabulky, pomocí pořadí provádění vlastnosti systému, že se zpětná volání nejvíce odvozené třídy jsou vyvolány nejprve implementace pro všechny vlastníky metadat v hierarchii.  
+- Skutečné vlastnost chování systému pro <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> je, že se zachovají a přidá do tabulky, pomocí pořadí provádění vlastnosti systému, že se zpětná volání nejvíce odvozené třídy jsou vyvolány nejprve implementace pro všechny vlastníky metadat v hierarchii.  
   
--   <xref:System.Windows.PropertyMetadata.DefaultValue%2A> nahrazuje. Pokud nezadáte <xref:System.Windows.PropertyMetadata.DefaultValue%2A> v přepsání, hodnota <xref:System.Windows.PropertyMetadata.DefaultValue%2A> pochází z nejbližším podřízeném objektu, který je zadán v metadatech.  
+- <xref:System.Windows.PropertyMetadata.DefaultValue%2A> nahrazuje. Pokud nezadáte <xref:System.Windows.PropertyMetadata.DefaultValue%2A> v přepsání, hodnota <xref:System.Windows.PropertyMetadata.DefaultValue%2A> pochází z nejbližším podřízeném objektu, který je zadán v metadatech.  
   
--   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace se nahradí. Pokud chcete přidat nový <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v přepsání, hodnota <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> povýšen jako odkaz v nejbližším podřízeném objektu, který je zadán v metadatech.  
+- <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace se nahradí. Pokud chcete přidat nový <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v přepsání, hodnota <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> povýšen jako odkaz v nejbližším podřízeném objektu, který je zadán v metadatech.  
   
--   Chování vlastnosti systému je to jenom <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v metadatech okamžité je vyvolána. Žádné odkazy na další <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace v hierarchii se zachovají.  
+- Chování vlastnosti systému je to jenom <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v metadatech okamžité je vyvolána. Žádné odkazy na další <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace v hierarchii se zachovají.  
   
  Toto chování je implementováno <xref:System.Windows.PropertyMetadata.Merge%2A>a u tříd odvozených metadat je možné přepsat.  
   

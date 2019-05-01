@@ -19,11 +19,11 @@ helpviewer_keywords:
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
 ms.openlocfilehash: 3e87dc6527b4351467b1155439ee8266157c16ff
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971709"
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
 Obsahuje pořadí bodů kódu (2bajtových) bez znaménka 16bitové tohoto rozsahu v rozmezí 0 až 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec se může skládat z 0 až přibližně dvě miliardy (2 ^ 31) znaků Unicode.  
@@ -70,13 +70,13 @@ S = Microsoft.VisualBasic.Left(S, 4)
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** Mějte na paměti, že znaky drží `String` jsou bez znaménka a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `String` pro uložení číselné hodnoty.  
+- **Záporná čísla.** Mějte na paměti, že znaky drží `String` jsou bez znaménka a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `String` pro uložení číselné hodnoty.  
   
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že řetězec znaků mít odlišnou datovou šířku (8 bitů) v jiných prostředích. Pokud takové součásti předáváte argument řetězec znaků 8 bitů, deklarujte ho jako `Byte()`, pole `Byte` prvků, místo `String` v váš nový kód jazyka Visual Basic.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že řetězec znaků mít odlišnou datovou šířku (8 bitů) v jiných prostředích. Pokud takové součásti předáváte argument řetězec znaků 8 bitů, deklarujte ho jako `Byte()`, pole `Byte` prvků, místo `String` v váš nový kód jazyka Visual Basic.  
   
--   **Znaky typu.** Přidávání znak typu identifikátoru `$` k libovolnému identifikátoru se z něj stane `String` datového typu. `String` nemá žádné – znak typu literálu. Ale kompilátor zpracovává literály uzavřena v uvozovkách (`" "`) jako `String`.  
+- **Znaky typu.** Přidávání znak typu identifikátoru `$` k libovolnému identifikátoru se z něj stane `String` datového typu. `String` nemá žádné – znak typu literálu. Ale kompilátor zpracovává literály uzavřena v uvozovkách (`" "`) jako `String`.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
   
 ## <a name="see-also"></a>Viz také:
 

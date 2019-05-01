@@ -1,19 +1,19 @@
 ---
-title: 'Základní komunikace: Vnitřní duplexní režim přenosové kanály'
+title: 'Základní komunikace: Interní duplexní přenosové kanály'
 ms.date: 03/30/2017
 ms.assetid: e1004536-afe0-4e06-b3ed-b4ee08bb0189
 ms.openlocfilehash: 948d5afc47a305e8d63cafe6baac5462888ebc5d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33471661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61998787"
 ---
-# <a name="core-communications-internal-duplex-transport-channels"></a>Základní komunikace: Vnitřní duplexní režim přenosové kanály
-Toto téma uvádí všechny výjimky generované Windows Communication Foundation (WCF) interní duplexní režim přenosové kanály.  
+# <a name="core-communications-internal-duplex-transport-channels"></a>Základní komunikace: Interní duplexní přenosové kanály
+Toto téma uvádí všechny výjimky generované Windows Communication Foundation (WCF) interní duplexní přenosové kanály.  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|MessageMustHaveViaOrToSetForSendingOnServerSideCompositeDuplexChannels|Odeslat zprávu na server kompozitní duplexní kanály, zprávy musí mít vlastnost 'Přes' nebo 'To' záhlaví nastavit.|
+|MessageMustHaveViaOrToSetForSendingOnServerSideCompositeDuplexChannels|Odeslání zprávy na kompozitní duplexní kanály server, musí mít zpráva vlastnost 'Přes' nebo 'Do' záhlaví nastavit.|

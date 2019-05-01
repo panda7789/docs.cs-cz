@@ -3,11 +3,11 @@ title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
 ms.openlocfilehash: f32e932bb6616911baa8991cb46a5940c8d285ef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990961"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
 Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který můžete použít k zabezpečení zprávy odeslané do fronty.  
@@ -25,11 +25,11 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
   
  Pomocí zabezpečení přenosu <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ovlivňuje, jak jsou zabezpečené zprávy MSMQ během přenosu mezi fronty přenosu a cílová fronta tam, kde zabezpečené zahrnuje:  
   
--   Podepisování zpráv tak, aby byl nemanipulovalo.  
+- Podepisování zpráv tak, aby byl nemanipulovalo.  
   
--   Zpráva, která má zajistěte, aby úmyslně viděli nebo šifrování. Toto je doporučená, ale volitelné.  
+- Zpráva, která má zajistěte, aby úmyslně viděli nebo šifrování. Toto je doporučená, ale volitelné.  
   
--   Správce front cílový označující, odesílatel zprávy pro popírání odpovědnosti.  
+- Správce front cílový označující, odesílatel zprávy pro popírání odpovědnosti.  
   
  Služby MSMQ nezávisle na ověřování, cílová fronta má seznam řízení přístupu (ACL), chcete-li zkontrolovat, zda klient má oprávnění k odeslání zprávy do cílové fronty. Přijímající aplikace je také kontroluje oprávnění přijímat zprávy z cílové fronty.  
   

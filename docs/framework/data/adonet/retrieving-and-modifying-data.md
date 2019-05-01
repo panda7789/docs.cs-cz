@@ -3,11 +3,11 @@ title: Načítání a úpravy dat v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
 ms.openlocfilehash: bf26cd216b456e912dbaf0019114ea8e60b439a1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033914"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Načítání a úpravy dat v ADO.NET
 Primární funkce libovolné aplikace, databáze je připojení ke zdroji dat a načítání dat, který ji obsahuje. Zprostředkovatelé dat .NET Framework ADO.NET slouží jako most mezi aplikací a zdroji dat, umožňuje spouštět i příkazy jde o načtení dat pomocí **DataReader** nebo **DataAdapter** . Klíčové funkce libovolné aplikace, databáze je možnost aktualizovat data, která je uložena v databázi. V ADO.NET, aktualizace dat je použít **DataAdapter** a <xref:System.Data.DataSet>, a **příkaz** objekty; a to může zahrnovat také použití transakcí.  

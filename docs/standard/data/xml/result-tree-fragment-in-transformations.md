@@ -6,11 +6,11 @@ ms.assetid: df363480-ba02-4233-9ddf-8434e421c4f1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4835536dd3ae815fbe7e50582b94caefb1fc9082
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62027054"
 ---
 # <a name="result-tree-fragment-in-transformations"></a>Fragment stromu výsledků v transformacích
 
@@ -194,7 +194,6 @@ Výsledek transformace XML pomocí této šablony stylů je následující:
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.XPath.XPathNodeIterator>
 - <xref:System.Xml.XPath.XPathNodeIterator>
 - [Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)
 - [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)

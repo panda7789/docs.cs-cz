@@ -16,11 +16,11 @@ helpviewer_keywords:
 - Windows Forms, layout
 ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
 ms.openlocfilehash: 230c7cb80ce6b8a29f7334ed0f8d297fd829faf9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009081"
 ---
 # <a name="walkthrough-laying-out-windows-forms-controls-with-padding-margins-and-the-autosize-property"></a>Návod: Rozvrhování ovládacích prvků Windows Forms s odsazením, okraji a s vlastností AutoSize
 Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. **Návrháře formulářů Windows** poskytuje celou řadu nástrojů rozložení, jak toho dosáhnout. Jsou tři z vašich nejdůležitějších <xref:System.Windows.Forms.Control.Margin%2A>, <xref:System.Windows.Forms.Control.Padding%2A>, a <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti, které jsou k dispozici u všech ovládacích prvků Windows Forms.  
@@ -37,13 +37,13 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu Windows Forms  
+- Vytvoření projektu Windows Forms  
   
--   Nastavení okrajů pro vaše ovládací prvky  
+- Nastavení okrajů pro vaše ovládací prvky  
   
--   Nastavení odsazení pro vaše ovládací prvky  
+- Nastavení odsazení pro vaše ovládací prvky  
   
--   Automaticky Změna velikosti ovládacích prvků  
+- Automaticky Změna velikosti ovládacích prvků  
   
  Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.  
   
@@ -53,7 +53,7 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat:  
   
--   Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.  
+- Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu a nastavení formuláře.  
@@ -178,11 +178,11 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
 ## <a name="next-steps"></a>Další kroky  
  Existuje mnoho dalších funkcí rozložení pro uspořádání ovládacích prvků v aplikacích Windows Forms. Tady jsou některé kombinace, který můžete vyzkoušet:  
   
--   Vytvoření tvaru pomocí <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Podrobnosti najdete v tématu [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md). Zkuste změnit hodnoty <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost, stejně jako <xref:System.Windows.Forms.Control.Margin%2A> vlastnost na jeho podřízených ovládacích prvků.  
+- Vytvoření tvaru pomocí <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Podrobnosti najdete v tématu [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md). Zkuste změnit hodnoty <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost, stejně jako <xref:System.Windows.Forms.Control.Margin%2A> vlastnost na jeho podřízených ovládacích prvků.  
   
--   Zkuste stejném experimentu pomocí <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Podrobnosti najdete v tématu [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
+- Zkuste stejném experimentu pomocí <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Podrobnosti najdete v tématu [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
   
--   Experiment s ukotvení podřízených ovládacích prvků <xref:System.Windows.Forms.Panel> ovládacího prvku. <xref:System.Windows.Forms.Control.Padding%2A> Vlastnost je obecnější realizaci <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A> vlastnost a dokáže uspokojit požadavky sami, že tomu tak, že vložíte podřízeného ovládacího prvku <xref:System.Windows.Forms.Panel> ovládacího prvku a nastavením podřízený ovládací prvek <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. Nastavte <xref:System.Windows.Forms.Panel> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> na různé hodnoty a Poznámka efekt.  
+- Experiment s ukotvení podřízených ovládacích prvků <xref:System.Windows.Forms.Panel> ovládacího prvku. <xref:System.Windows.Forms.Control.Padding%2A> Vlastnost je obecnější realizaci <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A> vlastnost a dokáže uspokojit požadavky sami, že tomu tak, že vložíte podřízeného ovládacího prvku <xref:System.Windows.Forms.Panel> ovládacího prvku a nastavením podřízený ovládací prvek <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. Nastavte <xref:System.Windows.Forms.Panel> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> na různé hodnoty a Poznámka efekt.  
   
 ## <a name="see-also"></a>Viz také:
 

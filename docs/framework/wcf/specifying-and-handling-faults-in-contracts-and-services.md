@@ -5,11 +5,11 @@ helpviewer_keywords:
 - handling faults [WCF]
 ms.assetid: a9696563-d404-4905-942d-1e0834c26dea
 ms.openlocfilehash: 7c64bdb0cf60fff2dad49c3ffc48629c53abecad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006393"
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>Určování a zpracování chyb v kontraktech a službách
 Aplikace Windows Communication Foundation (WCF) zpracovávat chybové situace mapování objektů spravovaných výjimek na SOAP chyb a selhání objekty SOAP pro objekty spravované výjimky. Témata v této části popisují postup návrhu smlouvy ke zveřejnění chyba podmínek jako vlastní chyb SOAP, jak vracet tyto chyby jako součást implementace služby a jak klienti zachytit tyto chyby.  
@@ -25,9 +25,9 @@ Aplikace Windows Communication Foundation (WCF) zpracovávat chybové situace ma
   
  Obvykle služby (a klienty s duplexní) proveďte následující kroky úspěšně integrovat do svých aplikací pro zpracování chyb:  
   
--   Podmínky výjimek namapujte na vlastní chyby SOAP.  
+- Podmínky výjimek namapujte na vlastní chyby SOAP.  
   
--   Služby a klienti odesílat a přijímat SOAP chyby jako výjimky.  
+- Služby a klienti odesílat a přijímat SOAP chyby jako výjimky.  
   
  Kromě toho klienti WCF a služeb můžete použít chyb nedeklarovaný soap pro účely ladění a můžete rozšířit výchozí chování chyby. Následující části popisují tyto úkoly a koncepty.  
   

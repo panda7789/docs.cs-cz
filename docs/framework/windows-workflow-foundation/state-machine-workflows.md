@@ -3,11 +3,11 @@ title: Pracovní postupy stavového stroje
 ms.date: 03/30/2017
 ms.assetid: 344caacd-bf3b-4716-bd5a-eca74fc5a61d
 ms.openlocfilehash: 85d7fff680b11428173dc2684b30bf2b1f46640b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59222988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004667"
 ---
 # <a name="state-machine-workflows"></a>Pracovní postupy stavového stroje
 Stavový stroj je dobře známé paradigma pro vývoj aplikací. <xref:System.Activities.Statements.StateMachine> Aktivity, spolu s <xref:System.Activities.Statements.State>, <xref:System.Activities.Statements.Transition>, a dalších aktivit slouží k vytváření programů stavu počítače pracovního postupu. Toto téma obsahuje přehled o vytváření pracovní postupy stavu počítače.  
@@ -15,11 +15,11 @@ Stavový stroj je dobře známé paradigma pro vývoj aplikací. <xref:System.Ac
 ## <a name="state-machine-workflow-overview"></a>Přehled pracovního postupu stavového stroje  
  Pracovní postupy stavového stroje zadejte styl modelování, pomocí kterého lze modelovat pracovního postupu způsobem založený na událostech. A <xref:System.Activities.Statements.StateMachine> aktivita obsahuje stavy a přechody, které tvoří logiky stavového počítače a mohou být použity kdekoli lze použít aktivitu. V modulu runtime stavu počítače jsou několik tříd:  
   
--   <xref:System.Activities.Statements.StateMachine>  
+- <xref:System.Activities.Statements.StateMachine>  
   
--   <xref:System.Activities.Statements.State>  
+- <xref:System.Activities.Statements.State>  
   
--   <xref:System.Activities.Statements.Transition>  
+- <xref:System.Activities.Statements.Transition>  
   
  Pokud chcete vytvořit pracovní postup stavového stroje, jsou stavy přidány do <xref:System.Activities.Statements.StateMachine> používají aktivity a přechody řídit tok mezi stavy. Na následujícím snímku obrazovky z [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvořit pracovní postup stavového stroje](how-to-create-a-state-machine-workflow.md), zobrazuje pracovní postup stavového stroje s tři stavy a přechody tři. **Inicializovat cílové** je počáteční stav a představuje první stav v pracovním postupu. To je označen řádek, což vede k němu z **Start** uzlu. Konečný stav v pracovním postupu jmenuje **FinalState**a reprezentuje bod dokončení pracovního postupu.  
   

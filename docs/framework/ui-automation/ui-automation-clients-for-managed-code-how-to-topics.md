@@ -8,11 +8,11 @@ helpviewer_keywords:
 - managed code, UI Automation clients
 ms.assetid: 665b01b5-25f5-47a1-ab11-cffe8ebbf2a7
 ms.openlocfilehash: 158c116aa54602a4311dfa8165dba7546369c53c
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982758"
 ---
 # <a name="ui-automation-clients-for-managed-code-how-to-topics"></a>Postupy: Témata klientů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

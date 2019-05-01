@@ -13,18 +13,18 @@ ms.assetid: b541af31-dacb-4e20-8847-1b1ff7c35363
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cd55bd62653ef64668c13eb791b10afd2013f5f9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031977"
 ---
 # <a name="polling-for-the-status-of-an-asynchronous-operation"></a>Dotazování na stav asynchronní operace
 Aplikace, které můžete provádět další operace při čekání na výsledcích asynchronní operace by neměly blokovat čekání, až do dokončení operace. Má pokračovat provedením pokyny při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  
   
--   Použití <xref:System.IAsyncResult.IsCompleted%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operace **začít**_OperationName_ metodou ke zjištění, zda operace byla dokončena. Tento postup se označuje jako cyklického dotazování a je ukázáno v tomto tématu.  
+- Použití <xref:System.IAsyncResult.IsCompleted%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operace **začít**_OperationName_ metodou ke zjištění, zda operace byla dokončena. Tento postup se označuje jako cyklického dotazování a je ukázáno v tomto tématu.  
   
--   Použití <xref:System.AsyncCallback> delegáta ke zpracování výsledků asynchronních operací v samostatném vlákně. Příklad, který ukazuje tento přístup, najdete v části [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
+- Použití <xref:System.AsyncCallback> delegáta ke zpracování výsledků asynchronních operací v samostatném vlákně. Příklad, který ukazuje tento přístup, najdete v části [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje použití asynchronních metod v <xref:System.Net.Dns> třídy načíst informace o systému názvů domény pro počítače zadané uživatelem. Tento příklad spustí asynchronní operaci a potom zobrazí období (".") v konzole až do dokončení operace. Všimněte si, že **null** (**nic** v jazyce Visual Basic) je předán <xref:System.Net.Dns.BeginGetHostByName%2A> <xref:System.AsyncCallback> a <xref:System.Object> parametry vzhledem k tomu, že tyto argumenty nejsou vyžadovány, při použití tohoto přístupu.  

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - brushes [Windows Forms], using semi-transparent
 ms.assetid: a4f6f6b8-3bc8-440a-84af-d62ef0f8ff40
 ms.openlocfilehash: a302b8bf978afcead5768fadeb6336c1ece986ec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004121"
 ---
 # <a name="how-to-draw-with-opaque-and-semitransparent-brushes"></a>Postupy: Kreslení pomocí neprůhledných a poloprůhledných štětců
 Po vyplnění obrazce, je nutné předat <xref:System.Drawing.Brush> objektu do jedné z metod výplň <xref:System.Drawing.Graphics> třídy. Jeden parametr <xref:System.Drawing.SolidBrush.%23ctor%2A> je konstruktor <xref:System.Drawing.Color> objektu. K vyplnění obrazce neprůhledný, nastavte alfa barvy na 255. K vyplnění poloprůhledných tvar, nastavte na libovolnou hodnotu od 1 do 254 alfa složkou.  

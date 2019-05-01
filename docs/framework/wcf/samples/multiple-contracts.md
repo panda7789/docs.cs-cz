@@ -3,11 +3,11 @@ title: Víc kontraktů
 ms.date: 03/30/2017
 ms.assetid: 2bef319b-fe9c-4d49-ac6c-dfb23eb35099
 ms.openlocfilehash: acced4bfc79571c78e868b31b0a4db6cfbdea76a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989739"
 ---
 # <a name="multiple-contracts"></a>Víc kontraktů
 Více kontraktů Ukázka předvádí, jak implementovat více než jeden kontrakt na služby a jak nakonfigurovat koncové body pro komunikaci s každým implementovaných kontraktů. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Služba byla změněna definovat dva kontrakty `ICalculator` smlouvy a `ICalculatorSession` kontraktu.  

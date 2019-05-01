@@ -10,11 +10,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], unbound data
 ms.assetid: f7bdc4d8-ba8e-421b-ad62-82d936f01372
 ms.openlocfilehash: 40308f7e8cc12dcff5b7d4393645f6a9007cc2b7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59215830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009198"
 ---
 # <a name="how-to-add-an-unbound-column-to-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Přidání nepřipojeného sloupce do ovládacího prvku Windows Forms DataGridView s datovou vazbou
 Data můžete zobrazit v <xref:System.Windows.Forms.DataGridView> ovládací prvek bude obvykle pocházejí ze zdroje dat určitého druhu, ale můžete chtít zobrazit sloupce dat, které nepochází ze zdroje dat. Tento typ sloupce se nazývá nepřipojeného sloupce. Nevázaného sloupce mohou mít mnoho forem. Často se používají k poskytnutí přístupu podrobné informace o datovém řádku.  
@@ -30,9 +30,9 @@ Data můžete zobrazit v <xref:System.Windows.Forms.DataGridView> ovládací prv
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
--   Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

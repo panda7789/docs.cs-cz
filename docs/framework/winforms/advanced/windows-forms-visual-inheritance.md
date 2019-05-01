@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Windows Forms, inheritance
 ms.assetid: 857eb737-3602-4d49-bd8b-f70d33ace345
 ms.openlocfilehash: e94cdc38b97f95cfe8a8504733298525c25667df
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011863"
 ---
 # <a name="windows-forms-visual-inheritance"></a>Vizuální dědění Windows Forms
 V některých případech může rozhodnout, že projekt vyžaduje formuláře podobně jako ten, který jste vytvořili v předchozím projektu. Nebo můžete chtít vytvořit základní formulář s nastavením, jako je například vodoznaku nebo určité rozložení ovládacích prvků, které pak použijete znovu v rámci projektu, s každou iterací, který obsahuje úpravy původní šablony formuláře. Dědičnost formulářů umožňuje vytvoření základního formuláře a z něj dědí při zachování libovolné původní nastavení, je nutné provést změny.  

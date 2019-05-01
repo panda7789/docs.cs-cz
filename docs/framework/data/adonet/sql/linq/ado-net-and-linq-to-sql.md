@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
 ms.openlocfilehash: 10e60ebd71c4615354c25d3a61a04e9d12d7c800
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59167190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033823"
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET a LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řady technologií. Je založen na služby poskytované [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] modelu poskytovatele. Proto můžete kombinovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kódu s existujícím [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] aplikací a migrovat aktuální [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řešení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Následující obrázek poskytuje podrobný pohled vztahu.  

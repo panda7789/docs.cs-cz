@@ -6,11 +6,11 @@ helpviewer_keywords:
 - object variables [Visual Basic], accessing members
 ms.assetid: a0072514-6a79-4dd6-8d03-ca8c13e61ddc
 ms.openlocfilehash: de00e428cc3d9d7a5688e853b0ff4295fec5b3e9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052128"
 ---
 # <a name="how-to-access-members-of-an-object-visual-basic"></a>Postupy: Přístup k členům v objektu (Visual Basic)
 Až budete mít proměnné objektu, který odkazuje na objekt, často chcete pracovat s členy tohoto objektu, jako jsou metody, vlastnosti, pole a události. Například po vytvoření nového <xref:System.Windows.Forms.Form> objektu, můžete chtít nastavit jeho <xref:System.Windows.Forms.Control.Text%2A> vlastností nebo volání jeho <xref:System.Windows.Forms.Control.Focus%2A> metoda.  
@@ -20,7 +20,7 @@ Až budete mít proměnné objektu, který odkazuje na objekt, často chcete pra
   
 #### <a name="to-access-members-of-an-object"></a>Pro přístup ke členům objektu  
   
--   Operátor přístupu členů (`.`) mezi názvem proměnné objektu a název člena.  
+- Operátor přístupu členů (`.`) mezi názvem proměnné objektu a název člena.  
   
     ```  
     currentText = newForm.Text  

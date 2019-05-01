@@ -8,11 +8,11 @@ helpviewer_keywords:
 - examples [Visual Basic], changing user settings
 ms.assetid: 41250181-c594-4854-9988-8183b9eb03cf
 ms.openlocfilehash: 05c95026d061918b38cf301209afefa9498e33bf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014398"
 ---
 # <a name="how-to-change-user-settings-in-visual-basic"></a>Postupy: Změna uživatelského nastavení v jazyce Visual Basic
 Uživatelské nastavení můžete změnit přiřazení nové hodnoty pro nastavení vlastnosti na `My.Settings` objektu.  

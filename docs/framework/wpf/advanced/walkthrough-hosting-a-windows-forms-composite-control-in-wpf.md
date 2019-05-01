@@ -9,11 +9,11 @@ helpviewer_keywords:
 - composite controls [WPF], hosting in WPF
 ms.assetid: 96fcd78d-1c77-4206-8928-3a0579476ef4
 ms.openlocfilehash: 90d0e2f3c6ebab070809a4813c87da3539fd14f1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032185"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-composite-control-in-wpf"></a>Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být efektivnější opakovaně používat alespoň některé tohoto kódu v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace namísto jeho přepsání úplně od začátku. Nejběžnější scénář je, pokud máte existující ovládací prvky Windows Forms. V některých případech nemusí mít i přístup ke zdrojovému kódu pro tyto ovládací prvky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý postup pro hostování těchto ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Například můžete použít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] u většiny vašich programování při hostování vaší specializované <xref:System.Windows.Forms.DataGridView> ovládacích prvků.  
@@ -24,9 +24,9 @@ ms.locfileid: "59337848"
   
  Úlohy v tomto návodu zahrnují:  
   
--   Implementace složeného ovládacího prvku Windows Forms.  
+- Implementace složeného ovládacího prvku Windows Forms.  
   
--   Implementace hostitelskou aplikaci WPF.  
+- Implementace hostitelskou aplikaci WPF.  
   
  Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [hostování Windows Forms složeného ovládacího prvku v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159999).  
   
@@ -58,32 +58,32 @@ Visual Studio k dokončení tohoto návodu potřebujete.
   
  Váš projekt by měl zahrnovat odkazy na tyto systémové knihovny DLL. Pokud některý z těchto knihoven DLL nejsou zahrnuty ve výchozím nastavení, můžete je přidáte do projektu.  
   
--   Systém  
+- Systém  
   
--   System.Data  
+- System.Data  
   
--   System.Drawing  
+- System.Drawing  
   
--   System.Windows.Forms  
+- System.Windows.Forms  
   
--   System.Xml  
+- System.Xml  
   
 ### <a name="adding-controls-to-the-form"></a>Přidávání ovládacích prvků do formuláře  
  Chcete-li přidat ovládací prvky do formuláře:  
   
--   Otevřít `MyControl1` v návrháři.  
+- Otevřít `MyControl1` v návrháři.  
   
  Přidat pět <xref:System.Windows.Forms.Label> ovládací prvky a jejich odpovídající <xref:System.Windows.Forms.TextBox> ovládací prvky, velikost a uspořádání stejně jako v předchozí ilustraci ve formuláři. V tomto příkladu <xref:System.Windows.Forms.TextBox> jsou pojmenovány ovládacích prvků:  
   
--   `txtName`  
+- `txtName`  
   
--   `txtAddress`  
+- `txtAddress`  
   
--   `txtCity`  
+- `txtCity`  
   
--   `txtState`  
+- `txtState`  
   
--   `txtZip`  
+- `txtZip`  
   
  Přidejte dva <xref:System.Windows.Forms.Button> kontrolní prvky **OK** a **zrušit**. V tomto příkladu jsou názvy tlačítek `btnOK` a `btnCancel`v uvedeném pořadí.  
   
@@ -159,11 +159,11 @@ Následující obrázek ukazuje hotové aplikace včetně ovládací prvek vlož
 ### <a name="implementing-the-basic-layout"></a>Implementace základní rozložení
  [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] Hostitele je příslušná aplikace implementovaná v souboru MainWindow.xaml. Tento soubor obsahuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] kód, který definuje rozložení a hostuje ovládací prvek Windows Forms. Aplikaci je rozdělené do tří oblastí:
 
--   **Vlastností ovládacího prvku** panel, který obsahuje kolekci prvků přepínačů, můžete použít k úpravě různé vlastnosti objektu hostovaného ovládacího prvku.
+- **Vlastností ovládacího prvku** panel, který obsahuje kolekci prvků přepínačů, můžete použít k úpravě různé vlastnosti objektu hostovaného ovládacího prvku.
 
--   **Dat z ovládacího prvku** panel, který obsahuje několik <xref:System.Windows.Controls.TextBlock> prvky, které zobrazují data vrácená z hostovaného ovládacího prvku.
+- **Dat z ovládacího prvku** panel, který obsahuje několik <xref:System.Windows.Controls.TextBlock> prvky, které zobrazují data vrácená z hostovaného ovládacího prvku.
 
--   Hostované samotný ovládací prvek.
+- Hostované samotný ovládací prvek.
 
  Základní rozložení je znázorněno v následující XAML. Kód, který je nutný k hostiteli `MyControl1` vynecháte z tohoto příkladu, ale bude prodiskutována později.
 
@@ -183,18 +183,18 @@ Následující obrázek ukazuje hotové aplikace včetně ovládací prvek vlož
 
  Dva prvky v XAML zpracování hostování:
 
--   `WindowsFormsHost` představuje <xref:System.Windows.Forms.Integration.WindowsFormsHost> element, který můžete použít k hostování ovládacího prvku Windows Forms v umožňuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.
+- `WindowsFormsHost` představuje <xref:System.Windows.Forms.Integration.WindowsFormsHost> element, který můžete použít k hostování ovládacího prvku Windows Forms v umožňuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.
 
--   `mcl:MyControl1`, která představuje `MyControl1`, se přidá do <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu podřízené kolekce. V důsledku toho je tento ovládací prvek Windows Forms vykreslit jako součást [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] okna a může komunikovat s ovládacím prvkem z aplikace.
+- `mcl:MyControl1`, která představuje `MyControl1`, se přidá do <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu podřízené kolekce. V důsledku toho je tento ovládací prvek Windows Forms vykreslit jako součást [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] okna a může komunikovat s ovládacím prvkem z aplikace.
 
 ### <a name="implementing-the-code-behind-file"></a>Implementace souboru kódu na pozadí
  Použití modelu code-behind souboru, soubor MainWindow.xaml.vb nebo MainWindow.xaml.cs, obsahuje kód procedury, která implementuje funkce [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] popsané v předchozí části. Primární úlohy jsou:
 
--   Připojení obslužnou rutinu události pro `MyControl1`společnosti `OnButtonClick` událostí.
+- Připojení obslužnou rutinu události pro `MyControl1`společnosti `OnButtonClick` událostí.
 
--   Úprava různé vlastnosti objektu `MyControl1`podle nastavení kolekce přepínačů.
+- Úprava různé vlastnosti objektu `MyControl1`podle nastavení kolekce přepínačů.
 
--   Zobrazení dat shromažďovaných ovládacího prvku.
+- Zobrazení dat shromažďovaných ovládacího prvku.
 
 #### <a name="initializing-the-application"></a>Inicializace aplikace
  Inicializační kód je obsažen v obslužné rutině události pro okna <xref:System.Windows.FrameworkElement.Loaded> událostí a připojí obslužnou rutinu události ovládacího prvku `OnButtonClick` událostí.

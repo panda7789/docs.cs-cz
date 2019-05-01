@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 61fce3e06b5245872f7061716e8d995dd5f5043c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61984643"
 ---
 # <a name="iclrmetahostrequestruntimeloadednotification-method"></a>ICLRMetaHost::RequestRuntimeLoadedNotification – metoda
 Poskytuje funkce zpětného volání, která je zaručeně volán při společné jazykové verzi modulu runtime (CLR) je prvním načtení, ale ještě nebyl spuštěn. Tato metoda nahrazuje [lockclrversion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) funkce.  
@@ -49,11 +49,11 @@ HRESULT RequestRuntimeLoadedNotification (
 ## <a name="remarks"></a>Poznámky  
  Zpětné volání pracuje následujícím způsobem:  
   
--   Zpětné volání je vyvolat pouze při prvním načtení modulu runtime.  
+- Zpětné volání je vyvolat pouze při prvním načtení modulu runtime.  
   
--   Zpětné volání není vyvolána vícenásobné načtení stejných modulů runtime.  
+- Zpětné volání není vyvolána vícenásobné načtení stejných modulů runtime.  
   
--   Pro načtení modulu runtime bez reentrant serializují volání funkce zpětného volání.  
+- Pro načtení modulu runtime bez reentrant serializují volání funkce zpětného volání.  
   
  Funkce zpětného volání obsahuje následující prototyp:  
   
@@ -66,13 +66,13 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
   
  Prototypy funkcí zpětného volání jsou následující:  
   
--   `pfnCallbackThreadSet`:  
+- `pfnCallbackThreadSet`:  
   
     ```  
     typedef HRESULT (__stdcall *CallbackThreadSetFnPtr)();  
     ```  
   
--   `pfnCallbackThreadUnset`:  
+- `pfnCallbackThreadUnset`:  
   
     ```  
     typedef HRESULT (__stdcall *CallbackThreadUnsetFnPtr)();  
@@ -80,11 +80,11 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
   
  Pokud si klade za cíl hostitele k načtení nebo způsobí jiný modul runtime načtení vícenásobné způsobem, `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` parametry, které jsou k dispozici při zpětném volání funkce musí použít následujícím způsobem:  
   
--   `pfnCallbackThreadSet` musí být volána vláknem, které může způsobit, že modul runtime zatížení předtím, než dojde k pokusu o takové zatížení.  
+- `pfnCallbackThreadSet` musí být volána vláknem, které může způsobit, že modul runtime zatížení předtím, než dojde k pokusu o takové zatížení.  
   
--   `pfnCallbackThreadUnset` musí být volána, když vlákno již způsobí, že modul runtime zatížení (a před návratem z počáteční zpětné volání).  
+- `pfnCallbackThreadUnset` musí být volána, když vlákno již způsobí, že modul runtime zatížení (a před návratem z počáteční zpětné volání).  
   
--   `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` jsou mimo reentrant.  
+- `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` jsou mimo reentrant.  
   
 > [!NOTE]
 >  Hostování aplikací nesmějí volat `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` mimo obor `pCallbackFunction` parametru.  

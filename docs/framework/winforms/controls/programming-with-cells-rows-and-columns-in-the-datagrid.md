@@ -9,11 +9,11 @@ helpviewer_keywords:
 - rows [Windows Forms], data grids
 ms.assetid: 0d76f7e4-4149-42c6-9118-bb37d6669dc5
 ms.openlocfilehash: 085fcd0114742e787c8cbcaabf89a354b0e3e830
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59144622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012526"
 ---
 # <a name="programming-with-cells-rows-and-columns-in-the-windows-forms-datagridview-control"></a>Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView
 Tato část obsahuje témata, které ukazují různé programovací úkoly zahrnující buňky, řádku a sloupci objekty.  

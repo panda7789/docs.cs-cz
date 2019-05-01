@@ -3,11 +3,11 @@ title: Adresování
 ms.date: 03/30/2017
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
 ms.openlocfilehash: a59c3b354404169c2baadd4ab8c2702728d9a891
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002934"
 ---
 # <a name="addressing"></a>Adresování
 Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bodu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce je služba v místním prostředí. Službu a klienta jsou konzolové aplikace. Služba definuje několik koncových bodů pomocí kombinace relativní a absolutní koncový bod adresy.  

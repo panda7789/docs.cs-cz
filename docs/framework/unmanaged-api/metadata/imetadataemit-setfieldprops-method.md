@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 94ba607669b4b1ca68294470cf1cc4fb27464d28
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61992482"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps – metoda
 Nastaví nebo aktualizuje výchozí hodnota pro pole odkazuje token zadaného pole.  

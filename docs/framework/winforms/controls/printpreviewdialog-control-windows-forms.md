@@ -8,11 +8,11 @@ helpviewer_keywords:
 - print preview [Windows Forms], default interface (using designer)
 ms.assetid: bfb5a3d7-021e-44f4-90f3-d435467f51d6
 ms.openlocfilehash: 6d763b51e1ac0ba0e07b986be701e86f5bd60df2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012578"
 ---
 # <a name="printpreviewdialog-control-windows-forms"></a>PrintPreviewDialog – ovládací prvek (Windows Forms)
 Windows Forms `PrintPreviewDialog` ovládací prvek je předem nakonfigurované dialogovému oknu slouží k zobrazení, jak bude dokument vypadat po vytištění. Použijte v rámci vaší aplikace založené na Windows jako jednoduchým řešením namísto dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, Přiblížit, zobrazení jedné nebo více stránek a zavření dialogového okna.  

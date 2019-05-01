@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
 ms.openlocfilehash: 4c96665994a7e56bc70f72b66d5922f5a6472a13
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61961223"
 ---
 # <a name="embedded-expressions-in-xml-visual-basic"></a>Vložené výrazy v XML (Visual Basic)
 Vložené výrazy umožňují vytváření literálů XML, které obsahují výrazy, které jsou vyhodnocovány v době běhu. Syntaxe pro vložený výraz je `<%=` `expression` `%>`, která je stejná jako syntaxe používané [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)].  
@@ -42,27 +42,27 @@ Vložené výrazy umožňují vytváření literálů XML, které obsahují výr
 |Atribut – element XML|<xref:System.Xml.Linq.XAttribute> nebo kolekce <xref:System.Xml.Linq.XAttribute>|Ignorováno|  
 |Kořenový element dokumentu XML|<xref:System.Xml.Linq.XElement> kolekce jednoho nebo <xref:System.Xml.Linq.XElement> objektu a libovolný počet <xref:System.Xml.Linq.XProcessingInstruction> a <xref:System.Xml.Linq.XComment> objekty|Ignorováno|  
   
--   Příklad vložený výraz v název elementu XML:  
+- Příklad vložený výraz v název elementu XML:  
   
      [!code-vb[VbXMLSamples#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#32)]  
   
--   Příklad vložený výraz v obsahu prvku XML:  
+- Příklad vložený výraz v obsahu prvku XML:  
   
      [!code-vb[VbXMLSamples#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#33)]  
   
--   Příklad vložený výraz v atributu název elementu XML:  
+- Příklad vložený výraz v atributu název elementu XML:  
   
      [!code-vb[VbXMLSamples#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#34)]  
   
--   Příklad vložený výraz v hodnotě atributu – element XML:  
+- Příklad vložený výraz v hodnotě atributu – element XML:  
   
      [!code-vb[VbXMLSamples#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#35)]  
   
--   Příklad vložený výraz v atributu – element XML:  
+- Příklad vložený výraz v atributu – element XML:  
   
      [!code-vb[VbXMLSamples#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#36)]  
   
--   Příklad vložený výraz v kořenový element dokumentu XML:  
+- Příklad vložený výraz v kořenový element dokumentu XML:  
   
      [!code-vb[VbXMLSamples#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#37)]  
   

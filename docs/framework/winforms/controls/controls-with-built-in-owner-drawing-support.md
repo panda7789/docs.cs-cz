@@ -9,11 +9,11 @@ helpviewer_keywords:
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
 ms.openlocfilehash: 1807170b2f5df2333ec3b271a11f9b929c1e7993
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011577"
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
 Vykreslení ve Windows Forms, který je také označován jako vlastní kreslení, vlastníka je postup pro změnu vizuálního vzhledu některé ovládací prvky.  
@@ -38,27 +38,27 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Následující Windows Forms – ovládací prvky podporu vlastníka kreslení ve všech verzích rozhraní .NET Framework:  
   
--   <xref:System.Windows.Forms.ListBox>  
+- <xref:System.Windows.Forms.ListBox>  
   
--   <xref:System.Windows.Forms.ComboBox>  
+- <xref:System.Windows.Forms.ComboBox>  
   
--   <xref:System.Windows.Forms.MenuItem> (používají <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu>)  
+- <xref:System.Windows.Forms.MenuItem> (používají <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu>)  
   
--   <xref:System.Windows.Forms.TabControl>  
+- <xref:System.Windows.Forms.TabControl>  
   
  Vlastník kreslení pouze v podporují následující ovládací prvky [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]:  
   
--   <xref:System.Windows.Forms.ToolTip>  
+- <xref:System.Windows.Forms.ToolTip>  
   
--   <xref:System.Windows.Forms.ListView>  
+- <xref:System.Windows.Forms.ListView>  
   
--   <xref:System.Windows.Forms.TreeView>  
+- <xref:System.Windows.Forms.TreeView>  
   
  Následující ovládací prvky podporují kreslení vlastníka a jsou novinkou [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]:  
   
--   <xref:System.Windows.Forms.DataGridView>  
+- <xref:System.Windows.Forms.DataGridView>  
   
--   <xref:System.Windows.Forms.ToolStrip>  
+- <xref:System.Windows.Forms.ToolStrip>  
   
  Následující části obsahují další podrobnosti pro každou z těchto ovládacích prvků.  
   
@@ -74,19 +74,19 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListBox.MeasureItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListBox.MeasureItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.MeasureItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ComboBox.MeasureItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.DrawItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ComboBox.DrawItem?displayProperty=nameWithType>  
   
--   [Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox](how-to-create-variable-sized-text-in-a-combobox-control.md)  
+- [Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox](how-to-create-variable-sized-text-in-a-combobox-control.md)  
   
 ### <a name="menuitem-component"></a>Komponenta položku nabídky  
  <xref:System.Windows.Forms.MenuItem> Představuje samostatnou položku nabídky v součásti <xref:System.Windows.Forms.MainMenu> nebo <xref:System.Windows.Forms.ContextMenu> komponenty.  
@@ -95,11 +95,11 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.MenuItem.DrawItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.MenuItem.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=nameWithType>  
   
 ### <a name="tabcontrol-control"></a>TabControl – ovládací prvek  
  <xref:System.Windows.Forms.TabControl> Ovládací prvek umožňuje nakreslit jednotlivé karty v ovládacím prvku. Kreslení vlastníka má vliv pouze na karty; <xref:System.Windows.Forms.TabPage> obsah to nebude mít vliv.  
@@ -108,9 +108,9 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=nameWithType>  
   
 ### <a name="tooltip-component"></a>ToolTip – komponenta  
  <xref:System.Windows.Forms.ToolTip> Komponenty umožňuje nakreslit celý popis, jakmile se zobrazí.  
@@ -119,11 +119,11 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>  
   
 ### <a name="listview-control"></a>ListView – ovládací prvek  
  <xref:System.Windows.Forms.ListView> Ovládací prvek umožňuje nakreslit jednotlivých položek, podřízené položky a záhlaví sloupců v ovládacím prvku.  
@@ -136,13 +136,13 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=nameWithType>  
   
 ### <a name="treeview-control"></a>TreeView – ovládací prvek  
  <xref:System.Windows.Forms.TreeView> Ovládací prvek umožňuje nakreslit jednotlivé uzly v ovládacím prvku.  
@@ -153,9 +153,9 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>  
   
 ### <a name="datagridview-control"></a>DataGridView – ovládací prvek  
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek umožňuje nakreslit jednotlivé buňky a řádků v ovládacím prvku.  
@@ -166,15 +166,15 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.DataGridView.CellPainting>  
+- <xref:System.Windows.Forms.DataGridView.CellPainting>  
   
--   <xref:System.Windows.Forms.DataGridView.RowPrePaint>  
+- <xref:System.Windows.Forms.DataGridView.RowPrePaint>  
   
--   <xref:System.Windows.Forms.DataGridView.RowPostPaint>  
+- <xref:System.Windows.Forms.DataGridView.RowPostPaint>  
   
--   [Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md)  
+- [Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md)  
   
--   [Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-rows-in-the-datagrid.md)  
+- [Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-rows-in-the-datagrid.md)  
   
 ### <a name="toolstrip-control"></a>ToolStrip – ovládací prvek  
  <xref:System.Windows.Forms.ToolStrip> a odvozené ovládací prvky umožňují přizpůsobit jiného aspektu jejich výskytu.  
@@ -183,11 +183,11 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
  Další informace, včetně příkladů kódu naleznete v následujících tématech:  
   
--   <xref:System.Windows.Forms.ToolStripRenderer>  
+- <xref:System.Windows.Forms.ToolStripRenderer>  
   
--   [Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
+- [Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
   
--   [Postupy: Vlastní vykreslení ovládacího prvku ToolStrip](how-to-custom-draw-a-toolstrip-control.md)  
+- [Postupy: Vlastní vykreslení ovládacího prvku ToolStrip](how-to-custom-draw-a-toolstrip-control.md)  
   
 ## <a name="see-also"></a>Viz také:
 

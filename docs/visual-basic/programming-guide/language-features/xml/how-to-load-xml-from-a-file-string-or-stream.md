@@ -6,11 +6,11 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], loading XML from files
 ms.assetid: 2b02dcec-4cca-4575-b4ad-89ceb87b984c
 ms.openlocfilehash: 2b9da2062068ef25c5df97ef19b1502999ea78ed
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052531"
 ---
 # <a name="how-to-load-xml-from-a-file-string-or-stream-visual-basic"></a>Postupy: Načtení XML ze souboru, řetězce nebo Stream (Visual Basic)
 Můžete vytvořit [literály XML](../../../../visual-basic/language-reference/xml-literals/index.md) a naplníte je obsah z externího zdroje, jako je například souboru, řetězce nebo proudu pomocí několika metod. Tyto metody jsou uvedeny v následujících příkladech.  
@@ -19,7 +19,7 @@ Můžete vytvořit [literály XML](../../../../visual-basic/language-reference/x
   
 ### <a name="to-load-xml-from-a-file"></a>Načtení XML ze souboru  
   
--   K naplnění literálu jako XML <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objekt ze souboru, použijte `Load` metody. Tato metoda může trvat cesta k souboru, textového datového proudu nebo datový proud XML jako vstup.  
+- K naplnění literálu jako XML <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objekt ze souboru, použijte `Load` metody. Tato metoda může trvat cesta k souboru, textového datového proudu nebo datový proud XML jako vstup.  
   
      Následující příklad kódu ukazuje použití <xref:System.Xml.Linq.XDocument.Load%28System.String%29> metoda k naplnění <xref:System.Xml.Linq.XDocument> objektu s jazykem XML z textového souboru.  
   
@@ -27,7 +27,7 @@ Můžete vytvořit [literály XML](../../../../visual-basic/language-reference/x
   
 ### <a name="to-load-xml-from-a-string"></a>Načtení XML z řetězce  
   
--   K naplnění literálu jako XML <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objekt z řetězce, můžete použít `Parse` metody.  
+- K naplnění literálu jako XML <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objekt z řetězce, můžete použít `Parse` metody.  
   
      Následující příklad kódu ukazuje použití <xref:System.Xml.Linq.XDocument.Parse%28System.String%29?displayProperty=nameWithType> metoda k naplnění <xref:System.Xml.Linq.XDocument> objekt s XML z řetězce.  
   
@@ -35,7 +35,7 @@ Můžete vytvořit [literály XML](../../../../visual-basic/language-reference/x
   
 ### <a name="to-load-xml-from-a-stream"></a>Načtení z datový proud XML  
   
--   K naplnění literálu jako XML <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objektu z datového proudu, můžete použít `Load` – metoda nebo <xref:System.Xml.Linq.XNode.ReadFrom%2A?displayProperty=nameWithType> metody.  
+- K naplnění literálu jako XML <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objektu z datového proudu, můžete použít `Load` – metoda nebo <xref:System.Xml.Linq.XNode.ReadFrom%2A?displayProperty=nameWithType> metody.  
   
  Následující příklad kódu ukazuje použití <xref:System.Xml.Linq.XNode.ReadFrom%2A> metoda k naplnění <xref:System.Xml.Linq.XDocument> objektu s jazykem XML z datový proud XML.  
   

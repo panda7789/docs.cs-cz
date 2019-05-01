@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f4b4ac1a37c2b3506216499ed0c9f8194949b768
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61985644"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID – funkce
 Získá odpovídající common language runtime (CLR) informace o verzi pro třídu se zadaným `CLSID`.  
@@ -56,9 +56,9 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
  `dwResolutionFlags`  
  [in]  Jedna z hodnot clsid_resolution_flags –. Podporovány jsou následující hodnoty:  
   
--   CLSID_RESOLUTION_DEFAULT: (0x0) určuje, že má být použito výchozí chování spolupráce.  
+- CLSID_RESOLUTION_DEFAULT: (0x0) určuje, že má být použito výchozí chování spolupráce.  
   
--   CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že registru vyhledávat a překrytí tato zásada použít.  
+- CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že registru vyhledávat a překrytí tato zásada použít.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   

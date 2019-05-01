@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 745742df-0eda-479b-83f8-29bd8a80db96
 ms.openlocfilehash: e1f7a7da1ab2ce0ad7d7908ecd1f896d229b8e1a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037905"
 ---
 # <a name="formulate-projections"></a>Formulování projekcí
 Následující příklady ukazují jak `select` výroky C# a `Select` v sadě Visual Studio je možné kombinovat s další funkce do formuláře projekce dotazů.  
@@ -66,11 +66,11 @@ Následující příklady ukazují jak `select` výroky C# a `Select` v sadě Vi
 ## <a name="example"></a>Příklad  
  Následující příklad používá vnořené dotazy vrátit následující výsledky:  
   
--   Posloupnost všech objednávek a jejich odpovídající `OrderID`s.  
+- Posloupnost všech objednávek a jejich odpovídající `OrderID`s.  
   
--   Dílčí sekvenci položek v pořadí, pro kterou se slevou.  
+- Dílčí sekvenci položek v pořadí, pro kterou se slevou.  
   
--   Množství peníze uloženy v případě, že náklady na přesouvání není zahrnutý.  
+- Množství peníze uloženy v případě, že náklady na přesouvání není zahrnutý.  
   
  [!code-csharp[DLinqQueryExamples#65](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#65)]
  [!code-vb[DLinqQueryExamples#65](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#65)]  

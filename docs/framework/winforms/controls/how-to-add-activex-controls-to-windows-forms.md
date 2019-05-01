@@ -7,11 +7,11 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], adding
 ms.assetid: 54a61e5b-555e-4887-b41e-6244fed271eb
 ms.openlocfilehash: 780411949c543a2178de5e7c531bd2202703f27a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011151"
 ---
 # <a name="how-to-add-activex-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms
 Zatímco Návrhář formulářů Windows je optimalizována pro hostitelské ovládací prvky Windows Forms, lze také umístit ovládací prvky ActiveX v modelu Windows Forms.  
@@ -26,7 +26,7 @@ Zatímco Návrhář formulářů Windows je optimalizována pro hostitelské ovl
   
 ### <a name="to-add-an-activex-control-to-your-windows-form"></a>Chcete-li přidat ovládací prvek ActiveX do formuláře Windows  
   
--   Poklepejte na ovládací prvek na panelu nástrojů.  
+- Poklepejte na ovládací prvek na panelu nástrojů.  
   
      Visual Studio přidá všechny odkazy na ovládací prvek ve vašem projektu. Další informace o co je potřeba vzít v úvahu při použití ovládacích prvků ActiveX do formulářů Windows, naleznete v tématu [aspekty hostování ovládacího prvku ActiveX ve formuláři Windows](considerations-when-hosting-an-activex-control-on-a-windows-form.md).  
   

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2b19efdedc21f66e4692ce1850eb3947f856e436
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61993795"
 ---
 # <a name="icordebugtype2gettypeid-method"></a>ICorDebugType2::GetTypeID Method
 Získá [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) u tohoto typu.  

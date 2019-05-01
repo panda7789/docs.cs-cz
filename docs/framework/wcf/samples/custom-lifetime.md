@@ -3,11 +3,11 @@ title: Vlastní doba života
 ms.date: 08/20/2018
 ms.assetid: 52806c07-b91c-48fe-b992-88a41924f51f
 ms.openlocfilehash: be6013d568e3625c5eac7e0c145db7df1c6917e3
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62003155"
 ---
 # <a name="custom-lifetime"></a>Vlastní doba života
 

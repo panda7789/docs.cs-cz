@@ -3,11 +3,11 @@ title: Typový klient
 ms.date: 03/30/2017
 ms.assetid: 62c40e8f-e9b4-4b1a-939a-93c37393d343
 ms.openlocfilehash: 0c4608574ee28a18a3b0ecdebfaa87f90ef80fa7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007640"
 ---
 # <a name="typed-client"></a>Typový klient
 Vzorek ukazuje, jak získat informace z typový klient generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  

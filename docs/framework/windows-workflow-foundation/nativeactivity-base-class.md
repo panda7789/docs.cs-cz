@@ -3,11 +3,11 @@ title: Základní třída NativeActivity
 ms.date: 03/30/2017
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
 ms.openlocfilehash: f718d247e7110b46cdd13038c7c93c1e45612c75
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009978"
 ---
 # <a name="nativeactivity-base-class"></a>Základní třída NativeActivity
 
@@ -16,21 +16,21 @@ ms.locfileid: "59296586"
 ## <a name="using-nativeactivitycontext"></a>Pomocí NativeActivityContext
  Funkce modulu runtime pracovního postupu je přístupný z v rámci <xref:System.Activities.NativeActivity.Execute%2A> metoda pomocí členy `context` parametr typu <xref:System.Activities.NativeActivityContext>. Funkcí dostupných prostřednictvím <xref:System.Activities.NativeActivityContext> patří následující:
 
--   Získání a nastavení proměnných a argumentů příkazu.
+- Získání a nastavení proměnných a argumentů příkazu.
 
--   Plánování podřízené aktivity s <xref:System.Activities.NativeActivityContext.ScheduleActivity%2A>
+- Plánování podřízené aktivity s <xref:System.Activities.NativeActivityContext.ScheduleActivity%2A>
 
--   Přerušení aktivity spuštění pomocí <xref:System.Activities.NativeActivityContext.Abort%2A>.
+- Přerušení aktivity spuštění pomocí <xref:System.Activities.NativeActivityContext.Abort%2A>.
 
--   Zrušení podřízené spuštění pomocí <xref:System.Activities.NativeActivityContext.CancelChild%2A> a <xref:System.Activities.NativeActivityContext.CancelChildren%2A>.
+- Zrušení podřízené spuštění pomocí <xref:System.Activities.NativeActivityContext.CancelChild%2A> a <xref:System.Activities.NativeActivityContext.CancelChildren%2A>.
 
--   Přístup k záložky aktivity pomocí metod, jako <xref:System.Activities.NativeActivityContext.CreateBookmark%2A>, <xref:System.Activities.NativeActivityContext.RemoveBookmark%2A>, a <xref:System.Activities.NativeActivityContext.ResumeBookmark%2A>.
+- Přístup k záložky aktivity pomocí metod, jako <xref:System.Activities.NativeActivityContext.CreateBookmark%2A>, <xref:System.Activities.NativeActivityContext.RemoveBookmark%2A>, a <xref:System.Activities.NativeActivityContext.ResumeBookmark%2A>.
 
--   Vlastní sledování funkce pomocí <xref:System.Activities.CodeActivityContext.Track%2A>.
+- Vlastní sledování funkce pomocí <xref:System.Activities.CodeActivityContext.Track%2A>.
 
--   Přístup k provádění vlastnosti a hodnotu vlastnosti pomocí aktivity <xref:System.Activities.CodeActivityContext.GetProperty%2A> a <xref:System.Activities.NativeActivityContext.GetValue%2A>.
+- Přístup k provádění vlastnosti a hodnotu vlastnosti pomocí aktivity <xref:System.Activities.CodeActivityContext.GetProperty%2A> a <xref:System.Activities.NativeActivityContext.GetValue%2A>.
 
--   Plánování aktivit akcí a funkcí pomocí <xref:System.Activities.NativeActivityContext.ScheduleAction%2A> a <xref:System.Activities.NativeActivityContext.ScheduleFunc%2A>.
+- Plánování aktivit akcí a funkcí pomocí <xref:System.Activities.NativeActivityContext.ScheduleAction%2A> a <xref:System.Activities.NativeActivityContext.ScheduleFunc%2A>.
 
 ### <a name="to-create-a-custom-activity-that-inherits-from-nativeactivity"></a>Chcete-li vytvořit vlastní aktivitu, která dědí z nativeactivity načte jako
 

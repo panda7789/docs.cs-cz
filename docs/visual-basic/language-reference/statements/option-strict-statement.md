@@ -12,11 +12,11 @@ helpviewer_keywords:
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
 ms.openlocfilehash: 8547e8e1eaf73b266d737e33acd79dd4ec539c6f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62051166"
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
 Omezí implicitní převody typů dat jenom na rozšiřující převody, nepovoluje pozdní vazby a zakazuje implicitního zápisu, která vede `Object` typu.  
@@ -37,11 +37,11 @@ Option Strict { On | Off }
 ## <a name="remarks"></a>Poznámky  
  Když `Option Strict On` nebo `Option Strict` se zobrazí v souboru následujících podmínek způsobit chybu kompilace:  
   
--   Implicitní zužující převody  
+- Implicitní zužující převody  
   
--   Pozdní vazba  
+- Pozdní vazba  
   
--   Implicitního zápisu, která vede `Object` typu  
+- Implicitního zápisu, která vede `Object` typu  
   
 > [!NOTE]
 >  V konfiguraci upozornění, které můžete nastavit na [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic), existují tři nastavení, které odpovídají uvedených tří podmínek, které způsobí chybu kompilace. Informace o tom, jak pomocí těchto nastavení najdete v tématu [nastavit upozornění konfigurace v integrovaném vývojovém prostředí](../../../visual-basic/language-reference/statements/option-strict-statement.md#conditions) dále v tomto tématu.  
@@ -52,11 +52,11 @@ Option Strict { On | Off }
   
  Pokud nastavíte `Option Strict` k `On`, Visual Basic ověří, že datové typy jsou určeny pro všechny programovací prvky. Datové typy lze explicitně zadán nebo zadat pomocí odvození místního typu. Určení typů dat pro vaše programovací prvky se doporučuje, z následujících důvodů:  
   
--   Umožňuje podporu technologie IntelliSense pro proměnné a parametry. To vám umožní zobrazit jejich vlastnosti a ostatní členové při psaní kódu.  
+- Umožňuje podporu technologie IntelliSense pro proměnné a parametry. To vám umožní zobrazit jejich vlastnosti a ostatní členové při psaní kódu.  
   
--   Umožňuje kompilátoru provést kontrolu typu. Kontrola typu vám pomůže najít příkazy, které můžete v době běhu selhat z důvodu chyby převodu typu. Také identifikuje volání metod na objekty, které nepodporují tyto metody.  
+- Umožňuje kompilátoru provést kontrolu typu. Kontrola typu vám pomůže najít příkazy, které můžete v době běhu selhat z důvodu chyby převodu typu. Také identifikuje volání metod na objekty, které nepodporují tyto metody.  
   
--   Urychluje provádění kódu. Jedním z důvodů je, že pokud nezadáte datový typ pro programový element, kompilátor jazyka Visual Basic přiřadí ji `Object` typu. Zkompilovaný kód může být nutné převést vpřed a zpět mezi `Object` a ostatními datovými typy, což snižuje výkon.  
+- Urychluje provádění kódu. Jedním z důvodů je, že pokud nezadáte datový typ pro programový element, kompilátor jazyka Visual Basic přiřadí ji `Object` typu. Zkompilovaný kód může být nutné převést vpřed a zpět mezi `Object` a ostatními datovými typy, což snižuje výkon.  
   
 ## <a name="implicit-narrowing-conversion-errors"></a>Implicitní zužující převod chyby  
  Implicitní zužující převod chybám dochází při konverzi typu implicitní data, která je zužující převod.  
@@ -65,15 +65,15 @@ Option Strict { On | Off }
   
  Převody, které mohou způsobit chyby patří implicitních převodů, ke kterým dochází ve výrazech. Další informace naleznete v následujících tématech:  
   
--   [+ – operátor](../../../visual-basic/language-reference/operators/addition-operator.md)  
+- [+ – operátor](../../../visual-basic/language-reference/operators/addition-operator.md)  
   
--   [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
+- [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
   
--   [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
+- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
   
--   [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
+- [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
   
--   [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
+- [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
   
  Při zřetězení řetězců s použitím [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md), všechny převody na řetězce jsou považovány za být rozšíření. Tak tyto převody nejsou generovány implicitní zužující převod chyby, i když `Option Strict` zapnutý.  
   
@@ -116,11 +116,11 @@ Option Strict { On | Off }
 ### <a name="conditions"></a> Chcete-li nastavit upozornění konfigurace v prostředí IDE  
  Při použití [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) místo `Option Strict` prohlášení, máte větší kontrolu nad podmínky, které generují chyby. **Upozornění konfigurace** část **stránka kompilovat** má nastavení, které odpovídají uvedených tří podmínek, které způsobí chybu kompilace při `Option Strict` zapnutý. Tato nastavení jsou následující:  
   
--   **Implicitní převod**  
+- **Implicitní převod**  
   
--   **Pozdní vazba. volání by mohlo selhat v době běhu**  
+- **Pozdní vazba. volání by mohlo selhat v době běhu**  
   
--   **Implicitní typ; převzatý objekt**  
+- **Implicitní typ; převzatý objekt**  
   
  Pokud nastavíte **Option Strict** k **na**, všechna tři nastavení konfigurace upozornění jsou nastaveny na **chyba**. Pokud nastavíte **Option Strict** k **vypnout**, všechny tři nastavení **žádný**.  
   

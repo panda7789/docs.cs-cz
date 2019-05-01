@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e8b96957467b0acb100f7eea137b3294a60e208a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59180905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000191"
 ---
 # <a name="qualifiersetnext-function"></a>QualifierSet_Next function
 Načte další kvalifikátor ve výčtu, který spustil pomocí volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.   

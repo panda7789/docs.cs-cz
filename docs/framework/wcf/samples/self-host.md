@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Self Host Sample [Windows Communication Foundation]
 ms.assetid: 05e68661-1ddf-4abf-a899-9bb1b8272a5b
 ms.openlocfilehash: c95ba40d606470f97d32d05b25c9588ed71cdc79
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007926"
 ---
 # <a name="self-host"></a>Vlastní hostování
 Tento příklad ukazuje, jak implementovat v místním prostředí službu v konzolové aplikaci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Konfigurační soubor služby byl přejmenován ze souboru Web.config na App.config a upravit tak, aby konfigurace základní adresu, která hostitel používá. Zdrojový kód služby byla změněna k implementaci statickou `Main` funkce, která vytvoří a otevře hostitele služby, který poskytuje základní adresu nakonfigurovanou. Implementace služby byl upraven tak zapisovat výstup do konzoly pro každou operaci. Klient byl bez úprav, s výjimkou konfigurace adresu správný koncový bod služby.  

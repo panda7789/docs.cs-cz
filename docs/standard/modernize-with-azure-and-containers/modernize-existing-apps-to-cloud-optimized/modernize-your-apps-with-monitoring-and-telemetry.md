@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
 ms.openlocfilehash: cd54861600127191b852e0a966baae6e0fe7914e
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012085"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -35,15 +35,15 @@ Můžete používat Log Analytics na portálu OMS nebo webu Azure portal, který
 
 [Řešení pro monitorování kontejnerů](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers) v Log Analytics vám umožňuje zobrazit a spravovat hostitele Dockeru a kontejnerech Windows na jednom místě. Toto řešení ukazuje, které kontejnery jsou spuštěná, jaké image kontejnerů běží a kde kontejnery běží. Můžete zobrazit podrobné informace auditu, včetně příkazů, které se používají s kontejnery. Kontejnery také můžete řešit pomocí zobrazení a hledání centralizované protokoly, aniž byste museli vzdáleně zobrazení hostitele Docker nebo Windows. Můžete najít kontejnery, které mohou být na hostiteli hlučného a využívání nadbytečné prostředky. Kromě toho můžete zobrazit centralizované procesoru, paměti, úložiště a využití sítě a informace o výkonu pro kontejnery. V počítačích se systémem Windows, můžete centralizovat a porovnat protokoly ze systému Windows Server Hyper-V a kontejnery Dockeru. Řešení podporuje následující orchestrátorů kontejnerů:
 
--   Docker Swarm
+- Docker Swarm
 
--   DC/OS
+- DC/OS
 
--   Kubernetes
+- Kubernetes
 
--   Service Fabric
+- Service Fabric
 
--   Red Hat OpenShift
+- Red Hat OpenShift
 
 Obrázek 4 – 11 znázorňuje vztahy mezi různými hostitelích kontejnerů a agentů a OMS.
 
@@ -53,45 +53,45 @@ Obrázek 4 – 11 znázorňuje vztahy mezi různými hostitelích kontejnerů a 
 
 Řešení monitorování kontejnerů Log Analytics můžete použít:
 
--   Zobrazit informace o všech hostitelích kontejnerů na jednom místě.
+- Zobrazit informace o všech hostitelích kontejnerů na jednom místě.
 
--   Zjistit, které kontejnery jsou spuštěná, jaké image spuštěnými, a pokud máte spuštěnou.
+- Zjistit, které kontejnery jsou spuštěná, jaké image spuštěnými, a pokud máte spuštěnou.
 
--   Najdete v protokolu auditu pro akce v kontejnerech.
+- Najdete v protokolu auditu pro akce v kontejnerech.
 
--   Řešení potíží zobrazením a hledání centralizované protokoly bez vzdálené přihlášení na hostitele Dockeru.
+- Řešení potíží zobrazením a hledání centralizované protokoly bez vzdálené přihlášení na hostitele Dockeru.
 
--   Najdete kontejnerů, které mohou být "" hlučným sousedům"" a by spotřebovávalo nadbytečné prostředků na hostiteli.
+- Najdete kontejnerů, které mohou být "" hlučným sousedům"" a by spotřebovávalo nadbytečné prostředků na hostiteli.
 
--   Zobrazte centralizované procesoru, paměti, úložiště a využití sítě a informace o výkonu pro kontejnery.
+- Zobrazte centralizované procesoru, paměti, úložiště a využití sítě a informace o výkonu pro kontejnery.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Přehled monitorování v Microsoft Azure**
+- **Přehled monitorování v Microsoft Azure**
 
 <https://docs.microsoft.com/azure/azure-monitor/overview>
 
--   **Co je Application Insights?**
+- **Co je Application Insights?**
 
 <https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview>
 
--   **Co je služba Log Analytics?**
+- **Co je služba Log Analytics?**
 
 <https://docs.microsoft.com/azure/log-analytics/log-analytics-overview>
 
--   **Řešení pro monitorování kontejnerů ve službě Azure Monitor**
+- **Řešení pro monitorování kontejnerů ve službě Azure Monitor**
 
 <https://docs.microsoft.com/azure/azure-monitor/insights/containers>
 
--   **Přehled služby Azure Monitor**
+- **Přehled služby Azure Monitor**
 
 <https://docs.microsoft.com/azure/azure-monitor/overview>
 
--   **Co je Operations Management Suite (OMS)?**
+- **Co je Operations Management Suite (OMS)?**
 
 <https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview>
 
--   **Monitorování kontejnerů Windows serveru v Service Fabric pomocí OMS**
+- **Monitorování kontejnerů Windows serveru v Service Fabric pomocí OMS**
 
 <https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver>
 

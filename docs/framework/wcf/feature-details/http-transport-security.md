@@ -3,11 +3,11 @@ title: Zabezpečení přenosu HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
 ms.openlocfilehash: b7415dcc1e6c4a5d47d9e7b6e70a86ab1b898783
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000841"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace vrstvy SSL (Secure Sockets). SSL se často používá na Internetu k ověření služby ke klientovi a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje připojení SSL a jak je implementován ve Windows Communication Foundation (WCF).  
@@ -31,9 +31,9 @@ Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace
 ## <a name="implementing-ssl-with-wcf"></a>Implementace SSL s použitím technologie WCF  
  Zabezpečení přenosu HTTP (nebo SSL) je poskytováno externě WCF. SSL lze implementovat v jednom ze dvou způsobů; rozhodujícím faktorem je, jak je vaše aplikace hostovaná:  
   
--   Pokud používáte Internetové informační služby (IIS) jako hostitele WCF, nastavení služby SSL pomocí infrastruktury služby IIS.  
+- Pokud používáte Internetové informační služby (IIS) jako hostitele WCF, nastavení služby SSL pomocí infrastruktury služby IIS.  
   
--   Při vytváření aplikace v místním prostředí WCF, můžete svázat certifikát SSL na adresu, pomocí nástroje HttpCfg.exe.  
+- Při vytváření aplikace v místním prostředí WCF, můžete svázat certifikát SSL na adresu, pomocí nástroje HttpCfg.exe.  
   
 ### <a name="using-iis-for-transport-security"></a>Pomocí služby IIS pro zabezpečení přenosu  
   

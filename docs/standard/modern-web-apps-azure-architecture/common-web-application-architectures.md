@@ -5,11 +5,11 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
 ms.openlocfilehash: 22cb673f09faf7b0eabcfa5b3f6700d33242d84b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019911"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 

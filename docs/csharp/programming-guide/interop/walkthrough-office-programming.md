@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
 ms.openlocfilehash: 1f46d6594c249db394a5493ad9cdbbb1937a5d45
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61974789"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Návod: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
@@ -93,11 +93,11 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
      V této metodě se používají dvě nové funkce C#. Obě tyto funkce již existují v jazyce Visual Basic.  
   
-    -   Metoda [přidat](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) má *volitelný parametr* pro určení konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že v předchozím příkladu je odeslán žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
+    - Metoda [přidat](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) má *volitelný parametr* pro určení konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že v předchozím příkladu je odeslán žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
   
          Další informace najdete v tématu [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
   
-    -   `Range` a `Offset` vlastnosti [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) používají *indexovaných vlastností* funkce. Tato funkce umožňuje, abyste mohli využívat tyto vlastnosti z typů modelu COM s použitím typické C# syntaxi. Indexované vlastnosti také umožňují používat `Value` vlastnost `Range` objektu, takže odpadá nutnost používat `Value2` vlastnost. `Value` Indexované vlastnosti, ale index je volitelné. Volitelné argumenty a indexované vlastnosti společně v následujícím příkladu.  
+    - `Range` a `Offset` vlastnosti [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) používají *indexovaných vlastností* funkce. Tato funkce umožňuje, abyste mohli využívat tyto vlastnosti z typů modelu COM s použitím typické C# syntaxi. Indexované vlastnosti také umožňují používat `Value` vlastnost `Range` objektu, takže odpadá nutnost používat `Value2` vlastnost. `Value` Indexované vlastnosti, ale index je volitelné. Volitelné argumenty a indexované vlastnosti společně v následujícím příkladu.  
   
          [!code-csharp[csOfficeWalkthrough#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#5)]  
   

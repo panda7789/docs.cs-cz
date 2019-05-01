@@ -11,11 +11,11 @@ helpviewer_keywords:
 - cells [Windows Forms], merging
 ms.assetid: a8a2fdd3-a848-48b0-a4cd-4e85ebded87e
 ms.openlocfilehash: 02db78b07930676235e55e535fb24f6ff618d823
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59339018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012968"
 ---
 # <a name="how-to-span-rows-and-columns-in-a-tablelayoutpanel-control"></a>Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel
 Ovládací prvky v <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek může mít rozsah sousední řádků a sloupců.  

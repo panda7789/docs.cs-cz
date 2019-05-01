@@ -6,8 +6,8 @@ ms.openlocfilehash: 8bcfb9a751670d3d1c32de6d8e6f7dc1b84ea30d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002700"
 ---
 # <a name="basic-ajax-service"></a>Základní služba AJAX
 Tento příklad ukazuje, jak pomocí služby Windows Communication Foundation (WCF) základní asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX) službu (služba, která můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta). Služba používá <xref:System.ServiceModel.Web.WebGetAttribute> atribut zajistíte, že služba reaguje na požadavky HTTP GET a je nakonfigurován na použití formátu dat JavaScript Object Notation (JSON) pro odpovědi.  

@@ -9,31 +9,31 @@ ms.assetid: d4568ff3-9f83-4549-acd8-47aec2194ac0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ca4e24cb882daf7efd14da83011d50d05a85232b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025064"
 ---
 # <a name="manipulating-strings-in-net"></a>Manipulace s řetězci v .NET
-Rozhraní .NET poskytuje rozsáhlou sadu rutin, které umožňují efektivně vytvářet, porovnat a upravovat řetězce a také rychle analyzovat velké objemy dat pro vyhledávání, odeberte a nahraďte textové vzory a text.  
+.NET poskytuje rozsáhlou sadu rutin, které vám umožní vytvořit efektivní, porovnat a upravit řetězce a také rychlé analyzování velkého množství textu a data pro hledání, odebrat a nahrazování vzorů textu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)  
- Prozkoumá řazení řetězců, porovnání a metody velká a malá písmena v rozhraní .NET a poskytuje doporučení pro výběr metody zpracování řetězců.  
+ Zkontroluje řazení řetězců, porovnání a metody malých a velkých písmen v .NET a poskytuje doporučení pro výběr metody zpracování řetězce.  
   
- [Regulární výrazy rozhraní .NET](../../../docs/standard/base-types/regular-expressions.md)  
- Poskytuje podrobné informace o regulárních výrazech .NET, včetně jazykové elementy, chování regulárních výrazů a příkladů.  
+ [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)  
+ Poskytuje podrobné informace o regulárních výrazech .NET, včetně prvků jazyka, chování regulárních výrazů a příklady.  
   
  [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
  Popisuje operace s řetězci poskytované <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy, včetně vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)  
- Vysvětluje techniky a pravidla pro převod typů pomocí rozhraní .NET.  
+ Vysvětluje, postupů a pravidla pro převod typů pomocí .NET.  
   
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- Poskytuje postupy pro použití knihovny základní třídu pro implementaci formátování, způsob formátování číselnými typy, způsob formátování řetězce typy a formátování pro konkrétní jazykové verze.  
+ Poskytuje způsob použití v knihovně základních tříd pro implementaci formátování, způsob formátování číselných typů, jak formátovat typy řetězců a způsob formátování pro konkrétní jazykovou verzi.  
   
  [Analýza řetězců](../../../docs/standard/base-types/parsing-strings.md)  
- Popisuje, jak inicializovat objekty s hodnotami popsanými řetězcové vyjádření těchto objektů. Analýza je inverzní operace formátování.
+ Popisuje, jak inicializovat objekty s hodnotami popsanými řetězcovou interpretací těchto objektů. Analýza je inverzní operace k formátování.

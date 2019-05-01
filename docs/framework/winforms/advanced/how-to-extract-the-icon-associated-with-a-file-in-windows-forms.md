@@ -10,11 +10,11 @@ helpviewer_keywords:
 - extracting icons associated with a file type [Windows Forms]
 ms.assetid: 88e2ad8b-c34f-415a-84f2-dad756b5c928
 ms.openlocfilehash: d754dc5e8a57b3c4e2e5439bb2524a22d44813c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59112551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004039"
 ---
 # <a name="how-to-extract-the-icon-associated-with-a-file-in-windows-forms"></a>Postupy: Extrahování ikony přidružené k souboru v modelu Windows Forms
 Mnoho souborů s vloženými ikony, které poskytují vizuální znázornění přidružený soubor typu. Například Microsoft Word dokumenty obsahují ikonu, která je identifikuje jako dokumentů aplikace Word. Při zobrazování souborů do ovládacího prvku seznamu nebo ovládacího prvku tabulky, můžete zobrazit ikonu představující typ souboru vedle názvu každého souboru. Můžete to provést jednoduše pomocí <xref:System.Drawing.Icon.ExtractAssociatedIcon%2A> metody.  
@@ -28,7 +28,7 @@ Mnoho souborů s vloženými ikony, které poskytují vizuální znázornění p
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Chcete-li příklad zkompilovat:  
   
--   Předchozí kód vložte do formuláře Windows a volání `ExtractAssociatedIconExample` metodu z konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí.  
+- Předchozí kód vložte do formuláře Windows a volání `ExtractAssociatedIconExample` metodu z konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí.  
   
      Budete muset Ujistěte se, že váš formulář importuje <xref:System.IO> oboru názvů.  
   

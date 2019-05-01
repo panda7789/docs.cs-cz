@@ -5,11 +5,11 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], architecture
 ms.assetid: 71df2d18-862e-4701-9ff9-c1fe606f94f2
 ms.openlocfilehash: 91813928344f9210ce1383daa9ba7f765117833a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009603"
 ---
 # <a name="toolstrip-control-architecture"></a>Architektura ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripItem> třídy poskytují flexibilní a rozšiřitelný systém pro zobrazení položek panelu nástrojů, nabídek a stav. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms> obor názvů a že jsou všechny obvykle s názvem s předponou "Ovládací prvek ToolStrip" (například <xref:System.Windows.Forms.ToolStripOverflow>) nebo s příponou "Odstranit" (například <xref:System.Windows.Forms.MenuStrip>).  
@@ -25,56 +25,56 @@ ms.locfileid: "59296209"
   
  Následující položky jsou vytvořené speciálně navržený pro hladkou spolupráci s oběma <xref:System.Windows.Forms.ToolStripSystemRenderer> a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> v všechny orientace. Jsou k dispozici ve výchozím nastavení při návrhu pro <xref:System.Windows.Forms.ToolStrip> ovládacího prvku:  
   
--   <xref:System.Windows.Forms.ToolStripButton>  
+- <xref:System.Windows.Forms.ToolStripButton>  
   
--   <xref:System.Windows.Forms.ToolStripSeparator>  
+- <xref:System.Windows.Forms.ToolStripSeparator>  
   
--   <xref:System.Windows.Forms.ToolStripLabel>  
+- <xref:System.Windows.Forms.ToolStripLabel>  
   
--   <xref:System.Windows.Forms.ToolStripDropDownButton>  
+- <xref:System.Windows.Forms.ToolStripDropDownButton>  
   
--   <xref:System.Windows.Forms.ToolStripSplitButton>  
+- <xref:System.Windows.Forms.ToolStripSplitButton>  
   
--   <xref:System.Windows.Forms.ToolStripTextBox>  
+- <xref:System.Windows.Forms.ToolStripTextBox>  
   
--   <xref:System.Windows.Forms.ToolStripComboBox>  
+- <xref:System.Windows.Forms.ToolStripComboBox>  
   
 ### <a name="menustrip"></a>MenuStrip  
  <xref:System.Windows.Forms.MenuStrip> je kontejner nejvyšší úrovně, který nahrazuje <xref:System.Windows.Forms.MainMenu>. Také poskytuje klíče zpracování a více dokumentů (MDI) interface funkce. Funkčně <xref:System.Windows.Forms.ToolStripDropDownItem> a <xref:System.Windows.Forms.ToolStripMenuItem> fungují společně s <xref:System.Windows.Forms.MenuStrip>, i když jsou odvozeny z <xref:System.Windows.Forms.ToolStripItem>.  
   
  Následující položky jsou vytvořené speciálně navržený pro hladkou spolupráci s oběma <xref:System.Windows.Forms.ToolStripSystemRenderer> a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> v všechny orientace. Jsou k dispozici ve výchozím nastavení při návrhu pro <xref:System.Windows.Forms.MenuStrip> ovládacího prvku:  
   
--   <xref:System.Windows.Forms.ToolStripMenuItem>  
+- <xref:System.Windows.Forms.ToolStripMenuItem>  
   
--   <xref:System.Windows.Forms.ToolStripTextBox>  
+- <xref:System.Windows.Forms.ToolStripTextBox>  
   
--   <xref:System.Windows.Forms.ToolStripComboBox>  
+- <xref:System.Windows.Forms.ToolStripComboBox>  
   
 ### <a name="statusstrip"></a>StatusStrip  
  <xref:System.Windows.Forms.StatusStrip> nahrazuje <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Speciální funkce <xref:System.Windows.Forms.StatusStrip> zahrnout vlastní tabulkové rozložení, podporu pro formulář pro změnu velikosti a přesunutí grips a `Spring` vlastnost, která umožňuje <xref:System.Windows.Forms.ToolStripStatusLabel> tak, aby vyplnil dostupné místo automaticky.  
   
  Následující položky jsou vytvořené speciálně navržený pro hladkou spolupráci s oběma <xref:System.Windows.Forms.ToolStripSystemRenderer> a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> v všechny orientace. Jsou k dispozici ve výchozím nastavení při návrhu pro <xref:System.Windows.Forms.StatusStrip> ovládacího prvku:  
   
--   <xref:System.Windows.Forms.ToolStripStatusLabel>  
+- <xref:System.Windows.Forms.ToolStripStatusLabel>  
   
--   <xref:System.Windows.Forms.ToolStripDropDownButton>  
+- <xref:System.Windows.Forms.ToolStripDropDownButton>  
   
--   <xref:System.Windows.Forms.ToolStripSplitButton>  
+- <xref:System.Windows.Forms.ToolStripSplitButton>  
   
--   <xref:System.Windows.Forms.ToolStripProgressBar>  
+- <xref:System.Windows.Forms.ToolStripProgressBar>  
   
 ### <a name="contextmenustrip"></a>ContextMenuStrip  
  <xref:System.Windows.Forms.ContextMenuStrip> nahradí <xref:System.Windows.Forms.ContextMenu>. Můžete přiřadit <xref:System.Windows.Forms.ContextMenuStrip> pomocí libovolného ovládacího prvku a pravým tlačítkem myši klikněte na tlačítko automaticky zobrazí místní nabídky (nebo místní nabídky). Můžete zobrazit <xref:System.Windows.Forms.ContextMenuStrip> prostřednictvím kódu programu pomocí <xref:System.Windows.Forms.ToolStripDropDown.Show%2A> metody. <xref:System.Windows.Forms.ContextMenuStrip> podporuje zrušitelný <xref:System.Windows.Forms.ToolStripDropDown.Opening> a <xref:System.Windows.Forms.ToolStripDropDown.Closing> události pro zpracování více kliknutím scénáře a dynamické naplnění. <xref:System.Windows.Forms.ContextMenuStrip> podporuje Image, stavu zaškrtnutí položky nabídky, text, přístupové klíče, klávesové zkratky a podnabídky.  
   
  Následující položky jsou vytvořené speciálně navržený pro hladkou spolupráci s oběma <xref:System.Windows.Forms.ToolStripSystemRenderer> a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> v všechny orientace. Jsou k dispozici ve výchozím nastavení při návrhu pro <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku:  
   
--   <xref:System.Windows.Forms.ToolStripMenuItem>  
+- <xref:System.Windows.Forms.ToolStripMenuItem>  
   
--   <xref:System.Windows.Forms.ToolStripSeparator>  
+- <xref:System.Windows.Forms.ToolStripSeparator>  
   
--   <xref:System.Windows.Forms.ToolStripTextBox>  
+- <xref:System.Windows.Forms.ToolStripTextBox>  
   
--   <xref:System.Windows.Forms.ToolStripComboBox>  
+- <xref:System.Windows.Forms.ToolStripComboBox>  
   
 ### <a name="toolstrip-generic-features"></a>Funkce obecného prvku ToolStrip  
  Toto téma popisuje funkce a chování, které jsou obecné na <xref:System.Windows.Forms.ToolStrip> a odvozené ovládací prvky.  
@@ -95,26 +95,26 @@ ms.locfileid: "59296209"
   
  Následující seznam popisuje členy související s vztahy k nadřazeným položkám a vysvětluje jejich použití.  
   
--   <xref:System.Windows.Forms.ToolStripDropDown.OwnerItem%2A> přistupuje k položky, které je zdrojem položka rozevíracího seznamu. Je to podobné <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>, ale místo vrácení ovládací prvek vrátí <xref:System.Windows.Forms.ToolStripItem>.  
+- <xref:System.Windows.Forms.ToolStripDropDown.OwnerItem%2A> přistupuje k položky, které je zdrojem položka rozevíracího seznamu. Je to podobné <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>, ale místo vrácení ovládací prvek vrátí <xref:System.Windows.Forms.ToolStripItem>.  
   
--   <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A> Určuje, který ovládací prvek je zdrojem z <xref:System.Windows.Forms.ContextMenuStrip> při více ovládacích prvků sdílet stejný <xref:System.Windows.Forms.ContextMenuStrip>.  
+- <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A> Určuje, který ovládací prvek je zdrojem z <xref:System.Windows.Forms.ContextMenuStrip> při více ovládacích prvků sdílet stejný <xref:System.Windows.Forms.ContextMenuStrip>.  
   
--   <xref:System.Windows.Forms.ToolStripItem.GetCurrentParent%2A> je jen pro čtení přistupující objekt, který chcete <xref:System.Windows.Forms.ToolStripItem.Parent%2A> vlastnost. Nadřazená se liší od vlastníka, v tom, že nadřazený označuje vrácené aktuální <xref:System.Windows.Forms.ToolStrip> v které položky se zobrazí, který může být v oblasti přetečení.  
+- <xref:System.Windows.Forms.ToolStripItem.GetCurrentParent%2A> je jen pro čtení přistupující objekt, který chcete <xref:System.Windows.Forms.ToolStripItem.Parent%2A> vlastnost. Nadřazená se liší od vlastníka, v tom, že nadřazený označuje vrácené aktuální <xref:System.Windows.Forms.ToolStrip> v které položky se zobrazí, který může být v oblasti přetečení.  
   
--   <xref:System.Windows.Forms.ToolStripItem.Owner%2A> Vrátí <xref:System.Windows.Forms.ToolStrip> jehož kolekce položek obsahuje aktuální <xref:System.Windows.Forms.ToolStripItem>. Toto je nejlepší způsob, jak odkazovat na <xref:System.Windows.Forms.ToolStrip.ImageList%2A> nebo jiné vlastnosti na nejvyšší úrovni <xref:System.Windows.Forms.ToolStrip> aniž byste museli napsat speciální kód pro zpracování přetečení.  
+- <xref:System.Windows.Forms.ToolStripItem.Owner%2A> Vrátí <xref:System.Windows.Forms.ToolStrip> jehož kolekce položek obsahuje aktuální <xref:System.Windows.Forms.ToolStripItem>. Toto je nejlepší způsob, jak odkazovat na <xref:System.Windows.Forms.ToolStrip.ImageList%2A> nebo jiné vlastnosti na nejvyšší úrovni <xref:System.Windows.Forms.ToolStrip> aniž byste museli napsat speciální kód pro zpracování přetečení.  
   
 #### <a name="behavior-of-inherited-controls"></a>Chování zděděného ovládacích prvků  
  Následující ovládací prvky jsou zamknuté pokaždé, když se používají v dědičnosti:  
   
--   <xref:System.Windows.Forms.ToolStrip>  
+- <xref:System.Windows.Forms.ToolStrip>  
   
--   <xref:System.Windows.Forms.MenuStrip>  
+- <xref:System.Windows.Forms.MenuStrip>  
   
--   <xref:System.Windows.Forms.ContextMenuStrip>  
+- <xref:System.Windows.Forms.ContextMenuStrip>  
   
--   <xref:System.Windows.Forms.StatusStrip>  
+- <xref:System.Windows.Forms.StatusStrip>  
   
--   <xref:System.Windows.Forms.ToolStripPanel> který obsahuje panelů v <xref:System.Windows.Forms.ToolStripContainer> a také individuální <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků.  
+- <xref:System.Windows.Forms.ToolStripPanel> který obsahuje panelů v <xref:System.Windows.Forms.ToolStripContainer> a také individuální <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků.  
   
  Například vytvořte novou aplikaci Windows Forms pomocí jednoho nebo více ovládacích prvků v předchozím seznamu. Nastavit modifikátor přístupu jednoho nebo více ovládacích prvků do `public` nebo `protected`a pak sestavte projekt. Přidat formulář, který dědí z první formulář a vyberte zděděný ovládací prvek. Ovládací prvek zobrazí uzamčené, chová jako kdyby byla její modifikátor přístupu `private`.  
   
@@ -138,13 +138,13 @@ ms.locfileid: "59296209"
 #### <a name="inherited-behavior-of-child-controls"></a>Zděděné chování podřízených ovládacích prvků  
  Po dokončení předchozích kroků, očekávejte toto chování zděděného:  
   
--   V návrháři se ovládací prvek zobrazí s ikonou zděděná.  
+- V návrháři se ovládací prvek zobrazí s ikonou zděděná.  
   
--   <xref:System.Windows.Forms.ToolStripPanel> Ovládací prvky jsou zamknuté; nelze vybrat nebo změnit uspořádání jejich obsah.  
+- <xref:System.Windows.Forms.ToolStripPanel> Ovládací prvky jsou zamknuté; nelze vybrat nebo změnit uspořádání jejich obsah.  
   
--   Můžete přidat ovládací prvky <xref:System.Windows.Forms.ToolStripContentPanel>, přesuňte ovládací prvky a aby byly podřízené ovládací prvky <xref:System.Windows.Forms.ToolStripContentPanel>.  
+- Můžete přidat ovládací prvky <xref:System.Windows.Forms.ToolStripContentPanel>, přesuňte ovládací prvky a aby byly podřízené ovládací prvky <xref:System.Windows.Forms.ToolStripContentPanel>.  
   
--   Změny přetrvávají po sestavení formuláře.  
+- Změny přetrvávají po sestavení formuláře.  
   
     > [!NOTE]
     >  Odebere modifikátory přístupu ze všech <xref:System.Windows.Forms.ToolStripPanel> ovládací prvky, které jsou součástí <xref:System.Windows.Forms.ToolStripContainer>. Modifikátor přístupu <xref:System.Windows.Forms.ToolStripContainer> řídí celý ovládací prvek.  
@@ -152,26 +152,26 @@ ms.locfileid: "59296209"
 #### <a name="partial-trust"></a>Částečná důvěryhodnost  
  Omezení `ToolStrip`s v částečném vztahu důvěryhodnosti jsou navržené tak, aby se zabránilo nechtěnému položku osobní informace, které by mohly používat neoprávněné osoby nebo služby. Ochranná opatření jsou následující:  
   
--   `ToolStripDropDown` ovládací prvky vyžadují <xref:System.Security.Permissions.UIPermissionWindow.AllWindows> pro zobrazení položek v <xref:System.Windows.Forms.ToolStripControlHost>. To platí pro oba vnitřní ovládací prvky, jako <xref:System.Windows.Forms.ToolStripTextBox>, <xref:System.Windows.Forms.ToolStripComboBox>, a <xref:System.Windows.Forms.ToolStripProgressBar> jako také tak, aby uživatel vytvořil ovládací prvky. Pokud tento požadavek není splněn, tyto položky se nezobrazují. Není vyvolána žádná výjimka.  
+- `ToolStripDropDown` ovládací prvky vyžadují <xref:System.Security.Permissions.UIPermissionWindow.AllWindows> pro zobrazení položek v <xref:System.Windows.Forms.ToolStripControlHost>. To platí pro oba vnitřní ovládací prvky, jako <xref:System.Windows.Forms.ToolStripTextBox>, <xref:System.Windows.Forms.ToolStripComboBox>, a <xref:System.Windows.Forms.ToolStripProgressBar> jako také tak, aby uživatel vytvořil ovládací prvky. Pokud tento požadavek není splněn, tyto položky se nezobrazují. Není vyvolána žádná výjimka.  
   
--   Nastavení <xref:System.Windows.Forms.ToolStripDropDown.AutoClose%2A> vlastnost `false` není povolena a možné zrušit <xref:System.Windows.Forms.ToolStripDropDown.Closing> události parametr je ignorován. Díky tomu je možné zadat více než jedním stisknutím klávesy bez zavření položka rozevíracího seznamu. Pokud tento požadavek není splněn, tyto položky se nezobrazují. Není vyvolána žádná výjimka.  
+- Nastavení <xref:System.Windows.Forms.ToolStripDropDown.AutoClose%2A> vlastnost `false` není povolena a možné zrušit <xref:System.Windows.Forms.ToolStripDropDown.Closing> události parametr je ignorován. Díky tomu je možné zadat více než jedním stisknutím klávesy bez zavření položka rozevíracího seznamu. Pokud tento požadavek není splněn, tyto položky se nezobrazují. Není vyvolána žádná výjimka.  
   
--   Mnoho stisk klávesy zpracování událostí nebude vyvolána, když se vyskytují v částečném vztahu důvěryhodnosti kontextech jiné než <xref:System.Security.Permissions.UIPermissionWindow.AllWindows>.  
+- Mnoho stisk klávesy zpracování událostí nebude vyvolána, když se vyskytují v částečném vztahu důvěryhodnosti kontextech jiné než <xref:System.Security.Permissions.UIPermissionWindow.AllWindows>.  
   
--   Přístupové klíče nejsou při zpracování <xref:System.Security.Permissions.UIPermissionWindow.AllWindows> nebylo uděleno.  
+- Přístupové klíče nejsou při zpracování <xref:System.Security.Permissions.UIPermissionWindow.AllWindows> nebylo uděleno.  
   
 #### <a name="usage"></a>Použití  
  Následující vzory používání se mít vliv <xref:System.Windows.Forms.ToolStrip> rozložení, interakce klávesnice a chování koncových uživatelů:  
   
--   Připojené v <xref:System.Windows.Forms.ToolStripPanel>  
+- Připojené v <xref:System.Windows.Forms.ToolStripPanel>  
   
      <xref:System.Windows.Forms.ToolStrip> Můžete změnit umístění v rámci <xref:System.Windows.Forms.ToolStripPanel> a napříč <xref:System.Windows.Forms.ToolStripPanel>s. `Dock` Vlastnost se ignoruje a pokud <xref:System.Windows.Forms.ToolStrip.Stretch%2A> vlastnost `false`, velikost <xref:System.Windows.Forms.ToolStrip> narůstá položky budou přidány do <xref:System.Windows.Forms.ToolStripPanel>. Obvykle <xref:System.Windows.Forms.ToolStrip> není součástí pořadí ovládacích prvků.  
   
--   Ukotvení  
+- Ukotvení  
   
      <xref:System.Windows.Forms.ToolStrip> Je umístěn na jedné straně kontejner ve službě pevné umístění a rozšíří jeho velikost za celý edge, ke kterému je ukotven. Obvykle <xref:System.Windows.Forms.ToolStrip> není součástí pořadí ovládacích prvků.  
   
--   Absolutně umístěné  
+- Absolutně umístěné  
   
      <xref:System.Windows.Forms.ToolStrip> Je stejně jako ostatní ovládací prvky v tom, že ji umístí <xref:System.Windows.Forms.Control.Location%2A> vlastnost, má pevnou velikost a obvykle podílí na pořadí.  
   
@@ -197,11 +197,11 @@ ms.locfileid: "59296209"
 ##### <a name="stack-layouts"></a>Rozložení zásobníku  
  Překrývání je uspořádání položek vedle sebe na obou koncích <xref:System.Windows.Forms.ToolStrip>. Následující seznam popisuje rozložení zásobníku.  
   
--   <xref:System.Windows.Forms.ToolStripLayoutStyle.StackWithOverflow> je výchozí nastavení. Toto nastavení způsobí, že <xref:System.Windows.Forms.ToolStrip> ke změně rozložení automaticky v souladu s <xref:System.Windows.Forms.ToolStrip.Orientation%2A> vlastnost pro zpracování přetažení a dokování scénáře.  
+- <xref:System.Windows.Forms.ToolStripLayoutStyle.StackWithOverflow> je výchozí nastavení. Toto nastavení způsobí, že <xref:System.Windows.Forms.ToolStrip> ke změně rozložení automaticky v souladu s <xref:System.Windows.Forms.ToolStrip.Orientation%2A> vlastnost pro zpracování přetažení a dokování scénáře.  
   
--   <xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow> vykreslí <xref:System.Windows.Forms.ToolStrip> položky svisle vedle sebe.  
+- <xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow> vykreslí <xref:System.Windows.Forms.ToolStrip> položky svisle vedle sebe.  
   
--   <xref:System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow> vykreslí <xref:System.Windows.Forms.ToolStrip> položky vedle sebe ve vodorovném směru.  
+- <xref:System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow> vykreslí <xref:System.Windows.Forms.ToolStrip> položky vedle sebe ve vodorovném směru.  
   
 ##### <a name="other-features-of-stack-layouts"></a>Další funkce rozložení zásobníku  
  <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> Určuje konec <xref:System.Windows.Forms.ToolStrip> k položce zarovnán.  
@@ -218,32 +218,32 @@ ms.locfileid: "59296209"
 ##### <a name="flow-layout"></a>Plovoucí rozložení  
  <xref:System.Windows.Forms.ToolStripLayoutStyle.Flow> rozložení je výchozí nastavení pro <xref:System.Windows.Forms.ContextMenuStrip>, <xref:System.Windows.Forms.ToolStripDropDownMenu>, a <xref:System.Windows.Forms.ToolStripOverflow>. Se podobá <xref:System.Windows.Forms.FlowLayoutPanel>. Funkce <xref:System.Windows.Forms.ToolStripLayoutStyle.Flow> rozložení jsou následující:  
   
--   Všechny funkce <xref:System.Windows.Forms.FlowLayoutPanel> vrstvou <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A> vlastnost. Musíte přetypovat <xref:System.Windows.Forms.LayoutSettings> třídu <xref:System.Windows.Forms.FlowLayoutSettings> třídy.  
+- Všechny funkce <xref:System.Windows.Forms.FlowLayoutPanel> vrstvou <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A> vlastnost. Musíte přetypovat <xref:System.Windows.Forms.LayoutSettings> třídu <xref:System.Windows.Forms.FlowLayoutSettings> třídy.  
   
--   Můžete použít <xref:System.Windows.Forms.ToolStripItem.Dock%2A> a <xref:System.Windows.Forms.ToolStripItem.Anchor%2A> vlastností v kódu pro zarovnání položky v daném řádku.  
+- Můžete použít <xref:System.Windows.Forms.ToolStripItem.Dock%2A> a <xref:System.Windows.Forms.ToolStripItem.Anchor%2A> vlastností v kódu pro zarovnání položky v daném řádku.  
   
--   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> Vlastnost se ignoruje.  
+- <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> Vlastnost se ignoruje.  
   
--   V <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> události, si můžete prohlédnout <xref:System.Windows.Forms.ToolStripItem.Placement%2A> a určí, zda byl umístěn položky na hlavní <xref:System.Windows.Forms.ToolStrip> nebo nevejdou.  
+- V <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> události, si můžete prohlédnout <xref:System.Windows.Forms.ToolStripItem.Placement%2A> a určí, zda byl umístěn položky na hlavní <xref:System.Windows.Forms.ToolStrip> nebo nevejdou.  
   
--   Úchytu není vykresleno a proto <xref:System.Windows.Forms.ToolStrip> v <xref:System.Windows.Forms.ToolStripLayoutStyle.Flow> styl rozložení v <xref:System.Windows.Forms.ToolStripPanel> nelze přesunout.  
+- Úchytu není vykresleno a proto <xref:System.Windows.Forms.ToolStrip> v <xref:System.Windows.Forms.ToolStripLayoutStyle.Flow> styl rozložení v <xref:System.Windows.Forms.ToolStripPanel> nelze přesunout.  
   
--   <xref:System.Windows.Forms.ToolStrip> Tlačítku přetečení není vykresleno, a <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> se ignoruje.  
+- <xref:System.Windows.Forms.ToolStrip> Tlačítku přetečení není vykresleno, a <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> se ignoruje.  
   
 ##### <a name="table-layout"></a>Rozložení tabulky  
  <xref:System.Windows.Forms.ToolStripLayoutStyle.Table> rozložení je výchozí nastavení pro <xref:System.Windows.Forms.StatusStrip>. Je to podobné <xref:System.Windows.Forms.TableLayoutPanel>. Funkce <xref:System.Windows.Forms.ToolStripLayoutStyle.Flow> rozložení jsou následující:  
   
--   Všechny funkce <xref:System.Windows.Forms.TableLayoutPanel> vrstvou <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A> vlastnost. Musíte přetypovat <xref:System.Windows.Forms.LayoutSettings> třídu <xref:System.Windows.Forms.TableLayoutSettings> třídy.  
+- Všechny funkce <xref:System.Windows.Forms.TableLayoutPanel> vrstvou <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A> vlastnost. Musíte přetypovat <xref:System.Windows.Forms.LayoutSettings> třídu <xref:System.Windows.Forms.TableLayoutSettings> třídy.  
   
--   Můžete použít <xref:System.Windows.Forms.ToolStripItem.Dock%2A> a <xref:System.Windows.Forms.ToolStripItem.Anchor%2A> vlastností v kódu pro zarovnání položek v rámci buňky tabulky.  
+- Můžete použít <xref:System.Windows.Forms.ToolStripItem.Dock%2A> a <xref:System.Windows.Forms.ToolStripItem.Anchor%2A> vlastností v kódu pro zarovnání položek v rámci buňky tabulky.  
   
--   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> Vlastnost se ignoruje.  
+- <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> Vlastnost se ignoruje.  
   
--   V <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> události, si můžete prohlédnout <xref:System.Windows.Forms.ToolStripItem.Placement%2A> a určí, zda byl umístěn položky na hlavní <xref:System.Windows.Forms.ToolStrip> nebo nevejdou.  
+- V <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> události, si můžete prohlédnout <xref:System.Windows.Forms.ToolStripItem.Placement%2A> a určí, zda byl umístěn položky na hlavní <xref:System.Windows.Forms.ToolStrip> nebo nevejdou.  
   
--   Úchytu není vykresleno a proto <xref:System.Windows.Forms.ToolStrip> v <xref:System.Windows.Forms.ToolStripLayoutStyle.Table> styl rozložení v <xref:System.Windows.Forms.ToolStripPanel> nelze přesunout.  
+- Úchytu není vykresleno a proto <xref:System.Windows.Forms.ToolStrip> v <xref:System.Windows.Forms.ToolStripLayoutStyle.Table> styl rozložení v <xref:System.Windows.Forms.ToolStripPanel> nelze přesunout.  
   
--   <xref:System.Windows.Forms.ToolStrip> Tlačítku přetečení není vykresleno, a <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> se ignoruje.  
+- <xref:System.Windows.Forms.ToolStrip> Tlačítku přetečení není vykresleno, a <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> se ignoruje.  
   
 ## <a name="toolstripitem"></a>ToolStripItem  
  Následující témata popisují <xref:System.Windows.Forms.ToolStripItem> a ovládací prvky, které jsou odvozeny z něj.  
@@ -296,9 +296,9 @@ ms.locfileid: "59296209"
 ### <a name="toolstripcontrolhost"></a>ToolStripControlHost  
  <xref:System.Windows.Forms.ToolStripControlHost> je abstraktní základní třída pro <xref:System.Windows.Forms.ToolStripComboBox>, <xref:System.Windows.Forms.ToolStripTextBox>, a <xref:System.Windows.Forms.ToolStripProgressBar>. <xref:System.Windows.Forms.ToolStripControlHost> Můžete hostovat další ovládací prvky, včetně vlastních ovládacích prvků, dvěma způsoby:  
   
--   Vytvoření <xref:System.Windows.Forms.ToolStripControlHost> s třídou, která je odvozena z <xref:System.Windows.Forms.Control>. K úplnému přístupu k vlastnosti hostovaného ovládacího prvku a, musíte přetypovat <xref:System.Windows.Forms.ToolStripControlHost.Control%2A> vlastnost zpět na skutečné třídě představuje.  
+- Vytvoření <xref:System.Windows.Forms.ToolStripControlHost> s třídou, která je odvozena z <xref:System.Windows.Forms.Control>. K úplnému přístupu k vlastnosti hostovaného ovládacího prvku a, musíte přetypovat <xref:System.Windows.Forms.ToolStripControlHost.Control%2A> vlastnost zpět na skutečné třídě představuje.  
   
--   Rozšíření <xref:System.Windows.Forms.ToolStripControlHost>a ve zděděné třídě výchozí konstruktor, volání konstruktoru základní třídy, které jsou předávání, která je odvozena z třídy <xref:System.Windows.Forms.Control>. Tato možnost umožňuje zabalit běžné ovládací prvek metody a vlastnosti pro usnadnění přístupu v <xref:System.Windows.Forms.ToolStrip>.  
+- Rozšíření <xref:System.Windows.Forms.ToolStripControlHost>a ve zděděné třídě výchozí konstruktor, volání konstruktoru základní třídy, které jsou předávání, která je odvozena z třídy <xref:System.Windows.Forms.Control>. Tato možnost umožňuje zabalit běžné ovládací prvek metody a vlastnosti pro usnadnění přístupu v <xref:System.Windows.Forms.ToolStrip>.  
   
 ### <a name="toolstripcombobox"></a>ToolStripComboBox  
  <xref:System.Windows.Forms.ToolStripComboBox> je <xref:System.Windows.Forms.ComboBox> optimalizována pro hostování v <xref:System.Windows.Forms.ToolStrip>. Podmnožinu hostovaného ovládacího prvku vlastnosti a události jsou vystaveny na <xref:System.Windows.Forms.ToolStripComboBox> úroveň, ale základní <xref:System.Windows.Forms.ComboBox> ovládací prvek je plně přístupné prostřednictvím <xref:System.Windows.Forms.ToolStripComboBox.ComboBox%2A> vlastnost.  
@@ -326,15 +326,15 @@ ms.locfileid: "59296209"
 ### <a name="toolstripitem-generic-features"></a>Funkce obecného prvku ToolStripItem  
  <xref:System.Windows.Forms.ToolStripItem> poskytuje následující obecné funkce a možnosti pro dědění ovládacích prvků:  
   
--   Základní události  
+- Základní události  
   
--   Zpracování obrázků  
+- Zpracování obrázků  
   
--   Zarovnání  
+- Zarovnání  
   
--   Textové a obrázkové vztah  
+- Textové a obrázkové vztah  
   
--   Styl zobrazení  
+- Styl zobrazení  
   
 #### <a name="core-events"></a>Základní události  
  <xref:System.Windows.Forms.ToolStripItem> ovládací prvky zobrazí vlastní malířského událostí, myši a klikněte na tlačítko a můžete provádět některé klávesnice předzpracování také.  
@@ -344,11 +344,11 @@ ms.locfileid: "59296209"
   
  Změna měřítka obrázku se určuje podle interakce vlastnosti v obou <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripItem>, následujícím způsobem:  
   
--   <xref:System.Windows.Forms.ToolStrip.ImageScalingSize%2A> škálování finální image určené kombinací na obrázku je <xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A> nastavení a kontejneru <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> nastavení.  
+- <xref:System.Windows.Forms.ToolStrip.ImageScalingSize%2A> škálování finální image určené kombinací na obrázku je <xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A> nastavení a kontejneru <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> nastavení.  
   
-    -   Pokud <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> je `true` (výchozí) a <xref:System.Windows.Forms.ToolStripItemImageScaling> je <xref:System.Windows.Forms.ToolStripItemImageScaling.SizeToFit>, dojde k žádné image škálování a <xref:System.Windows.Forms.ToolStrip> velikost je největší položky nebo předepsané minimální velikost.  
+    - Pokud <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> je `true` (výchozí) a <xref:System.Windows.Forms.ToolStripItemImageScaling> je <xref:System.Windows.Forms.ToolStripItemImageScaling.SizeToFit>, dojde k žádné image škálování a <xref:System.Windows.Forms.ToolStrip> velikost je největší položky nebo předepsané minimální velikost.  
   
-    -   Pokud <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> je `false` a <xref:System.Windows.Forms.ToolStripItemImageScaling> je <xref:System.Windows.Forms.ToolStripItemImageScaling.None>, ani image ani <xref:System.Windows.Forms.ToolStrip> škálování nastane.  
+    - Pokud <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> je `false` a <xref:System.Windows.Forms.ToolStripItemImageScaling> je <xref:System.Windows.Forms.ToolStripItemImageScaling.None>, ani image ani <xref:System.Windows.Forms.ToolStrip> škálování nastane.  
   
 #### <a name="alignment"></a>Zarovnání  
  Hodnota <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> vlastnost určuje konec <xref:System.Windows.Forms.ToolStrip> na které položky se vyskytuje. <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> Vlastnost funguje pouze tehdy, když stylu rozložení ovládacího prvku <xref:System.Windows.Forms.ToolStrip> je nastavena na jednu z hodnot přetečení zásobníku.  
@@ -364,17 +364,17 @@ ms.locfileid: "59296209"
 ## <a name="accessory-classes"></a>Příslušenství třídy  
  Třídy, které poskytují různé další funkce patří:  
   
--   <xref:System.Windows.Forms.ToolStripManager> podporuje <xref:System.Windows.Forms.ToolStrip>-související úkoly pro celé aplikace, jako jsou možnosti sloučení, nastavení a nástroj pro vykreslování.  
+- <xref:System.Windows.Forms.ToolStripManager> podporuje <xref:System.Windows.Forms.ToolStrip>-související úkoly pro celé aplikace, jako jsou možnosti sloučení, nastavení a nástroj pro vykreslování.  
   
--   <xref:System.Windows.Forms.ToolStripRenderer> umožňuje použití konkrétního stylu nebo motivu <xref:System.Windows.Forms.ToolStrip> snadno.  
+- <xref:System.Windows.Forms.ToolStripRenderer> umožňuje použití konkrétního stylu nebo motivu <xref:System.Windows.Forms.ToolStrip> snadno.  
   
--   <xref:System.Windows.Forms.ToolStripProfessionalRenderer> Vytvoří pera a na základě tabulky replaceable barvy štětce (<xref:System.Windows.Forms.ProfessionalColorTable>).  
+- <xref:System.Windows.Forms.ToolStripProfessionalRenderer> Vytvoří pera a na základě tabulky replaceable barvy štětce (<xref:System.Windows.Forms.ProfessionalColorTable>).  
   
--   <xref:System.Windows.Forms.ToolStripSystemRenderer> systémové barvy a fixní vizuální styl, který se vztahuje <xref:System.Windows.Forms.ToolStrip> aplikací.  
+- <xref:System.Windows.Forms.ToolStripSystemRenderer> systémové barvy a fixní vizuální styl, který se vztahuje <xref:System.Windows.Forms.ToolStrip> aplikací.  
   
--   <xref:System.Windows.Forms.ToolStripContainer> je podobný <xref:System.Windows.Forms.SplitContainer>. Používá čtyři ukotvených boční panely (instance <xref:System.Windows.Forms.ToolStripPanel>) a jeden středovém panelu (instance <xref:System.Windows.Forms.ToolStripContentPanel>) k vytvoření typické uspořádání. Boční panely nelze odebrat, ale je můžete skrýt. Nelze odebrat ani skrýt středovém panelu. Můžete uspořádat jeden nebo více <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, nebo <xref:System.Windows.Forms.StatusStrip> ovládacích prvků v boční panely kde můžete použít středovém panelu. pro další ovládací prvky. <xref:System.Windows.Forms.ToolStripContentPanel> Také poskytuje způsob, jak získat podporu nástroj pro vykreslování do těla formuláře pro jednotný vzhled. <xref:System.Windows.Forms.ToolStripContainer> nepodporuje rozhraní více dokumentů (MDI).  
+- <xref:System.Windows.Forms.ToolStripContainer> je podobný <xref:System.Windows.Forms.SplitContainer>. Používá čtyři ukotvených boční panely (instance <xref:System.Windows.Forms.ToolStripPanel>) a jeden středovém panelu (instance <xref:System.Windows.Forms.ToolStripContentPanel>) k vytvoření typické uspořádání. Boční panely nelze odebrat, ale je můžete skrýt. Nelze odebrat ani skrýt středovém panelu. Můžete uspořádat jeden nebo více <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, nebo <xref:System.Windows.Forms.StatusStrip> ovládacích prvků v boční panely kde můžete použít středovém panelu. pro další ovládací prvky. <xref:System.Windows.Forms.ToolStripContentPanel> Také poskytuje způsob, jak získat podporu nástroj pro vykreslování do těla formuláře pro jednotný vzhled. <xref:System.Windows.Forms.ToolStripContainer> nepodporuje rozhraní více dokumentů (MDI).  
   
--   <xref:System.Windows.Forms.ToolStripPanel> poskytuje prostor pro přesun a uspořádání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků. Pokud se tak rozhodnete, můžete použít pouze jeden panel a <xref:System.Windows.Forms.ToolStripPanel> funguje dobře ve scénářích MDI.  
+- <xref:System.Windows.Forms.ToolStripPanel> poskytuje prostor pro přesun a uspořádání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků. Pokud se tak rozhodnete, můžete použít pouze jeden panel a <xref:System.Windows.Forms.ToolStripPanel> funguje dobře ve scénářích MDI.  
   
 ## <a name="see-also"></a>Viz také:
 

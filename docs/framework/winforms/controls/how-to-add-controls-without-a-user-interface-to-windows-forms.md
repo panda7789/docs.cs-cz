@@ -15,11 +15,11 @@ helpviewer_keywords:
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
 ms.openlocfilehash: 0768f811653543b3370310ccc0b59890273baf52
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011083"
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms
 Nevizuální ovládací prvek (nebo komponenta) poskytuje funkce, které vaše aplikace. Na rozdíl od jiných ovládacích prvků součástí neposkytují uživatelského rozhraní pro uživatele a proto není potřeba zobrazovat na plochu návrháře formulářů Windows. Při přidání komponenty do formuláře, zobrazí Návrhář formulářů Windows umožňující změnu velikosti na hlavním panelu v dolní části formuláře, ve kterém jsou zobrazeny všechny součásti. Jakmile ovládací prvek byl přidán do panelu komponent, můžete vybrat komponentu a nastavit jeho vlastnosti, stejně jako jakýkoli jiný ovládací prvek na formuláři.  

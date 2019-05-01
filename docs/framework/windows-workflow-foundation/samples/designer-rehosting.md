@@ -3,24 +3,24 @@ title: Změna hostování návrháře
 ms.date: 03/30/2017
 ms.assetid: b676ad31-5f64-4d84-9a36-b4d7113a2f4d
 ms.openlocfilehash: b2a51014e34bf27d6f016db71d2c2eaabb906c6d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005224"
 ---
 # <a name="designer-rehosting"></a>Změna hostování návrháře
 Změna hostování návrháře je běžný scénář, který odkazuje na hostování pracovního postupu návrhové plátno v rámci vlastní aplikace. Hostování aplikace, kterou většina lidí znají je Visual Studio, ale existuje mnoho scénářů, kdy zobrazení návrháře postupu provádění v aplikaci může být užitečné:  
   
--   Monitorování aplikací (umožňuje koncovým uživatelům vizualizovat proces, jakož i dat získaných za běhu o procesu, jako jsou aktuálně aktivním stavu, data agregovaná doba provádění nebo Další informace o instanci pracovního postupu).  
+- Monitorování aplikací (umožňuje koncovým uživatelům vizualizovat proces, jakož i dat získaných za běhu o procesu, jako jsou aktuálně aktivním stavu, data agregovaná doba provádění nebo Další informace o instanci pracovního postupu).  
   
--   Aplikace, které umožňují uživatelům přizpůsobit proces s omezenou sadu aktivit.  
+- Aplikace, které umožňují uživatelům přizpůsobit proces s omezenou sadu aktivit.  
   
  Pro podporu těchto typů aplikací, návrháře postupu provádění se dodává v rozhraní .NET Framework a je možné hostovat v aplikaci WPF nebo aplikace WinForms s odpovídající WPF hostování kódu. V této ukázce:  
   
--   Změna hostování návrháře pracovního postupu.  
+- Změna hostování návrháře pracovního postupu.  
   
--   Pomocí provádění se změněným hostováním nástrojů a vlastnost mřížce stejně.  
+- Pomocí provádění se změněným hostováním nástrojů a vlastnost mřížce stejně.  
   
 ## <a name="rehosting-the-designer"></a>Změna hostování návrháře  
  Tento příklad ukazuje, jak vytvořit rozložení WPF tak, aby obsahovala návrháři vidět v následující rozložení mřížky (nástrojů kódu vynechána obavy místa). Mějte na paměti, pojmenování ohraničení, které obsahují mřížky Návrháře a vlastnosti.  

@@ -3,11 +3,11 @@ title: Zabezpečení aplikací rovnocenného kanálu
 ms.date: 03/30/2017
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
 ms.openlocfilehash: a747923f81f4773eb58a4b7500cf4fc1c006f889
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59146238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990948"
 ---
 # <a name="securing-peer-channel-applications"></a>Zabezpečení aplikací rovnocenného kanálu
 Jako v jiných vazbách [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], `NetPeerTcpBinding` má povolené ve výchozím nastavení zabezpečení a nabízí i zabezpečení na základě přenosu a zprávy (nebo obojí). Toto téma popisuje tyto dva typy zabezpečení. Typ zabezpečení je určen podle klíčových slov režim zabezpečení ve specifikaci vazby (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  
@@ -15,16 +15,16 @@ Jako v jiných vazbách [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md
 ## <a name="transport-based-security"></a>Zabezpečení přenosu  
  Protokolu peer Channel podporuje dva typy ověřování pověření zabezpečení přenosu. oba vyžadují nastavení si `ClientCredentialSettings.Peer` vlastnosti přidruženého `ChannelFactory`:  
   
--   Heslo. Klienti používají znalost tajného kódu hesla pro ověření připojení. Když se používá tento typ přihlašovacích údajů, `ClientCredentialSettings.Peer.MeshPassword` musí mít platné heslo a volitelně `X509Certificate2` instance.  
+- Heslo. Klienti používají znalost tajného kódu hesla pro ověření připojení. Když se používá tento typ přihlašovacích údajů, `ClientCredentialSettings.Peer.MeshPassword` musí mít platné heslo a volitelně `X509Certificate2` instance.  
   
--   certifikát. Slouží k ověřování konkrétní aplikace. Pokud tento typ přihlašovacích údajů se používá, je nutné použít konkrétní implementaci <xref:System.IdentityModel.Selectors.X509CertificateValidator> v `ClientCredentialSettings.Peer.PeerAuthentication`.  
+- certifikát. Slouží k ověřování konkrétní aplikace. Pokud tento typ přihlašovacích údajů se používá, je nutné použít konkrétní implementaci <xref:System.IdentityModel.Selectors.X509CertificateValidator> v `ClientCredentialSettings.Peer.PeerAuthentication`.  
   
 ## <a name="message-based-security"></a>Zabezpečení na základě zpráv  
  Pomocí zabezpečení zpráv, aplikaci mohl odchozí zprávy tak, aby všechny přijímající strany můžete ověřit, že je zpráva odeslána důvěryhodná strana a zpráva nebyla manipulováno. V současné době protokolu Peer Channel podporuje pouze podepisování zpráv přihlašovacích údajů X.509.  
   
 ## <a name="best-practices"></a>Doporučené postupy  
   
--   Tato část popisuje osvědčené postupy pro zabezpečení aplikací rovnocenného kanálu.  
+- Tato část popisuje osvědčené postupy pro zabezpečení aplikací rovnocenného kanálu.  
   
 ### <a name="enable-security-with-peer-channel-applications"></a>Povolit zabezpečení aplikací protokolu Peer Channel  
  Z důvodu distribuovaná povaha protokoly protokolu Peer Channel je obtížné vynucovat síť členství, důvěrnost a ochrana osobních údajů v nezabezpečené síti. Taky je dobré si uvědomit pro zabezpečení komunikace mezi klienty a službě překládání. V části překlad protokolu PNRP (Peer Name), použijte zabezpečené názvů, které se vyhnout falšování identity a dalších běžných útoků. Zabezpečení služby vlastní mechanismus rozpoznávání tím, že zabezpečení týkající se použití připojení klientů ke kontaktování službě překládání, včetně zabezpečení na základě zpráv a přenosu i.  

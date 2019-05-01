@@ -21,11 +21,11 @@ helpviewer_keywords:
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
 ms.openlocfilehash: 4d530a8c1f85d2f0045184c05df63849047a8204
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971766"
 ---
 # <a name="decimal-data-type-visual-basic"></a>Decimal – datový typ (Visual Basic)
 Blokování podepsané 128-bit (16 bajtů) hodnoty představující celé číslo (12 bajtů) verze 96 čísla měřítkem řídit proměnné násobky 10. Koeficient změny měřítka určuje počet číslic vpravo od desetinné čárky rozsah od 0 do 28. S měřítkem 0 (bez desetinných míst), je možná největší hodnota +/-79,228,162,514,264,337,593,543,950,335 (+/-7 .9228162514264337593543950335E + 28). 28 desetinných míst největší hodnota, je +/-7,9228162514264337593543950335 a +/-0,0000000000000000000000000001 (+/-1E-28) je nejmenší nenulovou hodnotu.  
@@ -37,13 +37,13 @@ Blokování podepsané 128-bit (16 bajtů) hodnoty představující celé čísl
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Přesnost.** `Decimal` není typ s plovoucí desetinnou čárkou data. `Decimal` Struktura obsahuje binární celočíselnou hodnotu, společně s bit znaménka a měřítko, která určuje, jaká část hodnoty je desetinný zlomek celého čísla. Z tohoto důvodu `Decimal` čísla mají přesnější reprezentací v paměti než u typů s plovoucí desetinnou čárkou (`Single` a `Double`).  
+- **Přesnost.** `Decimal` není typ s plovoucí desetinnou čárkou data. `Decimal` Struktura obsahuje binární celočíselnou hodnotu, společně s bit znaménka a měřítko, která určuje, jaká část hodnoty je desetinný zlomek celého čísla. Z tohoto důvodu `Decimal` čísla mají přesnější reprezentací v paměti než u typů s plovoucí desetinnou čárkou (`Single` a `Double`).  
   
--   **Výkon.** `Decimal` Datový typ se načítají nejpomaleji. všechny číselné typy. Měli byste zvážit důležitost přesnost proti výkonu před výběrem datového typu.  
+- **Výkon.** `Decimal` Datový typ se načítají nejpomaleji. všechny číselné typy. Měli byste zvážit důležitost přesnost proti výkonu před výběrem datového typu.  
   
--   **Rozšíření.** `Decimal` Datový typ rozšiřuje na `Single` nebo `Double`. To znamená, že můžete převést `Decimal` některou z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `Decimal` Datový typ rozšiřuje na `Single` nebo `Double`. To znamená, že můžete převést `Decimal` některou z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Koncové nuly.** Koncové nuly v jazyce Visual Basic nejsou uložené `Decimal` literálu. Ale `Decimal` proměnná zachová všechny koncové nuly výpočetně získali. Toto dokládá následující příklad.  
+- **Koncové nuly.** Koncové nuly v jazyce Visual Basic nejsou uložené `Decimal` literálu. Ale `Decimal` proměnná zachová všechny koncové nuly výpočetně získali. Toto dokládá následující příklad.  
   
     ```  
     Dim d1, d2, d3, d4 As Decimal  
@@ -59,9 +59,9 @@ Blokování podepsané 128-bit (16 bajtů) hodnoty představující celé čísl
   
      D1 = 2.375 d2 = 1.625 d3 = 4.000 d4 = 4  
   
--   **Znaky typu.** Přidávání znak typu literálu `D` k literálu se z něj stane `Decimal` datového typu. Přidávání znak typu identifikátoru `@` k libovolnému identifikátoru se z něj stane `Decimal`.  
+- **Znaky typu.** Přidávání znak typu literálu `D` k literálu se z něj stane `Decimal` datového typu. Přidávání znak typu identifikátoru `@` k libovolnému identifikátoru se z něj stane `Decimal`.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Decimal?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Decimal?displayProperty=nameWithType> struktury.  
   
 ## <a name="range"></a>Rozsah  
  Možná budete muset použít `D` přiřadit hodnotu velké znak `Decimal` proměnné nebo konstantní. Tento požadavek je, protože kompilátor interpretuje jako literál `Long` Pokud následuje znak typu literálu literálu, jak ukazuje následující příklad.  

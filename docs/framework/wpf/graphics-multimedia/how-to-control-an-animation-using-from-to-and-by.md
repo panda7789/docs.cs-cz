@@ -8,11 +8,11 @@ helpviewer_keywords:
 - From/to/by animation
 ms.assetid: 59afba57-6fc1-44c8-987e-8a5f4142adad
 ms.openlocfilehash: 56522ee5bd4391e43c261558b2fa622234c9ea3b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008782"
 ---
 # <a name="how-to-control-an-animation-using-from-to-and-by"></a>Postupy: Řízení animací pomocí polí Od, Komu a Kdo
 "Od/Komu/kým" nebo "základní animace" vytvoří přechod mezi dvě cílové hodnoty (naleznete v tématu [přehled animace](animation-overview.md) s úvodem do různé typy animací). Chcete-li nastavit cílové hodnoty základní animace, použijte jeho <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.  Následující tabulka shrnuje, jak <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti mohou být použity společně nebo samostatně k určení cílové animace hodnoty.  

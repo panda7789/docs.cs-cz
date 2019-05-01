@@ -20,11 +20,11 @@ helpviewer_keywords:
 - globalization [Windows Forms], character sets
 ms.assetid: 22e8965d-a712-42b3-8167-3ee346bd70f9
 ms.openlocfilehash: 3a9d891fe898cf691a5f0d36e6360c2a73fb199d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004520"
 ---
 # <a name="encoding-and-windows-forms-globalization"></a>Kódování a globalizace Windows Forms
 Aplikace Windows Forms jsou výhradně kódování Unicode, což znamená, že každý znak je reprezentována jedinečné číslo, bez ohledu na to, jaké platformy, program nebo jazyk. Další informace o kódování Unicode naleznete v tématu [Unicode consortium webu](https://www.unicode.org).  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
 ms.openlocfilehash: 85d089813a455784fde679e9200a9b29b956af8e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006399"
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
 V této ukázce hostovaný ve spravované službě Windows služby Windows Communication Foundation (WCF). Windows Services jsou řízeny pomocí apletu služby v **ovládací panely** a dá se spustit automaticky po restartu systému. Ukázka se skládá z programu klienta a aplikace služby Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód hostování. V jiných prostředích hostingu, jako je například Windows procesu aktivační služby (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.

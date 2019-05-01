@@ -7,11 +7,11 @@ helpviewer_keywords:
 - user settings [Visual Basic], persisting
 ms.assetid: 0e5e6415-b6e2-4602-9be0-a65fa167d007
 ms.openlocfilehash: 35997db52a59aeaff5a2c404ea83b15639ea23a0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014363"
 ---
 # <a name="how-to-persist-user-settings-in-visual-basic"></a>Postupy: Zachování uživatelského nastavení v jazyce Visual Basic
 Můžete použít `My.Settings.Save` metoda zachování změn nastavení uživatele.  

@@ -20,10 +20,10 @@ ms.author: ronpet
 ms.custom: updateeachrelease
 ms.openlocfilehash: 798b3d29a13434511f64dfc358fb7690948cacfa
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59972950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62017004"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Přehled modelu Common Language Runtime (CLR)
 

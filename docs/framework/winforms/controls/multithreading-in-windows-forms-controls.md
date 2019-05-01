@@ -6,11 +6,11 @@ helpviewer_keywords:
 - threading [Windows Forms], controls
 ms.assetid: c311d652-0f26-45fa-bdcc-b1615d73ce4e
 ms.openlocfilehash: cc7f358a62c8057abb77e1f5a28544bb6c858d98
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012721"
 ---
 # <a name="multithreading-in-windows-forms-controls"></a>Podpora více vláken v ovládacích prvcích Windows Forms
 V mnoha aplikacích můžete provést uživatelského rozhraní (UI), které jsou rychlejší reakce provedením časově náročných operací v jiném vlákně. Různé nástroje jsou k dispozici pro multithreading své ovládací prvky Windows Forms, včetně <xref:System.Threading> obor názvů, <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> metody a `BackgroundWorker` komponenty.  

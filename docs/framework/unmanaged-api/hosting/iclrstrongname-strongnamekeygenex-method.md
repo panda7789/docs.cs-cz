@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f97e6f16029b9a273a68d52b830939819bfa5380
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61993028"
 ---
 # <a name="iclrstrongnamestrongnamekeygenex-method"></a>ICLRStrongName::StrongNameKeyGenEx – metoda
 Generuje nový pár veřejného a privátního klíče se zadanou velikost klíče pro použití silným názvem.  
@@ -46,9 +46,9 @@ HRESULT StrongNameKeyGenEx (
  `dwFlags`  
  [in] Hodnota, která určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
   
--   0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
+- 0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
   
--   0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
+- 0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
   
  `dwKeySize`  
  [in] Požadovaná velikost klíče v bitech.  

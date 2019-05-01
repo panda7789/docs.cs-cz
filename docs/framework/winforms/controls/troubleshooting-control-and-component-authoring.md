@@ -12,26 +12,26 @@ helpviewer_keywords:
 - Windows Forms controls, debugging
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
 ms.openlocfilehash: 3ae8a889bf69913d234e31804335ddb08560c30c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009211"
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>Řešení potíží s vytvářením ovládacích prvků a komponent
 Toto téma uvádí následující běžné problémy, které vznikají při vývoji komponent a ovládacích prvků. Další informace najdete v tématu [programování pomocí komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
   
--   Nelze přidat ovládací prvek na panelu nástrojů  
+- Nelze přidat ovládací prvek na panelu nástrojů  
   
--   Nelze ladit uživatelského ovládacího prvku formulářů Windows nebo komponenty  
+- Nelze ladit uživatelského ovládacího prvku formulářů Windows nebo komponenty  
   
--   Událost se vyvolá dvakrát v zděděný ovládací prvek nebo komponenty  
+- Událost se vyvolá dvakrát v zděděný ovládací prvek nebo komponenty  
   
--   Chyba návrhu: "Nepovedlo se vytvořit komponentu '*název komponenty*."  
+- Chyba návrhu: "Nepovedlo se vytvořit komponentu '*název komponenty*."  
   
--   Atribut STAThreadAttribute  
+- Atribut STAThreadAttribute  
   
--   Ikona komponenty se nezobrazují v panelu nástrojů  
+- Ikona komponenty se nezobrazují v panelu nástrojů  
   
 ## <a name="cannot-add-control-to-toolbox"></a>Nelze přidat ovládací prvek na panelu nástrojů  
  Pokud chcete přidat vlastní ovládací prvek, který jste vytvořili v jiném projektu nebo ovládací prvek třetích stran pro **nástrojů**, musíte to udělat ručně. Pokud projekt obsahuje ovládacího prvku nebo komponenty, měl by se zobrazit v **nástrojů** automaticky. Další informace najdete v tématu [názorný postup: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
@@ -42,11 +42,11 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
   
 2. V **zvolit položky nástrojů** dialogovém okně přidejte komponentu:  
   
-    -   Pokud chcete přidat do součásti rozhraní .NET Framework nebo ovládacího prvku, klikněte na tlačítko **součásti rozhraní .NET Framework** kartu.  
+    - Pokud chcete přidat do součásti rozhraní .NET Framework nebo ovládacího prvku, klikněte na tlačítko **součásti rozhraní .NET Framework** kartu.  
   
          – nebo –  
   
-    -   Pokud chcete přidat komponenty modelu COM nebo ovládacího prvku ActiveX, klikněte na tlačítko **komponenty modelu COM** kartu.  
+    - Pokud chcete přidat komponenty modelu COM nebo ovládacího prvku ActiveX, klikněte na tlačítko **komponenty modelu COM** kartu.  
   
 3. Pokud váš ovládací prvek je uvedený v dialogovém okně, potvrďte je vybraná a potom klikněte na **OK**.  
   
@@ -54,15 +54,15 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
   
 4. Pokud váš ovládací prvek není uveden v dialogovém okně, postupujte takto:  
   
-    1.  Klikněte na tlačítko **Procházet** tlačítko.  
+    1. Klikněte na tlačítko **Procházet** tlačítko.  
   
-    2.  Přejděte do složky obsahující soubor .dll, který obsahuje ovládací prvek.  
+    2. Přejděte do složky obsahující soubor .dll, který obsahuje ovládací prvek.  
   
-    3.  Vyberte soubor .dll a klikněte na tlačítko **otevřít**.  
+    3. Vyberte soubor .dll a klikněte na tlačítko **otevřít**.  
   
          V dialogovém okně se zobrazí váš ovládací prvek.  
   
-    4.  Potvrďte, že je vybraný ovládací prvek a klikněte na **OK**.  
+    4. Potvrďte, že je vybraný ovládací prvek a klikněte na **OK**.  
   
          Váš ovládací prvek je přidán do **nástrojů**.  
   

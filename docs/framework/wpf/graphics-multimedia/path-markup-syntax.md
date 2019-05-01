@@ -8,11 +8,11 @@ helpviewer_keywords:
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
 ms.openlocfilehash: 32eefba26b5e04370599e4c97767b6662cfd1c13
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59082487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008199"
 ---
 # <a name="path-markup-syntax"></a>Syntaxe značek cesty
 Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md) a [přehled geometrie](geometry-overview.md), ale toto téma popisuje podrobně výkonná a komplexní zkrácené jazyk, slouží k určení cesty geometrie více kompaktně pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -25,11 +25,11 @@ Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](shapes-and-bas
 ## <a name="streamgeometry-and-pathfigurecollection-mini-languages"></a>Streamgeometry – a PathFigureCollection Mini – jazyky  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje dvě třídy, které poskytují mini jazyky pro popis geometrické cesty: <xref:System.Windows.Media.StreamGeometry> a <xref:System.Windows.Media.PathFigureCollection>.  
   
--   Použijete <xref:System.Windows.Media.StreamGeometry> zkrácené jazyce, pokud je nastavení vlastnosti typu <xref:System.Windows.Media.Geometry>, jako <xref:System.Windows.UIElement.Clip%2A> vlastnost <xref:System.Windows.UIElement> nebo <xref:System.Windows.Shapes.Path.Data%2A> vlastnost <xref:System.Windows.Shapes.Path> element. Následující příklad používá syntaxi atributů k vytvoření <xref:System.Windows.Media.StreamGeometry>.  
+- Použijete <xref:System.Windows.Media.StreamGeometry> zkrácené jazyce, pokud je nastavení vlastnosti typu <xref:System.Windows.Media.Geometry>, jako <xref:System.Windows.UIElement.Clip%2A> vlastnost <xref:System.Windows.UIElement> nebo <xref:System.Windows.Shapes.Path.Data%2A> vlastnost <xref:System.Windows.Shapes.Path> element. Následující příklad používá syntaxi atributů k vytvoření <xref:System.Windows.Media.StreamGeometry>.  
   
      [!code-xaml[GeometrySample_snip_XAML#GraphicsMMStreamGeometryAttributeSyntaxInline](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmstreamgeometryattributesyntaxinline)]  
   
--   Použijete <xref:System.Windows.Media.PathFigureCollection> zkrácené jazyk při nastavení <xref:System.Windows.Media.PathGeometry.Figures%2A> vlastnost <xref:System.Windows.Media.PathGeometry>. Následující příklad používá syntaxi atributů k vytvoření <xref:System.Windows.Media.PathFigureCollection> pro <xref:System.Windows.Media.PathGeometry>.  
+- Použijete <xref:System.Windows.Media.PathFigureCollection> zkrácené jazyk při nastavení <xref:System.Windows.Media.PathGeometry.Figures%2A> vlastnost <xref:System.Windows.Media.PathGeometry>. Následující příklad používá syntaxi atributů k vytvoření <xref:System.Windows.Media.PathFigureCollection> pro <xref:System.Windows.Media.PathGeometry>.  
   
      [!code-xaml[GeometrySample_snip_XAML#GraphicsMMPathFigureCollectionAttributeSyntaxInline](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmpathfigurecollectionattributesyntaxinline)]  
   

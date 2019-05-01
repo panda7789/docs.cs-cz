@@ -23,11 +23,11 @@ helpviewer_keywords:
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
 author: ghogen
 ms.openlocfilehash: a98528a4bae1a22352096958cfec2350b21ddf8e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59103412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008691"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Představení aplikací spouštěných jako služby systému Windows
 Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytvářet dlouhodobé spustitelné aplikace spouštěné ve vlastních relacích Windows. Tyto služby mohou být automaticky spuštěny při spuštění počítače, mohou být pozastaveny a restartovány a nezobrazují žádné uživatelské rozhraní. Tyto funkce jsou služby ideální pro použití na serveru nebo kdykoliv potřebujete dlouhodobé funkčnosti, která nebude v konfliktu s jinými uživateli, kteří pracují na stejném počítači. Služby můžete také spustit v kontextu zabezpečení konkrétního uživatelského účtu, který se liší od přihlášeného uživatele nebo výchozího účtu počítače. Další informace o službách a relacích Windows najdete v dokumentaci Windows SDK.  
@@ -41,19 +41,19 @@ Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytv
 ## <a name="service-applications-vs-other-visual-studio-applications"></a>Aplikace služeb vs. Jiné aplikace Visual Studio  
  Aplikace služeb fungují jinak než mnoho jiných typů projektů v několika ohledech:  
   
--   Kompilovaný spustitelný soubor, který vytvoří projekt aplikace služby musí nainstalovat na serveru, než projekt může fungovat srozumitelným způsobem. Nelze ladit nebo spustit aplikaci služby stisknutím klávesy F5 nebo F11; nelze spustit okamžitě službu nebo přejít do jejího kódu. Místo toho musíte nainstalovat a spusťte svoji službu a potom připojit ladicí program k procesu služby. Další informace najdete v tématu [jak: Ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md).  
+- Kompilovaný spustitelný soubor, který vytvoří projekt aplikace služby musí nainstalovat na serveru, než projekt může fungovat srozumitelným způsobem. Nelze ladit nebo spustit aplikaci služby stisknutím klávesy F5 nebo F11; nelze spustit okamžitě službu nebo přejít do jejího kódu. Místo toho musíte nainstalovat a spusťte svoji službu a potom připojit ladicí program k procesu služby. Další informace najdete v tématu [jak: Ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md).  
   
--   Na rozdíl od některých typů projektů je třeba vytvořit instalační komponenty pro aplikace služby. Součásti instalace nainstalujte a zaregistrují službu na serveru a vytvořte záznam pro vaši službu s Windows **správce řízení služeb**. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+- Na rozdíl od některých typů projektů je třeba vytvořit instalační komponenty pro aplikace služby. Součásti instalace nainstalujte a zaregistrují službu na serveru a vytvořte záznam pro vaši službu s Windows **správce řízení služeb**. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
--   `Main` Metoda pro aplikaci služby musí vydat příkaz spustit pro služby, váš projekt obsahuje. `Run` Metoda načte služby do **správce řízení služeb** na příslušném serveru. Pokud používáte **služby Windows** šablony projektu, tato metoda je zapsána automaticky. Všimněte si, že načtení služby není totéž jako spuštění služby. Viz "Doba platnosti služby" níže pro další informace.  
+- `Main` Metoda pro aplikaci služby musí vydat příkaz spustit pro služby, váš projekt obsahuje. `Run` Metoda načte služby do **správce řízení služeb** na příslušném serveru. Pokud používáte **služby Windows** šablony projektu, tato metoda je zapsána automaticky. Všimněte si, že načtení služby není totéž jako spuštění služby. Viz "Doba platnosti služby" níže pro další informace.  
   
--   Aplikace služby Windows běží v jiné stanici oken stanici než interaktivní stanice přihlášeného uživatele. Objekt window station je zabezpečený objekt, který obsahuje schránku, sadu globálních atomů a skupinu objektů plochy. Protože stanice služby Windows není interaktivní stanice, dialogová okna vyvolaná z v rámci Windows nebudou zobrazena aplikace služby a může způsobit, že program přestane reagovat. Podobně chybové zprávy by měl být zaznamenají do protokolu událostí Windows namísto vyvolání v uživatelském rozhraní.  
+- Aplikace služby Windows běží v jiné stanici oken stanici než interaktivní stanice přihlášeného uživatele. Objekt window station je zabezpečený objekt, který obsahuje schránku, sadu globálních atomů a skupinu objektů plochy. Protože stanice služby Windows není interaktivní stanice, dialogová okna vyvolaná z v rámci Windows nebudou zobrazena aplikace služby a může způsobit, že program přestane reagovat. Podobně chybové zprávy by měl být zaznamenají do protokolu událostí Windows namísto vyvolání v uživatelském rozhraní.  
   
      Třídy služby Windows podporované rozhraním .NET Framework nepodporují interakci s interaktivními stanicemi, to znamená, přihlášeného uživatele. Rozhraní .NET Framework také nezahrnuje třídy, které představují stanice a plochy. Pokud vaše služba Windows musí spolupracovat s jinými stanicemi, je potřeba přístup k nespravované rozhraní API Windows. Další informace najdete v dokumentaci Windows SDK.  
   
      Interakce Windows service s uživatelem nebo jinými stanicemi musí být pečlivě navržena pro zahrnutí těchto scénářů, protože neexistuje žádný přihlášený uživatel nebo uživatel s neočekávanou množinou objektů plochy. V některých případech může být vhodnější vytvořit aplikace Windows, na kterém běží pod kontrolou uživatele.  
   
--   Aplikace služby Windows běží v jejich vlastním kontextu zabezpečení a jsou spuštěny před přihlášením uživatele do počítače Windows, na kterém je nainstalováno. Měli byste pečlivě naplánovat který uživatelský účet použít ke spuštění služby; služby spuštěné pod účtem systému má více oprávnění a pověření než uživatelský účet.  
+- Aplikace služby Windows běží v jejich vlastním kontextu zabezpečení a jsou spuštěny před přihlášením uživatele do počítače Windows, na kterém je nainstalováno. Měli byste pečlivě naplánovat který uživatelský účet použít ke spuštění služby; služby spuštěné pod účtem systému má více oprávnění a pověření než uživatelský účet.  
   
 ## <a name="service-lifetime"></a>Doba platnosti služby  
  Služby prochází několika interními stavy v průběhu své životnosti. Nejprve je služba nainstalována do systému, na kterém se spustí. Tento postup spustí instalační programy pro projekt služby a načte službu do **správce řízení služeb** pro daný počítač. **Správce řízení služeb** je ústřední nástroj poskytovaný v systémem Windows ke správě služeb.  
@@ -76,9 +76,9 @@ Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytv
   
 ## <a name="requirements"></a>Požadavky  
   
--   Služby musí být vytvořeny v **Windows Service** projektu aplikace nebo jiný projekt podporující rozhraní .NET Framework, který vytvoří soubor s příponou .exe při sestavení a dědí z <xref:System.ServiceProcess.ServiceBase> třídy.  
+- Služby musí být vytvořeny v **Windows Service** projektu aplikace nebo jiný projekt podporující rozhraní .NET Framework, který vytvoří soubor s příponou .exe při sestavení a dědí z <xref:System.ServiceProcess.ServiceBase> třídy.  
   
--   Projekty obsahující služby Windows musí mít instalační komponenty pro projekt a jeho služeb. Můžete to snadno provést z **vlastnosti** okna. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+- Projekty obsahující služby Windows musí mít instalační komponenty pro projekt a jeho služeb. Můžete to snadno provést z **vlastnosti** okna. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
 ## <a name="see-also"></a>Viz také:
 

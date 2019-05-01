@@ -5,11 +5,11 @@ helpviewer_keywords:
 - managed HTML DOM
 ms.assetid: a017dd5c-cd7b-47e4-952c-f4f54cb48409
 ms.openlocfilehash: c18c6df29f79e9bde8474fa38e45dea03d4e0020
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009160"
 ---
 # <a name="using-the-managed-html-document-object-model"></a>Použití modelu spravovaného objektu dokumentu HTML
 Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro třídy HTML vystavené aplikace Internet Explorer. Použít tyto třídy manipulovat s HTML stránek hostovaných v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebo vytvářet nové stránky od začátku.  

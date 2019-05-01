@@ -5,11 +5,11 @@ helpviewer_keywords:
 - IWpfHostSupport interface [WPF]
 ms.assetid: cc5a0281-de81-4cc1-87e4-0e46b1a811e9
 ms.openlocfilehash: 074167111b78edc517dda019465260d0acd54737
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006691"
 ---
 # <a name="iwpfhostsupport"></a>IWpfHostSupport
 Aplikace, které hostují [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahu prostřednictvím PresentationHost.exe implementace tohoto rozhraní stanovit bodů integrace mezi hostitelem a PresentationHost.exe.  
@@ -19,11 +19,11 @@ Aplikace, které hostují [!INCLUDE[TLA#tla_winclient](../../../../includes/tlas
   
  Integrace zajišťuje `IWpfHostSupport` umožňuje PresentationHost.exe na:  
   
--   Zjistit a zaregistrovat nezpracovaná vstupní zařízení (lidské rozhraní), které je hostitelskou aplikaci zájem.  
+- Zjistit a zaregistrovat nezpracovaná vstupní zařízení (lidské rozhraní), které je hostitelskou aplikaci zájem.  
   
--   Přijímá vstupní zprávy z registrovaných nezpracovaná vstupní zařízení a předávání zpráv příslušné hostitelské aplikace.  
+- Přijímá vstupní zprávy z registrovaných nezpracovaná vstupní zařízení a předávání zpráv příslušné hostitelské aplikace.  
   
--   Dotaz na hostitelskou aplikaci pro vlastní uživatelská rozhraní průběhu a chyba.  
+- Dotaz na hostitelskou aplikaci pro vlastní uživatelská rozhraní průběhu a chyba.  
   
 > [!NOTE]
 >  Toto rozhraní API je určen a podporovaných pro použití v místním klientském počítači.  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WS Profile binding
 ms.assetid: 22d85b19-0135-4141-9179-a0e9c343ad73
 ms.openlocfilehash: d8453d85afb92c69bdf3066ccb8b31e26a34c6d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006483"
 ---
 # <a name="wshttpbinding"></a>WSHttpBinding
 Tento příklad ukazuje, jak implementovat typické služby a typické klienta pomocí Windows Communication Foundation (WCF). Tento příklad se skládá z programu konzoly klienta (client.exe) a knihovna služby hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (Přidat odečíst, násobení a dělení). Klient podá synchronní žádosti a odpovědi služby s výsledkem dané matematické operace. Činnost klienta je vidět v okně konzoly.  

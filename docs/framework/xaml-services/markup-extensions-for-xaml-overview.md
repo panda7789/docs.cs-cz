@@ -6,11 +6,11 @@ helpviewer_keywords:
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
 ms.openlocfilehash: 41fe3cb368bed12ccb2dbe9bd31f95fd556e3968
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971909"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek jsou technika XAML pro získání hodnotu, která není na primitivní ani určitého typu XAML. Pro použití atributu rozšíření značek používat známé znak sekvence otevírající složenou závorku `{` k zadání oboru rozšíření značek a uzavírací složenou závorku `}` ukončíte. Při použití rozhraní .NET Framework XAML Services, můžete použít některé z předdefinovaných rozšíření značek jazyka XAML v oboru názvů System.Xaml sestavení. Můžete také jsou podtřídami tříd <xref:System.Windows.Markup.MarkupExtension> třídy definované v oboru názvů System.Xaml a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek, které jsou definována v určité rozhraní, pokud se už odkazuje na dané rozhraní.  
@@ -27,7 +27,7 @@ Rozšíření značek jsou technika XAML pro získání hodnotu, která není na
 ### <a name="xtype"></a>x:Type  
  `x:Type` dodává <xref:System.Type> objekt s názvem typu. Tato funkce se nejčastěji používá v odložení mechanismy, které používají základní typ CLR a typ odvození jako zástupný název seskupení nebo identifikátor. WPF styly a šablony a jejich využití `TargetType` vlastnosti, jsou konkrétní příklad. Další informace najdete v tématu [x: Type – rozšíření značek](x-type-markup-extension.md).  
   
-### <a name="xstatic"></a>X:static  
+### <a name="xstatic"></a>x: Static  
  `x:Static` vytváří statické hodnoty z entity kód typ hodnoty, které nejsou přímo typ hodnoty vlastnosti, ale může být vyhodnocen jako typu. To je užitečné pro zadání hodnoty, které již existují jako dobře známé konstanty v definici typu. Další informace najdete v tématu [x: Static – rozšíření značek](x-static-markup-extension.md).  
   
 ### <a name="xnull"></a>x: Null  
@@ -54,9 +54,9 @@ Rozšíření značek jsou technika XAML pro získání hodnotu, která není na
 ## <a name="defining-the-support-type-for-a-custom-markup-extension"></a>Definování typu podporu pro rozšíření vlastního kódu  
  Při použití rozhraní .NET Framework XAML Services nebo rozhraní, které staví na rozhraní .NET Framework XAML Services, máte dvě možnosti, jak zadat název typu podporu rozšíření značek. Název typu je relevantní pro jak XAML objekt zapisovače pokus o přístup k a má být vyvolán jako typ podpory rozšíření značek při použití rozšíření značky v XAML narazí. Použijte jednu z následujících strategií pojmenování:  
   
--   Název typu být přesnou shodou token využití značek XAML. Například pro podporu `{Collate ...}` použití rozšíření, název typu podporu `Collate`.  
+- Název typu být přesnou shodou token využití značek XAML. Například pro podporu `{Collate ...}` použití rozšíření, název typu podporu `Collate`.  
   
--   Název typu jako řetězec s tokenem využití a přípona `Extension`. Například pro podporu `{Collate ...}` použití rozšíření, název typu podporu `CollateExtension`.  
+- Název typu jako řetězec s tokenem využití a přípona `Extension`. Například pro podporu `{Collate ...}` použití rozšíření, název typu podporu `CollateExtension`.  
   
  Pořadí vyhledávání je vás pod rouškou `Extension`-příponami třídy pojmenujte první a potom vyhledejte název třídy bez `Extension` příponu.  
   
@@ -81,9 +81,9 @@ public Collate(CollationMode collationMode) {...}
   
  Zpracování se koncepčně funguje jakoby rozšíření značek je objekt, který se má vytvořit, a nastavte hodnoty jeho členů. Každá zadaná vlastnost pro nastavení je vyhodnocen podobný jak zadaného člena lze nastavit pro objekt vytvořený při XAML je analyzován. Existují dva důležité rozdíly:  
   
--   Jak bylo uvedeno dříve, není potřeba mít výchozí konstruktor, aby bylo možné vytvořit instanci v XAML jako typ podpory rozšíření značek. Konstrukce objektu je odloženo, dokud jeho možné argumenty v textu syntaxe jsou tokenizovaného a vyhodnotí jako poziční nebo pojmenované argumenty a odpovídajícího konstruktoru je volána v daném čase.  
+- Jak bylo uvedeno dříve, není potřeba mít výchozí konstruktor, aby bylo možné vytvořit instanci v XAML jako typ podpory rozšíření značek. Konstrukce objektu je odloženo, dokud jeho možné argumenty v textu syntaxe jsou tokenizovaného a vyhodnotí jako poziční nebo pojmenované argumenty a odpovídajícího konstruktoru je volána v daném čase.  
   
--   Použití rozšíření značky mohou být vnořené. Rozšíření pro vnitřní kód je vyhodnocen jako první. Proto můžete předpokládat takové použití a deklarujte jeden z parametrů konstrukce na typ, který vyžaduje převaděč hodnoty (jako je například rozšíření značek) k vytvoření.  
+- Použití rozšíření značky mohou být vnořené. Rozšíření pro vnitřní kód je vyhodnocen jako první. Proto můžete předpokládat takové použití a deklarujte jeden z parametrů konstrukce na typ, který vyžaduje převaděč hodnoty (jako je například rozšíření značek) k vytvoření.  
   
  Závislost na toto zpracování se zobrazilo v předchozím příkladu. Objekt zapisovače rozhraní .NET Framework XAML Services XAML procesu výčtu konstant názvy do výčtové hodnoty na nativní úroveň.  
   
@@ -124,9 +124,9 @@ public Collate(CollationMode collationMode, object collateThis) {...}
   
  <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute> sestavy <xref:System.Type> zadejte informace o objektu, který <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí. Čistě podpisem <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí <xref:System.Object>. Ale různé uživatele může být vhodné přesnější informace návratovým typem. Sem patří:  
   
--   Návrháři a Integrovaná vývojová prostředí, který může být schopný poskytnout s ohledem na typ podporu pro použití rozšíření značky.  
+- Návrháři a Integrovaná vývojová prostředí, který může být schopný poskytnout s ohledem na typ podporu pro použití rozšíření značky.  
   
--   Implementace rozšířené `SetMarkupExtension` obslužné rutiny na cílové třídy, které může závisí na reflexi k určení návratového typu rozšíření značek namísto větvení na konkrétní známé <xref:System.Windows.Markup.MarkupExtension> implementace podle názvu.  
+- Implementace rozšířené `SetMarkupExtension` obslužné rutiny na cílové třídy, které může závisí na reflexi k určení návratového typu rozšíření značek namísto větvení na konkrétní známé <xref:System.Windows.Markup.MarkupExtension> implementace podle názvu.  
   
 <a name="serialization_of_markup_extension_usages"></a>   
 ## <a name="serialization-of-markup-extension-usages"></a>Serializace použití rozšíření značek  

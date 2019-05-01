@@ -10,11 +10,11 @@ helpviewer_keywords:
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
 ms.openlocfilehash: 1d00c222dabf446c7c102307c3b904d3f1ff4bca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007276"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
@@ -28,24 +28,24 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
  Tento návod obsahuje následující úlohy:
 
--   Vytvoření projektu aplikace WPF.
+- Vytvoření projektu aplikace WPF.
 
--   Přidání odkazu na [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].
+- Přidání odkazu na [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].
 
--   Inicializuje se mezipaměť.
+- Inicializuje se mezipaměť.
 
--   Přidává se položka v mezipaměti, který obsahuje obsah textového souboru.
+- Přidává se položka v mezipaměti, který obsahuje obsah textového souboru.
 
--   Poskytování zásadu vyřazení pro položku mezipaměti.
+- Poskytování zásadu vyřazení pro položku mezipaměti.
 
--   Monitorování cestu k souboru v mezipaměti a upozornit na instanci mezipaměti se změní na maximální počet monitorovaných položek.
+- Monitorování cestu k souboru v mezipaměti a upozornit na instanci mezipaměti se změní na maximální počet monitorovaných položek.
 
 ## <a name="prerequisites"></a>Požadavky
  K dokončení tohoto návodu budete potřebovat:
 
--   Microsoft Visual Studio 2010.
+- Microsoft Visual Studio 2010.
 
--   Textový soubor, který obsahuje malé množství textu. (Obsah textového souboru se zobrazí v okně se zprávou.) Kód popsaných v tomto návodu se předpokládá, že pracujete s následující soubor:
+- Textový soubor, který obsahuje malé množství textu. (Obsah textového souboru se zobrazí v okně se zprávou.) Kód popsaných v tomto návodu se předpokládá, že pracujete s následující soubor:
 
      `c:\cache\cacheText.txt`
 
@@ -109,9 +109,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 7. Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:
 
-    1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **přidat odkaz**.
+    1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **přidat odkaz**.
 
-    2.  Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.
+    2. Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.
 
 #### <a name="to-change-the-target-net-framework-in-a-visual-c-project"></a>Chcete-li změnit cílové rozhraní .NET Framework v projektu jazyka Visual C#
 
@@ -125,9 +125,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 4. Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:
 
-    1.  Klikněte pravým tlačítkem myši **odkazy** složku a pak klikněte na tlačítko **přidat odkaz**.
+    1. Klikněte pravým tlačítkem myši **odkazy** složku a pak klikněte na tlačítko **přidat odkaz**.
 
-    2.  Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.
+    2. Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.
 
 ## <a name="adding-a-button-to-the-wpf-window"></a>Přidání tlačítka do okna WPF
  V dalším kroku přidáte ovládací prvek button a vytvořit obslužnou rutinu události pro tlačítka `Click` událostí. Kód, který později přidáte tak, aby po kliknutí na tlačítko, jsou uložené v mezipaměti a zobrazí obsah textového souboru.
@@ -143,13 +143,13 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 ## <a name="initializing-the-cache-and-caching-an-entry"></a>Inicializace mezipaměti a ukládání do mezipaměti položku
  V dalším kroku přidáte kód k provádění následujících úloh:
 
--   Vytvoření instance třídy mezipaměti – to znamená, že jste se vytvořit novou instanci <xref:System.Runtime.Caching.MemoryCache> objektu.
+- Vytvoření instance třídy mezipaměti – to znamená, že jste se vytvořit novou instanci <xref:System.Runtime.Caching.MemoryCache> objektu.
 
--   Určete, že mezipaměť používá <xref:System.Runtime.Caching.HostFileChangeMonitor> objektů pro sledování změn v textovém souboru.
+- Určete, že mezipaměť používá <xref:System.Runtime.Caching.HostFileChangeMonitor> objektů pro sledování změn v textovém souboru.
 
--   Čtení textového souboru a jeho obsah v mezipaměti jako položka v mezipaměti.
+- Čtení textového souboru a jeho obsah v mezipaměti jako položka v mezipaměti.
 
--   Zobrazte obsah v mezipaměti textového souboru.
+- Zobrazte obsah v mezipaměti textového souboru.
 
 #### <a name="to-create-the-cache-object"></a>Chcete-li vytvořit objekt mezipaměti
 

@@ -9,11 +9,11 @@ ms.assetid: 7d1bbe8b-ed43-4e62-a5ba-d602d244f4ae
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 09f0301724e483def3bea9dfdf75a088ac09bb55
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026731"
 ---
 # <a name="xpathdocument-input-to-xsltransform"></a>Vstup XPathDocument do XslTransform
 <xref:System.Xml.XPath.XPathDocument> Je jen pro čtení mezipaměti pro zpracování dokumentů s <xref:System.Xml.Xsl.XslTransform>. Je strukturálně podobně jako na XML Document Object Model (DOM), ale je vysoce optimalizovaný pro rozšiřitelné jazyk šablony stylů transformace XSLT () zpracování a použití funkce optimalizace XPath na jazykXMLPath(XPath)datovéhomodelu<xref:System.Xml.XPath.XPathNavigator>.  

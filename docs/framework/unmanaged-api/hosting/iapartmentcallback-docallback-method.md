@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 77a2ccaf6f972fadd8396378dc7777ec4c85120d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59110224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61970050"
 ---
 # <a name="iapartmentcallbackdocallback-method"></a>IApartmentCallback::DoCallback – metoda
 Provede zadanou funkci v rámci typu apartment.  

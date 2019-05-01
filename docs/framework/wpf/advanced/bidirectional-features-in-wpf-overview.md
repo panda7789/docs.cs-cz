@@ -6,11 +6,11 @@ helpviewer_keywords:
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
 ms.openlocfilehash: 575598f48b3cfdf636be78a9de6e0c9a7fd9c208
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59079822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62032016"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrné obsah, například smíšené zleva doprava a klikněte pravým tlačítkem myši na zbývající data ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština nebo hebrejština mluvený uživatelů.  
@@ -166,11 +166,11 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
   
  Tato vlastnost určuje, jak se určuje jazykovou verzi pro čísla. Bude mít jednu ze tří <xref:System.Windows.Media.NumberCultureSource> hodnot výčtu.  
   
--   Přepsání: Číslo jazykovou verzi je <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> vlastnost.  
+- Přepsání: Číslo jazykovou verzi je <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> vlastnost.  
   
--   Text: Číslo jazyková verze představuje jazykovou verzi textu spustit. Ve značce, to může být `xml:lang`, nebo její alias `Language` vlastnosti (<xref:System.Windows.FrameworkElement.Language%2A> nebo <xref:System.Windows.FrameworkContentElement.Language%2A>). Je také na výchozí hodnoty pro třídy odvozené od <xref:System.Windows.FrameworkContentElement>. Tyto třídy zahrnují <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType>, <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, <xref:System.Windows.Documents.TableCell?displayProperty=nameWithType> a tak dále.  
+- Text: Číslo jazyková verze představuje jazykovou verzi textu spustit. Ve značce, to může být `xml:lang`, nebo její alias `Language` vlastnosti (<xref:System.Windows.FrameworkElement.Language%2A> nebo <xref:System.Windows.FrameworkContentElement.Language%2A>). Je také na výchozí hodnoty pro třídy odvozené od <xref:System.Windows.FrameworkContentElement>. Tyto třídy zahrnují <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType>, <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, <xref:System.Windows.Documents.TableCell?displayProperty=nameWithType> a tak dále.  
   
--   Uživatel: Číslo jazykovou verzi je jazykové verze aktuálního vlákna. Tato vlastnost je výchozí nastavení pro všechny dílčí <xref:System.Windows.FrameworkElement> například <xref:System.Windows.Controls.Page>, <xref:System.Windows.Window> a <xref:System.Windows.Controls.TextBlock>.  
+- Uživatel: Číslo jazykovou verzi je jazykové verze aktuálního vlákna. Tato vlastnost je výchozí nastavení pro všechny dílčí <xref:System.Windows.FrameworkElement> například <xref:System.Windows.Controls.Page>, <xref:System.Windows.Window> a <xref:System.Windows.Controls.TextBlock>.  
   
  **CultureOverride**:  
   
@@ -180,15 +180,15 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
   
  Tato vlastnost určuje typ čísla nahrazení provádět. Bude mít jednu z následujících <xref:System.Windows.Media.NumberSubstitutionMethod> hodnot výčtu.  
   
--   <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: Metoda nahrazení závisí na číslo jazykovou verzi <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> vlastnost. Toto nastavení je výchozí.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: Metoda nahrazení závisí na číslo jazykovou verzi <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> vlastnost. Toto nastavení je výchozí.  
   
--   <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Pokud číslo jazykovou verzi je arabština nebo fársíjština jazykové verze, určuje, že číslice závisí na kontextu.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Pokud číslo jazykovou verzi je arabština nebo fársíjština jazykové verze, určuje, že číslice závisí na kontextu.  
   
--   <xref:System.Windows.Media.NumberSubstitutionMethod.European>: Čísla jsou vždy vykresleny jako Evropské číslice.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.European>: Čísla jsou vždy vykresleny jako Evropské číslice.  
   
--   <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>: Čísla jsou vykreslovány pomocí národní číslic čísla jazykové verze, jak jsou určené pro jazykovou verzi <xref:System.Globalization.CultureInfo.NumberFormat%2A>.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>: Čísla jsou vykreslovány pomocí národní číslic čísla jazykové verze, jak jsou určené pro jazykovou verzi <xref:System.Globalization.CultureInfo.NumberFormat%2A>.  
   
--   <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional>: Čísla jsou vykreslovány pomocí tradiční číslic čísla jazykové verze. Pro většinu jazykové verze, to je stejný jako <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>. Ale <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> výsledkem latinky číslic pro některé Arabské jazykové verze, že tato hodnota vede Arabské čísla linky pro všechny Arabské jazykové verze.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional>: Čísla jsou vykreslovány pomocí tradiční číslic čísla jazykové verze. Pro většinu jazykové verze, to je stejný jako <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>. Ale <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> výsledkem latinky číslic pro některé Arabské jazykové verze, že tato hodnota vede Arabské čísla linky pro všechny Arabské jazykové verze.  
   
  Co znamenají tyto hodnoty pro obousměrné obsahu pro vývojáře? Ve většině případů vývojář potřebovat pouze k definování <xref:System.Windows.FlowDirection> a jazyk každý textové [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvek, například `Language="ar-SA"` a <xref:System.Windows.Media.NumberSubstitution> logiky postará o zobrazování čísel podle správné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Následující příklad ukazuje použití arabština a angličtině čísla v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci spuštěnou na platformě arabské verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)].  
   

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
 ms.openlocfilehash: 392d548a5f89c31d94af9134b8cc3a37b28d8c6c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009107"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel
 Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.  
@@ -28,21 +28,21 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu Windows Forms  
+- Vytvoření projektu Windows Forms  
   
--   Uspořádání ovládacích prvků do řádků a sloupců  
+- Uspořádání ovládacích prvků do řádků a sloupců  
   
--   Řádek nastavení a vlastnosti sloupce  
+- Řádek nastavení a vlastnosti sloupce  
   
--   Rozložení řádků a sloupců s ovládacím prvkem  
+- Rozložení řádků a sloupců s ovládacím prvkem  
   
--   Automatické zpracování přetečení  
+- Automatické zpracování přetečení  
   
--   Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů  
+- Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů  
   
--   Vložení ovládacího prvku kreslením obrysu  
+- Vložení ovládacího prvku kreslením obrysu  
   
--   Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku  
+- Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku  
   
  Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.  
   
@@ -158,25 +158,25 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
   
 #### <a name="to-demonstrate-that-multiple-controls-within-cells-are-not-permitted"></a>K předvedení toho, aby více ovládacích prvků v buňkách nejsou povolené.  
   
--   Přetáhněte <xref:System.Windows.Forms.Button> řízení z **nástrojů** do <xref:System.Windows.Forms.TableLayoutPanel> řídit a umístěte ho na jednu z buněk, obsazené. Všimněte si, že <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek neumožňuje vyřadit <xref:System.Windows.Forms.Button> ovládacího prvku do buňky obsazené.  
+- Přetáhněte <xref:System.Windows.Forms.Button> řízení z **nástrojů** do <xref:System.Windows.Forms.TableLayoutPanel> řídit a umístěte ho na jednu z buněk, obsazené. Všimněte si, že <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek neumožňuje vyřadit <xref:System.Windows.Forms.Button> ovládacího prvku do buňky obsazené.  
   
 ## <a name="swapping-controls"></a>Vzájemná záměna ovládacích prvků  
  <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje vám přepínat ovládací prvky zabírá dvě různé buňky.  
   
 #### <a name="to-swap-controls"></a>Pro ovládací prvky  
   
--   Přetáhněte jednu z <xref:System.Windows.Forms.Button> ovládací prvky ze obsazené buňky a drop do do jiné buňky obsazené. Všimněte si, že dva ovládací prvky jsou přemístěné z jedné buňky do druhé.  
+- Přetáhněte jednu z <xref:System.Windows.Forms.Button> ovládací prvky ze obsazené buňky a drop do do jiné buňky obsazené. Všimněte si, že dva ovládací prvky jsou přemístěné z jedné buňky do druhé.  
   
 ## <a name="next-steps"></a>Další kroky  
  Složitá rozložení pomocí kombinace panely rozložení a ovládacích prvků můžete dosáhnout. Návrhy pro další zkoumání patří:  
   
--   Zkuste jednu z změnit velikost <xref:System.Windows.Forms.Button> ovládacích prvků pro větší velikost a Všimněte si vliv na rozložení.  
+- Zkuste jednu z změnit velikost <xref:System.Windows.Forms.Button> ovládacích prvků pro větší velikost a Všimněte si vliv na rozložení.  
   
--   Vložit výběr více ovládacích prvků do <xref:System.Windows.Forms.TableLayoutPanel> řídit a Všimněte si, jak jsou ovládací prvky vloženy.  
+- Vložit výběr více ovládacích prvků do <xref:System.Windows.Forms.TableLayoutPanel> řídit a Všimněte si, jak jsou ovládací prvky vloženy.  
   
--   Panely rozložení může obsahovat jiné panely rozložení. Experimentu se vyřazování <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.  
+- Panely rozložení může obsahovat jiné panely rozložení. Experimentu se vyřazování <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.  
   
--   Ukotvit <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na nadřazený formulář. Změnit velikost formuláře a sledujte vliv na rozložení.  
+- Ukotvit <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na nadřazený formulář. Změnit velikost formuláře a sledujte vliv na rozložení.  
   
 ## <a name="see-also"></a>Viz také:
 

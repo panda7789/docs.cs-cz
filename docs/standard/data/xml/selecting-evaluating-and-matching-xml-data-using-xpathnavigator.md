@@ -6,11 +6,11 @@ ms.assetid: 46e059f8-4dc8-4185-9236-784be95228ed
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 03c7d3f777aa903bf75a62830b3f337ae37ce437
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026949"
 ---
 # <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a>Výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody k výběru uzly v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí dotazu XPath, vyhodnocení a podívejte se na výsledky výrazu XPath a určí, zda uzel v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> shoduje s hodnotou výraz XPath. Těchto a dalších konceptech, které se týkají výběr, vyhodnocení a odpovídající uzly v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu jsou popsány v následujících tématech.  

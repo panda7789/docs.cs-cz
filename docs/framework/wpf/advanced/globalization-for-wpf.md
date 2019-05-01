@@ -8,11 +8,11 @@ helpviewer_keywords:
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
 ms.openlocfilehash: 9a08fdeaa3517b1483af3f9958ad2db1c64648b8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59084164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62031331"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma popisuje problémy, které byste měli vědět při zápisu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací prvky, které jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.
@@ -69,59 +69,59 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
  Následující skripty jsou aktuálně podporovány:
 
--   Arabština
+- Arabština
 
--   bengálština
+- bengálština
 
--   Devanágarí
+- Devanágarí
 
--   Cyrilice
+- Cyrilice
 
--   Řečtina
+- Řečtina
 
--   Gudžarátština
+- Gudžarátština
 
--   Gurmukhi
+- Gurmukhi
 
--   Hebrejština
+- Hebrejština
 
--   Znakový skriptů
+- Znakový skriptů
 
--   Kannadština
+- Kannadština
 
--   Lao
+- Lao
 
--   Latinská
+- Latinská
 
--   Malajálamština
+- Malajálamština
 
--   Mongolština
+- Mongolština
 
--   Odia
+- Odia
 
--   Syrská
+- Syrská
 
--   Tamilština
+- Tamilština
 
--   Telugština
+- Telugština
 
--   Thaana
+- Thaana
 
--   Thajština *
+- Thajština *
 
--   Tibetské
+- Tibetské
 
  * V této verzi zobrazení a úpravy thajský textu je podporovány. dělení slov není.
 
  Následující skripty se momentálně nepodporují:
 
--   Khmer
+- Khmer
 
--   Korejské staré písmo
+- Korejské staré písmo
 
--   Myanmar
+- Myanmar
 
--   Sinhala
+- Sinhala
 
  Všechny písmo strojů podporu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] můžete zahrnout písma [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] tabulky rozložení, které umožňují písma creators Navrhnout lepší mezinárodní a vyšší kategorie typografickém písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Písma rozložení tabulky obsahují informace o piktogram náhrady, umístění glyfů, zarovnání a standardních hodnot umístění, povolení aplikací pro zpracování textu pro zlepšení rozložení textu.
 
@@ -133,9 +133,9 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 ### <a name="international-layout"></a>Mezinárodní rozložení
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje velmi pohodlný způsob, jak podporovat vodorovné, obousměrné a svislé rozložení. V jednoduchá prezentační architektura <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Tyto vzory se dají směr toku jsou:
 
--   *LeftToRight* – vodorovné rozložení pro latinka, východní Asie a tak dále.
+- *LeftToRight* – vodorovné rozložení pro latinka, východní Asie a tak dále.
 
--   *RightToLeft* – obousměrné arabština, hebrejština a tak dále.
+- *RightToLeft* – obousměrné arabština, hebrejština a tak dále.
 
 <a name="developing_localizable_apps"></a>
 ## <a name="developing-localizable-applications"></a>Vývoj lokalizovatelných aplikacích

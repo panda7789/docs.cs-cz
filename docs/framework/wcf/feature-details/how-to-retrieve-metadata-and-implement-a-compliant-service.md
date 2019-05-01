@@ -3,11 +3,11 @@ title: 'Postupy: Načítání metadat a implementace kompatibilní služby'
 ms.date: 03/30/2017
 ms.assetid: f6f3a2b9-c8aa-4b0b-832c-ec2927bf1163
 ms.openlocfilehash: edf8fe2f174202d19b075ec218f059ea9b988843
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000789"
 ---
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>Postupy: Načítání metadat a implementace kompatibilní služby
 Stejné osobě často není navrhování a implementaci služby. V prostředích, kde jsou důležitá spolupráce aplikací smlouvy můžete určená nebo je popsáno v webové služby WSDL (Description Language) a vývojář musí implementovat službu, která splňuje zadaný kontraktu. Můžete také migrovat existující službu pro Windows Communication Foundation (WCF), ale zachovat přenosový formát. Kromě toho duplexní kontrakty vyžadovat volající implementovat kontrakt zpětného volání.  
@@ -39,17 +39,17 @@ Stejné osobě často není navrhování a implementaci služby. V prostředích
   
  Následující kód ukazuje:  
   
--   Kontrakt služby rozhraní, pokud je implementována, v souladu s požadavky smlouvy (`ISampleService`).  
+- Kontrakt služby rozhraní, pokud je implementována, v souladu s požadavky smlouvy (`ISampleService`).  
   
--   Rozhraní pomocné rutiny pro použití klienta, který rozšiřuje oba rozhraní servisní smlouvy a <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> a je určen pro použití v klientské aplikaci (`ISampleServiceChannel`).  
+- Rozhraní pomocné rutiny pro použití klienta, který rozšiřuje oba rozhraní servisní smlouvy a <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> a je určen pro použití v klientské aplikaci (`ISampleServiceChannel`).  
   
--   Pomocná třída, která rozšiřuje <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> a je určen pro použití v klientské aplikaci (`SampleServiceClient`).  
+- Pomocná třída, která rozšiřuje <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> a je určen pro použití v klientské aplikaci (`SampleServiceClient`).  
   
--   Konfigurační soubor, který je generován ze služby.  
+- Konfigurační soubor, který je generován ze služby.  
   
--   Jednoduchý `ISampleService` implementaci služby.  
+- Jednoduchý `ISampleService` implementaci služby.  
   
--   Převod na straně klienta konfigurační soubor na straně služby verzi.  
+- Převod na straně klienta konfigurační soubor na straně služby verzi.  
   
 [!code-csharp[ClientProxyCodeSample#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/clientproxycodesample/cs/proxycode.cs#1)]
 

@@ -13,11 +13,11 @@ helpviewer_keywords:
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
 ms.openlocfilehash: e6214938262b987a1bae4a9ca1d5c945f8b7fe6e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62052583"
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)
 Kompilátor jazyka Visual Basic používá *odvození typu* určit typy dat místní proměnné deklarované bez `As` klauzuli. Kompilátor odvodí typ proměnné z typu výrazu inicializace. To umožňuje deklarovat proměnné bez explicitně typu, s informacemi o tom, jak je znázorněno v následujícím příkladu. V důsledku deklarace obě `num1` a `num2` jsou silného typu jako celá čísla.  

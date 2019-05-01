@@ -3,11 +3,11 @@ title: Ukázka konfigurace
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
 ms.openlocfilehash: 48f66c4110d048f714dae0943f97f3f4aa7cd419
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002238"
 ---
 # <a name="configuration-sample"></a>Ukázka konfigurace
 Tento příklad ukazuje použití konfiguračního souboru služby zjistitelnost.  
@@ -27,15 +27,15 @@ Tento příklad ukazuje použití konfiguračního souboru služby zjistitelnost
 ## <a name="service-configuration"></a>Konfigurace služby  
  Konfigurační soubor v této ukázce ukazuje dvě funkce:  
   
--   Provádění zjistitelné služby přes standardní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
+- Provádění zjistitelné služby přes standardní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
   
--   Úprava informace týkající se zjišťování pro koncový bod aplikace a úpravu některá nastavení týkající se zjišťování pro standardní koncový bod služby.  
+- Úprava informace týkající se zjišťování pro koncový bod aplikace a úpravu některá nastavení týkající se zjišťování pro standardní koncový bod služby.  
   
  Povolit zjišťování, musí provést několik změn v konfiguračním souboru aplikace pro službu:  
   
--   Koncový bod zjišťování musí být přidané do `<service>` elementu. Toto je standardní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> koncového bodu. Toto je koncový bod systému, která modul runtime přidruží ke zjišťování služby. Služba zjišťování přijímají zprávy na tomto koncovém bodu.  
+- Koncový bod zjišťování musí být přidané do `<service>` elementu. Toto je standardní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> koncového bodu. Toto je koncový bod systému, která modul runtime přidruží ke zjišťování služby. Služba zjišťování přijímají zprávy na tomto koncovém bodu.  
   
--   A `<serviceDiscovery>` chování přidáno `<serviceBehaviors>` oddílu. Tato možnost povoluje službu, která mají být zjišťované, a za běhu a používá koncový bod zjišťování pro naslouchání zjišťování již bylo zmíněno dříve `Probe` a `Resolve` zprávy. Tato služba je s těmito přídavky dvě zjistitelné na zadaný koncový bod zjišťování.  
+- A `<serviceDiscovery>` chování přidáno `<serviceBehaviors>` oddílu. Tato možnost povoluje službu, která mají být zjišťované, a za běhu a používá koncový bod zjišťování pro naslouchání zjišťování již bylo zmíněno dříve `Probe` a `Resolve` zprávy. Tato služba je s těmito přídavky dvě zjistitelné na zadaný koncový bod zjišťování.  
   
  Následující fragment kódu config ukazuje služba se koncový bod aplikace a definovaný koncový bod zjišťování:  
   

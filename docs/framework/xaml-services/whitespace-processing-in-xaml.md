@@ -8,11 +8,11 @@ helpviewer_keywords:
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
 ms.openlocfilehash: dadfab948aff73714a2cf253100f89de3b4a2d57
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62025432"
 ---
 # <a name="white-space-processing-in-xaml"></a>Zpracování prázdných znaků v jazyku XAML
 Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
@@ -41,13 +41,13 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
 ## <a name="white-space-in-inner-text-and-string-primitives"></a>Prázdný znak ve vnitřním textu a řetězce primitiv  
  Předchozí normalizace pravidla se vztahují na vnitřní text, který se nachází v rámci elementů XAML. Po normalizace procesor XAML převede všechny vnitřní text do příslušného typu následujícím způsobem:  
   
--   Pokud typ vlastnosti není kolekce, ale není přímo <xref:System.Object> typ procesoru XAML pokusí převést na daný typ pomocí jeho typ převaděče. Selhal převod způsobí chybu kompilace.  
+- Pokud typ vlastnosti není kolekce, ale není přímo <xref:System.Object> typ procesoru XAML pokusí převést na daný typ pomocí jeho typ převaděče. Selhal převod způsobí chybu kompilace.  
   
--   Pokud typ vlastnosti je kolekce a vnitřní text je souvislý (žádná síťová značky elementů), vnitřní text analyzován jako jediný <xref:System.String>. Pokud typ kolekce nelze přijmout <xref:System.String>, to také způsobí chybu kompilace.  
+- Pokud typ vlastnosti je kolekce a vnitřní text je souvislý (žádná síťová značky elementů), vnitřní text analyzován jako jediný <xref:System.String>. Pokud typ kolekce nelze přijmout <xref:System.String>, to také způsobí chybu kompilace.  
   
--   Pokud je typ proměnné <xref:System.Object>, vnitřní text analyzován jako jediný <xref:System.String>. Pokud existuje jsou intervenující značky elementů, to způsobí chybu kompilace, protože <xref:System.Object> typ znamená jeden objekt (<xref:System.String> nebo jinak).  
+- Pokud je typ proměnné <xref:System.Object>, vnitřní text analyzován jako jediný <xref:System.String>. Pokud existuje jsou intervenující značky elementů, to způsobí chybu kompilace, protože <xref:System.Object> typ znamená jeden objekt (<xref:System.String> nebo jinak).  
   
--   Pokud typ vlastnosti je kolekce a vnitřní text není souvislé, prvního podřetězce je převeden do <xref:System.String> a přidány jako položky kolekce, použité prvek je přidán jako kolekce položek, a nakonec koncové dílčí řetězec (pokud existuje) je Přidat do kolekce jako třetí <xref:System.String> položky.  
+- Pokud typ vlastnosti je kolekce a vnitřní text není souvislé, prvního podřetězce je převeden do <xref:System.String> a přidány jako položky kolekce, použité prvek je přidán jako kolekce položek, a nakonec koncové dílčí řetězec (pokud existuje) je Přidat do kolekce jako třetí <xref:System.String> položky.  
   
 <a name="preserving_whitespace"></a>   
 ## <a name="preserving-white-space"></a>Zachování prázdných znaků  

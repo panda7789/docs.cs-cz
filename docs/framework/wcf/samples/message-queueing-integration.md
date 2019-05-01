@@ -3,11 +3,11 @@ title: Integrace služby Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d2b47a0-5d51-45b5-9633-b62e064e8ea4
 ms.openlocfilehash: 63c40f2ae3bb3fef9127add033df0cf23649f797
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006587"
 ---
 # <a name="message-queueing-integration"></a>Integrace služby Řízení front zpráv
 Tato část obsahuje ukázky, které předvádějí integraci služby Řízení front zpráv a Windows Communication Foundation (WCF).  

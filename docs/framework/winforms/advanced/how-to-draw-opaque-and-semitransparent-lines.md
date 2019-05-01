@@ -11,11 +11,11 @@ helpviewer_keywords:
 - alpha blending [Windows Forms], drawing lines
 ms.assetid: 8f2508af-f495-4223-b5cc-646cbbb520eb
 ms.openlocfilehash: 7408722dc13e83828cfca3f0615a2730e3c53461
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004026"
 ---
 # <a name="how-to-draw-opaque-and-semitransparent-lines"></a>Postupy: Kreslení neprůhledných a poloprůhledných čar
 Když nakreslíte čáru, je nutné předat <xref:System.Drawing.Pen> objektu <xref:System.Drawing.Graphics.DrawLine%2A> metodu <xref:System.Drawing.Graphics> třídy. Jeden z parametrů <xref:System.Drawing.Pen.%23ctor%2A> je konstruktor <xref:System.Drawing.Color> objektu. Kreslení neprůhledných čáry, nastavte hodnota alfa barvy do 255. Nakreslení poloprůhledných čáry, nastavte na libovolnou hodnotu od 1 do 254 alfa složkou.  

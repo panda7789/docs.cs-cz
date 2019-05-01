@@ -5,11 +5,11 @@ helpviewer_keywords:
 - event logging [WCF]
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
 ms.openlocfilehash: 2dd4f82e8a100074850b21d298e91dc5dc15c59d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59175276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61999255"
 ---
 # <a name="event-logging-in-wcf"></a>Protokolování událostí ve WCF
 Windows Communication Foundation (WCF) sleduje interní události v protokolu událostí Windows.  
@@ -20,19 +20,19 @@ Windows Communication Foundation (WCF) sleduje interní události v protokolu ud
 ### <a name="application-event-log"></a>Protokol událostí aplikace  
  **Protokolu událostí aplikace** obsahuje většinu události generované modulem WCF. Většina položek znamenat, že konkrétní funkce se nepodařilo spustit pro aplikaci. Příklady:  
   
--   Protokolování a trasování zpráv: Selhání trasování a protokolování zpráv WCF zapisuje události do protokolu událostí. Nicméně ne každá chyba trasování aktivuje událost. Abyste zabránili se zcela naplněna trasování chyb protokolu událostí, implementuje WCF období nedostupnosti 10minutový pro takovou událost. To znamená, že pokud WCF selhání trasování zapíše do protokolu událostí, nebude to znovu po dobu minimálně 10 minut.  
+- Protokolování a trasování zpráv: Selhání trasování a protokolování zpráv WCF zapisuje události do protokolu událostí. Nicméně ne každá chyba trasování aktivuje událost. Abyste zabránili se zcela naplněna trasování chyb protokolu událostí, implementuje WCF období nedostupnosti 10minutový pro takovou událost. To znamená, že pokud WCF selhání trasování zapíše do protokolu událostí, nebude to znovu po dobu minimálně 10 minut.  
   
--   Sdílené naslouchací proces: Službu WCF TCP Port Sharing protokoluje událost v případě, že ji nebude možné spustit.  
+- Sdílené naslouchací proces: Službu WCF TCP Port Sharing protokoluje událost v případě, že ji nebude možné spustit.  
   
--   [!INCLUDE[infocard](../../../../../includes/infocard-md.md)]: Protokoly událostí, pokud službu nepodaří spustit.  
+- [!INCLUDE[infocard](../../../../../includes/infocard-md.md)]: Protokoly událostí, pokud službu nepodaří spustit.  
   
--   Kritické události a chyby, jako je například selhání spuštění nebo selhání  
+- Kritické události a chyby, jako je například selhání spuštění nebo selhání  
   
--   Zapnout protokolování zpráv: Protokoluje události při protokolování zpráv je zapnutá. Cílem je upozornit správce v záhlaví zpráv a úřadů, které mohou být zaznamenány citlivé informace specifické pro aplikaci.  
+- Zapnout protokolování zpráv: Protokoluje události při protokolování zpráv je zapnutá. Cílem je upozornit správce v záhlaví zpráv a úřadů, které mohou být zaznamenány citlivé informace specifické pro aplikaci.  
   
--   Zaprotokoluje událost, která při `enableLoggingKnownPII` atribut `machineSettings` elementu `machine.config` soubor. Tento atribut určuje, pokud žádné aplikaci spuštěné na počítači oprávnění k přihlášení známého identifikovatelné osobní údaje (PII).  
+- Zaprotokoluje událost, která při `enableLoggingKnownPII` atribut `machineSettings` elementu `machine.config` soubor. Tento atribut určuje, pokud žádné aplikaci spuštěné na počítači oprávnění k přihlášení známého identifikovatelné osobní údaje (PII).  
   
--   Pokud `logKnownPii` atribut buď `app.config` nebo `web.config` soubor je nastavený na `true` pro danou aplikaci k zapnutí protokolování identifikovatelné osobní údaje, ale `enableLoggingKnownPII` atribut `machineSettings` elementu `machine.config` soubor k `false`, zaprotokoluje událost, která. Kromě toho, pokud obě `logKnownPii` a `enableLoggingKnownPII` jsou nastaveny na `true`, a je zaznamenána událost. Další informace o těchto nastaveních konfigurace najdete v článku sekci zabezpečení [konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) tématu.  
+- Pokud `logKnownPii` atribut buď `app.config` nebo `web.config` soubor je nastavený na `true` pro danou aplikaci k zapnutí protokolování identifikovatelné osobní údaje, ale `enableLoggingKnownPII` atribut `machineSettings` elementu `machine.config` soubor k `false`, zaprotokoluje událost, která. Kromě toho, pokud obě `logKnownPii` a `enableLoggingKnownPII` jsou nastaveny na `true`, a je zaznamenána událost. Další informace o těchto nastaveních konfigurace najdete v článku sekci zabezpečení [konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) tématu.  
   
 ### <a name="security-event-log"></a>Protokol událostí zabezpečení  
  **Protokolu událostí zabezpečení** obsahuje události auditu zabezpečení, které jsou zapsané podle WCF.  

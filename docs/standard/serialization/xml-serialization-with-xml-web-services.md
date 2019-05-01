@@ -18,11 +18,11 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
 ms.openlocfilehash: 79cc53be0f099151db1b64190c844b1d57205a44
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018061"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
 Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML generovaných webové služby XML, můžete použít atributy uvedené v obou [atributy, aby ovládací prvek XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) k třídy, vrácené hodnoty, parametry a pole souboru použitý k vytvoření webové služby XML (.asmx). Další informace o vytváření webové služby XML, naleznete v tématu [XML webové služby pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  

@@ -1,32 +1,32 @@
 ---
-title: Výrazy jazyka C#
+title: Výrazy C#
 ms.date: 03/30/2017
 ms.assetid: 29110be7-f4e3-407e-8dbe-78102eb21115
 ms.openlocfilehash: 2ffc380d9c65ec398084bfcbeadfe0fd2c3d6720
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009809"
 ---
-# <a name="c-expressions"></a>Výrazy jazyka C#
+# <a name="c-expressions"></a>Výrazy C#
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporované ve Windows Workflow Foundation (WF). Vytvořit nové projekty pracovního postupu C# v sadě Visual Studio 2012, které se zaměřují [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití výrazy jazyka C# a projekty pracovního postupu Visual Basic používat výrazy jazyka Visual Basic. Existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] projekty pracovního postupu, které používají výrazy jazyka Visual Basic se dají migrovat do [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] bez ohledu na to, projekt jazyka a jsou podporovány. Toto téma obsahuje přehled výrazy jazyka C# v [!INCLUDE[wf1](../../../includes/wf1-md.md)].
 
 ## <a name="using-c-expressions-in-workflows"></a>Používání výrazy jazyka C# v pracovních postupech
 
--   [Použití výrazy jazyka C# v Návrháři postupu provádění](csharp-expressions.md#WFDesigner)
+- [Použití výrazy jazyka C# v Návrháři postupu provádění](csharp-expressions.md#WFDesigner)
 
-    -   [Zpětné kompatibility](csharp-expressions.md#BackwardCompat)
+    - [Zpětné kompatibility](csharp-expressions.md#BackwardCompat)
 
--   [Používání výrazy jazyka C# v pracovních postupech kódu](csharp-expressions.md#CodeWorkflows)
+- [Používání výrazy jazyka C# v pracovních postupech kódu](csharp-expressions.md#CodeWorkflows)
 
--   [Používání výrazy jazyka C# v pracovních postupech XAML](csharp-expressions.md#XamlWorkflows)
+- [Používání výrazy jazyka C# v pracovních postupech XAML](csharp-expressions.md#XamlWorkflows)
 
-    -   [Kompilované Xaml](csharp-expressions.md#CompiledXaml)
+    - [Kompilované Xaml](csharp-expressions.md#CompiledXaml)
 
-    -   [Volný Xaml](csharp-expressions.md#LooseXaml)
+    - [Volný Xaml](csharp-expressions.md#LooseXaml)
 
--   [Používat výrazy jazyka C# ve službách pracovních postupů XAMLX](csharp-expressions.md#WFServices)
+- [Používat výrazy jazyka C# ve službách pracovních postupů XAMLX](csharp-expressions.md#WFServices)
 
 ### <a name="WFDesigner"></a> Použití výrazy jazyka C# v Návrháři postupu provádění
  Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporované ve Windows Workflow Foundation (WF). Projekty pracovního postupu C# vytvořené v sadě Visual Studio 2012, které se zaměřují [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] používat výrazy jazyka C#, zatímco projekty pracovního postupu Visual Basic používat výrazy jazyka Visual Basic. K určení požadovaných výraz C#, zadejte do pole s popiskem **zadejte výraz C#**. Při výběru aktivity v návrháři, nebo na aktivitu v Návrháři postupu provádění, zobrazí se tento popisek v okně Vlastnosti. V následujícím příkladu dvě `WriteLine` aktivity jsou obsaženy v rámci `Sequence` uvnitř `NoPersistScope`.
@@ -176,22 +176,22 @@ static void CompileExpressions(DynamicActivity dynamicActivity)
 
  Existuje několik rozdílů v `CompileExpressions` přetížení, které zkompiluje výrazy jazyka C# v dynamické aktivity.
 
--   Parametr `CompileExpressions` je `DynamicActivity`.
+- Parametr `CompileExpressions` je `DynamicActivity`.
 
--   Název typu a obor názvů se načítají pomocí `DynamicActivity.Name` vlastnost.
+- Název typu a obor názvů se načítají pomocí `DynamicActivity.Name` vlastnost.
 
--   `TextExpressionCompilerSettings.ForImplementation` je nastavena na `true`.
+- `TextExpressionCompilerSettings.ForImplementation` je nastavena na `true`.
 
--   `CompiledExpressionInvoker.SetCompiledExpressionRootForImplementation` je volána místo `CompiledExpressionInvoker.SetCompiledExpressionRoot`.
+- `CompiledExpressionInvoker.SetCompiledExpressionRootForImplementation` je volána místo `CompiledExpressionInvoker.SetCompiledExpressionRoot`.
 
  Další informace o práci s výrazy v kódu, naleznete v tématu [vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md).
 
 ### <a name="XamlWorkflows"></a> Používání výrazy jazyka C# v pracovních postupech XAML
  Výrazy jazyka C# jsou podporovány v pracovních postupech XAML. Kompilované pracovních postupů XAML jsou kompilovány do typu, a dojde ke ztrátě pracovních postupů XAML načten modulem runtime a zkompilovány do strom aktivity při spuštění pracovního postupu.
 
--   [Kompilované Xaml](csharp-expressions.md#CompiledXaml)
+- [Kompilované Xaml](csharp-expressions.md#CompiledXaml)
 
--   [Volný Xaml](csharp-expressions.md#LooseXaml)
+- [Volný Xaml](csharp-expressions.md#LooseXaml)
 
 #### <a name="CompiledXaml"></a> Kompilované Xaml
  Výrazy jazyka C# jsou podporovány v kompilovaných pracovních postupech XAML, které jsou kompilovány do typu jako součást projektu jazyka C# pracovního postupu, který se zaměřuje [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]. Kompilované XAML je výchozí typ pracovního postupu pro vytváření ve Visual Studiu a projekty pracovního postupu C# vytvořené v sadě Visual Studio, které se zaměřují [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] používat výrazy jazyka C#.

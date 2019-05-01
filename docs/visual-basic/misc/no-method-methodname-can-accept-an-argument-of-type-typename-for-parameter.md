@@ -3,11 +3,11 @@ title: Žádná metoda '<methodname>'může přijmout argument typu'<typename>'p
 ms.date: 07/20/2015
 ms.assetid: 175c01dc-279c-4996-8501-d19a6671fdeb
 ms.openlocfilehash: 4f782e612a66fd7e387166347e5c2478b7a816cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61969192"
 ---
 # <a name="no-method-methodname-can-accept-an-argument-of-type-typename-for-parameter-parametername"></a>Žádná metoda '\<methodname >' může přijmout argument typu '\<typename >' parametru '\<parametername >'
 Volání metody obsahuje argument typu, který není platný.  

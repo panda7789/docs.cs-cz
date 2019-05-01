@@ -6,11 +6,11 @@ helpviewer_keywords:
 - COM interop [Visual Basic], in Visual Basic
 ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
 ms.openlocfilehash: dfd256fa7ccd8f089fab6eb1d42579deb2c4a64d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44183168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62022412"
 ---
 # <a name="com-interop-visual-basic"></a>Zprostředkovatel komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje vystavit funkčnost pro jiné komponenty a k hostování aplikací. Většina dnešních softwaru zahrnuje objekty modelu COM. Přestože sestavení rozhraní .NET jsou nejlepší volbou pro nové aplikace, může čas od času musíte použít objekty modelu COM. Tato část popisuje některé problémy spojené s vytváření a používání objektů COM pomocí jazyka Visual Basic.  
@@ -19,7 +19,7 @@ Modelu COM (Component Object) umožňuje vystavit funkčnost pro jiné komponent
  [Představení zprostředkovatele komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
  Poskytuje přehled o interoperabilita modelů COM.  
   
- [Postupy: odkaz na objekty COM z jazyka Visual Basic](../../../visual-basic/programming-guide/com-interop/how-to-reference-com-objects.md)  
+ [Postupy: Objekty odkaz modelu COM z jazyka Visual Basic](../../../visual-basic/programming-guide/com-interop/how-to-reference-com-objects.md)  
  Popisuje, jak přidat odkazy na objekty modelu COM, které mají knihovny typů.  
   
  [Postupy: Práce s ovládacími prvky ActiveX](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
@@ -31,7 +31,7 @@ Modelu COM (Component Object) umožňuje vystavit funkčnost pro jiné komponent
  [Postupy: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/how-to-call-windows-apis.md)  
  Ukazuje, jak definovat a volat `MessageBox` funkce v User32.dll.  
   
- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [Postupy: Volání funkce Windows, která přebírá typy bez znaménka](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
  Ukazuje, jak volat funkci Windows, která má parametr typu bez znaménka.  
   
  [Návod: Vytváření objektů COM pomocí jazyka Visual Basic](../../../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  

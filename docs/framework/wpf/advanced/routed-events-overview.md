@@ -16,11 +16,11 @@ helpviewer_keywords:
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
 ms.openlocfilehash: a6baf073e25635f0a6dd666d681d8bc641128ea0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982357"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrovaných událostí, popisuje, jak směrované události jsou směrovány stromové struktuře prvků, shrnuje, jak zpracování směrované události a seznámíte s vytvořením vlastní směrované události.
@@ -86,11 +86,11 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
 ## <a name="routing-strategies"></a>Strategie směrování  
  Směrování událostí, použijte jednu z tři strategie směrování:  
   
--   **Šíření:** Obslužné rutiny událostí u zdroje události jsou vyvolány. Směrované události následně přesměruje do po sobě jdoucích nadřazených prvků, dokud nebude dosaženo kořenový prvek stromu. Většina směrovaných událostí pomocí šíření strategie směrování. Šíření směrovaných událostí se obecně používají k hlášení změn vstupu nebo stav z různých ovládacích prvků nebo další prvky uživatelského rozhraní.  
+- **Šíření:** Obslužné rutiny událostí u zdroje události jsou vyvolány. Směrované události následně přesměruje do po sobě jdoucích nadřazených prvků, dokud nebude dosaženo kořenový prvek stromu. Většina směrovaných událostí pomocí šíření strategie směrování. Šíření směrovaných událostí se obecně používají k hlášení změn vstupu nebo stav z různých ovládacích prvků nebo další prvky uživatelského rozhraní.  
   
--   **S přímým přístupem:** Pouze zdroj elementu samotného je příležitost k vyvolání obslužných rutin v odpovědi. To je obdobou "směrování", který [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] používá pro události. Ale na rozdíl od standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události, směrovat směrovaných událostí podporu zpracování třídy (třídy zpracování je vysvětleno v následující části) a mohou být využívána <xref:System.Windows.EventSetter> a <xref:System.Windows.EventTrigger>.  
+- **S přímým přístupem:** Pouze zdroj elementu samotného je příležitost k vyvolání obslužných rutin v odpovědi. To je obdobou "směrování", který [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] používá pro události. Ale na rozdíl od standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události, směrovat směrovaných událostí podporu zpracování třídy (třídy zpracování je vysvětleno v následující části) a mohou být využívána <xref:System.Windows.EventSetter> a <xref:System.Windows.EventTrigger>.  
   
--   **Tunelové propojení:** Na začátku jsou vyvolány obslužných rutin událostí v kořenovém elementu stromu. Směrované události přenáší potom směrovat přes po sobě následujících podřízených elementů na trase směrem k uzlu elementu, který je zdrojem směrovaných událostí (prvku, který vyvolal směrované události). Tunelového propojení směrované události jsou často použít nebo zpracovávány jako součást kompozice pro ovládací prvek tak, aby události z složené částí lze záměrně potlačeno nebo nahrazuje události, které jsou specifické pro úplnou kontrolu. Vstupní události podle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] často pocházejí implementovaná jako dvojice šíření a tunelové propojení. Události tunelového propojení se také někdy označovány jako události ve verzi Preview, z důvodu zásady vytváření názvů, který se používá pro dvojice.  
+- **Tunelové propojení:** Na začátku jsou vyvolány obslužných rutin událostí v kořenovém elementu stromu. Směrované události přenáší potom směrovat přes po sobě následujících podřízených elementů na trase směrem k uzlu elementu, který je zdrojem směrovaných událostí (prvku, který vyvolal směrované události). Tunelového propojení směrované události jsou často použít nebo zpracovávány jako součást kompozice pro ovládací prvek tak, aby události z složené částí lze záměrně potlačeno nebo nahrazuje události, které jsou specifické pro úplnou kontrolu. Vstupní události podle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] často pocházejí implementovaná jako dvojice šíření a tunelové propojení. Události tunelového propojení se také někdy označovány jako události ve verzi Preview, z důvodu zásady vytváření názvů, který se používá pro dvojice.  
   
 <a name="why_use"></a>   
 ## <a name="why-use-routed-events"></a>Proč použití směrovaných událostí?  
@@ -104,9 +104,9 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Než směrování aspekt existují dva další důvody tohoto každá [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události může být implementovaný jako směrovaných událostí místo standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] událostí. Při implementaci vlastních událostí, můžete také zvážit tyto zásady:  
   
--   Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] styly a šablony funkce, jako <xref:System.Windows.EventSetter> a <xref:System.Windows.EventTrigger> vyžadují odkazované událostí jako směrovaných událostí. Jedná se o scénář identifikátor událost již bylo zmíněno dříve.  
+- Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] styly a šablony funkce, jako <xref:System.Windows.EventSetter> a <xref:System.Windows.EventTrigger> vyžadují odkazované událostí jako směrovaných událostí. Jedná se o scénář identifikátor událost již bylo zmíněno dříve.  
   
--   Směrované události podporovat třídu zpracování mechanismus, kterým třídy můžete zadat statické metody, které se mají zpracovat směrovaných událostí, než k nim mít přístup všechny registrované instance obslužné rutiny. To je velmi užitečné ovládacího prvku návrhu, protože vaše třída může vynutit chování třídy založený na událostech, které nelze potlačit omylem zpracování události v instanci.  
+- Směrované události podporovat třídu zpracování mechanismus, kterým třídy můžete zadat statické metody, které se mají zpracovat směrovaných událostí, než k nim mít přístup všechny registrované instance obslužné rutiny. To je velmi užitečné ovládacího prvku návrhu, protože vaše třída může vynutit chování třídy založený na událostech, které nelze potlačit omylem zpracování události v instanci.  
   
  Každý z výše uvedených aspekty jsou popsány v samostatných oddílech tohoto tématu.  
   
@@ -147,21 +147,21 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Existuje ale "handledEventsToo" mechanismus, kterým naslouchacích procesů se ještě může spustit obslužných rutin v reakci na směrovaných událostí kde <xref:System.Windows.RoutedEventArgs.Handled%2A> je `true` v datech události. Jinými slovy směrování událostí není skutečně zastavená označením data události, která je zpracována. Mechanismus handledEventsToo můžete použít pouze v kódu nebo <xref:System.Windows.EventSetter>:  
   
--   V kódu namísto pomocí syntaxe události specifické pro jazyk, který funguje u obecných [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události, zavolejte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] metoda <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> přidat obslužnou rutinu. Zadejte hodnotu `handledEventsToo` jako `true`.  
+- V kódu namísto pomocí syntaxe události specifické pro jazyk, který funguje u obecných [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události, zavolejte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] metoda <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> přidat obslužnou rutinu. Zadejte hodnotu `handledEventsToo` jako `true`.  
   
--   V <xref:System.Windows.EventSetter>, nastavte <xref:System.Windows.EventSetter.HandledEventsToo%2A> atribut `true`.  
+- V <xref:System.Windows.EventSetter>, nastavte <xref:System.Windows.EventSetter.HandledEventsToo%2A> atribut `true`.  
   
  Kromě chování, které <xref:System.Windows.RoutedEventArgs.Handled%2A> stavu vytvoří ve směrovaných událostí konceptu <xref:System.Windows.RoutedEventArgs.Handled%2A> má vliv jak by měl Navrhněte svou aplikaci a napsat kód pro obslužnou rutinu události. Můžete pohodlným <xref:System.Windows.RoutedEventArgs.Handled%2A> jako jednoduchý protokol, který je zveřejněný prostřednictvím směrovaných událostí. Přesně, jak používáte tento protokol je až vás, ale návrh koncepční informace o hodnotu <xref:System.Windows.RoutedEventArgs.Handled%2A> je určena pro použití vypadá takto:  
   
--   Pokud směrované události označení jako zpracované, následně nemusí zpracovávat jinými prvky této trase.  
+- Pokud směrované události označení jako zpracované, následně nemusí zpracovávat jinými prvky této trase.  
   
--   Pokud směrované události není označen jako zpracované, pak jiných naslouchacích procesů, které byly dříve na trase zvolili buď nechcete zaregistrovat obslužnou rutinu nebo obslužné rutiny, které byly registrované zvolili nechcete pracovat s daty události a nastavte <xref:System.Windows.RoutedEventArgs.Handled%2A> k `true`. (Nebo, je samozřejmě možné, že aktuální naslouchací proces je první bod v postupu). Obslužné rutiny na aktuální naslouchací proces teď mají tři možné kurzy akce:  
+- Pokud směrované události není označen jako zpracované, pak jiných naslouchacích procesů, které byly dříve na trase zvolili buď nechcete zaregistrovat obslužnou rutinu nebo obslužné rutiny, které byly registrované zvolili nechcete pracovat s daty události a nastavte <xref:System.Windows.RoutedEventArgs.Handled%2A> k `true`. (Nebo, je samozřejmě možné, že aktuální naslouchací proces je první bod v postupu). Obslužné rutiny na aktuální naslouchací proces teď mají tři možné kurzy akce:  
   
-    -   Neprovádět žádnou akci vůbec; událost zůstává neošetřená a události směruje do další naslouchacího procesu.  
+    - Neprovádět žádnou akci vůbec; událost zůstává neošetřená a události směruje do další naslouchacího procesu.  
   
-    -   Spouštění kódu v reakci na událost, ale rozhodnout, že provedená akce nebyla dostatečně velké na to, aby fungovala jako zpracované označení události. Směrování událostí k dalším naslouchací proces.  
+    - Spouštění kódu v reakci na událost, ale rozhodnout, že provedená akce nebyla dostatečně velké na to, aby fungovala jako zpracované označení události. Směrování událostí k dalším naslouchací proces.  
   
-    -   Spouštění kódu v reakci na událost. Označení jako zpracované události data předaná do obslužné rutiny, protože byla provedená akce považovány za dostatečně velké na to, aby fungovala označení jako zpracované události. Událost stále směruje na další naslouchací proces, ale s <xref:System.Windows.RoutedEventArgs.Handled%2A> = `true` v jeho data událostí, takže pouze `handledEventsToo` naslouchacích procesů příležitost k vyvolání další obslužné rutiny.  
+    - Spouštění kódu v reakci na událost. Označení jako zpracované události data předaná do obslužné rutiny, protože byla provedená akce považovány za dostatečně velké na to, aby fungovala označení jako zpracované události. Událost stále směruje na další naslouchací proces, ale s <xref:System.Windows.RoutedEventArgs.Handled%2A> = `true` v jeho data událostí, takže pouze `handledEventsToo` naslouchacích procesů příležitost k vyvolání další obslužné rutiny.  
   
  Tento návrh koncepční je posíleno chování směrování již bylo zmíněno dříve: je obtížnější (i když pořád v kódu nebo styly) připojit obslužné rutiny pro směrované události, které jsou vyvolány i v případě, že předchozí obslužnou rutinou na trase již nastaven <xref:System.Windows.RoutedEventArgs.Handled%2A>k `true`.  
   

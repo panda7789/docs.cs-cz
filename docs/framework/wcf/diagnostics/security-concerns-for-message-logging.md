@@ -3,11 +3,11 @@ title: Zajištění zabezpečení pro protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
 ms.openlocfilehash: 372449c816f32ee30b89bf4ba2e46f82c56b3228
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61998150"
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokolů zpráv, jakož i události generované modulem protokolování zpráv.  
@@ -21,11 +21,11 @@ Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokol
   
  Následující tipy vám mohou pomoci při zabránit neúmyslnému zveřejnění obsahu souboru protokolu:  
   
--   Ujistěte se, že v protokolu, které soubory jsou chráněné pomocí řízení přístupu uvádí (ACL) ve webového hostitele i scénáře hostování na vlastním serveru.  
+- Ujistěte se, že v protokolu, které soubory jsou chráněné pomocí řízení přístupu uvádí (ACL) ve webového hostitele i scénáře hostování na vlastním serveru.  
   
--   Zvolte příponu souboru, která nelze zpracovat v snadno pomocí nějaké webové žádosti. Například přípona souboru .xml není bezpečná volba. Příručka věnovaná Internetové informační služby (IIS) Chcete-li zobrazit seznam rozšíření, která se dají obsluhovat, můžete zkontrolovat.  
+- Zvolte příponu souboru, která nelze zpracovat v snadno pomocí nějaké webové žádosti. Například přípona souboru .xml není bezpečná volba. Příručka věnovaná Internetové informační služby (IIS) Chcete-li zobrazit seznam rozšíření, která se dají obsluhovat, můžete zkontrolovat.  
   
--   Zadejte absolutní cestu k umístění souboru protokolu, který by měla být mimo hostitele vroot veřejné složky webu tak, aby přistupuje pomocí webového prohlížeče třetí strana.  
+- Zadejte absolutní cestu k umístění souboru protokolu, který by měla být mimo hostitele vroot veřejné složky webu tak, aby přistupuje pomocí webového prohlížeče třetí strana.  
   
  Ve výchozím nastavení klíče a identifikovatelné osobní údaje (PII) jako je například uživatelské jméno a heslo nejsou protokolovány v trasování a nezpůsobuje protokolování zpráv. Správce počítače, ale můžete použít `enableLoggingKnownPII` atribut `machineSettings` element tak, aby povolovala aplikace spuštěné na počítači pro přihlášení známého identifikovatelné osobní údaje (PII) v souboru Machine.config. Následující konfigurace ukazuje, jak to udělat:  
   
@@ -99,13 +99,13 @@ Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokol
 ## <a name="events-triggered-by-message-logging"></a>Události aktivované protokolování zpráv  
  Následující seznam obsahuje všechny události, protože ho vygeneroval protokolování zpráv.  
   
--   Přihlášení se zobrazí zpráva: Tato událost je vygenerován při protokolování zpráv je povolená v konfiguraci nebo prostřednictvím rozhraní WMI. Obsah události je "zprávy bylo zapnuto protokolování. Citlivá informace může být přihlášena v podobě prostého textu, i v případě, že byly šifrované na lince, například zpráv."  
+- Přihlášení se zobrazí zpráva: Tato událost je vygenerován při protokolování zpráv je povolená v konfiguraci nebo prostřednictvím rozhraní WMI. Obsah události je "zprávy bylo zapnuto protokolování. Citlivá informace může být přihlášena v podobě prostého textu, i v případě, že byly šifrované na lince, například zpráv."  
   
--   Zpráva o odhlášení: Tato událost je vygenerován při protokolování zpráv je zakázán prostřednictvím rozhraní WMI. Obsah události je "Zpráva protokolování vypnuté."  
+- Zpráva o odhlášení: Tato událost je vygenerován při protokolování zpráv je zakázán prostřednictvím rozhraní WMI. Obsah události je "Zpráva protokolování vypnuté."  
   
--   Přihlášení známého PII: Tato událost je vygenerován, pokud je povoleno přihlášení známého PII. K tomu dojde při `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `true`a `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`.  
+- Přihlášení známého PII: Tato událost je vygenerován, pokud je povoleno přihlášení známého PII. K tomu dojde při `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `true`a `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`.  
   
--   Přihlášení známého PII není povoleno: Tato událost je vygenerován při přihlášení známého PII není povoleno. K tomu dojde při `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`, ale `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `false`. Není vyvolána žádná výjimka.  
+- Přihlášení známého PII není povoleno: Tato událost je vygenerován při přihlášení známého PII není povoleno. K tomu dojde při `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`, ale `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `false`. Není vyvolána žádná výjimka.  
   
  Tyto události můžete zobrazit v nástroji Prohlížeč událostí, který je součástí Windows. Další informace najdete v části [protokolování událostí](../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   

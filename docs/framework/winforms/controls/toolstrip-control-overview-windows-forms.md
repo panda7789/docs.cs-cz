@@ -10,11 +10,11 @@ helpviewer_keywords:
 - what's new [Windows Forms], toolbars
 ms.assetid: 81d067ed-297c-4dad-90de-1bcac15336ec
 ms.openlocfilehash: 3e532b040d3c7859220b7f73958b63e7208b988c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59144570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62009523"
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho přidružené třídy poskytují běžné rámec pro kombinování prvky uživatelského rozhraní na panely nástrojů, stavovém řádku a nabídky. <xref:System.Windows.Forms.ToolStrip> ovládací prvky nabízejí celou řadu možností návrhu, který zahrnuje aktivace na místě a úpravy, vlastní rozložení a rafting, což je schopnost panely nástrojů sdílet místa na vodorovný nebo svislý.  
@@ -24,19 +24,19 @@ Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho p�
 ## <a name="features-of-the-toolstrip-controls"></a>Funkce ovládacích prvků ToolStrip  
  Použití <xref:System.Windows.Forms.ToolStrip> ovládacího prvku:  
   
--   K dispozici běžného uživatelského rozhraní napříč kontejnery.  
+- K dispozici běžného uživatelského rozhraní napříč kontejnery.  
   
--   Vytvářejte snadno přizpůsobená, běžně proces panely nástrojů, které podporují rozšířené funkce uživatelského rozhraní a rozložení, jako je například ukotvení, raftingu, tlačítka pomocí textu a obrázků, rozevíracích tlačítek a ovládací prvky, přetečení tlačítka a změny pořadí za běhu <xref:System.Windows.Forms.ToolStrip> položky.  
+- Vytvářejte snadno přizpůsobená, běžně proces panely nástrojů, které podporují rozšířené funkce uživatelského rozhraní a rozložení, jako je například ukotvení, raftingu, tlačítka pomocí textu a obrázků, rozevíracích tlačítek a ovládací prvky, přetečení tlačítka a změny pořadí za běhu <xref:System.Windows.Forms.ToolStrip> položky.  
   
--   Podpora přetečení a také přeuspořádání položek za běhu. Funkce přetečení Přesune položky do rozevírací nabídky a není dostatek místa pro zobrazení v <xref:System.Windows.Forms.ToolStrip>.  
+- Podpora přetečení a také přeuspořádání položek za běhu. Funkce přetečení Přesune položky do rozevírací nabídky a není dostatek místa pro zobrazení v <xref:System.Windows.Forms.ToolStrip>.  
   
--   Podpora typické vzhled a chování operačního systému prostřednictvím společného modelu vykreslování.  
+- Podpora typické vzhled a chování operačního systému prostřednictvím společného modelu vykreslování.  
   
--   Zpracování událostí konzistentní pro všechny kontejnery a upravovat položky, stejně jako zpracování událostí pro ostatní ovládací prvky.  
+- Zpracování událostí konzistentní pro všechny kontejnery a upravovat položky, stejně jako zpracování událostí pro ostatní ovládací prvky.  
   
--   Přetáhněte položky z jednoho <xref:System.Windows.Forms.ToolStrip> do jiné nebo v rámci <xref:System.Windows.Forms.ToolStrip>.  
+- Přetáhněte položky z jednoho <xref:System.Windows.Forms.ToolStrip> do jiné nebo v rámci <xref:System.Windows.Forms.ToolStrip>.  
   
--   Vytvoření ovládacích prvků rozevírací seznam a uživatel editory typů rozhraní pomocí pokročilé rozložení <xref:System.Windows.Forms.ToolStripDropDown>.  
+- Vytvoření ovládacích prvků rozevírací seznam a uživatel editory typů rozhraní pomocí pokročilé rozložení <xref:System.Windows.Forms.ToolStripDropDown>.  
   
  Použít <xref:System.Windows.Forms.ToolStripControlHost> třídu použít na další ovládací prvky <xref:System.Windows.Forms.ToolStrip> a získat <xref:System.Windows.Forms.ToolStrip> funkce pro ně.  
   
@@ -46,7 +46,7 @@ Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho p�
   
 ### <a name="important-toolstrip-members"></a>Ovládací prvek ToolStrip důležité členy  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStrip.Dock%2A>|Získá nebo nastaví které okrajem nadřazeného kontejneru <xref:System.Windows.Forms.ToolStrip> ukotven.|  
 |<xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>|Získá nebo nastaví hodnotu určující, zda jsou soukromě podle zpracovány přetahování myší a také přeuspořádání položek <xref:System.Windows.Forms.ToolStrip> třídy.|  
@@ -62,7 +62,7 @@ Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho p�
   
 ### <a name="important-toolstrip-companion-classes"></a>Třídy důležitého pomocníka ovládací prvek ToolStrip  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip>|Nahradí a přidá funkce, které <xref:System.Windows.Forms.MainMenu> třídy.|  
 |<xref:System.Windows.Forms.StatusStrip>|Nahradí a přidá funkce, které <xref:System.Windows.Forms.StatusBar> třídy.|  

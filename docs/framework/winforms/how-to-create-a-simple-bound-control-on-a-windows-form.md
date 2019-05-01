@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 ms.assetid: 3bcaded8-0f1a-4cc0-8830-f59be253bf4e
 ms.openlocfilehash: fc59e6d5e71bfc69dea0bfc5098a1fa14c97d4b6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008951"
 ---
 # <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms
 S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce z tabulky datovou sadu, můžete zobrazit v ovládacím prvku. Vám může jednoduché bind nějaká vlastnost ovládacího prvku na hodnotu data.  

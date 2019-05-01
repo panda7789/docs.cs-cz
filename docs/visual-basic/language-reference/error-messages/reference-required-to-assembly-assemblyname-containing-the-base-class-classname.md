@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30007
 ms.assetid: 5f34cf47-6c6e-4954-bd8e-d6b020b75fb7
 ms.openlocfilehash: 54848fdbd2547fe021f0386843f9666760396cb0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013774"
 ---
 # <a name="reference-required-to-assembly-assemblyname-containing-the-base-class-classname"></a>Odkaz vyžadoval sestavení '\<assemblyname >' obsahující základní třídu\<classname > "
 Odkaz vyžadoval sestavení '\<assemblyname >' obsahující základní třídu\<classname >'. Přidejte jej do projektu.  
@@ -23,7 +23,7 @@ Odkaz vyžadoval sestavení '\<assemblyname >' obsahující základní třídu\<
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zahrnout název neodkazovaná sestavení nebo knihovny DLL odkazy projektu.  
+- Zahrnout název neodkazovaná sestavení nebo knihovny DLL odkazy projektu.  
   
 ## <a name="see-also"></a>Viz také:
 

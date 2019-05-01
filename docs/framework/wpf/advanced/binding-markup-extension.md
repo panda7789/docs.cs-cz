@@ -8,11 +8,11 @@ helpviewer_keywords:
 - XAML [WPF], Binding markup extension
 ms.assetid: 83d6e2a4-1b0c-4fc8-bd96-b5e98800ab63
 ms.openlocfilehash: 3455c7ccdedb432fc05c7dc9e80f0f7509f4fa0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010680"
 ---
 # <a name="binding-markup-extension"></a>Rozšíření značek připojení
 Odloží hodnotu vlastnosti bude hodnota vázané na data, vytvoření objektu zprostředkující výraz a interpretace kontext dat, která se vztahuje k elementu a jeho vazby v době běhu.  
@@ -54,55 +54,55 @@ Odloží hodnotu vlastnosti bude hodnota vázané na data, vytvoření objektu z
   
  Některé z těchto hodnot vlastností vyžadují typy objektů, které nepodporují nativní typ převodu ze syntaxe textu v XAML a proto potřebuje – rozšíření značek nastavit jako hodnotu atributu. Zkontrolujte v části použití atributu XAML v knihovně tříd rozhraní .NET Framework pro každou vlastnost pro další informace o; řetězec pomocí syntaxe XAML atribut s nebo bez další rozšíření značek použití je v podstatě stejný jako hodnotu zadáte `Binding` výrazu, s výjimkou Neumísťujte uvozovky kolem každé `bindProp` = `value` v `Binding` výrazu.  
   
--   <xref:System.Windows.Data.BindingBase.BindingGroupName%2A>: řetězec, který identifikuje skupinu vazeb. To je poměrně Rozšířená vazba koncept; najdete odkaz na stránce <xref:System.Windows.Data.BindingBase.BindingGroupName%2A>.  
+- <xref:System.Windows.Data.BindingBase.BindingGroupName%2A>: řetězec, který identifikuje skupinu vazeb. To je poměrně Rozšířená vazba koncept; najdete odkaz na stránce <xref:System.Windows.Data.BindingBase.BindingGroupName%2A>.  
   
--   <xref:System.Windows.Data.Binding.BindsDirectlyToSource%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
+- <xref:System.Windows.Data.Binding.BindsDirectlyToSource%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
   
--   <xref:System.Windows.Data.Binding.Converter%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale k tomu vyžaduje odkaz na objekt pro hodnotu, například [– rozšíření značek StaticResource](staticresource-markup-extension.md). Hodnota v tomto případě je instance třídy vlastní převaděč.  
+- <xref:System.Windows.Data.Binding.Converter%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale k tomu vyžaduje odkaz na objekt pro hodnotu, například [– rozšíření značek StaticResource](staticresource-markup-extension.md). Hodnota v tomto případě je instance třídy vlastní převaděč.  
   
--   <xref:System.Windows.Data.Binding.ConverterCulture%2A>: nastavitelná při čekání ve výrazu jako identifikátor založené na standardech; Viz téma referenčních informací ke <xref:System.Windows.Data.Binding.ConverterCulture%2A>.  
+- <xref:System.Windows.Data.Binding.ConverterCulture%2A>: nastavitelná při čekání ve výrazu jako identifikátor založené na standardech; Viz téma referenčních informací ke <xref:System.Windows.Data.Binding.ConverterCulture%2A>.  
   
--   <xref:System.Windows.Data.Binding.ConverterParameter%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale to je závislá na typ parametru předávána. Pokud předáváte odkaz na typ hodnoty, toto použití vyžaduje odkaz na objekt, jako je například vnořený [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
+- <xref:System.Windows.Data.Binding.ConverterParameter%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale to je závislá na typ parametru předávána. Pokud předáváte odkaz na typ hodnoty, toto použití vyžaduje odkaz na objekt, jako je například vnořený [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
   
--   <xref:System.Windows.Data.Binding.ElementName%2A>: vzájemně se vylučující oproti <xref:System.Windows.Data.Binding.RelativeSource%2A> a <xref:System.Windows.Data.Binding.Source%2A>; každý z nich svázání vlastností představuje metodologie konkrétní vazby. Zobrazit [datové vazby přehled](../data/data-binding-overview.md).  
+- <xref:System.Windows.Data.Binding.ElementName%2A>: vzájemně se vylučující oproti <xref:System.Windows.Data.Binding.RelativeSource%2A> a <xref:System.Windows.Data.Binding.Source%2A>; každý z nich svázání vlastností představuje metodologie konkrétní vazby. Zobrazit [datové vazby přehled](../data/data-binding-overview.md).  
   
--   <xref:System.Windows.Data.BindingBase.FallbackValue%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale to je závislá na typu zjištění předávané hodnoty. Pokud předávání typu odkazu, vyžaduje odkaz na objekt, jako je například vnořený [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
+- <xref:System.Windows.Data.BindingBase.FallbackValue%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale to je závislá na typu zjištění předávané hodnoty. Pokud předávání typu odkazu, vyžaduje odkaz na objekt, jako je například vnořený [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
   
--   <xref:System.Windows.Data.Binding.IsAsync%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
+- <xref:System.Windows.Data.Binding.IsAsync%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
   
--   <xref:System.Windows.Data.Binding.Mode%2A>: *hodnotu* je konstantní název z <xref:System.Windows.Data.BindingMode> výčtu. Například, `{Binding Mode=OneWay}`.  
+- <xref:System.Windows.Data.Binding.Mode%2A>: *hodnotu* je konstantní název z <xref:System.Windows.Data.BindingMode> výčtu. Například, `{Binding Mode=OneWay}`.  
   
--   <xref:System.Windows.Data.Binding.NotifyOnSourceUpdated%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
+- <xref:System.Windows.Data.Binding.NotifyOnSourceUpdated%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
   
--   <xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
+- <xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
   
--   <xref:System.Windows.Data.Binding.NotifyOnValidationError%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
+- <xref:System.Windows.Data.Binding.NotifyOnValidationError%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`.  
   
--   <xref:System.Windows.Data.Binding.Path%2A>: řetězec popisující cestu do datového objektu nebo obecný objektový model. Formát poskytuje několik různých konvencí k procházení objektový model, který nemůže být dostatečně popsané v tomto tématu. Zobrazit [syntaxe PropertyPath XAML](propertypath-xaml-syntax.md).  
+- <xref:System.Windows.Data.Binding.Path%2A>: řetězec popisující cestu do datového objektu nebo obecný objektový model. Formát poskytuje několik různých konvencí k procházení objektový model, který nemůže být dostatečně popsané v tomto tématu. Zobrazit [syntaxe PropertyPath XAML](propertypath-xaml-syntax.md).  
   
--   <xref:System.Windows.Data.Binding.RelativeSource%2A>: porovnání vzájemně vylučuje s <xref:System.Windows.Data.Binding.ElementName%2A> a <xref:System.Windows.Data.Binding.Source%2A>; každý z nich svázání vlastností představuje konkrétní vazby metodologie. Zobrazit [datové vazby přehled](../data/data-binding-overview.md). Vyžaduje vnořený [rozšíření značek RelativeSource](relativesource-markupextension.md) informací o využití a zadejte hodnotu.  
+- <xref:System.Windows.Data.Binding.RelativeSource%2A>: porovnání vzájemně vylučuje s <xref:System.Windows.Data.Binding.ElementName%2A> a <xref:System.Windows.Data.Binding.Source%2A>; každý z nich svázání vlastností představuje konkrétní vazby metodologie. Zobrazit [datové vazby přehled](../data/data-binding-overview.md). Vyžaduje vnořený [rozšíření značek RelativeSource](relativesource-markupextension.md) informací o využití a zadejte hodnotu.  
   
--   <xref:System.Windows.Data.Binding.Source%2A>: vzájemně se vylučující oproti <xref:System.Windows.Data.Binding.RelativeSource%2A> a <xref:System.Windows.Data.Binding.ElementName%2A>; každý z nich svázání vlastností představuje metodologie konkrétní vazby. Zobrazit [datové vazby přehled](../data/data-binding-overview.md). Obvykle vyžaduje použití vnořeného rozšíření, [– rozšíření značek StaticResource](staticresource-markup-extension.md) , který odkazuje na zdroj dat objekt ze slovníku prostředků s klíči.  
+- <xref:System.Windows.Data.Binding.Source%2A>: vzájemně se vylučující oproti <xref:System.Windows.Data.Binding.RelativeSource%2A> a <xref:System.Windows.Data.Binding.ElementName%2A>; každý z nich svázání vlastností představuje metodologie konkrétní vazby. Zobrazit [datové vazby přehled](../data/data-binding-overview.md). Obvykle vyžaduje použití vnořeného rozšíření, [– rozšíření značek StaticResource](staticresource-markup-extension.md) , který odkazuje na zdroj dat objekt ze slovníku prostředků s klíči.  
   
--   <xref:System.Windows.Data.BindingBase.StringFormat%2A>: řetězec, který popisuje řetězec formátu konvence pro vázaným datům. To je poměrně Rozšířená vazba koncept; najdete odkaz na stránce <xref:System.Windows.Data.BindingBase.StringFormat%2A>.  
+- <xref:System.Windows.Data.BindingBase.StringFormat%2A>: řetězec, který popisuje řetězec formátu konvence pro vázaným datům. To je poměrně Rozšířená vazba koncept; najdete odkaz na stránce <xref:System.Windows.Data.BindingBase.StringFormat%2A>.  
   
--   <xref:System.Windows.Data.BindingBase.TargetNullValue%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale to je závislá na typ parametru předávána. Pokud typ odkazu pro hodnotu předávání vyžaduje odkaz na objekt, jako je například vnořený [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
+- <xref:System.Windows.Data.BindingBase.TargetNullValue%2A>: můžete nastavit jako `bindProp` = `value` řetězec ve výrazu, ale to je závislá na typ parametru předávána. Pokud typ odkazu pro hodnotu předávání vyžaduje odkaz na objekt, jako je například vnořený [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
   
--   <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>: *hodnotu* je konstantní název z <xref:System.Windows.Data.UpdateSourceTrigger> výčtu. Například, `{Binding UpdateSourceTrigger=LostFocus}`. Specifických kontrolních mechanismů můžou mít různé výchozí hodnoty pro tuto vlastnost vazby. Viz <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>.  
+- <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>: *hodnotu* je konstantní název z <xref:System.Windows.Data.UpdateSourceTrigger> výčtu. Například, `{Binding UpdateSourceTrigger=LostFocus}`. Specifických kontrolních mechanismů můžou mít různé výchozí hodnoty pro tuto vlastnost vazby. Viz <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>.  
   
--   <xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`. Viz poznámky.  
+- <xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`. Viz poznámky.  
   
--   <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`. Viz poznámky.  
+- <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>: Logická hodnota, může být buď `true` nebo `false`. Výchozí hodnota je `false`. Viz poznámky.  
   
--   <xref:System.Windows.Data.Binding.XPath%2A>: řetězec popisující cestu do XMLDOM zdroj dat XML. Zobrazit [připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).  
+- <xref:System.Windows.Data.Binding.XPath%2A>: řetězec popisující cestu do XMLDOM zdroj dat XML. Zobrazit [připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).  
   
  Toto jsou vlastnosti <xref:System.Windows.Data.Binding> , který nelze nastavit pomocí `Binding` – rozšíření značek /`{Binding}` notace výrazu.  
   
--   <xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>: Tato vlastnost očekává odkaz na implementaci zpětného volání. Zpětná volání nebo jiných metod než obslužné rutiny událostí se nedá odkazovat v syntaxe XAML.  
+- <xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>: Tato vlastnost očekává odkaz na implementaci zpětného volání. Zpětná volání nebo jiných metod než obslužné rutiny událostí se nedá odkazovat v syntaxe XAML.  
   
--   <xref:System.Windows.Data.Binding.ValidationRules%2A>: vlastnost má obecné kolekce <xref:System.Windows.Controls.ValidationRule> objekty. To může být vyjádřený jako prvek vlastnosti v <xref:System.Windows.Data.Binding> objekt elementu, ale nemá žádné snadno k dispozici techniku analýze atributu pro použití v `Binding` výrazu. Viz téma referenčních informací ke <xref:System.Windows.Data.Binding.ValidationRules%2A>.  
+- <xref:System.Windows.Data.Binding.ValidationRules%2A>: vlastnost má obecné kolekce <xref:System.Windows.Controls.ValidationRule> objekty. To může být vyjádřený jako prvek vlastnosti v <xref:System.Windows.Data.Binding> objekt elementu, ale nemá žádné snadno k dispozici techniku analýze atributu pro použití v `Binding` výrazu. Viz téma referenčních informací ke <xref:System.Windows.Data.Binding.ValidationRules%2A>.  
   
--   <xref:System.Windows.Data.Binding.XmlNamespaceManager%2A>  
+- <xref:System.Windows.Data.Binding.XmlNamespaceManager%2A>  
   
 ## <a name="remarks"></a>Poznámky  
   

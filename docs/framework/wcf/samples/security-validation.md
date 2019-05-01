@@ -3,11 +3,11 @@ title: Ověřování zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
 ms.openlocfilehash: 1ad52431d68af847d7c26a0a3bd42dbcb3ce51c0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007939"
 ---
 # <a name="security-validation"></a>Ověřování zabezpečení
 Tento příklad ukazuje, jak použít vlastní chování k ověření služby v počítači a ujistěte se, že splňují určitá kritéria. V této ukázce jsou služby ověřený vlastní chování prohledáním prostřednictvím každého koncového bodu služby a zkontroluje, zda obsahují prvky zabezpečené vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  

@@ -3,24 +3,24 @@ title: 'Postupy: Dotaz na největší soubor či soubory v adresářovém stromu
 ms.date: 07/20/2015
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
 ms.openlocfilehash: 7ba330b18020b7c3b823b70d0541cdda199aa898
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008899"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: Dotaz na největší soubor či soubory v adresářovém stromu (LINQ) (Visual Basic)
 Tento příklad ukazuje pět dotazů souvisejících s velikostí souboru v bajtech:  
   
--   Jak načíst velikost v bajtech největší soubor.  
+- Jak načíst velikost v bajtech největší soubor.  
   
--   Jak načíst velikost v bajtech nejmenší souboru.  
+- Jak načíst velikost v bajtech nejmenší souboru.  
   
--   Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor objektu z jedné nebo více složek v rámci zadané kořenové složky.  
+- Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor objektu z jedné nebo více složek v rámci zadané kořenové složky.  
   
--   Jak získávají pořadí, jako je například 10 největších souborů.  
+- Jak získávají pořadí, jako je například 10 největších souborů.  
   
--   Způsob řazení souborů do skupiny založené na jejich velikost souboru v bajtech, soubory, které jsou menší než zadaná velikost se ignoruje.  
+- Způsob řazení souborů do skupiny založené na jejich velikost souboru v bajtech, soubory, které jsou menší než zadaná velikost se ignoruje.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad obsahuje pět samostatné dotazy, které ukazují, jak zadávat dotazy na soubory a skupin, v závislosti na jejich velikost souboru v bajtech. Můžete snadno upravit tyto příklady na základní dotaz na některé jiné vlastnosti <xref:System.IO.FileInfo> objektu.  

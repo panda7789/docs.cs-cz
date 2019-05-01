@@ -10,11 +10,11 @@ helpviewer_keywords:
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
 ms.openlocfilehash: 93aaa8e21ef483fc21297e29189d86f93fbe138a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62001309"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
 Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> element komunikuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
@@ -38,13 +38,13 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 ## <a name="layout-limitations"></a>Omezení rozložení  
  Obecně platí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze škálovat a transformovat možném v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Následující seznam popisuje známých omezeních při <xref:System.Windows.Forms.Integration.WindowsFormsHost> element pokusí integrovat své prostředí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
   
--   V některých případech [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze změnit velikost nebo můžou mít velikost pouze na určité dimenze. Například [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> ovládací prvek podporuje pouze jeden výšku, které jsou definovány pomocí ovládacího prvku velikost písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dynamického rozložení, kde prvky můžete roztáhnout svisle, hostovaný <xref:System.Windows.Forms.ComboBox> ovládací prvek nebude roztáhnout podle očekávání.  
+- V některých případech [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze změnit velikost nebo můžou mít velikost pouze na určité dimenze. Například [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> ovládací prvek podporuje pouze jeden výšku, které jsou definovány pomocí ovládacího prvku velikost písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dynamického rozložení, kde prvky můžete roztáhnout svisle, hostovaný <xref:System.Windows.Forms.ComboBox> ovládací prvek nebude roztáhnout podle očekávání.  
   
--   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze otáčet nebo zešikmená. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Element vyvolává <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> událost, když je použijete transformace zkosení nebo otočení. Pokud jste ke zpracování <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> události, <xref:System.InvalidOperationException> je vyvolána.  
+- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze otáčet nebo zešikmená. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Element vyvolává <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> událost, když je použijete transformace zkosení nebo otočení. Pokud jste ke zpracování <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> události, <xref:System.InvalidOperationException> je vyvolána.  
   
--   Ve většině případů [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků nepodporují proporcionální škálování. I když bude možné škálovat celkové rozměry ovládacího prvku podřízených ovládacích prvků a komponent ovládacího prvku nemusí měnit velikost podle očekávání. Toto omezení závisí na tom, jak dobře se každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek podporuje škálování. Kromě toho už nebude možné škálovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků na velikost 0 v pixelech.  
+- Ve většině případů [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků nepodporují proporcionální škálování. I když bude možné škálovat celkové rozměry ovládacího prvku podřízených ovládacích prvků a komponent ovládacího prvku nemusí měnit velikost podle očekávání. Toto omezení závisí na tom, jak dobře se každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek podporuje škálování. Kromě toho už nebude možné škálovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků na velikost 0 v pixelech.  
   
--   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu automatického škálování, ve kterém formuláři automaticky změní velikost sebe sama a jejích ovládacích prvků na základě velikosti písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelské rozhraní, změna velikosti písma se velikost celé rozložení, i když může dynamicky velikost jednotlivých prvků.  
+- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu automatického škálování, ve kterém formuláři automaticky změní velikost sebe sama a jejích ovládacích prvků na základě velikosti písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelské rozhraní, změna velikosti písma se velikost celé rozložení, i když může dynamicky velikost jednotlivých prvků.  
   
 ### <a name="z-order"></a>Pořadí vykreslování  
  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelského rozhraní, můžete změnit pořadí vykreslování prvků překrývající se chování ovládacího prvku. Hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek vykreslen v samostatných HWND, takže je vždy vykreslován nad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy.  
@@ -94,9 +94,9 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
   
  Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost neodpovídá zadané omezení, hostované ovládací prvek nepodporuje průběžné velikosti. Například <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožňuje pouze diskrétní velikosti. Povolené velikosti pro tento ovládací prvek se skládá z celých čísel (představující počet měsíců) pro výšku a šířku. V případech, jako je například to <xref:System.Windows.Forms.Integration.WindowsFormsHost> element se chová takto:  
   
--   Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací větší velikost než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> element klipy hostovaného ovládacího prvku. Výška a šířka jsou zpracovány samostatně, takže hostovaného ovládacího prvku může být oříznut v obou směrech.  
+- Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací větší velikost než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> element klipy hostovaného ovládacího prvku. Výška a šířka jsou zpracovány samostatně, takže hostovaného ovládacího prvku může být oříznut v obou směrech.  
   
--   Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací menší než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> přijme tuto hodnotu velikosti a vrátí hodnotu, která [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
+- Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací menší než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> přijme tuto hodnotu velikosti a vrátí hodnotu, která [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
   
 ## <a name="see-also"></a>Viz také:
 

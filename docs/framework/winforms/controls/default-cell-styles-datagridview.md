@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data [Windows Forms], setting formats
 ms.assetid: fc6da49f-8942-41da-b49f-b2afc38cc656
 ms.openlocfilehash: 8939a182032cfac1beac6c1e5cb3c9de9792114c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011369"
 ---
 # <a name="how-to-set-default-cell-styles-and-data-formats-for-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Nastavení výchozích stylů buňky a datových formátů pro ovládací prvek Windows Forms DataGridView pomocí Návrháře
 <xref:System.Windows.Forms.DataGridView> Řízení umožňuje určení výchozích stylů buňky a datových formátů pro celý ovládací prvek, pro konkrétní sloupce, pro záhlaví řádků a sloupců a pro střídavé řádky k vytvoření účetní knihy efektu buňky. Ve výchozím nastavení nastavený styly sloupců a střídavé řádky se přepíšou výchozí styly nastavit pro celý ovládací prvek. Kromě toho stylů, které jste nastavili v kódu pro jednotlivé řádky a buňky přepsat výchozí styly.  

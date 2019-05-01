@@ -11,11 +11,11 @@ ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 73c745fbbdb66777b50478623d969c125f92474b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973417"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Vlastní dělicí metody pro PLINQ a TPL
 Pro paralelní zpracování operace na zdroji dat, jedním ze základních kroků je *oddílu* zdroje do několika oddílů, které může přistupovat souběžně více vláken. PLINQ a Task Parallel Library (TPL) poskytují výchozí rozdělovače, které pracují transparentně při psaní paralelního dotazu nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky. Pro pokročilejší scénáře můžete zařadit vlastní dělicí metody.  
@@ -100,25 +100,25 @@ Pro paralelní zpracování operace na zdroji dat, jedním ze základních krok�
 ### <a name="contract-for-partitioners"></a>Kontrakt pro dělicí metody  
  Při implementaci vlastního rozdělovače, postupujte podle následujících pokynů k zajištění správné interakci s PLINQ a <xref:System.Threading.Tasks.Parallel.ForEach%2A> v TPL:  
   
--   Pokud <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> je volána s argumentem nula nebo pro `partitionsCount`, throw <xref:System.ArgumentOutOfRangeException>. I když PLINQ a TPL se nikdy předat `partitionCount` rovná 0, přesto doporučujeme, aby je pomáhalo chránit před možnost.  
+- Pokud <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> je volána s argumentem nula nebo pro `partitionsCount`, throw <xref:System.ArgumentOutOfRangeException>. I když PLINQ a TPL se nikdy předat `partitionCount` rovná 0, přesto doporučujeme, aby je pomáhalo chránit před možnost.  
   
--   <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> by měla vždy vrátit `partitionsCount` počet oddílů. Pokud dělicí vyčerpá data a nelze vytvořit libovolný počet oddílů, jak si vyžádal, metoda by měla vrátit prázdný výčet pro každý zbývající oddílů. V opačném případě se vyvolá PLINQ a TPL <xref:System.InvalidOperationException>.  
+- <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> by měla vždy vrátit `partitionsCount` počet oddílů. Pokud dělicí vyčerpá data a nelze vytvořit libovolný počet oddílů, jak si vyžádal, metoda by měla vrátit prázdný výčet pro každý zbývající oddílů. V opačném případě se vyvolá PLINQ a TPL <xref:System.InvalidOperationException>.  
   
--   <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A>, <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A>, <xref:System.Collections.Concurrent.Partitioner%601.GetDynamicPartitions%2A>, a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A> nikdy by měla vrátit `null` (`Nothing` v jazyce Visual Basic). V takovém případě PLINQ / TPL vyvolá výjimku <xref:System.InvalidOperationException>.  
+- <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A>, <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A>, <xref:System.Collections.Concurrent.Partitioner%601.GetDynamicPartitions%2A>, a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A> nikdy by měla vrátit `null` (`Nothing` v jazyce Visual Basic). V takovém případě PLINQ / TPL vyvolá výjimku <xref:System.InvalidOperationException>.  
   
--   Metody, které vracejí oddíly by měla vždy vrátit oddíly, které můžete plně a jednoznačně zobrazit výčet zdroj dat. Měla by existovat žádné duplicity ve zdroji dat nebo přeskočené položky není-li konkrétně vyžadováno záměrné dělicí. Pokud se toto pravidlo nedodrží, může zamíchal pořadí výstupu.  
+- Metody, které vracejí oddíly by měla vždy vrátit oddíly, které můžete plně a jednoznačně zobrazit výčet zdroj dat. Měla by existovat žádné duplicity ve zdroji dat nebo přeskočené položky není-li konkrétně vyžadováno záměrné dělicí. Pokud se toto pravidlo nedodrží, může zamíchal pořadí výstupu.  
   
--   Následující metody getter logická musí vždy přesně vrátit následující hodnoty tak, aby není zamíchal pořadí výstupu:  
+- Následující metody getter logická musí vždy přesně vrátit následující hodnoty tak, aby není zamíchal pořadí výstupu:  
   
-    -   `KeysOrderedInEachPartition`: Každý oddíl vrátí elementy rostoucími klíče indexy.  
+    - `KeysOrderedInEachPartition`: Každý oddíl vrátí elementy rostoucími klíče indexy.  
   
-    -   `KeysOrderedAcrossPartitions`: Pro všechny oddíly, které jsou vráceny klíče indexy v oddílu *můžu* jsou vyšší než klíče indexy v oddílu *můžu*-1.  
+    - `KeysOrderedAcrossPartitions`: Pro všechny oddíly, které jsou vráceny klíče indexy v oddílu *můžu* jsou vyšší než klíče indexy v oddílu *můžu*-1.  
   
-    -   `KeysNormalized`: Všechny klíče indexy monotónně roste bez mezer, od nuly.  
+    - `KeysNormalized`: Všechny klíče indexy monotónně roste bez mezer, od nuly.  
   
--   Všechny indexy musí být jedinečný. Možná duplicitní indexy. Pokud se toto pravidlo nedodrží, může zamíchal pořadí výstupu.  
+- Všechny indexy musí být jedinečný. Možná duplicitní indexy. Pokud se toto pravidlo nedodrží, může zamíchal pořadí výstupu.  
   
--   Všechny indexy musí být nezáporná. Pokud se toto pravidlo nedodrží, PLINQ a TPL může vyvolat výjimky.  
+- Všechny indexy musí být nezáporná. Pokud se toto pravidlo nedodrží, PLINQ a TPL může vyvolat výjimky.  
   
 ## <a name="see-also"></a>Viz také:
 

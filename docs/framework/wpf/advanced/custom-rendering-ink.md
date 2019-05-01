@@ -10,26 +10,26 @@ helpviewer_keywords:
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
 ms.openlocfilehash: b41ded25bd4eb704c6f0d67c8da1c0e6643cac5b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59323717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010628"
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> Vlastností tahu vám umožní určit vzhled tah, jako je například její velikost, barvu a tvar, ale může nastat situace, které chcete přizpůsobit vzhled nad rámec co <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> povolit. Můžete chtít přizpůsobit vzhled inkoustu vykreslování v vzhled vzduchová pistole, energetika Malování a mnoho dalších účinky. Windows Presentation Foundation (WPF), umožňuje vám vlastní vykreslení inkoustu pomocí implementace vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a <xref:System.Windows.Ink.Stroke> objektu.  
   
  Toto téma obsahuje následující témata:  
   
--   [Architektura](#Architecture)  
+- [Architektura](#Architecture)  
   
--   [Implementace dynamických zobrazovací jednotky](#ImplementingADynamicRenderer)  
+- [Implementace dynamických zobrazovací jednotky](#ImplementingADynamicRenderer)  
   
--   [Implementace vlastního tahy](#ImplementingCustomStrokes)  
+- [Implementace vlastního tahy](#ImplementingCustomStrokes)  
   
--   [Implementace vlastního InkCanvas](#ImplementingACustomInkCanvas)  
+- [Implementace vlastního InkCanvas](#ImplementingACustomInkCanvas)  
   
--   [Závěr](#Conclusion)  
+- [Závěr](#Conclusion)  
   
 <a name="Architecture"></a>   
 ## <a name="architecture"></a>Architektura  
@@ -75,11 +75,11 @@ ms.locfileid: "59323717"
   
  Na vlastní vykreslení tahy <xref:System.Windows.Controls.InkCanvas> postupujte takto:  
   
--   Vytvořte třídu, která je odvozena z <xref:System.Windows.Controls.InkCanvas>.  
+- Vytvořte třídu, která je odvozena z <xref:System.Windows.Controls.InkCanvas>.  
   
--   Přiřadit upraveném <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A?displayProperty=nameWithType> vlastnost.  
+- Přiřadit upraveném <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A?displayProperty=nameWithType> vlastnost.  
   
--   Přepsat <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> metody. V této metodě odeberte původní tahu, která byla přidána k InkCanvas. Vytvořte vlastní stroke, přidejte ji do <xref:System.Windows.Controls.InkCanvas.Strokes%2A> vlastnosti a volání základní třídy s novou <xref:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> , který obsahuje vlastní stroke.  
+- Přepsat <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> metody. V této metodě odeberte původní tahu, která byla přidána k InkCanvas. Vytvořte vlastní stroke, přidejte ji do <xref:System.Windows.Controls.InkCanvas.Strokes%2A> vlastnosti a volání základní třídy s novou <xref:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> , který obsahuje vlastní stroke.  
   
  Následující C# kódu ukazuje vlastní <xref:System.Windows.Controls.InkCanvas> třídu, která používá vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a shromažďuje vlastní tahů.  
   

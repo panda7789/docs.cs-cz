@@ -16,11 +16,11 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
 ms.openlocfilehash: f3fecf521ca4a9397bacffbb084c4107af97f5b2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013930"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.StreamReader> třídy, zkontrolujte, pokud je přístupu k souboru, hledání řetězce v rámci souboru pro čtení s instancí <xref:System.IO.StreamReader> třídy a zápis do souboru pomocí <xref:System.IO.StreamWriter> třídy.  

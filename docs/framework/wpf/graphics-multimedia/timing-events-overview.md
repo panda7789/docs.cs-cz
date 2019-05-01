@@ -9,11 +9,11 @@ helpviewer_keywords:
 - timing events [WPF]
 ms.assetid: 597e3280-0867-4359-a97b-5b2f4149e350
 ms.openlocfilehash: 91e335f4d5adaa5279fb16805604f2e2848eeb8b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59167164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002388"
 ---
 # <a name="timing-events-overview"></a>Přehled událostí časování
 Toto téma popisuje, jak používat k dispozici na pěti události časování <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty.  
@@ -23,11 +23,11 @@ Toto téma popisuje, jak používat k dispozici na pěti události časování <
   
  Existuje několik způsobů animace vlastností v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
   
--   **Použití objektů scénáře** (značek a kódu): Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů můžete uspořádat a distribuovat animací na jeden nebo více objektů. Příklad najdete v tématu [animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md).  
+- **Použití objektů scénáře** (značek a kódu): Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů můžete uspořádat a distribuovat animací na jeden nebo více objektů. Příklad najdete v tématu [animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md).  
   
--   **Pomocí místní animace** (jenom kód): Můžete použít <xref:System.Windows.Media.Animation.AnimationTimeline> objekty přímo k vlastnostem, animace. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
+- **Pomocí místní animace** (jenom kód): Můžete použít <xref:System.Windows.Media.Animation.AnimationTimeline> objekty přímo k vlastnostem, animace. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
   
--   **Pomocí hodiny** (jenom kód): Můžete explicitně spravovat vytváření hodiny a distribuovat hodiny animace sami.  Příklad najdete v tématu [animace vlastnosti pomocí AnimationClock](how-to-animate-a-property-by-using-an-animationclock.md).  
+- **Pomocí hodiny** (jenom kód): Můžete explicitně spravovat vytváření hodiny a distribuovat hodiny animace sami.  Příklad najdete v tématu [animace vlastnosti pomocí AnimationClock](how-to-animate-a-property-by-using-an-animationclock.md).  
   
  Vzhledem k tomu, že lze využít v značek a kódu, příklady v tomto přehledu používají <xref:System.Windows.Media.Animation.Storyboard> objekty. Koncepty popsané však můžete použít pro jiné metody animace vlastností.  
   

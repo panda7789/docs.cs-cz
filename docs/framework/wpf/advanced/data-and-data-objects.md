@@ -10,18 +10,18 @@ helpviewer_keywords:
 - DataObject class [WPF]
 ms.assetid: 5967d557-1867-420f-a524-ae3af78402da
 ms.openlocfilehash: 9dc195ece60739cf0c137a2893c9e9150e0d4d3f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010615"
 ---
 # <a name="data-and-data-objects"></a>Data a datové objekty
 Data, která jsou přenášena jako součást operace přetažení myší se ukládají do datového objektu.  Datový objekt koncepčně, obsahuje jeden nebo více následující páry:  
   
--   <xref:System.Object> Obsahující skutečná data.  
+- <xref:System.Object> Obsahující skutečná data.  
   
--   Odpovídající identifikátor formát data.  
+- Odpovídající identifikátor formát data.  
   
  Vlastní data může obsahovat cokoli, co může být reprezentována jako základ <xref:System.Object>.  Odpovídající formát dat je řetězec nebo <xref:System.Type> , který poskytuje informace o co formátování dat probíhá.  Datové objekty podporují hostování více párů formátu data/dat; To umožňuje jednoho datového objektu poskytující data ve více formátech.  
   

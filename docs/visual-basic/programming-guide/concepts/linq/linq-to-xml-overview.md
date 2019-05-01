@@ -3,11 +3,11 @@ title: Přehled LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 502661e0-bc5d-438d-94c2-7efb63bb6fbd
 ms.openlocfilehash: 987409aab9d3d12cc3cbbebaa64da0bffcee1c8c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54504038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62021255"
 ---
 # <a name="linq-to-xml-overview-visual-basic"></a>Přehled LINQ to XML (Visual Basic)
 XML je široce přijat jako způsob, jak formátování dat v mnoha kontextech. Například můžete vyhledat XML na webu, konfigurační soubory, soubory Microsoft Office Word a databázích.  
@@ -49,19 +49,19 @@ Select item
   
  Kromě těchto [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] možnosti [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje vylepšené programovací rozhraní XML. Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete:  
   
--   Načtení XML ze souborů nebo datových proudů.  
+- Načtení XML ze souborů nebo datových proudů.  
   
--   Serializace XML pro soubory nebo datové proudy.  
+- Serializace XML pro soubory nebo datové proudy.  
   
--   Vytvoření XML od začátku pomocí funkční konstrukce.  
+- Vytvoření XML od začátku pomocí funkční konstrukce.  
   
--   Dotaz XML pomocí XPath jako osy.  
+- Dotaz XML pomocí XPath jako osy.  
   
--   Manipulace s stromu XML v paměti pomocí metody <xref:System.Xml.Linq.XContainer.Add%2A>, <xref:System.Xml.Linq.XNode.Remove%2A>, <xref:System.Xml.Linq.XNode.ReplaceWith%2A>, a <xref:System.Xml.Linq.XElement.SetValue%2A>.  
+- Manipulace s stromu XML v paměti pomocí metody <xref:System.Xml.Linq.XContainer.Add%2A>, <xref:System.Xml.Linq.XNode.Remove%2A>, <xref:System.Xml.Linq.XNode.ReplaceWith%2A>, a <xref:System.Xml.Linq.XElement.SetValue%2A>.  
   
--   Ověření pomocí XSD stromů XML.  
+- Ověření pomocí XSD stromů XML.  
   
--   Pomocí kombinace těchto funkcí transformace stromů XML z jednoho obrazce do jiné.  
+- Pomocí kombinace těchto funkcí transformace stromů XML z jednoho obrazce do jiné.  
   
 ## <a name="creating-xml-trees"></a>Vytváření stromů XML  
  IOne nejvýznamnější výhody programování s [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je, že je snadné vytváření stromů XML. Například k vytvoření malé stromu XML, můžete napsat kód následujícím způsobem:  

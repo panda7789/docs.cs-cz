@@ -7,11 +7,11 @@ helpviewer_keywords:
 - serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
 ms.openlocfilehash: 89cb36dba63dccdf7e52b7fcafbe3d9fc2fea1e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62053428"
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>Omezení serializace XamlWriter.Save
 [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> Slouží k serializaci obsahu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace jako [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Existují však některé důležité omezení v co přesně je serializována. Tato omezení a některé obecné aspekty jsou popsány v tomto tématu.  
@@ -36,8 +36,8 @@ ms.locfileid: "59113279"
 ## <a name="realistic-scenarios-for-use-of-xamlwritersave"></a>Reálné scénáře použití pro funkci XAMLWriter.Save  
  Zatímco omezení uvedená tady jsou poměrně podstatné, jsou stále několik odpovídající scénáře použití <xref:System.Windows.Markup.XamlWriter.Save%2A> pro serializaci.  
   
--   Vektor nebo grafického výstupu: Výstup vykresleného oblasti je možné reprodukovat stejné vektoru nebo grafické při znovu načten.  
+- Vektor nebo grafického výstupu: Výstup vykresleného oblasti je možné reprodukovat stejné vektoru nebo grafické při znovu načten.  
   
--   Formátovaný text a flow dokumenty: Text a všechny element formátování a element členství ve skupině v ní je zachována ve výstupu. To může být užitečné pro mechanismy, které přibližný funkce schránky.  
+- Formátovaný text a flow dokumenty: Text a všechny element formátování a element členství ve skupině v ní je zachována ve výstupu. To může být užitečné pro mechanismy, které přibližný funkce schránky.  
   
--   Zachování dat obchodních objektů: Pokud jste uložili data ve vlastních elementů, jako například [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] dat, pokud vaše obchodní objekty podle základní [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] tyto objekty obchodní pravidla, například vlastní konstruktory a převodu pro hodnoty vlastnosti podle odkazu, může být perpetuated prostřednictvím serializace.
+- Zachování dat obchodních objektů: Pokud jste uložili data ve vlastních elementů, jako například [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] dat, pokud vaše obchodní objekty podle základní [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] tyto objekty obchodní pravidla, například vlastní konstruktory a převodu pro hodnoty vlastnosti podle odkazu, může být perpetuated prostřednictvím serializace.

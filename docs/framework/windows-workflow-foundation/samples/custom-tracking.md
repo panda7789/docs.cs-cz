@@ -3,11 +3,11 @@ title: Vlastní sledování
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
 ms.openlocfilehash: 7e275af046013dcd76cb61c25ace1d96fd7e4b93
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005358"
 ---
 # <a name="custom-tracking"></a>Vlastní sledování
 Tento příklad znázorňuje způsob vytvoření vlastního účastníka sledování a zapisovat obsah data sledování do konzoly. Kromě toho Ukázka předvádí, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty vyplní s uživatelem definovaná data. Filtry účastníka sledování pomocí konzoly <xref:System.Activities.Tracking.TrackingRecord> objekty, protože ho vygeneroval pracovního postupu pomocí profilu sledování objekt vytvořený v kódu.
@@ -110,9 +110,9 @@ invoker.Extensions.Add(customTrackingParticipant);
 ### <a name="emitting-custom-tracking-records"></a>Generování vlastní záznamy sledování
  Tento příklad také ukazuje možnost generování <xref:System.Activities.Tracking.CustomTrackingRecord> objekty z vlastního pracovního postupu aktivity:
 
--   <xref:System.Activities.Tracking.CustomTrackingRecord> Objekty jsou vytvořeny a naplněny s uživatelem definované datové části, který je žádoucí, aby měl vyzařovaného se záznamem.
+- <xref:System.Activities.Tracking.CustomTrackingRecord> Objekty jsou vytvořeny a naplněny s uživatelem definované datové části, který je žádoucí, aby měl vyzařovaného se záznamem.
 
--   <xref:System.Activities.Tracking.CustomTrackingRecord> Je vygenerován pomocí volání metody sledování <xref:System.Activities.ActivityContext>.
+- <xref:System.Activities.Tracking.CustomTrackingRecord> Je vygenerován pomocí volání metody sledování <xref:System.Activities.ActivityContext>.
 
  Následující příklad ukazuje, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objektů v rámci vlastní aktivity.
 

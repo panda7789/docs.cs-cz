@@ -10,11 +10,11 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding list items
 ms.assetid: 1b35a80a-edd8-495f-a807-a28c4aae52c6
 ms.openlocfilehash: 8a97d73b9b2c46d02ae0794ad66b20a04db58af6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011122"
 ---
 # <a name="how-to-add-and-remove-items-with-the-windows-forms-listview-control"></a>Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView
 Proces přidání položky do formulářů Windows <xref:System.Windows.Forms.ListView> ovládací prvek sestává především z zadáním položky a přiřazení vlastnosti k němu. Přidávání a odebírání položek seznamu lze provést kdykoli.  

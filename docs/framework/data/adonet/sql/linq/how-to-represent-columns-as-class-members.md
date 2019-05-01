@@ -6,18 +6,18 @@ dev_langs:
 - vb
 ms.assetid: 7ab28021-4d15-4d9c-bf2e-6ccc0daa7d1a
 ms.openlocfilehash: 74966dd1661faa43df334987b2e3b0e84eff3446
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62037854"
 ---
 # <a name="how-to-represent-columns-as-class-members"></a>Postupy: Znázornění sloupců jako členů tříd
 Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute> atributu na pole nebo vlastnost přidružit sloupce databáze.  
   
 ### <a name="to-map-a-field-or-property-to-a-database-column"></a>Mapovat pole nebo vlastnost ke sloupci databáze  
   
--   Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut deklaraci vlastnosti nebo pole.  
+- Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut deklaraci vlastnosti nebo pole.  
   
 ## <a name="example"></a>Příklad  
  Následující map kódu `CustomerID` pole `Customer` třídu `CustomerID` sloupec v `Customers` databázové tabulky.  

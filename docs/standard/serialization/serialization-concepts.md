@@ -3,11 +3,11 @@ title: Koncepty serializace
 ms.date: 08/07/2017
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
 ms.openlocfilehash: 649c4475aa8dcfc657b7591a0068dbfa4af918ca
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62018109"
 ---
 # <a name="serialization-concepts"></a>Koncepty serializace
 Proč byste se měli použít serializaci? Dva nejdůležitější důvody jsou k uchování stav objektu do úložiště média, takže přesná kopie může být později znovu vytvořena a posílat objektu podle hodnoty od jeden aplikační domény do druhé. Můžete například serializace slouží k uložení stavu relace technologie ASP.NET a objekty zkopírovat do schránky ve Windows Forms. Také se používá ve vzdálené komunikace předat objekty podle hodnoty z domény jednu aplikaci do jiného.

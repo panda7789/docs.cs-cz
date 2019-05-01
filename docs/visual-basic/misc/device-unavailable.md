@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID68
 ms.assetid: 9a89beda-140e-4b32-8d0a-2dc598ef279a
 ms.openlocfilehash: 2738ce692f5eb2df433cd5cb1a5e1ae4a5968cab
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61970076"
 ---
 # <a name="device-unavailable"></a>Zařízení není k dispozici
 Ztratili jste připojení k síti, nebo, který se pokoušíte získat přístup k zařízení je offline nebo neexistuje.  

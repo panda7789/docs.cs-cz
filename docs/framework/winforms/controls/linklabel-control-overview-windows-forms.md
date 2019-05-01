@@ -9,11 +9,11 @@ helpviewer_keywords:
 - LinkLabel control [Windows Forms], about LinkLabel control
 ms.assetid: 9e248549-10ca-43a3-bb5e-60f583d369f1
 ms.openlocfilehash: 541467b0f1285d372e5f6d502d9d8f28c8c6333e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62012955"
 ---
 # <a name="linklabel-control-overview-windows-forms"></a>LinkLabel – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládací prvek slouží k přidání webových odkazů do aplikace Windows Forms. Můžete použít <xref:System.Windows.Forms.LinkLabel> ovládací prvek pro všechno, co se vám <xref:System.Windows.Forms.Label> ovládací prvek pro; můžete také nastavit část textu jako odkaz na souboru, složky nebo webové stránky.  

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f34a2fe2bb1f92e75f77c086b03776ec59495600
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61995745"
 ---
 # <a name="icordebugfunctiongetilcode-method"></a>ICorDebugFunction::GetILCode – metoda
 Získá instanci ICorDebugCode, který představuje kód Microsoft intermediate language (MSIL) asociovaném s tímto objektem ICorDebugFunction.  

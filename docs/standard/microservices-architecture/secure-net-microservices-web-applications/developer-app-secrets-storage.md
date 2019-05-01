@@ -1,15 +1,15 @@
 ---
-title: Bezpečné ukládání tajných kódů aplikace během vývoje.
+title: Bezpečné ukládání tajných kódů aplikace během vývoje
 description: Zabezpečení v Mikroslužby .NET a webové aplikace - není ukládejte tajné klíče aplikace, jako jsou hesla, připojovací řetězce nebo klíče rozhraní API ve správě zdrojového kódu pochopit možnosti, které můžete použít v ASP.NET Core, zejména je nutné pochopit, jak zpracovávat " tajné kódy".
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
 ms.openlocfilehash: fe8e7fa11c9a4f4cae133c2e09f9e4b4dd40a546
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54361986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62019422"
 ---
 # <a name="store-application-secrets-safely-during-development"></a>Bezpečně Store tajných kódů aplikace během vývoje.
 

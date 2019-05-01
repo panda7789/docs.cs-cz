@@ -5,11 +5,11 @@ helpviewer_keywords:
 - rounting [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
 ms.openlocfilehash: fa5d588211cfe40cde9e9db3161a931e3287cd39
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991048"
 ---
 # <a name="routing-scenarios"></a>Scénáře směrování
 Směrovací služba je vysoce přizpůsobitelné, může být obtížné navrhnout efektivní logiku směrování při vytváření nové konfigurace od začátku.  Existují však několik běžných scénářů, které následují většina konfigurací směrovací služby. Zatímco tyto scénáře se nemusí vztahovat přímo na konkrétní konfiguraci, pochopení, jak lze konfigurovat směrovací služba pro zpracování těchto scénářů bude pomoc při Princip služby směrování.  
@@ -49,9 +49,9 @@ Směrovací služba je vysoce přizpůsobitelné, může být obtížné navrhno
 ### <a name="multicast"></a>Vícesměrové vysílání  
  Při směrování zpráv, obvykle můžete směrování každou zprávu do koncového bodu konkrétní cílové.  Však může čas od času potřeba směrovat kopie zprávy na víc cílové koncové body. Chcete-li provést směrování vícesměrového vysílání, musí být splněné následující podmínky:  
   
--   Tvar kanálu nesmí být požadavek odpověď (i když může být jednosměrné nebo obousměrné,) vzhledem k tomu, že požadavek odpověď, určuje, že pouze jednu odpověď lze přijímat pomocí klientské aplikace v odpovědi na požadavek.  
+- Tvar kanálu nesmí být požadavek odpověď (i když může být jednosměrné nebo obousměrné,) vzhledem k tomu, že požadavek odpověď, určuje, že pouze jednu odpověď lze přijímat pomocí klientské aplikace v odpovědi na požadavek.  
   
--   Několik filtrů musí vracet **true** při vyhodnocování zprávy.  
+- Několik filtrů musí vracet **true** při vyhodnocování zprávy.  
   
  Pokud jsou tyto podmínky splněny, každý cílový koncový bod, který je přidružený filtr, který vrací hodnotu true, obdrží kopii zprávy.  
   

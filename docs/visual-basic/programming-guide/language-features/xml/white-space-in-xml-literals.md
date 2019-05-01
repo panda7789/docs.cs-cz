@@ -6,11 +6,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], white space
 ms.assetid: dfe3a9ff-d69a-418e-a6b5-476f4ed84219
 ms.openlocfilehash: 08be345557d10a528aa03234883eba1b3a31beaa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62054936"
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a>Prázdné znaky v literálech XML (Visual Basic)
 Kompilátor jazyka Visual Basic zahrnuje pouze znaky významných mezer literál XML při vytváření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Neplatné prázdné znaky nejsou zahrnuty.  
@@ -18,11 +18,11 @@ Kompilátor jazyka Visual Basic zahrnuje pouze znaky významných mezer literál
 ## <a name="significant-and-insignificant-white-space"></a>Prázdné místo důležité a nevýznamné  
  Prázdné znaky v literálech XML jsou významné v pouze tři oblasti:  
   
--   Když jsou v hodnotě atributu.  
+- Když jsou v hodnotě atributu.  
   
--   Když jsou součástí obsahu prvku textu a text také obsahuje jiné znaky.  
+- Když jsou součástí obsahu prvku textu a text také obsahuje jiné znaky.  
   
--   Když jsou v vložený výraz pro textový obsah elementu.  
+- Když jsou v vložený výraz pro textový obsah elementu.  
   
  V opačném případě kompilátor považuje za prázdné znaky neplatné a potom nezahrnuje v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekt pro literál.  
   

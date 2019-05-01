@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d9279808e4ad15b693d06ac8a99dd33a609e5a8f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61992508"
 ---
 # <a name="imetadataemitgetsavesize-method"></a>IMetaDataEmit::GetSaveSize – metoda
 Získá odhadovaná velikost binárního sestavení a jeho metadata v aktuálním oboru.  
@@ -40,11 +40,11 @@ HRESULT GetSaveSize (
  `fSave`  
  [in] Hodnota [corsavesize –](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md) výčet, který určuje, jestli se má získat přesné nebo přibližné velikosti. Platné jsou jenom tři hodnoty: cssAccurate cssQuick a cssDiscardTransientCAs:  
   
--   cssAccurate vrátí přesné uložit velikost ale trvá déle k výpočtu.  
+- cssAccurate vrátí přesné uložit velikost ale trvá déle k výpočtu.  
   
--   cssQuick vrátí velikost, aby bylo vytvořeno pro zabezpečení, ale trvá méně času k výpočtu.  
+- cssQuick vrátí velikost, aby bylo vytvořeno pro zabezpečení, ale trvá méně času k výpočtu.  
   
--   říká cssDiscardTransientCAs `GetSaveSize` , že může vyvolat okamžitě discardable vlastních atributů.  
+- říká cssDiscardTransientCAs `GetSaveSize` , že může vyvolat okamžitě discardable vlastních atributů.  
   
  `pdwSaveSize`  
  [out] Ukazatel na velikost, která je nutná k uložení souboru.  

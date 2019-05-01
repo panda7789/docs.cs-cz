@@ -10,11 +10,11 @@ helpviewer_keywords:
 - cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 478b20c9-625c-4116-9c5c-5a16e6f4ec67
 ms.openlocfilehash: 415cf18aa4cf01b151a414dbc26609af638a7af7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59213282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011454"
 ---
 # <a name="how-to-customize-the-appearance-of-cells-in-the-windows-forms-datagridview-control"></a>Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView
 Můžete přizpůsobit vzhled libovolnou buňku ve zpracování <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.CellPainting> událostí. Můžete rozbalit <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Drawing.Graphics> z <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>. S tímto <xref:System.Drawing.Graphics>, může mít vliv na vzhled celý <xref:System.Windows.Forms.DataGridView> ovládacího prvku, ale bude obvykle chcete ovlivnit pouze vzhled buňky, která je právě překreslit. <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> Vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> umožňuje omezit vaše operace Malování na buňku, která je právě překreslit.  
@@ -28,9 +28,9 @@ Můžete přizpůsobit vzhled libovolnou buňku ve zpracování <xref:System.Win
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` s `ContactName` sloupců, jako je třeba v tabulce Zákazníci v ukázkové databázi Northwind.  
+- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` s `ContactName` sloupců, jako je třeba v tabulce Zákazníci v ukázkové databázi Northwind.  
   
--   Odkazy na sestavení systému, System.Windows.Forms a System.Drawing.  
+- Odkazy na sestavení systému, System.Windows.Forms a System.Drawing.  
   
 ## <a name="see-also"></a>Viz také:
 

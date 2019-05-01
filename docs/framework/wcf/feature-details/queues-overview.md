@@ -5,11 +5,11 @@ helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
 ms.openlocfilehash: e34f2033ec0f7dac784634d06712d65786503299
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59099765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991249"
 ---
 # <a name="queues-overview"></a>Fronty – přehled
 Tato část představuje obecné a základní koncepty za komunikace ve frontě. Dalších částech podrobnější informace o zařazování do fronty koncepty je zde popsáno, jak jsou označované ve Windows Communication Foundation (WCF).  
@@ -36,9 +36,9 @@ Tato část představuje obecné a základní koncepty za komunikace ve frontě.
 ## <a name="queues-and-transactions"></a>Fronty a transakce  
  Transakce umožňují seskupit sadu operací, takže pokud jedna operace selže, všechny operace selžou. Příklad použití transakce je při osoba používá k přenosu 1 000 USD z jeho úspory účtu do svého účtu kontroluje ATM. To zahrnuje následující operace:  
   
--   Odebrání z účtu úspory 1 000 USD.  
+- Odebrání z účtu úspory 1 000 USD.  
   
--   Uložení 1 000 USD v úvahu kontrola.  
+- Uložení 1 000 USD v úvahu kontrola.  
   
  Pokud první operace úspěšná a 1 000 USD stažení z účtu úspory, ale selže druhou operaci, dojde ke ztrátě 1 000 USD, protože již byla stažena z účtu úspory. Zachovat účty v platném stavu, pokud jedna operace selže, musí selhat operace.  
   
@@ -59,9 +59,9 @@ Tato část představuje obecné a základní koncepty za komunikace ve frontě.
   
  Všechny chyby, jako je například zpráva nedaří kontaktovat cílové fronty nebo do Time-To-Live vypršení platnosti, musí být zpracovány samostatně. Není, proto pro aplikace zařazených do fronty pro zápis dvě sady logik:  
   
--   Normální klient a služba logiku odesílání a příjem zpráv.  
+- Normální klient a služba logiku odesílání a příjem zpráv.  
   
--   Kompenzační logika zpracování zprávy ze chybný přenos nebo doručení.  
+- Kompenzační logika zpracování zprávy ze chybný přenos nebo doručení.  
   
  Následující části popisují tyto koncepty.  
   

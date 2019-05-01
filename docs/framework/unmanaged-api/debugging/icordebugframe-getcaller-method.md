@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 82902e6a395fe62464065ccea4cca5b52c960f0d
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61988809"
 ---
 # <a name="icordebugframegetcaller-method"></a>ICorDebugFrame::GetCaller – metoda
 Získá ukazatel na objekt ICorDebugFrame v aktuální řetězec, který volá tento rámec.  

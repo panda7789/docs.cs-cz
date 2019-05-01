@@ -9,11 +9,11 @@ helpviewer_keywords:
 - up-down controls [Windows Forms], spin button controls
 ms.assetid: fb7cf017-e931-4a95-9d21-8caee4ee122a
 ms.openlocfilehash: 83d674e3fb7ff7e715b75c635b891cd4e9703a21
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972052"
 ---
 # <a name="domainupdown-control-windows-forms"></a>DomainUpDown – ovládací prvek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.DomainUpDown> ovládací prvek vypadá jako kombinace textové pole a pár tlačítek pro procházení seznamu nahoru nebo dolů. Ovládací prvek zobrazí a nastaví textový řetězec ze seznamu nabízených možností. Uživatel může vybrat řetězec klepáním na tlačítka procházení seznamu, stisknutím klávesy se šipkami nahoru a dolů nebo tak, že zadáte řetězec, který odpovídá položka v seznamu. Je možné použití pro tento ovládací prvek pro výběr položek ze seřazené podle abecedy seznam názvů. (Chcete-li seřadit seznam, nastavte <xref:System.Windows.Forms.DomainUpDown.Sorted%2A> vlastnost `true`.) Funkce tohoto ovládacího prvku se velmi podobá seznamu nebo pole se seznamem, ale zabírá velmi málo místa.  

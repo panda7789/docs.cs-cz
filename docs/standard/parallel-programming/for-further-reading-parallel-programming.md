@@ -8,11 +8,11 @@ ms.assetid: 98aee307-dde6-4cad-bb58-078497b8064f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 037891abe18d1e119ea1d84a9840ece58b5b3c3f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61973365"
 ---
 # <a name="for-further-reading-parallel-programming"></a>Pro další čtení (paralelní programování)
 

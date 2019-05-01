@@ -14,22 +14,22 @@ helpviewer_keywords:
 - plug-ins [WPF], for ink
 ms.assetid: c85fcad1-cb50-4431-847c-ac4145a35c89
 ms.openlocfilehash: 80e7ef202c46a23069766512cf4e67bb21a49564
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007360"
 ---
 # <a name="the-ink-threading-model"></a>Model vláken inkoustu
 Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární perem na papír.  K tomu shromažďuje pera vstupní data mnohem vyšší rychlostí než myši nemá a vykreslí rukopis jako uživatelské zápisy.  Vlákně uživatelského rozhraní (UI) aplikace není dostatečná pro shromažďování dat pera a vykreslení inkoustu, protože budou blokované.  K řešení, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá dvě další vlákna, když uživatel zapíše rukopisu.  
   
  Následující seznam popisuje vláken, která účastnit shromažďování a vykreslování digitálních inkoust:  
   
--   Vlákno pera - vlákno trvá vstupu z pera.  (Ve skutečnosti jde fondu vláken, ale toto téma se označuje jako vlákno pera.)  
+- Vlákno pera - vlákno trvá vstupu z pera.  (Ve skutečnosti jde fondu vláken, ale toto téma se označuje jako vlákno pera.)  
   
--   Vlákno uživatelského rozhraní aplikace - vlákna, která řídí uživatelské rozhraní aplikace.  
+- Vlákno uživatelského rozhraní aplikace - vlákna, která řídí uživatelské rozhraní aplikace.  
   
--   Dynamické vykreslování vlákna - podproces, který vykreslí rukopis zatímco uživatel kreslení tah. Dynamické vykreslování vlákna se liší od vlákna, která vykresluje další prvky uživatelského rozhraní pro aplikace, jak je uvedeno ve Windows Presentation Foundation [Model vláken](threading-model.md).  
+- Dynamické vykreslování vlákna - podproces, který vykreslí rukopis zatímco uživatel kreslení tah. Dynamické vykreslování vlákna se liší od vlákna, která vykresluje další prvky uživatelského rozhraní pro aplikace, jak je uvedeno ve Windows Presentation Foundation [Model vláken](threading-model.md).  
   
  Rukopisu modelu je stejný, ať už aplikace používá <xref:System.Windows.Controls.InkCanvas> nebo vlastního ovládacího prvku obrazovku v [vytvoření ovládacího prvku vstupu inkoustu](creating-an-ink-input-control.md).  I když toto téma popisuje dělení na vlákna z hlediska <xref:System.Windows.Controls.InkCanvas>, stejné koncepty platí i při vytváření vlastního ovládacího prvku.  
   
@@ -40,17 +40,17 @@ Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární
   
 1. Akce, ke kterým dochází, když uživatel nakreslí tahu  
   
-    1.  Až uživatel nakreslí tah, vraťte se stylus body na vlákno pera.  Stylus modulů plug-in, včetně <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>přijměte stylus bodů na vlákno pera a mít možnost upravit je před <xref:System.Windows.Controls.InkCanvas> je obdrží.  
+    1. Až uživatel nakreslí tah, vraťte se stylus body na vlákno pera.  Stylus modulů plug-in, včetně <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>přijměte stylus bodů na vlákno pera a mít možnost upravit je před <xref:System.Windows.Controls.InkCanvas> je obdrží.  
   
-    2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vykreslí stylus bodů na dynamické vykreslování vlákna. K tomu dojde ve stejnou dobu jako v předchozím kroku.  
+    2. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vykreslí stylus bodů na dynamické vykreslování vlákna. K tomu dojde ve stejnou dobu jako v předchozím kroku.  
   
-    3.  <xref:System.Windows.Controls.InkCanvas> Obdrží stylus bodů na vlákně UI.  
+    3. <xref:System.Windows.Controls.InkCanvas> Obdrží stylus bodů na vlákně UI.  
   
 2. Akce, ke kterým dochází, až uživatel skončí tahu  
   
-    1.  Po dokončení uživatel kreslení tahu <xref:System.Windows.Controls.InkCanvas> vytvoří <xref:System.Windows.Ink.Stroke> objektu a přidá jej do <xref:System.Windows.Controls.InkPresenter>, která staticky vykreslí.  
+    1. Po dokončení uživatel kreslení tahu <xref:System.Windows.Controls.InkCanvas> vytvoří <xref:System.Windows.Ink.Stroke> objektu a přidá jej do <xref:System.Windows.Controls.InkPresenter>, která staticky vykreslí.  
   
-    2.  Upozornění na vlákna uživatelského rozhraní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> vykreslený tahu staticky, takže <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> odebere jeho vizuální reprezentaci objektu stroke.  
+    2. Upozornění na vlákna uživatelského rozhraní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> vykreslený tahu staticky, takže <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> odebere jeho vizuální reprezentaci objektu stroke.  
   
 ## <a name="ink-collection-and-stylus-plug-ins"></a>Kolekce inkoustů a moduly plug-in pera  
  Každý <xref:System.Windows.UIElement> má <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.  <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Objekty v <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> přijmout a můžete upravit stylus bodů na vlákno pera. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Objekty přijímat stylus body podle jejich pořadí v <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.  
@@ -85,16 +85,16 @@ Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární
   
 1. Uživatel začne stroke.  
   
-    1.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vytvoří vizuálního stromu.  
+    1. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vytvoří vizuálního stromu.  
   
 2. Uživatel je kreslení stroke.  
   
-    1.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Sestavení vizuálního stromu.  
+    1. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Sestavení vizuálního stromu.  
   
 3. Uživatel končí stroke.  
   
-    1.  <xref:System.Windows.Controls.InkPresenter> Přidá tahu jeho vizuálního stromu.  
+    1. <xref:System.Windows.Controls.InkPresenter> Přidá tahu jeho vizuálního stromu.  
   
-    2.  Vrstva integrace média (MIL) staticky vykreslí strokes.  
+    2. Vrstva integrace média (MIL) staticky vykreslí strokes.  
   
-    3.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vyčistí vizuály.
+    3. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vyčistí vizuály.

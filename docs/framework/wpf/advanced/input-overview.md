@@ -25,11 +25,11 @@ helpviewer_keywords:
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
 ms.openlocfilehash: 9553a66538297db9c2fa134e018f35ab9e2ddf37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62001529"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
@@ -144,43 +144,43 @@ ms.locfileid: "59320012"
 ### <a name="prerequisites"></a>Požadavky
  Budete potřebovat následující komponenty pro vývoj aplikací, který reaguje na dotyk.
 
--   Visual Studio 2010.
+- Visual Studio 2010.
 
--   Windows 7.
+- Windows 7.
 
--   Zařízení, např. k tomu dotykovou obrazovku, který podporuje Windows Touch.
+- Zařízení, např. k tomu dotykovou obrazovku, který podporuje Windows Touch.
 
 ### <a name="terminology"></a>Terminologie
  Pokud tady nezvládneme probrat touch se používají následující termíny.
 
--   **Touch** je typ vstupu uživatele, který je rozpoznán Windows 7. Obvykle je zahájeno touch vložením prsty na dotykovou obrazovku. Všimněte si, že zařízení, jako jsou touchpadu, která je společná pro přenosné počítače nepodporují dotykového ovládání, pokud se zařízení převede pouze umístění a přesun jako vstup z myši prstem.
+- **Touch** je typ vstupu uživatele, který je rozpoznán Windows 7. Obvykle je zahájeno touch vložením prsty na dotykovou obrazovku. Všimněte si, že zařízení, jako jsou touchpadu, která je společná pro přenosné počítače nepodporují dotykového ovládání, pokud se zařízení převede pouze umístění a přesun jako vstup z myši prstem.
 
--   **Vícedotykové** je dotykového ovládání, ke které dochází z více než jeden bod současně. Windows 7 a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje vícedotykové. Vždy, když touch je podrobněji popsána v dokumentaci k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], koncepty platí pro platformu.
+- **Vícedotykové** je dotykového ovládání, ke které dochází z více než jeden bod současně. Windows 7 a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje vícedotykové. Vždy, když touch je podrobněji popsána v dokumentaci k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], koncepty platí pro platformu.
 
--   A **manipulaci s** nastane, pokud dotykovou interpretována jako fyzické akci, která je použita na objekt. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], manipulace s událostmi interpretace vstupu jako manipulaci s překladem, rozšíření nebo otočení.
+- A **manipulaci s** nastane, pokud dotykovou interpretována jako fyzické akci, která je použita na objekt. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], manipulace s událostmi interpretace vstupu jako manipulaci s překladem, rozšíření nebo otočení.
 
--   A `touch device` představuje zařízení, která vytváří dotykové ovládání, jako je jednotné prstem na k tomu dotykovou obrazovku.
+- A `touch device` představuje zařízení, která vytváří dotykové ovládání, jako je jednotné prstem na k tomu dotykovou obrazovku.
 
 ### <a name="controls-that-respond-to-touch"></a>Ovládací prvky, které reagují na dotykové ovládání
  Následující ovládací prvky můžete posouvat přetažením prstem přes ovládací prvek, pokud má obsah, který je posunu mimo zobrazení.
 
--   <xref:System.Windows.Controls.ComboBox>
+- <xref:System.Windows.Controls.ComboBox>
 
--   <xref:System.Windows.Controls.ContextMenu>
+- <xref:System.Windows.Controls.ContextMenu>
 
--   <xref:System.Windows.Controls.DataGrid>
+- <xref:System.Windows.Controls.DataGrid>
 
--   <xref:System.Windows.Controls.ListBox>
+- <xref:System.Windows.Controls.ListBox>
 
--   <xref:System.Windows.Controls.ListView>
+- <xref:System.Windows.Controls.ListView>
 
--   <xref:System.Windows.Controls.MenuItem>
+- <xref:System.Windows.Controls.MenuItem>
 
--   <xref:System.Windows.Controls.TextBox>
+- <xref:System.Windows.Controls.TextBox>
 
--   <xref:System.Windows.Controls.ToolBar>
+- <xref:System.Windows.Controls.ToolBar>
 
--   <xref:System.Windows.Controls.TreeView>
+- <xref:System.Windows.Controls.TreeView>
 
  <xref:System.Windows.Controls.ScrollViewer> Definuje <xref:System.Windows.Controls.ScrollViewer.PanningMode%2A?displayProperty=nameWithType> přidružená vlastnost, která umožňuje určit, jestli touch je povoleno posouvání vodorovně, svisle, obou nebo ani jeden. <xref:System.Windows.Controls.ScrollViewer.PanningDeceleration%2A?displayProperty=nameWithType> Vlastnost určuje, jak rychle posouvání zpomalí, když uživatel zruší prstem z dotykovou obrazovku. <xref:System.Windows.Controls.ScrollViewer.PanningRatio%2A?displayProperty=nameWithType> Připojená vlastnost určuje poměr posouvání posun pro převod manipulaci s posun.
 
@@ -189,25 +189,25 @@ ms.locfileid: "59320012"
 
  Všechny tři třídy definují následující události, které se chovají podobně, bez ohledu na to definující třídy.
 
--   <xref:System.Windows.UIElement.TouchDown>
+- <xref:System.Windows.UIElement.TouchDown>
 
--   <xref:System.Windows.UIElement.TouchMove>
+- <xref:System.Windows.UIElement.TouchMove>
 
--   <xref:System.Windows.UIElement.TouchUp>
+- <xref:System.Windows.UIElement.TouchUp>
 
--   <xref:System.Windows.UIElement.TouchEnter>
+- <xref:System.Windows.UIElement.TouchEnter>
 
--   <xref:System.Windows.UIElement.TouchLeave>
+- <xref:System.Windows.UIElement.TouchLeave>
 
--   <xref:System.Windows.UIElement.PreviewTouchDown>
+- <xref:System.Windows.UIElement.PreviewTouchDown>
 
--   <xref:System.Windows.UIElement.PreviewTouchMove>
+- <xref:System.Windows.UIElement.PreviewTouchMove>
 
--   <xref:System.Windows.UIElement.PreviewTouchUp>
+- <xref:System.Windows.UIElement.PreviewTouchUp>
 
--   <xref:System.Windows.UIElement.GotTouchCapture>
+- <xref:System.Windows.UIElement.GotTouchCapture>
 
--   <xref:System.Windows.UIElement.LostTouchCapture>
+- <xref:System.Windows.UIElement.LostTouchCapture>
 
  Události dotykové ovládání jako události klávesnice a myši, jsou směrované události. Události, které začínají `Preview` jsou tunelování události a události, které začínají `Touch` jsou šíření událostí. Další informace o směrované události najdete v tématu [směrovat Přehled událostí](routed-events-overview.md). Při zpracování těchto událostí můžete získat pozice vstupu, vzhledem k libovolný prvek voláním <xref:System.Windows.Input.TouchEventArgs.GetTouchPoint%2A> nebo <xref:System.Windows.Input.TouchEventArgs.GetIntermediateTouchPoints%2A> metody.
 
@@ -232,11 +232,11 @@ ms.locfileid: "59320012"
 ### <a name="manipulation-events"></a>Manipulace s událostmi
  Pro případy, kdy aplikace umožňuje uživateli manipulovat s objektu <xref:System.Windows.UIElement> třída definuje manipulace s událostmi. Na rozdíl od touch události, které se ohlásí pozice dotykového ovládání manipulace s událostmi zprávu, jak se dá interpretovat vstupu. Existují tři typy manipulace, překlad, rozšíření a otočení. Následující seznam popisuje tři typy manipulace vyvolat.
 
--   Vložit prstem na objekt a sdílením dotykovou obrazovku k vyvolání manipulaci s překladem prstu. To obvykle přesune objekt.
+- Vložit prstem na objekt a sdílením dotykovou obrazovku k vyvolání manipulaci s překladem prstu. To obvykle přesune objekt.
 
--   Umístit dvěma prsty na objekt a přesunout prsty blíže společně nebo jsou kromě navzájem k vyvolání manipulaci s rozšíření. To obvykle změní velikost objektu.
+- Umístit dvěma prsty na objekt a přesunout prsty blíže společně nebo jsou kromě navzájem k vyvolání manipulaci s rozšíření. To obvykle změní velikost objektu.
 
--   Vložit dvěma prsty na objekt a otočit prsty kolem vzájemně k vyvolání manipulaci s otočení. To obvykle otočí objektu.
+- Vložit dvěma prsty na objekt a otočit prsty kolem vzájemně k vyvolání manipulaci s otočení. To obvykle otočí objektu.
 
  Manipulace s více než jeden typ může probíhají souběžně.
 
@@ -246,17 +246,17 @@ ms.locfileid: "59320012"
 
  <xref:System.Windows.UIElement> Definuje následující manipulace s událostmi.
 
--   <xref:System.Windows.UIElement.ManipulationStarting>
+- <xref:System.Windows.UIElement.ManipulationStarting>
 
--   <xref:System.Windows.UIElement.ManipulationStarted>
+- <xref:System.Windows.UIElement.ManipulationStarted>
 
--   <xref:System.Windows.UIElement.ManipulationDelta>
+- <xref:System.Windows.UIElement.ManipulationDelta>
 
--   <xref:System.Windows.UIElement.ManipulationInertiaStarting>
+- <xref:System.Windows.UIElement.ManipulationInertiaStarting>
 
--   <xref:System.Windows.UIElement.ManipulationCompleted>
+- <xref:System.Windows.UIElement.ManipulationCompleted>
 
--   <xref:System.Windows.UIElement.ManipulationBoundaryFeedback>
+- <xref:System.Windows.UIElement.ManipulationBoundaryFeedback>
 
  Ve výchozím nastavení <xref:System.Windows.UIElement> neobdrží tyto manipulace s událostmi. Pro příjem manipulace s událostmi <xref:System.Windows.UIElement>, nastavte <xref:System.Windows.UIElement.IsManipulationEnabled%2A?displayProperty=nameWithType> k `true`.
 
@@ -300,13 +300,13 @@ ms.locfileid: "59320012"
 
  Následující seznam popisuje vztah mezi dotykového ovládání a manipulace s událostí, které je znázorněno na předchozím obrázku.
 
--   Při první dotykové ovládání zařízení generuje <xref:System.Windows.UIElement.TouchDown> událostí na <xref:System.Windows.UIElement>, volání logiku zpracování <xref:System.Windows.UIElement.CaptureTouch%2A> metodu, která generuje <xref:System.Windows.UIElement.GotTouchCapture> událostí.
+- Při první dotykové ovládání zařízení generuje <xref:System.Windows.UIElement.TouchDown> událostí na <xref:System.Windows.UIElement>, volání logiku zpracování <xref:System.Windows.UIElement.CaptureTouch%2A> metodu, která generuje <xref:System.Windows.UIElement.GotTouchCapture> událostí.
 
--   Když <xref:System.Windows.UIElement.GotTouchCapture> dojde k volání logiku zpracování <xref:System.Windows.Input.Manipulation.AddManipulator%2A?displayProperty=nameWithType> metodu, která generuje <xref:System.Windows.UIElement.ManipulationStarting> událostí.
+- Když <xref:System.Windows.UIElement.GotTouchCapture> dojde k volání logiku zpracování <xref:System.Windows.Input.Manipulation.AddManipulator%2A?displayProperty=nameWithType> metodu, která generuje <xref:System.Windows.UIElement.ManipulationStarting> událostí.
 
--   Když <xref:System.Windows.UIElement.TouchMove> dojde k událostem, generuje logiku zpracování <xref:System.Windows.UIElement.ManipulationDelta> události, ke kterým dochází před <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.
+- Když <xref:System.Windows.UIElement.TouchMove> dojde k událostem, generuje logiku zpracování <xref:System.Windows.UIElement.ManipulationDelta> události, ke kterým dochází před <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.
 
--   Po poslední touch zařízení element vyvolá <xref:System.Windows.UIElement.TouchUp> generuje logiku zpracování událostí, <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.
+- Po poslední touch zařízení element vyvolá <xref:System.Windows.UIElement.TouchUp> generuje logiku zpracování událostí, <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.
 
 <a name="focus"></a>
 ## <a name="focus"></a>fokus

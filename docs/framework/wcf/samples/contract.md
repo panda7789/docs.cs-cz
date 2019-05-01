@@ -3,11 +3,11 @@ title: Ukázky kontraktu WCF
 ms.date: 03/30/2017
 ms.assetid: 305eeb65-a52f-459e-9aa8-0ef071eade16
 ms.openlocfilehash: 051a6fc1af7483c5b7c512de6a47afe0b39ae3ad
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002440"
 ---
 # <a name="contract"></a>Kontrakt
 

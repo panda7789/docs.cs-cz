@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 538def39-8399-46fb-b02d-60ede4e050af
 ms.openlocfilehash: 40e376f2c2584490273ec27b78fe5315cbb0315e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62033719"
 ---
 # <a name="how-to-map-database-relationships"></a>Postupy: Mapování databázových relací
 Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relace mezi daty, které budou vždy stejné. V ukázkové databázi Northwind třeba protože zákazníkům obvykle zadávat objednávky, není vždy relace v modelu mezi zákazníky a jejich objednávky.  
@@ -22,11 +22,11 @@ Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relac
   
  Většina relací jsou 1 n, stejně jako v příkladu dále v tomto tématu. Relace 1: 1 a many-to-many může také představovat následujícím způsobem:  
   
--   1: 1: Tento typ relace představují zahrnutím <xref:System.Data.Linq.EntitySet%601> na obou stranách.  
+- 1: 1: Tento typ relace představují zahrnutím <xref:System.Data.Linq.EntitySet%601> na obou stranách.  
   
      Představte si třeba `Customer` - `SecurityCode` relace vytvořená tak, aby zákazníka bezpečnostní kód nebude nalezena instančním `Customer` tabulky a je přístupný jenom autorizované osoby.  
   
--   Many-to-many: Ve vztazích many-to-many, primární klíč tabulky odkaz (také s názvem *spojení* tabulky) je často vytvořené metodou složeného cizích klíčů z dalších dvou tabulek.  
+- Many-to-many: Ve vztazích many-to-many, primární klíč tabulky odkaz (také s názvem *spojení* tabulky) je často vytvořené metodou složeného cizích klíčů z dalších dvou tabulek.  
   
      Představte si třeba `Employee` - `Project` many-to-many relace vytvořená s použitím vazební tabulka `EmployeeProject`. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyžaduje, aby takové relace modelovat pomocí tří tříd: `Employee`, `Project`, a `EmployeeProject`. V tomto případě změny vztahů mezi `Employee` a `Project` můžete zobrazit tak, aby vyžadovala aktualizace primárního klíče `EmployeeProject`. Ale je tato situace nejlépe modelovaná jako odstranění existující `EmployeeProject` a vytvoření nového `EmployeeProject`.  
   

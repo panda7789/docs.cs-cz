@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e5d60b9a9ae566b5bd686b27b2e09861a8414979
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59190012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000230"
 ---
 # <a name="strongnamesignaturegenerationex-function"></a>StrongNameSignatureGenerationEx – funkce
 Podpis silného názvu generuje pro zadané sestavení podle zadané příznaky.  
@@ -70,9 +70,9 @@ BOOLEAN StrongNameSignatureGenerationEx (
  `dwFlags`  
  [in] Jeden nebo více z následujících hodnot:  
   
--   `SN_SIGN_ALL_FILES` (0x00000001) - přepočítá všechny hodnoty hash pro propojený moduly.  
+- `SN_SIGN_ALL_FILES` (0x00000001) - přepočítá všechny hodnoty hash pro propojený moduly.  
   
--   `SN_TEST_SIGN` (0x00000002) - podpis testovacího sestavení.  
+- `SN_TEST_SIGN` (0x00000002) - podpis testovacího sestavení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  `true` Při úspěšném dokončení; v opačném případě `false`.  

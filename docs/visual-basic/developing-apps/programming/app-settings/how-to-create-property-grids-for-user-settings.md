@@ -8,11 +8,11 @@ helpviewer_keywords:
 - property grids
 ms.assetid: b0bc737e-50d1-43d1-a6df-268db6e6f91c
 ms.openlocfilehash: 5f4b962762aeecea65748c5456bc4a2d75595d4f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62014088"
 ---
 # <a name="how-to-create-property-grids-for-user-settings-in-visual-basic"></a>Postupy: Vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic
 Můžete vytvořit mřížku vlastností pro uživatelská nastavení naplněním <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku pomocí vlastnosti nastavení uživatele `My.Settings` objektu.  

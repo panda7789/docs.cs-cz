@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Default Service Behavior Sample [Windows Communication Foundation]
 ms.assetid: 442d4f71-c64e-4c62-816a-a66c38e7d3ec
 ms.openlocfilehash: 6c144bddff4e485673dbdc7e218e82808c20aa61
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990267"
 ---
 # <a name="default-service-behavior"></a>Výchozí chování služby
 Tato ukázka předvádí, jak lze konfigurovat nastavení chování služby. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka explicitně definuje chování služby a operace chování pomocí <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy. Chování můžete nakonfigurovat v konfiguračních souborech nebo imperativně v kódu (jako v této ukázce).  

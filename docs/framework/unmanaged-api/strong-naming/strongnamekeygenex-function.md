@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: af75a645b11325b96740807f9a3df65f5a676026
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59120844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62000243"
 ---
 # <a name="strongnamekeygenex-function"></a>StrongNameKeyGenEx – funkce
 Generuje nový pár veřejného a privátního klíče se zadanou velikost klíče pro použití silným názvem.  
@@ -47,9 +47,9 @@ BOOLEAN StrongNameKeyGenEx (
  `dwFlags`  
  [in] Určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
   
--   0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
+- 0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
   
--   0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
+- 0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
   
  `dwKeySize`  
  [in] Požadovaná velikost klíče v bitech.  

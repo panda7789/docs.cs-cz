@@ -3,11 +3,11 @@ title: Proces náboru
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
 ms.openlocfilehash: c6f542cef8e1417ed9c8d3a185252a91062e2161
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62005053"
 ---
 # <a name="hiring-process"></a>Proces náboru
 Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit zasílání zpráv a dva pracovní postupy hostovaný jako služeb pracovních postupů. Tyto pracovní postupy jsou součástí infrastruktury IT fiktivní společnosti s názvem Contoso, Inc.  
@@ -18,35 +18,35 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
  Tato ukázka demonstruje následující funkce [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]:  
   
--   <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Sequence> pracovních postupů pro modelování obchodních procesů.  
+- <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Sequence> pracovních postupů pro modelování obchodních procesů.  
   
--   Služby pracovních postupů.  
+- Služby pracovních postupů.  
   
--   Aktivity zasílání zpráv.  
+- Aktivity zasílání zpráv.  
   
--   Korelace na základě obsahu.  
+- Korelace na základě obsahu.  
   
--   Vlastní aktivity (deklarativní a založený na kódu).  
+- Vlastní aktivity (deklarativní a založený na kódu).  
   
--   Zadaný systém SQL server trvalosti.  
+- Zadaný systém SQL server trvalosti.  
   
--   Vlastní <xref:System.Activities.Persistence.PersistenceParticipant>.  
+- Vlastní <xref:System.Activities.Persistence.PersistenceParticipant>.  
   
--   Vlastní sledování.  
+- Vlastní sledování.  
   
--   Událost sledování pro sledování Windows (ETW).  
+- Událost sledování pro sledování Windows (ETW).  
   
--   Složení aktivit.  
+- Složení aktivit.  
   
--   <xref:System.Activities.Statements.Parallel> aktivity.  
+- <xref:System.Activities.Statements.Parallel> aktivity.  
   
--   <xref:System.Activities.Statements.CancellationScope> aktivita.  
+- <xref:System.Activities.Statements.CancellationScope> aktivita.  
   
--   Trvalý časovače (<xref:System.Activities.Statements.Delay> aktivit).  
+- Trvalý časovače (<xref:System.Activities.Statements.Delay> aktivit).  
   
--   Transakce.  
+- Transakce.  
   
--   Více než jeden pracovní postup ve stejném řešení.  
+- Více než jeden pracovní postup ve stejném řešení.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -64,25 +64,25 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
 2. Žadatele správce musí schválit žádost:  
   
-    1.  Správce může zamítnout žádosti.  
+    1. Správce může zamítnout žádosti.  
   
-    2.  Správce může vrátit žádost žadateli pro další informace:  
+    2. Správce může vrátit žádost žadateli pro další informace:  
   
-        1.  Žadatel zkontroluje a odešle žádost o zpět do správce.  
+        1. Žadatel zkontroluje a odešle žádost o zpět do správce.  
   
-    3.  Můžete schválit správce.  
+    3. Můžete schválit správce.  
   
 3. Poté, co správce žadatele schválí, musíte tuto žádost schválit vlastníka oddělení:  
   
-    1.  Vlastník oddělení může zamítnout.  
+    1. Vlastník oddělení může zamítnout.  
   
-    2.  Vlastník oddělení můžete schválit.  
+    2. Vlastník oddělení můžete schválit.  
   
 4. Po vlastníka oddělení schválí, vyžaduje proces schvalování 2 HR správci nebo CEO:  
   
-    1.  Proces můžete přejít na stav přijetí nebo odmítnutí.  
+    1. Proces můžete přejít na stav přijetí nebo odmítnutí.  
   
-    2.  Pokud je proces přijat, novou instanci třídy `ResumeRequest` spuštění pracovního postupu (`ResumeRequest` je propojený s HiringRequest.csproj prostřednictvím odkazu na službu.)  
+    2. Pokud je proces přijat, novou instanci třídy `ResumeRequest` spuštění pracovního postupu (`ResumeRequest` je propojený s HiringRequest.csproj prostřednictvím odkazu na službu.)  
   
  Jakmile vedoucí schválil náboru nových zaměstnanců, HR musí najít vhodným kandidátem. Tento proces se provádí pomocí druhého pracovního postupu (`ResumeRequest`definované v ResumeRequestService.csproj). Tento pracovní postup definuje proces pro odeslání úlohy účtování příležitost kariéru na externí web kariéru Web společnosti Contoso, přijímá obnoví z žadatelé a sleduje stav úlohy účtování. Pozice jsou k dispozici pro pevné časové období (do čas vypršení platnosti) nebo dokud se zaměstnanci ze společnosti Contoso rozhodne ho odebrat. `ResumeRequest` Pracovní postup se skládá z následujících kroků:  
   
@@ -215,19 +215,19 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
 2. Pokud se sestavení nezdaří řešení, ověřte následující:  
   
-    -   Odkaz na `ContosoHR` není chybí `InternalClient` nebo `CareersWebSite` projekty.  
+    - Odkaz na `ContosoHR` není chybí `InternalClient` nebo `CareersWebSite` projekty.  
   
 3. Pokud toto řešení se nepodaří spustit, ověřte následující:  
   
-    1.  Všechny služby spuštěné.  
+    1. Všechny služby spuštěné.  
   
-    2.  Aktualizují se odkazy na služby.  
+    2. Aktualizují se odkazy na služby.  
   
-        1.  Otevřete složku App_WebReferences  
+        1. Otevřete složku App_WebReferences  
   
-        2.  Klikněte pravým tlačítkem na **Contoso** a vyberte **aktualizace Web/odkazy na služby**.  
+        2. Klikněte pravým tlačítkem na **Contoso** a vyberte **aktualizace Web/odkazy na služby**.  
   
-        3.  Znovu sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B v sadě Visual Studio.  
+        3. Znovu sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B v sadě Visual Studio.  
   
 ## <a name="uninstalling"></a>Odinstalace  
   

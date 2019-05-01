@@ -3,11 +3,11 @@ title: Použití aktivity Pick
 ms.date: 03/30/2017
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
 ms.openlocfilehash: 0b2fbeb9b32406dd913d7e1ee87ac167113d0f28
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004728"
 ---
 # <a name="using-the-pick-activity"></a>Použití aktivity Pick
 Tato ukázka předvádí, jak používat <xref:System.Activities.Statements.Pick> aktivity.
@@ -24,17 +24,17 @@ Tato ukázka předvádí, jak používat <xref:System.Activities.Statements.Pick
 
  Návrháře návrháři postupu provádění verzi ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
 
--   Soubor program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
+- Soubor program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
 
--   ReadString.cs: Vlastní aktivita, která čte vstupu z konzoly.
+- ReadString.cs: Vlastní aktivita, která čte vstupu z konzoly.
 
--   Sequence1.XAML: Pracovní postup vytvořený pomocí návrháře, který používá vybrat.
+- Sequence1.XAML: Pracovní postup vytvořený pomocí návrháře, který používá vybrat.
 
  Programové pracovního postupu programové verzi ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
 
--   Soubor program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
+- Soubor program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
 
--   ReadString.cs: Vlastní aktivita, která čte vstupu z konzoly.
+- ReadString.cs: Vlastní aktivita, která čte vstupu z konzoly.
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 

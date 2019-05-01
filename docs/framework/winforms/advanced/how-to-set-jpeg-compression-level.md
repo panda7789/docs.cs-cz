@@ -9,11 +9,11 @@ helpviewer_keywords:
 - JPEG images [Windows Forms], setting quality level
 ms.assetid: 4b9a74e3-9504-43c1-9f28-ace651d0772e
 ms.openlocfilehash: de9dce1b3c15070fda268c430ce5da641efef6f4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62003883"
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>Postupy: Nastavení úrovně komprese JPEG
 Můžete chtít upravit parametry bitovou kopii při uložení image na disk na minimální velikost souboru nebo zlepšení jeho kvality. Kvalita obrázku JPEG můžete upravit tak, že upravíte jejich úroveň komprese. Chcete-li určit úroveň komprese při ukládání ve formátu JPEG, musíte vytvořit <xref:System.Drawing.Imaging.EncoderParameters> objektu a předejte ji do <xref:System.Drawing.Image.Save%2A> metodu <xref:System.Drawing.Image> třídy. Inicializovat <xref:System.Drawing.Imaging.EncoderParameters> objektu tak, že je pole, které se skládá z jednoho <xref:System.Drawing.Imaging.EncoderParameter>. Při vytváření <xref:System.Drawing.Imaging.EncoderParameter>, zadejte <xref:System.Drawing.Imaging.Encoder.Quality> kodér a úroveň požadované komprese.  
@@ -123,11 +123,11 @@ End Function
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Aplikace modelu Windows Forms.  
+- Aplikace modelu Windows Forms.  
   
--   A <xref:System.Windows.Forms.PaintEventArgs>, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+- A <xref:System.Windows.Forms.PaintEventArgs>, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
--   Soubor obrázku, který je pojmenován `TestPhoto.jpg` a umístění **c:\\**.  
+- Soubor obrázku, který je pojmenován `TestPhoto.jpg` a umístění **c:\\**.  
   
 ## <a name="see-also"></a>Viz také:
 

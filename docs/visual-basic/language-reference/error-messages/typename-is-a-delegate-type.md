@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC32008
 ms.assetid: dc6abba0-a9ad-450f-8899-87265bc84abc
 ms.openlocfilehash: c308805f5e73d740ff18a40d95b9cc2576ac95fc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62013592"
 ---
 # <a name="typename-is-a-delegate-type"></a>"\<typename >' je typ delegátu
 "\<typename >' je typ delegátu. Konstrukce delegáta povoluje pouze jeden výraz AddressOf jako seznam argumentů. Výraz AddressOf často lze použít místo vytváření delegátů.  
@@ -27,7 +27,7 @@ ms.locfileid: "58841241"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pomocí jediné `AddressOf` výraz v seznamu argumentů pro třídu delegáta v `New` klauzuli.  
+- Pomocí jediné `AddressOf` výraz v seznamu argumentů pro třídu delegáta v `New` klauzuli.  
   
 ## <a name="see-also"></a>Viz také:
 

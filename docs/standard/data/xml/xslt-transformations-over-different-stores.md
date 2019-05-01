@@ -6,11 +6,11 @@ ms.assetid: 369850e9-004a-45d2-b5c3-5060d9135adb
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0b5ff264f9a781c95ccf9bdbabf4b29806016362
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43890838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62026624"
 ---
 # <a name="xslt-transformations-over-different-stores"></a>Transformace XSLT v různých úložištích
 > [!NOTE]

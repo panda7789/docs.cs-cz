@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9b2244ec1be6fc0e5e19fac5adc7ecb38d68a0af
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61987984"
 ---
 # <a name="icordebugnativeframegetlocalmemoryregistervalue-method"></a>ICorDebugNativeFrame::GetLocalMemoryRegisterValue – metoda
 Získá hodnotu argumentu nebo místní proměnná, z nichž nízké word a vysokou word jsou uloženy v zadaný registr a umístění v paměti, v uvedeném pořadí, tato nativní rámce.  

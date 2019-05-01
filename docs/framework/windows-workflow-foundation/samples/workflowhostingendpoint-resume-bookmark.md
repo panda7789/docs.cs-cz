@@ -3,11 +3,11 @@ title: Záložka pro obnovení WorkflowHostingEndpoint
 ms.date: 03/30/2017
 ms.assetid: a708064f-50b0-4751-b44e-d5410d08d451
 ms.openlocfilehash: 5c3c996a73d8f88e925d459fae3eb785996eada4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004741"
 ---
 # <a name="workflowhostingendpoint-resume-bookmark"></a>Záložka pro obnovení WorkflowHostingEndpoint
 Tato ukázka předvádí, jak <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> jde použít s <xref:System.ServiceModel.Activities.WorkflowServiceHost> k vytvoření instance pracovního postupu.  
@@ -18,9 +18,9 @@ Tato ukázka předvádí, jak <xref:System.ServiceModel.Activities.WorkflowHosti
 ## <a name="discussion"></a>Diskuse  
  Tento příklad používá <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> k vytvoření instance pracovního postupu hostované pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> představuje rozšíření bod pro <xref:System.ServiceModel.Activities.WorkflowServiceHost> , který lze použít v následujících scénářích:  
   
--   Vytvoření nové instance pracovního postupu.  
+- Vytvoření nové instance pracovního postupu.  
   
--   Obnovení záložky pro instanci pracovního postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
+- Obnovení záložky pro instanci pracovního postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
   
  Ukázka koncového bodu, který je součástí zpřístupňuje kontrakt, který poskytuje operace pro vytvoření pracovního postupu a vracet ID instance, nebo vytvořit instanci s konkrétním ID. Vytvoří ukázkovou aplikaci konzoly <xref:System.ServiceModel.Activities.WorkflowServiceHost> instance s definicí základní pracovní postup a přidá `CreationEndpoint` k hostiteli. Poté zavolá `Create` operace na koncový bod pro vytvoření nové instance pracovního postupu.  
   

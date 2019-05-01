@@ -3,11 +3,11 @@ title: Trvanlivý kontext instance
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
 ms.openlocfilehash: 25772e7f119ddd5a144d223f402e815380b3eba5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990258"
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
 Tento příklad ukazuje, jak přizpůsobit modul runtime Windows Communication Foundation (WCF) umožňuje trvalý instance kontexty. Jako svůj záložní úložiště (SQL Server 2005 Express v tomto případě) používá SQL Server 2005. Ale také poskytuje způsob, jak přistupovat k mechanismy vlastního úložiště.  
@@ -233,11 +233,11 @@ else
   
  WCF umožňuje rozšíření komponenty modulu runtime InstanceContext tak, že přidáte nový stav a chování pomocí způsobu rozšiřitelném objektu. Vzor rozšiřitelném objektu se používá ve službě WCF buď rozšířit existující třídy modulu runtime s novými funkcemi nebo přidávání nových funkcí stavu k objektu. Existují tři rozhraní ve vzoru extensible object - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
   
--   IExtensibleObject\<T > rozhraní implementují objekty, které umožňují rozšíření, která přizpůsobit jejich funkce.  
+- IExtensibleObject\<T > rozhraní implementují objekty, které umožňují rozšíření, která přizpůsobit jejich funkce.  
   
--   IExtension\<T > rozhraní implementují objekty, které jsou rozšíření třídy typu T.  
+- IExtension\<T > rozhraní implementují objekty, které jsou rozšíření třídy typu T.  
   
--   IExtensionCollection\<T > rozhraní je kolekce IExtensions, který umožňuje načítání IExtensions podle jejich typu.  
+- IExtensionCollection\<T > rozhraní je kolekce IExtensions, který umožňuje načítání IExtensions podle jejich typu.  
   
  Proto třídu InstanceContextExtension by měl být vytvořen, který implementuje rozhraní IExtension a definuje požadovaný stav uložení ID kontextu. Tato třída rovněž poskytuje stavu k uložení úložiště správce používá. Po uložení nového stavu by neměla být možné jej upravit. Stav je proto k dispozici a uloží do instance v době, kdy je právě vytvořený a pak dostupná jenom pomocí vlastnosti jen pro čtení.  
   

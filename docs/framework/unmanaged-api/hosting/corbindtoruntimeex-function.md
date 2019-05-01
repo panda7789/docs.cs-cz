@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7bc409d409cd4da54b61b16d069ce50c2456b53d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61985839"
 ---
 # <a name="corbindtoruntimeex-function"></a>CorBindToRuntimeEx – funkce
 Umožní nespravovaným hostitelům načíst modul CLR (CLR) do procesu. [Corbindtoruntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) a `CorBindToRuntimeEx` funkce provádět stejnou operaci, ale `CorBindToRuntimeEx` funkce umožňuje nastavení příznaků, které určují chování modulu CLR.  
@@ -31,18 +31,18 @@ Umožní nespravovaným hostitelům načíst modul CLR (CLR) do procesu. [Corbin
   
  Tato funkce přebírá sadu parametrů, které umožňují hostitele provést následující kroky:  
   
--   Zadejte verzi modulu runtime, který bude načten.  
+- Zadejte verzi modulu runtime, který bude načten.  
   
--   Označuje, zda se mají načíst sestavení serveru nebo pracovní stanice.  
+- Označuje, zda se mají načíst sestavení serveru nebo pracovní stanice.  
   
--   Určit, jestli se provádí uvolňování paměti nebo nesouběžné uvolňování paměti.  
+- Určit, jestli se provádí uvolňování paměti nebo nesouběžné uvolňování paměti.  
   
 > [!NOTE]
 >  Souběžné uvolňování paměti se nepodporuje v aplikacích spuštěných WOW64 x86 emulátor v 64bitových systémech, které implementují Intel Itanium architekturu (dříve označovanou jako IA-64). Další informace o použití modulu WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitových aplikací](/windows/desktop/WinProg64/running-32-bit-applications).  
   
--   Řídí, zda sestavení jsou načtena jako doménově neutrální.  
+- Řídí, zda sestavení jsou načtena jako doménově neutrální.  
   
--   Získat ukazatel rozhraní k [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) , který je možné nastavit další možnosti konfigurace instance modulu CLR, před jeho spuštění.  
+- Získat ukazatel rozhraní k [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) , který je možné nastavit další možnosti konfigurace instance modulu CLR, před jeho spuštění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -75,31 +75,31 @@ HRESULT CorBindToRuntimeEx (
  `startupFlags`  
  [in] Kombinace hodnot, které [startup_flags –](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčtu. Tyto příznaky řídí souběžné uvolňování paměti, doménově neutrální kód a chování `pwszVersion` parametru. Pokud není nastaven žádný příznak, výchozí hodnota je jedinou doménu. Platné jsou následující hodnoty:  
   
--   `STARTUP_CONCURRENT_GC`  
+- `STARTUP_CONCURRENT_GC`  
   
--   `STARTUP_LOADER_OPTIMIZATION_SINGLE_DOMAIN`  
+- `STARTUP_LOADER_OPTIMIZATION_SINGLE_DOMAIN`  
   
--   `STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN`  
+- `STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN`  
   
--   `STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN_HOST`  
+- `STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN_HOST`  
   
--   `STARTUP_LOADER_SAFEMODE`  
+- `STARTUP_LOADER_SAFEMODE`  
   
--   `STARTUP_LEGACY_IMPERSONATION`  
+- `STARTUP_LEGACY_IMPERSONATION`  
   
--   `STARTUP_LOADER_SETPREFERENCE`  
+- `STARTUP_LOADER_SETPREFERENCE`  
   
--   `STARTUP_SERVER_GC`  
+- `STARTUP_SERVER_GC`  
   
--   `STARTUP_HOARD_GC_VM`  
+- `STARTUP_HOARD_GC_VM`  
   
--   `STARTUP_SINGLE_VERSION_HOSTING_INTERFACE`  
+- `STARTUP_SINGLE_VERSION_HOSTING_INTERFACE`  
   
--   `STARTUP_LEGACY_IMPERSONATION`  
+- `STARTUP_LEGACY_IMPERSONATION`  
   
--   `STARTUP_DISABLE_COMMITTHREADSTACK`  
+- `STARTUP_DISABLE_COMMITTHREADSTACK`  
   
--   `STARTUP_ALWAYSFLOW_IMPERSONATION`  
+- `STARTUP_ALWAYSFLOW_IMPERSONATION`  
   
  Popisy těchto příznaků, najdete v článku [startup_flags –](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčtu.  
   
@@ -124,9 +124,9 @@ HRESULT CorBindToRuntimeEx (
   
 2. Změnou výchozí režim procesu na režim kompatibility verze 1, kde <xref:System.Security.Principal.WindowsIdentity> objektu není téct přes asynchronní fázi bez ohledu na to <xref:System.Threading.ExecutionContext> nastavení pro aktuální vlákno. Jak změnit výchozí režim závisí na, jestli používat spravované spustitelný soubor nebo nespravovaných hostitelských rozhraní načíst modul CLR:  
   
-    1.  Pro spravované spustitelné soubory, je nutné nastavit `enabled` atribut [ \<legacyimpersonationpolicy – >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) elementu `true`.  
+    1. Pro spravované spustitelné soubory, je nutné nastavit `enabled` atribut [ \<legacyimpersonationpolicy – >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) elementu `true`.  
   
-    2.  Pro nespravovaná rozhraní pro hostování, nastavit `STARTUP_LEGACY_IMPERSONATION` příznak v `startupFlags` parametru při volání `CorBindToRuntimeEx` funkce.  
+    2. Pro nespravovaná rozhraní pro hostování, nastavit `STARTUP_LEGACY_IMPERSONATION` příznak v `startupFlags` parametru při volání `CorBindToRuntimeEx` funkce.  
   
      Režim kompatibility verze 1 platí pro celý proces a všech doménách aplikace v procesu.  
   

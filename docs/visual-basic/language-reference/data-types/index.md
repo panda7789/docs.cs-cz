@@ -38,11 +38,11 @@ helpviewer_keywords:
 - data types [Visual Basic], memory requirements
 ms.assetid: e975cdb6-64d8-4a4a-ae27-f3b3ed198ae0
 ms.openlocfilehash: 29e5cbe09026dd52811c6c5fb88e940b45b7c0bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971740"
 ---
 # <a name="data-type-summary-visual-basic"></a>Souhrn datových typů (Visual Basic)
 Následující tabulka uvádí datové typy jazyka Visual Basic, jejich podpůrné běžných typů modulu runtime jazyka, jejich přidělení nominální úložiště a jejich rozsahy hodnot.  
@@ -77,16 +77,16 @@ Následující tabulka uvádí datové typy jazyka Visual Basic, jejich podpůrn
 ## <a name="memory-consumption"></a>Využití paměti  
  Při deklaraci základní datový typ není bezpečné předpokládá, že jeho využití paměti je stejné jako jeho přidělení nominální úložiště. Je to z důvodu následující aspekty:  
   
--   **Přiřazení úložiště.** Modul common language runtime můžete přiřadit úložiště založené na aktuální vlastnosti platformy, na kterém vaše aplikace provádí. Pokud paměti je téměř plná, může ji co nejblíže k sobě pack vaše deklarované elementy co nejvíce. V ostatních případech to může být zarovnat jejich adresy paměti na hranice fyzických hardwarových vazeb pro optimalizaci výkonu.  
+- **Přiřazení úložiště.** Modul common language runtime můžete přiřadit úložiště založené na aktuální vlastnosti platformy, na kterém vaše aplikace provádí. Pokud paměti je téměř plná, může ji co nejblíže k sobě pack vaše deklarované elementy co nejvíce. V ostatních případech to může být zarovnat jejich adresy paměti na hranice fyzických hardwarových vazeb pro optimalizaci výkonu.  
   
--   **Šířka platformy.** Přiřazení úložiště na 64bitové platformě se liší od přiřazení na 32bitové platformě.  
+- **Šířka platformy.** Přiřazení úložiště na 64bitové platformě se liší od přiřazení na 32bitové platformě.  
   
 ### <a name="composite-data-types"></a>Složené datové typy  
  Jaké jsou požadavky stejné platí pro každý člen složené datového typu, jako je například struktura nebo pole. Nelze spoléhat na jednoduše sečtením nominálních přidělení úložiště členů typu. Kromě toho existují další důležité informace, jako je následující:  
   
--   **Režie.** Některé složené typy mají požadavky na paměť navíc. Například pole používá extra paměť pro pole samotného a také pro jednotlivé rozměry. Na 32bitové platformě právě tato dodatečná režie 12 bajtů plus 8 bajtů pro jednotlivé rozměry. Na 64bitové platformě je dvojitá tento požadavek.  
+- **Režie.** Některé složené typy mají požadavky na paměť navíc. Například pole používá extra paměť pro pole samotného a také pro jednotlivé rozměry. Na 32bitové platformě právě tato dodatečná režie 12 bajtů plus 8 bajtů pro jednotlivé rozměry. Na 64bitové platformě je dvojitá tento požadavek.  
   
--   **Rozložení úložiště.** Nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. I nelze vytvořit předpoklady o zarovnání bajt, jako jsou hranice bajtu 2 nebo 4 bajty. Pokud definujete třídu nebo strukturu a je nutné řídit rozložení úložiště z jejích členů, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut třídy nebo struktury.  
+- **Rozložení úložiště.** Nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. I nelze vytvořit předpoklady o zarovnání bajt, jako jsou hranice bajtu 2 nebo 4 bajty. Pokud definujete třídu nebo strukturu a je nutné řídit rozložení úložiště z jejích členů, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut třídy nebo struktury.  
   
 ### <a name="object-overhead"></a>Režijní náklady na objekt  
  `Object` Vztahující se k libovolným datům základní nebo složený typ používá 4 bajty kromě data obsažená v datovém typu.  

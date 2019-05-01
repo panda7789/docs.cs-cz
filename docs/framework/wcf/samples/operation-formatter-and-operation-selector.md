@@ -3,11 +3,11 @@ title: Formátovací modul a selektor operace
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
 ms.openlocfilehash: 45b489aeb88f57fe442cef9ffed1a2ee079b75e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989687"
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
 Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu z co WCF očekává, že body rozšiřitelnosti Windows Communication Foundation (WCF). Ve výchozím nastavení, formátování WCF očekávat parametry metody mají být zahrnuty v části `soap:body` elementu. Vzorek ukazuje, jak implementovat vlastní operace formátování, které místo toho analyzuje data parametrů z řetězce dotazu HTTP GET a volá metody pomocí tato data.  
@@ -16,15 +16,15 @@ Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu 
   
  Uděláte to tak, ukázka poskytuje následující:  
   
--   `QueryStringFormatter`, která implementuje <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> pro klienta a serveru, v uvedeném pořadí a zpracovává data v řetězci dotazu.  
+- `QueryStringFormatter`, která implementuje <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> pro klienta a serveru, v uvedeném pořadí a zpracovává data v řetězci dotazu.  
   
--   `UriOperationSelector`, která implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> na serveru k provedení operace odeslání podle názvu operace v požadavek GET.  
+- `UriOperationSelector`, která implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> na serveru k provedení operace odeslání podle názvu operace v požadavek GET.  
   
--   `EnableHttpGetRequestsBehavior` konfigurace koncového bodu chování (a odpovídající), který modulu runtime přidá selektor potřebné operace.  
+- `EnableHttpGetRequestsBehavior` konfigurace koncového bodu chování (a odpovídající), který modulu runtime přidá selektor potřebné operace.  
   
--   Ukazuje, jak vložit nový formátovací modul operace do modulu runtime.  
+- Ukazuje, jak vložit nový formátovací modul operace do modulu runtime.  
   
--   V této ukázce jsou klient a služba konzolové aplikace (.exe).  
+- V této ukázce jsou klient a služba konzolové aplikace (.exe).  
   
 > [!NOTE]
 >  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
@@ -36,15 +36,15 @@ Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu 
   
  Žádost:  
   
--   Ukázka používá <xref:System.ComponentModel.TypeConverter> třída převést parametr data ve zprávě požadavku do a z řetězce. Pokud <xref:System.ComponentModel.TypeConverter> není k dispozici pro konkrétní typ, vyvolá formátování ukázka výjimku.  
+- Ukázka používá <xref:System.ComponentModel.TypeConverter> třída převést parametr data ve zprávě požadavku do a z řetězce. Pokud <xref:System.ComponentModel.TypeConverter> není k dispozici pro konkrétní typ, vyvolá formátování ukázka výjimku.  
   
--   V `IClientMessageFormatter.SerializeRequest` metody na straně klienta, formátovací modul vytváří identifikátor URI s příslušnou adresu a přidá název operace jako příponu. Tento název se používá k odeslání do příslušné operace na serveru. Potom přijímá pole objektů parametr a serializuje data parametru řetězce dotazu URI pomocí názvy parametrů a hodnot pomocí převedeny <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> a <xref:System.ServiceModel.Channels.MessageProperties.Via%2A> vlastnosti jsou pak nastavte na tento identifikátor URI. <xref:System.ServiceModel.Channels.MessageProperties> je přístupný prostřednictvím <xref:System.ServiceModel.Channels.Message.Properties%2A> vlastnost.  
+- V `IClientMessageFormatter.SerializeRequest` metody na straně klienta, formátovací modul vytváří identifikátor URI s příslušnou adresu a přidá název operace jako příponu. Tento název se používá k odeslání do příslušné operace na serveru. Potom přijímá pole objektů parametr a serializuje data parametru řetězce dotazu URI pomocí názvy parametrů a hodnot pomocí převedeny <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> a <xref:System.ServiceModel.Channels.MessageProperties.Via%2A> vlastnosti jsou pak nastavte na tento identifikátor URI. <xref:System.ServiceModel.Channels.MessageProperties> je přístupný prostřednictvím <xref:System.ServiceModel.Channels.Message.Properties%2A> vlastnost.  
   
--   V `IDispatchMessageFormatter.DeserializeRequest` načte formátovací modul metoda na serveru, `Via` identifikátor URI ve vlastnostech příchozí zprávy požadavku. Analyzuje dvojice název hodnota v řetězci dotazu identifikátoru URI do názvy parametrů a hodnot a využije názvy parametrů a hodnoty k vyplnění pole parametry předané do metody. Všimněte si, že operace odeslání již došlo, tak v této metodě se ignoruje přípona názvu operace.  
+- V `IDispatchMessageFormatter.DeserializeRequest` načte formátovací modul metoda na serveru, `Via` identifikátor URI ve vlastnostech příchozí zprávy požadavku. Analyzuje dvojice název hodnota v řetězci dotazu identifikátoru URI do názvy parametrů a hodnot a využije názvy parametrů a hodnoty k vyplnění pole parametry předané do metody. Všimněte si, že operace odeslání již došlo, tak v této metodě se ignoruje přípona názvu operace.  
   
  Odpověď:  
   
--   V této ukázce GET protokolu HTTP se používá pouze pro daný požadavek. Formátovací modul delegátů, odeslání odpovědi na původní formátovací modul, který by byl použit ke generování hlášení XML. Jedním z cílů tohoto příkladu je zobrazit, jak je možné implementovat Delegující formátování.  
+- V této ukázce GET protokolu HTTP se používá pouze pro daný požadavek. Formátovací modul delegátů, odeslání odpovědi na původní formátovací modul, který by byl použit ke generování hlášení XML. Jedním z cílů tohoto příkladu je zobrazit, jak je možné implementovat Delegující formátování.  
   
 ### <a name="uripathsuffixoperationselector-class"></a>Třída UriPathSuffixOperationSelector  
  <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> Rozhraní umožňuje uživatelům implementovat své vlastní logiky, které operace by měla konkrétní zpráva odeslána.  
@@ -94,16 +94,16 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
  Na serveru:  
   
--   <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> Musí implementovat rozhraní, tak, aby může číst požadavky HTTP GET a delegovat na původní formátovací modul pro psaní odpovědi. To se provádí voláním stejné `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` pomocnou metodu jako klient (viz předchozí ukázka kódu).  
+- <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> Musí implementovat rozhraní, tak, aby může číst požadavky HTTP GET a delegovat na původní formátovací modul pro psaní odpovědi. To se provádí voláním stejné `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` pomocnou metodu jako klient (viz předchozí ukázka kódu).  
   
--   To je nutné provést před <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> je volána. V tomto příkladu vám ukážeme, jak formátovací modul ručně změnit před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Jiný způsob, jak dosáhnout stejnou věc je na odvození třídy z <xref:System.ServiceModel.ServiceHost> , která provádí volání na `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` před otevřením (podrobnosti najdete na hostování dokumentaci a ukázky pro příklady).  
+- To je nutné provést před <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> je volána. V tomto příkladu vám ukážeme, jak formátovací modul ručně změnit před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Jiný způsob, jak dosáhnout stejnou věc je na odvození třídy z <xref:System.ServiceModel.ServiceHost> , která provádí volání na `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` před otevřením (podrobnosti najdete na hostování dokumentaci a ukázky pro příklady).  
   
 ### <a name="user-experience"></a>Činnost koncového uživatele  
  Na serveru:  
   
--   Server `ICalculator` implementace není potřeba změnit.  
+- Server `ICalculator` implementace není potřeba změnit.  
   
--   App.config pro službu, musíte použít vlastní POX vazby, který nastaví `messageVersion` atribut `textMessageEncoding` elementu `None`.  
+- App.config pro službu, musíte použít vlastní POX vazby, který nastaví `messageVersion` atribut `textMessageEncoding` elementu `None`.  
   
     ```xml  
     <bindings>  
@@ -116,7 +116,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
     </bindings>  
     ```  
   
--   Souboru App.config pro službu musíte zadat také vlastní `EnableHttpGetRequestsBehavior` přidáním do oddílu rozšíření chování a jeho použití.  
+- Souboru App.config pro službu musíte zadat také vlastní `EnableHttpGetRequestsBehavior` přidáním do oddílu rozšíření chování a jeho použití.  
   
     ```xml  
     <behaviors>  
@@ -136,13 +136,13 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
     </extensions>  
     ```  
   
--   Přidání operace formátování před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>.  
+- Přidání operace formátování před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>.  
   
  Na straně klienta:  
   
--   Implementace klienta není potřeba změnit.  
+- Implementace klienta není potřeba změnit.  
   
--   App.config pro klienta, musíte použít vlastní POX vazby, který nastaví `messageVersion` atribut `textMessageEncoding` elementu `None`. Jedním z rozdílů ze služby je, že klient musí povolit ruční adresování tak, aby odesílaných na adresu je možné upravit.  
+- App.config pro klienta, musíte použít vlastní POX vazby, který nastaví `messageVersion` atribut `textMessageEncoding` elementu `None`. Jedním z rozdílů ze služby je, že klient musí povolit ruční adresování tak, aby odesílaných na adresu je možné upravit.  
   
     ```xml  
     <bindings>  
@@ -155,9 +155,9 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
     </bindings>  
     ```  
   
--   Souboru App.config pro klienta, musíte zadat stejné vlastní `EnableHttpGetRequestsBehavior` jako server.  
+- Souboru App.config pro klienta, musíte zadat stejné vlastní `EnableHttpGetRequestsBehavior` jako server.  
   
--   Přidání operace formátování před voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel>.  
+- Přidání operace formátování před voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel>.  
   
  Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Všechny čtyři operace (přidat, odečítání, násobení a rozdělit) musí být úspěšný.  
   

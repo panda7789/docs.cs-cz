@@ -3,11 +3,11 @@ title: InstalaceF#
 description: Zjistěte, jak nainstalovat F# podle vašeho prostředí.
 ms.date: 08/28/2018
 ms.openlocfilehash: 792c61c0522cd4d0c68a64572f2892ce33f71ea6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62017017"
 ---
 # <a name="install-f"></a>Instalaci F\#
 

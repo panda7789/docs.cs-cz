@@ -3,11 +3,11 @@ title: Funkce
 description: Další informace o funkcích v F# a jak F# podporuje běžné konstrukce funkčního programování.
 ms.date: 05/16/2016
 ms.openlocfilehash: 6e9ef916388745d2dd6874295d06dca656971b3f
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61996785"
 ---
 # <a name="functions"></a>Funkce
 
@@ -136,7 +136,7 @@ Více argumentů jsou odděleny po sobě jdoucích `->` tokeny, jak je znázorn�
 
 Výsledkem je 200.
 
-## <a name="lambda-expressions"></a>Výrazy lambda
+## <a name="lambda-expressions"></a>Lambda – výrazy
 
 A *výraz lambda* je nepojmenovaný funkce. V předchozích příkladech místo definování pojmenované funkce **přírůstek** a **mul**, můžete použít výrazy lambda následujícím způsobem:
 

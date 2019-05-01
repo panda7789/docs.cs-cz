@@ -3,11 +3,11 @@ title: Vlastní zabezpečený koncový bod metadat
 ms.date: 03/30/2017
 ms.assetid: 9e369e99-ea4a-49ff-aed2-9fdf61091a48
 ms.openlocfilehash: c835cfecab38a76f285767f918dfc082915ffcfc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61990714"
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Vlastní zabezpečený koncový bod metadat
 Tento příklad ukazuje, jak implementovat službu s koncovým bodem zabezpečené metadata, která používá jedna z vazeb neobsahující metadata exchange a konfigurace [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nebo klientům pro načtení metadata z těchto koncových bodů metadat. Dostupné jsou dvě vazby poskytované systémem vystavení koncové body metadat: mexHttpBinding a mexHttpsBinding. mexHttpBinding se používá k vystavení koncový bod metadat prostřednictvím protokolu HTTP nezabezpečené způsobem. mexHttpsBinding se používá k vystavení koncový bod metadat prostřednictvím protokolu HTTPS bezpečným způsobem. Tento příklad ukazuje, jak vystavit koncový bod metadat zabezpečené pomocí <xref:System.ServiceModel.WSHttpBinding>. Chcete to provést, když chcete změnit nastavení zabezpečení v rámci vazby, ale nechcete, aby používal protokol HTTPS. Pokud používáte mexHttpsBinding váš koncový bod metadat budou zabezpečené, ale neexistuje žádný způsob, jak upravit nastavení vazby.  
@@ -168,11 +168,11 @@ ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Bin
   
 10. V klientském počítači spusťte MetadataResolverClient nebo SvcutilClient z VS.  
   
-    1.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+    1. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
     >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky napříč počítači. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty mezi počítači, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`. Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  

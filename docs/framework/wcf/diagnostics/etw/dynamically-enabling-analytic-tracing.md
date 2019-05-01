@@ -3,22 +3,22 @@ title: Dynamické povolování analytického sledování
 ms.date: 03/30/2017
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
 ms.openlocfilehash: 219561b1acd2259daad4c984dcf0b15517166c3f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59197474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61999458"
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>Dynamické povolování analytického sledování
 Pomocí nástrojů, které se dodávají s operačním systémem Windows, můžete povolit nebo zakázat trasování dynamicky pomocí Event Tracing for Windows (ETW). Pro všechny [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby Windows Communication Foundation (WCF), analytické trasování může být povolení i Zakázaní dynamicky bez úpravy souboru Web.config aplikace nebo restartování služby. To umožňuje, aby aplikace, který vysílá události trasování k zajištění nepřerušeného.  
   
  Možnosti trasování WCF můžete nakonfigurovat podobným způsobem. Například můžete změnit úroveň závažnosti ze **chyba** k **informace** bez narušení aplikace. To lze provést pomocí následujících nástrojů:  
   
--   **Logman** – nástroj příkazového řádku pro konfiguraci, řízení a dotazování dat trasování. Další informace najdete v tématu [Logman vytvořit trasování](https://go.microsoft.com/fwlink/?LinkId=165426) a [Logman aktualizace trasování](https://go.microsoft.com/fwlink/?LinkId=165427).  
+- **Logman** – nástroj příkazového řádku pro konfiguraci, řízení a dotazování dat trasování. Další informace najdete v tématu [Logman vytvořit trasování](https://go.microsoft.com/fwlink/?LinkId=165426) a [Logman aktualizace trasování](https://go.microsoft.com/fwlink/?LinkId=165427).  
   
--   **EventViewer** – nástroj pro správu grafického rozhraní Windows pro zobrazení výsledků trasování. Další informace najdete v tématu [služby WCF a události trasování pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) a [Prohlížeč událostí](https://go.microsoft.com/fwlink/?LinkId=165428).  
+- **EventViewer** – nástroj pro správu grafického rozhraní Windows pro zobrazení výsledků trasování. Další informace najdete v tématu [služby WCF a události trasování pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) a [Prohlížeč událostí](https://go.microsoft.com/fwlink/?LinkId=165428).  
   
--   **Nástroj Perfmon** – nástroje pro správu grafického rozhraní Windows, který používá čítače pro monitorování čítačů trasování a efekty trasování na výkon. Další informace najdete v tématu [Data Collector nastavit ručně vytvořit](https://go.microsoft.com/fwlink/?LinkId=165429).  
+- **Nástroj Perfmon** – nástroje pro správu grafického rozhraní Windows, který používá čítače pro monitorování čítačů trasování a efekty trasování na výkon. Další informace najdete v tématu [Data Collector nastavit ručně vytvořit](https://go.microsoft.com/fwlink/?LinkId=165429).  
   
 ### <a name="keywords"></a>klíčová slova  
  Při použití <xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> třídy, rozhraní .NET Framework trasovací zprávy jsou obecně Filtroval úroveň závažnosti (například Chyba, upozornění a informace). Trasování událostí pro Windows podporuje koncept úrovně závažnosti, ale zavádí nové, flexibilní filtrační mechanismus, pomocí klíčových slov. Klíčová slova jsou libovolné textové hodnoty, které umožní – události trasování poskytli další kontext o tom, co znamená příslušné události.  

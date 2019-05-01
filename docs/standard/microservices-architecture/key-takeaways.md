@@ -1,15 +1,15 @@
 ---
-title: Stěžejní zjištění
+title: Základní poznatky
 description: Získat stěžejní z architektury Mikroslužby .NET Kontejnerizovaných aplikací .NET/elektronická kniha průvodce, aby rychlý přehled vysoké úrovně problémy zahrnuty při použití architektury mikroslužeb, jako je výhody a nevýhody, vzorů DDD pro návrh a vývoj, jakož i odolnost proti chybám, zabezpečení a použití orchestrátorů.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/19/2018
 ms.openlocfilehash: 90babf9a32d1e139216cbc8eb1c629401b8e83e3
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020171"
 ---
 # <a name="key-takeaways"></a>Stěžejní zjištění
 

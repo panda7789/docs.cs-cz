@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2143fc13db1757ac2fa8a9c5a43f104a0c519ca0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61985826"
 ---
 # <a name="corruntimehost-coclass"></a>CorRuntimeHost – třída typu coclass
 Poskytuje rozhraní pro správu aplikací, které se spouštějí modul common language runtime.  

@@ -6,20 +6,20 @@ helpviewer_keywords:
 - Windows Forms, adding change notification for data binding
 ms.assetid: b5b10f90-0585-41d9-a377-409835262a92
 ms.openlocfilehash: 559cdee1cce84df1c4b838e249d11ba235a0c636
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011876"
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a>Oznámení změn v datové vazbě rozhraní Windows Forms
 Jednou z nejdůležitějších pojmů Windows Forms – datová vazba je *oznámení o změně*. Pokud chcete mít jistotu, že zdroj dat a ovládací prvky vázané vždy mít nejnovější data, je nutné přidat oznámení o změně pro datovou vazbu. Konkrétně chcete mít jistotu, že vázané ovládací prvky se zobrazí oznámení o změnách, které byly provedeny na jejich zdroj dat a zdroj dat je oznámení o změnách, které byly provedeny vázané vlastnosti ovládacího prvku.  
   
  Existují různé druhy oznámení o změně, v závislosti na druhu datové vazby:  
   
--   Jednoduchá vazba, ve kterém je vlastnost jeden ovládací prvek vázán na jednu instanci objektu.  
+- Jednoduchá vazba, ve kterém je vlastnost jeden ovládací prvek vázán na jednu instanci objektu.  
   
--   Vazba založený na seznamu, který může obsahovat jeden ovládací prvek vlastnost vázána na vlastnost položky v seznamu nebo vlastnosti ovládacího prvku vázán na seznam objektů.  
+- Vazba založený na seznamu, který může obsahovat jeden ovládací prvek vlastnost vázána na vlastnost položky v seznamu nebo vlastnosti ovládacího prvku vázán na seznam objektů.  
   
  Kromě toho při vytváření ovládacích prvků Windows Forms, který chcete použít pro datové vazby, musíte použít *PropertyName*změnit vzor k ovládacím prvkům tak, aby změny vázané vlastnosti ovládacího prvku se rozšíří na zdroj dat.  
   

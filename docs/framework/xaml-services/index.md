@@ -7,11 +7,11 @@ helpviewer_keywords:
 - System.Xaml [XAML Services], conceptual documentation
 ms.assetid: 0e11f386-808c-4eae-9ba6-029ad7ba2211
 ms.openlocfilehash: 37fdd96c0666bc6ecda0f46daa5ca6271a8666ab
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58048155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007419"
 ---
 # <a name="xaml-services"></a>XAML Services
 Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané jsou umístěny v oboru názvů System.Xaml, což je sestavení představeny s nástrojem sestavení [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] sadu .NET core sestavení. Mezi tyto služby patří objekty pro vytváření čtečky a zapisovače, schéma třídy a podpora schématu, zapisujících tříd, vnitřní podporu pro jazyk XAML a dalších funkcí jazyka XAML.  
@@ -19,19 +19,19 @@ Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET
 ## <a name="about-this-documentation"></a>Informace o této dokumentaci  
  Rámcové dokumentaci pro rozhraní .NET Framework XAML Services se předpokládá, že máte předchozí zkušenosti s jazykem XAML a jak jej mohou vztahovat na určité rozhraní, například [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] nebo Windows Workflow Foundation, nebo konkrétní technologie funkce oblasti, například vlastní nastavení sestavení funkce v <xref:Microsoft.Build.Framework.XamlTypes>. Tato dokumentace nebude pokoušet o vysvětluje základy XAML jako značka jazyka, terminologie syntaxe XAML nebo další úvodní materiály. Místo toho tato dokumentace se zaměřuje na konkrétně v knihovně oboru názvů System.Xaml sestavení s využitím rozhraní .NET Framework XAML Services jsou povolené. Většina těchto rozhraní API jsou určené pro scénáře integrace jazyka XAML a rozšíření. To může zahrnovat kterýkoli z následujících:  
   
--   Rozšíření možností základní XAML čtečky nebo zapisovače XAML (zpracování datový proud uzlu XAML přímo; odvozený vlastní XAML čtečky nebo zapisovače XAML).  
+- Rozšíření možností základní XAML čtečky nebo zapisovače XAML (zpracování datový proud uzlu XAML přímo; odvozený vlastní XAML čtečky nebo zapisovače XAML).  
   
--   Definování XAML počítačově využitelný vlastních typů, které nemají závislosti konkrétní verzi rozhraní framework a zapisujících typů k vyjádření jejich XAML zadejte vlastnosti systému pro rozhraní .NET Framework XAML Services.  
+- Definování XAML počítačově využitelný vlastních typů, které nemají závislosti konkrétní verzi rozhraní framework a zapisujících typů k vyjádření jejich XAML zadejte vlastnosti systému pro rozhraní .NET Framework XAML Services.  
   
--   Hostování jako součást aplikace, jako je například interaktivní editor pro zdroje značky XAML a vizuálního návrháře XAML čtečky nebo zapisovače XAML.  
+- Hostování jako součást aplikace, jako je například interaktivní editor pro zdroje značky XAML a vizuálního návrháře XAML čtečky nebo zapisovače XAML.  
   
--   Zápis převaděče hodnot XAML (přípony označení; převaděčů typů pro vlastní typy).  
+- Zápis převaděče hodnot XAML (přípony označení; převaděčů typů pro vlastní typy).  
   
--   Definování vlastních kontext schématu XAML (použití alternativní metody načtení sestavení pro základní typ zdroje; pomocí technik vyhledávání známé typy ne vždy odráží sestavení; pomocí koncepty načtené sestavení, které nepoužívají CLR `AppDomain` a svůj model zabezpečení).  
+- Definování vlastních kontext schématu XAML (použití alternativní metody načtení sestavení pro základní typ zdroje; pomocí technik vyhledávání známé typy ne vždy odráží sestavení; pomocí koncepty načtené sestavení, které nepoužívají CLR `AppDomain` a svůj model zabezpečení).  
   
--   Rozšíření základního typu systému XAML.  
+- Rozšíření základního typu systému XAML.  
   
--   Použití `Lookup` nebo `Invoker` techniky k ovlivnění XAML zadejte systém a jak se vyhodnocují typ podklady.  
+- Použití `Lookup` nebo `Invoker` techniky k ovlivnění XAML zadejte systém a jak se vyhodnocují typ podklady.  
   
  Pokud chcete pro úvodní materiály na XAML jako jazyk, můžete se pokusit [přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md). Toto téma popisuje XAML pro cílovou skupinu, která je nová, jak [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] a také můžete používat značky XAML a funkce jazyka XAML. Další užitečné dokument je úvodní materiály v [specifikace jazyka XAML](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
@@ -45,50 +45,50 @@ Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET
 ## <a name="xaml-node-streams-xaml-readers-and-xaml-writers"></a>Datové proudy uzlu XAML, XAML čtečky a zapisovače XAML  
  Chcete-li pochopit, jakou roli hraje ve vztahu mezi jazyka XAML a konkrétní technologie, které používají XAML jako jazyk rozhraní .NET Framework XAML Services, je dobré znát konceptu datový proud uzlu XAML a jak tento koncept obrazce rozhraní API a terminologie. Datový proud uzlu XAML je koncepční zprostředkující mezi reprezentace jazyka XAML a graf objektu, který představuje XAML nebo definuje.  
   
--   Čtečka XAML je entita, která zpracovává XAML v nějaké podobě a vytvoří datový proud uzlu XAML. V rozhraní API čtečku XAML představuje základní třídu <xref:System.Xaml.XamlReader>.  
+- Čtečka XAML je entita, která zpracovává XAML v nějaké podobě a vytvoří datový proud uzlu XAML. V rozhraní API čtečku XAML představuje základní třídu <xref:System.Xaml.XamlReader>.  
   
--   Zapisovač XAML je entita, která zpracovává datový proud uzlu XAML a vytváří něco jiného. V rozhraní API, zapisovač XAML představuje základní třídu <xref:System.Xaml.XamlWriter>.  
+- Zapisovač XAML je entita, která zpracovává datový proud uzlu XAML a vytváří něco jiného. V rozhraní API, zapisovač XAML představuje základní třídu <xref:System.Xaml.XamlWriter>.  
   
  Dvě nejběžnější scénáře zahrnující XAML jsou načítání XAML pro vytvoření instance grafu objektů a ukládání grafu objektů z aplikace nebo nástroje a vytváření reprezentaci XAML (obvykle v podobě značek uložen jako textový soubor). Načítání XAML a vytvoření grafu objektu je často uvedené v této dokumentaci jako načíst cestu. Uložení nebo serializaci existující graf objektu do XAML se často označuje v této dokumentaci jako Uložit cestu.  
   
  Nejběžnějším typem načíst cestu lze popsat následujícím způsobem:  
   
--   Začněte s reprezentací XAML, ve formátu XML s kódováním UTF a uložen jako textový soubor.  
+- Začněte s reprezentací XAML, ve formátu XML s kódováním UTF a uložen jako textový soubor.  
   
--   Načíst tuto XAML do <xref:System.Xaml.XamlXmlReader>. <xref:System.Xaml.XamlXmlReader> je <xref:System.Xaml.XamlReader> podtřídy.  
+- Načíst tuto XAML do <xref:System.Xaml.XamlXmlReader>. <xref:System.Xaml.XamlXmlReader> je <xref:System.Xaml.XamlReader> podtřídy.  
   
--   Výsledkem je datový proud uzlu XAML. Jednotlivé uzly pomocí datový proud uzlu XAML jsou přístupné <xref:System.Xaml.XamlXmlReader>  /  <xref:System.Xaml.XamlReader> rozhraní API. Některé běžné operace, je postupoval datový proud uzlu XAML zpracování každého uzlu pomocí "aktuální záznam" metafora.  
+- Výsledkem je datový proud uzlu XAML. Jednotlivé uzly pomocí datový proud uzlu XAML jsou přístupné <xref:System.Xaml.XamlXmlReader>  /  <xref:System.Xaml.XamlReader> rozhraní API. Některé běžné operace, je postupoval datový proud uzlu XAML zpracování každého uzlu pomocí "aktuální záznam" metafora.  
   
--   Předat z datový proud uzlu XAML pro výsledný uzly <xref:System.Xaml.XamlObjectWriter> rozhraní API. <xref:System.Xaml.XamlObjectWriter> je <xref:System.Xaml.XamlWriter> podtřídy.  
+- Předat z datový proud uzlu XAML pro výsledný uzly <xref:System.Xaml.XamlObjectWriter> rozhraní API. <xref:System.Xaml.XamlObjectWriter> je <xref:System.Xaml.XamlWriter> podtřídy.  
   
--   <xref:System.Xaml.XamlObjectWriter> Zapíše grafu objektů, jeden objekt najednou, v souladu pokroku prostřednictvím zdrojový datový proud uzlu XAML. To se provádí za pomoci kontext schématu XAML a implementace, která může přistupovat k sestavení a typy zálohování systému typů a rozhraní framework.  
+- <xref:System.Xaml.XamlObjectWriter> Zapíše grafu objektů, jeden objekt najednou, v souladu pokroku prostřednictvím zdrojový datový proud uzlu XAML. To se provádí za pomoci kontext schématu XAML a implementace, která může přistupovat k sestavení a typy zálohování systému typů a rozhraní framework.  
   
--   Volání <xref:System.Xaml.XamlObjectWriter.Result%2A> na konci datový proud uzlu XAML získat kořenového objektu grafu objektů.  
+- Volání <xref:System.Xaml.XamlObjectWriter.Result%2A> na konci datový proud uzlu XAML získat kořenového objektu grafu objektů.  
   
  Nejběžnější druh cesta pro uložení lze popsat následujícím způsobem:  
   
--   Začněte s graf objektu je čas spuštění celé aplikace, obsah uživatelského rozhraní a stav doba běhu nebo menší segment celkové aplikace reprezentace objektu v době běhu.  
+- Začněte s graf objektu je čas spuštění celé aplikace, obsah uživatelského rozhraní a stav doba běhu nebo menší segment celkové aplikace reprezentace objektu v době běhu.  
   
--   Z objektu logické spuštění, například kořen dokumentu nebo kořenový adresář aplikace načíst objekty do <xref:System.Xaml.XamlObjectReader>. <xref:System.Xaml.XamlObjectReader> je <xref:System.Xaml.XamlReader> podtřídy.  
+- Z objektu logické spuštění, například kořen dokumentu nebo kořenový adresář aplikace načíst objekty do <xref:System.Xaml.XamlObjectReader>. <xref:System.Xaml.XamlObjectReader> je <xref:System.Xaml.XamlReader> podtřídy.  
   
--   Výsledkem je datový proud uzlu XAML. Jednotlivé uzly pomocí datový proud uzlu XAML jsou přístupné <xref:System.Xaml.XamlObjectReader> a <xref:System.Xaml.XamlReader> rozhraní API. Některé běžné operace, je postupoval datový proud uzlu XAML zpracování každého uzlu pomocí "aktuální záznam" metafora.  
+- Výsledkem je datový proud uzlu XAML. Jednotlivé uzly pomocí datový proud uzlu XAML jsou přístupné <xref:System.Xaml.XamlObjectReader> a <xref:System.Xaml.XamlReader> rozhraní API. Některé běžné operace, je postupoval datový proud uzlu XAML zpracování každého uzlu pomocí "aktuální záznam" metafora.  
   
--   Předat z datový proud uzlu XAML pro výsledný uzly <xref:System.Xaml.XamlXmlWriter> rozhraní API. <xref:System.Xaml.XamlXmlWriter> je <xref:System.Xaml.XamlWriter> podtřídy.  
+- Předat z datový proud uzlu XAML pro výsledný uzly <xref:System.Xaml.XamlXmlWriter> rozhraní API. <xref:System.Xaml.XamlXmlWriter> je <xref:System.Xaml.XamlWriter> podtřídy.  
   
--   <xref:System.Xaml.XamlXmlWriter> Zapsalo XAML XML UTF kódování. Můžete uložit jako textový soubor jako datový proud nebo v jiných formulářů.  
+- <xref:System.Xaml.XamlXmlWriter> Zapsalo XAML XML UTF kódování. Můžete uložit jako textový soubor jako datový proud nebo v jiných formulářů.  
   
--   Volání <xref:System.Xaml.XamlXmlWriter.Flush%2A> získat konečného výstupu.  
+- Volání <xref:System.Xaml.XamlXmlWriter.Flush%2A> získat konečného výstupu.  
   
  Další informace o konceptech datový proud uzlu XAML najdete v tématu [Principy XAML Stream struktur a koncepcí uzlů](understanding-xaml-node-stream-structures-and-concepts.md).  
   
 ### <a name="the-xamlservices-class"></a>Xamlservices – třída  
  Není vždy nutné řešit datový proud uzlu XAML. Pokud chcete základní načíst cestu nebo základní cesta pro uložení, můžete použít rozhraní API v <xref:System.Xaml.XamlServices> třídy.  
   
--   Různé podpisy <xref:System.Xaml.XamlServices.Load%2A> implementovat načíst cestu. Můžete načíst soubor nebo datový proud, nebo můžete načíst <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader> nebo <xref:System.Xaml.XamlReader> , zabalit váš vstup XAML načtením této čtečky rozhraní API.  
+- Různé podpisy <xref:System.Xaml.XamlServices.Load%2A> implementovat načíst cestu. Můžete načíst soubor nebo datový proud, nebo můžete načíst <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader> nebo <xref:System.Xaml.XamlReader> , zabalit váš vstup XAML načtením této čtečky rozhraní API.  
   
--   Různé podpisy <xref:System.Xaml.XamlServices.Save%2A> uložení grafu objektů a výstup pomocí datového proudu souboru, nebo <xref:System.Xml.XmlWriter> / <xref:System.IO.TextWriter> instance.  
+- Různé podpisy <xref:System.Xaml.XamlServices.Save%2A> uložení grafu objektů a výstup pomocí datového proudu souboru, nebo <xref:System.Xml.XmlWriter> / <xref:System.IO.TextWriter> instance.  
   
--   <xref:System.Xaml.XamlServices.Transform%2A> Převede XAML propojením načíst cestu a uložit cestu jako jediná operace. Kontext jiné schéma nebo záložní systém typů může být využíván pro <xref:System.Xaml.XamlReader> a <xref:System.Xaml.XamlWriter>, což je, co ovlivňuje, jak transformovat výsledný XAML.  
+- <xref:System.Xaml.XamlServices.Transform%2A> Převede XAML propojením načíst cestu a uložit cestu jako jediná operace. Kontext jiné schéma nebo záložní systém typů může být využíván pro <xref:System.Xaml.XamlReader> a <xref:System.Xaml.XamlWriter>, což je, co ovlivňuje, jak transformovat výsledný XAML.  
   
  Další informace o tom, jak používat <xref:System.Xaml.XamlServices>, naleznete v tématu [třída XAMLServices a základní XAML čtení nebo zápisu](xamlservices-class-and-basic-xaml-reading-or-writing.md).  
   

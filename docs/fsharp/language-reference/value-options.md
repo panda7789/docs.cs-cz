@@ -3,11 +3,11 @@ title: Hodnota možnosti
 description: Další informace o F# možnost Hodnota typu, který je struktura verzi typu možnosti.
 ms.date: 02/06/2019
 ms.openlocfilehash: e1036c83189c853b3704d94ca245e4818acc98c1
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61982576"
 ---
 # <a name="value-options"></a>Hodnota možnosti
 

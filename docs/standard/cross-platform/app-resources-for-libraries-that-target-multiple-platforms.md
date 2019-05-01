@@ -15,11 +15,11 @@ ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6c3e9e58a8cfe5f18aba2e8db56f84d089cc49df
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54641145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055014"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) projektu typu zajistit, že prostředky v knihovnách tříd můžete přistupovat z více platforem. Tento typ projektu je k dispozici v sadě Visual Studio 2012 a cílí na přenosné podmnožiny knihovny tříd rozhraní .NET Framework. Použití [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] zajistí, že vaše knihovna přístupná z aplikací klasické pracovní plochy, aplikace Silverlight, Windows Phone apps, a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.

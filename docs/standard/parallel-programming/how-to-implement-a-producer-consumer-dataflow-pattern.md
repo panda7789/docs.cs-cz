@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Implementace vzoru toku dat producent – příjemce'
+title: 'Postupy: Implementace vzoru toku dat producent–příjemce'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,13 +13,13 @@ ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2ad212117cc51c17b2a0f68a98bee24e1dd3fa05
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61962549"
 ---
-# <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>Postupy: Implementace vzoru toku dat producent – příjemce
+# <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>Postupy: Implementace vzoru toku dat producent–příjemce
 Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro implementaci vzoru producent – příjemce. V tomto modelu *producent* posílání zpráv do bloku zprávy a *příjemce* čte zprávy z tohoto bloku.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -41,7 +41,7 @@ Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro imp
   
  Visual Basic  
   
- **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.vb**  
+ **vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.vb**  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Předchozí příklad používá ke zpracování dat zdroje jenom jednoho příjemce. Pokud máte více příjemci ve vaší aplikaci, použijte <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> metodu za účelem čtení dat ze zdrojového bloku, jak je znázorněno v následujícím příkladu.  

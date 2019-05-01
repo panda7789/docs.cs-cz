@@ -3,11 +3,11 @@ title: Zabezpečené konverzace a zabezpečené relace
 ms.date: 03/30/2017
 ms.assetid: 48cb104a-532d-40ae-aa57-769dae103fda
 ms.openlocfilehash: 9b2c22d6db5a773bfb3f3a41e458b530fc889d71
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61991000"
 ---
 # <a name="secure-conversations-and-secure-sessions"></a>Zabezpečené konverzace a zabezpečené relace
 Funkce služby Windows Communication Foundation (WCF) je možnost vytvořit zabezpečené relace mezi dva koncové body, které se navzájem ověří a odsouhlaste šifrování a proces digitální podpis. Koncový bod služby může například vyžadovat koncový bod klienta odeslat token zabezpečení na základě certifikátu X.509 pro ověřování. Po ověření klienta koncového bodu služby vrátí zpět do klienta, který potom slouží k zabezpečení všech dalších zpráv v rámci relace token kontextu zabezpečení (SCT). Navázání této relace zabezpečení umožňuje sadu zpráv, které se vyměňují mezi dva koncové body být efektivnější, protože SCT má symetrický klíč. Asymetrické klíče, které certifikáty X.509 jsou založeny na, vyžadují výrazně vyšší výpočetní výkon než symetrického klíče při generování digitálního podpisu nebo sady dat šifrování.  

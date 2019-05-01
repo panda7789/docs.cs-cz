@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6b36c524921a4fecf8bc5ddcbace62af6450b6d
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61993899"
 ---
 # <a name="icordebugtypegettype-method"></a>ICorDebugType::GetType – metoda
 Získá hodnotu corelementtype –, který popisuje nativní typ modulu common language runtime (CLR) <xref:System.Type> reprezentována tento ICorDebugType.  

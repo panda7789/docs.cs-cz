@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
 ms.openlocfilehash: cde5599734dbeb450e10b2b74cf035b41129d653
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62007471"
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
 Tato ukázka demonstruje použití transakce koordinovaný klienta a klient a server možnosti pro transakci tok pomocí protokolu WS-Atomic Transactions nebo OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje službu kalkulačky, ale operace mají atributy pro demonstraci použití `TransactionFlowAttribute` s **TransactionFlowOption** výčet, chcete-li zjistit, jaké úroveň transakce je povolen tok. V rámci oboru sdružení probíhajících transakcí, protokol požadované operace jsou zapsána do databáze a zůstává v platnosti do klienta koordinované transakce byla dokončena – Pokud klientská transakce nedokončí, transakce webové služby zajišťuje, že příslušné aktualizace do databáze nejsou potvrzeny.  
@@ -39,13 +39,13 @@ public interface ICalculator
 
  Definuje operace v pořadí, ve kterém jsou ke zpracování:  
   
--   `Add` Žádost o operaci musí obsahovat sdružení probíhajících transakcí.  
+- `Add` Žádost o operaci musí obsahovat sdružení probíhajících transakcí.  
   
--   A `Subtract` žádost o operaci může zahrnovat sdružení probíhajících transakcí.  
+- A `Subtract` žádost o operaci může zahrnovat sdružení probíhajících transakcí.  
   
--   A `Multiply` žádost o operaci, nesmí obsahovat toku transakce pomocí explicitní nastavení hodnotu NotAllowed.  
+- A `Multiply` žádost o operaci, nesmí obsahovat toku transakce pomocí explicitní nastavení hodnotu NotAllowed.  
   
--   A `Divide` žádost o operaci, nesmí obsahovat sdružení probíhajících transakcí prostřednictvím vynechání `TransactionFlow` atribut.  
+- A `Divide` žádost o operaci, nesmí obsahovat sdružení probíhajících transakcí prostřednictvím vynechání `TransactionFlow` atribut.  
   
  Povolení toku transakcí, vazby s [ \<transactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) vlastnost povoleno je nutné použít kromě atributů příslušné operace. Konfigurace služby v této ukázce zpřístupňuje koncový bod TCP a koncový bod HTTP kromě koncový bod výměny metadat. Koncový bod TCP a koncový bod protokolu HTTP použijte následující vazby, které mají [ \<transactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) vlastnost povolena.  
   
@@ -182,15 +182,15 @@ Console.WriteLine("Transaction committed");
 
  Volání operace jsou následující:  
   
--   `Add` Požadavek toky požadovanou transakci ke službě a k akcím služby v rámci oboru transakce na straně klienta.  
+- `Add` Požadavek toky požadovanou transakci ke službě a k akcím služby v rámci oboru transakce na straně klienta.  
   
--   První `Subtract` požadavku se přenášejí také povolené transakce ve službě a znovu k akcím služby v rámci oboru transakce na straně klienta.  
+- První `Subtract` požadavku se přenášejí také povolené transakce ve službě a znovu k akcím služby v rámci oboru transakce na straně klienta.  
   
--   Druhá `Subtract` žádosti se provede v rámci nového oboru transakce deklarována s `TransactionScopeOption.Suppress` možnost. Toto potlačí počáteční vnější transakci klienta a požadavek nepostupuje transakci ke službě. Tento přístup umožňuje klientovi explicitně odhlásit a ochranu proti toku transakce služby, při které se nevyžaduje. V rámci oboru transakce nové a nepřipojené provedou služby akce.  
+- Druhá `Subtract` žádosti se provede v rámci nového oboru transakce deklarována s `TransactionScopeOption.Suppress` možnost. Toto potlačí počáteční vnější transakci klienta a požadavek nepostupuje transakci ke službě. Tento přístup umožňuje klientovi explicitně odhlásit a ochranu proti toku transakce služby, při které se nevyžaduje. V rámci oboru transakce nové a nepřipojené provedou služby akce.  
   
--   `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption> `NotAllowed`.  
+- `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption> `NotAllowed`.  
   
--   `Divide` Požadavek nepostupuje transakce ve službě, protože znovu klienta vygenerovaný definice `ICalculator` rozhraní nezahrnuje `TransactionFlowAttribute`. V rámci oboru jinou transakcí nové a nepřipojené dojde znovu k akcím služby.  
+- `Divide` Požadavek nepostupuje transakce ve službě, protože znovu klienta vygenerovaný definice `ICalculator` rozhraní nezahrnuje `TransactionFlowAttribute`. V rámci oboru jinou transakcí nové a nepřipojené dojde znovu k akcím služby.  
   
  Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
@@ -238,47 +238,47 @@ Press <ENTER> to terminate the service.
   
 1. V rámci služby počítače se systémem Windows Server 2003 nebo Windows XP nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
   
-    1.  Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
+    1. Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
   
-    2.  Rozbalte **služby Component Services**. Otevřít **počítače** složky.  
+    2. Rozbalte **služby Component Services**. Otevřít **počítače** složky.  
   
-    3.  Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
+    3. Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
   
-    4.  Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
+    4. Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
   
-    5.  Zkontrolujte **DTC přístup k síti** a **povolit příchozí**.  
+    5. Zkontrolujte **DTC přístup k síti** a **povolit příchozí**.  
   
-    6.  Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
+    6. Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
   
-    7.  Kliknutím na **OK** zavřete dialogové okno.  
+    7. Kliknutím na **OK** zavřete dialogové okno.  
   
 2. V rámci služby počítače se systémem Windows Server 2008 nebo Windows Vista nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
   
-    1.  Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
+    1. Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
   
-    2.  Rozbalte **služby Component Services**. Otevřít **počítače** složky. Vyberte **koordinátor distribuovaných transakcí**.  
+    2. Rozbalte **služby Component Services**. Otevřít **počítače** složky. Vyberte **koordinátor distribuovaných transakcí**.  
   
-    3.  Klikněte pravým tlačítkem na **Koordinátor DTC** a vyberte **vlastnosti**.  
+    3. Klikněte pravým tlačítkem na **Koordinátor DTC** a vyberte **vlastnosti**.  
   
-    4.  Na **zabezpečení** kartě **síťový přístup DTC** a **povolit příchozí**.  
+    4. Na **zabezpečení** kartě **síťový přístup DTC** a **povolit příchozí**.  
   
-    5.  Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
+    5. Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
   
-    6.  Kliknutím na **OK** zavřete dialogové okno.  
+    6. Kliknutím na **OK** zavřete dialogové okno.  
   
 3. V klientském počítači nakonfigurujte MSDTC povolit odchozí síťové transakce:  
   
-    1.  Z **Start** nabídky, přejděte na `Control Panel`, pak **nástroje pro správu**a potom **služby Component Services**.  
+    1. Z **Start** nabídky, přejděte na `Control Panel`, pak **nástroje pro správu**a potom **služby Component Services**.  
   
-    2.  Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
+    2. Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
   
-    3.  Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
+    3. Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
   
-    4.  Zkontrolujte **DTC přístup k síti** a **povolit odchozí**.  
+    4. Zkontrolujte **DTC přístup k síti** a **povolit odchozí**.  
   
-    5.  Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
+    5. Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
   
-    6.  Kliknutím na **OK** zavřete dialogové okno.  
+    6. Kliknutím na **OK** zavřete dialogové okno.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

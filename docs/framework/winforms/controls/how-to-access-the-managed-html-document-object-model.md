@@ -9,18 +9,18 @@ helpviewer_keywords:
 - managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
 ms.openlocfilehash: 04d5f9e6f128d9b4ed3f07a5faebe06ae4ffdebf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62011252"
 ---
 # <a name="how-to-access-the-managed-html-document-object-model"></a>Postupy: Přístup k modelu spravovaného objektu dokumentu HTML
 Spravované HTML Document Object Model (DOM) se můžete dostat ze dvou typů aplikací:  
   
--   Aplikace Windows Forms (.exe), která hostované spravovanou <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tyto dvě technologie se navzájem doplňují, se <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazující stránku uživateli a modelu DOM jazyka HTML představující logické struktury dokumentu.  
+- Aplikace Windows Forms (.exe), která hostované spravovanou <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tyto dvě technologie se navzájem doplňují, se <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazující stránku uživateli a modelu DOM jazyka HTML představující logické struktury dokumentu.  
   
--   Windows Forms <xref:System.Windows.Forms.UserControl> hostované v aplikaci Internet Explorer. Můžete přístup k modelu DOM jazyka HTML představující stránku, na kterém vaše <xref:System.Windows.Forms.UserControl> hostována, aby bylo možné změnit strukturu dokumentu nebo otevřete modálních dialogových oken, mezi mnoho dalších možností.  
+- Windows Forms <xref:System.Windows.Forms.UserControl> hostované v aplikaci Internet Explorer. Můžete přístup k modelu DOM jazyka HTML představující stránku, na kterém vaše <xref:System.Windows.Forms.UserControl> hostována, aby bylo možné změnit strukturu dokumentu nebo otevřete modálních dialogových oken, mezi mnoho dalších možností.  
   
 ### <a name="to-access-dom-from-a-windows-forms-application"></a>Pro přístup k modelu DOM z aplikace Windows Forms  
   

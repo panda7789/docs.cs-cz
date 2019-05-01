@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 53db4dcb13303c9e7bdd77a46b3c9526364bac06
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57471222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61995641"
 ---
 # <a name="icordebuggenericvaluegetvalue-method"></a>ICorDebugGenericValue::GetValue – metoda
 Hodnota tomto obecný zkopíruje do zadané vyrovnávací paměti.  

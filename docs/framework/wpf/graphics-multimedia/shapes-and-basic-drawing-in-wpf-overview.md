@@ -13,11 +13,11 @@ helpviewer_keywords:
 - Shape objects [WPF]
 ms.assetid: 66d7a6d6-e3b6-47bc-8dfe-8a1b26f7d901
 ms.openlocfilehash: 1ce0e661d88b7c4d5719c4f11ef0912c5bacb587
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008325"
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>Tvary a základní kresby v přehledu WPF
 Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.Shapes.Shape> objekty. A <xref:System.Windows.Shapes.Shape> je typ <xref:System.Windows.UIElement> , která umožňuje nakreslit obrazec na obrazovku. Protože jsou prvky uživatelského rozhraní, <xref:System.Windows.Shapes.Shape> objekty mohou být použity uvnitř <xref:System.Windows.Controls.Panel> elementy a většina ovládacích prvků.  
@@ -28,13 +28,13 @@ Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.
 ## <a name="shape-objects"></a>Shape – objekty  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje řadu připravených k použití <xref:System.Windows.Shapes.Shape> objekty.  Dědí všechny objekty obrazce <xref:System.Windows.Shapes.Shape> třídy. K dispozici shape – objekty zahrnují <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, a <xref:System.Windows.Shapes.Rectangle>. <xref:System.Windows.Shapes.Shape> objekty sdílejí společné následující vlastnosti.  
   
--   <xref:System.Windows.Shapes.Shape.Stroke%2A>: Popisuje, jak Vymalování obrysu obrazce.  
+- <xref:System.Windows.Shapes.Shape.Stroke%2A>: Popisuje, jak Vymalování obrysu obrazce.  
   
--   <xref:System.Windows.Shapes.Shape.StrokeThickness%2A>: Popisuje tloušťku obrysu obrazce.  
+- <xref:System.Windows.Shapes.Shape.StrokeThickness%2A>: Popisuje tloušťku obrysu obrazce.  
   
--   <xref:System.Windows.Shapes.Shape.Fill%2A>: Popisuje, jak je překreslit vnitřní část obrazce.  
+- <xref:System.Windows.Shapes.Shape.Fill%2A>: Popisuje, jak je překreslit vnitřní část obrazce.  
   
--   Vlastnosti dat k zadání souřadnic a vrcholy, měřeno v pixelech nezávislých na zařízení.  
+- Vlastnosti dat k zadání souřadnic a vrcholy, měřeno v pixelech nezávislých na zařízení.  
   
  Protože jsou odvozeny z <xref:System.Windows.UIElement>, shape – objekty může být použit uvnitř panelů a většina ovládacích prvků. <xref:System.Windows.Controls.Canvas> Panel je obzvláště vhodný pro vytváření komplexních výkresů, protože podporuje absolutní pozici jeho podřízených objektů.  
   
@@ -154,13 +154,13 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
  Vlastnost Stretch má jednu z následujících hodnot:  
   
--   <xref:System.Windows.Media.Stretch.None>: <xref:System.Windows.Shapes.Shape> Nejsou roztažený obsah objektu.  
+- <xref:System.Windows.Media.Stretch.None>: <xref:System.Windows.Shapes.Shape> Nejsou roztažený obsah objektu.  
   
--   <xref:System.Windows.Media.Stretch.Fill>: <xref:System.Windows.Shapes.Shape> Jsou roztažený obsah objektu tak, aby vyplnil místo jeho rozložení.  Poměr stran nezachová.  
+- <xref:System.Windows.Media.Stretch.Fill>: <xref:System.Windows.Shapes.Shape> Jsou roztažený obsah objektu tak, aby vyplnil místo jeho rozložení.  Poměr stran nezachová.  
   
--   <xref:System.Windows.Media.Stretch.Uniform>: <xref:System.Windows.Shapes.Shape> Jsou roztažený obsah objektu tak, aby vyplnil místo jeho rozložení zachováním jeho původního poměru stran co nejvíc.  
+- <xref:System.Windows.Media.Stretch.Uniform>: <xref:System.Windows.Shapes.Shape> Jsou roztažený obsah objektu tak, aby vyplnil místo jeho rozložení zachováním jeho původního poměru stran co nejvíc.  
   
--   <xref:System.Windows.Media.Stretch.UniformToFill>: <xref:System.Windows.Shapes.Shape> Pro úplně naplnění jeho rozložení místo zachováním jeho původní poměr stran obrázku jsou roztažený obsah objektu.  
+- <xref:System.Windows.Media.Stretch.UniformToFill>: <xref:System.Windows.Shapes.Shape> Pro úplně naplnění jeho rozložení místo zachováním jeho původní poměr stran obrázku jsou roztažený obsah objektu.  
   
  Všimněte si, že když <xref:System.Windows.Shapes.Shape> jsou roztažený obsah objektu, <xref:System.Windows.Shapes.Shape> obrysu objektu vymalováním po roztažení.  
   

@@ -6,8 +6,8 @@ ms.openlocfilehash: e19894a685f511d22252d0b3a79f77b83b7fda99
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62003090"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Vlastní kodér zpráv: Kompresní kodér
 Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows Communication Foundation (WCF).  
@@ -29,13 +29,13 @@ Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows
   
  Vzorek ukazuje, jak sestavit a integrovat vlastní kodér zpráv do aplikace WCF. Knihovna GZipEncoder.dll se nasazuje s klientem a službou. Tato ukázka předvádí, dopad komprese zprávy. Kód v GZipEncoder.dll ukazuje následující:  
   
--   Vytváření vlastních encoder a kodér objekt pro vytváření.  
+- Vytváření vlastních encoder a kodér objekt pro vytváření.  
   
--   Vývoj element vazby pro vlastní kodér.  
+- Vývoj element vazby pro vlastní kodér.  
   
--   Pomocí konfigurace vlastních vazeb pro integraci elementů vlastní vazby.  
+- Pomocí konfigurace vlastních vazeb pro integraci elementů vlastní vazby.  
   
--   Vývoj vlastní obslužnou rutinu umožní konfiguraci souboru vlastní prvek vazby.  
+- Vývoj vlastní obslužnou rutinu umožní konfiguraci souboru vlastní prvek vazby.  
   
  Jak je uvedeno dříve, existuje několik vrstev, které jsou implementovány v vlastní kodér. Abychom vám lépe předvedli vztah mezi každou z těchto úrovní, zjednodušené pořadí událostí pro spuštění služby je v následujícím seznamu:  
   
@@ -43,13 +43,13 @@ Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows
   
 2. Informace o konfiguraci je pro čtení.  
   
-    1.  Konfigurace služby registruje rutiny vlastní konfigurace.  
+    1. Konfigurace služby registruje rutiny vlastní konfigurace.  
   
-    2.  Hostitel služby je vytvořen a otevřít.  
+    2. Hostitel služby je vytvořen a otevřít.  
   
-    3.  Vlastní konfigurace pro element vytvoří a vrátí prvek vlastní vazby.  
+    3. Vlastní konfigurace pro element vytvoří a vrátí prvek vlastní vazby.  
   
-    4.  Vlastní prvek vazby vytvoří a vrátí objekt pro vytváření kodéru zpráv.  
+    4. Vlastní prvek vazby vytvoří a vrátí objekt pro vytváření kodéru zpráv.  
   
 3. Příjmu zprávy.  
   

@@ -3,11 +3,11 @@ title: Zabezpečení přenosu WS
 ms.date: 03/30/2017
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
 ms.openlocfilehash: 5756327ccd5da9dc4ee41d038715b5630872f800
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62006312"
 ---
 # <a name="ws-transport-security"></a>Zabezpečení přenosu WS
 Tato ukázka demonstruje použití zabezpečení přenosu SSL pomocí <xref:System.ServiceModel.WSHttpBinding> vazby. Ve výchozím nastavení `wsHttpBinding` vazby poskytuje komunikaci pomocí protokolu HTTP. Když je nakonfigurován pro zabezpečení přenosu, vazba podporuje komunikaci přes protokol HTTPS. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. `wsHttpBinding` Je zadán a nakonfigurovat v konfiguračních souborech aplikace pro klienta a služby.  

@@ -3,20 +3,20 @@ title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
 ms.openlocfilehash: 13ed280e9b7de2b205e0878761dbf97e168f06d3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989648"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpečením pomocí služby Windows Communication Foundation (WCF):  
   
--   Šifrování citlivých informací v konfiguračním souboru služby.  
+- Šifrování citlivých informací v konfiguračním souboru služby.  
   
--   Uzamčení elementů v konfiguračním souboru tak, aby vnořené podadresářů služby nelze přepsat nastavení.  
+- Uzamčení elementů v konfiguračním souboru tak, aby vnořené podadresářů služby nelze přepsat nastavení.  
   
--   Řízení přihlašování z identifikovatelné osobní údaje (PII) v protokolech trasování a zprávy.  
+- Řízení přihlašování z identifikovatelné osobní údaje (PII) v protokolech trasování a zprávy.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -124,9 +124,9 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
   
  Je také možné šifrovat konfigurační prvky souboru pomocí DPAPI a RSA. Další informace najdete v následujících tématech:  
   
--   [Vytváření aplikací ASP.NET zabezpečení: Ověřování, autorizaci a zabezpečenou komunikaci](https://go.microsoft.com/fwlink/?LinkId=95137)  
+- [Vytváření aplikací ASP.NET zabezpečení: Ověřování, autorizaci a zabezpečenou komunikaci](https://go.microsoft.com/fwlink/?LinkId=95137)  
   
--   [Postupy: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
+- [Postupy: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   

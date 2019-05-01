@@ -6,11 +6,11 @@ helpviewer_keywords:
 - classes [WPF], SystemParameters
 ms.assetid: 77571283-d16c-45bb-9f69-cafbbf72b21e
 ms.openlocfilehash: 147f65b4bb214c12317309081c345251d7426cd6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62001439"
 ---
 # <a name="how-to-use-system-parameters-keys"></a>Postupy: Používání klíčů systémových parametrů
 Systémové prostředky vystavit řadu systémových metrik jako prostředky, které usnadní vývojářům vytvářet vizuály, které jsou konzistentní s nastavení systému. <xref:System.Windows.SystemParameters> je třída, která obsahuje hodnoty parametrů systému a klíče prostředku, kteří jsou navázáni na hodnoty – například <xref:System.Windows.SystemParameters.FullPrimaryScreenHeight%2A> a <xref:System.Windows.SystemParameters.FullPrimaryScreenHeightKey%2A>. Metriky parametr systému může sloužit jako statickou nebo dynamickou prostředky. Použijte dynamický prostředek, pokud chcete, aby parametr metrika automaticky aktualizovat při aplikaci spustí; Jinak použijte statických prostředků.  

@@ -3,11 +3,11 @@ title: Neobecná aktivita ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
 ms.openlocfilehash: 353128d1c313be62222e091c084e5b5e37a92b58
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62004910"
 ---
 # <a name="non-generic-foreach"></a>Neobecná aktivita ForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] ve svých nástrojů se dodává sadu tok řízení aktivit, včetně <xref:System.Activities.Statements.ForEach%601>, který umožňuje procházení <xref:System.Collections.Generic.IEnumerable%601> kolekce.  
@@ -97,9 +97,9 @@ public sealed class ForEachWithBodyFactory : IActivityTemplateFactory
   
 1. Nastavte projekt podle vašeho výběru jako spouštěcí projekt řešení:  
   
-    1.  **CodeTestClient** ukazuje, jak používat aktivitu pomocí kódu.  
+    1. **CodeTestClient** ukazuje, jak používat aktivitu pomocí kódu.  
   
-    2.  **DesignerTestClient** ukazuje, jak pomocí aktivity v návrháři.  
+    2. **DesignerTestClient** ukazuje, jak pomocí aktivity v návrháři.  
   
 2. Sestavte a spusťte projekt.  
   

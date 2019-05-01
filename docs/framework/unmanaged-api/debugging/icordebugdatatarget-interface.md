@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 480fc27bd41f7ca559ceee379b7f6f81c94da0ba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989193"
 ---
 # <a name="icordebugdatatarget-interface"></a>ICorDebugDataTarget – rozhraní
 Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétnímu cílovému procesu.  
@@ -37,13 +37,13 @@ Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétn
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugDataTarget` a její metody mají následující vlastnosti:  
   
--   Ladění služby volají metody na tomto rozhraní pro přístup k paměti a další data v cílovém procesu.  
+- Ladění služby volají metody na tomto rozhraní pro přístup k paměti a další data v cílovém procesu.  
   
--   Klient ladicího programu musí implementovat toto rozhraní podle potřeby pro konkrétní cíl (například živý proces nebo výpis stavu paměti).  
+- Klient ladicího programu musí implementovat toto rozhraní podle potřeby pro konkrétní cíl (například živý proces nebo výpis stavu paměti).  
   
--   `ICorDebugDataTarget` Metody lze volat pouze z v rámci metody implementované v ostatních `ICorDebug*` rozhraní. Tím se zajistí, že klient ladicího programu má řídit, přes které vlákno je vyvolána na a kdy.  
+- `ICorDebugDataTarget` Metody lze volat pouze z v rámci metody implementované v ostatních `ICorDebug*` rozhraní. Tím se zajistí, že klient ladicího programu má řídit, přes které vlákno je vyvolána na a kdy.  
   
--   `ICorDebugDataTarget` Implementace musí vracet vždycky aktuální informace o cíli.  
+- `ICorDebugDataTarget` Implementace musí vracet vždycky aktuální informace o cíli.  
   
  Cílový proces by měl být zastaven a nebyl změněn. žádným způsobem při `ICorDebug*` rozhraní (a tedy `ICorDebugDataTarget` metody) jsou volány. Pokud je cílem živý proces a jeho změn stavu [iclrdebugging::openvirtualprocess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) musí být znovu volána k poskytnutí instance ICorDebugProcess nahrazení.  
   

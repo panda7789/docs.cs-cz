@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Concurrency Sample [Windows Communication Foundation]
 ms.assetid: f8dbdfb3-6858-4f95-abe3-3a1db7878926
 ms.openlocfilehash: 5de918f71f4361af3409c8382781844824747c83
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62002453"
 ---
 # <a name="concurrency"></a>Souběžnost
 Ukázka souběžnosti znázorňuje použití <xref:System.ServiceModel.ServiceBehaviorAttribute> s <xref:System.ServiceModel.ConcurrencyMode> výčet, který řídí, zda instance služby zpracovává zprávy postupně sekvenčně nebo současně. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje kontrakt nové `ICalculatorConcurrency`, který dědí z `ICalculator`, poskytuje dvě další operace Kontrola stavu služby souběžnosti. Změnou nastavení souběžnosti můžete sledovat změny v chování pomocí klienta.  
@@ -22,11 +22,11 @@ Ukázka souběžnosti znázorňuje použití <xref:System.ServiceModel.ServiceBe
   
  K dispozici jsou tři režimy souběžnosti:  
   
--   `Single`: Každá instance služby zpracovává jednu zprávu najednou. Toto je výchozí režim.  
+- `Single`: Každá instance služby zpracovává jednu zprávu najednou. Toto je výchozí režim.  
   
--   `Multiple`: Každá instance služby zpracovává více zpráv souběžně. Implementace služby musí být bezpečná pro vlákno pro použití tohoto režimu souběžnosti.  
+- `Multiple`: Každá instance služby zpracovává více zpráv souběžně. Implementace služby musí být bezpečná pro vlákno pro použití tohoto režimu souběžnosti.  
   
--   `Reentrant`: Každá instance služby zpracovává zprávy jeden po druhém, ale přijímá znovu zadaných volání. Služba přijímá pouze tato volání zavoláním navýšení kapacity. Vícenásobný jsou popsané v článku [ConcurrencyMode.Reentrant](../../../../docs/framework/wcf/samples/concurrencymode-reentrant.md) vzorku.  
+- `Reentrant`: Každá instance služby zpracovává zprávy jeden po druhém, ale přijímá znovu zadaných volání. Služba přijímá pouze tato volání zavoláním navýšení kapacity. Vícenásobný jsou popsané v článku [ConcurrencyMode.Reentrant](../../../../docs/framework/wcf/samples/concurrencymode-reentrant.md) vzorku.  
   
  Vytvoření instance režimu se týká použití souběžnosti. V <xref:System.ServiceModel.InstanceContextMode.PerCall> vytváření instancí, souběžnost není odpovídající, protože každá zpráva se zpracuje pomocí nové instance služby. V <xref:System.ServiceModel.InstanceContextMode.Single> vytváření instancí, buď <xref:System.ServiceModel.ConcurrencyMode.Single> nebo <xref:System.ServiceModel.ConcurrencyMode.Multiple> souběžnosti je relevantní, v závislosti na tom, jestli jedna instance zpracovává zprávy postupně sekvenčně nebo současně. V <xref:System.ServiceModel.InstanceContextMode.PerSession> vytváření instancí, všechny režimy souběžnosti můžou být relevantní.  
   

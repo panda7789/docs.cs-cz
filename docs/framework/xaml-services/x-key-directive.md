@@ -11,11 +11,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
 ms.openlocfilehash: 6ac878f24de594f8557ded8b0c3356217021b035
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61971818"
 ---
 # <a name="xkey-directive"></a>x:Key – direktiva
 Jednoznačně identifikuje elementy, které jsou vytvořeny a odkazovány ve slovníku definice XAML. Přidání `x:Key` hodnota prvku objektu XAML je nejběžnějším způsobem identifikace prostředku ve slovníku prostředků, například v WPF <xref:System.Windows.ResourceDictionary>.  
@@ -61,9 +61,9 @@ Jednoznačně identifikuje elementy, které jsou vytvořeny a odkazovány ve slo
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
  Podřízené objekty nadřazeného objektu, který je <xref:System.Collections.IDictionary> implementace, například WPF <xref:System.Windows.ResourceDictionary>, musí obvykle zahrnovat `x:Key` atribut a hodnota klíče musí být jedinečný v rámci daného slovníku. Existují dvě významné výjimky:  
   
--   Některé typy WPF deklarují implicitní klíč pro používání slovníku. Například <xref:System.Windows.Style> s <xref:System.Windows.Style.TargetType%2A>, nebo <xref:System.Windows.DataTemplate> s <xref:System.Windows.DataTemplate.DataType%2A>, může být v <xref:System.Windows.ResourceDictionary> a použít implicitní klíč.  
+- Některé typy WPF deklarují implicitní klíč pro používání slovníku. Například <xref:System.Windows.Style> s <xref:System.Windows.Style.TargetType%2A>, nebo <xref:System.Windows.DataTemplate> s <xref:System.Windows.DataTemplate.DataType%2A>, může být v <xref:System.Windows.ResourceDictionary> a použít implicitní klíč.  
   
--   WPF podporuje koncept slovníku prostředků. Klíče mohou být sdíleny mezi sloučenými slovníky a ke sdílenému chování klíčů lze přistupovat pomocí <xref:System.Windows.FrameworkContentElement.FindResource%2A>. Další informace najdete v tématu [sloučené slovníky prostředků](../wpf/advanced/merged-resource-dictionaries.md).  
+- WPF podporuje koncept slovníku prostředků. Klíče mohou být sdíleny mezi sloučenými slovníky a ke sdílenému chování klíčů lze přistupovat pomocí <xref:System.Windows.FrameworkContentElement.FindResource%2A>. Další informace najdete v tématu [sloučené slovníky prostředků](../wpf/advanced/merged-resource-dictionaries.md).  
   
  Ve celkové WPF XAML modelu implementace a aplikace není kompilátorem značky XAML povolená jedinečnost klíče. Místo toho chybějící nebo duplicitní `x:Key` hodnoty způsobit chyby analyzátoru XAML během načítání. Nicméně Visual Studio zpracování slovníků pro WPF může často zaznamenat tyto chyby ve fázi návrhu.  
   
@@ -101,11 +101,11 @@ keyObject
 |-|-|  
 |`keyObject`|– Element pro objekt, který se používá jako klíč pro objekt daného `object` ve specializovaném slovníku.|  
   
--   Kontejner/nadřazený prvek pro tento typ použití zde není zobrazen. `object` Očekává se podřízený prvku objektu, který představuje implementaci specializovaného slovníku. `keyObject` Očekává se instance objektu (nebo hodnota typu hodnoty), která je vhodná jako klíč pro tuto implementaci určitého speciálního slovníku.  
+- Kontejner/nadřazený prvek pro tento typ použití zde není zobrazen. `object` Očekává se podřízený prvku objektu, který představuje implementaci specializovaného slovníku. `keyObject` Očekává se instance objektu (nebo hodnota typu hodnoty), která je vhodná jako klíč pro tuto implementaci určitého speciálního slovníku.  
   
--   WPF neimplementuje slovníky, které vyžadují toto využití. Klíče objektu je spíše obecnou funkcí jazyka XAML, užitečné případně v určitých vlastních scénářích slovníku kde je vytvoření slovníku v XAML žádoucí. Pro funkce WPF jako jsou implicitní styly, které používají neřetězcové klíče pro prostředky jiné techniky pro stanovení nebo určení klíče existují, takže není nutné použití klíče objektu.  
+- WPF neimplementuje slovníky, které vyžadují toto využití. Klíče objektu je spíše obecnou funkcí jazyka XAML, užitečné případně v určitých vlastních scénářích slovníku kde je vytvoření slovníku v XAML žádoucí. Pro funkce WPF jako jsou implicitní styly, které používají neřetězcové klíče pro prostředky jiné techniky pro stanovení nebo určení klíče existují, takže není nutné použití klíče objektu.  
   
--   *keyObject* mohou být také použití rozšíření značky ve formuláři prvku objektu, nikoli instance přímého objektu.  
+- *keyObject* mohou být také použití rozšíření značky ve formuláři prvku objektu, nikoli instance přímého objektu.  
   
 ## <a name="silverlight-usage-notes"></a>Poznámky k použití aplikace Silverlight  
  `x:Key` pro prostředí Silverlight je zdokumentován samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=199081).  

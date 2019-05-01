@@ -7,11 +7,11 @@ helpviewer_keywords:
 - controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
 ms.openlocfilehash: d2f55db90fb130416ee4dcb15d440b6d367c0b06
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59201296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62008747"
 ---
 # <a name="gridview-overview"></a>GridView – přehled
 <xref:System.Windows.Controls.GridView> režim zobrazení je jeden z režimů zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku. <xref:System.Windows.Controls.GridView> Třída a její podpůrnou třídy povolit vy a vaši uživatelé zobrazit položky kolekce tabulku, která se obvykle používá jako záhlaví sloupců interaktivní tlačítka. Toto téma představuje <xref:System.Windows.Controls.GridView> třídy a popisuje jejich použití.  
@@ -73,30 +73,30 @@ ms.locfileid: "59201296"
   
  Následující seznam popisuje podrobněji možnosti použití <xref:System.Windows.Controls.GridView> pro interakci s uživatelem:  
   
--   **Změnit uspořádání sloupců pomocí metody přetahování myší.**  
+- **Změnit uspořádání sloupců pomocí metody přetahování myší.**  
   
      Uživatelé mohou změnit pořadí sloupců v <xref:System.Windows.Controls.GridView> klávesy levé tlačítko myši, zatímco je nad záhlaví sloupce a následným přetažením sloupce do nového umístění. Když uživatel přetáhne záhlaví sloupce, zobrazí se plovoucí verze hlavičky a také pevné černá čára, která ukazuje, kam chcete vložit sloupec.  
   
      Pokud chcete změnit výchozí styl plovoucí verze záhlaví, zadejte <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.GridViewColumnHeader> typ, který je při aktivaci <xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> je nastavena na <xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>. Další informace najdete v tématu [vytvoření stylu pro záhlaví sloupce GridView kvůli usnadnění použití vypsány](how-to-create-a-style-for-a-dragged-gridview-column-header.md).  
   
--   **Změnit velikost sloupce na jeho obsah.**  
+- **Změnit velikost sloupce na jeho obsah.**  
   
      Uživatelům můžete dvakrát kliknout na úchytu napravo od záhlaví sloupce, aby bylo možné změnit velikost sloupce podle jeho obsahu.  
   
     > [!NOTE]
     >  Můžete nastavit <xref:System.Windows.Controls.GridViewColumn.Width%2A> vlastnost `Double.NaN` k dosažení stejného efektu.  
   
--   **Vyberte položky na řádcích.**  
+- **Vyberte položky na řádcích.**  
   
      Uživatelé mohou vybrat jednu nebo více položek v <xref:System.Windows.Controls.GridView>.  
   
      Pokud chcete změnit <xref:System.Windows.Style> vybrané položky, naleznete v tématu [stylu vybraných položek v ListView použitím aktivačních procedur](how-to-use-triggers-to-style-selected-items-in-a-listview.md).  
   
--   **Přejděte do zobrazení obsahu, který není zpočátku viditelné na obrazovce.**  
+- **Přejděte do zobrazení obsahu, který není zpočátku viditelné na obrazovce.**  
   
      Pokud velikost <xref:System.Windows.Controls.GridView> není dostatečně velký pro zobrazení všech položek, uživatelům umožní posouvání, vodorovně nebo svisle pomocí posuvníků, které jsou poskytovány <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku. A <xref:System.Windows.Controls.Primitives.ScrollBar> je skrytý, pokud veškerý obsah, který je viditelný v konkrétní směr. Záhlaví sloupců neposouvají svislý posuvník, ale posouvat vodorovně.  
   
--   **Zasahovat sloupce kliknutím na příslušné záhlaví sloupce.**  
+- **Zasahovat sloupce kliknutím na příslušné záhlaví sloupce.**  
   
      Když uživatelé kliknou na tlačítko záhlaví sloupců, jsou data, která se zobrazí ve sloupci, pokud jste zadali řadicího algoritmu řazení.  
   
@@ -110,17 +110,17 @@ ms.locfileid: "59201296"
 ## <a name="gridview-supporting-classes"></a>Podpora třídy GridView  
  Následující třídy podporu <xref:System.Windows.Controls.GridView> režim zobrazení.  
   
--   <xref:System.Windows.Controls.GridViewColumn>  
+- <xref:System.Windows.Controls.GridViewColumn>  
   
--   <xref:System.Windows.Controls.GridViewColumnHeader>  
+- <xref:System.Windows.Controls.GridViewColumnHeader>  
   
--   <xref:System.Windows.Controls.GridViewRowPresenter>  
+- <xref:System.Windows.Controls.GridViewRowPresenter>  
   
--   <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
+- <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
   
--   <xref:System.Windows.Controls.GridViewColumnCollection>  
+- <xref:System.Windows.Controls.GridViewColumnCollection>  
   
--   <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
+- <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
   
 ## <a name="see-also"></a>Viz také:
 
