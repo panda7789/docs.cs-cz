@@ -9,17 +9,17 @@ helpviewer_keywords:
 - notifications [WPF]
 ms.assetid: 6cf7e275-df76-41c6-a611-53b889b8fd5a
 ms.openlocfilehash: 45f8b097bfdb8d3d7994e53ea05146aa6de0fc21
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020917"
 ---
-# <a name="how-to-create-and-bind-to-an-observablecollection"></a><span data-ttu-id="8784f-102">Postupy: Vytvoření a vytvoření vazby ke kolekci ObservableCollection</span><span class="sxs-lookup"><span data-stu-id="8784f-102">How to: Create and Bind to an ObservableCollection</span></span>
-<span data-ttu-id="8784f-103">Tento příklad ukazuje postup vytvoření a připojení ke kolekci, která je odvozena z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je třídu kolekce, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky.</span><span class="sxs-lookup"><span data-stu-id="8784f-103">This example shows how to create and bind to a collection that derives from the <xref:System.Collections.ObjectModel.ObservableCollection%601> class, which is a collection class that provides notifications when items get added or removed.</span></span>  
+# <a name="how-to-create-and-bind-to-an-observablecollection"></a><span data-ttu-id="f4eef-102">Postupy: Vytvoření a vytvoření vazby ke kolekci ObservableCollection</span><span class="sxs-lookup"><span data-stu-id="f4eef-102">How to: Create and Bind to an ObservableCollection</span></span>
+<span data-ttu-id="f4eef-103">Tento příklad ukazuje postup vytvoření a připojení ke kolekci, která je odvozena z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je třídu kolekce, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky.</span><span class="sxs-lookup"><span data-stu-id="f4eef-103">This example shows how to create and bind to a collection that derives from the <xref:System.Collections.ObjectModel.ObservableCollection%601> class, which is a collection class that provides notifications when items get added or removed.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8784f-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="8784f-104">Example</span></span>  
- <span data-ttu-id="8784f-105">Následující příklad ukazuje implementaci `NameList` kolekce:</span><span class="sxs-lookup"><span data-stu-id="8784f-105">The following example shows the implementation of a `NameList` collection:</span></span>  
+## <a name="example"></a><span data-ttu-id="f4eef-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="f4eef-104">Example</span></span>  
+ <span data-ttu-id="f4eef-105">Následující příklad ukazuje implementaci `NameList` kolekce:</span><span class="sxs-lookup"><span data-stu-id="f4eef-105">The following example shows the implementation of a `NameList` collection:</span></span>  
   
 ```csharp  
 public class NameList : ObservableCollection<PersonName>  
@@ -104,7 +104,7 @@ Public Class PersonName
 End Class  
 ```  
   
- <span data-ttu-id="8784f-106">Můžete zpřístupnit kolekci pro vazbu stejně jako byste to udělali s jinými [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty, jak je popsáno v [zkontrolujte Data k dispozici pro vazbu v XAML](how-to-make-data-available-for-binding-in-xaml.md).</span><span class="sxs-lookup"><span data-stu-id="8784f-106">You can make the collection available for binding the same way you would with other [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objects, as described in [Make Data Available for Binding in XAML](how-to-make-data-available-for-binding-in-xaml.md).</span></span> <span data-ttu-id="8784f-107">Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a určete kolekci jako prostředek, jak je znázorněno zde:</span><span class="sxs-lookup"><span data-stu-id="8784f-107">For example, you can instantiate the collection in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] and specify the collection as a resource, as shown here:</span></span>  
+ <span data-ttu-id="f4eef-106">Můžete zpřístupnit kolekci pro vazbu stejně jako byste to udělali s jinými [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty, jak je popsáno v [zkontrolujte Data k dispozici pro vazbu v XAML](how-to-make-data-available-for-binding-in-xaml.md).</span><span class="sxs-lookup"><span data-stu-id="f4eef-106">You can make the collection available for binding the same way you would with other [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objects, as described in [Make Data Available for Binding in XAML](how-to-make-data-available-for-binding-in-xaml.md).</span></span> <span data-ttu-id="f4eef-107">Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a určete kolekci jako prostředek, jak je znázorněno zde:</span><span class="sxs-lookup"><span data-stu-id="f4eef-107">For example, you can instantiate the collection in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] and specify the collection as a resource, as shown here:</span></span>  
   
 ```xaml  
 <Window  
@@ -124,7 +124,7 @@ End Class
 </Window.Resources>  
 ```  
   
- <span data-ttu-id="8784f-108">Potom můžete svázat do kolekce:</span><span class="sxs-lookup"><span data-stu-id="8784f-108">You can then bind to the collection:</span></span>  
+ <span data-ttu-id="f4eef-108">Potom můžete svázat do kolekce:</span><span class="sxs-lookup"><span data-stu-id="f4eef-108">You can then bind to the collection:</span></span>  
   
 ```xaml  
 <ListBox Width="200"  
@@ -133,17 +133,17 @@ End Class
          IsSynchronizedWithCurrentItem="True"/>  
 ```  
   
- <span data-ttu-id="8784f-109">Definice `NameItemTemplate` zde není zobrazen.</span><span class="sxs-lookup"><span data-stu-id="8784f-109">The definition of `NameItemTemplate` is not shown here.</span></span>  
+ <span data-ttu-id="f4eef-109">Definice `NameItemTemplate` zde není zobrazen.</span><span class="sxs-lookup"><span data-stu-id="f4eef-109">The definition of `NameItemTemplate` is not shown here.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="8784f-110">Objekty v kolekci musí splňovat požadavky popsané v [Přehled zdrojů vazby](binding-sources-overview.md).</span><span class="sxs-lookup"><span data-stu-id="8784f-110">The objects in your collection must satisfy the requirements described in the [Binding Sources Overview](binding-sources-overview.md).</span></span> <span data-ttu-id="8784f-111">Konkrétně, pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (třeba chtít vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti jako je například <xref:System.ComponentModel.INotifyPropertyChanged>rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8784f-111">In particular, if you are using <xref:System.Windows.Data.BindingMode.OneWay> or <xref:System.Windows.Data.BindingMode.TwoWay> (for example, you want your [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] to update when the source properties change dynamically), you must implement a suitable property changed notification mechanism such as the <xref:System.ComponentModel.INotifyPropertyChanged> interface.</span></span>  
+>  <span data-ttu-id="f4eef-110">Objekty v kolekci musí splňovat požadavky popsané v [Přehled zdrojů vazby](binding-sources-overview.md).</span><span class="sxs-lookup"><span data-stu-id="f4eef-110">The objects in your collection must satisfy the requirements described in the [Binding Sources Overview](binding-sources-overview.md).</span></span> <span data-ttu-id="f4eef-111">Konkrétně, pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (třeba chtít vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti jako je například <xref:System.ComponentModel.INotifyPropertyChanged>rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f4eef-111">In particular, if you are using <xref:System.Windows.Data.BindingMode.OneWay> or <xref:System.Windows.Data.BindingMode.TwoWay> (for example, you want your [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] to update when the source properties change dynamically), you must implement a suitable property changed notification mechanism such as the <xref:System.ComponentModel.INotifyPropertyChanged> interface.</span></span>  
   
- <span data-ttu-id="8784f-112">Další informace najdete v tématu vazby do oddílu kolekce [přehled datových vazeb](data-binding-overview.md).</span><span class="sxs-lookup"><span data-stu-id="8784f-112">For more information, see the Binding to Collections section in the [Data Binding Overview](data-binding-overview.md).</span></span>  
+ <span data-ttu-id="f4eef-112">Další informace najdete v tématu vazby do oddílu kolekce [přehled datových vazeb](data-binding-overview.md).</span><span class="sxs-lookup"><span data-stu-id="f4eef-112">For more information, see the Binding to Collections section in the [Data Binding Overview](data-binding-overview.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8784f-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8784f-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f4eef-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f4eef-113">See also</span></span>
 
-- [<span data-ttu-id="8784f-114">Řazení dat v zobrazení</span><span class="sxs-lookup"><span data-stu-id="8784f-114">Sort Data in a View</span></span>](how-to-sort-data-in-a-view.md)
-- [<span data-ttu-id="8784f-115">Filtrování dat v zobrazení</span><span class="sxs-lookup"><span data-stu-id="8784f-115">Filter Data in a View</span></span>](how-to-filter-data-in-a-view.md)
-- [<span data-ttu-id="8784f-116">Řazení a seskupení dat pomocí zobrazení XAML</span><span class="sxs-lookup"><span data-stu-id="8784f-116">Sort and Group Data Using a View in XAML</span></span>](how-to-sort-and-group-data-using-a-view-in-xaml.md)
-- [<span data-ttu-id="8784f-117">Přehled datových vazeb</span><span class="sxs-lookup"><span data-stu-id="8784f-117">Data Binding Overview</span></span>](data-binding-overview.md)
-- [<span data-ttu-id="8784f-118">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="8784f-118">How-to Topics</span></span>](data-binding-how-to-topics.md)
+- [<span data-ttu-id="f4eef-114">Řazení dat v zobrazení</span><span class="sxs-lookup"><span data-stu-id="f4eef-114">Sort Data in a View</span></span>](how-to-sort-data-in-a-view.md)
+- [<span data-ttu-id="f4eef-115">Filtrování dat v zobrazení</span><span class="sxs-lookup"><span data-stu-id="f4eef-115">Filter Data in a View</span></span>](how-to-filter-data-in-a-view.md)
+- [<span data-ttu-id="f4eef-116">Řazení a seskupení dat pomocí zobrazení XAML</span><span class="sxs-lookup"><span data-stu-id="f4eef-116">Sort and Group Data Using a View in XAML</span></span>](how-to-sort-and-group-data-using-a-view-in-xaml.md)
+- [<span data-ttu-id="f4eef-117">Přehled datových vazeb</span><span class="sxs-lookup"><span data-stu-id="f4eef-117">Data Binding Overview</span></span>](data-binding-overview.md)
+- [<span data-ttu-id="f4eef-118">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="f4eef-118">How-to Topics</span></span>](data-binding-how-to-topics.md)

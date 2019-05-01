@@ -9,25 +9,25 @@ helpviewer_keywords:
 - brushes [WPF]
 ms.assetid: 26710879-12ad-4c63-9bc6-a1834bb4243b
 ms.openlocfilehash: f52834a652f3f88a526f359a558e192c5f34839c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62020254"
 ---
-# <a name="brushes"></a><span data-ttu-id="ac31f-102">Štětce</span><span class="sxs-lookup"><span data-stu-id="ac31f-102">Brushes</span></span>
-<span data-ttu-id="ac31f-103">Následující témata popisují způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce "vykreslení" obsah na obrazovku</span><span class="sxs-lookup"><span data-stu-id="ac31f-103">The following topics describe how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes to "paint" content to the screen</span></span>  
+# <a name="brushes"></a><span data-ttu-id="22f1a-102">Štětce</span><span class="sxs-lookup"><span data-stu-id="22f1a-102">Brushes</span></span>
+<span data-ttu-id="22f1a-103">Následující témata popisují způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce "vykreslení" obsah na obrazovku</span><span class="sxs-lookup"><span data-stu-id="22f1a-103">The following topics describe how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes to "paint" content to the screen</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ac31f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ac31f-104">In This Section</span></span>  
- [<span data-ttu-id="ac31f-105">Přehled štětců WPF</span><span class="sxs-lookup"><span data-stu-id="ac31f-105">WPF Brushes Overview</span></span>](wpf-brushes-overview.md)  
- [<span data-ttu-id="ac31f-106">Přehled transformace štětce</span><span class="sxs-lookup"><span data-stu-id="ac31f-106">Brush Transformation Overview</span></span>](brush-transformation-overview.md)  
- [<span data-ttu-id="ac31f-107">Přehled masek neprůhlednosti</span><span class="sxs-lookup"><span data-stu-id="ac31f-107">Opacity Masks Overview</span></span>](opacity-masks-overview.md)  
- [<span data-ttu-id="ac31f-108">Přehled malování plnými barvami a přechody</span><span class="sxs-lookup"><span data-stu-id="ac31f-108">Painting with Solid Colors and Gradients Overview</span></span>](painting-with-solid-colors-and-gradients-overview.md)  
- [<span data-ttu-id="ac31f-109">Malování pomocí obrázků, kreseb a vizuálních objektů</span><span class="sxs-lookup"><span data-stu-id="ac31f-109">Painting with Images, Drawings, and Visuals</span></span>](painting-with-images-drawings-and-visuals.md)  
- [<span data-ttu-id="ac31f-110">TileBrush – přehled</span><span class="sxs-lookup"><span data-stu-id="ac31f-110">TileBrush Overview</span></span>](tilebrush-overview.md)  
- [<span data-ttu-id="ac31f-111">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="ac31f-111">How-to Topics</span></span>](brushes-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="22f1a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="22f1a-104">In This Section</span></span>  
+ [<span data-ttu-id="22f1a-105">Přehled štětců WPF</span><span class="sxs-lookup"><span data-stu-id="22f1a-105">WPF Brushes Overview</span></span>](wpf-brushes-overview.md)  
+ [<span data-ttu-id="22f1a-106">Přehled transformace štětce</span><span class="sxs-lookup"><span data-stu-id="22f1a-106">Brush Transformation Overview</span></span>](brush-transformation-overview.md)  
+ [<span data-ttu-id="22f1a-107">Přehled masek neprůhlednosti</span><span class="sxs-lookup"><span data-stu-id="22f1a-107">Opacity Masks Overview</span></span>](opacity-masks-overview.md)  
+ [<span data-ttu-id="22f1a-108">Přehled malování plnými barvami a přechody</span><span class="sxs-lookup"><span data-stu-id="22f1a-108">Painting with Solid Colors and Gradients Overview</span></span>](painting-with-solid-colors-and-gradients-overview.md)  
+ [<span data-ttu-id="22f1a-109">Malování pomocí obrázků, kreseb a vizuálních objektů</span><span class="sxs-lookup"><span data-stu-id="22f1a-109">Painting with Images, Drawings, and Visuals</span></span>](painting-with-images-drawings-and-visuals.md)  
+ [<span data-ttu-id="22f1a-110">TileBrush – přehled</span><span class="sxs-lookup"><span data-stu-id="22f1a-110">TileBrush Overview</span></span>](tilebrush-overview.md)  
+ [<span data-ttu-id="22f1a-111">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="22f1a-111">How-to Topics</span></span>](brushes-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="ac31f-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ac31f-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="22f1a-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="22f1a-112">Reference</span></span>  
  <xref:System.Windows.Media.Brush>  
   
  <xref:System.Windows.Media.SolidColorBrush>  
@@ -40,7 +40,7 @@ ms.locfileid: "57366722"
   
  <xref:System.Windows.Media.VisualBrush>  
   
-## <a name="related-sections"></a><span data-ttu-id="ac31f-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ac31f-113">Related Sections</span></span>  
- [<span data-ttu-id="ac31f-114">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="ac31f-114">Graphics and Multimedia</span></span>](index.md)  
+## <a name="related-sections"></a><span data-ttu-id="22f1a-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="22f1a-113">Related Sections</span></span>  
+ [<span data-ttu-id="22f1a-114">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="22f1a-114">Graphics and Multimedia</span></span>](index.md)  
   
- [<span data-ttu-id="ac31f-115">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="ac31f-115">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+ [<span data-ttu-id="22f1a-115">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="22f1a-115">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)

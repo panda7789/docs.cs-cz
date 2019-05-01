@@ -3,20 +3,20 @@ title: System.ServiceModel.Channels.SystemTimeResolution
 ms.date: 03/30/2017
 ms.assetid: eaab4ce9-b16a-4fe8-9271-3a1ab1dfa93a
 ms.openlocfilehash: 47dd35ccbbfe997129ed24c11ed473f142412de4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59140917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61997529"
 ---
-# <a name="systemservicemodelchannelssystemtimeresolution"></a><span data-ttu-id="109b6-102">System.ServiceModel.Channels.SystemTimeResolution</span><span class="sxs-lookup"><span data-stu-id="109b6-102">System.ServiceModel.Channels.SystemTimeResolution</span></span>
-<span data-ttu-id="109b6-103">System.ServiceModel.Channels.SystemTimeResolution</span><span class="sxs-lookup"><span data-stu-id="109b6-103">System.ServiceModel.Channels.SystemTimeResolution</span></span>  
+# <a name="systemservicemodelchannelssystemtimeresolution"></a><span data-ttu-id="50ad8-102">System.ServiceModel.Channels.SystemTimeResolution</span><span class="sxs-lookup"><span data-stu-id="50ad8-102">System.ServiceModel.Channels.SystemTimeResolution</span></span>
+<span data-ttu-id="50ad8-103">System.ServiceModel.Channels.SystemTimeResolution</span><span class="sxs-lookup"><span data-stu-id="50ad8-103">System.ServiceModel.Channels.SystemTimeResolution</span></span>  
   
-## <a name="description"></a><span data-ttu-id="109b6-104">Popis</span><span class="sxs-lookup"><span data-stu-id="109b6-104">Description</span></span>  
- <span data-ttu-id="109b6-105">Rozlišení časovače operačního systému byla zjištěna jako *n* tiků, což je přibližně *m* milisekund.</span><span class="sxs-lookup"><span data-stu-id="109b6-105">The operating system's timer resolution was detected as *n* ticks, which is approximately *m* milliseconds.</span></span> <span data-ttu-id="109b6-106">Kde *n* a *m* jsou číselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="109b6-106">Where *n* and *m* are numeric values.</span></span>  
+## <a name="description"></a><span data-ttu-id="50ad8-104">Popis</span><span class="sxs-lookup"><span data-stu-id="50ad8-104">Description</span></span>  
+ <span data-ttu-id="50ad8-105">Rozlišení časovače operačního systému byla zjištěna jako *n* tiků, což je přibližně *m* milisekund.</span><span class="sxs-lookup"><span data-stu-id="50ad8-105">The operating system's timer resolution was detected as *n* ticks, which is approximately *m* milliseconds.</span></span> <span data-ttu-id="50ad8-106">Kde *n* a *m* jsou číselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="50ad8-106">Where *n* and *m* are numeric values.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="109b6-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="109b6-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="50ad8-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="50ad8-107">See also</span></span>
 
-- [<span data-ttu-id="109b6-108">Trasování</span><span class="sxs-lookup"><span data-stu-id="109b6-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="109b6-109">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="109b6-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="109b6-110">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="109b6-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="50ad8-108">Trasování</span><span class="sxs-lookup"><span data-stu-id="50ad8-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [<span data-ttu-id="50ad8-109">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="50ad8-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="50ad8-110">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="50ad8-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

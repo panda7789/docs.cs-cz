@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 021068caa8f1ad2c64e5ca3d18ea25dc827563a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59084997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61986697"
 ---
-# <a name="icorpublishgetprocess-method"></a><span data-ttu-id="b6c61-102">ICorPublish::GetProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="b6c61-102">ICorPublish::GetProcess Method</span></span>
-<span data-ttu-id="b6c61-103">Získá [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instanci, která představuje proces se zadaným identifikátorem.</span><span class="sxs-lookup"><span data-stu-id="b6c61-103">Gets an [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instance that represents the process with the specified identifier.</span></span>  
+# <a name="icorpublishgetprocess-method"></a><span data-ttu-id="a7409-102">ICorPublish::GetProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="a7409-102">ICorPublish::GetProcess Method</span></span>
+<span data-ttu-id="a7409-103">Získá [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instanci, která představuje proces se zadaným identifikátorem.</span><span class="sxs-lookup"><span data-stu-id="a7409-103">Gets an [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instance that represents the process with the specified identifier.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b6c61-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6c61-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a7409-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a7409-104">Syntax</span></span>  
   
 ```  
 HRESULT GetProcess(  
@@ -36,25 +36,25 @@ HRESULT GetProcess(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b6c61-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b6c61-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a7409-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a7409-105">Parameters</span></span>  
  `pid`  
- <span data-ttu-id="b6c61-106">[in] Identifikátor procesu.</span><span class="sxs-lookup"><span data-stu-id="b6c61-106">[in] The identifier of the process.</span></span>  
+ <span data-ttu-id="a7409-106">[in] Identifikátor procesu.</span><span class="sxs-lookup"><span data-stu-id="a7409-106">[in] The identifier of the process.</span></span>  
   
  `ppProcess`  
- <span data-ttu-id="b6c61-107">[out] Ukazatel na adresu `ICorPublishProcess` instanci, která představuje proces.</span><span class="sxs-lookup"><span data-stu-id="b6c61-107">[out] A pointer to the address of an `ICorPublishProcess` instance that represents the process.</span></span>  
+ <span data-ttu-id="a7409-107">[out] Ukazatel na adresu `ICorPublishProcess` instanci, která představuje proces.</span><span class="sxs-lookup"><span data-stu-id="a7409-107">[out] A pointer to the address of an `ICorPublishProcess` instance that represents the process.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b6c61-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b6c61-108">Remarks</span></span>  
- <span data-ttu-id="b6c61-109">`GetProcess` selže, pokud proces neexistuje nebo není spravovaný proces, který lze ladit aktuálním uživatelem.</span><span class="sxs-lookup"><span data-stu-id="b6c61-109">`GetProcess` fails if the process doesn't exist, or isn't a managed process that can be debugged by the current user.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a7409-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a7409-108">Remarks</span></span>  
+ <span data-ttu-id="a7409-109">`GetProcess` selže, pokud proces neexistuje nebo není spravovaný proces, který lze ladit aktuálním uživatelem.</span><span class="sxs-lookup"><span data-stu-id="a7409-109">`GetProcess` fails if the process doesn't exist, or isn't a managed process that can be debugged by the current user.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b6c61-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b6c61-110">Requirements</span></span>  
- <span data-ttu-id="b6c61-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b6c61-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a7409-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a7409-110">Requirements</span></span>  
+ <span data-ttu-id="a7409-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a7409-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b6c61-112">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="b6c61-112">**Header:** CorPub.idl, CorPub.h</span></span>  
+ <span data-ttu-id="a7409-112">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="a7409-112">**Header:** CorPub.idl, CorPub.h</span></span>  
   
- <span data-ttu-id="b6c61-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b6c61-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a7409-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a7409-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b6c61-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b6c61-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="a7409-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a7409-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b6c61-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6c61-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a7409-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a7409-115">See also</span></span>
 
-- [<span data-ttu-id="b6c61-116">ICorPublish – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b6c61-116">ICorPublish Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)
+- [<span data-ttu-id="a7409-116">ICorPublish – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a7409-116">ICorPublish Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)

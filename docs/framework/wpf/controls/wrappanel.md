@@ -9,16 +9,16 @@ helpviewer_keywords:
 - content [WPF], sequentially positioning
 ms.assetid: f0acb1b4-df71-4c5a-b4a4-98f189002537
 ms.openlocfilehash: 530c41938ae4abb893fd91d64804c7aaa2d430b5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62023790"
 ---
-# <a name="wrappanel"></a><span data-ttu-id="dac08-102">WrapPanel</span><span class="sxs-lookup"><span data-stu-id="dac08-102">WrapPanel</span></span>
-<span data-ttu-id="dac08-103"><xref:System.Windows.Controls.WrapPanel> Element umístí podřízené prvky do sekvenční Pozice zleva doprava, rozděluje obsah na další řádek na okraji jeho obsahujícího pole.</span><span class="sxs-lookup"><span data-stu-id="dac08-103">The <xref:System.Windows.Controls.WrapPanel> element positions child elements in sequential position from left to right, breaking content to the next line at the edge of its containing box.</span></span>  
+# <a name="wrappanel"></a><span data-ttu-id="ddff3-102">WrapPanel</span><span class="sxs-lookup"><span data-stu-id="ddff3-102">WrapPanel</span></span>
+<span data-ttu-id="ddff3-103"><xref:System.Windows.Controls.WrapPanel> Element umístí podřízené prvky do sekvenční Pozice zleva doprava, rozděluje obsah na další řádek na okraji jeho obsahujícího pole.</span><span class="sxs-lookup"><span data-stu-id="ddff3-103">The <xref:System.Windows.Controls.WrapPanel> element positions child elements in sequential position from left to right, breaking content to the next line at the edge of its containing box.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="dac08-104">Odkaz</span><span class="sxs-lookup"><span data-stu-id="dac08-104">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="ddff3-104">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ddff3-104">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -33,9 +33,9 @@ ms.locfileid: "57362146"
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="dac08-105">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="dac08-105">Related Sections</span></span>  
- [<span data-ttu-id="dac08-106">Rozložení</span><span class="sxs-lookup"><span data-stu-id="dac08-106">Layout</span></span>](../advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="ddff3-105">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ddff3-105">Related Sections</span></span>  
+ [<span data-ttu-id="ddff3-106">Rozložení</span><span class="sxs-lookup"><span data-stu-id="ddff3-106">Layout</span></span>](../advanced/layout.md)  
   
- [<span data-ttu-id="dac08-107">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="dac08-107">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="ddff3-107">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="ddff3-107">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="dac08-108">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="dac08-108">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
+ [<span data-ttu-id="ddff3-108">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="ddff3-108">ScrollViewer Overview</span></span>](scrollviewer-overview.md)

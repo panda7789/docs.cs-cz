@@ -6,48 +6,48 @@ helpviewer_keywords:
 - files [Visual Basic], creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 ms.openlocfilehash: a05e73a2096c82c9299e4483bbaf69e560fc2e45
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62038061"
 ---
-# <a name="how-to-create-a-file-in-visual-basic"></a><span data-ttu-id="20680-102">Postupy: Vytvořte soubor v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="20680-102">How to: Create a File in Visual Basic</span></span>
-<span data-ttu-id="20680-103">Tento příklad vytvoří prázdný textový soubor v zadané cesty pomocí <xref:System.IO.File.Create%2A> metodu <xref:System.IO.File> třídy.</span><span class="sxs-lookup"><span data-stu-id="20680-103">This example creates an empty text file at the specified path using the <xref:System.IO.File.Create%2A> method in the <xref:System.IO.File> class.</span></span>  
+# <a name="how-to-create-a-file-in-visual-basic"></a><span data-ttu-id="54161-102">Postupy: Vytvořte soubor v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="54161-102">How to: Create a File in Visual Basic</span></span>
+<span data-ttu-id="54161-103">Tento příklad vytvoří prázdný textový soubor v zadané cesty pomocí <xref:System.IO.File.Create%2A> metodu <xref:System.IO.File> třídy.</span><span class="sxs-lookup"><span data-stu-id="54161-103">This example creates an empty text file at the specified path using the <xref:System.IO.File.Create%2A> method in the <xref:System.IO.File> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="20680-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="20680-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="54161-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="54161-104">Example</span></span>  
  [!code-vb[VbFileIOMisc#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/class2.vb#1)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="20680-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="20680-105">Compiling the Code</span></span>  
- <span data-ttu-id="20680-106">Použití `file` proměnné k zápisu do souboru.</span><span class="sxs-lookup"><span data-stu-id="20680-106">Use the `file` variable to write to the file.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="54161-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="54161-105">Compiling the Code</span></span>  
+ <span data-ttu-id="54161-106">Použití `file` proměnné k zápisu do souboru.</span><span class="sxs-lookup"><span data-stu-id="54161-106">Use the `file` variable to write to the file.</span></span>  
   
-## <a name="robust-programming"></a><span data-ttu-id="20680-107">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="20680-107">Robust Programming</span></span>  
- <span data-ttu-id="20680-108">Pokud soubor již existuje, nahradí se.</span><span class="sxs-lookup"><span data-stu-id="20680-108">If the file already exists, it is replaced.</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="54161-107">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="54161-107">Robust Programming</span></span>  
+ <span data-ttu-id="54161-108">Pokud soubor již existuje, nahradí se.</span><span class="sxs-lookup"><span data-stu-id="54161-108">If the file already exists, it is replaced.</span></span>  
   
- <span data-ttu-id="20680-109">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="20680-109">The following conditions may cause an exception:</span></span>  
+ <span data-ttu-id="54161-109">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="54161-109">The following conditions may cause an exception:</span></span>  
   
--   <span data-ttu-id="20680-110">Název cesty je poškozený.</span><span class="sxs-lookup"><span data-stu-id="20680-110">The path name is malformed.</span></span> <span data-ttu-id="20680-111">Například obsahuje neplatné znaky nebo je prázdné znaky (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="20680-111">For example, it contains illegal characters or is only white space (<xref:System.ArgumentException>).</span></span>  
+- <span data-ttu-id="54161-110">Název cesty je poškozený.</span><span class="sxs-lookup"><span data-stu-id="54161-110">The path name is malformed.</span></span> <span data-ttu-id="54161-111">Například obsahuje neplatné znaky nebo je prázdné znaky (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="54161-111">For example, it contains illegal characters or is only white space (<xref:System.ArgumentException>).</span></span>  
   
--   <span data-ttu-id="20680-112">Cesta je jen pro čtení (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="20680-112">The path is read-only (<xref:System.IO.IOException>).</span></span>  
+- <span data-ttu-id="54161-112">Cesta je jen pro čtení (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="54161-112">The path is read-only (<xref:System.IO.IOException>).</span></span>  
   
--   <span data-ttu-id="20680-113">Název cesty je `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="20680-113">The path name is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
+- <span data-ttu-id="54161-113">Název cesty je `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="54161-113">The path name is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
   
--   <span data-ttu-id="20680-114">Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="20680-114">The path name is too long (<xref:System.IO.PathTooLongException>).</span></span>  
+- <span data-ttu-id="54161-114">Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="54161-114">The path name is too long (<xref:System.IO.PathTooLongException>).</span></span>  
   
--   <span data-ttu-id="20680-115">Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="20680-115">The path is invalid (<xref:System.IO.DirectoryNotFoundException>).</span></span>  
+- <span data-ttu-id="54161-115">Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="54161-115">The path is invalid (<xref:System.IO.DirectoryNotFoundException>).</span></span>  
   
--   <span data-ttu-id="20680-116">Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="20680-116">The path is only a colon ":" (<xref:System.NotSupportedException>).</span></span>  
+- <span data-ttu-id="54161-116">Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="54161-116">The path is only a colon ":" (<xref:System.NotSupportedException>).</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="20680-117">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="20680-117">.NET Framework Security</span></span>  
- <span data-ttu-id="20680-118">A <xref:System.Security.SecurityException> může být vyvolána v prostředí částečné důvěryhodnosti.</span><span class="sxs-lookup"><span data-stu-id="20680-118">A <xref:System.Security.SecurityException> may be thrown in partial-trust environments.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="54161-117">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="54161-117">.NET Framework Security</span></span>  
+ <span data-ttu-id="54161-118">A <xref:System.Security.SecurityException> může být vyvolána v prostředí částečné důvěryhodnosti.</span><span class="sxs-lookup"><span data-stu-id="54161-118">A <xref:System.Security.SecurityException> may be thrown in partial-trust environments.</span></span>  
   
- <span data-ttu-id="20680-119">Volání <xref:System.IO.File.Create%2A> metoda vyžaduje <xref:System.Security.Permissions.FileIOPermission>.</span><span class="sxs-lookup"><span data-stu-id="20680-119">The call to the <xref:System.IO.File.Create%2A> method requires <xref:System.Security.Permissions.FileIOPermission>.</span></span>  
+ <span data-ttu-id="54161-119">Volání <xref:System.IO.File.Create%2A> metoda vyžaduje <xref:System.Security.Permissions.FileIOPermission>.</span><span class="sxs-lookup"><span data-stu-id="54161-119">The call to the <xref:System.IO.File.Create%2A> method requires <xref:System.Security.Permissions.FileIOPermission>.</span></span>  
   
- <span data-ttu-id="20680-120"><xref:System.UnauthorizedAccessException> Je vyvolána, pokud uživatel nemá oprávnění k vytvoření souboru.</span><span class="sxs-lookup"><span data-stu-id="20680-120">An <xref:System.UnauthorizedAccessException> is thrown if the user does not have permission to create the file.</span></span>  
+ <span data-ttu-id="54161-120"><xref:System.UnauthorizedAccessException> Je vyvolána, pokud uživatel nemá oprávnění k vytvoření souboru.</span><span class="sxs-lookup"><span data-stu-id="54161-120">An <xref:System.UnauthorizedAccessException> is thrown if the user does not have permission to create the file.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="20680-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="20680-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="54161-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="54161-121">See also</span></span>
 
 - <xref:System.IO>
 - <xref:System.IO.File.Create%2A>
-- [<span data-ttu-id="20680-122">Používání knihoven z částečně důvěryhodného kódu</span><span class="sxs-lookup"><span data-stu-id="20680-122">Using Libraries from Partially Trusted Code</span></span>](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)
-- [<span data-ttu-id="20680-123">Základy zabezpečení přístupu kódu</span><span class="sxs-lookup"><span data-stu-id="20680-123">Code Access Security Basics</span></span>](../../../../framework/misc/code-access-security-basics.md)
+- [<span data-ttu-id="54161-122">Používání knihoven z částečně důvěryhodného kódu</span><span class="sxs-lookup"><span data-stu-id="54161-122">Using Libraries from Partially Trusted Code</span></span>](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)
+- [<span data-ttu-id="54161-123">Základy zabezpečení přístupu kódu</span><span class="sxs-lookup"><span data-stu-id="54161-123">Code Access Security Basics</span></span>](../../../../framework/misc/code-access-security-basics.md)

@@ -12,30 +12,30 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], localization
 ms.assetid: e96f9764-4e3f-4d1c-bf20-3fb890118aae
 ms.openlocfilehash: 0d01f7536c120f51372961d944804cfe0063fb9f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62010277"
 ---
-# <a name="globalization-and-localization"></a><span data-ttu-id="74778-102">Globalizace a lokalizace</span><span class="sxs-lookup"><span data-stu-id="74778-102">Globalization and Localization</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="74778-103">poskytuje rozsáhlou podporu pro vývoj globalizovaných aplikací.</span><span class="sxs-lookup"><span data-stu-id="74778-103">provides extensive support for the development of world-ready applications.</span></span>  
+# <a name="globalization-and-localization"></a><span data-ttu-id="62bf7-102">Globalizace a lokalizace</span><span class="sxs-lookup"><span data-stu-id="62bf7-102">Globalization and Localization</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="62bf7-103">poskytuje rozsáhlou podporu pro vývoj globalizovaných aplikací.</span><span class="sxs-lookup"><span data-stu-id="62bf7-103">provides extensive support for the development of world-ready applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="74778-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="74778-104">In This Section</span></span>  
- [<span data-ttu-id="74778-105">Přehled globalizace a lokalizace WPF</span><span class="sxs-lookup"><span data-stu-id="74778-105">WPF Globalization and Localization Overview</span></span>](wpf-globalization-and-localization-overview.md)  
- [<span data-ttu-id="74778-106">Globalizace pro WPF</span><span class="sxs-lookup"><span data-stu-id="74778-106">Globalization for WPF</span></span>](globalization-for-wpf.md)  
- [<span data-ttu-id="74778-107">Přehled automatického rozložení</span><span class="sxs-lookup"><span data-stu-id="74778-107">Use Automatic Layout Overview</span></span>](use-automatic-layout-overview.md)  
- [<span data-ttu-id="74778-108">Atributy a komentáře lokalizace</span><span class="sxs-lookup"><span data-stu-id="74778-108">Localization Attributes and Comments</span></span>](localization-attributes-and-comments.md)  
- [<span data-ttu-id="74778-109">Přehled obousměrných funkcí v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="74778-109">Bidirectional Features in WPF Overview</span></span>](bidirectional-features-in-wpf-overview.md)  
- [<span data-ttu-id="74778-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="74778-110">How-to Topics</span></span>](globalization-and-localization-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="62bf7-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="62bf7-104">In This Section</span></span>  
+ [<span data-ttu-id="62bf7-105">Přehled globalizace a lokalizace WPF</span><span class="sxs-lookup"><span data-stu-id="62bf7-105">WPF Globalization and Localization Overview</span></span>](wpf-globalization-and-localization-overview.md)  
+ [<span data-ttu-id="62bf7-106">Globalizace pro WPF</span><span class="sxs-lookup"><span data-stu-id="62bf7-106">Globalization for WPF</span></span>](globalization-for-wpf.md)  
+ [<span data-ttu-id="62bf7-107">Přehled automatického rozložení</span><span class="sxs-lookup"><span data-stu-id="62bf7-107">Use Automatic Layout Overview</span></span>](use-automatic-layout-overview.md)  
+ [<span data-ttu-id="62bf7-108">Atributy a komentáře lokalizace</span><span class="sxs-lookup"><span data-stu-id="62bf7-108">Localization Attributes and Comments</span></span>](localization-attributes-and-comments.md)  
+ [<span data-ttu-id="62bf7-109">Přehled obousměrných funkcí v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="62bf7-109">Bidirectional Features in WPF Overview</span></span>](bidirectional-features-in-wpf-overview.md)  
+ [<span data-ttu-id="62bf7-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="62bf7-110">How-to Topics</span></span>](globalization-and-localization-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="74778-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="74778-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="62bf7-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="62bf7-111">Reference</span></span>  
  <xref:System.Globalization>  
   
  <xref:System.Windows.FrameworkElement.FlowDirection%2A>  
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [<span data-ttu-id="74778-112">Práce s atributem xml:lang v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="74778-112">xml:lang Handling in XAML</span></span>](../../xaml-services/xml-lang-handling-in-xaml.md)  
+ [<span data-ttu-id="62bf7-112">Práce s atributem xml:lang v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="62bf7-112">xml:lang Handling in XAML</span></span>](../../xaml-services/xml-lang-handling-in-xaml.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="74778-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="74778-113">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="62bf7-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="62bf7-113">Related Sections</span></span>

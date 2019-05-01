@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 596888a8eb4a55c4cfe594b1911f17f6d32f56d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59165929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61992430"
 ---
-# <a name="imetadataemitsettypedefprops-method"></a><span data-ttu-id="57160-102">IMetaDataEmit::SetTypeDefProps – metoda</span><span class="sxs-lookup"><span data-stu-id="57160-102">IMetaDataEmit::SetTypeDefProps Method</span></span>
-<span data-ttu-id="57160-103">Nastaví funkce typu definované v předchozím volání [imetadataemit::definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span><span class="sxs-lookup"><span data-stu-id="57160-103">Sets features of a type defined by a prior call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span></span>  
+# <a name="imetadataemitsettypedefprops-method"></a><span data-ttu-id="0476a-102">IMetaDataEmit::SetTypeDefProps – metoda</span><span class="sxs-lookup"><span data-stu-id="0476a-102">IMetaDataEmit::SetTypeDefProps Method</span></span>
+<span data-ttu-id="0476a-103">Nastaví funkce typu definované v předchozím volání [imetadataemit::definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span><span class="sxs-lookup"><span data-stu-id="0476a-103">Sets features of a type defined by a prior call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="57160-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="57160-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0476a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0476a-104">Syntax</span></span>  
   
 ```  
 HRESULT SetTypeDefProps (  
@@ -38,29 +38,29 @@ HRESULT SetTypeDefProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="57160-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="57160-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0476a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0476a-105">Parameters</span></span>  
  `td`  
- <span data-ttu-id="57160-106">[in] `mdTypeDef` Token získaný z volání původní [imetadataemit::definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span><span class="sxs-lookup"><span data-stu-id="57160-106">[in] An `mdTypeDef` token obtained from original call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span></span>  
+ <span data-ttu-id="0476a-106">[in] `mdTypeDef` Token získaný z volání původní [imetadataemit::definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span><span class="sxs-lookup"><span data-stu-id="0476a-106">[in] An `mdTypeDef` token obtained from original call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span></span>  
   
  `dwTypeDefFlags`  
- <span data-ttu-id="57160-107">[in] `TypeDef` atributy.</span><span class="sxs-lookup"><span data-stu-id="57160-107">[in] `TypeDef` attributes.</span></span> <span data-ttu-id="57160-108">To je bitová maska z `CorTypeAttr` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="57160-108">This is a bitmask of `CorTypeAttr` values.</span></span>  
+ <span data-ttu-id="0476a-107">[in] `TypeDef` atributy.</span><span class="sxs-lookup"><span data-stu-id="0476a-107">[in] `TypeDef` attributes.</span></span> <span data-ttu-id="0476a-108">To je bitová maska z `CorTypeAttr` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="0476a-108">This is a bitmask of `CorTypeAttr` values.</span></span>  
   
  `tkExtends`  
- <span data-ttu-id="57160-109">[in] `mdToken` Základní třídy.</span><span class="sxs-lookup"><span data-stu-id="57160-109">[in] The `mdToken` of the base class.</span></span> <span data-ttu-id="57160-110">Získané z předchozího volání [imetadataemit::defineimporttype –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md), nebo `null`.</span><span class="sxs-lookup"><span data-stu-id="57160-110">Obtained from a previous call to [IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md), or `null`.</span></span>  
+ <span data-ttu-id="0476a-109">[in] `mdToken` Základní třídy.</span><span class="sxs-lookup"><span data-stu-id="0476a-109">[in] The `mdToken` of the base class.</span></span> <span data-ttu-id="0476a-110">Získané z předchozího volání [imetadataemit::defineimporttype –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md), nebo `null`.</span><span class="sxs-lookup"><span data-stu-id="0476a-110">Obtained from a previous call to [IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md), or `null`.</span></span>  
   
  `rtkImplements[]`  
- <span data-ttu-id="57160-111">[in] Pole tokenů pro rozhraní, která tento typ implementuje.</span><span class="sxs-lookup"><span data-stu-id="57160-111">[in] An array of tokens for the interfaces that this type implements.</span></span> <span data-ttu-id="57160-112">Tyto `mdTypeRef` tokeny jsou získány pomocí [imetadataemit::defineimporttype –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md).</span><span class="sxs-lookup"><span data-stu-id="57160-112">These `mdTypeRef` tokens are obtained using [IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md).</span></span> <span data-ttu-id="57160-113">Poslední prvek pole musí být `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="57160-113">The last element of the array is must be `mdTokenNil`.</span></span>  
+ <span data-ttu-id="0476a-111">[in] Pole tokenů pro rozhraní, která tento typ implementuje.</span><span class="sxs-lookup"><span data-stu-id="0476a-111">[in] An array of tokens for the interfaces that this type implements.</span></span> <span data-ttu-id="0476a-112">Tyto `mdTypeRef` tokeny jsou získány pomocí [imetadataemit::defineimporttype –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md).</span><span class="sxs-lookup"><span data-stu-id="0476a-112">These `mdTypeRef` tokens are obtained using [IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md).</span></span> <span data-ttu-id="0476a-113">Poslední prvek pole musí být `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="0476a-113">The last element of the array is must be `mdTokenNil`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="57160-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="57160-114">Requirements</span></span>  
- <span data-ttu-id="57160-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="57160-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0476a-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0476a-114">Requirements</span></span>  
+ <span data-ttu-id="0476a-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0476a-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="57160-116">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="57160-116">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="0476a-116">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="0476a-116">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="57160-117">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="57160-117">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="0476a-117">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="0476a-117">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="57160-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="57160-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="0476a-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0476a-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="57160-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="57160-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0476a-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0476a-119">See also</span></span>
 
-- [<span data-ttu-id="57160-120">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="57160-120">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="57160-121">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="57160-121">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="0476a-120">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0476a-120">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="0476a-121">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0476a-121">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
