@@ -3,11 +3,11 @@ title: Použití prohlížeče trasování služeb k zobrazení korelovaných tr
 ms.date: 03/30/2017
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
 ms.openlocfilehash: dd5fe08054b3a10c1663a7dd7dab5f9de5327cbb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61964951"
 ---
 # <a name="using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting"></a>Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 Toto téma popisuje formátu trace dat, jak zobrazit a přístupů, které použití prohlížeče trasování služeb k řešení problémů s aplikací.  

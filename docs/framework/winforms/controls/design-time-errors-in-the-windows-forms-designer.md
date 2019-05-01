@@ -9,11 +9,11 @@ helpviewer_keywords:
 - design-time errors [Windows Forms Designer]
 ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
 ms.openlocfilehash: 7ee4ce1d6efdc4927fc2d20100f0b12f7405261f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59213139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972351"
 ---
 # <a name="design-time-errors-in-the-windows-forms-designer"></a>Chyby při návrhu v Návrháři formulářů Windows
 Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se zobrazí v sadě Microsoft Visual Studio, když Návrhář formulářů Windows nepodaří načíst. Pokud se zobrazí tento seznam chyb, by neměla interpretovat jako chyba v návrháři, ale jako pomůcka pro opravu chyb v kódu.  
@@ -25,11 +25,11 @@ Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se 
   
  Můžete rozbalit nebo Sbalit kategorii chyby, kliknutím na záhlaví kategorie chyby nebo kliknutím na dvojitou šipku Rozbalit/sbalit. Když rozbalíte kategorii chyby, zobrazí se následující další pomoc:  
   
--   Instance této chyby.  
+- Instance této chyby.  
   
--   Nápověda k této chybě.  
+- Nápověda k této chybě.  
   
--   Fórum příspěvky o této chybě.  
+- Fórum příspěvky o této chybě.  
   
 ### <a name="instances-of-this-error"></a>Instance této chyby  
  Další nápověda seznam všech instancí chybu v aktuálním projektu. Mnoho chyb obsahovat přesné umístění v následujícím formátu: *[název projektu]* *[název formuláře]* řádku:*[číslo]* sloupec:*– sloupec číslo*. **Přejít ke kódu** odkaz vás nasměruje na umístění ve vašem kódu, kde dojde k chybě.  
@@ -45,9 +45,9 @@ Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se 
 ### <a name="forum-posts-about-this-error"></a>Fórum příspěvky o této chybě  
  Další pomoc, bude obsahovat odkaz na příspěvků na fórech MSDN týkající se chyby. Fóra budou vyhledány podle řetězec chybové zprávy. Můžete také zkusit hledání následující fóra:  
   
--   [Fórum Návrháře formulářů Windows](https://go.microsoft.com/fwlink/?LinkId=203524)  
+- [Fórum Návrháře formulářů Windows](https://go.microsoft.com/fwlink/?LinkId=203524)  
   
--   [Windows Forms fóra](https://go.microsoft.com/fwlink/?LinkId=203523)  
+- [Windows Forms fóra](https://go.microsoft.com/fwlink/?LinkId=203523)  
   
 ### <a name="ignore-and-continue"></a>Ignorovat a pokračovat  
  Můžete ignorovat chybovou podmínku a pokračovat v načítání návrháře. Výběrem této akce může způsobit neočekávané chování. Například ovládací prvky se nemusí zobrazit na návrhové ploše.  

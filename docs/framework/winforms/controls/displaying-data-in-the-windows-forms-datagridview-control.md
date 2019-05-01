@@ -8,11 +8,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], displaying data
 ms.assetid: b170b52a-2ebd-4948-ac2f-e52d494cebb2
 ms.openlocfilehash: c153d422470ff20491567aed70557e461dc2b4e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59168633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972221"
 ---
 # <a name="displaying-data-in-the-windows-forms-datagridview-control"></a>Zobrazení dat v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Ovládacího prvku se používá k zobrazení dat z různých zdrojů externí data. Alternativně můžete přidávání řádků a sloupců do ovládacího prvku a ručně ho naplnit daty.  

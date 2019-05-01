@@ -7,11 +7,11 @@ helpviewer_keywords:
 - examples [Windows Forms], gradient brushes
 ms.assetid: 2c6037b9-05bd-44c0-a22a-19584b722524
 ms.openlocfilehash: 5771aaabd283d71f5fa6934f86a1c24a57f38dca
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954454"
 ---
 # <a name="using-a-gradient-brush-to-fill-shapes"></a>Použití štětce přechodu k vyplnění obrazců
 Můžete použít štětce přechodu k vyplnění obrazce postupně měnící barvou. Například můžete použít vodorovný přechodu k vyplnění obrazce pomocí barev, která se mění postupně při přesunu z levého okraje tvaru do pravého okraje. Představte si obdélníku s levého okraje, která je černá (reprezentovaný identifikátorem komponenty červené, zelené a modré 0, 0, 0) a pravý okraj, který je red (reprezentovaný identifikátorem 255, 0, 0). Pokud obdélníku je 256 pixelů na šířku, bude hodnota červené dané pixelu větší než hodnota červené pixelu na levé straně. Úplně vlevo obrazových bodů za sebou má barevným (0, 0, 0), je druhý pixel má (1, 0, 0), třetí pixel má (2, 0, 0) a tak dále, dokud se nedostanete na úplně vpravo pixel, který má barevným (255, 0, 0). Tyto hodnoty interpolovaná barva tvoří barev přechodu.  

@@ -9,11 +9,11 @@ ms.assetid: 834049f1-ab41-449e-9f10-4a1d0701bc48
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: beb351ac365694ac909b793bf19adb9fbb8c0274
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48835971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61968126"
 ---
 # <a name="inputs-to-the-xslcompiledtransform-class"></a>Vstupy do třídy XslCompiledTransform
 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda přijímá tři vstupní typy pro zdrojový dokument: objekt, který implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní, <xref:System.Xml.XmlReader> objekt, který přečte zdrojový dokument nebo řetězec identifikátoru URI.  
@@ -24,14 +24,14 @@ ms.locfileid: "48835971"
 ## <a name="ixpathnavigable-interface"></a>Rozhraní IXPathNavigable  
  <xref:System.Xml.XPath.IXPathNavigable> Rozhraní je implementováno v <xref:System.Xml.XmlNode> a <xref:System.Xml.XPath.XPathDocument> třídy. Tyto třídy představují mezipaměti dat XML.  
   
--   <xref:System.Xml.XmlNode> Třídy je založený na W3C Document Object Model (DOM) a obsahuje funkce pro úpravy.  
+- <xref:System.Xml.XmlNode> Třídy je založený na W3C Document Object Model (DOM) a obsahuje funkce pro úpravy.  
   
--   <xref:System.Xml.XPath.XPathDocument> Třída je úložiště jen pro čtení dat na základě modelu dat XPath. <xref:System.Xml.XPath.XPathDocument> zpracovává doporučené třídy pro XSLT. Poskytuje rychlejší výkon ve srovnání s <xref:System.Xml.XmlNode> třídy.  
+- <xref:System.Xml.XPath.XPathDocument> Třída je úložiště jen pro čtení dat na základě modelu dat XPath. <xref:System.Xml.XPath.XPathDocument> zpracovává doporučené třídy pro XSLT. Poskytuje rychlejší výkon ve srovnání s <xref:System.Xml.XmlNode> třídy.  
   
 > [!NOTE]
->  Transformace se vztahují k dokumentu jako celek. Jinými slovy Pokud předáte v uzlu, než je kořenový uzel dokumentu, toto nezabraňuje proces transformace přístup na všechny uzly v načtený dokument. Transformace fragmentu uzlu, musíte vytvořit objekt, který obsahuje pouze fragmentu uzlu a předejte tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Další informace najdete v tématu [postupy: transformace fragmentu uzlu](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md).  
+>  Transformace se vztahují k dokumentu jako celek. Jinými slovy Pokud předáte v uzlu, než je kořenový uzel dokumentu, toto nezabraňuje proces transformace přístup na všechny uzly v načtený dokument. Transformace fragmentu uzlu, musíte vytvořit objekt, který obsahuje pouze fragmentu uzlu a předejte tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Další informace najdete v tématu [jak: Transformace fragmentu uzlu](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md).  
   
- V následujícím příkladu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody k transformaci soubor books.xml books.html souboru pomocí transform.xsl šablony stylů. Soubory books.xml a transform.xsl lze nalézt v tomto tématu: [postup: provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
+ V následujícím příkladu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody k transformaci soubor books.xml books.html souboru pomocí transform.xsl šablony stylů. Soubory books.xml a transform.xsl lze nalézt v tomto tématu: [Postupy: Provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
   
  [!code-csharp[XslCompiledTransform.Transform2#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform2/CS/Program.cs#1)]
  [!code-vb[XslCompiledTransform.Transform2#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#1)]  
@@ -39,7 +39,7 @@ ms.locfileid: "48835971"
 ## <a name="xmlreader-object"></a>Objekt XmlReader  
  <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda načte z aktuálního uzlu <xref:System.Xml.XmlReader> přes všechny jeho podřízené objekty. To umožňuje využít část dokumentu jako kontext dokumentu. Poté, co <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda vrátí hodnotu, <xref:System.Xml.XmlReader> je umístěn na další uzel za konec dokumentu kontextu. Pokud je dosaženo konce dokumentu, <xref:System.Xml.XmlReader> je umístěn na konci souboru (EOF).  
   
- V následujícím příkladu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody k transformaci soubor books.xml books.html souboru pomocí transform.xsl šablony stylů. Soubory books.xml a transform.xsl lze nalézt v tomto tématu: [postup: provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
+ V následujícím příkladu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody k transformaci soubor books.xml books.html souboru pomocí transform.xsl šablony stylů. Soubory books.xml a transform.xsl lze nalézt v tomto tématu: [Postupy: Provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
   
  [!code-csharp[XslCompiledTransform.Transform2#2](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform2/CS/Program.cs#2)]
  [!code-vb[XslCompiledTransform.Transform2#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#2)]  
@@ -47,7 +47,7 @@ ms.locfileid: "48835971"
 ## <a name="string-uri"></a>Řetězec identifikátoru URI  
  Identifikátor URI dokumentu zdroje můžete určit také jako vaše XSLT vstup. <xref:System.Xml.XmlResolver> Slouží k rozpoznání identifikátoru URI. Můžete zadat <xref:System.Xml.XmlResolver> použít ji k <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Pokud <xref:System.Xml.XmlResolver> není zadán, <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda používá výchozí <xref:System.Xml.XmlUrlResolver> bez pověření.  
   
- V následujícím příkladu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody k transformaci soubor books.xml books.html souboru pomocí transform.xsl šablony stylů. Soubory books.xml a transform.xsl lze nalézt v tomto tématu: [postup: provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
+ V následujícím příkladu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody k transformaci soubor books.xml books.html souboru pomocí transform.xsl šablony stylů. Soubory books.xml a transform.xsl lze nalézt v tomto tématu: [Postupy: Provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
   
  [!code-csharp[XslCompiledTransform.Transform2#3](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform2/CS/Program.cs#3)]
  [!code-vb[XslCompiledTransform.Transform2#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#3)]  

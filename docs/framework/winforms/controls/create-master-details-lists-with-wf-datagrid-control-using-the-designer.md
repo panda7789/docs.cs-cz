@@ -7,11 +7,11 @@ helpviewer_keywords:
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
 ms.openlocfilehash: f586572c850927ffe71566287986e6db6112c689
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61961357"
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře
 
@@ -42,15 +42,15 @@ ms.locfileid: "59332076"
   
 6. Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete nastavit hlavní mřížky, následujícím způsobem:  
   
-    1.  Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
+    1. Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
   
-    2.  Vyberte z rozevíracího seznamu v tabulce hlavní (například "zákazníci") <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost.  
+    2. Vyberte z rozevíracího seznamu v tabulce hlavní (například "zákazníci") <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost.  
   
 7. Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete určit podrobnosti mřížky, následujícím způsobem:  
   
-    1.  Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
+    1. Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
   
-    2.  Vyberte relaci (například "Customers.CustOrd") mezi tabulkami a podrobností z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost. Chcete-li zobrazit relace, rozbalte uzel kliknutím na symbol plus (**+**) znaménko vedle hlavní tabulku v rozevíracím seznamu.  
+    2. Vyberte relaci (například "Customers.CustOrd") mezi tabulkami a podrobností z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost. Chcete-li zobrazit relace, rozbalte uzel kliknutím na symbol plus (**+**) znaménko vedle hlavní tabulku v rozevíracím seznamu.  
   
 ## <a name="see-also"></a>Viz také:
 

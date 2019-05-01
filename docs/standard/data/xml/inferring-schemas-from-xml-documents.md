@@ -10,11 +10,11 @@ ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0b4727ead8abb9b3618f8b9dda8f7a9eb4b2321f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54742471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61968139"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Odvození schémat z dokumentů XML
 Toto téma popisuje způsob použití <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodit jazyk (XSD) schématu definice schématu XML ze struktury dokumentu XML.  
