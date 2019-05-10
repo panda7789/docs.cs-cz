@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 897f49dc783885728f7d7242482a2b42f3a114bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7a81a0015ae046682e1afa40c1c8d272357839ba
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965019"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622786"
 ---
 # <a name="latency-modes"></a>Latentní režimy
 Uvolnit objekty, uvolňování, musíte zastavit všechna vlákna provádění v aplikaci. V některých situacích, například když aplikace načítá data nebo zobrazí obsah úplné uvolnění paměti dochází při kritické době a bránit ve výkonu. Můžete upravit parametry systému uvolňování paměti tak, že nastavíte <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> vlastnost na jednu z <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> hodnoty.  

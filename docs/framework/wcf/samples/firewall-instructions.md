@@ -2,12 +2,12 @@
 title: Pokyny k bráně firewall
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: f1b576b4e413fa3bae70ef1eb8f8ed768e28e309
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 06e5ba64ab0ec3558e4c773c9cb21f961384e0c9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051933"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650045"
 ---
 # <a name="firewall-instructions"></a>Pokyny k bráně firewall
 Je nutné povolit několik portů a programů v bráně firewall tak, aby ukázky Windows Communication Foundation (WCF), můžou fungovat. Mnoho vzorků komunikaci prostřednictvím portů v rozsahu 8000-8003 a portu 9000. Brána firewall je ve výchozím nastavení zapnutá a brání v přístupu k těmto portům. Pokud chcete povolit bránu firewall pro ukázky, proveďte jednu z následujících postupů, v závislosti na vašich požadavcích a zabezpečení prostředí:  

@@ -2,12 +2,12 @@
 title: Nelze se dotazovat informací o souboru na otevřené pro zápis.
 ms.date: 07/20/2015
 ms.assetid: 2198af10-f128-4b1d-baba-a251e1369146
-ms.openlocfilehash: d07efac07c2728199314e16188a64d03b2f86185
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: aeb8dbbfe0928263c1c40d308584dc5d17e0f04a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756309"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624926"
 ---
 # <a name="file-information-cannot-be-queried-while-open-for-writing"></a>Nelze se dotazovat informací o souboru na otevřené pro zápis.
 Byl proveden pokus o získání informací o souboru, který je aktuálně otevřena pro zápis.  

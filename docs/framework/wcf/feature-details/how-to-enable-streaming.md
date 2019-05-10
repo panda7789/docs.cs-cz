@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: 0d8428487c3c320a634914b99219e23befb70d55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bd1a52f1ce0f656af79928a20e3badc73661e89a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773019"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64635306"
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
 Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím přenosy ve vyrovnávací paměti nebo datovým proudem. Ve výchozím režimu přenosu ukládány do vyrovnávací paměti zprávy musí být zcela doručována předtím, než příjemce může číst. V režimu přenosu datového proudu, můžete začít příjemce zprávu zpracovat, než úplně doručení. Režim tvorby datového proudu je užitečné, když informace, které je předáno příliš dlouhý a může být zpracována sériově. Režim tvorby datového proudu je také užitečné, pokud zpráva je příliš velký, aby se zcela ukládány do vyrovnávací paměti.  

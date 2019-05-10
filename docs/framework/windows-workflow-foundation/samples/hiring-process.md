@@ -2,12 +2,12 @@
 title: Proces náboru
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: c6f542cef8e1417ed9c8d3a185252a91062e2161
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 87e49613214a6a608bd8e22dc9470250c90e220a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62005053"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622483"
 ---
 # <a name="hiring-process"></a>Proces náboru
 Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit zasílání zpráv a dva pracovní postupy hostovaný jako služeb pracovních postupů. Tyto pracovní postupy jsou součástí infrastruktury IT fiktivní společnosti s názvem Contoso, Inc.  

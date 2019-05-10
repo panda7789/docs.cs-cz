@@ -2,12 +2,12 @@
 title: Vyhledání výchozího stylu odstavce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
-ms.openlocfilehash: 0694c9144e44e4a5de262f97581eb18943937243
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f874033b9a070b951d27f37aae36f738ab1fd222
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61931310"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64618378"
 ---
 # <a name="finding-the-default-paragraph-style-visual-basic"></a>Vyhledání výchozího stylu odstavce (Visual Basic)
 První úkol v manipulaci s informace v dokumentu WordprocessingML kurzu je vyhledání výchozího stylu odstavce v dokumentu.  

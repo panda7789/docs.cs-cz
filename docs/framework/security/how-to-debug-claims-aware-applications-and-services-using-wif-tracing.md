@@ -3,12 +3,12 @@ title: 'Postupy: Ladění aplikací a služeb pracujících s deklaracemi s tras
 ms.date: 03/30/2017
 ms.assetid: 3d51ba59-3adb-4ca4-bd33-5027531af687
 author: BrucePerlerMS
-ms.openlocfilehash: 43fa859aa84189817dffe74ecd72253ab9b82585
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: effd670a4d0e12f0bca10301fabc361c73e03328
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940488"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64625881"
 ---
 # <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>Postupy: Ladění aplikací a služeb pracujících s deklaracemi s trasováním WIF
 ## <a name="applies-to"></a>Platí pro  
