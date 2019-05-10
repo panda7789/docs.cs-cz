@@ -4,43 +4,43 @@ ms.date: 03/30/2017
 ms.assetid: a226737a-cb99-4e97-bd94-9a37094ded41
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 550cb6379ef0d5d17a3446b3f21120208b5a3dad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 013cdfbb6a2904e60d6f7b4df6d40e3d65606fcd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989162"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64606820"
 ---
-# <a name="icordebugdebugevent-interface"></a><span data-ttu-id="c0021-102">Rozhraní ICorDebugDebugEvent</span><span class="sxs-lookup"><span data-stu-id="c0021-102">ICorDebugDebugEvent Interface</span></span>
-<span data-ttu-id="c0021-103">Definuje základní rozhraní, ze kterého jsou všechny `ICorDebug` výjimky ladění jsou odvozeny.</span><span class="sxs-lookup"><span data-stu-id="c0021-103">Defines the base interface from which all `ICorDebug` debug events derive.</span></span>  
+# <a name="icordebugdebugevent-interface"></a><span data-ttu-id="e45fd-102">Rozhraní ICorDebugDebugEvent</span><span class="sxs-lookup"><span data-stu-id="e45fd-102">ICorDebugDebugEvent Interface</span></span>
+<span data-ttu-id="e45fd-103">Definuje základní rozhraní, ze kterého jsou všechny `ICorDebug` výjimky ladění jsou odvozeny.</span><span class="sxs-lookup"><span data-stu-id="e45fd-103">Defines the base interface from which all `ICorDebug` debug events derive.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="c0021-104">Metody</span><span class="sxs-lookup"><span data-stu-id="c0021-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="e45fd-104">Metody</span><span class="sxs-lookup"><span data-stu-id="e45fd-104">Methods</span></span>  
   
-|<span data-ttu-id="c0021-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="c0021-105">Method</span></span>|<span data-ttu-id="c0021-106">Popis</span><span class="sxs-lookup"><span data-stu-id="c0021-106">Description</span></span>|  
+|<span data-ttu-id="e45fd-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="e45fd-105">Method</span></span>|<span data-ttu-id="e45fd-106">Popis</span><span class="sxs-lookup"><span data-stu-id="e45fd-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="c0021-107">GetEventKind – metoda</span><span class="sxs-lookup"><span data-stu-id="c0021-107">GetEventKind Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md)|<span data-ttu-id="c0021-108">Jaký druh událostí označuje to `ICorDebugDebugEvent` objekt představuje.</span><span class="sxs-lookup"><span data-stu-id="c0021-108">Indicates what kind of event this `ICorDebugDebugEvent` object represents.</span></span>|  
-|[<span data-ttu-id="c0021-109">GetThread – metoda</span><span class="sxs-lookup"><span data-stu-id="c0021-109">GetThread Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-getthread-method.md)|<span data-ttu-id="c0021-110">Získá vlákno, na kterém došlo k události.</span><span class="sxs-lookup"><span data-stu-id="c0021-110">Gets the thread on which the event occurred.</span></span>|  
+|[<span data-ttu-id="e45fd-107">GetEventKind – metoda</span><span class="sxs-lookup"><span data-stu-id="e45fd-107">GetEventKind Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md)|<span data-ttu-id="e45fd-108">Jaký druh událostí označuje to `ICorDebugDebugEvent` objekt představuje.</span><span class="sxs-lookup"><span data-stu-id="e45fd-108">Indicates what kind of event this `ICorDebugDebugEvent` object represents.</span></span>|  
+|[<span data-ttu-id="e45fd-109">GetThread – metoda</span><span class="sxs-lookup"><span data-stu-id="e45fd-109">GetThread Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-getthread-method.md)|<span data-ttu-id="e45fd-110">Získá vlákno, na kterém došlo k události.</span><span class="sxs-lookup"><span data-stu-id="e45fd-110">Gets the thread on which the event occurred.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="c0021-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c0021-111">Remarks</span></span>  
- <span data-ttu-id="c0021-112">Následující rozhraní jsou odvozeny z `ICorDebugDebugEvent` rozhraní:</span><span class="sxs-lookup"><span data-stu-id="c0021-112">The following interfaces are derived from the `ICorDebugDebugEvent` interface:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e45fd-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e45fd-111">Remarks</span></span>  
+ <span data-ttu-id="e45fd-112">Následující rozhraní jsou odvozeny z `ICorDebugDebugEvent` rozhraní:</span><span class="sxs-lookup"><span data-stu-id="e45fd-112">The following interfaces are derived from the `ICorDebugDebugEvent` interface:</span></span>  
   
-- [<span data-ttu-id="c0021-113">ICorDebugExceptionDebugEvent</span><span class="sxs-lookup"><span data-stu-id="c0021-113">ICorDebugExceptionDebugEvent</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-interface.md)  
+- [<span data-ttu-id="e45fd-113">ICorDebugExceptionDebugEvent</span><span class="sxs-lookup"><span data-stu-id="e45fd-113">ICorDebugExceptionDebugEvent</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-interface.md)  
   
-- [<span data-ttu-id="c0021-114">Icordebugmoduledebugevent –</span><span class="sxs-lookup"><span data-stu-id="c0021-114">ICorDebugModuleDebugEvent</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmoduledebugevent-interface.md)  
+- [<span data-ttu-id="e45fd-114">Icordebugmoduledebugevent –</span><span class="sxs-lookup"><span data-stu-id="e45fd-114">ICorDebugModuleDebugEvent</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmoduledebugevent-interface.md)  
   
 > [!NOTE]
->  <span data-ttu-id="c0021-115">Rozhraní je pouze k dispozici s .NET Native.</span><span class="sxs-lookup"><span data-stu-id="c0021-115">The interface is available with .NET Native only.</span></span> <span data-ttu-id="c0021-116">Pokus o volání `QueryInterface` načíst ukazatel rozhraní vrátí `E_NOINTERFACE` pro scénáře ICorDebug mimo .NET Native.</span><span class="sxs-lookup"><span data-stu-id="c0021-116">Attempting to call `QueryInterface` to retrieve an interface pointer returns `E_NOINTERFACE` for ICorDebug scenarios outside of .NET Native.</span></span>  
+>  <span data-ttu-id="e45fd-115">Rozhraní je pouze k dispozici s .NET Native.</span><span class="sxs-lookup"><span data-stu-id="e45fd-115">The interface is available with .NET Native only.</span></span> <span data-ttu-id="e45fd-116">Pokus o volání `QueryInterface` načíst ukazatel rozhraní vrátí `E_NOINTERFACE` pro scénáře ICorDebug mimo .NET Native.</span><span class="sxs-lookup"><span data-stu-id="e45fd-116">Attempting to call `QueryInterface` to retrieve an interface pointer returns `E_NOINTERFACE` for ICorDebug scenarios outside of .NET Native.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c0021-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c0021-117">Requirements</span></span>  
- <span data-ttu-id="c0021-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c0021-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e45fd-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e45fd-117">Requirements</span></span>  
+ <span data-ttu-id="e45fd-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e45fd-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c0021-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c0021-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="e45fd-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e45fd-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="c0021-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c0021-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="e45fd-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e45fd-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c0021-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c0021-121">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
+ <span data-ttu-id="e45fd-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e45fd-121">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c0021-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c0021-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e45fd-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e45fd-122">See also</span></span>
 
-- [<span data-ttu-id="c0021-123">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="c0021-123">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="c0021-124">Ladění</span><span class="sxs-lookup"><span data-stu-id="c0021-124">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="e45fd-123">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="e45fd-123">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="e45fd-124">Ladění</span><span class="sxs-lookup"><span data-stu-id="e45fd-124">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

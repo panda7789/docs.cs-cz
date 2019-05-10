@@ -7,196 +7,196 @@ helpviewer_keywords:
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 55716a9955d12ef3a926efe352a0078044de9990
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 013d1d61e221e079fe68a6c6c7af5d6d5087b592
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61709949"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64608206"
 ---
-# <a name="c-coding-conventions-c-programming-guide"></a><span data-ttu-id="a21d7-102">Převody kódování C# (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="a21d7-102">C# Coding Conventions (C# Programming Guide)</span></span>
- <span data-ttu-id="a21d7-103">Konvence kódování slouží k následujícím účelům:</span><span class="sxs-lookup"><span data-stu-id="a21d7-103">Coding conventions serve the following purposes:</span></span>  
+# <a name="c-coding-conventions-c-programming-guide"></a><span data-ttu-id="9c416-102">Převody kódování C# (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="9c416-102">C# Coding Conventions (C# Programming Guide)</span></span>
+ <span data-ttu-id="9c416-103">Konvence kódování slouží k následujícím účelům:</span><span class="sxs-lookup"><span data-stu-id="9c416-103">Coding conventions serve the following purposes:</span></span>  
   
-- <span data-ttu-id="a21d7-104">Vytváření konzistentního vzhledu na kód, tak, aby se čtenáři mohli soustředit na obsah ne na rozložení.</span><span class="sxs-lookup"><span data-stu-id="a21d7-104">They create a consistent look to the code, so that readers can focus on content, not layout.</span></span>  
+- <span data-ttu-id="9c416-104">Vytváření konzistentního vzhledu na kód, tak, aby se čtenáři mohli soustředit na obsah ne na rozložení.</span><span class="sxs-lookup"><span data-stu-id="9c416-104">They create a consistent look to the code, so that readers can focus on content, not layout.</span></span>  
   
-- <span data-ttu-id="a21d7-105">Umožňují uživatelům pochopit kód rychleji odhad na základě předchozích zkušeností.</span><span class="sxs-lookup"><span data-stu-id="a21d7-105">They enable readers to understand the code more quickly by making assumptions based on previous experience.</span></span>  
+- <span data-ttu-id="9c416-105">Umožňují uživatelům pochopit kód rychleji odhad na základě předchozích zkušeností.</span><span class="sxs-lookup"><span data-stu-id="9c416-105">They enable readers to understand the code more quickly by making assumptions based on previous experience.</span></span>  
   
-- <span data-ttu-id="a21d7-106">Usnadňují kopírování, změna a údržba kódu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-106">They facilitate copying, changing, and maintaining the code.</span></span>  
+- <span data-ttu-id="9c416-106">Usnadňují kopírování, změna a údržba kódu.</span><span class="sxs-lookup"><span data-stu-id="9c416-106">They facilitate copying, changing, and maintaining the code.</span></span>  
   
-- <span data-ttu-id="a21d7-107">Vysvětlují, C# osvědčené postupy.</span><span class="sxs-lookup"><span data-stu-id="a21d7-107">They demonstrate C# best practices.</span></span>  
+- <span data-ttu-id="9c416-107">Vysvětlují, C# osvědčené postupy.</span><span class="sxs-lookup"><span data-stu-id="9c416-107">They demonstrate C# best practices.</span></span>  
 
- <span data-ttu-id="a21d7-108">Pokyny v tomto tématu se používá společnost Microsoft pro vývoj ukázky a dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="a21d7-108">The guidelines in this topic are used by Microsoft to develop samples and documentation.</span></span>  
+ <span data-ttu-id="9c416-108">Pokyny v tomto tématu se používá společnost Microsoft pro vývoj ukázky a dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="9c416-108">The guidelines in this topic are used by Microsoft to develop samples and documentation.</span></span>  
   
-## <a name="naming-conventions"></a><span data-ttu-id="a21d7-109">Zásady vytváření názvů</span><span class="sxs-lookup"><span data-stu-id="a21d7-109">Naming Conventions</span></span>  
+## <a name="naming-conventions"></a><span data-ttu-id="9c416-109">Zásady vytváření názvů</span><span class="sxs-lookup"><span data-stu-id="9c416-109">Naming Conventions</span></span>  
   
-- <span data-ttu-id="a21d7-110">V krátké příklady, které neobsahují [direktiv using](../../../csharp/language-reference/keywords/using-directive.md), použijte kvalifikaci oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="a21d7-110">In short examples that do not include [using directives](../../../csharp/language-reference/keywords/using-directive.md), use namespace qualifications.</span></span> <span data-ttu-id="a21d7-111">Pokud víte, že je ve výchozím nastavení v projektu importován oboru názvů, není nutné k plnému určení názvů z daného oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="a21d7-111">If you know that a namespace is imported by default in a project, you do not have to fully qualify the names from that namespace.</span></span> <span data-ttu-id="a21d7-112">Kvalifikované názvy může být přerušeno za tečku (.) Pokud jsou příliš dlouhé pro jeden řádek, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-112">Qualified names can be broken after a dot (.) if they are too long for a single line, as shown in the following example.</span></span>  
+- <span data-ttu-id="9c416-110">V krátké příklady, které neobsahují [direktiv using](../../../csharp/language-reference/keywords/using-directive.md), použijte kvalifikaci oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9c416-110">In short examples that do not include [using directives](../../../csharp/language-reference/keywords/using-directive.md), use namespace qualifications.</span></span> <span data-ttu-id="9c416-111">Pokud víte, že je ve výchozím nastavení v projektu importován oboru názvů, není nutné k plnému určení názvů z daného oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9c416-111">If you know that a namespace is imported by default in a project, you do not have to fully qualify the names from that namespace.</span></span> <span data-ttu-id="9c416-112">Kvalifikované názvy může být přerušeno za tečku (.) Pokud jsou příliš dlouhé pro jeden řádek, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="9c416-112">Qualified names can be broken after a dot (.) if they are too long for a single line, as shown in the following example.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#1](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#1)]  
   
-- <span data-ttu-id="a21d7-113">Nemusíte změnit názvy objektů, které byly vytvořeny pomocí návrhářské nástroje Visual Studio, aby se daly přizpůsobit další pokyny.</span><span class="sxs-lookup"><span data-stu-id="a21d7-113">You do not have to change the names of objects that were created by using the Visual Studio designer tools to make them fit other guidelines.</span></span>  
+- <span data-ttu-id="9c416-113">Nemusíte změnit názvy objektů, které byly vytvořeny pomocí návrhářské nástroje Visual Studio, aby se daly přizpůsobit další pokyny.</span><span class="sxs-lookup"><span data-stu-id="9c416-113">You do not have to change the names of objects that were created by using the Visual Studio designer tools to make them fit other guidelines.</span></span>  
   
-## <a name="layout-conventions"></a><span data-ttu-id="a21d7-114">Konvence rozložení</span><span class="sxs-lookup"><span data-stu-id="a21d7-114">Layout Conventions</span></span>  
- <span data-ttu-id="a21d7-115">Dobré rozložení používá formátování zvýraznit struktury kódu a aby byl kód lépe čitelný.</span><span class="sxs-lookup"><span data-stu-id="a21d7-115">Good layout uses formatting to emphasize the structure of your code and to make the code easier to read.</span></span> <span data-ttu-id="a21d7-116">Microsoft příkladů a ukázek splňovat následující konvence:</span><span class="sxs-lookup"><span data-stu-id="a21d7-116">Microsoft examples and samples conform to the following conventions:</span></span>  
+## <a name="layout-conventions"></a><span data-ttu-id="9c416-114">Konvence rozložení</span><span class="sxs-lookup"><span data-stu-id="9c416-114">Layout Conventions</span></span>  
+ <span data-ttu-id="9c416-115">Dobré rozložení používá formátování zvýraznit struktury kódu a aby byl kód lépe čitelný.</span><span class="sxs-lookup"><span data-stu-id="9c416-115">Good layout uses formatting to emphasize the structure of your code and to make the code easier to read.</span></span> <span data-ttu-id="9c416-116">Microsoft příkladů a ukázek splňovat následující konvence:</span><span class="sxs-lookup"><span data-stu-id="9c416-116">Microsoft examples and samples conform to the following conventions:</span></span>  
   
-- <span data-ttu-id="a21d7-117">Použijte výchozí nastavení editoru kódu (inteligentní odsazení, čtyřmístný odsazení, uložení jako mezery tabulátory).</span><span class="sxs-lookup"><span data-stu-id="a21d7-117">Use the default Code Editor settings (smart indenting, four-character indents, tabs saved as spaces).</span></span> <span data-ttu-id="a21d7-118">Další informace najdete v tématu [možnosti, textový Editor, C#, formátování vzorků](/visualstudio/ide/reference/options-text-editor-csharp-formatting).</span><span class="sxs-lookup"><span data-stu-id="a21d7-118">For more information, see [Options, Text Editor, C#, Formatting](/visualstudio/ide/reference/options-text-editor-csharp-formatting).</span></span>  
+- <span data-ttu-id="9c416-117">Použijte výchozí nastavení editoru kódu (inteligentní odsazení, čtyřmístný odsazení, uložení jako mezery tabulátory).</span><span class="sxs-lookup"><span data-stu-id="9c416-117">Use the default Code Editor settings (smart indenting, four-character indents, tabs saved as spaces).</span></span> <span data-ttu-id="9c416-118">Další informace najdete v tématu [možnosti, textový Editor, C#, formátování vzorků](/visualstudio/ide/reference/options-text-editor-csharp-formatting).</span><span class="sxs-lookup"><span data-stu-id="9c416-118">For more information, see [Options, Text Editor, C#, Formatting](/visualstudio/ide/reference/options-text-editor-csharp-formatting).</span></span>  
   
-- <span data-ttu-id="a21d7-119">Zapište pouze jeden příkaz na každém řádku.</span><span class="sxs-lookup"><span data-stu-id="a21d7-119">Write only one statement per line.</span></span>  
+- <span data-ttu-id="9c416-119">Zapište pouze jeden příkaz na každém řádku.</span><span class="sxs-lookup"><span data-stu-id="9c416-119">Write only one statement per line.</span></span>  
   
-- <span data-ttu-id="a21d7-120">Zapisovat pouze jednu deklaraci na každém řádku.</span><span class="sxs-lookup"><span data-stu-id="a21d7-120">Write only one declaration per line.</span></span>  
+- <span data-ttu-id="9c416-120">Zapisovat pouze jednu deklaraci na každém řádku.</span><span class="sxs-lookup"><span data-stu-id="9c416-120">Write only one declaration per line.</span></span>  
   
-- <span data-ttu-id="a21d7-121">Pokud nejsou pokračovací řádky automaticky odsazený, odsazení, je o jednu zarážku tabulátoru (čtyři mezery).</span><span class="sxs-lookup"><span data-stu-id="a21d7-121">If continuation lines are not indented automatically, indent them one tab stop (four spaces).</span></span>  
+- <span data-ttu-id="9c416-121">Pokud nejsou pokračovací řádky automaticky odsazený, odsazení, je o jednu zarážku tabulátoru (čtyři mezery).</span><span class="sxs-lookup"><span data-stu-id="9c416-121">If continuation lines are not indented automatically, indent them one tab stop (four spaces).</span></span>  
   
-- <span data-ttu-id="a21d7-122">Přidejte alespoň jeden prázdný řádek mezi definice metod a definicích vlastností.</span><span class="sxs-lookup"><span data-stu-id="a21d7-122">Add at least one blank line between method definitions and property definitions.</span></span>  
+- <span data-ttu-id="9c416-122">Přidejte alespoň jeden prázdný řádek mezi definice metod a definicích vlastností.</span><span class="sxs-lookup"><span data-stu-id="9c416-122">Add at least one blank line between method definitions and property definitions.</span></span>  
   
-- <span data-ttu-id="a21d7-123">Chcete-li klauzule ve výrazu je zřejmé, jak je znázorněno v následujícím kódu pomocí závorek.</span><span class="sxs-lookup"><span data-stu-id="a21d7-123">Use parentheses to make clauses in an expression apparent, as shown in the following code.</span></span>  
+- <span data-ttu-id="9c416-123">Chcete-li klauzule ve výrazu je zřejmé, jak je znázorněno v následujícím kódu pomocí závorek.</span><span class="sxs-lookup"><span data-stu-id="9c416-123">Use parentheses to make clauses in an expression apparent, as shown in the following code.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#2](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#2)]  
   
-## <a name="commenting-conventions"></a><span data-ttu-id="a21d7-124">Konvence při psaní komentářů</span><span class="sxs-lookup"><span data-stu-id="a21d7-124">Commenting Conventions</span></span>  
+## <a name="commenting-conventions"></a><span data-ttu-id="9c416-124">Konvence při psaní komentářů</span><span class="sxs-lookup"><span data-stu-id="9c416-124">Commenting Conventions</span></span>  
   
-- <span data-ttu-id="a21d7-125">Místo komentář na samostatném řádku, není na konci řádku kódu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-125">Place the comment on a separate line, not at the end of a line of code.</span></span>  
+- <span data-ttu-id="9c416-125">Místo komentář na samostatném řádku, není na konci řádku kódu.</span><span class="sxs-lookup"><span data-stu-id="9c416-125">Place the comment on a separate line, not at the end of a line of code.</span></span>  
   
-- <span data-ttu-id="a21d7-126">Zahájit text komentáře velkým písmenem.</span><span class="sxs-lookup"><span data-stu-id="a21d7-126">Begin comment text with an uppercase letter.</span></span>  
+- <span data-ttu-id="9c416-126">Zahájit text komentáře velkým písmenem.</span><span class="sxs-lookup"><span data-stu-id="9c416-126">Begin comment text with an uppercase letter.</span></span>  
   
-- <span data-ttu-id="a21d7-127">Ukončit komentář tečkou.</span><span class="sxs-lookup"><span data-stu-id="a21d7-127">End comment text with a period.</span></span>  
+- <span data-ttu-id="9c416-127">Ukončit komentář tečkou.</span><span class="sxs-lookup"><span data-stu-id="9c416-127">End comment text with a period.</span></span>  
   
-- <span data-ttu-id="a21d7-128">Vložte jednu mezeru mezi oddělovač komentáře (/ /) a text komentáře, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-128">Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.</span></span>  
+- <span data-ttu-id="9c416-128">Vložte jednu mezeru mezi oddělovač komentáře (/ /) a text komentáře, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="9c416-128">Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#3](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#3)]  
   
-- <span data-ttu-id="a21d7-129">Nevytvářejte hvězdičky z obou stran kolem komentářů formátované bloky.</span><span class="sxs-lookup"><span data-stu-id="a21d7-129">Do not create formatted blocks of asterisks around comments.</span></span>  
+- <span data-ttu-id="9c416-129">Nevytvářejte hvězdičky z obou stran kolem komentářů formátované bloky.</span><span class="sxs-lookup"><span data-stu-id="9c416-129">Do not create formatted blocks of asterisks around comments.</span></span>  
   
-## <a name="language-guidelines"></a><span data-ttu-id="a21d7-130">Pokyny pro jazyk</span><span class="sxs-lookup"><span data-stu-id="a21d7-130">Language Guidelines</span></span>  
- <span data-ttu-id="a21d7-131">Následující části popisují postupy, které tým C# následujících pokynů můžete připravit příklady kódu a ukázky.</span><span class="sxs-lookup"><span data-stu-id="a21d7-131">The following sections describe practices that the C# team follows to prepare code examples and samples.</span></span>  
+## <a name="language-guidelines"></a><span data-ttu-id="9c416-130">Pokyny pro jazyk</span><span class="sxs-lookup"><span data-stu-id="9c416-130">Language Guidelines</span></span>  
+ <span data-ttu-id="9c416-131">Následující části popisují postupy, které tým C# následujících pokynů můžete připravit příklady kódu a ukázky.</span><span class="sxs-lookup"><span data-stu-id="9c416-131">The following sections describe practices that the C# team follows to prepare code examples and samples.</span></span>  
   
-### <a name="string-data-type"></a><span data-ttu-id="a21d7-132">Datový typ String</span><span class="sxs-lookup"><span data-stu-id="a21d7-132">String Data Type</span></span>  
+### <a name="string-data-type"></a><span data-ttu-id="9c416-132">Datový typ String</span><span class="sxs-lookup"><span data-stu-id="9c416-132">String Data Type</span></span>  
   
-- <span data-ttu-id="a21d7-133">Použití [interpolace](../../language-reference/tokens/interpolated.md) ke zřetězení krátké řetězce, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-133">Use [string interpolation](../../language-reference/tokens/interpolated.md) to concatenate short strings, as shown in the following code.</span></span>  
+- <span data-ttu-id="9c416-133">Použití [interpolace](../../language-reference/tokens/interpolated.md) ke zřetězení krátké řetězce, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="9c416-133">Use [string interpolation](../../language-reference/tokens/interpolated.md) to concatenate short strings, as shown in the following code.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#6](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#6)]  
   
-- <span data-ttu-id="a21d7-134">Pro přidání řetězce ve smyčkách, zejména v případě, že pracujete s velkého množství textu, použijte <xref:System.Text.StringBuilder> objektu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-134">To append strings in loops, especially when you are working with large amounts of text, use a <xref:System.Text.StringBuilder> object.</span></span>  
+- <span data-ttu-id="9c416-134">Pro přidání řetězce ve smyčkách, zejména v případě, že pracujete s velkého množství textu, použijte <xref:System.Text.StringBuilder> objektu.</span><span class="sxs-lookup"><span data-stu-id="9c416-134">To append strings in loops, especially when you are working with large amounts of text, use a <xref:System.Text.StringBuilder> object.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
   
-### <a name="implicitly-typed-local-variables"></a><span data-ttu-id="a21d7-135">Implicitně typované lokální proměnné</span><span class="sxs-lookup"><span data-stu-id="a21d7-135">Implicitly Typed Local Variables</span></span>  
+### <a name="implicitly-typed-local-variables"></a><span data-ttu-id="9c416-135">Implicitně typované lokální proměnné</span><span class="sxs-lookup"><span data-stu-id="9c416-135">Implicitly Typed Local Variables</span></span>  
   
-- <span data-ttu-id="a21d7-136">Použití [implicitního zápisu](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) pro místní proměnné, když je typ proměnné zřejmý z pravé strany přiřazení, nebo pokud přesný typ není důležité.</span><span class="sxs-lookup"><span data-stu-id="a21d7-136">Use [implicit typing](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) for local variables when the type of the variable is obvious from the right side of the assignment, or when the precise type is not important.</span></span>  
+- <span data-ttu-id="9c416-136">Použití [implicitního zápisu](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) pro místní proměnné, když je typ proměnné zřejmý z pravé strany přiřazení, nebo pokud přesný typ není důležité.</span><span class="sxs-lookup"><span data-stu-id="9c416-136">Use [implicit typing](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) for local variables when the type of the variable is obvious from the right side of the assignment, or when the precise type is not important.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#8](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#8)]  
   
-- <span data-ttu-id="a21d7-137">Nepoužívejte [var](../../../csharp/language-reference/keywords/var.md) když typ není zřejmé z pravé strany přiřazení.</span><span class="sxs-lookup"><span data-stu-id="a21d7-137">Do not use [var](../../../csharp/language-reference/keywords/var.md) when the type is not apparent from the right side of the assignment.</span></span>  
+- <span data-ttu-id="9c416-137">Nepoužívejte [var](../../../csharp/language-reference/keywords/var.md) když typ není zřejmé z pravé strany přiřazení.</span><span class="sxs-lookup"><span data-stu-id="9c416-137">Do not use [var](../../../csharp/language-reference/keywords/var.md) when the type is not apparent from the right side of the assignment.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#9](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#9)]  
   
-- <span data-ttu-id="a21d7-138">Nespoléhejte na název proměnné k určení typu proměnné.</span><span class="sxs-lookup"><span data-stu-id="a21d7-138">Do not rely on the variable name to specify the type of the variable.</span></span> <span data-ttu-id="a21d7-139">Nemusí být správné.</span><span class="sxs-lookup"><span data-stu-id="a21d7-139">It might not be correct.</span></span>  
+- <span data-ttu-id="9c416-138">Nespoléhejte na název proměnné k určení typu proměnné.</span><span class="sxs-lookup"><span data-stu-id="9c416-138">Do not rely on the variable name to specify the type of the variable.</span></span> <span data-ttu-id="9c416-139">Nemusí být správné.</span><span class="sxs-lookup"><span data-stu-id="9c416-139">It might not be correct.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#10](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#10)]  
   
-- <span data-ttu-id="a21d7-140">Nepoužívejte `var` místo [dynamické](../../../csharp/language-reference/keywords/dynamic.md).</span><span class="sxs-lookup"><span data-stu-id="a21d7-140">Avoid the use of `var` in place of [dynamic](../../../csharp/language-reference/keywords/dynamic.md).</span></span>  
+- <span data-ttu-id="9c416-140">Nepoužívejte `var` místo [dynamické](../../../csharp/language-reference/keywords/dynamic.md).</span><span class="sxs-lookup"><span data-stu-id="9c416-140">Avoid the use of `var` in place of [dynamic](../../../csharp/language-reference/keywords/dynamic.md).</span></span>  
   
-- <span data-ttu-id="a21d7-141">K určení typu proměnné smyčky v použití implicitního zápisu [pro](../../../csharp/language-reference/keywords/for.md) a [foreach](../../../csharp/language-reference/keywords/foreach-in.md) smyčky.</span><span class="sxs-lookup"><span data-stu-id="a21d7-141">Use implicit typing to determine the type of the loop variable in [for](../../../csharp/language-reference/keywords/for.md) and [foreach](../../../csharp/language-reference/keywords/foreach-in.md) loops.</span></span>  
+- <span data-ttu-id="9c416-141">K určení typu proměnné smyčky v použití implicitního zápisu [pro](../../../csharp/language-reference/keywords/for.md) a [foreach](../../../csharp/language-reference/keywords/foreach-in.md) smyčky.</span><span class="sxs-lookup"><span data-stu-id="9c416-141">Use implicit typing to determine the type of the loop variable in [for](../../../csharp/language-reference/keywords/for.md) and [foreach](../../../csharp/language-reference/keywords/foreach-in.md) loops.</span></span>  
   
-     <span data-ttu-id="a21d7-142">Následující příklad používá implicitní psát `for` příkazu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-142">The following example uses implicit typing in a `for` statement.</span></span>  
+     <span data-ttu-id="9c416-142">Následující příklad používá implicitní psát `for` příkazu.</span><span class="sxs-lookup"><span data-stu-id="9c416-142">The following example uses implicit typing in a `for` statement.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#11](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#11)]  
   
-     <span data-ttu-id="a21d7-143">Následující příklad používá implicitní psát `foreach` příkazu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-143">The following example uses implicit typing in a `foreach` statement.</span></span>  
+     <span data-ttu-id="9c416-143">Následující příklad používá implicitní psát `foreach` příkazu.</span><span class="sxs-lookup"><span data-stu-id="9c416-143">The following example uses implicit typing in a `foreach` statement.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]  
   
-### <a name="unsigned-data-type"></a><span data-ttu-id="a21d7-144">Nepodepsaný datový typ</span><span class="sxs-lookup"><span data-stu-id="a21d7-144">Unsigned Data Type</span></span>  
+### <a name="unsigned-data-type"></a><span data-ttu-id="9c416-144">Nepodepsaný datový typ</span><span class="sxs-lookup"><span data-stu-id="9c416-144">Unsigned Data Type</span></span>  
   
-- <span data-ttu-id="a21d7-145">Obecně platí, `int` místo typů bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="a21d7-145">In general, use `int` rather than unsigned types.</span></span> <span data-ttu-id="a21d7-146">Použití `int` je běžné v C#, a je jednodušší pracovat s dalšími knihovnami, při použití `int`.</span><span class="sxs-lookup"><span data-stu-id="a21d7-146">The use of `int` is common throughout C#, and it is easier to interact with other libraries when you use `int`.</span></span>  
+- <span data-ttu-id="9c416-145">Obecně platí, `int` místo typů bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="9c416-145">In general, use `int` rather than unsigned types.</span></span> <span data-ttu-id="9c416-146">Použití `int` je běžné v C#, a je jednodušší pracovat s dalšími knihovnami, při použití `int`.</span><span class="sxs-lookup"><span data-stu-id="9c416-146">The use of `int` is common throughout C#, and it is easier to interact with other libraries when you use `int`.</span></span>  
   
-### <a name="arrays"></a><span data-ttu-id="a21d7-147">Pole</span><span class="sxs-lookup"><span data-stu-id="a21d7-147">Arrays</span></span>  
+### <a name="arrays"></a><span data-ttu-id="9c416-147">Pole</span><span class="sxs-lookup"><span data-stu-id="9c416-147">Arrays</span></span>  
   
-- <span data-ttu-id="a21d7-148">Pomocí stručnější syntaxe, když inicializujete pole v řádku deklarace.</span><span class="sxs-lookup"><span data-stu-id="a21d7-148">Use the concise syntax when you initialize arrays on the declaration line.</span></span>  
+- <span data-ttu-id="9c416-148">Pomocí stručnější syntaxe, když inicializujete pole v řádku deklarace.</span><span class="sxs-lookup"><span data-stu-id="9c416-148">Use the concise syntax when you initialize arrays on the declaration line.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#13](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#13)]  
   
-### <a name="delegates"></a><span data-ttu-id="a21d7-149">Delegáty</span><span class="sxs-lookup"><span data-stu-id="a21d7-149">Delegates</span></span>  
+### <a name="delegates"></a><span data-ttu-id="9c416-149">Delegáty</span><span class="sxs-lookup"><span data-stu-id="9c416-149">Delegates</span></span>  
   
-- <span data-ttu-id="a21d7-150">Pomocí stručnější syntaxe pro vytvoření instancí typu delegáta.</span><span class="sxs-lookup"><span data-stu-id="a21d7-150">Use the concise syntax to create instances of a delegate type.</span></span>  
+- <span data-ttu-id="9c416-150">Pomocí stručnější syntaxe pro vytvoření instancí typu delegáta.</span><span class="sxs-lookup"><span data-stu-id="9c416-150">Use the concise syntax to create instances of a delegate type.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#14](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#14)]  
   
      [!code-csharp[csProgGuideCodingConventions#15](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#15)]  
   
-### <a name="try-catch-and-using-statements-in-exception-handling"></a><span data-ttu-id="a21d7-151">Zpracování výjimek s použitím příkazů try-catch a using</span><span class="sxs-lookup"><span data-stu-id="a21d7-151">try-catch and using Statements in Exception Handling</span></span>  
+### <a name="try-catch-and-using-statements-in-exception-handling"></a><span data-ttu-id="9c416-151">Zpracování výjimek s použitím příkazů try-catch a using</span><span class="sxs-lookup"><span data-stu-id="9c416-151">try-catch and using Statements in Exception Handling</span></span>  
   
-- <span data-ttu-id="a21d7-152">Použití [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md) příkaz pro většinu zpracování výjimek.</span><span class="sxs-lookup"><span data-stu-id="a21d7-152">Use a [try-catch](../../../csharp/language-reference/keywords/try-catch.md) statement for most exception handling.</span></span>  
+- <span data-ttu-id="9c416-152">Použití [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md) příkaz pro většinu zpracování výjimek.</span><span class="sxs-lookup"><span data-stu-id="9c416-152">Use a [try-catch](../../../csharp/language-reference/keywords/try-catch.md) statement for most exception handling.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#16](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#16)]  
   
-- <span data-ttu-id="a21d7-153">Zjednodušení kódu pomocí jazyka C# [příkaz using](../../../csharp/language-reference/keywords/using-statement.md).</span><span class="sxs-lookup"><span data-stu-id="a21d7-153">Simplify your code by using the C# [using statement](../../../csharp/language-reference/keywords/using-statement.md).</span></span> <span data-ttu-id="a21d7-154">Pokud máte [try-finally](../../../csharp/language-reference/keywords/try-finally.md) příkazu, ve kterém pouze kód v `finally` blok je volání <xref:System.IDisposable.Dispose%2A> metody, použijte `using` příkaz místo toho.</span><span class="sxs-lookup"><span data-stu-id="a21d7-154">If you have a [try-finally](../../../csharp/language-reference/keywords/try-finally.md) statement in which the only code in the `finally` block is a call to the <xref:System.IDisposable.Dispose%2A> method, use a `using` statement instead.</span></span>  
+- <span data-ttu-id="9c416-153">Zjednodušení kódu pomocí jazyka C# [příkaz using](../../../csharp/language-reference/keywords/using-statement.md).</span><span class="sxs-lookup"><span data-stu-id="9c416-153">Simplify your code by using the C# [using statement](../../../csharp/language-reference/keywords/using-statement.md).</span></span> <span data-ttu-id="9c416-154">Pokud máte [try-finally](../../../csharp/language-reference/keywords/try-finally.md) příkazu, ve kterém pouze kód v `finally` blok je volání <xref:System.IDisposable.Dispose%2A> metody, použijte `using` příkaz místo toho.</span><span class="sxs-lookup"><span data-stu-id="9c416-154">If you have a [try-finally](../../../csharp/language-reference/keywords/try-finally.md) statement in which the only code in the `finally` block is a call to the <xref:System.IDisposable.Dispose%2A> method, use a `using` statement instead.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#17](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#17)]  
   
-### <a name="-and-124124-operators"></a><span data-ttu-id="a21d7-155">& & a &#124; &#124; operátory</span><span class="sxs-lookup"><span data-stu-id="a21d7-155">&& and &#124;&#124; Operators</span></span>  
+### <a name="-and-124124-operators"></a><span data-ttu-id="9c416-155">& & a &#124; &#124; operátory</span><span class="sxs-lookup"><span data-stu-id="9c416-155">&& and &#124;&#124; Operators</span></span>  
   
-- <span data-ttu-id="a21d7-156">Pokud chcete zabránit výjimky a zvýšit výkon přeskočením zbytečné porovnání, použijte [ && ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) místo [ & ](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) a [ &#124; &#124; ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-)místo [ &#124; ](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při provádění porovnání, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-156">To avoid exceptions and increase performance by skipping unnecessary comparisons, use [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) instead of [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) and [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) instead of [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) when you perform comparisons, as shown in the following example.</span></span>  
+- <span data-ttu-id="9c416-156">Pokud chcete zabránit výjimky a zvýšit výkon přeskočením zbytečné porovnání, použijte [ && ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) místo [ & ](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) a [ &#124; &#124; ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-)místo [ &#124; ](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při provádění porovnání, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="9c416-156">To avoid exceptions and increase performance by skipping unnecessary comparisons, use [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) instead of [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) and [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) instead of [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) when you perform comparisons, as shown in the following example.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
   
-### <a name="new-operator"></a><span data-ttu-id="a21d7-157">Operátor new</span><span class="sxs-lookup"><span data-stu-id="a21d7-157">New Operator</span></span>  
+### <a name="new-operator"></a><span data-ttu-id="9c416-157">Operátor new</span><span class="sxs-lookup"><span data-stu-id="9c416-157">New Operator</span></span>  
   
-- <span data-ttu-id="a21d7-158">Pomocí Stručná forma vytváření instancí objektu implicitního zápisu, jak je znázorněno v následující deklaraci.</span><span class="sxs-lookup"><span data-stu-id="a21d7-158">Use the concise form of object instantiation, with implicit typing, as shown in the following declaration.</span></span>  
+- <span data-ttu-id="9c416-158">Pomocí Stručná forma vytváření instancí objektu implicitního zápisu, jak je znázorněno v následující deklaraci.</span><span class="sxs-lookup"><span data-stu-id="9c416-158">Use the concise form of object instantiation, with implicit typing, as shown in the following declaration.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#19](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#19)]  
   
-     <span data-ttu-id="a21d7-159">Předchozí řádek odpovídá následující deklarace.</span><span class="sxs-lookup"><span data-stu-id="a21d7-159">The previous line is equivalent to the following declaration.</span></span>  
+     <span data-ttu-id="9c416-159">Předchozí řádek odpovídá následující deklarace.</span><span class="sxs-lookup"><span data-stu-id="9c416-159">The previous line is equivalent to the following declaration.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#20](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#20)]  
   
-- <span data-ttu-id="a21d7-160">Používejte inicializátory objektů pro zjednodušení vytváření objektů.</span><span class="sxs-lookup"><span data-stu-id="a21d7-160">Use object initializers to simplify object creation.</span></span>  
+- <span data-ttu-id="9c416-160">Používejte inicializátory objektů pro zjednodušení vytváření objektů.</span><span class="sxs-lookup"><span data-stu-id="9c416-160">Use object initializers to simplify object creation.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#21](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#21)]  
   
-### <a name="event-handling"></a><span data-ttu-id="a21d7-161">Zpracování událostí</span><span class="sxs-lookup"><span data-stu-id="a21d7-161">Event Handling</span></span>  
+### <a name="event-handling"></a><span data-ttu-id="9c416-161">Zpracování událostí</span><span class="sxs-lookup"><span data-stu-id="9c416-161">Event Handling</span></span>  
   
-- <span data-ttu-id="a21d7-162">Pokud definujete obslužnou rutinu události, která není potřeba později odebrat, použijte výraz lambda.</span><span class="sxs-lookup"><span data-stu-id="a21d7-162">If you are defining an event handler that you do not need to remove later, use a lambda expression.</span></span>  
+- <span data-ttu-id="9c416-162">Pokud definujete obslužnou rutinu události, která není potřeba později odebrat, použijte výraz lambda.</span><span class="sxs-lookup"><span data-stu-id="9c416-162">If you are defining an event handler that you do not need to remove later, use a lambda expression.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#22](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#22)]  
   
      [!code-csharp[csProgGuideCodingConventions#23](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#23)]  
   
-### <a name="static-members"></a><span data-ttu-id="a21d7-163">Statické členy</span><span class="sxs-lookup"><span data-stu-id="a21d7-163">Static Members</span></span>  
+### <a name="static-members"></a><span data-ttu-id="9c416-163">Statické členy</span><span class="sxs-lookup"><span data-stu-id="9c416-163">Static Members</span></span>  
   
-- <span data-ttu-id="a21d7-164">Volání [statické](../../../csharp/language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName.StaticMember*.</span><span class="sxs-lookup"><span data-stu-id="a21d7-164">Call [static](../../../csharp/language-reference/keywords/static.md) members by using the class name: *ClassName.StaticMember*.</span></span> <span data-ttu-id="a21d7-165">Tento postup vytvoří kód lépe čitelný tím, že statická přístup zrušte.</span><span class="sxs-lookup"><span data-stu-id="a21d7-165">This practice makes code more readable by making static access clear.</span></span>  <span data-ttu-id="a21d7-166">Nekvalifikujte statické člena definovaného v základní třídě s názvem odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="a21d7-166">Do not qualify a static member defined in a base class with the name of a derived class.</span></span>  <span data-ttu-id="a21d7-167">Tento kód se zkompiluje, je zavádějící čitelnost kódu a kód může v budoucnu přerušit, pokud chcete přidat statický člen se stejným názvem do odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="a21d7-167">While that code compiles, the code readability is misleading, and the code may break in the future if you add a static member with the same name to the derived class.</span></span>  
+- <span data-ttu-id="9c416-164">Volání [statické](../../../csharp/language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName.StaticMember*.</span><span class="sxs-lookup"><span data-stu-id="9c416-164">Call [static](../../../csharp/language-reference/keywords/static.md) members by using the class name: *ClassName.StaticMember*.</span></span> <span data-ttu-id="9c416-165">Tento postup vytvoří kód lépe čitelný tím, že statická přístup zrušte.</span><span class="sxs-lookup"><span data-stu-id="9c416-165">This practice makes code more readable by making static access clear.</span></span>  <span data-ttu-id="9c416-166">Nekvalifikujte statické člena definovaného v základní třídě s názvem odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="9c416-166">Do not qualify a static member defined in a base class with the name of a derived class.</span></span>  <span data-ttu-id="9c416-167">Tento kód se zkompiluje, je zavádějící čitelnost kódu a kód může v budoucnu přerušit, pokud chcete přidat statický člen se stejným názvem do odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="9c416-167">While that code compiles, the code readability is misleading, and the code may break in the future if you add a static member with the same name to the derived class.</span></span>  
   
-### <a name="linq-queries"></a><span data-ttu-id="a21d7-168">Dotazy LINQ</span><span class="sxs-lookup"><span data-stu-id="a21d7-168">LINQ Queries</span></span>  
+### <a name="linq-queries"></a><span data-ttu-id="9c416-168">Dotazy LINQ</span><span class="sxs-lookup"><span data-stu-id="9c416-168">LINQ Queries</span></span>  
   
-- <span data-ttu-id="a21d7-169">Použijte smysluplné názvy proměnných dotazu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-169">Use meaningful names for query variables.</span></span> <span data-ttu-id="a21d7-170">Následující příklad používá `seattleCustomers` pro zákazníky, kteří se nacházejí v Seattlu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-170">The following example uses `seattleCustomers` for customers who are located in Seattle.</span></span>  
+- <span data-ttu-id="9c416-169">Použijte smysluplné názvy proměnných dotazu.</span><span class="sxs-lookup"><span data-stu-id="9c416-169">Use meaningful names for query variables.</span></span> <span data-ttu-id="9c416-170">Následující příklad používá `seattleCustomers` pro zákazníky, kteří se nacházejí v Seattlu.</span><span class="sxs-lookup"><span data-stu-id="9c416-170">The following example uses `seattleCustomers` for customers who are located in Seattle.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#25](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#25)]  
   
-- <span data-ttu-id="a21d7-171">Ujistěte se, že názvy vlastností anonymních typů mají správnou velikost písmen, pomocí Pascal pomocí aliasů velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="a21d7-171">Use aliases to make sure that property names of anonymous types are correctly capitalized, using Pascal casing.</span></span>  
+- <span data-ttu-id="9c416-171">Ujistěte se, že názvy vlastností anonymních typů mají správnou velikost písmen, pomocí Pascal pomocí aliasů velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="9c416-171">Use aliases to make sure that property names of anonymous types are correctly capitalized, using Pascal casing.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#26](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#26)]  
   
-- <span data-ttu-id="a21d7-172">Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku nejednoznačné.</span><span class="sxs-lookup"><span data-stu-id="a21d7-172">Rename properties when the property names in the result would be ambiguous.</span></span> <span data-ttu-id="a21d7-173">Například, pokud dotaz vrátí zákazníka, název a ID distributora, nenechávejte jako `Name` a `ID` ve výsledku, je pro vysvětlení, že přejmenovat `Name` je název zákazníka, a `ID` je ID distributora.</span><span class="sxs-lookup"><span data-stu-id="a21d7-173">For example, if your query returns a customer name and a distributor ID, instead of leaving them as `Name` and `ID` in the result, rename them to clarify that `Name` is the name of a customer, and `ID` is the ID of a distributor.</span></span>  
+- <span data-ttu-id="9c416-172">Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku nejednoznačné.</span><span class="sxs-lookup"><span data-stu-id="9c416-172">Rename properties when the property names in the result would be ambiguous.</span></span> <span data-ttu-id="9c416-173">Například, pokud dotaz vrátí zákazníka, název a ID distributora, nenechávejte jako `Name` a `ID` ve výsledku, je pro vysvětlení, že přejmenovat `Name` je název zákazníka, a `ID` je ID distributora.</span><span class="sxs-lookup"><span data-stu-id="9c416-173">For example, if your query returns a customer name and a distributor ID, instead of leaving them as `Name` and `ID` in the result, rename them to clarify that `Name` is the name of a customer, and `ID` is the ID of a distributor.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#27](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#27)]  
   
-- <span data-ttu-id="a21d7-174">Použití implicitního zápisu v deklaraci proměnné dotazu a proměnných rozsahu.</span><span class="sxs-lookup"><span data-stu-id="a21d7-174">Use implicit typing in the declaration of query variables and range variables.</span></span>  
+- <span data-ttu-id="9c416-174">Použití implicitního zápisu v deklaraci proměnné dotazu a proměnných rozsahu.</span><span class="sxs-lookup"><span data-stu-id="9c416-174">Use implicit typing in the declaration of query variables and range variables.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#25](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#25)]  
   
-- <span data-ttu-id="a21d7-175">Zarovnejte klauzule dotazu v [z](../../../csharp/language-reference/keywords/from-clause.md) klauzule, jak je znázorněno v předchozích příkladech.</span><span class="sxs-lookup"><span data-stu-id="a21d7-175">Align query clauses under the [from](../../../csharp/language-reference/keywords/from-clause.md) clause, as shown in the previous examples.</span></span>  
+- <span data-ttu-id="9c416-175">Zarovnejte klauzule dotazu v [z](../../../csharp/language-reference/keywords/from-clause.md) klauzule, jak je znázorněno v předchozích příkladech.</span><span class="sxs-lookup"><span data-stu-id="9c416-175">Align query clauses under the [from](../../../csharp/language-reference/keywords/from-clause.md) clause, as shown in the previous examples.</span></span>  
   
-- <span data-ttu-id="a21d7-176">Použití [kde](../../../csharp/language-reference/keywords/where-clause.md) klauzule před další klauzule dotazu zajistit, aby pozdější klauzule dotazu pracovaly na snížení, filtrovat sadu data.</span><span class="sxs-lookup"><span data-stu-id="a21d7-176">Use [where](../../../csharp/language-reference/keywords/where-clause.md) clauses before other query clauses to ensure that later query clauses operate on the reduced, filtered set of data.</span></span>  
+- <span data-ttu-id="9c416-176">Použití [kde](../../../csharp/language-reference/keywords/where-clause.md) klauzule před další klauzule dotazu zajistit, aby pozdější klauzule dotazu pracovaly na snížení, filtrovat sadu data.</span><span class="sxs-lookup"><span data-stu-id="9c416-176">Use [where](../../../csharp/language-reference/keywords/where-clause.md) clauses before other query clauses to ensure that later query clauses operate on the reduced, filtered set of data.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#29](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#29)]  
   
-- <span data-ttu-id="a21d7-177">Použití více `from` klauzule místo [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzuli pro přístup k vnitřních kolekcí.</span><span class="sxs-lookup"><span data-stu-id="a21d7-177">Use multiple `from` clauses instead of a [join](../../../csharp/language-reference/keywords/join-clause.md) clause to access inner collections.</span></span> <span data-ttu-id="a21d7-178">Například kolekce `Student` každý objekty mohou obsahovat kolekce skóre v testech.</span><span class="sxs-lookup"><span data-stu-id="a21d7-178">For example, a collection of `Student` objects might each contain a collection of test scores.</span></span> <span data-ttu-id="a21d7-179">Při spuštění následující dotaz vrátí každý skóre, které je více než 90, spolu s příjmení studentů, kteří obdrželi skóre.</span><span class="sxs-lookup"><span data-stu-id="a21d7-179">When the following query is executed, it returns each score that is over 90, along with the last name of the student who received the score.</span></span>  
+- <span data-ttu-id="9c416-177">Použití více `from` klauzule místo [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzuli pro přístup k vnitřních kolekcí.</span><span class="sxs-lookup"><span data-stu-id="9c416-177">Use multiple `from` clauses instead of a [join](../../../csharp/language-reference/keywords/join-clause.md) clause to access inner collections.</span></span> <span data-ttu-id="9c416-178">Například kolekce `Student` každý objekty mohou obsahovat kolekce skóre v testech.</span><span class="sxs-lookup"><span data-stu-id="9c416-178">For example, a collection of `Student` objects might each contain a collection of test scores.</span></span> <span data-ttu-id="9c416-179">Při spuštění následující dotaz vrátí každý skóre, které je více než 90, spolu s příjmení studentů, kteří obdrželi skóre.</span><span class="sxs-lookup"><span data-stu-id="9c416-179">When the following query is executed, it returns each score that is over 90, along with the last name of the student who received the score.</span></span>  
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   
-## <a name="security"></a><span data-ttu-id="a21d7-180">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="a21d7-180">Security</span></span>  
- <span data-ttu-id="a21d7-181">Postupujte podle pokynů v [zabezpečené kódování zásady](../../../standard/security/secure-coding-guidelines.md).</span><span class="sxs-lookup"><span data-stu-id="a21d7-181">Follow the guidelines in [Secure Coding Guidelines](../../../standard/security/secure-coding-guidelines.md).</span></span>  
+## <a name="security"></a><span data-ttu-id="9c416-180">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="9c416-180">Security</span></span>  
+ <span data-ttu-id="9c416-181">Postupujte podle pokynů v [zabezpečené kódování zásady](../../../standard/security/secure-coding-guidelines.md).</span><span class="sxs-lookup"><span data-stu-id="9c416-181">Follow the guidelines in [Secure Coding Guidelines](../../../standard/security/secure-coding-guidelines.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a21d7-182">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a21d7-182">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9c416-182">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9c416-182">See also</span></span>
 
-- [<span data-ttu-id="a21d7-183">Visual Basic – konvence kódování</span><span class="sxs-lookup"><span data-stu-id="a21d7-183">Visual Basic Coding Conventions</span></span>](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)
-- [<span data-ttu-id="a21d7-184">Pokyny pro zabezpečené kódování</span><span class="sxs-lookup"><span data-stu-id="a21d7-184">Secure Coding Guidelines</span></span>](../../../standard/security/secure-coding-guidelines.md)
+- [<span data-ttu-id="9c416-183">Visual Basic – konvence kódování</span><span class="sxs-lookup"><span data-stu-id="9c416-183">Visual Basic Coding Conventions</span></span>](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)
+- [<span data-ttu-id="9c416-184">Pokyny pro zabezpečené kódování</span><span class="sxs-lookup"><span data-stu-id="9c416-184">Secure Coding Guidelines</span></span>](../../../standard/security/secure-coding-guidelines.md)
