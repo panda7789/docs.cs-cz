@@ -8,12 +8,12 @@ helpviewer_keywords:
 - vector graphics
 - typography
 ms.assetid: 068c0ef3-f6ee-4d58-a7b6-eb2531ead408
-ms.openlocfilehash: ccbd5e236b47d1d870c9b77cfa2b3880619cf3cd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e5ab99095bbe69eb05f16e2f1a628004c7777c97
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651516"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64654525"
 ---
 # <a name="three-categories-of-graphics-services"></a>Tři kategorie grafických služeb
 Nabídky grafiky ve Windows Forms spadají do následujících tří hlavních kategorií:  

@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 826cfc0ea7f681e1f7cbe858008c24a4941f0e11
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 23e40a27d04d960306f219a7e8d95a464b1e0dec
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335079"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64639649"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, který je možné do dvou typů aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. K balíčku obsahu pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít z jednoho <xref:System.Windows.Controls.Page> do jiného deklarativně pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, s použitím <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] používá deník pamatovat stránky, které přešli z a chcete přejít zpátky k sobě.  
@@ -47,31 +47,31 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Tato část popisuje a ukazuje následující aspekty navigace:  
   
--   [Implementace stránky](#CreatingAXAMLPage)  
+- [Implementace stránky](#CreatingAXAMLPage)  
   
--   [Konfigurace úvodní stránky](#Configuring_a_Start_Page)  
+- [Konfigurace úvodní stránky](#Configuring_a_Start_Page)  
   
--   [Konfigurace názvu, šířku a výšku okna hostitele](#ConfiguringAXAMLPage)  
+- [Konfigurace názvu, šířku a výšku okna hostitele](#ConfiguringAXAMLPage)  
   
--   [Navigace na hypertextový odkaz](#NavigatingBetweenXAMLPages)  
+- [Navigace na hypertextový odkaz](#NavigatingBetweenXAMLPages)  
   
--   [Procházení fragmentů](#FragmentNavigation)  
+- [Procházení fragmentů](#FragmentNavigation)  
   
--   [Služba navigace](#NavigationService)  
+- [Služba navigace](#NavigationService)  
   
--   [Programově řízená navigace ve službě navigace](#Programmatic_Navigation_with_the_Navigation_Service)  
+- [Programově řízená navigace ve službě navigace](#Programmatic_Navigation_with_the_Navigation_Service)  
   
--   [Doba života navigace](#Navigation_Lifetime)  
+- [Doba života navigace](#Navigation_Lifetime)  
   
--   [Zapamatování navigace pomocí deníku](#NavigationHistory)  
+- [Zapamatování navigace pomocí deníku](#NavigationHistory)  
   
--   [Životní cyklus stránky a deníku](#PageLifetime)  
+- [Životní cyklus stránky a deníku](#PageLifetime)  
   
--   [Zachování stavu obsahu s využitím historii navigace](#RetainingContentStateWithNavigationHistory)  
+- [Zachování stavu obsahu s využitím historii navigace](#RetainingContentStateWithNavigationHistory)  
   
--   [Soubory cookie](#Cookies)  
+- [Soubory cookie](#Cookies)  
   
--   [Strukturované navigace](#Structured_Navigation)  
+- [Strukturované navigace](#Structured_Navigation)  
   
 <a name="CreatingAXAMLPage"></a>   
 ### <a name="implementing-a-page"></a>Implementace stránky  
@@ -102,11 +102,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Pokud chcete povolit souboru označení a použití modelu code-behind soubor spolupráce, následující konfigurace je potřeba:  
   
--   V kódu `Page` musí obsahovat element `x:Class` atribut. Když je aplikace sestavená, existenci `x:Class` ve značkách soubor způsobí, že [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] k vytvoření `partial` třídu odvozenou od <xref:System.Windows.Controls.Page> a má název, který je určen `x:Class` atribut. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] schématu ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaný `partial` implementuje třída `InitializeComponent`, která je volána k registraci události a nastavte vlastnosti, které jsou implementovány v kódu.  
+- V kódu `Page` musí obsahovat element `x:Class` atribut. Když je aplikace sestavená, existenci `x:Class` ve značkách soubor způsobí, že [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] k vytvoření `partial` třídu odvozenou od <xref:System.Windows.Controls.Page> a má název, který je určen `x:Class` atribut. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] schématu ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaný `partial` implementuje třída `InitializeComponent`, která je volána k registraci události a nastavte vlastnosti, které jsou implementovány v kódu.  
   
--   V modelu code-behind, musí být třída `partial` třídy se stejným názvem, která je zadána `x:Class` atribut v kódu který musí být odvozen od <xref:System.Windows.Controls.Page>. To umožňuje použití modelu code-behind souboru má být spojen s `partial` třídu, která se vygeneruje pro označovacího souboru, když je aplikace sestavená (viz [sestavení aplikace WPF](building-a-wpf-application-wpf.md)).  
+- V modelu code-behind, musí být třída `partial` třídy se stejným názvem, která je zadána `x:Class` atribut v kódu který musí být odvozen od <xref:System.Windows.Controls.Page>. To umožňuje použití modelu code-behind souboru má být spojen s `partial` třídu, která se vygeneruje pro označovacího souboru, když je aplikace sestavená (viz [sestavení aplikace WPF](building-a-wpf-application-wpf.md)).  
   
--   V modelu code-behind <xref:System.Windows.Controls.Page> třída musí implementovat konstruktor, který volá `InitializeComponent` metody. `InitializeComponent` je implementován ve značce vygenerovaný soubor `partial` třídy k registraci události a nastavte vlastnosti, které jsou definovány v kódu.  
+- V modelu code-behind <xref:System.Windows.Controls.Page> třída musí implementovat konstruktor, který volá `InitializeComponent` metody. `InitializeComponent` je implementován ve značce vygenerovaný soubor `partial` třídy k registraci události a nastavte vlastnosti, které jsou definovány v kódu.  
   
 > [!NOTE]
 >  Když přidáte nový <xref:System.Windows.Controls.Page> do projektu pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], <xref:System.Windows.Controls.Page> je implementováno pomocí značek a kódu, a obsahuje nezbytnou konfiguraci pro vytvoření přidružení mezi značky a modelu code-behind soubory jako najdete tady.  
@@ -162,9 +162,9 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  A `Hyperlink` element vyžaduje následující:  
   
--   Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] z <xref:System.Windows.Controls.Page> přejít na, podle `NavigateUri` atribut.  
+- Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] z <xref:System.Windows.Controls.Page> přejít na, podle `NavigateUri` atribut.  
   
--   Obsah, může uživatel klepnout na zahájení navigace, jako je například textu a obrázků (pro obsah, který `Hyperlink` element může obsahovat, naleznete v tématu <xref:System.Windows.Documents.Hyperlink>).  
+- Obsah, může uživatel klepnout na zahájení navigace, jako je například textu a obrázků (pro obsah, který `Hyperlink` element může obsahovat, naleznete v tématu <xref:System.Windows.Documents.Hyperlink>).  
   
  Následující obrázek ukazuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] s <xref:System.Windows.Controls.Page> , který má <xref:System.Windows.Documents.Hyperlink>.  
   
@@ -186,11 +186,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Pro <xref:System.Windows.Documents.Hyperlink> navigace na fragment obsahu `NavigateUri` atribut musí obsahovat následující:  
   
--   [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] z <xref:System.Windows.Controls.Page> s obsahu fragmentu přejděte k položce.  
+- [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] z <xref:System.Windows.Controls.Page> s obsahu fragmentu přejděte k položce.  
   
--   Znak "#".  
+- Znak "#".  
   
--   Název elementu na <xref:System.Windows.Controls.Page> , který obsahuje obsahu fragmentu.  
+- Název elementu na <xref:System.Windows.Controls.Page> , který obsahuje obsahu fragmentu.  
   
  Fragment [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] má následující formát.  
   
@@ -225,11 +225,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Nicméně existují situace, když budete chtít použít <xref:System.Windows.Navigation.NavigationService> přímo, včetně následujících:  
   
--   Když budete muset vytvořit instanci <xref:System.Windows.Controls.Page> pomocí jiného než výchozího konstruktoru.  
+- Když budete muset vytvořit instanci <xref:System.Windows.Controls.Page> pomocí jiného než výchozího konstruktoru.  
   
--   Když budete muset nastavit vlastnosti <xref:System.Windows.Controls.Page> předtím, než přejdete k němu.  
+- Když budete muset nastavit vlastnosti <xref:System.Windows.Controls.Page> předtím, než přejdete k němu.  
   
--   Když <xref:System.Windows.Controls.Page> , potřebuje k přejde určen pouze v době běhu.  
+- Když <xref:System.Windows.Controls.Page> , potřebuje k přejde určen pouze v době běhu.  
   
  V těchto situacích, budete muset psát kód chcete programově zahájit navigace pomocí volání <xref:System.Windows.Navigation.NavigationService.Navigate%2A> metodu <xref:System.Windows.Navigation.NavigationService> objektu. Která vyžaduje odkaz na získávání <xref:System.Windows.Navigation.NavigationService>.  
   
@@ -288,23 +288,23 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
 ### <a name="navigation-lifetime"></a>Doba života navigace  
  Jak už víte, existuje mnoho způsobů, jak inicializovat navigaci. Když je zahájeno navigace, a během navigace, můžou sledovat a ovlivnit navigace pomocí následujících událostí, které implementují <xref:System.Windows.Navigation.NavigationService>:  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigating>. Nastane, pokud se požaduje novou navigaci. Je možné zrušit navigaci.  
+- <xref:System.Windows.Navigation.NavigationService.Navigating>. Nastane, pokud se požaduje novou navigaci. Je možné zrušit navigaci.  
   
--   <xref:System.Windows.Navigation.NavigationService.NavigationProgress>. Nastává pravidelně během stahování, aby se poskytují informace o průběhu navigace.  
+- <xref:System.Windows.Navigation.NavigationService.NavigationProgress>. Nastává pravidelně během stahování, aby se poskytují informace o průběhu navigace.  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigated>. Nastane, pokud byl nachází a stáhnout na stránce.  
+- <xref:System.Windows.Navigation.NavigationService.Navigated>. Nastane, pokud byl nachází a stáhnout na stránce.  
   
--   <xref:System.Windows.Navigation.NavigationService.NavigationStopped>. Nastane, pokud se zastaví navigaci (voláním <xref:System.Windows.Navigation.NavigationService.StopLoading%2A>), nebo když je požadováno novou navigaci probíhá aktuální navigace.  
+- <xref:System.Windows.Navigation.NavigationService.NavigationStopped>. Nastane, pokud se zastaví navigaci (voláním <xref:System.Windows.Navigation.NavigationService.StopLoading%2A>), nebo když je požadováno novou navigaci probíhá aktuální navigace.  
   
--   <xref:System.Windows.Navigation.NavigationService.NavigationFailed>. Nastane, pokud dojde k chybě při navigaci na požadovaný obsah.  
+- <xref:System.Windows.Navigation.NavigationService.NavigationFailed>. Nastane, pokud dojde k chybě při navigaci na požadovaný obsah.  
   
--   <xref:System.Windows.Navigation.NavigationService.LoadCompleted>. Vyvolá se v případě obsahu, na kterou se přejde je načten a analyzován a zahájení vykreslování.  
+- <xref:System.Windows.Navigation.NavigationService.LoadCompleted>. Vyvolá se v případě obsahu, na kterou se přejde je načten a analyzován a zahájení vykreslování.  
   
--   <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>. Nastane po zahájení navigace na fragment obsahu, který se stane:  
+- <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>. Nastane po zahájení navigace na fragment obsahu, který se stane:  
   
-    -   Okamžitě Pokud požadovaný fragment je v aktuálním obsahu.  
+    - Okamžitě Pokud požadovaný fragment je v aktuálním obsahu.  
   
-    -   Po zdrojový obsah se načetl, pokud požadovaný fragment probíhá jiný obsah.  
+    - Po zdrojový obsah se načetl, pokud požadovaný fragment probíhá jiný obsah.  
   
  Navigační události jsou vyvolány v pořadí, ve kterém je znázorněn v následujícím obrázku.  
   
@@ -312,19 +312,19 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Obecně platí <xref:System.Windows.Controls.Page> není obavy o těchto událostech. Je pravděpodobnější, že aplikaci jde s nimi a z tohoto důvodu tyto události jsou také generovány <xref:System.Windows.Application> třídy:  
   
--   <xref:System.Windows.Application.Navigating?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.Navigating?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Application.NavigationProgress?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.NavigationProgress?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Application.Navigated?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.Navigated?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Application.NavigationStopped?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.NavigationStopped?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Application.LoadCompleted?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.LoadCompleted?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Application.FragmentNavigation?displayProperty=nameWithType>  
+- <xref:System.Windows.Application.FragmentNavigation?displayProperty=nameWithType>  
   
  Pokaždé, když <xref:System.Windows.Navigation.NavigationService> vyvolá událost, <xref:System.Windows.Application> třída vyvolá příslušné události. <xref:System.Windows.Controls.Frame> a <xref:System.Windows.Navigation.NavigationWindow> nabízí stejné události k detekci navigace v rámci svých odpovídajících obory.  
   
@@ -385,13 +385,13 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Deník prostřednictvím kódu programu můžete přejít pomocí jedné z následujících členů <xref:System.Windows.Navigation.NavigationService> třídy:  
   
--   <xref:System.Windows.Navigation.NavigationService.GoBack%2A>  
+- <xref:System.Windows.Navigation.NavigationService.GoBack%2A>  
   
--   <xref:System.Windows.Navigation.NavigationService.GoForward%2A>  
+- <xref:System.Windows.Navigation.NavigationService.GoForward%2A>  
   
--   <xref:System.Windows.Navigation.NavigationService.CanGoBack%2A>  
+- <xref:System.Windows.Navigation.NavigationService.CanGoBack%2A>  
   
--   <xref:System.Windows.Navigation.NavigationService.CanGoForward%2A>  
+- <xref:System.Windows.Navigation.NavigationService.CanGoForward%2A>  
   
  Deník lze ovládat také prostřednictvím kódu programu, jak je popsáno v [podpůrné stav obsahu v historii navigace](#RetainingContentStateWithNavigationHistory) dále v tomto tématu.  
   
@@ -415,9 +415,9 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Když <xref:System.Windows.Controls.Page> není zachováno, neměli byste některého z následujících:  
   
--   Odkaz na nebo libovolné části Store.  
+- Odkaz na nebo libovolné části Store.  
   
--   Zaregistrujte obslužné rutiny událostí s událostmi, které nejsou implementované.  
+- Zaregistrujte obslužné rutiny událostí s událostmi, které nejsou implementované.  
   
  Jedním z nich vytvoří odkazy, které vynucují <xref:System.Windows.Controls.Page> příznakem pro zachování paměti, i když se odebral z deníku.  
   
@@ -445,31 +445,31 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] automaticky použije tato podpora při následující ovládací prvky se používají na <xref:System.Windows.Controls.Page>:  
   
--   <xref:System.Windows.Controls.CheckBox>  
+- <xref:System.Windows.Controls.CheckBox>  
   
--   <xref:System.Windows.Controls.ComboBox>  
+- <xref:System.Windows.Controls.ComboBox>  
   
--   <xref:System.Windows.Controls.Expander>  
+- <xref:System.Windows.Controls.Expander>  
   
--   <xref:System.Windows.Controls.Frame>  
+- <xref:System.Windows.Controls.Frame>  
   
--   <xref:System.Windows.Controls.ListBox>  
+- <xref:System.Windows.Controls.ListBox>  
   
--   <xref:System.Windows.Controls.ListBoxItem>  
+- <xref:System.Windows.Controls.ListBoxItem>  
   
--   <xref:System.Windows.Controls.MenuItem>  
+- <xref:System.Windows.Controls.MenuItem>  
   
--   <xref:System.Windows.Controls.ProgressBar>  
+- <xref:System.Windows.Controls.ProgressBar>  
   
--   <xref:System.Windows.Controls.RadioButton>  
+- <xref:System.Windows.Controls.RadioButton>  
   
--   <xref:System.Windows.Controls.Slider>  
+- <xref:System.Windows.Controls.Slider>  
   
--   <xref:System.Windows.Controls.TabControl>  
+- <xref:System.Windows.Controls.TabControl>  
   
--   <xref:System.Windows.Controls.TabItem>  
+- <xref:System.Windows.Controls.TabItem>  
   
--   <xref:System.Windows.Controls.TextBox>  
+- <xref:System.Windows.Controls.TextBox>  
   
  Pokud <xref:System.Windows.Controls.Page> používá tyto ovládací prvky dat zadaných do nich je zapamatovaných napříč <xref:System.Windows.Controls.Page> navigaci, jak je uvedeno ve **Oblíbené barva** <xref:System.Windows.Controls.ListBox> na následujícím obrázku.  
   
@@ -501,21 +501,21 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Toto jsou některé způsoby, jakými soubory cookie jsou podporovány v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]:  
   
--   [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] můžete i vytvořit a spravovat soubory cookie.  
+- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] můžete i vytvořit a spravovat soubory cookie.  
   
--   Soubory cookie, které jsou vytvořeny pomocí [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je přístupný z prohlížeče.  
+- Soubory cookie, které jsou vytvořeny pomocí [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je přístupný z prohlížeče.  
   
--   [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] ze stejné domény můžete vytvářet a sdílet soubory cookie.  
+- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] ze stejné domény můžete vytvářet a sdílet soubory cookie.  
   
--   [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] stránky ze stejné domény můžete vytvářet a sdílet soubory cookie.  
+- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] stránky ze stejné domény můžete vytvářet a sdílet soubory cookie.  
   
--   Soubory cookie se odešlou, filtrovaly při [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky vytvoření webových požadavků.  
+- Soubory cookie se odešlou, filtrovaly při [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky vytvoření webových požadavků.  
   
--   Obě nejvyšší úrovně [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] konání prvky IFRAME můžete přístupu k souboru cookie.  
+- Obě nejvyšší úrovně [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] konání prvky IFRAME můžete přístupu k souboru cookie.  
   
--   Podpora cookies v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je stejný pro všechny podporované prohlížeče.  
+- Podpora cookies v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je stejný pro všechny podporované prohlížeče.  
   
--   V [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], je kompilátorem respektovány P3P zásady, které se vztahují na soubory cookie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], zejména s ohledem na první strany a třetích stran [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)].  
+- V [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], je kompilátorem respektovány P3P zásady, které se vztahují na soubory cookie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], zejména s ohledem na první strany a třetích stran [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)].  
   
 <a name="Structured_Navigation"></a>   
 ### <a name="structured-navigation"></a>Strukturované navigace  
@@ -527,11 +527,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
 ## <a name="the-navigationwindow-class"></a>NavigationWindow – třída  
  Do této chvíle jste viděli škále navigace služby, které jste se s největší pravděpodobností používat k vytváření aplikací pomocí nástroje lze procházet obsah. Tyto služby byly popsané v kontextu [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], i když už nejsou omezeni na [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. Moderní operačních systémů a aplikací Windows Využijte výhod možností prohlížeče moderní uživatelů začlenit navigace ve stylu prohlížeče do samostatné aplikace. Mezi běžné příklady patří:  
   
--   **Word tezauru**: Přejděte volby slov.  
+- **Word tezauru**: Přejděte volby slov.  
   
--   **Průzkumník souborů**: Procházení souborů a složek.  
+- **Průzkumník souborů**: Procházení souborů a složek.  
   
--   **Průvodci**: Rozdělení do několika stránek, které se dá Navigovat mezi složitý úkol. Příkladem je průvodce Windows komponenty, která zpracovává přidávání a odebírání funkcí Windows.  
+- **Průvodci**: Rozdělení do několika stránek, které se dá Navigovat mezi složitý úkol. Příkladem je průvodce Windows komponenty, která zpracovává přidávání a odebírání funkcí Windows.  
   
  Navigace ve stylu prohlížeče začlenit do samostatné aplikace, můžete použít <xref:System.Windows.Navigation.NavigationWindow> třídy. <xref:System.Windows.Navigation.NavigationWindow> je odvozen od <xref:System.Windows.Window> a rozšiřuje ji stejné podporu pro navigaci, který [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] poskytují. Můžete použít <xref:System.Windows.Navigation.NavigationWindow> jako hlavní okno samostatná aplikace nebo jako sekundární okno, jako je třeba dialogového okna.  
   
@@ -647,11 +647,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
 ### <a name="navigating-to-loose-xaml-files"></a>Přejděte na volný XAML soubory  
  Dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je soubor s následujícími charakteristikami:  
   
--   Obsahuje pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (to znamená žádný kód).  
+- Obsahuje pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (to znamená žádný kód).  
   
--   Obsahuje deklaraci odpovídající obor názvů.  
+- Obsahuje deklaraci odpovídající obor názvů.  
   
--   Má příponu názvu souboru .xaml.  
+- Má příponu názvu souboru .xaml.  
   
  Představte si třeba následující obsah, který je uložený jako dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru Person.xaml.  
   
@@ -663,11 +663,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Můžete zobrazit dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru z následujících možností:  
   
--   Web na místním počítači, intranetu nebo Internetu.  
+- Web na místním počítači, intranetu nebo Internetu.  
   
--   A [!INCLUDE[TLA#tla_unc](../../../../includes/tlasharptla-unc-md.md)] sdílenou složku.  
+- A [!INCLUDE[TLA#tla_unc](../../../../includes/tlasharptla-unc-md.md)] sdílenou složku.  
   
--   Místní disk.  
+- Místní disk.  
   
  Dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor lze přidat k oblíbeným položkám prohlížeče, nebo se v prohlížeči na domovské stránce.  
   

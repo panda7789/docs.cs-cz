@@ -2,12 +2,12 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 3d396f6ecfc0eb4a884e4af0d84ef65d18c5586c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0f3eaa73a26c3f8519e1c168ab2e2968ed4ab28d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033996"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64641167"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
@@ -250,7 +250,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
+|Name|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
 |PrimitiveTypeKind|PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
   
 ###### <a name="function-node"></a>Uzel – funkce  
@@ -258,7 +258,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
+|Name|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
 |Vlastnost ReturnType|String|Ne|Typ void|Návratový typ funkce EDM|  
 |Aggregate|Boolean|Ne|False|Hodnota TRUE, pokud funkce je agregační funkce|  
 |BuiltIn|Boolean|Ne|Pravda|Hodnota TRUE, pokud funkce je integrovaná do úložiště dat|  
@@ -272,7 +272,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
+|Name|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
 |Type|String|Ano|není k dispozici|Typ EDM parametru.|  
 |Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -v<br />-out<br />– vstup|  
   

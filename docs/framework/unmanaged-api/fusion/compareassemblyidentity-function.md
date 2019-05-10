@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 652000367c19572f73296c704047830ce1c74574
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f0bbc2a63f0324db50008637827eb63125ee5813
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914519"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662952"
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity – funkce
 Porovná dvě identit sestavení pro určení, zda jsou ekvivalentní.  

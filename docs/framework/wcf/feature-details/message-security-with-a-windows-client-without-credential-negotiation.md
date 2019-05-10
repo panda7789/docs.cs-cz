@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-ms.openlocfilehash: 43bc222bb69aafa3fa3492d79d35fbc492055ead
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0e4ac18d4c5835f3bd0539f2a79d68b59860b6e6
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038595"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64637941"
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečené pomocí protokolu Kerberos.  
@@ -24,7 +24,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
   
 |Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Zpráva|  
+|Režim zabezpečení|Message|  
 |Interoperabilita|Ano, WS-Security s klienty kompatibilní profilu token protokolu Kerberos|  
 |Ověření (Server)|Vzájemné ověřování klienta a serveru|  
 |Ověření (klient)|Vzájemné ověřování klienta a serveru|  

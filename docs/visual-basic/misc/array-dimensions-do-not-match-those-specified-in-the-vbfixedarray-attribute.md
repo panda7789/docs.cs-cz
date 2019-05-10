@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_ArrayDimensionsDontMatch
 ms.assetid: 71809e3b-8147-4314-9c4c-e4a5bc9a5530
-ms.openlocfilehash: f9bff653e180d137a51cb4207c5f8d6ea0178e6e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3948b85525c5ad8aa7f05fdd0d3557b72b5b7c28
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61977075"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64659025"
 ---
 # <a name="array-dimensions-do-not-match-those-specified-in-the-vbfixedarray-attribute"></a>Rozměry pole neodpovídají zadaný v atributu 'VBFixedArray.
 Dimenzí tohoto pole se neshodují s dimenzí, které jste zadali v `VBFixedArray` atribut.  
