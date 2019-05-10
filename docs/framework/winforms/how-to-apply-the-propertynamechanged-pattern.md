@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], custom controls
 - PropertyNameChanged pattern [Windows Forms], applying
 ms.assetid: aa47ddf6-5223-40c4-833f-a78992194836
-ms.openlocfilehash: 36670eee6235277a7fe98770192df9ae05d3dd03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 01afa713e97206ea192ba55dc2affad20163f872
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966813"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64665265"
 ---
 # <a name="how-to-apply-the-propertynamechanged-pattern"></a>Postupy: Použití vzoru PropertyNameChanged
 Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vzor, který má vlastní ovládací prvek. Tento model použijte při implementaci vlastní ovládací prvky, které se používají s modulem Windows Forms datové vazby.  

@@ -2,12 +2,12 @@
 title: Formátovací modul a selektor operace
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-ms.openlocfilehash: 45b489aeb88f57fe442cef9ffed1a2ee079b75e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 94daefbc05bf69cf7fa03c5ce4c2988f3b7db91a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989687"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664800"
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
 Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu z co WCF očekává, že body rozšiřitelnosti Windows Communication Foundation (WCF). Ve výchozím nastavení, formátování WCF očekávat parametry metody mají být zahrnuty v části `soap:body` elementu. Vzorek ukazuje, jak implementovat vlastní operace formátování, které místo toho analyzuje data parametrů z řetězce dotazu HTTP GET a volá metody pomocí tato data.  

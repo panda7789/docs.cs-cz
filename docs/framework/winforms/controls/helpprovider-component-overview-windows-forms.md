@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dialog boxes [Windows Forms], context-sensitive Help
 - Windows Forms, context-sensitive Help
 ms.assetid: 6b10c2cc-c577-4cb5-9669-e37b33416af9
-ms.openlocfilehash: 177b61cab99d21a844298632020244fa424d8d2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9e8dc2ee2773b26a7bfef1da209399a8b49de9ad
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971220"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624128"
 ---
 # <a name="helpprovider-component-overview-windows-forms"></a>HelpProvider – přehled komponenty (Windows Forms)
 Windows Forms [HelpProvider](helpprovider-component-windows-forms.md) komponenta se používá pro soubor nápovědy HTML Help 1.x (soubor CHM vytvořenými pomocí HTML Help Workshop, nebo soubor HTM) přidružit k aplikaci Windows. Můžete poskytnout pomoc v mnoha různými způsoby:  

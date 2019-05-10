@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30560
 ms.assetid: 7f032293-054b-4eae-8d97-3db8e7ddde3b
-ms.openlocfilehash: 24cb5f893bcfef375b10233b83d2b350c30983e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6171572176d53562a1baeb8d8602113f6abf9c43
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920871"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64665717"
 ---
 # <a name="name-is-ambiguous-in-the-namespace-namespacename"></a>"\<name >' je nejednoznačný v oboru názvů '\<namespacename >"
 Zadali jste název, který je nejednoznačný a proto je v konfliktu s jiným názvem. Kompilátor jazyka Visual Basic nemá žádná pravidla řešení konfliktů; rozlišení názvů musí být sami.  

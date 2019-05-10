@@ -8,12 +8,12 @@ helpviewer_keywords:
 - << operator [Visual Basic]
 - operator <<, Visual Basic left shift operator
 ms.assetid: fdb93d25-81ba-417f-b808-41207bfb8440
-ms.openlocfilehash: 75c16c27dc919ba365cbe3c28c61a1e46496b0ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e11dbc453934f1aac4a8092cdc6539ec11f0cc21
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768287"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663188"
 ---
 # <a name="-operator-visual-basic"></a>\<\< – Operátor (Visual Basic)
 Provede aritmetický operátor posunu vlevo bitový vzor.  

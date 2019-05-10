@@ -19,12 +19,12 @@ ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: d973ec68486ca46a38819ce9972c789b156d878b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fdd7eef0994ca9c7b0533b6497d76a4720dd1f64
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936757"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634640"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravovány v modulu common language runtime a také je důležitou součástí modulu runtime podpory mezi jazykové integrace. Obecný systém typů provádí následující funkce:  

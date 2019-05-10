@@ -3,12 +3,12 @@ title: 'Postupy: Transformace příchozích deklarací identit'
 ms.date: 03/30/2017
 ms.assetid: 2831d514-d9d8-4200-9192-954bb6da1126
 author: BrucePerlerMS
-ms.openlocfilehash: f836356125f1462f302b7e9f45a841c869c9a690
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e667b90a51e3a5591596e46878973f925f788a5b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940436"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626067"
 ---
 # <a name="how-to-transform-incoming-claims"></a>Postupy: Transformace příchozích deklarací identit
 ## <a name="applies-to"></a>Platí pro  

@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrMouse_NoMouseIsPresent
 ms.assetid: 4472fd57-4217-4463-9d3c-dc4a8fe88f1b
-ms.openlocfilehash: c0e4e2a8cb0aa641b179d8b2608af384d7d4181e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5493cea8c87a40b0c9663aaa7f36ce6cb423d346
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944934"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624862"
 ---
 # <a name="no-mouse-is-present"></a>Není připojena myš
 Jedna z vlastností objektu `My.Computer.Mouse` byla volána objektu, ale počítač nemá žádné myši a portem myši nainstalované.  

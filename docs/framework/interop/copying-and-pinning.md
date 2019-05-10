@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e1696bd6eb4eb3a43593cf7ed264c80745c1ec66
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 90ed12862c4cadc45777150deb1b9f91f111bf41
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643513"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64750511"
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a11a9d18999bc7741e12af16d43fba8c03318da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6d11e16f58b6da24d7df0ccd97c1d54050004ae1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61811865"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664655"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -53,7 +53,7 @@ ms.locfileid: "61811865"
   
 <a name="table"></a> Následující tabulka popisuje specifikátory standardního číselného formátu a zobrazuje ukázkový výstup vyprodukovaný každým specifikátorem formátu. Najdete v článku [poznámky](#NotesStandardFormatting) části Další informace o používání řetězců standardního číselného formátu a [příklad](#example) části komplexní ukázky použití.  
   
-|Specifikátor formátu|Název|Popis|Příklady|  
+|Specifikátor formátu|Name|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
 |"C" nebo "c"|Měna|Výsledek: Hodnotu měny.<br /><br /> Podporuje: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: Určené <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [Specifikátor formátu Currency ("C")](#CFormatString).|123.456 ("C" en US) -> $123,46<br /><br /> 123.456 ("C", fr-FR) -> 123,46 €<br /><br /> 123.456 ("C", ja-JP) -> ¥ 123<br /><br /> -123.456 ("C3", en US) -> (123.456$)<br /><br /> -123.456 ("C3", fr-FR) -> €-123,456<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|  
 |"D" nebo "d"|Desetinné číslo|Výsledek: Celá čísla s volitelným záporným znaménkem.<br /><br /> Podporuje: Pouze celočíselné typy.<br /><br /> Specifikátor přesnosti: Minimální počet číslic.<br /><br /> Výchozí specifikátor přesnosti: Minimální požadovaný počet číslic.<br /><br /> Další informace: [Specifikátor formátu desítkového](#DFormatString).|1234-1234 ("D") &GT;<br /><br /> -1234 ("D6") -> -001234|  

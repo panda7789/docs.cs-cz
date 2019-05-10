@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8c9fe05049feff6e15c765212b72e35265fd844
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 90e9dbbd43751412c25dd5ca4dae2d503139db69
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650367"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634550"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Řetězce formátu vlastní data a času
 

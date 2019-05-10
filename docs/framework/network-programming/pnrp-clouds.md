@@ -2,12 +2,12 @@
 title: Cloudy PNRP
 ms.date: 03/30/2017
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
-ms.openlocfilehash: 943cad880885a624c0ed0798738665c8bcd7036f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6e7ec5d88e1053f33b86816fec739aae38cac18c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641980"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623033"
 ---
 # <a name="pnrp-clouds"></a>Cloudy PNRP
 Protokol PNRP "cloud" představuje sadu uzlů, které mohou vzájemně komunikovat přes síť. Termín "cloud" je synonymem "partnerské sítě" a "peer-to-peer graf".  

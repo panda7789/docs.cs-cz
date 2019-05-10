@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: 229ff9fb-1bd1-403b-946b-526104864c60
-ms.openlocfilehash: eecd644a7b91492f0a78cf969cfa71ae927609ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d58109dfbb03b752f4a46f895fa1093e4f37df71
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022282"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624771"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)
 Sestavení nebo dynamické propojení knihovny (DLL), je propojen s program za běhu. Abychom si předvedli, vytvoření a použití knihovny DLL, zvažte následující scénáře:  

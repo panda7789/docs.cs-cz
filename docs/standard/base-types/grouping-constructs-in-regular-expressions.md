@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2aa7c35ebc06fb67d9cf6216233d2bed65ae76ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 16776e83c8bae6cc82329a8f709fd9d1d7cab145
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789269"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634345"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce můžete provádět následující akce:  
@@ -126,7 +126,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zach
   
  Vzor regulárního výrazu jednoduché ukazuje jak číslované (nepojmenované) a pojmenované skupiny může být odkazováno prostřednictvím kódu programu nebo pomocí syntaxe jazyka regulárních výrazů. Regulární výraz `((?<One>abc)\d+)?(?<Two>xyz)(.*)` vytvoří následující zachytávání skupiny podle čísla a podle názvu. První zachytávající skupinou (číslo 0) vždy odkazuje na celý vzor.  
   
-|Číslo|Název|Vzor|  
+|Číslo|Name|Vzor|  
 |------------|----------|-------------|  
 |0|0 (výchozí název)|`((?<One>abc)\d+)?(?<Two>xyz)(.*)`|  
 |1|1 (výchozí název)|`((?<One>abc)\d+)`|  

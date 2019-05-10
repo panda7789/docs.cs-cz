@@ -1,16 +1,16 @@
 ---
-title: .NET strojového učení výukových kurzů – ML.NET
+title: Kurzy ML.NET
 description: Prozkoumání ML.NET kurzů se naučíte vytvářet vlastní řešení AI a integrovat je do vašich aplikací .NET.
 ms.custom: seodec18
 ms.date: 04/05/2019
-ms.openlocfilehash: 45534e196c2dc0cd1994445eeb482474b32aaa41
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 42f781f53c94d9852f2d75117683eb21dd1c5c6e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019108"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634793"
 ---
-# <a name="net-machine-learning-tutorials---mlnet"></a>.NET strojového učení výukových kurzů – ML.NET
+# <a name="mlnet-tutorials"></a>Kurzy ML.NET 
 
 V následujících kurzech umožňují porozumět způsobu použití [ML.NET](../index.yml) k sestavení řešení vlastní machine learning a integrovat do vašich aplikací .NET:
 
