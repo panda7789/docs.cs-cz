@@ -2,12 +2,12 @@
 title: Přehled zabezpečení SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: ae66dd75-5c16-4cc0-9e12-774dd26d3fb9
-ms.openlocfilehash: de0c79a95a786f33b05c88ce4ed298837f2a6923
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 52e6f69c006353fcafcbf8f567675a7c14830f76
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922197"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64582817"
 ---
 # <a name="overview-of-sql-server-security"></a>Přehled zabezpečení SQL Serveru
 Strategie defense-in-depth s překrývajícími se vrstvy zabezpečení, je nejlepší způsob, jak čítač bezpečnostní hrozby. SQL Server poskytuje zabezpečení architektura, která je navržena k umožnění správci databází a vývojářům vytvářet zabezpečené databázových aplikací a čelit hrozbám. Každá verze systému SQL Server se zvýšil na předchozích verzích systému SQL Server se zavedením nové funkce a funkce. V poli se však nedodává zabezpečení. Každá aplikace je jedinečný v jeho požadavky na zabezpečení. Vývojáři musí pochopit, jaké kombinace funkce a funkce jsou nejvhodnější pro čítače známými hrozbami a předvídat hrozeb, které mohou nastat v budoucnu.  

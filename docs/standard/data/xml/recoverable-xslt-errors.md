@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 215fb807aa27b8a544351d26fd0c9500c76b6ead
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 32a4875b42c0282ffdb90e3fc825b38af935affb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698769"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64590048"
 ---
 # <a name="recoverable-xslt-errors"></a>Chyby XSLT s možností zotavení
 Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelného chování. Například část 7.3 vytváření zpracování pokyny, XSLT 1.0 doporučení státy, jedná se o chybu, pokud vytvoření instance obsah `xsl:processing-instruction` vytvoří uzly než textové uzly. Pro některé problémy XSLT 1.0 doporučení indikuje, co rozhodnutí třeba pokud se rozhodne procesoru zotavit z chyby. Na problém uvedený v části 7.3 W3C říká, že implementace můžete obnovit tuto chybu ignorovat uzly a jejich obsah.  
@@ -24,7 +24,7 @@ Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých
   
 - Najdete v části odkazy [doporučení W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/TR/xslt) a [chyby specifikaci W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
   
-|Podmínka XSLT|Sekce|Chování XslCompiledTransform|  
+|Podmínka XSLT|Section|Chování XslCompiledTransform|  
 |--------------------|-------------|-----------------------------------|  
 |Textový uzel odpovídá obě `xsl:strip-space` a `xsl:preserve-space`.|3.4|Obnovit|  
 |Zdrojový uzel odpovídá více než jedno pravidlo šablony.|5.5|Obnovit|  

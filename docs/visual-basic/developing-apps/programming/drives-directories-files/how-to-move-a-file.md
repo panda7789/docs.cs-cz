@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], moving
 ms.assetid: 53a7457b-5815-41ad-b37d-28537c1fb77a
-ms.openlocfilehash: 0c909e3dfce1af17cc74ca526ba0409d5e9f93f8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e529e263353b08778eba338b20aef34762e66824
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672520"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64628855"
 ---
 # <a name="how-to-move-a-file-in-visual-basic"></a>Postupy: Přesunutí souboru v jazyce Visual Basic
 `My.Computer.FileSystem.MoveFile` Metodu je možné přesunout soubor do jiné složky. Pokud cílová struktura neexistuje, vytvoří se.  

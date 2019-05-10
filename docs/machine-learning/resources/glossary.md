@@ -1,14 +1,14 @@
 ---
-title: Machine learning Glosář - ML.NET
+title: Glosář strojového učení
 description: Glosář důležité terminologie strojového učení, které jsou užitečné při vytváření vlastních modelů ML.NET.
 ms.custom: seodec18
 ms.date: 03/05/2019
-ms.openlocfilehash: cc236aaa99fd8a7b05af666a5b96f657d8bd3ad4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a3f94f2dedbe620c4d5c2bed2af99471572a91e5
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019175"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063668"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Machine learning Glosář termínů důležité
 
@@ -29,6 +29,16 @@ V [binární klasifikace](#binary-classification), metriku hodnocení, která je
 
 A [klasifikace](#classification) malá a velká where [popisek](#label) je pouze jedné ze dvou tříd. Další informace najdete v tématu [binární klasifikace](tasks.md#binary-classification) část [služby Machine learning úlohy](tasks.md) tématu.
 
+## <a name="calibration"></a>Kalibrací
+
+Kalibrací je proces mapování základního skóre na členství ve třídě pro klasifikaci binární a víc tříd. Mají některé ML.NET školitelé `NonCalibrated` příponu. Tyto algoritmy vytvoření základního skóre, která se pak musí být namapována na pravděpodobnost třídy. 
+
+## <a name="catalog"></a>Katalog 
+
+V ML.NET katalog je kolekce rozšíření funkcí, seskupených podle společného účel.
+
+Například každý strojového učení úkolů (binární klasifikace, regrese, řazení atd.) má katalog algoritmy k dispozici strojového učení (školitele). Katalog pro školitele binární klasifikace: <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
+
 ## <a name="classification"></a>Klasifikace
 
 Když se data používá k předpovědi kategorii, [pod dohledem strojového učení](#supervised-machine-learning) je volána úloha, klasifikace. [Binární klasifikace](#binary-classification) odkazuje na predikci pouze dvě kategorie (například klasifikaci obrázku jako obrázek "cat" nebo "pes). [Klasifikace víc tříd](#multiclass-classification) odkazuje na predikci více kategorií (například při klasifikaci obrázku jako obrázek konkrétní druh pes).
@@ -36,6 +46,25 @@ Když se data používá k předpovědi kategorii, [pod dohledem strojového uč
 ## <a name="coefficient-of-determination"></a>Koeficient spolehlivosti
 
 V [regrese](#regression), metriku hodnocení, která určuje, jak dobře zapadá datového modelu. Rozsahu od 0 do 1. Hodnota 0 znamená, že data jsou náhodných nebo jinak nevejde do modelu. Hodnota 1 znamená, že model přesně odpovídá data. To se často označuje jako r<sup>2</sup>, R<sup>2</sup>, nebo spolehlivosti.
+
+## <a name="data"></a>Data
+
+Data je zásadním jakékoli strojového učení aplikace. V ML.NET data reprezentována <xref:Microsoft.ML.IDataView> objekty. Datové objekty zobrazení:
+- se skládá ze sloupců a řádků
+- laxně vyhodnocují, to znamená, pouze načíst data při volání operace pro něj
+- obsahuje schéma definující typ a formát délku každého sloupce
+
+## <a name="estimator"></a>Odhad
+
+Třída v ML.NET, který implementuje <xref:Microsoft.ML.IEstimator`1> rozhraní.
+
+Odhadu je specifikace transformace (transformace přípravy dat a strojové učení transformace trénování modelu). Odhady je možné zřetězit do kanálu transformací. Parametry estimator nebo kanál odhady zkušenosti při <xref:Microsoft.ML.IEstimator`1.Fit*> je volána. Výsledek <xref:Microsoft.ML.IEstimator`1.Fit*> je [Transformer](#transformer).
+
+## <a name="extension-method"></a>Metody rozšíření
+
+Metoda rozhraní .NET, která je součástí třídy, ale je definice mimo třídu. První parametr rozšiřující metoda je statická `this` odkazu na třídu, ke kterému patří metody rozšíření.
+
+Rozšiřující metody jsou často používány v ML.NET k vytvoření instance [odhady](#estimator).
 
 ## <a name="feature"></a>Funkce
 
@@ -60,6 +89,12 @@ Elementu, který chcete předpovědět s modelem machine learning. Například p
 ## <a name="log-loss"></a>Ztráta protokolu
 
 V [klasifikace](#classification), metriku hodnocení, který charakterizuje přesnost třídění. Menší ztráty protokolu je, přesnější třídění.
+
+## <a name="loss-function"></a>Ztráta funkce
+
+Ztráta funkce je rozdíl mezi hodnotami popisek trénování a predikcí od modelu. Parametry modelu jsou odhady minimalizací ztráta funkce.
+
+Různé školitelé můžete nakonfigurovat různé ztrátě funkcí.
 
 ## <a name="mean-absolute-error-mae"></a>Střední absolutní chyba (MAE)
 
@@ -93,6 +128,13 @@ V [klasifikace](#classification), přesnost pro třídu je počet položek sprá
 
 V [klasifikace](#classification), odvolání pro třídu je počet položek správně předpovědět jako patřící do této třídy dělený celkový počet položek, které ve skutečnosti patří do třídy.
 
+## <a name="regularization"></a>Regularizace
+
+ Regularizace postihuje lineární model, který je příliš složité. Existují dva druhy regularizace:
+
+- Regularizace $ $L_1 vynuluje váhy nevýznamné funkcí. Po tomto typu regularizace může přestat menší velikost uloženého modelu.
+- Regularizace $ $L_2 minimalizuje váha rozsah nevýznamné funkcí, toto je obecnější procesu a méně citlivé na odlehlé hodnoty.
+
 ## <a name="regression"></a>Regrese
 
 A [pod dohledem strojového učení](#supervised-machine-learning) úloh, kde výstup je skutečné hodnoty, například, double. Příklady: předpověď cen akcií. Další informace najdete v tématu [regrese](tasks.md#regression) část [služby Machine learning úlohy](tasks.md) tématu.
@@ -117,9 +159,11 @@ Podtřída strojového učení, ve kterém požadovaný model předpovídá popi
 
 Proces identifikace [modelu](#model) pro danou trénovací datové sady. Pro lineární model to znamená vyhledání váhy. Strom zahrnuje identifikaci body rozdělení.
 
-## <a name="transform"></a>Transformace
+## <a name="transformer"></a>Transformer
 
-A [kanálu](#pipeline) komponenty, který transformuje data. Například z textu na vektorové čísel.
+ML.NET třídy, která implementuje <xref:Microsoft.ML.ITransformer> rozhraní.
+
+Transformátoru transformuje jeden <xref:Microsoft.ML.IDataView> do jiné. Vytvoří transformátoru školení [estimator](#estimator), nebo kanál odhad. 
 
 ## <a name="unsupervised-machine-learning"></a>Bez dohledu strojového učení
 

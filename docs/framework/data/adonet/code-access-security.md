@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 6c26ae82939a3d011ecb7ecd97e162ab2f45cd48
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: ee633e2488611417f72a9d51ab6b0fe2d9ddfa27
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59174106"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64583564"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET
 Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společnou infrastrukturu pro zadaný modulem common language runtime (CLR). Většina aplikace na světě nespravovaného kódu jsou spouštěny s oprávnění uživatele nebo instanční objekt. V důsledku toho počítačových systémů může být poškozený a privátních dat dojde k ohrožení bezpečnosti při škodlivý nebo plný chyb softwaru je spuštěna uživatelem, se zvýšenými oprávněními.  
@@ -27,11 +27,11 @@ Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako
   
  Existují tři typy oprávnění přístupu ke kódu:  
   
--   `Code access permissions` odvozovat <xref:System.Security.CodeAccessPermission> třídy. Oprávnění se vyžadují pro přístup k chráněným prostředkům, jako jsou soubory a proměnných prostředí a k provádění chráněné operací, jako je například přístup k nespravovanému kódu.  
+- `Code access permissions` odvozovat <xref:System.Security.CodeAccessPermission> třídy. Oprávnění se vyžadují pro přístup k chráněným prostředkům, jako jsou soubory a proměnných prostředí a k provádění chráněné operací, jako je například přístup k nespravovanému kódu.  
   
--   `Identity permissions` představuje charakteristiky, které identifikují sestavení. Oprávnění jsou udělena podle důkazy, které mohou být položky jako je například digitální podpis nebo odkud pochází kód sestavení. Oprávnění identit také provádět odvozování z <xref:System.Security.CodeAccessPermission> základní třídy.  
+- `Identity permissions` představuje charakteristiky, které identifikují sestavení. Oprávnění jsou udělena podle důkazy, které mohou být položky jako je například digitální podpis nebo odkud pochází kód sestavení. Oprávnění identit také provádět odvozování z <xref:System.Security.CodeAccessPermission> základní třídy.  
   
--   `Role-based security permissions` jsou založené na tom, jestli objekt zabezpečení se zadanou identitou nebo je členem zadané roli. <xref:System.Security.Permissions.PrincipalPermission> Třída umožňuje obě kontroly deklarativního a imperativního oprávnění na aktivní objekt zabezpečení.  
+- `Role-based security permissions` jsou založené na tom, jestli objekt zabezpečení se zadanou identitou nebo je členem zadané roli. <xref:System.Security.Permissions.PrincipalPermission> Třída umožňuje obě kontroly deklarativního a imperativního oprávnění na aktivní objekt zabezpečení.  
   
  Pokud chcete zjistit, zda kód je oprávněn přistupovat k prostředku nebo provedení operace, prochází systém zabezpečení modulu runtime zásobník volání, porovnání každého volajícího požadováné oprávnění udělená oprávnění. Pokud jakýkoli volající v zásobníku volání nemá požadované oprávnění, <xref:System.Security.SecurityException> je vyvolána a přístup je zamítnut.  
   

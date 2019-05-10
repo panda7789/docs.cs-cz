@@ -6,12 +6,12 @@ helpviewer_keywords:
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: db66e8a264bc0381a2ff4689c4427047a158eb32
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8ad61eaa292ec4cce17ba029186caf1536afacdb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913923"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591460"
 ---
 # <a name="how-to-start-services"></a>Postupy: Spuštění služby
 Po dokončení instalace služby musí být spuštěna. Od volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu na třídu služby. Obvykle <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda definuje užitečnou práci, služba bude provádět. Po spuštění služby, zůstane aktivní, dokud je ručně pozastavená nebo zastavená.  

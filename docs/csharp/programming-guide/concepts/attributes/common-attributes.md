@@ -2,12 +2,12 @@
 title: Běžné atributy (C#)
 ms.date: 07/20/2015
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-ms.openlocfilehash: d5d56fff82fb552f42f72c18b8c3b907c5bc113c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bb06fc72fc336df257c6b674d3eaa4fa47801da0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702578"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64603341"
 ---
 # <a name="common-attributes-c"></a>Běžné atributy (C#)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka C#.  

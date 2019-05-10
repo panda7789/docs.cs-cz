@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
-ms.openlocfilehash: 13fe07d1521832ed12ba5770e0bd069ff9b917d2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c29b3e3d5eff426ac573ddf5224259f0a6c28e53
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62043575"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664918"
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
 Zásobník kanál Windows Communication Foundation (WCF) je vrstvený komunikačního balíku pomocí jednoho nebo několika kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenosový kanál, který je zodpovědný za přizpůsobení zásobníku kanálu k přenosu. (například TCP, HTTP, SMTP a jiné typy přenosu.). Kanály nabízejí nižší úrovně programovací model pro odesílání a příjem zpráv. Tento model programování spoléhá na několik rozhraní a další typy souhrnně označované jako model kanálu WCF. Toto téma popisuje kanál tvary, konstrukce základní kanál naslouchání (služba) a objekt pro vytváření kanálů (na straně klienta).  

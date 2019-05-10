@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d93c55cec3d35fd4208a4a8a7c9b235dd10fb9ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 82d81be7a9e0843dfe382767de582f93371acb4c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59156166"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64584490"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName – metoda
 Získá token metadat pro typ, který je definován v zadaném rozsahu, který se nenachází v aktuálním oboru.  
@@ -41,15 +41,15 @@ HRESULT DefineTypeRefByName (
  `tkResolutionScope`  
  [in] Token určující rozlišovací obor. Platné jsou následující typy tokenů:  
   
--   `mdModuleRef`, pokud je typ definován ve stejném sestavení, ve kterém je definována volající.  
+- `mdModuleRef`, pokud je typ definován ve stejném sestavení, ve kterém je definována volající.  
   
--   `mdAssemblyRef`, pokud je typ definovaný v jiném sestavení než ten, ve kterém je definována volající.  
+- `mdAssemblyRef`, pokud je typ definovaný v jiném sestavení než ten, ve kterém je definována volající.  
   
--   `mdTypeRef`, pokud je typ vnořeného typu.  
+- `mdTypeRef`, pokud je typ vnořeného typu.  
   
--   `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je definována volající.  
+- `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je definována volající.  
   
--   Hodnota Null, pokud je typ definován globálně.  
+- Hodnota Null, pokud je typ definován globálně.  
   
  `szName`  
  [in] Název cílového typu v kódování Unicode.  

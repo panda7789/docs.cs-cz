@@ -2,12 +2,12 @@
 title: Výběr typu pověření
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: 8aa959aa952e839039bebffddddd951fbc1eb0d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 20c070e9351219a649735ac404231cf6f265d814
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748799"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64586129"
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data Windows Communication Foundation (WCF) používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které státní instituce problémy prokázání citizenship v zemi nebo oblast. Ve službě WCF přihlašovací údaje mohou mít mnoho forem, jako je například název tokeny uživatele a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v WCF a tom, jak vybrat správné přihlašovací údaje pro vaše aplikace.  
@@ -25,7 +25,7 @@ ms.locfileid: "61748799"
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Základní|Určuje základní ověřování klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
 |ověřování algoritmem Digest|Určuje ověřování algoritmem digest pro klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
 |Ntlm|Určuje NT LAN Manager (NTLM) authentication. Používá se, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Jeho použití jako záložní můžete také zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, což způsobí, že WCF, aby se snažíme vyvolá výjimku, pokud je použit protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemůže zabránit odeslání při přenosu přihlašovacích údajů protokolů NTLM.|  
@@ -38,7 +38,7 @@ ms.locfileid: "61748799"
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádný|Určuje, že klient nemusí představovat přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádné|Určuje, že klient nemusí představovat přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Windows|Umožňuje výměny zpráv SOAP probíhá v kontextu zabezpečení vytvořen se přihlašovací údaje Windows.|  
 |Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s pověření uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelskými jmény, jako je například generuje podpis nebo šifrovat data. WCF se zajistí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu X.509.|  

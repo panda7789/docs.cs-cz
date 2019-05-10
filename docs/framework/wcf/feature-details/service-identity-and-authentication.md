@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: f33144c320b3648f9e201505a34ed8f1ecd5965b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 834829d8eee95a8a62363a05b4af9430c435753b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748262"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64586231"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové služby WSDL (Description Language). Tato hodnota, rozšíří na všechny klienty, se používá k ověřování. Poté, co klient inicializuje komunikaci na koncový bod a služby se ověří na klienta, klient porovná hodnotu identity koncový bod s skutečná hodnota vrácená v procesu ověřování koncového bodu. Pokud se shodují, klient jistotu, že kontaktoval koncový bod služby očekávané. Tato operace funguje jako ochranu proti *phishing* zabraňuje klient se přesměrovává na koncový bod hostitelem škodlivé služby.  

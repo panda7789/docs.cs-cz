@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Service applications, creating
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
-ms.openlocfilehash: baa7655481c24ebe96b76a0accbff63b6965a021
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e709db257c839dc7e583412a87af6d25b80de969
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913910"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591436"
 ---
 # <a name="how-to-write-services-programmatically"></a>Postupy: Zápis služeb prostřednictvím kódu programu
 Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete napsat vlastní služby nastavením dědičnosti a další prvky infrastruktury sami. Když vytvoříte službu prostřednictvím kódu programu, je třeba provést několik kroků, které pro vás by jinak zpracovat šablonu:  

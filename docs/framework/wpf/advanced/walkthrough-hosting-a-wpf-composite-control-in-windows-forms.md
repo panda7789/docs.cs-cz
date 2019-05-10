@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: 75e60a3a9b39c0dd63a24a1e71c4823e7cb0bd74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 24eaccb1aad7f9d592cbc4c92d960b7dcea0c5ee
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052544"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64605458"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být mnohem efektivnější Rozšiřte svoje stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] namísto jeho přepsání úplně od začátku. Běžný scénář, kdy je, když chcete vložit jednu nebo více ovládacích prvků implementovaný pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci vaší aplikace Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF v tématu [přizpůsobení ovládacího prvku](../controls/control-customization.md).  
@@ -230,7 +230,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 4. Přidejte následující <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> ovládací prvky do formuláře.  
   
-    |Název|Text|  
+    |Name|Text|  
     |----------|----------|  
     |groupBox1|Barva pozadí|  
     |groupBox2|Barva popředí|  
@@ -242,7 +242,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 5. Přidejte následující <xref:System.Windows.Forms.RadioButton?displayProperty=nameWithType> ovládacích prvků <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> ovládacích prvků.  
   
-    |GroupBox|Název|Text|  
+    |GroupBox|Name|Text|  
     |--------------|----------|----------|  
     |groupBox1|radioBackgroundOriginal|Původní|  
     |groupBox1|radioBackgroundLightGreen|Světle zelená|  
@@ -263,7 +263,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 6. Přidejte následující <xref:System.Windows.Forms.Label?displayProperty=nameWithType> ovládací prvky na poslední <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>. Tyto ovládací prvky zobrazení dat vrácených [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku.  
   
-    |GroupBox|Název|Text|  
+    |GroupBox|Name|Text|  
     |--------------|----------|----------|  
     |groupBox7|lblName|Jméno:|  
     |groupBox7|lblAddress|Poštovní adresa:|  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
 ms.openlocfilehash: 79cc59eb8de513f547a8fd87db8c95dd9af37375
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63774036"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64754517"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#)
 

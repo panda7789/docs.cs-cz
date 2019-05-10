@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 5ad4da28d9bda41bc274b40bfe3bac2f1ff1002e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 80296b901431124a8dc1407016410a345a1c0c6c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647736"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64762962"
 ---
-**Toto téma platí pro: ✓** sady SDK .NET Core 2.1 a novějších verzích
+**Tento článek se týká: ✓** sady SDK .NET Core 2.1
