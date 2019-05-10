@@ -10,39 +10,39 @@ helpviewer_keywords:
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-ms.openlocfilehash: 560453a81124a3ee52a2ffd794ddac026c7394a5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 236e730eaae0bc73c715e9b1c2c71d6c870d78e3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680178"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64608537"
 ---
-# <a name="how-to-read-from-a-text-file-c-programming-guide"></a><span data-ttu-id="0d682-102">Postupy: Čtení z textového souboru (C# Průvodce programováním v)</span><span class="sxs-lookup"><span data-stu-id="0d682-102">How to: Read From a Text File (C# Programming Guide)</span></span>
-<span data-ttu-id="0d682-103">Tento příklad přečte obsah textového souboru s použitím statické metody <xref:System.IO.File.ReadAllText%2A> a <xref:System.IO.File.ReadAllLines%2A> z <xref:System.IO.File?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="0d682-103">This example reads the contents of a text file by using the static methods <xref:System.IO.File.ReadAllText%2A> and <xref:System.IO.File.ReadAllLines%2A> from the <xref:System.IO.File?displayProperty=nameWithType> class.</span></span>  
+# <a name="how-to-read-from-a-text-file-c-programming-guide"></a><span data-ttu-id="9024c-102">Postupy: Čtení z textového souboru (C# Průvodce programováním v)</span><span class="sxs-lookup"><span data-stu-id="9024c-102">How to: Read From a Text File (C# Programming Guide)</span></span>
+<span data-ttu-id="9024c-103">Tento příklad přečte obsah textového souboru s použitím statické metody <xref:System.IO.File.ReadAllText%2A> a <xref:System.IO.File.ReadAllLines%2A> z <xref:System.IO.File?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="9024c-103">This example reads the contents of a text file by using the static methods <xref:System.IO.File.ReadAllText%2A> and <xref:System.IO.File.ReadAllLines%2A> from the <xref:System.IO.File?displayProperty=nameWithType> class.</span></span>  
   
- <span data-ttu-id="0d682-104">Příklad, který používá <xref:System.IO.StreamReader>, naleznete v tématu [jak: Přečíst textový soubor jeden řádek v čase](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).</span><span class="sxs-lookup"><span data-stu-id="0d682-104">For an example that uses <xref:System.IO.StreamReader>, see [How to: Read a Text File One Line at a Time](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).</span></span>  
+ <span data-ttu-id="9024c-104">Příklad, který používá <xref:System.IO.StreamReader>, naleznete v tématu [jak: Přečíst textový soubor jeden řádek v čase](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).</span><span class="sxs-lookup"><span data-stu-id="9024c-104">For an example that uses <xref:System.IO.StreamReader>, see [How to: Read a Text File One Line at a Time](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="0d682-105">Soubory, které se používají v tomto příkladu se vytvoří v tématu [jak: Zápis do textového souboru](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).</span><span class="sxs-lookup"><span data-stu-id="0d682-105">The files that are used in this example are created in the topic [How to: Write to a Text File](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).</span></span>  
+>  <span data-ttu-id="9024c-105">Soubory, které se používají v tomto příkladu se vytvoří v tématu [jak: Zápis do textového souboru](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).</span><span class="sxs-lookup"><span data-stu-id="9024c-105">The files that are used in this example are created in the topic [How to: Write to a Text File](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0d682-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="0d682-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="9024c-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="9024c-106">Example</span></span>  
  [!code-csharp[csFilesandFolders#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#4)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="0d682-107">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="0d682-107">Compiling the Code</span></span>  
- <span data-ttu-id="0d682-108">Zkopírujte kód a vložte ho do konzolové aplikace jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="0d682-108">Copy the code and paste it into a C# console application.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="9024c-107">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="9024c-107">Compiling the Code</span></span>  
+ <span data-ttu-id="9024c-108">Zkopírujte kód a vložte ho do konzolové aplikace jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="9024c-108">Copy the code and paste it into a C# console application.</span></span>  
   
- <span data-ttu-id="0d682-109">Pokud nepoužíváte textových souborů z [jak: Zápis do textového souboru](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), nahraďte argument `ReadAllText` a `ReadAllLines` s odpovídající název a cesta k souboru ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="0d682-109">If you are not using the text files from [How to: Write to a Text File](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), replace the argument to `ReadAllText` and `ReadAllLines` with the appropriate path and file name on your computer.</span></span>  
+ <span data-ttu-id="9024c-109">Pokud nepoužíváte textových souborů z [jak: Zápis do textového souboru](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), nahraďte argument `ReadAllText` a `ReadAllLines` s odpovídající název a cesta k souboru ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="9024c-109">If you are not using the text files from [How to: Write to a Text File](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), replace the argument to `ReadAllText` and `ReadAllLines` with the appropriate path and file name on your computer.</span></span>  
   
-## <a name="robust-programming"></a><span data-ttu-id="0d682-110">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="0d682-110">Robust Programming</span></span>  
- <span data-ttu-id="0d682-111">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="0d682-111">The following conditions may cause an exception:</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="9024c-110">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="9024c-110">Robust Programming</span></span>  
+ <span data-ttu-id="9024c-111">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="9024c-111">The following conditions may cause an exception:</span></span>  
   
-- <span data-ttu-id="0d682-112">Soubor neexistuje, nebo neexistuje v zadaném umístění.</span><span class="sxs-lookup"><span data-stu-id="0d682-112">The file doesn't exist or doesn't exist at the specified location.</span></span> <span data-ttu-id="0d682-113">Zkontrolujte cestu a zadání názvu souboru.</span><span class="sxs-lookup"><span data-stu-id="0d682-113">Check the path and the spelling of the file name.</span></span>  
+- <span data-ttu-id="9024c-112">Soubor neexistuje, nebo neexistuje v zadaném umístění.</span><span class="sxs-lookup"><span data-stu-id="9024c-112">The file doesn't exist or doesn't exist at the specified location.</span></span> <span data-ttu-id="9024c-113">Zkontrolujte cestu a zadání názvu souboru.</span><span class="sxs-lookup"><span data-stu-id="9024c-113">Check the path and the spelling of the file name.</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="0d682-114">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0d682-114">.NET Framework Security</span></span>  
- <span data-ttu-id="0d682-115">Nespoléhejte na název souboru můžete zjistit obsah souboru.</span><span class="sxs-lookup"><span data-stu-id="0d682-115">Do not rely on the name of a file to determine the contents of the file.</span></span> <span data-ttu-id="0d682-116">Například soubor `myFile.cs` nemusí být zdrojový soubor jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="0d682-116">For example, the file `myFile.cs` might not be a C# source file.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="9024c-114">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="9024c-114">.NET Framework Security</span></span>  
+ <span data-ttu-id="9024c-115">Nespoléhejte na název souboru můžete zjistit obsah souboru.</span><span class="sxs-lookup"><span data-stu-id="9024c-115">Do not rely on the name of a file to determine the contents of the file.</span></span> <span data-ttu-id="9024c-116">Například soubor `myFile.cs` nemusí být zdrojový soubor jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="9024c-116">For example, the file `myFile.cs` might not be a C# source file.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0d682-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0d682-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9024c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9024c-117">See also</span></span>
 
 - <xref:System.IO?displayProperty=nameWithType>
-- [<span data-ttu-id="0d682-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="0d682-118">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="0d682-119">Systém souborů a registr (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="0d682-119">File System and the Registry (C# Programming Guide)</span></span>](../../../csharp/programming-guide/file-system/index.md)
+- [<span data-ttu-id="9024c-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="9024c-118">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="9024c-119">Systém souborů a registr (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="9024c-119">File System and the Registry (C# Programming Guide)</span></span>](../../../csharp/programming-guide/file-system/index.md)

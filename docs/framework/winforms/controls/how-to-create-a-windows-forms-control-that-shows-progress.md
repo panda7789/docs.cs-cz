@@ -10,54 +10,54 @@ helpviewer_keywords:
 - progress [Windows Forms], reporting [Windows Forms]
 - FlashTrackBar custom control
 ms.assetid: 24c5a2e3-058c-4b8d-a217-c06e6a130c2f
-ms.openlocfilehash: 1f457d6e2b0eb73da7a16dc93ea80a14ddb4b2c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 877df5139fd0e626cd2242e3790bc7100f6233aa
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61746685"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64599328"
 ---
-# <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a><span data-ttu-id="aec04-102">Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh</span><span class="sxs-lookup"><span data-stu-id="aec04-102">How to: Create a Windows Forms Control That Shows Progress</span></span>
-<span data-ttu-id="aec04-103">Následující příklad kódu ukazuje vlastního ovládacího prvku volá `FlashTrackBar` , který umožňuje zobrazit uživatele, úroveň nebo průběh aplikace.</span><span class="sxs-lookup"><span data-stu-id="aec04-103">The following code example shows a custom control called `FlashTrackBar` that can be used to show the user the level or the progress of an application.</span></span> <span data-ttu-id="aec04-104">Použije barevný přechod vizuálně znázornit průběh.</span><span class="sxs-lookup"><span data-stu-id="aec04-104">It uses a gradient to visually represent progress.</span></span>  
+# <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a><span data-ttu-id="f90bd-102">Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh</span><span class="sxs-lookup"><span data-stu-id="f90bd-102">How to: Create a Windows Forms Control That Shows Progress</span></span>
+<span data-ttu-id="f90bd-103">Následující příklad kódu ukazuje vlastního ovládacího prvku volá `FlashTrackBar` , který umožňuje zobrazit uživatele, úroveň nebo průběh aplikace.</span><span class="sxs-lookup"><span data-stu-id="f90bd-103">The following code example shows a custom control called `FlashTrackBar` that can be used to show the user the level or the progress of an application.</span></span> <span data-ttu-id="f90bd-104">Použije barevný přechod vizuálně znázornit průběh.</span><span class="sxs-lookup"><span data-stu-id="f90bd-104">It uses a gradient to visually represent progress.</span></span>  
   
- <span data-ttu-id="aec04-105">`FlashTrackBar` Ovládací prvek znázorňuje tyto koncepty:</span><span class="sxs-lookup"><span data-stu-id="aec04-105">The `FlashTrackBar` control illustrates the following concepts:</span></span>  
+ <span data-ttu-id="f90bd-105">`FlashTrackBar` Ovládací prvek znázorňuje tyto koncepty:</span><span class="sxs-lookup"><span data-stu-id="f90bd-105">The `FlashTrackBar` control illustrates the following concepts:</span></span>  
   
-- <span data-ttu-id="aec04-106">Definování vlastních vlastností.</span><span class="sxs-lookup"><span data-stu-id="aec04-106">Defining custom properties.</span></span>  
+- <span data-ttu-id="f90bd-106">Definování vlastních vlastností.</span><span class="sxs-lookup"><span data-stu-id="f90bd-106">Defining custom properties.</span></span>  
   
-- <span data-ttu-id="aec04-107">Definování vlastních událostí.</span><span class="sxs-lookup"><span data-stu-id="aec04-107">Defining custom events.</span></span> <span data-ttu-id="aec04-108">(`FlashTrackBar` definuje `ValueChanged` události.)</span><span class="sxs-lookup"><span data-stu-id="aec04-108">(`FlashTrackBar` defines the `ValueChanged` event.)</span></span>  
+- <span data-ttu-id="f90bd-107">Definování vlastních událostí.</span><span class="sxs-lookup"><span data-stu-id="f90bd-107">Defining custom events.</span></span> <span data-ttu-id="f90bd-108">(`FlashTrackBar` definuje `ValueChanged` události.)</span><span class="sxs-lookup"><span data-stu-id="f90bd-108">(`FlashTrackBar` defines the `ValueChanged` event.)</span></span>  
   
-- <span data-ttu-id="aec04-109">Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metodu k dispozici logiku pro vykreslení ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="aec04-109">Overriding the <xref:System.Windows.Forms.Control.OnPaint%2A> method to provide logic to draw the control.</span></span>  
+- <span data-ttu-id="f90bd-109">Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metodu k dispozici logiku pro vykreslení ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="f90bd-109">Overriding the <xref:System.Windows.Forms.Control.OnPaint%2A> method to provide logic to draw the control.</span></span>  
   
-- <span data-ttu-id="aec04-110">Výpočetní oblasti k dispozici pro vykreslení ovládacího prvku s použitím jeho <xref:System.Windows.Forms.Control.ClientRectangle%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="aec04-110">Computing the area available for drawing the control by using its <xref:System.Windows.Forms.Control.ClientRectangle%2A> property.</span></span> <span data-ttu-id="aec04-111">`FlashTrackBar` to dělá jeho `OptimizedInvalidate` metoda.</span><span class="sxs-lookup"><span data-stu-id="aec04-111">`FlashTrackBar` does this in its `OptimizedInvalidate` method.</span></span>  
+- <span data-ttu-id="f90bd-110">Výpočetní oblasti k dispozici pro vykreslení ovládacího prvku s použitím jeho <xref:System.Windows.Forms.Control.ClientRectangle%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="f90bd-110">Computing the area available for drawing the control by using its <xref:System.Windows.Forms.Control.ClientRectangle%2A> property.</span></span> <span data-ttu-id="f90bd-111">`FlashTrackBar` to dělá jeho `OptimizedInvalidate` metoda.</span><span class="sxs-lookup"><span data-stu-id="f90bd-111">`FlashTrackBar` does this in its `OptimizedInvalidate` method.</span></span>  
   
-- <span data-ttu-id="aec04-112">Implementace serializace nebo trvalosti pro vlastnost, když se změní v Návrháři formulářů Windows.</span><span class="sxs-lookup"><span data-stu-id="aec04-112">Implementing serialization or persistence for a property when it is changed in the Windows Forms Designer.</span></span> <span data-ttu-id="aec04-113">`FlashTrackBar` definuje `ShouldSerializeStartColor` a `ShouldSerializeEndColor` metody pro serializaci jeho `StartColor` a `EndColor` vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="aec04-113">`FlashTrackBar` defines the `ShouldSerializeStartColor` and `ShouldSerializeEndColor` methods for serializing its `StartColor` and `EndColor` properties.</span></span>  
+- <span data-ttu-id="f90bd-112">Implementace serializace nebo trvalosti pro vlastnost, když se změní v Návrháři formulářů Windows.</span><span class="sxs-lookup"><span data-stu-id="f90bd-112">Implementing serialization or persistence for a property when it is changed in the Windows Forms Designer.</span></span> <span data-ttu-id="f90bd-113">`FlashTrackBar` definuje `ShouldSerializeStartColor` a `ShouldSerializeEndColor` metody pro serializaci jeho `StartColor` a `EndColor` vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f90bd-113">`FlashTrackBar` defines the `ShouldSerializeStartColor` and `ShouldSerializeEndColor` methods for serializing its `StartColor` and `EndColor` properties.</span></span>  
   
- <span data-ttu-id="aec04-114">V následující tabulce jsou uvedeny vlastní vlastnosti definované `FlashTrackBar`.</span><span class="sxs-lookup"><span data-stu-id="aec04-114">The following table shows the custom properties defined by `FlashTrackBar`.</span></span>  
+ <span data-ttu-id="f90bd-114">V následující tabulce jsou uvedeny vlastní vlastnosti definované `FlashTrackBar`.</span><span class="sxs-lookup"><span data-stu-id="f90bd-114">The following table shows the custom properties defined by `FlashTrackBar`.</span></span>  
   
-|<span data-ttu-id="aec04-115">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="aec04-115">Property</span></span>|<span data-ttu-id="aec04-116">Popis</span><span class="sxs-lookup"><span data-stu-id="aec04-116">Description</span></span>|  
+|<span data-ttu-id="f90bd-115">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="f90bd-115">Property</span></span>|<span data-ttu-id="f90bd-116">Popis</span><span class="sxs-lookup"><span data-stu-id="f90bd-116">Description</span></span>|  
 |--------------|-----------------|  
-|`AllowUserEdit`|<span data-ttu-id="aec04-117">Určuje, zda uživatel může změnit hodnotu pruh sledování flash kliknutím a přetažením.</span><span class="sxs-lookup"><span data-stu-id="aec04-117">Indicates whether the user can change the value of the flash track bar by clicking and dragging it.</span></span>|  
-|`EndColor`|<span data-ttu-id="aec04-118">Určuje koncovou barvu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="aec04-118">Specifies the ending color of the track bar.</span></span>|  
-|`DarkenBy`|<span data-ttu-id="aec04-119">Určuje, kolik ztmavení na pozadí s ohledem na popředí přechodu.</span><span class="sxs-lookup"><span data-stu-id="aec04-119">Specifies how much to darken the background with respect to the foreground gradient.</span></span>|  
-|`Max`|<span data-ttu-id="aec04-120">Určuje maximální hodnotu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="aec04-120">Specifies the maximum value of the track bar.</span></span>|  
-|`Min`|<span data-ttu-id="aec04-121">Určuje minimální hodnotu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="aec04-121">Specifies the minimum value of the track bar.</span></span>|  
-|`StartColor`|<span data-ttu-id="aec04-122">Určuje počáteční barva přechodu.</span><span class="sxs-lookup"><span data-stu-id="aec04-122">Specifies the starting color of the gradient.</span></span>|  
-|`ShowPercentage`|<span data-ttu-id="aec04-123">Určuje, jestli se má zobrazit v procentech přechodu.</span><span class="sxs-lookup"><span data-stu-id="aec04-123">Indicates whether to display a percentage over the gradient.</span></span>|  
-|`ShowValue`|<span data-ttu-id="aec04-124">Určuje, jestli se má zobrazit aktuální hodnotu přechodu.</span><span class="sxs-lookup"><span data-stu-id="aec04-124">Indicates whether to display the current value over the gradient.</span></span>|  
-|`ShowGradient`|<span data-ttu-id="aec04-125">Udává, zda pruh sledování by měla zobrazit barva přechodu zobrazuje aktuální hodnotu.</span><span class="sxs-lookup"><span data-stu-id="aec04-125">Indicates whether the track bar should display a color gradient showing the current value.</span></span>|  
-|-   `Value`|<span data-ttu-id="aec04-126">Určuje aktuální hodnotu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="aec04-126">Specifies the current value of the track bar.</span></span>|  
+|`AllowUserEdit`|<span data-ttu-id="f90bd-117">Určuje, zda uživatel může změnit hodnotu pruh sledování flash kliknutím a přetažením.</span><span class="sxs-lookup"><span data-stu-id="f90bd-117">Indicates whether the user can change the value of the flash track bar by clicking and dragging it.</span></span>|  
+|`EndColor`|<span data-ttu-id="f90bd-118">Určuje koncovou barvu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="f90bd-118">Specifies the ending color of the track bar.</span></span>|  
+|`DarkenBy`|<span data-ttu-id="f90bd-119">Určuje, kolik ztmavení na pozadí s ohledem na popředí přechodu.</span><span class="sxs-lookup"><span data-stu-id="f90bd-119">Specifies how much to darken the background with respect to the foreground gradient.</span></span>|  
+|`Max`|<span data-ttu-id="f90bd-120">Určuje maximální hodnotu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="f90bd-120">Specifies the maximum value of the track bar.</span></span>|  
+|`Min`|<span data-ttu-id="f90bd-121">Určuje minimální hodnotu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="f90bd-121">Specifies the minimum value of the track bar.</span></span>|  
+|`StartColor`|<span data-ttu-id="f90bd-122">Určuje počáteční barva přechodu.</span><span class="sxs-lookup"><span data-stu-id="f90bd-122">Specifies the starting color of the gradient.</span></span>|  
+|`ShowPercentage`|<span data-ttu-id="f90bd-123">Určuje, jestli se má zobrazit v procentech přechodu.</span><span class="sxs-lookup"><span data-stu-id="f90bd-123">Indicates whether to display a percentage over the gradient.</span></span>|  
+|`ShowValue`|<span data-ttu-id="f90bd-124">Určuje, jestli se má zobrazit aktuální hodnotu přechodu.</span><span class="sxs-lookup"><span data-stu-id="f90bd-124">Indicates whether to display the current value over the gradient.</span></span>|  
+|`ShowGradient`|<span data-ttu-id="f90bd-125">Udává, zda pruh sledování by měla zobrazit barva přechodu zobrazuje aktuální hodnotu.</span><span class="sxs-lookup"><span data-stu-id="f90bd-125">Indicates whether the track bar should display a color gradient showing the current value.</span></span>|  
+|-   `Value`|<span data-ttu-id="f90bd-126">Určuje aktuální hodnotu pruh sledování.</span><span class="sxs-lookup"><span data-stu-id="f90bd-126">Specifies the current value of the track bar.</span></span>|  
   
- <span data-ttu-id="aec04-127">V následující tabulce jsou uvedeny další členy definované `FlashTrackBar:` události změny vlastnosti a metody, která vyvolává událost.</span><span class="sxs-lookup"><span data-stu-id="aec04-127">The following table shows additional members defined by `FlashTrackBar:` the property-changed event and the method that raises the event.</span></span>  
+ <span data-ttu-id="f90bd-127">V následující tabulce jsou uvedeny další členy definované `FlashTrackBar:` události změny vlastnosti a metody, která vyvolává událost.</span><span class="sxs-lookup"><span data-stu-id="f90bd-127">The following table shows additional members defined by `FlashTrackBar:` the property-changed event and the method that raises the event.</span></span>  
   
-|<span data-ttu-id="aec04-128">Člen</span><span class="sxs-lookup"><span data-stu-id="aec04-128">Member</span></span>|<span data-ttu-id="aec04-129">Popis</span><span class="sxs-lookup"><span data-stu-id="aec04-129">Description</span></span>|  
+|<span data-ttu-id="f90bd-128">Člen</span><span class="sxs-lookup"><span data-stu-id="f90bd-128">Member</span></span>|<span data-ttu-id="f90bd-129">Popis</span><span class="sxs-lookup"><span data-stu-id="f90bd-129">Description</span></span>|  
 |------------|-----------------|  
-|`ValueChanged`|<span data-ttu-id="aec04-130">Událost, která je vyvolána při `Value` vlastnost pruh sledování změn.</span><span class="sxs-lookup"><span data-stu-id="aec04-130">The event that is raised when the `Value` property of the track bar changes.</span></span>|  
-|`OnValueChanged`|<span data-ttu-id="aec04-131">Metoda, která vyvolá `ValueChanged` událostí.</span><span class="sxs-lookup"><span data-stu-id="aec04-131">The method that raises the `ValueChanged` event.</span></span>|  
+|`ValueChanged`|<span data-ttu-id="f90bd-130">Událost, která je vyvolána při `Value` vlastnost pruh sledování změn.</span><span class="sxs-lookup"><span data-stu-id="f90bd-130">The event that is raised when the `Value` property of the track bar changes.</span></span>|  
+|`OnValueChanged`|<span data-ttu-id="f90bd-131">Metoda, která vyvolá `ValueChanged` událostí.</span><span class="sxs-lookup"><span data-stu-id="f90bd-131">The method that raises the `ValueChanged` event.</span></span>|  
   
 > [!NOTE]
->  <span data-ttu-id="aec04-132">`FlashTrackBar` používá <xref:System.EventArgs> třídu pro data události a <xref:System.EventHandler> pro delegáta události.</span><span class="sxs-lookup"><span data-stu-id="aec04-132">`FlashTrackBar` uses the <xref:System.EventArgs> class for event data and <xref:System.EventHandler> for the event delegate.</span></span>  
+>  <span data-ttu-id="f90bd-132">`FlashTrackBar` používá <xref:System.EventArgs> třídu pro data události a <xref:System.EventHandler> pro delegáta události.</span><span class="sxs-lookup"><span data-stu-id="f90bd-132">`FlashTrackBar` uses the <xref:System.EventArgs> class for event data and <xref:System.EventHandler> for the event delegate.</span></span>  
   
- <span data-ttu-id="aec04-133">Pro zpracování odpovídající *EventName* události, `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span><span class="sxs-lookup"><span data-stu-id="aec04-133">To handle the corresponding *EventName* events, `FlashTrackBar` overrides the following methods that it inherits from <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span></span>  
+ <span data-ttu-id="f90bd-133">Pro zpracování odpovídající *EventName* události, `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span><span class="sxs-lookup"><span data-stu-id="f90bd-133">To handle the corresponding *EventName* events, `FlashTrackBar` overrides the following methods that it inherits from <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span></span>  
   
 - <xref:System.Windows.Forms.Control.OnPaint%2A>  
   
@@ -69,7 +69,7 @@ ms.locfileid: "61746685"
   
 - <xref:System.Windows.Forms.Control.OnResize%2A>  
   
- <span data-ttu-id="aec04-134">Pro zpracování odpovídající události změny vlastnosti `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span><span class="sxs-lookup"><span data-stu-id="aec04-134">To handle the corresponding property-changed events, `FlashTrackBar` overrides the following methods that it inherits from <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span></span>  
+ <span data-ttu-id="f90bd-134">Pro zpracování odpovídající události změny vlastnosti `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span><span class="sxs-lookup"><span data-stu-id="f90bd-134">To handle the corresponding property-changed events, `FlashTrackBar` overrides the following methods that it inherits from <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:</span></span>  
   
 - <xref:System.Windows.Forms.Control.OnBackColorChanged%2A>  
   
@@ -77,8 +77,8 @@ ms.locfileid: "61746685"
   
 - <xref:System.Windows.Forms.Control.OnTextChanged%2A>  
   
-## <a name="example"></a><span data-ttu-id="aec04-135">Příklad</span><span class="sxs-lookup"><span data-stu-id="aec04-135">Example</span></span>  
- <span data-ttu-id="aec04-136">`FlashTrackBar` Ovládací prvek definuje dvě editory typů uživatelského rozhraní, `FlashTrackBarValueEditor` a `FlashTrackBarDarkenByEditor`, které jsou uvedeny v následující výpis kódu.</span><span class="sxs-lookup"><span data-stu-id="aec04-136">The `FlashTrackBar` control defines two UI type editors, `FlashTrackBarValueEditor` and `FlashTrackBarDarkenByEditor`, which are shown in the following code listings.</span></span> <span data-ttu-id="aec04-137">`HostApp` Třídy používá `FlashTrackBar` ovládací prvek na formuláři Windows.</span><span class="sxs-lookup"><span data-stu-id="aec04-137">The `HostApp` class uses the `FlashTrackBar` control on a Windows Form.</span></span>  
+## <a name="example"></a><span data-ttu-id="f90bd-135">Příklad</span><span class="sxs-lookup"><span data-stu-id="f90bd-135">Example</span></span>  
+ <span data-ttu-id="f90bd-136">`FlashTrackBar` Ovládací prvek definuje dvě editory typů uživatelského rozhraní, `FlashTrackBarValueEditor` a `FlashTrackBarDarkenByEditor`, které jsou uvedeny v následující výpis kódu.</span><span class="sxs-lookup"><span data-stu-id="f90bd-136">The `FlashTrackBar` control defines two UI type editors, `FlashTrackBarValueEditor` and `FlashTrackBarDarkenByEditor`, which are shown in the following code listings.</span></span> <span data-ttu-id="f90bd-137">`HostApp` Třídy používá `FlashTrackBar` ovládací prvek na formuláři Windows.</span><span class="sxs-lookup"><span data-stu-id="f90bd-137">The `HostApp` class uses the `FlashTrackBar` control on a Windows Form.</span></span>  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#1)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#1)]  
@@ -92,7 +92,7 @@ ms.locfileid: "61746685"
  [!code-csharp[System.Windows.Forms.FlashTrackBar#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/HostApp.cs#30)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/HostApp.vb#30)]  
   
-## <a name="see-also"></a><span data-ttu-id="aec04-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aec04-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f90bd-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f90bd-138">See also</span></span>
 
-- <span data-ttu-id="aec04-139">[Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))</span><span class="sxs-lookup"><span data-stu-id="aec04-139">[Extending Design-Time Support](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))</span></span>
-- [<span data-ttu-id="aec04-140">Základní informace o vývoji ovládacích prvků Windows Forms</span><span class="sxs-lookup"><span data-stu-id="aec04-140">Windows Forms Control Development Basics</span></span>](windows-forms-control-development-basics.md)
+- <span data-ttu-id="f90bd-139">[Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))</span><span class="sxs-lookup"><span data-stu-id="f90bd-139">[Extending Design-Time Support](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))</span></span>
+- [<span data-ttu-id="f90bd-140">Základní informace o vývoji ovládacích prvků Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f90bd-140">Windows Forms Control Development Basics</span></span>](windows-forms-control-development-basics.md)

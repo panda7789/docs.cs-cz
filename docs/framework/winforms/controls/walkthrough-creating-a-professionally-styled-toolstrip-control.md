@@ -10,184 +10,174 @@ helpviewer_keywords:
 - toolbars [Windows Forms], walkthroughs
 - ToolStrip control [Windows Forms], creating professionally styled controls
 ms.assetid: b52339ae-f1d3-494e-996e-eb455614098a
-ms.openlocfilehash: 526cb509d780abdbf3db6e15504616de19daae83
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 226e805d0240236899ee0cc290f1060a3b0aa391
+ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009094"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65211761"
 ---
-# <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a><span data-ttu-id="37b39-102">Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem</span><span class="sxs-lookup"><span data-stu-id="37b39-102">Walkthrough: Creating a Professionally Styled ToolStrip Control</span></span>
-<span data-ttu-id="37b39-103">Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování napsáním vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.</span><span class="sxs-lookup"><span data-stu-id="37b39-103">You can give your application’s <xref:System.Windows.Forms.ToolStrip> controls a professional appearance and behavior by writing your own class derived from the <xref:System.Windows.Forms.ToolStripProfessionalRenderer> type.</span></span>  
-  
- <span data-ttu-id="37b39-104">Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStrip> ovládací prvky pro vytvoření složeného ovládacího prvku, který se podobá **navigačním podokně** poskytované Microsoft Outlook®.</span><span class="sxs-lookup"><span data-stu-id="37b39-104">This walkthrough demonstrates how to use <xref:System.Windows.Forms.ToolStrip> controls to create a composite control that resembles the **Navigation Pane** provided by Microsoft® Outlook®.</span></span> <span data-ttu-id="37b39-105">Tyto úlohy jsou uvedené v tomto návodu:</span><span class="sxs-lookup"><span data-stu-id="37b39-105">The following tasks are illustrated in this walkthrough:</span></span>  
-  
-- <span data-ttu-id="37b39-106">Vytvoření projektu knihovny ovládacích prvků Windows.</span><span class="sxs-lookup"><span data-stu-id="37b39-106">Creating a Windows Control Library project.</span></span>  
-  
-- <span data-ttu-id="37b39-107">Návrh StackView ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-107">Designing the StackView Control.</span></span>  
-  
-- <span data-ttu-id="37b39-108">Implementace vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="37b39-108">Implementing a Custom Renderer.</span></span>  
-  
- <span data-ttu-id="37b39-109">Až budete hotovi, budete mít opakovaně použitelné vlastní ovládací prvek s profesionální vzhled aplikace Microsoft Office® XP ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-109">When you are finished, you will have a reusable custom client control with the professional appearance of a Microsoft Office® XP control.</span></span>  
-  
- <span data-ttu-id="37b39-110">Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Vytvoření ovládacího prvku ToolStrip s profesionálním](how-to-create-a-professionally-styled-toolstrip-control.md).</span><span class="sxs-lookup"><span data-stu-id="37b39-110">To copy the code in this topic as a single listing, see [How to: Create a Professionally Styled ToolStrip Control](how-to-create-a-professionally-styled-toolstrip-control.md).</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="37b39-111">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="37b39-111">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="37b39-112">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="37b39-112">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="37b39-113">Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).</span><span class="sxs-lookup"><span data-stu-id="37b39-113">For more information, see [Personalize the Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).</span></span>  
-  
-## <a name="prerequisites"></a><span data-ttu-id="37b39-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="37b39-114">Prerequisites</span></span>  
- <span data-ttu-id="37b39-115">K dokončení tohoto návodu budete potřebovat:</span><span class="sxs-lookup"><span data-stu-id="37b39-115">In order to complete this walkthrough, you will need:</span></span>  
-  
-- <span data-ttu-id="37b39-116">Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="37b39-116">Sufficient permissions to be able to create and run Windows Forms application projects on the computer where Visual Studio is installed.</span></span>  
-  
-## <a name="creating-a-windows-control-library-project"></a><span data-ttu-id="37b39-117">Vytvoření projektu knihovny ovládacích prvků Windows</span><span class="sxs-lookup"><span data-stu-id="37b39-117">Creating a Windows Control Library Project</span></span>  
- <span data-ttu-id="37b39-118">Prvním krokem je vytvoření projektu knihovny ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="37b39-118">The first step is to create the control library project.</span></span>  
-  
-#### <a name="to-create-the-control-library-project"></a><span data-ttu-id="37b39-119">Vytvoření projektu knihovny ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="37b39-119">To create the control library project</span></span>  
-  
-1. <span data-ttu-id="37b39-120">Vytvořte nový projekt knihovny ovládacích prvků Windows s názvem `StackViewLibrary`.</span><span class="sxs-lookup"><span data-stu-id="37b39-120">Create a new Windows Control Library project named `StackViewLibrary`.</span></span>  
-  
-2. <span data-ttu-id="37b39-121">V **Průzkumníka řešení**, odstraňte výchozí ovládací prvek projektu tak, že odstraníte zdrojový soubor s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk.</span><span class="sxs-lookup"><span data-stu-id="37b39-121">In **Solution Explorer**, delete the project's default control by deleting the source file named "UserControl1.cs" or "UserControl1.vb", depending on your language of choice.</span></span>  
-  
-     <span data-ttu-id="37b39-122">Další informace najdete v tématu [jak: Odebrat, odstranit a vyloučit položky](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="37b39-122">For more information, see [How to: Remove, Delete, and Exclude Items](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).</span></span>  
-  
-3. <span data-ttu-id="37b39-123">Přidat nový <xref:System.Windows.Forms.UserControl> položkou **StackViewLibrary** projektu.</span><span class="sxs-lookup"><span data-stu-id="37b39-123">Add a new <xref:System.Windows.Forms.UserControl> item to the **StackViewLibrary** project.</span></span> <span data-ttu-id="37b39-124">Zadejte základní název nového zdrojového souboru `StackView`.</span><span class="sxs-lookup"><span data-stu-id="37b39-124">Give the new source file a base name of `StackView`.</span></span>  
-  
-## <a name="designing-the-stackview-control"></a><span data-ttu-id="37b39-125">Návrh StackView ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="37b39-125">Designing the StackView Control</span></span>  
- <span data-ttu-id="37b39-126">`StackView` Složeného ovládacího prvku s jeden podřízený prvek je ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-126">The `StackView` control is a composite control with one child <xref:System.Windows.Forms.ToolStrip> control.</span></span> <span data-ttu-id="37b39-127">Další informace o složených ovládacích prvků naleznete v tématu [typy Custom Controls](varieties-of-custom-controls.md).</span><span class="sxs-lookup"><span data-stu-id="37b39-127">For more information about composite controls, see [Varieties of Custom Controls](varieties-of-custom-controls.md).</span></span>  
-  
-#### <a name="to-design-the-stackview-control"></a><span data-ttu-id="37b39-128">Chcete-li navrhnout StackView ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="37b39-128">To design the StackView control</span></span>  
-  
-1. <span data-ttu-id="37b39-129">Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ToolStrip> ovládací prvek na návrhovou plochu.</span><span class="sxs-lookup"><span data-stu-id="37b39-129">From the **Toolbox**, drag a <xref:System.Windows.Forms.ToolStrip> control to the design surface.</span></span>  
-  
-2. <span data-ttu-id="37b39-130">V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStrip> ovládacího prvku vlastnosti podle následující tabulky.</span><span class="sxs-lookup"><span data-stu-id="37b39-130">In the **Properties** window, set the <xref:System.Windows.Forms.ToolStrip> control's properties according to the following table.</span></span>  
-  
-    |<span data-ttu-id="37b39-131">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="37b39-131">Property</span></span>|<span data-ttu-id="37b39-132">Value</span><span class="sxs-lookup"><span data-stu-id="37b39-132">Value</span></span>|  
-    |--------------|-----------|  
-    |<span data-ttu-id="37b39-133">Název</span><span class="sxs-lookup"><span data-stu-id="37b39-133">Name</span></span>|`stackStrip`|  
-    |<span data-ttu-id="37b39-134">CanOverflow.</span><span class="sxs-lookup"><span data-stu-id="37b39-134">CanOverflow</span></span>|`false`|  
-    |<span data-ttu-id="37b39-135">Ukotvení</span><span class="sxs-lookup"><span data-stu-id="37b39-135">Dock</span></span>|<xref:System.Windows.Forms.DockStyle.Bottom>|  
-    |<span data-ttu-id="37b39-136">Písma</span><span class="sxs-lookup"><span data-stu-id="37b39-136">Font</span></span>|`Tahoma, 10pt, style=Bold`|  
-    |<span data-ttu-id="37b39-137">GripStyle</span><span class="sxs-lookup"><span data-stu-id="37b39-137">GripStyle</span></span>|<xref:System.Windows.Forms.ToolStripGripStyle.Hidden>|  
-    |<span data-ttu-id="37b39-138">LayoutStyle</span><span class="sxs-lookup"><span data-stu-id="37b39-138">LayoutStyle</span></span>|<xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow>|  
-    |<span data-ttu-id="37b39-139">Padding</span><span class="sxs-lookup"><span data-stu-id="37b39-139">Padding</span></span>|`0, 7, 0, 0`|  
-    |<span data-ttu-id="37b39-140">RenderMode</span><span class="sxs-lookup"><span data-stu-id="37b39-140">RenderMode</span></span>|<xref:System.Windows.Forms.ToolStripRenderMode.Professional>|  
-  
-3. <span data-ttu-id="37b39-141">V Návrháři formulářů Windows, klikněte na tlačítko <xref:System.Windows.Forms.ToolStrip> ovládacího prvku **přidat** tlačítko a přidat <xref:System.Windows.Forms.ToolStripButton> k `stackStrip` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-141">In the Windows Forms Designer, click the <xref:System.Windows.Forms.ToolStrip> control's **Add** button and add a <xref:System.Windows.Forms.ToolStripButton> to the `stackStrip` control.</span></span>  
-  
-4. <span data-ttu-id="37b39-142">V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStripButton> ovládacího prvku vlastnosti podle následující tabulky.</span><span class="sxs-lookup"><span data-stu-id="37b39-142">In the **Properties** window, set the <xref:System.Windows.Forms.ToolStripButton> control's properties according to the following table.</span></span>  
-  
-    |<span data-ttu-id="37b39-143">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="37b39-143">Property</span></span>|<span data-ttu-id="37b39-144">Value</span><span class="sxs-lookup"><span data-stu-id="37b39-144">Value</span></span>|  
-    |--------------|-----------|  
-    |<span data-ttu-id="37b39-145">Název</span><span class="sxs-lookup"><span data-stu-id="37b39-145">Name</span></span>|`mailStackButton`|  
-    |<span data-ttu-id="37b39-146">CheckOnClick</span><span class="sxs-lookup"><span data-stu-id="37b39-146">CheckOnClick</span></span>|<span data-ttu-id="37b39-147">true</span><span class="sxs-lookup"><span data-stu-id="37b39-147">true</span></span>|  
-    |<span data-ttu-id="37b39-148">– CheckState</span><span class="sxs-lookup"><span data-stu-id="37b39-148">CheckState</span></span>|<xref:System.Windows.Forms.CheckState.Checked>|  
-    |<span data-ttu-id="37b39-149">DisplayStyle</span><span class="sxs-lookup"><span data-stu-id="37b39-149">DisplayStyle</span></span>|<xref:System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText>|  
-    |<span data-ttu-id="37b39-150">ImageAlign</span><span class="sxs-lookup"><span data-stu-id="37b39-150">ImageAlign</span></span>|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
-    |<span data-ttu-id="37b39-151">ImageScaling</span><span class="sxs-lookup"><span data-stu-id="37b39-151">ImageScaling</span></span>|<xref:System.Windows.Forms.ToolStripItemImageScaling.None>|  
-    |<span data-ttu-id="37b39-152">ImageTransparentColor</span><span class="sxs-lookup"><span data-stu-id="37b39-152">ImageTransparentColor</span></span>|`238, 238, 238`|  
-    |<span data-ttu-id="37b39-153">Okraj</span><span class="sxs-lookup"><span data-stu-id="37b39-153">Margin</span></span>|`0, 0, 0, 0`|  
-    |<span data-ttu-id="37b39-154">Padding</span><span class="sxs-lookup"><span data-stu-id="37b39-154">Padding</span></span>|`3, 3, 3, 3`|  
-    |<span data-ttu-id="37b39-155">Text</span><span class="sxs-lookup"><span data-stu-id="37b39-155">Text</span></span>|<span data-ttu-id="37b39-156">**e-mailu**</span><span class="sxs-lookup"><span data-stu-id="37b39-156">**Mail**</span></span>|  
-    |<span data-ttu-id="37b39-157">TextAlign</span><span class="sxs-lookup"><span data-stu-id="37b39-157">TextAlign</span></span>|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
-  
-5. <span data-ttu-id="37b39-158">Opakujte krok 7 pro tři další <xref:System.Windows.Forms.ToolStripButton> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="37b39-158">Repeat step 7 for three more <xref:System.Windows.Forms.ToolStripButton> controls.</span></span>  
-  
-     <span data-ttu-id="37b39-159">Ovládací prvky pojmenujte `calendarStackButton`, `contactsStackButton`, a `tasksStackButton`.</span><span class="sxs-lookup"><span data-stu-id="37b39-159">Name the controls `calendarStackButton`, `contactsStackButton`, and `tasksStackButton`.</span></span> <span data-ttu-id="37b39-160">Nastavte hodnotu <xref:System.Windows.Forms.Control.Text%2A> vlastnost **kalendáře**, **kontakty**, a **úlohy**v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="37b39-160">Set the value of the <xref:System.Windows.Forms.Control.Text%2A> property to **Calendar**, **Contacts**, and **Tasks**, respectively.</span></span>  
-  
-## <a name="handling-events"></a><span data-ttu-id="37b39-161">Zpracování událostí</span><span class="sxs-lookup"><span data-stu-id="37b39-161">Handling Events</span></span>  
- <span data-ttu-id="37b39-162">Dvě události jsou důležité, aby `StackView` ovládací prvek se chovají správně.</span><span class="sxs-lookup"><span data-stu-id="37b39-162">Two events are important to make the `StackView` control behave correctly.</span></span> <span data-ttu-id="37b39-163">Zpracování <xref:System.Windows.Forms.UserControl.Load> událost pro umístění ovládacího prvku správně.</span><span class="sxs-lookup"><span data-stu-id="37b39-163">Handle the <xref:System.Windows.Forms.UserControl.Load> event to position the control correctly.</span></span> <span data-ttu-id="37b39-164">Zpracování <xref:System.Windows.Forms.ToolStripItem.Click> událost pro každou <xref:System.Windows.Forms.ToolStripButton> poskytnout `StackView` řídit chování stavu podobně jako <xref:System.Windows.Forms.RadioButton> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-164">Handle the <xref:System.Windows.Forms.ToolStripItem.Click> event for each <xref:System.Windows.Forms.ToolStripButton> to give the `StackView` control state behavior similar to the <xref:System.Windows.Forms.RadioButton> control.</span></span>  
-  
-#### <a name="to-handle-events"></a><span data-ttu-id="37b39-165">Zpracování událostí</span><span class="sxs-lookup"><span data-stu-id="37b39-165">To handle events</span></span>  
-  
-1. <span data-ttu-id="37b39-166">V Návrháři formulářů Windows, vyberte `StackView` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-166">In the Windows Forms Designer, select the `StackView` control.</span></span>  
-  
-2. <span data-ttu-id="37b39-167">V **vlastnosti** okna, klikněte na tlačítko **události**.</span><span class="sxs-lookup"><span data-stu-id="37b39-167">In the **Properties** window, click **Events**.</span></span>  
-  
-3. <span data-ttu-id="37b39-168">Poklikáním na událost zatížení ke generování `StackView_Load` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="37b39-168">Double-click the Load event to generate the `StackView_Load` event handler.</span></span>  
-  
-4. <span data-ttu-id="37b39-169">V `StackView_Load` obslužná rutina události, zkopírujte a vložte následující kód.</span><span class="sxs-lookup"><span data-stu-id="37b39-169">In the `StackView_Load` event handler, copy and paste the following code.</span></span>  
-  
+# <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a><span data-ttu-id="57e81-102">Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem</span><span class="sxs-lookup"><span data-stu-id="57e81-102">Walkthrough: Creating a Professionally Styled ToolStrip Control</span></span>
+
+<span data-ttu-id="57e81-103">Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování napsáním vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.</span><span class="sxs-lookup"><span data-stu-id="57e81-103">You can give your application’s <xref:System.Windows.Forms.ToolStrip> controls a professional appearance and behavior by writing your own class derived from the <xref:System.Windows.Forms.ToolStripProfessionalRenderer> type.</span></span>
+
+<span data-ttu-id="57e81-104">Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStrip> ovládací prvky pro vytvoření složeného ovládacího prvku, který se podobá **navigačním podokně** poskytované Microsoft Outlook®.</span><span class="sxs-lookup"><span data-stu-id="57e81-104">This walkthrough demonstrates how to use <xref:System.Windows.Forms.ToolStrip> controls to create a composite control that resembles the **Navigation Pane** provided by Microsoft® Outlook®.</span></span> <span data-ttu-id="57e81-105">Tyto úlohy jsou uvedené v tomto návodu:</span><span class="sxs-lookup"><span data-stu-id="57e81-105">The following tasks are illustrated in this walkthrough:</span></span>
+
+- <span data-ttu-id="57e81-106">Vytvoření projektu knihovny ovládacích prvků Windows.</span><span class="sxs-lookup"><span data-stu-id="57e81-106">Creating a Windows Control Library project.</span></span>
+
+- <span data-ttu-id="57e81-107">Návrh StackView ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-107">Designing the StackView Control.</span></span>
+
+- <span data-ttu-id="57e81-108">Implementace vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="57e81-108">Implementing a Custom Renderer.</span></span>
+
+<span data-ttu-id="57e81-109">Až budete hotovi, budete mít opakovaně použitelné vlastní ovládací prvek s profesionální vzhled aplikace Microsoft Office® XP ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-109">When you are finished, you will have a reusable custom client control with the professional appearance of a Microsoft Office® XP control.</span></span>
+
+<span data-ttu-id="57e81-110">Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Vytvoření ovládacího prvku ToolStrip s profesionálním](how-to-create-a-professionally-styled-toolstrip-control.md).</span><span class="sxs-lookup"><span data-stu-id="57e81-110">To copy the code in this topic as a single listing, see [How to: Create a Professionally Styled ToolStrip Control](how-to-create-a-professionally-styled-toolstrip-control.md).</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="57e81-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="57e81-111">Prerequisites</span></span>
+
+<span data-ttu-id="57e81-112">Visual Studio k dokončení tohoto návodu budete potřebovat.</span><span class="sxs-lookup"><span data-stu-id="57e81-112">You'll need Visual Studio to complete this walkthrough.</span></span>
+
+## <a name="create-the-control-library-project"></a><span data-ttu-id="57e81-113">Vytvoření projektu knihovny ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="57e81-113">Create the control library project</span></span>
+
+1. <span data-ttu-id="57e81-114">V sadě Visual Studio vytvořte nový projekt knihovny ovládacích prvků Windows s názvem `StackViewLibrary`.</span><span class="sxs-lookup"><span data-stu-id="57e81-114">In Visual Studio, create a new Windows Control Library project named `StackViewLibrary`.</span></span>
+
+2. <span data-ttu-id="57e81-115">V **Průzkumníka řešení**, odstraňte výchozí ovládací prvek projektu tak, že odstraníte zdrojový soubor s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk.</span><span class="sxs-lookup"><span data-stu-id="57e81-115">In **Solution Explorer**, delete the project's default control by deleting the source file named "UserControl1.cs" or "UserControl1.vb", depending on your language of choice.</span></span>
+
+     <span data-ttu-id="57e81-116">Další informace najdete v tématu [jak: Odebrat, odstranit a vyloučit položky](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="57e81-116">For more information, see [How to: Remove, Delete, and Exclude Items](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).</span></span>
+
+3. <span data-ttu-id="57e81-117">Přidat nový <xref:System.Windows.Forms.UserControl> položkou **StackViewLibrary** projektu.</span><span class="sxs-lookup"><span data-stu-id="57e81-117">Add a new <xref:System.Windows.Forms.UserControl> item to the **StackViewLibrary** project.</span></span> <span data-ttu-id="57e81-118">Zadejte základní název nového zdrojového souboru `StackView`.</span><span class="sxs-lookup"><span data-stu-id="57e81-118">Give the new source file a base name of `StackView`.</span></span>
+
+## <a name="design-the-stackview-control"></a><span data-ttu-id="57e81-119">Návrh StackView ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="57e81-119">Design the StackView control</span></span>
+
+<span data-ttu-id="57e81-120">`StackView` Složeného ovládacího prvku s jeden podřízený prvek je ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-120">The `StackView` control is a composite control with one child <xref:System.Windows.Forms.ToolStrip> control.</span></span> <span data-ttu-id="57e81-121">Další informace o složených ovládacích prvků naleznete v tématu [typy Custom Controls](varieties-of-custom-controls.md).</span><span class="sxs-lookup"><span data-stu-id="57e81-121">For more information about composite controls, see [Varieties of Custom Controls](varieties-of-custom-controls.md).</span></span>
+
+1. <span data-ttu-id="57e81-122">Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ToolStrip> ovládací prvek na návrhovou plochu.</span><span class="sxs-lookup"><span data-stu-id="57e81-122">From the **Toolbox**, drag a <xref:System.Windows.Forms.ToolStrip> control to the design surface.</span></span>
+
+2. <span data-ttu-id="57e81-123">V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStrip> ovládacího prvku vlastnosti podle následující tabulky.</span><span class="sxs-lookup"><span data-stu-id="57e81-123">In the **Properties** window, set the <xref:System.Windows.Forms.ToolStrip> control's properties according to the following table.</span></span>
+
+    |<span data-ttu-id="57e81-124">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="57e81-124">Property</span></span>|<span data-ttu-id="57e81-125">Value</span><span class="sxs-lookup"><span data-stu-id="57e81-125">Value</span></span>|
+    |--------------|-----------|
+    |<span data-ttu-id="57e81-126">Name</span><span class="sxs-lookup"><span data-stu-id="57e81-126">Name</span></span>|`stackStrip`|
+    |<span data-ttu-id="57e81-127">CanOverflow.</span><span class="sxs-lookup"><span data-stu-id="57e81-127">CanOverflow</span></span>|`false`|
+    |<span data-ttu-id="57e81-128">Ukotvení</span><span class="sxs-lookup"><span data-stu-id="57e81-128">Dock</span></span>|<xref:System.Windows.Forms.DockStyle.Bottom>|
+    |<span data-ttu-id="57e81-129">Písma</span><span class="sxs-lookup"><span data-stu-id="57e81-129">Font</span></span>|`Tahoma, 10pt, style=Bold`|
+    |<span data-ttu-id="57e81-130">GripStyle</span><span class="sxs-lookup"><span data-stu-id="57e81-130">GripStyle</span></span>|<xref:System.Windows.Forms.ToolStripGripStyle.Hidden>|
+    |<span data-ttu-id="57e81-131">LayoutStyle</span><span class="sxs-lookup"><span data-stu-id="57e81-131">LayoutStyle</span></span>|<xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow>|
+    |<span data-ttu-id="57e81-132">Padding</span><span class="sxs-lookup"><span data-stu-id="57e81-132">Padding</span></span>|`0, 7, 0, 0`|
+    |<span data-ttu-id="57e81-133">RenderMode</span><span class="sxs-lookup"><span data-stu-id="57e81-133">RenderMode</span></span>|<xref:System.Windows.Forms.ToolStripRenderMode.Professional>|
+
+3. <span data-ttu-id="57e81-134">V Návrháři formulářů Windows, klikněte na tlačítko <xref:System.Windows.Forms.ToolStrip> ovládacího prvku **přidat** tlačítko a přidat <xref:System.Windows.Forms.ToolStripButton> k `stackStrip` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-134">In the Windows Forms Designer, click the <xref:System.Windows.Forms.ToolStrip> control's **Add** button and add a <xref:System.Windows.Forms.ToolStripButton> to the `stackStrip` control.</span></span>
+
+4. <span data-ttu-id="57e81-135">V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStripButton> ovládacího prvku vlastnosti podle následující tabulky.</span><span class="sxs-lookup"><span data-stu-id="57e81-135">In the **Properties** window, set the <xref:System.Windows.Forms.ToolStripButton> control's properties according to the following table.</span></span>
+
+    |<span data-ttu-id="57e81-136">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="57e81-136">Property</span></span>|<span data-ttu-id="57e81-137">Hodnota</span><span class="sxs-lookup"><span data-stu-id="57e81-137">Value</span></span>|
+    |--------------|-----------|
+    |<span data-ttu-id="57e81-138">Name</span><span class="sxs-lookup"><span data-stu-id="57e81-138">Name</span></span>|`mailStackButton`|
+    |<span data-ttu-id="57e81-139">CheckOnClick</span><span class="sxs-lookup"><span data-stu-id="57e81-139">CheckOnClick</span></span>|<span data-ttu-id="57e81-140">true</span><span class="sxs-lookup"><span data-stu-id="57e81-140">true</span></span>|
+    |<span data-ttu-id="57e81-141">– CheckState</span><span class="sxs-lookup"><span data-stu-id="57e81-141">CheckState</span></span>|<xref:System.Windows.Forms.CheckState.Checked>|
+    |<span data-ttu-id="57e81-142">DisplayStyle</span><span class="sxs-lookup"><span data-stu-id="57e81-142">DisplayStyle</span></span>|<xref:System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText>|
+    |<span data-ttu-id="57e81-143">ImageAlign</span><span class="sxs-lookup"><span data-stu-id="57e81-143">ImageAlign</span></span>|<xref:System.Drawing.ContentAlignment.MiddleLeft>|
+    |<span data-ttu-id="57e81-144">ImageScaling</span><span class="sxs-lookup"><span data-stu-id="57e81-144">ImageScaling</span></span>|<xref:System.Windows.Forms.ToolStripItemImageScaling.None>|
+    |<span data-ttu-id="57e81-145">ImageTransparentColor</span><span class="sxs-lookup"><span data-stu-id="57e81-145">ImageTransparentColor</span></span>|`238, 238, 238`|
+    |<span data-ttu-id="57e81-146">Okraj</span><span class="sxs-lookup"><span data-stu-id="57e81-146">Margin</span></span>|`0, 0, 0, 0`|
+    |<span data-ttu-id="57e81-147">Padding</span><span class="sxs-lookup"><span data-stu-id="57e81-147">Padding</span></span>|`3, 3, 3, 3`|
+    |<span data-ttu-id="57e81-148">Text</span><span class="sxs-lookup"><span data-stu-id="57e81-148">Text</span></span>|<span data-ttu-id="57e81-149">**e-mailu**</span><span class="sxs-lookup"><span data-stu-id="57e81-149">**Mail**</span></span>|
+    |<span data-ttu-id="57e81-150">TextAlign</span><span class="sxs-lookup"><span data-stu-id="57e81-150">TextAlign</span></span>|<xref:System.Drawing.ContentAlignment.MiddleLeft>|
+
+5. <span data-ttu-id="57e81-151">Opakujte krok 7 pro tři další <xref:System.Windows.Forms.ToolStripButton> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="57e81-151">Repeat step 7 for three more <xref:System.Windows.Forms.ToolStripButton> controls.</span></span>
+
+     <span data-ttu-id="57e81-152">Ovládací prvky pojmenujte `calendarStackButton`, `contactsStackButton`, a `tasksStackButton`.</span><span class="sxs-lookup"><span data-stu-id="57e81-152">Name the controls `calendarStackButton`, `contactsStackButton`, and `tasksStackButton`.</span></span> <span data-ttu-id="57e81-153">Nastavte hodnotu <xref:System.Windows.Forms.Control.Text%2A> vlastnost **kalendáře**, **kontakty**, a **úlohy**v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="57e81-153">Set the value of the <xref:System.Windows.Forms.Control.Text%2A> property to **Calendar**, **Contacts**, and **Tasks**, respectively.</span></span>
+
+## <a name="handle-events"></a><span data-ttu-id="57e81-154">Zpracování událostí</span><span class="sxs-lookup"><span data-stu-id="57e81-154">Handle events</span></span>
+
+<span data-ttu-id="57e81-155">Dvě události jsou důležité, aby `StackView` ovládací prvek se chovají správně.</span><span class="sxs-lookup"><span data-stu-id="57e81-155">Two events are important to make the `StackView` control behave correctly.</span></span> <span data-ttu-id="57e81-156">Zpracování <xref:System.Windows.Forms.UserControl.Load> událost pro umístění ovládacího prvku správně.</span><span class="sxs-lookup"><span data-stu-id="57e81-156">Handle the <xref:System.Windows.Forms.UserControl.Load> event to position the control correctly.</span></span> <span data-ttu-id="57e81-157">Zpracování <xref:System.Windows.Forms.ToolStripItem.Click> událost pro každou <xref:System.Windows.Forms.ToolStripButton> poskytnout `StackView` řídit chování stavu podobně jako <xref:System.Windows.Forms.RadioButton> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-157">Handle the <xref:System.Windows.Forms.ToolStripItem.Click> event for each <xref:System.Windows.Forms.ToolStripButton> to give the `StackView` control state behavior similar to the <xref:System.Windows.Forms.RadioButton> control.</span></span>
+
+1. <span data-ttu-id="57e81-158">V Návrháři formulářů Windows, vyberte `StackView` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-158">In the Windows Forms Designer, select the `StackView` control.</span></span>
+
+2. <span data-ttu-id="57e81-159">V **vlastnosti** okna, klikněte na tlačítko **události**.</span><span class="sxs-lookup"><span data-stu-id="57e81-159">In the **Properties** window, click **Events**.</span></span>
+
+3. <span data-ttu-id="57e81-160">Poklikáním na událost zatížení ke generování `StackView_Load` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="57e81-160">Double-click the Load event to generate the `StackView_Load` event handler.</span></span>
+
+4. <span data-ttu-id="57e81-161">V `StackView_Load` obslužná rutina události, zkopírujte a vložte následující kód.</span><span class="sxs-lookup"><span data-stu-id="57e81-161">In the `StackView_Load` event handler, copy and paste the following code.</span></span>
+
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#3)]
-     [!code-vb[System.Windows.Forms.ToolStrip.StackView#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#3)]  
-  
-5. <span data-ttu-id="37b39-170">V Návrháři formulářů Windows, vyberte `mailStackButton` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-170">In the Windows Forms Designer, select the `mailStackButton` control.</span></span>  
-  
-6. <span data-ttu-id="37b39-171">V **vlastnosti** okna, klikněte na tlačítko **události**.</span><span class="sxs-lookup"><span data-stu-id="37b39-171">In the **Properties** window, click **Events**.</span></span>  
-  
-7. <span data-ttu-id="37b39-172">Dvakrát klikněte na událost Click.</span><span class="sxs-lookup"><span data-stu-id="37b39-172">Double-click the Click event.</span></span>  
-  
-     <span data-ttu-id="37b39-173">Generuje Návrhář formulářů Windows `mailStackButton_Click` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="37b39-173">The Windows Forms Designer generates the `mailStackButton_Click` event handler.</span></span>  
-  
-8. <span data-ttu-id="37b39-174">Přejmenovat `mailStackButton_Click` obslužnou rutinu události `stackButton_Click`.</span><span class="sxs-lookup"><span data-stu-id="37b39-174">Rename the `mailStackButton_Click` event handler to `stackButton_Click`.</span></span>  
-  
-     <span data-ttu-id="37b39-175">Další informace najdete v tématu [kódu symbol refaktoring pro přejmenování](/visualstudio/ide/reference/rename).</span><span class="sxs-lookup"><span data-stu-id="37b39-175">For more information, see [Rename a code symbol refactoring](/visualstudio/ide/reference/rename).</span></span>  
-  
-9. <span data-ttu-id="37b39-176">Vložte následující kód do `stackButton_Click` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="37b39-176">Insert the following code into the `stackButton_Click` event handler.</span></span>  
-  
+     [!code-vb[System.Windows.Forms.ToolStrip.StackView#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#3)]
+
+5. <span data-ttu-id="57e81-162">V Návrháři formulářů Windows, vyberte `mailStackButton` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-162">In the Windows Forms Designer, select the `mailStackButton` control.</span></span>
+
+6. <span data-ttu-id="57e81-163">V **vlastnosti** okna, klikněte na tlačítko **události**.</span><span class="sxs-lookup"><span data-stu-id="57e81-163">In the **Properties** window, click **Events**.</span></span>
+
+7. <span data-ttu-id="57e81-164">Dvakrát klikněte na událost Click.</span><span class="sxs-lookup"><span data-stu-id="57e81-164">Double-click the Click event.</span></span>
+
+     <span data-ttu-id="57e81-165">Generuje Návrhář formulářů Windows `mailStackButton_Click` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="57e81-165">The Windows Forms Designer generates the `mailStackButton_Click` event handler.</span></span>
+
+8. <span data-ttu-id="57e81-166">Přejmenovat `mailStackButton_Click` obslužnou rutinu události `stackButton_Click`.</span><span class="sxs-lookup"><span data-stu-id="57e81-166">Rename the `mailStackButton_Click` event handler to `stackButton_Click`.</span></span>
+
+     <span data-ttu-id="57e81-167">Další informace najdete v tématu [kódu symbol refaktoring pro přejmenování](/visualstudio/ide/reference/rename).</span><span class="sxs-lookup"><span data-stu-id="57e81-167">For more information, see [Rename a code symbol refactoring](/visualstudio/ide/reference/rename).</span></span>
+
+9. <span data-ttu-id="57e81-168">Vložte následující kód do `stackButton_Click` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="57e81-168">Insert the following code into the `stackButton_Click` event handler.</span></span>
+
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#4)]
-     [!code-vb[System.Windows.Forms.ToolStrip.StackView#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#4)]  
-  
-10. <span data-ttu-id="37b39-177">V Návrháři formulářů Windows, vyberte `calendarStackButton` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-177">In the Windows Forms Designer, select the `calendarStackButton` control.</span></span>  
-  
-11. <span data-ttu-id="37b39-178">V **vlastnosti** okně, nastavte na hodnotu událost Click `stackButton_Click` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="37b39-178">In the **Properties** window, set the Click event to the `stackButton_Click` event handler.</span></span>  
-  
-12. <span data-ttu-id="37b39-179">Opakujte kroky 10 a 11 pro `contactsStackButton` a `tasksStackButton` ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="37b39-179">Repeat steps 10 and 11 for the `contactsStackButton` and `tasksStackButton` controls.</span></span>  
-  
-## <a name="defining-icons"></a><span data-ttu-id="37b39-180">Definování ikony</span><span class="sxs-lookup"><span data-stu-id="37b39-180">Defining Icons</span></span>  
- <span data-ttu-id="37b39-181">Každý `StackView` má tlačítko přidružené ikonu.</span><span class="sxs-lookup"><span data-stu-id="37b39-181">Each `StackView` button has an associated icon.</span></span> <span data-ttu-id="37b39-182">Pro usnadnění práce jednotlivé ikony je vyjádřena jako řetězec s kódováním Base64, který je deserializován před <xref:System.Drawing.Bitmap> se vytvoří z něj.</span><span class="sxs-lookup"><span data-stu-id="37b39-182">For convenience, each icon is represented as a Base64-encoded string, which is deserialized before a <xref:System.Drawing.Bitmap> is created from it.</span></span> <span data-ttu-id="37b39-183">V produkčním prostředí ukládat data rastrového obrázku jako prostředku a ikony se zobrazí v Návrháři formulářů Windows.</span><span class="sxs-lookup"><span data-stu-id="37b39-183">In a production environment, you store bitmap data as a resource, and your icons appear in the Windows Forms Designer.</span></span> <span data-ttu-id="37b39-184">Další informace najdete v tématu [jak: Přidání obrázků na pozadí do formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dff9f95f(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="37b39-184">For more information, see [How to: Add Background Images to Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dff9f95f(v=vs.100)).</span></span>  
-  
-#### <a name="to-define-icons"></a><span data-ttu-id="37b39-185">Chcete-li definovat ikony</span><span class="sxs-lookup"><span data-stu-id="37b39-185">To define icons</span></span>  
-  
-1. <span data-ttu-id="37b39-186">V editoru kódu vložte následující kód do `StackView` definici třídy.</span><span class="sxs-lookup"><span data-stu-id="37b39-186">In the Code Editor, insert the following code into the `StackView` class definition.</span></span> <span data-ttu-id="37b39-187">Tento kód inicializuje rastrové obrázky pro <xref:System.Windows.Forms.ToolStripButton> ikony.</span><span class="sxs-lookup"><span data-stu-id="37b39-187">This code initializes the bitmaps for the <xref:System.Windows.Forms.ToolStripButton> icons.</span></span>  
-  
+     [!code-vb[System.Windows.Forms.ToolStrip.StackView#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#4)]
+
+10. <span data-ttu-id="57e81-169">V Návrháři formulářů Windows, vyberte `calendarStackButton` ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-169">In the Windows Forms Designer, select the `calendarStackButton` control.</span></span>
+
+11. <span data-ttu-id="57e81-170">V **vlastnosti** okně, nastavte na hodnotu událost Click `stackButton_Click` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="57e81-170">In the **Properties** window, set the Click event to the `stackButton_Click` event handler.</span></span>
+
+12. <span data-ttu-id="57e81-171">Opakujte kroky 10 a 11 pro `contactsStackButton` a `tasksStackButton` ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="57e81-171">Repeat steps 10 and 11 for the `contactsStackButton` and `tasksStackButton` controls.</span></span>
+
+## <a name="define-icons"></a><span data-ttu-id="57e81-172">Definování ikony</span><span class="sxs-lookup"><span data-stu-id="57e81-172">Define icons</span></span>
+
+<span data-ttu-id="57e81-173">Každý `StackView` má tlačítko přidružené ikonu.</span><span class="sxs-lookup"><span data-stu-id="57e81-173">Each `StackView` button has an associated icon.</span></span> <span data-ttu-id="57e81-174">Pro usnadnění práce jednotlivé ikony je vyjádřena jako řetězec s kódováním Base64, který je deserializován před <xref:System.Drawing.Bitmap> se vytvoří z něj.</span><span class="sxs-lookup"><span data-stu-id="57e81-174">For convenience, each icon is represented as a Base64-encoded string, which is deserialized before a <xref:System.Drawing.Bitmap> is created from it.</span></span> <span data-ttu-id="57e81-175">V produkčním prostředí ukládat data rastrového obrázku jako prostředku a ikony se zobrazí v Návrháři formulářů Windows.</span><span class="sxs-lookup"><span data-stu-id="57e81-175">In a production environment, you store bitmap data as a resource, and your icons appear in the Windows Forms Designer.</span></span> <span data-ttu-id="57e81-176">Další informace najdete v tématu [jak: Přidání obrázků na pozadí do formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dff9f95f(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="57e81-176">For more information, see [How to: Add Background Images to Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dff9f95f(v=vs.100)).</span></span>
+
+1. <span data-ttu-id="57e81-177">V editoru kódu vložte následující kód do `StackView` definici třídy.</span><span class="sxs-lookup"><span data-stu-id="57e81-177">In the Code Editor, insert the following code into the `StackView` class definition.</span></span> <span data-ttu-id="57e81-178">Tento kód inicializuje rastrové obrázky pro <xref:System.Windows.Forms.ToolStripButton> ikony.</span><span class="sxs-lookup"><span data-stu-id="57e81-178">This code initializes the bitmaps for the <xref:System.Windows.Forms.ToolStripButton> icons.</span></span>
+
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#2)]
-     [!code-vb[System.Windows.Forms.ToolStrip.StackView#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#2)]  
-  
-2. <span data-ttu-id="37b39-188">Přidejte volání `InitializeImages` metoda ve `StackView` konstruktoru třídy.</span><span class="sxs-lookup"><span data-stu-id="37b39-188">Add a call to the `InitializeImages` method in the `StackView` class constructor.</span></span>  
-  
+     [!code-vb[System.Windows.Forms.ToolStrip.StackView#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#2)]
+
+2. <span data-ttu-id="57e81-179">Přidejte volání `InitializeImages` metoda ve `StackView` konstruktoru třídy.</span><span class="sxs-lookup"><span data-stu-id="57e81-179">Add a call to the `InitializeImages` method in the `StackView` class constructor.</span></span>
+
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#5)]
-     [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]  
-  
-## <a name="implementing-a-custom-renderer"></a><span data-ttu-id="37b39-189">Implementace vlastního Rendereru</span><span class="sxs-lookup"><span data-stu-id="37b39-189">Implementing a Custom Renderer</span></span>  
- <span data-ttu-id="37b39-190">Můžete přizpůsobit většinu prvků `StackView` řídit Moje implementace, která je odvozena z třídy <xref:System.Windows.Forms.ToolStripRenderer> třídy.</span><span class="sxs-lookup"><span data-stu-id="37b39-190">You can customize most elements of the `StackView` control my implementing a class that derives from the <xref:System.Windows.Forms.ToolStripRenderer> class.</span></span> <span data-ttu-id="37b39-191">V tomto postupu budete implementovat <xref:System.Windows.Forms.ToolStripProfessionalRenderer> třídu, která přizpůsobí úchytu a vykreslí barevného přechodu pozadí <xref:System.Windows.Forms.ToolStripButton> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="37b39-191">In this procedure, you will implement a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> class that customizes the grip and draws gradient backgrounds for the <xref:System.Windows.Forms.ToolStripButton> controls.</span></span>  
-  
-#### <a name="to-implement-a-custom-renderer"></a><span data-ttu-id="37b39-192">Implementace vlastního rendereru</span><span class="sxs-lookup"><span data-stu-id="37b39-192">To implement a custom renderer</span></span>  
-  
-1. <span data-ttu-id="37b39-193">Vložte následující kód do `StackView` definici ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="37b39-193">Insert the following code into the `StackView` control definition.</span></span>  
-  
-     <span data-ttu-id="37b39-194">Toto je definice `StackRenderer` třídy, která přepisuje <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, a <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> metody k vytvoření vlastní vzhled.</span><span class="sxs-lookup"><span data-stu-id="37b39-194">This is the definition for the `StackRenderer` class, which overrides the <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, and <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> methods to produce a custom appearance.</span></span>  
-  
+     [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]
+
+## <a name="implement-a-custom-renderer"></a><span data-ttu-id="57e81-180">Implementace vlastního rendereru</span><span class="sxs-lookup"><span data-stu-id="57e81-180">Implement a custom renderer</span></span>
+
+<span data-ttu-id="57e81-181">Můžete přizpůsobit většinu prvků `StackView` řídit Moje implementace, která je odvozena z třídy <xref:System.Windows.Forms.ToolStripRenderer> třídy.</span><span class="sxs-lookup"><span data-stu-id="57e81-181">You can customize most elements of the `StackView` control my implementing a class that derives from the <xref:System.Windows.Forms.ToolStripRenderer> class.</span></span> <span data-ttu-id="57e81-182">V tomto postupu budete implementovat <xref:System.Windows.Forms.ToolStripProfessionalRenderer> třídu, která přizpůsobí úchytu a vykreslí barevného přechodu pozadí <xref:System.Windows.Forms.ToolStripButton> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="57e81-182">In this procedure, you will implement a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> class that customizes the grip and draws gradient backgrounds for the <xref:System.Windows.Forms.ToolStripButton> controls.</span></span>
+
+1. <span data-ttu-id="57e81-183">Vložte následující kód do `StackView` definici ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="57e81-183">Insert the following code into the `StackView` control definition.</span></span>
+
+     <span data-ttu-id="57e81-184">Toto je definice `StackRenderer` třídy, která přepisuje <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, a <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> metody k vytvoření vlastní vzhled.</span><span class="sxs-lookup"><span data-stu-id="57e81-184">This is the definition for the `StackRenderer` class, which overrides the <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, and <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> methods to produce a custom appearance.</span></span>
+
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#10)]
-     [!code-vb[System.Windows.Forms.ToolStrip.StackView#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#10)]  
-  
-2. <span data-ttu-id="37b39-195">V `StackView` konstruktoru ovládacího prvku, vytvořte novou instanci třídy `StackRenderer` třídy a přiřazení této instance `stackStrip` ovládacího prvku <xref:System.Windows.Forms.ToolStrip.Renderer%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="37b39-195">In the `StackView` control's constructor, create a new instance of the `StackRenderer` class and assign this instance to the `stackStrip` control's <xref:System.Windows.Forms.ToolStrip.Renderer%2A> property.</span></span>  
-  
+     [!code-vb[System.Windows.Forms.ToolStrip.StackView#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#10)]
+
+2. <span data-ttu-id="57e81-185">V `StackView` konstruktoru ovládacího prvku, vytvořte novou instanci třídy `StackRenderer` třídy a přiřazení této instance `stackStrip` ovládacího prvku <xref:System.Windows.Forms.ToolStrip.Renderer%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="57e81-185">In the `StackView` control's constructor, create a new instance of the `StackRenderer` class and assign this instance to the `stackStrip` control's <xref:System.Windows.Forms.ToolStrip.Renderer%2A> property.</span></span>
+
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#5)]
-     [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]  
-  
-## <a name="testing-the-stackview-control"></a><span data-ttu-id="37b39-196">Testování StackView ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="37b39-196">Testing the StackView Control</span></span>  
- <span data-ttu-id="37b39-197">`StackView` Ovládacího prvku je odvozena z <xref:System.Windows.Forms.UserControl> třídy.</span><span class="sxs-lookup"><span data-stu-id="37b39-197">The `StackView` control derives from the <xref:System.Windows.Forms.UserControl> class.</span></span> <span data-ttu-id="37b39-198">Proto můžete otestovat ovládací prvek s **kontejner testu UserControl**.</span><span class="sxs-lookup"><span data-stu-id="37b39-198">Therefore, you can test the control with the **UserControl Test Container**.</span></span> <span data-ttu-id="37b39-199">Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span><span class="sxs-lookup"><span data-stu-id="37b39-199">For more information, see [How to: Test the Run-Time Behavior of a UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span></span>  
-  
-#### <a name="to-test-the-stackview-control"></a><span data-ttu-id="37b39-200">K otestování StackView ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="37b39-200">To test the StackView control</span></span>  
-  
-1. <span data-ttu-id="37b39-201">Stiskněte klávesu F5, aby projekt sestavil a spustila **UserControl – kontejner testů**.</span><span class="sxs-lookup"><span data-stu-id="37b39-201">Press F5 to build the project and start the **UserControl Test Container**.</span></span>  
-  
-2. <span data-ttu-id="37b39-202">Přesuňte ukazatel nad tlačítek `StackView` ovládací prvek a potom klikněte na tlačítko zobrazit vzhled vybraný stav.</span><span class="sxs-lookup"><span data-stu-id="37b39-202">Move the pointer over the buttons of the `StackView` control, and then click a button to see the appearance of its selected state.</span></span>  
-  
-## <a name="next-steps"></a><span data-ttu-id="37b39-203">Další kroky</span><span class="sxs-lookup"><span data-stu-id="37b39-203">Next Steps</span></span>  
- <span data-ttu-id="37b39-204">V tomto návodu vytvoříte opakovaně použitelné vlastní ovládací prvek s profesionální vzhled ovládacího prvku Office XP.</span><span class="sxs-lookup"><span data-stu-id="37b39-204">In this walkthrough, you have created a reusable custom client control with the professional appearance of an Office XP control.</span></span> <span data-ttu-id="37b39-205">Můžete použít <xref:System.Windows.Forms.ToolStrip> řady ovládacích prvků pro mnoho dalších důvodů:</span><span class="sxs-lookup"><span data-stu-id="37b39-205">You can use the <xref:System.Windows.Forms.ToolStrip> family of controls for many other purposes:</span></span>  
-  
-- <span data-ttu-id="37b39-206">Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>.</span><span class="sxs-lookup"><span data-stu-id="37b39-206">Create shortcut menus for your controls with <xref:System.Windows.Forms.ContextMenuStrip>.</span></span> <span data-ttu-id="37b39-207">Další informace najdete v tématu [ContextMenu – přehled komponenty](contextmenu-component-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="37b39-207">For more information, see [ContextMenu Component Overview](contextmenu-component-overview-windows-forms.md).</span></span>  
-  
-- <span data-ttu-id="37b39-208">Vytvoření formuláře se automaticky vyplněná standardní nabídky.</span><span class="sxs-lookup"><span data-stu-id="37b39-208">Create a form with an automatically populated standard menu.</span></span> <span data-ttu-id="37b39-209">Další informace najdete v tématu [názorný postup: Poskytnutí standardních položek nabídky formuláři](walkthrough-providing-standard-menu-items-to-a-form.md).</span><span class="sxs-lookup"><span data-stu-id="37b39-209">For more information, see [Walkthrough: Providing Standard Menu Items to a Form](walkthrough-providing-standard-menu-items-to-a-form.md).</span></span>  
-  
-- <span data-ttu-id="37b39-210">Vytvoření více formuláře (MDI interface) dokumentu s ukotvení <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="37b39-210">Create a multiple document interface (MDI) form with docking <xref:System.Windows.Forms.ToolStrip> controls.</span></span> <span data-ttu-id="37b39-211">Další informace najdete v tématu [jak: Vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span><span class="sxs-lookup"><span data-stu-id="37b39-211">For more information, see [How to: Create an MDI Form with Menu Merging and ToolStrip Controls](how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="37b39-212">Viz také:</span><span class="sxs-lookup"><span data-stu-id="37b39-212">See also</span></span>
+     [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]
+
+## <a name="test-the-stackview-control"></a><span data-ttu-id="57e81-186">Testování StackView ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="57e81-186">Test the StackView control</span></span>
+
+<span data-ttu-id="57e81-187">`StackView` Ovládacího prvku je odvozena z <xref:System.Windows.Forms.UserControl> třídy.</span><span class="sxs-lookup"><span data-stu-id="57e81-187">The `StackView` control derives from the <xref:System.Windows.Forms.UserControl> class.</span></span> <span data-ttu-id="57e81-188">Proto můžete otestovat ovládací prvek s **kontejner testu UserControl**.</span><span class="sxs-lookup"><span data-stu-id="57e81-188">Therefore, you can test the control with the **UserControl Test Container**.</span></span> <span data-ttu-id="57e81-189">Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span><span class="sxs-lookup"><span data-stu-id="57e81-189">For more information, see [How to: Test the Run-Time Behavior of a UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span></span>
+
+1. <span data-ttu-id="57e81-190">Stisknutím klávesy **F5** projekt sestavit a spustit **UserControl – kontejner testů**.</span><span class="sxs-lookup"><span data-stu-id="57e81-190">Press **F5** to build the project and start the **UserControl Test Container**.</span></span>
+
+2. <span data-ttu-id="57e81-191">Přesuňte ukazatel nad tlačítek `StackView` ovládací prvek a potom klikněte na tlačítko zobrazit vzhled vybraný stav.</span><span class="sxs-lookup"><span data-stu-id="57e81-191">Move the pointer over the buttons of the `StackView` control, and then click a button to see the appearance of its selected state.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="57e81-192">Další kroky</span><span class="sxs-lookup"><span data-stu-id="57e81-192">Next steps</span></span>
+
+<span data-ttu-id="57e81-193">V tomto návodu vytvoříte opakovaně použitelné vlastní ovládací prvek s profesionální vzhled ovládacího prvku Office XP.</span><span class="sxs-lookup"><span data-stu-id="57e81-193">In this walkthrough, you have created a reusable custom client control with the professional appearance of an Office XP control.</span></span> <span data-ttu-id="57e81-194">Můžete použít <xref:System.Windows.Forms.ToolStrip> řady ovládacích prvků pro mnoho dalších důvodů:</span><span class="sxs-lookup"><span data-stu-id="57e81-194">You can use the <xref:System.Windows.Forms.ToolStrip> family of controls for many other purposes:</span></span>
+
+- <span data-ttu-id="57e81-195">Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>.</span><span class="sxs-lookup"><span data-stu-id="57e81-195">Create shortcut menus for your controls with <xref:System.Windows.Forms.ContextMenuStrip>.</span></span> <span data-ttu-id="57e81-196">Další informace najdete v tématu [ContextMenu – přehled komponenty](contextmenu-component-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="57e81-196">For more information, see [ContextMenu Component Overview](contextmenu-component-overview-windows-forms.md).</span></span>
+
+- <span data-ttu-id="57e81-197">Vytvoření formuláře se automaticky vyplněná standardní nabídky.</span><span class="sxs-lookup"><span data-stu-id="57e81-197">Create a form with an automatically populated standard menu.</span></span> <span data-ttu-id="57e81-198">Další informace najdete v tématu [názorný postup: Poskytnutí standardních položek nabídky formuláři](walkthrough-providing-standard-menu-items-to-a-form.md).</span><span class="sxs-lookup"><span data-stu-id="57e81-198">For more information, see [Walkthrough: Providing Standard Menu Items to a Form](walkthrough-providing-standard-menu-items-to-a-form.md).</span></span>
+
+- <span data-ttu-id="57e81-199">Vytvoření více formuláře (MDI interface) dokumentu s ukotvení <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="57e81-199">Create a multiple document interface (MDI) form with docking <xref:System.Windows.Forms.ToolStrip> controls.</span></span> <span data-ttu-id="57e81-200">Další informace najdete v tématu [jak: Vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span><span class="sxs-lookup"><span data-stu-id="57e81-200">For more information, see [How to: Create an MDI Form with Menu Merging and ToolStrip Controls](how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="57e81-201">Viz také:</span><span class="sxs-lookup"><span data-stu-id="57e81-201">See also</span></span>
 
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.StatusStrip>
-- [<span data-ttu-id="37b39-213">Ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="37b39-213">ToolStrip Control</span></span>](toolstrip-control-windows-forms.md)
-- [<span data-ttu-id="37b39-214">Postupy: Zajištění standardních položek nabídky pro formulář</span><span class="sxs-lookup"><span data-stu-id="37b39-214">How to: Provide Standard Menu Items to a Form</span></span>](how-to-provide-standard-menu-items-to-a-form.md)
+- [<span data-ttu-id="57e81-202">Ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="57e81-202">ToolStrip Control</span></span>](toolstrip-control-windows-forms.md)
+- [<span data-ttu-id="57e81-203">Postupy: Zajištění standardních položek nabídky pro formulář</span><span class="sxs-lookup"><span data-stu-id="57e81-203">How to: Provide Standard Menu Items to a Form</span></span>](how-to-provide-standard-menu-items-to-a-form.md)

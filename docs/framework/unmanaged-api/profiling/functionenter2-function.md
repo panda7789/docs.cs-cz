@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 825da3a09f8b8013ffecaedfee0dce2362c8a7b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d6e5b74e508f55ec8e94b09960e496ff21936228
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61598971"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64586976"
 ---
-# <a name="functionenter2-function"></a><span data-ttu-id="e1cfc-102">FunctionEnter2 – funkce</span><span class="sxs-lookup"><span data-stu-id="e1cfc-102">FunctionEnter2 Function</span></span>
-<span data-ttu-id="e1cfc-103">Profiler upozorní, že ovládací prvek je předáván funkci a poskytuje informace o zásobníku rámce a funkce argumenty.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-103">Notifies the profiler that control is being passed to a function and provides information about the stack frame and function arguments.</span></span> <span data-ttu-id="e1cfc-104">Tato funkce nahrazuje [functionenter –](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-104">This function supersedes the [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) function.</span></span>  
+# <a name="functionenter2-function"></a><span data-ttu-id="57df6-102">FunctionEnter2 – funkce</span><span class="sxs-lookup"><span data-stu-id="57df6-102">FunctionEnter2 Function</span></span>
+<span data-ttu-id="57df6-103">Profiler upozorní, že ovládací prvek je předáván funkci a poskytuje informace o zásobníku rámce a funkce argumenty.</span><span class="sxs-lookup"><span data-stu-id="57df6-103">Notifies the profiler that control is being passed to a function and provides information about the stack frame and function arguments.</span></span> <span data-ttu-id="57df6-104">Tato funkce nahrazuje [functionenter –](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="57df6-104">This function supersedes the [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e1cfc-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e1cfc-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="57df6-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="57df6-105">Syntax</span></span>  
   
 ```  
 void __stdcall FunctionEnter2 (  
@@ -37,50 +37,50 @@ void __stdcall FunctionEnter2 (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e1cfc-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e1cfc-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="57df6-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="57df6-106">Parameters</span></span>  
  `funcId`  
- <span data-ttu-id="e1cfc-107">[in] Identifikátor funkce, do které se předá řízení.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-107">[in] The identifier of the function to which control is passed.</span></span>  
+ <span data-ttu-id="57df6-107">[in] Identifikátor funkce, do které se předá řízení.</span><span class="sxs-lookup"><span data-stu-id="57df6-107">[in] The identifier of the function to which control is passed.</span></span>  
   
  `clientData`  
- <span data-ttu-id="e1cfc-108">[in] Identifikátor změnu mapování funkce, který dříve zadanou profileru pomocí [functionidmapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-108">[in] The remapped function identifier, which the profiler previously specified by using the [FunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) function.</span></span>  
+ <span data-ttu-id="57df6-108">[in] Identifikátor změnu mapování funkce, který dříve zadanou profileru pomocí [functionidmapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="57df6-108">[in] The remapped function identifier, which the profiler previously specified by using the [FunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) function.</span></span>  
   
  `func`  
- <span data-ttu-id="e1cfc-109">[in] A `COR_PRF_FRAME_INFO` hodnotu, která odkazuje na informace o zásobníku.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-109">[in] A `COR_PRF_FRAME_INFO` value that points to information about the stack frame.</span></span>  
+ <span data-ttu-id="57df6-109">[in] A `COR_PRF_FRAME_INFO` hodnotu, která odkazuje na informace o zásobníku.</span><span class="sxs-lookup"><span data-stu-id="57df6-109">[in] A `COR_PRF_FRAME_INFO` value that points to information about the stack frame.</span></span>  
   
- <span data-ttu-id="e1cfc-110">Profiler by měl považovat za to neprůhledného popisovače, který může být předán zpět prováděcí modul v [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-110">The profiler should treat this as an opaque handle that can be passed back to the execution engine in the [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method.</span></span>  
+ <span data-ttu-id="57df6-110">Profiler by měl považovat za to neprůhledného popisovače, který může být předán zpět prováděcí modul v [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="57df6-110">The profiler should treat this as an opaque handle that can be passed back to the execution engine in the [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method.</span></span>  
   
  `argumentInfo`  
- <span data-ttu-id="e1cfc-111">[in] Ukazatel [cor_prf_function_argument_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) struktura, která určuje umístění v paměti argumentů funkce.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-111">[in] A pointer to a [COR_PRF_FUNCTION_ARGUMENT_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) structure that specifies the locations in memory of the function's arguments.</span></span>  
+ <span data-ttu-id="57df6-111">[in] Ukazatel [cor_prf_function_argument_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) struktura, která určuje umístění v paměti argumentů funkce.</span><span class="sxs-lookup"><span data-stu-id="57df6-111">[in] A pointer to a [COR_PRF_FUNCTION_ARGUMENT_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) structure that specifies the locations in memory of the function's arguments.</span></span>  
   
- <span data-ttu-id="e1cfc-112">Aby bylo možné přistupovat k informací o argumentech, `COR_PRF_ENABLE_FUNCTION_ARGS` musí být nastaven příznak.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-112">In order to access argument information, the `COR_PRF_ENABLE_FUNCTION_ARGS` flag must be set.</span></span> <span data-ttu-id="e1cfc-113">Profiler může použít [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) metody nastavte příznaky událostí.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-113">The profiler can use the [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) method to set the event flags.</span></span>  
+ <span data-ttu-id="57df6-112">Aby bylo možné přistupovat k informací o argumentech, `COR_PRF_ENABLE_FUNCTION_ARGS` musí být nastaven příznak.</span><span class="sxs-lookup"><span data-stu-id="57df6-112">In order to access argument information, the `COR_PRF_ENABLE_FUNCTION_ARGS` flag must be set.</span></span> <span data-ttu-id="57df6-113">Profiler může použít [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) metody nastavte příznaky událostí.</span><span class="sxs-lookup"><span data-stu-id="57df6-113">The profiler can use the [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) method to set the event flags.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e1cfc-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e1cfc-114">Remarks</span></span>  
- <span data-ttu-id="e1cfc-115">Hodnoty `func` a `argumentInfo` parametry jsou neplatné po `FunctionEnter2` funkce vrátí hodnoty se mohou změnit nebo zničení.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-115">The values of the `func` and `argumentInfo` parameters are not valid after the `FunctionEnter2` function returns because the values may change or be destroyed.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="57df6-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="57df6-114">Remarks</span></span>  
+ <span data-ttu-id="57df6-115">Hodnoty `func` a `argumentInfo` parametry jsou neplatné po `FunctionEnter2` funkce vrátí hodnoty se mohou změnit nebo zničení.</span><span class="sxs-lookup"><span data-stu-id="57df6-115">The values of the `func` and `argumentInfo` parameters are not valid after the `FunctionEnter2` function returns because the values may change or be destroyed.</span></span>  
   
- <span data-ttu-id="e1cfc-116">`FunctionEnter2` Funkce je zpětné volání, je nutné implementovat.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-116">The `FunctionEnter2` function is a callback; you must implement it.</span></span> <span data-ttu-id="e1cfc-117">Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-117">The implementation must use the `__declspec`(`naked`) storage-class attribute.</span></span>  
+ <span data-ttu-id="57df6-116">`FunctionEnter2` Funkce je zpětné volání, je nutné implementovat.</span><span class="sxs-lookup"><span data-stu-id="57df6-116">The `FunctionEnter2` function is a callback; you must implement it.</span></span> <span data-ttu-id="57df6-117">Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.</span><span class="sxs-lookup"><span data-stu-id="57df6-117">The implementation must use the `__declspec`(`naked`) storage-class attribute.</span></span>  
   
- <span data-ttu-id="e1cfc-118">Prováděcí modul nelze uložit žádné registry před voláním této funkce.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-118">The execution engine does not save any registers before calling this function.</span></span>  
+ <span data-ttu-id="57df6-118">Prováděcí modul nelze uložit žádné registry před voláním této funkce.</span><span class="sxs-lookup"><span data-stu-id="57df6-118">The execution engine does not save any registers before calling this function.</span></span>  
   
-- <span data-ttu-id="e1cfc-119">Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).</span><span class="sxs-lookup"><span data-stu-id="e1cfc-119">On entry, you must save all registers that you use, including those in the floating-point unit (FPU).</span></span>  
+- <span data-ttu-id="57df6-119">Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).</span><span class="sxs-lookup"><span data-stu-id="57df6-119">On entry, you must save all registers that you use, including those in the floating-point unit (FPU).</span></span>  
   
-- <span data-ttu-id="e1cfc-120">Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-120">On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.</span></span>  
+- <span data-ttu-id="57df6-120">Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.</span><span class="sxs-lookup"><span data-stu-id="57df6-120">On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.</span></span>  
   
- <span data-ttu-id="e1cfc-121">Provádění `FunctionEnter2` by neměla blokovat, protože způsobí zpoždění uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-121">The implementation of `FunctionEnter2` should not block because it will delay garbage collection.</span></span> <span data-ttu-id="e1cfc-122">Implementace by se neměly pokoušet uvolňování paměti, protože zásobník nemusí být ve stavu přívětivá kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-122">The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state.</span></span> <span data-ttu-id="e1cfc-123">Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionEnter2` vrátí.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-123">If a garbage collection is attempted, the runtime will block until `FunctionEnter2` returns.</span></span>  
+ <span data-ttu-id="57df6-121">Provádění `FunctionEnter2` by neměla blokovat, protože způsobí zpoždění uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="57df6-121">The implementation of `FunctionEnter2` should not block because it will delay garbage collection.</span></span> <span data-ttu-id="57df6-122">Implementace by se neměly pokoušet uvolňování paměti, protože zásobník nemusí být ve stavu přívětivá kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="57df6-122">The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state.</span></span> <span data-ttu-id="57df6-123">Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionEnter2` vrátí.</span><span class="sxs-lookup"><span data-stu-id="57df6-123">If a garbage collection is attempted, the runtime will block until `FunctionEnter2` returns.</span></span>  
   
- <span data-ttu-id="e1cfc-124">Také `FunctionEnter2` funkce nesmí volat do spravovaného kódu nebo v jakékoli příčina způsob přidělování spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="e1cfc-124">Also, the `FunctionEnter2` function must not call into managed code or in any way cause a managed memory allocation.</span></span>  
+ <span data-ttu-id="57df6-124">Také `FunctionEnter2` funkce nesmí volat do spravovaného kódu nebo v jakékoli příčina způsob přidělování spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="57df6-124">Also, the `FunctionEnter2` function must not call into managed code or in any way cause a managed memory allocation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e1cfc-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e1cfc-125">Requirements</span></span>  
- <span data-ttu-id="e1cfc-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e1cfc-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="57df6-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="57df6-125">Requirements</span></span>  
+ <span data-ttu-id="57df6-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="57df6-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e1cfc-127">**Záhlaví:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="e1cfc-127">**Header:** CorProf.idl</span></span>  
+ <span data-ttu-id="57df6-127">**Záhlaví:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="57df6-127">**Header:** CorProf.idl</span></span>  
   
- <span data-ttu-id="e1cfc-128">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e1cfc-128">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="57df6-128">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="57df6-128">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e1cfc-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e1cfc-129">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="57df6-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="57df6-129">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e1cfc-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1cfc-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="57df6-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="57df6-130">See also</span></span>
 
-- [<span data-ttu-id="e1cfc-131">FunctionLeave2 – funkce</span><span class="sxs-lookup"><span data-stu-id="e1cfc-131">FunctionLeave2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [<span data-ttu-id="e1cfc-132">FunctionTailcall2 – funkce</span><span class="sxs-lookup"><span data-stu-id="e1cfc-132">FunctionTailcall2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
-- [<span data-ttu-id="e1cfc-133">SetEnterLeaveFunctionHooks2 – metoda</span><span class="sxs-lookup"><span data-stu-id="e1cfc-133">SetEnterLeaveFunctionHooks2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [<span data-ttu-id="e1cfc-134">Globální statické funkce pro profilaci</span><span class="sxs-lookup"><span data-stu-id="e1cfc-134">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [<span data-ttu-id="57df6-131">FunctionLeave2 – funkce</span><span class="sxs-lookup"><span data-stu-id="57df6-131">FunctionLeave2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
+- [<span data-ttu-id="57df6-132">FunctionTailcall2 – funkce</span><span class="sxs-lookup"><span data-stu-id="57df6-132">FunctionTailcall2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
+- [<span data-ttu-id="57df6-133">SetEnterLeaveFunctionHooks2 – metoda</span><span class="sxs-lookup"><span data-stu-id="57df6-133">SetEnterLeaveFunctionHooks2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [<span data-ttu-id="57df6-134">Globální statické funkce pro profilaci</span><span class="sxs-lookup"><span data-stu-id="57df6-134">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
