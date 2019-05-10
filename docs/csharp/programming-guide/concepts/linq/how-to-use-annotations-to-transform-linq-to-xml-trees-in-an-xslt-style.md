@@ -2,12 +2,12 @@
 title: 'Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek (C#)'
 ms.date: 07/20/2015
 ms.assetid: 12a95902-a6b7-4a1e-ad52-04a518db226f
-ms.openlocfilehash: 64287abbf8a411d8c231ceaf3311c51738d7ea96
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ddb85194df540b13d64e83b1eb8852271b7e04b1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701733"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64597882"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek (C#)
 Poznámky lze použít k usnadnění transformace stromu XML.  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4893adaf528f1a9ef8fc8eab8027406fd8520cc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6c2ed46e1d26d829fbe832e44efb40844ae7d56f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704788"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592712"
 ---
 # <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures> Element
 Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.  
@@ -39,11 +39,11 @@ Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochá
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |0|Nezakazujte ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním. Toto je výchozí chování vazby od verze rozhraní .NET Framework verze 2.0.|  
 |1|Zakáže ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním. Toto nastavení se vrátí k chování vazby rozhraní .NET Framework verze 1.1.|  

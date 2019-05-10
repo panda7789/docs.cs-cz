@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ee13c0a8-ab02-49f7-b8fb-9eab16c6c4f0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8731e90a66c20f06e8afcd7458349cbc0b93484
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d7608ed964313774b806ba6f1bb4d8f0d322c361
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674958"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592770"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>Spouštění internetových aplikací v režimu plné důvěryhodnosti
 Od verze rozhraní .NET Framework verze 3.5 Service Pack 1 (SP1), aplikací a jejich sestavení knihovny může běžet jako sestavení úplného vztahu důvěryhodnosti ze sdílené síťové složky. <xref:System.Security.SecurityZone.MyComputer> legitimace zóny se automaticky přidá do sestavení, která jsou načtena ze sdílené složky v síti intranet. Tato legitimace poskytuje tato sestavení, které stejná sada udělení oprávnění (což je obvykle úplný vztah důvěryhodnosti) jako sestavení, které jsou umístěny v počítači. Tato funkce se nedá použít pro aplikace ClickOnce nebo k aplikacím, které jsou navrženy pro spouštění na hostiteli.  

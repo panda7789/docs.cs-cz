@@ -2,12 +2,12 @@
 title: Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
 ms.date: 03/30/2017
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
-ms.openlocfilehash: 8b86a032e7cbc27332864c9cc96009f12b72c53d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 98890c4c054a5063f91e429b13cfd6bab9f3dc15
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793650"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64596861"
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
 <xref:System.Transactions> Obor názvů podporuje spolupráci mezi objekty transakce vytvořené pomocí tohoto oboru názvů a transakce vytvořené pomocí modelu COM +.  
@@ -61,14 +61,14 @@ ms.locfileid: "61793650"
   
  Následující tabulka znázorňuje kontext služby Enterprise (ES) a transakční obor, který vyžaduje, aby transakce pomocí <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   
-|Kontext ES|Žádný|Automatické|Do bloku|  
+|Kontext ES|Žádné|Automatické|Do bloku|  
 |----------------|----------|---------------|----------|  
 |Výchozí kontext|Výchozí kontext|Výchozí kontext|Vytvořit nový <br />transakční kontextu|  
 |Jiné než výchozí kontext|Udržovat kontextu klienta|Vytvořit nový transakční kontext|Vytvořit nový transakční kontext|  
   
  Následující tabulka popisuje, co okolí transakce je, daný konkrétní <xref:System.EnterpriseServices> kontextu a transakční obor, který vyžaduje, aby transakce pomocí <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   
-|Kontext ES|Žádný|Automatické|Do bloku|  
+|Kontext ES|Žádné|Automatické|Do bloku|  
 |----------------|----------|---------------|----------|  
 |Výchozí kontext|ST|ST|ES|  
 |Jiné než výchozí kontext|ST|ES|ES|  

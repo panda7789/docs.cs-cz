@@ -2,12 +2,12 @@
 title: 'Postupy: Zápis dat objektů do souboru XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7681eb98-703d-4005-a369-26a7bca0f894
-ms.openlocfilehash: 064d7ed61921f3f700311a1b09ee77e0c9818d71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a4fdb496e3b015b2e3b46c9705ba1c05c20423f0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710950"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64595516"
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-c"></a>Postupy: Zápis dat objektů do souboru XML (C#)
 Tento příklad zapíše objekt ze třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  

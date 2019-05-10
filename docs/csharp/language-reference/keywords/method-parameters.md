@@ -7,12 +7,12 @@ helpviewer_keywords:
 - method parameters [C#]
 - parameters [C#]
 ms.assetid: 680e39ff-775b-48b0-9f47-4186a5bfc4a1
-ms.openlocfilehash: 72917d356ed0fce96502faeef68494c7fdcb214f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6746b572719b3233f3b99afde3dd8b5c0b7abcf1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661207"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592961"
 ---
 # <a name="method-parameters-c-reference"></a>Parametry metody (Referenční dokumentace jazyka C#)
 

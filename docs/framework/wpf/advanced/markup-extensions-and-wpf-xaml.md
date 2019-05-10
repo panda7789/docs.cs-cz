@@ -15,12 +15,12 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: 46539f0cfdcc478e2f5e4cd7aecf16ac059e6332
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4acb7bd60c6087b5d0052dd15540e700fa2e46cd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61804582"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64598687"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syntaxe pravidla, účelu a model objektu třídy, které je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace .NET XAML služeb. Toto téma podrobně popisuje konkrétně – rozšíření značek pro použití v WPF XAML.  

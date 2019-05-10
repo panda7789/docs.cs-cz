@@ -7,12 +7,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 7bc69c90-8a11-48b1-9336-3adab5b41591
-ms.openlocfilehash: 81559444b6e3da2861e48bdc637ae01d246c0758
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7300acdf46844dd79445859dfa47874889982bd1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961574"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64593477"
 ---
 # <a name="bindingsource-component-architecture"></a>Architektura součásti BindingSource
 S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat univerzálně svázat všechny ovládací prvky Windows Forms.  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - jump statements [C#]
 - branch statements [C#]
 ms.assetid: 58da6ae7-7388-491e-828f-e74485d87d53
-ms.openlocfilehash: 1661c551c576e5f6dd7180fbc40ec837f40622bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7dcf25be646bf557d6fe745187144137bf511d86
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661279"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592953"
 ---
 # <a name="jump-statements-c-reference"></a>Jump – příkazy (Referenční dokumentace jazyka C#)
 Větvení se provádí pomocí příkazů skoku, které způsobí okamžité přenos ovládání programu. Následující klíčová slova se používají v příkazech odkazů:  

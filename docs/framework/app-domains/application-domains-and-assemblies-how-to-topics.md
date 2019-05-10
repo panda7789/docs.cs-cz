@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 2264054e-712e-47e4-8657-1aa1cfec3e3d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1610322e33be81a109dec1cd1d189544a33b17d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9f819f60d6c5d5cf78f223e5cdf98ffa51f22692
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705737"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64593667"
 ---
 # <a name="application-domains-and-assemblies-how-to-topics"></a>Témata s návody k doménám a sestavením aplikací
 Následující části obsahují odkazy na všechny postupy v rámcové dokumentaci k programování s doménami aplikací a sestaveními.  

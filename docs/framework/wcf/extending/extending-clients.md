@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - proxy extensions [WCF]
 ms.assetid: 1328c61c-06e5-455f-9ebd-ceefb59d3867
-ms.openlocfilehash: 99b4dd5e4acfce8bea4d3c2cae3a53152585675d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 48e6177e7098f8131d2a0fd62bda9c505fa8bcc9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857932"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662806"
 ---
 # <a name="extending-clients"></a>Rozšíření klientů
 Volající aplikace je zodpovědná za překládá volání metod v kódu aplikace do odchozích zpráv, jejich ukládání do základní kanálů, překlad výsledky zpátky na návratové hodnoty ani výstupní parametry v vrstva modelu služby kód aplikace a vrací výsledky zpět volajícímu. Rozšíření modelů služeb změnit nebo implementovat provádění nebo chování komunikace a funkce zahrnující funkce klienta nebo dispečer, vlastní chování, zprávy a parametr zachycení a další funkce rozšíření.  

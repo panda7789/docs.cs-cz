@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40027
 ms.assetid: 33c088c7-48e7-400c-920e-6d8967e1f3fc
-ms.openlocfilehash: 5e746981d10ba8e662aebf86f67f08856ba37199
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 797dbf7f6203b7f85846dc6596751c4298e96481
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013735"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64593303"
 ---
 # <a name="return-type-of-function-procedurename-is-not-cls-compliant"></a>Návratový typ funkce '\<název_procedury >' není kompatibilní se Specifikací CLS
 A `Function` postup je označen jako `<CLSCompliant(True)>` , ale vrací typ, který je označen jako `<CLSCompliant(False)>`, není označena nebo nesplňuje, protože se jedná o nekompatibilní typ.  

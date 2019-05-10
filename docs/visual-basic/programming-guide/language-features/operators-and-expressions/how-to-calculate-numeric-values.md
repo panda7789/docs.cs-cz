@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-ms.openlocfilehash: 33184d9be275f5e777ffd79c6dd4e3182d865de7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3e367a10a3e703241c7417d3ea17068018becb5a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864676"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649736"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Postupy: Výpočet numerických hodnot (Visual Basic)
 Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *číselného výrazu* je výraz, který obsahuje literály a konstanty a proměnné představující číselné hodnoty a operátory, které fungují u těchto hodnot.  
