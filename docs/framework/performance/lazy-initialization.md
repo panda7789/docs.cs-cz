@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce217e2ed8e542ad0f7122970655aa32a353f51a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7b19fbeb0144698c5091a9bbe6bce45c21c4f0d8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949939"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64616375"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že jeho vytvoření je odloženo, dokud je poprvé použita. (Pro toto téma podmínky *opožděné inicializace* a *opožděné instance* jsou shodné.) Opožděná inicializace slouží především ke zvýšení výkonu, zabránit plýtvání výpočtu a snížit požadavky na paměť pro program. Jedná se o nejběžnějších scénářů:  

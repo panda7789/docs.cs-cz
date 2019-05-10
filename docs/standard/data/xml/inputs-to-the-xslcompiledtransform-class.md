@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 834049f1-ab41-449e-9f10-4a1d0701bc48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: beb351ac365694ac909b793bf19adb9fbb8c0274
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e5240ee24a2f017e37b057c9fb74e551927b8bee
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968126"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64590174"
 ---
 # <a name="inputs-to-the-xslcompiledtransform-class"></a>Vstupy do třídy XslCompiledTransform
 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda přijímá tři vstupní typy pro zdrojový dokument: objekt, který implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní, <xref:System.Xml.XmlReader> objekt, který přečte zdrojový dokument nebo řetězec identifikátoru URI.  

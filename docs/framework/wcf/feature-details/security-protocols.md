@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], protocols
 ms.assetid: 57ffcbea-807c-4e43-a41c-44b3db8ed2af
-ms.openlocfilehash: 5adacbc0332d104d025ea1b888b580d34fee804e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9993a7ecb61d9a45d88162fdef488e79b155540c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749420"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64586852"
 ---
 # <a name="security-protocols"></a>Protokoly zabezpečení
 Protokoly webových služeb zabezpečení poskytují webové služby bezpečnostní mechanismy, které pokrývají všechny stávající Podnikové zasílání zpráv požadavků na zabezpečení. Tato část popisuje podrobnosti Windows Communication Foundation (WCF) (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro protokoly zabezpečení následujících webových služeb.  
@@ -47,18 +47,18 @@ Protokoly webových služeb zabezpečení poskytují webové služby bezpečnost
 |KerberosOverTransport|Windows|X509|Přenos|  
 |IssuedTokenOverTransport|Federované|X509|Přenos|  
 |SspiNegotiatedOverTransport|Windows Sspi Negotiated|Windows Sspi Negotiated|Přenos|  
-|AnonymousForCertificate|Žádné|X509|Zpráva|  
-|UserNameForCertificate|Uživatelské jméno/heslo|X509|Zpráva|  
-|MutualCertificate|X509|X509|Zpráva|  
-|MutualCertificateDuplex|X509|X509|Zpráva|  
-|IssuedTokenForCertificate|Federované|X509|Zpráva|  
-|Protokol Kerberos|Windows|Windows|Zpráva|  
-|Třídy IssuedToken|Federované|Federované|Zpráva|  
-|SspiNegotiated|Windows Sspi Negotiated|Windows Sspi Negotiated|Zpráva|  
-|AnonymousForSslNegotiated|Žádné|X509, TLS-Nego|Zpráva|  
-|UserNameForSslNegotiated|Uživatelské jméno/heslo|X509, TLS-Nego|Zpráva|  
-|MutualSslNegotiated|X509|X509, TLS-Nego|Zpráva|  
-|IssuedTokenForSslNegotiated|Federované|X509, TLS-Nego|Zpráva|  
+|AnonymousForCertificate|Žádné|X509|Message|  
+|UserNameForCertificate|Uživatelské jméno/heslo|X509|Message|  
+|MutualCertificate|X509|X509|Message|  
+|MutualCertificateDuplex|X509|X509|Message|  
+|IssuedTokenForCertificate|Federované|X509|Message|  
+|Protokol Kerberos|Windows|Windows|Message|  
+|Třídy IssuedToken|Federované|Federované|Message|  
+|SspiNegotiated|Windows Sspi Negotiated|Windows Sspi Negotiated|Message|  
+|AnonymousForSslNegotiated|Žádné|X509, TLS-Nego|Message|  
+|UserNameForSslNegotiated|Uživatelské jméno/heslo|X509, TLS-Nego|Message|  
+|MutualSslNegotiated|X509|X509, TLS-Nego|Message|  
+|IssuedTokenForSslNegotiated|Federované|X509, TLS-Nego|Message|  
   
  Pomocí těchto režimů ověřování koncových bodů můžete vyjádřit svoje požadavky na zabezpečení pomocí WS-SecurityPolicy (WS-SP). Tento dokument popisuje strukturu záhlaví zabezpečení a zprávy infrastruktury pro oba režimy ověřování a poskytuje příklady zásad a zprávy.  
   

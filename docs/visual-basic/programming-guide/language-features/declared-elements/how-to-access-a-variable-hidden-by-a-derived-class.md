@@ -9,12 +9,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], referencing
 - variables [Visual Basic], accessing hidden
 ms.assetid: ae21a8ac-9cd4-4fba-a3ec-ecc4321ef93c
-ms.openlocfilehash: a97a51d4570d87eaa873fb3152ad810f528dff46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 43f7af1a1b540dd630cc2f228f1e5a6018d7c5d7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61829657"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64610457"
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a>Postupy: Přístup k proměnné skryté odvozenou třídou (Visual Basic)
 Když kód v odvozené třídě získá přístup k proměnné, obvykle přeloží kompilátor odkaz na nejbližší dostupné verzi, to znamená, že dostupné verze nejmíň derivational kroky zpětně ze třídy přístup. Pokud je proměnná definovaná v odvozené třídě, kód obvykle přistupuje k tuto definici.  

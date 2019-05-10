@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-ms.openlocfilehash: 844d165cef05e46d25960f113af3bf99dd35e14f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 8adc9644f987166729c43b79a6891960978341dd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340331"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64612729"
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživateli a program. Ovládací prvek můžete zadat nebo zpracování dat, přijímají vstup uživatele, reagovat na události nebo provádět spoustu dalších funkcí, které se připojují uživatele a aplikace. Vzhledem k tomu, že ovládací prvek je v podstatě komponent pomocí grafického rozhraní, může sloužit všechny funkce, které nemá komponenty, a poskytnout interakce s uživatelem. Vytvoření ovládacích prvků pro obsluhu zvláštní účely a vytváření ovládacích prvků je jenom další úlohou programování. Následující kroky se na základě těchto skutečností představují Přehled ovládacího prvku proces tvorby. Další informace o odkazech na jednotlivé kroky.  
@@ -25,13 +25,13 @@ Ovládací prvek představuje grafické propojení mezi uživateli a program. Ov
   
 1. Zjistěte, co chcete ovládací prvek k provedení, nebo jaké části bude přehrávat ve vaší aplikaci. Faktory vzít v úvahu, jsou:  
   
-    -   Jaký druh grafického rozhraní je potřeba?  
+    - Jaký druh grafického rozhraní je potřeba?  
   
-    -   Jaké konkrétní uživatelské interakce zpracuje tento ovládací prvek?  
+    - Jaké konkrétní uživatelské interakce zpracuje tento ovládací prvek?  
   
-    -   Poskytuje všechny existující ovládací prvky funkce, které potřebujete?  
+    - Poskytuje všechny existující ovládací prvky funkce, které potřebujete?  
   
-    -   Dosáhnete toho, funkce, které jsou kombinací několika ovládacích prvků Windows Forms potřebujete?  
+    - Dosáhnete toho, funkce, které jsou kombinací několika ovládacích prvků Windows Forms potřebujete?  
   
 2. Pokud potřebujete objektový model pro ovládací prvek, určíte, jak bude distribuované v rámci modelu objektu funkce a rozdělení funkcí mezi ovládacím prvkem a podobjektů. Objektový model může být užitečné, pokud plánujete komplexní ovládací prvek nebo chtít začlenit několika funkcí.  
   
