@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], persistence
 ms.assetid: 39e69d1f-b771-4c16-9e18-696fa43b65b2
-ms.openlocfilehash: db0e4acc76f758004948857fc0b23a9cbc62f244
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: afe47975a393db3074222ebf0461f5b73fb6442d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669340"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64655798"
 ---
 # <a name="workflow-persistence"></a>Trvalost pracovního postupu
 Trvalost pracovního postupu je trvalý zachycení stavu instance pracovního postupu, nezávisle na informace o procesu nebo počítač. To se provádí k poskytování známého bodu obnovení pro instanci pracovního postupu v případě selhání systému, nebo pro zachování paměti podle uvolnění instancí pracovních postupů, které nejsou aktivně provádějící práce nebo přesunout do jiného stavu instance pracovního postupu z jednoho uzlu uzel v serverové farmě.  

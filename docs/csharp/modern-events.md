@@ -3,12 +3,12 @@ title: Vzor události aktualizované rozhraní .NET Core
 description: Zjistěte, jak vzor události .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování bezpečné událostí s asynchronní odběrateli.
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: 5c7b9b4cb9bc22a73b865c45e225ce5c382380b1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 158295215932f54c75afdf1e96d48453434129fe
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61652036"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64751783"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Vzor události aktualizované rozhraní .NET Core
 

@@ -2,12 +2,12 @@
 title: Použití WorkflowIdentity a správy verzí
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 5bed526a47b802c60aa679e53c84af4e14656675
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 77f5663665d56209cbb1ebc5999d44d411189f04
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669652"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64603299"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Použití WorkflowIdentity a správy verzí
 <xref:System.Activities.WorkflowIdentity> nabízí způsob, jak pro pracovní postup přidružit název a <xref:System.Version> s definicí pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Toto téma obsahuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o spuštění vedle sebe definice pracovního postupu ve službě pracovního postupu v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, naleznete v tématu [dynamická aktualizace](dynamic-update.md).  

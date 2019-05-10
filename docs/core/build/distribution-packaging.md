@@ -1,23 +1,26 @@
 ---
 title: Vytváření distribučních balíčků .NET core
 description: Zjistěte, jak zabalit, název a verzi .NET Core pro distribuci.
-author: bleroy
-ms.date: 06/28/2017
+author: tmds
+ms.date: 03/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: be5767351ad1cdac15c73f718f67a0d120cf65b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b961d84053dc41e75e002c8c12419fdef99ded4b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650866"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64585254"
 ---
 # <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET core
 
-Jak bude k dispozici na více platformách .NET Core, je užitečné informace k balíčkování, název a verze ho. Tímto způsobem programu balíčku může pomoct zajistit konzistentní prostředí bez ohledu na to, kde uživatelé zvolit spuštění rozhraní .NET.
+Jak bude k dispozici na více platformách .NET Core, je užitečné informace k balíčkování, název a verze ho. Tímto způsobem programu balíčku může pomoct zajistit konzistentní prostředí bez ohledu na to, kde uživatelé zvolit spuštění rozhraní .NET. Tento článek je užitečný pro uživatele, kteří jsou:
+
+* Pokus o sestavení .NET Core ze zdroje.
+* Chce provést změny na .NET Core rozhraní příkazového řádku, které můžou ovlivnit výsledné rozložení nebo balíčky vytvořené.
 
 ## <a name="disk-layout"></a>Rozložení disku
 
-Při instalaci .NET Core se skládá z několika komponent, které jsou layed si, jak je uvedeno v systému souborů:
+Při instalaci .NET Core se skládá z několika komponent, které jsou rozloženy takto v systému souborů:
 
 ```
 .
@@ -46,36 +49,36 @@ Při instalaci .NET Core se skládá z několika komponent, které jsou layed si
 
 - (1) **dotnet** hostitele (označované také jako "multiplexor") má dvě odlišné role: Aktivace modulu runtime pro spuštění aplikace a aktivovat sadu SDK a odesílat příkazy do něj. Hostitel je nativní spustitelný soubor (`dotnet.exe`).
 
-Během jednoho hostitele se většina jiných komponent jsou v označené verzí adresáře (2,3,5,6). To znamená, že více verzí může být k dispozici v systému, protože jsou nainstalované vedle sebe.
+Během jednoho hostitele se většina jiných komponent jsou v označené verzí adresáře (2,3,5,6). To znamená, že více verzí může být k dispozici v systému, protože jejich instalaci vedle sebe.
 
-- (2) **hostitele/fxr/\<fxr verze >** obsahuje logiku rozlišení framework používá hostitel. Hostitel používá nejnovější hostfxr, který je nainstalován. Hostfxr zodpovídá za výběr vhodné runtime při spuštění aplikace .NET Core. Například aplikace vytvořené pro .NET Core 2.0.0 použije 2.0.5 modulu runtime, až bude k dispozici. Obdobně hostfxr vybere vhodnou sadu SDK během vývoje.
+- (2) **hostitele/fxr/\<fxr verze >** obsahuje logiku rozlišení framework používá hostitel. Hostitel používá nejnovější hostfxr, který je nainstalován. Hostfxr zodpovídá za výběr vhodné runtime při spuštění aplikace .NET Core. Například aplikace vytvořené pro použití 2.0.5 runtime .NET Core 2.0.0, až bude k dispozici. Obdobně hostfxr vybere vhodnou sadu SDK během vývoje.
 
-- (3) **sdk /\<verze sady sdk >** sadu spravovaných nástroje, které lze použít k zápisu a vytvoření aplikací a knihoven .NET Core je sada SDK (označované také jako "nástroje"). Sada SDK zahrnuje rozhraní příkazového řádku, platformě Roslyn kompilátoru, MSBuild a přidružené sestavení úlohy a cíle, NuGet, nové šablony projektu, atd.
+- (3) **sdk /\<verze sady sdk >** sadu spravovaného nástroji, které se používají k zápisu a vytvoření aplikací a knihoven .NET Core je sada SDK (označované také jako "nástroje"). Sada SDK zahrnuje rozhraní příkazového řádku .NET Core (CLI), spravované jazyky, kompilátory, nástroje MSBuild a přidružené sestavení úlohy a cíle, NuGet, nové šablony projektů a tak dále.
 
-- (4) **sdk/NuGetFallbackFolder** obsahuje mezipaměť balíčků NuGet, které používají sadu SDK během `dotnet restore` kroku.
+- (4) **sdk/NuGetFallbackFolder** obsahuje mezipaměť balíčků NuGet, použít sadu SDK během operace obnovení, například při spuštění `dotnet restore` nebo `dotnet build /t:Restore`.
 
 **Sdílené** složka obsahuje rozhraní. Sdílené architektuře poskytuje sadu knihoven v centrálním umístění, může využívat různé aplikace.
 
 - (5) **shared/Microsoft.NETCore.App/\<verze modulu runtime >** toto rozhraní obsahuje modul runtime .NET Core a podpůrné spravované knihovny.
 
-- (6,7) **shared/Microsoft.AspNetCore. { Aplikace, všechny} /\<aspnetcore verze >** obsahuje knihovny ASP.NET Core. Knihovny pod `Microsoft.AspNetCore.App` jsou vyvíjeny a podporované jako součást projektu .NET Core. Knihovny pod `Microsoft.AspNetCore.All` je nadmnožinou, která také obsahuje knihovny 3. stran.
+- (6,7) **shared/Microsoft.AspNetCore. { Aplikace, všechny} /\<aspnetcore verze >** obsahuje knihovny ASP.NET Core. Knihovny pod `Microsoft.AspNetCore.App` jsou vyvíjeny a podporované jako součást projektu .NET Core. Knihovny pod `Microsoft.AspNetCore.All` je nadmnožinou, který také obsahuje knihovny třetích stran.
 
-- (8) **LICENSE.txt,ThirdPartyNotices.txt** licence .NET Core a licence použít v .NET Core knihovny třetích stran.
+- (8) **LICENSE.txt,ThirdPartyNotices.txt** licence .NET Core a licence využívat v .NET Core, respektive knihovny třetích stran.
 
-- (9, 10) **dotnet.1.gz, dotnet** `dotnet.1.gz` je stránka man dotnet. `dotnet` je symlink k dotnet host(1). Tyto soubory jsou nainstalovány v dobře známé umístění pro integraci systému.
+- (9, 10) **dotnet.1.gz, dotnet** `dotnet.1.gz` je stránka o ruční dotnet. `dotnet` je symlink k dotnet host(1). Tyto soubory jsou nainstalovány v dobře známé umístění pro integraci systému.
 
 ## <a name="recommended-packages"></a>Doporučené balíčky
 
 Správa verzí rozhraní .NET core je založen na součásti modulu runtime `[major].[minor]` čísla verzí.
-Verze sady SDK se používá stejná `[major].[minor]` a má nezávislou `[patch]` zahrnující sémantiku funkce a opravy pro sadu SDK.
-Příklad: Sada SDK verze 2.2.302 je 2. Oprava verzi 3. vydání funkcí sady SDK, která podporuje 2.2 modulu runtime.
+Verze sady SDK se používá stejná `[major].[minor]` a má nezávislou `[patch]` , který kombinuje sémantiku funkce a opravy pro sadu SDK.
+Příklad: Sada SDK verze 2.2.302 je druhé vydání opravy třetí funkce verze sady SDK, která podporuje 2.2 modulu runtime. Další informace o tom, jak funguje správa verzí, naleznete v tématu [přehled správy verzí .NET Core](../versions/index.md).
 
-Některé balíčky v názvu zahrnují část čísla verze. To umožňuje koncového uživatele k instalaci na konkrétní verzi.
-Zbývající část verze není součástí název verze. To umožňuje balíčku, operační systém manager aktualizoval balíčky (například zabezpečení instalace automaticky opravuje).
+Některé balíčky v názvu zahrnují část čísla verze. To umožňuje nainstalovat na konkrétní verzi.
+Zbývající část verze není součástí název verze. To umožňuje balíčku, operační systém manager aktualizoval balíčky (například automatické instalaci oprav zabezpečení). Podporovaných správců balíčků jsou konkrétní Linux.
 
-Následující tabulka ukazuje doporučené balíčky.
+V následující tabulce jsou uvedeny doporučené balíčky:
 
-| Název                                    | Příklad                | Případ použití: Instalace...           | Obsahuje           | Závislosti                                   | Version            |
+| Name                                    | Příklad                | Případ použití: Instalace...           | Obsahuje           | Závislosti                                   | Version            |
 |-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
 | dotnet-sdk-[major]                      | dotnet-sdk-2           | Nejnovější sadu sdk pro modul runtime hlavní    |                    | dotnet-sdk-[major].[latestminor]               | \<sdk version>     |
 | dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Nejnovější sadu sdk pro konkrétní prostředí runtime |                    | DotNet - sdk-[hlavníverze]. [podverze]. [nejnovější sdk feat] xx | \<sdk version>     |
@@ -87,23 +90,23 @@ Následující tabulka ukazuje doporučené balíčky.
 
 Většině distribucí vyžadují všechny artefakty, které má být sestaven ze zdroje. Tato akce nemá dopad na balíčky:
 
-- 3. stran knihovny pod `shared/Microsoft.AspNetCore.All` nedají snadno sestavit ze zdroje. Aby tato složka je vynecháno z `aspnetcore-runtime` balíčku.
+- Knihovny třetích stran v rámci `shared/Microsoft.AspNetCore.All` nedají snadno sestavit ze zdroje. Aby tato složka je vynecháno z `aspnetcore-runtime` balíčku.
 
 - `NuGetFallbackFolder` Je vyplnit hodnotami pomocí binární artefakty z `nuget.org`. By měla zůstat prázdná.
 
-Více `dotnet-sdk` balíčky může poskytovat stejné soubory, které pro `NuGetFallbackFolder`. Abyste předešli problémům s pomocí Správce balíčků, tyto soubory musejí být identické (kontrolního součtu, datum úpravy,...).
+Více `dotnet-sdk` balíčky může poskytovat stejné soubory, které pro `NuGetFallbackFolder`. Abyste předešli problémům s pomocí Správce balíčků, tyto soubory musejí být identické (kontrolního součtu, datum změny a tak dále).
 
-#### <a name="preview-versions"></a>Verze Preview
+### <a name="preview-versions"></a>Verze Preview
 
-Balíček programu může rozhodnout k poskytování sdílených framework a sady SDK verze preview. Verze Preview může být poskytnuta pomocí `dotnet-sdk-[major].[minor].[sdk feat]xx`, `aspnetcore-runtime-[major].[minor]`, `dotnet-runtime-[major].[minor]` balíčky. Pro verze preview musí být hlavní verze balíčku nastaví na hodnotu nula. Tímto způsobem finální verze se nainstaluje jako upgrade balíčku.
+Balíček programu může rozhodnout k poskytování sdílených framework a sady SDK verze preview. Verze Preview může být poskytnuta pomocí `dotnet-sdk-[major].[minor].[sdk feat]xx`, `aspnetcore-runtime-[major].[minor]`, nebo `dotnet-runtime-[major].[minor]` balíčky. Pro verze preview musí být hlavní verze balíčku nastaví na hodnotu nula. Tímto způsobem, jako upgrade balíčku je nainstalován ve finální verzi.
 
-#### <a name="patch-packages"></a>Oprava balíčky
+### <a name="patch-packages"></a>Oprava balíčky
 
-Verze opravy balíčků může způsobit rozbíjející změny, funkce maintainer balíčku může být vhodné poskytnout _oprava balíčky_. Tyto balíčky umožňuje nainstalovat opravu konkrétní verzi, která se automaticky upgraduje. Balíčky oprava by měla sloužit pouze ve výjimečných případech, nebudou opravy upgradovaný (zabezpečení).
+Oprav verze balíčku může způsobit rozbíjející změny, funkce maintainer balíčku může být vhodné poskytnout _oprava balíčky_. Tyto balíčky umožňují instalaci oprav konkrétní verzi, která není automaticky upgradovat. Pouze použití opravy balíčků ve výjimečných případech, jako nejsou upgradované (zabezpečení) opravy.
 
-V následující tabulce jsou uvedeny doporučené balíčky a **oprava balíčky**.
+V následující tabulce jsou uvedeny doporučené balíčky a **oprava balíčky**:
 
-| Název                                           | Příklad                  | Obsahuje         | Závislosti                                              |
+| Name                                           | Příklad                  | Obsahuje         | Závislosti                                              |
 |------------------------------------------------|--------------------------|------------------|-----------------------------------------------------------|
 | dotnet-sdk-[major]                             | dotnet-sdk-2             |                  | DotNet - sdk-[hlavníverze]. [menší nejnovější sdk]                     |
 | dotnet-sdk-[major].[minor]                     | dotnet-sdk-2.1           |                  | DotNet - sdk-[hlavníverze]. [podverze]. [nejnovější sdk feat] xx            |

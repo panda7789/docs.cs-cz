@@ -7,16 +7,16 @@ helpviewer_keywords:
 - Crst_DisableSpinWait element
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6cde26250db0b3d11c51a18b7ebd378953ae0958
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f89f0558c11e229fef2ca3cd619e3c033f12c858
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704827"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64754671"
 ---
 # <a name="crstdisablespinwait-element"></a>\<Crst_DisableSpinWait > – element
 
-Určuje, zda chcete zakázat typu číselník – časový limit na kritický oddíl, když ve sporných. \ 
+Určuje, zda chcete zakázat typu číselník – časový limit na kritický oddíl, když ve sporných.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -36,14 +36,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Povoleno**|Určuje, zda je povoleno typu číselník – časový limit na kritické oddíly, když jsou jejich ve sporných.|  
+|**Povoleno**|Určuje, zda číselník – časový limit na kritické oddíly, když jsou jejich ve sporných zakázána.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|1|Otočit waiting je povolená.|  
-|0|Otočit waiting je zakázaná. Toto je výchozí|  
+|1|Zakážete typu číselník čekání, když kritický oddíl nelze získat.|  
+|0|Nezakazujte čekání typu číselník při kritický oddíl nelze získat. Jedná se o výchozí hodnotu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

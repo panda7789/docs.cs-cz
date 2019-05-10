@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
-ms.openlocfilehash: eecc37433e4b026b7337418eac1a5e80ef48ea6e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 16723894d87526972b692a098a57ef3726b252dd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675530"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64754372"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -321,7 +321,7 @@ Můžete zkusit asynchronními datovými proudy sami v našem kurzu [vytvářen�
 
 Rozsahy a indexy poskytují stručné syntaxe pro zadání podrozsahů v poli, <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>.
 
-Můžete určit index **od konce**. Zadáte **od konce** pomocí `^` operátor. Jste obeznámeni s `array[2]` znamená elementu "2 od samého začátku". Nyní `array[^2]` znamená, že element "2 od konce". Index `^0` znamená "end", nebo index, který následuje po posledním prvku.
+Můžete určit index **od konce** pomocí `^` znak před index. Indexování od konce spustí z pravidla, která `0..^0` Určuje celou oblast. K výpisu obsahu celého pole začnete *na první prvek*a pokračovat, dokud se *místo za posledním prvkem*. Představte si, že chování `MoveNext` metodu na enumerátor: vrátí hodnotu false v případě úspěšného posledním prvkem výčtu. Index `^0` znamená "end" `array[array.Length]`, nebo index, který následuje po posledním prvku. Jste obeznámeni s `array[2]` znamená elementu "2 od samého začátku". Nyní `array[^2]` znamená, že element "2 od konce". 
 
 Můžete zadat **rozsah** s **operátor rozsahu**: `..`. Například `0..^0` určuje celý rozsah pole: 0 od začátku až do, s výjimkou 0 od konce. Jeden z operandů může používat "z start" nebo "end". Kromě toho může vynechat jeden z operandů. Výchozí hodnoty jsou `0` pro počáteční index a `^0` end indexu.
 
@@ -340,7 +340,7 @@ var words = new string[]
     "the",      // 6                   ^3
     "lazy",     // 7                   ^2
     "dog"       // 8                   ^1
-};
+};              // 9 (or words.Length) ^0
 ```
 
 Pojem "od začátku" a "z"konec posiluje indexu každého prvku, a rozsahy adres jsou uvedeny bez konec rozsahu. "Start" celého pole je první prvek. "End" celého pole *minulosti* poslední prvek.
@@ -383,3 +383,5 @@ Rozsah je pak možné uvnitř `[` a `]` znaků:
 ```csharp
 var text = words[phrase];
 ```
+
+Další informace o indexy a rozsahy můžete prozkoumat v tomto kurzu na [indexy a rozsahy adres](../tutorials/ranges-indexes.md).

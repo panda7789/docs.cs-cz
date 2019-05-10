@@ -5,11 +5,11 @@ helpviewer_keywords:
 - _MYTYPE
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
 ms.openlocfilehash: 72b9799d1f5ba7efa37d5f8f2a633e6806a58607
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63808085"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64755726"
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a>Závislost oboru názvů My na typu projektu (Visual Basic)
 `My` zpřístupní pouze ty objekty, které vyžadují konkrétní typ projektu. Například `My.Forms` objekt je k dispozici v aplikaci Windows Forms, ale není k dispozici v konzolové aplikaci. Toto téma popisuje, které `My` objekty jsou k dispozici v různých typech projektů.  

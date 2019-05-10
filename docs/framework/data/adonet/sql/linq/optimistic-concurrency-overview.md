@@ -2,12 +2,12 @@
 title: 'Optimistická metoda souběžného zpracování: Přehled'
 ms.date: 03/30/2017
 ms.assetid: c2e38512-d0c8-4807-b30a-cb7e30338694
-ms.openlocfilehash: 8f3bd35cc1391339d99d5aa0a4021e29fa81756c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a6e654ea1ae199cb086e9377454d05e6eaa03ad6
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767485"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64609956"
 ---
 # <a name="optimistic-concurrency-overview"></a>Optimistická metoda souběžného zpracování: Přehled
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje optimistického řízení souběžnosti. Následující tabulka popisuje podmínky, které se vztahují k optimistického řízení souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci:  

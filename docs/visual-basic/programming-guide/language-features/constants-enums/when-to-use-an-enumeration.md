@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - enumerations [Visual Basic]
 ms.assetid: e6e47b5b-3ed9-452d-a481-9c3fed88519a
-ms.openlocfilehash: ff2d8c324aee8bbccef050c020e5392368b05b1c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a43c55d4ad6a895957b53ae18c3641c5383a24ce
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907306"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64585077"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>Kdy použít výčet (Visual Basic)
 Výčty nabízí snadný způsob, jak pracovat se sadami související s konstantami. Což je výčet nebo `Enum`, je symbolický název pro sadu hodnot. Výčty jsou považovány za datových typů a můžete využít k vytvoření sady konstanty pro použití s proměnných a vlastností.  

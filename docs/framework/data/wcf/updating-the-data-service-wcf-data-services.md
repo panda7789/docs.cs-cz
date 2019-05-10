@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-ms.openlocfilehash: 42980aa4691d8ecb9868336ecb270c9ad937b5a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4b351b2a69d2829b67c80839f3257fa8e218b55d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876106"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64660628"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizace datové služby (WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, knihovně přeloží položek v informačním kanálu do instancí tříd klientské datové služby. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entity, které sestavy pomocí metod na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožnění spolupráce klienta služby pro sledování přidané a odstraněné entit a také změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny odesílají zpět do datové služby jako operace založené na protokolu REST při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metody.  

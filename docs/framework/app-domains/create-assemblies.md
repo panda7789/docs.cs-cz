@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2713011d61b41dfa4d72a635c656c0c00cb42f8d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 993c7f590f30b44f45e4833b4364b40ad9748b58
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675127"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607768"
 ---
 # <a name="creating-assemblies"></a>Vytváření sestavení
 

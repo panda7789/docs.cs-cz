@@ -3,12 +3,12 @@ title: Zápis bezpečný a účinný C# kódu
 description: Poslední vylepšení C# jazyk umožňují také napsat bezpečného kódu s možností ověření, že výkon bylo dřív přidružené nezabezpečený kód.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: d363e357d3749bb2014456c0064c4de7dd7f1acb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 259ce0b9405dfd74adf51a9cc046ffe3f08d242f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706036"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64753898"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu
 
@@ -180,6 +180,8 @@ Místo toho, pokud výpočet vzdálenost používá neměnné struktury `Readonl
 [!code-csharp[readonlyInArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ReadOnlyInArgument "Specifying a readonly in argument")]
 
 Kompilátor generuje kód efektivnější při volání členy `readonly struct`: `this` Odkaz, namísto kopírování příjemce, je vždy `in` parametr předaný odkazem na metodu member. Tato optimalizace uloží kopírování při použití `readonly struct` jako `in` argument.
+
+By neměla předat typ s možnou hodnotou null jako `in` argument. <xref:System.Nullable%601> Typ není deklarován jako struktury jen pro čtení. Musí znamená, že kompilátor generovat obranná kopie pro některý argument typu s možnou hodnotou Null předané do metody pomocí `in` modifikátor deklarace parametru.
 
 Zobrazí se ukázkový program, který ukazuje, rozdíly ve výkonu pomocí [Benchmark.net](https://www.nuget.org/packages/BenchmarkDotNet/) v našich [úložiště ukázek](https://github.com/dotnet/samples/tree/master/csharp/safe-efficient-code/benchmark) na Githubu. Porovná předáním proměnlivé struktury podle hodnoty a podle reference s předáním neměnné struktury podle hodnoty a podle reference. Je nejrychlejším způsobem použití neměnné struktury a předání odkazem.
 

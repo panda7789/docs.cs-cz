@@ -3,12 +3,12 @@ title: Seznámení s Dockerem
 description: Tento článek obsahuje přehled a úvod do Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c3ac9fd79ad8e24d970aab6aa4ceb0ac76ccae3a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d0bce09d7acdcf474fbb8849c8fc82dae4a69598
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613440"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64753294"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -75,3 +75,4 @@ Store a správa imagí kontejnerů napříč všemi typy nasazení Azure.
 * [Zjistěte, jak kontejnerizovat aplikace .NET Core.](build-docker-netcore-container.md)
 * [Zjistěte, jak kontejnerizovat aplikace ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
 * [Projděte si kurz další Mikroslužeb ASP.NET Core.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
+* [Další informace o kontejnerových nástrojů v sadě Visual Studio](/visualstudio/containers/overview)

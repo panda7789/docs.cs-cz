@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9b9f0cd44e5ab9a33db4dd2ef52681f40ca54080
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: db6630a6c1e68a776641db7ec7960f47fd260552
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643540"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64603286"
 ---
 # <a name="compiling-an-interop-project"></a>Kompilace projektu interoperability
 

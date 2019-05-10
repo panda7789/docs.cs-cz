@@ -4,12 +4,12 @@ description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďu
 author: richlander
 ms.date: 06/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: 2ef6ade36092ff5a17b0cc420dc4859409d459ce
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.openlocfilehash: 82410863c81faa95edfb120c95ec6bc186ed1328
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63773848"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64751675"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 
@@ -17,7 +17,7 @@ ms.locfileid: "63773848"
 
 Shromážděná data jsou anonymní a publikované v souhrnné podobě k použití Microsoftem a komunitou v části [Creative Commons Attribution License](https://creativecommons.org/licenses/by/4.0/).
 
-## <a name="scope"></a>Rozsah
+## <a name="scope"></a>Scope
 
 `dotnet` Příkaz se používá ke spuštění aplikace a rozhraní příkazového řádku .NET Core. `dotnet` Telemetrii neshromažďuje příkazu samého. Příkazy rozhraní příkazového řádku .NET Core spuštěné `dotnet` příkaz shromažďovat telemetrická data.
 

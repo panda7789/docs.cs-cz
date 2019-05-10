@@ -9,12 +9,12 @@ helpviewer_keywords:
 - administration [WCF]
 - WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
-ms.openlocfilehash: 351d133215343e07e849ad1045eba601dd8cce56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5df95c6b5f91cd4f36bd03c1bd291f7a44025ee9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797518"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64600089"
 ---
 # <a name="administration-and-diagnostics"></a>Správa a diagnostika
 Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které vám pomohou sledovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. WCF obsahuje velké sady čítače výkonu umožňují měřit výkon vaší aplikace. WCF také poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI). Při aplikaci dojde k selhání nebo spuštění funguje správně, můžete použít v protokolu událostí zobrazíte, pokud žádné významné došlo k chybě. Pokud chcete zjistit, jaké události jsou děje začátku do konce ve vaší aplikaci můžete také použít protokolování zpráv a trasování. Tyto funkce pomůžou vývojářům a IT profesionály řešení aplikaci WCF při nepracuje správně.  

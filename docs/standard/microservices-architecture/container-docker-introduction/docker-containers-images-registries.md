@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: f10d7d03bbf88ed8f7a89a5d3919a39b3c124ae0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1ab5f2f4172caf799b9a63c1ae881a66f8805e20
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025536"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64659664"
 ---
 # <a name="docker-containers-images-and-registries"></a>Registry, image a kontejnery Dockeru
 

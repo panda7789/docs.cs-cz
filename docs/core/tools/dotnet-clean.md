@@ -1,26 +1,30 @@
 ---
 title: čištění příkaz DotNet
 description: Příkaz dotnet clean odstraní aktuální adresář.
-ms.date: 12/04/2018
-ms.openlocfilehash: a25b7930794795e3dff5051a8ca1dd1b9c261dfd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.date: 04/14/2019
+ms.openlocfilehash: 3e735c02c9be9b6f51a8cdf048c18eff34f838cb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665212"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64754120"
 ---
 # <a name="dotnet-clean"></a>DotNet čisté
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
 
-## <a name="name"></a>Název
+<!-- todo: uncomment when all CLI commands are reviewed
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
+
+## <a name="name"></a>Name
 
 `dotnet clean` -Vyčistí výstup projektu.
 
 ## <a name="synopsis"></a>Souhrn
 
 ```
-dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
+dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
 
@@ -30,9 +34,9 @@ dotnet clean [-h|--help]
 
 ## <a name="arguments"></a>Arguments
 
-`PROJECT`
+`PROJECT | SOLUTION`
 
-Projekt MSBuild pro čištění. Pokud není zadán soubor projektu, MSBuild vyhledá aktuální pracovní adresář pro soubor, který má příponu souboru, který končí na *proj* a použije tento soubor.
+Nástroj MSBuild projekt nebo řešení pro čištění. Pokud není zadán soubor projektu nebo řešení, MSBuild vyhledá aktuální pracovní adresář pro soubor, který má příponu souboru, který končí na *proj* nebo *sln*a použije tento soubor.
 
 ## <a name="options"></a>Možnosti
 
@@ -48,9 +52,13 @@ Projekt MSBuild pro čištění. Pokud není zadán soubor projektu, MSBuild vyh
 
   Vytiskne krátký nápovědy pro příkaz.
 
+* **`--interactive`**
+
+  Povoluje příkazu zastavit a počkat na vstup uživatele nebo akce. Například k dokončení ověřování. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, ve kterém je umístí výstupy sestavení. Zadejte `-f|--framework <FRAMEWORK>` přepnout s přepínačem výstupní adresář, pokud jste zadali rozhraní, když byl projekt sestaven.
+  Adresář, který obsahuje artefakty sestavení k odstranění. Zadejte `-f|--framework <FRAMEWORK>` přepnout s přepínačem výstupní adresář, pokud jste zadali rozhraní, když byl projekt sestaven.
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -58,7 +66,7 @@ Projekt MSBuild pro čištění. Pokud není zadán soubor projektu, MSBuild vyh
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené úrovně jsou q [uiet], m [inimal], n [ormal], d [etailed] a diag [nostic].
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
 
 ## <a name="examples"></a>Příklady
 

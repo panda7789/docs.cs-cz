@@ -9,12 +9,12 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-ms.openlocfilehash: ae780da7d6c6d45cb791333e5f0edcf0690f297b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bf7cdc5074cfe6548a13610e6f0af090d2359177
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989674"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607146"
 ---
 # <a name="ui-automation-events-overview"></a>Přehled událostí automatizace uživatelského rozhraní
 > [!NOTE]

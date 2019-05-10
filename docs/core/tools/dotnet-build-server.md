@@ -1,19 +1,23 @@
 ---
 title: příkaz DotNet serveru sestavení
 description: Příkaz dotnet sestavení serveru komunikuje se servery tím, že sestavení.
-ms.date: 12/04/2018
-ms.openlocfilehash: 7f78a0cae6e3297f3084754dc56b0da4eac38caf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.date: 04/24/2019
+ms.openlocfilehash: 491ac37e7f75f930423b3c7e43e3c090ec1ed07d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665309"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64754287"
 ---
 # <a name="dotnet-build-server"></a>DotNet – server sestavení
 
-[!INCLUDE [topic-appliesto-net-core-21plus](../../../includes/topic-appliesto-net-core-21plus.md)]
+**Tento článek se týká: ✓** sady SDK .NET Core 2.1 a novějších verzích
 
-## <a name="name"></a>Název
+<!-- todo: uncomment when all CLI commands are reviewed
+[!INCLUDE [topic-appliesto-net-core-21plus](../../../includes/topic-appliesto-net-core-21plus.md)]
+-->
+
+## <a name="name"></a>Name
 
 `dotnet build-server` -Komunikuje se servery pro spuštění sestavení.
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], ServiceModel attributes
 ms.assetid: 1e0d2436-6ae5-439b-9765-a448d6f60000
-ms.openlocfilehash: 79d97eee328d816281348b5b15cf779e1ee65893
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8f8a50dc82c073c9357209a4dbeeed6c8b075695
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747664"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64586157"
 ---
 # <a name="servicemodel-transaction-attributes"></a>Atributy transakce ServiceModel
 Windows Communication Foundation (WCF) poskytuje vlastnosti na tři standardní <xref:System.ServiceModel> atributy, které je možné nakonfigurovat chování transakce služby WCF:  

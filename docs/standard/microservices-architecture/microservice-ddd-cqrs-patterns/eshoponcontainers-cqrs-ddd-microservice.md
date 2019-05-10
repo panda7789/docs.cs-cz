@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: fc8c27c25fb6d07207586eb65d5ac9cc543bcc1a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6e39b0ce48e7caf755054eb558ab0c99b0ec76e8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61817998"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64755069"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použít přístupy CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
 
@@ -19,7 +19,7 @@ Podstatu tyto vzory a tady důležitý bod je, že dotazy jsou idempotentní: be
 
 Proto můžete použít různé "čtení" datový model než transakční logiky "zapíše" model domény, přestože pořadí mikroslužeb používají tutéž databázi. Proto je zjednodušený přístup modelu CQRS.
 
-Příkazy, které aktivují transakce a aktualizace dat, na druhé straně změnit stav systému. Pomocí příkazů, potřebujete mít na paměti při zabývají složitost a neustále se měnící obchodní pravidla. Toto je where má být použita DDD techniky lépe modelové systém.
+Příkazy, které aktivují transakce a aktualizace dat, na druhé straně změnit stav systému. Pomocí příkazů, potřebujete mít na paměti při zabývají složitost a neustále se měnící obchodní pravidla. Toto je místo použití techniky DDD lépe modelové systém.
 
 Univerzálně neměla používat vzorů DDD v této příručce. Ale zavádí omezení návrhu. Ta omezení poskytují výhody, jako je například vyšší kvality časem, zejména v příkazech a jiný kód, který upravuje stav systému. Ta omezení však přidat složitost s menším počtem výhody pro čtení a dotazování na data.
 

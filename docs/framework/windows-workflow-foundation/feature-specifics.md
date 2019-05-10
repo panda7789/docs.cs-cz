@@ -2,12 +2,12 @@
 title: Specifické funkce Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: fae42332c19a8b39070d9922b6fec4aadd73505b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 063d2472443431423cea9b164831cd1e7a669408
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773677"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64753717"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce Windows Workflow Foundation
 

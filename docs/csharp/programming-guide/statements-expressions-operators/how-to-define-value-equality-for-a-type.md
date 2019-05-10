@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definování rovnosti hodnoty pro typ - C# Průvodce programováním'
+title: 'Postupy: definování rovnosti hodnoty pro typ - C# Průvodce programováním pro službu'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -9,14 +9,15 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: 73cb9249343b02c937c3e4e652021c7a6dbb4386
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0e1c736c7a2826c1218cb078a6e9f874b3b72c3c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710098"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64755006"
 ---
-# <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: Definování rovnosti hodnoty pro typ (C# Průvodce programováním v)
+# <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: definování rovnosti hodnoty pro typ (C# Programming Guide)
+
 Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvořit vlastní definici rovnosti hodnoty (nebo ekvivalence) pro typ. Rovnost hodnot se obvykle, implementují se očekává, že objekty tohoto typu přidána do kolekce s nějakým nebo při jejich hlavním účelem je uložit sadu pole nebo vlastnosti. Vaše definici rovnosti hodnot daného můžete založit na porovnání všech polí a vlastností v typu, nebo můžete založit definice v podmnožině. Ale v obou případech a ve třídách a strukturách pět záruky ekvivalence postupujte podle vaší implementace:  
   
 1. `x.Equals(x)` Vrátí `true`. Tomu se říká reflexivní vlastnost.  
@@ -33,19 +34,20 @@ Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvoři
   
  Podrobnosti implementace pro hodnotu rovnosti se liší u tříd a struktur. Třídy a struktury ale vyžadují stejný základní postup pro implementaci rovnosti:  
   
-1. Přepsat [virtuální](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> metody. Ve většině případů implementace `bool Equals( object obj )` by měly volat pouze na konkrétní typ `Equals` metodu, která je provádění <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní. (Viz krok 2.)  
+1. Přepsat [virtuální](../../language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> metody. Ve většině případů implementace `bool Equals( object obj )` by měly volat pouze na konkrétní typ `Equals` metodu, která je provádění <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní. (Viz krok 2.)  
   
 2. Implementace <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní tím, že poskytuje určitého typu `Equals` metody. To je, kde se provádí porovnání skutečné ekvivalence. Například můžete rozhodnout k definování rovnosti porovnáním pouze jednu nebo dvě pole v typu. Nevyvolají výjimky z `Equals`. Pro pouze třídy: Tato metoda by měla prozkoumat pouze pole, které jsou deklarovány ve třídě. Měla by volat `base.Equals` prozkoumat pole, která jsou v základní třídě. (Není to provést, pokud typ dědí přímo z <xref:System.Object>, protože <xref:System.Object> provádění <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> provádí kontrolu rovnosti reference.)  
   
-3. Nepovinné – ale doporučené: Přetěžování [ == ](../../../csharp/language-reference/operators/equality-operators.md#equality-operator-) a [! =](../../../csharp/language-reference/operators/equality-operators.md#inequality-operator-) operátory.  
+3. Nepovinné – ale doporučené: Přetěžování [ == ](../../language-reference/operators/equality-operators.md#equality-operator-) a [! =](../../language-reference/operators/equality-operators.md#inequality-operator-) operátory.  
   
 4. Přepsat <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType> tak, aby dva objekty, které se mají vytvořit stejný rovnost hodnot hash kód.  
   
-5. Volitelné: Pro podporu definic pro "větší než" nebo "menší než", implementovat <xref:System.IComparable%601> rozhraní pro typ a také přetížit [ <= ](../../../csharp/language-reference/operators/less-than-equal-operator.md) a [ >= ](../../../csharp/language-reference/operators/greater-than-equal-operator.md) operátory.  
+5. Volitelné: Pro podporu definic pro "větší než" nebo "menší než", implementovat <xref:System.IComparable%601> rozhraní pro typ a také přetížit [ <= ](../../language-reference/operators/comparison-operators.md#less-than-or-equal-operator-) a [ >= ](../../language-reference/operators/comparison-operators.md#greater-than-or-equal-operator-) operátory.  
   
  Který následuje první příklad ukazuje implementaci třídy. Druhý příklad ukazuje implementaci struktury.  
-  
-## <a name="example"></a>Příklad  
+
+## <a name="example"></a>Příklad
+
  Následující příklad ukazuje, jak implementovat rovnost hodnot ve třídě (odkaz).  
   
  [!code-csharp[csProgGuideStatements#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#19)]  
@@ -53,17 +55,18 @@ Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvoři
  Na třídy (typy odkazů) výchozí implementaci i <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> metody provádí porovnání rovnosti reference, ne kontroly rovnosti hodnoty. Když implementátora přepíše virtuální metody, účelem je pro ni sémantiku rovnosti hodnoty.  
   
  `==` a `!=` operátory lze používat s třídami, i když je přetížení není třída. Výchozí chování je však provést kontrolu rovnosti reference. Ve třídě, pokud přetížíte `Equals` metodu, můžete přetížit `==` a `!=` operátory, ale není povinné.  
-  
-## <a name="example"></a>Příklad  
+
+## <a name="example"></a>Příklad
+
  Následující příklad ukazuje, jak implementovat rovnost hodnot ve struktuře (ValueType):  
   
  [!code-csharp[csProgGuideStatements#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#20)]  
   
  Pro struktury, výchozí implementaci <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> (což je přepsaná verze <xref:System.ValueType?displayProperty=nameWithType>) provádí kontroly rovnosti hodnoty pomocí reflexe pro porovnání hodnot každé pole v typu. Při přepsání virtuální implementátora `Equals` metody struktury účelem je poskytovat efektivnější způsob provedení kontroly rovnosti hodnoty a volitelně založit porovnání na určitou podmnožinu struktura, obsahovat pole nebo vlastnosti.  
   
- [ == ](../../../csharp/language-reference/operators/equality-operators.md#equality-operator-) a [! =](../../../csharp/language-reference/operators/equality-operators.md#inequality-operator-) operátory nejde použít pro struktury, pokud struktury explicitně přetížení.  
+ [ == ](../../language-reference/operators/equality-operators.md#equality-operator-) a [! =](../../language-reference/operators/equality-operators.md#inequality-operator-) operátory nejde použít pro struktury, pokud struktury explicitně přetížení.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Porovnání rovnosti](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Porovnání rovnosti](equality-comparisons.md)
+- [Průvodce programováním v jazyce C#](../index.md)

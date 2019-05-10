@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdc9d6e954c75ccfeea15ec163bc81e7a3ab8ab7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 479307a0bdee162103f798e5f852cd20f259811e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705777"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607685"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 

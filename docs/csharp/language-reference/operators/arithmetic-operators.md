@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: dc817fdb9684f794efc6599444e80be1ef7f9654
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 94c266c3e44f87d8c8503bcf15789723116460df
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660123"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64753809"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
@@ -163,23 +163,6 @@ Operátor odčítání `-` odečte jeho druhého operandu od jeho prvního opera
 
 Můžete také použít `-` operátor pro odebrání delegátů. Další informace najdete v tématu [ `-` operátor](subtraction-operator.md) článku.
 
-## <a name="operator-precedence-and-associativity"></a>Priorita a asociativita operátora
-
-V následujícím seznamu objednávek od nejvyšší priority k nejnižší aritmetické operátory:
-
-- Zvýšení příponového operátora `x++` a dekrementace `x--` operátory
-- Předponového `++x` a dekrementace `--x` a unární `+` a `-` operátory
-- Multiplikativní `*`, `/`, a `%` operátory
-- Additive `+` a `-` operátory
-
-Binární aritmetické operátory jsou asociativní zprava doleva. To znamená, že operátory se stejnou úrovní priority jsou vyhodnoceny zleva doprava.
-
-Použít závorky, `()`, chcete-li změnit pořadí vyhodnocování stanovené prioritou operátorů a asociativity.
-
-[!code-csharp-interactive[precedence and associativity](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#PrecedenceAndAssociativity)]
-
-Pro úplný seznam C# operátory seřazené podle úrovně priority, naleznete v tématu [ C# operátory](index.md).
-
 ## <a name="compound-assignment"></a>Složené přiřazení
 
 Pro binární operátor `op`, výraz složeného přiřazení formuláře
@@ -205,6 +188,23 @@ Z důvodu [číselné propagace](~/_csharplang/spec/expressions.md#numeric-promo
 [!code-csharp-interactive[compound assignment with cast](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#CompoundAssignmentWithCast)]
 
 Můžete také použít `+=` a `-=` operátorů sloužící k přihlášení a odhlášení [události](../keywords/event.md). Další informace najdete v tématu [postupy: přihlášení k odběru a zrušit její odběr události](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+
+## <a name="operator-precedence-and-associativity"></a>Priorita a asociativita operátora
+
+V následujícím seznamu objednávek od nejvyšší priority k nejnižší aritmetické operátory:
+
+- Zvýšení příponového operátora `x++` a dekrementace `x--` operátory
+- Předponového `++x` a dekrementace `--x` a unární `+` a `-` operátory
+- Multiplikativní `*`, `/`, a `%` operátory
+- Additive `+` a `-` operátory
+
+Binární aritmetické operátory jsou asociativní zprava doleva. To znamená, že operátory se stejnou úrovní priority jsou vyhodnoceny zleva doprava.
+
+Použít závorky, `()`, chcete-li změnit pořadí vyhodnocování stanovené prioritou operátorů a asociativity.
+
+[!code-csharp-interactive[precedence and associativity](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#PrecedenceAndAssociativity)]
+
+Pro úplný seznam C# operátory seřazené podle úrovně priority, naleznete v tématu [ C# operátory](index.md).
 
 ## <a name="arithmetic-overflow-and-division-by-zero"></a>Aritmetické přetečení a dělení nulou
 
