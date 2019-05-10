@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30506
 ms.assetid: 5b66f6a8-f050-4e03-a57f-a64e85f80cb5
-ms.openlocfilehash: 291240bade84bcdd3d64dac24c8c91da5ff72d4f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f119a4696334a93cf91bd859b502ff297aa33056
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649826"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662033"
 ---
-# <a name="handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a><span data-ttu-id="5ca91-102">Klauzule Handles vyžaduje proměnnou WithEvents definovanou v nadřazeném typu nebo v některém z jeho základních typů.</span><span class="sxs-lookup"><span data-stu-id="5ca91-102">Handles clause requires a WithEvents variable defined in the containing type or one of its base types</span></span>
-<span data-ttu-id="5ca91-103">Jste nezadali `WithEvents` proměnné ve vaší `Handles` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="5ca91-103">You did not supply a `WithEvents` variable in your `Handles` clause.</span></span> <span data-ttu-id="5ca91-104">`Handles` Klíčového slova na konci deklaraci procedury způsobí, že okno zpracovávají události vyvolané proměnná deklarovaná pomocí objektu `WithEvents` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="5ca91-104">The `Handles` keyword at the end of a procedure declaration causes it to handle events raised by an object variable declared using the `WithEvents` keyword.</span></span>  
+# <a name="handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a><span data-ttu-id="d1c43-102">Klauzule Handles vyžaduje proměnnou WithEvents definovanou v nadřazeném typu nebo v některém z jeho základních typů.</span><span class="sxs-lookup"><span data-stu-id="d1c43-102">Handles clause requires a WithEvents variable defined in the containing type or one of its base types</span></span>
+<span data-ttu-id="d1c43-103">Jste nezadali `WithEvents` proměnné ve vaší `Handles` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="d1c43-103">You did not supply a `WithEvents` variable in your `Handles` clause.</span></span> <span data-ttu-id="d1c43-104">`Handles` Klíčového slova na konci deklaraci procedury způsobí, že okno zpracovávají události vyvolané proměnná deklarovaná pomocí objektu `WithEvents` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="d1c43-104">The `Handles` keyword at the end of a procedure declaration causes it to handle events raised by an object variable declared using the `WithEvents` keyword.</span></span>  
   
- <span data-ttu-id="5ca91-105">**ID chyby:** BC30506</span><span class="sxs-lookup"><span data-stu-id="5ca91-105">**Error ID:** BC30506</span></span>  
+ <span data-ttu-id="d1c43-105">**ID chyby:** BC30506</span><span class="sxs-lookup"><span data-stu-id="d1c43-105">**Error ID:** BC30506</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="5ca91-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="5ca91-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="d1c43-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="d1c43-106">To correct this error</span></span>  
   
-- <span data-ttu-id="5ca91-107">Zadejte nezbytné `WithEvents` proměnné.</span><span class="sxs-lookup"><span data-stu-id="5ca91-107">Supply the necessary `WithEvents` variable.</span></span>  
+- <span data-ttu-id="d1c43-107">Zadejte nezbytné `WithEvents` proměnné.</span><span class="sxs-lookup"><span data-stu-id="d1c43-107">Supply the necessary `WithEvents` variable.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5ca91-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5ca91-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d1c43-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d1c43-108">See also</span></span>
 
-- [<span data-ttu-id="5ca91-109">Obslužné rutiny</span><span class="sxs-lookup"><span data-stu-id="5ca91-109">Handles</span></span>](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [<span data-ttu-id="d1c43-109">Obslužné rutiny</span><span class="sxs-lookup"><span data-stu-id="d1c43-109">Handles</span></span>](../../../visual-basic/language-reference/statements/handles-clause.md)

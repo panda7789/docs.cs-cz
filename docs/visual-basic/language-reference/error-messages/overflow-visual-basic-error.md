@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30036
 ms.assetid: b2c83de9-a132-449a-870b-e7c409d4d7ee
-ms.openlocfilehash: b4a5cb5ec0d1d4b3ad72ad6ccbced44fbef3f8d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f2d7a025fd18c5655caea4ae45477798425d9ece
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946572"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64661788"
 ---
-# <a name="overflow-visual-basic-error"></a><span data-ttu-id="e4596-102">Přetečení (chyba jazyka Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4596-102">Overflow (Visual Basic Error)</span></span>
-<span data-ttu-id="e4596-103">Literál představuje hodnotu mimo hranice datového typu, ke kterému je přiřazen.</span><span class="sxs-lookup"><span data-stu-id="e4596-103">A literal represents a value outside the limits of the data type to which it is being assigned.</span></span>  
+# <a name="overflow-visual-basic-error"></a><span data-ttu-id="20f60-102">Přetečení (chyba jazyka Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="20f60-102">Overflow (Visual Basic Error)</span></span>
+<span data-ttu-id="20f60-103">Literál představuje hodnotu mimo hranice datového typu, ke kterému je přiřazen.</span><span class="sxs-lookup"><span data-stu-id="20f60-103">A literal represents a value outside the limits of the data type to which it is being assigned.</span></span>  
   
- <span data-ttu-id="e4596-104">**ID chyby:** BC30036</span><span class="sxs-lookup"><span data-stu-id="e4596-104">**Error ID:** BC30036</span></span>  
+ <span data-ttu-id="20f60-104">**ID chyby:** BC30036</span><span class="sxs-lookup"><span data-stu-id="20f60-104">**Error ID:** BC30036</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="e4596-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="e4596-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="20f60-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="20f60-105">To correct this error</span></span>  
   
-- <span data-ttu-id="e4596-106">Rozsah hodnot najdete cílový datový typ a přepište literál tak, aby odpovídal do tohoto rozsahu.</span><span class="sxs-lookup"><span data-stu-id="e4596-106">Consult the value range for the target data type and rewrite the literal to conform to that range.</span></span>  
+- <span data-ttu-id="20f60-106">Rozsah hodnot najdete cílový datový typ a přepište literál tak, aby odpovídal do tohoto rozsahu.</span><span class="sxs-lookup"><span data-stu-id="20f60-106">Consult the value range for the target data type and rewrite the literal to conform to that range.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e4596-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e4596-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20f60-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="20f60-107">See also</span></span>
 
-- [<span data-ttu-id="e4596-108">Datové typy</span><span class="sxs-lookup"><span data-stu-id="e4596-108">Data Types</span></span>](../../../visual-basic/language-reference/data-types/index.md)
+- [<span data-ttu-id="20f60-108">Datové typy</span><span class="sxs-lookup"><span data-stu-id="20f60-108">Data Types</span></span>](../../../visual-basic/language-reference/data-types/index.md)
