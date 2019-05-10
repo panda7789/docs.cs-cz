@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
-ms.openlocfilehash: fec8fd294c0408bfb16df1c5cfa1f3a96c1f28ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e70afa6b3633a5868491e421c7e8e44bf9f3e895
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642604"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624582"
 ---
-# <a name="how-to-get-interface-and-protocol-information"></a><span data-ttu-id="f7e04-102">Postupy: Získání informace o rozhraní a protokolu</span><span class="sxs-lookup"><span data-stu-id="f7e04-102">How to: Get Interface and Protocol Information</span></span>
-<span data-ttu-id="f7e04-103">Tento příklad znázorňuje způsob čtení statistik protokolu TCP pro síťové rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f7e04-103">This sample shows how to read the TCP statistics of a network interface.</span></span>  
+# <a name="how-to-get-interface-and-protocol-information"></a><span data-ttu-id="35462-102">Postupy: Získání informace o rozhraní a protokolu</span><span class="sxs-lookup"><span data-stu-id="35462-102">How to: Get Interface and Protocol Information</span></span>
+<span data-ttu-id="35462-103">Tento příklad znázorňuje způsob čtení statistik protokolu TCP pro síťové rozhraní.</span><span class="sxs-lookup"><span data-stu-id="35462-103">This sample shows how to read the TCP statistics of a network interface.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f7e04-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="f7e04-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="35462-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="35462-104">Example</span></span>  
   
 ```  
 public static void ShowTcpStatistics(NetworkInterfaceComponent version)  
@@ -69,7 +69,7 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="f7e04-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="f7e04-105">Compiling the Code</span></span>  
- <span data-ttu-id="f7e04-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="f7e04-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="35462-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="35462-105">Compiling the Code</span></span>  
+ <span data-ttu-id="35462-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="35462-106">This example requires:</span></span>  
   
-- <span data-ttu-id="f7e04-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="f7e04-107">References to the **System.Net** namespace.</span></span>
+- <span data-ttu-id="35462-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="35462-107">References to the **System.Net** namespace.</span></span>
