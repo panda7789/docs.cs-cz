@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 9d97206c-8917-406c-8961-7d0909d84eeb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a2ce3f194cbdaaa7b244504745c542da7ba8a73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9e53634cea4ab3d260247ce645956c68ea7e2e80
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969439"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623543"
 ---
 # <a name="using-an-asynccallback-delegate-to-end-an-asynchronous-operation"></a>Použití delegáta AsyncCallback k ukončení asynchronní operace
 Aplikace, které můžete provádět další operace při čekání na výsledcích asynchronní operace by neměly blokovat čekání, až do dokončení operace. Má pokračovat provedením pokyny při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  

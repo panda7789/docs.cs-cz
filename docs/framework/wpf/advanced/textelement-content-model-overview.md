@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TextElement content model [WPF]
 - flow content elements [WPF], TextElement content model
 ms.assetid: d0a7791c-b090-438c-812f-b9d009d83ee9
-ms.openlocfilehash: 990642d288481fff8eeef900a86070d54790f151
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1e1f67440377db95a5e0896b8fd31b1ab720b188
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61981874"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64630637"
 ---
 # <a name="textelement-content-model-overview"></a>Přehled modelu obsahu TextElement
 Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Paragraph> Třída je typem <xref:System.Windows.Documents.TextElement>. Model obsahu popisuje objekty/prvky mohou být obsaženy v jiné. Tento přehled obsahuje souhrn modelu obsahu použít u objektů odvozené z <xref:System.Windows.Documents.TextElement>. Další informace najdete v tématu [přehled toku dokumentů](flow-document-overview.md).  

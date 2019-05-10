@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-ms.openlocfilehash: ace1b40b25bd12ff7092459e468a90f382434bf4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0984028e0a09c9939f68ae64be8c401182b57274
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938759"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622917"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
 Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou definovány pomocí rozhraní .NET Framework XAML Services. Popisuje také další atributy CLR, které jsou definovány v rozhraní .NET Framework, které mají související s XAML scénář pro aplikaci na sestavení nebo typy. Přidělování sestavení, typy nebo členy s těmito atributy CLR poskytuje typ informace o systému XAML souvisejících typů. Informace jsou poskytovány k příjemci XAML, který používá rozhraní .NET Framework XAML Services pro zpracování datový proud uzlu XAML přímo nebo prostřednictvím vyhrazené XAML čtečky a zapisovače XAML.  
@@ -24,7 +24,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Platí pro:** Třída, vlastnost, nebo `get` přistupující členy, které podporují připojitelná vlastnosti.  
   
- **Argumenty:** Žádné  
+ **Argumenty:** Žádný  
   
  <xref:System.Windows.Markup.AmbientAttribute> Označuje, že vlastnost nebo všechny vlastnosti, které provést s atributy typu by měl být interpretován pod vedlejší vlastnost koncept v XAML. Okolí koncept se vztahuje jak XAML procesory určit vlastníky typ členů. Změní vlastnost ambient je vlastnost, kde se očekává, že hodnota bude k dispozici v rámci analyzátor při vytváření grafu objektů, ale v případě vyhledávání typický typ člena je pozastaven okamžité uzlu XAML nastavit vytváří.  
   

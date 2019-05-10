@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32061
 ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
-ms.openlocfilehash: 8dbf510d7c6ee80e2dcd2f9d2552bc870413cbab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ff51bb27847a92b07ce6275a8ddee4789e865f08
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801475"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64642802"
 ---
 # <a name="expression-cannot-be-used-as-a-type-constraint"></a>"\<výrazu >' nelze použít jako omezení typu
 Seznam omezení obsahuje výraz, který nepředstavuje platné omezení pro parametr typu.  
