@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: b04266b15f786e3a5a93ac1e9fff1754c397ccd4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f40afe25bbc3238ec773ee1ee19673d4d5a3ef1d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762749"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64603944"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťový protokol (net.tcp://) pro vysoce výkonné komunikaci. WCF také zavádí nové součásti systému, služba Net.TCP Port Sharing umožňující portů net.tcp sdílet mezi více procesy uživatele.  
