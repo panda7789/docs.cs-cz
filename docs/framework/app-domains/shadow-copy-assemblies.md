@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f1f9a88a347650474c7a63b41984e3346e0ce205
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 00dc191d53d01d33a5dce3ed2d012942e2672dae
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675011"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607515"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  

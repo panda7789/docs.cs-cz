@@ -2,12 +2,12 @@
 title: Příklad řetězení dotazů (C#)
 ms.date: 07/20/2015
 ms.assetid: abbca162-d95e-43af-b92c-e46e6aa2540e
-ms.openlocfilehash: b77de6b1e5bd81ac70165640aecf0d4ce89be03d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8564a2ece7dc09bd3330dc9bdad31689408089cf
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702630"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64598555"
 ---
 # <a name="chaining-queries-example-c"></a>Příklad řetězení dotazů (C#)
 Tento příklad vychází z předchozího příkladu a ukazuje, co se stane, když je řetězec společně dva dotazy, které obě používají odložené provedení a opožděné vyhodnocení.  

@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro vylepšení ladění pro knih
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 10596f589af7abee6ff7833ef25c606294337196
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d3e2b0b3aedbab150072bf6eebff4acb5f8a0b7
+ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61910235"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65211676"
 ---
 # <a name="source-link"></a>Odkaz na zdroj
 
@@ -37,7 +37,7 @@ Můžete použít [NuGet – Průzkumník balíčků](https://github.com/NuGetPa
 
 **✔️ ZVAŽTE** publikování souborů symbolů (`*.pdb`).
 
-> Pro nejlepší možnosti ladění knihovny by měl pubish symbol soubory také pomocí odkazu na zdroj. Další informace o soubory symbolů a balíčky symbolů, naleznete v tématu [Symbol balíčky](./nuget.md#symbol-packages).
+> Pro nejlepší možnosti ladění knihovny by měl publikovat soubory symbolů také pomocí odkazu na zdroj. Další informace o soubory symbolů a balíčky symbolů, naleznete v tématu [Symbol balíčky](./nuget.md#symbol-packages).
 
 >[!div class="step-by-step"]
 >[Předchozí](dependencies.md)

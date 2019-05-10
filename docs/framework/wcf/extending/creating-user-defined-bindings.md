@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-ms.openlocfilehash: 54a1c8e06991729ea8556d82d31897c522f6d173
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e1e776a42ca63e4b862e307cbcae1bab2847d0ca
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923237"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64587300"
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
 Existuje několik způsobů, jak vytvořit vazby není k dispozici v systému:  

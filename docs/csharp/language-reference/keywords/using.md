@@ -8,18 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - using keyword [C#]
 ms.assetid: 124e1a63-2a4b-4132-b269-3b6d8d3ef72d
-ms.openlocfilehash: 07563d32b176832966ab50942cda2b0b26b80e44
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c422ff105d17de5d96c58ce8133b7a82b127d0f4
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660291"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452414"
 ---
 # <a name="using-c-reference"></a>using (Referenční dokumentace jazyka C#)
 
 `using` – Klíčové slovo má tři hlavní použití:
-- [Příkaz using](using-statement.md) definuje obor na konci, z nichž bude objekt odstraněn. 
-- Using [směrnice](using-directive.md) vytvoří alias pro obor názvů nebo importuje typy definované v jiných oborech názvů. 
+
+- [Příkaz using](using-statement.md) definuje obor na konci, z nichž bude objekt odstraněn.
+- [Direktiva using](using-directive.md) vytvoří alias pro obor názvů nebo importuje typy definované v jiných oborech názvů.
 - [Using static – direktiva](using-static.md) importuje členy jednu třídu.
 
 ## <a name="see-also"></a>Viz také:

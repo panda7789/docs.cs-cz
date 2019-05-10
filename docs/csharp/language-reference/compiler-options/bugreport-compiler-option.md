@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-ms.openlocfilehash: 63d64acc0d0a1ed90a722db75b467bd3ce5f260e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f25455fac84903f9c39861e1f6863f6b2f6928f3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663008"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64587393"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (možnosti kompilátoru C#)
 Určuje, že informace o ladění by měly být umístěny v souboru pro pozdější analýzu.  

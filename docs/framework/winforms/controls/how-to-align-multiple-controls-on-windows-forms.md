@@ -7,27 +7,25 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 - controls [Windows Forms], aligning
 ms.assetid: b7175656-f532-49e9-b0b1-177d1b40af3e
-ms.openlocfilehash: 262487eabb3f0ab27efe8bc7fdb31a822ed07823
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a184312b1df7c0736fa9c6b6ef787451add0465e
+ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010966"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65211810"
 ---
 # <a name="how-to-align-multiple-controls-on-windows-forms"></a>Postupy: Zarovnání více ovládacích prvků ve Windows Forms
-Ke standardizaci rozložení uživatelského rozhraní (UI) aplikace založené na Windows, můžete umístit skupin ovládacích prvků pomocí jediného příkazu.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-align-multiple-controls-on-a-form"></a>Chcete-li zarovnání více ovládacích prvků ve formuláři  
-  
-1. Otevřete formulář, který obsahuje ovládací prvky, které chcete umístit v **Návrháře formulářů Windows**.  
-  
-2. Vyberte ovládací prvky, které chcete zarovnat tak, aby první ovládací prvek, který jste vybrali primární ovládací prvek, ostatní musí být zarovnána.  
-  
-3. Na **formátu** nabídky, přejděte k **zarovnat**a pak klikněte na jednu ze sedmi volby, které jsou k dispozici.  
-  
+
+Ke standardizaci rozložení uživatelského rozhraní (UI) aplikace založené na Windows, můžete umístit skupin ovládacích prvků pomocí jediného příkazu.
+
+### <a name="to-align-multiple-controls-on-a-form"></a>Chcete-li zarovnání více ovládacích prvků ve formuláři
+
+1. V sadě Visual Studio, otevřete formulář obsahující ovládací prvky, které chcete umístit v **Návrháře formulářů Windows**.
+
+2. Vyberte ovládací prvky, které chcete zarovnat tak, aby první ovládací prvek, který jste vybrali primární ovládací prvek, ostatní musí být zarovnána.
+
+3. Na **formátu** nabídky, přejděte k **zarovnat**a pak klikněte na jednu ze sedmi volby, které jsou k dispozici.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Windows Forms – ovládací prvky](index.md)

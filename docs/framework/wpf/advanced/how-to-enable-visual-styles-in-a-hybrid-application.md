@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - visual styles [Windows Forms]
 ms.assetid: 95de9b9c-d804-405c-b2d1-49a88c1e0fe1
-ms.openlocfilehash: 7aa5208a4f378408a01a08a2f4c9dbf2edfa5243
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 81a56c41d1aaa5924bb6ff1d3437000be412f886
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776139"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64912436"
 ---
 # <a name="how-to-enable-visual-styles-in-a-hybrid-application"></a>Postupy: Povolení vizuálních stylů v hybridní aplikaci
 Toto téma ukazuje, jak povolit [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] styly vizuál na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] konání ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na.  

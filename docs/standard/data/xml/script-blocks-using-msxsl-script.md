@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b45b8ebe048a5917019349ea3a6a357b7e90a9c0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 32c76ae4556467759dad111b47e3ad8f6cf6df92
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027001"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64589968"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Bloky skriptu používající element msxsl:script
 <xref:System.Xml.Xsl.XslCompiledTransform> Třída podporuje vložené skripty pomocí `msxsl:script` elementu. Při načítání šablony stylů žádné definované funkce jsou kompilovaná Code Document Object Model (CodeDOM) pro jazyk Microsoft intermediate language (MSIL) a jsou spouštěny za běhu. Sestavení vygenerované z bloku vloženého skriptu je oddělená než sestavení vygenerované pro šablony stylů.  

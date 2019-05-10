@@ -5,12 +5,12 @@ helpviewer_keywords:
 - metadata [WPF], framework properties
 - framework property metadata [WPF]
 ms.assetid: 9962f380-b885-4b61-a62e-457397083fea
-ms.openlocfilehash: 2a20e5a2bdbcbb36f6f06bbbadb2a46743ca5eba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f0385280cf01502a5b2786541c3d959fca24d239
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703332"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64912445"
 ---
 # <a name="framework-property-metadata"></a>Metadata vlastnosti rozhraní .NET Framework
 Možnosti metadata vlastnosti architektury jsou hlášeny pro vlastnosti považuje za na rozhraní WPF v úrovni elementů objektu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektury. Obecně znamená označení úrovni rozhraní WPF této funkce, jako je vykreslování, datové vazby, a vlastnost systému upřesnění jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a spustitelné soubory. Metadata vlastnosti architektury je dotazován tyto systémy určit vlastnosti specifické pro funkce vlastností konkrétní elementu.  

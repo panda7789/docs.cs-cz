@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms controls, user input
 - user input [Windows Forms], Windows Forms controls
 ms.assetid: 3de74dcf-fae3-42d0-92b5-bc04a61a6888
-ms.openlocfilehash: 5dc1997dffc53632ce8b36bc5fe89e768871fd0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: cffcdbbaa988033352b08834e52d603fbebfa870
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802418"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591599"
 ---
 # <a name="how-to-handle-user-input-events-in-windows-forms-controls"></a>Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms
 Tento příklad ukazuje, jak zpracovat většinu klávesnice, myši, fokus a ověřovací události, které mohou nastat v ovládacím prvku Windows Forms. Textové pole s názvem `TextBoxInput` přijímá události, když má fokus, a informace o každé události je zapsaný do textového pole s názvem `TextBoxOutput` v pořadí, ve kterém jsou vyvolány události. Aplikace také obsahuje sadu políčka, která umožňuje filtrovat události do sestavy.  

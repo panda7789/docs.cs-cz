@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 73810330c1ec44aa3a5edf47b3062bc2df267008
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 336a0fb5bc0fca5dd6ef917a2eeaf0908680d12b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792974"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591489"
 ---
 # <a name="using-the-codedom"></a>Použití modelu CodeDOM
 CodeDOM obsahuje typy, které představují běžné typy prvků zdrojového kódu. Můžete navrhnout program, který vytváří model zdrojového kódu pomocí prvků CodeDOM k sestavení grafu objektu. Tento graf objektu lze vykreslit jako zdrojový kód pomocí generátoru kódu CodeDOM pro podporovaný programovací jazyk. CodeDOM lze použít také ke kompilaci zdrojového kódu do binárního sestavení.  

@@ -1,17 +1,17 @@
 ---
-title: Sestavení aplikace ASP.NET Core 2.1 nasazené jako kontejnery Linux do clusterů AKS/Kubernetes
+title: Sestavení aplikace ASP.NET Core 2.2 nasazené jako kontejnery Linux do clusterů AKS/Kubernetes
 description: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/25/2019
-ms.openlocfilehash: c6d778d345466b1b852d06bc01ce40ccfdebf964
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 28d2f557e4434ef7e5c2c3f8d17d6d3d6a80ce2a
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052743"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452783"
 ---
-# <a name="build-aspnet-core-21-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Sestavení aplikace ASP.NET Core 2.1 nasazené jako kontejnery Linux do AKS/Kubernetes produktu orchestrator
+# <a name="build-aspnet-core-22-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Vytváření aplikací ASP.NET Core 2.2 nasazené jako kontejnery Linux do AKS/Kubernetes produktu orchestrator
 
 Služby Azure Kubernetes (AKS) je spravované Kubernetes Orchestrace služeb Azure, které zjednodušují nasazování kontejnerů a správu.
 
@@ -23,13 +23,13 @@ AKS hlavní funkce patří:
 - Uživatel konfigurovatelné škálování
 - Jednodušší uživatelské prostředí pro vývojáře i operátory clusteru.
 
-Následující příklady prozkoumat vytvoření aplikace ASP.NET Core 2.1, která běží na Linuxu a nasadí do clusteru AKS v Azure, zatímco probíhá vývoj pomocí sady Visual Studio 2017.
+Následující příklady prozkoumat vytvoření aplikace ASP.NET Core 2.2, která běží na Linuxu a nasadí do clusteru AKS v Azure, zatímco probíhá vývoj pomocí sady Visual Studio 2017.
 
-## <a name="creating-the-aspnet-core-21-project-using-visual-studio-2017"></a>Vytváří se projekt ASP.NET Core 2.1 pomocí sady Visual Studio 2017
+## <a name="creating-the-aspnet-core-22-project-using-visual-studio-2017"></a>Vytvoření projektu 2.2 technologie ASP.NET Core pomocí sady Visual Studio 2017
 
 ASP.NET Core je pro obecné účely Vývojová platforma udržuje od Microsoftu a komunity .NET na Githubu. Je multiplatformní, podpora Windows, macOS a Linux a je možné v zařízení, cloud a scénáře vložené a IoT.
 
-Tento příklad používá jednoduchý projekt, který je založen na šabloně webového rozhraní API Visual Studio, takže není nutné žádné další znalostní báze k vytvoření vzorku. Stačí vytvořit projekt pomocí standardní šablonu, která obsahuje všechny prvky malém projektu pomocí rozhraní REST API, technologií ASP.NET Core 2.1.
+Tento příklad používá jednoduchý projekt, který je založen na šabloně webového rozhraní API Visual Studio, takže není nutné žádné další znalostní báze k vytvoření vzorku. Stačí vytvořit projekt pomocí standardní šablonu, která obsahuje všechny prvky malém projektu pomocí rozhraní REST API, technologií ASP.NET Core 2.2.
 
 ![Přidáte okno nového projektu v sadě Visual Studio, vyberte webovou aplikaci ASP.NET Core.](media/create-aspnet-core-application.png)
 
@@ -39,13 +39,13 @@ Chcete-li vytvořit ukázkový projekt v sadě Visual Studio, vyberte **souboru*
 
 Visual Studio obsahuje šablony pro webové projekty. V našem příkladu vyberte **API** k vytvoření aplikace ASP.NET Web API.
 
-Ověřte, že jste vybrali ASP.NET Core 2.1 jako rozhraní. .NET core 2.1 je zahrnuta v poslední verzi sady Visual Studio 2017 a je automaticky nainstalovat a nakonfigurovat za vás při instalaci sady Visual Studio 2017.
+Ověřte, že jste vybrali 2.2 technologie ASP.NET Core jako rozhraní. .NET core 2.2 je zahrnuta v poslední verzi sady Visual Studio 2017 a je automaticky nainstalovat a nakonfigurovat za vás při instalaci sady Visual Studio 2017.
 
 ![Visual Studio dialogové okno pro výběr typu webové aplikace ASP.NET Core s vybranou možností rozhraní API.](media/create-web-api-application.png)
 
-**Obrázek 4-37**. Typ projektu výběrem ASP.NET CORE 2.1 a webového rozhraní API
+**Obrázek 4-37**. Typ projektu výběrem 2.2 technologie ASP.NET CORE a webové rozhraní API
 
-Pokud máte jakékoli předchozí verze .NET Core, můžete stáhnout a nainstalovat z verze 2.1 <https://www.microsoft.com/net/download/core#/sdk>.
+Pokud máte jakékoli předchozí verze .NET Core, můžete stáhnout a nainstalovat na verzi 2.2 z <https://www.microsoft.com/net/download/core#/sdk>.
 
 Při vytváření projektu můžete přidat podporu Dockeru nebo později, tak je můžete "Dockerizace" svůj projekt v každém okamžiku. Chcete-li přidat podporu Dockeru po vytvoření projektu, klikněte pravým tlačítkem na uzel projektu v Průzkumníku řešení a vyberte **přidat** > **podporu Dockeru** v místní nabídce.
 
@@ -59,7 +59,7 @@ Abyste mohli dokončit přidávání podpory Docker, můžete Windows nebo Linux
 
 **Obrázek 4-39**. Výběr kontejnery Linuxu.
 
-Pomocí tohoto jednoduchého postupu mít vaše aplikace ASP.NET Core 2.1 běžící v kontejneru Linuxu.
+Pomocí tohoto jednoduchého postupu mít vaše aplikace ASP.NET Core 2.2 běžící v kontejneru Linuxu.
 
 Jak vidíte, je zcela orientovaný produktivity pro vývojáře integraci mezi Visual Studio 2017 a Dockeru.
 
@@ -125,6 +125,12 @@ Po spuštění `docker tag` příkazu, výpis všech imagí s `docker images` p�
 
 ### <a name="push-the-image-into-the-azure-acr"></a>Nahrání image do služby ACR Azure
 
+Přihlaste se do služby Azure Container Registry
+
+```console
+az acr login --name mssampleacr
+```
+
 Nahrání image do služby ACR Azure, pomocí následujícího příkazu:
 
 ```console
@@ -158,7 +164,7 @@ spec:
         app: mssample-kub-app
     spec:
       containers:
-        - mane: mssample-services-app
+        - name: mssample-services-app
           image: mssampleacr.azurecr.io/mssampleaksapplication:v1
           ports:
             - containerPort: 80

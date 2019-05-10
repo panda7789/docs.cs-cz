@@ -11,12 +11,12 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-ms.openlocfilehash: ea719b60a6bcd40494666d4923fad296a8ddae70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 65ee23c59958eefb94c7ab0c6bef4a7e992a121c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907384"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64601184"
 ---
 # <a name="composite-data-types-visual-basic"></a>Složené datové typy (Visual Basic)
 Kromě základní datové typy jazyka Visual Basic nabízí, můžete také sestavit položky k vytvoření různých typů *složené datové typy* například třídy, struktury a pole. Složené datové typy můžete vytvořit ze základních typů a z dalších složené typy. Například můžete definovat pole prvky struktury nebo strukturu s členy pole.  

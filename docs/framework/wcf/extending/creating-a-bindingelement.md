@@ -2,12 +2,12 @@
 title: Vytvoření BindingElement
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-ms.openlocfilehash: 600bf9b394078ffc1b1bc97390bd0de406d64338
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0c08494315f43f35f60d70abf643f596a013c302
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858348"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64587351"
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
 Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>v uvedeném pořadí) jsou místo, kde se spojená s objekty pro vytváření kanálů a moduly pro naslouchání kanálů model aplikace Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanálů vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni kanálu služby](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavky na povolení s využitím kanálu ve službě WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit používání instrukcí z aplikace, jak je popsáno v kroku 4 [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: d1442e02d651cd283e5ff63d28f3cfe80e99cc7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 56c236e2e061b473f0b188b24d3ebdd98e013aa8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680414"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64595995"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlaste se k odběru a zrušit její odběr událostí (C# Průvodce programováním v)
 Se přihlásíte k odběru události, která se publikuje jinou třídou, když chcete napsat vlastní kód, který se volá, když se vyvolá tuto událost. Například může přihlásit tlačítko `click` událostí, aby vaše aplikace dělat něco užitečné, když uživatel klikne na tlačítko.  

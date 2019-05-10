@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f141f21f80275a592caf3f87a5cbe0def6869c0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 124641ed32dc2ea953202dbc6a73ee066a6c4a4e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795002"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64602512"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
 Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu jsou určeny pro aplikaci Windows Forms. Tato aplikace neukazuje reálných scénářů, jako je například používání čipových karet. Místo toho ukazuje základní informace o šifrování a dešifrování.  
@@ -53,7 +53,7 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
 ## <a name="creating-a-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
  Většina příkladů kódu v tomto názorném postupu jsou navržené tak, aby obslužné rutiny událostí pro ovládací prvky tlačítek. Následující tabulka uvádí prvky, které jsou vyžadovány pro ukázkovou aplikaci a požadovaná názvy v příkladech kódu.  
   
-|Control|Název|Vlastnost text (podle potřeby)|  
+|Control|Name|Vlastnost text (podle potřeby)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Šifrování souboru|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Dešifrování souboru|  

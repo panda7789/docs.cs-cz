@@ -7,12 +7,12 @@ dev_langs:
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5c0087412a53177a7c43df838266f6d896c1bd9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fc0232e0187c795fe20e6a99d4a710ba6244e34e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875447"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64599663"
 ---
 # <a name="mitigation-xml-schema-validation"></a>Omezení rizik: Ověření schématu XML
 V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], ověření schématu XSD rozpozná porušení omezení unique, pokud se používá složený klíč a jeden klíč je prázdný.  

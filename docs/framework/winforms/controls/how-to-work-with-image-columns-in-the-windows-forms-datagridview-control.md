@@ -10,12 +10,12 @@ helpviewer_keywords:
 - image columns [Windows Forms], Windows Forms
 - DataGridView control [Windows Forms], image columns
 ms.assetid: 8a37aa75-3c6e-4893-91d0-7a5f34bfe287
-ms.openlocfilehash: 09af70cd00b4fc88b5cd76f7de920905c5b3a956
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2b2eb26aa6c4cf5c4c790fbdc28f58bf44275fc2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796458"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591446"
 ---
 # <a name="how-to-work-with-image-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.DataGridView> obrázek sloupce v interaktivní uživatelské rozhraní (UI). Příklad také ukazuje možnosti nastavení velikosti a rozložení image s <xref:System.Windows.Forms.DataGridViewImageColumn>.  

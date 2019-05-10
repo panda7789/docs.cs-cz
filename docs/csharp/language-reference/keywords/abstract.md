@@ -8,15 +8,15 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: a85cf00a8dd1b406c7e5185fd332a507a3ca7c83
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5476e99cbd1a5af2acf91ed6bf854fded3425e72
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662228"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452448"
 ---
 # <a name="abstract-c-reference"></a>abstract (Referenční dokumentace jazyka C#)
-`abstract` Modifikátor znamená, že věc, kterou právě upravuje má chybějící či neúplné implementace. Modifikátor abstract jde použít s třídy, metody, vlastnosti, indexery a události. Použití `abstract` modifikátor v deklaraci třídy k označení, že třída je určen pouze k být základní třídou jiné třídy. Členy označené jako abstraktní, nebo součástí abstraktní třídu, musí být implementované třídami, které jsou odvozeny od abstraktní třídy.  
+`abstract` Modifikátor znamená, že věc, kterou právě upravuje má chybějící či neúplné implementace. Modifikátor abstract jde použít s třídy, metody, vlastnosti, indexery a události. Použití `abstract` modifikátor v deklaraci třídy k označení, že třída je určen pouze k být základní třídou jiné třídy, není vytvořena instance samostatně. Členy označené jako abstraktní musí být implementované třídami, které jsou odvozeny od abstraktní třídy.
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu třída `Square` musí zajišťovat implementaci rozhraní `Area` protože se odvozuje od `ShapesClass`:  

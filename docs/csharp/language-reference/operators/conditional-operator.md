@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 53a867e46b02793df5ad5bd9ca5ef676d0653a2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a40dd4addfaf8a505cf334876192f0b2ccf66a09
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660057"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452395"
 ---
 # <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
 
@@ -43,9 +43,9 @@ je vyhodnocen jako
 a ? b : (c ? d : e)
 ```
 
-Po ruce mnemotechnická, která vám pomůže si zapamatovat, jak tento operátor vyhodnocuje je s dotazem:
+Mnemonická zařízení, která vám pomůže si zapamatovat, jak tento operátor vyhodnocuje je dotaz:
 
-```
+```text
 is this condition true ? yes : no
 ```
 
@@ -95,6 +95,6 @@ Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - [if-else – příkaz](../keywords/if-else.md)
-- [Operátory ?. a ?[]](null-conditional-operators.md)
+- [Operátory ?. a ?[]](member-access-operators.md#null-conditional-operators--and-)
 - [?? – operátor](null-coalescing-operator.md)
 - [ref keyword](../keywords/ref.md)

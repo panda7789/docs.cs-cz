@@ -3,12 +3,12 @@ title: Struktury – průvodce v C#
 description: Další informace o typu Struktura a jak vytvořit
 ms.date: 10/12/2016
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: 6fcd30907880be9159b3cc2e3ab10659ddec248b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fbaa7fcc26009fe3117784b411941d30af0ba3c5
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706452"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64608010"
 ---
 # <a name="structs"></a>Struktury
 A *struktura* je typ hodnoty. Když se vytvoří struktura, obsahuje proměnné, ke kterému je přiřazena struktura, obsahovat skutečná data. Když je struktura přiřazena nové proměnné, zkopíruje se. Nové proměnné a původní proměnné proto obsahují dvě oddělené kopie stejných dat. Změny provedené v jedné kopii neovlivní druhou kopii.

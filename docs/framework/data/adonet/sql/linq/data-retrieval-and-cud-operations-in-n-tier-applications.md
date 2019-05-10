@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-ms.openlocfilehash: d55c85ae0af567c5af0fd421b612809eaf5bb789
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8ce30d60b05e600e4f6906221d4c360c7ad8c396
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62037918"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64586686"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
 Při serializaci objektů entity jako je například Zákazníci a objednávky na klienta přes síť, tyto entity jsou odpojeny od jejich místní data. Datový kontext již sleduje jejich změny nebo jejich přidružení s jinými objekty. To není problém, tak dlouho, dokud klienti jsou jen ke čtení data. Také je poměrně jednoduchá, aby mohli klienti k přidání nových řádků do databáze. Nicméně pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je nutné připojit entity k nový kontext dat před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Navíc pokud použijete kontrolu optimistického řízení souběžnosti s původní hodnoty, pak musíte také poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metody jsou k dispozici umožňuje entity přejde do nového kontextu dat byla odpojena.  

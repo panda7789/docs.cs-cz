@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (C#)
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: 6a7b8f3f41b2096e3e7524d03217bdc123f26f10
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d8d9f1dd0963ee9074122473e0eeab9254866660
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702837"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64599742"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Tok řízení v asynchronních programech (C#)
 

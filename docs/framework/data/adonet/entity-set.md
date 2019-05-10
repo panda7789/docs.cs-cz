@@ -2,12 +2,12 @@
 title: entity set
 ms.date: 03/30/2017
 ms.assetid: 59ec6ab0-88e5-4d25-b112-7a4eccbe61f0
-ms.openlocfilehash: 7fcaa2cb9bac02271940a712d4d044df25d7d4cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: da70d25790918340e92df83b1c2c704c5dc54226
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033953"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64599639"
 ---
 # <a name="entity-set"></a>entity set
 *Sadu entit* je logický kontejner pro instance [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a instance libovolného typu odvozeného z tohoto typu entity. (Informace o odvozených typech naleznete v tématu [modelu Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sady entit je obdobou vztah mezi řádek a tabulky v relační databázi: Jako řádek typ entity, který popisuje strukturu dat a jako tabulka, obsahuje sadu entit instance dané struktury. Sadu entit není konstrukce; modelování dat strukturu dat nepopisuje. Místo toho sadu entit poskytuje konstrukci pro prostředí hostování nebo úložiště (například do databáze SQL serveru nebo modul common language runtime) do instance typu entity skupiny tak, že je možné mapovat do úložiště dat.  

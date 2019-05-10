@@ -2,12 +2,12 @@
 title: Směrování – úvod
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: d0f07d0dd171de428f7d556d84dfda04e35880b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 41545d0340ae222e427d1e6d428ed1e3f7b4fa76
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991091"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64912482"
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který je schopen směrování zpráv na základě obsahu zpráv. Ve službě Směrování můžete vytvořit komplexní logiku směrování, která umožňuje implementovat scénáře, jako je služba agregace, Správa verzí služby, priority směrování a směrování vícesměrového vysílání. Směrovací služba taky poskytuje chyba zpracování, který umožňuje nastavení seznamů zálohování koncových bodů, do které se odešlou zprávy, pokud dojde k chybě při odesílání na cílové primární koncový bod.  

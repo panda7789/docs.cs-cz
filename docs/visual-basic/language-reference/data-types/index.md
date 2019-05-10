@@ -37,12 +37,12 @@ helpviewer_keywords:
 - storage order, controlling in Visual Basic
 - data types [Visual Basic], memory requirements
 ms.assetid: e975cdb6-64d8-4a4a-ae27-f3b3ed198ae0
-ms.openlocfilehash: 29e5cbe09026dd52811c6c5fb88e940b45b7c0bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 46a65972a1ea96435002ff6956bc2837c07b0e57
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971740"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64913113"
 ---
 # <a name="data-type-summary-visual-basic"></a>Souhrn datových typů (Visual Basic)
 Následující tabulka uvádí datové typy jazyka Visual Basic, jejich podpůrné běžných typů modulu runtime jazyka, jejich přidělení nominální úložiště a jejich rozsahy hodnot.  

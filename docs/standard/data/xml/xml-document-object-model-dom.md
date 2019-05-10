@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: b5e52844-4820-47c0-a61d-de2da33e9f54
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2b3a2432deb1e956060ab3615db01821658f8782
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 664debd5432273cc25871f85d5d3c23f4c32dd6e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61959238"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64589847"
 ---
 # <a name="xml-document-object-model-dom"></a>model DOM (Document Object Model) dokumentu XML
 Třída XML Document Object Model (DOM) je v paměti reprezentace dokumentu XML. V modelu DOM můžete prostřednictvím kódu programu čtení, manipulaci a upravit dokument XML. **XmlReader** XML přečte třída; však poskytuje přístup bez mezipaměti, pouze vpřed, jen pro čtení. To znamená, že neexistují žádné možnosti upravit hodnoty atributu nebo obsahu elementu nebo možnost vkládat a odebrání uzlů s **XmlReader**. Pro úpravy je primární funkce modelu DOM. Je běžné a způsobem strukturovaná, že XML data reprezentované v paměti, ačkoli skutečná data XML je uložen v lineárně v souboru nebo přicházející z jiného objektu. Následuje XML data.  

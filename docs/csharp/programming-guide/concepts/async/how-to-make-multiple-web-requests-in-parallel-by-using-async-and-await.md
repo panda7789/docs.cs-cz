@@ -2,12 +2,12 @@
 title: 'Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)'
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: 3ea41c1fa0fce3a35635e069061f1953c6395406
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 57c40626fcaf0c52d09fa3a2c8b74ba8b7816677
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703020"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64600235"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)
 V asynchronní metodě jsou úlohy spuštěny při jejich vytvoření. [Await](../../../../csharp/language-reference/keywords/await.md) operátor je použít pro úlohu v okamžiku v metodě, kdy zpracování nemůže pokračovat, dokud neskončí úloha. Úloha je často očekávaná ihned, jakmile se vytvoří, jak ukazuje následující příklad.  

@@ -3,12 +3,12 @@ title: 'Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující 
 ms.date: 03/30/2017
 ms.assetid: efb264dd-f47b-49a9-85ee-9f45d4425765
 author: BrucePerlerMS
-ms.openlocfilehash: 74f15c3ac6e5192ce3565579d515198d3b7e39f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0d334faabb342ea351c2418c79a86443cb0ce98d
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940527"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64910588"
 ---
 # <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující s deklaracemi pomocí WIF
 ## <a name="applies-to"></a>Platí pro  

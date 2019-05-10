@@ -7,12 +7,12 @@ helpviewer_keywords:
 - namespaces [C#], global namespace qualifier
 - global namespace [C#]
 ms.assetid: 98a1d89b-3c5a-44f7-8400-c4a3c0ec22a9
-ms.openlocfilehash: 268d40e8d6eb5f5f2a82a5ce3a3346179c886c14
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d3e0740a472f74116712e737e49f86d4202dea5
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710339"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452803"
 ---
 # <a name="how-to-use-the-global-namespace-alias-c-programming-guide"></a>Postupy: Použití aliasu globálního Namespace (C# Průvodce programováním v)
 Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/language-reference/keywords/namespace.md) je užitečné, když člen může být skryty pomocí jiné entity se stejným názvem.  
@@ -50,6 +50,5 @@ Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/langu
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)
-- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)
 - [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
 - [extern](../../../csharp/language-reference/keywords/extern.md)

@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bb39f6f68d0d36449153ae16eca38a15cb7055de
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 2411b69dac6ef8945336a4c4e014cbf6687f702a
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648627"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469732"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 Třídy a struktury jsou podobné jako u rozhraní .NET Framework. Můžete mít pole, vlastnosti a události. Můžou také mít statické a nestatické metody. Jeden velký rozdíl je, že struktury jsou typy hodnot a třídy jsou odkazové typy.  
@@ -266,7 +266,7 @@ typedef struct _MYSTRSTRUCT2
   
  `MyStruct` Třída obsahuje objekt řetězce znaků ANSI. <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> Pole určuje formátu ANSI. `MyUnsafeStruct`, je struktura obsahující <xref:System.IntPtr> typ namísto řetězce.  
   
- `LibWrap` Třída obsahuje přetížené `TestOutArrayOfStructs` prototyp metody. Metoda deklaruje ukazatel, jako parametr, by měly být třídy označené `unsafe` – klíčové slovo. Protože [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] nelze použít nezabezpečený kód, přetěžované metody, modifikátor unsafe a `MyUnsafeStruct` struktura nejsou potřeba.  
+ `LibWrap` Třída obsahuje přetížené `TestOutArrayOfStructs` prototyp metody. Metoda deklaruje ukazatel, jako parametr, by měly být třídy označené `unsafe` – klíčové slovo. Protože v jazyce Visual Basic nelze použít nezabezpečený kód, přetěžované metody, modifikátor unsafe a `MyUnsafeStruct` struktura nejsou potřeba.  
   
  `App` Implementuje třída `UsingMarshaling` metodu, která provádí všechny úkoly, které jsou nutné předat pole. Pole je označeno `out` (`ByRef` v jazyce Visual Basic) předá – klíčové slovo k označení tato data z volaný volající. Implementace používá následující <xref:System.Runtime.InteropServices.Marshal> metody třídy:  
   
@@ -276,7 +276,7 @@ typedef struct _MYSTRSTRUCT2
   
 - <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> k uvolnění paměti vyhrazená pro pole.  
   
- Jak už jsme zmínili, C# umožňuje nezabezpečený kód a [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] tak není. V C# ukázce `UsingUnsafePointer` je to alternativní metoda pro implementace, která používá ukazatele namísto <xref:System.Runtime.InteropServices.Marshal> třídy předat zpět na pole obsahující `MyUnsafeStruct` struktury.  
+ Jak už jsme zmínili, C# umožňuje nezabezpečený kód a Visual Basic nepodporuje. V C# ukázce `UsingUnsafePointer` je to alternativní metoda pro implementace, která používá ukazatele namísto <xref:System.Runtime.InteropServices.Marshal> třídy předat zpět na pole obsahující `MyUnsafeStruct` struktury.  
   
 ### <a name="declaring-prototypes"></a>Deklarace prototypů  
  [!code-cpp[Conceptual.Interop.Marshaling#20](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/outarrayofstructs.cpp#20)]

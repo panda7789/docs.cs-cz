@@ -2,12 +2,12 @@
 title: Vlastní upgrady streamů
 ms.date: 03/30/2017
 ms.assetid: e3da85c8-57f3-4e32-a4cb-50123f30fea6
-ms.openlocfilehash: 8c769321702deb774c04613d5fe5eb2fde069063
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bfb20a38d5d603a7f538235ee88045c92fc8cc85
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967905"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64587313"
 ---
 # <a name="custom-stream-upgrades"></a>Vlastní upgrady streamů
 Orientovaný na Stream přenosy, jako je například TCP a pojmenované kanály pracovat nepřetržitý datový proud bajtů mezi klientem a serverem. Tento datový proud se provádí <xref:System.IO.Stream> objektu. Při upgradu datového proudu klient chce přidat volitelné protokolové vrstvě kanálu zásobníku a zeptá druhém konci komunikační kanál k tomu. Se skládá z upgradu datového proudu nahrazení původní <xref:System.IO.Stream> objekt upgradovaný sadou.  

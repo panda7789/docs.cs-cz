@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37b226cad9a34f1629d2972dacf8019adad54d7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 519ce34fc1f86220dfd0f3f7e19e3a50fba06087
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873584"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469447"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Přenositelné a nepřenositelné typy
 Většina datových typů mají společné reprezentaci ve spravované i nespravované paměti a nevyžadují žádná zvláštní zacházení podle interoperační zařazovač. Tyto typy jsou označovány jako *přenositelné typy* vzhledem k tomu, že když jsou předávány mezi nevyžadují převod spravovaného a nespravovaného kódu.  
@@ -71,7 +71,7 @@ Většina datových typů mají společné reprezentaci ve spravované i nesprav
 |[Typ System.Valuetype](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Převede na strukturu s rozložením pevné paměti.|  
 |[System.Szarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Převede pole stylu C nebo `SAFEARRAY`.|  
   
- Typy tříd a objektů jsou podporovány pouze komunikace s objekty COM. Pro odpovídající typy v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C#a C++, naleznete v tématu [– přehled knihovny tříd](../../../docs/standard/class-library-overview.md).  
+ Typy tříd a objektů jsou podporovány pouze komunikace s objekty COM. Pro odpovídající typy v jazyce Visual Basic C#, a C++, najdete v článku [– přehled knihovny tříd](../../../docs/standard/class-library-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 

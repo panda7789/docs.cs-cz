@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ', '
 - ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
-ms.openlocfilehash: 5c22c2862ae8b948787fd5e6ca16109aa2f52aef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 76976f1599ecbbaf7405d7941f66aa2c5f955565
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62031249"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64598958"
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení nad <xref:System.Windows.Input.Stylus> vstup a vytváření digitálních inkoust <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použít na datový proud množství dat přicházejících z stylus zařízení k zajištění optimálního výkonu.  

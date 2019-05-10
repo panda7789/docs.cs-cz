@@ -5,12 +5,12 @@ helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-ms.openlocfilehash: bbc77c0074b35a95140b35d71e89c51ad8abac62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5eee8b4b046bd4d3f9c71b692f4bac3dd6bcea2c
+ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61800175"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65211786"
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 
@@ -32,7 +32,7 @@ Následující přehled popisuje výhody inteligentní klientské aplikace, hlav
 
  Windows Forms obsahuje bohaté ovládací prvky uživatelského rozhraní, která emulují funkce v špičková aplikací, jako je Microsoft Office. Při použití <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.MenuStrip> ovládacího prvku, můžete vytvořit panelů nástrojů a nabídek, které obsahují text a obrázky, zobrazují podnabídky a hostují jiné ovládací prvky, jako je například textová pole a pole se seznamem.
 
- Se sadě Visual Studio a přetahování **Návrháře formulářů Windows**, můžete snadno vytvářet aplikace Windows Forms. Stačí vybrat ovládací prvky s kurzorem a přidáním, kam chcete ve formuláři. Návrhář poskytuje nástroje, jako je například řádky mřížky a funkce přichycení k Usnadněte si zarovnání ovládacích prvků. Ať už pomocí sady Visual Studio nebo kompilaci do příkazového řádku, můžete si <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> vytvářet pokročilé ovládací prvky formuláře rozložení v kratším čase.
+ S přetahování myší **Návrháře formulářů Windows** v sadě Visual Studio, můžete snadno vytvořit aplikace Windows Forms. Stačí vybrat ovládací prvky s kurzorem a přidáním, kam chcete ve formuláři. Návrhář poskytuje nástroje, jako je například řádky mřížky a funkce přichycení k Usnadněte si zarovnání ovládacích prvků. Ať už pomocí sady Visual Studio nebo kompilaci do příkazového řádku, můžete si <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> vytvářet pokročilé ovládací prvky formuláře rozložení v kratším čase.
 
  Nakonec, pokud je nutné vytvořit vlastní vlastní elementy uživatelského rozhraní <xref:System.Drawing> obor názvů obsahuje široké škály třídy k vykreslení čar, kruhy a ostatním tvarům přímo na formuláři.
 

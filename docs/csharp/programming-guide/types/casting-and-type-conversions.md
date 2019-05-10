@@ -10,12 +10,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 80ff658774c776545eb7d5158b4abd451f7fcf7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bfcad2669c5ae34605c142f9834c52b4b84c36ae
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61709364"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64608096"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typu (C# Programming Guide)
 

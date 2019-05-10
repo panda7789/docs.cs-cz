@@ -2,12 +2,12 @@
 title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: ca1f680e2de67984dfcec49b3d262799000a2625
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2ad1cba170a7ade06de4678651a8dfcb608d5c46
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673326"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607204"
 ---
 # <a name="channelpoolsettings"></a>\<channelPoolSettings>
 Určuje nastavení fondu kanálu pro vlastní vazbu.  
