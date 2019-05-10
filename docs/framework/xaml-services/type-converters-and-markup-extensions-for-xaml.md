@@ -8,12 +8,12 @@ helpviewer_keywords:
 - value converters for XAML [XAML Services]
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
-ms.openlocfilehash: e6f8ed3b893319e771eb0af96da7a58a7fad5c9b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ff820256a27ce455b8eda0c4e7192bc26a3199c3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61954258"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663216"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ XAML a XAML zapisovače používají ke generování komponenty grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentovány odlišně v datovém proudu uzlu XAML. V této dokumentaci sady, převaděče typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převaděče hodnot.  

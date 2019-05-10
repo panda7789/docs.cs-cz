@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-ms.openlocfilehash: 1053a543a23ed36a5c06c45044c8fdbe25a60538
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0d052c0f178c2dc6e2eb5a740faa42239fb91068
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929516"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64637220"
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>Typy XML a ADO.NET v kontraktech dat
 Datový model kontraktu Windows Communication Foundation (WCF) podporuje určité typy, které představují XML přímo. Pokud tyto typy jsou serializován do formátu XML, serializátoru, který zapíše obsah XML z těchto typů bez dalšího zpracování. Podporované typy jsou <xref:System.Xml.XmlElement>, pole <xref:System.Xml.XmlNode> (ale ne `XmlNode` zadejte vlastní), stejně jako typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Data.DataSet> a <xref:System.Data.DataTable> typ, jakož i typové datové sady, se běžně používají při programování pro databázi. Tyto typy implementace `IXmlSerializable` rozhraní a jsou proto serializovatelný v datech smlouvy modelu. Některé speciální aspekty pro tyto typy jsou uvedené na konci tohoto tématu.  

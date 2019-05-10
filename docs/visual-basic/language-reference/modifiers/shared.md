@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: 12c81a9a0651088a348afeaff3b71935d289da53
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fd43ef7cb5c16995fff87a65fc0f0974d8f4a47d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778739"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647707"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek je přidružená k třídě nebo struktuře ve velkém a ne s konkrétní instanci dané třídy nebo struktury.  

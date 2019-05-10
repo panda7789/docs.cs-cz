@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: a43546b9cbb95cd16c1d94372e786acd103ea0bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d3b24ef892e1fe3dd28fee4ce8fa44f7373c7c01
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921938"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645482"
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
 Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je podle jejich nasazení do farmy s vyrovnáváním zatížení serveru. Aplikace WCF mohou být vyrovnávání zatížení pomocí standardní zátěže postupů, včetně nástroje pro vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows, stejně jako hardwarové zařízení Vyrovnávání zatížení.  

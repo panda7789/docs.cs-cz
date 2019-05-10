@@ -16,12 +16,12 @@ helpviewer_keywords:
 - child tables row selection
 - current child position
 ms.assetid: c5fa2562-43a4-46fa-a604-52d8526a87bd
-ms.openlocfilehash: 891a9a4d092de35ceff2f5ceb6dbde77cf2ca2ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bbebd9f040c60016305a861abee3723450a7456b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966951"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64651982"
 ---
 # <a name="how-to-ensure-the-selected-row-in-a-child-table-remains-at-the-correct-position"></a>Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici
 Často při práci s datovou vazbu v modelu Windows Forms, se zobrazí data v co se nazývá nadřazené a podřízené nebo hlavních/podrobných zobrazení. To se vztahuje na datovou vazbu scénář, kde se zobrazí data ze stejného zdroje ve dvou ovládacích prvků. Změna výběru v jednom ovládacím prvku způsobí, že data zobrazená v druhý ovládací prvek při změně. První ovládací prvek může například obsahovat seznam zákazníků a druhý seznam objednávek týkající se k vybranému zákazníkovi v prvním ovládacím prvku.  

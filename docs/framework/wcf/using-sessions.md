@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-ms.openlocfilehash: fc7b86f3f2c2c6276681c324dbe9a390fdfdafd4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fc0bfec95e625c1433636fbe5e0fdb6cc1112b14
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791453"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645161"
 ---
 # <a name="using-sessions"></a>Použití relací
 V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  

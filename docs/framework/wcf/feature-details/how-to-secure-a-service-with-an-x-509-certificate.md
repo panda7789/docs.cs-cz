@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-ms.openlocfilehash: 75c7a0e50301ce80d51b9b2a10ed650a1600ec79
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 69db887bf8e7b51c4450c04bd1a08d3d952e84f7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047734"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64643576"
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Postupy: Zabezpečení služby certifikátem X.509
 Zabezpečení služby certifikátem X.509 je základní technika, používat většinu vazby Windows Communication Foundation (WCF). Toto téma vás provede kroky konfigurace v místním prostředí služby pomocí certifikátu X.509.  

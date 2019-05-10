@@ -2,12 +2,12 @@
 title: Přehled třídy XDocument (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 45cb7e71-196a-47da-bfe9-7a5589db1eed
-ms.openlocfilehash: f9a531b9e90a8d6511dd0a2c6fc3131c9bfe1e89
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 135d775a914bc6a440c639628281aa313cb85636
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907813"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64639193"
 ---
 # <a name="xdocument-class-overview-visual-basic"></a>Přehled třídy XDocument (Visual Basic)
 Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.  

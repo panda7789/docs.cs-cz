@@ -2,12 +2,12 @@
 title: Počet chyb ověření zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 0d4e3666-dfc6-421c-baf8-9479c22f7050
-ms.openlocfilehash: 32a7d41f93dd99f1950a073e1cac1b62177ff6c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0f061e1e12321dbe8034d7619830f71717ca9d1f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61916042"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664980"
 ---
 # <a name="security-validation-and-authentication-failures"></a>Počet chyb ověření zabezpečení
 Název čítače: Počet chyb ověření zabezpečení  

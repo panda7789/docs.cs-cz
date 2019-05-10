@@ -2,12 +2,12 @@
 title: Automatická konfigurace protokolu IPv6
 ms.date: 03/30/2017
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
-ms.openlocfilehash: 4dc7a148364c9f96a0f6c68c8af71f7668e797b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2c7f77bbdebe093b5e3bc706653ed203082d9c3f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642331"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647328"
 ---
 # <a name="ipv6-auto-configuration"></a>Automatická konfigurace protokolu IPv6
 Jedním z cílů důležité pro protokol IPv6 je podpora uzlu technologie Plug and Play. To znamená by měl být možné připojte uzel do sítě IPv6 a konfigurace automaticky bez zásahu člověka.  

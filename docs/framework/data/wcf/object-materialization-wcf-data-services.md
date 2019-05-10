@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-ms.openlocfilehash: bf75e126c2a44b6b9d151269046d2cb8110815cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f4789b3bfd5f9810a9abc870518add9b4a0a045b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774683"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645536"
 ---
 # <a name="object-materialization-wcf-data-services"></a>Materializace objektů (WCF Data Services)
 Při použití **přidat odkaz na službu** dialogové okno k využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v aplikaci klienta na základě rozhraní .NET Framework, ekvivalentní datové třídy jsou generovány pro každý typ entity v datovém modelu, který je zveřejněn prostřednictvím informačního kanálu. Další informace najdete v tématu [generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Entity dat vrácených dotazem je vyhodnocena na instanci jednoho z těchto tříd generované klientské datové služby. Informace o možnosti sloučení a řešení identity u sledovaných objektů najdete v tématu [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).  

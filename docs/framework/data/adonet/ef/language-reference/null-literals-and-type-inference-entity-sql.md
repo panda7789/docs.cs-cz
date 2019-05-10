@@ -2,12 +2,12 @@
 title: Literály s hodnotou Null a odvození typu proměnné (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: edd56afb-af1b-4e7d-b210-cb8998143426
-ms.openlocfilehash: 22b548f2fc889b20f76a41001438f75c25f99c00
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3fea03146549f3d42bf08bbd5e7ce355d25bd4eb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760399"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64641816"
 ---
 # <a name="null-literals-and-type-inference-entity-sql"></a>Literály s hodnotou Null a odvození typu proměnné (Entity SQL)
 Literály s hodnotou Null, musí být kompatibilní s žádným typem v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] systém typů. Typu literál s hodnotou null odvození správně, ale pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] má určitá omezení pro použití literál s hodnotou null.  

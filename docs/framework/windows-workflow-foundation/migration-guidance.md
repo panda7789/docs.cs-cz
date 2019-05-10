@@ -2,12 +2,12 @@
 title: Pokyny pro migraci
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: a36108e8c711b9e5d5253b19a9122373fc513855
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 64f71061dda96279a7aa0fffa3642ae6d2d01c8f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009991"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649387"
 ---
 # <a name="migration-guidance"></a>Pokyny pro migraci
 V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost Microsoft vydává druhý hlavní verze Windows Workflow Foundation (WF). [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla vydána v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (to zahrnuté typy v oborech názvů System.Workflow.* barvy; dnes označovány jako WF3) a vylepšení v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. WF3 je také součástí [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], ale existuje souběžně s novou technologií pracovního postupu (typy v System.Activities.\* oborů názvů; označuje jako WF4). Při zvažování, kdy se má přijmout WF4, je potřeba nejprve uznávají řídit načasování.  

@@ -2,12 +2,12 @@
 title: Fronty ve WCF
 ms.date: 03/30/2017
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
-ms.openlocfilehash: 502f1ad74cd4bd6294db11a3e48f4c41068704ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c390970d66e442eb413d238691896608dcf27e03
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049632"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64643499"
 ---
 # <a name="queuing-in-wcf"></a>Fronty ve WCF
 Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communication Foundation (WCF).  

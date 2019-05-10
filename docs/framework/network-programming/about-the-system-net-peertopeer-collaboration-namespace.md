@@ -2,12 +2,12 @@
 title: Obor názvů System.Net.PeerToPeer.Collaboration
 ms.date: 03/30/2017
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
-ms.openlocfilehash: a62b659472f6d05e61672fa603e8663d9946977e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f0c9ecaacc1d875aac8eed61a85ca7579f5cb8a1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867001"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649529"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>Obor názvů System.Net.PeerToPeer.Collaboration
 <xref:System.Net.PeerToPeer.Collaboration> Obor názvů obsahuje třídy a rozhraní API, která slouží k implementaci aktivity spolupráce peer pomocí infrastruktury spolupráci Peer-to-Peer.  

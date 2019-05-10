@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - serial ports, sending strings to
 ms.assetid: 6ebf46cd-b2d0-4b2c-9a1f-be177b22ad52
-ms.openlocfilehash: e1f0c9d5ba428f5379f8025c0e733cdbeb5204e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 66f7d0b51e51f6d550a42cca55b3194c2e273969
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014528"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662729"
 ---
 # <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic
 Toto téma popisuje způsob použití `My.Computer.Ports` k odesílání řetězců na sériové porty počítače v jazyce Visual Basic.  

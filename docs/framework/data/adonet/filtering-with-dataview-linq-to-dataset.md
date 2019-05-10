@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
-ms.openlocfilehash: 41e099cdca4f02231fd4b1cc8bce2c4b1e511c71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b41b95ba06f031dc45c0267432d0d6afb7f3a7d9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878823"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645693"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrování se zobrazením dat (LINQ to DataSet)
 Možnost filtrovat data s využitím určitých kritérií a potom prezentovat data do klienta prostřednictvím ovládacího prvku uživatelského rozhraní je důležitou součástí datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak filtrovat data a vrácení podmnožin řádky dat meeting konkrétního filtrovací kritéria. Kromě podle řetězce možnosti filtrování <xref:System.Data.DataView> také nabízí možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem komplexnější a efektivní filtrování operací než filtrování založené na řetězci.  

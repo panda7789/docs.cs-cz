@@ -2,12 +2,12 @@
 title: Scénáře komplexního trasování
 ms.date: 03/30/2017
 ms.assetid: f83b7d53-6061-4362-a9a3-ee1daf6542be
-ms.openlocfilehash: 6e2f62841e610d6eab95b908088f24cf2fec0c34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 18fbd1e9733d55d60d7aa21f2fe8ac259b3da51b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912506"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650363"
 ---
 # <a name="end-to-end-tracing-scenarios"></a>Scénáře komplexního trasování
 Tento oddíl obsahuje témata, která popisují různé scénáře použití trasování.  

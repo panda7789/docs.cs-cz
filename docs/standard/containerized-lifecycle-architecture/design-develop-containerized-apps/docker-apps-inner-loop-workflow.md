@@ -4,12 +4,12 @@ description: Přečtěte si pracovní postup "vnitřní smyčky" pro vývoj apli
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 36fcf5769376375854c2a2631e26e8b136df0de6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: dda75e120b0f17a591fadc22944c78d1174ca156
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050541"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664382"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -21,11 +21,11 @@ Před aktivací pracovního postupu vnější smyčky pokrývající celý DevOp
 
 Kontejner nebo instance image Dockeru, bude obsahovat tyto komponenty:
 
--   Výběru operačního systému (například distribuci Linuxu nebo Windows)
+- Výběru operačního systému (například distribuci Linuxu nebo Windows)
 
 - Soubory přidané vývojář (třeba binární soubory aplikace)
 
--   Konfigurace (například nastavení prostředí a závislosti)
+- Konfigurace (například nastavení prostředí a závislosti)
 
 - Pokyny pro jaké procesy spuštění pomocí Dockeru
 
@@ -115,7 +115,7 @@ Následuje ukázkový soubor DockerFile pro .NET Core kontejneru:
 
 ```Dockerfile
 # Base Docker image to use  
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
   
 # Set the Working Directory and files to be copied to the image  
 ARG source  
@@ -129,7 +129,7 @@ EXPOSE 80
 ENTRYPOINT ["dotnet", "MyCustomMicroservice.dll"]
 ```
 
-V tomto případě bitovou kopii podle verze 2.1 oficiální image Dockeru ASP.NET Core (více arch pro systémy Linux a Windows), podle řádku `FROM mcr.microsoft.com/dotnet/core/aspnet:2.1`. (Další informace o tomto tématu najdete v článku [Image Dockeru ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) stránky a [Image Dockeru .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) stránky).
+V tomto případě bitovou kopii podle verze 2.2 oficiální image Dockeru ASP.NET Core (více arch pro systémy Linux a Windows), podle řádku `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2`. (Další informace o tomto tématu najdete v článku [Image Dockeru ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) stránky a [Image Dockeru .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) stránky).
 
 V souboru DockerFile se dá taky nastavit Docker nenaslouchá na portu TCP, který budete používat v době běhu (například port 80).
 

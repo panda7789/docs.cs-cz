@@ -12,12 +12,12 @@ helpviewer_keywords:
 - backing attached events with routed events [WPF]
 - attached events [WPF], definition
 ms.assetid: 2c40eae3-80e4-4a45-ae09-df6c9ab4d91e
-ms.openlocfilehash: 7b7b0fcc9612994803bb23e985f44c483e708857
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2b3f659a5916aa63d510959583e8ae038085460c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777140"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64655493"
 ---
 # <a name="attached-events-overview"></a>Přehled připojených událostí
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Definuje komponentu jazyka a typu události, volá se, *přidružená událost*. Koncept přidružená událost umožňuje přidání obslužné rutiny při určité události libovolný prvek, nikoli element, který ve skutečnosti definuje nebo dědí události. V takovém případě objekt potenciálně vyvolání události ani cílové zpracování instance definuje nebo jinak "vlastní" události.  

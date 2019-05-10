@@ -10,12 +10,12 @@ helpviewer_keywords:
 - colors [Windows Forms], creating linear gradients
 - gradients
 ms.assetid: 6c88e1cc-1217-4399-ac12-cb37592b9f01
-ms.openlocfilehash: b836659821b54698b675d48acd4e46466001d654
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 953a1944073a8cb5b19ef072e2a523baec3a5605
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937887"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650007"
 ---
 # <a name="how-to-create-a-linear-gradient"></a>Postupy: Vytvoření lineárního přechodu
 Rozhraní GDI + poskytuje vodorovné, svislé a diagonální lineárními přechody. Ve výchozím nastavení změní barvu v lineárním přechodem jednotně. Lineární přechod však můžete přizpůsobit tak, aby se barva mění, nerovnoměrné způsobem.  

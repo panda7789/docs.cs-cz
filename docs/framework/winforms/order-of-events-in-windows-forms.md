@@ -9,12 +9,12 @@ helpviewer_keywords:
 - validation events [Windows Forms], order of
 - application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
-ms.openlocfilehash: 24d48a9dfdf10601099333e52073bb7fa3579beb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f581ca5ee1376251a593e7b8813ef4b0e0f41b64
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61800769"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64655609"
 ---
 # <a name="order-of-events-in-windows-forms"></a>Řazení událostí ve Windows Forms
 Pořadí, ve kterém jsou vyvolány události v aplikacích Windows Forms je zajímavé především pro vývojáře se každá z těchto událostí zase zpracování. Když situace vyžaduje pečlivou zpracování událostí, například když jsou překreslování části formuláře, je nezbytné povědomí o přesné pořadí, ve kterém jsou vyvolány události v době běhu. Toto téma obsahuje některé podrobnosti pořadí událostí během několik důležitých fází životního cyklu aplikací a ovládací prvky. Konkrétní podrobnosti o pořadí vstupních událostí myši najdete v tématu [události myši ve Windows Forms](mouse-events-in-windows-forms.md). Přehled událostí ve Windows Forms, naleznete v tématu [Přehled událostí](events-overview-windows-forms.md). Podrobnosti o strukturu obslužné rutiny událostí najdete v tématu [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md).  

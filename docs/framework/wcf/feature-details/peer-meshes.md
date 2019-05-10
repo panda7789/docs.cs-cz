@@ -2,12 +2,12 @@
 title: Skupiny partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: d93e312e-ac04-40f8-baea-5da1cacb546e
-ms.openlocfilehash: afd9eae36f28c28b33b74c4456feb4ba8c91314d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9113fab13da8503e6ce0335e5bb19a2634973dad
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766789"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64654503"
 ---
 # <a name="peer-meshes"></a>Skupiny partnerských uzlů
 A *mřížky* je pojmenované kolekci (propojených graf) partnerské uzly, který dokáže komunikovat mezi sebou a které jsou označeny identifikátorem sítě jedinečné ID. Každý uzel je připojen k více uzlech. V dobře propojené sítě cesty mezi dvěma uzly, s relativně malý počet segmentů směrování mezi uzly v nejvzdálenější okraji sítě, a síť zůstanou připojené i v případě, že některé uzly nebo připojení vyřadit navýšení kapacity. Aktivní uzlům v síti publikovaly své informace koncový bod s odpovídajícím ID sítě, takže je můžete najít další partnerské uzly.  

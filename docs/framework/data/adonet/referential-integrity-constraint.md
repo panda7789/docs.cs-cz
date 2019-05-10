@@ -2,12 +2,12 @@
 title: referential integrity constraint
 ms.date: 03/30/2017
 ms.assetid: 3d3ba44b-4302-40d8-a7a9-62932e0395e5
-ms.openlocfilehash: a8ef035872317c6eaea0401164e7fa8c95f5f7ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b442e15c75554e1b06e9ff89c7224430a0605f9c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665297"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649624"
 ---
 # <a name="referential-integrity-constraint"></a>referential integrity constraint
 A *omezení referenční integrity* v modelu Entity Data Model (EDM) je podobná omezení referenční integrity v relační databázi. Stejným způsobem, že sloupec (nebo sloupce) z tabulky databáze může odkazovat na primární klíč druhé tabulky a [vlastnost](../../../../docs/framework/data/adonet/property.md) (nebo vlastnosti) ze [typ entity](../../../../docs/framework/data/adonet/entity-type.md) může odkazovat [klíč entity ](../../../../docs/framework/data/adonet/entity-key.md) jiného typu entity. Je volána typ entity, na který odkazuje *hlavní koncový* omezení. Typ entity, která odkazuje na konci instančního objektu je volána *závislé end* omezení.  

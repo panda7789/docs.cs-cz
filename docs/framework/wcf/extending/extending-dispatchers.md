@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: ac20e24eb9148ed9d403b7a9c2c260009f39d492
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: eeff1c78b768e2c8f5a2583db86480ad96c5a9b7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967610"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64655441"
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, překládá na volání metod v kódu aplikace a odesílá výsledky zpět volajícímu. Rozšíření dispečerů umožňují upravit toto zpracování.  Můžete implementovat zpráv nebo parametr kontroly, které zkontrolovat nebo změnit obsah zprávy nebo parametry.  Můžete změnit tak, jak zprávy jsou směrovány na operace nebo poskytuje některé další funkce.  

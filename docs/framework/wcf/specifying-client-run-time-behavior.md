@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-ms.openlocfilehash: f750978eaa617a5505bb27a1535797320a76b0d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 738aadf93b726569eb59fc281cca2e482bace0bc
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61935457"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645186"
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
 Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Communication Foundation (WCF), lze nastavit k úpravě chování za běhu tak, aby odpovídala klientské aplikace. Tři atributy jsou k dispozici pro určení chování klienta za běhu. Můžete použít objekty zpětného volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributů, které mají změna jejich chování za běhu. Ostatní atributy <xref:System.ServiceModel.Description.ClientViaBehavior>, můžete použít k oddělení logické cíl z cílového okamžitou síť. Kromě toho můžete použít typy zpětného volání klienta duplexní některá chování straně služby. Další informace najdete v tématu [určení chování za běhu služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  

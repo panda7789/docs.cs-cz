@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
-ms.openlocfilehash: dbc5c0b51024c7b88b8c6cd9a052addd74e6f7e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 88c4982d45c1a3c450afe0c199a1f8a376348262
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669404"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64655659"
 ---
 # <a name="workflow-tracking-and-tracing"></a>Sledování a trasování pracovních postupů
 Sledování pracovního postupu Windows je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o provádění pracovního postupu. Poskytuje sledování infrastruktury pro sledování spuštění instance pracovního postupu. Sledování infrastruktury WF nástroje transparentně pracovního postupu pro vydávání záznamy, které odráží klíče události během provádění. Tato funkce je k dispozici ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Nejsou potřeba k tomu žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování na výskyt. Je jenom pár rozhodování o tom, kolik dat sledování chcete dostávat. Při spuštění instance pracovního postupu nebo dokončí zpracování sledování jsou emitovány záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například, pokud pracovní postup představuje pořadí zpracování systému, ID objednávky může být extrahována spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování zajišťuje diagnostiky nebo obchodní data analytics přistupovat z pracovního postupu provádění.  

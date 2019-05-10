@@ -2,12 +2,12 @@
 title: Přehled zjišťování WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-ms.openlocfilehash: cb1eb52e0996a03709a755ff2f148152e2625c58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 80cecec2143d78d9dee13e9071b6ebb5a4b1bdb0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784251"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662510"
 ---
 # <a name="wcf-discovery-overview"></a>Přehled zjišťování WCF
 Rozhraní API zjišťování poskytují jednotný programovací model pro dynamické publikace a zjišťování webové služby pomocí protokolu WS-Discovery. Tato rozhraní API umožňují služby sami a klientům nalezení služeb publikovaných na publikovat. Jakmile proběhne zjistitelné služby, služby má možnost odesílat zprávy oznámení také naslouchat a reagovat na požadavky na zjišťování. Zjistitelné služby může odesílat zprávy Hello oznamujeme jejich doručení na síť a zprávy Bye oznamujeme jejich odeslání ze sítě. K vyhledání služby klienty odeslat `Probe` žádost, která obsahuje určitá kritéria, například typ kontraktu služby, klíčová slova a oboru v síti. Přijímat služby `Probe` žádosti a určit, zda kritériím neodpovídají. Pokud služba odpovídá, odpovídá odesláním `ProbeMatch` zprávy zpět do klienta o informace nezbytné pro kontaktování služby. Klienti mohou také odesílat `Resolve` požadavků, které zajistí, aby hledání mohlo dojít ke změně jejich adresa koncového bodu služby. Odpovídající služby reagovat na `Resolve` odesláním žádosti `ResolveMatch` zpráv zpět klientovi.  

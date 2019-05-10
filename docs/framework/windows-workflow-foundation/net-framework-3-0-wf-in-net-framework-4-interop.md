@@ -2,12 +2,12 @@
 title: Použití aktivit pracovních postupů .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 ms.date: 03/30/2017
 ms.assetid: 71f112ba-abb0-46f7-b05f-a5d2eb9d0c5c
-ms.openlocfilehash: 33140ac85cd50140c0aa34d1986365fefc005c78
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 00636824277b57c46d760c419138dc9e001af17e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934716"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649374"
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Použití aktivit pracovních postupů .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 <xref:System.Activities.Statements.Interop> Aktivita je [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] aktivity (WF 4.5), která zabalí [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivitu (WF 3.5) v rámci [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Aktivita WF 3 může být jednoho listu aktivity nebo celý strom aktivit. Spuštění (včetně zrušení a zpracování výjimek) a stálost [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivitu, ke kterým došlo v kontextu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] instance pracovního postupu, který spouští.  
