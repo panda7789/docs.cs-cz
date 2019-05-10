@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 93d87dc98284fad6b8159f681f7d99ce460d60d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 59b33c24c2821d0aef17f5feb67c1178810b939e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947079"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647786"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Postupy: Zápis textu do souboru
 Toto téma ukazuje různé způsoby zápisu textu do souborů pro aplikace .NET. 

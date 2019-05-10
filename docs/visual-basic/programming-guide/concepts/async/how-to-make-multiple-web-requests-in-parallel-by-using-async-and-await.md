@@ -2,12 +2,12 @@
 title: 'Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a894b99b-7cfd-4a38-adfb-20d24f986730
-ms.openlocfilehash: c799fa83c0157019961da6adcf89b6ab6f906763
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e306722fca4e0215cf7b67d85763858d459a171a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021996"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64642443"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a>Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru Async a operátoru Await (Visual Basic)
 V asynchronní metodě jsou úlohy spuštěny při jejich vytvoření. [Await](../../../../visual-basic/language-reference/operators/await-operator.md) operátor je použít pro úlohu v okamžiku v metodě, kdy zpracování nemůže pokračovat, dokud neskončí úloha. Úloha je často očekávaná ihned, jakmile se vytvoří, jak ukazuje následující příklad.  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 62997821-e0c6-4c4d-9fb7-1273fb5e5d18
-ms.openlocfilehash: c8df3d57e5a6ff1f0021381db189025719808641
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 47943392ec6628b6d5a67ac333dd6793f35857b8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876509"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645675"
 ---
 # <a name="how-to-execute-data-service-queries-wcf-data-services"></a>Postupy: Provádění dotazů v datové služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje dotazování dat služby z klienta na základě rozhraní .NET Framework aplikace s použitím tříd generované klientské datové služby. Provádění dotazů pomocí jedné z těchto metod:  

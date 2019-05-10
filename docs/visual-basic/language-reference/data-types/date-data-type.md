@@ -15,12 +15,12 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-ms.openlocfilehash: 42a36351ad70bc16b6cad63450ee5fcb3ed4f1ef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d6179624ffbdf423f8d9b895c65ff41ac9846f33
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971805"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647035"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 IEEE – 64bitová (8 bajtů) hodnoty, které představují data od 1. ledna 0001 roku do 31. prosince 9999 roku a časy od 12:00:00: 00 (půlnoc) obsahuje prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekund uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna roku 10000.  

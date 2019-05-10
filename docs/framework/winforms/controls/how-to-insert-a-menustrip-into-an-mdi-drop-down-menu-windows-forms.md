@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], merging
 - MDI [Windows Forms], merging menu items
 ms.assetid: 0fad444e-26d9-49af-8860-044d9c10d608
-ms.openlocfilehash: 1b41699d8da1c99705f6796105dab6f3ab1d727d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: febe5347ed305dc85e67d992fac8aefa18a02cff
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941112"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64651646"
 ---
 # <a name="how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms"></a>Postupy: Vložení prvku MenuStrip do rozevíracího seznamu MDI (Windows Forms)
 V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI) může lišit od nadřazeného okna MDI. Například nadřazený objekt MDI může být tabulku a podřízený formulář MDI může být grafu. V takovém případě budete chtít aktualizovat obsah nabídky nadřazený objekt MDI obsah nabídky podřízený formulář MDI jako podřízená okna MDI různé druhy se aktivují.  

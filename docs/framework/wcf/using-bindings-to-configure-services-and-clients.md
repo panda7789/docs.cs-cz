@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: 3b4f00617418d5f84a0da5d0e531e1f671b58bb1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0f01fefc46cbc2cddaef9b025d59db8e2f734d9f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791375"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645131"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Používání vazeb ke konfiguraci služeb a klientů
 Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro připojení na koncový bod. Přesněji řečeno vazby obsahují informace o konfiguraci, která se používá k vytvoření modul runtime klienta nebo služby tak, že definujete, jaké jsou specifikace přenosy, formáty (kódování zpráv) a protokoly pro příslušného klienta nebo koncový bod kanálu. K vytvoření funkční služby Windows Communication Foundation (WCF), každý koncový bod služby vyžaduje vazbu. Toto téma vysvětluje, co jsou vazby, jak jsou definovány a jak je určeno konkrétní vazeb pro koncový bod.  

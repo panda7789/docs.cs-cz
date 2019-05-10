@@ -6,12 +6,12 @@ helpviewer_keywords:
 - marshaling data, COM interop
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab4dbdd0a69b158ff5c49949bee5089bd3fe095c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 807e514fac7d33cdacac3a48a37c7aa8dd92ef9c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642930"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648643"
 ---
 # <a name="marshaling-data-with-com-interop"></a>Zařazování dat se spoluprací COM
 Komunikace s objekty COM poskytuje podporu pro používání objektů modelu COM ze spravovaného kódu i vystavení spravované objekty do modelu COM. Podpora zařazování dat do a z modelu COM je rozsáhlý a téměř vždy poskytuje správné chování zařazování.  

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1716488f6e072b09469dfbe5cc8fb4965e5db44c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a75534bdfb1eef5902d3cd5071b4f5b4bfba8caa
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669131"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647957"
 ---
 # <a name="compiled-xpath-expressions"></a>Zkompilované výrazy XPath
 <xref:System.Xml.XPath.XPathExpression> Objekt představuje zkompilovaný dotaz XPath vrácený buď statické <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu <xref:System.Xml.XPath.XPathExpression> třídy nebo <xref:System.Xml.XPath.XPathNavigator.Compile%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy.  

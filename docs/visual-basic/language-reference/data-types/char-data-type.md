@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-ms.openlocfilehash: b50c902f69f7602dbad4663dc35bf0a2b932973f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6600b3b2945120f2f24e14d4cc898cd814366045
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796978"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647061"
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
 Body bez znaménka 16bitový kódů (2bajtových) obsahuje v rozmezí od 0 do 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode.  

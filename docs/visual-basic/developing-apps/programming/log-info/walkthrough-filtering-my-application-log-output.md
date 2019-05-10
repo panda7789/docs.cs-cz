@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: 25d2177eed9ef83ba8f2575668e72dc21c2cd43f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e32f36a0490a198078f8357f3603c91cc50cb3b8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61712614"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647097"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objekt řídit, jaké informace jsou předány z `Log` objektu pro naslouchací procesy a jaké informace jsou zapsány pomocí naslouchací procesy. Protokolování chování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uložena v konfiguračním souboru aplikace.  

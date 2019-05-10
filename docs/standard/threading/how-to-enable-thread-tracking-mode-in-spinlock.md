@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 62ee2e68-0bdd-4869-afc9-f0a57a11ae01
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f3b9671c10889287bc22d64df1fb5c3a2984bd55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 111ab87ca419217f425eb5d4bc9b52f5f30f0237
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925991"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64644846"
 ---
 # <a name="how-to-enable-thread-tracking-mode-in-spinlock"></a>Postupy: Povolení režimu sledování vláken ve struktuře SpinLock
 <xref:System.Threading.SpinLock?displayProperty=nameWithType> je nízké úrovně vzájemné vyloučení zámek, který můžete použít pro scénáře, které mají velmi krátké čekací dobu. <xref:System.Threading.SpinLock> není vícenásobně. Poté, co vlákno zadá zámek, ho ukončíte zámek správně předtím, než můžete znovu zadat. Obvykle jakékoli pokusy o potvrzení zámek by způsobila zablokování a zablokování může být velmi obtížné ladit. Jako vodítko k vývoji <xref:System.Threading.SpinLock?displayProperty=nameWithType> podporuje režimu sledování vláken, která způsobí výjimku, která je vyvolána, když vlákno se pokusí znovu zadejte zámek, který již obsahuje. To umožňuje více snadno najít bod, ve kterém zámek nebyl ukončen správně. Můžete zapnout režimu sledování vláken pomocí <xref:System.Threading.SpinLock> konstruktor, který přebírá logickou hodnotu vstupní parametr a předávání argument `true`. Po dokončení vývojové a testovací fázi se vypněte režimu sledování vláken pro zajištění lepšího výkonu.  

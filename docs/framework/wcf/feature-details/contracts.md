@@ -6,12 +6,12 @@ helpviewer_keywords:
 - contracts [WCF]
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
-ms.openlocfilehash: 0443e5b37e637351d6491c37ec443c93636460a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 839f7790a5dd300313931672c60e7826af39aeea
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857620"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64651091"
 ---
 # <a name="contracts"></a>Kontrakty
 Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communication Foundation (WCF). Kontrakt služby specifikuje, koncový bod komunikuje s vnějším světem. Konkrétnější úrovni je příkaz o sadě určitých zpráv, které jsou uspořádány do základní zprávy exchange vzory (MEPs), jako je například požadavek/odpověď jednosměrného a duplexní. Pokud kontrakt služby je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musíte samozřejmě přijmout jednu zprávu (aby volající může oznamujeme pozdrav) a může nebo nemusí vrátit zprávu (v závislosti na provedla operaci).  

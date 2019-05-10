@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-ms.openlocfilehash: e28c91a8cc1798a4d0cd690f72e503b687af0108
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6990d2b08f0ff729f0c0138c091c728a5ba59605
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046442"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64643544"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
 Témata v této části popisují podpora Windows Communication Foundation (WCF) fronty. WCF poskytuje podporu pro službu Řízení front ve využívání Microsoft služby Řízení front zpráv (dříve označovanou jako MSMQ) jako přenosového mechanismu a podporuje následující scénáře:  

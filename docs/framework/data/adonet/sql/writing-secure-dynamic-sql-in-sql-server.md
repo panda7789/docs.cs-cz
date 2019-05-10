@@ -2,12 +2,12 @@
 title: Zápis zabezpečené dynamické SQL na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-ms.openlocfilehash: 236fd925740d37c2cccabfcebfb7fcb46361489d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9b0c903c04c82c9a0f61197642645c5ba93ba099
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757713"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645927"
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL na SQL Serveru
 Útok prostřednictvím injektáže SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazů jazyka Transact-SQL místo platný vstup. Pokud vstup je předána přímo na server bez ověřování, a pokud aplikace provádí neúmyslně vloženého kódu, útoku hrozí riziko poškození nebo zničení data.  
@@ -62,7 +62,7 @@ ms.locfileid: "61757713"
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](/sql/relational-databases/security/sql-injection) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
   

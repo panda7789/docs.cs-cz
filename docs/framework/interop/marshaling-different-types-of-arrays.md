@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cafb15f691daa8d0d0e6c1ebab3cb89f7c811612
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fadccdf35429babce6e101d336c9ea1de150b276
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642840"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648597"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
 Pole je typem odkazu ve spravovaném kódu, který obsahuje jeden nebo víc elementů stejného typu. I když pole jsou typy odkazů, jsou předány jako parametry in k nespravovaným funkcím. Toto chování je konzistentní se způsobem spravovaných polí jsou předány do spravovaných objektů, což je jako vstup a výstup parametry. Další podrobnosti najdete v tématu [kopírování a přichycování](copying-and-pinning.md).  

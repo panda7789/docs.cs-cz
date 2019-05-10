@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce1855027e89f21d96e6cf761afcaaabb9b5138f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b39f91c5fabcfb5d7929a645b438b5db77f70956
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62015091"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64644922"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Pozastavení a přerušení vláken
 

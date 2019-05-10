@@ -8,12 +8,12 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-ms.openlocfilehash: 1807170b2f5df2333ec3b271a11f9b929c1e7993
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: df3a61dae9ad926f56da4e9d15e0e8b8c6f1c8a3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011577"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648251"
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
 Vykreslení ve Windows Forms, který je také označován jako vlastní kreslení, vlastníka je postup pro změnu vizuálního vzhledu některé ovládací prvky.  

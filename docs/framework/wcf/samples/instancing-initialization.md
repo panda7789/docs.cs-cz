@@ -2,12 +2,12 @@
 title: Inicializace vytváření instancí
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: 1414908025416f4cdd6e5b51c052799631ab52cd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e5dd48ce53fc45e9a970ff5b123860f057fb5759
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989908"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648332"
 ---
 # <a name="instancing-initialization"></a>Inicializace vytváření instancí
 Tento příklad rozšiřuje [Sdužování](../../../../docs/framework/wcf/samples/pooling.md) ukázka definováním rozhraní, `IObjectControl`, který přizpůsobí inicializace objektu aktivace a deaktivace. Klient volá metody, které vracejí objekt do fondu a objekt, který nesmí vracet do fondu.  

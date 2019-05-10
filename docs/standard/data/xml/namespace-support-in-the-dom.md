@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: f0548ead-0fed-41ee-b33e-117ba900d3bc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bcc796f8d895e3daa81a9607bd7c4941b747cf24
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1a468d1a2b15d1f92726d8d429fbc5ddece96e6d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027092"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647864"
 ---
 # <a name="namespace-support-in-the-dom"></a>Podpora oboru názvů v modelu DOM
 Je zcela oboru názvů s ohledem na XML Document Object Model (DOM). Jsou podporovány pouze s ohledem na obor názvů XML dokumentů. World Wide Web Consortium (W3C) určuje, že může být mimo obor názvů s deklaracemi modelu DOM aplikace, které implementují úrovně 1 a modelu DOM úrovně 2 funkcí jsou s ohledem na obor názvů. Všechny funkce v modelu DOM jazyka XML jsou však s ohledem na obor názvů bez ohledu na to, pokud je metoda od úrovně 1 nebo úrovně 2 modelu DOM doporučení.  

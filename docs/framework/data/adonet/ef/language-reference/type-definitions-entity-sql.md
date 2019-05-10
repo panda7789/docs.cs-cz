@@ -2,12 +2,12 @@
 title: Typ definice (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 306b204a-ade5-47ef-95b5-c785d2da4a7e
-ms.openlocfilehash: 2e068db0ce202c26cad36c8ed7adf0acdfb8e363
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5a8a0cae4599057a627cce6abebf34c7f05e821f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879551"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64641399"
 ---
 # <a name="type-definitions-entity-sql"></a>Typ definice (Entity SQL)
 Definice typu se používá v příkazu deklarace [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vložená funkce.  

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: 34bf38a59e4f2b1f975cf1836973d24d8a3bae32
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8deb151572b8a83396e4204378783304b66216c3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61904419"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648133"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]

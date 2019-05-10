@@ -8,12 +8,12 @@ helpviewer_keywords:
 - geometric paths [WPF], rotating objects by
 - rotating objects by geometric paths [WPF]
 ms.assetid: cb31ca4d-f05a-4c6b-9a18-4b6faaf38d45
-ms.openlocfilehash: 3e35169da7297ec62e0114ab21f4ba81c0a656ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6a0f566bab47d26aeb5e651b35845f577dfd7c48
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651243"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645384"
 ---
 # <a name="how-to-rotate-an-object-by-using-a-geometric-path"></a>Postupy: Otočení objektu pomocí geometrické cesty
 Tento příklad ukazuje, jak otočit (pivot) objektu podél geometrické cesty, který je definován <xref:System.Windows.Media.PathGeometry> objektu.  

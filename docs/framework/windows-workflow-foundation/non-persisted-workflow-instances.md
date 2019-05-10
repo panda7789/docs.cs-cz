@@ -2,12 +2,12 @@
 title: Netrvalé instance pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 5e01af77-6b14-4964-91a5-7dfd143449c0
-ms.openlocfilehash: 410451f0dfeb91111e77634245aa786c4afc5b04
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2f28e7b44f951151b47a6424670e5101960e91eb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644262"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649343"
 ---
 # <a name="non-persisted-workflow-instances"></a>Netrvalé instance pracovních postupů
 Když pracovního postupu je vytvořena nová instance, která udržuje svůj stav v <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, hostitel služby vytvoří záznam pro tuto službu v úložišti instancí. Následně, když instance pracovního postupu trvala poprvé, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> uloží aktuální stav instance. Pokud pracovní postup je hostovaný v aktivační službě procesů Windows, data nasazení služby se zapisují také do úložiště instancí při instance je trvale uložena poprvé.  

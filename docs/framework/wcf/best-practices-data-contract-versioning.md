@@ -7,12 +7,12 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-ms.openlocfilehash: cf3ae6f47f63c545edf3d65804daa049d4541788
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a56111796b1e301862dcbd9e76a6294c709ea06f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703527"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64652143"
 ---
 # <a name="best-practices-data-contract-versioning"></a>Doporučené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v průběhu času můžete snadno vyvíjejí. Další informace o kontraktech dat, najdete v tématech v [kontraktů dat pomocí](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30068
 ms.assetid: d65141e1-f31e-4ac5-a3b8-0b2e02a71ebf
-ms.openlocfilehash: 3027be6ee4ed3664b81c661b6a086a3604573833
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1c7fb92c963ea7fa4129cddf060fe7c0b0261fc7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802606"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64665146"
 ---
 # <a name="expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a>Výraz je hodnota, a proto nemůže být cílem přiřazení.
 Příkaz se pokusí přiřadit hodnotu výrazu. Přiřadit hodnotu pouze pro zapisovatelné proměnná, vlastnost nebo prvku pole za běhu. Následující příklad ukazuje, jak k této chybě může dojít.  

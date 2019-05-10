@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06f772b8d26ec87519efdaae7b621f3fd2d321c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7255ef11bfdf74afa6ae2032b0c86c8c44dbfe7d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946949"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647729"
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
 Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak, aby více vláken může pracovat na různých částech souběžně, obvykle v samostatných vláknech. Výsledky jsou-li využívat v jednom vlákně, například v `foreach` (`For Each` v jazyce Visual Basic) smyčce, pak výsledky z každé vlákno musí být sloučeny zpět do jedné sekvence. Druh sloučení, který provádí PLINQ závisí na subjekty, které se nacházejí v dotazu. Například operátory, které zavádí novou objednávku na výsledcích musí uložit do vyrovnávací paměti všechny prvky ze všech vláken. Z pohledu konzumním vlákně (která je také, že uživatel aplikace) může plně ve vyrovnávací paměti dotaz spusťte znatelný dobu vypršení vytváří výsledek první. Ostatní operátory ve výchozím nastavení, se částečně uložená do vyrovnávací paměti; dávají výsledky v dávkách. Jeden operátor <xref:System.Linq.ParallelEnumerable.ForAll%2A> nemá vyrovnávací paměť ve výchozím nastavení. Bude vrácen všechny prvky ze všech vláken okamžitě.  
@@ -49,11 +49,11 @@ Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak
   
 |Operátor|Omezení|  
 |--------------|------------------|  
-|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Žádné|  
+|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Žádný|  
 |<xref:System.Linq.ParallelEnumerable.Cast%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.Concat%2A>|Seřazené bez dotazy, které mají seznamu nebo pole pouze zdroj.|  
 |<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.OfType%2A>|Žádný|  
+|<xref:System.Linq.ParallelEnumerable.OfType%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Seřazené bez dotazy, které mají seznamu nebo pole pouze zdroj.|  
 |<xref:System.Linq.ParallelEnumerable.Select%2A>|Žádný|  
 |<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Žádný|  

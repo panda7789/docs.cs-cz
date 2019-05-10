@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: e0cd6837de626fa6bcd560811c6a70f7f6604daa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 92d0a61c2bbf9cc668b969c3e1420914b9f9f150
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669366"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650772"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdrojům událostí nebude ve spolupráci s objektem naslouchací proces, který připojuje ke zdroji obslužné rutiny. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí návrhový vzor, který je možné tento problém vyřešit tak, že třída vyhrazený správce poskytuje pro určité události a implementace rozhraní pro naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabý vzor událostí*.  

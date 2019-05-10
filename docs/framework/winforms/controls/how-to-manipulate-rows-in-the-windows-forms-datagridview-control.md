@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], manipulating rows
 - rows [Windows Forms], manipulating on Windows Forms
 ms.assetid: 522d8944-e073-4488-9673-923f0a8d7214
-ms.openlocfilehash: 095efc7279a1dc6702aeeb5ec5d598dbdd8818b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 23591bf6948800f2394e3df8d65ccd055fdde69c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913741"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649269"
 ---
 # <a name="how-to-manipulate-rows-in-the-windows-forms-datagridview-control"></a>Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> řádky pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRow> třídy.  

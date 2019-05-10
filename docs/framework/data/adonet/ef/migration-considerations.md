@@ -2,12 +2,12 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: b6224dcf883daef7b35ef50b7556fc568e433a46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6453e0960af5a91e5abc40d1ce6002b7733175dd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034031"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64641264"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  

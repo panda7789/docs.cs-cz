@@ -26,12 +26,12 @@ helpviewer_keywords:
 - IPv6, addresses in
 - IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
-ms.openlocfilehash: 50df0e0710c1f722d4e769ad89b653f6a8d5e394
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c922c2bc7908803f2215cd4dac108cc3c523ce28
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642279"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647321"
 ---
 # <a name="ipv6-addressing"></a>Adresování IPv6
 V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů rozsáhlý adresní prostor je rozdělit do hierarchie směrování domén, které odpovídají Internetu topologie dostupných adres. Dalším důvodem je mapovat adresy síťových adaptérů (nebo rozhraní), které se zařízení připojují k síti. IPv6 obsahuje schopnost přeložit adresy na nejnižší úrovni, na úrovni síťových rozhraní, a také funkce automatické konfigurace.  

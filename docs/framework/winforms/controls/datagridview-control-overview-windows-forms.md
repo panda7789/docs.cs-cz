@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data sources [Windows Forms], binding to DataGridView control
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 0a45c661-89dc-4390-9cc6-c47eee501488
-ms.openlocfilehash: 095c89fd305b1eeb73e2919760abe48e848c6aa0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4db2a8b0e30a6bb3db0c5c629d868bc01dc15a8c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902314"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648084"
 ---
 # <a name="datagridview-control-overview-windows-forms"></a>DataGridView – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]

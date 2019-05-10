@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: d1d52e048ee54ce967215ad134d5bcff2983103e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ccef487eb27a5a170d197a6bc670ec4d2bcf8bdf
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758077"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645789"
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotami v tabulkách
 Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace k SQL serveru bez nutnosti více výměn nebo zvláštní logiku na straně serveru pro zpracování dat. Parametry table-valued můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Řádky příchozích dat jsou uložené v proměnné tabulky, který může pak být provozována pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
@@ -22,7 +22,7 @@ Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řá
   
  Další informace o parametry table-valued najdete v následující prostředky.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Parametry Table-Valued (databázový stroj)](https://go.microsoft.com/fwlink/?LinkId=98363) v Online knihách serveru SQL|Popisuje, jak vytvořit a používat parametry s hodnotou tabulky.|  
 |[Uživatelem definované typy tabulek](https://go.microsoft.com/fwlink/?LinkId=98364) v Online knihách serveru SQL|Popisuje uživatele definovaných typů tabulek, které se používají k deklarování parametrů table-valued.|  

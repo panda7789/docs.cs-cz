@@ -2,12 +2,12 @@
 title: Kolekce schémat OLE DB
 ms.date: 03/30/2017
 ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
-ms.openlocfilehash: 6dc187b0a876d9e167a74f2381db156dde2764fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6c3441e86d4c5267418cf8002ba17d539c464d5c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771992"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645901"
 ---
 # <a name="ole-db-schema-collections"></a>Kolekce schémat OLE DB
 Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro Microsoft SQL Server, Oracle a Microsoft Jet.  

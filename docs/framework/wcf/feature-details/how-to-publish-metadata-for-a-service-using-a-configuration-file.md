@@ -2,12 +2,12 @@
 title: 'Postupy: Publikování metadat služby promocí konfiguračního souboru'
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 367ebeee5c12d809a758f1bee73dfaadda85788d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f3fda88f4ec2f2695d6026d6e4df79243124b7b5
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761452"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64643659"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: Publikování metadat služby promocí konfiguračního souboru
 Toto je jedna z dva postupy: témata, které ukazují publikování metadat služby Windows Communication Foundation (WCF). Existují dva způsoby, jak určit, jak by měla služba publikování metadat, je používán konfigurační soubor a pomocí kódu. Toto téma ukazuje, jak publikování metadat služby promocí konfiguračního souboru.  

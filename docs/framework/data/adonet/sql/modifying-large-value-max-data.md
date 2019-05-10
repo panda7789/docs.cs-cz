@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: eb938cfae645a9cc3811f1b5a02cddef742bac89
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 134759d729d6f291db61e6f64ebd51dfe5a4443b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922223"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648712"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
 Rozsáhlého objektu (LOB) datové typy jsou ty, které překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, `nvarchar`, a `varbinary` datové typy, aby umožňovala ukládání hodnoty větší než 2 ^ 32 bajtů. Zadat sloupce tabulky a proměnných jazyka Transact-SQL `varchar(max)`, `nvarchar(max)`, nebo `varbinary(max)` datové typy. V ADO.NET `max` datové typy lze načíst pomocí `DataReader`a je taky možné specifikovat jako obě hodnoty vstupní a výstupní parametr bez žádným zvláštním způsobem. Pro velké `varchar` datové typy dat, dají se načíst a přírůstkově aktualizovat.  

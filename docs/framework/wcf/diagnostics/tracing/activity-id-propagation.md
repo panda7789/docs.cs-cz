@@ -2,12 +2,12 @@
 title: Šíření ID aktivity
 ms.date: 03/30/2017
 ms.assetid: cd1c1ae5-cc8a-4f51-90c9-f7b476bcfe70
-ms.openlocfilehash: e51970f693d9ca2d2f81bf4efc97969896de4828
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 642d4da49f90d3fc6f2b0dfc9896d724acb075b5
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998046"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64651808"
 ---
 # <a name="activity-id-propagation"></a>Šíření ID aktivity
 Šíření se stane, když ServiceModel aktivity sledování je povoleno (ServiceModel šíření) nebo jsou zakázaná (šíření aktivity uživatele-uživatel).  

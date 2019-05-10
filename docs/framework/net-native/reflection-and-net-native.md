@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 91c9eae4-c641-476c-a06e-d7ce39709763
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c92d71c9862dfbdace4de2e30cf48ace7becfd0b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5cb2d983427c51d8d96de7b73c2dca8f7877425e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866962"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64651846"
 ---
 # <a name="reflection-and-net-native"></a>Reflexe a .NET Native
 V rozhraní .NET Framework spravované podporuje vývoj metaprogramování prostřednictvím reflexe rozhraní API. Reflexe umožňuje kontrolu objektů v aplikaci, volání metod na objekty zjištěné prostřednictvím kontroly, generovat nové typy v době běhu a podporuje řadu dalších scénářů dynamický kód. Podporuje také serializace a deserializace, která umožňuje hodnoty pole objektu jako trvalý a později obnovit. Všechny tyto scénáře vyžadují kompilátor rozhraní .NET Framework just-in-time (JIT) ke generování nativního kódu na základě metadat k dispozici.  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-ms.openlocfilehash: eda91ab6d81150749dc542139949fb92684c0fe1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5c0e574ea494bedc1c359d38cda0d17bbb03fcdf
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785799"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64645339"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
@@ -122,7 +122,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 ### <a name="linear-interpolation"></a>Lineární interpolace  
  Pomocí lineární interpolace animace průběhu tempu trvání segmentu. Například, pokud segment klíčový snímek přechází od 0 do 10 průběhu 5 sekund, animace bude výstup následujících hodnot v zadaném časy:  
   
-|Čas|Výstupní hodnota|  
+|Time|Výstupní hodnota|  
 |----------|------------------|  
 |0|0|  
 |1|2|  
@@ -136,7 +136,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 ### <a name="discrete-interpolation"></a>Diskrétní interpolace  
  Diskrétní interpolace animace funkce přejde z jednu hodnotu na další bez interpolace. Pokud segment klíčový snímek přechází od 0 do 10 průběhu 5 sekund, animace bude výstup následujících hodnot v zadaném časy:  
   
-|Čas|Výstupní hodnota|  
+|Time|Výstupní hodnota|  
 |----------|------------------|  
 |0|0|  
 |1|0|  
