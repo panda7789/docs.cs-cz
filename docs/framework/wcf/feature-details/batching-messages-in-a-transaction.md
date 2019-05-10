@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - batching messages [WCF]
 ms.assetid: 53305392-e82e-4e89-aedc-3efb6ebcd28c
-ms.openlocfilehash: 2d820087973e689514a0a19a7adc912f49e9d0a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a517dc4e143b561a17bb3715b69be393bee2b21e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61596775"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64585016"
 ---
 # <a name="batching-messages-in-a-transaction"></a>Dávkování zpráv v transakci
 Ve frontě aplikací používání transakcí k zajištění správnosti a spolehlivé doručování zpráv. Transakce, ale jsou nákladný provoz a může výrazně snížit propustnost zpráv. Jedním způsobem, jak zlepšit propustnost zpráv je, aby aplikaci číst a zpracovávat více zpráv v rámci jedné transakce. Nutný kompromis je mezi výkonem a možností obnovení: jak se zvyšuje počet zpráv v dávce, postupy zločinců se množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relací. A *relace* je seskupení související zprávy, které jsou zpracovány jednu aplikaci a potvrzena jako jeden celek. Relace se běžně používají, pokud skupina související zprávy musí být zpracovány současně. Příkladem je online nakupování webové stránky. *Dávky* se používají ke zpracování více, nesouvisející zprávy tak, že zpráva zvýšení propustnosti. Další informace o relacích najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracování jedné aplikace a potvrzena jako jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zpráv v dávce. Dávkování zpráv v transakci je optimalizace, která se nemění, jak je aplikace spuštěná.  

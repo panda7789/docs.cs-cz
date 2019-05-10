@@ -2,12 +2,12 @@
 title: Výchozí kontext schématu XAML a kontext WPF schématu XAML
 ms.date: 03/30/2017
 ms.assetid: 04e06a15-09b3-4210-9bdf-9a64c2eccb83
-ms.openlocfilehash: 0d6a0aa80d8490c509fa9036f88d4f6863ff040c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f29d9eb481903b06ee1f35424baeb055a396b7c1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61689395"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663283"
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>Výchozí kontext schématu XAML a kontext WPF schématu XAML
 Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produkční XAML, který používá určité slovníkové XAML s objektem zápis chování, včetně způsob mapování typu řeší, jak jsou načtené sestavení, jak některé čtečky a zapisovače nastavení jsou interpretovány. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružené výchozí kontext schématu XAML, která je založena na systému typů CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro WPF.  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: 5f85eca1026d05d8dc3d862559ee48440edf2c4b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ee53e6e5fc360c5155e1682f829a45be922caf22
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775931"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64665412"
 ---
 # <a name="interfaces-visual-basic"></a>Rozhraní (Visual Basic)
 *Rozhraní* definovat vlastnosti, metody a události, které můžete implementovat třídy. Rozhraní umožňují definovat funkce jako malé skupiny úzce související vlastnosti, metody a události; To snižuje problémy s kompatibilitou, protože vám umožní vytvářet lepší implementace pro vaše rozhraní bez ohrožující existující kód. Kdykoli můžete přidat nové funkce ve vývoji, implementace a dalších rozhraní.  
