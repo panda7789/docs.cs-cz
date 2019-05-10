@@ -2,12 +2,12 @@
 title: Přizpůsobení oprávnění se zosobněním na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: dd7fb4c94c5a0a9bca0cd36b8d76864158072d4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d44e410727924260640f0f50aea5ea41f264f3af
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877901"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650347"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL Serveru
 Mnoho aplikací používá pro přístup k datům, spoléhat na řetězení vlastnictví můžete omezit přístup k základní tabulky uložené procedury. Můžete udělit oprávnění spouštět na uložené procedury, odvolání nebo odepřením oprávnění u základní tabulky. SQL Server oprávnění volající nekontroluje, pokud uložené procedury a tabulky mají stejné vlastníka. Ale řetězení vlastnictví nefunguje Pokud objekty mají různé vlastníci nebo v případě dynamické SQL.  

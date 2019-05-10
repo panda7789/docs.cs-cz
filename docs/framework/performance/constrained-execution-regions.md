@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d4c1d07e2469a36c4b8e1ef7b8d90a80a3530ae3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 719e24652ea40d601523e32ecbdb58ce5d4fa645
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787969"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64616600"
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
 Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehlivých spravovaného kódu. CER vymezuje oblast, ve kterém je omezená common language runtime (CLR) z vyvolávání výjimek out-of-band, které by jinak znemožňovaly kód v oblasti spuštění v celém rozsahu. V rámci oblasti je omezen uživatelský kód z provádění kódu, který způsobí vyvolání výjimky out-of-band. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Metoda musí bezprostředně předcházet `try` bloku a značky `catch`, `finally`, a `fault` bloky jako oblasti omezeného provádění. Jakmile označen jako omezené oblasti kódu musí volat pouze jiný kód s kontrakty spolehlivosti a kód by neměl přidělit nebo volání virtuální metody neupravený nebo nespolehlivé Pokud kód je připravena ke zpracování chyb. Zpoždění vlákna CLR zruší pro kód, který je spouštěn v CER.  

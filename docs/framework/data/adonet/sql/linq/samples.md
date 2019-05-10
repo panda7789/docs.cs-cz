@@ -2,12 +2,12 @@
 title: Ukázky
 ms.date: 03/30/2017
 ms.assetid: 3fcc0c4a-b952-4cfe-9e09-0c0cf874ba2c
-ms.openlocfilehash: d06fe74280b713130142d6d7a881c97849598ce4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a4f51c59791b0d65e99987e0e14a6fbedf1ee0a0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033407"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64616199"
 ---
 # <a name="samples"></a>Ukázky
 Toto téma obsahuje odkazy na řešení jazyka Visual Basic a C#, které obsahují [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ukázkový kód.  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - style design for controls [WPF]
 - controls [WPF], style design
 ms.assetid: c52dde45-a311-4531-af4c-853371c4d5f4
-ms.openlocfilehash: 756cc821b1a9fe20741e390a1fe6e84d12cc6363
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 99644be4a275c1de7f4b89ca23368a26a8b76f5b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009965"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614544"
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Pokyny pro návrh ovládacích prvků s podporou stylů
 Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit při návrhu ovládací prvek, který máte v úmyslu být snadno s podporou stylů a templatable. Jsme obdrželi na tuto sadu osvědčených postupů prostřednictvím spoustu omyl a při práci na – styly ovládacích prvků motivu pro předdefinované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sada ovládacích prvků. Jsme zjistili, že úspěšné stylů je co nejvíce funkcí dobře navržené objektový model je styl samotného. Jeho zamýšlenou cílovou skupinou pro tento dokument je ovládací prvek autora, ne Autor stylu.  
