@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 0d200ad35d3ab56bf97114b51b4f7fcc898eecdf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 45b123e7b0db4832a1629f8ec0224729ff20f689
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032471"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623459"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot null
 Hodnotu null v relační databázi se používá při neznámý nebo chybějící hodnota ve sloupci. Hodnota null není prázdný řetězec (pro datové typy znaků nebo datum a čas) ani nulovou hodnotu (pro číselné datové typy). Specifikace ANSI SQL-92 státy, s hodnotou null musí být stejný pro všechny typy dat, tak, aby všechny hodnoty Null se zpracovávají konzistentně. <xref:System.Data.SqlTypes> Obor názvů poskytuje sémantika s hodnotou null implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy, které do <xref:System.Data.SqlTypes> má vlastní `IsNull` vlastnost a `Null` hodnotu, která je možné přiřadit do instance datového typu.  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7c07747c5100f6f7b7ee80b2e7e39d22362698e4
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.openlocfilehash: d39d4dfd5413b95300b70f27437bd27ca2d67a20
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63807834"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452382"
 ---
 # <a name="default-marshaling-for-strings"></a>Výchozí zařazování pro řetězce
 
@@ -234,7 +234,7 @@ Za určitých okolností znaků pevné délky vyrovnávací paměti musí před�
 
 Řešením je předat <xref:System.Text.StringBuilder> vyrovnávací paměti jako argument místo <xref:System.String>. A `StringBuilder` lze přistoupit přes ukazatel a upravit volaným, pokud nepřekročí kapacitu `StringBuilder`. Můžete být navíc inicializované na pevnou délku. Například, pokud je inicializovat `StringBuilder` vyrovnávací paměť kapacitu `N`, aby zařazování odvozovalo poskytuje vyrovnávací paměť o velikosti (`N`+ 1) znaků. Účty + 1 pro skutečnost, že nespravovaný řetězec má ukončovací znak null při `StringBuilder` tak není.
 
-Například Windows [ `GetWindowText` ](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) – funkce rozhraní API (definované v *Windows.h*) vyžaduje, aby volající předat do vyrovnávací paměti znaků pevné délky, ke kterému tato funkce zapíše text okna. `LpString` odkazuje na volající – přidělené vyrovnávací paměti o velikosti `nMaxCount`. Očekává se volající přidělení vyrovnávací paměti a nastavit `nMaxCount` argument velikost přidělené vyrovnávací paměti. Následující příklad ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v *Windows.h*.
+Například Windows [ `GetWindowText` ](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) – funkce rozhraní API (definované v *winuser*) vyžaduje, aby volající předat do vyrovnávací paměti znaků pevné délky, ke kterému tato funkce zapíše text okna. `LpString` odkazuje na volající – přidělené vyrovnávací paměti o velikosti `nMaxCount`. Očekává se volající přidělení vyrovnávací paměti a nastavit `nMaxCount` argument velikost přidělené vyrovnávací paměti. Následující příklad ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v *winuser*.
 
 ```cpp
 int GetWindowText(
@@ -247,7 +247,11 @@ int GetWindowText(
 A `StringBuilder` lze přistoupit přes ukazatel a upravit volaným, pokud nepřekročí kapacitu `StringBuilder`. Následující příklad kódu ukazuje, jak `StringBuilder` mohou být inicializovány na pevnou délku.
 
 ```csharp
-internal static class WindowsAPI
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+
+internal static class NativeMethods
 {
     [DllImport("User32.dll")]
     internal static extern void GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
@@ -259,15 +263,17 @@ public class Window
     public String GetText()
     {
         StringBuilder sb = new StringBuilder(256);
-        WindowsAPI.GetWindowText(h, sb, sb.Capacity + 1);
+        NativeMethods.GetWindowText(h, sb, sb.Capacity + 1);
         return sb.ToString();
     }
 }
 ```
 
 ```vb
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Sub GetWindowText Lib "User32.dll" _
+Imports System.Text
+
+Friend Class NativeMethods
+    Friend Declare Auto Sub GetWindowText Lib "User32.dll" _
         (hWnd As IntPtr, lpString As StringBuilder, nMaxCount As Integer)
 End Class
 
@@ -275,7 +281,7 @@ Public Class Window
     Friend h As IntPtr ' Friend handle to Window.
     Public Function GetText() As String
         Dim sb As New StringBuilder(256)
-        WindowsAPI.GetWindowText(h, sb, sb.Capacity + 1)
+        NativeMethods.GetWindowText(h, sb, sb.Capacity + 1)
         Return sb.ToString()
    End Function
 End Class

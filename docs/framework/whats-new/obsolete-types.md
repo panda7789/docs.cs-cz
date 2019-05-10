@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4b10ff681f7300412fd2f6a1e310989fcc3b31c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 304c2ed354c2b3bfe6333550810dde6c779f2e21
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914443"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663445"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]uspořádaných podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](obsolete-members.md).
@@ -77,7 +77,7 @@ ms.locfileid: "61914443"
 <a name="mscorlib"></a>
 ### <a name="assembly-mscorlibdll"></a>Sestavení: mscorlib.dll.
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.ExecutionEngineException?displayProperty=nameWithType>|Tento typ dříve uvedené neurčené závažná chyba v modulu runtime. Modul runtime již nadále nevyvolává tuto výjimku, takže tento typ je zastaralé.|
 |<xref:System.Collections.CaseInsensitiveHashCodeProvider?displayProperty=nameWithType>|Použijte prosím <xref:System.StringComparer?displayProperty=nameWithType> místo.|
@@ -142,7 +142,7 @@ ms.locfileid: "61914443"
 <a name="Core"></a>
 ### <a name="assembly-systemcoredll"></a>Sestavení: System.Core.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Runtime.CompilerServices.ExecutionScope?displayProperty=nameWithType>|Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Nepoužívejte tohoto typu.|
 
@@ -151,7 +151,7 @@ ms.locfileid: "61914443"
 <a name="data"></a>
 ### <a name="assembly-systemdatadll"></a>Sestavení: System.Data.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Data.DataSysDescriptionAttribute?displayProperty=nameWithType>|<xref:System.Data.DataSysDescriptionAttribute> se už nepoužívá.|
 |<xref:System.Data.PropertyAttributes?displayProperty=nameWithType>|<xref:System.Data.PropertyAttributes> se už nepoužívá.|
@@ -163,7 +163,7 @@ ms.locfileid: "61914443"
 <a name="oracleclient"></a>
 ### <a name="assembly-systemdataoracleclientdll"></a>Sestavení: System.Data.OracleClient.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Data.OracleClient.OracleClientFactory?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleClientFactory> se už nepoužívá.|
 |<xref:System.Data.OracleClient.OracleCommand?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommand> se už nepoužívá.|
@@ -179,7 +179,7 @@ ms.locfileid: "61914443"
 <a name="design"></a>
 ### <a name="assembly-systemdesigndll"></a>Sestavení: System.Design.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=nameWithType>|Tato třída je zastaralá. Místo nich se používá <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=nameWithType>.|
 |<xref:System.Web.UI.Design.DataBindingCollectionConverter?displayProperty=nameWithType>|Použití tohoto typu se nedoporučuje, protože úpravy vazeb dat se spustí prostřednictvím <xref:System.ComponentModel.Design.DesignerActionList?displayProperty=nameWithType> místo mřížku vlastností.|
@@ -201,7 +201,7 @@ ms.locfileid: "61914443"
 <a name="system"></a>
 ### <a name="assembly-systemdll"></a>Sestavení: System.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.ComponentModel.IComNativeDescriptorHandler?displayProperty=nameWithType>|Toto rozhraní se už nepoužívá. Přidat <xref:System.ComponentModel.TypeDescriptionProvider?displayProperty=nameWithType> ke zpracování typu <xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A?displayProperty=nameWithType> místo.|
 |<xref:System.ComponentModel.RecommendedAsConfigurableAttribute?displayProperty=nameWithType>|Použití <xref:System.ComponentModel.SettingsBindableAttribute?displayProperty=nameWithType> místo pro práci s novým modelem nastavení.|
@@ -216,7 +216,7 @@ ms.locfileid: "61914443"
 <a name="enterpriseservices"></a>
 ### <a name="assembly-systementerpriseservicesdll"></a>Sestavení: System.EnterpriseServices.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.EnterpriseServices.RegistrationHelperTx?displayProperty=nameWithType>|<xref:System.EnterpriseServices.RegistrationHelperTx> Třída je zastaralá.|
 
@@ -225,7 +225,7 @@ ms.locfileid: "61914443"
 <a name="net"></a>
 ### <a name="assembly-systemnetdll"></a>Sestavení: System.Net.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Net.INetworkProgress?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno pro použití přímo v kódu.|
 |<xref:System.Net.IUnsafeWebRequestCreate?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno pro použití přímo v kódu.|
@@ -242,7 +242,7 @@ ms.locfileid: "61914443"
 <a name="servicemodel"></a>
 ### <a name="assembly-systemservicemodeldll"></a>Sestavení: System.ServiceModel.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Funkci peer channel je zastaralá a v budoucnu se odebere.|
 |<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Tento typ je zastaralé. Povolení protokolu Http <xref:System.Net.CookieContainer>, použijte `AllowCookies` vlastnost pro vazbu protokolu Http nebo na <xref:System.ServiceModel.Channels.HttpTransportBindingElement>.|
@@ -258,7 +258,7 @@ ms.locfileid: "61914443"
 <a name="web"></a>
 ### <a name="assembly-systemwebdll"></a>Sestavení: System.Web.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Web.Configuration.PassportAuthentication?displayProperty=nameWithType>|Tento typ je zastaralé. Produkt ověřování služby Passport se už nepodporuje a bylo nahrazeno [Account Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413)|
 |<xref:System.Web.Mail.MailAttachment?displayProperty=nameWithType>|Doporučenou alternativou je <xref:System.Net.Mail.Attachment?displayProperty=nameWithType>.|
@@ -279,7 +279,7 @@ ms.locfileid: "61914443"
 <a name="mobile"></a>
 ### <a name="assembly-systemwebmobiledll"></a>Sestavení: System.Web.Mobile.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|Sestavení System.Web.Mobile.dll se už nepoužívá a by měl být už nebude používat. Informace o tom, jak vývoj mobilních aplikací ASP.NET, naleznete v tématu [ASP.NET pro mobilní telefony](https://go.microsoft.com/fwlink/?LinkId=157231).|
 |<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|Sestavení System.Web.Mobile.dll se už nepoužívá a by měl být už nebude používat. Informace o tom, jak vývoj mobilních aplikací ASP.NET, naleznete v tématu [ASP.NET pro mobilní telefony](https://go.microsoft.com/fwlink/?LinkId=157231).|
@@ -479,7 +479,7 @@ ms.locfileid: "61914443"
 <a name="workflow_activities"></a>
 ### <a name="assembly-systemworkflowactivitiesdll"></a>Sestavení: System.Workflow.Activities.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |Všechny typy v <xref:System.Workflow.Activities?displayProperty=nameWithType> obor názvů|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy se považují za zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|
 |<xref:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy se považují za zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|
@@ -492,7 +492,7 @@ ms.locfileid: "61914443"
 <a name="workflow_componentmodel"></a>
 ### <a name="assembly-systemworkflowcomponentmodeldll"></a>Sestavení: System.Workflow.ComponentModel.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |Všechny typy v <xref:System.Workflow.ComponentModel> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=nameWithType> a <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy se považují za zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|
 |Všechny typy v <xref:System.Workflow.ComponentModel.Compiler> oboru názvů s výjimkou <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=nameWithType> a <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> System.Workflow. \* typy se považují za zastaralé. Místo toho použijte nové typy z <xref:System.Activities>.\*.|
@@ -510,7 +510,7 @@ ms.locfileid: "61914443"
 <a name="workflow_runtime"></a>
 ### <a name="assembly-systemworkflowruntimedll"></a>Sestavení: System.Workflow.Runtime.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Activities.Statements.Interop>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br />Typy Workflow Foundation 3.0 jsou zastaralé. Místo toho použijte typy Workflow 4.0 z <xref:System.Activities>.\*.|
 |<xref:System.Activities.Tracking.InteropTrackingRecord>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br />Typy Workflow Foundation 3.0 jsou zastaralé. Místo toho použijte typy Workflow 4.0 z <xref:System.Activities>.\*.|
@@ -525,7 +525,7 @@ ms.locfileid: "61914443"
 <a name="workflowservices"></a>
 ### <a name="assembly-systemworkflowservicesdll"></a>Sestavení: System.WorkflowServices.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.ServiceModel.WorkflowServiceHost?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> WF 3 typy jsou zastaralé. Místo toho použijte nové WF 4 typy z <xref:System.Activities>.\*.|
 |<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> WF 3 typy jsou zastaralé. Místo toho použijte nové WF 4 typy z <xref:System.Activities>.\*.|
@@ -554,7 +554,7 @@ ms.locfileid: "61914443"
 <a name="xaml"></a>
 ### <a name="assembly-systemxamldll"></a>Sestavení: System.Xaml.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute?displayProperty=nameWithType>|To není používán analyzátoru XAML. Podívejte se prosím na <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=nameWithType>.|
 
@@ -563,7 +563,7 @@ ms.locfileid: "61914443"
 <a name="xml"></a>
 ### <a name="assembly-systemxmldll"></a>Sestavení: System.Xml.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Xml.IApplicationResourceStreamResolver?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno pro použití přímo v kódu.|
 |<xref:System.Xml.Schema.XmlSchemaCollection?displayProperty=nameWithType>|Použití <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> pro kompilaci schématu a ověřování.|
@@ -576,7 +576,7 @@ ms.locfileid: "61914443"
 <a name="WindowsBase"></a>
 ### <a name="assembly-windowsbasedll"></a>Sestavení: WindowsBase.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType> se už nepoužívá. Toto rozhraní je již používán.|
 
@@ -595,7 +595,7 @@ ms.locfileid: "61914443"
 <a name="Engine"></a>
 ### <a name="assembly-microsoftbuildenginedll"></a>Sestavení: Microsoft.Build.Engine.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|Tato třída je zastaralá. Použijte prosím <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> z *Microsoft.Build* sestavení místo toho.|
 |<xref:Microsoft.Build.BuildEngine.Project?displayProperty=nameWithType>|Tato třída je zastaralá. Použijte prosím <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> z *Microsoft.Build* sestavení místo toho.|
@@ -605,7 +605,7 @@ ms.locfileid: "61914443"
 <a name="jscript"></a>
 ### <a name="assembly-microsoftjscriptdll"></a>Sestavení: Microsoft.JScript.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:Microsoft.JScript.Vsa.BaseVsaEngine?displayProperty=nameWithType>|Tento typ se přestala nabízet v sadě Visual Studio 2005; nebude ničím nahrazen pro tuto funkci. Podrobnosti najdete <xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> dokumentaci o další pomoc.|
 |<xref:Microsoft.JScript.Vsa.BaseVsaSite?displayProperty=nameWithType>|Tento typ se přestala nabízet v sadě Visual Studio 2005; nebude ničím nahrazen pro tuto funkci. Podrobnosti najdete <xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> dokumentaci o další pomoc.|
@@ -633,7 +633,7 @@ ms.locfileid: "61914443"
 
 Informace o migraci z jazyka Visual Basic 6 najdete v tématu [jazyka Visual Basic 6.0 Resource Center](https://docs.microsoft.com/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation).
   
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray?displayProperty=nameWithType>|Tento člen je zastaralý.|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseOcxArray?displayProperty=nameWithType>|Tento člen je zastaralý.|
@@ -708,7 +708,7 @@ Informace o migraci z jazyka Visual Basic 6 najdete v tématu [jazyka Visual Bas
 <a name="VBCompatData"></a>
 ### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Sestavení: Microsoft.VisualBasic.Compatibility.Data.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.ADODC?displayProperty=nameWithType>|Tento člen je zastaralý.|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.ADODC.BOFActionEnum?displayProperty=nameWithType>|Tento člen je zastaralý.|
@@ -765,7 +765,7 @@ Informace o migraci z jazyka Visual Basic 6 najdete v tématu [jazyka Visual Bas
 <a name="visualc"></a>
 ### <a name="assembly-microsoftvisualcdll"></a>Sestavení: Microsoft.VisualC.dll
 
-|Type|Zpráva|
+|Type|Message|
 |----------|-------------|
 |<xref:Microsoft.VisualC.DebugInfoInPDBAttribute?displayProperty=nameWithType>|Microsoft.VisualC.dll je sestavení zastaralé a existuje pouze pro zpětnou kompatibilitu.|
 |<xref:Microsoft.VisualC.DecoratedNameAttribute?displayProperty=nameWithType>|Microsoft.VisualC.dll je sestavení zastaralé a existuje pouze pro zpětnou kompatibilitu.|

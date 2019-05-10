@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: 11790e14ed1fde9a42e642400161cfb92bf33293
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a05ddd714e85491d29aa5de574b4cdc36165c224
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011750"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469514"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje abecední seznam ovládacích prvků a komponent, které lze použít v modelu Windows Forms. Kromě ovládacích prvků Windows Forms uvedenými v této části můžete přidat ovládací prvky ActiveX a vlastních ovládacích prvků do formulářů Windows. Pokud zjistíte, že ovládací prvek, který je třeba zde uvedeny, můžete také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj prvky Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku potřebujete, přečtěte si [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  
@@ -229,7 +229,7 @@ Následuje abecední seznam ovládacích prvků a komponent, které lze použít
  Obsahuje odkazy na témata krok za krokem, doporučení pro typ ovládacího prvku k vytvoření a další informace o vytváření vlastního ovládacího prvku.  
   
  [Ovládacích prvků a programovatelných objektů porovnáno v různých jazycích a knihovnách](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0061wezk(v=vs.100))  
- Obsahuje tabulku, která mapuje ovládacích prvků v jazyce Visual Basic 6.0 na odpovídající ovládací prvek v [!INCLUDE[vbprvblong](../../../../includes/vbprvblong-md.md)]. Mějte na paměti, že ovládací prvky jsou nyní třídy v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+ Obsahuje tabulku, která mapuje ovládacích prvků v jazyce Visual Basic 6.0 na odpovídající ovládací prvek v jazyce Visual Basic. Všimněte si, že ovládací prvky jsou nyní třídami v rozhraní .NET Framework.  
   
  [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)  
  Popisuje způsob použití ovládacích prvků ActiveX do formulářů Windows.

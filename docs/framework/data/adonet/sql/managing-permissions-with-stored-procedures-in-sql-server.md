@@ -2,12 +2,12 @@
 title: Správa oprávnění pomocí uložených procedur na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: 0688157b45892cacb73f858dffb93836da9fc91d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1a057ed88c792dfdeb89227d6cf1957f74b6d7a1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923120"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623414"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložených procedur na SQL Serveru
 Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je k implementaci všech přístup k datům pomocí uložených procedur a uživatelem definované funkce. Odvolat nebo odepřít všechna oprávnění pro příslušné objekty, jako jsou tabulky a udělení oprávnění EXECUTE na uložené procedury. Tím se vytvoří efektivně bezpečnostní hraniční sítě kolem dat a databázových objektů.  
@@ -52,7 +52,7 @@ Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je 
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](https://go.microsoft.com/fwlink/?LinkId=98234) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
   

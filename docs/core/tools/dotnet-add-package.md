@@ -1,19 +1,23 @@
 ---
 title: příkaz DotNet add příkaz balíčku
 description: Příkaz "se příkaz dotnet add package" poskytuje vhodnou možnost Přidat odkaz na balíček NuGet do projektu.
-ms.date: 12/04/2018
-ms.openlocfilehash: 159b208feafb82e267629ea47dcef02d6b575055
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.date: 04/24/2019
+ms.openlocfilehash: 79059e062368fc9c4b6b8cb31740fdf13ea2b9ca
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665413"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64751412"
 ---
 # <a name="dotnet-add-package"></a>příkaz DotNet add package
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Tento článek se týká: ✓** .NET Core 1.x sady SDK a novějších verzích
 
-## <a name="name"></a>Název
+<!-- todo: uncomment when all CLI commands are reviewed
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
+
+## <a name="name"></a>Name
 
 `dotnet add package` -Přidá odkaz na balíček do souboru projektu.
 
@@ -78,11 +82,11 @@ info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to 
 
 * **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  Obnoví balíčku do zadaného adresáře.
+  Adresář umístění, kam obnovit balíčky.
 
 * **`-s|--source <SOURCE>`**
 
-  Během operace obnovení používá konkrétní zdroj balíčku NuGet.
+  Zdroj balíčku NuGet pro použití během operace obnovení.
 
 * **`-v|--version <VERSION>`**
 

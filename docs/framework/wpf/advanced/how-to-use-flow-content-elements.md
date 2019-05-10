@@ -5,12 +5,12 @@ helpviewer_keywords:
 - flow content elements [WPF]
 - documents [WPF], flow content elements
 ms.assetid: 70fa11cd-5fa7-4872-a1cc-04d80f1132be
-ms.openlocfilehash: df591304736adf1725b2b4235149bd426fe15216
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f61116c0bf52ac726238d9e21c2422cedbb4716f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052349"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663328"
 ---
 # <a name="how-to-use-flow-content-elements"></a>Postupy: Použití elementů obsahu toku
 Následující příklad ukazuje deklarativní využití různých elementů obsahu toku a přidružených atributů.  Elementy a atributy, které jsme vám ukázali patří:  

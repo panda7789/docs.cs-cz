@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: bb87879fdf584a439e09839bf4321b85e7dd6a43
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: f4857d410b16c3bbcb2129cec0d753a1c3d7a726
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602452"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469487"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tato technika umožňuje přizpůsobit chování aplikační model a přidávat volání vlastní metody aplikace po spuštění a ukončení.  
@@ -76,10 +76,10 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
  Pokud je aplikace s jedinou instancí aplikace a aplikace je již spuštěna, další instance aplikace volá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A> metodu na původní instanci aplikace, a poté ukončí.  
  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> Volání konstruktoru <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> a určí, které vykreslovací jádro text pro formuláře aplikace. Ve výchozím nastavení <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vrátí vlastnost `False`, označující, že se text vykreslovací modul GDI používat, což je výchozí hodnota v [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]. Je možné přepsat <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vlastnost vrátit `True`, což znamená, že text vykreslovací modul GDI + používat, což je výchozí hodnotou v jazyce Visual Basic .NET 2002 a Visual Basic .NET 2003.  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> Volání konstruktoru <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> a určí, které vykreslovací jádro text pro formuláře aplikace. Ve výchozím nastavení <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vrátí vlastnost `False`, označující, že se text vykreslovací modul GDI používat, což je výchozí hodnota v jazyce Visual Basic 2005 a novějších verzích. Je možné přepsat <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vlastnost vrátit `True`, což znamená, že text vykreslovací modul GDI + používat, což je výchozí hodnotou v jazyce Visual Basic .NET 2002 a Visual Basic .NET 2003.  
   
 ## <a name="configuring-the-application"></a>Konfigurace aplikace  
- Jako součást modelu aplikace Visual Basic <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering> třída poskytuje chráněné vlastnosti, které konfigurace aplikace. Tyto vlastnosti musí být nastaveno v konstruktoru implementující třídu.  
+ Jako součást modelu aplikace Visual Basic <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třída poskytuje chráněné vlastnosti, které konfigurace aplikace. Tyto vlastnosti musí být nastaveno v konstruktoru implementující třídu.  
   
  V projektu Windows Forms výchozí **Návrháře projektu** vytvoří kód pro nastavení vlastnosti pomocí Návrháře nastavení. Vlastnosti se používají pouze v případě, že se spouští aplikace; nastavit je po spuštění aplikace nemá žádný vliv.  
   

@@ -1,6 +1,6 @@
 ---
 title: Operátory jazyka C#
-ms.date: 04/04/2018
+ms.date: 04/30/2019
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
@@ -18,34 +18,34 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: f4267caeb6301950b9f6a8b9545a47b9f48e7920
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fbbc0a5accf021df0675192deb040476bc97968d
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61689811"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452368"
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 
-Jazyk C# poskytuje mnoho operátorů, které jsou symboly, které určují operace, které (matematické, indexování, volání funkce atd.) provést ve výrazu. Je možné [přetížení](../../programming-guide/statements-expressions-operators/overloadable-operators.md) mnoho operátorů, chcete-li změnit jejich význam při aplikování na uživatelem definovaného typu.
+C#poskytuje řadu předdefinovaných operátory podporovaných předdefinovaných typů. Například [aritmetické operátory](arithmetic-operators.md) provádění aritmetických operací s operandy předdefinovaných číselných typů a [logické logické operátory](boolean-logical-operators.md) provádí logické operace s [bool ](../keywords/bool.md) operandy.
 
-Operace interních typů (například `==`, `!=`, `<`, `>`, `&`, `|`) jsou obecně povoleny na výčet (`enum`) typy.
+Uživatelem definovaný typ může přetížit některé operátory definovat odpovídající chování pro operandy typu. Další informace najdete v tématu [operátor](../keywords/operator.md) článku – klíčové slovo.
 
-Níže uvedených částech najdete seznam operátorů jazyka C# od nejvyšší prioritu, takže nejnižší. Operátory v jednotlivých částech sdílet stejnou úrovní priority.
+Následující části seznamu C# operátory od nejvyšší prioritu, takže nejnižší. Operátory v jednotlivých částech sdílet stejnou úrovní priority.
 
 ## <a name="primary-operators"></a>Primární operátory
 
 Jedná se o nejvyšší priorita operátorů.
 
-[x.y](member-access-operator.md) – přístup ke členu.
+[x.y](member-access-operators.md#member-access-operator-) – přístup ke členu.
 
-[x?. y](null-conditional-operators.md) – přístup Podmíněný člen s hodnotou null. Vrátí `null` pokud levý operand je vyhodnocen jako `null`.
+[x?. y](member-access-operators.md#null-conditional-operators--and-) – přístup Podmíněný člen s hodnotou null. Vrátí `null` pokud levý operand je vyhodnocen jako `null`.
 
-[x? [y] ](null-conditional-operators.md) -index podmíněného přístupu s hodnotou null. Vrátí `null` pokud levý operand je vyhodnocen jako `null`.
+[x? [y] ](member-access-operators.md#null-conditional-operators--and-) – prvek Podmíněné pole s hodnotou null, nebo zadejte přístup indexeru. Vrátí `null` pokud levý operand je vyhodnocen jako `null`.
 
-[f(x)](invocation-operator.md) – funkce volání.
+[f(x)](member-access-operators.md#invocation-operator-) – metoda volání nebo vyvolání delegáta.
 
-[&#91;x&#93; ](index-operator.md) – indexování agregovaný objekt.
+[&#91;x&#93; ](member-access-operators.md#indexer-operator-) – element pole nebo typ přístup indexeru.
 
 [x ++](arithmetic-operators.md#increment-operator-) – Příponové operátory Inkrementace. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden znak větší (obvykle přidá na celé číslo 1).
 
@@ -61,9 +61,13 @@ Jedná se o nejvyšší priorita operátorů.
 
 [Default(T)](../../programming-guide/statements-expressions-operators/default-value-expressions.md) – vytvoří výchozí hodnotu typu T.
 
+[nameof](../keywords/nameof.md) -získá jednoduchého (nekvalifikovaného) název proměnné, typ nebo člena jako konstanty typu řetězec.
+
 [Delegovat](../../programming-guide/statements-expressions-operators/anonymous-methods.md) – deklaruje a vrátí instanci delegáta.
 
 [operátor sizeof:](../keywords/sizeof.md) – vrátí velikost v bajtech typ operandu.
+
+[stackalloc](../keywords/stackalloc.md) -přiděluje blok paměti v zásobníku.
 
 [->](dereference-operator.md) – přístup přes ukazatel v kombinaci s přístup ke členu.
 
@@ -125,13 +129,13 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x \< y](less-than-operator.md) – menší než (true, pokud x je menší než y).
+[x \< y](comparison-operators.md#less-than-operator-) – menší než (true, pokud x je menší než y).
 
-[x > y](greater-than-operator.md) – větší než (true, pokud x je větší než y).
+[x > y](comparison-operators.md#greater-than-operator-) – větší než (true, pokud x je větší než y).
 
-[x \<= y](less-than-equal-operator.md) – menší než nebo rovno.
+[x \<= y](comparison-operators.md#less-than-or-equal-operator-) – menší než nebo rovno.
 
-[x > = y](greater-than-equal-operator.md) – větší než nebo rovna hodnotě.
+[x > = y](comparison-operators.md#greater-than-or-equal-operator-) – větší než nebo rovna hodnotě.
 
 [je](../keywords/is.md) – typ kompatibility. Vrátí true, pokud vyhodnocený levý operand může být převeden na typ určený v pravý operand (statického typu).
 
@@ -187,7 +191,7 @@ Tento operátor má vyšší prioritu než v další části a nižší prioritu
 
 [t? x: y](conditional-operator.md) – Pokud test `t` vyhodnotí jako true, pak vyhodnotí a vrátí `x`; v opačném případě vyhodnotí a vrátí `y`.
 
-## <a name="assignment-and-lambda-operators"></a>Operátory přiřazení a Lambda
+## <a name="assignment-and-lambda-operators"></a>Operátory přiřazení a lambda
 
 Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
 

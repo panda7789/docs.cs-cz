@@ -4,12 +4,12 @@ description: Zjistěte, jak volat nativní funkce prostřednictvím P/Invoke v r
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: d1da6be56e14f72e17cf8fc9ba343ce148fe0931
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ed1eb69a418317bbee2502418cc2521a68b65542
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973502"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063189"
 ---
 # <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
@@ -178,7 +178,7 @@ namespace PInvokeSamples
 
     // The native callback takes a pointer to a struct. The below class
     // represents that struct in managed code. You can find more information
-    // about this in the section on marshalling below.
+    // about this in the section on marshaling below.
     [StructLayout(LayoutKind.Sequential)]
     public class StatClass
     {
@@ -254,7 +254,7 @@ namespace PInvokeSamples
 }
 ```
 
-I v předchozích příkladech záviset na parametrech a v obou případech jsou uvedeny parametry, jako spravované typy. Modul runtime dělá "správné věci" a zpracuje do své ekvivalenty na druhé straně. Další informace o tom, jak jsou typy zařazeno do nativního kódu na naší stránce [typu zařazování](type-marshalling.md).
+I v předchozích příkladech záviset na parametrech a v obou případech jsou uvedeny parametry, jako spravované typy. Modul runtime dělá "správné věci" a zpracuje do své ekvivalenty na druhé straně. Seznamte se s typy, jak jsou zařazeny do nativního kódu na naší stránce [typu zařazování](type-marshaling.md).
 
 ## <a name="more-resources"></a>Další materiály
 

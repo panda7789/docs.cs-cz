@@ -4,12 +4,12 @@ description: Seznamte se nabídky společnosti Microsoft pro podporu životního
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 8536703a520434c0e393c5f46005c2ac02d5d849
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: cdaac06ffd907783c7ebe9b62ecd726158a02484
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934655"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664385"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
 
@@ -31,7 +31,7 @@ Tabulka 3-1 ukazuje, že záměr Microsoft DevOps pro kontejnerizované aplikace
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
 | Platforma pro aplikace Dockeru   | • Microsoft Visual Studio a Visual Studio Code<br /> • .NET<br /> • Microsoft Azure Container Service<br /> • Azure Service Fabric<br /> • Azure Container Registry<br /> | • Libovolný editor kódu (například Sublime)<br /> • Libovolný jazyk (Node.js, Java, Go, atd.)<br /> • Všechny nástroje orchestrator a Plánovač<br /> • Jakýkoli registr Dockeru<br /> |
 | DevOps pro aplikace Dockeru     | • Služby azure DevOps<br /> • Microsoft Team Foundation Server<br /> • Azure Container Service<br /> • Azure Service Fabric<br /> | • Githubu, Git, Subversion, atd.<br /> • Jenkinse, Chef, Puppet, rychlost, CircleCI, travis ci, atd.<br /> • V místním datovém centru Dockeru, Docker Swarm, Mesos DC/OS, Kubernetes, atd.<br /> |
-| Monitorování a Správa  | • Operations Management Suite<br /> • Aplikace Insights<br /> | • Marathon, Chronos, atd.<br />
+| Monitorování a Správa  | Monitorování • azure | • Marathon, Chronos, atd.<br />|
 
 Microsoft platformu a nástroje pro kontejnerizované aplikace Dockeru, jak je definováno v tabulce 3-1, zahrnuje následující součásti:
 

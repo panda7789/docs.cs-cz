@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e89fda72371f197efeeeef8f31ec396c334cfcb2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5702fac139ba602828bb8722a1e3e25d6f1c58f6
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122028"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64625439"
 ---
 # <a name="imetadataassemblyemitdefineexportedtype-method"></a>IMetaDataAssemblyEmit::DefineExportedType – metoda
 Vytvoří `ExportedType` struktura obsahující metadata pro zadanou exportovat typ a vrátí token metadat.  
@@ -46,13 +46,13 @@ HRESULT DefineExportedType (
  `tkImplementation`  
  [in] Token určující, kde se exportovaný typ implementuje. Platné hodnoty a jejich přidružené vysvětlení jsou:  
   
--   `mdFile` Typ je implementována do jiného souboru v rámci tohoto sestavení.  
+- `mdFile` Typ je implementována do jiného souboru v rámci tohoto sestavení.  
   
--   `mdAssemblyRef` Typ je implementované v jiném sestavení.  
+- `mdAssemblyRef` Typ je implementované v jiném sestavení.  
   
--   `mdExportedTYpe` Typ je vnořená v rámci některého jiného typu.  
+- `mdExportedTYpe` Typ je vnořená v rámci některého jiného typu.  
   
--   `mdFileNil` Typ je ve stejném souboru jako manifest a není vnořeného typu.  
+- `mdFileNil` Typ je ve stejném souboru jako manifest a není vnořeného typu.  
   
  `tkTypeDef`  
  [in] Token pro metadata, která určuje typ, který chcete exportovat. Tato hodnota se zadá v `TypeDef` tabulky v souboru, který implementuje typ a je relevantní pouze v případě, že tento soubor je v tomto sestavení.  

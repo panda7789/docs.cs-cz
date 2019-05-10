@@ -10,12 +10,12 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: 7eed5400744f1010cbf52dc8d3b3d0bc24aa4371
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c68e6a69553f2cb14eb442c31e5138009f3c8411
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776217"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64619447"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají počáteční a koncový čas vlastnosti, které je možné nastavit, aby byly k dispozici v určitých časech den. Tato funkce je možné, například pro rezervaci tiskárny pro výhradní použití určitých oddělení po 17: 00. Toto oddělení by měla mít jinou frontu tiskárny, než jiných oddělení údržby použít. Fronta jiných oddělení se nastavuje nedostupnost po 17: 00, zatímco fronty pro dána oddělení může být nastaven na být vždy k dispozici.  

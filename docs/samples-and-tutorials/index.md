@@ -4,12 +4,12 @@ description: Informace o ukázky a kurzy pro .NET Core, ASP.NET Core a C# jazyk,
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: b9d047cf0e9a1f917f2376a5128b7d1bf70084af
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: ba0d7e4163a1c4afe08ea3f871c2bccc2335ac48
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063363"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469467"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET ukázky a kurzy
 
@@ -61,7 +61,7 @@ V této ukázce mnohé z problémů, které je možné řešit s využitím stro
 
 Tato série ukázky ukazují řadu funkcí, z Language Integrated Query (LINQ). [Úplnou vzorovou](https://github.com/dotnet/samples/tree/master/core/linq/csharp) je k dispozici v úložišti dotnet/samples na Githubu.
 
-** Spravovaného serveru COM ukázka **
+**Spravovaný server COM vzorku**
 
 [Serveru COM](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo) ukázce vytváření spravovaný server COM a jak ho lze globálně zaregistrovat.
 

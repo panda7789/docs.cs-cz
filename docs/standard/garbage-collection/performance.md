@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9aa04051a8aad56c653eaee1a79fb48a849cf377
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: da29bd6bc53b59f1f20e2272a8293b49e230bff0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026182"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622868"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 <a name="top"></a> Toto téma popisuje problémy spojené s uvolňování paměti kolekce a využití paměti. Řeší problémy, které se vztahují na spravované haldě a vysvětluje, jak minimalizovat dopad uvolňování paměti u svých aplikací. Všechny problémy obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.  

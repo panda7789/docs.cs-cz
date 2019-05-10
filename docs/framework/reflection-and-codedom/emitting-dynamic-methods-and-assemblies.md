@@ -9,12 +9,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], emitting dynamic assemblies
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a0ed1d02fd40a94d4ae63deea3c09b04bfc9bd8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 559d6962873540836a49da04bc271857edfa1157
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793312"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663477"
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
 Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> obor názvů, které umožní, aby kompilátor nebo nástroj generoval metadata a jazyk Microsoft intermediate language (MSIL) v době běhu a volitelně vygenerovat soubor (PE portable executable) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části poskytuje funkce <xref:System.Reflection.Emit> obor názvů se označuje jako reflexe vygenerovat.  

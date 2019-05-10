@@ -6,27 +6,27 @@ helpviewer_keywords:
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: e7bc996c3d64c0ea3ac8fca5fef759ad309f2967
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c324e4956d6db29e4de12bd7639a69daaf65d872
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747545"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64665928"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněním přístupu
 Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád mají usnadnění předpisy pro nákup softwaru. Logo Certified pro Windows obsahuje požadavky na usnadnění přístupu. Odhadované pobytem 30 milionů amerických samostatně, mnoho z nich potenciálních zákazníků, jsou ovlivněny usnadnění softwaru.  
   
  Tento názorný postup bude zabývat pět požadavků usnadnění přístupu pro logo Certified pro Windows. Podle těchto požadavků se dostupné aplikace:  
   
--   Podpora velikost ovládacích panelů, barvy, písma a vstupní nastavení. Řádku nabídek, záhlaví, ohraničení a stavový řádek všechny velikost se sami když uživatel změní nastavení ovládacího panelu. Nevyžaduje žádné další změny ovládací prvky nebo kód v této aplikaci.  
+- Podpora velikost ovládacích panelů, barvy, písma a vstupní nastavení. Řádku nabídek, záhlaví, ohraničení a stavový řádek všechny velikost se sami když uživatel změní nastavení ovládacího panelu. Nevyžaduje žádné další změny ovládací prvky nebo kód v této aplikaci.  
   
--   Podporovat režim s vysokým kontrastem.  
+- Podporovat režim s vysokým kontrastem.  
   
--   Zadejte zdokumentovaných klávesnici přístup ke všem funkcím.  
+- Zadejte zdokumentovaných klávesnici přístup ke všem funkcím.  
   
--   Vizuálně a programově zpřístupnit umístění fokus klávesnice.  
+- Vizuálně a programově zpřístupnit umístění fokus klávesnice.  
   
--   Vyhněte se předávání důležitých informací zvukovou samostatně.  
+- Vyhněte se předávání důležitých informací zvukovou samostatně.  
   
  Další informace najdete v tématu [prostředky pro návrh aplikace přístupné](/visualstudio/ide/reference/resources-for-designing-accessible-applications).  
   
@@ -41,29 +41,29 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
   
 #### <a name="to-begin-making-the-application"></a>Chcete-li začít vytvářet aplikace  
   
--   Vytvoření nové aplikace Windows v jazyce Visual Basic nebo Visual C#. Pojmenujte projekt **PizzaOrder**. (Podrobnosti najdete v tématu [vytváří se nová řešení a projekty](/visualstudio/ide/creating-solutions-and-projects).)  
+- Vytvoření nové aplikace Windows v jazyce Visual Basic nebo Visual C#. Pojmenujte projekt **PizzaOrder**. (Podrobnosti najdete v tématu [vytváří se nová řešení a projekty](/visualstudio/ide/creating-solutions-and-projects).)  
   
 ## <a name="adding-the-controls-to-the-form"></a>Přidání ovládacích prvků do formuláře  
  Když přidáváte ovládací prvky do formuláře, mějte na paměti následující pokyny, aby dostupné aplikace:  
   
--   Nastavte <xref:System.Windows.Forms.Control.AccessibleDescription%2A> a <xref:System.Windows.Forms.Control.AccessibleName%2A> vlastnosti. V tomto příkladu ve výchozím nastavení <xref:System.Windows.Forms.Control.AccessibleRole%2A> je dostačující. Další informace o vlastnostech usnadnění, naleznete v tématu [poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows](../controls/providing-accessibility-information-for-controls-on-a-windows-form.md).  
+- Nastavte <xref:System.Windows.Forms.Control.AccessibleDescription%2A> a <xref:System.Windows.Forms.Control.AccessibleName%2A> vlastnosti. V tomto příkladu ve výchozím nastavení <xref:System.Windows.Forms.Control.AccessibleRole%2A> je dostačující. Další informace o vlastnostech usnadnění, naleznete v tématu [poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows](../controls/providing-accessibility-information-for-controls-on-a-windows-form.md).  
   
--   Nastavte velikost písma 10 bodů nebo větší.  
+- Nastavte velikost písma 10 bodů nebo větší.  
   
     > [!NOTE]
     >  Pokud nastavíte velikost písma formuláře na 10 při spuštění, bude mít všechny ovládací prvky do formuláře přidán následně velikost písma 10.  
   
--   Zajistěte, aby libovolný ovládací prvek popisek, který popisuje ovládací prvek textového pole bezprostředně předchází ovládacího prvku textového pole v pořadí.  
+- Zajistěte, aby libovolný ovládací prvek popisek, který popisuje ovládací prvek textového pole bezprostředně předchází ovládacího prvku textového pole v pořadí.  
   
--   Přidat přístupový kód, používat "&" znak <xref:System.Windows.Forms.Control.Text%2A> vlastnost libovolný ovládací prvek, uživatel může chtít přejít na.  
+- Přidat přístupový kód, používat "&" znak <xref:System.Windows.Forms.Control.Text%2A> vlastnost libovolný ovládací prvek, uživatel může chtít přejít na.  
   
--   Přidat přístupový kód, používat "&" znak <xref:System.Windows.Forms.Control.Text%2A> popisku, který předchází ovládací prvek, který uživatel může chtít přejít na. Nastavit jmenovky <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `true`, tak, aby fokus na další ovládací prvek v pořadí karet při stisknutí přístupové klávesy.  
+- Přidat přístupový kód, používat "&" znak <xref:System.Windows.Forms.Control.Text%2A> popisku, který předchází ovládací prvek, který uživatel může chtít přejít na. Nastavit jmenovky <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `true`, tak, aby fokus na další ovládací prvek v pořadí karet při stisknutí přístupové klávesy.  
   
--   Přidáte všechny položky nabídky přístupové klíče.  
+- Přidáte všechny položky nabídky přístupové klíče.  
   
 #### <a name="to-make-your-windows-application-accessible"></a>Chcete-li zpřístupnit svoji aplikaci Windows  
   
--   Přidat ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázku na konec tabulky modelu o tom, jak uspořádat ovládací prvky ve formuláři.  
+- Přidat ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázku na konec tabulky modelu o tom, jak uspořádat ovládací prvky ve formuláři.  
   
     |Objekt|Vlastnost|Hodnota|  
     |------------|--------------|-----------|  
@@ -71,11 +71,11 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||AccessibleName|Formulář objednávky|  
     ||Velikost písma|10|  
     ||Text|Formulář objednávky pizza|  
-    |PictureBox|Název|logo|  
+    |PictureBox|Name|logo|  
     ||AccessibleDescription|Řez pizza|  
     ||AccessibleName|Logo společnosti|  
     ||Image|Žádné ikona nebo rastrový obrázek|  
-    |Popisek|Název|companyLabel|  
+    |Popisek|Name|companyLabel|  
     ||Text|Good Pizza|  
     ||TabIndex|1|  
     ||AccessibleDescription|Název společnosti|  
@@ -83,74 +83,74 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||Barva pozadí|Modrá|  
     ||Barva popředí|Žlutá|  
     ||Velikost písma|18|  
-    |Popisek|Název|customerLabel|  
+    |Popisek|Name|customerLabel|  
     ||Text|& název|  
     ||TabIndex|2|  
     ||AccessibleDescription|Popisek názvu zákazníka|  
     ||AccessibleName|Popisek názvu zákazníka|  
     ||Usemnemonic –|Pravda|  
-    |TextBox|Název|customerName|  
+    |TextBox|Name|customerName|  
     ||Text|(žádné)|  
     ||TabIndex|3|  
     ||AccessibleDescription|Jméno zákazníka|  
     ||AccessibleName|Jméno zákazníka|  
-    |GroupBox|Název|sizeOptions|  
+    |GroupBox|Name|sizeOptions|  
     ||AccessibleDescription|Možnosti velikosti pizza|  
     ||AccessibleName|Možnosti velikosti pizza|  
     ||Text|Velikost pizza|  
     ||TabIndex|4|  
-    |RadioButton|Název|smallPizza|  
+    |RadioButton|Name|smallPizza|  
     ||Text|& malé $6.00|  
     ||Zaškrtnuto|Pravda|  
     ||TabIndex|0|  
     ||AccessibleDescription|Malé pizza|  
     ||AccessibleName|Malé pizza|  
-    |RadioButton|Název|largePizza|  
+    |RadioButton|Name|largePizza|  
     ||Text|& velké 10,00 USD|  
     ||TabIndex|1|  
     ||AccessibleDescription|Velké pizza|  
     ||AccessibleName|Velké pizza|  
-    |Popisek|Název|toppingsLabel|  
+    |Popisek|Name|toppingsLabel|  
     ||Text|& toppings ($0,75 každý)|  
     ||TabIndex|5|  
     ||AccessibleDescription|Popisek toppings|  
     ||AccessibleName|Popisek toppings|  
     ||Usemnemonic –|Pravda|  
-    |CheckedListBox|Název|toppings|  
+    |CheckedListBox|Name|toppings|  
     ||TabIndex|6|  
     ||AccessibleDescription|K dispozici toppings|  
     ||AccessibleName|K dispozici toppings|  
     ||Položky|Pepperoni salám, hub|  
-    |Tlačítko|Název|pořadí|  
+    |Tlačítko|Name|pořadí|  
     ||Text|& pořadí|  
     ||TabIndex|7|  
     ||AccessibleDescription|Celkový počet pořadí|  
     ||AccessibleName|Celkový počet pořadí|  
-    |Tlačítko|Název|Zrušit|  
+    |Tlačítko|Name|Zrušit|  
     ||Text|& Zrušit|  
     ||TabIndex|8|  
     ||AccessibleDescription|Zrušit pořadí|  
     ||AccessibleName|Zrušit objednávku|  
-    |MainMenu|Název|theMainMenu|  
-    |Položku nabídky|Název|fileCommands|  
+    |MainMenu|Name|theMainMenu|  
+    |Položku nabídky|Name|fileCommands|  
     ||Text|& soubor|  
-    |Položku nabídky|Název|exitApp|  
+    |Položku nabídky|Name|exitApp|  
     ||Text|U & končit|
     
-      Formulář bude vypadat podobně jako na následujícím obrázku:
+      Your form will look something like the following image:
     
-      ![Formulář objednávky pizza s názvem textového pole a velikost a toppings výběru.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)  
+      ![The pizza order form with a name textbox, and size and toppings selection.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)  
 
 ## <a name="supporting-high-contrast-mode"></a>Podporující režim s vysokým kontrastem  
  Vysoký kontrast je nastavení systému Windows, který zlepšuje čitelnost pomocí kontrastní barvy a velikosti písem, které jsou užitečné pro uživatele se zrakovým postižením. <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> Vlastnost je k dispozici k určení, zda je nastaven režim s vysokým kontrastem.  
   
  Pokud je SystemInformation.HighContrast `true`, by měla aplikace:  
   
--   Zobrazit všechny prvky uživatelského rozhraní pomocí systému barevné schéma  
+- Zobrazit všechny prvky uživatelského rozhraní pomocí systému barevné schéma  
   
--   Oznamují vizuální prvky nebo zvuk veškeré informace, které se předávají prostřednictvím barvu. Například pokud pomocí red písma jsou zvýrazněny konkrétní seznam položek, můžete také přidat tučné písmo, tak, aby uživatel měl jiné barvy upozornění, že jsou zvýrazněné položky.  
+- Oznamují vizuální prvky nebo zvuk veškeré informace, které se předávají prostřednictvím barvu. Například pokud pomocí red písma jsou zvýrazněny konkrétní seznam položek, můžete také přidat tučné písmo, tak, aby uživatel měl jiné barvy upozornění, že jsou zvýrazněné položky.  
   
--   Vynechat všechny obrázky nebo vzory za text  
+- Vynechat všechny obrázky nebo vzory za text  
   
  Aplikace by měla kontrolovat nastavení <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> když aplikaci spustí a reagovat na událost systému <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>. <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> Událost se vyvolá vždy, když hodnota <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> změny.  
   

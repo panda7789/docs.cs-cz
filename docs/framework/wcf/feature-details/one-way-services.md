@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-ms.openlocfilehash: 011bca07890e706b86f2a0b1dbf11acf77058548
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b29585eabcc2549876f4b50e6b6e55a7f8ef2eee
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762485"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64621345"
 ---
 # <a name="one-way-services"></a>Jednosměrné služby
 Výchozí chování operace služby je vzor požadavek odpověď. Ve vzoru požadavek odpověď, klient počká pro zprávy s odpovědí, i v případě, že v kódu, jako je reprezentována operace služby `void` metody. S jednosměrnou operaci se přenášejí pouze jednu zprávu. Příjemce neodešle zprávy s odpovědí, ani nemá odesílatel očekávat jeden.  

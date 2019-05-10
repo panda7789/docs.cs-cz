@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e32d2d4424d05b95af1eda400974da3293b8499
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ae5d27be18a57bfafe5bb9fcf9424d708d643e3b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969101"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622861"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Vymazání nespravovaných prostředků
 U většiny objektů, které vaše aplikace vytvoří můžete se spolehnout na. NET pro uvolňování paměti správy paměti. Pokud však vytváříte objekty, které zahrnují nespravované prostředky, musíte tyto prostředky explicitně uvolnit, pokud je v rámci aplikace již nepoužíváte. Nejběžnějšími typy nespravovaných prostředků jsou objekty, které obalují prostředky operačního systému, jako jsou soubory, okna, síťová připojení nebo připojení databáze. Přestože je systém uvolňování paměti schopen sledovat dobu platnosti objektu, který zapouzdřuje nespravovaný prostředek, nemá specifické znalosti o tom, jak spravovaný prostředek uvolnit a vyčistit.  

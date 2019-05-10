@@ -5,12 +5,12 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 431a0f34ba913c18c35e28ca45660495403bf688
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d361b0c471402c097dfac799eb58ef08209d4343
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795567"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64664358"
 ---
 # <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Použití nástrojů Dockeru v sadě Visual Studio 2017 na Windows
 
@@ -74,12 +74,12 @@ V hlavní nabídce zvolte **nástroje > Možnosti**a rozbalte **nástroje kontej
 
 V následující tabulce může pomoct při rozhodování, jak nastavit tyto možnosti.
 
-| Název | Výchozí nastavení | Platí pro | Popis |
+| Name | Výchozí nastavení | Platí pro | Popis |
 | -----|:---------------:|:----------:| ----------- |
 | Automaticky získat požadované Image Dockeru při načtení projektu | On | Docker Compose | Pro zvýšení výkonu při načítání projektů sady Visual Studio spustí operaci Docker pull na pozadí tak, že až budete připraveni ke spuštění kódu, se image nestáhne již nebo probíhá stahování. Pokud jste právě načítá projekty a procházení kódu, můžete to vypnout aby se zabránilo stahování imagí kontejnerů, které nepotřebujete. |
 | Automaticky spustit kontejnery na pozadí | On | Docker Compose | Znovu pro zajištění zvýšeného výkonu sady Visual Studio vytvoří kontejner s připojí svazek připravené pro když sestavíte a spustíte svůj kontejner. Pokud chcete řídit, kdy se vytvoří kontejner, vypněte toto. |
 | Automaticky ukončit kontejnery na řešení zavřít | On | Docker Compose | Pokud byste o ni kontejnerů pro vaše řešení, aby kontinuálně běžely po zavření řešení nebo zavření sady Visual Studio, vypnutí této funkce. |
-| Nezobrazovat výzvu důvěřující certifikátu SSL pro localhost | Off | Projekty ASP.NET Core 2.1 | Pokud localhost certifikát SSL není důvěryhodný, Visual Studio zobrazí výzvu pokaždé, když spuštění projektu, pokud je toto políčko zaškrtnuté. |
+| Nezobrazovat výzvu důvěřující certifikátu SSL pro localhost | Off | Projekty ASP.NET Core 2.2 | Pokud localhost certifikát SSL není důvěryhodný, Visual Studio zobrazí výzvu pokaždé, když spuštění projektu, pokud je toto políčko zaškrtnuté. |
 
 > [!WARNING]
 > Pokud localhost certifikát SSL není důvěryhodný a zaškrtněte políčko pro potlačení výzvy k potvrzení, nemusí podařit HTTPS webové požadavky v době běhu ve vaší aplikaci nebo službě. V takovém případě zrušte zaškrtnutí políčka **nechcete zobrazovat výzvu** zaškrtávací políčko, spouštění vašeho projektu a označuje vztah důvěryhodnosti na řádku.

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ad2c41cc99422217b9f85acbd32f91ac78a9a7c2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 84af29aa169710f8de86c383429bf391fbc20bd3
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614231"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469535"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
 Trasování je způsob, jak můžete monitorovat provádění aplikace během jejího běhu. Instrumentace trasování a ladění můžete přidat do vaší aplikace rozhraní .NET Framework při při vývoji a instrumentaci můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiná pro pozdější analýzu.  
@@ -134,7 +134,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  Můžete vytvářet vlastní výsledky implementací vlastní naslouchací proces. Vlastní naslouchací může například zobrazit zprávy do okna se zprávou a připojení k databázi a přidává zprávy do tabulky. Všechny vlastní naslouchací procesy by měly podporovat šest metod uvedených výše. Další informace o vytvoření naslouchacích procesů definované pro vývojáře najdete v tématu <xref:System.Diagnostics.TraceListener> v referenční dokumentaci rozhraní .NET Framework.  
   
 > [!NOTE]
->  V [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], **Debug.Write –**, **Debug.WriteIf**, **Debug.WriteLine**, a **Debug.WriteLineIf** nahradil metody **Debug.Print** metodu, která byla k dispozici v dřívějších verzích sady Visual Basic.  
+>  V jazyce Visual Basic **Debug.Write –**, **Debug.WriteIf**, **Debug.WriteLine**, a **Debug.WriteLineIf** nahradil metody **Debug.Print** metodu, která byla k dispozici v dřívějších verzích sady Visual Basic.  
   
  **Zápisu** a **WriteLine** metody vždy vypsání textu, že zadáte. **Assert –**, **writeif –**, a **writelineif –** vyžadují logický argument, který určuje, zda zapisovaly zadaný text; zapisovaly zadaný text pouze pokud má výraz hodnotu **true** (pro **writeif –** a **writelineif –**), nebo **false** (pro **Assert**). **Selhání** metoda vždy zapíše zadaný text. Další informace najdete v tématu [jak: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md) a odkaz na rozhraní .NET Framework.  
   

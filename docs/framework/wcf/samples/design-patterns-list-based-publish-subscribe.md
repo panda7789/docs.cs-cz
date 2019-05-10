@@ -2,12 +2,12 @@
 title: 'Vzory návrhu: Vzor publikování–odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: e98fab5c8e7570917a4ba755fa372832fe0b26b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1b99908c1b83bb0d75e295b7a12e8c5933fe86a1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773058"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650123"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Vzor publikování–odběr založený na seznamu
 Tento příklad znázorňuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).  

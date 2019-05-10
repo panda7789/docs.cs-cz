@@ -2,12 +2,12 @@
 title: Názvy partnerských uzlů a ID PNRP
 ms.date: 03/30/2017
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
-ms.openlocfilehash: e7e92519bede478a5e26a88a56236f987c93c441
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8cdd5151d029436d11c78806cf7673861cc0d8a4
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642124"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623125"
 ---
 # <a name="peer-names-and-pnrp-ids"></a>Názvy partnerských uzlů a ID PNRP
 Název partnerského zařízení představuje koncový bod pro komunikaci, která může být počítač, uživatele, skupinu, služby nebo něco přidružené partnera, který lze převést na IPv6 adresu. Řešení protokolu PNRP (Peer Name) trvá statisticky jedinečný. název partnerského zařízení pro zřízení ID PNRP, který slouží k určení členů cloudu.  
