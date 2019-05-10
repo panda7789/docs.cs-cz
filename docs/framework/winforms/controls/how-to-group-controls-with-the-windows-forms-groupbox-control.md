@@ -6,33 +6,33 @@ helpviewer_keywords:
 - GroupBox control [Windows Forms], grouping controls
 - Windows Forms controls, grouping
 ms.assetid: 0bda316d-bd2a-43aa-ac73-342453303169
-ms.openlocfilehash: d2bad0020d18cd262bc2fe3489a00209308bd7b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f5b8c5ef47063663d5f8fcd2f80317e6cf6c91e6
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941320"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64609484"
 ---
-# <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a><span data-ttu-id="29c90-102">Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms GroupBox</span><span class="sxs-lookup"><span data-stu-id="29c90-102">How to: Group Controls with the Windows Forms GroupBox Control</span></span>
-<span data-ttu-id="29c90-103">Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky se používají k seskupování další ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="29c90-103">Windows Forms <xref:System.Windows.Forms.GroupBox> controls are used to group other controls.</span></span> <span data-ttu-id="29c90-104">Existují tři hlavní důvody k seskupování ovládacích prvků:</span><span class="sxs-lookup"><span data-stu-id="29c90-104">There are three reasons to group controls:</span></span>  
+# <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a><span data-ttu-id="825b6-102">Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms GroupBox</span><span class="sxs-lookup"><span data-stu-id="825b6-102">How to: Group Controls with the Windows Forms GroupBox Control</span></span>
+<span data-ttu-id="825b6-103">Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky se používají k seskupování další ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="825b6-103">Windows Forms <xref:System.Windows.Forms.GroupBox> controls are used to group other controls.</span></span> <span data-ttu-id="825b6-104">Existují tři hlavní důvody k seskupování ovládacích prvků:</span><span class="sxs-lookup"><span data-stu-id="825b6-104">There are three reasons to group controls:</span></span>  
   
-- <span data-ttu-id="29c90-105">Chcete-li vytvořit vizuální seskupení elementů související formuláře pro jasné uživatelské rozhraní.</span><span class="sxs-lookup"><span data-stu-id="29c90-105">To create a visual grouping of related form elements for a clear user interface.</span></span>  
+- <span data-ttu-id="825b6-105">Chcete-li vytvořit vizuální seskupení elementů související formuláře pro jasné uživatelské rozhraní.</span><span class="sxs-lookup"><span data-stu-id="825b6-105">To create a visual grouping of related form elements for a clear user interface.</span></span>  
   
-- <span data-ttu-id="29c90-106">Chcete-li vytvořit programový seskupení (přepínačů, například).</span><span class="sxs-lookup"><span data-stu-id="29c90-106">To create programmatic grouping (of radio buttons, for example).</span></span>  
+- <span data-ttu-id="825b6-106">Chcete-li vytvořit programový seskupení (přepínačů, například).</span><span class="sxs-lookup"><span data-stu-id="825b6-106">To create programmatic grouping (of radio buttons, for example).</span></span>  
   
-- <span data-ttu-id="29c90-107">K přesunutí ovládacích prvků jako jednotka v době návrhu.</span><span class="sxs-lookup"><span data-stu-id="29c90-107">For moving the controls as a unit at design time.</span></span>  
+- <span data-ttu-id="825b6-107">K přesunutí ovládacích prvků jako jednotka v době návrhu.</span><span class="sxs-lookup"><span data-stu-id="825b6-107">For moving the controls as a unit at design time.</span></span>  
   
-### <a name="to-create-a-group-of-controls"></a><span data-ttu-id="29c90-108">Chcete-li vytvořit skupinu ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="29c90-108">To create a group of controls</span></span>  
+### <a name="to-create-a-group-of-controls"></a><span data-ttu-id="825b6-108">Chcete-li vytvořit skupinu ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="825b6-108">To create a group of controls</span></span>  
   
-1. <span data-ttu-id="29c90-109">Vykreslení <xref:System.Windows.Forms.GroupBox> ovládací prvek na formuláři.</span><span class="sxs-lookup"><span data-stu-id="29c90-109">Draw a <xref:System.Windows.Forms.GroupBox> control on a form.</span></span>  
+1. <span data-ttu-id="825b6-109">Vykreslení <xref:System.Windows.Forms.GroupBox> ovládací prvek na formuláři.</span><span class="sxs-lookup"><span data-stu-id="825b6-109">Draw a <xref:System.Windows.Forms.GroupBox> control on a form.</span></span>  
   
-2. <span data-ttu-id="29c90-110">Přidejte další ovládací prvky do pole skupiny, kreslení každý uvnitř skupinového rámečku.</span><span class="sxs-lookup"><span data-stu-id="29c90-110">Add other controls to the group box, drawing each inside the group box.</span></span>  
+2. <span data-ttu-id="825b6-110">Přidejte další ovládací prvky do pole skupiny, kreslení každý uvnitř skupinového rámečku.</span><span class="sxs-lookup"><span data-stu-id="825b6-110">Add other controls to the group box, drawing each inside the group box.</span></span>  
   
-     <span data-ttu-id="29c90-111">Pokud máte existující ovládací prvky, které chcete uzavřít do skupinového rámečku, můžete vybrat všechny ovládací prvky, vyjmout data do schránky, vyberte <xref:System.Windows.Forms.GroupBox> ovládací prvek a pak je vložte do pole pro skupiny.</span><span class="sxs-lookup"><span data-stu-id="29c90-111">If you have existing controls that you want to enclose in a group box, you can select all the controls, cut them to the Clipboard, select the <xref:System.Windows.Forms.GroupBox> control, and then paste them into the group box.</span></span> <span data-ttu-id="29c90-112">Můžete také přetáhnout do pole skupiny.</span><span class="sxs-lookup"><span data-stu-id="29c90-112">You can also drag them into the group box.</span></span>  
+     <span data-ttu-id="825b6-111">Pokud máte existující ovládací prvky, které chcete uzavřít do skupinového rámečku, můžete vybrat všechny ovládací prvky, vyjmout data do schránky, vyberte <xref:System.Windows.Forms.GroupBox> ovládací prvek a pak je vložte do pole pro skupiny.</span><span class="sxs-lookup"><span data-stu-id="825b6-111">If you have existing controls that you want to enclose in a group box, you can select all the controls, cut them to the Clipboard, select the <xref:System.Windows.Forms.GroupBox> control, and then paste them into the group box.</span></span> <span data-ttu-id="825b6-112">Můžete také přetáhnout do pole skupiny.</span><span class="sxs-lookup"><span data-stu-id="825b6-112">You can also drag them into the group box.</span></span>  
   
-3. <span data-ttu-id="29c90-113">Nastavte <xref:System.Windows.Forms.GroupBox.Text%2A> vlastnost skupinový rámeček pro příslušný popisek.</span><span class="sxs-lookup"><span data-stu-id="29c90-113">Set the <xref:System.Windows.Forms.GroupBox.Text%2A> property of the group box to an appropriate caption.</span></span>  
+3. <span data-ttu-id="825b6-113">Nastavte <xref:System.Windows.Forms.GroupBox.Text%2A> vlastnost skupinový rámeček pro příslušný popisek.</span><span class="sxs-lookup"><span data-stu-id="825b6-113">Set the <xref:System.Windows.Forms.GroupBox.Text%2A> property of the group box to an appropriate caption.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="29c90-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="29c90-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="825b6-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="825b6-114">See also</span></span>
 
 - <xref:System.Windows.Forms.GroupBox>
-- [<span data-ttu-id="29c90-115">Ovládací prvek GroupBox</span><span class="sxs-lookup"><span data-stu-id="29c90-115">GroupBox Control</span></span>](groupbox-control-windows-forms.md)
+- [<span data-ttu-id="825b6-115">Ovládací prvek GroupBox</span><span class="sxs-lookup"><span data-stu-id="825b6-115">GroupBox Control</span></span>](groupbox-control-windows-forms.md)
