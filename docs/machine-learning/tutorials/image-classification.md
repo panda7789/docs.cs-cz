@@ -1,15 +1,15 @@
 ---
-title: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow
+title: 'Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow'
 description: Objevte, jak vytvářet třídění ML.NET vlastní image ve TensorFlow přenos učení scénář klasifikace obrázků opětovným použitím předem natrénovaných modelů TensorFlow.
-ms.date: 04/05/2019
+ms.date: 05/06/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9b9ac1f1f15b4003a19a3d30d6cadf3e86946376
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f7fddc2d6c60a719090af36b7fe91919bfbd115c
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019232"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063614"
 ---
 # <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow
 
@@ -25,11 +25,6 @@ V tomto kurzu se naučíte:
 > * Opakovaně používat a vyladit předem natrénovaných modelů
 > * Klasifikace obrázků
 
-> [!NOTE]
-> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
-
-Tento kurz a související ukázkové právě používáte **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes) úložiště GitHub.
-
 ## <a name="image-classification-sample-overview"></a>Přehled ukázky klasifikace obrázků
 
 Ukázka je konzolová aplikace, která používá ML.NET k sestavení třídění image opětovným použitím předem vytrénovaných model pro klasifikaci obrázků s menším objemem trénovací data.
@@ -40,9 +35,9 @@ Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/
 
 * [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
 
-* Balíček Nuget Microsoft.ML 0.10.0
-* Balíček Nuget Microsoft.ML.ImageAnalytics 0.10.0
-* Balíček Nuget Microsoft.ML.TensorFlow 0.10.0
+* Balíček Nuget Microsoft.ML 1.0.0
+* Balíček Nuget Microsoft.ML.ImageAnalytics 1.0.0
+* Balíček Nuget Microsoft.ML.TensorFlow 0.12.0
 
 * [Adresář, který kurzů aktiv. Soubor ZIP](https://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)
 
@@ -127,14 +122,11 @@ Trénovací a testovací bitové kopie jsou umístěny ve složkách prostředky
 
 ### <a name="create-a-project"></a>Vytvoření projektu
 
-1. Otevřete Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V **nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "TransferLearningTF" a pak vyberte **OK** tlačítko.
+1. Vytvoření **konzolovou aplikaci .NET Core** nazývá "TransferLearningTF".
 
 2. Nainstalujte **balíček NuGet Microsoft.ML**:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.ML**. Klikněte na **verze** rozevíracího seznamu, vyberte **0.10.0** balíčků v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.ImageAnalytics v0.10.0** a **Microsoft.ML.TensorFlow v0.10.0**.
-
-  > [!NOTE]
-  > Tento kurz používá **Microsoft.ML v0.10.0**, **Microsoft.ML.ImageAnalytics v0.10.0**, a **Microsoft.ML.TensorFlow v0.10.0**.
+    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.ML**. Klikněte na **verze** rozevíracího seznamu, vyberte **1.0.0** balíčků v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.ImageAnalytics v1.0.0** a **Microsoft.ML.TensorFlow v0.12.0**.
 
 ### <a name="prepare-your-data"></a>Příprava dat
 
@@ -228,31 +220,26 @@ Zahájení model má několik výchozích parametrů, které je potřeba předat
 
 ### <a name="create-a-display-utility-method"></a>Vytvořit metodu nástroj zobrazení
 
-Párování a zobrazení dat obrázků a související predikcí více než jednou a nechcete duplicitní kód. Vytvořte zobrazení nástroje metodu ke zpracování párování a zobrazení výsledků image a předpovědi.
+Vzhledem k tomu, že budete více než jednou zobrazovat obrazová data a související predikcí, vytvořte metodu zobrazení nástroj pro zpracování zobrazení výsledků image a předpovědi.
 
-`PairAndDisplayResults()` Metoda spustí následující úlohy:
+`DisplayResults()` Metoda spustí následující úlohy:
 
-* Kombinací dat a předpovědi pro vytváření sestav.
 * Zobrazí predikované výsledky.
 
-Vytvořte `PairAndDisplayResults()` metoda, hned za `InceptionSettings` struktury, pomocí následujícího kódu:
+Vytvořte `DisplayResults()` metoda, hned za `InceptionSettings` struktury, pomocí následujícího kódu:
 
 ```csharp
-private static void PairAndDisplayResults(IEnumerable<ImageNetData> imageData, IEnumerable<ImageNetPrediction> imagePredictionData)
+private static void DisplayResults(IEnumerable<ImagePrediction> imagePredictionData)
 {
 
 }
 ```
 
-Před zobrazením předpokládané výsledky, kombinovat `imageData` a `imagePrediction` společně zobrazíte původní `Image Path` s jeho předpokládané kategorie. Následující kód používá <xref:System.Linq.Enumerable.Zip%2A?displayProperty=nameWithType> metoda docílit, takže přidejte jako první řádek `PairAndDisplayResults()` metody:
-
-[!code-csharp[BuildImagePredictionPairs](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#BuildImagePredictionPairs)]
-
-Teď, když jste kombinovat `imageData` a `imageData` do třídy, můžete zobrazit výsledky pomocí <xref:System.Console.WriteLine?displayProperty=nameWithType> metody:
+`Transform()` Metoda vyplní `ImagePath` v `ImagePrediction` spolu s předpokládanou pole. V průběhu procesu ML.NET jednotlivých komponent přidá sloupce, a to usnadňuje zobrazení výsledků:
 
 [!code-csharp[DisplayPredictions](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DisplayPredictions)]
 
-Budete volat `PairAndDisplayResults()` metoda v následujících dvou metod.
+Budete volat `DisplayResults()` metoda v metodách klasifikace dvě image.
 
 ### <a name="create-a-tsv-file-utility-method"></a>Vytvořit metodu nástroj soubor TSV
 
@@ -274,7 +261,7 @@ public static IEnumerable<ImageData> ReadFromTsv(string file, string folder)
 Následující kód analyzuje prostřednictvím `tags.tsv` soubor a přidejte cestu k souboru na název souboru obrázku `ImagePath` vlastnost a načtěte ho a `Label` do `ImageData` objektu. Přidejte jako první řádek `ReadFromTsv()` metody.  Budete potřebovat plně kvalifikovanou cestu k zobrazení výsledků předpovědí.
 
 [!code-csharp[ReadFromTsv](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReadFromTsv)]
-Existují tři hlavní koncepty v ML.NET: [Data](../basic-concepts-model-training-in-mldotnet.md#data), [transformátory](../basic-concepts-model-training-in-mldotnet.md#transformer), a [odhady](../basic-concepts-model-training-in-mldotnet.md#estimator).
+Existují tři hlavní koncepty v ML.NET: [Data](../resources/glossary.md#data), [transformátory](../resources/glossary.md#transformer), a [odhady](../resources/glossary.md#estimator).
 
 ## <a name="reuse-and-tune-pre-trained-model"></a>Opakovaně používat a vyladit předem natrénovaných modelů
 
@@ -290,12 +277,12 @@ Přidejte následující volání `ReuseAndTuneInceptionModel()`metody jako dal�
 * Vyladí (retrains) modelu.
 * Zobrazí výsledky modelu.
 * Vyhodnotí modelu.
-* Uloží modelu.
+* Vrátí hodnotu modelu.
 
-Vytvořit `ReuseAndTuneInceptionModel()` metoda, hned za `InceptionSettings` struktury a těsně před `PairAndDisplayResults()` metodu, pomocí následujícího kódu:
+Vytvořit `ReuseAndTuneInceptionModel()` metoda, hned za `InceptionSettings` struktury a těsně před `DisplayResults()` metodu, pomocí následujícího kódu:
 
 ```csharp
-public static void ReuseAndTuneInceptionModel(MLContext mlContext, string dataLocation, string imagesFolder, string inputModelLocation, string outputModelLocation)
+public static ITransformer ReuseAndTuneInceptionModel(MLContext mlContext, string dataLocation, string imagesFolder, string inputModelLocation, string outputModelLocation)
 {
 
 }
@@ -303,9 +290,9 @@ public static void ReuseAndTuneInceptionModel(MLContext mlContext, string dataLo
 
 ### <a name="load-the-data"></a>Načtení dat
 
-Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.Data.DataView.IDataView). `IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové). Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu.
+Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.ML.IDataView). `IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové). Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu.
 
-Načtení dat pomocí `MLContext.Data.ReadFromTextFile` obálky. Přidejte následující kód jako další řádek `ReuseAndTuneInceptionModel()` metody:
+Načtení dat pomocí `MLContext.Data.LoadFromTextFile` obálky. Přidejte následující kód jako další řádek `ReuseAndTuneInceptionModel()` metody:
 
 [!code-csharp[LoadData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadData "Load the data")]
 
@@ -322,14 +309,14 @@ Po trénování a hodnocení předpovědět **popisek** hodnot sloupců. Jak př
 Váš odhad používá předem pro zpracování obrázků [hluboké Neuronové Network(DNN)](https://en.wikipedia.org/wiki/Deep_learning#Deep_neural_networks) featurizers pro extrakci funkce. Při zpracování komplexnějších hluboké neuronové sítě, můžete přizpůsobit bitové kopie do formátu očekávanému sítě. To je důvod, že použití několika transformací bitové kopie k načtení dat obrázků do očekávanému vzoru:
 
 1. `LoadImages`Transformace obrázky jsou načtena do paměti jako typ rastrového obrázku.
-2. `Resize` Transformace změní velikost obrázků předem natrénovaných modelů má definovaný vstupní image šířku a výšku.
-3. `ImagePixelExtractingEstimator` Transformace extrahuje pixely ze vstupní Image a převede je na číselné vektoru.
+2. `ResizeImages` Transformace změní velikost obrázků předem natrénovaných modelů má definovaný vstupní image šířku a výšku.
+3. `ExtractPixels` Transformace extrahuje pixely ze vstupní Image a převede je na číselné vektoru.
 
 Přidejte tyto image transformace jako další řádky kódu:
 
 [!code-csharp[ImageTransforms](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ImageTransforms)]
 
-`TensorFlowTransform` Výpisy zadaný výstupy ( `Inception model`vaší image funkce `softmax2_pre_activation`) a stanoví skóre datové sady pomocí předem vytrénovaných `TensorFlow` modelu.
+`LoadTensorFlowModel` Je pohodlné metodu, která umožňuje `TensorFlow` model, který se má načíst jednou a potom vytvoří `TensorFlowEstimator` pomocí `ScoreTensorFlowModel`. `ScoreTensorFlowModel` Výpisy zadaný výstupy ( `Inception model`vaší image funkce `softmax2_pre_activation`) a stanoví skóre datové sady pomocí předem vytrénovaných `TensorFlow` modelu.
 
 `softmax2_pre_activation` sestavit model k zjištění, které třída obrázků patří. `softmax2_pre_activation` vrací pravděpodobnost pro každou kategorii pro bitovou kopii a ve všech těchto pravděpodobností musíte přidat až 1. Předpokládá, že obraz bude patřit pouze jednu kategorii, jak je znázorněno v následujícím příkladu:
 
@@ -345,7 +332,7 @@ Připojte `TensorFlowTransform` k `estimator` s následující řádek kódu:
 
 ### <a name="choose-a-training-algorithm"></a>Zvolte cvičení algoritmu
 
-Chcete-li přidat cvičení algoritmu, zavolejte `mlContext.MulticlassClassification.Trainers.LogisticRegression()` obalující metodu.  `LogisticRegression` Se připojí `estimator` a přijímá funkce vzniku bitové kopie (`softmax2_pre_activation`) a `Label` vstupní parametry učit se z historických dat.  Přidáte trainer následujícím kódem:
+Chcete-li přidat cvičení algoritmu, zavolejte `mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy()` obalující metodu.  [LbfgsMaximumEntropy](xref:Microsoft.ML.Trainers.LbfgsMaximumEntropyMulticlassTrainer) se připojí `estimator` a přijímá funkce vzniku bitové kopie (`softmax2_pre_activation`) a `Label` vstupní parametry učit se z historických dat.  Přidáte trainer následujícím kódem:
 
 [!code-csharp[AddTrainer](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#AddTrainer)]
 
@@ -353,7 +340,7 @@ Je také nutné `predictedlabel` k `predictedlabelvalue`:
 
 [!code-csharp[MapValueToKey2](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#MapValueToKey2)]
 
-`Fit()` Metoda trénovat modelu pomocí zadaného trénovací datové sady. Je spuštěn `Estimator` definice transformace dat a použitím školení a vrátí zpět trénovaného modelu, který je `Transformer`. Přizpůsobit modelu, který má `Train` data a vrátit trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `ReuseAndTuneInceptionModel()` metody:
+`Fit()` Metoda trénovat modelu transformace datové sady a aplikováním školení. Přizpůsobení modelu, který má trénovací datové sady a vrátí trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `ReuseAndTuneInceptionModel()` metody:
 
 [!code-csharp[TrainModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#TrainModel)]
 
@@ -365,15 +352,15 @@ Převod dat obrázků a předpovědi `DataViews` do silného typu `IEnumerables`
 
 [!code-csharp[EnumerateDataViews](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#EnumerateDataViews)]
 
-Volání `PairAndDisplayResults()` metodu spárovat a zobrazení vašich dat a předpovědi jako další řádek v `ReuseAndTuneInceptionModel()` metody:
+Volání `DisplayResults()` metodu pro zobrazení vašich dat a předpovědí na dalším řádku `ReuseAndTuneInceptionModel()` metody:
 
-[!code-csharp[CallPairAndDisplayResults1](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallPairAndDisplayResults1)]
+[!code-csharp[CallDisplayResults1](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallDisplayResults1)]
 
 Jakmile budete mít předpovědi nastavit, [Evaluate()](xref:Microsoft.ML.RecommendationCatalog.Evaluate%2A) metody:
 
 * Posuzuje modelu (porovná předpovězené hodnoty v datové sadě skutečná `Labels`).
 
-* Vrátí metriky výkonu modelu. 
+* Vrátí metriky výkonu modelu.
 
 Přidejte následující kód, který `ReuseAndTuneInceptionModel()` metody jako další řádek:
 
@@ -389,9 +376,9 @@ Zobrazit metriky, sdílet výsledky a pak s nimi pracovat, použijte následují
 
 [!code-csharp[DisplayMetrics](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DisplayMetrics)]
 
-`mlContext.Model.Save` uloží do souboru ZIP (ve složce "prostředky či výstupy"), které lze použít v ostatních aplikacích .NET k vytváření predikcí trénovaného modelu. Přidejte následující kód, který `ReuseAndTuneInceptionModel()` metody jako další řádek:
+ Přidejte následující kód, který vrátí trénovaného modelu jako další řádek:
 
-[!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#SaveModel)]
+[!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReturnModel)]
 
 ## <a name="classify-images-with-a-loaded-model"></a>Klasifikace obrázků s načíst model
 
@@ -401,34 +388,29 @@ Přidejte následující volání `ClassifyImages()` metody jako další řádek
 
 `ClassifyImages()` Metoda spustí následující úlohy:
 
-* Načte model.
 * Operace čtení. Soubor TSV do `IEnumerable`.
 * Předpovídá klasifikace obrázků na základě dat testu.
 
 Vytvořit `ClassifyImages()` metoda, hned za `ReuseAndTuneInceptionModel()` metoda a těsně před `PairAndDisplayResults()` metodu, pomocí následujícího kódu:
 
 ```csharp
-public static void ClassifyImages(MLContext mlContext, string dataLocation, string imagesFolder, string outputModelLocation)
+public static void ClassifyImages(MLContext mlContext, string dataLocation, string imagesFolder, string outputModelLocation, ITransformer model)
 {
 
 }
 ```
 
-Nejdřív načtěte model, který jste si předtím uložili následujícím kódem:
-
-[!code-csharp[LoadModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadModel)]
-
-Volání `ReadFromTsv()` metodu pro vytvoření `IEnumerable<ImageData>` třídu, která obsahuje plně kvalifikovanou cestu pro každý `ImagePath`. Je nutné tuto cesta k souboru spárovat se vaše data a předpovědi výsledky. Je také potřeba převést `IEnumerable<ImageData>` třídu `IDataView` , kterou použijete k předpovědi. Přidejte následující kód jako následující dva řádky v `ClassifyImages()` metody:
+Nejprve volat `ReadFromTsv()` metodu pro vytvoření `IEnumerable<ImageData>` třídu, která obsahuje plně kvalifikovanou cestu pro každý `ImagePath`. Je nutné tuto cesta k souboru spárovat se vaše data a předpovědi výsledky. Je také potřeba převést `IEnumerable<ImageData>` třídu `IDataView` , kterou použijete k předpovědi. Přidejte následující kód jako následující dva řádky v `ClassifyImages()` metody:
 
 [!code-csharp[ReadFromTSV](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReadFromTSV)]
 
-Kategorie testu image data s využitím předpovědět, jako jste to udělali dříve s trénovací data bitové kopie, [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metody. Přidejte následující kód, který `ClassifyImages()` metodu pro předpovědi a k převodu `predictions` `IDataView` do `IEnumerable` pro párování a zobrazení:
+Kategorie testu image data s využitím předpovědět, jako jste to udělali dříve s trénovací data bitové kopie, [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) předaný metodě modelu. Přidejte následující kód, který `ClassifyImages()` metodu pro předpovědi a k převodu `predictions` `IDataView` do `IEnumerable` pro párování a zobrazení:
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#Predict)]
 
-Spárujte a zobrazit testovací data bitové kopie a predikcí, přidejte následující kód k volání `PairAndDisplayResults()` metoda dříve vytvořeny jako další řádek v `ClassifyImages()` metody:
+Spárujte a zobrazit testovací data bitové kopie a predikcí, přidejte následující kód k volání `DisplayResults()` metoda dříve vytvořeny jako další řádek v `ClassifyImages()` metody:
 
-[!code-csharp[CallPairAndDisplayResults2](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallPairAndDisplayResults2)]
+[!code-csharp[CallDisplayResults2](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallDisplayResults2)]
 
 ## <a name="classify-a-single-image-with-a-loaded-model"></a>Klasifikovat jedné image s načíst model
 
@@ -436,26 +418,21 @@ Přidejte následující volání `ClassifySingleImage()` metody jako další ř
 
 [!code-csharp[CallClassifySingleImage](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallClassifySingleImage)]
 
-`ClassifyImages()` Metoda spustí následující úlohy:
+`ClassifySingleImage()` Metoda spustí následující úlohy:
 
-* Načte model.
 * Načtení `ImageData` instance.
 * Předpovídá klasifikace obrázků na základě dat testu.
 
 Vytvořit `ClassifySingleImage()` metoda, hned za `ClassifyImages()` metoda a těsně před `PairAndDisplayResults()` metodu, pomocí následujícího kódu:
 
 ```csharp
-public static void ClassifySingleImage(MLContext mlContext, string imagePath, string outputModelLocation)
+public static void ClassifySingleImage(MLContext mlContext, string imagePath, string outputModelLocation, ITransformer model)
 {
 
 }
 ```
 
-Nejdřív načtěte model, který jste si předtím uložili následujícím kódem:
-
-[!code-csharp[LoadModel2](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadModel2)]
-
-Vytvoření `ImageData` třídu, která obsahuje plně kvalifikovaný název souboru cestu a image pro jednoho `ImagePath`. Přidejte následující kód jako následující řádky `ClassifySingleImage()` metody:
+Nejprve vytvořte `ImageData` třídu, která obsahuje plně kvalifikovaný název souboru cestu a image pro jednoho `ImagePath`. Přidejte následující kód jako následující řádky `ClassifySingleImage()` metody:
 
 [!code-csharp[LoadImageData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadImageData)]
 
@@ -484,19 +461,15 @@ Image: toaster2.png predicted as: appliance with score: 0.9800823
 =============== Classification metrics ===============
 LogLoss is: 0.0228266745633507
 PerClassLogLoss is: 0.0277501705149937 , 0.0186303530571291 , 0.0217359128952187
-=============== Save model to local file ===============
-Model saved: C:\Tutorials\TransferLearningTF\bin\Debug\netcoreapp2.2\assets\outputs\imageClassifier.zip
-=============== Loading model ===============
-Model loaded: C:\Tutorials\TransferLearningTF\bin\Debug\netcoreapp2.2\assets\outputs\imageClassifier.zip
 =============== Making classifications ===============
 Image: broccoli.png predicted as: food with score: 0.905548
 Image: pizza3.jpg predicted as: food with score: 0.9709008
 Image: teddy6.jpg predicted as: toy with score: 0.9750155
-=============== Loading model ===============
-Model loaded: C:\Tutorials\TransferLearningTF\bin\Debug\netcoreapp2.2\assets\outputs\imageClassifier.zip
 =============== Making single image classification ===============
 Image: toaster3.jpg predicted as: appliance with score: 0.9625379
-Press any key to continue . . .
+
+C:\Program Files\dotnet\dotnet.exe (process 4304) exited with code 0.
+Press any key to close this window . . .
 ```
 
 Blahopřejeme! Teď úspěšně sestavíte model strojového učení pro klasifikace obrázků opětovným použitím předem vytrénovaných `TensorFlow` model ML.NET.

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - MenuStrip [Windows Forms], merging
 - merging [Windows Forms], general concepts
 ms.assetid: 95e113ba-f362-4dda-8a76-6d95ddc45cee
-ms.openlocfilehash: dbe1c0325499e7b925d504fc80f9034f9e387475
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9a1f59a065faaa3a08a9d8a68973adb1faa5ed09
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936354"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64582923"
 ---
 # <a name="merging-menu-items-in-the-windows-forms-menustrip-control"></a>Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip
 Pokud máte aplikace rozhraní více dokumentů (MDI), můžete sloučit položky nabídky nebo celý nabídek z podřízeného formuláře do nabídky nadřazeného formuláře.  

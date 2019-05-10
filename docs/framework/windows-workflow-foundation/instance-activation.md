@@ -2,12 +2,12 @@
 title: Aktivace instance
 ms.date: 03/30/2017
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
-ms.openlocfilehash: 41dfc076bdee72c2f4d0c781c6588caa927c740e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 088722ba19a1f38e8a341e34a8344963021f1113
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641669"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64584925"
 ---
 # <a name="instance-activation"></a>Aktivace instance
 Store Instance pracovního postupu SQL spouští interní úlohy, která pravidelně probudí a instance pracovních postupů spustitelných nebo aktivovatelné zjistí databáze trvalosti. Pokud najde instance pracovního postupu spustitelný, upozorní hostitele pracovního postupu, které podporují aktivaci instance. Pokud v úložišti instancí najde instanci aktivovatelné pracovního postupu, upozorní obecný hostitele, který aktivuje hostitele pracovního postupu, která pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  

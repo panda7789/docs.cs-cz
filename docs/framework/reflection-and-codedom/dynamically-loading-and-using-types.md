@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51e34d8eed40481de47dfd217392e95a11a412d1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 085b89de8180a216288e8f547af5b73eaf004457
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61983928"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469669"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Dynamické načtení a použití typů
-Reflexe poskytuje infrastrukturu pomocí kompilátorů jazyka, jako [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] a JScript implementace implicitní pozdní vazbu. Vazba je proces vyhledání deklarace (to znamená, implementace), která odpovídá jednoznačně zadaného typu. Když tento proces se provádí v době běhu, spíše než v době kompilace, je volána pozdní vazbu. [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] Umožňuje použít implicitní pozdní vazba v kódu; Kompilátor jazyka Visual Basic volá metodu helper, který používá reflexi k získání typu objektu. Argumenty předané do metody helper způsobit vhodná metoda k vyvolání za běhu. Tyto argumenty jsou instance (objekt), na kterém se má vyvolat metodu, název vyvolaná metoda (string) a argumenty předány volané metodě (pole objektů).  
+Reflexe poskytuje infrastrukturu pomocí kompilátorů jazyka používaný k implementaci implicitní pozdní vazbu. Vazba je proces vyhledání deklarace (to znamená, implementace), která odpovídá jednoznačně zadaného typu. Když tento proces se provádí v době běhu, spíše než v době kompilace, je volána pozdní vazbu. Visual Basic můžete ve svém kódu; použít implicitní pozdní vazba Kompilátor jazyka Visual Basic volá metodu helper, který používá reflexi k získání typu objektu. Argumenty předané do metody helper způsobit vhodná metoda k vyvolání za běhu. Tyto argumenty jsou instance (objekt), na kterém se má vyvolat metodu, název vyvolaná metoda (string) a argumenty předány volané metodě (pole objektů).  
   
  V následujícím příkladu kompilátor jazyka Visual Basic pomocí reflexe implicitně zavolá metodu na objekt, jehož typ není znám v době kompilace. A **HelloWorld** třída nemá **PrintHello** metodu, která vytiskne "Hello World" zřetězená s nějaký text, který je předán **PrintHello** metody. **PrintHello** metodu s názvem v tomto příkladu je ve skutečnosti <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>; umožňuje kódu jazyka Visual Basic **PrintHello** metoda k vyvolání, jako by byly při kompilaci známý typ objektu (helloObj) čas (časná vazba) místo za běhu (pozdní vazby).  
   

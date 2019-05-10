@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 4e005ea96df45da8326386f8b43aa5640ce810b1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d15bb7ab494b5de3c0c37077048beb1527e330a2
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050610"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64912396"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načíst soubory mnoha způsoby, včetně následujících:  

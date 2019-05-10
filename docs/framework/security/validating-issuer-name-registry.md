@@ -2,12 +2,12 @@
 title: Registr pro ověřování názvů vydavatelů
 ms.date: 03/30/2017
 ms.assetid: c4644dd1-dead-48ff-abeb-7bffae69a6ac
-ms.openlocfilehash: aa6a71ced0f9bf969eb6c8800739f629810dd63f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fc10181a142fd8ca4ebd8250869d49a046623564
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645900"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64910783"
 ---
 # <a name="validating-issuer-name-registry"></a>Registr pro ověřování názvů vydavatelů
 Pomocí rozšíření Validating Issuer Name Registry (VINR) pro technologii Windows Identity Foundation mohou víceklientské aplikace zjišťovat, zda byl příchozí token vystaven důvěryhodným klientem a poskytovatelem identity. Tato funkce je zvláště užitečná pro víceklientské aplikace, které používají službu Microsoft Azure Active Directory, protože všechny tokeny vystavené službou Microsoft Azure AD jsou podepsány pomocí stejného certifikátu. Aby bylo možné rozlišovat mezi žádostmi od různých klientů, kteří používají stejný certifikát (a mají tedy také stejný kryptografický otisk), musí vaše aplikace pro každého klienta uchovat jméno vystavitele pro účely logiky ověřování. Rozšíření VINR zajišťuje tuto funkci a umožňuje také přidat vlastní logiku ověřování nebo ukládat data registru vystavitelů v jiných umístěních než v konfiguračním souboru. Toto rozšíření lze přidat do kanálu WIF aplikace nebo je lze používat samostatně.  

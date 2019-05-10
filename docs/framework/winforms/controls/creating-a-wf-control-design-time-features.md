@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DocumentDesigner class [Windows Forms]
 - walkthroughs [Windows Forms], controls
 ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
-ms.openlocfilehash: 70cd08a9d7d03cec4e946d2acb806dbecfe774f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f290629e50d7d791119298059277ba73d8e73eb
+ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011555"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65211204"
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu
 
@@ -68,17 +68,13 @@ Výpis úplného kódu naleznete v tématu [jak: Vytvoření ovládacího prvku 
 
 ## <a name="prerequisites"></a>Požadavky
 
-K dokončení tohoto návodu budete potřebovat:
-
-- Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.
+K dokončení tohoto návodu budete potřebovat Visual Studio.
 
 ## <a name="creating-the-project"></a>Vytvoření projektu
 
 Prvním krokem je vytvoření projektu aplikace. Tento projekt bude používat k sestavení aplikace, který je hostitelem vlastního ovládacího prvku.
 
-### <a name="to-create-the-project"></a>Vytvoření projektu
-
-- Vytvořte projekt Formulářové aplikace Windows s názvem "MarqueeControlTest" (**souboru** > **nový** > **projektu**  >   **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).
+Otevřete Visual Studio a vytvořte projekt Formulářové aplikace Windows s názvem "MarqueeControlTest" (**souboru** > **nový** > **projektu**  >  **Visual C#**  nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaciWindowsForms**).
 
 ## <a name="creating-a-control-library-project"></a>Vytvoření projektu knihovny ovládacích prvků
 

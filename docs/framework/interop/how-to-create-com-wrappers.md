@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c26c84ece1231a4e118144c163fa3e9c7619301
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16fc9b24c91ba8d8a55596335d03f8fadf47910e
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875742"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64910683"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 

@@ -1,21 +1,16 @@
 ---
 title: Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování
 description: Zjistěte, jak používat pravděpodobnostní programování s Infer.NET k vytvoření aplikace seznamu her zápasu založen na zjednodušené verzi TrueSkill.
-ms.date: 03/05/2019
+ms.date: 05/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 06538ec9de26f5aeabe474fbcae69f0a313c8d32
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85cb3753ae19e7ca64002eb7c26b44b6f7d41e4f
+ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650294"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65211427"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování
-
-> [!NOTE]
-> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
-
-Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 Tato příručka vás naučí o pravděpodobnostní programování pomocí Infer.NET. Pravděpodobnostní programování je přístup založený na machine learning, ve kterém jsou vlastní modely vyjádřené jako počítačové programy. Umožňuje pro začlenění znalosti v těchto modelech a je strojové učení více interpretovatelném systému. Podporuje také online odvození – proces učení příchodu nových dat. Infer.NET se používá v různých produktů v Microsoftu v Azure, Xbox a Bing.
 

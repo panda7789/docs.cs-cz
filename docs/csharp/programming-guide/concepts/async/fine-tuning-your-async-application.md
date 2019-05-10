@@ -2,12 +2,12 @@
 title: Doladění aplikace s modifikátorem Async (C#)
 ms.date: 07/20/2015
 ms.assetid: 97696eb9-81fc-4940-9655-84daa8eb4d5c
-ms.openlocfilehash: 31d9fcf04780d421faa609e06e18e66e0e8b9ce7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 82402b7ad7b05424881c5d671d1f810c65abb8b0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702683"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64582884"
 ---
 # <a name="fine-tuning-your-async-application-c"></a>Doladění aplikace s modifikátorem Async (C#)
 Přidáte přesnost a flexibilitu asynchronním aplikací pomocí metody a vlastnosti, která <xref:System.Threading.Tasks.Task> typu bude k dispozici. Témata v této části obsahují příklady používající <xref:System.Threading.CancellationToken> a důležité `Task` metody jako <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>.  

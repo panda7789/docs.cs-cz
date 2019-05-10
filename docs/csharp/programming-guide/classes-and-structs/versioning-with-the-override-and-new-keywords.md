@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: 39aae39a761414947c14f0a78aedcdbf89ddfbda
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ec6040081d44a389bd42bb50cdd81ac0634abf91
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702968"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64583129"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp/language-reference/keywords/base.md) a odvozené třídy v jiných knihovnách můžete vyvíjet a udržovat zpětnou kompatibilitu. To znamená, například, že zavedení nového člena v základní třídě [třída](../../../csharp/language-reference/keywords/class.md) se stejným názvem jako člena v odvozené třídě je plně podporován v jazyce C# a nevede k neočekávanému chování. Také znamená, že třída musí explicitně uvést, zda metoda je určena k přepsání zděděné metody nebo určuje, zda je metoda novou metodu, která skrývá podobně pojmenovaných zděděné metody.  

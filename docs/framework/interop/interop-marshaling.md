@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 21eea2ccdff88a11e9708fef317011dc547cafda
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3d6ddc2978078fd307ad79cffe14d53619d8be9e
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873224"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469713"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a> Zařazování spolupráce řídí, jak se data předaná v metoda argumentů a vrácené hodnoty mezi spravovaným a nespravovaným paměti během volání. Zařazování spolupráce je za běhu aktivity prováděné common language runtime zařazovací služby.  
@@ -71,7 +71,7 @@ ms.locfileid: "61873224"
  Pokud budete chtít exportovat spravovaného serveru, mějte na paměti, určuje klient modelu COM typu apartment serveru. Spravovaný server volá klient modelu COM ve MTA inicializovat, musíte zajistit bezpečný přístup z více vláken.  
   
 ### <a name="managed-clients-and-com-servers"></a>Spravovaných klientů a serverů modelu COM  
- Výchozí nastavení pro objekty apartment spravovaného klienta je MTA; aplikace typu klient .NET však můžete změnit výchozí nastavení. Například [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] objektu apartment nastavení klienta je STA. Můžete použít <xref:System.STAThreadAttribute?displayProperty=nameWithType>, <xref:System.MTAThreadAttribute?displayProperty=nameWithType>, <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost, nebo <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> vlastnost sloužící ke zkoumání a změnit nastavení objektu apartment spravovaný klient.  
+ Výchozí nastavení pro objekty apartment spravovaného klienta je MTA; aplikace typu klient .NET však můžete změnit výchozí nastavení. Nastavení objektu apartment klienta jazyka Visual Basic je například STA. Můžete použít <xref:System.STAThreadAttribute?displayProperty=nameWithType>, <xref:System.MTAThreadAttribute?displayProperty=nameWithType>, <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost, nebo <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> vlastnost sloužící ke zkoumání a změnit nastavení objektu apartment spravovaný klient.  
   
  Autor součásti nastaví spřažení vláken COM serveru. V následující tabulce jsou uvedeny kombinace nastavení objektu apartment pro klienty .NET a serverů modelu COM. Profil také ukazuje, výsledná zařazování požadavky pro všechny kombinace.  
   

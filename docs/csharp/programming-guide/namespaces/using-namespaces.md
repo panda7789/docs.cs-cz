@@ -8,12 +8,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: 510a8dd2721e9c709444c065a8df25b0e5526c08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c5bede7475fdbee3f3524984a9be97b95b44817d
+ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61678396"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65452680"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
 V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů. Za prvé tříd rozhraní .NET Framework pomocí oborů názvů můžete organizovat jeho mnoho tříd. Za druhé deklarující vlastní obory názvů umožňují omezit rozsah třídy a metody názvy ve větších programovací projektů.  
@@ -39,7 +39,7 @@ V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů
  [!code-csharp[csProgGuideNamespaces#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#7)]  
   
 ## <a name="using-namespaces-to-control-scope"></a>Použití oboru názvů do oboru ovládacího prvku  
- `namespace` – Klíčové slovo se používá k deklarování oboru. Schopnost vytvářet oborů v rámci svého projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečných typů. V následujícím příkladu třída s názvem `SampleClass` je definována v dva obory názvů, jeden vnořit do druhé. [. Operátor](../../../csharp/language-reference/operators/member-access-operator.md) se používá k rozlišení, které metoda je volána.  
+ `namespace` – Klíčové slovo se používá k deklarování oboru. Schopnost vytvářet oborů v rámci svého projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečných typů. V následujícím příkladu třída s názvem `SampleClass` je definována v dva obory názvů, jeden vnořit do druhé. [Přístup ke členu `.` operátor](../../language-reference/operators/member-access-operators.md#member-access-operator-) se používá k rozlišení, které metoda je volána.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
@@ -93,6 +93,6 @@ V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)
 - [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)
-- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)
+- [. – operátor](../../../csharp/language-reference/operators/member-access-operators.md#member-access-operator-)
 - [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
 - [extern](../../../csharp/language-reference/keywords/extern.md)

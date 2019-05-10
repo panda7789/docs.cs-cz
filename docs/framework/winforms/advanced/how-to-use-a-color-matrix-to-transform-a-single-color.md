@@ -8,12 +8,12 @@ helpviewer_keywords:
 - image colors [Windows Forms], transforming
 - color matrices [Windows Forms], using
 ms.assetid: 44df4556-a433-49c0-ac0f-9a12063a5860
-ms.openlocfilehash: 78fc498b0689026fb74ec0c422948c1879495560
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9cff13cabb0cd496ee4e628664e4b92bd9e60808
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61954807"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063718"
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>Postupy: Použití matice barev k transformaci jedné barvy
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty ukládání barvu každého obrazového bodu jako 32bitová čísla: 8 bity pro červená, zelená, modrá a alfa. Každý ze čtyř komponent je číslo od 0 do 255, kde 0 představuje žádné intenzity a 255 představující plné intenzity. Hodnota alfa Určuje průhlednost barvy: 0 je zcela transparentní, a je úplně neprůhledná 255.  
@@ -32,13 +32,13 @@ ms.locfileid: "61954807"
   
  Následující násobení matic provede pár transformace v uvedeném pořadí.  
   
- ![Přebarvení](./media/recoloring01.gif "recoloring01")  
+ ![Snímek obrazovky transformační matice násobení.](./media/how-to-use-a-color-matrix-to-transform-a-single-color/multiplication-color-matrix.gif)
   
  Prvky matice barev jsou indexovány pomocí řádku a potom sloupce (počítáno od nuly). Například, položku pátý řádek a třetí sloupec matice M udávají M [4] [2].  
   
  5 × 5 jednotkovou matici (viz následující obrázek) má 1s na diagonální a 0s všude, kde jiný. Pokud je barva vektor vynásobit jednotkovou matici, barva vektoru se nezmění. Pohodlný způsob, jak tvoří matice barev transformace je začít s jednotkovou matici a proveďte malou změnu, která vytváří svou požadovanou transformaci.  
   
- ![Přebarvení](./media/recoloring02.gif "recoloring02")  
+ ![Snímek obrazovky s 5 × 5 matice identity pro transformaci barvu.](./media/how-to-use-a-color-matrix-to-transform-a-single-color/5x5-identity-matrix-color-transformation.gif)  
   
  Podrobnější diskuzi o matice a transformace, najdete v článku [systém souřadnic a transformace](coordinate-systems-and-transformations.md).  
   
@@ -47,7 +47,7 @@ ms.locfileid: "61954807"
   
  Následující obrázek znázorňuje původní obrázek na levé straně a transformovaná image na pravé straně.  
   
- ![Colors](./media/colortrans1.png "colortrans1")  
+ ![Fialový čtvereček na levé straně a fuchsia čtvereček na pravé straně.](./media/how-to-use-a-color-matrix-to-transform-a-single-color/color-transformation.png)  
   
  Kód v následujícím příkladu používá následující kroky provést přebarvení:  
   

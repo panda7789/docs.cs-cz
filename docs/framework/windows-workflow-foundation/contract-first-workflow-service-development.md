@@ -2,12 +2,12 @@
 title: Vývoj služby pracovního postupu s upřednostněním kontraktu
 ms.date: 03/30/2017
 ms.assetid: e5dbaa7b-005f-4330-848d-58ac4f42f093
-ms.openlocfilehash: c326f91bc8673180db755a91ab080bcf0ba72052
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2fcc0054a3e4c9dd2152344617c8506c9ce6b0d7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774202"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64587618"
 ---
 # <a name="contract-first-workflow-service-development"></a>Vývoj služby pracovního postupu s upřednostněním kontraktu
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows Workflow Foundation (WF) lepší integrace mezi službami webové a pracovní postupy ve formuláři stavící do pracovního postupu vývoje. Pracovní postup kontraktem vývojový nástroj umožňuje navrhovat smlouvy v kódu. Nástroj potom automaticky vygeneruje šablonu aktivit v sadě nástrojů pro operace v kontraktu. Toto téma obsahuje přehled, jak aktivity a vlastností služby pracovního postupu se mapují na atributy smlouvy o poskytování služeb. Podrobný příklad vytvoření služby pracovních postupů kontraktem, naleznete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
@@ -52,7 +52,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows 
 |CallbackContract|Ne|Získá nebo nastaví typ kontraktu zpětného volání, pokud kontrakt je oboustranný.|(N/A)|  
 |ConfigurationName|Ne|Získá nebo nastaví název používaná k nalezení služby v konfiguračním souboru aplikace.|(N/A)|  
 |HasProtectionLevel|Ano|Získá hodnotu určující, zda člen má přiřazena úroveň ochrany.|Receive.ProtectionLevel nesmí být null.|  
-|Název|Ano|Získá nebo nastaví název \<portType > element v webové služby WSDL (Description Language).|Receive.ServiceContractName.LocalName by měl odpovídat.|  
+|Name|Ano|Získá nebo nastaví název \<portType > element v webové služby WSDL (Description Language).|Receive.ServiceContractName.LocalName by měl odpovídat.|  
 |Obor názvů|Ano|Získá nebo nastaví obor názvů \<portType > element v webové služby WSDL (Description Language).|Receive.ServiceContractName.NameSpace by měl odpovídat.|  
 |Třída protectionLevel|Ano|Určuje, zda vazba pro kontrakt musí podporovat hodnoty vlastnosti ProtectionLevel.|Receive.ProtectionLevel by měl odpovídat.|  
 |SessionMode|Ne|Získá nebo nastaví, zda relace nejsou povoleny, povoleno nebo požadováno.|(N/A)|  
@@ -70,7 +70,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows 
 |IsInitiating|Ne|Získá nebo nastaví hodnotu určující, zda metoda provádí operaci, která může iniciovat relaci na serveru (Pokud tato relace neexistuje).|(N/A)|  
 |IsOneWay|Ano|Získá nebo nastaví hodnotu určující, zda operace vrátí zprávy s odpovědí.|(Bez odeslání odpovědi SendReply pro tuto přijímat nebo žádné ReceiveReply pro toto odeslání).|  
 |IsTerminating|Ne|Získá nebo nastaví hodnotu určující, zda operace služby způsobí, že server k ukončení relace po zprávy s odpovědí, pokud existuje, je odeslána.|(N/A)|  
-|Název|Ano|Získá nebo nastaví název operace.|Receive.OperationName by měl odpovídat.|  
+|Name|Ano|Získá nebo nastaví název operace.|Receive.OperationName by měl odpovídat.|  
 |Třída protectionLevel|Ano|Získává nebo nastavuje hodnotu, která určuje, zda zprávy operace musí šifrovat podepsané, nebo obojí.|Receive.ProtectionLevel by měl odpovídat.|  
 |Třídu ReplyAction|Ano|Získá nebo nastaví hodnotu akce SOAP pro odpověď operace.|SendReply.Action by měl odpovídat.|  
 |TypeId|Ne|Při implementaci do odvozené třídy získá jedinečný identifikátor pro tento atribut. (Zděděno z atributu).|(N/A)|  
@@ -91,7 +91,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows 
 |Název vlastnosti|Podporováno|Popis|Ověření pracovního postupu|  
 |-------------------|---------------|-----------------|-------------------|  
 |isReference|Ne|Získá nebo nastaví hodnotu určující, jestli chcete zachovat data odkaz objektu.|(N/A)|  
-|Název|Ano|Získá nebo nastaví název kontraktu dat pro typ.|Bez ověřování (Receive.Content a SendReply.Content musí odpovídat typ kontraktu zprávy).|  
+|Name|Ano|Získá nebo nastaví název kontraktu dat pro typ.|Bez ověřování (Receive.Content a SendReply.Content musí odpovídat typ kontraktu zprávy).|  
 |Obor názvů|Ano|Získá nebo nastaví obor názvů kontraktu dat pro typ.|Bez ověřování (Receive.Content a SendReply.Content musí odpovídat typ kontraktu zprávy).|  
 |TypeId|Ne|Při implementaci do odvozené třídy získá jedinečný identifikátor pro tento atribut. (Zděděno z atributu).|(N/A)|  
   
@@ -102,7 +102,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows 
 |Akce|Ano|Získá nebo nastaví akci SOAP chybová zpráva, která je zadaná jako součást operace kontraktu.|SendReply.Action by měl odpovídat.|  
 |DetailType|Ano|Získá typ serializovatelný objekt, který obsahuje informace o chybě.|SendReply.Content by měl odpovídat typu|  
 |HasProtectionLevel|Ne|Získá hodnotu, která označuje, jestli se chybová zpráva SOAP přiřazena úroveň ochrany.|(N/A)|  
-|Název|Ne|Získá nebo nastaví název chybová zpráva ve webové služby WSDL (Description Language).|(N/A)|  
+|Name|Ne|Získá nebo nastaví název chybová zpráva ve webové služby WSDL (Description Language).|(N/A)|  
 |Obor názvů|Ne|Získá nebo nastaví obor názvů chybu protokolu SOAP.|(N/A)|  
 |Třída protectionLevel|Ne|Určuje úroveň ochrany, které vyžaduje chybu protokolu SOAP z vazby.|(N/A)|  
 |TypeId|Ne|Při implementaci do odvozené třídy získá jedinečný identifikátor pro tento atribut. (Zděděno z atributu).|(N/A)|  

@@ -2,12 +2,12 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 25ecc1db8218dfb49f591998140d86f551c5a0d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 55001904557efa1c3136a4f619348296681986ed
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038602"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64585052"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený na formátu XML. Protože XML data je běžně zakódován do formátu standardního textu definované v [specifikace XML 1.0](https://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojářům a architektům jsou obvykle, které zajímá nároky na místo při přenosu (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje zvláštní výzev pro efektivní přenos binární data.  

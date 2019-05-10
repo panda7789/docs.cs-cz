@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: 553868ae82501e479acadd04b3d5e4447bcea36e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 430041f5f4315c5ad20cd2495f01a6f776f239c7
+ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867133"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469697"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
@@ -38,7 +38,7 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
  Konstruktory a destruktory řídí vytváření a ničení objektů. `Sub New` a `Sub Finalize` procedury v jazyce Visual Basic, inicializovat a zničit objekty; nahrazují `Class_Initialize` a `Class_Terminate` metod používaných v jazyce Visual Basic 6.0 a starší verze.  
   
 ### <a name="sub-new"></a>Nový Sub  
- `Sub New` Konstruktor lze spustit pouze jednou při vytvoření třídy. Nelze ji vyvolat explicitně kdekoli jinak než v prvním řádku kódu z jiného konstruktoru ze stejné třídy nebo z odvozené třídy. Kromě toho kód v `Sub New` metoda vždy spouští před ostatním kódem ve třídě. [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] a novějších verzích implicitně vytvářet `Sub New` konstruktor v době běhu, pokud nejsou explicitně definovány `Sub New` postup pro třídu.  
+ `Sub New` Konstruktor lze spustit pouze jednou při vytvoření třídy. Nelze ji vyvolat explicitně kdekoli jinak než v prvním řádku kódu z jiného konstruktoru ze stejné třídy nebo z odvozené třídy. Kromě toho kód v `Sub New` metoda vždy spouští před ostatním kódem ve třídě. Visual Basic a novějších verzích implicitně vytvořit `Sub New` konstruktor v době běhu, pokud nejsou explicitně definovány `Sub New` postup pro třídu.  
   
  Pokud chcete vytvořit konstruktor pro třídu, vytvořte proceduru s názvem `Sub New` kdekoli v definici třídy. Vytvoření konstruktoru s parametry, zadejte názvy a datové typy argumentů, které mají `Sub New` stejně jako byste měli zadat argumenty pro všechny procedury, stejně jako v následujícím kódu:  
   
@@ -60,7 +60,7 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
   
  `Finalize` Destruktor je chráněná metoda, kterou lze volat pouze z třídy, které patří do nebo z odvozené třídy. Systémová volání `Finalize` automaticky při objekt je zničen, takže byste neměli volat explicitně `Finalize` z mimo odvozené třídy `Finalize` implementace.  
   
- Na rozdíl od `Class_Terminate`, která se spustí poté, co objekt je nastavena na hodnotu nothing, obvykle dochází ke zpoždění mezi když objekt Vyskočení a při volání jazyka Visual Basic `Finalize` destruktor. [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] a novějších verzích povolit pro druhý typ destruktor, <xref:System.IDisposable.Dispose%2A>, kterou můžete kdykoli a uvolnit tak prostředky explicitně volat.  
+ Na rozdíl od `Class_Terminate`, která se spustí poté, co objekt je nastavena na hodnotu nothing, obvykle dochází ke zpoždění mezi když objekt Vyskočení a při volání jazyka Visual Basic `Finalize` destruktor. Visual Basic a novějších verzích povolit pro druhý typ destruktor <xref:System.IDisposable.Dispose%2A>, kterou můžete kdykoli a uvolnit tak prostředky explicitně volat.  
   
 > [!NOTE]
 >  A `Finalize` destruktoru by neměla vyvolávat výjimky, protože nemůže být zpracovány aplikací a může způsobit ukončení aplikace.  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-ms.openlocfilehash: 7b85940f8ce64139d056497a8007379f1658010d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9c26b8deb6036c13a9a61d8929b4cabba5f3ef67
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646329"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64584543"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Třídy a struktury (Průvodce programováním v C#)
 Třídy a struktury jsou dvě základní konstrukce obecný systém typů v rozhraní .NET Framework. Každá je v podstatě datová struktura, která zapouzdřuje sadu dat a chování, které patří k sobě jako logická jednotka. Data a chování jsou *členy* třídy nebo struktury, a zahrnují metody, vlastnosti a události a tak dále, jak je uvedeno dále v tomto tématu.  

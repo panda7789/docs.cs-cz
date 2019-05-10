@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 9bb87115f4649a890d1fb2aab1595c3b6848bc74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9bce692c767169536d762a36ea2b9343655680c7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703098"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64583074"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  

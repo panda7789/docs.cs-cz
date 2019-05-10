@@ -2,12 +2,12 @@
 title: Učení podle návodů
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: 611644ce9d6f95bc4113b81bfff36ecaf9cf0b4a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d5c8457bc1e484d3c7c2b57225261a3ef74023d1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033525"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64582909"
 ---
 # <a name="learning-by-walkthroughs"></a>Učení podle návodů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace poskytuje několik návody. Toto téma řeší některé problémy obecného průvodce (včetně Poradce při potížích) a obsahuje odkazy na několik základní návody pro získání informací o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  

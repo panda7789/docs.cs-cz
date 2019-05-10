@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6bf6acc719b4697534e845f64890ddcd9cac550f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4a057f872d15ca1fcd49d86d08606776a0c0bea0
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643553"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063317"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
@@ -229,14 +229,14 @@ BOOL PtInRect(const RECT *lprc, POINT pt);
  Můžete předat struktury použití následující platformy vyvolat definice:  
   
 ```vb
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Function PtInRect Lib "User32.dll" (
+Friend Class NativeMethods
+    Friend Declare Auto Function PtInRect Lib "User32.dll" (
         ByRef r As Rect, p As Point) As Boolean
 End Class
 ```
   
 ```csharp
-internal static class WindowsAPI
+internal static class NativeMethods
 {
    [DllImport("User32.dll")]
    internal static extern bool PtInRect(ref Rect r, Point p);
@@ -291,14 +291,14 @@ void GetSystemTime(SYSTEMTIME* SystemTime);
  Definice pro vyvolání ekvivalentní platformy **GetSystemTime** vypadá takto:  
   
 ```vb
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Sub GetSystemTime Lib "Kernel32.dll" (
+Friend Class NativeMethods
+    Friend Declare Auto Sub GetSystemTime Lib "Kernel32.dll" (
         ByVal sysTime As SystemTime)
 End Class
 ```
   
 ```csharp
-internal static class WindowsAPI
+internal static class NativeMethods
 {
    [DllImport("Kernel32.dll", CharSet = CharSet.Auto)]
    internal static extern void GetSystemTime(SystemTime st);

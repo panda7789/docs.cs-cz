@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 097b0cb1-5743-4c3a-86ef-caf5cbe6750d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83aad5d45dda1784069839662486f7dbcc307542
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a35e06837ac35a743a3f0424cb2a7ad5bbeb5400
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027027"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64589965"
 ---
 # <a name="saving-and-writing-a-document"></a>Ukládání a zápis dokumentu
 Při načtení a uložení <xref:System.Xml.XmlDocument>, uložený dokument může lišit od původních následujícími způsoby:  

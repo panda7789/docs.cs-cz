@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: 260c9e362281ba7996dc834ab47d7beb2755b636
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c7374b77526a31c2c508516d5a3cb7cc3e29339a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703488"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64583073"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 

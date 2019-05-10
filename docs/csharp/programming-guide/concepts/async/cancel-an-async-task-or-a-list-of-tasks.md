@@ -2,12 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 ms.date: 07/20/2015
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 01557bf80f40d4197d29ab05cfb4838f5d993a82
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 05ddb2c76a16ed4f79d795510434aa3abb5615d7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702747"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64583374"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 

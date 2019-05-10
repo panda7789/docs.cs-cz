@@ -10,12 +10,12 @@ helpviewer_keywords:
 - asymmetric accessor accessibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-ms.openlocfilehash: c15b4939306b79f843b22dc808d88bf3d20ed555
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: cde196c2bf0b40443c6b497a6a73863e5f89dd0a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703410"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64582990"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
 [Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnost nebo indexer, se nazývají *přistupující objekty*. Ve výchozím nastavení tyto přístupové objekty mít stejnou úroveň viditelnosti nebo přístup k vlastnosti nebo indexeru, ke kterému patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však užitečný k omezení přístupu k jednomu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnost `set` přístupového objektu při zachování `get` přistupující objekt veřejně přístupná. Příklad:  

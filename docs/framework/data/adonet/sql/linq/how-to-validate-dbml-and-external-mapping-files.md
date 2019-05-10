@@ -2,12 +2,12 @@
 title: 'Postupy: Ověření DBML a externí soubory mapování'
 ms.date: 03/30/2017
 ms.assetid: d9ea37f5-0a9e-4401-8fc3-1e6fd44c49f9
-ms.openlocfilehash: 83a26f22495c849aa00143ca36b63fa147120c28
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 9e80f41e05fb78b7a6c1ef9ce47ef611cfe3e57d
+ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310236"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64910638"
 ---
 # <a name="how-to-validate-dbml-and-external-mapping-files"></a>Postupy: Ověření DBML a externí soubory mapování
 Externí soubory mapování a dbml soubory, které můžete upravit musí být ověřena jejich odpovídajících schématu definice. Toto téma poskytuje uživatelům aplikace Visual Studio s kroky k implementaci procesu ověřování.  
@@ -30,9 +30,9 @@ Externí soubory mapování a dbml soubory, které můžete upravit musí být o
   
 5. Mějte na paměti příslušného schématu definice pro požadovaný účel.  
   
-    -   DbmlSchema.xsd je definice schématu pro ověření souboru .dbml. Další informace najdete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+    - DbmlSchema.xsd je definice schématu pro ověření souboru .dbml. Další informace najdete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
   
-    -   LinqToSqlMapping.xsd je definice schématu pro ověřování externí soubor mapování XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+    - LinqToSqlMapping.xsd je definice schématu pro ověřování externí soubor mapování XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
 6. V **použití** sloupec řádku definice požadované schéma, otevřete rozevírací seznam a potom klepněte na tlačítko **použít tohle schéma**.  
   
@@ -51,9 +51,9 @@ Externí soubory mapování a dbml soubory, které můžete upravit musí být o
   
 1. Téma nápovědy, který obsahuje definici schématu, jak je popsáno výše v tomto tématu.  
   
-    -   Soubory dbml, naleznete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+    - Soubory dbml, naleznete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
   
-    -   Externí soubory mapování, naleznete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+    - Externí soubory mapování, naleznete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
 2. Klikněte na tlačítko **kopírování kódu** do souboru s kódem zkopírujte do schránky.  
   
