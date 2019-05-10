@@ -5,12 +5,12 @@ helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-ms.openlocfilehash: 41fe3cb368bed12ccb2dbe9bd31f95fd556e3968
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ce626d9b75f2061ff024fa25ce005f952301603e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971909"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64617264"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek jsou technika XAML pro získání hodnotu, která není na primitivní ani určitého typu XAML. Pro použití atributu rozšíření značek používat známé znak sekvence otevírající složenou závorku `{` k zadání oboru rozšíření značek a uzavírací složenou závorku `}` ukončíte. Při použití rozhraní .NET Framework XAML Services, můžete použít některé z předdefinovaných rozšíření značek jazyka XAML v oboru názvů System.Xaml sestavení. Můžete také jsou podtřídami tříd <xref:System.Windows.Markup.MarkupExtension> třídy definované v oboru názvů System.Xaml a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek, které jsou definována v určité rozhraní, pokud se už odkazuje na dané rozhraní.  

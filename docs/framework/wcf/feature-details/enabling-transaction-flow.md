@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-ms.openlocfilehash: 180fc99195444057c5bbb4a1679e948f9ddf1830
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 560b03b8e2788c88e6c92c64834bf36c750575ea
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856658"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626947"
 ---
 # <a name="enabling-transaction-flow"></a>Povolení toku transakcí
 Windows Communication Foundation (WCF) poskytuje vysoce flexibilní možnosti pro řízení toku transakce. Nastavení toku transakce služby lze vyjádřit pomocí kombinace atributů a konfigurace.  

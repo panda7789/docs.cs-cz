@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 51da86d6c0f565d1baa58452a661ccbaa321538c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f35c1387d54fdc02cb421af477671a5a75939c57
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765684"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626397"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení dat jako informační kanál. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Pokud používáte informační kanál, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entit a vztahů do formátu XML, které mohou být součástí těla zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Definuje výchozí vlastnost entity mapování mezi elementy Atom a data, která je obsažená v entitách. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  

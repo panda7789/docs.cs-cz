@@ -2,12 +2,12 @@
 title: Zabezpečení v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
-ms.openlocfilehash: 6af073a86b0feaba2fdcd9facd9474bb334096e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c07d8c6a22326397a21219ddd660a44f9282ece0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62036995"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64616133"
 ---
 # <a name="security-in-linq-to-sql"></a>Zabezpečení v LINQ to SQL
 Bezpečnostní rizika jsou vždy k dispozici, když se připojíte k databázi. I když LINQ to SQL může zahrnovat některé nové způsoby, jak pracovat s daty v systému SQL Server, neposkytuje žádné další bezpečnostní mechanismy.  

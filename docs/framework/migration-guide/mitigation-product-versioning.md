@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f7b435c6050cbb73abab3cb5980632be55dd08d1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e75b838a2c6126fe82e97faac624a9ad6b7ea132
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61871528"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626234"
 ---
 # <a name="mitigation-product-versioning"></a>Omezení rizik: Správa verzí produktu
 V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a později, Správa verzí produktu změnil z předchozích verzí rozhraní .NET Framework (rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2).  

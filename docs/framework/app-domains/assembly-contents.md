@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 28116714-da77-45f7-826d-fa035d121948
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 25594c55a5462c42611df7119dad37bd8a61cc2e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: dd41051bd770d3579137aa158e70cef41aed49f8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705814"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607831"
 ---
 # <a name="assembly-contents"></a>Obsah sestavení
 Obecně platí Statická sestavení se může skládat z čtyři elementy:  

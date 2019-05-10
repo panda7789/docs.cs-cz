@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID448
 ms.assetid: b7d63962-9cac-466b-8bee-41debd7d79c7
-ms.openlocfilehash: a58eee33dbab6274c9a361ad98ebeaccae056b5c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d57e46d1b1317978dad91b077b75e6fb95eff474
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938395"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626507"
 ---
 # <a name="named-argument-not-found-visual-basic"></a>Pojmenovaný argument nebyl nalezen (Visual Basic)
 Pojmenovaný argument nelze použít ve volání procedury, pokud se zobrazí v definici procedury. Zadaná pojmenovaný argument, ale postup nebyl definován tak, aby přijímal argument s tímto názvem.  

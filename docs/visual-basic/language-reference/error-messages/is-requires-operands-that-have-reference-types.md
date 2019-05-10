@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30020
 ms.assetid: 228afebd-1203-4bd3-8d7a-c5c56f3cedc4
-ms.openlocfilehash: b828de196a12128a9f34ee1f9ff1e57fee22c687
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 65fbba9689ae01d8156bd0b3e2efeb6b75bd79e2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61799185"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64625957"
 ---
 # <a name="is-requires-operands-that-have-reference-types-but-this-operand-has-the-value-type-typename"></a>"Is' vyžaduje operandy typu odkaz, ale tento operand má typ hodnoty '\<typename >"
 `Is` Operátor porovnání určuje, zda dva objektových proměnných odkazují na stejnou instanci. Toto porovnání není definován pro typy hodnot.  

@@ -2,12 +2,12 @@
 title: Změna úrovní sdílení mezipaměti pro aktivity odesílání
 ms.date: 03/30/2017
 ms.assetid: 03926a64-753d-460e-ac06-2a4ff8e1bbf5
-ms.openlocfilehash: e439edc14183c2ba2bf9af67e177dddb52c43708
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1561d053dc04bbea18f4d6cb43399c2c625d5da1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784290"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614854"
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Změna úrovní sdílení mezipaměti pro aktivity odesílání
 <xref:System.ServiceModel.Activities.SendMessageChannelCache> Rozšíření umožňuje do mezipaměti sdílení úrovně, nastavení mezipaměti kanálu objekt pro vytváření, přizpůsobení a nastavení kanálu do mezipaměti pro pracovní postupy, které odesílání zpráv do koncových bodů služby pomocí <xref:System.ServiceModel.Activities.Send> zasílání zpráv aktivity. Tyto pracovní postupy jsou obvykle pracovní postupy klienta, ale mohou být také služby pracovního postupu, které jsou hostovány v <xref:System.ServiceModel.WorkflowServiceHost>. Obsahuje objekt pro vytváření mezipaměti kanálu mezipaměti <xref:System.ServiceModel.ChannelFactory%601> objekty. Kanál mezipaměti obsahuje uložený v mezipaměti kanály.  

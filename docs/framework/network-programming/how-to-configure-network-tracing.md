@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-ms.openlocfilehash: cc08faba7edede3dd527b7c05fe47f6408e18a04
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2c2c2718d79ce9aa4fed343cf368bbf541e493d0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642695"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613703"
 ---
 # <a name="how-to-configure-network-tracing"></a>Postupy: Konfigurace trasování sítě
 Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která určují formát a obsah trasování sítě. Před provedením tohoto postupu zkontrolujte, zda je povoleno trasování. Informace o povolení trasování najdete v tématu [Enabling Network Tracing](../../../docs/framework/network-programming/enabling-network-tracing.md).  
@@ -80,7 +80,7 @@ Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která urč
   
  Když přidáte název, který `<switches>` bloku, výstup trasování obsahovat informace z některé metody s tímto názvem souvisejí. Výstup popisuje následující tabulka.  
   
-|Název|Výstup z|  
+|Name|Výstup z|  
 |----------|-----------------|  
 |`System.Net.Sockets`|Některé veřejné metody <xref:System.Net.Sockets.Socket>, <xref:System.Net.Sockets.TcpListener>, <xref:System.Net.Sockets.TcpClient>, a <xref:System.Net.Dns> třídy|  
 |`System.Net`|Některé veřejné metody <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpWebResponse>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FtpWebResponse> třídy a ladicí informace (neplatné certifikáty, seznam chybějících vydavatelů a chyby klientských certifikátů.) protokolu SSL|  

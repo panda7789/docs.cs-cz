@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 85a1a017197826717280f53995ed98f26f1d80bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 16ef27b7d1a36121976cbb026f81984a8b84d1fe
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873857"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614327"
 ---
 # <a name="trace-switches"></a>Přepínače trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování. Jsou objekty, které existují ve vašem kódu a je možné nakonfigurovat externě pomocí souboru .config. Existují tři typy přepínačů trasování, které jsou k dispozici v rozhraní .NET Framework: <xref:System.Diagnostics.BooleanSwitch> třídy, <xref:System.Diagnostics.TraceSwitch> třídy a <xref:System.Diagnostics.SourceSwitch> třídy. <xref:System.Diagnostics.BooleanSwitch> Třída slouží jako přepínač, povolení nebo zakázání různých příkazů trasování. <xref:System.Diagnostics.TraceSwitch> a <xref:System.Diagnostics.SourceSwitch> tříd bylo možné povolit přepínač trasování pro trasování konkrétní úroveň tak, aby <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.TraceSource> zobrazí zprávy zadané pro tuto úroveň a všechny úrovně pod ním. Pokud zakážete přepínač, zprávy trasování se nezobrazí. Všechny tyto třídy jsou odvozeny od abstraktní (**MustInherit**) třídy **přepínač**, jako by všechny přepínače vyvinutou v Unity uživatele.  

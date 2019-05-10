@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b633239be85a66c5bba54132c3732357967eb177
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 47fa0065bad76640b1ad8f61734c5749ec51286b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643658"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613827"
 ---
 # <a name="com-wrappers"></a>Obálky COM
 COM se liší od objektový model rozhraní .NET Framework důležité několika způsoby:  

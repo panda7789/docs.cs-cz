@@ -7,12 +7,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: ce2df9d4cea601652ebde2032758137b01faacdc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: b37b00cfbeee10f217d1dbe1c754c50b65e31de9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344660"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64625867"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější verze sestavení zahrnutím souboru zásad vydavatele s upgradovaný sestavení. Soubor zásad vydavatele, který určuje přesměrování sestavení a nastavení základní kód a používá stejný formát jako konfigurační soubor aplikace. Soubor zásad vydavatele, který je zkompilován sestavení a umístěn v globální mezipaměti sestavení.  
@@ -57,15 +57,15 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
      V tomto příkazu:  
   
-    -   *PublisherPolicyFile* argumentem je název souboru zásad vydavatele.  
+    - *PublisherPolicyFile* argumentem je název souboru zásad vydavatele.  
   
-    -   *PublisherPolicyAssemblyFile* argumentem je název sestavení zásad vydavatele, která je výsledkem tohoto příkazu. Název souboru sestavení musí vyhovovat formátu:  
+    - *PublisherPolicyAssemblyFile* argumentem je název sestavení zásad vydavatele, která je výsledkem tohoto příkazu. Název souboru sestavení musí vyhovovat formátu:  
   
          **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
-    -   *KeyPairFile* argumentem je název souboru, který obsahuje pár klíčů. Musíte podepsat sestavení a sestavení zásad vydavatele s stejného páru klíčů.  
+    - *KeyPairFile* argumentem je název souboru, který obsahuje pár klíčů. Musíte podepsat sestavení a sestavení zásad vydavatele s stejného páru klíčů.  
   
-    -   *ProcessorArchitecture* argument určuje platformu cílem sestavení specifické pro procesor.  
+    - *ProcessorArchitecture* argument určuje platformu cílem sestavení specifické pro procesor.  
   
         > [!NOTE]
         >  Možnost Cílová architektura procesoru je v rozhraní .NET Framework verze 2.0 nový.  

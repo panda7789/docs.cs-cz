@@ -5,12 +5,12 @@ helpviewer_keywords:
 - text files [Visual Basic], creating
 - files [Visual Basic], creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
-ms.openlocfilehash: a05e73a2096c82c9299e4483bbaf69e560fc2e45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f24fdd6ce1fea7540c33e4a2fdfc06885825f76a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038061"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64628985"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Postupy: Vytvořte soubor v jazyce Visual Basic
 Tento příklad vytvoří prázdný textový soubor v zadané cesty pomocí <xref:System.IO.File.Create%2A> metodu <xref:System.IO.File> třídy.  

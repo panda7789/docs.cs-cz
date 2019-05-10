@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b022c70f7ed1707e27de7cac6ce08c53ee0878d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a89739b92d64e8774080d82f9e39af24c269223e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770380"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64615160"
 ---
 # <a name="observer-design-pattern"></a>Návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Je vhodný pro jakýkoli scénář, který vyžaduje nabízené oznámení. Definuje vzor *poskytovatele* (označované také jako *subjektu* nebo *pozorovat*) a nula, jeden nebo více *pozorovatelů*. Pozorovatelé zaregistrovat u poskytovatele a pokaždé, když předdefinovanou podmínku, události nebo změnu stavu dochází, zprostředkovatel automaticky upozorní všechny pozorovatelů ve volání jedné z jejich metod. Při volání této metody zprostředkovatele lze také poskytovat aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, se použije návrhový vzor pozorovatel implementací Obecné <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  

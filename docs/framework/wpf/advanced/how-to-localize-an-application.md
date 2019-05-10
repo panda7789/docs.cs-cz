@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: d08f991204b2d74899cbd1aee82c0cc23e175dd4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 8f1251195fdb21ac57030056abc7b5657edb49fa
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298315"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614613"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml – nástroj.  
@@ -91,21 +91,21 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
 4. Možnosti, které můžete zadat při spuštění locbaml – jsou následující:  
   
-    -   **analyzovat** nebo **-p:** Analyzuje Baml, prostředky, nebo [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] soubory vygenerovat soubor CSV nebo .txt.  
+    - **analyzovat** nebo **-p:** Analyzuje Baml, prostředky, nebo [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] soubory vygenerovat soubor CSV nebo .txt.  
   
-    -   **Generovat** nebo **-k:** Generuje lokalizované binární soubor s použitím přeložený soubor.  
+    - **Generovat** nebo **-k:** Generuje lokalizované binární soubor s použitím přeložený soubor.  
   
-    -   **navýšení kapacity** nebo **-o** {*filedirectory*] **:** Název výstupního souboru.  
+    - **navýšení kapacity** nebo **-o** {*filedirectory*] **:** Název výstupního souboru.  
   
-    -   **jazyková verze** nebo **- cul** {*jazykovou verzi*] **:** Národní prostředí z výstupu sestavení.  
+    - **jazyková verze** nebo **- cul** {*jazykovou verzi*] **:** Národní prostředí z výstupu sestavení.  
   
-    -   **překlad** nebo **- trans** {*translation.csv*] **:** Přeložené nebo lokalizovaný soubor.  
+    - **překlad** nebo **- trans** {*translation.csv*] **:** Přeložené nebo lokalizovaný soubor.  
   
-    -   **asmpath** nebo **- asmpath:** {*filedirectory*] **:** Pokud vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kód obsahuje vlastní ovládací prvky, je nutné zadat **asmpath** sestavení vlastního ovládacího prvku.  
+    - **asmpath** nebo **- asmpath:** {*filedirectory*] **:** Pokud vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kód obsahuje vlastní ovládací prvky, je nutné zadat **asmpath** sestavení vlastního ovládacího prvku.  
   
-    -   **nologo:** Zobrazuje informace bez logo nebo autorských práv.  
+    - **nologo:** Zobrazuje informace bez logo nebo autorských práv.  
   
-    -   **verbose:** Zobrazí informace o režimu s komentářem.  
+    - **verbose:** Zobrazí informace o režimu s komentářem.  
   
     > [!NOTE]
     >  Pokud potřebujete seznam možností, pokud spouštíte nástroj, zadejte **LocBaml.exe** a stiskněte klávesu ENTER.  
@@ -133,26 +133,26 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 
    Sedm pole jsou:  
   
-   1.  **Název BAML**. Název prostředku BAML s ohledem na zdrojový jazyk satelitní sestavení.  
+   1. **Název BAML**. Název prostředku BAML s ohledem na zdrojový jazyk satelitní sestavení.  
   
-   2.  **Klíč prostředku**. Identifikátor lokalizovaný prostředek.  
+   2. **Klíč prostředku**. Identifikátor lokalizovaný prostředek.  
   
-   3.  **Kategorie**. Typ hodnoty. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
+   3. **Kategorie**. Typ hodnoty. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   4.  **Lepší čitelnost**. Hodnota určuje, zda mohou být přečteny lokalizátora. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
+   4. **Lepší čitelnost**. Hodnota určuje, zda mohou být přečteny lokalizátora. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   5.  **Modifiability**. Určuje, zda můžete změnit hodnotu lokalizátora. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
+   5. **Modifiability**. Určuje, zda můžete změnit hodnotu lokalizátora. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   6.  **Komentáře**. Další popis hodnotu sloužící k určení, jak je lokalizován hodnotu. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
+   6. **Komentáře**. Další popis hodnotu sloužící k určení, jak je lokalizován hodnotu. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   7.  **Hodnota**. Textová hodnota pro převod na požadovanou jazykovou verzi.  
+   7. **Hodnota**. Textová hodnota pro převod na požadovanou jazykovou verzi.  
   
    Následující tabulka ukazuje, jak tato pole se mapují na hodnoty s oddělovači souboru CSV:  
   
    |Název BAML|Klíč prostředku|Kategorie|Lepší čitelnost|Modifiability|Komentáře|Value|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
    |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|FALSE|FALSE||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádný|HODNOTA TRUE|HODNOTA TRUE||Hello World|
    |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádný|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
   
    Všimněte si, že všechny hodnoty **komentáře** pole neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdný. Všimněte si také, že položka v prvním řádku není ani čitelná ani měnit a má "Ignorovat" jako jeho **kategorie** hodnoty, které označuje, že hodnota není lokalizovatelné.  
@@ -188,9 +188,9 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
 7. Otestovat nové satelitní sestavení, budete muset změnit jazykové verze, ve kterém aplikace poběží. Toto lze provést jedním ze dvou způsobů:  
   
-    -   Změnit místní nastavení operačního systému (**Start** &#124; **ovládací panely** &#124; **místní a jazykové nastavení**).  
+    - Změnit místní nastavení operačního systému (**Start** &#124; **ovládací panely** &#124; **místní a jazykové nastavení**).  
   
-    -   Ve vaší aplikaci přidejte následující kód do souboru App.xaml.cs:  
+    - Ve vaší aplikaci přidejte následující kód do souboru App.xaml.cs:  
   
    [!code-xaml[LocBamlChangeCultureSnippets#LocBamlChangeCultureMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/CSharp/App.xaml#locbamlchangeculturemarkup)]
    [!code-csharp[LocBamlChangeCultureSnippets#LocBamlChangeCultureCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/CSharp/App.xaml.cs#locbamlchangeculturecodebehind)]
@@ -199,11 +199,11 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 <a name="Some_Tips_for_Using_LocBaml"></a>   
 ## <a name="some-tips-for-using-locbaml"></a>Některé tipy pro používání locbaml –  
   
--   Všechna závislá sestavení, definující vlastní ovládací prvky musí být zkopírován do místního adresáře locbaml – nebo instaluje se do mezipaměti GAC. To je nezbytné, protože lokalizace rozhraní API musí mít přístup k závislé sestavení při čtení [!INCLUDE[TLA#tla_baml](../../../../includes/tlasharptla-baml-md.md)].  
+- Všechna závislá sestavení, definující vlastní ovládací prvky musí být zkopírován do místního adresáře locbaml – nebo instaluje se do mezipaměti GAC. To je nezbytné, protože lokalizace rozhraní API musí mít přístup k závislé sestavení při čtení [!INCLUDE[TLA#tla_baml](../../../../includes/tlasharptla-baml-md.md)].  
   
--   Pokud hlavní sestavení je podepsáno, musí být vygenerovaný knihovna DLL prostředků podepsané také v pořadí, který se má načíst.  
+- Pokud hlavní sestavení je podepsáno, musí být vygenerovaný knihovna DLL prostředků podepsané také v pořadí, který se má načíst.  
   
--   Verze lokalizovaný prostředek knihovny DLL musí být synchronizovány s hlavním sestavením.  
+- Verze lokalizovaný prostředek knihovny DLL musí být synchronizovány s hlavním sestavením.  
   
 <a name="Whats_Next"></a>   
 ## <a name="whats-next"></a>Co se chystá  

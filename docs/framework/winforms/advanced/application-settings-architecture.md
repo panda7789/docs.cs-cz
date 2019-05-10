@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: c2a62b61cb7b31c978a84a3d3f41c24f9fafb84d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c9cb40cb318bd044cb9204ba2ed384b41b475d57
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946741"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64625778"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  

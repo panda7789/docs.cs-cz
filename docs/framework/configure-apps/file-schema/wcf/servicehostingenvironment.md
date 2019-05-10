@@ -2,12 +2,12 @@
 title: <serviceHostingEnvironment>
 ms.date: 03/30/2017
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-ms.openlocfilehash: 24cf36aba81b5bb31eaac475361e2d07bc6f8b12
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 16dacee89576b4ede0f2f80255ba8a0dcbc8c0dc
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788398"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64610175"
 ---
 # <a name="servicehostingenvironment"></a>\<serviceHostingEnvironment>
 Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím služby pro konkrétní přenos. Pokud tento prvek je prázdný, je použit výchozí typ. Tento prvek jde použít jenom na aplikace nebo na úrovni konfigurační soubory.  

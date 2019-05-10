@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 6888f9be-c65b-4b03-a07b-df7ebdee2436
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bf8a5a7c97969fb0018bb1dba4ea027fe7afd2c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c50132be2755119b19e38d94919eb4b0ab28d994
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775853"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614324"
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Čítače výkonu a vnitroprocesorové souběžné aplikace
 Použití nástroje Sledování výkonu (Perfmon.exe), je možné odlišit od čítače výkonu na základě za běhu. Toto téma popisuje změny registru potřebná k povolení této funkce.  
@@ -39,7 +39,7 @@ Použití nástroje Sledování výkonu (Perfmon.exe), je možné odlišit od č
 |Název klíče|HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\\.NETFramework\Performance|  
 |Název hodnoty|ProcessNameFormat|  
 |Typ hodnoty|REG_DWORD|  
-|Hodnota|1 (0x00000001)|  
+|Value|1 (0x00000001)|  
   
  Hodnota 0 pro `ProcessNameFormat` označuje, že výchozí chování je povoleno; který je Perfmon.exe zobrazuje čítače výkonu na základě jednotlivých aplikací. Když nastavíte tuto hodnotu na 1, Perfmon.exe umožňuje rozlišit několik verzí aplikace a poskytuje čítače výkonu na základě za běhu. Jakákoli jiná hodnota parametru `ProcessNameFormat` nastavení klíče registru se neposkytuje podpora a vyhrazené pro budoucí použití.  
   

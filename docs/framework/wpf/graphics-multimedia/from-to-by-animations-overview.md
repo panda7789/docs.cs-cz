@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], From/to/by
 - From/to/by animation
 ms.assetid: 516fce0a-e7f8-49b8-b018-53b3d409a8a3
-ms.openlocfilehash: 9708a4d06e8a2aa65fb4d3bb959f4699237a2bc6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d36be70a8c1287274c3820aec3aa789830914ceb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762394"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64615414"
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnosti závislosti. Od/Komu/kým animace vytvoří přechod mezi dvěma hodnotami.  

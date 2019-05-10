@@ -15,12 +15,12 @@ helpviewer_keywords:
 - With block
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
-ms.openlocfilehash: de2edc6b16689673c3be6703ff1a201febe73526
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 38a34a4662d969fd526963744b8bd493952d9cff
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698639"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64615073"
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With – příkaz (Visual Basic)
 Vykoná řadu příkazů, které opakovaně odkazují na jeden objekt nebo strukturu, takže příkazy mohou při přístupu k členům tohoto objektu nebo struktury použít zjednodušenou syntaxi.  Při použití struktury lze pouze číst hodnoty členů nebo vyvolávat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty k členům struktury použité v `With...End With` příkazu.  

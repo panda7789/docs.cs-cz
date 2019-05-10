@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 4327e8bb07cb03a91f7384f7fe82bc2e47f6fcb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6d631d51cc4f40b5be91b6579039a8b8dffa3dee
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780819"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613204"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování naleznete v tématu: [Služba prohlížečem trasování (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  

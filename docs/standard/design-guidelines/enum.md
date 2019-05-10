@@ -10,12 +10,12 @@ helpviewer_keywords:
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
 author: KrzysztofCwalina
-ms.openlocfilehash: c0645ba1179c4c6fd961b871b3061cd51174f427
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 36e1f62ab1b236d48a55f7c255ed406cc0efa488
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669092"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64615256"
 ---
 # <a name="enum-design"></a>Návrh výčtu
 Výčty jsou zvláštní druh typu hodnoty. Existují dva typy výčtů: jednoduchý, výčty a příznak výčty.  
