@@ -2,20 +2,20 @@
 title: 'Postupy: Filtrování názvů elementů (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1849fb03-f075-421f-863c-e8fb32773cdf
-ms.openlocfilehash: 586c371fdd014eee6eb21563214d9e26a0e264fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 20aeae636df35fa156bb7dd1019dd65bcd9e8532
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668117"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64597090"
 ---
-# <a name="how-to-filter-on-element-names-linq-to-xml-c"></a><span data-ttu-id="9b49d-102">Postupy: Filtrování názvů elementů (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="9b49d-102">How to: Filter on Element Names (LINQ to XML) (C#)</span></span>
-<span data-ttu-id="9b49d-103">Při volání jedné z metod, které vracejí <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, můžete filtrovat podle názvu elementu.</span><span class="sxs-lookup"><span data-stu-id="9b49d-103">When you call one of the methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, you can filter on the element name.</span></span>  
+# <a name="how-to-filter-on-element-names-linq-to-xml-c"></a><span data-ttu-id="5f0db-102">Postupy: Filtrování názvů elementů (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="5f0db-102">How to: Filter on Element Names (LINQ to XML) (C#)</span></span>
+<span data-ttu-id="5f0db-103">Při volání jedné z metod, které vracejí <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, můžete filtrovat podle názvu elementu.</span><span class="sxs-lookup"><span data-stu-id="5f0db-103">When you call one of the methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, you can filter on the element name.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9b49d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="9b49d-104">Example</span></span>  
- <span data-ttu-id="9b49d-105">Tento příklad načte soubor následníky, které se filtruje tak, aby obsahovala pouze následníky se zadaným názvem.</span><span class="sxs-lookup"><span data-stu-id="9b49d-105">This example retrieves a collection of descendants that is filtered to contain only descendants with the specified name.</span></span>  
+## <a name="example"></a><span data-ttu-id="5f0db-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="5f0db-104">Example</span></span>  
+ <span data-ttu-id="5f0db-105">Tento příklad načte soubor následníky, které se filtruje tak, aby obsahovala pouze následníky se zadaným názvem.</span><span class="sxs-lookup"><span data-stu-id="5f0db-105">This example retrieves a collection of descendants that is filtered to contain only descendants with the specified name.</span></span>  
   
- <span data-ttu-id="9b49d-106">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="9b49d-106">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>  
+ <span data-ttu-id="5f0db-106">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="5f0db-106">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>  
   
 ```csharp  
 XElement po = XElement.Load("PurchaseOrder.xml");  
@@ -26,14 +26,14 @@ foreach(XElement prdName in items)
     Console.WriteLine(prdName.Name + ":" + (string) prdName);  
 ```  
   
- <span data-ttu-id="9b49d-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9b49d-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="5f0db-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="5f0db-107">This code produces the following output:</span></span>  
   
 ```  
 ProductName:Lawnmower  
 ProductName:Baby Monitor  
 ```  
   
- <span data-ttu-id="9b49d-108">Jiné metody, které vracejí <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> kolekce postupují stejným způsobem.</span><span class="sxs-lookup"><span data-stu-id="9b49d-108">The other methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> collections follow the same pattern.</span></span> <span data-ttu-id="9b49d-109">Jejich podpisy jsou podobné <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>.</span><span class="sxs-lookup"><span data-stu-id="9b49d-109">Their signatures are similar to <xref:System.Xml.Linq.XContainer.Elements%2A> and <xref:System.Xml.Linq.XContainer.Descendants%2A>.</span></span> <span data-ttu-id="9b49d-110">Následuje úplný seznam metod, které mají podobné podpisy metod:</span><span class="sxs-lookup"><span data-stu-id="9b49d-110">The following is the complete list of methods that have similar method signatures:</span></span>  
+ <span data-ttu-id="5f0db-108">Jiné metody, které vracejí <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> kolekce postupují stejným způsobem.</span><span class="sxs-lookup"><span data-stu-id="5f0db-108">The other methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> collections follow the same pattern.</span></span> <span data-ttu-id="5f0db-109">Jejich podpisy jsou podobné <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>.</span><span class="sxs-lookup"><span data-stu-id="5f0db-109">Their signatures are similar to <xref:System.Xml.Linq.XContainer.Elements%2A> and <xref:System.Xml.Linq.XContainer.Descendants%2A>.</span></span> <span data-ttu-id="5f0db-110">Následuje úplný seznam metod, které mají podobné podpisy metod:</span><span class="sxs-lookup"><span data-stu-id="5f0db-110">The following is the complete list of methods that have similar method signatures:</span></span>  
   
 - <xref:System.Xml.Linq.XNode.Ancestors%2A>  
   
@@ -49,10 +49,10 @@ ProductName:Baby Monitor
   
 - <xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A>  
   
-## <a name="example"></a><span data-ttu-id="9b49d-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="9b49d-111">Example</span></span>  
- <span data-ttu-id="9b49d-112">Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9b49d-112">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="9b49d-113">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="9b49d-113">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="5f0db-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="5f0db-111">Example</span></span>  
+ <span data-ttu-id="5f0db-112">Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="5f0db-112">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="5f0db-113">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="5f0db-113">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
- <span data-ttu-id="9b49d-114">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="9b49d-114">This example uses the following XML document: [Sample XML File: Typical Purchase Order in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span></span>  
+ <span data-ttu-id="5f0db-114">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="5f0db-114">This example uses the following XML document: [Sample XML File: Typical Purchase Order in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span></span>  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -64,13 +64,13 @@ foreach (XElement prdName in items)
     Console.WriteLine(prdName.Name + ":" + (string)prdName);  
 ```  
   
- <span data-ttu-id="9b49d-115">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9b49d-115">This code produces the following output:</span></span>  
+ <span data-ttu-id="5f0db-115">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="5f0db-115">This code produces the following output:</span></span>  
   
 ```  
 {http://www.adventure-works.com}ProductName:Lawnmower  
 {http://www.adventure-works.com}ProductName:Baby Monitor  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9b49d-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b49d-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5f0db-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5f0db-116">See also</span></span>
 
-- [<span data-ttu-id="9b49d-117">Osy LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="9b49d-117">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [<span data-ttu-id="5f0db-117">Osy LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="5f0db-117">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
