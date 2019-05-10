@@ -5,17 +5,17 @@ metadata:
   document_id: na
   title: 'Reference k rozhraní API dokumentace k – kurzy, ML.NET'
   meta.description: 'Learn how to use ML.NET, an open-source and cross-platform machine learning framework you can use to build custom machine learning solutions and integrate them into .NET applications. Incorporate AI into your apps using the .NET skills you already have and without leaving .NET.'
-  ms.prod: dotnet
-  ms.tech: machine-learning
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 05/05/2019
+  ms.date: 04/18/2019
   ms.author: cgronlun
   author: cjgronlund
 abstract:
   description: 'Další informace o použití ML.NET rozšiřovatelnou platformu pro open source a multiplatformní strojového učení pro sestavování řešení s vlastním strojovým učením a integraci do aplikace .NET. Kurzy, ukázky kódu, reference k rozhraní API a další dokumentace ukazují, jak.'
 sections:
+  - title: Začínáme
+    items:
+      - type: paragraph
+        text: 'Zjistěte, jak se machine learning aplikací vytvořených pomocí ML.NET, přečtěte si téma <a href="/dotnet/machine-learning/how-does-mldotnet-work">novinky ML.NET a jak to funguje</a>? Nebo začněte tak, že přidáte <b>Microsoft.ML</b> balíček nuget do vaší aplikace.'
   - title: Podrobné kurzy
     items:
       - type: paragraph
@@ -25,14 +25,17 @@ sections:
         items:
           - html: <a href="/dotnet/machine-learning/tutorials/sentiment-analysis">Analýza sentimentu pomocí binární klasifikace</a>
           - html: <a href="/dotnet/machine-learning/tutorials/github-issue-classification">Kategorizace problémy s úložištěm GitHub pomocí klasifikace víc tříd</a></li>
-          - html: <a href="/dotnet/machine-learning/tutorials/taxi-fare">Předpověď tarify taxislužby NYC pomocí regresssion</a>
+          - html: <a href="/dotnet/machine-learning/tutorials/taxi-fare">Předpověď tarify taxislužby NYC prostřednictvím regrese</a>
           - html: <a href="/dotnet/machine-learning/tutorials/iris-clustering">Kategorizace květin použití clusteringu s vlastnostmi</a>
           - html: <a href="/dotnet/machine-learning/tutorials/movie-recommmendation">Vytvoření doporučené video s factorization matice</a>
           - html: <a href="/dotnet/machine-learning/tutorials/image-classification">Sestavení klasifikátoru vlastní image s TensorFlow</a>
   - title: Referenční informace a materiály
     items:
+      - type: paragraph
+        text: 'Rozhraní API ML.NET má dvě sady balíčků: vydání součástí a zobrazit jejich náhled komponenty. Verze rozhraní API obsahuje komponenty pro práci algoritmy pro binární klasifikace, klasifikace víc tříd, regrese, detekce anomálií a hodnocení, model ukládání a načítání a spoustu dalších věcí s daty! Ve verzi preview rozhraní API obsahuje modelu ONNX a TensorFlow zpracování, algoritmy pro doporučení úlohy a komponenty pro zpracování dat časových řad.'
       - type: list
         style: unordered
         items:
           - html: <a href="/dotnet/api/?view=ml-dotnet">ML.NET API</a>
+          - html: <a href="/dotnet/api/?view=ml-dotnet-preview">ML.NET ve verzi Preview rozhraní API</a>
           - html: '<a href="https://github.com/dotnet/machinelearning-samples/blob/master/README.md">ML.NET ukázky: C#aF#</a>'

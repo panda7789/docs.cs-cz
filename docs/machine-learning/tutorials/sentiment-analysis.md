@@ -1,360 +1,351 @@
 ---
-title: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
-description: Objevte, jak používat ML.NET ve scénáři binární klasifikace pochopit, jak pomocí mínění předpovědi proveďte příslušnou akci.
+title: 'Kurz: Analýza webu komentáře – binární klasifikace'
+description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z webu komentářů a provede příslušnou akci. Používá klasifikátor binární mínění C# v sadě Visual Studio 2017.
 ms.date: 04/18/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 9b07668f19219040ea5a4dbfd7f175088f38357d
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
+ms.openlocfilehash: 317590e2623dc4962eb83cab696d19363bc0d5eb
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63808233"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063386"
 ---
-# <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a><span data-ttu-id="56077-103">Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění</span><span class="sxs-lookup"><span data-stu-id="56077-103">Tutorial: Use ML.NET in a sentiment analysis binary classification scenario</span></span>
+# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a><span data-ttu-id="92763-104">Kurz: Analýza sentimentu komentářů k webu pomocí binární klasifikace ML.NET</span><span class="sxs-lookup"><span data-stu-id="92763-104">Tutorial: Analyze sentiment of website comments with binary classification in ML.NET</span></span>
 
-<span data-ttu-id="56077-104">Tento ukázkový kurz ukazuje použití ML.NET vytvoření klasifikátoru mínění pochopit mínění příchozí komentáře webu přijmout vhodná opatření prostřednictvím aplikace konzoly .NET Core using C# v sadě Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="56077-104">This sample tutorial illustrates using ML.NET to create a sentiment classifier to understand sentiment of incoming website comments to take the appropriate action via a .NET Core console application using C# in Visual Studio 2017.</span></span> <span data-ttu-id="56077-105">Ve světě služby machine learning tohoto typu predikcí se nazývá binární klasifikace.</span><span class="sxs-lookup"><span data-stu-id="56077-105">In the world of machine learning, this type of prediction is known as binary classification.</span></span>
+<span data-ttu-id="92763-105">V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z webu komentářů a provede příslušnou akci.</span><span class="sxs-lookup"><span data-stu-id="92763-105">This tutorial shows you how to create a .NET Core console application that classifies sentiment from website comments and takes the appropriate action.</span></span> <span data-ttu-id="92763-106">Používá klasifikátor binární mínění C# v sadě Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="92763-106">The binary sentiment classifier uses C# in Visual Studio 2017.</span></span> 
+
+<span data-ttu-id="92763-107">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="92763-107">In this tutorial, you learn how to:</span></span>
+> [!div class="checklist"]
+> * <span data-ttu-id="92763-108">Vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="92763-108">Create a console application</span></span>
+> * <span data-ttu-id="92763-109">Příprava dat</span><span class="sxs-lookup"><span data-stu-id="92763-109">Prepare data</span></span>
+> * <span data-ttu-id="92763-110">Načtení dat</span><span class="sxs-lookup"><span data-stu-id="92763-110">Load the data</span></span>
+> * <span data-ttu-id="92763-111">Vytvoření a trénování modelu</span><span class="sxs-lookup"><span data-stu-id="92763-111">Build and train the model</span></span>
+> * <span data-ttu-id="92763-112">Vyhodnocení modelu</span><span class="sxs-lookup"><span data-stu-id="92763-112">Evaluate the model</span></span>
+> * <span data-ttu-id="92763-113">Použití modelu vytvoří předpověď</span><span class="sxs-lookup"><span data-stu-id="92763-113">Use the model to make a prediction</span></span>
+> * <span data-ttu-id="92763-114">Zobrazit výsledky</span><span class="sxs-lookup"><span data-stu-id="92763-114">See the results</span></span>
+
+<span data-ttu-id="92763-115">Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.</span><span class="sxs-lookup"><span data-stu-id="92763-115">You can find the source code for this tutorial at the [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) repository.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="92763-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="92763-116">Prerequisites</span></span>
+
+* <span data-ttu-id="92763-117">[Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalovaná</span><span class="sxs-lookup"><span data-stu-id="92763-117">[Visual Studio 2017 15.6 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) with the ".NET Core cross-platform development" workload installed</span></span>
+
+* <span data-ttu-id="92763-118">[Datová sada UCI subjektivního hodnocení s popiskem věty](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (soubor ZIP)</span><span class="sxs-lookup"><span data-stu-id="92763-118">[UCI Sentiment Labeled Sentences dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (ZIP file)</span></span>
+
+## <a name="create-a-console-application"></a><span data-ttu-id="92763-119">Vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="92763-119">Create a console application</span></span>
+
+1. <span data-ttu-id="92763-120">Vytvoření **konzolovou aplikaci .NET Core** nazývá "SentimentAnalysis".</span><span class="sxs-lookup"><span data-stu-id="92763-120">Create a **.NET Core Console Application** called "SentimentAnalysis".</span></span>
+
+2. <span data-ttu-id="92763-121">Vytvořte adresář *Data* ve vašem projektu a uložte soubory datové sady.</span><span class="sxs-lookup"><span data-stu-id="92763-121">Create a directory named *Data* in your project to save your data set files.</span></span>
+
+3. <span data-ttu-id="92763-122">Nainstalujte **balíček NuGet Microsoft.ML**:</span><span class="sxs-lookup"><span data-stu-id="92763-122">Install the **Microsoft.ML NuGet Package**:</span></span>
+
+    <span data-ttu-id="92763-123">V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.</span><span class="sxs-lookup"><span data-stu-id="92763-123">In Solution Explorer, right-click on your project and select **Manage NuGet Packages**.</span></span> <span data-ttu-id="92763-124">Zvolte možnost "nuget.org" jako zdroj balíčku a pak vyberte **Procházet** kartu. Vyhledejte **Microsoft.ML**, vyberte balíček a pak vyberte **nainstalovat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="92763-124">Choose "nuget.org" as the package source, and then select the **Browse** tab. Search for **Microsoft.ML**, select the package you want, and then select the **Install** button.</span></span> <span data-ttu-id="92763-125">Pokračovat v instalaci souhlasí s licenční podmínky pro balíček, který si zvolíte.</span><span class="sxs-lookup"><span data-stu-id="92763-125">Proceed with the installation by agreeing to the the license terms for the package you choose.</span></span>
+
+## <a name="prepare-your-data"></a><span data-ttu-id="92763-126">Příprava dat</span><span class="sxs-lookup"><span data-stu-id="92763-126">Prepare your data</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="56077-106">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="56077-106">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="56077-107">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="56077-107">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
+> <span data-ttu-id="92763-127">Datové sady pro účely tohoto kurzu jsou ze "From skupiny na jednotlivé popisky pomocí podrobné funkce" Kotzias et.</span><span class="sxs-lookup"><span data-stu-id="92763-127">The datasets for this tutorial are from the 'From Group to Individual Labels using Deep Features', Kotzias et.</span></span> <span data-ttu-id="92763-128">al,.</span><span class="sxs-lookup"><span data-stu-id="92763-128">al,.</span></span> <span data-ttu-id="92763-129">Konference KDD 2015 a hostované v UCI Machine Learning úložiště – Dua, D. a Karra Taniskidou, E. (2017).</span><span class="sxs-lookup"><span data-stu-id="92763-129">KDD 2015, and hosted at the UCI Machine Learning Repository - Dua, D. and Karra Taniskidou, E. (2017).</span></span> <span data-ttu-id="92763-130">UCI strojového učení úložiště [http://archive.ics.uci.edu/ml].</span><span class="sxs-lookup"><span data-stu-id="92763-130">UCI Machine Learning Repository [http://archive.ics.uci.edu/ml].</span></span> <span data-ttu-id="92763-131">Irvine, certifikační Autorita: University of California, z informací o škole a počítačových věd.</span><span class="sxs-lookup"><span data-stu-id="92763-131">Irvine, CA: University of California, School of Information and Computer Science.</span></span>
 
-<span data-ttu-id="56077-108">Tento kurz a související ukázkové právě používáte **preview verze 1.0.0 ML.NET**.</span><span class="sxs-lookup"><span data-stu-id="56077-108">This tutorial and related sample are currently using **ML.NET version 1.0.0 preview**.</span></span> <span data-ttu-id="56077-109">Další informace najdete v tématu poznámky k verzi v [dotnet/machinelearning úložiště GitHub](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes)</span><span class="sxs-lookup"><span data-stu-id="56077-109">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes)</span></span>
+1. <span data-ttu-id="92763-132">Stáhněte si [soubor ZIP datové sady UCI subjektivního hodnocení s popiskem věty](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho.</span><span class="sxs-lookup"><span data-stu-id="92763-132">Download [UCI Sentiment Labeled Sentences dataset ZIP file](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), and unzip.</span></span>
 
-<span data-ttu-id="56077-110">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="56077-110">In this tutorial, you learn how to:</span></span>
-> [!div class="checklist"]
-> * <span data-ttu-id="56077-111">Pochopení problému</span><span class="sxs-lookup"><span data-stu-id="56077-111">Understand the problem</span></span>
-> * <span data-ttu-id="56077-112">Vyberte algoritmus učení příslušný počítač</span><span class="sxs-lookup"><span data-stu-id="56077-112">Select the appropriate machine learning algorithm</span></span>
-> * <span data-ttu-id="56077-113">Příprava dat</span><span class="sxs-lookup"><span data-stu-id="56077-113">Prepare your data</span></span>
-> * <span data-ttu-id="56077-114">Transformace dat</span><span class="sxs-lookup"><span data-stu-id="56077-114">Transform the data</span></span>
-> * <span data-ttu-id="56077-115">Trénování modelu</span><span class="sxs-lookup"><span data-stu-id="56077-115">Train the model</span></span>
-> * <span data-ttu-id="56077-116">Vyhodnocení modelu</span><span class="sxs-lookup"><span data-stu-id="56077-116">Evaluate the model</span></span>
-> * <span data-ttu-id="56077-117">Predikce v trénovaného modelu</span><span class="sxs-lookup"><span data-stu-id="56077-117">Predict with the trained model</span></span>
-> * <span data-ttu-id="56077-118">Nasazení a predikce v načíst model</span><span class="sxs-lookup"><span data-stu-id="56077-118">Deploy and Predict with a loaded model</span></span>
+2. <span data-ttu-id="92763-133">Kopírovat `yelp_labelled.txt` soubor do *Data* adresáře, které jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="92763-133">Copy the `yelp_labelled.txt` file into the *Data* directory you created.</span></span>
 
-<span data-ttu-id="56077-119">Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.</span><span class="sxs-lookup"><span data-stu-id="56077-119">You can find the source code for this tutorial at the [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) repository.</span></span>
+3. <span data-ttu-id="92763-134">V Průzkumníku řešení klikněte pravým tlačítkem myši `yelp_labeled.txt` a vyberte možnost **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="92763-134">In Solution Explorer, right-click the `yelp_labeled.txt` file and select **Properties**.</span></span> <span data-ttu-id="92763-135">V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.</span><span class="sxs-lookup"><span data-stu-id="92763-135">Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="56077-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="56077-120">Prerequisites</span></span>
+### <a name="create-classes-and-define-paths"></a><span data-ttu-id="92763-136">Vytváření tříd a definovat cesty</span><span class="sxs-lookup"><span data-stu-id="92763-136">Create classes and define paths</span></span>
 
-* <span data-ttu-id="56077-121">[Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.</span><span class="sxs-lookup"><span data-stu-id="56077-121">[Visual Studio 2017 15.6 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) with the ".NET Core cross-platform development" workload installed.</span></span>
+1. <span data-ttu-id="92763-137">Přidejte následující další `using` příkazy k hornímu okraji *Program.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="92763-137">Add the following additional `using` statements to the top of the *Program.cs* file:</span></span>
 
-* [<span data-ttu-id="56077-122">Soubor zip UCI subjektivního hodnocení s popiskem věty datové sady</span><span class="sxs-lookup"><span data-stu-id="56077-122">The UCI Sentiment Labeled Sentences dataset zip file</span></span>](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)
+    [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddUsings "Add necessary usings")]
 
-## <a name="create-a-console-application"></a><span data-ttu-id="56077-123">Vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="56077-123">Create a console application</span></span>
+2. <span data-ttu-id="92763-138">Vytvořte dvě globální pole pro uložení naposledy stažené datovou sadu cesta k souboru a cesta k souboru uloženého modelu:</span><span class="sxs-lookup"><span data-stu-id="92763-138">Create two global fields to hold the recently downloaded dataset file path and the saved model file path:</span></span>
 
-1. <span data-ttu-id="56077-124">Vytvoření **konzolovou aplikaci .NET Core** nazývá "SentimentAnalysis".</span><span class="sxs-lookup"><span data-stu-id="56077-124">Create a **.NET Core Console Application** called "SentimentAnalysis".</span></span>
+    * <span data-ttu-id="92763-139">`_dataPath` obsahuje cestu k datové sadě využívají k tréninku modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-139">`_dataPath` has the path to the dataset used to train the model.</span></span>
+    * <span data-ttu-id="92763-140">`_modelPath` obsahuje cestu k uložení naučeného modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-140">`_modelPath` has the path where the trained model is saved.</span></span>
 
-2. <span data-ttu-id="56077-125">Vytvořte adresář *Data* ve vašem projektu a uložte soubory datové sady.</span><span class="sxs-lookup"><span data-stu-id="56077-125">Create a directory named *Data* in your project to save your data set files.</span></span>
+3. <span data-ttu-id="92763-141">Přidejte následující kód na řádku vpravo nahoře `Main` metodu pro zadání cesty:</span><span class="sxs-lookup"><span data-stu-id="92763-141">Add the following code to the line right above the `Main` method to specify the paths:</span></span>
 
-3. <span data-ttu-id="56077-126">Nainstalujte **balíček NuGet Microsoft.ML**:</span><span class="sxs-lookup"><span data-stu-id="56077-126">Install the **Microsoft.ML NuGet Package**:</span></span>
+    [!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
-    <span data-ttu-id="56077-127">V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.</span><span class="sxs-lookup"><span data-stu-id="56077-127">In Solution Explorer, right-click on your project and select **Manage NuGet Packages**.</span></span> <span data-ttu-id="56077-128">Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.ML**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="56077-128">Choose "nuget.org" as the Package source, select the Browse tab, search for **Microsoft.ML**, select that package in the list, and select the **Install** button.</span></span> <span data-ttu-id="56077-129">Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.</span><span class="sxs-lookup"><span data-stu-id="56077-129">Select the **OK** button on the **Preview Changes** dialog and then select the **I Accept** button on the **License Acceptance** dialog if you agree with the license terms for the packages listed.</span></span>
+4. <span data-ttu-id="92763-142">Dále vytvořte třídy pro vstupní data a předpovědi.</span><span class="sxs-lookup"><span data-stu-id="92763-142">Next, create classes for your input data and predictions.</span></span> <span data-ttu-id="92763-143">Přidejte novou třídu do projektu:</span><span class="sxs-lookup"><span data-stu-id="92763-143">Add a new class to your project:</span></span>
 
-### <a name="prepare-your-data"></a><span data-ttu-id="56077-130">Příprava dat</span><span class="sxs-lookup"><span data-stu-id="56077-130">Prepare your data</span></span>
+    - <span data-ttu-id="92763-144">V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **přidat** > **nová položka**.</span><span class="sxs-lookup"><span data-stu-id="92763-144">In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.</span></span>
 
-1. <span data-ttu-id="56077-131">Stáhněte si [soubor zip The UCI subjektivního hodnocení s popiskem věty datové sady (viz citace v následující poznámce)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho.</span><span class="sxs-lookup"><span data-stu-id="56077-131">Download [The UCI Sentiment Labeled Sentences dataset zip file (see citations in the following note)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), and unzip.</span></span>
+    - <span data-ttu-id="92763-145">V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentData.cs*.</span><span class="sxs-lookup"><span data-stu-id="92763-145">In the **Add New Item** dialog box, select **Class** and change the **Name** field to *SentimentData.cs*.</span></span> <span data-ttu-id="92763-146">Vyberte **přidat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="92763-146">Then, select the **Add** button.</span></span>
 
-2. <span data-ttu-id="56077-132">Kopírovat `yelp_labelled.txt` soubor do *Data* adresáře, které jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="56077-132">Copy the `yelp_labelled.txt` file into the *Data* directory you created.</span></span>
+    
+5. <span data-ttu-id="92763-147">*SentimentData.cs* soubor se otevře v editoru kódu.</span><span class="sxs-lookup"><span data-stu-id="92763-147">The *SentimentData.cs* file opens in the code editor.</span></span> <span data-ttu-id="92763-148">Přidejte následující `using` příkaz do horní části *SentimentData.cs*:</span><span class="sxs-lookup"><span data-stu-id="92763-148">Add the following `using` statement to the top of *SentimentData.cs*:</span></span>
 
-    > [!NOTE]
-    > <span data-ttu-id="56077-133">Tento kurz používá datové sady jsou z "From skupina na jednotlivé popisky pomocí podrobné funkce", Kotzias et.</span><span class="sxs-lookup"><span data-stu-id="56077-133">The datasets this tutorial uses are from the 'From Group to Individual Labels using Deep Features', Kotzias et.</span></span> <span data-ttu-id="56077-134">al,.</span><span class="sxs-lookup"><span data-stu-id="56077-134">al,.</span></span> <span data-ttu-id="56077-135">Konference KDD 2015 a hostované v UCI Machine Learning úložiště – Dua, D. a Karra Taniskidou, E. (2017).</span><span class="sxs-lookup"><span data-stu-id="56077-135">KDD 2015, and hosted at the UCI Machine Learning Repository - Dua, D. and Karra Taniskidou, E. (2017).</span></span> <span data-ttu-id="56077-136">UCI strojového učení úložiště [http://archive.ics.uci.edu/ml].</span><span class="sxs-lookup"><span data-stu-id="56077-136">UCI Machine Learning Repository [http://archive.ics.uci.edu/ml].</span></span> <span data-ttu-id="56077-137">Irvine, certifikační Autorita: University of California, z informací o škole a počítačových věd.</span><span class="sxs-lookup"><span data-stu-id="56077-137">Irvine, CA: University of California, School of Information and Computer Science.</span></span>
+    [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#AddUsings "Add necessary usings")]
 
-3. <span data-ttu-id="56077-138">V Průzkumníku řešení klikněte pravým tlačítkem myši `yelp_labeled.txt` a vyberte možnost **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="56077-138">In Solution Explorer, right-click the `yelp_labeled.txt` file and select **Properties**.</span></span> <span data-ttu-id="56077-139">V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.</span><span class="sxs-lookup"><span data-stu-id="56077-139">Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.</span></span>
+6. <span data-ttu-id="92763-149">Odeberte stávající definice třídy a přidejte následující kód, který má dvě třídy `SentimentData` a `SentimentPrediction`, možnosti *SentimentData.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="92763-149">Remove the existing class definition and add the following code, which has two classes `SentimentData` and `SentimentPrediction`, to the *SentimentData.cs* file:</span></span>
 
-### <a name="create-classes-and-define-paths"></a><span data-ttu-id="56077-140">Vytváření tříd a definovat cesty</span><span class="sxs-lookup"><span data-stu-id="56077-140">Create classes and define paths</span></span>
+    [!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#DeclareTypes "Declare data record types")]
 
-<span data-ttu-id="56077-141">Přidejte následující další `using` příkazy k hornímu okraji *Program.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="56077-141">Add the following additional `using` statements to the top of the *Program.cs* file:</span></span>
+### <a name="how-the-data-was-prepared"></a><span data-ttu-id="92763-150">Jak se připravit data</span><span class="sxs-lookup"><span data-stu-id="92763-150">How the data was prepared</span></span>
+<span data-ttu-id="92763-151">Třída vstupní datová sada `SentimentData`, má `string` pro komentáře uživatelů (`SentimentText`) a `bool` (`Sentiment`) hodnotu 1 (pozitivní) nebo 0 (negativní) mínění.</span><span class="sxs-lookup"><span data-stu-id="92763-151">The input dataset class, `SentimentData`, has a `string` for user comments (`SentimentText`) and a `bool` (`Sentiment`) value of either 1 (positive) or 0 (negative) for sentiment.</span></span> <span data-ttu-id="92763-152">Obě pole mají [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) atributy připojené k nim, který popisuje soubor pořadí dat u každého pole.</span><span class="sxs-lookup"><span data-stu-id="92763-152">Both fields have [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) attributes attached to them, which describes the data file order of each field.</span></span>  <span data-ttu-id="92763-153">Kromě toho `Sentiment` má vlastnost [Názevsloupce](xref:Microsoft.ML.Data.ColumnNameAttribute.%23ctor%2A) atribut nastavit jako `Label` pole.</span><span class="sxs-lookup"><span data-stu-id="92763-153">In addition, the `Sentiment` property has a [ColumnName](xref:Microsoft.ML.Data.ColumnNameAttribute.%23ctor%2A) attribute to designate it as the `Label` field.</span></span> <span data-ttu-id="92763-154">Následující příklad souboru nemá řádek záhlaví a vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="92763-154">The following example file doesn't have a header row, and looks like this:</span></span>
 
-[!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddUsings "Add necessary usings")]
-
-<span data-ttu-id="56077-142">Je potřeba vytvořit dvě globální pole pro uložení naposledy stažené datovou sadu cesta k souboru a cesta k souboru uloženého modelu:</span><span class="sxs-lookup"><span data-stu-id="56077-142">You need to create two global fields to hold the recently downloaded dataset file path and the saved model file path:</span></span>
-
-* <span data-ttu-id="56077-143">`_dataPath` obsahuje cestu k datové sadě využívají k tréninku modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-143">`_dataPath` has the path to the dataset used to train the model.</span></span>
-* <span data-ttu-id="56077-144">`_modelPath` obsahuje cestu k uložení naučeného modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-144">`_modelPath` has the path where the trained model is saved.</span></span>
-
-<span data-ttu-id="56077-145">Přidejte následující kód na řádku vpravo nahoře `Main` metoda zadat tyto cesty:</span><span class="sxs-lookup"><span data-stu-id="56077-145">Add the following code to the line right above the `Main` method to specify those paths:</span></span>
-
-[!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DeclareGlobalVariables "Declare global variables")]
-
-<span data-ttu-id="56077-146">Je potřeba vytvořit některé třídy pro vstupní data a předpovědi.</span><span class="sxs-lookup"><span data-stu-id="56077-146">You need to create some classes for your input data and predictions.</span></span> <span data-ttu-id="56077-147">Přidejte novou třídu do projektu:</span><span class="sxs-lookup"><span data-stu-id="56077-147">Add a new class to your project:</span></span>
-
-1. <span data-ttu-id="56077-148">V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **přidat** > **nová položka**.</span><span class="sxs-lookup"><span data-stu-id="56077-148">In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.</span></span>
-
-1. <span data-ttu-id="56077-149">V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentData.cs*.</span><span class="sxs-lookup"><span data-stu-id="56077-149">In the **Add New Item** dialog box, select **Class** and change the **Name** field to *SentimentData.cs*.</span></span> <span data-ttu-id="56077-150">Vyberte **přidat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="56077-150">Then, select the **Add** button.</span></span>
-
-    <span data-ttu-id="56077-151">*SentimentData.cs* soubor se otevře v editoru kódu.</span><span class="sxs-lookup"><span data-stu-id="56077-151">The *SentimentData.cs* file opens in the code editor.</span></span> <span data-ttu-id="56077-152">Přidejte následující `using` příkaz do horní části *SentimentData.cs*:</span><span class="sxs-lookup"><span data-stu-id="56077-152">Add the following `using` statement to the top of *SentimentData.cs*:</span></span>
-
-[!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#AddUsings "Add necessary usings")]
-
-<span data-ttu-id="56077-153">Odeberte stávající definice třídy a přidejte následující kód, který má dvě třídy `SentimentData` a `SentimentPrediction`, možnosti *SentimentData.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="56077-153">Remove the existing class definition and add the following code, which has two classes `SentimentData` and `SentimentPrediction`, to the *SentimentData.cs* file:</span></span>
-
-[!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#DeclareTypes "Declare data record types")]
-
-<span data-ttu-id="56077-154">Třída vstupní datová sada `SentimentData`, má `string` pro komentář (`SentimentText`) a `bool` (`Sentiment`), který má hodnotu mínění buď pozitivní (1) nebo záporná (0).</span><span class="sxs-lookup"><span data-stu-id="56077-154">The input dataset class, `SentimentData`, has a `string` for the comment (`SentimentText`) and a `bool` (`Sentiment`) that has a value for sentiment of either positive (1) or negative (0).</span></span> <span data-ttu-id="56077-155">Obě pole mají [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) atributy připojené k nim, který popisuje soubor pořadí dat u každého pole.</span><span class="sxs-lookup"><span data-stu-id="56077-155">Both fields have [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) attributes attached to them, which describes the data file order of each field.</span></span>  <span data-ttu-id="56077-156">Kromě toho `Sentiment` má vlastnost [Názevsloupce](xref:Microsoft.ML.Data.ColumnNameAttribute.%23ctor%2A) atribut nastavit jako `Label` pole.</span><span class="sxs-lookup"><span data-stu-id="56077-156">In addition, the `Sentiment` property has a [ColumnName](xref:Microsoft.ML.Data.ColumnNameAttribute.%23ctor%2A) attribute to designate it as the `Label` field.</span></span> <span data-ttu-id="56077-157">Následující příklad souboru nemá řádek záhlaví a vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="56077-157">The following example file doesn't have a header row, and looks like this:</span></span>
-
-|<span data-ttu-id="56077-158">SentimentText</span><span class="sxs-lookup"><span data-stu-id="56077-158">SentimentText</span></span>                         |<span data-ttu-id="56077-159">Mínění (popisek)</span><span class="sxs-lookup"><span data-stu-id="56077-159">Sentiment (Label)</span></span> |
+|<span data-ttu-id="92763-155">SentimentText</span><span class="sxs-lookup"><span data-stu-id="92763-155">SentimentText</span></span>                         |<span data-ttu-id="92763-156">Mínění (popisek)</span><span class="sxs-lookup"><span data-stu-id="92763-156">Sentiment (Label)</span></span> |
 |--------------------------------------|----------|
-|<span data-ttu-id="56077-160">Waitress pomalý trochu ve službě.</span><span class="sxs-lookup"><span data-stu-id="56077-160">Waitress was a little slow in service.</span></span>|    <span data-ttu-id="56077-161">0</span><span class="sxs-lookup"><span data-stu-id="56077-161">0</span></span>     |
-|<span data-ttu-id="56077-162">Povrch ovšem není vhodné.</span><span class="sxs-lookup"><span data-stu-id="56077-162">Crust is not good.</span></span>                    |    <span data-ttu-id="56077-163">0</span><span class="sxs-lookup"><span data-stu-id="56077-163">0</span></span>     |
-|<span data-ttu-id="56077-164">WOW... Miluju toto místo.</span><span class="sxs-lookup"><span data-stu-id="56077-164">Wow... Loved this place.</span></span>              |    <span data-ttu-id="56077-165">1</span><span class="sxs-lookup"><span data-stu-id="56077-165">1</span></span>     |
-|<span data-ttu-id="56077-166">Služba se velmi výzvy.</span><span class="sxs-lookup"><span data-stu-id="56077-166">Service was very prompt.</span></span>              |    <span data-ttu-id="56077-167">1</span><span class="sxs-lookup"><span data-stu-id="56077-167">1</span></span>     |
+|<span data-ttu-id="92763-157">Waitress pomalý trochu ve službě.</span><span class="sxs-lookup"><span data-stu-id="92763-157">Waitress was a little slow in service.</span></span>|    <span data-ttu-id="92763-158">0</span><span class="sxs-lookup"><span data-stu-id="92763-158">0</span></span>     |
+|<span data-ttu-id="92763-159">Povrch ovšem není vhodné.</span><span class="sxs-lookup"><span data-stu-id="92763-159">Crust is not good.</span></span>                    |    <span data-ttu-id="92763-160">0</span><span class="sxs-lookup"><span data-stu-id="92763-160">0</span></span>     |
+|<span data-ttu-id="92763-161">WOW... Miluju toto místo.</span><span class="sxs-lookup"><span data-stu-id="92763-161">Wow... Loved this place.</span></span>              |    <span data-ttu-id="92763-162">1</span><span class="sxs-lookup"><span data-stu-id="92763-162">1</span></span>     |
+|<span data-ttu-id="92763-163">Služba se velmi výzvy.</span><span class="sxs-lookup"><span data-stu-id="92763-163">Service was very prompt.</span></span>              |    <span data-ttu-id="92763-164">1</span><span class="sxs-lookup"><span data-stu-id="92763-164">1</span></span>     |
 
-<span data-ttu-id="56077-168">`SentimentPrediction` je třída předpovědi používá po cvičení modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-168">`SentimentPrediction` is the prediction class used after the model training.</span></span> <span data-ttu-id="56077-169">Dědí z `SentimentData` pro zobrazení `SentimentText` s předpovědí.</span><span class="sxs-lookup"><span data-stu-id="56077-169">It inherits from `SentimentData` for displaying the `SentimentText` with the predictions.</span></span> <span data-ttu-id="56077-170">`SentimentPrediction` má jeden datový typ boolean (`Sentiment`) a `PredictedLabel` `ColumnName` atribut.</span><span class="sxs-lookup"><span data-stu-id="56077-170">`SentimentPrediction` has a single boolean (`Sentiment`) and a `PredictedLabel` `ColumnName` attribute.</span></span> <span data-ttu-id="56077-171">`Label` Slouží k vytvoření a trénování modelu a jeho rozdělení na testovací datové použít také k vyhodnocení modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-171">The `Label` is used to create and train the model, and it's also used with the split out test dataset to evaluate the model.</span></span> <span data-ttu-id="56077-172">`PredictedLabel` Se používá při předpovědi a vyhodnocení.</span><span class="sxs-lookup"><span data-stu-id="56077-172">The `PredictedLabel` is used during prediction and evaluation.</span></span> <span data-ttu-id="56077-173">Pro vyhodnocení se používají trénovací data, předpovězeným hodnotám a model.</span><span class="sxs-lookup"><span data-stu-id="56077-173">For evaluation, training data, the predicted values, and the model are used.</span></span>
+<span data-ttu-id="92763-165">`SentimentPrediction` je třída předpovědi používá po cvičení modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-165">`SentimentPrediction` is the prediction class used after the model training.</span></span> <span data-ttu-id="92763-166">Dědí z `SentimentData` pro zobrazení `SentimentText` s předpovědí.</span><span class="sxs-lookup"><span data-stu-id="92763-166">It inherits from `SentimentData` for displaying the `SentimentText` with the predictions.</span></span> <span data-ttu-id="92763-167">`SentimentPrediction` má jeden datový typ boolean (`Sentiment`) a `PredictedLabel` `ColumnName` atribut.</span><span class="sxs-lookup"><span data-stu-id="92763-167">`SentimentPrediction` has a single boolean (`Sentiment`) and a `PredictedLabel` `ColumnName` attribute.</span></span> <span data-ttu-id="92763-168">`Label` Slouží k vytvoření a trénování modelu a jeho rozdělení na testovací datové použít také k vyhodnocení modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-168">The `Label` is used to create and train the model, and it's also used with the split out test dataset to evaluate the model.</span></span> <span data-ttu-id="92763-169">`PredictedLabel` Se používá při předpovědi a vyhodnocení.</span><span class="sxs-lookup"><span data-stu-id="92763-169">The `PredictedLabel` is used during prediction and evaluation.</span></span> <span data-ttu-id="92763-170">Pro vyhodnocení se používají trénovací data, předpovězeným hodnotám a model.</span><span class="sxs-lookup"><span data-stu-id="92763-170">For evaluation, training data, the predicted values, and the model are used.</span></span>
 
-<span data-ttu-id="56077-174">[MLContext třídy](xref:Microsoft.ML.MLContext) je výchozí bod pro všechny operace ML.NET a inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-174">The [MLContext class](xref:Microsoft.ML.MLContext) is a starting point for all ML.NET operations, and initializing `mlContext` creates a new ML.NET environment that can be shared across the model creation workflow objects.</span></span> <span data-ttu-id="56077-175">Je to podobné, koncepčně `DBContext` v Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="56077-175">It's similar, conceptually, to `DBContext` in Entity Framework.</span></span>
+<span data-ttu-id="92763-171">[MLContext třídy](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ML.NET.</span><span class="sxs-lookup"><span data-stu-id="92763-171">The [MLContext class](xref:Microsoft.ML.MLContext) is a starting point for all ML.NET operations.</span></span> <span data-ttu-id="92763-172">Inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-172">Initializing `mlContext` creates a new ML.NET environment that can be shared across the model creation workflow objects.</span></span> <span data-ttu-id="92763-173">Je to podobné, koncepčně `DBContext` v Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="92763-173">It's similar, conceptually, to `DBContext` in Entity Framework.</span></span>
 
-### <a name="initialize-variables-in-main"></a><span data-ttu-id="56077-176">Inicializace proměnné ve funkci Main</span><span class="sxs-lookup"><span data-stu-id="56077-176">Initialize variables in Main</span></span>
+## <a name="load-the-data"></a><span data-ttu-id="92763-174">Načtení dat</span><span class="sxs-lookup"><span data-stu-id="92763-174">Load the data</span></span>
+<span data-ttu-id="92763-175">Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.ML.IDataView).</span><span class="sxs-lookup"><span data-stu-id="92763-175">Data in ML.NET is represented as an [IDataView class](xref:Microsoft.ML.IDataView).</span></span> <span data-ttu-id="92763-176">`IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové).</span><span class="sxs-lookup"><span data-stu-id="92763-176">`IDataView` is a flexible, efficient way of describing tabular data (numeric and text).</span></span> <span data-ttu-id="92763-177">Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu.</span><span class="sxs-lookup"><span data-stu-id="92763-177">Data can be loaded from a text file or in real time (for example, SQL database or log files) to an `IDataView` object.</span></span>
 
-<span data-ttu-id="56077-177">Nahraďte `Console.WriteLine("Hello World!")` řádku v `Main` metodu, jak deklarovat a inicializovat proměnnou mlContext následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="56077-177">Replace the `Console.WriteLine("Hello World!")` line in the `Main` method with the following code to declare and initialize the mlContext variable:</span></span>
+<span data-ttu-id="92763-178">Příprava aplikace a pak načíst data:</span><span class="sxs-lookup"><span data-stu-id="92763-178">You prepare the app, and then load data:</span></span>
 
-[!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateMLContext "Create the ML Context")]
+1. <span data-ttu-id="92763-179">Nahraďte `Console.WriteLine("Hello World!")` řádku v `Main` metodu, jak deklarovat a inicializovat proměnnou mlContext následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="92763-179">Replace the `Console.WriteLine("Hello World!")` line in the `Main` method with the following code to declare and initialize the mlContext variable:</span></span>
 
-<span data-ttu-id="56077-178">Přidejte následující položky jako další řádek kódu `Main()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-178">Add the following as the next line of code in the `Main()` method:</span></span>
+    [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateMLContext "Create the ML Context")]
 
-[!code-csharp[CallLoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallLoadData)]
+2. <span data-ttu-id="92763-180">Přidejte následující položky jako další řádek kódu `Main()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-180">Add the following as the next line of code in the `Main()` method:</span></span>
 
-<span data-ttu-id="56077-179">`LoadData()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="56077-179">The `LoadData()` method executes the following tasks:</span></span>
+    [!code-csharp[CallLoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallLoadData)]
 
-* <span data-ttu-id="56077-180">Načte data.</span><span class="sxs-lookup"><span data-stu-id="56077-180">Loads the data.</span></span>
-* <span data-ttu-id="56077-181">Rozdělí načíst datovou sadu na trénování a testování datových sad.</span><span class="sxs-lookup"><span data-stu-id="56077-181">Splits the loaded dataset into train and test datasets.</span></span>
-* <span data-ttu-id="56077-182">Vrátí hodnotu rozdělení trénují a testují datové sady.</span><span class="sxs-lookup"><span data-stu-id="56077-182">Returns the split train and test datasets.</span></span>
+3. <span data-ttu-id="92763-181">Vytvořte `LoadData()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-181">Create the `LoadData()` method, just after the `Main()` method, using the following code:</span></span>
 
-<span data-ttu-id="56077-183">Vytvořte `LoadData()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-183">Create the `LoadData()` method, just after the `Main()` method, using the following code:</span></span>
+    ```csharp
+    public static TrainTestData LoadData(MLContext mlContext)
+    {
 
-```csharp
-public static TrainTestData LoadData(MLContext mlContext)
-{
+    }
+    ```
 
-}
-```
+    <span data-ttu-id="92763-182">`LoadData()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="92763-182">The `LoadData()` method executes the following tasks:</span></span>
 
-## <a name="load-the-data"></a><span data-ttu-id="56077-184">Načtení dat</span><span class="sxs-lookup"><span data-stu-id="56077-184">Load the data</span></span>
+    * <span data-ttu-id="92763-183">Načte data.</span><span class="sxs-lookup"><span data-stu-id="92763-183">Loads the data.</span></span>
+    *  <span data-ttu-id="92763-184">Rozdělí načíst datovou sadu na trénování a testování datových sad.</span><span class="sxs-lookup"><span data-stu-id="92763-184">Splits the loaded dataset into train and test datasets.</span></span>
+    * <span data-ttu-id="92763-185">Vrátí hodnotu rozdělení trénují a testují datové sady.</span><span class="sxs-lookup"><span data-stu-id="92763-185">Returns the split train and test datasets.</span></span>
 
-<span data-ttu-id="56077-185">Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.ML.IDataView).</span><span class="sxs-lookup"><span data-stu-id="56077-185">Data in ML.NET is represented as an [IDataView class](xref:Microsoft.ML.IDataView).</span></span> <span data-ttu-id="56077-186">`IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové).</span><span class="sxs-lookup"><span data-stu-id="56077-186">`IDataView` is a flexible, efficient way of describing tabular data (numeric and text).</span></span> <span data-ttu-id="56077-187">Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu.</span><span class="sxs-lookup"><span data-stu-id="56077-187">Data can be loaded from a text file or in real time (for example, SQL database or log files) to an `IDataView` object.</span></span>
-<span data-ttu-id="56077-188">Přidejte následující kód jako první řádek `LoadData()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-188">Add the following code as the first line of the `LoadData()` method:</span></span>
+4. <span data-ttu-id="92763-186">Přidejte následující kód jako první řádek `LoadData()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-186">Add the following code as the first line of the `LoadData()` method:</span></span>
 
-[!code-csharp[LoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#LoadData "loading dataset")]
+    [!code-csharp[LoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#LoadData "loading dataset")]
 
-<span data-ttu-id="56077-189">[LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a přečte v souboru.</span><span class="sxs-lookup"><span data-stu-id="56077-189">The [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) defines the data schema and reads in the file.</span></span> <span data-ttu-id="56077-190">Přijímá proměnné cesty dat a vrátí `IDataView`.</span><span class="sxs-lookup"><span data-stu-id="56077-190">It takes in the data path variables and returns an `IDataView`.</span></span>
+    <span data-ttu-id="92763-187">[LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a přečte v souboru.</span><span class="sxs-lookup"><span data-stu-id="92763-187">The [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) defines the data schema and reads in the file.</span></span> <span data-ttu-id="92763-188">Přijímá proměnné cesty dat a vrátí `IDataView`.</span><span class="sxs-lookup"><span data-stu-id="92763-188">It takes in the data path variables and returns an `IDataView`.</span></span>
 
-### <a name="split-the-dataset-for-model-training-and-testing"></a><span data-ttu-id="56077-191">Rozdělení datové sady pro trénování a testování modelu</span><span class="sxs-lookup"><span data-stu-id="56077-191">Split the dataset for model training and testing</span></span>
+### <a name="split-the-dataset-for-model-training-and-testing"></a><span data-ttu-id="92763-189">Rozdělení datové sady pro trénování a testování modelu</span><span class="sxs-lookup"><span data-stu-id="92763-189">Split the dataset for model training and testing</span></span>
 
-<span data-ttu-id="56077-192">Dále je třeba trénovací datové sady pro trénování modelu a datové sady testů k vyhodnocení modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-192">Next, you need both a training dataset to train the model and a test dataset to evaluate the model.</span></span>
+<span data-ttu-id="92763-190">Při přípravě na model, použijte část datové sady pro trénování a část datové sady, testování přesnosti modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-190">When preparing a model, you use part of the dataset to train it and part of the dataset to test the model's accuracy.</span></span>  
 
-<span data-ttu-id="56077-193">Načtená data rozdělením potřebné datové sady, přidejte následující kód jako další řádek `LoadData()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-193">To split the loaded data into the needed datasets, add the following code as the next line in the `LoadData()` method:</span></span>
+1. <span data-ttu-id="92763-191">Načtená data rozdělením potřebné datové sady, přidejte následující kód jako další řádek `LoadData()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-191">To split the loaded data into the needed datasets, add the following code as the next line in the `LoadData()` method:</span></span>
 
-[!code-csharp[SplitData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#SplitData "Split the Data")]
+    [!code-csharp[SplitData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#SplitData "Split the Data")]
 
-<span data-ttu-id="56077-194">Předchozí kód používá [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) metodu rozdělit načíst datovou sadu na trénování a testování datových sad a vrátit je do [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) třídy.</span><span class="sxs-lookup"><span data-stu-id="56077-194">The previous code uses the [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) method to split the loaded dataset into train and test datasets and return them in the [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) class.</span></span> <span data-ttu-id="56077-195">Zadejte procento dat pomocí nastavení testu `testFraction`parametru.</span><span class="sxs-lookup"><span data-stu-id="56077-195">Specify the test set percentage of data with the `testFraction`parameter.</span></span> <span data-ttu-id="56077-196">Výchozí hodnota je 10 %, ale je použít 20 %, v tomto případě k vyhodnocení další data.</span><span class="sxs-lookup"><span data-stu-id="56077-196">The default is 10% but you use 20% in this case to evaluate more data.</span></span>  
+    <span data-ttu-id="92763-192">Předchozí kód používá [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) metodu rozdělit načíst datovou sadu na trénování a testování datových sad a vrátit je do [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) třídy.</span><span class="sxs-lookup"><span data-stu-id="92763-192">The previous code uses the [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) method to split the loaded dataset into train and test datasets and return them in the [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) class.</span></span> <span data-ttu-id="92763-193">Zadejte procento dat pomocí nastavení testu `testFraction`parametru.</span><span class="sxs-lookup"><span data-stu-id="92763-193">Specify the test set percentage of data with the `testFraction`parameter.</span></span> <span data-ttu-id="92763-194">Výchozí hodnota je 10 %, v tomto případě je použít 20 % k vyhodnocení další data.</span><span class="sxs-lookup"><span data-stu-id="92763-194">The default is 10%, in this case you use 20% to evaluate more data.</span></span>  
 
-<span data-ttu-id="56077-197">Vrátit `splitDataView` na konci `LoadData()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-197">Return the `splitDataView` at the end of the `LoadData()` method:</span></span>
+2. <span data-ttu-id="92763-195">Vrátit `splitDataView` na konci `LoadData()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-195">Return the `splitDataView` at the end of the `LoadData()` method:</span></span>
 
-[!code-csharp[ReturnSplitData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#ReturnSplitData)]
+    [!code-csharp[ReturnSplitData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#ReturnSplitData)]
 
-## <a name="build-and-train-the-model"></a><span data-ttu-id="56077-198">Vytvoření a trénování modelu</span><span class="sxs-lookup"><span data-stu-id="56077-198">Build and train the model</span></span>
+## <a name="build-and-train-the-model"></a><span data-ttu-id="92763-196">Vytvoření a trénování modelu</span><span class="sxs-lookup"><span data-stu-id="92763-196">Build and train the model</span></span>
 
-<span data-ttu-id="56077-199">Přidejte následující volání `BuildAndTrainModel`metody jako další řádek kódu v `Main()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-199">Add the following call to the `BuildAndTrainModel`method as the next line of code in the `Main()` method:</span></span>
+1. <span data-ttu-id="92763-197">Přidejte následující volání `BuildAndTrainModel`metody jako další řádek kódu v `Main()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-197">Add the following call to the `BuildAndTrainModel`method as the next line of code in the `Main()` method:</span></span>
 
-[!code-csharp[CallBuildAndTrainModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallBuildAndTrainModel)]
+    [!code-csharp[CallBuildAndTrainModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallBuildAndTrainModel)]
 
-<span data-ttu-id="56077-200">`BuildAndTrainModel()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="56077-200">The `BuildAndTrainModel()` method executes the following tasks:</span></span>
+    <span data-ttu-id="92763-198">`BuildAndTrainModel()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="92763-198">The `BuildAndTrainModel()` method executes the following tasks:</span></span>
 
-* <span data-ttu-id="56077-201">Extrahuje a transformuje data.</span><span class="sxs-lookup"><span data-stu-id="56077-201">Extracts and transforms the data.</span></span>
-* <span data-ttu-id="56077-202">Trénovat modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-202">Trains the model.</span></span>
-* <span data-ttu-id="56077-203">Předpovídá subjektivního hodnocení na základě dat testu.</span><span class="sxs-lookup"><span data-stu-id="56077-203">Predicts sentiment based on test data.</span></span>
-* <span data-ttu-id="56077-204">Vrátí hodnotu modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-204">Returns the model.</span></span>
+    * <span data-ttu-id="92763-199">Extrahuje a transformuje data.</span><span class="sxs-lookup"><span data-stu-id="92763-199">Extracts and transforms the data.</span></span>
+    * <span data-ttu-id="92763-200">Trénovat modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-200">Trains the model.</span></span>
+    * <span data-ttu-id="92763-201">Předpovídá subjektivního hodnocení na základě dat testu.</span><span class="sxs-lookup"><span data-stu-id="92763-201">Predicts sentiment based on test data.</span></span>
+    * <span data-ttu-id="92763-202">Vrátí hodnotu modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-202">Returns the model.</span></span>
 
-<span data-ttu-id="56077-205">Vytvořte `BuildAndTrainModel()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-205">Create the `BuildAndTrainModel()` method, just after the `Main()` method, using the following code:</span></span>
+2. <span data-ttu-id="92763-203">Vytvořte `BuildAndTrainModel()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-203">Create the `BuildAndTrainModel()` method, just after the `Main()` method, using the following code:</span></span>
+    
+    ```csharp
+    public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView splitTrainSet)
+    {
 
-```csharp
-public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView splitTrainSet)
-{
+    }
+    ```
 
-}
-```
+### <a name="extract-and-transform-the-data"></a><span data-ttu-id="92763-204">Extrahovat a transformaci dat</span><span class="sxs-lookup"><span data-stu-id="92763-204">Extract and transform the data</span></span>
 
-## <a name="extract-and-transform-the-data"></a><span data-ttu-id="56077-206">Extrahovat a transformaci dat</span><span class="sxs-lookup"><span data-stu-id="56077-206">Extract and transform the data</span></span>
+1. <span data-ttu-id="92763-205">Volání `FeaturizeText` jako další řádek kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-205">Call `FeaturizeText` as the next line of code:</span></span>
 
-<span data-ttu-id="56077-207">Volání `FeaturizeText` jako další řádek kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-207">Call `FeaturizeText` as the next line of code:</span></span>
+    [!code-csharp[FeaturizeText](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#FeaturizeText "Featurize the text")]
 
-[!code-csharp[FeaturizeText](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#FeaturizeText "Featurize the text")]
+    <span data-ttu-id="92763-206">`FeaturizeText()` Metoda v předchozím kódu převede textový sloupec (`SentimentText`) na číselný typ klíče `Features` sloupec používá algoritmu strojového učení a přidá ho jakou novou datovou sadu sloupce:</span><span class="sxs-lookup"><span data-stu-id="92763-206">The `FeaturizeText()` method in the previous code converts the text column (`SentimentText`) into a numeric key type `Features` column used by the machine learning algorithm and adds it as a new dataset column:</span></span>
 
-<span data-ttu-id="56077-208">`FeaturizeText()` Metoda v předchozím kódu převede textový sloupec (`SentimentText`) na číselný typ klíče `Features` sloupec používá algoritmu strojového učení a přidá ho jakou novou datovou sadu sloupce:</span><span class="sxs-lookup"><span data-stu-id="56077-208">The `FeaturizeText()` method in the previous code converts the text column (`SentimentText`) into a numeric key type `Features` column used by the machine learning algorithm and adds it as a new dataset column:</span></span>
+    |<span data-ttu-id="92763-207">SentimentText</span><span class="sxs-lookup"><span data-stu-id="92763-207">SentimentText</span></span>                         |<span data-ttu-id="92763-208">Mínění</span><span class="sxs-lookup"><span data-stu-id="92763-208">Sentiment</span></span> |<span data-ttu-id="92763-209">Funkce</span><span class="sxs-lookup"><span data-stu-id="92763-209">Features</span></span>              |
+    |--------------------------------------|----------|----------------------|
+    |<span data-ttu-id="92763-210">Waitress pomalý trochu ve službě.</span><span class="sxs-lookup"><span data-stu-id="92763-210">Waitress was a little slow in service.</span></span>|    <span data-ttu-id="92763-211">0</span><span class="sxs-lookup"><span data-stu-id="92763-211">0</span></span>     |<span data-ttu-id="92763-212">[0.76, 0.65, 0.44, …]</span><span class="sxs-lookup"><span data-stu-id="92763-212">[0.76, 0.65, 0.44, …]</span></span> |
+    |<span data-ttu-id="92763-213">Povrch ovšem není vhodné.</span><span class="sxs-lookup"><span data-stu-id="92763-213">Crust is not good.</span></span>                    |    <span data-ttu-id="92763-214">0</span><span class="sxs-lookup"><span data-stu-id="92763-214">0</span></span>     |<span data-ttu-id="92763-215">[0.98, 0.43, 0.54, …]</span><span class="sxs-lookup"><span data-stu-id="92763-215">[0.98, 0.43, 0.54, …]</span></span> |
+    |<span data-ttu-id="92763-216">WOW... Miluju toto místo.</span><span class="sxs-lookup"><span data-stu-id="92763-216">Wow... Loved this place.</span></span>              |    <span data-ttu-id="92763-217">1</span><span class="sxs-lookup"><span data-stu-id="92763-217">1</span></span>     |<span data-ttu-id="92763-218">[0.35, 0.73, 0.46, …]</span><span class="sxs-lookup"><span data-stu-id="92763-218">[0.35, 0.73, 0.46, …]</span></span> |
+    |<span data-ttu-id="92763-219">Služba se velmi výzvy.</span><span class="sxs-lookup"><span data-stu-id="92763-219">Service was very prompt.</span></span>              |    <span data-ttu-id="92763-220">1</span><span class="sxs-lookup"><span data-stu-id="92763-220">1</span></span>     |<span data-ttu-id="92763-221">[0.39, 0, 0.75, …]</span><span class="sxs-lookup"><span data-stu-id="92763-221">[0.39, 0, 0.75, …]</span></span>    |
 
-|<span data-ttu-id="56077-209">SentimentText</span><span class="sxs-lookup"><span data-stu-id="56077-209">SentimentText</span></span>                         |<span data-ttu-id="56077-210">Mínění</span><span class="sxs-lookup"><span data-stu-id="56077-210">Sentiment</span></span> |<span data-ttu-id="56077-211">Funkce</span><span class="sxs-lookup"><span data-stu-id="56077-211">Features</span></span>              |
-|--------------------------------------|----------|----------------------|
-|<span data-ttu-id="56077-212">Waitress pomalý trochu ve službě.</span><span class="sxs-lookup"><span data-stu-id="56077-212">Waitress was a little slow in service.</span></span>|    <span data-ttu-id="56077-213">0</span><span class="sxs-lookup"><span data-stu-id="56077-213">0</span></span>     |<span data-ttu-id="56077-214">[0.76, 0.65, 0.44, …]</span><span class="sxs-lookup"><span data-stu-id="56077-214">[0.76, 0.65, 0.44, …]</span></span> |
-|<span data-ttu-id="56077-215">Povrch ovšem není vhodné.</span><span class="sxs-lookup"><span data-stu-id="56077-215">Crust is not good.</span></span>                    |    <span data-ttu-id="56077-216">0</span><span class="sxs-lookup"><span data-stu-id="56077-216">0</span></span>     |<span data-ttu-id="56077-217">[0.98, 0.43, 0.54, …]</span><span class="sxs-lookup"><span data-stu-id="56077-217">[0.98, 0.43, 0.54, …]</span></span> |
-|<span data-ttu-id="56077-218">WOW... Miluju toto místo.</span><span class="sxs-lookup"><span data-stu-id="56077-218">Wow... Loved this place.</span></span>              |    <span data-ttu-id="56077-219">1</span><span class="sxs-lookup"><span data-stu-id="56077-219">1</span></span>     |<span data-ttu-id="56077-220">[0.35, 0.73, 0.46, …]</span><span class="sxs-lookup"><span data-stu-id="56077-220">[0.35, 0.73, 0.46, …]</span></span> |
-|<span data-ttu-id="56077-221">Služba se velmi výzvy.</span><span class="sxs-lookup"><span data-stu-id="56077-221">Service was very prompt.</span></span>              |    <span data-ttu-id="56077-222">1</span><span class="sxs-lookup"><span data-stu-id="56077-222">1</span></span>     |<span data-ttu-id="56077-223">[0.39, 0, 0.75, …]</span><span class="sxs-lookup"><span data-stu-id="56077-223">[0.39, 0, 0.75, …]</span></span>    |
+### <a name="add-a-learning-algorithm"></a><span data-ttu-id="92763-222">Přidat algoritmu učení</span><span class="sxs-lookup"><span data-stu-id="92763-222">Add a learning algorithm</span></span>
 
-## <a name="add-a-learning-algorithm"></a><span data-ttu-id="56077-224">Přidat algoritmu učení</span><span class="sxs-lookup"><span data-stu-id="56077-224">Add a learning algorithm</span></span>
+<span data-ttu-id="92763-223">Tato aplikace používá klasifikační algoritmus, který slouží ke kategorizaci položky nebo řádky s daty.</span><span class="sxs-lookup"><span data-stu-id="92763-223">This app uses a classification algorithm that categorizes items or rows of data.</span></span> <span data-ttu-id="92763-224">Aplikace slouží ke kategorizaci komentáře webu jako kladné nebo záporné, takže pomocí binární klasifikace úlohy.</span><span class="sxs-lookup"><span data-stu-id="92763-224">The app categorizes website comments as either positive or negative, so use the binary classification task.</span></span>
 
-### <a name="about-the-classification-task"></a><span data-ttu-id="56077-225">O úloze klasifikace</span><span class="sxs-lookup"><span data-stu-id="56077-225">About the classification task</span></span>
+<span data-ttu-id="92763-225">Přidat úlohy strojového učení do definice transformace dat přidáním následujícího kódu jako další řádek kódu v `BuildAndTrainModel()`:</span><span class="sxs-lookup"><span data-stu-id="92763-225">Append the machine learning task to the data transformation definitions by adding the following as the next line of code in `BuildAndTrainModel()`:</span></span>
 
-<span data-ttu-id="56077-226">"To je A nebo B?"</span><span class="sxs-lookup"><span data-stu-id="56077-226">"Is it A or B?"</span></span>
-
-![algoritmu strojového učení klasifikace](./media/sentiment-analysis/classification.png)
-
-<span data-ttu-id="56077-228">Klasifikace je algoritmus strojového učení, který používá data **určit** kategorie, typ nebo třída položky nebo řádek dat a je často jedním z následujících typů:</span><span class="sxs-lookup"><span data-stu-id="56077-228">Classification is a machine learning algorithm that uses data to **determine** the category, type, or class of an item or row of data and is frequently one of the following types:</span></span>
-
-* <span data-ttu-id="56077-229">Binární soubor: buď A a B.</span><span class="sxs-lookup"><span data-stu-id="56077-229">Binary: either A or B.</span></span>
-* <span data-ttu-id="56077-230">Multiclass: více kategorií, které lze předpovídat pomocí jednoho modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-230">Multiclass: multiple categories that can be predicted by using a single model.</span></span>
-
-<span data-ttu-id="56077-231">Protože webu komentáře zapotřebí klasifikováno jako kladné nebo záporné, můžete pomocí binární klasifikace úlohy.</span><span class="sxs-lookup"><span data-stu-id="56077-231">Because the website comments need to be classified as either positive or negative, you use the Binary Classification task.</span></span>
-
-<span data-ttu-id="56077-232">Přidat úlohy strojového učení do definice transformace dat přidáním následujícího kódu jako další řádek kódu v `BuildAndTrainModel()`:</span><span class="sxs-lookup"><span data-stu-id="56077-232">Append the machine learning task to the data transformation definitions by adding the following as the next line of code in `BuildAndTrainModel()`:</span></span>
-
+    
 [!code-csharp[SdcaLogisticRegressionBinaryTrainer](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddTrainer "Add a SdcaLogisticRegressionBinaryTrainer")]
 
-<span data-ttu-id="56077-233">[SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) je vaše klasifikace cvičení algoritmu.</span><span class="sxs-lookup"><span data-stu-id="56077-233">The [SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) is your classification training algorithm.</span></span> <span data-ttu-id="56077-234">To se připojí `estimator` a přijímá natrénuje `SentimentText` (`Features`) a `Label` vstupní parametry učit se z historických dat.</span><span class="sxs-lookup"><span data-stu-id="56077-234">This is appended to the `estimator` and accepts the featurized `SentimentText` (`Features`) and the `Label` input parameters to learn from the historic data.</span></span>
+    
+<span data-ttu-id="92763-226">[SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) je vaše klasifikace cvičení algoritmu.</span><span class="sxs-lookup"><span data-stu-id="92763-226">The [SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) is your classification training algorithm.</span></span> <span data-ttu-id="92763-227">To se připojí `estimator` a přijímá natrénuje `SentimentText` (`Features`) a `Label` vstupní parametry učit se z historických dat.</span><span class="sxs-lookup"><span data-stu-id="92763-227">This is appended to the `estimator` and accepts the featurized `SentimentText` (`Features`) and the `Label` input parameters to learn from the historic data.</span></span>
 
-## <a name="train-the-model"></a><span data-ttu-id="56077-235">Trénování modelu</span><span class="sxs-lookup"><span data-stu-id="56077-235">Train the model</span></span>
+### <a name="train-the-model"></a><span data-ttu-id="92763-228">Trénování modelu</span><span class="sxs-lookup"><span data-stu-id="92763-228">Train the model</span></span>
 
-<span data-ttu-id="56077-236">Přizpůsobit modelu, který má `splitTrainSet` data a vrátit trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `BuildAndTrainModel()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-236">Fit the model to the `splitTrainSet` data and return the trained model by adding the following as the next line of code in the `BuildAndTrainModel()` method:</span></span>
+<span data-ttu-id="92763-229">Přizpůsobit modelu, který má `splitTrainSet` data a vrátit trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `BuildAndTrainModel()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-229">Fit the model to the `splitTrainSet` data and return the trained model by adding the following as the next line of code in the `BuildAndTrainModel()` method:</span></span>
 
 [!code-csharp[TrainModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#TrainModel "Train the model")]
 
-<span data-ttu-id="56077-237">[Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) metoda trénovat modelu transformace datové sady a aplikováním školení.</span><span class="sxs-lookup"><span data-stu-id="56077-237">The [Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) method trains your model by transforming the dataset and applying the training.</span></span>
+<span data-ttu-id="92763-230">[Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) metoda trénovat modelu transformace datové sady a aplikováním školení.</span><span class="sxs-lookup"><span data-stu-id="92763-230">The [Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) method trains your model by transforming the dataset and applying the training.</span></span>
 
-### <a name="return-the-model-trained-to-use-for-evaluation"></a><span data-ttu-id="56077-238">Vrátí že model se trénuje má použít pro hodnocení</span><span class="sxs-lookup"><span data-stu-id="56077-238">Return the model trained to use for evaluation</span></span>
+### <a name="return-the-model-trained-to-use-for-evaluation"></a><span data-ttu-id="92763-231">Vrátí že model se trénuje má použít pro hodnocení</span><span class="sxs-lookup"><span data-stu-id="92763-231">Return the model trained to use for evaluation</span></span>
 
- <span data-ttu-id="56077-239">Model na konci vrátit `BuildAndTrainModel()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-239">Return the model at the end of the `BuildAndTrainModel()` method:</span></span>
+ <span data-ttu-id="92763-232">Model na konci vrátit `BuildAndTrainModel()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-232">Return the model at the end of the `BuildAndTrainModel()` method:</span></span>
 
 [!code-csharp[ReturnModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#ReturnModel "Return the model")]
 
-## <a name="evaluate-the-model"></a><span data-ttu-id="56077-240">Vyhodnocení modelu</span><span class="sxs-lookup"><span data-stu-id="56077-240">Evaluate the model</span></span>
+## <a name="evaluate-the-model"></a><span data-ttu-id="92763-233">Vyhodnocení modelu</span><span class="sxs-lookup"><span data-stu-id="92763-233">Evaluate the model</span></span>
 
-<span data-ttu-id="56077-241">Po model se trénuje, slouží k vyhodnocení výkonu modelu kontroly kvality a ověřování testovací data.</span><span class="sxs-lookup"><span data-stu-id="56077-241">After your model is trained, use your test data to evaluate how your model is performing for quality assurance and validation.</span></span> <span data-ttu-id="56077-242">Vytvořte `Evaluate()` metoda, hned za `BuildAndTrainModel()`, následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="56077-242">Create the `Evaluate()` method, just after `BuildAndTrainModel()`, with the following code:</span></span>
+<span data-ttu-id="92763-234">Poté, co váš model se trénuje, použijte test ověřit data výkonu modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-234">After your model is trained, use your test data validate the model's performance.</span></span> 
 
-```csharp
-public static void Evaluate(MLContext mlContext, ITransformer model, IDataView splitTestSet)
-{
+1. <span data-ttu-id="92763-235">Vytvořte `Evaluate()` metoda, hned za `BuildAndTrainModel()`, následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="92763-235">Create the `Evaluate()` method, just after `BuildAndTrainModel()`, with the following code:</span></span>
 
-}
-```
+    ```csharp
+    public static void Evaluate(MLContext mlContext, ITransformer model, IDataView splitTestSet)
+    {
 
-<span data-ttu-id="56077-243">`Evaluate()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="56077-243">The `Evaluate()` method executes the following tasks:</span></span>
+    }
+    ```
 
-* <span data-ttu-id="56077-244">Načte datovou sadu testů.</span><span class="sxs-lookup"><span data-stu-id="56077-244">Loads the test dataset.</span></span>
-* <span data-ttu-id="56077-245">Chyba při vyhodnocování BinaryClassification vytvoří.</span><span class="sxs-lookup"><span data-stu-id="56077-245">Creates the BinaryClassification evaluator.</span></span>
-* <span data-ttu-id="56077-246">Vyhodnotí modelu a vytvoří metriky.</span><span class="sxs-lookup"><span data-stu-id="56077-246">Evaluates the model and creates metrics.</span></span>
-* <span data-ttu-id="56077-247">Zobrazuje metriky.</span><span class="sxs-lookup"><span data-stu-id="56077-247">Displays the metrics.</span></span>
+    <span data-ttu-id="92763-236">`Evaluate()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="92763-236">The `Evaluate()` method executes the following tasks:</span></span>
 
-<span data-ttu-id="56077-248">Přidejte volání do nové metody z `Main()` metody, v rámci `BuildAndTrainModel()` volání metody, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-248">Add a call to the new method from the `Main()` method, right under the `BuildAndTrainModel()` method call, using the following code:</span></span>
+    * <span data-ttu-id="92763-237">Načte datovou sadu testů.</span><span class="sxs-lookup"><span data-stu-id="92763-237">Loads the test dataset.</span></span>
+    * <span data-ttu-id="92763-238">Chyba při vyhodnocování BinaryClassification vytvoří.</span><span class="sxs-lookup"><span data-stu-id="92763-238">Creates the BinaryClassification evaluator.</span></span>
+    * <span data-ttu-id="92763-239">Vyhodnotí modelu a vytvoří metriky.</span><span class="sxs-lookup"><span data-stu-id="92763-239">Evaluates the model and creates metrics.</span></span>
+    * <span data-ttu-id="92763-240">Zobrazuje metriky.</span><span class="sxs-lookup"><span data-stu-id="92763-240">Displays the metrics.</span></span>
 
-[!code-csharp[CallEvaluate](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallEvaluate "Call the Evaluate method")]
+2. <span data-ttu-id="92763-241">Přidejte volání do nové metody z `Main()` metody, v rámci `BuildAndTrainModel()` volání metody, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-241">Add a call to the new method from the `Main()` method, right under the `BuildAndTrainModel()` method call, using the following code:</span></span>
 
-<span data-ttu-id="56077-249">Transformace `splitTestSet` data přidáním následujícího kódu do `Evaluate()`:</span><span class="sxs-lookup"><span data-stu-id="56077-249">Transform the `splitTestSet` data by adding the following code to `Evaluate()`:</span></span>
+    [!code-csharp[CallEvaluate](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallEvaluate "Call the Evaluate method")]
 
-[!code-csharp[PredictWithTransformer](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#TransformData "Predict using the Transformer")]
+3. <span data-ttu-id="92763-242">Transformace `splitTestSet` data přidáním následujícího kódu do `Evaluate()`:</span><span class="sxs-lookup"><span data-stu-id="92763-242">Transform the `splitTestSet` data by adding the following code to `Evaluate()`:</span></span>
 
-<span data-ttu-id="56077-250">Předchozí kód používá [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metoda k následné predikci pro více poskytuje vstupní řádky z datové sady testů.</span><span class="sxs-lookup"><span data-stu-id="56077-250">The previous code uses the [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) method to make predictions for multiple provided input rows of a test dataset.</span></span>
+    [!code-csharp[PredictWithTransformer](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#TransformData "Predict using the Transformer")]
 
-<span data-ttu-id="56077-251">Přidáním následujícího kódu jako další řádek kódu ve vyhodnocení modelu `Evaluate()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-251">Evaluate the model by adding the following as the next line of code in the `Evaluate()` method:</span></span>
+    <span data-ttu-id="92763-243">Předchozí kód používá [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metoda k následné predikci pro více poskytuje vstupní řádky z datové sady testů.</span><span class="sxs-lookup"><span data-stu-id="92763-243">The previous code uses the [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) method to make predictions for multiple provided input rows of a test dataset.</span></span>
 
-[!code-csharp[ComputeMetrics](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Evaluate "Compute Metrics")]
+4. <span data-ttu-id="92763-244">Přidáním následujícího kódu jako další řádek kódu ve vyhodnocení modelu `Evaluate()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-244">Evaluate the model by adding the following as the next line of code in the `Evaluate()` method:</span></span>
 
-<span data-ttu-id="56077-252">Jakmile budete mít do predikce. Nastavte (`predictions`), [Evaluate()](xref:Microsoft.ML.BinaryClassificationCatalog.Evaluate%2A) metoda vyhodnocuje modelu, který porovnává predikované hodnoty s skutečnou `Labels` datovou sadu testů a vrátí [ CalibratedBinaryClassificationMetrics](xref:Microsoft.ML.Data.CalibratedBinaryClassificationMetrics) objektu, na jaký je výkon modelu.</span><span class="sxs-lookup"><span data-stu-id="56077-252">Once you have the prediction set (`predictions`), the [Evaluate()](xref:Microsoft.ML.BinaryClassificationCatalog.Evaluate%2A) method assesses the model, which compares the predicted values with the actual `Labels` in the test dataset and returns a [CalibratedBinaryClassificationMetrics](xref:Microsoft.ML.Data.CalibratedBinaryClassificationMetrics) object on how the model is performing.</span></span>
+    [!code-csharp[ComputeMetrics](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Evaluate "Compute Metrics")]
 
-### <a name="displaying-the-metrics-for-model-validation"></a><span data-ttu-id="56077-253">Zobrazení metrik pro ověření modelu</span><span class="sxs-lookup"><span data-stu-id="56077-253">Displaying the metrics for model validation</span></span>
+<span data-ttu-id="92763-245">Jakmile budete mít do predikce. Nastavte (`predictions`), [Evaluate()](xref:Microsoft.ML.BinaryClassificationCatalog.Evaluate%2A) metoda vyhodnocuje modelu, který porovnává predikované hodnoty s skutečnou `Labels` datovou sadu testů a vrátí [ CalibratedBinaryClassificationMetrics](xref:Microsoft.ML.Data.CalibratedBinaryClassificationMetrics) objektu, na jaký je výkon modelu.</span><span class="sxs-lookup"><span data-stu-id="92763-245">Once you have the prediction set (`predictions`), the [Evaluate()](xref:Microsoft.ML.BinaryClassificationCatalog.Evaluate%2A) method assesses the model, which compares the predicted values with the actual `Labels` in the test dataset and returns a [CalibratedBinaryClassificationMetrics](xref:Microsoft.ML.Data.CalibratedBinaryClassificationMetrics) object on how the model is performing.</span></span>
 
-<span data-ttu-id="56077-254">Použijte následující kód k zobrazení metriky:</span><span class="sxs-lookup"><span data-stu-id="56077-254">Use the following code to display the metrics:</span></span>
+### <a name="displaying-the-metrics-for-model-validation"></a><span data-ttu-id="92763-246">Zobrazení metrik pro ověření modelu</span><span class="sxs-lookup"><span data-stu-id="92763-246">Displaying the metrics for model validation</span></span>
+
+<span data-ttu-id="92763-247">Použijte následující kód k zobrazení metriky:</span><span class="sxs-lookup"><span data-stu-id="92763-247">Use the following code to display the metrics:</span></span>
 
 [!code-csharp[DisplayMetrics](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DisplayMetrics "Display selected metrics")]
 
-* <span data-ttu-id="56077-255">`Accuracy` Metrika získá přesnost modelu, který je poměr správné predikce v testovací sadě.</span><span class="sxs-lookup"><span data-stu-id="56077-255">The `Accuracy` metric gets the accuracy of a model, which is the proportion of correct predictions in the test set.</span></span>
+* <span data-ttu-id="92763-248">`Accuracy` Metrika získá přesnost modelu, který je poměr správné predikce v testovací sadě.</span><span class="sxs-lookup"><span data-stu-id="92763-248">The `Accuracy` metric gets the accuracy of a model, which is the proportion of correct predictions in the test set.</span></span>
 
-* <span data-ttu-id="56077-256">`AreaUnderRocCurve` Metrika vyjadřuje důvěru modelu je správně klasifikace třídy kladné a záporné.</span><span class="sxs-lookup"><span data-stu-id="56077-256">The `AreaUnderRocCurve` metric indicates how confident the model is correctly classifying the positive and negative classes.</span></span> <span data-ttu-id="56077-257">Chcete, aby `AreaUnderRocCurve` bude blízko jeden nejvíce.</span><span class="sxs-lookup"><span data-stu-id="56077-257">You want the `AreaUnderRocCurve` to be as close to one as possible.</span></span>
+* <span data-ttu-id="92763-249">`AreaUnderRocCurve` Metrika vyjadřuje důvěru modelu je správně klasifikace třídy kladné a záporné.</span><span class="sxs-lookup"><span data-stu-id="92763-249">The `AreaUnderRocCurve` metric indicates how confident the model is correctly classifying the positive and negative classes.</span></span> <span data-ttu-id="92763-250">Chcete, aby `AreaUnderRocCurve` bude blízko jeden nejvíce.</span><span class="sxs-lookup"><span data-stu-id="92763-250">You want the `AreaUnderRocCurve` to be as close to one as possible.</span></span>
 
-* <span data-ttu-id="56077-258">`F1Score` Metrika získá modelu F1 skóre, které je míra rovnováhu mezi [přesnost](../resources/glossary.md#precision) a [spojené s vracením](../resources/glossary.md#recall).</span><span class="sxs-lookup"><span data-stu-id="56077-258">The `F1Score` metric gets the model's F1 score, which is a measure of balance between [precision](../resources/glossary.md#precision) and [recall](../resources/glossary.md#recall).</span></span>  <span data-ttu-id="56077-259">Chcete, aby `F1Score` bude blízko jeden nejvíce.</span><span class="sxs-lookup"><span data-stu-id="56077-259">You want the `F1Score` to be as close to one as possible.</span></span>
+* <span data-ttu-id="92763-251">`F1Score` Metrika získá modelu F1 skóre, které je míra rovnováhu mezi [přesnost](../resources/glossary.md#precision) a [spojené s vracením](../resources/glossary.md#recall).</span><span class="sxs-lookup"><span data-stu-id="92763-251">The `F1Score` metric gets the model's F1 score, which is a measure of balance between [precision](../resources/glossary.md#precision) and [recall](../resources/glossary.md#recall).</span></span>  <span data-ttu-id="92763-252">Chcete, aby `F1Score` bude blízko jeden nejvíce.</span><span class="sxs-lookup"><span data-stu-id="92763-252">You want the `F1Score` to be as close to one as possible.</span></span>
 
-## <a name="predict-the-test-data-outcome"></a><span data-ttu-id="56077-260">Předpověď data výsledek testu</span><span class="sxs-lookup"><span data-stu-id="56077-260">Predict the test data outcome</span></span>
+### <a name="predict-the-test-data-outcome"></a><span data-ttu-id="92763-253">Předpověď data výsledek testu</span><span class="sxs-lookup"><span data-stu-id="92763-253">Predict the test data outcome</span></span>
 
-<span data-ttu-id="56077-261">Vytvořte `UseModelWithSingleItem()` metoda, hned za `Evaluate()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-261">Create the `UseModelWithSingleItem()` method, just after the `Evaluate()` method, using the following code:</span></span>
+1. <span data-ttu-id="92763-254">Vytvořte `UseModelWithSingleItem()` metoda, hned za `Evaluate()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-254">Create the `UseModelWithSingleItem()` method, just after the `Evaluate()` method, using the following code:</span></span>
 
-```csharp
-private static void UseModelWithSingleItem(MLContext mlContext, ITransformer model)
-{
+    ```csharp
+    private static void UseModelWithSingleItem(MLContext mlContext, ITransformer model)
+    {
 
-}
-```
+    }
+    ```
 
-<span data-ttu-id="56077-262">`UseModelWithSingleItem()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="56077-262">The `UseModelWithSingleItem()` method executes the following tasks:</span></span>
+    <span data-ttu-id="92763-255">`UseModelWithSingleItem()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="92763-255">The `UseModelWithSingleItem()` method executes the following tasks:</span></span>
 
-* <span data-ttu-id="56077-263">Vytvoří jeden komentář testovací data.</span><span class="sxs-lookup"><span data-stu-id="56077-263">Creates a single comment of test data.</span></span>
-* <span data-ttu-id="56077-264">Předpovídá subjektivního hodnocení na základě dat testu.</span><span class="sxs-lookup"><span data-stu-id="56077-264">Predicts sentiment based on test data.</span></span>
-* <span data-ttu-id="56077-265">Kombinuje testovací data a předpovědi pro vytváření sestav.</span><span class="sxs-lookup"><span data-stu-id="56077-265">Combines test data and predictions for reporting.</span></span>
-* <span data-ttu-id="56077-266">Zobrazí predikované výsledky.</span><span class="sxs-lookup"><span data-stu-id="56077-266">Displays the predicted results.</span></span>
+    * <span data-ttu-id="92763-256">Vytvoří jeden komentář testovací data.</span><span class="sxs-lookup"><span data-stu-id="92763-256">Creates a single comment of test data.</span></span>
+    * <span data-ttu-id="92763-257">Předpovídá subjektivního hodnocení na základě dat testu.</span><span class="sxs-lookup"><span data-stu-id="92763-257">Predicts sentiment based on test data.</span></span>
+    * <span data-ttu-id="92763-258">Kombinuje testovací data a předpovědi pro vytváření sestav.</span><span class="sxs-lookup"><span data-stu-id="92763-258">Combines test data and predictions for reporting.</span></span>
+    * <span data-ttu-id="92763-259">Zobrazí predikované výsledky.</span><span class="sxs-lookup"><span data-stu-id="92763-259">Displays the predicted results.</span></span>
 
-<span data-ttu-id="56077-267">Přidejte volání do nové metody z `Main()` metody, v rámci `Evaluate()` volání metody, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-267">Add a call to the new method from the `Main()` method, right under the `Evaluate()` method call, using the following code:</span></span>
+2. <span data-ttu-id="92763-260">Přidejte volání do nové metody z `Main()` metody, v rámci `Evaluate()` volání metody, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-260">Add a call to the new method from the `Main()` method, right under the `Evaluate()` method call, using the following code:</span></span>
 
-[!code-csharp[CallUseModelWithSingleItem](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithSingleItem "Call the UseModelWithSingleItem method")]
+    [!code-csharp[CallUseModelWithSingleItem](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithSingleItem "Call the UseModelWithSingleItem method")]
 
-<span data-ttu-id="56077-268">[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je vhodné rozhraní API, což vám umožní předat a pak proveďte predikcí na jednu instanci data.</span><span class="sxs-lookup"><span data-stu-id="56077-268">The [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) is a convenience API, which allows you to pass in and then perform a prediction on a single instance of data.</span></span> <span data-ttu-id="56077-269">Přidejte následující kód k vytvoření jako první řádek `Predict()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-269">add the following code to create as the first line in the `Predict()` Method:</span></span>
+3. <span data-ttu-id="92763-261">Přidejte následující kód k vytvoření jako první řádek `Predict()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-261">Add the following code to create as the first line in the `Predict()` Method:</span></span>
 
-[!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreatePredictionEngine1 "Create the PredictionEngine")]
+    [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreatePredictionEngine1 "Create the PredictionEngine")]
+
+    <span data-ttu-id="92763-262">[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je vhodné rozhraní API, což vám umožní předat a pak proveďte predikcí na jednu instanci data.</span><span class="sxs-lookup"><span data-stu-id="92763-262">The [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) is a convenience API, which allows you to pass in and then perform a prediction on a single instance of data.</span></span>
   
-<span data-ttu-id="56077-270">Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict()` metodu tak, že vytvoříte instanci `SentimentData`:</span><span class="sxs-lookup"><span data-stu-id="56077-270">Add a comment to test the trained model's prediction in the `Predict()` method by creating an instance of `SentimentData`:</span></span>
+4. <span data-ttu-id="92763-263">Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict()` metodu tak, že vytvoříte instanci `SentimentData`:</span><span class="sxs-lookup"><span data-stu-id="92763-263">Add a comment to test the trained model's prediction in the `Predict()` method by creating an instance of `SentimentData`:</span></span>
 
-[!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssue1 "Create test data for single prediction")]
+    [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssue1 "Create test data for single prediction")]
 
-<span data-ttu-id="56077-271">Předání dat komentář test `Prediction Engine` přidáním následujícího kódu jako další řádky kódu ve `UseModelWithSingleItem()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-271">Pass the test comment data to the `Prediction Engine` by adding the following as the next lines of code in the `UseModelWithSingleItem()` method:</span></span>
+5. <span data-ttu-id="92763-264">Předání dat komentář test `Prediction Engine` přidáním následujícího kódu jako další řádky kódu ve `UseModelWithSingleItem()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-264">Pass the test comment data to the `Prediction Engine` by adding the following as the next lines of code in the `UseModelWithSingleItem()` method:</span></span>
 
-[!code-csharp[Predict](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Predict "Create a prediction of sentiment")]
+    [!code-csharp[Predict](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Predict "Create a prediction of sentiment")]
 
-<span data-ttu-id="56077-272">[Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) predikcí na jednom řádku dat díky funkce.</span><span class="sxs-lookup"><span data-stu-id="56077-272">The [Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) function makes a prediction on a single row of data.</span></span>
+    <span data-ttu-id="92763-265">[Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) predikcí na jednom řádku dat díky funkce.</span><span class="sxs-lookup"><span data-stu-id="92763-265">The [Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) function makes a prediction on a single row of data.</span></span>
 
-### <a name="use-the-model-prediction"></a><span data-ttu-id="56077-273">Použití modelu: předpověď</span><span class="sxs-lookup"><span data-stu-id="56077-273">Use the model: prediction</span></span>
+6. <span data-ttu-id="92763-266">Zobrazení `SentimentText` a odpovídající předpovědí mínění pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-266">Display `SentimentText` and corresponding sentiment prediction using the following code:</span></span>
 
-<span data-ttu-id="56077-274">Zobrazení `SentimentText` a odpovídající předpovědí mínění pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-274">Display `SentimentText` and corresponding sentiment prediction using the following code:</span></span>
+    [!code-csharp[OutputPrediction](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#OutputPrediction "Display prediction output")]
 
-[!code-csharp[OutputPrediction](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#OutputPrediction "Display prediction output")]
+## <a name="use-the-model-for-prediction"></a><span data-ttu-id="92763-267">Použití modelu pro předpověď</span><span class="sxs-lookup"><span data-stu-id="92763-267">Use the model for prediction</span></span>
 
-## <a name="deploy-and-predict-batch-items"></a><span data-ttu-id="56077-275">Nasazení a předvídání položky služby batch</span><span class="sxs-lookup"><span data-stu-id="56077-275">Deploy and predict batch items</span></span>
+### <a name="deploy-and-predict-batch-items"></a><span data-ttu-id="92763-268">Nasazení a předvídání položky služby batch</span><span class="sxs-lookup"><span data-stu-id="92763-268">Deploy and predict batch items</span></span>
 
-<span data-ttu-id="56077-276">Vytvořte `UseModelWithBatchItems()` metoda, hned za `UseModelWithSingleItem()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-276">Create the `UseModelWithBatchItems()` method, just after the `UseModelWithSingleItem()` method, using the following code:</span></span>
+1. <span data-ttu-id="92763-269">Vytvořte `UseModelWithBatchItems()` metoda, hned za `UseModelWithSingleItem()` metodu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-269">Create the `UseModelWithBatchItems()` method, just after the `UseModelWithSingleItem()` method, using the following code:</span></span>
 
-```csharp
-public static void UseModelWithBatchItems(MLContext mlContext)
-{
+    ```csharp
+    public static void UseModelWithBatchItems(MLContext mlContext)
+    {
 
-}
-```
+    }
+    ```
 
-<span data-ttu-id="56077-277">`UseModelWithBatchItems()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="56077-277">The `UseModelWithBatchItems()` method executes the following tasks:</span></span>
+    <span data-ttu-id="92763-270">`UseModelWithBatchItems()` Metoda spustí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="92763-270">The `UseModelWithBatchItems()` method executes the following tasks:</span></span>
 
-* <span data-ttu-id="56077-278">Vytvoří služby batch testovací data.</span><span class="sxs-lookup"><span data-stu-id="56077-278">Creates batch test data.</span></span>
-* <span data-ttu-id="56077-279">Předpovídá subjektivního hodnocení na základě dat testu.</span><span class="sxs-lookup"><span data-stu-id="56077-279">Predicts sentiment based on test data.</span></span>
-* <span data-ttu-id="56077-280">Kombinuje testovací data a předpovědi pro vytváření sestav.</span><span class="sxs-lookup"><span data-stu-id="56077-280">Combines test data and predictions for reporting.</span></span>
-* <span data-ttu-id="56077-281">Zobrazí predikované výsledky.</span><span class="sxs-lookup"><span data-stu-id="56077-281">Displays the predicted results.</span></span>
+    * <span data-ttu-id="92763-271">Vytvoří služby batch testovací data.</span><span class="sxs-lookup"><span data-stu-id="92763-271">Creates batch test data.</span></span>
+    * <span data-ttu-id="92763-272">Předpovídá subjektivního hodnocení na základě dat testu.</span><span class="sxs-lookup"><span data-stu-id="92763-272">Predicts sentiment based on test data.</span></span>
+    * <span data-ttu-id="92763-273">Kombinuje testovací data a předpovědi pro vytváření sestav.</span><span class="sxs-lookup"><span data-stu-id="92763-273">Combines test data and predictions for reporting.</span></span>
+    * <span data-ttu-id="92763-274">Zobrazí predikované výsledky.</span><span class="sxs-lookup"><span data-stu-id="92763-274">Displays the predicted results.</span></span>
 
-<span data-ttu-id="56077-282">Přidejte volání do nové metody z `Main` metody, v rámci `UseModelWithSingleItem()` volání metody, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-282">Add a call to the new method from the `Main` method, right under the `UseModelWithSingleItem()` method call, using the following code:</span></span>
+2. <span data-ttu-id="92763-275">Přidejte volání do nové metody z `Main` metody, v rámci `UseModelWithSingleItem()` volání metody, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-275">Add a call to the new method from the `Main` method, right under the `UseModelWithSingleItem()` method call, using the following code:</span></span>
 
-[!code-csharp[CallPredictModelBatchItems](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithBatchItems "Call the CallUseModelWithBatchItems method")]
+    [!code-csharp[CallPredictModelBatchItems](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithBatchItems "Call the CallUseModelWithBatchItems method")]
 
-<span data-ttu-id="56077-283">Přidat nějaké komentáře k otestování trénovaného modelu prognózy v `UseModelWithBatchItems()` metody:</span><span class="sxs-lookup"><span data-stu-id="56077-283">Add some comments to test the trained model's predictions in the `UseModelWithBatchItems()` method:</span></span>
+3. <span data-ttu-id="92763-276">Přidat nějaké komentáře k otestování trénovaného modelu prognózy v `UseModelWithBatchItems()` metody:</span><span class="sxs-lookup"><span data-stu-id="92763-276">Add some comments to test the trained model's predictions in the `UseModelWithBatchItems()` method:</span></span>
 
-[!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssues "Create test data for predictions")]
+    [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssues "Create test data for predictions")]
 
-### <a name="use-the-model-for-prediction"></a><span data-ttu-id="56077-284">Použití modelu pro předpověď</span><span class="sxs-lookup"><span data-stu-id="56077-284">Use the model for prediction</span></span>
+### <a name="predict-comment-sentiment"></a><span data-ttu-id="92763-277">Předpověď mínění komentář</span><span class="sxs-lookup"><span data-stu-id="92763-277">Predict comment sentiment</span></span>
 
-<span data-ttu-id="56077-285">Použít model k predikci komentář data subjektivního hodnocení s využitím [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metody:</span><span class="sxs-lookup"><span data-stu-id="56077-285">Use the model to predict the comment data sentiment using the [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) method:</span></span>
+<span data-ttu-id="92763-278">Použít model k predikci komentář data subjektivního hodnocení s využitím [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metody:</span><span class="sxs-lookup"><span data-stu-id="92763-278">Use the model to predict the comment data sentiment using the [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) method:</span></span>
 
 [!code-csharp[Predict](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Prediction "Create predictions of sentiments")]
 
-### <a name="combine-and-display-the-predictions"></a><span data-ttu-id="56077-286">Spojit a zobrazit předpovědi</span><span class="sxs-lookup"><span data-stu-id="56077-286">Combine and display the predictions</span></span>
+### <a name="combine-and-display-the-predictions"></a><span data-ttu-id="92763-279">Spojit a zobrazit předpovědi</span><span class="sxs-lookup"><span data-stu-id="92763-279">Combine and display the predictions</span></span>
 
-<span data-ttu-id="56077-287">Vytvořte hlavičku pro předpovědi pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="56077-287">Create a header for the predictions using the following code:</span></span>
+<span data-ttu-id="92763-280">Vytvořte hlavičku pro předpovědi pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="92763-280">Create a header for the predictions using the following code:</span></span>
 
 [!code-csharp[OutputHeaders](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddInfoMessage "Display prediction outputs")]
 
-<span data-ttu-id="56077-288">Protože `SentimentPrediction` zděděno z `SentimentData`, `Transform()` metoda vyplní `SentimentText` s předpokládanou pole.</span><span class="sxs-lookup"><span data-stu-id="56077-288">Because `SentimentPrediction` inherited from `SentimentData`, the `Transform()` method populated `SentimentText` with the predicted fields.</span></span> <span data-ttu-id="56077-289">Procesu ML.NET zpracovává, jednotlivé komponenty přidá sloupce, a to usnadňuje zobrazení výsledků:</span><span class="sxs-lookup"><span data-stu-id="56077-289">As the ML.NET process processes, each component adds columns, and this makes it easy to display the results:</span></span>
+<span data-ttu-id="92763-281">Protože `SentimentPrediction` je zděděno od `SentimentData`, `Transform()` metoda vyplní `SentimentText` s předpokládanou pole.</span><span class="sxs-lookup"><span data-stu-id="92763-281">Because `SentimentPrediction` is inherited from `SentimentData`, the `Transform()` method populated `SentimentText` with the predicted fields.</span></span> <span data-ttu-id="92763-282">Procesu ML.NET zpracovává, jednotlivé komponenty přidá sloupce, a to usnadňuje zobrazení výsledků:</span><span class="sxs-lookup"><span data-stu-id="92763-282">As the ML.NET process processes, each component adds columns, and this makes it easy to display the results:</span></span>
 
 [!code-csharp[DisplayPredictions](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DisplayResults "Display the predictions")]
 
-## <a name="results"></a><span data-ttu-id="56077-290">Výsledky</span><span class="sxs-lookup"><span data-stu-id="56077-290">Results</span></span>
+## <a name="results"></a><span data-ttu-id="92763-283">Výsledky</span><span class="sxs-lookup"><span data-stu-id="92763-283">Results</span></span>
 
-<span data-ttu-id="56077-291">Výsledky by měl vypadat přibližně takto.</span><span class="sxs-lookup"><span data-stu-id="56077-291">Your results should be similar to the following.</span></span> <span data-ttu-id="56077-292">Během zpracování zprávy se zobrazují.</span><span class="sxs-lookup"><span data-stu-id="56077-292">During processing, messages are displayed.</span></span> <span data-ttu-id="56077-293">Může se zobrazit upozornění nebo zpracování zpráv.</span><span class="sxs-lookup"><span data-stu-id="56077-293">You may see warnings, or processing messages.</span></span> <span data-ttu-id="56077-294">Ty se odebraly z následujících výsledků pro přehlednost.</span><span class="sxs-lookup"><span data-stu-id="56077-294">These have been removed from the following results for clarity.</span></span>
+<span data-ttu-id="92763-284">Výsledky by měl vypadat přibližně takto.</span><span class="sxs-lookup"><span data-stu-id="92763-284">Your results should be similar to the following.</span></span> <span data-ttu-id="92763-285">Během zpracování zprávy se zobrazují.</span><span class="sxs-lookup"><span data-stu-id="92763-285">During processing, messages are displayed.</span></span> <span data-ttu-id="92763-286">Může se zobrazit upozornění nebo zpracování zpráv.</span><span class="sxs-lookup"><span data-stu-id="92763-286">You may see warnings, or processing messages.</span></span> <span data-ttu-id="92763-287">Ty se odebraly z následujících výsledků pro přehlednost.</span><span class="sxs-lookup"><span data-stu-id="92763-287">These have been removed from the following results for clarity.</span></span>
 
 ```console
 Model quality metrics evaluation
@@ -382,25 +373,24 @@ Press any key to continue . . .
 
 ```
 
-<span data-ttu-id="56077-295">Blahopřejeme!</span><span class="sxs-lookup"><span data-stu-id="56077-295">Congratulations!</span></span> <span data-ttu-id="56077-296">Teď jste úspěšně sestaven model strojového učení pro klasifikaci a předvídat zprávy mínění.</span><span class="sxs-lookup"><span data-stu-id="56077-296">You've now successfully built a machine learning model for classifying and predicting messages sentiment.</span></span>
+<span data-ttu-id="92763-288">Blahopřejeme!</span><span class="sxs-lookup"><span data-stu-id="92763-288">Congratulations!</span></span> <span data-ttu-id="92763-289">Teď jste úspěšně sestaven model strojového učení pro klasifikaci a předvídat zprávy mínění.</span><span class="sxs-lookup"><span data-stu-id="92763-289">You've now successfully built a machine learning model for classifying and predicting messages sentiment.</span></span>
 
-<span data-ttu-id="56077-297">Vytváření modelů po úspěšné je iterativní proces.</span><span class="sxs-lookup"><span data-stu-id="56077-297">Building successful models is an iterative process.</span></span> <span data-ttu-id="56077-298">Tento model má nižší počáteční kvalita jako kurz používá malé datové sady poskytují rychlý model školení.</span><span class="sxs-lookup"><span data-stu-id="56077-298">This model has initial lower quality as the tutorial uses small datasets to provide quick model training.</span></span> <span data-ttu-id="56077-299">Pokud si nejste spokojeni s kvalitou modelu, můžete zkusit ho vylepšit tím, že poskytuje větší cvičných datových sad nebo výběrem jiné trénování algoritmů s různými [hyperparametry](../resources/glossary.md##hyperparameter) pro jednotlivé algoritmy.</span><span class="sxs-lookup"><span data-stu-id="56077-299">If you aren't satisfied with the model quality, you can try to improve it by providing larger training datasets or by choosing different training algorithms with different [hyper-parameters](../resources/glossary.md##hyperparameter) for each algorithm.</span></span>
+<span data-ttu-id="92763-290">Vytváření modelů po úspěšné je iterativní proces.</span><span class="sxs-lookup"><span data-stu-id="92763-290">Building successful models is an iterative process.</span></span> <span data-ttu-id="92763-291">Tento model má nižší počáteční kvalita jako kurz používá malé datové sady poskytují rychlý model školení.</span><span class="sxs-lookup"><span data-stu-id="92763-291">This model has initial lower quality as the tutorial uses small datasets to provide quick model training.</span></span> <span data-ttu-id="92763-292">Pokud si nejste spokojeni s kvalitou modelu, můžete zkusit ho vylepšit tím, že poskytuje větší cvičných datových sad nebo výběrem jiné trénování algoritmů s různými [hyperparametry](../resources/glossary.md##hyperparameter) pro jednotlivé algoritmy.</span><span class="sxs-lookup"><span data-stu-id="92763-292">If you aren't satisfied with the model quality, you can try to improve it by providing larger training datasets or by choosing different training algorithms with different [hyper-parameters](../resources/glossary.md##hyperparameter) for each algorithm.</span></span>
 
-<span data-ttu-id="56077-300">Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.</span><span class="sxs-lookup"><span data-stu-id="56077-300">You can find the source code for this tutorial at the [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) repository.</span></span>
+<span data-ttu-id="92763-293">Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.</span><span class="sxs-lookup"><span data-stu-id="92763-293">You can find the source code for this tutorial at the [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) repository.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="56077-301">Další kroky</span><span class="sxs-lookup"><span data-stu-id="56077-301">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="92763-294">Další kroky</span><span class="sxs-lookup"><span data-stu-id="92763-294">Next steps</span></span>
 
-<span data-ttu-id="56077-302">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="56077-302">In this tutorial, you learned how to:</span></span>
+<span data-ttu-id="92763-295">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="92763-295">In this tutorial, you learned how to:</span></span>
 > [!div class="checklist"]
-> * <span data-ttu-id="56077-303">Pochopení problému</span><span class="sxs-lookup"><span data-stu-id="56077-303">Understand the problem</span></span>
-> * <span data-ttu-id="56077-304">Vyberte algoritmus učení příslušný počítač</span><span class="sxs-lookup"><span data-stu-id="56077-304">Select the appropriate machine learning algorithm</span></span>
-> * <span data-ttu-id="56077-305">Příprava dat</span><span class="sxs-lookup"><span data-stu-id="56077-305">Prepare your data</span></span>
-> * <span data-ttu-id="56077-306">Transformace dat</span><span class="sxs-lookup"><span data-stu-id="56077-306">Transform the data</span></span>
-> * <span data-ttu-id="56077-307">Trénování modelu</span><span class="sxs-lookup"><span data-stu-id="56077-307">Train the model</span></span>
-> * <span data-ttu-id="56077-308">Vyhodnocení modelu</span><span class="sxs-lookup"><span data-stu-id="56077-308">Evaluate the model</span></span>
-> * <span data-ttu-id="56077-309">Predikce v trénovaného modelu</span><span class="sxs-lookup"><span data-stu-id="56077-309">Predict with the trained model</span></span>
-> * <span data-ttu-id="56077-310">Nasazení a predikce v načíst model</span><span class="sxs-lookup"><span data-stu-id="56077-310">Deploy and Predict with a loaded model</span></span>
+> * <span data-ttu-id="92763-296">Vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="92763-296">Create a console application</span></span>
+> * <span data-ttu-id="92763-297">Příprava dat</span><span class="sxs-lookup"><span data-stu-id="92763-297">Prepare data</span></span>
+> * <span data-ttu-id="92763-298">Načtení dat</span><span class="sxs-lookup"><span data-stu-id="92763-298">Load the data</span></span>
+> * <span data-ttu-id="92763-299">Vytvoření a trénování modelu</span><span class="sxs-lookup"><span data-stu-id="92763-299">Build and train the model</span></span>
+> * <span data-ttu-id="92763-300">Vyhodnocení modelu</span><span class="sxs-lookup"><span data-stu-id="92763-300">Evaluate the model</span></span>
+> * <span data-ttu-id="92763-301">Použití modelu vytvoří předpověď</span><span class="sxs-lookup"><span data-stu-id="92763-301">Use the model to make a prediction</span></span>
+> * <span data-ttu-id="92763-302">Zobrazit výsledky</span><span class="sxs-lookup"><span data-stu-id="92763-302">See the results</span></span>
 
-<span data-ttu-id="56077-311">Přejděte k dalšímu kurzu, kde Další informace</span><span class="sxs-lookup"><span data-stu-id="56077-311">Advance to the next tutorial to learn more</span></span>
+<span data-ttu-id="92763-303">Přejděte k dalšímu kurzu, kde Další informace</span><span class="sxs-lookup"><span data-stu-id="92763-303">Advance to the next tutorial to learn more</span></span>
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="56077-312">Klasifikace problému</span><span class="sxs-lookup"><span data-stu-id="56077-312">Issue Classification</span></span>](github-issue-classification.md)
+> [<span data-ttu-id="92763-304">Klasifikace problému</span><span class="sxs-lookup"><span data-stu-id="92763-304">Issue Classification</span></span>](github-issue-classification.md)
