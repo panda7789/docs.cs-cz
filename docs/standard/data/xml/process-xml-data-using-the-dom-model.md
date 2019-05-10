@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 56b6e9c7-ed82-4a65-a647-7be32c83bcc8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c59d84148aae35794410f5f7237cef96ab5b7560
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d34d22d8329f0bc26c1e29653137211bf300d324
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933663"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647824"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Zpracování dat XML pomocí modelu DOM
 XML Document Object Model (DOM) zpracovává XML data jako standardní sadu objektů a slouží ke zpracování dat XML v paměti. `System.Xml` Obor názvů poskytuje programový reprezentace XML dokumenty, fragmentů, uzly nebo sad uzlů. Je založen na základní úrovni 1 modelu DOM World Wide Web Consortium (W3C) a doporučení modelu DOM úroveň 2 jádra.  

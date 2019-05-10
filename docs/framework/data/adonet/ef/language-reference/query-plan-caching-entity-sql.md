@@ -2,12 +2,12 @@
 title: Plán dotazu, ukládání do mezipaměti (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 90b0c685-5ef2-461b-98b4-c3c0a2b253c7
-ms.openlocfilehash: 9f042d46d9a601c1091e36f8d81ce8f933140b20
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9b809962e11ee74a99f736769b47bf3052af5e8a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613661"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64641469"
 ---
 # <a name="query-plan-caching-entity-sql"></a>Plán dotazu, ukládání do mezipaměti (Entity SQL)
 Pokaždé, když je proveden pokus o provedení dotazu, kanál dotaz vyhledá mezipaměti plánu dotazu, jestli přesně dotazu je již kompilované a k dispozici. Pokud ano, jeho opakované používání plánů v mezipaměti namísto vytváření nové. Pokud se najde shoda v mezipaměti plánu dotazu dotazu je zkompilován a uložili do mezipaměti. Dotaz je identifikován jeho [!INCLUDE[esql](../../../../../../includes/esql-md.md)] text a parametr kolekce (názvy a typy). Všechna porovnání textu rozlišují malá a velká písmena.  

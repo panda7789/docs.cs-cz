@@ -18,12 +18,12 @@ helpviewer_keywords:
 - Windows Forms, circular
 - forms [Windows Forms], custom shapes
 ms.assetid: 6e6041e0-8e67-4487-b1e9-e410dbd1ef6c
-ms.openlocfilehash: 03fcbb97db180e71283810e2daeab9be272b9d5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3c90e6d5d2613239e513f8ec30d67b58084cba5e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004377"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64643488"
 ---
 # <a name="how-to-create-a-shaped-windows-form"></a>Postupy: Vytváření tvarovaných formulářů Windows
 V tomto příkladu obsahuje formulář elipsy tvar, který mění svou velikost formuláře.  

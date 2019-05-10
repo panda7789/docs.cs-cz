@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 761773e0-db72-4986-b9f5-a522213d8397
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee45d983483d907b2a1e8b9e5ee12841e5c89c91
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 976c34d72f9fcc89193658e50727a0ad365f2dd8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924108"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647892"
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>Úprava uzlů, obsahu a hodnot v dokumentu XML
 Existuje mnoho způsobů můžete upravit uzly a obsah v dokumentu. Můžete:  

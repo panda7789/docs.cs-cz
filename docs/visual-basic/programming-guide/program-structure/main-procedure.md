@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-ms.openlocfilehash: 641edd2d0e0dde5f509c8fa77ccf65358fa76a31
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a1eebc3d384d2efef050672a9c589b14559977f5
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920111"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648758"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Hlavní procedura v jazyce Visual Basic
 Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento postup slouží jako počáteční bod a celkové ovládání aplikace. Volání rozhraní .NET Framework vaší `Main` procedury při načtení aplikace a je připravený k předá řízení. Pokud vytváříte aplikace modelu Windows Forms, je nutné napsat `Main` postup pro aplikace, které běží na své vlastní.  
