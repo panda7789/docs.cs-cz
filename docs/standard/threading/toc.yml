@@ -14,8 +14,6 @@
           href: foreground-and-background-threads.md
         - name: "Spravovaná a\_nespravovaná vlákna ve Windows"
           href: managed-and-unmanaged-threading-in-windows.md
-        - name: 'Thread.Suspend, kolekce paměti a bezpečné body'
-          href: thread-suspend-garbage-collection-and-safe-points.md
         - name: 'Lokální úložiště vláken: Statická pole a datové sloty ve vztahu k vláknům'
           href: thread-local-storage-thread-relative-static-fields-and-data-slots.md
     - name: Použití vláken a dělení na vlákna
