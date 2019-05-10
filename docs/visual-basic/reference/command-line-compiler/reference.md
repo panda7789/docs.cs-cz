@@ -9,17 +9,17 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 21efca701eb16898dd291d73bf0431641ba75d12
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a205682bb15b5d25ba0a2df895533d3443a41409
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788879"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64663472"
 ---
-# <a name="-reference-visual-basic"></a><span data-ttu-id="31fe6-102">– referenční dokumentace (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="31fe6-102">-reference (Visual Basic)</span></span>
-<span data-ttu-id="31fe6-103">Způsobí, že kompilátor pro zpřístupnění informací o typu v zadaném sestavení pro projekt, který je aktuálně kompilován.</span><span class="sxs-lookup"><span data-stu-id="31fe6-103">Causes the compiler to make type information in the specified assemblies available to the project you are currently compiling.</span></span>  
+# <a name="-reference-visual-basic"></a><span data-ttu-id="26cf8-102">– referenční dokumentace (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="26cf8-102">-reference (Visual Basic)</span></span>
+<span data-ttu-id="26cf8-103">Způsobí, že kompilátor pro zpřístupnění informací o typu v zadaném sestavení pro projekt, který je aktuálně kompilován.</span><span class="sxs-lookup"><span data-stu-id="26cf8-103">Causes the compiler to make type information in the specified assemblies available to the project you are currently compiling.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="31fe6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31fe6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="26cf8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="26cf8-104">Syntax</span></span>  
   
 ```  
 -reference:fileList  
@@ -27,40 +27,40 @@ ms.locfileid: "61788879"
 -r:fileList  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="31fe6-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="31fe6-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="26cf8-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="26cf8-105">Arguments</span></span>  
   
-|<span data-ttu-id="31fe6-106">Termín</span><span class="sxs-lookup"><span data-stu-id="31fe6-106">Term</span></span>|<span data-ttu-id="31fe6-107">Definice</span><span class="sxs-lookup"><span data-stu-id="31fe6-107">Definition</span></span>|  
+|<span data-ttu-id="26cf8-106">Termín</span><span class="sxs-lookup"><span data-stu-id="26cf8-106">Term</span></span>|<span data-ttu-id="26cf8-107">Definice</span><span class="sxs-lookup"><span data-stu-id="26cf8-107">Definition</span></span>|  
 |---|---|  
-|`fileList`|<span data-ttu-id="31fe6-108">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="31fe6-108">Required.</span></span> <span data-ttu-id="31fe6-109">Čárkami oddělený seznam názvů souborů sestavení.</span><span class="sxs-lookup"><span data-stu-id="31fe6-109">Comma-delimited list of assembly file names.</span></span> <span data-ttu-id="31fe6-110">Pokud název souboru obsahuje mezery, uzavřete název do uvozovek.</span><span class="sxs-lookup"><span data-stu-id="31fe6-110">If the file name contains a space, enclose the name in quotation marks.</span></span>|  
+|`fileList`|<span data-ttu-id="26cf8-108">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="26cf8-108">Required.</span></span> <span data-ttu-id="26cf8-109">Čárkami oddělený seznam názvů souborů sestavení.</span><span class="sxs-lookup"><span data-stu-id="26cf8-109">Comma-delimited list of assembly file names.</span></span> <span data-ttu-id="26cf8-110">Pokud název souboru obsahuje mezery, uzavřete název do uvozovek.</span><span class="sxs-lookup"><span data-stu-id="26cf8-110">If the file name contains a space, enclose the name in quotation marks.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="31fe6-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="31fe6-111">Remarks</span></span>  
- <span data-ttu-id="31fe6-112">Soubory, které importujete musí obsahovat metadata sestavení.</span><span class="sxs-lookup"><span data-stu-id="31fe6-112">The file(s) you import must contain assembly metadata.</span></span> <span data-ttu-id="31fe6-113">Pouze veřejné typy jsou viditelné mimo sestavení.</span><span class="sxs-lookup"><span data-stu-id="31fe6-113">Only public types are visible outside the assembly.</span></span> <span data-ttu-id="31fe6-114">[/Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) možnost Importuje metadata z modulu.</span><span class="sxs-lookup"><span data-stu-id="31fe6-114">The [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="26cf8-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="26cf8-111">Remarks</span></span>  
+ <span data-ttu-id="26cf8-112">Soubory, které importujete musí obsahovat metadata sestavení.</span><span class="sxs-lookup"><span data-stu-id="26cf8-112">The file(s) you import must contain assembly metadata.</span></span> <span data-ttu-id="26cf8-113">Pouze veřejné typy jsou viditelné mimo sestavení.</span><span class="sxs-lookup"><span data-stu-id="26cf8-113">Only public types are visible outside the assembly.</span></span> <span data-ttu-id="26cf8-114">[/Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) možnost Importuje metadata z modulu.</span><span class="sxs-lookup"><span data-stu-id="26cf8-114">The [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.</span></span>  
   
- <span data-ttu-id="31fe6-115">Pokud odkazujete na sestavení (sestavení A) která sama odkazuje na jiné sestavení (sestavení B), budete muset odkaz na sestavení B, pokud:</span><span class="sxs-lookup"><span data-stu-id="31fe6-115">If you reference an assembly (Assembly A) which itself references another assembly (Assembly B), you need to reference Assembly B if:</span></span>  
+ <span data-ttu-id="26cf8-115">Pokud odkazujete na sestavení (sestavení A) která sama odkazuje na jiné sestavení (sestavení B), budete muset odkaz na sestavení B, pokud:</span><span class="sxs-lookup"><span data-stu-id="26cf8-115">If you reference an assembly (Assembly A) which itself references another assembly (Assembly B), you need to reference Assembly B if:</span></span>  
   
-- <span data-ttu-id="31fe6-116">Typ v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.</span><span class="sxs-lookup"><span data-stu-id="31fe6-116">A type from Assembly A inherits from a type or implements an interface from Assembly B.</span></span>  
+- <span data-ttu-id="26cf8-116">Typ v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.</span><span class="sxs-lookup"><span data-stu-id="26cf8-116">A type from Assembly A inherits from a type or implements an interface from Assembly B.</span></span>  
   
-- <span data-ttu-id="31fe6-117">Pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B je vyvolána.</span><span class="sxs-lookup"><span data-stu-id="31fe6-117">A field, property, event, or method that has a return type or parameter type from Assembly B is invoked.</span></span>  
+- <span data-ttu-id="26cf8-117">Pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B je vyvolána.</span><span class="sxs-lookup"><span data-stu-id="26cf8-117">A field, property, event, or method that has a return type or parameter type from Assembly B is invoked.</span></span>  
   
- <span data-ttu-id="31fe6-118">Použití [- libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) určit adresář, ve kterém se nachází jeden nebo více odkazů na sestavení.</span><span class="sxs-lookup"><span data-stu-id="31fe6-118">Use [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) to specify the directory in which one or more of your assembly references is located.</span></span>  
+ <span data-ttu-id="26cf8-118">Použití [- libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) určit adresář, ve kterém se nachází jeden nebo více odkazů na sestavení.</span><span class="sxs-lookup"><span data-stu-id="26cf8-118">Use [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) to specify the directory in which one or more of your assembly references is located.</span></span>  
   
- <span data-ttu-id="31fe6-119">Kompilátor rozpoznával typ v sestavení (ne modul) musíte jej donutit k přeložení typu.</span><span class="sxs-lookup"><span data-stu-id="31fe6-119">For the compiler to recognize a type in an assembly (not a module), it must be forced to resolve the type.</span></span> <span data-ttu-id="31fe6-120">K definování instance typu je jeden příklad, jak to udělat.</span><span class="sxs-lookup"><span data-stu-id="31fe6-120">One example of how you can do this is to define an instance of the type.</span></span> <span data-ttu-id="31fe6-121">Další možnosti jsou k dispozici přeložení názvů typů v sestavení pro kompilátor.</span><span class="sxs-lookup"><span data-stu-id="31fe6-121">Other ways are available to resolve type names in an assembly for the compiler.</span></span> <span data-ttu-id="31fe6-122">Například pokud je zděděn z typu v sestavení, název typu pak stane pro kompilátor známým.</span><span class="sxs-lookup"><span data-stu-id="31fe6-122">For example, if you inherit from a type in an assembly, the type name then becomes known to the compiler.</span></span>  
+ <span data-ttu-id="26cf8-119">Kompilátor rozpoznával typ v sestavení (ne modul) musíte jej donutit k přeložení typu.</span><span class="sxs-lookup"><span data-stu-id="26cf8-119">For the compiler to recognize a type in an assembly (not a module), it must be forced to resolve the type.</span></span> <span data-ttu-id="26cf8-120">K definování instance typu je jeden příklad, jak to udělat.</span><span class="sxs-lookup"><span data-stu-id="26cf8-120">One example of how you can do this is to define an instance of the type.</span></span> <span data-ttu-id="26cf8-121">Další možnosti jsou k dispozici přeložení názvů typů v sestavení pro kompilátor.</span><span class="sxs-lookup"><span data-stu-id="26cf8-121">Other ways are available to resolve type names in an assembly for the compiler.</span></span> <span data-ttu-id="26cf8-122">Například pokud je zděděn z typu v sestavení, název typu pak stane pro kompilátor známým.</span><span class="sxs-lookup"><span data-stu-id="26cf8-122">For example, if you inherit from a type in an assembly, the type name then becomes known to the compiler.</span></span>  
   
- <span data-ttu-id="31fe6-123">Soubor Vbc.rsp odpovědi, kterými se běžně používá odkazy [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, se používá ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="31fe6-123">The Vbc.rsp response file, which references commonly used [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblies, is used by default.</span></span> <span data-ttu-id="31fe6-124">Použít `-noconfig` Pokud nechcete, aby kompilátor používal Vbc.rsp.</span><span class="sxs-lookup"><span data-stu-id="31fe6-124">Use `-noconfig` if you do not want the compiler to use Vbc.rsp.</span></span>  
+ <span data-ttu-id="26cf8-123">Soubor Vbc.rsp odpovědi, kterými se běžně používá odkazy [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, se používá ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="26cf8-123">The Vbc.rsp response file, which references commonly used [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblies, is used by default.</span></span> <span data-ttu-id="26cf8-124">Použít `-noconfig` Pokud nechcete, aby kompilátor používal Vbc.rsp.</span><span class="sxs-lookup"><span data-stu-id="26cf8-124">Use `-noconfig` if you do not want the compiler to use Vbc.rsp.</span></span>  
   
- <span data-ttu-id="31fe6-125">Krátký tvar `-reference` je `/r`.</span><span class="sxs-lookup"><span data-stu-id="31fe6-125">The short form of `-reference` is `/r`.</span></span>  
+ <span data-ttu-id="26cf8-125">Krátký tvar `-reference` je `/r`.</span><span class="sxs-lookup"><span data-stu-id="26cf8-125">The short form of `-reference` is `/r`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="31fe6-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="31fe6-126">Example</span></span>  
- <span data-ttu-id="31fe6-127">Následující příkaz zkompiluje zdrojový soubor `Input.vb` a odkaz na sestavení z `Metad1.dll` a `Metad2.dll` k vytvoření `Out.exe`.</span><span class="sxs-lookup"><span data-stu-id="31fe6-127">The following command compiles source file `Input.vb` and reference assemblies from `Metad1.dll` and `Metad2.dll` to produce `Out.exe`.</span></span>  
+## <a name="example"></a><span data-ttu-id="26cf8-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="26cf8-126">Example</span></span>  
+ <span data-ttu-id="26cf8-127">Následující příkaz zkompiluje zdrojový soubor `Input.vb` a odkaz na sestavení z `Metad1.dll` a `Metad2.dll` k vytvoření `Out.exe`.</span><span class="sxs-lookup"><span data-stu-id="26cf8-127">The following command compiles source file `Input.vb` and reference assemblies from `Metad1.dll` and `Metad2.dll` to produce `Out.exe`.</span></span>  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="31fe6-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="31fe6-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26cf8-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="26cf8-128">See also</span></span>
 
-- [<span data-ttu-id="31fe6-129">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="31fe6-129">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="31fe6-130">-noconfig</span><span class="sxs-lookup"><span data-stu-id="31fe6-130">-noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [<span data-ttu-id="31fe6-131">-target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="31fe6-131">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)
-- [<span data-ttu-id="31fe6-132">Public</span><span class="sxs-lookup"><span data-stu-id="31fe6-132">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
-- [<span data-ttu-id="31fe6-133">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="31fe6-133">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="26cf8-129">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="26cf8-129">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="26cf8-130">-noconfig</span><span class="sxs-lookup"><span data-stu-id="26cf8-130">-noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)
+- [<span data-ttu-id="26cf8-131">-target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="26cf8-131">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)
+- [<span data-ttu-id="26cf8-132">Public</span><span class="sxs-lookup"><span data-stu-id="26cf8-132">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
+- [<span data-ttu-id="26cf8-133">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="26cf8-133">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
