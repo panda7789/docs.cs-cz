@@ -9,58 +9,58 @@ helpviewer_keywords:
 - -optioncompare compiler option [Visual Basic]
 - /optioncompare compiler option [Visual Basic]
 ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
-ms.openlocfilehash: b88cba4d16c5a770a72b47868d11b16cbba6cae8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fd26643c2c289459b1e7b158952c402e42bae39b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788957"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64639872"
 ---
-# <a name="-optioncompare"></a><span data-ttu-id="4fd34-102">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="4fd34-102">-optioncompare</span></span>
-<span data-ttu-id="4fd34-103">Určuje způsob porovnávání řetězců.</span><span class="sxs-lookup"><span data-stu-id="4fd34-103">Specifies how string comparisons are made.</span></span>  
+# <a name="-optioncompare"></a><span data-ttu-id="b30c5-102">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="b30c5-102">-optioncompare</span></span>
+<span data-ttu-id="b30c5-103">Určuje způsob porovnávání řetězců.</span><span class="sxs-lookup"><span data-stu-id="b30c5-103">Specifies how string comparisons are made.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4fd34-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4fd34-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b30c5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b30c5-104">Syntax</span></span>  
   
 ```  
 -optioncompare:{binary | text}  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="4fd34-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4fd34-105">Remarks</span></span>  
- <span data-ttu-id="4fd34-106">Můžete zadat `-optioncompare` v jednom z těchto dvou tvarů: `-optioncompare:binary` použít porovnávání binárních řetězců a `-optioncompare:text` používat textové porovnávání řetězců.</span><span class="sxs-lookup"><span data-stu-id="4fd34-106">You can specify `-optioncompare` in one of two forms: `-optioncompare:binary` to use binary string comparisons, and `-optioncompare:text` to use text string comparisons.</span></span> <span data-ttu-id="4fd34-107">Ve výchozím nastavení, kterou kompilátor používá `-optioncompare:binary`.</span><span class="sxs-lookup"><span data-stu-id="4fd34-107">By default, the compiler uses `-optioncompare:binary`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b30c5-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b30c5-105">Remarks</span></span>  
+ <span data-ttu-id="b30c5-106">Můžete zadat `-optioncompare` v jednom z těchto dvou tvarů: `-optioncompare:binary` použít porovnávání binárních řetězců a `-optioncompare:text` používat textové porovnávání řetězců.</span><span class="sxs-lookup"><span data-stu-id="b30c5-106">You can specify `-optioncompare` in one of two forms: `-optioncompare:binary` to use binary string comparisons, and `-optioncompare:text` to use text string comparisons.</span></span> <span data-ttu-id="b30c5-107">Ve výchozím nastavení, kterou kompilátor používá `-optioncompare:binary`.</span><span class="sxs-lookup"><span data-stu-id="b30c5-107">By default, the compiler uses `-optioncompare:binary`.</span></span>  
   
- <span data-ttu-id="4fd34-108">V Microsoft Windows určuje aktuální znakové stránce binární řazení.</span><span class="sxs-lookup"><span data-stu-id="4fd34-108">In Microsoft Windows, the current code page determines the binary sort order.</span></span> <span data-ttu-id="4fd34-109">Typické binární řazení vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="4fd34-109">A typical binary sort order is as follows:</span></span>  
+ <span data-ttu-id="b30c5-108">V Microsoft Windows určuje aktuální znakové stránce binární řazení.</span><span class="sxs-lookup"><span data-stu-id="b30c5-108">In Microsoft Windows, the current code page determines the binary sort order.</span></span> <span data-ttu-id="b30c5-109">Typické binární řazení vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="b30c5-109">A typical binary sort order is as follows:</span></span>  
   
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`  
   
- <span data-ttu-id="4fd34-110">Textový řetězec porovnání jsou založeny na pořadí řazení nerozlišujícího velikost písmen textu určuje podle národního prostředí vašeho systému.</span><span class="sxs-lookup"><span data-stu-id="4fd34-110">Text-based string comparisons are based on a case-insensitive text sort order determined by your system's locale.</span></span> <span data-ttu-id="4fd34-111">Typické textové řazení vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="4fd34-111">A typical text sort order is as follows:</span></span>  
+ <span data-ttu-id="b30c5-110">Textový řetězec porovnání jsou založeny na pořadí řazení nerozlišujícího velikost písmen textu určuje podle národního prostředí vašeho systému.</span><span class="sxs-lookup"><span data-stu-id="b30c5-110">Text-based string comparisons are based on a case-insensitive text sort order determined by your system's locale.</span></span> <span data-ttu-id="b30c5-111">Typické textové řazení vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="b30c5-111">A typical text sort order is as follows:</span></span>  
   
  `(A = a) < (À = à) < (B=b) < (E=e) < (Ê = ê) < (Z=z) < (Ø = ø)`  
   
-### <a name="to-set--optioncompare-in-the-visual-studio-ide"></a><span data-ttu-id="4fd34-112">Chcete-li nastavit - optioncompare v integrovaném vývojovém prostředí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4fd34-112">To set -optioncompare in the Visual Studio IDE</span></span>  
+### <a name="to-set--optioncompare-in-the-visual-studio-ide"></a><span data-ttu-id="b30c5-112">Chcete-li nastavit - optioncompare v integrovaném vývojovém prostředí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="b30c5-112">To set -optioncompare in the Visual Studio IDE</span></span>  
   
-1. <span data-ttu-id="4fd34-113">Mají projekt vybraný v **Průzkumníka řešení**.</span><span class="sxs-lookup"><span data-stu-id="4fd34-113">Have a project selected in **Solution Explorer**.</span></span> <span data-ttu-id="4fd34-114">Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="4fd34-114">On the **Project** menu, click **Properties**.</span></span>   
+1. <span data-ttu-id="b30c5-113">Mají projekt vybraný v **Průzkumníka řešení**.</span><span class="sxs-lookup"><span data-stu-id="b30c5-113">Have a project selected in **Solution Explorer**.</span></span> <span data-ttu-id="b30c5-114">Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="b30c5-114">On the **Project** menu, click **Properties**.</span></span>   
   
-2. <span data-ttu-id="4fd34-115">Klikněte na tlačítko **kompilaci** kartu.</span><span class="sxs-lookup"><span data-stu-id="4fd34-115">Click the **Compile** tab.</span></span>  
+2. <span data-ttu-id="b30c5-115">Klikněte na tlačítko **kompilaci** kartu.</span><span class="sxs-lookup"><span data-stu-id="b30c5-115">Click the **Compile** tab.</span></span>  
   
-3. <span data-ttu-id="4fd34-116">Upravte hodnotu v **Option Compare** pole.</span><span class="sxs-lookup"><span data-stu-id="4fd34-116">Modify the value in the **Option Compare** box.</span></span>  
+3. <span data-ttu-id="b30c5-116">Upravte hodnotu v **Option Compare** pole.</span><span class="sxs-lookup"><span data-stu-id="b30c5-116">Modify the value in the **Option Compare** box.</span></span>  
   
-### <a name="to-set--optioncompare-programmatically"></a><span data-ttu-id="4fd34-117">Chcete-li nastavit - optioncompare prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="4fd34-117">To set -optioncompare programmatically</span></span>  
+### <a name="to-set--optioncompare-programmatically"></a><span data-ttu-id="b30c5-117">Chcete-li nastavit - optioncompare prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="b30c5-117">To set -optioncompare programmatically</span></span>  
   
-- <span data-ttu-id="4fd34-118">Zobrazit [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md).</span><span class="sxs-lookup"><span data-stu-id="4fd34-118">See [Option Compare Statement](../../../visual-basic/language-reference/statements/option-compare-statement.md).</span></span>  
+- <span data-ttu-id="b30c5-118">Zobrazit [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md).</span><span class="sxs-lookup"><span data-stu-id="b30c5-118">See [Option Compare Statement](../../../visual-basic/language-reference/statements/option-compare-statement.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4fd34-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="4fd34-119">Example</span></span>  
- <span data-ttu-id="4fd34-120">Následující kód zkompiluje `ProjFile.vb` a používá binární porovnání řetězců.</span><span class="sxs-lookup"><span data-stu-id="4fd34-120">The following code compiles `ProjFile.vb` and uses binary string comparisons.</span></span>  
+## <a name="example"></a><span data-ttu-id="b30c5-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="b30c5-119">Example</span></span>  
+ <span data-ttu-id="b30c5-120">Následující kód zkompiluje `ProjFile.vb` a používá binární porovnání řetězců.</span><span class="sxs-lookup"><span data-stu-id="b30c5-120">The following code compiles `ProjFile.vb` and uses binary string comparisons.</span></span>  
   
 ```console
 vbc -optioncompare:binary projFile.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4fd34-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4fd34-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b30c5-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b30c5-121">See also</span></span>
 
-- [<span data-ttu-id="4fd34-122">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="4fd34-122">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="4fd34-123">-optionexplicit</span><span class="sxs-lookup"><span data-stu-id="4fd34-123">-optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [<span data-ttu-id="4fd34-124">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="4fd34-124">-optionstrict</span></span>](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [<span data-ttu-id="4fd34-125">-optioninfer</span><span class="sxs-lookup"><span data-stu-id="4fd34-125">-optioninfer</span></span>](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
-- [<span data-ttu-id="4fd34-126">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="4fd34-126">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [<span data-ttu-id="4fd34-127">Příkaz Option Compare</span><span class="sxs-lookup"><span data-stu-id="4fd34-127">Option Compare Statement</span></span>](../../../visual-basic/language-reference/statements/option-compare-statement.md)
-- [<span data-ttu-id="4fd34-128">Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti</span><span class="sxs-lookup"><span data-stu-id="4fd34-128">Visual Basic Defaults, Projects, Options Dialog Box</span></span>](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [<span data-ttu-id="b30c5-122">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="b30c5-122">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="b30c5-123">-optionexplicit</span><span class="sxs-lookup"><span data-stu-id="b30c5-123">-optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
+- [<span data-ttu-id="b30c5-124">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="b30c5-124">-optionstrict</span></span>](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
+- [<span data-ttu-id="b30c5-125">-optioninfer</span><span class="sxs-lookup"><span data-stu-id="b30c5-125">-optioninfer</span></span>](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [<span data-ttu-id="b30c5-126">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="b30c5-126">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="b30c5-127">Příkaz Option Compare</span><span class="sxs-lookup"><span data-stu-id="b30c5-127">Option Compare Statement</span></span>](../../../visual-basic/language-reference/statements/option-compare-statement.md)
+- [<span data-ttu-id="b30c5-128">Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti</span><span class="sxs-lookup"><span data-stu-id="b30c5-128">Visual Basic Defaults, Projects, Options Dialog Box</span></span>](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
