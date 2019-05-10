@@ -11,12 +11,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms]
 - toolbars [Windows Forms], customizing
 ms.assetid: 46acef3e-9844-4ae8-9a2e-3006fe99cadf
-ms.openlocfilehash: 857d5ea3771b098d4edcbd7b24f1e6feaf3ec2cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 22f9276a3fa7fcecf6b4667f5aaba489c6ed296e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013033"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64630590"
 ---
 # <a name="how-to-set-the-toolstrip-renderer-for-an-application"></a>Postupy: Nastavení rendereru prvku ToolStrip pro aplikaci
 Můžete přizpůsobit vzhled vašich <xref:System.Windows.Forms.ToolStrip> řídí jednotlivě nebo pro všechny <xref:System.Windows.Forms.ToolStrip> ovládacích prvků ve vaší aplikaci.  

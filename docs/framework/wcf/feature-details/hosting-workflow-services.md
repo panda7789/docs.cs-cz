@@ -2,12 +2,12 @@
 title: Hostování služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: c933fd2bd46588ccd5c6115fbc2efca72bfadca4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: dbb5e9b687a735376d720b83607fc67350cd429f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855865"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613326"
 ---
 # <a name="hosting-workflow-services"></a>Hostování služeb pracovních postupů
 Služba pracovního postupu musí být hostovaný, aby se reagovat na příchozí zprávy. Služby pracovních postupů pomocí infrastruktury přenosu zpráv WCF a proto hostované podobným způsobem. Stejně jako služby WCF služby pracovních postupů je možné hostovat ve spravované aplikaci, v rámci Internetové informační služby (IIS) nebo v rámci služby pro aktivační proces Windows (WAS). Kromě toho je možné hostovat služby pracovních postupů v rámci Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentace ke službě Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele WCF služeb najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).

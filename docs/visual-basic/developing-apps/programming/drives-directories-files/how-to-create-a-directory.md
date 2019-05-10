@@ -5,12 +5,12 @@ helpviewer_keywords:
 - directories [Visual Basic], creating
 - folders [Visual Basic], creating
 ms.assetid: 0351a2ca-24d8-43b5-bb39-9b99e6401cff
-ms.openlocfilehash: e94bd597b022e5e380651a62832e1f71fa72cec9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 54696dab41c99774bb3638e0c19837a906144d27
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960094"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64629080"
 ---
 # <a name="how-to-create-a-directory-in-visual-basic"></a>Postupy: Vytvoření adresáře v jazyce Visual Basic
 Použití `CreateDirectory` metodu `My.Computer.FileSystem` objekt k vytvoření adresáře.  

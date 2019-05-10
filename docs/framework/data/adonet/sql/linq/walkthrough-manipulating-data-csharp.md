@@ -2,12 +2,12 @@
 title: 'Návod: Manipulace s daty (C#)'
 ms.date: 03/30/2017
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-ms.openlocfilehash: 5418bdbdeee162bbc8c0abcb11fd39f2cc82ce73
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 7bac370ae8dc260ca4b665fd51680a80fd9846fd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330776"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64618042"
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Návod: Manipulace s daty (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Přidejte zákazníka, změňte název zákazníka a odstranit objednávky použijete kopii ukázkové databáze Northwind.  
@@ -19,13 +19,13 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="prerequisites"></a>Požadavky  
  Tento postup vyžaduje následující:  
   
--   Tento návod používá vyhrazené složky ("c:\linqtest6") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
+- Tento návod používá vyhrazené složky ("c:\linqtest6") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
   
--   Ukázkovou databázi Northwind  
+- Ukázkovou databázi Northwind  
   
      Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft download. Pokyny najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze, zkopírujte do složky c:\linqtest6 northwnd.mdf souboru.  
   
--   A C# soubor kód generovaný z databáze Northwind.  
+- A C# soubor kód generovaný z databáze Northwind.  
   
      Tento soubor můžete vygenerovat buď pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroji SQLMetal. Tento návod byl napsán s použitím nástroje SQLMetal s následujícím příkazovým řádkem:  
   
@@ -36,17 +36,17 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá z šesti hlavních úloh:  
   
--   Vytváří [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
+- Vytváří [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
   
--   Přidání kódu databázový soubor do projektu.  
+- Přidání kódu databázový soubor do projektu.  
   
--   Vytváří se nový objekt zákazníka.  
+- Vytváří se nový objekt zákazníka.  
   
--   Úprava kontaktní jméno zákazníka.  
+- Úprava kontaktní jméno zákazníka.  
   
--   Odstraňuje se objednávky.  
+- Odstraňuje se objednávky.  
   
--   Odesílá se tyto změny k databázi Northwind.  
+- Odesílá se tyto změny k databázi Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření LINQ to SQL řešení  
  V této první úloze vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
@@ -126,7 +126,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-change-the-name-of-a-customer"></a>Chcete-li změnit název zákazníka  
   
--   Přidejte následující kód nad `Console.ReadLine();`:  
+- Přidejte následující kód nad `Console.ReadLine();`:  
   
      [!code-csharp[DLinqWalk3CS#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#4)]  
   
@@ -137,7 +137,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-delete-a-row"></a>Odstranit řádek  
   
--   Následující kód přidejte přímo nad `Console.ReadLine();`:  
+- Následující kód přidejte přímo nad `Console.ReadLine();`:  
   
      [!code-csharp[DLinqWalk3CS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#5)]  
   

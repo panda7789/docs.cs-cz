@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: ec56a02e27f4218b3abc5839d1265815e188d2ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: eb07f11e4c123ed04232e41d5d50d4ef59b76bbd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760985"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64621226"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace doménového modelu mikroslužby pomocí .NET Core
 

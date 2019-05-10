@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - ContextMenuOpening properties [WPF]
 ms.assetid: 789652fb-1951-4217-934a-7843e355adf4
-ms.openlocfilehash: 65a1e34d5b078c49bf59c2d9787812940c9a7494
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: b3d0f5c77ebf8527e4854d4edf12d6fa8a4b5f0c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340396"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614631"
 ---
 # <a name="how-to-handle-the-contextmenuopening-event"></a>Postupy: Zpracování události ContextMenuOpening
 <xref:System.Windows.FrameworkElement.ContextMenuOpening> Události mohou být zpracovány v aplikaci buď upravit existující místní nabídku před zobrazit nebo potlačit v nabídce, která by jinak zobrazit tak, že nastavíte <xref:System.Windows.RoutedEventArgs.Handled%2A> vlastnost `true` v datech události. Typické důvod nastavení <xref:System.Windows.RoutedEventArgs.Handled%2A> k `true` události, data je nahraďte nabídku zcela nový <xref:System.Windows.Controls.ContextMenu> objekt, což v některých případech vyžaduje zrušení operace a spouští se nový otevřít. Při zápisu obslužných rutin pro <xref:System.Windows.FrameworkElement.ContextMenuOpening> události, byste měli vědět o problémy načasování mezi <xref:System.Windows.Controls.ContextMenu> ovládacího prvku a službu, která je zodpovědná za otevření a obecně umístění kontextové nabídky pro ovládací prvky. Toto téma popisuje některé techniky kód pro otevření scénáře různých kontextovou nabídku a ukazuje případ, kde jsou časové potíže vstupu do play.  
   
  Existuje několik scénářů pro zpracování <xref:System.Windows.FrameworkElement.ContextMenuOpening> události:  
   
--   Úprava položek nabídky před zobrazení.  
+- Úprava položek nabídky před zobrazení.  
   
--   Nahradí celý nabídku před zobrazení.  
+- Nahradí celý nabídku před zobrazení.  
   
--   Zcela potlačení jakékoliv existující místní nabídky a zobrazování žádné kontextové nabídky.  
+- Zcela potlačení jakékoliv existující místní nabídky a zobrazování žádné kontextové nabídky.  
   
 ## <a name="example"></a>Příklad  
   

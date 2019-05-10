@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: 3f3c7e96f1c372bb05aba9bef81192aec47b3cde
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f923ca42e67c76f8b4296089953fada65b645f4f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61870263"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64629014"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které provádějí celou řadu úloh současně, ale stále reagovat na interakci uživatele, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje potřebné k vytvoření vysoce výkonné aplikace s více vlákny, ale efektivně pomocí těchto nástrojů vyžaduje významné prostředí s více vlákny softwarového inženýrství. Pro vícevláknové aplikace s poměrně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje jednoduché řešení. Pro složitější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronního vzoru založeného na událostech.  

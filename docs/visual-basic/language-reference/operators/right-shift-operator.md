@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-ms.openlocfilehash: 8803dc2e25edde756958a243d429dd30c5c78bcf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 870460d78eb2e627de2984c79571fd5172672b55
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053285"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64629115"
 ---
 # <a name="-operator-visual-basic"></a>>> – Operátor (Visual Basic)
 Provede aritmetický posunutí doprava bitový vzor.  

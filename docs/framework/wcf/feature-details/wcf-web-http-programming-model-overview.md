@@ -2,21 +2,21 @@
 title: Přehled modelu webového programování HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: a6f267232085a46d481199eac83e464f5f774273
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: a5438857114fba890aac78565ef128bfc5ea95f0
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199580"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613042"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 Model programování webových služeb HTTP Windows Communication Foundation (WCF) poskytuje základní prvky, které jsou potřebné k sestavení služeb webových služeb HTTP s použitím technologie WCF. WEBOVÝCH služeb HTTP WCF services jsou navržené tak přístup k nejširší škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  
   
--   **Identifikátory URI a identifikátor URI zpracování** identifikátory URI přehrát hlavní roli v návrhu webové služby HTTP. WCF WEB HTTP používá model programování <xref:System.UriTemplate> a <xref:System.UriTemplateTable> třídy, které poskytují možnosti zpracování identifikátoru URI.  
+- **Identifikátory URI a identifikátor URI zpracování** identifikátory URI přehrát hlavní roli v návrhu webové služby HTTP. WCF WEB HTTP používá model programování <xref:System.UriTemplate> a <xref:System.UriTemplateTable> třídy, které poskytují možnosti zpracování identifikátoru URI.  
   
--   **Podpora pro operace GET a POST** webových služeb HTTP služby použijte příkaz GET pro načtení dat, kromě různých volat příkazy pro úpravu dat a vzdálené volání. WCF WEB HTTP používá model programování <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> přidružit servisní operace GET a další příkazy HTTP, jako jsou PUT, POST a DELETE.  
+- **Podpora pro operace GET a POST** webových služeb HTTP služby použijte příkaz GET pro načtení dat, kromě různých volat příkazy pro úpravu dat a vzdálené volání. WCF WEB HTTP používá model programování <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> přidružit servisní operace GET a další příkazy HTTP, jako jsou PUT, POST a DELETE.  
   
--   **Několika datových formátů** zpracovávat různé druhy dat kromě zprávy protokolu SOAP stylu webové služby. WCF WEB HTTP používá model programování <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> pro podporu mnoha různých datových formátů, včetně dokumentů XML, JSON datového objektu a proudy binární obsah, jako jsou obrázky, soubory videa nebo prostý text.  
+- **Několika datových formátů** zpracovávat různé druhy dat kromě zprávy protokolu SOAP stylu webové služby. WCF WEB HTTP používá model programování <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> pro podporu mnoha různých datových formátů, včetně dokumentů XML, JSON datového objektu a proudy binární obsah, jako jsou obrázky, soubory videa nebo prostý text.  
   
  Model programování webových služeb HTTP WCF rozšiřuje dosah WCF Web – vizuální styl scénáře, které obsahují webové služby HTTP, služby AJAX a JSON a informační kanály syndikace (ATOM nebo RSS). Další informace o službách AJAX a JSON najdete v tématu [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md). Další informace o syndikace najdete v tématu [syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md).  
   
@@ -33,23 +33,23 @@ Model programování webových služeb HTTP Windows Communication Foundation (WC
   
  Tato šablona popisuje identifikátory URI vypadat asi takto:  
   
--   a/x/c  
+- a/x/c  
   
--   / y/c  
+- / y/c  
   
--   a/z/c  
+- a/z/c  
   
--   a tak dále.  
+- a tak dále.  
   
  V této šabloně zápis složenou závorku ("{segment}") označuje segment proměnné místo literálovou hodnotou.  
   
  Rozhraní .NET framework poskytuje rozhraní API pro práci se šablonami identifikátoru URI volá <xref:System.UriTemplate>. `UriTemplates` umožní provést následující kroky:  
   
--   Můžete volat jednu z `Bind` metody sadu parametrů za účelem vytvoření *plně ukončena, identifikátor URI* , který odpovídá šabloně. To znamená, že jsou všechny proměnné v rámci šablona identifikátoru URI nahradit skutečnými hodnotami.  
+- Můžete volat jednu z `Bind` metody sadu parametrů za účelem vytvoření *plně ukončena, identifikátor URI* , který odpovídá šabloně. To znamená, že jsou všechny proměnné v rámci šablona identifikátoru URI nahradit skutečnými hodnotami.  
   
--   Můžete volat `Match`() se kandidát identifikátor URI, který používá k rozdělení kandidát URI do jeho složky části a vrátí slovník, který obsahuje různé části identifikátoru URI podle proměnné v šabloně označené jako šablonu.  
+- Můžete volat `Match`() se kandidát identifikátor URI, který používá k rozdělení kandidát URI do jeho složky části a vrátí slovník, který obsahuje různé části identifikátoru URI podle proměnné v šabloně označené jako šablonu.  
   
--   `Bind`() a `Match`() jsou inverses, takže můžete volat `Match`( `Bind`(x)) a vraťte se stejné prostředí, můžete začít.  
+- `Bind`() a `Match`() jsou inverses, takže můžete volat `Match`( `Bind`(x)) a vraťte se stejné prostředí, můžete začít.  
   
  Nejsou k dispozici v mnoha případech (zejména na serveru, pokud odesílání žádosti pro operaci služby podle identifikátoru URI je nezbytné), že chcete sledovat, sadu <xref:System.UriTemplate> objekty do datové struktury, která může nezávisle na sobě vztahují na všechny uzavřeného šablony. <xref:System.UriTemplateTable> představuje sadu šablon pro identifikátor URI a vybere nejlepší shodu určitou sadu šablon a Release candidate identifikátoru URI. Proto můžete použít, kdykoli je to nutné, to není přidružený žádné konkrétní sadu síťových protokolů (je součástí WCF).  
   
@@ -127,11 +127,11 @@ interface ICustomer
 ## <a name="formats-and-the-wcf-web-http-programming-model"></a>Formáty a Model programování webových služeb HTTP WCF  
  Model programování webových služeb HTTP WCF obsahuje nové funkce pro práci s mnoha různých datových formátů. Ve vrstvě vazby <xref:System.ServiceModel.WebHttpBinding> může číst a zapisovat následující různé druhy dat:  
   
--   XML  
+- XML  
   
--   FORMÁT JSON  
+- FORMÁT JSON  
   
--   Neprůhledný binární proudy  
+- Neprůhledný binární proudy  
   
  To znamená, že model programování webových služeb HTTP WCF dokáže zpracovat jakýkoli typ dat, ale můžete programovat s <xref:System.IO.Stream>.  
   

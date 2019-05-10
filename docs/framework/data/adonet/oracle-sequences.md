@@ -2,12 +2,12 @@
 title: Sekvence Oracle
 ms.date: 03/30/2017
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
-ms.openlocfilehash: 8fe7513093d06f3928540f2de8cba902ce62b56e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4ba7b750d48613b80eca0ef3c7c2da127977498d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878446"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64632334"
 ---
 # <a name="oracle-sequences"></a>Sekvence Oracle
 Zprostředkovatel dat .NET Framework pro Oracle poskytuje podporu pro načtení hodnoty klíče generovaný serverem sekvence Oracle po provedení operace vložení pomocí <xref:System.Data.OracleClient.OracleDataAdapter>.  

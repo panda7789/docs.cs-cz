@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 968913a52a1d86746498aed7c97b63594d346a31
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c284e37ce32848ab22ca9ff6cc2ca2a8e6df9cb6
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696837"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614496"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a> Při vývoji, nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči, je nutné zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sada oprávnění), ať už nasazeným v rámci Windows Installer (MSI), příkazu XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce se nepodporuje. Však vytvořit hostitele úplného vztahu důvěryhodnosti aplikace s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -59,7 +59,7 @@ ms.locfileid: "61696837"
   
 |Typ obsahu|Popis|Příklad identifikátoru URI|  
 |------------------|-----------------|-----------------|  
-|Prostředek|Soubory, které jsou přidány do projektu s typem sestavení **prostředků**.|`pack://application:,,,/MyResourceFile.xaml`|  
+|Resource|Soubory, které jsou přidány do projektu s typem sestavení **prostředků**.|`pack://application:,,,/MyResourceFile.xaml`|  
 |Obsah|Soubory, které jsou přidány do projektu s typem sestavení **obsahu**.|`pack://application:,,,/MyContentFile.xaml`|  
 |Místo původu|Soubory, které jsou přidány do projektu s typem sestavení **žádný**.|`pack://siteoforigin:,,,/MySiteOfOriginFile.xaml`|  
 |Kód aplikace|Zdroje XAML, které mají zkompilovaného kódu.<br /><br /> -nebo-<br /><br /> Soubory XAML, které jsou přidány do projektu s typem sestavení **stránky**.|`pack://application:,,,/MyResourceFile``.xaml`|  
@@ -264,7 +264,7 @@ ms.locfileid: "61696837"
 ## <a name="resources-for-developing-wpf-applications-that-promote-security"></a>Zdroje informací pro vývoj aplikací WPF, které podporují zabezpečení  
  Toto jsou některé další prostředky, která pomáhá rozvíjet [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací, které podporují zabezpečení:  
   
-|Oblast|Prostředek|  
+|Oblast|Resource|  
 |----------|--------------|  
 |Spravovaný kód|[Vzory a postupy pro doprovodné materiály zabezpečení pro aplikace](https://go.microsoft.com/fwlink/?LinkId=117426)|  
 |[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[Zabezpečení přístupu kódu](../misc/code-access-security.md)|  

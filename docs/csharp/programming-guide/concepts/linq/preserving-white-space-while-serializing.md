@@ -2,12 +2,12 @@
 title: Zachování prázdných znaků při Serializing3
 ms.date: 07/20/2015
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
-ms.openlocfilehash: c02524fbd22f56761189ed9ba7bd658dadeda19a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2f1e59728dc353a86421c9071710aba23c8f7f6f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61682102"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64608734"
 ---
 # <a name="preserving-white-space-while-serializing"></a>Zachování prázdných znaků při serializaci
 Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.  

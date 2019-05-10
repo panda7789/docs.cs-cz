@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: 0b013cff36fc9063f30aaa4356e9e8249dd960d8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 0dd70eb5d3b3ad56a8597ce0658a296a03d5f4a7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306492"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64618052"
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Přidejte zákazníka, změňte název zákazníka a odstranit objednávky použijete kopii ukázkové databáze Northwind.  
@@ -21,13 +21,13 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="prerequisites"></a>Požadavky  
  Tento postup vyžaduje následující:  
   
--   Tento návod používá vyhrazené složky ("c:\linqtest2") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
+- Tento návod používá vyhrazené složky ("c:\linqtest2") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
   
--   Ukázkovou databázi Northwind  
+- Ukázkovou databázi Northwind  
   
      Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft download. Pokyny najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze, zkopírujte do složky c:\linqtest2 northwnd.mdf souboru.  
   
--   Soubor kódu jazyka Visual Basic generují z databáze Northwind.  
+- Soubor kódu jazyka Visual Basic generují z databáze Northwind.  
   
      Tento soubor můžete vygenerovat buď pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroji SQLMetal. Tento návod byl napsán s použitím nástroje SQLMetal s následujícím příkazovým řádkem:  
   
@@ -38,17 +38,17 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá z šesti hlavních úloh:  
   
--   Vytváří [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
+- Vytváří [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
   
--   Přidání kódu databázový soubor do projektu.  
+- Přidání kódu databázový soubor do projektu.  
   
--   Vytváří se nový objekt zákazníka.  
+- Vytváří se nový objekt zákazníka.  
   
--   Úprava kontaktní jméno zákazníka.  
+- Úprava kontaktní jméno zákazníka.  
   
--   Odstraňuje se objednávky.  
+- Odstraňuje se objednávky.  
   
--   Odesílá se tyto změny k databázi Northwind.  
+- Odesílá se tyto změny k databázi Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření LINQ to SQL řešení  
  V této první úloze vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
@@ -136,7 +136,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-change-the-name-of-a-customer"></a>Chcete-li změnit název zákazníka  
   
--   Přidejte následující kód nad `Console.ReadLine()`:  
+- Přidejte následující kód nad `Console.ReadLine()`:  
   
      [!code-vb[DLinqWalk3VB#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#4)]  
   
@@ -147,7 +147,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-delete-a-row"></a>Odstranit řádek  
   
--   Následující kód přidejte přímo nad `Console.ReadLine()`:  
+- Následující kód přidejte přímo nad `Console.ReadLine()`:  
   
      [!code-vb[DLinqWalk3VB#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#5)]  
   

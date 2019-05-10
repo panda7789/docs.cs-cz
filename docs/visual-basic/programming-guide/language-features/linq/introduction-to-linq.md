@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 6987263854b0d0372bc08bb7e4d6efb498e265f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d9af75474f6b0aec2bdf6aa2f550c280209f91e2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781001"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64633501"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic a při práci se všemi druhy dat poskytuje jednoduché a výkonné možnosti. Místo odeslání dotazu do databáze ke zpracování nebo práce s různou syntaxí dotazu pro každý typ hledaných dat, kterou hledáte, představuje LINQ dotazy jako součást jazyka Visual Basic. Používá jednotný syntax bez ohledu na typ data.  

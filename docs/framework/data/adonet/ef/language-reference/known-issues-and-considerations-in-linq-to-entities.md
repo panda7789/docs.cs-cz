@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: 3945d4fc92bea2c4212da0507618203603ae8aba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 303e46e79786ce7f062db4a1a3ffb6c321169af8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780544"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64631284"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Známé problémy a aspekty u LINQ to Entities
 Tato část obsahuje informace o známých problémech s [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  

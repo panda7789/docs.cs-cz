@@ -2,12 +2,12 @@
 title: LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: da9529da9b45fc8ac2fdf0b19d65634dd33450fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 570d6a60e4f34e89e758b505353a083b959d9def
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760711"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64630720"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 Technologie LINQ to Entities poskytuje podporu Language-Integrated Query (LINQ), který vývojářům umožňuje psát dotazy proti konceptuálního modelu Entity Framework pomocí jazyka Visual Basic nebo Visual C#. Dotazy na Entity Framework jsou reprezentovány dotazy ve stromové struktuře příkaz, které se spustí s do kontextu objektu. Technologie LINQ to Entities převede dotazů LINQ (Language Integrated) dotazy s příkazem strom dotazů, spustí dotazy na Entity Framework a vrátí objekty, které můžete použít Entity Framework a LINQ. Proces pro vytváření a spouštění technologie LINQ to Entities dotazu je následující:  

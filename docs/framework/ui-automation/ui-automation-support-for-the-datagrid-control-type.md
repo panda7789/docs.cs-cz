@@ -6,12 +6,12 @@ helpviewer_keywords:
 - control types, Data Grid
 - UI Automation, Data Grid control type
 ms.assetid: a3db4a3f-feb5-4e5f-9b42-aae7fa816e8a
-ms.openlocfilehash: 9bf036271652f8056b79f4c5e389347cd09989e8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 45eaa66396049b619c9164b20eed798505d478a9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161028"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607040"
 ---
 # <a name="ui-automation-support-for-the-datagrid-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataGrid
 > [!NOTE]
@@ -61,13 +61,13 @@ ms.locfileid: "59161028"
   
  Datové položky v datové mřížce kontejnery bude podporovat minimálně:  
   
--   Výběr položky – vzor ovládacích prvků (Pokud mřížky dat je volitelný)  
+- Výběr položky – vzor ovládacích prvků (Pokud mřížky dat je volitelný)  
   
--   Posunout položku – vzor ovládacích prvků (Pokud je datové mřížce posuvný)  
+- Posunout položku – vzor ovládacích prvků (Pokud je datové mřížce posuvný)  
   
--   – Vzor ovládacích prvků položky mřížky  
+- – Vzor ovládacích prvků položky mřížky  
   
--   Položka tabulky – vzor ovládacích prvků  
+- Položka tabulky – vzor ovládacích prvků  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Události automatizace uživatelského rozhraní vyžaduje  
@@ -76,11 +76,11 @@ ms.locfileid: "59161028"
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádný|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádný|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádný|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent>|Závisí|Žádný|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádný|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent>|Závisí|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.MultipleViewPatternIdentifiers.CurrentViewProperty> události změny vlastnosti.|Závisí|Žádný|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> události změny vlastnosti.|Závisí|Podporuje-li ovládací prvek posuvníku vzor, musí podporovat této události.|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> události změny vlastnosti.|Závisí|Podporuje-li ovládací prvek posuvníku vzor, musí podporovat této události.|  
@@ -88,7 +88,7 @@ ms.locfileid: "59161028"
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> události změny vlastnosti.|Závisí|Podporuje-li ovládací prvek posuvníku vzor, musí podporovat této události.|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> události změny vlastnosti.|Závisí|Podporuje-li ovládací prvek posuvníku vzor, musí podporovat této události.|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> události změny vlastnosti.|Závisí|Podporuje-li ovládací prvek posuvníku vzor, musí podporovat této události.|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Požadováno|Žádný|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Požadováno|Žádné|  
   
 <a name="List_View_Control_Example"></a>   
 ## <a name="date-grid-control-type-example"></a>Ovládací prvek datum Grid – příklad typu  

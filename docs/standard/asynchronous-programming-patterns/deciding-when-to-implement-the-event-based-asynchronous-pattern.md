@@ -12,12 +12,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
-ms.openlocfilehash: acc732f72e9dae0796da78cdbb8ef4666ae9791a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c41940e74682653339207b4c7cfc48eb3e48b322
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61870276"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64628951"
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>Rozhodování, kdy implementovat asynchronní vzor založený na událostech
 Asynchronní vzor založený na událostech poskytuje základní vzor pro vystavení asynchronních chování třídy. Se zavedením tento model [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] definuje dva modely pro vystavení asynchronních chování: asynchronní vzor založený na <xref:System.IAsyncResult?displayProperty=nameWithType> rozhraní a vzor založený na událostech. Toto téma popisuje, kdy je vhodné pro vás k implementaci oba vzorky.  

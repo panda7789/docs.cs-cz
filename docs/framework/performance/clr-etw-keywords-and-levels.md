@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ef621d1cbbd04421b392e64f5507fcbe23860465
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b9a9061503ae4bf68903f35eb7624deed2f34c9b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788073"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64616602"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
 <a name="top"></a> Trasování událostí pro Windows (ETW) se dá filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) možnost filtrovat události podle kategorie; se používají v kombinacích pro zprostředkovatele běhového prostředí a doběhu. [Událostí úrovně](#levels) jsou označeny příznaky.  
@@ -37,7 +37,7 @@ ms.locfileid: "61788073"
 ### <a name="clr-etw-runtime-keywords"></a>Modul Runtime CLR ETW – klíčová slova  
  V následující tabulce jsou uvedeny klíčová slova CLR ETW runtime, jejich hodnoty a jejich použití.  
   
-|Název modulu runtime – klíčové slovo|Hodnota|Účel|  
+|Název modulu runtime – klíčové slovo|Value|Účel|  
 |--------------------------|-----------|-------------|  
 |`GCKeyword`|0x00000001|Povoluje shromažďování [události kolekce paměti](../../../docs/framework/performance/garbage-collection-etw-events.md).|  
 |`LoaderKeyword`|0x00000008|Povoluje shromažďování [události zavaděče](../../../docs/framework/performance/loader-etw-events.md).|  
@@ -62,7 +62,7 @@ ms.locfileid: "61788073"
 ### <a name="clr-etw-rundown-keywords"></a>Doběhu klíčová slova CLR ETW  
  V následující tabulce jsou uvedeny doběhu klíčová slova CLR ETW, jejich hodnoty a jejich použití.  
   
-|Název doběhu – klíčové slovo|Hodnota|Účel|  
+|Název doběhu – klíčové slovo|Value|Účel|  
 |--------------------------|-----------|-------------|  
 |`LoaderRundownKeyword`|0x00000008|Umožňuje shromažďování událostí zavaděče při použití s `StartRundownKeyword` a `EndRundownKeyword`.|  
 |`JitRundownKeyword`|0x00000010|Povolí shromažďování metoda `DCStart` a `DCEnd` události pro metody zkompilované JIT při použití s `StartRundownKeyword` a `EndRundownKeyword`.|  

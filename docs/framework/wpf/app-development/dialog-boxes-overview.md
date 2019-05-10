@@ -10,12 +10,12 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: 162414dbd4b0f5e15eceaf73c87c122701fefc4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 2c53dc315496d40b77e0bf0880c713ce3d3b4241
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052258"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64614567"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data nad tím, které aplikace funguje a zpřístupňuje funkci ke zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy, jako je panel nabídek, panelů nástrojů a stavové řádky. Aplikace nejsou v netriviálních může také zobrazit další okna provést následující kroky:  

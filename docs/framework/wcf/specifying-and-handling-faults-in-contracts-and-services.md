@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - handling faults [WCF]
 ms.assetid: a9696563-d404-4905-942d-1e0834c26dea
-ms.openlocfilehash: 7c64bdb0cf60fff2dad49c3ffc48629c53abecad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b9d6a4e2bb6b7e5c750ff7dad92934c4337c0083
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62006393"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64605948"
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>Určování a zpracování chyb v kontraktech a službách
 Aplikace Windows Communication Foundation (WCF) zpracovávat chybové situace mapování objektů spravovaných výjimek na SOAP chyb a selhání objekty SOAP pro objekty spravované výjimky. Témata v této části popisují postup návrhu smlouvy ke zveřejnění chyba podmínek jako vlastní chyb SOAP, jak vracet tyto chyby jako součást implementace služby a jak klienti zachytit tyto chyby.  

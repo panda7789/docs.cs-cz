@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e6209df7d226d7e3acb938801d1fb77afbe1249b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3afbffcbbaa5e8398a9ab10c762e60305cfc164b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026594"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64615242"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pro parametry šablon stylů a objektů rozšíření
 <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.  
