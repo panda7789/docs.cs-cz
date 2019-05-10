@@ -2,12 +2,12 @@
 title: Úložiště instancí pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-ms.openlocfilehash: 8314781f46d9cd4eddd06f6be95f8e952feef1b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7cdd852795283660b8077e14686ad7ce4af76673
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004624"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626196"
 ---
 # <a name="sql-workflow-instance-store"></a>Úložiště instancí pracovních postupů SQL
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL Store Instance pracovního postupu, který umožňuje pracovní postupy pro zachování informací o stavu instance pracovního postupu v databázi serveru SQL Server 2005 nebo SQL Server 2008. Tato funkce jsou primárně implementované ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třída, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy rozhraní trvalosti. Funkce SQL Store Instance pracovního postupu se považuje za SQL poskytovatele trvalého chování, které je konkrétní implementace rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště trvalosti.  

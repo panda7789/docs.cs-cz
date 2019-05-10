@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93abf6e91c2e13173184faee281de52eb83e17f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8d0574c7e0910a658f1dc80d8394f55b472c31a3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650255"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634557"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 

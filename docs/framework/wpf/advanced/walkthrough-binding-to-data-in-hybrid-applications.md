@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-ms.openlocfilehash: f6fd1f2f5d0a729ee5610b81d4bfdca052a6e01e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 57d679715749b271a9fd3e692462b6b0df00c348
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61981809"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634887"
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň uživatelům poskytují přístup k podkladová data, ať používáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete datové vazby v hybridních aplikacích, které zahrnují oba [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky.  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - examples [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-ms.openlocfilehash: 55ca52390cd6c5d5af4a764ea4438d8ce935dfbb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 60c4dac76b4a7868da9143cab1433ee93f97c7d1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913091"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64636813"
 ---
 # <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid
 > [!NOTE]

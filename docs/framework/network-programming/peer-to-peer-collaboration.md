@@ -2,12 +2,12 @@
 title: Spolupráce peer-to-peer
 ms.date: 03/30/2017
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
-ms.openlocfilehash: 91e9179fc426934e78a1e0223c9bffafe5efbef1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0c257782ad391bb8de61caffdd13af1f2872ef6c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642032"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623179"
 ---
 # <a name="peer-to-peer-collaboration"></a>Spolupráce peer-to-peer
 

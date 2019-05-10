@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e2cb07389ad68985362993e76f82e58d2a59e237
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bb2aabfd083a71d8d083d08e9bc7e2a7ad065e7f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61919695"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64623350"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
 Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)  

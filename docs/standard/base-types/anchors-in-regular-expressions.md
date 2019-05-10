@@ -19,12 +19,12 @@ ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: f0e42c0032dc6f9dac0895a29db9de79547c0a49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 85e971d3464b6f2a073288e7f8b5406563598f79
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698886"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634760"
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a> Kotvy vztahů nebo atomické kontrolní výrazy s nulovou šířkou, určit pozici v řetězci, kde ke shodě musí dojít. Při použití ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo spotřebovával znaky; Vyhledá shodu pouze na určené pozici. Například `^` Určuje, že porovnání musí začít na začátku řetězce nebo řádku. Proto regulárního výrazu `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. V následující tabulce jsou uvedeny kotvy podporované regulárními výrazy v rozhraní .NET.  

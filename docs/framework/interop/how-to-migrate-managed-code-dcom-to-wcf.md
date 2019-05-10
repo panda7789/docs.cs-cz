@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 74acea566e4b0e407e86cb67d3f521f18c2d68af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fad8a73c41379cac7523db6266951b8abab26e27
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643059"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626298"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Postupy: Migrace spravovaného kódu DCOM do WCF
 Windows Communication Foundation (WCF) je volba doporučené a zabezpečené přes distribuované DCOM Component Object Model () pro spravovaný kód volání mezi servery a klienty v distribuovaném prostředí. Tento článek popisuje, jak vám migrace kódu z modelu DCOM do WCF v následujících scénářích.  

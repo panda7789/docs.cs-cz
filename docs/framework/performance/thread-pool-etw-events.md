@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: caacee591c4df8389cea241916618f50da56b22b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 50ecb2aad84bd5b6c32f655b1dbbd34cf03a5b29
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949159"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624297"
 ---
 # <a name="thread-pool-etw-events"></a>Události Trasování událostí pro Windows fondu vláken
 <a name="top"></a> Tyto události shromažďovat informace o pracovních procesů a vláken vstupně-výstupních operací.  

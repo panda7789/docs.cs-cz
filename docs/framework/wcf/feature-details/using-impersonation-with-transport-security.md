@@ -2,12 +2,12 @@
 title: Použití zosobnění se zabezpečením přenosu
 ms.date: 03/30/2017
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
-ms.openlocfilehash: 6209007b60effe5403caf3db8855f029d0c47a0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f392dbe5806532eba181adef4ba3c8bebce9eddd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050672"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64637445"
 ---
 # <a name="using-impersonation-with-transport-security"></a>Použití zosobnění se zabezpečením přenosu
 *Zosobnění* je schopnost serveru aplikace, abyste mohli na identity klienta. Je běžné, že služby pro použití zosobnění při ověření přístupu k prostředkům. Serverová aplikace běží, pomocí účtu služby, ale pokud server přijme připojení klienta, klient zosobní tak, aby kontroly přístupu se provádí pomocí přihlašovacích údajů klienta. Zabezpečení přenosu sítí je mechanismus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu pomocí zosobnění funkce ve Windows Communication Foundation (WCF). Další informace o zosobnění pomocí zabezpečení zpráv, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  

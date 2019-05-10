@@ -7,12 +7,12 @@ helpviewer_keywords:
 - connections [Visual Basic], checking status
 - connection status [Visual Basic]
 ms.assetid: 4d9ee8ab-9a6f-4279-ace4-b75afc976a74
-ms.openlocfilehash: fd618852c2d0650f168edf8dac53931216fc3a9b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1a03b181c2e363c3380c4f9858b629713641f2c2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014034"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64620678"
 ---
 # <a name="how-to-check-connection-status-in-visual-basic"></a>Postupy: Kontrola stavu připojení v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> Vlastnost lze použít k určení, zda má počítač funkční síť a připojení k Internetu.  

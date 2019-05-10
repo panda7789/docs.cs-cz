@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc4d8fdc39153f227e8344ea1da52a0dba2688d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: bd0611cc8a6d257192b389b023c4dcda8f1b7ec3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61955956"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634425"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 Modul regulárních výrazů rozhraní .NET Framework je navracení předávaný regulární výraz, který zahrnuje modul tradiční Nedeterministická Finite Automaton (NFA) jako, který používá Perl, Python, (emacs) a Tcl je. To která ho odlišuje od rychleji, ale moduly Deterministické omezené Automaton (DFA) omezenější, čistý regulární výraz například výstrahám nacházejícím se v awk, egrep nebo lex. To také která ho odlišuje od standardizované, ale pomalejší, k zařízení NFAs POSIX. Následující část popisuje tři typy strojů regulárních výrazů a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovat pomocí tradičních modulem NFA.  

@@ -2,12 +2,12 @@
 title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: a60cae7ad3dcfdaa139b8be974ed2d3996b5211d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4640135ec693233017bf38548a9b1684d941ff50
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002364"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626011"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 Při odesílání velkých zpráv pomocí služby Windows Communication Foundation (WCF), je často žádoucí omezit množství paměti pro zprávy ve vyrovnávací paměti. Jedním z možných řešení je do datového proudu zprávy (za předpokladu, že hromadných dat je v textu). Ale některé protokoly vyžadují celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou tyto dva příklady. Další možnou příčinou je zdola nahoru objemné zprávy do menších zprávy označované jako bloky dat, odesílání jednoho bloku tyto bloky dat najednou a znovuvytvoření velkých zpráv na straně příjmu. Zrušení bloků nebo ho může používat vlastní kanál k tomu a samotná aplikace udělat tento bloků. Vytváření bloků kanál příklad ukazuje, jak vlastní protokol nebo vrstvami kanálu lze provést bloků a zrušení bloků libovolně velkých zpráv.  

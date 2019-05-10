@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - cache [.NET Framework], configuring
 ms.assetid: 3f694a1c-de5d-47cf-a6eb-cfc369fb8a9f
-ms.openlocfilehash: 5b112f2061ba11c95780ec00ac34ecda24d272e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: dcdb7659e322769b3eb234980415473e711568e8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642786"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624637"
 ---
 # <a name="configuring-caching-in-network-applications"></a>Konfigurace ukládání do mezipaměti v síťových aplikacích
 Pokud chcete nakonfigurovat, ukládání do mezipaměti, je nutné zadat zásady mezipaměti na úrovni aplikace, nebo <xref:System.Net.WebRequest> úroveň. Následující témata obsahují příklady kódu, které ukazují, konfiguraci aplikací a požadavky na použití ukládání do mezipaměti.  

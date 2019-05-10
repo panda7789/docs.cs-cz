@@ -6,12 +6,12 @@ helpviewer_keywords:
 - bugreport compiler option [Visual Basic]
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
-ms.openlocfilehash: e7b4ebc58b6fe9850b92ef945cb0d715e4369efe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6ff9aa23fb6d7dee5c245ed174318f6589e7d245
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61839563"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624322"
 ---
 # <a name="-bugreport"></a>-bugreport
 Vytvoří soubor, který vám pomůže při souboru hlášení o chybě.  

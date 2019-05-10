@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 931edf3610d083f6821ec87d3e05db855e88c6f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fa4b8fdd56ed8a1304b6ee436ce3391c52ae7b9d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683389"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622727"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a> Kovariance a kontravariance jsou pojmy, které označují schopnost používat více odvozeného typu (konkrétnější) nebo méně odvozeného typu (specifické pro less) než byl původně zadán. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: V příkladech se předpokládá základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  

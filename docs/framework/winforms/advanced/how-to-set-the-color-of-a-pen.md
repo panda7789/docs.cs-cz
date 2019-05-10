@@ -9,12 +9,12 @@ helpviewer_keywords:
 - pens [Windows Forms], setting color
 - colored pens
 ms.assetid: a9df06f9-a6d5-4d9b-a2d1-583943540775
-ms.openlocfilehash: dc067f5a131951bf3af7adc68e11b948d40fc0ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ee2d3f8cdf6dd10ca2a9ff0dd3e66b164c84f21b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966862"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64637006"
 ---
 # <a name="how-to-set-the-color-of-a-pen"></a>Postupy: Nastavení barvy pera
 V tomto příkladu změní barvu existující <xref:System.Drawing.Pen> objektu  

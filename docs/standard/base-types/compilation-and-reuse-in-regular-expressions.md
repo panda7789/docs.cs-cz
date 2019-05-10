@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2166412269a84329d42f58c7e3423229be4327b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ca2dfcfbb5407be2727343a5b3a5b429af83ae20
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650307"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634587"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Kompilace a opětovné používání v regulárních výrazech
 Můžete optimalizovat výkon aplikací, které usnadňují rozsáhlé používání regulárních výrazů, pochopení, jak modul regulárních výrazů zkompiluje výrazy a principy regulárních výrazů v mezipaměti. Toto téma popisuje kompilace a ukládání do mezipaměti.  

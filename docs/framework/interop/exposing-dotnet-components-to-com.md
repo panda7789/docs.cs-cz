@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: db0493f437d2546302a10bf52aebf326ea8a694c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4a6c2b755b87f6f01f08f54a2f2fc567868dbb55
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643267"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626351"
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Vystavení komponent architektury .NET Framework pro COM
 Zápis typ formátu .NET a použití typu z nespravovaného kódu jsou různé aktivity pro vývojáře. Tato část popisuje několik tipů pro vytváření spravovaného kódu, který spolupracuje s klienty modelu COM:  
