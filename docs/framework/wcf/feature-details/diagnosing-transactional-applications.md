@@ -2,12 +2,12 @@
 title: Diagnostikování transakčních aplikací
 ms.date: 03/30/2017
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-ms.openlocfilehash: aca5f95e2085dfadf06da35dfd86af72c0b6092d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9a4f064d903092b04f8885fb00b56e18c9cfeb74
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856736"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64751114"
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
 Toto téma popisuje postup řešení potíží s transakční aplikace pomocí správy služby Windows Communication Foundation (WCF) a funkce Diagnostika.  
@@ -51,7 +51,7 @@ Toto téma popisuje postup řešení potíží s transakční aplikace pomocí s
   
  V rámci služby `ServiceBehaviorAttribute` má následující vlastnosti.  
   
-|Název|Typ|Popis|  
+|Name|Typ|Popis|  
 |----------|----------|-----------------|  
 |ReleaseServiceInstanceOnTransactionComplete|Boolean|Určuje, zda je objekt služby vrácen, pokud je aktuální transakce dokončena.|  
 |TransactionAutoCompleteOnSessionClose|Boolean|Určuje, zda jsou nevyřízené transakce dokončeny zavře aktuální relaci.|  
@@ -60,27 +60,27 @@ Toto téma popisuje postup řešení potíží s transakční aplikace pomocí s
   
  `ServiceTimeoutsBehavior` Má následující vlastnost.  
   
-|Název|Typ|Popis|  
+|Name|Typ|Popis|  
 |----------|----------|-----------------|  
 |Vlastnost TransactionTimeout|<xref:System.DateTime>|Určuje interval, ve kterém musí být transakce dokončena.|  
   
  U vazby, `TransactionFlowBindingElement` má následující vlastnosti.  
   
-|Název|Typ|Popis|  
+|Name|Typ|Popis|  
 |----------|----------|-----------------|  
 |transactionProtocol|Řetězec, který obsahuje platnou hodnotou <xref:System.ServiceModel.TransactionProtocol> typu.|Určuje protokol transakce pro použití v toku transakce.|  
 |TransactionFlow|Boolean|Určuje, zda je povolen tok příchozích transakcí.|  
   
  U určité operace `OperationBehaviorAttribute` má následující vlastnosti:  
   
-|Název|Typ|Popis|  
+|Name|Typ|Popis|  
 |----------|----------|-----------------|  
 |TransactionAutoComplete|Boolean|Určuje, jestli aktuální transakce potvrzena automaticky, pokud se nevyskytnou žádné nezpracované výjimky.|  
 |Vlastností TransactionScopeRequired|Boolean|Určuje, zda operace vyžaduje transakci.|  
   
  U určité operace `TransactionFlowAttribute` má následující vlastnosti.  
   
-|Název|Typ|Popis|  
+|Name|Typ|Popis|  
 |----------|----------|-----------------|  
 |TransactionFlowOption|Řetězec, který obsahuje platnou hodnotou <xref:System.ServiceModel.TransactionFlowOption> výčtu.|Určuje rozsah na transakci, která tok je povinný.|  
   

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd02320f9b899f339efa149838547fd05d1b4079
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 711b4c79b32aa3db4d3681d29e08dbd3d2ddbd02
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867156"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64660272"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native a kompilace
 Aplikace Windows 8.1 a Windows desktopových aplikací, které jsou cíleny na rozhraní.NET Framework jsou napsané v konkrétním programovacím jazykem a zkompilovány do (IL intermediate language). Za běhu kompilátor just-in-time (JIT) zodpovídá za kompilace IL do nativního kódu pro místní počítač, těsně před prvním je metoda spuštěna. Naproti tomu .NET Native řetězce nástrojů převede zdrojový kód do nativního kódu v době kompilace. Toto téma porovnává .NET Native s jinými technologiemi kompilace k dispozici pro aplikace rozhraní .NET Framework a také poskytuje praktické přehled jak .NET Native vytváří nativní kód, který vám pomůžou pochopit, proč výjimky, ke kterým dochází v kód zkompilovaný s .NET Nativní nedojde v kód zkompilovaný kompilátorem JIT.  

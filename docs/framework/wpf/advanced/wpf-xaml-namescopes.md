@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [WPF], namescopes
 - classes [WPF], FrameworkContentElement
 ms.assetid: 52bbf4f2-15fc-40d4-837b-bb4c21ead7d4
-ms.openlocfilehash: a46942188fd417b46ba4feb44d436800e1362098
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d4a4e1eee5dc60e330a5425d5075c7e5b8c44127
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764644"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64666343"
 ---
 # <a name="wpf-xaml-namescopes"></a>Obory názvů WPF XAML
 Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definovány v XAML. Názvy v XAML namescope lze použít k vytvoření relace mezi XAML definované názvy objektů a jejich ekvivalenty instance ve stromu objektů. Obvykle XAML obory názvů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spravovaného kódu jsou vytvořeny při načítání jednotlivých stránek XAML kořeny pro aplikace XAML. Obory názvů XAML jako programovací objekty jsou definovány <xref:System.Windows.Markup.INameScope> rozhraní a jsou také implementováno třídou praktické <xref:System.Windows.NameScope>.  

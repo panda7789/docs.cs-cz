@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 5e3a8bc58d0828f50feb7752eb438d41695460fa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 12296fbd503a7e9f1866f407964a5e223d1afadd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857789"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64650336"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
@@ -183,7 +183,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 |Nastavení|Funkce|  
 |-------------|--------------|  
 |Přenos|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Zabezpečení typu Point-to-Point<br /><br /> Interoperabilita<br /><br /> Hardwarová akcelerace<br /><br /> Vysoká propustnost<br /><br /> Zabezpečené brány firewall<br /><br /> Aplikace s vysokou latencí<br /><br /> Znova šifrovat napříč více segmentů směrování|  
-|Zpráva|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Koncové zabezpečení<br /><br /> Interoperabilita<br /><br /> Deklarace identity ve formátu RTF<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Služba notář/časové razítko<br /><br /> Aplikace s vysokou latencí<br /><br /> Trvalost podpisy zpráv|  
+|Message|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Koncové zabezpečení<br /><br /> Interoperabilita<br /><br /> Deklarace identity ve formátu RTF<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Služba notář/časové razítko<br /><br /> Aplikace s vysokou latencí<br /><br /> Trvalost podpisy zpráv|  
 |TransportWithMessageCredential|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Zabezpečení typu Point-to-Point<br /><br /> Interoperabilita<br /><br /> Hardwarová akcelerace<br /><br /> Vysoká propustnost<br /><br /> Deklarace identity vzhled plně funkčního klienta<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Zabezpečené brány firewall<br /><br /> Aplikace s vysokou latencí<br /><br /> Znova šifrovat napříč více segmentů směrování|  
   
  V následující tabulce jsou uvedeny vazby, které podporují různá nastavení režimu. Vyberte vazbu tabulky použít k vytvoření vašeho koncového bodu služby.  
@@ -217,7 +217,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 |Type|Popis|  
 |----------|-----------------|  
-|Žádný|Umožňuje službě komunikovat s anonymní klienty.|  
+|Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
 |Windows|Umožňuje výměny zpráv SOAP podle ověřený kontext přihlašovacích údajů Windows.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, která klient ověřena pomocí pověření uživatelského jména. Všimněte si, že pokud režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odeslání hesla hodnotou hash nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro režim zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  

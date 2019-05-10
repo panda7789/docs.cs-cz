@@ -3,12 +3,12 @@ title: Třídy a objekty v C# – připravuje C# jazyka
 description: Teprve se C#? Přečtěte si tento přehled tříd, objektů a dědičnost
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: 36def74888f67dfa216cea7c093d80724e452c7b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 681ed03661bf54dcb1e7e70735a53a553763c95c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706582"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64750396"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -230,7 +230,7 @@ C# podporuje instance a statické konstruktory. *Konstruktor instance* je člen,
 
 Konstruktor je deklarován jako metoda bez návratového typu a stejný název jako třídu obsahující. Pokud deklarace konstruktoru obsahuje statický modifikátor, deklaruje statický konstruktor. V opačném případě deklaruje konstruktor instance.
 
-Konstruktory instancí můžou být přetížené a může obsahovat volitelné parametry. Například `MyList<T>` třída deklaruje dva konstruktory instancí, jednu s žádné parametry a ten, který přebírá `int` parametru. Konstruktory instancí jsou vyvolány pomocí `new` operátor. Následující příkazy přidělit dvě `MyList<string>` instance pomocí konstruktoru `MyList` třídy a nemusíte nepovinný argument.
+Konstruktory instancí můžou být přetížené a může obsahovat volitelné parametry. Například `MyList<T>` třída deklaruje jednu instanci konstruktoru pomocí jediného volitelné `int` parametru. Konstruktory instancí jsou vyvolány pomocí `new` operátor. Následující příkazy přidělit dvě `MyList<string>` instance pomocí konstruktoru `MyList` třídy a nemusíte nepovinný argument.
 
 [!code-csharp[ListExample1](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], types
 - controls [Windows Forms], creating
 ms.assetid: 5235fe9d-c36a-4c08-ae76-6cb90b50085e
-ms.openlocfilehash: 5dc734997917af7ec4a20a6c12ae04825507c7ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9416fc3efabc3fef6b678a3aa3ddef048eed5e2f
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011538"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64648239"
 ---
 # <a name="control-type-recommendations"></a>Doporučení ohledně typu ovládacího prvku
 Rozhraní .NET Framework vám dává možnost vytvořit a implementovat nové ovládací prvky. Kromě známé uživatelský ovládací prvek nyní zjistíte, že budete moci napsat vlastní ovládací prvky, které vlastní vykreslení a budou moct i rozšiřovat funkce existujících ovládacích prvků prostřednictvím dědičnosti. Rozhodování o tom, jaký typ ovládacího prvku k vytvoření může být matoucí. Tato část ukazuje rozdíly mezi různé typy ovládacích prvků, ze kterého může dědit vlastnosti a poskytuje důležité informace týkající se typu vybrat pro váš projekt.  

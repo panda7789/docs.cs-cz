@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 7b964ebd-7a4f-4d28-8194-7841f9e4c702
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ba3690b6642601fd7d777e3ae1d1e34684e3b1dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0f02f7a8a327e117b92ef826b8dcd7fc742c9b4c
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947049"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64647812"
 ---
 # <a name="pipe-operations-in-net"></a>Operace s pojmenovanými kanály v rozhraní .NET
 Kanály poskytují způsob meziprocesová komunikace. Existují dva druhy kanály:  

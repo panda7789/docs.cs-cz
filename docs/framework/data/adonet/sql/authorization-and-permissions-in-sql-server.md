@@ -2,12 +2,12 @@
 title: Autorizace a oprávnění na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-ms.openlocfilehash: 398041d678ba3e4ae5a36dd7714fd2a9bfee1b40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 35aa26ed1afb0006802b703fa0fa3a6076f03ddf
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663957"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649569"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění na SQL Serveru
 Při vytváření databázových objektů, je nutné explicitně udělit oprávnění, aby byly přístupné uživatelům. Všechny zabezpečitelné objekty má oprávnění, která lze udělit pomocí příkazů oprávnění objektu zabezpečení.  
@@ -54,7 +54,7 @@ Při vytváření databázových objektů, je nutné explicitně udělit oprávn
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Oprávnění](/sql/relational-databases/security/permissions-database-engine)|Obsahuje témata popisující oprávnění hierarchie, zobrazení katalogu a oprávnění pevné role serveru a databáze.|
   

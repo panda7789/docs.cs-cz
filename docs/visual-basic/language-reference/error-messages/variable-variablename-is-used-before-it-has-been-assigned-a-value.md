@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42104
 ms.assetid: 6909aa0b-b4a1-46f5-a18c-ba3e565c1dd8
-ms.openlocfilehash: 46551a917aeb794c8d35985076b67a315386f628
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a2ba752b95933d146da090a58c416015db75e106
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766724"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662676"
 ---
 # <a name="variable-variablename-is-used-before-it-has-been-assigned-a-value"></a>Proměnná '\<NázevProměnné >' se použije dřív, než jí byla přiřazena hodnota
 Proměnná '\<NázevProměnné >' se použije dřív, než jí byla přiřazena hodnota. Výjimka nulového odkazu by mohlo způsobit v době běhu.  

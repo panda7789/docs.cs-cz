@@ -2,12 +2,12 @@
 title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: b93b78a5fabbcf60eefb386144ec90e877cfed0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4960959dfe6f485a96d29a5da43c2b8c6c98fe3a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664152"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649608"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář může zaručit, že je aplikace bezpečné útoky, protože není možné předpovědět, jaké druhy nové technologie budoucím útokům přinese. Naopak pouze z důvodu nemá nikdo chybám zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená, že žádný neexistuje, nebo může existovat. Budete muset plánování zabezpečení během fáze návrhu projektu, jakož i plánování, jak se zachová zabezpečení během životního cyklu aplikace.  
@@ -26,7 +26,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Pro modelování hrozeb](https://go.microsoft.com/fwlink/?LinkId=98353) lokality na Security Center pro vývojáře MSDN|Prostředky na této stránce vám pomůže porozumět před internetovými útoky proces modelování a vytvářet modely hrozeb, které můžete použít k zabezpečení vašich vlastních aplikací|  
   
@@ -39,7 +39,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Další informace o zabezpečení vašich aplikací najdete v následující prostředky.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Zabezpečování aplikací](/visualstudio/ide/securing-applications)|Obsahuje odkazy na témata o obecných zabezpečení. Obsahuje taky odkazy na témata pro zabezpečení distribuované aplikace, webové aplikace, mobilní aplikace a desktopové aplikace.|  
   
@@ -64,7 +64,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Zabezpečení přístupu ke kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Najdete popis interakcí mezi zabezpečení přístupu kódu, na základě rolí zabezpečení a částečně důvěryhodného prostředí z hlediska aplikaci ADO.NET.|  
 |[Zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security.md)|Obsahuje odkazy na další témata popisující certifikační Autority v rozhraní .NET Framework.|  
@@ -86,7 +86,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Poskytuje přehled zabezpečení systému SQL Server s aplikačními scénáři, které poskytují pokyny pro vytváření zabezpečených aplikací ADO.NET, které cílí na systém SQL Server.|  
 |[Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
@@ -96,7 +96,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
 |[Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Obsahuje informace o vytváření a správě zásad zabezpečení.|  
 |[Doporučené postupy zabezpečení pro zásady](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Obsahuje odkazy, které popisují, jak spravovat zásady zabezpečení.|  
