@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 33aaf09e284db5c818eb0ff3917533cce5e70ad7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 201dbc759b619f65599e09c78c14b96d17395952
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61811654"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64620701"
 ---
 # <a name="net-regular-expressions"></a>Regulárních výrazů .NET
 Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Rozsáhlé notace vzoru regulárních výrazů umožňuje rychlé analyzování velkého množství textu k vyhledání konkrétních znakových vzorů; pro ověření textu a ověřte, že souhlasí s předdefinovaným vzorem (jako je například e-mailovou adresu); extrahovat, upravovat, nahrazení nebo odstranění podřetězců textu; a přidávání vyjmutých řetězců do kolekce ke generování sestavy. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  

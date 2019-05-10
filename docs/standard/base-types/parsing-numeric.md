@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ba1ded1757d71a2b7839ae8b45489da53763b8e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 73440f2ed689bdad56bb1f05025f826da9c409e2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765944"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64633327"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analýza číselných řetězců v síti
 Všechny číselné typy mají dvě metody statické analýzy `Parse` a `TryParse`, že vám pomůže převést řetězcové vyjádření čísla na číselného typu. Tyto metody umožňují Analýza řetězců, které byly vytvořeny pomocí formátovacích řetězců dokumentovány v článku [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md) a [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md). Ve výchozím nastavení `Parse` a `TryParse` metody můžete převést úspěšně řetězce, které obsahují integrální desítkových číslic pouze pro celočíselné hodnoty. Můžete úspěšně převodu řetězce, které obsahují celých a desetinných desítkové číslice, oddělovače skupin a oddělovač desetinných míst pro hodnoty s plovoucí desetinnou čárkou. `Parse` Metoda vyvolá výjimku, pokud se operace nezdaří, zatímco `TryParse` vrátí metoda `false`.  

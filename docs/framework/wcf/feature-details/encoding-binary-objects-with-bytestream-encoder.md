@@ -2,12 +2,12 @@
 title: Kódování binárních objektů pomocí kodéru ByteStream
 ms.date: 03/30/2017
 ms.assetid: 020ee981-c889-4b12-a3ea-91823ef46444
-ms.openlocfilehash: 9619fdf6979833c30159e1ea02b3f8d6b98a6629
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 09a919e11971f81bc76dca0e45a7eb0e70ef749e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856502"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64626929"
 ---
 # <a name="encoding-binary-objects-with-bytestream-encoder"></a>Kódování binárních objektů pomocí kodéru ByteStream
 Odesílání a příjem Nezpracovaná binární data Windows Communication Foundation (WCF) je nakonfigurovaný nástrojem <xref:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement>.  

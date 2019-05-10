@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability [WPF], airspace
 - Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-ms.openlocfilehash: 40ec8d033852bba5cb5ccb0739309cfe988a3ce5
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.openlocfilehash: afea62dfe7ba26375cb23b661c6682bf1b59a19d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63808393"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64621045"
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud více technologií prezentace se používají v aplikaci, například WPF, Win32 či DirectX, sdílejí musí vykreslování oblastí v rámci běžných okno nejvyšší úrovně. Toto téma popisuje problémy, které by mohly ovlivnit prezentace a vstup pro součinnost aplikaci WPF.  

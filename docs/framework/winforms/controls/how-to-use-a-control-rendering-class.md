@@ -10,12 +10,12 @@ helpviewer_keywords:
 - visual themes [Windows Forms], applying to Windows Forms controls
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: c0125e34-cd74-4c35-818c-3e40f462b0a3
-ms.openlocfilehash: 7115c227cb24cf12a50073d0dc587524abf0cbb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a0f450ff5f169026007002a0d2907ee35e79b29d
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785837"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64630557"
 ---
 # <a name="how-to-use-a-control-rendering-class"></a>Postupy: Použití třídy vykreslující ovládací prvek
 Tento příklad ukazuje, jak používat <xref:System.Windows.Forms.ComboBoxRenderer> třídy k vykreslení na šipku rozevíracího seznamu pole se seznamem ovládací prvek pole. V příkladu se skládá z <xref:System.Windows.Forms.Control.OnPaint%2A> metoda jednoduché vlastního ovládacího prvku. <xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=nameWithType> Vlastnost se používá k určení, zda jsou vizuální styly povoleny v klientské oblasti okna aplikace. Pokud vizuální styly jsou aktivní, pak bude <xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=nameWithType> metoda vykreslí na šipku rozevíracího seznamu s vizuálními styly; v opačném případě <xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=nameWithType> metoda vykreslí na šipku rozevíracího seznamu v klasické Windows.  

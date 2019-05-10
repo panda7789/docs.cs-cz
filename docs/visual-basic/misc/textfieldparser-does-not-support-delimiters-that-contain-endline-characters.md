@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_EndCharsInDelimiter
 ms.assetid: 0701f3b6-635b-468e-b908-867df00dd5db
-ms.openlocfilehash: a04f4a29647c58199472840dc9e84f904a6c1deb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 1667310a7ad9790aed100dcbcbcb3a3fcef6389e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668975"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64620249"
 ---
 # <a name="textfieldparser-does-not-support-delimiters-that-contain-endline-characters"></a>TextFieldParser nepodporuje oddělovače obsahující znaky ukončovacího
 Oddělovač, který obsahuje ukončovacího znaku není zadaný, ale `TextFieldParser` nepodporuje oddělovače obsahující znaky ukončovacího.  

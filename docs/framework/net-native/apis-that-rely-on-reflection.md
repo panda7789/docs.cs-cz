@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7ec1280f3b7ba25367fac21d5160046915636a5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a32e12b593f273c8b812390306c81b311da7c2a4
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868976"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624696"
 ---
 # <a name="apis-that-rely-on-reflection"></a>Rozhraní API, která závisí na reflexi
 V některých případech použití reflexe v kódu není zřejmé a proto [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězce nástrojů není zachovat metadata, která je potřeba v době běhu. Toto téma popisuje některé běžné rozhraní API nebo běžné vzory programování, které nejsou považované za součást rozhraní API reflexe, ale, který závisí na reflexi proběhl úspěšně. Pokud je použijete ve zdrojovém kódu, můžete přidat informace o nich do direktivy modulu runtime (. rd.xml) souboru tak, aby volání těchto rozhraní API nevyvolají výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky nebo jinou výjimku za běhu.  

@@ -2,12 +2,12 @@
 title: Zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 737ec121-bfc5-4b75-a504-2d53c2c8af39
-ms.openlocfilehash: c27ac9cf41436332d560e11987e3ce4b68576895
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d82ad52dd24dbfcb66887693563b08c995baa63a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004689"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64619497"
 ---
 # <a name="security"></a>Zabezpečení
 Store Instance SQL pracovní postup používá Tyhle role zabezpečení databázi zabezpečit přístup k informacím o stavu instance databáze trvalosti.  

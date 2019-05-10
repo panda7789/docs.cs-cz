@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application object [Visual Basic], Visual Basic application model
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
-ms.openlocfilehash: 02cc71dbda47d078284d9a2ec07538dfa063ac75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0144c92e01e617081ae05003e6a7175c63166891
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014142"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64622794"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic
 Visual Basic poskytuje pro řízení chování aplikací modelu Windows Forms dobře definovaný model: model aplikace Visual Basic. Tento model obsahuje události pro zpracování aplikace při spuštění a vypnutí, jakož i události pro zachycení neošetřené výjimky. Také poskytuje podporu pro vývoj aplikací s jednou instancí. Aplikační model je rozšiřitelný, takže vývojáři, kteří potřebují mít větší kontrolu můžete přizpůsobit jeho přepisovatelné metody.  

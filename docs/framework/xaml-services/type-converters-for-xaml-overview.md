@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: 7a5ec731eacda8017c307a0ffa8ec282da78c40f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: cf9eda484d184b9be70a02bac7ced5b85a2dd211
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025454"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64617223"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Přehled převaděčů typů pro jazyk XAML
 Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede z řetězce v kódu XAML na konkrétní objekty v grafu objektů. V rozhraní .NET Framework XAML Services musí být převaděč typu třída, která je odvozena z <xref:System.ComponentModel.TypeConverter>. Některé převaděče také podporují XAML cesta pro uložení a je možné serializovat objekt do formátu řetězce v kódu serializace. Toto téma popisuje, jak a kdy jsou vyvolány převaděče typů v XAML a obsahuje implementace doporučení pro metody přepsání <xref:System.ComponentModel.TypeConverter>.  

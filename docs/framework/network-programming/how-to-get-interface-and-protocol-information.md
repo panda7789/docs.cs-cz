@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
-ms.openlocfilehash: fec8fd294c0408bfb16df1c5cfa1f3a96c1f28ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e70afa6b3633a5868491e421c7e8e44bf9f3e895
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642604"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624582"
 ---
 # <a name="how-to-get-interface-and-protocol-information"></a>Postupy: Získání informace o rozhraní a protokolu
 Tento příklad znázorňuje způsob čtení statistik protokolu TCP pro síťové rozhraní.  

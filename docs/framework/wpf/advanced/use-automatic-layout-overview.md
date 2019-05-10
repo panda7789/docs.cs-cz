@@ -5,12 +5,12 @@ helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-ms.openlocfilehash: 5df6d39bef137bd4005316eac252ca0952df5e7f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: a9f04f6da4dc4024f4c9ece19f045eb8e3775e6a
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098777"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64620888"
 ---
 # <a name="use-automatic-layout-overview"></a>Přehled automatického rozložení
 Toto téma popisuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací s lokalizovatelné [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. Lokalizace uživatelského rozhraní v minulosti bylo časově náročný proces. Každý jazyk, který byl přizpůsobit uživatelské rozhraní pro požadované úpravy podle pixelů. Dnes s správný návrh a pravá standardy kódování, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] lze sestavit tak, aby Lokalizátoři menší změny velikosti a přemístění provést. Přístup k vytváření aplikací, které se dají snadno změněnou velikostí a přemístěných nazývá Automatické rozložení a lze dosáhnout pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] návrhu aplikace.  
@@ -19,15 +19,15 @@ Toto téma popisuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_w
 ## <a name="advantages-of-using-automatic-layout"></a>Mezi výhody používání automatického rozložení  
  Vzhledem k tomu, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentační systém je výkonná a flexibilní, poskytuje schopnost rozložení prvků v aplikaci, která je možné upravit podle požadavků různých jazycích. Následující seznam ukazuje některé z výhod automatické rozložení.  
 
--   Uživatelské rozhraní zobrazí také v jakémkoli jazyce.  
+- Uživatelské rozhraní zobrazí také v jakémkoli jazyce.  
 
--   Snižuje nutnost znovu nastavte pozici a velikost ovládacích prvků po přeložený text.  
+- Snižuje nutnost znovu nastavte pozici a velikost ovládacích prvků po přeložený text.  
   
--   Snižuje nutnost přizpůsobit velikosti okna.  
+- Snižuje nutnost přizpůsobit velikosti okna.  
 
--   Uživatelské rozhraní rozložení vykreslí správně v libovolném jazyce.  
+- Uživatelské rozhraní rozložení vykreslí správně v libovolném jazyce.  
 
--   Lokalizace lze snížit, že se jedná o něco více než řetězec překladu bodu.  
+- Lokalizace lze snížit, že se jedná o něco více než řetězec překladu bodu.  
   
 <a name="autolayout_controls"></a>   
 ## <a name="automatic-layout-and-controls"></a>Automatické rozložení a ovládací prvky  

@@ -2,12 +2,12 @@
 title: 'Postupy: Zápis dat objektů do souboru XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: f7966480-5ed2-43ac-9894-33427436de2a
-ms.openlocfilehash: 52b896b0191f29f68cc31e02fc325638ca6341b4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 17f8463a4b905028d37a2e005562867f87f4bd2b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783497"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624371"
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-visual-basic"></a>Postupy: Zápis dat objektů do souboru XML (Visual Basic)
 Tento příklad zapíše objekt ze třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  

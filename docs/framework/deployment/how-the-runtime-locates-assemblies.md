@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 250e1764084ba3f7750867f2eea89e87cc7239eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b967e6441ae3f3d43e5a6276cfcf79e3c44f74cf
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873168"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613977"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledává a vazby k sestavením, které tvoří vaši aplikaci. Ve výchozím nastavení modul runtime pokusí vytvořit vazbu s přesnou verzi sestavení, na kterou byla aplikace vytvořena s. Toto výchozí chování můžete přepsat pomocí nastavení konfiguračního souboru.  
