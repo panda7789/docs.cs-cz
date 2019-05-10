@@ -2,37 +2,37 @@
 title: 'Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: f2afd83d-b044-484b-a56d-56d0a8a40647
-ms.openlocfilehash: 4ff32015647a565f7f68e944ae028deb7f738e28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3267df18cf5a7be2ceb5867b16cbb58bbf9010ce
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022269"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64624785"
 ---
-# <a name="how-to-create-signed-friend-assemblies-visual-basic"></a><span data-ttu-id="5fee0-102">Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5fee0-102">How to: Create Signed Friend Assemblies (Visual Basic)</span></span>
-<span data-ttu-id="5fee0-103">Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy.</span><span class="sxs-lookup"><span data-stu-id="5fee0-103">This example shows how to use friend assemblies with assemblies that have strong names.</span></span> <span data-ttu-id="5fee0-104">Obě sestavení musí být silný název.</span><span class="sxs-lookup"><span data-stu-id="5fee0-104">Both assemblies must be strong named.</span></span> <span data-ttu-id="5fee0-105">Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.</span><span class="sxs-lookup"><span data-stu-id="5fee0-105">Although both assemblies in this example use the same keys, you could use different keys for two assemblies.</span></span>  
+# <a name="how-to-create-signed-friend-assemblies-visual-basic"></a><span data-ttu-id="ff320-102">Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff320-102">How to: Create Signed Friend Assemblies (Visual Basic)</span></span>
+<span data-ttu-id="ff320-103">Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy.</span><span class="sxs-lookup"><span data-stu-id="ff320-103">This example shows how to use friend assemblies with assemblies that have strong names.</span></span> <span data-ttu-id="ff320-104">Obě sestavení musí být silný název.</span><span class="sxs-lookup"><span data-stu-id="ff320-104">Both assemblies must be strong named.</span></span> <span data-ttu-id="ff320-105">Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.</span><span class="sxs-lookup"><span data-stu-id="ff320-105">Although both assemblies in this example use the same keys, you could use different keys for two assemblies.</span></span>  
   
-### <a name="to-create-a-signed-assembly-and-a-friend-assembly"></a><span data-ttu-id="5fee0-106">Chcete-li vytvořit podepsané sestavení a sestavení typu friend</span><span class="sxs-lookup"><span data-stu-id="5fee0-106">To create a signed assembly and a friend assembly</span></span>  
+### <a name="to-create-a-signed-assembly-and-a-friend-assembly"></a><span data-ttu-id="ff320-106">Chcete-li vytvořit podepsané sestavení a sestavení typu friend</span><span class="sxs-lookup"><span data-stu-id="ff320-106">To create a signed assembly and a friend assembly</span></span>  
   
-1. <span data-ttu-id="5fee0-107">Otevřete příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="5fee0-107">Open a command prompt.</span></span>  
+1. <span data-ttu-id="ff320-107">Otevřete příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="ff320-107">Open a command prompt.</span></span>  
   
-2. <span data-ttu-id="5fee0-108">Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč.</span><span class="sxs-lookup"><span data-stu-id="5fee0-108">Use the following sequence of commands with the Strong Name tool to generate a keyfile and to display its public key.</span></span> <span data-ttu-id="5fee0-109">Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../../framework/tools/sn-exe-strong-name-tool.md)).</span><span class="sxs-lookup"><span data-stu-id="5fee0-109">For more information, see [Sn.exe (Strong Name Tool)](../../../../framework/tools/sn-exe-strong-name-tool.md)).</span></span>  
+2. <span data-ttu-id="ff320-108">Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč.</span><span class="sxs-lookup"><span data-stu-id="ff320-108">Use the following sequence of commands with the Strong Name tool to generate a keyfile and to display its public key.</span></span> <span data-ttu-id="ff320-109">Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../../framework/tools/sn-exe-strong-name-tool.md)).</span><span class="sxs-lookup"><span data-stu-id="ff320-109">For more information, see [Sn.exe (Strong Name Tool)](../../../../framework/tools/sn-exe-strong-name-tool.md)).</span></span>  
   
-    1. <span data-ttu-id="5fee0-110">Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:</span><span class="sxs-lookup"><span data-stu-id="5fee0-110">Generate a strong-name key for this example and store it in the file FriendAssemblies.snk:</span></span>  
+    1. <span data-ttu-id="ff320-110">Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:</span><span class="sxs-lookup"><span data-stu-id="ff320-110">Generate a strong-name key for this example and store it in the file FriendAssemblies.snk:</span></span>  
   
          `sn -k FriendAssemblies.snk`  
   
-    2. <span data-ttu-id="5fee0-111">Extrahujte veřejný klíč z FriendAssemblies.snk a vložit ho do FriendAssemblies.publickey:</span><span class="sxs-lookup"><span data-stu-id="5fee0-111">Extract the public key from FriendAssemblies.snk and put it into FriendAssemblies.publickey:</span></span>  
+    2. <span data-ttu-id="ff320-111">Extrahujte veřejný klíč z FriendAssemblies.snk a vložit ho do FriendAssemblies.publickey:</span><span class="sxs-lookup"><span data-stu-id="ff320-111">Extract the public key from FriendAssemblies.snk and put it into FriendAssemblies.publickey:</span></span>  
   
          `sn -p FriendAssemblies.snk FriendAssemblies.publickey`  
   
-    3. <span data-ttu-id="5fee0-112">Zobrazení veřejného klíče uložené v souboru FriendAssemblies.publickey:</span><span class="sxs-lookup"><span data-stu-id="5fee0-112">Display the public key stored in the file FriendAssemblies.publickey:</span></span>  
+    3. <span data-ttu-id="ff320-112">Zobrazení veřejného klíče uložené v souboru FriendAssemblies.publickey:</span><span class="sxs-lookup"><span data-stu-id="ff320-112">Display the public key stored in the file FriendAssemblies.publickey:</span></span>  
   
          `sn -tp FriendAssemblies.publickey`  
   
-3. <span data-ttu-id="5fee0-113">Vytvořte soubor jazyka Visual Basic `friend_signed_A` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="5fee0-113">Create a Visual Basic file named `friend_signed_A` that contains the following code.</span></span> <span data-ttu-id="5fee0-114">Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.</span><span class="sxs-lookup"><span data-stu-id="5fee0-114">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
+3. <span data-ttu-id="ff320-113">Vytvořte soubor jazyka Visual Basic `friend_signed_A` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="ff320-113">Create a Visual Basic file named `friend_signed_A` that contains the following code.</span></span> <span data-ttu-id="ff320-114">Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.</span><span class="sxs-lookup"><span data-stu-id="ff320-114">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
   
-     <span data-ttu-id="5fee0-115">Nástroj Strong Name vygeneruje nový veřejný klíč pokaždé, když ji spustí.</span><span class="sxs-lookup"><span data-stu-id="5fee0-115">The Strong Name tool generates a new public key every time it runs.</span></span> <span data-ttu-id="5fee0-116">Proto je potřeba nahradit veřejný klíč v následujícím kódu veřejný klíč, který jste právě vygenerovali, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="5fee0-116">Therefore, you must replace the public key in the following code with the public key you just generated, as shown in the following example.</span></span>  
+     <span data-ttu-id="ff320-115">Nástroj Strong Name vygeneruje nový veřejný klíč pokaždé, když ji spustí.</span><span class="sxs-lookup"><span data-stu-id="ff320-115">The Strong Name tool generates a new public key every time it runs.</span></span> <span data-ttu-id="ff320-116">Proto je potřeba nahradit veřejný klíč v následujícím kódu veřejný klíč, který jste právě vygenerovali, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="ff320-116">Therefore, you must replace the public key in the following code with the public key you just generated, as shown in the following example.</span></span>  
   
     ```vb  
     ' friend_signed_A.vb  
@@ -49,13 +49,13 @@ ms.locfileid: "62022269"
     End Class  
     ```  
   
-4. <span data-ttu-id="5fee0-117">Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="5fee0-117">Compile and sign friend_signed_A by using the following command.</span></span>  
+4. <span data-ttu-id="ff320-117">Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="ff320-117">Compile and sign friend_signed_A by using the following command.</span></span>  
   
     ```console  
     Vbc -target:library -keyfile:FriendAssemblies.snk friend_signed_A.vb  
     ```  
   
-5. <span data-ttu-id="5fee0-118">Vytvořte soubor jazyka Visual Basic, který je pojmenován `friend_signed_B` a obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="5fee0-118">Create a Visual Basic file that is named `friend_signed_B` and contains the following code.</span></span> <span data-ttu-id="5fee0-119">Protože friend_signed_A určuje friend_signed_B jako sestavení typu friend, můžete přístup ke kódu v friend_signed_B `Friend` typy a členy z friend_signed_A.</span><span class="sxs-lookup"><span data-stu-id="5fee0-119">Because friend_signed_A specifies friend_signed_B as a friend assembly, the code in friend_signed_B can access `Friend` types and members from friend_signed_A.</span></span> <span data-ttu-id="5fee0-120">Soubor obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="5fee0-120">The file contains the following code.</span></span>  
+5. <span data-ttu-id="ff320-118">Vytvořte soubor jazyka Visual Basic, který je pojmenován `friend_signed_B` a obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="ff320-118">Create a Visual Basic file that is named `friend_signed_B` and contains the following code.</span></span> <span data-ttu-id="ff320-119">Protože friend_signed_A určuje friend_signed_B jako sestavení typu friend, můžete přístup ke kódu v friend_signed_B `Friend` typy a členy z friend_signed_A.</span><span class="sxs-lookup"><span data-stu-id="ff320-119">Because friend_signed_A specifies friend_signed_B as a friend assembly, the code in friend_signed_B can access `Friend` types and members from friend_signed_A.</span></span> <span data-ttu-id="ff320-120">Soubor obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="ff320-120">The file contains the following code.</span></span>  
   
     ```vb  
     ' friend_signed_B.vb  
@@ -69,28 +69,28 @@ ms.locfileid: "62022269"
     End Module  
     ```  
   
-6. <span data-ttu-id="5fee0-121">Kompilace a podepsání friend_signed_B pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="5fee0-121">Compile and sign friend_signed_B by using the following command.</span></span>  
+6. <span data-ttu-id="ff320-121">Kompilace a podepsání friend_signed_B pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="ff320-121">Compile and sign friend_signed_B by using the following command.</span></span>  
   
     ```console  
     vbc -keyfile:FriendAssemblies.snk -r:friend_signed_A.dll friend_signed_B.vb  
     ```  
   
-     <span data-ttu-id="5fee0-122">Název sestavení generovaný kompilátorem musí odpovídat názvu sestavení typu friend předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="5fee0-122">The name of the assembly generated by the compiler must match the friend assembly name passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="5fee0-123">Sestavení můžete explicitně nastavit pomocí `-out` – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="5fee0-123">You can explicitly set the assembly by using the `-out` compiler option.</span></span> <span data-ttu-id="5fee0-124">Další informace najdete v tématu [-out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md).</span><span class="sxs-lookup"><span data-stu-id="5fee0-124">For more information, see [-out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md).</span></span>  
+     <span data-ttu-id="ff320-122">Název sestavení generovaný kompilátorem musí odpovídat názvu sestavení typu friend předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="ff320-122">The name of the assembly generated by the compiler must match the friend assembly name passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="ff320-123">Sestavení můžete explicitně nastavit pomocí `-out` – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="ff320-123">You can explicitly set the assembly by using the `-out` compiler option.</span></span> <span data-ttu-id="ff320-124">Další informace najdete v tématu [-out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md).</span><span class="sxs-lookup"><span data-stu-id="ff320-124">For more information, see [-out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md).</span></span>  
   
-7. <span data-ttu-id="5fee0-125">Spusťte soubor friend_signed_B.exe.</span><span class="sxs-lookup"><span data-stu-id="5fee0-125">Run the friend_signed_B.exe file.</span></span>  
+7. <span data-ttu-id="ff320-125">Spusťte soubor friend_signed_B.exe.</span><span class="sxs-lookup"><span data-stu-id="ff320-125">Run the friend_signed_B.exe file.</span></span>  
   
-     <span data-ttu-id="5fee0-126">Program zobrazí řetězec "Class1.Test".</span><span class="sxs-lookup"><span data-stu-id="5fee0-126">The program displays the string "Class1.Test".</span></span>  
+     <span data-ttu-id="ff320-126">Program zobrazí řetězec "Class1.Test".</span><span class="sxs-lookup"><span data-stu-id="ff320-126">The program displays the string "Class1.Test".</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="5fee0-127">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="5fee0-127">.NET Framework Security</span></span>  
- <span data-ttu-id="5fee0-128">Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy.</span><span class="sxs-lookup"><span data-stu-id="5fee0-128">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="5fee0-129">Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `Friend` typy a členy.</span><span class="sxs-lookup"><span data-stu-id="5fee0-129">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `Friend` types and members.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="ff320-127">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="ff320-127">.NET Framework Security</span></span>  
+ <span data-ttu-id="ff320-128">Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy.</span><span class="sxs-lookup"><span data-stu-id="ff320-128">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="ff320-129">Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `Friend` typy a členy.</span><span class="sxs-lookup"><span data-stu-id="ff320-129">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `Friend` types and members.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5fee0-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5fee0-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ff320-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ff320-130">See also</span></span>
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [<span data-ttu-id="5fee0-131">Sestavení v .NET</span><span class="sxs-lookup"><span data-stu-id="5fee0-131">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
-- [<span data-ttu-id="5fee0-132">Přátelská sestavení</span><span class="sxs-lookup"><span data-stu-id="5fee0-132">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
-- [<span data-ttu-id="5fee0-133">Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5fee0-133">How to: Create Unsigned Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)
-- [<span data-ttu-id="5fee0-134">-keyfile</span><span class="sxs-lookup"><span data-stu-id="5fee0-134">-keyfile</span></span>](../../../../visual-basic/reference/command-line-compiler/keyfile.md)
-- <span data-ttu-id="5fee0-135">[Sn.exe (nástroj pro silný název)](../../../../framework/tools/sn-exe-strong-name-tool.md))</span><span class="sxs-lookup"><span data-stu-id="5fee0-135">[Sn.exe (Strong Name Tool)](../../../../framework/tools/sn-exe-strong-name-tool.md))</span></span>
-- [<span data-ttu-id="5fee0-136">Vytváření a používání sestavení se silným názvem</span><span class="sxs-lookup"><span data-stu-id="5fee0-136">Creating and Using Strong-Named Assemblies</span></span>](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md)
-- [<span data-ttu-id="5fee0-137">Koncepty programování</span><span class="sxs-lookup"><span data-stu-id="5fee0-137">Programming Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)
+- [<span data-ttu-id="ff320-131">Sestavení v .NET</span><span class="sxs-lookup"><span data-stu-id="ff320-131">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
+- [<span data-ttu-id="ff320-132">Přátelská sestavení</span><span class="sxs-lookup"><span data-stu-id="ff320-132">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
+- [<span data-ttu-id="ff320-133">Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff320-133">How to: Create Unsigned Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)
+- [<span data-ttu-id="ff320-134">-keyfile</span><span class="sxs-lookup"><span data-stu-id="ff320-134">-keyfile</span></span>](../../../../visual-basic/reference/command-line-compiler/keyfile.md)
+- <span data-ttu-id="ff320-135">[Sn.exe (nástroj pro silný název)](../../../../framework/tools/sn-exe-strong-name-tool.md))</span><span class="sxs-lookup"><span data-stu-id="ff320-135">[Sn.exe (Strong Name Tool)](../../../../framework/tools/sn-exe-strong-name-tool.md))</span></span>
+- [<span data-ttu-id="ff320-136">Vytváření a používání sestavení se silným názvem</span><span class="sxs-lookup"><span data-stu-id="ff320-136">Creating and Using Strong-Named Assemblies</span></span>](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md)
+- [<span data-ttu-id="ff320-137">Koncepty programování</span><span class="sxs-lookup"><span data-stu-id="ff320-137">Programming Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)
