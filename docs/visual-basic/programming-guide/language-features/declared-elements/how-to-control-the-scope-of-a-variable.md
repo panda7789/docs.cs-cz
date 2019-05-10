@@ -12,12 +12,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 24a7ae3b8f3400beeaedb20ea6352ea44bdb7597
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7f1d671f6657c7810ec605533493a340baac39c9
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794729"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64610345"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použití v rámci oblasti, ve kterém se deklaruje. V některých případech je proměnná společnosti *úroveň přístupu* mohou mít vliv na svém oboru.  

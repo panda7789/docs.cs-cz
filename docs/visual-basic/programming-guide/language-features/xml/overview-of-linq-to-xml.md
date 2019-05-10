@@ -5,12 +5,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], about LINQ to XML
 - LINQ [Visual Basic], LINQ to XML
 ms.assetid: 01c62a79-6d58-468e-84fb-039c05947701
-ms.openlocfilehash: 91f622b9eecdd1aec8b9361493095e92a851988e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a8695e94797c297154db9597c6e9938ed9aecfef
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761840"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063049"
 ---
 # <a name="overview-of-linq-to-xml-in-visual-basic"></a>Přehled technologie LINQ to XML v jazyce Visual Basic
 Visual Basic poskytuje podporu pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] prostřednictvím literály XML a vlastnosti OS XML. To umožňuje používat známé a pohodlné syntaxe pro práci s XML v kódu jazyka Visual Basic. *Literály XML* umožňují zahrnout XML přímo v kódu. *Vlastnosti osy XML* umožňují přístup podřízené uzly, podřízených uzlů a atributů literálu XML. Další informace najdete v tématu [přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) a [přístup ke XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
@@ -20,7 +20,7 @@ Visual Basic poskytuje podporu pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq
 > [!NOTE]
 >  Literály XML a vlastnosti OS XML nejsou podporovány v deklarativního kódu na stránce ASP.NET. Pokud chcete používat funkce XML v jazyce Visual Basic, ukládejte kód v modelu code-behind stránky v aplikaci ASP.NET.  
   
- ![odkaz na video](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo") související videa s ukázkami, naleznete v tématu [jak mám začít s LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml) a [co a jak vytvářet tabulky aplikace Excel pomocí LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-create-excel-spreadsheets-using-linq-to-xml).  
+ [Tlačítko Přehrát](./media/overview-of-linq-to-xml/play-video-icon-example.gif) související videa s ukázkami, naleznete v tématu [jak mám začít s LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml) a [co a jak vytvářet tabulky aplikace Excel pomocí LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-create-excel-spreadsheets-using-linq-to-xml).   
   
 ## <a name="creating-xml"></a>Vytváření XML  
  Existují dva způsoby vytvoření stromů XML v jazyce Visual Basic. Je možné deklarovat XML literál přímo v kódu, nebo můžete použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] rozhraní API pro vytvoření stromu. Oba tyto procesy povolit kód tak, aby odrážely finální strukturu stromu XML. Například následující příklad kódu vytvoří XML element:  

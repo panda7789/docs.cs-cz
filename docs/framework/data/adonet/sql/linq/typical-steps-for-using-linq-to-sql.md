@@ -2,12 +2,12 @@
 title: Typické postupy použití LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
-ms.openlocfilehash: a7c6257bc27728d101d64d07ffedb1e38bc994eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0c472fcac0e664e17c1869ba7ffc61ed2b802e8e
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876968"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063012"
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>Typické postupy použití LINQ to SQL
 K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace, podle postupu popsaného dále v tomto tématu. Všimněte si, že mnoho kroků jsou volitelné. Je velmi je to možné, že můžete použít objektový model ve svém výchozím stavu.  
@@ -55,7 +55,7 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
 ## <a name="using-the-object-model"></a>Použití objektového modelu  
  Následující obrázek znázorňuje vztah mezi vývojáři a data ve scénáři dvouvrstvé. Další scénáře, naleznete v tématu [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md).  
   
- ![DLinqObjectModel](../../../../../../docs/framework/data/adonet/sql/linq/media/dlinqobjectmodel.png "DLinqObjectModel")  
+ ![Snímek obrazovky, který je znázorněn objektový Model Linq.](./media/the-linq-to-sql-object-model/linq-object-model-two-tier.png)  
   
  Teď, když máte model objektu, popište informace žádosti a manipulaci s daty v rámci tohoto modelu. Si myslíte, co se týče objektů a vlastností v objektovém modelu a nikoli z hlediska řádky a sloupce databáze. Není řešit přímo s databází.  
   

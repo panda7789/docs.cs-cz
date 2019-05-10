@@ -3,14 +3,14 @@ title: Vítejte v .NET
 description: Začínáme s .NET řadu technologií.
 author: mairaw
 ms.author: mairaw
-ms.date: 04/02/2019
+ms.date: 05/06/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 4d4edc146efa12fc29c2c7e65727bf5a5b664eb8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6aad2d145d31d4799d274aa1b0c8738e91906ae
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767579"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063156"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 
@@ -51,6 +51,7 @@ Tato dokumentace popisuje škálu .NET napříč platformami a jazyky. Můžete 
 - [Průvodce jazykem F#](fsharp/index.md)
 - [Průvodce jazykem Visual Basic](visual-basic/index.md)
 - [Průvodce ML.NET](machine-learning/index.yml)
+- [.NET pro Apache Spark](spark/index.yml)
 
 Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
 

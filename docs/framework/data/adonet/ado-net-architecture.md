@@ -2,12 +2,12 @@
 title: Architektura ADO.NET
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-ms.openlocfilehash: 3f3fc0c8c125c57116da4f1de467d738ac36ca29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e85100733e20b69cf6b8c52c58d250be869971cb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61880084"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592642"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat tradičně spoléhalo především v rámci modelu založeného na připojení, dvě vrstvy. Zpracování dat stále používá vícevrstvé architektury, programátoři přepnutí na odpojeném přístup k poskytování lepšího škálování pro své aplikace.  

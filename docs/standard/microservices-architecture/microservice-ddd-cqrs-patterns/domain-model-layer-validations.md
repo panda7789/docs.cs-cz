@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: ae1252f4544f184a5f63ef02ba898da9b4373e17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75d227c0cc3d5ae20614d816b528d93709ccdfcf
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019994"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063025"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Návrh ověřování ve vrstvě doménového modelu
 

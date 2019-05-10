@@ -2,12 +2,12 @@
 title: Použití akcí k implementaci chování na straně serveru
 ms.date: 03/30/2017
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
-ms.openlocfilehash: 4467d52df5dbb134947111e96782e257eef253e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 23a01b7221fcfcbfc3cceb82123c68879eba98a3
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875248"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063162"
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
 
@@ -46,7 +46,7 @@ Akcí OData, které poskytují způsob, jak implementovat chování, která fung
   
 3. Ukládání žádné výsledky z Invoke() tak mohou být načteny pomocí GetResult()  
   
- Parametry může být předán jako tokeny. Toto je vzhledem k tomu je možné psát poskytovatele dat služeb pracující s tokeny, které představují prostředky, pokud je to tento případ, budete muset převést (zařazování) tyto tokeny do skutečných prostředků před agresivnějším odesláním do skutečné akce. Po parametru má zařazeno, musí být ve stavu upravit tak, aby všechny změny prostředku, ke kterým dochází při vyvolání akce bude uložený a zapsané na disk.  
+ Parametry může být předán jako tokeny. Toto je vzhledem k tomu je možné psát poskytovatele dat služeb pracující s tokeny, které představují prostředky, pokud je to tento případ, budete muset převést (zařazování) tyto tokeny do skutečných prostředků před agresivnějším odesláním do skutečné akce. Poté, co byl zařazen parametru, musí být ve stavu upravovat tak, aby všechny změny prostředku, ke kterým dochází při vyvolání akce bude uložený a zapsané na disk.  
   
  Toto rozhraní vyžaduje dvě metody: Vyvolání a GetResult. Vyvolání vyvolá delegáta, který implementuje chování akce a vrátí GetResult výsledek akce.  
   

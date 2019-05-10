@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5099e549-f4fd-49fb-a290-549edd456c6a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: accb06421b8a697b0ee89adab0a9dffa23cffb05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4c40e2150bf56540fc95281f07bd14c60e138abc
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705672"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607672"
 ---
 # <a name="resolving-assembly-loads"></a>Řešení načítání sestavení
 Rozhraní .NET Framework poskytuje <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí pro aplikace, které vyžadují větší kontrolu nad načítání sestavení. Díky zpracování této události, může vaše aplikace načtení sestavení do zatížení kontextu z mimo normální definovaných cest výběr z několika verzí sestavení načíst, Emitování dynamických sestavení a vrátit ji a tak dále. Toto téma obsahuje pokyny pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí.  

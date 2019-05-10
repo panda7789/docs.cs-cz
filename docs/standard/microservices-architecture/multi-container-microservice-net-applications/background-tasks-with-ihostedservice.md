@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: b262f5352f62e74ec184e2e00e8cff3aeecc2f64
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9203404c0b623570c2b089087b7ce5d676bba376
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760868"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65062978"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách s IHostedService a BackgroundService třídy
 
@@ -96,7 +96,7 @@ namespace Microsoft.Extensions.Hosting
 
 Jak si dokážete představit, můžete vytvořit více implementací IHostedService a zaregistrujte je v `ConfigureService()` metoda do kontejnerů DI, jak bylo uvedeno výše. Všechny tyto hostované služby se a zastavování spolu s aplikací/mikroslužeb.
 
-Jako vývojář je zodpovědná za zpracování akce zastavení nebo služby při `StopAsync()` metoda aktivuje hostitele.
+Jako vývojář je zodpovědná za zpracování akce zastavení služby při `StopAsync()` metoda aktivuje hostitele.
 
 ## <a name="implementing-ihostedservice-with-a-custom-hosted-service-class-deriving-from-the-backgroundservice-base-class"></a>Implementace IHostedService pomocí vlastní hostované služby třídu odvozenou z BackgroundService základní třídy
 

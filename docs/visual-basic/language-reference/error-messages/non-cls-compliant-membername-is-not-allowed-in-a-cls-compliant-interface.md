@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40033
 ms.assetid: 060c4b08-798e-40f1-94cf-c05c524f1b8a
-ms.openlocfilehash: dbffe2bd196e798b90104aebb74269387660c794
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 68e1fb4f55d9f9b140f1b54cfde2bc5f60952dd2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918200"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592126"
 ---
 # <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>Non-kompatibilní se Specifikací CLS \<membername > není povolené v rozhraní kompatibilním se Specifikací CLS
 Vlastnost, procedura nebo událost v rozhraní je označen jako `<CLSCompliant(True)>` samotným rozhraním, když je označena jako `<CLSCompliant(False)>` nebo není označen.  

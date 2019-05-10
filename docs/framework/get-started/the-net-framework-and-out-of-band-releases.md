@@ -4,12 +4,12 @@ ms.date: 10/10/2018
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6bf92e118d2ef02c0dc3a550c084e2a0a8e0e3d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3aaf64c2f0738d2db607a2476890b033ff9d06a2
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643996"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063037"
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>Rozhraní .NET Framework a nesvázaná vydání
 
@@ -52,8 +52,6 @@ Verze OOB pro součásti jádra common language runtime (CLR) jsou poskytovány 
  Balíček OOB obvykle má jednu nebo více předprodejních verzí a stabilní verzi. Licence, která doprovází zkušební verzi, obvykle neumožňuje přerozdělování, ale umožňuje vyzkoušet balíček a poskytnout zpětnou vazbu. Zpětná vazba je součástí všech aktualizací balíčku. Konečná vydaná verze je distribuována jako stabilní balíček NuGet a obsahuje licenci, která umožňuje tento balíček NuGet distribuovat s vaší aplikací. Stabilní balíčky jsou podporovány společností Microsoft. Společnost Microsoft poskytuje podporu technologie IntelliSense, jakož i jiné druhy dokumentace, jako jsou příspěvky blogu a odpovědi na fóru pro všechny balíčky. Navíc zdrojový kód může být k dispozici některé, ale ne všechny balíčky. Pro oznámení týkající se nové a aktualizované balíčky, můžete odebírat [blogu .NET Framework](https://devblogs.microsoft.com/dotnet/).
 
  Chcete-li vyhledat balíčky předprodejní a stabilní, zvolte **zahrnout předběžné verze** ve správci balíčků NuGet.
-
- Pokud chcete dostat stabilní balíček verzí, přihlášení k odběru [rozhraní .NET Framework kanálu](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/).
 
 ## <a name="see-also"></a>Viz také:
 

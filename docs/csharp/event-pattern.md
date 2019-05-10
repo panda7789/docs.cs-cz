@@ -3,12 +3,12 @@ title: Standardní vzory událostí .NET
 description: Další informace o vzory událostí .NET a vytvoření zdroje událostí úrovně standard a odběru a zpracování standardní události ve vašem kódu.
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: 11755b4754b15070869adf12d5be409af99035d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cd1ead318529d1afc5b27ff8710cebcaae9b7bc3
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646628"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65062973"
 ---
 # <a name="standard-net-event-patterns"></a>Standardní vzory událostí .NET
 
@@ -55,7 +55,7 @@ Chcete-li tuto událost deklarovat jako veřejné pole, jako v předchozím př�
 
 [!code-csharp[DeclareEvent](../../samples/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
 
-Vypadá to na to je deklarace veřejné pole, které by se zdají být chybný postup objektově orientovaný. Chcete chránit přístup k datům prostřednictvím vlastnosti nebo metody. Když to provést, vypadají, jako chybný postupem je kód generovaný kompilátorem vytváření obálek tak, aby objekty událostí lze přistupovat pouze v nouzovém způsoby. Pouze operace dostupné na pole podobné události jsou přidat obslužnou rutinu:
+Vypadá to na to je deklarace veřejné pole, které by se zdají být chybný postup objektově orientovaný. Chcete chránit přístup k datům prostřednictvím vlastnosti nebo metody. Když to může vypadat jako chybný postup, kód generovaný kompilátorem vytváření obálek tak, aby objekty událostí lze přistupovat pouze v nouzovém způsoby. Pouze operace dostupné na pole podobné události jsou přidat obslužnou rutinu:
 
 [!code-csharp[DeclareEventHandler](../../samples/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
 

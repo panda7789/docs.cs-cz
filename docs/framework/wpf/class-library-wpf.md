@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF class library [WPF]
 - Windows Presentation Foundation class library [WPF]
 ms.assetid: dcb35927-00ad-4141-a1ab-a7a524dd3f10
-ms.openlocfilehash: 1d6f23c253a081bf454606a222ee4deed6c52e81
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5cef189a947bcbab96b22f33251971f5794e156e
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052713"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591315"
 ---
 # <a name="class-library-wpf"></a>Knihovna tříd (WPF)
 Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].  

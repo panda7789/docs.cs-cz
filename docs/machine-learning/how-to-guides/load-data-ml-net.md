@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Načtení dat do ML.NET'
+title: Načtení dat
 description: Načtení datového souboru a Streamovat data do ML.NET
-ms.date: 04/03/2019
+ms.date: 05/03/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 7702c626aa79c7b661638df5a5f0f90f821b32f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6edcc92b610e2e1f5e21c371b9f0aefd0b216d31
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650385"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063648"
 ---
-# <a name="how-to-learn-how-to-load-data-from-file-and-real-time-sources-in-mlnet"></a>Postupy: Zjistěte, jak načíst data ze souboru a zdroje v reálném čase v ML.NET
+# <a name="load-data-from-file-and-in-memory-sources"></a>Načtení dat ze zdroje souborů a v paměti
 
 Tento návod ukazuje, jak načíst data pro zpracování a školení do ML.NET. Jsou data původně uložená v souborech nebo zdroje dat v reálném čase nebo datové proudy.
 

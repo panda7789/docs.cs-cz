@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e642f6507016dd1d62b4889f8a8dbcf0470a2202
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5652c04dc506e802741ba803af8e50837d0d795c
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643424"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65064100"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
 Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
@@ -38,10 +38,8 @@ Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí 
  Definice spravované na nespravované funkce jsou závislá na jazyku, jak je vidět v následujícím příkladu. Kompletní příklady kódu naleznete v tématu [příklady vyvolání platformy](platform-invoke-examples.md).  
   
 ```vb
-Imports System
-
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Function MessageBox Lib "user32.dll" (
+Friend Class NativeMethods
+    Friend Declare Auto Function MessageBox Lib "user32.dll" (
         ByVal hWnd As IntPtr,
         ByVal lpText As String,
         ByVal lpCaption As String,
@@ -49,13 +47,12 @@ Friend Class WindowsAPI
 End Class
 ```
   
- Použít <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>, nebo <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> polím [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] prohlášení, je nutné použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut místo `Declare` příkazu.  
+ Chcete-li použít <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping?displayProperty=nameWithtype>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention?displayProperty=nameWithtype>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithtype>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig?displayProperty=nameWithtype>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError?displayProperty=nameWithtype>, nebo <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar?displayProperty=nameWithtype> pole deklarace jazyka Visual Basic, musíte použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut místo `Declare` příkaz.  
   
 ```vb
-Imports System
 Imports System.Runtime.InteropServices
 
-Friend Class WindowsAPI
+Friend Class NativeMethods
     <DllImport("user32.dll", CharSet:=CharSet.Auto)>
     Friend Shared Function MessageBox(
         ByVal hWnd As IntPtr,
@@ -70,7 +67,7 @@ End Class
 using System;
 using System.Runtime.InteropServices;
 
-internal static class WindowsAPI
+internal static class NativeMethods
 {
     [DllImport("user32.dll")]
     internal static extern int MessageBox(
@@ -111,9 +108,9 @@ extern "C" int MessageBox(
 ### <a name="platform-invoke-examples"></a>Příklady vyvolání platformy  
  Nespravovaného vzorků v této části ilustrují použití `RegistryPermission` atribut modifikátory procházení zásobníku.  
   
- V následujícím příkladu kódu <xref:System.Security.Permissions.SecurityAction> `Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
+ V následujícím příkladu <xref:System.Security.Permissions.SecurityAction> `Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
   
-```  
+```csharp  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
 [RegistryPermission(SecurityAction.Assert, Unrestricted = true)]  
     private static extern bool CallRegistryPermissionAssert();  
@@ -129,7 +126,7 @@ extern "C" int MessageBox(
   
  Ale `Demand` modifikátor v následujícím příkladu je přijat.  
   
-```  
+```csharp
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
 [RegistryPermission(SecurityAction.Demand, Unrestricted = true)]  
     private static extern bool CallRegistryPermissionDeny();  

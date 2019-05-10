@@ -8,12 +8,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 459f83ee52d0ab6421fe7be4a597d8e5174b4fd9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0cb0b78396731a9b8e127430cd06a9e71812d4fd
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662617"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64593038"
 ---
 # <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
 **-Out** parametr určuje název výstupního souboru.  

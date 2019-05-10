@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], System.Xaml and WPF
 - System.Xaml [XAML Services], types migrated from WPF
 ms.assetid: d79dabf5-a2ec-4e8d-a37a-67c4ba8a2b91
-ms.openlocfilehash: dcfad1c2b2f95783e2b348a3a1111501f958143f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f967cf6b7957c36fd66ed5eafe695a850cf101e1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62006629"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64593366"
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>Typy migrované z prostředí WPF do oboru názvů System.Xaml
 V [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] a [!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)], obě [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Windows Workflow Foundation součástí implementace jazyka XAML. V sestavení WindowsBase PresentationCore a PresentationFramework existuje mnoho veřejných typů, které rozšíření k dispozici pro implementaci WPF XAML. Obdobně veřejných typů, které poskytuje rozšíření pro Windows Workflow Foundation XAML existoval v System.Workflow.ComponentModel sestavení. V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], některé typy související s XAML se migrují do oboru názvů System.Xaml sestavení. Běžnou implementaci rozhraní .NET Framework jazykových služeb XAML umožňuje mnoho scénářů XAML rozšíření, které byly původně definované implementací konkrétního rozhraní XAML, ale jsou teď součástí celkového [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] podpora jazyka XAML. Toto téma obsahuje seznam typů, které se migrují a popisuje problémy související s migrací.  

@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1aecd8e6dcec73ba4dc45d4bf8f365503888687e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 843b61257229bb3bf8c3852554f19c34dccc7496
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793050"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592354"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 Soubory prostředků přehrát hlavní roli v lokalizovaných aplikacích. Umožňují aplikaci zobrazíte řetězce, obrázky a další data v vlastněných uživateli jazyk a jazykovou verzi a poskytnout alternativní dat, pokud nejsou k dispozici prostředky pro uživatele vlastní jazyk nebo jazykovou verzi. Model střed a paprsek rozhraní .NET Framework používá k vyhledání a načtení lokalizovaných prostředků. Centrum je hlavní sestavení, která obsahuje spustitelný kód bez možnosti lokalizace a prostředky pro jediné jazykové verze, která se nazývá neutrální nebo výchozí jazykovou verzi. Výchozí jazykovou verzi je záložní jazykovou verzi pro aplikaci. používá se, když jsou k dispozici žádné lokalizované prostředky. Můžete použít <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k určení jazykovou verzi aplikace výchozí jazykovou verzi. Každého paprsku se připojí k satelitní sestavení, která obsahuje prostředky pro jeden lokalizovanou jazykovou verzi, ale neobsahuje žádný kód. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykovou verzi, bez nutnosti vyměnit hlavní sestavení pro aplikaci.  

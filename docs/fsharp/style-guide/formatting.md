@@ -2,12 +2,12 @@
 title: F#pravidla formátování kódu
 description: Přečtěte si pokyny pro formátování F# kódu.
 ms.date: 02/08/2019
-ms.openlocfilehash: 259d4bb2147d1fc8bc5d35d7ff2e3c34ec2185d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce07bd800984ec082a522bc62cb487f786fa0510
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902587"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063592"
 ---
 # <a name="f-code-formatting-guidelines"></a>F#pravidla formátování kódu
 
@@ -86,6 +86,46 @@ type MyFun = int -> int -> string
 
 // Bad
 type MyFunBad = int->int->string
+```
+
+### <a name="surround-function-arguments-with-white-space"></a>Argumenty funkce příkazu Obklopit s prázdné znaky
+
+Při definici funkce, použijte prázdný prostor kolem každý argument.
+
+```fsharp
+// OK
+let myFun (a: decimal) b c = a + b + c
+
+// Bad
+let myFunBad (a:decimal)(b)c = a + b + c
+```
+
+### <a name="type-annotations"></a>Anotace typu
+
+#### <a name="right-pad-function-argument-type-annotations"></a>Anotace typu argumentu panel doprava – funkce
+
+Při definování kódu pomocí poznámek typu, použijte prázdný prostor po `:` symbolů:
+
+```fsharp
+// OK
+let complexFunction (a: int) (b: int) c = a + b + c
+
+// Bad
+let complexFunctionBad (a :int) (b :int) (c:int) = a + b + c
+```
+
+#### <a name="surround-return-type-annotations-with-white-space"></a>Poznámky návratový typ příkazu Obklopit s prázdné znaky
+
+V vám umožňují vázané funkce nebo hodnota anotaci typu (návratový typ v případě funkce), použijte prázdné znaky před a po `:` symbolů:
+
+```fsharp
+// OK
+let expensiveToCompute : int = 0 // Type annotation for let-bound value
+let myFun (a: decimal) b c : decimal = a + b + c // Type annotation for the return type of a function
+// Bad
+let expensiveToComputeBad1:int = 1
+let expensiveToComputeBad2 :int = 2
+let myFunBad (a: decimal) b c:decimal = a + b + c
 ```
 
 ## <a name="formatting-blank-lines"></a>Formátování prázdných řádků

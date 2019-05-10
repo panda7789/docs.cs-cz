@@ -6,12 +6,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 9c6f7ae5d7a579abead2a62f8fdc7c63e5c53328
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 72114233044fbf0e9910048343806eb542ed7ea5
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646368"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063753"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (C# Programming Guide)
 
@@ -68,6 +68,20 @@ Implicitně typované proměnné deklaracích platí následující omezení:
 - Více implicitně typované proměnné nelze inicializovat ve stejném příkazu.
 
 - Pokud typ s názvem `var` je v oboru, pak bude `var` – klíčové slovo se přeloží název tohoto typu a se nezpracuje jako součást implicitně typované lokální proměnné deklarace.
+
+Implicitního zápisu pomocí `var` – klíčové slovo lze použít pouze pro proměnné v oboru místních metod. Není k dispozici pro pole třídy jako implicitního zápisu C# kompilátor by se mohl dostat logické paradox, zpracování kódu: kompilátor potřebuje vědět, typ pole, ale nelze určit typ, dokud se analyzují výrazu přiřazení, a výraz nejde vyhodnotit bez znalosti typu. Vezměte v úvahu následující kód:
+
+```csharp
+private var bookTitles;
+```
+
+`bookTitles` je zadaný typ pole třídy `var`. Protože pole nemá žádný výraz k vyhodnocení, není možné kompilátor odvodit typ `bookTitles` by měla být. Kromě toho přidání výraz do pole (podobně jako byste to udělali pro lokální proměnná) je také nedostatečné:
+
+```csharp
+private var bookTitles = new List<string>();
+```
+
+Když kompilátor narazí pole během kompilace kódu, zaznamenává každé pole typu před zpracováním všechny výrazy s ním spojená. Kompilátor narazí stejné paradox pokusu o analýzu `bookTitles`: je potřeba vědět, typ pole, ale kompilátor by normálně určit `var`na typ díky analýze výraz, který není možné nainstalovat bez mého typ předem.
 
 Možná zjistíte, `var` může být také užitečný v případě výrazy dotazů, ve kterých je obtížné určit přesné konstruovaný typ proměnné dotazu. Tato situace může nastat s seskupování a řazení operace.
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5580b6d8af7319397ad7eb6416941c2be0dcdb76
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 458b18ad34cfff6ab136408ab8e8b2e7953b35cb
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675335"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64593568"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: Podepsání sestavení silným názvem
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  

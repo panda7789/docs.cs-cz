@@ -1,15 +1,15 @@
 ---
 title: .NET Portability Analyzeru – .NET
 description: Další informace o použití nástroje .NET Portability Analyzeru vyhodnotit, jak přenosné váš kód je mezi různé implementace .NET, včetně .NET Core, .NET Standard, UPW a Xamarin.
-ms.date: 07/26/2017
+ms.date: 04/26/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: bd92e39a7b53e2807aff687f6dfbf71be34a506d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7de6aa72b2d30c3e54d2ddf9a2d951688571d654
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628142"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063454"
 ---
 # <a name="the-net-portability-analyzer"></a>.NET Portability Analyzeru
 
@@ -19,25 +19,25 @@ Chcete si vytvořit multiplatformní knihovny? Chcete zobrazit, kolik práce je 
 
 * [.NET Core](../../core/index.md): Má modulárního návrhu, využívá vedle sebe a cílí na scénáře napříč platformami. Vedle sebe umožňuje přijmout nové verze .NET Core bez porušení dalších aplikací.
 * [ASP.NET Core](/aspnet/core): je moderní webové – architektura založená na .NET Core, což vývojářům stejné výhody.
-* [Universal Windows Platform](https://devblogs.microsoft.com/dotnet/net-native-performance/): Zlepšení výkonu aplikací Windows Store, které běží na x64 a počítačů ARM pomocí statické kompilace .NET Native. 
+* [Universal Windows Platform](/uwp): Zlepšení výkonu aplikací Windows Store, které běží na x64 a počítačů ARM pomocí statické kompilace .NET Native. 
 * .NET core a rozšíření platformy: Zahrnuje rozhraní API .NET Core kromě jiných rozhraní API v ekosystému .NET, jako je například WCF, ASP.NET Core, FSharp a Azure.
 * .NET standard a rozšíření platformy: Zahrnuje standardní rozhraní API .NET kromě jiných ekosystému .NET, jako je například WCF, ASP.NET Core, FSharp a Azure.
 
-## <a name="how-to-use-portability-analyzer"></a>Jak používat Portability Analyzeru
+## <a name="how-to-use-the-portability-analyzer"></a>Jak používat Portability Analyzeru
 
-Pokud chcete začít používat .NET Portability Analyzeru, musíte nejprve stáhnout a nainstalovat rozšíření z [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). To funguje v sadě Visual Studio 2015 a Visual Studio 2017. Můžete vytvořit v sadě Visual Studio prostřednictvím **analyzovat** > **nastavení analyzátor přenositelnosti** a vyberte cílové platformy.
+Pokud chcete začít používat .NET Portability Analyzeru, musíte nejprve stáhnout a nainstalovat rozšíření z [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Funguje ve Visual Studio 2017 a novějších verzích. Můžete vytvořit v sadě Visual Studio prostřednictvím **analyzovat** > **nastavení analyzátor přenositelnosti** a vyberte cílové platformy.
 
 ![Snímek obrazovky s přenositelností](./media/portability-analyzer/portability-screenshot.png)
 
 Pokud chcete analyzovat celý projekt, klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **analyzovat přenositelnost sestavení**. V opačném případě přejděte **analyzovat** nabídky a vybereme **analyzovat přenositelnost sestavení**. Tam pak vyberete spustitelný soubor projektu nebo knihovny DLL.
 
-![Průzkumník řešení přenositelnosti](./media/portability-analyzer/portability-solution-explorer.png)
+![Analyzátor přenositelnosti z Průzkumníka řešení](./media/portability-analyzer/portability-solution-explorer.png)
 
-Po spuštění analýzy, zobrazí se sestavy přenositelnost .NET. Pouze v seznamu se zobrazí typy, které jsou nepodporuje cílovou platformu a můžete zkontrolovat doporučení ve službě **zprávy** kartu **seznam chyb**. Můžete také přejít na problémových oblastí přímo **zprávy** kartu.
+Po spuštění analýzy, zobrazí se vám .NET Portability sestavy. Pouze v seznamu se zobrazí typy, které jsou nepodporuje cílovou platformu a můžete zkontrolovat doporučení ve službě **zprávy** kartu **seznam chyb**. Můžete také přejít na problémových oblastí přímo **zprávy** kartu.
 
 ![Přenositelnost sestavy](./media/portability-analyzer/portability-report.png)
 
-Nechcete používat Visual Studio? Můžete také použít Portability Analyzeru z příkazového řádku. Stáhnout pouze [API Portability Analyzeru](https://www.microsoft.com/download/details.aspx?id=42678).
+Pokud už nechcete používat Visual Studio, můžete použít Portability Analyzeru z příkazového řádku. Analyzátor přenositelnosti rozhraní API z stáhnout pouze [Microsoft/dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases) úložiště.
 
 * Zadejte následující příkaz, který analýza aktuálním adresáři: `\...\ApiPort.exe analyze -f .`
 * Pokud chcete analyzovat konkrétního seznamu souborů DLL, zadejte následující příkaz: `\...\ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`

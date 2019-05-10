@@ -4,12 +4,12 @@ description: Přečtěte si některé základní terminologii, která byla použ
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 79b1c6e01c96a906925e5b81b8ea14f988becd7c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d465065341bc58295c965853f4178b05b12a3d9b
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785590"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591226"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 
@@ -33,7 +33,7 @@ Tato část uvádí termíny a definice, měli byste se seznámit s před získ�
 
 **Registru**: Služba, která poskytuje přístup k úložištím. Je výchozím nastavení registru pro největší veřejné image [Docker Hubu](https://hub.docker.com/) (vlastněné Dockeru jako organizace). Registru obvykle obsahuje úložiště z několika týmů. Podniky mají často privátních registrů k ukládání a správě imagí, které jste vytvořili. Služba Azure Container Registry je další příklad.
 
-**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM mcr.microsoft.com/dotnet/core/sdk:2.1`** z registru ve skutečnosti získá **`2.1-nanoserver-1709`**, **`2.1-nanoserver-1803`**, **`2.1-nanoserver-1809`** nebo **`2.1-stretch`**, v závislosti na operačním systému a verze se spuštěným Dockerem.
+**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM mcr.microsoft.com/dotnet/core/sdk:2.2`** z registru ve skutečnosti získá **`2.2-nanoserver-1709`**, **`2.2-nanoserver-1803`**, **`2.2-nanoserver-1809`** nebo **`2.2-stretch`**, v závislosti na operačním systému a verze se spuštěným Dockerem.
 
 **Docker Hubu**: Veřejného registru k nahrání imagí a práci s nimi. Docker Hubu poskytuje Docker hostování image, veřejných nebo privátních registrů, aktivačních procedur sestavení a webhooky a integraci s z Githubu nebo Bitbucketu.
 

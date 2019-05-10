@@ -4,12 +4,12 @@ description: Životní cyklus kontejnerizované aplikace Dockeru s platformou a 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 2cd769ce9013a8521c53f36b44ea260ceccd48b7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e11c9ec61ea7d5131595f01ce76b5bb810bb70c0
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795356"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063304"
 ---
 # <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-20-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>Vytváření kanálů CI/CD ve službě Azure DevOps Services pro aplikaci .NET Core 2.0 v kontejnerech a nasazení do clusteru Kubernetes
 
@@ -21,7 +21,7 @@ Obrázek 5 – 12 se zobrazí scénáře DevOps začátku do konce pokrývajíc�
 
 Je důležité, abyste měli na očích, že dva kanály, sestavení a průběžná integrace a vydání/CD, jsou propojené prostřednictvím registru Dockeru (jako je například Docker Hubu nebo služby Azure Container Registry). Registr Dockeru je jedním z hlavních rozdílů v porovnání s tradičním procesu CI/CD bez Dockeru.
 
-Jak je znázorněno v obrázek 5-13, je první fáze kanálu sestavení/CI. Ve službách Azure DevOps můžete vytvořit kanály sestavení/CD, které budou kompilaci kódu, vytvořte Image Dockeru a vložit je do registru Dockeru jako Docker Hubu nebo služby Azure Container Registry.
+Jak je znázorněno v obrázek 5-13, je první fáze kanálu sestavení/CI. Ve službě Azure DevOps Services můžete vytvářet kanály sestavení a průběžná integrace, které budou kompilaci kódu, vytvořte Image Dockeru a vložit je do registru Dockeru jako Docker Hubu nebo služby Azure Container Registry.
 
 ![Zobrazení prohlížeče s Azure DevOps, definice úlohy procesu sestavení.](media/build-ci-pipeline-azure-devops-push-to-docker-registry.png)
 

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
-ms.openlocfilehash: a60a03d0f88b6176dc22e850c8a84b605078c657
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 80f9fd4e86abbdcc316ff22090cc980bbb8245d1
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61679879"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64595450"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Obecná struktura programu v C# (Průvodce programováním v C#)
 Programy jazyka C# může skládat z jednoho nebo více souborů. Každý soubor může obsahovat nula nebo více oborů názvů. Obor názvů může obsahovat typy, jako jsou třídy, struktury, rozhraní, výčty a delegáti, kromě jiných oborech názvů. Následuje kostra programu v C#, která obsahuje všechny tyto elementy.  

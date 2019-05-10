@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dcf869d77882810d063532b2cf0c8139be163b7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 596ea34dce17d21a151007cad3ebb0ccb615d136
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027209"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64590407"
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: Provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  

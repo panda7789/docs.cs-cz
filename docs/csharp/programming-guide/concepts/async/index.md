@@ -2,12 +2,12 @@
 title: Asynchronní programování v jazyce C#
 description: Přehled C# jazykovou podporu pro asynchronní programování pomocí asynchronní, await, úloh a úkolů<T>
 ms.date: 03/18/2019
-ms.openlocfilehash: dc85fd4fb30278dc39c75c88d5fd23c1f1633366
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 350ccdeeb31e318ca0c1a8158691f58bf5208efb
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668676"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65064119"
 ---
 # <a name="the-task-asynchronous-programming-model-in-c"></a>Asynchronní programovací model úkolu v jazyce C\#
 
@@ -22,7 +22,7 @@ To je ten cíl této syntaxe: Povolit kód, který čte jako posloupnost příka
 1. Přidání másle a zaseknutý do informační zprávy.
 1. Přidá skla oranžové šťávu.
 
-Pokud máte prostředí dá uvařit, by provést tyto pokyny **asynchronně**. by start připravuje pan vejce a pak spusťte slanina. Byste umístit toaster chléb a pak spusťte vejce. V každém kroku procesu by spuštění úlohy a pak pozornost na úlohy, které jsou připravené pro vaši pozornost.
+Pokud máte zkušenosti s dá uvařit, by se spustit tyto pokyny **asynchronně**. by start připravuje pan vejce a pak spusťte slanina. Byste umístit toaster chléb a pak spusťte vejce. V každém kroku procesu by spuštění úlohy a pak pozornost na úlohy, které jsou připravené pro vaši pozornost.
 
 Dá uvařit snídani je dobrý příklad asynchronní práce, která není paralelní. Všechny tyto úlohy může zpracovat jenom jedna osoba (nebo vlákno). Pokračování snídani matric, jedna osoba může být snídani asynchronně pomocí před dokončením prvního spuštění další úlohy. Dá uvařit, postupuje jestli někdo ho sleduje. Jakmile začnete připravuje posun pro vejce, můžete začít frying slanina. Po spuštění slanina můžete umístit chléb do toaster.
 

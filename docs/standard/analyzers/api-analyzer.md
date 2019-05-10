@@ -3,14 +3,14 @@ title: Analyzátor rozhraní API .NET
 description: Zjistěte, jak analyzátor rozhraní API .NET vám může pomoct detekovat zastaralé rozhraní API a problémy s kompatibilitou platformy.
 author: oliag
 ms.author: mairaw
-ms.date: 05/31/2018
+ms.date: 04/26/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 84dd0717725f3538f9c9b2e3b5573f1385e549ac
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 892fb5cc9fba3434b0884c88b97f784d58093303
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947402"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063343"
 ---
 # <a name="net-api-analyzer"></a>Analyzátor rozhraní API .NET
 
@@ -23,7 +23,7 @@ Analyzátor rozhraní API se dodává jako balíček NuGet [Microsoft.DotNet.Ana
 
 ## <a name="prerequisites"></a>Požadavky
 
-* Visual Studio 2017 nebo Visual Studio pro Mac (všechny verze).
+* Visual Studio 2017 a novějších verzí nebo Visual Studio pro Mac (všechny verze).
 
 ## <a name="discovering-deprecated-apis"></a>Zjišťování zastaralá rozhraní API
 
@@ -98,6 +98,7 @@ V současné době analyzátor zpracovává následujících případech:
 * Použití standardních rozhraní API .NET, která vyvolá <xref:System.PlatformNotSupportedException> (PC001).
 * Použití standardních rozhraní API .NET, která není k dispozici v rozhraní .NET Framework 4.6.1 (PC002).
 * Použití nativních rozhraní API, která neexistuje v UPW (PC003).
+* Využití Delegate.BeginInvoke a EndInvoke u rozhraní API (PC004).
 * Využití rozhraní API, která je označena jako zastaralá (DEXXXX).
 
 ## <a name="ci-machine"></a>Položky konfigurace počítače

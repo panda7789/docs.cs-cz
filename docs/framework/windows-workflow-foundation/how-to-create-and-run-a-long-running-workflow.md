@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-ms.openlocfilehash: 7940d1d8869d3b82c1aa19cb038a68b8724345dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fd7bf92750c6e314a5c9105bb961bf68b68182cb
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773419"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063829"
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: Vytvoření a spuštění dlouhotrvajícího pracovního postupu
 Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinných pracovních postupů k databázi. Kroky v [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md) jsme vám ukázali základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady zobrazila počáteční pracovní postupy, obslužné rutiny pracovních postupů životního cyklu a obnovení záložky. Ukázání efektivně trvalost pracovního postupu, se vyžaduje složitější hostitele pracovního postupu, který podporuje spouštění a obnovení několika instancí pracovních postupů. Tento krok úvodního kurzu ukazuje, jak vytvořit hostitele formuláře Windows, aplikace, která podporuje spouštění a obnovení několika instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce, jako je sledování a správy verzí, které jsou jsme vám ukázali v následných kroků v kurzu.  
@@ -84,7 +84,7 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
   
 3. Konfigurujte následující vlastnosti ve formuláři.  
   
-    |Vlastnost|Value|  
+    |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |FormBorderStyle|FixedSingle|  
     |MaximizeBox|False|  
@@ -92,7 +92,7 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
   
 4. Přidejte následující ovládací prvky do formuláře v pořadí zadaný a nakonfigurujte vlastnosti, podle pokynů.  
   
-    |Control|Vlastnost: Value|  
+    |Control|Vlastnost: Hodnota|  
     |-------------|---------------------|  
     |**Tlačítko**|Jméno: NewGame<br /><br /> Umístění: 13, 13<br /><br /> Velikost: 75, 23<br /><br /> Text: Novou hru|  
     |**Popisek**|Umístění: 94, 18<br /><br /> Text: Číslo od 1 do pokusu|  
@@ -105,7 +105,7 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
     > [!NOTE]
     >  Při přidávání následující ovládací prvky, vytvořte z nich skupině.  
   
-    |Control|Vlastnost: Hodnota|  
+    |Control|Vlastnost: Value|  
     |-------------|---------------------|  
     |**Popisek**|Umístění: 7, 20<br /><br /> Text: Id Instance pracovního postupu|  
     |**ComboBox**|Jméno: InstanceId<br /><br /> DropDownStyle: DropDownList<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|  
@@ -119,7 +119,7 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
   
  Následující příklad ukazuje dokončený formulář.  
   
- ![WF45 Formulář hostitele pracovního postupu kurz Začínáme se službou](./media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")  
+ ![Snímek obrazovky, formuláře Windows Workflow Foundation pracovního postupu hostitele.](./media/how-to-create-and-run-a-long-running-workflow/windows-workflow-foundation-workflowhostform.png)  
   
 ### <a name="BKMK_AddHelperMethods"></a> Chcete-li přidat vlastnosti a metody helper formuláře  
  Kroky v této části přidejte do třídy formuláře, která konfigurace uživatelského rozhraní ve formuláři pro podporu spouštění a obnovení workflowů číslo odhad vlastnosti a metody helper.  

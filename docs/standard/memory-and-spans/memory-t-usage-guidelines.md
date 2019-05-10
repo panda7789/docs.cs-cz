@@ -6,12 +6,12 @@ helpviewer_keywords:
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e942b3f6f6572c05d42a0267f98e6c876a113616
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 728f360d2e8f93ebdf2b17fec39477b95ed11357
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909620"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063278"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Paměť\<T > a rozpětí\<T > Pokyny k používání
 
@@ -86,7 +86,7 @@ V tomto kódu:
 
 - `Main` Metoda obsahuje odkaz na <xref:System.Buffers.IMemoryOwner%601> instance, takže `Main` metoda je vlastníkem vyrovnávací paměti.
 
-- `WriteInt32ToBuffer` a `DisplayBufferToConsole` metody přijímají xref:System.Memory%601 > jako veřejné rozhraní API. Proto jsou příjemci vyrovnávací paměti. A jsou pouze použít jeden po druhém.
+- `WriteInt32ToBuffer` a `DisplayBufferToConsole` metody přijímají <xref:System.Memory%601> jako veřejné rozhraní API. Proto jsou příjemci vyrovnávací paměti. A jsou pouze použít jeden po druhém.
 
 I když `WriteInt32ToBuffer` metoda se má zapsat hodnotu do vyrovnávací paměti, `DisplayBufferToConsole` není metoda. Tyto změny projeví na ho může přijali argument typu <xref:System.ReadOnlyMemory%601>. Další informace o <xref:System.ReadOnlyMemory%601>, naleznete v tématu [pravidlo č. 2: Použít ReadOnlySpan\<T > nebo ReadOnlyMemory\<T > Pokud vyrovnávací paměť by měl být jen pro čtení](#rule-2).
 
@@ -110,13 +110,13 @@ Protože bloku paměti vlastní, ale má být předán více komponent, někter�
 
 - Je možné pro součást ovládajících vyrovnávací paměti ve stejnou dobu, která funguje jiné součásti, v procesu došlo k poškození dat ve vyrovnávací paměti.
 
-- Zatímco povahy přidělený na zásobník <xref:System.Span%601> optimalizuje výkon a zpřístupňuje <xref:System.Span%601> upřednostňovaný typ pro provozování na blok paměti je také Predmety <xref:System.Span%601> na určitá omezení hlavní omezení. Je důležité vědět, kdy se má použít <xref:System.Span%601> a kdy použít <xref:System.Memory%601>.
+- Zatímco povahy přidělený na zásobník <xref:System.Span%601> optimalizuje výkon a zpřístupňuje <xref:System.Span%601> upřednostňovaný typ pro provozování na blok paměti je také Predmety <xref:System.Span%601> některé hlavní omezení. Je důležité vědět, kdy se má použít <xref:System.Span%601> a kdy použít <xref:System.Memory%601>.
 
 Toto jsou naše doporučení pro používání úspěšně <xref:System.Memory%601> a jeho souvisejících typů. Mějte na paměti tyto pokyny, které platí pro <xref:System.Memory%601> a <xref:System.Span%601> platí také pro <xref:System.ReadOnlyMemory%601> a <xref:System.ReadOnlySpan%601> Pokud jsme explicitně mějte na paměti jinak.
 
 **Pravidlo #1: Synchronní rozhraní API, použijte Span\<T > místo v paměti\<T > jako parametr, pokud je to možné.**
 
-<xref:System.Span%601> nabízí větší variabilitu než <xref:System.Memory%601> a může představovat širší vyrovnávacích pamětí souvislé paměti. <xref:System.Span%601> také nabízí vyšší výkon než <xref:System.Memory%601>>. Nakonec můžete použít <xref:System.Memory%601.Span?displayProperty=nameWithType> vlastnost převést <xref:System.Memory%601> instance na <xref:System.Span%601>, i když Span\<T > - na - paměti\<T > Převod není možný. Pokud vaše volající náhodou <xref:System.Memory%601> instance, budou moct volat vaše metody s atributem <xref:System.Span%601> parametry přesto.
+<xref:System.Span%601> nabízí větší variabilitu než <xref:System.Memory%601> a může představovat širší vyrovnávacích pamětí souvislé paměti. <xref:System.Span%601> také nabízí vyšší výkon než <xref:System.Memory%601>. Nakonec můžete použít <xref:System.Memory%601.Span?displayProperty=nameWithType> vlastnost převést <xref:System.Memory%601> instance na <xref:System.Span%601>, i když Span\<T > - na - paměti\<T > Převod není možný. Pokud vaše volající náhodou <xref:System.Memory%601> instance, budou moct volat vaše metody s atributem <xref:System.Span%601> parametry přesto.
 
 Pomocí parametru typu <xref:System.Span%601> místo typu <xref:System.Memory%601> také umožňuje zapisovat správná implementace metody náročné. Získáte automaticky kontroluje za kompilace, ujistěte se, že se o přístup k vyrovnávací paměti nad rámec vaše metoda zapůjčení, (více dále).
 
@@ -246,7 +246,7 @@ Jakékoli součásti, která převede vlastnictví <xref:System.Buffers.IMemoryO
 
 **Pravidlo #9: Chcete-li obtékání metodu synchronní p/invoke, vaše rozhraní API by měla přijímat rozpětí\<T > jako parametr.**
 
-Podle pravidel č. 1 <xref:System.Span%601> je obecně správný typ má být použit pro synchronní rozhraní API. Můžete připnout <xref:System.Span%601> \<T > přes instance [ `fixed` ](~/docs/csharp/language-reference/keywords/fixed-statement.md) – klíčové slovo, jako v následujícím příkladu.
+Podle pravidel č. 1 <xref:System.Span%601> je obecně správný typ má být použit pro synchronní rozhraní API. Můžete připnout <xref:System.Span%601> instance prostřednictvím [ `fixed` ](~/docs/csharp/language-reference/keywords/fixed-statement.md) – klíčové slovo, jako v následujícím příkladu.
 
 ```csharp
 using System.Runtime.InteropServices;

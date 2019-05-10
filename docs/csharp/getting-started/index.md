@@ -8,16 +8,16 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 5c502c3832ca9afc30599d47d0890fae168fa998
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c97a5b843d27258f58d654d35420a262d5b741a
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668949"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65062952"
 ---
 # <a name="get-started-with-c"></a>Začínáme s C\#
 
-V této části najdete krátký, jednoduché kurzy, které vám umožní rychle vytvářet aplikace pomocí jazyka C# a .NET Core. Pro Visual Studio 2017 a Visual Studio Code se zobrazuje témata oddílu Začínáme. Tento článek předpokládá některé programovací prostředí. Pokud se programování, zkuste naši [Úvod do C# ](../tutorials/intro-to-csharp/index.md) interaktivní kurzy.
+V této části najdete krátký, jednoduché kurzy, které vám umožní rychle vytvářet aplikace pomocí jazyka C# a .NET Core. Pro Visual Studio 2017 a Visual Studio Code se zobrazuje témata oddílu Začínáme. Tento článek předpokládá některé programovací prostředí. Pokud začínáte programování, vyzkoušejte naše [Úvod do C# ](../tutorials/intro-to-csharp/index.md) interaktivní kurzy.
 
 Jsou k dispozici v následujících tématech:
 

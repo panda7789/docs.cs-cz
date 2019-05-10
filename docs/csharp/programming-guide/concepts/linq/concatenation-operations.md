@@ -2,19 +2,19 @@
 title: Operace sřetězení (C#)
 ms.date: 07/20/2015
 ms.assetid: 890ee104-c590-457e-8a7f-b2b5da0fb417
-ms.openlocfilehash: 7b9ed736de44c92f927fd47105f72631b07af825
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3df591e6c69ac764656aa193404a435900f7ffa7
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702500"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65064068"
 ---
 # <a name="concatenation-operations-c"></a>Operace sřetězení (C#)
 Zřetězení odkazuje operaci připojení jedním sekvenčním do jiného.  
   
  Následující ilustrace znázorňuje operaci zřetězení dvou sekvencí znaků.  
   
- ![Obrázek znázorňující zřetězení dvou sekvencí. ](../../../../csharp/programming-guide/concepts/linq/media/concat.png "Concat")  
+ ![Obrázek znázorňující zřetězení dvou sekvencí.](./media/concatenation-operations/concatenation-two-sequences.png)  
   
  V následující části jsou uvedeny standardní metody operátoru dotazu, které provádějí zřetězení.  
   

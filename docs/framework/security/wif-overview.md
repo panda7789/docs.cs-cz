@@ -3,12 +3,12 @@ title: Přehled Windows Identity Foundation 4.5
 ms.date: 03/30/2017
 ms.assetid: 5f723345-7270-49e2-b638-b3a34bd40517
 author: BrucePerlerMS
-ms.openlocfilehash: 6165dbf32b777a8d82e756f84ed2415d6ed3d774
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d3076bbda47ac4aac0c8f0b9f9c69d17f370e765
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780091"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592405"
 ---
 # <a name="windows-identity-foundation-45-overview"></a>Přehled Windows Identity Foundation 4.5
 Windows Identity Foundation 4.5 je sada tříd rozhraní .NET Framework pro implementaci deklarovaných identit v aplikacích. Usnadňuje využívání výhod aplikací a služeb pracujících s deklaracemi. Technologii WIF 4.5 lze používat v jakékoli webové aplikaci nebo webové službě, která používá rozhraní .NET Framework 4.5 nebo novější. Technologie WIF tvoří pouze jednu část softwarové produktové řady Federated Identity společnosti Microsoft, která implementuje sdílenou vizi odvětví založenou na otevřených standardech. Federované Identity se skládá ze tří součástí: [Aktivní Directory® Federation Services](https://go.microsoft.com/fwlink/?LinkID=247516) (AD FS) 2.0, [Windows Azure Access Control Services](https://go.microsoft.com/fwlink/?LinkID=247517) (ACS) a technologie WIF. Společně tyto tři komponenty tvoří jádro nové platformy společnosti Microsoft pro deklarované cloudové identity a řízení přístupu.  

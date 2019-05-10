@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ?. operator [Visual Basic]
 - ?[] operator [C#]
 - ?[] operator [Visual Basic]
-ms.openlocfilehash: b83435b8448b53eca63aac0519e9eed2f7dfa9f3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4815fe7ad337634cfb56127fbd24a47a37fdd74b
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62028688"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65062940"
 ---
 # <a name="-and--null-conditional-operators-visual-basic"></a>?. a? () podmíněné operátory s null (Visual Basic)
 
@@ -37,6 +37,24 @@ Dim length As Integer
 If customers IsNot Nothing Then
    length = customers.Length
 End If
+```
+
+Někdy je potřeba provést akci na objekt, který může mít hodnotu null, na základě hodnoty Boolean člen k tomuto objektu (například vlastnost typu Boolean `IsAllowedFreeShipping` v následujícím příkladu):
+
+```vb
+  Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
+  
+  If customer IsNot Nothing AndAlso customer.IsAllowedFreeShipping Then
+   ApplyFreeShippingToOrders(customer)
+  End If
+```
+
+Můžete zkrátit váš kód a vyhnout se ručně kontrola null použitím operátoru podmíněného null následujícím způsobem:
+
+```vb
+ Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
+ 
+ If customer?.IsAllowedFreeShipping Then ApplyFreeShippingToOrders(customer)
 ```
 
 Podmíněné operátory s null jsou short-circuiting.  Pokud jedna operace v řetězci Podmíněný člen přístup a index operace vrátí `Nothing`, zbytek zastaví provádění řetězec.  V následujícím příkladu `C(E)` není vyhodnocen, pokud `A`, `B`, nebo `C` vyhodnotí jako `Nothing`.

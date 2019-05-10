@@ -4,12 +4,12 @@ description: Podívejte se na osvědčené postupy pro propojení s nativními k
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 6702d469abf317b3b1f545ce79b980e8581ab5f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 09b25ed10958142f8eead6761f18bccbe2645448
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973599"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063054"
 ---
 # <a name="native-interoperability-best-practices"></a>Osvědčené postupy nativní interoperabilita
 
@@ -33,7 +33,7 @@ Pokyny v této části platí pro všechny scénáře spolupráce.
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Ponechat výchozí  | Pokud to explicitně nastavená na false, neúspěšných vrácené hodnoty HRESULT bude převeden na výjimky (a vrácená hodnota v definici změní na hodnotu null v důsledku).|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | závisí na rozhraní API  | Nastavte tuto hodnotu na hodnotu true, pokud používá funkce GetLastError rozhraní API a použít Marshal.GetLastWin32Error má být získána hodnota. Pokud rozhraní API nastavte podmínku, která říká, že došlo k chybě, zobrazí chybová zpráva před provedením další volání vyhnout neúmyslně jej přepsat.|
-| <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None`, který spadne zpět na `CharSet.Ansi` chování  | Explicitně `CharSet.Unicode` nebo `CharSet.Ansi` když řetězce nebo znaků, jsou k dispozici v definici | Určuje chování sběrného systému řetězců a co `ExactSpelling` když `false`. Všimněte si, že `CharSet.Ansi` je ve skutečnosti UTF8 v systému Unix. _Většina_ času Windows používá kódování Unicode, zatímco Unix používá UTF8. Další informace o naleznete [dokumentaci o znakových sad](./charset.md). |
+| <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None`, který spadne zpět na `CharSet.Ansi` chování  | Explicitně `CharSet.Unicode` nebo `CharSet.Ansi` když řetězce nebo znaků, jsou k dispozici v definici | Určuje chování zařazování řetězců a co `ExactSpelling` když `false`. Všimněte si, že `CharSet.Ansi` je ve skutečnosti UTF8 v systému Unix. _Většina_ času Windows používá kódování Unicode, zatímco Unix používá UTF8. Další informace o naleznete [dokumentaci o znakových sad](./charset.md). |
 | <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling> | `false` | `true`             | Nastavte tuto hodnotu na true a získat výhody mírné výkonu jako modul runtime nebude hledat názvy alternativní funkcí s příponou buď "A" nebo "W" v závislosti na hodnotu `CharSet` nastavení ("A" pro `CharSet.Ansi` a "W" pro `CharSet.Unicode`). |
 
 ## <a name="string-parameters"></a>Parametry řetězce
@@ -57,11 +57,11 @@ To znamená *{4}* přidělení získat řetězec z nativního kódu. Nejlepší 
 
 Problém s `StringBuilder` je, že vždy kopíruje návratové vyrovnávací paměti zálohování do první hodnotu null. Pokud back předaný řetězec není ukončený nebo je dvojitou hodnotu null ukončující řetězec, je deklarace P/Invoke nesprávný nejlépe.
 
-Pokud jste *proveďte* použít `StringBuilder`, jeden poslední gotcha je, že se kapacita **není** zahrnout skryté null, který je vždy zahrnuté v zprostředkovatele komunikace s objekty. Je běžné, že lidé se to získat nesprávná, protože většina rozhraní API má velikost vyrovnávací paměti *včetně* hodnotu null. Výsledkem může být ztraceny, a zbytečné přidělení. Kromě toho tato gotcha zabraňuje modulu runtime optimalizace `StringBuilder` minimalizovat kopie sběrného systému.
+Pokud jste *proveďte* použít `StringBuilder`, jeden poslední gotcha je, že se kapacita **není** zahrnout skryté null, který je vždy zahrnuté v zprostředkovatele komunikace s objekty. Je běžné, že lidé se to získat nesprávná, protože většina rozhraní API má velikost vyrovnávací paměti *včetně* hodnotu null. Výsledkem může být ztraceny, a zbytečné přidělení. Kromě toho tato gotcha zabraňuje modulu runtime optimalizace `StringBuilder` zařazování minimalizovat kopie.
 
 **✔️ ZVAŽTE** pomocí `char[]`s ze `ArrayPool`.
 
-Další informace o zařazování pro řetězce, naleznete v tématu [výchozí zařazování pro řetězce](../../framework/interop/default-marshaling-for-strings.md) a [přizpůsobení zařazování pro řetězce](customize-parameter-marshalling.md#customizing-string-parameters).
+Další informace o zařazování řetězce, naleznete v tématu [výchozí zařazování pro řetězce](../../framework/interop/default-marshaling-for-strings.md) a [přizpůsobení zařazování řetězce](customize-parameter-marshaling.md#customizing-string-parameters).
 
 > __Specifické pro Windows__  
 > Pro `[Out]` řetězce CLR použije `CoTaskMemFree` ve výchozím nastavení uvolnit řetězce nebo `SysStringFree` pro řetězce, které jsou označeny jako `UnmanagedType.BSTR`.  
@@ -73,7 +73,7 @@ Další informace o zařazování pro řetězce, naleznete v tématu [výchozí 
 
 ## <a name="boolean-parameters-and-fields"></a>Logické parametry a pole
 
-Logické hodnoty jsou snadno schválně pokazí. Ve výchozím nastavení, .NET `bool` je zařazeno do Windows `BOOL`, kde je to hodnota 4 bajty. Ale `_Bool`, a `bool` jsou typy v jazyce C a C++ *jeden* bajtů. To může vést k náročné sledovat chyby jako poloviční návratová hodnota se zahodí, který bude pouze *potenciálně* změnit výsledek. Další informace o zařazování .NET `bool` hodnoty do jazyka C nebo C++ `bool` typy, naleznete v dokumentaci [přizpůsobení zařazování pro pole logickou](customize-struct-marshalling.md#customizing-boolean-field-marshalling).
+Logické hodnoty jsou snadno schválně pokazí. Ve výchozím nastavení, .NET `bool` je zařazeno do Windows `BOOL`, kde je to hodnota 4 bajty. Ale `_Bool`, a `bool` jsou typy v jazyce C a C++ *jeden* bajtů. To může vést k náročné sledovat chyby jako poloviční návratová hodnota se zahodí, který bude pouze *potenciálně* změnit výsledek. Další informace o zařazování .NET `bool` hodnoty jazyka c nebo C++ `bool` typy, naleznete v dokumentaci [přizpůsobení zařazování pole boolean](customize-struct-marshaling.md#customizing-boolean-field-marshaling).
 
 ## <a name="guids"></a>Identifikátory GUID
 
@@ -87,7 +87,7 @@ Lze použít přímo v signaturách identifikátory GUID. Mnoho rozhraní Window
 
 ## <a name="blittable-types"></a>Přenositelné typy
 
-Přenositelné typy jsou typy, které mají stejnou reprezentaci úrovni bitů v spravovaného a nativního kódu. Proto není nutné pro převod na jiném formátu tak být zařazeno do a z nativního kódu a jak to zvyšuje výkon se bude upřednostňovat.
+Přenositelné typy jsou typy, které mají stejnou reprezentaci úrovni bitů v spravovaného a nativního kódu. Jako takové, nemusí být převedeny do jiného formátu zařazována do a z nativního kódu a jak to zvyšuje výkon se bude upřednostňovat.
 
 **Přenositelné typy:**
 
@@ -126,7 +126,7 @@ Můžete zobrazit, pokud je typu blittable pokusem o vytvoření připnutého `G
 Další informace naleznete v tématu:
 
 - [Přenositelné a nepřenositelné typy](../../framework/interop/blittable-and-non-blittable-types.md)  
-- [Zařazování typů](type-marshalling.md)
+- [Zařazování typů](type-marshaling.md)
 
 ## <a name="keeping-managed-objects-alive"></a>Ponechání spravovaných objektů, které jsou aktivní
 
@@ -210,7 +210,7 @@ Windows `PVOID` tedy C `void*` můžete zařadit jako buď `IntPtr` nebo `UIntPt
 
 Spravované struktury jsou vytvořeny v zásobníku a se neodeberou, dokud se metoda vrátí. Podle definice a pak, že nejsou "připnuté" (nebudete získáte přesunout uvolňování paměti). Můžete také jednoduše provést adresu v nezabezpečený kód bloky Pokud nativního kódu nebude používat ukazatel ukazující za aktuální metody.
 
-Přenositelné struktury jsou výrazně výkonnější jako může být jednoduše použít přímo ve vrstvě sběrného systému. Pokuste se uskutečnit blittable struktury (například vyhnout `bool`). Další informace najdete v tématu [přenositelné typy](#blittable-types) oddílu.
+Přenositelné struktury jsou výrazně výkonnější jako může být jednoduše použít přímo ve vrstvě zařazování. Pokuste se uskutečnit blittable struktury (například vyhnout `bool`). Další informace najdete v tématu [přenositelné typy](#blittable-types) oddílu.
 
 *Pokud* struktury je typu blittable, použijte `sizeof()` místo `Marshal.SizeOf<MyStruct>()` pro zajištění lepšího výkonu. Jak je uvedeno výše, můžete ověřit, že je typu blittable pokusem o vytvoření připnutého `GCHandle`. Pokud typ není řetězec nebo považovat za blittable, `GCHandle.Alloc` vyvolá výjimku `ArgumentException`.
 
@@ -245,4 +245,4 @@ internal unsafe struct SYSTEM_PROCESS_INFORMATION
 }
 ```
 
-Existují však některé možná úskalí s pevných vyrovnávacích pamětí. Nepřenositelné typy pevných vyrovnávacích pamětí nesmí být zařazeno správně, tak místní pole vyžaduje rozbalen navýšení kapacity na několik jednotlivá pole. Navíc v rozhraní .NET Framework a .NET Core před 3.0, pokud je vnořená struktura obsahující vyrovnávací paměť pevné pole v rámci nepřenositelné struktury pole vyrovnávací paměť pevné nesmí být zařazeno správně do nativního kódu.
+Existují však některé možná úskalí s pevných vyrovnávacích pamětí. Pevných vyrovnávacích pamětí nepřenositelné typy nebude zařadit správně, aby pole na místě vyžaduje rozbalen navýšení kapacity na několik jednotlivá pole. Kromě toho v rozhraní .NET Framework a .NET Core před 3.0, pokud je vnořená struktura obsahující vyrovnávací paměť pevné pole v rámci nepřenositelné struktury pole vyrovnávací paměť pevné nebude zařadit správně do nativního kódu.

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: dfbdcf29e0fc003f9478e6f691957b67574d5233
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 34357ac313e20c5bab5505984f92ea06df80a5c2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680659"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64595406"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným nebo výjimečné situace, ke kterým dochází při spuštění programu. Používá pro zpracování výjimek `try`, `catch`, a `finally` klíčová slova vyzkoušet akce, které nemusí proběhnout úspěšně, zpracování selhání, pokud se rozhodnete, že je přijatelné, provedete to tak a následně vyčistit prostředky. Výjimky mohou být generovány modulem common language runtime (CLR), rozhraní .NET Framework nebo jakékoli knihovny třetích stran nebo kódem aplikace. Výjimky jsou vytvářeny instalační sadou `throw` – klíčové slovo.  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: a6baf073e25635f0a6dd666d681d8bc641128ea0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7712ed02d20d692842267464a645bfc93ca8fd73
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982357"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063896"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrovaných událostí, popisuje, jak směrované události jsou směrovány stromové struktuře prvků, shrnuje, jak zpracování směrované události a seznámíte s vytvořením vlastní směrované události.
@@ -197,10 +197,9 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní události, které dostaneme v dvojice jsou implementované tak, aby jedna akce uživatele ze vstupu, jako je například stisknutí tlačítka myši, vyvolají pořadí obou směrovaných událostí, které odpovídá páru licencí. Nejprve tunelového propojení událost se vyvolá a jeho trasu se přenáší. Pak šíření událost se vyvolá a jeho trasu se přenáší. Dvě události doslova sdílejí stejné instance dat události, protože <xref:System.Windows.UIElement.RaiseEvent%2A> volání metody v implementující třídu, která vyvolává událost šíření naslouchá na data událostí z tunelového propojení událost a znovu ho použije v nové vyvolanou událost. Naslouchací procesy s obslužnými rutinami pro tunelového propojení událost mít první příležitosti k označení směrovaných událostí zpracovat (obslužné rutiny třídy nejprve pak instance obslužné rutiny). Pokud element trase tunelového propojení označení směrovaných událostí jako zpracované, data již zpracovává události se odesílají na pro šíření událostí a typické obslužnými rutinami připojenými ekvivalent šíření vstupní události nebudou vyvolány. Do vnějšího vzhledu metoda bude, jako kdyby nebyl zpracované šíření událost ještě vyvolá. Toto chování zpracování je užitečné pro ovládací prvek skládání, kdy chcete všechna spuštění testu na základě události vstupu nebo vstupní události na základě fokus má být hlášen konečné ovládacího prvku, spíše než její části složené. Poslední ovládací prvek je blíž ke kořenu v skládání a proto má možnost Třída zpracovat tunelového propojení událost první a pravděpodobně "nahradit" příslušné směrované události pomocí ovládacího prvku konkrétní události, jako součást kód, který zálohuje ovládacího prvku Třída.  
   
- Jako ukázku jak vstupní funguje pro zpracování událostí zvažte následující příklad vstupní události. Na následujícím obrázku stromu `leaf element #2` je zdrojem i `PreviewMouseDown` a pak `MouseDown` událostí.  
+ Jako ukázku jak vstupní funguje pro zpracování událostí zvažte následující příklad vstupní události. Na následujícím obrázku stromu `leaf element #2` je zdrojem i `PreviewMouseDown` a pak `MouseDown` události:  
   
- ![Směrování událostí – diagram](./media/wcsdkcoreinputevents.png "wcsdkCoreInputEvents")  
-Vstupní události šíření a tunelové propojení  
+ ![Směrování událostí – diagram](./media/routed-events-overview/input-event-routing.png)  
   
  Pořadí zpracování události je následující:  
   

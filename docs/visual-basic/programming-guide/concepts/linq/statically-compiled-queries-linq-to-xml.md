@@ -2,12 +2,12 @@
 title: Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3f4825c7-c3b0-48da-ba4e-8e97fb2a2f34
-ms.openlocfilehash: ff708dd14d27b34be797f1630dabe27a56c5a219
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b26e0e21ae88ae0a40de1593294c004d394e38ed
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61908333"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64610671"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)
 Jeden z vašich nejdůležitějších výkonu výhody LINQ to XML, nikoli <xref:System.Xml.XmlDocument>, dotazy v LINQ to XML nejsou staticky zkompilován, zatímco v době běhu musí být interpretován dotazy XPath. Tato funkce je založená na technologii LINQ to XML, takže není potřeba provést další kroky pro jejich výhod, ale je vhodné pochopit v čem při volbě mezi tyto technologie. Toto téma vysvětluje rozdíl.  

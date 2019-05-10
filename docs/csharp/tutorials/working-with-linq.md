@@ -3,12 +3,12 @@ title: Práce s jazykem LINQ
 description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, Zapsat metody pro použití v dotazech LINQ a rozlišovat mezi nemůžou dočkat, až a opožděné vyhodnocení.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: d6dbe158c5f9b474dbd2cc61982ab8e23e584ec7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 702770650533b0549e414a1de87acf17d77af4e3
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675609"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063200"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
@@ -51,7 +51,7 @@ using System.Linq;
 
 Pokud tyto tři řádky (`using` příkazy) nejsou v horní části souboru, nebude kompilovat náš program.
 
-Teď, když máte všechny odkazy, které budete potřebovat, vezměte v úvahu informace o tom, co balíčku karet. Běžně balíčku hracích kartách obsahuje čtyři barvy a každou barvu má třináct hodnoty. Za normálních okolností zvažte vytvoření `Card` třídy přímo vypnuto bat a naplnění kolekce `Card` objekty ručně. S dotazy LINQ může být stručnější než obvyklým způsobem řešení problémů s vytvořením balíčku karet. Místo vytváření `Card` třídy, můžete vytvořit dvěma sekvencemi k reprezentaci sady a pořadí, v uvedeném pořadí. Vytvoříte opravdu jednoduchý dvojici [ *iterátory* ](../iterators.md#enumeration-sources-with-iterator-methods) , který bude generovat pořadí a barvy jako <xref:System.Collections.Generic.IEnumerable%601>s řetězců:
+Teď, když máte všechny odkazy, které budete potřebovat, vezměte v úvahu informace o tom, co balíčku karet. Běžně balíčku hracích kartách obsahuje čtyři barvy a každou barvu má třináct hodnoty. Za normálních okolností zvažte vytvoření `Card` třídy přímo vypnuto bat a naplnění kolekce `Card` objekty ručně. S dotazy LINQ může být stručnější než obvyklým způsobem řešení problémů s vytvořením balíčku karet. Místo vytváření `Card` třídy, můžete vytvořit dvěma sekvencemi k reprezentaci barvy a pořadí, v uvedeném pořadí. Vytvoříte opravdu jednoduchý dvojici [ *iterátory* ](../iterators.md#enumeration-sources-with-iterator-methods) , který bude generovat pořadí a barvy jako <xref:System.Collections.Generic.IEnumerable%601>s řetězců:
 
 ```csharp
 // Program.cs

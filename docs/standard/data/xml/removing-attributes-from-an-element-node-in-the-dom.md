@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0e38ad777112e5e88fe40c530da6107d0de0e3ac
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7031d34916c520f52550d215a1a8e62880209c87
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698717"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64590038"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Odebrání atributů z uzlu elementu v modelu DOM
 Existuje mnoho způsobů, jak odebrat atributy. Jednou z metod je odebrat z kolekce atributu. K tomuto účelu se provádí následující kroky:  

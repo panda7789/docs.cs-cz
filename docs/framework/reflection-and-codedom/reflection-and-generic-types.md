@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a45ef91eba38223270a04cff2f00c30decb019f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d0536acbcc71ae7792ec668ac352e95e604bd979
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793117"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591367"
 ---
 # <a name="reflection-and-generic-types"></a>Reflexe a obecné typy
 <a name="top"></a> Z hlediska odrazu, rozdíl mezi obecného typu a běžný typ je, že obecného typu k němu má přidružené sady parametrů typu (Pokud je definice obecného typu) nebo zadejte argumenty (je-li konstruovaný typ). Obecné metody se liší od běžné metody stejným způsobem.  

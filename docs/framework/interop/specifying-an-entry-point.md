@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15a441ea7b0b16c83c590289d04cf0c10623fb85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6065e06fa4fb51cd0cd746a1619f8a611f2fc30b
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032745"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65064106"
 ---
 # <a name="specifying-an-entry-point"></a>Určení vstupního bodu
 Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo řadový vstupní bod cílové funkce identifikuje v rámci spravovaného projektu funkci napříč hranicemi interoperability. Dále je možné namapovat vstupní bod na jiný název, a tak funkci účinně přejmenovat.  
@@ -34,10 +34,8 @@ Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo 
  Jazyk Visual Basic používá **funkce** – klíčové slovo v **Declare** příkaz nastavit <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> pole. Následující příklad znázorňuje základní deklaraci.  
   
 ```vb
-Imports System
-
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Function MessageBox Lib "user32.dll" (
+Friend Class NativeMethods
+    Friend Declare Auto Function MessageBox Lib "user32.dll" (
         ByVal hWnd As IntPtr,
         ByVal lpText As String,
         ByVal lpCaption As String,
@@ -48,10 +46,8 @@ End Class
  Můžete nahradit **MessageBox** vstupní bod s **MsgBox** zahrnutím **Alias** – klíčové slovo v definici, jak je znázorněno v následujícím příkladu. V obou příkladech **automaticky** – klíčové slovo eliminuje nutnost určit verzi znakové sady vstupního bodu. Další informace o výběru znakové sady naleznete v tématu [určení znakové sady](../../../docs/framework/interop/specifying-a-character-set.md).  
   
 ```vb
-Imports System
-
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Function MsgBox _
+Friend Class NativeMethods
+    Friend Declare Auto Function MsgBox _
         Lib "user32.dll" Alias "MessageBox" (
         ByVal hWnd As IntPtr,
         ByVal lpText As String,
@@ -76,7 +72,7 @@ End Class
 using System;
 using System.Runtime.InteropServices;
 
-internal static class WindowsAPI
+internal static class NativeMethods
 {
     [DllImport("user32.dll", EntryPoint = "MessageBoxA")]
     internal static extern int MessageBox(

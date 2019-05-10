@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 9f1f41a7-2954-49d3-a2c0-62b6ef4d40ab
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c638531bd54f14c7e4b04a093deaec729db404ba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c736b4fe2a4bc38d4345413fa00d4cf7e5a80be7
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675101"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64607723"
 ---
 # <a name="assembly-location"></a>Umístění sestavení
 Umístění sestavení určuje, zda modul common language runtime najít při odkazuje a můžete také určit, zda sestavení lze sdílet s jinými sestaveními. Můžete nasazovat sestavení v následujících umístěních:  

@@ -3,12 +3,12 @@ title: Vytvoření klienta REST s využitím .NET Core
 description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 332e47d9a02f48c53bbad272477768fa4c0367f2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6e3371a72810b30f804169be4025360aa10c477
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675998"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063874"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -36,11 +36,10 @@ Bude potřeba nainstalovat váš oblíbený editor kódu. Popisy níže použit�
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Ujistěte se, že do aktuálního adresáře. Zadejte příkaz `dotnet new console` příkazového řádku. Tím se vytvoří počáteční soubory pro základní aplikace "Hello World".
+Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Ujistěte se, že do aktuálního adresáře. Zadejte příkaz `dotnet new console` příkazového řádku. Tím se vytvoří počáteční soubory pro základní aplikace "Hello World". Toto je nový projekt, závislosti nejsou na místě, takže při prvním spuštění se stáhnout rozhraní .NET Core, nainstalujte certifikát pro vývoj a spusťte Správce balíčků NuGet, chcete-li obnovit chybějící závislosti.
 
-Než začnete, úpravy, Podívejme se kroky ke spuštění jednoduché aplikace Hello World. Po vytvoření aplikace, zadejte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) na příkazovém řádku. Tento příkaz spustí proces obnovení balíčku NuGet. Správce balíčků NuGet je Správce balíčků .NET. Tento příkaz načte všechny chybějící závislosti pro váš projekt. Toto je nový projekt, závislosti nejsou v místě, tak při prvním spuštění se stáhnout .NET Core framework. Po provedení tohoto kroku počáteční je pouze potřeba spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) při přidání nové závislé balíčky nebo aktualizace verze závislosti.
-
-Po obnovení balíčků, spustíte `dotnet build`. To spustí modul sestavení a vytvoří vaší aplikace. Nakonec spuštěním `dotnet run` ke spuštění aplikace.
+Před zahájením provádění změn, zadejte `dotnet run` ([viz Poznámka](#dotnet-restore-note)) na příkazovém řádku spusťte aplikaci. `dotnet run` automaticky provede `dotnet restore` Pokud prostředí je chybějící závislosti. Provádí také `dotnet build` Pokud vaše aplikace potřebuje znovu sestavit.
+Po počáteční instalaci, je pouze potřeba spustit `dotnet restore` nebo `dotnet build` kdy je vhodné pro váš projekt.
 
 ## <a name="adding-new-dependencies"></a>Přidání nové závislosti
 
@@ -62,7 +61,7 @@ Přidejte následující ihned po tomto řádku:
 
 Většina editory kódu bude poskytovat dokončování pro různé verze knihoven. Obvykle budete chtít používat nejnovější verzi balíčku, který přidáte. Je důležité, abyste měli jistotu, že odpovídají verze všechny balíčky a aby splňovaly verzi rozhraní framework aplikace .NET Core.
 
-Po provedení těchto změn, měli byste spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) znovu tak, aby se balíček nainstaluje do systému.
+Po provedení těchto změn, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) tak, aby se balíček nainstaluje do systému.
 
 ## <a name="making-web-requests"></a>Vytváření webových požadavků
 

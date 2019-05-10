@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30737
 ms.assetid: 3f40bacd-3fac-4741-b204-852f693d4340
-ms.openlocfilehash: f5053bddf4b9ba791ad6d0733e1dd89c4ded91bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 559c905d1e2e2de4500771a93d6116f9630011ba
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918265"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64591983"
 ---
 # <a name="no-accessible-main-method-with-an-appropriate-signature-was-found-in-name"></a>Nebyla nalezena žádná metoda přístupné 'Main' s odpovídajícím podpisem v "\<název >"
 Musí mít aplikace příkazového řádku `Sub Main` definované. `Main` musí být deklarována jako `Public Shared` Pokud je definován ve třídě, nebo jako `Public` Pokud definovaný v modulu.  

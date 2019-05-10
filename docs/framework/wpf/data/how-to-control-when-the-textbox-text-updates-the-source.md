@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [WPF], timing of source updates
 - timing of source updates [WPF]
 ms.assetid: ffb7b96a-351d-4c68-81e7-054033781c64
-ms.openlocfilehash: 5272a19f69b3caf80fd7d5187c9a6a386cd44621
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f7770db59c346f0981dd89a9995f11e41d17a1d
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051998"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063495"
 ---
 # <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>Postupy: Určení, kdy dojde k aktualizaci zdroje textem TextBox
 Toto téma popisuje způsob použití <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastností pro řízení časování aktualizací zdroje vazby. Téma používá <xref:System.Windows.Controls.TextBox> ovládací prvek jako příklad.  
@@ -28,7 +28,7 @@ Toto téma popisuje způsob použití <xref:System.Windows.Data.Binding.UpdateSo
   
  V důsledku toho <xref:System.Windows.Controls.TextBlock> zobrazí stejný text (protože mění se zdroj), protože uživatel zadá text do <xref:System.Windows.Controls.TextBox>, jak je znázorněno v následujícím snímku obrazovky ukázky:  
   
- ![Snímek obrazovky ukázkové jednoduchou datovou vazbu](./media/databindingsimplebindingsample2.png "DataBindingSimpleBindingSample2")  
+ ![Snímek obrazovky s jednoduchou datovou vazbu.](./media/how-to-control-when-the-textbox-text-updates-the-source/data-binding-simple-binding-sample.png)  
   
  Pokud máte dialogové okno nebo upravovat uživatele formuláře a chcete odložit zdroj aktualizace, dokud uživatel je dokončení úprav pole a klikne na tlačítko "OK", můžete nastavit <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu vazby na <xref:System.Windows.Data.UpdateSourceTrigger.Explicit>, jako v následujícím příkladu:  
   

@@ -1,24 +1,19 @@
 ---
-title: Cluster květin iris pomocí clusteringu learner - ML.NET
+title: Kategorizace květin iris pomocí clusteringu modelu
 description: Zjistěte, jak použít ve scénáři clusteringu ML.NET
 author: pkulikov
 ms.author: johalex
-ms.date: 04/08/2019
+ms.date: 05/02/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 86eba0c7a3eaeed008d41ff950bf2fd7e0e5fb57
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7070189e289e8e18ba0d122d2411a9064182e2b1
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019045"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063557"
 ---
-# <a name="tutorial-cluster-iris-flowers-using-a-clustering-learner-with-mlnet"></a>Kurz: Cluster květin iris pomocí clusteringu learner ML.NET
-
-> [!NOTE]
-> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
-
-Tento kurz a související ukázkové právě používáte **ML.NET 1.0 RC (Release Candidate) (verze `1.0.0-preview`)**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
+# <a name="tutorial-categorize-iris-flowers-using-a-clustering-model-with-mlnet"></a>Kurz: Kategorizace květin iris pomocí model clusteringu ML.NET
 
 Tento kurz ukazuje, jak použít ML.NET k sestavení [clusteringový model](../resources/tasks.md#clustering) pro [datovou sadu iris](https://en.wikipedia.org/wiki/Iris_flower_data_set).
 
@@ -46,7 +41,7 @@ Jak si nejste jisti, do které skupiny patří každý květinu, zvolte [nastave
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Otevřete Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V **nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "IrisFlowerClustering" a pak vyberte **OK** tlačítko.
+1. Otevřít Visual Studio. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V **nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "IrisFlowerClustering" a pak vyberte **OK** tlačítko.
 
 1. Vytvořte adresář *Data* ve vašem projektu a uložit datovou sadu a soubory modelu:
 
@@ -54,7 +49,7 @@ Jak si nejste jisti, do které skupiny patří každý květinu, zvolte [nastave
 
 1. Nainstalujte **Microsoft.ML** balíček NuGet:
 
-    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
+    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte **v1.0.0** balíčků v seznamu a vyberte  **Nainstalujte** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
 
 ## <a name="prepare-the-data"></a>Příprava dat
 

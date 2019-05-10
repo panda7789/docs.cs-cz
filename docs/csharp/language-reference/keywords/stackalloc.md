@@ -1,18 +1,18 @@
 ---
 title: stackalloc – klíčové slovo - C# odkaz
 ms.custom: seodec18
-ms.date: 04/12/2018
+ms.date: 04/10/2019
 f1_keywords:
 - stackalloc_CSharpKeyword
 - stackalloc
 helpviewer_keywords:
 - stackalloc keyword [C#]
-ms.openlocfilehash: 61a27e777a1919a2a6fc5140a311835a8f3daba9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 654e225ef98b13aeb4f689e17b1ff378e6002d28
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660707"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063920"
 ---
 # <a name="stackalloc-c-reference"></a>stackalloc (Referenční dokumentace jazyka C#)
 

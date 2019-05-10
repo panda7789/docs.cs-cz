@@ -2,12 +2,12 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: ac0cb83ad428ce98a05fd0626fff835162ad0e41
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 10a2c568f14c3f3c1818fd8b3240279b798777b8
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048111"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063802"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící pracovní postup služby může spuštění pro dlouhou dobu. V určitém okamžiku může přejít pracovního postupu nečinnosti čekání na určité další informace. V takovém případě pracovního postupu se ukládají do databáze SQL a bude odebrán z paměti. Jakmile je k dispozici další informace o instanci pracovního postupu je načten do paměti a pokračuje v provádění.  V tomto scénáři při implementaci velmi zjednodušený pořadí systému.  Klient odešle zprávu počáteční spouštění pořadí služby pracovního postupu. Vrátí ID objednávky do klienta. V tomto okamžiku Služba pracovního postupu je čekání na další zprávu od klienta a přejde do stavu nečinnosti a se ukládají do databáze SQL serveru.  Když klient odešle na další zprávu pro objednávky položku, služba pracovního postupu je načten do paměti a ukončí zpracování objednávky. Ve vzorovém kódu vrátí řetězec s informacemi o tom, že položka se přidala pořadí. Vzorový kód neměl být reálné aplikaci technologie, ale spíše jednoduchý příklad, který znázorňuje dlouhodobé služby pracovního postupu. Toto téma předpokládá, že víte, jak vytvořit řešení a projekty Visual Studio 2012.
@@ -100,10 +100,15 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
     1. Vyberte **pořadí** , která obsahuje nově přidaný **Receive** a **odeslání odpovědi SendReply** aktivit a klikněte na tlačítko **proměnné** tlačítko. Přidejte proměnnou zvýrazněný na následujícím obrázku:
 
          ![Přidání nové proměnné](./media/creating-a-long-running-workflow-service/add-the-itemid-variable.png "ItemId proměnné přidejte.")
+         
+         Přidejte také `orderResult` jako **řetězec** v `Sequence` oboru.
 
     2. Vyberte **Receive** aktivity a nastavte vlastnosti zobrazené na následujícím obrázku:
 
          ![Nastavit vlastnosti aktivita Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "nastavit vlastnosti aktivity Receive.")
+         
+         > [!NOTE]
+         >  Nezapomeňte změnit **ServiceContractName** pole `../IAddItem`.
 
     3. Klikněte na tlačítko **definovat...**  propojit **ReceiveAddItem** aktivity a přidat parametry je znázorněno na následujícím obrázku: tím se nakonfiguruje tak, aby přijímal dva parametry, ID objednávky a ID položky, seřadí se aktivita receive.
 

@@ -3,16 +3,16 @@ title: Ladění aplikace Hello World .NET Core pomocí sady Visual Studio 2017
 description: Zjistěte, jak ladit aplikaci Hello World v jazyce C# nebo Visual Basic pomocí sady Visual Studio 2017.
 ms.date: 12/15/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 9b2375443c9947a32fcccea062642103601d5010
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4c6a9fe46e29addf53319adf2351af3a7af05119
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648077"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063055"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Ladit vaše C# nebo Visual Basic .NET Core aplikace Hello World pomocí sady Visual Studio 2017
 
-Zatím jste postupovali podle kroků v [sestavení Hello World aplikaci v C# pomocí platformy .NET Core v sadě Visual Studio 2017](with-visual-studio.md) nebo [sestavení jazyka Visual Basic Hello World aplikace s .NET Core v sadě Visual Studio 2017](vb-with-visual-studio.md) k vytvoření a spusťte jednoduchou konzolovou aplikaci. Po zapisují a zkompilovat aplikaci, můžete začít testování. Visual Studio zahrnuje komplexní sadu ladicí nástroje, které můžete použít při testování a řešení potíží s vaší aplikací.
+Zatím jste postupovali podle kroků v [sestavení Hello World aplikaci v C# pomocí platformy .NET Core v sadě Visual Studio 2017](with-visual-studio.md) nebo [sestavení jazyka Visual Basic Hello World aplikace s .NET Core v sadě Visual Studio 2017](vb-with-visual-studio.md) k vytvoření a spusťte jednoduchou konzolovou aplikaci. Po zapisují a zkompilovat aplikaci, můžete začít testování. Visual Studio zahrnuje komplexní sadu ladicí nástroje, které můžete použít při testování a řešení potíží s vaší aplikací. 
 
 ## <a name="debugging-in-debug-mode"></a>Ladění v režimu ladění
 

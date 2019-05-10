@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 86efc3a9d9eab5c1529804769af413dd88e71f1c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: aabf2ad437ee8a50614ca27978aa0a031f5d7e55
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792898"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64592234"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 Téměř každá aplikace produkční kvality musí používat prostředky. Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací. Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů. (K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.  

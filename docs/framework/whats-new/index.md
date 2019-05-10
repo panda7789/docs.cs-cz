@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c0fcf9bd1c1e8df19458f681497b77348279915
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3dec3cea200f388a904296542776a02d838b3e19
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914827"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063871"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -35,7 +35,7 @@ Tento článek shrnuje hlavní nové funkce a vylepšení v následujících ver
 Tento článek neposkytuje úplné informace o každé nové funkce a může se změnit. Obecné informace o rozhraní .NET Framework najdete v tématu [Začínáme](../get-started/index.md). Podporované platformy naleznete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md). Odkazy ke stažení a pokyny k instalaci najdete v tématu [Průvodce instalací](../install/guide-for-developers.md).
 
 > [!NOTE]
-> Tým rozhraní .NET framework verze také funkce mimo pásmo s NuGet se rozšiřuje podpora platformy a pro zavedení nových funkcí, jako jsou neměnné kolekce a typy vektorů s podporou SIMD. Další informace najdete v tématu [další knihovny tříd a rozhraní API](../additional-apis/index.md) a [The .NET Framework a vydání Out-of-Band](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md). Najdete v článku [úplný seznam balíčků NuGet](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/) pro rozhraní .NET Framework, nebo se přihlásit k odběru [našeho kanálu](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/).
+> Tým rozhraní .NET Framework verze také funkce mimo pásmo s NuGet se rozšiřuje podpora platformy a pro zavedení nových funkcí, jako jsou neměnné kolekce a typy vektorů s podporou SIMD. Další informace najdete v tématu [další knihovny tříd a rozhraní API](../additional-apis/index.md) a [The .NET Framework a vydání Out-of-Band](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md). Najdete v článku [úplný seznam balíčků NuGet](https://www.nuget.org/profiles/dotnetframework) pro rozhraní .NET Framework.
 
 <a name="v48" />
 
@@ -825,7 +825,7 @@ End Class
 
 Potom můžete vytvořit soubor prostředků DataAnnotation.Localization.fr.resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizované chybové zprávy. Soubor musí být nalezen v `App.LocalResources` složky. Například následující je klíč a její hodnotu v lokalizovaných francouzština (fr) jazyka chybová zpráva:
 
-| Název                                 | Value                                     |
+| Name                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | La note doit être comprise entre 1 et 10. |
 

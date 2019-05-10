@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 64ffd600468124439986b0d1949dc048ef245c78
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd165ac2511476a5041e7d09126647546c632ba6
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019786"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063057"
 ---
 # <a name="implement-value-objects"></a>Implementace objektů hodnot
 
@@ -324,7 +324,7 @@ public class Address
 - **Komplexní typy nebo hodnoty objekty**. Diskuze v úložišti Githubu EF Core (stiskněte klávesu tab problémy) \
   <https://github.com/aspnet/EntityFramework/issues/246>
 
-- **ValueObject.cs.** Základní třída objektu hodnotu v eShopOnContainers.* * \
+- **ValueObject.cs.** Třída objektu základní hodnoty v aplikaci eShopOnContainers \
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs>
 
 - **Třída adresy** Ukázka hodnotová třída objektu v aplikaci eShopOnContainers. \

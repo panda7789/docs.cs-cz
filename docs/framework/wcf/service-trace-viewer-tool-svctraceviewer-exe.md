@@ -2,12 +2,12 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: dd00b72396fe40a7577fabd5704a240f91d1e268
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5a15024c0d2308da8cf2cc0d72d79c9f585f2912
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051755"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64606017"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které se vygenerovaly WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrování trasovací zprávy v protokolu, takže můžete diagnostikovat, opravit a ověřit problémy se službou WCF.  
@@ -62,11 +62,11 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 ### <a name="opening-and-viewing-wcf-trace-files"></a>Otevřít a zobrazit soubory trasování WCF  
  Prohlížeče trasování služeb podporuje tři typy souborů:  
   
--   Soubor (.svcLog) trasování WCF  
+- Soubor (.svcLog) trasování WCF  
   
--   Události trasování souboru (.etl)  
+- Události trasování souboru (.etl)  
   
--   Soubor Crimson trasování  
+- Soubor Crimson trasování  
   
  Prohlížeče trasování služeb můžete otevřít libovolný podporovaný trasovací soubor, přidat a integrovat další trasovací soubory, nebo otevřete a současně sloučit skupiny souborů trasování.  
   
@@ -106,9 +106,9 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
  Existují dva způsoby, jak spravovat projekty:  
   
--   V **souboru** nabídku, můžete otevřít, uložte a zavřete projekty.  
+- V **souboru** nabídku, můžete otevřít, uložte a zavřete projekty.  
   
--   V **projektu** kartu, můžete přidat soubory do projektu.  
+- V **projektu** kartu, můžete přidat soubory do projektu.  
   
 ### <a name="viewing-wcf-traces"></a>Zobrazení trasování WCF  
  WCF vysílá trasování pomocí formátu trasování aktivity. V modelu trasování aktivity jednotlivých trasování jsou seskupené ve aktivity podle jejich účelu. Tok řízení logické přenášena mezi aktivitami. Během životního cyklu aplikace, například mnoho "aktivity odeslat zprávu" se zobrazí a zmizí. Další informace o příliš zobrazení trasování a aktivity a uživatelské rozhraní prohlížeče trasování služeb najdete v tématu [pomocí prohlížeče trasování služeb k zobrazení korelovaných trasování a řešení potíží](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
@@ -116,13 +116,13 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 #### <a name="switching-to-different-views"></a>Přepnutí na různá zobrazení  
  Prohlížeče trasování služeb poskytuje následující různá zobrazení. Se zobrazí jako karty v levém podokně prohlížeče a můžete také přistupovat z **zobrazení** nabídky.  
   
--   Zobrazení aktivity  
+- Zobrazení aktivity  
   
--   Zobrazení projektu  
+- Zobrazení projektu  
   
--   Zobrazení zpráv  
+- Zobrazení zpráv  
   
--   Zobrazení grafu  
+- Zobrazení grafu  
   
 ##### <a name="activity-view"></a>Zobrazení aktivity  
  Po otevření souborů trasování, uvidíte trasování seskupeny do aktivity a zobrazí v **aktivity** zobrazení v levém podokně.  
@@ -144,9 +144,12 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
 ##### <a name="project-view"></a>Zobrazení projektu  
  Toto zobrazení umožňuje spravovat trasovací soubory v aktuálním projektu. Další podrobnosti v části Správa projektu.  
-  
+
+##### <a name="message-view"></a>Zobrazení zpráv
+ Toto zobrazení umožňuje zobrazit všechny zprávy protokolu trasování, včetně akce, datum a čas, proces, Acivity a z/do a přejděte na podrobnosti přidružené zprávy protokolu trasování. Můžete seskupit trasování zprávy protokolu hranice činnosti, procesu nebo vlákna, nebo odesílání a příjmu zjednodušují navigaci tok zpráv.
+ 
 ##### <a name="graph-view"></a>Zobrazení grafu  
- Jednou z nejúčinnějších funkcí prohlížeče trasování služeb je **grafu** zobrazení, která zobrazuje data trasování pro danou aktivitu v podobě grafu. Formulář graf umožňuje zobrazit podle jednotlivých kroků zpracování událostí a vztahy mezi více aktivit při přesunu dat mezi nimi.  
+ Toto zobrazení ukazuje údaje trasování pro danou aktivitu v podobě grafu. Formulář graf umožňuje zobrazit podle jednotlivých kroků zpracování událostí a vztahy mezi více aktivit při přesunu dat mezi nimi.  
   
  Přepnout na **grafu** zobrazit, vyberte aktivitu v **aktivity** zobrazení a klikněte na tlačítko **aktivity** kartě nebo v protokolu trasování zprávy **zpráva**Zobrazení. Pokud jsou načteny více souborů trasování a aktivity zahrnuje trasování z více než jeden soubor, všechny relevantní trasování se zobrazí v zobrazení grafu. Dvojitým kliknutím na činnosti a zprávy protokolu trasování také povede k **grafu** zobrazení.  
   
@@ -192,9 +195,9 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 ###### <a name="options"></a>Možnosti  
  Můžete vybrat ze dvou možností **možnost** nabídky v zobrazení grafu.  
   
--   Zobrazit hranice trasování aktivity, které v případě nezaškrtnutí ignorovat hranice trasování aktivit v grafu.  
+- Zobrazit hranice trasování aktivity, které v případě nezaškrtnutí ignorovat hranice trasování aktivit v grafu.  
   
--   Zobrazit podrobné trasování Non zpráv, který v případě nezaškrtnutí ignorovat podrobné úrovně trasování, s výjimkou trasování zprávy. Ve většině případů jsou méně důležité pro analýzu úroveň trasování podrobné. Tato možnost je užitečné, pokud nechcete k analýze podrobné úrovně trasování a pouze chcete se soustředit na důležité trasování.  
+- Zobrazit podrobné trasování Non zpráv, který v případě nezaškrtnutí ignorovat podrobné úrovně trasování, s výjimkou trasování zprávy. Ve většině případů jsou méně důležité pro analýzu úroveň trasování podrobné. Tato možnost je užitečné, pokud nechcete k analýze podrobné úrovně trasování a pouze chcete se soustředit na důležité trasování.  
   
 ###### <a name="layout-mode"></a>Režim rozložení  
  Prohlížeč má dva režimy rozložení: **Proces** a **vlákna**. Toto nastavení definuje největší jednotka organizace. Výchozí hodnota je režim rozložení **procesu**, což znamená, že aktivity jsou seskupené podle procesy v grafu.  
@@ -222,22 +225,22 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 ### <a name="filtering-wcf-traces"></a>Filtrování trasování WCF  
  Abychom usnadnili analýzu trasování, můžete filtrovat následujícími způsoby:  
   
--   Filtr nástrojů poskytuje přístup k předdefinované a vlastní filtry. Povolit prostřednictvím **zobrazení** nabídky.  
+- Filtr nástrojů poskytuje přístup k předdefinované a vlastní filtry. Povolit prostřednictvím **zobrazení** nabídky.  
   
--   Předdefinované filtru v prohlížeči je možné selektivně filtrovat součástí trasování WCF. Ve výchozím nastavení je nastavena na Povolit všechna trasování infrastruktury předávání. Nastavení tohoto filtru, jsou definovány v **možnosti filtru** dílčí nabídky v části **zobrazení** nabídky.  
+- Předdefinované filtru v prohlížeči je možné selektivně filtrovat součástí trasování WCF. Ve výchozím nastavení je nastavena na Povolit všechna trasování infrastruktury předávání. Nastavení tohoto filtru, jsou definovány v **možnosti filtru** dílčí nabídky v části **zobrazení** nabídky.  
   
--   Vlastní filtry XPath uživatelům plnou kontrolu nad filtrování. Je možné definovat v **vlastní filtr** pod **zobrazení** nabídky.  
+- Vlastní filtry XPath uživatelům plnou kontrolu nad filtrování. Je možné definovat v **vlastní filtr** pod **zobrazení** nabídky.  
   
  Zobrazí se pouze trasování, které prochází všechny filtry.  
   
 #### <a name="using-the-filter-toolbar"></a>Pomocí panelu filtru  
  Panel nástrojů filtru se zobrazí v horní části nástroje. Pokud tam není, můžete si ji můžou aktivovat v **zobrazení** nabídky. Na panelu má tři komponenty:  
   
--   Hledat: **Vyhledejte** definuje předmět v operaci filtru. Například pokud chcete najít všechna trasování, které byly, protože ho v rámci procesu X, nastavte pole na X a **prohledávat** pole "Název procesu". Je vybrán tohoto pole se změní na ovládací prvek Výběr data a času při filtrování podle času.  
+- Hledat: **Vyhledejte** definuje předmět v operaci filtru. Například pokud chcete najít všechna trasování, které byly, protože ho v rámci procesu X, nastavte pole na X a **prohledávat** pole "Název procesu". Je vybrán tohoto pole se změní na ovládací prvek Výběr data a času při filtrování podle času.  
   
--   Hledat v: Toto pole definuje typ filtr.  
+- Hledat v: Toto pole definuje typ filtr.  
   
--   Úroveň: Nastavení úrovně definuje minimální úroveň trasování povolen filtr. Například pokud je nastavena úroveň a novějšími verzemi na chybu, se zobrazují pouze trasování při chybě a kritickou úroveň. Tento filtr kombinuje kritérii zadanými Hledat a prohledávat.  
+- Úroveň: Nastavení úrovně definuje minimální úroveň trasování povolen filtr. Například pokud je nastavena úroveň a novějšími verzemi na chybu, se zobrazují pouze trasování při chybě a kritickou úroveň. Tento filtr kombinuje kritérii zadanými Hledat a prohledávat.  
   
  **Filtr nyní** tlačítko spustí operace filtru. Některé filtry, a to zejména v případě, že se použijí pro velké datové sady, trvat dlouhou dobu pro dokončení. Při zrušení operace filtru stisknutím klávesy **Zastavit** tlačítko, které se zobrazí ve stavovém řádku v rámci **operace** nabídky.  
   
@@ -321,27 +324,27 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 ### <a name="finding-data"></a>Vyhledávání dat  
  V prohlížeči nabízí tyto způsoby vyhledat data:  
   
--   Panel nástrojů najít poskytuje rychlý přístup k nejběžnější možnosti hledání.  
+- Panel nástrojů najít poskytuje rychlý přístup k nejběžnější možnosti hledání.  
   
--   Dialogové okno hledání nabízí že další možnosti hledání. Je přístupné prostřednictvím **upravit** nabídky, nebo krátké kláves Ctrl + F.  
+- Dialogové okno hledání nabízí že další možnosti hledání. Je přístupné prostřednictvím **upravit** nabídky, nebo krátké kláves Ctrl + F.  
   
  Panel nástrojů hledání se zobrazí v horní části okna. Pokud tam není, můžete si ji můžou aktivovat v **zobrazení** nabídky. Na panelu má dvě součásti:  
   
--   Najdete: Umožňuje Zadejte hledaná klíčová slova.  
+- Najdete: Umožňuje Zadejte hledaná klíčová slova.  
   
--   Oblast hledání: Umožňuje zadat rozsah hledání. Můžete vybrat, jestli se má hledat ve všech aktivitách nebo v rámci aktuální aktivity.  
+- Oblast hledání: Umožňuje zadat rozsah hledání. Můžete vybrat, jestli se má hledat ve všech aktivitách nebo v rámci aktuální aktivity.  
   
  Dialogové okno hledání poskytuje dvě další možnosti:  
   
--   Naleznete cíl:  
+- Naleznete cíl:  
   
-    -   Možnost "nezpracovaných dat protokolu" vyhledá klíčového slova ve všech nezpracovaná data.  
+    - Možnost "nezpracovaných dat protokolu" vyhledá klíčového slova ve všech nezpracovaná data.  
   
-    -   Možnosti "XML Text" a "Atribut XML" vyhledat pouze v elementů XML.  
+    - Možnosti "XML Text" a "Atribut XML" vyhledat pouze v elementů XML.  
   
-    -   Možnost "Zaznamenána zpráva" vyhledá klíčové slovo pouze v zprávy.  
+    - Možnost "Zaznamenána zpráva" vyhledá klíčové slovo pouze v zprávy.  
   
--   Ignorujte kořenové aktivity: Hledání ignoruje trasování v aktivitě "000000000000". To zvyšuje výkon velké trasovací soubory po tisíce trasování, většina z nich jsou přenosy kořenovou aktivitu.  
+- Ignorujte kořenové aktivity: Hledání ignoruje trasování v aktivitě "000000000000". To zvyšuje výkon velké trasovací soubory po tisíce trasování, většina z nich jsou přenosy kořenovou aktivitu.  
   
 ### <a name="navigating-traces"></a>Navigace trasování  
  Protože trasování se zaznamenávají krok za krokem při spuštění aplikace, navigace trasování vám mohou pomoci při ladění aplikace. Prohlížeče trasování služeb poskytuje různé způsoby, jak vracet se v trasování.  
@@ -349,9 +352,9 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 #### <a name="step-forward-or-backward"></a>Krok dopředu nebo dozadu  
  Pokud považujete za každý trasování jako řádek kódu v programu, krokování vpřed je velmi podobný "Krok za" v Visual Studio integrované vývojové prostředí (IDE). Rozdíl je, že můžete také krokovat zpět v trasování. Procházení dopředu znamená přechod na další trasování v rámci aktivity.  
   
--   Krok vpřed: Použití **aktivity** nabídky nebo stisknutím klávesy "F10". V podokně trasování můžete použít i klíč šipka "dolů".  
+- Krok vpřed: Použití **aktivity** nabídky nebo stisknutím klávesy "F10". V podokně trasování můžete použít i klíč šipka "dolů".  
   
--   Krokovat zpět: Použití **aktivity** nabídky nebo stisknutím klávesy "F9". V podokně trasování můžete použít i klíč šipka "nahoru".  
+- Krokovat zpět: Použití **aktivity** nabídky nebo stisknutím klávesy "F9". V podokně trasování můžete použít i klíč šipka "nahoru".  
   
 > [!NOTE]
 >  To může trvat je k aktivitě, ke kterým dochází v jiném procesu nebo i v jiném počítači, protože zpráv WCF mohou obsahovat ID, které jsou rozmístěny počítače aktivity.  
@@ -363,9 +366,9 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
  Postupujte podle přenos dvěma způsoby: pomocí myši nebo klávesnice:  
   
--   Pomocí myši: Klikněte dvakrát na přenos trasování v podokně trasování.  
+- Pomocí myši: Klikněte dvakrát na přenos trasování v podokně trasování.  
   
--   Pomocí klávesnice: Přenos trasování vyberte a použijte "Přenos postupujte podle" v **aktivity** nabídky nebo stisknutím klávesy "F11"  
+- Pomocí klávesnice: Přenos trasování vyberte a použijte "Přenos postupujte podle" v **aktivity** nabídky nebo stisknutím klávesy "F11"  
   
 > [!NOTE]
 >  V mnoha případech po aktivitě A přenese aktivita B, aktivity A počká, dokud aktivita B přenosy zpět na aktivitu A. To znamená, že má aktivita A bez trasování zaznamenána během doby, kdy je aktivita B aktivně trasování. Je však také možné, že aktivity A nečeká a pokračuje do protokolu trasování. Je také možné, že aktivita B nepřenese zpět na aktivitu A. Proto jsou stále neliší od volání funkce v tomto smyslu přenosy aktivit. Rozumíte aktivity přenosů lepších v zobrazení grafu.  
@@ -373,9 +376,9 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 #### <a name="jump-to-next-or-previous-transfer"></a>Přejít na další nebo předchozí přenosu  
  Při analýze aktuální aktivitu nebo vybrané aktivity při výběru více aktivit, můžete rychle najít aktivity, které se přenese na. "Přechod na přenos" umožňuje najít další přenos trasování v rámci aktivity. Jakmile najdete přenos trasování, vám pomůže "Sledovat přenos" krokování s vnořením do další aktivity.  
   
--   Přejít na další přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F10".  
+- Přejít na další přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F10".  
   
--   Přejít na předchozí přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F9".  
+- Přejít na předchozí přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F9".  
   
 #### <a name="navigate-in-graph-view"></a>Přejděte v zobrazení grafu  
  I když přejdete podokna aktivit a trasování je podobné ladění, pomocí **grafu** zobrazení poskytuje mnohem lepší prostředí v navigačním panelu. Další informace jsou uvedeny v části "Zobrazení grafu".  

@@ -1,21 +1,21 @@
 ---
-title: Použít ve scénáři doporučení film ML.NET
-description: Objevte, jak používat ML.NET ve scénáři doporučení pro doporučování filmů uživatelům.
+title: 'Kurz: Vytvoření doporučené video'
+description: V tomto kurzu se dozvíte, jak sestavit doporučené video s ML.NET v konzolovou aplikaci .NET Core. Kroky používají C# a Visual Studio 2019.
 author: briacht
 ms.author: johalex
-ms.date: 03/08/2019
+ms.date: 05/06/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: bdc49f42e520f11ef63de873f0d30d11ba4b2366
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5d459d8b28298250f3b815e33ff4d85ac54f79c2
+ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960657"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65063378"
 ---
 # <a name="tutorial-create-a-movie-recommender-with-mlnet"></a>Kurz: Vytvoření doporučené video s ML.NET
 
-Tento ukázkový kurz ukazuje použití ML.NET sestavit doporučené video přes using aplikace konzoly .NET Core C# v sadě Visual Studio 2017.
+V tomto kurzu se dozvíte, jak sestavit doporučené video s ML.NET v konzolovou aplikaci .NET Core. Kroky používají C# a Visual Studio 2019.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
@@ -24,11 +24,6 @@ V tomto kurzu se naučíte:
 > * Vytvoření a trénování modelu
 > * Vyhodnocení modelu
 > * Nasazení a používání modelu
-
-> [!NOTE]
-> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
-
-Tento kurz a související ukázkové právě používáte **ML.NET verze 0,11**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/MovieRecommendation) úložiště.
 
@@ -61,10 +56,7 @@ Existuje několik způsobů, jak přistupovat ke doporučení problémy, třeba 
 
 3. Nainstalujte **Microsoft.ML** a **Microsoft.ML.Recommender** balíčky NuGet:
 
-    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.Recommender**.
-
-    > [!NOTE]
-    > Tento kurz používá **Microsoft.ML v0.11.0** a **Microsoft.ML.Recommender v0.11.0**.
+    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte **1.0.0** balíčků v seznamu a vyberte  **Nainstalujte** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.Recommender v0.12.0**.
 
 4. Přidejte následující `using` příkazů v horní části vašeho *Program.cs* souboru:
 
@@ -175,7 +167,7 @@ Přidejte následující položky jako další dva řádky kódu ve `Main()` met
 
 ## <a name="build-and-train-your-model"></a>Vytvoření a trénování modelu
 
-Existují tři hlavní koncepty v ML.NET: [Data](../basic-concepts-model-training-in-mldotnet.md#data), [transformátory](../basic-concepts-model-training-in-mldotnet.md#transformer), a [odhady](../basic-concepts-model-training-in-mldotnet.md#estimator).
+Existují tři hlavní koncepty v ML.NET: [Data](../resources/glossary.md#data), [transformátory](../resources/glossary.md#transformer), a [odhady](../resources/glossary.md#estimator).
 
 Strojové učení školení algoritmy vyžadují dat v určitém formátu. `Transformers` slouží k transformaci tabulkových dat do formátu kompatibilní.
 
