@@ -23,12 +23,12 @@ helpviewer_keywords:
 - user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: be913dca-a364-4a51-96a1-549a1b390b0a
-ms.openlocfilehash: 5fe12d18c7f403c1a50ed548a260ba39e83280eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 42aecd0a5d948ab76d7bd11990d4cdbdce611015
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61746719"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64646953"
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
 Obsahuje data ve formátu, který definujete. `Structure` Prohlášení definuje formát.  
