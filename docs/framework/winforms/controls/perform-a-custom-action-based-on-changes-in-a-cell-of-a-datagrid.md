@@ -9,41 +9,41 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], detecting changes in cells
 - data grids [Windows Forms], detecting changes in cells
 ms.assetid: 7fa44d01-97f4-4ccb-a149-bc72628d2c36
-ms.openlocfilehash: 0573199e9afb7e52c7542d36a2f3e39730dacdc4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 23753a2c0ceab9452bde24a1c56348eabf87d655
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012669"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64654435"
 ---
-# <a name="how-to-perform-a-custom-action-based-on-changes-in-a-cell-of-a-windows-forms-datagridview-control"></a><span data-ttu-id="0a76e-102">Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="0a76e-102">How to: Perform a Custom Action Based on Changes in a Cell of a Windows Forms DataGridView Control</span></span>
-<span data-ttu-id="0a76e-103"><xref:System.Windows.Forms.DataGridView> Ovládací prvek má několik událostí můžete použít k detekci změn stavu <xref:System.Windows.Forms.DataGridView> buňky.</span><span class="sxs-lookup"><span data-stu-id="0a76e-103">The <xref:System.Windows.Forms.DataGridView> control has a number of events you can use to detect changes in the state of <xref:System.Windows.Forms.DataGridView> cells.</span></span> <span data-ttu-id="0a76e-104">Dva z nejčastěji používané jsou <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.</span><span class="sxs-lookup"><span data-stu-id="0a76e-104">Two of the most commonly used are the <xref:System.Windows.Forms.DataGridView.CellValueChanged> and <xref:System.Windows.Forms.DataGridView.CellStateChanged> events.</span></span>  
+# <a name="how-to-perform-a-custom-action-based-on-changes-in-a-cell-of-a-windows-forms-datagridview-control"></a><span data-ttu-id="b8941-102">Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="b8941-102">How to: Perform a Custom Action Based on Changes in a Cell of a Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="b8941-103"><xref:System.Windows.Forms.DataGridView> Ovládací prvek má několik událostí můžete použít k detekci změn stavu <xref:System.Windows.Forms.DataGridView> buňky.</span><span class="sxs-lookup"><span data-stu-id="b8941-103">The <xref:System.Windows.Forms.DataGridView> control has a number of events you can use to detect changes in the state of <xref:System.Windows.Forms.DataGridView> cells.</span></span> <span data-ttu-id="b8941-104">Dva z nejčastěji používané jsou <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.</span><span class="sxs-lookup"><span data-stu-id="b8941-104">Two of the most commonly used are the <xref:System.Windows.Forms.DataGridView.CellValueChanged> and <xref:System.Windows.Forms.DataGridView.CellStateChanged> events.</span></span>  
   
-### <a name="to-detect-changes-in-the-values-of-datagridview-cells"></a><span data-ttu-id="0a76e-105">Ke zjištění změny hodnoty buněk DataGridView</span><span class="sxs-lookup"><span data-stu-id="0a76e-105">To detect changes in the values of DataGridView cells</span></span>  
+### <a name="to-detect-changes-in-the-values-of-datagridview-cells"></a><span data-ttu-id="b8941-105">Ke zjištění změny hodnoty buněk DataGridView</span><span class="sxs-lookup"><span data-stu-id="b8941-105">To detect changes in the values of DataGridView cells</span></span>  
   
-- <span data-ttu-id="0a76e-106">Zápis obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellValueChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="0a76e-106">Write a handler for the <xref:System.Windows.Forms.DataGridView.CellValueChanged> event.</span></span>  
+- <span data-ttu-id="b8941-106">Zápis obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellValueChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="b8941-106">Write a handler for the <xref:System.Windows.Forms.DataGridView.CellValueChanged> event.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#130](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#130)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#130](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#130)]  
   
-### <a name="to-detect-changes-in-the-states-of-datagridview-cells"></a><span data-ttu-id="0a76e-107">Ke zjištění změny ve stavu buněk DataGridView</span><span class="sxs-lookup"><span data-stu-id="0a76e-107">To detect changes in the states of DataGridView cells</span></span>  
+### <a name="to-detect-changes-in-the-states-of-datagridview-cells"></a><span data-ttu-id="b8941-107">Ke zjištění změny ve stavu buněk DataGridView</span><span class="sxs-lookup"><span data-stu-id="b8941-107">To detect changes in the states of DataGridView cells</span></span>  
   
-- <span data-ttu-id="0a76e-108">Zápis obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellStateChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="0a76e-108">Write a handler for the <xref:System.Windows.Forms.DataGridView.CellStateChanged> event.</span></span>  
+- <span data-ttu-id="b8941-108">Zápis obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellStateChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="b8941-108">Write a handler for the <xref:System.Windows.Forms.DataGridView.CellStateChanged> event.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#135](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#135)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#135](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#135)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="0a76e-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="0a76e-109">Compiling the Code</span></span>  
- <span data-ttu-id="0a76e-110">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="0a76e-110">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="b8941-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="b8941-109">Compiling the Code</span></span>  
+ <span data-ttu-id="b8941-110">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="b8941-110">This example requires:</span></span>  
   
-- <span data-ttu-id="0a76e-111">A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.</span><span class="sxs-lookup"><span data-stu-id="0a76e-111">A <xref:System.Windows.Forms.DataGridView> control named `dataGridView1`.</span></span> <span data-ttu-id="0a76e-112">Pro C#, obslužné rutiny událostí musí být připojený k odpovídající události.</span><span class="sxs-lookup"><span data-stu-id="0a76e-112">For C#, the event handlers must be connected to the corresponding events.</span></span>  
+- <span data-ttu-id="b8941-111">A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.</span><span class="sxs-lookup"><span data-stu-id="b8941-111">A <xref:System.Windows.Forms.DataGridView> control named `dataGridView1`.</span></span> <span data-ttu-id="b8941-112">Pro C#, obslužné rutiny událostí musí být připojený k odpovídající události.</span><span class="sxs-lookup"><span data-stu-id="b8941-112">For C#, the event handlers must be connected to the corresponding events.</span></span>  
   
-- <span data-ttu-id="0a76e-113">Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.</span><span class="sxs-lookup"><span data-stu-id="0a76e-113">References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.</span></span>  
+- <span data-ttu-id="b8941-113">Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.</span><span class="sxs-lookup"><span data-stu-id="b8941-113">References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0a76e-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0a76e-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b8941-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b8941-114">See also</span></span>
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView.CellStateChanged?displayProperty=nameWithType>
-- [<span data-ttu-id="0a76e-115">Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="0a76e-115">Programming with Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](programming-with-cells-rows-and-columns-in-the-datagrid.md)
-- [<span data-ttu-id="0a76e-116">Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="0a76e-116">Walkthrough: Validating Data in the Windows Forms DataGridView Control</span></span>](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)
+- [<span data-ttu-id="b8941-115">Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="b8941-115">Programming with Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](programming-with-cells-rows-and-columns-in-the-datagrid.md)
+- [<span data-ttu-id="b8941-116">Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="b8941-116">Walkthrough: Validating Data in the Windows Forms DataGridView Control</span></span>](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)
