@@ -2,15 +2,15 @@
 title: Metody System.Math
 ms.date: 03/30/2017
 ms.assetid: 0f299521-6f41-4720-bd70-67c93fc50948
-ms.openlocfilehash: 1dae31b30962505c07c198f3bd35fceb8f400efb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 5200f31bd319bad49651c3096e1c1364a8003377
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917680"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64613776"
 ---
-# <a name="systemmath-methods"></a><span data-ttu-id="a1e86-102">Metody System.Math</span><span class="sxs-lookup"><span data-stu-id="a1e86-102">System.Math Methods</span></span>
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <span data-ttu-id="a1e86-103">nepodporuje následující <xref:System.Math> metody.</span><span class="sxs-lookup"><span data-stu-id="a1e86-103">does not support the following <xref:System.Math> methods.</span></span>  
+# <a name="systemmath-methods"></a><span data-ttu-id="0dd11-102">Metody System.Math</span><span class="sxs-lookup"><span data-stu-id="0dd11-102">System.Math Methods</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <span data-ttu-id="0dd11-103">nepodporuje následující <xref:System.Math> metody.</span><span class="sxs-lookup"><span data-stu-id="0dd11-103">does not support the following <xref:System.Math> methods.</span></span>  
   
 - <xref:System.Math.DivRem%28System.Int32%2CSystem.Int32%2CSystem.Int32%40%29?displayProperty=nameWithType>  
   
@@ -18,13 +18,13 @@ ms.locfileid: "61917680"
   
 - <xref:System.Math.IEEERemainder%28System.Double%2CSystem.Double%29?displayProperty=nameWithType>  
   
-## <a name="differences-from-net"></a><span data-ttu-id="a1e86-104">Rozdíl oproti .NET</span><span class="sxs-lookup"><span data-stu-id="a1e86-104">Differences from .NET</span></span>  
- <span data-ttu-id="a1e86-105">Rozhraní .NET Framework má odlišnou sémantiku zaokrouhlení z SQL serveru.</span><span class="sxs-lookup"><span data-stu-id="a1e86-105">The .NET Framework has different rounding semantics from SQL Server.</span></span> <span data-ttu-id="a1e86-106"><xref:System.Math.Round%2A> Provádí metoda v rozhraní .NET Framework *je bankovní zaokrouhlení*, kde čísla, která končí v.5 zaokrouhlit na nejbližší sudé číslice místo na další vyšší číslo.</span><span class="sxs-lookup"><span data-stu-id="a1e86-106">The <xref:System.Math.Round%2A> method in the .NET Framework performs *Banker's rounding*, where numbers that ends in .5 round to the nearest even digit instead of to the next higher digit.</span></span> <span data-ttu-id="a1e86-107">Například 2.5 zaokrouhlí na 2, zatímco 3.5 zaokrouhlí na 4.</span><span class="sxs-lookup"><span data-stu-id="a1e86-107">For example, 2.5 rounds to 2, while 3.5 rounds to 4.</span></span> <span data-ttu-id="a1e86-108">(Tento postup pomáhá zabránit systematické Posun směrem k vyšší hodnoty ve velkých objemů dat transakcí.)</span><span class="sxs-lookup"><span data-stu-id="a1e86-108">(This technique helps avoid systematic bias toward higher values in large data transactions.)</span></span>  
+## <a name="differences-from-net"></a><span data-ttu-id="0dd11-104">Rozdíl oproti .NET</span><span class="sxs-lookup"><span data-stu-id="0dd11-104">Differences from .NET</span></span>  
+ <span data-ttu-id="0dd11-105">Rozhraní .NET Framework má odlišnou sémantiku zaokrouhlení z SQL serveru.</span><span class="sxs-lookup"><span data-stu-id="0dd11-105">The .NET Framework has different rounding semantics from SQL Server.</span></span> <span data-ttu-id="0dd11-106"><xref:System.Math.Round%2A> Provádí metoda v rozhraní .NET Framework *je bankovní zaokrouhlení*, kde čísla, která končí v.5 zaokrouhlit na nejbližší sudé číslice místo na další vyšší číslo.</span><span class="sxs-lookup"><span data-stu-id="0dd11-106">The <xref:System.Math.Round%2A> method in the .NET Framework performs *Banker's rounding*, where numbers that ends in .5 round to the nearest even digit instead of to the next higher digit.</span></span> <span data-ttu-id="0dd11-107">Například 2.5 zaokrouhlí na 2, zatímco 3.5 zaokrouhlí na 4.</span><span class="sxs-lookup"><span data-stu-id="0dd11-107">For example, 2.5 rounds to 2, while 3.5 rounds to 4.</span></span> <span data-ttu-id="0dd11-108">(Tento postup pomáhá zabránit systematické Posun směrem k vyšší hodnoty ve velkých objemů dat transakcí.)</span><span class="sxs-lookup"><span data-stu-id="0dd11-108">(This technique helps avoid systematic bias toward higher values in large data transactions.)</span></span>  
   
- <span data-ttu-id="a1e86-109">V SQL `ROUND` funkce místo toho vždy zaokrouhlí směrem od 0.</span><span class="sxs-lookup"><span data-stu-id="a1e86-109">In SQL, the `ROUND` function instead always rounds away from 0.</span></span> <span data-ttu-id="a1e86-110">Proto 2.5 zaokrouhlí na 3, rozdíly s jeho zaokrouhluje se směrem 2 v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="a1e86-110">Therefore 2.5 rounds to 3, contrasted with its rounding to 2 in the .NET Framework.</span></span>  
+ <span data-ttu-id="0dd11-109">V SQL `ROUND` funkce místo toho vždy zaokrouhlí směrem od 0.</span><span class="sxs-lookup"><span data-stu-id="0dd11-109">In SQL, the `ROUND` function instead always rounds away from 0.</span></span> <span data-ttu-id="0dd11-110">Proto 2.5 zaokrouhlí na 3, rozdíly s jeho zaokrouhluje se směrem 2 v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0dd11-110">Therefore 2.5 rounds to 3, contrasted with its rounding to 2 in the .NET Framework.</span></span>  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <span data-ttu-id="a1e86-111">prochází na SQL `ROUND` sémantiku a nepokusí se implementovat bankovní zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="a1e86-111">passes through to the SQL `ROUND` semantics and does not try to implement Banker's rounding.</span></span>  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <span data-ttu-id="0dd11-111">prochází na SQL `ROUND` sémantiku a nepokusí se implementovat bankovní zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="0dd11-111">passes through to the SQL `ROUND` semantics and does not try to implement Banker's rounding.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a1e86-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a1e86-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0dd11-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0dd11-112">See also</span></span>
 
-- [<span data-ttu-id="a1e86-113">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="a1e86-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [<span data-ttu-id="0dd11-113">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="0dd11-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
