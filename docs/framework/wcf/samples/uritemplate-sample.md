@@ -2,12 +2,12 @@
 title: Ukázka UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 0aaf91d0-ce18-468d-8006-bc9bc2e48231
-ms.openlocfilehash: 5f8a969a9ddea633d12ebe2d922c152dbb0d7241
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 42106daf9f40bbcf0393d3cbb91e6cfda58566ae
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007614"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662429"
 ---
 # <a name="uritemplate-sample"></a>Ukázka UriTemplate
 <xref:System.UriTemplate> Třída poskytuje metody pro práci se sadami identifikátorů URI, které sdílejí společné struktury. Tato ukázka demonstruje následující klíčové koncepty týkající se `UriTemplate`:  

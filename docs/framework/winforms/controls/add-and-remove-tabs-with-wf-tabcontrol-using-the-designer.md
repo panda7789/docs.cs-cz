@@ -8,12 +8,12 @@ helpviewer_keywords:
 - tabs [Windows Forms], adding to pages
 - tab pages
 ms.assetid: 480633db-413a-45d2-9c8f-0427cc13adbe
-ms.openlocfilehash: 23fe9fa2b8405a6ebe66e8f0cee1d81d45f2395b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 10550416a75592133b69c2807f1da2cca25e8707
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640365"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64665831"
 ---
 # <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol-using-the-designer"></a>Postupy: Přidávání a odebírání karet pomocí ovládacího prvku Windows Forms TabControl pomocí Návrháře
 Když umístíte <xref:System.Windows.Forms.TabControl> ovládací prvek na formuláři, obsahuje dvě karty ve výchozím nastavení. Můžete přidat nebo odebrat karty pomocí návrháře.  

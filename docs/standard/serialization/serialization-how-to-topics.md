@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - serialization, how-tos
 ms.assetid: 46c972ab-2193-4f72-9413-eca4521ed4b0
-ms.openlocfilehash: 1c87245d6995e5231cc14d0c39968ec0ebe3c845
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0200e5a5cffbcc7184b5532ce5062185a21afa55
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946923"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64644874"
 ---
 # <a name="serialization-how-to-topics"></a>Postupy: Serializace
 Následující seznam obsahuje odkazy na témata s postupy v rámcové dokumentaci k serializaci.  

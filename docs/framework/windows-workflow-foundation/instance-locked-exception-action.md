@@ -2,12 +2,12 @@
 title: Akce uzamčené výjimky instance
 ms.date: 03/30/2017
 ms.assetid: 164a5419-315c-4987-ad72-54cbdb88d402
-ms.openlocfilehash: 0cb39c51436271999c66c30210e0da79adc92e72
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: d8fd2d1299a8563ae41b098c1cfb7a0ba30bb8f8
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699536"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662986"
 ---
 # <a name="instance-locked-exception-action"></a>Akce uzamčené výjimky instance
 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A> Vlastnost Store Instance pracovního postupu SQL umožňuje zadat, jaká akce by neměl zabrat poskytovatele trvalosti SQL při přijetí <xref:System.Runtime.DurableInstancing.InstanceLockedException>. Poskytovatel trvalého obdrží tuto výjimku při pokusu o uzamknutí instance služby pracovního postupu, který je aktuálně uzamčen jiného hostitele služby. Hodnoty pro tuto vlastnost <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.NoRetry>, <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.BasicRetry>, a <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.AggressiveRetry>. Výchozí hodnota je <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction.NoRetry>. Následující seznam popisuje tři možnosti:  

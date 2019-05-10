@@ -2,12 +2,12 @@
 title: 'Návod: Použití jen uložených procedur (C#)'
 ms.date: 03/30/2017
 ms.assetid: ecde4bf2-fa4d-4252-b5e4-96a46b9e097d
-ms.openlocfilehash: e5497c1c6bfe032ba272c911217adaa3bd7f4f4f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f4c34252f7d92985dac94663c85d3cca0dc58ab3
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876522"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64655116"
 ---
 # <a name="walkthrough-using-only-stored-procedures-c"></a>Návod: Použití jen uložených procedur (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům spuštěním uložené procedury pouze. Tento přístup se často používá ve správci databází a omezit způsob přístupu k úložišti dat.  

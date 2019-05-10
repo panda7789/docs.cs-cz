@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ee433c91a4fdc78c1b24d2aa232f61ab7d4cb5cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ab06c2d87de9483d7a3e9eb810f4be1f3278ddc2
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650353"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64634526"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
@@ -36,7 +36,7 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
   
 <a name="table"></a> Následující tabulka popisuje specifikátory vlastního číselného formátu a zobrazuje ukázkový výstup vyprodukovaný každým specifikátorem formátu. Najdete v článku [poznámky](#NotesCustomFormatting) části Další informace o použití vlastních číselných formátovacích řetězců a [příklad](#example) části komplexní ukázky použití.  
   
-|Specifikátor formátu|Název|Popis|Příklady|  
+|Specifikátor formátu|Name|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
 |"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: [Vlastní specifikátor "0"](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0,00" en US) -> 0.46<br /><br /> 0.45678 ("0,00" fr-FR) -> 0,46|  
 |"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že se ve výsledném řetězci nezobrazí žádná číslice, je-li odpovídající číslice ve vstupním řetězci nevýznamné 0. Například 0003 ("###") -> 3.<br /><br /> Další informace: [Vlastní specifikátor "#"](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#. ##", en US) ->.46<br /><br /> 0.45678 ("#. ##", fr-FR) -> 46|  

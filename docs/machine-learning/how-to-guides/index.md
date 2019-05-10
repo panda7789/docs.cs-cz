@@ -1,16 +1,16 @@
 ---
-title: .NET strojového učení návody - ML.NET
+title: Průvodce ML.NET postupy
 description: Zjistěte, jak provádět specifické úkoly, které vám pomůže s vlastní vytvoření řešení AI a Machine Learning integrace do svých aplikací .NET.
 ms.custom: seodec18
 ms.date: 03/01/2019
-ms.openlocfilehash: c8d1258629f777cd8bced47e4b956c9cf100a682
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 83188e65ccd02e6928cb4b87577105a75ee96245
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650398"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64649151"
 ---
-# <a name="net-machine-learning-how-to-guides---mlnet"></a>.NET strojového učení návody - ML.NET
+# <a name="net-machine-learning-how-to-guides"></a>Průvodce postupy .NET machine learning 
 
 V části Průvodce ML.NET jak najdete rychlé odpovědi na běžné dotazy. V některých případech může být uvedena články ve více oddílů, aby se daly snadno najít.
 

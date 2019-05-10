@@ -9,12 +9,12 @@ helpviewer_keywords:
 - coordinate systems
 - graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
-ms.openlocfilehash: d424254839db6c403bafe779f475c0e344918a5e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 9c854d8742e50a7136455da72a239623fb0c0d91
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748421"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64639748"
 ---
 # <a name="vector-graphics-overview"></a>Přehled vektorové grafiky
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Nakreslí na systém souřadnic řádky, obdélníky a ostatním tvarům. Můžete si vybrat z celé řady souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu se osy x, přejdete na pravé straně a osy y směřující dolů. Je pixel je jednotka měření ve výchozím nastavení systém souřadnic.  

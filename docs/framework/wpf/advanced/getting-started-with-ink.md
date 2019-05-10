@@ -10,11 +10,11 @@ helpviewer_keywords:
 - InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
 ms.openlocfilehash: d633111c5abc572b0fc27c1a5b32050681504073
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63807964"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64753007"
 ---
 # <a name="get-started-with-ink-in-wpf"></a>Začínáme s inkoustem v subsystému WPF
 

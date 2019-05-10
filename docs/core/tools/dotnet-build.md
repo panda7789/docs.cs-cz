@@ -1,43 +1,34 @@
 ---
 title: příkaz DotNet sestavení
 description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislosti.
-ms.date: 12/04/2018
-ms.openlocfilehash: 6a701ee371221c780a878e64b996df95f709371f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.date: 04/24/2019
+ms.openlocfilehash: 2e58bace8055ba793bf7a6ca3a51eb20aa689768
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665270"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64755214"
 ---
 # <a name="dotnet-build"></a>DotNet sestavení
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Tento článek se týká: ✓** .NET Core 1.x sady SDK a novějších verzích
 
-## <a name="name"></a>Název
+<!-- todo: uncomment when all CLI commands are reviewed
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
+
+## <a name="name"></a>Name
 
 `dotnet build` -Sestavení projektu a všechny jeho závislosti.
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```
-dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental]
-    [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
+    [--no-incremental] [--nologo] [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 
 dotnet build [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```
-dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output]
-    [-r|--runtime] [-v|--verbosity] [--version-suffix]
-
-dotnet build [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Popis
 
@@ -57,7 +48,7 @@ Určuje, zda je projekt spustitelné nebo ne je určeno `<OutputType>` vlastnost
 </PropertyGroup>
 ```
 
-Pokud chcete vytvořit knihovnu, vynechejte `<OutputType>` vlastnost. Hlavní rozdíl v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nelze ho provést.
+K vytvoření knihovny vynechat, nechte `<OutputType>` vlastnost. Hlavní rozdíl v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nelze ho provést.
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -75,8 +66,6 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 * **`-c|--configuration {Debug|Release}`**
 
   Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
@@ -87,11 +76,15 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
 
 * **`--force`**
 
-  Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné. Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
+  Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné. Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru. Tato možnost je k dispozici, protože .NET Core 2.0 SDK.
 
 * **`-h|--help`**
 
   Vytiskne krátký nápovědy pro příkaz.
+
+* **`--interactive`**
+
+  Povoluje příkazu zastavit a počkat na vstup uživatele nebo akce. Například k dokončení ověřování. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
 
 * **`--no-dependencies`**
 
@@ -101,9 +94,13 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
 
   Označí sestavení jako problematické pro přírůstkové sestavení. Tento příznak vypne přírůstková kompilace a vynutí opětovné čisté sestavení grafu závislostí projektu.
 
+* **`--no-logo`**
+
+  Nezobrazí úvodní nápis a zprávu o autorských právech. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+
 * **`--no-restore`**
 
-  Neprovede implicitní obnovení během sestavování.
+  Neprovede implicitní obnovení během sestavování. Tato možnost je k dispozici, protože .NET Core 2.0 SDK.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -115,51 +112,11 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `minimal`.
 
 * **`--version-suffix <VERSION_SUFFIX>`**
 
-  Definuje, verze přípona hvězdičku (`*`) v poli verze souboru projektu. Formát řídí pokyny verze Nugetu.
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`-c|--configuration {Debug|Release}`**
-
-  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
-
-* **`-f|--framework <FRAMEWORK>`**
-
-  Zkompiluje pro konkrétní [framework](../../standard/frameworks.md). Rozhraní musí být definován v [soubor projektu](csproj.md).
-
-* **`-h|--help`**
-
-  Vytiskne krátký nápovědy pro příkaz.
-
-* **`--no-dependencies`**
-
-  Pouze sestavení projektu zadaný kořenový a ignoruje odkazy typu projekt projekt (P2P).
-
-* **`--no-incremental`**
-
-  Označí sestavení jako problematické pro přírůstkové sestavení. Tento příznak vypne přírůstková kompilace a vynutí opětovné čisté sestavení grafu závislostí projektu.
-
-* **`-o|--output <OUTPUT_DIRECTORY>`**
-
-  Adresář, do kterého chcete sestavené binární soubory. Budete také muset definovat `--framework` při zadání této možnosti.
-
-* **`-r|--runtime <RUNTIME_IDENTIFIER>`**
-
-  Určuje cílový modul runtime. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).
-
-* **`-v|--verbosity <LEVEL>`**
-
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
-
-* **`--version-suffix <VERSION_SUFFIX>`**
-
-  Definuje, verze přípona hvězdičku (`*`) v poli verze souboru projektu. Formát řídí pokyny verze Nugetu.
-
----
+  Nastaví hodnotu vlastnosti `$(VersionSuffix)` vlastnost použít při vytváření projektu. Toto funguje, pouze pokud `$(Version)` není nastavena vlastnost. Potom `$(Version)` je nastavena na `$(VersionPrefix)` v kombinaci s `$(VersionSuffix)`, oddělená spojovníkem.
 
 ## <a name="examples"></a>Příklady
 
@@ -175,10 +132,10 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
   dotnet build --configuration Release
   ```
 
-* Sestavení projektu a jeho závislosti pro konkrétní prostředí runtime (v tomto příkladu se systémem Ubuntu 16.04):
+* Sestavení projektu a jeho závislosti pro konkrétní prostředí runtime (v tomto příkladu Ubuntu 18.04):
 
   ```console
-  dotnet build --runtime ubuntu.16.04-x64
+  dotnet build --runtime ubuntu.18.04-x64
   ```
 
 * Sestavte projekt a použít zadaný zdroj balíčku NuGet během operace obnovení (.NET Core 2.0 SDK a novější):

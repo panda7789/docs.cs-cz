@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30203
 ms.assetid: c05162ee-55d0-4d7f-84bb-e7758d4c5081
-ms.openlocfilehash: 11a305581ba498715f7f24ecb75f737acdf12bfb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 619b1c55ef035530c6854fa15763fb9c187565a6
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936315"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64662019"
 ---
 # <a name="identifier-expected"></a>Byl očekáván identifikátor.
 Programový element, který není rozpoznaný element deklarovaný název nastane, pokud kontext vyžaduje název elementu. Jednou z možných příčin je, že atribut jiný než nebyl zadán někde na začátku prohlášení.  

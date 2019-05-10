@@ -3,11 +3,11 @@ title: Kurzy k jazyku C#
 description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
 ms.date: 10/25/2018
 ms.openlocfilehash: 72f159311397a0f4891709c16a4a6ecc937b5952
-ms.sourcegitcommit: 89fcad7e816c12eb1299128481183f01c73f2c07
-ms.translationtype: HT
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63773903"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64755772"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 

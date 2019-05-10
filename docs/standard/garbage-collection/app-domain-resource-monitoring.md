@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f5ab93ca5cf616bd4a29ab5d297af1f4550623b4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8c7b9d7c2297fe30b02dc9782002413e9f38dc98
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945389"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64751533"
 ---
 # <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
 

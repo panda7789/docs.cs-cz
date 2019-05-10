@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e053a04ba0587a4eca166fa710bc465094feca80
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: b352c35a327ed4736a1f41816d3f15c1a0f559f5
+ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62015099"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64644824"
 ---
 # <a name="managed-threading-basics"></a>Dělení na spravovaná vlákna základy
 
@@ -42,9 +42,6 @@ Prvních pět témata v této části jsou navržené tak, která vám pomůže 
   
  [Dělení na spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)  
  Tento článek popisuje vztah mezi spravovaná a nespravovaná vlákna, jsou uvedené spravované ekvivalenty pro dělení na vlákna rozhraní API Windows a popisuje interakce Apartment modelu COM a spravovaná vlákna.  
-  
- [Thread.Suspend, uvolňování paměti a bezpečné body](../../../docs/standard/threading/thread-suspend-garbage-collection-and-safe-points.md)  
- Popisuje vlákno pozastavení a uvolňování paměti kolekce.  
   
  [Úložiště Thread Local: Statická pole relativní vůči vláknu a datové sloty ve vztahu](../../../docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  Popisuje relativní vůči vláknu úložiště mechanismy.  
