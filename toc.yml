@@ -630,3 +630,6 @@
             - name: Kurzy
               tocHref: /dotnet/machine-learning/tutorials/
               topicHref: /dotnet/machine-learning/tutorials/index
+        - name: Průvodce rozhraním .NET for Apache Spark
+          tocHref: /dotnet/spark/
+          topicHref: /dotnet/spark/index
