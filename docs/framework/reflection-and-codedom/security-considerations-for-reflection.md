@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 34f0002554320f99d961d03e9eebd8d0f774f1f6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ef6b73d683d43b2a33628db13fa592c7f02199a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591504"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585979"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 Reflexe umožňuje získat informace o typech a členech a chcete získat přístup ke členům (to znamená pro volání metody a konstruktory, k získání a nastavení vlastností hodnoty, přidávat a odebírat obslužné rutiny událostí a tak dále). Použití reflexe získat informace o typech a členech není omezeno. Veškerý kód, můžete použít reflexe provádět následující úlohy:  
@@ -88,7 +88,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
 - Sestavení A můžete použít reflexe pro přístup ke členům soukromé sestavení B, protože sada udělení sestavení B nezahrnuje všechna oprávnění, která A nebylo uděleno.  
   
-- Sestavení A nelze použít reflexe pro přístup k privátní členy [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení, jako například mscorlib.dll, protože soubor mscorlib.dll je plně důvěryhodný a proto má oprávnění, která nebyla udělena sestavení A. A <xref:System.MemberAccessException> je vyvolána při zabezpečení přístupu kódu vás zásobníku za běhu.  
+- Sestavení A nelze pomocí reflexe pro přístup k soukromým členům sestavení rozhraní .NET Framework, jako například mscorlib.dll, protože soubor mscorlib.dll je plně důvěryhodný a proto má oprávnění, která nebyla udělena sestavení A. A <xref:System.MemberAccessException> je vyvolána při zabezpečení přístupu kódu vás zásobníku za běhu.  
   
 ## <a name="serialization"></a>Serializace  
  Pro serializaci <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> příznak umožňuje získávat a nastavovat členy Serializovatelné typy, bez ohledu na přístupnost. Toto oprávnění umožňuje kódu ke zjištění a privátní stav instance změnit. (Kromě udělením příslušná oprávnění, musí být typu [označené](../../../docs/standard/attributes/applying-attributes.md) v metadatech jako serializovatelný.)  
@@ -100,7 +100,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
 - Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], transparentní kód nemůže použít reflexe pro přístup ke členům kritické pro zabezpečení.  
   
-- <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak se používá v [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Starší verze [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro kód, který se používá pro přístup k neveřejné členy reflexe. Toto je oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
+- <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak se používá v [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro kód, který se používá pro přístup k neveřejné členy reflexe. Toto je oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
   
 - Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], pomocí operace reflection k získání informací o neveřejným typům a členům nevyžaduje žádná oprávnění. V dřívějších verzích <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak je povinný.  
   

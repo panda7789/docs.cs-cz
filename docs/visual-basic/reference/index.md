@@ -5,12 +5,12 @@ helpviewer_keywords:
 - language reference
 - Visual Basic code, language reference
 ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
-ms.openlocfilehash: af8d2c99015304507b2b3361a8a851d125c14a81
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5142fb9f4b5cd49bb35b58fdd92e4fb84b8ecc03
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968334"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593056"
 ---
 # <a name="reference-visual-basic"></a>Odkaz (Visual Basic)
 Tato část obsahuje odkazy na referenční informace o různých aspektech programování v jazyce Visual Basic.  
@@ -23,7 +23,7 @@ Tato část obsahuje odkazy na referenční informace o různých aspektech prog
  Obsahuje odkazy na informace o kompilátoru příkazového řádku, který poskytuje alternativu ke kompilaci programů z rozhraní IDE sady Visual Studio.  
   
  [Referenční informace k rozhraní .NET Framework](../../visual-basic/reference/net-framework-reference-information.md)  
- Obsahuje odkazy na informace o práci s [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.  
+ Obsahuje odkazy na informace o práci s knihovnou tříd rozhraní .NET Framework.  
   
  [Specifikace jazyka Visual Basic](../../visual-basic/reference/language-specification/index.md)  
  Obsahuje odkazy na kompletní specifikace jazyka Visual Basic, který obsahuje podrobné informace o všech aspektech jazyka.  

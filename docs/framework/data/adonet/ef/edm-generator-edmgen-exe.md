@@ -2,12 +2,12 @@
 title: EDM Generator (EdmGen.exe)
 ms.date: 03/30/2017
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-ms.openlocfilehash: 7f06b393cd7e7ccf3d3637d6fb46eb6d983d943a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f9c75cd7589b1c5fb28112a22390acf90f46e465
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607668"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584587"
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 
@@ -21,7 +21,7 @@ EdmGen.exe je nástroj příkazového řádku pro práci s [!INCLUDE[adonet_ef](
 
 - Generovat soubor kódu jazyka C# nebo Visual Basic, který obsahuje předem vygenerovaných zobrazení pro existující model. Další informace najdete [jak: Předběžně generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).
 
-Nástroj EdmGen.exe je nainstalován v [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] adresáře. V mnoha případech je umístěn v C:\windows\Microsoft.NET\Framework\v4.0. Pro 64bitové systémy je umístěn v C:\windows\Microsoft.NET\Framework64\v4.0. Nástroje EdmGen.exe dá dostat taky z příkazového řádku sady Visual Studio (klikněte na tlačítko **Start**, přejděte na **všechny programy**, přejděte na **sadu Microsoft Visual Studio 2010**, přejděte na **Visual Studio Tools**a potom klikněte na tlačítko **příkazový řádek sady Visual Studio 2010**).
+Nástroje EdmGen.exe nainstalovaný v adresáři rozhraní .NET Framework. V mnoha případech je umístěn v C:\windows\Microsoft.NET\Framework\v4.0. Pro 64bitové systémy je umístěn v C:\windows\Microsoft.NET\Framework64\v4.0. Nástroje EdmGen.exe dá dostat taky z příkazového řádku sady Visual Studio (klikněte na tlačítko **Start**, přejděte na **všechny programy**, přejděte na **sadu Microsoft Visual Studio 2010**, přejděte na **Visual Studio Tools**a potom klikněte na tlačítko **příkazový řádek sady Visual Studio 2010**).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -46,7 +46,7 @@ Při používání nástroje EdmGen.exe, musíte zadat jednu z následujících 
 |Možnost|Popis|
 |------------|-----------------|
 |`/p[roject]:`\<řetězec >|Určuje název projektu použít. Název projektu slouží jako výchozí pro obor názvů, název modelu a souborů mapování, název objektu zdrojového souboru a název souboru zdroje generování zobrazení nastavení. Název kontejneru entity je nastavený na \<Projekt > kontext.|
-|`/prov[ider]:`\<řetězec >|Název [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat, který se má použít ke generování souboru modelu (ssdl) úložiště. Výchozí zprostředkovatel je [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|
+|`/prov[ider]:`\<řetězec >|Název zprostředkovatele dat .NET Framework, který se má použít ke generování souboru modelu (ssdl) úložiště. Výchozí zprostředkovatel je zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|
 |`/c[onnectionstring]:`\<připojovací řetězec >|Určuje řetězec, který se používá k připojení ke zdroji dat.|
 |`/incsdl:`\<Soubor >|Určuje soubor .csdl nebo do adresáře, kde jsou uložené soubory .csdl. Tento argument lze zadat více než jednou, takže můžete zadat několik adresářů a souborů .csdl. Určení více adresářů, může být užitečné pro generování tříd (`/mode:EntityClassGeneration`) nebo zobrazení (`/mode:ViewGeneration`) Pokud je konceptuálního modelu rozdělit mezi několik souborů. To může být také užitečné, pokud chcete ověřit více modelů (`/mode:ValidateArtifacts`).|
 |`/refcsdl:`\<Soubor >|Určuje další .csdl soubor nebo soubory, které vyřešit všechny odkazy ve zdrojovém souboru .csdl. (Zdrojový soubor .csdl se soubor určený parametrem `/incsdl` možnost). `/refcsdl` Soubor obsahuje typy, které je závislý soubor .csdl zdroje. Tento argument můžete zadat více než jednou.|

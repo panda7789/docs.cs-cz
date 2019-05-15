@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 05812d7bdda33f6fa06a6aae7129d1dc73144e37
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aadb478b507cdd5d2828a2d224fbca1dc32b21b3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751902"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586446"
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>Třída XslTransform implementuje procesor XSLT
 
 > [!NOTE]
 > <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.
 
-<xref:System.Xml.Xsl.XslTransform> Třída je procesor XSLT implementaci transformace XSL (XSLT) verze 1.0 doporučení. <xref:System.Xml.Xsl.XslTransform.Load%2A> Metoda vyhledá a načte šablony stylů a <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda transformuje daném zdrojovém dokumentu. Jakékoli úložiště, který implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní lze použít jako zdrojový dokument pro <xref:System.Xml.Xsl.XslTransform>. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Aktuálně implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní na <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XPath.XPathDocument>, takže všechny z nich může sloužit jako vstupní zdrojový dokument k transformaci.
+<xref:System.Xml.Xsl.XslTransform> Třída je procesor XSLT implementaci transformace XSL (XSLT) verze 1.0 doporučení. <xref:System.Xml.Xsl.XslTransform.Load%2A> Metoda vyhledá a načte šablony stylů a <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda transformuje daném zdrojovém dokumentu. Jakékoli úložiště, který implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní lze použít jako zdrojový dokument pro <xref:System.Xml.Xsl.XslTransform>. Aktuálně implementuje rozhraní .NET Framework <xref:System.Xml.XPath.IXPathNavigable> rozhraní na <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XPath.XPathDocument>, takže všechny z nich může sloužit jako vstupní zdrojový dokument k transformaci.
 
-<xref:System.Xml.Xsl.XslTransform> Objekt [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] podporuje pouze specifikaci XSLT 1.0, definované pomocí následující obor názvů:
+<xref:System.Xml.Xsl.XslTransform> Objektů v rozhraní .NET Framework podporuje pouze specifikaci XSLT 1.0, definované pomocí následující obor názvů:
 
 ```xml
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
@@ -213,7 +213,7 @@ print_root.xsl
 
 ## <a name="migration-of-xslt-from-net-framework-version-10-to-net-framework-version-11"></a>Migrace XSLT v rozhraní .NET Framework verze 1.0 rozhraní .NET Framework verze 1.1
 
-V následující tabulce jsou uvedeny zastaralý [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] metody verze 1.0 a nové [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] metody verze 1.1 <xref:System.Xml.Xsl.XslTransform.Load%2A> metoda. Nové metody umožňují omezit oprávnění šablony stylů zadáním důkaz.
+Následující tabulka uvádí zastaralé metody rozhraní .NET Framework verze 1.0 a nová verze rozhraní .NET Framework 1.1 metody <xref:System.Xml.Xsl.XslTransform.Load%2A> metody. Nové metody umožňují omezit oprávnění šablony stylů zadáním důkaz.
 
 |Zastaralé metod rozhraní .NET Framework verze 1.0 zatížení|Náhradní rozhraní .NET Framework verze 1.1 zatížení metody|
 |------------------------------------------------------|---------------------------------------------------------|
@@ -235,7 +235,7 @@ V následující tabulce jsou uvedeny zastaralé a nové metody pro <xref:System
 |Transformace void (IXPathNavigable vstup, třída XsltArgumentList argumentů, Stream výstup)|Transformace void (IXPathNavigable vstup, třída XsltArgumentList argumentů, výstupní Stream, objekt XmlResolver překladač)|
 |Zrušit transformaci (řetězec vstupní, výstupní řetězec);|Zrušit transformaci (řetězec vstupní, výstupní řetězec, objekt XmlResolver překladač);|
 
-<xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> Vlastnost je zastaralá v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.1. Místo toho použijte nové <xref:System.Xml.Xsl.XslTransform.Transform%2A> přetížení, která berou <xref:System.Xml.XmlResolver> objektu.
+<xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> Vlastnost je zastaralé v rozhraní .NET Framework verze 1.1. Místo toho použijte nové <xref:System.Xml.Xsl.XslTransform.Transform%2A> přetížení, která berou <xref:System.Xml.XmlResolver> objektu.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-ms.openlocfilehash: d815311a89ba09ade7e3092ca4eeab67cbe20bd0
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: b689bb7299d541708db7ae786bff62a1007608e5
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211264"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557893"
 ---
 # <a name="walkthrough-style-wpf-content"></a>Návod: Stylu obsahu WPF
 
@@ -58,15 +58,15 @@ Můžete použít různé pro používání stylů pro ovládací prvek WPF, chc
 
 1. Otevřít `Form1` v Návrháři formulářů Windows.
 
-2. V **nástrojů**, dvakrát klikněte na panel `UserControl1` k vytvoření instance `UserControl1` ve formuláři.
+1. V **nástrojů**, dvakrát klikněte na panel `UserControl1` k vytvoření instance `UserControl1` ve formuláři.
 
      Instance `UserControl1` hostována v novém <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek s názvem `elementHost1`.
 
-3. Na panelu inteligentních značek `elementHost1`, klikněte na tlačítko **upravit hostovaný obsah** z rozevíracího seznamu.
+1. Na panelu inteligentních značek `elementHost1`, klikněte na tlačítko **upravit hostovaný obsah** z rozevíracího seznamu.
 
      `UserControl1` Otevře [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
 
-4. V XAML zobrazení, vložte následující XAML po `<UserControl>` počáteční značku.
+1. V XAML zobrazení, vložte následující XAML po `<UserControl>` počáteční značku.
 
      Tento XAML vytvoří přechod kontrastní přechodu ohraničení. Po kliknutí na ovládací prvek přechody jsou změněny na generování vzhled při stisknutí tlačítka. Další informace najdete v tématu [styly a šablony](../../wpf/controls/styling-and-templating.md).
 
@@ -118,7 +118,7 @@ Můžete použít různé pro používání stylů pro ovládací prvek WPF, chc
    </UserControl.Resources>
    ```
 
-4. Použít `SimpleButton` styl definovaný v předchozím kroku, a na tlačítko Storno vložením následujícího XAML v `<Button>` značky na tlačítko Storno.
+1. Použít `SimpleButton` styl definovaný v předchozím kroku, a na tlačítko Storno vložením následujícího XAML v `<Button>` značky na tlačítko Storno.
 
    ```xaml
    Style="{StaticResource SimpleButton}
@@ -131,15 +131,15 @@ Můžete použít různé pro používání stylů pro ovládací prvek WPF, chc
                 Style="{StaticResource SimpleButton}">Cancel</Button>
    ```
 
-5. Sestavte projekt.
+1. Sestavte projekt.
 
-6. Otevřít `Form1` v Návrháři formulářů Windows.
+1. Otevřít `Form1` v Návrháři formulářů Windows.
 
-7. Nový styl platí pro ovládací prvek tlačítko.
+1. Nový styl platí pro ovládací prvek tlačítko.
 
-8. Z **ladění** nabídce vyberte možnost **spustit ladění** ke spuštění aplikace.
+1. Z **ladění** nabídce vyberte možnost **spustit ladění** ke spuštění aplikace.
 
-9. Klikněte na tlačítko OK a zrušit a zobrazit rozdíly.
+1. Klikněte na tlačítko OK a zrušit a zobrazit rozdíly.
 
 ## <a name="see-also"></a>Viz také:
 

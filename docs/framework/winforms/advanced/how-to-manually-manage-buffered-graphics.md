@@ -8,15 +8,15 @@ helpviewer_keywords:
 - flicker [Windows Forms], reducing by manually managing graphics
 - graphics [Windows Forms], managing buffered
 ms.assetid: 4c2a90ee-bbbe-4ff6-9170-1b06c195c918
-ms.openlocfilehash: a2c45e45421f8b03f592bf6e1e53cad97a4ef9ee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2cdcebd4e47996841ad58213d9c6252a6a3dd7b6
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648275"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591835"
 ---
 # <a name="how-to-manually-manage-buffered-graphics"></a>Postupy: Ruční správa grafiky uložené do vyrovnávací paměti
-Pro pokročilejší scénáře dvojité vyrovnávací paměti, můžete použít [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] třídy implementovat vlastní logiku na dvojité ukládání do vyrovnávací paměti. Je třída, která je zodpovědná za přidělení a správa jednotlivých grafické vyrovnávací paměti <xref:System.Drawing.BufferedGraphicsContext> třídy. Každá aplikace má vlastní výchozí <xref:System.Drawing.BufferedGraphicsContext> , který spravuje všechny výchozí dvojité ukládání do vyrovnávací paměti pro příslušnou aplikaci. Odkaz na tuto instanci lze načíst voláním <xref:System.Drawing.BufferedGraphicsManager.Current%2A>.  
+Pro pokročilejší scénáře dvojité vyrovnávací paměti můžete použít třídy rozhraní .NET Framework do implementovat vlastní logiku na dvojité ukládání do vyrovnávací paměti. Je třída, která je zodpovědná za přidělení a správa jednotlivých grafické vyrovnávací paměti <xref:System.Drawing.BufferedGraphicsContext> třídy. Každá aplikace má vlastní výchozí <xref:System.Drawing.BufferedGraphicsContext> , který spravuje všechny výchozí dvojité ukládání do vyrovnávací paměti pro příslušnou aplikaci. Odkaz na tuto instanci lze načíst voláním <xref:System.Drawing.BufferedGraphicsManager.Current%2A>.  
   
 ### <a name="to-obtain-a-reference-to-the-default-bufferedgraphicscontext"></a>K získání odkazu na výchozí hodnotu BufferedGraphicsContext  
   

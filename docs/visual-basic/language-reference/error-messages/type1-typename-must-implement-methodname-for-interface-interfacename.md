@@ -1,5 +1,5 @@
 ---
-title: <type1>"<typename>musí implementovat<methodname>'pro rozhraní'<interfacename>.
+title: <type1>'<typename>musí implementovat<methodname>'pro rozhraní'<interfacename>.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30149
@@ -14,7 +14,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62013605"
 ---
-# <a name="type1typename-must-implement-methodname-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<methodname > "rozhraní"\<interfacename > "
+# <a name="type1typename-must-implement-methodname-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<methodname > 'rozhraní'\<interfacename > '
 Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje postupu definované rozhraní. Musíte implementovat každého člena rozhraní.  
   
  **ID chyby:** BC30149  

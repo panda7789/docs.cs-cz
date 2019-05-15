@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: f4458639aa2c78e7c78bdae66fa2b20d5546743c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: deb8f4396700086627aaef35ead7f15f38d9320c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878771"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583865"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ to DataSet
 Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce, jako je například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu, vždy pracujete s programovacích objektech.  
@@ -31,7 +31,7 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
 ### <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu  
  Výrazy dotazu představují dotaz deklarativní syntaxe. Tato syntaxe umožňuje vývojářům psát dotazy v jazyce C# nebo Visual Basic v ve formátu podobném SQL. Pomocí syntaxe výrazu dotazu, můžete provádět, dokonce i složité filtrování, řazení a seskupení operací u zdrojů dat s minimem kódu. Další informace najdete v tématu [LINQ – výrazy dotazů](../../../csharp/linq/index.md#query-expression-overview) a [základní operace dotazů (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
   
- Syntaxe výrazu dotazu je nového v jazyce C# 3.0 a [!INCLUDE[vb_orcas_long](../../../../includes/vb-orcas-long-md.md)]. Ale [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] common language runtime (CLR) nelze číst syntaxe výrazu dotazu, samotného. V době kompilace, proto – výrazy dotazů jsou přeloženy na něco, co CLR chápe: volání metody. Tyto metody jsou označovány jako *standardních operátorů pro dotazování*. Jako vývojář máte možnost volání přímo pomocí syntaxe metody, namísto použití syntaxe dotazu. Další informace najdete v tématu [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](~/docs/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md). Další informace o standardních operátorů pro dotazování, naleznete v tématu [přehled standardních operátorů dotazu](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  
+ Syntaxe výrazu dotazu je nového v jazyce C# 3.0 a [!INCLUDE[vb_orcas_long](../../../../includes/vb-orcas-long-md.md)]. Rozhraní .NET Framework common language runtime (CLR) však nelze číst syntaxe výrazu dotazu, samotného. V době kompilace, proto – výrazy dotazů jsou přeloženy na něco, co CLR chápe: volání metody. Tyto metody jsou označovány jako *standardních operátorů pro dotazování*. Jako vývojář máte možnost volání přímo pomocí syntaxe metody, namísto použití syntaxe dotazu. Další informace najdete v tématu [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](~/docs/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md). Další informace o standardních operátorů pro dotazování, naleznete v tématu [přehled standardních operátorů dotazu](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
  Následující příklad používá <xref:System.Linq.Enumerable.Select%2A> vrátit všechny řádky z `Product` tabulky a zobrazení názvů produktů.  
   

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
-ms.openlocfilehash: e4414e33efb077e00e4b38e3e53d218ecd7343a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d35e2775c6c6912d2a36c550202b309ebdeaa32
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034551"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583824"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 
@@ -33,7 +33,7 @@ Při přidávání parametrů, je nutné zadat <xref:System.Data.ParameterDirect
 
 ## <a name="working-with-parameter-placeholders"></a>Práce se zástupnými symboly parametru
 
-Syntaxe pro parametr zástupné symboly závisí na zdroji dat. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat zpracování pojmenování a určení parametrů a proměnných parametrů odlišně. Tato syntaxe upravit tak, aby konkrétnímu zdroji dat, jak je popsáno v následující tabulce.
+Syntaxe pro parametr zástupné symboly závisí na zdroji dat. Zprostředkovatelé dat .NET Framework zpracovat pojmenování a určení parametrů a proměnných parametrů odlišně. Tato syntaxe upravit tak, aby konkrétnímu zdroji dat, jak je popsáno v následující tabulce.
 
 |Zprostředkovatel dat|Pojmenování syntaxe parametru|
 |-------------------|-----------------------------|
@@ -44,9 +44,9 @@ Syntaxe pro parametr zástupné symboly závisí na zdroji dat. [!INCLUDE[dnprdn
 
 ## <a name="specifying-parameter-data-types"></a>Určení datové typy parametrů
 
-Datový typ parametru je specifické pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb. Určení typu převede hodnotu `Parameter` k [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ zprostředkovatele dat před předáním této hodnoty ke zdroji dat. Můžete také zadat typ `Parameter` obecný způsobem tak, že nastavíte `DbType` vlastnost `Parameter` objekt ke konkrétní <xref:System.Data.DbType>.
+Datový typ parametru je specifické pro zprostředkovatele dat .NET Framework. Určení typu převede hodnotu `Parameter` na typ zprostředkovatele dat .NET Framework před předáním této hodnoty ke zdroji dat. Můžete také zadat typ `Parameter` obecný způsobem tak, že nastavíte `DbType` vlastnost `Parameter` objekt ke konkrétní <xref:System.Data.DbType>.
 
-[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Datovým typem zprostředkovatele `Parameter` objekt je odvozen z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ `Value` z `Parameter` objektu, nebo z `DbType` z `Parameter` objektu. V následující tabulce jsou uvedeny odvozené `Parameter` založený na objekt předaný jako typ `Parameter` hodnotu nebo zadaný `DbType`.
+Typ zprostředkovatele dat .NET Framework nástroje `Parameter` objekt je odvozen z typu rozhraní .NET Framework `Value` z `Parameter` objektu, nebo z `DbType` z `Parameter` objektu. V následující tabulce jsou uvedeny odvozené `Parameter` založený na objekt předaný jako typ `Parameter` hodnotu nebo zadaný `DbType`.
 
 |Typ rozhraní .NET Framework|DbType|SqlDbType|OleDbType|OdbcType|OracleType|
 |-------------------------|------------|---------------|---------------|--------------|----------------|
@@ -63,9 +63,9 @@ Datový typ parametru je specifické pro [!INCLUDE[dnprdnshort](../../../../incl
 |<xref:System.Int16>|Int16|SmallInt|SmallInt|SmallInt|Int16|
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Číslo|
-|<xref:System.Object>|Objekt|Variant|Variant|Odvození OdbcType: z objektu se nepodporuje.|Objekt blob|
+|<xref:System.Object>|Objekt|Variant|Variant|Odvození OdbcType: z objektu se nepodporuje.|Blob|
 |<xref:System.String>|String|NVarChar. Toto implicitní převod se nezdaří, pokud řetězec je větší než maximální velikost NVarChar, což je 4000 znaků. Pro řetězce je větší než 4000 znaků, explicitně nastavit <xref:System.Data.SqlDbType>.|VarWChar|NVarChar|NVarChar|
-|<xref:System.TimeSpan>|Čas|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z TimeSpan není podporován ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Čas|DateTime|
+|<xref:System.TimeSpan>|Time|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z TimeSpan není podporován ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Time|DateTime|
 |<xref:System.UInt16>|UInt16|Odvození <xref:System.Data.SqlDbType> z UInt16 se nepodporuje.|UnsignedSmallInt|Int|UInt16|
 |<xref:System.UInt32>|UInt32|Odvození <xref:System.Data.SqlDbType> z UInt32 se nepodporuje.|UnsignedInt|BigInt|UInt32|
 |<xref:System.UInt64>|UInt64|Odvození <xref:System.Data.SqlDbType> z UInt64 se nepodporuje.|UnsignedBigInt|Numeric|Číslo|
@@ -75,7 +75,7 @@ Datový typ parametru je specifické pro [!INCLUDE[dnprdnshort](../../../../incl
 ||Datum|Datum v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od data není podporováno ve verzích systému SQL Server starších než SQL Server 2008.|DBDate|Datum|DateTime|
 ||SByte|Odvození <xref:System.Data.SqlDbType> z SByte se nepodporuje.|TinyInt|Odvození `OdbcType` z SByte se nepodporuje.|SByte|
 ||StringFixedLength|nChar|WChar|nChar|nChar|
-||Čas|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od času není podporováno ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Čas|DateTime|
+||Time|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od času není podporováno ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Time|DateTime|
 ||VarNumeric|Odvození <xref:System.Data.SqlDbType> z VarNumeric se nepodporuje.|VarNumeric|Odvození `OdbcType` z VarNumeric se nepodporuje.|Číslo|
 |uživatelem definovaný typ (objekt s <xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>|Objekt nebo řetězec, v závislosti poskytovatele (SqlClient vždy vrátí objekt, Odbc vždy vrátí hodnotu typu String a zprostředkovatele služeb OleDb spravovaných dat můžete zobrazit buď|SqlDbType.Udt Pokud <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> je k dispozici, jinak Variant|OleDbType.VarWChar (Pokud je hodnota null) OleDbType.Variant jinak.|OdbcType.NVarChar|Nepodporuje se|
 
@@ -101,7 +101,7 @@ Uložené procedury nabízí celou řadu výhod v aplikace řízené daty. Pomoc
 > [!NOTE]
 > Parametrizované příkazy jsou spouštěny na serveru s použitím `sp_executesql,` tomu pro opakované použití plánu dotazu. Kurzory místní nebo v proměnné `sp_executesql` batch nejsou viditelné na službu batch, která volá `sp_executesql`. Poslední změny v kontextu databáze pouze na konec objektu `sp_executesql` příkazu. Další informace najdete v tématu [sp_executesql (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql).
 
-Při použití s parametry <xref:System.Data.SqlClient.SqlCommand> ke spuštění systému SQL Server uložené procedury, názvy parametrů přidaných do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce musí shodovat s názvy značek parametr v uložené proceduře. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server nepodporuje otazník (?) zástupný symbol pro předání parametrů do příkazu SQL nebo uloženou proceduru. Považuje za parametry v uložené proceduře pojmenované parametry a hledá odpovídající parametr značek. Například `CustOrderHist` uloženou proceduru se definuje pomocí parametr s názvem `@CustomerID`. Pokud váš kód spustí uloženou proceduru, musíte taky použít parametr s názvem `@CustomerID`.
+Při použití s parametry <xref:System.Data.SqlClient.SqlCommand> ke spuštění systému SQL Server uložené procedury, názvy parametrů přidaných do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce musí shodovat s názvy značek parametr v uložené proceduře. Zprostředkovatel dat .NET Framework pro SQL Server nepodporuje zástupný znak otazníku (?) pro předání parametrů do příkazu SQL nebo uloženou proceduru. Považuje za parametry v uložené proceduře pojmenované parametry a hledá odpovídající parametr značek. Například `CustOrderHist` uloženou proceduru se definuje pomocí parametr s názvem `@CustomerID`. Pokud váš kód spustí uloženou proceduru, musíte taky použít parametr s názvem `@CustomerID`.
 
 ```sql
 CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
@@ -119,9 +119,9 @@ Tento příklad ukazuje, jak se volání procedury SQL serveru, které jsou ulo�
 
 ## <a name="using-parameters-with-an-oledbcommand-or-odbccommand"></a>Pomocí parametrů s OleDbCommand nebo OdbcCommand
 
-Při použití parametrů pomocí <xref:System.Data.OleDb.OleDbCommand> nebo <xref:System.Data.Odbc.OdbcCommand>, pořadí parametrů přidaných do `Parameters` kolekce musí odpovídat pořadí parametrů definovaných v uložené proceduře. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro OLE DB a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro ODBC považovat za parametry v uložené proceduře zástupné symboly a použít hodnoty parametrů v pořadí. Kromě toho vrátí parametry s hodnotou musí být první parametrů přidaných do `Parameters` kolekce.
+Při použití parametrů pomocí <xref:System.Data.OleDb.OleDbCommand> nebo <xref:System.Data.Odbc.OdbcCommand>, pořadí parametrů přidaných do `Parameters` kolekce musí odpovídat pořadí parametrů definovaných v uložené proceduře. Zprostředkovatel dat .NET Framework pro OLE DB a zprostředkovatele dat .NET Framework pro ODBC považovat za parametry v uložené proceduře zástupné symboly a použít hodnoty parametrů v pořadí. Kromě toho vrátí parametry s hodnotou musí být první parametrů přidaných do `Parameters` kolekce.
 
-[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro OLE DB a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro ODBC nepodporují pojmenované parametry pro předání parametrů do příkazu SQL nebo uloženou proceduru. V takovém případě musíte použít zástupný znak otazníku (?), jako v následujícím příkladu.
+Zprostředkovatel dat .NET Framework pro OLE DB a zprostředkovatele dat .NET Framework pro ODBC nepodporují pojmenované parametry pro předání parametrů do příkazu SQL nebo uloženou proceduru. V takovém případě musíte použít zástupný znak otazníku (?), jako v následujícím příkladu.
 
 ```sql
 SELECT * FROM Customers WHERE CustomerID = ?

@@ -21,12 +21,12 @@ helpviewer_keywords:
 - current instance [Visual Basic], Me keyword
 - MyBase keyword [Visual Basic], relationship to similar programming elements
 ms.assetid: f8e241ae-b1ed-4886-9aa0-08c632154029
-ms.openlocfilehash: a8df6e48fd5bce9bb28d8aef7e031f36741ad0ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3eca756429c5fec8f324a17350844b59baf9ccf7
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050477"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586263"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Me, My, MyBase a MyClass v jazyce Visual Basic
 `Me`, `My`, `MyBase`, a `MyClass` v jazyce Visual Basic mají podobné názvy, ale různým účelům. Toto téma popisuje všechny tyto entity, aby bylo možné odlišit.  
@@ -50,7 +50,7 @@ ChangeFormColor(Me)
 ```  
   
 ## <a name="my"></a>Moje  
- `My` Funkce poskytuje jednoduché a intuitivní přístup k několika [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, povolení uživatele jazyka Visual Basic k interakci s počítačem, aplikace, nastavení, prostředky a tak dále.  
+ `My` Funkce poskytuje jednoduché a intuitivní přístup k počtu tříd rozhraní .NET Framework, povolení uživatele jazyka Visual Basic k interakci s počítačem, aplikace, nastavení, prostředky a tak dále.  
   
 ## <a name="mybase"></a>MyBase  
  `MyBase` – Klíčové slovo se chová jako proměnná objektu odkazuje na základní třídu aktuální instance třídy. `MyBase` běžně se používá pro přístup ke členům základní třídy, přepsat nebo Stínovaný v odvozené třídě. `MyBase.New` umožňuje explicitně volat konstruktor základní třídy v konstruktoru odvozené třídy.  

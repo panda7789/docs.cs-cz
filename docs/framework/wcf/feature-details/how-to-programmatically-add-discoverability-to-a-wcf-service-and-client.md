@@ -2,12 +2,12 @@
 title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: 54d838967fcc19501ff7385aba29e8d79025ce70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de227e8df895dd4c031aadce16102559c43e47ce
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761543"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586622"
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: Programové přidání možností rozpoznání do klienta a služby WCF
 Toto téma vysvětluje, jak zjistitelnost služby Windows Communication Foundation (WCF). Je založen na [hostování na vlastním serveru](https://go.microsoft.com/fwlink/?LinkId=145523) vzorku.  
@@ -16,7 +16,7 @@ Toto téma vysvětluje, jak zjistitelnost služby Windows Communication Foundati
   
 1. Otevřete řešení hostování na vlastním serveru v sadě Visual Studio 2012. Tato ukázka se nachází v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.  
   
-2. Přidejte odkaz na `System.ServiceModel.Discovery.dll` do projektu služby. Může se zobrazit chybová zpráva s oznámením "systém. ServiceModel.Discovery.dll nebo některá z jeho závislostí, vyžaduje novější verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] než verze zadaná v projektu... " Pokud se zobrazí tato zpráva, klikněte pravým tlačítkem na projekt v Průzkumníku řešení a zvolte **vlastnosti**. V **vlastnosti projektu** okno, ujistěte se, že **Cílová architektura** je [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
+2. Přidejte odkaz na `System.ServiceModel.Discovery.dll` do projektu služby. Může se zobrazit chybová zpráva s oznámením "systém. ServiceModel.Discovery.dll nebo některá z jeho závislých vyžaduje novější verzi rozhraní .NET Framework než verze zadaná v projektu..." Pokud se zobrazí tato zpráva, klikněte pravým tlačítkem na projekt v Průzkumníku řešení a zvolte **vlastnosti**. V **vlastnosti projektu** okno, ujistěte se, že **Cílová architektura** je [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
   
 3. Otevřete soubor Service.cs a přidejte následující `using` příkazu.  
   

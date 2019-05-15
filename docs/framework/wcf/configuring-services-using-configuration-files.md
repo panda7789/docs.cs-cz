@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: 9f1ddf7691c9c00c3a4a7a20fc81d2f42f5830f3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8f1392a6ee2e8f5b3f85650ee91e20e7ec3436fa
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64652104"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592223"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem dává možnost poskytovat koncový bod a data o chování služby Přejme během nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
   
- Služba WCF se dají konfigurovat pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] technologie konfigurace. Nejčastěji jsou přidány elementy XML v souboru Web.config pro web Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používaný ke komunikaci se službou service) pro počítače podle počítače. Kromě toho WCF obsahuje několik elementů poskytované systémem, které umožňují rychle vybrat většina základních funkcí pro službu. Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], WCF se dodává s novou výchozí konfiguraci modelu, která zjednodušuje požadavky na konfiguraci WCF. Pokud nezadáte žádnou konfiguraci WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaše služba se některé standardní koncové body a výchozí vazby a chování. V praxi, zápis konfigurace je velkou část programování WCF aplikací.  
+ Služby WCF je možné konfigurovat pomocí konfigurace technologie rozhraní .NET Framework. Nejčastěji jsou přidány elementy XML v souboru Web.config pro web Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používaný ke komunikaci se službou service) pro počítače podle počítače. Kromě toho WCF obsahuje několik elementů poskytované systémem, které umožňují rychle vybrat většina základních funkcí pro službu. Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], WCF se dodává s novou výchozí konfiguraci modelu, která zjednodušuje požadavky na konfiguraci WCF. Pokud nezadáte žádnou konfiguraci WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaše služba se některé standardní koncové body a výchozí vazby a chování. V praxi, zápis konfigurace je velkou část programování WCF aplikací.  
   
  Další informace najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md). Seznam nejčastěji používaných prvky, naleznete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
@@ -22,7 +22,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 >  Při nasazení vedle sebe scénáře, ve které jsou nasazené dvě různé verze služby, je nutné zadat částečné názvy sestavení odkazovaná v konfiguračních souborech. Je to proto, že konfigurační soubor se sdílí mezi všemi verzemi služby a mohl být spuštěn v různých verzích rozhraní .NET Framework.  
   
 ## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Soubor Web.config a App.config  
- WCF používá systém konfigurace System.Configuration [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+ WCF používá System.Configuration konfigurační systém .NET Framework.  
   
  Při konfiguraci služby v sadě Visual Studio, použijte k určení nastavení souboru Web.config nebo App.config soubor. Volba název konfiguračního souboru určuje hostitelské prostředí, které jste vybrali pro službu. Pokud používáte k hostování vaší služby IIS, použijte soubor Web.config. Pokud používáte jiné hostitelské prostředí, pomocí souboru App.config.  
   

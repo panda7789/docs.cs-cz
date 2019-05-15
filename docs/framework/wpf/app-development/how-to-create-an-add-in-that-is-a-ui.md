@@ -9,12 +9,12 @@ helpviewer_keywords:
 - implementing UI add-ins [WPF]
 - pipeline segments [WPF], creating add-ins
 ms.assetid: 86375525-282b-4039-8352-8680051a10ea
-ms.openlocfilehash: e12769eca2d3c963e2d7a19e50c67814bcff3152
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0464d87aef3d4e88d9340af2ac1db93c13ba26e2
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625373"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592658"
 ---
 # <a name="how-to-create-an-add-in-that-is-a-ui"></a>Postupy: Vytvoření doplňku, který je uživatelským rozhraním
 Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation Foundation (WPF) pomocí samostatné aplikace WPF hostované.  
@@ -81,7 +81,7 @@ Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation 
   
 <a name="HostApp"></a>   
 ## <a name="implementing-the-host-application"></a>Implementace hostitele aplikace  
- Adaptér na straně hostitele a hostitele zobrazení vytvořené, můžete použít hostitelskou aplikaci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] modelu doplňku otevřete kanál a získat zobrazení hostitele doplňku. Tyto kroky jsou uvedeny v následujícím kódu.  
+ Adaptér na straně hostitele a hostitele zobrazení vytvořené hostitelská aplikace pomocí modelu doplňku rozhraní .NET Framework k otevření kanálu a získat zobrazení hostitele doplňku. Tyto kroky jsou uvedeny v následujícím kódu.  
 
  Hostitelská aplikace používá typické kódu v modelu doplňku rozhraní .NET Framework aktivovat doplněk, který implicitně vrátí zobrazení hostitele do hostitelské aplikace. Hostitelská aplikace následně zobrazí zobrazení hostitele (což je <xref:System.Windows.Controls.UserControl>) z <xref:System.Windows.Controls.Grid>.  
   

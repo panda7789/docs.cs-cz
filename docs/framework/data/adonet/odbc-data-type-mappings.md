@@ -2,17 +2,17 @@
 title: Mapování datových typů ODBC
 ms.date: 03/30/2017
 ms.assetid: 43c35d32-831d-480f-a150-78f7e869d17f
-ms.openlocfilehash: 8165ab933352394e29cbe93a9e8ba64267f8ae60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 51090ede73710afedf74e1d2b8b5363337426279
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772213"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584534"
 ---
 # <a name="odbc-data-type-mappings"></a>Mapování datových typů ODBC
-V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typu pro typy dat od zprostředkovatele dat .NET Framework pro ODBC (<xref:System.Data.Odbc>). Zadaný přístupové metody pro <xref:System.Data.Odbc.OdbcDataReader> jsou také uvedeny.  
+V následující tabulce jsou uvedeny odvozený typ rozhraní .NET Framework pro datové typy ze zprostředkovatele dat .NET Framework pro ODBC (<xref:System.Data.Odbc>). Zadaný přístupové metody pro <xref:System.Data.Odbc.OdbcDataReader> jsou také uvedeny.  
   
-|Typ rozhraní ODBC|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Typ|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zadaný přístupový objekt|  
+|Typ rozhraní ODBC|Typ rozhraní .NET Framework|Zadaný přístupový objekt rozhraní .NET framework|  
 |---------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|  
 |SQL_BIGINT|Int64|GetInt64()|  
 |SQL_BINARY|Byte[]|GetBytes()|  

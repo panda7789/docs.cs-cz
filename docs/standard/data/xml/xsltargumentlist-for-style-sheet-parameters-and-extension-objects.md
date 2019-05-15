@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3afbffcbbaa5e8398a9ab10c762e60305cfc164b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 11cf0b694d75836ad903edeafc79a55ec4612b45
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615242"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586462"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pro parametry šablon stylů a objektů rozšíření
 <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.  
@@ -36,7 +36,7 @@ ms.locfileid: "64615242"
 ## <a name="xslt-style-sheet-parameters"></a>Parametry list Styl XSLT  
  Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody. Úplný název a obor názvů identifikátoru URI (Uniform Resource) jsou spojeny s parametrem objektu v daném čase.  
   
- Parametr objektu by měl odpovídat typu World Wide Web Consortium (W3C). V následující tabulce jsou uvedeny odpovídající typy W3C, ekvivalent [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] třídy (typ), a určuje, zda je typ W3C jazyk XML Path (XPath) nebo XSLT.  
+ Parametr objektu by měl odpovídat typu World Wide Web Consortium (W3C). Následující tabulka uvádí odpovídající typy W3C odpovídající třídy rozhraní .NET Framework (typ), a určuje, zda je typ W3C jazyk XML Path (XPath) nebo XSLT.  
   
 |Typ W3C|Ekvivalentní třída rozhraní .NET Framework (typ)|Výraz XPath typ nebo typ XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  

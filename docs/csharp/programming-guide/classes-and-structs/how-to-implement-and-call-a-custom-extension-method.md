@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: 2d3f6ec66a13638f0106537ad8b21bff801a53b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2fe07f8e4311417980caccc9c286b4f94c7ea994
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646472"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585949"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Postupy: Implementace a volání vlastní metody rozšíření (C# Průvodce programováním v)
 Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkoli typ .NET. Klientský kód můžete použít rozšiřující metody přidejte odkaz na knihovnu DLL, která je obsahuje, a přidáním [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktiva, která určuje obor názvů, ve kterém jsou definovány metody rozšíření.  
@@ -35,9 +35,6 @@ Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkol
  Následující příklad implementuje metodu rozšíření s názvem `WordCount` v `CustomExtensions.StringExtension` třídy. Metoda pracuje <xref:System.String> třídu, která je zadána jako první parametr metody. `CustomExtensions` Obor názvů se importují do oboru názvů aplikací a metoda je volána v rámci `Main` metody.  
   
  [!code-csharp[csProgGuideExtensionMethods#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#1)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento kód spustit, zkopírujte a vložte ho do jazyka Visual C# projekt konzolové aplikace, který nebyl vytvořen v sadě Visual Studio. Ve výchozím nastavení, tento projekt zaměřen na verzi 3.5 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], a obsahuje odkaz na System.Core.dll a `using` směrnice pro System.Linq. Pokud z projektu chybí jeden nebo více z těchto požadavků, můžete je přidat ručně.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Rozšiřující metody k dispozici žádná konkrétní zabezpečení ohrožení zabezpečení. Se nikdy slouží k zosobnění existující metody na typu, protože jsou vyřešeny všechny kolize názvů ve prospěch instance nebo statické metody definované v samotném typu. Rozšiřující metody nelze přístup k žádným privátním datům ve třídě rozšířené.  

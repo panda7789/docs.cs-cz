@@ -5,12 +5,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], about DataGridView control
 - data grids [Windows Forms], about data grids
 ms.assetid: 094498c3-a126-4a3f-83fe-f69e96c7717b
-ms.openlocfilehash: ca8268137f2a154c782388d0f13cdd02504cbb64
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8898f76971b6088fa8ca831961ea7f12e1ab4e6
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909270"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588835"
 ---
 # <a name="datagridview-control-technology-summary-windows-forms"></a>Souhrn technologie ovládacího prvku DataGridView (Windows Forms)
 Toto téma shrnuje informace o `DataGridView` ovládacího prvku a tříd, které podporují jeho použití.  
@@ -29,7 +29,7 @@ Toto téma shrnuje informace o `DataGridView` ovládacího prvku a tříd, kter�
  `BindingSource`  
   
 ## <a name="background"></a>Pozadí  
- Návrháře uživatelské rozhraní (UI) často někdy nutné uživatelům zobrazit data tabulky. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje několik způsobů, jak zobrazit data v tabulce nebo v mřížce. `DataGridView` Řízení představuje nejnovější vývoj tuto technologii pro aplikace Windows Forms.  
+ Návrháře uživatelské rozhraní (UI) často někdy nutné uživatelům zobrazit data tabulky. Rozhraní .NET Framework poskytuje několik způsobů, jak zobrazit data v tabulce nebo v mřížce. `DataGridView` Řízení představuje nejnovější vývoj tuto technologii pro aplikace Windows Forms.  
   
  `DataGridView` Ovládací prvek mohl zobrazit řádky dat z úložiště dat. Mnoho typů úložišť dat podporovaných. Úložiště dat může obsahovat jednoduché, netypové datové, jako je jednorozměrné pole, nebo může obsahovat typy dat, jako například <xref:System.Data.DataSet>. Další informace najdete v tématu [jak: Vytvoření vazby dat k Windows Forms DataGridView – ovládací prvek](how-to-bind-data-to-the-windows-forms-datagridview-control.md).  
   

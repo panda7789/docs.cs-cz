@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], exceptions during conversion
 - conversions [Visual Basic], widening
 ms.assetid: 058c3152-6c28-4268-af44-2209e774f0bd
-ms.openlocfilehash: 98702f2fb8f912b9503f3ccdad74e61ef097f617
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e2dbbd63be07a19c6e05c7ec8f94bdcd8f50c902
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600892"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586313"
 ---
 # <a name="widening-and-narrowing-conversions-visual-basic"></a>Rozšíření a zúžení převodů (Visual Basic)
 Což je důležité při převodu typu je, zda výsledkem převodu je v rozsahu cílového datového typu.  
@@ -93,7 +93,7 @@ Což je důležité při převodu typu je, zda výsledkem převodu je v rozsahu 
   
 - <xref:System.OverflowException> – (pouze integrálovými typy) Pokud převedená hodnota je příliš velký pro cílový typ  
   
- Pokud třída nebo struktura, definuje [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) sloužit jako operátor převodu na nebo z této třídě nebo struktuře, který `CType` lze vyvolat jakoukoli výjimku považuje za vhodné. Kromě toho, který `CType` může volat funkce jazyka Visual Basic nebo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody, které pak může vyvolat různé výjimky.  
+ Pokud třída nebo struktura, definuje [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) sloužit jako operátor převodu na nebo z této třídě nebo struktuře, který `CType` lze vyvolat jakoukoli výjimku považuje za vhodné. Kromě toho, který `CType` může volat funkce jazyka Visual Basic nebo metody rozhraní .NET Framework, které pak může vyvolat různé výjimky.  
   
 ## <a name="changes-during-reference-type-conversions"></a>Změny během převody typů odkazů  
  Převod z *odkazovat na typ* zkopíruje pouze ukazatel na hodnotu. Samotná hodnota není zkopírován ani změnit žádným způsobem. Jediné, co, která může měnit je datový typ proměnné, která uchovává ukazatel. V následujícím příkladu je datový typ převést z odvozené třídy se svou základní třídou, ale objekt, který je nyní přejděte obě proměnné se nezmění.  

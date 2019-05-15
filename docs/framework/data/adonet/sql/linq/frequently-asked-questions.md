@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: ba943a54fdfc71dc1eb2ee2ce9548dfb86070712
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4a41eac3d5b51936ebbae8d9e3dcf623da676bce
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64657063"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583474"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -168,7 +168,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="aptca"></a>APTCA  
  Otázka: Je System.Data.Linq označené k použití částečně důvěryhodným kódem?  
   
- A. Ano, knihovně System.Data.Linq.dll sestavení patří mezi ty [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] sestavení označená pomocí <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Bez tohoto označení, sestavení v [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] jsou určeny k použití jenom prostřednictvím plně důvěryhodného kódu.  
+ A. Ano, je sestavení knihovně System.Data.Linq.dll mezi tato sestavení rozhraní .NET Framework označené <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Bez označení sestavení v rozhraní .NET Framework jsou určeny k použití jenom prostřednictvím plně důvěryhodného kódu.  
   
  Hlavní scénáře v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pro povolení částečně důvěryhodný volající je umožnit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sestavení, které chcete získat přístup z webových aplikací, kde *důvěryhodnosti* konfigurace je střední.  
   

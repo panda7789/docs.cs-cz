@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: b8284f45d769f018655ee35a5f0b067703963634
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0cdca872e9e76b7491dc571209292a692a06d8f8
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034486"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583751"
 ---
 # <a name="dataadapter-parameters"></a>Parametry adaptéru dat
 <xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Vlastnost musí být nastavena dříve než zavoláte `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavena před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny s daty v <xref:System.Data.DataTable>. Například, pokud byl přidán počet řádků `InsertCommand` musí být nastavena dříve než zavoláte `Update`. Když `Update` zpracovává vložený, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá funkcím `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádku je předán `Command` objektu `Parameters` kolekce.  
@@ -39,7 +39,7 @@ parameter.SourceVersion = DataRowVersion.Original
  `Add` Metodu `Parameters` kolekce má název parametru, datový typ a velikost (Pokud je k dispozici na typ) a název <xref:System.Data.Common.DbParameter.SourceColumn%2A> z `DataTable`. Všimněte si, že <xref:System.Data.Common.DbParameter.SourceVersion%2A> z `@CustomerID` parametr je nastaven na `Original`. Zaručí se tak, že pokud byla změněna hodnota identifikační sloupec nebo sloupce se aktualizuje existující řádek ve zdroji dat v upraveném <xref:System.Data.DataRow>. V takovém případě `Original` hodnota řádku odpovídají aktuální hodnotu ve zdroji dat a `Current` hodnota řádku by obsahoval aktualizovanou hodnotu. `SourceVersion` Pro `@CompanyName` není nastaven parametr a použije výchozí `Current` řádek hodnotu.  
   
 > [!NOTE]
->  Pro obě `Fill` operací `DataAdapter` a `Get` metody `DataReader`, [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ je odvozen od typu vráceného z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb. Odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy a přístupové metody pro datové typy systému Microsoft SQL Server, technologie OLE DB a rozhraní ODBC jsou popsány v [mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md).  
+>  Pro obě `Fill` operací `DataAdapter` a `Get` metody `DataReader`, rozhraní .NET Framework typ je odvozen z typu se vrátil ze zprostředkovatele dat .NET Framework. Odvozené typy rozhraní .NET Framework a přístupové metody pro datové typy systému Microsoft SQL Server, technologie OLE DB a rozhraní ODBC jsou popsány v [mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md).  
   
 ## <a name="parametersourcecolumn-parametersourceversion"></a>Parameter.SourceColumn Parameter.SourceVersion  
  `SourceColumn` a `SourceVersion` může předávat jako argumenty, které mají `Parameter` konstruktoru nebo nastavte jako vlastnosti z existujícího `Parameter`. `SourceColumn` Je název <xref:System.Data.DataColumn> z <xref:System.Data.DataRow> kde hodnotu `Parameter` budou načítat. `SourceVersion` Určuje `DataRow` verze, která `DataAdapter` používá k načtení hodnoty.  

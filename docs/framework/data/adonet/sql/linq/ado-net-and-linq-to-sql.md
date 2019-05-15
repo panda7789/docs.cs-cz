@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
-ms.openlocfilehash: 10e60ebd71c4615354c25d3a61a04e9d12d7c800
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49f28acc5001d63e7a1f6a5bfe8cb3415311e379
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033823"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582746"
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET a LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řady technologií. Je založen na služby poskytované [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] modelu poskytovatele. Proto můžete kombinovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kódu s existujícím [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] aplikací a migrovat aktuální [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řešení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Následující obrázek poskytuje podrobný pohled vztahu.  
@@ -31,7 +31,7 @@ ms.locfileid: "62033823"
 ## <a name="transactions"></a>Transakce  
  Můžete zadat vaše <xref:System.Data.Linq.DataContext> s vlastní databázové transakci, pokud vaše aplikace už zahájila transakce a chcete, aby vaše <xref:System.Data.Linq.DataContext> zapojit.  
   
- Preferovanou metodu provádění transakcí pomocí [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] , je použít <xref:System.Transactions.TransactionScope> objektu. Pomocí tohoto přístupu můžete provést distribuované transakce, které fungují s databází a jiných prostředků rezidentní. Obory transakce vyžadovat několik prostředků ke spuštění. Se zvýšit úroveň sami na distribuované transakce pouze v případě, že existuje více připojení v rámci oboru transakce.  
+ Preferovanou metodu provádění transakcí pomocí rozhraní .NET Framework je použít <xref:System.Transactions.TransactionScope> objektu. Pomocí tohoto přístupu můžete provést distribuované transakce, které fungují s databází a jiných prostředků rezidentní. Obory transakce vyžadovat několik prostředků ke spuštění. Se zvýšit úroveň sami na distribuované transakce pouze v případě, že existuje více připojení v rámci oboru transakce.  
   
  [!code-csharp[DLinqAdoNet#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqAdoNet/cs/Program.cs#2)]
  [!code-vb[DLinqAdoNet#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqAdoNet/vb/Module1.vb#2)]  

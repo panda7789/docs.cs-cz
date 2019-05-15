@@ -1,18 +1,20 @@
 ---
 title: Co je nového v C# 8.0 – C# Průvodce
-description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
+description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: 16723894d87526972b692a098a57ef3726b252dd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dd4aca99a19134ed3ffff859c9c9554d4d480816
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754372"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557151"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
-Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již s verzí preview 2. Nové funkce přidané ve verzi preview 2 jsou:
+Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již. 
 
+- [Členy jen pro čtení](#readonly-members)
+- [Výchozí členy rozhraní](#default-interface-members)
 - [Porovnávání vzorů vylepšení](#more-patterns-in-more-places):
   * [Přepnout výrazy](#switch-expressions)
   * [Vlastnost vzory](#property-patterns)
@@ -21,17 +23,67 @@ Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již s verzí pr
 - [Pomocí deklarace](#using-declarations)
 - [Statická lokální funkce](#static-local-functions)
 - [Struktury ref uvolnitelné](#disposable-ref-structs)
-
-Následující funkce jazyka poprvé objevil v C# 8.0 ve verzi preview 1:
-
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní datové proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
 
 > [!NOTE]
-> Tento článek byl naposledy aktualizován pro C# 8.0 ve verzi preview 2.
+> Tento článek byl naposledy aktualizován pro C# 8.0 ve verzi preview 5.
 
 Zbývající část tohoto článku stručně popisuje tyto funkce. Pokud podrobné články jsou k dispozici, jsou k dispozici odkazy na tyto kurzy a přehledy.
+
+## <a name="readonly-members"></a>Členy jen pro čtení
+
+Můžete použít `readonly` modifikátor k libovolnému členovi struktury. Znamená to, že člen neprovede žádné změny stavu. Je podrobnější než použití `readonly` modifikátor `struct` deklarace.  Vezměte v úvahu následující proměnlivé struktury:
+
+```csharp
+public struct Point
+{
+    public double X { get; set; }
+    public double Y { get; set; }
+    public double Distance => Math.Sqrt(X * X + Y * Y);
+
+    public override string ToString() =>
+        $"({X}, {Y}) is {Distance} from the origin";
+}
+```
+
+Většina struktury, jako jsou `ToString()` metoda neprovede žádné změny stavu. Který může znamenat tak, že přidáte `readonly` modifikátoru deklarace `ToString()`:
+
+```csharp
+public readonly override string ToString() =>
+    $"({X}, {Y}) is {Distance} from the origin";
+```
+
+Předchozí změny generuje upozornění kompilátoru, protože `ToString` přistupuje `Distance` vlastnost, která není označena `readonly`:
+
+```console
+warning CS8656: Call to non-readonly member 'Point.Distance.get' from a 'readonly' member results in an implicit copy of 'this'
+```
+
+Kompilátor vás upozorní, když je potřeba vytvořit obranná kopie.  `Distance` Vlastnost nedojde ke změně stavu, takže toto upozornění můžete vyřešit tak, že přidáte `readonly` modifikátoru deklarace:
+
+```csharp
+public readonly double Distance => Math.Sqrt(X * X + Y * Y);
+```
+
+Všimněte si, že `readonly` Modifikátor je nezbytné na vlastnost jen pro čtení. Kompilátor nepředpokládá `get` přistupující objekty neprovádějte žádné změny stavu, je třeba deklarovat `readonly` explicitně. Kompilátor vynucuje pravidla, která `readonly` členy neprovádějte žádné změny stavu. Následující metoda nebude kompilovat, dokud neodeberete `readonly` modifikátor:
+
+```csharp
+public readonly void Translate(int xOffset, int yOffset)
+{
+    X += xOffset;
+    Y += yOffset;
+}
+```
+
+Tato funkce vám umožní zadat máte v úmyslu návrhu tak, aby kompilátor může vynutit a ujistěte se, optimalizace podle tohoto záměru.
+
+## <a name="default-interface-members"></a>Výchozí členy rozhraní
+
+Teď můžete přidat členy do rozhraní a poskytnout implementaci pro ty členy. Této funkci jazyka umožňuje autorům rozhraní API přidat metody do rozhraní v pozdějších verzích bez narušení zdroje nebo binární kompatibilitu s existující implementace rozhraní. Existujících implementací *dědit* výchozí implementaci. Tato funkce také umožňuje C# pro spolupráci s rozhraní API, která cílí na Android nebo Swift, které podporují podobné funkce. Výchozí členy rozhraní také povolit scénáře podobné funkci jazyka "vlastnosti".
+
+Výchozí členy rozhraní ovlivňuje mnoho scénářů a prvky jazyka. Naše první kurz se zabývá [aktualizace pomocí výchozí implementace rozhraní](../tutorials/default-interface-members-versions.md). Další kurzy a referenční aktualizace se chystají v čase pro obecné verze.
 
 ## <a name="more-patterns-in-more-places"></a>Další vzory na více místech
 
@@ -321,9 +373,15 @@ Můžete zkusit asynchronními datovými proudy sami v našem kurzu [vytvářen�
 
 Rozsahy a indexy poskytují stručné syntaxe pro zadání podrozsahů v poli, <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>.
 
-Můžete určit index **od konce** pomocí `^` znak před index. Indexování od konce spustí z pravidla, která `0..^0` Určuje celou oblast. K výpisu obsahu celého pole začnete *na první prvek*a pokračovat, dokud se *místo za posledním prvkem*. Představte si, že chování `MoveNext` metodu na enumerátor: vrátí hodnotu false v případě úspěšného posledním prvkem výčtu. Index `^0` znamená "end" `array[array.Length]`, nebo index, který následuje po posledním prvku. Jste obeznámeni s `array[2]` znamená elementu "2 od samého začátku". Nyní `array[^2]` znamená, že element "2 od konce". 
+Tato podpora jazyka spoléhá na dva nové typy a dvou nových operátorů.
+- <xref:System.Index?displayProperty=nameWithType> představuje index na sekvenci.
+- `^` Operátor, který určuje, že je index vzhledem ke konci sekvence.
+- <xref:System.Range?displayProperty=nameWithType> představuje rozsah dílčí sekvenci.
+- Operátor rozsahu (`..`), který určuje začátek a konec rozsahu, jako je operandy.
 
-Můžete zadat **rozsah** s **operátor rozsahu**: `..`. Například `0..^0` určuje celý rozsah pole: 0 od začátku až do, s výjimkou 0 od konce. Jeden z operandů může používat "z start" nebo "end". Kromě toho může vynechat jeden z operandů. Výchozí hodnoty jsou `0` pro počáteční index a `^0` end indexu.
+Začněme s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` Index je stejný jako `sequence[0]`. `^0` Index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]` nepodporuje. Pro libovolný počet `n`, index `^n` je stejný jako `sequence.Length - n`.
+
+Určuje oblast *start* a *koncové* rozsahu. Rozsahy jsou výhradní, to znamená *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
 
 Podívejme se na několik příkladů. Vezměte v úvahu následující pole označena s jeho index od samého začátku a konci:
 
@@ -342,8 +400,6 @@ var words = new string[]
     "dog"       // 8                   ^1
 };              // 9 (or words.Length) ^0
 ```
-
-Pojem "od začátku" a "z"konec posiluje indexu každého prvku, a rozsahy adres jsou uvedeny bez konec rozsahu. "Start" celého pole je první prvek. "End" celého pole *minulosti* poslední prvek.
 
 Můžete načíst poslední slovo s `^1` indexu:
 

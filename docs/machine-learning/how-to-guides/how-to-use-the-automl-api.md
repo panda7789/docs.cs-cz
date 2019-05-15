@@ -3,12 +3,12 @@ title: Jak používat ML.NET automatizované ML API
 description: Automatizované ML API ML.NET automatizuje proces vytváření modelu a generuje modelu připravené na nasazení. Další možnosti, které můžete použít ke konfiguraci automatické strojového učení úlohy.
 ms.date: 04/24/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 23410a11f94ab6052ab64bd8968f0ed127441898
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: b05b6ed7c66062b28aaf634913a9598602b62498
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066178"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557875"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Jak používat ML.NET automatizované machine learning API
 
@@ -42,17 +42,22 @@ Před vytvořením experiment, určete druh problém machine learning, který ch
 Vytvořte nastavení testu pro typ úlohy určené ML:
 
 * Binární klasifikace
-```csharp
-var experimentSettings = new BinaryExperimentSettings();
-```
+
+  ```csharp
+  var experimentSettings = new BinaryExperimentSettings();
+  ```
+
 * Klasifikace víc tříd
-```csharp
-var experimentSettings = new MulticlassExperimentSettings();
-```
+
+  ```csharp
+  var experimentSettings = new MulticlassExperimentSettings();
+  ```
+
 * Regrese
-```csharp
-var experimentSettings = new RegressionExperimentSettings();
-```
+
+  ```csharp
+  var experimentSettings = new RegressionExperimentSettings();
+  ```
 
 ## <a name="configure-experiment-settings"></a>Konfigurace nastavení testu
 

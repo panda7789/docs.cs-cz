@@ -2,18 +2,18 @@
 title: Průvodce programováním (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4b1ffd10-ab81-4a0d-a0ca-e9876478d924
-ms.openlocfilehash: d71fb2d0365199bf89b0cfbd05b614ebd7634219
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8141d915b4262bdb66b0b2d9acc4c549956cdbec
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61682167"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585772"
 ---
 # <a name="programming-guide-linq-to-xml-c"></a>Průvodce programováním (LINQ to XML) (C#)
 Tato část obsahuje rámcové a postupy: informace o programování v jazyce [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
 ## <a name="who-should-read-this-documentation"></a>Tuto dokumentaci kdo by měl číst  
- Tato dokumentace, zaměřuje vývojáři, kteří již znají C# a některé základní aspekty [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  
+ Tato dokumentace, zaměřuje vývojáři, kteří již znají C# a některé základní aspekty rozhraní .NET Framework.  
   
  Cílem této dokumentace je [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] snadno se používá pro všechny druhy vývojáři. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] usnadňuje programování XML. Nemusíte být vývojář odborné jeho použití.  
   

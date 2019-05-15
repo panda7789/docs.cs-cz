@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-ms.openlocfilehash: 8e793fc130252caf91d9b1c15b41beba1cc8ae1f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f8d399859e4f861158ab74db9ed410aec280dbe2
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587602"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586685"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Výčtové typy v kontraktech dat
 Výčty lze vyjádřit v datovém modelu kontraktu. Toto téma vás provede několik příkladů, které popisují programovací model.  
@@ -39,7 +39,7 @@ Výčty lze vyjádřit v datovém modelu kontraktu. Toto téma vás provede něk
   
  Například můžete použít `CarConditionEnum` na straně odesílání a `CarConditionWithNumbers` na straně příjmu. I když na odesílající straně používá hodnotu "1" pro `Used` a přijímající straně používá, je hodnota "20" reprezentaci XML pro `<condition>Used</condition>` pro obě strany.  
   
- Chcete-li být součástí kontraktu dat, musíte použít <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], můžete vždy použít zvláštní hodnota 0 (nula) na výčet, který je zároveň výchozí hodnotu pro libovolný výčet. Ale i tento speciální nulovou hodnotu nejde serializovat, pokud je označené atributem <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut.  
+ Chcete-li být součástí kontraktu dat, musíte použít <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut. V rozhraní .NET Framework můžete vždy použít zvláštní hodnota 0 (nula) na výčet, který je zároveň výchozí hodnotu pro libovolný výčtu. Ale i tento speciální nulovou hodnotu nejde serializovat, pokud je označené atributem <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut.  
   
  Existují dvě výjimky:  
   

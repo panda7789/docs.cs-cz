@@ -2,20 +2,17 @@
 title: Glosář strojového učení
 description: Glosář důležité terminologie strojového učení, které jsou užitečné při vytváření vlastních modelů ML.NET.
 ms.custom: seodec18
-ms.date: 03/05/2019
-ms.openlocfilehash: a3f94f2dedbe620c4d5c2bed2af99471572a91e5
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.date: 05/09/2019
+ms.openlocfilehash: 7d098dc9d3dc6cb7bb08b5689b50afff01ba1d7f
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063668"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557984"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Machine learning Glosář termínů důležité
 
 V následujícím seznamu je kompilace podmínek důležité machine learning, které jsou užitečné při vytváření vlastních modelů ML.NET.
-
-> [!NOTE]
-> Tato dokumentace odkazuje na ML.NET, která je aktuálně ve verzi Preview. Materiál může být mohou změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
 ## <a name="accuracy"></a>Přesnost
 
@@ -56,7 +53,7 @@ Data je zásadním jakékoli strojového učení aplikace. V ML.NET data repreze
 
 ## <a name="estimator"></a>Odhad
 
-Třída v ML.NET, který implementuje <xref:Microsoft.ML.IEstimator`1> rozhraní.
+Třída v ML.NET, který implementuje <xref:Microsoft.ML.IEstimator%601> rozhraní.
 
 Odhadu je specifikace transformace (transformace přípravy dat a strojové učení transformace trénování modelu). Odhady je možné zřetězit do kanálu transformací. Parametry estimator nebo kanál odhady zkušenosti při <xref:Microsoft.ML.IEstimator`1.Fit*> je volána. Výsledek <xref:Microsoft.ML.IEstimator`1.Fit*> je [Transformer](#transformer).
 

@@ -2,18 +2,18 @@
 title: Přehled Entity Framework
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: a6649744c4ad719c760ebc6ce5d97b51815c8ee6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8c870c1990da9b86515dc933716cd628f63eb0a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034048"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583845"
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je sada technologií ADO.NET, které podporují vývoj softwarových aplikací orientovaných na data. Architektům a vývojářům aplikací, orientovaných na data mají za s potřebou dosáhnout velmi odlišné dva cíle. Musí modelují entit, vztahy a logiky z obchodních problémů, které jsou řešení a musí také pracovat datových modulů, které umožňuje ukládat a načítat data. Data může zahrnovat více úložných systémů, každý s vlastní protokoly dokonce i aplikací, které pracují s jediným úložištěm systému musí zajistit rovnováhu mezi požadavky na systém úložiště podle požadavků zápisu aplikace efektivnější a udržovatelný kód.
 
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje vývojářům pracovat s daty ve formě specifického pro doménu objektů a vlastností, jako je například Zákazníci a adresy zákazníků, bez nutnosti starat podkladové databázové tabulky a sloupce, kde jsou tato data uložena . S [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], když uživatelé s daty a můžete vytvářet a udržovat aplikace orientované na data s méně kódu než v tradičních aplikacích mohou vývojáři pracovat na vyšší úrovni abstrakce. Protože [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] je součástí [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)], [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace se můžou spouštět na libovolném počítači, na kterém [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1 je nainstalována.
+[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje vývojářům pracovat s daty ve formě specifického pro doménu objektů a vlastností, jako je například Zákazníci a adresy zákazníků, bez nutnosti starat podkladové databázové tabulky a sloupce, kde jsou tato data uložena . S [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], když uživatelé s daty a můžete vytvářet a udržovat aplikace orientované na data s méně kódu než v tradičních aplikacích mohou vývojáři pracovat na vyšší úrovni abstrakce. Vzhledem k tomu, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] je součástí rozhraní .NET Framework [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace se můžou spouštět na libovolném počítači, na kterém je nainstalováno rozhraní .NET Framework počínaje verzí 3.5 SP1.
 
 ## <a name="give-life-to-models"></a>Životnost Rozdat modelů
  Návrh dlouhodobě a běžné přístup při vytváření aplikace nebo služba je dělení aplikace nebo služby do tří částí: doménový model, modelu logické a fyzické modelu. Doménový model definuje entity a relace v systému, který je právě modelovat. Logický model pro relační databázi normalizuje entity a relace do tabulky s omezeními cizího klíče. Modelem fyzické adresy možnosti modulu konkrétní data tak, že zadáte podrobnosti o úložišti, jako je například vytváření oddílů a indexování.

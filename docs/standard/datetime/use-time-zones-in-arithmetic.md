@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 83dd898d-1338-415d-8cd6-445377ab7871
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 053ca2d10deadf58d5bb8b4628fb5dee815d82c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3d504aa9ad7d6e4084192a2434ac408e8fa7a041
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026494"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588537"
 ---
 # <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů
 
@@ -59,8 +59,6 @@ Všimněte si, že pokud je toto přidání je jednoduše provedeno na <xref:Sys
 ## <a name="compiling-the-code"></a>Kompilování kódu
 
 Tento příklad vyžaduje:
-
-* Aby byl odkaz na System.Core.dll přidán do projektu.
 
 * Že <xref:System> obor názvů je importovat s `using` – příkaz (vyžadováno za kód jazyka C#).
 

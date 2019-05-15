@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: ea5797cb8f2fd0654d9facb636bc857eeb8e5aad
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: a4573575805ad45d251a900f304b8cb01654a39b
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063699"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65558001"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -190,7 +190,7 @@ V každé katalogu je sadu rozšiřujících metod. Podívejme se na použití r
         .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "Price", maximumNumberOfIterations: 100);
 ```
 
-V tomto fragmentu kódu `Concatenate` a `Sdca` jsou obě metody v katalogu. Každá vytvořit [IEstimator](xref:Microsoft.ML.IEstimator`1) objekt, který se připojí k kanálu.
+V tomto fragmentu kódu `Concatenate` a `Sdca` jsou obě metody v katalogu. Každá vytvořit [IEstimator](xref:Microsoft.ML.IEstimator%601) objekt, který se připojí k kanálu.
 
 Objekty v tomto okamžiku se vytvoří pouze. Žádná spuštění se stalo.
 

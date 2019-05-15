@@ -8,19 +8,19 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: b603e81a342652a6639f54a78fb998cda5fdc35a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49c7ceb431e9ab59b47e3b8b912e2881aeeef6c2
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972416"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583562"
 ---
 # <a name="application-settings-overview"></a>Přehled nastavení aplikace
 Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace i vaše uživatele.  
   
  Funkce nastavení aplikace Windows Forms umožňuje snadno vytvářet, ukládat a spravovat vlastní aplikace a preference uživatelů v klientském počítači. S nastavením aplikace Windows Forms lze uložit pouze data aplikací, například databázové připojovací řetězce, ale také uživatelská data, jako je například uživatelova aplikace. Pomocí sady Visual Studio nebo vlastní spravovaný kód, můžete vytvořit nové nastavení, přečtěte si je z a zapisovat na disku a svázat ho s vlastnostmi formuláře a ověřit nastavení data před načítání a ukládání.  
   
- Nastavení aplikace umožňuje vývojářům pro uložení stavu ve svých aplikacích pomocí velmi málo vlastního kódu a je náhradou za dynamické vlastnosti v předchozích verzích [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Nastavení aplikace obsahuje mnoho vylepšení přes dynamické vlastnosti, které jsou jen pro čtení, s pozdní vazbou a vyžadovat další vlastní programování. Dynamické vlastnosti třídy mají byla zachována ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)], ale jsou právě třídy prostředí, které dynamicky balí třídy nastavení aplikace.  
+ Nastavení aplikace umožňuje vývojářům pro uložení stavu ve svých aplikacích pomocí velmi málo vlastního kódu a je náhradou za dynamické vlastnosti v předchozích verzích rozhraní .NET Framework. Nastavení aplikace obsahuje mnoho vylepšení přes dynamické vlastnosti, které jsou jen pro čtení, s pozdní vazbou a vyžadovat další vlastní programování. Dynamické vlastnosti třídy mají byla zachována ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)], ale jsou právě třídy prostředí, které dynamicky balí třídy nastavení aplikace.  
   
 ## <a name="what-are-application-settings"></a>Co jsou nastavení aplikace?  
  Vaše aplikace Windows Forms se často vyžadují data, která jsou kritická pro spuštění aplikace, ale který nechcete zahrnout přímo v kódu vaší aplikace. Pokud vaše aplikace používá webovou službu nebo databázový server, můžete k ukládání příslušných informací v samostatném souboru, takže můžete v budoucnu ho změnit bez opětovné kompilace. Podobně vaše aplikace můžou vyžadovat ukládání dat, která je specifická pro aktuálního uživatele. Většina aplikací, například má uživatelské předvolby, přizpůsobte vzhled a chování aplikace.  
@@ -34,7 +34,7 @@ Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace 
  Vlastní ovládací prvky můžete také uložit své vlastní nastavení implementací <xref:System.Configuration.IPersistComponentSettings> rozhraní, která zveřejňuje <xref:System.Configuration.IPersistComponentSettings.SaveSettings%2A> metody. Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládací prvek implementuje toto rozhraní se uložit pozici panelů nástrojů a nástrojů položek mezi jednotlivými relacemi aplikace. Další informace o vlastních ovládacích prvků a nastavení aplikací, najdete v části [nastavení aplikace pro vlastní ovládací prvky](application-settings-for-custom-controls.md).  
   
 ## <a name="limitations-of-application-settings"></a>Omezení nastavení aplikace  
- Nastavení aplikace nelze použít v nespravované aplikaci, která hostuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Nastavení nebude fungovat v těchto prostředích, jako Visual Studio doplňků, C++ pro systém Microsoft Office, řídit hostování v aplikaci Internet Explorer nebo doplňky aplikace Microsoft Outlook a projekty.  
+ Nastavení aplikace v nespravované aplikaci nelze použít, který je hostitelem rozhraní .NET Framework. Nastavení nebude fungovat v těchto prostředích, jako Visual Studio doplňků, C++ pro systém Microsoft Office, řídit hostování v aplikaci Internet Explorer nebo doplňky aplikace Microsoft Outlook a projekty.  
   
  Momentálně nelze vázat na některé vlastnosti v modelu Windows Forms. Nejdůležitějším příkladem je <xref:System.Windows.Forms.Form.ClientSize%2A> vlastnosti, jako vazbu k této vlastnosti by způsobit nepředvídatelné chování za běhu. Tyto potíže obvykle můžete obejít tak ukládání a načítání tato nastavení programově.  
   

@@ -9,17 +9,17 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
-ms.openlocfilehash: 43b9ca115f3eeae7a28d8ed8a0642ad6e5439bd8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a14ee9e5916133be3979650055cf3e57899a4cca
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603696"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591797"
 ---
 # <a name="schema-import-and-export"></a>Import a export schémat
-Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. `DataContractSerializer` Překládá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a data XML (v obou směrech). Kromě samotného serializátor zahrnuje WCF přidružené schéma importu a exportu mechanismy schématu. *Schéma* je formální, přesné a který je strojově čitelný popis tvar XML, který vytvoří serializátor nebo, který deserializátor může získat přístup. WCF používá World Wide Web Consortium (W3C) schématu XML definice jazyk (XSD) jako její znázornění schématu je široce vzájemná spolupráce s mnoha platforem třetích stran.  
+Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. `DataContractSerializer` Překládá objekty rozhraní .NET Framework a jazyka XML (v obou směrech). Kromě samotného serializátor zahrnuje WCF přidružené schéma importu a exportu mechanismy schématu. *Schéma* je formální, přesné a který je strojově čitelný popis tvar XML, který vytvoří serializátor nebo, který deserializátor může získat přístup. WCF používá World Wide Web Consortium (W3C) schématu XML definice jazyk (XSD) jako její znázornění schématu je široce vzájemná spolupráce s mnoha platforem třetích stran.  
   
- Komponentu import schématu <xref:System.Runtime.Serialization.XsdDataContractImporter>, trvá dokument schématu XSD a generuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] třídy (obvykle datových tříd smlouvy) tak, aby serializovaná forms odpovídají dané schéma.  
+ Komponentu import schématu <xref:System.Runtime.Serialization.XsdDataContractImporter>, trvá dokument schématu XSD a generuje rozhraní .NET Framework třídy (obvykle datových tříd smlouvy) tak, aby serializovaná forms odpovídají dané schéma.  
   
  Například následující fragment schématu:  
   
@@ -53,7 +53,7 @@ Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:Syst
   
  Další informace najdete v tématu [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Pokud schéma není v souladu s pravidly kontraktu dat, použijte jiný Serializační stroj. Například <xref:System.Xml.Serialization.XmlSerializer> používá vlastní mechanismus samostatné schéma importu. Je také speciální import režim, ve kterém je rozbalená oblast nepodporuje schéma. Další informace najdete v části o generování <xref:System.Xml.Serialization.IXmlSerializable> napíše [import schématu pro generování třídy](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
   
- `XsdDataContractExporter` Podporuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, které mohou serializovat s příznakem `DataContractSerializer`. Další informace najdete v tématu [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Mějte na paměti Toto schéma vygenerované pomocí `XsdDataContractExporter` je obvykle platný data, která `XsdDataContractImporter` můžete použít (Pokud <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> se používá k úpravě schématu).  
+ `XsdDataContractExporter` Podporuje všechny typy rozhraní .NET Framework, které mohou serializovat s příznakem `DataContractSerializer`. Další informace najdete v tématu [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Mějte na paměti Toto schéma vygenerované pomocí `XsdDataContractExporter` je obvykle platný data, která `XsdDataContractImporter` můžete použít (Pokud <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> se používá k úpravě schématu).  
   
  Další informace o používání <xref:System.Runtime.Serialization.XsdDataContractImporter>, naleznete v tématu [import schématu pro generování třídy](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
   

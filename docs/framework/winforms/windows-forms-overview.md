@@ -5,12 +5,12 @@ helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-ms.openlocfilehash: 5eee8b4b046bd4d3f9c71b692f4bac3dd6bcea2c
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: e9d117b272cea8ebb96dc579fa1d8faf65d42c45
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211786"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583461"
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 
@@ -22,7 +22,7 @@ Následující přehled popisuje výhody inteligentní klientské aplikace, hlav
 
 ### <a name="build-rich-interactive-user-interfaces"></a>Vytváření bohatých, interaktivních uživatelských rozhraní
 
- Windows Forms je inteligentní klientské technologie pro [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], sadu spravované knihovny, které zjednodušují běžné úkoly v aplikaci jako je čtení a zápis do systému souborů. Při použití vývojového prostředí, jako je Visual Studio můžete vytvořit Windows Forms chytrých klientských aplikací, které zobrazují informace, žádejte vstup od uživatele a komunikovat se vzdálenými počítači přes síť.
+ Windows Forms je technologie inteligentní klienta pro rozhraní .NET Framework, sadu spravované knihovny, které zjednodušují běžné úkoly v aplikaci jako je čtení a zápis do systému souborů. Při použití vývojového prostředí, jako je Visual Studio můžete vytvořit Windows Forms chytrých klientských aplikací, které zobrazují informace, žádejte vstup od uživatele a komunikovat se vzdálenými počítači přes síť.
 
  Ve Windows Forms *formuláře* je vizuální povrch, na kterém můžete zobrazit informace pro uživatele. Obvykle vytvoříte aplikace Windows Forms přidáním ovládacích prvků do formulářů a vývoj odpovědi na akce uživatele, jako je například kliknutí myší nebo stisknutí kláves. A *ovládací prvek* je prvek diskrétní uživatelského rozhraní (UI), která zobrazuje data nebo přijímá vstupní data.
 
@@ -90,7 +90,7 @@ Když aktualizujete aplikaci, můžete publikovat nový manifest nasazení a nov
 
 ### <a name="other-controls-and-features"></a>Další ovládací prvky a funkce
 
-Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úkoly, rychlý a snadný, jako třeba podporu pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho Windows Forms závisí na špičkové zabezpečení systému [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. S tímto systémem můžete uvolnit bezpečnější aplikací pro vaše zákazníky.
+Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úkoly, rychlý a snadný, jako třeba podporu pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho Windows Forms závisí na systému robustní zabezpečení rozhraní .NET Framework. S tímto systémem můžete uvolnit bezpečnější aplikací pro vaše zákazníky.
 
 #### <a name="implement-other-controls-and-features"></a>Implementovat další ovládací prvky a funkce
 

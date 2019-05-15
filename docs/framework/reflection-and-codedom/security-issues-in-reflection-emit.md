@@ -13,15 +13,15 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7609c88b088b9386201f5ac5725d16f4c5f11071
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b6adbe4e5c82d5f886fcffd5ab272a337c377395
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591390"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586125"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje tři způsoby, jak posílat Microsoftu zprostředkující language (MSIL), každý s vlastní problémy se zabezpečením:  
+Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsoft intermediate language (MSIL), každý s vlastní problémy se zabezpečením:  
   
 - [Dynamická sestavení](#Dynamic_Assemblies)  
   
@@ -32,7 +32,7 @@ ms.locfileid: "64591390"
  Bez ohledu na způsob generování dynamických kódu spouštění generovaný kód vyžaduje všechna oprávnění, které jsou vyžadovány typy a metody, které používá generovaného kódu.  
   
 > [!NOTE]
->  Oprávnění, které jsou požadovány pro odráží v kódu a vytváření kódu se změnila s následných verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Zobrazit [informace o verzi](#Version_Information)dále v tomto tématu.  
+>  S následných verzích rozhraní .NET Framework došlo ke změně oprávnění, které jsou požadovány pro odráží v kódu a vytváření kódu. Zobrazit [informace o verzi](#Version_Information)dále v tomto tématu.  
   
 <a name="Dynamic_Assemblies"></a>   
 ## <a name="dynamic-assemblies"></a>Dynamická sestavení  
@@ -141,17 +141,17 @@ ms.locfileid: "64591390"
 ## <a name="version-information"></a>Informace o verzi  
  Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], zásady zabezpečení pro celý počítač je odstraněny a změní výchozí mechanismus pro vynucení transparentnosti zabezpečení. Zobrazit [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
- Počínaje [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při generování dynamických sestavení a dynamické metody. Tento příznak se vyžaduje ve všech předchozích verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+ Počínaje [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při generování dynamických sestavení a dynamické metody. Tento příznak je potřeba ve všech dřívějších verzích rozhraní .NET Framework.  
   
 > [!NOTE]
->  <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení `FullTrust` a `LocalIntranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto v dřívějších verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], knihovnu je možné s Internetová oprávnění pouze v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] Umožňuje kód, aby byly vypuštěny ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovny, které emitují kód transparentní z hlediska zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje úlohu psaní zabezpečené knihovny.  
+>  <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení `FullTrust` a `LocalIntranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto v dřívějších verzích rozhraní .NET Framework, knihovnu je možné s Internetová oprávnění pouze v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] Umožňuje kód, aby byly vypuštěny ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovny, které emitují kód transparentní z hlediska zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje úlohu psaní zabezpečené knihovny.  
   
- Kromě toho [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k neveřejným typům a členům z částečně důvěryhodného dynamických metod. Starší verze [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přístup k neveřejným typům a členům; jde o oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
+ Kromě toho [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k neveřejným typům a členům z částečně důvěryhodného dynamických metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přístup k neveřejným typům a členům; jde o oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
   
  Nakonec [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] zavádí anonymně hostované metody.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Získání informací o typech a členech  
- Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], žádná oprávnění nejsou vyžadována k získání informací o neveřejným typům a členům. Reflexe slouží k získání informací potřebných k emitování dynamické metody. Například <xref:System.Reflection.MethodInfo> objekty se používají ke generování volání metod. Starší verze [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] vyžadují <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak. Další informace najdete v tématu [Security Considerations for Reflection](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
+ Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], žádná oprávnění nejsou vyžadována k získání informací o neveřejným typům a členům. Reflexe slouží k získání informací potřebných k emitování dynamické metody. Například <xref:System.Reflection.MethodInfo> objekty se používají ke generování volání metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak. Další informace najdete v tématu [Security Considerations for Reflection](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
   
 ## <a name="see-also"></a>Viz také:
 
