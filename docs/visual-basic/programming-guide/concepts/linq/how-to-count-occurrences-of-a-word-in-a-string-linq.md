@@ -2,17 +2,17 @@
 title: 'Postupy: Počet výskytů slova v řetězci (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: bc367e46-f7cc-45f9-936f-754e661b7bb9
-ms.openlocfilehash: b3d34503e87aff1180dca4cb8233d668d35b0255
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2292b0b943eefb5e837256f273db73699de30a2d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051738"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593213"
 ---
-# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-visual-basic"></a><span data-ttu-id="47a7a-102">Postupy: Počet výskytů slova v řetězci (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="47a7a-102">How to: Count Occurrences of a Word in a String (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="47a7a-103">Tento příklad ukazuje, jak můžete počítat výskyty zadaného slova v řetězci dotazu LINQ.</span><span class="sxs-lookup"><span data-stu-id="47a7a-103">This example shows how to use a LINQ query to count the occurrences of a specified word in a string.</span></span> <span data-ttu-id="47a7a-104">Všimněte si, že počet, nejprve provést <xref:System.String.Split%2A> metoda je volána k vytvoření pole slov.</span><span class="sxs-lookup"><span data-stu-id="47a7a-104">Note that to perform the count, first the <xref:System.String.Split%2A> method is called to create an array of words.</span></span> <span data-ttu-id="47a7a-105">Je snížení výkonu <xref:System.String.Split%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="47a7a-105">There is a performance cost to the <xref:System.String.Split%2A> method.</span></span> <span data-ttu-id="47a7a-106">Pokud je počet slov pouze operace s řetězci, měli byste zvážit použití <xref:System.Text.RegularExpressions.Regex.Matches%2A> nebo <xref:System.String.IndexOf%2A> metody místo.</span><span class="sxs-lookup"><span data-stu-id="47a7a-106">If the only operation on the string is to count the words, you should consider using the <xref:System.Text.RegularExpressions.Regex.Matches%2A> or <xref:System.String.IndexOf%2A> methods instead.</span></span> <span data-ttu-id="47a7a-107">Ale pokud výkon není kritický problém nebo jste už rozdělili věty nad ním provádět jiné typy dotazů, pak je vhodné zprostředkovatel LINQ slouží pro počet slov nebo frází také.</span><span class="sxs-lookup"><span data-stu-id="47a7a-107">However, if performance is not a critical issue, or you have already split the sentence in order to perform other types of queries over it, then it makes sense to use LINQ to count the words or phrases as well.</span></span>  
+# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-visual-basic"></a><span data-ttu-id="171af-102">Postupy: Počet výskytů slova v řetězci (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="171af-102">How to: Count Occurrences of a Word in a String (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="171af-103">Tento příklad ukazuje, jak můžete počítat výskyty zadaného slova v řetězci dotazu LINQ.</span><span class="sxs-lookup"><span data-stu-id="171af-103">This example shows how to use a LINQ query to count the occurrences of a specified word in a string.</span></span> <span data-ttu-id="171af-104">Všimněte si, že počet, nejprve provést <xref:System.String.Split%2A> metoda je volána k vytvoření pole slov.</span><span class="sxs-lookup"><span data-stu-id="171af-104">Note that to perform the count, first the <xref:System.String.Split%2A> method is called to create an array of words.</span></span> <span data-ttu-id="171af-105">Je snížení výkonu <xref:System.String.Split%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="171af-105">There is a performance cost to the <xref:System.String.Split%2A> method.</span></span> <span data-ttu-id="171af-106">Pokud je počet slov pouze operace s řetězci, měli byste zvážit použití <xref:System.Text.RegularExpressions.Regex.Matches%2A> nebo <xref:System.String.IndexOf%2A> metody místo.</span><span class="sxs-lookup"><span data-stu-id="171af-106">If the only operation on the string is to count the words, you should consider using the <xref:System.Text.RegularExpressions.Regex.Matches%2A> or <xref:System.String.IndexOf%2A> methods instead.</span></span> <span data-ttu-id="171af-107">Ale pokud výkon není kritický problém nebo jste už rozdělili věty nad ním provádět jiné typy dotazů, pak je vhodné zprostředkovatel LINQ slouží pro počet slov nebo frází také.</span><span class="sxs-lookup"><span data-stu-id="171af-107">However, if performance is not a critical issue, or you have already split the sentence in order to perform other types of queries over it, then it makes sense to use LINQ to count the words or phrases as well.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="47a7a-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="47a7a-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="171af-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="171af-108">Example</span></span>  
   
 ```vb  
 Class CountWords  
@@ -57,9 +57,9 @@ End Class
 ' 3 occurrence(s) of the search term "data" were found.  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="47a7a-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="47a7a-109">Compiling the Code</span></span>  
- <span data-ttu-id="47a7a-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="47a7a-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="171af-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="171af-109">Compiling the Code</span></span>  
+<span data-ttu-id="171af-110">Vytvoření projektu aplikace konzoly VB.NET, pomocí `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="171af-110">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="47a7a-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="47a7a-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="171af-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="171af-111">See also</span></span>
 
-- [<span data-ttu-id="47a7a-112">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="47a7a-112">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="171af-112">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="171af-112">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

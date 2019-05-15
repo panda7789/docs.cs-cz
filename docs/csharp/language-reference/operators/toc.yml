@@ -13,14 +13,14 @@
     - name: Operátory rovnosti
       href: equality-operators.md
       displayName: '==, !='
-    - name: '[] – operátor'
-      href: index-operator.md
+    - name: Operátory porovnání
+      href: comparison-operators.md
+      displayName: '>, <, >=, <=, greater, less'
+    - name: Operátory pro přístup k členům
+      href: member-access-operators.md
+      displayName: '., [], ?., ?[], (), indexer, null-conditional, invocation'
     - name: () – operátor
       href: invocation-operator.md
-    - name: . Operátor
-      href: member-access-operator.md
-    - name: '?. a ?[] – operátory'
-      href: null-conditional-operators.md
     - name: ':: Operátor'
       href: namespace-alias-qualifer.md
     - name: + Operátor
@@ -33,16 +33,8 @@
       href: and-operator.md
     - name: = – operátor
       href: assignment-operator.md
-    - name: < – operátor
-      href: less-than-operator.md
-    - name: '> Operátor'
-      href: greater-than-operator.md
     - name: '?: Operátor'
       href: conditional-operator.md
-    - name: <= – operátor
-      href: less-than-equal-operator.md
-    - name: '>= – operátor'
-      href: greater-than-equal-operator.md
     - name: += – operátor
       href: addition-assignment-operator.md
     - name: '-= – operátor'
