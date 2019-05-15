@@ -2,12 +2,12 @@
 title: Fronty a spolehlivé relace
 ms.date: 03/30/2017
 ms.assetid: 7e794d03-141c-45ed-b6b1-6c0e104c1464
-ms.openlocfilehash: d6b1e62e2b0f91856867128c2c0695ab0bdf1c8e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7a60e6f92f6875b6fb446d29abc7d858bfdefe73
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643535"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557160"
 ---
 # <a name="queues-and-reliable-sessions"></a>Fronty a spolehlivé relace
 Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), které implementují spolehlivé zasílání zpráv. Témata obsažené v této části popisují funkce spolehlivé zasílání zpráv WCF.  
@@ -31,7 +31,7 @@ Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), 
   
  Spolehlivé relace poskytují spolehlivé zprávy s nízkou latencí přenosy. Poskytují pro zprávy protokolu SOAP přes všechny proxy servery nebo prostředníci, ekvivalent jaké TCP poskytuje pro pakety přes mosty IP. Další informace o spolehlivých relací najdete v tématu [spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
   
-### <a name="queues"></a>fronty  
+## <a name="queues"></a>fronty  
  Fronty ve WCF poskytují obě reliable přenos zpráv a oddělení mezi zdroje a cíle za cenu vysokou latenci. Ve frontě WCF je nástavbou komunikaci služby Řízení front zpráv (MSMQ).  
   
  Služba MSMQ je dodáván jako možnost s Windows, na kterém běží jako služba NT. Zaznamenává zprávy pro předávání v přenosové frontě jménem zdroji a doručí ho do cílové fronty. Cílová fronta přijímá zprávy jménem cíl pro pozdější doručení pokaždé, když cíl žádosti o zprávy. Správci fronty MSMQ implementovat spolehlivé přenos zpráv protokolu, aby se zprávy nejsou ztraceno v přenosu. Protokol může být nativní nebo založený na protokolu SOAP, jako je například spolehlivé zasílání zpráv protokolu (SRMP Soap).  

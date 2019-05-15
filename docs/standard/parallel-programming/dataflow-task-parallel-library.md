@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a58211226b93c8fde9fa4240e04a245fb83a00d0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7058e7857c03a2fc82a3d978ef7c8066a9e272bc
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629042"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589651"
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
 <a name="top"></a> Task Parallel Library (TPL) poskytuje součásti toku dat a pomáhá tak zvýšit odolnost aplikace pro práci s souběžnosti. Tyto součásti toku dat se souhrnně označují jako *Knihovna TPL datového toku*. Tento model toku dat podporuje programování založené na objektu actor pomocí poskytující zprávy v procesu předávání pro hrubých toku dat a paralelní zpracování úloh. Sestavení na typy a plánování infrastruktury TPL součásti toku dat a integrovat C#, Visual Basic a F# jazykovou podporu pro asynchronní programování. Tyto součásti toku dat jsou užitečné v případě, že máte více operací, které musí komunikovat mezi sebou asynchronně, nebo pokud chcete zpracovávat data, jakmile je k dispozici. Zvažte například aplikaci, která zpracovává data bitové kopie z webové kamery. Pomocí vzoru toku dat aplikace dokáže zpracovat bitové kopie snímků, jakmile budou k dispozici. Pokud aplikace rozšiřuje bitové kopie snímků, například tím, že provádí světla opravy nebo červených snížení, můžete vytvořit *kanálu* toku dat komponent. Každá fáze kanálu může používat další funkce paralelismu hrubých, například funkce, která je poskytována TPL k transformaci na obrázku.  
@@ -282,4 +282,4 @@ ms.locfileid: "64629042"
 |[Postupy: Určení plánovače úloh v bloku toku dat](../../../docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)|Ukazuje, jak přiřadit určitým plánovačem úloh, při použití toku dat ve vaší aplikaci.|  
 |[Návod: Použití tříd BatchBlock a BatchedJoinBlock ke zvýšení efektivity](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> třídy ke zvýšení efektivity databáze vložit operace a způsob použití <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> třídy pro zachycení výsledků i všech výjimek, ke kterým dochází, když program čte z databáze.|  
 |[Návod: Vytvoření typu blok vlastní toku dat](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md)|Ukazuje dva způsoby, jak vytvořit typ bloku toku dat, která implementuje vlastní chování.|  
-|[Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Zavádí TPL knihovnu, která zjednodušuje paralelní aplikace a souběžné programování v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikací.|
+|[Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Zavádí TPL knihovnu, která zjednodušuje paralelní aplikace a souběžné programování v rozhraní .NET Framework aplikace.|

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - colors [Windows Forms], rotating
 - examples [Windows Forms], rotating colors
 ms.assetid: e2e4c300-159c-4f4a-9b56-103b0f7cbc05
-ms.openlocfilehash: 241d2824fc2d87a0505eb6e790c865bfa7d8ef90
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d251a223fca50eebc3a959ea694242992c4a1dbe
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967325"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590321"
 ---
 # <a name="how-to-rotate-colors"></a>Postupy: Otáčení barev
 Otočení v four-dimensional barevný prostor je obtížné vizualizace. Můžeme provádět to usnadňuje vizualizaci otočení souhlasit a udržovat jeden barevným opraveno. Předpokládejme, že jsme souhlas zachovat alfa pevně nastavena na 1 (úplně neprůhledné). Potom jsme vizualizace trojrozměrného barevný prostor pomocí červené, zelené a modré osy, jak je znázorněno na následujícím obrázku.  

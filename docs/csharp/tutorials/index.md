@@ -2,16 +2,16 @@
 title: Kurzy k jazyku C#
 description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
 ms.date: 10/25/2018
-ms.openlocfilehash: 72f159311397a0f4891709c16a4a6ecc937b5952
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c2dd00505afbf4d8bc3f213a2f87751fe452f253
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755772"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557172"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 
-Vítá vás C# kurzy. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči. Kurzech a pokročilejší kurzy pomoc při práci s nástroje pro vývoj .NET k vytvoření C# programů na vašem počítači.
+Vítá vás C# kurzy. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči. Kurzech a další pokročilé kurzy vám pomohou při práci s nástroje pro vývoj .NET k vytvoření C# programů na vašem počítači.
 
 ## <a name="introduction-to-c-interactive-tutorials"></a>Úvod do C# interaktivní kurzy
 
