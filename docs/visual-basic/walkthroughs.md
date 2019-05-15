@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-ms.openlocfilehash: 928df9baa770185fd5d012e760ca96f3f878cf88
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47c79b8d716be6c247be3ec66c9ef00fbc021973
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021151"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586267"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -72,7 +72,7 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  Ukazuje, jak používat funkce jazyka Visual Basic zjištění informací o souboru, vyhledávání pro řetězce v souboru, a zapisovat do souboru.  
   
  [Manipulace se soubory pomocí metod rozhraní .NET Framework](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Ukazuje, jak používat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody pro zjištění informací o souboru, vyhledávání řetězce v souboru a zápis do souboru.  
+ Ukazuje, jak pomocí metod rozhraní .NET Framework určete informace o souboru, řetězce v souboru, vyhledávání a zápis do souboru.  
   
  [Uchování objektu v jazyce Visual Basic](../visual-basic/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
  Ukazuje, jak vytvořit jednoduchý objekt a zachovat data do souboru.  

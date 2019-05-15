@@ -4,17 +4,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-ms.openlocfilehash: 47e7f94fff4c76b3af7f07b1e023b545eed24953
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5f130c4de45f81dfb21c8c87c9e24d22cd4276ce
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659632"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586737"
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Vytváření a používání součástí v jazyce Visual Basic
-A *komponenty* je třída, která implementuje <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> rozhraní nebo že odvozený přímo nebo nepřímo ze třídy, která implementuje <xref:System.ComponentModel.IComponent>. A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] součást je objekt, který je opakovaně, může spolupracovat s ostatními objekty a zajišťuje kontrolu nad externím prostředkům a podpory během návrhu.  
+A *komponenty* je třída, která implementuje <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> rozhraní nebo že odvozený přímo nebo nepřímo ze třídy, která implementuje <xref:System.ComponentModel.IComponent>. Součásti rozhraní .NET Framework je objekt, který je opakovaně, může spolupracovat s ostatními objekty a zajišťuje kontrolu nad externím prostředkům a podpory během návrhu.  
   
- Důležitou funkcí komponent je, že jsou navrhovatelé, což znamená, že třída, která je součástí je možné v aplikaci Visual Studio integrované vývojové prostředí. Komponenty lze přidávat do panelu nástrojů, kvůli usnadnění použití vypsány a do formuláře a manipulovat na návrhové ploše. Všimněte si, že základní podpory během návrhu pro komponenty je integrovaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]; jako vývojář komponent a není třeba provádět jakékoli další práce, abyste mohli využívat základní funkce návrhu.  
+ Důležitou funkcí komponent je, že jsou navrhovatelé, což znamená, že třída, která je součástí je možné v aplikaci Visual Studio integrované vývojové prostředí. Komponenty lze přidávat do panelu nástrojů, kvůli usnadnění použití vypsány a do formuláře a manipulovat na návrhové ploše. Všimněte si, že základní podpory během návrhu pro komponenty je integrovaná v rozhraní .NET Framework. jako vývojář komponent a není nutné provádět jakékoli další práce, abyste mohli využívat základní funkce návrhu.  
   
  A *ovládací prvek* je podobný komponentu, jak jsou navrhovatelé. Ovládací prvek však poskytuje uživatelské rozhraní, ale součást nikoli. Ovládací prvek musí být odvozen z jedné třídy základních ovládacích prvků: <xref:System.Windows.Forms.Control> nebo <xref:System.Web.UI.Control>.  
   

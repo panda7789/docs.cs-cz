@@ -12,12 +12,12 @@ helpviewer_keywords:
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-ms.openlocfilehash: e267c0c4d1d3e8f986348863d933c984f686b33b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 92430f23b3d4d6237d0b6ec606ce2cb9b945f6f8
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973339"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590027"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Volání vlastnosti nebo metody pomocí názvu řetězce (Visual Basic)
 Ve většině případů můžete zjistit vlastnosti a metody objektu v době návrhu a napsat kód pro jejich zpracování. Ale v některých případech nemusí o vlastnostech a metodách objektu předem znáte, nebo budete chtít právě flexibilitu povolení koncového uživatele k zadání vlastností nebo provádění metod v době běhu.  
@@ -31,7 +31,7 @@ Ve většině případů můžete zjistit vlastnosti a metody objektu v době n�
   
  První argument *objekt*, přebírá název objektu, který má k provedení akce. *Název_procedury* přebírá argument řetězec obsahující název metody nebo vlastnosti postup má být volána. *CallType* konstantu, která představuje typ postup, který má být vyvolán přebírá argument: metody (`Microsoft.VisualBasic.CallType.Method`), číst vlastnosti (`Microsoft.VisualBasic.CallType.Get`), nebo určitá vlastnost nastavila (`Microsoft.VisualBasic.CallType.Set`). *Argumenty* přebírá argument, který je volitelný, pole typu `Object` , která obsahuje všechny argumenty do procedury.  
   
- Můžete použít `CallByName` s třídami v aktuálním řešení, ale se nejčastěji používá pro přístup k objektům modelu COM nebo objekty z [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení.  
+ Můžete použít `CallByName` s třídami v aktuálním řešení, ale je nejčastěji používají pro přístup k modelu COM objekty nebo objekty ze sestavení rozhraní .NET Framework.  
   
  Předpokládejme, že přidáte odkaz na sestavení, které obsahuje třídu s názvem `MathClass`, který má novou funkci s názvem `SquareRoot`, jak je znázorněno v následujícím kódu:  
   

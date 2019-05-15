@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9eb9eabe006dd10b0c36d0fb477637a519853ef2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b8f56fcad74287e260c2989534e6bd4931ad646a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633837"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590013"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a doby odezvy
 V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci jediný bod v čase. Toto téma ukazuje, jak uložit a obnovit <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnotu a hodnotu data a času s časem zóna informace tak, aby se obnovená hodnota identifikuje ve stejnou dobu jako uloženou hodnotu.  
@@ -94,8 +94,6 @@ V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci j
     - <xref:System.Runtime.Serialization?displayProperty=nameWithType>.  
   
     - <xref:System.Runtime.Serialization.Formatters.Binary?displayProperty=nameWithType>.  
-  
-- Odkaz na System.Core.dll.  
   
 - Každý příklad kódu, než `DateInTimeZone` třídy, by měl součástí třídy nebo modulu jazyka Visual Basic, zabalené v metodách a volat z `Main` metody.  
   

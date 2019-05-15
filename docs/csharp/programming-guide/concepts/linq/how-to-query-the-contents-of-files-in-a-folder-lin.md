@@ -2,12 +2,12 @@
 title: 'Postupy: Dotazu na obsah textových souborů ve složce (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
-ms.openlocfilehash: 66e2a2d6ee2b8dd3be3e66f7277947b6d6f749a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1be896f257395cb1e70718ac55e3199da09d8961
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667792"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585832"
 ---
 # <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Postupy: Dotazu na obsah textových souborů ve složce (LINQ) (C#)
 Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah. Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu. Hledání jednoduchého řetězce se provádí v tomto příkladu. Porovnávání vzorů složitější typy však lze provést s regulárním výrazem. Další informace najdete v tématu [jak: Kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).  
@@ -71,7 +71,7 @@ class QueryContents
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 

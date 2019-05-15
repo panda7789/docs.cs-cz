@@ -3,12 +3,12 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: f4dc63272c47dc0cd9eaa15986e4369d9d689b64
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 63090efdf97066b4a276880d4f4be0f843de6800
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592370"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586050"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ji používat.  
@@ -44,7 +44,7 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
  Služba FAM WS také vyvolává několik událostí, které umožňují přizpůsobit jeho funkce v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace.  
   
 ### <a name="how-the-ws-fam-works"></a>Jak funguje služba FAM WS  
- Služba FAM WS je implementována v <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídy. Obvykle přidáte WS-FAM do kanálu HTTP z vaší [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace předávající strany. Když neověřený uživatel pokusí o přístup k chráněnému prostředku, RP vrátí odpověď HTTP "401 autorizace byl odepřen". WS-FAM zachycuje tuto odpověď místo a umožnil tak klientovi ho přijímat a pak ho přesměruje uživatele na zadanou službu STS. Služba tokenů zabezpečení vydá token zabezpečení, které služba WS-FAM zachycuje znovu. Služba FAM WS použije token k vytvoření instance <xref:System.Security.Claims.ClaimsPrincipal> pro ověřeného uživatele, což umožňuje regular [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] mechanismy ověřování fungovat.  
+ Služba FAM WS je implementována v <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídy. Obvykle přidáte WS-FAM do kanálu HTTP z vaší [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace předávající strany. Když neověřený uživatel pokusí o přístup k chráněnému prostředku, RP vrátí odpověď HTTP "401 autorizace byl odepřen". WS-FAM zachycuje tuto odpověď místo a umožnil tak klientovi ho přijímat a pak ho přesměruje uživatele na zadanou službu STS. Služba tokenů zabezpečení vydá token zabezpečení, které služba WS-FAM zachycuje znovu. Služba FAM WS použije token k vytvoření instance <xref:System.Security.Claims.ClaimsPrincipal> pro ověřeného uživatele, což umožňuje regulární mechanismy ověřování na rozhraní .NET Framework fungovat.  
   
  Protože HTTP je bezstavové, potřebujeme způsob, jak předcházet opakování této celého procesu pokaždé, když uživatel pokusí přistoupit k jiný chráněný zdroj. Tady <xref:System.IdentityModel.Services.SessionAuthenticationModule> je k dispozici ve. Když služba tokenů zabezpečení vydá token zabezpečení pro uživatele, <xref:System.IdentityModel.Services.SessionAuthenticationModule> také vytvoří tokenu zabezpečení relace pro uživatele a umístí jej do souboru cookie. O následných požadavcích <xref:System.IdentityModel.Services.SessionAuthenticationModule> zachycuje tento soubor cookie a použije ho k rekonstrukci uživatele <xref:System.Security.Claims.ClaimsPrincipal>.  
   

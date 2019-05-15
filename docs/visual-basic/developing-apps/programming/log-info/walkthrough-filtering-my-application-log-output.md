@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: e32f36a0490a198078f8357f3603c91cc50cb3b8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 00e9eeb3227ceef54f899129847bfb74a370c51c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647097"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591280"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objekt řídit, jaké informace jsou předány z `Log` objektu pro naslouchací procesy a jaké informace jsou zapsány pomocí naslouchací procesy. Protokolování chování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uložena v konfiguračním souboru aplikace.  
@@ -135,7 +135,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
 9. Změňte hodnotu `value` atribut "Informace".  
   
     > [!NOTE]
-    >  `DefaultSwitch` Přepněte nastavení řídí pouze `My.Application.Log`. Nezmění, jak [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.Diagnostics.Trace?displayProperty=nameWithType> a <xref:System.Diagnostics.Debug?displayProperty=nameWithType> třídy chovají.  
+    >  `DefaultSwitch` Přepněte nastavení řídí pouze `My.Application.Log`. Nezmění, jak rozhraní .NET Framework <xref:System.Diagnostics.Trace?displayProperty=nameWithType> a <xref:System.Diagnostics.Debug?displayProperty=nameWithType> třídy chovají.  
   
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Jednotlivé filtrování pro naslouchací procesy My.Application.Log  
  Předchozí příklad ukazuje, jak změnit filtrování pro všechny `My.Application.Log` výstup. Tento příklad ukazuje, jak filtrovat naslouchací proces vlastní protokol. Aplikace má ve výchozím nastavení dva naslouchací procesy tento zápis do výstupu ladění vaší aplikace a souboru protokolu.  
