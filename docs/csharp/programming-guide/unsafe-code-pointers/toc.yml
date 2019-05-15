@@ -4,12 +4,12 @@
     - name: Vyrovnávací paměti pevné velikosti
       href: fixed-size-buffers.md
     - name: Typy ukazatelů
-      href: pointer-types.md
       items:
+        - name: Přehled
+          href: pointer-types.md
         - name: Převody ukazatele
           href: pointer-conversions.md
         - name: Výrazy ukazatelů
-          href: pointer-expressions.md
           items:
             - name: 'Postupy: Získávání hodnoty proměnné ukazatele'
               href: how-to-obtain-the-value-of-a-pointer-variable.md
@@ -20,7 +20,6 @@
             - name: 'Postupy: Přístup k elementu pole pomocí ukazatele'
               href: how-to-access-an-array-element-with-a-pointer.md
             - name: Manipulace s ukazateli
-              href: manipulating-pointers.md
               items:
                 - name: 'Postupy: Přírůstek a úbytek ukazatelů'
                   href: how-to-increment-and-decrement-pointers.md

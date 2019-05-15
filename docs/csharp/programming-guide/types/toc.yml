@@ -5,14 +5,13 @@
       href: casting-and-type-conversions.md
     - name: Zabalení a rozbalení
       href: boxing-and-unboxing.md
-    - name: Použití typu dynamic
-      href: using-type-dynamic.md
-      items:
-        - name: 'Návod: Vytváření a používání dynamických objektů (C# a Visual Basic)'
-          href: walkthrough-creating-and-using-dynamic-objects.md
     - name: 'Postupy: Převedení pole bajtů na typ int'
       href: how-to-convert-a-byte-array-to-an-int.md
     - name: 'Postupy: Převedení řetězce na číslo'
       href: how-to-convert-a-string-to-a-number.md
     - name: 'Postupy: Převody mezi hexadecimálními řetězci a číselnými typy'
       href: how-to-convert-between-hexadecimal-strings-and-numeric-types.md
+    - name: Použití typu dynamic
+      href: using-type-dynamic.md
+    - name: 'Návod: Vytváření a používání dynamických objektů (C# a Visual Basic)'
+      href: walkthrough-creating-and-using-dynamic-objects.md
