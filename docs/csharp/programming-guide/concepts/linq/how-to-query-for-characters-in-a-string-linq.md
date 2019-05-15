@@ -2,12 +2,12 @@
 title: 'Postupy: Dotazu na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: 0c577fc2dc2ae07574580f819a6fb51336107dfb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b31dfb4c9fb7f7efc439a1703f13aafca3053e6a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702032"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584450"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: Dotazu na znaky v řetězci (LINQ) (C#)
 Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků. Ale to není běžné použití odkazu LINQ. Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
@@ -55,7 +55,7 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

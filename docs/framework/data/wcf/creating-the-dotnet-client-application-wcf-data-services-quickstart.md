@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-ms.openlocfilehash: 19506d051442dc841a28c14f212addf66af71cf5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 50e8d24698bd8451b90da05ffe52b473a13b3a20
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750826"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583608"
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>Vytvoření klientské aplikace rozhraní .NET Framework (WCF Data Services – rychlý start)
 
@@ -84,7 +84,7 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
 
 Úspěšně jste vytvořili klientská aplikace, který přistupuje k ukázkového datového kanálu OData s názvem Northwind. Také jste dokončili rychlé spuštění služeb WCF Data Services!
 
-Další informace o přístupu k OData informačního kanálu ze [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace, najdete v článku [klientské knihovny WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md).
+Další informace o přístupu k OData informačního kanálu z aplikace rozhraní .NET Framework, naleznete v tématu [klientské knihovny WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md).
 
 ## <a name="see-also"></a>Viz také:
 

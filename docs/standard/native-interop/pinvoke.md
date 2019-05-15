@@ -4,12 +4,12 @@ description: Zjistěte, jak volat nativní funkce prostřednictvím P/Invoke v r
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: ed1eb69a418317bbee2502418cc2521a68b65542
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: c6dcfdb9543abceb688fee2d73c242f1742ab27d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063189"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582551"
 ---
 # <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
@@ -17,24 +17,7 @@ P/Invoke je technologie, která umožňuje přístup ke strukturám, zpětná vo
 
 Začněme od Nejběžnějším příkladem a, který je volání nespravovaných funkcí ve spravovaném kódu. Pojďme zobrazit okno se zprávou z aplikace příkazového řádku:
 
-```csharp
-using System;
-using System.Runtime.InteropServices;
-
-public class Program
-{
-    // Import user32.dll (containing the function we need) and define
-    // the method corresponding to the native function.
-    [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    public static extern int MessageBox(IntPtr hWnd, string lpText, string lpCaption, uint uType);
-
-    public static void Main(string[] args)
-    {
-        // Invoke the function as a regular managed method.
-        MessageBox(IntPtr.Zero, "Command-line message box", "Attention!", 0);
-    }
-}
-```
+[!code-csharp[MessageBox](~/samples/snippets/standard/interop/pinvoke/messagebox.cs)]
 
 V předchozím příkladu je jednoduché, ale je předvést, co je potřeba k volání nespravovaných funkcí ze spravovaného kódu. Projděme si příklad:
 
@@ -46,53 +29,11 @@ Zbývající část v příkladu je právě volání metody, stejně jako jiné 
 
 Vzorek je podobný pro macOS. Název knihovny `DllImport` atributů je potřeba změnit, protože s macOS má jiné schéma názvů dynamické knihovny. Následující ukázkový používá `getpid(2)` funkce, která se získat ID procesu aplikace a vytiskne ji do konzoly:
 
-```csharp
-using System;
-using System.Runtime.InteropServices;
-
-namespace PInvokeSamples
-{
-    public static class Program
-    {
-        // Import the libSystem shared library and define the method
-        // corresponding to the native function.
-        [DllImport("libSystem.dylib")]
-        private static extern int getpid();
-
-        public static void Main(string[] args)
-        {
-            // Invoke the function and get the process ID.
-            int pid = getpid();
-            Console.WriteLine(pid);
-        }
-    }
-}
-```
+[!code-csharp[getpid macOS](~/samples/snippets/standard/interop/pinvoke/getpid-macos.cs)]
 
 Je to podobné v Linuxu. Název funkce je stejný, protože `getpid(2)` je standard [POSIX](https://en.wikipedia.org/wiki/POSIX) volání systému.
 
-```csharp
-using System;
-using System.Runtime.InteropServices;
-
-namespace PInvokeSamples
-{
-    public static class Program
-    {
-        // Import the libc shared library and define the method
-        // corresponding to the native function.
-        [DllImport("libc.so.6")]
-        private static extern int getpid();
-
-        public static void Main(string[] args)
-        {
-            // Invoke the function and get the process ID.
-            int pid = getpid();
-            Console.WriteLine(pid);
-        }
-    }
-}
-```
+[!code-csharp[getpid Linux](~/samples/snippets/standard/interop/pinvoke/getpid-linux.cs)]
 
 ## <a name="invoking-managed-code-from-unmanaged-code"></a>Volání spravovaného kódu z nespravovaného kódu
 
@@ -100,37 +41,7 @@ Modul runtime povoluje komunikaci probíhaly v obou směrech, umožňuje volat z
 
 Způsob, jak používat tuto funkci je podobný jako spravované do nativní popsaných výše. Pro dané zpětné volání definovat delegáta, která odpovídá podpisu a předat ho do externí metody. Modul runtime se postará o všechno ostatní.
 
-```csharp
-using System;
-using System.Runtime.InteropServices;
-
-namespace ConsoleApplication1
-{
-    class Program
-    {
-        // Define a delegate that corresponds to the unmanaged function.
-        delegate bool EnumWC(IntPtr hwnd, IntPtr lParam);
-
-        // Import user32.dll (containing the function we need) and define
-        // the method corresponding to the native function.
-        [DllImport("user32.dll")]
-        static extern int EnumWindows(EnumWC lpEnumFunc, IntPtr lParam);
-
-        // Define the implementation of the delegate; here, we simply output the window handle.
-        static bool OutputWindow(IntPtr hwnd, IntPtr lParam)
-        {
-            Console.WriteLine(hwnd.ToInt64());
-            return true;
-        }
-
-        static void Main(string[] args)
-        {
-            // Invoke the method; note the delegate as a first parameter.
-            EnumWindows(OutputWindow, IntPtr.Zero);
-        }
-    }
-}
-```
+[!code-csharp[EnumWindows](~/samples/snippets/standard/interop/pinvoke/enumwindows.cs)]
 
 Před provede v příkladu, je vhodné zkontrolovat podpisy nespravované funkce, které potřebujete pro práci s. Funkce, která se dá zavolat, aby vypisovat výčet všech oken má následující podpis: `BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam);`
 
@@ -145,114 +56,11 @@ Nyní projděme si příklad:
 
 Níže jsou uvedeny příklady operačních systémů Linux a macOS. Pro ně používáme `ftw` funkce, která lze nalézt v `libc`, knihovna C. Tato funkce slouží k procházení hierarchie adresáře a bere ukazatel na funkci jako jeden ze svých parametrů. Uvedení funkce má následující podpis: `int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`.
 
-```csharp
-using System;
-using System.Runtime.InteropServices;
-
-namespace PInvokeSamples
-{
-    public static class Program
-    {
-        // Define a delegate that has the same signature as the native function.
-        delegate int DirClbk(string fName, StatClass stat, int typeFlag);
-
-        // Import the libc and define the method to represent the native function.
-        [DllImport("libc.so.6")]
-        static extern int ftw(string dirpath, DirClbk cl, int descriptors);
-
-        // Implement the above DirClbk delegate;
-        // this one just prints out the filename that is passed to it.
-        static int DisplayEntry(string fName, StatClass stat, int typeFlag)
-        {
-            Console.WriteLine(fName);
-            return 0;
-        }
-
-        public static void Main(string[] args)
-        {
-            // Call the native function.
-            // Note the second parameter which represents the delegate (callback).
-            ftw(".", DisplayEntry, 10);
-        }
-    }
-
-    // The native callback takes a pointer to a struct. The below class
-    // represents that struct in managed code. You can find more information
-    // about this in the section on marshaling below.
-    [StructLayout(LayoutKind.Sequential)]
-    public class StatClass
-    {
-        public uint DeviceID;
-        public uint InodeNumber;
-        public uint Mode;
-        public uint HardLinks;
-        public uint UserID;
-        public uint GroupID;
-        public uint SpecialDeviceID;
-        public ulong Size;
-        public ulong BlockSize;
-        public uint Blocks;
-        public long TimeLastAccess;
-        public long TimeLastModification;
-        public long TimeLastStatusChange;
-    }
-}
-```
+[!code-csharp[ftw Linux](~/samples/snippets/standard/interop/pinvoke/ftw-linux.cs)]
 
 macOS příklad používá stejnou funkci, a jediným rozdílem je, že argument `DllImport` atribut, protože udržuje macOS `libc` na jiném místě.
 
-```csharp
-using System;
-using System.Runtime.InteropServices;
-
-namespace PInvokeSamples
-{
-    public static class Program
-    {
-        // Define a delegate that has the same signature as the native function.
-        delegate int DirClbk(string fName, StatClass stat, int typeFlag);
-
-        // Import the libc and define the method to represent the native function.
-        [DllImport("libSystem.dylib")]
-        static extern int ftw(string dirpath, DirClbk cl, int descriptors);
-
-        // Implement the above DirClbk delegate;
-        // this one just prints out the filename that is passed to it.
-        static int DisplayEntry(string fName, StatClass stat, int typeFlag)
-        {
-            Console.WriteLine(fName);
-            return 0;
-        }
-
-        public static void Main(string[] args)
-        {
-            // Call the native function.
-            // Note the second parameter which represents the delegate (callback).
-            ftw(".", DisplayEntry, 10);
-        }
-    }
-
-    // The native callback takes a pointer to a struct. The below class
-    // represents that struct in managed code.
-    [StructLayout(LayoutKind.Sequential)]
-    public class StatClass
-    {
-        public uint DeviceID;
-        public uint InodeNumber;
-        public uint Mode;
-        public uint HardLinks;
-        public uint UserID;
-        public uint GroupID;
-        public uint SpecialDeviceID;
-        public ulong Size;
-        public ulong BlockSize;
-        public uint Blocks;
-        public long TimeLastAccess;
-        public long TimeLastModification;
-        public long TimeLastStatusChange;
-    }
-}
-```
+[!code-csharp[ftw macOS](~/samples/snippets/standard/interop/pinvoke/ftw-macos.cs)]
 
 I v předchozích příkladech záviset na parametrech a v obou případech jsou uvedeny parametry, jako spravované typy. Modul runtime dělá "správné věci" a zpracuje do své ekvivalenty na druhé straně. Seznamte se s typy, jak jsou zařazeny do nativního kódu na naší stránce [typu zařazování](type-marshaling.md).
 

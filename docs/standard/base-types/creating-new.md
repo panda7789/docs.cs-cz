@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 94ac21dfdf58e8aa1b629604792ad2f0f57c60d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 50750b23af9e9cfca79b0f7db9d272e8e24971ab
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650411"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591412"
 ---
 # <a name="creating-new-strings-in-net"></a>Vytváření nových řetězců v .NET
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Umožňuje řetězců, které mají být vytvořené pomocí jednoduchého přiřazení a také přetížení konstruktoru třídy pro podporu vytváření řetězců pomocí několika různých parametrů. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také poskytuje několik metod <xref:System.String?displayProperty=nameWithType> třídu, která vytvořit nový řetězec kombinací několika řetězcích, polích řetězce, objekty nebo objekty.  
+Rozhraní .NET Framework umožňuje řetězců, které mají být vytvořené pomocí jednoduchého přiřazení a také přetížení konstruktoru třídy pro podporu vytváření řetězců pomocí několika různých parametrů. Také poskytuje několik metod rozhraní .NET Framework <xref:System.String?displayProperty=nameWithType> třídu, která vytvořit nový řetězec kombinací několika řetězcích, polích řetězce, objekty nebo objekty.  
   
 ## <a name="creating-strings-using-assignment"></a>Vytváření řetězců pomocí přiřazení  
  Nejjednodušší způsob, jak vytvořit novou <xref:System.String> objekt slouží k přiřazení řetězcový literál <xref:System.String> objektu.  

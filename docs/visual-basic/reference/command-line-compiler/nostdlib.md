@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -nostdlib compiler option [Visual Basic]
 - /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
-ms.openlocfilehash: 4f3dc61a6e78b0fb2135d4132c53e7efc22447a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c3c70b24de5163ca004b41a21017205a19d9730
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789048"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583374"
 ---
 # <a name="-nostdlib-visual-basic"></a>-nostdlib (Visual Basic)
 Způsobí, že kompilátor, aby automaticky odkazovat na standardní knihovny.  
@@ -23,7 +23,7 @@ Způsobí, že kompilátor, aby automaticky odkazovat na standardní knihovny.
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `-nostdlib` Možnost odebere automatické odkaz na sestavení System.dll a zabrání čtení soubor Vbc.rsp kompilátoru. Odkazuje na soubor Vbc.rsp, který je umístěn ve stejném adresáři jako soubor Vbc.exe, běžně používaném [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení a importuje `System` a `Microsoft.VisualBasic` obory názvů.  
+ `-nostdlib` Možnost odebere automatické odkaz na sestavení System.dll a zabrání čtení soubor Vbc.rsp kompilátoru. Soubor Vbc.rsp, který je umístěn ve stejném adresáři jako soubor Vbc.exe, odkazuje na běžně používané sestavení rozhraní .NET Framework a importuje `System` a `Microsoft.VisualBasic` obory názvů.  
   
 > [!NOTE]
 >  Vždy je odkazováno na sestavení Mscorlib.dll a Microsoft.VisualBasic.dll.  

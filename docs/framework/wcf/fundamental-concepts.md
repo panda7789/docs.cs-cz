@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 05e61a33005cd0458c5bcdde758f3b1a9cc3869c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 429e019d87800c9487f73ebf37c4d7870835b323
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637271"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591950"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -126,7 +126,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Konkrétní implementaci elementu vazby. Představuje konfiguraci vazby a kanál je implementace spojené s touto konfigurací. Proto je přidružený k každý prvek vazby kanálu. Kanály zásobníku na druhé a vytvořit konkrétní implementaci vazby: zásobník kanálu.  
   
  Klienta WCF  
- Konstrukce klientskou aplikaci, která zveřejňuje operací služby jako metody (v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] programovací jazyk podle vašeho výběru, jako je například Visual Basic nebo Visual C#). Všechny aplikace, můžete hostovat klienta WCF, včetně aplikace, který je hostitelem služby. Proto je možné vytvořit službu, která obsahuje klienty WCF dalších služeb.  
+ Konstrukce klientskou aplikaci, která zveřejňuje operací služby jako metody (v rozhraní .NET Framework programovacím jazyce podle vašeho výběru, jako je například Visual Basic nebo Visual C#). Všechny aplikace, můžete hostovat klienta WCF, včetně aplikace, který je hostitelem služby. Proto je možné vytvořit službu, která obsahuje klienty WCF dalších služeb.  
   
  Klienta WCF je možné vygenerovat automaticky pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a přejdete na spuštěnou službu, která publikuje metadat.  
   

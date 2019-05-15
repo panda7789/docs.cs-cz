@@ -10,12 +10,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], specifying z-order
 - z-order
 ms.assetid: 8b595429-ba9f-46af-9c55-3d5cc53f7fff
-ms.openlocfilehash: b7643c9599ceeba08cbe9f5580739043f6d89edc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 514c9dd1c91adcadf6f5d383ba734886dec3151d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666329"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591901"
 ---
 # <a name="how-to-define-z-ordering-of-docked-toolstrip-controls"></a>Postupy: Definování pořadí vykreslování ukotvených ovládacích prvků ToolStrip
 Na pozici <xref:System.Windows.Forms.ToolStrip> ovládacího prvku správně s ukotvení, je třeba umístit ovládací prvek správně v pořadí vykreslování formuláře.  
@@ -39,8 +39,6 @@ Na pozici <xref:System.Windows.Forms.ToolStrip> ovládacího prvku správně s u
  Tento příklad vyžaduje:  
   
 - Odkazy na sestavení System.Design System.Drawing a System.Windows.Forms.  
-  
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 

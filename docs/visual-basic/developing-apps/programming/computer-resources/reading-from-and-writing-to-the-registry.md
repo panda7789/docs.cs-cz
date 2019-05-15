@@ -6,12 +6,12 @@ helpviewer_keywords:
 - registry [Visual Basic], writing to
 - registry [Visual Basic], reading
 ms.assetid: a13da106-185b-41d7-b23c-416da65e21e4
-ms.openlocfilehash: 6ce05b956ebf9a544eb8c95165b0f709c694f334
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcc13d82a2b27221c13f9277585c21196b47003d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921417"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591475"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>Čtení z registru a zápis do něj pomocí oboru názvů My (Visual Basic)
 Toto téma popisuje úlohy a koncepční témata, které jsou spojeny s registrem.  
@@ -29,7 +29,7 @@ Toto téma popisuje úlohy a koncepční témata, které jsou spojeny s registre
  Popisuje způsob použití `DeleteSubKey` metodu `My.Computer.Registry.CurrentUser` vlastnosti k odstranění klíče z registru.  
   
  [Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
- Popisuje způsob použití `Registry` a `RegistryKey` třídy [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pro přístup k registru.  
+ Popisuje způsob použití `Registry` a `RegistryKey` tříd rozhraní .NET Framework pro přístup k registru.  
   
  [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
  Tento článek popisuje problémy se zabezpečením týkajících se registru.  

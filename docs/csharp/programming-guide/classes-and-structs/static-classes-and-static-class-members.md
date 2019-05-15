@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 28253a46e8da48cfc2812d7f3fef1a2dd3d1cf87
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 98d697aa7f4fa839b41509244993ced195730fdb
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599835"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585874"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou statickou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  
@@ -37,7 +37,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 // 3  
 ```  
   
- Jak je tomu u všech typů tříd, informace o typu pro statické třídy načítá [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] common language runtime (CLR) při načtení programu, který odkazuje na třídu. Program nelze zadat přesně při načtení třídy. Ale je zaručeno, že má být načten a inicializován polí a jeho statický konstruktor voláno před provedením třídy odkazuje ve svém programu poprvé. Statický konstruktor je volat pouze jednou a statická třída zůstanou v paměti dobu životnosti domény aplikace, ve kterém se nachází váš program.  
+ Jak je tomu u všech typů tříd, informace o typu pro statické třídy při načtení programu, který odkazuje na třídu načítá rozhraní .NET Framework common language runtime (CLR). Program nelze zadat přesně při načtení třídy. Ale je zaručeno, že má být načten a inicializován polí a jeho statický konstruktor voláno před provedením třídy odkazuje ve svém programu poprvé. Statický konstruktor je volat pouze jednou a statická třída zůstanou v paměti dobu životnosti domény aplikace, ve kterém se nachází váš program.  
   
 > [!NOTE]
 >  Chcete-li vytvořit nestatické třídy, která umožňuje pouze jednu instanci sebe sama, který se má vytvořit, naleznete v tématu [implementace jednotlivý prvek v jazyce C#](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  

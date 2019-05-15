@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: 0ae7b226f4fef0aeec895b0b908711a6edb13728
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2394151d855d75b418616d9fa1a6f69b08cdef86
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701538"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585729"
 ---
 # <a name="linq-to-xml-overview-c"></a>Přehled LINQ to XML (C#)
 
@@ -23,7 +23,7 @@ Profesionální vývojáři mohou použít [!INCLUDE[sqltecxlinq](~/includes/sql
 
 ## <a name="what-is-linq-to-xml"></a>Co je LINQ to XML
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je povolené LINQ, v paměti XML programovací rozhraní, která umožňuje pracovat s jazykem XML z v rámci [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] programovacích jazyků.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je povolené LINQ, v paměti XML programovací rozhraní, která umožňuje pracovat s jazykem XML z v rámci rozhraní .NET Framework programovacích jazyků.
 
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je třeba Document Object Model (DOM) přináší dokumentu XML do paměti. Můžete zadávat dotazy a úpravě dokumentu a po úpravě ho můžete uložit do souboru nebo ho serializovat a odešle je prostřednictvím Internetu. Nicméně [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se liší od modelu DOM: Poskytuje nové objektový model, který je světlejší váha a snadněji pracovat, a, která využívá funkcí jazyka v C#.
 

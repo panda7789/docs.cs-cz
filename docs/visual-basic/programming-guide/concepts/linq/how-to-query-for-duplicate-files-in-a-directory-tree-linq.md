@@ -2,12 +2,12 @@
 title: 'Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: 81955b18755f41a582aed7768c709c8e77cffba6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 192f279a74cfbbd35e67d8f166a3d35248409459
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024336"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586331"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)
 Někdy může nacházet v více složek soubory, které mají stejný název. Například v instalační složce aplikace Visual Studio, mají několik složek souboru readme.htm. Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce. Druhý příklad ukazuje, jak provádět dotazy pro soubory, jejichž velikost a také odpovídat času vytvoření.  
@@ -101,7 +101,7 @@ End Module
  První dotaz pomocí jednoduchého klíče k určení shody to vyhledá soubory, které mají stejný název, ale jehož obsah se může lišit. Druhý dotaz používá složený klíč tak, aby odpovídala tři vlastnosti <xref:System.IO.FileInfo> objektu. Tento dotaz je mnohem pravděpodobnější k vyhledání souborů, které mají stejný název a obsah podobné nebo identické.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+Vytvoření projektu aplikace konzoly VB.NET, pomocí `Imports` příkaz pro obor názvů System.Linq.
   
 ## <a name="see-also"></a>Viz také:
 

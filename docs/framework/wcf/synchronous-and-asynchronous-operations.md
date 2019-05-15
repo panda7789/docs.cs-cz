@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 3f76d51ce5cc167e71e2f3f5e7944dae2e3265d7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c2e6a955a151e0e11bcf189085dc24e7815fb747
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645210"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582741"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
@@ -110,7 +110,7 @@ public class AsyncExample
  Další informace o asynchronní vzor založený na událostech najdete v tématu [asynchronní vzor The Event-Based](https://go.microsoft.com/fwlink/?LinkId=232515).  
   
 #### <a name="iasyncresult-asynchronous-pattern"></a>Asynchronní vzor IAsyncResult  
- Operace služby je možné implementovat v asynchronním způsobem pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] asynchronní programovací model a označení `<Begin>` metodu <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> nastavenou na `true`. Asynchronní operace v tomto případě je přístupný v metadatech ve stejné podobě jako synchronní operace: Je vystavena jako jednu operaci s zprávu požadavku a korelační odpověď. Programovací modely Klient pak mít možnost volby. Tento model může představovat jako synchronní operace nebo některý asynchronní tak dlouho, dokud při vyvolání služby probíhá výměna zpráv žádost odpověď.  
+ Operace služby je možné implementovat asynchronním způsobem pomocí rozhraní .NET Framework asynchronní programovací model a označení `<Begin>` metodou <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> vlastnost nastavena na `true`. Asynchronní operace v tomto případě je přístupný v metadatech ve stejné podobě jako synchronní operace: Je vystavena jako jednu operaci s zprávu požadavku a korelační odpověď. Programovací modely Klient pak mít možnost volby. Tento model může představovat jako synchronní operace nebo některý asynchronní tak dlouho, dokud při vyvolání služby probíhá výměna zpráv žádost odpověď.  
   
  Obecně platí s asynchronní povaze v systémech, neměla by mít závislost na vlákna.  Nejspolehlivější způsob předání dat, jak různé fáze zpracování operace odeslání je použít rozšíření.  
   

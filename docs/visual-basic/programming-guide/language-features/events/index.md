@@ -5,12 +5,12 @@ helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-ms.openlocfilehash: 5986923b10700b1795886c24343a4b45e6bff46e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 76d074d2870a2d7efa62516b5868cdd7faaacd79
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616693"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586707"
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou spouštěny v pořadí, ve skutečnosti, většina programů jsou řízené událostmi – to znamená toku provádění se určuje podle externí výskyty volá *události*.  
@@ -104,6 +104,6 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
 |[Postupy: Deklarování vlastních událostí k zabránění blokování](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|Ukazuje, jak definovat vlastní události, které umožňuje její obslužné rutiny událostí má být volána asynchronně.|  
 |[Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Ukazuje, jak definovat vlastní událost, která používá jenom v případě, že se zpracovává událost paměti.|  
 |[Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|Uvádí seznam běžných problémů, které vznikají u obslužných rutin událostí v zděděné součásti.|  
-|[Události](../../../../standard/events/index.md)|Obsahuje přehled modelu události v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].|  
+|[Události](../../../../standard/events/index.md)|Obsahuje přehled modelu události v rozhraní .NET Framework.|  
 |[Vytváření obslužných rutin událostí ve Windows Forms](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Popisuje, jak pracovat s událostí spojených s objekty Windows Forms.|  
 |[Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Poskytuje přehled delegátů v jazyce Visual Basic.|

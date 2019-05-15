@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1928980f24f08e0379639090cab8d2ac7ba014e4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ea8b47e7d5c794ea1b33eaaae52a3f8250f80a82
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634002"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588821"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Postupy: Zobrazování dat v jiném než gregoriánském kalendáři
 <xref:System.DateTime> a <xref:System.DateTimeOffset> typy používají jako výchozí kalendář gregoriánský kalendář. To znamená, že volání hodnoty data a času `ToString` metoda zobrazí řetězcové vyjádření data a času v gregoriánském kalendáři, a to i v případě, že datum a čas byl vytvořen pomocí jiného kalendáře. To je znázorněno v následujícím příkladu, který používá dva různé způsoby vytváření hodnoty data a času s perský kalendář, ale stále zobrazuje tyto hodnoty data a času v gregoriánském kalendáři, při volání <xref:System.DateTime.ToString%2A> metody. Tento příklad zobrazuje dvě techniky běžně používaný, ale nesprávné pro zobrazení data v konkrétním kalendáři.  
@@ -84,11 +84,6 @@ ms.locfileid: "64634002"
 - `DisplayDate`, přetížené veřejné metody, která je předána dva parametry: buď <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu vyjádřit v kalendáři reprezentována `CalendarUtility` objekt; a jazykovou verzi, jejíž pravidla formátování se mají použít. Vrací řetězec představující datum jeho chování závisí na Určuje, zda cílový kalendář je podporován jazykovou verzi, jejíž pravidla formátování se mají použít.  
   
  Bez ohledu na použitý k vytvoření kalendáře <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu v tomto příkladu, že hodnota je obvykle vyjádřený jako gregoriánský kalendář. Je to proto, <xref:System.DateTime> a <xref:System.DateTimeOffset> typy Nezachovávat hodnotu informace o kalendáři. Interně jsou reprezentovány jako počet značek, které uplynuly od půlnoci 1. ledna 0001. Výklad tohoto čísla závisí na kalendář. Pro většinu jazykové verze výchozí kalendář nastaven na gregoriánský kalendář.  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento příklad vyžaduje odkaz na System.Core.dll.  
-  
- Je možné zkompilovat kód v příkazovém řádku pomocí souboru csc.exe nebo vb.exe. Chcete-li zkompilovat kód v sadě Visual Studio, vložte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

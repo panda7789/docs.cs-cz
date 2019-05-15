@@ -19,12 +19,12 @@ helpviewer_keywords:
 - floating-point numbers [Visual Basic], comparison
 - floating-point numbers
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
-ms.openlocfilehash: 851be5bdf4a3adced724dc2df33657a84226270d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 837022cf1675097af5ebce63441cad1ce63eaabb
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61906955"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591109"
 ---
 # <a name="troubleshooting-data-types-visual-basic"></a>Řešení potíží s datovými typy (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při provádění operací ve vnitřních datových typů.  
@@ -66,7 +66,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
  Všimněte si, že není dostatečná k deklarování `decimalRemainder` jako `Decimal`. Také je nutné donutit literály do `Decimal`, nebo používají `Double` ve výchozím nastavení a `decimalRemainder` obdrží nepřesné stejnou hodnotu jako `doubleRemainder`.  
   
 ## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>Typ Boolean není numerický typ. přesně převádět  
- [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) nejsou uložené hodnoty jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní čísla. Z důvodu kompatibility se staršími verzemi Visual Basic poskytuje klíčová slova převodu ([funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`, a tak dále) pro převod mezi `Boolean` a číselné typy. Ale jiných jazycích někdy provádění těchto převodů odlišně, stejně jako [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody.  
+ [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) nejsou uložené hodnoty jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní čísla. Z důvodu kompatibility se staršími verzemi Visual Basic poskytuje klíčová slova převodu ([funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`, a tak dále) pro převod mezi `Boolean` a číselné typy. Ale jiných jazycích někdy provádění těchto převodů odlišně, stejně jako metody rozhraní .NET Framework.  
   
  Nikdy by měl napsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, byste měli omezit využití `Boolean` proměnné logické hodnoty, které jsou určeny. Jestliže musíte kombinovat `Boolean` a číselné hodnoty, ujistěte se, že rozumíte metodu převodu, který jste vybrali.  
   
@@ -96,7 +96,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
 ## <a name="string-conversion-fails-at-run-time"></a>Převod řetězce selže v době běhu  
  [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) podílí na velmi málo rozšiřující převody. `String` rozšiřuje pouze sám na sebe a `Object`a pouze `Char` a `Char()` ( `Char` pole) rozšířit na `String`. Důvodem je, že `String` proměnné a konstanty může obsahovat hodnoty, které nesmí obsahovat jiné datové typy.  
   
- Při přepnutí kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, zakáže všechny implicitní zužující převody kompilátor. Jedná se o těch zahrnující `String`. Kód můžete stále použít klíčová slova převodu například `CStr` a [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), které přímo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pokusu o převod.  
+ Při přepnutí kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, zakáže všechny implicitní zužující převody kompilátor. Jedná se o těch zahrnující `String`. Kód můžete stále použít klíčová slova převodu například `CStr` a [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), který přímá rozhraní .NET Framework pokusu o převod.  
   
 > [!NOTE]
 >  Chyba zúžit převodu je potlačeno pro převod z prvků v `For Each…Next` kolekce řídicí proměnná smyčky for. Další informace a příklady najdete v tématu v části "Zužující převody" [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  

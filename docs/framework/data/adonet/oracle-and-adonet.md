@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: ce92705d22edfc832e894dd2feaafcd11088bf26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a8668ee115a3babbdf1ef549a418187d2c5e26b8
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772018"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583417"
 ---
 # <a name="oracle-and-adonet"></a>Oracle a ADO.NET
 > [!NOTE]
 >  Typy v <xref:System.Data.OracleClient> jsou zastaralé. Typy dál podporovat v aktuální verzi of.NET rozhraní Framework, ale bude v budoucí verzi odebrána. Společnost Microsoft doporučuje používat Zprostředkovatel Oracle třetích stran.  
   
- Tato část popisuje funkce a chování, které jsou specifické pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle.  
+ Tato část popisuje funkce a chování, které jsou specifické pro zprostředkovatele dat .NET Framework pro Oracle.  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje přístup k databázi Oracle pomocí Oracle volání rozhraní (OCI) podle software klienta Oracle Data Provider pro Oracle. Funkce poskytovatele dat byla navržena jako podobný [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro SQL Server, technologie OLE DB a ODBC.  
+ Zprostředkovatel dat .NET Framework pro Oracle poskytuje přístup k databázi Oracle pomocí Oracle volání rozhraní (OCI) podle software klienta Oracle. Funkce zprostředkovatel dat slouží k podobný zprostředkovatele dat .NET Framework pro SQL Server, technologie OLE DB a ODBC.  
   
- Použít [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle, aplikace musí odkazovat <xref:System.Data.OracleClient> oboru názvů následujícím způsobem:  
+ Použití zprostředkovatele dat .NET Framework pro Oracle, aplikace musí odkazovat <xref:System.Data.OracleClient> oboru názvů následujícím způsobem:  
   
 ```vb  
 Imports System.Data.OracleClient  
@@ -38,7 +38,7 @@ csc /r:System.Data.OracleClient.dll
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Požadavky na systém](../../../../docs/framework/data/adonet/system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
- Popisuje požadavky pro použití [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle a popisuje celou řadu problémů mějte na paměti při jeho použití.  
+ Popisuje požadavky pro použití zprostředkovatele dat .NET Framework pro Oracle a celé řady důvodů mějte na paměti při jeho použití.  
   
  [Soubory Oracle BFILE](../../../../docs/framework/data/adonet/oracle-bfiles.md)  
  Popisuje <xref:System.Data.OracleClient.OracleBFile> třídu, která se používá pro práci s datovým typem Oracle BFILE.  

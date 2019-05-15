@@ -4,21 +4,21 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - strings [Visual Basic], indexing
 ms.assetid: 0ed39f35-d68e-421d-ae14-460a5c0373b8
-ms.openlocfilehash: a6ceb10d4a3cb9463551d8c85375ddbbb607ffdc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cc8f286de41d7e44225e889e73ff3c7b1fdbd881
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024453"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591744"
 ---
 # <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>Přístup k řetězci se základem 0 vs. Přístup k řetězci základem 1 v jazyce Visual Basic
-Toto téma srovnává způsobu, jakým Visual Basic a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] poskytují přístup ke znakům v řetězci. [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Vždy poskytuje založený na nule přístup ke znakům v řetězci, zatímco Visual Basic poskytuje přístup založený na nule a založen na jedničce, v závislosti na funkci.  
+Toto téma srovnává, jak Visual Basic a rozhraní .NET Framework poskytují přístup ke znakům v řetězci. Rozhraní .NET Framework vždy poskytuje založený na nule přístup ke znakům v řetězci, zatímco Visual Basic poskytuje přístup založený na nule a založen na jedničce, v závislosti na funkci.  
   
 ## <a name="one-based"></a>Základem 1  
- Příklad funkce jazyka Visual Basic založen na jedničce, vezměte v úvahu `Mid` funkce. To přebírá argument, který označuje znak na pozici, na které se spustí dílčí řetězec, počínaje pozice 1. [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.String.Substring%2A?displayProperty=nameWithType> Metoda má index znaku v řetězci, na které má spustit, podřetězec počínaje pozice 0. Pokud máte řetězec "ABCDE", proto jsou jednotlivé znaky číslované 1,2,3,4,5 pro použití s `Mid` funkce, ale 0,1,2,3,4 pro použití se službou <xref:System.String.Substring%2A?displayProperty=nameWithType> metoda.  
+ Příklad funkce jazyka Visual Basic založen na jedničce, vezměte v úvahu `Mid` funkce. To přebírá argument, který označuje znak na pozici, na které se spustí dílčí řetězec, počínaje pozice 1. Rozhraní .NET Framework <xref:System.String.Substring%2A?displayProperty=nameWithType> metoda má index znaku v řetězci, na které má spustit, podřetězec počínaje pozice 0. Pokud máte řetězec "ABCDE", proto jsou jednotlivé znaky číslované 1,2,3,4,5 pro použití s `Mid` funkce, ale 0,1,2,3,4 pro použití se službou <xref:System.String.Substring%2A?displayProperty=nameWithType> metoda.  
   
 ## <a name="zero-based"></a>Od nuly  
- Příklad založený na nule funkce jazyka Visual Basic, vezměte v úvahu `Split` funkce. Rozdělí řetězec a vrátí pole obsahující podřetězce. [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.String.Split%2A?displayProperty=nameWithType> Metoda také rozdělí řetězec a vrátí pole obsahující podřetězce. Protože `Split` funkce a <xref:System.String.Split%2A> metoda návratový [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pole, musí být založený na nule.  
+ Příklad založený na nule funkce jazyka Visual Basic, vezměte v úvahu `Split` funkce. Rozdělí řetězec a vrátí pole obsahující podřetězce. Rozhraní .NET Framework <xref:System.String.Split%2A?displayProperty=nameWithType> metoda také rozdělí řetězec a vrátí pole obsahující podřetězce. Vzhledem k tomu, `Split` funkce a <xref:System.String.Split%2A> metoda vrátit pole rozhraní .NET Framework, musí být založený na nule.  
   
 ## <a name="see-also"></a>Viz také:
 

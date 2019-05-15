@@ -2,12 +2,12 @@
 title: 'Postupy: Porovnání obsahu dvou složek (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: aec333fd3a54927f39569173db4e30999f632513
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5d944025d8d442bb80c492d1898487dff88c5bc1
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64597112"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585901"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: Porovnání obsahu dvou složek (LINQ) (C#)
 Tento příklad ukazuje tři způsoby, jak porovnat dvě výpisu souborů zobrazuje:  
@@ -126,7 +126,7 @@ namespace QueryCompareTwoDirs
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

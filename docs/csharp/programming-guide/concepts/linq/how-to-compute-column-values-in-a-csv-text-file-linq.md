@@ -2,12 +2,12 @@
 title: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 0a1b42bf941fa65f053be4931ddfbbbdf1223a48
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 07fb81b474bd967d73dc9ff6a08e0c67e6ec0122
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668195"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585744"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (C#)
 Tento příklad ukazuje, jak provádět agregační výpočty, jako je součet, průměr, Min a Max pro sloupce souboru .csv. Příklad zásady, které jsou uvedeny zde lze použít na jiné typy structured textu.  
@@ -159,7 +159,7 @@ class SumColumns
  Dotaz funguje <xref:System.String.Split%2A> způsobů, jak převést každý řádek textu do pole. Každý prvek pole představuje sloupci. Nakonec text v každém sloupci je převedena na číselné vyjádření. Pokud se soubor nachází soubor oddělené tabulátorem, jen aktualizujte argument v `Split` metodu `\t`.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

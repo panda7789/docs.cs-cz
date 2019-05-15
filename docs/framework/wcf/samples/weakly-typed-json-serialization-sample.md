@@ -2,12 +2,12 @@
 title: Ukázka slabě typované serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: b0e9617ad5d616e8921fbf142085f2758f3e0cd4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a9be679b26e395e8fed0938567184a2e5d4a8f07
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62006353"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589223"
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
 Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelský typ musí být k dispozici na službu nebo klienta. Obvykle k tomu, <xref:System.Runtime.Serialization.DataContractAttribute> atribut bude použit pro tyto typy definované uživatelem a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu se použije pro jejich členy. Tento mechanismus platí i v případě práce s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [jak: Serializace a deserializace dat protokolu JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
@@ -58,7 +58,7 @@ Při serializaci uživatelem definovaný typ daného přenosový formát nebo de
   
  To může být náročné, zejména v případě, že klient má pro zpracování více než jeden typ objektu JSON.  
   
- `JsonObject` Typ zadaný v tomto příkladu představuje slabě typovaná reprezentace deserializovaný objekt JSON. `JsonObject` spoléhá na fyzické mapování mezi objekty JSON a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] slovníky a mapování mezi poli JSON a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pole. Následující kód ukazuje `JsonObject` typu.  
+ `JsonObject` Typ zadaný v tomto příkladu představuje slabě typovaná reprezentace deserializovaný objekt JSON. `JsonObject` spoléhá na fyzické mapování mezi objekty JSON a slovníky rozhraní .NET Framework a mapování mezi JSON pole a pole rozhraní .NET Framework. Následující kód ukazuje `JsonObject` typu.  
   
 ```  
 // Instantiation of JsonObject json omitted  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - sounds [Windows Forms], loading on separate threads
 - threading [Windows Forms], sounds
 ms.assetid: 3b6a9296-1d5e-4d52-a4ba-94366d6fe302
-ms.openlocfilehash: 3901166bb8d84f776eb24305a4c648ae0b6ca181
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5f533d82fcca07a2b64bdbbfb160a7b2a23ce540
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649310"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592372"
 ---
 # <a name="how-to-load-a-sound-asynchronously-within-a-windows-form"></a>Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms
 Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje v novém vláknu.  
@@ -29,8 +29,6 @@ Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje
 - Odkazy na sestavení systému a System.Windows.Forms.  
   
 - Nahradit název souboru `"http://www.tailspintoys.com/sounds/stop.wav"` s platným názvem souboru.  
-  
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Operace se soubory by měl být uzavřen v rámci příslušné zpracování výjimek bloků.  

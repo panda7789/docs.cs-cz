@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3009bf9eb24c44cedc4021f3d09f1707ae2e40d8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 862a224c696ebafb23b30add7c8e8d66e1846b4c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593595"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584457"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Postupy: Přijímání oznámení o první odpovídající výjimce
 <xref:System.AppDomain.FirstChanceException> Událost <xref:System.AppDomain> třída umožňuje dostávat oznámení, že byla vyvolána výjimka, před common language runtime začne hledat obslužné rutiny výjimek.
@@ -97,10 +97,6 @@ ms.locfileid: "64593595"
 
  [!code-csharp[System.AppDomain.FirstChanceException_howto#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#1)]
  [!code-vb[System.AppDomain.FirstChanceException_howto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#1)]
-
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
-
-- V tomto příkladu je aplikace příkazového řádku. Chcete-li zkompilovat a spustit tento kód v sadě Visual Studio, přidejte kód jazyka C# `Console.ReadLine();` (v jazyce Visual Basic `Console.ReadLine()`) na konci `Main()`, zabránit ukončit dříve, než si můžete přečíst výstup příkazového okna.
 
 ## <a name="see-also"></a>Viz také:
 

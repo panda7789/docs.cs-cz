@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54a6a1cda604cb9cdeecd9587af81dbdb810965c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f461490529f626cfc442d817840b9c2e64df4c19
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592444"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585873"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Reflection emit používá stejné rozhraní API v plné nebo částečné důvěryhodnosti, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodným kódem. Navíc reflexe obsahuje funkci, anonymně hostované dynamické metody, který je určen pro použití s částečnou důvěryhodností a sestaveními transparentní pro zabezpečení.  
@@ -77,12 +77,12 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
      [!code-csharp[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#5)]
      [!code-vb[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#5)]  
   
-     Poslední parametr <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody umožňují zadat sadu sestavení, která má být udělena úplná důvěryhodnost namísto sady udělení aplikační domény. Není nutné určit [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení, která vaše aplikace používá, protože jsou tato sestavení v globální mezipaměti sestavení. Sestavení v globální mezipaměti sestavení jsou vždy plně důvěryhodná. Tento parametr slouží k určení sestavení se silným názvem, které nejsou v globální mezipaměti sestavení.  
+     Poslední parametr <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody umožňují zadat sadu sestavení, která má být udělena úplná důvěryhodnost namísto sady udělení aplikační domény. Není nutné zadat sestavení rozhraní .NET Framework, které vaše aplikace používá, protože jsou tato sestavení v globální mezipaměti sestavení. Sestavení v globální mezipaměti sestavení jsou vždy plně důvěryhodná. Tento parametr slouží k určení sestavení se silným názvem, které nejsou v globální mezipaměti sestavení.  
   
 ### <a name="adding-restrictedmemberaccess-to-sandboxed-domains"></a>Přidání RestrictedMemberAccess do domén v izolovaném prostoru  
  Hostitelské aplikace mohou povolit anonymně hostované dynamické metody budou mít přístup k soukromým datům v sestaveních s úrovní důvěryhodnosti rovnou nebo nižší než úroveň důvěryhodnosti sestavení emitujícího kód. Pokud chcete povolit tuto omezenou schopnost přeskočit kontroly viditelnosti za běhu (JIT), přidá hostitelská aplikace <xref:System.Security.Permissions.ReflectionPermission> objektu <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> (RMA) do sady udělení.  
   
- Například hostitel může udělit internetovým aplikacím Internetová oprávnění plus RMA, takže Internetová aplikace může generovat kód, který přistupuje k soukromým datům v jejích vlastních sestaveních. Vzhledem k tomu, že přístup je omezen na sestavení stejné nebo nižší důvěry, internetovou aplikaci nelze například přístup ke členům plně důvěryhodných sestavení [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení.  
+ Například hostitel může udělit internetovým aplikacím Internetová oprávnění plus RMA, takže Internetová aplikace může generovat kód, který přistupuje k soukromým datům v jejích vlastních sestaveních. Vzhledem k tomu, že přístup je omezen na sestavení stejné nebo nižší důvěry, nemůže Internetová aplikace přístup ke členům plně důvěryhodných sestavení jako je například sestavení rozhraní .NET Framework.  
   
 > [!NOTE]
 >  Pro zabránění zvýšení úrovně oprávnění, informace o zásobníku pro emitující sestavení je součástí anonymně hostované dynamické metody jsou vytvořeny. Při vyvolání metody, jsou zkontrolovány informace o zásobníku. Anonymně hostovaná dynamická metoda, která je vyvolána z plně důvěryhodného kódu je tedy stále omezena na úroveň důvěryhodnosti emitujícího sestavení.  
@@ -169,7 +169,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
      [!code-csharp[HowToEmitCodeInPartialTrust#16](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#16)]
      [!code-vb[HowToEmitCodeInPartialTrust#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#16)]  
   
-     Omezení je, že k soukromým datům pouze v sestaveních s úrovní důvěryhodnosti rovnou nebo nižší než úroveň důvěryhodnosti emitujícího sestavení můžete přistupovat anonymně hostovaná dynamická metoda. Například pokud se dynamická metoda provádí s důvěryhodností Internetu, má přístup k soukromým datům v jiných sestavení, které jsou také spuštěna s důvěryhodností Internetu, ale nemá přístup k soukromým datům [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavení jsou nainstalované v globální mezipaměti sestavení a jsou vždy plně důvěryhodná.  
+     Omezení je, že k soukromým datům pouze v sestaveních s úrovní důvěryhodnosti rovnou nebo nižší než úroveň důvěryhodnosti emitujícího sestavení můžete přistupovat anonymně hostovaná dynamická metoda. Například pokud se dynamická metoda provádí s důvěryhodností Internetu, měl přístup k soukromým datům v jiných sestavení, které jsou také spuštěna s důvěryhodností Internetu, ale nemá přístup k soukromým datům sestavení rozhraní .NET Framework. Sestavení rozhraní .NET framework jsou nainstalované v globální mezipaměti sestavení a jsou vždy plně důvěryhodná.  
   
      Anonymně hostované dynamické metody mohou použít tuto omezenou schopnost přeskočit kontroly viditelnosti JIT, pouze pokud hostitelská aplikace poskytuje <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak. Při vyvolání metody je vznesen požadavek pro toto oprávnění.  
   

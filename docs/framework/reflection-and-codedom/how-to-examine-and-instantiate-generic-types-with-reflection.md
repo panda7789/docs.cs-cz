@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 949760026bc965fbb9a94d1f40eb0996a1ce7e92
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 41070b5d51f0b613d7a6bbbc72b24a8c1793964d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592386"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586110"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe
 Získat informace o obecných typů stejným způsobem jako informace o ostatních typech: prozkoumáním <xref:System.Type> objekt, který reprezentuje obecného typu. Hlavní rozdíl je, že obecný typ obsahuje seznam <xref:System.Type> reprezentují jeho parametry obecného typu. První postup v této části prozkoumá obecných typů.  
@@ -114,14 +114,6 @@ Získat informace o obecných typů stejným způsobem jako informace o ostatní
  [!code-cpp[HowToGeneric#1](../../../samples/snippets/cpp/VS_Snippets_CLR/HowToGeneric/cpp/ur.cpp#1)]
  [!code-csharp[HowToGeneric#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/ur.cs#1)]
  [!code-vb[HowToGeneric#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#1)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-  
-- Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
-  
-- Nejsou vyžadovány žádné odkazy na další sestavení.  
-  
-- Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

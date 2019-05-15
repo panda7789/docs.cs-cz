@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: bb57b962-70c1-45a9-93d5-e721e340a13f
-ms.openlocfilehash: c5c11ebf87f68a87c410c87fd860ba58f4f63a35
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5365c5274d2810f8fd93f81f10bbedf903756e0b
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587588"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586665"
 ---
 # <a name="exporting-schemas-from-classes"></a>Export schémat ze tříd
 Ke generování schématu XML definice jazyk (XSD) schémat ze tříd, které se používají v datovém modelu smlouvy, použijte <xref:System.Runtime.Serialization.XsdDataContractExporter> třídy. Toto téma popisuje proces pro vytvoření schémat.  
@@ -21,7 +21,7 @@ Ke generování schématu XML definice jazyk (XSD) schémat ze tříd, které se
 ## <a name="the-export-process"></a>Proces exportu  
  Proces exportu schématu začíná na jeden nebo více typů a vytváří <xref:System.Xml.Schema.XmlSchemaSet> , který popisuje projekce XML z těchto typů.  
   
- `XmlSchemaSet` Je součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]od schématu objektu modelu (SOM), který představuje sadu dokumentů schématu XSD. Vytvoření dokumentů XSD z `XmlSchemaSet`, použít kolekci schémat ze <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost `XmlSchemaSet` třídy. Potom serializovat každý <xref:System.Xml.Schema.XmlSchema> pomocí <xref:System.Xml.Serialization.XmlSerializer>.  
+ `XmlSchemaSet` Je část z objektu schématu rozhraní .NET Framework Model (SOM), který představuje sadu dokumentů schématu XSD. Vytvoření dokumentů XSD z `XmlSchemaSet`, použít kolekci schémat ze <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost `XmlSchemaSet` třídy. Potom serializovat každý <xref:System.Xml.Schema.XmlSchema> pomocí <xref:System.Xml.Serialization.XmlSerializer>.  
   
 #### <a name="to-export-schemas"></a>Export schémat  
   

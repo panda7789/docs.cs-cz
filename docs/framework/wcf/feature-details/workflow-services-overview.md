@@ -2,12 +2,12 @@
 title: Přehled služeb pracovních postupů – WCF
 ms.date: 03/30/2017
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
-ms.openlocfilehash: 1461ef545c4b31f84e62d82453320179d9aa74e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d5f8636bec57cee1cb72c2796fc4bafc6b9c044
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050334"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590084"
 ---
 # <a name="workflow-services-overview"></a>Přehled služeb pracovních postupů
 
@@ -48,7 +48,7 @@ WCF definuje dvě vazby služby MSMQ podle <xref:System.ServiceModel.NetMsmqBind
 
 Stejně jako služby WCF musí být hostovaný služeb pracovních postupů. Použití služby WCF <xref:System.ServiceModel.ServiceHost> třídy a hostování služeb pracovních postupů služby použijte <xref:System.ServiceModel.Activities.WorkflowServiceHost> pro hostování služeb. Stejně jako služby WCF je možné hostovat služby pracovního postupu mnoha různými způsoby, třeba:
 
-- Ve spravovaných [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace.
+- Ve spravované aplikaci rozhraní .NET Framework.
 
 - V Internetové informační službě (IIS).
 
@@ -56,7 +56,7 @@ Stejně jako služby WCF musí být hostovaný služeb pracovních postupů. Pou
 
 - Ve spravované službě Windows.
 
-Pracovní postup služby hostované ve spravovaných [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace nebo spravované služby Windows vytvořit instanci <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy a předat ji instance <xref:System.ServiceModel.Activities.WorkflowService> , který obsahuje definici pracovního postupu v rámci <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> vlastnost. Definice pracovního postupu, který obsahuje zasílání zpráv aktivity je vystavený jako služba pracovního postupu.
+Pracovní postup služby hostované ve spravované aplikaci rozhraní .NET Framework nebo spravované služby Windows vytvořit instanci <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy a předat ji instance <xref:System.ServiceModel.Activities.WorkflowService> , který obsahuje definici pracovního postupu v rámci <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> vlastnost. Definice pracovního postupu, který obsahuje zasílání zpráv aktivity je vystavený jako služba pracovního postupu.
 
 K hostování služby pracovního postupu v IIS nebo WAS, umístěte .xamlx souboru, který obsahuje definici služby pracovního postupu do virtuálního adresáře. Výchozí koncový bod (pomocí <xref:System.ServiceModel.BasicHttpBinding>) je automaticky vytvořen pro další informace, najdete v článku [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md). Můžete také umístit soubor Web.config ve virtuálním adresáři zadat vlastní koncové body. Pokud je vaše definice pracovního postupu v sestavení můžete umístit soubor .svc ve virtuálním adresáři a pracovní postup sestavení v adresáři App_Code. Souboru SVC musíte zadat objekt pro vytváření hostitele služby a třídy, která implementuje služba pracovního postupu. Následující příklad ukazuje, jak zadat objekt pro vytváření hostitele služby a určit třídu, která implementuje služba pracovního postupu.
 

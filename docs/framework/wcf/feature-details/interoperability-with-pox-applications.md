@@ -2,19 +2,19 @@
 title: Vzájemná funkční spolupráce s aplikacemi POX
 ms.date: 03/30/2017
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
-ms.openlocfilehash: b7fdb4e16bce52025515ced065d0f48cffb7fa3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 17b85ab41589a130e950cd52c759305cc17e92b7
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046889"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591045"
 ---
 # <a name="interoperability-with-pox-applications"></a>Vzájemná funkční spolupráce s aplikacemi POX
 
 "Plain Old XML" (POX) aplikace komunikovat výměnou nezpracované zprávy protokolu HTTP, které obsahují pouze data aplikací XML, která není uzavřen v rámci obálky protokolu SOAP. Windows Communication Foundation (WCF) můžete poskytovat služby a klienti, kteří používají POX zprávy. Ve službě je možné k implementaci služeb, které zpřístupňují koncové body pro klienty, například webových prohlížečů a skriptovací jazyky, které odesílání a příjem zpráv POX WCF. Na straně klienta je možné implementovat klienty, kteří komunikují se službami na základě POX programovacího modelu WCF.  
   
 > [!NOTE]
-> Tento dokument byl původně zapsán pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0.  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.5 obsahuje integrovanou podporu pro práci s aplikacemi POX. Další informace o najdete v tématu [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).
+> Tento dokument byl původně zapsán pro rozhraní .NET Framework 3.0.  Rozhraní .NET framework 3.5 obsahuje integrovanou podporu pro práci s aplikacemi POX. Další informace o najdete v tématu [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).
   
 ## <a name="pox-programming-with-wcf"></a>POX programování s použitím technologie WCF
 
