@@ -8,17 +8,17 @@ helpviewer_keywords:
 - battery states
 - power states
 ms.assetid: ad04a801-5682-4d88-92c5-26eb9cdb209a
-ms.openlocfilehash: 6bb9b4f30a88ece93b17ff2510087b220d538738
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36c152a9e388fe61b1c82a8783bf74bbe6c8f123
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757648"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592515"
 ---
 # <a name="power-management-in-windows-forms"></a>Správa výkonu ve Windows Forms
 Aplikace Windows Forms můžete využít výhod funkce řízení spotřeby v operačním systému Windows. Aplikace můžete monitorovat stav napájení počítače a provést akci, když dojde ke změně stavu. Pokud vaše aplikace běží na přenosný počítač, můžete chtít zakázat některé funkce ve vaší aplikaci, když baterie počítače klesne pod určitou úroveň.  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje <xref:Microsoft.Win32.SystemEvents.PowerModeChanged> události, ke kterému dochází pokaždé, když dojde ke změně stavu napájení, například když uživatel pozastaví nebo obnoví operačního systému, nebo při změně stavu napájení AC nebo stav baterie. <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> Vlastnost <xref:System.Windows.Forms.SystemInformation> třída může být použito pro dotaz na aktuální stav, jak je znázorněno v následujícím příkladu kódu.  
+ Poskytuje rozhraní .NET Framework <xref:Microsoft.Win32.SystemEvents.PowerModeChanged> události, ke kterému dochází pokaždé, když dojde ke změně stavu napájení, například když uživatel pozastaví nebo obnoví operačního systému, nebo při změně stavu napájení AC nebo stav baterie. <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> Vlastnost <xref:System.Windows.Forms.SystemInformation> třída může být použito pro dotaz na aktuální stav, jak je znázorněno v následujícím příkladu kódu.  
   
  [!code-csharp[PowerMode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#1)]
  [!code-vb[PowerMode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#1)]  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], about ActiveX controls
 - Windows Forms, interop
 ms.assetid: 0a26d99d-8135-4895-8760-c9a2b5f67f14
-ms.openlocfilehash: fc8e55d8f3824ca11c575479863491d7f949efa3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 02f3224a8069fd091833bb09744389592c769818
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665849"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592498"
 ---
 # <a name="windows-forms-and-unmanaged-applications-overview"></a>Windows Forms a přehled nespravovaných aplikací
 Aplikace Windows Forms a ovládacích prvků můžete spolupracovat s nespravované aplikace, se některé upozornění. Následující části popisují scénáře a konfigurace, které podporují aplikace a ovládací prvky Windows Forms a ty, které nepodporují.  
@@ -47,7 +47,7 @@ Aplikace Windows Forms a ovládacích prvků můžete spolupracovat s nespravova
  Aplikace zprávu, že je smyčka do interního programu smyčky, která načítá zprávy z fronty zpráv vlákna, přeloží je a potom je odešle do aplikace ke zpracování. Smyčky zpráv pro formulář Windows nemá stejnou architekturu jako smyčky zpráv, které poskytují starší aplikace, jako je aplikace Visual Basic 6.0 a aplikace knihovny MFC. Okno zpráv, které jsou odeslány do smyčky zpráv může zpracovány jinak, než se očekává, že formulář Windows. Proto může dojít k neočekávanému chování. Některé kombinací kláves nemusí fungovat, nemusí fungovat některé aktivity myši nebo některé události nemusí být vyvolány podle očekávání.  
   
 ## <a name="resolving-interoperability-issues"></a>Řešení potíží s interoperabilitou  
- Lze tyto problémy vyřešit zobrazení ve formuláři [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] smyčky zpráv, která je vytvořena pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metoda.  
+ Tyto problémy můžete vyřešit zobrazením formuláře ve smyčce zprávy rozhraní .NET Framework, která je vytvořena pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
   
  Chcete-li pracovní formulář Windows správně z klientské aplikace modelu COM, musíte ho spustit na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
   

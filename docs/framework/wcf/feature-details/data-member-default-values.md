@@ -8,15 +8,15 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: f92fc78aa7645abb742fdb38c360ac6641b1591d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fb9ad627df640e56b5250a2fdd15f5ac0d52df79
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627064"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592600"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
-V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Třeba u jakéhokoliv odkazového typu, výchozí hodnota je `null`, a pro typ integer je nula. Je čas od času žádoucí chcete vynechat, nechte datový člen ze serializovaných dat. Pokud je nastavena na výchozí hodnotu. Vzhledem k tomu, že člen má výchozí hodnotu, nemusí být serializován skutečnou hodnotu; Tato akce nemá výhody výkonu.  
+V rozhraní .NET Framework typy mají koncept *výchozí hodnoty*. Třeba u jakéhokoliv odkazového typu, výchozí hodnota je `null`, a pro typ integer je nula. Je čas od času žádoucí chcete vynechat, nechte datový člen ze serializovaných dat. Pokud je nastavena na výchozí hodnotu. Vzhledem k tomu, že člen má výchozí hodnotu, nemusí být serializován skutečnou hodnotu; Tato akce nemá výhody výkonu.  
   
  Chcete-li vynechat člena ze serializovaných dat. Nastavte <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut `false` (výchozí hodnota je `true`).  
   

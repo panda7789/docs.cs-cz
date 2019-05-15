@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 380bcb6d2a2846d09267eeb3a0d637469ce9fba5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 62e2a25e48ead730112a37af451d64c6ccc2e141
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909451"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593438"
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Návod: Vytvoření bloku toku dat vlastního typu
 Přestože Knihovna TPL datového toku poskytuje několik typů bloků toku dat, které dovolují vytvářet různé funkce, můžete také vytvořit typy vlastních bloků. Tento dokument popisuje, jak vytvořit typ bloku toku dat, která implementuje vlastní chování.  
@@ -52,17 +52,6 @@ Přestože Knihovna TPL datového toku poskytuje několik typů bloků toku dat,
  [!code-csharp[TPLDataflow_SlidingWindowBlock#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_slidingwindowblock/cs/slidingwindowblock.cs#100)]
  [!code-vb[TPLDataflow_SlidingWindowBlock#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_slidingwindowblock/vb/slidingwindowblock.vb#100)]  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `SlidingWindowBlock.cs` (`SlidingWindowBlock.vb` v jazyce Visual Basic) a pak spuštěním následujícího příkazu na příkazovém řádku pro vývojáře pro Visual Studio okno.  
-  
- Visual C#  
-  
- **csc.exe /r:System.Threading.Tasks.Dataflow.dll SlidingWindowBlock.cs**  
-  
- Visual Basic  
-  
- **vbc.exe /r:System.Threading.Tasks.Dataflow.dll SlidingWindowBlock.vb**  
-
 ## <a name="see-also"></a>Viz také:
 
 - [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
