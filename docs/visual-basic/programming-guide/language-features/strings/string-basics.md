@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-ms.openlocfilehash: 9d2d3c82f5512bc1e37e3b05086fbd364ee12298
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f1f6b98d7db510373f2729fab2a6e0ad993ea086
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938330"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591380"
 ---
 # <a name="string-basics-in-visual-basic"></a>Základní informace o řetězcích v jazyce Visual Basic
 `String` Datový typ představuje posloupnost znaků (nichž každý představuje zase instance `Char` datový typ). Toto téma představuje základní koncepty řetězců v jazyce Visual Basic.  
@@ -50,7 +50,7 @@ World]]></xml>.Value
 ```  
   
 ## <a name="characters-in-strings"></a>Znakům v řetězcích  
- Řetězec si lze představit jako řadu objektů `Char` hodnoty a `String` typ má integrované funkce, které můžete provádět mnoho manipulace na řetězec, které se podobají manipulaci s povolenou pole. Stejně jako všechna pole v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], jde o pole od nuly. Mohou odkazovat na konkrétní znak v řetězci prostřednictvím `Chars` vlastnost, která umožňuje přístup ke znakům podle umístění, ve kterém se zobrazí v řetězci. Příklad:  
+ Řetězec si lze představit jako řadu objektů `Char` hodnoty a `String` typ má integrované funkce, které můžete provádět mnoho manipulace na řetězec, které se podobají manipulaci s povolenou pole. Stejně jako všechna pole v rozhraní .NET Framework jsou pole od nuly. Mohou odkazovat na konkrétní znak v řetězci prostřednictvím `Chars` vlastnost, která umožňuje přístup ke znakům podle umístění, ve kterém se zobrazí v řetězci. Příklad:  
   
  [!code-vb[VbVbalrStrings#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#67)]  
   

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - -noconfig compiler option [Visual Basic]
 - /noconfig compiler option [Visual Basic]
 ms.assetid: a7405067-bd21-4171-adf4-a126fa3ad6c3
-ms.openlocfilehash: 44bc619c489fdff36f0b595f7d8934689b859adb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b707899c845b6b08e008fe229497f682c930044a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789022"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588856"
 ---
 # <a name="-noconfig"></a>-noconfig
-Určuje, že kompilátor by neměl odkazovat automaticky běžně používaných [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení nebo import `System` a `Microsoft.VisualBasic` obory názvů.  
+Určuje, že by měl kompilátor automaticky odkazovat běžně používané sestavení rozhraní .NET Framework nebo importovat `System` a `Microsoft.VisualBasic` obory názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,7 +23,7 @@ Určuje, že kompilátor by neměl odkazovat automaticky běžně používaných
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `-noconfig` Přikáže kompilátoru, aby kompilovat s soubor Vbc.rsp, který je umístěn ve stejném adresáři jako soubor Vbc.exe. Odkazuje na soubor Vbc.rsp běžně používaných [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení a importuje `System` a `Microsoft.VisualBasic` obory názvů. Kompilátor implicitně odkazuje na sestavení System.dll, není-li `-nostdlib` je zadána možnost. `-nostdlib` Přikáže kompilátoru, aby kompilovat s Vbc.rsp nebo automaticky odkazují na toto sestavení System.dll.  
+ `-noconfig` Přikáže kompilátoru, aby kompilovat s soubor Vbc.rsp, který je umístěn ve stejném adresáři jako soubor Vbc.exe. Soubor Vbc.rsp odkazuje na běžně používané sestavení rozhraní .NET Framework a importuje `System` a `Microsoft.VisualBasic` obory názvů. Kompilátor implicitně odkazuje na sestavení System.dll, není-li `-nostdlib` je zadána možnost. `-nostdlib` Přikáže kompilátoru, aby kompilovat s Vbc.rsp nebo automaticky odkazují na toto sestavení System.dll.  
   
 > [!NOTE]
 >  Vždy je odkazováno na sestavení Mscorlib.dll a Microsoft.VisualBasic.dll.  

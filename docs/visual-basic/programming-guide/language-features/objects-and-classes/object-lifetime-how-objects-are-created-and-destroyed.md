@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: 430041f5f4315c5ad20cd2495f01a6f776f239c7
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: a63134b966fe6e6cd0cd40f69ac04a7cd986513d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469697"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591542"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
@@ -140,7 +140,7 @@ End Sub
  Odvozená třída nesmí přepsat základní třídy <xref:System.IDisposable.Dispose%2A> a `Finalize` metody. Pokud tyto metody jsou volány z instance odvozené třídy, implementaci základní třídy tyto metody volat přepsání odvozené třídě `Dispose(disposing)` metody.  
   
 ## <a name="garbage-collection-and-the-finalize-destructor"></a>Uvolňování paměti a Finalize – destruktor  
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Používá *uvolňování paměti odkaz trasování* systému pravidelně uvolnit nevyužité prostředky. Visual Basic 6.0 a starší používala jiný systém volá *počítání odkazů* ke správě prostředků. I když oba systémy automaticky provádí stejnou funkci, existuje několik důležitých rozdílů.  
+ Rozhraní .NET Framework používá *uvolňování paměti odkaz trasování* systému pravidelně uvolnit nevyužité prostředky. Visual Basic 6.0 a starší používala jiný systém volá *počítání odkazů* ke správě prostředků. I když oba systémy automaticky provádí stejnou funkci, existuje několik důležitých rozdílů.  
   
  Modul CLR pravidelně zničí objekty, když systém zjistí, že tyto objekty už nejsou potřeba. Objekty jsou uvolní rychleji, když jsou systémové prostředky v krátkých dodávek a méně často jinak. Zpoždění mezi když objekt Vyskočení a kdy ho CLR uvolní znamená, že na rozdíl od s objekty v jazyce Visual Basic verze 6.0 a starší, nelze určit přesně když bude objekt zničen. V takové situaci objekty mají často *Nedeterministický životnost*. Ve většině případů není deterministický životnost nezmění jak psát aplikace, za předpokladu, nezapomeňte, že `Finalize` – destruktor nemusí spustit okamžitě, pokud objekt ztratí oboru.  
   

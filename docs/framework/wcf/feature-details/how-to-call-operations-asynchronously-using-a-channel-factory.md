@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cc17dd47-b9ad-451c-a362-e36e0aac7ba0
-ms.openlocfilehash: 17b6dd979f7554cd433cc1abcf2a4da8dd9b83cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac5817c5c1cfcf88be3f85836749eed53004dd43
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779337"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591143"
 ---
 # <a name="how-to-call-operations-asynchronously-using-a-channel-factory"></a>Postupy: Asynchronní volání operací pomocí ChannelFactory
 Toto téma popisuje, jak má přístup klient operace služby asynchronně při použití <xref:System.ServiceModel.ChannelFactory%601>– klientské aplikace. (Při použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> objektu, abyste mohli vyvolat službu, můžete použít založený na událostech asynchronní volání model. Další informace najdete v tématu [jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o založený na událostech asynchronní volání modelu najdete v tématu [události asynchronní vzor založený (EAP)](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).)  
@@ -42,7 +42,7 @@ Toto téma popisuje, jak má přístup klient operace služby asynchronně při 
      Jakmile funkce zpětného volání spustí, klient volá `End<operation>` (například `EndAdd`) načíst výsledky.  
   
 ## <a name="example"></a>Příklad  
- Služba, která se použije klientský kód, který se používá v předchozím postupu implementuje `ICalculator` rozhraní, jak je znázorněno v následujícím kódu. Na straně služeb `Add` a `Subtract` operace kontraktu se vyvolala synchronně podle Windows Communication Foundation (WCF) běhu, i když v předchozích krocích klienta jsou vyvolány asynchronně na straně klienta. `Multiply` a `Divide` operace slouží k vyvolání služby asynchronně na straně služeb, i když klient vyvolá je synchronně. Tento příklad nastaví <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> vlastnost `true`. Nastavení této vlastnosti v kombinaci s implementací [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] asynchronního vzoru, říká běhu k vyvolání operace asynchronně.  
+ Služba, která se použije klientský kód, který se používá v předchozím postupu implementuje `ICalculator` rozhraní, jak je znázorněno v následujícím kódu. Na straně služeb `Add` a `Subtract` operace kontraktu se vyvolala synchronně podle Windows Communication Foundation (WCF) běhu, i když v předchozích krocích klienta jsou vyvolány asynchronně na straně klienta. `Multiply` a `Divide` operace slouží k vyvolání služby asynchronně na straně služeb, i když klient vyvolá je synchronně. Tento příklad nastaví <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> vlastnost `true`. Nastavení této vlastnosti v kombinaci s implementací rozhraní .NET Framework asynchronní vzorek, říká běhu k vyvolání operace asynchronně.  
   
  [!code-csharp[C_How_To_CF_Async#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_how_to_cf_async/cs/service.cs#4)]
  [!code-vb[C_How_To_CF_Async#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_how_to_cf_async/vb/service.vb#4)]  

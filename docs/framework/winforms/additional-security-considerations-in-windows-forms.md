@@ -7,15 +7,15 @@ helpviewer_keywords:
 - security [Windows Forms], calling APIs
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
-ms.openlocfilehash: a101b5838b843f0130d16aab6eb199c7a54ca6b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3049b56589b2cd7f5e6cab462955a67289315b35
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669313"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588772"
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí částečným vztahem důvěryhodnosti než jinak než v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, síťové a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení ovlivňuje možnost volat rozhraní API Microsoft Windows nebo jiná rozhraní API, který nelze ověřit pomocí zabezpečení systému. Zabezpečení má vliv také na dalších aspektů vaší aplikace, včetně přístupu k souborům a dat a tisku. Další informace o přístupu k souborům a data v částečně důvěryhodném prostředí, najdete v části [další soubor zabezpečení a přístup k datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí částečné důvěryhodnosti, naleznete v tématu [další zabezpečení tisku ve Windows Forms](more-secure-printing-in-windows-forms.md).  
+Nastavení zabezpečení rozhraní .NET framework může způsobit, že aplikace na spouštění v prostředí částečným vztahem důvěryhodnosti než jinak než v místním počítači. Rozhraní .NET Framework omezuje přístup k takové kritické místním prostředkům jako systém souborů, síťové a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení ovlivňuje možnost volat rozhraní API Microsoft Windows nebo jiná rozhraní API, který nelze ověřit pomocí zabezpečení systému. Zabezpečení má vliv také na dalších aspektů vaší aplikace, včetně přístupu k souborům a dat a tisku. Další informace o přístupu k souborům a data v částečně důvěryhodném prostředí, najdete v části [další soubor zabezpečení a přístup k datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí částečné důvěryhodnosti, naleznete v tématu [další zabezpečení tisku ve Windows Forms](more-secure-printing-in-windows-forms.md).  
   
  Následující části popisují, jak pracovat s schránky, provádět manipulace s okna a volání rozhraní Windows API z aplikace, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
   

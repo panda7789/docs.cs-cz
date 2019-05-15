@@ -6,12 +6,12 @@ title: Dokumentace k rozhraní .NET
 description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
 ms.date: 12/04/2018
-ms.openlocfilehash: c1e60b9a9b642542c543da2520906b59a59ddff5
-ms.sourcegitcommit: bad2d2f2311cc689130f15a7500060f446c8d8c7
+ms.openlocfilehash: 7cf46b0c4d88b7657a5c82c7aa0ae30655c9d5ce
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65188812"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589985"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -253,7 +253,7 @@ ms.locfileid: "65188812"
                                                 <h3><a href="/dotnet/spark">Průvodce rozhraním .NET for Apache Spark</a></h3>
                                                 <p><a href="/dotnet/spark/tutorials">Kurzy</a></p>
                                                 <p><a href="/dotnet/spark/resources">Prostředky</a></p>
-                                                <p><a href="/dotnet/api?view=spark-dotnet">Reference k rozhraním API .NET for Apache Spark</a></p>
+                                                <p><a href="/dotnet/api/?view=spark-dotnet">Reference k rozhraním API .NET for Apache Spark</a></p>
                                             </div>
                                         </div>
                                     </div>

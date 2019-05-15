@@ -3,15 +3,15 @@ title: 'Kurz: Předvídání cen pomocí regresního algoritmu'
 description: Tento kurz ukazuje, jak sestavit regresní model využívající ML.NET k předvídání cen, konkrétně tarify taxislužby města New York City.
 author: jralexander
 ms.author: johalex
-ms.date: 05/06/2019
+ms.date: 05/09/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e46ab2ed9cace9d0769034356db425604f0ea06f
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 6fda4e35d6f52b264002a7fc91da3e5f7256fc11
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063403"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557809"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-model-with-mlnet"></a>Kurz: Předvídání cen pomocí regresní model ML.NET
 
@@ -127,7 +127,7 @@ public static ITransformer Train(MLContext mlContext, string dataPath)
 
 ## <a name="load-and-transform-data"></a>Načítání a transformace dat.
 
-Používá ML.NET [IDataView třídy](xref:Microsoft.ML.IDataView) jako flexibilní a efektivní způsob, jak popisují číselné nebo text tabulková data. `IDataView` můžete načíst buď textové soubory nebo v reálném čase (například SQL databázi nebo soubory protokolů). Přidejte následující kód jako první řádek `LoadData()` metody:
+Používá ML.NET [IDataView třídy](xref:Microsoft.ML.IDataView) jako flexibilní a efektivní způsob, jak popisují číselné nebo text tabulková data. `IDataView` můžete načíst buď textové soubory nebo v reálném čase (například SQL databázi nebo soubory protokolů). Přidejte následující kód jako první řádek `Train()` metody:
 
 [!code-csharp[LoadTrainData](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#6 "loading training dataset")]
 

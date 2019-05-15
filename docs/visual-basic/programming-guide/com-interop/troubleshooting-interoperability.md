@@ -16,18 +16,18 @@ helpviewer_keywords:
 - interoperability, sharing components
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
-ms.openlocfilehash: af28ba1a167415a59b8e2a4db860497122a5c2c9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 60a61dfa7302611800c0b808a31a386e46304756
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624815"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592168"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
-Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], mohou nastat jeden nebo více z těchto běžných problémů.  
+Při můžete zajistit vzájemnou funkční spolupráci mezi modelem COM a spravovaného kódu rozhraní .NET Framework, může dojít k některé z těchto běžných problémů.  
   
 ## <a name="vbconinteroperabilitymarshalinganchor1"></a> Zařazování spolupráce  
- V některých případech bude pravděpodobně nutné použít datové typy, které nejsou součástí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Sestavení vzájemné spolupráce zpracovat většinu práce s objekty COM, ale možná budete muset určit datové typy, které se používají při spravované objekty jsou vystaveny objektům modelu COM. Například musíte zadat struktury v knihovnách tříd `BStr` nespravovaný typ na řetězce zaslána com. objekty vytvořené pomocí jazyka Visual Basic 6.0 a starší verze. V takovém případě můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut způsobí spravované typy zpřístupní jako nespravované typy.  
+ V některých případech bude pravděpodobně nutné použít datové typy, které nejsou součástí rozhraní .NET Framework. Sestavení vzájemné spolupráce zpracovat většinu práce s objekty COM, ale možná budete muset určit datové typy, které se používají při spravované objekty jsou vystaveny objektům modelu COM. Například musíte zadat struktury v knihovnách tříd `BStr` nespravovaný typ na řetězce zaslána com. objekty vytvořené pomocí jazyka Visual Basic 6.0 a starší verze. V takovém případě můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut způsobí spravované typy zpřístupní jako nespravované typy.  
   
 ## <a name="vbconinteroperabilitymarshalinganchor2"></a> Export řetězce pevné délky na nespravovaný kód  
  V jazyce Visual Basic verze 6.0 a starší jsou exportovány řetězců na objekty modelu COM jako sekvence bajtů bez ukončení hodnotou null znaků. Z důvodu kompatibility s jinými jazyky Visual Basic .NET obsahuje znak ukončení při exportu řetězce. Nejlepší způsob, jak vyřešit k této nekompatibilitě je exportovat řetězce, které chybí ukončovací znak jako pole `Byte` nebo `Char`.  
@@ -55,7 +55,7 @@ Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/in
  Na rozdíl od tříd v standardní sestavení jsou přístupné třídy modelu COM ve spolupracujícím sestavení jako rozhraní a třídy, která představuje třídu COM. Název rozhraní je stejný jako u třídy modelu COM. Název třídy spolupráce je stejný jako původní třídy modelu COM, ale slovo "Třída" připojí. Předpokládejme například, že máte projekt s odkazem na sestavení vzájemné spolupráce pro objekt modelu COM. Pokud je název třídy modelu COM `MyComClass`, technologie IntelliSense a prohlížeče objektů zobrazit rozhraní s názvem `MyComClass` a třídu s názvem `MyComClassClass`.  
   
 ## <a name="vbconinteroperabilitymarshalinganchor6"></a> Vytvoření instance třídy rozhraní .NET Framework  
- Obecně platí, můžete vytvořit instanci [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pomocí `New` příkaz s názvem třídy. Třída modelu COM reprezentované definiční sestavení je jeden případ, ve kterém můžete použít `New` příkaz s rozhraním. Pokud použijete třídu modelu COM s `Inherits` příkazu, můžete použít rozhraní, stejně jako třídy. Následující kód ukazuje, jak vytvořit `Command` objektu v projektu, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM:  
+ Obecně platí, vytvoření instance třídy pomocí rozhraní .NET Framework `New` příkaz s názvem třídy. Třída modelu COM reprezentované definiční sestavení je jeden případ, ve kterém můžete použít `New` příkaz s rozhraním. Pokud použijete třídu modelu COM s `Inherits` příkazu, můžete použít rozhraní, stejně jako třídy. Následující kód ukazuje, jak vytvořit `Command` objektu v projektu, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM:  
   
  [!code-vb[VbVbalrInterop#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#20)]  
   
@@ -67,7 +67,7 @@ Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/in
 >  Sestavení vzájemné spolupráce implicitně implementovat rozhraní, které představují třídy modelu COM. By se neměl pokoušet použít `Implements` způsobí příkaz k implementaci těchto rozhraní nebo došlo k chybě.  
   
 ## <a name="vbconinteroperabilitymarshalinganchor7"></a> Datové typy parametrů a návratové hodnoty  
- Na rozdíl od členů standardní sestavení může sestavení vzájemné spolupráce členů mají datové typy, které se liší od těch, které používají v původní deklaraci objektu. I když sestavení vzájemné spolupráce implicitně převést na kompatibilní běžných typů modulu runtime jazyka typy modelu COM, měli věnovat pozornost datové typy, které jsou používány obě strany aby se zabránilo chybám za běhu. Například v modelu COM objekty vytvořené v jazyce Visual Basic verze 6.0 a starší, hodnoty typu `Integer` předpokládají [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] ekvivalentní typ `Short`. Doporučuje se použít Prohlížeč objektů prozkoumat charakteristiky členů importované před jejich použitím.  
+ Na rozdíl od členů standardní sestavení může sestavení vzájemné spolupráce členů mají datové typy, které se liší od těch, které používají v původní deklaraci objektu. I když sestavení vzájemné spolupráce implicitně převést na kompatibilní běžných typů modulu runtime jazyka typy modelu COM, měli věnovat pozornost datové typy, které jsou používány obě strany aby se zabránilo chybám za běhu. Například v modelu COM objekty vytvořené v jazyce Visual Basic verze 6.0 a starší, hodnoty typu `Integer` ekvivalentní typ rozhraní .NET Framework, se předpokládá `Short`. Doporučuje se použít Prohlížeč objektů prozkoumat charakteristiky členů importované před jejich použitím.  
   
 ## <a name="vbconinteroperabilitymarshalinganchor8"></a> Modul metody na úrovni modelu COM  
  Většina objektů COM se používají tak, že vytvoříte instanci třídy pomocí modelu COM `New` – klíčové slovo a následným voláním metod objektu. Jedinou výjimkou tohoto pravidla zahrnuje objekty modelu COM, které obsahují `AppObj` nebo `GlobalMultiUse` tříd modelu COM. Takové třídy vypadat podobně jako na úrovni metod modulu ve třídách jazyka Visual Basic .NET. Visual Basic 6.0 a starší verze implicitně vytvoření instancí těchto objektů můžete při prvním volání jedné z jejich metod. Například v jazyce Visual Basic 6.0 můžete přidat odkaz na knihovnu objektů 3.6 Microsoft DAO a volání `DBEngine` metody bez vytvoření instance:  

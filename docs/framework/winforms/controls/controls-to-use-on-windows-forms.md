@@ -5,22 +5,22 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: a05ddd714e85491d29aa5de574b4cdc36165c224
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: 3d8e6d37a5c27eac6af303819fb50b28acd225c6
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469514"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589039"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje abecední seznam ovládacích prvků a komponent, které lze použít v modelu Windows Forms. Kromě ovládacích prvků Windows Forms uvedenými v této části můžete přidat ovládací prvky ActiveX a vlastních ovládacích prvků do formulářů Windows. Pokud zjistíte, že ovládací prvek, který je třeba zde uvedeny, můžete také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj prvky Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku potřebujete, přečtěte si [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  
   
 > [!NOTE]
->  Ovládací prvky jazyka Visual Basic jsou založeny na třídách poskytované [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+>  Ovládací prvky jazyka Visual Basic jsou založeny na třídách poskytované rozhraní .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)  
- Uvádí a popisuje ovládací prvky Windows Forms na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+ Uvádí a popisuje ovládací prvky Windows Forms založené na rozhraní .NET Framework.  
   
  [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](controls-with-built-in-owner-drawing-support.md)  
  Popisuje, jak změnit aspekty vzhled ovládacího prvku, které nejsou k dispozici prostřednictvím vlastností.  
@@ -168,7 +168,7 @@ Následuje abecední seznam ovládacích prvků a komponent, které lze použít
  Umožňuje uživateli, změna velikosti ukotveného ovládacího prvku.  
   
  [Ovládací prvek Splitter](splitter-control-windows-forms.md)  
- Umožňuje uživateli, změna velikosti ukotveného ovládacího prvku ([!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verzi 1.x).  
+ Umožňuje uživateli, změna velikosti ukotveného ovládacího prvku (.NET Framework, verze 1.x).  
   
  [Ovládací prvek StatusBar](statusbar-control-windows-forms.md)  
  Informace o stavu zobrazí související do ovládacího prvku, který má fokus. I když <xref:System.Windows.Forms.StatusStrip> nahrazuje a rozšiřuje <xref:System.Windows.Forms.StatusBar> ovládacího prvku z předchozích verzí <xref:System.Windows.Forms.StatusBar> se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  

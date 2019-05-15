@@ -4,16 +4,16 @@ description: Prozkoumejte funkce engineering součásti, které jsou podporovan�
 author: natke
 ms.author: nakersha
 ms.date: 04/02/2019
-ms.openlocfilehash: d3261f88a8e52c71f8ddf4d3d5c90b2e2b22b620
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7ea06e19b4651017079a6ae57136f033e0ce981c
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64636556"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65558017"
 ---
 # <a name="data-transformations"></a>Transformace dat
 
-Transformace dat slouží k přípravě dat pro trénování modelu. Transformace v této příručce vracejí třídy, které implementují [IEstimator](xref:Microsoft.ML.IEstimator`1) rozhraní. Transformace dat je možné zřetězit. Každá transformace očekává, že a vytvoří data konkrétní typy a formáty, které jsou určené v propojených referenční dokumentaci.
+Transformace dat slouží k přípravě dat pro trénování modelu. Transformace v této příručce vracejí třídy, které implementují [IEstimator](xref:Microsoft.ML.IEstimator%601) rozhraní. Transformace dat je možné zřetězit. Každá transformace očekává, že a vytvoří data konkrétní typy a formáty, které jsou určené v propojených referenční dokumentaci.
 
 Některé transformace dat vyžadují trénovací data vypočítat své parametry. Příklad: <xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> transformer vypočítá průměr a odchylky trénovacích dat během `Fit()` operace a používá tyto parametry v `Transform()` operace. 
 

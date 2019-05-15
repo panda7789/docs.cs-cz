@@ -2,12 +2,12 @@
 title: Pokyny k hostování služby IIS
 ms.date: 03/30/2017
 ms.assetid: 959a21c8-9d9d-4757-b255-4e57793ae9d6
-ms.openlocfilehash: a537f37132e5014901d415cd96bc72a55ae0b750
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 92ee270426dbb7fdd166964c1b10e37f280e28f3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600253"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591875"
 ---
 # <a name="internet-information-service-hosting-instructions"></a>Pokyny k hostování služby IIS
 Ke spuštění ukázky, které jsou hostované v Internetové informační služby (IIS), musí se ujistěte, že IIS je správně nainstalován a běží.  
@@ -163,7 +163,7 @@ Ke spuštění ukázky, které jsou hostované v Internetové informační služ
 4. By se zobrazit webovou stránku s textem "Hello World".  
   
 > [!NOTE]
->  Pokaždé, když instalujete novou verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], je nutné znovu zaregistrovat aspnet_isapi jako rozšíření webové služby pro službu IIS. Uděláte to tak, vydávat `aspnet_regiis –I –enable` příkazu.  
+>  Pokaždé, když instalujete novou verzi rozhraní .NET Framework, je nutné znovu zaregistrovat aspnet_isapi jako rozšíření webové služby pro službu IIS. Uděláte to tak, vydávat `aspnet_regiis –I –enable` příkazu.  
   
 ## <a name="sample-code"></a>Vzorový kód  
   

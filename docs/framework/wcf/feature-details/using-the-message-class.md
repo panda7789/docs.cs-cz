@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-ms.openlocfilehash: 00b64bdd3795cf282847a3bbaa0940f76faa1c2e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1db509d8f1c672bf51cac7f1ca6b1af91b34fa4d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637531"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591273"
 ---
 # <a name="using-the-message-class"></a>Používání třídy Message
 <xref:System.ServiceModel.Channels.Message> Třída je základní na Windows Communication Foundation (WCF). Veškerá komunikace mezi klienty a služby, přílišnou <xref:System.ServiceModel.Channels.Message> instancí se odeslané a přijaté.  
   
  By obvykle interakci s <xref:System.ServiceModel.Channels.Message> třídy přímo. Místo toho WCF service model konstruktorů, jako jsou kontrakty dat, kontrakty zpráv a operace smlouvy, se používají k popisu příchozí a odchozí zprávy. Nicméně některé pokročilé scénáře, které můžete naprogramovat pomocí <xref:System.ServiceModel.Channels.Message> třídy přímo. Například můžete chtít použít <xref:System.ServiceModel.Channels.Message> třídy:  
   
-- Pokud potřebujete alternativní způsob vytváření obsah odchozí zprávy (například vytváření zprávy přímo ze souboru na disku) namísto serializace [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
+- Pokud potřebujete alternativní způsob vytváření obsah odchozí zprávy (například vytváření zprávy přímo ze souboru na disku) namísto serializaci objektů .NET Framework.  
   
-- Pokud potřebujete alternativní způsob použití obsahu příchozí zprávy (třeba když chcete použití transformace XSLT nezpracovaný obsah XML) namísto deserializaci do [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
+- Pokud potřebujete alternativní způsob použití obsahu příchozí zprávy (třeba když chcete použití transformace XSLT nezpracovaný obsah XML) namísto deserializaci do objektů .NET Framework.  
   
 - Pokud potřebujete řešit zprávy obecným způsobem bez ohledu na obsah zprávy (třeba když směrovat nebo předávat zprávy při sestavování směrovač, nástroje pro vyrovnávání zatížení nebo publikování-odběru systému).  
   

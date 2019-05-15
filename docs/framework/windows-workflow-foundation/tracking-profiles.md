@@ -2,12 +2,12 @@
 title: Sledování profilů
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-ms.openlocfilehash: 2fa4d65a6f0056824b2fc9dd67b93608777fc75d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c934ec9fd0524506577ab4457a2ec194d4d0cba7
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699680"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589932"
 ---
 # <a name="tracking-profiles"></a>Sledování profilů
 
@@ -17,7 +17,7 @@ Sledování profily obsahuje sledování dotazy, které umožňují sledování 
 
 Sledování profily se používají k určení, jaké informace o sledování je vygenerován pro instanci pracovního postupu. Pokud není zadán žádný profil, jsou emitovány všechny události sledování. Pokud je zadaný profil, bude vygenerován sledování událostí specifikovaný v profilu. V závislosti na vašich požadavků na monitorování napíšete profilu, který je velmi obecná, který se přihlásí k odběru malou sadu změn stavu vysoké úrovně v pracovním postupu. Naopak můžete vytvořit profil velmi podrobné, jehož výsledné události jsou bohaté dostatečně k rekonstrukci podrobné provádění toku později.
 
-Sledování profily projevují jako XML elementů v rámci standardní [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] konfigurační soubor nebo zadaný v kódu. V následujícím příkladu je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] profil sledování tracking profile v konfiguračním souboru, který umožňuje sledování účastník přihlásit k odběru `Started` a `Completed` události pracovního postupu.
+Sledování profily projevují jako XML elementů v rámci standardní konfigurační soubor rozhraní .NET Framework nebo se musí zadat v kódu. V následujícím příkladu je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] profil sledování tracking profile v konfiguračním souboru, který umožňuje sledování účastník přihlásit k odběru `Started` a `Completed` události pracovního postupu.
 
 ```xml
 <system.serviceModel>

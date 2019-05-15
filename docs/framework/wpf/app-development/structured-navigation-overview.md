@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 8092289d6adc6a017999d14dc7439323a7fc0d37
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a0da874c74562822d521d4a44782d9372cd62f90
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751002"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588648"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.  
@@ -70,7 +70,7 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
   
  Deklarace <xref:System.Windows.Navigation.PageFunction%601> je podobná deklaraci <xref:System.Windows.Controls.Page> přidání argumentů typu. Jak je vidět z příkladu kódu, zadejte argumenty jsou určené v i [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kód, pomocí `x:TypeArguments` atribut a kódu, pomocí syntaxe standardní obecný typ argumentu.  
   
- Není nutné používat pouze [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] třídy jako argumenty typu. A <xref:System.Windows.Navigation.PageFunction%601> mohl nazývat shromažďovat data specifického pro doménu, která je abstrahovaný jako vlastního typu. Následující kód ukazuje, jak použít jako argument typu pro vlastní typ <xref:System.Windows.Navigation.PageFunction%601>.  
+ Není nutné používat pouze třídy rozhraní .NET Framework jako argumenty typu. A <xref:System.Windows.Navigation.PageFunction%601> mohl nazývat shromažďovat data specifického pro doménu, která je abstrahovaný jako vlastního typu. Následující kód ukazuje, jak použít jako argument typu pro vlastní typ <xref:System.Windows.Navigation.PageFunction%601>.  
   
  [!code-csharp[CustomTypePageFunctionSnippets#CustomTypeCODE1](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomTypePageFunctionSnippets/CSharp/CustomType.cs#customtypecode1)]
  [!code-vb[CustomTypePageFunctionSnippets#CustomTypeCODE1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomTypePageFunctionSnippets/VisualBasic/CustomType.vb#customtypecode1)]  

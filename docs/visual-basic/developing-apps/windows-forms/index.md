@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 125c577710ed9c2b8a53e367cd22924a3ccb483c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cc40d7e10243f63040d7e4ad457aac0f9122b6ad
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615114"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590781"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -25,7 +25,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 - [Aplikace služeb Windows](../../../framework/windows-services/index.md). Vypíše seznam témat, která popisují, jak se vytvářejí služby Windows.  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>Vytváření bohatých, interaktivních uživatelských rozhraní  
- Windows Forms je chytrých klientských součástí služby [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], sadu spravované knihovny pro provádění běžných aplikačních úloh, jako je čtení a zápis do systému souborů. Použití vývojového prostředí, jako je Visual Studio, můžete vytvořit aplikace Windows Forms, které zobrazení informací, žádejte vstup od uživatele a komunikovat se vzdálenými počítači přes síť.  
+ Windows Forms je chytrých klientských součástí rozhraní .NET Framework sadu spravované knihovny pro provádění běžných aplikačních úloh, jako je čtení a zápis do systému souborů. Použití vývojového prostředí, jako je Visual Studio, můžete vytvořit aplikace Windows Forms, které zobrazení informací, žádejte vstup od uživatele a komunikovat se vzdálenými počítači přes síť.  
   
  Ve Windows Forms formuláře je vizuální povrch, na kterém můžete zobrazit informace pro uživatele. Běžně vytváříte aplikace Windows Forms umístěním ovládacích prvků ve formulářích a vývoj odpovědi na akce uživatele, jako je například kliknutí myší nebo stisknutí kláves. A *ovládací prvek* je prvek diskrétní uživatelského rozhraní (UI), která zobrazuje data nebo přijímá vstupní data.  
   
@@ -86,7 +86,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 |Správa zabezpečení se [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ## <a name="other-controls-and-features"></a>Další ovládací prvky a funkce  
- Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úkoly, rychlý a snadný, jako třeba podporu pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho Windows Forms závisí na špičkové zabezpečení systému [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], můžete vydat bezpečnější aplikací pro vaše zákazníky.  
+ Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úkoly, rychlý a snadný, jako třeba podporu pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho Windows Forms závisí na systému robustní zabezpečení rozhraní .NET Framework, můžete vydat bezpečnější aplikací pro vaše zákazníky.  
   
  Podrobné informace o použití těchto funkcí naleznete v následujících tématech nápovědy:  
   

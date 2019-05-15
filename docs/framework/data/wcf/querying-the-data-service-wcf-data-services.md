@@ -9,22 +9,22 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: ce019e97e54781976736dd5bd6e6d7e134322f65
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c2eb6d8f8bb7886e4615438e463aeea3c3825662
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61916861"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582627"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotazování v datové službě (WCF Data Services)
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje spouštění dotazů na datovou službu pomocí známých [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] programovací modely, včetně použití jazyka integrované dotazu (LINQ). Knihovna klienta přeloží dotaz, který je definován v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třídy do zprávy požadavku HTTP GET. Knihovny přijímá zprávy s odpovědí a přeloží ho do instancí tříd klientské datové služby. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje spouštění dotazů na datovou službu pomocí známých rozhraní .NET Framework programovací modely, včetně použití jazyka integrované dotazu (LINQ). Knihovna klienta přeloží dotaz, který je definován v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třídy do zprávy požadavku HTTP GET. Knihovny přijímá zprávy s odpovědí a přeloží ho do instancí tříd klientské datové služby. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.
 
 ## <a name="data-service-queries"></a>Dotazů v datové službě
 
 <xref:System.Data.Services.Client.DataServiceQuery%601> Generické třídě představuje dotaz, který vrátí kolekci nula nebo více instancí typu entity. Dotaz datové služby vždy patří do existujícího kontextu datové služby. Tento kontext udržuje identifikátor URI a metadata informace o služby, které je nutné k vytvoření a provedení dotazu.
 
-Při použití **přidat odkaz na službu** dialogové okno Přidat službu data [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]– aplikace založené na klienta, třídu kontejneru entity se vytvoří, která dědí z <xref:System.Data.Services.Client.DataServiceContext> třídy. Tato třída obsahuje vlastnosti, které vrací zadaný <xref:System.Data.Services.Client.DataServiceQuery%601> instancí. Existuje jedna vlastnost pro každou sadu entit, které data služba zpřístupňuje. Tyto vlastnosti usnadňují vytvoření instance typovaného <xref:System.Data.Services.Client.DataServiceQuery%601>.
+Při použití **přidat odkaz na službu** dialogové okno pro přidání datovou službu do aplikace klienta na základě rozhraní .NET Framework, kontejner třídu entity, která dědí z proběhne <xref:System.Data.Services.Client.DataServiceContext> třídy. Tato třída obsahuje vlastnosti, které vrací zadaný <xref:System.Data.Services.Client.DataServiceQuery%601> instancí. Existuje jedna vlastnost pro každou sadu entit, které data služba zpřístupňuje. Tyto vlastnosti usnadňují vytvoření instance typovaného <xref:System.Data.Services.Client.DataServiceQuery%601>.
 
 Dotaz je proveden v následujících scénářích:
 

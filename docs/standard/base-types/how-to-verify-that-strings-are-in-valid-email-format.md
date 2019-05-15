@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ddd8b0e7965ca734865e83373af2f7ee45d62c05
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f6381747bc998f73b374442fcb15e025ca15795d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633444"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589522"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
 Následující příklad používá regulární výraz k ověření, že je řetězec ve formátu platné e-mailu.  
@@ -72,36 +72,12 @@ Následující příklad používá regulární výraz k ověření, že je řet
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  `IsValidEmail` a `DomainMapper` metody mohou být součástí knihovny pomocných metod regulárních výrazů, nebo mohou být zahrnuty jako soukromé statické metoda nebo metody instance třídy aplikace.  
   
- Pro zahrnutí v knihovny regulárních výrazů, buď zkopírujte a vložte kód do projektu knihovny tříd Visual Studio, nebo zkopírujte a jeho vložením do textového souboru a kompilaci z příkazového řádku s příkaz podobný tomuto (za předpokladu, že název zdrojového kódu  soubor je RegexUtilities.cs nebo RegexUtilities.vb:  
-  
-```csharp  
-csc /t:library RegexUtilities.cs  
-```  
-  
-```vb  
-vbc /t:library RegexUtilities.vb  
-```  
-  
  Můžete také použít <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> tak, aby zahrnoval tento regulární výraz v knihovny regulárních výrazů.  
   
  Pokud jsou použity v knihovny regulárních výrazů, můžete je zavolat pomocí kódu, jako jsou následující:  
   
  [!code-csharp[RegularExpressions.Examples.Email#8](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#8)]
  [!code-vb[RegularExpressions.Examples.Email#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#8)]  
-  
- Za předpokladu, že jste vytvořili knihovnu tříd s názvem RegexUtilities.dll, který obsahuje regulární výraz ověření e-mailu, můžete kompilaci tohoto příkladu v některém z následujících způsobů:  
-  
-- V sadě Visual Studio, tak, že vytvoření konzolové aplikace a přidání odkazu na RegexUtilities.dll do projektu.  
-  
-- Z příkazového řádku, zkopírováním a vložením kódu do textového souboru a jeho kompilace s příkaz podobný tomuto (za předpokladu, že je název souboru se zdrojovým kódem Example.cs nebo Example.vb:  
-  
-    ```csharp  
-    csc Example.cs /r:RegexUtilities.dll  
-    ```  
-  
-    ```vb  
-    vbc Example.vb /r:RegexUtilities.dll  
-    ```  
   
 ## <a name="see-also"></a>Viz také:
 

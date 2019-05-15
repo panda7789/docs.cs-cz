@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Forms, hosting ActiveX controls
 - ActiveX controls [Windows Forms], adding
 ms.assetid: 2509302d-a74e-484f-9890-2acdbfa67a68
-ms.openlocfilehash: 9b037dfbb3a82b8df4c91468eeb8b2dea24e2a37
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b604502e0fea591460f30cae28b64ff1703da65
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625426"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589436"
 ---
 # <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
 Přestože Windows Forms jsou optimalizované pro hostitelské ovládací prvky Windows Forms, je možné použít ovládací prvky ActiveX. Při plánování aplikaci používá ovládací prvky ActiveX, mít na paměti následující aspekty:  
@@ -26,7 +26,7 @@ Přestože Windows Forms jsou optimalizované pro hostitelské ovládací prvky 
     >  Práce s prvku ActiveX ovládací prvek vyžaduje použití obálku vzájemné spolupráce COM. Další informace najdete v tématu [interoperabilita modelů COM v jazyce Visual Basic a Visual C#](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
     > [!NOTE]
-    >  Pokud název členu ovládacího prvku ActiveX odpovídá názvu definovanému v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], pak bude k názvu člena přidat předponu Importér ovládacích prvků ActiveX **Ctl** když vytvoří <xref:System.Windows.Forms.AxHost> odvozené třídy. Například, pokud ovládací prvek ActiveX má člen nazvaný **rozložení**, bude přejmenován **CtlLayout** ve třídě AxHost odvozené protože **rozložení** událost je definována v rámci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+    >  Pokud název členu ovládacího prvku ActiveX odpovídá názvu definovanému v rozhraní .NET Framework, pak bude k názvu člena přidat předponu Importér ovládacích prvků ActiveX **Ctl** když vytvoří <xref:System.Windows.Forms.AxHost> odvozené třídy. Například, pokud ovládací prvek ActiveX má člen nazvaný **rozložení**, bude přejmenován **CtlLayout** ve třídě AxHost odvozené protože **rozložení** událost je definována v rámci. .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
 

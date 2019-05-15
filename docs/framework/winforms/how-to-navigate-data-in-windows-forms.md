@@ -11,12 +11,12 @@ helpviewer_keywords:
 - CurrencyManager class [Windows Forms], navigating Windows Forms data
 - data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
-ms.openlocfilehash: 2ba33f9ecb3a12a62c41af17d3f9ad6f6e3f8a5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 452aacab4580a3b07168daa6b7c03740dc98620b
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801709"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583742"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v rozhraní Windows Forms
 V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdroji dat pro vazbu <xref:System.Windows.Forms.BindingSource> zdroj dat a vazby ovládacích prvků pro komponentu <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Použití těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> odpovídajícím způsobem. Můžete také najít položku a nastavte ji jako aktuální položky tak, že nastavíte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  
@@ -26,7 +26,7 @@ V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdro
 1. Nastavte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost <xref:System.Windows.Forms.BindingSource> pro vaše data vázaná na pozici záznam přejdete na. Následující příklad ukazuje použití <xref:System.Windows.Forms.BindingSource.MoveNext%2A> metodu <xref:System.Windows.Forms.BindingSource> vyšší <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost při `nextButton` dojde ke kliknutí na. <xref:System.Windows.Forms.BindingSource> Je přidružený `Customers` tabulku z datové sady `Northwind`.  
   
     > [!NOTE]
-    >  Nastavení <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost na hodnotu za první nebo poslední záznam nemá za následek chybu, jako [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nedovolí vám umožní nastavit pozice na hodnotu mimo rozsah seznamu. Pokud je to důležité ve vaší aplikaci vědět, jestli jste došli za první nebo poslední záznam, obsahují logiku pro ověření, zda překročí počet prvků data.  
+    >  Nastavení <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost na hodnotu za první nebo poslední záznam nemá za následek chybu, jak rozhraní .NET Framework nedovolí vám umožní nastavit pozice na hodnotu mimo rozsah seznamu. Pokud je to důležité ve vaší aplikaci vědět, jestli jste došli za první nebo poslední záznam, obsahují logiku pro ověření, zda překročí počet prvků data.  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.NavigatingData#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#4)]  
