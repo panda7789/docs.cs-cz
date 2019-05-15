@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 13e596ea64fc62ed6280e74636243619178ce069
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4114c974da9c108f641aebdb69f32fb3b0c484c9
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990883"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591527"
 ---
 # <a name="security-considerations-for-data"></a>Důležité informace o zabezpečení pro data
 
@@ -28,7 +28,7 @@ Počet míst v infrastruktuře Windows Communication Foundation (WCF) spustit k�
 
 Zodpovídá za kód autora zajistit, že neexistuje žádná ohrožení zabezpečení. Například pokud vytvoříte datový typ kontraktu s vlastností datový člen celočíselného typu a v `set` přistupující objekt implementace přidělit pole na základě hodnoty vlastnosti, vystavit možnosti útoku denial-of-service-li škodlivý zpráva obsahuje velmi velké hodnoty pro tento datový člen. Obecně se vyhýbejte rozdělení na základě příchozích dat nebo dlouhé zpracování uživatelského kódu (zejména v případě malé množství příchozích dat může být způsobena dlouhé zpracování). Při provádění analýzu zabezpečení z uživatelského kódu, nezapomeňte také zvážit všechny případy selhání (to znamená všechny kód pro větvení ve kterém jsou výjimky vyvolány).
 
-Ultimate příklad uživatelského kódu je kód uvnitř vaší implementace služby pro každou operaci. Zabezpečení vaší implementace služby je vaší povinností. Je snadné neúmyslně vytvořit nezabezpečené operace implementace, které může vést k ohrožení zabezpečení s cílem odepření služby. Například operace, která přebírá řetězec a vrátí seznam zákazníků z databáze, jejichž název začíná tento řetězec. Pokud pracujete s velkými databázemi a řetězec předávaný je právě jedno písmeno, váš kód může pokusit vytvořit zprávu větší než všechny dostupné paměti, což způsobí selhání celé služby. ( <xref:System.OutOfMemoryException> Se nedá vrátit zpátky v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] což vždy vede k ukončení aplikace.)
+Ultimate příklad uživatelského kódu je kód uvnitř vaší implementace služby pro každou operaci. Zabezpečení vaší implementace služby je vaší povinností. Je snadné neúmyslně vytvořit nezabezpečené operace implementace, které může vést k ohrožení zabezpečení s cílem odepření služby. Například operace, která přebírá řetězec a vrátí seznam zákazníků z databáze, jejichž název začíná tento řetězec. Pokud pracujete s velkými databázemi a řetězec předávaný je právě jedno písmeno, váš kód může pokusit vytvořit zprávu větší než všechny dostupné paměti, což způsobí selhání celé služby. ( <xref:System.OutOfMemoryException> Se nedá vrátit zpátky v rozhraní .NET Framework a vždy vede k ukončení aplikace.)
 
 Měli byste zajistit, že žádný škodlivý kód zapojené do elektrické zásuvky do různých bodů rozšiřitelnosti. To je obzvláště důležité, když spouštíte v částečném vztahu důvěryhodnosti, zpracování typů z částečně důvěryhodných sestavení nebo vytváření komponent použitelné částečně důvěryhodným kódem. Další informace najdete v tématu "Částečné důvěryhodnosti hrozby" v další části.
 
@@ -54,7 +54,7 @@ Příčinou přijímající straně přidělit značné množství paměti je mo
 
 Útoky s cílem odepření služeb jsou obvykle zmírnit použití kvót. Když dojde k překročení kvóty, <xref:System.ServiceModel.QuotaExceededException> obvykle je vyvolána výjimka. Bez kvót, škodlivých zpráv může způsobit všechnu dostupnou paměť přístup, což vede k <xref:System.OutOfMemoryException> výjimky nebo všechny dostupné balíčky přístupná, výsledkem <xref:System.StackOverflowException>.
 
-Scénář – překročila se kvóta je obnovitelné; Jestliže ve spuštěné službě, je aktuálně zpracovávanou zprávu zahozena a stále spuštěný a zpracovávat další zprávy. Scénáře přetečení-paměti a zásobníku, ale nejsou obnovitelné kdekoli v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]; služba ukončuje Pokud nalezne takové výjimky.
+Scénář – překročila se kvóta je obnovitelné; Jestliže ve spuštěné službě, je aktuálně zpracovávanou zprávu zahozena a stále spuštěný a zpracovávat další zprávy. Scénáře přetečení-paměti a zásobníku, ale nejsou obnovitelné kdekoli v rozhraní .NET Framework. Služba se ukončí, pokud dojde takové výjimky.
 
 Kvóty ve službě WCF nezahrnují žádné předběžné přidělení. Například pokud <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> kvóty (tuto možnost najdete na různé třídy) je nastavený na 128 KB, neznamená, že 128 KB je automaticky přidělena pro každou zprávu. Skutečná velikost přidělené závisí na skutečnou velikost příchozí zprávy.
 
@@ -274,7 +274,7 @@ Tato situace se můžete vyhnout tím, že je seznámen následující body:
 
 - Nenavrhujte typy kontraktů dat spoléhat na všechny konkrétní pořadí, ve kterých se vlastnosti musí být volána funkce setter.
 
-- Je třeba dbát pomocí starší verze typů označené <xref:System.SerializableAttribute> atribut. Mnohé z nich byly navrženy pro práci s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vzdálené komunikace pro použití s jenom důvěryhodná data. Existující typy označené tento atribut nemusí byly navrženy s stavu zabezpečení v úvahu.
+- Je třeba dbát pomocí starší verze typů označené <xref:System.SerializableAttribute> atribut. Mnohé z nich byly navrženy pro práci s vzdálené komunikace rozhraní .NET Framework pro použití s jenom důvěryhodná data. Existující typy označené tento atribut nemusí byly navrženy s stavu zabezpečení v úvahu.
 
 - Nespoléhejte na <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut zajistit přítomnost data, co se týče stavu zabezpečení. Data mohou být vždy `null`, `zero`, nebo `invalid`.
 
@@ -282,7 +282,7 @@ Tato situace se můžete vyhnout tím, že je seznámen následující body:
 
 ### <a name="using-the-netdatacontractserializer-securely"></a>Bezpečně používat NetDataContractSerializer
 
-<xref:System.Runtime.Serialization.NetDataContractSerializer> Je Serializační stroj, který používá určitou úzkou svázanost na typy. Podobá se to <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. To znamená, určuje, jaký typ pro vytvoření instance načtením [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] názvů typů a sestavení z příchozí data. I když je součástí WCF, není nijak zadaný zapojení Tato serializační stroj; vlastní kód musí být napsané. `NetDataContractSerializer` Slouží především pro usnadnění migrace z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] remoting do WCF. Další informace najdete v příslušné části v [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).
+<xref:System.Runtime.Serialization.NetDataContractSerializer> Je Serializační stroj, který používá určitou úzkou svázanost na typy. Podobá se to <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. To znamená Určuje, jaký typ pro vytvoření instance načtením sestavení rozhraní .NET Framework a název typu z příchozí data. I když je součástí WCF, není nijak zadaný zapojení Tato serializační stroj; vlastní kód musí být napsané. `NetDataContractSerializer` Slouží především pro usnadnění migrace ze vzdálené komunikace rozhraní .NET Framework do WCF. Další informace najdete v příslušné části v [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).
 
 Protože vlastní zprávě může znamenat libovolného typu je možné načíst, <xref:System.Runtime.Serialization.NetDataContractSerializer> mechanismus je ze své podstaty nezabezpečené a by měla sloužit pouze dodávat důvěryhodná data. Je možné zabezpečit napsáním vazač zabezpečené a omezením typu typ, který umožňuje načíst pouze bezpečné typů (pomocí <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> vlastnost).
 

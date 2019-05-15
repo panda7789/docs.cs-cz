@@ -9,25 +9,25 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-ms.openlocfilehash: f0d5c4e48d8a44c2e39942cbe76acbb5ef44ea7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ff305a6b22918681561ed7262a7377dbdf7aadc
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61943989"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591516"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 
 Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubory a adresáře.
 
-<xref:System.IO> Obsahuje obor názvů <xref:System.IO.File> a <xref:System.IO.Directory> třídy, které poskytují [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] funkce, které pracují se soubory a adresáře. Protože jsou statické metody z těchto objektů nebo sdílené členy, můžete využít přímo bez vytvoření instance třídy nejprve. Související s tyto třídy jsou <xref:System.IO.FileInfo> a <xref:System.IO.DirectoryInfo> třídy, které budou pro uživatele srozumitelná `My` funkce. K použití těchto tříd, musíte plně kvalifikovat názvy nebo importovat obory názvů včetně `Imports` příkazů na začátek ovlivněné kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).
+<xref:System.IO> Obsahuje obor názvů <xref:System.IO.File> a <xref:System.IO.Directory> třídy, které poskytují funkce rozhraní .NET Framework, které pracují se soubory a adresáře. Protože jsou statické metody z těchto objektů nebo sdílené členy, můžete využít přímo bez vytvoření instance třídy nejprve. Související s tyto třídy jsou <xref:System.IO.FileInfo> a <xref:System.IO.DirectoryInfo> třídy, které budou pro uživatele srozumitelná `My` funkce. K použití těchto tříd, musíte plně kvalifikovat názvy nebo importovat obory názvů včetně `Imports` příkazů na začátek ovlivněné kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).
 
 > [!NOTE]
-> Další témata v této části používají `My.Computer.FileSystem` místo objektu `System.IO` tříd pro práci s disky, soubory a adresáře. `My.Computer.FileSystem` Objektu je určená primárně pro použití v aplikacích jazyka Visual Basic. `System.IO` třídy jsou určeny k použití v jakémkoliv jazyce, který podporuje [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], včetně jazyka Visual Basic.
+> Další témata v této části používají `My.Computer.FileSystem` místo objektu `System.IO` tříd pro práci s disky, soubory a adresáře. `My.Computer.FileSystem` Objektu je určená primárně pro použití v aplikacích jazyka Visual Basic. `System.IO` třídy jsou určeny k použití v jakémkoliv jazyce, který podporuje rozhraní .NET Framework, včetně jazyka Visual Basic.
 
 ## <a name="definition-of-a-stream"></a>Definice Stream
 
-[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Používá datové proudy k čtení a zápis do souborů. Datový proud si lze představit jako jednorozměrné sadu souvislých dat, který má začátek a konec a kdy kurzor ukazuje aktuální pozici v datovém proudu.
+Rozhraní .NET Framework používá pro podporu čtení a zápis do souborů datových proudů. Datový proud si lze představit jako jednorozměrné sadu souvislých dat, který má začátek a konec a kdy kurzor ukazuje aktuální pozici v datovém proudu.
 
 ![Kurzor ukazuje aktuální pozici v filestream.](./media/basics-of-net-framework-file-io-and-the-file-system/filestream-cursor-position.gif)
 
@@ -45,7 +45,7 @@ Další informace najdete v tématu [vytváření datových proudů](../../../..
 
 ## <a name="types-of-streams"></a>Typy datových proudů
 
-V [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], je reprezentována datový proud <xref:System.IO.Stream> třídu, která tvoří abstraktní třídu pro všechny datové proudy. Nelze přímo vytvořit instanci <xref:System.IO.Stream> třídy, ale musí používat jednu z tříd implementuje.
+V rozhraní .NET Framework, je reprezentována datový proud <xref:System.IO.Stream> třídu, která tvoří abstraktní třídu pro všechny datové proudy. Nelze přímo vytvořit instanci <xref:System.IO.Stream> třídy, ale musí používat jednu z tříd implementuje.
 
 Existuje mnoho typů datových proudů, ale pro účely práce s vstupu a výstupu souboru (vstupně-výstupní operace), jsou nejdůležitější typy <xref:System.IO.FileStream> třídu, která poskytuje způsob, jak číst a zapisovat do souborů, a <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> třídu, která poskytuje způsob, jak vytvořit soubory a adresářů v izolovaném úložišti. Datové proudy, které se dá použít při práci s vstupně-výstupní operace souboru zahrnují:
 
@@ -84,7 +84,7 @@ V následující tabulce jsou uvedeny úlohy týkající se přístupu k soubor�
 
 ## <a name="file-permissions"></a>Oprávnění k souboru
 
-Řízení přístupu k souborům a adresářům lze provést s <xref:System.Security.Permissions.FileIOPermission> třídy. To může být obzvláště důležité pro vývojáře, kteří pracují s webovými formuláři, který ve výchozím nastavení běží v kontextu zvláštní místní uživatelský účet s názvem ASPNET, který je vytvořen jako součást [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] instalace. Pokud tato aplikace požaduje přístup k prostředku, ASPNET uživatelský účet má omezená oprávnění, která může zabránit uživateli v provádění akcí, jako je například zápis do souboru z webové aplikace. Další informace naleznete v tématu <xref:System.Security.Permissions.FileIOPermission>.
+Řízení přístupu k souborům a adresářům lze provést s <xref:System.Security.Permissions.FileIOPermission> třídy. To může být obzvláště důležité pro vývojáře, kteří pracují s webovými formuláři, který ve výchozím nastavení běží v kontextu zvláštní místní uživatelský účet s názvem ASPNET, který je vytvořen jako součást instalace technologie ASP.NET a .NET Framework. Pokud tato aplikace požaduje přístup k prostředku, ASPNET uživatelský účet má omezená oprávnění, která může zabránit uživateli v provádění akcí, jako je například zápis do souboru z webové aplikace. Další informace naleznete v tématu <xref:System.Security.Permissions.FileIOPermission>.
 
 ## <a name="isolated-file-storage"></a>Izolované úložiště souboru
 

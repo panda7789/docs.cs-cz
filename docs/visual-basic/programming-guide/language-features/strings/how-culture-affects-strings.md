@@ -5,12 +5,12 @@ helpviewer_keywords:
 - locale [Visual Basic], effect on strings
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
-ms.openlocfilehash: c498ae0a9d39240e715e6ba66e57c5e1d3ebbfbc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7301d52cf2c55394f731a8b7af5427e5fa66ba88
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610421"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591957"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
 Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace o jazykové verzi provádět převody řetězce a porovnávání řetězců.  
@@ -38,7 +38,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
 ## <a name="using-a-specific-culture"></a>Pomocí konkrétní jazykové verze  
  Představte si, že vyvíjíte aplikaci, která odesílá data (naformátovaná jako řetězec) k webové službě. V takovém případě musí aplikace použít konkrétní jazykovou verzi pro převod řetězce. Pro ilustraci, důvod, proč, vezměte v úvahu výsledek použití datum <xref:System.DateTime.ToString> metody: Pokud vaše aplikace používá k formátování data 4. července 2005, tato metoda vrátí "7/4/2005 12:00:00 AM" při spuštění pomocí jazykové verze Angličtina-Spojené státy (en US), ale vrátí "04.07.2005 00:00:00" při spuštění s němčina (de-DE) jazykovou verzi.  
   
- Když potřebujete provést konverzi na řetězec ve formátu konkrétní jazykové verze, byste měli použít `CultureInfo` třídu, která je integrovaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Můžete vytvořit nový `CultureInfo` pro konkrétní jazykovou verzi předáním název pro jazykovou verzi <xref:System.Globalization.CultureInfo.%23ctor%2A> konstruktoru. Názvy podporované jazykové verze jsou uvedeny v <xref:System.Globalization.CultureInfo> třídy stránku nápovědy.  
+ Když je třeba provést konverzi na řetězec ve formátu konkrétní jazykové verze, byste měli použít `CultureInfo` třídu, která je součástí rozhraní .NET Framework. Můžete vytvořit nový `CultureInfo` pro konkrétní jazykovou verzi předáním název pro jazykovou verzi <xref:System.Globalization.CultureInfo.%23ctor%2A> konstruktoru. Názvy podporované jazykové verze jsou uvedeny v <xref:System.Globalization.CultureInfo> třídy stránku nápovědy.  
   
  Alternativně můžete získat instanci *invariantní jazyková verze* z <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykové verze je založená na anglické jazykové verzi, ale existují určité rozdíly. Například určuje neutrální jazykové verze 24hodinový formát místo 12 hodin.  
   
@@ -62,7 +62,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
   
  [!code-vb[VbVbalrStrings#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#22)]  
   
- Můžete také použít [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] partner `StrComp` funkce, <xref:System.String.Compare%2A?displayProperty=nameWithType> metody. Toto je statické, přetížené metody třídy base řetězec. Následující příklad ukazuje, jak tato metoda se používá:  
+ Můžete použít také rozhraní .NET Framework partnera `StrComp` funkce, <xref:System.String.Compare%2A?displayProperty=nameWithType> metody. Toto je statické, přetížené metody třídy base řetězec. Následující příklad ukazuje, jak tato metoda se používá:  
   
  [!code-vb[VbVbalrStrings#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#48)]  
   

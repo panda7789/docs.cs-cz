@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1602479d4986109ffe89a87250297ee5687930ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcc294f09172eb2029f92d2c05821837aa10c35f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027183"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591498"
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>Implementace volitelného chování ve třídě XslTransform
 
@@ -19,9 +19,9 @@ ms.locfileid: "62027183"
 
 Volitelného chování, které jsou popsány jako uvedené v chování [World Wide Web Consortium (W3C) transformace XSL (XSLT) verze 1.0 doporučení](https://www.w3.org/TR/1999/REC-xslt-19991116), ve kterém implementaci zprostředkovatele vybere jeden z několika možných možnosti jako způsob, jak zpracovat situaci. Například část 7.3 vytváření zpracování pokyny, doporučení W3C říká, jedná se o chybu, pokud vytvoření instance obsah `xsl:processing-instruction` vytvoří uzly než textové uzly. Pro některé problémy W3C říká je třeba jaká rozhodnutí pokud procesor rozhodne zotavit z chyby. Na problém uvedený v části 7.3 W3C říká, že implementace můžete obnovit tuto chybu ignorovat uzly a jejich obsah.
 
-Proto pro každou z volitelného chování dovolují W3C, následující tabulka uvádí volitelného chování pro implementované [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] provádění <xref:System.Xml.Xsl.XslTransform> třídy a jaké části v doporučení W3C XSLT 1.0, že tento problém je popsáno.
+Proto se pro každou z volitelného chování dovolují W3C, následující tabulka uvádí volitelného chování implementována pro implementaci rozhraní .NET Framework <xref:System.Xml.Xsl.XslTransform> třídy a jaké části v doporučení W3C XSLT 1.0, že tento problém je popsáno.
 
-|Problém|Chování|Sekce|
+|Problém|Chování|Section|
 |-------------|--------------|-------------|
 |Textový uzel odpovídá obě `xsl:strip-space` a `xsl:preserve-space`.|Obnovit|3.4|
 |Zdrojový uzel odpovídá více než jedno pravidlo šablony.|Obnovit|5.5|

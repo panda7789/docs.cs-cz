@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-ms.openlocfilehash: d7b5cb57e921fa802207d2ad606ba3535b78a77b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 986f8c2d1eec91ee9a68d2b6068f5b38dfdf14f1
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587029"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591258"
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
 Chcete-li generovat třídy ze schémat, které lze použít s Windows Communication Foundation (WCF), použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a odchylky.  
@@ -21,9 +21,9 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 ## <a name="the-import-process"></a>Proces importu
  Proces importu schématu začíná <xref:System.Xml.Schema.XmlSchemaSet> a vytváří <xref:System.CodeDom.CodeCompileUnit>.  
   
- `XmlSchemaSet` Je součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]od schématu objektu modelu (SOM), který představuje sadu dokumentů schématu XML definice jazyk (XSD) schématu. Vytvoření `XmlSchemaSet` objekt ze sady dokumentů XSD, každý dokument v deserializaci <xref:System.Xml.Schema.XmlSchema> objektu (pomocí <xref:System.Xml.Serialization.XmlSerializer>) a přidejte tyto objekty do nového `XmlSchemaSet`.  
+ `XmlSchemaSet` Je součástí z objektu schématu rozhraní .NET Framework Model (SOM), který představuje sadu dokumentů schématu XML definice jazyk (XSD) schématu. Vytvoření `XmlSchemaSet` objekt ze sady dokumentů XSD, každý dokument v deserializaci <xref:System.Xml.Schema.XmlSchema> objektu (pomocí <xref:System.Xml.Serialization.XmlSerializer>) a přidejte tyto objekty do nového `XmlSchemaSet`.  
   
- `CodeCompileUnit` Je součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]od Code Document Object Model (CodeDOM), který představuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] kód abstraktní způsobem. K vygenerování skutečného kódu z `CodeCompileUnit`, použijte podtřídou třídy <xref:System.CodeDom.Compiler.CodeDomProvider> třídy, jako <xref:Microsoft.CSharp.CSharpCodeProvider> nebo <xref:Microsoft.VisualBasic.VBCodeProvider> třídy.  
+ `CodeCompileUnit` Je součástí rozhraní .NET Framework Code Document Object Model (CodeDOM), který představuje kód rozhraní .NET Framework abstraktní způsobem. K vygenerování skutečného kódu z `CodeCompileUnit`, použijte podtřídou třídy <xref:System.CodeDom.Compiler.CodeDomProvider> třídy, jako <xref:Microsoft.CSharp.CSharpCodeProvider> nebo <xref:Microsoft.VisualBasic.VBCodeProvider> třídy.  
   
 ### <a name="to-import-a-schema"></a>Chcete-li importovat schéma  
   
@@ -60,7 +60,7 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 #### <a name="controlling-namespaces-namespaces-or-the-namespace-switch"></a>Řízení obory názvů (obory názvů nebo parametru/Namespace přepnutí)  
  To odpovídá **/Namespace** zapnout `Svcutil.exe` nástroj.  
   
- Za normálních okolností jsou generované typy generované ze schématu do [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] obory názvů, s každý obor názvů XSD odpovídající konkrétní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] oboru názvů podle popisu v mapování [referenční dokumentace schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto mapování tak můžete přizpůsobit <xref:System.Runtime.Serialization.ImportOptions.Namespaces%2A> vlastnost <xref:System.Collections.Generic.Dictionary%602>. Pokud daný obor názvů XSD se nachází ve slovníku odpovídající [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] obor názvů se také přebírá ze slovníku.  
+ Za normálních okolností se generují typy generované ze schématu do oborů názvů rozhraní .NET Framework, se každý obor názvů XSD odpovídající konkrétní obor názvů rozhraní .NET Framework podle popisu v mapování [referenční dokumentace schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto mapování tak můžete přizpůsobit <xref:System.Runtime.Serialization.ImportOptions.Namespaces%2A> vlastnost <xref:System.Collections.Generic.Dictionary%602>. Pokud se najde daném oboru názvů XSD ve slovníku, odpovídající obor názvů rozhraní .NET Framework také provést ze slovníku.  
   
  Zvažte například následující schéma.  
   
@@ -74,7 +74,7 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 #### <a name="adding-the-serializableattribute-generateserializable-or-the-serializable-switch"></a>Přidat atribut SerializableAttribute (GenerateSerializable nebo / serializovatelný přepnutí)  
  To odpovídá **/ serializovatelný** zapnout `Svcutil.exe` nástroj.  
   
- Někdy je důležité pro typy generované ze schématu má být použitelná s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] moduly runtime serializace (například <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy). To je užitečné při použití typů pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vzdálené komunikace. Chcete-li povolit, musíte použít <xref:System.SerializableAttribute> atribut generované typy kromě standardní <xref:System.Runtime.Serialization.DataContractAttribute> atribut. Atribut je generován automaticky, pokud `GenerateSerializable` možnost importu je nastavena na `true`.  
+ Někdy je důležité pro typy generované ze schématu má být použitelná s serializace moduly runtime rozhraní .NET Framework (třeba <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy). To je užitečné při použití typů pro vzdálené komunikace rozhraní .NET Framework. Chcete-li povolit, musíte použít <xref:System.SerializableAttribute> atribut generované typy kromě standardní <xref:System.Runtime.Serialization.DataContractAttribute> atribut. Atribut je generován automaticky, pokud `GenerateSerializable` možnost importu je nastavena na `true`.  
   
  Následující příklad ukazuje `Vehicle` generuje s použitím třídy `GenerateSerializable` nastavena na možnost importu `true`.  
   
@@ -103,7 +103,7 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 > [!NOTE]
 >  Žádné přidružení může také zvážit seznamu. Například můžete zobrazit předchozí asociace jako seznam komplexní `city` objekty, ke kterým dochází na dvou polí (pole řetězce a pole celé číslo). Oba vzorky mít reprezentaci ve schématu XSD. Neexistuje žádný způsob k rozlišení mezi seznamem a přidružení, tak tyto vzory jsou vždy považovány za seznamy, pokud je k dispozici ve schématu speciální poznámky specifické pro WCF. Anotace označuje, že zadaný vzor představuje přidružení. Další informace najdete v tématu [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
- Za normálních okolností je importovat seznam jako, který je odvozen z obecného seznamu nebo jako kontraktu dat kolekce [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pole, v závislosti na tom, zda schéma dodržuje standardní pojmenování pro kolekce. To je popsáno podrobněji v [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Přidružení se obvykle importují jako buď <xref:System.Collections.Generic.Dictionary%602> nebo kontraktu dat kolekce, která je odvozena z objektu slovník. Zvažte například následující schéma.  
+ Za normálních okolností je seznam importován jako kontraktu dat kolekce, který je odvozen z obecného seznamu nebo pole rozhraní .NET Framework, v závislosti na tom, zda schéma dodržuje standardní pojmenování pro kolekce. To je popsáno podrobněji v [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Přidružení se obvykle importují jako buď <xref:System.Collections.Generic.Dictionary%602> nebo kontraktu dat kolekce, která je odvozena z objektu slovník. Zvažte například následující schéma.  
   
  [!code-xml[c_SchemaImportExport#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#13)]  
   
@@ -130,11 +130,11 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
  `ReferencedCollectionTypes` Odpovídá vlastnosti **/collectionType** zapnout nástroje SvcUtil.exe. Všimněte si, že odkazují na více typy kolekcí **/collectionType** přepínač musí být zadán více než jednou. Pokud typ není v knihovnu MsCorLib.dll, jeho sestavení musí také být odkazovány **/reference** přepnout.  
   
 #### <a name="import-options-referencing-existing-types"></a>Možnosti importu: Odkazování na existující typy  
- V některých případech odpovídají existující typy ve schématu [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů, a není nutné ke generování těchto typů úplně od začátku. (Tato část platí pouze pro typy noncollection. Typy kolekcí najdete v předchozí části.)  
+ V některých případech typy ve schématu odpovídají existující typy rozhraní .NET Framework a není nutné ke generování těchto typů úplně od začátku. (Tato část platí pouze pro typy noncollection. Typy kolekcí najdete v předchozí části.)  
   
  Například může mít standardní pořádaného microsoftem "Osoba" typ kontraktu dat, který chcete vždy použít při vyjadřování osoby. Pokaždé, když některé služby díky použití tohoto typu a jeho schématu se zobrazí v metadata služby, můžete chtít znovu použít existující `Person` zadejte při importu tohoto schématu namísto generování nové pro každou službu.  
   
- Chcete-li to provést, předejte seznam [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, které chcete znovu použít do kolekce <xref:System.Runtime.Serialization.ImportOptions.ReferencedTypes%2A> vlastnost vrátí na <xref:System.Runtime.Serialization.ImportOptions> třídy. Pokud některý z těchto typů názvem kontraktu dat a obor názvů, který odpovídá názvu a oboru názvů typu schématu, strukturálního porovnání je provedeno. Pokud je zjištěno, že typy mají odpovídající názvy a odpovídající struktury existující [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ je znovu použít namísto generování nové. Pokud pouze název odpovídá ale není struktury, je vyvolána výjimka. Všimněte si, že neexistuje žádný příspěvek pro správu verzí při odkazování na typy (například přidávání nové volitelné datové členy). Struktury musí přesně odpovídat.  
+ K tomuto účelu předat seznam typů rozhraní .NET Framework, které chcete znovu použít do kolekce <xref:System.Runtime.Serialization.ImportOptions.ReferencedTypes%2A> vlastnost vrátí na <xref:System.Runtime.Serialization.ImportOptions> třídy. Pokud některý z těchto typů názvem kontraktu dat a obor názvů, který odpovídá názvu a oboru názvů typu schématu, strukturálního porovnání je provedeno. Pokud je zjištěno, že typy mají odpovídající názvy a odpovídající struktury, existující typ rozhraní .NET Framework je znovu namísto generování nové. Pokud pouze název odpovídá ale není struktury, je vyvolána výjimka. Všimněte si, že neexistuje žádný příspěvek pro správu verzí při odkazování na typy (například přidávání nové volitelné datové členy). Struktury musí přesně odpovídat.  
   
  Žádné typy schémat se importují s daným názvem a obor názvů, je možné přidat více typů se stejným názvem kontraktu dat a obor názvů do odkazovaných typů kolekce. To umožňuje snadno přidat všechny typy v sestavení do kolekce bez starostí o duplicitní položky pro typy, které skutečně nedojde ve schématu.  
   
@@ -175,7 +175,7 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 #### <a name="import-options-advanced-options"></a>Možnosti importu: Rozšířené možnosti  
  Následující jsou rozšířené možnosti importu:  
   
-- <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> pro generování kódu pro vygenerované třídy. Pokusy o mechanismu import, aby funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastavena, kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] funkce se používá bez omezení.  
+- <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> pro generování kódu pro vygenerované třídy. Pokusy o mechanismu import, aby funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastaven, kompletní sadu funkcí rozhraní .NET Framework se používá bez omezení.  
   
 - <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace se dá nastavit pomocí této vlastnosti. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí proces importu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
   

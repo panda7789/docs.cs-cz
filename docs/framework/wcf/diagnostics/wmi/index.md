@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: 47aece36368be12a2a63283367e95dcaa64ef484
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ecc5c754a51a8e1a52797dfd0af0891704eaad1f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662471"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591237"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
@@ -30,7 +30,7 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
  Tato položka konfigurace vystavuje rozhraní WMI. Správa aplikací teď můžete připojit přes toto rozhraní a přístup WMI aplikace.  
   
 ## <a name="accessing-wmi-data"></a>Přístup k datům služby WMI  
- Data rozhraní WMI je možný v mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, Visual Basic aplikací, aplikací v jazyce C++ a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]. Další informace najdete v tématu [pomocí rozhraní WMI](https://go.microsoft.com/fwlink/?LinkId=95183).  
+ Data rozhraní WMI je možný v mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, aplikace Visual Basic, C++ aplikací a rozhraní .NET Framework. Další informace najdete v tématu [pomocí rozhraní WMI](https://go.microsoft.com/fwlink/?LinkId=95183).  
   
 > [!CAUTION]
 >  Pokud používáte rozhraní .NET Framework poskytuje metody k programovému přístupu ke službě data rozhraní WMI, byste měli vědět, že tyto metody může vyvolat výjimky, když se připojení. Během procesu vytváření nebude navázáno připojení <xref:System.Management.ManagementObject> instance, ale na první žádost o zahrnující skutečná data systému exchange. Proto byste měli použít `try..catch` blok catch výjimky.  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c0fb85d4-9e80-4905-9f65-29acc54201c4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7506a57e29b7942bd06141baa2d2b048ed998214
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 55b9c6c7175d8c7c33d8bfa03330c8e4b8816531
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937433"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592021"
 ---
 # <a name="how-to-prevent-a-child-task-from-attaching-to-its-parent"></a>Postupy: Zabránění připojení podřízené úlohy ke své nadřazené úloze
 Tento dokument ukazuje, jak zabránit podřízené úloze v připojení k nadřazené úloze. Zabránění podřízené úloze, mohla připojit k nadřazené je užitečné, když voláte komponentu, která je vytvořená systémem třetích stran a také používající úlohy. Například komponenty třetích stran, která se používá <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost vytvořit <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> objekt může způsobit problémy v kódu, pokud je dlouho běžící nebo dojde k neošetřené výjimce.  
@@ -27,19 +27,6 @@ Tento dokument ukazuje, jak zabránit podřízené úloze v připojení k nadřa
  [!code-vb[TPL_DenyChildAttach#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_denychildattach/vb/denychildattach.vb#1)]  
   
  Protože nadřazenou úlohu nedokončí až do dokončení všech podřízených úloh, může způsobit dlouhotrvající podřízená úloha celkové aplikace nízký výkon. V tomto příkladu Pokud aplikace používá výchozí možnosti pro vytvoření nadřazené úlohy, podřízená úloha musí dokončit předtím, než nadřazená úloha dokončí. Pokud aplikace používá <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> možnost podřízené není připojena k nadřazené. Aplikace proto můžete provést další práce po dokončení nadřazených úloh, a předtím, než je třeba počkat na dokončení úloh podřízené.  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DenyChildAttach.cs` (`DenyChildAttach.vb` v jazyce Visual Basic), a pak spuštěním následujícího příkazu na příkazovém řádku pro vývojáře pro Visual Studio okno.  
-  
- Visual C#  
-  
- **csc.exe DenyChildAttach.cs**  
-  
- Visual Basic  
-  
- **vbc.exe DenyChildAttach.vb**  
-  
-## <a name="robust-programming"></a>Robustní programování  
   
 ## <a name="see-also"></a>Viz také:
 

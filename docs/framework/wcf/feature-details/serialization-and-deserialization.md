@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: cf68834c5612ed51fb3e6c0ed18667cbc13482bc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 87788906cfbf5b230c3b976395d9a40c655ae41a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586223"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591657"
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
-Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
+Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá objekty rozhraní .NET Framework a XML. v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
   
- Při serializaci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty, serializátor rozumí širokou škálu serializace programovacích modelů, včetně nového *kontraktu dat* modelu. Úplný seznam podporovaných typů najdete v tématu [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Úvodní informace o kontraktech dat najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Při serializaci objektů .NET Framework, serializátor rozumí širokou škálu serializace programovacích modelů, včetně nového *kontraktu dat* modelu. Úplný seznam podporovaných typů najdete v tématu [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Úvodní informace o kontraktech dat najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
  Při deserializaci XML používá serializátor <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy. Podporuje také <xref:System.Xml.XmlDictionaryReader> a <xref:System.Xml.XmlDictionaryWriter> třídy, který umožňuje vytvářet optimalizované v některých případech, například když binární formát XML WCF pomocí formátu XML.  
   
- WCF obsahuje také doprovodné serializátor, <xref:System.Runtime.Serialization.NetDataContractSerializer>. <xref:System.Runtime.Serialization.NetDataContractSerializer> Je podobný <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializátory protože také vydává [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] názvy typů součástí serializovaná data. Používá se při stejné typy jsou sdíleny v serializaci a deserializaci skončí. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer> odvozen od běžné základní třídy <xref:System.Runtime.Serialization.XmlObjectSerializer>.  
+ WCF obsahuje také doprovodné serializátor, <xref:System.Runtime.Serialization.NetDataContractSerializer>. <xref:System.Runtime.Serialization.NetDataContractSerializer> Je podobný <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializátory protože také vydává názvy typů rozhraní .NET Framework jako součást serializovaná data. Používá se při stejné typy jsou sdíleny v serializaci a deserializaci skončí. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer> odvozen od běžné základní třídy <xref:System.Runtime.Serialization.XmlObjectSerializer>.  
   
 > [!WARNING]
 >  <xref:System.Runtime.Serialization.DataContractSerializer> Serializuje řetězce obsahující ovládací prvek znaků šestnáctkové hodnotu nižší než 20 jako entity XML. To může způsobit problém s klienta bez WCF při odesílání těchto dat na službu WCF.  
@@ -226,7 +226,7 @@ Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:Syst
  Existuje způsob, jak tuto kontrolu název prvku obálky; některá přetížení `ReadObject` metoda přijímat logický parametr `verifyObjectName`, který je nastaven na `true` ve výchozím nastavení. Pokud je nastavena na `false`, název a obor názvů elementu obálky se ignoruje. To je užitečné pro čtení XML, který byl napsané s využitím podrobných serializace mechanismus je popsáno výše.  
   
 ## <a name="using-the-netdatacontractserializer"></a>Použití NetDataContractSerializer  
- Hlavní rozdíl mezi `DataContractSerializer` a <xref:System.Runtime.Serialization.NetDataContractSerializer> je, že `DataContractSerializer` používá názvy datových kontraktů, zatímco `NetDataContractSerializer` výstupy úplné [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] názvy sestavení a typu v serializovaném kódu XML. To znamená, že přesně stejné typy musí být sdílená mezi koncovými body serializace a deserializace. To znamená, že mechanismus známých typů není požadován spolu s `NetDataContractSerializer` protože jsou vždy známé přesné typy k deserializaci.  
+ Hlavní rozdíl mezi `DataContractSerializer` a <xref:System.Runtime.Serialization.NetDataContractSerializer> je, že `DataContractSerializer` používá názvy datových kontraktů, zatímco `NetDataContractSerializer` výstupy úplné rozhraní .NET Framework sestavení a zadejte názvy dnů v serializovaném kódu XML. To znamená, že přesně stejné typy musí být sdílená mezi koncovými body serializace a deserializace. To znamená, že mechanismus známých typů není požadován spolu s `NetDataContractSerializer` protože jsou vždy známé přesné typy k deserializaci.  
   
  Však může dojít k několika problémům:  
   
@@ -234,11 +234,11 @@ Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:Syst
   
 - Správa verzí. Pomocí úplné názvy dnů v typ a sestavení v souboru XML vážně omezuje typy jak mohou být označené verzí. Nedá se změnit následující: Zadejte názvy, obory názvů, názvy sestavení a verze sestavení. Nastavení <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> vlastnost nebo konstruktor parametr <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple> místo výchozí hodnotu <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Full> umožňuje změny verze sestavení, ale ne pro obecné typy parametrů.  
   
-- Vzájemná funkční spolupráce. Protože [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] názvy typ a sestavení jsou zahrnuty v XML platformách jiných než [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] nedaří Výsledná data.  
+- Vzájemná funkční spolupráce. Protože typ a sestavení názvy rozhraní .NET Framework jsou zahrnuty v souboru XML, nemůže přistupovat jiné platformy než rozhraní .NET Framework Výsledná data.  
   
 - Výkon. Zápis typ a sestavení názvy významně zvyšuje velikost výsledného kódu XML.  
   
- Tento mechanismus je podobné jako binární a SOAP serializace používané [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vzdálené komunikace (konkrétně <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>).  
+ Tento mechanismus je podobná serializace SOAP používá vzdálené komunikace rozhraní .NET Framework nebo binární (konkrétně <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>).  
   
  Použití `NetDataContractSerializer` podobá se to používání `DataContractSerializer`, s těmito rozdíly:  
   
@@ -258,7 +258,7 @@ Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:Syst
   
  Formáty XML, který `NetDataContractSerializer` a `DataContractSerializer` použití jsou obvykle nejsou kompatibilní. To znamená pokus o s jedním z těchto serializátory serializaci a deserializaci k ostatním není podporovaný scénář.  
   
- Všimněte si také, že `NetDataContractSerializer` není výstup kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ a název sestavení pro každý uzel v grafu objektů. Tyto informace, jenom Pokud je nejednoznačný výstupu. To znamená výstupy na kořenové úrovni objekt a pro polymorfní případy.  
+ Všimněte si také, že `NetDataContractSerializer` není výstup úplné rozhraní .NET Framework typ a název sestavení pro každý uzel v grafu objektů. Tyto informace, jenom Pokud je nejednoznačný výstupu. To znamená výstupy na kořenové úrovni objekt a pro polymorfní případy.  
   
 ## <a name="see-also"></a>Viz také:
 

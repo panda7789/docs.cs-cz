@@ -2,12 +2,12 @@
 title: 'Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)'
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: ca340e82e33d9b3ec212f69cb73efafb3c6abc0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd7287abce7fca803dd87d23f1f58151cf4ec2f5
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701928"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585739"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)
 
@@ -124,14 +124,6 @@ Tucker, 94, 92, 91, 91
  */  
 ```
 
-## <a name="compiling-the-code"></a>Kompilování kódu
-
-Vytvoření a kompilace projektu, který cílí na jednu z následujících možností:
-
-- Rozhraní .NET framework verze 3.5 s odkazem na knihovnu System.Core.dll.
-- Rozhraní .NET framework verze 4.0 nebo vyšší.
-- Verze .NET core 1.0 nebo vyšší.
-  
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
