@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data types [Visual Basic], value types
 - data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
-ms.openlocfilehash: f823d9e80eb644487eab1ed84345dd8bdc10efc2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 541fe9f176a6210372b58753254692142f086992
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600947"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589821"
 ---
 # <a name="value-types-and-reference-types"></a>Typy hodnot a typy odkazu
 Datové typy v jazyce Visual Basic jsou implementovány podle jejich klasifikace. Datové typy jazyka Visual Basic lze rozdělit podle Určuje, zda proměnná určitého typu ukládá svoje vlastní data nebo ukazatel na data. Pokud ukládá svoje vlastní data *typ hodnoty*; pokud drží ukazatel na data jinde v paměti je *odkazovat na typ*.  
@@ -46,7 +46,7 @@ Datové typy v jazyce Visual Basic jsou implementovány podle jejich klasifikace
   
 - Delegáty  
   
- Třída je *odkazovat na typ*. Z tohoto důvodu referenční typy `Object` a `String` podporují [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy. Upozorňujeme, že každé pole typu odkazu, i v případě, že její členy jsou typy hodnot.  
+ Třída je *odkazovat na typ*. Z tohoto důvodu referenční typy `Object` a `String` tříd rozhraní .NET Framework podporuje. Upozorňujeme, že každé pole typu odkazu, i v případě, že její členy jsou typy hodnot.  
   
  Protože každý odkaz na typ představuje základní třídy rozhraní .NET Framework, je nutné použít [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) – klíčové slovo je inicializovat. Následující příkaz inicializuje pole.  
   

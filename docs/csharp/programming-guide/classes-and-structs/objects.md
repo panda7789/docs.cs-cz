@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 665fdd3d19008e7725983ea621a64514238639ce
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: de44f0c416de798fb42fba93e30ec6aa6ed0208d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599962"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585980"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako matrice, který určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která byla přidělena a nakonfigurovány podle podrobný plán. Program může vytvořit mnoho objektů stejné třídy. Objekty se také označují jako instance a mohou být uloženy v pojmenované proměnné nebo v poli nebo kolekci. Klientský kód je kód, který používá tyto proměnné pro volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované jako je C# typický program se skládá z více objektů dynamicky interakci.  
@@ -30,7 +30,7 @@ Definice třídy nebo struktury je jako matrice, který určuje, co můžete dě
   
  [!code-csharp[csProgGuideStatements#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#31)]  
   
- Paměť pro obě `p1` a `p2` přidělené v zásobníku vlákna. Tuto paměť je uvolněn spolu se tento typ nebo metoda, ve kterém je deklarována. Toto je jedním z důvodů, proč strukturách kopírují na přiřazení. Naopak paměti přidělené pro instanci třídy, je automaticky uvolňovaného (uvolněna z paměti) modul common language runtime při všech odkazů na objekt nepřejdou mimo rozsah. Není možné nedeterministicky zničit objekt třídy jako můžete v jazyce C++. Další informace o uvolňování paměti v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], naleznete v tématu [uvolňování](../../../standard/garbage-collection/index.md).  
+ Paměť pro obě `p1` a `p2` přidělené v zásobníku vlákna. Tuto paměť je uvolněn spolu se tento typ nebo metoda, ve kterém je deklarována. Toto je jedním z důvodů, proč strukturách kopírují na přiřazení. Naopak paměti přidělené pro instanci třídy, je automaticky uvolňovaného (uvolněna z paměti) modul common language runtime při všech odkazů na objekt nepřejdou mimo rozsah. Není možné nedeterministicky zničit objekt třídy jako můžete v jazyce C++. Další informace o uvolňování paměti v rozhraní .NET Framework najdete v tématu [uvolňování](../../../standard/garbage-collection/index.md).  
   
 > [!NOTE]
 >  V modulu common language runtime je vysoce optimalizovaných přidělování a navracení zpět paměti na spravované haldě. Ve většině případů není žádný velký rozdíl náklady na výkon spojeným s přidělováním instance třídy v haldě a přidělování struktury instance v zásobníku.  

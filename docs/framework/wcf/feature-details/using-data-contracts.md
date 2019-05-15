@@ -9,18 +9,18 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-ms.openlocfilehash: 0f33bdc006c6b965ba60257637f3cef182555d7d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3fd22cc0842c51b331905369915bd055235680c4
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637726"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592185"
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
 A *kontraktu dat* je oficiální smlouvu mezi službou a klienta, který abstraktně popisuje data, jenž bude vyměněn. To znamená ke komunikaci, klienta a služby nemusíte sdílejí stejné typy stejné kontraktů dat. Přesně definuje kontrakt dat, pro každý parametr nebo návratový typ, jaká data se serializovat (převedena na XML) mají vyměnit.  
   
 ## <a name="data-contract-basics"></a>Základní kontrakt dat  
- Windows Communication Foundation (WCF) Serializační stroj volá serializátor kontraktu dat ve výchozím nastavení používá k serializaci a deserializaci data (ji převést do a z XML). Všechny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] primitivní typy, jako jsou celá čísla a řetězce, jakož i určité typy považovány za primitivních elementů, jako například <xref:System.DateTime> a <xref:System.Xml.XmlElement>, lze serializovat s žádný další přípravou a považují se za s kontrakty dat. výchozí. Mnoho [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy také mít stávající smlouvy o data. Úplný seznam Serializovatelné typy, najdete v části [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+ Windows Communication Foundation (WCF) Serializační stroj volá serializátor kontraktu dat ve výchozím nastavení používá k serializaci a deserializaci data (ji převést do a z XML). Všechny rozhraní .NET Framework primitivní typy, jako je například celých čísel a řetězců, jakož i určité typy považovány za primitivních elementů, jako například <xref:System.DateTime> a <xref:System.Xml.XmlElement>, lze serializovat s žádný další přípravou a považují se za s kontrakty dat. výchozí. Mnoho typů rozhraní .NET Framework také mít stávající smlouvy o data. Úplný seznam Serializovatelné typy, najdete v části [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
  Nová komplexní typy, které vytvoříte, musí mít kontraktu dat definované pro ně být serializovatelný. Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> odvodí kontraktu dat a serializuje všechny veřejně viditelné typy. Všechny vlastnosti veřejné čtení a zápis a pole typu se serializují. Členy z serializace můžete odhlásit pomocí <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>. Kontrakt dat můžete také explicitně vytvořit pomocí <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy. To se obvykle provádí použitím <xref:System.Runtime.Serialization.DataContractAttribute> atribut typu. Tento atribut lze použít na třídy, struktury a výčty. <xref:System.Runtime.Serialization.DataMemberAttribute> Atribut musí pak použije k jednotlivým členům typ kontraktu dat k označení, že se jedná *datový člen*, to znamená, ho by měly být serializovány. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   

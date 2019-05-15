@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40032
 ms.assetid: 32bf1949-fd73-456c-a323-bf1ffe1320ed
-ms.openlocfilehash: b58759502b9297f9cd5ac89296ab147c40fc89f1
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 7d4566637da74726867c55ddf89b965d055e5d14
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913365"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589930"
 ---
 # <a name="underlying-type-typename-of-enum-is-not-cls-compliant"></a>Základní typ \<typename > Enum není kompatibilní se Specifikací CLS
-Datový typ zadaný pro tento výčet není součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS). Toto není k chybě v komponentě, protože [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] a Visual Basic podporují tento datový typ. Jiné součásti, které jsou napsané v striktně kompatibilní se Specifikací CLS kódu však nemusí podporovat tento typ dat. Takové součásti nemusí být úspěšně komunikovat s vaší komponentě.  
+Datový typ zadaný pro tento výčet není součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS). Nejedná se k chybě v komponentě, protože tento typ dat nepodporuje rozhraní .NET Framework a jazyka Visual Basic. Jiné součásti, které jsou napsané v striktně kompatibilní se Specifikací CLS kódu však nemusí podporovat tento typ dat. Takové součásti nemusí být úspěšně komunikovat s vaší komponentě.  
   
  Následující datové typy jazyka Visual Basic nejsou kompatibilní se Specifikací CLS:  
   
@@ -33,13 +33,13 @@ Datový typ zadaný pro tento výčet není součástí [jazyková nezávislost 
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud vaše komponenta rozhraní pouze s jinými [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] komponenty, nebo nemá není rozhraní s ostatními součástmi, nemusíte nic měnit.  
+- Pokud vaše komponenta rozhraní pouze s jinými součástmi rozhraní .NET Framework, nebo není rozhraní s ostatními součástmi, není potřeba nic měnit.  
   
-- Pokud při vzájemném propojování součástí, které nejsou napsané pro [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], může být schopní určit, buď prostřednictvím reflexe nebo dokumentaci ke službě, jestli podporuje tento typ dat. Pokud ano, není potřeba nic měnit.  
+- Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, je možné prostřednictvím reflexe nebo dokumentaci ke službě, určit, jestli je tento typ dat podporuje. Pokud ano, není potřeba nic měnit.  
   
 - Při vzájemném propojování součástí, která nepodporuje tento typ dat, musíte jej nahradit s typem nejbližší kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
   
-- Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `uint` je často 16 bitů v jiných prostředích. Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
+- Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než v rozhraní .NET Framework. Například `uint` je často 16 bitů v jiných prostředích. Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
   
 ## <a name="see-also"></a>Viz také:
 

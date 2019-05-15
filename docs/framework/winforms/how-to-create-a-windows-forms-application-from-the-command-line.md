@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 91261e5077352179719e631ebeb26670ffd74792
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 72195dd49c163b26a5bcfa739768718f2a32f346
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665231"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588976"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: Vytvoření aplikace Windows Forms z příkazového řádku
 Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace modelu Windows Forms z příkazového řádku. Není k dispozici rozsáhlou podporu pro tyto postupy v sadě Visual Studio.  Viz také [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).  
@@ -108,10 +108,6 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
  [!code-csharp[System.Windows.Forms.FormWithButton#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.FormWithButton#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/VB/Form1.vb#1)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-  
-- Chcete-li kód zkompilovat, postupujte podle pokynů v postupu budete pokračovat, které popisují, jak kompilace a spuštění aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

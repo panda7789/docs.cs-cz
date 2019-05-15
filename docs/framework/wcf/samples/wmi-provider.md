@@ -2,12 +2,12 @@
 title: Poskytovatel WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: 519f63f8dfc558a83a98ca44f74e926beb81c190
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd1cb5f580ba182516f94f10c809cfa649365045
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007497"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589410"
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
 Tento příklad ukazuje, jak shromažďovat data ze služby Windows Communication Foundation (WCF) za běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), který je součástí WCF. Tato ukázka také ukazuje, jak přidat ke službě WMI objekt definovaný uživatelem. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak shromažďovat data z `ICalculator` service za běhu.  
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak shromažďovat data ze služby Windows Communicatio
  Přidání objektů WMI ke službě umožňuje zobrazit informace definované uživatelem, spolu s předdefinované informace o poskytovateli WMI. Toho lze dosáhnout publikování schématu služby WMI pomocí Installutil.exe aplikace. Pokyny k instalaci na konci tohoto tématu najdete pokyny k tomu, společně s další podrobnosti.  
   
 ## <a name="accessing-wmi-information"></a>Přístup k informacím o rozhraní WMI  
- Dat služby WMI může přistupovat mnoho různých způsobů. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, Visual Basic aplikací, aplikací v jazyce C++ a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] (https://docs.microsoft.com/windows/desktop/wmisdk/using-wmi).  
+ Dat služby WMI může přistupovat mnoho různých způsobů. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, aplikace Visual Basic, C++ aplikací a rozhraní .NET Framework (https://docs.microsoft.com/windows/desktop/wmisdk/using-wmi).  
   
  Tento příklad používá dva skripty v jazyce Java: jeden výčet služby spuštěné v počítači společně s jejich vlastností a druhou pro zobrazení dat služby WMI definovaný uživatelem. Skript otevře připojení k poskytovateli služby WMI, analyzuje data a zobrazuje data, shromáždit.  
   

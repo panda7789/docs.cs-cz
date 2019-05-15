@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: ec5825dacaf67ee2544302f4f95a1b341ecf1bf7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 216de8f70e0ad6856bf5d708347a7e5f852fe4c6
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753613"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591564"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objekty a třídy v jazyce Visual Basic
 
@@ -176,7 +176,7 @@ Na druhé straně členy deklarované v rámci modulu jsou veřejně dostupné v
 
 Objekty vám umožňují deklarovat proměnné a procedury jednou a pak znovu použít kdykoli je to třeba. Například pokud chcete přidat kontrolu pravopisu do aplikace můžete definovat všechny proměnné a funkce pro kontrolu pravopisu nakonfigurovánu podporu. Pokud vytvoříte vaše kontroly pravopisu jako třída, můžete je znovu ji v jiných aplikacích tak, že přidáte odkaz na kompilované sestavení. Ještě lepší je je možné uložit sami nějakou práci pomocí kontroly pravopisu třídu, která už někdo vyvinula.
 
-[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Poskytuje mnoho příkladů součásti, které jsou k dispozici pro použití. V následujícím příkladu <xref:System.TimeZone> třídy v <xref:System> oboru názvů. <xref:System.TimeZone> obsahuje členy, které umožňují načítat informace o časovém pásmu systému aktuálního počítače.
+Rozhraní .NET Framework poskytuje mnoho příkladů součásti, které jsou k dispozici pro použití. V následujícím příkladu <xref:System.TimeZone> třídy v <xref:System> oboru názvů. <xref:System.TimeZone> obsahuje členy, které umožňují načítat informace o časovém pásmu systému aktuálního počítače.
 
 ```vb
 Public Sub examineTimeZone()
