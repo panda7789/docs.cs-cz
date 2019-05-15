@@ -6,16 +6,16 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 28fde47721e6354612ffec557da25c6d3bb775e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd2efcd28a8349ef07873adb5eaa69784e61d482
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672376"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585936"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
-C# je elegantní a typově bezpečný objektově orientované jazyka, který umožňuje vývojářům vytvářet různé zabezpečené a robustní aplikace, které běží na [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Můžete C# k vytvoření klienta Windows aplikace, webové služby XML, distribuované součásti, aplikace typu klient server, databázové aplikace a mnohem, mnohem více. Visual C# obsahuje Rozšířený editor kódu, vhodné návrháře uživatelské rozhraní, integrovaný ladicí program a mnoho dalších nástrojů, aby bylo snazší vývoj aplikací založených na jazyce C# a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  
+C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umožňuje vývojářům vytvářet různé zabezpečené a robustní aplikace, které běží na rozhraní .NET Framework. Můžete C# k vytvoření klienta Windows aplikace, webové služby XML, distribuované součásti, aplikace typu klient server, databázové aplikace a mnohem, mnohem více. Vizuální C# obsahuje Rozšířený editor kódu, vhodné návrháře uživatelské rozhraní, integrovaný ladicí program a mnoho dalších nástrojů usnadňují vývoj aplikací založených na C# jazyk a rozhraní .NET Framework.  
   
 > [!NOTE]
 > Dokumentace k Visual C# se předpokládá, že máte znalosti o základních konceptech programování. Pokud jste úplný Začátečník, můžete chtít prozkoumat Visual C# Express, která je k dispozici na webu. Můžete taky využít výhod knih a webových prostředků o jazyce C# a získat tak praktické znalosti programování.  
@@ -52,7 +52,7 @@ C# je elegantní a typově bezpečný objektově orientované jazyka, který umo
 
 ## <a name="net-framework-platform-architecture"></a>Architektura platformy .NET Framework
 
- Spouštět programy jazyka C# [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], součásti systému Windows, která obsahuje virtuální systém spouštění volá common language runtime (CLR) a ucelenou sadu knihoven tříd. CLR představuje komerční implementaci Microsoft common language infrastructure (CLI), mezinárodního standardu, který je základem pro vytváření, provádění a vývoj prostředí, ve kterých jazyky a knihovny fungují společně bez problémů.  
+ C#programy běží na rozhraní .NET Framework, součásti systému Windows, která obsahuje virtuální systém spouštění volá common language runtime (CLR) a ucelenou sadu knihoven tříd. CLR představuje komerční implementaci Microsoft common language infrastructure (CLI), mezinárodního standardu, který je základem pro vytváření, provádění a vývoj prostředí, ve kterých jazyky a knihovny fungují společně bez problémů.  
   
  Zdrojového kódu napsaného v jazyce C# je zkompilován intermediate language (IL), který odpovídá specifikaci CLI. Kód IL a prostředky, například rastrové obrázky a řetězce, jsou uloženy na disku do spustitelného souboru nazývaného jako sestavení, obvykle s příponou .exe nebo .dll. Sestavení obsahuje manifest, který poskytuje informace o typech sestavení, verzi, jazykovou verzi a požadavky na zabezpečení.  
   
@@ -60,9 +60,9 @@ C# je elegantní a typově bezpečný objektově orientované jazyka, který umo
   
  ![From C&#35; zdrojový kód pro spuštění počítače](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
- Vzájemná spolupráce jazyků je klíčovou funkcí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Protože kód IL produkovaný kompilátorem jazyka C# odpovídá na běžné specifikaci typů (CTS), kód IL generovaný jazykem C# můžete pracovat s kódem, který byl vytvořen .NET verzí jazyka Visual Basic, Visual C++ nebo některý z více než 20 dalších jazyků kompatibilních s CTS. Jediné sestavení může obsahovat více modulů napsaných v různých jazycích .NET, a typy mohou odkazovat na sebe navzájem tak, jako kdyby byly napsány ve stejném jazyce.  
+ Vzájemná spolupráce jazyků je klíčovou funkcí rozhraní .NET Framework. Protože kód IL produkovaný kompilátorem jazyka C# odpovídá na běžné specifikaci typů (CTS), kód IL generovaný jazykem C# můžete pracovat s kódem, který byl vytvořen .NET verzí jazyka Visual Basic, Visual C++ nebo některý z více než 20 dalších jazyků kompatibilních s CTS. Jediné sestavení může obsahovat více modulů napsaných v různých jazycích .NET, a typy mohou odkazovat na sebe navzájem tak, jako kdyby byly napsány ve stejném jazyce.  
   
- Kromě služeb běhu [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] také obsahuje rozsáhlou knihovnu více než 4000 tříd, které jsou uspořádány do oborů názvů, který nabízí celou řadu užitečných funkcí pro všechno, co ze souboru vstup a výstup a manipulaci s řetězci XML Analýza pro ovládací prvky Windows Forms. Typická aplikace C# používá [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd pro zpracování běžných "údržbových" činností.  
+ Kromě služeb běhu rozhraní .NET Framework také obsahuje rozsáhlou knihovnu více než 4000 tříd, které jsou uspořádány do oborů názvů, který nabízí celou řadu užitečných funkcí pro všechno, co ze vstupního souboru a výstup a manipulaci s řetězci XML Analýza pro ovládací prvky Windows Forms. Typické C# knihovny tříd rozhraní .NET Framework aplikace často používá pro zpracování běžných "údržbových" činností.  
   
  Další informace o rozhraní .NET Framework najdete v tématu [přehled rozhraní Microsoft .NET Framework](../../framework/get-started/overview.md).  
   

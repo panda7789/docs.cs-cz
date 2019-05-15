@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
-ms.openlocfilehash: 13d8d68140b68652b5e059ae9fb106f32142f698
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e51d999d5fcaf8180b4ea5189a3db9b6143a57db
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876860"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582729"
 ---
 # <a name="sql-clr-type-mismatches"></a>Neshody typů SQL a CLR
 
@@ -39,7 +39,7 @@ Následující typy nemají přiměřené protějšky.
   - **Časový interval**. Tento typ reprezentuje rozdíl mezi dvěma `DateTime` hodnoty a nemusí odpovídat `timestamp` systému SQL Server. Modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> může také namapovat na SQL Server `TIME` typ v některých případech. SQL Server `TIME` typu byla určena pouze k reprezentaci kladné hodnoty kratší než 24 hodin. Modul CLR <xref:System.TimeSpan> má mnohem větší rozsah.
 
   > [!NOTE]
-  > SQL Server – konkrétní [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] napíše <xref:System.Data.SqlTypes> nejsou součástí tohoto porovnání.
+  > Typy rozhraní .NET Framework specifickou pro Server SQL v <xref:System.Data.SqlTypes> nejsou součástí tohoto porovnání.
 
 - Neshody v systému SQL Server:
 
@@ -167,7 +167,7 @@ Operátory a funkce, které jsou v podstatě srovnatelné mají mírně odlišno
 
   - Volný převod do kódu `AND` / `OR` operátory může způsobit neočekávané chyby, pokud C# výraz spoléhá na vyhodnocení druhého operandu je založeno na výsledku vyhodnocení prvním operandem.
 
-- `Round()` funkce má odlišnou sémantiku [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] a v T-SQL.
+- `Round()` funkce má odlišnou sémantiku v rozhraní .NET Framework a jazyka T-SQL.
 
 - Počáteční index pro řetězce je 0 v modulu CLR, ale 1 v SQL. Proto všechny funkce, které má index musí index překladu.
 
@@ -194,7 +194,7 @@ Operátory a funkce, které jsou v podstatě srovnatelné mají mírně odlišno
 [!code-csharp[DLinqMismatch#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#5)]
 [!code-vb[DLinqMismatch#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#5)]
 
-- SQL provede symetrický aritmetické operace při zaokrouhlení [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] společnosti používá bankovní zaokrouhlení. Najdete v článku znalostní báze 196652 další podrobnosti.
+- SQL provede zaokrouhlení symetrický aritmetické rozhraní .NET Framework používá bankovní zaokrouhlení. Najdete v článku znalostní báze 196652 další podrobnosti.
 
 - Ve výchozím nastavení pro běžné národní prostředí jsou porovnávání řetězců znaků velkých a malých písmen v SQL. V jazyce Visual Basic a v C#, jsou malá a velká písmena. Například `s == "Food"` (`s = "Food"` v jazyce Visual Basic) a `s == "Food"` mohou přinést různé výsledky, pokud `s` je `food`.
 

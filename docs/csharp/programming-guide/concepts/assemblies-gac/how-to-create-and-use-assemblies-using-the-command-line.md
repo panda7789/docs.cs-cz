@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (C#)'
 ms.date: 07/20/2015
 ms.assetid: 408ddce3-89e3-4e12-8353-34a49beeb72b
-ms.openlocfilehash: 76243034b4291142efa5ac78c21f65333e1378e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 12d23816b740816bd357c3c2ac57583f31bf3cb3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599859"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586035"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a>Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (C#)
 Sestavení nebo dynamické propojení knihovny (DLL), je propojen s program za běhu. Abychom si předvedli, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
@@ -102,25 +102,6 @@ UtilityMethods.MultiplyClass.Multiply(num1, num2);
  Chcete-li spustit program, zadejte název souboru EXE, za nímž následuje dvě čísla, následujícím způsobem:  
   
  `TestCode 1234 5678`  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Pro sestavení souboru `MathLibrary.DLL`, zkompilujte příslušné dva soubory `Add` a `Mult` pomocí následující příkazový řádek.  
-  
-```csharp  
-csc /target:library /out:MathLibrary.DLL Add.cs Mult.cs  
-```  
-  
- [/Target: library](../../../../csharp/language-reference/compiler-options/target-library-compiler-option.md) – možnost kompilátoru instruuje kompilátor, aby výstupní knihovnu DLL místo souboru EXE. [/Out](../../../../csharp/language-reference/compiler-options/out-compiler-option.md) – možnost kompilátoru následovaný názvem souboru se používá k určení názvu souboru knihovny DLL. V opačném případě kompilátor použije první soubor (`Add.cs`) jako název knihovny DLL.  
-  
- K sestavení spustitelného souboru `TestCode.exe`, použijte následující příkazový řádek:  
-  
-```csharp  
-csc /out:TestCode.exe /reference:MathLibrary.DLL TestCode.cs  
-```  
-  
- **/Out** – možnost kompilátoru instruuje kompilátor, aby výstupní soubor EXE a určuje název výstupního souboru (`TestCode.exe`). Tato možnost kompilátoru je volitelné. [/Reference](../../../../csharp/language-reference/compiler-options/reference-compiler-option.md) – možnost kompilátoru Určuje soubor knihovny DLL nebo soubory, které tento program využívá. Další informace najdete v tématu [/reference](../../../../csharp/language-reference/compiler-options/reference-compiler-option.md).  
-  
- Další informace o sestavování z příkazového řádku najdete v tématu [sestavení pomocí příkazového řádku csc.exe](../../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  
   
 ## <a name="see-also"></a>Viz také:
 

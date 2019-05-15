@@ -2,12 +2,12 @@
 title: Trasování data v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: a6a752a5-d2a9-4335-a382-b58690ccb79f
-ms.openlocfilehash: 8f9388d084e9e598e43c0f871b21d05c053e77ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: df49fc7a5f7c437132a4dc24ed7f18492d9e7647
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608005"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583777"
 ---
 # <a name="data-tracing-in-adonet"></a>Trasování data v ADO.NET
 
@@ -31,7 +31,7 @@ Další informace o nastavení a konfigurace spravovaných trasování v ADO.NET
 
 ## <a name="accessing-diagnostic-information-in-the-extended-events-log"></a>Přístup k diagnostickým informacím v rozšířené události protokolu
 
-V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server, pro přístup k datům trasování ([trasování Data Access](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10))) byl aktualizován, aby bylo snazší usnadňuje korelaci událostí klienta s diagnostickými informacemi, jako jsou selhání připojení z připojení k serveru na cyklické vyrovnávací paměti a výkonu informace o aplikacích v rozšířené události protokolu. Informace o čtení rozšířené události protokolu najdete v tématu [zobrazit Data relace události](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh710068(v=sql.110)).
+V rámci .NET Data Provider pro SQL Server, pro přístup k datům trasování ([trasování Data Access](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10))) byl aktualizován, aby bylo snazší usnadňuje korelaci událostí klienta s diagnostickými informacemi, jako jsou selhání připojení z připojení k serveru na cyklické vyrovnávací paměti a výkonu informace o aplikacích v rozšířené události protokolu. Informace o čtení rozšířené události protokolu najdete v tématu [zobrazit Data relace události](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh710068(v=sql.110)).
 
 Pro operace připojení ADO.NET pošle klient ID připojení. Pokud se nepovede, může přístup k připojení k cyklické vyrovnávací paměti ([v systému SQL Server 2008 s cyklické vyrovnávací paměti připojení k řešení potíží s připojením](https://go.microsoft.com/fwlink/?LinkId=207752)) a najděte `ClientConnectionID` pole a získání diagnostických informací připojení se nezdařilo. ID připojení klientů jsou protokolovány v cyklické vyrovnávací paměti pouze v případě, že dojde k chybě. (Neúspěšné připojení před odesláním paketu hodnoty ID připojení klienta nevygeneruje.) ID připojení klienta je identifikátor GUID 16 bajtů. Můžete také vyhledat připojení klienta ID v výstup cíle rozšířeného počtu událostí, pokud `client_connection_id` akce se přidá na události v relaci rozšířených událostí. Můžete povolit trasování data access a znovu spusťte příkaz připojení a sledujte `ClientConnectionID` pole přístup do dat trasování, pokud potřebujete další pomoc diagnostických ovladače klienta.
 

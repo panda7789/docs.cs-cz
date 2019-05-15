@@ -1,18 +1,18 @@
 ---
-title: Znovu trénování modelu
+title: Opakované trénování modelu
 description: Zjistěte, jak programovém přeučení modelů v ML.NET
 ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 552698c02a7846db588822fa68d094dece160ea0
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2f8f8c035166612aabede8a512485bdf296c5655
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063549"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557907"
 ---
-# <a name="re-train-a-model"></a>Znovu trénování modelu
+# <a name="re-train-a-model"></a>Opakované trénování modelu
 
 Zjistěte, jak přeučování v ML.NET model strojového učení.
 
@@ -51,7 +51,7 @@ ITransformer trainedModel = mlContext.Model.Load("ogd_model.zip", out modelSchem
 
 ## <a name="extract-pre-trained-model-parameters"></a>Extrahovat parametry předem vytrénovaných modelu
 
-Po načtení modelu extrahovat parametry zjištěná modelu díky přístupu [ `Model` ](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) vlastnost předem natrénovaných modelů. Předem vytrénovaných model se trénuje pomocí trénování modelu lineární regrese [ `OnlineGradientDescentTrainer` ](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) vytváří[ `RegressionPredictionTransformer` ](xref:Microsoft.ML.Data.RegressionPredictionTransformer`1) , který vypíše [ `LinearRegressionModelParameters` ](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters). Tyto parametry modelu lineární regrese obsahovat zjištěná posun a váhy nebo koeficienty modelu. Tyto hodnoty se použije jako výchozí bod pro nové znovu trénovaného modelu.
+Po načtení modelu extrahovat parametry zjištěná modelu díky přístupu [ `Model` ](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) vlastnost předem natrénovaných modelů. Předem vytrénovaných model se trénuje pomocí trénování modelu lineární regrese [ `OnlineGradientDescentTrainer` ](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) vytváří[ `RegressionPredictionTransformer` ](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) , který vypíše [ `LinearRegressionModelParameters` ](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters). Tyto parametry modelu lineární regrese obsahovat zjištěná posun a váhy nebo koeficienty modelu. Tyto hodnoty se použije jako výchozí bod pro nové znovu trénovaného modelu.
 
 ```csharp
 // Extract trained model parameters

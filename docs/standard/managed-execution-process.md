@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e6e97591508c2aa90306ed22556f12f257cc4b03
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6007bc6085366e46e60696e412507026726f098a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647719"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593449"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a> Proces spravovaného spuštění zahrnuje následující kroky, které jsou detailně popsány dále v tomto tématu:  
@@ -56,7 +56,7 @@ ms.locfileid: "64647719"
   
 <a name="compiling_msil_to_native_code"></a>   
 ## <a name="compiling-msil-to-native-code"></a>Kompilace jazyka MSIL do nativního kódu  
- Před spuštěním jazyka MSIL (Microsoft Intermediate Language) je nutné, aby byl zkompilován proti modulu CLR (Common Language Runtime) do nativního kódu architektury cílového počítače. Rozhraní [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] poskytuje dva způsoby provedení tohoto převodu:  
+ Před spuštěním jazyka MSIL (Microsoft Intermediate Language) je nutné, aby byl zkompilován proti modulu CLR (Common Language Runtime) do nativního kódu architektury cílového počítače. Rozhraní .NET Framework poskytuje dva způsoby provedení tohoto převodu:  
   
 - Kompilátor JIT rozhraní .NET Framework.  
   

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: 18674a5410cd411ff78e2d3f768b02687cd13f6d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b618d0c153501885fe8c42a04d0723eaa5bcd9af
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637373"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586247"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 Windows Communication Foundation (WCF) můžete použít dva různé serializace technologií Chcete-li data ve vaší aplikaci do souboru XML, která se přenášejí mezi klienty a služeb, proces s názvem serializace.  
@@ -30,12 +30,12 @@ Windows Communication Foundation (WCF) můžete použít dva různé serializace
   
 - Mnoho běžných kolekce typů, které zahrnují mnoho typů obecných kolekcí.  
   
- Mnoho [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy spadají do druhé dvě kategorie a proto jsou serializovatelné. Pole Serializovatelné typy jsou také serializovat. Úplný seznam najdete v tématu [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
+ Mnoho typů rozhraní .NET Framework spadají do druhé dvě kategorie a proto jsou serializovatelné. Pole Serializovatelné typy jsou také serializovat. Úplný seznam najdete v tématu [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
   
  <xref:System.Runtime.Serialization.DataContractSerializer>, Spolu s daty používá typy kontraktů, je doporučený postup pro zápis nových služeb WCF. Další informace najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="when-to-use-the-xmlserializer-class"></a>Kdy použít třídy XmlSerializer  
- Také podporuje WCF <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro WCF. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] použití na webové služby. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad tím výsledného kódu XML a podporuje mnohem více schématu XML definice jazyk (XSD) standard. Také nevyžaduje žádné deklarativních atributů na Serializovatelné typy. Další informace najdete v tématu serializace XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dokumentaci. <xref:System.Xml.Serialization.XmlSerializer> Třídy typy kontraktů dat nepodporuje.  
+ Také podporuje WCF <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro WCF. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] použití na webové služby. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad tím výsledného kódu XML a podporuje mnohem více schématu XML definice jazyk (XSD) standard. Také nevyžaduje žádné deklarativních atributů na Serializovatelné typy. Další informace najdete v tématu serializace XML v dokumentaci k rozhraní .NET Framework. <xref:System.Xml.Serialization.XmlSerializer> Třídy typy kontraktů dat nepodporuje.  
   
  Při použití Svcutil.exe nebo **přidat odkaz na službu** je automaticky vybraná funkce v sadě Visual Studio pro generování kódu klienta pro služby třetích stran nebo pro přístup k schématu třetích stran, příslušný serializátor. Pokud schéma není kompatibilní s <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Xml.Serialization.XmlSerializer> zaškrtnuto.  
   

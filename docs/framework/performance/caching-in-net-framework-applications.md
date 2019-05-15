@@ -6,12 +6,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
-ms.openlocfilehash: c761a4a866aed3f8d42b28cdc8a360cd4923a7fc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 14565c3e73618a4290166d89f0ae6c2c9150f3b3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616673"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586188"
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.  
@@ -19,7 +19,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
  Rozhraní .NET Framework poskytuje ukládání do mezipaměti funkce, které můžete využít ke zlepšení výkonu a škálovatelnosti i Windows klientských a serverových aplikací, včetně ASP.NET.  
   
 > [!NOTE]
->  V [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] a starší verze technologie ASP.NET poskytuje implementaci mezipaměti v paměti v <xref:System.Web.Caching> oboru názvů. V předchozích verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET. V rozhraní .NET Framework 4 <xref:System.Runtime.Caching> obor názvů obsahuje rozhraní API, která jsou navrženy pro webové a jiných webových aplikací.  
+>  V [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] a starší verze technologie ASP.NET poskytuje implementaci mezipaměti v paměti v <xref:System.Web.Caching> oboru názvů. V předchozích verzích rozhraní .NET Framework, ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET. V rozhraní .NET Framework 4 <xref:System.Runtime.Caching> obor názvů obsahuje rozhraní API, která jsou navrženy pro webové a jiných webových aplikací.  
   
 ## <a name="caching-data"></a>Ukládaní dat do mezipaměti  
  Můžete ukládat do mezipaměti informace pomocí tříd v <xref:System.Runtime.Caching> oboru názvů. Ukládání do mezipaměti třídy v tomto oboru názvů poskytují následující funkce:  

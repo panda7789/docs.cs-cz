@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: e4d05d803cccf9a76c6229903cb1d322a42b11e6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6e51b93d53e1ad65b2f19f81de8833e83bfb18c1
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613039"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582760"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je architektura určená k vytváření aplikací orientovaných na služby. Pomocí technologie WCF, můžete odeslat data jako asynchronní zprávy z jeden koncový bod služby do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupnými službami hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncový bod může být klient služby, který vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo slova jako XML, nebo komplexního, jako binární datový proud. Několik ukázkových scénářů patří:
@@ -52,7 +52,7 @@ WCF zahrnuje následující sady funkcí. Další informace najdete v tématu [p
 
 - **Kontrakty dat**
 
-     Protože WCF se vytvořil pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], zahrnuje také přívětivá kód metody poskytnutí smluv, které chcete vynutit. Univerzální typů kontraktů kontraktu dat. je. V podstatě při kódování svojí služby pomocí jazyka Visual C# nebo Visual Basic, nejjednodušší způsob, jak zpracovávat data tím je vytvoření třídy, které představují data entity s vlastnostmi, které patří do datové entity. WCF obsahuje komplexní systém pro práci s daty tímto způsobem snadno. Po vytvoření třídy, které představují data, vaše služba automaticky generuje metadata, která umožňuje klientům v souladu s typy dat, které jste vytvořili. Další informace najdete v tématu [použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+     Protože WCF pomocí rozhraní .NET Framework, také zahrnuje kód vhodných metod poskytnutí smlouvy, které chcete vynutit. Univerzální typů kontraktů kontraktu dat. je. V podstatě při kódování svojí služby pomocí jazyka Visual C# nebo Visual Basic, nejjednodušší způsob, jak zpracovávat data tím je vytvoření třídy, které představují data entity s vlastnostmi, které patří do datové entity. WCF obsahuje komplexní systém pro práci s daty tímto způsobem snadno. Po vytvoření třídy, které představují data, vaše služba automaticky generuje metadata, která umožňuje klientům v souladu s typy dat, které jste vytvořili. Další informace najdete v tématu [použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
 
 - **Zabezpečení**
 

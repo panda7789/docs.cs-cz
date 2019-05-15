@@ -9,17 +9,17 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: ee6de112dcf92b1780fd331b581e6794d61f9406
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6425b0df5735c2469079e1c5a07a1ddd3be414a1
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654440"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588814"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
-A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], tyto seznamy můžou být vyjádřeny pomocí pole nebo celou řadu dalších typů (obecný seznam, obecný <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro daného zákazníka. Těchto kolekcí se nazývají *seznamu kolekcí*, bez ohledu na jejich skutečné typu.  
+A *kolekce* je seznam položek určitého typu. V rozhraní .NET Framework, tyto seznamy lze znázornit pomocí pole nebo celou řadu dalších typů (obecný seznam, obecný <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro daného zákazníka. Těchto kolekcí se nazývají *seznamu kolekcí*, bez ohledu na jejich skutečné typu.  
   
- Zvláštní forma kolekce existuje, který reprezentuje asociace mezi jednu položku ("klíče") a jiné ("hodnota"). V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], jsou představovány typy, jako <xref:System.Collections.Hashtable> a generický slovník. Kolekci přidružení může například mapování města ("klíče") na obyvatel ("value"). Těchto kolekcí se nazývají *kolekce slovníku*, bez ohledu na jejich skutečné typu.  
+ Zvláštní forma kolekce existuje, který reprezentuje asociace mezi jednu položku ("klíče") a jiné ("hodnota"). V rozhraní .NET Framework jsou představovány typy, jako <xref:System.Collections.Hashtable> a generický slovník. Kolekci přidružení může například mapování města ("klíče") na obyvatel ("value"). Těchto kolekcí se nazývají *kolekce slovníku*, bez ohledu na jejich skutečné typu.  
   
  Kolekce zobrazí zvláštní zacházení v datovém modelu kontraktu.  
   

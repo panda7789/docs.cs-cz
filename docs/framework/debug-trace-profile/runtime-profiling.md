@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d50ece4b800b77ac0447d1f22f1929f5a38a7d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f02cbac83bd1e849c30f6c732395335464e6e4e
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874234"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582821"
 ---
 # <a name="runtime-profiling"></a>Běhová profilace
 Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj nebo nasazení. Tato část se týká vývojáři a správci systému, kteří chtějí získat informace o výkonu aplikace.  
   
 ## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Sledování výkonu pomocí sledování výkonu (Perfmon.exe)  
- Sledování výkonu je nejjednodušší nástroje pro použití k profilu vaší [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace. Sledování výkonu graficky představuje data v rozhraní .NET Framework čítačů výkonu, které jsou součástí common language runtime a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. Tyto čítače umožňuje monitorovat vše od správy paměti na výkon kompilátor just-in-time (JIT). Upozorní vás, o prostředcích vaše aplikace využívá, což je nepřímé zlomek výkonu vaší aplikace. Tyto čítače slouží k pochopení, jak vaše aplikace funguje interně.  
+ Sledování výkonu je nejjednodušší nástroje pro použití Chcete-li Profilovat aplikaci rozhraní .NET Framework. Sledování výkonu graficky představuje data v rozhraní .NET Framework čítačů výkonu, které jsou součástí common language runtime a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. Tyto čítače umožňuje monitorovat vše od správy paměti na výkon kompilátor just-in-time (JIT). Upozorní vás, o prostředcích vaše aplikace využívá, což je nepřímé zlomek výkonu vaší aplikace. Tyto čítače slouží k pochopení, jak vaše aplikace funguje interně.  
   
 #### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Ke spuštění Perfmon.exe ve Windows Vista a novějších verzích  
   
@@ -57,7 +57,7 @@ Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj
 >  V systémech, na kterém [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] je nainstalovaný, sledování výkonu nemusí zobrazit data pro čítače výkonu v některé kategorie, jako **.NET CLR Data** a **.NET CLR sítě**, pro aplikace, které byly vytvořeny pomocí [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)]. Pokud je to tento případ, můžete nakonfigurovat monitorování výkonu pro zobrazení těchto dat tak, že přidáte [ \<forceperformancecounteruniquesharedmemoryreads – >](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) prvku do konfiguračního souboru aplikace.  
   
 ## <a name="reading-and-creating-performance-counters-programmatically"></a>Čtení a vytvoření čítače výkonu prostřednictvím kódu programu  
- [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje třídy, které můžete použít k programovému přístupu ke stejné informace výkonu, která je dostupná v konzole výkonu. Tyto třídy můžete také vytvořit vlastní čítače výkonu. Následující tabulka popisuje některé třídy, které jsou k dispozici v monitorování výkonu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+ Rozhraní .NET Framework poskytuje třídy, které můžete použít k programovému přístupu ke stejné informace výkonu, která je dostupná v konzole výkonu. Tyto třídy můžete také vytvořit vlastní čítače výkonu. Následující tabulka popisuje některé třídy, které jsou k dispozici v rozhraní .NET Framework pro sledování výkonu.  
   
 |Třída|Popis|  
 |-----------|-----------------|  

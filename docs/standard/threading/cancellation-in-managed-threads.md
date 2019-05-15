@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 531b9b6ae62b34f78f13ff6cd1784a2823584ed6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d0776db4d045a8e52521859b9126583558bc5b51
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620775"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586354"
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
 Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework používá jednotný model pro kooperativní zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na zjednodušené objekt volána token zrušení. Objekt, který vyvolá jednu nebo více operací zrušitelný, třeba tak, že vytvoříte nová vlákna nebo úlohy, předá token pro každou operaci. Jednotlivé operace můžete zase předat další operace kopie token. Později objekt, který vytvoří token, který slouží k požadavku, že operace zastavit, co dělají. Pouze žádost o objekt může vydat žádost o zrušení a každý naslouchací proces je zodpovědný za řadí žádosti a reagovat na ni vhodné a včasné způsobem.  
@@ -60,7 +60,7 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhr
 |<xref:System.Threading.CancellationToken>|Zjednodušené hodnotu předán typ na jeden nebo více naslouchacích procesů, obvykle jako parametr metody. Naslouchací procesy monitorování hodnoty `IsCancellationRequested` vlastnost tokenu dotazování, zpětné volání nebo popisovač čekání.|  
 |<xref:System.OperationCanceledException>|Přetížení konstruktoru tuto výjimku přijmout <xref:System.Threading.CancellationToken> jako parametr. Naslouchacích procesů může volitelně vyvolat tuto výjimku ověřit zdroj zrušení a informovat ostatní, které odpověděl na požadavek na zrušení.|  
   
- Nový model zrušení je integrovaná [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] v několika typech. Nejdůležitější ty jsou <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>. Doporučujeme použít tento nový model zrušení pro všechny nové kód knihovny a aplikace.  
+ Nový model zrušení je integrovaná v rozhraní .NET Framework v několika typech. Nejdůležitější ty jsou <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>. Doporučujeme použít tento nový model zrušení pro všechny nové kód knihovny a aplikace.  
   
 ## <a name="code-example"></a>Příklad kódu  
  V následujícím příkladu se vytvoří žádost o objekt <xref:System.Threading.CancellationTokenSource> objektu a předává jeho <xref:System.Threading.CancellationTokenSource.Token%2A> vlastnost zrušitelnou operaci. Operace, která obdrží požadavek monitoruje hodnotu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost tokenu cyklického dotazování. Pokud tato hodnota začne `true`, můžete ve svých ukončí naslouchací proces. V tomto příkladu metoda právě ukončí, což je vše, co je nutné v mnoha případech.  

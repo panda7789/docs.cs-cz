@@ -2,22 +2,22 @@
 title: Mapování datového typu v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: d4afab94-ada6-4c77-a73c-41f17bae6b5a
-ms.openlocfilehash: 1db427424e48d5b94e6c158e1d9967626297f4aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e85db4732da664848cee2ef48f9a880a86fef18
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607477"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583770"
 ---
 # <a name="data-type-mappings-in-adonet"></a>Mapování datového typu v ADO.NET
-Rozhraní .NET Framework podle systému společných typů, která definuje, jak jsou typy deklarovány, použití a spravovány v modulu runtime. Skládá se z hodnotové typy a typy odkazů, které jsou odvozeny z <xref:System.Object> základní typ. Při práci se zdrojem dat, datový typ je odvozen od poskytovatele dat. Pokud nebyl explicitně zadán. Například <xref:System.Data.DataSet> je nezávislý na libovolný zdroj dat pro konkrétní objekt. Data v `DataSet` načíst ze zdroje dat, a změny jsou trvalé zpět do zdroje dat s využitím `DataAdapter`. To znamená, že `DataAdapter` vyplní <xref:System.Data.DataTable> v `DataSet` s hodnotami ze zdroje dat, výsledné datové typy sloupců v `DataTable` jsou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů, aniž specifické pro typy [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dat Zprostředkovatel, který se používá k připojení ke zdroji dat.  
+Rozhraní .NET Framework podle systému společných typů, která definuje, jak jsou typy deklarovány, použití a spravovány v modulu runtime. Skládá se z hodnotové typy a typy odkazů, které jsou odvozeny z <xref:System.Object> základní typ. Při práci se zdrojem dat, datový typ je odvozen od poskytovatele dat. Pokud nebyl explicitně zadán. Například <xref:System.Data.DataSet> je nezávislý na libovolný zdroj dat pro konkrétní objekt. Data v `DataSet` načíst ze zdroje dat, a změny jsou trvalé zpět do zdroje dat s využitím `DataAdapter`. To znamená, že `DataAdapter` vyplní <xref:System.Data.DataTable> v `DataSet` s hodnotami ze zdroje dat, výsledné datové typy sloupců v `DataTable` jsou typy rozhraní .NET Framework, místo typů, které jsou specifické pro zprostředkovatele dat .NET Framework, která slouží k připojení ke zdroji dat.  
   
- Podobně, když `DataReader` vrátí hodnotu ze zdroje dat, výsledná hodnota uložená v místní proměnné, která má [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typu. Pro obě `Fill` operace `DataAdapter` a `Get` metody `DataReader`, [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ je odvozen od hodnoty vrácené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb.  
+ Podobně, když `DataReader` vrátí hodnotu ze zdroje dat, výsledná hodnota je uložená v místní proměnné, která má typ rozhraní .NET Framework. Pro obě `Fill` operací `DataAdapter` a `Get` metody `DataReader`, rozhraní .NET Framework typ je odvozen z hodnoty se vrátil ze zprostředkovatele dat .NET Framework.  
   
- Aniž byste museli spoléhat na odvozené datový typ, můžete použít zadaný přístupové metody `DataReader` Pokud znáte konkrétní typ vracené hodnoty. Zadaný přístupové metody získáte lepší výkon tak, že vrací hodnotu jako konkrétní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ, který eliminuje potřebu dalších převodů.  
+ Aniž byste museli spoléhat na odvozené datový typ, můžete použít zadaný přístupové metody `DataReader` Pokud znáte konkrétní typ vracené hodnoty. Zadaný přístupové metody poskytují lepší výkon tak, že vrací hodnotu jako konkrétní typ rozhraní .NET Framework, která eliminuje potřebu další typ převodu.  
   
 > [!NOTE]
->  Hodnoty pro Null [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data zprostředkovatele datové typy jsou reprezentovány `DBNull.Value`.  
+>  Hodnoty Null pro rozhraní .NET Framework data provider datové typy jsou reprezentovány `DBNull.Value`.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Mapování datových typů SQL Serveru](../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  

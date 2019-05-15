@@ -8,12 +8,12 @@ helpviewer_keywords:
 - files [Visual Basic], reading
 - reading files [Visual Basic]
 ms.assetid: ad831a1b-7d01-4f07-a47b-799f3037df19
-ms.openlocfilehash: cfb22fea6d2be4c1cf78efbc63b2e2342bcac49c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f81ee980d861ac0eb41df9c41b3966512589af12
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650086"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593380"
 ---
 # <a name="reading-from-files-in-visual-basic"></a>Čtení ze souborů v jazyce Visual Basic
 Tato část vysvětluje, jak provádět úlohy, které jsou spojeny s čtení ze souborů.  
@@ -64,4 +64,4 @@ Tato část vysvětluje, jak provádět úlohy, které jsou spojeny s čtení ze
  Popisuje způsob použití `My` funkce se soubory a adresáře.  
   
  [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Ukazuje, jak používat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody se soubory a adresáře.
+ Popisuje způsob použití metod rozhraní .NET Framework se soubory a adresáře.

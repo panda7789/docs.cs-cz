@@ -2,22 +2,22 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: 6453e0960af5a91e5abc40d1ce6002b7733175dd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f65c558b0cbc02bdff8e78189a38d06a7502434f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641264"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583573"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
   
- Abyste mohli využívat výhody [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], můžete migrovat do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Některé úlohy jsou společné pro všechny migrované aplikace. Zahrnout tyto běžné úlohy upgradu aplikace pro použití [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 Service Pack 1 (SP1), definování modely a mapování a konfigurace technologie Entity Framework. Když migrujete aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], některé další aspekty, které se vztahují. Tyto aspekty závisí na typu aplikace migruje a na konkrétní funkce aplikace. Toto téma obsahuje informace, které vám pomůžou vybrat nejlepší metodou k použití při upgradu existující aplikaci.  
+ Abyste mohli využívat výhody [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], můžete migrovat do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Některé úlohy jsou společné pro všechny migrované aplikace. Tyto běžné úlohy patří upgrade aplikace pomocí rozhraní .NET Framework od verze 3.5 Service Pack 1 (SP1), definující modely a mapování a konfigurace technologie Entity Framework. Když migrujete aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], některé další aspekty, které se vztahují. Tyto aspekty závisí na typu aplikace migruje a na konkrétní funkce aplikace. Toto téma obsahuje informace, které vám pomůžou vybrat nejlepší metodou k použití při upgradu existující aplikaci.  
   
 ## <a name="general-migration-considerations"></a>Obecné aspekty  
  Při migraci jakékoli aplikace, platí následující aspekty [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]:  
   
-- Všechny aplikace používající [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1 je možné migrovat do rozhraní Entity Framework, tak dlouho, dokud zprostředkovatel dat pro zdroj dat, který používá aplikace podporuje rozhraní Entity Framework.  
+- Všechny aplikace používající rozhraní .NET Framework počínaje verzí 3.5 SP1 můžete migrovat do rozhraní Entity Framework, tak dlouho, dokud zprostředkovatel dat pro zdroj dat, který používá aplikace podporuje rozhraní Entity Framework.  
   
 - Entity Framework nemusí podporovat všechny funkce, které jsou součástí Zprostředkovatel zdroje dat, i v případě, že tento zprostředkovatel podporuje rozhraní Entity Framework.  
   
@@ -33,7 +33,7 @@ ms.locfileid: "64641264"
   
 1. Upgrade aplikace.  
   
-     Projekt vytvořený pomocí dřívější verze sady Visual Studio a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] musí být upgradována na Visual Studio 2008 SP1 a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1.  
+     Použití Visual Studio 2008 SP1 a rozhraní .NET Framework počínaje verzí 3.5 SP1 je nutné upgradovat projekt vytvořený pomocí dřívější verze sady Visual Studio a rozhraní .NET Framework.  
   
 2. Definujte modely a mapování.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "64641264"
      Odkazy na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do projektu sady Visual Studio. Tyto soubory mapování můžete přidat do projektu zajistit, že jsou nasazené v aplikaci v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [jak: Ruční konfigurace projektu v Entity Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>Důležité informace týkající se aplikací pomocí existujících objektů  
- Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "plain old" CLR objektů POCO, tzv ignorujících objekty. Ve většině případů můžete pracovat existujících objektů [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entitami objektů POCO](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456853(v=vs.100)). Můžete také migrovat aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a použití datových tříd, které jsou generovány pomocí nástroje Entity Framework. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
+ Od verze rozhraní .NET Framework 4 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "plain old" CLR objektů POCO, tzv ignorujících objekty. Ve většině případů můžete pracovat existujících objektů [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entitami objektů POCO](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456853(v=vs.100)). Můžete také migrovat aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a použití datových tříd, které jsou generovány pomocí nástroje Entity Framework. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>Důležité informace týkající se aplikací, které používají zprostředkovatele ADO.NET  
  [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] poskytovatelé, například SqlClient, umožňují dotazování na zdroj dat pro vrácení tabulkových dat. Je také možné načíst data do [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] datové sady. Následující seznam popisuje důležité aspekty upgradu aplikace, která využívá existující [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele:  
@@ -69,7 +69,7 @@ ms.locfileid: "64641264"
   Pokud [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] neposkytuje funkce pro datové sady, které vaše aplikace vyžaduje, můžete stále využití výhod dotazů LINQ s použitím [!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)]. Další informace najdete v tématu [LINQ to DataSet](../../../../../docs/framework/data/adonet/linq-to-dataset.md).  
   
 ## <a name="considerations-for-applications-that-bind-data-to-controls"></a>Důležité informace týkající se aplikací, které vytvoření vazby dat k ovládacím prvkům  
- [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Umožňuje zapouzdření dat ve zdroji dat, jako datové sady nebo s [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] data správy zdrojového kódu a na tyto ovládací prvky dat svážou prvky uživatelského rozhraní. Následující seznam popisuje důležité informace týkající se vytvoření vazby ovládacích prvků k datům Entity Framework.  
+ Rozhraní .NET Framework umožňuje zapouzdření dat ve zdroji dat, jako datové sady nebo s [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] data správy zdrojového kódu a na tyto ovládací prvky dat svážou prvky uživatelského rozhraní. Následující seznam popisuje důležité informace týkající se vytvoření vazby ovládacích prvků k datům Entity Framework.  
   
 - Vazba dat k ovládacím prvkům.  
 

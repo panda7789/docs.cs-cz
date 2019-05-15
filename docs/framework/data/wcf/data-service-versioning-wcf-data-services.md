@@ -6,12 +6,12 @@ helpviewer_keywords:
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-ms.openlocfilehash: 283d3a0a0350823be8c0680dd24e04999b040363
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fd3be8a60048b10bbd94ac5b3bfadaee954943ef
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641121"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583601"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datové služby (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Umožňuje vytvoření datové služby tak, aby klienti můžou přistupovat k datům jako prostředky pomocí identifikátorů URI, které jsou založeny na datovém modelu. OData podporuje také definice operace služby. Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu mohou tyto datové služby musí změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musíte zvážit, jestli se má definovat novou verzi vaše data služby a jak nejlepší k minimalizaci vlivu na existující klientské aplikace. Toto téma obsahuje pokyny pro kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak služeb WCF Data Services zpracovává výměny mezi klienty a datových služeb, které podporují různé verze protokolu OData.
@@ -60,7 +60,7 @@ ms.locfileid: "64641121"
 
  Pokud aplikace používá tyto klientské knihovny služby WCF Data Services pro přístup k datové služby, knihovny automaticky nastaví tato záhlaví na správné hodnoty, podle verze protokolu OData a funkce, které se používají ve vaší aplikaci. Ve výchozím nastavení používá služeb WCF Data Services nejnižší verze protokolu, které podporuje požadovanou operaci.
 
- Následující tabulka obsahuje podrobnosti o verzích [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] a [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] , které zahrnují podporu služeb WCF Data Services pro konkrétní verze protokolu OData.
+ Následující tabulka obsahuje podrobnosti o verzích rozhraní .NET Framework a [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] , které zahrnují podporu služeb WCF Data Services pro konkrétní verze protokolu OData.
 
 |Verze protokolu OData|Podpora zavedený...|
 |-----------------------------------------------------------------------------------|----------------------------|

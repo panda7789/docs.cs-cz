@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec3f8fb16245318cab8706a2ed136e51f3dc31db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa6cd032ecf3a35c1dc32d9907218c9b6efd4bcc
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026156"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592263"
 ---
 # <a name="generic-collections-in-net"></a>Obecné kolekce na platformě .NET
 
@@ -44,7 +44,7 @@ ms.locfileid: "62026156"
   
  <xref:System.ArraySegment%601> Obecná struktura poskytuje způsob, jak omezíte rozsah prvků v rámci založený na nule, jednorozměrné pole libovolného typu. Parametr obecného typu je typ prvků pole.  
   
- <xref:System.EventHandler%601> Obecného delegáta se eliminuje potřeba deklarovat typ delegáta pro zpracování událostí, pokud událost následuje vzor zpracování událostí používané [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Předpokládejme například, že jste vytvořili `MyEventArgs` třídu odvozenou z <xref:System.EventArgs>, pro uchovávání dat pro událost. Událost je pak může deklarovat následujícím způsobem:  
+ <xref:System.EventHandler%601> Obecného delegáta se eliminuje potřeba deklarovat typ delegáta pro zpracování událostí, pokud událost následuje vzor zpracování událostí pomocí rozhraní .NET Framework. Předpokládejme například, že jste vytvořili `MyEventArgs` třídu odvozenou z <xref:System.EventArgs>, pro uchovávání dat pro událost. Událost je pak může deklarovat následujícím způsobem:  
   
  [!code-cpp[Conceptual.Generics.Overview#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source2.cpp#7)]
  [!code-csharp[Conceptual.Generics.Overview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source2.cs#7)]

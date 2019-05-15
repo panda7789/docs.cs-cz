@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 894895331c2444a8e52a09e3de9d5a47daa87e5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cc7a0991ae308f1c61026e946021d22da9a4bc3b
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644158"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583529"
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a nasazení aplikací rozhraní .NET Framework. V části také obsahuje informace o oblastech technologií, jako jsou dynamické programování, interoperabilita, rozšiřitelnost, správa paměti a dělení na vlákna.  
@@ -67,7 +67,7 @@ Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a 
  
 ## <a name="reference"></a>Odkaz  
  [Knihovna tříd rozhraní .NET framework](/dotnet/api/?view=netframework-4.7)  
- Poskytuje syntaxi, příklady kódu a informace o využití pro každou třídu, která je součástí [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] obory názvů.  
+ Poskytuje syntaxi, příklady kódu a informace o využití pro každou třídu obsaženou v oborech názvů rozhraní .NET Framework.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Začínáme](../../docs/framework/get-started/index.md)  

@@ -4,12 +4,12 @@ ms.date: 03/28/2018
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
-ms.openlocfilehash: b10c520c1940b150566ab5766ca5afd2e0f03e08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 13b887d6d01d3dc0f2018539a5893b261a3f5de3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797082"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590401"
 ---
 # <a name="visual-basic-guide"></a>Průvodce Visual Basicem
 
@@ -37,7 +37,7 @@ Obsahuje odkazy na témata, které představují a popisují důležité funkce 
 Obsahuje informace jazyku a kompilátoru jazyka Visual Basic.  
 
 [Vývoj aplikací v jazyce Visual Basic](../visual-basic/developing-apps/index.md)\
-Tento článek popisuje různé aspekty vývoje v jazyce Visual Basic, například zabezpečení, zpracování výjimek a použití [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.
+Tento článek popisuje různé aspekty vývoje v jazyce Visual Basic, například zabezpečení, zpracování výjimek a pomocí knihovny tříd rozhraní .NET Framework.
 
 [Komunikace s objekty COM](../visual-basic/programming-guide/com-interop/index.md)\
 Popisuje problémy s interoperabilitou přidružené k vytváření a používání součástí object model (COM) objektů s jazykem Visual Basic.  
@@ -54,4 +54,4 @@ Obsahuje odkazy na podrobné pokyny pro běžné scénáře.
 Poskytuje odkazy na témata, které vám pomůžou seznámit se základy Visual Studio.  
   
 [Prohlížeč rozhraní API .NET](../../api/index.md)\
-Obsahuje záznam o knihovně tříd, rozhraní a typů hodnot, které jsou součástí Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK.
+Obsahuje záznam o knihovně tříd, rozhraní a typů hodnot, které jsou zahrnuty v rozhraní Microsoft .NET Framework SDK.

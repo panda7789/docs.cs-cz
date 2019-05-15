@@ -10,15 +10,15 @@ helpviewer_keywords:
 - user controls [Windows Forms], painting
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a5b178ba-610e-46c4-a6c0-509c0886a744
-ms.openlocfilehash: b97ce0e4ce32e272ff884240b566c1c1c0e0d271
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4dbccfc881e777309394aed9711a93b8a25315be
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614661"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592603"
 ---
 # <a name="rendering-controls-with-visual-styles"></a>Vykreslování ovládacích prvků s vizuálními styly
-[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje podporu pro vykreslení ovládacích prvků a jiných uživatelů Windows pomocí vizuálních stylů v operačních systémech, které je podporují prvky rozhraní (UI). Toto téma popisuje několik úrovní podpory v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro vykreslování a další prvky uživatelského rozhraní s aktuálním vizuálním stylem operačního systému.  
+Rozhraní .NET Framework poskytuje podporu pro vykreslení ovládacích prvků a jiných uživatelů Windows pomocí vizuálních stylů v operačních systémech, které je podporují prvky rozhraní (UI). Toto téma popisuje několik úrovní podpory v rozhraní .NET Framework pro vykreslování a další prvky uživatelského rozhraní s aktuálním vizuálním stylem operačního systému.  
   
 ## <a name="rendering-classes-for-common-controls"></a>Třídy vykreslování pro běžné ovládací prvky  
  Vykreslení ovládacího prvku se vztahuje k vykreslení ovládacího prvku uživatelského rozhraní. <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů poskytuje <xref:System.Windows.Forms.ControlPaint> ovládací prvky Windows Forms třídy pro vykreslování některé běžné. Tato třída však kreslení ovládacích prvků v klasického stylu Windows, který může být obtížné udržovat konzistentní prostředí uživatelského rozhraní při kreslení vlastních ovládacích prvků v aplikacích s vizuálními styly povoleny.  
@@ -61,7 +61,7 @@ ms.locfileid: "64614661"
  Další informace o používání <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> a <xref:System.Windows.Forms.VisualStyles.VisualStyleElement>, naleznete v tématu [jak: Vykreslení elementu vizuálního stylu](how-to-render-a-visual-style-element.md).  
   
 ## <a name="enabling-visual-styles"></a>Povolení vizuálních stylů  
- K povolení vizuálních stylů pro aplikace napsané pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.0, programátoři musí obsahovat manifest aplikace, která určuje, že knihovna ComCtl32.dll ve verzi 6 nebo novější se použije k vykreslení ovládacích prvků. Aplikace vytvořené pomocí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.1 nebo novější můžete použít <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metodu <xref:System.Windows.Forms.Application> třídy.  
+ K povolení vizuálních stylů pro aplikace napsané pro rozhraní .NET Framework verze 1.0, musí obsahovat programátoři manifestu aplikace, která určuje, že verze souboru ComCtl32.dll 6 nebo novější se použije k vykreslení ovládacích prvků. Aplikace vytvořené pomocí rozhraní .NET Framework verze 1.1 nebo vyšší můžete použít <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metodu <xref:System.Windows.Forms.Application> třídy.  
   
 ## <a name="checking-for-visual-styles-support"></a>Kontrolují se podpora vizuálních stylů  
  <xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A> Vlastnost <xref:System.Windows.Forms.Application> třídy označuje, zda je aktuální aplikace nakreslením ovládacích prvků s vizuálními styly. Při vykreslování vlastního ovládacího prvku, můžete zkontrolovat hodnotu <xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A> k určení, zda by měl vykreslení ovládacího prvku s nebo bez něj vizuální styly. V následující tabulce jsou uvedeny čtyři podmínky, které nastává v případě <xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A> vrátit `true`.  

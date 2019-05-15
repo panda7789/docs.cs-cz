@@ -8,12 +8,12 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 29c36bd0494879b66674cf3a3c404fdaf3908f59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d7f50952a485c09e74462f3ad731d710b8f9198
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61679216"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584258"
 ---
 # <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>Postupy: Použití vyvolání platformy pro přehrání souboru Wave (C# Průvodce programováním v)
 Následující příklad kódu jazyka C# ukazuje, jak používat platformu vyvolání služby pro přehrání souboru wave zvuku v operačním systému Windows.  
@@ -29,8 +29,6 @@ Následující příklad kódu jazyka C# ukazuje, jak používat platformu vyvol
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-### <a name="to-compile-the-code"></a>Chcete-li zkompilovat kód  
-  
 1. Vytvořte nový projekt aplikace Windows v C# v sadě Visual Studio s názvem **WinSound**.  
   
 2. Výše uvedený kód zkopírujte a vložte ji místo obsah `Form1.cs` souboru.  
@@ -40,9 +38,6 @@ Následující příklad kódu jazyka C# ukazuje, jak používat platformu vyvol
      [!code-csharp[csProgGuideInterop#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/WinSound.cs#4)]  
   
 4. Kompilace a spuštění kódu.  
-  
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Další informace najdete v tématu [zabezpečení v rozhraní .NET](../../../standard/security/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - SplitContainer control [Windows Forms], about SplitContainer control
 ms.assetid: 6de5a5f7-97a5-402d-be6d-7e2785483db5
-ms.openlocfilehash: 4afdd764b2f6ef7f15e8bd26459f0fa4c7d345e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6dcdbde480c1900ea488c6db3cc320b20f9f182
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971961"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591494"
 ---
 # <a name="splitcontainer-control-overview-windows-forms"></a>SplitContainer – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.SplitContainer> ovládací prvek lze považovat za složeného; je dva panely oddělené přesouvatelný panelu. Když je ukazatel myši nad panelu, ukazatel se změní tvar, který má zobrazit, že panel je přesouvatelný.  
   
 > [!IMPORTANT]
->  V **nástrojů**, <xref:System.Windows.Forms.SplitContainer> řídit nahradí <xref:System.Windows.Forms.Splitter> ovládací prvek, který byl existuje v předchozí verzi sady Visual Studio. <xref:System.Windows.Forms.SplitContainer> Je mnohem upřednostňované nad ovládací prvek <xref:System.Windows.Forms.Splitter> ovládacího prvku. <xref:System.Windows.Forms.Splitter> Třídy je stále součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] z důvodu kompatibility se stávajícími aplikacemi, ale důrazně doporučujeme použít <xref:System.Windows.Forms.SplitContainer> ovládací prvek pro nové projekty.  
+>  V **nástrojů**, <xref:System.Windows.Forms.SplitContainer> řídit nahradí <xref:System.Windows.Forms.Splitter> ovládací prvek, který byl existuje v předchozí verzi sady Visual Studio. <xref:System.Windows.Forms.SplitContainer> Je mnohem upřednostňované nad ovládací prvek <xref:System.Windows.Forms.Splitter> ovládacího prvku. <xref:System.Windows.Forms.Splitter> Tříd je zahrnutá v rozhraní .NET Framework z důvodu kompatibility se stávajícími aplikacemi, ale důrazně doporučujeme použít <xref:System.Windows.Forms.SplitContainer> ovládací prvek pro nové projekty.  
   
  S <xref:System.Windows.Forms.SplitContainer> ovládacího prvku, můžete vytvořit komplexní uživatelská rozhraní; často, výběr v jeden panel Určuje, jaké objekty jsou uvedeny na panelu. Toto uspořádání se velice efektivní pro zobrazení informací o procházení. Dva panely umožňuje agregovat informace v oblastech s panelu, nebo "rozdělovač," usnadňuje uživatelům změnit velikost panelů.  
   
@@ -38,7 +38,7 @@ Windows Forms <xref:System.Windows.Forms.SplitContainer> ovládací prvek lze po
   
 ## <a name="commonly-used-properties-methods-and-events"></a>Běžně používané vlastnosti, metody a události  
   
-|Název|Popis|  
+|Name|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> Vlastnost|Určuje panelu zůstanou stejné velikosti po <xref:System.Windows.Forms.SplitContainer> změně velikosti ovládacího prvku.|  
 |<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> Vlastnost|Určuje, zda lze přesunout příčky pomocí klávesnice nebo myši.|  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - serial ports
 - My.Computer.Ports object [Visual Basic], tasks
 ms.assetid: b04a2f76-992a-4585-ab41-8bbbdbd554a1
-ms.openlocfilehash: e3ca5193db9dbcb4674680884a6372e6383c0852
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7788e08c1257ff900b08ef6b8d26d3fe42ad9116
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014346"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589327"
 ---
 # <a name="accessing-the-computers-ports-visual-basic"></a>Přístup k portům počítače (Visual Basic)
 `My.Computer.Ports` Objekt, který poskytuje vlastnosti a metody pro přístup k sériovým portům počítače.  
@@ -29,7 +29,7 @@ ms.locfileid: "62014346"
  Ukazuje, jak získat řetězec z počítače sériového portu.  
   
  [Portové operace v rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
- Popisuje způsob použití [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] při provádění operací portu.  
+ Popisuje způsob použití rozhraní .NET Framework při provádění operací portu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:Microsoft.VisualBasic.Devices.Ports>  

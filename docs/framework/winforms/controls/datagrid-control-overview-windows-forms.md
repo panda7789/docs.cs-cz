@@ -20,12 +20,12 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: 8deb151572b8a83396e4204378783304b66216c3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7c9442635bb193c13ca30fd1e271631a43b33e55
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648133"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589013"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.locfileid: "64648133"
   
  <xref:System.Windows.Forms.DataGrid> Může poskytnout uživatelského rozhraní pro datovou sadu, navigaci mezi souvisejícími tabulkami a bohaté formátování a možností pro úpravy.  
   
- Zobrazení a manipulaci s daty jsou samostatné funkce: Ovládací prvek zpracovává uživatelské rozhraní, zatímco zpracování aktualizací dat podle architektury datové vazby Windows Forms a tím [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data zprostředkovatele. Proto více ovládacích prvků vázaných ke stejnému zdroji dat zůstane synchronizovaná.  
+ Zobrazení a manipulaci s daty jsou samostatné funkce: Ovládací prvek zpracovává uživatelské rozhraní, zatímco zpracování aktualizací dat tak, že architektura datové vazby Windows Forms a zprostředkovatele dat .NET Framework. Proto více ovládacích prvků vázaných ke stejnému zdroji dat zůstane synchronizovaná.  
   
 > [!NOTE]
 >  Pokud jste se seznámili s ovládacího prvku DataGrid v jazyce Visual Basic 6.0, najdete několik významných rozdílů v modelu Windows Forms <xref:System.Windows.Forms.DataGrid> ovládacího prvku.  

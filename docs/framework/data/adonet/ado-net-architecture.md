@@ -2,18 +2,18 @@
 title: Architektura ADO.NET
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-ms.openlocfilehash: e85100733e20b69cf6b8c52c58d250be869971cb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2e91077287c051d871eb61f83ec77b7baf90b2d8
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592642"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584574"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat tradičně spoléhalo především v rámci modelu založeného na připojení, dvě vrstvy. Zpracování dat stále používá vícevrstvé architektury, programátoři přepnutí na odpojeném přístup k poskytování lepšího škálování pro své aplikace.  
   
 ## <a name="adonet-components"></a>ADO.NET Components  
- Dvě hlavní součásti [!INCLUDE[ado_orcas_long](../../../../includes/ado-orcas-long-md.md)] pro přístup k a manipulaci s daty [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat a <xref:System.Data.DataSet>.  
+ Dvě hlavní součásti [!INCLUDE[ado_orcas_long](../../../../includes/ado-orcas-long-md.md)] pro přístup k a manipulaci s daty jsou zprostředkovatele dat .NET Framework a <xref:System.Data.DataSet>.  
   
 ### <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET Framework  
  Zprostředkovatelé dat .NET Framework jsou komponenty, které byly výslovně navrženy pro manipulaci s daty a rychlé, pouze vpřed, jen pro čtení přístup k datům. `Connection` Objekt, který poskytuje připojení ke zdroji dat. `Command` Objekt umožňuje přístup k příkazům databázi vrátit data, upravovat data, spuštění uložené procedury a odeslat nebo načíst informace o parametrech. `DataReader` Poskytuje vysoce výkonné datové proudy dat z datového zdroje. Nakonec `DataAdapter` představuje spojení mezi `DataSet` objektu a zdrojem dat. `DataAdapter` Používá `Command` objekty pro spuštění příkazů SQL ve zdroji dat pro obě zatížení `DataSet` s daty a sloučení změn provedených pro data v `DataSet` zpět do zdroje dat. Další informace najdete v tématu [zprostředkovatelé dat .NET Framework](../../../../docs/framework/data/adonet/data-providers.md) a [načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md).  
@@ -21,7 +21,7 @@ Zpracování dat tradičně spoléhalo především v rámci modelu založeného
 ### <a name="the-dataset"></a>Datové sady  
  ADO.NET `DataSet` je vytvořené speciálně pro přístup k datům nezávislý ze všech zdrojů. V důsledku toho jde použít s více a data rozdílné zdrojů, používá s daty XML nebo použít ke správě dat místní aplikace. `DataSet` Obsahuje kolekci jednoho nebo více <xref:System.Data.DataTable> skládající se z řádků a sloupců dat a primární klíč, cizí klíče, omezení a relace informace o data v objekty `DataTable` objekty. Další informace najdete v tématu [datové sady, datové tabulky a zobrazení dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md).  
   
- Následující diagram znázorňuje vztah mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat a `DataSet`.  
+ Následující diagram znázorňuje vztah mezi zprostředkovatele dat .NET Framework a `DataSet`.  
   
  ![ADO.Net graphic](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
 Architektura ADO.NET  
@@ -52,9 +52,9 @@ Architektura ADO.NET
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] slouží k nasazení datových služeb na webu nebo intranetu. Strukturovaná data jako entitami a relacemi podle specifikace modelu Entity Data Model. Data nasazené na tento model je adresovat pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../../../../docs/framework/data/wcf/index.md).  
   
 ## <a name="xml-and-adonet"></a>XML a ADO.NET  
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] využívá výkon XML k poskytování odpojené přístup k datům. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] byl navržený ručně spolupráce s třídami XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]; obě jsou součástí jedné architektury.  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] využívá výkon XML k poskytování odpojené přístup k datům. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] byl navržený ručně spolupráce s XML třídami v rozhraní .NET Framework; obě jsou součástí jedné architektury.  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] a třídy XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sloučit v `DataSet` objektu. `DataSet` Může být načtena data z XML použitého jako zdroj, ať už jde o souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní s XML World Wide Web Consortium (W3C), který obsahuje schématem jako XML definice jazyk (XSD) schématu, bez ohledu na zdroj dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` je XML, je skvělé médium pro přesun dat mezi vrstvami, což `DataSet` optimální volbou pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] a třídy XML v rozhraní .NET Framework sloučit v `DataSet` objektu. `DataSet` Může být načtena data z XML použitého jako zdroj, ať už jde o souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní s XML World Wide Web Consortium (W3C), který obsahuje schématem jako XML definice jazyk (XSD) schématu, bez ohledu na zdroj dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` je XML, je skvělé médium pro přesun dat mezi vrstvami, což `DataSet` optimální volbou pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: Data FILESTREAM
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-ms.openlocfilehash: 1dea5d1e2f40c44e8f24bdbc9742288429d9933a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8521a9de3037ae759b0b0ea5bcbe84830f8629e
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032484"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582705"
 ---
 # <a name="filestream-data"></a>Data FILESTREAM
 
@@ -20,7 +20,7 @@ Určení u sloupce varbinary(max) FILESTREAM atribut způsobí, že Server SQL p
 
 ## <a name="sqlclient-support-for-filestream"></a>Podpora klienta SqlClient pro FILESTREAM
 
-[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server, <xref:System.Data.SqlClient>, podporuje čtení a zápis do pomocí dat FILESTREAM <xref:System.Data.SqlTypes.SqlFileStream> třídy definované v <xref:System.Data.SqlTypes> oboru názvů. `SqlFileStream` dědí z <xref:System.IO.Stream> třídu, která poskytuje metody pro čtení a zápis do datových proudů. Čtení z datového proudu přenosu dat z datového proudu do datové struktury, jako například pole bajtů. Zápis přenáší data z strukturu dat do datového proudu.
+Zprostředkovatel dat .NET Framework pro SQL Server, <xref:System.Data.SqlClient>, podporuje čtení a zápis do data FILESTREAM s využitím <xref:System.Data.SqlTypes.SqlFileStream> třídy definované v <xref:System.Data.SqlTypes> oboru názvů. `SqlFileStream` dědí z <xref:System.IO.Stream> třídu, která poskytuje metody pro čtení a zápis do datových proudů. Čtení z datového proudu přenosu dat z datového proudu do datové struktury, jako například pole bajtů. Zápis přenáší data z strukturu dat do datového proudu.
 
 ### <a name="creating-the-sql-server-table"></a>Vytváří se tabulka SQL serveru
 

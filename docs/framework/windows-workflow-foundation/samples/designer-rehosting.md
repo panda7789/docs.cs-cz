@@ -2,12 +2,12 @@
 title: Změna hostování návrháře
 ms.date: 03/30/2017
 ms.assetid: b676ad31-5f64-4d84-9a36-b4d7113a2f4d
-ms.openlocfilehash: c67bdc5715a95e3f4252fc9ab0c7b151ddddc6cf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 26878be2aec03f83c5ec0d65e415f75691601d0a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583712"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65588665"
 ---
 # <a name="designer-rehosting"></a>Změna hostování návrháře
 Změna hostování návrháře je běžný scénář, který odkazuje na hostování pracovního postupu návrhové plátno v rámci vlastní aplikace. Hostování aplikace, kterou většina lidí znají je Visual Studio, ale existuje mnoho scénářů, kdy zobrazení návrháře postupu provádění v aplikaci může být užitečné:  
@@ -40,7 +40,7 @@ Změna hostování návrháře je běžný scénář, který odkazuje na hostov�
 </Grid>  
 ```  
   
- Dále ukázka vytvoří návrháře a přidruží jeho primární <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> pomocí odpovídajícího kontejneru v uživatelském rozhraní. Existuje několik další řádky kódu v následujícím příkladu, které si zasloužila vysvětlení. <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> Volání je nutné přiřadit výchozí návrháři aktivit pro aktivity, kterou jste dostali se [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. <xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> je volána a zajistěte tak předání WF položky bude upravován. Nakonec <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primární plátna) a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (mřížky vlastností) jsou umístěné na plochu uživatelské rozhraní.  
+ Dále ukázka vytvoří návrháře a přidruží jeho primární <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> pomocí odpovídajícího kontejneru v uživatelském rozhraní. Existuje několik další řádky kódu v následujícím příkladu, které si zasloužila vysvětlení. <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> Volání je potřeba přidružit výchozí návrháři aktivit pro aktivity, které jsou součástí rozhraní .NET Framework. <xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> je volána a zajistěte tak předání WF položky bude upravován. Nakonec <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primární plátna) a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (mřížky vlastností) jsou umístěné na plochu uživatelské rozhraní.  
   
 ```csharp  
 protected override void OnInitialized(EventArgs e)  

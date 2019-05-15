@@ -2,12 +2,12 @@
 title: 'Postupy: Použití stromů výrazů k sestavování dynamických dotazů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 52cd44dd-a3ec-441e-b93a-4eca388119c7
-ms.openlocfilehash: c3c65770af11518f6ac86e0fecd47b56f78cff59
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 33dbca31af3c088f4cd4af830c690cf9cdaea657
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64597964"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586100"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Postupy: Použití stromů výrazů k sestavování dynamických dotazů (C#)
 V technologii LINQ, stromy výrazů se používají k vyjádření strukturovaných dotazů, které se zaměřují zdroje dat, které implementují <xref:System.Linq.IQueryable%601>. Například implementuje zprostředkovatele LINQ <xref:System.Linq.IQueryable%601> rozhraní pro dotazování na relačních dat úložiště. Kompilátor jazyka C# kompiluje dotazy, které se zaměřují takovým zdrojům dat do kódu, který vytváří strom výrazu v době běhu. Poskytovatele dotazů můžete procházet stromovou strukturu dat výraz a přeloží ji do dotazovací jazyk, který je vhodný pro zdroj dat.  
@@ -100,13 +100,7 @@ foreach (string company in results)
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Vytvořte nový **konzolovou aplikaci** projektu.  
-  
-- Pokud se už neodkazuje, přidejte odkaz na System.Core.dll.  
-  
 - Zahrnout System.Linq.Expressions oboru názvů.  
-  
-- Zkopírovat kód z příkladu a vložte ho do `Main` metody.  
   
 ## <a name="see-also"></a>Viz také:
 

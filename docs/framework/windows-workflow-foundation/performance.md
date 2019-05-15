@@ -2,12 +2,12 @@
 title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 4351955eeed722cfd10db79b9dbe5ec6692ed2ec
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 701e05301e82537aa6119ab3ec894483daee41f3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592163"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592544"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 
@@ -18,7 +18,7 @@ ms.locfileid: "64592163"
 ## <a name="terminology"></a>Terminologie
  Verze [!INCLUDE[wf1](../../../includes/wf1-md.md)] zavedený [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] bude označovat jako WF4 pro zbývající část tohoto tématu.  [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla zavedena v rozhraní .NET 3.0 a má několik vedlejších revize prostřednictvím [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] SP1. [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] Verzi Workflow Foundation bude označovat jako WF3 pro zbývající část tohoto tématu. Je součástí WF3 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] – souběžně s WF4. Další informace o migraci WF3 artefakty, které WF4 naleznete v tématu: [Příručka k migraci Windows Workflow Foundation 4](https://go.microsoft.com/fwlink/?LinkID=153313)
 
- Windows Communication Foundation (WCF) je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Bylo poprvé dostupné jako součást .NET 3.0 spolu s WF3 a nyní je jedním z klíčových součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].
+ Windows Communication Foundation (WCF) je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Bylo poprvé dostupné jako součást .NET 3.0 spolu s WF3 a nyní je jedním z klíčových součástí rozhraní .NET Framework.
 
  Windows Server AppFabric je sada integrovaných technologií, které usnadňují vytváření, škálování a správu webových a kompozitních aplikací, které běží ve službě IIS. Poskytuje nástroje pro monitorování a správu služeb a pracovních postupů. Další informace najdete v tématu [systému Windows Server AppFabric 1.0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
 
@@ -401,7 +401,7 @@ public class Workflow1 : Activity
 
  WF3 odeslaná službou sledování na základě SQL.  Tato služba může fungovat v režimech dávkové a dávce.  V režim sledování události se zapisují přímo do databáze.  Sledování události se shromažďují do stejné dávky jako stav instance pracovního postupu, v dávkové režimu.  Dávkový režim má nejlepšího výkonu pro širokou škálu návrhů pracovního postupu.  Dávkování však může mít dopad na výkon negativní pokud pracovní postup probíhá bez zachování řada aktivit a tyto aktivity jsou sledovány.  To by stávat ve smyčkách a nejlepší způsob, jak se vyhnout této situaci je návrh velké smyčky tak, aby obsahovala bod trvalosti.  Úvod do trvalého bod do smyčky může negativně ovlivnit výkon stejně, proto je důležité pro měření náklady na každého a najít rovnováhu.
 
- WF4 není součástí SQL služby sledování.  Záznam sledování informací do databáze SQL může být lépe zpracovává z aplikačního serveru spíše než integrované do [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Proto sledování SQL je nyní zpracovat AppFabric.  Poskytovatel sledování out-of-the-box v WF4 je založena na trasování událostí pro Windows (ETW).
+ WF4 není součástí SQL služby sledování.  Záznam sledování informací do databáze SQL může být lépe zpracovává z aplikačního serveru spíše než součástí rozhraní .NET Framework. Proto sledování SQL je nyní zpracovat AppFabric.  Poskytovatel sledování out-of-the-box v WF4 je založena na trasování událostí pro Windows (ETW).
 
  Trasování událostí pro Windows je systém událostí na úrovni jádra, s nízkou latencí integrovaný do Windows.  Používá model poskytovatele/konzumenta, který umožňuje pouze účtovat penalizace pro trasování událostí, když je ve skutečnosti příjemce.  Kromě události jádra například procesoru, disku, paměti a využití sítě mnoho aplikací také využívat trasování událostí pro Windows.  Události trasování událostí pro Windows jsou výkonnější než čítače výkonu, události lze přizpůsobit, aby aplikace.  Události může obsahovat text, například ID pracovního postupu nebo informační zpráva.  Také události jsou uspořádané do kategorií pomocí bitovými maskami tak, aby využívání podmnožinu událostí bude mít menší dopad na výkon než zachytávání všechny události.
 

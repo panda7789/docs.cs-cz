@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
-ms.openlocfilehash: bca11c0c1828513077985aa11553ec5c0ad52a27
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 4886103f7f0246eaacd12c3f12d50a055e650959
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910794"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582668"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostování datové služby (WCF Data Services)
 Pomocí služeb WCF Data Services, můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definován jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv požadavků, provádění aktualizací na zdroji dat a vygenerování zprávy odpovědi, podle požadavků OData. Datové služby však nelze svázat a síťových soketů naslouchat příchozím požadavkům HTTP. Pro tato požadované funkce, která využívá datová služba hostitelská komponenta.
@@ -58,7 +58,7 @@ Při použití **přidat novou položku** dialogového okna v sadě Visual Studi
  Protože datové služby se chová jako služba WCF, datové služby se integruje s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a následuje programovacího modelu WCF Web. Další informace najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md) a [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).
 
 ## <a name="self-hosted-wcf-services"></a>Služby WCF v místním prostředí
- Protože zahrnuje implementace WCF služby WCF Data Services podporují datové služby jako služba WCF s vlastním hostováním. Služba může být v libovolném v místním prostředí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace, jako je například konzolové aplikace. <xref:System.Data.Services.DataServiceHost> Třída, která dědí z <xref:System.ServiceModel.Web.WebServiceHost>, se používá k vytvoření instance služby data na konkrétní adrese.
+ Protože zahrnuje implementace WCF služby WCF Data Services podporují datové služby jako služba WCF s vlastním hostováním. Služba může být v jakékoli aplikaci rozhraní .NET Framework, jako je například konzolové aplikace v místním prostředí. <xref:System.Data.Services.DataServiceHost> Třída, která dědí z <xref:System.ServiceModel.Web.WebServiceHost>, se používá k vytvoření instance služby data na konkrétní adrese.
 
  Hostování na vlastním lze použít pro vývoj a testování vzhledem k tomu, že se zjednoduší nasazení a řešení potíží se službou. Tento typ hostování však neposkytuje poskytuje pokročilé funkce pro hostování a správu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nebo internetové informační služby (IIS). Další informace najdete v tématu [hostování ve spravované aplikaci](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md).
 

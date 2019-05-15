@@ -5,18 +5,18 @@ helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: d3981be7977b56af0b60f9796519b78dc9ac5db3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4902cd8ab97771f75e5421a9de7ed1150a7443a8
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640505"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586580"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 
-Automatické škálování umožňuje formuláře a jejích ovládacích prvků, navržená na jeden počítač s určité zobrazení řešení nebo systémové písmo, odpovídajícím způsobem zobrazený na jiný počítač s jiným zobrazením systému nebo rozlišení písma. Který zajišťuje formuláře a jejích ovládacích prvků bude inteligentně mění svou velikost tak být konzistentní s nativní windows a další aplikace v počítačích uživatelů i ostatní vývojáři. Podpora [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro automatické škálování a vizuální styly umožňuje [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace udržovat konzistentní vzhled a chování ve srovnání s nativních aplikací Windows pro každého uživatele počítače.
+Automatické škálování umožňuje formuláře a jejích ovládacích prvků, navržená na jeden počítač s určité zobrazení řešení nebo systémové písmo, odpovídajícím způsobem zobrazený na jiný počítač s jiným zobrazením systému nebo rozlišení písma. Který zajišťuje formuláře a jejích ovládacích prvků bude inteligentně mění svou velikost tak být konzistentní s nativní windows a další aplikace v počítačích uživatelů i ostatní vývojáři. Podpora rozhraní .NET Framework pro automatické škálování a vizuální styly umožňuje aplikacím rozhraní .NET Framework udržovat konzistentní vzhled a chování ve srovnání s nativních aplikací Windows pro každého uživatele počítače.
 
-Ve většině případů automatické škálování funguje podle očekávání v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0 nebo novější. Změny schématu písem však může být problematické. Příklad toho, jak tento problém vyřešit, najdete v části [jak: Reakce na změny schématu písem ve formulářové aplikaci Windows](how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md).
+Ve většině případů automatické škálování funguje podle očekávání v rozhraní .NET Framework verze 2.0 a vyšší. Změny schématu písem však může být problematické. Příklad toho, jak tento problém vyřešit, najdete v části [jak: Reakce na změny schématu písem ve formulářové aplikaci Windows](how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md).
 
 ## <a name="need-for-automatic-scaling"></a>Potřebu automatické škálování
 
@@ -24,11 +24,11 @@ Bez automatického škálování aplikace navržené pro rozlišení jednoho zob
 
 Podobná situace nastane, pokud aplikace je navržená pro určité rozlišení obrazovky. Nejběžnější rozlišení zobrazení je 96 bodů na palec (DPI), který se rovná 100 % měřítko zobrazení, ale podpora 125 %, 150 %, 200 % vyšším rozlišením (které respektive rovná 120, 144 a 192 DPI) a výše jsou stále Častějším řešením. Bez úprav, aplikace, zejména na základě grafiky některou, navržená pro řešení jedné zobrazí příliš velký či příliš malý při spuštění v jiné řešení.
 
-Automatické škálování se snaží zmírnit tyto problémy automaticky změnou velikosti, tvaru a jeho podřízených ovládacích prvků podle relativní velikost písma nebo rozlišení. Operační systém Windows podporuje automatické škálování pomocí relativní měrnou jednotku volá jednotky dialogu dialogových oknech. Jednotky dialogu je založená na systémové písmo a jejich vztah k pixelů může být určen ale funkci Win32 SDK `GetDialogBaseUnits`. Když uživatel změní motiv použitý ve Windows, všechna dialogová okna jsou automaticky upravována odpovídajícím způsobem. Kromě toho [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] podporuje automatické škálování, buď podle výchozí systémové písmo nebo rozlišení obrazovky. Automatické škálování je Volitelně můžete zakázat v aplikaci.
+Automatické škálování se snaží zmírnit tyto problémy automaticky změnou velikosti, tvaru a jeho podřízených ovládacích prvků podle relativní velikost písma nebo rozlišení. Operační systém Windows podporuje automatické škálování pomocí relativní měrnou jednotku volá jednotky dialogu dialogových oknech. Jednotky dialogu je založená na systémové písmo a jejich vztah k pixelů může být určen ale funkci Win32 SDK `GetDialogBaseUnits`. Když uživatel změní motiv použitý ve Windows, všechna dialogová okna jsou automaticky upravována odpovídajícím způsobem. Rozhraní .NET Framework navíc podporuje automatické škálování, buď podle výchozí systémové písmo nebo rozlišení obrazovky. Automatické škálování je Volitelně můžete zakázat v aplikaci.
 
 ## <a name="original-support-for-automatic-scaling"></a>Původní podporu pro automatické škálování
 
-Verze 1.0 a 1.1 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nepodporuje automatické škálování v přímočarým způsobem, který byl závislý na Windows výchozí písmo použité pro uživatelské rozhraní, reprezentovaný hodnotou Win32 SDK **DEFAULT_GUI_FONT**. Toto písmo je obvykle změnit jenom při změně rozlišení obrazovky. Následující mechanismu, který byl použit k implementaci automatického škálování:
+Verze 1.0 a 1.1 rozhraní .NET Framework podporován automatické škálování v přímočarým způsobem, který byl závislý na Windows výchozí písmo použité pro uživatelské rozhraní, reprezentovaný hodnotou Win32 SDK **DEFAULT_GUI_FONT**. Toto písmo je obvykle změnit jenom při změně rozlišení obrazovky. Následující mechanismu, který byl použit k implementaci automatického škálování:
 
 1. V době návrhu <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> (který je nyní zastaralý) byla nastavena na výšku a šířku výchozí systémové písmo na počítači pro vývojáře.
 
@@ -46,18 +46,18 @@ Během tohoto mechanismu je dostatečné pro většinu účelů, kde z následuj
 
 - Formuláře a jejich podřízených ovládacích prvků může být současně určen pouze od více vývojářů jejich počítače řešení byly stejné. Podobně je rovněž dědičnosti formuláře závisí na rozlišení přidružené nadřazeného formuláře.
 
-- Není kompatibilní s novější správci rozložení nepředchází funkce [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0, jako například <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel>.
+- Není kompatibilní s novější správci rozložení nepředchází funkce rozhraní .NET Framework verze 2.0, jako například <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel>.
 
 - Nepodporovalo škálování přímo na rozlišení obrazovky, která je nutná pro kompatibilitu na základě [!INCLUDE[compact](../../../includes/compact-md.md)].
 
-I když tento mechanismus je zachováno v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0 pro zachování zpětné kompatibility bylo nahrazeno robustnější mechanismus škálování je popsáno dále. V důsledku toho <xref:System.Windows.Forms.Form.AutoScale%2A>, <xref:System.Windows.Forms.Form.ApplyAutoScaling%2A>, <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A>a některé <xref:System.Windows.Forms.Control.Scale%2A> přetížení jsou označeny jako zastaralé.
+I když tento mechanismus je zachováno v rozhraní .NET Framework verze 2.0 pro zachování zpětné kompatibility, to bylo nahrazeno robustnější mechanismus škálování je popsáno dále. V důsledku toho <xref:System.Windows.Forms.Form.AutoScale%2A>, <xref:System.Windows.Forms.Form.ApplyAutoScaling%2A>, <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A>a některé <xref:System.Windows.Forms.Control.Scale%2A> přetížení jsou označeny jako zastaralé.
 
 > [!NOTE]
-> Odkazy na tyto členy můžete bezpečně odstranit, při upgradu starší verze kódu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0.
+> Odkazy na tyto členy můžete bezpečně odstranit při upgradu starší verze kódu na rozhraní .NET Framework verze 2.0.
 
 ## <a name="current-support-for-automatic-scaling"></a>Aktuální podporu pro automatické škálování
 
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Verze 2.0 surmounts z předchozích omezení zavedením následujících změn na automatické škálování formuláře Windows:
+Rozhraní .NET Framework verze 2.0 surmounts z předchozích omezení zavedením následujících změn na automatické škálování formuláře Windows:
 
 - Byl přesunut do základní podporu pro škálování <xref:System.Windows.Forms.ContainerControl> třídy tak, aby formulářů, nativní složených ovládacích prvků a uživatelských ovládacích prvků všechny získat jednotné škálování podporu. Nové členy <xref:System.Windows.Forms.ContainerControl.AutoScaleFactor%2A>, <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A>, <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> a <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A> byly přidány.
 
