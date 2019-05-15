@@ -36,12 +36,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: 9c8ccf2404c4d8fd6e71f7aa41445c3d26ef5da7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 813ee167fdc09c7c7ea12f5f09602230e711d362
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601074"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593381"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
@@ -76,7 +76,7 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
  Podrobnější příklad naleznete v tématu [jak: Definujte třídu, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
 ## <a name="eligible-programming-elements"></a>Oprávněné programovací elementy  
- Můžete definovat a použití obecné třídy, struktury, rozhraní, postupy a delegáti. Všimněte si, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] definuje několik obecných tříd, struktur a rozhraní, která představuje běžně používané obecné elementy. <xref:System.Collections.Generic?displayProperty=nameWithType> Obor názvů poskytuje slovníky, seznamů, front a zásobníků. Než začnete definovat vlastní obecného prvku, zjistěte, zda je již k dispozici v <xref:System.Collections.Generic?displayProperty=nameWithType>.  
+ Můžete definovat a použití obecné třídy, struktury, rozhraní, postupy a delegáti. Všimněte si, že rozhraní .NET Framework definuje několik obecných tříd, struktur a rozhraní, která představuje běžně používané obecné elementy. <xref:System.Collections.Generic?displayProperty=nameWithType> Obor názvů poskytuje slovníky, seznamů, front a zásobníků. Než začnete definovat vlastní obecného prvku, zjistěte, zda je již k dispozici v <xref:System.Collections.Generic?displayProperty=nameWithType>.  
   
  Postupy nejsou typy, ale můžete definovat a používat obecné procedury. Zobrazit [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   

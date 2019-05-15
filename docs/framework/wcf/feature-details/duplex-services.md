@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: 33cfcb765b93309d365a85e679107405a55a91f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a8197dfc877842be824a5b10c742ef4fb7792858
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858036"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592744"
 ---
 # <a name="duplex-services"></a>Duplexní služby
 
@@ -87,10 +87,10 @@ Následující ukázkový kód ukazuje, jak zadat klienta adresy koncového bodu
 ```
 
 > [!WARNING]
-> Když služba nebo klient ukončí její kanál duplexní modelu nerozpozná automaticky. Takže pokud klient neočekávaně ukončí, ve výchozím nastavení službu nedostanou nebo pokud klient neočekávaně skončí, nebudete nijak upozorněni služby. Služby a klienti můžou implementovat vlastní protokol na sebe navzájem upozornit, pokud se tedy rozhodne.
+> Když služba nebo klient ukončí její kanál duplexní modelu nerozpozná automaticky. Proto pokud klient neočekávaně ukončí, ve výchozím nastavení službu nedostanou nebo pokud je služba neočekávaně ukončena, klient nebude upozorněni. Služby a klienti můžou implementovat vlastní protokol na sebe navzájem upozornit, pokud se tedy rozhodne. Další informace o zpracování chyb, naleznete v tématu [zpracování chyb WCF](../wcf-error-handling.md)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Duplex](../../../../docs/framework/wcf/samples/duplex.md)
-- [Nastavení chování klienta za běhu](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
-- [Postupy: Vytvoření objektu pro vytváření kanálů a jeho použití k vytvoření a správě kanálů](../../../../docs/framework/wcf/feature-details/how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+- [Duplex](../samples/duplex.md)
+- [Nastavení chování klienta za běhu](../specifying-client-run-time-behavior.md)
+- [Postupy: Vytvoření objektu pro vytváření kanálů a jeho použití k vytvoření a správě kanálů](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)

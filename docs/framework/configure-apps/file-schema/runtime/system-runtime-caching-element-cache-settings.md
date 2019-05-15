@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9b44daee-874a-4bd1-954e-83bf53565590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da059e1be7c685eba7792045abf4ffa691525d2e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 03a17e8f30c15e98a350ef558cc1cb6ddf65cade
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701473"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584507"
 ---
 # <a name="systemruntimecaching-element-cache-settings"></a>\<System.Runtime.Caching > – Element (nastavení mezipaměti)
 Poskytuje konfiguraci pro výchozí v paměťově <xref:System.Runtime.Caching.ObjectCache> implementaci prostřednictvím `memoryCache` záznam v konfiguračním souboru.  
@@ -45,7 +45,7 @@ Poskytuje konfiguraci pro výchozí v paměťově <xref:System.Runtime.Caching.O
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
+|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikace rozhraní .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
  Třídy v tomto oboru názvů poskytují způsob, jak používat ukládání do mezipaměti zařízení podobné těm v technologii ASP.NET, ale bez závislosti na `System.Web` sestavení. Další informace najdete v tématu [ukládání do mezipaměti v aplikacích .NET Framework](../../../../../docs/framework/performance/caching-in-net-framework-applications.md).  

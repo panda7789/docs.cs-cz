@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-ms.openlocfilehash: d7797b7a8786a89671175bccb501b7fe69c021d7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 306c37fffd892cc08c73675ba90e7460a457cd40
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627077"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592523"
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
@@ -523,7 +523,7 @@ public class Employee : Person
 |`positiveInteger`|<xref:System.Int64>.|  
   
 ## <a name="iserializable-types-mapping"></a>Typy iSerializable mapování  
- V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.0, <xref:System.Runtime.Serialization.ISerializable> byla zavedená jako obecný mechanismus k serializaci objektů pro přenos trvalého nebo data. Existuje několik instancí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, které implementují `ISerializable` a, které mohou být předány mezi aplikacemi. <xref:System.Runtime.Serialization.DataContractSerializer> přirozeně poskytuje podporu pro `ISerializable` třídy. `DataContractSerializer` Mapuje `ISerializable` implementace schématu typy, které se liší pouze podle typu QName (úplný název) a jsou kolekce vlastností. Například `DataContractSerializer` mapuje <xref:System.Exception> pro následující typ XSD v `http://schemas.datacontract.org/2004/07/System` oboru názvů.  
+ V rozhraní .NET Framework verze 1.0 <xref:System.Runtime.Serialization.ISerializable> byla zavedená jako obecný mechanismus k serializaci objektů pro přenos trvalého nebo data. Existuje mnoho typů rozhraní .NET Framework, které implementují `ISerializable` a, které mohou být předány mezi aplikacemi. <xref:System.Runtime.Serialization.DataContractSerializer> přirozeně poskytuje podporu pro `ISerializable` třídy. `DataContractSerializer` Mapuje `ISerializable` implementace schématu typy, které se liší pouze podle typu QName (úplný název) a jsou kolekce vlastností. Například `DataContractSerializer` mapuje <xref:System.Exception> pro následující typ XSD v `http://schemas.datacontract.org/2004/07/System` oboru názvů.  
   
 ```xml  
 <xs:complexType name="Exception">  

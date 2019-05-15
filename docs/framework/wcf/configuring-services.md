@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuration [WCF]
 ms.assetid: beac771e-f28e-4f84-9ff1-ad9251c726d3
-ms.openlocfilehash: 81727adbf985986a71cc9f9e2d42a1de0cb1fd76
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8ac62809b1269ae810f026c003c7611b3ec548c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608539"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593326"
 ---
 # <a name="configuring-wcf-services"></a>Konfigurace služeb WCF
 
@@ -22,7 +22,7 @@ Jakmile máte navrženy a implementovány servisní smlouvy, jste připraveni ke
  Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], WCF se dodává s novou výchozí konfiguraci modelu, která zjednodušuje požadavky na konfiguraci WCF. Pokud nezadáte žádnou konfiguraci WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s výchozí koncové body, vazby a chování.  
   
  [Konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
- Služba Windows Communication Foundation (WCF) se dají konfigurovat pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] technologie konfigurace. Nejčastěji jsou přidány elementy XML v souboru Web.config pro web Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používaný ke komunikaci se službou service) pro počítače podle počítače.  
+ Služba Windows Communication Foundation (WCF) je možné konfigurovat pomocí konfigurace technologie rozhraní .NET Framework. Nejčastěji jsou přidány elementy XML v souboru Web.config pro web Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používaný ke komunikaci se službou service) pro počítače podle počítače.  
   
  [Vazby](../../../docs/framework/wcf/bindings.md)  
  Kromě toho WCF obsahuje několik běžných konfigurací poskytované systémem ve formě vazby, které umožňují rychle vybrat základní funkce pro komunikaci klienta a služby, jako jsou přenosy, zabezpečení a zprávy použít kódování.  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: 01257847956f22c895b00c6055ec1cdd1e89eaf3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dc297bd35d7bfdb25fc50135b8e684e1b9452cb2
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627090"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592582"
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute> Třídy můžete zadat v předstihu, typy, které by měly být zahrnuty k posouzení vlastní během deserializace. Funkční příklad najdete v článku [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  
@@ -27,7 +27,7 @@ ms.locfileid: "64627090"
   
 - Je deklarovaný typ informace předávají <xref:System.Object>. Protože každý typ dědí z <xref:System.Object>a to nemůže být předem známý typů, které se skutečně přijde, přijímající koncový bod nemůže určit předem kontraktu dat pro přenášená data. Toto je zvláštní případ první položky: Každý kontraktu dat. je odvozena z výchozí prázdné datové kontrakt, který je generován pro <xref:System.Object>.  
   
-- Některé typy, mezi které patří [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, mají členy, které jsou v jednom z předchozích tří kategorií. Například <xref:System.Collections.Hashtable> používá <xref:System.Object> k uložení skutečných objektů v zatřiďovací tabulce. Při serializaci těchto typů nelze určit přijímající straně předem kontraktu dat pro tyto členy.  
+- Některé typy, jako je například typy .NET Framework, mají členy, které jsou v jednom z předchozích tří kategorií. Například <xref:System.Collections.Hashtable> používá <xref:System.Object> k uložení skutečných objektů v zatřiďovací tabulce. Při serializaci těchto typů nelze určit přijímající straně předem kontraktu dat pro tyto členy.  
   
 ## <a name="the-knowntypeattribute-class"></a>Třída KnownTypeAttribute  
  Po přijetí na koncový bod příjmu dat, pokusí se modul runtime WCF deserializovat data do instance stejného typu language runtime (CLR). Typ, který je vytvořena instance pro deserializaci je vybrán zkontrolováním první příchozí zprávy k určení dat smlouvy tak, aby odpovídal který obsah zprávy. Modul deserializace se pak pokusí se najít typ CLR, který implementuje kontrakt dat kompatibilní s obsah zprávy. Sadu Release candidate typů, které modul deserializace umožňuje během tohoto procesu se označuje jako sada deserializátor "známých typů."  

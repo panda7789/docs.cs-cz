@@ -2,12 +2,12 @@
 title: Zpracování škodlivých zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: 1a7ab0afa982508f07256f090a13692174b5fb0b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b1f01714d2b4587659682661c05b341d0f50254e
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638427"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592849"
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace může nastat, když aplikace na základě fronty nemůže zpracovat zprávu z důvodu chyby. Abyste splnili požadavky na spolehlivost, frontové aplikace přijímá zprávy v rámci transakce. Zrušená transakce, ve kterém byla přijata zpráva ve frontě opustí zprávu ve frontě, tak, aby zprávy se zopakuje za novou transakci. Pokud není opraven problém, která způsobila zrušení, přijímající aplikace můžete uvízne ve smyčce přijímáním a přerušení stejné zprávy, dokud byl překročen maximální počet pokusů o doručení a výsledky nezpracovatelná zpráva byla.  
@@ -52,7 +52,7 @@ A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximáln
   
  WCF poskytuje dvě vazby standardní zařazených do fronty:  
   
-- <xref:System.ServiceModel.NetMsmqBinding>. A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vazby vhodné pro provádění komunikace pomocí dalších koncových bodů WCF na základě fronty.  
+- <xref:System.ServiceModel.NetMsmqBinding>. Rozhraní .NET Framework vazby vhodné pro provedení na základě fronty komunikaci pomocí dalších koncových bodů WCF.  
   
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Vazba, která je vhodná pro komunikaci se stávajícími aplikacemi služby Řízení front zpráv.  
   

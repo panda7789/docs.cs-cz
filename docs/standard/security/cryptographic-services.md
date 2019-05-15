@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f2ca5c26b7e5b830ee8dccffb452b8509c8b0d1c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f070419fb8cdca178369bee12545dd1a0d89ea47
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795301"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592736"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 
@@ -112,7 +112,7 @@ Nevýhodou šifrování tajného klíče je, že předpokládá, že obě strany
 
 Za předpokladu, že Alice a Bob se dvěma stranami, které chcete komunikovat přes nezabezpečený kanál, můžou používat šifrování tajného klíče následujícím způsobem: Alice a Bob svůj souhlas s konkrétním klíč a vektor IV používat jeden konkrétní algoritmus (například standard AES). Alice vytvoří zprávu a vytváří datový proud sítě (třeba pojmenovaného kanálu nebo sítě e-mail s) na základě které chcete odeslat zprávu. V dalším kroku Jana zašifruje text pomocí klíč a vektor IV a odešle zašifrovanou zprávu a vektor IV Bob prostřednictvím sítě intranet. Bob obdrží šifrovaného textu a dešifruje ji pomocí vektor IV a dříve dohodnutých klíč. Pokud je přenos, sběrač nelze obnovit původní zprávu, protože nezná klíč. V tomto scénáři musí zůstat pouze klíč tajného kódu. Ve scénáři reálného světa Alice a Bob vygeneruje tajný klíč a šifrování veřejného klíče (asymetricky) používá k přenosu tajných kódů (symetrického) klíče na druhou stranu. Další informace o šifrování s veřejným klíčem najdete v další části.
 
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Obsahuje následující třídy, které implementují algoritmy šifrování tajného klíče:
+Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy šifrování tajného klíče:
 
 - <xref:System.Security.Cryptography.AesManaged> (počínaje [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]).
 
@@ -154,7 +154,7 @@ Následující seznam nabízí porovnání veřejného klíče a tajného klíč
 
 - Algoritmy veřejného klíče jsou velmi pomalé ve srovnání s algoritmy tajného klíče a nejsou určeny k zašifrování velké objemy dat. Jsou užitečné pouze pro přenos velmi malé množství dat algoritmy veřejného klíče. Šifrování s veřejným klíčem se obvykle používá k šifrování klíč a vektor IV použije algoritmus tajný klíč. Po přenesení klíč a vektor IV šifrování tajného klíče se používá pro zbytek relace.
 
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Obsahuje následující třídy, které implementují algoritmy šifrování s veřejným klíčem:
+Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy šifrování s veřejným klíčem:
 
 - <xref:System.Security.Cryptography.DSACryptoServiceProvider>
 
@@ -185,7 +185,7 @@ Použití kryptografie využívající veřejný klíč k podepsání zprávy, A
 > [!NOTE]
 > Podpis můžete ověřit kdokoli, protože veřejného klíče odesílatele je společné znalosti a je obvykle součástí formátu digitální podpis. Tato metoda nezachovává tajemství zprávy. pro zprávy být tajný se musí také být zašifrován.
 
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Obsahuje následující třídy, které implementují algoritmy digitální podpis:
+Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy digitální podpis:
 
 - <xref:System.Security.Cryptography.DSACryptoServiceProvider>
 
@@ -223,7 +223,7 @@ Obě strany (Alice a Bob) použít k zajištění integrity zprávy funkce hash.
 
 Žádná z předchozích metod zabrání někdo čtení zprávy od Alice, protože se přenáší ve formátu prostého textu. Úplné zabezpečení zpravidla vyžaduje, aby digitální podpisy (podepisování zpráv) a šifrování.
 
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Obsahuje následující třídy, které implementují algoritmy hash:
+Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy hash:
 
 - <xref:System.Security.Cryptography.HMACSHA1>.
 
@@ -256,7 +256,7 @@ Obě strany (Alice a Bob) použít k zajištění integrity zprávy funkce hash.
 
 ## <a name="random-number-generation"></a>Náhodné generování čísel
 
-Náhodné generování čísel je nedílnou součástí mnoha kryptografické operace. Například kryptografické klíče musí být jako náhodné, jak je to možné, tak, aby se reprodukovat. Kryptografické generátorů náhodných čísel musí generovat výstup, který je výpočetně odhadnout pravděpodobnost, že je obecně lepší než polovinu. Proto jakékoli metody objektu předpověď Další bit výstup nesmí mít lepší výkon než náhodných opakovaně uhodnout. Třídy v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] ke generování kryptografických klíčů použijte generátorů náhodných čísel.
+Náhodné generování čísel je nedílnou součástí mnoha kryptografické operace. Například kryptografické klíče musí být jako náhodné, jak je to možné, tak, aby se reprodukovat. Kryptografické generátorů náhodných čísel musí generovat výstup, který je výpočetně odhadnout pravděpodobnost, že je obecně lepší než polovinu. Proto jakékoli metody objektu předpověď Další bit výstup nesmí mít lepší výkon než náhodných opakovaně uhodnout. Třídy v rozhraní .NET Framework pomocí generátorů náhodných čísel pro generování kryptografických klíčů.
 
 <xref:System.Security.Cryptography.RNGCryptoServiceProvider> Třída je implementací algoritmu generátor náhodných čísel.
 

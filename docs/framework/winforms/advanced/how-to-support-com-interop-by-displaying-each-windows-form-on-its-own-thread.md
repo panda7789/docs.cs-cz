@@ -10,15 +10,15 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], COM interop
 - Windows Forms, interop
 ms.assetid: a9e04765-d2de-4389-a494-a9a6d07aa6ee
-ms.openlocfilehash: 56eaf438455754c69b2df3ff798cf6d2ac6f7549
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f158cf71f69ed3221dcaf7d3abbe495cf818638b
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64636969"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593187"
 ---
 # <a name="how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread"></a>Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně
-Vyřešíte problémy vzájemná funkční spolupráce modelu COM zobrazením formuláře ve [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] smyčky zpráv, které můžete vytvořit pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
+Vyřešíte problémy vzájemná funkční spolupráce modelu COM zobrazením formuláře na rozhraní .NET Framework smyčky zpráv, které můžete vytvořit pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
   
  Chcete-li pracovní formulář Windows správně z klientské aplikace modelu COM, musíte spustit formuláře na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
   
@@ -33,7 +33,7 @@ Vyřešíte problémy vzájemná funkční spolupráce modelu COM zobrazením fo
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak formulář pro zobrazení v samostatném vlákně a volání <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metodu spustit pumpu zpráv Windows Forms v daném vláknu. Chcete-li tuto metodu použijte, musí zařaďte všechna volání do formuláře z nespravovaných aplikací s použitím <xref:System.Windows.Forms.Control.Invoke%2A> metody.  
   
- Tento přístup vyžaduje, že každá instance formuláře je spuštěna ve vlastním vlákně s použitím vlastní smyčky zpráv. Nemůžete mít více než jeden smyčky zpráv spuštěná na vlákno. Proto nelze změnit smyčky zpráv klientská aplikace. Však můžete změnit [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] součásti spustit nové vlákno, která používá vlastní smyčku zpráv.  
+ Tento přístup vyžaduje, že každá instance formuláře je spuštěna ve vlastním vlákně s použitím vlastní smyčky zpráv. Nemůžete mít více než jeden smyčky zpráv spuštěná na vlákno. Proto nelze změnit smyčky zpráv klientská aplikace. Však můžete upravit součásti rozhraní .NET Framework spustit nové vlákno, která používá vlastní smyčku zpráv.  
   
  [!code-vb[System.Windows.Forms.ComInterop#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/COMForm.vb#1)]  
   

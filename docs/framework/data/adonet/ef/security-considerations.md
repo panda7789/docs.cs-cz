@@ -2,15 +2,15 @@
 title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 14d07fcb1d97a4e71747d6517f63fbc4108493da
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5a985cfcd4834efd7bbab04d30c86787dfb90955
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641172"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583477"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
-Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Měli postupovat také podle doporučení pro vytváření zabezpečených [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
+Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
   
 ## <a name="general-security-considerations"></a>Důležité informace o obecné zabezpečení  
  Platí následující aspekty zabezpečení pro všechny aplikace, které používají [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
@@ -63,7 +63,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
  Správce zdrojů dat měli udělit pouze nezbytná oprávnění pro uživatele. I když [!INCLUDE[esql](../../../../../includes/esql-md.md)] nemá příkazy DML podpory, které mění data, jako jsou INSERT, UPDATE nebo DELETE, uživatelé stále přístup připojení ke zdroji dat. Uživatel se zlými úmysly může provádět příkazy DML v nativním jazyce zdroj dat použít toto připojení.  
   
 #### <a name="run-applications-with-the-minimum-permissions"></a>Spouštění aplikací s minimálními oprávněními.  
- Když povolíte spravované aplikace na spuštění pomocí oprávnění plné důvěryhodnosti, [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] neomezuje přístup aplikace k vašemu počítači. To může umožnit ohrožení zabezpečení v aplikaci k ohrožení celý systém. Zabezpečení přístupu kódu a další mechanismy zabezpečení ve [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)], by měl spouštět aplikace s částečným vztahem důvěryhodnosti oprávněními a s minimální sadu oprávnění, která jsou potřebná k povolení aplikace pro funkce. Minimální oprávnění jsou následující přístupová oprávnění kódu vaší [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] potřeby aplikace:  
+ Když povolíte spravované aplikace na spuštění pomocí oprávnění plné důvěryhodnosti, neomezuje rozhraní .NET Framework vaší aplikace přístup k vašemu počítači. To může umožnit ohrožení zabezpečení v aplikaci k ohrožení celý systém. Použití zabezpečení přístupu kódu a další mechanismy zabezpečení v rozhraní .NET Framework, byste měli spustit aplikace s částečným vztahem důvěryhodnosti oprávněními a s minimální sadu oprávnění, která jsou potřebná k povolení aplikace pro funkce. Minimální oprávnění jsou následující přístupová oprávnění kódu vaší [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] potřeby aplikace:  
   
 - <xref:System.Security.Permissions.FileIOPermission>: <xref:System.Security.Permissions.FileIOPermissionAccess.Write> k otevírání souborů Zadaná metadata nebo <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery> adresáři pro soubory metadat.  
   

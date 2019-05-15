@@ -13,15 +13,15 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 557c3296310a7eb3922a6c18b7b3de19ffac953c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c161cc27bd45f8f29e4d48c572d26d3c153b8f3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802086"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592677"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
+Rozhraní .NET Framework používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
   
  Pokud narazíte na omezení zabezpečení, máte dvě možnosti: uplatnit oprávnění (za předpokladu, že bylo uděleno pro vaši aplikaci) nebo verze operačního systému funkce napsané pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s souboru, database a přístup k registru z aplikací, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
   
@@ -29,7 +29,7 @@ ms.locfileid: "61802086"
 >  Ve výchozím nastavení nástroje, které generují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení ve výchozím nastavení tato nasazení žádající plné důvěryhodnosti z počítače, na kterých se používají. Pokud chcete využít výhod vyššího zabezpečení spouštění v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení v sadě Visual Studio nebo jeden z [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] nástroje (Mage.exe nebo MageUI.exe). Další informace o Windows Forms – zabezpečení a o tom, jak určit, příslušné úrovně důvěryhodnosti pro vaši aplikaci najdete v tématu [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Přístup k souborům  
- <xref:System.Security.Permissions.FileIOPermission> Třídy ovládacích prvků přístupu souborů a složek v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Ve výchozím nastavení, systém zabezpečení nejsou udělena <xref:System.Security.Permissions.FileIOPermission> do prostředí částečným vztahem důvěryhodnosti, jako je místní intranet a Internet zóny. Aplikace, která vyžaduje přístup k souborům lze však i nadále fungovat v těchto prostředích je-li upravit návrh aplikace nebo použít různé metody pro přístup k souborům. Ve výchozím nastavení zóny místního intranetu je uděleno právo mít stejný přístup k serveru a stejný přístup adresáře pro připojení zpět k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení zóně Internet, je pouze uděleno právo na zpětné připojení k původnímu serveru.  
+ <xref:System.Security.Permissions.FileIOPermission> Třídy ovládacích prvků přístupu souborů a složek v rozhraní .NET Framework. Ve výchozím nastavení, systém zabezpečení nejsou udělena <xref:System.Security.Permissions.FileIOPermission> do prostředí částečným vztahem důvěryhodnosti, jako je místní intranet a Internet zóny. Aplikace, která vyžaduje přístup k souborům lze však i nadále fungovat v těchto prostředích je-li upravit návrh aplikace nebo použít různé metody pro přístup k souborům. Ve výchozím nastavení zóny místního intranetu je uděleno právo mít stejný přístup k serveru a stejný přístup adresáře pro připojení zpět k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení zóně Internet, je pouze uděleno právo na zpětné připojení k původnímu serveru.  
   
 ### <a name="user-specified-files"></a>Soubory zadané uživatelem  
  Jeden ze způsobů, jak zacházet s nemají přístup k souborům oprávnění je vyzvat uživatele k zadání určitých informací o souboru s použitím <xref:System.Windows.Forms.OpenFileDialog> nebo <xref:System.Windows.Forms.SaveFileDialog> třídy. Tato interakce uživatele pomáhá poskytovat některé záruku, že aplikace nelze speciálně načíst soukromé soubory nebo přepsat důležitých souborů. <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> a <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> metody poskytují přístup čtení a zápis souboru otevřením souboru datového proudu souboru, který uživatel zadal. Metody také pomáhají chránit uživatele souboru zakódováním cestě k souboru.  
@@ -47,7 +47,7 @@ ms.locfileid: "61802086"
 > [!NOTE]
 >  Konkrétní oprávnění není požadována až <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> skutečně volání metody.  
   
- Oprávnění k zobrazení dialogového okna souboru neuděluje vaše aplikace úplné přístup do všech členů <xref:System.Windows.Forms.FileDialog>, <xref:System.Windows.Forms.OpenFileDialog>, a <xref:System.Windows.Forms.SaveFileDialog> třídy. Konkrétní oprávnění, které je potřeba volat každou metodu, najdete v tématu referenční téma pro danou metodu v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] třídy dokumentaci ke knihovně.  
+ Oprávnění k zobrazení dialogového okna souboru neuděluje vaše aplikace úplné přístup do všech členů <xref:System.Windows.Forms.FileDialog>, <xref:System.Windows.Forms.OpenFileDialog>, a <xref:System.Windows.Forms.SaveFileDialog> třídy. Konkrétní oprávnění, které jsou nutné pro volání jednotlivých metod naleznete v tématu odkaz pro danou metodu v dokumentaci knihovny tříd rozhraní .NET Framework.  
   
  Následující příklad kódu používá <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metody k otevření souboru zadaného uživatelem do <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. V příkladu vyžaduje <xref:System.Security.Permissions.FileDialogPermission> a přidružené <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A> hodnota výčtu. Tento příklad ukazuje, jak zpracovat <xref:System.Security.SecurityException> k určení, zda uložit funkce by mělo být zakázáno. Tento příklad vyžaduje, aby vaše <xref:System.Windows.Forms.Form> má <xref:System.Windows.Forms.Button> ovládací prvek s názvem `ButtonOpen`a <xref:System.Windows.Forms.RichTextBox> ovládací prvek s názvem `RtfBoxMain`.  
   

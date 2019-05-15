@@ -12,17 +12,17 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - data-bound controls [Windows Forms], Windows Forms
 ms.assetid: 419aac5e-819b-4aad-88b0-73a2f8c0bd27
-ms.openlocfilehash: e8a3011828fd3b3f7aaaa062e837570c86f4fd65
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 240b68f901f819313fcae7aab0474abd5535c30d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626855"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592305"
 ---
 # <a name="data-binding-and-windows-forms"></a>Datové vazby a rozhraní Windows Forms
 Ve Windows Forms lze svázat jenom tradičních datových zdrojů, ale také pro téměř jakoukoli strukturu, která obsahuje data. Můžete vytvořit vazbu na pole hodnot, které vypočítat v době běhu, čtení ze souboru nebo jsou odvozeny z hodnot jiných ovládacích prvků.  
   
- Kromě toho můžete vázat nějaká vlastnost libovolný ovládací prvek na zdroj dat. V tradičních datových vazbách obvykle vazby vlastnosti zobrazení – například <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku – ke zdroji dat. S [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], máte také možnost nastavení prostřednictvím vazby také další vlastnosti. Vazby můžete použít k provádění následujících úloh:  
+ Kromě toho můžete vázat nějaká vlastnost libovolný ovládací prvek na zdroj dat. V tradičních datových vazbách obvykle vazby vlastnosti zobrazení – například <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku – ke zdroji dat. S použitím rozhraní .NET Framework máte také možnost nastavení prostřednictvím vazby také další vlastnosti. Vazby můžete použít k provádění následujících úloh:  
   
 - Nastaví obrázek ovládacího prvku pro obrázek.  
   

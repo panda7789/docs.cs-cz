@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 02b1b0f6215f7d26974a8e1e58fbefbb5d159cf7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 29b030708f2174b55386b13931f1088d15f4eb4f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669691"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582694"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -107,7 +107,7 @@ Pro službu s koncovým bodem třída BasicHttpContextBinding *Svcutil.exe* gene
 |/serializer:Auto|Automatický výběr serializátoru. To se pokusí použít serializátor kontraktu dat. není a používá XmlSerializer, pokud se nezdaří.<br /><br /> Krátký tvar: `/ser`|
 |/serializer:DataContractSerializer|Datové typy, které k serializaci a deserializaci používají serializátor kontraktu dat generuje.<br /><br /> Krátký tvar: `/ser:DataContractSerializer`|
 |/serializer:XmlSerializer|Generuje datové typy, které používají <xref:System.Xml.Serialization.XmlSerializer> k serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:XmlSerializer`|
-|/targetClientVersion|Určit používanou verzi [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] cílení aplikace. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: Použít `/tcv:Version30` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)].<br /><br /> `Version35`: Použít `/tcv:Version35` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Při použití `/tcv:Version35` s `/async` přepnout, obě založený na událostech a jsou generovány založený/zpětného volání asynchronní metody. Kromě toho podporují podporující LINQ datových sad a <xref:System.DateTimeOffset> je povolená.|
+|/targetClientVersion|Zadejte, která verze rozhraní .NET Framework aplikace cílí. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: Použít `/tcv:Version30` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)].<br /><br /> `Version35`: Použít `/tcv:Version35` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Při použití `/tcv:Version35` s `/async` přepnout, obě založený na událostech a jsou generovány založený/zpětného volání asynchronní metody. Kromě toho podporují podporující LINQ datových sad a <xref:System.DateTimeOffset> je povolená.|
 |/ zabalené|Určuje, zda zvláštní případy se používá pro literál dokumentu ve stylu dokumenty s zabalené parametry. Použití **/ zabalené** přepněte se [Service Model metadat Tool Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro určení normální velká a malá písmena.|
 
 > [!NOTE]

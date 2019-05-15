@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-ms.openlocfilehash: 9f1d77ac27def556d94fac12dbde2f36d5b139de
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a1854e35e32a31dbf531e6705a7968434dd02e44
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649759"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593241"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory jsou používány k provádění řady známých aritmetické operace, které zahrnují výpočet číselné hodnoty literály, proměnné, ostatní výrazy, funkce a volání vlastností a konstanty. Také klasifikovat s aritmetické operátory jsou bitové posunutí – operátory, které bude fungovat na úrovni jednotlivých bitů operandy a posunout své vzorců bitů doleva nebo doprava.  
@@ -51,7 +51,7 @@ Aritmetické operátory jsou používány k provádění řady známých aritmet
  [!code-vb[VbVbalrOperators#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#63)]  
   
 ### <a name="attempted-division-by-zero"></a>Pokus o dělení nulou  
- Dělení nulou má odlišné výsledky v závislosti na používané datové typy. V integrální divizemi (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`), [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá <xref:System.DivideByZeroException> výjimky. V operacích dělení na `Decimal` nebo `Single` datový typ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá také <xref:System.DivideByZeroException> výjimky.  
+ Dělení nulou má odlišné výsledky v závislosti na používané datové typy. V integrální divizemi (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`), vyvolá rozhraní .NET Framework <xref:System.DivideByZeroException> výjimky. V operacích dělení `Decimal` nebo `Single` datový typ rozhraní .NET Framework také vyvolá <xref:System.DivideByZeroException> výjimky.  
   
  V plovoucí desetinné čárky divize zahrnující `Double` datový typ, není vyvolána žádná výjimka a výsledkem je člen třídy, představující <xref:System.Double.NaN>, <xref:System.Double.PositiveInfinity>, nebo <xref:System.Double.NegativeInfinity>, v závislosti na podíl. Následující tabulka shrnuje různé výsledky pokusu o dělení `Double` hodnotu nula.  
   

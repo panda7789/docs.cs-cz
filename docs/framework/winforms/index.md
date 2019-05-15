@@ -6,15 +6,15 @@ helpviewer_keywords:
 - user interface
 - user interface [Windows Forms], forms
 ms.assetid: 627df1e9-b254-41af-bbac-9a4f02810c54
-ms.openlocfilehash: aa3f3d8adc34d8c51cd2cfa6b087d01e9af1ad82
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00e359e7c2440b6d88f2c42fd0267fc1f12b7bb7
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801176"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583422"
 ---
 # <a name="windows-forms"></a>Windows Forms
-Základní jednotka vaší aplikace jsou formuláře je nezbytné, abyste udělili uvažujete jejich funkce a návrhu. Formuláře v konečném důsledku je prázdným projektem, je, jako vývojář, zvýšit s ovládacími prvky pro vytvoření uživatelského rozhraní a s kódem pro manipulaci s daty. Za tímto účelem sady Visual Studio poskytuje integrované vývojové prostředí (IDE), které vám pomůže při psaní kódu, jakož i bohaté ovládací prvek nastavit písemné s [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Ve vzájemně doplňuje funkce tyto ovládací prvky s vaším kódem, můžete snadno a rychle vyvinout řešení, které potřebujete.  
+Základní jednotka vaší aplikace jsou formuláře je nezbytné, abyste udělili uvažujete jejich funkce a návrhu. Formuláře v konečném důsledku je prázdným projektem, je, jako vývojář, zvýšit s ovládacími prvky pro vytvoření uživatelského rozhraní a s kódem pro manipulaci s daty. Za tímto účelem sady Visual Studio poskytuje integrované vývojové prostředí (IDE), které vám pomůže při psaní kódu, jakož i bohaté ovládací prvek nastavit napsané pomocí rozhraní .NET Framework. Ve vzájemně doplňuje funkce tyto ovládací prvky s vaším kódem, můžete snadno a rychle vyvinout řešení, které potřebujete.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Začínáme s Windows Forms](getting-started-with-windows-forms.md)  

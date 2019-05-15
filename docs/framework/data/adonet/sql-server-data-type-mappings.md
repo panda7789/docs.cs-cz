@@ -2,17 +2,17 @@
 title: Mapování datových typů SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: fafdc31a-f435-4cd3-883f-1dfadd971277
-ms.openlocfilehash: f90f44666fa5843ccf9bd1cd9ccb5c20b812f494
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 04a3bbd9ba18b30a24b425888cce78597deb068a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664087"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583719"
 ---
 # <a name="sql-server-data-type-mappings"></a>Mapování datových typů SQL Serveru
 SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy. Například rozhraní .NET Framework <xref:System.Decimal> struktura má maximální rozsah 28, že maximální rozsahu, 38 desetinných míst a číselné datové typy serveru SQL Server. K udržení integrity dat při čtení a zápis dat, <xref:System.Data.SqlClient.SqlDataReader> zpřístupňuje SQL Server – konkrétní zadali přístupové metody, které vracejí objekty <xref:System.Data.SqlTypes> typy a také přístupové metody, které vrací rozhraní .NET Framework. SQL Server typy a typy rozhraní .NET Framework jsou také reprezentované výčty v <xref:System.Data.DbType> a <xref:System.Data.SqlDbType> třídy, které můžete použít při zadávání <xref:System.Data.SqlClient.SqlParameter> datové typy.  
   
- V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ, <xref:System.Data.DbType> a <xref:System.Data.SqlDbType> výčty a přístupové metody pro <xref:System.Data.SqlClient.SqlDataReader>.  
+ V následující tabulce jsou uvedeny odvozený typ rozhraní .NET Framework <xref:System.Data.DbType> a <xref:System.Data.SqlDbType> výčty a přístupové metody pro <xref:System.Data.SqlClient.SqlDataReader>.  
   
 |Typ databázového stroje SQL serveru|Typ rozhraní .NET Framework|Výčet SqlDbType|SqlDataReader SqlTypes typu přístupového objektu|Hodnota DbType výčet|Hodnota SqlDataReader DbType typu přístupového objektu|  
 |-------------------------------------|-------------------------|---------------------------|-------------------------------------------|------------------------|-----------------------------------------|  
@@ -22,7 +22,7 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy. Nap�
 |char|String<br /><br /> Char]|<xref:System.Data.SqlDbType.Char>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlString%2A>|<xref:System.Data.DbType.AnsiStringFixedLength>,<br /><br /> <xref:System.Data.DbType.String>|<xref:System.Data.SqlClient.SqlDataReader.GetString%2A><br /><br /> <xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>|  
 |datum <sup>1</sup><br /><br /> (SQL Server 2008 a novější)|DateTime|<xref:System.Data.SqlDbType.Date> <sup>1</sup>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlDateTime%2A>|<xref:System.Data.DbType.Date> <sup>1</sup>|<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|  
 |datetime|DateTime|<xref:System.Data.SqlDbType.DateTime>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlDateTime%2A>|<xref:System.Data.DbType.DateTime>|<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|  
-|datetime2<br /><br /> (SQL Server 2008 a novější)|DateTime|<xref:System.Data.SqlDbType.DateTime2>|Žádné|<xref:System.Data.DbType.DateTime2>|<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|  
+|datetime2<br /><br /> (SQL Server 2008 a novější)|DateTime|<xref:System.Data.SqlDbType.DateTime2>|Žádný|<xref:System.Data.DbType.DateTime2>|<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|  
 |DateTimeOffset<br /><br /> (SQL Server 2008 a novější)|DateTimeOffset|<xref:System.Data.SqlDbType.DateTimeOffset>|žádná|<xref:System.Data.DbType.DateTimeOffset>|<xref:System.Data.SqlClient.SqlDataReader.GetDateTimeOffset%2A>|  
 |decimal|Desetinné číslo|<xref:System.Data.SqlDbType.Decimal>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlDecimal%2A>|<xref:System.Data.DbType.Decimal>|<xref:System.Data.SqlClient.SqlDataReader.GetDecimal%2A>|  
 |Atribut FILESTREAM (varbinary(max))|Byte[]|<xref:System.Data.SqlDbType.VarBinary>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A>|<xref:System.Data.DbType.Binary>|<xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>|  

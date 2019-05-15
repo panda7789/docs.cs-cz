@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], sorting
 - data grids [Windows Forms], customizing sorting
 ms.assetid: 92fb5c14-afab-4cf5-a97e-924fd9cb99f5
-ms.openlocfilehash: f82da44156ead690577046efa39aa3bbb60625dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85ca27bf2ef738dce86c6e88037da00e4992a4b2
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666367"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592792"
 ---
 # <a name="how-to-customize-sorting-in-the-windows-forms-datagridview-control"></a>Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení poskytuje automatické řazení, ale v závislosti na potřebách, možná budete muset přizpůsobit operace řazení. Například můžete řazení prostřednictvím kódu programu vytvořit alternativní uživatelské rozhraní (UI). Alternativně můžete zpracovávat <xref:System.Windows.Forms.DataGridView.SortCompare> události nebo volání `Sort(IComparer)` přetížení <xref:System.Windows.Forms.DataGridView.Sort%2A> metodu pro vyšší flexibilitu řazení, jako je například řazení více sloupců.  
@@ -43,8 +43,6 @@ ms.locfileid: "64666367"
  Tyto příklady vyžadují:  
   
 - Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
-  
- Informace o vytváření těchto příkladech z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 

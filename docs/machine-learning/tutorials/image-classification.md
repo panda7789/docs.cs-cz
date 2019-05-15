@@ -4,12 +4,12 @@ description: Objevte, jak vytvářet třídění ML.NET vlastní image ve Tensor
 ms.date: 05/06/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f7fddc2d6c60a719090af36b7fe91919bfbd115c
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: e248c5ae73281ed6cd492592ba4a51791db75aa2
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063614"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593431"
 ---
 # <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow
 
@@ -402,7 +402,7 @@ public static void ClassifyImages(MLContext mlContext, string dataLocation, stri
 
 Nejprve volat `ReadFromTsv()` metodu pro vytvoření `IEnumerable<ImageData>` třídu, která obsahuje plně kvalifikovanou cestu pro každý `ImagePath`. Je nutné tuto cesta k souboru spárovat se vaše data a předpovědi výsledky. Je také potřeba převést `IEnumerable<ImageData>` třídu `IDataView` , kterou použijete k předpovědi. Přidejte následující kód jako následující dva řádky v `ClassifyImages()` metody:
 
-[!code-csharp[ReadFromTSV](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReadFromTSV)]
+[!code-csharp[CallReadFromTSV](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallReadFromTSV)]
 
 Kategorie testu image data s využitím předpovědět, jako jste to udělali dříve s trénovací data bitové kopie, [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) předaný metodě modelu. Přidejte následující kód, který `ClassifyImages()` metodu pro předpovědi a k převodu `predictions` `IDataView` do `IEnumerable` pro párování a zobrazení:
 

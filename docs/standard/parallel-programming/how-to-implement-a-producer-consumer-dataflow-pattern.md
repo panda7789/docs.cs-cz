@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2ad212117cc51c17b2a0f68a98bee24e1dd3fa05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ff0cc339a26ef97e8036d905bf3c9530d5dee94
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962549"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593110"
 ---
 # <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>Postupy: Implementace vzoru toku dat producent–příjemce
 Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro implementaci vzoru producent – příjemce. V tomto modelu *producent* posílání zpráv do bloku zprávy a *příjemce* čte zprávy z tohoto bloku.  
@@ -31,17 +31,6 @@ Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro imp
   
  [!code-csharp[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_producerconsumer/cs/dataflowproducerconsumer.cs#1)]
  [!code-vb[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_producerconsumer/vb/dataflowproducerconsumer.vb#1)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DataflowProducerConsumer.cs` (`DataflowProducerConsumer.vb` v jazyce Visual Basic), a pak spuštěním následujícího příkazu na příkazovém řádku pro vývojáře pro Visual Studio okno.  
-  
- Visual C#  
-  
- **csc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.cs**  
-  
- Visual Basic  
-  
- **vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.vb**  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Předchozí příklad používá ke zpracování dat zdroje jenom jednoho příjemce. Pokud máte více příjemci ve vaší aplikaci, použijte <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> metodu za účelem čtení dat ze zdrojového bloku, jak je znázorněno v následujícím příkladu.  

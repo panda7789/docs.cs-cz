@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: 50566422c5e28585e93171c991144cf12a6866eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ffd25dae3826df0f02f2afb707f7317b2d92d24
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698496"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584543"
 ---
 # <a name="systemweb-element-web-settings"></a>\<System.Web > – Element (nastavení webu)
 Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování technologie ASP.NET.  
@@ -44,13 +44,13 @@ Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
+|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikace rozhraní .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
- `system.web` Elementu a jeho podřízené `applicationPool` element byly přidány do [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]. Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace elementu vám umožní nakonfigurovat jak spravuje vláken ASP.NET a jak se zařadí do fronty žádostí při technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v režimu Classic nebo rozhraní ISAPI, tato nastavení ignorují.  
+ `system.web` Elementu a jeho podřízené `applicationPool` element byly přidány do rozhraní .NET Framework počínaje verzí [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]. Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace elementu vám umožní nakonfigurovat jak spravuje vláken ASP.NET a jak se zařadí do fronty žádostí při technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v režimu Classic nebo rozhraní ISAPI, tato nastavení ignorují.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak konfigurovat chování v celém procesu ASP.NET v souboru aspnet.config technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Příklad předpokládá, že služba IIS pracuje v integrovaného režimu a že aplikace používá [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] nebo novější. K tomuto chování nedojde ve verzích [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] starší než [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]. Hodnoty v tomto příkladu jsou výchozí hodnoty.  
+ Následující příklad ukazuje, jak konfigurovat chování v celém procesu ASP.NET v souboru aspnet.config technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Příklad předpokládá, že služba IIS pracuje v integrovaného režimu a že aplikace používá [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] nebo novější. K tomuto chování nedojde ve verzích rozhraní .NET Framework starší než [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]. Hodnoty v tomto příkladu jsou výchozí hodnoty.  
   
 ```xml  
 <configuration>  

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - .NET Framework [Visual Basic], reference
 - .NET Framework class library [Visual Basic], reference information
 ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
-ms.openlocfilehash: 36603b7d517e0c6576e9b70fad2cbee8027acad0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c1b6b6a53264be5716a4132cebca78449b30d8d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968308"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593046"
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Referenční dokumentace rozhraní .NET Framework (Visual Basic)
-Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.  
+Toto téma obsahuje odkazy na informace o tom, jak pracovat s knihovnou tříd rozhraní .NET Framework.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Začínáme](../../framework/get-started/index.md)  

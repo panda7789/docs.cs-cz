@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-ms.openlocfilehash: b1eb24aaa9ed3bfede41fc5a9a80fcbdc9f749a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 92aaeabfc12e964ac294fbd69998c4671fc8763c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936445"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65582603"
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
-Základní kroky pro přepsání jakékoli události definované v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] jsou shodné a jsou shrnuty v následujícím seznamu.  
+Základní kroky pro přepsání jakékoli události definované v rozhraní .NET Framework jsou shodné a jsou shrnuty v následujícím seznamu.  
   
 #### <a name="to-override-an-inherited-event"></a>K přepsání zděděné události  
   

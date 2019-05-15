@@ -8,12 +8,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], joining together
 - ToolStripPanel control [Windows Forms], joining together
 ms.assetid: 4eadda6d-e3b8-4151-aaf2-a8d564fbe6b3
-ms.openlocfilehash: 5ef934aa1e72b0793ca938953fe18efcbb212adb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d9cacddecdf3859a0fca4038481eeab417e22e6a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651611"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592380"
 ---
 # <a name="how-to-join-toolstrippanels"></a>Postupy: Spojení prvků ToolStripPanel
 Toho se můžete zapojit <xref:System.Windows.Forms.ToolStrip> ovládacích prvků do <xref:System.Windows.Forms.ToolStripPanel> za běhu, který poskytuje flexibilitu aplikací rozhraní více dokumentů (MDI).  
@@ -28,8 +28,6 @@ Toho se můžete zapojit <xref:System.Windows.Forms.ToolStrip> ovládacích prvk
  Tento příklad vyžaduje:  
   
 - Odkazy na sestavení System.Design System.Drawing a System.Windows.Forms.  
-  
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ea32efaad24f171b7d5ebfa457834b35edbddf4c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 519b92cd24d75dd8e98fc28dbce3701c521a041d
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664615"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593516"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>Převod typů v rozhraní .NET Framework
 <a name="top"></a> Každá hodnota má přidružen typ, který definuje atributy, jako je množství přidělené místo na hodnotě, rozsah možných hodnot, které může mít, a členy, které to umožňují. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  
@@ -46,7 +46,7 @@ ms.locfileid: "64664615"
   
 - Převod z rozhraní objektu zpět na původní typ, který implementuje rozhraní.  V jazyce C# vyžaduje tento převod operátor přetypování. V jazyce Visual Basic, vyžaduje `CType` operátor Pokud `Option Strict` zapnutý.  
   
- Kromě těchto automatických převody [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] poskytuje několik funkcí, které podporují převod vlastního typu. Patří mezi ně například:  
+ Kromě těchto automatických převody rozhraní .NET Framework poskytuje několik funkcí, které podporují převod vlastního typu. Patří mezi ně například:  
   
 - `Implicit` Operátor, který definuje dostupné rozšiřující převody mezi typy. Další informace najdete v tématu [implicitní převod s implicitním operátorem](#implicit_conversion_with_the_implicit_operator) oddílu.  
   
@@ -97,7 +97,7 @@ ms.locfileid: "64664615"
 |<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
 |<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
   
- Pro zpracování těchto zužujících převodů [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] umožňuje definovat typům `Explicit` operátor. Kompilátory jednotlivých jazyků pak mohou implementovat tento operátor pomocí vlastní syntaxe nebo člen <xref:System.Convert> třída může být volána k provedení převodu. (Další informace o <xref:System.Convert> najdete v tématu [Třída Convert](#Convert) dále v tomto tématu.) Následující příklad ukazuje použití funkcí jazyka ke zpracování explicitního převodu těchto potenciálně mimo rozsah celočíselných hodnot pro <xref:System.Int32> hodnoty.  
+ Rozhraní .NET Framework pro zpracování těchto zužujících převodů, umožňuje definovat typům `Explicit` operátor. Kompilátory jednotlivých jazyků pak mohou implementovat tento operátor pomocí vlastní syntaxe nebo člen <xref:System.Convert> třída může být volána k provedení převodu. (Další informace o <xref:System.Convert> najdete v tématu [Třída Convert](#Convert) dále v tomto tématu.) Následující příklad ukazuje použití funkcí jazyka ke zpracování explicitního převodu těchto potenciálně mimo rozsah celočíselných hodnot pro <xref:System.Int32> hodnoty.  
   
  [!code-csharp[Conceptual.Conversion#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#4)]
  [!code-vb[Conceptual.Conversion#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/explicit1.vb#4)]  
@@ -127,7 +127,7 @@ ms.locfileid: "64664615"
   
 <a name="the_iconvertible_interface"></a>   
 ## <a name="the-iconvertible-interface"></a>Rozhraní IConvertible  
- Pro podporu převodu jakéhokoli typu na common language runtime základní typ, [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] poskytuje <xref:System.IConvertible> rozhraní. Implementující typ je vyžadován pro následující akce:  
+ Pro podporu převodu jakéhokoli typu na common language runtime základní typ rozhraní .NET Framework poskytuje <xref:System.IConvertible> rozhraní. Implementující typ je vyžadován pro následující akce:  
   
 - Metoda, která vrátí <xref:System.TypeCode> implementujícího typu.  
   
@@ -143,9 +143,9 @@ ms.locfileid: "64664615"
  Pokud je požadavek volání metody převodu uplatněn na rozhraní a nikoli na implementující typ, jsou implementace explicitního rozhraní poměrně nákladné. Namísto toho doporučujeme volat odpovídající člen třídy <xref:System.Convert> pro převod mezi common language runtime základních typů. Další informace naleznete v části Další [Třída Convert](#Convert).  
   
 > [!NOTE]
->  Kromě <xref:System.IConvertible> rozhraní a <xref:System.Convert> třídy poskytované [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], mohou jednotlivé jazyky převody provádět také poskytnout. Například C# používá operátory přetypování. Jazyk Visual Basic používá funkce převodu implementované kompilátorem, jako `CType`, `CInt`, a `DirectCast`.  
+>  Kromě <xref:System.IConvertible> rozhraní a <xref:System.Convert> třídy zadané rozhraním .NET Framework, může také jednotlivé jazyky poskytují způsoby, jak provádět převody. Například C# používá operátory přetypování. Jazyk Visual Basic používá funkce převodu implementované kompilátorem, jako `CType`, `CInt`, a `DirectCast`.  
   
- Ve většině případů <xref:System.IConvertible> rozhraní je navržen pro podporu převodu mezi základními typy v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Rozhraní lze však implementovat také pomocí vlastního typu, a podpořit tak převod tohoto typu na vlastní typy. Další informace najdete v části [vlastní převody pomocí metody ChangeType](#ChangeType) dále v tomto tématu.  
+ Ve většině případů <xref:System.IConvertible> rozhraní je navržen pro podporu převodu mezi základními typy v rozhraní .NET Framework. Rozhraní lze však implementovat také pomocí vlastního typu, a podpořit tak převod tohoto typu na vlastní typy. Další informace najdete v části [vlastní převody pomocí metody ChangeType](#ChangeType) dále v tomto tématu.  
   
  [Zpět na začátek](#top)  
   

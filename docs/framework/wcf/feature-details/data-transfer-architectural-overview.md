@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
-ms.openlocfilehash: 401803229c54a2b38af08c0418b9efd4c64d9d60
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b6e77dea17d71b74c2c06534fd3a941e3e867a8
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627034"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592552"
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Může přijímat zprávy, zpracovat je a jejich vypravování do uživatelského kódu pro další akce, nebo můžete vytvořit zprávy z dat zadané v uživatelském kódu a doručujte je na cíli. Toto téma, které je určené pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a omezením data. Jednodušší, orientovaných zobrazení toho, jak odesílat a přijímat data, najdete v části [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
@@ -27,7 +27,7 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
   
  Můžou využít WCF pomocí <xref:System.ServiceModel.Channels.Message> třídy a kanál zásobníku přímo. To uděláte tak ale obtížné a časově náročné. Kromě toho <xref:System.ServiceModel.Channels.Message> objekt nepodporuje metadata, takže se silnými typy klientů WCF nelze generovat, pokud používáte WCF tímto způsobem.  
   
- Proto WCF obsahuje rozhraní služby, které poskytuje snadným ovládáním programovací model, který vám pomůže vytvořit a přijímat `Message` objekty. Architektura služby map služeb [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů prostřednictvím pojem kontrakty služeb a odesílá zprávy do operace uživatelů, které jsou jednoduše [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] metody označené <xref:System.ServiceModel.OperationContractAttribute> atribut (Další podrobnosti najdete v tématu [Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)). Tyto metody mohou mít parametry a vracet hodnoty. Na straně služeb, převede příchozí architektura služby <xref:System.ServiceModel.Channels.Message> instancí do parametrů a převede návratové hodnoty do odesílaných <xref:System.ServiceModel.Channels.Message> instancí. Na straně klienta se provádí opak. Představme si třeba, `FindAirfare` operace níže.  
+ Proto WCF obsahuje rozhraní služby, které poskytuje snadným ovládáním programovací model, který vám pomůže vytvořit a přijímat `Message` objekty. Architektura služby služby se mapuje na typy rozhraní .NET Framework prostřednictvím pojem kontrakty služeb a odesílá zprávy do operace uživatelů, které jsou pouze rozhraní .NET Framework metody označené <xref:System.ServiceModel.OperationContractAttribute> atribut (Další podrobnosti najdete v tématu [ Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)). Tyto metody mohou mít parametry a vracet hodnoty. Na straně služeb, převede příchozí architektura služby <xref:System.ServiceModel.Channels.Message> instancí do parametrů a převede návratové hodnoty do odesílaných <xref:System.ServiceModel.Channels.Message> instancí. Na straně klienta se provádí opak. Představme si třeba, `FindAirfare` operace níže.  
   
  [!code-csharp[c_DataArchitecture#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_dataarchitecture/cs/source.cs#1)]
  [!code-vb[c_DataArchitecture#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_dataarchitecture/vb/source.vb#1)]  
@@ -94,7 +94,7 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
  Další informace najdete v tématu [používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
   
 ## <a name="message-properties"></a>Vlastnosti zprávy  
- Zpráva může obsahovat vlastnosti. A *vlastnost* libovolnou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekt, který je přidružený k názvu řetězce. Vlastnosti jsou přístupné prostřednictvím `Properties` vlastnost `Message`.  
+ Zpráva může obsahovat vlastnosti. A *vlastnost* je libovolný objekt rozhraní .NET Framework, který je přidružený k názvu řetězce. Vlastnosti jsou přístupné prostřednictvím `Properties` vlastnost `Message`.  
   
  Na rozdíl od text zprávy a záhlaví zpráv (což obvykle mapují na SOAP body a záhlaví SOAP, v uvedeném pořadí) jsou vlastnosti zprávy nejsou obvykle odesílané nebo přijímané spolu s zprávy. Vlastnosti zprávy existovat především jako komunikační mechanizmus k předávání dat o zprávy mezi různými kanály v zásobníku kanálu a mezi zásobníku kanálu a model služby.  
   
@@ -179,7 +179,7 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
  S tímto přístupem zapisovací modul XML se zobrazí možnost výběru při volání <xref:System.Xml.IStreamProvider.GetStream> a vypsat streamovaná data. Textové a binární zapisovače XML se například volání okamžitě a vypsat streamovaná obsah mezi úvodní a koncovou značkou. Zapisovací funkce MTOM rozhodnout volání <xref:System.Xml.IStreamProvider.GetStream> později, až bude připravená k zápisu odpovídající část zprávy.  
   
 ## <a name="representing-data-in-the-service-framework"></a>Reprezentující Data v rámci služby  
- Jak je uvedeno v části "Základní architekturu" tohoto tématu, architektura služby je součástí WCF, který mimo jiné, je zodpovědný za převod mezi uživatelsky přívětivé programovací model pro data zprávy, ve skutečnosti `Message` instancí. Za normálních okolností je reprezentován výměně zpráv v rámci služby jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] metoda označena <xref:System.ServiceModel.OperationContractAttribute> atribut. Metoda využít některé parametry a může vrátit návratovou hodnotu nebo parametry (nebo obojí). Na straně služby vstupních parametrů představují příchozí zpráva a návratová hodnota a výstupní parametry představují odchozí zprávu. Na straně klienta naopak je true. Programovací model pro popis zpráv s použitím parametrů a návratové hodnoty je podrobně popsán v [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Tato část se však poskytli stručný přehled.  
+ Jak je uvedeno v části "Základní architekturu" tohoto tématu, architektura služby je součástí WCF, který mimo jiné, je zodpovědný za převod mezi uživatelsky přívětivé programovací model pro data zprávy, ve skutečnosti `Message` instancí. Za normálních okolností výměně zpráv je vyjádřen v rámci služby v rozhraní .NET Framework metoda označena <xref:System.ServiceModel.OperationContractAttribute> atribut. Metoda využít některé parametry a může vrátit návratovou hodnotu nebo parametry (nebo obojí). Na straně služby vstupních parametrů představují příchozí zpráva a návratová hodnota a výstupní parametry představují odchozí zprávu. Na straně klienta naopak je true. Programovací model pro popis zpráv s použitím parametrů a návratové hodnoty je podrobně popsán v [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Tato část se však poskytli stručný přehled.  
   
 ## <a name="programming-models"></a>Programovací modely  
  Architektura služby WCF podporuje pět různých programovacích modelů popisem zprávy:  
@@ -218,7 +218,7 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
  Akce = "*" řádku efektivně vypne odesílání zpráv a zajistí, že všechny zprávy odeslané do `IForwardingService` kontraktu dostanou k `ForwardMessage` operace. (Za normálních okolností dispečer prozkoumá "Action" záhlaví zprávy k určení operace, která je určená pro zpracování na polovinu. Akce = "\*" znamená "všechny možné hodnoty záhlaví akce".) Kombinací akcí = "\*" a pomocí zprávy jako parametr je označováno jako "univerzální kontrakt", protože je schopný přijímat všechny možné zprávy. Aby bylo možné odeslat všechny zprávy je to možné, použijte zprávy jako návratovou hodnotu a nastavte `ReplyAction` na "\*". Architektura služby zabráníte přidání své vlastní záhlaví akce, umožňuje řídit tato záhlaví pomocí `Message` objektu se vrátit.  
   
 ### <a name="3-message-contracts"></a>3. Kontrakty zpráv  
- WCF poskytuje deklarativní programovací model pro popis zprávy označované jako *kontrakty zprávy*. Tento model je podrobně popsán v [použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md). V podstatě celá zpráva představuje jeden [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ, který používá atributů, například <xref:System.ServiceModel.MessageBodyMemberAttribute> a <xref:System.ServiceModel.MessageHeaderAttribute> k popisu, které části třídy kontraktu zprávy by měl mapovat na kterou část zprávy.  
+ WCF poskytuje deklarativní programovací model pro popis zprávy označované jako *kontrakty zprávy*. Tento model je podrobně popsán v [použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md). V podstatě celá zpráva představuje jeden typ rozhraní .NET Framework, která používá atributů, například <xref:System.ServiceModel.MessageBodyMemberAttribute> a <xref:System.ServiceModel.MessageHeaderAttribute> k popisu, které části třídy kontraktu zprávy by měl mapovat na kterou část zprávy.  
   
  Kontrakty zpráv poskytují velké množství kontrolu nad výsledný `Message` instance (i když samozřejmě mnohem ovládací prvek jako pomocí `Message` přímo třídu). Například zpráv se často skládají z více kusů informace, každý reprezentována vlastní – element XML. Tyto prvky může dojít buď přímo v textu (*úplné* režimu), nebo může být *zabalené* v včetně elementu jazyka XML. Pomocí kontraktu zprávy programovací model umožňuje rozhodnutí úplné srovnání zabalená a název oboru názvů a název obálky ovládacího prvku.  
   
@@ -264,7 +264,7 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
 |<xref:System.ServiceModel.Dispatcher.IClientMessageFormatter>|<xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%28System.ServiceModel.Channels.Message%2CSystem.Object%5B%5D%29>|Převede příchozí `Message` na návratovou hodnotu/výstupní parametry|  
   
 ## <a name="serialization"></a>Serializace  
- Při každém použití kontraktů zpráv nebo parametry k popisu obsah zprávy, je nutné použít serializace pro převod mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy a reprezentaci XML informační sadu. Serializace se používá na dalších místech WCF, například <xref:System.ServiceModel.Channels.Message> má obecný <xref:System.ServiceModel.Channels.Message.GetBody%2A> metodu, která vám umožní načíst celý text zprávy deserializovat do objektu.  
+ Při každém použití kontraktů zpráv nebo parametry k popisu obsah zprávy, musíte použít serializace pro převod mezi typy rozhraní .NET Framework a reprezentaci XML informační sadu. Serializace se používá na dalších místech WCF, například <xref:System.ServiceModel.Channels.Message> má obecný <xref:System.ServiceModel.Channels.Message.GetBody%2A> metodu, která vám umožní načíst celý text zprávy deserializovat do objektu.  
   
  WCF podporuje dvě technologie serializace "mimo pole" pro serializaci a deserializaci parametry a částí zprávy: <xref:System.Runtime.Serialization.DataContractSerializer> a `XmlSerializer`. Kromě toho můžete napsat vlastní serializátory. Však dalších součástí WCF (jako je obecný `GetBody` metody nebo SOAP k chybě serializace) může být omezena na používání jenom <xref:System.Runtime.Serialization.XmlObjectSerializer> podtřídy (<xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>, ale ne <xref:System.Xml.Serialization.XmlSerializer>), nebo dokonce může být pevně určený jenom <xref:System.Runtime.Serialization.DataContractSerializer>.  
   

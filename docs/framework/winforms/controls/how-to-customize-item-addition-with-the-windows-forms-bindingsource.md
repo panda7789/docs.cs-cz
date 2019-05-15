@@ -11,12 +11,12 @@ helpviewer_keywords:
 - examples [Windows Forms], BindingSource component
 - BindingSource component [Windows Forms], examples
 ms.assetid: 1aae11fc-6fb2-4cb9-b3d0-e0638fe77ef0
-ms.openlocfilehash: 33a82fbb4cd105491714cc07d997dd1eddb8fe24
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 94c7b304dd8b909d60ef6b25f828524594caf886
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666348"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592811"
 ---
 # <a name="how-to-customize-item-addition-with-the-windows-forms-bindingsource"></a>Postupy: Přizpůsobení přidávání položek pomocí Windows Forms BindingSource
 Při použití <xref:System.Windows.Forms.BindingSource> součásti pro vytvoření vazby ovládacího prvku Windows Forms ke zdroji dat bude možná potřeba k přizpůsobení vytvoření nové položky. <xref:System.Windows.Forms.BindingSource> Komponenta odešle toto jednoduché tím, že poskytuje <xref:System.Windows.Forms.BindingSource.AddingNew> událost, která se obvykle vyvolá, když je potřeba vytvořit novou položku vázaného ovládacího prvku. Vaše obslužná rutina události můžete zadat jakýkoli vlastní chování, je třeba (např. volání metody na webovou službu nebo získání nového objektu z objektu pro vytváření tříd).  
@@ -35,8 +35,6 @@ Při použití <xref:System.Windows.Forms.BindingSource> součásti pro vytvoře
  Tento příklad vyžaduje:  
   
 - Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
-  
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 

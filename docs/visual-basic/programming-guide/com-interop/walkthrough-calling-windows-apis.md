@@ -11,21 +11,21 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-ms.openlocfilehash: 8fd63c2abedcd416937e2c281486bdc1716a275f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70914d63773c6a94ad92cf6301a8e2bc1368e7a1
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022399"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592706"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API Windows (Visual Basic)
 Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete využít k provádění úkolů, když je obtížné je napsat ekvivalentní postupy. Například Windows poskytuje funkci s názvem `FlashWindowEx` , který umožňuje provádět alternativní mezi světlé a tmavé odstínů v záhlaví okna aplikace.  
   
  Výhodou použití rozhraní API Windows ve vašem kódu je, že se dají ušetřit dobu vývoje, protože obsahují řadě užitečných funkcí, které již byly napsány a čekáním, který se má použít. Nevýhodou je, že rozhraní API Windows může být obtížné pro práci s a nepřijímá, když něco selže.  
   
- Rozhraní Windows API představují zvláštní druh vzájemná funkční spolupráce. Rozhraní API Windows nepoužívejte spravovaného kódu, nemají integrovanou knihoven typů a používat datové typy, které se liší od používaným v sadě Visual Studio. Kvůli těmto rozdílům a protože rozhraní API Windows nejsou objekty modelu COM, vzájemná funkční spolupráce s rozhraními API pro Windows a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] se provádí pomocí platformy volání, PInvoke. Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravované funkce implementované v knihovnách DLL. Další informace najdete v tématu [používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md). PInvoke v jazyce Visual Basic můžete použít buď pomocí `Declare` příkazu nebo použití `DllImport` atribut prázdné procedury.  
+ Rozhraní Windows API představují zvláštní druh vzájemná funkční spolupráce. Rozhraní API Windows nepoužívejte spravovaného kódu, nemají integrovanou knihoven typů a používat datové typy, které se liší od používaným v sadě Visual Studio. Z důvodu těchto rozdílů a protože rozhraní API Windows nejsou objekty modelu COM, vzájemná funkční spolupráce s rozhraními API pro Windows a rozhraní .NET Framework se provádí pomocí vyvolání platformy, nebo PInvoke. Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravované funkce implementované v knihovnách DLL. Další informace najdete v tématu [používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md). PInvoke v jazyce Visual Basic můžete použít buď pomocí `Declare` příkazu nebo použití `DllImport` atribut prázdné procedury.  
   
- Volání rozhraní API Windows byly důležitou součástí jazyka Visual Basic programování v minulosti, ale jsou zřídka nezbytné v jazyce Visual Basic .NET. Kdykoli je to možné, používejte spravovanému kódu [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k provádění úloh, namísto volání rozhraní API Windows. Tento názorný postup obsahuje informace pro tyto situace, ve které pomocí rozhraní Windows API je nezbytné.  
+ Volání rozhraní API Windows byly důležitou součástí jazyka Visual Basic programování v minulosti, ale jsou zřídka nezbytné v jazyce Visual Basic .NET. Kdykoli je to možné, používejte k provádění úloh, namísto volání Windows API spravovaného kódu z rozhraní .NET Framework. Tento názorný postup obsahuje informace pro tyto situace, ve které pomocí rozhraní Windows API je nezbytné.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, data
 - DataContractSerializer
 ms.assetid: 3d64837e-0a0c-4cc8-90ff-a5c6f313c63a
-ms.openlocfilehash: eba12a38ee852dcdc08f27bc9e3cb02332fd7071
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1c773fbe90e7a45ea2a2718f9bde0aa9e9b67d6
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857100"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592562"
 ---
 # <a name="data-contract-serializer"></a>Serializátor kontraktu dat
 Používá infrastrukturu Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> třídu jako výchozí serializátor. Témata v této části poskytují další podrobnosti k jeho používání jako samostatné serializátor.  
@@ -21,7 +21,7 @@ Používá infrastrukturu Windows Communication Foundation (WCF) <xref:System.Ru
  Podrobnosti o tom, jak používat <xref:System.Runtime.Serialization.DataContractSerializer> třídy k serializaci objektu grafy a zrušit serializaci XML dokumenty do objektů.  
   
  [Import a export schémat](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
- Vysvětluje, jak vygenerovat jazyk (XSD) schématu definice schématu XML z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] třídy nebo jak ke generování kódu ze dokument schématu XSD.  
+ Vysvětluje, jak vygenerovat jazyk (XSD) schématu definice schématu XML ze třídy rozhraní .NET Framework nebo jak ke generování kódu ze dokument schématu XSD.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Runtime.Serialization.DataContractSerializer>  

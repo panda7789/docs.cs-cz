@@ -3,12 +3,12 @@ title: Prozkoumejte rozsahy dat pomocí indexů a rozsahy
 description: Tato pokročilé kurzu se naučíte zkoumat data pomocí indexy a oblastí k prozkoumání řezy sekvenční datových sad.
 ms.date: 04/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 64fae4581e265d4f70b8356d5c651b4fdaca3fe9
-ms.sourcegitcommit: dd3b897feb5c4ac39732bb165848e37a344b0765
+ms.openlocfilehash: 118d3c9ccad98ec02195c2b5e26a2ca203990adf
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64431488"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557189"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
@@ -23,9 +23,13 @@ V tomto kurzu se dozvíte jak:
 
 ## <a name="language-support-for-indices-and-ranges"></a>Podpora jazyků pro rozsahy a indexy
 
-Můžete určit index **od konce** pomocí `^` znak před index. Indexování od konce spustí z pravidla, která `0..^0` Určuje celou oblast. K výpisu obsahu celého pole začnete *na první prvek*a pokračovat, dokud se *místo za posledním prvkem*. Představte si, že chování `MoveNext` metodu na enumerátor: vrátí hodnotu false v případě úspěšného posledním prvkem výčtu. Index `^0` znamená "end" `array[array.Length]`, nebo index, který následuje po posledním prvku. Jste obeznámeni s `array[2]` znamená elementu "2 od samého začátku". Nyní `array[^2]` znamená, že element "2 od konce". 
+Tato podpora jazyka spoléhá na dva nové typy a dvou nových operátorů.
+- <xref:System.Index?displayProperty=nameWithType> představuje index na sekvenci.
+- `^` Operátor, který určuje, že je index vzhledem ke konci sekvence.
+- <xref:System.Range?displayProperty=nameWithType> představuje rozsah dílčí sekvenci.
+- Operátor rozsahu (`..`), který určuje jeho operandy počáteční a koncová hodnota rozsahu.
 
-Můžete zadat **rozsah** s **operátor rozsahu**: `..`. Například `0..^0` určuje celý rozsah pole: 0 od začátku až do, s výjimkou 0 od konce. Jeden z operandů může používat "z start" nebo "end". Kromě toho může vynechat jeden z operandů. Výchozí hodnoty jsou `0` pro počáteční index a `^0` end indexu.
+Začněme s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` Index je stejný jako `sequence[0]`. `^0` Index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]` nepodporuje. Pro libovolný počet `n`, index `^n` je stejný jako `sequence[sequence.Length - n]`.
 
 ```csharp-interactive
 string[] words = new string[]
@@ -43,11 +47,11 @@ string[] words = new string[]
 };              // 9 (or words.Length) ^0
 ```
 
-Pojem "od začátku" a "z"konec posiluje indexu každého prvku, a rozsahy adres jsou uvedeny bez konec rozsahu. "Start" celého pole je první prvek. "End" celého pole *minulosti* poslední prvek.
-
 Můžete načíst poslední slovo s `^1` indexu. Přidejte následující kód pod inicializace:
 
 [!code-csharp[LastIndex](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastIndex)]
+
+Určuje oblast *start* a *koncové* rozsahu. Rozsahy jsou výhradní, to znamená *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
 
 Následující kód vytvoří podrozsahu s slova "rychlé", "brown" a "fox". Zahrnuje `words[1]` prostřednictvím `words[3]`. Element `words[4]` není v rozsahu. Přidejte následující kód k metodě stejné. Zkopírujte a vložte ji dole v interaktivním okně.
 
@@ -64,11 +68,6 @@ Následující příklady vytváří rozsahy, které jsou otevřené skončila p
 Rozsahy nebo indexy můžete také deklarovat jako proměnné. Proměnná je pak možné uvnitř `[` a `]` znaků:
 
 [!code-csharp[IndexRangeTypes](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_RangeIndexTypes)]
-
-Předchozí příklady ukazují dvě rozhodnutí o návrhu, které vyžadují další vysvětlení:
-
-- Rozsahy jsou *exkluzivní*, tj. element v poslední index není v rozsahu.
-- Index `^0` je *konci* kolekce, ne *poslední prvek* v kolekci.
 
 Následující příklad ukazuje mnoho důvodů těchto možností. Upravit `x`, `y`, a `z` vyzkoušet různé kombinace. Když můžete experimentovat, použijte hodnoty, kde `x` je menší než `y`, a `y` je menší než `z` pro platné kombinace. Přidejte následující kód do nové metody. Zkuste použijte různé kombinace:
 

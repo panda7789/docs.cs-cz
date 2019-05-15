@@ -39,12 +39,12 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5214ee83ab3009c3d2bb1360f46b39831c37c2ef
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b890ac02d54a9092bf2ad24e31367ef1d487c01f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664629"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593504"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
@@ -70,7 +70,7 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 
  Typy .NET použijte tečku syntaxe schéma pojmenování s connotes hierarchii. Tato technika skupiny souvisejících typů do oborů názvů, je možné prohledávat a snadněji odkazovat. První část úplný název – až úplně vpravo tečka – je název oboru názvů. Poslední část název je název typu. Například `System.Collections.Generic.List<T>` představuje `List<T>` typ, který patří do `System.Collections.Generic` oboru názvů. Typy v <xref:System.Collections.Generic> lze použít pro práci s obecné kolekce.  
   
- Toto schéma pojmenování usnadňuje vývojářům knihovna rozšíření [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] vytvářet hierarchické skupiny typů a pojmenujte je konzistentní a informativní způsobem. Umožňuje také typy musí jednoznačně identifikovat podle jejich úplného názvu (to znamená podle názvu oboru názvů a typ), což zabraňuje kolize názvů typu. Se očekává, že vývojáři knihovny použijte následující konvence při vytváření názvů pro své obory názvů:  
+ Toto schéma pojmenování usnadňuje vývojářům knihovna rozšíření rozhraní .NET Framework pro vytvoření hierarchického skupiny typů a pojmenujte je konzistentní a informativní způsobem. Umožňuje také typy musí jednoznačně identifikovat podle jejich úplného názvu (to znamená podle názvu oboru názvů a typ), což zabraňuje kolize názvů typu. Se očekává, že vývojáři knihovny použijte následující konvence při vytváření názvů pro své obory názvů:  
   
  *CompanyName*.*TechnologyName*  
   

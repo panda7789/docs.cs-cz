@@ -2,12 +2,12 @@
 title: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-ms.openlocfilehash: 6f41a8e38812cf9d3c652fa605febf2511f07a27
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 25f860109275bdee1b980c68e71c2c65d44756a4
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051361"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593095"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (Visual Basic)
 Soubor hodnot oddělených čárkami (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiné tabulková data, která je reprezentována řádků a sloupců. S použitím <xref:System.String.Split%2A> metoda oddělují pole, je velmi snadné dotazování a zpracování souborů CSV pomocí jazyka LINQ. Ve skutečnosti stejným způsobem umožňuje změnit uspořádání částí jakéhokoli strukturovaných řádku textu. není omezený na souborů CSV.  
@@ -73,8 +73,6 @@ End Class
 ' 121, Eugene Zabokritski  
 ' 122, Michael Tucker  
 ```  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
 ## <a name="see-also"></a>Viz také:
 
