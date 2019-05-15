@@ -2,12 +2,12 @@
 title: Serializovatelné typy
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-ms.openlocfilehash: df00623ba45b356561d4d80d970fdf36ee6a377f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0913d523e93505934b1cf231284e356baba5ded3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586131"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591671"
 ---
 # <a name="serializable-types"></a>Serializovatelné typy
 Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> serializuje všechny veřejně viditelné typy. Všechny vlastnosti veřejné čtení a zápis a pole typu se serializují.  
@@ -36,7 +36,7 @@ Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializ
 - Chcete-li "odhlásit" procesu serializace pro veřejné členy, vlastnosti nebo pole, použijte <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> atribut pro tohoto člena.  
   
 ## <a name="inheritance"></a>Dědičnost  
- Zrušit označení typy (typy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut) může dědit z typů, které mají tento atribut; však není povolená opačně: typy s atributem nemůže dědit z zrušeno označení typy. Toto pravidlo je vynuceno především k zajištění zpětné kompatibility s kódem napsaným v dřívějších verzích [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+ Zrušit označení typy (typy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut) může dědit z typů, které mají tento atribut; však není povolená opačně: typy s atributem nemůže dědit z zrušeno označení typy. Toto pravidlo je vynuceno především k zajištění zpětné kompatibility s kódem napsaným v dřívějších verzích rozhraní .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
 

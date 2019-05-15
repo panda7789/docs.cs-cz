@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-ms.openlocfilehash: fbe27403920d8c85665e585ca461602131574038
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fbe1617aa8ade89258bb7f4b46180b5e18805e3a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638638"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590550"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
 Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte založených na komponentách aplikační logiky, které jsou hostované v modelu COM +, můžou využít WCF k rozšíření existující logic namísto nutnosti jeho přepsání. Běžný scénář, kdy je, když chcete vystavit existujícího modelu COM + nebo podnikové služby obchodní logiky pomocí webové služby.  
@@ -49,7 +49,7 @@ Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytvá�
   
 - Rozhraní, která předat objekt odkazy jako parametry - následující odkaz přístup omezený objektu je popsané v části omezená podpora odkaz na objekt.  
   
-- Rozhraní, které předávají typy, které nejsou kompatibilní s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] převody vzájemná funkční spolupráce modelu COM.  
+- Rozhraní, které předávají typy, které nejsou kompatibilní s převody vzájemná funkční spolupráce modelu COM rozhraní .NET Framework.  
   
 - Rozhraní pro aplikace, které mají aplikace sdružování povolena, když jsou hostované pomocí modelu COM +.  
   

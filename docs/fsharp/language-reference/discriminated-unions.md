@@ -2,12 +2,12 @@
 title: Rozlišovaná sjednocení
 description: Další informace o použití F# rozlišovaná sjednocení.
 ms.date: 05/16/2016
-ms.openlocfilehash: 9d3f423d068df1c43791919b0d71ca82304ae85e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 27fb9205f3f216adc435483fd1dcc839a6e13e03
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766020"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557959"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -80,7 +80,7 @@ let getShapeHeight shape =
     | Prism(height = h) -> h
 ```
 
-Za normálních okolností lze identifikátory velikosti písmen použít bez jejich kvalifikace názvu unie. Pokud chcete, aby název, který má být vždy kvalifikovaným názvem sjednocení, můžete použít [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15) atributu na definici typu sjednocení.
+Za normálních okolností lze identifikátory velikosti písmen použít bez jejich kvalifikace názvu unie. Pokud chcete, aby název, který má být vždy kvalifikovaným názvem sjednocení, můžete použít [RequireQualifiedAccess](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-[fsharp]) atributu na definici typu sjednocení.
 
 ### <a name="unwrapping-discriminated-unions"></a>Rozbalení rozlišovaná sjednocení
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 77740f86265db86c998af25e6e9ed4c20a7014e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c21a1303cd67f5f5de42241f4d5ada929e68bf2c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61910296"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589899"
 ---
 # <a name="commonly-used-collection-types"></a>Běžně používané typy kolekcí
 Typy kolekcí jsou obvyklých variací kolekcí dat, jako je například zatřiďovacích tabulek, front, zásobníky, kontejnery objektů a dat, slovníky a seznamy.  
@@ -36,10 +36,10 @@ Typy kolekcí jsou obvyklých variací kolekcí dat, jako je například zatři�
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Kolekce a datové struktury](../../../docs/standard/collections/index.md)|Tento článek popisuje různé typy kolekce, která je k dispozici v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], včetně zásobníků, front, seznamů, polí a slovníky.|  
+|[Kolekce a datové struktury](../../../docs/standard/collections/index.md)|Tento článek popisuje různé typy kolekce, která je k dispozici v rozhraní .NET Framework, včetně zásobníků, front, seznamů, polí a slovníky.|  
 |[Typy kolekce Hashtable a Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce typů obecných a neobecných hash na základě slovníku.|  
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje třídy, které poskytují funkce řazení pro seznamy a množiny.|  
-|[Obecné typy](../../../docs/standard/generics/index.md)|Popisuje funkci obecných typů, včetně obecných kolekcí, delegátů a rozhraní poskytovaných rozhraním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Obsahuje odkazy na dokumentaci funkcí C#, Visual Basic a Visual C++ a na podpůrné technologie, jako je například reflexe.|  
+|[Obecné typy](../../../docs/standard/generics/index.md)|Popisuje funkci obecných typů, včetně obecných kolekcí, delegátů a rozhraní poskytovaných rozhraním .NET Framework. Obsahuje odkazy na dokumentaci funkcí C#, Visual Basic a Visual C++ a na podpůrné technologie, jako je například reflexe.|  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Collections?displayProperty=nameWithType>  

@@ -2,12 +2,12 @@
 title: Dynamické povolování analytického sledování
 ms.date: 03/30/2017
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
-ms.openlocfilehash: fc157e6612a59640aef557b57e5e2dd9e91cb529
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 677a97cedc766393a113f64554ce498547d4a231
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584336"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592095"
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>Dynamické povolování analytického sledování
 Pomocí nástrojů, které se dodávají s operačním systémem Windows, můžete povolit nebo zakázat trasování dynamicky pomocí Event Tracing for Windows (ETW). Pro všechny [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby Windows Communication Foundation (WCF), analytické trasování může být povolení i Zakázaní dynamicky bez úpravy souboru Web.config aplikace nebo restartování služby. To umožňuje, aby aplikace, který vysílá události trasování k zajištění nepřerušeného.  
@@ -31,11 +31,11 @@ Pomocí nástrojů, které se dodávají s operačním systémem Windows, může
 |`EndToEndMonitoring`|Událostech, které podporují trasování toku zpráv.|  
 |`Troubleshooting`|Podrobnější akcí po bodů rozšiřitelnosti služby WCF.|  
   
- Jakou součást definovat druhé skupině klíčových slov [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] událost, protože ho.  
+ Druhé skupině klíčových slov definují, jaká součást rozhraní .NET Framework, protože ho události.  
   
 |Klíčové slovo|Popis|  
 |-------------|-----------------|  
-|`UserEvents`|Události, protože ho vygeneroval kód uživatele, ne [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)].|  
+|`UserEvents`|Události, protože ho vygeneroval kód uživatele a nikoli rozhraní .NET Framework.|  
 |`ServiceModel`|Události generované modulem WCF runtime.|  
 |`ServiceHost`|Události, protože ho vygeneroval hostitele služby.|  
 |`WCFMessageLogging`|Události protokolování zpráv WCF.|  

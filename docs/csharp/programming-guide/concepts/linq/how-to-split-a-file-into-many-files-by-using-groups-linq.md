@@ -2,12 +2,12 @@
 title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: a78274a51bfec59147d97f88596a6ec60e40a997
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f38cfebae17ea6db9df2445f71852f7f4e6f201f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667571"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584364"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
 Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.  
@@ -126,7 +126,7 @@ class SplitWithGroups
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
- Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 

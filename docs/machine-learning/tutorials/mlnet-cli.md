@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: d7c4c774667e87fee2f71046aa0f91bfad7c6f3e
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: feddafdd6becd676f4d18aa94bdfae50f02abc6e
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066277"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557948"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Automaticky generovat binární klasifikátor pomocí rozhraní příkazového řádku
 
@@ -94,12 +94,12 @@ Budeme používat existující datovou sadu používají pro scénáře "Analýz
 
     Zobrazí se výstup z rozhraní příkazového řádku, podobně jako:
 
+    <!-- markdownlint-disable MD023 -->
     # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     ![Rozhraní příkazového řádku ML.NET tréninkem automaticky v prostředí PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
 
     # <a name="macos-bashtabmacosbash"></a>[macOS Bash](#tab/macosbash)
-
 
     ![Rozhraní příkazového řádku ML.NET tréninkem automaticky v prostředí PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-bash.gif)
 

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - ToolStripContentPanel [Windows Forms], adding controls
 ms.assetid: fa410960-bf1a-42fc-80e8-f2e27fb3dbb8
-ms.openlocfilehash: 4fbc97502431b681a77d58a112344287f582ff0f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 99b6b8615a16715caaf95109cfbba3ba389946fa
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624130"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591353"
 ---
 # <a name="how-to-add-a-control-to-a-toolstripcontentpanel"></a>Postupy: Přidání ovládacího prvku do ToolStripContentPanel
 Můžete programově přidat jeden nebo více ovládacích prvků <xref:System.Windows.Forms.ToolStripContentPanel>.  
@@ -27,8 +27,6 @@ Můžete programově přidat jeden nebo více ovládacích prvků <xref:System.W
  Tento příklad kódu vyžaduje:  
   
 - Odkazy na sestavení systému, System.Data a System.Windows.Forms.  
-  
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,15 +2,15 @@
 title: Hostování ve spravované aplikaci
 ms.date: 03/30/2017
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
-ms.openlocfilehash: 415a6fef511d7d7397a38882801e5848e2998a11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1f4d91994ba44407ff5c93dbd34aa0bdef9332b
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855826"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591732"
 ---
 # <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
-Služby Windows Communication Foundation (WCF) je možné hostovat v libovolném [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace. Služba s vlastním hostováním je flexibilní možnost hostování, protože vyžaduje minimálně infrastrukturu pro nasazení. Je však také nejméně robustní možnost hostování, protože spravovaných aplikací se neposkytuje pokročilé hostování a funkcím pro správu Další možnosti hostování ve službě WCF, jako jsou služby Internet Information Services (IIS) a Windows.  
+Služby Windows Communication Foundation (WCF) je možné hostovat v libovolné aplikace rozhraní .NET Framework. Služba s vlastním hostováním je flexibilní možnost hostování, protože vyžaduje minimálně infrastrukturu pro nasazení. Je však také nejméně robustní možnost hostování, protože spravovaných aplikací se neposkytuje pokročilé hostování a funkcím pro správu Další možnosti hostování ve službě WCF, jako jsou služby Internet Information Services (IIS) a Windows.  
   
  Služba v místním prostředí, vytvořte a spusťte instanci <xref:System.ServiceModel.ServiceHost>, který spouští službu pro naslouchání pro zprávy. Další informace najdete v tématu [jak: Hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).  
   

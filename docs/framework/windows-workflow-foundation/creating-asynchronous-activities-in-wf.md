@@ -2,12 +2,12 @@
 title: Vytváření asynchronních aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: 497e81ed-5eef-460c-ba55-fae73c05824f
-ms.openlocfilehash: 5d8659ee57f9bb576cd7066652a294717811432f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b990631d6efdb4644274c8a4606af07495b1979c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945883"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592972"
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a>Vytváření asynchronních aktivit v WF
 <xref:System.Activities.AsyncCodeActivity> poskytuje základní třídu použít, že umožňuje odvozené aktivity implementovat logiku spouštění asynchronní autoři aktivity. To je užitečné pro vlastní aktivity, které musíte provést asynchronní práce bez podržení Plánovač vlákna pracovního postupu a blokuje veškeré aktivity, které může být možné spouštět paralelně. Toto téma obsahuje přehled o tom, jak vytvořit vlastní asynchronních aktivit pomocí <xref:System.Activities.AsyncCodeActivity>.  
@@ -31,7 +31,7 @@ ms.locfileid: "61945883"
  [!code-csharp[CFX_ActivityExample#10](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#10)]  
   
 ### <a name="invoking-asynchronous-methods-on-a-class"></a>Volání asynchronní metody ve třídě  
- Mnoho ze tříd v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] poskytuje asynchronní funkce a tato funkce může být vyvolána asynchronně pomocí <xref:System.Activities.AsyncCodeActivity> podle aktivity. V následujícím příkladu se vytvoří aktivita, která asynchronně vytvoří soubor s použitím <xref:System.IO.FileStream> třídy.  
+ Mnohé z třídy v rozhraní .NET Framework poskytuje asynchronní funkce a tato funkce může být vyvolána asynchronně pomocí <xref:System.Activities.AsyncCodeActivity> podle aktivity. V následujícím příkladu se vytvoří aktivita, která asynchronně vytvoří soubor s použitím <xref:System.IO.FileStream> třídy.  
   
  [!code-csharp[CFX_ActivityExample#12](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#12)]  
   

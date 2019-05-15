@@ -5,18 +5,18 @@ ms.technology: dotnet-standard
 ms.assetid: a0b536b6-cdb3-4a44-86c2-3b2ebc7bd4c9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a917c0f64a8e61df1521d361ed0c8821fee295b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 811c513e6c8c613801c0ca60c11a9e5577672183
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698681"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65592762"
 ---
 # <a name="xmldatadocument-input-to-xsltransform"></a>Vstup XmlDataDocument do XslTransform
 > [!NOTE]
 >  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
   
- Microsoft [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] implementuje XML Document Object Model (DOM) a zajistit tak přístup k datům v dokumentech XML a další třídy pro čtení, zápisu a přejděte v dokumentech XML. <xref:System.Xml.XmlDataDocument>Byl nalezen v <xref:System.Xml> obor názvů, poskytuje schopnost synchronizovat s relačními daty v relační přístup k datům <xref:System.Data.DataSet>. Najednou můžete zobrazit a pracovat s strukturovaná data XML do relační reprezentace <xref:System.Data.DataSet> částečně strukturovaných XML pomocí modelu DOM reprezentace pro práci s nimi <xref:System.Xml.XmlDataDocument>. <xref:System.Xml.XmlDataDocument> Proto překročí hranice XML a relační světů.  
+ Rozhraní Microsoft .NET Framework implementuje XML Document Object Model (DOM) a zajistit tak přístup k datům v dokumentech XML a další třídy pro čtení, zápisu a přejděte v dokumentech XML. <xref:System.Xml.XmlDataDocument>Byl nalezen v <xref:System.Xml> obor názvů, poskytuje schopnost synchronizovat s relačními daty v relační přístup k datům <xref:System.Data.DataSet>. Najednou můžete zobrazit a pracovat s strukturovaná data XML do relační reprezentace <xref:System.Data.DataSet> částečně strukturovaných XML pomocí modelu DOM reprezentace pro práci s nimi <xref:System.Xml.XmlDataDocument>. <xref:System.Xml.XmlDataDocument> Proto překročí hranice XML a relační světů.  
   
  Pokud chcete, aby vstup k transformaci XSLT, data se ukládají do relační struktury můžete načíst relačních dat do <xref:System.Data.DataSet> a přidružte jej k <xref:System.Xml.XmlDataDocument>. <xref:System.Xml.XPath.XPathNavigator>, Vstup <xref:System.Xml.Xsl.XslTransform>, se implementuje na <xref:System.Xml.XmlDataDocument> prostřednictvím <xref:System.Xml.XPath.IXPathNavigable> rozhraní. Provedením relačních dat načítání do aplikace <xref:System.Data.DataSet>a pomocí synchronizace v rámci <xref:System.Xml.XmlDataDocument>, relačních dat teď můžou mít transformace XSLT provádí.  
   

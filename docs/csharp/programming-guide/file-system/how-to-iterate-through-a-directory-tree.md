@@ -6,18 +6,18 @@ helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 29f52728f0bfa9e78253fc2b39583e89f53198d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 070b409a7d1cc755451414d24ca2fa6002638dc0
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710800"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585761"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace v adresářovém stromu (C# Průvodce programováním v)
 Fráze "iterace v adresářovém stromu" znamená, že pro přístup k každý soubor v každé vnořené podadresáři uvedený kořenový adresář na libovolnou hloubku. Nemáte nutně otevřete každý soubor. Můžete načíst jenom název souboru nebo podadresáře jako `string`, nebo můžete získat další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> objektu.  
   
 > [!NOTE]
->  Ve Windows jsou podmínky "directory" a "složku" používat Zaměnitelně. Většina dokumentace a uživatelské rozhraní text používá termín "složku", ale [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd používá termín "adresáře."  
+>  Ve Windows jsou podmínky "directory" a "složku" používat Zaměnitelně. Většina dokumentace a uživatelské rozhraní text používá termín "složku", ale v knihovně tříd rozhraní .NET Framework používá termín "adresáře."  
   
  V nejjednodušší případ, ve které nejste jisti, že máte oprávnění k přístupu pro všechny adresáře zadaného kořenu, můžete použít `System.IO.SearchOption.AllDirectories` příznak. Tento příznak vrátí vnořené podadresářů, které odpovídají zadanému vzoru. Následující příklad ukazuje, jak pomocí tohoto příznaku.  
   

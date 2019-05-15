@@ -9,22 +9,22 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: 65dfe906276912b5f6dc8d49af6a2662e3a09157
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d8f37431279cc22b8e9c131f860b5de82f35af2e
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630772"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591202"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
 
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje třídy, které vám umožní používat ukládání do mezipaměti v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikací. Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.
+ Rozhraní .NET Framework poskytuje třídy, které vám umožní používat ukládání do mezipaměti v aplikacích .NET Framework. Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.
 
 > [!NOTE]
->  <xref:System.Runtime.Caching> Obor názvů je novinkou [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. Tento obor názvů umožňuje ukládání do mezipaměti je k dispozici všem [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikací. V předchozích verzích [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET.
+>  <xref:System.Runtime.Caching> Obor názvů je novinkou [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. Tento obor názvů umožňuje ukládání do mezipaměti je k dispozici pro všechny aplikace rozhraní .NET Framework. V předchozích verzích rozhraní .NET Framework, ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET.
 
- Tento návod ukazuje, jak používat ukládání do mezipaměti funkce, které jsou k dispozici v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] jako součást [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. V tomto návodu můžete ukládat do mezipaměti obsah textového souboru.
+ Tento návod ukazuje, jak používat ukládání do mezipaměti, která je k dispozici v rozhraní .NET Framework jako součást funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. V tomto návodu můžete ukládat do mezipaměti obsah textového souboru.
 
  Tento návod obsahuje následující úlohy:
 
@@ -67,7 +67,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 4. V **nový projekt** dialogu **aplikace WPF**.
 
     > [!NOTE]
-    >  Pokud se nezobrazí **aplikace WPF** šablonu, ujistěte se, zda cílíte na verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] WPF, která podporuje. V **nový projekt** dialogu [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] ze seznamu.
+    >  Pokud se nezobrazí **aplikace WPF** šablonu, ujistěte se, zda cílíte na verzi rozhraní .NET Framework, která podporuje WPF. V **nový projekt** dialogu [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] ze seznamu.
 
 5. V **název** textové pole, zadejte název pro váš projekt. Například můžete zadat **WPFCaching**.
 

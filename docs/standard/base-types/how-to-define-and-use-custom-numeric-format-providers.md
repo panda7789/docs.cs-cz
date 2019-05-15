@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37c9140db390c55c9cab4e8a3203287d2dd12725
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b3898caa90c695ae681c2d9b20abbba57a2a9f61
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634242"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65590467"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Postupy: Definování a používání vlastních poskytovatelů číselného formátu
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje rozsáhlou kontrolu nad řetězcové reprezentace číselných hodnot. Přizpůsobení formátu číselných hodnot podporuje následující funkce:  
+Rozhraní .NET Framework poskytuje rozsáhlou kontrolu nad řetězcové reprezentace číselných hodnot. Přizpůsobení formátu číselných hodnot podporuje následující funkce:  
   
 - Řetězce standardního číselného formátu, což poskytuje sadu předdefinovaných formátů pro převod čísla na jeho řetězcovou reprezentaci. Můžete využít s jakoukoli metodou číselného formátování, jako například <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, který má `format` parametru. Podrobnosti najdete v tématu [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
   
@@ -33,7 +33,7 @@ ms.locfileid: "64634242"
   
 - Vlastní <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.NumberFormatInfo> objekty, které definují symboly a formátování vzorů používaných pro zobrazení řetězcové reprezentace číselných hodnot. Můžete využít s jakoukoli metodou číselného formátování, jako například <xref:System.Int32.ToString%2A>, který má `provider` parametru. Obvykle `provider` parametr se používá k určení formátování specifické pro jazykovou verzi.  
   
- V některých případech (například když musí aplikace zobrazit formátované číslo účtu, identifikační číslo nebo poštovní směrovací číslo) jsou tyto tři techniky nevhodný. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také umožňuje definovat formátovací objekt, který není ani <xref:System.Globalization.CultureInfo> ani <xref:System.Globalization.NumberFormatInfo> zjistíte, jak číselnou hodnotu ve formátu. Toto téma obsahuje podrobné pokyny pro implementaci takového objektu a poskytuje příklad, který formátuje telefonních čísel.  
+ V některých případech (například když musí aplikace zobrazit formátované číslo účtu, identifikační číslo nebo poštovní směrovací číslo) jsou tyto tři techniky nevhodný. Rozhraní .NET Framework umožňuje také definovat formátovací objekt, který není ani <xref:System.Globalization.CultureInfo> ani <xref:System.Globalization.NumberFormatInfo> zjistíte, jak číselnou hodnotu ve formátu. Toto téma obsahuje podrobné pokyny pro implementaci takového objektu a poskytuje příklad, který formátuje telefonních čísel.  
   
 ### <a name="to-define-a-custom-format-provider"></a>K definování vlastního poskytovatele formátu  
   
@@ -87,9 +87,6 @@ ms.locfileid: "64634242"
  [!code-vb[System.ICustomFormatter.Format#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ICustomFormatter.Format/vb/Format.vb#1)]  
   
  V tomto příkladu metoda, která implementuje <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> má sloužit jako metody zpětného volání pro <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody. Proto zkontroluje `formatProvider` parametr k určení, zda obsahuje odkaz na aktuální `TelephoneFormatter` objektu. Přímo z kódu však lze také volat metodu. V takovém případě můžete použít `formatProvider` parametr k poskytování <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.NumberFormatInfo> objekt, který poskytuje informace o formátování specifické pro jazykovou verzi.  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Je možné zkompilovat kód v příkazovém řádku pomocí souboru csc.exe nebo vb.exe. Chcete-li zkompilovat kód v sadě Visual Studio, vložte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

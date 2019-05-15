@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, consuming
 ms.assetid: 9d0af606-929b-4c03-b307-3ef5f705afce
-ms.openlocfilehash: 06bf058fe51c59b6619a296ab3d6093224ab8937
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf812f45e4a4090becd8dfafe035d39d1d851860
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660534"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583633"
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>Nástroj klienta WCF Data Services (DataSvcUtil.exe)
 
@@ -25,7 +25,7 @@ DataSvcUtil.exe je nástroj příkazového řádku poskytovaných službou WCF D
 
 Další informace najdete v tématu [jak: Ruční generování tříd klientské datové služby](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md).
 
-Nástroj DataSvcUtil.exe je nainstalován v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] adresáře. V mnoha případech je umístěn v *C:\Windows\Microsoft.NET\Framework\v4.0*. Pro 64bitové systémy, je umístěný v *C:\Windows\Microsoft.NET\Framework64\v4.0*. Můžete také DataSvcUtil.exe nástroj dostanete z příkazového řádku pro vývojáře pro sadu Visual Studio.
+Nástroj DataSvcUtil.exe je nainstalován v adresáři rozhraní .NET Framework. V mnoha případech je umístěn v *C:\Windows\Microsoft.NET\Framework\v4.0*. Pro 64bitové systémy, je umístěný v *C:\Windows\Microsoft.NET\Framework64\v4.0*. Můžete také DataSvcUtil.exe nástroj dostanete z příkazového řádku pro vývojáře pro sadu Visual Studio.
 
 ## <a name="syntax"></a>Syntaxe
 

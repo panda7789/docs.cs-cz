@@ -1,18 +1,18 @@
 ---
-title: Natrénování a vyhodnocení modelu
+title: Trénování a vyhodnocení modelu
 description: Zjistěte, jak natrénování a vyhodnocení modelů strojového učení v ML.NET
 ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 2abb17aad6091cd6a5f0b6f82835011d01b40153
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 3a3f1f672ed078754162dc377cf5c239d206b715
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063627"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557839"
 ---
-# <a name="train-and-evaluate-a-model"></a>Natrénování a vyhodnocení modelu
+# <a name="train-and-evaluate-a-model"></a>Trénování a vyhodnocení modelu
 
 Zjistěte, jak vytvářet modely strojového učení, extrahovat zjištěná parametry a měření výkonu s ML.NET. I když tato ukázka trénovat regresní model, koncepty platí v celé většinou ostatní algoritmy.
 
@@ -145,7 +145,7 @@ var trainedModel = sdcaEstimator.Fit(transformedTrainingData);
 
 ## <a name="extract-model-parameters"></a>Extrahovat parametry modelu
 
-Jakmile model se trénuje, extrahovat zjištěná [ `ModelParameters` ](xref:Microsoft.ML.Trainers.ModelParametersBase`1) pro kontrolu nebo znovu školení. [ `LinearRegressionModelParameters` ](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) Posunu omezení a zjištěná nebo váhy trénovaného modelu. 
+Jakmile model se trénuje, extrahovat zjištěná [ `ModelParameters` ](xref:Microsoft.ML.Trainers.ModelParametersBase%601) pro kontrolu nebo znovu školení. [ `LinearRegressionModelParameters` ](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) Posunu omezení a zjištěná nebo váhy trénovaného modelu. 
 
 ```csharp
 var trainedModelParameters = trainedModel.Model as LinearRegressionModelParameters;

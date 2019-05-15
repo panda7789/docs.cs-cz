@@ -4,12 +4,12 @@ description: Zjistěte, jak vybrat algoritmus ML.NET pro váš model strojového
 author: natke
 ms.topic: overview
 ms.date: 04/20/1029
-ms.openlocfilehash: 3fd515a1d150ea51214b55f882726c4ba76bd6d1
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: d1c637437a7b285f2b66b597d616fcf39248697f
+ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066184"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557786"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Jak vybrat algoritmus ML.NET
 
@@ -81,8 +81,8 @@ Tyto školitelé vytvořit roc trainer binární trainer. Použití s <xref:Micr
 
 |algoritmus|Vlastnosti|Školitelé|
 |---------|----------|--------|
-|Jeden oproti vše|Tato víc tříd klasifikátor trénovat jeden binární třídění pro každou třídu, která odlišuje tuto třídu z jiné třídy. Má zobrazení omezenou škálování podle počtu tříd do kategorií|[OneVersusAllTrainer<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
-|Ukládání párování|Tato víc tříd klasifikátor trénovat binární klasifikační algoritmus na každý pár třídy. Je omezená škále počet tříd, protože každá kombinace dvou tříd musí být školení.|[PairwiseCouplingTrainer<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|
+|Jeden oproti vše|Tato víc tříd klasifikátor trénovat jeden binární třídění pro každou třídu, která odlišuje tuto třídu z jiné třídy. Má zobrazení omezenou škálování podle počtu tříd do kategorií|[OneVersusAllTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
+|Ukládání párování|Tato víc tříd klasifikátor trénovat binární klasifikační algoritmus na každý pár třídy. Je omezená škále počet tříd, protože každá kombinace dvou tříd musí být školení.|[PairwiseCouplingTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|
 
 ## <a name="k-means"></a>K-Means
 
@@ -107,4 +107,3 @@ Tyto školitelé vytvořit roc trainer binární trainer. Použití s <xref:Micr
 |Vlastnosti|Školitelé|
 |----------|--------|
 |Použijte tento binární klasifikační trainer do standardních hodnot výkonu jiných školitelé. Aby byla účinná, by měl být lepší než předchozí trainer metriky školitelé. |<xref:Microsoft.ML.Trainers.PriorTrainer>|
-
