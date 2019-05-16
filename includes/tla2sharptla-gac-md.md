@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 713de266920a9fcd76b0e28d6d8a364c1b1ee46b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: e526337ab3a929151a64f1767ed9ffbd1fc584c5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696820"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669175"
 ---
  GAC 

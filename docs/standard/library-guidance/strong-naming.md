@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro silné pojmenovávání kniho
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/16/2018
-ms.openlocfilehash: 99905a795c4cdb3c79884716b39ed4e38cfe39d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 79e44e89a94c1948ff29b9a8161f852c3a7c8cbb
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909789"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640798"
 ---
 # <a name="strong-naming"></a>Vytváření silných názvů
 

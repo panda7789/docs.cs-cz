@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7534d760f902f80d42c6c20c57a34d52012997a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b8a1942f903b1c7c15e58077e35b6a72a86a9419
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608993"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636532"
 ---
 # <a name="get-function"></a>Funkce Get
 
@@ -66,7 +66,7 @@ HRESULT Get (
 `plFlavor`\
 [out] Pokud funkce vrátí úspěšně, obdrží informace o původu vlastnosti. Jeho hodnota může být `null`, nebo jednu z následujících konstant WBEM_FLAVOR_TYPE definované v *WbemCli.h* hlavičkový soubor: 
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | Vlastnost je standardní systém vlastnost. |
 | `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pro třídu: Vlastnost se dědí z nadřazené třídy. <br> Pro instanci: Vlastnost, zatímco zděděná z nadřazené třídy nebyl změněn instancí.  |

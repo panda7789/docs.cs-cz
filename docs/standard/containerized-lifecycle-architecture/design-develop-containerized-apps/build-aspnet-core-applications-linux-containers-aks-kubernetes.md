@@ -1,15 +1,13 @@
 ---
 title: Sestavení aplikace ASP.NET Core 2.2 nasazené jako kontejnery Linux do clusterů AKS/Kubernetes
 description: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/25/2019
-ms.openlocfilehash: 28d2f557e4434ef7e5c2c3f8d17d6d3d6a80ce2a
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 89843e0041c12f001f974360da2e5903499155d1
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452783"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644787"
 ---
 # <a name="build-aspnet-core-22-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Vytváření aplikací ASP.NET Core 2.2 nasazené jako kontejnery Linux do AKS/Kubernetes produktu orchestrator
 

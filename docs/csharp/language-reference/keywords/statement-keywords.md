@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-ms.openlocfilehash: 01aed1f603028bc7d269667e6d3f357465888abb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb0d347944cc3a6c527852e00371bce4d461179e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660629"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633060"
 ---
 # <a name="statement-keywords-c-reference"></a>Klíčová slova příkazů (C# odkaz)
 

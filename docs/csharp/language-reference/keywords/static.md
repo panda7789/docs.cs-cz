@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: 90b043fa13f1737db81518151daaeceabf930c5c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b288e57d9241e294a0fa18edafe72eec675327a7
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660681"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633191"
 ---
 # <a name="static-c-reference"></a>static – modifikátor (Referenční dokumentace jazyka C#)
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - pointers [C#], & operator
 - pointer expressions [C#], address-of operator
 ms.assetid: 44fe2cd9-a64f-4ef5-be2a-09ce807c0182
-ms.openlocfilehash: b12d3bf99f32a3526bd4a1ec8c49b1fd88afd68a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc5776bc57096b88a71ff786915553ae9aa04b7b
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708793"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65635064"
 ---
 # <a name="how-to-obtain-the-address-of-a-variable-c-programming-guide"></a>Postupy: získávání adresy proměnné (C# Programming Guide)
 
@@ -40,7 +40,6 @@ int* p = &number; //address-of operator &
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)
 - [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Typy](../../../csharp/language-reference/keywords/types.md)
 - [unsafe](../../../csharp/language-reference/keywords/unsafe.md)

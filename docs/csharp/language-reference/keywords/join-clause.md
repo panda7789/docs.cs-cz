@@ -9,12 +9,12 @@ helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-ms.openlocfilehash: c9052b4b0f1feac5aa56a7fe6745745f1afb5740
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21d4d1f9878fb7df4692fdeacd23b042680c14f1
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661319"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633633"
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 

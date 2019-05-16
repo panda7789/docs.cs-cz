@@ -8,12 +8,12 @@ helpviewer_keywords:
 - multiplication operator (*) [C#]
 - '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
-ms.openlocfilehash: a5e120d26614f1e38cc2f2db02949552140b594e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76ba0d9ac9ea6a2859dda31988588c3b3dd21807
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61689083"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632921"
 ---
 # <a name="-operator-c-reference"></a>* – operátor (C# odkaz)
 

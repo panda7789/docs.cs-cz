@@ -3,18 +3,18 @@ title: příkaz DotNet nuget nabízených oznámení
 description: Příkaz dotnet nuget nabízených odešle balíček na server a publikuje ji.
 author: karann-msft
 ms.date: 12/04/2018
-ms.openlocfilehash: 9f38fb29ef5b802a5b7091dd1e9659c653cf04d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7382cb93da3d7ed68f5731b3996c735c3f1461e4
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648643"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631719"
 ---
 # <a name="dotnet-nuget-push"></a>DotNet nuget push
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet nuget push` -Odešle balíček na server a publikuje ji.
 

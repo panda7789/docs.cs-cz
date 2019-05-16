@@ -3,12 +3,12 @@ title: C#Pole – připravuje C# jazyka
 description: Pole jsou v základním typem kolekce C# jazyka
 ms.date: 08/10/2016
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
-ms.openlocfilehash: 8685e6ad08eb74534cdad499099b3d12da0a497a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 56a053ac8525d4c6c34592d6092f3f162cb04247
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706413"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634608"
 ---
 # <a name="arrays"></a>Pole
 

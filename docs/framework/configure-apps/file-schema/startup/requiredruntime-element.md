@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <requiredRuntime> element
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
-ms.openlocfilehash: 5e528a8b81fa3d9abc4f345d18f01e33f483a4a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f5a9f99133c153401694372abaeea10a02e492e5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673833"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634183"
 ---
 # <a name="requiredruntime-element"></a>\<requiredRuntime > – element
 
@@ -43,7 +43,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="safemode-attribute"></a>safemode – atribut
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
 |`false`|Spouštěcí kód modulu runtime hledá v registru. Jedná se o výchozí hodnotu.|
 |`true`|Spouštěcí kód modulu runtime nezjišťuje v registru.|

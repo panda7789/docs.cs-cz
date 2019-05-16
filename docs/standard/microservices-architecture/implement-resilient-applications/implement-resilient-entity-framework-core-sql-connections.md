@@ -1,15 +1,13 @@
 ---
 title: Implementace odolných připojení Entity Framework Core SQL
 description: Zjistěte, jak implementovat odolnost připojení Entity Framework Core SQL. Tato technika je zvlášť důležité při používání Azure SQL Database v cloudu.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/16/2018
-ms.openlocfilehash: b056df033a584bc51fed5ccd52a58a6331298aa6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3bf5c1827cee1da69aeccdc9f15573c301fc9363
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61818661"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639899"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implementace odolných připojení Entity Framework Core SQL
 

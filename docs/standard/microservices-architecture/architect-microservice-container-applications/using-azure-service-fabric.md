@@ -1,15 +1,13 @@
 ---
 title: Použití platformy Azure Service Fabric
 description: Zjistěte, jaké modely aplikace Azure Service Fabric můžete kromě identifikace podle představuje pro orchestraci kontejnerů.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: b29be05f5ab353ddfae0d23211efaf57979d0604
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c629b473a429b64243b5756c96fef6585c939b7
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025753"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644531"
 ---
 # <a name="using-azure-service-fabric"></a>Použití platformy Azure Service Fabric
 

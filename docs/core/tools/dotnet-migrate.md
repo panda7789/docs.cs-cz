@@ -2,18 +2,18 @@
 title: DotNet migrate příkaz
 description: Dotnet migrate příkaz migruje projektu a všechny jeho závislosti.
 ms.date: 05/25/2018
-ms.openlocfilehash: 73e0169e64be4b55e10127ecca0101885061767e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 861cd2cb982c6f41baf00a2cbd7e04b26816af76
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665023"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631954"
 ---
 # <a name="dotnet-migrate"></a>DotNet migrate
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet migrate` -Migruje projektu .NET Core 2 ve verzi Preview do projektu .NET Core SDK 1.0.
 

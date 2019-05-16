@@ -1,15 +1,13 @@
 ---
 title: Asynchronní komunikace založená na zprávách
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Asynchronní komunikace založená na zprávách je základní koncept v architektuře mikroslužeb, protože je nejlepší způsob, jak zobrazovat nezávislé mikroslužeb od sebe při také zabránit v synchronizaci nakonec.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 105daed3bca03571caea92fdbd1d6c6f56b24fef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 65bd0cd2b316fe7011ad8e878852547ee5949f09
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909641"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641377"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 

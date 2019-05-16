@@ -5,12 +5,12 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e5b41b6e5d747cd99a80930bb64e36839af4ab66
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74d10b0fb27a4acf477fc66451a5cf6fc1f4317c
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650905"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631696"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Pomocí generátor serializátor XML společnosti Microsoft v rozhraní .NET Core
 

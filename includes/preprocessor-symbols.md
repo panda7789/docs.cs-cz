@@ -1,11 +1,11 @@
 ---
 ms.custom: updateeachrelease
-ms.openlocfilehash: d41785ce16a54ef6b05528bb8bd19176d80591a1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 93daa1f74fdb77f1d19b8b8299e60c926e2c9066
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945471"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641464"
 ---
 | Cílové architektury | Symboly |
 | ------------------| ------- |

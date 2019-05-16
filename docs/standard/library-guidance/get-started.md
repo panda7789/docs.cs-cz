@@ -4,12 +4,12 @@ description: Začínáme vytvářet knihovny .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: e26c6632252257ab8cb5598f1b201559b760dc6b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 980f0edcee07688935f6d08f3ce1ed812159695e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909828"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640725"
 ---
 # <a name="get-started"></a>Začínáme
 

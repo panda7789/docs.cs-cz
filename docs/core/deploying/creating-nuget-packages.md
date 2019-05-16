@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: 1add3470799b75ebb92c67eed3509523e510ab6c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b86b2706968bf302a8421bcc8e12c32a97102e9e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650892"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632112"
 ---
 # <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Jak vytvořit balíček NuGet s nástroji .NET Core rozhraní příkazového řádku (CLI)
 

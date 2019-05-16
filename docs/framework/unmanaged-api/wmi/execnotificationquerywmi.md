@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9cac00ff96d0c7007bdd6135282c3f767217385e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aa2233bab82f3cd4d1bbcb59f5714c6e4dc91aa5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61935613"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636565"
 ---
 # <a name="execnotificationquerywmi-function"></a>Funkce ExecNotificationQueryWmi
 
@@ -58,7 +58,7 @@ HRESULT ExecNotificationQueryWmi (
 `lFlags`\
 [in] Kombinace následující dva příznaky, které ovlivňují chování této funkce. Tyto hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu.
 
-| Konstanta | Hodnota  | Popis  |
+| Konstanta | Value  | Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že volání semisynchronní volání. Pokud není tento příznak nastaven, volání selže. Je to proto průběžně přijetí události to znamená, že uživatel se musí dotazovat vrácené enumerátor. Po neomezenou dobu blokování toto volání, který je nemožné. |
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Vrátí enumerátor pouze vpřed. Obvykle dopředné enumerátory jsou rychlejší a využívat méně paměti, než je běžné výčty, ale nejsou povoleny volání [klonování](clone.md). |

@@ -3,12 +3,12 @@ title: Language Integrated Query (LINQ) v jazyce C#
 description: Zavádí Language Integrated Query (LINQ) v jazyce C#.
 ms.date: 11/30/2016
 ms.assetid: 007cc736-f5cf-4919-b99b-0c00ab2814ce
-ms.openlocfilehash: 18dafaf590697a3c9d669f346c956fd4df3378f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a5c33f41a668835e7b83f1f717fa5605e53e010
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688823"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633899"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 

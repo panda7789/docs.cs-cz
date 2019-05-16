@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 5ff883e541c614832286b4027bc1574952f8fd3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 390b2226cc2f345d2f42659bd092e36a4bd0c4fc
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660252"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632932"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
 

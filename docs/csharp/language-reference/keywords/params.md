@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parameters [C#], params
 - params keyword [C#]
 ms.assetid: 1690815e-b52b-4967-8380-5780aff08012
-ms.openlocfilehash: dd9699eb50f7dffc7c2f4976a79afbf689ba2470
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 772c8da879eeccbe484c631a47de7fe8a32ec8d2
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660980"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633572"
 ---
 # <a name="params-c-reference"></a>params (Referenční dokumentace jazyka C#)
 

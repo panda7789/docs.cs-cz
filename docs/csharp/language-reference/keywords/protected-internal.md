@@ -3,12 +3,12 @@ title: interní - chráněné C# odkaz
 ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: 090baae7fe0e49289059e060d5dcba7b037ae47a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a06165714095a65c23826543c309a82c43c2f9a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660915"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633315"
 ---
 # <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# Reference)
 

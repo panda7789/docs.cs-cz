@@ -1,15 +1,13 @@
 ---
 title: Operační systém, na který mají cílit kontejnery .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Jaký operační systém mají cílit kontejnery .NET
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 14a0fb7cd9ecb8dfd5369da6f6bd5b47b4aea37a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f160aeba5257722490788271e6f89359342cc0d
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019621"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639082"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Operační systém, na který mají cílit kontejnery .NET
 

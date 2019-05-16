@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 7c4e2aac613397fbd44f4594f96ddebfb75d0c3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18afb2765db41abd305fb83907c08fad75a1d72b
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61678832"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65635236"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu dynamic (C# Programming Guide)
 

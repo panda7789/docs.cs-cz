@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - global keyword [C#]
 ms.assetid: 8932c16a-6959-42c2-86e7-2c4221ab788b
-ms.openlocfilehash: b9273feb38b14dce61facc0f59b0890c431b9a7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c0177c52e21ae60477a283085a2893e2e067c54
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661506"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633468"
 ---
 # <a name="global-c-reference"></a>global (Referenční dokumentace jazyka C#)
 

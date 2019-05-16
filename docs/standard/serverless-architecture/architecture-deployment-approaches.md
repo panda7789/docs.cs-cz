@@ -4,12 +4,12 @@ description: Tento průvodce různé způsoby podnikové architektury jsou nasaz
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 5477b8c4531780fdebf194e4f798564e59cd2953
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75fd35a906048a96dbd9f6205ead832dfd667455
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640253"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65643386"
 ---
 # <a name="architecture-deployment-approaches"></a>Přístupy k nasazení architektury
 

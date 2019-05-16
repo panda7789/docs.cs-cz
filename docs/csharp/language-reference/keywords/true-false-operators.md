@@ -6,12 +6,12 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 869eeab6515340b2f1884ab7206979e83654a10b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ff8b14413d60761cb28fe8e739a8ee75816a71b0
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660590"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633751"
 ---
 # <a name="true-and-false-operators-c-reference"></a>operátory true a false (C# odkaz)
 

@@ -4,12 +4,12 @@ description: Další informace o některé nástroje, které můžete použít k
 author: cartermp
 ms.author: mairaw
 ms.date: 12/07/2018
-ms.openlocfilehash: 88e3edb0442b3326a77323fe4b6396f3eb1ca767
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0b74b5708f31922b72fa0e236c8bbe69ae06217
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663112"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632254"
 ---
 # <a name="tools-to-help-with-porting-to-net-core"></a>Nástroje, které pomáhají s přenos aplikací .NET Core
 

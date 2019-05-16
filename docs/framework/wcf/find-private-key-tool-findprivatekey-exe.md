@@ -2,12 +2,12 @@
 title: Nástroj pro hledání soukromého klíče (FindPrivateKey.exe)
 ms.date: 09/11/2017
 ms.assetid: b8846a95-3fcc-4e8c-b9c0-128d975a6307
-ms.openlocfilehash: 8f156cbb2f4fad8d51e356bd4dee2d72d9397ffb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00ad27d28ee3a589d5ee8702bd036b05d8ceb4b3
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929581"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65637571"
 ---
 # <a name="find-private-key-tool-findprivatekeyexe"></a>Nástroj pro hledání soukromého klíče (FindPrivateKey.exe)
 

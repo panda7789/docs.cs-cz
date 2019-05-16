@@ -3,12 +3,12 @@ title: C#Příkazy – připravuje C# jazyka
 description: Vytvoření akce C# programu pomocí příkazů
 ms.date: 11/06/2016
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
-ms.openlocfilehash: 75f6c7bb29af7f9c809c5278c97d21683166a8e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26b151bc116dde9120757f954bdcf3aee041c5f5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706478"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634535"
 ---
 # <a name="statements"></a>Příkazy
 

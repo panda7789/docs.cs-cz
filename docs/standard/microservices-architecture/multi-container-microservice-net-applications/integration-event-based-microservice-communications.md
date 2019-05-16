@@ -1,15 +1,13 @@
 ---
 title: Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Principy integrace událostí k implementaci založený na událostech komunikace mezi mikroslužbami.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: b451d896186ffb650e495c10786106c37ab16131
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a5cfa280063da742dc1693905fc44cf870c1fcc
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773555"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640700"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 

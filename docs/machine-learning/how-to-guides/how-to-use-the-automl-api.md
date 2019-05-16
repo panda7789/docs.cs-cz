@@ -3,12 +3,12 @@ title: Jak používat ML.NET automatizované ML API
 description: Automatizované ML API ML.NET automatizuje proces vytváření modelu a generuje modelu připravené na nasazení. Další možnosti, které můžete použít ke konfiguraci automatické strojového učení úlohy.
 ms.date: 04/24/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: b05b6ed7c66062b28aaf634913a9598602b62498
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 21bf594ba70e8c466cba757ca4dcfe39ddfa4d1e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557875"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641228"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Jak používat ML.NET automatizované machine learning API
 
@@ -19,7 +19,7 @@ Automatizované strojového učení (AutoML) automatizuje proces použití machi
 
 ## <a name="load-data"></a>Načtení dat
 
-Automatizované strojového učení podporuje načítání datovou sadu do [IDataView](https://docs.microsoft.com/dotnet/api/microsoft.ml.idataview?view=ml-dotnet). Data můžou být ve formě souborů hodnoty oddělené tabulátorem (TSV) a soubory oddělených čárkami (CSV).
+Automatizované strojového učení podporuje načítání datovou sadu do [IDataView](xref:Microsoft.ML.IDataView). Data můžou být ve formě souborů hodnoty oddělené tabulátorem (TSV) a soubory oddělených čárkami (CSV).
 
 Příklad:
 
@@ -61,7 +61,7 @@ Vytvořte nastavení testu pro typ úlohy určené ML:
 
 ## <a name="configure-experiment-settings"></a>Konfigurace nastavení testu
 
-Experimenty jsou vysoce konfigurovatelné. Zobrazit [dokumenty k rozhraní API AutoML](https://docs.microsoft.com/dotnet/api/microsoft.ml.auto?view=ml-dotnet) úplný seznam nastavení konfigurace.
+Experimenty jsou vysoce konfigurovatelné. Zobrazit [dokumenty k rozhraní API AutoML](https://docs.microsoft.com/dotnet/api/?view=automl-dotnet) úplný seznam nastavení konfigurace.
 
 Možné příklady:
 
@@ -104,15 +104,15 @@ Možné příklady:
     ```
 
 Seznam podporovaných školitelé na jeden úkol ML najdete na příslušný odkaz níže:
-* [Podporované algoritmy binární klasifikace](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.binaryclassificationtrainer?view=automl-dotnet)
-* [Podporované algoritmy klasifikace víc tříd](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.multiclassclassificationtrainer?view=automl-dotnet)
-* [Regrese podporovaných algoritmů](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.regressiontrainer?view=automl-dotnet)
+* [Podporované algoritmy binární klasifikace](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.binaryclassificationtrainer?view=automl-dotnet)
+* [Podporované algoritmy klasifikace víc tříd](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.multiclassclassificationtrainer?view=automl-dotnet)
+* [Regrese podporovaných algoritmů](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.regressiontrainer?view=automl-dotnet)
 
 ## <a name="optimizing-metric"></a>Optimalizace metrika
 
 Optimalizace metriku, jak je znázorněno v příkladu výše, určuje metrika optimalizovat během cvičení modelu. Optimalizace metriky, které můžete vybrat se určuje podle typu úkolu, který zvolíte. Níže je seznam dostupných metrik.
 
-|[Binární klasifikace](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.binaryclassificationmetric?view=automl-dotnet) | [Klasifikace víc tříd](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.multiclassclassificationmetric?view=automl-dotnet) | [Regrese](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.regressionmetric?view=automl-dotnet)
+|[Binární klasifikace](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.binaryclassificationmetric?view=automl-dotnet) | [Klasifikace víc tříd](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.multiclassclassificationmetric?view=automl-dotnet) | [Regrese](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.regressionmetric?view=automl-dotnet)
 |-- |-- |--
 |Přesnost| LogLoss | RSquared
 |AreaUnderPrecisionRecallCurve | LogLossReduction | MeanAbsoluteError
@@ -210,11 +210,11 @@ Console.WriteLine($"Root Mean Squared Error: {metrics.RootMeanSquaredError:0.##}
 ```
 
 Tady jsou všechny dostupné metriky za ML úloh:
-* [Binární klasifikace metriky](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.binaryclassificationmetric?view=automl-dotnet
+* [Binární klasifikace metriky](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.binaryclassificationmetric?view=automl-dotnet
 )
-* [Klasifikace víc tříd metriky](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.multiclassclassificationmetric?view=automl-dotnet
+* [Klasifikace víc tříd metriky](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.multiclassclassificationmetric?view=automl-dotnet
 )
-* [Regrese metriky](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.automl.regressionmetric?view=automl-dotnet
+* [Regrese metriky](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl.regressionmetric?view=automl-dotnet
 )
 
 ## <a name="see-also"></a>Viz také:

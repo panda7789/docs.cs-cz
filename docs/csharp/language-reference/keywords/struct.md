@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 2d0cba75e067e4d75ca5b544a664d7dede153c73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5317ea403575dca7ed64a5784fa9c993fa8d2f64
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660616"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633850"
 ---
 # <a name="struct-c-reference"></a>struct (Referenční dokumentace jazyka C#)
 

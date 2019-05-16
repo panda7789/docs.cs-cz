@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-ms.openlocfilehash: 81a293a6922a71f7428167c50aed064d7387a099
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b220e0d6b7e6ab5a7b6d964d1910eaafb63d2d9
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660408"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633924"
 ---
 # <a name="unsafe-c-reference"></a>unsafe (Referenční dokumentace jazyka C#)
 

@@ -1,15 +1,13 @@
 ---
 title: Základní poznatky
 description: Zkontrolujte stěžejní pro průvodce.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 092c182fd9246f4ded148302f6d49cbde24d27d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d28739a87e5c7c7e6c9304c36e1ec2a73cf0d0db
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785525"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644708"
 ---
 # <a name="key-takeaways"></a>Základní poznatky
 

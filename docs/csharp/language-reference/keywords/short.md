@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-ms.openlocfilehash: 8c38a4158f627f41d1667eb96478cd499de78772
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0b02e72e0588f1c1a0343a391430b5878b96b5f5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660648"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633995"
 ---
 # <a name="short-c-reference"></a>short (Referenční dokumentace jazyka C#)
 

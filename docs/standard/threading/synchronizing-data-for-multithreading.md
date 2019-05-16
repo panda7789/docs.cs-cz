@@ -4,28 +4,29 @@ ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization, threads
-- threading [.NET Framework], synchronizing threads
+- threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 55b973e9eb795ef2f5bd69b4ec67c1c194f043a9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c83e7abbd9f9425fab70325f7a77abb0f672bd15
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64644770"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65638752"
 ---
-# <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro vícevláknové zpracování
+# <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro multithreading
+
 Při více vláken mohl provádět volání k vlastnostem a metodám jednoho objektu, je důležité, že tato volání synchronizovat. V opačném případě jedno vlákno může dojít k přerušení činnosti jiné vlákno a objekt může zůstat v neplatném stavu. Třídy, jejíž členové jsou chráněny i před přerušení práce se nazývá bezpečné pro vlákna.  
   
- Common Language Infrastructure poskytuje několik strategií k synchronizaci přístupu k instanci a statické členy:  
+.NET poskytuje několik strategií k synchronizaci přístupu k instanci a statické členy:  
   
 - Oblasti synchronizované kódu. Můžete použít <xref:System.Threading.Monitor> třídy nebo kompilátoru podpora pro tuto třídu synchronizovat pouze kód bloku, která potřebuje, zvýšení výkonu.  
   
-- Ruční synchronizace. Můžete používat synchronizaci objektů v knihovně tříd rozhraní .NET Framework poskytuje. Naleznete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md), která obsahuje diskusi o <xref:System.Threading.Monitor> třídy.  
+- Ruční synchronizace. Synchronizace objekty poskytované knihovny tříd .NET se dají použít. Naleznete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md), která obsahuje diskusi o <xref:System.Threading.Monitor> třídy.  
   
-- Synchronizované kontexty. Můžete použít <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> umožňující jednoduchý, automatické synchronizace pro <xref:System.ContextBoundObject> objekty.  
+- Synchronizované kontexty. Pro aplikace rozhraní .NET Framework a Xamarin, můžete použít <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> umožňující jednoduchý, automatické synchronizace pro <xref:System.ContextBoundObject> objekty.  
   
 - Třídy kolekcí v <xref:System.Collections.Concurrent?displayProperty=nameWithType> oboru názvů. Tyto třídy poskytují integrovanou synchronizované přidávat a odebírat operace. Další informace najdete v tématu [kolekce bezpečné pro vlákna](../../../docs/standard/collections/thread-safe/index.md).  
   
@@ -42,7 +43,7 @@ Při více vláken mohl provádět volání k vlastnostem a metodám jednoho obj
  Toto je výchozí nastavení pro objekty. Jakékoli vlákno může přístup k žádné metody nebo pole v každém okamžiku. Pouze jedno vlákno vždy měli přístup k těmto objektům.  
   
 ## <a name="manual-synchronization"></a>Ruční synchronizace  
- Knihovna tříd rozhraní .NET Framework poskytuje několik tříd pro synchronizaci vláken. Zobrazit [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+ Knihovny tříd .NET poskytuje několik tříd pro synchronizaci vláken. Zobrazit [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
   
 ## <a name="synchronized-code-regions"></a>Oblasti synchronizované kódu  
  Můžete použít <xref:System.Threading.Monitor> třídu nebo klíčové slovo kompilátoru synchronizovat bloky kódu, metody instance a statické metody. Není dostupná podpora pro synchronizované statická pole.  
@@ -52,7 +53,7 @@ Při více vláken mohl provádět volání k vlastnostem a metodám jednoho obj
 > [!NOTE]
 >  `lock` a `SyncLock` příkazy jsou implementovány pomocí <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> a <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>, takže jiné metody <xref:System.Threading.Monitor> lze použít ve spojení s nimi v rámci oblasti synchronizované.  
   
- Můžete také uspořádání metodu s **MethodImplAttribute** a **MethodImplOptions.Synchronized**, který má stejný účinek jako použití **monitorování** nebo jeden z kompilátoru klíčová slova k uzamčení celý tělo metody.  
+ Můžete také uspořádání metodu s <xref:System.Runtime.CompilerServices.MethodImplAttribute> s hodnotou <xref:System.Runtime.CompilerServices.MethodImplOptions.Synchronized?displayProperty=nameWithType>, který má stejný účinek jako použití <xref:System.Threading.Monitor> nebo jeden z klíčových slov kompilátoru uzamknout celý tělo metody.  
   
  <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> je možné přerušit vlákno mimo blokující operace, jako je čekání na přístup do synchronizované oblasti kódu. **Thread.Interrupt** slouží také k přerušení vlákna z operací, jako je <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>.  
   
@@ -65,7 +66,8 @@ Při více vláken mohl provádět volání k vlastnostem a metodám jednoho obj
  V obou případech platí, pokud dojde k výjimce v kódu bloku zámek získaný **Zámek** nebo **SyncLock** se automaticky uvolní. Kompilátory C# a Visual Basic **zkuste**/**nakonec** blokovat s **Monitor.Enter** na začátku try, a **Monitor.Exit**  v **nakonec** bloku. Pokud dojde k výjimce uvnitř **Zámek** nebo **SyncLock** bloku **nakonec** spustí obslužnou rutinu, aby bylo možné provést žádnou práci čištění.  
   
 ## <a name="synchronized-context"></a>Synchronizované kontextu  
- Můžete použít **SynchronizationAttribute** na žádném **ContextBoundObject** k synchronizaci všech instanci metody a pole. Všechny objekty ve stejné doméně kontextu sdílet stejnou zámku. Více vláken je povolen přístup k metody a pole, ale v daný okamžik je povoleno pouze jedno vlákno.  
+ 
+V rozhraní .NET Framework a Xamarin pouze aplikací, můžete použít <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> na žádném <xref:System.ContextBoundObject> k synchronizaci všech instanci metody a pole. Všechny objekty ve stejné doméně kontextu sdílet stejnou zámku. Více vláken je povolen přístup k metody a pole, ale v daný okamžik je povoleno pouze jedno vlákno.  
   
 ## <a name="see-also"></a>Viz také:
 

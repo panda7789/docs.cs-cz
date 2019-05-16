@@ -3,12 +3,12 @@ title: Ukládání výsledků dotazu do paměti
 description: Jak ukládat výsledky.
 ms.date: 11/30/2016
 ms.assetid: 5b863961-1750-4cf9-9607-acea5054d15a
-ms.openlocfilehash: 98a300b2c11eb037ed4ce34caea2673a4e0f8e6b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 66a7a95c74db4062e76c54d4339ccb7343f44067
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688433"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633566"
 ---
 # <a name="store-the-results-of-a-query-in-memory"></a>Ukládání výsledků dotazu do paměti
 

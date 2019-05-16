@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: a8197dfc877842be824a5b10c742ef4fb7792858
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5fef151fe9149e2693ee217e7be642427162322d
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592744"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636286"
 ---
 # <a name="duplex-services"></a>Duplexní služby
 
@@ -87,7 +87,7 @@ Následující ukázkový kód ukazuje, jak zadat klienta adresy koncového bodu
 ```
 
 > [!WARNING]
-> Když služba nebo klient ukončí její kanál duplexní modelu nerozpozná automaticky. Proto pokud klient neočekávaně ukončí, ve výchozím nastavení službu nedostanou nebo pokud je služba neočekávaně ukončena, klient nebude upozorněni. Služby a klienti můžou implementovat vlastní protokol na sebe navzájem upozornit, pokud se tedy rozhodne. Další informace o zpracování chyb, naleznete v tématu [zpracování chyb WCF](../wcf-error-handling.md)
+> Duplexní modelu nerozpozná automaticky, když se služba nebo klient ukončí jeho kanál. Proto pokud klient neočekávaně ukončí, ve výchozím nastavení službu nedostanou nebo pokud je služba neočekávaně ukončena, klient nebude upozorněni. Pokud používáte službu, která je odpojen, <xref:System.ServiceModel.CommunicationException> je vyvolána výjimka. Služby a klienti můžou implementovat vlastní protokol na sebe navzájem upozornit, pokud se tedy rozhodne. Další informace o zpracování chyb, naleznete v tématu [zpracování chyb WCF](../wcf-error-handling.md)
 
 ## <a name="see-also"></a>Viz také:
 

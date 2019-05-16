@@ -6,12 +6,12 @@ helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-ms.openlocfilehash: e5010c7e9f3550c79c86c6cab4579a0fb15eef10
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dde621395f407cd64e047ddfe8c6539e976b3061
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660876"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633013"
 ---
 # <a name="query-keywords-c-reference"></a>Klíčová slova dotazu (referenční dokumentace jazyka C#)
 
@@ -21,7 +21,7 @@ Tato část obsahuje kontextová klíčová slova používat ve výrazech dotaz�
 
 |Klauzule|Popis|
 |------------|-----------------|
-|[z](from-clause.md)|Určuje zdroj dat a proměnnou rozsahu (podobně jako na proměnnou iterace).|
+|[from](from-clause.md)|Určuje zdroj dat a proměnnou rozsahu (podobně jako na proměnnou iterace).|
 |[kde](where-clause.md)|Filtry zdrojové prvky založené na jeden nebo více logických výrazů, které jsou odděleny a logický operátor AND nebo operátorů ( `&&` nebo <code>&#124;&#124;</code> ).|
 |[select](select-clause.md)|Určuje typ a tvar, který prvky ve vrácené posloupnosti budou mít při spuštění dotazu.|
 |[group](group-clause.md)|Výsledky dotazu skupin podle zadanou hodnotou klíče.|

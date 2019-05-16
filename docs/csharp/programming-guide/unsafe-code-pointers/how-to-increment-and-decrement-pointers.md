@@ -6,12 +6,12 @@ helpviewer_keywords:
 - pointers [C#], increment and decrement
 - pointer expressions [C#], increment and decrement
 ms.assetid: 1b8b9281-44ee-485a-9045-3db38a4b4b89
-ms.openlocfilehash: 358decb73666d5a5ef7c0fa828168d90d2c22c1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 040437bc8cbab4ba12f243434bdea7798711ce8a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61677968"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65635173"
 ---
 # <a name="how-to-increment-and-decrement-pointers-c-programming-guide"></a>Postupy: přírůstek a úbytek ukazatelů (C# Programming Guide)
 
@@ -48,9 +48,8 @@ p--;
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)
 - [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
-- [Manipulace s ukazateli](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md)
+- [Manipulace s ukazateli](../../../csharp/programming-guide/unsafe-code-pointers/how-to-increment-and-decrement-pointers.md)
 - [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Typy](../../../csharp/language-reference/keywords/types.md)
 - [unsafe](../../../csharp/language-reference/keywords/unsafe.md)

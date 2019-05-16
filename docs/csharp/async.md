@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.custom: seodec18
-ms.openlocfilehash: 8570692c02855cda7a1990f10ef97590449baccd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0eb4cf5bc912f1fd77e6c42a0a60d1c723c66dae
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664568"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633967"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 

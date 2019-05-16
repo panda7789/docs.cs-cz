@@ -1,15 +1,13 @@
 ---
 title: Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 description: Pochopení rozdílů a používá model brány rozhraní API a přímá komunikace klienta mikroslužeb.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: f1deb453519eec23e4c9bc8c19800e9caedf0c10
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 433ad8bc8204a9a57b8b494040a9de6c533bcca8
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909558"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641399"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 

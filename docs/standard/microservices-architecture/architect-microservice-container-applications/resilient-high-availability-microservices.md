@@ -1,15 +1,13 @@
 ---
 title: Odolnost a vysoká dostupnost v mikroslužbách
 description: Mikroslužeb mají být navržena k odolat přechodných síťových a závislosti selhání, musí být odolné vůči dosáhnout vysoké dostupnosti.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: a63b0c67e00ec91c5a91e1c6b84d1a38ab50e394
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb1bef0c9cc08e43aed80a29effe89587fb296f6
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025562"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639937"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost a vysoká dostupnost v mikroslužbách
 

@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 298620092c37b2c02332e9135f73584272e326bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 94279675b5a50bf2a19bb080876b91b85599c077
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965891"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65630101"
 ---
 # <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModuleAddress::Request – metoda
 
@@ -51,7 +51,7 @@ Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví n
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
 **Záhlaví:** Žádné     
-**Knihovna:** Žádný  
+**Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:

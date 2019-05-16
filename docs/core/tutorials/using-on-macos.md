@@ -4,12 +4,12 @@ description: Tento dokument obsahuje kroky a pracovní postup k vytvoření ře�
 author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: e5ac6fa04a2a5001146936de56acafeec7dd895d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e79f5dd90124d2a1902194af2edbde0f5df107c7
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647006"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633981"
 ---
 # <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v macOS
 

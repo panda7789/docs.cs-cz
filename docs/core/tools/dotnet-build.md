@@ -2,12 +2,12 @@
 title: příkaz DotNet sestavení
 description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislosti.
 ms.date: 04/24/2019
-ms.openlocfilehash: 2e58bace8055ba793bf7a6ca3a51eb20aa689768
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6564aacbe520797b47095929cfe72c6b180b99a7
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755214"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632138"
 ---
 # <a name="dotnet-build"></a>DotNet sestavení
 

@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 05/01/2017
 ms.technology: dotnet-standard
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
-ms.openlocfilehash: 825d7d950726c4f416624653704a51fb405325e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 50667465d25dc034b7f229716cbf327fb5f54977
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683220"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644627"
 ---
 # <a name="get-started"></a>Začínáme
 
@@ -31,6 +31,6 @@ Existuje mnoho způsobů, jak začít pracovat s .NET. Protože .NET je platform
 
 * [Kurzy k .NET Core](../core/tutorials/index.md) podrobně popisují řadu způsobů, jak můžete začít s .NET Core pomocí operačního systému a nástrojů podle výběru.
 
-## <a name="get-started-using-docker-on-net-framework"></a>Začínáme s využitím Dockeru na rozhraní .NET Framework
+## <a name="get-started-using-net-core-on-docker"></a>Začínáme s využitím .NET Core v Dockeru
 
-[Docker v rozhraní .NET Framework](../framework/docker/index.md) ukazuje, jak můžete pomocí rozhraní .NET Framework v kontejnerech Docker pro Windows.
+[Úvod k .NET a Dockeru](../core/docker/intro-net-docker.md) ukazuje, jak můžete pomocí .NET Core v kontejnerech Docker pro Windows.

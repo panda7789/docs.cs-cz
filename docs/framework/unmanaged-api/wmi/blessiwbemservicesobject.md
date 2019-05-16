@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1eb6b870beabb71e340b0ec39c489cedb02128cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d28497c637a40d7e2659b18868124ea898397f92
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749576"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636910"
 ---
 # <a name="blessiwbemservicesobject-function"></a>Funkce BlessIWbemServicesObject
 Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu. 

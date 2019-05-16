@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: cfeef1d84a443163f4bbeda863682335d9cd1fcd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 60ee4b8c5ac3a572fd352140c968a8ec8f3a084a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660200"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632976"
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 

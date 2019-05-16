@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - using keyword [C#]
 ms.assetid: 124e1a63-2a4b-4132-b269-3b6d8d3ef72d
-ms.openlocfilehash: c422ff105d17de5d96c58ce8133b7a82b127d0f4
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: efde313c0a1dabee45de4fd7d580a3aff5139928
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452414"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633828"
 ---
 # <a name="using-c-reference"></a>using (Referenční dokumentace jazyka C#)
 

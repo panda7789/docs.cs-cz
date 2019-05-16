@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: ed3e18c5981fa52dc2c6ef09bfb666cfa705fede
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5dba3759d8d0046f2a491e1d3408acb54bd0343d
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660954"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633375"
 ---
 # <a name="partial-type-c-reference"></a>částečný typ (referenční dokumentace jazyka C#)
 

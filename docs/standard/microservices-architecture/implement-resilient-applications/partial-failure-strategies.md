@@ -1,15 +1,13 @@
 ---
 title: Strategie pro zpracování částečného selhání
 description: Seznamte se několik strategií pro zpracování částečného selhání bez výpadku.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/16/2018
-ms.openlocfilehash: 63c6764d18ee0a8990cf669a8cdc824dea79aac8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e96fe99ab44b924460e01abaad30aa3e2432117a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020164"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644195"
 ---
 # <a name="strategies-to-handle-partial-failure"></a>Strategie pro zpracování částečného selhání
 

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: ea8d8ab5ac14ec94c647ed33cca6f949a90737bd
-ms.sourcegitcommit: dd3b897feb5c4ac39732bb165848e37a344b0765
+ms.openlocfilehash: 6d3751ff1ee2c6ee2f058eeda4ffd5db188a988e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64445210"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633764"
 ---
 # <a name="comparison-operators-c-reference"></a>Operátory porovnání (C# odkaz)
 

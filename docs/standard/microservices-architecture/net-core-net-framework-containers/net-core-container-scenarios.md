@@ -1,15 +1,13 @@
 ---
 title: Kdy pro kontejnery Dockeru zvolit .NET Core
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Kdy pro kontejnery Dockeru zvolit .NET Core
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: b2ede45afee93e8d87a22b2b489eb2a230e04e7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 54ed1b4bbb16352b8c99204383f85ffb25d62be7
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019591"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644327"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Core
 

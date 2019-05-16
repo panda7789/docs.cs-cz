@@ -9,12 +9,12 @@ helpviewer_keywords:
 - finally keyword [C#]
 - try-finally statement [C#]
 ms.assetid: c27623fb-7261-4464-862c-7a369d3c8f0a
-ms.openlocfilehash: 15111a185f73f60e77139d3a7faef7f32f4bf613
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 20a608c208a7c5e6f00b85dfc10cf14202a78446
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660486"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633137"
 ---
 # <a name="try-finally-c-reference"></a>try-finally (Referenční dokumentace jazyka C#)
 

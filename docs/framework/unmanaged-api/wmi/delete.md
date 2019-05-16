@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a1a26db7785a8a378fa541308ecc6aee30fa87ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 965143eadd6e2dde498d5ee73e4f9e8bfded8a6e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049281"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636723"
 ---
 # <a name="delete-function"></a>Funkce Delete
 
@@ -54,7 +54,7 @@ HRESULT Delete (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | Vlastnost nelze odstranit. |

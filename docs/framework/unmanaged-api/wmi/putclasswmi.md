@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f9d537f7713233d363f7d408b1cef0485d99d981
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 422de614d2e2ddb93cc1e932a8672e1e8269b2c0
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000165"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636650"
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi – funkce
 
@@ -70,7 +70,7 @@ HRESULT PutClassWmi (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k vytvoření nebo úpravě třídy. |
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |

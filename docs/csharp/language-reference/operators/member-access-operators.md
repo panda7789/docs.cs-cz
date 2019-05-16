@@ -24,14 +24,14 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: 921d69e3deb7e5bb5115eb723727462839af9b6b
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 2c5f569b0ad68132e07b009ec9968c766bb965f5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65453166"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633519"
 ---
-# <a name="member-access-operators"></a>Operátory přístupu členů
+# <a name="member-access-operators"></a>Operátory pro přístup k členům
 
 Při přístupu k člena typu můžete použít následující operátory:
 

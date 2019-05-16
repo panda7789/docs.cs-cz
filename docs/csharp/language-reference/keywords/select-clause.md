@@ -9,12 +9,12 @@ helpviewer_keywords:
 - select keyword [C#]
 - select clause [C#]
 ms.assetid: df01e266-5781-4aaa-80c4-67cf28ea093f
-ms.openlocfilehash: 7c61fb18c37ed65a62975a75506d4265c52f2a98
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ba52fccc0521df1a0bb5b6177575dc5d2152248
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660668"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633810"
 ---
 # <a name="select-clause-c-reference"></a>select – klauzule (Referenční dokumentace jazyka C#)
 

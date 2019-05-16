@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s
 ms.date: 04/10/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 7d5fd3da9170ecd33f7a1b6b6d048c174472d541
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a96f96bd91976b0966fb7e8d0c8fb6fb7842cfe3
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750571"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631867"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace .NET Core aplikace
 

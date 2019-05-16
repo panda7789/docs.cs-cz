@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: ef1c0a93da2a53f1e199627fb7f83894d01e714a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a5915d23fea02a031cedd9063018fffbdc34180
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660824"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633779"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní přístupu (referenční dokumentace jazyka C#)
 

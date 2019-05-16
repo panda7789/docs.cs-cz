@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 19cccc5bcec82b04a337aa0d3913fede0a435ae8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c18b7b34a14e5f854ee72a0462a1969fb6501190
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780052"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632158"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 

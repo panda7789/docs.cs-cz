@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ff9ea8cdc8aea66b1dd1f54c8be881882f6e27f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e88129f737ee493432d06acc6ad45f8653dd1eb4
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703584"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636761"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 

@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 05/09/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 6fda4e35d6f52b264002a7fc91da3e5f7256fc11
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: a61b0eb316f61e888933aefa2c91a9f76c6e1c53
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557809"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641196"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-model-with-mlnet"></a>Kurz: Předvídání cen pomocí regresní model ML.NET
 
@@ -38,7 +38,7 @@ V tomto kurzu se naučíte:
 
 1. Nainstalujte **Microsoft.ML** balíček NuGet:
 
-    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte balíček, v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
+    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte balíček, v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Totéž proveďte pro **Microsoft.ML.FastTree** balíček Nuget.
 
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 

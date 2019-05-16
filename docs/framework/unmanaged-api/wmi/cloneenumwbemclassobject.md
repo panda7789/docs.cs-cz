@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac85ed86ea968fa945e07f95db8977a33c5d12a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f7b384bb24cbf7ab7379949fd85a22121a1310e3
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968165"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636872"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>Funkce CloneEnumWbemClassObject
 Vytvoří kopii logické tohoto čítače, zachovat své aktuální pozici ve výčtu.
@@ -68,7 +68,7 @@ HRESULT CloneEnumWbemClassObject (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |

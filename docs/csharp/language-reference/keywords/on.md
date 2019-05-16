@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - on keyword [C#]
 ms.assetid: 06abc536-e07c-4e34-88c1-425208bdcb21
-ms.openlocfilehash: 2187298b0c438f4ce88df93c611a6d6a45a0d648
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3c65f8301f7fa72c376183154d9498664196b4b
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661058"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633556"
 ---
 # <a name="on-c-reference"></a>on (Referenční dokumentace jazyka C#)
 

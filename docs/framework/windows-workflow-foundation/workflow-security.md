@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: 4553a81fcd15426bf09d2f293cb35dbe831aeb07
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b14dd600526612b6af8b9fad15f65a748eb0b368
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655805"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65637528"
 ---
 # <a name="workflow-security"></a>Zabezpečení pracovních postupů
 Windows Workflow Foundation (WF) je integrovaná s několika různých technologií, jako je například Microsoft SQL Server a Windows Communication Foundation (WCF). Interakce s tyto technologie vznikat potíže se zabezpečením do vašich pracovních postupů v případě aktivace nesprávně.

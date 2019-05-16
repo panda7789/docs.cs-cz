@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - TreeView control [Windows Forms], about TreeView control
 ms.assetid: 0ece823a-9508-478a-bbdb-7d7c3bae51d5
-ms.openlocfilehash: 046713745e7de18cefe5b4883af73034af2cfb31
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b2722d21521fd9e59d911fb3b9cd177ec60c9903
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009224"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640863"
 ---
 # <a name="treeview-control-overview-windows-forms"></a>TreeView – přehled ovládacího prvku (Windows Forms)
 

@@ -1,15 +1,13 @@
 ---
 title: Aplikace .NET založené na návrh a vývoj více kontejnerech a Mikroslužbách
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Vysvětlení externí architektury pro návrh a vývoj více kontejnerech a aplikacích .NET na základě Mikroslužeb.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 3bbf746aa9c0b66a097b8c4df2964b5679342fd0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c2f828e9913a0efcdf580371124b0f624daeffe
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973625"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639457"
 ---
 # <a name="designing-and-developing-multi-container-and-microservice-based-net-applications"></a>Návrh a vývoj aplikací .NET více kontejnerů a založených na Mikroslužbách
 

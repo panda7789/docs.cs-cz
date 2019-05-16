@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: 1c5526366651d7e6623724c939b08ac46aa7db56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8bb6d4a37b2eea3060921937cf15a1fdd1be97b4
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660720"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634001"
 ---
 # <a name="sizeof-c-reference"></a>sizeof (Referenční dokumentace jazyka C#)
 

@@ -1,15 +1,13 @@
 ---
 title: Implementace čtení nebo dotazů v mikroslužbě CQRS
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Seznamte se s provádění dotazů na straně modelu cqrs v pořadí mikroslužeb v aplikaci eShopOnContainers pomocí Dapperem.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 104c7564b7dd29209b48d99b1dea7524c07d7e69
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f791546e2fc00e276ab55302802a5534465ace58
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020072"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639727"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implementace čtení nebo dotazů v mikroslužbě CQRS
 

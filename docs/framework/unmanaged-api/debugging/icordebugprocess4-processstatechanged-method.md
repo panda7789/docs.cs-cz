@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: b77dd1277e7d23729f30d9d495c5417055a22759
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5e3a6714489e2051a09b5855ab9f911ef2f57450
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948799"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632289"
 ---
 # <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged Method
 
@@ -49,7 +49,7 @@ Zadaná metoda je součástí `ICorDebugProcess4` rozhraní a odpovídá čtvrt�
 
  **Záhlaví:** Žádné
 
- **Knihovna:** Žádné
+ **Knihovna:** Žádný
  
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 

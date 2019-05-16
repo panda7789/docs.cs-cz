@@ -1,15 +1,13 @@
 ---
 title: Přihlášení k odběru událostí
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Zjistěte podrobnosti o publikování a přihlášení k odběru událostí integrace.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 962d12c054bed3b2623283e17f83b8466ab2811b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ff165f6bba7940b99ef9712049191e356b893897
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864594"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639708"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 

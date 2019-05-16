@@ -5,12 +5,12 @@ ms.date: 03/15/2018
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 1c14d50e31b89f4c77c94e5899e8207766a3540f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce3d39c42dc35ca3038fc38edd9327e9b96fb20f
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661149"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633420"
 ---
 # <a name="new-operator-c-reference"></a>New – operátor (referenční dokumentace jazyka C#)
 

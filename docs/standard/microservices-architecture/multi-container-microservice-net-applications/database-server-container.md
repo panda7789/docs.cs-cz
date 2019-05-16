@@ -1,15 +1,13 @@
 ---
 title: Použití databázového serveru, který se používá jako kontejner
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Použití databázového serveru běžícího jako kontejner? pouze pro vývoj! Zjistěte, proč.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: c993f962d84ca3fc859ab704489300192536ee74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5fd92a28a09cab041225c4c817a10f5ecfedc038
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760763"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639730"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru, který se používá jako kontejner
 

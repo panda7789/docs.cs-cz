@@ -3,12 +3,12 @@ title: global.json overview
 description: Zjistěte, jak použít soubor global.json se nastavit verzi .NET Core SDK, při spuštění příkazů rozhraní příkazového řádku .NET Core.
 ms.date: 12/03/2018
 ms.custom: updateeachrelease, seodec18
-ms.openlocfilehash: e0f929a049812cac6f62e5218629c9b0add83de8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a3d90e39401ece8d106d89a7533b7c1e1e4433cd
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647968"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632390"
 ---
 # <a name="globaljson-overview"></a>global.json overview
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 7ff65867f9f81118cad30852c439f8b3491bf1aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 62aaf8785b0dfb646ea804dab6918940f1e33346
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61975283"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65635275"
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World!--Váš první program (C# Programming Guide)
 

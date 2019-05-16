@@ -3,12 +3,12 @@ title: C#Rozhraní – připravuje C# jazyka
 description: Definování kontraktů implementovaných typů v rozhraníC#
 ms.date: 08/10/2016
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
-ms.openlocfilehash: bfc6b59a411ff2ddb3331a8bdf24c0ae3d611273
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 240ddfb321c5a89c8aada4353845915d0e242ae0
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706400"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634558"
 ---
 # <a name="interfaces"></a>Rozhraní
 

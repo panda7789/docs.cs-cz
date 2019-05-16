@@ -2,12 +2,12 @@
 title: DotNet – přidat odkaz na – příkaz
 description: Příkaz dotnet add příkaz odkaz poskytuje vhodnou možnost pro přidání odkazů typu projekt na projekt.
 ms.date: 04/24/2019
-ms.openlocfilehash: f33a379534dca88133babbb5ca78bca614e441c8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e90f95527d4f14c7851ccd8d30201daaaaefa2ae
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755190"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631942"
 ---
 # <a name="dotnet-add-reference"></a>DotNet – přidat odkaz
 

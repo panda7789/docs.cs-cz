@@ -1,15 +1,13 @@
 ---
 title: Vývojové prostředí pro aplikace Dockeru
 description: Seznámení s nejdůležitějších možností nástroj pro vývoj, které podporují Docker vývojového cyklu.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 3a2fcbe3b9380083622b6ce72cea4bab17d7c2ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f71ffa5e6870f45908e4def6577120a17ec744c
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61799317"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641417"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 

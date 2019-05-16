@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-ms.openlocfilehash: 131d99457427e0818f78076d987f550a99ad7cf0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b6d1c9c38e2cc5f1b1b7b5538af0339987563de6
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929308"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65637583"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>Postupy: Hostování služby WCF ve spravované aplikaci
 

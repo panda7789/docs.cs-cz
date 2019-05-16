@@ -3,18 +3,18 @@ title: příkaz DotNet nuget místních hodnot
 description: Příkaz dotnet nuget locals vymaže nebo vypíše místní prostředky NuGet, třeba mezipaměť požadavku http, dočasná mezipaměť nebo celý počítač globální složku balíčků.
 author: karann-msft
 ms.date: 12/04/2018
-ms.openlocfilehash: d0f1c7c2e0b233c214cc48d026c19755fc047bfa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a9fd7876aa4d1907eb37e6bac54295d938d36d3
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664828"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632427"
 ---
 # <a name="dotnet-nuget-locals"></a>DotNet nuget locals
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet nuget locals` -Vymaže nebo vypíše místní prostředky NuGet.
 

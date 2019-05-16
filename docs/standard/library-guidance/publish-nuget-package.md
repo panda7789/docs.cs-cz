@@ -4,12 +4,12 @@ description: Doporučení osvědčených postupů pro publikování knihovny .NE
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 036aa99c89790274628c40824be7e230d81850fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c8442b52ed2c54d2fb3368a2e886c5fc2b19148
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909845"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640774"
 ---
 # <a name="publishing-a-nuget-package"></a>Publikování balíčku NuGet
 

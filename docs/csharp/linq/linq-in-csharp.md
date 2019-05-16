@@ -3,12 +3,12 @@ title: LINQ v jazyku C#
 description: Obsahuje odkazy na témata, která poskytují podrobné informace o LINQ v JAZYKU C#.
 ms.date: 11/30/2016
 ms.assetid: 8eb3284f-0ab9-4cad-9216-2da58d9761a5
-ms.openlocfilehash: a12970031e162f5ed40051ccf4d6fca35fb93698
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a86bbabedc99531a5d02a9e60df5798a03653370
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61689109"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633791"
 ---
 # <a name="linq-in-c"></a>LINQ v jazyce C\#
 

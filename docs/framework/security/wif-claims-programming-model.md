@@ -3,12 +3,12 @@ title: Programovací model deklarovaných identit WIF
 ms.date: 03/30/2017
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
 author: BrucePerlerMS
-ms.openlocfilehash: 543db91eaa058a87cfe579a23abb710f21ec1b85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 19dbf5ed8852ea8d3ad9be078cb575c6e4dc06ed
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61953583"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631905"
 ---
 # <a name="wif-claims-programming-model"></a>Programovací model deklarovaných identit WIF
 ASP.NET a služby Windows Communication Foundation (WCF) obvykle vývojáři IIdentity a IPrincipal rozhraní pro práci s informací o identitě uživatele. V rozhraní .NET 4.5 Windows Identity Foundation (WIF) byla integrována tak, že deklarace identity jsou teď vždy k dispozici pro všechny instanční objekt, jak je znázorněno v následujícím diagramu:

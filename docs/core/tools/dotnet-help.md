@@ -2,18 +2,18 @@
 title: příkaz DotNet nápovědy
 description: Příkaz dotnet help Zobrazí podrobnější online dokumentaci pro zadaný příkaz.
 ms.date: 12/04/2018
-ms.openlocfilehash: 44274b698ed83bd3cdb58787f433eeb5c555bc6d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8694494720cdb9a540754fdf79eeb99d5dbe61ef
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665114"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631990"
 ---
 # <a name="dotnet-help-reference"></a>odkaz na nápovědu DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet help` – Zobrazí podrobnější online dokumentaci pro zadaný příkaz.
 

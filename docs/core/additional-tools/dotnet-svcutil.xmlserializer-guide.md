@@ -3,12 +3,12 @@ title: Pomocí dotnet svcutil.xmlserializer v rozhraní .NET Core
 description: Zjistěte, jak můžete využít `dotnet-svcutil.xmlserializer` balíček NuGet pro předběžně generovat sestavení serializace pro projekty .NET Core.
 author: huanwu
 ms.date: 11/27/2018
-ms.openlocfilehash: f5ffed47079a3ee122c7784d0c61c4d40461ba26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 375a5ad5660658431c0d327e55513024823a6eee
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638980"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632202"
 ---
 # <a name="using-dotnet-svcutilxmlserializer-on-net-core"></a>Pomocí dotnet svcutil.xmlserializer v rozhraní .NET Core
 

@@ -1,15 +1,13 @@
 ---
 title: Zvládnutí firemní složitosti v mikroslužbě pomocí vzorů DDD a CQRS
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Naučte se řešit komplexní obchodní scénáře použití vzorů DDD a CQRS
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: f17acd6765de96bf8cec28c4e212733822fa0b73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d311641e2ac73205c04c3f1147b54991585ce851
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019760"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639801"
 ---
 # <a name="tackle-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Řešit firemní složitosti v Mikroslužbě pomocí vzorů DDD a CQRS
 

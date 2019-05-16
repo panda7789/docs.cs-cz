@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 36bb18d21740f406d33306c212195fa5dbb25ee1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4dc0618eceda4df7c5aa76aee3ac649deb9f5310
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019452"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639009"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - equals keyword [C#]
 ms.assetid: e981309a-e4bf-444c-8a2b-5c695e6114b1
-ms.openlocfilehash: a6026cbe606ff80f5ae1bc13435c67eaa3f57330
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d86f22ff6d86512c255caef9705ed41355ecf43
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661747"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633492"
 ---
 # <a name="equals-c-reference"></a>equals (Referenční dokumentace jazyka C#)
 

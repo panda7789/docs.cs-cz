@@ -2,12 +2,12 @@
 title: 'Smyčky: Výraz for...in'
 description: V tématu Jak F# for... ve výrazu konstrukce opakování ve smyčce se používá k iteraci přes odpovídá vzoru v vyčíslitelné kolekce.
 ms.date: 05/16/2016
-ms.openlocfilehash: adaf448a49cf53c63c41f9156d40ee5d1ad3caeb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5346713b1747227f3fe79e308455d976e506f968
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024440"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641806"
 ---
 # <a name="loops-forin-expression"></a>Smyčky: Výraz for...in
 

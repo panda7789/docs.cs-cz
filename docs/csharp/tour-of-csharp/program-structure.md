@@ -3,12 +3,12 @@ title: C#Program strukturu – připravuje C# jazyka
 description: Přečtěte si základní stavební bloky C# programu
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: de10cd000b4028a66ce6dd6f21e39c013e38ecd2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e6b3e0d3b91d3dee8cbc8ac530323e23e0ce8b2a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675946"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634564"
 ---
 # <a name="program-structure"></a>Struktura programu
 

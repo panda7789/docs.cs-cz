@@ -2,18 +2,18 @@
 title: příkaz DotNet seznamu balíčků
 description: Příkaz "balíčku dotnet seznamu" poskytuje vhodnou možnost zobrazíte odkazy na balíčky pro projekt nebo řešení.
 ms.date: 04/09/2019
-ms.openlocfilehash: bc38b94201f85ed4b22e11722ef5cabcb6fbf040
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88ef3302a955eadc4167384312e4eb721dd496fb
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665076"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631767"
 ---
 # <a name="dotnet-list-package"></a>DotNet seznamu balíčků
 
 [!INCLUDE [topic-appliesto-net-core-22plus](../../../includes/topic-appliesto-net-core-22plus.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet list package` -Obsahuje odkazy na balíčky pro projekt nebo řešení.
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 095bd92921c9cd54d3a7d97ed07b35526b85c57f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: efbca8177c74fdee635b52294944df23e5aca24f
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61682986"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65638781"
 ---
 # <a name="threads-and-threading"></a>Vlákna a dělení na vlákna
 

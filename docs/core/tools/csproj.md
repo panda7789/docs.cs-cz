@@ -2,12 +2,12 @@
 title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 89f0bbab1f9887295a68ffc6434340f1c6f10d5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c1f084af68010632cbe595858b2f242d37af598
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665426"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65631806"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -125,11 +125,13 @@ Pokud projekt obsahuje více cílových platforem, by měl výsledky příkazu, 
 
 ### <a name="sdk-attribute"></a>Atribut SDK
 
-Kořen `<Project>` elementu *.csproj* soubor obsahuje nový atribut volá `Sdk`. `Sdk` Určuje, které sada SDK se používá v projektu. Sady SDK, jako [rozvržení dokumentu](cli-msbuild-architecture.md) popisuje, je sada MSBuild [úlohy](/visualstudio/msbuild/msbuild-tasks) a [cíle](/visualstudio/msbuild/msbuild-targets) , které můžete vytvářet kód .NET Core. Dodáváme tři hlavní sady SDK s nástroji .NET Core:
+Kořen `<Project>` elementu *.csproj* soubor obsahuje nový atribut volá `Sdk`. `Sdk` Určuje, které sada SDK se používá v projektu. Sady SDK, jako [rozvržení dokumentu](cli-msbuild-architecture.md) popisuje, je sada MSBuild [úlohy](/visualstudio/msbuild/msbuild-tasks) a [cíle](/visualstudio/msbuild/msbuild-targets) , které můžete vytvářet kód .NET Core. Při použití .NET Core 3.0 Preview dodáváme tři hlavní sady SDK s nástroji .NET Core a další dvě sady SDK:
 
 1. .NET Core SDK s ID `Microsoft.NET.Sdk`
 2. .NET Core web SDK s ID `Microsoft.NET.Sdk.Web`
 3. Knihovny tříd Razor .NET Core SDK s ID nástroje `Microsoft.NET.Sdk.Razor`
+4. Službu v .NET Core pracovního procesu s ID `Microsoft.NET.Sdk.Worker` (.NET Core 3.0 Preview)
+5. .NET Core WinForms a WPF s ID `Microsoft.NET.Sdk.WindowsDesktop` (.NET Core 3.0 Preview)
 
 Je potřeba mít `Sdk` nastavený atribut na jednu z těchto ID na `<Project>` prvku abyste mohli použít nástroje pro .NET Core a vytváření kódu.
 
