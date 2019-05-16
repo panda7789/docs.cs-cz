@@ -2,12 +2,12 @@
 title: Možnosti kompilátoru
 description: Použití F# možnosti příkazového řádku kompilátoru pro řízení sestavování vašich F# aplikací a knihoven.
 ms.date: 12/10/2018
-ms.openlocfilehash: fa639fe37ed336ad9f990e01bf2645c5a86498e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d7f8ddc8fddd0fb7605ff57fa323dd03a56bde3
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766087"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65642020"
 ---
 # <a name="compiler-options"></a>Možnosti kompilátoru
 

@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/06/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: a6aad2d145d31d4799d274aa1b0c8738e91906ae
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 8407bedc6b7b9e5e3263b37747050eba82eea653
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063156"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65642100"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 

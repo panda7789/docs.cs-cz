@@ -1,16 +1,14 @@
 ---
 title: Visual Studio Tools for Docker ve Windows
 description: Seznámení s nástroji Dockeru k dispozici v sadě Visual Studio 2017 verze 15.7 nebo novější.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/15/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: d361b0c471402c097dfac799eb58ef08209d4343
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2b6fdc33f9cf850cf9e52fca4a1a9754cd412567
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664358"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644661"
 ---
 # <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Použití nástrojů Dockeru v sadě Visual Studio 2017 na Windows
 

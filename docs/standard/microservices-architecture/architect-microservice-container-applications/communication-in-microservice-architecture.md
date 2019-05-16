@@ -1,15 +1,13 @@
 ---
 title: Komunikace v architektuře mikroslužeb
 description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami vysvětlení důsledků synchronní a asynchronní způsoby.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 364bd4eb82907fcf0fbcc850eca839f676a2dbf8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f7a65ef53d401a8533f82168db5a412d5ac9756
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909476"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644341"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 

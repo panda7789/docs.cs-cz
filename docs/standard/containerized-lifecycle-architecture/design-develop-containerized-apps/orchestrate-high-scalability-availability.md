@@ -1,15 +1,13 @@
 ---
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Skutečné produkční aplikace muset nasazují a spravují s orchestrátory, které zpracovávají stavu, úlohy a životní cykly všechny kontejnery.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 148eab941644667c803c5613b8815f50263fc0fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6cb41e632db7c7c6b9412bf54d2efeb44deee80f
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644806"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644712"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 

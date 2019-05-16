@@ -2,12 +2,12 @@
 title: Publikování služby WCF
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-ms.openlocfilehash: f10aabd2a2258f98915f1bbcc8b30fc1b7f677ac
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 44dd7f58129ddc356f362f9ef9527d85644fe821
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654570"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65635504"
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 

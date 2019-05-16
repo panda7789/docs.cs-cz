@@ -1,15 +1,13 @@
 ---
 title: Použití přístupů CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Pochopte způsob, jakým CQRS je implementována v pořadí mikroslužeb v aplikaci eShopOnContainers.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 6e39b0ce48e7caf755054eb558ab0c99b0ec76e8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a688f6e4050ca56c482510bc13880c8b29b11072
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755069"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639573"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použít přístupy CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
 

@@ -2,12 +2,12 @@
 title: Zprostředkovatelé typů
 description: Zjistěte, jak F# poskytovatel typu je komponenta, která poskytuje typy, vlastnosti a metody pro použití ve svých programech.
 ms.date: 04/02/2018
-ms.openlocfilehash: 39000fd1ca2af78afd1c333816fe9d5c0e2517cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5fa9de229caa2ec3ba4a248ca5cd1c8aa5adb230
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967762"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65645169"
 ---
 # <a name="type-providers"></a>Zprostředkovatelé typů
 

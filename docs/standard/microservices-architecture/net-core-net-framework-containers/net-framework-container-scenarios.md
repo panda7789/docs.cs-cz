@@ -1,15 +1,13 @@
 ---
 title: Kdy pro kontejnery Dockeru zvolit .NET Framework
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Kdy pro kontejnery Dockeru zvolit .NET Framework
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 012eecbef669ada64392c43b92e8053873956210
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a31344173c82ddd461d2ff2901caeec7be43ebaa
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650706"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65638881"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -59,8 +57,7 @@ Do té doby Pokud jakoukoli platformu nebo služby Azure stále nepodporuje .NET
 - **Portování z rozhraní .NET Framework do .NET Core**  
     [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
 
-- **Průvodce rozhraním .NET Framework v Dockeru**  
-    [https://docs.microsoft.com/dotnet/framework/docker/](../../../framework/docker/index.md)
+- **.NET core v příručce Dockeru** [https://docs.microsoft.com/dotnet/core/docker/intro-net-docker](../../../core/docker/intro-net-docker.md)
 
 - **.NET – přehled komponenty**  
     [https://docs.microsoft.com/dotnet/standard/components](../../components.md)

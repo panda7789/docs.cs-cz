@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a89ce5786754a73f41747d13498038e081feead4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a3e602057bfd2dea15887daee9058b12f26992f2
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973352"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639048"
 ---
 # <a name="exception-handling-task-parallel-library"></a>Zpracování výjimek (Task Parallel Library)
 

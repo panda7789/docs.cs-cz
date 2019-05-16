@@ -1,15 +1,13 @@
 ---
 title: Testování služeb a webových aplikací ASP.NET Core
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Prozkoumejte architekturu pro účely testování služeb ASP.NET Core a webové aplikace v kontejnerech.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 106e38a3cf3a121c4d7f879b718c832d27e0910f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a741fca84f456d635e1790d6be1c72e70345a24
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864287"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644213"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb a webových aplikací ASP.NET Core
 

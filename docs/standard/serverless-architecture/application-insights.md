@@ -4,12 +4,12 @@ description: Application Insights je platforma bez serveru diagnostiku, která v
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: b4884d483de07c1c2077f7280b6b77c6059572c0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1f5b99fba448c2c1c12139524ffdcd3708b3c956
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051222"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65643364"
 ---
 # <a name="telemetry-with-application-insights"></a>Telemetrie pomocí Application Insights
 

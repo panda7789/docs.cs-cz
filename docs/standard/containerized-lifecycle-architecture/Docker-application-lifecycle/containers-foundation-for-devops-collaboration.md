@@ -1,15 +1,13 @@
 ---
 title: Kontejnery jako základ pro spolupráci DevOps
 description: Seznamte se s rolí klíče kontejnerů ke zjednodušení DevOps.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 4b40837bf2b74d801b9794c88e79eb03bcd72e95
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37faf00f270414df363f36894317f31f81a2937e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012216"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641246"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Kontejnery jako základ pro spolupráci DevOps
 

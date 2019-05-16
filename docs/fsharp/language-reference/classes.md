@@ -2,12 +2,12 @@
 title: Třídy
 description: Zjistěte, jak F# třídy jsou typy, které představují objekty, které mohou mít vlastnosti, metody a události.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6bf838e98acecb89436d3e87809d9eb6da0c66d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a233fea538274216db3c6751f6fbabbf70cc2841
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61870289"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65645533"
 ---
 # <a name="classes"></a>Třídy
 

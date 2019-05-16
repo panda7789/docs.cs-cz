@@ -1,15 +1,13 @@
 ---
 title: Návrh aplikační vrstvy a webového rozhraní API mikroslužby
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Stručný zmínka SOLID principů návrhu aplikační vrstvu.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 9177ac9a79afaea01f0ec21b0a64bad5a94e9966
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c3b9f74e76e01deafa1f97de5d3250d57716014
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760893"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639496"
 ---
 # <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy mikroslužby a webové rozhraní API
 

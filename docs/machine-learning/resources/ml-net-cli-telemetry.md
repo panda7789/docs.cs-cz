@@ -4,12 +4,12 @@ description: Další informace o rozhraní příkazového řádku ML.NET telemet
 ms.topic: conceptual
 ms.date: 05/05/2019
 ms.custom: ''
-ms.openlocfilehash: 49ebd6c9e1b77c85d891b8c9fb8cbd5c66b478a9
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 36f4af48615e2e3247f8e21343d0a00519ba1c0a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066157"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65645025"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Shromažďování telemetrie pomocí rozhraní příkazového řádku ML.NET
 
@@ -42,15 +42,17 @@ Vyjádřit výslovný nesouhlas funkce telemetrie nastavením `DOTNET_CLI_TELEME
 
 Funkci shromažďuje následující data:
 
-- Jsou vyvolány které příkazy, jako například `auto-train`
+- Byla vyvolána jaké příkazu, jako například `auto-train`
+- Názvy parametrů příkazového řádku používá (to znamená "název datové sady, popisek název sloupce, ml úkolu, výstupní cesta, max běhu zkoumání podrobností")
 - Hodnoty hash adresy MAC: kryptograficky (SHA256) anonymní a jedinečné ID počítače
 - Časové razítko vyvolání
-- Tři octet IP adresu použít pouze k určení zeměpisného umístění
+- Tři octet IP adresa (IP adresa není úplně) používá jenom k určení zeměpisného umístění
 - Název všech argumentů a parametrů použitých. Není zákazníka hodnoty, jako jsou třeba řetězce
+- Název souboru hashované datové sady
+- Interval velikosti souboru datové sady
 - Operační systém a verze
-- Hodnota parametru--ml úloh: Hodnoty zařazené do kategorií, jako například `regression`, `binary-classification`, a `multiclass-classification`
-- [Logaritmické zaokrouhlí](https://en.wikipedia.org/wiki/Rounding#Rounding_to_a_specified_power) velikost souboru datové sady (nejbližší Mocnina 2)
-- `ExitCode` příkaz
+- Hodnota parametru--úloh: Hodnoty zařazené do kategorií, jako například `regression`, `binary-classification`, a `multiclass-classification`
+- Verze rozhraní příkazového řádku ML.NET (tj. 0.3.27703.4)
 
 Data se odesílají bezpečně na servery Microsoftu pomocí [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) technologie nachází v části s omezeným přístupem a použít v striktní bezpečnostní opatření ze zabezpečeného [služby Azure Storage](https://azure.microsoft.com/services/storage/) systémy.
 

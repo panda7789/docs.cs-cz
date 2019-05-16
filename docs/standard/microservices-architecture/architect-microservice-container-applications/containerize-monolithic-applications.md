@@ -1,15 +1,13 @@
 ---
 title: Kontejnerizování monolitických aplikací
 description: Kontejnerizování monolitických aplikací, i když není získáte všechny výhody z architektury mikroslužeb, je důležité nasazení výhod, které může doručit okamžitě.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: d1de4c4beb8c60aa543e5c71243d93b83fe52072
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 061afe86e0d38f058becde2b3afdb45b4428517a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61910819"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640819"
 ---
 # <a name="containerizing-monolithic-applications"></a>Kontejnerizování monolitických aplikací
 

@@ -2,12 +2,12 @@
 title: Statisticky vyřešené parametry typu
 description: Další informace o použití F# parametr staticky řešeného typu, který je nahrazen skutečným typem v době kompilace místo v době běhu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 9ad23a881e644dfe2bccd56fa04d3c219b51cf7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 337d4f40418ee76cb18397add27acba75f756091
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937485"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65645262"
 ---
 # <a name="statically-resolved-type-parameters"></a>Statisticky vyřešené parametry typu
 

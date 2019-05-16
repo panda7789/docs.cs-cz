@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b06e367d119a93e872325a85cd951cc5087068be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14fbcbbd2e4042fa4f25b3c8993cf47fefd95052
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650229"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644988"
 ---
 # <a name="custom-timespan-format-strings"></a>Vlastní řetězce formátu TimeSpan
 

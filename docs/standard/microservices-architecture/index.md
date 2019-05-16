@@ -1,15 +1,13 @@
 ---
 title: Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Mikroslužby jsou modulární a umožňují nezávislé nasazení služby. Kontejnery dockeru (pro systémy Linux a Windows) zjednodušit nasazování a testování seskupí služby a jeho závislosti do jedné jednotky, které je potom spouštět v izolovaném prostředí.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: e1b36f5a6ddc2176e344dfe2a216429190dcc1dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bbd72b02ae446bbd0df31889679023d3b5040db8
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615143"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644414"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET
 

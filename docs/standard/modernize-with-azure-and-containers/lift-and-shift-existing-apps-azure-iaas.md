@@ -1,15 +1,13 @@
 ---
 title: Zvedněte a shift existujících aplikací .NET do Azure IaaS (infrastruktura připravených pro Cloud)
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 0f9ff19c8e346560960a09d3b7c52976c478f2f3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 24e413ad82742067b2fee6cd3a7a99e6f0f87b0a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651178"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65643710"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Zvedněte a shift existujících aplikací .NET do Azure IaaS (infrastruktura připravených pro Cloud)
 

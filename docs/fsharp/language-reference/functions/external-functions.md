@@ -2,12 +2,12 @@
 title: Externí funkce
 description: Další informace o F# jazykovou podporu pro volání funkcí v nativním kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 86ea78844fb812361233f8360c377465d83be203
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73e38d8942bfc8ddb3c51d126d7678e84903326b
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934625"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65642050"
 ---
 # <a name="external-functions"></a>Externí funkce
 

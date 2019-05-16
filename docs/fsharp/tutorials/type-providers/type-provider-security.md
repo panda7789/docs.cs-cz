@@ -2,12 +2,12 @@
 title: Zabezpečení zprostředkovatele typů
 description: Další informace o zabezpečení zprostředkovatele typů v F#, jak změnit nastavení vztahu důvěryhodnosti pro poskytovatele typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 9ccb33d7298736c3d6b54980b6fe09bc9f2e0259
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26f95ad3950b37a668c497f293b9941ed13a18c7
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968230"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641840"
 ---
 # <a name="type-provider-security"></a>Zabezpečení zprostředkovatele typů
 

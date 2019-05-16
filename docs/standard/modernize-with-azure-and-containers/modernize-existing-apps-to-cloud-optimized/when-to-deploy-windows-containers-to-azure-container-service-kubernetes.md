@@ -1,15 +1,13 @@
 ---
 title: Kdy nasadit kontejnery Windows do Azure Container Service (Kubernetes)
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Kdy nasadit kontejnery Windows do Azure Container Service (Kubernetes)
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: 0b803b104f905fddac7939d7b070c206aabffeda
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 921767b52f2b0d80f2d31d972b65ac7551d2f7c5
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011967"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65643562"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-service-that-is-kubernetes"></a>Kdy nasadit kontejnery Windows do Azure Container Service (Kubernetes)
 

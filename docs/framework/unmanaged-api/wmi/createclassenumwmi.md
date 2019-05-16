@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a4d2c2bd28640d0ac7124f8e0864e9e72fb1eb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3777319f818b7652157147f458b81d9935805b1
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61935626"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636992"
 ---
 # <a name="createclassenumwmi-function"></a>CreateClassEnumWmi – funkce
 Vrátí enumerátor pro všechny třídy, které splňují kritéria zadaná výběru.

@@ -1,15 +1,13 @@
 ---
 title: Co je Docker?
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Co je Docker?
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 0493e7c08a742abed26ff00ce84b9d77da73ea63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f7844f51e96914c1432332d9b641ea65bf48f07
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025629"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644227"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 

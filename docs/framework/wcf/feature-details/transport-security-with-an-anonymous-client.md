@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: 20d7e59ba2b4b9dedc0b0daff1c1aa9c5210e61b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aac3b2ac6cfcca137bddaefafd290e744ee991eb
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932941"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65637438"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Zabezpečení přenosu s anonymním klientem
 
@@ -47,7 +47,7 @@ Následující kód ukazuje, jak vytvořit koncový bod pomocí zabezpečení p�
 [!code-csharp[c_SecurityScenarios#5](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#5)]
 [!code-vb[c_SecurityScenarios#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#5)]
 
-### <a name="configuration"></a>Konfigurace
+### <a name="configuration"></a>Konfiguraci
 
 Následující kód nastaví stejný koncový bod pomocí konfigurace. Klient není ověřována každý použitý mechanizmus a proto je anonymní.
 
@@ -94,7 +94,7 @@ Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z t
 [!code-csharp[c_SecurityScenarios#6](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#6)]
 [!code-vb[c_SecurityScenarios#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#6)]
 
-### <a name="configuration"></a>Konfigurace
+### <a name="configuration"></a>Konfiguraci
 
 Následující konfigurace lze namísto kódu k nastavení služby Azure.
 

@@ -2,12 +2,12 @@
 title: Funkce
 description: Další informace o funkcích v F# a jak F# podporuje běžné konstrukce funkčního programování.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6e9ef916388745d2dd6874295d06dca656971b3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f68a36de7af2bdb803b0b633929aa472806f61aa
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996785"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65645403"
 ---
 # <a name="functions"></a>Funkce
 
@@ -38,7 +38,7 @@ V předchozím příkladu je název funkce `f`, má argument hodnotu `x`, která
 
 Funkce mohou být označeny `inline`. Informace o `inline`, naleznete v tématu [vložené funkce](../functions/inline-functions.md).
 
-## <a name="scope"></a>Rozsah
+## <a name="scope"></a>Scope
 
 Na libovolné úrovni oboru, než je rozsah modulu není chybu pro opětovné použití názvu hodnotě nebo funkci. Pokud je znovu použít název, název deklarován později zastiňuje název deklarovaný dříve. V oboru nejvyšší úrovně v modulu, musí být jedinečné názvy. Například následující kód vygeneruje chybu, když se objeví v oboru modulu, ale ne v případě, že se zobrazí uvnitř funkce:
 

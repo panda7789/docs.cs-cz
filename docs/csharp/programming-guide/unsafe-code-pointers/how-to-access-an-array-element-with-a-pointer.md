@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], array access
 ms.assetid: 6c46f2af-a730-4855-8638-f136d9abaa12
-ms.openlocfilehash: 7b2991776ca032aa53111187a061835725cfe223
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1538068f3ba37a7637e7dc3913e9511d4380daf
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708872"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65635191"
 ---
 # <a name="how-to-access-an-array-element-with-a-pointer-c-programming-guide"></a>Postupy: přístup k elementu pole pomocí ukazatele (C# Programming Guide)
 
@@ -44,8 +44,6 @@ Všimněte si, že výraz `charPointer[i]` je ekvivalentní výraz `*(charPointe
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)
-- [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Typy](../../../csharp/language-reference/keywords/types.md)
 - [unsafe](../../../csharp/language-reference/keywords/unsafe.md)
 - [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)

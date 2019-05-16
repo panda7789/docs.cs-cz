@@ -9,12 +9,12 @@ helpviewer_keywords:
 - pipeline processing
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a61f56eca242db65bd555553132450c3f8af7f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76a5c32660c8a08ef34c40f8f4ee9430e5ead5c8
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909438"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644280"
 ---
 # <a name="memory--and-span-related-types"></a>Typy související s pamětí a rozpětí
 

@@ -5,12 +5,12 @@ ms.custom: updateeachrelease
 author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: 401073d29ca0a0bb0b1511e65cd1bad31e1bbceb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a92286d23b5adee268b4635fbbdec0f5c052e1db
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643800"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65636452"
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Instalace rozhraní .NET Framework v systému Windows XP a Windows Server 2003
 
@@ -21,7 +21,7 @@ Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rámec 4.8 .NET]https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Není podporováno ve Windows XP a Windows Server 2003. Je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Není podporováno ve Windows XP a Windows Server 2003. Je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update).
 
 ## <a name="net-framework-403"></a>.NET Framework 4.0.3
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-ms.openlocfilehash: 9874b71462fb66828f6baeef4f46ad93899d4cc8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d08dd0c68a11ddf73c19a1e09bc8c59937708553
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607987"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634755"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro dokumentační značky (Průvodce programováním v C#)
 Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru kde Dokumentační komentář začíná a končí. Můžete použít následující typy oddělovače se značkami dokumentace XML:  
@@ -81,6 +81,6 @@ Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+- [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/index.md)
 - [/ DOC (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)
-- [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+- [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/index.md)

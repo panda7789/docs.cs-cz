@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: b7a6ae343feae7c28fb7debdc8a6b617872d262f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 286ffdb73425794e5979cde902e21ebd90a26969
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019376"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644306"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
