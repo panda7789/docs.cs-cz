@@ -1,15 +1,13 @@
 ---
 title: Stav a data v aplikacích Dockeru
 description: Další informace k dispozici možnost pro uložení stavu v kontejnerizovaných aplikací.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 30dde3ce44aa61fff3fad1841ae4a8b941573877
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc171a419632f2ac61c7c9bf6b201b84e0691c3a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795442"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641251"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 

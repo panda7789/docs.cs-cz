@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <startup> element
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-ms.openlocfilehash: 5047cb0ab1c8206abd88dc795e50272d69f1fd3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d98f8d672ed1de1a5065a0390dba29992bcc1b39
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701447"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634461"
 ---
 # <a name="startup-element"></a>\<Po spuštění > – element
 

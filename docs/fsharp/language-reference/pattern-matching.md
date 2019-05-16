@@ -2,12 +2,12 @@
 title: Porovnávání vzorů
 description: Zjistěte, jak vzorky se používají v F# k porovnání dat pomocí logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.
 ms.date: 05/16/2016
-ms.openlocfilehash: bb6b41f6d15612e4a65abd4a3d5d7291d84a8f3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f76a5fb675f83df87dd896f471a3552495f39e7e
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795457"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65641771"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -29,7 +29,7 @@ Každý vzorek se chová jako pravidlo pro transformování vstupu nějakým zp�
 
 Podporované vzory jsou uvedeny v následující tabulce. V době běhu vstup je testován oproti každému z následujících vzorů v uvedeném pořadí v tabulce a vzory se používají rekurzivně, od nejprve na poslední, jak se objeví ve vašem kódu a zleva doprava pro vzory na každém řádku.
 
-|Název|Popis|Příklad|
+|Name|Popis|Příklad|
 |----|-----------|-------|
 |Konstantní vzorek|Všechny číselné, znak, nebo textový literál, konstanta výčtu nebo definovaný identifikátor literálu|`1.0`, `"test"`, `30`, `Color.Red`|
 |Vzor identifikátoru|Hodnota case diskriminované sjednocení, popisku výjimky nebo případ aktivního vzoru|`Some(x)`<br /><br />`Failure(msg)`|
