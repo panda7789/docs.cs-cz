@@ -1,1 +1,9 @@
-<span data-ttu-id="e52a3-101">Kódování Unicode</span><span class="sxs-lookup"><span data-stu-id="e52a3-101">Unicode</span></span>
+---
+ms.openlocfilehash: 6d93c0f9d10bc8c9725c69f2961ad33781da49f4
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669152"
+---
+<span data-ttu-id="c6071-101">Kódování Unicode</span><span class="sxs-lookup"><span data-stu-id="c6071-101">Unicode</span></span>

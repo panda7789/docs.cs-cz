@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 69bed3e0dd65911ee931cd9c9392152be7d7e570
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 0bdb7fd634853fa194008b9e944c7e79c7e15cbd
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696828"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669490"
 ---
-<span data-ttu-id="439cc-101">Windows Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="439cc-101">Windows Internet Explorer</span></span>
+<span data-ttu-id="0b734-101">Windows Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="0b734-101">Windows Internet Explorer</span></span>

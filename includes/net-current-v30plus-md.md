@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 906009e0171b337bb2e458815d8ef9cf6f8af18f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e44d9f97b852a8b7275d3e526d51a463f019f924
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766137"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65672866"
 ---
-<span data-ttu-id="b30b0-101">4.6, 4.5.2, 4.5.1, 4.5, 4, 3.5 SP1, 3.5, 3.0 SP1, 3.0</span><span class="sxs-lookup"><span data-stu-id="b30b0-101">4.6, 4.5.2, 4.5.1, 4.5, 4, 3.5 SP1, 3.5, 3.0 SP1, 3.0</span></span>
+<span data-ttu-id="2a381-101">4.6, 4.5.2, 4.5.1, 4.5, 4, 3.5 SP1, 3.5, 3.0 SP1, 3.0</span><span class="sxs-lookup"><span data-stu-id="2a381-101">4.6, 4.5.2, 4.5.1, 4.5, 4, 3.5 SP1, 3.5, 3.0 SP1, 3.0</span></span>

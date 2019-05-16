@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: fbe0bd6df38a0b224f914e6748d462aa056ff4cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd23a128e1f47e957b877ae1bb8cdf3e0baffe60
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704971"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669414"
 ---
-<span data-ttu-id="e2136-101">.NET Framework 2.0 Service Pack 1</span><span class="sxs-lookup"><span data-stu-id="e2136-101">.NET Framework 2.0 Service Pack 1</span></span>
+<span data-ttu-id="0eee3-101">.NET Framework 2.0 Service Pack 1</span><span class="sxs-lookup"><span data-stu-id="0eee3-101">.NET Framework 2.0 Service Pack 1</span></span>

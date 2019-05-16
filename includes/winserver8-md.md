@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 159bb0322c76672065a0b50b0eb496853e0aca0a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c98ea5139b7890e7331dce57dcfe8afc5d81438
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938317"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65671386"
 ---
-<span data-ttu-id="c40a7-101">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="c40a7-101">Windows Server 2012</span></span>
+<span data-ttu-id="21d16-101">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="21d16-101">Windows Server 2012</span></span>

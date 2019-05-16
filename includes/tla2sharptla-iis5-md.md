@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 3470a986f1b6d9f3f1715d5a174d8439d63284d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 159bdd1830db6b52863c1a3c5dfff5879f321a09
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61981423"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65671087"
 ---
- <span data-ttu-id="301fd-101">IIS</span><span class="sxs-lookup"><span data-stu-id="301fd-101">IIS</span></span> 
+ <span data-ttu-id="ab023-101">IIS</span><span class="sxs-lookup"><span data-stu-id="ab023-101">IIS</span></span> 

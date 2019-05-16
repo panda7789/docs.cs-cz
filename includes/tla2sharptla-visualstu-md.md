@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 91b163a97867c591a7ecc9961dd251208ca0ce01
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ca4e3ef7fc3f0dd2469760fa178a456abcbe6798
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696409"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65671934"
 ---
-<span data-ttu-id="d981a-101">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d981a-101">Visual Studio</span></span>
+<span data-ttu-id="95b7c-101">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="95b7c-101">Visual Studio</span></span>

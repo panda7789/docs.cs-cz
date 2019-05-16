@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 938e724f946f24ab3a228af77fd90ac48e4d54a0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e4d45ef84910454843905fdb521863c8e96ee19
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670209"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65671875"
 ---
-<span data-ttu-id="6941f-101">Internetová informační služba 7,0</span><span class="sxs-lookup"><span data-stu-id="6941f-101">IIS 7.0</span></span>
+<span data-ttu-id="ab359-101">Internetová informační služba 7,0</span><span class="sxs-lookup"><span data-stu-id="ab359-101">IIS 7.0</span></span>

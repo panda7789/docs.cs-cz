@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: defd9b3aabbb23d0bbcbfa17c562365c5a52eb65
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7340463429e5c6c6a6de3d7e1b3835a0d9a03a20
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696474"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65672129"
 ---
-<span data-ttu-id="be450-101">Globální mezipaměť sestavení (GAC)</span><span class="sxs-lookup"><span data-stu-id="be450-101">global assembly cache (GAC)</span></span>
+<span data-ttu-id="faa09-101">Globální mezipaměť sestavení (GAC)</span><span class="sxs-lookup"><span data-stu-id="faa09-101">global assembly cache (GAC)</span></span>

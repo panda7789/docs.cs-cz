@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: b67bb642da2a08b86fe053f7202f67980b968464
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49858ddd2235d732a252249d52abee7e82b44797
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784228"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65670894"
 ---
-<span data-ttu-id="ad8d6-101">Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="ad8d6-101">Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>
+<span data-ttu-id="fe499-101">Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="fe499-101">Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>
