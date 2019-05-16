@@ -17,10 +17,10 @@ ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 053df7eeba10938f1d1d749e856f64d179d471d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 05/15/2019
 ms.locfileid: "64664680"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
@@ -158,7 +158,7 @@ ms.locfileid: "64664680"
 |`${` *Jméno* `}`|Nahradí podřetězec odpovídající pojmenované skupině *název*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|  
 |`$$`|Nahradí literál "$".|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|  
 |`$&`|Nahradí kopii celé shody.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|  
-|``$` ``| Nahradí celý text vstupního řetězce před shodou. |`B+`|``$` ``|`"AABBCC"`|`"AAAACC"`|  
+|``$` ``|Nahradí celý text vstupního řetězce před shodou.|`B+`|``$` ``|`"AABBCC"`|`"AAAACC"`|  
 |`$'`|Nahradí celý text vstupního řetězce za shodou.|`B+`|`$'`|`"AABBCC"`|`"AACCCC"`|  
 |`$+`|Nahradí poslední skupinu, která byla zachycena.|`B+(C+)`|`$+`|`"AABBCCDD"`|`"AACCDD"`|  
 |`$_`|Nahradí celý vstupní řetězec.|`B+`|`$_`|`"AABBCC"`|`"AAAABBCCCC"`|  
