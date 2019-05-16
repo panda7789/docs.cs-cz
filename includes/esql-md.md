@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 8758e5c8cba58ace097606f18dbf3bbbf0afb61b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10c58c6240bfcba1c085e5e018b72f101f444d9b
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760233"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65634248"
 ---
-<span data-ttu-id="4bef9-101">Entity SQL</span><span class="sxs-lookup"><span data-stu-id="4bef9-101">Entity SQL</span></span>
+<span data-ttu-id="2a684-101">Entity SQL</span><span class="sxs-lookup"><span data-stu-id="2a684-101">Entity SQL</span></span>

@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 2504575346cece1887f998d2d76408a38af5141e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7b23db4ff10307ceeb630039ad85a6e9165a54b1
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048105"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65670176"
 ---
-<span data-ttu-id="ab84f-101">Windows Server 2008</span><span class="sxs-lookup"><span data-stu-id="ab84f-101">Windows Server 2008</span></span>
+<span data-ttu-id="6efc6-101">Windows Server 2008</span><span class="sxs-lookup"><span data-stu-id="6efc6-101">Windows Server 2008</span></span>

@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 3e6e390b5027c69952c91095323483e7676fe30b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 33d3e3f77441e5c31a894fe2bac4a07bf481e827
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875446"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669129"
 ---
-<span data-ttu-id="0a2fb-101">.NET Framework 4.5.2</span><span class="sxs-lookup"><span data-stu-id="0a2fb-101">.NET Framework 4.5.2</span></span>
+<span data-ttu-id="82de8-101">.NET Framework 4.5.2</span><span class="sxs-lookup"><span data-stu-id="82de8-101">.NET Framework 4.5.2</span></span>

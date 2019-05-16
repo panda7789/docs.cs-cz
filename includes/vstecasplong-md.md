@@ -1,1 +1,9 @@
-<span data-ttu-id="02a7b-101">ASP.NET 2,0</span><span class="sxs-lookup"><span data-stu-id="02a7b-101">ASP.NET 2.0</span></span>
+---
+ms.openlocfilehash: f7fd791aab79cfad3ea7474aab12ff2c66ddd530
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65639149"
+---
+<span data-ttu-id="2db0a-101">ASP.NET 2,0</span><span class="sxs-lookup"><span data-stu-id="2db0a-101">ASP.NET 2.0</span></span>

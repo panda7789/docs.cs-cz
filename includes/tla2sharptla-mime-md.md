@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 2d4aa5a5271bf55bf5139dda546f0f30ba06a6bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 14063f576980c6e680230142d441db4209ab917f
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61981418"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669336"
 ---
-<span data-ttu-id="baa92-101">MIME</span><span class="sxs-lookup"><span data-stu-id="baa92-101">MIME</span></span>
+<span data-ttu-id="eba5f-101">MIME</span><span class="sxs-lookup"><span data-stu-id="eba5f-101">MIME</span></span>

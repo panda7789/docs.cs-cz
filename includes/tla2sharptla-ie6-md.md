@@ -1,1 +1,9 @@
-<span data-ttu-id="fbf4b-101">Microsoft Internet Explorer 6</span><span class="sxs-lookup"><span data-stu-id="fbf4b-101">Microsoft Internet Explorer 6</span></span>
+---
+ms.openlocfilehash: b120695fc41ca97c99d622eee49d7232cbecb107
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65669754"
+---
+<span data-ttu-id="2bd85-101">Microsoft Internet Explorer 6</span><span class="sxs-lookup"><span data-stu-id="2bd85-101">Microsoft Internet Explorer 6</span></span>

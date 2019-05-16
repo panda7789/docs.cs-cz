@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: eefe0ba7cb53755354e9a58de8b8c47aa6d9b6c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ffae0c2b76459e7fd7a5f28ffd848e69bd8082c
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920050"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633284"
 ---
-<span data-ttu-id="49732-101">.NET Framework 4 Client Profile</span><span class="sxs-lookup"><span data-stu-id="49732-101">.NET Framework 4 Client Profile</span></span>
+<span data-ttu-id="43c7e-101">.NET Framework 4 Client Profile</span><span class="sxs-lookup"><span data-stu-id="43c7e-101">.NET Framework 4 Client Profile</span></span>

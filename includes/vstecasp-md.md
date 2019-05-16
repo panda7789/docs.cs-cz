@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 171bae486f5da291eb8f7edbdd8df641ddb9aa11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ae5d635bbdab43d256103ed46377d63a5ddfaf2b
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688514"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633277"
 ---
-<span data-ttu-id="4a775-101">ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4a775-101">ASP.NET</span></span>
+<span data-ttu-id="f6e13-101">ASP.NET</span><span class="sxs-lookup"><span data-stu-id="f6e13-101">ASP.NET</span></span>
