@@ -1,1 +1,0 @@
-<span data-ttu-id="24c63-101">operační systém Windows 7</span><span class="sxs-lookup"><span data-stu-id="24c63-101">Windows°7 operating system</span></span>

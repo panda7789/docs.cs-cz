@@ -1,1 +1,0 @@
-<span data-ttu-id="544de-101">Internet Information Services (IIS) 6.0</span><span class="sxs-lookup"><span data-stu-id="544de-101">Internet Information Services (IIS) 6.0</span></span>

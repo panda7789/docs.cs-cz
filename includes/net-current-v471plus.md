@@ -1,1 +1,0 @@
-<span data-ttu-id="db7a1-101">Dostupné od verze 4.7.1</span><span class="sxs-lookup"><span data-stu-id="db7a1-101">Available since 4.7.1</span></span>
