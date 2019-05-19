@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-ms.openlocfilehash: fddb59fc32feabf708e209ac4a5e78a14585fa66
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0c11937f1a0300c4a376657d423ef348a844f700
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637558"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880654"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid pomocí Návrháře
 
@@ -79,7 +79,7 @@ ms.locfileid: "65637558"
 
 1. Vyberte <xref:System.Windows.Forms.DataGrid> ovládací prvek na formuláři.
 
-2. V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnosti a klikněte na tlačítko **tlačítko se třemi tečkami** (![VisualStudioEllipsesButton snímek obrazovky](../media/vbellipsesbutton.png " vbEllipsesButton")) tlačítko.
+2.  V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnosti a klikněte na tlačítko **tlačítko se třemi tečkami** (![The třemi tečkami (...) v okně Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) tlačítko.
 
 3. V **Editor kolekce styl DataGridTableStyle** dialogové okno, klikněte na tlačítko **přidat** styl tabulky přidat do kolekce.
 
@@ -89,7 +89,7 @@ ms.locfileid: "65637558"
 
      Název mapování slouží k určení, jaký styl tabulky je nutné používat s které tabulky.
 
-5. V **Editor kolekce styl DataGridTableStyle**, vyberte <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnosti a klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton ")).
+5.  V **Editor kolekce styl DataGridTableStyle**, vyberte <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnosti a klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)).
 
 6. V **Editor kolekce Styl DataGridColumnStyle** dialogovém okně Přidat styly sloupců styl tabulky, který jste vytvořili.
 

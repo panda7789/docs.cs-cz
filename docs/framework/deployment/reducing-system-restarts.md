@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b7e8a4d92661b974fba7c88989891b30e54e94d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4a236b3b4b5c4cde66bad2b460637bb533b764be
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645017"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881606"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Omezení restartů systému při instalaci rozhraní .NET Framework 4.5
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Použije instalační program [správce restartování](https://go.microsoft.com/fwlink/?LinkId=231425) zabraňuje systému v restartování během instalace. Pokud vaše aplikace Instalační program nainstaluje rozhraní .NET Framework, můžete rozhraní s správce restartování, abyste mohli využít tuto funkci. Další informace najdete v tématu [jak: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
@@ -26,8 +26,7 @@ ms.locfileid: "61645017"
   
  Pokud správce restartování zjistí situaci, která bude vyžadovat restart systému, i v případě používání aplikací zavřete, zpráva se nezobrazí.  
   
- ![Zavřete dialogové okno aplikace](../../../docs/framework/deployment/media/closeapplicationdialog.png "CloseApplicationDialog")  
-Zavření aplikací rozhraní .NET Framework, které se používají k zadání  
+ ![Dialogové okno zavřít aplikaci výpis aktuálně spuštěné.](./media/reducing-system-restarts/close-application-dialog.png)  
   
 ## <a name="using-a-chained-installer"></a>Pomocí zřetězené instalačního programu  
  Pokud chcete dále distribuovat rozhraní .NET Framework s vaší aplikací, ale chcete použít vlastní instalační program a uživatelského rozhraní, můžete zahrnout instalaci (řetězec) rozhraní .NET Framework pro váš proces instalace. Další informace o zřetězené instalace najdete v tématu [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md). Ke snížení restartování systému v zřetězené instalace Instalační služby rozhraní .NET Framework poskytuje vašem instalačním programu se seznamem aplikací zavřete. Instalační program musí poskytnout tyto informace pro uživatele prostřednictvím uživatelského rozhraní, jako je okno se zprávou, získání odpovědi uživatele a pak předejte odpověď zpět do instalačního programu .NET Framework. Příklad zřetězené instalačního programu, najdete v článku [jak: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  

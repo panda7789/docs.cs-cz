@@ -6,12 +6,12 @@ helpviewer_keywords:
 - rows [Windows Forms], new records
 - DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
-ms.openlocfilehash: ace4b1c32ac30c54b56e2adbbbbf6af0450a4740
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b28a8a8fc2d75f80a14447008c850de63e4e04b3
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651543"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882438"
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView
 Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplikaci, bude často chcete dát uživatelům možnost přidávat nové řádky dat do úložiště. <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje tuto funkci poskytnutím řádek pro nové záznamy, které je vždy zobrazen jako poslední řádek. Je označené atributem symbol hvězdičky (*) v záhlaví řádku. Následující části popisují některé z akcí, byste měli zvážit, když program s řádkem pro nové záznamy povoleno.  
@@ -47,7 +47,7 @@ Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplika
 ## <a name="sorting"></a>Řazení  
  V režim bez vazby, se nové záznamy vždy přidána na konec objektu <xref:System.Windows.Forms.DataGridView> i v případě, že uživatel má Seřadit obsah <xref:System.Windows.Forms.DataGridView>. Uživatel bude muset nevztahují řazení znovu řadit řádek do správného umístění; Toto chování je podobné <xref:System.Windows.Forms.ListView> ovládacího prvku.  
   
- V datech budou provázaná a virtuální režimů vložení chování při použití řazení závislé na implementaci datového modelu. Pro [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], řádek jsou okamžitě rozděleny na správné pozice.  
+ V datech budou provázaná a virtuální režimů vložení chování při použití řazení závislé na implementaci datového modelu. Pro technologii ADO.NET řádek bezprostředně rozděleny na správné umístění.  
   
 ## <a name="other-notes-on-the-row-for-new-records"></a>Další poznámky na řádku pro nové záznamy  
  Nelze nastavit <xref:System.Windows.Forms.DataGridViewRow.Visible%2A> vlastnosti tohoto řádku na `false`. <xref:System.InvalidOperationException> Dojde při pokusu o to.  

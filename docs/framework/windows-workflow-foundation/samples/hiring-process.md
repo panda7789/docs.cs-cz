@@ -2,12 +2,12 @@
 title: Proces náboru
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: 87e49613214a6a608bd8e22dc9470250c90e220a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 685798ceab5e14169af6bdf16ce30a0f6548dc8c
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622483"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881902"
 ---
 # <a name="hiring-process"></a>Proces náboru
 Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit zasílání zpráv a dva pracovní postupy hostovaný jako služeb pracovních postupů. Tyto pracovní postupy jsou součástí infrastruktury IT fiktivní společnosti s názvem Contoso, Inc.  
@@ -126,7 +126,7 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
 |Trvalý časovače|`ResumeRequestService` používá k definování dobu trvání úlohy účtování trvalý časovače (po vypršení platnosti vypršení časového limitu odesílání úlohy je uzavřený).|ResumeRequestService|  
 |Transakce|<xref:System.Activities.Statements.TransactionScope> slouží k zajištění konzistence dat v rámci provedení několik aktivit (při přijetí nového obnovit).|ResumeRequestService|  
 |Transakce|Vlastní trvalého účastníka (`HiringRequestPersistenceParticipant`) a vlastní sledování účastník (`HistoryFileTrackingParticipant`) použít stejnou transakci.|HiringRequestService|  
-|Pomocí [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikací.|Pracovní postupy jsou přístupné ze dvou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikací.|InternalClient / CareersWebSite|  
+|Pomocí [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v aplikacích technologie ASP.NET.|Pracovní postupy jsou přístupné ze dvou aplikací technologie ASP.NET.|InternalClient / CareersWebSite|  
   
 ## <a name="data-storage"></a>Úložiště dat  
  Data uložená v databázi serveru SQL Server s názvem `ContosoHR` (skript pro vytvoření této databáze se nachází v `DbSetup` složky). Instance pracovního postupu jsou uloženy v databázi serveru SQL Server s názvem `InstanceStore` (skriptů pro vytváření v úložišti instancí jsou součástí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] distribuce).  

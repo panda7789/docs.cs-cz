@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: 9fead8a5d54fba7232831bba349f27b7eed4657b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d343f7be3e26575ee9a1e9ccae9f17314db10ac5
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583785"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882103"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET Framework
 Zprostředkovatel dat .NET Framework se používá pro připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do <xref:System.Data.DataSet> aby bylo možné vystavit uživateli podle potřeby, kombinované s daty z více zdrojů nebo vzdálený mezi vrstvami. Zprostředkovatelé dat .NET framework jsou zjednodušené, vytvoření minimální vrstvy mezi zdrojem dat a kódu, aniž byste museli obětovat funkčnost zvýšit výkon.  
@@ -74,7 +74,7 @@ using System.Data.SqlClient;
 ## <a name="net-framework-data-provider-for-ole-db"></a>Zprostředkovatel dat .NET framework pro OLE DB  
  Zprostředkovatele dat .NET Framework pro OLE DB (OleDb) využívá nativní OLE DB pomocí zprostředkovatele komunikace s objekty COM k zajištění přístupu k datům. Zprostředkovatel dat .NET Framework pro OLE DB podporuje místní a distribuované transakce. Pro distribuované transakce zprostředkovatele dat .NET Framework pro OLE DB, ve výchozím nastavení, automaticky využívá v transakci a získá podrobnosti o transakci ze Windows součásti služby. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
- V následující tabulce jsou uvedeny zprostředkovatelů, které byly testovány pomocí [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+ V následující tabulce jsou uvedeny zprostředkovatelů, které byly testovány pomocí ADO.NET.  
   
 |Ovladač|Poskytovatel|  
 |------------|--------------|  
@@ -83,11 +83,11 @@ using System.Data.SqlClient;
 |Microsoft.Jet.OLEDB.4.0|Zprostředkovatel OLE DB pro Microsoft Jet|  
   
 > [!NOTE]
->  Pomocí databáze aplikace Access (Jet) jako zdroj dat pro vícevláknové aplikace, jako například [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikací, se nedoporučuje. Pokud musíte použít Jet jako zdroj dat pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, pamatujte, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikací, připojení k databázi aplikace Access můžou mít problémy s připojením.  
+>  Nedoporučujeme používat databázi aplikace Access (Jet) jako zdroj dat pro vícevláknové aplikace, jako jsou třeba aplikace ASP.NET. Pokud Jet je nutné použít jako zdroj dat pro aplikaci ASP.NET, uvědomte si, že aplikace ASP.NET připojení k databázi aplikace Access můžou mít problémy s připojením.  
   
  Zprostředkovatel dat .NET Framework pro OLE DB nepodporuje rozhraní OLE DB verze 2.5. Zprostředkovatelé technologie OLE DB, která vyžadují podporu pro rozhraní OLE DB 2.5 nebude fungovat správně s zprostředkovatele dat .NET Framework pro OLE DB. To zahrnuje zprostředkovatel Microsoft OLE DB pro Exchange a zprostředkovatele Microsoft OLE DB pro publikování na Internetu.  
   
- Zprostředkovatel dat .NET Framework pro OLE DB nefunguje s zprostředkovatele OLE DB pro rozhraní ODBC (MSDASQL). Pro přístup k pomocí zdroje dat ODBC [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], použijte zprostředkovatele dat .NET Framework pro ODBC.  
+ Zprostředkovatel dat .NET Framework pro OLE DB nefunguje s zprostředkovatele OLE DB pro rozhraní ODBC (MSDASQL). Chcete-li přístup ke zdroji dat rozhraní ODBC použitím technologie ADO.NET, použijte zprostředkovatele dat .NET Framework pro ODBC.  
   
  Zprostředkovatel dat .NET framework pro OLE DB třídy se nacházejí v <xref:System.Data.OleDb> oboru názvů. Následující příklad kódu ukazuje, jak zahrnout `System.Data.OleDb` oboru názvů ve svých aplikacích.  
   
@@ -102,7 +102,7 @@ using System.Data.OleDb;
 ## <a name="net-framework-data-provider-for-odbc"></a>Zprostředkovatel dat .NET framework pro ODBC  
  Zprostředkovatele dat .NET Framework pro ODBC (Odbc) využívá nativní správce ovladačů ODBC (DM) k zajištění přístupu k datům. Zprostředkovatel dat rozhraní ODBC podporuje místní a distribuované transakce. Pro distribuované transakce poskytovatel dat rozhraní ODBC, ve výchozím nastavení, automaticky využívá v transakci a získá podrobnosti o transakci ze Windows součásti služby. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
- V následující tabulce jsou uvedeny testovat pomocí ovladače ODBC [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+ V následující tabulce jsou uvedeny ovladače rozhraní ODBC testováním s využitím ADO.NET.  
   
 |Ovladač|  
 |------------|  

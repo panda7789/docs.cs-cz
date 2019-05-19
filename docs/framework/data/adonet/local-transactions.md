@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: 1897116389aaa1b4c953612364c7302e9ca2f35a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f686c20a9afd981405e32854fcc594abac78c85c
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584474"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882032"
 ---
 # <a name="local-transactions"></a>Místní transakce
-Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete vazby společně více úloh, takže se provést jako jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve aktualizuje tabulku s informacemi o pořadí. Za druhé aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazeny. Pokud buď úloha selže, pak obě aktualizace jsou vrácena zpět.  
+Transakce v rozhraní ADO.NET se používají, když chcete vazby společně více úloh, takže se provést jako jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve aktualizuje tabulku s informacemi o pořadí. Za druhé aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazeny. Pokud buď úloha selže, pak obě aktualizace jsou vrácena zpět.  
   
 ## <a name="determining-the-transaction-type"></a>Určení typu transakce  
  Transakce se považuje za místní transakce, když je jednofázové transakce a zpracovává přímo v databázi. Transakce se považuje za distribuovanou transakci, když koordinuje přes monitorování transakce a používá pro rozlišení transakce odolný proti selhání mechanismy (například dvoufázového potvrzení).  
@@ -24,7 +24,7 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
 > Transakce jsou nejúčinnější, když se provádí na serveru. Při práci s databází serveru SQL Server, který se příliš často používá explicitní transakce, zvažte vytvoření jako uložené procedury pomocí příkazu jazyka Transact-SQL BEGIN TRANSACTION.
   
 ## <a name="performing-a-transaction-using-a-single-connection"></a>Provádění transakcí pomocí jednoho připojení  
- V [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], řídit transakce se `Connection` objektu. Můžete spustit místní transakce s `BeginTransaction` metody. Po zahájení transakce, může zařazení v transakci pomocí příkazu `Transaction` vlastnost `Command` objektu. Můžete pak potvrzení nebo vrátit zpět změny provedené ve zdroji dat na základě úspěchu nebo selhání součástí transakce.  
+ V ADO.NET, můžete řídit transakce se `Connection` objektu. Můžete spustit místní transakce s `BeginTransaction` metody. Po zahájení transakce, může zařazení v transakci pomocí příkazu `Transaction` vlastnost `Command` objektu. Můžete pak potvrzení nebo vrátit zpět změny provedené ve zdroji dat na základě úspěchu nebo selhání součástí transakce.  
   
 > [!NOTE]
 >  `EnlistDistributedTransaction` Metoda by neměla používat pro místní transakce.  
@@ -42,7 +42,7 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
   
 4. Volání <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> metodu <xref:System.Data.SqlClient.SqlTransaction> objekt dala dokončit transakce, nebo volání <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metoda k ukončení transakce. Pokud je připojení ukončen nebo odstraněn před buď <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> nebo <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metody spustily, transakce se zrušila.  
   
- Následující příklad kódu ukazuje použití transakční logiky [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] s Microsoft SQL Server.  
+ Následující příklad kódu ukazuje transakční logiky pomocí technologie ADO.NET s Microsoft SQL Server.  
   
  [!code-csharp[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/VB/source.vb#1)]  

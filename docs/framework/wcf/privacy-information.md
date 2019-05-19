@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: aaa12ca65257be2f06c84f8ff3be926ea92b0dbb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6da9e2a91fe8156c0631aa77594e3ed47d32cb8b
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651074"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882190"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Při vytvoření aplikace využívající Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaše koncové uživatele o ochraně osobních údajů. Například vaše aplikace explicitně shromažďovat informace o uživateli, nebo může požádat o nebo odeslat informace přes Internet k vašemu webovému serveru. Pokud vložíte technologie společnosti Microsoft ve vaší aplikaci, tato technologie může mít svůj vlastní chování, které můžou ovlivnit ochranu osobních údajů. WCF neodešle žádné informace o společnosti Microsoft z vaší aplikace Pokud vy nebo koncový uživatel se rozhodnete odeslat na nás.  
@@ -21,7 +21,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Záhlaví může obsahovat směrování zpráv, informace o zabezpečení, transakce a déle v závislosti na služby používané aplikace. Ve výchozím nastavení jsou obvykle šifrované zprávy. Jedinou výjimkou je při použití `BasicHttpBinding`, která je navržená pro použití s nezabezpečené, starší verze webových služeb. Při návrhu aplikace zodpovídáte za konečný návrh. Zprávy v těle SOAP obsahují data specifická pro aplikaci; Tato data, jako je například osobní informace definované aplikací, ale můžete zabezpečit pomocí funkce šifrování nebo důvěrnosti WCF. Následující části popisují funkce, které mohou mít vliv na ochranu osobních údajů.  
   
-## <a name="messaging"></a>Zasílání zpráv  
+## <a name="messaging"></a>Messaging  
  Hlavička adresy, která určuje cíl zprávy má každá zpráva WCF a kde by měly patřit odpovědi.  
   
  Součást adresy adresy koncového bodu je identifikátor URI (Uniform Resource), který identifikuje koncový bod. Adresa může být síťové adresy nebo logické adresy. Adresa může obsahovat název počítače (název hostitele, plně kvalifikovaný název domény) a IP adresu. Adresa koncového bodu může obsahovat také globálně jedinečný identifikátor (GUID), nebo kolekci identifikátorů GUID pro účely dočasné řešení umožňuje rozpoznat každou adresu. Každá zpráva obsahuje ID zprávy, které je identifikátor GUID. Tato funkce se řídí standardu WS-Addressing odkaz.  
@@ -29,7 +29,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Vrstva zasílání zpráv WCF nezapisuje žádnými osobními údaji v místním počítači. Však to může-li vývojářem služeb vytvořil službu, která poskytuje tyto informace (například pomocí v názvu koncového bodu jméno uživatele, nebo se včetně osobních údajů na webu koncový bod šířit osobní informace na úrovni sítě Služby popis jazyka, ale nevyžaduje klientů na používání protokolu https pro přístup k rozhraní jazyka WSDL). Také pokud běží Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro koncový bod, který zpřístupňuje osobní údaje, výstup nástroje můžou obsahovat tyto informace a je zapsaný do výstupního souboru místní disk.  
   
 ## <a name="hosting"></a>Hostování  
- Hostování funkcí ve službě WCF umožňuje aplikacím spustit na vyžádání nebo povolit sdílení portů mezi více aplikacemi. Aplikace WCF je možné hostovat v Internetové informační služby (IIS), podobně jako [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)].  
+ Hostování funkcí ve službě WCF umožňuje aplikacím spustit na vyžádání nebo povolit sdílení portů mezi více aplikacemi. Aplikace WCF je hostovat v Internetové informační služby (IIS), podobně jako na technologii ASP.NET.  
   
  Hostování nevystavuje žádné konkrétní informace v síti a neudržuje data na počítači.  
   
@@ -47,7 +47,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
 |Data|Úložiště|  
 |----------|-------------|  
 |Prezentace pověření, jako je například uživatelské jméno, certifikáty X.509, tokenů Kerberos a odkazy na přihlašovací údaje.|Standardní Windows přihlašovacích údajů mechanismy správy, jako je úložiště certifikátů Windows.|  
-|Členství informace o uživateli, jako jsou uživatelská jména a hesla.|[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] zprostředkovateli členství.|  
+|Členství informace o uživateli, jako jsou uživatelská jména a hesla.|Zprostředkovateli členství prostředí ASP.NET.|  
 |Informace o identitě týkající se služby používá k ověření služby pro klienty.|Adresa koncového bodu služby.|  
 |Informace o volajícím.|Protokoly auditování.|  
   

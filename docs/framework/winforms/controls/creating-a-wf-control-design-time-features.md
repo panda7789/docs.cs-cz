@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DocumentDesigner class [Windows Forms]
 - walkthroughs [Windows Forms], controls
 ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
-ms.openlocfilehash: 9f290629e50d7d791119298059277ba73d8e73eb
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 4d741beffa5649d1d1593ba3dbb7a1918b669b80
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211204"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882321"
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu
 
@@ -59,7 +59,7 @@ Návrhář pro tento ovládací prvek komunikuje s prostředím návrhu poskytno
 
 Až budete hotovi, vaše vlastní ovládací prvek bude vypadat podobně jako následující:
 
-![Možné uspořádání typu MarqueeControl](./media/demomarqueecontrol.gif "DemoMarqueeControl")
+![Aplikaci zobrazující výběr říká Text a spouštění a zastavování tlačítka.](./media/creating-a-wf-control-design-time-features/demo-marquee-control.gif)
 
 Výpis úplného kódu naleznete v tématu [jak: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120)).
 
@@ -178,7 +178,7 @@ Pokud vyvíjíte vlastní možnosti času návrhu, bude potřeba ladění ovlád
 
 2. V dialogovém okně "Stránky vlastností MarqueeControlLibrary" vyberte **ladění** stránky.
 
-3. V **spustit akci** vyberte **spustit externí Program**. Bude ladění samostatnou instanci sady Visual Studio, proto klikněte na symbol tří teček (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) tlačítko Procházet pro Visual Studio IDE. Název spustitelného souboru devenv.exe, a pokud jste nainstalovali do výchozího umístění, její cesta 9.0\Common7\IDE\devenv.exe %programfiles%\Microsoft Visual Studio.
+3. V **spustit akci** vyberte **spustit externí Program**. Bude ladění samostatnou instanci sady Visual Studio, proto klikněte na symbol tří teček (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) tlačítko Procházet pro Visual Studio IDE. Název spustitelného souboru devenv.exe, a pokud jste nainstalovali do výchozího umístění, její cesta 9.0\Common7\IDE\devenv.exe %programfiles%\Microsoft Visual Studio.
 
 4. Kliknutím na OK zavřete dialogové okno.
 

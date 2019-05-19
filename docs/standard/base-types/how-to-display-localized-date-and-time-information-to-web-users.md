@@ -15,12 +15,12 @@ dev_langs:
 - vb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b6bb41ad3743e19ae3f6ded48dd491542926010d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4c50cdf93d8cfcefeffd35290d26dfa432a241e1
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633869"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882491"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, operací, které analyzovat a formátování hodnot data a času, neměli byste tedy spoléhat na výchozí formát (což je nejčastěji formátu jazykové verze místní webový server) při interakci s uživatelem. Webové formuláře, které zpracovávají datum a čas uživatelský vstup řetězce místo toho by se měly analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času má být zobrazena na uživatele ve formátu, který odpovídá na jazykovou verzi uživatele. Toto téma ukazuje, jak to provést.  
@@ -98,7 +98,7 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, o
  Váš kód může volat buď <xref:System.DateTime.Parse%2A> nebo <xref:System.DateTime.TryParse%2A> metody pro převod uživatele řetězec představující datum a čas <xref:System.DateTime> hodnotu. Opakovaná volání metody analýzy může být vyžadováno pro jedinou operaci analýzy. V důsledku toho <xref:System.DateTime.TryParse%2A> metoda je lepší, protože vrátí `false` Pokud operace analýzy nezdaří. Naproti tomu zpracování opakovaných výjimek, které mohou být vyvolány <xref:System.DateTime.Parse%2A> metoda může být velmi náročné návrh ve webové aplikaci.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li kód zkompilovat, vytvořte [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] webové stránky bez kódu na pozadí. Zkopírujte příkladu do webové stránky, takže nahradí všechny existující kód. [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Webové stránce by měl obsahovat následující prvky:  
+ Chcete-li kód zkompilovat, vytvořte webovou stránku ASP.NET bez kódu na pozadí. Zkopírujte příkladu do webové stránky, takže nahradí všechny existující kód. Webová stránka ASP.NET by měl obsahovat následující prvky:  
   
 - A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
   

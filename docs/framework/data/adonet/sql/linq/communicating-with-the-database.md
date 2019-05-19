@@ -2,12 +2,12 @@
 title: Komunikace s databází
 ms.date: 03/30/2017
 ms.assetid: 659d9817-bcaa-457f-9639-169394177274
-ms.openlocfilehash: d767bbe706b4fc9efb00031fddf8f6bd3369b485
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7713d3cec874267ef5aea070593ca4c113eb1a34
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032406"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882074"
 ---
 # <a name="communicating-with-the-database"></a>Komunikace s databází
 Témata v této části popisují některé základní aspekty toho, jak vytvořit a udržování komunikace s databází.  
@@ -20,7 +20,7 @@ Témata v této části popisují některé základní aspekty toho, jak vytvoř
  Popisuje, jak můžete pomocí <xref:System.Data.Linq.DataContext.ExecuteCommand%2A> odesílat příkazy jazyka SQL.  
   
  [Postupy: Opakované použití připojení mezi příkazem ADO.NET a položkou DataContext](../../../../../../docs/framework/data/adonet/sql/linq/how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md)  
- Poskytuje příklady, jak používat existující [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] připojení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace.  
+ Poskytuje příklady, jak používat existující připojení ADO.NET v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

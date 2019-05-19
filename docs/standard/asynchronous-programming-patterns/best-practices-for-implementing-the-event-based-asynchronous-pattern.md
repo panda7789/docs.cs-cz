@@ -12,12 +12,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: aea2715211ad03b763aae9cadc32e97d0e06d09e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 26e1fd4231964be5448229a6b3c7d90c0ba64499
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628837"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882517"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
 Asynchronní vzor založený na událostech poskytuje účinný způsob, jak vystavit asynchronní chování v třídy pomocí známých události a delegovat sémantiku. K implementaci asynchronního vzoru založeného na událostech, budete muset postupovat podle některých zvláštní chování požadavky. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která používá asynchronní vzor založený na událostech.  
@@ -118,7 +118,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 - Zachytit žádné výjimky, které probíhá asynchronní operace a nastavte hodnotu <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=nameWithType> vlastnosti pro tuto výjimku.  
   
 ### <a name="threading-and-contexts"></a>Zřetězení a kontext  
- Pro správné fungování vaší třídy, je velmi důležité, že obslužné rutiny událostí klienta jsou vyvolány na řádné vlákna nebo kontextu pro daný aplikační model, včetně [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] a aplikace Windows Forms. Dvě důležité pomocné třídy jsou poskytovány k zajištění, že vaše asynchronní třída chová všechny aplikační model: <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager>.  
+ Pro správné fungování vaší třídy je velmi důležité, že obslužné rutiny událostí klienta jsou spuštěny na řádné vlákna nebo kontextu pro daný aplikační model, včetně aplikací ASP.NET a Windows Forms. Dvě důležité pomocné třídy jsou poskytovány k zajištění, že vaše asynchronní třída chová všechny aplikační model: <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager>.  
   
  <xref:System.ComponentModel.AsyncOperationManager> poskytuje jednu metodu <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>, která vrátí <xref:System.ComponentModel.AsyncOperation>. Vaše <em>MethodName</em>**asynchronní** volání metody <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> a používá třídu vráceného <xref:System.ComponentModel.AsyncOperation> ke sledování doby života asynchronní úlohy.  
   

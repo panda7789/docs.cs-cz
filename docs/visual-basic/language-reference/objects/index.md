@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic]
 ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
-ms.openlocfilehash: 161edd2cb3afeb6ba8b10455a1c3a2c43b90dac1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8852a3daa3cd3891d5053cc1fffe19fa310125de
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949666"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880724"
 ---
 # <a name="objects-visual-basic"></a>Objekty (Visual Basic)
 Toto téma obsahuje odkazy na další témata dokumentu za běhu jazyka Visual Basic objekty a obsahují tabulky jejich člen postupy, vlastnosti a události.  
@@ -37,9 +37,9 @@ Toto téma obsahuje odkazy na další témata dokumentu za běhu jazyka Visual B
 |`My.Computer.Registry` (<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>)|Poskytuje vlastnosti a metody pro práci v registru.|  
 |[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|Poskytuje vlastnosti pro přístup k instanci jednotlivých formulářů Windows deklaraci v aktuálním projektu.|  
 |`My.Log` (<xref:Microsoft.VisualBasic.Logging.AspLog>)|Poskytuje vlastnosti a metody pro zápis událostí a výjimek informace do součásti naslouchající protokolům aplikace pro webové aplikace.|  
-|[Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)|Získá <xref:System.Web.HttpRequest> objekt pro požadovanou stránku. `My.Request` Objekt obsahuje informace o aktuální žádosti HTTP.<br /><br /> `My.Request` Objekt je k dispozici pouze pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] aplikací.|  
+|[Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)|Získá <xref:System.Web.HttpRequest> objekt pro požadovanou stránku. `My.Request` Objekt obsahuje informace o aktuální žádosti HTTP.<br /><br /> `My.Request` Objekt je k dispozici pouze pro aplikace ASP.NET.|  
 |[Objekt My.Resources](../../../visual-basic/language-reference/objects/my-resources-object.md)|Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.|  
-|[Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)|Získá <xref:System.Web.HttpResponse> objekt, který je přidružený <xref:System.Web.UI.Page>. Tento objekt umožňuje odeslat data odpovědi HTTP do klienta a obsahuje informace o této odpovědi.<br /><br /> `My.Response` Objekt je k dispozici pouze pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] aplikací.|  
+|[Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)|Získá <xref:System.Web.HttpResponse> objekt, který je přidružený <xref:System.Web.UI.Page>. Tento objekt umožňuje odeslat data odpovědi HTTP do klienta a obsahuje informace o této odpovědi.<br /><br /> `My.Response` Objekt je k dispozici pouze pro aplikace ASP.NET.|  
 |[Objekt My.Settings](../../../visual-basic/language-reference/objects/my-settings-object.md)|Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.|  
 |`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)|Poskytuje přístup k informacím o aktuálním uživateli.|  
 |[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|Poskytuje vlastnosti pro vytváření a přístup ke jednu instanci každé webové služby, na který odkazuje aktuální projekt.|  

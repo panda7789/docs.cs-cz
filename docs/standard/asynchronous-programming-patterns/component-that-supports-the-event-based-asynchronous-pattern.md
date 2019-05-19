@@ -18,17 +18,17 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: bc19ee687b26025d3da4d66888902395b863f046
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d6c35398d54b91c9aa595ffdcde56004e59b7693
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628919"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882495"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
   
- Tento návod ukazuje, jak vytvořit komponentu, která implementuje asynchronního vzoru založeného na událostech. Je implementována pomocí pomocné třídy z <xref:System.ComponentModel?displayProperty=nameWithType> obor názvů, který zajistí, že součást správně funguje v jakékoli aplikační model, včetně [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], konzolové aplikace a aplikace Windows Forms. Tato součást je také navrhovatelé s <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku a vlastní vlastní návrháři.  
+ Tento návod ukazuje, jak vytvořit komponentu, která implementuje asynchronního vzoru založeného na událostech. Je implementována pomocí pomocné třídy z <xref:System.ComponentModel?displayProperty=nameWithType> obor názvů, který zajistí, že součást správně funguje v jakékoli aplikační model, včetně ASP.NET, konzolových aplikací a aplikací Windows Forms. Tato součást je také navrhovatelé s <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku a vlastní vlastní návrháři.  
   
  Pokud jste si prostřednictvím, budete mít aplikaci, která vypočítá prvočísel asynchronně. Vaše aplikace bude mít hlavní uživatelské vlákno rozhraní (UI) a vlákno pro každý výpočet prime číslo. I když testování, zda je hodně prime může trvat určitou dobu, hlavní vlákno uživatelského rozhraní nebude dojít k přerušení kvůli tomuto zpoždění dochází a formulář bude reagovat při výpočtech. Bude moct spustit, protože mnoho výpočtů chcete současně a selektivně zrušit probíhající výpočty.  
   

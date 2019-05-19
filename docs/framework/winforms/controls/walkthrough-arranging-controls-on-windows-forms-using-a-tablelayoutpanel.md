@@ -6,12 +6,12 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-ms.openlocfilehash: 9f72d6d560f82d7d80036f07ec865d78a4ab9955
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d36c51a3346d7d2c2aa4b7b526d590770463826e
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606404"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882448"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel
 Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.  
@@ -95,7 +95,7 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
   
 1. Vyberte <xref:System.Windows.Forms.TableLayoutPanel> v ovládacím prvku **Návrháře formulářů Windows**.  
   
-2. V **vlastnosti** windows, otevřete <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci kliknutím tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) tlačítko vedle položky **sloupce** položka.  
+2.  V **vlastnosti** windows, otevřete <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci kliknutím tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle  **Sloupce** položka.  
   
 3. Vyberte první sloupec a změňte hodnotu z jeho <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnost <xref:System.Windows.Forms.SizeType.AutoSize>. Klikněte na tlačítko **OK** pro potvrzení změny. Všimněte si, že se snižuje šířku prvního sloupce podle <xref:System.Windows.Forms.Button> ovládacího prvku. Všimněte si také, že šířka sloupce není umožňující změnu velikosti.  
   

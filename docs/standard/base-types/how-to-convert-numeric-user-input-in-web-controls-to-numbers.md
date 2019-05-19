@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29141cb43d914dd3781e9307b6a553361152a645
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5af942b5e7576c13ff7be8d11c0009fd0c4f7462
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634165"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882472"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, můžete uživatele zadat číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku v téměř neomezené množství formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Při analýze uživatelský vstup, lze následně použít formátovací úmluvy určené národní prostředí a jazykovou verzi uživatele.  
@@ -58,7 +58,7 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, m
  Váš kód může volat buď `Parse` nebo `TryParse` metoda číselného typu, který se uživatelovo zadání se převedou na. Opakovaná volání metody analýzy může být vyžadováno pro jedinou operaci analýzy. V důsledku toho `TryParse` metoda je lepší, protože se vrací `false` Pokud operace analýzy nezdaří. Naproti tomu zpracování opakovaných výjimek, které mohou být vyvolány `Parse` metoda může být velmi náročné návrh ve webové aplikaci.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li kód zkompilovat, zkopírujte ho do [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] použití modelu code-behind stránky tak, že se nahradí všechny existující kód. [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Webové stránce by měl obsahovat následující prvky:  
+ Chcete-li kód zkompilovat, zkopírujte jej do kódu stránky ASP.NET tak, aby ji nahradí všechny existující kód. Webová stránka ASP.NET by měl obsahovat následující prvky:  
   
 - A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
   
@@ -66,7 +66,7 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, m
   
 - A <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Nastavte jeho <xref:System.Web.UI.WebControls.Button.Text%2A> vlastnost "OK".  
   
- Změnit název třídy z `NumericUserInput` k názvu třídy, která je definována `Inherits` atribut [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] stránky `Page` směrnice. Změňte název `NumericInput` odkaz na název definovaný podle objektu `id` atribut [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] stránky `form` značky.  
+ Změnit název třídy z `NumericUserInput` k názvu třídy, která je definována `Inherits` atribut stránky ASP.NET `Page` směrnice. Změňte název `NumericInput` odkaz na název definovaný podle objektu `id` atribut stránky ASP.NET `form` značky.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Chcete-li zabránit uživatelům ve vkládání skript do HTML streamu, uživatelský vstup by nikdy zopakuje přímo zpět v odpověď serveru. Místo toho by měla být zakódován pomocí <xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> metody.  

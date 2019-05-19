@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
-ms.openlocfilehash: f04726bc12fdfbca530ee5533d5b8969addf962e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d38965288884bb72e102d6ec09deca57296c9b0f
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62037840"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882024"
 ---
 # <a name="how-to-connect-to-a-database"></a>Postupy: Připojení k databázi
-<xref:System.Data.Linq.DataContext> Je hlavní přenos, podle kterého připojení k databázi, načtení objektů z něj a odeslat změny zpět do něj. Můžete použít <xref:System.Data.Linq.DataContext> stejně jako byste použili [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>. Ve skutečnosti <xref:System.Data.Linq.DataContext> je inicializována s připojení nebo připojovací řetězec, který zadáte. Další informace najdete v tématu [metod DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  
+<xref:System.Data.Linq.DataContext> Je hlavní přenos, podle kterého připojení k databázi, načtení objektů z něj a odeslat změny zpět do něj. Můžete použít <xref:System.Data.Linq.DataContext> stejně jako byste použili technologie ADO.NET <xref:System.Data.SqlClient.SqlConnection>. Ve skutečnosti <xref:System.Data.Linq.DataContext> je inicializována s připojení nebo připojovací řetězec, který zadáte. Další informace najdete v tématu [metod DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  
   
  Účelem <xref:System.Data.Linq.DataContext> je převod žádostí pro objekty na dotazy SQL má být provedeno proti databázi a potom sestavit objektů mimo výsledky. <xref:System.Data.Linq.DataContext> Umožňuje [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] implementací stejný vzor jako standardní operátory dotazu operátor `Where` a `Select`.  
   

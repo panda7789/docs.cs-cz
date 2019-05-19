@@ -15,12 +15,12 @@ helpviewer_keywords:
 - DataSet class [Windows Forms], binding and Windows Forms
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
-ms.openlocfilehash: 0252259d92f08a0f871167fc7930818bab542cc5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6782261953fb5df94498deefb261407a2f0ba33a
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626786"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882400"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Tradičně datové vazby používá v rámci aplikací využít data uložená v databázích. Pomocí Windows Forms – datová vazba, můžou k datům z databází, stejně jako data v jiných strukturách, jako jsou pole a kolekce, tak dlouho, dokud jsou splněné určité minimální požadavky.  
@@ -44,12 +44,12 @@ Tradičně datové vazby používá v rámci aplikací využít data uložená v
  <xref:System.Collections.IEnumerable>  
  Ovládací prvky Windows Forms může být vázaný na zdroje dat, které podporují jenom <xref:System.Collections.IEnumerable> rozhraní, pokud jsou svázán prostřednictvím <xref:System.Windows.Forms.BindingSource> komponenty.  
   
- [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] datové objekty  
- [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] poskytuje několik datových struktur, které jsou vhodné pro vazbu. Každý se liší v její vyspělosti a složitost.  
+ ADO.NET datové objekty  
+ ADO.NET poskytuje několik datových struktur, které jsou vhodné pro vazbu. Každý se liší v její vyspělosti a složitost.  
   
 - <xref:System.Data.DataColumn>. A <xref:System.Data.DataColumn> je základní stavební blok <xref:System.Data.DataTable>, v tom, že zahrnují počet sloupců tabulky. Každý <xref:System.Data.DataColumn> má <xref:System.Data.DataColumn.DataType%2A> vlastnost, která určuje, jaká data obsahuje sloupec (například zkontrolujte automobilu v tabulce s popisem auta). Vám může jednoduché vytvořit vazbu ovládacího prvku (například <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost) na sloupec v tabulce dat.  
   
-- <xref:System.Data.DataTable>. A <xref:System.Data.DataTable> je reprezentace tabulku s řádky a sloupce v [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]. Tabulka dat obsahuje dvě kolekce: <xref:System.Data.DataColumn>, představující sloupce dat v dané tabulce (což nakonec určit druh dat, který lze zadat do tabulky), a <xref:System.Data.DataRow>, představující řádky dat z dané tabulky. Vám může komplexní Vazba ovládacího prvku na informace obsažené v tabulce dat (jako je například vazby <xref:System.Windows.Forms.DataGridView> ovládací prvek tabulka dat). Nicméně pokud svážete <xref:System.Data.DataTable>, jsou ve skutečnosti vazby do výchozího zobrazení tabulky.  
+- <xref:System.Data.DataTable>. A <xref:System.Data.DataTable> je reprezentace tabulku s řádky a sloupce v ADO.NET. Tabulka dat obsahuje dvě kolekce: <xref:System.Data.DataColumn>, představující sloupce dat v dané tabulce (což nakonec určit druh dat, který lze zadat do tabulky), a <xref:System.Data.DataRow>, představující řádky dat z dané tabulky. Vám může komplexní Vazba ovládacího prvku na informace obsažené v tabulce dat (jako je například vazby <xref:System.Windows.Forms.DataGridView> ovládací prvek tabulka dat). Nicméně pokud svážete <xref:System.Data.DataTable>, jsou ve skutečnosti vazby do výchozího zobrazení tabulky.  
   
 - <xref:System.Data.DataView>. A <xref:System.Data.DataView> je přizpůsobené zobrazení jedné tabulky datového, která mohou filtrovat a řadit. Zobrazení dat jsou data "snímku" používané ovládací prvky vázané na komplexní. Můžete vazby jednoduché nebo komplexní vazby k datům v rámci zobrazení dat, ale mějte na paměti, že jsou vytvoření vazby na pevnou "obrázek" data spíše než zdroj čisté, aktualizace dat.  
   

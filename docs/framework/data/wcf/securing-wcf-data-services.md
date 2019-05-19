@@ -8,12 +8,12 @@ helpviewer_keywords:
 - securing application [WCF Data Services]
 - WCF Data Services, security
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
-ms.openlocfilehash: cf99979e2ea3a47247a5df4b6e0ececab6abe8ef
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4db6d7e13bfc4a0e2705c210820db511a60e09de
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645515"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877356"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpečení datových služeb WCF Data Services
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění datové služby WCF a aplikací tento přístup ke službám, které podporují Open Data Protocol (OData). Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework.  
@@ -55,7 +55,7 @@ context.Credentials = _
  Pokud datová služba vyžaduje přihlašovací pověření, která nelze zadat s použitím <xref:System.Net.NetworkCredential> objektu, jako jsou založené na deklaracích token nebo soubor cookie, je nutné ručně nastavit hlavičky v požadavku HTTP, obvykle `Authorization` a `Cookie` záhlaví. Další informace o tomto typu scénáře ověřování naleznete v příspěvku blogu [ OData a ověřování – část 3 – na straně klienta háky](https://devblogs.microsoft.com/odata/odata-and-authentication-part-3-clientside-hooks/). Příklad nastavení hlaviček HTTP ve zprávě požadavku naleznete v tématu [jak: Nastavit hlavičky v požadavku klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md).  
   
 ## <a name="impersonation"></a>Zosobnění  
- Obecně platí, že datová služba přistupuje k požadovaným prostředkům, například k souborům na serveru nebo v databázi, pomocí pověření pracovního procesu, který je hostitelem datové služby. Při použití zosobnění se [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace můžete spustit s použitím identity Windows (uživatelský účet) uživatele, který zadal žádost. Zosobnění se běžně používá v aplikacích, které k ověření uživatele využívají službu IIS, a pro přístup k požadovaným prostředkům se používají pověření tohoto typu. Další informace najdete v tématu [zosobnění technologie ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/xh507fc5(v=vs.100)).  
+ Obecně platí, že datová služba přistupuje k požadovaným prostředkům, například k souborům na serveru nebo v databázi, pomocí pověření pracovního procesu, který je hostitelem datové služby. Při použití zosobnění se mohou spouštět aplikace ASP.NET s identita Windows (uživatelský účet) uživatele, který zadal žádost. Zosobnění se běžně používá v aplikacích, které k ověření uživatele využívají službu IIS, a pro přístup k požadovaným prostředkům se používají pověření tohoto typu. Další informace najdete v tématu [zosobnění technologie ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/xh507fc5(v=vs.100)).  
   
 ## <a name="configuring-data-service-authorization"></a>Konfigurace autorizace datové služby  
  Autorizace představuje udělení přístupu k prostředkům aplikace pro objekt zabezpečení nebo proces, který je identifikován na základě dřívějšího úspěšného ověření. Obecně platí, že uživatelům datové služby je vhodné udělit pouze práva dostatečná k provedení operací vyžadovaných klientskými aplikacemi.  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 6d631d51cc4f40b5be91b6579039a8b8dffa3dee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 53e164bfdc27d99073cc893f98f332366091a753
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613204"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881286"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování naleznete v tématu: [Služba prohlížečem trasování (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -194,7 +194,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q10"></a>   
 ## <a name="what-is-the-base-address-how-does-it-relate-to-an-endpoint-address"></a>Co je základní adresa? Jak to souvisí adresy koncového bodu?  
- Základní adresa je adresa kořenové <xref:System.ServiceModel.ServiceHost> třídy. Ve výchozím nastavení, pokud chcete přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy do konfigurace služby, webové služby WSDL (Description Language) pro hostitele publikuje všechny koncové body jsou načteny z základní adresu HTTP, a navíc všechny relativní adresa zadaná metadata chování plus "? wsdl". Pokud jste se seznámili s [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] a služby IIS, základní adresa je ekvivalentní k virtuálnímu adresáři.  
+ Základní adresa je adresa kořenové <xref:System.ServiceModel.ServiceHost> třídy. Ve výchozím nastavení, pokud chcete přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy do konfigurace služby, webové služby WSDL (Description Language) pro hostitele publikuje všechny koncové body jsou načteny z základní adresu HTTP, a navíc všechny relativní adresa zadaná metadata chování plus "? wsdl". Pokud jste se seznámili s technologií ASP.NET a IIS, je ekvivalentní k virtuálnímu adresáři základní adresa.  
   
 ## <a name="sharing-a-port-between-a-service-endpoint-and-a-mex-endpoint-using-the-nettcpbinding"></a>Sdílení portů mezi koncového bodu služby a koncového bodu mex pomocí NetTcpBinding  
  Pokud zadáte základní adresu pro službu jako net.tcp://MyServer: 8080/Moje_služba a přidat následující koncové body:  

@@ -2,12 +2,12 @@
 title: Ověřování v SQL Serveru
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 33a4a9e7e9d6d8c5324c0e108ec3705582efc866
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 94de49fe89f2b7f4aabaade624e960202f9973bf
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649577"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877451"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v SQL Serveru
 SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a ve smíšeném režimu.  
@@ -43,7 +43,7 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
   
 - Uživatelé připojovat z jiné, nedůvěryhodné domény.  
   
-- Internetové aplikace, jako například [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].  
+- Internetové aplikace, jako je například technologie ASP.NET.  
   
 > [!NOTE]
 >  Zadání ověřování Windows nezakáže přihlášení serveru SQL Server. Použít příkazu ALTER LOGIN zakázat [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkaz Zakázat přihlášení serveru SQL Server s vysokou úrovní oprávnění.  

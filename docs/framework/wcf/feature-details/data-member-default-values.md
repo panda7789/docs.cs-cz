@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: fb9ad627df640e56b5250a2fdd15f5ac0d52df79
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: af8fff9d034f8dea4ce9f24a2bda042b5b9708a9
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592600"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881270"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
 V rozhraní .NET Framework typy mají koncept *výchozí hodnoty*. Třeba u jakéhokoliv odkazového typu, výchozí hodnota je `null`, a pro typ integer je nula. Je čas od času žádoucí chcete vynechat, nechte datový člen ze serializovaných dat. Pokud je nastavena na výchozí hodnotu. Vzhledem k tomu, že člen má výchozí hodnotu, nemusí být serializován skutečnou hodnotu; Tato akce nemá výhody výkonu.  
@@ -54,7 +54,7 @@ V rozhraní .NET Framework typy mají koncept *výchozí hodnoty*. Třeba u jak�
   
 - Použít skutečné výchozí hodnota není k dispozici ve schématu. Záleží přijímající koncového bodu správně interpretovat element nebyl nalezen.  
   
- Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastností se automaticky nastaví na `false` vždy, když se dříve zjistí poznámky specifické pro WCF uvedené. Je také nastavena na `false` pro typy odkazů, které mají `nillable` vlastnost nastavena na hodnotu `false` pro zajištění podpory scénářů konkrétní vzájemná funkční spolupráce, nejčastějších při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
+ Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastností se automaticky nastaví na `false` vždy, když se dříve zjistí poznámky specifické pro WCF uvedené. Je také nastavena na `false` pro typy odkazů, které mají `nillable` nastavenou na `false` pro zajištění podpory scénářů konkrétní vzájemná funkční spolupráce, nejčastějších při využívání webové služby ASP.NET.  
   
 ## <a name="see-also"></a>Viz také:
 

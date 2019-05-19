@@ -3,12 +3,12 @@ title: Typy řazené kolekce členů – průvodce v C#
 description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: d9d3424e1e59e7b33a098537738a0a1f6af27d74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4000228507bf7925083147ddd49dd10914ef2449
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706426"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882051"
 ---
 # <a name="c-tuple-types"></a>Typy řazené kolekce členů v C#
 
@@ -109,7 +109,7 @@ Nakonec řazené kolekce členů může obsahovat vnořené řazené kolekce čl
 
 [!code-csharp-interactive[NestedTuples](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetNestedTuples "Tuples may contain nested tuples that participate in tuple equality.")]
 
-Jde o chybu v době kompilace k porovnání dvou řazených kolekcí členů a zjistí rovnost (či nerovnost) Pokud mají různé tvary. Kompilátor vyhrál "pokusit jakékoli dekonstrukce řazených kolekcí členů vnořené k jejich porovnání.
+Jde o chybu v době kompilace k porovnání dvou řazených kolekcí členů a zjistí rovnost (či nerovnost) Pokud mají různé tvary. Kompilátor nebude pokoušet jakékoli dekonstrukce řazených kolekcí členů vnořené k jejich porovnání.
 
 ## <a name="assignment-and-tuples"></a>Přiřazení a řazené kolekce členů
 
