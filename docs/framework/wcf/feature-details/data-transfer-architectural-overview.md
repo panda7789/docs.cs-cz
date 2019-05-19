@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
-ms.openlocfilehash: 6b6e77dea17d71b74c2c06534fd3a941e3e867a8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 83fd5ab1cfe7f48999dd2765405f58543eeb743a
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592552"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882208"
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Může přijímat zprávy, zpracovat je a jejich vypravování do uživatelského kódu pro další akce, nebo můžete vytvořit zprávy z dat zadané v uživatelském kódu a doručujte je na cíli. Toto téma, které je určené pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a omezením data. Jednodušší, orientovaných zobrazení toho, jak odesílat a přijímat data, najdete v části [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
@@ -268,7 +268,7 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
   
  WCF podporuje dvě technologie serializace "mimo pole" pro serializaci a deserializaci parametry a částí zprávy: <xref:System.Runtime.Serialization.DataContractSerializer> a `XmlSerializer`. Kromě toho můžete napsat vlastní serializátory. Však dalších součástí WCF (jako je obecný `GetBody` metody nebo SOAP k chybě serializace) může být omezena na používání jenom <xref:System.Runtime.Serialization.XmlObjectSerializer> podtřídy (<xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>, ale ne <xref:System.Xml.Serialization.XmlSerializer>), nebo dokonce může být pevně určený jenom <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
- `XmlSerializer` Serializační stroj se používá v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby. `DataContractSerializer` Je nový Serializační stroj, který rozpozná nový model programování kontraktu dat. `DataContractSerializer` je výchozí volbou a možnost použití `XmlSerializer` provádět na základě každou operaci pomocí <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractFormatAttribute%2A> atribut.  
+ `XmlSerializer` Je Serializační stroj používá v webové služby ASP.NET. `DataContractSerializer` Je nový Serializační stroj, který rozpozná nový model programování kontraktu dat. `DataContractSerializer` je výchozí volbou a možnost použití `XmlSerializer` provádět na základě každou operaci pomocí <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractFormatAttribute%2A> atribut.  
   
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> zodpovídají chování operace pro formátování zpráv pro zapojení `DataContractSerializer` a `XmlSerializer`v uvedeném pořadí. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> Chování ve skutečnosti můžete pracovat s jakékoli serializátoru, který je odvozen z <xref:System.Runtime.Serialization.XmlObjectSerializer>, včetně <xref:System.Runtime.Serialization.NetDataContractSerializer> (podrobně popsány v pomocí samostatného serializace). Chování volá jedno ze `CreateSerializer` přetížení virtuální metody pro získání serializátoru. Chcete-li zařadit jiný serializátor, vytvořte nový <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> podtřídy a přepsání `CreateSerializer` přetížení.  
   

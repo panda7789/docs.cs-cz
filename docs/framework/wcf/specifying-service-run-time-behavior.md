@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-ms.openlocfilehash: 7fb3398ec325cd8b483ef7a222c8dd392a4e72b7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d1635d0eccf0886577eafe2ab11126093defac2b
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64656015"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875982"
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementovat vaše smlouva na služby ([implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operace služby modulu runtime. Toto téma popisuje poskytované systémem služby a operace chování a popisuje, kde najdete další informace k vytvoření nové chování. Některá chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby, najdete v části [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
@@ -77,7 +77,7 @@ Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../.
 ### <a name="service-behaviors"></a>Chování služby  
  Následující chování pracovat na služby.  
   
-- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. U služby WCF k označení, zda je možné spustit tuto službu v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] režim kompatibility.  
+- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. U služby WCF k označení, jestli tuto službu můžete spustit v režimu kompatibility ASP.NET.  
   
 - <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Určuje, jak služba autorizuje deklarace identity klienta.  
   

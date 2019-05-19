@@ -8,18 +8,18 @@ helpviewer_keywords:
 - displaying data [Windows Forms], on forms
 - data [Windows Forms], displaying on Windows Forms
 ms.assetid: 1d9d5683-43d2-42dd-b6c3-e43f4cf0de99
-ms.openlocfilehash: 5f8fcd21802c52d61d354c5ba85d665bd17237db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a69605901eef7366c7a9ff9930e5f4ec6cece23
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011382"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878774"
 ---
 # <a name="datagrid-control-windows-forms"></a>DataGrid – ovládací prvek (Windows Forms)
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které `DataGrid` řízení; však `DataGrid` ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Windows Forms `DataGrid` řízení poskytuje uživatelské rozhraní pro [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] aktualizace datové sady, zobrazení tabulkových dat a povolení ke zdroji dat.  
+ Windows Forms `DataGrid` poskytuje uživatelské rozhraní s datovými sadami ADO.NET, zobrazení tabulkových dat a povolení aktualizací ke zdroji dat ovládacího prvku.  
   
  Když `DataGrid` řízení je nastavené na platný zdroj dat, ovládací prvek se vyplní automaticky, vytváření sloupců a řádků v závislosti na struktuře dat. `DataGrid` Ovládací prvek lze použít k zobrazení jedné tabulky nebo hierarchické vztahy mezi sadou tabulek.  
   
@@ -34,10 +34,10 @@ ms.locfileid: "62011382"
  Popisuje postup přidání tabulky a sloupce, které chcete `DataGrid` řídit prostřednictvím kódu programu.  
   
  [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí návrháře](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)  
- Popisuje, jak vytvořit vazbu [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] datovou sadu, která `DataGrid` řídit pomocí návrháře.  
+ Popisuje, jak vytvořit vazbu ADO.NET datovou sadu, která `DataGrid` řídit pomocí návrháře.  
   
  [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
- Popisuje, jak vytvořit vazbu [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] datovou sadu, která `DataGrid` ovládacího prvku.  
+ Popisuje, jak vytvořit vazbu ADO.NET datovou sadu, která `DataGrid` ovládacího prvku.  
   
  [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)  
  Popisuje, jak změnit dat prostřednictvím kódu programu v `DataGrid` ovládacího prvku.  

@@ -2,12 +2,12 @@
 title: 'Vlastní kodér zpráv: Vlastní kodér textu – WCF'
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: a1523c854bbae09b2ac5cb0565962b394ec9b70e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8cbdb9e2a17eb006b589fe42fe6adf62ce37d340
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62003077"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878400"
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Vlastní kodér zpráv: Vlastní kodér textu
 
@@ -36,7 +36,7 @@ Implementace vlastní kodér skládá objekt pro vytváření kodéru zpráv, ko
 
 ## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
 
-1. Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.
+1. Instalace technologie ASP.NET 4.0 pomocí následujícího příkazu.
 
     ```
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable

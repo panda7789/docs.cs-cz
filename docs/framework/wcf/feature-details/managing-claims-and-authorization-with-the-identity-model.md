@@ -8,12 +8,12 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: 568fb1c2a18cfde5b15b844754f4356af0a576a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9341ff8bfb2aec4eb7274d444fca4497fa66f210
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046629"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875558"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
 Autorizace je proces určování entit, které mají oprávnění změnit, zobrazit nebo jinak přístupu k prostředkům počítače. Například ve firmě, pouze správci mohou bude moct získat přístup k souborům svým zaměstnancům. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus umožňuje řídit autorizaci s použitím existujícího běžné konstrukce jazyka runtime (CLR). Druhý je známý jako model založené na deklaracích *modelem Identity*. WCF používá Model identit k vytvoření deklarace identity z příchozí zprávy. Třídy modelu identity je možné rozšířit na podporu nových typů deklarací identity pro vlastní autorizace schémata. Toto téma obsahuje přehled hlavní koncepty programování funkce modelu identit, jakož i seznam vašich nejdůležitějších tříd, které používá funkci.  
@@ -69,7 +69,7 @@ Autorizace je proces určování entit, které mají oprávnění změnit, zobra
  Pravé  
  Funkce na prostředku. Definice rozhraní API modelu Identity práv jsou vlastnosti <xref:System.IdentityModel.Claims.Rights> třídy. Příklady poskytované systémem rights <xref:System.IdentityModel.Claims.Rights.Identity%2A> a <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>.  
   
- Hodnota  
+ Value  
  Něco, nad tím, které je požadováno práva.  
   
 ## <a name="claims"></a>deklarace identity  
@@ -90,11 +90,12 @@ Autorizace je proces určování entit, které mají oprávnění změnit, zobra
   
  Následující obrázek znázorňuje příklad tři sady deklarací identity, kde jednu sadu deklarací identity má, jako její Vystavitel jinou sadu deklarací identity, která naopak má systém sadu jako její Vystavitel deklarací. Proto sady deklarací, které tvoří hierarchii, která může být libovolné hloubky.  
   
- ![Správa deklarací identity a autorizace](../../../../docs/framework/wcf/feature-details/media/claimshierarchy.gif "claimshierarchy")  
+ ![Sadu deklarací identity v rámci hierarchie.](./media/managing-claims-and-authorization-with-the-identity-model/claims-sets-hierarchy.gif)  
   
- Několik sad deklarací, které mohou mít stejný vydávání deklarací identity sady, jak je znázorněno na následujícím obrázku.  
+ Několik sad deklarací, které mohou mít stejný vydávání deklarací identity sady, jak je znázorněno na následujícím obrázku:
+ 
   
- ![Správa deklarací identity a autorizace](../../../../docs/framework/wcf/feature-details/media/multiplesetsofclaims.gif "multiplesetsofclaims")  
+ ![Více sad deklarací identity s vydávající stejné množině deklarací identity.](./media/managing-claims-and-authorization-with-the-identity-model/multiple-claim-sets-same-issuing-claim-set.gif)  
   
  S výjimkou sadu deklarací identity, která je vlastní vystavitele neposkytuje modelem Identity podporuje deklarace identity sad a vytvoří smyčku. Proto nastat situace, ve kterém sada deklarací identity A vydává sady deklarací B, která sama o sobě vydala sadu deklarací identity A, můžete nikdy. Navíc Model identit neposkytuje podporuje sady deklarací, aby více vystavitelů. Pokud dva nebo více vystavitelů musíte vydat danou sadu deklarací identity, pak je nutné použít více sad deklarací identity, každá obsahující deklarace pro stejný, ale s jinou vystavitelů.  
   

@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
-ms.openlocfilehash: 9b59f9a1895b06cbc102afdceccb373a22ddafc1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 09fcf3f1a7e58a4bd8c2c6b0d25c24f32ea5ec5e
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583473"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880584"
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>Integrace System.Transactions s SQL Serverem
-Rozhraní .NET Framework verze 2.0 zavedená, který je přístupný prostřednictvím rozhraní transakce <xref:System.Transactions> oboru názvů. Toto rozhraní poskytuje transakce způsobem, který je plně integrováno v rozhraní .NET Framework, včetně [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+Rozhraní .NET Framework verze 2.0 zavedená, který je přístupný prostřednictvím rozhraní transakce <xref:System.Transactions> oboru názvů. Toto rozhraní poskytuje transakce způsobem, který je plně integrováno v rozhraní .NET Framework, ADO.NET.  
   
- Kromě vylepšení programovatelnosti <xref:System.Transactions> a [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] můžou spolupracovat a koordinovat optimalizace při práci s transakcí. Možné zařazení transakce je zjednodušené transakce (místní), která bude automaticky povýšen na plně distribuované transakce podle potřeby.  
+ Kromě vylepšení programovatelnosti <xref:System.Transactions> a ADO.NET můžou spolupracovat a koordinovat optimalizace při práci s transakcí. Možné zařazení transakce je zjednodušené transakce (místní), která bude automaticky povýšen na plně distribuované transakce podle potřeby.  
   
- Počínaje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0, <xref:System.Data.SqlClient> podporuje možné zařazení transakce při práci se serverem SQL Server. Možné zařazení transakce vyvolat není přidaný režie distribuované transakce, pokud přidaného zatížení je povinný. Možné zařazení transakce jsou automatické a vyžadují bez nutnosti zásahu od vývojáře.  
+ Od verze ADO.NET 2.0 <xref:System.Data.SqlClient> podporuje možné zařazení transakce při práci se serverem SQL Server. Možné zařazení transakce vyvolat není přidaný režie distribuované transakce, pokud přidaného zatížení je povinný. Možné zařazení transakce jsou automatické a vyžadují bez nutnosti zásahu od vývojáře.  
   
  Možné zařazení transakce jsou k dispozici pouze při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`) se systémem SQL Server.  
   

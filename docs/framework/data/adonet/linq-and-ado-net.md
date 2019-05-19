@@ -2,12 +2,12 @@
 title: LINQ a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: 79d6c52656e545c07260f3a97b089c238a74db3c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 312eb4b1c0512ca1244daec5bcda3ed864c3646d
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583520"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878334"
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy musí používat dva (nebo více) programovacích jazyků: jazyka vysoké úrovně pro obchodní logiku a prezentační vrstvy (jako je Visual C# nebo Visual Basic) a dotazovací jazyk pro interakci s databází (například [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). To vyžaduje vývojář bude zdatní v několika jazycích, aby byl Efektivní a zároveň způsobí, že jazyk neshody ve vývojovém prostředí. Aplikace, která používá data přístup k rozhraní API při spuštění dotazu proti databázi například určuje dotaz jako řetězcový literál s použitím uvozovek. Tento řetězec dotazu bez číst kompilátoru a nepovolenou chyby, jako je například neplatnou syntaxi nebo zda skutečně existují sloupce nebo řádky, na které odkazuje. Neexistuje žádný typ kontroly parametrů dotazu a ne `IntelliSense` buď podporují.  
@@ -27,7 +27,7 @@ V současné době celá řada vývojářů firmy musí používat dva (nebo ví
  Následující části obsahují další informace o [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)].  
   
 ## <a name="linq-to-dataset"></a>LINQ na DataSet  
- <xref:System.Data.DataSet> Je klíčovým prvkem odpojené programovací model, který [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] je založená na a široce využívají. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] umožňuje vývojářům vytvářet bohatších možností dotazování <xref:System.Data.DataSet> pomocí stejný mechanismus možností formulování dotazu, který je k dispozici pro mnoha dalším datovým zdrojům. Další informace najdete v tématu [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md).  
+ <xref:System.Data.DataSet> Je klíčovým prvkem odpojené programovací model, který je založený na ADO.NET a velmi často používá. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] umožňuje vývojářům vytvářet bohatších možností dotazování <xref:System.Data.DataSet> pomocí stejný mechanismus možností formulování dotazu, který je k dispozici pro mnoha dalším datovým zdrojům. Další informace najdete v tématu [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md).  
   
 ## <a name="linq-to-sql"></a>Technologie LINQ to SQL  
  [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] je užitečný nástroj pro vývojáře, kteří nevyžadují žádné mapování pro koncepční model. S použitím [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], můžete použít [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] programovací model přímo přes existující schéma databáze. [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] umožňuje vývojářům pro generování tříd rozhraní .NET Framework, jež reprezentují data. Místo mapování koncepční datový model, tyto vygenerované třídy mapují přímo na databázových tabulek, zobrazení, uložených procedur a uživatelem definované funkce.  

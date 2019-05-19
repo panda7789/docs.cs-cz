@@ -2,12 +2,12 @@
 title: Výrazy C#
 ms.date: 03/30/2017
 ms.assetid: 29110be7-f4e3-407e-8dbe-78102eb21115
-ms.openlocfilehash: 23c5ee0e0d1408f19e87615008ee95266176d27b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c50f6a2a8dfb69b914fb4fa84c028f9d65c00cfa
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650958"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882089"
 ---
 # <a name="c-expressions"></a>Výrazy C#
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporované ve Windows Workflow Foundation (WF). Vytvořit nové projekty pracovního postupu C# v sadě Visual Studio 2012, které se zaměřují [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití výrazy jazyka C# a projekty pracovního postupu Visual Basic používat výrazy jazyka Visual Basic. Existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] projekty pracovního postupu, které používají výrazy jazyka Visual Basic se dají migrovat do [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] bez ohledu na to, projekt jazyka a jsou podporovány. Toto téma obsahuje přehled výrazy jazyka C# v [!INCLUDE[wf1](../../../includes/wf1-md.md)].
@@ -31,7 +31,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka 
 ### <a name="WFDesigner"></a> Použití výrazy jazyka C# v Návrháři postupu provádění
  Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporované ve Windows Workflow Foundation (WF). Projekty pracovního postupu C# vytvořené v sadě Visual Studio 2012, které se zaměřují [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] používat výrazy jazyka C#, zatímco projekty pracovního postupu Visual Basic používat výrazy jazyka Visual Basic. K určení požadovaných výraz C#, zadejte do pole s popiskem **zadejte výraz C#**. Při výběru aktivity v návrháři, nebo na aktivitu v Návrháři postupu provádění, zobrazí se tento popisek v okně Vlastnosti. V následujícím příkladu dvě `WriteLine` aktivity jsou obsaženy v rámci `Sequence` uvnitř `NoPersistScope`.
 
- ![Automaticky vytvořit sekvenční aktivitu](./media/autosurround2.png "AutoSurround2")
+ ![Snímek obrazovky ukazující aktivitu automaticky vytvořené pořadí.](./media/csharp-expressions/auto-surround-sequence-activity.png)
 
 > [!NOTE]
 >  Výrazy jazyka C# jsou podporovány pouze v sadě Visual Studio a nejsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích WF45 podporované v Návrháři znovu hostované najdete v tématu [podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním](wf-features-in-the-rehosted-workflow-designer.md).

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-ms.openlocfilehash: 8b220e0d6b7e6ab5a7b6d964d1910eaafb63d2d9
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: bca12c1dd8c79a5ae17e4a9b7b75d3c7b302fb89
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633924"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875865"
 ---
 # <a name="unsafe-c-reference"></a>unsafe (Referenční dokumentace jazyka C#)
 
@@ -43,7 +43,7 @@ unsafe
 }
 ```
 
-Chcete-li zkompilovat nebezpečný kód, je nutné zadat [/ unsafe](../compiler-options/unsafe-compiler-option.md) – možnost kompilátoru. Nezabezpečený kód není možné ověřit modulem common language runtime.
+Chcete-li zkompilovat nebezpečný kód, je nutné zadat [ `-unsafe` ](../compiler-options/unsafe-compiler-option.md) – možnost kompilátoru. Nezabezpečený kód není možné ověřit modulem common language runtime.
 
 ## <a name="example"></a>Příklad
 

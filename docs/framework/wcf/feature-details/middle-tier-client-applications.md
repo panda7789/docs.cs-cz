@@ -2,18 +2,18 @@
 title: Klientské aplikace střední vrstvy
 ms.date: 03/30/2017
 ms.assetid: f9714a64-d0ae-4a98-bca0-5d370fdbd631
-ms.openlocfilehash: c7934f6d0d34992db229244373b5a170180f51e6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1b1ba177c365bb6913679ed2a217e66d7a0d522b
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649447"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877475"
 ---
 # <a name="middle-tier-client-applications"></a>Klientské aplikace střední vrstvy
 Toto téma popisuje různé problémy, které jsou specifické pro střední vrstvě klientské aplikace, které používají Windows Communication Foundation (WCF).  
   
 ## <a name="increasing-middle-tier-client-performance"></a>Zvýšení výkonu klienta střední vrstvy  
- Ve srovnání s předchozím komunikace technologií, jako jsou webové služby pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], vytvoření instance klienta WCF může být složitější z důvodu bohatou sadu funkcí služby WCF. Například, když <xref:System.ServiceModel.ChannelFactory%601> je otevřen objekt navázat zabezpečenou relaci se službou, procedury, která zvyšuje dobu spuštění pro instanci klienta. Obvykle tyto další funkce funkce nemají vliv na klientské aplikace značně od klienta WCF provede několik volání a potom jej zavře.  
+ Ve srovnání s předchozím komunikace technologií, jako jsou webové služby pomocí ASP.NET, může být vytváření instance klienta WCF složitější z důvodu bohatou sadu funkcí služby WCF. Například, když <xref:System.ServiceModel.ChannelFactory%601> je otevřen objekt navázat zabezpečenou relaci se službou, procedury, která zvyšuje dobu spuštění pro instanci klienta. Obvykle tyto další funkce funkce nemají vliv na klientské aplikace značně od klienta WCF provede několik volání a potom jej zavře.  
   
  Střední vrstvě klientské aplikace, ale můžete rychle vytvořit velký počet objektů klienta WCF a, v důsledku toho prostředí zvýšenou inicializace požadavky. Existují dva hlavní přístupy ke zvýšení výkonu střední vrstvy aplikace při volání služby:  
   

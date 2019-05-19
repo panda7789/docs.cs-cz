@@ -3,16 +3,16 @@ title: Bezpečně aktualizace pomocí výchozího členy rozhraní v rozhraníC#
 description: Tento kurz pokročilé zkoumá, jak můžete bezpečně přidávat nové funkce do existující definice rozhraní bez narušení všechny třídy a struktury, které implementují rozhraní.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: ded3704428282b8f9f0542e938137585a07802b4
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 2daa40ead5902454c6d45390233e1491fe6d369b
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65453172"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877908"
 ---
-# <a name="tutorial-update-interfaces-with-default-interface-members-in-c-8"></a>Kurz: Aktualizovat výchozí členy rozhraní v rozhraní C# 8
+# <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Kurz: Aktualizovat výchozí členy rozhraní v rozhraní C# 8.0
 
-Počínaje C# 8 v rozhraní .NET Core 3.0 implementace můžete definovat při deklaraci člena rozhraní. Nejběžnější scénář je bezpečně přidávat členy do rozhraní už vydali a používají klienti innumerable.
+Počínaje C# 8.0 na .NET Core 3.0, můžete definovat implementaci při deklaraci člena rozhraní. Nejběžnější scénář je bezpečně přidávat členy do rozhraní už vydali a používají klienti innumerable.
 
 V tomto kurzu se dozvíte jak:
 
@@ -23,7 +23,7 @@ V tomto kurzu se dozvíte jak:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač pro spuštění .NET Core, včetně C# kompilátoru 8.0 ve verzi preview. C# 8 kompilátoru ve verzi preview je k dispozici počínaje [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), nebo si prohlédnout nejnovější [.NET Core 3.0 ve verzi preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Výchozí členy rozhraní jsou k dispozici od verze .NET Core 3.0 ve verzi preview 4.
+Budete muset nastavit počítač pro spuštění .NET Core, včetně C# kompilátoru 8.0 ve verzi preview. C# 8.0 kompilátoru ve verzi preview je k dispozici počínaje [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), nebo si prohlédnout nejnovější [.NET Core 3.0 ve verzi preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Výchozí členy rozhraní jsou k dispozici od verze .NET Core 3.0 ve verzi preview 4.
 
 ## <a name="scenario-overview"></a>Přehled scénářů
 

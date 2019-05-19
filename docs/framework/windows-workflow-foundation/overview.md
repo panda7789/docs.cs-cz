@@ -2,12 +2,12 @@
 title: Přehled Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: bb714e5e5e4c1fe009ffa775efb456ebcc65c218
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 285ab75f7f67bbb9ffa18367eff126c04227f193
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592561"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876144"
 ---
 # <a name="windows-workflow-overview"></a>Přehled Windows Workflow
 Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou uloženy jako model, který popisuje proces reálného světa. Pracovní postupy umožňují popsat pořadí spuštění a závislé vztahy mezi částmi krátkodobé nebo dlouho probíhající práce. Tato práce prochází modelu od začátku do konce a aktivity mohou být prováděny osobami nebo funkcemi systému.  
@@ -23,7 +23,7 @@ Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou ul
   
  Každá z těchto tříd obtéká modul runtime aktivity core vyjádřené <xref:System.Activities.ActivityInstance> zodpovědná za spuštění aktivity. Může být několik <xref:System.Activities.ActivityInstance> objektů v rámci domény aplikace spuštěny souběžně.  
   
- Každý z předchozí tři hostitele objektů interakce je vytvořen ze stromu aktivit, které jsou uvedené jako aplikace pracovního postupu. Pomocí těchto typů nebo vlastního hostitele, která obaluje <xref:System.Activities.ActivityInstance>, pracovní postupy mohou být provedeny uvnitř jakýkoli proces Windows včetně konzolové aplikace založené na formulářích aplikací, služeb Windows [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] webové servery a (Windows Communication Foundation Služby WCF).  
+ Každý z předchozí tři hostitele objektů interakce je vytvořen ze stromu aktivit, které jsou uvedené jako aplikace pracovního postupu. Pomocí těchto typů nebo vlastního hostitele, která obaluje <xref:System.Activities.ActivityInstance>, pracovní postupy mohou být provedeny uvnitř jakýkoli proces Windows včetně konzolové aplikace, aplikace založené na formulářích, služby Windows, webové stránky ASP.NET a Windows Communication Foundation (WCF) služby.  
   
  ![Komponenty pracovní postup v hostitelském procesu](./media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
 Komponenty pracovní postup v hostitelském procesu  

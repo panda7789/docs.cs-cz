@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-ms.openlocfilehash: fc0bfec95e625c1433636fbe5e0fdb6cc1112b14
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c19aa7200cfc938a1de7b788a58ba18f76634d9
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645161"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881478"
 ---
 # <a name="using-sessions"></a>Použití relací
-V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  
+V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v aplikacích ASP.NET, podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  
   
 ## <a name="sessions-in-windows-communication-foundation-applications"></a>Relace v aplikacích Windows Communication Foundation  
  Pokud kontrakt služby specifikuje, že vyžaduje relaci, zda kontrakt je určení, že všechna volání (to znamená, základní výměny zpráv, které podporují volání) musí být součástí stejné konverzaci. Pokud kontrakt Určuje, že umožňuje relace, ale nevyžaduje, aby jeden, klienti můžou připojit a buď vytvořit relaci nebo nelze navázat relaci. Pokud relace skončí a zpráva se odesílá prostřednictvím stejné kanál, který je vyvolána výjimka.  
@@ -30,13 +30,13 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
 - Neexistuje žádné úložiště obecná data související s relací WCF.  
   
- Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] poskytuje aplikace a funkce, můžete si všimnout následující rozdíly mezi tento druh relace a relace WCF:  
+ Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v aplikacích technologie ASP.NET a funkci poskytuje, můžete si všimnout následující rozdíly mezi tento druh relace a relace WCF:  
   
-- [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] relace jsou vždy zahajované serverem.  
+- Relace ASP.NET jsou vždy zahajované serverem.  
   
-- [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] relace jsou implicitně Neseřazený.  
+- Relace ASP.NET jsou implicitně Neseřazený.  
   
-- [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] relace poskytují mechanismus pro ukládání obecná data napříč požadavky.  
+- Relace ASP.NET poskytují mechanismus pro ukládání obecná data napříč požadavky.  
   
  Toto téma popisuje:  
   

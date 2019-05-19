@@ -10,12 +10,12 @@ helpviewer_keywords:
 - print jobs [WPF], troubleshooting
 - print jobs [WPF], diagnosing problems
 ms.assetid: b081a170-84c6-48f9-a487-5766a8d58a82
-ms.openlocfilehash: ceffef8e911bb3e49e0d6526328523667a462b61
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: c9da2e1daff23ef9ba39d8b5d53cb3be67f35a27
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912465"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878208"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Postupy: Diagnostika problematické tiskové úlohy
 Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohaté sadě vlastností tiskovou úlohu v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé vzdálené diagnostiky tiskových úloh.  
@@ -59,7 +59,7 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
  [!code-csharp[DiagnoseProblematicPrintJob#IdentifyAndDiagnoseProblematicJob](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#identifyanddiagnoseproblematicjob)]
  [!code-vb[DiagnoseProblematicPrintJob#IdentifyAndDiagnoseProblematicJob](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#identifyanddiagnoseproblematicjob)]  
   
- Ke kontrole stavu úlohy pomocí příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost, zkontrolujte každý relevantní příznak zobrazíte, pokud je nastavena. K provedení logické operace a sadu příznaků jako jeden operand a příznak samotný jako druhý je standardní způsob, jak zobrazit, pokud jeden bit nastaven sadu bitových příznaků. Protože příznak samotný má pouze jeden bit nastaven, výsledek logické a je to, že, maximálně Tento stejný bit nastaven. Pokud chcete zjistit, jestli je nebo není, stačí porovnání výsledku logické a s příznakem samotný. Další informace najdete v tématu <xref:System.Printing.PrintJobStatus>, [& – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/and-operator.md), a <xref:System.FlagsAttribute>.  
+ Ke kontrole stavu úlohy pomocí příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost, zkontrolujte každý relevantní příznak zobrazíte, pokud je nastavena. K provedení logické operace a sadu příznaků jako jeden operand a příznak samotný jako druhý je standardní způsob, jak zobrazit, pokud jeden bit nastaven sadu bitových příznaků. Protože příznak samotný má pouze jeden bit nastaven, výsledek logické a je to, že, maximálně Tento stejný bit nastaven. Pokud chcete zjistit, jestli je nebo není, stačí porovnání výsledku logické a s příznakem samotný. Další informace najdete v tématu <xref:System.Printing.PrintJobStatus>, [& – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-), a <xref:System.FlagsAttribute>.  
   
  Kód pro každý atribut, jehož bit nastaven, to hlásí do okna konzoly a někdy navrhuje způsob, jak reagovat. ( **HandlePausedJob** metodu, která je volána, pokud úlohy nebo fronta je pozastavená, jsou popsány níže.)  
   
@@ -87,6 +87,6 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
 - <xref:System.Printing.PrintSystemJobInfo>
 - <xref:System.FlagsAttribute>
 - <xref:System.Printing.PrintQueue>
-- [& – Operátor (C# odkaz)](~/docs/csharp/language-reference/operators/and-operator.md)
+- [& – Operátor (C# odkaz)](~/docs/csharp/language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Přehled tisku](printing-overview.md)

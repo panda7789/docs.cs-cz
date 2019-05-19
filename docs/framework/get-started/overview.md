@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4aad615df6db5a29b9af21b585ea2b0dfbdedf4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f50a469327a06eabdb6a80821203f2222dcd2921
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644022"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878031"
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 
@@ -45,7 +45,7 @@ Aplikace Internet Explorer je příkladem nespravované aplikace, který je host
 
 Následující obrázek znázorňuje relaci modulu common language runtime a knihovně tříd k vašim aplikacím a celkovému systému. Ilustraci je také znázorněno jak spravovaný kód pracuje v rámci větší architektury.
 
-![Spravovaný kód v rámci větší architektury](../../../docs/framework/get-started/media/circle.gif "kruh") rozhraní .NET Framework v kontextu
+![Snímek obrazovky, který ukazuje, jak spravovaný kód pracuje v rámci větší architektury.](./media/overview/language-runtime-class-library-relationship.gif)
 
 Následující části popisují hlavní funkce rozhraní .NET Framework podrobněji.
 

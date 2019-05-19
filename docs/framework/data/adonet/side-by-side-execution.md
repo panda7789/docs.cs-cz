@@ -2,20 +2,20 @@
 title: Souběžné spouštění v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 9f9ba96d-9f89-4f65-bb2f-6860879f4393
-ms.openlocfilehash: 377af3c72b0a9a8eb26c8713d98f114803f08356
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d20d8e81d76284509d6fe733e4f283a9ab39cb00
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583617"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877096"
 ---
 # <a name="side-by-side-execution-in-adonet"></a>Souběžné spouštění v ADO.NET
 Spuštění vedle sebe v rozhraní .NET Framework je schopnost spouští aplikaci, která v počítači, který má více verzí rozhraní .NET Framework nainstalované, výhradně pomocí verze, pro kterou byla aplikace zkompilována. Podrobné informace o konfiguraci spuštění vedle sebe, naleznete v tématu [spuštění vedle sebe](../../../../docs/framework/deployment/side-by-side-execution.md).  
   
- Aplikaci zkompilován pomocí jedné verze rozhraní .NET Framework lze spustit na jinou verzi rozhraní .NET Framework. Doporučujeme však kompilaci verze aplikace pro každou nainstalovanou verzi rozhraní .NET Framework a spouštět je samostatně. V obou scénářích byste měli vědět o změnách v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] mezi verzemi, které mohou ovlivnit kompatibilitu nebo zpětné kompatibility aplikace.  
+ Aplikaci zkompilován pomocí jedné verze rozhraní .NET Framework lze spustit na jinou verzi rozhraní .NET Framework. Doporučujeme však kompilaci verze aplikace pro každou nainstalovanou verzi rozhraní .NET Framework a spouštět je samostatně. V obou scénářích byste měli vědět, změny v ADO.NET mezi verzemi, které mohou ovlivnit kompatibilitu nebo zpětné kompatibility aplikace.  
   
 ## <a name="forward-compatibility-and-backward-compatibility"></a>Dopředná kompatibilita a zpětné kompatibility  
- Dopředná kompatibilita znamená, že aplikace mohou být zkompilovány se starší verzí rozhraní .NET Framework, ale bude stále spuštěn úspěšně na novější verzi rozhraní .NET Framework. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] kód napsaný pro rozhraní .NET Framework verze 1.1 je dopředně kompatibilní s novějšími verzemi.  
+ Dopředná kompatibilita znamená, že aplikace mohou být zkompilovány se starší verzí rozhraní .NET Framework, ale bude stále spuštěn úspěšně na novější verzi rozhraní .NET Framework. ADO.NET kód napsaný pro rozhraní .NET Framework verze 1.1 je dopředně kompatibilní s novějšími verzemi.  
   
  Zpětná kompatibilita znamená, že je zkompilován novější verzi rozhraní .NET Framework pro aplikace, ale bude pokračovat ve starších verzích rozhraní .NET Framework bez ztráty funkčnosti. Samozřejmě to nebude v případě funkce v nové verzi rozhraní .NET Framework.  
   
@@ -36,7 +36,7 @@ Spuštění vedle sebe v rozhraní .NET Framework je schopnost spouští aplikac
   
  Nicméně od verze rozhraní .NET Framework verze 2.0, všechny zprostředkovatele dat .NET Framework lze použít v částečně důvěryhodné zóny. Kromě toho novou funkci zabezpečení byl přidán do zprostředkovatele dat .NET Framework v rozhraní .NET Framework verze 1.1. Tato funkce umožňuje omezit jaké připojovací řetězce lze použít v zóně s konkrétním zabezpečení. Můžete také zakázat použití prázdného hesla pro zabezpečení pro konkrétní zónu. Další informace najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md).  
   
- Protože každý instalace rozhraní .NET Framework má samostatný soubor Security.config, nejsou žádné problémy s kompatibilitou s nastavením zabezpečení. Nicméně pokud vaše aplikace závisí na možnostech další bezpečnostní [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] zahrnuty v rozhraní .NET Framework verze 1.1 nebo novější, nebude možné ho distribuovat do systému verze 1.0.  
+ Protože každý instalace rozhraní .NET Framework má samostatný soubor Security.config, nejsou žádné problémy s kompatibilitou s nastavením zabezpečení. Ale pokud je aplikace závislá na další bezpečnostní funkce ADO.NET zahrnuty v rozhraní .NET Framework verze 1.1 nebo novější, nebude moct distribuovat do systému verze 1.0.  
   
 ## <a name="sqlcommand-execution"></a>Provádění SqlCommand  
  Od verze rozhraní .NET Framework verze 1.1, způsob, který <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> provede příkazy na data byla změněna zdroje.  

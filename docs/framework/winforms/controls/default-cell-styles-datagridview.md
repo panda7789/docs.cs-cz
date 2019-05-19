@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data formats
 - data [Windows Forms], setting formats
 ms.assetid: fc6da49f-8942-41da-b49f-b2afc38cc656
-ms.openlocfilehash: 8939a182032cfac1beac6c1e5cb3c9de9792114c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7babc0918f5e8a7b4561d99bcfcfc9d7bdf9fb69
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011369"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878788"
 ---
 # <a name="how-to-set-default-cell-styles-and-data-formats-for-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Nastavení výchozích stylů buňky a datových formátů pro ovládací prvek Windows Forms DataGridView pomocí Návrháře
 <xref:System.Windows.Forms.DataGridView> Řízení umožňuje určení výchozích stylů buňky a datových formátů pro celý ovládací prvek, pro konkrétní sloupce, pro záhlaví řádků a sloupců a pro střídavé řádky k vytvoření účetní knihy efektu buňky. Ve výchozím nastavení nastavený styly sloupců a střídavé řádky se přepíšou výchozí styly nastavit pro celý ovládací prvek. Kromě toho stylů, které jste nastavili v kódu pro jednotlivé řádky a buňky přepsat výchozí styly.  
@@ -30,7 +30,7 @@ ms.locfileid: "62011369"
   
 1. Vyberte <xref:System.Windows.Forms.DataGridView> ovládací prvek v návrháři.  
   
-2. V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>, <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>, nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
+2.  V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>, <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>, nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> Vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
   
 3. Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
   
@@ -45,7 +45,7 @@ ms.locfileid: "62011369"
   
 2. Vyberte sloupec **vybrané sloupce** seznamu.  
   
-3. V **vlastnosti sloupce** mřížky, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
+3.  V **vlastnosti sloupce** mřížky, klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
   
 4. Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "62011369"
   
 1. Použijte jednu z předchozích postupů k zobrazení **sestavení objektu CellStyle** dialogovém související vlastnost Výchozí styl buňky.  
   
-2. V **Tvůrce CellStyle** dialogového okna klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> Vlastnost. **Formátovací řetězec** zobrazí se dialogové okno.  
+2.  V **sestavení objektu CellStyle** dialogového okna klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> vlastnost. **Formátovací řetězec** zobrazí se dialogové okno.  
   
 3. Vyberte typ formátu a úpravě podobností o typ (například počet zobrazovaných desetinných míst), pomocí **ukázka** políčka potvrďte zvolené volby.  
   

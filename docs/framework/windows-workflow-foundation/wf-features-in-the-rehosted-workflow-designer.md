@@ -2,12 +2,12 @@
 title: Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: a7b7ed6987320314ee3fdccf0e58a8c7314fe50d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8807506866ef0f5d73065958f1102460ebcc5e9f
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669753"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876523"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přichází s mnoha novými funkcemi včetně několik vylepšení prostředí Návrháře pracovního postupu. Toto téma podrobně popisuje tyto funkce jsou podporované v návrháři se změněným hostováním, a ty, které nejsou aktuálně podporovány.
@@ -37,25 +37,25 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
  Následující snímek obrazovky ukazuje návrháře kontextové nabídky proměnných a argumentů.
 
- ![Proměnné a Argument místní nabídka návrháře](./media/designercontextmenu.png "DesignerContextMenu")
+ ![Proměnné a Argument místní nabídka návrháře](./media/wf-features-in-the-rehosted-workflow-designer/designer-context-menu.png)
 
 ### <a name="auto-surround-with-sequence"></a>Automatické kulatých pořadí
  Od pracovního postupu nebo určité aktivity kontejneru (například <xref:System.Activities.Statements.NoPersistScope>) může obsahovat jenom jeden text aktivity, přidání druhé aktivity vyžaduje vývojářům první aktivita odstranění, přidání <xref:System.Activities.Statements.Sequence> aktivity a pak přidat obě aktivity k sekvenční aktivity. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], při přidání druhé aktivity na plochu návrháře `Sequence` aktivity se automaticky vytvoří při zabalení obě aktivity. Tato funkce je podporovaná v návrháři se změněným hostováním.
 
  Následující snímek obrazovky ukazuje `WriteLine` aktivity v `Body` z `NoPersistScope`.
 
- ![Automatické&#45;před a za místo přetažení](./media/autosurround1.png "AutoSurround1")
+ ![Aktivity WriteLine v těle aktivita NoPersistScope.](./media/wf-features-in-the-rehosted-workflow-designer/auto-surround-write-line-activity.png)
 
  Následující snímek obrazovky ukazuje automaticky vytvořený `Sequence` aktivity v `Body` při sekundy `WriteLine` neklesla pod první.
 
- ![Automaticky vytvořit sekvenční aktivitu](./media/autosurround2.png "AutoSurround2")
+ ![Automaticky vytvořené pořadí v textu NoPersistScope.](./media/wf-features-in-the-rehosted-workflow-designer/auto-surround-sequence-activity.png)
 
 ### <a name="pan-mode"></a>Režim posouvání
  Velké pracovní postup v Návrháři snadněji přejít, je možné povolit režim posouvání umožňuje vývojářům klikněte a tažením přesuňte viditelnou část pracovního postupu, místo nutnosti použít posuvníky. Tlačítko aktivovat režim posouvání se v pravém dolním rohu návrháře. Tato funkce je podporovaná v návrháři se změněným hostováním.
 
  Následující snímek obrazovky ukazuje tlačítko posouvání, která se nachází v pravém dolním rohu návrháře postupu provádění.
 
- ![Tlačítko posouvání v Návrháři pracovních postupů](./media/panbutton.png "PanButton")
+ ![Tlačítko Posun zvýrazněných v Návrháři pracovních postupů.](./media/wf-features-in-the-rehosted-workflow-designer/pan-button-workflow-designer.png)
 
  Prostřední tlačítko myši nebo MEZERNÍK lze použít také k posouvání návrháře postupu provádění.
 
@@ -69,7 +69,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
  Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začínáme](getting-started-tutorial.md) zobrazuje zobrazení osnovy s sekvenčního pracovního postupu.
 
- ![Zobrazení v Návrháři pracovních postupů osnovy](./media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")
+ ![Snímek obrazovky zobrazení osnovy s sekvenčního pracovního postupu v sadě Visual Studio](./media/wf-features-in-the-rehosted-workflow-designer/outline-view-in-workflow-designer.jpg)
 
 ### <a name="more-control-of-visibility-of-shell-bar-and-header-items"></a>Větší míra kontroly viditelnost panelu prostředí a v záhlaví položek
  V návrháři se změněným hostováním některé standardní ovládací prvky uživatelského rozhraní nemůže mít význam pro daný pracovní postup a může být vypnuté. V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], tato přizpůsobení je podporována pouze na prostředí panelu v dolní části okna návrháře. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], viditelnost prostředí položek záhlaví v horní části okna návrháře je možné upravit tak, že nastavíte <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> příslušnou <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> hodnotu.
@@ -79,18 +79,18 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
  Následující snímek obrazovky ukazuje body přílohy, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů.
 
- ![Počáteční uzel vývojový diagram zobrazuje body automatické připojení](./media/autoconnect1.png "Autoconnect1")
+ ![Vývojový diagram znázorňující uzel start automaticky připojit body](./media/wf-features-in-the-rehosted-workflow-designer/auto-connect-points-start-node.png)
 
  Aktivity můžete také přetahovat do připojení mezi uzly vývojový diagram a stavy pro automatické vložení uzlu mezi dvou jiných uzlech. Následující snímek obrazovky ukazuje zvýrazněný řádek připojení, kde můžete přetáhnout z panelu nástrojů a vyřadit aktivity.
 
- ![Automatické&#45;vložit úchyt pro přetažení aktivity](./media/autoinsert.png "Autoinsert")
+ ![Automaticky vkládat úchyt pro přetažení aktivit](./media/wf-features-in-the-rehosted-workflow-designer/auto-insert-connecting-line.png)
 
  Automaticky připojit a automaticky vkládat jsou podporovány v návrháři se změněným hostováním.
 
 ### <a name="designer-annotations"></a>Návrháře poznámky
  Usnadňuje vývoj větší pracovních postupů návrháře nyní podporuje přidávání poznámek k pomáhají udržovat přehled o procesu návrhu. Komentáře lze přidat do aktivity, státy, vývojový diagram uzly, proměnné a argumenty. Na následujícím snímku obrazovky se zobrazí místní nabídku pro přidání poznámky do návrháře.
 
- ![Poznámka kontextovou nabídku](./media/annotationdialog.png "annotationdialog")
+ ![Snímek obrazovky zobrazující nabídky pro přidání zápisy.](./media/wf-features-in-the-rehosted-workflow-designer/designer-annotations-context-menu.png)
 
  Návrháře poznámky jsou podporovány v návrháři se změněným hostováním.
 
@@ -134,7 +134,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
   
  Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md).  
   
- ![Dokončení pracovního postupu stavového stroje](./media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
+ ![Obrázek, na kterém pracovní postup dokončený stav stroje.](./media/wf-features-in-the-rehosted-workflow-designer/complete-state-machine-workflow.jpg)  
   
  Další informace o vytváření pracovní postupy stavu počítače, naleznete v tématu [pracovní postupy stavu počítače](state-machine-workflows.md). V návrháři se změněným hostováním jsou podporovány pracovních postupů stavového stroje.  
   

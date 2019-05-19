@@ -2,12 +2,12 @@
 title: Relace, vytváření instancí a souběžnost
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-ms.openlocfilehash: 52c9ed5d672ea05fec3333c9fece8b693143d6f3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 74b9971fa9267ef6156b27261c61d3e998d01883
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586114"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877321"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 A *relace* , že existuje korelace všech zpráv mezi dva koncové body. *Vytváření instancí* odkazuje na řízení životnosti služby uživatelem definované objekty a jejich související <xref:System.ServiceModel.InstanceContext> objekty. *Souběžnost* je termín určený do ovládacího prvku počet vláken v <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  
@@ -27,13 +27,13 @@ A *relace* , že existuje korelace všech zpráv mezi dva koncové body. *Vytvá
   
 - Neexistuje žádné úložiště obecná data související s relací WCF.  
   
- Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] poskytuje aplikace a funkce, můžete si všimnout následující rozdíly mezi tento druh relace a relace WCF:  
+ Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v aplikacích technologie ASP.NET a funkci poskytuje, můžete si všimnout následující rozdíly mezi tento druh relace a relace WCF:  
   
-- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou vždy zahajované serverem.  
+- Relace ASP.NET jsou vždy zahajované serverem.  
   
-- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou implicitně Neseřazený.  
+- Relace ASP.NET jsou implicitně Neseřazený.  
   
-- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace poskytují mechanismus pro ukládání obecná data napříč požadavky.  
+- Relace ASP.NET poskytují mechanismus pro ukládání obecná data napříč požadavky.  
   
  Klientské aplikace a aplikace služby pracovat s relacemi různými způsoby. Klientské aplikace zahájení relace přijímat a zpracovávat zprávy odeslané v rámci relace. Aplikace služby slouží k přidání další chování relace jako bod rozšiřitelnosti. To se provádí práci přímo s <xref:System.ServiceModel.InstanceContext> nebo implementaci zprostředkovatele vlastní instance kontextu.  
   

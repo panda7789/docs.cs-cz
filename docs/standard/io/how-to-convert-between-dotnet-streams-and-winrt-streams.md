@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0cf5b621be7532239b67bfe970302f27eca3ea2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 22cf168c660349bda16c59aec4824e3283430807
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61752044"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877943"
 ---
 # <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>Postupy: Převod mezi rozhraní .NET Framework a prostředí Windows Runtime datové proudy (jenom Windows)
 
@@ -51,7 +51,7 @@ Pro převod z datového proudu rozhraní .NET Framework na datový proud Windows
   
 - <xref:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream%2A?displayProperty=nameWithType> Převede spravovaný datový proud v rozhraní .NET pro aplikace pro UPW do výstupního datového proudu Windows Runtime.
   
-- [AsRandomAccessStream](../../../docs/standard/cross-platform/windowsruntimestreamextensions-asrandomaccessstream-method.md) převede spravovaný datový proud v rozhraní .NET pro aplikace pro UPW do datového proudu náhodný přístup, můžete použít modul Windows Runtime pro čtení nebo zápis.
+- <xref:System.IO.WindowsRuntimeStreamExtensions.AsRandomAccessStream%2A?displayProperty=nameWithType> Převede spravovaný datový proud v rozhraní .NET pro aplikace pro UPW do datového proudu náhodný přístup, můžete použít modul Windows Runtime pro čtení nebo zápis.
 
 Při převodu datového proudu rozhraní .NET Framework na datový proud Windows Runtime závisí možnosti převedeného datového proudu na původního datového proudu. Například, pokud původní datový proud podporuje čtení i zápis a zavoláte <xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A?displayProperty=nameWithType> k převedení datového proudu, je vrácený typ `IRandomAccessStream`. `IRandomAccessStream` implementuje `IInputStream` a `IOutputStream`a podporuje čtení a zápis.
 
@@ -59,7 +59,7 @@ Datové proudy rozhraní .NET framework nepodporují klonování, dokonce i po p
 
 ## <a name="example-convert-net-framework-to-windows-runtime-random-access-stream"></a>Příklad: Převést rozhraní .NET Framework na datový proud Windows Runtime náhodný přístup
 
-Chcete-li převést z datového proudu rozhraní .NET Framework na datový proud Windows Runtime náhodný přístup, použijte [AsRandomAccessStream](../../../docs/standard/cross-platform/windowsruntimestreamextensions-asrandomaccessstream-method.md) způsob, jak je znázorněno v následujícím příkladu:
+Chcete-li převést z datového proudu rozhraní .NET Framework na datový proud Windows Runtime náhodný přístup, použijte <xref:System.IO.WindowsRuntimeStreamExtensions.AsRandomAccessStream%2A> způsob, jak je znázorněno v následujícím příkladu:
 
 > [!IMPORTANT]
 > Ujistěte se, že datový proud rozhraní .NET Framework, které používáte podporuje vyhledávání nebo ho zkopírujte do datového proudu, který provede. Můžete použít <xref:System.IO.Stream.CanSeek%2A?displayProperty=nameWithType> vlastnost ke zjištění.

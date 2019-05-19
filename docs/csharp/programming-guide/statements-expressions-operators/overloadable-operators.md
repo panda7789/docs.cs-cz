@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, operator overloading
 - operator overloading [C#]
 ms.assetid: 390d9d01-79fc-40ab-9ed3-0bf448da1b6a
-ms.openlocfilehash: 850b10958446193026506418c57d7f565c98b714
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 7b3e759252317631d3ca7ee483ae483f0d38571b
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452765"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878958"
 ---
 # <a name="overloadable-operators-c-programming-guide"></a>Přetížitelné operátory (C# Programming Guide)
 
@@ -26,7 +26,7 @@ C# umožňuje uživatelem definované typy přetížení operátorů definován�
 |[&#91;&#93;](../../language-reference/operators/member-access-operators.md#indexer-operator-)|Operátor indexování pole nemohou být přetíženy, ale můžete definovat [indexery](../indexers/index.md).|
 |[(T)x](../../language-reference/operators/invocation-operator.md)|Nemůže být přetížený operátor přetypování, ale můžete definovat nové operátory převodu (viz [explicitní](../../language-reference/keywords/explicit.md) a [implicitní](../../language-reference/keywords/implicit.md)).|
 |[+=](../../language-reference/operators/addition-assignment-operator.md), [-=](../../language-reference/operators/subtraction-assignment-operator.md), [\*=](../../language-reference/operators/arithmetic-operators.md#compound-assignment), [/=](../../language-reference/operators/arithmetic-operators.md#compound-assignment), [%=](../../language-reference/operators/arithmetic-operators.md#compound-assignment), [&=](../../language-reference/operators/boolean-logical-operators.md#compound-assignment), [&#124;=](../../language-reference/operators/boolean-logical-operators.md#compound-assignment), [^=](../../language-reference/operators/boolean-logical-operators.md#compound-assignment), [\<\<=](../../language-reference/operators/bitwise-and-shift-operators.md#compound-assignment), [>>=](../../language-reference/operators/bitwise-and-shift-operators.md#compound-assignment)|Nemůže být explicitně přetížené operátory přiřazení. Pokud přetížíte binární operátor odpovídající operátor přiřazení, pokud existuje, ale také implicitně přetížené. Například `+=` vyhodnotí pomocí `+`, které můžou být přetížené.|
-|[=](../../language-reference/operators/assignment-operator.md), [. ](../../language-reference/operators/member-access-operators.md#member-access-operator-), [?:](../../language-reference/operators/conditional-operator.md), [?? ](../../language-reference/operators/null-coalescing-operator.md), [ -> ](../../language-reference/operators/dereference-operator.md), [ => ](../../language-reference/operators/lambda-operator.md), [f(x)](../../language-reference/operators/member-access-operators.md#invocation-operator-), [jako](../../language-reference/keywords/as.md), [zaškrtnuto ](../../language-reference/keywords/checked.md), [Nekontrolovaná](../../language-reference/keywords/unchecked.md), [výchozí](../../programming-guide/statements-expressions-operators/default-value-expressions.md), [delegovat](../../programming-guide/statements-expressions-operators/anonymous-methods.md), [je](../../language-reference/keywords/is.md), [nové](../../language-reference/keywords/new.md), [sizeof](../../language-reference/keywords/sizeof.md), [typeof](../../language-reference/keywords/typeof.md)|Tyto operátory nemohou být přetíženy.|
+|[=](../../language-reference/operators/assignment-operator.md), [. ](../../language-reference/operators/member-access-operators.md#member-access-operator-), [?:](../../language-reference/operators/conditional-operator.md), [?? ](../../language-reference/operators/null-coalescing-operator.md), [ -> ](../../language-reference/operators/pointer-related-operators.md#pointer-member-access-operator--), [ => ](../../language-reference/operators/lambda-operator.md), [f(x)](../../language-reference/operators/member-access-operators.md#invocation-operator-), [jako](../../language-reference/keywords/as.md), [zaškrtnuto ](../../language-reference/keywords/checked.md), [Nekontrolovaná](../../language-reference/keywords/unchecked.md), [výchozí](../../programming-guide/statements-expressions-operators/default-value-expressions.md), [delegovat](../../programming-guide/statements-expressions-operators/anonymous-methods.md), [je](../../language-reference/keywords/is.md), [nové](../../language-reference/keywords/new.md), [sizeof](../../language-reference/keywords/sizeof.md), [typeof](../../language-reference/keywords/typeof.md)|Tyto operátory nemohou být přetíženy.|
 
 > [!NOTE]
 > Operátory porovnání Pokud přetížena, musí být přetíženy dvojice; To znamená pokud `==` je přetížena, `!=` musí také být přetíženy. Platí to i hodnotu true, pokud přetížení `!=` vyžaduje přetížení pro `==`. Totéž platí pro operátory porovnání `<` a `>` a `<=` a `>=`.

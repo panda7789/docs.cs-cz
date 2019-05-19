@@ -2,18 +2,18 @@
 title: příkaz DotNet pack
 description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 12/04/2018
-ms.openlocfilehash: 8faa99bf35d9802b16f951082b20644d45a939c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d48e5957e8095cc9ef4eaca2e1e1746c25a2a88
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664841"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876034"
 ---
-# <a name="dotnet-pack"></a>balíčku DotNet
+# <a name="dotnet-pack"></a>dotnet pack
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet pack` -Sbalit kód do balíčku NuGet.
 
@@ -46,6 +46,14 @@ Závislostí NuGet komprimovat komprimovaný objekt projektu jsou přidány do *
 Ve výchozím nastavení `dotnet pack` nejprve sestaví projekt. Pokud chcete-li toto chování vyhnout, předejte `--no-build` možnost. Tato možnost je často užitečné pro scénáře sestavení kontinuální integrace (CI), kdy víte, že kód byl vytvořen dříve.
 
 Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces balení. Další informace najdete v tématu [vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) části ukazuje, jak pomocí přepínače -p MSBuild pro několik různých scénářů.
+
+Webové projekty nejsou packable ve výchozím nastavení. Pokud chcete přepsat výchozí chování, přidejte následující vlastnost, která má vaše *.csproj* souboru:
+
+```xml
+<PropertyGroup>
+   <IsPackable>true</IsPackable>
+</PropertyGroup>
+```
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -110,15 +118,6 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces 
 * **`-v|--verbosity <LEVEL>`**
 
   Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
-
-> [!NOTE]
-> Webové projekty nejsou packable ve výchozím nastavení. Pokud chcete přepsat výchozí chování, přidejte následující vlastnost, která má vaše *.csproj* souboru:
->
-> ```xml
-> <PropertyGroup>
->    <IsPackable>true</IsPackable>
-> </PropertyGroup>
-> ```
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 

@@ -2,12 +2,12 @@
 title: Vazba dat v klientovi ASP.NET
 ms.date: 03/30/2017
 ms.assetid: 68b49fa6-94e7-4d4c-a34e-902a2b3770b6
-ms.openlocfilehash: 07e03a4580795b3424f63cec8f93fea2039b6733
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0cc6fee822ad300969ccf8556a3eeb410660f256
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990623"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876984"
 ---
 # <a name="data-binding-in-an-aspnet-client"></a>Vazba dat v klientovi ASP.NET
 Tato ukázka předvádí, jak vytvořit vazbu dat vrácených typické služby Windows Communication Foundation (WCF) v aplikaci webových formulářů.  
@@ -19,7 +19,7 @@ Tato ukázka předvádí, jak vytvořit vazbu dat vrácených typické služby W
   
  Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `IWeatherService` rozhraní, které uvádí operace s názvem `GetWeatherData`. Tato operace přijímá pole města a vrátí pole `WeatherData` objekty, které představují vysoké a nízké předpokládaných teploty pro město.  
   
- Na [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] klientské stránky ASPX, DataGrid Web je definovaný ovládací prvek, který obsahuje grafickou reprezentaci dat vrácené službou. Kód na stránku .aspx volá službu WCF data o počasí a vrací data do pole `WeatherData` objekty. Ovládací prvek DataGrid Určuje, kde získat data z nastavením jeho `DataSource` vlastnosti pro toto pole. Pomocí volání ovládacího prvku DataGrid dojde k datové vazby `DataBind` metody. Veškerý tento kód je vnitřní součástí.`aspx` na stránce `Page_Load` metodu, tak pokaždé, když uživatel aktualizuje stránku v prohlížeči, data se aktualizuje v mřížce DataGrid.  
+ Na stránce ASPX klienta ASP.NET je definován DataGrid webový ovládací prvek obsahující grafická reprezentace dat vrácených službě. Kód na stránku .aspx volá službu WCF data o počasí a vrací data do pole `WeatherData` objekty. Ovládací prvek DataGrid Určuje, kde získat data z nastavením jeho `DataSource` vlastnosti pro toto pole. Pomocí volání ovládacího prvku DataGrid dojde k datové vazby `DataBind` metody. Veškerý tento kód je vnitřní součástí.`aspx` na stránce `Page_Load` metodu, tak pokaždé, když uživatel aktualizuje stránku v prohlížeči, data se aktualizuje v mřížce DataGrid.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   

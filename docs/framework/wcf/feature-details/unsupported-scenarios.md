@@ -2,12 +2,12 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: 48ed292b3bb22ae4966680805a74b40b249d8a32
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d6e5b7292f999b3fbecc911c3fef671ea0c675f5
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637759"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878746"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním Windows na této platformě. Jiné ověřovací mechanismy, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP/HTTPS se nepodporuje při spuštění WCF v části Windows XP Home Edition.  
@@ -36,7 +36,7 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
 >  Předchozí požadavky jsou specifické. Například <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> vytvoří element vazby, která má za následek Windows identity, ale nevytváří SCT. Proto ji můžete použít `Required` možnost [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
 ### <a name="possible-aspnet-conflict"></a>Konfliktům technologie ASP.NET  
- WCF a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] můžete jak povolit nebo zakázat zosobnění. Když [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace WCF je hostitelem ke konfliktu může existovat mezi WCF a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nastavení konfigurace. V případě konfliktu, nastavení WCF má přednost, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>v takovém případě [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] přednost má nastavení zosobnění.  
+ WCF a ASP.NET můžete jak povolit nebo zakázat zosobnění. Když aplikace WCF je hostitelem technologie ASP.NET, mohou existovat ke konfliktu mezi nastavení konfigurace WCF a ASP.NET. V případě konfliktu, nastavení WCF má přednost, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, v takovém případě má přednost nastavení zosobnění technologie ASP.NET.  
   
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>Načítání sestavení může selhat v zosobnění  
  Pokud zosobněného kontextu nemá přístupová práva k načtení sestavení a pokud je první common language runtime (CLR) se pokouší načíst sestavení pro tuto doménu AppDomain, <xref:System.AppDomain> ukládá do mezipaměti selhání. Následné pokusy o načtení tohoto sestavení (nebo sestavení) nezdaří, i po vrácení zosobnění a i když vrácený kontext má přístupová práva k načtení sestavení. Je to proto, že modul CLR nebude znovu pokoušet zatížení po změně kontextu uživatele. Je nutné restartovat aplikační domény na obnovení po chybě.  
@@ -75,13 +75,13 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>Zpráva zabezpečení nezdaří, pokud pomocí zosobnění technologie ASP.NET a režim kompatibility ASP.NET je vyžadován  
  WCF nepodporuje následující kombinaci nastavení, protože nebrání ověření klienta před:  
   
-- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Je povoleno zosobnění. To se provádí v souboru Web.config tak, že nastavíte `impersonate` atribut <`identity`> element `true`.  
+- Zosobnění technologie ASP.NET je povolena. To se provádí v souboru Web.config tak, že nastavíte `impersonate` atribut <`identity`> element `true`.  
   
-- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility se povoluje nastavením `aspNetCompatibilityEnabled` atribut [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) k `true`.  
+- Režim kompatibility ASP.NET se povoluje nastavením `aspNetCompatibilityEnabled` atribut [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) k `true`.  
   
 - Režim zabezpečení zprávy se používá.  
   
- Vyřešit se vypnout [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility. Nebo, pokud [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] se vyžaduje režim kompatibility, zakažte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zosobnění běží na procesorech a místo toho použijte zosobnění poskytované WCF. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Vyřešit se vypnout režim kompatibility ASP.NET. Nebo, pokud se vyžaduje režim kompatibility ASP.NET, zakázat funkce zosobnění technologie ASP.NET a místo toho použijte zosobnění poskytované WCF. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="ipv6-literal-address-failure"></a>Selhání literálu adresu IPv6  
  Požadavky na zabezpečení nezdaří, pokud klient a služba se ve stejném počítači, a literál adresy IPv6 se používají pro službu.  

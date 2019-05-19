@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
-ms.openlocfilehash: c49e810b830ecb7327f400d9ef183f4db9c7d736
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 88905f0ef735aef742c0279ac86b640d8a9b9b0e
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584566"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877365"
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z adaptéru dat
-[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Rezidentní reprezentace dat, které poskytuje konzistentní relační programovací model bez ohledu na zdroj dat je. `DataSet` Představuje ucelenou sadu dat, která obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat `DataSet` může obsahovat místní aplikaci a data z různých zdrojů dat. Interakce s stávajících zdrojů dat je řízen pomocí `DataAdapter`.  
+ADO.NET <xref:System.Data.DataSet> rezidentní reprezentace dat, které poskytuje konzistentní relační programovací model bez ohledu na zdroj dat je. `DataSet` Představuje ucelenou sadu dat, která obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat `DataSet` může obsahovat místní aplikaci a data z různých zdrojů dat. Interakce s stávajících zdrojů dat je řízen pomocí `DataAdapter`.  
   
  `SelectCommand` Vlastnost `DataAdapter` je `Command` objekt, který načítá data z datového zdroje. `InsertCommand`, `UpdateCommand`, A `DeleteCommand` vlastnosti `DataAdapter` jsou `Command` objekty, které spravují aktualizace dat ve zdroji dat podle změny provedené v datech v `DataSet`. Tyto vlastnosti se budeme věnovat jednotlivě podrobněji v [aktualizace zdroje dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
   
@@ -120,7 +120,7 @@ foreach (DataRow pRow in customerOrders.Tables["Customers"].Rows)
 ## <a name="sql-server-decimal-type"></a>Typ desetinné SQL serveru  
  Ve výchozím nastavení `DataSet` ukládá data pomocí datových typů rozhraní .NET Framework. Pro většinu aplikací tyto poskytují pohodlný reprezentace informace o zdroji dat. Tento zápis však může dojít k potížím, pokud datový typ ve zdroji dat je desítkový nebo číselný datový typ SQL serveru. Rozhraní .NET Framework `decimal` datový typ povoluje maximálně 28 platných číslic, zatímco SQL Server `decimal` datový typ umožňuje 38 nejvýznamnějších číslic. Pokud `SqlDataAdapter` určuje během `Fill` operace, která přesnost systému SQL Server `decimal` pole je větší než 28 znaků, aktuální řádek není přidán do `DataTable`. Místo toho `FillError` dojde k události, což vám umožní zjistit, jestli ke ztrátě přesnosti dojít a reagují odpovídajícím způsobem. Další informace o `FillError` událostí, naleznete v tématu [zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md). Získat SQL Server `decimal` hodnotu, můžete použít také <xref:System.Data.SqlClient.SqlDataReader> objektu a volání <xref:System.Data.SqlClient.SqlDataReader.GetSqlDecimal%2A> metoda.  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedl rozšířenou podporu <xref:System.Data.SqlTypes> v `DataSet`. Další informace najdete v tématu [SqlTypes a datová sada](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
+ ADO.NET 2.0 zavedl rozšířenou podporu <xref:System.Data.SqlTypes> v `DataSet`. Další informace najdete v tématu [SqlTypes a datová sada](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
   
 ## <a name="ole-db-chapters"></a>OLE DB kapitol  
  Hierarchické sady řádků nebo kapitol (typ OLE DB `DBTYPE_HCHAPTER`, typ ADO `adChapter`) můžete použít tak, aby vyplnil obsah `DataSet`. Při <xref:System.Data.OleDb.OleDbDataAdapter> zaznamená sloupec nepoužívaly kapitoly během `Fill` operace, `DataTable` pro sloupec nepoužívaly kapitoly, se vytvoří a je tuto tabulku se sloupci a řádky v kapitole. Tabulky vytvořené pro nepoužívaly kapitoly sloupec nazýval pomocí název nadřazené tabulky a název sloupce nepoužívaly kapitoly ve formě "*ParentTableNameChapteredColumnName*". Pokud tabulka již existuje v `DataSet` , který odpovídá názvu nepoužívaly kapitoly sloupec, v aktuální tabulce je naplněný daty kapitoly. Pokud neexistuje žádný sloupec z existující tabulky, který odpovídá sloupci najít v kapitole, je přidán nový sloupec.  

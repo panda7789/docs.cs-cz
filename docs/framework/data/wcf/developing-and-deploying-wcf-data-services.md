@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 8b709de728726b7695b987c48574d2a70a1bc27e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ef38bacfd129033aab41f5f516b96b95fac7913f
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765671"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879999"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení služeb WCF Data Services
 
@@ -38,18 +38,18 @@ Toto téma popisuje zejména vývoji a nasazení datových služeb pomocí sady 
 
 ### <a name="choose-a-development-web-server"></a>Zvolte vývojovému webovému serveru
 
-Při vývoji datových služeb WCF jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu pomocí sady Visual Studio 2015, máte možnost volby z webových serverů, na kterém chcete datovou službu spouštět během vývoje. Integrovány následující webové servery pomocí sady Visual Studio, aby bylo snazší pro testování a ladění datových služeb v místním počítači.
+Při vývoji datových služeb WCF jako aplikace ASP.NET nebo webu ASP.NET pomocí sady Visual Studio 2015, máte možnost volby z webových serverů, na kterém chcete datovou službu spouštět během vývoje. Integrovány následující webové servery pomocí sady Visual Studio, aby bylo snazší pro testování a ladění datových služeb v místním počítači.
 
 1. **Místní Server IIS**
 
-     Při vytváření datových služeb je [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou stránku, na kterém běží v Internetové informační služby (IIS), doporučujeme ji vyvíjet a testovat pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Ke spuštění datové služby ve službě IIS, musí je zajištěno, že služba IIS a služby Windows Communication Foundation (WCF) jsou správnost instalace a konfigurace a udělit přístup k účtům služby IIS v systému souborů a databáze. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
+     Při vytváření datových služeb je aplikace ASP.NET nebo ASP.NET Web, který běží v Internetové informační služby (IIS), doporučujeme ji vyvíjet a testovat pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Ke spuštění datové služby ve službě IIS, musí je zajištěno, že služba IIS a služby Windows Communication Foundation (WCF) jsou správnost instalace a konfigurace a udělit přístup k účtům služby IIS v systému souborů a databáze. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
 
     > [!NOTE]
     > Visual Studio je nutné spustit s právy správce, chcete-li povolit ve vývojovém prostředí konfiguraci místního serveru služby IIS.
 
 2. **Vývojový Server sady Visual Studio**
 
-     Visual Studio zahrnuje vestavěný webový server, Server sady Visual Studio vývoje, což je výchozí webový server pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekty. Tento webový server je navržen pro spouštění [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekty v místním počítači během vývoje. [Rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) ukazuje, jak vytvořit datových služeb běžících v vývojový Server sady Visual Studio.
+     Visual Studio zahrnuje vestavěný webový server, vývojový Server sady Visual Studio, což je výchozí webový server pro projekty ASP.NET. Tento webový server je vyhrazen pro spouštění projektů ASP.NET v místním počítači během vývoje. [Rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) ukazuje, jak vytvořit datových služeb běžících v vývojový Server sady Visual Studio.
 
      Byste měli vědět o následujících omezeních při použití vývojového serveru sady Visual Studio pro vývoj datové služby:
 
@@ -82,9 +82,9 @@ Při vývoji datových služeb je vhodné zvážit následující faktory:
 
 - Při ladění datové služby, můžete získat další informace o chybě z datové služby než při běžném provozu. Můžete získat další informace o chybě z datové služby tak, že nastavíte <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnost v <xref:System.Data.Services.DataServiceConfiguration> k `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior> atribut ve třídě datové služby na `true`. Další informace najdete v příspěvku [ladění služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=201868). Můžete také povolit trasování ve službě WCF a zobrazit výjimky vyvolané ve vrstvě zasílání zpráv protokolu HTTP. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).
 
-- Datové služby se obvykle vyvíjí jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekt aplikace, ale můžete také vytvořit jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webový projekt v sadě Visual Studio. Informace o rozdílech mezi těmito dvěma typy projektů naleznete v tématu [Web Application Projects versus webových projektů v sadě Visual Studio](https://docs.microsoft.com/previous-versions/aspnet/dd547590(v=vs.110)).
+- Datové služby se obvykle vyvíjí jako projekt aplikace technologie ASP.NET, ale můžete také vytvořit můžete data službu jako projekt webu technologie ASP.NET v sadě Visual Studio. Informace o rozdílech mezi těmito dvěma typy projektů naleznete v tématu [Web Application Projects versus webových projektů v sadě Visual Studio](https://docs.microsoft.com/previous-versions/aspnet/dd547590(v=vs.110)).
 
-- Při vytváření datové služby pomocí **přidat novou položku** dialogové okno v sadě Visual Studio, datové služby je hostitelem [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ve službě IIS. Zatímco [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a služby IIS jsou výchozími hostiteli datové služby, jsou podporována další možnosti hostování. Další informace najdete v tématu [hostitelem datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md).
+- Při vytváření datové služby pomocí **přidat novou položku** dialogové okno v sadě Visual Studio, datové služby je hostovaná technologií ASP.NET ve službě IIS. Zatímco technologie ASP.NET a IIS jsou výchozími hostiteli datové služby, jsou podporována další možnosti hostování. Další informace najdete v tématu [hostitelem datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md).
 
 ## <a name="deploy-wcf-data-services"></a>Nasazení služeb WCF Data Services
 
@@ -92,7 +92,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 - **Webový Server hostovaný ve službě IIS**
 
-    Když datové služby je mimo jiné vyvinuto [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, dá se nasadit na webovém serveru IIS s využitím standardu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] procesů nasazení.  Visual Studio poskytuje následující technologie nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], v závislosti na typu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, který je hostitelem datové služby, kterou nasazujete.
+    Když datové služby je mimo jiné vyvinuto projektu ASP.NET, se můžete nasadit na webovém serveru IIS pomocí standardních procesů nasazení technologie ASP.NET.  Visual Studio poskytuje následující technologie nasazení pro technologii ASP.NET, v závislosti na typu projektu ASP.NET, který je hostitelem datové služby, kterou nasazujete.
 
   - **Technologie nasazení pro webové aplikace ASP.NET**
 
@@ -108,7 +108,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
     - [Návod: Nasazení webové aplikace ASP.NET pomocí příkazu XCOPY](https://docs.microsoft.com/previous-versions/aspnet/f735abw9(v=vs.100))
 
-     Další informace o možnostech nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, najdete v článku [Přehled nasazení webu pro Visual Studio a ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/dd394698(v=vs.110)).
+     Další informace o možnostech nasazení pro aplikaci ASP.NET najdete v tématu [Přehled nasazení webu pro Visual Studio a ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/dd394698(v=vs.110)).
 
     > [!TIP]
     > Než datovou službu nasadíte do služby IIS, nezapomeňte otestovat nasazení na webový server, na kterém je spuštěna služba IIS. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
@@ -121,7 +121,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 Při nasazování datových služeb je vhodné zvážit následující faktory:
 
-- Při nasazování datových služeb používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset datové struktury, data, nebo i s vašimi daty nasazení služby. Visual Studio může automaticky vytvářet skripty (soubory .sql) k tomu v cílové databázi, a tyto skripty mohou být součástí balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [jak: Nasazení databáze se projekt webové aplikace](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100)). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, Uděláte to tak pomocí **Database Publishing Wizard** v sadě Visual Studio. Další informace najdete v tématu [publikování databáze SQL](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
+- Při nasazování datových služeb používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset datové struktury, data, nebo i s vašimi daty nasazení služby. Visual Studio může automaticky vytvářet skripty (soubory .sql) k tomu v cílové databázi, a tyto skripty mohou být součástí balíčku pro nasazení webové aplikace technologie ASP.NET. Další informace najdete v tématu [jak: Nasazení databáze se projekt webové aplikace](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100)). Pro web ASP.NET, můžete to provést pomocí **Database Publishing Wizard** v sadě Visual Studio. Další informace najdete v tématu [publikování databáze SQL](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
 
 - Služby WCF Data Services zahrnuje základní implementaci WCF, a proto můžete použít Windows Server AppFabric ke sledování datové služby nasazené ve službě IIS a běžící na Windows serveru. Další informace o používání služby Windows Server AppFabric ke sledování datové služby, najdete v příspěvku [sledování služeb WCF Data Services pomocí služby Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=202005).
 

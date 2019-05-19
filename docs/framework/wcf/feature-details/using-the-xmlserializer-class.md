@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: b618d0c153501885fe8c42a04d0723eaa5bcd9af
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 3a0c8bd90c2a8f4ffc2e7a6d8831f306637915e6
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586247"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877385"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 Windows Communication Foundation (WCF) můžete použít dva různé serializace technologií Chcete-li data ve vaší aplikaci do souboru XML, která se přenášejí mezi klienty a služeb, proces s názvem serializace.  
@@ -35,14 +35,14 @@ Windows Communication Foundation (WCF) můžete použít dva různé serializace
  <xref:System.Runtime.Serialization.DataContractSerializer>, Spolu s daty používá typy kontraktů, je doporučený postup pro zápis nových služeb WCF. Další informace najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="when-to-use-the-xmlserializer-class"></a>Kdy použít třídy XmlSerializer  
- Také podporuje WCF <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro WCF. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] použití na webové služby. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad tím výsledného kódu XML a podporuje mnohem více schématu XML definice jazyk (XSD) standard. Také nevyžaduje žádné deklarativních atributů na Serializovatelné typy. Další informace najdete v tématu serializace XML v dokumentaci k rozhraní .NET Framework. <xref:System.Xml.Serialization.XmlSerializer> Třídy typy kontraktů dat nepodporuje.  
+ Také podporuje WCF <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro WCF. Je stejný stroj serializace, použít webové služby ASP.NET. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad tím výsledného kódu XML a podporuje mnohem více schématu XML definice jazyk (XSD) standard. Také nevyžaduje žádné deklarativních atributů na Serializovatelné typy. Další informace najdete v tématu serializace XML v dokumentaci k rozhraní .NET Framework. <xref:System.Xml.Serialization.XmlSerializer> Třídy typy kontraktů dat nepodporuje.  
   
  Při použití Svcutil.exe nebo **přidat odkaz na službu** je automaticky vybraná funkce v sadě Visual Studio pro generování kódu klienta pro služby třetích stran nebo pro přístup k schématu třetích stran, příslušný serializátor. Pokud schéma není kompatibilní s <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Xml.Serialization.XmlSerializer> zaškrtnuto.  
   
 ## <a name="manually-switching-to-the-xmlserializer"></a>Ruční přepínání objektu XmlSerializer  
  V některých případech bude pravděpodobně nutné ručně nepřepnete na <xref:System.Xml.Serialization.XmlSerializer>. K tomu dojde, například v těchto případech:  
   
-- Při migraci aplikace z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby WCF, můžete znovu použít existující, <xref:System.Xml.Serialization.XmlSerializer>– typy kontraktů kompatibilní typy místo vytváří nová data.  
+- Při migraci aplikace z webových služeb ASP.NET na WCF, můžete chtít znovu použít existující, <xref:System.Xml.Serialization.XmlSerializer>– typy kontraktů kompatibilní typy místo vytváří nová data.  
   
 - Když je důležité mít naprostou kontrolu nad XML, který se zobrazuje zprávy, ale dokumentu webové služby WSDL (Description Language) není k dispozici, například při vytváření služby s typy, které mají zajistit do určité standardizovaných publikované schématu, který je není kompatibilní s objektu DataContractSerializer.  
   

@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 566a7905ac2eda17046595bcccc868e44f6a1e9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5165f3ec1ef41e3fb0dd053c112610183197108a
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664103"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877447"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Sdružování připojení SQL Serveru (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  
   
- V praxi používat většinu aplikací pouze jednu nebo několik různých konfigurací pro připojení. To znamená, že při spuštění aplikace, mnoho stejné připojení bude možné opakovaně otevřel a uzavřel. Chcete-li minimalizovat náklady na otevření připojení, [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] používá optimalizaci techniky označované jako *sdružování připojení*.  
+ V praxi používat většinu aplikací pouze jednu nebo několik různých konfigurací pro připojení. To znamená, že při spuštění aplikace, mnoho stejné připojení bude možné opakovaně otevřel a uzavřel. Chcete-li minimalizovat náklady na otevření připojení ADO.NET používá optimalizaci techniky označované jako *sdružování připojení*.  
   
  Sdružování připojení snižuje počet případů, kdy se nové připojení musí být otevřeny. *Pro sdružování* udržuje vlastnictví fyzické připojení. Spravuje připojení udržováním aktivní sadu aktivních připojení pro každou konfiguraci dané připojení. Vždy, když uživateli zavolá `Open` na připojení, hledá pro sdružování připojení k dispozici ve fondu. Pokud je k dispozici ve fondu připojení, se vrátí volajícímu místo otevřít nové připojení. Když aplikace volá `Close` připojení, pro sdružování vrátí ji do klientů ve fondu sadu aktivních připojení místo jeho uzavřením. Po připojení se vrátí do fondu, je připraven znovu použije při dalším `Open` volání.  
   
- Pouze připojení se stejnou konfigurací můžete ve fondu. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] udržuje několik fondů ve stejnou dobu, jeden pro každou konfiguraci. Připojení jsou rozděleny do fondů pomocí připojovacího řetězce a identita Windows při použití integrovaného zabezpečení. Připojení se spojují také závislosti na tom, zda je uveden v transakci. Při použití <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A>, <xref:System.Data.SqlClient.SqlCredential> instance má vliv na fond připojení. Různé instance <xref:System.Data.SqlClient.SqlCredential> používat fondy jiné připojení, i v případě, že ID uživatele a heslo jsou stejné.  
+ Pouze připojení se stejnou konfigurací můžete ve fondu. ADO.NET udržuje několik fondů ve stejnou dobu, jeden pro každou konfiguraci. Připojení jsou rozděleny do fondů pomocí připojovacího řetězce a identita Windows při použití integrovaného zabezpečení. Připojení se spojují také závislosti na tom, zda je uveden v transakci. Při použití <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A>, <xref:System.Data.SqlClient.SqlCredential> instance má vliv na fond připojení. Různé instance <xref:System.Data.SqlClient.SqlCredential> používat fondy jiné připojení, i v případě, že ID uživatele a heslo jsou stejné.  
   
- Sdružování připojení může výrazně zlepšit výkon a škálovatelnost aplikace. Ve výchozím nastavení, je povoleno sdružování připojení v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Pokud zakážete explicitně ji, optimalizuje pro sdružování připojení jsou otevřené a uzavřené ve vaší aplikaci. Můžete také zadat několik modifikátory připojovací řetězec můžete řídit chování sdružování připojení. Další informace najdete v tématu "Řízení připojení sdružování s připojovací řetězec klíčová slova" dále v tomto tématu.  
+ Sdružování připojení může výrazně zlepšit výkon a škálovatelnost aplikace. Ve výchozím nastavení je v ADO.NET povoleno sdružování připojení. Pokud zakážete explicitně ji, optimalizuje pro sdružování připojení jsou otevřené a uzavřené ve vaší aplikaci. Můžete také zadat několik modifikátory připojovací řetězec můžete řídit chování sdružování připojení. Další informace najdete v tématu "Řízení připojení sdružování s připojovací řetězec klíčová slova" dále v tomto tématu.  
   
 > [!NOTE]
 >  Pokud je povoleno sdružování připojení, pokud dojde k vypršení časového limitu nebo jiná chyba přihlášení, bude vyvolána výjimka a následné pokusy o připojení se nezdaří pro další pět sekund, "blokování období". Pokud se aplikace pokusí o připojení v rámci doby blokování, první výjimka vyvolána znovu. Další chyby po skončení blokování období způsobí nové blokování období, která je dvakrát až předchozí blokování období až do maximálního počtu jednu minutu.  
@@ -80,7 +80,7 @@ Další informace o událostech, které jsou přidružené k otevření a zavře
  Pokud připojení existuje na serveru, který chybí, lze toto připojení rozlišovat z fondu i v případě, že nebyl zjištěn přerušená připojení a označena jako neplatná pro sdružování připojení. To platí, protože režii kontrole, že připojení je stále platný by o výhodách pro sdružování způsobením učiníte serveru dojde k odstranění. V tomto případě první pokus o připojení k zjistí, že připojení bylo porušeno. a je vyvolána výjimka.  
   
 ## <a name="clearing-the-pool"></a>Vymazává se fondu  
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedené dvě nové metody pro vymazávání fondu: <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A> a <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A>. `ClearAllPools` Vymaže sdružení připojení pro daného poskytovatele a `ClearPool` vymaže fondu připojení, který je spojen s konkrétním připojení. Pokud je připojení používaná v okamžiku volání, jsou označen odpovídajícím způsobem. Když jsou uzavřeny, jsou zahozeny místo se vrací do fondu.  
+ ADO.NET 2.0 zavedené dvě nové metody pro vymazávání fondu: <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A> a <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A>. `ClearAllPools` Vymaže sdružení připojení pro daného poskytovatele a `ClearPool` vymaže fondu připojení, který je spojen s konkrétním připojení. Pokud je připojení používaná v okamžiku volání, jsou označen odpovídajícím způsobem. Když jsou uzavřeny, jsou zahozeny místo se vrací do fondu.  
   
 ## <a name="transaction-support"></a>Podpora transakcí  
  Připojení jsou vykreslovány vedle z fondu a kontext přiřazené na základě transakce. Není-li `Enlist=false` zadaná v připojovacím řetězci, fond připojení zajišťuje, že připojení je uveden v <xref:System.Transactions.Transaction.Current%2A> kontextu. Pokud je připojení uzavřen a vrácen do fondu se zařazených `System.Transactions` transakce, to je odložena tak, že další žádosti pro tento fond připojení se stejným `System.Transactions` transakce se vrátí stejné připojení, pokud je k dispozici. Pokud takový požadavek vydává a nejsou k dispozici žádné připojení ve fondu, je připojení ze součástí fondu beztransakční a zařazen. Pokud v obou oblastech fondu jsou k dispozici žádné připojení, se nové připojení a zařazeny.  

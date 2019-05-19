@@ -5,12 +5,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 1e4c03985908f6e49d5ce001cdc9c1472f5a6d44
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ea6f93e52ade91e61bdfcbc35aeb56de9101e80f
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595602"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878920"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main() (C# Programming Guide)
 
@@ -99,4 +99,3 @@ Pokud vstupní bod aplikace vrátí `Task` nebo `Task<int>`, kompilátor vygener
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Argumenty Main() a příkazového řádku](index.md)
 - [Postupy: Zobrazení argumentů příkazového řádku](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)

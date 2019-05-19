@@ -2,12 +2,12 @@
 title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 5a985cfcd4834efd7bbab04d30c86787dfb90955
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 47dbf800852e149f541c512e90a8bafef2077672
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583477"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879923"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -141,22 +141,23 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
  Přístup k metodám a vlastnostem <xref:System.Data.Objects.ObjectContext> v rámci bloku try-catch. Zachycování výjimek brání neošetřené výjimky z vystavení položky <xref:System.Data.Objects.ObjectStateManager> nebo informace o modelu (jako jsou názvy tabulek) pro uživatele vaší aplikace.  
   
 ## <a name="security-considerations-for-aspnet-applications"></a>Důležité informace o zabezpečení pro aplikace ASP.NET  
- Následující by měl být při práci s cestami v [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] aplikací.  
+
+Při práci s cestami v aplikacích ASP.NET, měli byste zvážit následující.  
   
 #### <a name="verify-whether-your-host-performs-path-checks"></a>Ověřte, zda váš hostitel provádí kontroly cestu.  
- Když `|DataDirectory|` (ohraničen symboly kanálu) náhradní řetězec se používá, [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] ověří, zda je podporována Vyhodnocená cesta. Například ".." není povolený za `DataDirectory`. Stejné kontroly pro vyřešení operátor kořenového adresáře webové aplikace (`~`) provádí proces hostování [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]. Služba IIS provede tato kontrola; hostitelé než IIS však nemusí ověřte, že je podporované Vyhodnocená cesta. Měli byste vědět chování hostitele, na kterém je nasazená [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
+ Když `|DataDirectory|` (ohraničen symboly kanálu) náhradní řetězec se používá, ADO.NET ověří, zda je podporována Vyhodnocená cesta. Například ".." není povolený za `DataDirectory`. Stejné kontroly pro vyřešení operátor kořenového adresáře webové aplikace (`~`) se provádí pomocí procesu hostování technologie ASP.NET. Služba IIS provede tato kontrola; hostitelé než IIS však nemusí ověřte, že je podporované Vyhodnocená cesta. Měli byste vědět chování hostitele, na kterém je nasazená [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
   
 #### <a name="do-not-make-assumptions-about-resolved-path-names"></a>Nedovolte, aby byly předpoklady o názvech Vyhodnocená cesta.  
  I když hodnotách, které kořenové – operátor (`~`) a `DataDirectory` vyřešit náhradní řetězec by měl zůstat konstantní za běhu aplikace [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] neomezuje hostitele v úpravách tyto hodnoty.  
   
 #### <a name="verify-the-path-length-before-deployment"></a>Ověřte délku cesty před nasazením.  
- Před nasazením [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace, ujistěte se, že hodnoty kořenové – operátor (~) a `DataDirectory` náhradní řetězec nepřekračují omezení délky cesty v operačním systému. [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Zprostředkovatelé dat není jisté, že délka cesty je v mezích limitů platný.  
+ Před nasazením [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace, ujistěte se, že hodnoty kořenové – operátor (~) a `DataDirectory` náhradní řetězec nepřekračují omezení délky cesty v operačním systému. Zprostředkovatelé dat ADO.NET není jisté, že délka cesty je v mezích limitů platný.  
   
 ## <a name="security-considerations-for-adonet-metadata"></a>Security Considerations for ADO.NET Metadata  
  Při vytváření a práci s modelu a souborů mapování, platí následující aspekty zabezpečení.  
   
 #### <a name="do-not-expose-sensitive-information-through-logging"></a>Nezveřejňujte citlivé informace přes protokolování.  
- [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Metadata součásti služby neprotokolujte nějaké soukromé informace. Pokud neexistují výsledky, které nejde vrátit kvůli omezením přístupu, databázové systémy a systémy souborů by měl vrátit nula výsledků namísto vyvolání výjimky, které mohou obsahovat citlivé informace.  
+Součásti služby ADO.NET metadat neprotokolujte nějaké soukromé informace. Pokud neexistují výsledky, které nejde vrátit kvůli omezením přístupu, databázové systémy a systémy souborů by měl vrátit nula výsledků namísto vyvolání výjimky, které mohou obsahovat citlivé informace.  
   
 #### <a name="do-not-accept-metadataworkspace-objects-from-untrusted-sources"></a>Nepřijmout objektu MetadataWorkspace objekty z nedůvěryhodných zdrojů.  
  Aplikace by neměla přijímat instance <xref:System.Data.Metadata.Edm.MetadataWorkspace> třídy z nedůvěryhodných zdrojů. By měl místo toho explicitně vytvořit a naplnit pracovní prostor z tyto zdroje.  

@@ -2,12 +2,12 @@
 title: Vzájemná spolupráce a integrace
 ms.date: 03/30/2017
 ms.assetid: 0d925119-01a1-45c2-9ea0-23061323ad33
-ms.openlocfilehash: 2410c52e99f3498d8dbd6ec66a5abe0e169f4b91
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8b4113d7545ab4e478b49c07681298d9ee942309
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591225"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875979"
 ---
 # <a name="interoperability-and-integration"></a>Vzájemná spolupráce a integrace
 Tato část zahrnuje interoperabilita a integrace s Windows Communication Foundation (WCF).  
@@ -32,16 +32,16 @@ Tato část zahrnuje interoperabilita a integrace s Windows Communication Founda
  Popisuje postup migrace WSE 3.0 webové služby ke službě WCF.  
   
  [Interoperabilita s webovými službami ASP.NET](../../../../docs/framework/wcf/feature-details/interop-with-aspnet-web-services.md)  
- Popisuje, jak můžete spolupracovat WCF [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
+ Popisuje, jak můžete spolupracovat WCF s webovými službami ASP.NET.  
   
  [Migrace webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou službu na službu WCF.  
+ Popisuje, jak přenést technologie ASP.NET webové služby ke službě WCF.  
   
  [Migrace webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou službu na službu WCF.  
+ Popisuje, jak přenést technologie ASP.NET webové služby ke službě WCF.  
   
  [Migrace webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou službu na službu WCF.  
+ Popisuje, jak přenést technologie ASP.NET webové služby ke službě WCF.  
   
  [Interoperabilita s aplikacemi POX](../../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md)  
  Popisuje, jak WCF poskytuje služby a klienti, kteří používají zprávy "Plain Old XML" (POX).  

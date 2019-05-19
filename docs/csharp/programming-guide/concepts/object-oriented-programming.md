@@ -2,12 +2,12 @@
 title: Objektově orientované programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: a7a3ce1b33d040b337087dfede90b58906c95cbd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2adb1ac24aa625c89fcafe074fe65189aa3767c7
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710963"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880707"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
@@ -25,17 +25,17 @@ Tato část popisuje následující pojmy:
 
   - [Členy třídy](#Members)
 
-        [Properties and Fields](#Properties)
+    - [Vlastnosti a pole](#Properties)
 
-        [Methods](#Methods)
+    - [Metody](#Methods)
 
-        [Constructors](#Constructors)
+    - [Konstruktory](#Constructors)
 
-        [Finalizers](#Finalizers)
+    - [Finalizační metody](#Finalizers)
 
-        [Events](#Events)
+    - [Události](#Events)
 
-        [Nested Classes](#NestedClasses)
+    - [Vnořené třídy](#NestedClasses)
 
   - [Modifikátory přístupu a úrovně přístupu](#AccessModifiers)
 

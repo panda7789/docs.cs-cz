@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: 8788c97842d157e09f7058411db43f86c66769cd
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f0510b9e3f31686e22532f21989cb95905522286
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583801"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879899"
 ---
 # <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců
-V dřívějších verzích [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], kompilace kontrola připojovacích řetězců s spojený řetězec hodnoty nedošlo, tak, aby v době běhu, vygeneruje nesprávná klíčové slovo <xref:System.ArgumentException>. Každý zprostředkovatele dat .NET Framework nepodporuje jinou syntaxi pro klíčová slova řetězec připojení, které vytváření platný připojovací řetězce obtížné, je-li provést ručně. Chcete-li vyřešit tento problém [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] zavedeny nové tvůrci připojovacích řetězců pro každého poskytovatele dat .NET Framework 2.0. Každý poskytovatel dat zahrnuje třídu Tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulka uvádí třídy tvůrce jejich přidružený připojovací řetězec a zprostředkovatele dat .NET Framework.  
+V dřívějších verzích rozhraní ADO.NET, kompilace kontrolu připojovací řetězce s hodnotami zřetězených řetězců nedošlo, tak, aby v době běhu, vygeneruje nesprávná klíčové slovo <xref:System.ArgumentException>. Každý zprostředkovatele dat .NET Framework nepodporuje jinou syntaxi pro klíčová slova řetězec připojení, které vytváření platný připojovací řetězce obtížné, je-li provést ručně. Chcete-li tento problém vyřešit, ADO.NET 2.0 zavedeny nové tvůrci připojovacích řetězců pro každého poskytovatele dat .NET Framework. Každý poskytovatel dat zahrnuje třídu Tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulka uvádí třídy tvůrce jejich přidružený připojovací řetězec a zprostředkovatele dat .NET Framework.  
   
 |Poskytovatel|Třída ConnectionStringBuilder|  
 |--------------|-----------------------------------|  

@@ -1,6 +1,6 @@
 ---
 title: Příkaz foreach jazyka C#
-ms.date: 06/29/2018
+ms.date: 05/17/2019
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 417a8cefbc9bc7544ae1156992e6e6c549fb828f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7a1508db23f60cac487e0171c3db7756bc228fd2
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661631"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880540"
 ---
 # <a name="foreach-in-c-reference"></a>foreach, in (referenční dokumentace jazyka C#)
 
@@ -26,6 +26,8 @@ ms.locfileid: "61661631"
 Od verze C# 7.3, pokud čítače výčtu `Current` vrátí vlastnost [odkazovat na návratovou hodnotu](ref.md#reference-return-values) (`ref T` kde `T` je typ prvku kolekce), můžete deklarovat proměnnou iterace `ref` nebo `ref readonly` modifikátor.
 
 Na libovolný bod v rámci `foreach` blok příkazů, můžete přerušit ze smyčky s použitím [přerušení](break.md) příkazu nebo kroku na následující iteraci ve smyčce pomocí [pokračovat](continue.md) příkazu. Také můžete ukončit `foreach` smyčky pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.
+
+Pokud `foreach` příkazu je použita na `null`, <xref:System.NullReferenceException> je vyvolána výjimka. Pokud zdrojové kolekce `foreach` příkaz je prázdný, text `foreach` smyčky není spuštěn a přeskočí.
 
 ## <a name="examples"></a>Příklady
 

@@ -2,12 +2,12 @@
 title: Novinky ve Windows Workflow Foundation v rozhraní .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: a76ec56cf6ac5260f00031bc815b32b1e10804a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6be2e3bd64fd93fab8af792bb92c3c0238a7ecde
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61671415"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876542"
 ---
 # <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Novinky ve Windows Workflow Foundation v rozhraní .NET 4.5
 
@@ -118,7 +118,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], proměnné a
 
 Následující snímek obrazovky ukazuje návrháře kontextové nabídky proměnných a argumentů.
 
-![Proměnné a Argument místní nabídka návrháře](./media/designercontextmenu.png "DesignerContextMenu")
+![Proměnné a Argument místní nabídka návrháře](./media/whats-new-in-wf-in-dotnet/designer-context-menu.png)
 
 ### <a name="BKMK_AutoSurround"></a> Automatické kulatých pořadí
 
@@ -126,11 +126,11 @@ Od pracovního postupu nebo určité aktivity kontejneru (například <xref:Syst
 
 Následující snímek obrazovky ukazuje `WriteLine` aktivity v `Body` z `NoPersistScope`.
 
-![Automatické&#45;před a za místo přetažení](./media/autosurround1.png "AutoSurround1")
+![Aktivity WriteLine v těle aktivita NoPersistScope.](./media/whats-new-in-wf-in-dotnet/auto-surround-write-line-activity.png)
 
 Následující snímek obrazovky ukazuje automaticky vytvořený `Sequence` aktivity v `Body` při sekundy `WriteLine` neklesla pod první.
 
-![Automaticky vytvořit sekvenční aktivitu](./media/autosurround2.png "AutoSurround2")
+![Automaticky vytvořené pořadí v textu NoPersistScope.](./media/whats-new-in-wf-in-dotnet/auto-surround-sequence-activity.png)
 
 ### <a name="BKMK_PanMode"></a> Režim posouvání
 
@@ -138,7 +138,7 @@ Velké pracovní postup v Návrháři snadněji přejít, je možné povolit re�
 
 Následující snímek obrazovky ukazuje tlačítko posouvání, která se nachází v pravém dolním rohu návrháře postupu provádění.
 
-![Tlačítko posouvání v Návrháři pracovních postupů](./media/panbutton.png "PanButton")
+![Tlačítko Posun zvýrazněných v Návrháři pracovních postupů.](./media/whats-new-in-wf-in-dotnet/pan-button-workflow-designer.png)
 
 Prostřední tlačítko myši nebo MEZERNÍK lze použít také k posouvání návrháře postupu provádění.
 
@@ -154,7 +154,7 @@ Pokud chcete mít hierarchické pracovních postupů přehlednější a díky to
 
 Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začínáme](getting-started-tutorial.md) zobrazuje zobrazení osnovy s sekvenčního pracovního postupu.
 
-![Zobrazení v Návrháři pracovních postupů osnovy](./media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")
+![Snímek obrazovky zobrazení osnovy s sekvenčního pracovního postupu v sadě Visual Studio.](./media/whats-new-in-wf-in-dotnet/outline-view-in-workflow-designer.jpg)
 
 ### <a name="BKMK_CSharpExpressions"></a> Výrazy jazyka C#
 
@@ -174,17 +174,17 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], připojení 
 
 Následující snímek obrazovky ukazuje body přílohy, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů.
 
-![Počáteční uzel vývojový diagram zobrazuje body automatické připojení](./media/autoconnect1.png "Autoconnect1")
+![Vývojový diagram znázorňující uzel start automaticky připojit body](./media/whats-new-in-wf-in-dotnet/auto-connect-points-start-node.png)
 
 Aktivity můžete také přetahovat do připojení mezi uzly vývojový diagram a stavy pro automatické vložení uzlu mezi dvou jiných uzlech. Následující snímek obrazovky ukazuje zvýrazněný řádek připojení, kde můžete přetáhnout z panelu nástrojů a vyřadit aktivity.
 
-![Automatické&#45;vložit úchyt pro přetažení aktivity](./media/autoinsert.png "Autoinsert")
+![Automaticky vkládat úchyt pro přetažení aktivit](./media/whats-new-in-wf-in-dotnet/auto-insert-connecting-line.png)
 
 ### <a name="BKMK_Annotations"></a> Návrháře poznámky
 
 Usnadňuje vývoj větší pracovních postupů návrháře nyní podporuje přidávání poznámek k pomáhají udržovat přehled o procesu návrhu. Komentáře lze přidat do aktivity, státy, vývojový diagram uzly, proměnné a argumenty. Na následujícím snímku obrazovky se zobrazí místní nabídku pro přidání poznámky do návrháře.
 
-![Poznámka kontextovou nabídku](./media/annotationdialog.png "annotationdialog")
+![Snímek obrazovky nabídky pro přidávání poznámek.](./media/whats-new-in-wf-in-dotnet/designer-annotations-context-menu.png)
 
 ### <a name="debugging-states"></a>Ladění stavy
 
@@ -232,7 +232,7 @@ Pracovní postupy stavového stroje byly představeny jako součást rozhraní .
 
 Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md).
 
-![Dokončení pracovního postupu stavového stroje](./media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")
+![Obrázek, na kterém pracovní postup dokončený stav stroje.](./media/whats-new-in-wf-in-dotnet/complete-state-machine-workflow.jpg)
 
 Další informace o vytváření pracovní postupy stavu počítače, naleznete v tématu [pracovní postupy stavu počítače](state-machine-workflows.md).
 

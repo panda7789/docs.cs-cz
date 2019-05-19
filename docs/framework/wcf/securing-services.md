@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-ms.openlocfilehash: 65d4f2858c2be4c2a6872f96ef3739bb16253d74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4ac823b5419d845437ef8e89f5123adafda0c5a
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949861"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881359"
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou primárních požadavků: přenos zabezpečení a autorizace. (Třetí požadavek auditování událostí zabezpečení, je popsaná v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno přenos zabezpečení zahrnuje ověření (ověření identity klienta a služby), důvěrnosti (šifrování zpráv) a integritu (digitální podpis umožňuje zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení pouze uživatelé s oprávněním ke čtení souboru. Pomocí funkce služby WCF, dva primární požadavky se snadno implementují.  
@@ -50,7 +50,7 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
  Zabezpečení na Internetu se skládá ze stejné požadavky na zabezpečení v intranetu. Služba potřebuje prezentovat svoje přihlašovací údaje k prokázání své pravosti a klienti se musí k prokázání své identity ve službě. Jakmile prokazuje identity klienta služby můžete řídit vyjadřuje rozsah přístupu k prostředkům má klient. Ale protože heterogenní potřebujeme Internetu přihlašovací údaje se liší od používaných v doméně Windows. Že Kerberos kontroler obsluhuje ověřování uživatelů v doméně s lístky pro přihlašovací údaje na Internetu, služeb a klientů závisí na některou z několika různými způsoby prezentovat přihlašovací údaje. Cílem tohoto tématu, ale prezentovat běžným přístupem, která umožňuje vytvoření služby WCF, který je přístupný na Internetu.  
   
 ### <a name="using-iis-and-aspnet"></a>Pomocí služby IIS a ASP.NET  
- Požadavky na zabezpečení Internetu a mechanismy k řešení těchto problémů, nejsou nové. Služba IIS je webový server společnosti Microsoft pro Internet a obsahuje mnoho funkcí zabezpečení, které řeší tyto problémy. Kromě toho [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] má bezpečnostní funkce, které můžete použít služby WCF. Abyste mohli využívat tyto funkce zabezpečení, hostování služby WCF ve službě IIS.  
+ Požadavky na zabezpečení Internetu a mechanismy k řešení těchto problémů, nejsou nové. Služba IIS je webový server společnosti Microsoft pro Internet a obsahuje mnoho funkcí zabezpečení, které řeší tyto problémy. Kromě toho technologie ASP.NET obsahuje funkce zabezpečení, které můžete použít služby WCF. Abyste mohli využívat tyto funkce zabezpečení, hostování služby WCF ve službě IIS.  
   
 #### <a name="using-aspnet-membership-and-role-providers"></a>Pomocí členství technologie ASP.NET a zprostředkovatele rolí  
  Technologie ASP.NET obsahuje zprostředkovatele členství a rolí. Zprostředkovatel je databáze párů jméno/heslo uživatele za účelem ověřování totožnosti volajícím, které také umožňuje určit jednotliví volající přístupová oprávnění. S použitím technologie WCF můžete snadno použít existující členství a poskytovatel rolí prostřednictvím konfigurace. Ukázková aplikace, který ukazuje to, najdete v článku [členství a poskytovatel rolí](../../../docs/framework/wcf/samples/membership-and-role-provider.md) vzorku.  

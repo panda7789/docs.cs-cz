@@ -2,12 +2,12 @@
 title: Pracovní postupy stavového stroje
 ms.date: 03/30/2017
 ms.assetid: 344caacd-bf3b-4716-bd5a-eca74fc5a61d
-ms.openlocfilehash: d7f6f2686399d8eabbbc70de11697f3aca61fc8e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d3c6f4f815f16ec4878b9aa70bd3a69c862d7800
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665333"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876130"
 ---
 # <a name="state-machine-workflows"></a>Pracovní postupy stavového stroje
 Stavový stroj je dobře známé paradigma pro vývoj aplikací. <xref:System.Activities.Statements.StateMachine> Aktivity, spolu s <xref:System.Activities.Statements.State>, <xref:System.Activities.Statements.Transition>, a dalších aktivit slouží k vytváření programů stavu počítače pracovního postupu. Toto téma obsahuje přehled o vytváření pracovní postupy stavu počítače.  
@@ -23,14 +23,14 @@ Stavový stroj je dobře známé paradigma pro vývoj aplikací. <xref:System.Ac
   
  Pokud chcete vytvořit pracovní postup stavového stroje, jsou stavy přidány do <xref:System.Activities.Statements.StateMachine> používají aktivity a přechody řídit tok mezi stavy. Na následujícím snímku obrazovky z [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvořit pracovní postup stavového stroje](how-to-create-a-state-machine-workflow.md), zobrazuje pracovní postup stavového stroje s tři stavy a přechody tři. **Inicializovat cílové** je počáteční stav a představuje první stav v pracovním postupu. To je označen řádek, což vede k němu z **Start** uzlu. Konečný stav v pracovním postupu jmenuje **FinalState**a reprezentuje bod dokončení pracovního postupu.  
   
- ![Dokončení pracovního postupu stavového stroje](./media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
+ ![Obrázek, na kterém pracovní postup dokončený stav stroje.](./media/state-machine-workflows/complete-state-machine-workflow.jpg)  
   
  Pracovní postup stavového stroje musí mít jeden a pouze jeden počáteční stav a aspoň jeden koncový stav. Každý stav, který není konečný stav musí mít aspoň jeden přechod. Následující části se věnují vytváření a konfiguraci stavy a přechody.  
   
 ## <a name="creating-and-configuring-states"></a>Vytváření a konfiguraci stavů  
  A <xref:System.Activities.Statements.State> představuje stavu, ve kterém může být stavového stroje v. Přidat <xref:System.Activities.Statements.State> do pracovního postupu, přetáhněte **stavu** Návrhář aktivity z **stavového stroje** část **nástrojů** a umístěte ho do <xref:System.Activities.Statements.StateMachine> aktivity [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] povrchu.  
   
- ![WF4 State Machine Activities](./media/netframework4platformupdate1statemachineactivities.jpg "NETFramework4PlatformUpdate1StateMachineActivities")  
+ ![Snímek obrazovky sekce stavového stroje na panelu nástrojů.](./media/state-machine-workflows/state-machine-section-toolbox.jpg)  
   
  Konfigurace stavu jako **počáteční stav**, klikněte pravým tlačítkem na stav a vyberte **nastavit jako počáteční stav**. Kromě toho pokud neexistuje žádné aktuální počáteční stav, počáteční stav lze označit přetažením řádek z **Start** uzlu v horní části pracovního postupu do požadovaného stavu. Když <xref:System.Activities.Statements.StateMachine> aktivity je přetaženy návrháře postupu provádění, je nakonfigurovaná s počátečním stavem s názvem **nazvané State1**. Pracovní postup stavového stroje musí mít jeden a pouze jeden počáteční stav.  
   
@@ -73,7 +73,7 @@ Stavový stroj je dobře známé paradigma pro vývoj aplikací. <xref:System.Ac
  Výstupní akci  
  Spustí se při ukončení stav aktivity  
   
- Přechod  
+ Transition  
  Řízené vztah mezi dvěma stavy, které představuje úplnou odpověď stavový počítač na výskyt události určitého typu.  
   
  Sdílené přechodu  

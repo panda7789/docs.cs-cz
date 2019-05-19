@@ -1,17 +1,17 @@
 ---
-title: Klasifikaci problémy s úložištěm GitHub - klasifikace víc tříd
+title: 'Kurz: Kategorizace problémy podpory – klasifikace víc tříd'
 description: Zjistěte, jak používat ML.NET ve scénáři klasifikace víc tříd ke klasifikaci problémy Githubu pro jejich přiřazení k dané oblasti.
-ms.date: 05/02/2019
+ms.date: 05/16/2019
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: a4122d0cdfe6531275fabf94743882a82f2a13c1
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.custom: mvc, title-hack-0516
+ms.openlocfilehash: d47522bef632de1aac890d4de384c1b2c16b7a50
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063527"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877345"
 ---
-# <a name="tutorial-use-mlnet-in-a-multiclass-classification-scenario-to-classify-github-issues"></a>Kurz: Použití ML.NET ve scénáři klasifikace víc tříd ke klasifikaci problémy s úložištěm GitHub
+# <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Kurz: Kategorizace problémů pomocí klasifikace víc tříd ML .NET
 
 Tento ukázkový kurz ukazuje použití ML.NET vytvoření klasifikátoru problém Githubu pro trénování modelu, který klasifikuje a predikuje popisek oblasti pro problém na Githubu prostřednictvím aplikace konzoly .NET Core using C# v sadě Visual Studio.
 

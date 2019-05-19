@@ -3,12 +3,12 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: 63090efdf97066b4a276880d4f4be0f843de6800
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0bd6c7432f79894c9e31952b72f3426fc88f9d03
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586050"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877195"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ji používat.  
@@ -31,7 +31,7 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
 6. RP extrahuje klienta deklarací z tokenu zabezpečení a udělá rozhodnutí o autorizaci.  
   
 ### <a name="using-the-federated-authentication-module-with-aspnet"></a>Modul federovaného ověřování pomocí technologie ASP.NET  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> Modulu HTTP, která umožňuje přidat federovaného ověřování je (WS-FAM) [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace. Federované ověřování umožňuje zpracovat STS a umožňuje zaměřit se na psaní obchodní logiky logiku ověřování.  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WS-FAM) je modul HTTP, který můžete přidat federovaného ověřování do aplikace ASP.NET. Federované ověřování umožňuje zpracovat STS a umožňuje zaměřit se na psaní obchodní logiky logiku ověřování.  
   
  Konfiguraci WS-služba FAM k určení služby tokenů zabezpečení, ke kterým by měl být přesměrován neověřenými požadavky. Technologie WIF umožňuje ověření uživatele dvěma způsoby:  
   
@@ -41,10 +41,10 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
   
  V pasivní přesměrování veškerá komunikace se provádí prostřednictvím odpovědi/přesměrování z klienta (obvykle prohlížeče). Služba FAM WS můžete přidat do kanálu HTTP vaší aplikace, kde se sleduje pro neověřené uživatele požadavků a přesměruje uživatele na službu STS je zadat.  
   
- Služba FAM WS také vyvolává několik událostí, které umožňují přizpůsobit jeho funkce v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace.  
+ Služba FAM WS také vyvolává několik událostí, které umožňují přizpůsobit jeho funkce v aplikaci technologie ASP.NET.  
   
 ### <a name="how-the-ws-fam-works"></a>Jak funguje služba FAM WS  
- Služba FAM WS je implementována v <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídy. Obvykle přidáte WS-FAM do kanálu HTTP z vaší [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace předávající strany. Když neověřený uživatel pokusí o přístup k chráněnému prostředku, RP vrátí odpověď HTTP "401 autorizace byl odepřen". WS-FAM zachycuje tuto odpověď místo a umožnil tak klientovi ho přijímat a pak ho přesměruje uživatele na zadanou službu STS. Služba tokenů zabezpečení vydá token zabezpečení, které služba WS-FAM zachycuje znovu. Služba FAM WS použije token k vytvoření instance <xref:System.Security.Claims.ClaimsPrincipal> pro ověřeného uživatele, což umožňuje regulární mechanismy ověřování na rozhraní .NET Framework fungovat.  
+ Služba FAM WS je implementována v <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídy. Obvykle přidáte WS-FAM do kanálu HTTP z vaší aplikace předávající strany technologie ASP.NET. Když neověřený uživatel pokusí o přístup k chráněnému prostředku, RP vrátí odpověď HTTP "401 autorizace byl odepřen". WS-FAM zachycuje tuto odpověď místo a umožnil tak klientovi ho přijímat a pak ho přesměruje uživatele na zadanou službu STS. Služba tokenů zabezpečení vydá token zabezpečení, které služba WS-FAM zachycuje znovu. Služba FAM WS použije token k vytvoření instance <xref:System.Security.Claims.ClaimsPrincipal> pro ověřeného uživatele, což umožňuje regulární mechanismy ověřování na rozhraní .NET Framework fungovat.  
   
  Protože HTTP je bezstavové, potřebujeme způsob, jak předcházet opakování této celého procesu pokaždé, když uživatel pokusí přistoupit k jiný chráněný zdroj. Tady <xref:System.IdentityModel.Services.SessionAuthenticationModule> je k dispozici ve. Když služba tokenů zabezpečení vydá token zabezpečení pro uživatele, <xref:System.IdentityModel.Services.SessionAuthenticationModule> také vytvoří tokenu zabezpečení relace pro uživatele a umístí jej do souboru cookie. O následných požadavcích <xref:System.IdentityModel.Services.SessionAuthenticationModule> zachycuje tento soubor cookie a použije ho k rekonstrukci uživatele <xref:System.Security.Claims.ClaimsPrincipal>.  
   
@@ -61,7 +61,7 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
  ![SAM časování diagram zobrazující přihlašování&#45;pomocí ovládacích prvků](../../../docs/framework/security/media/signinusingconrols-sam.gif "SignInUsingConrols_SAM")  
   
 ### <a name="events"></a>Události  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>, <xref:System.IdentityModel.Services.SessionAuthenticationModule>a jejich nadřazené třídu <xref:System.IdentityModel.Services.HttpModuleBase>, vyvolat události na různé fáze zpracování požadavku HTTP. Můžete zpracovávat tyto události v `global.asax` soubor vaší [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace.  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>, <xref:System.IdentityModel.Services.SessionAuthenticationModule>a jejich nadřazené třídu <xref:System.IdentityModel.Services.HttpModuleBase>, vyvolat události na různé fáze zpracování požadavku HTTP. Můžete zpracovávat tyto události v `global.asax` souboru aplikace ASP.NET.  
   
 - Infrastruktura technologie ASP.NET vyvolá modulu <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> metody k inicializaci modulu.  
   

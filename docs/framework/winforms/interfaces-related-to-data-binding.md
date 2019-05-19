@@ -12,16 +12,16 @@ helpviewer_keywords:
 - data binding [Windows Forms], interfaces
 - IDataErrorInfo interface [Windows Forms], Windows Forms data binding
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
-ms.openlocfilehash: 1609fbd8cbb24d6f2c10fbc3a235f01a451eb0fa
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 591b76ca6b5cd3a9180487c79293d5fc3b7991af
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754075"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882347"
 ---
 # <a name="interfaces-related-to-data-binding"></a>Rozhraní související s datovou vazbou
 
-S [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], můžete vytvořit mnoha různými datovými strukturami vazby potřebám vaší aplikace a data, že pracujete s. Můžete chtít vytvořit vlastní třídy, které poskytují nebo využívají data v modelu Windows Forms. Tyto objekty lze nabízejí různé úrovně funkčnosti a složitosti, na základní datové vazby k poskytování podpory během návrhu, kontroly chyb, oznámení o změně nebo dokonce i podporu pro strukturované vrátit zpět změny provedené na vlastní data.
+Pomocí ADO.NET můžete vytvořit mnoha různými datovými strukturami tak, aby odpovídala vazby potřebám vaší aplikace a data, která pracujete. Můžete chtít vytvořit vlastní třídy, které poskytují nebo využívají data v modelu Windows Forms. Tyto objekty lze nabízejí různé úrovně funkčnosti a složitosti, na základní datové vazby k poskytování podpory během návrhu, kontroly chyb, oznámení o změně nebo dokonce i podporu pro strukturované vrátit zpět změny provedené na vlastní data.
 
 ## <a name="consumers-of-data-binding-interfaces"></a>Příjemci rozhraní datové vazby
 
@@ -82,7 +82,7 @@ Následující rozhraní jsou navrženy pro ovládací prvky Windows Forms využ
 
 - <xref:System.Collections.IEnumerable> Rozhraní
 
-  Třídu, která implementuje <xref:System.Collections.IEnumerable> rozhraní obvykle využívá [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]. Podpora Windows Forms pro toto rozhraní je dostupná jenom <xref:System.Windows.Forms.BindingSource> komponenty.
+  Třídu, která implementuje <xref:System.Collections.IEnumerable> rozhraní obvykle využívá technologie ASP.NET. Podpora Windows Forms pro toto rozhraní je dostupná jenom <xref:System.Windows.Forms.BindingSource> komponenty.
 
   > [!NOTE]
   > <xref:System.Windows.Forms.BindingSource> Komponenty zkopíruje všechny <xref:System.Collections.IEnumerable> položek do samostatného seznamu pro účely vazby.

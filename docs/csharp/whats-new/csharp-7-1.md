@@ -2,12 +2,12 @@
 title: Co je nového v C# 7.1
 description: Přehled nových funkcí v C# 7.1.
 ms.date: 04/09/2019
-ms.openlocfilehash: c79c8576f9cbbd921ebf30bd84ee5a817d6dc6e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b7bd96e428f990b2db91a4cfd45da01dc133aac
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675556"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881555"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7.1
 
@@ -26,7 +26,7 @@ Nové funkce jazyků v této verzi jsou:
 * [Porovnávání vzorů v parametrech obecného typu](#pattern-matching-on-generic-type-parameters)
   - Vzor odpovídající výrazy můžete použít pro proměnné jehož typ je parametr obecného typu.
 
-A konečně, má kompilátor dvě možnosti `/refout` a `/refonly` ovládacího prvku [odkazovat na generování sestavení](#reference-assembly-generation).
+A konečně, má kompilátor dvě možnosti `-refout` a `-refonly` ovládacího prvku [odkazovat na generování sestavení](#reference-assembly-generation).
 
 Chcete-li používat nejnovější funkce ve verzi bod, je potřeba [konfigurace verze jazyka kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi.
 
@@ -109,5 +109,5 @@ Počínaje C# 7.1, výraz vzoru `is` a `switch` vzor typu může mít typ parame
 
 ## <a name="reference-assembly-generation"></a>Generování sestavení odkazu
 
-Existují dvě nové možnosti kompilátoru, které generují *pouze odkaz na sestavení*: [refout](../language-reference/compiler-options/refout-compiler-option.md) a [/refonly](../language-reference/compiler-options/refonly-compiler-option.md).
+Existují dvě nové možnosti kompilátoru, které generují *pouze odkaz na sestavení*: [- refout](../language-reference/compiler-options/refout-compiler-option.md) a [- refout](../language-reference/compiler-options/refonly-compiler-option.md).
 Propojené články popisují tyto možnosti a referenční sestavení podrobněji.

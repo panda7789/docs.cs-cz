@@ -3,12 +3,12 @@ title: C#Typy a proměnné – připravuje C# jazyka
 description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: ae44dd273a2460e5718adc7324fae324e3de5bba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5623b4a1e85508ea7206df2c73b7aaffcbc3fbb1
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675738"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881983"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -23,8 +23,8 @@ Následující text uvádí přehled C#na systém typů.
     * Podepsané celé číslo: `sbyte`, `short`, `int`, `long`
     * Celočíselný typ bez znaménka: `byte`, `ushort`, `uint`, `ulong`
     * Znaky Unicode: `char`
-    * S plovoucí desetinnou čárkou IEEE: `float`, `double`
-    * Desetinná přesnost vysoce: `decimal`
+    * S plovoucí desetinnou čárkou IEEE binární: `float`, `double`
+    * Desetinné číslo vysokou přesnost s plovoucí desetinnou čárkou: `decimal`
     * Logická hodnota: `bool`
   - [Výčtové typy][EnumTypes]
     * Uživatelem definované typy formuláře `enum E {...}`
@@ -55,33 +55,11 @@ Následující text uvádí přehled C#na systém typů.
 [DelegateTypes]: ../language-reference/keywords/delegate.md
 [ArrayTypes]: ../programming-guide/arrays/index.md
 
-Osm integrální typy poskytují podporu pro hodnoty 8bitové, 16 bitů, 32bitová verze a 64bitová verze v podobě nebo bez znaménka.
-
-Dva typy s plovoucí desetinnou čárkou, `float` a `double`, jsou reprezentovány pomocí 32bitové jednoduchou přesností a 64-bit dvojité přesnosti IEC 60559 formátů, v uvedeném pořadí.
-
-`decimal` Typ je typ 128bitových dat. vhodný pro výpočty finančních a přepočty měn.
+Další informace o typech čísel najdete v tématu [integrální typy tabulky](../language-reference/keywords/integral-types-table.md) a [Tabulka typů s plovoucí desetinnou čárkou](../language-reference/keywords/floating-point-types-table.md).
 
 C#společnosti `bool` typ se používá k reprezentaci logické hodnoty – hodnoty, které jsou buď `true` nebo `false`.
 
 Znakové a řetězcové zpracování v jazyce C# používá kódování Unicode. `char` Typ představuje jednotku kódu UTF-16 a `string` typ představuje posloupnost jednotkami kódu kódování UTF-16.
-
-To shrnuje C#pro číselné typy.
-
-* Podepsané celé číslo
-  - `sbyte`:  8 bitů v rozmezí -128 až 127
-  - `short`: 16 bitů, rozsahu od-32 768 do 32 767
-  - `int`  : 32 bitů, rozsahu od-2,147,483,648 do 2 147 483 647
-  - `long` : 64 bitů, v rozsahu od-9,223,372,036,854,775,808 9,223,372,036,854,775,807
-* Celočíselný typ bez znaménka
-  - `byte`   :  8 bitů, rozsahu od 0 do 255
-  - `ushort` : 16 bitů, rozsahu od 0 do 65 535
-  - `uint`   : 32 bitů, rozsahu od 0 do 4 294 967 295
-  - `ulong`  : 64 bitů, rozsahu od 0 do 18,446,744,073,709,551,615
-* Plovoucí desetinná čárka
-  - `float`  : 32 bity v rozsahu od 1,5 × 10<sup>-45</sup> 3.4 × 10<sup>38</sup>, 7 číslicemi přesnosti
-  - `double` : 64 bitů v rozsahu od 5.0 × 10<sup>-324</sup> 1.7 × 10<sup>308</sup>, 15 číslicemi přesnosti
-* Desetinné číslo
-  - `decimal` : 128 bitů, rozsah je alespoň-7.9 × 10<sup>– 28</sup> 7.9 × 10<sup>28</sup>, s přesností na alespoň číslice 28
 
 C# programy používají *typ deklarace* pro vytvoření nových typů. Deklarace typu Určuje název a členy nového typu. Pět C#společnosti jsou kategorie typů definovaných uživatelem: Třída typy, typy struktury, rozhraní typy, výčtové typy a typy delegátů.
 

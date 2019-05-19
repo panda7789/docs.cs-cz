@@ -1,14 +1,14 @@
 ---
-title: Začínáme s využitím úložiště objektů Blob v AzureF#
+title: Začínáme se službou Azure Blob Storage s využitím F#
 description: Store nestrukturovaných dat v cloudu s využitím úložiště objektů Blob v Azure.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 62178edf22ad48d0388f34488b68d135068d50a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3d020c2cd9a11db1cd4b7a60113e1be03655f763
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982511"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880037"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage s využitím F\#
 
@@ -196,8 +196,8 @@ Další informace najdete v tématu [Správa souběžnosti v Microsoft Azure Sto
 
 Každý objekt blob ve službě Azure storage se musí nacházet v kontejneru. Kontejner je součástí názvu objektu blob. Například `mydata` je název kontejneru v těchto ukázkových objektů blob identifikátorů URI:
 
-    https://storagesample.blob.core.windows.net/mydata/blob1.txt
-    https://storagesample.blob.core.windows.net/mydata/photos/myphoto.jpg
+- https://storagesample.blob.core.windows.net/mydata/blob1.txt
+- https://storagesample.blob.core.windows.net/mydata/photos/myphoto.jpg
 
 Název kontejneru musí být platný název DNS, který odpovídá následujícím pravidlům pro pojmenování:
 

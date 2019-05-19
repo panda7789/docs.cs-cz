@@ -2,17 +2,17 @@
 title: Proces nákupu v podniku
 ms.date: 03/30/2017
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
-ms.openlocfilehash: eaf77fc8b1697d0e337d8c4823ca2184cb9c545c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 83290245dd203d4bb63c96e94ca6bdafee4ecffb
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665943"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876174"
 ---
 # <a name="corporate-purchase-process"></a>Proces nákupu v podniku
 Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces nákupu návrhy (RFP) na základě s automatický výběr nejlepší návrh. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastní aktivitu pro vytvoření pracovního postupu, který představuje proces.
 
- Tato ukázka obsahuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] klientskou aplikaci, která umožňuje komunikaci s procesem jako jiný účastníky (jako původní žadatel nebo konkrétního dodavatele).
+ Tato ukázka obsahuje klientské aplikace technologie ASP.NET, která umožňuje komunikaci s procesem jako jiný účastníky (jako původní žadatel nebo konkrétního dodavatele).
 
 ## <a name="requirements"></a>Požadavky
 
@@ -36,7 +36,7 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
 
 - Sledování.
 
-- Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových aplikací a aplikací WinForms).
+- Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů (webových aplikací ASP.NET a WinForms aplikace).
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -82,7 +82,7 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
 |-------------|-----------------|  
 |Společné|Objekty entity používané v rámci procesu (žádost o návrh, výrobce a dodavatele návrh).|  
 |WfDefinition|Definice procesu (jako [!INCLUDE[wf1](../../../../includes/wf1-md.md)] programu) a hostitele (`PurchaseProcessHost`) používají klientské aplikace pro vytváření a používání instancí pracovního procesu nákupu.|  
-|Webový klient|[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Klientskou aplikaci, která umožňuje uživatelům vytvořit a účast v instancích služby procesu nákupu. Vytvoření vlastního hostitele se používá k interakci s modul pracovních postupů.|  
+|Webový klient|Klientská aplikace technologie ASP.NET, která umožňuje uživatelům vytvořit a účast v instancích služby procesu nákupu. Vytvoření vlastního hostitele se používá k interakci s modul pracovních postupů.|  
 |WinFormsClient|Klientská aplikace Windows Forms, který umožňuje uživatelům vytvořit a účast v instancích služby procesu nákupu. Vytvoření vlastního hostitele se používá k interakci s modul pracovních postupů.|  
   
 ### <a name="wfdefinition"></a>WfDefinition  

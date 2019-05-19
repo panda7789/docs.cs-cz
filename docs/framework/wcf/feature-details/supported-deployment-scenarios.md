@@ -2,12 +2,12 @@
 title: Podporované scénáře nasazení – WCF
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: f1a95e5448d2cc8f1ac472c3b1735f58460e2be6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 986459e14206f073686474f5d65845ce682e1270
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639129"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881050"
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 
@@ -27,7 +27,7 @@ Další informace o funkcích podporovaných v těchto sad oprávnění najdete 
 
 ## <a name="partial-trust-on-the-server"></a>Částečné důvěryhodnosti na serveru
 
-Řada komerčních poskytovatelů [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] hostování webových aplikací služby pověření, která spustí aplikací spuštěných na serverech v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] úrovni Medium Trust sadu oprávnění. Služby WCF můžete spustit v těchto prostředích, pokud používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <xref:System.ServiceModel.WSHttpBinding> se zabezpečením na úrovni přenosu.
+Mnoho poskytovatelů obchodní aplikace ASP.NET Web hostitelské služby stanoví, že aplikace spuštěné na jejich serverech běží v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] úrovni Medium Trust sadu oprávnění. Služby WCF můžete spustit v těchto prostředích, pokud používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <xref:System.ServiceModel.WSHttpBinding> se zabezpečením na úrovni přenosu.
 
 WCF služby spuštěné na úrovni Medium Trust hostitelská prostředí se mohou chovat i jako střední vrstvy služby odesíláním zpráv na jiné servery v reakci na požadavky klientů. Střední vrstvy scénáře na serveru jsou podporovány, pokud hostitelské prostředí udělil aplikace odpovídající <xref:System.Net.WebPermission> provádět požadavky na odchozích k požadovanému serveru.
 

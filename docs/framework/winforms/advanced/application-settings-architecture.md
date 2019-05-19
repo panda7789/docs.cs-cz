@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: d0ca890e384fc1f282cfbb62562090ee858bd33f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a049bbe22d29f02acbc7889bb5d5010ec44f9d15
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592782"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876225"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
@@ -22,7 +22,7 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
  Rozhraní jsou k dispozici, které umožňují vlastní komponenty se zachovat své vlastní nastavení, když jsou hostované v aplikaci. Pomocí nastavení klíče součásti můžete oddělit nastavení pro víc instancí komponenty.  
   
 ## <a name="defining-settings"></a>Definování nastavení  
- Architektura nastavení aplikace se používá v rámci obou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a Windows Forms, který obsahuje řadu základních tříd, které jsou sdíleny mezi oběma prostředími. Nejdůležitější je <xref:System.Configuration.SettingsBase>, který poskytuje přístup k nastavení prostřednictvím kolekce a poskytuje nízké úrovně metody pro načítání a ukládání nastavení. Každé prostředí implementuje své vlastní třídy odvozené od <xref:System.Configuration.SettingsBase> nakonfigurovánu další nastavení pro toto prostředí. V aplikaci na základě formulářů Windows, všechna nastavení aplikace musí být definován ve třídě odvozené z <xref:System.Configuration.ApplicationSettingsBase> třídu, která přidá následující funkce na základní třídu:  
+ Architektura nastavení aplikace se používá v rámci technologie ASP.NET a Windows Forms a obsahuje několik základních tříd, které jsou sdíleny mezi oběma prostředími. Nejdůležitější je <xref:System.Configuration.SettingsBase>, který poskytuje přístup k nastavení prostřednictvím kolekce a poskytuje nízké úrovně metody pro načítání a ukládání nastavení. Každé prostředí implementuje své vlastní třídy odvozené od <xref:System.Configuration.SettingsBase> nakonfigurovánu další nastavení pro toto prostředí. V aplikaci na základě formulářů Windows, všechna nastavení aplikace musí být definován ve třídě odvozené z <xref:System.Configuration.ApplicationSettingsBase> třídu, která přidá následující funkce na základní třídu:  
   
 - Vyšší úrovně načítání a ukládání operace  
   

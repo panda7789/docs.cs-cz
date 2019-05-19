@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
-ms.openlocfilehash: 5d35e2775c6c6912d2a36c550202b309ebdeaa32
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 638e8177060c489a7469f80adde68cb9ba266365
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583824"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879959"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 
@@ -96,7 +96,7 @@ Další informace najdete v tématu [generování příkazů s CommandBuilders](
 
 ## <a name="using-parameters-with-a-sqlcommand-and-a-stored-procedure"></a>Pomocí parametrů s SqlCommand a uložené procedury
 
-Uložené procedury nabízí celou řadu výhod v aplikace řízené daty. Pomocí uložených procedur databázových operací můžete být zapouzdřen v rámci jediného příkazu, optimalizované pro výkon a vylepšené o zvýšení zabezpečení. I když uložené procedury lze volat předáním názvu uložené procedury následuje argumenty jako příkaz jazyka SQL s použitím <xref:System.Data.Common.DbCommand.Parameters%2A> kolekce [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.Common.DbCommand> objektu umožňuje více explicitně definovat uložené parametry procedury a pro přístup k výstupní parametry a návratové hodnoty.
+Uložené procedury nabízí celou řadu výhod v aplikace řízené daty. Pomocí uložených procedur databázových operací můžete být zapouzdřen v rámci jediného příkazu, optimalizované pro výkon a vylepšené o zvýšení zabezpečení. I když uložené procedury lze volat předáním názvu uložené procedury následuje argumenty jako příkaz jazyka SQL s použitím <xref:System.Data.Common.DbCommand.Parameters%2A> kolekce ADO.NET <xref:System.Data.Common.DbCommand> objektu umožňuje více explicitně definovat uložené procedury parametry a pro přístup k výstupní parametry a návratové hodnoty.
 
 > [!NOTE]
 > Parametrizované příkazy jsou spouštěny na serveru s použitím `sp_executesql,` tomu pro opakované použití plánu dotazu. Kurzory místní nebo v proměnné `sp_executesql` batch nejsou viditelné na službu batch, která volá `sp_executesql`. Poslední změny v kontextu databáze pouze na konec objektu `sp_executesql` příkazu. Další informace najdete v tématu [sp_executesql (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql).

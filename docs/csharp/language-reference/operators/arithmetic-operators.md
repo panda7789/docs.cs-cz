@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 94c266c3e44f87d8c8503bcf15789723116460df
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 25f716084c489c834e9242800f4c7e341c41aa58
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753809"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880667"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
@@ -93,7 +93,7 @@ Operátor násobení `*` vypočítá součin z operandů:
 
 [!code-csharp-interactive[multiplication operator](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#Multiplication)]
 
-Unární `*` operátor je [operátor dereference ukazatele](multiplication-operator.md#pointer-indirection-operator).
+Unární `*` operátor je [operátor dereference ukazatele](pointer-related-operators.md#pointer-indirection-operator-).
 
 ## <a name="division-operator-"></a>Operátor dělení /
 

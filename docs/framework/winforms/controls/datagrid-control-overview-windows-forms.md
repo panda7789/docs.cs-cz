@@ -20,12 +20,12 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: 7c9442635bb193c13ca30fd1e271631a43b33e55
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e1e9ce761baa77ea06b3d66aa5b296a186f054b4
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589013"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878867"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -53,7 +53,7 @@ ms.locfileid: "65589013"
   
  Pokud prostřednictvím každý použitý mechanizmus, se aktualizuje data v datové sadě vázané <xref:System.Windows.Forms.DataGrid> ovládací prvek se změny projeví. Pokud máte datové mřížky a jeho styly a styly sloupců `ReadOnly` vlastnost nastavena na hodnotu `false`, data v datové sadě je možné aktualizovat prostřednictvím <xref:System.Windows.Forms.DataGrid> ovládacího prvku.  
   
- Je možné zobrazit pouze jednu tabulku v <xref:System.Windows.Forms.DataGrid> najednou. Pokud je definována hierarchických vztahů mezi tabulkami, uživatel může přecházet mezi tabulkami, vyberte tabulku, který se má zobrazit <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o vazbách <xref:System.Windows.Forms.DataGrid> ovládací prvek [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] zdroje dat v době návrhu nebo běhu, naleznete v [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+ Je možné zobrazit pouze jednu tabulku v <xref:System.Windows.Forms.DataGrid> najednou. Pokud je definována hierarchických vztahů mezi tabulkami, uživatel může přecházet mezi tabulkami, vyberte tabulku, který se má zobrazit <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o vazbách <xref:System.Windows.Forms.DataGrid> řízení ke zdroji dat ADO.NET v době návrhu nebo běhu, přečtěte si téma [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
   
  Platné datové zdroje pro <xref:System.Windows.Forms.DataGrid> patří:  
   

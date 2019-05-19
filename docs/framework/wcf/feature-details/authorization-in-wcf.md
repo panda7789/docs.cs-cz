@@ -5,12 +5,12 @@ helpviewer_keywords:
 - authorization [WCF]
 - security [WCF], authorization
 ms.assetid: 8ea0b552-af65-45b0-a157-c6c111b8ce5e
-ms.openlocfilehash: 26aa445f3136fcb16e2eb9cdce6b245476297dfd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c605b310f19a05f994296d8f4268b91b408fb18
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650581"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881198"
 ---
 # <a name="authorization-in-wcf"></a>Autorizace ve WCF
 Autorizace je proces řízení přístupu a oprávnění k prostředkům, jako jsou služby nebo soubory. Témata v této části ukazují, jak k provedení této základní úlohy ve Windows Communication Foundation (WCF) v mnoha různými způsoby.  
@@ -23,10 +23,10 @@ Autorizace je proces řízení přístupu a oprávnění k prostředkům, jako j
  Omezení přístupu ke službě s procesem se zobrazí <xref:System.Security.Permissions.PrincipalPermissionAttribute>.  
   
  [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
- Provede konfiguraci této služby, který umožňuje použít funkci zprostředkovatele rolí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)].  
+ Provede konfiguraci této služby, který umožňuje použít funkci zprostředkovatele rolí technologie ASP.NET.  
   
  [Postupy: Použití zprostředkovatele Role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)  
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Správce autorizací můžete použít ke správě autorizace pro webový server. Podobně můžou využít WCF [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]kombinaci /Authorization správce pro autorizaci klientů.  
+ Technologie ASP.NET můžete použít Správce autorizací ke správě autorizace pro webový server. WCF podobně využít kombinaci ASP.NET/Authorization správce pro autorizaci klientů.  
   
  [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
  Popisuje základní informace o používání infrastruktury modelu identit pro ověřování na základě deklarací identity.  

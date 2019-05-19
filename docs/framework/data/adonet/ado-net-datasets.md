@@ -2,15 +2,15 @@
 title: Datové sady ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
-ms.openlocfilehash: 50e8e8f5e4b3ee2f5a41cb9dad11b5e701135d9e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 29aba76731c4170c8af3c913a06e78e89ce3a08d
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607590"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877226"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET
-<xref:System.Data.DataSet> Centrální podporuje odpojen, je objekt distribuovaných dat scénáře s [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. **Datovou sadu** rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat je. Je možné s několika a odlišných zdrojů dat, s daty XML nebo ke správě dat místní aplikace. **Datovou sadu** představuje ucelenou sadu dat, včetně souvisejících tabulek, omezení a relace mezi tabulkami. Je vidět na následujícím obrázku **datovou sadu** objektový model.  
+<xref:System.Data.DataSet> Centrální podporuje odpojen, je objekt distribuovaných scénářích data pomocí ADO.NET. **Datovou sadu** rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat je. Je možné s několika a odlišných zdrojů dat, s daty XML nebo ke správě dat místní aplikace. **Datovou sadu** představuje ucelenou sadu dat, včetně souvisejících tabulek, omezení a relace mezi tabulkami. Je vidět na následujícím obrázku **datovou sadu** objektový model.  
   
  ![ADO.Net graphic](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
 Model objektu DataSet  
@@ -20,7 +20,7 @@ Model objektu DataSet
  **Datovou sadu** můžete také zachovat a znovu načíst jeho obsah ve formátu XML a její schéma jako jazyk (XSD) schématu definice schématu XML. Další informace najdete v tématu [použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md).  
   
 ## <a name="the-datatablecollection"></a>DataTableCollection  
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] **Datovou sadu** obsahuje kolekci nula nebo více tabulek reprezentována <xref:System.Data.DataTable> objekty. <xref:System.Data.DataTableCollection> Obsahuje všechny **DataTable** objekty v **datovou sadu**.  
+ Technologie ADO.NET **datovou sadu** obsahuje kolekci nula nebo více tabulek reprezentována <xref:System.Data.DataTable> objekty. <xref:System.Data.DataTableCollection> Obsahuje všechny **DataTable** objekty v **datovou sadu**.  
   
  A **DataTable** je definována v <xref:System.Data> obor názvů a představuje jednu tabulku dat rezidentní. Obsahuje kolekci sloupců reprezentované <xref:System.Data.DataColumnCollection>a omezení reprezentována <xref:System.Data.ConstraintCollection>, které společně definují schéma tabulky. A **DataTable** obsahuje také kolekci řádků reprezentována <xref:System.Data.DataRowCollection>, který obsahuje data v tabulce. Spolu s aktuálním stavu <xref:System.Data.DataRow> zachová svůj aktuální a původní verze identifikovat změny hodnot uložených na řádku.  
   

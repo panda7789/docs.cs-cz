@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: 4d522fb377fd117800ef4d7d754d513a3d919a35
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d881a75e95bc3c3eef1df651b380210ff51ea3ce
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64656050"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877510"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
-Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný model používaný [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a webových služeb ASP.NET Web Services (ASMX).  
+Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný modelu používané technologie ASP.NET a webových služeb ASP.NET Web services (ASMX).  
   
 ## <a name="versions-of-iis"></a>Verze služby IIS  
  WCF je možné hostovat na následující verze služby IIS na následující operační systémy:  
@@ -28,11 +28,11 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
 ## <a name="benefits-of-iis-hosting"></a>Výhody hostování IIS  
  Hostování služby WCF v IIS má několik výhod:  
   
-- Služby WCF hostované v IIS se nasazují a spravují podobně jako jakýkoli jiný typ aplikace služby IIS, včetně [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace a ASMX.  
+- Služby WCF hostované v IIS se nasazují a spravují podobně jako jakýkoli jiný typ aplikace služby IIS, včetně aplikací ASP.NET a ASMX.  
   
 - Služba IIS poskytuje aktivace procesu, správu stavu a recyklaci funkce pro zvýšení spolehlivosti hostovaných aplikací.  
   
-- Stejně jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], služby WCF hostované v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] můžou těžit z výhod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] sdílené model hostingu, kde jsou umístěné v běžné pracovní proces pro hustota lepší využití serverových a škálovatelnost více aplikací.  
+- Jako je ASP.NET služby WCF hostované v technologii ASP.NET využít výhod ASP.NET model sdíleného hostingu kde více aplikací jsou umístěny v běžné pracovní proces pro hustota lepší využití serverových a škálovatelnost.  
   
 - Služby WCF hostované v IIS použít stejný model dynamická kompilace jako [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)], což zjednodušuje vývoj a nasazení hostovaných služeb.  
   
@@ -43,7 +43,7 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
   
 - Zajistěte, aby služba IIS, ASP.NET, WCF a aktivace součást služeb HTTP WCF jsou správně nainstalovaný a zaregistrovaný.  
   
-- Vytvoření nové aplikace služby IIS, nebo znovu použít existující [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace.  
+- Vytvoření nové aplikace služby IIS, nebo znovu použít stávající aplikaci ASP.NET.  
   
 - Vytvoření souboru .svc pro službu WCF.  
   
@@ -54,7 +54,7 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
  Informace o těchto úloh, naleznete v tématu [nasazení služby WCF Internet Information Services-Hosted](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).  
   
 ## <a name="wcf-services-and-aspnet"></a>Služby WCF a ASP.NET  
- Může být služby WCF hostované buď na straně po boku s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nebo v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility, ve kterém můžete služby využívat všech výhod funkcí poskytovaných službou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] platforma webových aplikací. Informace o těchto funkcích naleznete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).  
+ Může být služby WCF hostované buď na straně po boku s technologií ASP.NET nebo v režimu kompatibility ASP.NET, ve kterém můžete služby využívat všech výhod funkcí poskytovaných službou platformu aplikace ASP.NET Web. Informace o těchto funkcích naleznete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).  
   
 ## <a name="see-also"></a>Viz také:
 

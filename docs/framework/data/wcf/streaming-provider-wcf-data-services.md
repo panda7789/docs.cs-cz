@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 19571f3102039176ed4d8fab46a7f8229cbfecbe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eff4ee3cb8502645d3b6d9a8986c9c410fe73f1a
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875534"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877593"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 
@@ -88,7 +88,7 @@ Obecné informace o tom, jak vytvořit datovou službu, naleznete v tématu [kon
 
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Povolení velké binární datové proudy v hostitelském prostředí
 
-Při vytváření datové služby v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace, Windows Communication Foundation (WCF) slouží k poskytování implementace protokolu HTTP. Ve výchozím nastavení WCF omezení velikosti zpráv HTTP na pouze 65 kB. Aby bylo možné do datového proudu velkému objemu binárních dat do a z datové služby, musíte také nakonfigurovat webovou aplikaci povolit velkých binárních souborů a použití datových proudů pro přenos. Chcete-li to provést, přidejte následující kód do `<configuration />` prvek souboru Web.config aplikace:
+Při vytváření datové služby ve webové aplikaci ASP.NET, Windows Communication Foundation (WCF) slouží k implementaci protokolu HTTP. Ve výchozím nastavení WCF omezení velikosti zpráv HTTP na pouze 65 kB. Aby bylo možné do datového proudu velkému objemu binárních dat do a z datové služby, musíte také nakonfigurovat webovou aplikaci povolit velkých binárních souborů a použití datových proudů pro přenos. Chcete-li to provést, přidejte následující kód do `<configuration />` prvek souboru Web.config aplikace:
 
 > [!NOTE]
 > Je nutné použít <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> přenosový režim na binární data ve zprávách žádost a odpověď streamování a nejsou ukládány do vyrovnávací paměti ve WCF.
@@ -125,7 +125,7 @@ Níže jsou věci k uvážení při implementaci zprostředkovatele datových pr
 
 - Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>, <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>, nebo <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> metody, musíte použít značku eTag a Content-Type hodnoty, které jsou dodávány jako parametry metody. Nenastavujte eTag nebo záhlaví Content-Type v vaše <xref:System.Data.Services.Providers.IDataServiceStreamProvider> používaná implementace poskytovatele.
 
-- Ve výchozím nastavení klient odešle velké binární datové proudy s použitím bloku HTTP Transfer-Encoding. Vzhledem k tomu, [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server nepodporuje tento typ kódování, nelze použít tento webový server k hostování datových proudů datových služeb, musíte přijmout velké binární datové proudy. Další informace o [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server, naleznete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/58wxa9w5(v=vs.120)).
+- Ve výchozím nastavení klient odešle velké binární datové proudy s použitím bloku HTTP Transfer-Encoding. Protože je ASP.NET Development Server nepodporuje tento typ kódování, nelze použít tento webový server k hostování datových proudů datových služeb, musíte přijmout velké binární datové proudy. Další informace o serveru ASP.NET Development Server, naleznete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/58wxa9w5(v=vs.120)).
 
 <a name="versioning"></a>
 

@@ -6,21 +6,21 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: 8011b026e857dd6e5815ef7da00c1c33db8b5b4d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61324bbc5ea07dd19e23589bfc90f9ea44a6b331
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038711"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880189"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Postupy: Používání poskytovatele členství ASP.NET
-[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Zprostředkovatele členství je funkce, která umožňuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojářům vytvářet weby, které umožňují uživatelům vytvářet jedinečné uživatelské jméno a heslo kombinace. S Azure může každý uživatel zřídit účet s lokalitou a přihlášení na exkluzivní přístup k webu a jeho služeb. To se liší od zabezpečení Windows, což vyžaduje, aby uživatelé mají účty v doméně Windows. Každý uživatel, který dodává své přihlašovací údaje (kombinaci uživatelského jména/hesla) můžete místo toho použijte webu a jeho služeb.  
+Zprostředkovatel členství technologie ASP.NET je funkce, která umožňuje vývojářům vytvářet weby, které umožňují uživatelům vytvářet jedinečné uživatelské jméno a heslo kombinace technologie ASP.NET. S Azure může každý uživatel zřídit účet s lokalitou a přihlášení na exkluzivní přístup k webu a jeho služeb. To se liší od zabezpečení Windows, což vyžaduje, aby uživatelé mají účty v doméně Windows. Každý uživatel, který dodává své přihlašovací údaje (kombinaci uživatelského jména/hesla) můžete místo toho použijte webu a jeho služeb.  
   
- Ukázková aplikace, najdete v části [členství a poskytovatel rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md). Informace o používání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkci zprostředkovatele rolí, najdete v článku [jak: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).  
+ Ukázková aplikace, najdete v části [členství a poskytovatel rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md). Informace o používání funkcí zprostředkovatele rolí ASP.NET najdete v tématu [jak: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).  
   
  Funkce členství vyžaduje použití databáze SQL serveru k ukládání informací o uživateli. Tato funkce zároveň metody pro výzvu s dotaz všechny uživatele, kteří zapomenou své heslo.  
   
- Windows Communication Foundation (WCF) vývojáři mohou využít těchto funkcí z bezpečnostních důvodů. Při integraci do aplikace WCF, uživatelé musí zadat uživatelské jméno/heslo kombinace do klientské aplikace WCF. Chcete-li přenést data do služby WCF, použijte vazbu, která podporuje uživatelské jméno/heslo přihlašovacích údajů, jako například <xref:System.ServiceModel.WSHttpBinding> (v konfiguraci [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) a nastavit typ přihlašovacích údajů k klienta`UserName`. Ve službě, zabezpečení WCF ověřuje uživatele na základě uživatelského jména a hesla a také přiřadí roli určeného [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role.  
+ Windows Communication Foundation (WCF) vývojáři mohou využít těchto funkcí z bezpečnostních důvodů. Při integraci do aplikace WCF, uživatelé musí zadat uživatelské jméno/heslo kombinace do klientské aplikace WCF. Chcete-li přenést data do služby WCF, použijte vazbu, která podporuje uživatelské jméno/heslo přihlašovacích údajů, jako například <xref:System.ServiceModel.WSHttpBinding> (v konfiguraci [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) a nastavit typ přihlašovacích údajů k klienta`UserName`. Zabezpečení WCF na službu, ověřuje uživatele na základě uživatelského jména a hesla a také přiřadí roli určenou rolí technologie ASP.NET.  
   
 > [!NOTE]
 >  WCF neposkytuje metody k naplnění databáze pomocí kombinace uživatelské jméno/heslo nebo jiné informace o uživateli.  
@@ -98,7 +98,7 @@ ms.locfileid: "62038711"
 6. Nastavte `userNamePasswordValidationMode` atribut `MembershipProvider`.  
   
     > [!IMPORTANT]
-    >  Pokud `userNamePasswordValidationMode` hodnota není nastavená, WCF používá ověřování Windows namísto [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství.  
+    >  Pokud `userNamePasswordValidationMode` hodnota není nastavená, WCF používá ověřování Windows namísto poskytovatele členství prostředí ASP.NET.  
   
 7. Nastavte `membershipProviderName` atribut název zprostředkovatele (zadanými při přidávání zprostředkovatele v prvním postupu v tomto tématu). Následující příklad ukazuje `<serviceCredentials>` fragmentu do tohoto bodu.  
   

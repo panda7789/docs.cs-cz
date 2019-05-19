@@ -2,15 +2,15 @@
 title: Členství a poskytovatel rolí
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: 73084bb766274d6eab497555e82e029f94be0359
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c172402f95b137117941381fd4803b8b6e4a5d61
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638402"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876748"
 ---
 # <a name="membership-and-role-provider"></a>Členství a poskytovatel rolí
-Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít službu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství a rolí k ověřování a autorizaci klientů.  
+Zprostředkovatel členství a rolí ukázka demonstruje, jak může služba použít členství technologie ASP.NET a zprostředkovatele rolí k ověřování a autorizaci klientů.  
   
  V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
   
@@ -21,11 +21,11 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
 - Klient může ověřit pomocí kombinace uživatelského jména hesla.  
   
-- Server můžete ověřit přihlašovací údaje klienta proti [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství.  
+- Server můžete ověřit přihlašovací údaje klienta pro poskytovatele členství prostředí ASP.NET.  
   
 - Na serveru, lze ověřit pomocí certifikátu X.509 serveru.  
   
-- Server můžete namapovat ověřený klient do role pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí.  
+- Server můžete namapovat ověřený klient do role pomocí poskytovatele rolí prostředí ASP.NET.  
   
 - Server můžete použít `PrincipalPermissionAttribute` pro řízení přístupu k určité metody, které jsou vystaveny službou.  
   
@@ -69,7 +69,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
 </system.web>  
 ```  
   
- Služba poskytuje jeden koncový bod pro komunikaci se službou, která je definována pomocí konfiguračního souboru Web.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding`, která ve výchozím nastavení používá ověřování Windows. Tato ukázka nastaví standardní `wsHttpBinding` ověřování uživatelského jména. Chování Určuje, že certifikát serveru se bude používat pro ověřování služby. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) konfiguračního prvku. Kromě toho chování Určuje, že ověřování uživatelského jména hesla páry provádí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství a rolí mapování se provádí pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí tak, že zadáte názvy definované pro dva poskytovatelé.  
+ Služba poskytuje jeden koncový bod pro komunikaci se službou, která je definována pomocí konfiguračního souboru Web.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding`, která ve výchozím nastavení používá ověřování Windows. Tato ukázka nastaví standardní `wsHttpBinding` ověřování uživatelského jména. Chování Určuje, že certifikát serveru se bude používat pro ověřování služby. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) konfiguračního prvku. Kromě toho chování Určuje, že proběhne ověření uživatelského jména hesla páry podle poskytovatele členství ASP.NET a role mapování se provádí pomocí poskytovatele rolí prostředí ASP.NET tak, že zadáte názvy definované pro dva poskytovatelé.  
   
 ```xml  
 <system.serviceModel>  
@@ -123,10 +123,10 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
 2. Ujistěte se, že jste nakonfigurovali [databáze aplikačních služeb ASP.NET](https://go.microsoft.com/fwlink/?LinkId=94997).  
   
     > [!NOTE]
-    >  Pokud používáte systém SQL Server Express Edition, je název vašeho serveru. \SQLEXPRESS. Tento server by měl při konfiguraci [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] databáze služeb aplikací stejně jako v souboru Web.config připojovací řetězec.  
+    >  Pokud používáte systém SQL Server Express Edition, je název vašeho serveru. \SQLEXPRESS. Tento server by měla sloužit při konfiguraci ASP.NET databázi služeb aplikací stejně jako v souboru Web.config připojovací řetězec.  
   
     > [!NOTE]
-    >  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Účet pracovního procesu musí mít oprávnění databáze, která se vytvoří v tomto kroku. K tomu použijte nástroj sqlcmd nebo SQL Server Management Studio.  
+    >  Účet pracovního procesu technologie ASP.NET musí mít oprávnění databáze, která se vytvoří v tomto kroku. K tomu použijte nástroj sqlcmd nebo SQL Server Management Studio.  
   
 3. Ke spuštění ukázky v konfiguraci s jedním nebo více počítači, použijte následující pokyny.  
   

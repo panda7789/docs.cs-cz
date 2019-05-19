@@ -2,18 +2,18 @@
 title: Zprostředkovatel EntityClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 8c5db787-78e6-4a34-8dc1-188bca0aca5e
-ms.openlocfilehash: 268608c82070e60007bc09f97a775918e0d950f3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 17f18753cc64bce5901c9f57181a8c08733f0cfc
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583705"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878795"
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient pro Entity Framework
 Zprostředkovatel EntityClient je poskytovatel dat používané aplikacemi Entity Framework pro přístup k datům je popsáno v konceptuálním modelu. Informace o konceptuálních modelů najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md). Zprostředkovatel EntityClient používá pro přístup ke zdroji dat jiné zprostředkovatele dat .NET Framework. Například zprostředkovatel EntityClient používá zprostředkovatele dat .NET Framework pro SQL Server (SqlClient) při přístupu k databázi serveru SQL Server. Informace o poskytovateli SqlClient najdete v tématu [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementována v <xref:System.Data.EntityClient> oboru názvů.  
   
 ## <a name="managing-connections"></a>Správa připojení  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Postavená na konkrétní úložiště [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatelé dat tím, že poskytuje <xref:System.Data.EntityClient.EntityConnection> na základní poskytovatel dat a relační databáze. K vytvoření <xref:System.Data.EntityClient.EntityConnection> objektu, budete muset odkazovat na sadu metadata, která obsahuje nezbytné modely a mapování a také data specifická pro úložiště poskytovatele název a připojovací řetězec. Po <xref:System.Data.EntityClient.EntityConnection> je na místě a přístupné prostřednictvím prostor tříd vygenerovaných z konceptuálního modelu entity.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Postavená na zprostředkovatele dat ADO.NET specifické pro úložiště tím, že poskytuje <xref:System.Data.EntityClient.EntityConnection> na základní poskytovatel dat a relační databáze. K vytvoření <xref:System.Data.EntityClient.EntityConnection> objektu, budete muset odkazovat na sadu metadata, která obsahuje nezbytné modely a mapování a také data specifická pro úložiště poskytovatele název a připojovací řetězec. Po <xref:System.Data.EntityClient.EntityConnection> je na místě a přístupné prostřednictvím prostor tříd vygenerovaných z konceptuálního modelu entity.  
   
  Můžete zadat připojovací řetězec v souboru app.config.  
   

@@ -2,12 +2,12 @@
 title: Přehled ADO.NET
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 7ec3b5f4dd08a39f96ed28e6666fd4b00bced903
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a47a2734e68b4c00aab077191d5257386cd6602
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607359"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877214"
 ---
 # <a name="adonet-overview"></a>Přehled ADO.NET
 ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat jako SQL Server a XML a ke zdrojům dat prostřednictvím OLE DB a ODBC. Sdílení dat aplikace pro koncové uživatele slouží k připojení k těmto zdrojům dat a načtení, zpracování a aktualizace dat, které obsahují ADO.NET.  
@@ -46,7 +46,7 @@ ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat 
   
 ## <a name="related-sections"></a>Související oddíly  
  [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
- Nabízí funkce, které jsou v nové [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+ Představuje funkce, které jsou nové v rozhraní ADO.NET.  
   
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  Popisuje zabezpečené drželi osvědčených kódovacích postupů při použití technologie ADO.NET.  

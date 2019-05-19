@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cc88106a54a00b4b12e5043da7961791a98102c0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 79cfc607e20d921c7ae942cb9755eee4264336eb
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780001"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877038"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt for Visual Studio
 
@@ -38,7 +38,7 @@ Můžete mít více příkazových řádků, v závislosti na verzi sady Visual 
 
 ### <a name="in-windows-81"></a>Ve Windows 8.1
 
-1. Přejděte na **Start** obrazovku stisknutím klávesy s logem Windows ![Windows logo](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") na klávesnici pro příklad.
+1. Přejděte **Start** obrazovku stisknutím klávesy s logem Windows ![klávesa s logem Windows na klávesnici.](./media/developer-command-prompt-for-vs/windows-logo-key-graphic.png) na klávesnici pro příklad.
 
 2. Na **Start** obrazovky, stiskněte klávesu **Ctrl**+**kartu** otevřít **aplikace** seznamu a pak zadejte `V`. Zobrazí seznam, který zahrnuje všechny nainstalované sady Visual Studio příkazové řádky.
 
@@ -46,9 +46,9 @@ Můžete mít více příkazových řádků, v závislosti na verzi sady Visual 
 
 ### <a name="in-windows-8"></a>V systému Windows 8
 
-1. Přejděte na **Start** obrazovku stisknutím klávesy s logem Windows ![Windows logo](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") na klávesnici pro příklad.
+1. Přejděte **Start** obrazovku stisknutím klávesy s logem Windows ![klávesa s logem Windows na klávesnici.](./media/developer-command-prompt-for-vs/windows-logo-key-graphic.png) na klávesnici pro příklad.
 
-2. Na **Start** obrazovky, stiskněte klávesu s logem Windows ![Windows logo](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") `+ Z`.
+2. Na **Start** obrazovky, stiskněte klávesu s logem Windows ![klávesa s logem Windows na klávesnici.](./media/developer-command-prompt-for-vs/windows-logo-key-graphic.png) `+ Z`.
 
 3. Zvolte **aplikace zobrazit** ikony v dolní části obrazovky a pak zadejte `V`. Zobrazí seznam, který zahrnuje všechny nainstalované sady Visual Studio příkazové řádky.
 

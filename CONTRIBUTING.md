@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1b12e614c59785a066ad34e5320a205961f7dd49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21266130bd44d45d03f85cdeee9480b7a9944b55
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607758"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65876937"
 ---
 # <a name="contributing"></a>Přispívání
 
@@ -65,14 +65,16 @@ Ujistěte se, postupujte podle lze patřičnou syntaxi Markdown. Další informa
 
 ### <a name="example-structure"></a>Ukázková struktura
 
-    docs
-      /about
-      /core
-        /porting
-          porting-overview.md
-          /media
-            /porting-overview
-                portability_report.png
+```
+docs
+  /about
+  /core
+    /porting
+      porting-overview.md
+      /media
+        /porting-overview
+            portability_report.png
+```
 
 **Krok 4:** Odeslat žádost o přijetí změn požádat o (o přijetí změn) z vaší větve do `dotnet/docs/master`.
 

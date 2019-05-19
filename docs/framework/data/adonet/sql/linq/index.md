@@ -2,12 +2,12 @@
 title: Technologie LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
-ms.openlocfilehash: ef95a7cebb527b01c15d124227664823fcbbaa23
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4a44bd3f55cf6c21bb785ff70bca80e2c003cd18
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582775"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878265"
 ---
 # <a name="linq-to-sql"></a>Technologie LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí rozhraní .NET Framework verze 3.5, která poskytuje infrastrukturu prostředí run-time pro správu relačních dat jako objektů.  
@@ -45,7 +45,7 @@ ms.locfileid: "65582775"
  Popisuje [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] technologií pro uživatele jazyka Visual Basic.  
   
  [LINQ a ADO.NET](../../../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
- Obsahuje odkazy na [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] portálu.  
+ Obsahuje odkazy na portálu pro ADO.NET.  
   
  [Technologie LINQ to SQL návody](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
  Uvádí postupy, které jsou k dispozici pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -54,4 +54,4 @@ ms.locfileid: "65582775"
  Popisuje, jak stáhnout ukázkové databáze používané v dokumentaci.  
   
  [Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))  
- Popisuje, jak <xref:System.Web.UI.WebControls.LinqDataSource> řídit zpřístupňuje [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] pro webové vývojáře prostřednictvím [!INCLUDE[vstecasp](../../../../../../includes/vstecasp-md.md)] architektura ovládacího prvku zdroje dat.
+ Popisuje, jak <xref:System.Web.UI.WebControls.LinqDataSource> řídit zpřístupňuje [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] pro vývojáře webů prostřednictvím architektury ovládací prvek zdroje dat ASP.NET.

@@ -3,16 +3,14 @@ title: Úvod do delegátů
 description: Další informace o delegátech v tomto úvodním tématu, který představuje základní koncepty a popisuje cíle návrhu jazyk pro delegáty.
 ms.date: 06/20/2016
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
-ms.openlocfilehash: 84e8bf8a03bd529d9c06ad049530c19daa380065
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 43cdf9345f0bae9d5c4d0e6a31d80bc269c37fec
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646693"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879033"
 ---
 # <a name="introduction-to-delegates"></a>Úvod do delegátů
-
-[Předchozí](delegates-events.md)
 
 Delegáti poskytují *pozdní vazby* mechanismus v rozhraní .NET. Pozdní vazby znamená, že vytvoříte algoritmus kde volající také poskytuje alespoň jednu metodu, která implementuje část algoritmus.
 

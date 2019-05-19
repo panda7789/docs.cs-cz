@@ -2,12 +2,12 @@
 title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: a4312a9affc1103f613f3f8ffd9a14696f9d4bcc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85b8efadca03de71fd98b0f0d1bf5aeb47fe76be
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972611"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878596"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
@@ -40,7 +40,7 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
  Vazby webu služby IIS můžete nakonfigurovat pomocí modulu snap-in Microsoft Management Console (MMC) služby IIS.  
   
 ## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Fondy aplikací, které jsou spuštěné v kontextech jiný uživatel přepsat sestavení z ostatních účtů v dočasné složce  
- K zajištění, že fondy aplikací, které jsou spuštěné v kontextu jiného uživatele nelze přepsat sestavení z ostatních účtů v dočasné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] soubory, složky, použijte jiné identity a dočasných složek pro různé aplikace. Například, pokud máte dva/Application1 virtuální aplikace a / Application2, můžete vytvořit dvěma fondy aplikací A a B, s dvě různé identity. Fond aplikací A můžete spustit identitu v rámci jednoho uživatele (user1) zatímco můžete spustit fond aplikací B pod jinou identitou uživatele (uživatel2) a konfigurace/Application1 nepoužije a /Application2 používat služby serveru B.  
+ Aby bylo zajištěno, že fondy aplikací, které jsou spuštěné v kontextu jiného uživatele nelze přepsat sestavení z ostatních účtů v dočasné složce souborů ASP.NET, pomocí jiné identity a dočasné složky pro různé aplikace. Například, pokud máte dva/Application1 virtuální aplikace a / Application2, můžete vytvořit dvěma fondy aplikací A a B, s dvě různé identity. Fond aplikací A můžete spustit identitu v rámci jednoho uživatele (user1) zatímco můžete spustit fond aplikací B pod jinou identitou uživatele (uživatel2) a konfigurace/Application1 nepoužije a /Application2 používat služby serveru B.  
   
  V souboru Web.config, můžete nakonfigurovat dočasnou složku použitím \< system.web/compilation/@tempFolder>. Pro/Application1 může být "c:\tempForUser1" a pro application2 může být "c:\tempForUser2". Udělte odpovídající oprávnění k zápisu do těchto složek pro dvě identity.  
   

@@ -2,15 +2,15 @@
 title: Čísla s plovoucí desetinnou čárkou
 ms.date: 03/30/2017
 ms.assetid: 73c218c6-1c44-4402-a167-4f6262629a91
-ms.openlocfilehash: 209e53e41495603f4ad559a74bdc87033f6a92a5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d1c033d7999fa403aaf18fccb765da178cba169a
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583667"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882045"
 ---
 # <a name="floating-point-numbers"></a>Čísla s plovoucí desetinnou čárkou
-Toto téma popisuje některé z problémů, které vývojáři často dojde při práci s čísly s plovoucí desetinnou čárkou v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Tyto jsou způsobené tím, že počítače ukládána čísla s plovoucí desetinnou čárkou a nejsou specifická pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> nebo <xref:System.Data.OracleClient>.  
+Toto téma popisuje některé z problémů, které vývojáři často dojde při práci s čísly s plovoucí desetinnou čárkou v ADO.NET. Tyto jsou způsobené tím, že počítače ukládána čísla s plovoucí desetinnou čárkou a nejsou specifická pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> nebo <xref:System.Data.OracleClient>.  
   
  Čísla s plovoucí desetinnou čárkou obvykle nemají přesné binárního formátu. Místo toho počítače ukládá přibližný počet. V různou dobu může být různý počet číslic binární soubor používá k reprezentování číslo. Když plovoucí bodu, že číslo je převedeno z jednoho znázornění na jiné vyjádření nejmenších platných číslicích toto číslo může mírně lišit. Převod je obvykle dochází, když číslo přetypováno z jednoho typu na jiný typ. Změna vyvolá se, zda převod vyvolá se v rámci databáze, mezi typy, které představují hodnot v databázi nebo mezi typy. Z důvodů těchto změn může mít čísla, která by byla logicky stejné změny v jejich nejméně významných číslic, které způsobí tak, aby měly různé hodnoty. Počet číslic v číslo může být větší nebo menší, než se očekávalo. Když naformátovaná jako řetězec, číslo nemusí zobrazit očekávané hodnotě.  
   

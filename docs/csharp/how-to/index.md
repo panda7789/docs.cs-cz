@@ -2,12 +2,12 @@
 title: Jak článků (Průvodce v C#)
 description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: cc78b8ffffc4f40629f213921fab6145751a7c57
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 77b68af5802f79060e30b2817661de4cb5e46942
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672104"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879017"
 ---
 # <a name="how-to-c"></a>Jak (C#)
 
@@ -133,4 +133,3 @@ Moderní aplikace často používají asynchronní operace. Tyto články vám i
 Programy jazyka C# obvykle mít argumenty příkazového řádku. Tyto články vás naučí, přístup a zpracování těchto argumentů příkazového řádku.
 
 - [Načíst všechny argumenty příkazového řádku s `for` ](../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md).
-- [Načíst všechny argumenty příkazového řádku s `foreach` ](../programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md).

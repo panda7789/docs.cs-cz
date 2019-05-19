@@ -2,15 +2,15 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: f65c558b0cbc02bdff8e78189a38d06a7502434f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4e3410c62ba2fb9b8cc3dd0c6aa80707e03793fd
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583573"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880067"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
-[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
+ADO.NET Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
   
  Abyste mohli využívat výhody [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], můžete migrovat do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Některé úlohy jsou společné pro všechny migrované aplikace. Tyto běžné úlohy patří upgrade aplikace pomocí rozhraní .NET Framework od verze 3.5 Service Pack 1 (SP1), definující modely a mapování a konfigurace technologie Entity Framework. Když migrujete aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], některé další aspekty, které se vztahují. Tyto aspekty závisí na typu aplikace migruje a na konkrétní funkce aplikace. Toto téma obsahuje informace, které vám pomůžou vybrat nejlepší metodou k použití při upgradu existující aplikaci.  
   
@@ -23,7 +23,7 @@ ms.locfileid: "65583573"
   
 - Pro velké nebo složité aplikace není nutné migrovat celou aplikaci k Entity Frameworku najednou. Ale musí být libovolné části aplikace, která nepoužívá rozhraní Entity Framework změnit stále při změně zdroje dat.  
   
-- Datové připojení zprostředkovatele používat Entity Framework můžete sdílet s jinými částmi aplikace, protože [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] používá [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele dat pro přístup ke zdroji dat. Například poskytovatel Sqlclienta se používá rozhraním Entity Framework pro přístup k databázi serveru SQL Server. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+- Datové připojení zprostředkovatele používat Entity Framework můžete sdílet s jinými částmi aplikace, protože [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] přístup ke zdroji dat pomocí zprostředkovatele dat ADO.NET. Například poskytovatel Sqlclienta se používá rozhraním Entity Framework pro přístup k databázi serveru SQL Server. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="common-migration-tasks"></a>Běžné úlohy migrace  
  Cesta k migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] závisí na typu aplikace i na stávající strategie přístupu data. Však můžete vždycky musí provádět následující úkoly při migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
@@ -56,7 +56,7 @@ ms.locfileid: "65583573"
  Od verze rozhraní .NET Framework 4 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "plain old" CLR objektů POCO, tzv ignorujících objekty. Ve většině případů můžete pracovat existujících objektů [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entitami objektů POCO](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456853(v=vs.100)). Můžete také migrovat aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a použití datových tříd, které jsou generovány pomocí nástroje Entity Framework. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>Důležité informace týkající se aplikací, které používají zprostředkovatele ADO.NET  
- [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] poskytovatelé, například SqlClient, umožňují dotazování na zdroj dat pro vrácení tabulkových dat. Je také možné načíst data do [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] datové sady. Následující seznam popisuje důležité aspekty upgradu aplikace, která využívá existující [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele:  
+ Zprostředkovatelé technologie ADO.NET, jako je například SqlClient, umožňují dotazování na zdroj dat pro vrácení tabulkových dat. Data je také možné načíst do datové ADO.NET. Následující seznam popisuje důležité aspekty upgradu aplikace, která používá existujícího poskytovatele ADO.NET:  
   
 - Zobrazení tabulky dat pomocí čtečky dat.  
 
@@ -69,7 +69,7 @@ ms.locfileid: "65583573"
   Pokud [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] neposkytuje funkce pro datové sady, které vaše aplikace vyžaduje, můžete stále využití výhod dotazů LINQ s použitím [!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)]. Další informace najdete v tématu [LINQ to DataSet](../../../../../docs/framework/data/adonet/linq-to-dataset.md).  
   
 ## <a name="considerations-for-applications-that-bind-data-to-controls"></a>Důležité informace týkající se aplikací, které vytvoření vazby dat k ovládacím prvkům  
- Rozhraní .NET Framework umožňuje zapouzdření dat ve zdroji dat, jako datové sady nebo s [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] data správy zdrojového kódu a na tyto ovládací prvky dat svážou prvky uživatelského rozhraní. Následující seznam popisuje důležité informace týkající se vytvoření vazby ovládacích prvků k datům Entity Framework.  
+ Rozhraní .NET Framework umožňuje zapouzdření dat ve zdroji dat, jako je například datovou sadu nebo ovládací prvek zdroje dat ASP.NET a chcete tyto ovládací prvky dat připojit prvky uživatelského rozhraní. Následující seznam popisuje důležité informace týkající se vytvoření vazby ovládacích prvků k datům Entity Framework.  
   
 - Vazba dat k ovládacím prvkům.  
 
@@ -79,9 +79,9 @@ ms.locfileid: "65583573"
   
   Další informace najdete v tématu [vazby objektů k ovládacím prvkům](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738469(v=vs.100)).  
   
-- [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] ovládací prvky zdroje dat  
+- Ovládací prvky zdroje dat ASP.NET.  
 
-  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Obsahuje ovládací prvek zdroje dat navržené pro zjednodušení datové vazby v [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] webové aplikace. Další informace najdete v tématu [Přehled ovládacího prvku webového serveru EntityDataSource](https://docs.microsoft.com/previous-versions/aspnet/cc488502(v=vs.100)).  
+  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Obsahuje ovládací prvek zdroje dat navržené pro zjednodušení datové vazby ve webových aplikacích ASP.NET. Další informace najdete v tématu [Přehled ovládacího prvku webového serveru EntityDataSource](https://docs.microsoft.com/previous-versions/aspnet/cc488502(v=vs.100)).  
   
 ## <a name="other-considerations"></a>Ostatní úvahy  
  Tady jsou důležité informace, které jim umožňují uplatnit při migraci konkrétní typy aplikací, aby rozhraní Entity Framework.  
@@ -100,7 +100,7 @@ ms.locfileid: "65583573"
   
 - Aplikace, které udržují stav.  
 
-  [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] Webové aplikace, často musíte mít stavu webové stránky nebo uživatelské relace. Objekty ve <xref:System.Data.Objects.ObjectContext> instance mohou být uloženy v zobrazení stavu klienta nebo ve stavu relace na serveru a později načíst a znovu připojit nový kontext objektu. Další informace najdete v tématu [připojení a odpojení objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896271(v=vs.100)).  
+  Webové aplikace ASP.NET, musíte mít často stavu webové stránky nebo uživatelské relace. Objekty ve <xref:System.Data.Objects.ObjectContext> instance mohou být uloženy v zobrazení stavu klienta nebo ve stavu relace na serveru a později načíst a znovu připojit nový kontext objektu. Další informace najdete v tématu [připojení a odpojení objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896271(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 

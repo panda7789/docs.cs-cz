@@ -5,16 +5,16 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: be05b9d502f44fe68dff21da7fe01016b6ed73c2
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2109c764d0143a843f75fc0c14cc0d09550efd85
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633278"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877578"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 
-Manifest Generation and Editing Tool (*Mage.exe*) je nástroj příkazového řádku, který podporuje vytváření a úpravy manifestů aplikací a nasazení. Jakožto nástroj příkazového řádku *Mage.exe* můžete spouštět z dávkových skriptů a aplikacím na základě Windows, včetně [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikací.
+Manifest Generation and Editing Tool (*Mage.exe*) je nástroj příkazového řádku, který podporuje vytváření a úpravy manifestů aplikací a nasazení. Jakožto nástroj příkazového řádku *Mage.exe* můžete spouštět z dávkových skriptů a jiných založené na Windows aplikací, včetně aplikací ASP.NET.
 
 Můžete také použít *MageUI.exe*, grafické aplikace namísto *Mage.exe*. Další informace najdete v tématu [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).
 
