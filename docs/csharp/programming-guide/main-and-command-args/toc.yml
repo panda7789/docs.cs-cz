@@ -5,7 +5,5 @@
       href: command-line-arguments.md
     - name: 'Postupy: Zobrazení argumentů příkazového řádku'
       href: how-to-display-command-line-arguments.md
-    - name: "Postupy: Přístup k\_argumentům příkazového řádku pomocí příkazu foreach"
-      href: how-to-access-command-line-arguments-using-foreach.md
     - name: Návratové hodnoty Main()
       href: main-return-values.md
