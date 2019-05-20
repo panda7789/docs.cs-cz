@@ -9,6 +9,12 @@
   items:
     - name: Začínáme
       href: tutorials/get-started.md
+    - name: Nasazení do Azure HDInsight
+      href: tutorials/hdinsight-deployment.md
+    - name: Nasazení do AWS EMR Spark
+      href: tutorials/amazon-emr-spark-deployment.md
+    - name: Nasazení do Databricks
+      href: tutorials/databricks-deployment.md
 - name: Odkaz
   items:
     - name: Referenční dokumentace ke knihovně API
