@@ -496,11 +496,13 @@
     - name: Začínáme
       href: csharp/getting-started/
     - name: Kurzy
-      href: csharp/tutorials/index.md
       items:
-        - name: 'Úvod do jazyka C#'
-          href: csharp/tutorials/intro-to-csharp/index.md
+        - name: Přehled
+          href: csharp/tutorials/index.md
+        - name: 'Úvod do programování v C#'
           items:
+            - name: Zvolení první lekce
+              href: csharp/tutorials/intro-to-csharp/index.md
             - name: Hello World
               href: csharp/tutorials/intro-to-csharp/hello-world.yml
             - name: 'Čísla v jazyce C#'
@@ -510,8 +512,9 @@
             - name: Seznam kolekcí
               href: csharp/tutorials/intro-to-csharp/list-collection.yml
             - name: Práce ve vašem místním prostředí
-              href: csharp/tutorials/intro-to-csharp/local-environment.md
               items:
+                - name: Nastavení vašeho prostředí
+                  href: csharp/tutorials/intro-to-csharp/local-environment.md
                 - name: 'Čísla v jazyce C#'
                   href: csharp/tutorials/intro-to-csharp/numbers-in-csharp-local.md
                 - name: Větve a smyčky
@@ -588,7 +591,7 @@
           href: csharp/nullable-references.md
         - name: Struktury
           href: csharp/structs.md
-        - name: Řazené kolekce členů
+        - name: N-tice
           href: csharp/tuples.md
         - name: Dekonstrukce řazených kolekcí členů a dalších typů
           href: csharp/deconstruct.md
@@ -609,7 +612,6 @@
         - name: Iterátory
           href: csharp/iterators.md
         - name: Delegáty a události
-          href: csharp/delegates-events.md
           items:
             - name: Úvod do delegátů
               href: csharp/delegates-overview.md
@@ -636,8 +638,9 @@
         - name: Psaní bezpečného a efektivního kódu
           href: csharp/write-safe-efficient-code.md
         - name: Stromy výrazů
-          href: csharp/expression-trees.md
           items:
+            - name: Úvod do stromů výrazů
+              href: csharp/expression-trees.md
             - name: Vysvětlení stromů výrazů
               href: csharp/expression-trees-explained.md
             - name: Typy architektur podporující stromy výrazů
@@ -659,8 +662,9 @@
         - name: Správa verzí
           href: csharp/versioning.md
     - name: 'Témata s postupy k C#'
-      href: csharp/how-to/index.md
       items:
+        - name: Rejstřík témat
+          href: csharp/how-to/index.md
         - name: Parsování řetězců metodou `String.Split`
           href: csharp/how-to/parse-strings-using-split.md
         - name: Řetězení řetězců
@@ -775,7 +779,7 @@
           href: fsharp/language-reference/unit-type.md
         - name: Řetězce
           href: fsharp/language-reference/strings.md
-        - name: Řazené kolekce členů
+        - name: N-tice
           href: fsharp/language-reference/tuples.md
         - name: 'Typy kolekcí F#'
           href: fsharp/language-reference/fsharp-collection-types.md
@@ -1144,7 +1148,7 @@
                   href: visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md
                 - name: Struktury a třídy
                   href: visual-basic/programming-guide/language-features/data-types/structures-and-classes.md
-            - name: Řazené kolekce členů
+            - name: N-tice
               href: visual-basic/programming-guide/language-features/data-types/tuples.md
             - name: Účinné používání datových typů
               href: visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md
@@ -1276,7 +1280,7 @@
               href: visual-basic/language-reference/data-types/integer-data-type.md
             - name: Long – datový typ
               href: visual-basic/language-reference/data-types/long-data-type.md
-            - name: Object – datový typ
+            - name: Datový typ objektu
               href: visual-basic/language-reference/data-types/object-data-type.md
             - name: SByte – datový typ
               href: visual-basic/language-reference/data-types/sbyte-data-type.md
@@ -1284,7 +1288,7 @@
               href: visual-basic/language-reference/data-types/short-data-type.md
             - name: Single – datový typ
               href: visual-basic/language-reference/data-types/single-data-type.md
-            - name: String – datový typ
+            - name: Datový typ String
               href: visual-basic/language-reference/data-types/string-data-type.md
             - name: UInteger – datový typ
               href: visual-basic/language-reference/data-types/uinteger-data-type.md
@@ -1486,17 +1490,17 @@
                   href: visual-basic/language-reference/operators/concatenation-operator.md
                 - name: '&= – operátor'
                   href: visual-basic/language-reference/operators/and-assignment-operator.md
-                - name: '* – operátor'
+                - name: '* Operátor'
                   href: visual-basic/language-reference/operators/multiplication-operator.md
                 - name: '*= – operátor'
                   href: visual-basic/language-reference/operators/multiplication-assignment-operator.md
-                - name: + – operátor
+                - name: + Operátor
                   href: visual-basic/language-reference/operators/addition-operator.md
                 - name: += – operátor
                   href: visual-basic/language-reference/operators/addition-assignment-operator.md
                 - name: = – operátor
                   href: visual-basic/language-reference/operators/assignment-operator.md
-                - name: '- – operátor'
+                - name: '- Operátor'
                   href: visual-basic/language-reference/operators/subtraction-operator.md
                 - name: '-= – operátor'
                   href: visual-basic/language-reference/operators/subtraction-assignment-operator.md
@@ -1504,7 +1508,7 @@
                   href: visual-basic/language-reference/operators/comparison-operators.md
                 - name: <= – operátor
                   href: visual-basic/language-reference/operators/comparison-operators.md
-                - name: '> – operátor'
+                - name: '> Operátor'
                   href: visual-basic/language-reference/operators/comparison-operators.md
                 - name: '>= – operátor'
                   href: visual-basic/language-reference/operators/comparison-operators.md
@@ -1512,7 +1516,7 @@
                   href: visual-basic/language-reference/operators/left-shift-operator.md
                 - name: <<= – operátor
                   href: visual-basic/language-reference/operators/left-shift-assignment-operator.md
-                - name: '>> – operátor'
+                - name: '>> Operátor'
                   href: visual-basic/language-reference/operators/right-shift-operator.md
                 - name: '>>= – operátor'
                   href: visual-basic/language-reference/operators/right-shift-assignment-operator.md
@@ -1530,7 +1534,7 @@
                   href: visual-basic/language-reference/operators/exponentiation-assignment-operator.md
                 - name: '?() – operátor'
                   href: visual-basic/language-reference/operators/null-conditional-operators.md
-                - name: '?. – operátor'
+                - name: '?. Operátor'
                   href: visual-basic/language-reference/operators/null-conditional-operators.md
                 - name: AddressOf – operátor
                   href: visual-basic/language-reference/operators/addressof-operator.md
@@ -1562,7 +1566,7 @@
                   href: visual-basic/language-reference/operators/like-operator.md
                 - name: Mod – operátor
                   href: visual-basic/language-reference/operators/mod-operator.md
-                - name: New – operátor
+                - name: Operátor new
                   href: visual-basic/language-reference/operators/new-operator.md
                 - name: Not – operátor
                   href: visual-basic/language-reference/operators/not-operator.md
@@ -1616,7 +1620,7 @@
         - name: Příkazy
           href: visual-basic/language-reference/statements/index.md
           items:
-            - name: A–E – příkazy
+            - name: A-E – příkazy
               href: visual-basic/language-reference/statements/a-e-statements.md
               items:
                 - name: AddHandler – příkaz
@@ -1653,7 +1657,7 @@
                   href: visual-basic/language-reference/statements/event-statement.md
                 - name: Exit – příkaz
                   href: visual-basic/language-reference/statements/exit-statement.md
-            - name: F–P – příkazy
+            - name: F-P – příkazy
               href: visual-basic/language-reference/statements/f-p-statements.md
               items:
                 - name: For Each...Next – příkaz
@@ -1668,11 +1672,11 @@
                   href: visual-basic/language-reference/statements/goto-statement.md
                 - name: If...Then...Else – příkaz
                   href: visual-basic/language-reference/statements/if-then-else-statement.md
-                - name: Implements – příkaz
+                - name: Implements – Příkaz
                   href: visual-basic/language-reference/statements/implements-statement.md
                 - name: Imports – příkaz (obor názvů a typ rozhraní .NET)
                   href: visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md
-                - name: Imports – příkaz (obor názvů XML)
+                - name: Imports – Příkaz (obor názvů XML)
                   href: visual-basic/language-reference/statements/imports-statement-xml-namespace.md
                 - name: Inherits – příkaz
                   href: visual-basic/language-reference/statements/inherits-statement.md
@@ -1700,7 +1704,7 @@
                   href: visual-basic/language-reference/statements/option-strict-statement.md
                 - name: Property – příkaz
                   href: visual-basic/language-reference/statements/property-statement.md
-            - name: Q–Z – příkazy
+            - name: Q-Z – příkazy
               href: visual-basic/language-reference/statements/q-z-statements.md
               items:
                 - name: RaiseEvent – příkaz
