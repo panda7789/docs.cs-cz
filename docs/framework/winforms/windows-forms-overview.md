@@ -5,12 +5,12 @@ helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-ms.openlocfilehash: c9215d1072060c4272c7d61056d51297dd997197
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 08e85828451ba6c66b13ff31e3d6c106871b8154
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645762"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875888"
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 
@@ -66,7 +66,7 @@ Podrobné informace o tom, jak používat tyto funkce najdete v následujících
 |Popis|Téma nápovědy|
 |-----------------|----------------|
 |Použití <xref:System.Windows.Forms.BindingSource> komponenty|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](./controls/bind-wf-controls-with-the-bindingsource.md)|
-|Práce s [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí Windows Forms BindingSource – komponenta](./controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
+|Práce se zdroji dat ADO.NET|[Postupy: Řazení a filtrování dat ADO.NET pomocí Windows Forms BindingSource – komponenta](./controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
 |Pomocí okna zdrojů dat|[Vytvoření vazby ovládacích prvků modelu Windows Forms k datům v sadě Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio)|
 |Pomocí nastavení aplikace|[Postupy: Vytvořit nastavení aplikace](./advanced/how-to-create-application-settings.md)|
 

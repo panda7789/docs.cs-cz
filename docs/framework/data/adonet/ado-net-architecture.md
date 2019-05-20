@@ -2,12 +2,12 @@
 title: Architektura ADO.NET
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-ms.openlocfilehash: 2e91077287c051d871eb61f83ec77b7baf90b2d8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 13f65d0a2daf3b477a9b29c4de84fb359c946201
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584574"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877252"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat tradičně spoléhalo především v rámci modelu založeného na připojení, dvě vrstvy. Zpracování dat stále používá vícevrstvé architektury, programátoři přepnutí na odpojeném přístup k poskytování lepšího škálování pro své aplikace.  
@@ -52,9 +52,9 @@ Architektura ADO.NET
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] slouží k nasazení datových služeb na webu nebo intranetu. Strukturovaná data jako entitami a relacemi podle specifikace modelu Entity Data Model. Data nasazené na tento model je adresovat pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../../../../docs/framework/data/wcf/index.md).  
   
 ## <a name="xml-and-adonet"></a>XML a ADO.NET  
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] využívá výkon XML k poskytování odpojené přístup k datům. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] byl navržený ručně spolupráce s XML třídami v rozhraní .NET Framework; obě jsou součástí jedné architektury.  
+ ADO.NET využívá výkon XML k poskytování odpojené přístup k datům. ADO.NET byla navržená ručně spolupráce s XML třídami v rozhraní .NET Framework; obě jsou součástí jedné architektury.  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] a třídy XML v rozhraní .NET Framework sloučit v `DataSet` objektu. `DataSet` Může být načtena data z XML použitého jako zdroj, ať už jde o souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní s XML World Wide Web Consortium (W3C), který obsahuje schématem jako XML definice jazyk (XSD) schématu, bez ohledu na zdroj dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` je XML, je skvělé médium pro přesun dat mezi vrstvami, což `DataSet` optimální volbou pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
+ Třídy XML v rozhraní .NET Framework a ADO.NET sloučit v `DataSet` objektu. `DataSet` Může být načtena data z XML použitého jako zdroj, ať už jde o souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní s XML World Wide Web Consortium (W3C), který obsahuje schématem jako XML definice jazyk (XSD) schématu, bez ohledu na zdroj dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` je XML, je skvělé médium pro přesun dat mezi vrstvami, což `DataSet` optimální volbou pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 

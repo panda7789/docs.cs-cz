@@ -2,12 +2,12 @@
 title: Připojovací řetězce v ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: 1197335f3ba2a09b6e7303d31bc32383d1fd3436
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b7cb0ab061da8364a9fecc3868ba9aaf7501577
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032752"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881164"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
@@ -17,24 +17,32 @@ Připojovací řetězec obsahuje informace o inicializaci, která je předána j
 
 Připojovací řetězec se středníkem oddělený seznam dvojic klíč/hodnota parametru:
 
-    keyword1=value; keyword2=value;
+```
+keyword1=value; keyword2=value;
+```
 
 Klíčová slova nerozlišují malá a velká písmena. Hodnoty, ale mohou být velká a malá písmena, v závislosti na zdroji dat. Klíčová slova a hodnoty mohou obsahovat [prázdné znaky](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Počáteční a koncové mezery bude ignorován v klíčových slov a nekotované hodnoty.
 
 Obsahuje-li hodnota středník, [řídící znaky Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters), nebo úvodní a koncové prázdné znaky, musí být uzavřen v jednoduchých nebo dvojitých uvozovek. Příklad:
 
-    Keyword=" whitespace  ";
-    Keyword='special;character';
+```
+Keyword=" whitespace  ";
+Keyword='special;character';
+```
 
 Nadřazené znak nedojde v rámci hodnoty, který ji obklopuje. Proto můžou být uzavřená hodnotu obsahující jednoduchých uvozovek pouze do dvojitých uvozovek a naopak:
 
-    Keyword='double"quotation;mark';
-    Keyword="single'quotation;mark";
+```
+Keyword='double"quotation;mark';
+Keyword="single'quotation;mark";
+```
 
 Uvozovky sami, stejně jako znaménko rovná se nevyžadují, aby uvozovací znaky, takže následující připojovací řetězce jsou platné:
 
-    Keyword=no "escaping" 'required';
-    Keyword=a=b=c
+```
+Keyword=no "escaping" 'required';
+Keyword=a=b=c
+```
 
 Protože každá hodnota je pro čtení do další středníkem nebo konec řetězce, je hodnota v druhém příkladu `a=b=c`, a poslední středník je volitelné.
 

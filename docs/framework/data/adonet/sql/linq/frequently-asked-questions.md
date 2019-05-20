@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 4a41eac3d5b51936ebbae8d9e3dcf623da676bce
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 05ba633415f782d5edea7028c1b82b8031428576
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583474"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878231"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -185,7 +185,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
  A. Nepokoušejte se použít instance <xref:System.Data.Linq.DataContext>. Každý <xref:System.Data.Linq.DataContext> udržuje svůj stav (včetně mezipaměti identity) pro určité úpravy a dotazovat najednou. K získání nových instancí na základě aktuálního stavu databáze, použijte nové <xref:System.Data.Linq.DataContext>.  
   
- Můžete dál používat základní [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] sdružování připojení. Další informace najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ Stále můžete použít základní sdružování připojení ADO.NET. Další informace najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
   
 ## <a name="second-datacontext-is-not-updated"></a>Druhý DataContext není aktualizovaná.  
  Otázka: Můžu použít jednu instanci <xref:System.Data.Linq.DataContext> k ukládání hodnot v databázi. Ale sekundy <xref:System.Data.Linq.DataContext> ve stejné databázi neodráží aktualizovanými hodnotami. Druhá <xref:System.Data.Linq.DataContext> instance zdá se, že k vrácení hodnoty uložené v mezipaměti.  

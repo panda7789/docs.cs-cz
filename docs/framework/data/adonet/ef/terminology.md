@@ -2,12 +2,12 @@
 title: Terminologie Entity Framework
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-ms.openlocfilehash: 9272740bef21dbe8b28bd6e58354a342fb799002
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f78545102823b19cc65b100f2b270ae71c1bd077
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583524"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877486"
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
 Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Jsou uvedeny odkazy na související témata, kde je k dispozici další informace.  
@@ -30,7 +30,7 @@ Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet
 |soubor EDMX|Soubor XML, který obsahuje koncepční model (v CSDL), model úložiště (v SSDL) a mapování mezi nimi (v MSL). Soubor .edmx vytvoří [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] nástroje. Další informace najdete v tématu [edmx soubor přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).|  
 |end|Zúčastněná entita v přidružení.<br /><br /> Další informace najdete v tématu [elementu End (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#end-element-csdl) a [end přidružení](../../../../../docs/framework/data/adonet/association-end.md).|  
 |entita|Koncept v doméně aplikace, ze kterého datový typ je definován.<br /><br /> Další informace najdete v tématu [Element EntityType (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#entitytype-element-csdl) a [typ entity](../../../../../docs/framework/data/adonet/entity-type.md).|  
-|EntityClient|Úložiště nezávislé [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] poskytovatele dat, který obsahuje třídy, jako například `EntityConnection`, `EntityCommand`, a `EntityDataReader`. Funguje s [!INCLUDE[esql](../../../../../includes/esql-md.md)] a připojí se ke konkrétní storage [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele dat, jako například `SqlClient`.<br /><br /> Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).|  
+|EntityClient|Zprostředkovatele dat ADO.NET nezávislý na úložišti, který obsahuje třídy, jako například `EntityConnection`, `EntityCommand`, a `EntityDataReader`. Funguje s [!INCLUDE[esql](../../../../../includes/esql-md.md)] a připojí k úložišti konkrétního zprostředkovatele dat ADO.NET, například `SqlClient`.<br /><br /> Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).|  
 |entity container|Určuje sady entit a sad přidružení, které budou implementovány v určeném oboru názvů.<br /><br /> Další informace najdete v tématu [Element EntityContainer (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#entitycontainer-element-csdl) a [kontejneru entity](../../../../../docs/framework/data/adonet/entity-container.md).|  
 |Entity Data Model (EDM)|Sada koncepty, které popisují strukturu dat, jako entit a vztahů, bez ohledu na jeho uložených formuláře.<br /><br /> Další informace najdete v tématu [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).|  
 |Entity Framework|Sada technologií, která podporuje vývoj softwarových aplikací orientovaných na data, protože vývojářům umožňuje pracovat s koncepčními modely, které jsou mapovány na logická schémata ve zdrojích dat.<br /><br /> Další informace najdete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md).|  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], data binding
 - cells [Windows Forms], changing DataGrid cell values
 ms.assetid: 0c7a6d00-30de-416e-8223-0a81ddb4c1f8
-ms.openlocfilehash: 60ba1e9304320346d505f3f73e1ba93ff6edab63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3217680a2bab43124b75529bead97ffcfbb06aea
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961652"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882140"
 ---
 # <a name="how-to-change-displayed-data-at-run-time-in-the-windows-forms-datagrid-control"></a>Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid DataGrid
 > [!NOTE]
@@ -64,13 +64,13 @@ ms.locfileid: "61961652"
        gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-     Během spuštění můžete použít <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu pro vytvoření vazby <xref:System.Windows.Forms.DataGrid> ovládacího prvku k jinému zdroji dat. Například může mít několik [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] ovládací prvky dat, každý z nich připojený k jiné databázi.  
+     Během spuštění můžete použít <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu pro vytvoření vazby <xref:System.Windows.Forms.DataGrid> ovládacího prvku k jinému zdroji dat. Například můžete mít několik ovládacích prvků dat ADO.NET, každý z nich připojený k jiné databázi.  
   
 ### <a name="to-change-the-datasource-programmatically"></a>Chcete-li změnit zdroj dat prostřednictvím kódu programu  
   
 1. Nastavte <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metody k názvu zdroje dat a tabulku, kterou chcete svázat.  
   
-     Následující příklad ukazuje, jak změnit datum zdroje pomocí <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] ovládací prvek dat (adoPubsAuthors), který je připojený k tabulce Autoři databáze Pubs.  
+     Následující příklad ukazuje, jak změnit datum zdroje pomocí <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metoda na ovládací prvek dat ADO.NET (adoPubsAuthors), který je připojený k tabulce Autoři databáze Pubs.  
   
     ```vb  
     Private Sub ResetSource()  

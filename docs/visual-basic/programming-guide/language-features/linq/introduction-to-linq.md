@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: d9af75474f6b0aec2bdf6aa2f550c280209f91e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8a5fbc28a470415312540fff0acc969f939410b5
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633501"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875533"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic a při práci se všemi druhy dat poskytuje jednoduché a výkonné možnosti. Místo odeslání dotazu do databáze ke zpracování nebo práce s různou syntaxí dotazu pro každý typ hledaných dat, kterou hledáte, představuje LINQ dotazy jako součást jazyka Visual Basic. Používá jednotný syntax bez ohledu na typ data.  
@@ -43,7 +43,7 @@ Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic
 |LINQ na objekty|Poskytovateli LINQ to Objects umožňuje dotazování kolekce v paměti a pole. Pokud objekt podporuje buď <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní, poskytovatel LINQ to Objects umožňuje dotazování ho.<br /><br /> Můžete povolit poskytovateli LINQ to Objects pomocí importu <xref:System.Linq> obor názvů, která je importována ve výchozím nastavení pro všechny projekty jazyka Visual Basic.<br /><br /> Další informace o poskytovateli LINQ to Objects naleznete v tématu [LINQ to Objects](../../concepts/linq/linq-to-objects.md).|  
 |Technologie LINQ to SQL|Poskytovateli LINQ to SQL umožňuje dotazování a modifikaci dat v databázi serveru SQL Server. To usnadňuje mapování modelu objektu pro aplikaci tabulek a objektů v databázi.<br /><br /> Visual Basic usnadňuje práci s LINQ to SQL a to včetně Návrháře relací objektů (O/R Designer). Tento návrhář slouží k vytvoření objektového modelu v aplikaci, která mapuje pro objekty v databázi. O/R Designer také přiřazuje funkce mapě uložených procedur a funkcí <xref:System.Data.Linq.DataContext> objektu, který skladuje komunikaci s databází a ukládá stav kontroly optimistické souběžnosti.<br /><br /> Další informace o technologii LINQ to SQL poskytovatele najdete v tématu [technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). Další informace o Návrháři relací objektů naleznete v tématu [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
 |Technologie LINQ to XML|LINQ to XML zprostředkovatele umožňuje dotazování a modifikaci XML. Můžete změnit paměť XML nebo je můžete načíst z XML a uložit XML do souboru.<br /><br /> Poskytovateli LINQ to XML navíc umožňuje literály XML a vlastnosti OS XML, které umožňují zapisovat XML přímo v kódu jazyka Visual Basic. Další informace najdete v tématu [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).|  
-|LINQ na DataSet|Poskytovatel LINQ to DataSet umožňuje dotazování a aktualizace dat v [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady. Můžete přidat sílu LINQ pro aplikace, které používají datové sady, abyste zjednodušili a rozšířili schopnosti pro dotazování, agregaci a aktualizaci dat v datové sadě.<br /><br /> Další informace najdete v tématu [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).|  
+|LINQ na DataSet|Poskytovatel LINQ to DataSet umožňuje dotazování a aktualizaci dat v datové sadě služby ADO.NET. Můžete přidat sílu LINQ pro aplikace, které používají datové sady, abyste zjednodušili a rozšířili schopnosti pro dotazování, agregaci a aktualizaci dat v datové sadě.<br /><br /> Další informace najdete v tématu [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).|  
   
 ## <a name="structure-of-a-linq-query"></a>Struktura dotazu LINQ  
  Dotaz LINQ, označovaný také jako *výrazu dotazu*, se skládá z kombinace klauzulí dotazu, které identifikují zdroje dat a iterační proměnné pro dotaz. Výraz dotazu může také obsahovat pokyny pro řazení, filtrování, seskupování a spojování nebo výpočty vyrovnat zdrojová data. Syntaxe výrazu dotazu se podobá syntaxi SQL; Proto vám může připadat velká část syntaxe zkušenosti.  
