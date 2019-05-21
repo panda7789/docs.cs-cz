@@ -5,28 +5,29 @@ helpviewer_keywords:
 - controls [Windows Forms], setting caption
 - Windows Forms, setting the text displayed
 ms.assetid: 9d18e0e0-f17f-4074-837d-e67ceeeaa89d
-ms.openlocfilehash: 07355be0809f3dde480cf14b39e26a4266c4d936
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 37ab3823a41cca2eeea550c90e92e90bc364c759
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877394"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960346"
 ---
-# <a name="how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer"></a><span data-ttu-id="cf05d-102">Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře</span><span class="sxs-lookup"><span data-stu-id="cf05d-102">How to: Set the Text Displayed by a Windows Forms Control Using the Designer</span></span>
-<span data-ttu-id="cf05d-103">Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primární funkce ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="cf05d-103">Windows Forms controls typically display some text that is related to the primary function of the control.</span></span> <span data-ttu-id="cf05d-104">Například <xref:System.Windows.Forms.Button> ovládací prvek zobrazí obvykle titulek, která určuje, jaká akce se provede při kliknutí na tlačítko.</span><span class="sxs-lookup"><span data-stu-id="cf05d-104">For example, a <xref:System.Windows.Forms.Button> control typically displays a caption that indicates what action will be performed when the button is clicked.</span></span> <span data-ttu-id="cf05d-105">Pro všechny ovládací prvky, můžete nastavit nebo načíst text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="cf05d-105">For all controls, you can set or return the text by using the <xref:System.Windows.Forms.Control.Text%2A> property.</span></span> <span data-ttu-id="cf05d-106">Můžete změnit písmo pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="cf05d-106">You can change the font by using the <xref:System.Windows.Forms.Control.Font%2A> property.</span></span>  
-  
-### <a name="to-set-the-text-and-font-with-the-designer"></a><span data-ttu-id="cf05d-107">Chcete-li nastavit text a písma pomocí návrháře</span><span class="sxs-lookup"><span data-stu-id="cf05d-107">To set the text and font with the designer</span></span>  
-  
-1. <span data-ttu-id="cf05d-108">V okně Vlastnosti nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost ovládacího prvku na odpovídající řetězec.</span><span class="sxs-lookup"><span data-stu-id="cf05d-108">In the Properties window, set the <xref:System.Windows.Forms.Control.Text%2A> property of the control to an appropriate string.</span></span>  
-  
-     <span data-ttu-id="cf05d-109">Chcete-li vytvořit podtržené klávesovou zkratku, obsahuje znak ampersand (&) před písmenem, který bude klávesovou zkratku.</span><span class="sxs-lookup"><span data-stu-id="cf05d-109">To create an underlined shortcut key, includes an ampersand (&) before the letter that will be the shortcut key.</span></span>  
-  
-2.  <span data-ttu-id="cf05d-110">V okně Vlastnosti klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.Control.Font%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="cf05d-110">In the Properties window, click the ellipsis button (![The Ellipsis button (...) in the Properties window of Visual Studio.](./media/visual-studio-ellipsis-button.png)) next to the <xref:System.Windows.Forms.Control.Font%2A> property.</span></span>  
-  
-     <span data-ttu-id="cf05d-111">V dialogovém okně Standardní písmo vyberte písmo, styl písma, velikost, efektů (například podtržení nebo přeškrtnutí) a skriptů, které chcete.</span><span class="sxs-lookup"><span data-stu-id="cf05d-111">In the standard font dialog box, select the font, font style, size, effects (such as strikeout or underline), and script that you want.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="cf05d-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cf05d-112">See also</span></span>
+# <a name="how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer"></a><span data-ttu-id="c076b-102">Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře</span><span class="sxs-lookup"><span data-stu-id="c076b-102">How to: Set the Text Displayed by a Windows Forms Control Using the Designer</span></span>
 
-- [<span data-ttu-id="cf05d-113">Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cf05d-113">How to: Set the Text Displayed by a Windows Forms Control</span></span>](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
-- [<span data-ttu-id="cf05d-114">Použití písem a textu</span><span class="sxs-lookup"><span data-stu-id="cf05d-114">Using Fonts and Text</span></span>](../advanced/using-fonts-and-text.md)
-- [<span data-ttu-id="cf05d-115">Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky</span><span class="sxs-lookup"><span data-stu-id="cf05d-115">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
+<span data-ttu-id="c076b-103">Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primární funkce ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c076b-103">Windows Forms controls typically display some text that is related to the primary function of the control.</span></span> <span data-ttu-id="c076b-104">Například <xref:System.Windows.Forms.Button> ovládací prvek zobrazí obvykle titulek, která určuje, jaká akce se provede při kliknutí na tlačítko.</span><span class="sxs-lookup"><span data-stu-id="c076b-104">For example, a <xref:System.Windows.Forms.Button> control typically displays a caption that indicates what action will be performed when the button is clicked.</span></span> <span data-ttu-id="c076b-105">Pro všechny ovládací prvky, můžete nastavit nebo načíst text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="c076b-105">For all controls, you can set or return the text by using the <xref:System.Windows.Forms.Control.Text%2A> property.</span></span> <span data-ttu-id="c076b-106">Můžete změnit písmo pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="c076b-106">You can change the font by using the <xref:System.Windows.Forms.Control.Font%2A> property.</span></span>
+
+### <a name="to-set-the-text-and-font-with-the-designer"></a><span data-ttu-id="c076b-107">Chcete-li nastavit text a písma pomocí návrháře</span><span class="sxs-lookup"><span data-stu-id="c076b-107">To set the text and font with the designer</span></span>
+
+1. <span data-ttu-id="c076b-108">V okně Vlastnosti nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost ovládacího prvku na odpovídající řetězec.</span><span class="sxs-lookup"><span data-stu-id="c076b-108">In the Properties window, set the <xref:System.Windows.Forms.Control.Text%2A> property of the control to an appropriate string.</span></span>
+
+     <span data-ttu-id="c076b-109">Chcete-li vytvořit podtržené klávesovou zkratku, obsahuje znak ampersand (&) před písmenem, který bude klávesovou zkratku.</span><span class="sxs-lookup"><span data-stu-id="c076b-109">To create an underlined shortcut key, includes an ampersand (&) before the letter that will be the shortcut key.</span></span>
+
+2. <span data-ttu-id="c076b-110">V okně Vlastnosti klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.Control.Font%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="c076b-110">In the Properties window, click the ellipsis button (![The Ellipsis button (...) in the Properties window of Visual Studio.](./media/visual-studio-ellipsis-button.png)) next to the <xref:System.Windows.Forms.Control.Font%2A> property.</span></span>
+
+     <span data-ttu-id="c076b-111">V dialogovém okně Standardní písmo vyberte písmo, styl písma, velikost, efektů (například podtržení nebo přeškrtnutí) a skriptů, které chcete.</span><span class="sxs-lookup"><span data-stu-id="c076b-111">In the standard font dialog box, select the font, font style, size, effects (such as strikeout or underline), and script that you want.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="c076b-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c076b-112">See also</span></span>
+
+- [<span data-ttu-id="c076b-113">Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c076b-113">How to: Set the Text Displayed by a Windows Forms Control</span></span>](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [<span data-ttu-id="c076b-114">Použití písem a textu</span><span class="sxs-lookup"><span data-stu-id="c076b-114">Using Fonts and Text</span></span>](../advanced/using-fonts-and-text.md)
+- [<span data-ttu-id="c076b-115">Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky</span><span class="sxs-lookup"><span data-stu-id="c076b-115">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
