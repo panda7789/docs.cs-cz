@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: f40afe25bbc3238ec773ee1ee19673d4d5a3ef1d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8eb0a2a5b8b6edad17477e1fd65f72b540a8a674
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603944"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960045"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťový protokol (net.tcp://) pro vysoce výkonné komunikaci. WCF také zavádí nové součásti systému, služba Net.TCP Port Sharing umožňující portů net.tcp sdílet mezi více procesy uživatele.  
@@ -38,7 +38,7 @@ Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťov
  Když službu WCF používající sdílení portu net.tcp://, infrastruktura přenosu WCF TCP přímo neotevře soket TCP v procesu aplikace. Místo toho infrastruktury přenosu registruje služby základní adresu identifikátoru URI (Uniform Resource) služba Sdílení portů Net.TCP a čeká na naslouchat zprávám v jeho zastoupení služba Sdílení portů.  Služba sdílení portů odešle zprávy adresované na aplikační službu při jejich doručení.  
   
 ## <a name="installing-port-sharing"></a>Instalace sdílení portů  
- Služba sdílení portů Net.TCP je k dispozici ve všech operačních systémech, které podporují [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], ale služba není ve výchozím nastavení povolena. Jako bezpečnostní opatření musí správce ručně povolit službu Net.TCP Port Sharing před prvním použitím. Služba sdílení portů Net.TCP poskytuje možnosti konfigurace, které vám umožňují pracovat s několika charakteristik síťové sokety vlastníkem služby Sdílení portů. Další informace najdete v tématu [jak: Povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).  
+ Služba sdílení portů Net.TCP je k dispozici ve všech operačních systémech, které podporují WinFX, ale služba není ve výchozím nastavení povolena. Jako bezpečnostní opatření musí správce ručně povolit službu Net.TCP Port Sharing před prvním použitím. Služba sdílení portů Net.TCP poskytuje možnosti konfigurace, které vám umožňují pracovat s několika charakteristik síťové sokety vlastníkem služby Sdílení portů. Další informace najdete v tématu [jak: Povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).  
   
 ## <a name="using-nettcp-port-sharing-in-an-application"></a>Pomocí aplikace sdílení portů Net.tcp  
  Nejjednodušší způsob, jak použít port net.tcp:// sdílení aplikace WCF je zveřejnit službu pomocí <xref:System.ServiceModel.NetTcpBinding> a následné povolení služby Sdílení portů Net.TCP pomocí <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> vlastnost.  

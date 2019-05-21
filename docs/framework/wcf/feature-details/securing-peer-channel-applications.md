@@ -2,15 +2,15 @@
 title: Zabezpečení aplikací rovnocenného kanálu
 ms.date: 03/30/2017
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
-ms.openlocfilehash: 8fbad019270851a32d932c33d6fd401cea2b3515
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b52e0476ce6ac54a2e4a3a8cfceb112d662186b
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603326"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959882"
 ---
 # <a name="securing-peer-channel-applications"></a>Zabezpečení aplikací rovnocenného kanálu
-Jako v jiných vazbách [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], `NetPeerTcpBinding` má povolené ve výchozím nastavení zabezpečení a nabízí i zabezpečení na základě přenosu a zprávy (nebo obojí). Toto téma popisuje tyto dva typy zabezpečení. Typ zabezpečení je určen podle klíčových slov režim zabezpečení ve specifikaci vazby (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  
+Jako další vazby v části WinFX, `NetPeerTcpBinding` má povolené ve výchozím nastavení zabezpečení a nabízí i zabezpečení na základě přenosu a zprávy (nebo obojí). Toto téma popisuje tyto dva typy zabezpečení. Typ zabezpečení je určen podle klíčových slov režim zabezpečení ve specifikaci vazby (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  
   
 ## <a name="transport-based-security"></a>Zabezpečení přenosu  
  Protokolu peer Channel podporuje dva typy ověřování pověření zabezpečení přenosu. oba vyžadují nastavení si `ClientCredentialSettings.Peer` vlastnosti přidruženého `ChannelFactory`:  

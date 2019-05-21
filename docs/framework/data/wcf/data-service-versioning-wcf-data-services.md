@@ -6,12 +6,12 @@ helpviewer_keywords:
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-ms.openlocfilehash: fd3be8a60048b10bbd94ac5b3bfadaee954943ef
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 9a58f375821109c0ec5f2230ae330dc6a2caa102
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583601"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959489"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datové služby (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Umožňuje vytvoření datové služby tak, aby klienti můžou přistupovat k datům jako prostředky pomocí identifikátorů URI, které jsou založeny na datovém modelu. OData podporuje také definice operace služby. Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu mohou tyto datové služby musí změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musíte zvážit, jestli se má definovat novou verzi vaše data služby a jak nejlepší k minimalizaci vlivu na existující klientské aplikace. Toto téma obsahuje pokyny pro kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak služeb WCF Data Services zpracovává výměny mezi klienty a datových služeb, které podporují různé verze protokolu OData.
@@ -60,12 +60,12 @@ ms.locfileid: "65583601"
 
  Pokud aplikace používá tyto klientské knihovny služby WCF Data Services pro přístup k datové služby, knihovny automaticky nastaví tato záhlaví na správné hodnoty, podle verze protokolu OData a funkce, které se používají ve vaší aplikaci. Ve výchozím nastavení používá služeb WCF Data Services nejnižší verze protokolu, které podporuje požadovanou operaci.
 
- Následující tabulka obsahuje podrobnosti o verzích rozhraní .NET Framework a [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] , které zahrnují podporu služeb WCF Data Services pro konkrétní verze protokolu OData.
+ Následující tabulka Podrobnosti verze rozhraní .NET Framework a Silverlight, které obsahují služeb WCF Data Services podporují pro konkrétní verze protokolu OData.
 
 |Verze protokolu OData|Podpora zavedený...|
 |-----------------------------------------------------------------------------------|----------------------------|
-|Verze 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Aktualizace Service Pack 1 (SP1)<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] verze 3|
-|Verze 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-Aktualizaci [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] SP1. Můžete stáhnout a nainstalovat aktualizaci z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=158125).<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] verze 4|
+|Verze 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Aktualizace Service Pack 1 (SP1)<br />-Silverlight verze 3|
+|Verze 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-Aktualizaci [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] SP1. Můžete stáhnout a nainstalovat aktualizaci z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=158125).<br />-Silverlight verze 4|
 |verze 3|-Můžete stáhnout a nainstalovat verzi předběžné verze, která podporuje OData verze 3 z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=203885).|
 
 ### <a name="metadata-versions"></a>Verze metadat

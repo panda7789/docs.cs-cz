@@ -2,12 +2,12 @@
 title: Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Seznamte se s celkový vztah mezi vzorů CQRS a DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: a5df8ce495b308df63af47ef1ec2ed26be2b5e37
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 36bffce37176aed6c7d9daea7f2995952b58e895
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875892"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959382"
 ---
 # <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Použít zjednodušený vzorů CQRS a DDD v mikroslužbě
 
@@ -35,7 +35,7 @@ Samotné webové rozhraní API může být aplikační vrstvu. Tady aspekt návr
 
 ## <a name="additional-resources"></a>Další zdroje
 
- - **Grega Younga:. Správa verzí v systému zdrojem událostí** (přečíst online e kniha zdarma) \
+- **Grega Younga:. Správa verzí v systému zdrojem událostí** (přečíst online e kniha zdarma) \
    <https://leanpub.com/esversioning/read>
 
 >[!div class="step-by-step"]

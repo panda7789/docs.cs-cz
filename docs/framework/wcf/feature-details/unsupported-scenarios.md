@@ -2,12 +2,12 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: d6e5b7292f999b3fbecc911c3fef671ea0c675f5
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 884349739730510c356e1efc1f866d146f6ed946
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878746"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959963"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním Windows na této platformě. Jiné ověřovací mechanismy, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP/HTTPS se nepodporuje při spuštění WCF v části Windows XP Home Edition.  
@@ -50,7 +50,7 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
 ## <a name="cryptography"></a>Cryptography  
   
 ### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>SHA-256 se podporuje jenom pro použití symetrického klíče  
- WCF podporuje širokou škálu šifrování a podpis digest vytváření algoritmy, které můžete zadat pomocí sadu algoritmů v vazeb poskytovaných systémem. Pro důkladnější zabezpečení WCF podporuje algoritmy zabezpečení hashovací algoritmus (SHA) 2, konkrétně SHA-256, pro vytvoření hodnoty hash podpisu digest. Tato verze podporuje SHA-256 pouze pro použití symetrického klíče, jako jsou klíče protokolu Kerberos, a pokud se certifikát X.509, který nepoužívá k podepisování zpráv. WCF nepodporuje podpisy RSA (používá se v certifikátech X.509) při použití hodnoty hash SHA-256 kvůli aktuální chybějící podpora pro RSA-SHA256 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
+ WCF podporuje širokou škálu šifrování a podpis digest vytváření algoritmy, které můžete zadat pomocí sadu algoritmů v vazeb poskytovaných systémem. Pro důkladnější zabezpečení WCF podporuje algoritmy zabezpečení hashovací algoritmus (SHA) 2, konkrétně SHA-256, pro vytvoření hodnoty hash podpisu digest. Tato verze podporuje SHA-256 pouze pro použití symetrického klíče, jako jsou klíče protokolu Kerberos, a pokud se certifikát X.509, který nepoužívá k podepisování zpráv. WCF nepodporuje podpisy RSA (používá se v certifikátech X.509) pomocí hodnot hash SHA-256 kvůli aktuální chybějící podpora pro RSA-SHA256 v WinFX.  
   
 ### <a name="fips-compliant-sha-256-hashes-not-supported"></a>Kompatibilní se standardem FIPS hodnoty hash SHA-256 není podporován  
  WCF nepodporuje hodnoty hash SHA-256 kompatibilní se standardem FIPS, takže algoritmus sad, které používají algoritmus SHA-256 nepodporují službou WCF na systémech, kde je nutné používat algoritmy splňující standard FIPS.  

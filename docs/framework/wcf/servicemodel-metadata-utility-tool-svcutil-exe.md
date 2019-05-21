@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 29b030708f2174b55386b13931f1088d15f4eb4f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0cb14bba724b50a8a2b723fe88503fafeeea3880
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582694"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959892"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -49,7 +49,7 @@ Nástroj nepodporuje cílení na více platforem. Pokud chcete generovat .NET 4 
 
 ### <a name="accessing-wsdl-documents"></a>Přístup k dokumenty WSDL
 
-Pokud používáte nástroj Svcutil pro přístup k dokumentu WSDL, který obsahuje odkaz na službu tokenů zabezpečení (STS), Svcutil díky WS-MetadataExchange volání na službu STS. Služba však můžete zveřejnit své dokumenty WSDL přes WS-MetadataExchange nebo HTTP GET. Proto pokud služba tokenů zabezpečení je dostupná jenom v případě použití HTTP GET klienta napsané v dokumentu WSDL [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] se nezdaří. Pro klienty v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]Svcutil pokusí použít obě WS-MetadataExchange a HTTP GET získat WSDL služby tokenů zabezpečení.
+Pokud používáte nástroj Svcutil pro přístup k dokumentu WSDL, který obsahuje odkaz na službu tokenů zabezpečení (STS), Svcutil díky WS-MetadataExchange volání na službu STS. Služba však můžete zveřejnit své dokumenty WSDL přes WS-MetadataExchange nebo HTTP GET. Proto pokud služba tokenů zabezpečení je dostupná jenom v případě WSDL dokument pomocí HTTP GET, klient napsané v WinFX selže. Pro klienty v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]Svcutil pokusí použít obě WS-MetadataExchange a HTTP GET získat WSDL služby tokenů zabezpečení.
 
 ## <a name="using-svcutilexe"></a>Pomocí SvcUtil.exe
 
@@ -107,7 +107,7 @@ Pro službu s koncovým bodem třída BasicHttpContextBinding *Svcutil.exe* gene
 |/serializer:Auto|Automatický výběr serializátoru. To se pokusí použít serializátor kontraktu dat. není a používá XmlSerializer, pokud se nezdaří.<br /><br /> Krátký tvar: `/ser`|
 |/serializer:DataContractSerializer|Datové typy, které k serializaci a deserializaci používají serializátor kontraktu dat generuje.<br /><br /> Krátký tvar: `/ser:DataContractSerializer`|
 |/serializer:XmlSerializer|Generuje datové typy, které používají <xref:System.Xml.Serialization.XmlSerializer> k serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:XmlSerializer`|
-|/targetClientVersion|Zadejte, která verze rozhraní .NET Framework aplikace cílí. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: Použít `/tcv:Version30` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)].<br /><br /> `Version35`: Použít `/tcv:Version35` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Při použití `/tcv:Version35` s `/async` přepnout, obě založený na událostech a jsou generovány založený/zpětného volání asynchronní metody. Kromě toho podporují podporující LINQ datových sad a <xref:System.DateTimeOffset> je povolená.|
+|/targetClientVersion|Zadejte, která verze rozhraní .NET Framework aplikace cílí. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: Použít `/tcv:Version30` Pokud jsou generování kódu pro klienty, kteří používají WinFX.<br /><br /> `Version35`: Použít `/tcv:Version35` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Při použití `/tcv:Version35` s `/async` přepnout, obě založený na událostech a jsou generovány založený/zpětného volání asynchronní metody. Kromě toho podporují podporující LINQ datových sad a <xref:System.DateTimeOffset> je povolená.|
 |/ zabalené|Určuje, zda zvláštní případy se používá pro literál dokumentu ve stylu dokumenty s zabalené parametry. Použití **/ zabalené** přepněte se [Service Model metadat Tool Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro určení normální velká a malá písmena.|
 
 > [!NOTE]

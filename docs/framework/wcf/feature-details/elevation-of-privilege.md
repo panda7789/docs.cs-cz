@@ -5,12 +5,12 @@ helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-ms.openlocfilehash: 1e42e2726b54464d479398c023c3e7caecf9b054
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df55b4fa107f3630cd259b755e0aaacdee4904ef
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753051"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960087"
 ---
 # <a name="elevation-of-privilege"></a>Zvýšení oprávnění
 *Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto zpočátku udělená oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvýší oprávnění set "pro čtení a zápisu."  
@@ -21,7 +21,7 @@ ms.locfileid: "64753051"
  <xref:System.IdentityModel.Tokens.SamlAssertion> Třídy ověří digitální podpis obsažených v tokenu SAML a ve výchozím nastavení <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> vyžaduje, aby byly podepsány tokeny SAML certifikátem X.509, který je platný, kdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy je nastavena na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>. `ChainTrust` režim pouze není dostatečná k určení, zda je důvěryhodného vystavitele tokenu SAML. Služby, které vyžadují podrobnější model důvěryhodnosti můžete buď používat ověřování a vynucování zásad pro kontrolu vystavitele deklarace identity sady produkované vystavený ověřovací token nebo použít nastavení pro ověření X.509 na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> omezit sadu povolené, podpisové certifikáty. Další informace najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md) a [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="switching-identity-without-a-security-context"></a>Přepnutí Identity bez kontextu zabezpečení  
- Platí jenom pro následující [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
+ Následující část se vztahuje pouze na WinFX.  
   
  Když se vytvoří připojení mezi klientem a serverem a identity klienta se nezmění, s výjimkou jednoho situaci: Po otevření klienta WCF, pokud jsou splněny všechny následující podmínky:  
   

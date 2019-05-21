@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1905a61a1843427563ffcbad43ea6b2a4c161828
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 014adfbf6f9afab0eaacd574cfb181c0eec07b5b
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654969"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960309"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Porozumění zrychlení v PLINQ
 Pro urychlení spuštění LINQ to Objects dotazů spuštěním dotazu delegáty paralelně na vícejádrových počítačích je primárním účelem PLINQ. PLINQ poskytuje nejlepší výkon při zpracování jednotlivých prvků ve zdrojové kolekci je nezávislé, bez sdíleného stavu zahrnutých mezi jednotlivé delegátů. Tyto operace jsou běžné v technologii LINQ to Objects a PLINQ a jsou často nazývány "*delightfully paralelní*" vzhledem k tomu, že je to možné snadno plánování z více vláken. Ale ne všechny dotazy sestávat jen z delightfully paralelních operací; ve většině případů se dotaz týká některé operátory, které buď nemůže být paralelizována nebo, který zpomalit paralelního provádění. A i s dotazy, které jsou zcela delightfully paralelní, musí i nadále oddílů zdroj dat a plánování práce na vlákna a obvykle sloučit výsledky po dokončení dotazu PLINQ. Všechny tyto operace přidání do výpočetní náklady paralelizace; Tyto náklady přidávání paralelizace se nazývají *režii*. Cílem je dosáhnout optimálního výkonu v dotazu PLINQ maximalizovat části, které jsou delightfully paralelní a části, které vyžadují režii minimalizovat. Tento článek obsahuje informace, které vám pomůže psát dotazy PLINQ, které jsou co nejúčinnější při pořád vracet správné výsledky.  
@@ -61,7 +61,7 @@ Pro urychlení spuštění LINQ to Objects dotazů spuštěním dotazu delegáty
   
 5. Typ možnosti sloučení.  
   
-     PLINQ můžete nakonfigurovat buď uložit svůj výstup do vyrovnávací paměti a vytvořený na základě jeho v blocích nebo celou najednou celou sadu výsledků je vytvořen, nebo do datového proudu jednotlivé výsledky protože se vytvářejí. Předchozí výsledek je snížit celkový čas spuštění a druhé výsledky v nižší latence mezi elementy poskytuje.  Zatímco možnosti sloučení nemají vždy významný vliv na celkový výkon dotazů, můžou mít vliv na dosahovaný výkon protože řídí dobu uživatele musíte počkat, chcete-li zobrazit výsledky. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
+     PLINQ můžete nakonfigurovat buď uložit svůj výstup do vyrovnávací paměti a vytvořený na základě jeho v blocích nebo celou najednou celou sadu výsledků je vytvořen, nebo do datového proudu jednotlivé výsledky protože se vytvářejí. Původní výsledky v snížit celkový čas spuštění a druhé výsledky v nižší latence mezi poskytuje prvky.  Zatímco možnosti sloučení nemají vždy významný vliv na celkový výkon dotazů, můžou mít vliv na dosahovaný výkon protože řídí dobu uživatele musíte počkat, chcete-li zobrazit výsledky. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
   
 6. Druh dělení.  
   

@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
-ms.openlocfilehash: 88c4982d45c1a3c450afe0c199a1f8a376348262
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eaf38bad246b1f02449c1a3b99c7fb844c09a4bd
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655659"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959713"
 ---
 # <a name="workflow-tracking-and-tracing"></a>Sledování a trasování pracovních postupů
 Sledování pracovního postupu Windows je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o provádění pracovního postupu. Poskytuje sledování infrastruktury pro sledování spuštění instance pracovního postupu. Sledování infrastruktury WF nástroje transparentně pracovního postupu pro vydávání záznamy, které odráží klíče události během provádění. Tato funkce je k dispozici ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Nejsou potřeba k tomu žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování na výskyt. Je jenom pár rozhodování o tom, kolik dat sledování chcete dostávat. Při spuštění instance pracovního postupu nebo dokončí zpracování sledování jsou emitovány záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například, pokud pracovní postup představuje pořadí zpracování systému, ID objednávky může být extrahována spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování zajišťuje diagnostiky nebo obchodní data analytics přistupovat z pracovního postupu provádění.  
   
- Tyto sledování součásti jsou ekvivalentní službě sledování v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)]. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], vylepšili jsme výkon a jednoduché programovací model pro funkci sledování WF. Modul runtime sledování instruments instance pracovního postupu ke generování událostí souvisejících s životním cyklem pracovního postupu, aktivity pracovního postupu a vlastní události.  
+ Tyto součásti sledování jsou ekvivalentní službě sledování v WinFX. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], vylepšili jsme výkon a jednoduché programovací model pro funkci sledování WF. Modul runtime sledování instruments instance pracovního postupu ke generování událostí souvisejících s životním cyklem pracovního postupu, aktivity pracovního postupu a vlastní události.  
   
  Windows Server App Fabric také umožňuje monitorovat spuštění služby WCF a pracovního postupu. Další informace najdete v tématu [systému Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273) a [monitorování aplikací pomocí služby Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=201287)  
   

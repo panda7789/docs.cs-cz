@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15f3aa8d2cd7c21fa2b77660cd668d211f8376a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d23a12ff92202ace69cb80ff59d6afcb5d8f8243
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672533"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960377"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 
@@ -32,7 +32,7 @@ Vytvořit nové vlákno tak, že vytvoříte novou instanci třídy <xref:System
 
 Chcete-li ukončit provádění vlákna, použijte <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metody. Tato metoda vyvolá <xref:System.Threading.ThreadAbortException> ve vlákně, na kterém je vyvolána. Další informace najdete v tématu [zničení vláken](destroying-threads.md).
 
-Od verze rozhraní .NET Framework 4, můžete použít <xref:System.Threading.CancellationToken?displayProperty=nameWithType> kooperativně zrušit vlákno. Další informace najdete v tématu [spolupráce při rušení vláken](canceling-threads-cooperatively.md).
+Od verze rozhraní .NET Framework 4, můžete použít <xref:System.Threading.CancellationToken?displayProperty=nameWithType> kooperativně zrušit vlákno. Další informace najdete v tématu [zrušení ve spravovaných vláknech](cancellation-in-managed-threads.md).
 
 Použití <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> metoda aby volající vlákno, počkejte ukončení vlákna, na kterém je metoda vyvolána.
 

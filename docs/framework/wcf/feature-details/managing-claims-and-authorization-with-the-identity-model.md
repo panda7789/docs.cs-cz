@@ -8,12 +8,12 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: 9341ff8bfb2aec4eb7274d444fca4497fa66f210
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 74cf55ba617eee193bcf1d2454f7e26ce0ba78cb
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875558"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960111"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
 Autorizace je proces určování entit, které mají oprávnění změnit, zobrazit nebo jinak přístupu k prostředkům počítače. Například ve firmě, pouze správci mohou bude moct získat přístup k souborům svým zaměstnancům. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus umožňuje řídit autorizaci s použitím existujícího běžné konstrukce jazyka runtime (CLR). Druhý je známý jako model založené na deklaracích *modelem Identity*. WCF používá Model identit k vytvoření deklarace identity z příchozí zprávy. Třídy modelu identity je možné rozšířit na podporu nových typů deklarací identity pro vlastní autorizace schémata. Toto téma obsahuje přehled hlavní koncepty programování funkce modelu identit, jakož i seznam vašich nejdůležitějších tříd, které používá funkci.  
@@ -93,7 +93,6 @@ Autorizace je proces určování entit, které mají oprávnění změnit, zobra
  ![Sadu deklarací identity v rámci hierarchie.](./media/managing-claims-and-authorization-with-the-identity-model/claims-sets-hierarchy.gif)  
   
  Několik sad deklarací, které mohou mít stejný vydávání deklarací identity sady, jak je znázorněno na následujícím obrázku:
- 
   
  ![Více sad deklarací identity s vydávající stejné množině deklarací identity.](./media/managing-claims-and-authorization-with-the-identity-model/multiple-claim-sets-same-issuing-claim-set.gif)  
   

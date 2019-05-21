@@ -3,12 +3,12 @@ title: Přehled sady SDK .NET core
 description: Přečtěte si o .NET Core SDK, což je sada knihoven a nástrojů pro vytváření projektů .NET Core.
 ms.date: 05/13/2019
 ms.technology: dotnet-cli
-ms.openlocfilehash: ed9d51b337af8edc251a4f3b02c31b72b76ba33d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: f56d7238eaaaa677db38430358ce94890632469e
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877978"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959227"
 ---
 # <a name="net-core-sdk-overview"></a>Přehled sady SDK .NET core
 

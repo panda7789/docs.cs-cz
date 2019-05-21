@@ -13,93 +13,96 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer style interface
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
-ms.openlocfilehash: 6484e6bfce885c28b943ad9844bfa6fc17889c2b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 22c1e51e546891edefd359bcc7f65c7d8f531f65
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882240"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959461"
 ---
 # <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Návod: Vytváření rozhraní ve stylu Průzkumníka s ovládacími prvky ListView a TreeView pomocí Návrháře
-Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypadajících aplikací Windows Forms v krátké množství času. Běžný scénář, kdy je vytváření uživatelského rozhraní (UI) s <xref:System.Windows.Forms.ListView> a <xref:System.Windows.Forms.TreeView> ovládací prvky, které se podobá funkci Windows Explorer operačních systémů Windows. Průzkumník Windows zobrazí hierarchickou strukturu souborů a složek v počítači uživatele.  
-  
+
+Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypadajících aplikací Windows Forms v krátké množství času. Běžný scénář, kdy je vytváření uživatelského rozhraní (UI) s <xref:System.Windows.Forms.ListView> a <xref:System.Windows.Forms.TreeView> ovládací prvky, které se podobá funkci Windows Explorer operačních systémů Windows. Průzkumník Windows zobrazí hierarchickou strukturu souborů a složek v počítači uživatele.
+
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-create-the-form-containing-a-listview-and-treeview-control"></a>Chcete-li vytvořit formulář obsahující ovládací prvek ListView a TreeView  
-  
-1. Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
-  
-2. V **nový projekt** dialogové okno pole, postupujte takto:  
-  
-    1. V kategoriích, zvolte buď **jazyka Visual Basic** nebo **Visual C#**.  
-  
-    2. V seznamu šablon vyberte **formulářová aplikace Windows**.  
-  
-3. Klikněte na **OK**. Vytvoření nového projektu Windows Forms.  
-  
-4. Přidat <xref:System.Windows.Forms.SplitContainer> ovládací prvek do formuláře a nastavte jeho <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-5. Přidat <xref:System.Windows.Forms.ImageList> s názvem `imageList1` chcete formulář opravdu zavřít a použít přidejte dvě bitové kopie v okně Vlastnosti: obrázek složky a bitovou kopii dokumentu, v uvedeném pořadí.  
-  
-6. Přidat <xref:System.Windows.Forms.TreeView> ovládací prvek s názvem `treeview1` do formuláře a umístěte ho na levé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `treeView1` postupujte takto:  
-  
-    1. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-    2. Nastavte <xref:System.Windows.Forms.TreeView.ImageList%2A> vlastnost `imagelist1.`  
-  
-7. Přidat <xref:System.Windows.Forms.ListView> ovládací prvek s názvem `listView1` do formuláře a umístěte ho na pravé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `listview1` postupujte takto:  
-  
-    1. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-    2. Nastavte <xref:System.Windows.Forms.ListView.View%2A> vlastnost <xref:System.Windows.Forms.View.Details>.  
-  
-    3.  Otevřete Editor kolekce ColumnHeader kliknutím na symbol tří teček (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) v <xref:System.Windows.Forms.ListView.Columns%2A> vlastnost **.** Přidejte tři sloupce a nastavte jejich <xref:System.Windows.Forms.ColumnHeader.Text%2A> vlastnost `Name`, `Type`, a `Last Modified`v uvedeném pořadí. Kliknutím na **OK** zavřete dialogové okno.  
-  
-    4. Nastavte <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnost `imageList1.`  
-  
-8. Implementujte kód pro naplnění <xref:System.Windows.Forms.TreeView> s uzly a podřízených uzlů. Přidejte tento kód `Form1` třídy.  
-  
+> Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).
+
+### <a name="to-create-the-form-containing-a-listview-and-treeview-control"></a>Chcete-li vytvořit formulář obsahující ovládací prvek ListView a TreeView
+
+1. Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.
+
+2. V **nový projekt** dialogové okno pole, postupujte takto:
+
+    1. V kategoriích, zvolte buď **jazyka Visual Basic** nebo **Visual C#**.
+
+    2. V seznamu šablon vyberte **formulářová aplikace Windows**.
+
+3. Klikněte na **OK**. Vytvoření nového projektu Windows Forms.
+
+4. Přidat <xref:System.Windows.Forms.SplitContainer> ovládací prvek do formuláře a nastavte jeho <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.
+
+5. Přidat <xref:System.Windows.Forms.ImageList> s názvem `imageList1` chcete formulář opravdu zavřít a použít přidejte dvě bitové kopie v okně Vlastnosti: obrázek složky a bitovou kopii dokumentu, v uvedeném pořadí.
+
+6. Přidat <xref:System.Windows.Forms.TreeView> ovládací prvek s názvem `treeview1` do formuláře a umístěte ho na levé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `treeView1` postupujte takto:
+
+    1. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.
+
+    2. Nastavte <xref:System.Windows.Forms.TreeView.ImageList%2A> vlastnost `imagelist1.`
+
+7. Přidat <xref:System.Windows.Forms.ListView> ovládací prvek s názvem `listView1` do formuláře a umístěte ho na pravé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `listview1` postupujte takto:
+
+    1. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.
+
+    2. Nastavte <xref:System.Windows.Forms.ListView.View%2A> vlastnost <xref:System.Windows.Forms.View.Details>.
+
+    3. Otevřete Editor kolekce ColumnHeader kliknutím na symbol tří teček (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) v <xref:System.Windows.Forms.ListView.Columns%2A> vlastnost **.** Přidejte tři sloupce a nastavte jejich <xref:System.Windows.Forms.ColumnHeader.Text%2A> vlastnost `Name`, `Type`, a `Last Modified`v uvedeném pořadí. Kliknutím na **OK** zavřete dialogové okno.
+
+    4. Nastavte <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnost `imageList1.`
+
+8. Implementujte kód pro naplnění <xref:System.Windows.Forms.TreeView> s uzly a podřízených uzlů. Přidejte tento kód `Form1` třídy.
+
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#1)]
-     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#1)]  
-  
-9. Protože předchozí kód používá System.IO – obor názvů, přidejte odpovídající použití nebo importovat výraz v horní části formuláře.  
-  
+     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#1)]
+
+9. Protože předchozí kód používá System.IO – obor názvů, přidejte odpovídající použití nebo importovat výraz v horní části formuláře.
+
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#4)]
-     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#4)]  
-  
-10. Volat metodu nastavení z předchozího kroku v konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí. Tento kód vložte do konstruktoru formuláře.  
-  
+     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#4)]
+
+10. Volat metodu nastavení z předchozího kroku v konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí. Tento kód vložte do konstruktoru formuláře.
+
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#2)]
-     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#2)]  
-  
-11. Zpracování <xref:System.Windows.Forms.TreeView.NodeMouseClick> událost pro `treeview1` **,** a implementujte kód pro naplnění `listview1` s obsahem uzlu při kliknutí na uzel. Přidejte tento kód `Form1` třídy.  
-  
+     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#2)]
+
+11. Zpracování <xref:System.Windows.Forms.TreeView.NodeMouseClick> událost pro `treeview1` **,** a implementujte kód pro naplnění `listview1` s obsahem uzlu při kliknutí na uzel. Přidejte tento kód `Form1` třídy.
+
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#3)]
-     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#3)]  
-  
-     Pokud používáte C#, ujistěte se, že máte <xref:System.Windows.Forms.TreeView.NodeMouseClick> událost spojenou s jeho metody zpracování událostí. Tento kód vložte do konstruktoru formuláře.  
-  
-     [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#5)]  
-  
-## <a name="testing-the-application"></a>Testování aplikace  
- Teď můžete otestovat formulář, abyste měli jistotu, že se chová podle očekávání.  
-  
-#### <a name="to-test-the-form"></a>K otestování formuláře  
-  
-- Stisknutím klávesy F5 spusťte aplikaci.  
-  
-     Uvidíte obsahující formulář rozdělení <xref:System.Windows.Forms.TreeView> ovládací prvek, který se zobrazí na levé straně adresáře vašeho projektu a <xref:System.Windows.Forms.ListView> ovládacího prvku na pravé straně se třemi sloupci. Můžete procházet <xref:System.Windows.Forms.TreeView> tak, že vyberete uzly adresáře a <xref:System.Windows.Forms.ListView> se vyplní obsah vybrané adresáře.  
-  
-## <a name="next-steps"></a>Další kroky  
- Tato aplikace poskytuje příklad ukazuje, jak můžete použít <xref:System.Windows.Forms.TreeView> a <xref:System.Windows.Forms.ListView> řídí společně. Další informace o těchto ovládacích prvků naleznete v následujících tématech:  
-  
-- [Postupy: Přidání vlastních informací do prvku TreeView nebo ListView – ovládací prvek (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)  
-  
-- [Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView](how-to-add-search-capabilities-to-a-listview-control.md)  
-  
-- [Postupy: Připojení místní nabídky k uzlu TreeView](how-to-attach-a-shortcut-menu-to-a-treeview-node.md)  
-  
+     [!code-vb[System.Windows.Forms.ExplorerStyleInterface#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#3)]
+
+     Pokud používáte C#, ujistěte se, že máte <xref:System.Windows.Forms.TreeView.NodeMouseClick> událost spojenou s jeho metody zpracování událostí. Tento kód vložte do konstruktoru formuláře.
+
+     [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#5)]
+
+## <a name="testing-the-application"></a>Testování aplikace
+
+Teď můžete otestovat formulář, abyste měli jistotu, že se chová podle očekávání.
+
+#### <a name="to-test-the-form"></a>K otestování formuláře
+
+- Stisknutím klávesy F5 spusťte aplikaci.
+
+     Uvidíte obsahující formulář rozdělení <xref:System.Windows.Forms.TreeView> ovládací prvek, který se zobrazí na levé straně adresáře vašeho projektu a <xref:System.Windows.Forms.ListView> ovládacího prvku na pravé straně se třemi sloupci. Můžete procházet <xref:System.Windows.Forms.TreeView> tak, že vyberete uzly adresáře a <xref:System.Windows.Forms.ListView> se vyplní obsah vybrané adresáře.
+
+## <a name="next-steps"></a>Další kroky
+
+Tato aplikace poskytuje příklad ukazuje, jak můžete použít <xref:System.Windows.Forms.TreeView> a <xref:System.Windows.Forms.ListView> řídí společně. Další informace o těchto ovládacích prvků naleznete v následujících tématech:
+
+- [Postupy: Přidání vlastních informací do prvku TreeView nebo ListView – ovládací prvek (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)
+
+- [Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView](how-to-add-search-capabilities-to-a-listview-control.md)
+
+- [Postupy: Připojení místní nabídky k uzlu TreeView](how-to-attach-a-shortcut-menu-to-a-treeview-node.md)
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ListView>

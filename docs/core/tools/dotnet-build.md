@@ -2,14 +2,14 @@
 title: příkaz DotNet sestavení
 description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislosti.
 ms.date: 04/24/2019
-ms.openlocfilehash: 6564aacbe520797b47095929cfe72c6b180b99a7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: df264fe830259832e5c75db9fd71230ba70a9f18
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632138"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959190"
 ---
-# <a name="dotnet-build"></a>DotNet sestavení
+# <a name="dotnet-build"></a>dotnet build
 
 **Tento článek se týká: ✓** .NET Core 1.x sady SDK a novějších verzích
 
@@ -144,7 +144,7 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
   dotnet build --source c:\packages\mypackages
   ```
 
-* Sestavte projekt a nastavte 1.2.3.4 verzi jako parametr sestavení:
+* Sestavení projektu a verzi 1.2.3.4 nastavit jako parametr sestavení pomocí `-p` [– možnost nástroje MSBuild](#msbuild):
 
   ```console
   dotnet build -p:Version=1.2.3.4

@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: feddafdd6becd676f4d18aa94bdfae50f02abc6e
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 2679df0317fede9fa5f3885831c65bd87a14981a
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557948"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960390"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Automaticky generovat binární klasifikátor pomocí rozhraní příkazového řádku
 
@@ -142,12 +142,12 @@ Tyto prostředky výčtu jsou vysvětlené v následujících krocích tohoto ku
 
     ![Řešení VS, které jsou generovány pomocí rozhraní příkazového řádku](./media/mlnet-cli/generated-csharp-solution-detailed.png)
 
-    - Vygenerovaný **knihovny tříd** obsahující serializovaná modelu ML a datových tříd je něco, co chcete využít přímo ve vaší aplikaci koncových uživatelů i můžete přímo odkazující na tuto knihovnu tříd (nebo přesunutí kódu, jak chcete).
+    - Vygenerovaný **knihovny tříd** obsahující serializovaná modelu ML (soubor .zip) a datových tříd (datové modely) je něco, co chcete využít přímo ve vaší aplikaci koncový uživatel ještě můžete přímo odkazuje na knihovny tříd (nebo při přenosech kód, jako je dáváte přednost).
     - Vygenerovaný **konzolovou aplikaci** obsahuje provádění kód, který musíte zkontrolovat, a potom obvykle budou bodování kód (kód, který spouští modelu ML k následné predikci) tohoto jednoduchého kódu (jenom pár řádků) se přesunete na vaše koncové uživatele aplikace, ve které chcete predikci. 
 
-1. Otevřít **Observation.cs** a **Prediction.cs** třídy souborů v projektu knihovny tříd. Uvidíte, že tyto třídy jsou 'datové třídy' nebo POCO třídy sloužící k uchování dat. Je "často používaný kód", ale užitečné mít je generována, pokud vaše datová sada obsahuje desítky nebo stovky sloupce. 
-    - `SampleObservation` Třída se používá při čtení dat z datové sady. 
-    - `SamplePrediction` Třídy a kdy
+1. Otevřít **ModelInput.cs** a **ModelOutput.cs** třídy souborů v projektu knihovny tříd. Uvidíte, že tyto třídy jsou 'datové třídy' nebo POCO třídy sloužící k uchování dat. Je "často používaný kód", ale užitečné mít je generována, pokud vaše datová sada obsahuje desítky nebo stovky sloupce. 
+    - `ModelInput` Třída se používá při čtení dat z datové sady. 
+    - `ModelOutput` Třída se používá k získání výsledku predikcí (předpověď data).
 
 1. Otevřete soubor Program.cs a prozkoumejte kód. V několika málo řádků budete moct spustit model a předpověď vzorku.
 
@@ -160,13 +160,13 @@ Tyto prostředky výčtu jsou vysvětlené v následujících krocích tohoto ku
         //ModelBuilder.CreateModel();
 
         ITransformer mlModel = mlContext.Model.Load(MODEL_FILEPATH, out DataViewSchema inputSchema);
-        var predEngine = mlContext.Model.CreatePredictionEngine<SampleObservation, SamplePrediction>(mlModel);
+        var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
         // Create sample data to do a single prediction with it 
-        SampleObservation sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
+        ModelInput sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
 
         // Try a single prediction
-        SamplePrediction predictionResult = predEngine.Predict(sampleData);
+        ModelOutput predictionResult = predEngine.Predict(sampleData);
 
         Console.WriteLine($"Single Prediction --> Actual value: {sampleData.Label} | Predicted value: {predictionResult.Prediction}");
     }
@@ -178,14 +178,14 @@ Tyto prostředky výčtu jsou vysvětlené v následujících krocích tohoto ku
 
 - Na třetím řádku kódu načíst model z serializovaný model. Soubor ZIP s `mlContext.Model.Load()` API tím, že poskytuje cestu k tomuto modelu. Soubor ZIP.
 
-- Na čtvrtém řádku kódu můžete načíst vytvořit `PredictionEngine` objektu `mlContext.Model.CreatePredictionEngine<TObservation, TPrediction>()` rozhraní API. Je nutné `PredictionEngine` objekt vždy, když chcete při předpovědích cílí na jeden vzorek dat (v tomto případě jediný textu k předpovědi jeho mínění).
+- Na čtvrtém řádku kódu můžete načíst vytvořit `PredictionEngine` objektu `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)` rozhraní API. Je nutné `PredictionEngine` objekt vždy, když chcete při předpovědích cílí na jeden vzorek dat (v tomto případě jediný textu k předpovědi jeho mínění).
 
 - Pátý řádek kódu je, kde můžete vytvářet, který *jedna ukázková data* použitého pro předpověď voláním funkce `CreateSingleDataSample()`. Protože nástroj rozhraní příkazového řádku nebude vědět, jaký druh ukázková data se mají použít, v rámci této funkce nahrávání první řádek datové sady. Ale pro tento případ můžete také vytvořit můžete vlastní data "pevně" namísto aktuální implementace `CreateSingleDataSample()` funkce aktualizací takto jednodušší implementaci této funkce:
 
     ```csharp
-    private static SampleObservation CreateSingleDataSample()
+    private static ModelInput CreateSingleDataSample()
     {
-        SampleObservation sampleForPrediction = new SampleObservation() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
+        ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
         return sampleForPrediction;
     }
     ```
@@ -219,7 +219,7 @@ Tyto prostředky výčtu jsou vysvětlené v následujících krocích tohoto ku
 
 Můžete použít, podobně jako "ML model bodování kódu" spustit model ve vašich koncových uživatelů aplikace a zkontrolujte předpovědi. 
 
-Například může přímo přesunete tento kód do jakékoli aplikace klasické pracovní plochy Windows, jako **WPP** a **WinForms** a spustit model stejným způsobem, než jste to udělali v aplikaci konzoly.
+Například může přímo přesunete tento kód do jakékoli aplikace klasické pracovní plochy Windows, jako **WPF** a **WinForms** a spustit model stejným způsobem, než jste to udělali v aplikaci konzoly.
 
 Ale způsob, jak implementovat tyto řádky kódu ke spuštění modelu ML by mělo být optimalizované (která je mezipaměť souboru .zip modelu a načtěte ho jednou) a máte objektů typu singleton místo vytvoření u každého požadavku, zejména v případě, že vaše aplikace musí být škálovatelné, jako webové aplikace nebo distribuované služby, jak je vysvětleno v následující části.
 

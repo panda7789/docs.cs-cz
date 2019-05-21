@@ -14,12 +14,12 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 735fedc5869ab82d49ef4d9068c67302bf825e2e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ac4de843b3a134b840fc37e3c1d8327fe0010d79
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634682"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960331"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 Znaky jsou abstraktní entity, které může být reprezentována mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v podporované znakové sady s některá z hodnot, který představuje daný znak. Například morseovkou je znak kódování této páry každý znak v latinku pomocí vzoru tečky a spojovníky, které jsou vhodné pro přenos přes telegrafní řádky. Znak kódování dvojice počítačů pro každý znak v podporované znakové sady s číselnou hodnotu, která představuje tento znak. Kódování znaků má dvě různé součásti:  
@@ -78,8 +78,8 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
  Těchto kódováních umožňují pracovat se znaky Unicode, a také s kódování, které se běžně používají starší verzi aplikace. Kromě toho můžete vytvořit vlastního kódování tak, že definujete třídu, která je odvozena z <xref:System.Text.Encoding> a přepsáním jejích členů.  
   
-### <a name="platform-notes-includenetcoreincludesnet-core-mdmd"></a>Poznámky k platformě: [!INCLUDE[net_core](../../../includes/net-core-md.md)]  
- Ve výchozím nastavení [!INCLUDE[net_core](../../../includes/net-core-md.md)] Nedovolte, aby byly k dispozici žádné kódování znakových stránek než znaková stránka 28591 a kódování Unicode, jako je například UTF-8 a UTF-16. Můžete však přidat kódování znakových stránek, které jsou součástí standardní aplikace Windows, které se zaměřují .NET do vaší aplikace. Podrobnější informace najdete v článku <xref:System.Text.CodePagesEncodingProvider> tématu.  
+### <a name="platform-notes-net-core"></a>Poznámky k platformě: .NET Core  
+ Ve výchozím nastavení .NET Core Nedovolte, aby byly k dispozici žádné kódování znakových stránek než znaková stránka 28591 a kódování Unicode, jako je například UTF-8 a UTF-16. Můžete však přidat kódování znakových stránek, které jsou součástí standardní aplikace Windows, které se zaměřují .NET do vaší aplikace. Podrobnější informace najdete v článku <xref:System.Text.CodePagesEncodingProvider> tématu.  
   
 <a name="Selecting"></a>   
 ## <a name="selecting-an-encoding-class"></a>Výběr kódování třídy  

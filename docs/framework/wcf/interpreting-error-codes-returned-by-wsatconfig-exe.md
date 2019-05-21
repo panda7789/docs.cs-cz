@@ -2,12 +2,12 @@
 title: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 ms.date: 03/30/2017
 ms.assetid: ab65f22b-0d69-4c21-9aaf-74acef0ca102
-ms.openlocfilehash: 47db39f2b350c2fa8c655a041ec0239e5d297644
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26e7c40cb105ad10dac3b13b73cb33bc4fa57d69
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928814"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959858"
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction Configuration Utility (wsatConfig.exe) a doporučené akce, jež mají být provedeny.  
@@ -16,7 +16,7 @@ Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction
   
 |Kód chyby|Popis|Provést doporučenou akci|  
 |----------------|-----------------|------------------------------------|  
-|0|Operace byla úspěšná|Žádný|  
+|0|Operace byla úspěšná|Žádné|  
 |1|Došlo k neočekávané chybě|Kontaktujte Microsoft|  
 |2|Při pokusu o kontaktování služby MSDTC k načtení nastavení zabezpečení došlo k neočekávané chybě.|Ujistěte se, že není zakázaná služba MSDTC a vyřešit všechny problémy uvedené ve vrácené výjimce.|  
 |3|Účet, pod kterým byl spuštěn WsatConfig.exe nemá dostatečná oprávnění ke čtení nastavení zabezpečení sítě.|Spusťte WsatConfig.exe uživatelského účtu správce.|  
@@ -35,9 +35,9 @@ Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction
 |17|Nepovedlo se nakonfigurovat ovladač http.sys. Nelze zrušit vazbu certifikátu SSL z předchozí portu.|Použijte kód chyby vrácený v chybové zprávě k mapování na příslušné systémové chybě. V případě potřeby použijte k odebrání rezervace chybné port httpcfg.exe nebo netsh.exe.|  
 |18|Nepovedlo se nakonfigurovat ovladač http.sys. Nelze vytvořit vazbu zadaný certifikát na port, protože předchozí SSL vazby již existuje.|Jiná aplikace je již zabraný vlastnictví specifického portu. Změnit na jiný port nebo odinstalovat nebo změnit konfiguraci aktuální aplikace.|  
 |19|Restartování služby MSDTC se nezdařilo|Manuálně restartujte služby MSDTC v případě potřeby. Pokud se problém nevyřeší, obraťte se na Microsoft.|  
-|20|[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] není nainstalována na vzdáleném počítači, nebo není správně nainstalován.|Nainstalujte [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] na počítači.|  
+|20|WinFX není nainstalována na vzdáleném počítači, nebo není správně nainstalován.|Na počítači nainstalujte WinFX.|  
 |21|Vzdálená konfigurace se nezdařila z důvodu operace vypršení časového limitu.|Volání konfigurace WS-AT ve vzdáleném počítači, by měla trvat déle než 90 sekund.|  
-|22|[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] není nainstalována na vzdáleném počítači, nebo není správně nainstalován.|Nainstalujte [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] na počítači.|  
+|22|WinFX není nainstalována na vzdáleném počítači, nebo není správně nainstalován.|Na počítači nainstalujte WinFX.|  
 |23|Vzdálená konfigurace se nezdařila z důvodu výjimky na vzdáleném počítači.|Najdete v chybové zprávě užitečných položek|  
 |26|WsatConfig.exe byl předán neplatný argument.|Zkontrolujte příkazový řádek pro chyby.|  
 |27|`-accounts` Možnost příkazového řádku byl neplatný.|Opravte-`accounts` možnost příkazového řádku správně zadaný uživatelský účet.|  
@@ -52,10 +52,10 @@ Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction
 |38|Proces nebo uživatel nemá dostatečná oprávnění ke změně konfigurace brány firewall.|Spusťte WsatConfig.exe uživatelského účtu správce.|  
 |39|WsatConfig.exe došlo k chybě při aktualizaci konfigurace brány firewall.|Najdete v chybové zprávě užitečných položek.|  
 |40|WsatConfig.exe není schopen poskytnout oprávnění ke čtení služby MSDTC k souboru privátního klíče certifikátu|Spusťte WsatConfig.exe uživatelského účtu správce.|  
-|41|Buď žádné instalace [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] nenašlo nebo nalezená verze neodpovídá, co nástroj je schopen konfigurace.|Zajištění [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] je správně nainstalován a pouze použití nástrojem WsatConfig.exe dodané s touto verzí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] WS-AT konfigurace.|  
+|41|Buď nebyla nalezena žádná instalace WinFX nebo neodpovídá, co nástroj je schopen konfigurace se nenašla verze.|Ujistěte se, že je správně nainstalovaný WinFX a pouze pomocí nástroje WsatConfig.exe dodané s touto verzí WinFX WS-AT konfigurace.|  
 |42|Argument byl zadán více než jednou v příkazovém řádku.|Pouze jednou Zadejte každý argument při provádění WsatConfig.exe.|  
 |43|WsatConfig.exe nelze aktualizovat nastavení WS-AT, pokud WS-AT není povolené.|Zadejte `-network:enable` jako argument další příkazového řádku.|  
-|44|Chybí požadovaná oprava hotfix a nedá se konfigurovat WS-AT, dokud nebude nainstalována oprava hotfix.|Zobrazit [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] poznámky k verzi pro pokyny k instalaci požadované opravy hotfix.|  
+|44|Chybí požadovaná oprava hotfix a nedá se konfigurovat WS-AT, dokud nebude nainstalována oprava hotfix.|Zobrazit WinFX poznámky k verzi pro pokyny k instalaci požadované opravy hotfix.|  
 |45|`-virtualServer` Možnost příkazového řádku byl neplatný.|Opravte `-virtualServer` možnost příkazového řádku tak, že zadáte název sítě prostředku clusteru, ve kterém chcete konfigurovat.|  
 |46|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Použijte kód chyby vrácený pro mapování na příslušné systémové chybě.|  
 |47|Proces nebo uživatel nemá dostatečná oprávnění k povolení relaci sledování ETW.|Spusťte WsatConfig.exe uživatelského účtu správce.|  

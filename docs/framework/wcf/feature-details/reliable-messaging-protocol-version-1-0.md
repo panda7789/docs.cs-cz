@@ -2,15 +2,15 @@
 title: Protokol spolehlivého zasílání zpráv verze 1.0
 ms.date: 03/30/2017
 ms.assetid: a5509a5c-de24-4bc2-9a48-19138055dcce
-ms.openlocfilehash: 857bbbf9ffa1311c38cfc007e0cdc6bde06d6284
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: db4761efb34e7436ae54819b8e5056c732bd2fab
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617567"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959944"
 ---
 # <a name="reliable-messaging-protocol-version-10"></a>Protokol spolehlivého zasílání zpráv verze 1.0
-Toto téma obsahuje podrobné informace o nasazení Windows Communication Foundation (WCF) pro posílání WS-Reliable February 2005 (verze 1.0) protokolu, které jsou nezbytné pro spolupráci pomocí přenos pomocí protokolu HTTP. WCF dodržuje specifikaci WS-Reliable zasílání zpráv s omezením a vyjasnění je vysvětleno v tomto tématu. Všimněte si, že protokol WS-ReliableMessaging verze 1.0 se implementuje počínaje [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
+Toto téma obsahuje podrobné informace o nasazení Windows Communication Foundation (WCF) pro posílání WS-Reliable February 2005 (verze 1.0) protokolu, které jsou nezbytné pro spolupráci pomocí přenos pomocí protokolu HTTP. WCF dodržuje specifikaci WS-Reliable zasílání zpráv s omezením a vyjasnění je vysvětleno v tomto tématu. Všimněte si, že protokol WS-ReliableMessaging verze 1.0 se implementuje začínající WinFX.  
   
  WS-Reliable zasílání zpráv February 2005 protokol je implementován ve službě WCF pomocí <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>.  
   
@@ -30,7 +30,7 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 |wsa|http://schemas.xmlsoap.org/ws/2005/08/addressing|  
 |wsse|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wssecurity-secext-1.0.xsd|  
   
-## <a name="messaging"></a>Zasílání zpráv  
+## <a name="messaging"></a>Messaging  
   
 ### <a name="sequence-establishment-messages"></a>Pořadí zpráv zařízení  
  Implementuje WCF `CreateSequence` a `CreateSequenceResponse` zprávy k navázání spolehlivé zprávy sekvence. Platí následující omezení:  
@@ -130,7 +130,7 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 </s:Envelope>  
 ```  
   
-### <a name="sequence"></a>Pořadí  
+### <a name="sequence"></a>Sequence  
  Následuje seznam omezení, které se vztahují na pořadí:  
   
 - Generuje B1201:WCF a přístupy pořadí čísel vyšší než `xs:long`na maximální hodnotu (včetně), 9223372036854775807.  

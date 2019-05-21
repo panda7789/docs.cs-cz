@@ -13,64 +13,65 @@ helpviewer_keywords:
 - NotifyIcon component
 - taskbar [Windows Forms], adding icons
 ms.assetid: d28c0fe6-aaf2-4df7-ad74-928d861a8510
-ms.openlocfilehash: 2d7fb1dfbdfb7cf9be33fc8c9711b4fbdc3efc2d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 05b6f300afea4671c1a847b116b378514ecb8b56
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880553"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959500"
 ---
 # <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon
-Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazuje jednu ikonu v oznamovací oblasti na hlavním panelu Stav. Chcete-li zobrazit více ikony ve stavové oblasti, musí mít více <xref:System.Windows.Forms.NotifyIcon> komponenty na formuláři. Pokud chcete nastavit ikony zobrazené pro ovládací prvek, použijte <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Můžete také napsat kód <xref:System.Windows.Forms.NotifyIcon.DoubleClick> obslužná rutina události tak, že něco se stane, když uživatel dvakrát klikne na ikonu. Například může vytvořit dialogové okno se zobrazí uživateli konfigurovat proces na pozadí, který je reprezentován ikonou.  
-  
+
+Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazuje jednu ikonu v oznamovací oblasti na hlavním panelu Stav. Chcete-li zobrazit více ikony ve stavové oblasti, musí mít více <xref:System.Windows.Forms.NotifyIcon> komponenty na formuláři. Pokud chcete nastavit ikony zobrazené pro ovládací prvek, použijte <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Můžete také napsat kód <xref:System.Windows.Forms.NotifyIcon.DoubleClick> obslužná rutina události tak, že něco se stane, když uživatel dvakrát klikne na ikonu. Například může vytvořit dialogové okno se zobrazí uživateli konfigurovat proces na pozadí, který je reprezentován ikonou.
+
 > [!NOTE]
->  <xref:System.Windows.Forms.NotifyIcon> Komponenty se používá oznámení pouze pro účely, které uživatele upozorní, akce nebo událostí došlo k chybě nebo došlo ke změně stavu nějaké. Abyste používali nabídky, panely nástrojů a další prvky uživatelského rozhraní pro standardní interakce s aplikacemi.  
-  
-### <a name="to-set-the-icon"></a>Chcete-li nastavit ikonu  
-  
-1.  Přiřaďte hodnotu <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Hodnota musí být typu `System.Drawing.Icon` a ze souboru .ico, který lze načíst. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost **vlastnosti** okno a následným výběrem souboru **otevřít** dialogové okno, které se zobrazí.  
-  
-2. Nastavte <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnost `true`.  
-  
-3. Nastavte <xref:System.Windows.Forms.NotifyIcon.Text%2A> vlastnosti k odpovídající řetězec popisku.  
-  
-     V následujícím příkladu kódu nastavena cesta pro umístění ikony **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění taky umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. V následujícím příkladu vyžaduje formulář s <xref:System.Windows.Forms.NotifyIcon> ovládací prvek již přidán. Také budete potřebovat soubor ikony s názvem `Icon.ico`.  
-  
-    ```vb  
-    ' You should replace the bold icon in the sample below  
-    ' with an icon of your own choosing.  
-    NotifyIcon1.Icon = New _   
-       System.Drawing.Icon(System.Environment.GetFolderPath _  
-       (System.Environment.SpecialFolder.Personal) _  
-       & "\Icon.ico")  
-    NotifyIcon1.Visible = True  
-    NotifyIcon1.Text = "Antivirus program"  
-    ```  
-  
-    ```csharp  
-    // You should replace the bold icon in the sample below  
-    // with an icon of your own choosing.  
-    // Note the escape character used (@) when specifying the path.  
-    notifyIcon1.Icon =   
-       new System.Drawing.Icon (System.Environment.GetFolderPath  
-       (System.Environment.SpecialFolder.Personal)  
-       + @"\Icon.ico");  
-    notifyIcon1.Visible = true;  
-    notifyIcon1.Text = "Antivirus program";  
-    ```  
-  
-    ```cpp  
-    // You should replace the bold icon in the sample below  
-    // with an icon of your own choosing.  
-    notifyIcon1->Icon = gcnew   
-       System::Drawing::Icon(String::Concat  
-       (System::Environment::GetFolderPath  
-       (System::Environment::SpecialFolder::Personal),  
-       "\\Icon.ico"));  
-    notifyIcon1->Visible = true;  
-    notifyIcon1->Text = "Antivirus program";  
-    ```  
-  
+> <xref:System.Windows.Forms.NotifyIcon> Komponenty se používá oznámení pouze pro účely, které uživatele upozorní, akce nebo událostí došlo k chybě nebo došlo ke změně stavu nějaké. Abyste používali nabídky, panely nástrojů a další prvky uživatelského rozhraní pro standardní interakce s aplikacemi.
+
+### <a name="to-set-the-icon"></a>Chcete-li nastavit ikonu
+
+1. Přiřaďte hodnotu <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Hodnota musí být typu `System.Drawing.Icon` a ze souboru .ico, který lze načíst. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle položky <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost **vlastnosti** okno a následným výběrem souboru **otevřít** dialogové okno, které se zobrazí.
+
+2. Nastavte <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnost `true`.
+
+3. Nastavte <xref:System.Windows.Forms.NotifyIcon.Text%2A> vlastnosti k odpovídající řetězec popisku.
+
+     V následujícím příkladu kódu nastavena cesta pro umístění ikony **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění taky umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. V následujícím příkladu vyžaduje formulář s <xref:System.Windows.Forms.NotifyIcon> ovládací prvek již přidán. Také budete potřebovat soubor ikony s názvem `Icon.ico`.
+
+    ```vb
+    ' You should replace the bold icon in the sample below
+    ' with an icon of your own choosing.
+    NotifyIcon1.Icon = New _
+       System.Drawing.Icon(System.Environment.GetFolderPath _
+       (System.Environment.SpecialFolder.Personal) _
+       & "\Icon.ico")
+    NotifyIcon1.Visible = True
+    NotifyIcon1.Text = "Antivirus program"
+    ```
+
+    ```csharp
+    // You should replace the bold icon in the sample below
+    // with an icon of your own choosing.
+    // Note the escape character used (@) when specifying the path.
+    notifyIcon1.Icon =
+       new System.Drawing.Icon (System.Environment.GetFolderPath
+       (System.Environment.SpecialFolder.Personal)
+       + @"\Icon.ico");
+    notifyIcon1.Visible = true;
+    notifyIcon1.Text = "Antivirus program";
+    ```
+
+    ```cpp
+    // You should replace the bold icon in the sample below
+    // with an icon of your own choosing.
+    notifyIcon1->Icon = gcnew
+       System::Drawing::Icon(String::Concat
+       (System::Environment::GetFolderPath
+       (System::Environment::SpecialFolder::Personal),
+       "\\Icon.ico"));
+    notifyIcon1->Visible = true;
+    notifyIcon1->Text = "Antivirus program";
+    ```
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.NotifyIcon>

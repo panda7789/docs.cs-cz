@@ -8,16 +8,16 @@ helpviewer_keywords:
 - HelpProvider component [Windows Forms]
 - forms [Windows Forms], providing Help
 ms.assetid: 7c4e5cec-2bd2-4f0b-8d75-c2b88929bd61
-ms.openlocfilehash: 19bf6a8de3f9ddd5babd149747df87c54b456aeb
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 2f9c0a9791db28cebd055ca446fdff16b9e276a4
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211369"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959606"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
 
-Lze použít <xref:System.Windows.Forms.HelpProvider> součásti pro připojení témata nápovědy v souboru nápovědy k určité ovládací prvky v modelu Windows Forms. Soubor nápovědy může být ve formátu HTML nebo HTMLHelp 1.x nebo větší formátu.
+Můžete provést pomocí nástroje <xref:System.Windows.Forms.HelpProvider> součásti pro připojení témata nápovědy v souboru nápovědy k určité ovládací prvky v modelu Windows Forms. Soubor nápovědy může být ve formátu HTML nebo HTMLHelp 1.x nebo větší formátu.
 
 ## <a name="provide-help"></a>Poskytnutí nápovědy
 

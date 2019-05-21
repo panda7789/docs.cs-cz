@@ -8,15 +8,15 @@ helpviewer_keywords:
 - unexposed members
 - managed HTML DOM [Windows Forms], accessing unexposed members
 ms.assetid: 762295bd-2355-4aa7-b43c-5bff997a33e6
-ms.openlocfilehash: 20341a44eb8a43a9d130e0b76d23b513738c6782
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 539ac998a557615c097c33cdd4207e99f396e81d
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011892"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959627"
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>Přístup k nevystaveným členům v modelu spravovaného objektu dokumentu HTML
-Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> , která zveřejňuje vlastnosti, metody a události, které mají společnou všechny prvky jazyka HTML. V některých případech však můžete potřebovat pro přístup ke členům, které použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby, jak přístup k nevystaveným členům, včetně [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] a VBScript funkce definované uvnitř na webové stránce.  
+Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> , která zveřejňuje vlastnosti, metody a události, které mají společnou všechny prvky jazyka HTML. V některých případech však můžete potřebovat pro přístup ke členům, které použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby, jak přístup k nevystaveným členům, včetně JScript a VBScript funkce definované uvnitř na webové stránce.  
   
 ## <a name="accessing-unexposed-members-through-managed-interfaces"></a>Přístup k Nevystaveným členům prostřednictvím spravovaného rozhraní  
  <xref:System.Windows.Forms.HtmlDocument> a <xref:System.Windows.Forms.HtmlElement> poskytují čtyři metody, které umožňují přístup k nevystaveným členům. V následující tabulce jsou uvedeny typy a jejich odpovídající metody.  
@@ -67,7 +67,7 @@ Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:Sy
  Nejjednodušší způsob, jak použít rozhraní modelu COM je přidat odkaz na nespravované knihovny HTML DOM (MSHTML.dll) z vašich aplikací, i když to není podporováno. Další informace najdete v tématu [934368 článku znalostní báze](https://support.microsoft.com/kb/934368).  
   
 ## <a name="accessing-script-functions"></a>Přístup k funkce skriptu  
- Stránku HTML můžete definovat jeden nebo více funkcí pomocí skriptovacího jazyka, jako [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] nebo VBScript. Tyto funkce jsou umístěny uvnitř `SCRIPT` stránky na stránce a lze je spustit na vyžádání nebo v reakci na události v modelu DOM.  
+ Stránku HTML můžete definovat jeden nebo více funkcí pomocí skriptovacího jazyka, jako je například JScript a VBScript. Tyto funkce jsou umístěny uvnitř `SCRIPT` stránky na stránce a lze je spustit na vyžádání nebo v reakci na události v modelu DOM.  
   
  Je možné volat jakékoli funkce skriptu definujete ve stránce HTML pomocí <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A> metody. Pokud metoda skript vrátí HTML element, můžete použít přetypování pro převod tento návratový výsledek <xref:System.Windows.Forms.HtmlElement>. Podrobnosti a příklady kódu naleznete v tématu <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>.  
   
