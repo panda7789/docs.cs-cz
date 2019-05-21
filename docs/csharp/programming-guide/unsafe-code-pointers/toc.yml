@@ -9,23 +9,5 @@
           href: pointer-types.md
         - name: Převody ukazatele
           href: pointer-conversions.md
-        - name: Výrazy ukazatelů
-          items:
-            - name: 'Postupy: Získávání hodnoty proměnné ukazatele'
-              href: how-to-obtain-the-value-of-a-pointer-variable.md
-            - name: 'Postupy: Získávání adresy proměnné'
-              href: how-to-obtain-the-address-of-a-variable.md
-            - name: 'Postupy: Přístup ke členu pomocí ukazatele'
-              href: how-to-access-a-member-with-a-pointer.md
-            - name: 'Postupy: Přístup k elementu pole pomocí ukazatele'
-              href: how-to-access-an-array-element-with-a-pointer.md
-            - name: Manipulace s ukazateli
-              items:
-                - name: 'Postupy: Přírůstek a úbytek ukazatelů'
-                  href: how-to-increment-and-decrement-pointers.md
-                - name: Aritmetické operace na ukazatelích
-                  href: arithmetic-operations-on-pointers.md
-                - name: Porovnání ukazatelů
-                  href: pointer-comparison.md
         - name: 'Postupy: Použití ukazatelů ke kopírování pole bajtů'
           href: how-to-use-pointers-to-copy-an-array-of-bytes.md
