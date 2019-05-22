@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c4a4ba28116965db1d4dfdef3cdfb0496aad123
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 81995d8003a9bb78f6a97ca7eadca94a2136c8a7
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557926"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960015"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -1399,7 +1399,7 @@ U souborů PDB pro Ngen můžete vytvořit NGen souboru PDB, který obsahuje map
 
 ## <a name="whats-new-in-net-2015"></a>Co je nového v .NET 2015
 
-Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .NET Core. Některé nové funkce, platit pro oboje, a další funkce jsou specifické pro [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] nebo [!INCLUDE[net_core](../../../includes/net-core-md.md)].
+Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .NET Core. Některé nové funkce, platit pro oboje, a další funkce jsou specifické pro [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] nebo .NET Core.
 
 - **ASP.NET Core**
 
@@ -1747,11 +1747,11 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
 - **Podpora kódování znakových stránek**
 
-     [!INCLUDE[net_core](../../../includes/net-core-md.md)] primárně podporuje kódování Unicode a ve výchozím nastavení poskytuje omezenou podporu pro kódování znakových stránek. Můžete přidat podporu pro kódování znakových stránek, ale nepodporuje je dostupné v rozhraní .NET Framework [!INCLUDE[net_core](../../../includes/net-core-md.md)] zaregistrováním kódování znakových stránek s <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> metody. Další informace naleznete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+     .NET core primárně podporuje kódování Unicode a ve výchozím nastavení poskytuje omezenou podporu pro kódování znakových stránek. Podpora kódování znakových stránek k dispozici v rozhraní .NET Framework ale nepodporuje je .NET Core můžete přidat zaregistrováním kódování znakových stránek s <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> metody. Další informace naleznete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET Native**
 
-     Aplikace Windows pro Windows 10, které se zaměřují [!INCLUDE[net_core](../../../includes/net-core-md.md)] a jsou napsané v C# nebo Visual Basic můžete využívat nové technologie, která sestavuje aplikace do nativního kódu, nikoli IL. Vytvářejí charakteristické rychlejší spouštění a časy spuštění aplikace. Další informace najdete v tématu [kompilování aplikací pomocí .NET Native](../net-native/index.md). Přehled rozhraní .NET Native, který zkoumá, jak se liší od kompilace JIT a NGEN a tom, jak to znamená, že pro váš kód, naleznete v tématu [.NET Native a kompilace](../net-native/net-native-and-compilation.md).
+     Aplikace Windows pro Windows 10, které cílit na .NET Core a jsou napsané v C# nebo Visual Basic můžete využívat nové technologie, která sestavuje aplikace do nativního kódu, nikoli IL. Vytvářejí charakteristické rychlejší spouštění a časy spuštění aplikace. Další informace najdete v tématu [kompilování aplikací pomocí .NET Native](../net-native/index.md). Přehled rozhraní .NET Native, který zkoumá, jak se liší od kompilace JIT a NGEN a tom, jak to znamená, že pro váš kód, naleznete v tématu [.NET Native a kompilace](../net-native/net-native-and-compilation.md).
 
      Vaše aplikace se kompilují do nativního kódu ve výchozím nastavení při jejich kompilaci pomocí sady Visual Studio 2015 nebo novější. Další informace najdete v tématu [Začínáme s .NET Native](../net-native/getting-started-with-net-native.md).
 
