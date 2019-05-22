@@ -6,12 +6,12 @@ helpviewer_keywords:
 - bound controls [Windows Forms], creating
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
-ms.openlocfilehash: f7f1ed2fbca4ab8892cb6c439ae8841fa8828bf0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 22ffdfcc1068dd546c8c07a481c9e21fb1faab80
+ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008964"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003729"
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
 Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovládací prvek vázaný na data pomocí **formátování a rozšířené vazby** dialogové okno.  
@@ -27,7 +27,7 @@ Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovlá
   
 2. Ve formuláři vyberte ovládací prvek a potom otevřete okno Vlastnosti.  
   
-3. Rozbalte **(DataBindings)** vlastnost a potom v **(rozšířené)** klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](./media/vbellipsesbutton.png " vbEllipsesButton")) zobrazíte **formátování a rozšířené vazby** dialogové okno, které obsahuje úplný seznam vlastností pro ovládací prvek.  
+3.  Rozbalte **(DataBindings)** vlastnost a pak v **(rozšířené)** klikněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti sady Visual Studio.](./media/how-to-create-a-bound-control-and-format-the-displayed-data/visual-studio-ellipsis-button.png)) Chcete-li zobrazit **formátování a rozšířené vazby** dialogové okno, které obsahuje úplný seznam vlastností pro ovládací prvek.  
   
 4. Vyberte vlastnost, kterou chcete vytvořit vazbu a potom klikněte na **vazby** šipku.  
   

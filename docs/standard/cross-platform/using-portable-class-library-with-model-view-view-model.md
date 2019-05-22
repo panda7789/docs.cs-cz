@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4a477b9d204be0bc9a4c438bccb1379ecc7abf53
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3aa18d4498bcdcc3737311473b4736545b184395
+ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664327"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003776"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) implementovat vzor Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
@@ -25,7 +25,7 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 
  MVVM je vzorek aplikace, který izoluje uživatelského rozhraní ze základní obchodní logiku. Můžete implementovat modelu a zobrazení tříd modelu v [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu v sadě Visual Studio 2012 a pak vytvořte zobrazení, která jsou přizpůsobená pro různé platformy. Tento přístup umožňuje zapisovat data model a obchodní logiky pouze jednou a použít tento kód v rozhraní .NET Framework, Silverlight, Windows Phone a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, jak je znázorněno na následujícím obrázku.
 
- ![Přenosné s modelem MVVM diagram](../../../docs/standard/cross-platform/media/portablemvvmdiagram.png "PortableMVVMdiagram")
+ ![Ukazuje přenosné knihovny tříd s modelem MVVM sdílení sestavení napříč platformami.](./media/using-portable-class-library-with-model-view-view-model/mvvm-share-assemblies-across-platforms.png)
 
  Toto téma neposkytuje obecné informace o vzoru MVVM. Nabízí informace o tom, jak používat [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] implementovat MVVM. Další informace o MVVM, najdete v článku [MVVM rychlém startu pomocí knihovny 5.0 modulu Prism pro WPF](https://docs.microsoft.com/previous-versions/msp-n-p/gg430857(v=pandp.40)).
 

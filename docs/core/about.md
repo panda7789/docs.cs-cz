@@ -1,23 +1,23 @@
 ---
-title: Informace o .NET Core
+title: O platformě .NET Core
 description: Další informace o .NET Core.
 author: richlander
 ms.date: 08/01/2018
-ms.openlocfilehash: 87514b476124196c835e4b22154f9bbaca7482a5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fb6088bcadcdc9c28699446df035b899485c406d
+ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644368"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003761"
 ---
-# <a name="about-net-core"></a>Informace o .NET Core
+# <a name="about-net-core"></a>O platformě .NET Core
 
 .NET core má následující vlastnosti:
 
 - **Různé platformy:** Běží na Windows, macOS a Linux [operačních systémů](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md).
 - **Konzistentní v architekturách:** Spustí váš kód s stejné chování na několik architektur, včetně x64 x86 a ARM.
 - **Nástroje příkazového řádku:**  Obsahuje nástroje příkazového řádku snadným ovládáním, které lze použít pro místní vývoj a ve scénářích průběžnou integraci.
-- **Flexibilní nasazení:** Mohou být součástí vaší aplikace nebo nainstalovat vedle sebe uživatele – nebo celý počítač. Je možné s [kontejnery Dockeru](docker/index.md).
+- **Flexibilní nasazení:** Mohou být součástí vaší aplikace nebo nainstalovat vedle sebe (celou uživatele nebo systémová zařízení). Je možné s [kontejnery Dockeru](docker/index.md).
 - **Kompatibilní:** .NET Core je kompatibilní s rozhraní .NET Framework, Xamarin a Mono, prostřednictvím [.NET Standard](../standard/net-standard.md).
 - **Otevřít zdroj:** Platformy .NET Core je open source, použitím licencí MIT a Apache 2. .NET core je [.NET Foundation](https://dotnetfoundation.org/) projektu.
 - **Společnost Microsoft podporuje:** na společnost Microsoft, podporuje .NET Core [podpora platformy .NET Core](https://www.microsoft.com/net/core/support/).
@@ -61,7 +61,7 @@ Tyto součásti jsou distribuovány následujícími způsoby:
 - [ASP.NET Core Runtime](https://www.microsoft.com/net/download/dotnet-core/2.1) – obsahuje knihovny modulu runtime a rozhraní framework ASP.NET Core a .NET Core.
 - [Sada .NET core SDK](https://www.microsoft.com/net/download/dotnet-core/2.1) – zahrnuje nástroje rozhraní příkazového řádku .NET, ASP.NET Core runtime a modulu runtime .NET Core a rozhraní framework.
 
-### <a name="open-source"></a>Open Source
+### <a name="open-source"></a>Open source
 
 [.NET core](https://github.com/dotnet/core) je open source ([licencí MIT](https://github.com/dotnet/core/blob/master/LICENSE.TXT)) a bylo přispět k [.NET Foundation](https://dotnetfoundation.org) od Microsoftu v roce 2014. Nyní je jeden z projektů .NET Foundation Nejaktivnější. Ho můžete volně přijímá jednotlivce a společností, včetně osobních, akademický nebo obchodní účely. Více společností používá jako součást aplikace, nástroje, nové platformy a hostování služeb .NET Core. Některé z těchto společnostech výrazně přispějeme k .NET Core na Githubu a poskytnout Rady ohledně směr produktu jako součást [.NET Foundation technické řízení skupiny](https://dotnetfoundation.org/blog/tsg-welcome).
 
@@ -73,7 +73,7 @@ Produkt je rozdělená do několika částí, povolení různých částí se p�
 
 Uživatelé často ptají, jak .NET Core je implementovaná za účelem podpory více operačních systémů. Obvykle žádá Pokud existují samostatné implementace nebo [podmíněné kompilace](https://en.wikipedia.org/wiki/Conditional_compilation) se používá. Je i s silné Posun směrem k podmíněné kompilace.
 
-Zobrazí se v grafu pod ním drtivou většinu [CoreFX](https://github.com/dotnet/corefx) je platforma doménově neutrální kód, který se sdílí mezi všemi platformami. Platforma doménově neutrální kód je možné implementovat jako jediné přenosných sestavení, který se používá na všech platformách.
+Zobrazí se v následujícím grafu, že drtivou většinu [CoreFX](https://github.com/dotnet/corefx) je platforma doménově neutrální kód, který se sdílí mezi všemi platformami. Platforma doménově neutrální kód je možné implementovat jako jediné přenosných sestavení, který se používá na všech platformách.
 
 ![CoreFX: Řádky kódu pro každou platformu](../images/corefx-platforms-loc.png)
 
@@ -102,6 +102,8 @@ Hlavní rozdíly mezi .NET Core a .NET Framework:
 - **Open Source** – .NET Core je open source, zatímco [jen pro čtení podmnožinou rozhraní .NET Framework](https://github.com/microsoft/referencesource) je open source.
 
 .NET Core je jedinečný a má významné rozdíly pro rozhraní .NET Framework a jiné implementace .NET, je jednoduché sdílení kódu mezi tyto implementace pomocí zdroje nebo binární sdílení techniky.
+
+Protože .NET Core podporuje instalaci vedle sebe a jeho modul runtime je zcela nezávislý rozhraní .NET Framework, nainstalujete ho na počítačích s nainstalovaným bez problémů rozhraní .NET Framework.
 
 ### <a name="comparison-with-mono"></a>Porovnání s Mono
 

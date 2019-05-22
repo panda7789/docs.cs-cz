@@ -11,12 +11,12 @@ ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
 ms.custom: vs-dotnet
-ms.openlocfilehash: 9d0abd18b2242ab21e8a915caac1ff9e3216acd0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c3440ddf6cdae6b24bcf1059ab2c76d8fb957263
+ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617277"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003853"
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
 
@@ -45,9 +45,9 @@ Na konci návodu budete sestavíte samostatnou aplikaci Windows, která umožňu
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Visual Studio 2017 nebo novější
+- Visual Studio 2017 nebo novější (Tento článek používá Visual Studio 2019)
 
-   Další informace o instalaci nejnovější verze sady Visual Studio najdete v tématu [instalace sady Visual Studio](/visualstudio/install/install-visual-studio). Tento článek používá Visual Studio 2019.
+   Další informace o instalaci nejnovější verze sady Visual Studio najdete v tématu [instalace sady Visual Studio](/visualstudio/install/install-visual-studio).
 
 ## <a name="create-the-application-project"></a>Vytvoření projektu aplikace
 
@@ -55,23 +55,21 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
 
 1. Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem **`ExpenseIt`**:
 
-   1. Otevřít Visual Studio a vyberte **souboru** > **nový** > **projektu**.
+   1. Otevřít Visual Studio a vyberte **vytvořte nový projekt** pod **Začínáme** nabídky.
 
       **Vytvořte nový projekt** otevře se dialogové okno.
 
-      ![Vytvořit dialogové okno nového projektu](./media/gettingstartedfigure0a.png)
-
    2. V **jazyk** rozevírací seznam, vyberte buď **C#** nebo **jazyka Visual Basic**.
-
+      
    3. Vyberte **aplikace WPF (.NET Framework)** šablonu a pak vyberte **Další**. 
+     
+      ![Vytvořit dialogové okno nového projektu](./media/walkthrough-my-first-wpf-desktop-application/create-new-project-dialog.png)
     
-   4. Vyberte **vytvořte nový projekt**.
-
       **Konfigurovat nový projekt** otevře se dialogové okno.
 
-      ![Konfigurace dialogové okno nového projektu](./media/gettingstartedfigure0c.png)
+   4. Zadejte název projektu **`ExpenseIt`** a pak vyberte **vytvořit**.
 
-   5. Zadejte název projektu **`ExpenseIt`** a pak vyberte **vytvořit**.
+      ![Konfigurace dialogové okno nového projektu](./media/walkthrough-my-first-wpf-desktop-application/configure-new-project-dialog.png)
 
       Visual Studio vytvoří projekt a otevře se návrhář pro výchozí okno aplikace s názvem **souboru MainWindow.xaml**.
 
@@ -224,7 +222,7 @@ V této části přidáte dvě stránky a obrázku do aplikace.
 
     Následující obrázek znázorňuje aplikaci <xref:System.Windows.Navigation.NavigationWindow> tlačítka:
 
-    ![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure1.png)
+    ![Aplikace po sestavení a spustíme ji.](./media/walkthrough-my-first-wpf-desktop-application/build-run-application.png)
 
 2. Ukončete aplikaci se vraťte do sady Visual Studio.
 
@@ -290,9 +288,7 @@ Každý ovládací prvek nachází v řádku <xref:System.Windows.Controls.Grid>
 
     Následující obrázek znázorňuje ovládací prvky, že kterou jste vytvořili:
 
-    ![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure2.png)
-
-3. Ukončete aplikaci se vraťte do sady Visual Studio.
+![Snímek obrazovky ukázkové ExpenseIt – zobrazuje seznam názvů](./media/walkthrough-my-first-wpf-desktop-application/add-application-controls.png)
 
 ## <a name="add-an-image-and-a-title"></a>Přidat obrázek a název
 
@@ -326,7 +322,7 @@ V této části budete aktualizovat Uživatelském rozhraní domovské stránky 
 
 Následující obrázek ukazuje výsledky co jste právě přidali:
 
-![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure3.png)
+![ExpenseIt – ukázka snímek obrazovky ukazující nový obrázek na pozadí a nadpis stránky](./media/walkthrough-my-first-wpf-desktop-application/add-application-image-title.png)
 
 ## <a name="add-code-to-handle-events"></a>Přidejte kód pro zpracování událostí
 
@@ -361,7 +357,7 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 
 Následující obrázek znázorňuje prvky uživatelského rozhraní, které jsou přidány do *ExpenseReportPage.xaml*.
 
-![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure4.png)
+![ExpenseIt – ukázka snímek obrazovky uživatelského rozhraní pro ExpenseReportPage právě vytvořili.](./media/walkthrough-my-first-wpf-desktop-application/create-application-ui.png)
 
 ## <a name="style-controls"></a>Ovládací prvky stylu
 
@@ -405,7 +401,7 @@ Vzhled různé prvky je často stejný pro všechny prvky v uživatelském rozhr
 
 6. Sestavte a spusťte aplikaci. Vzhled okno je stejný jako dříve.
 
-    ![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure4.png)
+    ![Snímek obrazovky ukázkové ExpenseIt – s vzhled stejné jako v předchozí části.](./media/walkthrough-my-first-wpf-desktop-application/create-application-ui.png)
 
 7. Ukončete aplikaci se vraťte do sady Visual Studio.
 
@@ -473,7 +469,7 @@ V této části budete aktualizovat uživatelské rozhraní pro každou položku
 
 Následující obrázek ukazuje obě stránky `ExpenseIt` aplikace s ovládacími prvky, rozložení, styly, vazby dat a použitých šablon dat:
 
-![Snímky obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure5.png)
+![Obě stránky aplikace zobrazuje seznam názvů a sestavy výdajů.](./media/walkthrough-my-first-wpf-desktop-application/application-data-templates.png)
 
 > [!NOTE]
 > Tato ukázka předvádí konkrétní funkce WPF a nebude použijte všechny osvědčené postupy pro takové věci, jako je zabezpečení, lokalizace a přístupnost. Komplexní pokrytí WPF a osvědčené postupy vývoje aplikací .NET najdete v následujících tématech:
