@@ -18,7 +18,7 @@
       displayName: '>, <, >=, <=, greater, less'
     - name: Operátory pro přístup k členům
       href: member-access-operators.md
-      displayName: '., [], ?., ?[], (), indexer, null-conditional, invocation'
+      displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation'
     - name: Operátory související s ukazatelem
       href: pointer-related-operators.md
       displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-ms.openlocfilehash: fbc92c03da69dd452f35e5b4e00cd4a9ca17e252
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 8965231307da84fd555b181440978adbea7e7244
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211186"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052835"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytvořit podřízený formulář MDI formuláře
 
@@ -34,7 +34,7 @@ V následujícím postupu budete používat Visual Studio k vytvoření podříz
 
 4. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, přejděte na **přidat**a pak vyberte **přidat novou položku**.
 
-5. V **přidat novou položku** dialogu **formuláře Windows** (v jazyce Visual Basic nebo Visual C#) nebo **Windows Forms aplikace (.NET)** (v [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) z  **Šablony** podokně. V **název** pole, pojmenujte formulář **Form2**. Klikněte na tlačítko **otevřít** tlačítko pro přidání formuláře do projektu.
+5. V **přidat novou položku** dialogu **formuláře Windows** (v jazyce Visual Basic nebo Visual C#) nebo **Windows Forms aplikace (.NET)** (ve Vizuálu C++) z **Šablony** podokně. V **název** pole, pojmenujte formulář **Form2**. Klikněte na tlačítko **otevřít** tlačítko pro přidání formuláře do projektu.
 
     > [!NOTE]
     > Podřízený formulář MDI, které jste vytvořili v tomto kroku je běžného formuláře Windows. V důsledku toho je <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost, která vám umožňuje řídit průhlednost formuláře. Ale <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost je navržená pro okna nejvyšší úrovně. Nepoužívejte ho s podřízených formulářů MDI, protože může dojít k problémům Malování.

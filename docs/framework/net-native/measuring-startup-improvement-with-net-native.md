@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 014af254d299d357c22a898357a533d650715500
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ea993880d68ab13eab8dfb4cf5e1d172025c6186
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650531"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052576"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
-[!INCLUDE[net_native](../../../includes/net-native-md.md)] výrazně zlepšuje dobu spuštění aplikace. Toto vylepšení je patrné v na přenosných a s nízkou spotřebou zařízení a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentací potřebné k měření zlepšení toto spuštění.  
+.NET native výrazně zvyšuje dobu spuštění aplikace. Toto vylepšení je patrné v na přenosných a s nízkou spotřebou zařízení a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentací potřebné k měření zlepšení toto spuštění.  
   
  Pro usnadnění vyšetřování výkonu, rozhraní .NET Framework a Windows pomocí rozhraní události trasování událostí pro Windows (ETW), která vaše aplikace bude informovat, nástrojů, když dojde k událostem volat. Potom můžete nástroj zvaný PerfView můžete snadno zobrazit a analyzovat událostí trasování událostí pro Windows. Toto téma vysvětluje, jak:  
   
@@ -95,7 +95,7 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  Všechny události uvedené v levém podokně vyberte (Ctrl-A) a zvolte **Enter** klíč. Teď byste měli vidět časová razítka každé události. Tato časová razítka jsou relativní vzhledem k zahájení trasování, takže budete mít odečíst času každé události z času začátku procesu k identifikaci uplynulý čas od spuštění. Pokud použijete Ctrl + kliknutí pro výběr dva časová razítka, uvidíte rozdíl mezi nimi zobrazí ve stavovém řádku v dolní části stránky. To usnadňuje zobrazte uplynulý čas mezi jakékoli dvě události v zobrazení (včetně spuštění procesu). Můžete otevřít místní nabídku pro zobrazení a vybrat z řady užitečné možnosti, jako je export do souborů CSV nebo otevřete aplikaci Microsoft Excel k uložení nebo zpracování dat.  
   
- Zopakováním postupu pro původní aplikace a verze, který jste vytvořili pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězec, můžete porovnat rozdíl ve výkonu.   [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace obvykle je dobré začít rychleji než jinou hodnotu než[!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace. Pokud vás zajímají podrobnější si PerfView můžete také určit části kódu, které trvá nejdéle. Další informace, podívejte se [PerfView kurzy](https://channel9.msdn.com/Series/PerfView-Tutorial) nebo si přečtěte [daňové Morrison blogu](https://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
+ Zopakováním postupu pro původní aplikace a verze, kterou jste vytvořili pomocí .NET Native řetězce nástrojů můžete porovnat rozdíl ve výkonu.   .NET native aplikace se rodí obecně rychlejší než jiné – .NET nativní aplikace. Pokud vás zajímají podrobnější si PerfView můžete také určit části kódu, které trvá nejdéle. Další informace, podívejte se [PerfView kurzy](https://channel9.msdn.com/Series/PerfView-Tutorial) nebo si přečtěte [daňové Morrison blogu](https://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
   
 ## <a name="see-also"></a>Viz také:
 

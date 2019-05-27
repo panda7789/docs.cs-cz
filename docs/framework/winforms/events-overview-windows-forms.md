@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: 3adc2891579cafff9c8aeb3e918ae74c6f3ad8a5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: fddb51bfe998c360ca418374b119ec12f25b0fad
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591014"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052295"
 ---
 # <a name="events-overview-windows-forms"></a>Přehled událostí (Windows Forms)
 Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události mohou být generovány akci uživatele, jako je například kliknutí myší nebo stisknutí klávesy; pomocí programového kódu; nebo v systému.
@@ -29,7 +29,7 @@ Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události moh
  Informace o tom, jak vyvolat a zpracovat událost, naleznete v tématu [události](../../standard/events/index.md).
 
 ## <a name="delegates-and-their-role"></a>Delegáty a jejich Role
- Delegáti jsou třídy obvykle používá při sestavování mechanismy zpracování událostí v rámci rozhraní .NET Framework. Delegáti zhruba odpovídá na ukazatele funkcí, běžně používaná v [!INCLUDE[vcprvc](../../../includes/vcprvc-md.md)] a další jazyky objektově orientovaný. Na rozdíl od ukazatelů na funkce delegátů jsou však objektově orientované, typově bezpečné a zabezpečené. Kromě toho, kde obsahuje pouze odkaz na určitou funkci, ukazatel na funkci delegáta se skládá z odkazu na objekt a odkazy na jeden nebo více metod v rámci objektu.
+ Delegáti jsou třídy obvykle používá při sestavování mechanismy zpracování událostí v rámci rozhraní .NET Framework. Delegáti zhruba odpovídá na ukazatele funkcí, běžně se používají ve Vizuálu C++ a další jazyky objektově orientovaný. Na rozdíl od ukazatelů na funkce delegátů jsou však objektově orientované, typově bezpečné a zabezpečené. Kromě toho, kde obsahuje pouze odkaz na určitou funkci, ukazatel na funkci delegáta se skládá z odkazu na objekt a odkazy na jeden nebo více metod v rámci objektu.
 
  Tento model událostí používá *delegáti* svázat události do metod, které se používají k jejich zpracování. Delegát umožňuje jiné třídy registrace pro oznámení události tak, že určíte metodu obslužné rutiny. Při výskytu události, delegát volá metodu vazby. Další informace o tom, jak definovat delegáty, naleznete v tématu [události](../../standard/events/index.md).
 

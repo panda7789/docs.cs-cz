@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6d11e16f58b6da24d7df0ccd97c1d54050004ae1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e0b428e3d9612fdfdaaecec44f1c35c4f883c134
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664655"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052820"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -117,7 +117,7 @@ ms.locfileid: "64664655"
  Následující příklad formátuje <xref:System.Double> specifikátorem formátu měny.  
   
  [!code-cpp[Formatting.Numeric.Standard#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#1)]
- [!code-csharp[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
  [!code-vb[Formatting.Numeric.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#1)]  
   
  [Zpět k tabulce](#table)  
@@ -161,7 +161,7 @@ ms.locfileid: "64664655"
  Následující příklad formátuje <xref:System.Double> specifikátorem exponenciálního formátu.  
   
  [!code-cpp[Formatting.Numeric.Standard#3](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#3)]
- [!code-csharp[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
  [!code-vb[Formatting.Numeric.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#3)]  
   
  [Zpět k tabulce](#table)  
@@ -183,7 +183,7 @@ ms.locfileid: "64664655"
  Následující příklad formátuje <xref:System.Double> a <xref:System.Int32> specifikátorem formátu s pevnou desetinnou čárkou.  
   
  [!code-cpp[Formatting.Numeric.Standard#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#4)]
- [!code-csharp[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
  [!code-vb[Formatting.Numeric.Standard#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#4)]  
   
  [Zpět k tabulce](#table)  
@@ -212,7 +212,7 @@ ms.locfileid: "64664655"
  
 Všimněte si, že při použití s <xref:System.Double> hodnotu, specifikátor formátu "G17" zajistí, že původní <xref:System.Double> úspěšně hodnota doby odezvy. Důvodem je, že <xref:System.Double> je IEEE 754-2008-kompatibilní s dvojitou přesností (`binary64`) číslo s desetinnou čárkou, která poskytuje až 17 nejvýznamnějších číslic přesnosti s plovoucí desetinnou čárkou. Doporučujeme místo jeho použití [specifikátor formátu "R"](#RFormatString), protože v některých případech "R" nepodaří úspěšně round-trip hodnot s plovoucí čárkou dvojitou přesností. Následující příklad ukazuje jeden takový případ.
 
-[!code-csharp-interactive[Round-tripping a Double](../../../samples/snippets/standard/base-types/format-strings/csharp/g17.cs)]   
+[!code-csharp-interactive[Round-tripping a Double](../../../samples/snippets/standard/base-types/format-strings/csharp/g17.cs#GeneralFormatSpecifier)]   
 [!code-vb[Round-tripping a Double](../../../samples/snippets/standard/base-types/format-strings/vb/g17.vb)]   
 
 Při použití s <xref:System.Single> hodnotu, specifikátor formátu "G9" zajistí, že původní <xref:System.Single> úspěšně hodnota doby odezvy. Důvodem je, že <xref:System.Single> je IEEE 754-2008-kompatibilní s jednoduchou přesností (`binary32`) číslo s desetinnou čárkou, která poskytuje až devět nejvýznamnějších číslic přesnosti s plovoucí desetinnou čárkou. Kvůli výkonu doporučujeme místo jeho použití [specifikátor formátu "R"](#RFormatString).
@@ -228,7 +228,7 @@ Při použití s <xref:System.Single> hodnotu, specifikátor formátu "G9" zajis
  Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou se specifikátorem obecného formátu.  
   
  [!code-cpp[Formatting.Numeric.Standard#5](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#5)]
- [!code-csharp[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
  [!code-vb[Formatting.Numeric.Standard#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#5)]  
   
  [Zpět k tabulce](#table)  
@@ -251,7 +251,7 @@ Při použití s <xref:System.Single> hodnotu, specifikátor formátu "G9" zajis
  Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou se specifikátorem číselného formátu.  
   
  [!code-cpp[Formatting.Numeric.Standard#6](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#6)]
- [!code-csharp[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
  [!code-vb[Formatting.Numeric.Standard#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#6)]  
   
  [Zpět k tabulce](#table)  
@@ -276,7 +276,7 @@ Při použití s <xref:System.Single> hodnotu, specifikátor formátu "G9" zajis
  Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou se specifikátorem procentuálního formátu.  
   
  [!code-cpp[Formatting.Numeric.Standard#7](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#7)]
- [!code-csharp[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
  [!code-vb[Formatting.Numeric.Standard#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#7)]  
   
  [Zpět k tabulce](#table)  
@@ -301,7 +301,7 @@ Pro <xref:System.Double> hodnoty, specifikátor formátu "R" v některých pří
  Následující příklad formátuje <xref:System.Numerics.BigInteger> specifikátorem formátu round-trip.  
   
  [!code-cpp[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.cpp)]
- [!code-csharp-interactive[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.cs)]
+ [!code-csharp[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.cs)]
  [!code-vb[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.vb)]  
   
 > [!IMPORTANT]
@@ -309,7 +309,7 @@ Pro <xref:System.Double> hodnoty, specifikátor formátu "R" v některých pří
   
  Chcete-li vyřešit problém <xref:System.Double> hodnoty naformátovaná pomocí standardního číselného formátu "R" řetězec není úspěšně verzemi, pokud kompilováno s použitím `/platform:x64` nebo `/platform:anycpu` přepínače a spustit v 64bitové systémy. můžete naformátovat <xref:System.Double> hodnoty pomocí řetězce standardního číselného formátu "G17". Následující příklad používá řetězec formátu "R" s <xref:System.Double> fakturuje se u tohoto není operace round-trip hodnotu úspěšně, a také používá "G17" Formát řetězec, který se úspěšně odezvy na původní hodnotu.  
   
- [!code-csharp[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#5)]
+ [!code-csharp-interactive[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#RoundTrip)]
  [!code-vb[System.Double.ToString#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex1.vb#5)]  
   
  [Zpět k tabulce](#table)  
@@ -356,7 +356,7 @@ Pro <xref:System.Double> hodnoty, specifikátor formátu "R" v některých pří
  
  Následující příklad formátuje číselnou integrální hodnotu a hodnotu s plovoucí desetinnou čárkou pomocí jazykové verze en-US a všech specifikátorů standardního číselného formátu. Tento příklad používá dva konkrétní číselné typy (<xref:System.Double> a <xref:System.Int32>), ale produkoval by podobné výsledky pro každý z dalších číselných základních typů (<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>, <xref:System.Numerics.BigInteger>, <xref:System.Decimal>, a <xref:System.Single>).  
   
- [!code-csharp-interactive[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#1)]
+ [!code-csharp-interactive[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#FinalExample)]
  [!code-vb[system.x.tostring-and-culture#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.X.ToString-and-Culture/vb/xts.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:

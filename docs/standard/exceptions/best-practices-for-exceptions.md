@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 6c979483497ff640be7d1126d63ce95130f6c02b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb1ef5f52b9ee0407cbd7a0634e8a7c58906d635
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770367"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195564"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
@@ -54,7 +54,9 @@ Třída může poskytnout metody nebo vlastnosti, které vám umožní vyhnout v
 [!code-csharp[Conceptual.Exception.Handling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
 [!code-vb[Conceptual.Exception.Handling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#5)]
 
-Jiný způsob, jak zabránit výjimky je vrátit `null` pro nejběžnější případy chyb namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením `null` v těchto případech minimalizujete dopad výkonu pro aplikaci.
+Jiný způsob, jak zabránit výjimky je vrátit hodnotu null (nebo výchozí) pro nejběžnější případy chyb namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null (nebo výchozí) v těchto případech minimalizujete dopad výkonu pro aplikaci.
+
+U typů hodnot jestli se má použít s možnou hodnotou Null<T> nebo výchozí, jak je vaše označení chyb je něco, co brát v potaz u konkrétní aplikace. S použitím `Nullable<Guid>`, `default` stane `null` místo `Guid.Empty`. Přidání některých časy `Nullable<T>` může být jasnější hodnotu je k dispozici nebo chybí. Jindy, přidání `Nullable<T>` můžete vytvořit další případy a zkontrolujte, jestli nejsou potřebné, slouží pouze k vytvoření potenciální zdroje chyb. 
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení chybový kód
 

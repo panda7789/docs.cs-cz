@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af71c4916a2abdeb019e538a33ad05efa727e720
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e482303e684813574a092f0a2d5812445ed7fa6e
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868781"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052622"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Příklad: Řešení potíží s dynamickým programováním
 > [!NOTE]
 >  Toto téma odkazuje na .NET Native Developer Preview, což je předběžná verze softwaru. Preview z si můžete stáhnout [webu Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
   
- Ne všechny metadat selhání vyhledávání v aplikacích vyvinutých pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězu vést k výjimce.  Některé můžou výsledkem může být nepředvídatelnými způsoby, jak v aplikaci.  Následující příklad ukazuje narušení přístupu způsobené odkazující na objekt s hodnotou null:  
+ Všechny metadat selhání vyhledávání v aplikacích vyvinutých pomocí .NET Native výsledek řetězce nástroj výjimku.  Některé můžou výsledkem může být nepředvídatelnými způsoby, jak v aplikaci.  Následující příklad ukazuje narušení přístupu způsobené odkazující na objekt s hodnotou null:  
   
 ```  
 Access violation - code c0000005 (first chance)  
@@ -52,7 +52,7 @@ AppViewModel.Current.LayoutVM.PageMap
   
  V takovém případě přidání direktivy modulu runtime pro `App.Core.ViewModels` vyřešení problému. Původní příčina volání rozhraní API k <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> metodu, která vrátila **null**, a aplikace tiše ignorováno problém, dokud došlo k chybě.  
   
- V dynamické programování, je vhodné při použití reflexe rozhraní API v rámci [!INCLUDE[net_native](../../../includes/net-native-md.md)] , je použít <xref:System.Type.GetType%2A?displayProperty=nameWithType> přetížení, které vyvolají výjimku při selhání.  
+ V dynamické programování, je vhodné při použití reflexe rozhraní API v .NET Native použít <xref:System.Type.GetType%2A?displayProperty=nameWithType> přetížení, které vyvolají výjimku při selhání.  
   
 ## <a name="is-this-an-isolated-case"></a>Je to izolované případu?  
  Další problémy mohou nastat také při použití `App.Core.ViewModels`.  Musíte se rozhodnout, zda je vhodné identifikace a opravuje chybějící výjimka metadat nebo šetří čas a přidání direktivy pro větší třídy typů.  Tady, přidání `dynamic` metadata pro `App.Core.ViewModels` může být nejlepším řešením, pokud výsledný nárůst velikosti výstupního binárního souboru není problém.  

@@ -4,14 +4,14 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s
 ms.date: 04/10/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: a96f96bd91976b0966fb7e8d0c8fb6fb7842cfe3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2ea9e9bc2614e62fe6ec0d59e39d42c2e32a80a1
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631867"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051804"
 ---
-# <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace .NET Core aplikace
+# <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace aplikace .NET Core
 
 V tomto kurzu se naučíte, jak sestavit image Dockeru obsahující aplikaci .NET Core. Na obrázku slouží k vytvoření kontejnerů pro vaše místní vývojové prostředí, privátního cloudu nebo veřejného cloudu.
 
@@ -410,6 +410,6 @@ Použití `docker images` příkazu zobrazte seznam imagí, které jsou nainstal
 ## <a name="next-steps"></a>Další kroky
 
 * [Projděte si kurz ASP.NET Core Mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
-* [Projděte si služby Azure, které podporují kontejnery.](https://azure.microsoft.com/en-us/overview/containers/)
+* [Projděte si služby Azure, které podporují kontejnery.](https://azure.microsoft.com/overview/containers/)
 * [Přečtěte si informace o příkazů souboru Docker.](https://docs.docker.com/engine/reference/builder/)
 * [Prozkoumejte nástroje kontejneru sady Visual Studio](/visualstudio/containers/overview)

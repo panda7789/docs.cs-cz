@@ -2,12 +2,12 @@
 title: Migrace relačních databází do azure
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows | migrace relačních databází do azure
 ms.date: 04/28/2018
-ms.openlocfilehash: 1c09172f0948551edfe059be6f43d7a02278203d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3d4f03e61144bb6a442a50916d7fd024d38ec611
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638883"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051921"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do azure
 
@@ -81,7 +81,7 @@ Standardní Azure SQL Database je blíže k PaaS než Azure SQL Database Managed
 
 Jednou z možností migrace je přesunout váš původním relační databázový systém (RDBMS), včetně Oracle, IBM DB2, MySQL, PostgreSQL nebo SQL Server, podobně jako server, na kterém běží na Virtuálním počítači Azure. Pokud máte aplikace požadující nejrychlejší migrace do cloudu s minimálními změnami nebo žádnými změnami vůbec přímé migrace na IaaS v cloudu může být reálnou možnost. Nejlepší způsob, jak využít výhod všech cloudu nemusí být, ale je pravděpodobně nejrychlejší počáteční cesty.
 
-V současné době podporuje Microsoft Azure do [331 jiné databázové servery](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/databases?page=1&subcategories=databases-all) nasazená jako virtuální počítače IaaS. Patří mezi ně oblíbených relační databázový systém, jako je SQL Server, Oracle, MySQL, PostgreSQL a IBM DB2 a mnoha dalších databáze NoSQL jako MongoDB Cassandra, DataStax, MariaDB a Cloudera.
+V současné době podporuje Microsoft Azure do [331 jiné databázové servery](https://azuremarketplace.microsoft.com/marketplace/apps/category/databases?page=1&subcategories=databases-all) nasazená jako virtuální počítače IaaS. Patří mezi ně oblíbených relační databázový systém, jako je SQL Server, Oracle, MySQL, PostgreSQL a IBM DB2 a mnoha dalších databáze NoSQL jako MongoDB Cassandra, DataStax, MariaDB a Cloudera.
 
 > [!NOTE]
 > Ačkoli přesunutí vaše relační databázový systém na Virtuálním počítači Azure může být nejrychlejší způsob, jak migrovat data do cloudu (protože je IaaS), tento přístup vyžaduje značné investice při vaše týmy IT (správci databází a IT Profesionálové). Enterprise týmy musí být schopni nastavit a spravovat vysokou dostupnost, zotavení po havárii a opravy pro SQL Server. Tento kontext musí také přizpůsobené prostředí s úplnými právy.

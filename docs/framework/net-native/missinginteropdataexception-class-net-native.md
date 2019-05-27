@@ -7,22 +7,22 @@ dev_langs:
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31208a63caaf9158f12742f1547b0e1e2781de4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 803709c97309f9766b6a441f5521cdcd7504862f
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866883"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052505"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>Třída MissingInteropDataException (.NET Native)
-**.NET pro aplikace pro Windows pro Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] pouze**  
+**.NET pro aplikace pro Windows pro Windows 10, jenom .NET Native**  
   
  Výjimka, která je vyvolána při zařazování metoda ruční nazývá, ale metadata pro typ nebyl nalezen ve statické analýzy nebo do souboru direktiv modulu runtime.  
   
  **Namespace:** System.Runtime.CompilerServices  
   
 > [!IMPORTANT]
->  `MissingInteropDataException` Třídy je určený výhradně pro interní použití rozhraním [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Není určena pro použití v kódu třetí strany ani by měl zpracování výjimek v kódu aplikace. Místo toho odstranit výjimky tak, že přidáte položky do vašich [soubor direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
+>  `MissingInteropDataException` Třídy je určen pouze pro interní použití .NET Native řetězec nástroje. Není určena pro použití v kódu třetí strany ani by měl zpracování výjimek v kódu aplikace. Místo toho odstranit výjimky tak, že přidáte položky do vašich [soubor direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
   
 ## <a name="syntax"></a>Syntaxe  
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
@@ -34,7 +34,7 @@ ms.locfileid: "61866883"
   
 |Konstruktor|Popis|  
 |-----------------|-----------------|  
-|`public MissingInteropDataException(String resourceId, Type pertinentType)`|Inicializuje novou instanci třídy `MissingInteropDataException` pomocí ID zprávy poskytnuté systémem, která popisuje chybu a typ, jejichž data se nenašel. Tento konstruktor je pro interní použití rozhraním [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj pouze řetězce.|  
+|`public MissingInteropDataException(String resourceId, Type pertinentType)`|Inicializuje novou instanci třídy `MissingInteropDataException` pomocí ID zprávy poskytnuté systémem, která popisuje chybu a typ, jejichž data se nenašel. Tento konstruktor je pro interní použití rozhraním pouze .NET Native řetězec nástroje.|  
   
 ## <a name="properties"></a>Vlastnosti  
   

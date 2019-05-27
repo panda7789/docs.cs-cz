@@ -4,12 +4,12 @@ ms.date: 04/08/2019
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 86705a4f8daa327c442ac6c53c9b44c5b5c5c2ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4bfdbbc19bb9ed72bc50ebeeac114241ccd47c25
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857360"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053403"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 
@@ -57,7 +57,7 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 
 Při použití <xref:System.ServiceModel.WSDualHttpBinding>, připojení klienta používá výchozí hodnoty, které jsou kompatibilní s rezervace oboru názvů a brány Windows firewall. Pokud budete chtít upravit základní adresu duální připojení klienta, také musíte nakonfigurovat nastavení protokolu HTTP na straně klienta tak, aby odpovídala nové adrese.
 
-Rozhraní API HTTP Server má nastavení některé pokročilé konfigurace, které nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení se zachovají v registru a platí pro všechny aplikace spuštěné v systémech, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [nastavení registru Http.sys pro službu IIS](https://support.microsoft.com/en-us/help/820129/http-sys-registry-settings-for-windows). Většina uživatelů nemusí tato nastavení změnit.
+Rozhraní API HTTP Server má nastavení některé pokročilé konfigurace, které nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení se zachovají v registru a platí pro všechny aplikace spuštěné v systémech, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [nastavení registru Http.sys pro službu IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). Většina uživatelů nemusí tato nastavení změnit.
 
 ## <a name="see-also"></a>Viz také:
 

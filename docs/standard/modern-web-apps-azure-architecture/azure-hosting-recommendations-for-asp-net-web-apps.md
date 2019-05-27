@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 136ad9992ea94b027f095f47df0388408029f24e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a93009e66d63aa7d9c3b60951d43eafa3c351a63
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638908"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053268"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení pro webové aplikace ASP.NET Core hostování Azure
 
@@ -44,7 +44,7 @@ App Service Web Apps nabízí plně spravovaná platforma optimalizovaná pro ho
 
 - Integrace se sadou Visual Studio.
 
-- Podpora kontejnerů Linuxu a Windows přes [Web App for Containers](https://azure.microsoft.com/en-us/services/app-service/containers/).
+- Podpora kontejnerů Linuxu a Windows přes [Web App for Containers](https://azure.microsoft.com/services/app-service/containers/).
 
 Azure App Service je nejlepší volbou pro většinu webových aplikací. Nasazení a správa jsou integrované do platformy, weby se rychle škálují pro zvládnutí vysokého přenosového zatížení a integrované zatížení vyrovnávání a traffic manager zajišťují vysokou dostupnost. Můžete přesunout existující weby do služby Azure App Service snadno se online nástroje pro migraci, použijte open source aplikaci z Galerie webových aplikací nebo vytvoření nového webu pomocí rozhraní a nástrojů podle vašeho výběru. Funkce WebJobs umožňuje snadno přidat úlohy na pozadí zpracování do webové aplikace služby App Service.
 
@@ -101,7 +101,7 @@ Obrázek 11-2 je znázorněný příklad referenční architekturu. Tento diagra
   <https://docs.microsoft.com/azure/app-service/app-service-web-overview>
 
 - Web App for Containers\
-  <https://azure.microsoft.com/en-us/services/app-service/containers/>
+  <https://azure.microsoft.com/services/app-service/containers/>
 
 - Úvod do služby Azure Kubernetes Service (AKS) \
   <https://docs.microsoft.com/azure/aks/intro-kubernetes>

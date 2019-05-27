@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a32e12b593f273c8b812390306c81b311da7c2a4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b86775f78b02b09dd8fb7925a13625783520bce1
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624696"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052673"
 ---
 # <a name="apis-that-rely-on-reflection"></a>Rozhraní API, která závisí na reflexi
-V některých případech použití reflexe v kódu není zřejmé a proto [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězce nástrojů není zachovat metadata, která je potřeba v době běhu. Toto téma popisuje některé běžné rozhraní API nebo běžné vzory programování, které nejsou považované za součást rozhraní API reflexe, ale, který závisí na reflexi proběhl úspěšně. Pokud je použijete ve zdrojovém kódu, můžete přidat informace o nich do direktivy modulu runtime (. rd.xml) souboru tak, aby volání těchto rozhraní API nevyvolají výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky nebo jinou výjimku za běhu.  
+V některých případech použití reflexe v kódu není zřejmé a .NET Native řetězce nástrojů není tak zachovat metadata, která je potřeba v době běhu. Toto téma popisuje některé běžné rozhraní API nebo běžné vzory programování, které nejsou považované za součást rozhraní API reflexe, ale, který závisí na reflexi proběhl úspěšně. Pokud je použijete ve zdrojovém kódu, můžete přidat informace o nich do direktivy modulu runtime (. rd.xml) souboru tak, aby volání těchto rozhraní API nevyvolají výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky nebo jinou výjimku za běhu.  
   
 ## <a name="typemakegenerictype-method"></a>Type.MakeGenericType – metoda  
  Dynamicky vytvořit instanci obecného typu `AppClass<T>` voláním <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> metoda pomocí kódu takto:  
@@ -55,7 +55,7 @@ App1.AppClass`1<System.Int32>.
   
 - `Browse` metadata pro metodu, kterou chcete volat.  Pokud je veřejná metoda, přidání veřejné `Browse` metadat pro typ obsahující metodu, obsahuje příliš.  
   
-- Dynamická metadata pro metodu chcete volat, tak, aby se odebral delegáta volání reflexe [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Pokud chybí metadata dynamické metody, je vyvolána následující výjimka, když <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> volání metody:  
+- Dynamická metadata pro metodu, kterou chcete volat, tak, aby se neodebere delegáta volání reflexe pomocí .NET Native řetězec nástroje. Pokud chybí metadata dynamické metody, je vyvolána následující výjimka, když <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> volání metody:  
   
     ```  
     MakeGenericMethod() cannot create this generic method instantiation because the instantiation was not metadata-enabled: 'App1.Class1.GenMethod<Int32>(Int32)'.  

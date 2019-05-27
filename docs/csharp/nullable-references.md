@@ -1,15 +1,15 @@
 ---
-title: Typy s možnou hodnotou Null odkazů
+title: Odkazové typy s možnou hodnotou null
 description: Tento článek obsahuje přehled typů s povolenou hodnotou Null odkaz, přidá C# 8. Dozvíte se, jak tato funkce poskytuje zabezpečení proti výjimky odkaz s hodnotou null pro nové i stávající projekty.
 ms.date: 02/19/2019
-ms.openlocfilehash: 9ce9efb890f0eff5a6c6747f96c143a4d093dbfb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac19cbba0e078af34801231145ee339d6e42a42b
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61684039"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195920"
 ---
-# <a name="nullable-reference-types"></a>Typy s možnou hodnotou Null odkazů
+# <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
 C#8.0 představuje **typy s možnou hodnotou Null odkazů** a **typy neumožňující hodnotu odkazu** , díky kterým můžete provádět příkazy důležité informace o vlastnostech pro proměnné typu odkazu:
 
@@ -58,7 +58,7 @@ Možnost použití hodnoty Null typu v deklaraci proměnné je řízen *s možno
 
 S povolenou hodnotou Null kontexty povolit citlivé ovládací prvky jak kompilátor interpretuje proměnné typu odkazu. **Kontextu s možnou hodnotou Null anotace** z libovolného zdroje daného řádku je `enabled` nebo `disabled`. Si můžete představit předběžnéC# 8 kompilátoru jako kompilaci kódu jazyka `disabled` s možnou hodnotou Null kontextu: Jakéhokoliv odkazového typu může mít hodnotu null. **Kontextu s možnou hodnotou Null upozornění** může být nastavená na `enabled`, `disabled`, nebo `safeonly`. Kontext upozornění s možnou hodnotou Null určuje upozornění generovaný kompilátorem pomocí jeho analýzy toku.
 
-Kontextové poznámky s možnou hodnotou Null a s povolenou hodnotou Null kontext upozornění můžete nastavit pro projekt používá `NullableContextOptions` element v vaše `csproj` souboru. Tento element lze konfigurovat, jak kompilátor interpretuje Null typy a jaké upozornění. Platná nastavení jsou:
+Kontextové poznámky s možnou hodnotou Null a s povolenou hodnotou Null kontext upozornění můžete nastavit pro projekt používá `Nullable` element v vaše `csproj` souboru. Tento element lze konfigurovat, jak kompilátor interpretuje Null typy a jaké upozornění. Platná nastavení jsou:
 
 - `enable`: Kontext s možnou hodnotou Null poznámky je **povolené**. S povolenou hodnotou Null kontext upozornění je **povolené**.
   - Proměnné typu odkazu, `string` jsou null.  Všechna upozornění možnosti použití hodnoty Null jsou povolené.
@@ -70,6 +70,9 @@ Kontextové poznámky s možnou hodnotou Null a s povolenou hodnotou Null kontex
   - Proměnné typu odkazu jsou oblivious. Všechna upozornění možnosti použití hodnoty Null jsou povolené.
 - `safeonlywarnings`: Kontext s možnou hodnotou Null poznámky je **zakázané**. S povolenou hodnotou Null kontext upozornění je **safeonly**.
   - Proměnné typu odkazu jsou oblivious. Všechna upozornění zabezpečení možnosti použití hodnoty Null jsou povolené.
+
+> [!IMPORTANT]
+> `Nullable` Element se dříve nazýval `NullableContextOptions`. Přejmenování se dodává se sadou Visual Studio. 2019, 16.2 p1. Tato změna nemá žádné 3.0.100-preview5-011568 .NET Core SDK. Pokud používáte rozhraní příkazového řádku .NET Core, budete muset použít `NullableContextOptions` až do další ve verzi preview je k dispozici.
 
 Direktivy také můžete nastavit tyto stejné kontexty kdekoli ve vašem projektu:
 
@@ -113,7 +116,7 @@ V kontextu povolené poznámky s možnou hodnotou Null `?` znak připojenou k od
 
 ## <a name="nullable-warning-context"></a>S povolenou hodnotou Null kontext upozornění
 
-Kontext upozornění s možnou hodnotou Null se liší od kontextu poznámky s možnou hodnotou Null. Upozornění je možné povolit i v případě, že nové poznámky jsou zakázané. Kompilátor používá k určení tok statické analýzy **stav s hodnotou null** veškerých odkazů. Stavu null je buď **není null** nebo **možná hodnota null,** při *s možnou hodnotou Null kontext upozornění* není **zakázané**. Pokud že přestoupíte odkaz, když kompilátor zjistil má **možná hodnota null,**, kompilátor zobrazí upozornění. Stav odkazu je **možná hodnota null,** Pokud kompilátor můžete určit jednu z dvě podmínky:
+Kontext upozornění s možnou hodnotou Null se liší od kontextu poznámky s možnou hodnotou Null. Upozornění je možné povolit i v případě, že nové poznámky jsou zakázané. Kompilátor používá k určení tok statické analýzy **stav s hodnotou null** veškerých odkazů. Stavu null je buď **není null** nebo **možná hodnota null,** při *s možnou hodnotou Null kontext upozornění* není **zakázané**. Pokud že přestoupíte odkaz, když kompilátor zjistil má **možná hodnota null,** , kompilátor zobrazí upozornění. Stav odkazu je **možná hodnota null,** Pokud kompilátor můžete určit jednu z dvě podmínky:
 
 1. Proměnná byla jednoznačně přiřazena na nenulovou hodnotu.
 1. Proměnné nebo výrazu po kontrole s hodnotou null před zrušením odkazu.

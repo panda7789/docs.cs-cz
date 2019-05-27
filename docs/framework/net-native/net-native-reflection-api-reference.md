@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d44df3d0869bb1822cf4f509ed3e8b6dc57c57b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 833d31c48220e2d2b5d07ee482325df090714329
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614893"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052422"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
-[!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje tři nové typy výjimek: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), a [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) . Mějte na paměti následující skutečnosti související všechny výjimky tři typy:  
+.NET native zahrnuje tři nové typy výjimek: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), and [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). Mějte na paměti následující skutečnosti související všechny výjimky tři typy:  
   
  Tyto typy jsou pouze pro interní použití.  
- Tyto typy tři výjimek jsou pro použití [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj pouze řetězce. Výjimky jsou vyvolány při [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězce nástrojů rozpozná chybějící data, která neumožňuje pokračovat v provádění programu.  
+ Tyto typy tři výjimek jsou pro použití pouze .NET Native řetězec nástroje. Výjimky jsou vyvolány, když zjistí chybí data, která neumožňuje pokračovat v provádění programu .NET Native řetězec nástroje.  
   
  Ke zpracování těchto výjimek v kódu.  
  Tyto výjimky signalizují, obou těchto metadat, které vaše aplikace vyžaduje chybí ( [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky) nebo že implementační kód vyžadované vaší aplikaci chybí ( [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimka). Opravte tyto podmínky výjimek tak, že upravíte direktivy modulu runtime (. rd.xml) soubor zpřístupnit požadované metadata nebo provádění kódu za běhu. Další informace najdete v tématu [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Jsou k dispozici dva Poradce při potížích, zadejte odpovídající položky k nahrání souboru direktiv modulu runtime, který odstraní [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky:  
@@ -25,10 +25,10 @@ ms.locfileid: "64614893"
 - [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
   
 > [!NOTE]
->  Tento odkaz na dokumenty tři typy výjimek, které jsou jedinečné pro [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Referenční dokumentace pro rozhraní API reflexe .NET Framework core, najdete v článku <xref:System.Reflection>, <xref:System.Reflection.Context> a <xref:System.Reflection.Emit> obory názvů. Referenční dokumentace pro rozhraní API vzájemné spolupráce pro rozhraní .NET Framework core, najdete v části <xref:System.Runtime.InteropServices>.  
+>  Tento odkaz na dokumenty tři typy výjimek, které jsou jedinečné pro .NET Native. Referenční dokumentace pro rozhraní API reflexe .NET Framework core, najdete v článku <xref:System.Reflection>, <xref:System.Reflection.Context> a <xref:System.Reflection.Emit> obory názvů. Referenční dokumentace pro rozhraní API vzájemné spolupráce pro rozhraní .NET Framework core, najdete v části <xref:System.Runtime.InteropServices>.  
   
 ## <a name="systemreflection-namespace"></a>Obor názvů System.Reflection  
- <xref:System.Reflection> Obor názvů obsahuje základní typy použité pro účely reflexe v rozhraní .NET Framework. Pro [!INCLUDE[net_native](../../../includes/net-native-md.md)], zahrnuje také dva nové typy výjimek:  
+ <xref:System.Reflection> Obor názvů obsahuje základní typy použité pro účely reflexe v rozhraní .NET Framework. Pro .NET Native zahrnuje také dva nové typy výjimek:  
   
 |Třída|Popis|  
 |-----------|-----------------|  
@@ -38,7 +38,7 @@ ms.locfileid: "64614893"
  Dokumentaci o ostatních typech v tomto oboru názvů, najdete v článku <xref:System.Reflection> odkazují na stránky v sadě dokumentace rozhraní .NET Framework.  
   
 ## <a name="systemruntimecompilerservices-namespace"></a>System.Runtime.CompilerServices namespace  
- <xref:System.Runtime.CompilerServices> Obor názvů obsahuje typy určený pro uživatele pomocí kompilátorů jazyka. Pro [!INCLUDE[net_native](../../../includes/net-native-md.md)], také zahrnuje nový typ výjimky:  
+ <xref:System.Runtime.CompilerServices> Obor názvů obsahuje typy určený pro uživatele pomocí kompilátorů jazyka. Pro .NET Native také zahrnuje nový typ výjimky:  
   
 |Třída|Popis|  
 |-----------|-----------------|  

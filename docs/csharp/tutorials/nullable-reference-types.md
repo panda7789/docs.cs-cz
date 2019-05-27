@@ -3,12 +3,12 @@ title: Návrh s typy s možnou hodnotou Null odkazů
 description: V tomto kurzu pokročilé obsahuje úvod do typy s možnou hodnotou Null odkazů. Se dozvíte, jak vyjádřit svůj návrh úmyslem při může mít hodnotu null referenční hodnoty a nechat kompilátor vynucovat, když nemohou být null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 97b41574b328c9f6bed60d4bf2943c7a726261d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cd73a73554514c2b7c70c78ba24038ee8d543266
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706166"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195826"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Máte v úmyslu návrhu Express jasněji s typy s možnou hodnotou Null a Null reference
 
@@ -36,15 +36,18 @@ Kód, který napíšete pro tuto ukázku vyjadřuje tohoto záměru a kompiláto
 
 ## <a name="create-the-application-and-enable-nullable-reference-types"></a>Vytvoření aplikace a povolení typy s možnou hodnotou Null odkazů
 
-Vytvořte novou konzolovou aplikaci v sadě Visual Studio nebo z příkazového řádku pomocí `dotnet new console`. Pojmenujte aplikaci `NullableIntroduction`. Po vytvoření aplikace, budete muset povolit C# 8 beta verze funkce. Otevřít `csproj` a přidejte `LangVersion` elementu `PropertyGroup` elementu. Třeba pokud se rozhodnete do **typy s možnou hodnotou Null odkazů** funkce, dokonce i v C# 8 projekty. Důvodem je, že když je tato funkce zapnutá, budou existující deklarace proměnných odkazu **typy neumožňující hodnotu odkazu**. Když toto rozhodnutí se vám umožní najít problémy, kde stávající kód nemusí mít správné zjednodušená kontrola hodnot null, se nemusí přesně odrážet váš původním záměr návrhu. Zapnout funkci tak, že nastavíte `NullableContextOptions` elementu `enable`:
+Vytvořte novou konzolovou aplikaci v sadě Visual Studio nebo z příkazového řádku pomocí `dotnet new console`. Pojmenujte aplikaci `NullableIntroduction`. Po vytvoření aplikace, budete muset povolit C# 8 beta verze funkce. Otevřít `csproj` a přidejte `LangVersion` elementu `PropertyGroup` elementu. Třeba pokud se rozhodnete do **typy s možnou hodnotou Null odkazů** funkce, dokonce i v C# 8 projekty. Důvodem je, že když je tato funkce zapnutá, budou existující deklarace proměnných odkazu **typy neumožňující hodnotu odkazu**. Když toto rozhodnutí se vám umožní najít problémy, kde stávající kód nemusí mít správné zjednodušená kontrola hodnot null, se nemusí přesně odrážet váš původním záměr návrhu. Zapnout funkci tak, že nastavíte `Nullable` elementu `enable`:
 
 ```xml
 <LangVersion>8.0</LangVersion>
-<NullableContextOptions>enable</NullableContextOptions>
+<Nullable>enable</Nullable>
 ```
 
+> [!IMPORTANT]
+> `Nullable` Element se dříve nazýval `NullableContextOptions`. Přejmenování se dodává se sadou Visual Studio. 2019, 16.2 p1. Tato změna nemá žádné 3.0.100-preview5-011568 .NET Core SDK. Pokud používáte rozhraní příkazového řádku .NET Core, budete muset použít `NullableContextOptions` až do další ve verzi preview je k dispozici.
+
 > [!NOTE]
-> Když C# (ne v režimu náhledu), se uvolní 8 `NullableContextOptions` element přidá nové šablony projektu. Dokud to neuděláte budete muset přidat ručně.
+> Když C# (ne v režimu náhledu), se uvolní 8 `Nullable` element přidá nové šablony projektu. Dokud to neuděláte budete muset přidat ručně.
 
 ### <a name="design-the-types-for-the-application"></a>Navrhování typů pro aplikaci
 

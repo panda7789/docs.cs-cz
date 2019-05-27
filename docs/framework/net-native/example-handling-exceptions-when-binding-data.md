@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 25b2117de40bbe7ba36fab028526116fc01ae09b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 137459acc275629bb4608218772ae969e3fcf99a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868517"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052695"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Příklad: Zpracování výjimek při vázání dat
 > [!NOTE]
 >  Toto téma odkazuje na .NET Native Developer Preview, což je předběžná verze softwaru. Preview z si můžete stáhnout [webu Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
   
- Následující příklad ukazuje, jak vyřešit [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimka, která je vyvolána při kompilaci aplikace s [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězce nástrojů se pokusí svázat data. Tady je informace o výjimce:  
+ Následující příklad ukazuje, jak vyřešit [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimku, která je vyvolána, když aplikace kompilována s .NET Native řetězce nástrojů se pokusí svázat data. Tady je informace o výjimce:  
   
 ```  
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:   

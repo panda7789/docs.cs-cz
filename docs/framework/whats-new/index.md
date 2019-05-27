@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 81995d8003a9bb78f6a97ca7eadca94a2136c8a7
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 898771c3de8b54c08decd91f1a631a6205292912
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960015"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053631"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -1858,7 +1858,7 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
      Další informace o těchto změnách najdete v tématu [přenosné knihovny tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
-- Rozhraní .NET Framework obsahu, teď obsahuje dokumentaci pro [!INCLUDE[net_native](../../../includes/net-native-md.md)], což je technologie předkompilace pro sestavování a nasazování aplikací pro Windows. [!INCLUDE[net_native](../../../includes/net-native-md.md)] své aplikace přímo do nativního kódu namísto (IL intermediate language), zkompiluje pro vyšší výkon. Podrobnosti najdete v tématu [kompilování aplikací pomocí .NET Native](../net-native/index.md).
+- Rozhraní .NET Framework obsahu, teď obsahuje dokumentaci pro rozhraní .NET Native, což je technologie předkompilace pro sestavování a nasazování aplikací pro Windows. .NET native své aplikace přímo do nativního kódu namísto (IL intermediate language), zkompiluje pro vyšší výkon. Podrobnosti najdete v tématu [kompilování aplikací pomocí .NET Native](../net-native/index.md).
 
 - [Referenční zdroje rozhraní .NET Framework](https://referencesource.microsoft.com/) poskytuje nové možnosti procházení a vylepšené funkce. Můžete nyní procházet zdrojový kód rozhraní .NET Framework online, [stáhnout odkaz](https://referencesource.microsoft.com/download.html) pro prohlížení v režimu offline a procházení zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v příspěvku na blogu [nový vzhled pro zdroj odkazu .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
 

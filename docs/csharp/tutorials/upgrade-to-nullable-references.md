@@ -3,12 +3,12 @@ title: Návrh s typy s možnou hodnotou Null odkazů
 description: V tomto kurzu pokročilé obsahuje úvod do typy s možnou hodnotou Null odkazů. Se dozvíte, jak vyjádřit svůj návrh úmyslem při může mít hodnotu null referenční hodnoty a nechat kompilátor vynucovat, když nemohou být null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: fac83d8f61b725a4a2163c9cd42911fe60d12263
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 289b864aaa0380a31e93ef223fb5b5780e35892a
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706127"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195837"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: Migrovat existující kód s typy s možnou hodnotou Null odkazů
 
@@ -49,8 +49,11 @@ Upgrade verze jazyka vybere C# 8.0, ale neumožňuje kontext poznámky s možnou
 Dobré dalším krokem je zapnout v kontextu s možnou hodnotou Null poznámky a zobrazit, kolik upozornění. Přidejte následující prvek na oba soubory csproj v řešení, přímo pod `LangVersion` element:
 
 ```xml
-<NullableContextOptions>enable</NullableContextOptions>
+<Nullable>enable</Nullable>
 ```
+
+> [!IMPORTANT]
+> `Nullable` Element se dříve nazýval `NullableContextOptions`. Přejmenování se dodává se sadou Visual Studio. 2019, 16.2 p1. Tato změna nemá žádné 3.0.100-preview5-011568 .NET Core SDK. Pokud používáte rozhraní příkazového řádku .NET Core, budete muset použít `NullableContextOptions` až do další ve verzi preview je k dispozici.
 
 Provést testovací sestavení a Všimněte si, že seznam upozornění. V tomto malou aplikaci kompilátor vygeneruje pět upozornění, tak, aby byl pravděpodobně ponecháte kontextu s možnou hodnotou Null anotace povolená a začít řešit upozornění pro celý projekt.
 
@@ -58,7 +61,7 @@ Strategie je, že funguje pouze pro menší projekty. U větších projektů, po
 
 ## <a name="warnings-help-discover-original-design-intent"></a>Upozornění pomáhají zjistit původní záměr návrhu
 
-Existují dvě třídy, které generují několik upozornění. Začněte `NewsStoryViewModel` třídy. Odeberte `NullableContextOptions` element z obou csproj soubory tak, aby bylo možné omezit obor upozornění na části kódu, kterou pracujete. Otevřít *NewsStoryViewModel.cs* a přidejte následující direktivy umožňující kontext s možnou hodnotou NULL Poznámky `NewsStoryViewModel` a obnovte ji po definici této třídy:
+Existují dvě třídy, které generují několik upozornění. Začněte `NewsStoryViewModel` třídy. Odeberte `Nullable` element z obou csproj soubory tak, aby bylo možné omezit obor upozornění na části kódu, kterou pracujete. Otevřít *NewsStoryViewModel.cs* a přidejte následující direktivy umožňující kontext s možnou hodnotou NULL Poznámky `NewsStoryViewModel` a obnovte ji po definici této třídy:
 
 ```csharp
 #nullable enable

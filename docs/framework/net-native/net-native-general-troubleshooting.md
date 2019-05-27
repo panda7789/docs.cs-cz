@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: ee8c5e17-35ea-48a1-8767-83298caac1e8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6bc5697e20c21d988afe6017d05e0e4de53d40d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca0f093e85a5ac983266ba34f78021d6af6018c0
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614922"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052037"
 ---
 # <a name="net-native-general-troubleshooting"></a>Obecné řešení potíží s .NET Native
-Toto téma popisuje postupy řešení potíží s potenciální problémy, které se mohou vyskytnout při vývoji aplikací s využitím [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
+Toto téma popisuje postup řešení potíží s potenciální problémy, které se mohou vyskytnout při vývoji aplikací pomocí .NET Native.  
   
 - **Problém:** Okno výstup sestavení není správně aktualizovat.  
   
@@ -20,17 +20,17 @@ Toto téma popisuje postupy řešení potíží s potenciální problémy, kter�
   
 - **Problém:** Čas sestavení prodejní vaší aplikace pro ARM zvýšil.  
   
-     **Řešení:** Při nasazení aplikace do zařízení ARM, [!INCLUDE[net_native](../../../includes/net-native-md.md)] infrastruktury je vyvolána. Tato kompilace provádí velké množství optimalizace při zajištění tuto sémantiku nestatické, jako je odraz pokračovat v práci. Kromě toho část aplikace využívá rozhraní .NET Framework je staticky propojena k zajištění optimálního výkonu a musí být kompilovány do nativního kódu i. To je důvod, proč kompilace trvá déle.  
+     **Řešení:** Při nasazení aplikace do zařízení s ARM, je vyvolána .NET Native infrastruktury. Tato kompilace provádí velké množství optimalizace při zajištění tuto sémantiku nestatické, jako je odraz pokračovat v práci. Kromě toho část aplikace využívá rozhraní .NET Framework je staticky propojena k zajištění optimálního výkonu a musí být kompilovány do nativního kódu i. To je důvod, proč kompilace trvá déle.  
   
      Časy kompilace jsou však stále během minuty standardní kompilace pro většinu aplikací na standardní vývojovém počítači.  Právě generování nativních bitových kopií pro rozhraní .NET Framework v počítači vývoje ve standardu obvykle trvá několik minut.  I přes všechny optimalizace pro zlepšení generovaného kódu a pomocí rozhraní .NET Framework včetně doby sestavení aplikace jsou obvykle minutu nebo dvě.  
   
      Pokračujeme v práci na zlepšení výkonu kompilace zjišťováním vícevláknovou kompilaci a další optimalizace.  
   
-- **Problém:** Nevíte, pokud vaše aplikace byla sestavena pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
+- **Problém:** Zatím nevíte, pokud vaše aplikace byla sestavena pomocí .NET Native.  
   
-     **Řešení:** Pokud [!INCLUDE[net_native](../../../includes/net-native-md.md)] compiler je vyvolán, můžete si všimnout delší doby sestavení a Správce úloh se zobrazí různé [!INCLUDE[net_native](../../../includes/net-native-md.md)] komponenty procesy, jako je například ILC.exe a nutc_driver.exe.  
+     **Řešení:** Pokud je vyvolána kompilátoru .NET Native, můžete si všimnout, že delší dobu sestavení a spuštění Správce úloh se zobrazí různé procesy .NET Native komponenty, jako je například ILC.exe a nutc_driver.exe.  
   
-     Po úspěšném sestavení svého projektu pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)], najdete ve výstupu pod obj\\*config*\ *arch* \\  *ProjectName*. ilc\out.  Nativní finálním balíčku obsahu najdete v části bin\\*arch*\\*config*\AppX. Nativní finálním balíčku obsahu jsou v rámci \bin\\*arch*\\*config*\AppX Pokud jste nasadili aplikaci.  
+     Po úspěšném sestavení projektu s .NET Native, najdete ve výstupu pod obj\\*config*\ *arch*\\*projectname*. ilc\out.  Nativní finálním balíčku obsahu najdete v části bin\\*arch*\\*config*\AppX. Nativní finálním balíčku obsahu jsou v rámci \bin\\*arch*\\*config*\AppX Pokud jste nasadili aplikaci.  
   
 - **Problém:** .NET Native kompilací aplikace vyvolává výjimky modulu CLR (obvykle [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky), že ho nevyvolala při zkompilovány bez volby. NET nativní.  
   

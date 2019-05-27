@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a0113ef84c2b3e42f6d14d25747f7fdbb836a212
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed276d8026201af94a0259c4258d5c50fa67c0f3
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026481"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053245"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -141,7 +141,7 @@ Data v kalendářích jsou obvykle rozdělena do období. Ale <xref:System.Glob
 >  Období Reiwa, do nové éry v <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>, začíná 1. května 2019. Tato změna ovlivní všechny aplikace, které používají tyto kalendáře. Zobrazit další informace v následujících článcích:
 > - [Zpracování do nové éry v japonské kalendáře v rozhraní .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), které dokumenty funkcí v rozhraní .NET pro podporu kalendářů a s větší počet období a popisuje osvědčené postupy pro použití při zpracování více období kalendáře.
 > - [Příprava aplikace pro změnu japonské období](/windows/uwp/design/globalizing/japanese-era-change), který poskytuje informace o testování aplikací na Windows k zajištění jejich připravenosti změna éry.
-> - [Souhrnné informace o nové éry japonské aktualizace pro rozhraní .NET Framework](https://support.microsoft.com/en-us/help/4477957/new-japanese-era-updates-for-net-framework), která uvádí seznam aktualizací pro rozhraní .NET Framework pro jednotlivé verze Windows, které souvisejí s novou éru japonský kalendář, poznámky k nové funkce rozhraní .NET Framework pro podporu více období a zahrnuje možná řešení hledejte v testování aplikací.
+> - [Souhrnné informace o nové éry japonské aktualizace pro rozhraní .NET Framework](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), která uvádí seznam aktualizací pro rozhraní .NET Framework pro jednotlivé verze Windows, které souvisejí s novou éru japonský kalendář, poznámky k nové funkce rozhraní .NET Framework pro podporu více období a zahrnuje možná řešení hledejte v testování aplikací.
 
 Období v většiny kalendáře označuje extrémně dlouhé časové období. V gregoriánském kalendáři například aktuálního období zahrnuje více než dva tisíciletí. Pro <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>dvě kalendáře, které podporují větší počet období, to není případ. Období odpovídá období císaře. Podpora pro větší počet období, zejména pokud horní limit počtu aktuálního období neznámý, představuje zvláštní problémy. 
 
@@ -243,7 +243,7 @@ Pokud volný rozsah kontroly nežádoucí, můžete obnovit rozsah striktní kon
    |  |  |
    |--|--|
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Název | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
+   |Name | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
    |Type | REG_SZ |
    |Value | 1 |
 
@@ -318,7 +318,7 @@ Pokud toto chování nežádoucí v operacích formátování, můžete obnovit 
    |  |  |
    |--|--|
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Název | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
+   |Name | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
    |Type | REG_SZ |
    |Value | 1 |
 
@@ -356,7 +356,7 @@ Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
    |  |  |
    |--|--|  
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Název | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
+   |Name | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
    |Type | REG_SZ |
    |Value | 1 | 
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - printing [Windows Forms], creating print jobs
 - printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-ms.openlocfilehash: 816da93218e20f73f16c14769ed1a549dd3d8eb3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 96122302610d143c34404eac105ca9794b1cb15a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937654"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053675"
 ---
 # <a name="how-to-create-standard-windows-forms-print-jobs"></a>Postupy: Vytváření standardních tiskových úloh v modelu Windows Forms
 Je základem pro tisk ve Windows Forms <xref:System.Drawing.Printing.PrintDocument> komponenty – přesněji řečeno <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí. Napsáním kódu pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí, můžete určit, co se má tisknout a jak ho vytisknout.  
@@ -55,7 +55,7 @@ Je základem pro tisk ve Windows Forms <xref:System.Drawing.Printing.PrintDocume
        }  
     ```  
   
-     (Visual C# a [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C# a vizuální C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.printDocument1.PrintPage += new  

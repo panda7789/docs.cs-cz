@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: efd4ee8d-6edd-47ec-88e4-4a4759bd2384
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 961b3c852f60a0917707bef07d4e26fc4215acca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dce6bf9cb9872183e60e6ccdf7eaf79b6630db51
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012552"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053699"
 ---
 # <a name="printpreviewdialog-control-overview-windows-forms"></a>Printpreviewdialog – Přehled ovládacího prvku (Windows Forms)
 
@@ -23,7 +23,7 @@ Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek je
 
 Klíčová vlastnost ovládacího prvku je <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A>, který nastaví dokumentu, který má být zobrazen. Dokument musí být <xref:System.Drawing.Printing.PrintDocument> objektu. Aby bylo možné zobrazit dialogové okno, je nutné volat jeho <xref:System.Windows.Forms.Form.ShowDialog%2A> metoda. Vyhlazení může zvýšit zobrazí hladší text, ale také může být pomalejší; zobrazení Chcete-li použít, nastavte <xref:System.Windows.Forms.PrintPreviewDialog.UseAntiAlias%2A> vlastnost `true`.
 
-Některé vlastnosti jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl> , který <xref:System.Windows.Forms.PrintPreviewDialog> obsahuje. (Není potřeba tento <xref:System.Windows.Forms.PrintPreviewControl> pro formuláře; je automaticky obsažené v rámci <xref:System.Windows.Forms.PrintPreviewDialog> po přidání dialogového okna do formuláře.) Příkladem vlastnosti, které jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl> jsou <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> a <xref:System.Windows.Forms.PrintPreviewControl.Rows%2A> vlastnosti, které určují počet stránek zobrazených vodorovně a svisle na ovládacím prvku. Můžete přistupovat <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> vlastnost jako `PrintPreviewDialog1.PrintPreviewControl.Columns` v jazyce Visual Basic `printPreviewDialog1.PrintPreviewControl.Columns` ve Vizuálu C#, nebo `printPreviewDialog1->PrintPreviewControl->Columns` v [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)].
+Některé vlastnosti jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl> , který <xref:System.Windows.Forms.PrintPreviewDialog> obsahuje. (Není potřeba tento <xref:System.Windows.Forms.PrintPreviewControl> pro formuláře; je automaticky obsažené v rámci <xref:System.Windows.Forms.PrintPreviewDialog> po přidání dialogového okna do formuláře.) Příkladem vlastnosti, které jsou k dispozici prostřednictvím <xref:System.Windows.Forms.PrintPreviewControl> jsou <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> a <xref:System.Windows.Forms.PrintPreviewControl.Rows%2A> vlastnosti, které určují počet stránek zobrazených vodorovně a svisle na ovládacím prvku. Můžete přistupovat <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> vlastnost jako `PrintPreviewDialog1.PrintPreviewControl.Columns` v jazyce Visual Basic `printPreviewDialog1.PrintPreviewControl.Columns` ve Vizuálu C#, nebo `printPreviewDialog1->PrintPreviewControl->Columns` ve Vizuálu C++.
 
 ## <a name="printpreviewdialog-performance"></a>Printpreviewdialog – výkon
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: cfe3b413506aa1383bbdaa9a89ffe42e3724a4a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 589bb205b10a5b7b0c4480393b8937e0df36022f
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61679229"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052400"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -28,7 +28,7 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
 >  [Common Language Runtime](../../../standard/clr.md) (CLR) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo rámec platformy CLR obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, bez použití mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení v rozhraní .NET](../../../standard/security/index.md).  
   
 ## <a name="c-interop"></a>interoperabilita C++  
- Interoperabilita C++, označované také jako ho právě funguje (IJW), můžete použít k zabalení nativních tříd jazyka C++, takže mohou být spotřebovány kód, který se vytváří v jazyce C# nebo jiný jazyk rozhraní .NET Framework. K tomuto účelu můžete psát kód C++ zalomení nativní knihovnu DLL nebo klasické komponenty COM. Na rozdíl od jiných jazycích rozhraní .NET Framework [!INCLUDE[vcprvc](~/includes/vcprvc-md.md)] má interoperability podporu, která umožňuje spravovaného a nespravovaného kódu budou umístěné ve stejné aplikaci a dokonce i ve stejném souboru. Potom sestavíte kódu jazyka C++ s použitím **/CLR** přepínače kompilátoru pro vytvoření spravované sestavení. Nakonec přidejte odkaz na sestavení v projektu C# a použít zabalenou objektů, stejně jako ostatní spravované třídy.  
+ Interoperabilita C++, označované také jako ho právě funguje (IJW), můžete použít k zabalení nativních tříd jazyka C++, takže mohou být spotřebovány kód, který se vytváří v jazyce C# nebo jiný jazyk rozhraní .NET Framework. K tomuto účelu můžete psát kód C++ zalomení nativní knihovnu DLL nebo klasické komponenty COM. Na rozdíl od jiných jazycích rozhraní .NET Framework, vizuál C++ má interoperability podporu, která umožňuje spravovaného a nespravovaného kódu budou umístěné ve stejné aplikaci a dokonce i ve stejném souboru. Potom sestavíte kódu jazyka C++ s použitím **/CLR** přepínače kompilátoru pro vytvoření spravované sestavení. Nakonec přidejte odkaz na sestavení v projektu C# a použít zabalenou objektů, stejně jako ostatní spravované třídy.  
   
 ## <a name="exposing-com-components-to-c"></a>Vystavení komponent COM pro C\#
  Můžete využívat komponenty modelu COM z projektu v jazyce C#. Obecné kroky jsou následující:  

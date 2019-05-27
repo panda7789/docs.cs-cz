@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b466b27925b41823ce3f6537782f3bd6201d5af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 39d0066185703ebac7609d506c834b7718693d33
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868510"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052630"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 
-Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stávající aplikace pro Windows Store, můžete použít stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte podle těchto kroků:
+Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stávající aplikace pro Windows Store, můžete použít stejnou sadu postupy. K vytvoření aplikace pro .NET Native, postupujte podle těchto kroků:
 
 1. [Vývoj aplikace pro univerzální platformu Windows (UPW), který cílí na Windows 10](#Step1)a testování, ladění sestavení vaší aplikace k zajištění, že bude fungovat správně.
 
@@ -24,7 +24,7 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
 4. [Ruční vyřešení chybějí metadata](#Step4)a opakujte [kroku 3](#Step3) dokud nebudou vyřešeny všechny problémy.
 
 > [!NOTE]
-> Pokud migrujete stávající aplikace pro Windows Store [!INCLUDE[net_native](../../../includes/net-native-md.md)], nezapomeňte si přečíst [migrace Windows Store aplikace pro .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).
+> Pokud migrujete stávající aplikace pro Windows Store do .NET Native, nezapomeňte zkontrolovat [migrace Windows Store aplikace pro .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).
 
 <a name="Step1"></a>
 
@@ -36,12 +36,12 @@ Ať už vyvíjíte novou aplikaci nebo migraci stávající, opakujte stejný po
 
 2. Všimněte si, že existují některé problémy s kompatibilitou mezi kompilace projektů aplikací pro UPW s .NET Native řetězec nástrojů a bez něj. Odkazovat [Průvodce migrací](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) Další informace.
 
-Teď můžete psát kód jazyka C# nebo Visual Basic [!INCLUDE[net_native](../../../includes/net-native-md.md)] plocha, který běží v místním systému (nebo v simulátoru).
+Teď můžete psát C# nebo kódu jazyka Visual Basic s .NET Native plochy, na kterém běží v místním systému (nebo v simulátoru).
 
 > [!IMPORTANT]
 > Při vývoji vaší aplikace, mějte na paměti jakékoli použití serializaci nebo reflexi ve vašem kódu.
 
-Ve výchozím nastavení, sestavení pro ladění byly zkompilovány JIT umožňuje rychlé nasazení F5, zatímco verze sestavení jsou kompilovány pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] předkompilační technologie. To znamená, že by měl sestavení a testování ladění sestavení vaší aplikace k zajištění, že fungují normálně před kompilací s .NET Native řetězec nástroje.
+Ve výchozím nastavení ladění buildy jsou o zkompilovaný pomocí kompilátoru JIT umožňuje rychlé nasazení F5, zatímco verze sestavení jsou kompilovány pomocí .NET Native předkompilační technologie. To znamená, že by měl sestavení a testování ladění sestavení vaší aplikace k zajištění, že fungují normálně před kompilací s .NET Native řetězec nástroje.
 
 <a name="Step2"></a>
 
@@ -85,13 +85,13 @@ Po aktualizaci souboru direktiv modulu runtime, můžete znovu sestavit a nasadi
 
 Pokud vaše aplikace nebude fungovat správně (zejména v případech, kdy vyvolá [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) výjimky za běhu), postupujte podle pokynů v následujících části [krok 4: Ruční vyřešení chybějí metadata](#Step4). Povolení výjimkách first-chance vám mohou pomoci najít tyto chyby.
 
-Pokud jste otestovali a ladit ladění sestavení vaší aplikace a Věříme, že jste odstranili [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) výjimky, měli byste otestovat aplikace jako optimalizované [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace. K tomuto účelu změnit konfiguraci aktivního projektu z **ladění** k **vydání**.
+Pokud jste otestovali a ladit ladění sestavení vaší aplikace a Věříme, že jste odstranili [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) výjimky, měli byste otestovat aplikace jako optimalizované aplikace .NET Native. K tomuto účelu změnit konfiguraci aktivního projektu z **ladění** k **vydání**.
 
 <a name="Step4"></a>
 
 ## <a name="step-4-manually-resolve-missing-metadata"></a>Krok 4: Ruční vyřešení chybějí metadata
 
-Nejčastější chyby můžete setkat s [!INCLUDE[net_native](../../../includes/net-native-md.md)] není narazíte na ploše je modul runtime [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), nebo [ MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky. V některých případech neexistence metadat může projevit v nepředvídatelné chování nebo dokonce i chyby aplikace. Tato část popisuje, jak můžete ladit a li tyto výjimky vyřešit přidáním direktivy do souboru direktiv modulu runtime. Informace o formátu direktivy modulu runtime naleznete v tématu [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Po přidání direktivy modulu runtime, měli byste [nasazení a testování vaší aplikace](#Step3) znovu a vyřešte všechny nové [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky, dokud narazíte na žádné další výjimky.
+Nejčastější chyby můžete setkat s .NET Native, který není narazíte na ploše je modul runtime [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), nebo [ MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky. V některých případech neexistence metadat může projevit v nepředvídatelné chování nebo dokonce i chyby aplikace. Tato část popisuje, jak můžete ladit a li tyto výjimky vyřešit přidáním direktivy do souboru direktiv modulu runtime. Informace o formátu direktivy modulu runtime naleznete v tématu [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Po přidání direktivy modulu runtime, měli byste [nasazení a testování vaší aplikace](#Step3) znovu a vyřešte všechny nové [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky, dokud narazíte na žádné další výjimky.
 
 > [!TIP]
 > Zadejte direktivy modulu runtime na vysoké úrovni aplikace chcete být odolní vůči změny kódu.  Doporučujeme přidat direktivy modulu runtime na úrovni oboru názvů a typ a nikoli na úrovni člena. Všimněte si, že může být kompromis mezi větší binární soubory s delší dobu potřebnou ke kompilaci a odolnosti.
@@ -113,7 +113,7 @@ Při adresování chybějící výjimka metadata, zvažte tyto problémy:
   - Kód volá metodu, která závisí na reflexi, pokud některé lepší alternativou je k dispozici?
 
 > [!NOTE]
-> Další informace o zpracování problémy, které vyplývají z rozdíly v reflexi a dostupnost metadat v aplikacích klasické pracovní plochy a [!INCLUDE[net_native](../../../includes/net-native-md.md)], naleznete v tématu [rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).
+> Další informace o manipulaci s problémy, které vyplývají z rozdíly v reflexi a dostupnost metadat v aplikacích klasické pracovní plochy a .NET Native najdete v tématu [rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).
 
 Některé konkrétní příklady zpracování výjimek a další problémy, ke kterým dochází při testování vaší aplikace naleznete v tématu:
 

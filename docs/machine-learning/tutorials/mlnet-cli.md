@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 2679df0317fede9fa5f3885831c65bd87a14981a
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 029685be9d44ad947d4291912d7da1d8ce73d52a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960390"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053649"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Automaticky generovat binární klasifikátor pomocí rozhraní příkazového řádku
 
@@ -242,7 +242,7 @@ Pro další pokročilé výukové účely, můžete si taky prostudovat generova
 
 Důležitější je pro tento konkrétní scénář (modelů analýza mínění) můžete také porovnat, že kód vygenerovaný školení s kódem je popsáno v následujícím kurzu:
 
-- Porovnání: [Kurz: Použít ve scénáři binární klasifikace analýzy subjektivního hodnocení ML.NET](https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/sentiment-analysis).
+- Porovnání: [Kurz: Použít ve scénáři binární klasifikace analýzy subjektivního hodnocení ML.NET](sentiment-analysis.md).
 
 To je zajímavé k porovnání zvolené konfigurace algoritmus a kanál v tomto kurzu se kód vygenerovaný pomocí nástroje příkazového řádku. V závislosti na tom, kolik času trávíte iterace a vyhledávání pro lepší modely mohou být odlišná spolu s jeho konkrétním hyperparametry a konfigurace kanálu zvolený algoritmus.
 

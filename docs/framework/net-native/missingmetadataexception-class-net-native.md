@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 ms.assetid: 408f25c4-6d60-475c-92b1-7b52b777c6db
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2961a4c02d8ffe17055307094f56a03680d1a59a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 079718c96a4818285c0b469da9f23213a6915c19
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866972"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052509"
 ---
 # <a name="missingmetadataexception-class-net-native"></a>Třída MissingMetadataException (.NET Native)
 
-**.NET pro aplikace pro Windows pro Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] pouze**
+**.NET pro aplikace pro Windows pro Windows 10, jenom .NET Native**
 
 Výjimka, která je vyvolána při reflexi slouží k načtení metadat, která není k dispozici.
 
 **Namespace:** System.Reflection
 
 > [!IMPORTANT]
-> `MissingMetadataException` Třídy je určený výhradně pro interní použití rozhraním [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Není určena pro použití v kódu třetí strany ani by měl zpracování výjimek v kódu aplikace. Místo toho odstranit výjimky tak, že přidáte položky do vašich [soubor direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.
+> `MissingMetadataException` Třídy je určen pouze pro interní použití .NET Native řetězec nástroje. Není určena pro použití v kódu třetí strany ani by měl zpracování výjimek v kódu aplikace. Místo toho odstranit výjimky tak, že přidáte položky do vašich [soubor direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,8 +34,8 @@ Všimněte si, že `MissingMetadataException` třída odvozena z <xref:System.Ty
 
 |Konstruktor|Popis|
 |-----------------|-----------------|
-|`public MissingMetadataException()`|Inicializuje novou instanci třídy `MissingMetadataException` pomocí zprávy poskytnuté systémem, popisující chybu.<br /><br /> Tento konstruktor je pro interní použití rozhraním [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj pouze řetězce.|
-|`public MissingMetadataException(String message)`|Inicializuje novou instanci třídy `MissingMetadataException` třídy pomocí zadané chybové zprávy.<br /><br /> Tento konstruktor je pro interní použití rozhraním [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj pouze řetězce.|
+|`public MissingMetadataException()`|Inicializuje novou instanci třídy `MissingMetadataException` pomocí zprávy poskytnuté systémem, popisující chybu.<br /><br /> Tento konstruktor je pro interní použití rozhraním pouze .NET Native řetězec nástroje.|
+|`public MissingMetadataException(String message)`|Inicializuje novou instanci třídy `MissingMetadataException` třídy pomocí zadané chybové zprávy.<br /><br /> Tento konstruktor je pro interní použití rozhraním pouze .NET Native řetězec nástroje.|
 
 ## <a name="properties"></a>Vlastnosti
 

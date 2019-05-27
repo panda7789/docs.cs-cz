@@ -2,12 +2,12 @@
 title: Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 description: Seznamte se nabídky společnosti Microsoft pro podporu životního cyklu aplikace Dockeru.
 ms.date: 02/15/2019
-ms.openlocfilehash: 9e7e821370b98fbda9af0ea69c13eaeab2f35acf
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 6907528a5d7ff354a312e7575531b9c608cb479f
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644909"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195600"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
 
@@ -27,8 +27,8 @@ Tabulka 3-1 ukazuje, že záměr Microsoft DevOps pro kontejnerizované aplikace
 
 | Hostitel | Technologie společnosti Microsoft | Třetí strany, modulární Azure |
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
-| Platforma pro aplikace Dockeru   | • Microsoft Visual Studio a Visual Studio Code<br /> • .NET<br /> • Microsoft Azure Container Service<br /> • Azure Service Fabric<br /> • Azure Container Registry<br /> | • Libovolný editor kódu (například Sublime)<br /> • Libovolný jazyk (Node.js, Java, Go, atd.)<br /> • Všechny nástroje orchestrator a Plánovač<br /> • Jakýkoli registr Dockeru<br /> |
-| DevOps pro aplikace Dockeru     | • Služby azure DevOps<br /> • Microsoft Team Foundation Server<br /> • Azure Container Service<br /> • Azure Service Fabric<br /> | • Githubu, Git, Subversion, atd.<br /> • Jenkinse, Chef, Puppet, rychlost, CircleCI, travis ci, atd.<br /> • V místním datovém centru Dockeru, Docker Swarm, Mesos DC/OS, Kubernetes, atd.<br /> |
+| Platforma pro aplikace Dockeru   | • Microsoft Visual Studio a Visual Studio Code<br /> • .NET<br /> • Microsoft Azure Kubernetes Service (AKS)<br /> • Azure Service Fabric<br /> • Azure Container Registry<br /> | • Libovolný editor kódu (například Sublime)<br /> • Libovolný jazyk (Node.js, Java, Go, atd.)<br /> • Všechny nástroje orchestrator a Plánovač<br /> • Jakýkoli registr Dockeru<br /> |
+| DevOps pro aplikace Dockeru     | • Služby azure DevOps<br /> • Microsoft Team Foundation Server<br /> • Azure Kubernetes Service (AKS)<br /> • Azure Service Fabric<br /> | • Githubu, Git, Subversion, atd.<br /> • Jenkinse, Chef, Puppet, rychlost, CircleCI, travis ci, atd.<br /> • V místním datovém centru Dockeru, Docker Swarm, Mesos DC/OS, Kubernetes, atd.<br /> |
 | Monitorování a Správa  | Monitorování • azure | • Marathon, Chronos, atd.<br />|
 
 Microsoft platformu a nástroje pro kontejnerizované aplikace Dockeru, jak je definováno v tabulce 3-1, zahrnuje následující součásti:
@@ -37,7 +37,7 @@ Microsoft platformu a nástroje pro kontejnerizované aplikace Dockeru, jak je d
 
 - **DevOps pro aplikace Dockeru** vývojáře vytvářející aplikace Docker můžete použít [Azure DevOps služby](https://azure.microsoft.com/services/devops/) a všechny ostatní třetích stran produkty, jako je Jenkins, k sestavení životního cyklu komplexní automatické aplikaci Správa (aplikací ALM).
 
-  Azure DevOps Services umožňuje vývojářům vytvářet zaměřené na kontejner řídit vývoj a provoz pro rychlý a iterativní proces, který obsahuje zdrojový kód z libovolného místa (Azure DevOps služby-Git, GitHub, žádné vzdálené úložiště Git nebo Subversion), kontinuální integrace (CI) , interní jednotkové testy, testy container mezi, služba integrace, průběžné doručování (CD) a produktu release management (SV). Vývojáři taky můžete automatizovat verzí jejich Docker aplikace do Azure Container Service, od vývoje do přípravného a produkčního prostředí.
+  Azure DevOps Services umožňuje vývojářům vytvářet zaměřené na kontejner řídit vývoj a provoz pro rychlý a iterativní proces, který obsahuje zdrojový kód z libovolného místa (Azure DevOps služby-Git, GitHub, žádné vzdálené úložiště Git nebo Subversion), kontinuální integrace (CI) , interní jednotkové testy, testy container mezi, služba integrace, průběžné doručování (CD) a produktu release management (SV). Vývojáři taky můžete automatizovat jejich vydáním aplikace Dockeru do Azure Kubernetes Service (AKS), od vývoje do přípravného a produkčního prostředí.
 
 - **Správa a monitorování** IT můžete spravovat a monitorovat aplikace v produkčním prostředí a služeb několika způsoby integrace obou perspektivy v sjednocené prostředí.
 

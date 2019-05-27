@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a92e6627ba937b10b183a833a005792f0a51f921
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d5541cc34f8967916e4896fd5f9be82edcb332f
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033121"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051998"
 ---
 # <a name="type-element-net-native"></a>\<Typ > – Element (.NET Native)
 Použije zásady modulu runtime určitého typu, jako je například třídy nebo struktury.  
@@ -45,9 +45,9 @@ Použije zásady modulu runtime určitého typu, jako je například třídy neb
 |`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
 |`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
 |`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typů hodnot do nativního kódu.|  
+|`MarshalObject`|Zprostředkovatel komunikace|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace|Nepovinný atribut. Určuje zásady pro zařazování typů hodnot do nativního kódu.|  
   
 ## <a name="name-attribute"></a>Název atributu  
   
@@ -57,7 +57,7 @@ Použije zásady modulu runtime určitého typu, jako je například třídy neb
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -102,7 +102,7 @@ Použije zásady modulu runtime určitého typu, jako je například třídy neb
   
  [!code-csharp[ProjectN_Reflection#3](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/browsegenerictype1.cs#3)]  
   
- Protože metadata pro <xref:System.Collections.Generic.List%601> třída není součástí automaticky [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězce nástrojů příkladu dojde k chybě zobrazíte informace o požadované členské v době běhu. Chcete-li zadat potřebná metadata, přidejte následující `<Type>` element do souboru direktiv modulu runtime. Všimněte si, že vzhledem k tomu, že poskytujeme nadřazený [< Namespace\> ](../../../docs/framework/net-native/namespace-element-net-native.md) elementu, nemusíme poskytovat plně kvalifikovaného názvu v `<Type>` elementu.  
+ Protože metadata pro <xref:System.Collections.Generic.List%601> třída není automaticky zahrnuta v .NET Native řetězce nástrojů, příkladu dojde k chybě zobrazíte informace o požadované členské v době běhu. Chcete-li zadat potřebná metadata, přidejte následující `<Type>` element do souboru direktiv modulu runtime. Všimněte si, že vzhledem k tomu, že poskytujeme nadřazený [< Namespace\> ](../../../docs/framework/net-native/namespace-element-net-native.md) elementu, nemusíme poskytovat plně kvalifikovaného názvu v `<Type>` elementu.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -120,7 +120,7 @@ Použije zásady modulu runtime určitého typu, jako je například třídy neb
   
  [!code-csharp[ProjectN_Reflection#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/propertyinfo1.cs#1)]  
   
- Protože metadata pro <xref:System.String> objektu není k dispozici, volání <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> vyvolá metoda výjimku <xref:System.NullReferenceException> výjimka za běhu čas při kompilaci s [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Chcete-li eliminovat výjimku a poskytněte metadata, která nezbytné, přidejte následující `<Type>` element do souboru direktiv modulu runtime:  
+ Protože metadata pro <xref:System.String> objektu není k dispozici, volání <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> vyvolá metoda výjimku <xref:System.NullReferenceException> výjimka za běhu čas při kompilaci s .NET Native řetězec nástroje. Chcete-li eliminovat výjimku a poskytněte metadata, která nezbytné, přidejte následující `<Type>` element do souboru direktiv modulu runtime:  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

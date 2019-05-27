@@ -2,12 +2,12 @@
 title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 description: Přečtěte si postup, "Vnější smyčka" pracovní postup DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: 194786a90fc02801211c7614eb632392d67f0109
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e7a82d2e5a5d503e5efbe9ac8242b163baab1286
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641053"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195622"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 
@@ -152,7 +152,7 @@ Podívejme se nejprve sledovat bez komplexní scénář: nasazení do jednoduch�
 
 **Obrázek 5 a 6**. Nasazení kontejnerů aplikací jednoduché registru prostředí hostitele Docker
 
-Obrázek 5 – 7 ukazuje, jak připojit vaše sestavení CI pro kontrolu kvality a testovacích prostředí pomocí služby Azure DevOps kliknutím Docker Compose v dialogovém okně Přidat úkol. Ale při nasazení v přípravném nebo produkčním prostředí, obvykle použijete funkcím nástroje Release Management zpracování více prostředí (procesu kontroly kvality, jako jsou přípravným a produkčním prostředím). Pokud nasazujete na jednoho hostitele Docker, je pomocí služby Azure DevOps úkolu "Docker Compose" (což je vyvolání `docker-compose up` příkaz pod pokličkou). Pokud nasazení provádíte do služby Azure Container Service, používá úlohy nasazení prostředí Docker, jak je vysvětleno v následující části.
+Obrázek 5 – 7 ukazuje, jak připojit vaše sestavení CI pro kontrolu kvality a testovacích prostředí pomocí služby Azure DevOps kliknutím Docker Compose v dialogovém okně Přidat úkol. Ale při nasazení v přípravném nebo produkčním prostředí, obvykle použijete funkcím nástroje Release Management zpracování více prostředí (procesu kontroly kvality, jako jsou přípravným a produkčním prostředím). Pokud nasazujete na jednoho hostitele Docker, je pomocí služby Azure DevOps úkolu "Docker Compose" (což je vyvolání `docker-compose up` příkaz pod pokličkou). Pokud nasazujete do Azure Kubernetes Service (AKS), používá úlohy nasazení prostředí Docker, jak je vysvětleno v následující části.
 
 ![Zobrazení prohlížeče s přidávat úkoly Docker Compose.](./media/image7.png)
 
@@ -186,15 +186,15 @@ Z hlediska CD a služeb Azure DevOps konkrétně, můžete spustit úlohy speci�
 
 Na začátku při nasazování do některých clusterů nebo orchestrátorů, obvykle použijete mechanismy jednotlivých orchestrátorů (to znamená, Kubernetes a mějte připravené mechanismy jiného nasazení, Service Fabric) a skriptů pro konkrétní nasazení místo jednodušší a snadným ovládáním `docker-compose` na základě nástroj `docker-compose.yml` definičního souboru. Ale díky Azure DevOps služby Docker nasazení úloh zobrazí obrázek 5 až 10 nyní také můžete nasadit podporovaných orchestrátorů pouze pomocí vaší známý `docker-compose.yml` souboru vzhledem k tomu, že nástroj provádí tento "překlad" (z vašeho `docker-compose.yml`soubor do formátu vyžadované orchestrator).
 
-![Úloha nasazení zobrazit v prohlížeči z katalogu úloh v Azure DevOps, zobrazuje Dockeru.](./media/image10.png)
+![Zobrazit v prohlížeči z katalogu úloh v Azure DevOps, zobrazuje nasazení Kubernetes úkolu.](./media/add-deploy-to-kubernetes-task.png)
 
-**Obrázek 5 až 10**. Přidání úlohy nasazení Dockeru na váš správce prostředků prostředí
+**Obrázek 5 až 10**. Přidání nasazení Kubernetes úkolu do vašeho prostředí
 
-Obrázek 5 – 11 předvádí, jak můžete upravit úkol nasadit Docker a zadat typ cíle (Azure Container Service DC/OS, v tomto případě), váš soubor Docker Compose a připojení k registru Dockeru (jako je Azure Container Registry nebo Docker Hubu). Toto je úloha, která načte připravené k použití imagí vlastní Dockeru umožňující nasadit ho jako kontejnery v clusteru.
+Obrázek 5 – 11 ukazuje, jak můžete upravit nasazení Kubernetes úkolu s oddíly, které jsou k dispozici pro konfiguraci. Toto je úloha, která načte připravené k použití imagí vlastní Dockeru umožňující nasadit ho jako kontejnery v clusteru.
 
-![Zobrazení prohlížeče s Azure DevOps, nasaďte do definice úlohy nástroje orchestrator.](./media/image11.png)
+![Zobrazení prohlížeče s Azure DevOps, nasaďte do definice úlohy Kubernetes.](./media/edit-deploy-to-kubernetes-task.png)
 
-**Obrázek 5 – 11**. Docker nasazení úloh definici nasazení Azure Container Service DC/OS
+**Obrázek 5 – 11**. Docker nasazení úloh definici nasazení do ACS DC/OS
 
 > [! Informace o] Další informace o kanálu CD se službami Azure DevOps a Docker, navštivte <https://azure.microsoft.com/services/devops/pipelines>
 

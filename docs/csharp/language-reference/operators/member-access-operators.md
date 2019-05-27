@@ -17,6 +17,7 @@ helpviewer_keywords:
 - indexer operator [C#]
 - '[] operator [C#]'
 - null-conditional operators [C#]
+- Elvis operator [C#]
 - ?. operator [C#]
 - ?[] operator [C#]
 - invocation operator [C#]
@@ -24,12 +25,12 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: a76c2855196b229918ee0a6a7d2a4dc66d87d059
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: eec70f5446eec11fa4e241b86eed4ed8d6146f85
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881046"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195783"
 ---
 # <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# odkaz)
 
@@ -99,7 +100,7 @@ void TraceMethod() {}
 
 ## <a name="null-conditional-operators--and-"></a>Podmíněné operátory s Null?. a? []
 
-K dispozici v C# 6 nebo novější, platí null podmíněného operátoru přístupu ke členu `?.`, nebo přístup k prvkům `?[]`, operace svého operandu pouze v případě, že operand vyhodnocen jako jinou hodnotu než null. Pokud je operand vyhodnocen jako `null`, je výsledek použití operátoru `null`.
+K dispozici v C# 6 nebo novější, platí null podmíněného operátoru přístupu ke členu `?.`, nebo přístup k prvkům `?[]`, operace svého operandu pouze v případě, že operand vyhodnocen jako jinou hodnotu než null. Pokud je operand vyhodnocen jako `null`, je výsledek použití operátoru `null`. Operátor přístupu členů null podmíněných `?.` se také označuje jako operátor Elvis.
 
 Podmíněné operátory s null jsou short-circuiting. To znamená, pokud jedna operace v řetězci Podmíněný člen nebo element přístup operace vrátí `null`, neprovede zbytek řetězce. V následujícím příkladu `B` není vyhodnocen, pokud `A` vyhodnotí jako `null` a `C` není vyhodnocen, pokud `A` nebo `B` vyhodnotí jako `null`:
 

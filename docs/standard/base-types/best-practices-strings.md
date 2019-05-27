@@ -21,12 +21,12 @@ ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 0f7c390d2ad7233475786e795fef0290af545145
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 82fdcae2887cf5a3428a0c874b43d9770f35afcf
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634747"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052999"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 <a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo specifické jazykové verze při provádění běžných operací, jako je například řazení a zobrazení řetězce. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například by řetězců, které se používají interně aplikace obvykle zpracovává stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězec dat, jako jsou XML značky HTML značky, uživatelská jména, cesty k souborům a názvy systémové objekty, jsou interpretovány, jako by byly zohledňující jazykovou verzi, v souladu s drobné chyby, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
@@ -125,7 +125,7 @@ ms.locfileid: "64634747"
  Porovnání řetězců je srdcem mnoho řetězec operací souvisejících se zabezpečením, zejména řazení a testování rovnosti. Řazení řetězců v určeném pořadí: Pokud se "my" před "string" v seřazený seznam řetězců, "my" musí porovnat menší než nebo rovno "string". Kromě toho porovnání implicitně definuje rovnosti. Operace porovnání vrátí hodnotu 0 pro řetězce, které považuje za stejné. Dobré výkladu je, že žádný řetězec není menší než ten druhý. Smysluplných operací zahrnujících řetězce obsahuje jedno nebo obě z následujících postupů: Výsledkem porovnání s jiným řetězcem a provádění operace jasně definované řazení.  
 
 > [!NOTE]
-> Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), nejnovější verze tabulky váhy řazení pro systémy Linux a macOS. Konkrétní verze tabulky váhy řazení v Linuxu a macOS závisí na verzi [mezinárodní součásti pro kódování Unicode](http://site.icu-project.org/) knihovny nainstalované v systému. Informace o verzích ICU a Unicode verze, které implementují najdete v tématu [stahování ICU](http://site.icu-project.org/download).
+> Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), nejnovější verze tabulky váhy řazení pro systémy Linux a macOS. Konkrétní verze tabulky váhy řazení v Linuxu a macOS závisí na verzi [mezinárodní součásti pro kódování Unicode](http://site.icu-project.org/) knihovny nainstalované v systému. Informace o verzích ICU a Unicode verze, které implementují najdete v tématu [stahování ICU](http://site.icu-project.org/download).
 
  Však vaše rozhodnutí vyzkoušet dva řetězce pro rovnost nebo pořadí řazení nevydává jeden správný výsledek. Výsledek závisí na kritéria použitá pro porovnání řetězců. Zejména porovnávání řetězců, které jsou podle pořadového čísla nebo které jsou založeny malých a velkých písmen a řazení konvence aktuální jazykové verze nebo neutrální jazykové verze (národní prostředí bez ohledu na jazykovou verzi na základě v anglickém jazyce) mohou mít různé výsledky.  
 

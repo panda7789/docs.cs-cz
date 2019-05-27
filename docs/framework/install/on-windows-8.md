@@ -5,12 +5,12 @@ description: Informace o instalaci rozhraní .NET Framework v systému Windows 8
 author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: 9f3d3aa35e69ab850ca6d6f564796fe43c65fbd1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 27a5c46a711914b32f8c934a33f5897d8ad7a6b8
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643787"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052701"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Instalace rozhraní .NET Framework v systému Windows 8 a Windows Server 2012
 
@@ -18,7 +18,7 @@ Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Je podporován v systému Windows Server 2012, ale není podporován v systému Windows 8. Je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update)).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Je podporován v systému Windows Server 2012, ale není podporován v systému Windows 8. Je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/help/4028685/windows-10-get-the-update)).
 
 ## <a name="net-framework-48"></a>.NET Framework 4.8
 
@@ -31,7 +31,7 @@ Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které po
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 
-[Rozhraní .NET Framework 4.6](https://www.microsoft.com/en-us/download/details.aspx?id=48130) je nejnovější podporovanou verzi rozhraní .NET Framework v systému Windows 8.
+[Rozhraní .NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=48130) je nejnovější podporovanou verzi rozhraní .NET Framework v systému Windows 8.
 
 Rozhraní .NET Framework 4.6 podporuje aplikace vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím 4.6.
 

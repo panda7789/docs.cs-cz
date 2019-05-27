@@ -1,5 +1,5 @@
 ---
-title: Cílová rozhraní
+title: Cílové architektury
 description: Další informace o cílové rozhraní pro aplikace .NET Core a knihovny.
 author: richlander
 ms.author: mairaw
@@ -13,7 +13,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65641449"
 ---
-# <a name="target-frameworks"></a>Cílová rozhraní
+# <a name="target-frameworks"></a>Cílové architektury
 
 Pokud je cílem rozhraní v aplikaci nebo knihovny, zadáváte sadu rozhraní API, která chcete zpřístupnit pro aplikaci nebo knihovny. Cílová architektura, která zadáte v souboru projektu pomocí Monikery cílového rozhraní (Tfm).
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ca8cf76745190bd9819dde522c34e57952cd1ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c6f1a2d23d5f33ba7e4f0d51f795e75d7cf785e
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61906318"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052441"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 
@@ -405,7 +405,7 @@ Použití `Serialize` zásad pole zahrnuje následující změny zásad:
 
 #### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>Účinek zásady XmlSerializer, Třída DataContractSerializer a DataContractJsonSerializer
 
-Na rozdíl od `Serialize` zásad, která je určena pro serializátory založenými na reflexi, <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>, a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> zásady slouží k povolení sadu serializátory, které jsou známé [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Tyto serializátory nejsou implementované pomocí reflexe, ale sadu typů, které lze serializovat v době běhu je určen podobným způsobem jako typy, které jsou reflektovatelné.
+Na rozdíl od `Serialize` zásad, která je určena pro serializátory založenými na reflexi, <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>, a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> zásady slouží k povolení sadu serializátory, které jsou známé .NET Native řetězec nástroje. Tyto serializátory nejsou implementované pomocí reflexe, ale sadu typů, které lze serializovat v době běhu je určen podobným způsobem jako typy, které jsou reflektovatelné.
 
 Použít některou z těchto zásad do typu umožňuje, aby typ k serializaci pomocí serializátoru odpovídající. Navíc všechny typy, které potřebují serializace staticky určit Serializační stroj se také být serializovatelný.
 

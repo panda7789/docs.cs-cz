@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d4b335c9b196aec2873f8f663e82ee461748de3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d89f3f4d97fe4cbe3b660b74537f8c8368b492a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644991"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052772"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -36,7 +36,7 @@ Vývojová prostředí, které umožňují vývoj aplikací pro rozhraní .NET F
 
 Informace o stažení a odkazy najdete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).
 
-Informace na životní cyklus podpory verzí rozhraní .NET Framework najdete v tématu [životní cyklus podpory Microsoft](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
+Informace na životní cyklus podpory verzí rozhraní .NET Framework najdete v tématu [životní cyklus podpory Microsoft](https://support.microsoft.com/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
 
 ## <a name="hardware-requirements"></a>Hardwarové požadavky
 

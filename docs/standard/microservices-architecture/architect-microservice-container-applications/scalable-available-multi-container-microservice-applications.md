@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Objevte možnosti Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev mezer při vývoji životního cyklu aplikací Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: 3b7383f6153b787ce8bfad87e3902c34afba0fb2
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 27155736c6b5308d4794b17e5f5bd0b93109b5c1
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644896"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66196040"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -101,7 +101,7 @@ Ve vývojovém prostředí [Dockeru v červenci 2018 jsme oznámili](https://blo
 
 ## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Začínáme s Azure Kubernetes Service (AKS) 
 
-Pokud chcete začít používat AKS, nasaďte cluster AKS z webu Azure portal nebo pomocí th rozhraní příkazového řádku. Další informace o nasazení clusteru Azure Container Service najdete v tématu [Nasaďte cluster Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
+Pokud chcete začít používat AKS, nasaďte cluster AKS z webu Azure portal nebo pomocí rozhraní příkazového řádku. Další informace o nasazování clusteru Kubernetes v Azure najdete v tématu [Nasaďte cluster Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 
 Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást AKS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru. AKS je k dispozici pro několik virtuálních počítačů v Azure. Platíte jenom za výpočetní instance, kterou zvolíte, jakož i jiné infrastruktury spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro AKS, samotného.
 
@@ -145,7 +145,7 @@ Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prost
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Začínáme s Azure Kubernetes Service (AKS)** \
+- **Začínáme s Azure Kubernetes Service (AKS)**  \
   <https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal>
 
 - **Azure Dev mezery** \

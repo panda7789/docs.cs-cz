@@ -2,12 +2,12 @@
 title: Vytvoření jednoduché mikroslužby CRUD řízené daty
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Principy vytváření jednoduchých CRUD (řízené daty) mikroslužeb v rámci kontextu aplikace mikroslužeb.
 ms.date: 01/07/2019
-ms.openlocfilehash: 5dd7154fc81c7d0c3fb78bce662ea822f2392a10
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 53aba727c8dae35df8b34bc1558c0cc390fe2014
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644427"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053571"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -321,7 +321,7 @@ Hlavní důvody ke generování metadat Swagger pro rozhraní API jsou uvedeny n
 
 - [AutoRest](https://github.com/Azure/AutoRest). Můžete automaticky vygenerovat třídy klienta rozhraní .NET pro volání Swagger. Tento nástroj se dá použít rozhraní příkazového řádku a také se integruje se sadou Visual Studio pro snadné použití prostřednictvím grafického uživatelského rozhraní.
 
-- [Microsoft Flow](https://flow.microsoft.com/en-us/). Můžete automaticky [použít a integrovat vaše rozhraní API](https://flow.microsoft.com/en-us/blog/integrating-custom-api/) do vysoké úrovně pracovního postupu Microsoft Flow, bez programování dovednosti nutné.
+- [Microsoft Flow](https://flow.microsoft.com/). Můžete automaticky [použít a integrovat vaše rozhraní API](https://flow.microsoft.com/blog/integrating-custom-api/) do vysoké úrovně pracovního postupu Microsoft Flow, bez programování dovednosti nutné.
 
 - [Microsoft PowerApps](https://powerapps.microsoft.com/). Můžete automaticky využití rozhraní API z [mobilní aplikace PowerApps](https://powerapps.microsoft.com/blog/register-and-use-custom-apis-in-powerapps/) vytvořených pomocí [PowerApps Studio](https://powerapps.microsoft.com/build-powerapps/), bez programování znalosti vyžaduje.
 

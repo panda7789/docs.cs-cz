@@ -13,12 +13,12 @@ helpviewer_keywords:
 - PanelClick event [Windows Forms], determining panel clicked
 - Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-ms.openlocfilehash: 1c28f8eaba5c35f762d6fc57ebbddbbb71769c81
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a659de62965d17e965eee2f750337a08ae1801e0
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972312"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053724"
 ---
 # <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím
 > [!IMPORTANT]
@@ -31,7 +31,7 @@ ms.locfileid: "61972312"
   
 ### <a name="to-determine-which-panel-was-clicked"></a>Chcete-li zjistit panelu označeného kliknutím  
   
-1. V <xref:System.Windows.Forms.StatusBar.PanelClick> obslužná rutina události, použijte `Select Case` (v jazyce Visual Basic) nebo `switch case` (Visual C# nebo [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) zjistíte, došlo ke kliknutí na panelu tím, že kontroluje indexu v argumentech události kliknutí na panel.  
+1. V <xref:System.Windows.Forms.StatusBar.PanelClick> obslužná rutina události, použijte `Select Case` (v jazyce Visual Basic) nebo `switch case` (Visual C# nebo Visual C++) zjistíte, došlo ke kliknutí na panelu tím, že kontroluje indexu v argumentech události kliknutí na panel.  
   
      Následující příklad kódu vyžaduje přítomnost ve formuláři <xref:System.Windows.Forms.StatusBar> ovládacího prvku, `StatusBar1`a dvě <xref:System.Windows.Forms.StatusBarPanel> objekty, `StatusBarPanel1` a `StatusBarPanel2`.  
   
@@ -79,7 +79,7 @@ ms.locfileid: "61972312"
        }  
     ```  
   
-     (Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.statusBar1.PanelClick += new   

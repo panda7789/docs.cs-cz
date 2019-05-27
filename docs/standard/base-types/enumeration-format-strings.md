@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4f2a8fc10d2aad6b2d43bf128697e86aa73c411
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: be2e5dbe0d02bcec8974a1e52c0dce107d3bf46b
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644630"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052856"
 ---
 # <a name="enumeration-format-strings"></a>Výčet řetězců formátu
 
@@ -48,7 +48,7 @@ Zobrazí výčet položku jako celočíselnou hodnotu v nejkratší možné repr
 
 ## <a name="x-or-x"></a>X or x
 
-Zobrazí výčet položku jako šestnáctková hodnota. Hodnota je reprezentován počátečními nulami podle potřeby zajistit, že hodnota je minimální osm číslic v délce. Následující příklad ukazuje specifikátor formátu X.
+Zobrazí výčet položku jako šestnáctková hodnota. Hodnota je reprezentován počátečními nulami podle potřeby, a ujistěte se, že výsledný řetězec mají dva znaky pro každý bajt v typu výčtu [základní číselný typ](xref:System.Enum.GetUnderlyingType%2A). Následující příklad ukazuje specifikátor formátu X. V tomto příkladu základní typ obě <xref:System.ConsoleColor> a <xref:System.IO.FileAttributes> je <xref:System.Int32>, nebo 32 bitů (nebo na 4 bajty.) celé číslo, které vytvoří řetězec výsledek 8 znaků.
 
 [!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]      
 [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]

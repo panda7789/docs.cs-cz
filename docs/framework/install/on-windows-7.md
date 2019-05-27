@@ -5,12 +5,12 @@ description: Informace o instalaci rozhraní .NET Framework na Windows 7 SP1.
 author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: b0a79344fec675a88181f6dbdc802b94978b4f06
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc39a6658f300fc2cbe7f2686030b86a5f53802c
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643904"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052722"
 ---
 # <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Instalace rozhraní .NET Framework v systému Windows 7 SP1 a Windows Server 2008 R2
 
@@ -18,7 +18,7 @@ Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Podporuje se ve Windows 7 SP1 a Windows Server 2008 R2 a je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Podporuje se ve Windows 7 SP1 a Windows Server 2008 R2 a je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/help/4028685/windows-10-get-the-update).
 
 ## <a name="net-framework-48"></a>.NET Framework 4.8
 
@@ -29,7 +29,7 @@ Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které po
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-[Rozhraní .NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) je součástí Windows 7.
+[Rozhraní .NET Framework 3.5](https://www.microsoft.com/download/details.aspx?id=21) je součástí Windows 7.
 
 Rozhraní .NET Framework 3.5 podporuje aplikace vytvořené pro rozhraní .NET Framework 1.0 až 3.5.
 

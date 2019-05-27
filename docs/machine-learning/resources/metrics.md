@@ -3,12 +3,12 @@ title: Metriky ML.NET
 description: Principy, která se používají k vyhodnocení výkonu modelu ML.NET
 ms.date: 04/29/2019
 author: ''
-ms.openlocfilehash: d76cab0b56085ebf2ee69f4d9d12c9685c3cb021
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 802f0a8fd32c492c8d9f89933b183802cb178cb3
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452690"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053046"
 ---
 # <a name="model-evaluation-metrics-in-mlnet"></a>Model metrik v ML.NET
 
@@ -24,17 +24,17 @@ ms.locfileid: "65452690"
 Další podrobnosti o binární klasifikace metrik najdete v následujících článcích:
 
 - [Přesnost, zaokrouhlení, odvolání nebo stisknutím F1?](https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9)
-- [Binární klasifikace metriky třídy](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.data.binaryclassificationmetrics?view=ml-dotnet)
+- [Binární klasifikace metriky třídy](xref:Microsoft.ML.Data.BinaryClassificationMetrics)
 - [Vztah mezi přesnosti a úplnosti a křivky roc s více TŘÍDAMI](http://pages.cs.wisc.edu/~jdavis/davisgoadrichcamera2.pdf)
 
 ## <a name="metrics-for-multi-class-classification"></a>Metriky pro klasifikace víc tříd
 
 | Metriky   |      Popis      |  Hledat |
 |-----------|-----------------------|-----------|
-| **Micro-Accuracy** |  [Průměr Micro přesnost](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.data.multiclassclassificationmetrics.microaccuracy?view=ml-dotnet) agreguje vaše příspěvky všechny třídy pro výpočet průměrné metriku. Jedná se o zlomek instance správně předpovědět. Průměr micro nepřijímá členství ve třídě v úvahu. V podstatě každá dvojice ukázkovou třídu přispívá stejně metriky přesnosti. | **Blíže k 1,00, tím lepší**. V rámci úlohy klasifikace roc micro přesnost je vhodnější než přes – makro přesnost Pokud máte podezření, že může být třída imbalance (např.) Možná budete muset mnoho dalších příkladů jedné třídy než jiné třídy).|
-| **Macro-Accuracy** | [Average – makro přesnost](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.data.multiclassclassificationmetrics.macroaccuracy?view=ml-dotnet) je průměrná přesností na úrovni třídy. Je vypočítán přesnost pro každou třídu a přesnost – makro je průměrem těchto přesností. V podstatě každá třída přispívá stejně metriky přesnosti. Třídy minority disponují stejnou váhu jako větší třídy. Metrika – makro průměr poskytuje stejnou váhou pro každou třídu, bez ohledu na to, kolik instancí od, který obsahuje třídu datové sady. |  **Blíže k 1,00, tím lepší**.  Vypočítá metrika nezávisle pro každou třídu a potom vezme v průměru (tedy. považuje všechny třídy stejně) |
+| **Micro-Accuracy** |  [Průměr Micro přesnost](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.MicroAccuracy) agreguje vaše příspěvky všechny třídy pro výpočet průměrné metriku. Jedná se o zlomek instance správně předpovědět. Průměr micro nepřijímá členství ve třídě v úvahu. V podstatě každá dvojice ukázkovou třídu přispívá stejně metriky přesnosti. | **Blíže k 1,00, tím lepší**. V rámci úlohy klasifikace roc micro přesnost je vhodnější než přes – makro přesnost Pokud máte podezření, že může být třída imbalance (např.) Možná budete muset mnoho dalších příkladů jedné třídy než jiné třídy).|
+| **Macro-Accuracy** | [Average – makro přesnost](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.MacroAccuracy) je průměrná přesností na úrovni třídy. Je vypočítán přesnost pro každou třídu a přesnost – makro je průměrem těchto přesností. V podstatě každá třída přispívá stejně metriky přesnosti. Třídy minority disponují stejnou váhu jako větší třídy. Metrika – makro průměr poskytuje stejnou váhou pro každou třídu, bez ohledu na to, kolik instancí od, který obsahuje třídu datové sady. |  **Blíže k 1,00, tím lepší**.  Vypočítá metrika nezávisle pro každou třídu a potom vezme v průměru (tedy. považuje všechny třídy stejně) |
 | **Log-loss**| [Logaritmické ztrátu](http://wiki.fast.ai/index.php/Log_Loss) měří výkonnost model klasifikace, kde je hodnota pravděpodobnosti mezi 0,00 a 1,00 vstup předpovědi. Ztráta protokolu zvyšuje podle pravděpodobnost předpovězené diverges od skutečné popisku. | **Blíže k 0,00, tím lepší**. Ideální model by měla mít protokolu ztrátu 0,00. Cílem naší modelů strojového učení je minimalizovat tuto hodnotu.|
-| **Omezení protokolu ztráty** | [Snížení logaritmické ztrátu](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.data.multiclassclassificationmetrics.loglossreduction?view=ml-dotnet) může být interpretován jako výhod třídění přes náhodné předpovědi.| **V rozsahu od -inf a 1,00, kde 1,00 je ideální předpovědi a 0,00 označuje střední predikcí**. Například pokud je hodnota 0.20 a novější, to může být interpretován tak "pravděpodobnost správného předpovědi je lepší než náhodných opakovaně uhodnout 20 %"|
+| **Omezení protokolu ztráty** | [Snížení logaritmické ztrátu](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.LogLossReduction) může být interpretován jako výhod třídění přes náhodné předpovědi.| **V rozsahu od -inf a 1,00, kde 1,00 je ideální předpovědi a 0,00 označuje střední predikcí**. Například pokud je hodnota 0.20 a novější, to může být interpretován tak "pravděpodobnost správného předpovědi je lepší než náhodných opakovaně uhodnout 20 %"|
 
 Micro přesnost je obecně lepší v souladu s obchodní potřeby predikce ML. Pokud chcete vybrat jednu metriku pro výběr kvality úlohu klasifikace víc tříd, mělo by být obvykle micro přesnost.
 
@@ -56,7 +56,7 @@ Další informace o klasifikaci roc metrik najdete v následujících článcíc
 |-----------|-----------------------|-----------|
 | **Spolehlivosti R** |  [Plánovaná (R2)](https://en.wikipedia.org/wiki/Coefficient_of_determination), nebo *koeficient spolehlivosti* představuje výkon prediktivní model jako hodnotu mezi -inf a 1,00. 1,00 znamená, že se skvěle hodí, a přizpůsobit můžou být arbitrarly nízký, proto skóre, které mohou být záporná. Skóre 0,00 znamená, že model je opakovaně uhodnout očekávanou hodnotou pro popisek. R2 měří jak blízko skutečné testovací datové hodnoty jsou předpovězeným hodnotám. | **Blíže k 1,00, lepší kvalitu**. Ale někdy nízké hodnoty spolehlivosti (například 0,50) může být zcela normální nebo dostatečné pro váš scénář a vysoké spolehlivosti R hodnoty nejsou vždy dobré a dávejte pozor. |
 | **Absolutní ztráty** |  [Absolutní ztrátu](https://en.wikipedia.org/wiki/Mean_absolute_error) nebo *střední absolutní chyba (MAE)* měří jak blízko předpovědi se skutečné výsledky. Je průměrem všechny chyby modelu, kde je chyba modelu absolutní vzdálenost mezi předpokládané popisek hodnotu a hodnotu správný popisek. Tato chyba predikcí se počítá pro každý záznam testovací datové sady. Nakonec se počítá střední hodnoty pro všechny nahrané absolutních chyb.| **Blíže k 0,00, lepší kvality.** Všimněte si, že střední absolutní chyba používá stejné měřítko jako data měří (není normalizovány na konkrétní rozsah). Absolutní ztráty, Squared ztráty a ztráty RMS jde použít jenom k porovnání mezi modely pro stejné datové sadě nebo datovou sadu s distribuce hodnoty podobné popisek. |
-| **Spolehlivosti ztráty** |  [Squared ztrátu](https://en.wikipedia.org/wiki/Mean_squared_error) nebo *znamenat chyba spolehlivosti (MSE)*, označované také jako nebo *znamenat spolehlivosti odchylka (program MSD)* zjistíte, jak blízko řádku regrese do sady testů datových hodnot. Dělá to tak, že trvá daleko od bodů na regresní přímky (Tyto vzdálenosti se "chyby") a jejich umocnění na druhou. Umocňování poskytuje větší váhu k větší rozdíly. | Vždy je záporná, a **hodnoty blíže k 0,00 jsou lepší**. V závislosti na vašich dat může být možné získat velmi malou hodnotu pro střední kvadratické chyby.|
+| **Spolehlivosti ztráty** |  [Squared ztrátu](https://en.wikipedia.org/wiki/Mean_squared_error) nebo *znamenat chyba spolehlivosti (MSE)*, označované také jako *znamenat spolehlivosti odchylka (program MSD)*, zjistíte, jak blízko řádku regrese do sady testů datových hodnot. Dělá to tak, že trvá daleko od bodů na regresní přímky (Tyto vzdálenosti se chyby E) a jejich umocnění na druhou. Umocňování poskytuje větší váhu k větší rozdíly. | Vždy je záporná, a **hodnoty blíže k 0,00 jsou lepší**. V závislosti na vašich dat může být možné získat velmi malou hodnotu pro střední kvadratické chyby.|
 | **RMS-loss** |  [RMS při ztrátě](https://en.wikipedia.org/wiki/Root-mean-square_deviation) nebo *kořenové znamenat spolehlivosti chyby (RMSE)* (také nazývané *kořenové směrodatná odchylka, RMSD*), měří rozdíl mezi hodnotami předpovídané pomocí modelu a hodnotami ve skutečnosti zjištěnými z prostředí, které je právě modelovat. Ztráta RMS je odmocninu Squared ztráty a má stejné jednotky jako popisek, podobně jako absolutní ztrát v případě, že poskytuje větší váhu větší rozdíly. Průměrná kvadratická chyba se běžně používá v klimatologie, Prognózování a regresní analýzy ověřit výsledky. | Vždy je záporná, a **hodnoty blíže k 0,00 jsou lepší**. RMSD je míra přesnost porovnání Prognózování chyby z různých modelů pro konkrétní datové sady a není mezi datovými sadami, protože je závislé na škálování.|
 
 Další podrobnosti týkající se metrik Regrese v následujících článcích:

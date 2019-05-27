@@ -10,12 +10,12 @@ helpviewer_keywords:
 - examples [Windows Forms], text boxes
 - RichTextBox control [Windows Forms], linking to Web pages
 ms.assetid: 95089a37-a202-4f7a-94ee-6ee312908851
-ms.openlocfilehash: faaa48051c80b6dfd330f15f72a38297ff2d1b9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 05d9ad4766584b59cca7c31f49b737d4696a9921
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941580"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053542"
 ---
 # <a name="how-to-display-web-style-links-with-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení webových odkazů pomocí ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit webové odkazy jako barevný a podtržené. Můžete napsat kód, který se otevře okno prohlížeče zobrazující webu zadané v textu odkazu, po kliknutí na odkaz.  
@@ -74,13 +74,13 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobr
        }  
     ```  
   
-     ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Musí inicializovat proces `p`, což lze provést zahrnutím následujícího příkazu v konstruktoru formuláře:  
+     (Visual C++) Je třeba inicializovat proces `p`, což lze provést zahrnutím následujícího příkazu v konstruktoru formuláře:  
   
     ```cpp  
     p = gcnew System::Diagnostics::Process();  
     ```  
   
-     (Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.richTextBox1.LinkClicked += new   

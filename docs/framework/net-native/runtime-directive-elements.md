@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6bf692ff93a575858d1d1a89346611cb9c5957b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fb3ad0d39d47297b7d26a5c28cfbbc269ce99e44
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867040"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052402"
 ---
 # <a name="runtime-directive-elements"></a>Elementy direktivy modulu runtime
 Formát souboru modulu runtime (rd.xml) direktivy podporuje následující elementy direktivy modulu runtime. Zobrazit [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) pro Hierarchická reprezentace.  
@@ -24,7 +24,7 @@ Formát souboru modulu runtime (rd.xml) direktivy podporuje následující eleme
  Pokud specifikací [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) – direktiva je atributu, platí zásady modulu runtime pro prvky kódu, u kterých je tento atribut použitá.  
   
  [\<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md)  
- Kořenový element v každém souboru direktiv modulu runtime pro [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Jeho podřízené prvky jsou [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md).  
+ Kořenový element v každém souboru direktiv modulu runtime pro .NET Native. Jeho podřízené prvky jsou [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md).  
   
  [\<Event>](../../../docs/framework/net-native/event-element-net-native.md)  
  Zásady modulu runtime se vztahuje na událost. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  

@@ -14,7 +14,7 @@
       items:
         - name: Novinky v rozhraní .NET Standard
           href: standard/whats-new/whats-new-in-dotnet-standard.md
-    - name: Cílová rozhraní
+    - name: Cílové architektury
       href: standard/frameworks.md
     - name: Slovníček k technologii .NET
       href: standard/glossary.md

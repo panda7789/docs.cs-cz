@@ -10,12 +10,12 @@ helpviewer_keywords:
 - printing [Windows Forms], print preview
 - examples [Windows Forms], print preview
 ms.assetid: e394134c-0886-4517-bd8d-edc4a3749eb5
-ms.openlocfilehash: cfdc8d21b3ddad19fd38eef9cb1c506920da9de6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9efccc220bb27706448ae555db8958afb0ccd9fa
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609887"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053598"
 ---
 # <a name="how-to-display-print-preview-in-windows-forms-applications"></a>Postupy: Zobrazení náhledu tisku v aplikacích Windows Forms
 Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek umožňující uživatelům často zobrazení dokumentu, než které se mají vytisknout.  
@@ -70,7 +70,7 @@ Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prve
        }  
     ```  
   
-     (Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  

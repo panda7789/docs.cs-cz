@@ -1,15 +1,15 @@
 ---
-title: F#konvence kódování
+title: Zásady kódování jazyka F#
 description: Další obecné pokyny a idiomy při zápisu F# kódu.
 ms.date: 05/14/2018
-ms.openlocfilehash: 1ef016184180eb8d233295e8985903e07693ad26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b292d0a844a4d9efc79aa865b054b4af2cb68c4
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902132"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052802"
 ---
-# <a name="f-coding-conventions"></a>F#konvence kódování
+# <a name="f-coding-conventions"></a>Zásady kódování jazyka F#
 
 Následující konvence jsou formulovat z prostředí pro práci s rozsáhlými F# základů kódu. [Pět zásadami dobrého F# kód](index.md#five-principles-of-good-f-code) jsou základem pro jednotlivá doporučení. Se vztahují k [ F# pokyny k návrhu komponenty](component-design-guidelines.md), ale platí pro všechny F# kód, ne jenom komponent, jako jsou knihovny.
 
@@ -611,7 +611,7 @@ Protože není nutné pro třídu při práci s kódem API sady Visual Studio, o
 
 ## <a name="type-abbreviations"></a>Zkratky typů
 
-[Typ – zkratky](../language-reference/type-abbreviations.md) jsou pohodlný způsob, jak přiřadit popisek k jinému typu, jako je například podpis funkce nebo více komplexního typu. Například následující alias přiřadí popisek co je potřeba definovat výpočet s [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/), obsáhlý learning knihovny:
+[Typ – zkratky](../language-reference/type-abbreviations.md) jsou pohodlný způsob, jak přiřadit popisek k jinému typu, jako je například podpis funkce nebo více komplexního typu. Například následující alias přiřadí popisek co je potřeba definovat výpočet s [CNTK](https://docs.microsoft.com/cognitive-toolkit/), obsáhlý learning knihovny:
 
 ```fsharp
 open CNTK

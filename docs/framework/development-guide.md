@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc7a0991ae308f1c61026e946021d22da9a4bc3b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 032958c24e03025fc3fc3eee2aae40bdd4491e7b
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583529"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052735"
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a nasazení aplikací rozhraní .NET Framework. V části také obsahuje informace o oblastech technologií, jako jsou dynamické programování, interoperabilita, rozšiřitelnost, správa paměti a dělení na vlákna.  
@@ -48,7 +48,7 @@ Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a 
  Vysvětluje, jak můžete použít konfigurační soubory pro změnu nastavení bez nutnosti znovu kompilovat aplikace rozhraní .NET Framework.  
   
  [Kompilování aplikací pomocí .NET Native](../../docs/framework/net-native/index.md)  
- Vysvětluje, jak můžete použít [!INCLUDE[net_native](../../includes/net-native-md.md)] technologie předkompilace pro sestavování a nasazování aplikací pro Windows Store. [!INCLUDE[net_native](../../includes/net-native-md.md)] zkompiluje aplikace napsané ve spravovaném kódu (C#), který cílit na rozhraní .NET Framework do nativního kódu.  
+ Vysvětluje, jak můžete pomocí .NET Native technologie předkompilace pro sestavování a nasazování aplikací pro Windows Store. .NET native zkompiluje aplikace, které jsou zapsané ve spravovaném kódu (C#) a rozhraní .NET Framework do nativního kódu.  
   
  [Zabezpečení](../../docs/standard/security/index.md)  
  Poskytuje informace o třídách a službách v rozhraní .NET Framework, které usnadňují vývoj zabezpečených aplikací.  

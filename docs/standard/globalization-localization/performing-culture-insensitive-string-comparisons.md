@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d20ce0f09309c84dcbeb016e0f17c37fe338dd9c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c7726164e998ea917c8f539b5768aa7e3f1ae12c
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026143"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053200"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>Provádění porovnávání řetězců nezávislých na jazykové verzi
 Ve výchozím nastavení <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda provádí porovnání citlivé na jazykovou verzi a malá a velká písmena. Tato metoda zahrnuje také několik přetížení, které poskytují `culture` parametr, který umožňuje zadat jazykovou verzi, pokud chcete použít, a `comparisonType` parametr, který umožňuje určit použitá pravidla porovnávání. Volání těchto metod namísto výchozího přetížení odstraní jakoukoli nejednoznačnost týkající se pravidel používaných při volání konkrétní metody a objasňuje, zda je konkrétní porovnání závislé na jazykové verzi či nikoli.  
@@ -39,7 +39,7 @@ Ve výchozím nastavení <xref:System.String.Compare%2A?displayProperty=nameWith
  [!code-csharp[Conceptual.Strings.CultureInsensitiveComparison#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.cultureinsensitivecomparison/cs/cultureinsensitive1.cs#1)]
  [!code-vb[Conceptual.Strings.CultureInsensitiveComparison#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.cultureinsensitivecomparison/vb/cultureinsensitive1.vb#1)]  
 
-Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), tabulka váhy řazení pro systémy Linux a macOS.
+Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), tabulka váhy řazení pro systémy Linux a macOS.
 
 ## <a name="see-also"></a>Viz také:
 

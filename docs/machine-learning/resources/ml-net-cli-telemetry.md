@@ -4,12 +4,12 @@ description: Další informace o rozhraní příkazového řádku ML.NET telemet
 ms.topic: conceptual
 ms.date: 05/05/2019
 ms.custom: ''
-ms.openlocfilehash: 36f4af48615e2e3247f8e21343d0a00519ba1c0a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 94c66267dfeec4b70ba4dd1fc47518eb0e01509a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645025"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053578"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Shromažďování telemetrie pomocí rozhraní příkazového řádku ML.NET
 
@@ -75,5 +75,5 @@ Při prvním spuštění [příkazu rozhraní příkazového řádku ML.NET](../
 ## <a name="see-also"></a>Viz také:
 - [Referenční informace k ML.NET CLI](../reference/ml-net-cli-reference.md)
 - [Licenční podmínky pro Software společnosti Microsoft: Knihovna rozhraní Microsoft .NET](https://aka.ms/dotnet-core-eula)
-- [Ochrana osobních údajů společnosti Microsoft](https://www.microsoft.com/en-us/trustcenter/privacy/)
-- [Prohlášení o ochraně osobních údajů společnosti Microsoft](https://privacy.microsoft.com/en-us/privacystatement)
+- [Ochrana osobních údajů společnosti Microsoft](https://www.microsoft.com/trustcenter/privacy/)
+- [Prohlášení o ochraně osobních údajů společnosti Microsoft](https://privacy.microsoft.com/privacystatement)
