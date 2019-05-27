@@ -14,7 +14,7 @@
     - name: Kategorizace problémů podpory (vícetřídová klasifikace)
       href: tutorials/github-issue-classification.md
     - name: Předvídání cen (regrese)
-      href: tutorials/taxi-fare.md
+      href: tutorials/predict-prices.md
     - name: Kategorizace datových sady Iris flower (clustering K-Means)
       href: tutorials/iris-clustering.md
     - name: Řešení pro doporučování videí (faktorizace matice)
