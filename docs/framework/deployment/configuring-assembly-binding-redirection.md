@@ -15,9 +15,9 @@ ms.lasthandoff: 04/23/2019
 ms.locfileid: "61873727"
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Konfigurace přesměrování vazby sestavení
-Ve výchozím nastavení aplikace použijte sadu sestavení rozhraní .NET Framework, která jsou součástí modulu runtime verze použitá pro kompilaci aplikace. Můžete použít **appliesTo** atribut na [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) prvku v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Sestavení rozhraní. Tento volitelný atribut používá k označení, která verze se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán,  **\<assemblyBinding >** element platí pro všechny verze rozhraní .NET Framework.  
+Ve výchozím nastavení aplikace použijte sadu sestavení rozhraní .NET Framework, která jsou součástí modulu runtime verze použitá pro kompilaci aplikace. Můžete použít **appliesTo** atribut na [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) prvku v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Sestavení rozhraní. Tento volitelný atribut používá k označení, která verze se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán, **\<assemblyBinding>** element platí pro všechny verze rozhraní .NET Framework.  
   
- **AppliesTo** atribut byla zavedena v rozhraní .NET Framework verze 1.1; je ignorován v rozhraní .NET Framework verze 1.0. To znamená, že všechny  **\<assemblyBinding >** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.  
+ **AppliesTo** atribut byla zavedena v rozhraní .NET Framework verze 1.1; je ignorován v rozhraní .NET Framework verze 1.0. To znamená, že všechny **\<assemblyBinding>** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.  
   
 > [!NOTE]
 >  Použití **appliesTo** atribut omezit přesměrování vazeb sestavení na konkrétní verzi modulu runtime.  
@@ -34,7 +34,7 @@ Ve výchozím nastavení aplikace použijte sadu sestavení rozhraní .NET Frame
 </runtime>  
 ```  
   
-  **\<AssemblyBinding >** prvky jsou citlivé na pořadí. Měli byste zadat informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.0 nejprve, za nímž následuje informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.1. Nakonec je třeba zadat informace o přesměrování vazby sestavení pro všechny přesměrování sestavení rozhraní .NET Framework, která nepoužívá **appliesTo** atribut a tedy platí pro všechny verze rozhraní .NET Framework. V případě konfliktu při přesměrování je použit první odpovídající příkaz přesměrování konfiguračního souboru.  
+ **\<AssemblyBinding>** prvky jsou citlivé na pořadí. Měli byste zadat informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.0 nejprve, za nímž následuje informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.1. Nakonec je třeba zadat informace o přesměrování vazby sestavení pro všechny přesměrování sestavení rozhraní .NET Framework, která nepoužívá **appliesTo** atribut a tedy platí pro všechny verze rozhraní .NET Framework. V případě konfliktu při přesměrování je použit první odpovídající příkaz přesměrování konfiguračního souboru.  
   
  Například pro přesměrování jednoho odkazu na sestavení rozhraní .NET Framework verze 1.0 a jiného odkazu na sestavení rozhraní .NET Framework verze 1.1, by použít vzor, uvedený v následujícím pseudokódu.  
   
