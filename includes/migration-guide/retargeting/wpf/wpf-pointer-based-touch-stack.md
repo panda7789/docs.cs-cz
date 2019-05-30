@@ -1,17 +1,17 @@
 ---
-ms.openlocfilehash: 3463b6c45952aab0023e40921739e84eb51ca001
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb3d7c1afa9e506ffc7c6d068c48428d1e66ccb6
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61759406"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379447"
 ---
 ### <a name="wpf-pointer-based-touch-stack"></a>WPF Touch založené na ukazatel zásobníku
 
 |   |   |
 |---|---|
-|Podrobnosti|Tato změna přidává možnost povolit volitelné WM_POINTER založený na zásobníku touch/stylus WPF.  Vývojáři, kteří nepovolujte explicitně to měli vidět žádné změny v chování touch/stylus WPF. Aktuální známé problémy s volitelné WM_POINTER na základě touch/stylus zásobníku:<ul><li>Žádná podpora pro rukopis v reálném čase.</li><li>Při rukopis a stylusplugins – budou i nadále fungovat, zpracuje na vlákně uživatelského rozhraní, což může vést k nižšímu výkonu.</li><li>Chování změny z důvodu změn v podpoře z dotykového ovládání/stylus událostí na události myši</li><li>Manipulace s může chovat jinak</li><li>Přetažení nezobrazí odpovídající zpětné vazby pro dotykové ovládání</li><li>To nemá vliv na vstup pomocí pera</li><li>Přetažení nepůjdou už pro dotykové ovládání/stylus události</li><li>Aplikace to můžete zablokování potenciálně, dokud je zjištěna vstup z myši.</li><li>Vývojáři by místo toho zahájit přetáhněte a vyřadit z události myši.</li></ul>|
+|Podrobnosti|Tato změna přidává možnost povolit volitelné WM_POINTER založený na zásobníku touch/stylus WPF.  Vývojáři, kteří nepovolujte explicitně to měli vidět žádné změny v chování touch/stylus WPF. Aktuální známé problémy s volitelné WM_POINTER na základě touch/stylus zásobníku:<ul><li>Žádná podpora pro rukopis v reálném čase.</li><li>Při rukopis a stylusplugins – budou i nadále fungovat, zpracuje na vlákně uživatelského rozhraní, což může vést k nižšímu výkonu.</li><li>Chování změny z důvodu změn v podpoře z dotykového ovládání/stylus událostí na události myši</li><li>Manipulace s může chovat jinak</li><li>Přetažení nezobrazí odpovídající zpětné vazby pro dotykové ovládání</li><li>To nemá vliv na vstup pomocí pera</li><li>Přetažení nepůjdou už pro dotykové ovládání/stylus události</li><li>To může potenciálně způsobit aplikace přestane reagovat, dokud se detekuje vstup z myši.</li><li>Vývojáři by místo toho zahájit přetáhněte a vyřadit z události myši.</li></ul>|
 |Doporučení|Vývojáři, kteří si přejete povolit tento zásobník můžete přidat/merge následujícího souboru App.config jejich aplikace:<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Input.Stylus.EnablePointerSupport=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>To odebírá nebo nastavením této hodnoty na false se vypne této volitelné zásobníku. Všimněte si, že tento zásobník je dostupná jenom ve Windows 10 Creators Update a vyšší.|
-|Rozsah|Edge|
+|Scope|Edge|
 |Version|4.7|
 |Type|Změna cílení|

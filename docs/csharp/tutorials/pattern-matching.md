@@ -3,12 +3,12 @@ title: Použít porovnávání vzorů funkce k rozšíření datových typů
 description: V tomto kurzu pokročilé ukazuje, jak použít porovnávání vzorů techniky k vytvoření funkce pomocí dat a algoritmy, které se vytvářejí zvlášť.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 5fdd65fdb96cce05f15872969bbdd401095b59e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 58e4a9175752c7845507f48a3684747092dc609a
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706218"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378071"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití porovnávání vzorů funkce k rozšíření datových typů
 
@@ -35,7 +35,7 @@ Pro vytváření typů ve vaší aplikaci, které představují jednotlivé typy
 
 V tomto kurzu vytvoříte a prozkoumejte aplikaci, která přebere příchozí data z několika externích zdrojů pro jeden scénář. Uvidíte jak **porovnávání vzorů** poskytuje efektivní způsob, jak spotřebovat a zpracovat data způsoby, které nebyly součástí původního systému.
 
-Vezměte v úvahu hlavní metro oblast, která používá ke správě přenosů dat mýtné a ceny za dobu ve špičce. Můžete napsat aplikaci, která vypočítá mýtné vozidla na základě jeho typu. Novější vylepšení zahrnují ceny na základě počtu osob ve vozidle. Dále přidejte ceny založené na čas a den v týdnu.
+Vezměte v úvahu hlavní metropolitní oblasti, která používá ke správě přenosů dat mýtné a ceny za dobu ve špičce. Můžete napsat aplikaci, která vypočítá mýtné vozidla na základě jeho typu. Novější vylepšení zahrnují ceny na základě počtu osob ve vozidle. Dále přidejte ceny založené na čas a den v týdnu.
 
 Z tohoto stručný popis vám může mít rychle šrafují si hierarchii objektů modelování tohoto systému. Však vaše data pochází z více zdrojů, jako jsou jinými systémy pro správu registrace vozidlo. Tyto systémy poskytují různé třídy k modelování dat a není nutné jeden objekt modelu, která vám pomůže. V tomto kurzu použijete tyto zjednodušené třídy k modelování dat vozidla mezi těmito externími systémy, jak je znázorněno v následujícím kódu:
 
@@ -288,7 +288,7 @@ Porovnávání vzorů pro tuto funkci použijete, ale budete ji integrovat s dal
 
 Následující tabulka uvádí kombinace vstupních hodnot a ceny multiplikátor ve špičce:
 
-| Den        | Čas         | Směr | Premium |
+| Den        | Time         | Směr | Premium |
 | ---------- | ------------ | --------- |--------:|
 | Den v týdnu    | naléhavá ráno | Příchozí   | x 2.00  |
 | Den v týdnu    | naléhavá ráno | Odchozí  | x 1,00  |

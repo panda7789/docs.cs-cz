@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9a9061503ae4bf68903f35eb7624deed2f34c9b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 519429da275c852ea193e95fe651cc73efc0736a
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616602"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378689"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
 <a name="top"></a> Trasování událostí pro Windows (ETW) se dá filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) možnost filtrovat události podle kategorie; se používají v kombinacích pro zprostředkovatele běhového prostředí a doběhu. [Událostí úrovně](#levels) jsou označeny příznaky.  
@@ -52,7 +52,7 @@ ms.locfileid: "64616602"
 |`ContentionKeyword`|0x00004000|Povoluje shromažďování [kolizní události](../../../docs/framework/performance/contention-etw-events.md).|  
 |`ExceptionKeyword`|0x00008000|Povoluje shromažďování [události výjimky](../../../docs/framework/performance/exception-thrown-v1-etw-event.md).|  
 |`ThreadingKeyword`|0x00010000|Povoluje shromažďování [události fondu vláken](../../../docs/framework/performance/thread-pool-etw-events.md).|  
-|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(K dispozici v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější.) Potlačí nároky na vysoce `NGenKeyword` – klíčové slovo a brání generování události pro metody, které jsou uvnitř modulů technologie NGen. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], nástroje pro profilaci používejte `OverrideAndSuppressNGenEventsKeyword` a `NGenKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje profilování nástroje můžete získat informace o metodách v modulech NGen efektivnější souborů PDB pro NGen. V rozhraní .NET Framework 4 a dřívějších verzích CLR nepodporuje vytváření souborů PDB pro NGen. V těchto starších verzí modulu CLR nerozpozná `OverrideAndSuppressNGenEventsKeyword` a zpracuje `NGenKeyword` generovat události pro metody v modulech NGen.|  
+|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(K dispozici v rozhraní .NET Framework 4.5 nebo novější.) Potlačí nároky na vysoce `NGenKeyword` – klíčové slovo a brání generování události pro metody, které jsou uvnitř modulů technologie NGen. Od verze rozhraní .NET Framework 4.5, nástroje pro profilaci používejte `OverrideAndSuppressNGenEventsKeyword` a `NGenKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje profilování nástroje můžete získat informace o metodách v modulech NGen efektivnější souborů PDB pro NGen. V rozhraní .NET Framework 4 a dřívějších verzích CLR nepodporuje vytváření souborů PDB pro NGen. V těchto starších verzí modulu CLR nerozpozná `OverrideAndSuppressNGenEventsKeyword` a zpracuje `NGenKeyword` generovat události pro metody v modulech NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Povoluje shromažďování `ModuleLoad` a `ModuleRange` události.|  
 |`StackKeyword`|0x40000000|Povolí shromažďování CLR [události trasování zásobníku](../../../docs/framework/performance/stack-etw-event.md).|  
   
@@ -71,7 +71,7 @@ ms.locfileid: "64616602"
 |`EndRundownKeyword`|0x00000100|Umožňuje výčet stavu systému během konec doběhu.|  
 |`AppDomainResourceManagementRundownKeyword`|0x00000800|Umožňuje shromažďování událostí pro sledování prostředků na <xref:System.AppDomain> úroveň při použití s `StartRundownKeyword` nebo `EndRundownKeyword`.|  
 |`ThreadingKeyword`|0x00010000|Povoluje shromažďování události fondu vláken.|  
-|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(K dispozici v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější.) Potlačí nároky na vysoce `NGenRundownKeyword` – klíčové slovo a brání generování události pro metody, které jsou uvnitř modulů technologie NGen. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], nástroje pro profilaci používejte `OverrideAndSuppressNGenEventsRundownKeyword` a `NGenRundownKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje profilování nástroje můžete získat informace o metodách v modulech NGen efektivnější souborů PDB pro NGen. V rozhraní .NET Framework 4 a dřívějších verzích CLR nepodporuje vytváření souborů PDB pro NGen. V těchto starších verzí modulu CLR nerozpozná `OverrideAndSuppressNGenEventsRundownKeyword` a zpracuje `NGenRundownKeyword` generovat události pro metody v modulech NGen.|  
+|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(K dispozici v rozhraní .NET Framework 4.5 nebo novější.) Potlačí nároky na vysoce `NGenRundownKeyword` – klíčové slovo a brání generování události pro metody, které jsou uvnitř modulů technologie NGen. Od verze rozhraní .NET Framework 4.5, nástroje pro profilaci používejte `OverrideAndSuppressNGenEventsRundownKeyword` a `NGenRundownKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje profilování nástroje můžete získat informace o metodách v modulech NGen efektivnější souborů PDB pro NGen. V rozhraní .NET Framework 4 a dřívějších verzích CLR nepodporuje vytváření souborů PDB pro NGen. V těchto starších verzí modulu CLR nerozpozná `OverrideAndSuppressNGenEventsRundownKeyword` a zpracuje `NGenRundownKeyword` generovat události pro metody v modulech NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Povoluje shromažďování `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`, a `ModuleRangeDCEnd` události.|  
   
  [Zpět na začátek](#top)  

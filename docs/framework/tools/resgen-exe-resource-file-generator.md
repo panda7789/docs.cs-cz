@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bb2aabfd083a71d8d083d08e9bc7e2a7ad065e7f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c6b908cadc02e0d1739d8b36b6904bb47c5ea090
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623350"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378467"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
 Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)  
@@ -73,7 +73,7 @@ resgen filename.extension [outputDirectory]
   
 |Parametr nebo přepínač|Popis|  
 |-------------------------|-----------------|  
-|`/define:` *symbol1*[, *symbol2*,...]|Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], podporuje podmíněnou kompilaci v založený na textu (.txt nebo .restext) soubory prostředků. Pokud *symbol* odpovídá symbolu zahrnutému ve vstupním textovém souboru v rámci `#ifdef` konstrukce, příslušný řetězcový prostředek jsou uvedeny v souboru .resources. Pokud vstupní textový soubor obsahuje `#if !` příkazu se symbolem nedefinovaným `/define` přepínače, příslušný řetězcový prostředek je součástí souboru prostředků.<br /><br /> `/define` Pokud se používá s netextovými soubory je ignorována. Rozlišují se malá a velká písmena.<br /><br /> Další informace o této možnosti najdete v tématu [Podmíněná kompilace prostředků](#Conditional) dále v tomto tématu.|  
+|`/define:` *symbol1*[, *symbol2*,...]|Od verze rozhraní .NET Framework 4.5, podporuje podmíněnou kompilaci v založený na textu (.txt nebo .restext) soubory prostředků. Pokud *symbol* odpovídá symbolu zahrnutému ve vstupním textovém souboru v rámci `#ifdef` konstrukce, příslušný řetězcový prostředek jsou uvedeny v souboru .resources. Pokud vstupní textový soubor obsahuje `#if !` příkazu se symbolem nedefinovaným `/define` přepínače, příslušný řetězcový prostředek je součástí souboru prostředků.<br /><br /> `/define` Pokud se používá s netextovými soubory je ignorována. Rozlišují se malá a velká písmena.<br /><br /> Další informace o této možnosti najdete v tématu [Podmíněná kompilace prostředků](#Conditional) dále v tomto tématu.|  
 |`useSourcePath`|Určuje, že k vyhodnocení relativních cest k souborům má být použit aktuální adresář vstupního souboru.|  
 |`/compile`|Umožňuje zadat několik textových souborů nebo souborů .resx pro převod na několik souborů .resources jednou hromadnou operací. Pokud tuto možnost nezadáte, lze zadat pouze jeden argument vstupního souboru. Výstupní soubory jsou pojmenovány *filename*.resources.<br /><br /> Tento parametr nelze použít s `/str:` možnost.<br /><br /> Další informace o této možnosti najdete v tématu [kompilace nebo převod více souborů](#Multiple) dále v tomto tématu.|  
 |`/r:``assembly`|Odkazuje na metadata z určeného sestavení. Používá se při převodu souborů .resx a umožňuje nástroji Resgen.exe serializovat a deserializovat prostředky objektů. Se podobá `/reference:` nebo `/r:` možnosti pro kompilátory jazyků C# a Visual Basic.|  
@@ -244,7 +244,7 @@ resgen MyApp.exe Win8Resources
   
 <a name="Conditional"></a>   
 ### <a name="conditionally-compiling-resources"></a>Podmíněná kompilace prostředků  
- Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Resgen.exe podporuje podmíněnou kompilaci řetězcových prostředků v textových souborech (.txt a .restext). To umožňuje použití jediného textového souboru prostředků v několika konfiguracích sestavení.  
+ Od verze rozhraní .NET Framework 4.5, Resgen.exe podporuje podmíněnou kompilaci řetězcových prostředků v textových souborech (.txt a .restext). To umožňuje použití jediného textového souboru prostředků v několika konfiguracích sestavení.  
   
  V souboru .txt nebo .restext je použít `#ifdef`...`#endif` konstrukci pro zahrnutí prostředků do binárního souboru .resources v případě, že je definován symbol, a použít `#if !`... `#endif` konstrukci pro zahrnutí prostředků v případě, že symbol definován není. Při kompilování pak definujete symboly pomocí `/define:` následovaný čárkami oddělený seznam symbolů. Porovnání je notaci citlivé; velikost písmen symbolů definovaných podle `/define` musí rozlišovat velikost písmen symbolů v textových souborech ke kompilaci.  
   

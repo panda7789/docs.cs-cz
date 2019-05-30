@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8fd904ba03fd5c652b1e5e5c7f763dab2b80e517
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 08b35dd1744dbbb64d202718b61a9db5684d3bc3
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636664"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380366"
 ---
 # <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a>ICorProfilerCallback5::ConditionalWeakTableElementReferences – metoda
 
@@ -82,7 +82,7 @@ HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
 
 ## <a name="remarks"></a>Poznámky
 
-Profiler pro [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] nebo novější verze implementuje [icorprofilercallback5 –](icorprofilercallback5-interface.md) rozhraní a záznamů závislosti určené `ConditionalWeakTableElementReferences` metoda. `ICorProfilerCallback5` poskytuje kompletní sadu závislosti mezi živé objekty reprezentována `ConditionalWeakTable` položky. Tyto závislosti a člena pole určené odkazy [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) metoda povolit spravovaný profiler se vygenerovat graf úplný objekt živých objektů.
+Profiler pro rozhraní .NET Framework 4.5 nebo novější verze implementuje [icorprofilercallback5 –](icorprofilercallback5-interface.md) rozhraní a záznamů závislosti určené `ConditionalWeakTableElementReferences` metody. `ICorProfilerCallback5` poskytuje kompletní sadu závislosti mezi živé objekty reprezentována `ConditionalWeakTable` položky. Tyto závislosti a člena pole určené odkazy [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) metoda povolit spravovaný profiler se vygenerovat graf úplný objekt živých objektů.
 
 ## <a name="requirements"></a>Požadavky
 

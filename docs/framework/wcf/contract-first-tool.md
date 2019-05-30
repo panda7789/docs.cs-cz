@@ -2,15 +2,15 @@
 title: Nástroj Contract-First
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: 95aef67eb43176ab062b38979e714f232898f221
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7ddc3b2c733c73808d17b6e0f45129cc19d7527c
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64652077"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380374"
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
-Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], třídy kontraktu dat může automaticky vytvořen z existující služby používat nástroj pro upřednostnění kontraktu. Pokud chcete použít nástroj pro upřednostnění kontraktu, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat přes protokol HTTP.
+Kontrakty služeb často potřebují vytvořit z existujících služeb. V rozhraní .NET Framework 4.5 můžete třídy kontraktu dat automaticky vytvořen z existujících služeb pomocí nástroj pro upřednostnění kontraktu. Pokud chcete použít nástroj pro upřednostnění kontraktu, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat přes protokol HTTP.
 
  Nástroj contract-first je integrována do sady Visual Studio 2012 jako úloha sestavení. Soubory kódu generovaných úkol sestavení se vytvoří pokaždé, když sestavení projektu tak, aby projekt můžete snadno přijmout změny v základní kontrakt služby.
 

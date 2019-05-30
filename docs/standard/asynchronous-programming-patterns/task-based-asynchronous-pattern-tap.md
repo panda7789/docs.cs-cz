@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 96499d2a3d74deb7208fa49f9fc0927109d93a69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 052f6a61fb1b03b060e22bbff2d8124ac3a1c0c0
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623797"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377660"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Asynchronní vzor založený na úlohách (TAP)
 Založený na úlohách asynchronního vzoru (TAP) je založena na <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> napíše <xref:System.Threading.Tasks?displayProperty=nameWithType> obor názvů, které představují libovolné asynchronní operace. TAP je doporučený asynchronní návrh vzoru pro nový vývoj.  
@@ -95,7 +95,7 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
  Pokud implementace TAP poskytují přetížení, která přijímají `progress` parametru, musí umožnit, aby argument představoval `null`, v takovém případě bude hlášené nijak nepokročila. Implementace TAP by měly vykazovat průběh <xref:System.Progress%601> objektu synchronně, což umožňuje asynchronní metodě rychle poskytnout průběh a umožnit příjemci průběhu určit, jak a kde nejlépe zpracovávat informace. Například instance průběhu může zvolit zařazování zpětných volání a vyvolat události na zachyceném synchronizačním kontextu.  
   
 ## <a name="iprogresst-implementations"></a>IProgress\<T > Implementace  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Poskytuje jedinou <xref:System.IProgress%601> implementace: <xref:System.Progress%601>. <xref:System.Progress%601> Třída je deklarována následovně:  
+ Rozhraní .NET Framework 4.5 poskytuje jedinou <xref:System.IProgress%601> implementace: <xref:System.Progress%601>. <xref:System.Progress%601> Třída je deklarována následovně:  
   
 ```csharp  
 public class Progress<T> : IProgress<T>  

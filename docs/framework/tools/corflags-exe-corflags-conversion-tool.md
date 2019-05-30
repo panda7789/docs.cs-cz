@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ee801a5af214e2306e6f1667b5e4ee067683fdb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ef10ba566842db26ed8c29643535c41aaca9806
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779974"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378663"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (CorFlags – převodní nástroj)
 Nástroj CorFlags Conversion umožňuje konfigurovat CorFlags oddíl hlavičky bitové kopie přenosného spustitelného souboru.  
@@ -38,8 +38,8 @@ CorFlags.exe assembly [options]
 |------------|-----------------|  
 |**/32BIT[REQ]+**|Nastaví příznak 32BITREQUIRED.|  
 |**/32BIT[REQ]-**|Odstraní příznak 32BITREQUIRED.|  
-|**/32BITPREF+**|Nastaví příznak 32BITPREFERRED. Aplikace běží jako 32bitový proces i na 64bitových platformách. Tento příznak je třeba nastavit pouze u souborů EXE. Pokud je příznak nastaven na knihovnu DLL, knihovnu DLL se nepodaří načíst v 64bitových procesů a <xref:System.BadImageFormatException> je vyvolána výjimka. Soubor EXE s tímto příznakem lze načíst do 64bitového procesu.<br /><br /> Novinkou [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
-|**/32BITPREF-**|Odstraní příznak 32BITPREFERRED.<br /><br /> Novinkou [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
+|**/32BITPREF+**|Nastaví příznak 32BITPREFERRED. Aplikace běží jako 32bitový proces i na 64bitových platformách. Tento příznak je třeba nastavit pouze u souborů EXE. Pokud je příznak nastaven na knihovnu DLL, knihovnu DLL se nepodaří načíst v 64bitových procesů a <xref:System.BadImageFormatException> je vyvolána výjimka. Soubor EXE s tímto příznakem lze načíst do 64bitového procesu.<br /><br /> Nové v rozhraní .NET Framework 4.5.|  
+|**/32BITPREF-**|Odstraní příznak 32BITPREFERRED.<br /><br /> Nové v rozhraní .NET Framework 4.5.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ Force**|Vynutí aktualizaci i v případě sestavení se silným názvem. **Důležité:**  Při aktualizaci sestavení se silným názvem je nutné toto sestavení před spuštěním jeho kódu znovu podepsat.|  
 |**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  

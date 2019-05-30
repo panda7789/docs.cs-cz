@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b73a98542dfc6fa68e79655bc5538cf005e4636
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2fa95755142b5ea3999cca127c868bc878da516e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779916"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378585"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -58,7 +58,7 @@ ilasm [options] filename [[options]filename...]
 |**/ include:** `includePath`|Nastavuje cestu pro vyhledávání souborů zahrnutých v `#include`.|
 |**/itanium**|Určí jako cílový procesor Intel Itanium.<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/pe64**.|
 |**uveden:** `keyFile`|Zkompiluje `filename` se silným podpisem za použití soukromého klíče obsaženého v `keyFile`.|
-|**uveden:** @`keySource`|Zkompiluje `filename` se silným podpisem pomocí soukromého klíče vytvořeného ve `keySource`.|
+|**uveden:**  @`keySource`|Zkompiluje `filename` se silným podpisem pomocí soukromého klíče vytvořeného ve `keySource`.|
 |**/ výpis**|Vytvoří na standardním výstupu soubor výpisu. Vynecháte-li tuto možnost, není vytvořen žádný soubor výpisu.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework 2.0 a vyšším.|
 |**/mdv:** `versionString`|Nastaví řetězec verze metadat.|
 |**/msv:** `major`.`minor`|Nastaví verzi datového proudu metadat, kam `major` a `minor` jsou celá čísla.|
@@ -108,7 +108,7 @@ Další informace o gramatice jazyka IL, najdete v souboru asmparse.Grammar sady
 
 ## <a name="version-information"></a>Informace o verzi
 
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete přidat vlastní atribut na implementaci rozhraní pomocí kódu podobného následujícímu:
+Od verze rozhraní .NET Framework 4.5, můžete přidat vlastní atribut na implementaci rozhraní pomocí kódu podobného následujícímu:
 
 ```
 .class interface public abstract auto ansi IMyInterface
@@ -128,7 +128,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete přida
       …
 ```
 
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete zadat libovolný zařazovací objekt BLOB (binární rozsáhlý objekt) s použitím jeho nezpracované binární reprezentace, jak je znázorněno v následujícím kódu:
+Od verze rozhraní .NET Framework 4.5, můžete zadat libovolný zařazovací objekt BLOB (binární rozsáhlý objekt) s použitím jeho nezpracované binární reprezentace, jak je znázorněno v následujícím kódu:
 
 ```
 .method public hidebysig abstract virtual

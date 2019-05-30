@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bbfebe57cd10f10719abf02cb529dd0cf3bb3cc9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5503d8a474d7f19348b9342bc02e216bd987223
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793173"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378613"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
-Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] obsahuje rozhraní .NET Framework sadu typů a členů reflexe pro použití v aplikacích pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Tyto typy a členy jsou k dispozici v úplné rozhraní .NET Framework stejně jako v [.NET pro Windows Store apps](https://go.microsoft.com/fwlink/?LinkID=225700). Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
+Od verze rozhraní .NET Framework 4.5, .NET Framework obsahuje sadu typy a členy pro použití v reflexe [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Tyto typy a členy jsou k dispozici v úplné rozhraní .NET Framework stejně jako v [.NET pro Windows Store apps](https://go.microsoft.com/fwlink/?LinkID=225700). Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
   
  Pokud vytváříte aplikaci pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], je nutné použít typy a členy reflexe v rozhraní [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Tyto typy a členy jsou také k dispozici, ačkoli nejsou vyžadovány, pro použití v aplikacích pracovní plochy, takže lze použít stejný kód pro oba typy aplikací.  
   

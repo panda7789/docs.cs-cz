@@ -2,19 +2,19 @@
 title: Novinky ve Windows Workflow Foundation v rozhraní .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: 6be2e3bd64fd93fab8af792bb92c3c0238a7ecde
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: fb9604061fd6ccd7909a2d5b26675a1b637f2b4d
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876542"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380140"
 ---
 # <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Novinky ve Windows Workflow Foundation v rozhraní .NET 4.5
 
-Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přináší mnoho nových funkcí, jako jsou nové aktivity, návrháře funkce a pracovní postup vývoje modelů. Mnoho, ale ne všechny nový pracovní postup funkcí představených v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích, které jsou podporovány, naleznete v tématu [podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním](wf-features-in-the-rehosted-workflow-designer.md). Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](migration-guidance.md). Toto téma obsahuje přehled o nové funkce pracovního postupu v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].
+Windows Workflow Foundation (WF) v rozhraní .NET Framework 4.5 přináší mnoho nových funkcí, jako jsou nové aktivity, návrháře funkce a pracovní postup vývoje modelů. Mnoho, ale ne všechny nového pracovního postupu jsou podporovány funkcí zavedena v rozhraní .NET Framework 4.5 v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích, které jsou podporovány, naleznete v tématu [podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním](wf-features-in-the-rehosted-workflow-designer.md). Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](migration-guidance.md). Toto téma obsahuje přehled o nové vlastnosti pracovního postupu, představené v rozhraní .NET Framework 4.5.
 
 > [!WARNING]
-> Nové funkce Windows Workflow Foundation v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nejsou k dispozici pro projekty, které cílí na předchozí verze rozhraní Framework. Pokud projekt, který cílí na [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] znovu cílí na předchozí verzi rozhraní framework, může nastat několik problémů.
+> Nové funkce Windows Workflow Foundation v rozhraní .NET Framework 4.5 nejsou k dispozici pro projekty, které cílí na předchozí verze rozhraní Framework. Pokud projekt, že se zaměřuje na rozhraní .NET Framework 4.5 znovu cílené na předchozí verzi rozhraní Framework, situace může nastat několik problémů.
 >
 > - Výrazy jazyka C# se nahradí v návrháři se zprávou **hodnota byla nastavená v XAML**.
 > - Dojde k mnoha chyby sestavení, včetně následující chyba.
@@ -23,7 +23,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
 ## <a name="BKMK_Versioning"></a> Správa verzí pracovního postupu
 
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená několik nových funkcí správy verzí podle nového <xref:System.Activities.WorkflowIdentity> třídy. <xref:System.Activities.WorkflowIdentity> Autoři pracovního postupu aplikace poskytuje mechanismus pro mapování trvalé instance práce s jeho definicí.
+Rozhraní .NET framework 4.5 zavedené několik nových funkcí správy verzí podle nového <xref:System.Activities.WorkflowIdentity> třídy. <xref:System.Activities.WorkflowIdentity> Autoři pracovního postupu aplikace poskytuje mechanismus pro mapování trvalé instance práce s jeho definicí.
 
 - Vývojáři, kteří používají <xref:System.Activities.WorkflowApplication> hostování můžete použít <xref:System.Activities.WorkflowIdentity> k povolení hostování více verzí pracovní postup-souběžně. Instance trvalý pracovních postupů je možné načíst pomocí nového <xref:System.Activities.WorkflowApplicationInstance> třídy a pak <xref:System.Activities.WorkflowApplicationInstance.DefinitionIdentity%2A> je možné zajistit správné verze definice pracovního postupu při vytváření instance hostitele <xref:System.Activities.WorkflowApplication>. Další informace najdete v tématu [použití WorkflowIdentity a správy verzí](using-workflowidentity-and-versioning.md) a [jak: Hostování několika verzí pracovní postup-souběžně](how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
@@ -31,7 +31,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
 - Dynamická aktualizace byla zavedená, které poskytuje mechanismus pro aktualizaci definice trvalé instance práce. Další informace najdete v tématu [dynamická aktualizace](dynamic-update.md) a [jak: Aktualizace definice běžící Instance pracovního postupu](how-to-update-the-definition-of-a-running-workflow-instance.md).
 
-- Upgrade databáze trvalosti vytvořené ve službě je poskytován skript databáze SqlWorkflowInstanceStoreSchemaUpgrade.sql [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databázové skripty. Tento skript aktualizace [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze trvalosti pro podporu nové možnosti správy verzí, počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Instance trvalá pracovního postupu v databázi jsou uvedeny výchozí hodnoty správy verzí a účastnit se spuštění vedle sebe a dynamické aktualizace. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databází na podporu pracovních postupů správy verzí](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
+- Upgrade databáze trvalosti vytvořené ve službě je poskytován skript databáze SqlWorkflowInstanceStoreSchemaUpgrade.sql [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databázové skripty. Tento skript aktualizace [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze trvalosti pro podporu nové funkce správy verzí zavedena v rozhraní .NET Framework 4.5. Instance trvalá pracovního postupu v databázi jsou uvedeny výchozí hodnoty správy verzí a účastnit se spuštění vedle sebe a dynamické aktualizace. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databází na podporu pracovních postupů správy verzí](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
 
 ## <a name="BKMK_NewActivities"></a> Aktivity
 
@@ -43,7 +43,7 @@ Knihovna předdefinovaných aktivit obsahuje nové aktivity a nové funkce pro e
 
 ### <a name="BKMK_NewFlowchartCapabilities"></a> Nové funkce vývojového diagramu
 
-Vývojové diagramy se aktualizují pro [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a mají následující nové funkce:
+Vývojové diagramy jsou aktualizované pro rozhraní .NET Framework 4.5 a následující nové funkce:
 
 - `DisplayName` Vlastnost <xref:System.Activities.Statements.FlowSwitch%601> nebo <xref:System.Activities.Statements.FlowDecision> aktivitu je možné upravovat. To vám umožní zobrazit další informace o účelu aktivity návrháře aktivit.
 
@@ -51,7 +51,7 @@ Vývojové diagramy se aktualizují pro [!INCLUDE[net_v45](../../../includes/net
 
 ## <a name="support-for-partial-trust"></a>Podpora pro částečné důvěryhodnosti
 
-Pracovní postupy v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] vyžaduje plně důvěryhodné aplikaci domény. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], pracovní postupy mohou pracovat v prostředí s částečnou důvěryhodností. V prostředí s částečným vztahem důvěryhodnosti je možné bez nutnosti přidělit jim úplný přístup k prostředkům hostitele komponenty třetích stran. Některé obavy o spouštění pracovních postupů v částečném vztahu důvěryhodnosti se takto:
+Pracovní postupy v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] vyžaduje plně důvěryhodné aplikaci domény. V rozhraní .NET Framework 4.5 můžou fungovat pracovních postupů v prostředí s částečnou důvěryhodností. V prostředí s částečným vztahem důvěryhodnosti je možné bez nutnosti přidělit jim úplný přístup k prostředkům hostitele komponenty třetích stran. Některé obavy o spouštění pracovních postupů v částečném vztahu důvěryhodnosti se takto:
 
 1. Používání starší verze komponent (včetně pravidla) součástí <xref:System.Activities.Statements.Interop> aktivity není podporován v částečném vztahu důvěryhodnosti.
 
@@ -114,7 +114,7 @@ Klíčová slova v pracovních postupech prohledána bude odpovídat skutečné 
 
 ### <a name="BKMK_VariableDeleteContextMenu"></a> Odstranit položky kontextové nabídky v Návrháři proměnných a argumentů
 
-V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], proměnné a argumenty může odstranit jenom v Návrháři pomocí klávesnice. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], proměnné a argumenty je možné odstranit pomocí místní nabídky.
+V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], proměnné a argumenty může odstranit jenom v Návrháři pomocí klávesnice. Od verze rozhraní .NET Framework 4.5, proměnné a argumenty je možné odstranit pomocí místní nabídky.
 
 Následující snímek obrazovky ukazuje návrháře kontextové nabídky proměnných a argumentů.
 
@@ -122,7 +122,7 @@ Následující snímek obrazovky ukazuje návrháře kontextové nabídky promě
 
 ### <a name="BKMK_AutoSurround"></a> Automatické kulatých pořadí
 
-Od pracovního postupu nebo určité aktivity kontejneru (například <xref:System.Activities.Statements.NoPersistScope>) může obsahovat jenom jeden text aktivity, přidání druhé aktivity vyžaduje vývojářům první aktivita odstranění, přidání <xref:System.Activities.Statements.Sequence> aktivity a pak přidat obě aktivity k sekvenční aktivity. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], při přidání druhé aktivity na plochu návrháře `Sequence` aktivity se automaticky vytvoří při zabalení obě aktivity.
+Od pracovního postupu nebo určité aktivity kontejneru (například <xref:System.Activities.Statements.NoPersistScope>) může obsahovat jenom jeden text aktivity, přidání druhé aktivity vyžaduje vývojářům první aktivita odstranění, přidání <xref:System.Activities.Statements.Sequence> aktivity a pak přidat obě aktivity k sekvenční aktivity. Od verze rozhraní .NET Framework 4.5, při přidání druhé aktivity na plochu návrháře `Sequence` aktivity se automaticky vytvoří při zabalení obě aktivity.
 
 Následující snímek obrazovky ukazuje `WriteLine` aktivity v `Body` z `NoPersistScope`.
 
@@ -158,7 +158,7 @@ Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začín�
 
 ### <a name="BKMK_CSharpExpressions"></a> Výrazy jazyka C#
 
-Před verzí [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], všechny výrazy v pracovních postupech, může být pouze napsaná v jazyce Visual Basic. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka Visual Basic se používají pouze pro projekty vytvořené pomocí jazyka Visual Basic. Projekty Visual C# nyní pomocí C# pro výrazy. Jaké schopnosti zvýraznění gramatiky a technologie intellisense je k dispozici plně funkční editor výrazů C#. Pracovní postup projekty jazyka C# vytvořené v předchozích verzích, které používají výrazy jazyka Visual Basic, budou nadále fungovat.
+Před rozhraní .NET Framework 4.5 může být všechny výrazy v pracovních postupech pouze napsaná v jazyce Visual Basic. V rozhraní .NET Framework 4.5 výrazy jazyka Visual Basic slouží pouze pro projekty vytvořené pomocí jazyka Visual Basic. Projekty Visual C# nyní pomocí C# pro výrazy. Jaké schopnosti zvýraznění gramatiky a technologie intellisense je k dispozici plně funkční editor výrazů C#. Pracovní postup projekty jazyka C# vytvořené v předchozích verzích, které používají výrazy jazyka Visual Basic, budou nadále fungovat.
 
 Výrazy jazyka C# se ověřují v době návrhu. Chyby ve výrazech jazyka C#, budou označeny červenou vlnovkou.
 
@@ -166,11 +166,11 @@ Další informace o výrazy jazyka C# najdete v tématu [výrazy jazyka C#](csha
 
 ### <a name="BKMK_Visibility"></a> Větší míra kontroly viditelnost panelu prostředí a v záhlaví položek
 
-V návrháři se změněným hostováním některé standardní ovládací prvky uživatelského rozhraní nemůže mít význam pro daný pracovní postup a může být vypnuté. V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], tato přizpůsobení je podporována pouze na prostředí panelu v dolní části okna návrháře. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], viditelnost prostředí položek záhlaví v horní části okna návrháře je možné upravit tak, že nastavíte <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> příslušnou <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> hodnotu.
+V návrháři se změněným hostováním některé standardní ovládací prvky uživatelského rozhraní nemůže mít význam pro daný pracovní postup a může být vypnuté. V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], tato přizpůsobení je podporována pouze na prostředí panelu v dolní části okna návrháře. V rozhraní .NET Framework 4.5, viditelnost prostředí položek záhlaví v horní části okna návrháře je možné upravit tak, že nastavíte <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> příslušnou <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> hodnotu.
 
 ### <a name="BKMK_AutoConnect"></a> Automatické připojení a automatické vložení v pracovních postupech vývojový diagram a stavového stroje.
 
-V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], připojení mezi uzly v pracovním postupu vývojového diagramu musí přidat ručně. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vývojový diagram a stavového stroje uzly mají automaticky připojit body, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů na plochu návrháře. Přetažení aktivity v jednom z těchto bodů automaticky přidá aktivitu do aktivity spolu s nezbytné připojení.
+V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], připojení mezi uzly v pracovním postupu vývojového diagramu musí přidat ručně. V rozhraní .NET Framework 4.5, vývojový diagram a stavového stroje uzly mají automaticky připojit body, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů na plochu návrháře. Přetažení aktivity v jednom z těchto bodů automaticky přidá aktivitu do aktivity spolu s nezbytné připojení.
 
 Následující snímek obrazovky ukazuje body přílohy, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů.
 
@@ -196,7 +196,7 @@ Aktivity v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] pou�
 
 ### <a name="BKMK_BuildTimeValidation"></a> Ověření při sestavení
 
-V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], chyby ověření pracovního postupu se přitom počítá jako chyby sestavení během sestavování projektu pracovního postupu. To znamená, že tento pracovní postup sestavení projektu může úspěšné i v případě, že došlo k chybě ověření pracovního postupu. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], aby sestavení selhalo, způsobit chyby ověření pracovního postupu.
+V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], chyby ověření pracovního postupu se přitom počítá jako chyby sestavení během sestavování projektu pracovního postupu. To znamená, že tento pracovní postup sestavení projektu může úspěšné i v případě, že došlo k chybě ověření pracovního postupu. V rozhraní .NET Framework 4.5 způsobit chyby ověření pracovního postupu, aby sestavení selhalo.
 
 ### <a name="BKMK_DesignTimeValidation"></a> Ověřování na pozadí v době návrhu
 
@@ -204,15 +204,15 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], pracovní po
 
 ### <a name="BKMK_ViewState"></a> Stav zobrazení, které jsou umístěné v samostatném umístění v souborech XAML
 
-V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], informace o zobrazení stavu pracovního postupu je uložen v souboru XAML v mnoha různých umístěních. Toto je vhodná pro vývojáře, kteří chtějí XAML přímo číst nebo napsat kód, který odebrat informace o stavu zobrazení. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], zobrazit informace o stavu v souboru XAML je serializován jako samostatný prvek v souboru XAML. Vývojáře můžou snadno najít a upravit informace o zobrazení stavu aktivity nebo zcela odebrat stav zobrazení.
+V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], informace o zobrazení stavu pracovního postupu je uložen v souboru XAML v mnoha různých umístěních. Toto je vhodná pro vývojáře, kteří chtějí XAML přímo číst nebo napsat kód, který odebrat informace o stavu zobrazení. V rozhraní .NET Framework 4.5 zobrazit informace o stavu v souboru XAML serializován jako samostatný prvek v souboru XAML. Vývojáře můžou snadno najít a upravit informace o zobrazení stavu aktivity nebo zcela odebrat stav zobrazení.
 
 ### <a name="BKMK_ExpressionExtensibility"></a> Rozšiřitelnost výraz
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], poskytujeme způsob, jak mohou vývojáři vytvářet vlastní výrazem a výraz zážitky, které může být připojeno v Návrháři postupu provádění.
+Rozhraní .NET Framework 4.5 poskytuje způsob, jak mohou vývojáři vytvářet vlastní výrazem a výraz zážitky, které může být připojeno v Návrháři postupu provádění.
 
 ### <a name="BKMK_BackwardCompatRehostedDesigner"></a> Vyjádřit výslovný souhlas pro funkce pracovního postupu 4.5 v návrháři se změněným hostováním
 
-Pro zachování zpětné kompatibility, některé nové funkce zahrnuté v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nejsou povolené ve výchozím nastavení v návrháři se změněným hostováním. Tím je zajištěno, že existující aplikace, které používají návrháři se změněným hostováním negativně neovlivní aktualizace na nejnovější verzi. Chcete-li povolit nové funkce v návrháři se změněným hostováním, buď nastavte <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> "Rozhraní .NET Framework 4.5", nebo nastavení jednotlivých členů <xref:System.Activities.Presentation.DesignerConfigurationService> povolení jednotlivých funkcí.
+Pro zachování zpětné kompatibility, nejsou některé nové funkce, které jsou zahrnuty v rozhraní .NET Framework 4.5 povolené ve výchozím nastavení v návrháři se změněným hostováním. Tím je zajištěno, že existující aplikace, které používají návrháři se změněným hostováním negativně neovlivní aktualizace na nejnovější verzi. Chcete-li povolit nové funkce v návrháři se změněným hostováním, buď nastavte <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> "Rozhraní .NET Framework 4.5", nebo nastavení jednotlivých členů <xref:System.Activities.Presentation.DesignerConfigurationService> povolení jednotlivých funkcí.
 
 ## <a name="BKMK_NewWFModels"></a> Pracovní postup vývoje modelů
 
@@ -220,7 +220,7 @@ Kromě vývojový diagram a sekvenční pracovní postup vývoje modelů tato ve
 
 ### <a name="BKMK_StateMachine"></a> Pracovní postupy stavového stroje
 
-Pracovní postupy stavového stroje byly představeny jako součást rozhraní .NET Framework 4, verze 4.0.1 [rozhraní Microsoft .NET Framework 4 aktualizace platformy 1](https://go.microsoft.com/fwlink/?LinkID=215092). Tato aktualizace je zahrnuta několik nových třídách a činnostech, které mohou vývojáři vytvářet pracovní postupy stavu počítače povolené. Tyto třídy a činnosti byly aktualizovány [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Aktualizace zahrnují:
+Pracovní postupy stavového stroje byly představeny jako součást rozhraní .NET Framework 4, verze 4.0.1 [rozhraní Microsoft .NET Framework 4 aktualizace platformy 1](https://go.microsoft.com/fwlink/?LinkID=215092). Tato aktualizace je zahrnuta několik nových třídách a činnostech, které mohou vývojáři vytvářet pracovní postupy stavu počítače povolené. Tyto třídy a činnosti byly aktualizovány pro rozhraní .NET Framework 4.5. Aktualizace zahrnují:
 
 1. Možnost nastavit zarážky na stavy
 

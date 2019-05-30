@@ -2,12 +2,12 @@
 title: Použití WorkflowIdentity a správy verzí
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 77f5663665d56209cbb1ebc5999d44d411189f04
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: acf2b2c9502487c8bc8960f2a5625db94c31945f
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603299"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380122"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Použití WorkflowIdentity a správy verzí
 <xref:System.Activities.WorkflowIdentity> nabízí způsob, jak pro pracovní postup přidružit název a <xref:System.Version> s definicí pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Toto téma obsahuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o spuštění vedle sebe definice pracovního postupu ve službě pracovního postupu v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, naleznete v tématu [dynamická aktualizace](dynamic-update.md).  
@@ -139,9 +139,9 @@ wfApp.Load(instance);
 ```  
   
 ## <a name="UpdatingWF4PersistenceDatabases"></a> Upgrade rozhraní .NET Framework 4 trvalost databází pro podporu správy verzí pracovního postupu  
- Upgrade databáze trvalosti vytvořené ve službě je poskytován skript databáze SqlWorkflowInstanceStoreSchemaUpgrade.sql [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databázové skripty. Tento skript aktualizace databází, aby podporovaly nové funkce správy verzí zavedený [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Všechny instance trvalá pracovního postupu v databázích jsou uvedeny výchozí hodnoty správy verzí a potom účastnit spuštění vedle sebe a dynamické aktualizace.  
+ Upgrade databáze trvalosti vytvořené ve službě je poskytován skript databáze SqlWorkflowInstanceStoreSchemaUpgrade.sql [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databázové skripty. Tento skript aktualizace databází, aby podporovaly nové funkce správy verzí zavedena v rozhraní .NET Framework 4.5. Všechny instance trvalá pracovního postupu v databázích jsou uvedeny výchozí hodnoty správy verzí a potom účastnit spuštění vedle sebe a dynamické aktualizace.  
   
- Pokud [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] pracovního postupu aplikace pokusí všechny operace trvalého uložení, které používají nové funkce správy verzí na stálost databázi, která nebyla upgradována pomocí dodávaného skriptu <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> dojde a zobrazí se zpráva podobná následující zpráva.  
+ Pokud se aplikace pracovního postupu rozhraní .NET Framework 4.5 pokusí všechny operace trvalého uložení, které používají nové funkce správy verzí na stálost databázi, která nebyla upgradována pomocí dodávaného skriptu <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> dojde a zobrazí se zpráva podobná následující zpráva.  
   
  **Úložiště SqlWorkflowInstanceStore je verze databáze "4.0.0.0". Příkaz InstancePersistenceCommand "System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand" nelze spustit proti této verzi databáze.  Upgradujte databázi na "4.5.0.0".**  
 ### <a name="ToUpgrade"></a> Aktualizace schématu databáze  

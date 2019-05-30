@@ -11,21 +11,21 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8373ed288ff3e8e3f7992729e57b366a4c0043a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a327cb25210be7b9b6c341e3d11ccdc856cf46d3
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755776"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379966"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 .NET Client Profile je podmnožinou rozhraní .NET Framework, která byla součástí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starších verzí a byla optimalizována pro klientské aplikace. Rozhraní .NET Framework je vývojovou platformu pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovny tříd rozhraní .NET Framework. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a dřívější verze poskytují dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
   
- Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], už není na profil klienta a je k dispozici pouze úplný redistribuovatelný balíček. Optimalizace poskytované rozhraním [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jako jsou menší velikost ke stažení a rychlejší nasazení, odstranily potřebu samostatných balíčků nasazení. Jediná verze Redistributable zjednodušuje proces instalace a možnosti nasazení aplikace.  
+ Od verze rozhraní .NET Framework 4.5, byla zrušena na profil klienta a je k dispozici pouze úplný redistribuovatelný balíček. Optimalizace poskytované rozhraním .NET Framework 4.5, jako jsou menší velikost ke stažení a rychlejší nasazení, odstranily potřebu samostatných balíčků nasazení. Jediná verze Redistributable zjednodušuje proces instalace a možnosti nasazení aplikace.  
   
  Nicméně, pokud se zaměřujete na rozhraní .NET Framework 4 nebo 3.5 a chcete získat další informace o klientském profilu a kdy ji použít, najdete v článku [rozhraní .NET Framework Client Profile](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29) v dokumentaci k rozhraní .NET Framework 4.  
   
- Při instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], je rozhraní .NET Framework 4 Client Profile aktualizována na plnou verzi rozhraní .NET Framework. Informace o instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).  
+ Při instalaci rozhraní .NET Framework 4.5 je rozhraní .NET Framework 4 Client Profile aktualizována na plnou verzi rozhraní .NET Framework. Informace o instalaci rozhraní .NET Framework 4.5 naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).  
   
 ## <a name="see-also"></a>Viz také:
 

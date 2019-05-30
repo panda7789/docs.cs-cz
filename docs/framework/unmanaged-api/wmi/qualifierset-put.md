@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42bef9ab728af251b043e29af4cee9e5cb3f405d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a11f19a9b5ebdf491b79c250da7fc5ac3d980b64
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636536"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377870"
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put – funkce
 
@@ -58,7 +58,7 @@ HRESULT QualifierSet_Put (
 `lFlavor`\
 [in] Jeden z následujících konstant, které definuje požadovaný flavor u tohoto kvalifikátoru. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_OVERRIDABLE` | 0 | Kvalifikátor se dá přepsat v odvozené třídě nebo instanci. **Toto je výchozí hodnota.** |
 | `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Kvalifikátor je postoupena do instance. |
@@ -70,9 +70,9 @@ HRESULT QualifierSet_Put (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | Došlo k neplatnému pokusu určit **klíč** kvalifikátor na vlastnost, která nemůže být klíč. Klíče jsou zadány om c; detaily třídy definice objektu a nelze je měnit na základě jednotlivé instance. |
+| `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | Došlo k neplatnému pokusu určit **klíč** kvalifikátor na vlastnost, která nemůže být klíč. Klíče jsou určené v definici třídy objektu a nelze je změnit na základě jednotlivé instance. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 | `WBEM_E_INVALID_QUALIFIER_TYPE` | 0x80041029 | `pVal` Parametr není platný typ kvalifikátoru. |
 | `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Není možné volat `QualifierSet_Put` metoda na kvalifikátor, protože vlastnící objekt nepovoluje přepíše. |

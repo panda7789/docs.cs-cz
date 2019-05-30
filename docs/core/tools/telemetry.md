@@ -4,12 +4,12 @@ description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďu
 author: richlander
 ms.date: 06/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: 82410863c81faa95edfb120c95ec6bc186ed1328
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85cceab08fc6e4108a5b951c8b67c1ad5a28f6bb
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751675"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377507"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 
@@ -79,7 +79,7 @@ Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v tématu [Data o v
 
 &#8224;*Výskyty* sloupec zobrazuje agregace počet použití tohoto příkazu pro tento řádek metrik daný den.
 
-&#8225;Obvykle *zeměpisné oblasti* sloupec zobrazuje název země. V některých případech se v tomto sloupci, ať už z důvodu výzkumných pracovníků pomocí platformy .NET Core v Antarktida nebo nesprávné umístění dat zobrazí kontinent Antarktida.
+&#8225;Obvykle *zeměpisné oblasti* sloupec zobrazuje název země/oblasti. V některých případech se v tomto sloupci, ať už z důvodu výzkumných pracovníků pomocí platformy .NET Core v Antarktida nebo nesprávné umístění dat zobrazí kontinent Antarktida.
 
 ### <a name="example"></a>Příklad
 

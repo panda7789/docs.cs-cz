@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 43037f897dfb591572a62a9bb3cccf9170d1f5fe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca7f3a8d9ee840fc8c1c8a8efdadf8da033241f1
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645013"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377457"
 ---
 # <a name="exceptions-in-managed-threads"></a>Výjimky ve spravovaných vláknech
 Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umožňuje nejvíce neošetřené výjimky ve vláknech přirozeně pokračovat. Ve většině případů to znamená, že neošetřené výjimky způsobí ukončení aplikace.  
@@ -39,7 +39,7 @@ Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umož
 >  Je možné pro modul runtime vyvolá neošetřenou výjimku před spravovaný kód dostala příležitost k instalaci obslužné rutiny výjimky. I když spravovaného kódu dříve žádné příležitost dobře se zpracovat výjimku, může pokračovat přirozeně výjimku.  
   
 ## <a name="exposing-threading-problems-during-development"></a>Vystavení dělení na vlákna problémy při vývoji  
- Pokud vlákna mají povoleno provést tiše, bez ukončení aplikace, může pokračovat nezjištěné po programovací vážným problémům. Toto je konkrétního problému pro služby a další aplikace, které běží po delší dobu. Jak vlákna selže, je poškozený postupně stav programu. Může se snížit výkon aplikace nebo může být zablokování aplikace.  
+ Pokud vlákna mají povoleno provést tiše, bez ukončení aplikace, může pokračovat nezjištěné po programovací vážným problémům. Toto je konkrétního problému pro služby a další aplikace, které běží po delší dobu. Jak vlákna selže, je poškozený postupně stav programu. Může se snížit výkon aplikace nebo aplikace může přestat reagovat.  
   
  Povolení neošetřené výjimky v vlákna přirozeně, pokračovat až do doby ukončení programu, operační systém poskytuje tyto problémy během vývoje a testování. Zprávy o chybách program ukončení podpory ladění.  
   

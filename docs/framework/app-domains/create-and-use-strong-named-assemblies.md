@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 479307a0bdee162103f798e5f852cd20f259811e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 629a59cd28e58e4b08805e3bb742d12e9cacbebd
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607685"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377884"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 
@@ -71,7 +71,7 @@ Tuto funkci můžete zakázat pro jednotlivé aplikace nebo pro počítač. Zobr
 |-----------|-----------------|
 |[Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)|Popisuje postup vytvoření páru kryptografických klíčů pro podepsání sestavení.|
 |[Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)|Popisuje, jak vytvořit sestavení se silným názvem.|
-|[Vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Popisuje vylepšení silných názvů v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|
+|[Vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Popisuje vylepšení silné názvy rozhraní .NET Framework 4.5.|
 |[Postupy: Odkazování na sestavení se silným názvem](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|Popisuje, jak odkazovat na typy a prostředky v sestavení se silným názvem v době kompilace nebo běhu.|
 |[Postupy: Zákaz funkce obejití silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)|Popisuje, jak zakázat funkci obchází ověření podpisy se silným názvem. Tuto funkci můžete zakázat pro všechny nebo pro určité aplikace.|
 |[Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)|Poskytuje přehled o jeden soubor a vícesouborové sestavení.|

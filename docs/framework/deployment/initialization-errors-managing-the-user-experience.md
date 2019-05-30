@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2abbe121879e5f47fbce9a82d2afbf52cbef4ba9
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 28e9aab575876d425112c08b59b9cfc44a8c09a7
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636633"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379938"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele
 
@@ -75,21 +75,21 @@ Modul CLR zahrnuje sadu hostitelů pro různé scénáře a všichni tito hostit
 |--------------|-----------------|--------------------------|------------------------------------|
 |Spravovaného hostitele EXE|Spustí spravovaných souborů exe.|Je zobrazena v případě chybějící verzi rozhraní .NET Framework|Ne|
 |Spravovaného hostitele modelu COM|Načte spravované komponenty modelu COM do procesu.|Je zobrazena v případě chybějící verzi rozhraní .NET Framework|Ano, tak, že nastavíte SEM_FAILCRITICALERRORS příznak|
-|Hostitel technologie ClickOnce|Spouštění aplikací ClickOnce.|Je zobrazena v případě chybějící verzi rozhraní .NET Framework začínající [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]|Ne|
-|XBAP hostitele|Spouštění aplikací WPF XBAP.|Je zobrazena v případě chybějící verzi rozhraní .NET Framework začínající [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]|Ne|
+|Hostitel technologie ClickOnce|Spouštění aplikací ClickOnce.|Je zobrazena v případě chybějící verzi rozhraní .NET Framework, od verze rozhraní .NET Framework 4.5|Ne|
+|XBAP hostitele|Spouštění aplikací WPF XBAP.|Je zobrazena v případě chybějící verzi rozhraní .NET Framework, od verze rozhraní .NET Framework 4.5|Ne|
 
 ## <a name="windows-8-behavior-and-ui"></a>Chování systému Windows 8 a uživatelského rozhraní
 
-Systém aktivace CLR poskytuje stejné chování a uživatelského rozhraní na [!INCLUDE[win8](../../../includes/win8-md.md)] stejně jako v jiných verzích operačního systému Windows, kromě případů, kdy se setká s problémy při načítání modul CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] zahrnuje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], který používá CLR 4.5. Ale [!INCLUDE[win8](../../../includes/win8-md.md)] neobsahuje rozhraní .NET Framework 2.0, 3.0 nebo 3.5, který použít modul CLR 2.0. V důsledku toho se aplikace, které závisí na modul CLR 2.0 nespouštějte na [!INCLUDE[win8](../../../includes/win8-md.md)] ve výchozím nastavení. Místo toho zobrazí se následující dialogové okno Povolit uživatele k instalaci rozhraní .NET Framework 3.5. Uživatelé můžou také povolit rozhraní .NET Framework 3.5 v Ovládacích panelech. Obě možnosti jsou popsány v následujícím článku [nainstalovat rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md).
+Systém aktivace CLR poskytuje stejné chování a uživatelského rozhraní na [!INCLUDE[win8](../../../includes/win8-md.md)] stejně jako v jiných verzích operačního systému Windows, kromě případů, kdy se setká s problémy při načítání modul CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] zahrnuje rozhraní .NET Framework 4.5, který používá CLR 4.5. Ale [!INCLUDE[win8](../../../includes/win8-md.md)] neobsahuje rozhraní .NET Framework 2.0, 3.0 nebo 3.5, který použít modul CLR 2.0. V důsledku toho se aplikace, které závisí na modul CLR 2.0 nespouštějte na [!INCLUDE[win8](../../../includes/win8-md.md)] ve výchozím nastavení. Místo toho zobrazí se následující dialogové okno Povolit uživatele k instalaci rozhraní .NET Framework 3.5. Uživatelé můžou také povolit rozhraní .NET Framework 3.5 v Ovládacích panelech. Obě možnosti jsou popsány v následujícím článku [nainstalovat rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md).
 
 ![Dialogové okno pro instalaci verze 3.5 v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "výzva k instalaci rozhraní .NET Framework 3.5 na vyžádání")
 
 > [!NOTE]
-> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Nahrazuje rozhraní .NET Framework 4 (CLR 4) na počítači uživatele. Proto rozhraní .NET Framework 4 aplikace běží bez problémů, bez zobrazení v tomto dialogovém okně [!INCLUDE[win8](../../../includes/win8-md.md)].
+> Rozhraní .NET Framework 4.5 nahrazuje rozhraní .NET Framework 4 (CLR 4) na počítači uživatele. Proto rozhraní .NET Framework 4 aplikace běží bez problémů, bez zobrazení v tomto dialogovém okně [!INCLUDE[win8](../../../includes/win8-md.md)].
 
 Při instalaci rozhraní .NET Framework 3.5, můžou uživatelé spouštět aplikace, které závisí na rozhraní .NET Framework 2.0, 3.0 nebo 3.5 na jejich [!INCLUDE[win8](../../../includes/win8-md.md)] počítače. Rozhraní .NET Framework 1.0 a 1.1 aplikace můžou běžet také za předpokladu, že tyto aplikace nejsou explicitně nakonfigurováno pro běh pouze v rozhraní .NET Framework 1.0 nebo 1.1. Zobrazit [migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md).
 
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vylepšili jsme protokolování aktivace CLR zahrnout položky protokolu, které zaznamenávají, kdy a proč se zobrazí chybová zpráva inicializace. Další informace najdete v tématu [jak: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md).
+Od verze rozhraní .NET Framework 4.5, protokolování aktivace modulu CLR byla vylepšena zahrnout položky protokolu, které zaznamenávají, kdy a proč se zobrazí chybová zpráva inicializace. Další informace najdete v tématu [jak: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md).
 
 ## <a name="see-also"></a>Viz také:
 

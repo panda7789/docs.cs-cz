@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d750087cc000ad31a24d91411c0885a75d59e74f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9264d8eb7923663061f9bccfffe5b8f5254549f0
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61871342"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379892"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Omezení rizik: Dotykové ovládání založená na ukazatelích a podpora pera
 
@@ -38,7 +38,7 @@ Toto jsou aktuální známé problémy s nepovinným `WM_POINTER`– na základ�
 
   - Dotykové ovládání/stylus událostí, nepůjdou už přetažení.
 
-      Aplikace to můžete zablokování potenciálně, dokud je zjištěna vstup z myši. Vývojáři by místo toho zahájit přetáhněte a vyřadit z události myši.
+      To může potenciálně způsobit aplikace přestane reagovat, dokud se detekuje vstup z myši. Vývojáři by místo toho zahájit přetáhněte a vyřadit z události myši.
 
 ## <a name="opting-in-to-wmpointer-based-touchstylus-support"></a>Vyjádření výslovného souhlasu s na základě WM_POINTER touch/stylus podpory
 

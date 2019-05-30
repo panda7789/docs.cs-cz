@@ -2,20 +2,20 @@
 title: Asynchronní programování
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: c41a231959536f4bd558fcd3e94d0d58c2375021
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 2698ffabb1f4d7c25f8d889c549c27b668647d62
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584493"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380072"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
-Toto téma popisuje podporu pro asynchronní programování v .NET Framework Data Provider pro SQL Server (SqlClient) včetně vylepšení pro podporu asynchronního programování funkcí, která byla zavedena v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+Toto téma popisuje podporu pro asynchronní programování v .NET Framework Data Provider pro SQL Server (SqlClient) včetně vylepšení pro podporu asynchronní programovací funkce, která byla zavedena v rozhraní .NET Framework 4.5.
 
 ## <a name="legacy-asynchronous-programming"></a>Starší verze asynchronní programování
 
-Před verzí [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], asynchronní programování s SqlClient bylo provedeno pomocí následujících metod a `Asynchronous Processing=true` vlastnost připojení:
+Před rozhraní .NET Framework 4.5, asynchronní programování s SqlClient bylo provedeno pomocí následujících metod a `Asynchronous Processing=true` vlastnost připojení:
 
 1. <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A?displayProperty=nameWithType>
 
@@ -23,16 +23,16 @@ Před verzí [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], asynchronn
 
 3. <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A?displayProperty=nameWithType>
 
-Tato funkce zůstane v SqlClient v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+Tato funkce zůstane v SqlClient v rozhraní .NET Framework 4.5.
 
 > [!TIP]
-> Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], tyto starší verze metody už nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.
+> Počínaje rozhraním .NET Framework 4.5, tyto starší verze metody už nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.
 
-## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>Asynchronní programování funkce přidané ve [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]
+## <a name="asynchronous-programming-features-added-in-net-framework-45"></a>Asynchronní programování funkce přidané v rozhraní .NET Framework 4.5
 
 Nová funkce pro asynchronní programování poskytuje jednoduché techniku, aby asynchronní kód.
 
-Další informace o asynchronní programovací funkce, která byla zavedena v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], naleznete v tématu:
+Další informace o asynchronní programovací funkce, která byla zavedena v rozhraní .NET Framework 4.5 naleznete v tématu:
 
 - [Asynchronní programování v jazyce C#](../../../csharp/async.md)
 
@@ -53,7 +53,7 @@ Můžete teď volání do asynchronní metody bez použití zpětných volání 
 
 Volání `async` metoda nepřidělovat žádné další vlákna. Stručně může použít existující vlákno dokončení vstupně-výstupních operací na konci.
 
-Byly přidány následující metody [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] pro podporu asynchronního programování:
+V rozhraní .NET Framework 4.5, aby podporoval asynchronní programování byly přidány následující metody:
 
 - <xref:System.Data.Common.DbConnection.OpenAsync%2A?displayProperty=nameWithType>
 

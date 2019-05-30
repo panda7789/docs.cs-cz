@@ -8,21 +8,21 @@ helpviewer_keywords:
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4a236b3b4b5c4cde66bad2b460637bb533b764be
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: a491b0efd38ed7ff37c8c704b6646dddede5efb3
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881606"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379922"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Omezení restartů systému při instalaci rozhraní .NET Framework 4.5
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Použije instalační program [správce restartování](https://go.microsoft.com/fwlink/?LinkId=231425) zabraňuje systému v restartování během instalace. Pokud vaše aplikace Instalační program nainstaluje rozhraní .NET Framework, můžete rozhraní s správce restartování, abyste mohli využít tuto funkci. Další informace najdete v tématu [jak: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
+Použije instalační program rozhraní .NET Framework 4.5 [správce restartování](https://go.microsoft.com/fwlink/?LinkId=231425) zabraňuje systému v restartování během instalace. Pokud vaše aplikace Instalační program nainstaluje rozhraní .NET Framework, můžete rozhraní s správce restartování, abyste mohli využít tuto funkci. Další informace najdete v tématu [jak: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
   
 ## <a name="reasons-for-a-restart"></a>Důvody pro restartování  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Instalace vyžaduje restartování systému, pokud aplikace rozhraní .NET Framework 4 se používá během instalace. Je to proto, [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nahradí soubory rozhraní .NET Framework 4 a vyžaduje, aby se během instalace k dispozici tyto soubory. V mnoha případech lze zabránit restartování preventivně zjišťování a closing.NET Framework 4 aplikace, které se používají. Však některé aplikace pro systém by neměl být uzavřena. V těchto případech se nelze vyhnout spojení restartování.  
+ Instalace rozhraní .NET Framework 4.5 vyžaduje restartování systému, pokud aplikace rozhraní .NET Framework 4 se používá během instalace. Je to proto, že rozhraní .NET Framework 4.5 nahradí soubory rozhraní .NET Framework 4 a vyžaduje, aby se během instalace k dispozici tyto soubory. V mnoha případech lze zabránit restartování preventivně zjišťování a closing.NET Framework 4 aplikace, které se používají. Však některé aplikace pro systém by neměl být uzavřena. V těchto případech se nelze vyhnout spojení restartování.  
   
 ## <a name="end-user-experience"></a>Činnost koncového uživatele  
- Koncový uživatel, kdo dělá úplnou instalaci nástroje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] je zadána možnost vyhnout se restartování systému, pokud instalační program zjistí aplikace rozhraní .NET Framework 4, používá. Zpráva obsahuje seznam všech spuštěných aplikací rozhraní .NET Framework 4 a poskytuje možnost Zavřít tyto aplikace před instalací. Pokud uživatel potvrdí, tyto aplikace se vypne instalační službou a zabránit restartování systému. Pokud uživatel neodpovídá na zprávu v rámci určité množství času, instalace bude pokračovat bez zavření všech aplikací.  
+ Koncový uživatel, který provádí úplnou instalaci rozhraní .NET Framework 4.5 je umožněno instalační program zjistí aplikace rozhraní .NET Framework 4, používá-li zabránit restartování systému. Zpráva obsahuje seznam všech spuštěných aplikací rozhraní .NET Framework 4 a poskytuje možnost Zavřít tyto aplikace před instalací. Pokud uživatel potvrdí, tyto aplikace se vypne instalační službou a zabránit restartování systému. Pokud uživatel neodpovídá na zprávu v rámci určité množství času, instalace bude pokračovat bez zavření všech aplikací.  
   
  Pokud správce restartování zjistí situaci, která bude vyžadovat restart systému, i v případě používání aplikací zavřete, zpráva se nezobrazí.  
   

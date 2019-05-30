@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4710f299c97a6ef8039314243ca481db51c2bb52
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 793012b21ae6a3a597efaea23a6d3b6d1db58562
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614089"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379960"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 
-Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho systémové závislosti napříč sítí pomocí nástroje System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
+Tento článek popisuje, jak může správce systému můžete nasadit rozhraní .NET Framework 4.5 a jeho systémové závislosti napříč sítí pomocí Microsoft System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci rozhraní .NET Framework 4.5 naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
 
 > [!NOTE]
-> Software zmíněný v tomto dokumentu, včetně mimo jiné [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], System Center Configuration Manager a služby Active Directory, se vztahují licenční podmínky a ujednání. V těchto pokynech se předpokládá, že nabyvatel licence k softwaru si tyto licenční podmínky přečetl a schválil je. Tyto pokyny neodporují žádné z podmínek takovýchto licenčních smluv.
+> Software zmíněný v tomto dokumentu, včetně bez omezení, rozhraní .NET Framework 4.5, System Center Configuration Manager a služby Active Directory, se vztahují licenční podmínky a ujednání. V těchto pokynech se předpokládá, že nabyvatel licence k softwaru si tyto licenční podmínky přečetl a schválil je. Tyto pokyny neodporují žádné z podmínek takovýchto licenčních smluv.
 >
 > Informace o podpoře pro rozhraní .NET Framework najdete v tématu [podporu zásad životního cyklu Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607) na webu Microsoft Support.
 
@@ -55,7 +55,7 @@ Pokud je k dispozici podpůrná infrastruktura, lze distribuovatelný balíček
 
 ## <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework
 
-System Center 2012 Configuration Manager můžete použít k nasazení tiché instalace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], kde uživatelé nespolupracují s instalačním procesem. Postupujte podle těchto kroků:
+System Center 2012 Configuration Manager můžete použít k nasazení tiché instalace rozhraní .NET Framework 4.5, kde uživatelé nespolupracují s instalačním procesem. Postupujte podle těchto kroků:
 
 1. [Vytvoření kolekce](#creating_a_collection).
 
@@ -135,7 +135,7 @@ Následující tabulka popisuje možnosti příkazového řádku zadané v krok
 |------------|-----------------|
 |**/q**|Nastaví tichý režim. Není vyžadován žádný vstup uživatele a nebude zobrazen žádný výstup.|
 |**/ norestart /**|Zabrání instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, musí restartování počítače zpracovat nástroj Správce konfigurace.|
-|**chainingpackage** *název balíčku*|Určuje název balíčku, který provádí řetězení. Tato informace je oznámena spolu s dalšími informacemi relace instalace pro ty, kteří se přihlásili k odběru [Microsoft zkušeností zlepšování Program uživatelů (CEIP)](https://go.microsoft.com/fwlink/p/?LinkId=248244). Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Chaining Product"**.|
+|**chainingpackage** *název balíčku*|Určuje název balíčku, který provádí řetězení. Tato informace je oznámena spolu s dalšími informacemi relace instalace pro ty, kteří se přihlásili k odběru [Microsoft zkušeností zlepšování Program uživatelů (CEIP)](https://go.microsoft.com/fwlink/p/?LinkId=248244). Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Chaining Product"** .|
 
 Podle těchto kroků vytvoříte balíček s názvem .NET Framework 4.5. Program provede nasazení tiché instalace rozhraní .NET Framework 4.5. V případě tiché instalace uživatelé nespolupracují s instalačním procesem a zřetězující aplikace musí zachytit návratový kód a zpracovat restartování; Zobrazit [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=179606).
 
@@ -202,7 +202,7 @@ Balíček bude nyní nasazen na cílenou kolekci a bude spuštěna tichá insta
 
 ## <a name="resources"></a>Prostředky
 
-Další informace o infrastruktuře pro testovaní nasazení [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Distribuovatelný balíček, najdete v následujících zdrojích informací.
+Další informace o infrastruktuře pro testovaní nasazení distribuovatelného balíčku rozhraní .NET Framework 4.5 viz následující prostředky.
 
 **Active Directory, DNS, DHCP:**
 
@@ -249,7 +249,7 @@ Můžete použít [nástroj pro shromažďování protokolů](https://www.micros
 
 ### <a name="return-codes"></a>Návratové kódy
 
-Následující tabulka obsahuje nejběžnější návratové kódy [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalačního programu opětovné distribuce. Návratové kódy jsou stejné pro všechny verze instalačního programu.
+Následující tabulka uvádí nejběžnější návratové kódy z Distribuovatelný instalační program rozhraní .NET Framework 4.5. Návratové kódy jsou stejné pro všechny verze instalačního programu.
 
 Odkazy na podrobné informace najdete v další části [kódy chyb stahování](#additional_error_codes).
 

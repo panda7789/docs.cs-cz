@@ -2,15 +2,15 @@
 title: Vývoj služby pracovního postupu s upřednostněním kontraktu
 ms.date: 03/30/2017
 ms.assetid: e5dbaa7b-005f-4330-848d-58ac4f42f093
-ms.openlocfilehash: 2fcc0054a3e4c9dd2152344617c8506c9ce6b0d7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 244a6973dde9aba860b08177a42a2ecd64f3479c
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587618"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380195"
 ---
 # <a name="contract-first-workflow-service-development"></a>Vývoj služby pracovního postupu s upřednostněním kontraktu
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows Workflow Foundation (WF) lepší integrace mezi službami webové a pracovní postupy ve formuláři stavící do pracovního postupu vývoje. Pracovní postup kontraktem vývojový nástroj umožňuje navrhovat smlouvy v kódu. Nástroj potom automaticky vygeneruje šablonu aktivit v sadě nástrojů pro operace v kontraktu. Toto téma obsahuje přehled, jak aktivity a vlastností služby pracovního postupu se mapují na atributy smlouvy o poskytování služeb. Podrobný příklad vytvoření služby pracovních postupů kontraktem, naleznete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
+Od verze rozhraní .NET Framework 4.5, Windows Workflow Foundation (WF) funkce lepší integrace mezi službami webové a pracovní postupy ve formuláři stavící do pracovního postupu vývoje. Pracovní postup kontraktem vývojový nástroj umožňuje navrhovat smlouvy v kódu. Nástroj potom automaticky vygeneruje šablonu aktivit v sadě nástrojů pro operace v kontraktu. Toto téma obsahuje přehled, jak aktivity a vlastností služby pracovního postupu se mapují na atributy smlouvy o poskytování služeb. Podrobný příklad vytvoření služby pracovních postupů kontraktem, naleznete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   

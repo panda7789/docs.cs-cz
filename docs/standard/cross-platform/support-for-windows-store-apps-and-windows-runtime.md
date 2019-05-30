@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eb2b082393656e84cedb293c3f3857e6680ed2ab
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 45e28ebb9319447f2e1ae98f1de883f90840720f
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664343"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378296"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Podporuje různé scénáře vývoje softwaru pomocí [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Tyto scénáře spadají do tří kategorií:
+Podporuje různé scénáře vývoje softwaru pomocí rozhraní .NET Framework 4.5 [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Tyto scénáře spadají do tří kategorií:
 
 - Vývoj [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace s ovládacími prvky XAML, jak je popsáno v [aplikací plán pro Windows Store pomocí jazyka C# nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10)), [jak tos (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10)), a [.NET pro Windows Store apps – přehled ](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
@@ -127,7 +127,7 @@ ms.locfileid: "64664343"
 - V komponentě typy lze odvodit z [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy. Ovládací prvky lze odvodit z primitivních typů ovládacích prvků v <xref:Windows.UI.Xaml.Controls.Primitives> oboru názvů nebo z úplnějších ovládacích prvků <xref:Windows.UI.Xaml.Controls.Button>.
 
     > [!IMPORTANT]
-    >  Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], všechny veřejné typy ve spravovaných [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty musí být zapečetěný. Typ v jiném [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenta se nemůže odvozovat z nich. Pokud chcete poskytnout tak polymorfní chování v komponentě, můžete vytvořit rozhraní a implementaci v polymorfních typů.
+    >  Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)] a rozhraní .NET Framework 4.5, všechny veřejné typy ve spravovaných [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty musí být zapečetěný. Typ v jiném [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenta se nemůže odvozovat z nich. Pokud chcete poskytnout tak polymorfní chování v komponentě, můžete vytvořit rozhraní a implementaci v polymorfních typů.
 
 - Musí být všechny parametry a návratovým typem ve veřejných typů v komponentě [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy (včetně [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy, které definuje komponenty).
 

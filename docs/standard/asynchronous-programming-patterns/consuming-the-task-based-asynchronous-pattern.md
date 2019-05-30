@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f9cad5b24af86afdb1f3894dc124362fed732e93
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0e836329527740d490bc3ad96cd62d56bc0b7b3e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628886"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377740"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
 Použijete-li založený na úlohách asynchronního vzoru (TAP) pro práci s asynchronní operace, můžete použít zpětná volání k dosažení čekání bez blokování.  Pro úlohy, toho je dosaženo pomocí metod, jako <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Založený na jazyce asynchronní podporu skryje zpětná volání tím, že asynchronní operace do ní použít operátor await v rámci normálního toku řízení a kód generovaný kompilátorem podporuje tento stejnou úroveň rozhraní API.
 
 ## <a name="suspending-execution-with-await"></a>Pozastavení provádění s Await
- Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete použít [await](~/docs/csharp/language-reference/keywords/await.md) – klíčové slovo v jazyce C# a [operátor Await](~/docs/visual-basic/language-reference/operators/await-operator.md) v jazyce Visual Basic asynchronně await pro čekání <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty. Když se čeká na <xref:System.Threading.Tasks.Task>, `await` výraz je typu `void`. Když se čeká na <xref:System.Threading.Tasks.Task%601>, `await` výraz je typu `TResult`. `await` Výraz se musí vyskytovat uvnitř těla asynchronní metodu. Další informace o jazyce C# a Visual Basic podporují v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu Specifikace jazyka C# a Visual Basic.
+ Od verze rozhraní .NET Framework 4.5, můžete použít [await](~/docs/csharp/language-reference/keywords/await.md) – klíčové slovo v C# a [operátor Await](~/docs/visual-basic/language-reference/operators/await-operator.md) v jazyce Visual Basic asynchronně await pro čekání <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty. Když se čeká na <xref:System.Threading.Tasks.Task>, `await` výraz je typu `void`. Když se čeká na <xref:System.Threading.Tasks.Task%601>, `await` výraz je typu `TResult`. `await` Výraz se musí vyskytovat uvnitř těla asynchronní metodu. Další informace o C# a podpora jazyka Visual Basic v rozhraní .NET Framework 4.5, podívejte se C# a specifikace jazyka Visual Basic.
 
  Pod pokličkou nainstaluje funkci await pomocí pokračování na úkolu zpětné volání.  Toto zpětné volání pokračuje v okamžiku pozastavení asynchronní metody. Když se obnoví asynchronní metody, pokud očekávané operace byla úspěšně dokončena a byla <xref:System.Threading.Tasks.Task%601>, jeho `TResult` je vrácena.  Pokud <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , která byla očekávána skončila v <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu, <xref:System.OperationCanceledException> je vyvolána výjimka.  Pokud <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , která byla očekávána skončila v <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu, je vyvolána výjimka, která způsobila selhání. A `Task` můžete selhání v důsledku více výjimek, ale pouze jeden z těchto výjimek je rozšířena. Ale <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> vrátí vlastnost <xref:System.AggregateException> výjimku, která obsahuje všechny chyby.
 
@@ -833,7 +833,7 @@ private static void Produce(int data)
 ```
 
 > [!NOTE]
-> <xref:System.Threading.Tasks.Dataflow> Je k dispozici v oboru názvů [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prostřednictvím **NuGet**. Chcete-li nainstalovat sestavení, které obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v sadě Visual Studio, zvolte **spravovat balíčky NuGet** z nabídky projekt a vyhledejte online balíček Microsoft.Tpl.Dataflow.
+> <xref:System.Threading.Tasks.Dataflow> Obor názvů je k dispozici v rozhraní .NET Framework 4.5 prostřednictvím **NuGet**. Chcete-li nainstalovat sestavení, které obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v sadě Visual Studio, zvolte **spravovat balíčky NuGet** z nabídky projekt a vyhledejte online balíček Microsoft.Tpl.Dataflow.
 
 ## <a name="see-also"></a>Viz také:
 

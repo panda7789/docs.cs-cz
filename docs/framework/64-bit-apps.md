@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8bad0abdba4c14659fdfa9b8064ebb8203100b33
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6e10682dbf5615f9d1ef345cf2c7eeeafa87ec28
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607891"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377978"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
@@ -26,7 +26,7 @@ Když kompilujete aplikace, můžete určit, že se má spustit v operačním sy
 > [!NOTE]
 >  Z důvodu návrhu x86 emulace a subsystém WOW64 pro rodiny procesorů Itanium aplikace jsou omezeny na provádění na jeden procesor. Tyto faktory snížit výkon a škálovatelnost 32bitových aplikací rozhraní .NET Framework, které běží na systémy s procesorem Itanium. Doporučujeme použít [!INCLUDE[net_v40_long](../../includes/net-v40-long-md.md)], což zahrnuje nativní 64bitová podpora pro systémy s procesorem Itanium, pro zajištění zvýšeného výkonu a škálovatelnosti.  
   
- Ve výchozím nastavení když spustíte 64bitové spravované aplikace v operačním systému Windows 64-bit, můžete vytvořit objekt více než 2 gigabajty (GB). V systému [!INCLUDE[net_v45](../../includes/net-v45-md.md)], tento limit můžete zvýšit.  Další informace najdete v tématu [ \<gcAllowVeryLargeObjects > element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
+ Ve výchozím nastavení když spustíte 64bitové spravované aplikace v operačním systému Windows 64-bit, můžete vytvořit objekt více než 2 gigabajty (GB). V rozhraní .NET Framework 4.5, ale můžete tento limit zvýšit.  Další informace najdete v tématu [ \<gcAllowVeryLargeObjects > element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
   
  Mnoho sestavení spustit stejně jako na modul CLR 32bitová verze a 64bitová verze CLR. Nicméně některé programy může chovat jinak, v závislosti na modulu CLR, pokud obsahují jeden nebo více z následujících akcí:  
   

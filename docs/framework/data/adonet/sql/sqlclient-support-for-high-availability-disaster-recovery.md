@@ -2,15 +2,15 @@
 title: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: 9b928be56ac09ec707a45829c862e606b68b717c
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
-ms.translationtype: HT
+ms.openlocfilehash: b01db93c51c6d975c9cc951f08b64c5ffd6c1de4
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251168"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380011"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
-Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupin dostupnosti AlwaysOn.  Funkce dostupnosti skupin AlwaysOn byl přidán do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn naleznete v tématu knihy Online SQL Server.  
+Toto téma popisuje (přidává se v rozhraní .NET Framework 4.5) Podpora klienta SqlClient pro vysokou dostupnost, zotavení po havárii – skupin dostupnosti AlwaysOn.  Funkce dostupnosti skupin AlwaysOn byl přidán do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn naleznete v tématu knihy Online SQL Server.  
   
  Teď můžete specifikovat naslouchacího procesu skupiny dostupnosti systému (vysoká dostupnost, zotavení po havárii) availability group (skupina dostupnosti) či Instance clusteru SQL serveru 2012 převzetí služeb při selhání ve vlastnosti připojení. Pokud SqlClient aplikace je připojená k databázi, která převezme služby při selhání AlwaysOn, původní připojení bylo přerušeno a aplikace musíte otevřít nové připojení, chcete-li pokračovat v práci po převzetí služeb.  
   
@@ -19,7 +19,7 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
 > [!NOTE]
 >  Zvýšení časového limitu připojení a implementovat logiku opakování připojení zvýší pravděpodobnost, že aplikace se připojí ke skupině dostupnosti. Také protože připojení může selhat z důvodu převzetí služeb při selhání, měli byste implementovat logiku opakování připojení, opakování pokusu o připojení se nezdařilo, dokud ho znovu připojí.  
   
- Následující vlastnosti připojení byly přidány do SqlClient v [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]:  
+ Následující vlastnosti připojení byly přidány do SqlClient v rozhraní .NET Framework 4.5:  
   
 - `ApplicationIntent`  
   

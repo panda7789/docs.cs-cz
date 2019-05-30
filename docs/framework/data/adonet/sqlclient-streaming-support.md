@@ -2,16 +2,16 @@
 title: Podpora streamování SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 6fda1dd2d46bbe5ad6b23cab0cd817365c6104eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83a657d1156774ec5ea342d47dca0434fd9d506c
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698444"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379996"
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
 
-Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory). Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.
+Podpora mezi SQL serverem a aplikace (nové v rozhraní .NET Framework 4.5) streamování podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory). Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.
 
 Podpora z SQL serveru a streamování zjednodušuje psaní aplikací streamování dat, aniž byste museli plně načíst data do paměti, což vede k méně výjimky přetečení paměti.
 
@@ -101,9 +101,9 @@ Vzorek ukazuje, jak provést následující kroky:
 
 - Vyhněte se blokování vlákna uživatelského rozhraní tím, že poskytuje asynchronní způsob, jak načíst velkých souborů.
 
-- Přenos velkého textového souboru ze serveru SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Přenos velkého textového souboru ze serveru SQL Server v rozhraní .NET Framework 4.5.
 
-- Přenos velkých souborů XML z SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Přenos velkých souborů XML z SQL serveru v rozhraní .NET Framework 4.5.
 
 - Načtení dat z SQL serveru.
 
@@ -323,9 +323,9 @@ GO
 
 Vzorek ukazuje, jak provést následující kroky:
 
-- Přenášení velkých objektů BLOB do SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Přenášení velkých objektů BLOB do SQL serveru v rozhraní .NET Framework 4.5.
 
-- Přenos velkého textového souboru do systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Přenos velkého textového souboru do systému SQL Server v rozhraní .NET Framework 4.5.
 
 - Pomocí nové asynchronní funkce k přenosu velkých objektů BLOB.
 

@@ -7,15 +7,15 @@ helpviewer_keywords:
 - controls [WPF], DocumentViewer
 - DocumentViewer control [WPF]
 ms.assetid: c21eb322-d6b3-474b-ab05-94527bd1b0fa
-ms.openlocfilehash: cc9031a19cb49736cf039d53d02ff2bc571ff978
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f27b07b77fc05c548b724aaf2c905c6a9f5d420
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61911895"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378273"
 ---
 # <a name="documentviewer"></a>DocumentViewer
-<xref:System.Windows.Controls.DocumentViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FixedDocument> obsah (například [!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)] dokumenty) ve formátu stránkované.  
+<xref:System.Windows.Controls.DocumentViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FixedDocument> obsahu (jako jsou například dokumenty XML Paper Specification (XPS)) ve formátu stránkované.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.DocumentViewer>  

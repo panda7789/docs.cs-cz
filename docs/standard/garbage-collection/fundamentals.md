@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccea0aace05016f8e485de92d61f23622d7db797
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 80559118140b8bf9f5228c3db3811faecc0e8f73
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615147"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378247"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -149,7 +149,7 @@ ms.locfileid: "64615147"
   
      Protože kolekce generace 2 mohou zabírat více segmentů, objekty, které jsou povýšeny do generace 2 je přesunout do starší segmentu. Generace 1 i 2 zachovalých můžete přesunout do jiného segmentu, protože jsou povýšeny do generace 2.  
   
-     Obvykle není setřepána halda velkého objektu, protože kopírování velkých objektů výrazně snižuje výkon. Nicméně od verze [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], můžete použít <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost ke komprimaci haldy pro velké objekty na vyžádání.  
+     Obvykle není setřepána halda velkého objektu, protože kopírování velkých objektů výrazně snižuje výkon. Nicméně od verze rozhraní .NET Framework 4.5.1, můžete použít <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost ke komprimaci haldy pro velké objekty na vyžádání.  
   
  Uvolňování paměti používá tyto informace k určení, zda jsou objekty živé:  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a785401f0477131e6ebf0e9c04ce6d0b0b4d4f5c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dfc55bcd97a6c1d68d4ce900b19ace7356d6ee92
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779948"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378573"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -53,7 +53,7 @@ K dispozici pro následující další možnosti *.exe*, *.dll*, a *.winmd* soub
 |**/linenum**|Zahrne odkazy do původních zdrojových řádků.|
 |**/nobar**|Potlačí místní okno indikátoru průběhu zpětného překladu.|
 |**/noca**|Potlačí výstup vlastních atributů.|
-|**/project**|Zobrazí metadata tak, jak se spravovaným kódem, místo tak, jak se zobrazuje v nativní [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Pokud `PEfilename` není metadat Windows (*.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/project**|Zobrazí metadata tak, jak se spravovaným kódem, místo tak, jak se zobrazuje v nativní [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Pokud `PEfilename` není metadat Windows ( *.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Zpětně přeloží pouze veřejné typy a členy. Ekvivalentní **/visibility:PUB**.|
 |**/quoteallnames**|Vloží všechny názvy do jednoduchých uvozovek.|
 |**/raweh**|Zobrazí klauzule zpracování výjimek v nezpracovaném tvaru.|
@@ -69,7 +69,7 @@ Následující možnosti jsou platné pro *.exe*, *.dll*, a *.winmd* soubory pro
 |**/classlist**|Zahrne seznam tříd definovaných v modulu.|
 |**/ vpřed**|Použije dopřednou deklaraci tříd.|
 |**/headers**|Zahrne do výstupu informace z hlavičky souboru.|
-|**/item:** `class`[**::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: `(sig`.|
+|**/item:** `class`[ **::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: `(sig`.|
 |**/noil**|Potlačí výstup kódu sestavení jazyka IL.|
 |**Toto**|Vloží statistiky o bitové kopii.|
 |**/typelist**|Vytvoří úplný seznam typů pro zachování řazení typů při přenosu.|
@@ -111,7 +111,7 @@ Můžete spustit *Ildasm.exe* přes an.exe nebo *.dll* soubor k určení, zda je
 
 ## <a name="version-information"></a>Informace o verzi
 
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], *Ildasm.exe* zpracovává nerozpoznané zařazovací objekty BLOB (binární rozsáhlý objekt) zobrazením nezpracovaného binárního obsahu. Následující kód například ukazuje, jak je zobrazen zařazovací objekt BLOB vygenerovaný programem jazyka C#:
+Od verze rozhraní .NET Framework 4.5, *Ildasm.exe* zpracovává nerozpoznané zařazovací objekty BLOB (binární rozsáhlý objekt) zobrazením nezpracovaného binárního obsahu. Následující kód například ukazuje, jak je zobrazen zařazovací objekt BLOB vygenerovaný programem jazyka C#:
 
 ```csharp
 public void Test([MarshalAs((short)70)] int test) { }
@@ -122,7 +122,7 @@ public void Test([MarshalAs((short)70)] int test) { }
 .method public hidebysig instance void Test(int32  marshal({ 46 }) test) cil managed
 ```
 
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], *Ildasm.exe* zobrazuje atributy, které se použijí pro implementaci rozhraní tak, jak je znázorněno v následujícím výtažku z *Ildasm.exe* výstup:
+Od verze rozhraní .NET Framework 4.5, *Ildasm.exe* zobrazuje atributy, které se použijí pro implementaci rozhraní tak, jak je znázorněno v následujícím výtažku z *Ildasm.exe* výstup:
 
 ```
 .class public auto ansi beforefieldinit MyClass

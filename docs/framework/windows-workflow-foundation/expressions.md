@@ -2,12 +2,12 @@
 title: Expressions1
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 7643279c2db5608c028e0a1213802ab609a2d347
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 047f0f5d0214926fde2fe21efd9a24c4b645ed8e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773643"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380171"
 ---
 # <a name="expressions"></a>Výrazy
 Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek. Všechny aktivity výrazů jsou nepřímo odvozeny z <xref:System.Activities.Activity%601>, které se nachází <xref:System.Activities.OutArgument> vlastnost s názvem <xref:System.Activities.Activity%601.Result%2A> jako návratovou hodnotu aktivity. [!INCLUDE[wf1](../../../includes/wf1-md.md)] se dodává s širokou škálu aktivity výrazů od těch, které jsou jako jednoduchý <xref:System.Activities.Expressions.VariableValue%601> a <xref:System.Activities.Expressions.VariableReference%601>, které poskytují přístup k proměnné pracovního postupu jeden prostřednictvím operátoru aktivitami, komplexní aktivity, jako <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> nabídku přístup k jeho plném rozsahu jazyka Visual Basic k vytvoření výsledku. Je možné vytvořit další výraz aktivity odvozené z <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>.  
@@ -16,7 +16,7 @@ Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek. Vš
  Pomocí návrháře postupu provádění <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pro všechny výrazy v projektech Visual Basicu a <xref:Microsoft.CSharp.Activities.CSharpValue%601> a <xref:Microsoft.CSharp.Activities.CSharpReference%601> pro výrazy v C# projekty pracovního postupu.  
   
 > [!NOTE]
->  Podpora pro C# výrazy v projekty pracovního postupu byla zavedena v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Další informace najdete v tématu [ C# výrazy](csharp-expressions.md).  
+>  Podpora pro C# výrazy v projekty pracovního postupu byla zavedena v rozhraní .NET Framework 4.5. Další informace najdete v tématu [ C# výrazy](csharp-expressions.md).  
   
  Vytvořený pomocí návrháře pracovních postupů jsou uloženy v XAML, kde se zobrazí výrazy uzavřený v hranatých závorkách, jako v následujícím příkladu.  
   

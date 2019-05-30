@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: 68169063c9cf152942ff8a7757a1b3d97886002a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa7c0c22d070ec12cb67252dee7dca02c5160b9e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034564"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380090"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 
@@ -23,7 +23,7 @@ Můžete přesměrovat odkazy vazby kompilace na sestavení rozhraní .NET Frame
 ## <a name="assembly-unification-and-default-binding"></a>Sjednocení sestavení a výchozí vazby
  Vazby na sestavení rozhraní .NET Framework jsou někdy přesměrovány prostřednictvím procesu nazývaného *sjednocení sestavení*. Rozhraní .NET Framework se skládá z verze common language runtime a asi z dvou tuctů sestavení rozhraní .NET Framework, které tvoří knihovnu typů. Tato sestavení rozhraní .NET Framework nakládá modul runtime jako jeden celek. Ve výchozím nastavení při spuštění aplikace všechny odkazy na typy v kódu spustit modul runtime přesměrováni na sestavení rozhraní .NET Framework, které mají stejné číslo verze jako modul runtime, který je načten v procesu. Přesměrování, ke kterým dochází v tomto modelu se výchozí chování modulu runtime.
 
- Například pokud aplikace odkazuje na typy v oboru názvů System.XML a byla vytvořena pomocí [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], obsahuje statické odkazy na sestavení System.XML, který se dodává s modulem runtime verze 4.5. Pokud budete chtít přesměrovat odkazy vazby tak, aby odkazoval na sestavení System.XML dodané rozhraním .NET Framework 4, můžete vložit informace o přesměrování v konfiguračním souboru aplikace. Přesměrování vazby v konfiguračním souboru pro jednotné sestavení rozhraní .NET Framework zruší sjednocení pro dané sestavení.
+ Například pokud vaše aplikace odkazuje na typy v oboru názvů System.XML a byla vytvořena pomocí rozhraní .NET Framework 4.5, obsahuje statické odkazy na sestavení System.XML, který se dodává s modulem runtime verze 4.5. Pokud budete chtít přesměrovat odkazy vazby tak, aby odkazoval na sestavení System.XML dodané rozhraním .NET Framework 4, můžete vložit informace o přesměrování v konfiguračním souboru aplikace. Přesměrování vazby v konfiguračním souboru pro jednotné sestavení rozhraní .NET Framework zruší sjednocení pro dané sestavení.
 
  Kromě toho můžete ručně přesměrovat vazby pro sestavení třetích stran, pokud jsou k dispozici více verzí sestavení.
 
@@ -55,7 +55,7 @@ Můžete přesměrovat odkazy vazby kompilace na sestavení rozhraní .NET Frame
 
 ### <a name="relying-on-automatic-binding-redirection"></a>Spoléhání na automatické přesměrování vazby
 
-Při vytváření aplikace klasické pracovní plochy v sadě Visual Studio, který cílí [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] nebo novější verze aplikace používá automatické přesměrování vazby. To znamená, že pokud dvě součásti odkazují na různé verze téhož sestavení se silným názvem, modul runtime automaticky přidá přesměrování vazby na novější verzi sestavení ve výstupní soubor konfigurace (app.config) aplikace. Toto přesměrování přepíše sjednocení sestavení, které jinak může probíhat. Zdrojový soubor app.config není změněn. Řekněme například, že vaše aplikace přímo odkazuje na součást out-of-band rozhraní .NET Framework, ale používá knihovnu třetí strany, zaměřuje na starší verze stejné součásti. Při kompilaci aplikace výstupní soubor konfigurace aplikace je změněn, aby obsahoval přesměrování vazby na novější verzi součásti. Pokud vytvoříte webovou aplikaci, zobrazí se upozornění sestavení týkající se konfliktu vazeb, které v vám dává možnost přidat nezbytné přesměrování vazby do zdrojového souboru konfigurace webu.
+Při vytváření aplikace klasické pracovní plochy v sadě Visual Studio, který cílí na rozhraní .NET Framework 4.5.1 nebo novější verze aplikace používá automatické přesměrování vazby. To znamená, že pokud dvě součásti odkazují na různé verze téhož sestavení se silným názvem, modul runtime automaticky přidá přesměrování vazby na novější verzi sestavení ve výstupní soubor konfigurace (app.config) aplikace. Toto přesměrování přepíše sjednocení sestavení, které jinak může probíhat. Zdrojový soubor app.config není změněn. Řekněme například, že vaše aplikace přímo odkazuje na součást out-of-band rozhraní .NET Framework, ale používá knihovnu třetí strany, zaměřuje na starší verze stejné součásti. Při kompilaci aplikace výstupní soubor konfigurace aplikace je změněn, aby obsahoval přesměrování vazby na novější verzi součásti. Pokud vytvoříte webovou aplikaci, zobrazí se upozornění sestavení týkající se konfliktu vazeb, které v vám dává možnost přidat nezbytné přesměrování vazby do zdrojového souboru konfigurace webu.
 
 Pokud ručně přidáte přesměrování vazby na zdrojový soubor app.config při kompilaci, sada Visual Studio se pokusí sjednotit sestavení podle přesměrování vazby, kterou jste přidali. Řekněme například, že vložíte následující přesměrování vazby sestavení:
 
@@ -119,7 +119,7 @@ Pokud svojí aplikací cílíte na starších verzích rozhraní .NET Framework,
 ```
 
 ### <a name="limiting-assembly--bindings-to-a-specific-version"></a>Omezení vazeb sestavení na konkrétní verzi
- Můžete použít **appliesTo** atribut na [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Architektura. Tento volitelný atribut používá pro určení verze, se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán, [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element platí pro všechny verze rozhraní .NET Framework.
+ Můžete použít **appliesTo** atribut na [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Architektura. Tento volitelný atribut používá pro určení verze, se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán, [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element platí pro všechny verze rozhraní .NET Framework.
 
  Například pro přesměrování vazeb sestavení pro sestavení rozhraní .NET Framework 3.5, bude zahrnovat následující kód XML v konfiguračním souboru aplikace.
 

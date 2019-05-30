@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ca7bf5ad4b4d145f484f46ee46220a58f326333
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7db411e9ef38adb42c8df2059d166d1fa4184f95
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635599"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378377"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Co je zastaralé v knihovně tříd rozhraní .NET Framework
 
@@ -43,7 +43,7 @@ Při upgradu a znovu zkompilovat existující kód, pomocí zastaralý typ nebo 
 
 - Projděte si dokumentaci pro tuto technologickou oblast, jak reagovat na vyřazení.
 
-Můžete se znovu zkompilovat existující kód na novější verzi rozhraní .NET Framework. Místo toho můžete určit verzi rozhraní .NET Framework, proti kterému stávajících zkompilovaný kód běží. Předpokládejme například, že máte aplikaci s názvem app1.exe, která byla zkompilována proti [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], ale má aplikace spouštět [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. To vyžaduje následující kroky:
+Můžete se znovu zkompilovat existující kód na novější verzi rozhraní .NET Framework. Místo toho můžete určit verzi rozhraní .NET Framework, proti kterému stávajících zkompilovaný kód běží. Předpokládejme například, že máte aplikaci s názvem app1.exe, která byla zkompilována proti [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], ale chcete, aby spustil s využitím rozhraní .NET Framework 4.5. To vyžaduje následující kroky:
 
 1. Vytvoření konfiguračního souboru pro hlavní spustitelný soubor a pojmenujte ho *appName*. exe.config, kde *appName* je název spustitelného souboru aplikace. Aplikace s názvem app1.exe v našem příkladu by vytvořit konfigurační soubor s názvem app1.exe.config.
 

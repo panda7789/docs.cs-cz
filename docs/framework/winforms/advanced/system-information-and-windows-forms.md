@@ -10,12 +10,12 @@ helpviewer_keywords:
 - user names [Windows Forms], retrieving
 - system information [Windows Forms]
 ms.assetid: 30cf43a3-8cb2-4ff3-862b-6c34576616a8
-ms.openlocfilehash: eeb469dbf4553634aa50d0a9ea17e9b2464defb4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2edc2e867259f8884467c3d5b0ae3d22ba391a77
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934690"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380107"
 ---
 # <a name="system-information-and-windows-forms"></a>Systémové informace a Windows Forms
 Někdy je potřeba shromáždit informace o počítači, který vaše aplikace běží na, abyste mohli dělat rozhodnutí v kódu. Například můžete mít funkci, která platí pouze při připojení k doméně konkrétního síťového; v takovém případě potřebujete způsob, jak určit doménu a zakázat funkce, pokud doména není k dispozici.  
@@ -34,8 +34,8 @@ MessageBox.Show("Good morning " & User & ". You are connected to " _
 string User = SystemInformation.UserName;  
 string Domain = SystemInformation.UserDomainName;  
   
-MessageBox.Show("Good morning " + User + ". You are connected to " _  
-+ Domain)  
+MessageBox.Show("Good morning " + User + ". You are connected to "
++ Domain);
 ```  
   
  Všichni členové <xref:System.Windows.Forms.SystemInformation> třídy jsou jen pro čtení; nelze změnit nastavení uživatele. Existuje více než 100 členy třídy, vrací informace o všechno, co z tento počet monitorů připojená k počítači (<xref:System.Windows.Forms.SystemInformation.MonitorCount%2A>) na mezery ikony v Průzkumníku Windows (<xref:System.Windows.Forms.SystemInformation.IconHorizontalSpacing%2A> a <xref:System.Windows.Forms.SystemInformation.IconVerticalSpacing%2A>).  

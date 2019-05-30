@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c3fdfbc1-ed99-4202-a2b0-8c4f1646385d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e12deefd4b20d2868ab86fdb4c81f6be3a63aa6d
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 0dff2bf22b701ee57818d04e01dbf643e04acb27
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052661"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379910"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework
 
@@ -38,7 +38,7 @@ V této tabulce 4.5. *x* odkazuje na rozhraní .NET Framework 4.5 a jeho nověj�
 |Nelze odinstalovat rozhraní .NET Framework 4.5 *.x*/4.6 *.x*/4.7 *.x*  /4,8. Na tomto programu závisí další aplikace v počítači.|Obecně byste neměli odinstalovávat verze rozhraní .NET Framework z vašeho počítače, protože na konkrétní verzi rozhraní .NET Framework může záviset aplikace, které používáte. Další informace najdete v tématu [rozhraní .NET Framework pro uživatele](../../../docs/framework/get-started/index.md#ForUsers) v *Začínáme* průvodce.|  
 |Rozhraní .NET Framework 4.5 *.x*/4.6 *.x*/4.7 *.x*  /4.8 redistributable se nevztahuje na tento operační systém. Stáhněte si prosím .NET Framework 4.5 *.x*/4.6 *.x*/4.7 *.x*/4.8 pro váš operační systém z webu Microsoft Download Center.|Může se pokoušíte nainstalovat rozhraní .NET Framework 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 nebo 4.8 na platformě, která není podporována, nebo jste vybrali instalační balíček, který neobsahuje komponenty pro všechny podporované operační systémy. Spusťte instalaci znovu pomocí offline instalační program ([pro 4.5.1](https://go.microsoft.com/fwlink/p/?LinkId=309493), [pro 4.5.2](https://go.microsoft.com/fwlink/p/?LinkId=397706), [pro 4.6](https://go.microsoft.com/fwlink/p/?LinkId=528233), [pro 4.6.1](https://go.microsoft.com/fwlink/p/?LinkId=671744), pro [ 4.6.2](https://go.microsoft.com/fwlink/p/?LinkId=780604), pro [4.7](https://go.microsoft.com/fwlink/p/?LinkId=825306)), pro [4.7.1](https://go.microsoft.com/fwlink/p/?LinkId=852090), pro [4.7.2](https://go.microsoft.com/fwlink/p/?LinkId=863265), nebo pro [4.8](https://go.microsoft.com/fwlink/?linkid=2088631). Další informace najdete v tématu [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md) a [požadavky na systém](../../../docs/framework/get-started/system-requirements.md) pro podporované operační systémy.|  
 |Aktualizace znalostní BÁZE odpovídající\<*číslo*> musí být nainstalovaný před instalací tohoto produktu.|Instalace rozhraní .NET Framework vyžaduje instalaci aktualizace KB před instalací rozhraní .NET Framework. Nainstalujte aktualizaci a znovu spusťte znovu instalaci rozhraní .NET Framework.<br /><br /> Například instalaci aktualizované verze rozhraní .NET Framework na Windows 8.1, Windows RT 8.1 a Windows Server 2012 R2 vyžaduje, aby aktualizace odpovídající [KB 2919355](https://support.microsoft.com/kb/2919355) nainstalovat.|  
-|Ve vašem počítači je nainstalováno serverové jádro operačního systému Windows Server 2008. Rozhraní .NET Framework 4.5. *x* vyžaduje novější verzi operačního systému. Nainstalujte Windows Server 2008 R2 SP1 nebo novější a znovu spusťte rozhraní .NET Framework 4.5. *x* instalační program.|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a 4.5.2 jsou podporovány v roli jádra serveru s Windows Server 2008 R2 SP1 nebo novější. Zobrazit [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).|  
+|Ve vašem počítači je nainstalováno serverové jádro operačního systému Windows Server 2008. Rozhraní .NET Framework 4.5. *x* vyžaduje novější verzi operačního systému. Nainstalujte Windows Server 2008 R2 SP1 nebo novější a znovu spusťte rozhraní .NET Framework 4.5. *x* instalační program.|Rozhraní .NET Framework 4.5.1 a 4.5.2 jsou podporovány v roli jádra serveru s Windows Server 2008 R2 SP1 nebo novější. Zobrazit [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).|  
 |Nemáte dostatečná oprávnění, abyste tuto operaci mohli dokončit pro všechny uživatele počítače. Přihlaste se jako správce a spusťte znovu **nastavení**.|Pokud chcete instalovat rozhraní .NET Framework, musíte být správcem počítače.|  
 |Instalační program nemůže pokračovat, protože předchozí instalace vyžaduje, aby byl počítač restartován. Restartujte počítač a spusťte instalační program znovu.|Je někdy plně dokončení instalace vyžadovat restartování. Postupujte podle pokynů a restartujte počítač a spusťte instalaci znovu.<br /><br /> Ve výjimečných případech může být vyzváni k restartování systému více než jednou, pokud Windows zjistil počet chybějících aktualizací a restartování nainstalovat další aktualizace ve frontě.|  
 |Rozhraní .NET Framework nelze spouštět v režimu kompatibility programů.|Zobrazit [problémy s kompatibilitou programu](#compat) části dále v tomto článku.|  
@@ -71,7 +71,7 @@ Instalační program rozhraní .NET Framework nelze spouštět v režimu kompati
 
    - HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers
 
-1. Ve sloupci Název vyhledejte [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1 nebo 4.7.2 staženého, v závislosti na kterou verzi instalujete a tyto položky odstraňte. Pokyny ke stažení názvů naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md) článku.
+1. Ve sloupci Název vyhledejte rozhraní .NET Framework 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, nebo 4.7.2 staženého, v závislosti na tom, kterou verzi instalujete a tyto položky odstraňte. Pokyny ke stažení názvů naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md) článku.
 
 1. Znovu spusťte instalační program rozhraní .NET Framework verze 4.5, 4.5.1, 4.5.2, nebo 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1 nebo 4.7.2.
 

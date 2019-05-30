@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 14ef6eec2503c0af1a7b1fd5ed2dd289978d6fcc
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
-ms.translationtype: HT
+ms.openlocfilehash: 8a9c9072c5565cf322bbf6a913255542fb46cb93
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301317"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378556"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -845,7 +845,7 @@ End Class
 
 Potom můžete vytvořit soubor prostředků DataAnnotation.Localization.fr.resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizované chybové zprávy. Soubor musí být nalezen v `App.LocalResources` složky. Například následující je klíč a její hodnotu v lokalizovaných francouzština (fr) jazyka chybová zpráva:
 
-| Name                                 | Value                                     |
+| Name                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | La note doit être comprise entre 1 et 10. |
 
@@ -1200,7 +1200,7 @@ V rozhraní .NET Framework 4.6.2 je vylepšená Windows Workflow Foundation v n�
 
 **Podpora pro výrazy jazyka C# a technologie IntelliSense v Návrháři Re-hosted WF**
 
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], WF podporuje výrazy jazyka C# v obou Návrhář Visual Studio a v pracovních postupech kódu. Návrháři pracovních postupů Re-hosted je klíčovou funkcí služby pracovního postupu, který umožňuje pro návrháře postupu provádění v aplikaci mimo sadu Visual Studio (například v WPF).  Windows Workflow Foundation umožňuje podporu v Návrháři pracovních postupů Re-hosted výrazy jazyka C# a technologii IntelliSense. Další informace najdete v tématu [blogu Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
+Od verze rozhraní .NET Framework 4.5, podporuje WF C# výrazy v obou Návrhář Visual Studio a v pracovních postupech kódu. Návrháři pracovních postupů Re-hosted je klíčovou funkcí služby pracovního postupu, který umožňuje pro návrháře postupu provádění v aplikaci mimo sadu Visual Studio (například v WPF).  Windows Workflow Foundation umožňuje podporu v Návrháři pracovních postupů Re-hosted výrazy jazyka C# a technologii IntelliSense. Další informace najdete v tématu [blogu Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
 
 `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` Ve verzích rozhraní .NET Framework před rozhraní .NET Framework 4.6.2 je přerušený IntelliSense Návrháře pracovního postupu, když zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio. Při sestavení projektu je úspěšné, typy pracovních postupů nebyly nalezeny v návrháři, a upozornění z technologie IntelliSense pro chybějící typy pracovních postupů ve **seznam chyb** okna. Rozhraní .NET Framework 4.6.2 řeší tento problém a zpřístupňuje technologii IntelliSense.
 
@@ -1417,7 +1417,7 @@ U souborů PDB pro Ngen můžete vytvořit NGen souboru PDB, který obsahuje map
 
     - **Vazby modelu podporuje metody vracející úlohy**
 
-         V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], ASP.NET přidali funkci vazby modelu, umožňující přístup operace s daty založených na přístupu CRUD v stránky webových formulářů a uživatelských ovládacích prvků, který rozšiřitelné, zaměřuje kódu. Vazby modelu systém nyní podporuje <xref:System.Threading.Tasks.Task>-vrácení metody vazby modelu. Tato funkce umožňuje vývojářům webových formulářů výhody škálovatelnosti asynchronní snadné datové vazby systému při použití novější verze ORMs, včetně rozhraní Entity Framework.
+         V rozhraní .NET Framework 4.5 ASP.NET přidat funkci vazby modelu, který povolený rozšiřitelné, zaměřuje kód přístup k operacím dat založených na přístupu CRUD v stránky webových formulářů a ovládacích prvků uživatelského. Vazby modelu systém nyní podporuje <xref:System.Threading.Tasks.Task>-vrácení metody vazby modelu. Tato funkce umožňuje vývojářům webových formulářů výhody škálovatelnosti asynchronní snadné datové vazby systému při použití novější verze ORMs, včetně rozhraní Entity Framework.
 
          Asynchronní vazby modelu je řízen `aspnet:EnableAsyncModelBinding` nastavení konfigurace.
 
@@ -1864,7 +1864,7 @@ U souborů PDB pro Ngen můžete vytvořit NGen souboru PDB, který obsahuje map
 
 Nové funkce a vylepšení v základní třídy v rozhraní .NET Framework 4.5.1 zahrnují:
 
-- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, pokud kompilujete aplikace, která se zaměřuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [jak: Povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, při kompilaci aplikace zaměřené rozhraní .NET Framework 4.5.1, přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [jak: Povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
 - Schopnost shromažďovat diagnostické informace umožňující vývojářům zvyšovat výkon serverových a cloudových aplikací. Další informace najdete v tématu <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> metody v <xref:System.Diagnostics.Tracing.EventSource> třídy.
 
@@ -1912,7 +1912,7 @@ Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web To
 
 - Podpora pro pole, které jsou větší než 2 gigabajty (GB) na 64bitových platformách. Tuto funkci je možné povolit v konfiguračním souboru aplikace. Naleznete v tématu [ \<gcAllowVeryLargeObjects > element](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), které jsou uvedeny také další omezení velikosti objektu a velikost pole.
 
-- Lepší výkon pomocí sběru plýtvání na pozadí pro servery. Při použití v uvolňování paměti serveru [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], uvolňování paměti na pozadí je automaticky povolen. Najdete v části uvolňování paměti serveru na pozadí [základy kolekce paměti](../../standard/garbage-collection/fundamentals.md) tématu.
+- Lepší výkon pomocí sběru plýtvání na pozadí pro servery. Při použití uvolnění paměti serveru v rozhraní .NET Framework 4.5 je sběr plýtvání na pozadí automaticky povolené. Najdete v části uvolňování paměti serveru na pozadí [základy kolekce paměti](../../standard/garbage-collection/fundamentals.md) tématu.
 
 - Kompilace just-in-time (JIT) na pozadí, která je volitelně k dispozici také u vícejádrových procesorů pro zvýšení výkonu aplikací. Viz <xref:System.Runtime.ProfileOptimization>.
 
@@ -1940,7 +1940,7 @@ Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web To
 
 ### <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Managed Extensibility Framework (MEF) obsahuje následující nové funkce:
+V rozhraní .NET Framework 4.5 Managed Extensibility Framework (MEF) obsahuje následující nové funkce:
 
 - Podpora pro obecné typy.
 
@@ -1954,13 +1954,13 @@ Další informace najdete v tématu [Managed Extensibility Framework (MEF)](../m
 
 ### <a name="asynchronous-file-operations"></a>Asynchronní operace se soubory
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], byly přidány nové asynchronní funkce k jazykům C# a Visual Basic. Tyto funkce přidají modelu provádění asynchronních operací založené na úlohách. Pokud chcete použít tento nový model, použijte asynchronní metody v vstupně-výstupních tříd. Zobrazit [vstupně-výstupní asynchronní](../../standard/io/asynchronous-file-i-o.md).
+V rozhraní .NET Framework 4.5, byly přidány nové asynchronní funkce do C# a jazyky Visual Basic. Tyto funkce přidají modelu provádění asynchronních operací založené na úlohách. Pokud chcete použít tento nový model, použijte asynchronní metody v vstupně-výstupních tříd. Zobrazit [vstupně-výstupní asynchronní](../../standard/io/asynchronous-file-i-o.md).
 
 <a name="tools" />
 
 ### <a name="tools"></a>Nástroje
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Resource File Generator (Resgen.exe) umožňuje vytvořit soubor .resw pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vložené aplikace ze souboru .resources v sestavení rozhraní .NET Framework. Další informace najdete v tématu [Resgen.exe (Generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md).
+V rozhraní .NET Framework 4.5, Resource File Generator (Resgen.exe) umožňuje vytvořit soubor .resw pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vložené aplikace ze souboru .resources v sestavení rozhraní .NET Framework. Další informace najdete v tématu [Resgen.exe (Generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md).
 
 Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních bitových kopií. Nástroj příkazového řádku generuje data profilu pro sestavení aplikací nativních bitových kopií. Zobrazit [Mpgo.exe (nástroj pro optimalizaci na základě spravovaného profilu)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Od verze Visual Studio 2013, můžete použít Mpgo.exe k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
 
@@ -1968,7 +1968,7 @@ Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu
 
 ### <a name="parallel-computing"></a>Paralelní výpočty
 
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Nabízí několik nových funkcí a vylepšení pro paralelní výpočty. Patří mezi ně lepší výkon, lepší kontrolu, vylepšenou podporu pro asynchronní programování, nové knihovny datového toku a vylepšenou podporu pro paralelní analýzy ladění a výkonu. Viz položka [co je nového u paralelismu v rozhraní .NET 4.5](https://go.microsoft.com/fwlink/?LinkId=235061) v paralelním programování v blogu .NET.
+Rozhraní .NET Framework 4.5 poskytuje několik nových funkcí a vylepšení pro paralelní výpočty. Patří mezi ně lepší výkon, lepší kontrolu, vylepšenou podporu pro asynchronní programování, nové knihovny datového toku a vylepšenou podporu pro paralelní analýzy ladění a výkonu. Viz položka [co je nového u paralelismu v rozhraní .NET 4.5](https://go.microsoft.com/fwlink/?LinkId=235061) v paralelním programování v blogu .NET.
 
 <a name="web" />
 
@@ -1982,11 +1982,11 @@ ASP.NET 4.5 a 4.5.1 přidá vazby modelu webových formulářů, podporu WebSock
 
 ### <a name="networking-a-namenetworking-"></a>Sítě <a name="networking" />
 
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace najdete v tématu nové <xref:System.Net.Http?displayProperty=nameWithType> a <xref:System.Net.Http.Headers?displayProperty=nameWithType> obory názvů.
+Rozhraní .NET Framework 4.5 poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace najdete v tématu nové <xref:System.Net.Http?displayProperty=nameWithType> a <xref:System.Net.Http.Headers?displayProperty=nameWithType> obory názvů.
 
 Podpora je součástí nového programovacího rozhraní pro přijímání a interakci s připojením WebSocket pomocí stávající <xref:System.Net.HttpListener> a související třídy. Další informace najdete v tématu nové <xref:System.Net.WebSockets> obor názvů a <xref:System.Net.HttpListener> třídy.
 
-Kromě toho [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zahrnuje následující vylepšení sítě:
+Kromě toho rozhraní .NET Framework 4.5 obsahuje následující vylepšení sítě:
 
 - RFC podpora standardu URI splňující. Další informace najdete v tématu <xref:System.Uri> a související třídy.
 
@@ -2002,7 +2002,7 @@ Kromě toho [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zahrnuje násle
 
 ### <a name="windows-presentation-foundation-wpf"></a>Windows Presentation Foundation (WPF)
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], obsahuje Windows Presentation Foundation (WPF) změny a vylepšení v následujících oblastech:
+V rozhraní .NET Framework 4.5 Windows Presentation Foundation (WPF) obsahuje změny a vylepšení v následujících oblastech:
 
 - Nové <xref:System.Windows.Controls.Ribbon.Ribbon> ovládací prvek, který umožňující provádět implementaci pás uživatelského rozhraní, který je hostitelem panelu nástrojů Rychlý přístup, nabídky aplikace a karet.
 
@@ -2026,7 +2026,7 @@ V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], obsahuje Windows Present
 
 ### <a name="windows-communication-foundation-wcf"></a>Windows Communication Foundation (WCF)
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], následující funkce byly přidány pro jednodušší zápis a udržování aplikací Windows Communication Foundation (WCF):
+V rozhraní .NET Framework 4.5 byly přidány následující funkce pro jednodušší zápis a udržování aplikací Windows Communication Foundation (WCF):
 
 - Zjednodušení generovaných konfiguračních souborů.
 
@@ -2068,9 +2068,9 @@ Další informace najdete v tématu [co je nového ve Windows Communication Foun
 
 ### <a name="windows-workflow-foundation-wf"></a>Windows Workflow Foundation (WF)
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], bylo přidáno několik nových funkcí pro Windows Workflow Foundation (WF), včetně:
+V rozhraní .NET Framework 4.5 bylo přidáno několik nových funkcí pro Windows Workflow Foundation (WF), včetně:
 
-- Pracovní postupy stroje, které byly poprvé představeny jako součást rozhraní .NET Framework 4.0.1 ([rozhraní .NET Framework 4 Platform Update 1](https://go.microsoft.com/fwlink/?LinkID=215092)). Tato aktualizace je zahrnuta několika nových třídách a činnostech, které vývojářům umožňují vytvářet pracovní postupy stavu počítače. Tyto třídy a činnosti byly aktualizovány [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zahrnout:
+- Pracovní postupy stroje, které byly poprvé představeny jako součást rozhraní .NET Framework 4.0.1 ([rozhraní .NET Framework 4 Platform Update 1](https://go.microsoft.com/fwlink/?LinkID=215092)). Tato aktualizace je zahrnuta několika nových třídách a činnostech, které vývojářům umožňují vytvářet pracovní postupy stavu počítače. Tyto třídy a činnosti byly aktualizovány pro rozhraní .NET Framework 4.5 zahrnout:
 
     - Možnost nastavit zarážky na stavy.
 
@@ -2122,7 +2122,7 @@ V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], bylo přidáno několik 
 
 ### [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]
 
-[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace jsou určeny pro konkrétní provedení form factor a využívají výkon operačního systému Windows. Podmnožinu [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo 4.5.1 je k dispozici pro vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace pro Windows pomocí C# nebo Visual Basic. Tato Podsada se nazývá [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] a je podrobněji popsána [přehled](https://go.microsoft.com/fwlink/?LinkId=228491) Windows Dev Center.
+[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace jsou určeny pro konkrétní provedení form factor a využívají výkon operačního systému Windows. Podmnožinou rozhraní .NET Framework 4.5 nebo 4.5.1 je k dispozici pro vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pro Windows s použitím C# nebo Visual Basic. Tato Podsada se nazývá [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] a je podrobněji popsána [přehled](https://go.microsoft.com/fwlink/?LinkId=228491) Windows Dev Center.
 
 ### <a name="portable-class-libraries-a-nameportable-"></a>Přenosné knihovny tříd <a name="portable" />
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a218633ed607222fec3e46629a9bcd614c3d0610
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 670cdb369920663ffa62e224bdd5aa495fc7e622
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62031184"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377702"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na úlohách
 Asynchronní vzor založený na úkolech (TAP) můžete implementovat třemi způsoby: pomocí kompilátorů jazyka C# a Visual Basic v sadě Visual Studio, ručně nebo kombinací obou metod. Jednotlivé metody jsou podrobně popsány v následujících částech. Vzor TAP můžete implementovat výpočetní i vstupně-výstupní asynchronní operace. [Úlohy](#workloads) část popisuje každý typ provozu.
@@ -26,7 +26,7 @@ Asynchronní vzor založený na úkolech (TAP) můžete implementovat třemi zp�
 ## <a name="generating-tap-methods"></a>Generování metod TAP
 
 ### <a name="using-the-compilers"></a>Pomocí kompilátorů
-Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jakoukoli metodu s atributem `async` – klíčové slovo (`Async` v jazyce Visual Basic) považována za asynchronní metodu a kompilátory C# a Visual Basic provádějí nezbytné transformace pro implementaci metody asynchronně pomocí vzoru TAP. Asynchronní metoda by měla vrátit buď objekt <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, nebo objekt <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. K tomu by měla vrátit tělo funkce `TResult`, a kompilátor pak zajistí, že tento výsledek je k dispozici prostřednictvím výsledného objektu úkolu. Stejně tak veškeré výjimky, které nejsou zpracovány v těle metody, jsou zařazeny do výstupního úkolu, což způsobí, že výsledný úkol bude ukončen ve stavu <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType>. Výjimkou je situace, kdy není zpracována výjimka typu <xref:System.OperationCanceledException> (nebo odvozeného typu). V takovém případě skončí výsledný úkol ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType>.
+Od verze rozhraní .NET Framework 4.5, jakoukoli metodu s atributem `async` – klíčové slovo (`Async` v jazyce Visual Basic) je považována za asynchronní metodu a C# a kompilátory jazyka Visual Basic provádějí nezbytné transformace pro implementaci metody asynchronně pomocí vzoru TAP. Asynchronní metoda by měla vrátit buď objekt <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, nebo objekt <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. K tomu by měla vrátit tělo funkce `TResult`, a kompilátor pak zajistí, že tento výsledek je k dispozici prostřednictvím výsledného objektu úkolu. Stejně tak veškeré výjimky, které nejsou zpracovány v těle metody, jsou zařazeny do výstupního úkolu, což způsobí, že výsledný úkol bude ukončen ve stavu <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType>. Výjimkou je situace, kdy není zpracována výjimka typu <xref:System.OperationCanceledException> (nebo odvozeného typu). V takovém případě skončí výsledný úkol ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType>.
 
 ### <a name="generating-tap-methods-manually"></a>Ruční generování metod TAP
 Vzor TAP můžete implementovat ručně a dosáhnout tak lepší kontroly nad implementací. Kompilátor spoléhá na veřejnou oblast vystavenou z oboru názvů <xref:System.Threading.Tasks?displayProperty=nameWithType> s podporou typů v oboru názvů <xref:System.Runtime.CompilerServices?displayProperty=nameWithType>. Při vlastní implementaci vzoru TAP vytvoříte objekt <xref:System.Threading.Tasks.TaskCompletionSource%601>, provedete asynchronní operaci a po jejím dokončení zavoláte metodu <xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult%2A>, <xref:System.Threading.Tasks.TaskCompletionSource%601.SetException%2A> nebo <xref:System.Threading.Tasks.TaskCompletionSource%601.SetCanceled%2A> anebo verzi `Try` jedné z těchto metod. Při ruční implementaci metody TAP musíte dokončit výsledný úkol po dokončení zastoupené asynchronní operace. Příklad:
@@ -52,7 +52,7 @@ Výpočetní úkoly můžete generovat následujícími způsoby:
 
 - V rozhraní .NET Framework 4 použijte metodu <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>, jež přijímá delegát (obvykle typu <xref:System.Action%601> nebo <xref:System.Func%601>), který se provádí asynchronně. Pokud poskytnete delegát typu <xref:System.Action%601>, vrátí metoda objekt <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, který představuje asynchronní provádění tohoto delegátu. Pokud zadáte delegát typu <xref:System.Func%601>, vrátí metoda objekt <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Přetížení metody <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> přijímá token zrušení (<xref:System.Threading.CancellationToken>), možnosti vytvoření úkolu (<xref:System.Threading.Tasks.TaskCreationOptions>) a plánovač úkolů (<xref:System.Threading.Tasks.TaskScheduler>), které poskytují detailní kontrolu nad plánováním a prováděním úkolu. Instance objektu pro vytváření úkolů, která je určena pro aktuální plánovač úkolů, je k dispozici jako statická vlastnost (<xref:System.Threading.Tasks.Task.Factory%2A>) třídy <xref:System.Threading.Tasks.Task>, například `Task.Factory.StartNew(…)`.
 
-- V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější verze (včetně .NET Core a .NET Standard), použít statické <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metody jako zástupce <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>. Metodu <xref:System.Threading.Tasks.Task.Run%2A> můžete použít pro snadné spouštění výpočetního úkolu, který se zaměřuje na fond vláken. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novějších verzích se jedná o upřednostňovaný postup spuštění výpočetního úkolu. Použití `StartNew` přímo pouze pokud budete chtít jemněji odstupňovanou kontrolu nad tímto úkolem.
+- V rozhraní .NET Framework 4.5 a novější verze (včetně .NET Core a .NET Standard), použít statické <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metody jako zástupce <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>. Metodu <xref:System.Threading.Tasks.Task.Run%2A> můžete použít pro snadné spouštění výpočetního úkolu, který se zaměřuje na fond vláken. V rozhraní .NET Framework 4.5 a novější verze je to upřednostňovaný postup spuštění výpočetního úkolu. Použití `StartNew` přímo pouze pokud budete chtít jemněji odstupňovanou kontrolu nad tímto úkolem.
 
 - Pokud chcete generovat a plánovat úkol samostatně, použijte konstruktory typu `Task` nebo metodu `Start`. Veřejné metody smí vracet pouze úkoly, které již byly zahájeny.
 
@@ -83,7 +83,7 @@ Předpokládejte, že chcete vytvořit úkol, který bude dokončen po určitém
 [!code-csharp[Conceptual.TAP_Patterns#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#4)]
 [!code-vb[Conceptual.TAP_Patterns#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#4)]
 
-Počínaje rozhraním [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] je pro tento účel k dispozici metoda <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> a lze ji používat uvnitř jiné asynchronní metody, například k implementaci smyčky asynchronního dotazování:
+Od verze rozhraní .NET Framework 4.5 <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> metoda je k dispozici pro tento účel, a můžete ji uvnitř jiné asynchronní metody, třeba k implementaci smyčky asynchronního dotazování:
 
 [!code-csharp[Conceptual.TAP_Patterns#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#5)]
 [!code-vb[Conceptual.TAP_Patterns#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#5)]

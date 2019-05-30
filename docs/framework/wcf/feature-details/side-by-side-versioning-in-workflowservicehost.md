@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-ms.openlocfilehash: 0323c0f10538eda2ed3b365a54470bdecac061a8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3ac8b2260e5da1e91c167e3e9ef91039deb983b2
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586204"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380244"
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Práce s víc verzemi současně ve třídě WorkflowServiceHost
-<xref:System.ServiceModel.Activities.WorkflowServiceHost> Počínaje verzí vedle sebe [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] poskytuje možnost hostování několika verzí služby pracovního postupu v jednom koncovém bodu. Vedle sebe funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu jsou vytvořené pomocí novou definici pracovního postupu při spuštění úplné pomocí existující definici instance služby pracovního postupu. Toto téma obsahuje přehled používání vedle sebe provádění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
+<xref:System.ServiceModel.Activities.WorkflowServiceHost> Správy verzí vedle sebe zavedena v rozhraní .NET Framework 4.5 poskytuje možnost hostování několika verzí služby pracovního postupu v jednom koncovém bodu. Vedle sebe funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu jsou vytvořené pomocí novou definici pracovního postupu při spuštění úplné pomocí existující definici instance služby pracovního postupu. Toto téma obsahuje přehled používání vedle sebe provádění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
   
 > [!NOTE]
 >  Stáhněte si ukázku a podívejte se video s návodem, Správa verzí vedle sebe služby pracovního postupu najdete v tématu [vedle sebe Správa verzí pomocí služby pracovního postupu Xamlx Web-Hosted](https://go.microsoft.com/fwlink/?LinkId=393746).  

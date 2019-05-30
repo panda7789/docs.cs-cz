@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3d45ed4f9bfb2c59bf2c01b373e919255c17e41
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9ad78c37dda00e0b52ec8e84b8c996ee3dca09a5
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592874"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378672"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Rozhraní .NET framework verze a závislosti
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  
@@ -56,7 +56,7 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
 ## <a name="targeting-and-running-net-framework-apps-for-version-45-and-later"></a>Zacílení a spuštění aplikací rozhraní .NET Framework verze 4.5 a vyšší  
  Rozhraní .NET framework 4.5 je místní aktualizace, který nahrazuje rozhraní .NET Framework 4 ve vašem počítači a obdobně rozhraní .NET Framework 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 a 4.8 jsou aktualizace nahrazující rozhraní .NET Framework 4.5, což znamená, že používají stejný modul runtime verze, ale verze sestavení jsou aktualizované a nové typy a členy. Po instalaci jedné z těchto aktualizací, by měl dál aplikací rozhraní .NET Framework 4, .NET Framework 4.5, .NET Framework 4.6 nebo .NET Framework 4.7 spustit bez nové kompilace. Opačně to však neplatí. Nedoporučujeme spouštění aplikací, které se zaměřují novější verzi rozhraní .NET Framework ve starší verzi rozhraní .NET Framework. Nedoporučujeme například, že je spustí aplikaci pro cílení na rozhraní .NET Framework 4.6 v rozhraní .NET Framework 4.5. Platí následující pokyny:  
   
-- V sadě Visual Studio, můžete použít rozhraní .NET Framework 4.5 jako cílový rámec pro projekt (tím se nastaví <xref:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.TargetFrameworkMoniker%2A?displayProperty=nameWithType> vlastnost) ke kompilaci projektu jako sestavení rozhraní .NET Framework 4.5 nebo spustitelný soubor. Toto sestavení nebo spustitelný soubor pak lze v libovolném počítači, který má [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 nebo 4.8 nainstalované.  
+- V sadě Visual Studio, můžete použít rozhraní .NET Framework 4.5 jako cílový rámec pro projekt (tím se nastaví <xref:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.TargetFrameworkMoniker%2A?displayProperty=nameWithType> vlastnost) ke kompilaci projektu jako sestavení rozhraní .NET Framework 4.5 nebo spustitelný soubor. Toto sestavení nebo spustitelný soubor pak lze v libovolném počítači, který má rozhraní .NET Framework 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, nebo 4.8 nainstalované.  
   
 - V sadě Visual Studio, můžete rozhraní .NET Framework 4.5.1 jako cílový rámec pro projekt (tím se nastaví <xref:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.TargetFrameworkMoniker%2A?displayProperty=nameWithType> vlastnost) ke kompilaci projektu jako sestavení rozhraní .NET Framework 4.5.1 nebo spustitelný soubor. Toto sestavení nebo spustitelný soubor by měl běžet jenom na počítače, které mají rozhraní .NET Framework 4.5.1 nebo novější verzi rozhraní .NET Framework nainstalované. Spustitelný soubor, který cíle rozhraní .NET Framework 4.5.1 zabrání spuštěného na počítači, který má jenom starší verzi rozhraní .NET Framework, jako je například rozhraní .NET Framework 4.5 nainstalované, a uživatel bude vyzván k instalaci rozhraní .NET Framework 4.5.1. Sestavení rozhraní .NET Framework 4.5.1 by navíc neměla být volána z aplikace, která se zaměřuje na starší verzi rozhraní .NET Framework, jako je například rozhraní .NET Framework 4.5.  
   
@@ -74,9 +74,9 @@ Rozhraní .NET framework verze 2.0, 3.0 a 3.5 jsou vybaveny stejnou verzi modulu
   
 - Pokud jste novými uživateli rozhraní .NET Framework, přečtěte si článek [přehled](../../../docs/framework/get-started/overview.md) Úvod do klíčových konceptů a funkcí.  
   
-- Nové funkce a vylepšení [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho verze, najdete v článku [co je nového v rozhraní .NET Framework](../../../docs/framework/whats-new/index.md).  
+- Nové funkce a vylepšení v rozhraní .NET Framework 4.5 a jeho novější vydání najdete v tématu [co je nového v rozhraní .NET Framework](../../../docs/framework/whats-new/index.md).  
   
-- Informace o migraci aplikace z rozhraní .NET Framework 4 do [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho verze, najdete v článku [Průvodce migrací](index.md).  
+- Informace o migraci aplikace z rozhraní .NET Framework 4 na rozhraní .NET Framework 4.5 a jeho novější vydání, najdete v článku [Průvodce migrací](index.md).  
   
 - Informace o určení, které verze nebo aktualizace jsou nainstalovány v počítači, naleznete v tématu [jak: Zjištění nainstalovaných verzí rozhraní .NET Framework](how-to-determine-which-versions-are-installed.md) a [jak: Zjištění nainstalovaných aktualizací rozhraní .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md).  
   
