@@ -12,28 +12,28 @@ helpviewer_keywords:
 - run time [Windows Forms], adding controls
 - controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-ms.openlocfilehash: 85c1d398c1aabbb73d5ae34186775e2c63666cfb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: a868632d6868e6a82c4fa135444279b8ef4dc7af
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309443"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301417"
 ---
-# <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a><span data-ttu-id="e1670-102">Postupy: Přidávání ovládacích prvků do kolekce a odebírání ovládacích prvků z kolekce za běhu</span><span class="sxs-lookup"><span data-stu-id="e1670-102">How to: Add to or Remove from a Collection of Controls at Run Time</span></span>
-<span data-ttu-id="e1670-103">Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a odebírání ovládacích prvků z kontejneru ovládacích prvků ve formulářích (například <xref:System.Windows.Forms.Panel> nebo <xref:System.Windows.Forms.GroupBox> ovládací prvek nebo dokonce i samotný formulář).</span><span class="sxs-lookup"><span data-stu-id="e1670-103">Common tasks in application development are adding controls to and removing controls from any container control on your forms (such as the <xref:System.Windows.Forms.Panel> or <xref:System.Windows.Forms.GroupBox> control, or even the form itself).</span></span> <span data-ttu-id="e1670-104">V době návrhu můžete přetáhnout ovládací prvky přímo na panelu nebo skupiny.</span><span class="sxs-lookup"><span data-stu-id="e1670-104">At design time, controls can be dragged directly onto a panel or group box.</span></span> <span data-ttu-id="e1670-105">V době běhu, udržovat tyto ovládací prvky `Controls` kolekce, která uchovává informace o jaké ovládací prvky jsou umístěny na ně.</span><span class="sxs-lookup"><span data-stu-id="e1670-105">At run time, these controls maintain a `Controls` collection, which keeps track of what controls are placed on them.</span></span>  
+# <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a><span data-ttu-id="6ba73-102">Postupy: Přidávání ovládacích prvků do kolekce a odebírání ovládacích prvků z kolekce za běhu</span><span class="sxs-lookup"><span data-stu-id="6ba73-102">How to: Add to or Remove from a Collection of Controls at Run Time</span></span>
+<span data-ttu-id="6ba73-103">Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a odebírání ovládacích prvků z kontejneru ovládacích prvků ve formulářích (například <xref:System.Windows.Forms.Panel> nebo <xref:System.Windows.Forms.GroupBox> ovládací prvek nebo dokonce i samotný formulář).</span><span class="sxs-lookup"><span data-stu-id="6ba73-103">Common tasks in application development are adding controls to and removing controls from any container control on your forms (such as the <xref:System.Windows.Forms.Panel> or <xref:System.Windows.Forms.GroupBox> control, or even the form itself).</span></span> <span data-ttu-id="6ba73-104">V době návrhu můžete přetáhnout ovládací prvky přímo na panelu nebo skupiny.</span><span class="sxs-lookup"><span data-stu-id="6ba73-104">At design time, controls can be dragged directly onto a panel or group box.</span></span> <span data-ttu-id="6ba73-105">V době běhu, udržovat tyto ovládací prvky `Controls` kolekce, která uchovává informace o jaké ovládací prvky jsou umístěny na ně.</span><span class="sxs-lookup"><span data-stu-id="6ba73-105">At run time, these controls maintain a `Controls` collection, which keeps track of what controls are placed on them.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="e1670-106">Následující příklad kódu se vztahuje na libovolný ovládací prvek, který udržuje sadu ovládacích prvků na ní.</span><span class="sxs-lookup"><span data-stu-id="e1670-106">The following code example applies to any control that maintains a collection of controls within it.</span></span>  
+>  <span data-ttu-id="6ba73-106">Následující příklad kódu se vztahuje na libovolný ovládací prvek, který udržuje sadu ovládacích prvků na ní.</span><span class="sxs-lookup"><span data-stu-id="6ba73-106">The following code example applies to any control that maintains a collection of controls within it.</span></span>  
   
-### <a name="to-add-a-control-to-a-collection-programmatically"></a><span data-ttu-id="e1670-107">Přidání ovládacího prvku do kolekce prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="e1670-107">To add a control to a collection programmatically</span></span>  
+### <a name="to-add-a-control-to-a-collection-programmatically"></a><span data-ttu-id="6ba73-107">Přidání ovládacího prvku do kolekce prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="6ba73-107">To add a control to a collection programmatically</span></span>  
   
-1. <span data-ttu-id="e1670-108">Vytvořte instanci ovládacího prvku na Přidat.</span><span class="sxs-lookup"><span data-stu-id="e1670-108">Create an instance of the control to be added.</span></span>  
+1. <span data-ttu-id="6ba73-108">Vytvořte instanci ovládacího prvku na Přidat.</span><span class="sxs-lookup"><span data-stu-id="6ba73-108">Create an instance of the control to be added.</span></span>  
   
-2. <span data-ttu-id="e1670-109">Nastavení vlastností nového ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e1670-109">Set properties of the new control.</span></span>  
+2. <span data-ttu-id="6ba73-109">Nastavení vlastností nového ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="6ba73-109">Set properties of the new control.</span></span>  
   
-3. <span data-ttu-id="e1670-110">Přidejte ovládací prvek `Controls` kolekce nadřazeného ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e1670-110">Add the control to the `Controls` collection of the parent control.</span></span>  
+3. <span data-ttu-id="6ba73-110">Přidejte ovládací prvek `Controls` kolekce nadřazeného ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="6ba73-110">Add the control to the `Controls` collection of the parent control.</span></span>  
   
-     <span data-ttu-id="e1670-111">Následující příklad kódu ukazuje, jak vytvořit instanci <xref:System.Windows.Forms.Button> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e1670-111">The following code example shows how to create an instance of the <xref:System.Windows.Forms.Button> control.</span></span> <span data-ttu-id="e1670-112">Vyžaduje formulář s <xref:System.Windows.Forms.Panel> ovládací prvek a zda vytvořena metoda zpracování událostí na tlačítku pro `NewPanelButton_Click`, již existuje.</span><span class="sxs-lookup"><span data-stu-id="e1670-112">It requires a form with a <xref:System.Windows.Forms.Panel> control and that the event-handling method for the button being created, `NewPanelButton_Click`, already exists.</span></span>  
+     <span data-ttu-id="6ba73-111">Následující příklad kódu ukazuje, jak vytvořit instanci <xref:System.Windows.Forms.Button> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="6ba73-111">The following code example shows how to create an instance of the <xref:System.Windows.Forms.Button> control.</span></span> <span data-ttu-id="6ba73-112">Vyžaduje formulář s <xref:System.Windows.Forms.Panel> ovládací prvek a zda vytvořena metoda zpracování událostí na tlačítku pro `NewPanelButton_Click`, již existuje.</span><span class="sxs-lookup"><span data-stu-id="6ba73-112">It requires a form with a <xref:System.Windows.Forms.Panel> control and that the event-handling method for the button being created, `NewPanelButton_Click`, already exists.</span></span>  
   
     ```vb  
     Public NewPanelButton As New Button()  
@@ -64,13 +64,13 @@ ms.locfileid: "59309443"
     }  
     ```  
   
-### <a name="to-remove-controls-from-a-collection-programmatically"></a><span data-ttu-id="e1670-113">Odebrání ovládacích prvků z kolekce prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="e1670-113">To remove controls from a collection programmatically</span></span>  
+### <a name="to-remove-controls-from-a-collection-programmatically"></a><span data-ttu-id="6ba73-113">Odebrání ovládacích prvků z kolekce prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="6ba73-113">To remove controls from a collection programmatically</span></span>  
   
-1. <span data-ttu-id="e1670-114">Odeberte obslužnou rutinu události z události.</span><span class="sxs-lookup"><span data-stu-id="e1670-114">Remove the event handler from the event.</span></span> <span data-ttu-id="e1670-115">V jazyce Visual Basic použijte [RemoveHandler – příkaz](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) – klíčové slovo; ve Vizuálu C#, použijte [-= – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/subtraction-assignment-operator.md).</span><span class="sxs-lookup"><span data-stu-id="e1670-115">In Visual Basic, use the [RemoveHandler Statement](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) keyword; in Visual C#, use the [-= Operator (C# Reference)](~/docs/csharp/language-reference/operators/subtraction-assignment-operator.md).</span></span>  
+1. <span data-ttu-id="6ba73-114">Odeberte obslužnou rutinu události z události.</span><span class="sxs-lookup"><span data-stu-id="6ba73-114">Remove the event handler from the event.</span></span> <span data-ttu-id="6ba73-115">V jazyce Visual Basic použijte [RemoveHandler – příkaz](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) – klíčové slovo; v C#, použijte [-= – operátor](~/docs/csharp/language-reference/operators/subtraction-operator.md).</span><span class="sxs-lookup"><span data-stu-id="6ba73-115">In Visual Basic, use the [RemoveHandler Statement](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) keyword; in C#, use the [-= operator](~/docs/csharp/language-reference/operators/subtraction-operator.md).</span></span>  
   
-2. <span data-ttu-id="e1670-116">Použití `Remove` metoda odstranit požadovaný ovládací prvek z panelu `Controls` kolekce.</span><span class="sxs-lookup"><span data-stu-id="e1670-116">Use the `Remove` method to delete the desired control from the panel's `Controls` collection.</span></span>  
+2. <span data-ttu-id="6ba73-116">Použití `Remove` metoda odstranit požadovaný ovládací prvek z panelu `Controls` kolekce.</span><span class="sxs-lookup"><span data-stu-id="6ba73-116">Use the `Remove` method to delete the desired control from the panel's `Controls` collection.</span></span>  
   
-3. <span data-ttu-id="e1670-117">Volání <xref:System.Windows.Forms.Control.Dispose%2A> metoda a uvolnit tak prostředky používané ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="e1670-117">Call the <xref:System.Windows.Forms.Control.Dispose%2A> method to release all the resources used by the control.</span></span>  
+3. <span data-ttu-id="6ba73-117">Volání <xref:System.Windows.Forms.Control.Dispose%2A> metoda a uvolnit tak prostředky používané ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="6ba73-117">Call the <xref:System.Windows.Forms.Control.Dispose%2A> method to release all the resources used by the control.</span></span>  
   
     ```vb  
     Public Sub RemoveControl()  
@@ -100,7 +100,7 @@ ms.locfileid: "59309443"
     }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="e1670-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1670-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6ba73-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6ba73-118">See also</span></span>
 
 - <xref:System.Windows.Forms.Panel>
-- [<span data-ttu-id="e1670-119">Ovládací prvek Panel</span><span class="sxs-lookup"><span data-stu-id="e1670-119">Panel Control</span></span>](panel-control-windows-forms.md)
+- [<span data-ttu-id="6ba73-119">Ovládací prvek Panel</span><span class="sxs-lookup"><span data-stu-id="6ba73-119">Panel Control</span></span>](panel-control-windows-forms.md)

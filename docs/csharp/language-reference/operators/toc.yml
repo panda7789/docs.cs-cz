@@ -24,21 +24,20 @@
       displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'
     - name: () – operátor
       href: invocation-operator.md
-    - name: ':: Operátor'
+    - name: ':: – operátor'
       href: namespace-alias-qualifer.md
-    - name: + Operátor
+    - name: + a += – operátory
       href: addition-operator.md
-    - name: '- Operátor'
+      displayName: 'string concatenation, delegate combination, event subscription'
+    - name: '- – operátor'
       href: subtraction-operator.md
     - name: = – operátor
       href: assignment-operator.md
-    - name: '?: Operátor'
+    - name: '?: – operátor'
       href: conditional-operator.md
-    - name: += – operátor
-      href: addition-assignment-operator.md
     - name: '-= – operátor'
       href: subtraction-assignment-operator.md
-    - name: '?? Operátor'
+    - name: '?? – operátor'
       href: null-coalescing-operator.md
     - name: => – operátor
       href: lambda-operator.md
