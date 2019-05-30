@@ -7,21 +7,21 @@ helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: dcdf8d0f11ae65353da08bba1f8d2fe5ab415c6b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8f85be2efe972fc45230855d18649a89f2fbd61
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705555"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300810"
 ---
 # <a name="appsettings-element-for-configuration"></a>\<appSettings > – element pro \<configuration >
 
 Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační oddíl poskytuje rozhraní .NET Framework.
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<appSettings>**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp; **\<appSettings>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,21 +35,21 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 |           | Popis |
 | --------- | ----------- |
-| **Soubor**  | Nepovinný atribut.<br><br>Určuje relativní cestu na externí soubor, který obsahuje vlastní nastavení konfigurace aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou určené v  **\<Přidat >**,  **\<odebrat >**, a  **\<vymazat >** prvků a používá tyto prvky formátování stejného páru klíč/hodnota.<br><br>Zadaná cesta je relativní vzhledem k hlavní konfigurační soubor. Pro aplikace Windows Forms, je to binární složka (například */bin/debug*), ne však umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů, cesta je relativní vzhledem k kořenový adresář aplikace, kde *web.config* se nachází soubor.<br><br>Všimněte si, že modul runtime ignorovat atribut, pokud zadaný soubor nebyl nalezen. |
+| **Soubor**  | Nepovinný atribut.<br><br>Určuje relativní cestu na externí soubor, který obsahuje vlastní nastavení konfigurace aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou určené v  **\<Přidat >** ,  **\<odebrat >** , a  **\<vymazat >** prvků a používá tyto prvky formátování stejného páru klíč/hodnota.<br><br>Zadaná cesta je relativní vzhledem k hlavní konfigurační soubor. Pro aplikace Windows Forms, je to binární složka (například */bin/debug*), ne však umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů, cesta je relativní vzhledem k kořenový adresář aplikace, kde *web.config* se nachází soubor.<br><br>Všimněte si, že modul runtime ignorovat atribut, pokud zadaný soubor nebyl nalezen. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [**\<Konfigurace >** – Element](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [ **\<Konfigurace >** – Element](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [**\<add>**](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md) | Přidá nastavení vlastní aplikace. |
-| [**\<Vymazat >**](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md) | Vymaže všechny dříve definované aplikaci nastavení. |
-| [**\<remove>**](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md) | Odebere nastavení dříve definované aplikace. |
+| [ **\<add>** ](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md) | Přidá nastavení vlastní aplikace. |
+| [ **\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md) | Vymaže všechny dříve definované aplikaci nastavení. |
+| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md) | Odebere nastavení dříve definované aplikace. |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -57,7 +57,7 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 Můžete použít **souboru** atribut  **\<appSettings >** elementu *Web.config* a konfiguračních souborů aplikace. Tento atribut určuje konfigurační soubor, který poskytuje další nastavení nebo přepíše nastavení zadaná  **\<appSettings >** elementu. **Souboru** atribut lze použít v týmu vývoje scénářích správy zdrojového kódu, jako je například, pokud uživatel požaduje přepsat nastavení projektu zadané v konfiguračním souboru aplikace.
 
-Konfigurační soubory, které jsou určené **souboru** atribut musí mít kořenový uzel  **\<appSettings >** spíše než  **\<konfigurace >**.
+Konfigurační soubory, které jsou určené **souboru** atribut musí mít kořenový uzel  **\<appSettings >** spíše než  **\<konfigurace >** .
 
 ## <a name="example"></a>Příklad
 

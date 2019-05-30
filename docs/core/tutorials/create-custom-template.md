@@ -1,17 +1,17 @@
 ---
-title: Vytvoření nové vlastní šablony pro dotnet
+title: Vytvoření vlastní šablony pro dotnet new
 description: Zjistěte, jak vytvořit vlastní šablonu pro nový příkaz dotnet v tuhle zábavnou kurzu.
-author: guardrex
+author: mairaw
 ms.date: 08/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 3b45a24c8a249eeb99fb1a4b14918483b978980b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e47da048584ec31c275ff9c122d157f34556268a
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647382"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299960"
 ---
-# <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření nové vlastní šablony pro dotnet
+# <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření vlastní šablony pro dotnet new
 
 V tomto kurzu se dozvíte, jak do:
 
@@ -35,7 +35,7 @@ Pokud chcete použít stažené ukázky s distribucí systému souborů, postupu
 
 ## <a name="create-a-template-from-a-project"></a>Vytvoření šablony z projektu
 
-Použití existujícího projektu, který ověření, že zkompiluje a spustí nebo vytvořte nový projekt konzolové aplikace do složky na pevném disku. V tomto kurzu se předpokládá, že je název složky projektu *GarciaSoftware.ConsoleTemplate.CSharp* uloženou v *Documents\Templates* v profilu uživatele. Název šablony projektu kurz je ve formátu  *\<název společnosti >.\< Typ šablony >. \<Programovací jazyk >*, ale můžete zdarma na název projektu a šablony, cokoli si přejete.
+Použití existujícího projektu, který ověření, že zkompiluje a spustí nebo vytvořte nový projekt konzolové aplikace do složky na pevném disku. V tomto kurzu se předpokládá, že je název složky projektu *GarciaSoftware.ConsoleTemplate.CSharp* uloženou v *Documents\Templates* v profilu uživatele. Název šablony projektu kurz je ve formátu  *\<název společnosti >.\< Typ šablony >. \<Programovací jazyk >* , ale můžete zdarma na název projektu a šablony, cokoli si přejete.
 
 1. Přidat složku do kořenového adresáře projektu s názvem *. template.config*.
 1. Uvnitř *. template.config* složku, vytvořte *template.json* souboru konfigurace šablony. Pro další informace a člen definice pro *template.json* souboru, najdete v článku [vlastních šablon pro dotnet nové](../tools/custom-templates.md#templatejson) tématu a [ *template.json* schéma na Store schématu JSON](http://json.schemastore.org/template).

@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6799e36ec312bf857a12293dc0be15e9cc21f55
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e41a51dcdf243091d3962278f1a59a85a2722894
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648459"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251133"
 ---
 # <a name="mitigation-path-colon-checks"></a>Omezení rizik: Path Colon Checks
-Počínaje aplikací, které se zaměřují [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], počet změn byly provedeny na podporu dříve nepodporované cesty (jak z hlediska délku a formátu). Konkrétně kontroly syntaxe správná jednotka oddělovač (dvojtečka) byly provedeny více správné.  
+Počínaje aplikací využívajících rozhraní .NET Framework 4.6.2, počet změn nebyly zadány podporují dříve nepodporované cesty (jak z hlediska délku a formátu). Konkrétně kontroly syntaxe správná jednotka oddělovač (dvojtečka) byly provedeny více správné.  
   
 ## <a name="impact"></a>Dopad  
  Tyto změny blokovat některé cesty identifikátoru URI <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> a <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> metody dříve podporovány.  

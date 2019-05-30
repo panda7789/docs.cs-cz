@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 0b6a48d1fdab3cbccf40aaa77731a658f533eeba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d4d96143dbd1db440de2247a7dc2f0c66f20403
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705399"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301302"
 ---
 # <a name="clear-element-for-appsettings"></a>\<Vymazat > – element pro \<appSettings >
 
 Vymaže nastavení vlastní aplikace.
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<Vymazat >**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,7 +40,7 @@ Vymaže nastavení vlastní aplikace.
 
 |     | Popis |
 | --- | ----------- |
-| [**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací konfigurace vlastní aplikace. |
+| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací konfigurace vlastní aplikace. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 

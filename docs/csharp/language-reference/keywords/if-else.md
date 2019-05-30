@@ -11,12 +11,12 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: ef25b3fb5657d833bbccf5bace71e049623476c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18b41446eb13f4b91db86d79316a5299b0f3020a
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661500"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300483"
 ---
 # <a name="if-else-c-reference"></a>if-else (Referenční dokumentace jazyka C#)
 

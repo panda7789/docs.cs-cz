@@ -1,15 +1,15 @@
 ---
 title: Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 description: Toto téma vás provede sestavení řešení .NET Core, která obsahuje opakovaně použitelné knihovny a testování částí.
-author: guardrex
+author: mairaw
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: be0aebb1ac700de07a52c4c50383f45d1191b7f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 44ade71a257f5c4fdcb8da9b572adf7133448fb8
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648312"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300146"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 

@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: ad3ac93b2a7f92cd33787620fc0caa2b632aa072
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5ab12150c5200dc346e950541443d5286f739c8
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705360"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301239"
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Vymazat > – element pro NameValueSectionHandler a DictionarySectionHandler
 
 Vymaže všechny dříve definované nastavení v oddílu.
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<sectionName>**](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<Vymazat >**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,7 +38,7 @@ Vymaže všechny dříve definované nastavení v oddílu.
 
 |     | Popis |
 | --- | ------------|
-| [**\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy. |
+| [ **\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -52,7 +52,7 @@ Můžete použít  **\<vymazat >** prvek, který chcete odebrat všechna nastave
 
 Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje způsob použití  **\<vymazat >** prvku v konfiguračním souboru aplikace, zrušte dříve definované v části konfigurační soubor počítače.
 
-Následující počítače konfigurační soubor kód deklaruje části  **\<mySection >**:
+Následující počítače konfigurační soubor kód deklaruje části  **\<mySection >** :
 
 ```xml
 <!-- Machine.config file -->
@@ -67,7 +67,7 @@ Následující počítače konfigurační soubor kód deklaruje části  **\<myS
 </configuration>
 ```
 
-Následující kód souboru konfigurace aplikace odebere všechna nastavení z  **\<mySection >**. Aplikaci nelze načíst nastavení, které byly deklarovány v v  **\<mySection >** oddílu konfiguračního souboru počítače.
+Následující kód souboru konfigurace aplikace odebere všechna nastavení z  **\<mySection >** . Aplikaci nelze načíst nastavení, které byly deklarovány v v  **\<mySection >** oddílu konfiguračního souboru počítače.
 
 ```xml
 <!-- Application configuration file -->

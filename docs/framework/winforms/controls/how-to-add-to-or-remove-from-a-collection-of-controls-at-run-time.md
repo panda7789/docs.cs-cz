@@ -12,12 +12,12 @@ helpviewer_keywords:
 - run time [Windows Forms], adding controls
 - controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-ms.openlocfilehash: 85c1d398c1aabbb73d5ae34186775e2c63666cfb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: a868632d6868e6a82c4fa135444279b8ef4dc7af
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309443"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301417"
 ---
 # <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>Postupy: Přidávání ovládacích prvků do kolekce a odebírání ovládacích prvků z kolekce za běhu
 Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a odebírání ovládacích prvků z kontejneru ovládacích prvků ve formulářích (například <xref:System.Windows.Forms.Panel> nebo <xref:System.Windows.Forms.GroupBox> ovládací prvek nebo dokonce i samotný formulář). V době návrhu můžete přetáhnout ovládací prvky přímo na panelu nebo skupiny. V době běhu, udržovat tyto ovládací prvky `Controls` kolekce, která uchovává informace o jaké ovládací prvky jsou umístěny na ně.  
@@ -66,7 +66,7 @@ Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a od
   
 ### <a name="to-remove-controls-from-a-collection-programmatically"></a>Odebrání ovládacích prvků z kolekce prostřednictvím kódu programu  
   
-1. Odeberte obslužnou rutinu události z události. V jazyce Visual Basic použijte [RemoveHandler – příkaz](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) – klíčové slovo; ve Vizuálu C#, použijte [-= – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/subtraction-assignment-operator.md).  
+1. Odeberte obslužnou rutinu události z události. V jazyce Visual Basic použijte [RemoveHandler – příkaz](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) – klíčové slovo; v C#, použijte [-= – operátor](~/docs/csharp/language-reference/operators/subtraction-operator.md).  
   
 2. Použití `Remove` metoda odstranit požadovaný ovládací prvek z panelu `Controls` kolekce.  
   

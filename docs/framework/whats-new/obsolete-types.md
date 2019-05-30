@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e106709c7410b289e7aab2b5cf924466f2eeb501
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
-ms.translationtype: MT
+ms.openlocfilehash: a4f230053762ffd382187c5d2709caa8a394bd97
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959940"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300568"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
-<a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]uspořádaných podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](obsolete-members.md).
+<a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a rozhraní .NET Framework 4.6, uspořádané podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](obsolete-members.md).
 
 - [Zastaralé typy v systému sestavení](#obsolete_types_in_system_assemblies)
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - managing control states [WPF], VisualStateManager
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
-ms.openlocfilehash: 279f7932d38885331b69616afa719ad782d7244b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3630b9e2f50830faf50599388e4fbb7ec1630b73
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659906"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300739"
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
 <a name="introduction"></a>
@@ -78,7 +78,7 @@ Vlastní ovládací prvek NumericUpDown
   
  [!code-xaml[VSMCustomControl#VisualStructure](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#visualstructure)]  
   
- Vizuální chování `NumericUpDown` ovládací prvek je, že hodnota je v red písma, pokud je záporné.  Pokud změníte <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> v kódu při `Value` je záporný, `NumericUpDown` vždy zobrazí červený zápornou hodnotu. Zadejte visual chování ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> přidáním <xref:System.Windows.VisualState> objektů <xref:System.Windows.Controls.ControlTemplate>.  Následující příklad ukazuje <xref:System.Windows.VisualState> pro objekty `Positive` a `Negative` stavy.  `Positive` a `Negative` jsou vzájemně se vylučující (ovládací prvek, je vždy přesně jeden z nich), takže se v příkladu se umístí <xref:System.Windows.VisualState> objekty do jednoho <xref:System.Windows.VisualStateGroup>.  Při přechodu ovládací prvek do `Negative` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> zčervená.  Pokud je ovládací prvek v `Positive` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí na něj původní hodnotu.  Definování <xref:System.Windows.VisualState> objekty v <xref:System.Windows.Controls.ControlTemplate> je popsána dále v [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+ Vizuální chování `NumericUpDown` ovládací prvek je, že hodnota je v red písma, pokud je záporné.  Pokud změníte <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> v kódu při `Value` je záporný, `NumericUpDown` vždy zobrazí červený zápornou hodnotu. Zadejte visual chování ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> přidáním <xref:System.Windows.VisualState> objektů <xref:System.Windows.Controls.ControlTemplate>.  Následující příklad ukazuje <xref:System.Windows.VisualState> pro objekty `Positive` a `Negative` stavy.  `Positive` a `Negative` jsou vzájemně se vylučující (ovládací prvek, je vždy přesně jeden z nich), takže se v příkladu se umístí <xref:System.Windows.VisualState> objekty do jednoho <xref:System.Windows.VisualStateGroup>.  Při přechodu ovládací prvek do `Negative` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> zčervená.  Pokud je ovládací prvek v `Positive` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí na původní hodnotu.  Definování <xref:System.Windows.VisualState> objekty v <xref:System.Windows.Controls.ControlTemplate> je popsána dále v [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
 > [!NOTE]
 >  Nezapomeňte nastavit <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost v kořenovém adresáři <xref:System.Windows.FrameworkElement> z <xref:System.Windows.Controls.ControlTemplate>.  
@@ -121,7 +121,7 @@ Vlastní ovládací prvek NumericUpDown
 ### <a name="use-the-visualstatemanager-to-manage-states"></a>Použití VisualStateManager ke správě stavů  
  <xref:System.Windows.VisualStateManager> Uchovává informace o stavu ovládacího prvku a provádějí logiku potřebnou pro přechod mezi stavy. Když přidáte <xref:System.Windows.VisualState> objektů <xref:System.Windows.Controls.ControlTemplate>, přidejte je do <xref:System.Windows.VisualStateGroup> a přidejte <xref:System.Windows.VisualStateGroup> k <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost tak, aby <xref:System.Windows.VisualStateManager> k nim má přístup.  
   
- V následujícím příkladu se opakuje předchozí příklad, který ukazuje <xref:System.Windows.VisualState> objekty, které odpovídá `Positive` a `Negative` stavy ovládacího prvku. <xref:System.Windows.Media.Animation.Storyboard> v `Negative` <xref:System.Windows.VisualState> se změní <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> červené.   Při `NumericUpDown` ovládací prvek je v `Negative` scénář ve stavu `Negative` začíná stavu.  Pak bude <xref:System.Windows.Media.Animation.Storyboard> v `Negative` stavu zastaví, když se ovládací prvek vrátí `Positive` stavu.  `Positive` <xref:System.Windows.VisualState> Nemusí obsahovat <xref:System.Windows.Media.Animation.Storyboard> vzhledem k tomu, když <xref:System.Windows.Media.Animation.Storyboard> pro `Negative` zastaví, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí původní barvu.  
+ V následujícím příkladu se opakuje předchozí příklad, který ukazuje <xref:System.Windows.VisualState> objekty, které odpovídají `Positive` a `Negative` stavy ovládacího prvku. <xref:System.Windows.Media.Animation.Storyboard> v `Negative` <xref:System.Windows.VisualState> se změní <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> červené.   Při `NumericUpDown` ovládací prvek je v `Negative` scénář ve stavu `Negative` začíná stavu.  Pak bude <xref:System.Windows.Media.Animation.Storyboard> v `Negative` stavu zastaví, když se ovládací prvek vrátí `Positive` stavu.  `Positive` <xref:System.Windows.VisualState> Nemusí obsahovat <xref:System.Windows.Media.Animation.Storyboard> vzhledem k tomu, když <xref:System.Windows.Media.Animation.Storyboard> pro `Negative` zastaví, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí původní barvu.  
   
  [!code-xaml[VSMCustomControl#ValueStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#valuestates)]  
   

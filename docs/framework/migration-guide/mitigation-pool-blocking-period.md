@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 92d2de20-79be-4df1-b182-144143a8866a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4f51cf554c60a2ff8ed319faa95397d2a0bb48b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 01bd548bbafda34202705dda3dda148aae941e2b
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623951"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251103"
 ---
 # <a name="mitigation-pool-blocking-period"></a>Omezení rizik: Období blokování fondu
 Odebrali jsme blokování období fondu připojení pro připojení k databázím Azure SQL.  
   
 ## <a name="additional-description"></a>Další popis  
- V [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a předchozími verzemi, pokud aplikace zjistí chyba přechodného připojení při připojování k databázi, pokus o připojení se nedá opakovat, rychle, protože fond připojení ukládá do mezipaměti, chyby a znovu vyvolá po dobu 5 sekund do 1 min. Další informace najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md). Toto chování je problematické pro připojení k databázím Azure SQL, které často dojde k přechodným chybám, které jsou obvykle obnovila během několika sekund. Funkce připojení k fondu blokování znamená, že aplikace nemůže připojit k databázi rozsáhlé dobu, i v případě, že databáze je k dispozici. Toto chování je zvláště problematický pro webové aplikace, které se připojovat k databázím Azure SQL a, které je potřeba vykreslit během několika sekund.  
+ V rozhraní .NET Framework 4.6.1 a starší verze pokud aplikace zjistí chyba přechodného připojení při připojování k databázi, pokus o připojení se nedá opakovat, rychle, protože fond připojení ukládá do mezipaměti, chyby a znovu vyvolá po dobu 5 sekund do 1 min. Další informace najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md). Toto chování je problematické pro připojení k databázím Azure SQL, které často dojde k přechodným chybám, které jsou obvykle obnovila během několika sekund. Funkce připojení k fondu blokování znamená, že aplikace nemůže připojit k databázi rozsáhlé dobu, i v případě, že databáze je k dispozici. Toto chování je zvláště problematický pro webové aplikace, které se připojovat k databázím Azure SQL a, které je potřeba vykreslit během několika sekund.  
   
- Počínaje [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], připojení otevřené žádosti o známých databází Azure SQL (*. database.windows.net, \*. database.chinacloudapi.cn, \*. database.usgovcloudapi.net, \*. database.cloudapi.de), Otevřít chyby připojení nejsou uložené v mezipaměti. Pro všechny ostatní pokusy o připojení pokračuje v období blokování fondu připojení vynucení.  
+ Od verze rozhraní .NET Framework 4.6.2, pro připojení k otevření žádosti o známých databází Azure SQL (*. database.windows.net, \*. database.chinacloudapi.cn, \*. database.usgovcloudapi.net, \*. database.cloudapi.de ), otevřete chyb připojení nejsou uložené v mezipaměti. Pro všechny ostatní pokusy o připojení pokračuje v období blokování fondu připojení vynucení.  
   
 ## <a name="impact"></a>Dopad  
  Tato změna umožňuje otevřít pokus o připojení k opakovat okamžitě pro Azure SQL Database, následné vylepšení výkonu aplikací povolenou podporu cloudu.  

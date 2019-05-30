@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 07ef96862c04b8245d8365c3d3b419d227e824c4
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: c1f891314a2490d6dbf22977ea5a5f69533b330d
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876953"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300324"
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 
@@ -95,9 +95,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [* x](pointer-related-operators.md#pointer-indirection-operator-) – dereferenci ukazatele nebo přístup přes ukazatel.
 
-[True – – operátor](../keywords/true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` označuje jednoznačně true operand.
+[True – – operátor](true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` označuje jednoznačně true operand.
 
-[false – – operátor](../keywords/true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` k označení, že operand je jednoznačně false.
+[false – – operátor](true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` k označení, že operand je jednoznačně false.
 
 ## <a name="multiplicative-operators"></a>Operátory násobení
 
@@ -197,9 +197,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [x = y](assignment-operator.md) – přiřazení.
 
-[x += y](addition-assignment-operator.md) – přírůstku. Přidat hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí `event`, pak `y` musí být odpovídající funkce, která C# přidá jako obslužné rutiny události.
+[x += y](arithmetic-operators.md#compound-assignment) – přírůstku. Přidat hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí [události](../keywords/event.md), pak `y` musí být odpovídající metodu, která C# přidá jako obslužné rutiny události.
 
-[x-= y](subtraction-assignment-operator.md) – sníží. Odečte hodnotu `y` od hodnoty `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí `event`, pak `y` musí být odpovídající funkce, které C# odebere jako obslužné rutiny události.
+[x-= y](arithmetic-operators.md#compound-assignment) – sníží. Odečte hodnotu `y` od hodnoty `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí [události](../keywords/event.md), pak `y` musí být odpovídající metodu, která C# odebere jako obslužné rutiny události.
 
 [x * = y](arithmetic-operators.md#compound-assignment) – přiřazení násobení. Vynásobí hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 

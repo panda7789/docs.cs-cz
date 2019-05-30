@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: d824ae828dd025f3292990facaa5e423add9c282
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e79def513637937262d00b0edb1b0f7676fd120b
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705347"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300807"
 ---
 # <a name="clear-element-for-configsections"></a>\<Vymazat > – element pro \<configSections >
 
 Vymaže všechny dříve definované oddíly a skupin oddílů.
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<Vymazat >**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,13 +34,13 @@ Vymaže všechny dříve definované oddíly a skupin oddílů.
 
 |           | Popis |
 | --------- | ----------- |
-| **Jméno**  | Požadovaný atribut.<br><br>Určuje název sekce nebo skupiny části odebrat. |
+| **name**  | Požadovaný atribut.<br><br>Určuje název sekce nebo skupiny části odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [**\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [ **\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -54,7 +54,7 @@ Vymaže všechny dříve definované oddíly a skupin oddílů.
 
 Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje způsob použití  **\<vymazat >** prvku v konfiguračním souboru aplikace, zrušte dříve definované v části konfigurační soubor počítače.
 
-Následující počítače konfigurační soubor kód deklaruje dvě části  **\<sampleSection >** a  **\<anotherSampleSection >**, které jsou přečteny před aplikace konfigurační soubor:
+Následující počítače konfigurační soubor kód deklaruje dvě části  **\<sampleSection >** a  **\<anotherSampleSection >** , které jsou přečteny před aplikace konfigurační soubor:
 
 ```xml
 <!-- Machine.config file -->

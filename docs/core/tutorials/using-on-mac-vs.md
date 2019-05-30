@@ -1,15 +1,15 @@
 ---
 title: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 description: Toto téma vás provede vytvořením jednoduchou konzolovou aplikaci pomocí sady Visual Studio pro Mac a .NET Core.
-author: guardrex
+author: mairaw
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: d99cabf15be63593b272474867359324a5892b04
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4467842c0b65ea536cc26601981d9fcc2bc68f2d
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664762"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300054"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 

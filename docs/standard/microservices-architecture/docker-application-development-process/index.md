@@ -2,12 +2,12 @@
 title: Proces vývoje aplikací založených na Dockeru
 description: Získáte základní přehled možností pro vývoj aplikací založených na Dockeru. Díky volbě Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu více platforem (Windows, Mac a Linux).
 ms.date: 09/27/2018
-ms.openlocfilehash: a871fcbfcf079c745759cb17960fa4eaa6ec6eec
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8807bc57365e70a0cbf265dc7bce28c93de16098
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640074"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300649"
 ---
 # <a name="development-process-for-docker-based-applications"></a>Proces vývoje pro aplikace založené na Dockeru
 
@@ -25,7 +25,7 @@ Ať už dáváte přednost úplné a výkonné IDE nebo editoru jednoduchý a fl
 
 **Visual Studio Code a Dockeru CLI**. Pokud dáváte přednost jednoduchý a multiplatformní editor, který podporuje jakýkoli jazyk pro vývoj, můžete použít Microsoft Visual Studio Code (VS Code) a rozhraní příkazového řádku Dockeru. Toto je postup vývoj multiplatformních aplikací pro Mac, Linux a Windows. Kromě toho Visual Studio Code podporuje rozšíření pro Docker, jako je například technologie IntelliSense pro soubory Dockerfile a místní úlohy spouštět příkazy Dockeru z editoru.
 
-Nainstalováním [Docker Community Edition (CE)](https://www.docker.com/community-edition) nástroje, jednotné rozhraní příkazového řádku Dockeru můžete použít k vytváření aplikací pro Windows a Linux.
+Nainstalováním [Docker Desktopu Community Edition (CE)](https://hub.docker.com/search/?type=edition&offering=community), jednotné rozhraní příkazového řádku Dockeru můžete použít k vytváření aplikací pro Windows a Linux.
 
 ### <a name="additional-resources"></a>Další zdroje
 
@@ -35,8 +35,11 @@ Nainstalováním [Docker Community Edition (CE)](https://www.docker.com/communit
 - **Visual Studio Code**. Oficiální web. \
   <https://code.visualstudio.com/download>
 
-- **Docker Community Edition (CE) pro Mac a Windows** \
-  [https://www.docker.com/community-editions](https://www.docker.com/community-edition)
+- **Plocha docker pro Windows Community Edition (CE)**  \
+  [https://hub.docker.com/editions/community/docker-ce-desktop-windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+  
+- **Docker Desktop pro Mac Community Edition (CE)**  \
+  [https://hub.docker.com/editions/community/docker-ce-desktop-mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 
 ## <a name="net-languages-and-frameworks-for-docker-containers"></a>Jazyky .NET a rozhraní pro kontejnery Dockeru
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - operators [C#], keywords
 ms.assetid: f745c81f-f8d8-4673-86a1-0f3a85cc63c3
-ms.openlocfilehash: e03e1c930b452cf5e4f2c4bb1d06d5363f20c991
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: acc2edceee8799d32b6d7daf314293a2da218f09
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661045"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300370"
 ---
 # <a name="operator-keywords-c-reference"></a>Klíčová slova operátorů (Referenční dokumentace jazyka C#)
 
@@ -36,18 +36,6 @@ Používat různé akce, třeba vytvořit objekty, kontrolu za běhu typ objektu
 - [operátor sizeof:](sizeof.md) získá velikost nespravovaným typem.  
 
 - [typeof](typeof.md) obdrželi <xref:System.Type?displayProperty=nameWithType> pro typ objektu.  
-
-- [true](true.md)  
-
-  - [True – operátor](true-false-operators.md) vrátí [bool](bool.md) hodnotu `true` k označení, že operand je jednoznačně true.
-
-  - [true literál](true-literal.md) představuje [bool](bool.md) hodnota `true`.
-
-- [false](false.md)  
-
-  - [false – – operátor](true-false-operators.md) vrátí [bool](bool.md) hodnotu `true` k označení, že operand je jednoznačně false.
-
-  - [false – literál](false-literal.md) představuje [bool](bool.md) hodnota `false`.
 
 - [stackalloc](stackalloc.md) přiděluje blok paměti v zásobníku.  
 

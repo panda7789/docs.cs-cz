@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: c590a33b83a9c6d1b839ecb496e8eb08488b2598
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ad8f037b2a4d8b0d4e386f2c7380047c6c29332
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661396"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300392"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
+
 Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají speciální význam pro kompilátor. Nelze je použít jako identifikátory v programu Pokud ovšem neobsahují `@` jako předponu. Například `@if` je platný identifikátor, ale `if` není, protože `if` je klíčové slovo.  
   
  V první tabulce v tomto tématu jsou uvedeny klíčová slova, která jsou vyhrazené identifikátory v jakékoli části programu v jazyce C#. V druhé tabulce v tomto tématu jsou uvedeny kontextová klíčová slova v jazyce C#. Kontextová klíčová slova mají zvláštní význam pouze v kontextu omezené programu a může sloužit jako identifikátory mimo tento kontext. Obecně platí protože nová klíčová slova jsou přidány do jazyka C#, se přidají jako kontextová klíčová slova Pokud se chcete vyhnout přerušení programy vytvořené ve starších verzích.  
@@ -28,7 +29,7 @@ Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají
 |[char](../../../csharp/language-reference/keywords/char.md)|[checked](../../../csharp/language-reference/keywords/checked.md)|[class](../../../csharp/language-reference/keywords/class.md)|[const](../../../csharp/language-reference/keywords/const.md)|  
 |[continue](../../../csharp/language-reference/keywords/continue.md)|[decimal](../../../csharp/language-reference/keywords/decimal.md)|[default](../../../csharp/language-reference/keywords/default.md)|[delegate](../../../csharp/language-reference/keywords/delegate.md)|  
 |[do](../../../csharp/language-reference/keywords/do.md)|[double](../../../csharp/language-reference/keywords/double.md)|[else](../../../csharp/language-reference/keywords/if-else.md)|[enum](../../../csharp/language-reference/keywords/enum.md)|  
-|[event](../../../csharp/language-reference/keywords/event.md)|[explicit](../../../csharp/language-reference/keywords/explicit.md)|[extern](../../../csharp/language-reference/keywords/extern.md)|[false](../../../csharp/language-reference/keywords/false.md)|  
+|[event](../../../csharp/language-reference/keywords/event.md)|[explicit](../../../csharp/language-reference/keywords/explicit.md)|[extern](../../../csharp/language-reference/keywords/extern.md)|[false](false-literal.md)|  
 |[finally](../../../csharp/language-reference/keywords/try-finally.md)|[Oprava](../../../csharp/language-reference/keywords/fixed-statement.md)|[float](../../../csharp/language-reference/keywords/float.md)|[for](../../../csharp/language-reference/keywords/for.md)|  
 |[Foreach](../../../csharp/language-reference/keywords/foreach-in.md)|[goto](../../../csharp/language-reference/keywords/goto.md)|[if](../../../csharp/language-reference/keywords/if-else.md)|[implicit](../../../csharp/language-reference/keywords/implicit.md)|  
 |[in](../../../csharp/language-reference/keywords/in.md)|[int](../../../csharp/language-reference/keywords/int.md)|[interface](../../../csharp/language-reference/keywords/interface.md)|[internal](../../../csharp/language-reference/keywords/internal.md)|
@@ -39,12 +40,13 @@ Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají
 |[return](../../../csharp/language-reference/keywords/return.md)|[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|[sealed](../../../csharp/language-reference/keywords/sealed.md)|[short](../../../csharp/language-reference/keywords/short.md)||
 [sizeof](../../../csharp/language-reference/keywords/sizeof.md)|[stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)|[static](../../../csharp/language-reference/keywords/static.md)|[string](../../../csharp/language-reference/keywords/string.md)|
 |[struct](../../../csharp/language-reference/keywords/struct.md)|[switch](../../../csharp/language-reference/keywords/switch.md)|[this](../../../csharp/language-reference/keywords/this.md)|[throw](../../../csharp/language-reference/keywords/throw.md)|
-|[true](../../../csharp/language-reference/keywords/true.md)|[try](../../../csharp/language-reference/keywords/try-catch.md)|[typeof](../../../csharp/language-reference/keywords/typeof.md)|[uint](../../../csharp/language-reference/keywords/uint.md)|
+|[true](true-literal.md)|[try](../../../csharp/language-reference/keywords/try-catch.md)|[typeof](../../../csharp/language-reference/keywords/typeof.md)|[uint](../../../csharp/language-reference/keywords/uint.md)|
 |[ulong](../../../csharp/language-reference/keywords/ulong.md)|[unchecked](../../../csharp/language-reference/keywords/unchecked.md)|[unsafe](../../../csharp/language-reference/keywords/unsafe.md)|[ushort](../../../csharp/language-reference/keywords/ushort.md)|
 |[using](../../../csharp/language-reference/keywords/using.md)|[Pomocí statické](using-static.md)|[virtual](../../../csharp/language-reference/keywords/virtual.md)|[void](../../../csharp/language-reference/keywords/void.md)|
 |[volatile](../../../csharp/language-reference/keywords/volatile.md)|[while](../../../csharp/language-reference/keywords/while.md)|
 
-## <a name="contextual-keywords"></a>Kontextová klíčová slova  
+## <a name="contextual-keywords"></a>Kontextová klíčová slova
+
  Kontextové klíčové slovo slouží k poskytování zvláštní význam v kódu, ale to není rezervované slovo v jazyce C#. Některé kontextová klíčová slova, jako například `partial` a `where`, mají zvláštní význam ve dvou nebo více kontexty.  
   
 ||||  
@@ -52,7 +54,7 @@ Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají
 |[add](add.md)|[Alias](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamic](dynamic.md)|[equals](equals.md)|
-|[z](from-clause.md)|[get](get.md)|[global](global.md)|
+|[from](from-clause.md)|[get](get.md)|[global](global.md)|
 |[group](group-clause.md)|[into](into.md)|[join](join-clause.md)|
 |[let](let-clause.md)|[nameof](nameof.md)|[on](on.md)|
 |[Řadit podle](orderby-clause.md)|[partial (typ)](partial-type.md)|[partial (metoda)](partial-method.md)|

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: 027c99df806197637675837b7556b176dc115aba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12ef0926665103e739ed4a8ee83ff895b439fffc
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688550"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300079"
 ---
 # <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
 
@@ -24,7 +24,7 @@ Pokud nalezne kompilátor jazyka C# `#if` směrnice, a nakonec za [#endif](prepr
 #endif
 ```
 
-Můžete použít operátory [ == ](../operators/equality-operators.md#equality-operator-) (rovnost) a [! =](../operators/equality-operators.md#inequality-operator-) (nerovnost) pouze pro testování [true](../keywords/true.md) nebo [false](../keywords/false.md). Hodnota TRUE znamená, že je definován symbol. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [ && ](../operators/boolean-logical-operators.md#conditional-logical-and-operator-) (a), [ &#124; &#124; ](../operators/boolean-logical-operators.md#conditional-logical-or-operator-) (nebo), a [!](../operators/boolean-logical-operators.md#logical-negation-operator-) (ne) k vyhodnocení, zda byly definovány více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
+Můžete použít operátory [ == ](../operators/equality-operators.md#equality-operator-) (rovnost) a [! =](../operators/equality-operators.md#inequality-operator-) (nerovnost) pouze pro testování [true](../keywords/true-literal.md) nebo [false](../keywords/false-literal.md). Hodnota TRUE znamená, že je definován symbol. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [ && ](../operators/boolean-logical-operators.md#conditional-logical-and-operator-) (a), [ &#124; &#124; ](../operators/boolean-logical-operators.md#conditional-logical-or-operator-) (nebo), a [!](../operators/boolean-logical-operators.md#logical-negation-operator-) (ne) k vyhodnocení, zda byly definovány více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
 
 ## <a name="remarks"></a>Poznámky
 

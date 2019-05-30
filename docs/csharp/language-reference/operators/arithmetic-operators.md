@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 25f716084c489c834e9242800f4c7e341c41aa58
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 84976d37514db851fd19c882b2c4c9cb003fc4bf
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880667"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66250808"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
@@ -153,7 +153,7 @@ Operátor sčítání `+` kód vypočítá součet operandů:
 
 [!code-csharp-interactive[addition operator](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#Addition)]
 
-Můžete také použít `+` operátoru pro zřetězení a delegátem kombinaci řetězec. Další informace najdete v tématu [ `+` operátor](addition-operator.md) článku.
+Můžete také použít `+` operátoru pro zřetězení a delegátem kombinaci řetězec. Další informace najdete v tématu [ `+` a `+=` operátory](addition-operator.md) článku.
 
 ## <a name="subtraction-operator--"></a>Operátor odčítání-
 

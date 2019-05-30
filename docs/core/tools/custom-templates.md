@@ -1,14 +1,14 @@
 ---
 title: Vlastních šablon pro dotnet nové
 description: Další informace o vlastních šablon pro jakýkoli druh projektu .NET nebo soubory.
-author: guardrex
+author: mairaw
 ms.date: 08/11/2017
-ms.openlocfilehash: e37fb692640c25d7a91904b0802f97ebfab75851
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ce53cab308ed404974e4d736e735bc82ac04fe6
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665327"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299912"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastních šablon pro dotnet nové
 
@@ -20,7 +20,7 @@ Modul šablon je typu open source a úložiště online kódu je na [dotnet/šab
 
 Postupujte podle průvodce a vytvoření šablony najdete v tématu [vytvořit nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.
 
-## <a name="configuration"></a>Konfigurace
+## <a name="configuration"></a>Konfiguraci
 
 Šablona se skládá z následujících součástí:
 

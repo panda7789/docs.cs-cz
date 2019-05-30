@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e75b838a2c6126fe82e97faac624a9ad6b7ea132
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f8811fd916afcb39c466b8c9a60f7c7ed2a62ea8
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626234"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301443"
 ---
 # <a name="mitigation-product-versioning"></a>Omezení rizik: Správa verzí produktu
-V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a později, Správa verzí produktu změnil z předchozích verzí rozhraní .NET Framework (rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2).  
+V rozhraní .NET Framework 4.6 nebo novější Správa verzí produktu změnil z předchozích verzí rozhraní .NET Framework (rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2).  
   
 ## <a name="product-versioning-changes"></a>Změn správy verzí produktu  
  Tady jsou podrobné změny:  
@@ -23,7 +23,7 @@ V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a později, Správa verz�
   
 - <xref:System.Reflection.AssemblyFileVersionAttribute> a <xref:System.Reflection.AssemblyInformationalVersionAttribute> atributy pro spravované sestavení mají <xref:System.Version> hodnoty ve formuláři `4.6.X.0` pro rozhraní .NET Framework 4.6 a jeho novější vydání a `4.7.X.0` pro rozhraní .NET Framework 4.7.  
   
-- V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1 a 4.6.2, 4.7, <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost vrací řetězec opravenou verzi `4.0.30319.42000`. V rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2, vrátí řetězce verze ve formátu `4.0.30319.xxxxx` (například "4.0.30319.18010"). Všimněte si, že nedoporučujeme tak novou závislost na kód aplikace <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost.  
+- V rozhraní .NET Framework 4.6, 4.6.1, 4.6.2 a 4.7 <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost vrací řetězec opravenou verzi `4.0.30319.42000`. V rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2, vrátí řetězce verze ve formátu `4.0.30319.xxxxx` (například "4.0.30319.18010"). Všimněte si, že nedoporučujeme tak novou závislost na kód aplikace <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost.  
   
 ### <a name="handling-the-product-versioning-changes"></a>Zpracování změn správy verzí produktu  
  Obecně platí aplikace by měl záviset na doporučené postupy pro zjištění takové věci jako verzi modulu runtime rozhraní .NET Framework a v instalačním adresáři:  
@@ -37,7 +37,7 @@ V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a později, Správa verz�
   
 - Chcete-li určit cestu k adresáři na rozhraní .NET Framework common language runtime, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A?displayProperty=nameWithType> metody.  
   
-- Chcete-li získat verzi modulu CLR, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType> metody.   Pro rozhraní .NET Framework 4 a jeho vydání (.NET Framework 4.5, 4.5.1, 4.5.2, a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1 a 4.6.2, 4.7), vrátí řetězec `v4.0.30319`.  
+- Chcete-li získat verzi modulu CLR, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType> metody.   Pro rozhraní .NET Framework 4 a jeho vydání (.NET Framework 4.5, 4.5.1, 4.5.2 a rozhraní .NET Framework 4.6, 4.6.1, 4.6.2 a 4.7), vrátí řetězec `v4.0.30319`.  
   
 ## <a name="see-also"></a>Viz také:
 

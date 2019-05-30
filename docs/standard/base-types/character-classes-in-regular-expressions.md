@@ -15,12 +15,12 @@ ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: e577f376b347442f6693a7a5478757ce3b698752
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 556181d32f0539b4a9e24cb1a898b4ccc3788f4e
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053000"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66250879"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 
@@ -51,16 +51,18 @@ Třída znaků definuje množinu znaků, přičemž kterýkoli z nich se může
  .NET podporuje výrazy odčítání třídy znaků, které vám umožní definovat množinu znaků jako výsledek vyloučení jedné třídy znaků vůči jiné třídě znaků. Další informace najdete v tématu [odčítání tříd znaků](#CharacterClassSubtraction).  
   
 > [!NOTE]
->  Znak třídy, které odpovídají znaků podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [\p{} ](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, využívají <xref:System.Globalization.CharUnicodeInfo> třídy k poskytnutí informací informace o kategoriích znaků.  Počínaje [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], kategoriích znaků jsou založeny na [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], jsou založeny na [standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+>  Znak třídy, které odpovídají znaků podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [\p{} ](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, využívají <xref:System.Globalization.CharUnicodeInfo> třídy k poskytnutí informací informace o kategoriích znaků.  Od verze rozhraní .NET Framework 4.6.2, kategoriích znaků jsou založeny na [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím rozhraní .NET Framework 4.6.1, jsou založeny na [standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>Pozitivní skupina znaků: [] č.  
  Skupina pozitivních znaků určuje seznam znaků, které se mohou objevit ve vstupním řetězci, aby nastala shoda. Tento seznam znaků může být zadán jako jednotlivé znaky, jako rozsah nebo obojí.  
   
  Syntaxe pro určení seznamu jednotlivých znaků je následující:  
-  
- [*character_group*]  
-  
+
+```  
+[*character_group*]  
+```
+
  kde *character_group* je seznam jednotlivých znaků, které se mohou objevit ve vstupním řetězci, aby nastala shoda. *character_group* může obsahovat libovolnou kombinaci jedné nebo více literálních znaků, [řídicí znaky](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md), nebo tříd znaků.  
   
  Syntaxe pro zadání rozsahu znaků je následující:  
@@ -69,9 +71,12 @@ Třída znaků definuje množinu znaků, přičemž kterýkoli z nich se může
 [firstCharacter-lastCharacter]  
 ```  
   
- kde *firstCharacter* je znak, který začátku rozsahu a *lastCharacter* je znak, který konci rozsahu. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode.  
-  
- Některé běžné vzory regulárních výrazů, které obsahují pozitivní třídy znaků, jsou uvedeny v následující tabulce.  
+ kde *firstCharacter* je znak, který začátku rozsahu a *lastCharacter* je znak, který konci rozsahu. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode. *firstCharacter* musí být znak nižší bod kódu a *lastCharacter* musí být znak s vyšší bod kódu.
+
+> [!NOTE]
+> Protože pozitivní skupina znaků může zahrnovat i sadu znaků a rozsah znaků, znak spojovníku (`-`) je vždy interpretováno jako oddělovač rozsahu, pokud je první ani poslední znak skupiny.
+
+Některé běžné vzory regulárních výrazů, které obsahují pozitivní třídy znaků, jsou uvedeny v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -112,17 +117,24 @@ Třída znaků definuje množinu znaků, přičemž kterýkoli z nich se může
 ## <a name="negative-character-group-"></a>Skupina negativních znaků: [^]  
  Skupina negativních znaků určuje seznam znaků, které se nesmí objevit ve vstupním řetězci, aby došlo ke shodě. Seznam znaků může být zadán jako jednotlivé znaky, jako rozsah nebo obojí.  
   
- Syntaxe pro určení seznamu jednotlivých znaků je následující:  
-  
- [*^character_group*]  
-  
+Syntaxe pro určení seznamu jednotlivých znaků je následující:  
+
+```
+[*^character_group*]  
+```
+
  kde *character_group* je seznam jednotlivých znaků, které se nesmí objevit ve vstupním řetězci, aby nastala shoda. *character_group* může obsahovat libovolnou kombinaci jedné nebo více literálních znaků, [řídicí znaky](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md), nebo tříd znaků.  
   
  Syntaxe pro zadání rozsahu znaků je následující:  
-  
- [^*firstCharacter*-*lastCharacter*]  
-  
- kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak, který konci rozsahu. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode.  
+
+```
+[^*firstCharacter*-*lastCharacter*]  
+```
+
+kde *firstCharacter* je znak, který začátku rozsahu a *lastCharacter* je znak, který konci rozsahu. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode. *firstCharacter* musí být znak nižší bod kódu a *lastCharacter* musí být znak s vyšší bod kódu.
+
+> [!NOTE]
+> Vzhledem k tomu, že Skupina negativních znaků může zahrnovat i sadu znaků a rozsah znaků, znak spojovníku (`-`) je vždy interpretováno jako oddělovač rozsahu, pokud je první ani poslední znak skupiny.
   
  Mohou být spojeny dva nebo více rozsahů znaků. Například chcete-li určit rozsah desítkových číslic "0" až "9", rozsah malých písmen od "a" až "f" a rozsah velkých písmen od "A" až "F", použijte `[0-9a-fA-F]`.  
   

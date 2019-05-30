@@ -7,21 +7,21 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: dc2bb949c7db4f70c20c3c0b687cacafed8696df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d522d004630dee942e24c39a936feae7dc957bd5
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674793"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300794"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configSections > – element pro \<configuration >
 
 Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<configSections>**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp; **\<configSections>**
 
 ## <a name="attributes"></a>Atributy
 
@@ -31,16 +31,16 @@ Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 |     | Popis |
 | --- | ----------- |
-| [**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [**\<část >**](~/docs/framework/configure-apps/file-schema/section-element.md) | Obsahuje deklarace oddíl konfigurace. |
-| [**\<sectionGroup>**](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
-| [**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Odstraní předdefinované oddílu nebo skupiny oddílů. |
-| [**\<Vymazat >**](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupin oddílů. |
+| [ **\<část >** ](~/docs/framework/configure-apps/file-schema/section-element.md) | Obsahuje deklarace oddíl konfigurace. |
+| [ **\<sectionGroup>** ](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
+| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Odstraní předdefinované oddílu nebo skupiny oddílů. |
+| [ **\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupin oddílů. |
 
 ## <a name="remarks"></a>Poznámky
 

@@ -2,12 +2,12 @@
 title: Prohlídka jazyka F#
 description: Prozkoumat některé klíčové funkce F# programovací jazyk v této ukázky s ukázkami kódu.
 ms.date: 11/06/2018
-ms.openlocfilehash: 4b3ec7fd2c42712440ea7d7045c560ab20390b45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64394342777003b33dd77028739fb7209b9f3c86
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61901722"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301258"
 ---
 # <a name="tour-of-f"></a>Prohlídka F\#
 
@@ -17,7 +17,7 @@ Existují dva hlavní koncepty v F#: funkcí a typů.  Tato ukázka se zvýrazni
 
 ## <a name="executing-the-code-online"></a>Spouští kód online
 
-Pokud nemáte F# na vašem počítači nainstalovaný, můžete spustit všechny ukázky online s [Fable REPL](https://fable.io/repl/). Fable je dialekt F# , který se spustí přímo v prohlížeči. Chcete-li zobrazit ukázky, které následují v REPL, podívejte se na **ukázky > Další > Prohlídka F#**  v panelu nabídky na levé straně Fable REPL.
+Pokud nemáte F# na vašem počítači nainstalovaný, můžete všechny ukázky spustit v prohlížeči s [zkuste F# na WebAssembly](https://tryfsharp.fsbolero.io/). Fable je dialekt F# , který se spustí přímo v prohlížeči. Chcete-li zobrazit ukázky, které následují v REPL, podívejte se na **ukázky > Další > Prohlídka F#**  v panelu nabídky na levé straně Fable REPL.
 
 ## <a name="functions-and-modules"></a>Funkce a moduly
 

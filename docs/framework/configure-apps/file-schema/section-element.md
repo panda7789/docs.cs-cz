@@ -8,27 +8,27 @@ helpviewer_keywords:
 - section Element
 - <section> Element
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 58f823ce0c128f30e361b4a631d41286533b5f0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64556054df2689ff758f52c7e98556997a3e9d3d
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701499"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301176"
 ---
 # <a name="section-element"></a>\<část > – element
 
 Obsahuje deklarace oddíl konfigurace.
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<část >**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<část >**
 
-[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<sectionGroup>**](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<část >**
+[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sectionGroup>** ](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<část >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,7 +43,7 @@ Obsahuje deklarace oddíl konfigurace.
 
 |           | Popis |
 | --------- | ----------- |
-| **Jméno**  | Určuje název konfiguračního oddílu. |
+| **name**  | Určuje název konfiguračního oddílu. |
 | **type**  | Určuje název třídy konfigurace části obslužná rutina, která čte části z konfiguračního souboru. Hodnota typu má syntaxi "fully-qualified-section-handler-class-name jednoduchý název sestavení". Název sestavení jednoduché je kořenový název souboru bez *.dll* příponu souboru. |
 
 ## <a name="optional-attributes"></a>Volitelné atributy
@@ -59,15 +59,15 @@ Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systé
 
 |     | Popis |
 | --- | ----------- |
-| [**\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
-| [**\<sectionGroup>** Element](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
+| [ **\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [ **\<sectionGroup>** Element](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
 
 > [!NOTE]
 > A  **\<části >** element je podřízeným prvkem buď  **\<configSections >** nebo  **\<sectionGroup >** , ale ne obojí.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádný
 
 ## <a name="remarks"></a>Poznámky
 

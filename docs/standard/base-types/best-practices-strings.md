@@ -1,7 +1,7 @@
 ---
 title: Osvědčené postupy pro používání řetězců v .NET
 description: Zjistěte, jak efektivní používání řetězců v aplikacích .NET.
-ms.date: 09/13/2018
+ms.date: 05/01/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -21,12 +21,12 @@ ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 82fdcae2887cf5a3428a0c874b43d9770f35afcf
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 68bcc9321d5a97620d0e8d24befbd24f4f350f94
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052999"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66250822"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 <a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo specifické jazykové verze při provádění běžných operací, jako je například řazení a zobrazení řetězce. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například by řetězců, které se používají interně aplikace obvykle zpracovává stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězec dat, jako jsou XML značky HTML značky, uživatelská jména, cesty k souborům a názvy systémové objekty, jsou interpretovány, jako by byly zohledňující jazykovou verzi, v souladu s drobné chyby, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
@@ -69,7 +69,7 @@ ms.locfileid: "66052999"
   
 - Použití <xref:System.String.Compare%2A?displayProperty=nameWithType> a <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody pro řazení řetězců, ne pro kontrolu rovnosti.  
   
-- Formátování zohledňující jazykovou verzi použijte k zobrazení neřetězcová data, jako je například čísla a kalendářní data, v uživatelském rozhraní. Použití formátování pomocí neutrální jazykové verze k uchování neřetězcová data ve formátu řetězce.  
+- Formátování zohledňující jazykovou verzi použijte k zobrazení neřetězcová data, jako je například čísla a kalendářní data, v uživatelském rozhraní. Použití formátování pomocí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture) k uchování neřetězcová data ve formátu řetězce.  
   
  Nepoužívejte následující postupy pro používání řetězců:  
   
@@ -127,7 +127,7 @@ ms.locfileid: "66052999"
 > [!NOTE]
 > Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), nejnovější verze tabulky váhy řazení pro systémy Linux a macOS. Konkrétní verze tabulky váhy řazení v Linuxu a macOS závisí na verzi [mezinárodní součásti pro kódování Unicode](http://site.icu-project.org/) knihovny nainstalované v systému. Informace o verzích ICU a Unicode verze, které implementují najdete v tématu [stahování ICU](http://site.icu-project.org/download).
 
- Však vaše rozhodnutí vyzkoušet dva řetězce pro rovnost nebo pořadí řazení nevydává jeden správný výsledek. Výsledek závisí na kritéria použitá pro porovnání řetězců. Zejména porovnávání řetězců, které jsou podle pořadového čísla nebo které jsou založeny malých a velkých písmen a řazení konvence aktuální jazykové verze nebo neutrální jazykové verze (národní prostředí bez ohledu na jazykovou verzi na základě v anglickém jazyce) mohou mít různé výsledky.  
+ Však vaše rozhodnutí vyzkoušet dva řetězce pro rovnost nebo pořadí řazení nevydává jeden správný výsledek. Výsledek závisí na kritéria použitá pro porovnání řetězců. Zejména řetězec porovnání, která se podle pořadového čísla nebo které jsou založeny malých a velkých písmen a řazení konvence aktuální jazykové verze nebo [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture) může vytvořit (národní prostředí bez ohledu na jazykovou verzi na základě v anglickém jazyce) různé výsledky.  
 
 Porovnání řetězců pomocí různých verzí rozhraní .NET nebo pomocí rozhraní .NET na různé operační systémy nebo verze operačního systému kromě toho může vrátit různé výsledky. Další informace najdete v tématu [řetězce a standardu Unicode](xref:System.String#Unicode). 
 
@@ -348,10 +348,36 @@ Porovnání řetězců pomocí různých verzí rozhraní .NET nebo pomocí rozh
  [Zpět na začátek](#top)  
   
 <a name="Formatted"></a>   
-## <a name="displaying-and-persisting-formatted-data"></a>Zobrazení a uchování formátovaných dat  
- Při zobrazení neřetězcová data, jako je například čísla a kalendářní data a časy pro uživatele, naformátujte s použitím nastavení jazykové verze uživatele. Ve výchozím nastavení <xref:System.String.Format%2A?displayProperty=nameWithType> metoda a `ToString` metody číselné typy a typy data a času používají aktuální jazykovou verzi vlákna pro operace formátování. Explicitně určit, že metoda formátování používejte aktuální jazykovou verzi, můžete volat přetížení metody pro formátování, který má `provider` parametr, například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> nebo <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>a předat ji <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost.  
-  
- Jako binární data nebo jako formátovaná data je možné zachovat neřetězcová data. Pokud se rozhodnete ji uložit jako formátovaných dat, měli byste zavolat formátování přetížení metody, která zahrnuje `provider` parametr a předat ji <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykové verze poskytuje konzistentní formát pro formátovaných dat, který je nezávislý na jazykové verzi a počítače. Naproti tomu zachovává data, který je naformátovaný pomocí jazykové verze než neutrální jazykové verze má několik omezení:  
+## <a name="displaying-and-persisting-formatted-data"></a>Zobrazení a uchování formátovaných dat
+
+Při zobrazení neřetězcová data, jako je například čísla a kalendářní data a časy pro uživatele, naformátujte s použitím nastavení jazykové verze uživatele. Ve výchozím nastavení používají aktuální jazykovou verzi vlákna v operacích formátování všechny následující:
+
+- Interpolované řetězce se nepodporuje [ C# ](../../csharp/language-reference/tokens/interpolated.md) a [jazyka Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) kompilátory.
+
+- Operace sřetězení, které používají řetězec [ C# ](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) nebo [jazyka Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ) operátory zřetězení nebo toto volání <xref:System.String.Concat%2A?displayProperty=nameWithType> metoda přímo.
+
+- <xref:System.String.Format%2A?displayProperty=nameWithType> Metody.
+
+- `ToString` Metody číselné typy a typy data a času.
+
+S ohledem na řetězec by měl naformátovat pomocí konvencí jiné určené jazykové verze nebo [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture), můžete provádět následující:
+
+- Při použití <xref:System.String.Format%2A?displayProperty=nameWithType> a `ToString` metody, volejte přetížení, která má `provider` parametr, jako <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> nebo <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>a předat ji <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost, <xref:System.Globalization.CultureInfo> instanci, která představuje požadovaný jazykovou verzi, nebo <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType> vlastnost.  
+
+- Pro zřetězení řetězců neumožňují kompilátoru k provádění jakýchkoli implicitních převodů. Místo toho provést explicitní převod pomocí volání `ToString` přetížení, která má `provider` parametru. Například kompilátor implicitně používá aktuální jazyková verze při převodu <xref:System.Double> hodnotu na řetězec v následujícím C# kódu:
+
+  [!code-csharp[Implicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#1)]
+
+  Místo toho můžete explicitně určit jazykové verze, jejíž úmluvy formátování se používají v převodu pomocí volání <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType> metody, stejně jako následující C# kód dělá:
+
+  [!code-csharp[Explicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#2)]
+
+- Interpolace řetězců místo interpolovaného řetězce k přiřazení <xref:System.String> instance, přiřadit ji ke <xref:System.FormattableString>. Pak můžete volat jeho <xref:System.FormattableString.ToString?displayProperty=nameWithType> metoda vytvořit výsledný řetězec, který odráží konvence aktuální jazykové verze, nebo můžete volat <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> metodu za účelem vytvoření výsledný řetězec, který odráží konvencí zadané jazykové verze. Můžete také předat formátovatelného řetězec statické <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> metodu za účelem vytvoření výsledný řetězec, který odráží konvencí neutrální jazykové verze. Tento postup znázorňuje následující příklad. (Výstup z příkladu odráží aktuální jazykové verze en-us).
+
+  [!code-csharp[String interpolation](~/samples/snippets/standard/base-types/string-practices/cs/formattable.cs)]
+  [!code-vb[String interpolation](~/samples/snippets/standard/base-types/string-practices/vb/formattable.vb)]
+
+Jako binární data nebo jako formátovaná data je možné zachovat neřetězcová data. Pokud se rozhodnete ji uložit jako formátovaných dat, měli byste zavolat formátování přetížení metody, která zahrnuje `provider` parametr a předat ji <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykové verze poskytuje konzistentní formát pro formátovaných dat, který je nezávislý na jazykové verzi a počítače. Naproti tomu zachovává data, který je naformátovaný pomocí jazykové verze než neutrální jazykové verze má několik omezení:  
   
 - Data jsou pravděpodobně nebude možné použít, pokud je načten v systému, který má jinou jazykovou verzi, nebo pokud uživatel aktuálního systému změní aktuální jazykovou verzi a pokusí se načíst data.  
   
@@ -366,7 +392,7 @@ Porovnání řetězců pomocí různých verzí rozhraní .NET nebo pomocí rozh
   
  Ale pokud nahradíte <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost s <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> ve volání do <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> a <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, trvalý datum a čas, data se úspěšně obnovila, jak ukazuje následující výstup.  
   
-```  
+```console  
 06.05.1758 21:26  
 05.05.1818 07:19  
 22.04.1870 23:54  

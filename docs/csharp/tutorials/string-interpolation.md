@@ -3,12 +3,12 @@ title: Interpolace řetězců v jazyce C#
 description: Zjistěte, jak mají být zahrnuty výsledky výrazu formátovaný výsledný řetězec v jazyce C# pomocí interpolace řetězců.
 author: pkulikov
 ms.date: 05/09/2018
-ms.openlocfilehash: 068a30bdcb96140787a38e9ae52f9c62d8a57c96
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2990298821fddc8a69430a4cf4bb5e3dd9df314d
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063249"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251019"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C\#
 
@@ -27,17 +27,17 @@ K identifikaci řetězcového literálu jako interpolovaném řetězci, předřa
 Jak ukazuje příklad, patří uzavřením závorek výrazu v interpolovaném řetězci:
 
 ```
-{<interpolatedExpression>}
+{<interpolationExpression>}
 ```
 
 Interpolované řetězce podporují všechny funkce [řetězec složené formátování](../../standard/base-types/composite-formatting.md) funkce. Díky tomu je lépe čitelný alternativou k použití <xref:System.String.Format%2A?displayProperty=nameWithType> metody.
 
-## <a name="how-to-specify-a-format-string-for-an-interpolated-expression"></a>Jak určit řetězec formátu pro interpolovaný výraz
+## <a name="how-to-specify-a-format-string-for-an-interpolation-expression"></a>Jak určit řetězec formátu pro výraz interpolace
 
-Zadejte řetězec formátu, který je podporována typem výsledku výrazu podle interpolovaný výraz s čárkou (":") a nakonec formátovací řetězec:
+Zadejte řetězec formátu, který je podporována typem výsledku výrazu podle interpolace výraz s čárkou (":") a nakonec formátovací řetězec:
 
 ```
-{<interpolatedExpression>:<formatString>}
+{<interpolationExpression>:<formatString>}
 ```
 
 Následující příklad ukazuje, jak určit standardních a vlastních formátovacích řetězců pro výrazy, které produkují data a času nebo číselné výsledky:
@@ -46,12 +46,12 @@ Následující příklad ukazuje, jak určit standardních a vlastních formáto
 
 Další informace najdete v tématu [součást řetězec formátu](../../standard/base-types/composite-formatting.md#format-string-component) část [složené formátování](../../standard/base-types/composite-formatting.md) tématu. Tento oddíl poskytuje odkazy na témata, které popisují standardní a vlastní formátovací řetězce podporuje základní typy .NET.
 
-## <a name="how-to-control-the-field-width-and-alignment-of-the-formatted-interpolated-expression"></a>Jak řídit šířku pole a zarovnání formátovaného interpolovaný výraz
+## <a name="how-to-control-the-field-width-and-alignment-of-the-formatted-interpolation-expression"></a>Jak řídit šířku pole a zarovnání formátovaného interpolace výrazu
 
-Zadejte šířku minimální pole a zarovnání formátovaného výraz výsledku podle interpolovaný výraz s čárkou (",") a konstantní výraz:
+Zadejte šířku minimální pole a zarovnání formátovaného výraz výsledku pomocí interpolace výraz s čárkou (",") a konstantní výraz:
 
 ```
-{<interpolatedExpression>,<alignment>}
+{<interpolationExpression>,<alignment>}
 ```
 
 Pokud *zarovnání* hodnota je pozitivní, výraz formátovaný výsledek je zarovnaný doprava; záporná, je zarovnaná doleva.
@@ -59,7 +59,7 @@ Pokud *zarovnání* hodnota je pozitivní, výraz formátovaný výsledek je zar
 Pokud je třeba zadat zarovnání a řetězec formátu, začněte s komponentou zarovnání:
 
 ```
-{<interpolatedExpression>,<alignment>:<formatString>}
+{<interpolationExpression>,<alignment>:<formatString>}
 ```
 
 Následující příklad ukazuje, jak určit zarovnání a používá kanálem znaky ("|") pro vymezení textová pole:
@@ -82,9 +82,9 @@ Následující příklad ukazuje, jak zahrnout složené závorky do výslednéh
 
 [!code-csharp-interactive[escape sequence example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#4)]
 
-## <a name="how-to-use-a-ternary-conditional-operator--in-an-interpolated-expression"></a>Jak používat Ternární podmiňovací operátor `?:` v interpolovaným výrazem
+## <a name="how-to-use-a-ternary-conditional-operator--in-an-interpolation-expression"></a>Jak používat Ternární podmiňovací operátor `?:` ve výrazu interpolace
 
-Jako dvojtečka (":") má zvláštní význam v položce s interpolovaným výrazem, aby bylo možné používat [podmiňovací operátor](../language-reference/operators/conditional-operator.md) ve výrazu, uzavřete ho do závorek, jako v následujícím příkladu:
+Jako dvojtečka (":") má zvláštní význam v položce s výrazem interpolace, aby bylo možné používat [podmiňovací operátor](../language-reference/operators/conditional-operator.md) ve výrazu, uzavřete ho do závorek, jako v následujícím příkladu:
 
 [!code-csharp-interactive[conditional operator example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#5)]
 

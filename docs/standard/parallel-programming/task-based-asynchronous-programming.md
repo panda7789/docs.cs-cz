@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ecc1090f2697eb0243a081cde70338c0e6fffec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad13a5771adbfbd389feeccd3e8c833c4c2f778a
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61908593"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300639"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 
@@ -113,21 +113,21 @@ Možnosti lze kombinovat pomocí logické bitové **nebo** operace. Následujíc
 
 ## <a name="tasks-threads-and-culture"></a>Úkoly, vlákna a jazykovou verzi
 
-Každé vlákno má přidružená jazyková verze a jazykové verze uživatelského rozhraní, který je definovaný <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> vlastnosti, v uvedeném pořadí. Jazyková verze vlákna se používá v těchto operací formátování, analýza, řazení a porovnání řetězců. Jazyková verze vlákna uživatelského rozhraní se používá ve vyhledávání prostředků. Obvykle Pokud nezadáte výchozí jazykovou verzi pro všechna vlákna v doméně aplikace s použitím <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> jazyková verze systému je definován vlastností, výchozí jazykovou verzi a jazykové verze uživatelského rozhraní vlákna. Pokud explicitně nastavit jazykovou verzi vlákna a spustit nové vlákno, nové vlákno nedědí jazykovou verzi, volajícího vlákna; Místo toho jeho jazyková verze je výchozí jazykovou verzi systému. Programovací model pro aplikace, které cílové verze rozhraní .NET Framework starších než založené na úlohách [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] dodržovat tento postup.
+Každé vlákno má přidružená jazyková verze a jazykové verze uživatelského rozhraní, který je definovaný <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> vlastnosti, v uvedeném pořadí. Jazyková verze vlákna se používá v těchto operací formátování, analýza, řazení a porovnání řetězců. Jazyková verze vlákna uživatelského rozhraní se používá ve vyhledávání prostředků. Obvykle Pokud nezadáte výchozí jazykovou verzi pro všechna vlákna v doméně aplikace s použitím <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> jazyková verze systému je definován vlastností, výchozí jazykovou verzi a jazykové verze uživatelského rozhraní vlákna. Pokud explicitně nastavit jazykovou verzi vlákna a spustit nové vlákno, nové vlákno nedědí jazykovou verzi, volajícího vlákna; Místo toho jeho jazyková verze je výchozí jazykovou verzi systému. Pro tento postup se proto zavázala založené na úlohách programovací model pro aplikace, které cílové verze rozhraní .NET Framework před rozhraní .NET Framework 4.6.
 
 > [!IMPORTANT]
-> Všimněte si, že volající vlákno jazykovou verzi jako součást úkolu kontextu se vztahuje na aplikace, která *cílové* [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], ne aplikace, která *běžet pod* [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]. Při vytváření projektu v sadě Visual Studio tak, že vyberete danou verzi z rozevíracího seznamu v horní části můžete cílit na konkrétní verzi rozhraní .NET Framework **nový projekt** dialogové okno, nebo mimo sadu Visual Studio můžete použít <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut. Pro aplikace, které cílové verze rozhraní .NET Framework starších než [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], nebo, který sdělení nebudete cílit na konkrétní verzi rozhraní .NET Framework, jazykovou verzi úkolu i nadále určuje jazykovou verzi vlákna, na kterém běží.
+> Všimněte si, že volající vlákno jazykovou verzi jako součást úkolu kontextu se vztahuje na aplikace, která *cílové* rozhraní .NET Framework 4.6, ne aplikace, která *běžet pod* rozhraní .NET Framework 4.6. Při vytváření projektu v sadě Visual Studio tak, že vyberete danou verzi z rozevíracího seznamu v horní části můžete cílit na konkrétní verzi rozhraní .NET Framework **nový projekt** dialogové okno, nebo mimo sadu Visual Studio můžete použít <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut. Pro aplikace, že cílová verze rozhraní .NET Framework před rozhraní .NET Framework 4.6 nebo, který sdělení nebudete cílit na konkrétní verzi rozhraní .NET Framework, jazykovou verzi úkolu i nadále určuje jazykovou verzi vlákna, na kterém běží.
 
-Počínaje aplikací, které se zaměřují [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], jazyková verze volajícího vlákna zdědí každý úkol, i v případě, že se úloha spouští asynchronně ve vláknu fondu vláken.
+Počínaje aplikací využívajících rozhraní .NET Framework 4.6, jazyková verze volajícího vlákna zdědí každý úkol, i v případě, že se úloha spouští asynchronně ve vláknu fondu vláken.
 
-Následující příklad uvádí jednoduchý obrázek. Používá <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut target [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a změní aktuální jazykovou verzi aplikace na buď francouzština (Francie) nebo pokud francouzština (Francie) už je aktuální jazyková verze Angličtina (Spojené státy). Potom se vyvolá delegáta s názvem `formatDelegate` , která vrací některá čísla naformátovaná jako hodnoty měny v nové jazykové verze. Všimněte si, zda delegáta jako úlohu synchronně nebo asynchronně, vrátí očekávaný výsledek protože jazyková verze volajícího vlákna je zděděno asynchronní úloha.
+Následující příklad uvádí jednoduchý obrázek. Používá <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut cílit na rozhraní .NET Framework 4.6 a změní aktuální jazykovou verzi aplikace na buď francouzština (Francie) nebo pokud francouzština (Francie) už je aktuální jazyková verze Angličtina (Spojené státy). Potom se vyvolá delegáta s názvem `formatDelegate` , která vrací některá čísla naformátovaná jako hodnoty měny v nové jazykové verze. Všimněte si, zda delegáta jako úlohu synchronně nebo asynchronně, vrátí očekávaný výsledek protože jazyková verze volajícího vlákna je zděděno asynchronní úloha.
 
 [!code-csharp[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#5)]
 [!code-vb[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#5)]
 
 Pokud používáte Visual Studio, můžete vynechat <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut a místo toho vyberte rozhraní .NET Framework 4.6 jako cíl, při vytváření projektu v **nový projekt** dialogového okna.
 
-Pro výstup, který odráží chování aplikací cílová verze rozhraní .NET Framework starších než [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], odeberte <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut ze zdrojového kódu. Výstup bude odrážet konvencí formátování je výchozí jazyková verze systému, ne jazyková verze volajícího vlákna.
+Pro výstup, který odráží chování aplikací cílová verze rozhraní .NET Framework před rozhraní .NET Framework 4.6, odeberte <xref:System.Runtime.Versioning.TargetFrameworkAttribute> atribut ze zdrojového kódu. Výstup bude odrážet konvencí formátování je výchozí jazyková verze systému, ne jazyková verze volajícího vlákna.
 
 Další informace o asynchronních úloh a jazykovou verzi, naleznete v části "Jazyková verze a asynchronních operací podle úloh" v <xref:System.Globalization.CultureInfo> tématu.
 

@@ -4,12 +4,12 @@ ms.date: 04/10/2018
 ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 572fcee528098a4f2929e07dfae63efc56e93dfd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e365dff7c56ddca1d05f2e16605078ef46e4e2af
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599557"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251159"
 ---
 # <a name="corprfhighmonitor-enumeration"></a>Výčet COR_PRF_HIGH_MONITOR
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
@@ -46,7 +46,7 @@ typedef enum {
 ## <a name="remarks"></a>Poznámky  
  `COR_PRF_HIGH_MONITOR` Příznaky se používají s `pdwEventsHigh` parametr [icorprofilerinfo5::geteventmask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md) a [icorprofilerinfo5::seteventmask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) metody.  
   
-Počínaje [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)], hodnota `COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH` změněn od 0 do `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` (0x00000002). Počínaje rozhraním .NET Framework 4.7.2, její hodnota změněna z `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` k `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED | COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS`.   
+Od verze rozhraní .NET Framework 4.6.1, hodnota `COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH` změněn od 0 do `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` (0x00000002). Počínaje rozhraním .NET Framework 4.7.2, její hodnota změněna z `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` k `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED | COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS`.   
 
 `COR_PRF_HIGH_MONITOR_IMMUTABLE` má být bitová maska, která představuje všechny příznaky, které lze nastavit pouze během inicializace. Změnit některý z těchto příznaky jinde výsledkem nezdařené `HRESULT`.
 

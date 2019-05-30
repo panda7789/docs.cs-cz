@@ -13,16 +13,16 @@ helpviewer_keywords:
 - interpolated string [C#]
 author: pkulikov
 ms.author: ronpet
-ms.openlocfilehash: 716f6ee2c9eb09abcbd4ada16954315ed4a56c02
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: bc27eedcf1957a109a9bcb80cf9a49e9606921fd
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65210432"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66250999"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – interpolace řetězců (referenční dokumentace jazyka C#)
 
-`$` Speciální znak identifikuje řetězcového literálu jako *interpolovaný řetězec*. Interpolované řetězce se řetězcový literál, který může obsahovat *interpolovaných výrazů*. Po vyřešení interpolovaného řetězce do výsledného řetězce položky, které interpolovaných výrazů jsou nahrazené řetězcové reprezentace výsledku výrazu. Tato funkce je dostupná v jazyce C# 6 a novější verze jazyka.
+`$` Speciální znak identifikuje řetězcového literálu jako *interpolovaný řetězec*. Interpolované řetězce se řetězcový literál, který může obsahovat *interpolace výrazy*. Po vyřešení interpolovaného řetězce do výsledného řetězce položky pomocí interpolace výrazů jsou nahrazené řetězcové reprezentace výsledku výrazu. Tato funkce je dostupná v jazyce C# 6 a novější verze jazyka.
 
 Interpolace řetězců poskytuje čitelné a pohodlné syntaxe pro vytvoření formátovaného řetězce než [řetězec složené formátování](../../../standard/base-types/composite-formatting.md) funkce. Následující příklad používá obě funkce stejný výstup:
 
@@ -32,18 +32,18 @@ Interpolace řetězců poskytuje čitelné a pohodlné syntaxe pro vytvoření f
 
 K identifikaci řetězcového literálu jako interpolovaném řetězci, předřaďte ji `$` symbol. Nemůže obsahovat žádné prázdné znaky. mezi `$` a `"` , který spouští řetězcový literál. To způsobí chybu kompilace.
 
-Struktura položka s interpolovaného výrazu je následujícím způsobem:
+Struktura položky s výrazem interpolace vypadá takto:
 
 ```
-{<interpolatedExpression>[,<alignment>][:<formatString>]}
+{<interpolationExpression>[,<alignment>][:<formatString>]}
 ```
 
 Prvky v hranatých závorkách jsou volitelné. Následující tabulka popisuje jednotlivé prvky:
 
 |Prvek|Popis|
 |-------------|-----------------|
-|`interpolatedExpression`|Výraz, který vytváří výsledek, který má být formátováno. Řetězcové vyjádření sady `null` výsledkem je <xref:System.String.Empty?displayProperty=nameWithType>.|
-|`alignment`|Konstantní výraz, jehož hodnota definuje minimální počet znaků v řetězcovou reprezentaci výsledek interpolovaný výraz. Pokud je pozitivní, řetězcové vyjádření zarovnán doprava; záporná, je zarovnaná doleva. Další informace najdete v tématu [součást zarovnání](../../../standard/base-types/composite-formatting.md#alignment-component).|
+|`interpolationExpression`|Výraz, který vytváří výsledek, který má být formátováno. Řetězcové vyjádření sady `null` výsledkem je <xref:System.String.Empty?displayProperty=nameWithType>.|
+|`alignment`|Konstantní výraz, jehož hodnota definuje minimální počet znaků v řetězcovou reprezentaci výsledek výrazu interpolace. Pokud je pozitivní, řetězcové vyjádření zarovnán doprava; záporná, je zarovnaná doleva. Další informace najdete v tématu [součást zarovnání](../../../standard/base-types/composite-formatting.md#alignment-component).|
 |`formatString`|Formátovací řetězec, který je podporována typem výsledku výrazu. Další informace najdete v tématu [součást řetězec formátu](../../../standard/base-types/composite-formatting.md#format-string-component).|
 
 Následující příklad používá volitelný formátování komponent popsaných výše:
@@ -54,9 +54,9 @@ Následující příklad používá volitelný formátování komponent popsaný
 
 Zahrnout závorek "{" nebo "}", text vytvořené metodou interpolovaného řetězce, použijte dva složené závorky, "{{" nebo "}}". Další informace najdete v tématu [uvozovací znaky složených závorek](../../../standard/base-types/composite-formatting.md#escaping-braces).
 
-Jako dvojtečka (":") má zvláštní význam v položce interpolovaný výraz, aby bylo možné používat [podmiňovací operátor](../operators/conditional-operator.md) v interpolovaným výrazem, použijte tento výraz v závorkách.
+Jako dvojtečka (":") má zvláštní význam výrazu položky interpolace, aby bylo možné používat [podmiňovací operátor](../operators/conditional-operator.md) ve výrazu interpolace, použijte tento výraz v závorkách.
 
-Následující příklad ukazuje, jak zahrnout složené závorky do výsledného řetězce a jak pomocí podmíněného operátoru v interpolovaný výraz:
+Následující příklad ukazuje, jak zahrnout složené závorky do výsledného řetězce a jak pomocí podmíněného operátoru ve výrazu interpolace:
 
 [!code-csharp-interactive[example with ternary conditional operator](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
@@ -69,7 +69,7 @@ Doslovný interpolovaný řetězec začíná `$` znak následovaný `@` znak. Da
 
 Existují tři implicitní převody z interpolovaném řetězci:
 
-1. Převod interpolované řetězce, který se <xref:System.String> instanci, která je výsledkem řešení interpolovaný řetězec s interpolovaného výrazu položky nahrazeny správně formátovaná řetězcové reprezentace jejich výsledky. Tento převod používá aktuální jazykové verze.
+1. Převod interpolované řetězce, který se <xref:System.String> instanci, která je výsledkem řešení interpolovaný řetězec s výrazem interpolace položky nahrazeny správně formátovaná řetězcové reprezentace jejich výsledky. Tento převod používá aktuální jazykové verze.
 
 1. Převod interpolované řetězce, který se <xref:System.FormattableString> instanci, která představuje složený řetězec formátu spolu s výsledky výrazu, který má být formátováno. Který vám umožní vytvořit více výsledný řetězec s specifické pro jazykovou verzi obsahu z jedné <xref:System.FormattableString> instance. Provedete to, který volat jednu z následujících metod:
 

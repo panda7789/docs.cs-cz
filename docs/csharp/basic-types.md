@@ -3,12 +3,12 @@ title: Základní typy – průvodce v C#
 description: Další informace o základní typy (číselné, řetězce a objektu) ve všech aplikacích jazyka C#
 ms.date: 10/10/2016
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: dc91452bb261b7c799cf3b69cab5b33175148b8a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a1b842747799fcc8fcb64ecf92d334342b963fa1
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646745"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300013"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnných a hodnot
 
@@ -47,7 +47,7 @@ Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Násled
   
 [!code-csharp[Method Signature](../../samples/snippets/csharp/concepts/basic-types/method-signature.cs)]  
   
-Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](language-reference/keywords/int.md) a přiřadit mu hodnotu typu Boolean [true](language-reference/keywords/true.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.
+Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](language-reference/keywords/int.md) a přiřadit mu hodnotu typu Boolean [true](language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.
 
 Další informace najdete v tématu [přetypování a převody typu](programming-guide/types/casting-and-type-conversions.md).
 

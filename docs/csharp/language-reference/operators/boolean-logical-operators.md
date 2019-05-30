@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: b666c915506872930b16c1c5890de24e9cbe4f7a
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3ac3479de0bd3c95256741a8b3075f2e5786b65c
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880571"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300104"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logická logické operátory (C# odkaz)
 
@@ -178,7 +178,7 @@ Pro úplný seznam C# operátory seřazené podle úrovně priority, naleznete v
 
 Uživatelem definovaný typ může [přetížení](../keywords/operator.md) `!`, `&`, `|`, a `^` operátory. Pokud je binární operátor přetížen, je také implicitně přetížené odpovídající operátor složeného přiřazení. Uživatelem definovaný typ nejde explicitně přetížit operátor složeného přiřazení.
 
-Uživatelem definovaný typ nejde přetížit podmíněné logické operátory `&&` a `||`. Ale pokud přetížení uživatelem definovaného typu [operátory true a false](../keywords/true-false-operators.md) a `&` nebo `|` operátor určitým způsobem, `&&` nebo `||` operace, respektive, může být vyhodnocen pro operandy typu. Další informace najdete v tématu [podmíněné logické operátory definované uživatelem](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Uživatelem definovaný typ nejde přetížit podmíněné logické operátory `&&` a `||`. Ale pokud přetížení uživatelem definovaného typu [operátory true a false](true-false-operators.md) a `&` nebo `|` operátor určitým způsobem, `&&` nebo `||` operace, respektive, může být vyhodnocen pro operandy typu. Další informace najdete v tématu [podmíněné logické operátory definované uživatelem](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
