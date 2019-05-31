@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 8b21a85ae4e745a3d71261414e79dafbf3384131
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d59c5c448d2bb7f17f51c50fd468f67a71c93f2
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665592"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423793"
 ---
-### <a name="fixed-a-hang-when-listbox-contains-duplicate-value-types"></a><span data-ttu-id="8f05a-101">Oprava zablokování při seznam obsahuje duplicitní typy hodnot</span><span class="sxs-lookup"><span data-stu-id="8f05a-101">Fixed a hang when ListBox contains duplicate value-types</span></span>
+### <a name="fixed-problem-of-unresponsiveness-when-listbox-contains-duplicate-value-types"></a><span data-ttu-id="bf540-101">Oprava problému sekundový výpadek reakce seznam obsahuje duplicitní typy hodnot</span><span class="sxs-lookup"><span data-stu-id="bf540-101">Fixed problem of unresponsiveness when ListBox contains duplicate value-types</span></span>
 
 |   |   |
 |---|---|
-|<span data-ttu-id="8f05a-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="8f05a-102">Details</span></span>|<span data-ttu-id="8f05a-103">Oprava problému tam, kde virtualizaci<xref:System.Windows.Controls.ItemsControl> můžete reagovat při posouvání při jeho kolekce položek obsahuje duplicitní hodnotu typované objekty.</span><span class="sxs-lookup"><span data-stu-id="8f05a-103">Fixed a problem where a virtualizing<xref:System.Windows.Controls.ItemsControl> can hang during scrolling when its Items collection contains duplicate value-typed objects.</span></span>|
-|<span data-ttu-id="8f05a-104">Rozsah</span><span class="sxs-lookup"><span data-stu-id="8f05a-104">Scope</span></span>|<span data-ttu-id="8f05a-105">Hlavní</span><span class="sxs-lookup"><span data-stu-id="8f05a-105">Major</span></span>|
-|<span data-ttu-id="8f05a-106">Version</span><span class="sxs-lookup"><span data-stu-id="8f05a-106">Version</span></span>|<span data-ttu-id="8f05a-107">4.8</span><span class="sxs-lookup"><span data-stu-id="8f05a-107">4.8</span></span>|
-|<span data-ttu-id="8f05a-108">Type</span><span class="sxs-lookup"><span data-stu-id="8f05a-108">Type</span></span>|<span data-ttu-id="8f05a-109">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="8f05a-109">Runtime</span></span>|
+|<span data-ttu-id="bf540-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="bf540-102">Details</span></span>|<span data-ttu-id="bf540-103">Řeší potíže, pokud virtualizaci <xref:System.Windows.Controls.ItemsControl> můžete reagovat při posouvání při jeho <xref:System.Windows.Controls.ItemsControl.Items> kolekce obsahuje duplicitní hodnotu typované objekty.</span><span class="sxs-lookup"><span data-stu-id="bf540-103">Fixed a problem where a virtualizing <xref:System.Windows.Controls.ItemsControl> can hang during scrolling when its <xref:System.Windows.Controls.ItemsControl.Items> collection contains duplicate value-typed objects.</span></span>|
+|<span data-ttu-id="bf540-104">Scope</span><span class="sxs-lookup"><span data-stu-id="bf540-104">Scope</span></span>|<span data-ttu-id="bf540-105">Hlavní</span><span class="sxs-lookup"><span data-stu-id="bf540-105">Major</span></span>|
+|<span data-ttu-id="bf540-106">Version</span><span class="sxs-lookup"><span data-stu-id="bf540-106">Version</span></span>|<span data-ttu-id="bf540-107">4.8</span><span class="sxs-lookup"><span data-stu-id="bf540-107">4.8</span></span>|
+|<span data-ttu-id="bf540-108">Type</span><span class="sxs-lookup"><span data-stu-id="bf540-108">Type</span></span>|<span data-ttu-id="bf540-109">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="bf540-109">Runtime</span></span>|
