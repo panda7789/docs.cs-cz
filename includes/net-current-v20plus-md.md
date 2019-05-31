@@ -6,4 +6,4 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65629871"
 ---
-<span data-ttu-id="c146f-101">Dostupné od verze 2.0</span><span class="sxs-lookup"><span data-stu-id="c146f-101">Available since 2.0</span></span>
+<span data-ttu-id="8d59c-101">Dostupné od verze 2.0</span><span class="sxs-lookup"><span data-stu-id="8d59c-101">Available since 2.0</span></span>
