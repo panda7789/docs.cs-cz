@@ -2,20 +2,20 @@
 title: Novinky v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: 90ac3ffe9bae892bf20ad874e5634a3a045f776d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 77a7aa5721a83bf7bc8d3e3cbf57a77c56267062
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877436"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379988"
 ---
 # <a name="whats-new-in-adonet"></a>Novinky v ADO.NET
 
-Následující funkce jsou novinkou v ADO.NET [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+Následující funkce jsou nové v rozhraní ADO.NET v rozhraní .NET Framework 4.5.
 
 ## <a name="sqlclient-data-provider"></a>Zprostředkovatel dat SqlClient
 
-Následující funkce jsou novinkou zprostředkovatele dat .NET Framework pro SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]:
+Následující funkce jsou novinkou zprostředkovatele dat .NET Framework pro SQL Server v rozhraní .NET Framework 4.5:
 
 - Atributy ConnectRetryCount a ConnectRetryInterval připojovací řetězec klíčová slova (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) můžete ovládat funkce odolnosti proti chybám nečinné připojení.
 
@@ -51,7 +51,7 @@ Následující funkce jsou novinkou zprostředkovatele dat .NET Framework pro SQ
 
 ## <a name="adonet-entity-framework"></a>ADO.NET Entity Framework
 
-[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] Přidá rozhraní API, která umožňují nové scénáře, jako při práci s Entity Framework 5.0. Další informace o vylepšení a funkcí, které byly přidány do Entity Framework 5.0 naleznete v následujících tématech: [Co je nového](https://go.microsoft.com/fwlink/?LinkID=251106) a [Entity Framework vydání a správa verzí](https://go.microsoft.com/fwlink/?LinkId=234899).
+Rozhraní .NET Framework 4.5 přidá rozhraní API, která umožňují nové scénáře, jako při práci s Entity Framework 5.0. Další informace o vylepšení a funkcí, které byly přidány do Entity Framework 5.0 naleznete v následujících tématech: [Co je nového](https://go.microsoft.com/fwlink/?LinkID=251106) a [Entity Framework vydání a správa verzí](https://go.microsoft.com/fwlink/?LinkId=234899).
 
 ## <a name="see-also"></a>Viz také:
 

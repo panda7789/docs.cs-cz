@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 16cf232ccbdcca496aaa18fc2cfac280072ca24f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a3a991a841182438dca4ef0a4067d333180f4f60
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655491"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380184"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrné obsah, například smíšené zleva doprava a klikněte pravým tlačítkem myši na zbývající data ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština nebo hebrejština mluvený uživatelů.  
@@ -178,11 +178,11 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
   
  **Nahrazení**:  
   
- Tato vlastnost určuje typ čísla nahrazení provádět. Bude mít jednu z následujících <xref:System.Windows.Media.NumberSubstitutionMethod> hodnot výčtu.  
+ Tato vlastnost určuje typ čísla nahrazení provádět. Bude mít jednu z následujících <xref:System.Windows.Media.NumberSubstitutionMethod> hodnot výčtu:  
   
 - <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: Metoda nahrazení závisí na číslo jazykovou verzi <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> vlastnost. Toto nastavení je výchozí.  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Pokud číslo jazykovou verzi je arabština nebo fársíjština jazykové verze, určuje, že číslice závisí na kontextu.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Pokud číslo jazykovou verzi je arabština nebo perština jazykové verze, určuje, že číslice závisí na kontextu.  
   
 - <xref:System.Windows.Media.NumberSubstitutionMethod.European>: Čísla jsou vždy vykresleny jako Evropské číslice.  
   

@@ -20,12 +20,12 @@ ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 88e8bfadf34aecb207b1d2858eacf40338363599
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 289b6997a4d17463072418fbf17f5f99874f4988
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634734"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378169"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 <a name="top"></a> Ke zpětnému navracení dochází, pokud vzor regulárních výrazů obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), a modul regulárních výrazů se vrátí k předchozímu uloženému stavu pokračujte jeho Vyhledání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -130,7 +130,7 @@ ms.locfileid: "64634734"
   
 <a name="Timeout"></a>   
 ### <a name="defining-a-time-out-interval"></a>Definování intervalu časového limitu  
- Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete nastavit hodnotu časového limitu, který představuje nejdelší interval, modul regulárních výrazů bude vyhledávat jediný výskyt shody před rámci a vyvolá výjimku <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> výjimky. Interval časového limitu určíte zadáním <xref:System.TimeSpan> hodnota, která se <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> konstruktoru pro instanční regulární výrazy. Kromě toho každá statická metoda porovnávání vzorů má přetížení s <xref:System.TimeSpan> parametr, který umožňuje zadat hodnotu časového limitu. Ve výchozím nastavení, bude interval časového limitu je nastavena <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> a modul regulárních výrazů nemá časový limit.  
+ Od verze rozhraní .NET Framework 4.5, můžete nastavit hodnotu časového limitu, který představuje nejdelší interval, modul regulárních výrazů bude vyhledávat jediný výskyt shody před rámci a vyvolá výjimku <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> výjimky. Interval časového limitu určíte zadáním <xref:System.TimeSpan> hodnota, která se <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> konstruktoru pro instanční regulární výrazy. Kromě toho každá statická metoda porovnávání vzorů má přetížení s <xref:System.TimeSpan> parametr, který umožňuje zadat hodnotu časového limitu. Ve výchozím nastavení, bude interval časového limitu je nastavena <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> a modul regulárních výrazů nemá časový limit.  
   
 > [!IMPORTANT]
 >  Pokud se regulární výraz spoléhá na mechanismus navracení, doporučujeme vždy nastavit interval časového limitu.  
