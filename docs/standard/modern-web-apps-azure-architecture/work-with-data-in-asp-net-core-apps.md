@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 23c0995c512a07c41b3e2dbe8bc7528723379efa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f765acce89bec1fd73e9c43a6e7d75d78be785d
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628050"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424000"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -330,7 +330,7 @@ Pro většinu aplikací a většina součástí téměř všechny aplikace nabí
 
 Tradičně relačních databází, jako je SQL Server mají ovládnutí úložiště trvalých dat na webu marketplace, ale nejsou k dispozici jenom řešení. Databáze NoSQL, jako jsou [MongoDB](https://www.mongodb.com/what-is-mongodb) nabízejí jiný přístup k ukládání objektů. Další možností je místo mapování objektů do tabulek a řádků, serializaci celý objekt grafu a uložit výsledek. Výhody tohoto přístupu alespoň ze začátku jsou jednoduchost a výkonu. Je určitě jednodušší pro uložení jedné serializované objekt s klíčem, než se rozloží na mnoho tabulky se vztahy objektu a aktualizací a řádky, které se možná změnily od posledního objekt načtených z databáze. Podobně načítání a deserializaci jednoho objektu z úložiště na základě klíčů je obvykle mnohem jednodušší a rychlejší než komplexním spojením nebo více databázových dotazů vyžaduje plně sestavení na stejný objekt z relační databáze. Nedostatek uzamčení nebo transakce nebo pevné schéma také díky databáze NoSQL velmi vydávání kompaktních škálování napříč velký počet počítačů, podpora velmi velkých datových sad.
 
-Na druhé straně databáze NoSQL (obvykle se nazývá) mít svoje nevýhody. Relační databáze pomocí normalizace vynutit konzistenci a aby nedošlo k duplikaci data. Tím se sníží celkové velikosti databáze a zajistí, že jsou k dispozici okamžitě celé databáze aktualizace ke sdíleným datům. V relační databázi tabulku adres může odkazovat země tabulku podle ID, tak, že pokud byla změněna název v zemi, záznamy adres je výhodná aktualizace bez musejí být aktualizována. Ale v databázi NoSQL, adresa a její přidružené země může serializovat jako součást velký počet uložených objektů. Aktualizace názvu země by vyžadovaly všechny tyto objekty mají být aktualizovány, místo jednoho řádku. Relační databáze, můžete také zajistit relační integritu tím, že vynucuje pravidla, jako jsou cizí klíče. Databáze NoSQL není taková omezení na svá data obvykle nabízejí.
+Na druhé straně databáze NoSQL (obvykle se nazývá) mít svoje nevýhody. Relační databáze pomocí normalizace vynutit konzistenci a aby nedošlo k duplikaci data. Tím se sníží celkové velikosti databáze a zajistí, že jsou k dispozici okamžitě celé databáze aktualizace ke sdíleným datům. V relační databázi tabulku adres může odkazovat země tabulku podle ID, tak, že pokud byla změněna název země/oblasti, záznamy adres je výhodná aktualizace bez musejí být aktualizována. Ale v databázi NoSQL, adresa a její přidružené země může serializovat jako součást velký počet uložených objektů. Všechny tyto objekty mají být aktualizovány, místo jednoho řádku by vyžadovaly aktualizaci název země/oblasti. Relační databáze, můžete také zajistit relační integritu tím, že vynucuje pravidla, jako jsou cizí klíče. Databáze NoSQL není taková omezení na svá data obvykle nabízejí.
 
 Další složitost NoSQL databáze musí čelit je správa verzí. Při změně vlastnosti objektu, nemusí být možné deserializovat rozdíl od minulých verzí, které byly uloženy. Díky tomu se musí aktualizovat všechny existující objekty, které mají serializovaná (předchozí) verzi objektu tak, aby odpovídal na jeho nové schéma. Toto není koncepčně liší od relační databáze, kde je někdy změní schéma vyžadují skripty pro aktualizaci nebo mapování aktualizace. Počet položek, které musí být upraveny je však často mnohem větší přístupu NoSQL, protože existuje více duplicitních dat.
 

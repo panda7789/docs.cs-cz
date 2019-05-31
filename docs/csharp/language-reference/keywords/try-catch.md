@@ -11,12 +11,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: df4ccde0a9a377b06b8efc64cc78936a983c66cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 28bf939cb7da760400486c52bb07649826628c1c
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660525"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422584"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 
@@ -185,7 +185,6 @@ Všechny tři úkoly dojde k výjimce. `catch` Bloku prochází výjimky, které
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
-- [Příkazy zpracování výjimek](exception-handling-statements.md)
 - [throw](throw.md)
 - [try-finally](try-finally.md)
 - [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

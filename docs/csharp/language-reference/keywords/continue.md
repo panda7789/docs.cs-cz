@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-ms.openlocfilehash: 0b3baf6eb4843ff67a3d76af06ca86ca9ec2db03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d5fd2f5edf85c3ac2c8f0367b85b37e76e2e856e
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661903"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422106"
 ---
 # <a name="continue-c-reference"></a>continue (Referenční dokumentace jazyka C#)
 
@@ -35,4 +35,3 @@ V tomto příkladu je inicializovat čítač počítané od 1 do 10. S použití
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [break – příkaz](/cpp/cpp/break-statement-cpp)
-- [Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)

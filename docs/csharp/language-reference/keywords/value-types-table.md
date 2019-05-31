@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: 7a2b61e7b699319bc57ff3fddcb712ef8e3c30fd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 959d4840344ba041ae1b01fd6d202f2b53936afc
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632850"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422370"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (referenční dokumentace jazyka C#)
 
@@ -52,7 +52,6 @@ Pokud [reálné číselný literál](~/_csharplang/spec/lexical-structure.md#rea
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Referenční tabulky pro typy](reference-tables-for-types.md)
 - [Tabulka výchozích hodnot](default-values-table.md)
 - [Typy hodnot](value-types.md)
 - [Tabulka formátování číselných výsledků](formatting-numeric-results-table.md)

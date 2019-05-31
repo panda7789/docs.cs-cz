@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 426429eefd038008340a956ab3fa3cba21906c84
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d6dea344d5af24ba2f5bb4aa4064a4f876408380
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627016"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423885"
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Útok DoS nastane, pokud je systém zahltil tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu.  
@@ -46,7 +46,7 @@ ms.locfileid: "64627016"
   
  Chcete-li tento problém zmírnit, nastavte <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true` a použití vlastností v prohlížeči událostí pro řízení chování auditování. Další informace o používání v prohlížeči událostí k zobrazení a správě protokolů událostí, naleznete v tématu [Prohlížeč událostí](https://go.microsoft.com/fwlink/?LinkId=186123). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
-## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-hangs"></a>Neplatný implementace může zásada IAuthorizationPolicy příčina služby. program přestane reagovat  
+## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Neplatná zásada IAuthorizationPolicy implementace může způsobit služba přestane reagovat  
  Volání <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metodu na chybný provádění <xref:System.IdentityModel.Policy.IAuthorizationPolicy> rozhraní může způsobit, že služba přestane reagovat.  
   
  Omezení rizik: Použijte pouze pro důvěryhodného kódu. To znamená použít pouze kód, který slouží k vytvoření a otestování nebo, který pochází z důvěryhodného zprostředkovatele. Nejsou povoleny nedůvěryhodné rozšíření <xref:System.IdentityModel.Policy.IAuthorizationPolicy> zapojené do kódu bez náležité pozornost. To platí pro všechna rozšíření použitý v implementaci služby. WCF nepoužívá žádný rozdíl mezi kódu aplikace a cizí kód, který je připojen pomocí bodů rozšiřitelnosti.  

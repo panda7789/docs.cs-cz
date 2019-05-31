@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - typeof keyword [C#]
 ms.assetid: 0c08d880-515e-46bb-8cd2-48b8dd62c08d
-ms.openlocfilehash: f218414bf60a86b95461d747fb6c557f03bcfcb3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7962a3d0a5885e64701cb9d9a4d689cd982b9830
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660447"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422550"
 ---
 # <a name="typeof-c-reference"></a>typeof (Referenční dokumentace jazyka C#)
 
@@ -65,4 +65,3 @@ Další informace najdete v tématu [operátor typeof](~/_csharplang/spec/expres
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [is](../../../csharp/language-reference/keywords/is.md)
-- [Klíčová slova operátorů](../../../csharp/language-reference/keywords/operator-keywords.md)

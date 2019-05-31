@@ -15,16 +15,16 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
-ms.openlocfilehash: 1988ebd8c5f46346babe212962b617d30d765385
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 60421d6ba634bd7b4107f1c9998fbbe158417c83
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211534"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423833"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
 
-Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete uživatelského rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.
+Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete, aby vaše uživatelské rozhraní (UI) přestane reagovat nebo zamítne, můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.
 
 Tento návod ukazuje, jak používat <xref:System.ComponentModel.BackgroundWorker> pro provádění časově náročné výpočty "v pozadí," při stále poměrně rychle reaguje uživatelské rozhraní.  Pokud jste si prostřednictvím, budete mít aplikaci, která vypočítá Fibonacciho čísla asynchronně. Přestože výpočetní že hodně Fibonacciho může trvat určitou dobu, hlavní vlákno uživatelského rozhraní nebude možné přerušit toto zpoždění a formulář bude responzivní během výpočtu.
 

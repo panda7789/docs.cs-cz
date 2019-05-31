@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 1e5a8d221468f5028f7b44af1c634b4c988063a4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cc2beb78cc6594a3de594b50c1c45d23b30966f6
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596275"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423485"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
 Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní data typu. Nejběžnějším využitím obecných tříd je s kolekcí jako propojené seznamy zatřiďovacích tabulek, zásobníků, front, stromy a tak dále. Operace, jako jsou přidávání a odebírání položek z kolekce jsou prováděny v podstatě stejným způsobem bez ohledu na typ data ukládat.  
@@ -36,7 +36,7 @@ Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní
   
      Například pokud navrhujete třídu, která se použije k vytvoření položek v kolekci na základě obecných typů, budete muset implementovat rozhraní jako <xref:System.IComparable%601> kde `T` je typ třídy.  
   
- Příklad jednoduchou obecnou třídu, naleznete v tématu [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md).  
+ Příklad jednoduchou obecnou třídu, naleznete v tématu [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md).  
   
  Pravidla pro parametry typu a omezení mají několik důsledky pro obecnou třídu chování, zejména pokud jde o dědičnosti a člen usnadnění. Než budete pokračovat, měli byste pochopit některé podmínky. Pro obecnou třídu `Node<T>,` klientský kód může odkazovat na třídu buď tak, že zadáte argument typu, chcete-li vytvořit uzavřený konstruovaný typ. (`Node<int>`). Případně ho můžete nechat parametr typu, který je tento parametr zadán, například když zadáte obecné základní třídy, chcete-li vytvořit otevřenou konstruovaný typ. (`Node<T>`). Obecné třídy můžete dědit z konkrétní, uzavřený konstruovaný nebo otevřít konstruované základní třídy:  
   

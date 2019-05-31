@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6911ff96ca847f554e9b615aba6ab83a212efee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4536a5caa789712227bfd637d65cfc4c22adf80
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660564"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422691"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 
@@ -75,5 +75,4 @@ Od verze C# 7.0, `throw` lze použít jako výraz, stejně jako příkaz. To umo
 - [try-catch](try-catch.md)
 - [Try, catch a throw – příkazy v jazyce C++](try-catch.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Příkazy zpracování výjimek](exception-handling-statements.md)
 - [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

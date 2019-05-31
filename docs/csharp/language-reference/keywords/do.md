@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
-ms.openlocfilehash: 4bdbd1c8efac0b7ba95d4c8d16dae3101fe6bcb0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5566965e77feb9d46584146829284e9e0be71539
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661786"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422050"
 ---
 # <a name="do-c-reference"></a>do (Referenční dokumentace jazyka C#)
 
@@ -40,5 +40,4 @@ Další informace najdete v tématu [proveďte příkaz](~/_csharplang/spec/stat
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Příkazy iterace](iteration-statements.md)
 - [while – příkaz](while.md)

@@ -2,12 +2,12 @@
 title: Novinky ve Windows Workflow Foundation v rozhraní .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: fb9604061fd6ccd7909a2d5b26675a1b637f2b4d
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 9bf836abaa568b3df2080500d8d2357e604dff60
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380140"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423982"
 ---
 # <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Novinky ve Windows Workflow Foundation v rozhraní .NET 4.5
 
@@ -200,7 +200,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], chyby ověř
 
 ### <a name="BKMK_DesignTimeValidation"></a> Ověřování na pozadí v době návrhu
 
-V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], pracovní postupy, které byly ověřeny jako proces na popředí, která by mohla potenciálně přestane reagovat uživatelské rozhraní během procesů ověřování složité a časově náročné. Ověření pracovního postupu nyní probíhá na vlákně na pozadí, tak, aby uživatelského rozhraní není blokován.
+V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], pracovní postupy, které byly ověřeny jako proces na popředí, které mohou potenciálně blokovat uživatelské rozhraní během procesů ověřování složité a časově náročné. Ověření pracovního postupu nyní probíhá na vlákně na pozadí, tak, aby uživatelského rozhraní není blokován.
 
 ### <a name="BKMK_ViewState"></a> Stav zobrazení, které jsou umístěné v samostatném umístění v souborech XAML
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 23aae1a41a19689bd5ad4e29f19c8cff704e742c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c971a2d5d7caeb030cf504c44be8c8123decc3fc
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61709690"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423414"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -64,7 +64,7 @@ Další informace najdete v tématu [přetypování a převody typů](../../../c
 
 ## <a name="built-in-types"></a>Vestavěné typy
 
-Jazyk C# poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celočíselných hodnot, s plovoucí desetinnou čárkou hodnoty bodů, logických výrazů, znaků textu, desetinných míst a dalších typů dat. Existují také vestavěné `string` a `object` typy. Toto jsou k dispozici pro použití v libovolném programu C#. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md).
+Jazyk C# poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celočíselných hodnot, s plovoucí desetinnou čárkou hodnoty bodů, logických výrazů, znaků textu, desetinných míst a dalších typů dat. Existují také vestavěné `string` a `object` typy. Toto jsou k dispozici pro použití v libovolném programu C#. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulky pro předdefinované typy](../../../csharp/language-reference/keywords/built-in-types-table.md).
 
 ## <a name="custom-types"></a>Vlastní typy
 

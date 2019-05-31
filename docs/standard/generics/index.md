@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8170dd2e2941be3a73f7a4fd8c37d4fb2ef96235
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4e13689e0c8324781b86ae7b9568cb441a31ec70
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592247"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423952"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 
@@ -75,7 +75,7 @@ ms.locfileid: "65592247"
   
 - *Parametry obecného typu*, nebo *parametry typu*, jsou zástupné symboly v definici obecného typu nebo metody. <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Obecného typu má dva parametry typu `TKey` a `TValue`, které představují typy klíčů a hodnot.  
   
-- A *Konstruovaný obecný typ*, nebo *konstruovaný typ.*, je výsledkem určení typů pro parametry obecného typu v definici obecného typu.  
+- A *Konstruovaný obecný typ*, nebo *konstruovaný typ.* , je výsledkem určení typů pro parametry obecného typu v definici obecného typu.  
   
 - A *argument obecného typu* libovolný typ, který nahrazuje parametr obecného typu.  
   
@@ -148,7 +148,7 @@ ms.locfileid: "65592247"
   
  Modul common language runtime poskytuje nové operačních kódů a předpony pro podporu obecných typů v jazyce Microsoft intermediate language (MSIL), včetně <xref:System.Reflection.Emit.OpCodes.Stelem>, <xref:System.Reflection.Emit.OpCodes.Ldelem>, <xref:System.Reflection.Emit.OpCodes.Unbox_Any>, <xref:System.Reflection.Emit.OpCodes.Constrained>, a <xref:System.Reflection.Emit.OpCodes.Readonly>.  
   
- Visual C++, C# a Visual Basic všechny poskytují plnou podporu pro definování a použití obecných typů. Další informace o podpoře jazyků naleznete v tématu [obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md), [Úvod do obecných typů](~/docs/csharp/programming-guide/generics/introduction-to-generics.md), a [přehled obecných typů v jazyce Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).  
+ Visual C++, C# a Visual Basic všechny poskytují plnou podporu pro definování a použití obecných typů. Další informace o podpoře jazyků naleznete v tématu [obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md), [Úvod do obecných typů](~/docs/csharp/programming-guide/generics/index.md), a [přehled obecných typů v jazyce Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).  
   
  [Zpět na začátek](#top)  
   
@@ -171,7 +171,7 @@ ms.locfileid: "65592247"
 |[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje obecná pravidla pro určení, kdy použití obecných typů kolekce.|  
 |[Postupy: Definování obecného typu pomocí reflexe generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Vysvětluje, jak ke generování dynamických sestavení, které zahrnují obecné typy a metody.|  
 |[Obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md)|Popisuje funkci obecných typů pro uživatele jazyka Visual Basic, včetně témat s návody pro použití a definice obecných typů.|  
-|[Úvod do obecných typů](~/docs/csharp/programming-guide/generics/introduction-to-generics.md)|Poskytuje přehled o definice a používání obecných typů pro uživatele jazyka C#.|  
+|[Úvod do obecných typů](~/docs/csharp/programming-guide/generics/index.md)|Poskytuje přehled o definice a používání obecných typů pro uživatele jazyka C#.|  
 |[Přehled obecných typů ve Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkci obecných typů pro uživatele jazyka C++, jaký je rozdíl mezi obecnými typy a šablony.|  
   
 <a name="reference"></a>   

@@ -2,18 +2,18 @@
 title: Kontrolní koncový bod pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 1b883334-1590-4fbb-b0d6-65197efe0700
-ms.openlocfilehash: 40fec2902598daed178e070b02c1067c308507c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 781a7cefaeeb8cd9cd21298471c59de2e7815244
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929711"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424017"
 ---
 # <a name="workflow-control-endpoint"></a>Kontrolní koncový bod pracovního postupu
 Kontrolní koncový bod pracovního postupu umožňuje vývojářům volat operace řízení vzdálené řízení hostované pomocí instancí pracovních postupů <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Tato funkce slouží k provádění operací správy, jako je pozastavení, obnovení a ukončit prostřednictvím kódu programu.  
   
 > [!WARNING]
->  Pokud koncový bod pracovního postupu ovládací prvek v rámci transakce a pracovní postup je řízen pomocí obsahuje <xref:System.Activities.Statements.Persist> aktivity, instance pracovního postupu se zablokuje, dokud nebude transakce vyprší časový limit.  
+>  Pokud koncový bod pracovního postupu ovládací prvek v rámci transakce a pracovní postup je řízen pomocí obsahuje <xref:System.Activities.Statements.Persist> aktivity, instance pracovního postupu bude blokovat, dokud transakce vyprší časový limit.  
   
 ## <a name="workflow-instance-management"></a>Správa instancí pracovního postupu  
  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Definuje novou smlouvu volá <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. Tento kontrakt definuje řadu ovládacího prvku operace, které vám umožní vzdálené řízení instancí pracovních postupů, které jsou hostovány <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> je standardní koncový bod, který poskytuje implementaci <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> kontraktu. <xref:System.ServiceModel.Activities.WorkflowControlClient> je třída, která se používá k odeslání operace ovládacího prvku, které se <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>.  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 8a33b466bbe75b84d6cd28ebd6f4fc57695aa420
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: d2ecd566731c3d2d472034ecb6412432af24c847
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452435"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422054"
 ---
 # <a name="extern-alias-c-reference"></a>externí alias (Referenční dokumentace jazyka C#)
 Budete muset odkazovat na dvě verze sestavení, která mají stejné názvy plně kvalifikovaných typů. Například budete muset použít dvě nebo více verzí sestavení ve stejné aplikaci. Obory názvů v každé sestavení dá zabalit pomocí alias externího sestavení v úrovni kořenového adresáře obory názvů s názvem podle aliasu, odkud můžou použít ve stejném souboru.  
@@ -46,6 +46,5 @@ Budete muset odkazovat na dvě verze sestavení, která mají stejné názvy pln
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)
 - [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
 - [/ Reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)

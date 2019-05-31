@@ -9,12 +9,12 @@ helpviewer_keywords:
 - type conversion [C#], as keyword
 - as keyword [C#]
 ms.assetid: a9be126b-cbf4-4990-a70d-d0e1983cad0e
-ms.openlocfilehash: b87e75bd4866a191e84465e44d53850e6e2e9723
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84e599340877ce52dc6242ea259c69672915c546
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662085"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422012"
 ---
 # <a name="as-c-reference"></a>as (Referenční dokumentace jazyka C#)
 Můžete použít `as` operátor pro provádění určitých typů převody mezi typy kompatibilní odkazů nebo [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md). Následující kód ukazuje příklad.  
@@ -53,4 +53,3 @@ Další informace najdete v tématu [operátor as](~/_csharplang/spec/expression
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [is](../../../csharp/language-reference/keywords/is.md)
 - [?: – operátor](../../../csharp/language-reference/operators/conditional-operator.md)
-- [Klíčová slova operátorů](../../../csharp/language-reference/keywords/operator-keywords.md)

@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 201dbc759b619f65599e09c78c14b96d17395952
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb70b0ef4c6e619418f8464b543795a59c2ddff5
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620701"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423792"
 ---
 # <a name="net-regular-expressions"></a>Regulárních výrazů .NET
 Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Rozsáhlé notace vzoru regulárních výrazů umožňuje rychlé analyzování velkého množství textu k vyhledání konkrétních znakových vzorů; pro ověření textu a ověřte, že souhlasí s předdefinovaným vzorem (jako je například e-mailovou adresu); extrahovat, upravovat, nahrazení nebo odstranění podřetězců textu; a přidávání vyjmutých řetězců do kolekce ke generování sestavy. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  
@@ -97,7 +97,7 @@ Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpra
   
 |||  
 |-|-|  
-|`\$`|Vyhledá ve vstupním řetězci jeden výskyt symbolu dolaru ($). Vzor regulárního výrazu obsahuje zpětné lomítko pro označení toho, zda bude symbol dolaru spíše interpretován doslovně, než aby byl použit jako ukotvení regulárního výrazu. (Samostatný symbol $ by označoval, že by se měl modul regulárního výrazu pokusit začít vyhledávat shodu na konci řetězce.) Aby symbol místní měny nebyl nesprávně interpretován jako symbol regulárního výrazu, zavolá příklad z důvodu vynechání znaku metodu <xref:System.Text.RegularExpressions.Regex.Escape%2A>.|  
+|`\$`|Vyhledat jeden výskyt symbolu dolaru (`$`) ve vstupním řetězci. Vzor regulárního výrazu obsahuje zpětné lomítko pro označení toho, zda bude symbol dolaru spíše interpretován doslovně, než aby byl použit jako ukotvení regulárního výrazu. ( `$` Samostatný symbol by označoval, že modul regulárních výrazů se měli pokusit začít vyhledávat shodu na konci řetězce.) Aby symbol místní měny nebyl nesprávně interpretován jako symbol regulárního výrazu, zavolá příklad z důvodu vynechání znaku metodu <xref:System.Text.RegularExpressions.Regex.Escape%2A?displayProperty=nameWithType>.|  
 |`\s*`|Vyhledá žádný nebo několik výskytů znaku mezery.|  
 |`[-+]?`|Vyhledá žádný nebo jeden ze znaků plus nebo mínus.|  
 |`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`|Vnější závorky výrazu jej definují jako zachytávající skupinu nebo jako dílčí výraz. Při nalezení shody může být informace o části vyhovujícího řetězce vrácena druhým objektem <xref:System.Text.RegularExpressions.Group> v rámci objektu <xref:System.Text.RegularExpressions.GroupCollection> vráceného vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. (První prvek v kolekci představuje celkovou shodu.)|  

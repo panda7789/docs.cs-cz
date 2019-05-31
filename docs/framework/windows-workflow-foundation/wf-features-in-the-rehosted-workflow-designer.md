@@ -2,12 +2,12 @@
 title: Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 8459311239d46557405245c10b6fb5e887a4691c
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 70e4a8580a8b383bdd4e5e5299bcc5210f3210dc
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380152"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423974"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 Windows Workflow Foundation (WF) v rozhraní .NET Framework 4.5 zavedené spoustu nových funkcí, včetně několik vylepšení prostředí Návrháře pracovního postupu. Toto téma podrobně popisuje tyto funkce jsou podporované v návrháři se změněným hostováním, a ty, které nejsou aktuálně podporovány.
@@ -106,7 +106,7 @@ Windows Workflow Foundation (WF) v rozhraní .NET Framework 4.5 zavedené spoust
 >  Ověření při sestavení není v návrháři se změněným hostováním podporována.  
   
 ### <a name="design-time-background-validation"></a>Ověřování na pozadí v době návrhu  
- V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], pracovní postupy, které byly ověřeny jako proces na popředí, která by mohla potenciálně přestane reagovat uživatelské rozhraní během procesů ověřování složité a časově náročné. Ověření pracovního postupu nyní probíhá na vlákně na pozadí, tak, aby uživatelského rozhraní není blokován.  
+ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], pracovní postupy, které byly ověřeny jako proces na popředí, které mohou potenciálně blokovat uživatelské rozhraní během procesů ověřování složité a časově náročné. Ověření pracovního postupu nyní probíhá na vlákně na pozadí, tak, aby uživatelského rozhraní není blokován.  
   
  Pozadí návrhové ověření je podporováno v návrháři se změněným hostováním.  
   

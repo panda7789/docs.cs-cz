@@ -2,18 +2,18 @@
 title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-ms.openlocfilehash: 7c47810ae168d39d7ebcd96952a75d6a3ba4d263
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2a837e446ec65caa6d481d3a5f141f87fe509910
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592822"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421900"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
 Služby pracovních postupů a klienti mohou účastnit transakce.  Operace služeb se stanou součástí okolí transakce, umístěte <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Všechna volání prováděných <xref:System.ServiceModel.Activities.Send> nebo <xref:System.ServiceModel.Activities.SendReply> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> bude také možné v rámci ambientní transakce. Klientská aplikace pracovního postupu můžete vytvořit pomocí okolí transakce <xref:System.Activities.Statements.TransactionScope> aktivity a volání operací služby pomocí okolí transakce. Toto téma vás provede procesem vytvoření služby pracovních postupů a pracovních postupů klienta, který se podílet na transakcích.  
   
 > [!WARNING]
->  Pokud instance služby pracovního postupu je načten v rámci transakce a obsahuje pracovní postup <xref:System.Activities.Statements.Persist> aktivity, instance pracovního postupu se zablokuje, dokud nebude transakce vyprší časový limit.  
+>  Pokud instance služby pracovního postupu je načten v rámci transakce a obsahuje pracovní postup <xref:System.Activities.Statements.Persist> aktivity, instance pracovního postupu bude blokovat, dokud transakce vyprší časový limit.  
   
 > [!IMPORTANT]
 >  Vždy, když použijete <xref:System.ServiceModel.Activities.TransactedReceiveScope> doporučujeme umístit všechny přijme v pracovním postupu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity.  
@@ -99,7 +99,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 6. Přetáhnout myší <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci **žádosti** část <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Nastavte následující vlastnosti:  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
     |CanCreateInstance|True (zaškrtávací políčko)|  
     |OperationName|StartSample|  
@@ -115,7 +115,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 8. Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity do těla oddílu <xref:System.ServiceModel.Activities.TransactedReceiveScope>. V rámci <xref:System.Activities.Statements.Sequence> aktivity přetáhnout myší dvě <xref:System.Activities.Statements.WriteLine> aktivity a nastavte <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnosti, jak je znázorněno v následující tabulce.  
   
-    |Aktivita|Value|  
+    |Aktivita|Hodnota|  
     |--------------|-----------|  
     |1. WriteLine|"Service: Zobrazit dokončené"|  
     |2. WriteLine|"Service: Přijata = "+ requestMessage|  
@@ -130,7 +130,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 10. Přetáhnout myší <xref:System.Activities.Statements.Assign> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho vlastnosti podle následující tabulky.  
   
-    |Vlastnost|Value|  
+    |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |Chcete-li|replyMessage|  
     |Value|"Service: Odeslání odpovědi."|  

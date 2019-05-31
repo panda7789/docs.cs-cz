@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: ba156eed25f28a0568e11c986de1e84db3cd9cf0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 166f8a99a3556664f5f3701c94aa8593ac7ebe32
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661578"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422079"
 ---
 # <a name="for-c-reference"></a>for (referenční dokumentace jazyka C#)
 
@@ -112,5 +112,4 @@ Další informace najdete v tématu [pro příkaz](~/_csharplang/spec/statements
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Příkazy iterace](iteration-statements.md)
 - [foreach, in](foreach-in.md)

@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 727f0064ac1de46eb670a366af38cf561e1a1533
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 351e4de01a7c3c50cb815a99f0bde546848a9e51
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706075"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423235"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
 
@@ -45,7 +45,6 @@ Hlavní funkce C# 1.0 zahrnuté:
 - [Výrazy](../programming-guide/statements-expressions-operators/expressions.md)
 - [Příkazy](../programming-guide/statements-expressions-operators/statements.md)
 - [Atributy](../programming-guide/concepts/attributes/index.md)
-- [Literály](../language-reference/keywords/literal-keywords.md)
 
 ## <a name="c-version-12"></a>C# verze 1.2
 
@@ -174,4 +173,4 @@ Všechny tyto funkce nabízejí zajímavé nové funkce pro vývojáře a příl
 
 Ale jazyka C# je uložením někdy širší využití. .NET core teď cílí libovolný operační systém a má jeho oči pevně v cloudu a přenositelnost.  Tyto nové možnosti jistě zabírat návrháře jazyka nápady a čas, kromě chystá se s novými funkcemi.
 
-_Článek_ [ _původně publikovány na blogu NDepend_](https://blog.ndepend.com/c-versions-look-language-history/)_, poskytuje Erik Dietrich a Patrick Smacchia._
+_Článek_ [ _původně publikovány na blogu NDepend_](https://blog.ndepend.com/c-versions-look-language-history/) _, poskytuje Erik Dietrich a Patrick Smacchia._

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: d5fd244ea22fd48bf5b81d2cdf55127f745c145b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a642996da8f0126e59e21d3553a7d8ba73dab23
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661181"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422677"
 ---
 # <a name="new-modifier-c-reference"></a>New – modifikátor (referenční dokumentace jazyka C#)
 
@@ -61,7 +61,6 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
 - [Referenční dokumentace jazyka C#](../../language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Klíčová slova operátorů](operator-keywords.md)
 - [Modifikátory](modifiers.md)
 - [Správa verzí pomocí klíčových slov override a new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
 - [Znalost, kdy použít klíčová slova override a new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)

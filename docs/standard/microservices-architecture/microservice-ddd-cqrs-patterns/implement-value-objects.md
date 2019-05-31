@@ -2,12 +2,12 @@
 title: Implementace objektů hodnot
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Získejte podrobnosti a možnosti, které implementují objekty hodnotu pomocí nové funkce Entity Framework.
 ms.date: 10/08/2018
-ms.openlocfilehash: 850d571ffb92f2d200e24430a9611fb13b64e635
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b2f7b0f36fea25c25edd47731d9387810bd2b44d
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644300"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423736"
 ---
 # <a name="implement-value-objects"></a>Implementace objektů hodnot
 
@@ -21,7 +21,7 @@ Obrázek 7-13 zobrazuje objekt hodnoty adres v rámci pořadí agregace.
 
 **Obrázek 7-13**. Adresa objektu hodnot v rámci pořadí agregace
 
-Jak je znázorněno v obrázek 7-13, entity se obvykle skládá z více atributů. Například `Order` entity můžete modelovat jako entity s identitou a interně skládá ze sady atributů, jako je například OrderId, OrderDate, OrderItems atd. Ale adresu, která je jednoduše komplexní – hodnota složený ze země, ulici, Město atd. a nemá žádná identita v této doméně, musí být modelovat a považován za hodnotu objektu.
+Jak je znázorněno v obrázek 7-13, entity se obvykle skládá z více atributů. Například `Order` entity můžete modelovat jako entity s identitou a interně skládá ze sady atributů, jako je například OrderId, OrderDate, OrderItems atd. Ale adresu, která je jednoduše komplexní – hodnota složený ze země nebo oblast, ulici, Město atd. a nemá žádná identita v této doméně, musí být modelovat a považován za hodnotu objektu.
 
 ## <a name="important-characteristics-of-value-objects"></a>Důležité charakteristiky hodnotu objektů
 

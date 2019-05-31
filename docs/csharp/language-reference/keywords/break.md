@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - break keyword [C#]
 ms.assetid: be2571ed-efb0-4965-b122-81e5b09db0b9
-ms.openlocfilehash: 18be5171329dd43c419e977a1799e2e72c32404d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 15b193d9f294c01826b6b60587678ad76248e976
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662104"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422072"
 ---
 # <a name="break-c-reference"></a>break (Referenční dokumentace jazyka C#)
 
@@ -54,5 +54,3 @@ Sorry, invalid selection.
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [switch](../../../csharp/language-reference/keywords/switch.md)
-- [Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)
-- [Příkazy iterace](../../../csharp/language-reference/keywords/iteration-statements.md)

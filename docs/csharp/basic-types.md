@@ -3,12 +3,12 @@ title: Základní typy – průvodce v C#
 description: Další informace o základní typy (číselné, řetězce a objektu) ve všech aplikacích jazyka C#
 ms.date: 10/10/2016
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: a1b842747799fcc8fcb64ecf92d334342b963fa1
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 3619e1dc9a82c7f120680c198c327252744444b4
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300013"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422095"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnných a hodnot
 
@@ -53,7 +53,7 @@ Další informace najdete v tématu [přetypování a převody typu](programming
 
 ## <a name="built-in-types"></a>Vestavěné typy
 
-Jazyk C# poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celočíselných hodnot, s plovoucí desetinnou čárkou hodnoty bodů, logických výrazů, znaků textu, desetinných míst a dalších typů dat. Existují také vestavěné **řetězec** a **objekt** typy. Toto jsou k dispozici pro použití v libovolném programu C#. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulky pro typy](language-reference/keywords/reference-tables-for-types.md).  
+Jazyk C# poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celočíselných hodnot, s plovoucí desetinnou čárkou hodnoty bodů, logických výrazů, znaků textu, desetinných míst a dalších typů dat. Existují také vestavěné **řetězec** a **objekt** typy. Toto jsou k dispozici pro použití v libovolném programu C#. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulku pro předdefinované typy](language-reference/keywords/built-in-types-table.md).  
   
 ## <a name="custom-types"></a>Vlastní typy
 

@@ -5,12 +5,12 @@ ms.date: 03/15/2018
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: ce3d39c42dc35ca3038fc38edd9327e9b96fb20f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 409a5307eaacd2eac865e2882cc7228521260dbe
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633420"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421874"
 ---
 # <a name="new-operator-c-reference"></a>New – operátor (referenční dokumentace jazyka C#)
 
@@ -66,6 +66,5 @@ Všimněte si, že v příkladu, který je výchozí hodnota řetězce `null`. P
 - [Referenční dokumentace jazyka C#](../../language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Klíčová slova operátorů](operator-keywords.md)
 - [new](new.md)
 - [Anonymní typy](../../programming-guide/classes-and-structs/anonymous-types.md)

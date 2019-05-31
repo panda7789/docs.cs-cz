@@ -6,16 +6,16 @@ helpviewer_keywords:
 - generics [C#], type parameters
 - type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
-ms.openlocfilehash: 10feb47ce3dfe9e356da381e0d62e6d220c9452a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 096fce3affb9461c57ae9c0ffd57367d1b4349df
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61679671"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423416"
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>Parametry obecného typu (C# Programming Guide)
 
-Parametr typu v obecném typu nebo metodě, je zástupný symbol pro konkrétní typ, že klient určuje při vytváření instance obecného typu. Obecný třídy, jako například `GenericList<T>` uvedené v [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md), nelze použít jako-totiž není ve skutečnosti typu; to je více než podrobný plán pro typ. Chcete-li použít `GenericList<T>`, kód klienta musí deklarovat a vytvoření instance konstruovaný typ tak, že zadáte argument typu v lomených závorkách. Argument typu pro tuto konkrétní třídu může být libovolný typ rozpoznatelným kompilátorem. Libovolný počet instancí konstruovaný typ nelze vytvořit, každý z nich jiný typ argumentu, následujícím způsobem:  
+Parametr typu v obecném typu nebo metodě, je zástupný symbol pro konkrétní typ, že klient určuje při vytváření instance obecného typu. Obecný třídy, jako například `GenericList<T>` uvedené v [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md), nelze použít jako-totiž není ve skutečnosti typu; to je více než podrobný plán pro typ. Chcete-li použít `GenericList<T>`, kód klienta musí deklarovat a vytvoření instance konstruovaný typ tak, že zadáte argument typu v lomených závorkách. Argument typu pro tuto konkrétní třídu může být libovolný typ rozpoznatelným kompilátorem. Libovolný počet instancí konstruovaný typ nelze vytvořit, každý z nich jiný typ argumentu, následujícím způsobem:  
   
 [!code-csharp[csProgGuideGenerics#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#7)]  
   

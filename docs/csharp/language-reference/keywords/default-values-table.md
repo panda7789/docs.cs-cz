@@ -12,12 +12,12 @@ helpviewer_keywords:
 - variables [C#], value types
 - constructors [C#], parameterless constructor
 - types [C#], parameterless constructor return values
-ms.openlocfilehash: 1eb2fbc707b7c1ff9575e694457fa975f3d2e363
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4fc9a35f69540e047a97c21788015ca8e54068a0
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661851"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422028"
 ---
 # <a name="default-values-table-c-reference"></a>Tabulka výchozích hodnot (referenční dokumentace jazyka C#)
 
@@ -70,7 +70,6 @@ Zadejte výchozí hodnotu kterékoli [odkazovat na typ](reference-types.md) je `
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Referenční tabulky pro typy](reference-tables-for-types.md)
 - [Typy hodnot](value-types.md)
 - [Tabulka typů hodnot](value-types-table.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)

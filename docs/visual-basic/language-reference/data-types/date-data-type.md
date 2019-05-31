@@ -15,12 +15,12 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-ms.openlocfilehash: d6179624ffbdf423f8d9b895c65ff41ac9846f33
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 970c69b36eecd110dd81b6a3700fbb0a7eea2834
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647035"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424032"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 IEEE – 64bitová (8 bajtů) hodnoty, které představují data od 1. ledna 0001 roku do 31. prosince 9999 roku a časy od 12:00:00: 00 (půlnoc) obsahuje prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekund uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna roku 10000.  
@@ -35,7 +35,7 @@ IEEE – 64bitová (8 bajtů) hodnoty, které představují data od 1. ledna 000
 ## <a name="format-requirements"></a>Požadavky na formát  
  Je nutné uzavřít `Date` literálu v rámci symboly čísla (`# #`). Hodnota kalendářního data ve formátu M/d/rrrr, musíte zadat například `#5/31/1993#`, nebo RRRR MM-dd, například `#1993-5-31#`. Při zadávání první rok, můžete použít lomítka.  Tento požadavek je nezávislé na národní prostředí a počítače nastavení data a času formátu.  
   
- Důvodem tohoto omezení je, že by měl význam kódu nikdy nezmění v závislosti na národním prostředí, ve kterém je aplikace spuštěna. Předpokládejme pevně zakódovat `Date` literál o `#3/4/1998#` a chcete-li znamenat 4. března 1998. V národním prostředí, která používá mm/dd/rrrr zkompiluje 3/4/1998 tak, jak zamýšlíte. Ale Předpokládejme, že nasadíte svou aplikaci v mnoha zemích. V národním prostředí, která používá dd/mm/rrrr by vaše pevně zakódované literál zkompilovat do 3. dubna 1998. V národním prostředí, která používá rrrr/mm/dd, by byl literál neplatný (1998. dubna, 0003) a způsobí chybu kompilátoru.  
+ Důvodem tohoto omezení je, že by měl význam kódu nikdy nezmění v závislosti na národním prostředí, ve kterém je aplikace spuštěna. Předpokládejme pevně zakódovat `Date` literál o `#3/4/1998#` a chcete-li znamenat 4. března 1998. V národním prostředí, která používá mm/dd/rrrr zkompiluje 3/4/1998 tak, jak zamýšlíte. Ale Předpokládejme, že nasadíte svou aplikaci ve více zemích a oblastech. V národním prostředí, která používá dd/mm/rrrr by vaše pevně zakódované literál zkompilovat do 3. dubna 1998. V národním prostředí, která používá rrrr/mm/dd, by byl literál neplatný (1998. dubna, 0003) a způsobí chybu kompilátoru.  
   
 ## <a name="workarounds"></a>Alternativní řešení  
  Převést `Date` zadat literál na literál na formát národní prostředí nebo na vlastní formát, <xref:Microsoft.VisualBasic.Strings.Format%2A> funkce určující formát předdefinovaných nebo uživatelem definovaný datum. Následující příklad ukazuje to.  

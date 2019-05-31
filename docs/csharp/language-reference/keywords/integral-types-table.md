@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], integral types
 - ranges of integral types [C#]
 ms.assetid: 62e86126-46ff-40b0-9028-e61d7558268c
-ms.openlocfilehash: dc093def716a624162cb695d1151d8a722807094
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4a3a46ba98c0c621b747284ce39e03d68a5b62d
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661370"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421733"
 ---
 # <a name="integral-types-table-c-reference"></a>Tabulka celočíselných typů (referenční dokumentace jazyka C#)
 
@@ -43,7 +43,6 @@ Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> struktu
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Referenční tabulky pro typy](reference-tables-for-types.md)
 - [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
 - [Tabulka výchozích hodnot](default-values-table.md)
 - [Tabulka formátování číselných výsledků](formatting-numeric-results-table.md)

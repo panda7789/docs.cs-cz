@@ -1,15 +1,15 @@
 ---
 title: Použijte v případě detekce anomálií prodejní ML.NET
 description: Zjistěte, jak pochopit, jak analyzovat data špiček anomálií a body přijmout vhodná opatření změny pomocí ML.NET v případě detekce anomálií prodejní produktu.
-ms.date: 05/06/2019
+ms.date: 05/29/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 39e812facccfa75d1643704f8960a387a70c94bc
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d31765aa4ff2a0be9c4f140f33de1f5678fc7612
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641154"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423933"
 ---
 # <a name="tutorial-use-mlnet-for-product-sales-anomaly-detection"></a>Kurz: Použití ML.NET pro detekci anomálií prodejní produktu 
 
@@ -173,7 +173,7 @@ Použití [IidSpikeEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidSpikeEs
 
 [!code-csharp[AddSpikeTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddSpikeTrainer)]
 
-Přizpůsobit modelu, který má `productSales` data a vrátit trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `DetectSpike()` metody:
+Přizpůsobení modelu, který má `productSales` data přidáním následujícího kódu jako další řádek kódu v `DetectSpike()` metody:
 
 [!code-csharp[TrainModel1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TrainModel1)]
 
@@ -283,7 +283,7 @@ static void DetectChangepoint(MLContext mlContext, int docSize, IDataView produc
 
 [!code-csharp[AddChangepointTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddChangepointTrainer)]
 
-Stejně jako dříve, podle modelu, který má `productSales` data a vrátit trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `DetectChangePoint()` metody:
+Stejně jako dříve, podle modelu, který má `productSales` data přidáním následujícího kódu jako další řádek kódu v `DetectChangePoint()` metody:
 
 [!code-csharp[TrainModel2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TrainModel2)]
 

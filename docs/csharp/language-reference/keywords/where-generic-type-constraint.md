@@ -7,12 +7,12 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: a71412a01045a445811898939624fd7cd7ab1cf1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3982c97bc56b42237700343b2572d1bba930bbbd
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633122"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422773"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 
@@ -67,6 +67,6 @@ Podrobnosti o syntaxi a použití omezení najdete v tématu [omezení parametr�
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)
+- [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
 - [new – omezení](../../../csharp/language-reference/keywords/new-constraint.md)
 - [Omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)

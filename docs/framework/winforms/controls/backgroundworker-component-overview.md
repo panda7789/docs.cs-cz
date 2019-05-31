@@ -17,12 +17,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 64e9b3ab-7443-4a77-ab17-b8b8c0cb3f62
-ms.openlocfilehash: da1d87464ef30fb549a2c201170e81c45cbdf6fc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2ef09fdc755480205b9929037277162349afa135
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587741"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423817"
 ---
 # <a name="backgroundworker-component-overview"></a>BackgroundWorker – přehled komponenty
 Existuje mnoho běžně provádí operace, které může trvat dlouhou dobu spuštění. Příklad:  
@@ -39,7 +39,7 @@ Existuje mnoho běžně provádí operace, které může trvat dlouhou dobu spu�
   
 - Místní disk, jeho pomalé vzhledem k přístupu do paměti udělený přístup  
   
- Operace, jako je to může způsobit uživatelského rozhraní přestane reagovat, když jsou spuštěné. Pokud chcete, aby responzivní uživatelské rozhraní a se potýkají s dlouhým zpožděním spojené s takovými operacemi <xref:System.ComponentModel.BackgroundWorker> součást poskytuje pohodlné řešení.  
+ Operace, jako je to může způsobit uživatelského rozhraní pro blokování při spuštění. Pokud chcete, aby responzivní uživatelské rozhraní a se potýkají s dlouhým zpožděním spojené s takovými operacemi <xref:System.ComponentModel.BackgroundWorker> součást poskytuje pohodlné řešení.  
   
  <xref:System.ComponentModel.BackgroundWorker> Komponenty vám dává možnost provádět časově náročná operace asynchronně ("na pozadí"), ve vlákně, která se liší od hlavního vlákna uživatelského rozhraní vaší aplikace. Použití <xref:System.ComponentModel.BackgroundWorker>, vám stačí určit, jakou metodu časově náročné pracovní provádět na pozadí, a poté zavoláte <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> metoda. Volající vlákno dál běží normálně při metodě pracovního podprocesu běží asynchronně. Po dokončení metody <xref:System.ComponentModel.BackgroundWorker> výstrahy volající vlákno s jeho spuštění <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí, který volitelně obsahuje výsledky operace.  
   

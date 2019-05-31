@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: d6c35398d54b91c9aa595ffdcde56004e59b7693
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 85e7f10643c57837cf0b66613825241db94c0065
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882495"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423873"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -176,7 +176,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
  `CalculateWorker` Metoda je zabalena v delegátovi a je vyvoláno asynchronně s volání `BeginInvoke`.  
   
 > [!NOTE]
->  Vykazování průběhu je implementována v `BuildPrimeNumberList` metody. Rychlé počítačích `ProgressChanged` události mohou být vyvolány rychle po sobě. Vlákna klienta, na kterém jsou tyto události vyvolány, musí být schopen tuto situaci. Kód uživatelského rozhraní může být docházet zprávy a schopen čelit, což vede k předsazení chování. Uživatelské rozhraní příklad, který zpracovává této situaci, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+>  Vykazování průběhu je implementována v `BuildPrimeNumberList` metody. Rychlé počítačích `ProgressChanged` události mohou být vyvolány rychle po sobě. Vlákna klienta, na kterém jsou tyto události vyvolány, musí být schopen tuto situaci. Kód uživatelského rozhraní může být docházet zprávy a schopen čelit, což vede k zablokování. Uživatelské rozhraní příklad, který zpracovává této situaci, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 #### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>Spustit asynchronně výpočtu prime číslo:  
   

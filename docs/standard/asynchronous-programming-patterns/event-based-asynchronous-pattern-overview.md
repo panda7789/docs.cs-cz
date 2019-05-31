@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: f923ca42e67c76f8b4296089953fada65b645f4f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dfc8e1cfa6050a6e45373ad023ee8f358e388735
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629014"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423864"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které provádějí celou řadu úloh současně, ale stále reagovat na interakci uživatele, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje potřebné k vytvoření vysoce výkonné aplikace s více vlákny, ale efektivně pomocí těchto nástrojů vyžaduje významné prostředí s více vlákny softwarového inženýrství. Pro vícevláknové aplikace s poměrně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje jednoduché řešení. Pro složitější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronního vzoru založeného na událostech.  
@@ -32,13 +32,13 @@ Aplikace, které provádějí celou řadu úloh současně, ale stále reagovat 
   
 - Současně spusťte více operací příjem oznámení po dokončení každého.  
   
-- Čekání na prostředky k dispozici bez zastavení ("předsazení") vaší aplikace.  
+- Čekání na prostředky k dispozici bez zastavení ("blokování") vaší aplikace.  
   
 - Komunikovat s čekajících asynchronních operací s použitím známým modelem Delegáti a události. Další informace o použití delegátů a obslužné rutiny událostí, naleznete v tématu [události](../../../docs/standard/events/index.md).  
   
  Třída, která podporuje asynchronní vzor založený na událostech bude mít jednu nebo více metod s názvem _MethodName_**asynchronní**. Tyto metody mohou zrcadlí synchronní verze, které provádět stejnou operaci i u aktuálního vlákna. Třídy mohou mít i _MethodName_**dokončeno** událostí a může obsahovat _MethodName_**AsyncCancel** (nebo jednoduše  **CancelAsync**) metody.  
   
- <xref:System.Windows.Forms.PictureBox> je typické komponenty, která podporuje asynchronní vzor založený na událostech. Si můžete stáhnout bitovou kopii synchronně voláním jeho <xref:System.Windows.Forms.PictureBox.Load%2A> metody, ale pokud je velký obrázek, nebo pokud je pomalé síťové připojení, pro vaše aplikace přestane ("zablokování"), dokud se nedokončí operaci stahování a volání <xref:System.Windows.Forms.PictureBox.Load%2A> vrátí.  
+ <xref:System.Windows.Forms.PictureBox> je typické komponenty, která podporuje asynchronní vzor založený na událostech. Si můžete stáhnout bitovou kopii synchronně voláním jeho <xref:System.Windows.Forms.PictureBox.Load%2A> metody, ale pokud je velký obrázek, nebo pokud je pomalé síťové připojení, vaše aplikace přestane reagovat, dokud se nedokončí operaci stahování a volání <xref:System.Windows.Forms.PictureBox.Load%2A> vrátí.  
   
  Pokud chcete, aby vaše aplikace běžela při image se načítá, můžete volat <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metoda a popisovač <xref:System.Windows.Forms.PictureBox.LoadCompleted> události, stejně jako by zpracovat všechny události. Při volání <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metodu, aplikace bude nadále spuštěna při stahování pokračuje na samostatném vlákně ("v pozadí"). Vaše obslužná rutina události zavolá se po dokončení operace načítání obrázku a vaší obslužné rutiny události můžete prozkoumat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr k určení, pokud se stahování byla úspěšně dokončena.  
   

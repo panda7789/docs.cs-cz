@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - goto keyword [C#]
 ms.assetid: 2c03c9c1-8119-44ef-b740-fb3d287a42fe
-ms.openlocfilehash: e4642d0e43a538217493298b58d572e435db5dae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 675893f02a0022b403d2afc018d24d6f826b8f75
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661526"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421828"
 ---
 # <a name="goto-c-reference"></a>goto – příkaz (referenční dokumentace jazyka C#)
 
@@ -45,4 +45,3 @@ Následující příklad ukazuje použití `goto` rozdělit z vnořené smyčky.
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [goto – příkaz (C++)](/cpp/cpp/goto-statement-cpp)
-- [Jump – příkazy](jump-statements.md)
