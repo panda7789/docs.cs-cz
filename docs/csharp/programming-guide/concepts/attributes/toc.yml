@@ -3,9 +3,8 @@
   items:
     - name: Vytváření vlastních atributů
       href: creating-custom-attributes.md
-      items:
-        - name: AttributeUsage
-          href: attributeusage.md
+    - name: AttributeUsage
+      href: attributeusage.md
     - name: Přístup k atributům pomocí reflexe
       href: accessing-attributes-by-using-reflection.md
     - name: 'Postupy: Vytváření sjednocení C/C++ pomocí atributů'

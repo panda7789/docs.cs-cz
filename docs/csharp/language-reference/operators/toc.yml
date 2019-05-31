@@ -1,5 +1,4 @@
 - name: 'Operátory jazyka C#'
-  href: index.md
   items:
     - name: Aritmetické operátory
       href: arithmetic-operators.md
@@ -29,15 +28,16 @@
     - name: + a += – operátory
       href: addition-operator.md
       displayName: 'string concatenation, delegate combination, event subscription'
-    - name: '- – operátor'
+    - name: '- a -= – operátory'
       href: subtraction-operator.md
+      displayName: 'delegate removal, event unsubscription'
     - name: = – operátor
       href: assignment-operator.md
     - name: '?: – operátor'
       href: conditional-operator.md
-    - name: '-= – operátor'
-      href: subtraction-assignment-operator.md
     - name: '?? – operátor'
       href: null-coalescing-operator.md
     - name: => – operátor
       href: lambda-operator.md
+    - name: true a false – operátory
+      href: true-false-operators.md

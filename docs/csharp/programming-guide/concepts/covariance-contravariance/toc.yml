@@ -1,6 +1,7 @@
 - name: Kovariance a kontravariance
-  href: index.md
   items:
+    - name: Přehled
+      href: index.md
     - name: Odchylky obecných rozhraní
       href: variance-in-generic-interfaces.md
       items:

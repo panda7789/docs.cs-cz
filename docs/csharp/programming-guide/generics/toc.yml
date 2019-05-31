@@ -1,10 +1,6 @@
 - name: Obecné typy
   href: index.md
   items:
-    - name: Úvod do obecných typů
-      href: introduction-to-generics.md
-    - name: Výhody obecných typů
-      href: benefits-of-generics.md
     - name: Parametry obecného typu
       href: generic-type-parameters.md
     - name: Omezení parametrů typů
