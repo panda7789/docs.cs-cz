@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
-ms.openlocfilehash: df8ce418b761ce1fca7f94614f5708ecb1b3652e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ccf837bd9f0e0bb40cfb07d5eeaa1f0f80a86ca9
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615494"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456680"
 ---
 # <a name="bitmap-effects-overview"></a>Přehled efektů bitmap
 Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k vykreslení obsahu Windows Presentation Foundation (WPF). Například bitmapových efektů umožňují snadno použít <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vliv nebo rozostření mohou mít vliv na bitovou kopii nebo tlačítko.  
   
 > [!IMPORTANT]
->  V [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] nebo novější, <xref:System.Windows.Media.Effects.BitmapEffect> třída je zastaralá. Pokud se pokusíte použít <xref:System.Windows.Media.Effects.BitmapEffect> třídy, obdržíte výjimku zastaralé. Nezastaralou alternativou k <xref:System.Windows.Media.Effects.BitmapEffect> třída je <xref:System.Windows.Media.Effects.Effect> třídy. Ve většině případů <xref:System.Windows.Media.Effects.Effect> třída je výrazně rychlejší.  
+>  V rozhraní .NET Framework 4 nebo novější <xref:System.Windows.Media.Effects.BitmapEffect> třída je zastaralá. Pokud se pokusíte použít <xref:System.Windows.Media.Effects.BitmapEffect> třídy, obdržíte výjimku zastaralé. Nezastaralou alternativou k <xref:System.Windows.Media.Effects.BitmapEffect> třída je <xref:System.Windows.Media.Effects.Effect> třídy. Ve většině případů <xref:System.Windows.Media.Effects.Effect> třída je výrazně rychlejší.  
 
 <a name="wpf_effects"></a>   
 ## <a name="wpf-bitmap-effects"></a>Bitmapové efekty WPF  

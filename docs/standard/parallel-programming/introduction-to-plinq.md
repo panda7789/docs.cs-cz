@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 670ed89754aa9b4d2052bb1186e0139618190cd6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d41a88b7a9197a19a131cbda078297a96acdabfb
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018893"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457487"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 
@@ -107,7 +107,7 @@ Následující obrázek ukazuje rozdíl mezi `foreach` a <xref:System.Linq.Paral
 
 ## <a name="cancellation"></a>Zrušení
 
-PLINQ je integrována s typy zrušení v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. (Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md).) Proto se na rozdíl od sekvenčních LINQ to Objects dotazů, dotazy PLINQ můžete zrušit. Chcete-li vytvořit PLINQ dotaz, použijte <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> operátor v dotazu a zadejte <xref:System.Threading.CancellationToken> instanci jako argument. Když <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> v tokenu je nastavena na hodnotu true, PLINQ bude zpozoruje, zastaví zpracovávání na všech vláknech a vyvolat <xref:System.OperationCanceledException>.
+PLINQ je integrována s typy zrušení v rozhraní .NET Framework 4. (Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md).) Proto se na rozdíl od sekvenčních LINQ to Objects dotazů, dotazy PLINQ můžete zrušit. Chcete-li vytvořit PLINQ dotaz, použijte <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> operátor v dotazu a zadejte <xref:System.Threading.CancellationToken> instanci jako argument. Když <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> v tokenu je nastavena na hodnotu true, PLINQ bude zpozoruje, zastaví zpracovávání na všech vláknech a vyvolat <xref:System.OperationCanceledException>.
 
 Je možné, že PLINQ dotaz může pokračovat ve zpracování některých prvků po nastavení tokenu zrušení.
 

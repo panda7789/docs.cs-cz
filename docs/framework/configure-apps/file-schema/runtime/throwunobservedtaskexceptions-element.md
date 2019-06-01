@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b47c4d07fc0ee0cdaf53fe3c8199fb37dcb6c1b1
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: cb6cfc8e1c3f0409d99d31efa0a645476b47e45e
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377893"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456251"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions> Element
 Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému procesu.  
@@ -42,7 +42,7 @@ Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému proces
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Spuštěný proces pro nezpracovaná výjimka úlohy nebyl ukončen. Toto nastavení je výchozí.|  
 |`true`|Ukončí běžící proces pro nezpracovaná výjimka úlohy.|  
@@ -65,7 +65,7 @@ Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému proces
   
  Rozhraní .NET Framework 4.5, aby usnadňuje vývojářům umožňuje psát asynchronní kód založený na úkolech, změní toto výchozí chování pro asynchronního nepozorovaného výjimky. Nepozorované výjimky způsobí <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> událost, ale ve výchozím nastavení, se proces neukončí. Místo toho výjimka bude ignorována, jakmile se vyvolá událost, bez ohledu na to, zda obslužná rutina události dodržuje výjimku.  
   
- V rozhraní .NET Framework 4.5, můžete použít [ \<throwunobservedtaskexceptions – > element](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) v konfiguračním souboru aplikace umožňuje [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] chování vyvolání výjimky.  
+ V rozhraní .NET Framework 4.5, můžete použít [ \<throwunobservedtaskexceptions – > element](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) v konfiguračním souboru aplikace, chcete-li povolit rozhraní .NET Framework 4 chování vyvolání výjimky.  
   
  Můžete také určit chování výjimky v jednom z následujících způsobů:  
   

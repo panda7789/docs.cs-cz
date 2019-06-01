@@ -6,15 +6,15 @@ helpviewer_keywords:
 - XAML Services in WPF [XAML Services]
 - System.Xaml [XAML Services], conceptual documentation
 ms.assetid: 0e11f386-808c-4eae-9ba6-029ad7ba2211
-ms.openlocfilehash: 9c75f6add000b2055bcbf13a7fcdf635bd707947
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c99e44c7d373d050113687753d4f18eca27e0de5
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663239"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457396"
 ---
 # <a name="xaml-services"></a>XAML Services
-Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané jsou umístěny v oboru názvů System.Xaml, což je sestavení představeny s nástrojem sestavení [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] sadu .NET core sestavení. Mezi tyto služby patří objekty pro vytváření čtečky a zapisovače, schéma třídy a podpora schématu, zapisujících tříd, vnitřní podporu pro jazyk XAML a dalších funkcí jazyka XAML.  
+Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané se nacházejí v sestavení, oboru názvů System.Xaml, což je sestavení součástí rozhraní .NET Framework 4 sadu .NET core sestavení. Mezi tyto služby patří objekty pro vytváření čtečky a zapisovače, schéma třídy a podpora schématu, zapisujících tříd, vnitřní podporu pro jazyk XAML a dalších funkcí jazyka XAML.  
   
 ## <a name="about-this-documentation"></a>Informace o této dokumentaci  
  Rámcové dokumentaci pro rozhraní .NET Framework XAML Services se předpokládá, že máte předchozí zkušenosti s jazykem XAML a jak jej mohou vztahovat na určité rozhraní, například [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] nebo Windows Workflow Foundation, nebo konkrétní technologie funkce oblasti, například vlastní nastavení sestavení funkce v <xref:Microsoft.Build.Framework.XamlTypes>. Tato dokumentace nebude pokoušet o vysvětluje základy XAML jako značka jazyka, terminologie syntaxe XAML nebo další úvodní materiály. Místo toho tato dokumentace se zaměřuje na konkrétně v knihovně oboru názvů System.Xaml sestavení s využitím rozhraní .NET Framework XAML Services jsou povolené. Většina těchto rozhraní API jsou určené pro scénáře integrace jazyka XAML a rozšíření. To může zahrnovat kterýkoli z následujících:  

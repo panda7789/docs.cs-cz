@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 91149858-4810-4f65-9b48-468488172c9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d4a205f643c844b2fe77d3aa5211b4bc1f322fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e9073e48141bc6895d00c773c2d3d2cfeb260f6
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674257"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456457"
 ---
 # <a name="forceperformancecounteruniquesharedmemoryreads-element"></a>\<forcePerformanceCounterUniqueSharedMemoryReads> Element
 Určuje, jestli má PerfCounter.dll CategoryOptions nastavení registru v rozhraní .NET Framework verze 1.1 aplikace k určení, jestli se má načíst data čítače výkonu ze sdílené paměti podle kategorií nebo globální paměti.  
@@ -39,7 +39,7 @@ enabled="true|false"/>
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|PerfCounter.dll CategoryOptions nepoužívá výchozí nastavení je toto nastavení registru.|  
 |`true`|PerfCounter.dll pomocí nastavení registru CategoryOptions.|  
@@ -55,11 +55,11 @@ enabled="true|false"/>
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve verzích rozhraní .NET Framework před [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], odpovídaly verzi PerfCounter.dll, který byl načten modul runtime, který byl načten v procesu. Pokud počítač měl i rozhraní .NET Framework verze 1.1 a [!INCLUDE[dnprdnlong](../../../../../includes/dnprdnlong-md.md)] nainstalované, by aplikace rozhraní .NET Framework 1.1 načtení verze rozhraní .NET Framework 1.1 PerfCounter.dll. Počínaje [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], je nainstalovaná nejnovější verze PerfCounter.dll načten. To znamená, že se načte aplikace rozhraní .NET Framework 1.1 [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] verzi PerfCounter.dll pokud [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] je nainstalován v počítači.  
+ Ve verzích rozhraní .NET Framework před [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], odpovídaly verzi PerfCounter.dll, který byl načten modul runtime, který byl načten v procesu. Pokud počítač měl i rozhraní .NET Framework verze 1.1 a [!INCLUDE[dnprdnlong](../../../../../includes/dnprdnlong-md.md)] nainstalované, by aplikace rozhraní .NET Framework 1.1 načtení verze rozhraní .NET Framework 1.1 PerfCounter.dll. Od verze rozhraní .NET Framework 4, je nainstalovaná nejnovější verze PerfCounter.dll načten. To znamená, že aplikace rozhraní .NET Framework 1.1 načte verzi rozhraní .NET Framework 4 PerfCounter.dll pokud rozhraní .NET Framework 4 je nainstalován v počítači.  
   
- Počínaje [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], při využívání čítače výkonu, PerfCounter.dll kontroluje CategoryOptions položka registru pro každého zprostředkovatele k určení, zda by měl číst ze sdílené paměti podle kategorií nebo globální sdílené paměti. Rozhraní .NET Framework 1.1 PerfCounter.dll nenačítá této položky registru, protože nebude vědět o sdílené paměti podle kategorií. vždy čte z globální sdílené paměti.  
+ Od verze rozhraní .NET Framework 4, při využívání čítače výkonu, zkontroluje PerfCounter.dll CategoryOptions položka registru pro každého zprostředkovatele k určení, zda by měl číst ze sdílené paměti podle kategorií nebo globální sdílené paměti. Rozhraní .NET Framework 1.1 PerfCounter.dll nenačítá této položky registru, protože nebude vědět o sdílené paměti podle kategorií. vždy čte z globální sdílené paměti.  
   
- Z důvodu zpětné kompatibility [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] PerfCounter.dll nekontroluje položku registru CategoryOptions při spuštění aplikace rozhraní .NET Framework 1.1. Jednoduše používá globální sdílené paměti, stejně jako PerfCounter.dll 1.1 rozhraní .NET Framework. Ale můžete dát pokyn [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] PerfCounter.dll zkontrolovat nastavení registru tím, že `<forcePerformanceCounterUniqueSharedMemoryReads>` elementu.  
+ Z důvodu zpětné kompatibility PerfCounter.dll rozhraní .NET Framework 4 nekontroluje položku registru CategoryOptions při spuštění aplikace rozhraní .NET Framework 1.1. Jednoduše používá globální sdílené paměti, stejně jako PerfCounter.dll 1.1 rozhraní .NET Framework. Ale můžete dát pokyn PerfCounter.dll rozhraní .NET Framework 4 zkontrolovat nastavení registru tím, že `<forcePerformanceCounterUniqueSharedMemoryReads>` elementu.  
   
 > [!NOTE]
 >  Povolení `<forcePerformanceCounterUniqueSharedMemoryReads>` element nezaručuje, že se použije sdílené paměti podle kategorií. Nastavení povolit, aby `true` pouze způsobí, že PerfCounter.dll odkazovat CategoryOptions nastavení registru. Výchozí nastavení pro CategoryOptions je použití sdílené paměti podle kategorií. Můžete však změnit CategoryOptions k označení, že má být použit globální sdílené paměti.  

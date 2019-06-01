@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 32aee404891bfad1aed2abc9ad84e43bcd002df5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 310aec9b180b37b7e5f34c4594fd61747ef02d39
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765320"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457042"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim – funkce
 Načte zadanou verzi knihovny DLL, která je součástí Distribuovatelný balíček rozhraní .NET Framework.  
@@ -45,7 +45,7 @@ HRESULT LoadLibraryShim (
  [in] Ukončit nulou řetězec představující název knihovny DLL, který se má načíst z knihovny rozhraní .NET Framework.  
   
  `szVersion`  
- [in] Ukončit nulou řetězec, který představuje verzi knihovny DLL, který se má načíst. Pokud `szVersion` je null, verze vybrali pro načítání je nejnovější verzi určenou knihovnu DLL, která je nižší než verze 4. To znamená, jsou ignorovány všechny verze roven nebo větší než verze 4, pokud `szVersion` má hodnotu null, a pokud je nainstalována žádná verze a menší než verze 4, se nepodaří načíst knihovnu DLL. Je to z toho k takové instalaci [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] nemá vliv na existující aplikace nebo komponenty. Viz položka [SxS InProc a migrace s rychlým startem](https://go.microsoft.com/fwlink/?LinkId=200329) na blogu týmu CLR.  
+ [in] Ukončit nulou řetězec, který představuje verzi knihovny DLL, který se má načíst. Pokud `szVersion` je null, verze vybrali pro načítání je nejnovější verzi určenou knihovnu DLL, která je nižší než verze 4. To znamená, jsou ignorovány všechny verze roven nebo větší než verze 4, pokud `szVersion` má hodnotu null, a pokud je nainstalována žádná verze a menší než verze 4, se nepodaří načíst knihovnu DLL. Tím je zajištěno, že instalace rozhraní .NET Framework 4 nemá vliv na existující aplikace nebo komponenty. Viz položka [SxS InProc a migrace s rychlým startem](https://go.microsoft.com/fwlink/?LinkId=200329) na blogu týmu CLR.  
   
  `pvReserved`  
  Vyhrazeno pro budoucí použití.  

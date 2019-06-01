@@ -3,13 +3,13 @@ title: Technologií rozhraní .NET framework není k dispozici v rozhraní .NET 
 description: Seznamte se s technologií rozhraní .NET Framework, které jsou k dispozici v rozhraní .NET Core
 author: cartermp
 ms.author: mairaw
-ms.date: 12/07/2018
-ms.openlocfilehash: be55cd1d1c67b0542c8474d1b2e47f6752f658a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.date: 04/30/2019
+ms.openlocfilehash: 9485f331856fde3b6836709e8983c2babe094c5b
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663138"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456085"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologií rozhraní .NET framework není k dispozici v rozhraní .NET Core
 
@@ -42,6 +42,10 @@ Volit raději hranice zabezpečení poskytované operačního systému, napřík
 Podobně jako u certifikační Autority, transparentnost zabezpečení ze zabezpečení kritického kódu deklarativní způsobem odděluje kódu v izolovaném prostoru, ale je [již nejsou podporovány jako hranice zabezpečení](~/docs/framework/misc/security-transparent-code.md). Tato funkce je nejčastěji používá program Silverlight. 
 
 Volit raději hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnerů nebo uživatelské účty pro spouštění procesů s nejmenší sadu oprávnění.
+
+## <a name="systementerpriseservices"></a>System.EnterpriseServices
+
+.NET Core nepodporuje System.EnterpiseServices (COM +).
 
 >[!div class="step-by-step"]
 >[Next](third-party-deps.md)

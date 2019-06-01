@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a327cb25210be7b9b6c341e3d11ccdc856cf46d3
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 86058eb288b54a4bc316900f165ec61e4d05eb1f
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66379966"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457282"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
-.NET Client Profile je podmnožinou rozhraní .NET Framework, která byla součástí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starších verzí a byla optimalizována pro klientské aplikace. Rozhraní .NET Framework je vývojovou platformu pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovny tříd rozhraní .NET Framework. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a dřívější verze poskytují dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
+.NET Client Profile je podmnožinou rozhraní .NET Framework, která byla součástí rozhraní .NET Framework 4 a dřívějších verzí a byla optimalizována pro klientské aplikace. Rozhraní .NET Framework je vývojovou platformu pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovny tříd rozhraní .NET Framework. Rozhraní .NET Framework 4 a dřívější verze poskytují dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
   
  Od verze rozhraní .NET Framework 4.5, byla zrušena na profil klienta a je k dispozici pouze úplný redistribuovatelný balíček. Optimalizace poskytované rozhraním .NET Framework 4.5, jako jsou menší velikost ke stažení a rychlejší nasazení, odstranily potřebu samostatných balíčků nasazení. Jediná verze Redistributable zjednodušuje proces instalace a možnosti nasazení aplikace.  
   

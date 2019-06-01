@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 08a13a57-dc49-488d-b937-31e3051fda97
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8bb5d93c91de857ebbee63009cad73fba7e1d284
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ea65c06871d9762fa6daac229a568594b4c4479
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758246"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457483"
 ---
 # <a name="profiling-global-static-functions"></a>Profilace globálních statických funkcí
 Tato část popisuje nespravované funkce rozhraní API, které používá profilování API.  
@@ -35,13 +35,13 @@ Tato část popisuje nespravované funkce rozhraní API, které používá profi
  Oznámí profileru, že daný identifikátor funkce může přemapován na alternativní ID se použije v [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), a [functiontailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) zpětná volání pro tuto funkci. Také umožňuje profileru označíte, zda si přeje přijmout zpětná volání pro tuto funkci  
   
  [FunctionEnter2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)  
- Profiler upozorní, že ovládací prvek je předáván funkci a poskytuje informace o zásobníku rámce a funkce argumenty. Zastaralé v [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Profiler upozorní, že ovládací prvek je předáván funkci a poskytuje informace o zásobníku rámce a funkce argumenty. Zastaralé v rozhraní .NET Framework 4.  
   
  [FunctionLeave2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
- Profiler upozorní, že funkce je vracet volajícímu a poskytuje informace o zásobníku rámce a funkce návratová hodnota. Zastaralé v [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Profiler upozorní, že funkce je vracet volajícímu a poskytuje informace o zásobníku rámce a funkce návratová hodnota. Zastaralé v rozhraní .NET Framework 4.  
   
  [FunctionTailcall2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)  
- Profiler upozorní, že aktuálně prováděné funkci je provést volání funkce tail do jiné funkce a poskytuje informace o zásobníku. Zastaralé v [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Profiler upozorní, že aktuálně prováděné funkci je provést volání funkce tail do jiné funkce a poskytuje informace o zásobníku. Zastaralé v rozhraní .NET Framework 4.  
   
  [StackSnapshotCallback – funkce](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md)  
  Poskytuje informace o každý spravovaný rámec a každé spuštění nespravované rámce v zásobníku během procházení zásobníku, která inicializuje profiler [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metody.  

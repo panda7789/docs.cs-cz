@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ef6b73d683d43b2a33628db13fa592c7f02199a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 116df78eb20d6e6c6355d07099ae5d3de9320f30
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585979"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457290"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 Reflexe umožňuje získat informace o typech a členech a chcete získat přístup ke členům (to znamená pro volání metody a konstruktory, k získání a nastavení vlastností hodnoty, přidávat a odebírat obslužné rutiny událostí a tak dále). Použití reflexe získat informace o typech a členech není omezeno. Veškerý kód, můžete použít reflexe provádět následující úlohy:  
@@ -58,10 +58,10 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
  Spustí kód aplikace, která se spouští z příkazového řádku s úplným vztahem důvěryhodnosti. Tak dlouho, dokud není označena jako transparentní, může použít reflexe pro přístup ke členům kritické pro zabezpečení. Při spuštění stejný kód s částečnou důvěryhodností (například v doméně aplikace v izolovaném prostoru) úroveň důvěryhodnosti sestavení určuje, jestli můžete přistupovat k kritické pro zabezpečení kódu: Pokud sestavení se silným názvem a je nainstalováno v globální mezipaměti sestavení, je důvěryhodná sestavení a může volat členy kritické z hlediska zabezpečení. Pokud není důvěryhodný, bude transparentní, i když nebyl označen jako transparentní, a nebude moct přistupovat k členy kritické z hlediska zabezpečení.  
   
- Další informace o modelu zabezpečení v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], naleznete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+ Další informace o modelu zabezpečení v rozhraní .NET Framework 4 najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
 ## <a name="reflection-and-transparency"></a>Reflexi a průhlednosti  
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], modul common language runtime určuje úroveň průhlednosti typu nebo člena z několika různými faktory, včetně úroveň důvěryhodnosti sestavení a úroveň důvěryhodnosti domény aplikace. Poskytuje reflexe <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Type.IsSecuritySafeCritical%2A>, a <xref:System.Type.IsSecurityTransparent%2A> vlastnosti vám umožní zjistit úroveň průhlednosti typu. V následující tabulce jsou uvedeny platné kombinace těchto vlastností.  
+ Od verze rozhraní .NET Framework 4, modul common language runtime určuje úroveň průhlednosti typu nebo člena z několika různými faktory, včetně úroveň důvěryhodnosti sestavení a úroveň důvěryhodnosti domény aplikace. Poskytuje reflexe <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Type.IsSecuritySafeCritical%2A>, a <xref:System.Type.IsSecurityTransparent%2A> vlastnosti vám umožní zjistit úroveň průhlednosti typu. V následující tabulce jsou uvedeny platné kombinace těchto vlastností.  
   
 |Úroveň zabezpečení|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
 |--------------------|------------------------|----------------------------|---------------------------|  

@@ -8,17 +8,17 @@ helpviewer_keywords:
 ms.assetid: f6af6116-f5b0-4bda-a276-fffdba70893d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6405c61429d56b125fd0327824482bf702e41319
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: aceb0179c6ee52699370480041af62262eff6bc2
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380282"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456927"
 ---
 # <a name="clr-hosting-interfaces-added-in-the-net-framework-4-and-45"></a>Rozhraní hostování CLR přidaná v rozhraní .NET Framework 4 a 4.5
 Tato část popisuje nespravovaná rozhraní můžete integrovat common language runtime (CLR) v nastavení používají hostitelé [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], rozhraní .NET Framework 4.5 a novější verze do svých aplikací. Tato rozhraní poskytuje metody pro hostitele konfigurace a načtení modulu runtime do procesu.  
   
- Počínaje [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)], všechny hostitelské rozhraní mají následující vlastnosti:  
+ Od verze rozhraní .NET Framework 4, všechny hostitelské rozhraní mají následující vlastnosti:  
   
 - Správa životního cyklu používají (`AddRef` a `Release`), zapouzdření (implicitní context) a `QueryInterface` z modelu COM.  
   

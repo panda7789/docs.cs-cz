@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fa4b8fdd56ed8a1304b6ee436ce3391c52ae7b9d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 44e5f52ce2bfe03247ab25bb48607ae313523ff0
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622727"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456850"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a> Kovariance a kontravariance jsou pojmy, které označují schopnost používat více odvozeného typu (konkrétnější) nebo méně odvozeného typu (specifické pro less) než byl původně zadán. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: V příkladech se předpokládá základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  
@@ -81,7 +81,7 @@ ms.locfileid: "64622727"
   
 <a name="InterfaceCovariantTypeParameters"></a>   
 ## <a name="generic-interfaces-with-covariant-type-parameters"></a>Obecná rozhraní s parametry kovariantního typu  
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], mají několik obecných rozhraní parametry kovariantního typu, třeba: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IEnumerator%601>, <xref:System.Linq.IQueryable%601>, a <xref:System.Linq.IGrouping%602>. Všechny parametry typu těchto rozhraní jsou kovariantní. Parametry typu se tedy používají pouze pro návratové typy členů.  
+ Od verze rozhraní .NET Framework 4, má několik obecných rozhraní parametry kovariantního typu; Příklad: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IEnumerator%601>, <xref:System.Linq.IQueryable%601>, a <xref:System.Linq.IGrouping%602>. Všechny parametry typu těchto rozhraní jsou kovariantní. Parametry typu se tedy používají pouze pro návratové typy členů.  
   
  Následující příklad znázorňuje parametry kovariantního typu. Příklad definuje dva typy: `Base` má statickou metodu s názvem `PrintBases` , která má `IEnumerable<Base>` (`IEnumerable(Of Base)` v jazyce Visual Basic) a tisk prvků. `Derived` dědí z `Base`. Tento příklad vytvoří prázdnou `List<Derived>` (`List(Of Derived)` v jazyce Visual Basic) a ukazuje, že tento typ může být předán `PrintBases` a přiřadit proměnné typu `IEnumerable<Base>` bez přetypování. <xref:System.Collections.Generic.List%601> implementuje <xref:System.Collections.Generic.IEnumerable%601>, který má jediný parametr kovariantního typu. Typ kovariantního parametru je důvod, proč instance `IEnumerable<Derived>` lze použít místo `IEnumerable<Base>`.  
   
@@ -92,7 +92,7 @@ ms.locfileid: "64622727"
   
 <a name="InterfaceContravariantTypeParameters"></a>   
 ## <a name="generic-interfaces-with-contravariant-generic-type-parameters"></a>Obecná rozhraní s parametry obecného kontravariantního typu  
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], mají několik obecných rozhraní parametry kontravariantního typu; například: <xref:System.Collections.Generic.IComparer%601>, <xref:System.IComparable%601>, a <xref:System.Collections.Generic.IEqualityComparer%601>. Tato rozhraní mají pouze parametry kontravariantního typu, takže parametry typu slouží pouze jako typy parametrů u členů rozhraní.  
+ Od verze rozhraní .NET Framework 4, mají několik obecných rozhraní parametry kontravariantního typu; Příklad: <xref:System.Collections.Generic.IComparer%601>, <xref:System.IComparable%601>, a <xref:System.Collections.Generic.IEqualityComparer%601>. Tato rozhraní mají pouze parametry kontravariantního typu, takže parametry typu slouží pouze jako typy parametrů u členů rozhraní.  
   
  Následující příklad znázorňuje parametry kontravariantního typu. Tento příklad definuje abstraktní (`MustInherit` v jazyce Visual Basic) `Shape` třídy s `Area` vlastnost. Příklad také definuje `ShapeAreaComparer` třídu, která implementuje `IComparer<Shape>` (`IComparer(Of Shape)` v jazyce Visual Basic). Provádění <xref:System.Collections.Generic.IComparer%601.Compare%2A?displayProperty=nameWithType> metoda je založena na hodnotě `Area` vlastnosti, takže `ShapeAreaComparer` slouží k seřazení `Shape` objekty podle oblasti.  
   
@@ -107,7 +107,7 @@ ms.locfileid: "64622727"
   
 <a name="DelegateVariantTypeParameters"></a>   
 ## <a name="generic-delegates-with-variant-type-parameters"></a>Obecné delegáty s parametry variantního typu  
- V [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], `Func` obecné delegáty, jako například <xref:System.Func%602>, kovariantní návratové typy a kontravariantní typy parametru. `Action` Obecné delegáty, jako například <xref:System.Action%602>, mají kontravariantní typy parametru. To znamená, že delegáty lze přiřadit k proměnné, které mají více odvozené typy parametrů a (v případě třídy `Func` obecných delegátů) méně odvozené návratové typy.  
+ V rozhraní .NET Framework 4 `Func` obecné delegáty, jako například <xref:System.Func%602>, kovariantní návratové typy a kontravariantní typy parametru. `Action` Obecné delegáty, jako například <xref:System.Action%602>, mají kontravariantní typy parametru. To znamená, že delegáty lze přiřadit k proměnné, které mají více odvozené typy parametrů a (v případě třídy `Func` obecných delegátů) méně odvozené návratové typy.  
   
 > [!NOTE]
 >  Poslední parametr obecného typu `Func` obecné delegáty Určuje typ návratové hodnoty v signatuře delegátu. Jedná se o kovariantní (`out` – klíčové slovo), zatímco jiné parametry obecného typu jsou kontravariantní (`in` – klíčové slovo).  
@@ -146,10 +146,10 @@ ms.locfileid: "64622727"
   
 <a name="DefiningVariantTypeParameters"></a>   
 ## <a name="defining-variant-generic-interfaces-and-delegates"></a>Definování variantních obecných rozhraní a delegátů  
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], Visual Basic a C# mít klíčová slova, která umožňují označit parametry obecného typu rozhraní a delegátů jako kovariantní nebo kontravariantní.  
+ Od verze rozhraní .NET Framework 4, Visual Basic a C# klíčová slova, která umožňují označit parametry obecného typu rozhraní a delegátů jako kovariantní nebo kontravariantní.  
   
 > [!NOTE]
->  Počínaje verzí 2.0 rozhraní .NET Framework podporuje modul CLR (Common Language Runtime) anotace variance v parametrech obecného typu. Před verzí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je jediný způsob, jak definovat obecné třídy, která má tyto anotace použít jazyk Microsoft intermediate language (MSIL) buď kompilováním třídy pomocí [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) anebo jejím v dynamické sestavení.  
+>  Počínaje verzí 2.0 rozhraní .NET Framework podporuje modul CLR (Common Language Runtime) anotace variance v parametrech obecného typu. Před rozhraní .NET Framework 4 je jediný způsob, jak definovat obecné třídy, která má tyto anotace použít jazyk Microsoft intermediate language (MSIL) buď kompilováním třídy pomocí [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) anebo jejím v dynamické sestavení.  
   
  Typ kovariantního parametru je označen klíčovým `out` – klíčové slovo (`Out` – klíčové slovo v jazyce Visual Basic `+` pro [jazyk MSIL Assembler](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Parametr kovariantního typu můžete použít jako návratovou hodnotu metody, která patří do rozhraní, nebo jako návratový typ delegátu. Typ kovariantního parametru nelze použít jako omezení obecného typu pro metody rozhraní.  
   
@@ -168,7 +168,7 @@ ms.locfileid: "64622727"
   
 <a name="VariantList"></a>   
 ## <a name="list-of-variant-generic-interface-and-delegate-types"></a>Seznam variantních obecných typů rozhraní a delegátů  
- V [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], následující typy rozhraní a delegátů kovariantního a/nebo parametry kontravariantního typu.  
+ V rozhraní .NET Framework 4, mají následující typy rozhraní a delegátů kovariantního a/nebo parametry kontravariantního typu.  
   
 |Type|Parametry kovariantního typu|Parametry kontravariantního typu|  
 |----------|-------------------------------|-----------------------------------|  

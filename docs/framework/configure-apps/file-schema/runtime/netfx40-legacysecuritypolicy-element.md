@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20a0ca8560fcd5d7f9d171df3e3b4c3f42e78641
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 848c56773c0ff2986f0bec3e82a08a3d0dd35434
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674178"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456482"
 ---
 # <a name="netfx40legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
 Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).  
@@ -57,7 +57,7 @@ Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení
 ## <a name="remarks"></a>Poznámky  
  V rozhraní .NET Framework verze 3.5 a starší verze zásad CAS je vždy v vliv. V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], musí být povolené zásady CAS.  
   
- Zásady CAS je specifické pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích rozhraní .NET Framework musí být zadány znovu v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
+ Zásady CAS je specifické pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích rozhraní .NET Framework musí být zadány znovu v rozhraní .NET Framework 4.  
   
  Použití `<NetFx40_LegacySecurityPolicy>` elementu [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] sestavení nemá vliv na [kód transparentní pro zabezpečení](../../../../../docs/framework/misc/security-transparent-code.md); stále platí pravidla transparentnosti.  
   
@@ -65,7 +65,7 @@ Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení
 >  Použití `<NetFx40_LegacySecurityPolicy>` element může způsobit snížení výkonu pro sestavení nativních bitových kopií, které jsou vytvořené [Native Image Generator (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) , která nejsou v nainstalovaná [globální mezipaměti sestavení ](../../../../../docs/framework/app-domains/gac.md). Snížení výkonu způsobuje nemožnost modul runtime k načtení sestavení jako nativní bitové kopie, když se atribut používá, což vede k jejich načtených sestavení jako just-in-time.  
   
 > [!NOTE]
->  Pokud zadáte cílovou verzi rozhraní .NET Framework, která je starší než [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] v nastavení projektu pro projekt sady Visual Studio, zásady CAS bude povolena, včetně všechny vlastní zásady CAS zadané pro tuto verzi. Ale nebudete moci používat nové [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] typy a členy. Starší verzi rozhraní .NET Framework můžete také zadat pomocí [ \<supportedRuntime > element](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) v schéma nastavení spouštění ve vaší [konfiguračního souboru aplikace](../../../../../docs/framework/configure-apps/index.md).  
+>  Pokud chcete zadat cílovou verzi rozhraní .NET Framework, která je starší než rozhraní .NET Framework 4 v nastavení projektu pro projekt sady Visual Studio, zásady CAS se povolí, včetně všechny vlastní zásady CAS, které jste zadali pro tuto verzi. Ale nebudete moct používat nové rozhraní .NET Framework 4 typy a členy. Starší verzi rozhraní .NET Framework můžete také zadat pomocí [ \<supportedRuntime > element](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) v schéma nastavení spouštění ve vaší [konfiguračního souboru aplikace](../../../../../docs/framework/configure-apps/index.md).  
   
 > [!NOTE]
 >  Syntaxe konfigurační soubor je velká a malá písmena. Jak je uvedeno v části Syntaxe a příkladu, měli byste použít syntaxi.  

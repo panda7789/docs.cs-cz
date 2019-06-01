@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c35e796333aa3a93b7a66416fe0d93b7b1f3837f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 81110736651db9fe00b116c3abbbdaa8d3670bee
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920299"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456095"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
 Nástroje .NET Framework usnadňují vývoj, nasazení a správu aplikací a komponent určených pro rozhraní .NET Framework.  
@@ -63,10 +63,10 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  Zpracovává přenosné spustitelné (PE) soubory obsahující kód jazyka IL a vytváří textový soubor, který může být vstupem do assembleru jazyka IL (Ilasm.exe).  
   
  [Installutil.exe (instalační nástroj)](../../../docs/framework/tools/installutil-exe-installer-tool.md)  
- Dovoluje nainstalovat a odinstalovat prostředky serveru pomocí spuštění instalačních komponent v určeném sestavení. (Funguje s třídami v <xref:System.Configuration.Install> oboru názvů.) Dovoluje nainstalovat a odinstalovat prostředky serveru pomocí spuštění instalačních komponent v určeném sestavení. (Funguje s třídami v <xref:System.Configuration.Install> oboru názvů.)  
+ Dovoluje nainstalovat a odinstalovat prostředky serveru pomocí spuštění instalačních komponent v určeném sestavení. (Funguje s třídami v <xref:System.Configuration.Install> oboru názvů.) 
   
  [Lc.exe (kompilátor licencí)](../../../docs/framework/tools/lc-exe-license-compiler.md)  
- Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime). Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
+ Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime). 
   
  [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
  Dovoluje vytvářet, upravovat a podepisovat aplikace a manifesty nasazení. Jakožto nástroj příkazového řádku lze nástroj Mage.exe spouštět z dávkových skriptů a jiných aplikací pro systém Windows, včetně aplikací ASP.NET.  

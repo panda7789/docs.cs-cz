@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 78b670d8b23b5ecf274432d3758d07dae34dcfcf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d8733e11aba30ebea30fc71a5350f76dfd041eb4
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607171"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456415"
 ---
 # <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> Element
 Určuje, zda modul common language runtime umožňuje spravovanému kódu zachytit narušení přístupu a ostatní výjimky v poškozeném stavu.  
@@ -64,10 +64,10 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
   
 - Použít <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> atributu v metodě, která obsahuje výjimky `catch` bloku.  
   
- Tento prvek konfigurace je k dispozici pouze v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] a novější.  
+ Tento prvek konfigurace je k dispozici pouze v rozhraní .NET Framework 4 a novější.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit, že aplikace by měla vrátit k chování před [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]a zachytit všechny poskozeny stav výjimky selhání.  
+ Následující příklad ukazuje, jak určit, že aplikace by měla vrátit k chování před rozhraní .NET Framework 4 a zachytit všechny poskozeny stav výjimky selhání.  
   
 ```xml  
 <configuration>  

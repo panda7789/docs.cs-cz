@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 32e74a76b6b1bedee4efc5715d0710c8efce2455
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 45f3e8533bf7400566304ddb0fdd9d8e5a9b4280
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049372"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456133"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Silné názvy (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepisování sestavení silným názvem.  
@@ -26,82 +26,82 @@ Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepis
 >  Všechny tyto funkce jsou zastaralé od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Doporučené alternativy, najdete v článku [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) rozhraní.  
   
  [GetHashFromAssemblyFile – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromassemblyfile-function.md)  
- Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [GetHashFromAssemblyFileW – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromassemblyfilew-function.md)  
- Získá hodnotu hash souboru sestavení zadaná jako řetězec znaků Unicode, pomocí zadané hashovacího algoritmu. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá hodnotu hash souboru sestavení zadaná jako řetězec znaků Unicode, pomocí zadané hashovacího algoritmu. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [GetHashFromBlob – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromblob-function.md)  
- Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadané hashovacího algoritmu. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadané hashovacího algoritmu. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [GetHashFromFile – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromfile-function.md)  
- Vygeneruje hodnotu hash nad obsah zadaného souboru.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vygeneruje hodnotu hash nad obsah zadaného souboru.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [GetHashFromFileW – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromfilew-function.md)  
- Vygeneruje hodnotu hash přes obsah souboru určeného řetězce v kódování Unicode. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vygeneruje hodnotu hash přes obsah souboru určeného řetězce v kódování Unicode. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [GetHashFromHandle – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromhandle-function.md)  
- Vygeneruje hodnotu hash přes obsah souboru pomocí zadaného popisovače souboru, pomocí zadané hashovacího algoritmu.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vygeneruje hodnotu hash přes obsah souboru pomocí zadaného popisovače souboru, pomocí zadané hashovacího algoritmu.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameCompareAssemblies – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamecompareassemblies-function.md)  
- Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameErrorInfo – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md)  
  Získá poslední kód chyby, která byla vygenerována pomocí jedné z funkcí silného názvu.  
   
  [StrongNameFreeBuffer – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md)  
- Uvolnění paměti, která byla přidělena s předchozím volání funkce silným názvem, jako například [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [strongnametokenfrompublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md), nebo [strongnamesignaturegeneration – ](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md).   Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Uvolnění paměti, která byla přidělena s předchozím volání funkce silným názvem, jako například [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [strongnametokenfrompublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md), nebo [strongnamesignaturegeneration – ](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md).   Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameGetBlob – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetblob-function.md)  
- Vyplní zadané vyrovnávací paměti binární reprezentace spustitelný soubor na zadané adrese. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vyplní zadané vyrovnávací paměti binární reprezentace spustitelný soubor na zadané adrese. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameGetBlobFromImage – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetblobfromimage-function.md)  
- Získá binární vyjádření této bitové kopie sestavení na adrese zadaná paměťová. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá binární vyjádření této bitové kopie sestavení na adrese zadaná paměťová. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameGetPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md)  
- Získá veřejný klíč z páru klíčů privátní nebo veřejné. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá veřejný klíč z páru klíčů privátní nebo veřejné. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameHashSize – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamehashsize-function.md)  
- Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameKeyDelete – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamekeydelete-function.md)  
- Odstraní zadaný kontejner klíče. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Odstraní zadaný kontejner klíče. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameKeyGen – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamekeygen-function.md)  
- Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameKeyGenEx – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamekeygenex-function.md)  
- Generuje nový pár veřejného a privátního klíče se zadanou velikostí klíče pro použití silným názvem. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Generuje nový pár veřejného a privátního klíče se zadanou velikostí klíče pro použití silným názvem. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameKeyInstall – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamekeyinstall-function.md)  
- Importuje pár veřejného a privátního klíče do kontejneru.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Importuje pár veřejného a privátního klíče do kontejneru.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameSignatureGeneration – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)  
- Podpis silného názvu generuje pro zadané sestavení.   Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Podpis silného názvu generuje pro zadané sestavení.   Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameSignatureGenerationEx – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegenerationex-function.md)  
- Podpis silného názvu generuje pro zadané sestavení podle zadané příznaky.    Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Podpis silného názvu generuje pro zadané sestavení podle zadané příznaky.    Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameSignatureSize – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturesize-function.md)  
- Vrátí velikost položky podpis silného názvu. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vrátí velikost položky podpis silného názvu. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameSignatureVerification – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignatureverification-function.md)  
- Získá hodnotu označující, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu, který je ověřen podle zadané příznaky. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá hodnotu označující, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu, který je ověřen podle zadané příznaky. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameSignatureVerificationEx – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignatureverificationex-function.md)  
- Získá hodnotu označující, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá hodnotu označující, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameSignatureVerificationFromImage – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignatureverificationfromimage-function.md)  
- Ověřuje, že je platný pro přidružené veřejný klíč sestavení, které je již namapováno na paměť. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Ověřuje, že je platný pro přidružené veřejný klíč sestavení, které je již namapováno na paměť. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameTokenFromAssembly – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassembly-function.md)  
- Vytvoří token silného názvu ze zadaného souboru sestavení.  Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vytvoří token silného názvu ze zadaného souboru sestavení.  Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameTokenFromAssemblyEx – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassemblyex-function.md)  
- Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí veřejný klíč. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí veřejný klíč. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [StrongNameTokenFromPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md)  
- Získá token představující veřejný klíč. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Získá token představující veřejný klíč. Zastaralé od verze rozhraní .NET Framework 4.  
   
  [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
  Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  

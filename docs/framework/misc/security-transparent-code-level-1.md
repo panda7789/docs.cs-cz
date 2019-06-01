@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 01f9784cc2263c282d75251556a1f000027ca2ae
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ac2a5d7f72479d5b5f4180de4452143c4dbc8127
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639793"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456627"
 ---
 # <a name="security-transparent-code-level-1"></a>Kód transparentní pro zabezpečení, úroveň 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -24,7 +24,7 @@ ms.locfileid: "64639793"
  Průhlednost pomáhá vývojářům psát bezpečnější knihovny rozhraní .NET Framework, které poskytují funkce, které částečně důvěryhodným kódem. Transparentnosti úrovně 1 byla zavedena v rozhraní .NET Framework verze 2.0 a byla primárně používána pouze v rámci Microsoftu. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít [transparentnosti úrovně 2](../../../docs/framework/misc/security-transparent-code-level-2.md). Ale transparentnosti úrovně 1 byly ponechány, aby mohli identifikovat starší kód, který musí být spuštěn s starší pravidla zabezpečení.  
   
 > [!IMPORTANT]
->  Je třeba zadat transparentnosti úrovně 1 pouze pro kompatibilitu; To znamená, specifikovat úroveň 1 pouze pro kód, který byl vyvinut v rozhraní .NET Framework 3.5 nebo starším, který používá <xref:System.Security.AllowPartiallyTrustedCallersAttribute> nebo nepoužívá model transparentnosti. Například použijte transparentnosti úrovně 1 pro sestavení rozhraní .NET Framework 2.0, které umožňují volání od částečně důvěryhodných volajících (APTCA). Pro kód, který je vyvinutý pro [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], vždy použijte transparentnost druhé úrovně 2.  
+>  Je třeba zadat transparentnosti úrovně 1 pouze pro kompatibilitu; To znamená, specifikovat úroveň 1 pouze pro kód, který byl vyvinut v rozhraní .NET Framework 3.5 nebo starším, který používá <xref:System.Security.AllowPartiallyTrustedCallersAttribute> nebo nepoužívá model transparentnosti. Například použijte transparentnosti úrovně 1 pro sestavení rozhraní .NET Framework 2.0, které umožňují volání od částečně důvěryhodných volajících (APTCA). Pro kód, který je vyvinutý pro rozhraní .NET Framework 4 vždy použijte transparentnost druhé úrovně 2.  
   
  Toto téma obsahuje následující oddíly:  
   

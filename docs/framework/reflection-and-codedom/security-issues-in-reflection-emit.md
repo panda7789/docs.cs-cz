@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b6adbe4e5c82d5f886fcffd5ab272a337c377395
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5ca4a087b60e6cb857ec78273dad099e5e5da07a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586125"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457305"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
 Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsoft intermediate language (MSIL), každý s vlastní problémy se zabezpečením:  
@@ -78,7 +78,7 @@ Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsof
   
  Jako další emitovaný kód, spouštění dynamická metoda vyžaduje oprávnění jsou vyžadována metody, které používá dynamickou metodu.  
   
- Používá systém sestavení, který je hostitelem anonymně hostované dynamické metody <xref:System.Security.SecurityRuleSet.Level1?displayProperty=nameWithType> model transparentnosti, což je model transparentnosti, která byla použita v rozhraní .NET Framework před [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+ Používá systém sestavení, který je hostitelem anonymně hostované dynamické metody <xref:System.Security.SecurityRuleSet.Level1?displayProperty=nameWithType> model transparentnosti, což je model transparentnosti, která byla použita v rozhraní .NET Framework před rozhraní .NET Framework 4.  
   
  Další informace najdete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy.  
   
@@ -139,7 +139,7 @@ Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsof
   
 <a name="Version_Information"></a>   
 ## <a name="version-information"></a>Informace o verzi  
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], zásady zabezpečení pro celý počítač je odstraněny a změní výchozí mechanismus pro vynucení transparentnosti zabezpečení. Zobrazit [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+ Od verze rozhraní .NET Framework 4, zásady zabezpečení pro celý počítač odstraněny a změní výchozí mechanismus pro vynucení transparentnosti zabezpečení. Zobrazit [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
  Počínaje [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při generování dynamických sestavení a dynamické metody. Tento příznak je potřeba ve všech dřívějších verzích rozhraní .NET Framework.  
   

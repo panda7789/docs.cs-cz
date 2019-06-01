@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 725bd715f6e70dff08929e58d588a3d8561d5011
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 60fcdd902c6acf919e68806ff65e3b8142533280
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674061"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456383"
 ---
 # <a name="netfx40pinvokestackresilience-element"></a>\<Netfx40_pinvokestackresilience – > – Element
 Určuje, zda modul runtime automaticky opravy nesprávné volání nespravovaného kódu deklarace v době běhu, za cenu pomalejší přechody mezi spravováno a nespravovaný kód.  
@@ -56,7 +56,7 @@ Určuje, zda modul runtime automaticky opravy nesprávné volání nespravované
 ## <a name="remarks"></a>Poznámky  
  Tento prvek umožňuje obchodu rychlejší zařazování spolupráce pro za běhu odolnost proti nesprávné platformu vyvolání deklarace.  
   
- Počínaje [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], efektivní spolupráce zařazování architektura poskytuje významné výkonnostní zlepšení pro přechody ze spravovaného kódu do nespravovaného kódu. V dřívějších verzích rozhraní .NET Framework zařazování vrstvy zjistil nesprávný platformu vyvolání deklarace na 32bitových platformách a automaticky opravit, zásobníku. Nová architektura zařazování eliminuje tento krok. V důsledku toho přechody jsou velmi rychlé zpracování, ale nesprávné nespravovaného kódu deklarace může způsobit selhání programu.  
+ Od verze rozhraní .NET Framework 4, poskytuje efektivnější spolupráce zařazování architektura významné výkonnostní zlepšení pro přechody ze spravovaného kódu do nespravovaného kódu. V dřívějších verzích rozhraní .NET Framework zařazování vrstvy zjistil nesprávný platformu vyvolání deklarace na 32bitových platformách a automaticky opravit, zásobníku. Nová architektura zařazování eliminuje tento krok. V důsledku toho přechody jsou velmi rychlé zpracování, ale nesprávné nespravovaného kódu deklarace může způsobit selhání programu.  
   
  Chcete-li snadno zjistit nesprávná deklarace během vývoje, jsme vylepšili ladění prostředí sady Visual Studio. [PInvokeStackImbalance](../../../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md) pomocníka spravovaného ladění (MDA) upozorní nesprávné platformy vyvoláte deklarace když vaše aplikace běží s připojeným ladícím nástrojem.  
   

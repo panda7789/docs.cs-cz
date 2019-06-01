@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9c3970823557d1d1b24405fd4b390b81006533a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a3da3e48f898797849a5304c4884b648f47a26dd
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868898"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456566"
 ---
 # <a name="security-transparent-code-level-2"></a>Transparentní kód pro zabezpečení, úroveň 2
 
@@ -58,7 +58,7 @@ Toto téma obsahuje následující oddíly:
 
 ## <a name="usage-examples-and-behaviors"></a>Příklady použití a chování
 
-Chcete-li určit [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] pravidla (transparentnosti úrovně 2), použijte následující poznámce pro sestavení:
+K určování pravidel rozhraní .NET Framework 4 (transparentnosti úrovně 2), použijte následující poznámce pro sestavení:
 
 ```csharp
 [assembly: SecurityRules(SecurityRuleSet.Level2)]
@@ -70,7 +70,7 @@ Uzavřít se do pravidel rozhraní .NET Framework 2.0 (transparentnosti úrovně
 [assembly: SecurityRules(SecurityRuleSet.Level1)]
 ```
 
-Pokud není opatřit poznámkami sestavení, [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ve výchozím nastavení jsou použita pravidla. Nicméně doporučený osvědčeným postupem je použít <xref:System.Security.SecurityRulesAttribute> atribut místo v závislosti na výchozí.
+Pokud není opatřit poznámkami sestavení, se ve výchozím nastavení používají pravidla .NET Framework 4. Nicméně doporučený osvědčeným postupem je použít <xref:System.Security.SecurityRulesAttribute> atribut místo v závislosti na výchozí.
 
 ### <a name="assembly-wide-annotation"></a>Celé sestavení poznámky
 

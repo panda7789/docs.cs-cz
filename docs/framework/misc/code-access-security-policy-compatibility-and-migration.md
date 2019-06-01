@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d9281e52de43391a92262f85084715ccabd5515
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 796c3b03612138238cb336361ab49514d80b4d7b
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868911"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456648"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Kompatibilita a migrace zásad zabezpečení přístupu kódu
 
@@ -22,7 +22,7 @@ ms.locfileid: "61868911"
 
 Můžete se vyhnout upozornění a chyby buď:
 
-- [Migrace](#migration) k [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] nahrazení pro zastaralý volání.
+- [Migrace](#migration) na rozhraní .NET Framework 4 nahrazení pro zastaralý volání.
 
    \- nebo –
 
@@ -114,7 +114,7 @@ Výjimka za běhu:
 
 ### <a name="determining-an-assemblys-trust-level"></a>Určení úroveň důvěryhodnosti sestavení
 
-Zásady CAS z se často používá k určení sestavení nebo doména aplikace oprávnění sada udělení oprávnění nebo úroveň důvěryhodnosti. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] Zveřejňuje následující užitečné vlastnosti, které není potřeba řešit zásady zabezpečení:
+Zásady CAS z se často používá k určení sestavení nebo doména aplikace oprávnění sada udělení oprávnění nebo úroveň důvěryhodnosti. Rozhraní .NET Framework 4 zveřejňuje následující užitečné vlastnosti, které není potřeba řešit zásady zabezpečení:
 
 - <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType>
 
@@ -126,15 +126,15 @@ Zásady CAS z se často používá k určení sestavení nebo doména aplikace o
 
 ### <a name="application-domain-sandboxing"></a>Sandboxing domény aplikace
 
-<xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> Metoda se obvykle používá pro sandboxing sestavení v doméně aplikace. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] Zpřístupňuje členy, které není nutné používat <xref:System.Security.Policy.PolicyLevel> pro tento účel. Další informace najdete v tématu [jak: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
+<xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> Metoda se obvykle používá pro sandboxing sestavení v doméně aplikace. Zpřístupňuje rozhraní .NET Framework 4 členy, které není nutné používat <xref:System.Security.Policy.PolicyLevel> pro tento účel. Další informace najdete v tématu [jak: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
 
 ### <a name="determining-a-safe-or-reasonable-permission-set-for-partially-trusted-code"></a>Určení sady bezpečné nebo přiměřené oprávnění pro částečně důvěryhodný kód.
 
-Hostitelé často nutné určit oprávnění, které jsou vhodné pro kód izolace (sandbox), které jsou hostované. Před [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], poskytuje způsob, jak to provést pomocí zásad CAS <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> metoda. Jako náhradu [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] poskytuje <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> metodu, která vrací sadu pro zadaný důkazy bezpečný, standardní oprávnění.
+Hostitelé často nutné určit oprávnění, které jsou vhodné pro kód izolace (sandbox), které jsou hostované. Před rozhraní .NET Framework 4, zásady CAS poskytují způsob, jak to provést pomocí <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> metody. Jako náhradu, poskytuje rozhraní .NET Framework 4 <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> metodu, která vrací sadu pro zadaný důkazy bezpečný, standardní oprávnění.
 
 ### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>Non-Sandboxing scénáře: Přetížení pro načtení sestavení
 
-Použití parametrů, které jinak nejsou k dispozici, namísto sandboxing sestavení může být důvod pomocí přetížení načtení sestavení. Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], přetížení načtení sestavení, které nevyžadují, aby <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> objektu jako parametr, například <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>, povolit tento scénář.
+Použití parametrů, které jinak nejsou k dispozici, namísto sandboxing sestavení může být důvod pomocí přetížení načtení sestavení. Od verze rozhraní .NET Framework 4, načíst sestavení přetížení, které nevyžadují, aby <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> objektu jako parametr, například <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>, povolit tento scénář.
 
 Pokud chcete do izolovaného prostoru sestavení, použijte <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení.
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 059fadc5607e76b871083682136fda542ae9bacf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d97960a43e1d7ce625d96755a7c597a0425d0911
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758194"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457459"
 ---
 # <a name="profiling-interfaces"></a>Rozhraní pro profilaci
 Tato část popisuje nespravovaná rozhraní, které vám umožní profilování program, který se provádí modulem common language runtime (CLR).  
@@ -65,7 +65,7 @@ Poskytuje metodu zpětného volání, která používá modul common language ru
  Rozšiřuje `ICorProfilerInfo` rozhraní s metodami, které jsou podporovány v rozhraní .NET Framework 2.0 a novějších verzích.  
   
  [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- Rozšiřuje `ICorProfilerInfo2` rozhraní s metod podporovaných v [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] a novějších verzích.  
+ Rozšiřuje `ICorProfilerInfo2` rozhraní s metodami, které jsou podporovány v rozhraní .NET Framework 4 a novější verze.  
   
  [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  
  Poskytuje metody, které profilery kódu se používají ke komunikaci s modulem CLR k řízení sledování událostí a požádat o informace.  

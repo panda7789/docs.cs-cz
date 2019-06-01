@@ -9,12 +9,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: d8f37431279cc22b8e9c131f860b5de82f35af2e
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4ee973eb5a81a6428ee5a5fcfc00e28425ff2a44
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591202"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457512"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
@@ -22,7 +22,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
  Rozhraní .NET Framework poskytuje třídy, které vám umožní používat ukládání do mezipaměti v aplikacích .NET Framework. Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.
 
 > [!NOTE]
->  <xref:System.Runtime.Caching> Obor názvů je novinkou [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. Tento obor názvů umožňuje ukládání do mezipaměti je k dispozici pro všechny aplikace rozhraní .NET Framework. V předchozích verzích rozhraní .NET Framework, ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET.
+>  <xref:System.Runtime.Caching> Obor názvů je nového v rozhraní .NET Framework 4. Tento obor názvů umožňuje ukládání do mezipaměti je k dispozici pro všechny aplikace rozhraní .NET Framework. V předchozích verzích rozhraní .NET Framework, ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET.
 
  Tento návod ukazuje, jak používat ukládání do mezipaměti, která je k dispozici v rozhraní .NET Framework jako součást funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. V tomto návodu můžete ukládat do mezipaměti obsah textového souboru.
 
@@ -30,7 +30,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 - Vytvoření projektu aplikace WPF.
 
-- Přidání odkazu na [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].
+- Přidává se odkaz na rozhraní .NET Framework 4.
 
 - Inicializuje se mezipaměť.
 
@@ -62,12 +62,12 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
      **Nový projekt** se zobrazí dialogové okno.
 
-3. V části **nainstalované šablony**, vyberte programovací jazyk, který chcete použít (**jazyka Visual Basic** nebo **Visual C#**).
+3. V části **nainstalované šablony**, vyberte programovací jazyk, který chcete použít (**jazyka Visual Basic** nebo **Visual C#** ).
 
 4. V **nový projekt** dialogu **aplikace WPF**.
 
     > [!NOTE]
-    >  Pokud se nezobrazí **aplikace WPF** šablonu, ujistěte se, zda cílíte na verzi rozhraní .NET Framework, která podporuje WPF. V **nový projekt** dialogu [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] ze seznamu.
+    >  Pokud se nezobrazí **aplikace WPF** šablonu, ujistěte se, zda cílíte na verzi rozhraní .NET Framework, která podporuje WPF. V **nový projekt** dialogové okno, vyberte možnost rozhraní .NET Framework 4 ze seznamu.
 
 5. V **název** textové pole, zadejte název pro váš projekt. Například můžete zadat **WPFCaching**.
 
@@ -78,7 +78,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
      Otevře se Návrhář WPF v **návrhu** zobrazení a zobrazí soubor MainWindow.xaml. Visual Studio vytvoří **Můj projekt** složka, soubor Application.xaml a souboru MainWindow.xaml.
 
 ## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Cílení na rozhraní .NET Framework a přidání odkazu na ukládání do mezipaměti sestavení
- Ve výchozím nastavení, cílové aplikace WPF [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Použít <xref:System.Runtime.Caching> oboru názvů v aplikaci WPF, aplikace musí cílit [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] (není [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí obsahovat odkaz na obor názvů.
+ Ve výchozím nastavení, cílové aplikace WPF [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Použít <xref:System.Runtime.Caching> oboru názvů v aplikaci WPF, aplikace musí cílit na rozhraní .NET Framework 4 (ne [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí obsahovat odkaz na obor názvů.
 
  Proto, dalším krokem je změnit cílové rozhraní .NET Framework a přidejte odkaz na <xref:System.Runtime.Caching> oboru názvů.
 
@@ -97,7 +97,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
      **Pokročilé nastavení kompilátoru** se zobrazí dialogové okno.
 
-4. V **cílového rozhraní (všechny konfigurace)** seznamu vyberte [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. (Nesmí být zvolen [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
+4. V **cílového rozhraní (všechny konfigurace)** vyberte rozhraní .NET Framework 4. (Nesmí být zvolen [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
 
 5. Klikněte na **OK**.
 
@@ -121,7 +121,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 2. Klikněte na tlačítko **aplikace** kartu.
 
-3. V **Cílová architektura** seznamu vyberte [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. (Nesmí být zvolen **rozhraní .NET Framework 4 Client Profile**.)
+3. V **Cílová architektura** vyberte rozhraní .NET Framework 4. (Nesmí být zvolen **rozhraní .NET Framework 4 Client Profile**.)
 
 4. Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:
 

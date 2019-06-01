@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 30d9517c404dc76cdc0f8206599cacdb430a1ae9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: adf2e3e3d10f4f32952dbca270be4ca0924d0b73
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613981"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457274"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
 Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít v procesu – souběžně hostování v jediném procesu spuštění více verzí modulu common language runtime (CLR). Ve výchozím nastavení spravované komponenty modelu COM s verzí rozhraní .NET Framework, kterými byly vytvořeny, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spuštění.  
   
 ## <a name="background"></a>Pozadí  
- Rozhraní .NET Framework má vždy zadaná vedle sebe hostování pro spravovaný kód aplikace, ale předtím, než [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], neposkytl, které tuto funkci pro spravované komponenty modelu COM. V minulosti spravované komponenty modelu COM, která byla načtena do procesu běžel s verzí modulu runtime, který byl již načten nebo s nainstalovanou verzí rozhraní .NET Framework. Pokud tato verze není kompatibilní s komponenty modelu COM, součást selže.  
+ Rozhraní .NET Framework má vždy zadaná vedle sebe hostování pro aplikace spravovaného kódu, ale před rozhraní .NET Framework 4 se neposkytl, které tuto funkci pro spravované komponenty modelu COM. V minulosti spravované komponenty modelu COM, která byla načtena do procesu běžel s verzí modulu runtime, který byl již načten nebo s nainstalovanou verzí rozhraní .NET Framework. Pokud tato verze není kompatibilní s komponenty modelu COM, součást selže.  
   
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] Nabízí nový přístup k hostování vedle sebe, která zajišťuje následující:  
+ Rozhraní .NET Framework 4 nabízí nový přístup k hostování vedle sebe, která zajišťuje následující:  
   
 - Instalace nové verze rozhraní .NET Framework nemá žádný vliv na stávající aplikace.  
   
@@ -32,7 +32,7 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
   
 - **Vývojáři aplikací**. Hostování vedle sebe nemá téměř žádný vliv na vývojáře aplikací. Ve výchozím nastavení aplikace vždy spustit proti verzi rozhraní .NET Framework, které byly vytvořeny. To se nezměnil. Však mohou vývojáři toto chování přepsat a nasměrovat aplikace na spouštění v novější verzi rozhraní .NET Framework (viz [scénář 2](#scenarios)).  
   
-- **Vývojáři knihoven a spotřebitelé**. Hostování vedle sebe nevyřeší problémy s kompatibilitou vývojáři této knihovny pro rozpoznávání tváře. Knihovnu, která je přímo načíst aplikací – buď prostřednictvím přímého odkazu nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> volání – pořád používá modul runtime <xref:System.AppDomain> je načten do. Měli byste otestovat knihovny pro všechny verze rozhraní .NET Framework, které chcete podporovat. Pokud aplikace je kompilována použitím [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] runtime ale obsahuje knihovnu, která byla vytvořena pomocí starší modul runtime, knihovny použije [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] i prostředí runtime. Nicméně pokud máte aplikaci, která byla vytvořena pomocí starší modul runtime a knihovnu, která byla vytvořena pomocí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], musí přinutit aplikaci použít také [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] (naleznete v tématu [scénář 3](#scenarios)).  
+- **Vývojáři knihoven a spotřebitelé**. Hostování vedle sebe nevyřeší problémy s kompatibilitou vývojáři této knihovny pro rozpoznávání tváře. Knihovnu, která je přímo načíst aplikací – buď prostřednictvím přímého odkazu nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> volání – pořád používá modul runtime <xref:System.AppDomain> je načten do. Měli byste otestovat knihovny pro všechny verze rozhraní .NET Framework, které chcete podporovat. Pokud aplikace je kompilována použitím modul runtime rozhraní .NET Framework 4, ale obsahuje knihovnu, která byla vytvořena pomocí starší modul runtime, knihovny použije i modul runtime rozhraní .NET Framework 4. Nicméně, pokud máte aplikaci, která byla vytvořena pomocí starší modul runtime a knihovnu, která byla vytvořena pomocí rozhraní .NET Framework 4, je nutné donutit aplikace také pomocí rozhraní .NET Framework 4 (viz [scénář 3](#scenarios)).  
   
 - **Vývojáři komponent COM pro spravované**. V minulosti spravované komponenty modelu COM automaticky spustili pomocí nejnovější verze modulu runtime nainstalovaného v počítači. Teď můžete spustit komponenty modelu COM s verzí modulu runtime, které byly vytvořeny.  
   
@@ -52,13 +52,13 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
   
 - **Scénář 1:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework.  
   
-     Nainstalovaná verze rozhraní .NET framework: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a všechny ostatní verze rozhraní .NET Framework používá komponenty modelu COM.  
+     Nainstalovaná verze rozhraní .NET framework: Rozhraní .NET Framework 4 a všechny ostatní verze rozhraní .NET Framework používá komponenty modelu COM.  
   
      Co dělat: V tomto scénáři neprovádějte žádnou akci. Komponenty modelu COM se spustí s verzí rozhraní .NET Framework byla zaregistrována.  
   
-- **Scénář 2**: Spravované aplikace vytvořené pomocí [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , který chcete spustit s [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], ale mají snahu si spouštět [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] Pokud není k dispozici verze 2.0.  
+- **Scénář 2**: Spravované aplikace vytvořené pomocí [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , který chcete spustit s [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], ale mají snahu si spustit v rozhraní .NET Framework 4, pokud není k dispozici verze 2.0.  
   
-     Nainstalovaná verze rozhraní .NET framework: Starší verzi rozhraní .NET Framework a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+     Nainstalovaná verze rozhraní .NET framework: Starší verze rozhraní .NET Framework a .NET Framework 4.  
   
      Co dělat: V [konfiguračního souboru aplikace](../../../docs/framework/configure-apps/index.md) v adresáři aplikace, použijte [ \<spuštění > element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) a [ \<supportedRuntime >–element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) nastavte následujícím způsobem:  
   
@@ -71,9 +71,9 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
     </configuration>  
     ```  
   
-- **Scénář 3:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework, kterou chcete spustit s [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+- **Scénář 3:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework, kterou chcete spustit pomocí rozhraní .NET Framework 4.  
   
-     Nainstalovaná verze rozhraní .NET framework: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+     Nainstalovaná verze rozhraní .NET framework: Rozhraní .NET Framework 4.  
   
      Co dělat: V konfiguračním souboru aplikace v adresáři aplikace, použijte `<startup>` element s `useLegacyV2RuntimeActivationPolicy` atribut nastaven na `true` a `<supportedRuntime>` element nastavte následujícím způsobem:  
   

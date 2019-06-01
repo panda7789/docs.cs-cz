@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 00dc191d53d01d33a5dce3ed2d012942e2672dae
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 51bf359ea6ba4e5b45827928a50a095a7960a68f
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607515"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456715"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  
@@ -67,9 +67,9 @@ Stínové kopírování sestavení umožňuje, které se používají v doméně
   
 <a name="StartupPerformance"></a>   
 ## <a name="startup-performance"></a>Výkon při spuštění  
- Při spuštění aplikační doménu, která používá stínové kopírování sestavení, dochází ke zpoždění při sestavení v adresáři aplikace jsou zkopírovány do adresáře stínové kopie nebo ověřit, zda jsou již v tomto umístění. Před [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], všechna sestavení, které byly zkopírovány do dočasného adresáře. Každé sestavení byl otevřen kvůli ověření názvu sestavení a byl ověřen silný název. Pokud chcete zobrazit, zda bylo aktualizováno později, než kopírování v adresáři stínové kopie došlo k zaškrtnutí každé sestavení. Pokud ano, byl zkopírován do adresáře stínové kopie. A konečně byly zrušeny dočasné kopie.  
+ Při spuštění aplikační doménu, která používá stínové kopírování sestavení, dochází ke zpoždění při sestavení v adresáři aplikace jsou zkopírovány do adresáře stínové kopie nebo ověřit, zda jsou již v tomto umístění. Před rozhraní .NET Framework 4 všechna sestavení byly zkopírovány do dočasného adresáře. Každé sestavení byl otevřen kvůli ověření názvu sestavení a byl ověřen silný název. Pokud chcete zobrazit, zda bylo aktualizováno později, než kopírování v adresáři stínové kopie došlo k zaškrtnutí každé sestavení. Pokud ano, byl zkopírován do adresáře stínové kopie. A konečně byly zrušeny dočasné kopie.  
   
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], můžete přímo porovnat soubor datum a čas každého sestavení v adresáři aplikace pomocí souboru datum a čas kopie v adresáři stínové kopie je výchozí chování při spuštění. Pokud sestavení se aktualizovala, je zkopírován pomocí stejného postupu jako v předchozích verzích rozhraní .NET Framework. v opačném případě je načtena kopie v adresáři stínové kopie.  
+ Od verze rozhraní .NET Framework 4, výchozí chování při spuštění je přímo porovnat soubor datum a čas každého sestavení v adresáři aplikace pomocí souboru datum a čas kopie v adresáři stínové kopie. Pokud sestavení se aktualizovala, je zkopírován pomocí stejného postupu jako v předchozích verzích rozhraní .NET Framework. v opačném případě je načtena kopie v adresáři stínové kopie.  
   
  Výsledný zlepšení výkonu je největší pro aplikace, ve kterých sestavení se nemění často, a obvykle změn v malou podmnožinu sestavení. Pokud většinou sestavení v aplikace často mění, nový výchozí chování může způsobit snížení výkonu. Chování při spuštění z předchozích verzí rozhraní .NET Framework můžete obnovit tak, že přidáte [ \<shadowCopyVerifyByTimestamp > element](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) do konfiguračního souboru, s `enabled="false"`.  
   

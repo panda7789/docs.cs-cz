@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7f02cbac83bd1e849c30f6c732395335464e6e4e
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1f97892ecf7d891113cc7524dd8c1423e144583f
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582821"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457333"
 ---
 # <a name="runtime-profiling"></a>Běhová profilace
 Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj nebo nasazení. Tato část se týká vývojáři a správci systému, kteří chtějí získat informace o výkonu aplikace.  
@@ -54,7 +54,7 @@ Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj
  Pokud chcete Profilovat sestavení, která existuje v zóně nebo ve vzdálené sdílené složce, ujistěte se, že vzdálené sestavení má úplný vztah důvěryhodnosti na počítač, na kterém běží čítače výkonu. Pokud sestavení nemá dostatek vztah důvěryhodnosti, nebude fungovat čítače výkonu. Informace o udělení důvěry různým zónám najdete v tématu [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
   
 > [!NOTE]
->  V systémech, na kterém [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] je nainstalovaný, sledování výkonu nemusí zobrazit data pro čítače výkonu v některé kategorie, jako **.NET CLR Data** a **.NET CLR sítě**, pro aplikace, které byly vytvořeny pomocí [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)]. Pokud je to tento případ, můžete nakonfigurovat monitorování výkonu pro zobrazení těchto dat tak, že přidáte [ \<forceperformancecounteruniquesharedmemoryreads – >](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) prvku do konfiguračního souboru aplikace.  
+>  V systémech, na kterých je nainstalované rozhraní .NET Framework 4, sledování výkonu nemusí zobrazit data pro čítače výkonu v některé kategorie, jako **.NET CLR Data** a **.NET CLR sítě**, pro aplikace, které byly vytvořeny pomocí [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)]. Pokud je to tento případ, můžete nakonfigurovat monitorování výkonu pro zobrazení těchto dat tak, že přidáte [ \<forceperformancecounteruniquesharedmemoryreads – >](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) prvku do konfiguračního souboru aplikace.  
   
 ## <a name="reading-and-creating-performance-counters-programmatically"></a>Čtení a vytvoření čítače výkonu prostřednictvím kódu programu  
  Rozhraní .NET Framework poskytuje třídy, které můžete použít k programovému přístupu ke stejné informace výkonu, která je dostupná v konzole výkonu. Tyto třídy můžete také vytvořit vlastní čítače výkonu. Následující tabulka popisuje některé třídy, které jsou k dispozici v rozhraní .NET Framework pro sledování výkonu.  

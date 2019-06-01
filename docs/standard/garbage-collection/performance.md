@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da29bd6bc53b59f1f20e2272a8293b49e230bff0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 996ea7802473817594420a108470f7604170482e
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622868"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456801"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 <a name="top"></a> Toto téma popisuje problémy spojené s uvolňování paměti kolekce a využití paměti. Řeší problémy, které se vztahují na spravované haldě a vysvětluje, jak minimalizovat dopad uvolňování paměti u svých aplikací. Všechny problémy obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.  
@@ -61,7 +61,7 @@ ms.locfileid: "64622868"
  Profilovací programy mohou poskytnout komplexní informace. Komplexní profilovací programy však můžete případně upravit chování aplikace.  
   
 ### <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace  
- Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], (ARM) sledování prostředků domény aplikace umožňuje hostitelům k monitorování využití procesoru a paměti doménou aplikace. Další informace najdete v tématu [sledování prostředků aplikační domény](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).  
+ Od verze rozhraní .NET Framework 4, (ARM) sledování prostředků domény aplikace umožňuje hostitelům k monitorování využití procesoru a paměti doménou aplikace. Další informace najdete v tématu [sledování prostředků aplikační domény](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).  
   
  [Zpět na začátek](#top)  
   

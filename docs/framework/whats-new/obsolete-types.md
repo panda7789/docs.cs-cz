@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20a4ded811e0a62edb9ec138068a9439399c3282
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 6a1243ad856bc5f8cc104c9f2e08fce515a849d8
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380208"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457067"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v rozhraní .NET Framework 4.5 a rozhraní .NET Framework 4.6, uspořádané podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](obsolete-members.md).
@@ -588,7 +588,7 @@ ms.locfileid: "66380208"
 
 <a name="IEHost"></a>
 ### <a name="assembly-iehostdll-and-ieexecexe"></a>Sestavení: IEHost.dll a IEExec.exe
- Sestavení IEHost.dll a IEExec.exe byly odebrány z rozhraní .NET Framework. Všechny jejich typy a členové jsou zastaralé a od verze se nepodporují [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Tato sestavení byly použity k hostování ovládacích prvků Windows Forms a ke spuštění spustitelných souborů v aplikaci Internet Explorer. Doporučené alternativy patří ClickOnce, aplikace prohlížeče XAML (XBAP) a Microsoft Silverlight.
+ Sestavení IEHost.dll a IEExec.exe byly odebrány z rozhraní .NET Framework. Všechny jejich typy a členové jsou zastaralé a nejsou podporovány od verze rozhraní .NET Framework 4. Tato sestavení byly použity k hostování ovládacích prvků Windows Forms a ke spuštění spustitelných souborů v aplikaci Internet Explorer. Doporučené alternativy patří ClickOnce, aplikace prohlížeče XAML (XBAP) a Microsoft Silverlight.
 
  [Zpět na začátek](#introduction)
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ', '
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
-ms.openlocfilehash: 082f5bf9f8cdd8e5f44aa74e7b34e03637b5c579
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b74ab89837592de2de6cfa43d9efb1ed0f63d69
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663370"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457455"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Kromě toho nabízejí dokumenty toku dokumentu pokročilé funkce, jako je stránkování a sloupce. Toto téma obsahuje přehled toku dokumentů a postupy jejich vytvoření.  
@@ -152,7 +152,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  [!code-xaml[FlowOvwSnippets_snip#RunExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/RunSnippetsExample.xaml#runexample1)]  
   
- **Poznámka:**  Počínaje [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)], <xref:System.Windows.Documents.Run.Text%2A> vlastnost <xref:System.Windows.Documents.Run> objekt je vlastnost závislosti. Můžete vytvořit vazbu <xref:System.Windows.Documents.Run.Text%2A> vlastnost datového zdroje, jako <xref:System.Windows.Controls.TextBlock>. <xref:System.Windows.Documents.Run.Text%2A> Vlastnost plně podporuje jednosměrné vazby. <xref:System.Windows.Documents.Run.Text%2A> Vlastnost také podporuje obousměrnou vazbu, s výjimkou <xref:System.Windows.Controls.RichTextBox>. Příklad naleznete v tématu <xref:System.Windows.Documents.Run.Text%2A?displayProperty=nameWithType>.  
+ **Poznámka:**  Od verze rozhraní .NET Framework 4 <xref:System.Windows.Documents.Run.Text%2A> vlastnost <xref:System.Windows.Documents.Run> objekt je vlastnost závislosti. Můžete vytvořit vazbu <xref:System.Windows.Documents.Run.Text%2A> vlastnost datového zdroje, jako <xref:System.Windows.Controls.TextBlock>. <xref:System.Windows.Documents.Run.Text%2A> Vlastnost plně podporuje jednosměrné vazby. <xref:System.Windows.Documents.Run.Text%2A> Vlastnost také podporuje obousměrnou vazbu, s výjimkou <xref:System.Windows.Controls.RichTextBox>. Příklad naleznete v tématu <xref:System.Windows.Documents.Run.Text%2A?displayProperty=nameWithType>.  
   
  **značka span**  
   

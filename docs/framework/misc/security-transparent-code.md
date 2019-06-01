@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5cb528bbb4f85cd4502b4e2efabbcf592ac6bd0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 60f2856bea79f36beb3c467158114fa78d99e09a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868742"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456497"
 ---
 # <a name="security-transparent-code"></a>Kód transparentní pro zabezpečení
 
@@ -59,14 +59,14 @@ Transparentnost byla představena v rozhraní .NET Framework verze 2.0 zjednodu�
 
 Tyto úrovně jsou následující:
 
-- Úroveň 2 (<xref:System.Security.SecurityRuleSet.Level2>) – [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] pravidla transparentnosti.
+- Úroveň 2 (<xref:System.Security.SecurityRuleSet.Level2>) – pravidla transparentnosti rozhraní .NET Framework 4.
 
 - Úroveň 1 (<xref:System.Security.SecurityRuleSet.Level1>) – pravidla transparentnosti rozhraní .NET Framework 2.0.
 
 Hlavní rozdíl mezi těmito dvěma úrovněmi transparentnosti je, že 1 úroveň nevynucuje pravidla transparentnosti pro volání pocházející mimo sestavení a je určena pouze pro kompatibilitu.
 
 > [!IMPORTANT]
-> Je třeba zadat transparentnosti úrovně 1 pouze pro kompatibilitu; To znamená, specifikovat úroveň 1 pouze pro kód, který byl vyvinut v rozhraní .NET Framework 3.5 nebo starším, který používá <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut nebo nepoužívá model transparentnosti. Například použijte transparentnosti úrovně 1 pro sestavení rozhraní .NET Framework 2.0, které umožňují volání od částečně důvěryhodných volajících (APTCA). Pro kód, který je vyvinutý pro [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], vždy použijte transparentnost druhé úrovně 2.
+> Je třeba zadat transparentnosti úrovně 1 pouze pro kompatibilitu; To znamená, specifikovat úroveň 1 pouze pro kód, který byl vyvinut v rozhraní .NET Framework 3.5 nebo starším, který používá <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut nebo nepoužívá model transparentnosti. Například použijte transparentnosti úrovně 1 pro sestavení rozhraní .NET Framework 2.0, které umožňují volání od částečně důvěryhodných volajících (APTCA). Pro kód, který je vyvinutý pro rozhraní .NET Framework 4 vždy použijte transparentnost druhé úrovně 2.
 
 ### <a name="level-2-transparency"></a>Průhlednost úrovně 2
 
@@ -114,7 +114,7 @@ Modelu transparentnosti úrovně 1 má následující omezení:
 
 ## <a name="transparency-enforcement"></a>Vynucení transparentnosti
 
-Pravidla transparentnosti nejsou vynucena, dokud se transparentnost nevypočítá. V tu chvíli <xref:System.InvalidOperationException> je vyvolána, pokud je pravidlo transparentnosti porušeno. Čas, který je transparentnost vypočítána, závisí na několika faktorech a nemůže být předpovězen. Je vypočten tak pozdě nejvíce. V [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], dříve, než v rozhraní .NET Framework 2.0 dojde k výpočtu transparentnosti úrovně sestavení. Jediná záruka je, že výpočtu transparentnosti dojde v době, kdy je to potřeba. To se podobá jak kompilátor just-in-time (JIT) může měnit bod, když je metoda kompilována a zjištěny nějaké chyby v této metodě. Výpočet transparentnosti je neviditelný, pokud váš kód nemá nějaké chyby transparentnosti.
+Pravidla transparentnosti nejsou vynucena, dokud se transparentnost nevypočítá. V tu chvíli <xref:System.InvalidOperationException> je vyvolána, pokud je pravidlo transparentnosti porušeno. Čas, který je transparentnost vypočítána, závisí na několika faktorech a nemůže být předpovězen. Je vypočten tak pozdě nejvíce. V rozhraní .NET Framework 4 výpočtu transparentnosti úrovně sestavení dříve, než v rozhraní .NET Framework 2.0 dojde. Jediná záruka je, že výpočtu transparentnosti dojde v době, kdy je to potřeba. To se podobá jak kompilátor just-in-time (JIT) může měnit bod, když je metoda kompilována a zjištěny nějaké chyby v této metodě. Výpočet transparentnosti je neviditelný, pokud váš kód nemá nějaké chyby transparentnosti.
 
 ## <a name="see-also"></a>Viz také:
 

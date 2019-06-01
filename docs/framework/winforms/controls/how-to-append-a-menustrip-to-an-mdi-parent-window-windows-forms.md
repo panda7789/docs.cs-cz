@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], appending
 - MDI [Windows Forms], merging menu items
 ms.assetid: ab70c936-b452-4653-b417-17be57bb795b
-ms.openlocfilehash: d70418c6d8a626fd3ef54161086b24655037b086
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fdd5a24d444e494caedeed56402658399e97b90a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64612843"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457508"
 ---
 # <a name="how-to-append-a-menustrip-to-an-mdi-parent-window-windows-forms"></a>Postupy: Připojení prvku MenuStrip do nadřazeného okna MDI (Windows Forms)
 V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI) může lišit od nadřazeného okna MDI. Například nadřazený objekt MDI může být tabulku a podřízený formulář MDI může být grafu. V takovém případě budete chtít aktualizovat obsah nabídky nadřazený objekt MDI obsah nabídky podřízený formulář MDI jako podřízená okna MDI různé druhy se aktivují.  
@@ -43,7 +43,7 @@ V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI
   
 9. Nastavte <xref:System.Windows.Forms.MergeAction> vlastnost `&Special`, `Command&1`, a `Command&2` položky nabídky <xref:System.Windows.Forms.MergeAction.Append>.  
   
-10. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&New` <xref:System.Windows.Forms.ToolStripMenuItem>.  
+10. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&Open` <xref:System.Windows.Forms.ToolStripMenuItem>.  
   
 11. V rámci obslužné rutiny události vložení kódu podobně jako v následujícím příkladu kódu k vytváření a zobrazování nových instancí `Form2` jako podřízený objekt MDI `Form1`.  
   
@@ -51,9 +51,9 @@ V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI
     Private Sub openToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles openToolStripMenuItem.Click  
         Dim NewMDIChild As New Form2()  
         'Set the parent form of the child window.  
-            NewMDIChild.MdiParent = Me  
+        NewMDIChild.MdiParent = Me  
         'Display the new form.  
-            NewMDIChild.Show()  
+        NewMDIChild.Show()  
     End Sub  
     ```  
   
@@ -62,9 +62,9 @@ V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI
     {  
         Form2 newMDIChild = new Form2();  
         // Set the parent form of the child window.  
-            newMDIChild.MdiParent = this;  
+        newMDIChild.MdiParent = this;  
         // Display the new form.  
-            newMDIChild.Show();  
+        newMDIChild.Show();  
     }  
     ```  
   

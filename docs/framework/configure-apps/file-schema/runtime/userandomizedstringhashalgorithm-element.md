@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a51b9fb485da605effbad0e81b8baf5e05e382a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91983a0910b272e621783f0fdb68242ddbd20f03
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675088"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456184"
 ---
 # <a name="userandomizedstringhashalgorithm-element"></a>\<UseRandomizedStringHashAlgorithm > – Element
 Určuje, zda modul common language runtime vypočítá hash kódy pro řetězce na základě domény aplikace.  
@@ -58,7 +58,7 @@ Určuje, zda modul common language runtime vypočítá hash kódy pro řetězce 
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.StringComparer> třídy a <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> metoda používat jeden algoritmus hash, který generuje kód hash konzistentně napříč doménami aplikace. Jedná se o ekvivalent k nastavení `enabled` atribut `<UseRandomizedStringHashAlgorithm>` elementu `0`. To je algoritmus hash, který je používán [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
+ Ve výchozím nastavení <xref:System.StringComparer> třídy a <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> metoda používat jeden algoritmus hash, který generuje kód hash konzistentně napříč doménami aplikace. Jedná se o ekvivalent k nastavení `enabled` atribut `<UseRandomizedStringHashAlgorithm>` elementu `0`. Toto je hashovací algoritmus používaný v rozhraní .NET Framework 4.  
   
  <xref:System.StringComparer> Třídy a <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> metodu můžete použít také jiný algoritmu hash, který vypočítává hash kódy na základě domény aplikace. V důsledku toho se kódy hash pro odpovídající řetězce budou lišit napříč doménami aplikace. To je přihlašovaná funkce; využívat jejich výhod, musíte nastavit `enabled` atribut `<UseRandomizedStringHashAlgorithm>` elementu `1`.  
   

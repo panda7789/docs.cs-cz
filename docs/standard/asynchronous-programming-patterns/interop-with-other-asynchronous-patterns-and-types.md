@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2736c4758cbaaeda902b43aeea55611a21ea38ba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb99d6d78fc381e0b56efae51307eb469c535a9a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623808"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457347"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interoperabilita s jinými asynchronními vzory a typy
 Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak známé jako [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md), nebo `Begin/End` vzor.  Přidání rozhraní .NET Framework 2.0 [události asynchronní vzor založený (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  Od verze rozhraní .NET Framework 4 [úkolově orientovanou asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) nahrazuje funkce APM a protokolu EAP, ale umožňuje snadno vytvářet migraci rutin z předchozích vzory.  
@@ -37,7 +37,7 @@ Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak zn
   
 <a name="ApmToTap"></a>   
 ### <a name="from-apm-to-tap"></a>Z APM klepnutím  
- Vzhledem k tomu, [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) vzor je velmi strukturovaných, je poměrně snadné sestavení obálky vystavit jako implementace TAP implementaci APM. Ve skutečnosti, rozhraní .NET Framework počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], obsahuje pomocné rutiny v podobě <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> přetížení metody k poskytování tohoto převodu.  
+ Vzhledem k tomu, [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) vzor je velmi strukturovaných, je poměrně snadné sestavení obálky vystavit jako implementace TAP implementaci APM. Ve skutečnosti rozhraní .NET Framework, od verze rozhraní .NET Framework 4, obsahuje pomocné rutiny ve formě <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> přetížení metody k poskytování tohoto převodu.  
   
  Vezměte v úvahu <xref:System.IO.Stream> třídy a jeho <xref:System.IO.Stream.BeginRead%2A> a <xref:System.IO.Stream.EndRead%2A> metody, které představují protějšek APM synchronní <xref:System.IO.Stream.Read%2A> metody:  
   

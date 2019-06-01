@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6c8508b4ba7d6ac6e25fdcc70fb8162b8908e8fa
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aa256fe95013494488ff52258186763fab7a85c9
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592862"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456655"
 ---
 # <a name="code-access-security"></a>Zabezpečení přístupu kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -67,7 +67,7 @@ Procházení zásobníku zabezpečení
 |Název|Popis|  
 |-----------|-----------------|  
 |[Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md)|Popisuje zabezpečení přístupu kódu a jeho nejběžnější použití.|  
-|[Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md)|Popisuje model transparentnosti zabezpečení v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].|  
+|[Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md)|Popisuje model transparentnosti zabezpečení v rozhraní .NET Framework 4.|  
 |[Používání knihoven z částečně důvěryhodného kódu](../../../docs/framework/misc/using-libraries-from-partially-trusted-code.md)|Popisuje postup povolení knihovny pro použití s nespravovaným kódem a jak používat knihovny z nespravovaného kódu.|  
 |[Klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md)|Poskytuje přehled mnoha klíčové pojmy a koncepty používané v systém zabezpečení rozhraní .NET Framework.|  
 |[Zabezpečení na základě rolí](../../../docs/standard/security/role-based-security.md)|Popisuje, jak začlenit zabezpečení na základě rolí.|  

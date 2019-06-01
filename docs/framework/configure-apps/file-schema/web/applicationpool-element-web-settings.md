@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: 548f7de2753ef0c30aa787f4c879af87987bfbde
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f0486e9faf70e7d5d147cfef996edcdaa8846963
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621504"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456292"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool > – Element (nastavení webu)
 Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
@@ -59,7 +59,7 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
 > [!IMPORTANT]
 >  Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] na [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný aspnet.config souboru pro každý fond aplikací. Díky tomu můžete přizpůsobit výkonu vláken pro každý fond aplikací.  
   
- Pro `maxConcurrentRequestsPerCPU` nastavení, ve výchozím nastavení "5000" [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] efektivně vypne omezování žádostí, který je řízen technologie ASP.NET, pokud máte ve skutečnosti 5000 nebo více požadavků na CPU. Ve výchozím nastavení závisí na modulu CLR-fondu vláken k automatické správě souběžnosti jeden procesor a místo toho. Aplikace, které usnadňují používání příliš často používá asynchronní zpracování požadavků, nebo jež mají velký počet požadavků dlouhotrvající blokován v síti vstupně-výstupních operací, bude využívat zvýšení výchozí limit v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]. Nastavení `maxConcurrentRequestsPerCPU` na nulovou vypne použití spravovaných vláken pro zpracování požadavků ASP.NET. Pokud je aplikace spuštěna ve fondu aplikací služby IIS, požadavky zůstat ve vlákně vstupně-výstupních operací služby IIS a proto se omezuje souběžnosti vláken nastavením služby IIS.  
+ Pro `maxConcurrentRequestsPerCPU` nastavení, ve výchozím nastavení "5000" v rozhraní .NET Framework 4 efektivně vypne omezování žádostí, které je řízen pomocí technologie ASP.NET, pokud máte ve skutečnosti 5000 nebo více požadavků na CPU. Ve výchozím nastavení závisí na modulu CLR-fondu vláken k automatické správě souběžnosti jeden procesor a místo toho. Aplikace, které usnadňují používání příliš často používá asynchronní zpracování požadavků, nebo jež mají velký počet požadavků dlouhotrvající blokován v síti vstupně-výstupních operací, bude využít zvýšenou výchozí limit v rozhraní .NET Framework 4. Nastavení `maxConcurrentRequestsPerCPU` na nulovou vypne použití spravovaných vláken pro zpracování požadavků ASP.NET. Pokud je aplikace spuštěna ve fondu aplikací služby IIS, požadavky zůstat ve vlákně vstupně-výstupních operací služby IIS a proto se omezuje souběžnosti vláken nastavením služby IIS.  
   
  `requestQueueLimit` Nastavení funguje stejným způsobem jako `requestQueueLimit` atribut [processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) element, který je nastavení v souborech Web.config pro aplikace ASP.NET. Ale `requestQueueLimit` přepíše nastavení v souboru aspnet.config `requestQueueLimit` nastavení v souboru Web.config. Jinými slovy Pokud oba atributy jsou nastavené (ve výchozím nastavení, to je PRAVDA), `requestQueueLimit` přednost má nastavení v souboru aspnet.config.  
   

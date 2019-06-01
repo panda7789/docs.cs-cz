@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-ms.openlocfilehash: 9263edf18872f510f5f2f4e3e9cb793e45c5d0b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ca0c1b466f5a89730c72f32321394ccfc6d9c7a2
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61954099"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457356"
 ---
 # <a name="generics-in-xaml"></a>Obecné typy v jazyku XAML
 Rozhraní .NET Framework XAML Services jak je implementován v oboru názvů System.Xaml poskytuje podporu pro používání obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucování omezení voláním příslušné `Add` metodu pro případy, obecné kolekce. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v XAML.  
@@ -38,7 +38,7 @@ Rozhraní .NET Framework XAML Services jak je implementován v oboru názvů Sys
   
  Možná řešení pro podporu obecných použití patří definování rozšíření vlastního kódu, která vrací obecných typů, nebo které uvádějí zabalení třídy definice, která je odvozena od obecného typu, ale sloučí obecná omezení v definici třídy.  
   
- V WPF a cílení [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je možné použít funkce XAML 2009 spolu s `x:TypeArguments`, ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
+ V WPF a cílí na rozhraní .NET Framework 4, můžete použít funkce XAML 2009 spolu s `x:TypeArguments`, ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
   
  Vlastní pracovní postupy v modelu Windows Workflow Foundation pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] nepodporují použití obecných XAML.  
   

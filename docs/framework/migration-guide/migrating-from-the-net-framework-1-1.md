@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c683ce454e4db36367cb097371427d27dc4c555
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c43e17edf5795874d8b92db659f07e8f6ec3c30a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636365"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457243"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
 
@@ -62,10 +62,10 @@ Chcete-li posoudit dopad možných nejnovějších změn na aplikaci, musíte zk
 
 - [Změny v rozhraní .NET Framework 3.5 SP1](https://go.microsoft.com/fwlink/?LinkID=186989) změny dokumentů mezi verzí [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] a [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)].
 
-- [Problémy s migrací rozhraní .NET framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) změny dokumentů mezi verzí [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].
+- [Problémy s migrací rozhraní .NET framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) změny dokumentů mezi verzí [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] a rozhraní .NET Framework 4.
 
 ## <a name="obsolete-types-and-members"></a>Zastaralé typy a členy
 
 Dopad zastaralých typů a členů se poněkud liší od revidovaných aplikací a rekompilovaných aplikací. Použití zastaralých typů a členů neovlivní přesměrovanou aplikaci, pokud zastaralý typ nebo člen nebyl fyzicky odebrán z příslušného sestavení. Opětovnou kompilací aplikace, která používá zastaralé typy nebo členy, obvykle vytváří kompilátor varování spíše než chybu kompilátoru. V některých případech však dojde k chybě kompilátoru a kód, který používá zastaralý typ nebo člen nebude zkompilován úspěšně. V takovém případě je třeba přepsat zdrojový kód, který vyvolá zastaralý typ nebo člen předtím, než aplikaci znovu zkompilujete. Další informace o zastaralých typů a členů, naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md).
 
-Chcete-li posoudit dopad typů a členů, které již nejsou používání od vydání [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md). Zkontrolujte seznam zastaralých typů a členů pro [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].
+Chcete-li posoudit dopad typů a členů, které již nejsou používání od vydání [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md). Zkontrolujte seznam zastaralých typů a členů pro [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]a rozhraní .NET Framework 4.

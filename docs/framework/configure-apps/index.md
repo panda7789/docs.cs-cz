@@ -24,12 +24,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 972efa150d560e74f0e7daadf18688ac12b9fbf3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a8f5c6f6aba9ec4ad627fcd4d3b3caaff810ee72
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583649"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456199"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje vývojářům a správcům kontrolu a flexibilitu nad způsobem aplikace spouštět. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může ovládat, můžete přístup k aplikaci, která chránila prostředky, které verze sestavení může aplikace používat a kde jsou umístěny objekty a vzdálené aplikace. Vývojáři mohou umístit nastavení konfiguračních souborů, takže odpadá potřeba znovu zkompilovat aplikaci pokaždé, když se změní nastavení. Tato část popisuje, co lze konfigurovat a proč konfigurace aplikace může být užitečné.  
@@ -90,7 +90,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
  Konfigurační soubory zabezpečení obsahují informace o hierarchii skupiny kódu a sady oprávnění přidružené k úrovním zásad. Důrazně doporučujeme používat [nástroj Code Access Security Policy (Caspol.exe)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md) změnit zásady zabezpečení, aby se tyto zásady změny nenarušily konfigurační soubory zabezpečení.  
   
 > [!NOTE]
->  Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], konfigurační soubory zabezpečení jsou k dispozici pouze v případě, že došlo ke změně zásad zabezpečení.  
+>  Od verze rozhraní .NET Framework 4, konfigurační soubory zabezpečení jsou k dispozici pouze v případě, že došlo ke změně zásad zabezpečení.  
   
  Konfigurační soubory zabezpečení jsou umístěny zde:  
   

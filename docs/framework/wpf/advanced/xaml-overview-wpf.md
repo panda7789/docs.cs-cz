@@ -19,12 +19,12 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: 403bd881f6e6349a91fc952a80441b0cec0c08fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f03d9481a2af3edebe83df5b1b725b7290d30d00
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662253"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457538"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotného je větší než konceptu jazyka [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -307,7 +307,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
 ## <a name="xaml-security"></a>Zabezpečení XAML  
  XAML je značkovací jazyk, který představuje přímo vytváření instancí objektu a spuštění. Proto prvků vytvořených v XAML se stejnou moct pracovat s prostředky systému (třeba síťový přístup, v/v souborů systému) jako ekvivalentní, vygeneruje kód provádí.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] architektury zabezpečení [!INCLUDE[TLA#tla_cas](../../../../includes/tlasharptla-cas-md.md)]. To znamená, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah spuštěný v zóně internet má omezená oprávnění k provádění. "Volný XAML" (stránek XAML noncompiled interpretuje v okamžiku načtení pomocí prohlížeče XAML) a [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] jsou obvykle spouštěny v této zóně internet a používá stejnou sadu oprávnění.  XAML načteno do plně důvěryhodné aplikaci v ale má stejný přístup k systémovým prostředkům stejně jako hostitelské aplikace. Další informace najdete v tématu [částečné zabezpečení důvěryhodnosti WPF](../wpf-partial-trust-security.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje rozhraní .NET Framework 4 zabezpečení [!INCLUDE[TLA#tla_cas](../../../../includes/tlasharptla-cas-md.md)]. To znamená, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah spuštěný v zóně internet má omezená oprávnění k provádění. "Volný XAML" (stránek XAML noncompiled interpretuje v okamžiku načtení pomocí prohlížeče XAML) a [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] jsou obvykle spouštěny v této zóně internet a používá stejnou sadu oprávnění.  XAML načteno do plně důvěryhodné aplikaci v ale má stejný přístup k systémovým prostředkům stejně jako hostitelské aplikace. Další informace najdete v tématu [částečné zabezpečení důvěryhodnosti WPF](../wpf-partial-trust-security.md).  
   
 <a name="loading_xaml_from_code"></a>   
 ## <a name="loading-xaml-from-code"></a>Načítání z kódu XAML  

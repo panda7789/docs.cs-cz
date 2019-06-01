@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 18afb2765db41abd305fb83907c08fad75a1d72b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 18e737ec1f6c6f76ff882d48ad311a45ba7b756b
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635236"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456737"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu dynamic (C# Programming Guide)
 
@@ -25,7 +25,7 @@ Například pokud metodu instance `exampleMethod1` v následujícím kódu má p
 
 Role kompilátor v těchto příkladech je do balíčku společně informace o všech příkazů navrhuje k objektu nebo výraz, který je zadán jako `dynamic`. V době běhu je zkontrolován uložené informace a jakýkoli příkaz, který není platný způsobí, že výjimka za běhu.
 
-Výsledek nejvíce dynamické operace je samotný `dynamic`. Například, pokud ukazatel myši nad rámec použití `testSum` v následujícím příkladu, technologie IntelliSense zobrazí typ **dynamické testSum (lokální proměnná)**.
+Výsledek nejvíce dynamické operace je samotný `dynamic`. Například, pokud ukazatel myši nad rámec použití `testSum` v následujícím příkladu, technologie IntelliSense zobrazí typ **dynamické testSum (lokální proměnná)** .
 
 [!code-csharp[CsProgGuideTypes#51](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/usingdynamic.cs#51)]
 
@@ -60,7 +60,7 @@ Naopak implicitní převod může dynamicky uplatňují na libovolný výraz typ
 
 ## <a name="dynamic-language-runtime"></a>Runtime modul dynamického jazyka
 
-Dynamické jazykovým modulem runtime (DLR) je nová rozhraní API v [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. Poskytuje infrastrukturu, která podporuje `dynamic` typu v jazyce C# a také provádění dynamických programovacích jazyků, jako je například IronPython a IronRuby. Další informace o DLR najdete v tématu [přehled dynamického modulu Runtime jazyka](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).
+Dynamické jazykovým modulem runtime (DLR) je nová rozhraní API v rozhraní .NET Framework 4. Poskytuje infrastrukturu, která podporuje `dynamic` typu v jazyce C# a také provádění dynamických programovacích jazyků, jako je například IronPython a IronRuby. Další informace o DLR najdete v tématu [přehled dynamického modulu Runtime jazyka](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).
 
 ## <a name="com-interop"></a>zprostředkovatel komunikace s objekty COM
 

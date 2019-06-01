@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80559118140b8bf9f5228c3db3811faecc0e8f73
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: c6b7b120a5a21301ff82aa8ebd1cfc169f7884e4
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378247"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457433"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -253,7 +253,7 @@ Souběžné uvolňování paměti
  V uvolňování paměti na pozadí jsou dočasné generace (0 a 1) shromažďovány podle potřeby, zatímco probíhá shromažďování generace 2. Neexistuje žádné nastavení pro uvolňování paměti na pozadí; je automaticky povoleno se souběžným uvolňováním. Uvolňování paměti na pozadí nahrazuje souběžné uvolňování paměti. Jako s souběžné uvolňování paměti, uvolňování paměti na pozadí se provádí na vyhrazeném vlákně a je použitelné pouze pro kolekce generace 2.  
   
 > [!NOTE]
->  Je k dispozici pouze v uvolňování paměti na pozadí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a novějších verzích. V [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je podporována pouze pro uvolnění paměti pracovní stanice. Od verze rozhraní .NET Framework 4.5, uvolňování paměti na pozadí je k dispozici pro uvolnění paměti pracovní stanice a serveru.  
+>  Uvolňování paměti na pozadí je k dispozici pouze v rozhraní .NET Framework 4 a novější verze. V rozhraní .NET Framework 4 je podporována pouze pro uvolnění paměti pracovní stanice. Od verze rozhraní .NET Framework 4.5, uvolňování paměti na pozadí je k dispozici pro uvolnění paměti pracovní stanice a serveru.  
   
  Kolekce na dočasných generacích během uvolňování paměti na pozadí se nazývá uvolnění paměti popředí. Pokud dojde k uvolnění paměti popředí, všechna spravovaná vlákna jsou pozastavena.  
   
