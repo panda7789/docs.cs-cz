@@ -9,12 +9,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: cc55809ecaffa4cab4fa4336f9f7f5c06debde2d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c6bf4c6b262bc9066277a683d5eda67ada6f4d08
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634200"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456210"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime > – element
 
@@ -22,7 +22,7 @@ Určuje, jaké verze společného běhového jazykového a volitelně verzi rozh
 
 [\<configuration>](../configuration-element.md)  
 &nbsp;&nbsp;[\<startup>](../startup/startup-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime >**  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<supportedRuntime >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,7 +41,7 @@ Určuje, jaké verze společného běhového jazykového a volitelně verzi rozh
 
 Pokud  **\<supportedRuntime >** prvek není k dispozici v konfiguračním souboru aplikace, je použita verze modulu runtime používá k sestavení aplikace.
 
- **\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít [ \<requiredRuntime >](../startup/requiredruntime-element.md) elementu.
+**\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít [ \<requiredRuntime >](../startup/requiredruntime-element.md) elementu.
 
 > [!NOTE]
 > Pokud používáte [CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) funkce zadejte konfigurační soubor, je nutné použít `<requiredRuntime>` – element pro všechny verze modulu runtime. `<supportedRuntime>` Prvek je ignorován při použití [CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
@@ -51,7 +51,7 @@ U aplikací podporujících verze modulu runtime v rozhraní .NET Framework 1.1 
 Pokud  **\<supportedRuntime >** křížkem `sku` atribut nachází v konfiguračním souboru a nainstalovaná verze rozhraní .NET Framework je nižší zadané podporovanou verzi, aplikace selže-li a místo toho zobrazí zpráva s dotazem, chcete-li nainstalovat podporovanou verzi. V opačném případě se aplikace pokusí spustit na libovolné nainstalované verzi, ale to může se chovat neočekávaně Pokud není plně kompatibilní s touto verzí. (Kompatibilita rozdíly mezi verzemi rozhraní .NET Framework, naleznete v tématu [kompatibilita aplikací v rozhraní .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/application-compatibility).) Proto doporučujeme, zahrňte tento prvek v konfiguračním souboru aplikace pro snazší Diagnostika chyb. (Konfigurační soubor, automaticky generuje služba Visual Studio při vytváření nového projektu už obsahuje ji.)
   
 > [!NOTE]
-> Pokud vaše aplikace používá starší verzi aktivační cesty, jako [CorBindToRuntimeEx – funkce](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty k aktivaci místo starší verzi modulu CLR verze 4 nebo pokud je vaše aplikace je sestavena pomocí [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], ale má závislost na sestavení ve smíšeném režimu, vytvořené ve starší verzi rozhraní .NET Framework, nestačí k určení [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] v seznamu podporovaných modulů runtime. Kromě toho v [ \<spuštění > element](../startup/startup-element.md) v konfiguračním souboru, je nutné nastavit `useLegacyV2RuntimeActivationPolicy` atribut `true`. Však nastavení tohoto atributu na `true` znamená, že všechny komponenty sestavené v předchozích verzích rozhraní .NET Framework budou spuštěny pomocí [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] namísto modulů runtime, kterými byly vytvořeny.
+> Pokud vaše aplikace používá starší verzi aktivační cesty, jako [CorBindToRuntimeEx – funkce](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty k aktivaci místo starší verzi modulu CLR verze 4 nebo pokud vaše aplikace je sestavena pomocí rozhraní .NET Framework 4, ale má závislost na sestavení ve smíšeném režimu, vytvořené ve starší verzi rozhraní .NET Framework, nestačí k určení rozhraní .NET Framework 4 v seznamu podporovaných modulů runtime. Kromě toho v [ \<spuštění > element](../startup/startup-element.md) v konfiguračním souboru, je nutné nastavit `useLegacyV2RuntimeActivationPolicy` atribut `true`. Však nastavení tohoto atributu na `true` znamená, že všechny komponenty sestavené v předchozích verzích rozhraní .NET Framework budou spuštěny pomocí rozhraní .NET Framework 4 namísto modulů runtime, kterými byly vytvořeny.
 
 Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých by měla být spuštěna.
 
