@@ -2,11 +2,11 @@
   href: index.md
   items:
     - name: Typy
-      href: types.md
       items:
         - name: Typy hodnot
-          href: value-types.md
           items:
+            - name: Funkce typů hodnot
+              href: value-types.md
             - name: bool
               href: bool.md
             - name: byte
@@ -29,7 +29,7 @@
               href: sbyte.md
             - name: short
               href: short.md
-            - name: 'struct '
+            - name: struct
               href: struct.md
             - name: uint
               href: uint.md
@@ -37,9 +37,10 @@
               href: ulong.md
             - name: ushort
               href: ushort.md
-        - name: Typy odkazů
-          href: reference-types.md
+        - name: Odkazové typy
           items:
+            - name: Funkce odkazových typů
+              href: reference-types.md
             - name: třída
               href: class.md
             - name: delegát
@@ -57,7 +58,6 @@
         - name: var
           href: var.md
         - name: Referenční tabulky pro typy
-          href: reference-tables-for-types.md
           items:
             - name: Tabulka předdefinovaných typů
               href: built-in-types-table.md
@@ -76,11 +76,11 @@
             - name: Tabulka formátování číselných výsledků
               href: formatting-numeric-results-table.md
     - name: Modifikátory
-      href: modifiers.md
       items:
         - name: Modifikátory přístupu
-          href: access-modifiers.md
           items:
+            - name: Stručná referenční dokumentace
+              href: access-modifiers.md
             - name: Úrovně přístupnosti
               href: accessibility-levels.md
             - name: Doména přístupnosti
@@ -128,17 +128,16 @@
         - name: volatile
           href: volatile.md
     - name: Klíčová slova příkazů
-      href: statement-keywords.md
       items:
+        - name: Kategorie příkazů
+          href: statement-keywords.md
         - name: Příkazy výběru
-          href: selection-statements.md
           items:
             - name: if-else
               href: if-else.md
             - name: – přepínač
               href: switch.md
         - name: Příkazy iterace
-          href: iteration-statements.md
           items:
             - name: do
               href: do.md
@@ -149,7 +148,6 @@
             - name: while
               href: while.md
         - name: Příkazy skoku
-          href: jump-statements.md
           items:
             - name: break
               href: break.md
@@ -160,7 +158,6 @@
             - name: return
               href: return.md
         - name: Příkazy zpracování výjimek
-          href: exception-handling-statements.md
           items:
             - name: throw
               href: throw.md
@@ -171,8 +168,9 @@
             - name: try-catch-finally
               href: try-catch-finally.md
         - name: Zaškrtnuto a nezaškrtnuto
-          href: checked-and-unchecked.md
           items:
+            - name: Přehled
+              href: checked-and-unchecked.md
             - name: checked
               href: checked.md
             - name: unchecked
@@ -182,8 +180,9 @@
         - name: lock – příkaz
           href: lock-statement.md
     - name: Parametry metody
-      href: method-parameters.md
       items:
+        - name: Předávání parametrů
+          href: method-parameters.md
         - name: params
           href: params.md
         - name: in (modifikátor parametrů)
@@ -193,13 +192,13 @@
         - name: out (modifikátor parametrů)
           href: out-parameter-modifier.md
     - name: Klíčová slova oboru názvů
-      href: namespace-keywords.md
       items:
         - name: – obor názvů
           href: namespace.md
-        - name: používání
-          href: using.md
+        - name: using
           items:
+            - name: using – kontexty
+              href: using.md
             - name: using – direktiva
               href: using-directive.md
             - name: using static – direktiva
@@ -209,7 +208,6 @@
         - name: extern alias
           href: extern-alias.md
     - name: Klíčová slova operátorů
-      href: operator-keywords.md
       items:
         - name: as
           href: as.md
@@ -218,8 +216,9 @@
         - name: is
           href: is.md
         - name: new
-          href: new.md
           items:
+            - name: 'new – operátor, modifikátor a omezení'
+              href: new.md
             - name: new – operátor
               href: new-operator.md
             - name: new – modifikátor
@@ -235,7 +234,6 @@
         - name: nameof
           href: nameof.md
     - name: Klíčová slova převodu
-      href: conversion-keywords.md
       items:
         - name: explicit
           href: explicit.md
@@ -244,14 +242,12 @@
         - name: – operátor
           href: operator.md
     - name: Klíčová slova přístupu
-      href: access-keywords.md
       items:
         - name: base
           href: base.md
         - name: this
           href: this.md
     - name: Literálová klíčová slova
-      href: literal-keywords.md
       items:
         - name: 'null'
           href: null.md
@@ -262,8 +258,9 @@
         - name: default
           href: default.md
     - name: Kontextová klíčová slova
-      href: contextual-keywords.md
       items:
+        - name: Stručná referenční dokumentace
+          href: contextual-keywords.md
         - name: add
           href: add.md
         - name: get
@@ -287,8 +284,9 @@
         - name: yield
           href: yield.md
     - name: Klíčová slova dotazu
-      href: query-keywords.md
       items:
+        - name: Stručná referenční dokumentace
+          href: query-keywords.md
         - name: from – klauzule
           href: from-clause.md
         - name: where – klauzule

@@ -1,6 +1,7 @@
 - name: Typy
-  href: index.md
   items:
+    - name: Použití a definování typů
+      href: index.md
     - name: Přetypování a převody typů
       href: casting-and-type-conversions.md
     - name: Zabalení a rozbalení

@@ -5,37 +5,38 @@
       href: statements.md
     - name: Výrazy
       href: expressions.md
-      items:
-        - name: Členové tvoření výrazy
-          href: expression-bodied-members.md
+    - name: Členové tvoření výrazy
+      href: expression-bodied-members.md
     - name: Operátory
       href: operators.md
     - name: Anonymní funkce
-      href: anonymous-functions.md
       items:
+        - name: Přehled
+          href: anonymous-functions.md
         - name: Lambda – výrazy
           href: lambda-expressions.md
-          items:
-            - name: "Postupy: Použití výrazů lambda v\_dotazu"
-              href: how-to-use-lambda-expressions-in-a-query.md
-            - name: 'Postupy: Použití výrazů lambda mimo LINQ'
-              href: how-to-use-lambda-expressions-outside-linq.md
+        - name: "Postupy: Použití výrazů lambda v\_dotazu"
+          href: how-to-use-lambda-expressions-in-a-query.md
+        - name: 'Postupy: Použití výrazů lambda mimo LINQ'
+          href: how-to-use-lambda-expressions-outside-linq.md
         - name: Anonymní metody
           href: anonymous-methods.md
     - name: Přetížitelné operátory
       href: overloadable-operators.md
     - name: Operátory převodu
-      href: conversion-operators.md
       items:
+        - name: Přehled převodů
+          href: conversion-operators.md
         - name: Použití operátorů převodu
           href: using-conversion-operators.md
         - name: 'Postupy: Implementace uživatelem definovaných převodů mezi strukturami'
           href: how-to-implement-user-defined-conversions-between-structs.md
     - name: Výrazy s výchozími hodnotami
       href: default-value-expressions.md
-    - name: Porovnání rovnosti
-      href: equality-comparisons.md
+    - name: Rovnost a porovnání rovnosti
       items:
+        - name: Porovnání rovnosti
+          href: equality-comparisons.md
         - name: 'Postupy: Definování rovnosti hodnoty pro typ'
           href: how-to-define-value-equality-for-a-type.md
         - name: 'Postupy: Testování rovnosti (identity) odkazů'

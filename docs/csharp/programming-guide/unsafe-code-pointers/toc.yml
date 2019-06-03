@@ -1,13 +1,13 @@
-- name: Nezabezpečený kód a ukazatele
-  href: index.md
-  items:
-    - name: Vyrovnávací paměti pevné velikosti
-      href: fixed-size-buffers.md
-    - name: Typy ukazatelů
-      items:
-        - name: Přehled
-          href: pointer-types.md
-        - name: Převody ukazatele
-          href: pointer-conversions.md
-        - name: 'Postupy: Použití ukazatelů ke kopírování pole bajtů'
-          href: how-to-use-pointers-to-copy-an-array-of-bytes.md
+items:
+  - name: Přehled a omezení
+    href: index.md
+  - name: Vyrovnávací paměti pevné velikosti
+    href: fixed-size-buffers.md
+  - name: Typy ukazatelů
+    items:
+      - name: Přehled
+        href: pointer-types.md
+      - name: Převody ukazatele
+        href: pointer-conversions.md
+      - name: 'Postupy: Použití ukazatelů ke kopírování pole bajtů'
+        href: how-to-use-pointers-to-copy-an-array-of-bytes.md
