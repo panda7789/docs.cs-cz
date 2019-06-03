@@ -1,6 +1,8 @@
 - name: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
   href: index.md
   items:
+    - name: Přehled
+      href: index.md
     - name: Pochopení modelu rozhraní API kompilátoru
       href: compiler-api-model.md
     - name: Práce se syntaxí

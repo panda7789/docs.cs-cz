@@ -13,9 +13,10 @@
       href: async-return-types.md
     - name: "Řízení toku v programech s\_modifikátorem Async"
       href: control-flow-in-async-programs.md
-    - name: "Vyladění aplikace s\_modifikátorem Async"
-      href: fine-tuning-your-async-application.md
+    - name: Zrušení úloh a zpracování dokončených úloh
       items:
+        - name: Přehled
+          href: fine-tuning-your-async-application.md
         - name: "Zrušení úlohy nebo seznamu úloh s\_modifikátorem Async"
           href: cancel-an-async-task-or-a-list-of-tasks.md
         - name: "Zrušení úloh s\_modifikátorem Async po uplynutí časového intervalu"

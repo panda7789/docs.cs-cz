@@ -1,6 +1,7 @@
 - name: Referenční dokumentace jazyka
-  href: index.md
   items:
+    - name: 'Referenční dokumentace jazyka C#'
+      href: index.md
     - name: Konfigurace verze jazyka
       href: configure-language-version.md
     - name: 'Klíčová slova jazyka C#'
