@@ -16,45 +16,45 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66300702"
 ---
-# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a><span data-ttu-id="9105f-102">\<Odebrat > – element pro NameValueSectionHandler a DictionarySectionHandler</span><span class="sxs-lookup"><span data-stu-id="9105f-102">\<remove> element for NameValueSectionHandler and DictionarySectionHandler</span></span>
+# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a><span data-ttu-id="a9fb7-102">\<Odebrat > – element pro NameValueSectionHandler a DictionarySectionHandler</span><span class="sxs-lookup"><span data-stu-id="a9fb7-102">\<remove> element for NameValueSectionHandler and DictionarySectionHandler</span></span>
 
-<span data-ttu-id="9105f-103">Odstraní dříve definované nastavení.</span><span class="sxs-lookup"><span data-stu-id="9105f-103">Removes a previously defined setting.</span></span>
+<span data-ttu-id="a9fb7-103">Odstraní dříve definované nastavení.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-103">Removes a previously defined setting.</span></span>
 
-<span data-ttu-id="9105f-104">[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="9105f-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="9105f-105">&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md) </span><span class="sxs-lookup"><span data-stu-id="9105f-105">&nbsp;&nbsp;[**\<sectionName>**](~/docs/framework/configure-apps/file-schema/custom-element-2.md) </span></span>  
-<span data-ttu-id="9105f-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**</span><span class="sxs-lookup"><span data-stu-id="9105f-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**</span></span>
+<span data-ttu-id="a9fb7-104">[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="a9fb7-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
+<span data-ttu-id="a9fb7-105">&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md) </span><span class="sxs-lookup"><span data-stu-id="a9fb7-105">&nbsp;&nbsp;[**\<sectionName>**](~/docs/framework/configure-apps/file-schema/custom-element-2.md) </span></span>  
+<span data-ttu-id="a9fb7-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**</span><span class="sxs-lookup"><span data-stu-id="a9fb7-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="9105f-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9105f-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a9fb7-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a9fb7-107">Syntax</span></span>
 
 ```xml
 <add remove="key" />
 ```
 
-## <a name="attribute"></a><span data-ttu-id="9105f-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="9105f-108">Attribute</span></span>
+## <a name="attribute"></a><span data-ttu-id="a9fb7-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="a9fb7-108">Attribute</span></span>
 
-|           | <span data-ttu-id="9105f-109">Popis</span><span class="sxs-lookup"><span data-stu-id="9105f-109">Description</span></span> |
+|           | <span data-ttu-id="a9fb7-109">Popis</span><span class="sxs-lookup"><span data-stu-id="a9fb7-109">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="9105f-110">**key**</span><span class="sxs-lookup"><span data-stu-id="9105f-110">**key**</span></span>   | <span data-ttu-id="9105f-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="9105f-111">Required attribute.</span></span><br><br><span data-ttu-id="9105f-112">Určuje název tohoto nastavení odebrat.</span><span class="sxs-lookup"><span data-stu-id="9105f-112">Specifies the name of the setting to remove.</span></span> |
+| <span data-ttu-id="a9fb7-110">**key**</span><span class="sxs-lookup"><span data-stu-id="a9fb7-110">**key**</span></span>   | <span data-ttu-id="a9fb7-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-111">Required attribute.</span></span><br><br><span data-ttu-id="a9fb7-112">Určuje název tohoto nastavení odebrat.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-112">Specifies the name of the setting to remove.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="9105f-113">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="9105f-113">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="a9fb7-113">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="a9fb7-113">Parent element</span></span>
 
-| <span data-ttu-id="9105f-114">Prvek</span><span class="sxs-lookup"><span data-stu-id="9105f-114">Element</span></span> | <span data-ttu-id="9105f-115">Popis</span><span class="sxs-lookup"><span data-stu-id="9105f-115">Description</span></span> |
+| <span data-ttu-id="a9fb7-114">Prvek</span><span class="sxs-lookup"><span data-stu-id="a9fb7-114">Element</span></span> | <span data-ttu-id="a9fb7-115">Popis</span><span class="sxs-lookup"><span data-stu-id="a9fb7-115">Description</span></span> |
 | ------- | ------------|
-| [<span data-ttu-id="9105f-116"> *\*\<sectionName>** Element</span><span class="sxs-lookup"><span data-stu-id="9105f-116">**\<sectionName>** Element</span></span>](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | <span data-ttu-id="9105f-117">Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="9105f-117">Defines settings for custom configuration sections that use the <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> classes.</span></span> |
+| [<span data-ttu-id="a9fb7-116"> *\*\<sectionName>** Element</span><span class="sxs-lookup"><span data-stu-id="a9fb7-116">**\<sectionName>** Element</span></span>](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | <span data-ttu-id="a9fb7-117">Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-117">Defines settings for custom configuration sections that use the <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> classes.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="9105f-118">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="9105f-118">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="a9fb7-118">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="a9fb7-118">Child elements</span></span>
 
-<span data-ttu-id="9105f-119">Žádné</span><span class="sxs-lookup"><span data-stu-id="9105f-119">None</span></span>
+<span data-ttu-id="a9fb7-119">Žádné</span><span class="sxs-lookup"><span data-stu-id="a9fb7-119">None</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="9105f-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9105f-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a9fb7-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a9fb7-120">Remarks</span></span>
 
-<span data-ttu-id="9105f-121">Můžete použít  **\<odebrat >** prvek, který chcete odebrat nastavení z vaší aplikace, které byly definovány na vyšší úrovni v hierarchii konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="9105f-121">You can use the **\<remove>** element to remove settings from your application that were defined at a higher level in the configuration file hierarchy.</span></span>
+<span data-ttu-id="a9fb7-121">Můžete použít  **\<odebrat >** prvek, který chcete odebrat nastavení z vaší aplikace, které byly definovány na vyšší úrovni v hierarchii konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-121">You can use the **\<remove>** element to remove settings from your application that were defined at a higher level in the configuration file hierarchy.</span></span>
 
-## <a name="example"></a><span data-ttu-id="9105f-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="9105f-122">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a9fb7-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="a9fb7-122">Example</span></span>
 
-<span data-ttu-id="9105f-123">Následující příklad ukazuje způsob použití  **\<odebrat >** prvku v konfiguračním souboru aplikace k odebrání nastavení dříve definovaných v konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="9105f-123">The following example shows how to use the **\<remove>** element in an application configuration file to remove settings previously defined in the machine configuration file.</span></span>
+<span data-ttu-id="a9fb7-123">Následující příklad ukazuje způsob použití  **\<odebrat >** prvku v konfiguračním souboru aplikace k odebrání nastavení dříve definovaných v konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-123">The following example shows how to use the **\<remove>** element in an application configuration file to remove settings previously defined in the machine configuration file.</span></span>
 
-<span data-ttu-id="9105f-124">Následující počítače konfigurační soubor kód deklaruje části  **\<mySection >** a přidá dvě nastavení `key1` a `key2`, do něj:</span><span class="sxs-lookup"><span data-stu-id="9105f-124">The following machine configuration file code declares the section **\<mySection>** and adds two settings, `key1` and `key2`, to it:</span></span>
+<span data-ttu-id="a9fb7-124">Následující počítače konfigurační soubor kód deklaruje části  **\<mySection >** a přidá dvě nastavení `key1` a `key2`, do něj:</span><span class="sxs-lookup"><span data-stu-id="a9fb7-124">The following machine configuration file code declares the section **\<mySection>** and adds two settings, `key1` and `key2`, to it:</span></span>
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ ms.locfileid: "66300702"
 </configuration>
 ```
 
-<span data-ttu-id="9105f-125">Následující kód souboru konfigurace aplikace odebere `key2` nastavení z  **\<mySection >** :</span><span class="sxs-lookup"><span data-stu-id="9105f-125">The following application configuration file code removes the `key2` setting from **\<mySection>**:</span></span>
+<span data-ttu-id="a9fb7-125">Následující kód souboru konfigurace aplikace odebere `key2` nastavení z  **\<mySection >** :</span><span class="sxs-lookup"><span data-stu-id="a9fb7-125">The following application configuration file code removes the `key2` setting from **\<mySection>**:</span></span>
 
 ```xml
 <!--Application configuration file -->
@@ -80,10 +80,10 @@ ms.locfileid: "66300702"
 </configuration>
 ```
 
-## <a name="configuration-file"></a><span data-ttu-id="9105f-126">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="9105f-126">Configuration file</span></span>
+## <a name="configuration-file"></a><span data-ttu-id="a9fb7-126">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="a9fb7-126">Configuration file</span></span>
 
-<span data-ttu-id="9105f-127">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="9105f-127">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
+<span data-ttu-id="a9fb7-127">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="a9fb7-127">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="9105f-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9105f-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a9fb7-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a9fb7-128">See also</span></span>
 
-- [<span data-ttu-id="9105f-129">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="9105f-129">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="a9fb7-129">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="a9fb7-129">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
