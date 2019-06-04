@@ -2,12 +2,12 @@
 title: Změna elementů, atributů a uzlů v Tree3 XML
 ms.date: 07/20/2015
 ms.assetid: 0ed22e4e-4c6b-4eb1-b0eb-06685efd8c33
-ms.openlocfilehash: 68195133a944f14f83bf6a33903152393205bfce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 93a4d67129e22d0bbeef464c1d4d8758439edb7b
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61682193"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484229"
 ---
 # <a name="modifying-elements-attributes-and-nodes-in-an-xml-tree"></a>Změna elementů, atributů a uzlů ve stromu XML
 Následující tabulka shrnuje metody a vlastnosti, které můžete použít k úpravě prvek a jeho podřízené prvky nebo jeho atributy.  
@@ -44,7 +44,3 @@ Následující tabulka shrnuje metody a vlastnosti, které můžete použít k �
 |Metoda|Popis|  
 |------------|-----------------|  
 |<xref:System.Xml.Linq.XContainer.ReplaceNodes%2A?displayProperty=nameWithType>|Nahradí nový obsah podřízených uzlů.|  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4f098065cc005c59ec558ffa1f95202715624e7d
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 70113d98c5a4ab41700f6c9842dba89e2b49c297
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456112"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489325"
 ---
 # <a name="usesmallinternalthreadstacks-element"></a>\<Usesmallinternalthreadstacks – > – Element
 Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že zadáte zásobníku explicitní velikost při vytváření příslušná vlákna, které se používá interně, místo použití výchozí velikost zásobníku pro tato vlákna.  
@@ -38,10 +38,10 @@ Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že z
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |true|Žádost o velikosti explicitní zásobníku.|  
-|false|Použijte výchozí velikost zásobníku. Toto je výchozí nastavení pro [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
+|false|Použijte výchozí velikost zásobníku. Toto je výchozí nastavení pro rozhraní .NET Framework 4.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

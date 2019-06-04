@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c558c744ee31d8e8299da87e6c2715875dd2dcd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3e6086772b807440570b94cfff268aa1d78fa048
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873284"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490001"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -33,7 +33,7 @@ Rozhraní .NET Framework obsahuje dvě hlavní součásti, které mají samostat
 >
 > Existuje rozdíl mezi verzí rozhraní .NET Framework a verzi modulu CLR:
 > - Verze rozhraní .NET Framework je založená na sadu sestavení, které tvoří knihovny tříd rozhraní .NET Framework. Například zahrnují verze rozhraní .NET Framework 4.5, 4.6.1 a 4.7.2.
->- Verze CLR je založená na modulu runtime, na kterém aplikace rozhraní .NET Framework jsou spouštěny. Jedna verze modulu CLR obvykle podporuje více verzí rozhraní .NET Framework. Například verze modulu CLR 4.0.30319. *xxxxx* podporuje rozhraní .NET Framework verze 4 prostřednictvím 4.5.2 a 4.0.30319.42000 podporuje od verze rozhraní .NET Framework 4.6 verze rozhraní .NET Framework verze CLR.
+>- Verze CLR je založená na modulu runtime, na kterém aplikace rozhraní .NET Framework jsou spouštěny. Jedna verze modulu CLR obvykle podporuje více verzí rozhraní .NET Framework. Například verze modulu CLR 4.0.30319. *xxxxx* podporuje rozhraní .NET Framework verze 4 až 4.5.2, kde *xxxxx* je menší než 42000 a CLR verze 4.0.30319.42000 podporuje verze rozhraní .NET Framework počínaje .NET Framework 4.6.
 >
 > Další informace o verzích, najdete v části [rozhraní .NET Framework verze a závislosti](versions-and-dependencies.md).
 
@@ -204,7 +204,7 @@ Použití [nástroj CLR Version (Clrver.exe)](../tools/clrver-exe-clr-version-to
 
     Vrácený `System.Version` objekt určuje verzi modulu runtime, který aktuálně spouští kód. Nevrací se verze sestavení ani jiné verze modulu runtime, který byl nainstalován v počítači.
 
-    Pro rozhraní .NET Framework verze 4, 4.5, 4.5.1 a 4.5.2, řetězcovou reprezentaci vráceného <xref:System.Version> objektu má tvar 4.0.30319. *xxxxx*. Pro rozhraní .NET Framework 4.6 a novějším má formulář 4.0.30319.42000.
+    Pro rozhraní .NET Framework verze 4, 4.5, 4.5.1 a 4.5.2, řetězcovou reprezentaci vráceného <xref:System.Version> objektu má tvar 4.0.30319. *xxxxx*, kde *xxxxx* je menší než 42000. Pro rozhraní .NET Framework 4.6 a novějším má formulář 4.0.30319.42000.
 
 2. Až budete mít `Version` objektu, dotaz následujícím způsobem:
 

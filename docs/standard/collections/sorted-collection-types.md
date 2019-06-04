@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d2b8866d3a1922988518dfe2857c98d4725cc464
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 96841d23da342fdb4da6c7d53420d6c3319f75c6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664561"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491016"
 ---
 # <a name="sorted-collection-types"></a>Typy řazených kolekcí
 <xref:System.Collections.SortedList?displayProperty=nameWithType> Třídy, <xref:System.Collections.Generic.SortedList%602?displayProperty=nameWithType> obecné třídy a <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=nameWithType> obecné třídy jsou podobné <xref:System.Collections.Hashtable> třídy a <xref:System.Collections.Generic.Dictionary%602> obecná třída v tom, že je implementovat <xref:System.Collections.IDictionary> rozhraní, ale zachovat jejich pořadí prvků v řazení podle klíče a nemají O(1) vkládání a načítání charakteristické zatřiďovacích tabulek. Tři třídy mají společnou několik funkcí:  
@@ -46,7 +46,7 @@ ms.locfileid: "64664561"
 > [!NOTE]
 >  Pro hodnoty, které obsahují vlastní klíče (například záznamy zaměstnanců, které obsahují číslo ID zaměstnance), můžete vytvořit kolekci s klíčem, který má některé vlastnosti seznamu a některé vlastnosti slovník odvozením z <xref:System.Collections.ObjectModel.KeyedCollection%602> obecné Třída.  
   
- Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], <xref:System.Collections.Generic.SortedSet%601> třída poskytuje svým vyrovnávání stromové struktury, která data udržuje v seřazeném pořadí po vložení, odstranění a vyhledávání. Tato třída a <xref:System.Collections.Generic.HashSet%601> implementaci třídy <xref:System.Collections.Generic.ISet%601> rozhraní.  
+ Od verze rozhraní .NET Framework 4 <xref:System.Collections.Generic.SortedSet%601> třída poskytuje svým vyrovnávání stromové struktury, která data udržuje v seřazeném pořadí po vložení, odstranění a vyhledávání. Tato třída a <xref:System.Collections.Generic.HashSet%601> implementaci třídy <xref:System.Collections.Generic.ISet%601> rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 

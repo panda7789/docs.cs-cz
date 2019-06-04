@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60d1c49e8762d00e3e154c598c2542c4a76b9b28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 247383e267ab3e8932d43621e122986a59d9a30d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985709"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490506"
 ---
 # <a name="createdebugginginterfacefromversion-function"></a>CreateDebuggingInterfaceFromVersion – funkce
 Vytvoří [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) objektu na základě zadané verze informací.  
   
- Tato funkce je zastaralé v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Místo toho rozhraní pro modul common language runtime (CLR) 2.0, použijte [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) metodu a zadejte identifikátor třídy CLSID_CLRDebuggingLegacy a IID_ICorDebug identifikátoru rozhraní. K získání rozhraní pro modul CLR 4 nebo novější, zavolejte [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) fungovat a zadejte identifikátor třídy CLSID_CLRDebugging a IID_ICLRDebugging identifikátoru rozhraní.  
+ Tato funkce je zastaralé v rozhraní .NET Framework 4. Místo toho rozhraní pro modul common language runtime (CLR) 2.0, použijte [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) metodu a zadejte identifikátor třídy CLSID_CLRDebuggingLegacy a IID_ICorDebug identifikátoru rozhraní. K získání rozhraní pro modul CLR 4 nebo novější, zavolejte [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) fungovat a zadejte identifikátor třídy CLSID_CLRDebugging a IID_ICLRDebugging identifikátoru rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   

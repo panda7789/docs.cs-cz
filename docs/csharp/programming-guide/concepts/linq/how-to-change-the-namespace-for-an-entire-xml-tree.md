@@ -2,17 +2,17 @@
 title: 'Postupy: Změnit Namespace pro celý strom XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1584ff3b-c77d-4241-ab62-80adfb7bfc1b
-ms.openlocfilehash: 020d072cfb58c90720317734199d241c6892511f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d046e01798c193ee0ea459f522a5c29187c697d7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668182"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487461"
 ---
 # <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a>Postupy: Změnit Namespace pro celý strom XML (C#)
 Někdy nutné programově změnit obor názvů pro element nebo atribut. Technologie LINQ to XML to výrazně usnadňuje. <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> Vlastnost lze nastavit. <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> Vlastnost nelze nastavit, ale můžete snadno zkopírovat do atributy <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, odeberte existující atributy a pak přidejte nové atributy, které jsou v novém požadovaného oboru názvů.  
   
- Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
 ## <a name="example"></a>Příklad  
  Následující kód vytvoří dvě stromů XML v žádný obor názvů. Poté změní obor názvů všech stromů a kombinuje je do jediného stromu.  
@@ -76,7 +76,3 @@ Console.WriteLine(root);
   </ad:Data>  
 </Root>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

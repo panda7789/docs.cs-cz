@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d4adfa5d592514c9a91c93095e7199f4b425b712
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: abbc817142ab6906a04b4dc053693f87109922dc
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596641"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487905"
 ---
 # <a name="securing-wrapper-code"></a>Zabezpečení kódu obálky
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -76,7 +76,7 @@ ms.locfileid: "64596641"
 - [LinkDemand](../../../docs/framework/misc/link-demands.md) dochází v době kompilace just-in-time (JIT) a kontroluje pouze bezprostředního volajícího. Tato kontrola zabezpečení volajícího, volající nekontroluje. Jakmile úspěšně proběhne kontrola, neexistuje žádné další bezpečnostní režie nezáleží na tom, kolikrát může volající volat. Existuje ale také žádná ochrana proti útokům typu luring. S **LinkDemand**, veškerý kód, který projde testem a může odkazovat na váš kód může potenciálně narušit zabezpečení tím, že škodlivý kód volání pomocí autorizovaného kódu. Proto nepoužívejte **LinkDemand** Pokud nebude možné slabá místa můžete důkladně vyhnout.  
   
     > [!NOTE]
-    >  V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], byly nahrazeny požadavky propojení <xref:System.Security.SecurityCriticalAttribute> atribut <xref:System.Security.SecurityRuleSet.Level2> sestavení. <xref:System.Security.SecurityCriticalAttribute> Odpovídá požadavku propojení pro úplný vztah důvěryhodnosti, ale taky ovlivňuje pravidla dědičnosti. Další informace o této změně najdete v tématu [kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
+    >  V rozhraní .NET Framework 4, byly nahrazeny požadavky propojení <xref:System.Security.SecurityCriticalAttribute> atribut <xref:System.Security.SecurityRuleSet.Level2> sestavení. <xref:System.Security.SecurityCriticalAttribute> Odpovídá požadavku propojení pro úplný vztah důvěryhodnosti, ale taky ovlivňuje pravidla dědičnosti. Další informace o této změně najdete v tématu [kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
   
  Další bezpečnostní opatření, která požaduje se při použití **LinkDemand** musí být naprogramovány jednotlivě; může systém zabezpečení pomáhají s vynucením. Jakákoli chyba otevře slabé stránky zabezpečení. Všechna oprávnění, že používá váš kód musí být za implementaci další bezpečnostní pomocí následujícího kódu:  
   

@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ba780692d59157438da1e04f3bdc3577a3eaef65
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5b25d35f9c356b6d55806611a3ce39d193b42586
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664578"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491037"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data může často být zpracována efektivněji při uloženy a zpracovávány jako kolekce. Můžete použít <xref:System.Array?displayProperty=nameWithType> třídu nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable oborů názvů pro přidání, odebrání a změnu jednotlivých prvků nebo rozsahu prvků v kolekci.  
   
  Existují dva hlavní typy kolekcí; Obecné kolekce a obecné kolekce. Obecné kolekce byly přidány v rozhraní .NET Framework 2.0 a poskytují kolekcí, které jsou typově bezpečné v době kompilace. Z tohoto důvodu obecné kolekce běžně nabízí lepší výkon. Obecné kolekce přijímá parametr typu, když jsou vytvořeny a nevyžadují, že je převeden do a z <xref:System.Object> zadejte při přidání nebo odebrání položek z kolekce.  Kromě toho většina obecné kolekce jsou podporovány v [!INCLUDE[win8_appstore_long](../../../includes/win8-appstore-long-md.md)] aplikace. Neobecnou kolekce ukládá položky jako <xref:System.Object>, vyžaduje přetypování a většina nejsou podporovány pro [!INCLUDE[win8_appstore_long](../../../includes/win8-appstore-long-md.md)] vývoj aplikací. Ale může se zobrazit obecné kolekce ve starším kódu.  
   
- Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], kolekce v <xref:System.Collections.Concurrent> obor názvů poskytují efektivní operace bezpečné pro vlákna pro přístup položky kolekce z více vláken. Neměnné kolekce tříd v oboru názvů System.Collections.Immutable ([balíček NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) jsou ze své podstaty bezpečné pro vlákna, protože operace se provádějí na kopii původní kolekci a původní kolekci nelze změnit.  
+ Od verze rozhraní .NET Framework 4 kolekce v <xref:System.Collections.Concurrent> obor názvů poskytují efektivní operace bezpečné pro vlákna pro přístup položky kolekce z více vláken. Neměnné kolekce tříd v oboru názvů System.Collections.Immutable ([balíček NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) jsou ze své podstaty bezpečné pro vlákna, protože operace se provádějí na kopii původní kolekci a původní kolekci nelze změnit.  
 
 <a name="BKMK_Commoncollectionfeatures"></a>   
 ## <a name="common-collection-features"></a>Běžné funkce kolekce  

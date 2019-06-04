@@ -7,12 +7,12 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: 345acd17a6357f71f5c047475a4494a1fa793a58
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 083c1e4b6ab8c25956ffcf2288ac32d940f23bc2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595791"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483219"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v C# (LINQ)
 Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – výrazy dotazů.  
@@ -178,12 +178,11 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
  [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
- [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
+ [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)  
   
  [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
-- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)

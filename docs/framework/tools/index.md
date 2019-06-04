@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 81110736651db9fe00b116c3abbbdaa8d3670bee
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 995aeca60d462c96f951411aff9fcb2c772169d1
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456095"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489649"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
 Nástroje .NET Framework usnadňují vývoj, nasazení a správu aplikací a komponent určených pro rozhraní .NET Framework.  
@@ -36,7 +36,7 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  Převádí definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
   
  [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
- Umožňuje zobrazit a konfigurovat zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad organizace. V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] a později, tento nástroj neovlivní zásady zabezpečení (CA) přístupu kódu, pokud [ \<legacyCasPolicy > element](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) je nastavena na `true`. Další informace najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+ Umožňuje zobrazit a konfigurovat zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad organizace. V rozhraní .NET Framework 4 nebo novější, tento nástroj neovlivní kódu zásady zabezpečení přístupu (CAS), není-li [ \<legacyCasPolicy > element](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) je nastavena na `true`. Další informace najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
  [Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)](../../../docs/framework/tools/cert2spc-exe-software-publisher-certificate-test-tool.md)  
  Vytvoří certifikát vydavatele softwaru (SPC) z jednoho nebo více certifikátů X.509. Tento nástroj slouží pouze pro účely testování.  

@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: adf2e3e3d10f4f32952dbca270be4ca0924d0b73
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 86d735bf84cdb33736701410d365ec90e6177e0e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457274"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489767"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
-Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít v procesu – souběžně hostování v jediném procesu spuštění více verzí modulu common language runtime (CLR). Ve výchozím nastavení spravované komponenty modelu COM s verzí rozhraní .NET Framework, kterými byly vytvořeny, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spuštění.  
+Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně hostování v jediném procesu spuštění více verzí modulu common language runtime (CLR). Ve výchozím nastavení spravované komponenty modelu COM s verzí rozhraní .NET Framework, kterými byly vytvořeny, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spuštění.  
   
 ## <a name="background"></a>Pozadí  
  Rozhraní .NET Framework má vždy zadaná vedle sebe hostování pro aplikace spravovaného kódu, ale před rozhraní .NET Framework 4 se neposkytl, které tuto funkci pro spravované komponenty modelu COM. V minulosti spravované komponenty modelu COM, která byla načtena do procesu běžel s verzí modulu runtime, který byl již načten nebo s nainstalovanou verzí rozhraní .NET Framework. Pokud tato verze není kompatibilní s komponenty modelu COM, součást selže.  
@@ -88,7 +88,7 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje nespravovaný hostitel modelu COM, na kterém běží spravované komponenty modelu COM pomocí verze rozhraní .NET Framework, která komponenta byla sestavena pro použití.  
   
- Spustit v následujícím příkladu, kompilaci a registraci následující spravované pomocí komponenty modelu COM [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. K registraci komponenty, na **projektu** nabídky, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **sestavení** kartu a potom vyberte **zaregistrovat pro interoperabilitu COM**zaškrtávací políčko.  
+ Pokud chcete spustit příklad, kompilaci a zaregistrovat následující spravované komponenty modelu COM pomocí rozhraní .NET Framework 3.5. K registraci komponenty, na **projektu** nabídky, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **sestavení** kartu a potom vyberte **zaregistrovat pro interoperabilitu COM**zaškrtávací políčko.  
   
 ```csharp
 using System;  

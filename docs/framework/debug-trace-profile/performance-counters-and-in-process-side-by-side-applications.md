@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 6888f9be-c65b-4b03-a07b-df7ebdee2436
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fc3f9c9c61afd4c231846adffc4b304a01d59281
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: dd3501bc74da2c9a812f9c4816b5a081b3780cd0
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457253"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490028"
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Čítače výkonu a vnitroprocesorové souběžné aplikace
 Použití nástroje Sledování výkonu (Perfmon.exe), je možné odlišit od čítače výkonu na základě za běhu. Toto téma popisuje změny registru potřebná k povolení této funkce.  
@@ -27,7 +27,7 @@ Použití nástroje Sledování výkonu (Perfmon.exe), je možné odlišit od č
   
 - Když monitorujete dvě aplikace, které mají stejný název. Například, pokud obě aplikace jsou s názvem myapp.exe, zobrazí se některá jako **myapp** a ostatní jako **myapp č. 1** v **Instance** sloupce. V takovém případě je tak, aby odpovídaly čítače výkonu ke konkrétní aplikaci. Není jasné, jestli se data shromažďována pro **myapp č. 1** odkazuje na první myapp.exe nebo druhý myapp.exe.  
   
-- Pokud aplikace používá více instancí modulu common language runtime. [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] Podporuje vnitroprocesové vedle sebe scénáře hostingu; to znamená, může jeden proces nebo aplikace načítají více instancí modulu common language runtime. Pokud si jednu aplikaci s názvem myapp.exe zatížení dvě instance modulu runtime, ve výchozím nastavení, budou označeny v **Instance** jako sloupec **myapp** a **myapp č. 1**. V takovém případě není jasné, jestli **myapp** a **myapp č. 1** označovat dvě aplikace se stejným názvem nebo stejnou aplikaci pomocí dvou modulů runtime. Pokud více aplikací se stejným názvem načíst různými moduly runtime, je ještě lepší nejednoznačnost.  
+- Pokud aplikace používá více instancí modulu common language runtime. Vnitroprocesové vedle sebe scénáře hostingu; podporuje rozhraní .NET Framework 4 To znamená můžete jeden proces nebo aplikace načítají více instancí modulu common language runtime. Pokud si jednu aplikaci s názvem myapp.exe zatížení dvě instance modulu runtime, ve výchozím nastavení, budou označeny v **Instance** jako sloupec **myapp** a **myapp č. 1**. V takovém případě není jasné, jestli **myapp** a **myapp č. 1** označovat dvě aplikace se stejným názvem nebo stejnou aplikaci pomocí dvou modulů runtime. Pokud více aplikací se stejným názvem načíst různými moduly runtime, je ještě lepší nejednoznačnost.  
   
  Můžete nastavit klíč registru, chcete-li odstranit tuto nejednoznačnost. U aplikací vyvinutých pomocí rozhraní .NET Framework 4, tato změna registru přidá identifikátor procesu, za nímž následuje identifikátor instance modulu runtime pro název aplikace **Instance** sloupce. Místo *aplikace* nebo *aplikace*#1, aplikace je nyní označena jako *aplikace*_`p`*processID* \_ `r` *runtimeID* v **Instance** sloupce. Pokud aplikace byla vyvinutá pomocí předchozí verze common language runtime, že instance reprezentována jako *aplikace\_* `p`*processID* za předpokladu, že. NET Framework 4 je nainstalována.  
   
@@ -39,7 +39,7 @@ Použití nástroje Sledování výkonu (Perfmon.exe), je možné odlišit od č
 |Název klíče|HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\\.NETFramework\Performance|  
 |Název hodnoty|ProcessNameFormat|  
 |Typ hodnoty|REG_DWORD|  
-|Hodnota|1 (0x00000001)|  
+|Value|1 (0x00000001)|  
   
  Hodnota 0 pro `ProcessNameFormat` označuje, že výchozí chování je povoleno; který je Perfmon.exe zobrazuje čítače výkonu na základě jednotlivých aplikací. Když nastavíte tuto hodnotu na 1, Perfmon.exe umožňuje rozlišit několik verzí aplikace a poskytuje čítače výkonu na základě za běhu. Jakákoli jiná hodnota parametru `ProcessNameFormat` nastavení klíče registru se neposkytuje podpora a vyhrazené pro budoucí použití.  
   

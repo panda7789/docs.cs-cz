@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: 837a94f716c87a1671b5577f8a21a520d4314ec1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e00c606460159d05f1d3fcaddb1ac5f7b2ec86fa
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668065"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485616"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)
 Výraz XPath umožňuje najít sjednocení výsledky ze dvou možných cest umístění XPath.  
@@ -68,6 +68,3 @@ Results are identical
 <Price>6.99</Price>  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

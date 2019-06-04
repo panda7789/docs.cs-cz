@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
-ms.openlocfilehash: a9e519fb8b2ca021d66adb23659d83efc571afae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f3bbb55ec65df1af776779682d307a67034e34b3
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760425"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489897"
 ---
 # <a name="null-comparisons"></a>Porovnávání s hodnotou Null
 A `null` hodnota ve zdroji dat znamená, že hodnota neznámý. V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, můžete zkontrolovat hodnoty null, tak že určité výpočtů nebo porovnání se provádí pouze u řádků, které mají platný nebo není null, data. Sémantika s hodnotou null CLR, ale může lišit od sémantika s hodnotou null zdroj dat. Většina databází použijte verzi s hodnotou tři logiku ke zpracování porovnávání s hodnotou null. To znamená, že porovnání proti hodnota null není vyhodnocen na `true` nebo `false`, je vyhodnocen jako `unknown`. Často je jím implementace ANSI hodnoty Null, ale není to vždy.  
   
- Ve výchozím nastavení v systému SQL Server porovnání null. je rovno null, vrátí hodnotu null. V následujícím příkladu, řádky kde `ShipDate` má hodnotu null jsou vyloučeny ze sady výsledků a [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] příkaz vrátí 0 řádků.  
+ Ve výchozím nastavení v systému SQL Server porovnání null. je rovno null, vrátí hodnotu null. V následujícím příkladu, řádky kde `ShipDate` je null jsou vyloučeny ze sady výsledků a příkazu jazyka Transact-SQL by vrátil 0 řádků.  
   
 ```  
 -- Find order details and orders with no ship date.  

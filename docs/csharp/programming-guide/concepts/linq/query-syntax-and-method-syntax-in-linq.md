@@ -5,12 +5,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 1d6bd14a88f22bfa961ee28f0014b1f89ccb28b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3fced818a257cb0bde166b0dd98c59c3b41e8ac
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61681804"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484099"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]) dokumentace jsou zapsány pomocí syntaxe deklarativní dotazů LINQ. Syntaxe dotazu však musí být převedeny do volání metod pro .NET common language runtime (CLR) při kompilaci kódu. Tato metoda volání vyvolat operátory standardního dotazu, které mají názvy, jako `Where`, `Select`, `GroupBy`, `Join`, `Max`, a `Average`. Můžete je volat přímo pomocí syntaxe metody místo syntaxe dotazu.  
@@ -41,7 +41,3 @@ Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/i
   
 ## <a name="composability-of-queries"></a>Skládání dotazů  
  V předcházejícím příkladu, Všimněte si, že `OrderBy` pomocí operátoru tečka při volání je vyvolána metoda `Where`. `Where` Vytvoří filtrované posloupnost a potom `Orderby` funguje v této sekvenci, že je seřadíte. Protože vrátit dotazech `IEnumerable`, můžete vytvořit v syntaxe využívající metody ve zřetězení volání metod. Je to, co kompilátor provádí na pozadí při psaní dotazů pomocí syntaxe dotazu. A protože proměnné dotazu neukládá výsledky dotazu, můžete ho upravit nebo ho použít jako základ pro nový dotaz v okamžiku, přestože byl proveden.  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

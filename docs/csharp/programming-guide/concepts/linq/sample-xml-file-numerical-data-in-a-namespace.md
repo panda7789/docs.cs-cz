@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Číselná Data ve Namespace3'
 ms.date: 07/20/2015
 ms.assetid: 51750cab-3c66-4511-90fb-b9d211308d31
-ms.openlocfilehash: d00ad41c6703945b80dd49ff5f375a3896b43bed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02788b73a7af9922b5a50237f2d2e401cba8abe2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61712536"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483700"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>Ukázkový soubor XML: Numerická data v názvovém prostoru
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje číselná data pro sčítání, agregovat a seskupení. XML je v oboru názvů.  
@@ -54,7 +54,3 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
   </Data>  
 </Root>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

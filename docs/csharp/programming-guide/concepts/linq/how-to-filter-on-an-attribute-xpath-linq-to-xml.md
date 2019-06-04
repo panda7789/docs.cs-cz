@@ -2,12 +2,12 @@
 title: 'Postupy: Filtrovat podle atributu (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: 3b9f3d18bbfe773d782239d67e8f43bdf4ac52d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 927dd781a16aa745b88de3c446682590bd601597
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668104"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485750"
 ---
 # <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postupy: Filtrovat podle atributu (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak získat Následnické prvky se zadaným názvem a atribut se zadanou hodnotou.  
@@ -71,7 +71,3 @@ Results are identical
   <Country>USA</Country>  
 </Address>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

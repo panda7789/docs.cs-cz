@@ -2,12 +2,12 @@
 title: Sledování SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: f3c48b40e2d3d7dec2b9008b3de738f9b2983610
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b69336e9a6fd0d3cf91c2a187412638d08490eea
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785915"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491080"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
 Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, který zapíše záznamy sledování k databázi SQL. Windows Workflow Foundation (WF) umožňuje získat přehled o spuštění instance pracovního postupu pro sledování pracovního postupu. Modul runtime sledování vysílá pracovního postupu při provádění pracovního postupu pro sledování záznamů. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../workflow-tracking-and-tracing.md).
@@ -35,7 +35,7 @@ Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, kter�
   
      Příkladem adresy místní služby WSDL je `http://localhost:65193/StockPriceService.xamlx?wsdl`.  
   
-8. Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], spustit klienta testu WCF (WcfTestClient.exe). Je umístěn v adresáři sady Microsoft Visual Studio 10.0\Common7\IDE.  
+8. Pomocí Průzkumníka souborů, spustit klienta testu WCF (WcfTestClient.exe). Je umístěn v adresáři sady Microsoft Visual Studio 10.0\Common7\IDE.  
   
 9. Testovací klient WCF, klikněte na tlačítko **souboru** nabídky a vybereme **přidat službu**. Vložte adresu místní služby v textovém poli. Klikněte na tlačítko **OK** zavřete dialogové okno.  
   

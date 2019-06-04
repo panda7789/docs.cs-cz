@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38adde3cd51a96f0e15ed5a0c539e088f2d3b480
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31e2a075f9202439cd62c81a06528b20c4971656
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701629"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489347"
 ---
 # <a name="timespanlegacyformatmode-element"></a>\<Timespan_legacyformatmode – > – Element
 Určuje, zda modul runtime zachová starší chování při formátování operací s <xref:System.TimeSpan?displayProperty=nameWithType> hodnoty.  
@@ -42,7 +42,7 @@ Určuje, zda modul runtime zachová starší chování při formátování opera
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime neobnoví starší chování při formátování.|  
 |`true`|Modul runtime obnoví starší chování při formátování.|  
@@ -58,7 +58,7 @@ Určuje, zda modul runtime zachová starší chování při formátování opera
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], <xref:System.TimeSpan?displayProperty=nameWithType> struktury implementuje <xref:System.IFormattable> rozhraní a podporuje formátování operací pomocí standardních a vlastních formátovacích řetězců. Pokud metoda analýzy se zaznamená řetězce formátu nebo nepodporovaný formát specifikátoru, vyvolá výjimku <xref:System.FormatException>.  
+ Od verze rozhraní .NET Framework 4 <xref:System.TimeSpan?displayProperty=nameWithType> struktury implementuje <xref:System.IFormattable> rozhraní a podporuje formátování operací pomocí standardních a vlastních formátovacích řetězců. Pokud metoda analýzy se zaznamená řetězce formátu nebo nepodporovaný formát specifikátoru, vyvolá výjimku <xref:System.FormatException>.  
   
  V předchozích verzích rozhraní .NET Framework <xref:System.TimeSpan> struktura neimplementovala <xref:System.IFormattable> a nepodporovalo formátovací řetězce. Nicméně mnoho vývojářů omylem předpokládá se, že <xref:System.TimeSpan> podporoval množinu řetězců formátu a používat je v [složeného formátování operace](../../../../../docs/standard/base-types/composite-formatting.md) s metodami, jako <xref:System.String.Format%2A?displayProperty=nameWithType>. Obvykle Pokud typ implementuje <xref:System.IFormattable> a podporuje formátovací řetězce, volání metody se nepodporovaný formát pro formátování řetězce obvykle vyvolat <xref:System.FormatException>. Ale protože <xref:System.TimeSpan> neimplementovala <xref:System.IFormattable>, modul runtime ignorovat formátovací řetězec a místo toho volat <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metody. To znamená, že i když formátovací řetězce nemělo žádný vliv na operace formátování, jejich přítomnost nezpůsobil ztrátu v <xref:System.FormatException>.  
   
@@ -76,13 +76,13 @@ Určuje, zda modul runtime zachová starší chování při formátování opera
 12:30:45  
 ```  
   
- Tím se liší je výrazně z výstupu pokud příklad spustíte ve [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] nebo novější verzi:  
+ Tím se liší je výrazně z výstupu při spuštění v příkladu v rozhraní .NET Framework 4 nebo novější verzi:  
   
 ```  
 Invalid Format  
 ```  
   
- Pokud ale přidáte následující konfigurační soubor v příkladu adresáře a poté příklad spustíte ve [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] nebo novější verze, výstup je stejný jako, který v příkladu vytvořen při spuštění [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
+ Pokud však přidat následující konfigurační soubor do vzorového adresáře a spusťte příklad v .NET Framework 4 nebo novější verze, výstup je identické vytvořený v příkladu, při spuštění [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
   
 ```xml  
 <?xml version ="1.0"?>  

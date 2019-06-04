@@ -2,12 +2,12 @@
 title: Technologie LINQ to XML Annotations3
 ms.date: 07/20/2015
 ms.assetid: 54e7b9d0-07f5-488f-9065-b6e6b870f810
-ms.openlocfilehash: 753fc656d78f2cefde98a8cbfb48713c7a107f77
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 19661f303ccea411ff6088005cb0198b50781d37
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701798"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487389"
 ---
 # <a name="linq-to-xml-annotations"></a>Poznámky v LINQ to XML
 Poznámky v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vám umožní přidružit libovolné součásti XML ve stromu XML libovolného objektu jakéhokoli libovolného typu.  
@@ -26,6 +26,3 @@ Poznámky v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vám umožní 
 |<xref:System.Xml.Linq.XObject.Annotations%2A>|Získá kolekci poznámek zadaného typu pro <xref:System.Xml.Linq.XObject>.|  
 |<xref:System.Xml.Linq.XObject.RemoveAnnotations%2A>|Odebere poznámky zadaného typu ze <xref:System.Xml.Linq.XObject>.|  
   
-## <a name="see-also"></a>Viz také:
-
-- [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -2,15 +2,15 @@
 title: LINQ to Objects (C#)
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: b82d21a7de4f596afb5e41487221498dd5ca9f98
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c66a818d48316279817fdc6b7919a7667b6b8eb8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667389"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484474"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
-Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekce přímo, bez použití zprostředkující zprostředkovatele LINQ nebo rozhraní API, jako [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) nebo [LINQ to XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md). LINQ můžete použít k dotazování všechny vyčíslitelné kolekce, jako například <xref:System.Collections.Generic.List%601>, <xref:System.Array>, nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být uživatelem definované nebo mohou být vráceny rozhraní API .NET Framework.  
+Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekce přímo, bez použití zprostředkující zprostředkovatele LINQ nebo rozhraní API, jako [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) nebo [LINQ to XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md). LINQ můžete použít k dotazování všechny vyčíslitelné kolekce, jako například <xref:System.Collections.Generic.List%601>, <xref:System.Array>, nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být uživatelem definované nebo mohou být vráceny rozhraní API .NET Framework.  
   
  V základní smysl představuje LINQ to Objects nový přístup ke kolekcím. Starý způsob jste museli psát složité `foreach` smyček, které zadaná jak načíst data z kolekce. U přístupu s LINQ napíšete deklarativního kódu, který popisuje, co chcete načíst.  
   

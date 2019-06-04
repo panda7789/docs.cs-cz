@@ -2,12 +2,12 @@
 title: Funkční transformace XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 0ccb9251-38d7-44e3-9b84-1b5fe25e4b59
-ms.openlocfilehash: 237a96e3cc1a2e2cb231b23954613f6a0ad0761c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b1325644873db29b2c40901ded3eb254b3a31073
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596663"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485959"
 ---
 # <a name="functional-transformation-of-xml-c"></a>Funkční transformace XML (C#)
 Toto téma popisuje čistě funkční transformace přístup k úpravě XML dokumenty a liší se od procedurálního přístupu.  
@@ -26,7 +26,7 @@ Toto téma popisuje čistě funkční transformace přístup k úpravě XML doku
 ### <a name="xml-functional-transformational-technologies"></a>Funkční transformace, jehož technologie XML  
  Společnost Microsoft nabízí dvě technologie funkční transformace pro použití v dokumentech XML: XSLT a LINQ to XML. XSLT se podporuje v <xref:System.Xml.Xsl> spravované obor názvů a v nativní implementaci modelu COM MSXML. I když XSLT je robustní technologie pro manipulaci s XML dokumenty, vyžaduje znalosti týkající se specializované domény, a to jazyka XSLT a jeho podpůrné rozhraní API.  
   
- Technologie LINQ to XML poskytuje nástroje potřebné k čistě funkčním transformacím kód výkonná a výrazová způsobem, v rámci kódu C# nebo Visual Basic. Například mnoho příkladů v LINQ k dokumentaci XML pomocí čistě funkční přístup. Také v [kurzu: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) kurzu používáme LINQ to XML v funkční přístup k manipulaci s informace v dokumentu aplikace Microsoft Word.  
+ Technologie LINQ to XML poskytuje nástroje potřebné k čistě funkčním transformacím kód výkonná a výrazová způsobem, v rámci kódu C# nebo Visual Basic. Například mnoho příkladů v LINQ k dokumentaci XML pomocí čistě funkční přístup. Také v [kurzu: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md) kurzu používáme LINQ to XML v funkční přístup k manipulaci s informace v dokumentu aplikace Microsoft Word.  
   
  Podrobnější srovnání technologie LINQ to XML s dalšími technologiemi Microsoftu XML, naleznete v tématu [LINQ to XML versus. Jiné technologie XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md).  
   
@@ -35,5 +35,5 @@ Toto téma popisuje čistě funkční transformace přístup k úpravě XML doku
 ## <a name="see-also"></a>Viz také:
 
 - [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)
 - [Technologie LINQ to XML versus jiné technologie XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)

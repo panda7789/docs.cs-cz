@@ -2,15 +2,15 @@
 title: LINQ a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: 312eb4b1c0512ca1244daec5bcda3ed864c3646d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: bfd5bb845917f9ca8ba3b154a51a946b610ca571
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878334"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489817"
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
-V současné době celá řada vývojářů firmy musí používat dva (nebo více) programovacích jazyků: jazyka vysoké úrovně pro obchodní logiku a prezentační vrstvy (jako je Visual C# nebo Visual Basic) a dotazovací jazyk pro interakci s databází (například [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). To vyžaduje vývojář bude zdatní v několika jazycích, aby byl Efektivní a zároveň způsobí, že jazyk neshody ve vývojovém prostředí. Aplikace, která používá data přístup k rozhraní API při spuštění dotazu proti databázi například určuje dotaz jako řetězcový literál s použitím uvozovek. Tento řetězec dotazu bez číst kompilátoru a nepovolenou chyby, jako je například neplatnou syntaxi nebo zda skutečně existují sloupce nebo řádky, na které odkazuje. Neexistuje žádný typ kontroly parametrů dotazu a ne `IntelliSense` buď podporují.  
+V současné době celá řada vývojářů firmy musí používat dva (nebo více) programovacích jazyků: jazyka vysoké úrovně pro obchodní logiku a prezentační vrstvy (jako je vizuál C# nebo Visual Basic) a dotazovací jazyk pro interakci s databází (například příkazů jazyka Transact-SQL) . To vyžaduje vývojář bude zdatní v několika jazycích, aby byl Efektivní a zároveň způsobí, že jazyk neshody ve vývojovém prostředí. Aplikace, která používá data přístup k rozhraní API při spuštění dotazu proti databázi například určuje dotaz jako řetězcový literál s použitím uvozovek. Tento řetězec dotazu bez číst kompilátoru a nepovolenou chyby, jako je například neplatnou syntaxi nebo zda skutečně existují sloupce nebo řádky, na které odkazuje. Neexistuje žádný typ kontroly parametrů dotazu a ne `IntelliSense` buď podporují.  
   
  [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] umožňuje vývojářům tvoří dotazy založené na sadě v jejich kódu aplikaci bez nutnosti použít samostatný dotazovací jazyk. Můžete napsat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazy na různých zdrojů dat vyčíslitelné (to znamená, že zdroj dat, který implementuje <xref:System.Collections.IEnumerable> rozhraní), jako jsou datové struktury v paměti, XML dokumenty, databáze SQL a <xref:System.Data.DataSet> objekty. I když tyto zdroje dat vyčíslitelné jsou implementované různé způsoby, všechny zveřejňovaly konstrukce stejné syntaxe a jazyk. Kvůli dotazy mohou být v programovacím jazyce, není nutné používat jiné dotazovací jazyk, který je vložený jako řetězcové literály, které nelze chápat nebo ověřit pomocí kompilátoru. Integrace dotazy v programovacím jazyce také umožňuje programátorům sady Visual Studio vyšší produktivity díky typu v době kompilace a kontroly syntaxe a `IntelliSense`. Tyto funkce tak snížit potřeba ladění dotazů v odhalování a opravování chyb.  
   

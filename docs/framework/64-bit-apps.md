@@ -8,23 +8,23 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6e10682dbf5615f9d1ef345cf2c7eeeafa87ec28
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 703ebcf93af77be2d0034bcd99fab397d7729374
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377978"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487002"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
   
 ## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>Spuštění 32bitové vs. 64bitové aplikace na Windows  
- Všechny aplikace, které jsou založené na rozhraní .NET Framework 1.0 nebo 1.1 jsou považovány za 32bitové aplikace na 64bitový operační systém a jsou vždy spouštěny pod WOW64 a 32bitová verze common language runtime (CLR). 32bitových aplikací, které jsou založené na [!INCLUDE[net_v40_long](../../includes/net-v40-long-md.md)] nebo novější verze se také spuštěna v modulu WOW64 v 64bitových systémech.  
+ Všechny aplikace, které jsou založené na rozhraní .NET Framework 1.0 nebo 1.1 jsou považovány za 32bitové aplikace na 64bitový operační systém a jsou vždy spouštěny pod WOW64 a 32bitová verze common language runtime (CLR). 32bitových aplikací, které jsou založené na rozhraní .NET Framework 4 nebo novější verze také spuštěna v modulu WOW64 v 64bitových systémech.  
   
  Visual Studio nainstaluje 32bitová verze modulu CLR na x x86 počítače a 32bitové verze i odpovídající 64bitovou verzi modulu CLR v počítači Windows 64-bit. (Protože Visual Studio je 32bitová aplikace, když se nainstaluje na 64bitový systém, běží pod WOW64.)  
   
 > [!NOTE]
->  Z důvodu návrhu x86 emulace a subsystém WOW64 pro rodiny procesorů Itanium aplikace jsou omezeny na provádění na jeden procesor. Tyto faktory snížit výkon a škálovatelnost 32bitových aplikací rozhraní .NET Framework, které běží na systémy s procesorem Itanium. Doporučujeme použít [!INCLUDE[net_v40_long](../../includes/net-v40-long-md.md)], což zahrnuje nativní 64bitová podpora pro systémy s procesorem Itanium, pro zajištění zvýšeného výkonu a škálovatelnosti.  
+>  Z důvodu návrhu x86 emulace a subsystém WOW64 pro rodiny procesorů Itanium aplikace jsou omezeny na provádění na jeden procesor. Tyto faktory snížit výkon a škálovatelnost 32bitových aplikací rozhraní .NET Framework, které běží na systémy s procesorem Itanium. Doporučujeme použít rozhraní .NET Framework 4, která zahrnuje nativní 64bitová podpora pro systémy s procesorem Itanium, vyšší výkon a škálovatelnost.  
   
  Ve výchozím nastavení když spustíte 64bitové spravované aplikace v operačním systému Windows 64-bit, můžete vytvořit objekt více než 2 gigabajty (GB). V rozhraní .NET Framework 4.5, ale můžete tento limit zvýšit.  Další informace najdete v tématu [ \<gcAllowVeryLargeObjects > element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
   

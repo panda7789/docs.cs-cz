@@ -2,12 +2,12 @@
 title: 'Postupy: Stream fragmentů XML ze třídy XmlReader (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: 0c34b9aeb5cda61c13045487dee6ab15e55314e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6937a7160c83def3238c8d2fe3e2b83c996396fd
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701876"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484908"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Postupy: Stream fragmentů XML ze třídy XmlReader (C#)
 Až budete mít ke zpracování velkých souborů XML, nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamování fragmentů pomocí <xref:System.Xml.XmlReader>.  
@@ -82,6 +82,3 @@ ccc
   
  V tomto příkladu je velmi malý zdrojovém dokumentu. Nicméně i v případě, že došlo k milionům `Child` prvky, v tomto příkladu by stále mají malé paměťové nároky.  
   
-## <a name="see-also"></a>Viz také:
-
-- [Analýza kódu XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

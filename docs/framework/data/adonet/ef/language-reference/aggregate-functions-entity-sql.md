@@ -2,19 +2,19 @@
 title: Agregační funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: acfd3149-f519-4c6e-8fe1-b21d243a0e58
-ms.openlocfilehash: 423c7e843f54e48d4f05f26f3f4071bff1795c69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b01c7dca675e79c61b87bcc1fb30455286db3118
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631754"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489960"
 ---
 # <a name="aggregate-functions-entity-sql"></a>Agregační funkce (Entity SQL)
 Agregace je konstrukce jazyka, který zestruční kolekce do skaláru jako součást operace skupiny. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] agregace přicházet ve dvou formách:  
   
 - [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Kolekce funkcí, které může je použít kdekoli ve výrazu. To zahrnuje použití agregačních funkcí v projekce a predikátů, které fungují na kolekcích. Kolekce funkcí jsou preferovaný způsob určení agregace v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
-- Skupina agregace ve výrazech dotazů, které mají klauzuli Group by. Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], agregace skupiny přijmout DISTINCT a všechny jako modifikátory agregační vstupem.  
+- Skupina agregace ve výrazech dotazů, které mají klauzuli Group by. Stejně jako v jazyce Transact-SQL přijměte agregace skupiny DISTINCT a všechny jako modifikátory agregační vstupem.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Nejprve se pokusí o interpretovat výraz jako funkce kolekce a Pokud výraz v kontextu výrazu SELECT ji interpretuje jako agregace skupiny.  
   

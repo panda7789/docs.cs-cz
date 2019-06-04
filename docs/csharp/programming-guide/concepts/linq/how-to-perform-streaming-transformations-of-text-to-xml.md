@@ -2,12 +2,12 @@
 title: 'Postupy: Provádění transformací streamovaní textu do XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
-ms.openlocfilehash: 906150483f7f76b4429ea390d083e9f18696ac9e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d37ea5167576098d4ea343e49ae4ff6bac20d4ba
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667870"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485245"
 ---
 # <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Postupy: Provádění transformací streamovaní textu do XML (C#)
 Jeden ze způsobů zpracování textového souboru, je zápis metody rozšíření, která jsou streamována textový soubor řádku v čase pomocí `yield return` vytvořit. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděné odložené způsobem. Pokud použijete <xref:System.Xml.Linq.XStreamingElement> do výstupního datového proudu, pak můžete vytvořit transformace z textového souboru XML, který používá minimální množství paměti, bez ohledu na velikost text souboru zdroje.  
@@ -89,4 +89,3 @@ class Program
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XStreamingElement>
-- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

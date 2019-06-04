@@ -2,15 +2,15 @@
 title: Jak se Entity SQL liší od Transact-SQL
 ms.date: 03/30/2017
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
-ms.openlocfilehash: d6c98741107cd9ea7b0f29e4d06aed7d0ce27888
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 54d7a3fa8ce6e8a0aba6194bfc034eb4d47dbf60
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631797"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489929"
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Jak se Entity SQL liší od Transact-SQL
-Toto téma popisuje rozdíly mezi [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)].  
+Toto téma popisuje rozdíly mezi [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a příkazů jazyka Transact-SQL.  
   
 ## <a name="inheritance-and-relationships-support"></a>Dědičnost a vztahy podpory  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pracuje přímo s konceptuálními schématy entity a podporuje funkce konceptuální model, jako je dědičnost a vztahy.  
@@ -31,9 +31,9 @@ Toto téma popisuje rozdíly mezi [!INCLUDE[esql](../../../../../../includes/esq
 - Spojení pracovat s kolekcí.  
   
 ## <a name="support-for-expressions"></a>Podpora pro výrazy  
- [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] má poddotazy (tabulky) a výrazy (řádků a sloupců).  
+ Příkaz Transact-SQL má poddotazy (tabulky) a výrazy (řádků a sloupců).  
   
- Pro podporu kolekce a vnořené kolekce [!INCLUDE[esql](../../../../../../includes/esql-md.md)] všechno, co je výraz. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] více než podporuje složení [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]– každý výraz lze použít kdekoli. Dotaz výrazy vždy způsobit kolekcí předpokládané typů a mohou být použity kdekoli je povolen výraz kolekce. Informace o [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] výrazy, které nejsou podporovány v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], naleznete v tématu [nepodporované výrazy](../../../../../../docs/framework/data/adonet/ef/language-reference/unsupported-expressions-entity-sql.md).  
+ Pro podporu kolekce a vnořené kolekce [!INCLUDE[esql](../../../../../../includes/esql-md.md)] všechno, co je výraz. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je složení více než příkazů jazyka Transact-SQL – každý výraz lze použít kdekoli. Dotaz výrazy vždy způsobit kolekcí předpokládané typů a mohou být použity kdekoli je povolen výraz kolekce. Informace o výrazech jazyka Transact-SQL, nejsou podporované v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], naleznete v tématu [nepodporované výrazy](../../../../../../docs/framework/data/adonet/ef/language-reference/unsupported-expressions-entity-sql.md).  
   
  Následující položky jsou všechny platné [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy:  
   
@@ -47,17 +47,17 @@ set(e1)
 ```  
   
 ## <a name="uniform-treatment-of-subqueries"></a>Jednotné zacházení s poddotazy  
- Zadaný jeho důraz na tabulky, [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] provádí kontextové výklad poddotazy. Například poddotaz v `from` klauzule se považuje za multiset (tabulka). Ale stejné poddotaz používané `select` klauzule je považována za skalární poddotaz. Obdobně poddotaz použit na levé straně `in` – operátor se považuje za skalární poddotazu, zatímco pravé straně se očekává multiset – poddotaz.  
+ Zadaný jeho důraz na tabulky, příkazů jazyka Transact-SQL provede kontextové výklad poddotazy. Například poddotaz v `from` klauzule se považuje za multiset (tabulka). Ale stejné poddotaz používané `select` klauzule je považována za skalární poddotaz. Obdobně poddotaz použit na levé straně `in` – operátor se považuje za skalární poddotazu, zatímco pravé straně se očekává multiset – poddotaz.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Eliminuje tyto rozdíly. Výraz má jednotné interpretace, které nejsou závislé na kontextu, ve kterém se používá. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] bere v úvahu všech poddotazech bude multiset – poddotazy. Pokud je poddotazu, skalární hodnota [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje `anyelement` operátor, který funguje na kolekce (v tomto případě poddotazu) a extrahuje hodnotu singleton z kolekce.  
   
 ### <a name="avoiding-implicit-coercions-for-subqueries"></a>Jak se vyhnout implicitní převody pro poddotazy  
- Související vedlejším účinkem jednotné zacházení s poddotazy je implicitní převod poddotazů na skalární hodnoty. Konkrétně v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], použita třída multiset řádků (s jedním polem) je implicitně převést na skalární hodnota, jejíž datový typ je, že pole.  
+ Související vedlejším účinkem jednotné zacházení s poddotazy je implicitní převod poddotazů na skalární hodnoty. Konkrétně v příkazů jazyka Transact-SQL, použita třída multiset řádků (s jedním polem) implicitně převeden do skalární hodnoty, jejichž datový typ je, že pole.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Toto implicitní převod není podporován. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje operátora ANYELEMENT extrahovat hodnotu singleton z kolekce a `select value` klauzule vyhnout se vytváření Obálka řádků během výrazu dotazu.  
   
 ## <a name="select-value-avoiding-the-implicit-row-wrapper"></a>Vyberte hodnotu: Jak se vyhnout obálky implicitní řádek  
- V klauzuli select [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] poddotaz implicitně vytvoří obálku kolem položky řádku v klauzuli. Z toho vyplývá, že nemůžeme vytvořit kolekce skaláry nebo objekty. [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] umožňuje implicitní převod mezi rowtype s jedním polem a hodnotu singleton stejného datového typu.  
+ Klauzule select v poddotazu příkazů jazyka Transact-SQL implicitně vytvoří obálku kolem položky řádku v klauzuli. Z toho vyplývá, že nemůžeme vytvořit kolekce skaláry nebo objekty. Příkaz Transact-SQL umožňuje implicitní převod mezi rowtype s jedním polem a hodnotu singleton stejného datového typu.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje `select value` klauzule vynechat konstrukce implicitní řádek. Možné zadat pouze jednu položku `select value` klauzuli. Při použití těchto klauzulí žádný řádek obálky je postavena na položky v `select` klauzule a kolekce na požadovaný tvar může vytvářet, například: `select value a`.  
   
@@ -66,11 +66,11 @@ set(e1)
  `select a, b, c`  
   
 ## <a name="left-correlation-and-aliasing"></a>Levá korelace a aliasy  
- V [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], výrazy v daném oboru (jako jedna klauzule `select` nebo `from`) nemůže odkazovat na výrazy, které jsou definované výše ve stejném oboru. Některé dialekty SQL (včetně [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]) podporují omezené formuláře z nich najdete v `from` klauzuli.  
+ V jazyce Transact-SQL, výrazy v daném oboru (jako jedna klauzule `select` nebo `from`) nemůže odkazovat na výrazy, které jsou definované výše ve stejném oboru. Některé dialekty SQL (včetně příkazů jazyka Transact-SQL) podporují omezené formuláře z nich najdete v `from` klauzuli.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zobecňuje levé korelace v `from` klauzule a rovnoměrně je zpracovává. Výrazy v `from` klauzule můžete odkazovat starší definice (definice na levé straně) v klauzuli stejné bez nutnosti další syntaxi.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] také ukládá další omezení pro dotazy zahrnující `group by` klauzule. Výrazy v `select` klauzule a `having` klauzule takové dotazy mohou odkazovat pouze na `group by` klíče účtů prostřednictvím jejich aliasy. Následující konstruktor je platný v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] , ale nejsou v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]:  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] také ukládá další omezení pro dotazy zahrnující `group by` klauzule. Výrazy v `select` klauzule a `having` klauzule takové dotazy mohou odkazovat pouze na `group by` klíče účtů prostřednictvím jejich aliasy. Je platný v příkazů jazyka Transact-SQL, ale ne v jsou následující konstrukce [!INCLUDE[esql](../../../../../../includes/esql-md.md)]:  
   
 ```  
 select t.x + t.y from T as t group by t.x + t.y  
@@ -83,7 +83,7 @@ select k from T as t group by (t.x + t.y) as k
 ```  
   
 ## <a name="referencing-columns-properties-of-tables-collections"></a>(Vlastnosti) odkazujících sloupců z tabulky (kolekce)  
- Všechny odkazy na sloupce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] musí být kvalifikovaný pomocí aliasu tabulky. Následující konstrukce (za předpokladu, že `a` je platný sloupec tabulky `T`) je platná v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] , ale ne v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+ Všechny odkazy na sloupce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] musí být kvalifikovaný pomocí aliasu tabulky. Následující konstrukce (za předpokladu, že `a` je platný sloupec tabulky `T`) je platná v příkazů jazyka Transact-SQL, ale ne v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 ```  
 select a from T  
@@ -102,7 +102,7 @@ select Tab.a from Tab
 ```  
   
 ## <a name="navigation-through-objects"></a>Navigace prostřednictvím objektů  
- [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] používá "." zápis pro odkazujících sloupců (řádek) tabulky. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] rozšiřuje tento zápis (si z programovacích jazyků) pro podporu navigace prostřednictvím vlastností objektu.  
+ Pomocí jazyka Transact-SQL "." zápis pro odkazujících sloupců (řádek) tabulky. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] rozšiřuje tento zápis (si z programovacích jazyků) pro podporu navigace prostřednictvím vlastností objektu.  
   
  Například pokud `p` je výraz, zadejte osobu, následuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] syntaxe pro odkazování na město adresa této osoby.  
   
@@ -111,9 +111,9 @@ p.Address.City
 ```  
   
 ## <a name="no-support-for-"></a>Žádná podpora pro *  
- [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] podporuje nekvalifikované * syntaxe jako alias pro celý řádek a úplný \* syntaxe (t.\*) jako zástupce pro pole tabulky. Kromě toho [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] umožňuje speciální Count (\*) agregace, který obsahuje hodnoty Null.  
+ Podporuje příkaz Transact-SQL neúplný * syntaxe jako alias pro celý řádek a úplný \* syntaxe (t.\*) jako zástupce pro pole tabulky. Kromě toho umožňuje speciální počet příkazů jazyka Transact-SQL (\*) agregace, který obsahuje hodnoty Null.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje * konstrukce. [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] dotazy ve formátu `select * from T` a `select T1.* from T1, T2...` může být vyjádřena v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jako `select value t from T as t` a `select value t1 from T1 as t1, T2 as t2...`v uvedeném pořadí. Kromě toho tato konstrukce zpracování dědičnosti (hodnota dodávek), zatímco `select *` varianty jsou omezeny na nejvyšší úrovni vlastnosti deklarovaného typu.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje * konstrukce. Dotazy Transact-SQL ve tvaru `select * from T` a `select T1.* from T1, T2...` může být vyjádřena v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jako `select value t from T as t` a `select value t1 from T1 as t1, T2 as t2...`v uvedeném pořadí. Kromě toho tato konstrukce zpracování dědičnosti (hodnota dodávek), zatímco `select *` varianty jsou omezeny na nejvyšší úrovni vlastnosti deklarovaného typu.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje `count(*)` agregace. Místo nich se používá `count(0)`.  
   
@@ -126,7 +126,7 @@ from T as t
 group by t.b + t.c as k1  
 ```  
   
- .. je ekvivalentní následujícímu [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]:  
+ ... je ekvivalentem následujícího příkazů jazyka Transact-SQL:  
   
 ```  
 select b + c, count(*), sum(a)   
@@ -150,7 +150,7 @@ select a, sum(t.b) from T as t group by t.a as a
 ```  
   
 ## <a name="order-by-clause-usage"></a>ORDER BY – klauzule využití  
- [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] Umožňuje klauzule ORDER BY zadán pouze v vrchní POLOŽKU... Z... Pokud blok. V [!INCLUDE[esql](../../../../../../includes/esql-md.md)] můžete použít vnořený výraz klauzule ORDER BY a může být umístěna kdekoli v dotazu, ale není zachováváno pořadí v vnořeného dotazu.  
+ Příkaz Transact-SQL umožňuje klauzule ORDER BY zadán pouze v vrchní POLOŽKU... Z... Pokud blok. V [!INCLUDE[esql](../../../../../../includes/esql-md.md)] můžete použít vnořený výraz klauzule ORDER BY a může být umístěna kdekoli v dotazu, ale není zachováváno pořadí v vnořeného dotazu.  
   
 ```  
 -- The following query will order the results by the last name  
@@ -168,10 +168,10 @@ SELECT C2.FirstName, C2.LastName
 ```  
   
 ## <a name="identifiers"></a>Identifikátory  
- V [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], kolace aktuální databázi podle porovnání identifikátoru. V [!INCLUDE[esql](../../../../../../includes/esql-md.md)], identifikátory jsou vždy malá a velká písmena a rozlišovat diakritiku (to znamená, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] rozlišuje mezi znaky s diakritikou a výslovnost příslušných hlásek bez; například "a" se nerovná "ấ"). [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zpracovává verzích zpravodaje, které se zobrazí stejná, ale jsou z různých znakových stránek jako jiné znaky. Další informace najdete v tématu [vstupní znaková sada](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md).  
+ V jazyce Transact-SQL porovnání identifikátoru podle řazení aktuální databázi. V [!INCLUDE[esql](../../../../../../includes/esql-md.md)], identifikátory jsou vždy malá a velká písmena a rozlišovat diakritiku (to znamená, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] rozlišuje mezi znaky s diakritikou a výslovnost příslušných hlásek bez; například "a" se nerovná "ấ"). [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zpracovává verzích zpravodaje, které se zobrazí stejná, ale jsou z různých znakových stránek jako jiné znaky. Další informace najdete v tématu [vstupní znaková sada](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md).  
   
 ## <a name="transact-sql-functionality-not-available-in-entity-sql"></a>Funkce jazyka Transact-SQL není k dispozici v Entity SQL  
- Následující [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] funkce není k dispozici v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+ Následující funkce jazyka Transact-SQL není k dispozici v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
  DML  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] aktuálně nepodporuje příkazy DML (vložení, aktualizace nebo odstranění).  
@@ -180,7 +180,7 @@ SELECT C2.FirstName, C2.LastName
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje DDL v aktuální verzi.  
   
  imperativní programování  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje imperativní programování, na rozdíl od [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]. Místo toho použijte programovací jazyk.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje imperativní programování, na rozdíl od příkazů jazyka Transact-SQL. Místo toho použijte programovací jazyk.  
   
  Funkce seskupování  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ještě neposkytuje podporu pro seskupení funkce (například CUBE, ROLLUP a GROUPING_SET).  
@@ -189,13 +189,13 @@ SELECT C2.FirstName, C2.LastName
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Ne (ještě) poskytuje podporu pro analytických funkcí.  
   
  Integrovaných funkcí, operátorů  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje podmnožinu [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]integrovaných v funkcí a operátorů. Tyto operátory a funkce můžou být podporovanou poskytovateli hlavní úložiště. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používá funkce specifické pro úložiště deklarované v manifestu zprostředkovatele. Kromě toho [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] umožňuje deklarovat integrované a funkce, uživatelem definované existující úložiště pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používat.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje podmnožinu příkazů jazyka Transact-SQL předdefinované funkce a operátory. Tyto operátory a funkce můžou být podporovanou poskytovateli hlavní úložiště. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používá funkce specifické pro úložiště deklarované v manifestu zprostředkovatele. Kromě toho [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] umožňuje deklarovat integrované a funkce, uživatelem definované existující úložiště pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] používat.  
   
  Pomocné parametry  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] neposkytuje mechanismy pro pomocné parametry dotazu.  
   
  Dávkové zpracování výsledků dotazu  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dávkování výsledků dotazu není podporována. Například tady je platný [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] (odeslání v dávce):  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dávkování výsledků dotazu není podporována. Následující je příklad, platný Transact-SQL (odeslání v dávce):  
   
 ```  
 select * from products;  

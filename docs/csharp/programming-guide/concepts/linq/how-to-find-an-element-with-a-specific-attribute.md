@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání elementu s konkrétním atributem (C#)'
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 800e6cf5c499e616416ac90a561a440d4dcc2d7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ec6240bf399058ca94cc52c66e6029f924fcd29
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702201"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485555"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Postupy: Vyhledání elementu s konkrétním atributem (C#)
 Toto téma ukazuje, jak najít element, který má atribut, který obsahuje určitou hodnotu.  
@@ -41,7 +41,7 @@ foreach (XElement el in address)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
  Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
@@ -73,6 +73,5 @@ foreach (XElement el in address)
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
 - [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Operace projekce (C#)](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)

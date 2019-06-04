@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 697557463aa949036acb21e63b9a82b1fb84b415
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5520aef09c72819ff2b3763cd43af13f013263c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765281"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490207"
 ---
 # <a name="loadstringrcex-function"></a>LoadStringRCEx – funkce
 Převede hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

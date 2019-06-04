@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0776db4d045a8e52521859b9126583558bc5b51
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: bdf8d41a99328a8c8fd31eca974e52082abb7e79
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586354"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490784"
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
-Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework používá jednotný model pro kooperativní zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na zjednodušené objekt volána token zrušení. Objekt, který vyvolá jednu nebo více operací zrušitelný, třeba tak, že vytvoříte nová vlákna nebo úlohy, předá token pro každou operaci. Jednotlivé operace můžete zase předat další operace kopie token. Později objekt, který vytvoří token, který slouží k požadavku, že operace zastavit, co dělají. Pouze žádost o objekt může vydat žádost o zrušení a každý naslouchací proces je zodpovědný za řadí žádosti a reagovat na ni vhodné a včasné způsobem.  
+Od verze rozhraní .NET Framework 4, .NET Framework používá jednotný model pro kooperativní zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na zjednodušené objekt volána token zrušení. Objekt, který vyvolá jednu nebo více operací zrušitelný, třeba tak, že vytvoříte nová vlákna nebo úlohy, předá token pro každou operaci. Jednotlivé operace můžete zase předat další operace kopie token. Později objekt, který vytvoří token, který slouží k požadavku, že operace zastavit, co dělají. Pouze žádost o objekt může vydat žádost o zrušení a každý naslouchací proces je zodpovědný za řadí žádosti a reagovat na ni vhodné a včasné způsobem.  
   
  Je obecný vzor implementace vzoru kooperativní zrušení:  
   
@@ -122,7 +122,7 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhr
  [!code-csharp[Cancellation#5](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#5)]
  [!code-vb[Cancellation#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex9.vb#5)]  
   
- V novém kódu, který se zaměřuje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> a <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> podporovaly nový rámec zrušení v jejich `Wait` metody. Můžete předat <xref:System.Threading.CancellationToken> metody, a pokud se požaduje zrušení, události probudí a vyvolá výjimku <xref:System.OperationCanceledException>.  
+ V novém kódu, který cílí na rozhraní .NET Framework 4 <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> a <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> podporovaly nový rámec zrušení v jejich `Wait` metody. Můžete předat <xref:System.Threading.CancellationToken> metody, a pokud se požaduje zrušení, události probudí a vyvolá výjimku <xref:System.OperationCanceledException>.  
   
  [!code-csharp[Cancellation#6](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex10.cs#6)]
  [!code-vb[Cancellation#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex10.vb#6)]  

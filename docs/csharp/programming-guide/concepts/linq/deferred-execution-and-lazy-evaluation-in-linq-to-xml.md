@@ -2,12 +2,12 @@
 title: Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
-ms.openlocfilehash: 940885d6499bd2730c0bd4a5e15a490a9e85deab
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f68a6c7de943d4a38ad0e5777298368e1c4e554
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64597433"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487561"
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)
 Operace dotazů a osy jsou často implementována pomocí odloženého provedení. Toto téma popisuje požadavky a výhody odložené provedení a některé důležité informace o implementaci.  
@@ -35,7 +35,7 @@ Operace dotazů a osy jsou často implementována pomocí odloženého proveden�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
 - [Koncepty a terminologie (funkční transformace) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)
 - [Agregační operace (C#)](../../../../csharp/programming-guide/concepts/linq/aggregation-operations.md)
 - [yield](../../../../csharp/language-reference/keywords/yield.md)

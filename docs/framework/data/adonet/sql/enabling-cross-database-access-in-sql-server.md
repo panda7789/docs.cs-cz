@@ -2,12 +2,12 @@
 title: Povolení přístupu mezi databázemi na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-ms.openlocfilehash: ef018566c5d3881d2f9b77dad932712d1fb11841
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 50e2a9149074d2d29ff2e17fa2a339bd7820b984
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583689"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490077"
 ---
 # <a name="enabling-cross-database-access-in-sql-server"></a>Povolení přístupu mezi databázemi na SQL Serveru
 Vlastnictví mezidatabázové řetězení nastane, pokud postup v jedné databázi závisí na objektech v jiné databázi. Řetěz vlastnictví mezi databázemi funguje stejným způsobem jako v rámci jedné databáze řetězení vlastnictví, s tím rozdílem, že řetěz nepřerušený vlastnictví vyžaduje, aby všichni vlastníci objektu jsou namapovány na stejný přihlašovací účet. Pokud zdrojový objekt v databázi zdrojové a cílové objektů v cílové databáze jsou vlastněny stejný přihlašovací účet, nekontroluje systém SQL Server oprávnění u cílové objektů.  
@@ -20,7 +20,7 @@ Vlastnictví mezidatabázové řetězení nastane, pokud postup v jedné databá
 - Uživatelé s oprávněním vytvářet databáze můžete vytvářet nové databáze a připojit existující databáze. Pokud vlastnictví mezidatabázové řetězení je povoleno, mohou tito uživatelé přejdou objekty v jiných databázích, které jsou pravděpodobně nemá oprávnění z nově vytvořených nebo připojených databází, které vytvoří.  
   
 ## <a name="enabling-cross-database-ownership-chaining"></a>Povolení vlastnictví mezidatabázové řetězení  
- Vlastnictví mezidatabázové řetězení musí být povolené jen v prostředích, kde můžete plně důvěřovat uživatelům s vysokou úrovní oprávnění. Můžete ji nakonfigurovat, během instalace pro všechny databáze nebo selektivně ke konkrétním databázím pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy `sp_configure` a `ALTER DATABASE`.  
+ Vlastnictví mezidatabázové řetězení musí být povolené jen v prostředích, kde můžete plně důvěřovat uživatelům s vysokou úrovní oprávnění. Můžete ji nakonfigurovat, během instalace pro všechny databáze nebo selektivně pro konkrétní databáze pomocí příkazů jazyka Transact-SQL `sp_configure` a `ALTER DATABASE`.  
   
  Chcete-li konfigurace selektivním vlastnictví mezidatabázové řetězení, použijte `sp_configure` vypnutí serveru. Pak pomocí příkazu ALTER DATABASE nastavit ON DB_CHAINING konfigurace vlastnictví mezidatabázové řetězení pro databáze, které je vyžadují.  
   

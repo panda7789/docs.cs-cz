@@ -2,12 +2,12 @@
 title: KDE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: a8e1061e-0028-4a6f-8f19-b9f48e96c4b8
-ms.openlocfilehash: 02eeaeb8cfa335e5545b26d3d52b91c4e1614629
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 939d4c0ec2c30bc71b22fb65ab36644e063f97de
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879434"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489851"
 ---
 # <a name="where-entity-sql"></a>KDE (Entity SQL)
 Přímo po použití klauzule WHERE [FROM](../../../../../../docs/framework/data/adonet/ef/language-reference/from-entity-sql.md) klauzuli.  
@@ -23,7 +23,7 @@ Přímo po použití klauzule WHERE [FROM](../../../../../../docs/framework/data
  Typ Boolean.  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzule WHERE má stejnou sémantiku, jak je popsáno pro [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]. Omezuje objekty vytvořený podle výrazu dotazu tím, že omezíte prvků zdrojové kolekce na ty, které předávají podmínku.  
+ Klauzule WHERE má stejnou sémantiku, jak je popsáno příkazů jazyka Transact-SQL. Omezuje objekty vytvořený podle výrazu dotazu tím, že omezíte prvků zdrojové kolekce na ty, které předávají podmínku.  
   
 ```  
 select c from cs as c where e  

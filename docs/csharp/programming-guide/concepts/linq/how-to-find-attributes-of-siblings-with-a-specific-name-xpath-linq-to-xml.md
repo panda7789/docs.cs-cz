@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c3133d64-523f-422d-8838-73d36b945ca0
-ms.openlocfilehash: 562f3a40e1670a76778a64570f980326d946a4c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c62ecb7660a012af556515ba5e7de330d5ab5e7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702175"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486790"
 ---
 # <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-c"></a>Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzlu. Pouze atributy s konkrétním názvem jsou vráceny v kolekci.  
@@ -55,6 +55,3 @@ id="bk101"
 id="bk102"  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

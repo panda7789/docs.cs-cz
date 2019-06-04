@@ -16,17 +16,17 @@ helpviewer_keywords:
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b23edb1c23a7f0c7043fc5be6e7e0eabcdda0316
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 00347b295eb5d9a092fb817e75f852f16004bb87
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626324"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489265"
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
 Spolupráce aplikace obvykle obsahují sestavení klienta .NET, jeden nebo více sestavení vzájemné spolupráce představující odlišné COM knihoven typů a jedna nebo více komponent COM registrovány. Visual Studio a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] poskytují nástroje pro import a převod knihovny typů do sestavení vzájemné spolupráce, jak je popsáno v [importování knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). Nasazení aplikace spolupráce dvěma způsoby:  
   
-- Pomocí vestavěné typy spolupráce: Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
+- Pomocí vestavěné typy spolupráce: Od verze rozhraní .NET Framework 4, můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
   
 - Nasazením sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   

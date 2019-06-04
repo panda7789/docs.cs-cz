@@ -2,12 +2,12 @@
 title: Stejně jako (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 9463a5cb522a3d3dab7725c4b71a5970d1bdf19d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98940c075a01de2ebe061b6dff53917247fc5193
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780442"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489909"
 ---
 # <a name="like-entity-sql"></a>Stejně jako (Entity SQL)
 Určuje, zda konkrétní znak `String` odpovídá zadanému vzoru.  
@@ -49,7 +49,7 @@ match [NOT] LIKE pattern [ESCAPE escape]
 > [!NOTE]
 >  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Jako operátor a ODCHODOVOU klauzuli nelze použít pro `System.DateTime` nebo `System.Guid` hodnoty.  
   
- NAPŘÍKLAD porovnávání aplikace podporuje ASCII a Unicode porovnávání vzorů. Všechny parametry jsou znaky ASCII, provádí ASCII porovnávání vzorů. Pokud jeden nebo více argumentů Unicode, jsou všechny argumenty převést do kódování Unicode a porovnávání vzorů Unicode se provádí. Při použití kódování Unicode s podobné koncové mezery jsou významné. ale pro kódování Unicode, koncové mezery nejsou důležité. Syntaxe řetězce vzor [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je stejné jako u [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)].  
+ NAPŘÍKLAD porovnávání aplikace podporuje ASCII a Unicode porovnávání vzorů. Všechny parametry jsou znaky ASCII, provádí ASCII porovnávání vzorů. Pokud jeden nebo více argumentů Unicode, jsou všechny argumenty převést do kódování Unicode a porovnávání vzorů Unicode se provádí. Při použití kódování Unicode s podobné koncové mezery jsou významné. ale pro kódování Unicode, koncové mezery nejsou důležité. Syntaxe řetězce vzor [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je stejné jako u příkazů jazyka Transact-SQL.  
   
  Vzorek může obsahovat regulární znaky a zástupné znaky. Při porovnávání vzorů, pravidelné znaky se musí přesně shodovat znaků určených v znak `string`. Zástupné znaky, ale mohou odpovídat fragmenty libovolného řetězce znaků. Při použití se zástupnými znaky, je flexibilnější, než = operátor LIKE a! = operátory porovnání řetězců.  
   

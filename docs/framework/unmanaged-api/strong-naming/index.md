@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45f3e8533bf7400566304ddb0fdd9d8e5a9b4280
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 2ee08e9ca243ac086a0b75892bf9258246e8fd7c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456133"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490673"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Silné názvy (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepisování sestavení silným názvem.  
@@ -23,7 +23,7 @@ Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepis
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 > [!NOTE]
->  Všechny tyto funkce jsou zastaralé od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Doporučené alternativy, najdete v článku [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) rozhraní.  
+>  Všechny tyto funkce jsou zastaralé od verze rozhraní .NET Framework 4. Doporučené alternativy, najdete v článku [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) rozhraní.  
   
  [GetHashFromAssemblyFile – funkce](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromassemblyfile-function.md)  
  Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu. Zastaralé od verze rozhraní .NET Framework 4.  

@@ -2,12 +2,12 @@
 title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 47dbf800852e149f541c512e90a8bafef2077672
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: fe272bada02e6628b6275d2a5282f0def23074c8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879923"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489834"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -92,7 +92,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
  Při dotazování na konceptuální model, platí následující aspekty zabezpečení. Tyto úvahy platí pro [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy s zprostředkovatel EntityClient a objekt dotazy pomocí jazyka LINQ, [!INCLUDE[esql](../../../../../includes/esql-md.md)]a metody Tvůrce dotazu.  
   
 #### <a name="prevent-sql-injection-attacks"></a>Zabránění útokům prostřednictvím injektáže SQL.  
- Aplikace často trvat, než externí vstup (uživatele nebo jiné externí agenta) a provádět akce na základě těchto informací. Žádné vstup, který je přímo nebo nepřímo odvozen od uživatele nebo externí agenta může mít obsah, který používá syntaxi cílový jazyk k vykonávání neoprávněným akcím. Pokud cílový jazyk je jazyk SQL (Structured Query), například [!INCLUDE[tsql](../../../../../includes/tsql-md.md)], tato manipulace se označuje jako útok prostřednictvím injektáže SQL. Uživatel se zlými úmysly může vložit příkazy přímo do dotazu a vyřadit tabulku databáze, způsobit odepření služby nebo jinak změnit druh operace právě probíhá.  
+ Aplikace často trvat, než externí vstup (uživatele nebo jiné externí agenta) a provádět akce na základě těchto informací. Žádné vstup, který je přímo nebo nepřímo odvozen od uživatele nebo externí agenta může mít obsah, který používá syntaxi cílový jazyk k vykonávání neoprávněným akcím. Pokud cílový jazyk je jazyk SQL (Structured Query), jako je například příkazů jazyka Transact-SQL, tato manipulace se označuje jako útok prostřednictvím injektáže SQL. Uživatel se zlými úmysly může vložit příkazy přímo do dotazu a vyřadit tabulku databáze, způsobit odepření služby nebo jinak změnit druh operace právě probíhá.  
   
 - [!INCLUDE[esql](../../../../../includes/esql-md.md)] útoky prostřednictvím injektáže:  
   

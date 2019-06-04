@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51bf359ea6ba4e5b45827928a50a095a7960a68f
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 5bbf579540ccb93101dba05c5b2577ae8f24ec09
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456715"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486520"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  
@@ -32,7 +32,7 @@ Stínové kopírování sestavení umožňuje, které se používají v doméně
   
 - [Povolení a používání stínové kopírování sestavení](#EnablingAndUsing) popisuje základní použití a možnosti, které jsou k dispozici pro stínové kopírování sestavení.  
   
-- [Výkon při spouštění](#StartupPerformance) jsou zde popsány změny, které jsou provedeny stínovém kopírování v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] zlepšit výkon při spouštění a jak se vrátit k chování z předchozích verzí.  
+- [Výkon při spouštění](#StartupPerformance) jsou zde popsány změny, které jsou provedeny stínovém kopírování v rozhraní .NET Framework 4 zlepšit výkon při spouštění a jak se vrátit k chování z předchozích verzí.  
   
 - [Zastaralé metody](#ObsoleteMethods) jsou zde popsány změny, které byly provedeny k vlastnostem a metodám, které řídí stínové kopírování v [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
   

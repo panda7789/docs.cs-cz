@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 5e79da7e-e78a-413c-8fb0-f3f9cd84f579
 dev_langs:
 - sql
-ms.openlocfilehash: a47ff46ca99a84500bc5dfecc19bb31652e9b4b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: af0e00f470584883b6a65b63f2650c1c359b404c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034070"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489867"
 ---
 # <a name="unsupported-expressions"></a>Nepodporované výrazy
 
-Toto téma popisuje [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] výrazy, které nejsou podporovány v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Další informace najdete v tématu [jak Entity SQL liší od Transact-SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/how-entity-sql-differs-from-transact-sql.md).
+Toto téma popisuje výrazů příkazů jazyka Transact-SQL, které nejsou podporovány v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Další informace najdete v tématu [jak Entity SQL liší od Transact-SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/how-entity-sql-differs-from-transact-sql.md).
 
 ## <a name="quantified-predicates"></a>Číselná predikátů
 
-[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] umožňuje následující formu konstrukcí:
+Příkaz Transact-SQL umožňuje má následující formu konstrukcí:
 
 ```sql
 sal > all (select salary from employees)
@@ -33,7 +33,7 @@ exists(select 0 from employees as e where sal > e.salary)
 
 ## <a name="-operator"></a>* – operátor
 
-[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] podporuje použití * operátoru v klauzuli SELECT k označení, že všechny sloupce by měl projekci navýšení kapacity. To není podporováno v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].
+Příkaz Transact-SQL podporuje použití * operátoru v klauzuli SELECT k označení, že všechny sloupce by měl projekci navýšení kapacity. To není podporováno v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].
 
 ## <a name="see-also"></a>Viz také:
 

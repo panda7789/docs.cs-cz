@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5099e549-f4fd-49fb-a290-549edd456c6a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ed4533c934120c3400ddba68e65bc82aabc9370
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 350cc91a2d423bc40cc44466e679db769daac1d8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456769"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486971"
 ---
 # <a name="resolving-assembly-loads"></a>Řešení načítání sestavení
 Rozhraní .NET Framework poskytuje <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí pro aplikace, které vyžadují větší kontrolu nad načítání sestavení. Díky zpracování této události, může vaše aplikace načtení sestavení do zatížení kontextu z mimo normální definovaných cest výběr z několika verzí sestavení načíst, Emitování dynamických sestavení a vrátit ji a tak dále. Toto téma obsahuje pokyny pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí.  
@@ -52,7 +52,7 @@ Rozhraní .NET Framework poskytuje <xref:System.AppDomain.AssemblyResolve?displa
 > [!NOTE]
 >  Obslužná rutina musí načíst sestavení do načtení z kontextu, v kontextu načtení, nebo bez kontextu. Pokud obslužná rutina načte sestavení do kontextu pouze pro reflexi pomocí <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> metody pokusí zatížení, která vyvolala <xref:System.AppDomain.AssemblyResolve> události nezdaří.  
   
- Zodpovídá za obslužné rutiny události k vrácení vhodný sestavení. Obslužná rutina může analyzovat zobrazovaný název požadované sestavení předáním <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> hodnoty vlastnosti <xref:System.Reflection.AssemblyName.%23ctor%28System.String%29> konstruktoru. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít obslužné rutiny <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> a určí, zda je aktuální požadavek závislost z jiného sestavení. Tyto informace můžou pomoci při identifikaci sestavení, které se bude splňovat závislost.  
+ Zodpovídá za obslužné rutiny události k vrácení vhodný sestavení. Obslužná rutina může analyzovat zobrazovaný název požadované sestavení předáním <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> hodnoty vlastnosti <xref:System.Reflection.AssemblyName.%23ctor%28System.String%29> konstruktoru. Od verze rozhraní .NET Framework 4, můžete použít obslužné rutiny <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> a určí, zda je aktuální požadavek závislost z jiného sestavení. Tyto informace můžou pomoci při identifikaci sestavení, které se bude splňovat závislost.  
   
  Obslužná rutina události může vrátit na jinou verzi než verze, který byl vyžádán sestavení.  
   

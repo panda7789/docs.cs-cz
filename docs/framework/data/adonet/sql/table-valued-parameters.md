@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: ccef487eb27a5a170d197a6bc670ec4d2bcf8bdf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a7a39677bbd975ac384357481ef419f57b96d977
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645789"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489816"
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotami v tabulkách
-Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace k SQL serveru bez nutnosti více výměn nebo zvláštní logiku na straně serveru pro zpracování dat. Parametry table-valued můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Řádky příchozích dat jsou uložené v proměnné tabulky, který může pak být provozována pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
+Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace k SQL serveru bez nutnosti více výměn nebo zvláštní logiku na straně serveru pro zpracování dat. Parametry table-valued můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Řádky příchozích dat jsou uložené v proměnné tabulky, který může pak být provozována s použitím příkazů jazyka Transact-SQL.  
   
- Hodnoty sloupců v parametrů table-valued lze přistupovat pomocí standardní [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazů SELECT. Parametry Table-valued jsou silného typu a jejich strukturu se automaticky ověří. Velikost parametrů table-valued je omezena pouze paměť serveru.  
+ Hodnoty sloupců v parametrů table-valued lze přistupovat pomocí standardních příkazů jazyka Transact-SQL SELECT. Parametry Table-valued jsou silného typu a jejich strukturu se automaticky ověří. Velikost parametrů table-valued je omezena pouze paměť serveru.  
   
 > [!NOTE]
 >  Nelze vrátit data v parametru s hodnotou tabulky. Parametry Table-valued jsou výhradně; VÝSTUP – klíčové slovo se nepodporuje.  
@@ -39,7 +39,7 @@ Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řá
 - Použití `bcp` nástroj nebo <xref:System.Data.SqlClient.SqlBulkCopy> objektu, který chcete načíst počet řádků dat do tabulky. I když tato technika je velmi efektivní, nepodporuje zpracování na straně serveru, pokud načtení dat do dočasné tabulky nebo proměnné tabulky.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Vytváření typů Table-Valued Parameter  
- Parametry Table-valued jsou založené na tabulce silného typu struktury, které jsou definovány pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy CREATE TYPE. Budete muset vytvořit tabulku typu a definují strukturu v systému SQL Server, abyste mohli používat parametry table-valued v klientských aplikacích. Další informace o vytváření typů tabulek, naleznete v tématu [uživatelem definované typy tabulek](https://go.microsoft.com/fwlink/?LinkID=98364) v SQL Server Books Online.  
+ Parametry Table-valued jsou založeny na silného typu tabulky struktury, které jsou definovány pomocí příkazů jazyka Transact-SQL CREATE TYPE. Budete muset vytvořit tabulku typu a definují strukturu v systému SQL Server, abyste mohli používat parametry table-valued v klientských aplikacích. Další informace o vytváření typů tabulek, naleznete v tématu [uživatelem definované typy tabulek](https://go.microsoft.com/fwlink/?LinkID=98364) v SQL Server Books Online.  
   
  Následující příkaz vytvoří typ tabulky s názvem CategoryTableType, který se skládá z ID kategorie a CategoryName sloupce:  
   
@@ -48,7 +48,7 @@ CREATE TYPE dbo.CategoryTableType AS TABLE
     ( CategoryID int, CategoryName nvarchar(50) )  
 ```  
   
- Jakmile vytvoříte typ tabulky, je možné deklarovat parametry s hodnotou tabulky na základě tohoto typu. Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] fragment ukazuje, jak deklarovat parametr s hodnotou tabulky v definici uloženou proceduru. Všimněte si, že READONLY – klíčové slovo je vyžadována pro deklarování parametr s hodnotou tabulky.  
+ Jakmile vytvoříte typ tabulky, je možné deklarovat parametry s hodnotou tabulky na základě tohoto typu. Následující fragment příkazů jazyka Transact-SQL ukazuje, jak deklarovat parametr s hodnotou tabulky v definici uloženou proceduru. Všimněte si, že READONLY – klíčové slovo je vyžadována pro deklarování parametr s hodnotou tabulky.  
   
 ```  
 CREATE PROCEDURE usp_UpdateCategories   
@@ -58,7 +58,7 @@ CREATE PROCEDURE usp_UpdateCategories
 ## <a name="modifying-data-with-table-valued-parameters-transact-sql"></a>Úpravy dat s parametry Table-Valued (Transact-SQL)  
  Parametry s hodnotou tabulky je možné v změny založeným na set dat, které ovlivňují více řádků pomocí provádí jeden příkaz. Například můžete vybrat všechny řádky v parametru s hodnotou tabulky a vložení do tabulky databáze, nebo vytvoříte příkazu update spojením parametr s hodnotou tabulky do tabulky, kterou chcete aktualizovat.  
   
- Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazu UPDATE ukazuje, jak se pomocí připojení k tabulce kategorie parametr s hodnotou tabulky. Pokud použijete parametr s hodnotou tabulky s spojení v klauzuli FROM, musíte mít také alias, jak je znázorněno zde, kde parametr s hodnotou tabulky je alias jako "ES":  
+ Následující příkaz jazyka Transact-SQL pro sadu VS11 ukazuje, jak se pomocí připojení k tabulce kategorie parametr s hodnotou tabulky. Pokud použijete parametr s hodnotou tabulky s spojení v klauzuli FROM, musíte mít také alias, jak je znázorněno zde, kde parametr s hodnotou tabulky je alias jako "ES":  
   
 ```  
 UPDATE dbo.Categories  
@@ -67,7 +67,7 @@ UPDATE dbo.Categories
     ON dbo.Categories.CategoryID = ec.CategoryID;  
 ```  
   
- To [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příklad ukazuje, jak pro výběr řádků z parametru s hodnotou tabulky provést vložení v rámci jedné operace založeným na set.  
+ V tomto příkladu příkazů jazyka Transact-SQL ukazuje, jak vybrat řádky z parametru s hodnotou tabulky provést vložení v rámci jedné operace založeným na set.  
   
 ```  
 INSERT INTO dbo.Categories (CategoryID, CategoryName)  
@@ -81,7 +81,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
   
 - Parametry s hodnotou tabulky je možné indexovat pouze pro podporu omezení UNIQUE a PRIMARY KEY. SQL Server nespravuje statistiky pro parametry s hodnotou tabulky.  
   
-- Parametry Table-valued jsou jen pro čtení v [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] kódu. Hodnoty sloupce na řádky parametr s hodnotou tabulky nelze aktualizovat, a nelze vložit nebo odstranit řádky. Pokud chcete upravit data, která je předána uloženou proceduru nebo příkaz v parametr s hodnotou tabulky s parametry, je nutné vložit data do dočasné tabulky nebo do proměnné tabulky.  
+- Parametry Table-valued jsou jen pro čtení v kódu jazyka Transact-SQL. Hodnoty sloupce na řádky parametr s hodnotou tabulky nelze aktualizovat, a nelze vložit nebo odstranit řádky. Pokud chcete upravit data, která je předána uloženou proceduru nebo příkaz v parametr s hodnotou tabulky s parametry, je nutné vložit data do dočasné tabulky nebo do proměnné tabulky.  
   
 - Pomocí příkazů ALTER TABLE nelze použít k úpravě návrhu parametrů table-valued.  
   

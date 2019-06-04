@@ -2,12 +2,12 @@
 title: 'Postupy: Načtení XML ze souboru (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3ed38487-8028-4209-9872-c8dce0ed4dfe
-ms.openlocfilehash: f97e99a3d5fb2dd5628e1dc00909b6608255a967
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cd4e45767b2f72de8d9a3de9814da6260d2413fe
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667909"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485308"
 ---
 # <a name="how-to-load-xml-from-a-file-c"></a>Postupy: Načtení XML ze souboru (C#)
 Toto téma ukazuje, jak načíst XML z identifikátoru URI pomocí <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> metody.  
@@ -48,6 +48,3 @@ Console.WriteLine(booksFromFile);
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [Analýza kódu XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

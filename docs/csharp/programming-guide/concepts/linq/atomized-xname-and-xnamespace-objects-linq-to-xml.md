@@ -2,12 +2,12 @@
 title: Atomizované objekty XName a Xnamespace (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
-ms.openlocfilehash: ff5677e84d0a4401c9d3ce8c43e7743385cdd432
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d21397e6885b892f6ac1904e38bd85a78ae07ab
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668429"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487595"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-c"></a>Atomizované objekty XName a Xnamespace (LINQ to XML) (C#)
 <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomizované objekty*; to znamená, pokud obsahují stejné kvalifikovaný název, odkazují na stejný objekt. To poskytuje výhody výkon pro dotazy: Při porovnávání rovnosti dvou atomizované objekty názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt. Základní kód nemusí řetězec porovnání, které by byly časově náročné.  
@@ -73,7 +73,3 @@ foreach (var z in query)
 <C1>1</C1>  
 <C1>1</C1>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Výkon (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/performance-linq-to-xml.md)

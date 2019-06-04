@@ -2,12 +2,12 @@
 title: Zachování prázdných znaků při Serializing3
 ms.date: 07/20/2015
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
-ms.openlocfilehash: 2f1e59728dc353a86421c9071710aba23c8f7f6f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d357d40c13a66a152b3c8bb5f61e3a3374c4055
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608734"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484074"
 ---
 # <a name="preserving-white-space-while-serializing"></a>Zachování prázdných znaků při serializaci
 Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.  
@@ -30,7 +30,3 @@ Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.
  Pokud metoda nepřijímá <xref:System.Xml.Linq.SaveOptions> jako argument, pak metoda naformátuje (odsazení) serializovaném kódu XML. V takovém případě se zahodí všechny neplatné prázdné znaky ve stromové struktuře XML.  
   
  Pokud trvá, než metoda <xref:System.Xml.Linq.SaveOptions> jako argument, potom můžete zadat, že metoda není formátování (odsazení) serializovaném kódu XML. V takovém případě se zachovají všechny prázdné znaky ve stromové struktuře XML.  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Serializace stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)

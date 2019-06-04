@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 91149858-4810-4f65-9b48-468488172c9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1e9073e48141bc6895d00c773c2d3d2cfeb260f6
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 26fed0a10b9a25f25a580c7ac9a468cbedeb3671
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456457"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489470"
 ---
 # <a name="forceperformancecounteruniquesharedmemoryreads-element"></a>\<forcePerformanceCounterUniqueSharedMemoryReads> Element
 Určuje, jestli má PerfCounter.dll CategoryOptions nastavení registru v rozhraní .NET Framework verze 1.1 aplikace k určení, jestli se má načíst data čítače výkonu ze sdílené paměti podle kategorií nebo globální paměti.  
@@ -55,7 +55,7 @@ enabled="true|false"/>
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve verzích rozhraní .NET Framework před [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], odpovídaly verzi PerfCounter.dll, který byl načten modul runtime, který byl načten v procesu. Pokud počítač měl i rozhraní .NET Framework verze 1.1 a [!INCLUDE[dnprdnlong](../../../../../includes/dnprdnlong-md.md)] nainstalované, by aplikace rozhraní .NET Framework 1.1 načtení verze rozhraní .NET Framework 1.1 PerfCounter.dll. Od verze rozhraní .NET Framework 4, je nainstalovaná nejnovější verze PerfCounter.dll načten. To znamená, že aplikace rozhraní .NET Framework 1.1 načte verzi rozhraní .NET Framework 4 PerfCounter.dll pokud rozhraní .NET Framework 4 je nainstalován v počítači.  
+ Ve verzích rozhraní .NET Framework před rozhraní .NET Framework 4 odpovídaly verzi PerfCounter.dll, který byl načten modul runtime, který byl načten v procesu. Pokud počítač měl i rozhraní .NET Framework verze 1.1 a [!INCLUDE[dnprdnlong](../../../../../includes/dnprdnlong-md.md)] nainstalované, by aplikace rozhraní .NET Framework 1.1 načtení verze rozhraní .NET Framework 1.1 PerfCounter.dll. Od verze rozhraní .NET Framework 4, je nainstalovaná nejnovější verze PerfCounter.dll načten. To znamená, že aplikace rozhraní .NET Framework 1.1 načte verzi rozhraní .NET Framework 4 PerfCounter.dll pokud rozhraní .NET Framework 4 je nainstalován v počítači.  
   
  Od verze rozhraní .NET Framework 4, při využívání čítače výkonu, zkontroluje PerfCounter.dll CategoryOptions položka registru pro každého zprostředkovatele k určení, zda by měl číst ze sdílené paměti podle kategorií nebo globální sdílené paměti. Rozhraní .NET Framework 1.1 PerfCounter.dll nenačítá této položky registru, protože nebude vědět o sdílené paměti podle kategorií. vždy čte z globální sdílené paměti.  
   

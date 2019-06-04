@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: dd66cd4c-b087-415f-9c3e-94e3a1835f74
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8500abe590d4c85dcb5ecda54212a1ba9cc7950d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d858ef4c2f70c55b0a36e845f90d9a8e08f5e2d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586990"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487822"
 ---
 # <a name="using-libraries-from-partially-trusted-code"></a>Používání knihoven z částečně důvěryhodného kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
 > [!NOTE]
->  Toto téma řeší chování sestavení se silným názvem a platí jenom pro [úrovně 1](../../../docs/framework/misc/security-transparent-code-level-1.md) sestavení. [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md) sestavení v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] nebo později nejsou ovlivněny silných názvů. Další informace o změnách systém zabezpečení najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+>  Toto téma řeší chování sestavení se silným názvem a platí jenom pro [úrovně 1](../../../docs/framework/misc/security-transparent-code-level-1.md) sestavení. [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md) sestavení v rozhraní .NET Framework 4 nebo novější, nejsou ovlivněny silných názvů. Další informace o změnách systém zabezpečení najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
  Aplikace, které přijímají menší než úplný vztah důvěryhodnosti z jejich hostitele nebo izolovaného prostoru není povoleno volat sdílených knihoven spravovaných, pokud jim prostřednictvím zapisovače knihovny konkrétně umožňuje <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Uživatelé vytvářející obsah aplikace proto musí být vědomi, že některé knihovny nebudou k dispozici k nim z částečně důvěryhodného kontextu. Ve výchozím nastavení, veškerý kód, který se spustí v částečným vztahem důvěryhodnosti [izolovaného prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md) a není v seznamu sestavení úplné důvěryhodnosti je částečně důvěryhodné. Pokud neočekáváte váš kód, který se spustí z částečně důvěryhodného kontextu nebo volat částečně důvěryhodným kódem, není nutné mít obavy o informace v této části. Ale pokud píšete kód, který musí spolupracovat s částečně důvěryhodným kódem nebo provoz z částečně důvěryhodného kontextu, je třeba zvážit následující faktory:  
   

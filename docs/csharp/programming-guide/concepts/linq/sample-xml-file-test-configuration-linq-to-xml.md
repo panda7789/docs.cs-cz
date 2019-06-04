@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 45bfb509-c1d4-4b4f-9690-1cb0c9816516
-ms.openlocfilehash: a001d7433bcf19e5bcecf7ba49cb233559906d87
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 713e0b69ea896d9f4198ae68f1a3a258d74f24f4
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61711756"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487233"
 ---
 # <a name="sample-xml-file-test-configuration-linq-to-xml"></a>Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Toto je soubor konfigurace testu.  
@@ -55,7 +55,3 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
   </Test>  
 </Tests>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

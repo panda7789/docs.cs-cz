@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0e836329527740d490bc3ad96cd62d56bc0b7b3e
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 0d5798b8067bde8b711982bfe4f78d66fe1521c6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377740"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490834"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
@@ -64,7 +64,7 @@ await someTask.ConfigureAwait(continueOnCapturedContext:false);
 ```
 
 ## <a name="canceling-an-asynchronous-operation"></a>Zrušení asynchronní operace
- Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], metod TAP, které podporují zrušení poskytnout alespoň jedním přetížením, která přijímá token zrušení (<xref:System.Threading.CancellationToken> objekt).
+ Od verze rozhraní .NET Framework 4, poskytuje metody TAP, které podporují zrušení alespoň jedním přetížením, která přijímá token zrušení (<xref:System.Threading.CancellationToken> objekt).
 
  Token zrušení je vytvořená prostřednictvím zdroj token zrušení (<xref:System.Threading.CancellationTokenSource> objekt).  Zdroje na <xref:System.Threading.CancellationTokenSource.Token%2A> vlastnost vrátí token zrušení, který bude signál při zdroje <xref:System.Threading.CancellationTokenSource.Cancel%2A> metoda je volána.  Pokud chcete stáhnout jediné webové stránky a chcete být schopni zrušit operaci, můžete vytvořit <xref:System.Threading.CancellationTokenSource> objektu, předejte svůj token metody TAP a následně zavolat zdroj <xref:System.Threading.CancellationTokenSource.Cancel%2A> metoda až budete připraveni na zrušení operace:
 

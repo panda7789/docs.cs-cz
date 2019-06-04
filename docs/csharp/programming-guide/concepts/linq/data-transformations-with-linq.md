@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: 41542b663930ba92d47e62151e913429b690054d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: d7073fe35d58c9c538afa52911a5555b0002bfcf
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879125"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486269"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není jenom o načítání dat Je také výkonné nástroje pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence, stejně jako vstup a upravit v mnoha způsoby, jak vytvořit nové pořadí výstupu. Můžete změnit pořadí samotné beze změny samotné prvky řazení a seskupení. Ale možná procesorově nejvýkonnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzuli. Například můžete provádět následující úlohy:  
@@ -102,6 +102,6 @@ ms.locfileid: "65879125"
 - [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
 - [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)
 - [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
-- [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)
+- [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)
 - [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)
 - [select – klauzule](../../../../csharp/language-reference/keywords/select-clause.md)

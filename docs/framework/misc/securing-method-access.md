@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d9d423ef71b76b2dcbbf2812e13850922fb50ac0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8be971cee4aa2ae09745a090396269c80ca62198
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625896"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487942"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -60,7 +60,7 @@ public class Class1
  Jak zabránit používán částečně důvěryhodným kódem konkrétní třídy a metody, stejně jako vlastnosti a události, pomocí deklarace uvedené v této části. Použitím tyto deklarace třídy nastavují ochranu pro všechny jeho metody, vlastnosti a události. Mějte však na paměti, že přístup k poli není ovlivněn deklarativní zabezpečení. Všimněte si také, že požadavky propojení pomáhá chránit před jenom okamžitý volající a můžou i nadále být vystavené útokům typu luring.  
   
 > [!NOTE]
->  Nový model transparentnosti je zavedený v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md) identifikuje zabezpečený kód pomocí modelu <xref:System.Security.SecurityCriticalAttribute> atribut. Kód kritický pro zabezpečení vyžaduje volající a dědice plně důvěryhodné. Sestavení, které jsou spuštěny v pravidla zabezpečení přístupu kódu z předchozích verzí rozhraní .NET Framework mohou volat sestavení úrovně 2. Kritické pro zabezpečení atributy v tomto případě bude zacházeno jako požadavky propojení pro úplný vztah důvěryhodnosti.  
+>  Nový model transparentnosti byla zavedena v rozhraní .NET Framework 4. [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md) identifikuje zabezpečený kód pomocí modelu <xref:System.Security.SecurityCriticalAttribute> atribut. Kód kritický pro zabezpečení vyžaduje volající a dědice plně důvěryhodné. Sestavení, které jsou spuštěny v pravidla zabezpečení přístupu kódu z předchozích verzí rozhraní .NET Framework mohou volat sestavení úrovně 2. Kritické pro zabezpečení atributy v tomto případě bude zacházeno jako požadavky propojení pro úplný vztah důvěryhodnosti.  
   
  V sestavení se silným názvem [LinkDemand](../../../docs/framework/misc/link-demands.md) platí pro všechny veřejně přístupné metody, vlastnosti a události v něm můžete omezit jejich použití k plně důvěryhodné volající. Pokud chcete zakázat tuto funkci, musíte použít <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Proto explicitní označení třídy pro vyloučení nedůvěryhodných volajících je potřebný jenom u nepodepsaná sestavení nebo sestavení pomocí tohoto atributu. můžete použít tyto deklarace k označení podmnožinu typů v něm, které nejsou určeny pro nedůvěryhodných volajících.  
   

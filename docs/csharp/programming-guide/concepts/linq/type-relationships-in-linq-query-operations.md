@@ -12,12 +12,12 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
-ms.openlocfilehash: 3b8ae80ff17ea2cf12c3d78c092dd3233ac0751d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b58219a8a4d45ce01f80fd367ed56b13a773e4bc
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755954"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483395"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Vztahy typů v operacích dotazu LINQ (C#)
 Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v dokončeném dotazu operace všechny vzájemně souvisí. Když pochopíte tyto vztahy se snadněji pochopit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a příklady kódu v dokumentaci. Kromě toho budete rozumět co děje na pozadí, když jsou proměnné implicitně typované pomocí `var`.  
@@ -64,7 +64,3 @@ Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v
  ![Diagram znázorňující tok typ s implicitního zápisu.](./media/type-relationships-in-linq-query-operations/linq-type-flow-implicit-typing.png)  
   
  Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9d9cc44b8a5d43a3fe0414ddeeb51f37e239480b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b5b8e9290231e884b8b78c1f20bc99f5bc4326db
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647902"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490907"
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, které vám umožní snadno vytvářet aplikace pracující s XML. Třídy v následující obory názvů podporují analýzu a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.  
@@ -39,7 +39,7 @@ Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, kt
   
  XML tříd v rozhraní .NET Framework poskytuje tyto výhody:  
   
-- **Zvýšení produktivity.** [Technologie LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) usnadňuje programu pomocí XML a poskytuje možnosti dotazu, který je podobný SQL.  
+- **Zvýšení produktivity.** [Technologie LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) usnadňuje programu pomocí XML a poskytuje možnosti dotazu, který je podobný SQL.  
   
 - **Rozšiřitelnost.** XML tříd v rozhraní .NET Framework je rozšiřitelný prostřednictvím použití základních tříd abstraktu a virtuální metody. Můžete například vytvořit odvozenou třídu <xref:System.Xml.XmlUrlResolver> třída, která obsahuje datový proud mezipaměti na místní disk.  
   

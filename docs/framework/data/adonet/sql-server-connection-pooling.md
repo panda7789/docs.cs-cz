@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 5165f3ec1ef41e3fb0dd053c112610183197108a
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: dca5830a73d0f4374302862e7ccdffdf9dc48cb2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877447"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490106"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Sdružování připojení SQL Serveru (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  
@@ -99,7 +99,7 @@ Další informace o událostech, které jsou přidružené k otevření a zavře
 ### <a name="pool-fragmentation-due-to-many-databases"></a>Fragmentace fondu z důvodu velkého počtu databází  
  Mnoho poskytovatelů služeb Internetu hostování několika webů na jednom serveru. Potvrďte účet ověřování formulářů a pak otevřete připojení ke konkrétní databázi pro uživatele nebo skupinu uživatelů mohou používat izolované databáze. Připojení k databázi ověřování je ve fondu a používání pro všechny uživatele. Je však samostatný fond připojení pro každou databázi, která zvýšit počet připojení k serveru.  
   
- Toto je také vedlejší efekt návrh aplikace. Je poměrně jednoduchý způsob, jak tomuto vedlejšímu efektu zabránit bez narušení zabezpečení, když se připojíte k serveru SQL Server. Místo připojování k samostatnou databázi pro jednotlivé uživatele nebo skupiny, připojení ke stejné databázi na serveru a následné provádění [!INCLUDE[tsql](../../../../includes/tsql-md.md)] příkaz USE změnit na požadované databáze. Následující fragment kódu ukazuje vytvoření počátečního připojení k `master` databáze a poté přepnete do požadovaného databázi zadané v `databaseName` proměnné řetězce.  
+ Toto je také vedlejší efekt návrh aplikace. Je poměrně jednoduchý způsob, jak tomuto vedlejšímu efektu zabránit bez narušení zabezpečení, když se připojíte k serveru SQL Server. Místo připojování k samostatnou databázi pro jednotlivé uživatele nebo skupiny, připojení ke stejné databázi na serveru a pak spusťte příkaz použití příkazů jazyka Transact-SQL, změňte na požadované databáze. Následující fragment kódu ukazuje vytvoření počátečního připojení k `master` databáze a poté přepnete do požadovaného databázi zadané v `databaseName` proměnné řetězce.  
   
 ```vb  
 ' Assumes that command is a valid SqlCommand object and that  

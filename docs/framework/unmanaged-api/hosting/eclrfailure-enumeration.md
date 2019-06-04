@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19dacae05766566521f563d0d24980c01dfb7a0b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb19f950122f7b0db66830e9ed5dff44ccd370c2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796120"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490433"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure – výčet
 Popisuje sadu selhání, pro které hostitele může nastavit akce zásad.  
@@ -49,7 +49,7 @@ typedef enum {
 |`FAIL_FatalRuntime`|Modul CLR (CLR) již není možné spouštět spravovaný kód v procesu. Od nynějška volání jakékoli hostitelské funkce vrací hodnotu HRESULT HOST_E_CLRNOTAVAILABLE.|  
 |`FAIL_OrphanedLock`|Vlákno se nepodařilo uvolnit zámek při návratu z <xref:System.AppDomain> objektu. Hostitele nelze nastavit této chyby a způsobit, že vlákno pro přerušení.|  
 |`FAIL_StackOverflow`|Došlo k přetečení zásobníku.|  
-|`FAIL_AccessViolation`|Došlo pokusu o čtení nebo zápis v chráněné paměti. Není podporováno v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].|  
+|`FAIL_AccessViolation`|Došlo pokusu o čtení nebo zápis v chráněné paměti. Není podporován v rozhraní .NET Framework 4.|  
 |`FAIL_CodeContract`|Došlo k chybě kontraktu kódu. Zobrazit [kontrakty kódu](../../../../docs/framework/debug-trace-profile/code-contracts.md).|  
   
 ## <a name="remarks"></a>Poznámky  

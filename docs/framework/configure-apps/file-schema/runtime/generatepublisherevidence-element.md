@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09a12f062b2fe3ad6e5ac90f0d268bbbeab44876
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1a0861436ca727d63cdae58e3222826bf6414610
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674139"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489452"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
 Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> důkazy pro zabezpečení přístupu kódu (CAS).  
@@ -39,7 +39,7 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Nevytváří žádné <xref:System.Security.Policy.Publisher> důkaz.|  
 |`true`|Vytvoří <xref:System.Security.Policy.Publisher> důkaz. Toto nastavení je výchozí.|  
@@ -57,7 +57,7 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] a později, tento element nemá žádný vliv na dobu načítání sestavení. Další informace najdete v části "Zjednodušení zásady zabezpečení" v [změny zabezpečení](../../../../../docs/framework/security/security-changes.md).  
+>  V rozhraní .NET Framework 4 nebo novější Tento element nemá žádný vliv na dobu načítání sestavení. Další informace najdete v části "Zjednodušení zásady zabezpečení" v [změny zabezpečení](../../../../../docs/framework/security/security-changes.md).  
   
  Modul CLR (CLR) pokusí o ověření podpisu Authenticode v okamžiku načtení vytvořit <xref:System.Security.Policy.Publisher> legitimaci sestavení. Ale ve výchozím nastavení, většina aplikací není nutné <xref:System.Security.Policy.Publisher> důkaz. Standardní zásady CAS nespoléhá na <xref:System.Security.Policy.PublisherMembershipCondition>. Měli byste se vyhnout zbytečným spuštění náklady spojené s ověření podpisu vydavatele, pokud vaše aplikace spustí na počítači s vlastní zásady CAS nebo hodlá splňovat požadavky pro <xref:System.Security.Permissions.PublisherIdentityPermission> v prostředí s částečným vztahem důvěryhodnosti. (Požadavky na identity oprávnění vždy úspěšné v prostředí úplného vztahu důvěryhodnosti.)  
   

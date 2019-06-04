@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: 0463be7cabca088a1a5a200b9e8648914f16e7f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4260012899527662638a037fa4616a7a0d6f875
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702162"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486740"
 ---
 # <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak získat prvek Výběr na atribut, který je uvedené hodnotou jiného elementu.  
@@ -83,7 +83,4 @@ Results are identical
   </FullAddress>  
 </Customer>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ 

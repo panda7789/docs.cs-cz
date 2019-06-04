@@ -8,17 +8,17 @@ helpviewer_keywords:
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 01c82f2867097b98b04727592cf72c29712075ba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b553ec62cf493b94b87079cddd3ec3d1d60daf9d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664533"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491006"
 ---
 # <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
 Použitím obecných kolekcí se obecně nedoporučuje, protože výhod získáte tak okamžitý bezpečnosti typů bez nutnosti odvozen od typu základní kolekce a implementovat typ konkrétní členy. Obecné typy kolekcí také obecně poskytují vyšší výkon než odpovídající kolekci neobecné typy (a lepší než u typů, které jsou odvozeny ze základních typů neobecných kolekcí) při elementy z kolekce jsou typy hodnot, protože u obecných typů už není potřeba pole prvků.  
   
- Pro programy, které se zaměřují [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] nebo novější, byste měli použít obecné kolekce tříd v <xref:System.Collections.Concurrent> obor názvů při více vláken může přidávat nebo odebírat položky z kolekce současně.  
+ Pro programy, které jsou cíleny rozhraní .NET Framework 4 nebo novější, byste měli použít třídy obecné kolekce v <xref:System.Collections.Concurrent> obor názvů při více vláken může přidávat nebo odebírat položky z kolekce současně.  
   
  Následující obecné typy odpovídají typům existující kolekce:  
   

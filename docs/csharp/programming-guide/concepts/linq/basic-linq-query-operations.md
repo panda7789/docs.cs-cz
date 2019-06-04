@@ -17,12 +17,12 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: b8884f2ae230a92f48e93d9b5408ff241f874f92
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4200b3bfc14918b46c16b8f6a1007624c6c23f70
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702695"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486288"
 ---
 # <a name="basic-linq-query-operations-c"></a>Základní operace dotazů LINQ (C#)
 Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů výrazy a některé typické druhy operací, které provedete v dotazu. Podrobnější informace jsou v následujících tématech:  
@@ -101,7 +101,6 @@ from order in Customer.Orders...
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)
 - [Návod: Zápis dotazů vC#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)
 - [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)

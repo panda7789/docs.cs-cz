@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4b0ace73d81783852242a52bec006b0ad2edaadd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83ea398f18ab02840ea811c74a6053dba11a3baa
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650190"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490885"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přidružit identifikátory URI předdefinované a vlastní názvy prvků a atributů v dokumentu XML. Tato přidružení vytvoříte definovat předpony pro obor názvů URI a použijte tyto předpony kvalifikovat názvy prvků a atributů v datech XML. Obory názvů zabránit kolize názvů prvků a atributů a povolit elementů a atributů se stejným názvem, zpracovat a ověřen jiným způsobem.  
@@ -63,7 +63,7 @@ Obory názvů XML přidružit identifikátory URI předdefinované a vlastní n�
  Obor názvů správce neprovede žádné ověření na obory názvů, ale předpokládá, že již byly ověřeny předpony a obory názvů a v souladu s [obory názvů W3C](https://www.w3.org/TR/REC-xml-names/) specifikace.  
   
 > [!NOTE]
-> [Technologie LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) nepoužívejte <xref:System.Xml.XmlNamespaceManager> ke správě oborů názvů. Zobrazit [práce s názvovými prostory XML (C#)](../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md) a [práce s názvovými prostory XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md) v LINQ dokumentaci informace o správě oborů názvů, při použití technologie LINQ to XML.  
+> LINQ na XML v [ C# ](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [jazyka Visual Basic](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) nepoužívejte <xref:System.Xml.XmlNamespaceManager> ke správě oborů názvů. Zobrazit [práce s názvovými prostory XML (C#)](../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md) a [práce s názvovými prostory XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md) v LINQ dokumentaci informace o správě oborů názvů, při použití technologie LINQ to XML.  
   
  Tady jsou některé úlohy správy a vyhledávání můžete provádět pomocí <xref:System.Xml.XmlNamespaceManager> třídy. Další informace a příklady najdete na odkazech na referenční stránce pro každou metodu nebo vlastnost.  
   

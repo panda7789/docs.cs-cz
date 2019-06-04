@@ -16,18 +16,18 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f461490529f626cfc442d817840b9c2e64df4c19
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8842c189abc0f82e81553a1ef33c71b3fa0bef13
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585873"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489694"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Reflection emit používá stejné rozhraní API v plné nebo částečné důvěryhodnosti, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodným kódem. Navíc reflexe obsahuje funkci, anonymně hostované dynamické metody, který je určen pro použití s částečnou důvěryhodností a sestaveními transparentní pro zabezpečení.  
   
 > [!NOTE]
->  Před [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)], generující kód vyžadoval <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak. Toto oprávnění je ve výchozím nastavení zahrnuto `FullTrust` a `Intranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto knihovna může být použita z režimu částečné důvěryhodnosti pouze v případě, že měl <xref:System.Security.SecurityCriticalAttribute> atribut a také spustila <xref:System.Security.PermissionSet.Assert%2A> metodu pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] Umožňuje kód, aby byly vypuštěny ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovnám, které emitují kód je transparentní pro zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, takže psaní zabezpečené knihovny nevyžaduje, aby takové důkladné přezkoumání zabezpečení.  
+>  Před rozhraní .NET Framework 3.5, generující kód vyžadoval <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak. Toto oprávnění je ve výchozím nastavení zahrnuto `FullTrust` a `Intranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto knihovna může být použita z režimu částečné důvěryhodnosti pouze v případě, že měl <xref:System.Security.SecurityCriticalAttribute> atribut a také spustila <xref:System.Security.PermissionSet.Assert%2A> metodu pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] Umožňuje kód, aby byly vypuštěny ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovnám, které emitují kód je transparentní pro zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, takže psaní zabezpečené knihovny nevyžaduje, aby takové důkladné přezkoumání zabezpečení.  
   
  Tento návod znázorňuje následující úlohy:  
   

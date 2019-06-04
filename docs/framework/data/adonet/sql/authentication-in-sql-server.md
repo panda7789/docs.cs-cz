@@ -2,12 +2,12 @@
 title: Ověřování v SQL Serveru
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 94de49fe89f2b7f4aabaade624e960202f9973bf
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 5809a75dbadffbd2528f6882aa586aecd3232408
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877451"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490095"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v SQL Serveru
 SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a ve smíšeném režimu.  
@@ -46,7 +46,7 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
 - Internetové aplikace, jako je například technologie ASP.NET.  
   
 > [!NOTE]
->  Zadání ověřování Windows nezakáže přihlášení serveru SQL Server. Použít příkazu ALTER LOGIN zakázat [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkaz Zakázat přihlášení serveru SQL Server s vysokou úrovní oprávnění.  
+>  Zadání ověřování Windows nezakáže přihlášení serveru SQL Server. Zakázat přihlášení serveru SQL Server s vysokou úrovní oprávnění pomocí příkazu ALTER LOGIN zakázat jazyka Transact-SQL.  
   
 ## <a name="login-types"></a>Typy přihlášení  
  SQL Server podporuje tři typy přihlášení:  

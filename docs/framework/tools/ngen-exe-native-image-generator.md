@@ -20,18 +20,18 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 011bb2d7a1a700ba4daf86d96d825373e353f57e
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 0c806366e8f80e9fd770b45a5f1154d388ac49ab
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457430"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489663"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).
 
-Změní na Ngen.exe v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]:
+Změny Ngen.exe v rozhraní .NET Framework 4:
 
 - Nástroj Ngen.exe nyní kompiluje sestavení s úplnou důvěryhodností, přičemž zabezpečení přístupu kódu (CAS) již není vyhodnocováno.
 
@@ -77,7 +77,7 @@ Následující tabulka ukazuje syntaxi každé `action`. Popisy jednotlivých č
 |Akce|Popis|
 |------------|-----------------|
 |`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|Vygeneruje nativní bitové kopie sestavení a jeho závislosti a nainstaluje bitové kopie do mezipaměti nativních bitových kopií.<br /><br /> Pokud `/queue` není zadána, akce je zařazena do fronty pro službu nativních bitových kopií. Výchozí hodnota priority je 3. Zobrazit [úrovně Priority](#PriorityTable) tabulky.|
-|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Odstraní nativní bitové kopie sestavení a jeho závislosti z mezipaměti nativních bitových kopií.<br /><br /> Chcete-li odinstalovat pouze jednu bitovou kopii a její závislosti, použijte stejné argumenty příkazového řádku, které byly použity při instalaci kopie. **Poznámka:**  Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], akce `uninstall` * se už nepodporuje.|
+|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Odstraní nativní bitové kopie sestavení a jeho závislosti z mezipaměti nativních bitových kopií.<br /><br /> Chcete-li odinstalovat pouze jednu bitovou kopii a její závislosti, použijte stejné argumenty příkazového řádku, které byly použity při instalaci kopie. **Poznámka:**  Od verze rozhraní .NET Framework 4, akce `uninstall` * se už nepodporuje.|
 |`update` [`/queue`]|Aktualizuje nativní bitové kopie, které se staly neplatnými.<br /><br /> Pokud `/queue` není zadána, aktualizace jsou zařazeny do fronty pro službu nativních bitových kopií. Aktualizace jsou vždy naplánovány s prioritou 3, jsou tedy spouštěny při nečinnosti počítače.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Zobrazí stav nativních bitových kopií pro sestavení a jeho závislosti.<br /><br /> Není-li zadán žádný argument, je zobrazen celý obsah mezipaměti nativních bitových kopií.|
 |`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> -nebo-<br /><br /> `eqi` [1&#124;2&#124;3]|Spustí úlohy kompilace ve frontě.<br /><br /> Je-li zadána priorita, jsou spuštěny úlohy kompilace s větší nebo shodnou prioritou. Není-li priorita zadána, jsou spuštěny všechny úlohy kompilace.|
@@ -137,7 +137,7 @@ Následující tabulka ukazuje syntaxi každé `action`. Popisy jednotlivých č
 Chcete-li spustit nástroj Ngen.exe, je zapotřebí mít oprávnění správce.
 
 > [!CAUTION]
-> Nástroj Ngen.exe nespouštějte pro sestavení, která nemají plnou důvěryhodnost. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]Ngen.exe kompiluje sestavení s úplným vztahem důvěryhodnosti a zásady (CAS) zabezpečení přístupu kódu už nevyhodnocuje.
+> Nástroj Ngen.exe nespouštějte pro sestavení, která nemají plnou důvěryhodnost. Od verze rozhraní .NET Framework 4, Ngen.exe kompiluje sestavení s úplným vztahem důvěryhodnosti a zásady (CAS) zabezpečení přístupu kódu už nevyhodnocuje.
 
 Od verze rozhraní .NET Framework 4, nativní bitové kopie generované nástrojem Ngen.exe již být načteny do aplikací, na kterých běží v částečném vztahu důvěryhodnosti. Namísto toho je vyvolán kompilátor za běhu (JIT).
 

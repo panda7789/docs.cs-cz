@@ -2,12 +2,12 @@
 title: Načtení odstavců a jejich stylů (C#)
 ms.date: 07/20/2015
 ms.assetid: c2f767f8-57b1-4b4b-af04-89ffb1f7067d
-ms.openlocfilehash: 693c61e9cbf9e2027864da8d1c26e0a1af66094d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9edbaaf004018a26b84539d1e8ab133af5dca934
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680724"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483883"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a>Načtení odstavců a jejich stylů (C#)
 V tomto příkladu jsme vytvořit dotaz, který načte uzly odstavců z dokumentu WordprocessingML. Styl k jednotlivým odstavcům také identifikuje.  
@@ -134,4 +134,4 @@ StyleName:Code
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)

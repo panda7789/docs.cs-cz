@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generic types [LINQ]
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
-ms.openlocfilehash: 2b599906082cabceeb8d97ec737b6fa39fed6825
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 891acd56939a2cff8eb377512a8a516f8a189034
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584408"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487430"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ a obecné typy (C#)
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy jsou založeny na obecné typy, které byly zavedeny v rozhraní .NET Framework verze 2.0. Předtím, než můžete začít psát dotazy nepotřebujete hlubokou znalost obecných typů. Však může být vhodné pochopit dvě základní koncepty:  
@@ -38,5 +38,4 @@ ms.locfileid: "65584408"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Obecné typy](../../../../csharp/programming-guide/generics/index.md)

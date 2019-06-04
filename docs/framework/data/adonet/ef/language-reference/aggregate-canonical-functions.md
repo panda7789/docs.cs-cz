@@ -2,12 +2,12 @@
 title: Agregační kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 3bcff826-ca90-41b3-a791-04d6ff0e5085
-ms.openlocfilehash: f5d3584c6e9d35c9eb69b4f54cad45187416ee59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2738d649190b088c34272de5b3e8732d87811a59
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607450"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489507"
 ---
 # <a name="aggregate-canonical-functions"></a>Agregační kanonické funkce
 
@@ -224,7 +224,7 @@ select avg(ol.Quantity) from LOB.OrderLines as ol group by 1
 
 Uvnitř agregace skupinové výrazy jsou vyhodnocovány v rámci oboru rozlišení názvů, které se staly viditelnými pro výraz klauzule WHERE.
 
-Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], na základě skupin agregace můžete také určit všechny nebo odlišné modifikátor. Pokud není zadána odlišné modifikátor, duplicitní položky zanikne brány v agregační vstupní kolekce předtím, než je vypočítán agregace. Pokud je zadán modifikátorem všechny (nebo pokud není zadán žádný modifikátor), bez odstranění duplicit se provádí.
+Stejně jako v jazyce Transact-SQL, na základě skupin agregace můžete také určit, všechny nebo odlišné modifikátor. Pokud není zadána odlišné modifikátor, duplicitní položky zanikne brány v agregační vstupní kolekce předtím, než je vypočítán agregace. Pokud je zadán modifikátorem všechny (nebo pokud není zadán žádný modifikátor), bez odstranění duplicit se provádí.
 
 ## <a name="see-also"></a>Viz také:
 

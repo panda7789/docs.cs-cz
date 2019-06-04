@@ -2,12 +2,12 @@
 title: 'Postupy: Výpočet mezilehlých hodnot (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7fd3001f-f8f9-4bce-879f-d4c7af8a04fe
-ms.openlocfilehash: 12c8a87114859ce7b47b8206acb454cdc2838470
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf0300294944d251b739a15edc6ace777eab5bd8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702396"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485940"
 ---
 # <a name="how-to-calculate-intermediate-values-c"></a>Postupy: Výpočet mezilehlých hodnot (C#)
 Tento příklad ukazuje způsob výpočtu pomocných hodnot použitých v řazení, filtrování a vyberete.  
@@ -40,7 +40,7 @@ foreach (decimal ex in extensions)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
  Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data ve Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).  
   
@@ -66,7 +66,3 @@ foreach (decimal ex in extensions)
 198.00  
 435.00  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3da3e48f898797849a5304c4884b648f47a26dd
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 36c3f139564b39555370cd5d41133f39c6b271bb
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456566"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487830"
 ---
 # <a name="security-transparent-code-level-2"></a>Transparentní kód pro zabezpečení, úroveň 2
 
@@ -22,7 +22,7 @@ ms.locfileid: "66456566"
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
 
-Průhlednost úrovně 2 byla zavedena v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Tři zásady tohoto modelu jsou transparentní kód, bezpečný a kritický pro zabezpečení kód a kód kritický pro zabezpečení.
+Úroveň 2 transparentnost byla představena v rozhraní .NET Framework 4. Tři zásady tohoto modelu jsou transparentní kód, bezpečný a kritický pro zabezpečení kód a kód kritický pro zabezpečení.
 
 - Transparentní kód, včetně kód, který je spuštěn při úplném vztahu důvěryhodnosti, můžete volat jiný transparentní kód nebo bezpečný a kritický pro zabezpečení pouze kód. Může pouze provádět akce povolené oprávnění částečným vztahem důvěryhodnosti domény nastavení (pokud existuje). Transparentní kód nemůže provádět následující:
 

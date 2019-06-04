@@ -20,15 +20,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6a28b9d6e41d0572d423576f5b4024a60a70216c
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 0d2b82bc056acd2e620461081b5f8c9d45fc152c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456864"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490641"
 ---
 # <a name="coeeshutdowncom-function"></a>CoEEShutDownCOM – funkce
-Vynutí common language runtime (CLR) uvolnit všechny ukazatele rozhraní, které obsahuje uvnitř obálek volatelných za běhu (RCW). To má za následek uvolnění všech RCW mezipamětí. Tato globální funkce je zastaralá ve [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Místo toho použijte vstupní bod pro konkrétní prostředí runtime.  
+Vynutí common language runtime (CLR) uvolnit všechny ukazatele rozhraní, které obsahuje uvnitř obálek volatelných za běhu (RCW). To má za následek uvolnění všech RCW mezipamětí. Tato globální funkce je zastaralé v rozhraní .NET Framework 4. Místo toho použijte vstupní bod pro konkrétní prostředí runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   

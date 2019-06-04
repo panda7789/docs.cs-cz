@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f8811fd916afcb39c466b8c9a60f7c7ed2a62ea8
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: d76615b5bd4d140917b84a52f7d1c251ca32302f
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301443"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489998"
 ---
 # <a name="mitigation-product-versioning"></a>Omezení rizik: Správa verzí produktu
 V rozhraní .NET Framework 4.6 nebo novější Správa verzí produktu změnil z předchozích verzí rozhraní .NET Framework (rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2).  
@@ -23,7 +23,7 @@ V rozhraní .NET Framework 4.6 nebo novější Správa verzí produktu změnil z
   
 - <xref:System.Reflection.AssemblyFileVersionAttribute> a <xref:System.Reflection.AssemblyInformationalVersionAttribute> atributy pro spravované sestavení mají <xref:System.Version> hodnoty ve formuláři `4.6.X.0` pro rozhraní .NET Framework 4.6 a jeho novější vydání a `4.7.X.0` pro rozhraní .NET Framework 4.7.  
   
-- V rozhraní .NET Framework 4.6, 4.6.1, 4.6.2 a 4.7 <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost vrací řetězec opravenou verzi `4.0.30319.42000`. V rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2, vrátí řetězce verze ve formátu `4.0.30319.xxxxx` (například "4.0.30319.18010"). Všimněte si, že nedoporučujeme tak novou závislost na kód aplikace <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost.  
+- Od verze rozhraní .NET Framework 4.6, <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost vrací řetězec opravenou verzi `4.0.30319.42000`. V rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2, vrátí řetězce verze ve formátu `4.0.30319.xxxxx` kde `xxxxx` je menší než 42000 (například "4.0.30319.18010"). Všimněte si, že nedoporučujeme tak novou závislost na kód aplikace <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost.
   
 ### <a name="handling-the-product-versioning-changes"></a>Zpracování změn správy verzí produktu  
  Obecně platí aplikace by měl záviset na doporučené postupy pro zjištění takové věci jako verzi modulu runtime rozhraní .NET Framework a v instalačním adresáři:  

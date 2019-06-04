@@ -2,12 +2,12 @@
 title: Technologie LINQ to XML vs. DOM (C#)
 ms.date: 07/20/2015
 ms.assetid: 51c0e3d2-c047-4e6a-a423-d61a882400b7
-ms.openlocfilehash: 6ab775cc259fd3a337358bca2da6055d7b1ea6bd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3cd6edf9e950611d4e0ed205b89c7c7b073955c8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596971"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484329"
 ---
 # <a name="linq-to-xml-vs-dom-c"></a>Technologie LINQ to XML vs. DOM (C#)
 Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající XML programování rozhraní API, W3C Document Object Model (DOM).  
@@ -75,7 +75,7 @@ XElement contacts =
   
  Všimněte si, že odsazení kódu k sestavení kompletních stromu XML ukazuje strukturu základní XML.  
   
- Další informace najdete v tématu [vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md).  
+ Další informace najdete v tématu [vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md).  
   
 ## <a name="working-directly-with-xml-elements"></a>Práce přímo se elementů XML  
  Když je program s XML, hlavním cílem je obvykle na prvky XML a případně na atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], může spolupracovat přímo s XML elementů a atributů. Například můžete provést následující:  
@@ -100,7 +100,7 @@ doc.AppendChild(name);
  Při použití technologie LINQ to XML, je použít <xref:System.Xml.Linq.XDocument> třídy pouze v případě, že chcete přidat komentář nebo zpracování instrukcí na kořenové úrovni dokumentu.  
   
 ## <a name="simplified-handling-of-names-and-namespaces"></a>Zjednodušená zpracování názvy a obory názvů  
- Zpracování názvy oborů názvů a předpony oboru názvů je obecně komplexní součástí XML programování. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zjednodušuje názvy a obory názvů tím, že eliminuje požadavek na řešení předpony oboru názvů. Pokud chcete řídit předpony oboru názvů, můžete. Ale pokud se rozhodnete řízení předpon názvového prostoru, není explicitně [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] přiřadí předpony oboru názvů při serializaci, pokud jsou požadované, nebo se serializace pomocí výchozích názvových prostorů, pokud nejsou. Pokud se používají výchozí obory názvů, nebudou bez předpony oboru názvů ve výsledném dokumentu. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Zpracování názvy oborů názvů a předpony oboru názvů je obecně komplexní součástí XML programování. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zjednodušuje názvy a obory názvů tím, že eliminuje požadavek na řešení předpony oboru názvů. Pokud chcete řídit předpony oboru názvů, můžete. Ale pokud se rozhodnete řízení předpon názvového prostoru, není explicitně [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] přiřadí předpony oboru názvů při serializaci, pokud jsou požadované, nebo se serializace pomocí výchozích názvových prostorů, pokud nejsou. Pokud se používají výchozí obory názvů, nebudou bez předpony oboru názvů ve výsledném dokumentu. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
  Dalším problémem modelu DOM se, že neumožní můžete změnit název uzlu. Místo toho budete muset vytvořit nový uzel a zkopírujte všechny podřízené uzly, ztráty původní uzel identitu. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tomuto problému se vyhnete tím, že vám umožní nastavit <xref:System.Xml.Linq.XName> vlastnost uzlu.  
   
@@ -133,4 +133,4 @@ doc.AppendChild(name);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+- [Začínáme (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)

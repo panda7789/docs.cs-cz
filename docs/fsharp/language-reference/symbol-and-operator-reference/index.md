@@ -2,12 +2,12 @@
 title: Referenční dokumentace symbolů a operátorů
 description: Další informace o symbolů a operátorů, které se používají v F# programovací jazyk.
 ms.date: 02/11/2019
-ms.openlocfilehash: 11a02792dc949b0a7a0a6e7bb59786c489b3aa9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ea8337a9055c8df639fe6abdb6c79445d189d64
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982735"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490813"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
@@ -127,6 +127,7 @@ V následující tabulce jsou uvedeny pořadí podle priority operátorů a dal�
 |`let`|Neasociativní|
 |`function`, `fun`, `match`, `try`|Neasociativní|
 |`if`|Neasociativní|
+|`not`|Pravé|
 |`->`|Pravé|
 |`:=`|Pravé|
 |`,`|Neasociativní|

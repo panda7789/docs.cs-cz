@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7308f37ee96b4efe83aeb198586f7364fdcf9ccc
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 37551d2b43e5343ca27da69c08d522c176b2caa7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457146"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489635"
 ---
 # <a name="cordebuginterfaceversion-enumeration"></a>CorDebugInterfaceVersion – výčet
 Určuje rozhraní, verze rozhraní .NET Framework nebo verzi rozhraní .NET Framework, ve kterém byl zaveden rozhraní.  
@@ -235,7 +235,7 @@ typedef enum CorDebugInterfaceVersion {
   
 - Verze rozhraní .NET Framework 3.0 a 3.5 použít existující rozhraní .NET Framework 2.0 a ne provádět žádné nové rozhraní.  
   
-- [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje kombinaci různých verzí rozhraní. Například obě `ICorDebugThread3` a `ICorDebugThread4` zobrazí jako třetí a čtvrtý verze `ICorDebugThread` rozhraní. Také zavádí první verzi rozhraní .NET Framework 4 `ICorDebugStackWalk` rozhraní a druhou verzi `ICorDebugNativeFrame` rozhraní (`ICorDebugNativeFrame2`).  
+- Rozhraní .NET Framework 4 zavádí kombinaci různých verzí rozhraní. Například obě `ICorDebugThread3` a `ICorDebugThread4` zobrazí jako třetí a čtvrtý verze `ICorDebugThread` rozhraní. Také zavádí první verzi rozhraní .NET Framework 4 `ICorDebugStackWalk` rozhraní a druhou verzi `ICorDebugNativeFrame` rozhraní (`ICorDebugNativeFrame2`).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

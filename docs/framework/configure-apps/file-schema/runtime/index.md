@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: f04816ab-110d-4e28-9283-845d6d9a4a68
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 21c24040f7d093aa72738957316a4219539510c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: caef2a1d1230f020389c6b86015702075b9fc582
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704814"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489455"
 ---
 # <a name="runtime-settings-schema"></a>Schéma nastavení běhového prostředí
 Nastavení modulu runtime se používají modulem common language runtime ke konfiguraci aplikací využívajících rozhraní .NET Framework.  
@@ -121,7 +121,7 @@ Nastavení modulu runtime se používají modulem common language runtime ke kon
 |[\<relativeBindForResources>](../../../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md)|Optimalizuje sondy pro satelitní sestavení.|  
 |[\<remove>](../../../../../docs/framework/configure-apps/file-schema/runtime/remove-element-for-namedcaches.md)|Odebere položku pojmenovanou mezipaměť z `namedCaches` kolekce pro mezipaměť.|  
 |[\<runtime>](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)|Obsahuje informace o sestavení, vazby a chování uvolňování paměti.|  
-|[\<shadowCopyTimeStampVerification>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|Určuje, zda stínové kopírování sestavení použije výchozí chování při spouštění zavedený [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], nebo se vrátí do chování při spuštění z dřívějších verzích rozhraní .NET Framework.|  
+|[\<shadowCopyTimeStampVerification>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|Určuje, zda stínové kopírování sestavení použije výchozí chování při spuštění zavedené v rozhraní .NET Framework 4 nebo se vrátí do chování při spuštění z dřívějších verzích rozhraní .NET Framework.|  
 |[\<supportPortability>](../../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md)|Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích rozhraní .NET Framework zakázáním výchozího chování, které považuje za ekvivalent pro účely přenositelnosti aplikace sestavení.|  
 |[\<system.runtime.caching>](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|Poskytuje informace o konfiguraci pro výchozí mezipaměti objektů v paměti do mezipaměti.|  
 |[<Thread_UseAllCpuGroups>](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md)|Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech skupinách procesoru.|  

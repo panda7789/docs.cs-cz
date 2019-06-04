@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 4e4ad69d-9343-4f6a-aed8-fe0335a3b979
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd0bdee6127aca259ae5ca1fe1aa8ecc574662b7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10e01dfd70d40ecfe6b1c9c36da8923734fb9220
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775216"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490286"
 ---
 # <a name="hosting-global-static-functions"></a>Hostování globálních statických funkcí
 Tato část popisuje nespravované hostitelské funkce používané rozhraním .NET Framework, který je hostitelem rozhraní API.  
@@ -23,7 +23,7 @@ Tato část popisuje nespravované hostitelské funkce používané rozhraním .
  Popisuje funkce zavedené v rozhraní .NET Framework 4.  
   
  [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
- Popisuje funkce zavedené v rozhraní .NET Framework 1.1 a 2.0, které jsou zastaralé v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Popisuje funkce zavedené v rozhraní .NET Framework 1.1 a 2.0, které jsou zastaralé v rozhraní .NET Framework 4.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  

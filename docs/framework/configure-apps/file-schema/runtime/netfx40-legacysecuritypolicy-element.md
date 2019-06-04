@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 848c56773c0ff2986f0bec3e82a08a3d0dd35434
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 868c5f0742fa4dc963539fd70414752092156c64
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456482"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489417"
 ---
 # <a name="netfx40legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
 Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).  
@@ -39,7 +39,7 @@ Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime nepoužívá starší zásadu CAS. Toto nastavení je výchozí.|  
 |`true`|Modul runtime používá starší zásadu CAS.|  
@@ -55,11 +55,11 @@ Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- V rozhraní .NET Framework verze 3.5 a starší verze zásad CAS je vždy v vliv. V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], musí být povolené zásady CAS.  
+ V rozhraní .NET Framework verze 3.5 a starší verze zásad CAS je vždy v vliv. V rozhraní .NET Framework 4 musí být povolené zásady CAS.  
   
  Zásady CAS je specifické pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích rozhraní .NET Framework musí být zadány znovu v rozhraní .NET Framework 4.  
   
- Použití `<NetFx40_LegacySecurityPolicy>` elementu [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] sestavení nemá vliv na [kód transparentní pro zabezpečení](../../../../../docs/framework/misc/security-transparent-code.md); stále platí pravidla transparentnosti.  
+ Použití `<NetFx40_LegacySecurityPolicy>` nemá vliv na element na sestavení rozhraní .NET Framework 4 [kód transparentní pro zabezpečení](../../../../../docs/framework/misc/security-transparent-code.md); stále platí pravidla transparentnosti.  
   
 > [!IMPORTANT]
 >  Použití `<NetFx40_LegacySecurityPolicy>` element může způsobit snížení výkonu pro sestavení nativních bitových kopií, které jsou vytvořené [Native Image Generator (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) , která nejsou v nainstalovaná [globální mezipaměti sestavení ](../../../../../docs/framework/app-domains/gac.md). Snížení výkonu způsobuje nemožnost modul runtime k načtení sestavení jako nativní bitové kopie, když se atribut používá, což vede k jejich načtených sestavení jako just-in-time.  

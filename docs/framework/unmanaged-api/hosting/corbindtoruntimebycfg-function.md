@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbba208296dd2099c9da58c81ff66fddc78fdc86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 07d2f08792b6fdea28bd56045de8da30ab552a4f
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985865"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490582"
 ---
 # <a name="corbindtoruntimebycfg-function"></a>CorBindToRuntimeByCfg – funkce
 Načte modul CLR (CLR) do procesu pomocí informací o verzi, která je pro čtení ze souboru XML.  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

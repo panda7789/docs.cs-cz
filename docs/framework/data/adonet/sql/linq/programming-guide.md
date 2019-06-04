@@ -2,12 +2,12 @@
 title: Průvodce programováním
 ms.date: 03/30/2017
 ms.assetid: ed1012d4-3ff2-4877-af27-93125c4180ea
-ms.openlocfilehash: 32e62899c13be3f2f08bef7e882d5b9c4d11fda2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 102d2ecba162e19258b707c1c902c29b0a7f2f02
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794446"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490046"
 ---
 # <a name="programming-guide"></a>Průvodce programováním
 Tato část obsahuje informace o tom, jak vytvořit a používat vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model. Pokud používáte Visual Studio, můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] provádět spoustu těchto stejných úkolů.  
@@ -40,7 +40,7 @@ Tato část obsahuje informace o tom, jak vytvořit a používat vaše [!INCLUDE
  [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
  Obsahuje odkazy na témata, která ukazují, jak pomocí uložených procedur.  
   
- [Úvod do LINQ (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq.md)  
+ [Úvod do LINQ (C#)](../../../../../csharp/programming-guide/concepts/linq/index.md)  
  Obsahuje materiály, které umožňují učit o LINQ na SQL a příkazu C#.
 
  [Úvod do LINQ (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)  

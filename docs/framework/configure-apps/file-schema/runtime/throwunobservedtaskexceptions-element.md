@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb6cfc8e1c3f0409d99d31efa0a645476b47e45e
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 9647297bf976d26a97be0da8807d607789e8a065
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456251"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489572"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions> Element
 Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému procesu.  
@@ -42,7 +42,7 @@ Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému proces
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Spuštěný proces pro nezpracovaná výjimka úlohy nebyl ukončen. Toto nastavení je výchozí.|  
 |`true`|Ukončí běžící proces pro nezpracovaná výjimka úlohy.|  
@@ -61,7 +61,7 @@ Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému proces
 ## <a name="remarks"></a>Poznámky  
  Pokud výjimka, která je přidružena <xref:System.Threading.Tasks.Task> nebyla dodržena, neexistuje žádné <xref:System.Threading.Tasks.Task.Wait%2A> operace nadřazeného objektu není připojen a <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> nebyla načtena vlastnost výjimka úlohy se považuje za asynchronního nepozorovaného.  
   
- V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pokud výchozí <xref:System.Threading.Tasks.Task> , který má asynchronního nepozorovaného výjimka je uvolněna, finalizační metoda vyvolá výjimku a ukončí proces. Ukončení procesu se určuje podle načasování uvolňování paměti a finalizace.  
+ V rozhraní .NET Framework 4, ve výchozím nastavení pokud <xref:System.Threading.Tasks.Task> , který má asynchronního nepozorovaného výjimka je uvolněna, finalizační metoda vyvolá výjimku a ukončí proces. Ukončení procesu se určuje podle načasování uvolňování paměti a finalizace.  
   
  Rozhraní .NET Framework 4.5, aby usnadňuje vývojářům umožňuje psát asynchronní kód založený na úkolech, změní toto výchozí chování pro asynchronního nepozorovaného výjimky. Nepozorované výjimky způsobí <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> událost, ale ve výchozím nastavení, se proces neukončí. Místo toho výjimka bude ignorována, jakmile se vyvolá událost, bez ohledu na to, zda obslužná rutina události dodržuje výjimku.  
   

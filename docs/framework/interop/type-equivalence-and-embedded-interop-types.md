@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: 78892eba-2a58-4165-b4b1-0250ee2f41dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b9ec21a21ce3c81c2d29d2edf353a098489c9026
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 137aeaab4e63adbb81c0f3d90718def10f906e6a
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032878"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489232"
 ---
 # <a name="type-equivalence-and-embedded-interop-types"></a>Ekvivalence typů a vestavěné typy spolupráce
 
-Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], běžné podporuje modul runtime jazyka vložení informací o typu pro typy modelu COM přímo do spravovaných sestavení, namísto nutnosti spravované sestavení, které chcete získat informace o typu pro typy modelu COM ze sestavení vzájemné spolupráce. Informace o typu embedded zahrnuje pouze typy a členy, které jsou skutečně používané spravovaným sestavením, a proto může mít dvě spravovaná sestavení velmi různá zobrazení stejného modelu COM typu. Každé spravované sestavení má jiné <xref:System.Type> objekt reprezentující jeho zobrazení modelu COM typu. Modul common language runtime podporuje typu ekvivalence mezi tyto různá zobrazení pro rozhraní, struktury, výčty a delegáti.
+Od verze rozhraní .NET Framework 4, modul common language runtime podporuje vkládání informací o typu pro typy modelu COM přímo do spravovaných sestavení, namísto nutnosti spravované sestavení, které chcete získat informace o typu pro typy modelu COM ze sestavení vzájemné spolupráce. Informace o typu embedded zahrnuje pouze typy a členy, které jsou skutečně používané spravovaným sestavením, a proto může mít dvě spravovaná sestavení velmi různá zobrazení stejného modelu COM typu. Každé spravované sestavení má jiné <xref:System.Type> objekt reprezentující jeho zobrazení modelu COM typu. Modul common language runtime podporuje typu ekvivalence mezi tyto různá zobrazení pro rozhraní, struktury, výčty a delegáti.
 
 Porovnávání znamená, že objekt modelu COM, který je předán z jednoho spravovaného sestavení do jiného lze převést na odpovídající typ v sestavení přijímající spravované.
 

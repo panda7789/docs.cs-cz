@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 44e5f52ce2bfe03247ab25bb48607ae313523ff0
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: a7e4493fca5b73cfd0bdc59ceab9de097de799aa
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456850"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490742"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a> Kovariance a kontravariance jsou pojmy, které označují schopnost používat více odvozeného typu (konkrétnější) nebo méně odvozeného typu (specifické pro less) než byl původně zadán. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: V příkladech se předpokládá základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  
@@ -59,7 +59,7 @@ ms.locfileid: "66456850"
   
  Kovariance a kontravariance se souhrnně označují jako *variance*. Parametr obecného typu, který není označen jako kovariantní nebo kontravariantní se označuje jako *invariantní*. Stručný souhrn faktů o varianci v modulu CLR (Common Language Runtime):  
   
-- V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], parametry variantního typu omezeny na obecná rozhraní a obecné typy delegátů.  
+- V rozhraní .NET Framework 4 jsou parametry variantního typu omezeny na obecná rozhraní a obecné typy delegátů.  
   
 - Obecná rozhraní nebo obecné typy delegátů mohou mít parametry kovariantního i kontravariantního typu.  
   

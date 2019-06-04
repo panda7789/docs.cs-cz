@@ -2,12 +2,12 @@
 title: 'Postupy: Načtení hodnoty elementu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
-ms.openlocfilehash: 77743e263a168d89f84661b229be1270e9b46ed6
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 52eb246f5f95354f470aadf0cfe7f93f4b6e27ea
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584385"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485010"
 ---
 # <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Postupy: Načtení hodnoty elementu (LINQ to XML) (C#)
 Toto téma ukazuje, jak má být získána hodnota prvků. Chcete-li to provést dvěma způsoby. Jedním ze způsobů je přetypování <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> do požadovaného typu. Operátor explicitního převodu potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji do proměnné. Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.  
@@ -147,4 +147,4 @@ v4:element does not exist
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes-overview.md)

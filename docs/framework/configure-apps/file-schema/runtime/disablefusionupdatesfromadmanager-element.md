@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27c8c1cac68aca1c40826ff549d62d9636d9b0c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c96d5aea150c0dbb55889e9fc26417e7803a155
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704905"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487660"
 ---
 # <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager> Element
 Určuje, zda je výchozí chování, které je umožnit hostitelský modul runtime pro přepsání nastavení konfigurace pro doménu aplikace, zakázáno.  
@@ -34,13 +34,13 @@ Určuje, zda je výchozí chování, které je umožnit hostitelský modul runti
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda je výchozí možnost přepsat nastavení Fusion zakázaný.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, zda je výchozí možnost přepsat nastavení Fusion zakázaný.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|0|Nezakazujte přepsat nastavení Fusion. Jedná se o výchozí chování, počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
+|0|Nezakazujte přepsat nastavení Fusion. Toto je výchozí chování, od verze rozhraní .NET Framework 4.|  
 |1|Zakážete možnost přepsat nastavení Fusion. To obnoví na chování starších verzích rozhraní .NET Framework.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -54,7 +54,7 @@ Určuje, zda je výchozí chování, které je umožnit hostitelský modul runti
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], výchozí chování je umožnit <xref:System.AppDomainManager> určeného k přepsání nastavení konfigurace s použitím <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost nebo <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metodu <xref:System.AppDomainSetup> objekt, který je předán vaší implementace nástroje <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metodu do vaší podtřídy aplikace <xref:System.AppDomainManager>. Pro výchozí domény aplikace přepíší nastavení, které můžete změnit nastavení zadané v konfiguračním souboru aplikace. Pro další aplikační domény, mohou přepsat nastavení konfigurace, které bylo předáno <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metody.  
+ Od verze rozhraní .NET Framework 4, výchozí chování je umožnit <xref:System.AppDomainManager> určeného k přepsání nastavení konfigurace s použitím <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost nebo <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metodu <xref:System.AppDomainSetup> objekt, který je předán vaší implementace nástroje <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metodu do vaší podtřídy aplikace <xref:System.AppDomainManager>. Pro výchozí domény aplikace přepíší nastavení, které můžete změnit nastavení zadané v konfiguračním souboru aplikace. Pro další aplikační domény, mohou přepsat nastavení konfigurace, které bylo předáno <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metody.  
   
  Můžete předat nové informace o konfiguraci, nebo předat hodnotu null (`Nothing` v jazyce Visual Basic) Chcete-li odstranit informace o konfiguraci, která byla předána.  
   

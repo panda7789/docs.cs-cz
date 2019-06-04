@@ -2,12 +2,12 @@
 title: PŘÍPAD (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
-ms.openlocfilehash: e44f48d040fc77bf702759be0c53a618cd84f9fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fc916d201ec79c753e06ccfcd6514761f826eb7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607190"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489497"
 ---
 # <a name="case-entity-sql"></a>PŘÍPAD (Entity SQL)
 Vyhodnotí sadu `Boolean` výrazy k určení výsledků.  
@@ -41,7 +41,7 @@ END
  Vrátí nejvyšší prioritu typ ze sady typů v `result_expression` a volitelné `else_result_expression`.  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Výraz case vypadá podobně jako [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] výraz malá a velká. Výraz case můžete provádět řadu podmíněné testů, abyste zjistili výrazu, který předá odpovídající výsledek. Tato forma výraz case se vztahuje na řadu jeden nebo více `Boolean` výrazy k určení správné výsledný výraz.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Výraz case se podobá výraz case příkazů jazyka Transact-SQL. Výraz case můžete provádět řadu podmíněné testů, abyste zjistili výrazu, který předá odpovídající výsledek. Tato forma výraz case se vztahuje na řadu jeden nebo více `Boolean` výrazy k určení správné výsledný výraz.  
   
  Funkce CASE se vyhodnotí `Boolean_expression` pro každou klauzuli WHEN v pořadí zadané a vrátí `result_expression` prvního `Boolean_expression` vyhodnocenou nečíselnou `true`. Zbývající výrazy se nevyhodnocují. Pokud ne `Boolean_expression` vyhodnotí jako `true`, vrátí databázový stroj `else_result_expression` Pokud není zadána klauzule ELSE, nebo hodnotu null, pokud není zadána žádná klauzule ELSE.  
   

@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření hierarchie pomocí seskupení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-ms.openlocfilehash: bd2e8ab9fb0ed1fee68cb51d2d032b202b14ba88
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 685c8ad1360ba2959dc81632ae084b935bd37c47
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668130"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485851"
 ---
 # <a name="how-to-create-hierarchy-using-grouping-c"></a>Postupy: Vytvoření hierarchie pomocí seskupení (C#)
 Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.  
@@ -73,7 +73,3 @@ Console.WriteLine(newData);
   </Group>  
 </Root>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

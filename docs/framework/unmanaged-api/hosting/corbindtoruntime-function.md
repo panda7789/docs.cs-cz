@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93300ba84dea17b52303a78d3729cbf4f761ba4f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3af11b3d2170e13bf216aec64f2bff88cc015f41
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634873"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490603"
 ---
 # <a name="corbindtoruntime-function"></a>CorBindToRuntime – funkce
 Umožní nespravovaným hostitelům načíst modul CLR (CLR) do procesu.  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

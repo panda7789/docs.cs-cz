@@ -2,12 +2,12 @@
 title: Uvozovky kódu
 description: Další informace o F# uvozovky kódu, funkce jazyka, která umožňuje generovat a pracovat s F# kódu výrazy prostřednictvím kódu programu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 464df5e3fafa683c93fd5fb6e94d24c229903491
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5523d54a271ad1c53c6de85f37f261e0ecf6cced
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642005"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490803"
 ---
 # <a name="code-quotations"></a>Uvozovky kódu
 
@@ -39,9 +39,7 @@ Ale tyto výrazy jsou platné.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet502.fs)]
 
-Pokud chcete použít uvozovky kódu, je nutné přidat deklarace importu (pomocí `open` – klíčové slovo), která otevře [Microsoft.fsharp.quotations –](https://msdn.microsoft.com/library/e9ce8a3a-e00c-4190-bad5-cce52ee089b2) oboru názvů.
-
-F# PowerPack poskytuje podporu pro testování a provádění F# objekty výrazů.
+K evalutate F# nabídky, je nutné použít [ F# nabídky Chyba při vyhodnocování](https://github.com/fsprojects/FSharp.Quotations.Evaluator). Poskytuje podporu pro testování a provádění F# objekty výrazů.
 
 ## <a name="expr-type"></a>Výraz typu
 

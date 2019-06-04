@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání elementu s konkrétním podřízeným elementem (C#)'
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 6888de3bc255691fbbb05f2a1debae05492661c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 71068774b93581fdd82a0fe57651bc7780ca1ef1
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668039"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485568"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Postupy: Vyhledání elementu s konkrétním podřízeným elementem (C#)
 Toto téma ukazuje, jak najít konkrétní element, který má podřízený element s určitou hodnotu.  
@@ -35,7 +35,7 @@ foreach (XElement el in tests)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
  Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Konfigurace testu v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-in-a-namespace1.md).  
   
@@ -61,6 +61,5 @@ foreach (XElement el in tests)
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
 - [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Operace projekce (C#)](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)

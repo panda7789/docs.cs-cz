@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bf7424c8aa2ae816340f6fa641e5c79a56ae0dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3e67861a32d5863e4c1b4d9b147c507c1bb54c39
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61811810"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491093"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
 <a name="Top"></a> Standardní <xref:System.TimeSpan> formátovací řetězec se používá jeden specifikátor formátu definovat textové vyjádření <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [Custom TimeSpan Format Strings](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
@@ -41,7 +41,7 @@ ms.locfileid: "61811810"
   
 <a name="top"></a> Následující tabulka uvádí specifikátory formátu interval (běžný čas).  
   
-|Specifikátor formátu|Název|Popis|Příklady|  
+|Specifikátor formátu|Name|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
 |"c"|Konstantní (neutrální) formát|Tento specifikátor není zohledňující jazykovou verzi. Má podobu `[-][d'.']hh':'mm':'ss['.'fffffff]`.<br /><br /> (Řetězce formátu "T" a "t" vytvářejí stejné výsledky.)<br /><br /> Další informace: [Specifikátor konstanty ("c") formátu](#Constant).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
 |"g"|Obecném krátkém formátu|Tento specifikátor výstupem jenom to, co je potřeba. Jazykové a má podobu `[-][d':']h':'mm':'ss[.FFFFFFF]`.<br /><br /> Další informace: [Specifikátor formátu Obecný krátký ("g")](#GeneralShort).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50,5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50,599 (fr-FR)|  
@@ -64,7 +64,7 @@ ms.locfileid: "61811810"
 |*ss*|Počet sekund, který se pohybuje od "0" do "59".|  
 |*fffffff*|Volitelné necelá část hodnoty sekundy.  Jeho hodnota může být v rozsahu od "0000001" (jedna značka nebo jedné sekundy millionth deset) do "9999999" (9 999 999 Desetimiliontiny sekundy nebo druhý menší jedna značka).|  
   
- Na rozdíl od specifikátory formátu "G" a "g" specifikátor formátu "c" není zohledňující jazykovou verzi. Vytváří řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu, která je neutrální a která je společná pro všechny předchozí verze rozhraní .NET Framework před [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Výchozí hodnota je "c" <xref:System.TimeSpan> formátovací řetězec; <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metoda formátuje hodnotu časového intervalu pomocí formátovacího řetězce "c".  
+ Na rozdíl od specifikátory formátu "G" a "g" specifikátor formátu "c" není zohledňující jazykovou verzi. Vytváří řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu, která je neutrální a která je společná pro všechny předchozí verze rozhraní .NET Framework před rozhraní .NET Framework 4. Výchozí hodnota je "c" <xref:System.TimeSpan> formátovací řetězec; <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metoda formátuje hodnotu časového intervalu pomocí formátovacího řetězce "c".  
   
 > [!NOTE]
 >  <xref:System.TimeSpan> podporuje také "t" a "T" standardní formátovací řetězce, které jsou stejné chování jako řetězec standardního formátu "c".  

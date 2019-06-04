@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a313ea62455067fb36b94d942b0ce21589677e3b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d530f37c979a1ecddf2cb3895234aab2f7556b88
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698158"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489628"
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess – metoda
 Získá icordebugprocess – rozhraní, která odpovídá common language runtime (CLR) modulu načtené v procesu.  
@@ -78,7 +78,7 @@ HRESULT OpenVirtualProcess(
 |CORDBG_E_LIBRARY_PROVIDER_ERROR|[Iclrdebugginglibraryprovider –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) zpětného volání vrátí chybu nebo neposkytuje platný popisovač.|  
 |CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` neimplementuje rozhraní target požadovaná data pro tuto verzi modulu runtime.|  
 |CORDBG_E_NOT_CLR|Zadaný modul není modul CLR. Hodnota HRESULT je také vrácen, když modul CLR nelze zjistit, že paměť byla poškozena, modul není k dispozici nebo verze CLR je novější než verze překrytí.|  
-|CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|Tuto verzi modulu runtime nepodporuje model ladění. V současné době nepodporuje model ladění CLR verze starší než [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. `pwszVersion` Výstupní parametr je stále nastaven na správnou hodnotu po této chybě.|  
+|CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|Tuto verzi modulu runtime nepodporuje model ladění. V současné době nepodporuje model ladění CLR verze starší než .NET Framework 4. `pwszVersion` Výstupní parametr je stále nastaven na správnou hodnotu po této chybě.|  
 |CORDBG_E_UNSUPPORTED_FORWARD_COMPAT|Verzi modulu CLR je vyšší než verze, které se na podporu deklarací identity tímto ladicím programem. `pwszVersion` Výstupní parametr je stále nastaven na správnou hodnotu po této chybě.|  
 |E_NO_INTERFACE|`riidProcess` Rozhraní není k dispozici.|  
 |CORDBG_E_UNSUPPORTED_VERSION_STRUCT|`CLR_DEBUGGING_VERSION` Struktura nemá rozpoznaná hodnota pro `wStructVersion`. Jediná akceptovaná hodnota v tuto chvíli je 0.|  

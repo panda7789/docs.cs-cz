@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: d6d1c9ea-be74-4e6d-bfdd-d4bcc2d301cf
-ms.openlocfilehash: 74e9ba00b61dbed532c0309043c9a9c944ea6932
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6e7eea99a59a4cb1a5d62e728d4812ce3377c09f
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680685"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483762"
 ---
 # <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje zákazníci a objednávky.  
@@ -433,7 +433,3 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
   </Orders>  
 </Root>  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

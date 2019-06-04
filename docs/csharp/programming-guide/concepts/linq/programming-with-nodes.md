@@ -2,12 +2,12 @@
 title: Programování s uzly (C#)
 ms.date: 07/20/2015
 ms.assetid: c38df0f2-c805-431a-93ff-9103a4284c2f
-ms.openlocfilehash: 0924d7b1d25a33635cc5140ca32622658b10fa0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7229b03e1bbb4f7cd861cb946307867b87234a21
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61681920"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487298"
 ---
 # <a name="programming-with-nodes-c"></a>Programování s uzly (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vývojářům, kteří potřebují psát programy, jako je například XML editor, systém transformace nebo Autor sestavy často potřeba psát programy, které fungují na jemnější úrovni členitosti než elementů a atributů. Často potřebují pracovat na úrovni uzlu manipulace s uzly text, instrukce ke zpracování a komentáře. Toto téma obsahuje podrobnosti o programování na úrovni uzlu.  
@@ -172,6 +172,3 @@ Console.WriteLine(doc.Nodes().Count());
 1  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

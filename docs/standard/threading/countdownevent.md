@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f25ffb16fa5feb382bb42c737440317cfb777b1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b996b60a08a55b1d8e86878974be4887ea2684f8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666310"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490829"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> je primitiv synchronizace, která byla odblokuje jeho čekajících vláken signalizován s určitým počtem opakování. <xref:System.Threading.CountdownEvent> určený pro scénáře, ve kterých je byste jinak museli používat <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim> a ručně dekrementace proměnné před signalizace události. Například ve scénáři rozvětvení/spojení, stačí vytvořit <xref:System.Threading.CountdownEvent> , který má signálu počet 5, a pak start pěti pracovních položek ve vláknu fondu a každé pracovní položky pro volání <xref:System.Threading.CountdownEvent.Signal%2A> po dokončení. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> sníží počet signál o 1. Na hlavním vlákně, volání <xref:System.Threading.CountdownEvent.Wait%2A> bude blokovat, dokud počet signálu je nula.  
@@ -40,7 +40,7 @@ ms.locfileid: "64666310"
  [!code-vb[CDS_CountdownEvent#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/module1.vb#01)]  
   
 ## <a name="countdownevent-with-cancellation"></a>CountdownEvent pomocí zrušení  
- Následující příklad ukazuje, jak zrušit operaci čekání na <xref:System.Threading.CountdownEvent> pomocí tokenu zrušení. Základní vzor řídí modelem jednotné zrušení, který je uveden v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md).  
+ Následující příklad ukazuje, jak zrušit operaci čekání na <xref:System.Threading.CountdownEvent> pomocí tokenu zrušení. Základní vzor se řídí modelem jednotné zrušení, který je uveden v rozhraní .NET Framework 4. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md).  
   
  [!code-csharp[CDS_CountdownEvent#02](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#02)]
  [!code-vb[CDS_CountdownEvent#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/canceleventwait.vb#02)]  

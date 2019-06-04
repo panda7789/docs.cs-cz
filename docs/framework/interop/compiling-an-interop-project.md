@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bf0244060d3c5dfa39c220fc2d699a5f2f1fef9e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4369ce9c9ce82ecdbf11d76f3b043778b8374d8b
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636197"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489754"
 ---
 # <a name="compiling-an-interop-project"></a>Kompilace projektu interoperability
 
@@ -24,7 +24,7 @@ Projektů spolupráce modelu COM, které odkazují na jeden nebo více sestaven�
 
  Existují dva způsoby, jak odkazovat na sestavení vzájemné spolupráce:
 
-- Vložené typy spolupráce: Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] a Visual Studio 2010, můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Toto je doporučený postup.
+- Vložené typy spolupráce: Od verze rozhraní .NET Framework 4 a Visual Studio 2010, můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Toto je doporučený postup.
 
 - Nasazení sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací.
 

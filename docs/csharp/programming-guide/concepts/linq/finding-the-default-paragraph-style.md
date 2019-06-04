@@ -2,12 +2,12 @@
 title: Vyhledání výchozího stylu odstavce (C#)
 ms.date: 07/20/2015
 ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
-ms.openlocfilehash: 89c70fcbc9d5286e2c9381250b30d525ebb1eb36
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5cbe1ad7b3a384448a4e570156b45f57446e73e6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596695"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485987"
 ---
 # <a name="finding-the-default-paragraph-style-c"></a>Vyhledání výchozího stylu odstavce (C#)
 První úkol v manipulaci s informace v dokumentu WordprocessingML kurzu je vyhledání výchozího stylu odstavce v dokumentu.  
@@ -15,7 +15,7 @@ První úkol v manipulaci s informace v dokumentu WordprocessingML kurzu je vyhl
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad otevře dokumentu Office Open XML WordprocessingML, najde dokument a styl součástí balíčku a pak provede dotaz, který vyhledá výchozí název stylu. Informace o balíčcích dokumentu Office Open XML a skládají se z části najdete v tématu [podrobnosti o Open XML WordprocessingML dokumenty Office (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).  
+ Následující příklad otevře dokumentu Office Open XML WordprocessingML, najde dokument a styl součástí balíčku a pak provede dotaz, který vyhledá výchozí název stylu. Informace o balíčcích dokumentu Office Open XML a skládají se z části najdete v tématu [podrobnosti o Open XML WordprocessingML dokumenty Office (C#)](../../../../csharp/programming-guide/concepts/linq/wordprocessingml-document-with-styles.md).  
   
  Tento dotaz najde uzel s názvem `w:style` , který má atribut s názvem `w:type` s hodnotou "odstavec", a také atribut s názvem `w:default` s hodnotou "1". Vzhledem k tomu, že bude existovat jenom jeden uzel XML s těmito atributy, pomocí dotazu <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operátor k převodu kolekce na jednotlivý prvek. Potom získá hodnotu atributu s názvem `w:styleId`.  
   
@@ -88,6 +88,3 @@ The default style is: Normal
   
 - [Načtení odstavců a jejich stylů (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
-## <a name="see-also"></a>Viz také:
-
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

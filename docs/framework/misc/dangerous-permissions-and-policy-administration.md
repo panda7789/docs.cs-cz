@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 1929e854-23a0-4bb1-94be-e8aa3b609e32
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ae24cdcb97e30da0bd4aec6569ef3dcda11488c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 17a596d9fc223dc53268ae9c91f7d02357b0a9b8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775762"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489973"
 ---
 # <a name="dangerous-permissions-and-policy-administration"></a>Správa nebezpečných oprávnění a zásad
 Některé z chráněné operace, pro které rozhraní .NET Framework poskytuje oprávnění potenciálně může mít systém zabezpečení obcházení. Tato nebezpečných oprávnění by se měly provádět jenom pro důvěryhodného kódu a pouze v případě potřeby. Je obvykle žádnou obranu proti škodlivým kódem Pokud jsou udělena tato oprávnění.  
   
 > [!NOTE]
->  V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], byly důležité změny v modelu zabezpečení rozhraní .NET Framework a terminologii. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+>  V rozhraní .NET Framework 4 byly důležité změny modelu zabezpečení rozhraní .NET Framework a terminologii. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
  Nebezpečná oprávnění jsou vysvětlené v následující tabulce.  
   

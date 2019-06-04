@@ -2,12 +2,12 @@
 title: Data FILESTREAM
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-ms.openlocfilehash: f8521a9de3037ae759b0b0ea5bcbe84830f8629e
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4edd03a38f8f5df6cb4fb9c2446f966dfe601564
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582705"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490076"
 ---
 # <a name="filestream-data"></a>Data FILESTREAM
 
@@ -16,7 +16,7 @@ Atribut úložiště FILESTREAM je binárních (objektů BLOB) data uložená v 
 > [!NOTE]
 > Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro práci s daty FILESTREAM pomocí SqlClient.
 
-Určení u sloupce varbinary(max) FILESTREAM atribut způsobí, že Server SQL pro ukládání dat v místním systému souborů NTFS místo v souboru databáze. I když se ukládají odděleně, můžete použít stejný [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy, které jsou podporovány pro práci s daty varbinary(max), který je uložen v databázi.
+Určení u sloupce varbinary(max) FILESTREAM atribut způsobí, že Server SQL pro ukládání dat v místním systému souborů NTFS místo v souboru databáze. I když se ukládají odděleně, můžete použít stejné příkazy jazyka Transact-SQL, které jsou podporovány pro práci s daty varbinary(max), který je uložen v databázi.
 
 ## <a name="sqlclient-support-for-filestream"></a>Podpora klienta SqlClient pro FILESTREAM
 
@@ -24,7 +24,7 @@ Zprostředkovatel dat .NET Framework pro SQL Server, <xref:System.Data.SqlClient
 
 ### <a name="creating-the-sql-server-table"></a>Vytváří se tabulka SQL serveru
 
-Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy vytvoří tabulku s názvem Zaměstnanci a vloží řádek s daty. Jakmile povolíte úložiště FILESTREAM, můžete použít tuto tabulku ve spojení s příklady kódu, které následují. Odkazy na zdroje v SQL Server Books Online jsou umístěny na konci tohoto tématu.
+Následující příkazy jazyka Transact-SQL vytvoří tabulku s názvem Zaměstnanci a vloží řádek s daty. Jakmile povolíte úložiště FILESTREAM, můžete použít tuto tabulku ve spojení s příklady kódu, které následují. Odkazy na zdroje v SQL Server Books Online jsou umístěny na konci tohoto tématu.
 
 ```sql
 CREATE TABLE employees

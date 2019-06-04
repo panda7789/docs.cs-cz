@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f17ecfe683de0739e4e1e063d38836eecf949336
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d985ed3b7af2aec7da709c3bbbfd10312e5e3a9
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765307"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490200"
 ---
 # <a name="loadstringrc-function"></a>LoadStringRC – funkce
 Převede hodnotu HRESULT na chybovou zprávu pomocí výchozí jazykové verze aktuálního vlákna.  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

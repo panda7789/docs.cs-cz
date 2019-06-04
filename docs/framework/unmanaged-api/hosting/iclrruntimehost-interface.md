@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da22cbfe06245d915bed6db9cba220fc32b38942
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ba02373aae33baf77b72323fabf1f6ca1fe4eecf
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627132"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490245"
 ---
 # <a name="iclrruntimehost-interface"></a>ICLRRuntimeHost – rozhraní
 Poskytuje funkce podobné [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) rozhraní v rozhraní .NET Framework verze 1, s následujícími změnami:  
@@ -45,7 +45,7 @@ Poskytuje funkce podobné [icorruntimehost –](../../../../docs/framework/unman
 |[UnloadAppDomain – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-unloadappdomain-method.md)|Uvolní <xref:System.AppDomain> , který odpovídá zadané číselný identifikátor.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počínaje [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], použijte [iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md) rozhraní pro získání ukazatele na [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní a následně zavolat [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) metodu k získání ukazatele na `ICLRRuntimeHost`. V dřívějších verzích rozhraní .NET Framework, hostitel získá ukazatel `ICLRRuntimeHost` instance voláním [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) nebo [corbindtocurrentruntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md). Chcete-li poskytnout implementace některého z technologie v rozhraní .NET Framework verze 2.0, je nutné použít `ICLRRuntimeHost` místo `ICorRuntimeHost`.  
+ Od verze rozhraní .NET Framework 4, použijte [iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md) rozhraní získat ukazatel [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní a poté zavolejte [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md)metodu k získání ukazatele na `ICLRRuntimeHost`. V dřívějších verzích rozhraní .NET Framework, hostitel získá ukazatel `ICLRRuntimeHost` instance voláním [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) nebo [corbindtocurrentruntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md). Chcete-li poskytnout implementace některého z technologie v rozhraní .NET Framework verze 2.0, je nutné použít `ICLRRuntimeHost` místo `ICorRuntimeHost`.  
   
 > [!IMPORTANT]
 >  Nevolejte [Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) před voláním metody [executeapplication –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-executeapplication-method.md) metodu aktivace manifest aplikace. Pokud `Start` metoda je volána nejprve `ExecuteApplication` volání metody se nezdaří.  

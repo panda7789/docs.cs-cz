@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa256fe95013494488ff52258186763fab7a85c9
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: b16f169ca61485cf3031076d32178a9407aa54ff
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456655"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66488000"
 ---
 # <a name="code-access-security"></a>Zabezpečení přístupu kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -34,7 +34,7 @@ ms.locfileid: "66456655"
  Rozhraní .NET Framework poskytuje mechanismus zabezpečení volá zabezpečení přístupu kódu k ochraně počítačové systémy před škodlivým mobilní kód umožňující kódu z neznámých zdrojů ke spuštění s ochranou a pomáhá zabránit důvěryhodného kódu z úmyslně ani náhodně tím bylo narušeno zabezpečení. Zabezpečení přístupu kódu umožňuje kódu důvěryhodné na různých úrovních, v závislosti na tom, odkud pochází kód a o dalších aspektech identity kódu. Zabezpečení přístupu kódu vynucuje také různé úrovně důvěryhodnosti na kód, který minimalizuje množství kódu, který musí být plně důvěryhodné, aby bylo možné spustit. Pomocí zabezpečení přístupu kódu může snížit pravděpodobnost, že váš kód bude zneužity škodlivých aktivit nebo Chyba vyplněný kód. Může snížit vaše odpovědnosti, protože můžete určit sadu operací, které váš kód by měl povoleno provádět. Zabezpečení přístupu kódu může také pomoct minimalizovat škody, které můžou být výsledkem ohrožení zabezpečení v kódu.  
   
 > [!NOTE]
->  Důležité změny byly provedeny na zabezpečení přístupu kódu v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Byl nejdůležitější změny [transparentnosti zabezpečení](../../../docs/framework/misc/security-transparent-code.md), ale jsou taky mezi další výrazné změny, které mají vliv na zabezpečení přístupu kódu. Informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+>  Byly provedeny změny hlavní k zabezpečení přístupu kódu v rozhraní .NET Framework 4. Byl nejdůležitější změny [transparentnosti zabezpečení](../../../docs/framework/misc/security-transparent-code.md), ale jsou taky mezi další výrazné změny, které mají vliv na zabezpečení přístupu kódu. Informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
  Zabezpečení přístupu kódu má vliv na primárně knihovny kódu a částečně důvěryhodné aplikace. Knihovna vývojáři musí chránit svůj kód před neoprávněným přístupem z částečně důvěryhodné aplikace. Částečně důvěryhodné aplikace jsou aplikace, které jsou načteny z externích zdrojů, jako je Internet. Aplikace, které jsou nainstalovány v počítači nebo v místním intranetu spustit v režimu plné důvěryhodnosti. Aplikace úplného vztahu důvěryhodnosti nejsou ovlivněny zabezpečení přístupu kódu, pokud nejsou označeny jako [transparentní pro zabezpečení](../../../docs/framework/misc/security-transparent-code.md), protože jsou plně důvěryhodné. Jediným omezením pro úplného vztahu důvěryhodnosti aplikace je, že aplikace, které jsou označeny <xref:System.Security.SecurityTransparentAttribute> atribut nejde volat kód, který je označen <xref:System.Security.SecurityCriticalAttribute> atribut. Částečně důvěryhodné aplikace musí být spuštěn v izolovaném prostoru (třeba v Internet Exploreru) tak, aby se dají nastavit zabezpečení přístupu kódu. Pokud aplikaci stáhnout z Internetu a zkuste spustit z plochy, zobrazí se <xref:System.NotSupportedException> s touto zprávou: "Proběhl pokus o načtení sestavení z umístění v síti, které by způsobily sestavení do izolovaného prostoru v předchozích verzích rozhraní .NET Framework. Tato verze rozhraní .NET Framework nepovolí zásady CAS ve výchozím nastavení, takže toto načtení může být nebezpečné." Pokud jste si jistí, že aplikace může považovat za důvěryhodné, můžete povolit, aby byla spuštěna jako úplný vztah důvěryhodnosti s použitím [ \<loadFromRemoteSources > element](../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md). Informace o spuštění aplikace v izolovaném prostoru, naleznete v tématu [jak: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).  
   

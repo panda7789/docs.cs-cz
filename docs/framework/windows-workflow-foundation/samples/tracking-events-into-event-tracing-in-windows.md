@@ -2,12 +2,12 @@
 title: Sledování událostí ve službě Event Tracking ve Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: 129b82da068251d87bd9b0ca029b7e5a1c274936
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3afc04fec996f4e24eb6e5ad771886480cd9cb9
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004806"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491039"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí ve službě Event Tracking ve Windows
 Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Windows Workflow Foundation (WF) a generovat sledování událostí v trasování událostí pro Windows (ETW). Vygenerovat pracovní postup do ETW sledování záznamů, ukázka používá účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
@@ -47,7 +47,7 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 
      Ve výchozím nastavení, služba naslouchá na portu 53797 (http://localhost:53797/SampleWorkflowService.xamlx).
 
-4. Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], otevřete testovací klient WCF.
+4. Pomocí Průzkumníka souborů otevřete testovací klient WCF.
 
      Testovací klient WCF (WcfTestClient.exe) se nachází v \<instalační složky sady Visual Studio 2010 > \Common7\IDE\ složky.
 
@@ -65,7 +65,7 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 
      Ujistěte se, **zobrazit protokoly ladění a analýzu** zaškrtnutá možnost.
 
-8. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace Server-**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol** povolit **analytické** protokolu.
+8. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace Server-** . Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol** povolit **analytické** protokolu.
 
 9. Test pomocí testovacího klienta WCF na něj poklikejte `GetData`.
 
@@ -75,7 +75,7 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 
 10. Sledujte události vyzařovaného z pracovního postupu.
 
-     Přepněte zpět do prohlížeče událostí a přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace Server-**. Klikněte pravým tlačítkem na **analytické** a vyberte **aktualizovat**.
+     Přepněte zpět do prohlížeče událostí a přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace Server-** . Klikněte pravým tlačítkem na **analytické** a vyberte **aktualizovat**.
 
      Události pracovního postupu se zobrazí v prohlížeči událostí. Všimněte si, že se zobrazují události spuštění pracovního postupu a že jeden z nich je neošetřená výjimka, která odpovídá chybě v pracovním postupu. Navíc upozorňovací událost je vygenerován z aktivity pracovního postupu, který označuje, že aktivita způsobující chybu.
 

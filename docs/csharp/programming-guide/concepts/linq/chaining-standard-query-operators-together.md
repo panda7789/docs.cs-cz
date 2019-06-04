@@ -2,15 +2,15 @@
 title: Zřetězení standardních dotazovacích operátorů pohromadě (C#)
 ms.date: 07/20/2015
 ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
-ms.openlocfilehash: 71b364d76860b5daa21ea176947d9cfe9d49b308
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e09b918ab6c33c8e3ccae6f99826dd86f4a2d1e6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668439"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487613"
 ---
 # <a name="chaining-standard-query-operators-together-c"></a>Zřetězení standardních dotazovacích operátorů pohromadě (C#)
-Toto je poslední téma v [kurzu: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md) kurzu.  
+Toto je poslední téma v [kurzu: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md) kurzu.  
   
  Také je možné zřetězit standardních operátorů pro dotazování. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a také funguje opožděné způsobem. Žádné mezilehlých výsledků jsou materializovaného tímto plánem.  
   
@@ -86,6 +86,3 @@ AppendString: source >GHI<
 Main: str >GHI!!!<  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)

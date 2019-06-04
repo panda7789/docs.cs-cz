@@ -2,12 +2,12 @@
 title: 'Postupy: Načtení jednoho atributu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1b6b07b9-933f-47e9-874e-e790cab49dc5
-ms.openlocfilehash: 2bf42333d7a0b3e34cc0a636b68659b8c45d1d83
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cfab2cbb80eb330a5fd745871eb272cca0b37798
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667766"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486439"
 ---
 # <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Postupy: Načtení jednoho atributu (LINQ to XML) (C#)
 Toto téma vysvětluje, jak načíst jeden atribut elementu, název atributu. To je užitečné pro psaní výrazů dotazů, ve které chcete najít element, který se má určitý atribut.  
@@ -71,7 +71,7 @@ work
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní přetypování operátory pro <xref:System.Xml.Linq.XAttribute> třídu `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`a `GUID?`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -99,4 +99,4 @@ work
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes-overview.md)

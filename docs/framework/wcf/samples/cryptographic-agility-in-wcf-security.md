@@ -2,12 +2,12 @@
 title: Kryptografická flexibilita v zabezpečení WCF
 ms.date: 03/30/2017
 ms.assetid: c2c549e5-ac19-40c5-b686-8f67f52b6dbf
-ms.openlocfilehash: 0a4171d6e753be9fbdd6974850fc6757ff585ae0
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b8e3b6dc62baf31901520d7f5edac0529e937016
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637825"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490936"
 ---
 # <a name="cryptographic-agility-in-wcf-security"></a>Kryptografická flexibilita v zabezpečení WCF
 
@@ -27,7 +27,7 @@ Toto je klienta WCF, který přistupuje k službě po úspěšném ověření. V
 
 2. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.
 
-3. Otevřít [!INCLUDE[fileExplorer](~/includes/fileexplorer-md.md)] a přejděte do adresáře \WCF\Basic\Security\CryptoAgility\Service\bin a spusťte soubor service.exe s oprávněními správce tak, že service.exe kliknete pravým tlačítkem a vyberete **spustit jako správce**.
+3. Otevřete Průzkumníka souborů a přejděte do adresáře \WCF\Basic\Security\CryptoAgility\Service\bin a spusťte soubor service.exe s oprávněními správce tak, že service.exe kliknete pravým tlačítkem a vyberete **spustit jako správce**.
 
 4. Přejděte do adresáře \WCF\Basic\Security\CryptoAgility\Client\bin a spusťte soubor client.exe normálně.
 

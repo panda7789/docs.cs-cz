@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 60f2856bea79f36beb3c467158114fa78d99e09a
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 44003cbd0f13d2665c5b753454689c10546325b7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456497"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487843"
 ---
 # <a name="security-transparent-code"></a>Kód transparentní pro zabezpečení
 
@@ -23,7 +23,7 @@ ms.locfileid: "66456497"
 Zabezpečení zahrnuje tři vzájemně komunikující části: izolaci prostoru, oprávnění a prosazování. Sandboxing odkazuje na praxi vytváření izolovaných domén, kde nějaký kód považován za plně důvěryhodný a jiný kód je omezen oprávněními v sadě oprávnění pro izolovaný prostor. Kód aplikace, který běží v rámci udělené sady izolovaného prostoru je považován za transparentní; To znamená že nemůže provádět žádné operace, které můžou ovlivnit zabezpečení. Udělená sada pro izolovaný prostor je určena legitimací (<xref:System.Security.Policy.Evidence> třídy). Legitimace identifikuje, jaká konkrétní oprávnění jsou vyžadována izolovanými prostory a jaké druhy izolovaných prostorů mohou být vytvořeny. Vynucení odkazuje na umožnění transparentnímu kódu vykonávat pouze v rámci jeho udělené sady.
 
 > [!IMPORTANT]
-> Zásady zabezpečení byly klíčovým elementem v předchozích verzích rozhraní .NET Framework. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], zásady zabezpečení je zastaralé. Odstranění zásad zabezpečení je oddělené od transparentnosti zabezpečení. Informace o účincích této změny najdete v tématu [kompatibilitou zásad zabezpečení přístupu kódu a migrace](../../../docs/framework/misc/code-access-security-policy-compatibility-and-migration.md).
+> Zásady zabezpečení byly klíčovým elementem v předchozích verzích rozhraní .NET Framework. Od verze rozhraní .NET Framework 4, zásady zabezpečení je zastaralé. Odstranění zásad zabezpečení je oddělené od transparentnosti zabezpečení. Informace o účincích této změny najdete v tématu [kompatibilitou zásad zabezpečení přístupu kódu a migrace](../../../docs/framework/misc/code-access-security-policy-compatibility-and-migration.md).
 
 Toto téma popisuje model transparentnosti podrobněji. Obsahuje následující oddíly:
 
@@ -70,7 +70,7 @@ Hlavní rozdíl mezi těmito dvěma úrovněmi transparentnosti je, že 1 úrove
 
 ### <a name="level-2-transparency"></a>Průhlednost úrovně 2
 
-Průhlednost úrovně 2 byla zavedena v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Tři zásady tohoto modelu jsou transparentní kód, bezpečný a kritický pro zabezpečení kód a kód kritický pro zabezpečení.
+Úroveň 2 transparentnost byla představena v rozhraní .NET Framework 4. Tři zásady tohoto modelu jsou transparentní kód, bezpečný a kritický pro zabezpečení kód a kód kritický pro zabezpečení.
 
 - Transparentní kód, bez ohledu na oprávnění, která má oprávnění (včetně úplné důvěryhodnosti), může volat pouze jiný transparentní kód nebo bezpečný a kritický pro zabezpečení kódu. Pokud je kód částečně důvěryhodný, může pouze provádět akce, které jsou povolené sadou oprávnění domény. Transparentní kód nemůže provádět následující:
 

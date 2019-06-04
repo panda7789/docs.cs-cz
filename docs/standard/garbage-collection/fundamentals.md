@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6b7b120a5a21301ff82aa8ebd1cfc169f7884e4
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 8d3ac6acf756a0ac468eb4483432467429ed91ca
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457433"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483285"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -186,7 +186,7 @@ Podproces, který spustí uvolnění paměti
   
      Uvolnění paměti pracovní stanice může být souběžné nebo nesouběžné. Souběžné uvolňování umožňuje spravovaným vláknům pokračovat v operaci během uvolňování paměti.  
   
-     Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], uvolňování paměti na pozadí nahrazuje souběžné uvolňování paměti.  
+     Od verze rozhraní .NET Framework 4, uvolňování na pozadí nahrazuje souběžné uvolňování paměti.  
   
 - Uvolnění paměti serveru, který je určen pro serverové aplikace, které vyžadují vysoký výkon a škálovatelnost. Uvolnění paměti serveru může být nesouběžné nebo pozadí.  
   

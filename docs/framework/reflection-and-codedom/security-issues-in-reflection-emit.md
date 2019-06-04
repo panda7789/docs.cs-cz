@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ca4a087b60e6cb857ec78273dad099e5e5da07a
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: d2995e64d9e8eed365498bcbc1047a321edc10c5
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457305"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489728"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
 Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsoft intermediate language (MSIL), každý s vlastní problémy se zabezpečením:  
@@ -36,7 +36,7 @@ Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsof
   
 <a name="Dynamic_Assemblies"></a>   
 ## <a name="dynamic-assemblies"></a>Dynamická sestavení  
- Dynamické sestavení se vytvářejí pomocí přetížení <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Většina přetížení této metody se považují za zastaralé v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], z důvodu odstranění zásad zabezpečení počítače. (Viz [změny zabezpečení](../../../docs/framework/security/security-changes.md).) Zbývající přetížení může provést všechny kódu, bez ohledu na úroveň důvěryhodnosti. Tato přetížení spadají do dvou skupin: ty, které určují seznam atributů, které chcete použít na dynamické sestavení při jeho vytváření a ty, které nepodporují. Pokud nezadáte model transparentnosti pro sestavení, s použitím <xref:System.Security.SecurityRulesAttribute> atribut při vytváření, model transparentnosti je zděděno od emitujícího sestavení.  
+ Dynamické sestavení se vytvářejí pomocí přetížení <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Většina přetížení této metody jsou zastaralé v rozhraní .NET Framework 4, z důvodu odstranění zásad zabezpečení počítače. (Viz [změny zabezpečení](../../../docs/framework/security/security-changes.md).) Zbývající přetížení může provést všechny kódu, bez ohledu na úroveň důvěryhodnosti. Tato přetížení spadají do dvou skupin: ty, které určují seznam atributů, které chcete použít na dynamické sestavení při jeho vytváření a ty, které nepodporují. Pokud nezadáte model transparentnosti pro sestavení, s použitím <xref:System.Security.SecurityRulesAttribute> atribut při vytváření, model transparentnosti je zděděno od emitujícího sestavení.  
   
 > [!NOTE]
 >  Atributy, které se vztahují na dynamické sestavení po vytvoření s použitím <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A> metody neprojeví až do sestavení byl uložen na disk a opětovném načtení do paměti.  

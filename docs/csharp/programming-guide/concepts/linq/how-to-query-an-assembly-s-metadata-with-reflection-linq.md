@@ -2,14 +2,17 @@
 title: 'Postupy: Dotazu na Metadata sestavení s reflexí (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c4cdce49-b1c8-4420-b12a-9ff7e6671368
-ms.openlocfilehash: 1e8aa8652470240d63ac950d43e5b41e8b3ef1ca
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 52b961c5a016754964285221e252965ff89efd26
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584414"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485238"
 ---
 # <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a>Postupy: Dotazu na Metadata sestavení s reflexí (LINQ) (C#)
+
+Rozhraní .NET Framework třída knihovnu reflexe rozhraní API slouží k přezkoumání metadat v sestavení rozhraní .NET a vytváření kolekcí typy, členy typu, parametry a tak dále, které jsou v tomto sestavení. Protože tato kolekce podporuje Obecné `IEnumerable` rozhraní, může být dotázán pomocí jazyka LINQ.  
+  
 Následující příklad ukazuje, jak LINQ lze pomocí reflexe k načtení metadat konkrétní metody, které odpovídají zadanému vyhledávacímu kritériu. Dotaz v tomto případě se vyhledat názvy všechny metody v sestavení, které vrací vyčíslitelné typy například pole.  
   
 ## <a name="example"></a>Příklad  

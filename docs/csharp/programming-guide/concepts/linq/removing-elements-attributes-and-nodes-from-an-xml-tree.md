@@ -2,12 +2,12 @@
 title: Odebrání elementů, atributů a uzlů ze stromu XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
-ms.openlocfilehash: f3091c3f46d8b3283c961fffd4d1f0ce991083ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3877a09cc0b86522929079d46d74b7c01b0e658a
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61711977"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487228"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Odebrání elementů, atributů a uzlů ze stromu XML (C#)
 Můžete upravit stromu XML, odebrání elementů, atributů a dalších typů uzlů.  
@@ -78,6 +78,3 @@ Console.WriteLine(root);
   
  Všimněte si, že první podřízený element byl odebrán z `Child1`. Všechny podřízené prvky byly odebrány z `Child2` a z `Child3`.  
   
-## <a name="see-also"></a>Viz také:
-
-- [Změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

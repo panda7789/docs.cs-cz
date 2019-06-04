@@ -2,12 +2,12 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: 4e3410c62ba2fb9b8cc3dd0c6aa80707e03793fd
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 0fafa786805a14d9adc3523a5eb876e7e5b0e9c5
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880067"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489877"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 ADO.NET Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -96,7 +96,7 @@ ADO.NET Entity Framework poskytuje několik výhod do stávající aplikace. Jed
   
   [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nepodporuje datový typ native XML. To znamená, že pokud entita je namapována na tabulku se sloupcem XML, vlastnost ekvivalentní entity pro sloupec typu XML je řetězec. Objekty lze odpojen a serializovanou jako XML. Další informace najdete v tématu [serializaci objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
   
-  Pokud vaše aplikace vyžaduje schopnost dotazovat XML data, můžete stále využít výhod výhody dotazů LINQ pomocí LINQ to XML. Další informace najdete v tématu [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) nebo [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
+  Pokud vaše aplikace vyžaduje schopnost dotazovat XML data, můžete stále využít výhod výhody dotazů LINQ pomocí LINQ to XML. Další informace najdete v tématu [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) nebo [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
   
 - Aplikace, které udržují stav.  
 

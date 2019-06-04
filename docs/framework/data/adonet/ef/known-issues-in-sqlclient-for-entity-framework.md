@@ -2,12 +2,12 @@
 title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 0a6fec7e2d129523e5f68955e51ac50154cb58df
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5c500a61a00914df7b106b7e89485921123e56ec
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631730"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489535"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
 Tato část popisuje známé problémy související s zprostředkovatele dat .NET Framework pro SQL Server (SqlClient).  
@@ -43,9 +43,9 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
 ```  
   
 ## <a name="targeting-the-correct-sql-server-version"></a>Cílení na verzi serveru SQL správný  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Cíle [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] podle verze systému SQL Server, který je zadaný v dotazu `ProviderManifestToken` atribut schématu elementu v souboru modelu (ssdl) úložiště. Tato verze se může lišit od verze skutečné jste připojeni k serveru SQL. Například, pokud používáte SQL Server 2005 ale vaše `ProviderManifestToken` atribut je nastaven na 2008 generované [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] dotazu nebude možné provést na serveru. Například nebude ve starších verzích systému SQL Server spustit dotaz, který používá typy čas nové datum, které byly zavedeny v systému SQL Server 2008. Pokud používáte SQL Server 2005, ale vaše `ProviderManifestToken` atribut je nastaven na 2000, generované [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] dotaz zřejmě menší optimalizované a může se zobrazit výjimka, která říká, že dotaz se nepodporuje. Další informace najdete v části různé a vnější použít operátory, dříve v tomto tématu.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Cílí na základě verze systému SQL Server, který je zadán v dotaz jazyka Transact-SQL `ProviderManifestToken` atribut schématu elementu v souboru modelu (ssdl) úložiště. Tato verze se může lišit od verze skutečné jste připojeni k serveru SQL. Například, pokud používáte SQL Server 2005 ale vaše `ProviderManifestToken` atribut je nastaven na 2008, nebude možné provést vygenerovaný dotaz jazyka Transact-SQL na serveru. Například nebude ve starších verzích systému SQL Server spustit dotaz, který používá typy čas nové datum, které byly zavedeny v systému SQL Server 2008. Pokud používáte SQL Server 2005, ale vaše `ProviderManifestToken` atribut je nastaven na 2000, může méně optimalizované vygenerovaný dotaz jazyka Transact-SQL nebo může se zobrazit výjimka, která říká, že dotaz se nepodporuje. Další informace najdete v části různé a vnější použít operátory, dříve v tomto tématu.  
   
- Určitého chování, databáze, závisí na nastavení databáze úroveň kompatibility. Pokud vaše `ProviderManifestToken` atribut je nastaven na 2005 a je vaše verze systému SQL Server 2005, ale úroveň kompatibility databáze je nastavený na "80" (SQL Server 2000) vygenerovaný [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] bude cílené na systém SQL Server 2005, ale nebude možné provést z důvodu očekávaným způsobem nastavení úrovně kompatibility. Například můžete přijít pořadí informace pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v modulu pro výběr.  
+ Určitého chování, databáze, závisí na nastavení databáze úroveň kompatibility. Pokud vaše `ProviderManifestToken` atribut je nastaven na 2005 a je vaše verze systému SQL Server 2005, ale je úroveň kompatibility databáze nastavený na "80" (SQL Server 2000), vygenerované příkazů jazyka Transact-SQL bude cílené na systém SQL Server 2005, ale nebude možné provést z důvodu očekávaným způsobem nastavení úrovně kompatibility. Například můžete přijít pořadí informace pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v modulu pro výběr.  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
  Vnořené dotazy v klauzuli projekce může získat přeloženy do kartézský součin dotazy na serveru. U některých back-end serverů, včetně serveru SQL Server to může způsobit TempDB tabulka, která má být poměrně velké. To může snížit výkon serveru.  

@@ -2,12 +2,12 @@
 title: Přechodná Materializace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
-ms.openlocfilehash: fa1e11c6b4cacff3b5a5a7ca1cc311f5fabda6c7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d83bbc5e3de992e9ad4d86d0f684e2dfc3a29411
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596620"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484526"
 ---
 # <a name="intermediate-materialization-c"></a>Přechodná Materializace (C#)
 Pokud si nejste pozor, v některých situacích je možné výrazně změnit profil paměti a výkonu vaší aplikace tak, že předčasné materializace kolekce v dotazech. Některé operátory standardního dotazu způsobit materializace kolekce zdroje před získávání jeden element. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve Iteruje přes kolekci jeho celý zdrojový pak seřadí všechny položky a nakonec vrací první položky. To znamená, že se jedná o nákladné získat první položku uspořádanou kolekci; Každá položka po tomto datu není nákladné. To dává smysl: Bylo by možné pro daný operátor dotazu postupovat jinak.  
@@ -88,4 +88,4 @@ Main: str >GHI!!!<
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

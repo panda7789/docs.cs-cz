@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d41a88b7a9197a19a131cbda078297a96acdabfb
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 39ca7ca02c2bb1050653daf1b53450533cc950dd
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457487"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490966"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 
 ## <a name="what-is-a-parallel-query"></a>Co je paralelní dotaz?
 
-Language Integrated Query (LINQ) byl zaveden v [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Nabízí jednotný model pro dotazování libovolného <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat v podobě typově bezpečné. LINQ to Objects je název pro LINQ dotazy, které jsou spouštěny proti kolekci v paměť, jako <xref:System.Collections.Generic.List%601> a pole. Tento článek předpokládá, že máte základní znalosti o LINQ. Další informace najdete v tématu [Language-Integrated Query (LINQ) - C# ](../../csharp/programming-guide/concepts/linq/index.md) nebo [Language-Integrated Query (LINQ) - jazyka Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).
+Language Integrated Query (LINQ) byla zavedena v rozhraní .NET Framework 3.5. Nabízí jednotný model pro dotazování libovolného <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat v podobě typově bezpečné. LINQ to Objects je název pro LINQ dotazy, které jsou spouštěny proti kolekci v paměť, jako <xref:System.Collections.Generic.List%601> a pole. Tento článek předpokládá, že máte základní znalosti o LINQ. Další informace najdete v tématu [Language-Integrated Query (LINQ) - C# ](../../csharp/programming-guide/concepts/linq/index.md) nebo [Language-Integrated Query (LINQ) - jazyka Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).
 
 Paralelní LINQ (PLINQ) je implementace LINQ vzoru. PLINQ dotaz ve spoustě ohledů podobá neparalelní LINQ to Objects dotazům. PLINQ dotazy, stejně jako sekvenční [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] dotazy, pracují na všech paměťových <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> datového zdroje a mají odložené spouštění, což znamená, že nezačíná dříve, než je vypočten dotaz. Hlavní rozdíl je, že PLINQ se pokouší plně využívat všechny procesory systému. Toto je realizováno rozdělením zdrojových dat do segmentů a spouštěním dotazu na všech segmentech v samostatných pracovních vláknech na více procesorů. V mnoha případech paralelní provádění znamená, že spuštění dotazu výrazně rychlejší.
 
@@ -36,7 +36,7 @@ Zbývající část tohoto článku poskytuje přehled o hlavních třídách PL
 
 <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> Třídy zpřístupňuje téměř všechny funkce PLINQ. A zbytek <xref:System.Linq?displayProperty=nameWithType> obor názvů typů jsou kompilovány do sestavení System.Core.dll. Výchozí projekty jazyka C# a Visual Basic v sadě Visual Studio odkazují na toto sestavení a importují obor názvů.
 
-<xref:System.Linq.ParallelEnumerable> zahrnuje implementaci všech standardních operátorů pro dotazování, které podporují LINQ to Objects, přestože se nepokouší paralelizovat každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], naleznete v tématu [Úvod do LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq.md) a [Úvod do LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
+<xref:System.Linq.ParallelEnumerable> zahrnuje implementaci všech standardních operátorů pro dotazování, které podporují LINQ to Objects, přestože se nepokouší paralelizovat každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], naleznete v tématu [Úvod do LINQ (C#)](../../csharp/programming-guide/concepts/linq/index.md) a [Úvod do LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
 
 Kromě standardních operátorů pro dotazování <xref:System.Linq.ParallelEnumerable> třída obsahuje sadu metod, které umožňují specifické chování pro paralelní zpracování. Tyto metody specifické pro PLINQ jsou uvedeny v následující tabulce.
 

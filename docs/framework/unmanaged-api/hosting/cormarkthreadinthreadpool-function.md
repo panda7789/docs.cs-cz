@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a39b0f2546d84cf24a58d5367c87d0a862aead93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f0200ad36490efc546daebfa93904676b0af7684
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985761"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490526"
 ---
 # <a name="cormarkthreadinthreadpool-function"></a>CorMarkThreadInThreadPool – funkce
-Označuje aktuálně prováděné vláken fondu vláken pro spuštění spravovaného kódu. Od verze rozhraní .NET Framework verze 2.0, tato funkce nemá žádný vliv. Není potřeba a můžete odebrat z vašeho kódu. Tato funkce je zastaralá ve [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+Označuje aktuálně prováděné vláken fondu vláken pro spuštění spravovaného kódu. Od verze rozhraní .NET Framework verze 2.0, tato funkce nemá žádný vliv. Není potřeba a můžete odebrat z vašeho kódu. Tato funkce je zastaralé v rozhraní .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

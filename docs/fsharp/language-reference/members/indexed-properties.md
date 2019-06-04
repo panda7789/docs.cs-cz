@@ -2,34 +2,34 @@
 title: Indexované vlastnosti
 description: Další informace o indexované vlastnosti v F#, které umožňují pro přístup jako pole k datům seřazené.
 ms.date: 10/17/2018
-ms.openlocfilehash: bc330641c451973ddefa0a34fe6e757a808f6cb7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7fc8f46e029255c6ed985a43b92c8f7c2908c428
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903822"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489487"
 ---
 # <a name="indexed-properties"></a>Indexované vlastnosti
 
-Při definování třídy, který získává přes seřazených dat, může být někdy užitečné poskytnout indexovaný přístup k těmto datům bez vystavení se základní implementací. Používá se k tomu `Index` člena.
+Při definování třídy, který získává přes seřazených dat, může být někdy užitečné poskytnout indexovaný přístup k těmto datům bez vystavení se základní implementací. Používá se k tomu `Item` člena.
 
 ## <a name="syntax"></a>Syntaxe
 
 ```fsharp
-// Indexed property that has both get and set defined.
-member self-identifier.Index
+// Indexed property that can be read and written to
+member self-identifier.Item
     with get(index-values) =
         get-member-body
     and set index-values values-to-set =
         set-member-body
 
-// Indexed property with get only
-member self-identifier.Index
+// Indexed property can only be read
+member self-identifier.Item
     with get(index-values) =
         get-member-body
 
-// Indexed property that has set only.
-member self-identifier.Index
+// Indexed property that can only be set
+member self-identifier.Item
     with set index-values values-to-set =
         set-member-body
 ```

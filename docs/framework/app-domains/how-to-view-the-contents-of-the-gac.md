@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: c5f786a0-969b-4f14-9f02-e77c3384d9af
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c7d197ea7178abf991247e5ecca02c2b8e94713
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c319c5f7c9bb808b2ce7ee10178722287e456339
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634376"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486426"
 ---
 # <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Postupy: Zobrazení obsahu globální mezipaměti sestavení
 
@@ -39,7 +39,7 @@ gacutil /l
 ```
 
 > [!NOTE]
-> V dřívějších verzích rozhraní .NET Framework [Shfusion.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) rozšíření prostředí Windows umožňovalo zobrazení mezipaměti globálního sestavení v Průzkumníku souborů. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], je rozšíření Shfusion.dll zastaralé.
+> V dřívějších verzích rozhraní .NET Framework [Shfusion.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) rozšíření prostředí Windows umožňovalo zobrazení mezipaměti globálního sestavení v Průzkumníku souborů. Od verze rozhraní .NET Framework 4, je rozšíření Shfusion.dll zastaralé.
 
 ## <a name="see-also"></a>Viz také:
 

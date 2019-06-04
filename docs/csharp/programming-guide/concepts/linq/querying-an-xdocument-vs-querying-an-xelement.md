@@ -2,12 +2,12 @@
 title: Dotazování na XDocument vs. Dotazování na XElement (C#)
 ms.date: 07/20/2015
 ms.assetid: 46221ff5-62ee-4de8-93ba-66465facb5c1
-ms.openlocfilehash: 125b0811296695a0909f804931e0caca81f63df6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d1e3b54b9d384280cd58aa3ca063f76758fc6fe
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680776"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487272"
 ---
 # <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>Dotazování na XDocument vs. Dotazování na XElement (C#)
 Při načtení dokumentu prostřednictvím <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, všimnete si, že budete muset psát dotazy trochu jinak než při načtení prostřednictvím <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.  
@@ -109,6 +109,3 @@ Querying tree loaded with XDocument.Load
 <Child3>3</Child3>  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

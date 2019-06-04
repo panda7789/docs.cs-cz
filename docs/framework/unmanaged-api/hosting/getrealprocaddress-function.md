@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d4723fbf2311316184cb77c90754d7e037badcd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40cd5b6298012ef4dc21987a2a2dbe95c02a0ff2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628077"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490362"
 ---
 # <a name="getrealprocaddress-function"></a>GetRealProcAddress – funkce
 Získá adresu zadané funkce, která je exportována z poslední instalované verzi modulu common language runtime (CLR).  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tato funkce se již nepoužívá v rozhraní .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

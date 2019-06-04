@@ -17,19 +17,19 @@ helpviewer_keywords:
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23a05279615a589bca7bb61507caf8dcc3630020
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5388c67b4cc7b493e6662f421ae13ae878c858ec
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648711"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490012"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tomu kompatibilní se Specifikací CLS kompilátory vytvářejí metadat typu v sestavení. Dva zdroje informací o typu se značně liší. Toto téma popisuje postupy pro generování metadat z knihovny typů. Výsledné sestavení se nazývá definiční sestavení a, které obsahuje informace o typu umožňuje používat typy modelu COM aplikacemi rozhraní .NET Framework.  
   
  Existují dva způsoby, jak zpřístupnit tento typ informace pro vaši aplikaci:  
   
-- Použití pouze pro návrh definiční sestavení: Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
+- Použití pouze pro návrh definiční sestavení: Od verze rozhraní .NET Framework 4, můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
   
 - Nasazení sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   

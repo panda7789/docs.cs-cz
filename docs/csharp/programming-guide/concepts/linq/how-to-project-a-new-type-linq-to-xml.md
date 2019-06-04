@@ -2,12 +2,12 @@
 title: 'Postupy: Projektování nového typu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
-ms.openlocfilehash: eefe645f376f8f52a94b94cdd49640e165a69aae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70053a2457005f6751075b33e8e49851d7127446
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667857"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486580"
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml-c"></a>Postupy: Projektování nového typu (LINQ to XML) (C#)
 Další příklady v této části ukázaly, dotazy, které vracejí výsledky jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> z `string`, a <xref:System.Collections.Generic.IEnumerable%601> z `int`. Toto jsou běžné typy výsledků, ale nejsou vhodná pro každý scénář. V mnoha případech můžete vrátit dotazech <xref:System.Collections.Generic.IEnumerable%601> nějakého jiného typu.  
@@ -54,6 +54,3 @@ Lawnmower:1
 Baby Monitor:2  
 ```  
   
-## <a name="see-also"></a>Viz také:
-
-- [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

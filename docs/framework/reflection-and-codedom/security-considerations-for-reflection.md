@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 116df78eb20d6e6c6355d07099ae5d3de9320f30
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: ab30d44ed2a91fd7f7e53cb868d90a2c5af0fef6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457290"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489725"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 Reflexe umožňuje získat informace o typech a členech a chcete získat přístup ke členům (to znamená pro volání metody a konstruktory, k získání a nastavení vlastností hodnoty, přidávat a odebírat obslužné rutiny událostí a tak dále). Použití reflexe získat informace o typech a členech není omezeno. Veškerý kód, můžete použít reflexe provádět následující úlohy:  
@@ -26,7 +26,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
 - Zobrazení výčtu a prozkoumejte sestavení a modulů.  
   
- Pomocí operace reflection přístupu k členům, naopak podléhá omezením. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], jen pro důvěryhodného kódu můžete použít reflexe pro přístup ke členům kritické pro zabezpečení. Kromě toho můžete použít pouze pro důvěryhodného kódu reflexe pro přístup k neveřejné členy, které by byly přímo přístupné pro zkompilovaný kód. Kód, který se používá pro přístup ke členu bezpečný a kritický reflexi a konečně, musí mít oprávnění bezpečný a kritický člen požadavky, stejně jako u zkompilovaný kód.  
+ Pomocí operace reflection přístupu k členům, naopak podléhá omezením. Od verze rozhraní .NET Framework 4, slouží pouze pro důvěryhodného kódu reflexe pro přístup ke členům kritické pro zabezpečení. Kromě toho můžete použít pouze pro důvěryhodného kódu reflexe pro přístup k neveřejné členy, které by byly přímo přístupné pro zkompilovaný kód. Kód, který se používá pro přístup ke členu bezpečný a kritický reflexi a konečně, musí mít oprávnění bezpečný a kritický člen požadavky, stejně jako u zkompilovaný kód.  
   
  V souladu s potřebnými oprávněními můžete kód pomocí reflexe provádět následující typy přístupu:  
   
@@ -48,7 +48,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
 <a name="accessingSecurityCritical"></a>   
 ## <a name="accessing-security-critical-members"></a>Přístup k členům kritické pro zabezpečení  
- Člen je kritický pro zabezpečení má-li <xref:System.Security.SecurityCriticalAttribute>, pokud patří do typem, který má <xref:System.Security.SecurityCriticalAttribute>, nebo pokud je v kritické pro zabezpečení sestavení. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], pravidla pro přístup k členům kritické pro zabezpečení jsou následující:  
+ Člen je kritický pro zabezpečení má-li <xref:System.Security.SecurityCriticalAttribute>, pokud patří do typem, který má <xref:System.Security.SecurityCriticalAttribute>, nebo pokud je v kritické pro zabezpečení sestavení. Od verze rozhraní .NET Framework 4, pravidla pro přistupující členy kritické pro zabezpečení jsou následující:  
   
 - Transparentní kód nemůže použít reflexe pro přístup ke členům kritické pro zabezpečení, i v případě, že je plně důvěryhodný kód. A <xref:System.MethodAccessException>, <xref:System.FieldAccessException>, nebo <xref:System.TypeAccessException> je vyvolána výjimka.  
   
@@ -98,7 +98,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
 ## <a name="version-information"></a>Informace o verzi  
   
-- Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], transparentní kód nemůže použít reflexe pro přístup ke členům kritické pro zabezpečení.  
+- Od verze rozhraní .NET Framework 4, nelze transparentní kód pro přístup ke členům kritické pro zabezpečení pomocí reflexe.  
   
 - <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak se používá v [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro kód, který se používá pro přístup k neveřejné členy reflexe. Toto je oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
   

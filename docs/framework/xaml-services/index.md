@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML Services in WPF [XAML Services]
 - System.Xaml [XAML Services], conceptual documentation
 ms.assetid: 0e11f386-808c-4eae-9ba6-029ad7ba2211
-ms.openlocfilehash: c99e44c7d373d050113687753d4f18eca27e0de5
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 61b141642fa3745c3abcf8d0234f70373fa5485e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457396"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491104"
 ---
 # <a name="xaml-services"></a>XAML Services
 Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané se nacházejí v sestavení, oboru názvů System.Xaml, což je sestavení součástí rozhraní .NET Framework 4 sadu .NET core sestavení. Mezi tyto služby patří objekty pro vytváření čtečky a zapisovače, schéma třídy a podpora schématu, zapisujících tříd, vnitřní podporu pro jazyk XAML a dalších funkcí jazyka XAML.  
@@ -38,7 +38,7 @@ Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET
 ## <a name="net-framework-xaml-services-and-systemxaml-in-the-net-architecture"></a>Rozhraní .NET framework XAML Services a oboru názvů System.Xaml v architektuře .NET  
  V předchozích verzích rozhraní Microsoft .NET Framework, podpora pro funkce jazyka XAML bylo implementováno rozhraní, které je založená na rozhraní Microsoft .NET Framework ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Windows Workflow Foundation a Windows Communication Foundation (WCF)) a proto měnit své chování a rozhraní API použít, v závislosti na tom, jaké konkrétní verzi rozhraní framework, kterou jste používali. To zahrnuje XAML analyzátor a jeho objekt grafu vytváření mechanismus, vnitřní objekty jazyka XAML, podporu serializace a tak dále.  
   
- V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework XAML Services a oboru názvů System.Xaml sestavení definujte většinu toho, co je potřeba pro podporu funkcí jazyka XAML. To zahrnuje základní třídy pro XAML čtečky a zapisovače XAML. Nejdůležitější funkce přidána do rozhraní .NET Framework XAML Services, která není přítomná v některém z implementace specifické pro architekturu XAML je systém reprezentaci typu pro XAML. Reprezentaci typu systému XAML představuje objektově orientované způsobem, který centra na XAML možnosti bez nutnosti přepínat závislosti na konkrétních možnostech rozhraní.  
+ V rozhraní .NET Framework 4, .NET Framework XAML Services a oboru názvů System.Xaml sestavení definujte většinu toho, co je potřeba pro podporu funkcí jazyka XAML. To zahrnuje základní třídy pro XAML čtečky a zapisovače XAML. Nejdůležitější funkce přidána do rozhraní .NET Framework XAML Services, která není přítomná v některém z implementace specifické pro architekturu XAML je systém reprezentaci typu pro XAML. Reprezentaci typu systému XAML představuje objektově orientované způsobem, který centra na XAML možnosti bez nutnosti přepínat závislosti na konkrétních možnostech rozhraní.  
   
  Systém typů XAML není omezeno značky formuláře a specifika za běhu původu XAML; ani je omezená rozhraním žádné konkrétní zálohování systému typů. Systém typů XAML obsahuje reprezentaci objektu pro typy, členy, kontext schématu XAML, koncepty úrovni XML a další koncepty jazyka XAML nebo vnitřní funkce XAML. Použití nebo rozšíření typu systému XAML díky tomu je možné odvodit z třídy typu XAML čtečky a zapisovače XAML a rozšíření funkcí reprezentace XAML do konkrétní funkce povolena Architektura technologie nebo aplikaci, která využívá nebo vysílá XAML. Operace zápisu praktické objektu grafu v kombinaci XAML objekt zapisovače implementace systému typ základní technologie, jak pomocí informací o sestavení v kontextu uzlu XAML a umožňuje koncept kontext schématu XAML zdroj. Další informace o schématu koncept XAML. Zobrazit [výchozí kontext schématu XAML a kontext WPF XAML schématu](default-xaml-schema-context-and-wpf-xaml-schema-context.md).  
   

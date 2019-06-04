@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8d5a5658fcb6bbba72938a16a9e5c82fd779e2e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c41becaa149b933d46a01f6ada0ea4b29b68fe8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868768"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66488029"
 ---
 # <a name="code-access-security-basics"></a>Základy zabezpečení přístupu kódu
 
@@ -32,7 +32,7 @@ Znáte tyto koncepty zabezpečení přístupu kódu musí být k zapsání efekt
 
 - **Zabezpečené knihovny tříd**: Knihovny zabezpečení tříd používá k zajištění, že volající knihovny mají oprávnění pro přístup k prostředkům, které knihovna poskytuje požadavky na zabezpečení. Knihovny zabezpečení tříd může například mít metodu pro vytváření souborů, které by vyžadují, aby jeho volající nemá oprávnění k vytvoření souborů. Rozhraní .NET Framework se skládá z knihoven zabezpečených tříd. Je třeba vědět oprávnění požadovaná pro přístup k libovolné knihovny, který váš kód používá. Další informace najdete v tématu [pomocí knihovny zabezpečení tříd](#secure_library) později v tomto tématu.
 
-- **Transparentní kód**: Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], kromě identifikace konkrétní oprávnění, musíte také určit, jestli váš kód by měl spustit jako transparentní pro zabezpečení. Kód transparentní pro zabezpečení nelze volat typy nebo členy, které jsou identifikovány jako kritické pro zabezpečení. Toto pravidlo platí pro plně důvěryhodné aplikace, jakož i částečně důvěryhodné aplikace. Další informace najdete v tématu [kód transparentní pro zabezpečení](../../../docs/framework/misc/security-transparent-code.md).
+- **Transparentní kód**: Od verze rozhraní .NET Framework 4, kromě identifikace konkrétní oprávnění, musíte také určit, jestli váš kód by měl spustit jako transparentní pro zabezpečení. Kód transparentní pro zabezpečení nelze volat typy nebo členy, které jsou identifikovány jako kritické pro zabezpečení. Toto pravidlo platí pro plně důvěryhodné aplikace, jakož i částečně důvěryhodné aplikace. Další informace najdete v tématu [kód transparentní pro zabezpečení](../../../docs/framework/misc/security-transparent-code.md).
 
 <a name="typesafe_code"></a>
 
@@ -55,7 +55,7 @@ Zabezpečení přístupu kódu není eliminuje možnost lidské chyby při psan�
 Deklarativní syntaxe zabezpečení používá [atributy](../../../docs/standard/attributes/index.md) umístit informace o zabezpečení do [metadat](../../../docs/standard/metadata-and-self-describing-components.md) kódu. Atributy mohou být umístěny na úrovni sestavení, třída nebo člen k označení typu požadavek, poptávku nebo přepsání, které chcete použít. Požadavky se používají v aplikacích, které se zaměřují na modul common language runtime k informování o oprávnění, která vaše aplikace potřebuje nebo nechce systému zabezpečení modulu runtime. Požadavky a přepsání se používají v knihovnách pomoct chránit prostředky z volající nebo přepsat výchozí chování zabezpečení.
 
 > [!NOTE]
-> V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], byly důležité změny v modelu zabezpečení rozhraní .NET Framework a terminologii. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).
+> V rozhraní .NET Framework 4 byly důležité změny modelu zabezpečení rozhraní .NET Framework a terminologii. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).
 
 Chcete-li použít volání deklarativní zabezpečení, musíte inicializovat data o stavu objektu oprávnění tak, aby představuje určitou formu oprávnění, které potřebujete. Každé z předdefinovaných oprávnění má atribut, který je předán <xref:System.Security.Permissions.SecurityAction> výčet popisující typ operace zabezpečení, kterou chcete provést. Oprávnění však přijmout jejich vlastní parametry, které jsou výhradně pro jejich.
 

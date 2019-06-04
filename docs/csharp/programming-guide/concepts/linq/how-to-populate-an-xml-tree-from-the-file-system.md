@@ -2,12 +2,12 @@
 title: 'Postupy: Naplnění stromu XML ze systému souborů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 2aa2ccac-4a22-47ae-9107-3bb8df232576
-ms.openlocfilehash: 664994dad75871a5b70f2c132df67d1658808c32
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dc3850c943ebac8980abbff0933413538823d21d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701863"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485168"
 ---
 # <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postupy: Naplnění stromu XML ze systému souborů (C#)
 Je běžné použití užitečné stromů XML jako úložiště dat hierarchické název/hodnota. Můžete naplnění stromu XML s hierarchickými daty a pak ji dotazovat, transformují je a v případě potřeby ho serializovat. V tomto scénáři použití mnoha specifické sémantiku XML, například obory názvů a chování mezer, nejsou důležité. Místo toho používají stromu XML jako malé, v paměti, hierarchické databázi jednoho uživatele.  
@@ -115,7 +115,3 @@ class Program
 ------  
 Total File Size:59089  
 ```  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

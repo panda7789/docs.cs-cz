@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ca809c28e7d55d7b899809c2fd514c073dd73054
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e18dd5370143dfe4faaffb49017d0a8f62c87433
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644275"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490987"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
-[!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje pět nových typů, které jsou navrženy speciálně pro podporu vícevláknové přidávat a odebírat operace. Tyto nové typy zajistit zabezpečení vlákna používají různé druhy efektivní zamykání a mechanismy bez zámku synchronizace. Synchronizace přidá nároky na operaci. Množství práce, kterou závisí na typu synchronizace, který se používá, druh operace, které jsou prováděny a dalších faktorů, třeba počet vláken, které se pokoušíte získat přístup ke kolekci současně.  
+Rozhraní .NET Framework 4 zavádí pět nových typů, které jsou navrženy speciálně pro podporu vícevláknové přidávat a odebírat operace. Tyto nové typy zajistit zabezpečení vlákna používají různé druhy efektivní zamykání a mechanismy bez zámku synchronizace. Synchronizace přidá nároky na operaci. Množství práce, kterou závisí na typu synchronizace, který se používá, druh operace, které jsou prováděny a dalších faktorů, třeba počet vláken, které se pokoušíte získat přístup ke kolekci současně.  
   
  V některých scénářích synchronizace režie zanedbatelná a umožňuje vícevláknové typ výrazně rychlejší a škálovat mnohem lepší než ekvivalentní vláknově bezpečné při ochraně externí zámek. V jiných scénářích může způsobit nároky na typ bezpečným pro vlákno k provedení a škálování o stejný nebo i pomaleji než externě uzamčen, vláknově bezpečné verze typu.  
   

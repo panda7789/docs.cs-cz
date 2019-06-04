@@ -2,12 +2,12 @@
 title: Literály
 description: Seznamte se s typy literálu v F# programovací jazyk.
 ms.date: 02/08/2019
-ms.openlocfilehash: 28ce34dee3c3c3d4d0cfd4107e8cbc375a23032c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 032bc82d222cd34e7ac62e42ee4394c97d975b2e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61904563"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490986"
 ---
 # <a name="literals"></a>Literály
 
@@ -28,6 +28,7 @@ Následující tabulka uvádí typy literálu v F#. Znaky, které představují 
 |uint16|přirozené číslo bez znaménka 16 bitů|USA|`86us`|
 |int<br /><br />int32|32bitové celé číslo se znaménkem|l nebo žádný|`86`<br /><br />`86l`|
 |uint<br /><br />uint32|přirozené číslo bez znaménka 32-bit|u nebo ul|`86u`<br /><br />`86ul`|
+|nativeint –|Nativní ukazatel na číslo se znaménkem přirozeného|n|`123n`|
 |unativeint –|Nativní ukazatel jako přirozené číslo bez znaménka|zrušení|`0x00002D3Fun`|
 |int64|64bitové celé číslo se znaménkem|L|`86L`|
 |uint64|přirozené číslo bez znaménka 64-bit|UL|`86UL`|

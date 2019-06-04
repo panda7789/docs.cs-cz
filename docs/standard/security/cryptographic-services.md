@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f070419fb8cdca178369bee12545dd1a0d89ea47
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: fa05fe1e170a0285df73d179ef39db6301059ac8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592736"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490960"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 
@@ -39,7 +39,7 @@ ms.locfileid: "65592736"
 
 V rozhraní .NET Framework, třídy v <xref:System.Security.Cryptography?displayProperty=nameWithType> obor názvů spravovat mnoho podrobností kryptografie za vás. Některé jsou obálky pro nespravované Microsoft Cryptography API (rozhraní CryptoAPI), zatímco jiné jsou čistě spravovaná implementace. Nemusíte být odborníky na kryptografii k použití těchto tříd. Při vytváření nové instance jednoho šifrování třídy algoritmus klíče jsou automaticky generované pro snadné použití a výchozí vlastnosti jsou bezpečné a co nevíce zabezpečený.
 
-Tento přehled obsahuje souhrn metody šifrování a postupy podporované rozhraním .NET Framework, včetně manifesty ClickOnce Suite B a kryptografické služby nové generace (CNG) podpory uvedené v systémech [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].
+Tento přehled obsahuje souhrn metody šifrování a postupy podporované rozhraním .NET Framework, včetně manifesty ClickOnce, Suite B a kryptografické služby nové generace (CNG) podporu zavedena v rozhraní .NET Framework 3.5.
 
 Tento přehled obsahuje následující části:
 
@@ -114,7 +114,7 @@ Za předpokladu, že Alice a Bob se dvěma stranami, které chcete komunikovat p
 
 Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy šifrování tajného klíče:
 
-- <xref:System.Security.Cryptography.AesManaged> (počínaje [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]).
+- <xref:System.Security.Cryptography.AesManaged> (zavedena v rozhraní .NET Framework 3.5).
 
 - <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
 
