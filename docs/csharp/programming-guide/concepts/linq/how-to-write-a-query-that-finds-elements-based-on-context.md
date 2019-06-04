@@ -2,20 +2,20 @@
 title: 'Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-ms.openlocfilehash: 93bfd77ce6bb7be1d305f20f56da67e8fb9c22f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 92cbed3edc62b06be65fdd458e509108343d9e59
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701967"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484650"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a><span data-ttu-id="10b78-102">Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (C#)</span><span class="sxs-lookup"><span data-stu-id="10b78-102">How to: Write a Query that Finds Elements Based on Context (C#)</span></span>
-<span data-ttu-id="10b78-103">V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu.</span><span class="sxs-lookup"><span data-stu-id="10b78-103">Sometimes you might have to write a query that selects elements based on their context.</span></span> <span data-ttu-id="10b78-104">Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni.</span><span class="sxs-lookup"><span data-stu-id="10b78-104">You might want to filter based on preceding or following sibling elements.</span></span> <span data-ttu-id="10b78-105">Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.</span><span class="sxs-lookup"><span data-stu-id="10b78-105">You might want to filter based on child or ancestor elements.</span></span>  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a><span data-ttu-id="30433-102">Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (C#)</span><span class="sxs-lookup"><span data-stu-id="30433-102">How to: Write a Query that Finds Elements Based on Context (C#)</span></span>
+<span data-ttu-id="30433-103">V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu.</span><span class="sxs-lookup"><span data-stu-id="30433-103">Sometimes you might have to write a query that selects elements based on their context.</span></span> <span data-ttu-id="30433-104">Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni.</span><span class="sxs-lookup"><span data-stu-id="30433-104">You might want to filter based on preceding or following sibling elements.</span></span> <span data-ttu-id="30433-105">Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.</span><span class="sxs-lookup"><span data-stu-id="30433-105">You might want to filter based on child or ancestor elements.</span></span>  
   
- <span data-ttu-id="10b78-106">To lze provést zadáním dotazu a pomocí výsledků dotazu v `where` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="10b78-106">You can do this by writing a query and using the results of the query in the `where` clause.</span></span> <span data-ttu-id="10b78-107">Pokud je nutné nejprve otestovat s hodnotou null a pak testování hodnot, je pohodlnější provést dotaz `let` klauzule a pak použít výsledky v `where` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="10b78-107">If you have to first test against null, and then test the value, it is more convenient to do the query in a `let` clause, and then use the results in the `where` clause.</span></span>  
+ <span data-ttu-id="30433-106">To lze provést zadáním dotazu a pomocí výsledků dotazu v `where` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="30433-106">You can do this by writing a query and using the results of the query in the `where` clause.</span></span> <span data-ttu-id="30433-107">Pokud je nutné nejprve otestovat s hodnotou null a pak testování hodnot, je pohodlnější provést dotaz `let` klauzule a pak použít výsledky v `where` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="30433-107">If you have to first test against null, and then test the value, it is more convenient to do the query in a `let` clause, and then use the results in the `where` clause.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="10b78-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="10b78-108">Example</span></span>  
- <span data-ttu-id="10b78-109">V následujícím příkladu vybere všechny `p` prvky, které jsou okamžitě následovat `ul` elementu.</span><span class="sxs-lookup"><span data-stu-id="10b78-109">The following example selects all `p` elements that are immediately followed by a `ul` element.</span></span>  
+## <a name="example"></a><span data-ttu-id="30433-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="30433-108">Example</span></span>  
+ <span data-ttu-id="30433-109">V následujícím příkladu vybere všechny `p` prvky, které jsou okamžitě následovat `ul` elementu.</span><span class="sxs-lookup"><span data-stu-id="30433-109">The following example selects all `p` elements that are immediately followed by a `ul` element.</span></span>  
   
 ```csharp  
 XElement doc = XElement.Parse(@"<Root>  
@@ -47,7 +47,7 @@ foreach (XElement e in items)
     Console.WriteLine("id = {0}", (string)e.Attribute("id"));  
 ```  
   
- <span data-ttu-id="10b78-110">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="10b78-110">This code produces the following output:</span></span>  
+ <span data-ttu-id="30433-110">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="30433-110">This code produces the following output:</span></span>  
   
 ```  
 id = 1  
@@ -55,8 +55,8 @@ id = 3
 id = 6  
 ```  
   
-## <a name="example"></a><span data-ttu-id="10b78-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="10b78-111">Example</span></span>  
- <span data-ttu-id="10b78-112">Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="10b78-112">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="10b78-113">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="10b78-113">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="30433-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="30433-111">Example</span></span>  
+ <span data-ttu-id="30433-112">Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="30433-112">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="30433-113">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="30433-113">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement doc = XElement.Parse(@"<Root xmlns='http://www.adatum.com'>  
@@ -90,7 +90,7 @@ foreach (XElement e in items)
     Console.WriteLine("id = {0}", (string)e.Attribute("id"));  
 ```  
   
- <span data-ttu-id="10b78-114">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="10b78-114">This code produces the following output:</span></span>  
+ <span data-ttu-id="30433-114">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="30433-114">This code produces the following output:</span></span>  
   
 ```  
 id = 1  
@@ -98,10 +98,9 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="10b78-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="10b78-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="30433-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="30433-115">See also</span></span>
 
 - <xref:System.Xml.Linq.XElement.Parse%2A>
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>
 - <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>
 - <xref:System.Linq.Enumerable.FirstOrDefault%2A>
-- [<span data-ttu-id="10b78-116">Základní dotazy (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="10b78-116">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

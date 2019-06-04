@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7a6b73006b6842032ae90c2c7a8433f5b58d175
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0ca125932ede48aa43bc51e3d5a7851fb7762547
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665057"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490317"
 ---
-# <a name="getrequestedruntimeversionforclsid-function"></a><span data-ttu-id="c618c-102">GetRequestedRuntimeVersionForCLSID – funkce</span><span class="sxs-lookup"><span data-stu-id="c618c-102">GetRequestedRuntimeVersionForCLSID Function</span></span>
-<span data-ttu-id="c618c-103">Získá odpovídající common language runtime (CLR) informace o verzi pro třídu se zadaným `CLSID`.</span><span class="sxs-lookup"><span data-stu-id="c618c-103">Gets the appropriate common language runtime (CLR) version information for the class with the specified `CLSID`.</span></span>  
+# <a name="getrequestedruntimeversionforclsid-function"></a><span data-ttu-id="af208-102">GetRequestedRuntimeVersionForCLSID – funkce</span><span class="sxs-lookup"><span data-stu-id="af208-102">GetRequestedRuntimeVersionForCLSID Function</span></span>
+<span data-ttu-id="af208-103">Získá odpovídající common language runtime (CLR) informace o verzi pro třídu se zadaným `CLSID`.</span><span class="sxs-lookup"><span data-stu-id="af208-103">Gets the appropriate common language runtime (CLR) version information for the class with the specified `CLSID`.</span></span>  
   
- <span data-ttu-id="c618c-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c618c-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="af208-104">Tato funkce se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="af208-104">This function has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c618c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c618c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="af208-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af208-105">Syntax</span></span>  
   
 ```  
 HRESULT GetRequestedRuntimeVersionForCLSID (  
@@ -40,43 +40,43 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c618c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="c618c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="af208-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="af208-106">Parameters</span></span>  
  `rclsid`  
- <span data-ttu-id="c618c-107">[in]  `CLSID` Komponenty.</span><span class="sxs-lookup"><span data-stu-id="c618c-107">[in]  The `CLSID` of the component.</span></span>  
+ <span data-ttu-id="af208-107">[in]  `CLSID` Komponenty.</span><span class="sxs-lookup"><span data-stu-id="af208-107">[in]  The `CLSID` of the component.</span></span>  
   
  `pVersion`  
- <span data-ttu-id="c618c-108">[out]  Vyrovnávací paměť, která obsahuje řetězec, číslo verze po úspěšném dokončení.</span><span class="sxs-lookup"><span data-stu-id="c618c-108">[out]  A buffer that contains the version number string upon successful completion.</span></span>  
+ <span data-ttu-id="af208-108">[out]  Vyrovnávací paměť, která obsahuje řetězec, číslo verze po úspěšném dokončení.</span><span class="sxs-lookup"><span data-stu-id="af208-108">[out]  A buffer that contains the version number string upon successful completion.</span></span>  
   
  `cchBuffer`  
- <span data-ttu-id="c618c-109">[in]  Velikost v širokých znaků, z `pVersion` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="c618c-109">[in]  The size, in wide characters, of the `pVersion` buffer.</span></span>  
+ <span data-ttu-id="af208-109">[in]  Velikost v širokých znaků, z `pVersion` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="af208-109">[in]  The size, in wide characters, of the `pVersion` buffer.</span></span>  
   
  `dwLength`  
- <span data-ttu-id="c618c-110">[out] Délka v bajtech, vrácený vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="c618c-110">[out] The length, in bytes, of the returned buffer.</span></span>  
+ <span data-ttu-id="af208-110">[out] Délka v bajtech, vrácený vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="af208-110">[out] The length, in bytes, of the returned buffer.</span></span>  
   
  `dwResolutionFlags`  
- <span data-ttu-id="c618c-111">[in]  Jedna z hodnot clsid_resolution_flags –.</span><span class="sxs-lookup"><span data-stu-id="c618c-111">[in]  One of the CLSID_RESOLUTION_FLAGS values.</span></span> <span data-ttu-id="c618c-112">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="c618c-112">The following values are supported:</span></span>  
+ <span data-ttu-id="af208-111">[in]  Jedna z hodnot clsid_resolution_flags –.</span><span class="sxs-lookup"><span data-stu-id="af208-111">[in]  One of the CLSID_RESOLUTION_FLAGS values.</span></span> <span data-ttu-id="af208-112">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="af208-112">The following values are supported:</span></span>  
   
-- <span data-ttu-id="c618c-113">CLSID_RESOLUTION_DEFAULT: (0x0) určuje, že má být použito výchozí chování spolupráce.</span><span class="sxs-lookup"><span data-stu-id="c618c-113">CLSID_RESOLUTION_DEFAULT: (0x0) Specifies that default interop behavior should be used.</span></span>  
+- <span data-ttu-id="af208-113">CLSID_RESOLUTION_DEFAULT: (0x0) určuje, že má být použito výchozí chování spolupráce.</span><span class="sxs-lookup"><span data-stu-id="af208-113">CLSID_RESOLUTION_DEFAULT: (0x0) Specifies that default interop behavior should be used.</span></span>  
   
-- <span data-ttu-id="c618c-114">CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že registru vyhledávat a překrytí tato zásada použít.</span><span class="sxs-lookup"><span data-stu-id="c618c-114">CLSID_RESOLUTION_REGISTERED: (0x1) Specifies that the registry should be searched and shim policy should be applied.</span></span>  
+- <span data-ttu-id="af208-114">CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že registru vyhledávat a překrytí tato zásada použít.</span><span class="sxs-lookup"><span data-stu-id="af208-114">CLSID_RESOLUTION_REGISTERED: (0x1) Specifies that the registry should be searched and shim policy should be applied.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="c618c-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c618c-115">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="af208-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="af208-115">Return Value</span></span>  
   
-|<span data-ttu-id="c618c-116">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c618c-116">HRESULT</span></span>|<span data-ttu-id="c618c-117">Popis</span><span class="sxs-lookup"><span data-stu-id="c618c-117">Description</span></span>|  
+|<span data-ttu-id="af208-116">HRESULT</span><span class="sxs-lookup"><span data-stu-id="af208-116">HRESULT</span></span>|<span data-ttu-id="af208-117">Popis</span><span class="sxs-lookup"><span data-stu-id="af208-117">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="c618c-118">S_OK</span><span class="sxs-lookup"><span data-stu-id="c618c-118">S_OK</span></span>|<span data-ttu-id="c618c-119">Funkci bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="c618c-119">The function returned successfully.</span></span>|  
-|<span data-ttu-id="c618c-120">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="c618c-120">E_INVALIDARG</span></span>|<span data-ttu-id="c618c-121">Jeden z parametrů má neplatný typ nebo formát.</span><span class="sxs-lookup"><span data-stu-id="c618c-121">One of the parameters has an invalid type or format.</span></span>|  
-|<span data-ttu-id="c618c-122">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="c618c-122">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="c618c-123">`pVersion` Vyrovnávací paměť není dostatečně velký pro umístění celého řetězci verze.</span><span class="sxs-lookup"><span data-stu-id="c618c-123">The `pVersion` buffer is not large enough to hold the entire version string.</span></span>|  
-|<span data-ttu-id="c618c-124">REGDB_E_CLASSNOTREG</span><span class="sxs-lookup"><span data-stu-id="c618c-124">REGDB_E_CLASSNOTREG</span></span>|<span data-ttu-id="c618c-125">Neexistuje žádná třída zaregistrován se zadaným `CLSID`.</span><span class="sxs-lookup"><span data-stu-id="c618c-125">There is no class registered with the specified `CLSID`.</span></span>|  
-|<span data-ttu-id="c618c-126">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="c618c-126">E_POINTER</span></span>|<span data-ttu-id="c618c-127">`dwLength` má hodnotu null, nebo `cchBuffer` je dostatečně velký pro uložení řetězce verze, ale `pVersion` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="c618c-127">`dwLength` is null, or `cchBuffer` is large enough to hold the version string, but `pVersion` is null.</span></span>|  
+|<span data-ttu-id="af208-118">S_OK</span><span class="sxs-lookup"><span data-stu-id="af208-118">S_OK</span></span>|<span data-ttu-id="af208-119">Funkci bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="af208-119">The function returned successfully.</span></span>|  
+|<span data-ttu-id="af208-120">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="af208-120">E_INVALIDARG</span></span>|<span data-ttu-id="af208-121">Jeden z parametrů má neplatný typ nebo formát.</span><span class="sxs-lookup"><span data-stu-id="af208-121">One of the parameters has an invalid type or format.</span></span>|  
+|<span data-ttu-id="af208-122">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="af208-122">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="af208-123">`pVersion` Vyrovnávací paměť není dostatečně velký pro umístění celého řetězci verze.</span><span class="sxs-lookup"><span data-stu-id="af208-123">The `pVersion` buffer is not large enough to hold the entire version string.</span></span>|  
+|<span data-ttu-id="af208-124">REGDB_E_CLASSNOTREG</span><span class="sxs-lookup"><span data-stu-id="af208-124">REGDB_E_CLASSNOTREG</span></span>|<span data-ttu-id="af208-125">Neexistuje žádná třída zaregistrován se zadaným `CLSID`.</span><span class="sxs-lookup"><span data-stu-id="af208-125">There is no class registered with the specified `CLSID`.</span></span>|  
+|<span data-ttu-id="af208-126">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="af208-126">E_POINTER</span></span>|<span data-ttu-id="af208-127">`dwLength` má hodnotu null, nebo `cchBuffer` je dostatečně velký pro uložení řetězce verze, ale `pVersion` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="af208-127">`dwLength` is null, or `cchBuffer` is large enough to hold the version string, but `pVersion` is null.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="c618c-128">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c618c-128">Requirements</span></span>  
- <span data-ttu-id="c618c-129">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c618c-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="af208-128">Požadavky</span><span class="sxs-lookup"><span data-stu-id="af208-128">Requirements</span></span>  
+ <span data-ttu-id="af208-129">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="af208-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c618c-130">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c618c-130">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="af208-130">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="af208-130">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="c618c-131">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c618c-131">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>  
+ <span data-ttu-id="af208-131">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="af208-131">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c618c-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c618c-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="af208-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="af208-132">See also</span></span>
 
-- [<span data-ttu-id="c618c-133">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="c618c-133">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="af208-133">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="af208-133">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

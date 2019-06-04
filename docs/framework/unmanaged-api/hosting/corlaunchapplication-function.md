@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4c997ab107ba3ceb7773bc9235b9c9dcd4d97df8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64527221e81569bf08a3cfd34a66681725755a55
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985787"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490534"
 ---
-# <a name="corlaunchapplication-function"></a><span data-ttu-id="537ab-102">CorLaunchApplication – funkce</span><span class="sxs-lookup"><span data-stu-id="537ab-102">CorLaunchApplication Function</span></span>
-<span data-ttu-id="537ab-103">Spustí aplikaci v zadané síťové cestě pomocí zadaných manifestů a dalších dat aplikací.</span><span class="sxs-lookup"><span data-stu-id="537ab-103">Starts the application at the specified network path, using the specified manifests and other application data.</span></span>  
+# <a name="corlaunchapplication-function"></a><span data-ttu-id="2fda8-102">CorLaunchApplication – funkce</span><span class="sxs-lookup"><span data-stu-id="2fda8-102">CorLaunchApplication Function</span></span>
+<span data-ttu-id="2fda8-103">Spustí aplikaci v zadané síťové cestě pomocí zadaných manifestů a dalších dat aplikací.</span><span class="sxs-lookup"><span data-stu-id="2fda8-103">Starts the application at the specified network path, using the specified manifests and other application data.</span></span>  
   
- <span data-ttu-id="537ab-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="537ab-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="2fda8-104">Tato funkce se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="2fda8-104">This function has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="537ab-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="537ab-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2fda8-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2fda8-105">Syntax</span></span>  
   
 ```  
 HRESULT CorLaunchApplication (  
@@ -43,37 +43,37 @@ HRESULT CorLaunchApplication (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="537ab-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="537ab-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2fda8-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="2fda8-106">Parameters</span></span>  
  `dwClickOnceHost`  
- <span data-ttu-id="537ab-107">[in] Hodnota [host_type –](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) výčet, který určuje typ hostitele, který se spuštěním aplikace.</span><span class="sxs-lookup"><span data-stu-id="537ab-107">[in] A value of the [HOST_TYPE](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) enumeration that specifies the type of host that is launching the application.</span></span>  
+ <span data-ttu-id="2fda8-107">[in] Hodnota [host_type –](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) výčet, který určuje typ hostitele, který se spuštěním aplikace.</span><span class="sxs-lookup"><span data-stu-id="2fda8-107">[in] A value of the [HOST_TYPE](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) enumeration that specifies the type of host that is launching the application.</span></span>  
   
  `pwzAppFullName`  
- <span data-ttu-id="537ab-108">[in] Celý název aplikace, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="537ab-108">[in] The full name of the application that is being launched.</span></span>  
+ <span data-ttu-id="2fda8-108">[in] Celý název aplikace, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="2fda8-108">[in] The full name of the application that is being launched.</span></span>  
   
  `dwManifestPaths`  
- <span data-ttu-id="537ab-109">[in] Počet cesty k manifestu aplikace.</span><span class="sxs-lookup"><span data-stu-id="537ab-109">[in] The number of manifest paths for the application.</span></span>  
+ <span data-ttu-id="2fda8-109">[in] Počet cesty k manifestu aplikace.</span><span class="sxs-lookup"><span data-stu-id="2fda8-109">[in] The number of manifest paths for the application.</span></span>  
   
  `ppwzManifestPaths`  
- <span data-ttu-id="537ab-110">[in] Pole řetězců, z nichž každý Určuje cestu k manifestu pro aplikaci, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="537ab-110">[in] An array of strings, each of which specifies a path to a manifest for the application that is being launched.</span></span>  
+ <span data-ttu-id="2fda8-110">[in] Pole řetězců, z nichž každý Určuje cestu k manifestu pro aplikaci, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="2fda8-110">[in] An array of strings, each of which specifies a path to a manifest for the application that is being launched.</span></span>  
   
  `dwActivationData`  
- <span data-ttu-id="537ab-111">[in] Počet datových položek aktivace pro aplikaci, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="537ab-111">[in] The number of activation data items for the application that is being launched.</span></span>  
+ <span data-ttu-id="2fda8-111">[in] Počet datových položek aktivace pro aplikaci, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="2fda8-111">[in] The number of activation data items for the application that is being launched.</span></span>  
   
  `ppwzActivationData`  
- <span data-ttu-id="537ab-112">[in] Pole řetězců, z nichž každý je aktivace položka dat pro aplikace, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="537ab-112">[in] An array of strings, each of which is an activation data item for the application that is being launched.</span></span>  
+ <span data-ttu-id="2fda8-112">[in] Pole řetězců, z nichž každý je aktivace položka dat pro aplikace, která se spustí.</span><span class="sxs-lookup"><span data-stu-id="2fda8-112">[in] An array of strings, each of which is an activation data item for the application that is being launched.</span></span>  
   
  `lpProcessInformation`  
- <span data-ttu-id="537ab-113">[out] Ukazatel na informace o procesu, ve kterém se načetl aplikace.</span><span class="sxs-lookup"><span data-stu-id="537ab-113">[out] A pointer to information about the process in which the application has been loaded.</span></span>  
+ <span data-ttu-id="2fda8-113">[out] Ukazatel na informace o procesu, ve kterém se načetl aplikace.</span><span class="sxs-lookup"><span data-stu-id="2fda8-113">[out] A pointer to information about the process in which the application has been loaded.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="537ab-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="537ab-114">Requirements</span></span>  
- <span data-ttu-id="537ab-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="537ab-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2fda8-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2fda8-114">Requirements</span></span>  
+ <span data-ttu-id="2fda8-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2fda8-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="537ab-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="537ab-116">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="2fda8-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="2fda8-116">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="537ab-117">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="537ab-117">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="2fda8-117">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2fda8-117">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="537ab-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="537ab-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="2fda8-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2fda8-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="537ab-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="537ab-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2fda8-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2fda8-119">See also</span></span>
 
-- [<span data-ttu-id="537ab-120">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="537ab-120">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="2fda8-120">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="2fda8-120">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

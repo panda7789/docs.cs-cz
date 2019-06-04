@@ -20,19 +20,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f82303a3d38e7a5baaf1c3edcc41518228360d34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67bd6e8a0519d35b867cb525d5ff7730c0459016
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789620"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490677"
 ---
-# <a name="clrcreatemanagedinstance-function"></a><span data-ttu-id="f78e8-102">ClrCreateManagedInstance – funkce</span><span class="sxs-lookup"><span data-stu-id="f78e8-102">ClrCreateManagedInstance Function</span></span>
-<span data-ttu-id="f78e8-103">Vytvoří instanci určeného spravovaného typu.</span><span class="sxs-lookup"><span data-stu-id="f78e8-103">Creates an instance of the specified managed type.</span></span>  
+# <a name="clrcreatemanagedinstance-function"></a><span data-ttu-id="40d4f-102">ClrCreateManagedInstance – funkce</span><span class="sxs-lookup"><span data-stu-id="40d4f-102">ClrCreateManagedInstance Function</span></span>
+<span data-ttu-id="40d4f-103">Vytvoří instanci určeného spravovaného typu.</span><span class="sxs-lookup"><span data-stu-id="40d4f-103">Creates an instance of the specified managed type.</span></span>  
   
- <span data-ttu-id="f78e8-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f78e8-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span> <span data-ttu-id="f78e8-105">Použít aktivaci modelu COM. k vytvoření instance spravovaného typu, nebo použít hostování (viz [CLR hostování rozhraní přidaná v rozhraní .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).</span><span class="sxs-lookup"><span data-stu-id="f78e8-105">Use COM activation to create an instance of the managed type, or use hosting (see [CLR Hosting Interfaces Added in the .NET Framework 4 and 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).</span></span>  
+ <span data-ttu-id="40d4f-104">Tato funkce se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="40d4f-104">This function has been deprecated in the .NET Framework 4.</span></span> <span data-ttu-id="40d4f-105">Použít aktivaci modelu COM. k vytvoření instance spravovaného typu, nebo použít hostování (viz [CLR hostování rozhraní přidaná v rozhraní .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).</span><span class="sxs-lookup"><span data-stu-id="40d4f-105">Use COM activation to create an instance of the managed type, or use hosting (see [CLR Hosting Interfaces Added in the .NET Framework 4 and 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f78e8-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f78e8-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="40d4f-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="40d4f-106">Syntax</span></span>  
   
 ```  
 STDAPI ClrCreateManagedInstance (  
@@ -42,29 +42,29 @@ STDAPI ClrCreateManagedInstance (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f78e8-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="f78e8-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="40d4f-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="40d4f-107">Parameters</span></span>  
  `pTypeName`  
- <span data-ttu-id="f78e8-108">[in] Ukazatel na název požadovaného typu instance.</span><span class="sxs-lookup"><span data-stu-id="f78e8-108">[in] A pointer to the name of the instance type being requested.</span></span>  
+ <span data-ttu-id="40d4f-108">[in] Ukazatel na název požadovaného typu instance.</span><span class="sxs-lookup"><span data-stu-id="40d4f-108">[in] A pointer to the name of the instance type being requested.</span></span>  
   
  `riid`  
- <span data-ttu-id="f78e8-109">[in] `IID` Typu instanci požaduje.</span><span class="sxs-lookup"><span data-stu-id="f78e8-109">[in] The `IID` of the instance type being requested.</span></span>  
+ <span data-ttu-id="40d4f-109">[in] `IID` Typu instanci požaduje.</span><span class="sxs-lookup"><span data-stu-id="40d4f-109">[in] The `IID` of the instance type being requested.</span></span>  
   
  `ppObject`  
- <span data-ttu-id="f78e8-110">[out] Ukazatel na ukazatel na instanci spravovaného typu, který byl vyžádán volajícím.</span><span class="sxs-lookup"><span data-stu-id="f78e8-110">[out] A pointer to a pointer to an instance of the managed type that was requested by the caller.</span></span>  
+ <span data-ttu-id="40d4f-110">[out] Ukazatel na ukazatel na instanci spravovaného typu, který byl vyžádán volajícím.</span><span class="sxs-lookup"><span data-stu-id="40d4f-110">[out] A pointer to a pointer to an instance of the managed type that was requested by the caller.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f78e8-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f78e8-111">Remarks</span></span>  
- <span data-ttu-id="f78e8-112">Modul common language runtime by již načten do procesu.</span><span class="sxs-lookup"><span data-stu-id="f78e8-112">The common language runtime should already be loaded into a process.</span></span> <span data-ttu-id="f78e8-113">Například můžete načíst pomocí volání [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) fungovaly před `ClrCreateManagedInstance` funkce je volána.</span><span class="sxs-lookup"><span data-stu-id="f78e8-113">For example, it can be loaded by using a call to the [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) function before the `ClrCreateManagedInstance` function is called.</span></span> <span data-ttu-id="f78e8-114">Pokud není načten modul runtime, `ClrCreateManagedInstance` poprvé pokusí se načíst v1.0.3705 modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="f78e8-114">If the runtime is not loaded, `ClrCreateManagedInstance` first tries to load v1.0.3705 of the runtime.</span></span> <span data-ttu-id="f78e8-115">Pokud selže, pokusí se načíst nejnovější verzi modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="f78e8-115">If that fails, it attempts to load the latest version of the runtime.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="40d4f-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="40d4f-111">Remarks</span></span>  
+ <span data-ttu-id="40d4f-112">Modul common language runtime by již načten do procesu.</span><span class="sxs-lookup"><span data-stu-id="40d4f-112">The common language runtime should already be loaded into a process.</span></span> <span data-ttu-id="40d4f-113">Například můžete načíst pomocí volání [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) fungovaly před `ClrCreateManagedInstance` funkce je volána.</span><span class="sxs-lookup"><span data-stu-id="40d4f-113">For example, it can be loaded by using a call to the [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) function before the `ClrCreateManagedInstance` function is called.</span></span> <span data-ttu-id="40d4f-114">Pokud není načten modul runtime, `ClrCreateManagedInstance` poprvé pokusí se načíst v1.0.3705 modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="40d4f-114">If the runtime is not loaded, `ClrCreateManagedInstance` first tries to load v1.0.3705 of the runtime.</span></span> <span data-ttu-id="40d4f-115">Pokud selže, pokusí se načíst nejnovější verzi modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="40d4f-115">If that fails, it attempts to load the latest version of the runtime.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f78e8-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f78e8-116">Requirements</span></span>  
- <span data-ttu-id="f78e8-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f78e8-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="40d4f-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="40d4f-116">Requirements</span></span>  
+ <span data-ttu-id="40d4f-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="40d4f-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f78e8-118">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="f78e8-118">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="40d4f-118">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="40d4f-118">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="f78e8-119">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f78e8-119">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="40d4f-119">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="40d4f-119">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="f78e8-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f78e8-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="40d4f-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="40d4f-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f78e8-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f78e8-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="40d4f-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40d4f-121">See also</span></span>
 
-- [<span data-ttu-id="f78e8-122">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="f78e8-122">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
-- [<span data-ttu-id="f78e8-123">Hostování</span><span class="sxs-lookup"><span data-stu-id="f78e8-123">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [<span data-ttu-id="40d4f-122">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="40d4f-122">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="40d4f-123">Hostování</span><span class="sxs-lookup"><span data-stu-id="40d4f-123">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)

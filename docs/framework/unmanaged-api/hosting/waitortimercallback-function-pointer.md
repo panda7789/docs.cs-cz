@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f8cf12fc6828c5e439a6a86532f22b8a598a9f03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f938c7dcf08654eef1e2403426eb5c54d6d2a6b3
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62043321"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490119"
 ---
-# <a name="waitortimercallback-function-pointer"></a><span data-ttu-id="c844f-102">WAITORTIMERCALLBACK – ukazatel na funkci</span><span class="sxs-lookup"><span data-stu-id="c844f-102">WAITORTIMERCALLBACK Function Pointer</span></span>
-<span data-ttu-id="c844f-103">Odkazuje na funkci, která upozorňuje hostitele, popisovače čekání (<xref:System.Threading.WaitHandle>) buď byl signalizován nebo vypršel časový limit.</span><span class="sxs-lookup"><span data-stu-id="c844f-103">Points to a function that notifies the host that a wait handle (<xref:System.Threading.WaitHandle>) has either been signaled or timed out.</span></span>  
+# <a name="waitortimercallback-function-pointer"></a><span data-ttu-id="89c40-102">WAITORTIMERCALLBACK – ukazatel na funkci</span><span class="sxs-lookup"><span data-stu-id="89c40-102">WAITORTIMERCALLBACK Function Pointer</span></span>
+<span data-ttu-id="89c40-103">Odkazuje na funkci, která upozorňuje hostitele, popisovače čekání (<xref:System.Threading.WaitHandle>) buď byl signalizován nebo vypršel časový limit.</span><span class="sxs-lookup"><span data-stu-id="89c40-103">Points to a function that notifies the host that a wait handle (<xref:System.Threading.WaitHandle>) has either been signaled or timed out.</span></span>  
   
- <span data-ttu-id="c844f-104">Tento ukazatel na funkci se už nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c844f-104">This function pointer has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="89c40-104">Tento ukazatel na funkci se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="89c40-104">This function pointer has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c844f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c844f-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="89c40-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="89c40-105">Syntax</span></span>  
   
 ```  
 typedef VOID (__stdcall *WAITORTIMERCALLBACK) (  
@@ -37,25 +37,25 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c844f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="c844f-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="89c40-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="89c40-106">Parameters</span></span>  
  `lpParameter`  
- <span data-ttu-id="c844f-107">[in] Ukazatel na objekt, který obsahuje informace stanovené hostitelem.</span><span class="sxs-lookup"><span data-stu-id="c844f-107">[in] A pointer to an object that contains information defined by the host.</span></span>  
+ <span data-ttu-id="89c40-107">[in] Ukazatel na objekt, který obsahuje informace stanovené hostitelem.</span><span class="sxs-lookup"><span data-stu-id="89c40-107">[in] A pointer to an object that contains information defined by the host.</span></span>  
   
  `TimerOrWaitFired`  
- <span data-ttu-id="c844f-108">[in] `true` Pokud popisovač čekání vypršel časový limit, nebo `false` Pokud bylo signalizováno.</span><span class="sxs-lookup"><span data-stu-id="c844f-108">[in] `true` if the wait handle timed out, or `false` if it was signaled.</span></span>  
+ <span data-ttu-id="89c40-108">[in] `true` Pokud popisovač čekání vypršel časový limit, nebo `false` Pokud bylo signalizováno.</span><span class="sxs-lookup"><span data-stu-id="89c40-108">[in] `true` if the wait handle timed out, or `false` if it was signaled.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c844f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c844f-109">Remarks</span></span>  
- <span data-ttu-id="c844f-110">Funkce, které `WAITORTIMERCALLBACK` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace.</span><span class="sxs-lookup"><span data-stu-id="c844f-110">The function to which `WAITORTIMERCALLBACK` points is a callback function and must be implemented by the writer of the hosting application.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="89c40-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="89c40-109">Remarks</span></span>  
+ <span data-ttu-id="89c40-110">Funkce, které `WAITORTIMERCALLBACK` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace.</span><span class="sxs-lookup"><span data-stu-id="89c40-110">The function to which `WAITORTIMERCALLBACK` points is a callback function and must be implemented by the writer of the hosting application.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c844f-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c844f-111">Requirements</span></span>  
- <span data-ttu-id="c844f-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c844f-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="89c40-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="89c40-111">Requirements</span></span>  
+ <span data-ttu-id="89c40-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="89c40-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c844f-113">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c844f-113">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="89c40-113">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="89c40-113">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="c844f-114">**Knihovna:** MSCorWks.dll</span><span class="sxs-lookup"><span data-stu-id="c844f-114">**Library:** MSCorWks.dll</span></span>  
+ <span data-ttu-id="89c40-114">**Knihovna:** MSCorWks.dll</span><span class="sxs-lookup"><span data-stu-id="89c40-114">**Library:** MSCorWks.dll</span></span>  
   
- <span data-ttu-id="c844f-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c844f-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="89c40-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="89c40-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c844f-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c844f-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="89c40-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="89c40-116">See also</span></span>
 
-- [<span data-ttu-id="c844f-117">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="c844f-117">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="89c40-117">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="89c40-117">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
