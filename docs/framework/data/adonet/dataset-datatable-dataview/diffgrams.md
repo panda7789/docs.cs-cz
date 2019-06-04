@@ -83,8 +83,8 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
   
 |Poznámka|Popis|  
 |----------------|-----------------|  
-|**id**|Použít na dvojici prvků v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky na prvky **\<** ***DataInstance*** **>** bloku. Hodnoty s **diffgr:id** poznámky jsou ve formě *[TableName] [RowIdentifier]*. Například: `<Customers diffgr:id="Customers1">`.|  
-|**parentId**|Určuje které elementy ze **\<** ***DataInstance*** **>** blok je nadřazený element aktuálního prvku. Hodnoty s **diffgr:parentId** poznámky jsou ve formě *[TableName] [RowIdentifier]*. Například: `<Orders diffgr:parentId="Customers1">`.|  
+|**id**|Použít na dvojici prvků v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky na prvky **\<** ***DataInstance*** **>** bloku. Hodnoty s **diffgr:id** poznámky jsou ve formě *[TableName] [RowIdentifier]* . Například: `<Customers diffgr:id="Customers1">`.|  
+|**parentId**|Určuje které elementy ze **\<** ***DataInstance*** **>** blok je nadřazený element aktuálního prvku. Hodnoty s **diffgr:parentId** poznámky jsou ve formě *[TableName] [RowIdentifier]* . Například: `<Orders diffgr:parentId="Customers1">`.|  
 |**hasChanges**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat, jako jsou změny. **Haschanges –** anotace může mít jednu z následujících dvou hodnot:<br /><br /> **inserted**<br /> Identifikuje **přidané** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádku, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale nebudou mít žádný element s poznámkami v **\<** ***DataInstance*** **>** bloku.|  
 |**hasErrors**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat s **RowError**. Chyba prvek je umístěn v  **\<diffgr:errors >** bloku.|  
 |**Chyba**|Obsahuje text **RowError** pro konkrétní element v  **\<diffgr:errors >** bloku.|  
@@ -94,7 +94,7 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
 |Poznámka|Popis|  
 |----------------|-----------------|  
 |**RowOrder**|Zachovává pořadí řádku původní data a identifikuje index řádku v konkrétní <xref:System.Data.DataTable>.|  
-|**Hidden**|Identifikuje sloupce tak, že má **ColumnMapping** vlastnost nastavena na hodnotu **MappingType.Hidden**. Atribut je napsané ve formátu **msdata: skrytý** *[Názevsloupce]*= "*hodnotu*". Například: `<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">`.<br /><br /> Všimněte si, že skryté sloupce zapíšou jenom jako atribut formát DiffGram pokud obsahují data. V opačném případě se ignorují.|  
+|**Hidden**|Identifikuje sloupce tak, že má **ColumnMapping** vlastnost nastavena na hodnotu **MappingType.Hidden**. Atribut je napsané ve formátu **msdata: skrytý** *[Názevsloupce]* = "*hodnotu*". Například: `<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">`.<br /><br /> Všimněte si, že skryté sloupce zapíšou jenom jako atribut formát DiffGram pokud obsahují data. V opačném případě se ignorují.|  
   
 ## <a name="sample-diffgram"></a>Formát DiffGram vzorku  
  Níže je uveden příklad formát DiffGram formátu. Tento příklad ukazuje výsledek aktualizace na řádek v tabulce předtím, než se změny byly potvrzeny. Řádek s CustomerID "ALFKI" má byla upravena, ale není aktualizovaná. V důsledku toho je **aktuální** řádek s **diffgr:id** z "Customers1" v **\<** ***DataInstance*** **>** bloku a **původní** řádek s **diffgr:id** z "Customers1" v  **\<diffgr: před >** bloku. Řádek s CustomerID "ANATR" zahrnuje **RowError**, takže je opatřen poznámkou `diffgr:hasErrors="true"` a související prvek,  **\<diffgr:errors >** bloku.  
