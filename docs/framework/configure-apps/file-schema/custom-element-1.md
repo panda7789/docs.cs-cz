@@ -15,40 +15,40 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66301156"
 ---
-# <a name="custom-element-for-singletagsectionhandler"></a><span data-ttu-id="1c118-102">Vlastní element pro SingleTagSectionHandler</span><span class="sxs-lookup"><span data-stu-id="1c118-102">Custom element for SingleTagSectionHandler</span></span>
+# <a name="custom-element-for-singletagsectionhandler"></a><span data-ttu-id="ce052-102">Vlastní element pro SingleTagSectionHandler</span><span class="sxs-lookup"><span data-stu-id="ce052-102">Custom element for SingleTagSectionHandler</span></span>
 
-<span data-ttu-id="1c118-103">Definuje nastavení, v části vlastní konfigurace, který je definován \<části > element a používá <xref:System.Configuration.SingleTagSectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="1c118-103">Defines settings in a custom configuration section that is defined by a \<section> element and uses the <xref:System.Configuration.SingleTagSectionHandler> class.</span></span>
+<span data-ttu-id="ce052-103">Definuje nastavení, v části vlastní konfigurace, který je definován \<části > element a používá <xref:System.Configuration.SingleTagSectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="ce052-103">Defines settings in a custom configuration section that is defined by a \<section> element and uses the <xref:System.Configuration.SingleTagSectionHandler> class.</span></span>
 
-<span data-ttu-id="1c118-104">[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="1c118-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="1c118-105">&nbsp;&nbsp; *\<sectionName>*</span><span class="sxs-lookup"><span data-stu-id="1c118-105">&nbsp;&nbsp;*\<sectionName>*</span></span>
+<span data-ttu-id="ce052-104">[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="ce052-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
+<span data-ttu-id="ce052-105">&nbsp;&nbsp; *\<sectionName>*</span><span class="sxs-lookup"><span data-stu-id="ce052-105">&nbsp;&nbsp;*\<sectionName>*</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="1c118-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1c118-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="ce052-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ce052-106">Syntax</span></span>
 
 ```xml
 <sectionName key="value" key2="value2" ... />
 ```
 
-## <a name="attributes"></a><span data-ttu-id="1c118-107">Atributy</span><span class="sxs-lookup"><span data-stu-id="1c118-107">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="ce052-107">Atributy</span><span class="sxs-lookup"><span data-stu-id="ce052-107">Attributes</span></span>
 
-<span data-ttu-id="1c118-108">Atributy a hodnoty atributů jsou definované uživatelem.</span><span class="sxs-lookup"><span data-stu-id="1c118-108">Attributes and attribute values are user defined.</span></span>
+<span data-ttu-id="ce052-108">Atributy a hodnoty atributů jsou definované uživatelem.</span><span class="sxs-lookup"><span data-stu-id="ce052-108">Attributes and attribute values are user defined.</span></span>
 
-## <a name="parent-element"></a><span data-ttu-id="1c118-109">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="1c118-109">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="ce052-109">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="ce052-109">Parent element</span></span>
 
-|     | <span data-ttu-id="1c118-110">Popis</span><span class="sxs-lookup"><span data-stu-id="1c118-110">Description</span></span> |
+|     | <span data-ttu-id="ce052-110">Popis</span><span class="sxs-lookup"><span data-stu-id="ce052-110">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="1c118-111"> *\*\<Konfigurace >** </span><span class="sxs-lookup"><span data-stu-id="1c118-111">**\<configuration>**</span></span>](~/docs/framework/configure-apps/file-schema/configuration-element.md) | <span data-ttu-id="1c118-112">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1c118-112">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span> |
+| [<span data-ttu-id="ce052-111"> *\*\<Konfigurace >** </span><span class="sxs-lookup"><span data-stu-id="ce052-111">**\<configuration>**</span></span>](~/docs/framework/configure-apps/file-schema/configuration-element.md) | <span data-ttu-id="ce052-112">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="ce052-112">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="1c118-113">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="1c118-113">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="ce052-113">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="ce052-113">Child elements</span></span>
 
-<span data-ttu-id="1c118-114">Žádný</span><span class="sxs-lookup"><span data-stu-id="1c118-114">None</span></span>
+<span data-ttu-id="ce052-114">Žádný</span><span class="sxs-lookup"><span data-stu-id="ce052-114">None</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="1c118-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1c118-115">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="ce052-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ce052-115">Remarks</span></span>
 
-<span data-ttu-id="1c118-116"> *\*\<SectionName >** prvek je prvek vlastní, určené [  *\*\<části >** ](~/docs/framework/configure-apps/file-schema/section-element.md) značku [  *\*\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) elementu.</span><span class="sxs-lookup"><span data-stu-id="1c118-116">The **\<sectionName>** element is a custom element defined by a [**\<section>**](~/docs/framework/configure-apps/file-schema/section-element.md) tag in the [**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) element.</span></span> <span data-ttu-id="1c118-117">Konfigurační systém vrátí <xref:System.Collections.IDictionary> objektu při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="1c118-117">The configuration system returns a <xref:System.Collections.IDictionary> object when you call <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.</span></span>
+<span data-ttu-id="ce052-116">**\<SectionName >** prvek je prvek vlastní, určené [  **\<části >** ](~/docs/framework/configure-apps/file-schema/section-element.md) značku [  **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) elementu.</span><span class="sxs-lookup"><span data-stu-id="ce052-116">The **\<sectionName>** element is a custom element defined by a [**\<section>**](~/docs/framework/configure-apps/file-schema/section-element.md) tag in the [**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) element.</span></span> <span data-ttu-id="ce052-117">Konfigurační systém vrátí <xref:System.Collections.IDictionary> objektu při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="ce052-117">The configuration system returns a <xref:System.Collections.IDictionary> object when you call <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.</span></span>
 
-## <a name="example"></a><span data-ttu-id="1c118-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="1c118-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ce052-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="ce052-118">Example</span></span>
 
-<span data-ttu-id="1c118-119">Následující příklad deklaruje vlastní prvek s názvem  **\<sampleSection >** , který obsahuje nastavení přečtou <xref:System.Configuration.SingleTagSectionHandler> třídy:</span><span class="sxs-lookup"><span data-stu-id="1c118-119">The following example declares a custom element called **\<sampleSection>** that contains settings read by the <xref:System.Configuration.SingleTagSectionHandler> class:</span></span>
+<span data-ttu-id="ce052-119">Následující příklad deklaruje vlastní prvek s názvem  **\<sampleSection >** , který obsahuje nastavení přečtou <xref:System.Configuration.SingleTagSectionHandler> třídy:</span><span class="sxs-lookup"><span data-stu-id="ce052-119">The following example declares a custom element called **\<sampleSection>** that contains settings read by the <xref:System.Configuration.SingleTagSectionHandler> class:</span></span>
 
 ```xml
 <configuration>
@@ -62,10 +62,10 @@ ms.locfileid: "66301156"
 </configuration>
 ```
 
-## <a name="configuration-file"></a><span data-ttu-id="1c118-120">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="1c118-120">Configuration file</span></span>
+## <a name="configuration-file"></a><span data-ttu-id="ce052-120">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="ce052-120">Configuration file</span></span>
 
-<span data-ttu-id="1c118-121">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="1c118-121">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
+<span data-ttu-id="ce052-121">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="ce052-121">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="1c118-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1c118-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ce052-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ce052-122">See also</span></span>
 
-- [<span data-ttu-id="1c118-123">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="1c118-123">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="ce052-123">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="ce052-123">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
