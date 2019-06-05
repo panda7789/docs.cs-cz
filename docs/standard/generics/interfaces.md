@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3085812f2467c1e73d94335530441d6bb12db6af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9570578e8ae4397f060805b891f86d7d4f273cd4
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683363"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487042"
 ---
 # <a name="generic-interfaces"></a>Obecná rozhraní
 Toto téma obsahuje základní informace o obecných rozhraní, které poskytují společné funkce napříč řady obecných typů.  
@@ -24,7 +24,7 @@ Toto téma obsahuje základní informace o obecných rozhraní, které poskytuj�
  Obecná rozhraní poskytuje typově bezpečné ekvivalenty rozhraním neobecná pro porovnání rovnosti a řazení a funkce, které jsou sdíleny obecných typů kolekce.  
   
 > [!NOTE]
->  Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], několik obecných rozhraní parametry typu označen jako kovariantní nebo kontravariantní, takže má větší flexibilitu při přiřazování a používání typy, které implementují tato rozhraní. Zobrazit [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
+>  Od verze rozhraní .NET Framework 4, typ, několik obecných rozhraní parametry označen jako kovariantní nebo kontravariantní, takže má větší flexibilitu při přiřazování a používání typy, které implementují tato rozhraní. Zobrazit [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
 ### <a name="equality-and-ordering-comparisons"></a>Porovnání rovnosti a řazení  
  V <xref:System> obor názvů, <xref:System.IComparable%601?displayProperty=nameWithType> a <xref:System.IEquatable%601?displayProperty=nameWithType> obecných rozhraní, jako je jejich protějšků, definuje metody pro porovnání řazení a porovnání rovnosti, v uvedeném pořadí. Typy implementují tato rozhraní umožňují provádět takové porovnání.  
