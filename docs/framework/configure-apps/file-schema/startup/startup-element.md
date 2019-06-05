@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <startup> element
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-ms.openlocfilehash: 5b15c504a01a0ab8e17b8ad8811d9ed183609322
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
-ms.translationtype: HT
+ms.openlocfilehash: e40ca31ddc40cccbeb3b8dda1d148ddec5032d7c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456274"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489549"
 ---
 # <a name="startup-element"></a>\<Po spuštění > – element
 
@@ -37,11 +37,11 @@ Určuje informace o spuštění modulu runtime jazyka common.
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`useLegacyV2RuntimeActivationPolicy`|Nepovinný atribut.<br /><br /> Určuje, jestli se má povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime, nebo použít [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] Zásady aktivace.|
+|`useLegacyV2RuntimeActivationPolicy`|Nepovinný atribut.<br /><br /> Určuje, jestli se má povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime, nebo použít zásady aktivace rozhraní .NET Framework 4.|
 
 ## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>atribut useLegacyV2RuntimeActivationPolicy
 
-|Value|Popis|
+|Hodnota|Popis|
 |-----------|-----------------|
 |`true`|Povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime pro zvolený runtime, která je k vytvoření vazby techniky aktivace starší verzi modulu runtime (například [CorBindToRuntimeEx – funkce](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)) do modulu runtime, zvolit z konfiguračního souboru místo omezení je v modulu CLR verze 2.0. Proto pokud je zvolená verze modulu CLR 4 nebo novější z konfiguračního souboru, sestavení ve smíšeném režimu vytvořených v dřívějších verzích rozhraní .NET Framework jsou načtené na zvolené verzi CLR. Pokud tuto hodnotu nastavíte brání CLR verze 1.1 nebo CLR verze 2.0 načtení do stejného procesu efektivně zákaz funkce vnitroprocesové vedle sebe.|
 |`false`|Pomocí aktivace výchozí zásady pro rozhraní .NET Framework 4 a novější, což je povolit starší modul runtime techniky aktivace pro načtení modulu CLR verze 1.1 nebo 2.0 do procesu. Nastavení této hodnoty brání ve smíšeném režimu sestavení z načítání do rozhraní .NET Framework 4 nebo novější, není-li, kterými byly vytvořeny pomocí rozhraní .NET Framework 4 nebo novější. Tato hodnota je výchozí hodnota.|

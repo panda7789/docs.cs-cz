@@ -15,12 +15,12 @@ ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 556181d32f0539b4a9e24cb1a898b4ccc3788f4e
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: 0b70545c2252d6e8b82d6f4d57522ac4bb2481d8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66250879"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490870"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 
@@ -51,7 +51,7 @@ Třída znaků definuje množinu znaků, přičemž kterýkoli z nich se může
  .NET podporuje výrazy odčítání třídy znaků, které vám umožní definovat množinu znaků jako výsledek vyloučení jedné třídy znaků vůči jiné třídě znaků. Další informace najdete v tématu [odčítání tříd znaků](#CharacterClassSubtraction).  
   
 > [!NOTE]
->  Znak třídy, které odpovídají znaků podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [\p{} ](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, využívají <xref:System.Globalization.CharUnicodeInfo> třídy k poskytnutí informací informace o kategoriích znaků.  Od verze rozhraní .NET Framework 4.6.2, kategoriích znaků jsou založeny na [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím rozhraní .NET Framework 4.6.1, jsou založeny na [standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+>  Znak třídy, které odpovídají znaků podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [\p{} ](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, využívají <xref:System.Globalization.CharUnicodeInfo> třídy k poskytnutí informací informace o kategoriích znaků.  Od verze rozhraní .NET Framework 4.6.2, kategoriích znaků jsou založeny na [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V rozhraní .NET Framework 4 prostřednictvím rozhraní .NET Framework 4.6.1, jsou založeny na [standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>Pozitivní skupina znaků: [] č.  

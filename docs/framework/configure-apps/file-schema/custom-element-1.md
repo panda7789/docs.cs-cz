@@ -44,7 +44,7 @@ Atributy a hodnoty atributů jsou definované uživatelem.
 
 ## <a name="remarks"></a>Poznámky
 
- **\<SectionName >** prvek je prvek vlastní, určené [  **\<části >** ](~/docs/framework/configure-apps/file-schema/section-element.md) značku [  **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) elementu. Konfigurační systém vrátí <xref:System.Collections.IDictionary> objektu při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
+**\<SectionName >** prvek je prvek vlastní, určené [  **\<části >** ](~/docs/framework/configure-apps/file-schema/section-element.md) značku [  **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) elementu. Konfigurační systém vrátí <xref:System.Collections.IDictionary> objektu při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 

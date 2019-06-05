@@ -9,12 +9,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: c6bf4c6b262bc9066277a683d5eda67ada6f4d08
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 90bdd5b8c5fdebe2c5d7ec580975dc63144b2401
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456210"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489309"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime > – element
 
@@ -34,7 +34,7 @@ Určuje, jaké verze společného běhového jazykového a volitelně verzi rozh
 
 |Atribut|Popis|
 |---------------|-----------------|
-|**version**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Pro platné hodnoty `version` atributu naleznete v tématu [hodnoty "verze modulu runtime"](#version) oddílu. **Poznámka:**  Prostřednictvím rozhraní .NET Framework 3.5 "*verze modulu runtime*" hodnota má podobu *hlavní*. *vedlejší*. *sestavení*. Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pouze požadované číslo hlavní verze a podverze (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|
+|**version**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Pro platné hodnoty `version` atributu naleznete v tématu [hodnoty "verze modulu runtime"](#version) oddílu. **Poznámka:**  Prostřednictvím rozhraní .NET Framework 3.5 "*verze modulu runtime*" hodnota má podobu *hlavní*. *vedlejší*. *sestavení*. Od verze rozhraní .NET Framework 4, pouze požadované číslo hlavní verze a podverze (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|
 |**sku**|Nepovinný atribut.<br /><br /> Řetězcová hodnota, která určuje skladové jednotky (SKU), která zase Určuje, jaké verze rozhraní .NET Framework podporuje tuto aplikaci.<br /><br /> Od verze rozhraní .NET Framework 4.0, použití `sku` atribut se doporučuje.  Pokud je přítomen, určuje verzi rozhraní .NET Framework, který aplikace cílí.<br /><br /> Platné hodnoty atributu sku najdete v článku [hodnoty "sku id"](#sku) oddílu.|
 
 ## <a name="remarks"></a>Poznámky

@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e14fa2d739a6fdabda7b64e7e765e51da19701a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f6f6744451bf3436e58a3ff9efcdb16ceee08c9d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616453"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489742"
 ---
 # <a name="controlling-net-framework-logging"></a>Řízení přihlašování rozhraní .NET Framework
 Pro zaznamenání událostí modulu Common Language Runtime (CLR) je možné použít trasování událostí systému Windows (ETW). Můžete vytvořit a zobrazit trasování pomocí následujících nástrojů:  
@@ -28,7 +28,7 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.  
 ```  
   
- Pokud není zprostředkovatel modulu CLR uveden, můžete instalaci na Windows Vista a novějších operačních systémů s použitím Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil) nástroj příkazového řádku. Otevřete okno příkazového řádku jako správce. Změňte adresář na výzvy [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] složky (% WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET verze >\ ). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:  
+ Pokud není zprostředkovatel modulu CLR uveden, můžete instalaci na Windows Vista a novějších operačních systémů s použitím Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil) nástroj příkazového řádku. Otevřete okno příkazového řádku jako správce. Příkazový řádek přejít ke složce rozhraní .NET Framework 4 (% WINDIR%\Microsoft.NET\Framework[64]\v4.\<. NET verze > \). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:  
   
  `wevtutil im CLR-ETW.man`  
   

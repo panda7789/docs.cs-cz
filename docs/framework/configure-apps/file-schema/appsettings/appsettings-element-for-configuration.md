@@ -53,7 +53,7 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 ## <a name="remarks"></a>Poznámky
 
- **\<AppSettings >** element ukládá informace o konfiguraci vlastních aplikací, jako jsou databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikace. Páry klíč/hodnota zadaná v  **\<appSettings >** element jsou přístupné z kódu pomocí <xref:System.Configuration.ConfigurationSettings> třídy.
+**\<AppSettings >** element ukládá informace o konfiguraci vlastních aplikací, jako jsou databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikace. Páry klíč/hodnota zadaná v  **\<appSettings >** element jsou přístupné z kódu pomocí <xref:System.Configuration.ConfigurationSettings> třídy.
 
 Můžete použít **souboru** atribut  **\<appSettings >** elementu *Web.config* a konfiguračních souborů aplikace. Tento atribut určuje konfigurační soubor, který poskytuje další nastavení nebo přepíše nastavení zadaná  **\<appSettings >** elementu. **Souboru** atribut lze použít v týmu vývoje scénářích správy zdrojového kódu, jako je například, pokud uživatel požaduje přepsat nastavení projektu zadané v konfiguračním souboru aplikace.
 
