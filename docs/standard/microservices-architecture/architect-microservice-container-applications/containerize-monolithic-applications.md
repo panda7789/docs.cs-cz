@@ -2,12 +2,12 @@
 title: Kontejnerizování monolitických aplikací
 description: Kontejnerizování monolitických aplikací, i když není získáte všechny výhody z architektury mikroslužeb, je důležité nasazení výhod, které může doručit okamžitě.
 ms.date: 09/20/2018
-ms.openlocfilehash: 061afe86e0d38f058becde2b3afdb45b4428517a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9e457fba56c8fdf946618fca10285f4c0a343af4
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640819"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690544"
 ---
 # <a name="containerizing-monolithic-applications"></a>Kontejnerizování monolitických aplikací
 
@@ -63,9 +63,9 @@ Jestli se má získat ověření kontejneru nasadit do Azure nebo když se aplik
 
 **Obrázek 4-4**. Publikování aplikace jeden kontejner do služby Azure App Service ze sady Visual Studio
 
-Bez Dockeru v případě potřeby další možnosti, rozhraní nebo závislosti, které nejsou podporované ve službě Azure App Service, jste měli počkat, až tým Azure aktualizovat tyto závislosti ve službě App Service. Nebo jste museli přepínat do jiných služeb, jako je Azure Service Fabric, Azure Cloud Services nebo dokonce i virtuální počítače, kde jste měli další ovládací prvek a můžete nainstalovat na požadovanou součást nebo architekturu pro vaši aplikaci.
+Bez Dockeru v případě potřeby další možnosti, rozhraní nebo závislosti, které nejsou podporované ve službě Azure App Service, jste měli počkat, až tým Azure aktualizovat tyto závislosti ve službě App Service. Nebo jste museli přepínat do jiných služeb, třeba Azure Cloud Services nebo virtuálních počítačů, ve kterém jste měli další ovládací prvek a můžete nainstalovat na požadovanou součást nebo architekturu pro vaši aplikaci.
 
-Podpora kontejnerů v sadě Visual Studio 2017 dává možnost zahrnout cokoliv, co chcete v prostředí pro vaše aplikace, jak ukazuje obrázek 4-4. Vzhledem k tomu, že ji používáte v kontejneru, pokud chcete přidat závislost pro vaši aplikaci, můžete zahrnout závislost image soubor Dockerfile nebo Dockeru.
+Podpora kontejnerů v sadě Visual Studio 2017 a novější dává možnost zahrnout cokoliv, co chcete v prostředí pro vaše aplikace, jak ukazuje obrázek 4-4. Vzhledem k tomu, že ji používáte v kontejneru, pokud chcete přidat závislost pro vaši aplikaci, můžete zahrnout závislost image soubor Dockerfile nebo Dockeru.
 
 Jak jsou také uvedeny v obrázek 4-4 tok publikovat posune bitovou kopii prostřednictvím registru kontejneru. To může být služba Azure Container Registry (registr zavřít svá nasazení v Azure a zabezpečené pomocí skupin Azure Active Directory a účty) nebo jakékoli jiné registru Dockeru, jako je Docker Hubu nebo v místním registru.
 

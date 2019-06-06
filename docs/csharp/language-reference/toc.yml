@@ -5,15 +5,536 @@
     - name: Konfigurace verze jazyka
       href: configure-language-version.md
     - name: 'Klíčová slova jazyka C#'
-      href: keywords/index.md
+      items:
+        - name: Přehled
+          href: keywords/index.md
+        - name: Typy
+          items:
+            - name: Typy hodnot
+              items:
+                - name: Funkce typů hodnot
+                  href: keywords/value-types.md
+                - name: bool
+                  href: keywords/bool.md
+                - name: byte
+                  href: keywords/byte.md
+                - name: char
+                  href: keywords/char.md
+                - name: decimal
+                  href: keywords/decimal.md
+                - name: double
+                  href: keywords/double.md
+                - name: enum
+                  href: keywords/enum.md
+                - name: float
+                  href: keywords/float.md
+                - name: int
+                  href: keywords/int.md
+                - name: long
+                  href: keywords/long.md
+                - name: sbyte
+                  href: keywords/sbyte.md
+                - name: short
+                  href: keywords/short.md
+                - name: struct
+                  href: keywords/struct.md
+                - name: uint
+                  href: keywords/uint.md
+                - name: ulong
+                  href: keywords/ulong.md
+                - name: ushort
+                  href: keywords/ushort.md
+            - name: Typy odkazů
+              items:
+                - name: Funkce odkazových typů
+                  href: keywords/reference-types.md
+                - name: třída
+                  href: keywords/class.md
+                - name: delegát
+                  href: keywords/delegate.md
+                - name: dynamické odkazy
+                  href: keywords/dynamic.md
+                - name: rozhraní
+                  href: keywords/interface.md
+                - name: odkazy objektů
+                  href: keywords/object.md
+                - name: odkazy řetězců
+                  href: keywords/string.md
+            - name: void
+              href: keywords/void.md
+            - name: var
+              href: keywords/var.md
+            - name: Referenční tabulky pro typy
+              items:
+                - name: Tabulka předdefinovaných typů
+                  href: keywords/built-in-types-table.md
+                - name: Tabulka celočíselných typů
+                  href: keywords/integral-types-table.md
+                - name: "Tabulka typů s\_plovoucí desetinnou čárkou"
+                  href: keywords/floating-point-types-table.md
+                - name: Tabulka typů hodnot
+                  href: keywords/value-types-table.md
+                - name: Tabulka výchozích hodnot
+                  href: keywords/default-values-table.md
+                - name: Tabulka implicitních číselných převodů
+                  href: keywords/implicit-numeric-conversions-table.md
+                - name: Tabulka explicitních číselných převodů
+                  href: keywords/explicit-numeric-conversions-table.md
+                - name: Tabulka formátování číselných výsledků
+                  href: keywords/formatting-numeric-results-table.md
+        - name: Modifikátory
+          items:
+            - name: Modifikátory přístupu
+              items:
+                - name: Stručná referenční dokumentace
+                  href: keywords/access-modifiers.md
+                - name: Úrovně přístupnosti
+                  href: keywords/accessibility-levels.md
+                - name: Doména přístupnosti
+                  href: keywords/accessibility-domain.md
+                - name: Omezení používání úrovní přístupu
+                  href: keywords/restrictions-on-using-accessibility-levels.md
+                - name: internal
+                  href: keywords/internal.md
+                - name: private
+                  href: keywords/private.md
+                - name: protected
+                  href: keywords/protected.md
+                - name: public
+                  href: keywords/public.md
+                - name: protected internal
+                  href: keywords/protected-internal.md
+                - name: private protected
+                  href: keywords/private-protected.md
+            - name: abstract
+              href: keywords/abstract.md
+            - name: async
+              href: keywords/async.md
+            - name: const
+              href: keywords/const.md
+            - name: event
+              href: keywords/event.md
+            - name: extern
+              href: keywords/extern.md
+            - name: in (generický modifikátor)
+              href: keywords/in-generic-modifier.md
+            - name: out (generický modifikátor)
+              href: keywords/out-generic-modifier.md
+            - name: override
+              href: keywords/override.md
+            - name: readonly
+              href: keywords/readonly.md
+            - name: sealed
+              href: keywords/sealed.md
+            - name: static
+              href: keywords/static.md
+            - name: unsafe
+              href: keywords/unsafe.md
+            - name: virtual
+              href: keywords/virtual.md
+            - name: volatile
+              href: keywords/volatile.md
+        - name: Klíčová slova příkazů
+          items:
+            - name: Kategorie příkazů
+              href: keywords/statement-keywords.md
+            - name: Příkazy výběru
+              items:
+                - name: if-else
+                  href: keywords/if-else.md
+                - name: – přepínač
+                  href: keywords/switch.md
+            - name: Příkazy iterace
+              items:
+                - name: do
+                  href: keywords/do.md
+                - name: pro
+                  href: keywords/for.md
+                - name: 'foreach, in'
+                  href: keywords/foreach-in.md
+                - name: while
+                  href: keywords/while.md
+            - name: Příkazy skoku
+              items:
+                - name: break
+                  href: keywords/break.md
+                - name: continue
+                  href: keywords/continue.md
+                - name: goto
+                  href: keywords/goto.md
+                - name: return
+                  href: keywords/return.md
+            - name: Příkazy zpracování výjimek
+              items:
+                - name: throw
+                  href: keywords/throw.md
+                - name: try-catch
+                  href: keywords/try-catch.md
+                - name: try-finally
+                  href: keywords/try-finally.md
+                - name: try-catch-finally
+                  href: keywords/try-catch-finally.md
+            - name: Zaškrtnuto a nezaškrtnuto
+              items:
+                - name: Přehled
+                  href: keywords/checked-and-unchecked.md
+                - name: checked
+                  href: keywords/checked.md
+                - name: unchecked
+                  href: keywords/unchecked.md
+            - name: fixed – příkaz
+              href: keywords/fixed-statement.md
+            - name: lock – příkaz
+              href: keywords/lock-statement.md
+        - name: Parametry metody
+          items:
+            - name: Předávání parametrů
+              href: keywords/method-parameters.md
+            - name: params
+              href: keywords/params.md
+            - name: in (modifikátor parametrů)
+              href: keywords/in-parameter-modifier.md
+            - name: ref
+              href: keywords/ref.md
+            - name: out (modifikátor parametrů)
+              href: keywords/out-parameter-modifier.md
+        - name: Klíčová slova oboru názvů
+          items:
+            - name: – obor názvů
+              href: keywords/namespace.md
+            - name: používání
+              items:
+                - name: using – kontexty
+                  href: keywords/using.md
+                - name: using – direktiva
+                  href: keywords/using-directive.md
+                - name: using static – direktiva
+                  href: keywords/using-static.md
+                - name: using – příkaz
+                  href: keywords/using-statement.md
+            - name: extern alias
+              href: keywords/extern-alias.md
+        - name: Klíčová slova operátorů
+          items:
+            - name: as
+              href: keywords/as.md
+            - name: await
+              href: keywords/await.md
+            - name: is
+              href: keywords/is.md
+            - name: new
+              items:
+                - name: 'new – operátor, modifikátor a omezení'
+                  href: keywords/new.md
+                - name: new – operátor
+                  href: keywords/new-operator.md
+                - name: new – modifikátor
+                  href: keywords/new-modifier.md
+                - name: new – omezení
+                  href: keywords/new-constraint.md
+            - name: sizeof
+              href: keywords/sizeof.md
+            - name: typeof
+              href: keywords/typeof.md
+            - name: stackalloc
+              href: keywords/stackalloc.md
+            - name: nameof
+              href: keywords/nameof.md
+        - name: Klíčová slova převodu
+          items:
+            - name: explicit
+              href: keywords/explicit.md
+            - name: implicit
+              href: keywords/implicit.md
+            - name: – operátor
+              href: keywords/operator.md
+        - name: Klíčová slova přístupu
+          items:
+            - name: base
+              href: keywords/base.md
+            - name: this
+              href: keywords/this.md
+        - name: Literálová klíčová slova
+          items:
+            - name: 'null'
+              href: keywords/null.md
+            - name: 'true'
+              href: keywords/true-literal.md
+            - name: 'false'
+              href: keywords/false-literal.md
+            - name: default
+              href: keywords/default.md
+        - name: Kontextová klíčová slova
+          items:
+            - name: Stručná referenční dokumentace
+              href: keywords/contextual-keywords.md
+            - name: add
+              href: keywords/add.md
+            - name: get
+              href: keywords/get.md
+            - name: global
+              href: keywords/global.md
+            - name: partial (typ)
+              href: keywords/partial-type.md
+            - name: partial (metoda)
+              href: keywords/partial-method.md
+            - name: remove
+              href: keywords/remove.md
+            - name: set
+              href: keywords/set.md
+            - name: when (podmínka filtru)
+              href: keywords/when.md
+            - name: where (omezení obecného typu)
+              href: keywords/where-generic-type-constraint.md
+            - name: value
+              href: keywords/value.md
+            - name: yield
+              href: keywords/yield.md
+        - name: Klíčová slova dotazu
+          items:
+            - name: Stručná referenční dokumentace
+              href: keywords/query-keywords.md
+            - name: from – klauzule
+              href: keywords/from-clause.md
+            - name: where – klauzule
+              href: keywords/where-clause.md
+            - name: 'select – klauzule (C#)'
+              href: keywords/select-clause.md
+            - name: group – klauzule
+              href: keywords/group-clause.md
+            - name: into
+              href: keywords/into.md
+            - name: orderby – klauzule
+              href: keywords/orderby-clause.md
+            - name: join – klauzule
+              href: keywords/join-clause.md
+            - name: let – klauzule
+              href: keywords/let-clause.md
+            - name: ascending
+              href: keywords/ascending.md
+            - name: descending
+              href: keywords/descending.md
+            - name: 'on'
+              href: keywords/on.md
+            - name: equals
+              href: keywords/equals.md
+            - name: by
+              href: keywords/by.md
+            - name: in
+              href: keywords/in.md
     - name: 'Operátory jazyka C#'
-      href: operators/index.md
+      items:
+        - name: Přehled
+          href: operators/index.md
+        - name: Aritmetické operátory
+          href: operators/arithmetic-operators.md
+          displayName: '++, --, +, -, *, /, %, +=, -=, *=, /=, %=, checked, unchecked'
+        - name: Logické operátory
+          href: operators/boolean-logical-operators.md
+          displayName: '!, &&, ||, &, |, ^, &=, |=, ^='
+        - name: Bitové operátory a operátory bitového posunu
+          href: operators/bitwise-and-shift-operators.md
+          displayName: '~, &, |, ^, <<, >>, &=, |=, ^=, <<=, >>='
+        - name: Operátory rovnosti
+          href: operators/equality-operators.md
+          displayName: '==, !='
+        - name: Operátory porovnání
+          href: operators/comparison-operators.md
+          displayName: '>, <, >=, <=, greater, less'
+        - name: Operátory pro přístup k členům
+          href: operators/member-access-operators.md
+          displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation'
+        - name: Operátory související s ukazatelem
+          href: operators/pointer-related-operators.md
+          displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'
+        - name: () – operátor
+          href: operators/invocation-operator.md
+        - name: ':: – operátor'
+          href: operators/namespace-alias-qualifer.md
+        - name: + a += – operátory
+          href: operators/addition-operator.md
+          displayName: 'string concatenation, delegate combination, event subscription'
+        - name: '- a -= – operátory'
+          href: operators/subtraction-operator.md
+          displayName: 'delegate removal, event unsubscription'
+        - name: = – operátor
+          href: operators/assignment-operator.md
+        - name: '?: – operátor'
+          href: operators/conditional-operator.md
+        - name: '?? – operátor'
+          href: operators/null-coalescing-operator.md
+        - name: => – operátor
+          href: operators/lambda-operator.md
+        - name: true a false – operátory
+          href: operators/true-false-operators.md
     - name: 'Speciální znaky jazyka C#'
-      href: tokens/index.md
+      items:
+        - name: Přehled
+          href: tokens/index.md
+        - name: $ – interpolace řetězců
+          href: tokens/interpolated.md
+        - name: '@ – doslovný identifikátor'
+          href: tokens/verbatim.md
     - name: 'Direktivy preprocesoru jazyka C#'
-      href: preprocessor-directives/index.md
+      items:
+        - name: Přehled
+          href: preprocessor-directives/index.md
+        - name: '#if'
+          href: preprocessor-directives/preprocessor-if.md
+        - name: '#else'
+          href: preprocessor-directives/preprocessor-else.md
+        - name: '#elif'
+          href: preprocessor-directives/preprocessor-elif.md
+        - name: '#endif'
+          href: preprocessor-directives/preprocessor-endif.md
+        - name: '#define'
+          href: preprocessor-directives/preprocessor-define.md
+        - name: '#undef'
+          href: preprocessor-directives/preprocessor-undef.md
+        - name: '#upozornění'
+          href: preprocessor-directives/preprocessor-warning.md
+        - name: '#error'
+          href: preprocessor-directives/preprocessor-error.md
+        - name: '#line'
+          href: preprocessor-directives/preprocessor-line.md
+        - name: '#oblast'
+          href: preprocessor-directives/preprocessor-region.md
+        - name: '#endregion'
+          href: preprocessor-directives/preprocessor-endregion.md
+        - name: '#pragma'
+          href: preprocessor-directives/preprocessor-pragma.md
+        - name: '#pragma warning'
+          href: preprocessor-directives/preprocessor-pragma-warning.md
+        - name: '#pragma checksum'
+          href: preprocessor-directives/preprocessor-pragma-checksum.md
     - name: 'Možnosti kompilátoru jazyka C#'
-      href: compiler-options/index.md
+      items:
+        - name: Přehled
+          href: compiler-options/index.md
+        - name: Sestavování pomocí programu csc.exe v příkazovém řádku
+          href: compiler-options/command-line-building-with-csc-exe.md
+        - name: 'Postupy: Nastavení proměnných prostředí pro příkazový řádek Visual Studia'
+          href: compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md
+        - name: 'Možnosti kompilátoru C# uvedené podle kategorie'
+          href: compiler-options/listed-by-category.md
+        - name: 'Možnosti kompilátoru C# (abecední pořadí)'
+          href: compiler-options/listed-alphabetically.md
+          items:
+            - name: '@'
+              href: compiler-options/response-file-compiler-option.md
+            - name: '-addmodule'
+              href: compiler-options/addmodule-compiler-option.md
+            - name: '-appconfig'
+              href: compiler-options/appconfig-compiler-option.md
+            - name: '-baseaddress'
+              href: compiler-options/baseaddress-compiler-option.md
+            - name: '-bugreport'
+              href: compiler-options/bugreport-compiler-option.md
+            - name: '-checked'
+              href: compiler-options/checked-compiler-option.md
+            - name: '-codepage'
+              href: compiler-options/codepage-compiler-option.md
+            - name: '-debug'
+              href: compiler-options/debug-compiler-option.md
+            - name: '-define'
+              href: compiler-options/define-compiler-option.md
+            - name: '-delaysign'
+              href: compiler-options/delaysign-compiler-option.md
+            - name: '-deterministic'
+              href: compiler-options/deterministic-compiler-option.md
+            - name: '-doc'
+              href: compiler-options/doc-compiler-option.md
+            - name: '-errorreport'
+              href: compiler-options/errorreport-compiler-option.md
+            - name: '-filealign'
+              href: compiler-options/filealign-compiler-option.md
+            - name: '-fullpaths'
+              href: compiler-options/fullpaths-compiler-option.md
+            - name: '-help, -?'
+              href: compiler-options/help-compiler-option.md
+            - name: '-highentropyva'
+              href: compiler-options/highentropyva-compiler-option.md
+            - name: '-keycontainer'
+              href: compiler-options/keycontainer-compiler-option.md
+            - name: '-keyfile'
+              href: compiler-options/keyfile-compiler-option.md
+            - name: '-langversion'
+              href: compiler-options/langversion-compiler-option.md
+            - name: '-lib'
+              href: compiler-options/lib-compiler-option.md
+            - name: '-link'
+              href: compiler-options/link-compiler-option.md
+            - name: '-linkresource'
+              href: compiler-options/linkresource-compiler-option.md
+            - name: '-main'
+              href: compiler-options/main-compiler-option.md
+            - name: '-moduleassemblyname'
+              href: compiler-options/moduleassemblyname-compiler-option.md
+            - name: '-noconfig'
+              href: compiler-options/noconfig-compiler-option.md
+            - name: '-nologo'
+              href: compiler-options/nologo-compiler-option.md
+            - name: '-nostdlib'
+              href: compiler-options/nostdlib-compiler-option.md
+            - name: '-nowarn'
+              href: compiler-options/nowarn-compiler-option.md
+            - name: '-nowin32manifest'
+              href: compiler-options/nowin32manifest-compiler-option.md
+            - name: '-optimize'
+              href: compiler-options/optimize-compiler-option.md
+            - name: '-out'
+              href: compiler-options/out-compiler-option.md
+            - name: '-pathmap'
+              href: compiler-options/pathmap-compiler-option.md
+            - name: '-pdb'
+              href: compiler-options/pdb-compiler-option.md
+            - name: '-platform'
+              href: compiler-options/platform-compiler-option.md
+            - name: '-preferreduilang'
+              href: compiler-options/preferreduilang-compiler-option.md
+            - name: '-publicsign'
+              href: compiler-options/publicsign-compiler-option.md
+            - name: '-recurse'
+              href: compiler-options/recurse-compiler-option.md
+            - name: '-reference'
+              href: compiler-options/reference-compiler-option.md
+            - name: '-refout'
+              href: compiler-options/refout-compiler-option.md
+            - name: '-refonly'
+              href: compiler-options/refonly-compiler-option.md
+            - name: '-resource'
+              href: compiler-options/resource-compiler-option.md
+            - name: '-subsystemversion'
+              href: compiler-options/subsystemversion-compiler-option.md
+            - name: '-target'
+              href: compiler-options/target-compiler-option.md
+              items:
+                - name: '-target:appcontainerexe'
+                  href: compiler-options/target-appcontainerexe-compiler-option.md
+                - name: '-target:exe'
+                  href: compiler-options/target-exe-compiler-option.md
+                - name: '-target:library'
+                  href: compiler-options/target-library-compiler-option.md
+                - name: '-target:module'
+                  href: compiler-options/target-module-compiler-option.md
+                - name: '-target:winexe'
+                  href: compiler-options/target-winexe-compiler-option.md
+                - name: '-target:winmdobj'
+                  href: compiler-options/target-winmdobj-compiler-option.md
+            - name: '-unsafe'
+              href: compiler-options/unsafe-compiler-option.md
+            - name: '-utf8output'
+              href: compiler-options/utf8output-compiler-option.md
+            - name: '-warn'
+              href: compiler-options/warn-compiler-option.md
+            - name: '-warnaserror'
+              href: compiler-options/warnaserror-compiler-option.md
+            - name: '-win32icon'
+              href: compiler-options/win32icon-compiler-option.md
+            - name: '-win32manifest'
+              href: compiler-options/win32manifest-compiler-option.md
+            - name: '-win32res'
+              href: compiler-options/win32res-compiler-option.md
     - name: 'Chyby kompilátoru jazyka C#'
       href: compiler-messages/index.md
     - name: 'Specifikace konceptu jazyka C# 6.0'

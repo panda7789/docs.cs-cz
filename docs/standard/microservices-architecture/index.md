@@ -2,12 +2,12 @@
 title: Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Mikroslužby jsou modulární a umožňují nezávislé nasazení služby. Kontejnery dockeru (pro systémy Linux a Windows) zjednodušit nasazování a testování seskupí služby a jeho závislosti do jedné jednotky, které je potom spouštět v izolovaném prostředí.
 ms.date: 01/07/2019
-ms.openlocfilehash: a348a9c122ef7f0293a1385aa05dc98f61deab7e
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: f1abeca8bb7eba615545a88862b20b2711b218fd
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66195976"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690632"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET
 
@@ -126,7 +126,7 @@ Editory:
 >
 > **Dylan Reisenberger**, architekt a vedoucí vývoje v Polly
 >
-> **Steve Smith**, Tvůrce softwaru & Trainer na ASPSmith Ltd.
+> **Steve "ardalis" Smith** - softwarový architekt a Trainer - [Ardalis.com](https://ardalis.com)
 >
 > **Ian Cooper**, kódování navrhovat jasnější na
 >

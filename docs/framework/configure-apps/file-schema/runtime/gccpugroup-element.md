@@ -7,71 +7,76 @@ helpviewer_keywords:
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85cfe57f7a3b8cfecfae4c4ae00efaea464e6120
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1251f286a4e6168ef1d18b05288e0c5f353ad828
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674087"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689881"
 ---
 # <a name="gccpugroup-element"></a>\<GCCpuGroup> Element
-Určuje, zda uvolňování podporuje více skupin procesorů.  
-  
- \<Konfigurace >  
-\<modul runtime >  
-\<GCCpuGroup>  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```xml  
-<GCCpuGroup    
-   enabled="true|false"/>  
-```  
-  
-## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
-  
-### <a name="attributes"></a>Atributy  
-  
-|Atribut|Popis|  
-|---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda uvolňování podporuje více skupin procesorů.|  
-  
-## <a name="enabled-attribute"></a>Atribut enabled  
-  
-|Hodnota|Popis|  
-|-----------|-----------------|  
-|`false`|Uvolňování paměti kolekce nepodporuje více skupin procesorů. Toto nastavení je výchozí.|  
-|`true`|Uvolňování paměti podporuje více skupin procesorů, pokud je povolené uvolnění paměti serveru.|  
-  
-### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
-  
-### <a name="parent-elements"></a>Nadřazené elementy  
-  
-|Prvek|Popis|  
-|-------------|-----------------|  
-|`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
-  
-## <a name="remarks"></a>Poznámky  
- Když počítač má více skupin procesorů a uvolňování paměti serveru je povolená (najdete v článku [ \<gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) element), povolení tohoto prvku rozšiřuje uvolňování paměti ve všech skupinách procesoru a přejde do všech jader účet při vytváření a rozložení zátěže haldy.  
-  
+
+Určuje, zda uvolňování podporuje více skupin procesorů.
+
+\<Konfigurace > \
+\<modul runtime > \
+\<GCCpuGroup>
+
+## <a name="syntax"></a>Syntaxe
+
+```xml
+<GCCpuGroup
+   enabled="true|false"/>
+```
+
+## <a name="attributes-and-elements"></a>Atributy a elementy
+
+Následující části popisují atributy, podřízené prvky a nadřazené prvky.
+
+### <a name="attributes"></a>Atributy
+
+|Atribut|Popis|
+|---------------|-----------------|
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda uvolňování podporuje více skupin procesorů.|
+
+## <a name="enabled-attribute"></a>Atribut enabled
+
+|Value|Popis|
+|-----------|-----------------|
+|`false`|Uvolňování paměti kolekce nepodporuje více skupin procesorů. Toto nastavení je výchozí.|
+|`true`|Uvolňování paměti podporuje více skupin procesorů, pokud je povolené uvolnění paměti serveru.|
+
+### <a name="child-elements"></a>Podřízené elementy
+
+Žádné
+
+### <a name="parent-elements"></a>Nadřazené elementy
+
+|Prvek|Popis|
+|-------------|-----------------|
+|`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
+|`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|
+
+## <a name="remarks"></a>Poznámky
+
+Když počítač má více skupin procesorů a uvolňování paměti serveru je povolená (najdete v článku [ \<gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) element), povolení tohoto prvku rozšiřuje uvolňování paměti ve všech skupinách procesoru a přejde do všech jader účet při vytváření a rozložení zátěže haldy.
+
 > [!NOTE]
->  Tento element se vztahují pouze k vlákna uvolňování paměti. Pokud chcete povolit modul runtime bude distribuovat Uživatelská vlákna ve všech skupinách procesoru, musíte také povolit [< Thread_UseAllCpuGroups >](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) elementu.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak povolit uvolňování paměti pro více skupin procesorů.  
-  
-```xml  
-<configuration>  
-   <runtime>  
-      <GCCpuGroup enabled="true"/>  
-      <gcServer enabled="true"/>  
-   </runtime>  
-</configuration>  
-```  
-  
+> Tento element se vztahují pouze k vlákna uvolňování paměti. Pokud chcete povolit modul runtime bude distribuovat Uživatelská vlákna ve všech skupinách procesoru, musíte také povolit [ \<Thread_UseAllCpuGroups >](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) elementu.
+
+## <a name="example"></a>Příklad
+
+Následující příklad ukazuje, jak povolit uvolňování paměti pro více skupin procesorů.
+
+```xml
+<configuration>
+   <runtime>
+      <GCCpuGroup enabled="true"/>
+      <gcServer enabled="true"/>
+   </runtime>
+</configuration>
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)

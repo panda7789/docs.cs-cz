@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 05/06/2019
-ms.openlocfilehash: 8d6ff6bc55384281119600f2323212441c1815e9
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: f7dc95a9f0b652f1509720fb987cbdb88f64e78c
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452479"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689249"
 ---
 # <a name="whats-new-in-net-core-30-preview-5"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 5)
 
@@ -364,7 +364,7 @@ Windows nabízí bohaté nativní rozhraní API v podobě bez stromové struktur
 
 <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> Typů podporuje protokol HTTP/2. Podpora je momentálně zakázané, ale je možné zapnout voláním `AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);` před použitím <xref:System.Net.Http.HttpClient>. Podpora HTTP/2 můžete povolit také tak, že nastavíte `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2SUPPORT` proměnnou prostředí, aby `true` před spuštěním vaší aplikace.
 
-Pokud je povolená HTTP/2, verzi protokolu HTTP se vyjedná přes protokol TLS/ALPN a HTTP/2 bude použit pouze, pokud server vybere jeho použití.
+Pokud je povolená HTTP/2, verzi protokolu HTTP se vyjedná přes protokol TLS/ALPN a HTTP/2 bude použit pouze, pokud server rozhodne ho použít.
 
 ## <a name="tls-13--openssl-111-on-linux"></a>TLS verze 1.3 & OpenSSL 1.1.1 v Linuxu
 

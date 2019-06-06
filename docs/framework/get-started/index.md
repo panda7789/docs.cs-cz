@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4c9e85b2a884f6f348d801a27b7f362bd0236b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16e20214981bb5c0f96b26f34be99026aac19266
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644048"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690185"
 ---
 # <a name="get-started-with-the-net-framework"></a>Začínáme s rozhraním .NET Framework
 
@@ -53,7 +53,7 @@ Obecně platí že byste neměli odinstalovávat verze rozhraní .NET Framework,
 
 - Pokud aplikaci, kterou použijete, závisí na konkrétní verzi rozhraní .NET Framework, tato aplikace může přerušit, pokud je verze odebrána.
 
-- Některé verze rozhraní .NET Framework jsou místní aktualizace na starší verze. Například [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] je místní aktualizace na verzi 2.0 a 4.8 rozhraní .NET Framework je místní aktualizace pro verze 4 až 4.7.2. Další informace najdete v tématu [verze rozhraní .NET Framework a závislosti](../migration-guide/versions-and-dependencies.md).
+- Některé verze rozhraní .NET Framework jsou místní aktualizace na starší verze. Například je místní aktualizace na verzi 2.0 rozhraní .NET Framework 3.5 a 4.8 rozhraní .NET Framework je místní aktualizace pro verze 4 až 4.7.2. Další informace najdete v tématu [verze rozhraní .NET Framework a závislosti](../migration-guide/versions-and-dependencies.md).
 
 Na verze Windows starší než Windows 8, pokud se rozhodnete k odebrání rozhraní .NET Framework, vždy použijte **programy a funkce** z ovládacích panelů k jeho odinstalaci. Nikdy ručně odebrat verzi rozhraní .NET Framework. V systému Windows 8 a novější verze rozhraní .NET Framework je součástí operačního systému a nedá se odinstalovat nezávisle na sobě.
 

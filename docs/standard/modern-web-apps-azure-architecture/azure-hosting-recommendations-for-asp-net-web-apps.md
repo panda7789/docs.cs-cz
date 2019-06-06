@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: a93009e66d63aa7d9c3b60951d43eafa3c351a63
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: dab852cb72ee98d7e3e4a871f492a5d69b4ec580
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053268"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690496"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení pro webové aplikace ASP.NET Core hostování Azure
 
@@ -48,18 +48,11 @@ App Service Web Apps nabízí plně spravovaná platforma optimalizovaná pro ho
 
 Azure App Service je nejlepší volbou pro většinu webových aplikací. Nasazení a správa jsou integrované do platformy, weby se rychle škálují pro zvládnutí vysokého přenosového zatížení a integrované zatížení vyrovnávání a traffic manager zajišťují vysokou dostupnost. Můžete přesunout existující weby do služby Azure App Service snadno se online nástroje pro migraci, použijte open source aplikaci z Galerie webových aplikací nebo vytvoření nového webu pomocí rozhraní a nástrojů podle vašeho výběru. Funkce WebJobs umožňuje snadno přidat úlohy na pozadí zpracování do webové aplikace služby App Service.
 
-### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
-
-Azure Kubernetes Service (AKS) spravuje hostované prostředí Kubernetes, tak rychle a snadno nasazovat a spravovat kontejnerizované aplikace bez znalosti Orchestrace kontejnerů. Také odstraní starosti související s probíhajícími operacemi a údržbou díky zřizování, upgradování a škálování prostředků na vyžádání, bez nutnosti přepínat aplikace do offline režimu.
-
-AKS snižuje složitost a provozní režií při správě clusteru Kubernetes tím spojenou díky přenášení většiny zodpovědnosti na Azure. Jako hostovaná služba Kubernetes, Azure stará o důležité úlohy jako sledování stavu a údržby za vás. Navíc Platíte pouze za agentské uzly v rámci vašich clusterů, ne za hlavní uzly. Jako spravovaná služba Kubernetes poskytuje AKS:
-
-- Automatické upgrady verzí Kubernetes a opravy chyb.
-- Snadné škálování clusterů.
-- Hostovanou rovinu řízení (hlavní uzly).
-- Úspory nákladů – Platíte pouze za spuštěné uzly fondu agentů.
-
 S Azure stará o správu uzlů ve vašem clusteru AKS už nepotřebujete provádět mnoho úloh ručně, například upgrady clusteru. Protože Azure stará o tyto důležité úlohy údržby za vás, neposkytuje AKS přímý přístup (například pomocí protokolu SSH) do clusteru.
+
+#### <a name="web-app-for-containers"></a>Web App for Containers
+
+Web App for Containers z umožňuje službě Azure App Service můžete přenést vlastní Image kontejnerů ve formátu Dockeru a snadno nasadíte a je spouštět ve velkém s využitím Azure. Web App for Containers podporuje kontejnery Linux i Windows a může se škálovat pro podporu implementace velkého rozsahu.
 
 ### <a name="azure-virtual-machines"></a>Azure Virtual Machines
 

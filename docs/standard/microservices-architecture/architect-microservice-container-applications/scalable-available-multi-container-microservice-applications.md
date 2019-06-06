@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Objevte možnosti Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev mezer při vývoji životního cyklu aplikací Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: 27155736c6b5308d4794b17e5f5bd0b93109b5c1
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: a0f7efa4b21aedfb574659df283adc65741cefdb
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66196040"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690508"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -27,7 +27,7 @@ Se dostat nad rámec správu jednotlivých kontejnerů nebo velmi jednoduché sl
 
 Z pro architekturu a vývoj pohledu Pokud vytváříte velký podnik skládá z aplikací založených na mikroslužbách, je důležité znát následující platformy a produkty, které podporují pokročilé scénáře:
 
-**Clustery a orchestrátorů.** Když potřebujete pro horizontální navýšení kapacity aplikace v mnoha hostitelích Dockeru, jako při velkých aplikací založených na mikroslužbách, je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster podle abstrahovat složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Příklady orchestrátorů: Azure Service Fabric a Kubernetes. Kubernetes je k dispozici v Azure pomocí služby Azure Kubernetes Service.
+**Clustery a orchestrátorů.** Když potřebujete pro horizontální navýšení kapacity aplikace v mnoha hostitelích Dockeru, jako při velkých aplikací založených na mikroslužbách, je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster podle abstrahovat složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Kubernetes je příkladem orchestrator a je k dispozici v Azure pomocí služby Azure Kubernetes Service.
 
 **Plánovači.** *Plánování* znamená, že chcete mít možnost pro správce ke spuštění kontejnerů v clusteru, tak také poskytují uživatelské rozhraní. Plánovač clusteru má několik odpovědnosti: efektivně využívat prostředky clusteru, omezení zadaná uživatelem pro efektivní kontejnery pro vyrovnávání zatížení napříč uzly nebo hostitele a být odolnější proti chybám při zajištění vysoké dostupnost.
 
@@ -51,31 +51,9 @@ Koncepty cluster a Plánovač jsou úzce souvisí, takže produkty k dispozici o
 
 > [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba Orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu clusteru Kubernetes, nasazení a provoz.
 
-### <a name="azure-service-fabric"></a>Azure Service Fabric
-
-![Logo Azure Service Fabric](./media/image27.png)
-
-> [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma mikroslužeb Microsoftu pro sestavování aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) ze služeb a vytváří clustery počítačů. Service Fabric dokáže nasadit služby, kontejnery nebo jako obyčejný procesy. Může dokonce kombinaci služby v procesech se službami v kontejnerech v rámci stejné aplikace a clusteru.
->
-> *Service Fabric* clustery je možné nasadit v Azure, místně nebo v libovolném cloudu. Nasazení v Azure je však zjednodušen spravovaný přístup.
->
-> *Service Fabric* poskytuje další a volitelné doporučené [programovacích modelů Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) jako [stavové služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction) .
->
-> *Service Fabric* je zavedený ve Windows (roky vyvíjejí Windows), méně až po zralé v systému Linux.
->
-> Od verze 2017 jsou podporovány kontejnery Linux i Windows v Service Fabric.
-
-### <a name="azure-service-fabric-mesh"></a>Síť Azure Service Fabric
-
-![Logo Azure Service Fabric mřížky](./media/image35.png)
-
-> [*Azure Service Fabric mřížky* ](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-overview) nabízí stejnou spolehlivost, kritických pro chod výkonu a škálování než Service Fabric, ale nabízí plně spravované a bez serveru platformy. Není nutné ke správě clusteru, virtuální počítače, úložiště nebo síťové konfigurace. Můžete soustředit jen na vývoj vaší aplikace.
->
-> *Service Fabric mřížky* podporuje kontejnery Windows i Linuxem díky tomu umožňuje vývoj s využitím libovolný programovací jazyk a rozhraní dle vlastního výběru.
-
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Pomocí orchestrátorů kontejneru ve službě Microsoft Azure
 
-Několik dodavatelů cloud nabízí podporu kontejnerů Dockeru a Docker clusterů a podporu Orchestrace, včetně Microsoft Azure, Amazon EC2 Container Service a modul kontejnerů Google. Microsoft Azure podporuje Docker clusteru a orchestrator prostřednictvím Azure Kubernetes Service (AKS) a Azure Service Fabric a Azure Service Fabric mřížky.
+Několik dodavatelů cloud nabízí podporu kontejnerů Dockeru a Docker clusterů a podporu Orchestrace, včetně Microsoft Azure, Amazon EC2 Container Service a modul kontejnerů Google. Microsoft Azure podporuje Docker clusteru a orchestrator prostřednictvím Azure Kubernetes Service (AKS).
 
 ## <a name="using-azure-kubernetes-service"></a>Používání služby Azure Kubernetes
 
@@ -156,4 +134,4 @@ Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prost
 
 >[!div class="step-by-step"]
 >[Předchozí](resilient-high-availability-microservices.md)
->[další](using-azure-service-fabric.md)
+>[další](docker-application-development-process.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ddd075de6152d7f040d69682dde0361843971922
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0821b4a680db4822cea1787edb095309e6333cbf
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631834"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690164"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (rozšíření ladění SOS)
 
@@ -68,11 +68,11 @@ Nástroj SOS Debugging Extension (SOS.dll) pomáhá při ladění spravovaných 
 |**HeapStat** [ **- inclUnrooted** &#124; **-iu**]|Zobrazí velikosti generací pro každou haldu a celkové volné místo v každé generaci v každé haldě. Pokud-**inclUnrooted** zadána, sestava obsahuje informace o spravovaných objektech z haldy uvolňování paměti kolekce, která je již nezačínají kořenem.|
 |**HistClear**|Uvolní všechny prostředky používané v řady `Hist` příkazy.<br /><br /> Obecně platí, není potřeba explicitně volat `HistClear`, protože každý `HistInit` vyčistí předchozí zdroje.|
 |**HistInit**|Inicializuje struktury SOS ze zátěžového protokolu uloženého v laděné položce.|
-|**HistObj** *<obj_address>*|Zkontroluje všechny záznamy přemístění zátěžového protokolu a zobrazí řetězec přemísťování uvolňování paměti, který může vést na adresu předanou jako argument.|
-|**HistObjFind**  *<obj_address>*|Zobrazí všechny položky protokolu, které odkazují na objekt na zadané adrese.|
+|**HistObj** *\<obj_address>*|Zkontroluje všechny záznamy přemístění zátěžového protokolu a zobrazí řetězec přemísťování uvolňování paměti, který může vést na adresu předanou jako argument.|
+|**HistObjFind**  *\<obj_address>*|Zobrazí všechny položky protokolu, které odkazují na objekt na zadané adrese.|
 |**HistRoot** *\<root>*|Zobrazí informace týkající se propagace a přemístění zadaného kořenu.<br /><br /> Hodnotu kořenu lze použít ke sledování pohybu objektu skrz uvolňování paměti.|
 |**IP2MD** \< *kód adresa*>|Zobrazí `MethodDesc` struktury na zadané adrese v kódu, který byl zkompilován JIT Kompilátorem.|
-|`ListNearObj` (`lno`) *<obj_address>*|Zobrazí objekty před a za zadanou adresou. Tento příkaz vyhledá adresu v haldě uvolňování paměti vypadající jako platný začátek spravovaného objektu (podle platné tabulky metod) a objekt následující za adresou argumentu.|
+|`ListNearObj` (`lno`) *\<obj_address>*|Zobrazí objekty před a za zadanou adresou. Tento příkaz vyhledá adresu v haldě uvolňování paměti vypadající jako platný začátek spravovaného objektu (podle platné tabulky metod) a objekt následující za adresou argumentu.|
 |**MinidumpMode** [**0**] [**1**]|Zabrání ve spuštění nebezpečných příkazů pomocí minimálního výpisu.<br /><br /> Předejte **0** chcete zakázat tuto funkci nebo **1** tuto funkci povolil. Ve výchozím nastavení **MinidumpMode** nastavena na hodnotu **0**.<br /><br /> Vytvořený pomocí **.dump /m** příkazu nebo **.dump** příkaz mají omezenou data specifická pro modul CLR a bylo možné správně spustit pouze podmnožinu příkazů SOS. Některé příkazy mohou selhat s neočekávanými chybami, jelikož požadované oblasti paměti nejsou zmapovány nebo jsou zmapovány pouze částečně. Tato možnost zabraňuje ve spuštění nebezpečných příkazů s minimálním výpisem.|
 |**Name2EE** \< *název modulu*> \<*název typu nebo metodě*><br /><br /> -nebo-<br /><br /> **Name2EE** \< *název modulu*> **!** \< *název typu nebo metodě*>|Zobrazí `MethodTable` strukturu a `EEClass` strukturu pro zadaný typ nebo metodu v zadaném modulu.<br /><br /> Zadaný modul musí být načten v procesu.<br /><br /> K získání správného názvu typu, procházení s využitím modulu [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). Můžete také předat `*` jako modul parametr name vyhledat všechny načtené spravované moduly. *Název modulu* parametr může být také název ladicího programu pro modul, jako například `mscorlib` nebo `image00400000`.<br /><br /> Tento příkaz podporuje syntaxi ladicího programu Windows <`module`>`!`<`type`>. Typ musí být plně kvalifikovaný.|
 |**ObjSize** [\<*adresy objektu*>] &#124; [ **-agregační**] [ **-stat**]|Zobrazí velikost zadaného objektu. Pokud nezadáte žádné parametry, **ObjSize** příkaz zobrazuje velikost všech objektů nalezených ve spravovaných vláknech, zobrazí všechny popisovače systému uvolňování paměti v procesu a sečte velikost všech objektů, na které odkazují tyto popisovače. **ObjSize** příkaz zahrnuje velikost všech podřízených objektů včetně objektu nadřazeného.<br /><br /> **-Agregační** možnost se dá použít ve spojení s **-stat** argument pro získání podrobného zobrazení typů, které stále začínají kořenem. S použitím **! dumpheap-stat** a **! objsize-aggregate - stat**, můžete určit, které objekty již nezačínají kořenem a diagnostikovat různé problémy s pamětí.|

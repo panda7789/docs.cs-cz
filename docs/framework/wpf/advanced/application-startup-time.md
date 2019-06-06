@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: 72207861850875f08786401aacf7b911b2a5b1f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3dcd46f1158814b836c7491cf1ed3ac468122ad
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777127"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689338"
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
 Množství času, který je požadován pro spuštění aplikace WPF může značně lišit. Toto téma popisuje různé postupy pro zkrácení doby spuštění vnímaná, ve skutečnosti pro aplikace Windows Presentation Foundation (WPF).  
@@ -81,7 +81,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
   
  Zvažte instalaci certifikátu certifikační Autority v klientském počítači, nebo nepoužívejte Authenticode, pokud je to možné. Pokud víte, že vaše aplikace nemusí důkazy vydavatele, není nutné platit náklady na ověření podpisu.  
   
- Počínaje [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], existuje možnost konfigurace, která umožňuje ověření pomocí technologie Authenticode byla vynechána. Chcete-li to provést, přidejte do souboru app.exe.config následující nastavení:  
+ Spuštění v rozhraní .NET Framework 3.5, existuje možnost konfigurace, která umožňuje ověření pomocí technologie Authenticode byla vynechána. Chcete-li to provést, přidejte do souboru app.exe.config následující nastavení:  
   
 ```xml  
 <configuration>  

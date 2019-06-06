@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Class attribute
 - x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-ms.openlocfilehash: 5f7b072e90e92070dd7fda2f0ad44814009268b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: ee94d7bf52f3fb2ea534cdb2f44d0be2cc8699eb
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025415"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689411"
 ---
 # <a name="xclass-directive"></a>x:Class – direktiva
 Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-behind částečné třídy. Kód částečná třída je definována v samostatném souboru kódu v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] jazyka, zatímco částečné třídy kód se obvykle vytvoří pomocí generování kódu během kompilace XAML.  
@@ -52,7 +52,7 @@ Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-be
  Na určité úrovni architektury význam `x:Class` není definovaná v rozhraní .NET Framework XAML Services. Je to proto, že rozhraní .NET Framework XAML Services neurčuje programovací model, ve které XAML jsou připojené značek a kódu zálohování. Další způsoby použití `x:Class` směrnice může implementovat určité rozhraní, které používají programovací modely nebo aplikačních modelů pro definování připojení značky XAML a na základě CLR kódu na pozadí. Každé rozhraní, může mít svůj vlastní akce sestavení, které umožňují některé chování nebo konkrétní součásti, které musí být součástí prostředí pro sestavení. V rámci akce sestavení také může lišit v závislosti na konkrétní jazyk CLR, který se používá pro modelu code-behind.  
   
 ## <a name="xclass-in-the-wpf-programming-model"></a>x: Class v programovací Model WPF  
- V aplikacích WPF a aplikační model WPF `x:Class` mohou být deklarovány jako atribut pro libovolný element, který je kořenem souboru XAML a je kompilovaný (kde je zahrnuta XAML v projektu aplikace WPF s `Page` akce sestavení), nebo < C4 > <xref:System.Windows.Application>  kořen v definici aplikace kompilovanou aplikaci WPF. Deklarování `x:Class` na element než kořenové stránky nebo kořenový adresář aplikace, nebo WPF XAML soubor, který se zkompiluje, způsobí chybu kompilace v části [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] a [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] kompilátoru WPF XAML. Informace o dalších aspektech `x:Class` zpracování v subsystému WPF naleznete v tématu [použití modelu Code-Behind a XAML v subsystému WPF](../wpf/advanced/code-behind-and-xaml-in-wpf.md).  
+ V aplikacích WPF a aplikační model WPF `x:Class` mohou být deklarovány jako atribut pro libovolný element, který je kořenem souboru XAML a je kompilovaný (kde je zahrnuta XAML v projektu aplikace WPF s `Page` akce sestavení), nebo < C4 > <xref:System.Windows.Application>  kořen v definici aplikace kompilovanou aplikaci WPF. Deklarování `x:Class` na element než kořenové stránky nebo kořenový adresář aplikace, nebo WPF XAML soubor, který se zkompiluje, způsobí chybu kompilace v části [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] i kompilátoru .NET Framework 3.5 WPF XAML. Informace o dalších aspektech `x:Class` zpracování v subsystému WPF naleznete v tématu [použití modelu Code-Behind a XAML v subsystému WPF](../wpf/advanced/code-behind-and-xaml-in-wpf.md).  
   
 ## <a name="xclass-for-windows-workflow-foundation"></a>x: Class pro Windows Workflow Foundation  
  Pro Windows Workflow Foundation `x:Class` názvy třídy vlastní aktivity skládá zcela v XAML nebo názvy částečné třídy stránky XAML pro Návrhář aktivity s kódem na pozadí.  

@@ -2,12 +2,12 @@
 title: Komunikace v architektuře mikroslužeb
 description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami vysvětlení důsledků synchronní a asynchronní způsoby.
 ms.date: 09/20/2018
-ms.openlocfilehash: 7f7a65ef53d401a8533f82168db5a412d5ac9756
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 25d99d3d9b00b8c20c5ded6d8b40c77fcbe0eb46
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644341"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690551"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 
@@ -67,9 +67,9 @@ Následující části popisují různé styly komunikace můžete zvážit pou�
 
 ## <a name="communication-styles"></a>Styly komunikace
 
-Existuje mnoho protokolů a volby, které můžete použít pro komunikaci, v závislosti na typu komunikaci, kterou chcete použít. Pokud používáte synchronní založené na požadavku/odpovědi komunikační mechanizmus, protokoly, například HTTP a ZBÝVAJÍCÍ přístupy jsou nejčastější, zejména v případě, že publikujete služby mimo cluster mikroslužeb nebo hostitele Dockeru. Pokud jste komunikace mezi službami interně (v rámci hostitele nebo mikroslužeb cluster Dockeru), můžete také použít binární formát komunikačních mechanizmů (např. Vzdálená komunikace Service Fabric nebo WCF pomocí protokolu TCP a binární formát). Alternativně můžete použít asynchronní komunikaci založenou na zprávách mechanismy, jako je například AMQP.
+Existuje mnoho protokolů a volby, které můžete použít pro komunikaci, v závislosti na typu komunikaci, kterou chcete použít. Pokud používáte synchronní založené na požadavku/odpovědi komunikační mechanizmus, protokoly, například HTTP a ZBÝVAJÍCÍ přístupy jsou nejčastější, zejména v případě, že publikujete služby mimo cluster mikroslužeb nebo hostitele Dockeru. Pokud jste komunikace mezi službami interně (v rámci hostitele nebo mikroslužeb cluster Dockeru), můžete také použít binární formát komunikačních mechanizmů (např. WCF pomocí protokolu TCP a binární formát). Alternativně můžete použít asynchronní komunikaci založenou na zprávách mechanismy, jako je například AMQP.
 
-Existují také více formáty zpráv, jako je JSON nebo XML, nebo dokonce binární formáty, které může být efektivnější. Pokud váš zvolený binárním formátu není standard, není pravděpodobně vhodné veřejně publikování vašich služeb pomocí tohoto formátu. Můžete použít nestandardní formát pro interní komunikaci mezi mikroslužby. Můžete tak učinit při komunikaci mezi mikroslužbami v Dockeru hostitele nebo mikroslužeb clusteru (orchestrátorů Dockeru nebo Azure Service Fabric) nebo pro vlastní klientské aplikace, které komunikují se mikroslužby.
+Existují také více formáty zpráv, jako je JSON nebo XML, nebo dokonce binární formáty, které může být efektivnější. Pokud váš zvolený binárním formátu není standard, není pravděpodobně vhodné veřejně publikování vašich služeb pomocí tohoto formátu. Můžete použít nestandardní formát pro interní komunikaci mezi mikroslužby. Můžete tak učinit při komunikaci mezi mikroslužbami v Dockeru hostitele nebo mikroslužeb clusteru (například Docker orchestrátorů) nebo pro vlastní klientské aplikace, které komunikují se mikroslužby.
 
 ### <a name="requestresponse-communication-with-http-and-rest"></a>Žádost/odpověď komunikaci přes protokol HTTP a REST
 

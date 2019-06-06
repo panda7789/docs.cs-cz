@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6aef46db47f881d6a15cc1e58d46219a80194b0
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: b426eaaa2dab4d54ea4c82483c079428f3bfac57
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456456"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689919"
 ---
 # <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion > – Element
 Určuje, zda by modul runtime měl při porovnávání řetězců použít starší pořadí řazení.  
@@ -44,7 +44,7 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
   
 |Value|Popis|  
 |-----------|-----------------|  
-|4096|ID národního prostředí, které představuje alternativní pořadí řazení. V tomto případě hodnota 4096 představuje pořadí řazení [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)] a starší verze.|  
+|4096|ID národního prostředí, které představuje alternativní pořadí řazení. V tomto případě hodnota 4096 představuje pořadí řazení rozhraní .NET Framework 3.5 a starší verze.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,7 +57,7 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- Protože porovnání řetězců, řazení a operace velikosti písmen provádět <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> třídu v rozhraní .NET Framework 4 v souladu s standardem Unicode 5.1, výsledky metod porovnání řetězců, jako <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> může lišit od předchozí verze rozhraní .NET Framework. Pokud vaše aplikace závisí na chování starších verzí, můžete obnovit porovnání řetězců a pravidla řazení používaná v [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)] a předchozích verzích přidáním `<CompatSortNLSVersion>` prvku v konfiguračním souboru vaší aplikace.  
+ Protože porovnání řetězců, řazení a operace velikosti písmen provádět <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> třídu v rozhraní .NET Framework 4 v souladu s standardem Unicode 5.1, výsledky metod porovnání řetězců, jako <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> může lišit od předchozí verze rozhraní .NET Framework. Pokud vaše aplikace závisí na chování starších verzí, můžete obnovit porovnání řetězců a řazení pravidel používaných v rozhraní .NET Framework 3.5 a starších verzí včetně `<CompatSortNLSVersion>` prvku v konfiguračním souboru vaší aplikace.  
   
 > [!IMPORTANT]
 >  Obnovení starších pravidel porovnání a řazení řetězců vyžaduje, aby v místním systému byla k dispozici dynamická knihovna sort00001000.dll.  
@@ -76,13 +76,13 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
 sta follows a in the sort order.  
 ```  
   
- Toto je zcela liší od výstupu, který se zobrazí, pokud příklad spustíte ve [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
+ Toto je zcela liší od výstupu, který se zobrazí při spuštění v příkladu v rozhraní .NET Framework 3.5.  
   
 ```  
 sta equals a in the sort order.  
 ```  
   
- Pokud přidáte následující konfigurační soubor do vzorového adresáře a spusťte příklad v rozhraní .NET Framework 4, výstup je však stejný jako, který v příkladu vytvořen při spuštění [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
+ Ale pokud přidáte následující konfigurační soubor do vzorového adresáře a spusťte příklad v rozhraní .NET Framework 4, výstup je stejná jako v příkladu vytvořen při spuštění v rozhraní .NET Framework 3.5.  
   
 ```xml  
 <?xml version ="1.0"?>  

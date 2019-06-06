@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-ms.openlocfilehash: ca0c1b466f5a89730c72f32321394ccfc6d9c7a2
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 6ca7986513d1a6cbe160ca1a0af6699c323aac7e
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457356"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690652"
 ---
 # <a name="generics-in-xaml"></a>Obecné typy v jazyku XAML
 Rozhraní .NET Framework XAML Services jak je implementován v oboru názvů System.Xaml poskytuje podporu pro používání obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucování omezení voláním příslušné `Add` metodu pro případy, obecné kolekce. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v XAML.  
@@ -40,7 +40,7 @@ Rozhraní .NET Framework XAML Services jak je implementován v oboru názvů Sys
   
  V WPF a cílí na rozhraní .NET Framework 4, můžete použít funkce XAML 2009 spolu s `x:TypeArguments`, ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
   
- Vlastní pracovní postupy v modelu Windows Workflow Foundation pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] nepodporují použití obecných XAML.  
+ Vlastní pracovní postupy v modelu Windows Workflow Foundation pro .NET Framework 3.5 nepodporují použití obecných XAML.  
   
 ## <a name="see-also"></a>Viz také:
 

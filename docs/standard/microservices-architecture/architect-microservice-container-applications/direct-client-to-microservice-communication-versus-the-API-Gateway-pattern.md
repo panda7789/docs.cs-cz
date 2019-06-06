@@ -2,12 +2,12 @@
 title: Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 description: Pochopení rozdílů a používá model brány rozhraní API a přímá komunikace klienta mikroslužeb.
 ms.date: 01/07/2019
-ms.openlocfilehash: 433ad8bc8204a9a57b8b494040a9de6c533bcca8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4b169d5a9542b10726a36b65328bc6a3dc3839ef
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641399"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690359"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 
@@ -146,7 +146,7 @@ V této příručce a odkaz na ukázkovou aplikaci (aplikaci eShopOnContainers) 
 
 [Ocelot](https://github.com/ThreeMammals/Ocelot) je lightweight Gateway rozhraní API, doporučuje se pro jednodušší přístupy. Ocelot je zvláště vytvořené brány založené na rozhraní API pro architekturu mikroslužeb, potřebujete jednotné body vstupu v jejich systému otevřít zdroj .NET Core. Je jednoduchý, rychlý, škálovatelný a poskytuje směrování a ověřování mezi mnoho dalších funkcí.
 
-Hlavní důvod, proč zvolit Ocelot pro [aplikaci eShopOnContainers odkazovat aplikace](https://github.com/dotnet-architecture/eShopOnContainers) totiž Ocelot je .NET Core zjednodušené rozhraní API brány, kterou můžete nasadit ve stejném prostředí nasazení aplikace, pokud nasazujete mikroslužby a kontejnery, například hostitele Docker, Kubernetes, Service Fabric, atd. A protože je založen na .NET Core, je multiplatformní můžete nasadit v systému Linux nebo Windows.
+Hlavní důvod, proč zvolit Ocelot pro [aplikaci eShopOnContainers odkazovat aplikace](https://github.com/dotnet-architecture/eShopOnContainers) totiž Ocelot je .NET Core zjednodušené rozhraní API brány, kterou můžete nasadit ve stejném prostředí nasazení aplikace, pokud nasazujete mikroslužby/kontejnery, jako je například hostitele Docker, Kubernetes, atd. A protože je založen na .NET Core, je multiplatformní můžete nasadit v systému Linux nebo Windows.
 
 Předchozí diagramy zobrazující vlastní rozhraní API brány spouštěných v kontejnerech jsou přesně, jak můžete také spustit Ocelot v kontejneru a aplikací založených na mikroslužbách.
 
@@ -185,7 +185,7 @@ Po počáteční architektury a vysvětlení části vzorce, následující čá
 - **Udi Dahan. Služba orientovaný složení** \
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
-- **Clemense Vasterse. Zasílání zpráv a Mikroslužby na 2016 GOTO (video)** \
+- **Clemense Vasterse. Zasílání zpráv a Mikroslužby na 2016 GOTO (video)**  \
   <https://www.youtube.com/watch?v=rXi5CLjIQ9k>
 
 - **Brána rozhraní API v kostce** (série kurzů ASP.net Core Brána rozhraní API) \

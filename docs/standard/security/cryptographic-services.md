@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fa05fe1e170a0285df73d179ef39db6301059ac8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 1f773b6f7d0b8b4e0b8647b7086d8782d1afbb93
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490960"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690528"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 
@@ -266,7 +266,7 @@ Náhodné generování čísel je nedílnou součástí mnoha kryptografické op
 
 ## <a name="clickonce-manifests"></a>Manifesty ClickOnce
 
-V [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], následující šifrovacích tříd umožňují získat a zkontrolovat informace o manifestu podpisy pro aplikace, které jsou nasazeny pomocí [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
+V rozhraní .NET Framework 3.5, následující šifrovacích tříd umožňují získat a zkontrolovat informace o manifestu podpisy pro aplikace, které jsou nasazeny pomocí [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
 
 - <xref:System.Security.Cryptography.ManifestSignatureInformation> Třídy získává informace o podpisu manifestu při použití jeho <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> přetížení metody.
 
@@ -290,7 +290,7 @@ V [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], následujíc
 
 ## <a name="suite-b-support"></a>Podpora Suite B
 
-[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] Podporuje sady Suite B kryptografické algoritmy, které jsou publikovány National Security Agency (NSA). Další informace o Suite B, najdete v článku [NSA Suite B kryptografie fakt Sheet](https://www.nsa.gov/what-we-do/information-assurance/).
+Rozhraní .NET Framework 3.5 podporuje sady Suite B kryptografické algoritmy, které jsou publikovány National Security Agency (NSA). Další informace o Suite B, najdete v článku [NSA Suite B kryptografie fakt Sheet](https://www.nsa.gov/what-we-do/information-assurance/).
 
 Tyto algoritmy jsou zahrnuty:
 
@@ -314,7 +314,7 @@ Kryptografické služby nové generace (CNG) třídy poskytují spravovaná obá
 
 <xref:System.Security.Cryptography.CngKey> Třída se používá pro celou řadu dalších operací, včetně otevření, vytváření, odstraňování a export klíčů. Poskytuje také přístup k podkladové popisovač klíče pro použití při volání nativních funkcí přímo.
 
-[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] Také zahrnuje celou řadu pomocných tříd CNG, jako je následující:
+Rozhraní .NET Framework 3.5 také zahrnuje celou řadu pomocných tříd CNG, jako je následující:
 
 - <xref:System.Security.Cryptography.CngProvider> udržuje zprostředkovatele úložiště klíčů.
 

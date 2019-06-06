@@ -8,18 +8,18 @@ ms.topic: reference
 helpviewer_keywords:
 - expression trees
 - debugview
-ms.openlocfilehash: 1b2a1164f02208cc7578820d8f8ed3bc145fb5b8
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: ae2c75607f7b9cdc40fc5c163ce533f0472ab454
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66196070"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689537"
 ---
-# <a name="debugview-syntax"></a>`DebugView` Syntaxe 
+# <a name="debugview-syntax"></a>`DebugView` Syntaxe
 
 `DebugView` (K dispozici pouze při ladění) obsahuje řetězec vykreslování stromů výrazů. Většina syntaxe je celkem jasné, abyste pochopili; zvláštní případy jsou popsány v následujících částech.
 
-Každý příklad následuje obsahující blok komentáře `DebugView`. 
+Každý příklad následuje obsahující blok komentáře `DebugView`.
 
 ## <a name="parameterexpression"></a>Výraz ParameterExpression
 
@@ -47,13 +47,13 @@ Pro <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithTyp
 
 Pro některé číselné typy se přidá přípona k hodnotě:
 
-| Type | Klíčové slovo | Přípona |  
+| Type | Klíčové slovo | Přípona |
 |--|--|--|
 | <xref:System.UInt32> | [UInteger](../../../language-reference/data-types/uinteger-data-type.md) | U |
 | <xref:System.Int64> | [Long](../../../language-reference/data-types/long-data-type.md) | L |
 | <xref:System.UInt64> | [ULong](../../../language-reference/data-types/ulong-data-type.md) | UL |
 | <xref:System.Double> | [Double](../../../language-reference/data-types/double-data-type.md) | D |
-| <xref:System.Single> | [Jeden](../../../language-reference/data-types/single-data-type.md) | F | 
+| <xref:System.Single> | [Jeden](../../../language-reference/data-types/single-data-type.md) | F |
 | <xref:System.Decimal> | [Decimal](../../../language-reference/data-types/decimal-data-type.md) | M |
 
 ### <a name="examples"></a>Příklady
@@ -87,7 +87,7 @@ Dim block As BlockExpression = Expression.Block(Expression.Constant("test"))
 '
 
 Dim block As BlockExpression = Expression.Block(
-    GetType(Object), 
+    GetType(Object),
     Expression.Constant("test")
 )
 '
@@ -154,7 +154,7 @@ Dim label1 As BlockExpression = Expression.Block(
 
 Dim target As LabelTarget = Expression.Label()
 Dim block As BlockExpression = Expression.Block(
-    Expression.Goto(target), 
+    Expression.Goto(target),
     Expression.Label(target)
 )
 '

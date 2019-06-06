@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: cb1ef5f52b9ee0407cbd7a0634e8a7c58906d635
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: 752a7e5233d8b1d88b49be450972fc964f82d2c4
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66195564"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690656"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
@@ -56,7 +56,7 @@ Třída může poskytnout metody nebo vlastnosti, které vám umožní vyhnout v
 
 Jiný způsob, jak zabránit výjimky je vrátit hodnotu null (nebo výchozí) pro nejběžnější případy chyb namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null (nebo výchozí) v těchto případech minimalizujete dopad výkonu pro aplikaci.
 
-U typů hodnot jestli se má použít s možnou hodnotou Null<T> nebo výchozí, jak je vaše označení chyb je něco, co brát v potaz u konkrétní aplikace. S použitím `Nullable<Guid>`, `default` stane `null` místo `Guid.Empty`. Přidání některých časy `Nullable<T>` může být jasnější hodnotu je k dispozici nebo chybí. Jindy, přidání `Nullable<T>` můžete vytvořit další případy a zkontrolujte, jestli nejsou potřebné, slouží pouze k vytvoření potenciální zdroje chyb. 
+U typů hodnot jestli se má použít `Nullable<T>` nebo výchozí, jak je vaše označení chyb je něco, co brát v potaz u konkrétní aplikace. S použitím `Nullable<Guid>`, `default` stane `null` místo `Guid.Empty`. Přidání některých časy `Nullable<T>` může být jasnější hodnotu je k dispozici nebo chybí. Jindy, přidání `Nullable<T>` můžete vytvořit další případy a zkontrolujte, jestli nejsou potřebné, slouží pouze k vytvoření potenciální zdroje chyb. 
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení chybový kód
 

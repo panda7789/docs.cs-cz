@@ -2,12 +2,12 @@
 title: Proces vývoje aplikací založených na Dockeru
 description: Získáte základní přehled možností pro vývoj aplikací založených na Dockeru. Díky volbě Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu více platforem (Windows, Mac a Linux).
 ms.date: 09/27/2018
-ms.openlocfilehash: 8807bc57365e70a0cbf265dc7bce28c93de16098
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: a32b27f3d98ed7ebf63b637ec0c979c22ee8e1e8
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300649"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690618"
 ---
 # <a name="development-process-for-docker-based-applications"></a>Proces vývoje pro aplikace založené na Dockeru
 
@@ -46,5 +46,5 @@ Nainstalováním [Docker Desktopu Community Edition (CE)](https://hub.docker.com
 Jak je uvedeno v předchozí části této příručky, můžete rozhraní .NET Framework, .NET Core a open source projektu Mono při vývoji Docker kontejnerizovaných aplikací .NET. Můžete vyvíjet v jazyce C\#, F\#, nebo při cílení na Linuxu nebo Windows, kontejnery, v závislosti na tom, které rozhraní .NET framework se používá jazyka Visual Basic. Další podrobnosti o about.NET jazyky, naleznete v příspěvku blogu [The jazyková strategie .NET](https://devblogs.microsoft.com/dotnet/the-net-language-strategy/).
 
 >[!div class="step-by-step"]
->[Předchozí](../architect-microservice-container-applications/using-azure-service-fabric.md)
+>[Předchozí](../architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md)
 >[další](docker-app-development-workflow.md)
