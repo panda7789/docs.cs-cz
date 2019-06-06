@@ -27,7 +27,7 @@ sections:
           - html: <a href="/dotnet/machine-learning/tutorials/github-issue-classification">Kategorizace problémy s úložištěm GitHub pomocí klasifikace víc tříd</a></li>
           - html: <a href="/dotnet/machine-learning/tutorials/taxi-fare">Předpověď tarify taxislužby NYC prostřednictvím regrese</a>
           - html: <a href="/dotnet/machine-learning/tutorials/iris-clustering">Kategorizace květin použití clusteringu s vlastnostmi</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/movie-recommmendation">Vytvoření doporučené video s factorization matice</a>
+          - html: <a href="/dotnet/machine-learning/tutorials/movie-recommendation">Vytvoření doporučené video s factorization matice</a>
           - html: <a href="/dotnet/machine-learning/tutorials/image-classification">Sestavení klasifikátoru vlastní image s TensorFlow</a>
   - title: Referenční informace a materiály
     items:
