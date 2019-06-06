@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: d0b35bec3bbc30f411a705220c468fa8961b83cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bf9af90c9695ad9428a887a901a95282672a4f75
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702422"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722539"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 
@@ -49,7 +49,7 @@ Další informace najdete v tématu [implicitně typované lokální proměnné]
 Inicializátory objektu a kolekce umožňují inicializace objektů bez explicitního volání konstruktoru objektu. Inicializátory jsou obvykle používány ve výrazech dotazů, když jsou zdroje dat projektu do nového datového typu. Za předpokladu, že třídu s názvem `Customer` pomocí veřejného `Name` a `Phone` vlastnosti, inicializátor objektu můžete použít stejně jako v následujícím kódu:
 
 ```csharp
-Customer cust = new Customer { Name = "Mike", Phone = "555-1212" };
+var cust = new Customer { Name = "Mike", Phone = "555-1212" };
 ```
 
 Pokračujte v našich `Customer` třídy, se předpokládá, že je zdroj dat s názvem `IncomingOrders`a že pro jednotlivé objednávky s velkým `OrderSize`, jsme chtěli vytvořit nový `Customer` podle pořadí. Dotaz LINQ mohou být provedeny na tento zdroj dat a použití inicializace objektu tak, aby vyplnil kolekce:

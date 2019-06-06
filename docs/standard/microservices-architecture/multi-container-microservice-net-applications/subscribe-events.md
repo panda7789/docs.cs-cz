@@ -2,12 +2,12 @@
 title: Přihlášení k odběru událostí
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Zjistěte podrobnosti o publikování a přihlášení k odběru událostí integrace.
 ms.date: 10/02/2018
-ms.openlocfilehash: ff165f6bba7940b99ef9712049191e356b893897
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c0eaacce51b186191431bf827bb84d3a2d2b7b1f
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639708"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722666"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -322,7 +322,7 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Rozvětveného aplikaci eShopOnContainers pomocí NServiceBus (určitého softwaru)** \
+- **Rozvětveného aplikaci eShopOnContainers pomocí NServiceBus (určitého softwaru)**  \
     <https://go.particular.net/eShopOnContainers>
 
 - **Řízené zasílání zpráv** \
@@ -370,7 +370,7 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 - **Rick Saling. Věty: Proč "všechno, co jsou různé" bez cloudu a Internetu** \
     <https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
 
-- **Eric Bureš. Zakončení 12 letech později: Jak se mění "Pravidla"** \
+- **Eric Bureš. Zakončení 12 letech později: Jak se mění "Pravidla"**  \
     <https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed>
 
 - **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit**  \
@@ -378,12 +378,6 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 
 - **Průvodce spolehlivost** (RabbitMQ dokumentace) \
     [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html#consumer)
-
-- **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit** \
-    <https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25>
-
-- **Průvodce spolehlivost** (RabbitMQ dokumentace) \
-    [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html%23consumer)
 
 > [!div class="step-by-step"]
 > [Předchozí](rabbitmq-event-bus-development-test-environment.md)

@@ -3,12 +3,12 @@ title: Kurzy ML.NET
 description: Prozkoumání ML.NET kurzů se naučíte vytvářet vlastní řešení AI a integrovat je do vašich aplikací .NET.
 ms.custom: seodec18
 ms.date: 04/05/2019
-ms.openlocfilehash: 42f781f53c94d9852f2d75117683eb21dd1c5c6e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3f14f463dcdb74beb1605626216acd52dd3f6e9a
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634793"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722334"
 ---
 # <a name="mlnet-tutorials"></a>Kurzy ML.NET 
 
@@ -18,7 +18,7 @@ V následujících kurzech umožňují porozumět způsobu použití [ML.NET](..
 - [Klasifikace problému Githubu](github-issue-classification.md): ukazuje, jak použít **klasifikace víc tříd** úloh pomocí ML.NET.
 - [Cena prediktivní](taxi-fare.md): ukazuje, jak použít **regrese** úloh pomocí ML.NET.
 - [Iris clustering](iris-clustering.md): ukazuje, jak použít **clustering** úloh pomocí ML.NET.
-- [Doporučení](movie-recommmendation.md): generovat film **doporučení** na základě předchozího hodnocení uživatele
+- [Doporučení](movie-recommendation.md): generovat film **doporučení** na základě předchozího hodnocení uživatele
 - [Klasifikace obrázků](image-classification.md): ukazuje, jak přeučování existující model Tensorflow k vytvoření vlastní image třídění pomocí ML.NET.
 
 ## <a name="next-steps"></a>Další kroky

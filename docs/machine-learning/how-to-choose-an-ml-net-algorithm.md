@@ -4,12 +4,12 @@ description: Zjistěte, jak vybrat algoritmus ML.NET pro váš model strojového
 author: natke
 ms.topic: overview
 ms.date: 04/20/1029
-ms.openlocfilehash: d1c637437a7b285f2b66b597d616fcf39248697f
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 89c3c612d79f02d58a16070feadb645b081dd3e3
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557786"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722631"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Jak vybrat algoritmus ML.NET
 
@@ -21,7 +21,7 @@ Algoritmy provádět **funkce**. Funkce jsou číselné hodnoty vypočítané ze
 
 Algoritmus je matematický výraz, který se spustí k vytvoření **modelu**. Různé algoritmy vytvářet modely s různými charakteristikami. 
 
-S ML.NET můžete použít stejný algoritmus pro různé úkoly. Například pomocí Stochastického sestup koordinované Ascent slouží pro binární klasifikaci, Multiclass klasifikace a regrese. Rozdíl je v jak výstupu algoritmu je interpretován tak, aby odpovídaly úkolu. 
+S ML.NET můžete použít stejný algoritmus pro různé úkoly. Například je možné pomocí Stochastického duální koordinované Ascent pro binární klasifikaci, Multiclass klasifikace a regrese. Rozdíl je v jak výstupu algoritmu je interpretován tak, aby odpovídaly úkolu. 
 
 Pro každou kombinaci algoritmů nebo úlohou ML.NET obsahuje komponenty, která spustí cvičení algoritmu a provádí vyhodnocení. Tyto součásti se nazývají školitelé. Například <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> používá **StochasticDualCoordinatedAscent** algoritmus použitý k **regrese** úloh.
 
@@ -42,7 +42,7 @@ Lineární algoritmy provést několik průchodů za trénovací data. Pokud va�
 |algoritmus|Vlastnosti|Školitelé|
 |---------|----------|--------|
 |průměrné perceptron|Nejvhodnější pro klasifikace textu|<xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>|
-|Koordinované ascent stochastického sestup|Ladění není nutný pro dobré výchozí výkonu|<xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer>|
+|Pomocí stochastického duální koordinované ascent|Ladění není nutný pro dobré výchozí výkonu|<xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer>|
 |L-BFGS|Použijte, když je velký počet funkcí. Vytvoří statistiku školení logistické regrese, ale neškáluje a také AveragedPerceptronTrainer|<xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.LbfgsMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.LbfgsPoissonRegressionTrainer>|
 |Symbolické stochastického sestupu|Nejrychlejší a co nejvíce zpřesnili lineární binární klasifikace trainer. Škálování s počet procesorů|<xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>|
 
