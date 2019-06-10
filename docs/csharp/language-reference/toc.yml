@@ -361,8 +361,10 @@
           href: operators/assignment-operator.md
         - name: '?: – operátor'
           href: operators/conditional-operator.md
+          displayName: 'conditional, ternary'
         - name: '?? – operátor'
           href: operators/null-coalescing-operator.md
+          displayName: null-coalescing
         - name: => – operátor
           href: operators/lambda-operator.md
         - name: true a false – operátory
