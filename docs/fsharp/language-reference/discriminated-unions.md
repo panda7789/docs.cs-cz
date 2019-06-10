@@ -2,12 +2,12 @@
 title: Rozlišovaná sjednocení
 description: Další informace o použití F# rozlišovaná sjednocení.
 ms.date: 05/16/2016
-ms.openlocfilehash: 27fb9205f3f216adc435483fd1dcc839a6e13e03
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: a3958a9ffb021c0c46c24216f17a1e7ee5605dd3
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557959"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816243"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -111,7 +111,7 @@ let someFunctionUsingShaderProgram (ShaderProgram id) =
 
 ## <a name="struct-discriminated-unions"></a>Rozlišovaná sjednocení – struktura
 
-Počínaje F# 4.1, může také představovat Rozlišované sjednocení jako struktury.  Používá se k tomu `[<Struct>]` atribut.
+Rozlišované sjednocení může také představovat jako struktury.  Používá se k tomu `[<Struct>]` atribut.
 
 ```fsharp
 [<Struct>]
@@ -164,14 +164,46 @@ Rozlišovaná sjednocení pracují dobře, pokud uzly ve stromu jsou heterogenn�
 
 Při spuštění tohoto kódu, hodnota `result` je 5.
 
+## <a name="members"></a>Členové
+
+Je možné definovat členy pro rozlišovaná sjednocení. Následující příklad ukazuje, jak definovat vlastnost a implementovat rozhraní:
+
+```fsharp
+open System
+
+type IPrintable =
+    abstract Print: unit -> unit
+
+type Shape =
+    | Circle of float
+    | EquilateralTriangle of float
+    | Square of float
+    | Rectangle of float * float
+
+    member this.Area =
+        match this with
+        | Circle r -> 2.0 * Math.PI * r
+        | EquilateralTriangle s -> s * s * sqrt 3.0 / 4.0
+        | Square s -> s * s
+        | Rectangle(l, w) -> l * w
+
+    interface IPrintable with
+        member this.Print () =
+            match this with
+            | Circle r -> printfn "Circle with radius %f" r
+            | EquilateralTriangle s -> printfn "Equilateral Triangle of side %f" s
+            | Square s -> printfn "Square with side %f" s
+            | Rectangle(l, w) -> printfn "Rectangle with length %f and width %f" l w
+```
+
 ## <a name="common-attributes"></a>Běžné atributy
 
 Následující atributy se běžně zobrazují v rozlišovaných sjednoceních:
 
-* `[RequireQualifiedAccess]`
-* `[NoEquality]`
-* `[NoComparison]`
-* `[Struct]`
+* `[<RequireQualifiedAccess>]`
+* `[<NoEquality>]`
+* `[<NoComparison>]`
+* `[<Struct>]`
 
 ## <a name="see-also"></a>Viz také:
 

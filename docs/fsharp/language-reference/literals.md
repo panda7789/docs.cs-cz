@@ -1,13 +1,13 @@
 ---
 title: Literály
 description: Seznamte se s typy literálu v F# programovací jazyk.
-ms.date: 02/08/2019
-ms.openlocfilehash: 032bc82d222cd34e7ac62e42ee4394c97d975b2e
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.date: 06/08/2019
+ms.openlocfilehash: 93329cd868ff7a2daaffa1b87ba838bbbc98015c
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490986"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816229"
 ---
 # <a name="literals"></a>Literály
 
@@ -44,13 +44,16 @@ Následující tabulka uvádí typy literálu v F#. Znaky, které představují 
 |Byte|Řetězec ASCII|B|`"text"B`|
 |Řetězec nebo byte]|řetězec verbatim|předponu @|`@"\\server\share"` (Unicode)<br /><br />`@"\\server\share"B` (ASCII)|
 
-## <a name="remarks"></a>Poznámky
+## <a name="named-literals"></a>Pojmenované literály
 
-Řetězce Unicode mohou obsahovat explicitní kódování, kterou lze zadat pomocí `\u` 16bitové šestnáctkové nebo UTF-32 kódování, kterou lze zadat pomocí `\U` za nímž následuje 32-bit šestnáctkový kód, který představuje Unicode náhradní pár.
+Hodnoty, které mají být konstantami, mohou být označeny [literálu](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) atribut. Tento atribut má efekt sestavení hodnoty se zkompiluje jako konstanta.
 
-Od verze F# 3.1, můžete použít `+` přihlásit ke kombinování řetězcových literálů. Můžete také použít bitového nebo (`|||`) operátor kombinování příznaků výčtu. Například následující kód je platný v F# 3.1:
+Ve vzoru porovnávání výrazů identifikátory, které začínají malými písmeny, jsou vždy považovány za proměnné ke svázání, nikoli jako literály, takže obecně používejte počáteční velká písmena při definování literálů.
 
 ```fsharp
+[<Literal>]
+let SomeJson = """{"numbers":[1,2,3,4,5]}"""
+
 [<Literal>]
 let Literal1 = "a" + "b"
 
@@ -64,13 +67,11 @@ let Literal2 = 1 ||| 64
 let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 ```
 
-Použití jiných operátorů bitového typu není povoleno.
+## <a name="remarks"></a>Poznámky
 
-## <a name="named-literals"></a>Pojmenované literály
+Řetězce Unicode mohou obsahovat explicitní kódování, kterou lze zadat pomocí `\u` 16bitové šestnáctkové nebo UTF-32 kódování, kterou lze zadat pomocí `\U` za nímž následuje 32-bit šestnáctkový kód, který představuje Unicode náhradní pár.
 
-Hodnoty, které mají být konstantami, mohou být označeny [literálu](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) atribut. Tento atribut má efekt sestavení hodnoty se zkompiluje jako konstanta.
-
-Ve vzoru porovnávání výrazů identifikátory, které začínají malými písmeny, jsou vždy považovány za proměnné ke svázání, nikoli jako literály, takže obecně používejte počáteční velká písmena při definování literálů.
+Použití jiných operátorů bitového jiných než `|||` není povolený.
 
 ## <a name="integers-in-other-bases"></a>Celá čísla v jiných základů
 
@@ -83,7 +84,7 @@ let numbers = (0x9F, 0o77, 0b1010)
 
 ## <a name="underscores-in-numeric-literals"></a>Podtržítka v numerických literálech
 
-Počínaje F# 4.1, číslic můžete oddělit znakem podtržítka (`_`).
+Číslice můžete oddělit znakem podtržítka (`_`).
 
 ```fsharp
 let value = 0xDEAD_BEEF

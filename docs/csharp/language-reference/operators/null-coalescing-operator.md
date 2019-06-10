@@ -1,45 +1,66 @@
 ---
 title: ?? Operator - C# odkaz
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 06/07/2019
 f1_keywords:
 - ??_CSharpKeyword
 helpviewer_keywords:
-- coalesce operator [C#]
+- null-coalescing operator [C#]
 - ?? operator [C#]
-- conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: e1e981f9ec6a87f6e7de1900008520cde8e46095
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8ca97261b348b7813ab179abbc1f2c5f535966a1
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633936"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816005"
 ---
 # <a name="-operator-c-reference"></a>?? operator (Referenční dokumentace jazyka C#)
 
-`??` Operátor se nazývá operátoru nulového sjednocení.  Vrátí levý operand, pokud hodnota operandu není null; v opačném případě vrátí pravý operand.
+Operátoru nulového sjednocení `??` vrací hodnotu svého operandu vlevo, pokud není `null`; v opačném případě zpracovával pravý operand vyhodnotí a vrátí její výsledek. `??` Operátor nevyhodnocuje jeho zpracovával pravý operand, pokud levý operand je vyhodnocen jako nenulové.
 
-## <a name="remarks"></a>Poznámky
+Operátoru nulového sjednocení je asociativní zprava, to znamená, výraz ve tvaru
 
-Typ povolené hodnoty null představuje hodnotu z domény typu, hodnotu lze také definovat (v takovém případě je hodnota null). Můžete použít `??` syntaktické expresivity obsluhy se vraťte na příslušnou hodnotu (pravý operand) Pokud levý operand má typ s možnou hodnotou Null, jehož hodnota je null. Pokud se pokusíte přiřadit typ s možnou hodnotou Null typu hodnotu Null bez použití `??` operátoru, vygeneruje chybu v době kompilace. Pokud použijete přetypování a typ s možnou hodnotou Null není aktuálně definován `InvalidOperationException` , bude vyvolána výjimka.
+```csharp
+a ?? b ?? c
+```
 
-Další informace najdete v tématu [typy připouštějící hodnotu Null](../../programming-guide/nullable-types/index.md).
+je vyhodnocen jako
 
-Výsledek?? operátor není považována za konstantu, i když jsou oba argumenty konstanty.
+```csharp
+a ?? (b ?? c)
+```
 
-## <a name="example"></a>Příklad
+`??` Operátor může být užitečné v následujících scénářích:
 
-[!code-csharp[csRefOperators#53](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#53)]
+- Ve výrazech s [podmíněné operátory s null?. a?] ](member-access-operators.md#null-conditional-operators--and-), můžete poskytnout alternativní výraz k vyhodnocení v případě, že je výsledek výrazu s operacemi null podmíněného operátoru nulového sjednocení `null`:
+
+  [!code-csharp-interactive[with null-conditional](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullConditional)]
+
+- Při práci s [typy s možnou hodnotou](../../programming-guide/nullable-types/index.md) a je nutné zadat hodnotu podkladového typu hodnoty, zadejte hodnotu zadejte v případě, že je hodnota s možnou hodnotou Null typu pomocí operátoru nulového sjednocení `null`:
+
+  [!code-csharp-interactive[with nullable types](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullableTypes)]
+
+  Použití <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> metoda Pokud hodnota, která má použít, pokud je hodnota s možnou hodnotou Null typu `null` musí mít výchozí hodnotu podkladového typu hodnoty.
+
+- Počínaje C# 7.0, můžete použít [ `throw` výraz](../keywords/throw.md#the-throw-expression) jako operand pravé strany operátoru nulového sjednocení, aby byl kód kontroluje argument stručnější:
+
+  [!code-csharp[with throw expression](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithThrowExpression)]
+
+  V předchozím příkladu také ukazuje, jak používat [členové tvoření](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) definovat vlastnost.
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Operátoru nulového sjednocení nemohou být přetíženy.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [null operátor sloučení](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [null operátor sloučení](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
-- [Typy s povolenou hodnotou Null](../../programming-guide/nullable-types/index.md)
-- [Co přesně se pojem "zrušeno" znamenají?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)
+- [?. a? operátory]](member-access-operators.md#null-conditional-operators--and-)
+- [?: – operátor](conditional-operator.md)

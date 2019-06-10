@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Objevte možnosti Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev mezer při vývoji životního cyklu aplikací Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: a0f7efa4b21aedfb574659df283adc65741cefdb
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 76fa68cee41f8d1f34ec399c346f457efae57151
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690508"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815841"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -134,4 +134,4 @@ Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prost
 
 >[!div class="step-by-step"]
 >[Předchozí](resilient-high-availability-microservices.md)
->[další](docker-application-development-process.md)
+>[další](../docker-application-development-process/index.md)

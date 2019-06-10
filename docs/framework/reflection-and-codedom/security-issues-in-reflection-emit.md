@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d2995e64d9e8eed365498bcbc1047a321edc10c5
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 434a88e305f833a5a95bb62835b5badd4a2c4949
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489728"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816146"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
 Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsoft intermediate language (MSIL), každý s vlastní problémy se zabezpečením:  
@@ -141,14 +141,14 @@ Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsof
 ## <a name="version-information"></a>Informace o verzi  
  Od verze rozhraní .NET Framework 4, zásady zabezpečení pro celý počítač odstraněny a změní výchozí mechanismus pro vynucení transparentnosti zabezpečení. Zobrazit [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
- Počínaje [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při generování dynamických sestavení a dynamické metody. Tento příznak je potřeba ve všech dřívějších verzích rozhraní .NET Framework.  
+ Od verze rozhraní .NET Framework 2.0 Service Pack 1 <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při generování dynamických sestavení a dynamické metody. Tento příznak je potřeba ve všech dřívějších verzích rozhraní .NET Framework.  
   
 > [!NOTE]
->  <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení `FullTrust` a `LocalIntranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto v dřívějších verzích rozhraní .NET Framework, knihovnu je možné s Internetová oprávnění pouze v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] Umožňuje kód, aby byly vypuštěny ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovny, které emitují kód transparentní z hlediska zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje úlohu psaní zabezpečené knihovny.  
+>  <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení `FullTrust` a `LocalIntranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto v dřívějších verzích rozhraní .NET Framework, knihovnu je možné s Internetová oprávnění pouze v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. Rozhraní .NET Framework 2.0 SP1 umožňuje emitování kódu ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovny, které emitují kód transparentní z hlediska zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje úlohu psaní zabezpečené knihovny.  
   
- Kromě toho [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k neveřejným typům a členům z částečně důvěryhodného dynamických metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přístup k neveřejným typům a členům; jde o oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
+ Kromě toho rozhraní .NET Framework 2.0 SP1 zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k neveřejným typům a členům z částečně důvěryhodného dynamických metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přístup k neveřejným typům a členům; jde o oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
   
- Nakonec [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] zavádí anonymně hostované metody.  
+ A konečně rozhraní .NET Framework 2.0 SP1 zavádí anonymně hostované metody.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Získání informací o typech a členech  
  Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], žádná oprávnění nejsou vyžadována k získání informací o neveřejným typům a členům. Reflexe slouží k získání informací potřebných k emitování dynamické metody. Například <xref:System.Reflection.MethodInfo> objekty se používají ke generování volání metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak. Další informace najdete v tématu [Security Considerations for Reflection](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  

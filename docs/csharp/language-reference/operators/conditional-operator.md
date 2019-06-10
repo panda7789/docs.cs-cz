@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 75fa3ec8d332d0424147095db400d43fc31c105f
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: ae3039df2c1260211f4c7ec3e813db1d0c6cd42b
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758166"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815932"
 ---
 # <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
 
@@ -52,7 +52,7 @@ a ? b : (c ? d : e)
 
 Následující příklad ukazuje použití podmíněný operátor:
 
-[!code-csharp[non ref conditional](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
+[!code-csharp-interactive[non ref conditional](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
 
 ## <a name="conditional-ref-expression"></a>Ref podmíněný výraz
 
@@ -70,7 +70,7 @@ V případě ref podmíněný výraz typu `consequent` a `alternative` se musí 
 
 Následující příklad ukazuje použití ref podmíněný výraz:
 
-[!code-csharp[conditional ref](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
+[!code-csharp-interactive[conditional ref](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
 
 Další informace najdete v tématu [Poznámka návrh funkce](../../../../_csharplang/proposals/csharp-7.2/conditional-ref.md).
 
@@ -86,7 +86,7 @@ Podmiňovací operátor nelze přetížit.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec/expressions.md#conditional-operator) část [ C# specifikace jazyka](../language-specification/index.md).
+Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec/expressions.md#conditional-operator) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
@@ -94,6 +94,6 @@ Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - [if-else – příkaz](../keywords/if-else.md)
-- [Operátory ?. a ?[]](member-access-operators.md#null-conditional-operators--and-)
+- [?. a? operátory]](member-access-operators.md#null-conditional-operators--and-)
 - [?? – operátor](null-coalescing-operator.md)
 - [ref keyword](../keywords/ref.md)

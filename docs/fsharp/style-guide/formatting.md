@@ -1,15 +1,15 @@
 ---
-title: F#pravidla formátování kódu
+title: Pravidla formátování kódu F#
 description: Přečtěte si pokyny pro formátování F# kódu.
 ms.date: 02/08/2019
-ms.openlocfilehash: ce07bd800984ec082a522bc62cb487f786fa0510
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: bfec950395312eac7e837abf8694a4381d5ca82f
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063592"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816177"
 ---
-# <a name="f-code-formatting-guidelines"></a>F#pravidla formátování kódu
+# <a name="f-code-formatting-guidelines"></a>Pravidla formátování kódu F#
 
 Tento článek nabízí pokyny k formátování kódu tak, aby vaše F# kód je:
 
@@ -836,14 +836,14 @@ Při použití parametru, musí být na stejném řádku a oddělené `;` odděl
 
 ## <a name="formatting-literals"></a>Formátování literály
 
-[F#literály](../language-reference/literals.md) pomocí `Literal` atribut by měl umístit atribut na samostatném řádku a pomocí camelCase pojmenování:
+[F#literály](../language-reference/literals.md) pomocí `Literal` atribut by měl umístit atribut na samostatném řádku a pomocí PascalCase pojmenování:
 
 ```fsharp
 [<Literal>]
-let path = __SOURCE_DIRECTORY__ + "/" + __SOURCE_FILE__
+let Path = __SOURCE_DIRECTORY__ + "/" + __SOURCE_FILE__
 
 [<Literal>]
-let myUrl = "www.mywebsitethatiamworkingwith.com"
+let MyUrl = "www.mywebsitethatiamworkingwith.com"
 ```
 
 Předejde atribut na stejný řádek jako hodnotu.

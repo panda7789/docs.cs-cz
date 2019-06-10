@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab30d44ed2a91fd7f7e53cb868d90a2c5af0fef6
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 6446cc3ee102fa57f5bf60c1353f7b9d5522be69
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489725"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816133"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 Reflexe umožňuje získat informace o typech a členech a chcete získat přístup ke členům (to znamená pro volání metody a konstruktory, k získání a nastavení vlastností hodnoty, přidávat a odebírat obslužné rutiny událostí a tak dále). Použití reflexe získat informace o typech a členech není omezeno. Veškerý kód, můžete použít reflexe provádět následující úlohy:  
@@ -42,7 +42,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
  Například kód, který běží v doméně aplikace v izolovaném prostoru je omezený přístup k popsané v tomto seznamu, pokud doména aplikace zaručuje další oprávnění.  
   
- Počínaje [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], pokus o přístup ke členům, které jsou obvykle nedostupná generuje poptávka sady udělení plus cílového objektu <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak. Kód, který je spuštěn s úplným vztahem důvěryhodnosti (například kód v aplikaci, která se spustí z příkazového řádku) můžete vždy splňovat tato oprávnění. (To je v souladu s omezeními v přístupu k členům kritické pro zabezpečení, jak je popsáno dále v tomto článku.)  
+ Od verze rozhraní .NET Framework 2.0 Service Pack 1, došlo k pokusu o přístup ke členům, které jsou obvykle nedostupná generuje poptávka sady udělení plus cílového objektu <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak. Kód, který je spuštěn s úplným vztahem důvěryhodnosti (například kód v aplikaci, která se spustí z příkazového řádku) můžete vždy splňovat tato oprávnění. (To je v souladu s omezeními v přístupu k členům kritické pro zabezpečení, jak je popsáno dále v tomto článku.)  
   
  Volitelně můžete udělit doméně aplikace v izolovaném prostoru <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak, jak je popsáno v části [přístup k členům, že jsou obvykle nedostupná](#accessingNormallyInaccessible)dále v tomto článku.  
   
@@ -100,7 +100,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
   
 - Od verze rozhraní .NET Framework 4, nelze transparentní kód pro přístup ke členům kritické pro zabezpečení pomocí reflexe.  
   
-- <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak se používá v [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro kód, který se používá pro přístup k neveřejné členy reflexe. Toto je oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
+- <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak se používá v rozhraní .NET Framework 2.0 Service Pack 1. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro kód, který se používá pro přístup k neveřejné členy reflexe. Toto je oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
   
 - Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], pomocí operace reflection k získání informací o neveřejným typům a členům nevyžaduje žádná oprávnění. V dřívějších verzích <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak je povinný.  
   

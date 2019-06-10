@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 86d735bf84cdb33736701410d365ec90e6177e0e
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 89dfe697f49e8144d15586cc9c1075f69d1f3a07
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489767"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816052"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
 Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně hostování v jediném procesu spuštění více verzí modulu common language runtime (CLR). Ve výchozím nastavení spravované komponenty modelu COM s verzí rozhraní .NET Framework, kterými byly vytvořeny, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spuštění.  
@@ -56,7 +56,7 @@ Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně
   
      Co dělat: V tomto scénáři neprovádějte žádnou akci. Komponenty modelu COM se spustí s verzí rozhraní .NET Framework byla zaregistrována.  
   
-- **Scénář 2**: Spravované aplikace vytvořené pomocí [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , který chcete spustit s [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], ale mají snahu si spustit v rozhraní .NET Framework 4, pokud není k dispozici verze 2.0.  
+- **Scénář 2**: Spravované aplikace vytvořené pomocí rozhraní .NET Framework 2.0 SP1, který chcete spustit s [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], ale mají snahu si spustit v rozhraní .NET Framework 4, pokud není k dispozici verze 2.0.  
   
      Nainstalovaná verze rozhraní .NET framework: Starší verze rozhraní .NET Framework a .NET Framework 4.  
   

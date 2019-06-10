@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b1aa958e15449949a1b7ca740198fff71295b2ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c13dd2f00e08539d2ba502058c74aa4a1525e3ff
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704960"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816120"
 ---
 # <a name="enforcefipspolicy-element"></a>\<enforcefipspolicy – > – Element
 Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu se informace o zpracování normy FIPS (Federal).  
@@ -36,7 +36,7 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Povoleno|Požadovaný atribut.<br /><br /> Určuje, jestli se má povolit vynucení požadavek konfigurace počítače, musí být kryptografické algoritmy kompatibilní se standardem FIPS.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, jestli se má povolit vynucení požadavek konfigurace počítače, musí být kryptografické algoritmy kompatibilní se standardem FIPS.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
@@ -58,7 +58,7 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
 ## <a name="remarks"></a>Poznámky  
  Od verze rozhraní .NET Framework 2.0, vytváření třídy, které implementují kryptografické algoritmy řídí konfiguraci počítače. Pokud je počítač nakonfigurovaný tak, aby vyžadovala algoritmy být v souladu se standardem FIPS, a třída implementuje algoritmus, který není kompatibilní se standardem FIPS, jakýkoliv pokus o vytvoření instance této třídy vyvolá výjimku. Vyvolat konstruktory <xref:System.InvalidOperationException> výjimky, a `Create` vyvolání metody <xref:System.Reflection.TargetInvocationException> výjimka s vnitřní <xref:System.InvalidOperationException> výjimky.  
   
- Pokud vaše aplikace funguje na počítačích, jejichž konfigurací vyžadovat dodržování standardu FIPS a vaše aplikace používá algoritmus, který není kompatibilní se standardem FIPS, aby se zabránilo common language runtime (CLR) z můžete tento prvek v konfiguračním souboru vynucování kompatibilita se standardem FIPS. Tento prvek byla zavedena v [!INCLUDE[net_v20SP1_long](../../../../../includes/net-v20sp1-long-md.md)].  
+ Pokud vaše aplikace funguje na počítačích, jejichž konfigurací vyžadovat dodržování standardu FIPS a vaše aplikace používá algoritmus, který není kompatibilní se standardem FIPS, aby se zabránilo common language runtime (CLR) z můžete tento prvek v konfiguračním souboru vynucování kompatibilita se standardem FIPS. Tento prvek byla zavedena v rozhraní .NET Framework 2.0 Service Pack 1.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak zabránit CLR vynucování kompatibilita se standardem FIPS.  

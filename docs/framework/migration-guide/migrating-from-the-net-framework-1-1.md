@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 07c4ede076680f0d1b133b2d50c9055205d609ee
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 441a65f9a72dd0fcffb062710df74bb529767cef
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758520"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816058"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
 
-[!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows nepodporuje [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)]. V důsledku toho nebudou aplikace, které jsou cíleny rozhraní .NET Framework 1.1 spuštěny bez úprav na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novější verze operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace, která cílí na rozhraní .NET Framework 1.1 v rámci [!INCLUDE[win7](../../../includes/win7-md.md)] a novějšími verzemi operačního systému Windows. Další informace o [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] a [!INCLUDE[win8](../../../includes/win8-md.md)], naleznete v tématu [spouštění aplikací .NET Framework v systému Windows 8 a novější verze 1.1](../../../docs/framework/install/run-net-framework-1-1-apps.md).
+[!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows nepodporuje rozhraní .NET Framework 1.1. V důsledku toho nebudou aplikace, které jsou cíleny rozhraní .NET Framework 1.1 spuštěny bez úprav na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novější verze operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace, která cílí na rozhraní .NET Framework 1.1 v rámci [!INCLUDE[win7](../../../includes/win7-md.md)] a novějšími verzemi operačního systému Windows. Další informace o rozhraní .NET Framework 1.1 a [!INCLUDE[win8](../../../includes/win8-md.md)], naleznete v tématu [spouštění aplikací .NET Framework v systému Windows 8 a novější verze 1.1](../../../docs/framework/install/run-net-framework-1-1-apps.md).
 
 ## <a name="retargeting-or-recompiling"></a>Přeorientovat nebo rekompilovat
 
@@ -58,7 +58,7 @@ Nicméně v některých případech budete muset upravit zdrojový kód a zkompi
 
 Chcete-li posoudit dopad možných nejnovějších změn na aplikaci, musíte zkontrolovat následující seznamy změn:
 
-- [Rozbíjející změny v rozhraní .NET Framework 2.0](https://go.microsoft.com/fwlink/?LinkId=125263) změny dokumentů v [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , jež mohou ovlivnit aplikaci, která cílí na .NET Framework 1.1.
+- [Rozbíjející změny v rozhraní .NET Framework 2.0](https://go.microsoft.com/fwlink/?LinkId=125263) změny v rozhraní .NET Framework 2.0 SP1 může mít vliv na aplikaci, která cílí na .NET Framework 1.1 dokumentů.
 
 - [Změny v rozhraní .NET Framework 3.5 SP1](https://go.microsoft.com/fwlink/?LinkID=186989) změny dokumentů mezi verzí rozhraní .NET Framework 3.5 a [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)].
 
@@ -68,4 +68,4 @@ Chcete-li posoudit dopad možných nejnovějších změn na aplikaci, musíte zk
 
 Dopad zastaralých typů a členů se poněkud liší od revidovaných aplikací a rekompilovaných aplikací. Použití zastaralých typů a členů neovlivní přesměrovanou aplikaci, pokud zastaralý typ nebo člen nebyl fyzicky odebrán z příslušného sestavení. Opětovnou kompilací aplikace, která používá zastaralé typy nebo členy, obvykle vytváří kompilátor varování spíše než chybu kompilátoru. V některých případech však dojde k chybě kompilátoru a kód, který používá zastaralý typ nebo člen nebude zkompilován úspěšně. V takovém případě je třeba přepsat zdrojový kód, který vyvolá zastaralý typ nebo člen předtím, než aplikaci znovu zkompilujete. Další informace o zastaralých typů a členů, naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md).
 
-Chcete-li posoudit dopad typů a členů, které již nejsou používání od vydání [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md). Zkontrolujte seznam zastaralých typů a členů pro [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], rozhraní .NET Framework 3.5 a rozhraní .NET Framework 4.
+Chcete-li posoudit dopad typů a členů, které jsou zastaralé od verze rozhraní .NET Framework 2.0 SP1, přečtěte si téma [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md). Zkontrolujte seznam zastaralých typů a členů pro rozhraní .NET Framework 2.0 SP1, .NET Framework 3.5 a rozhraní .NET Framework 4.

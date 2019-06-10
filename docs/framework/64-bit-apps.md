@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 703ebcf93af77be2d0034bcd99fab397d7729374
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 11295f4b0d1a425fd3859c904b8ebc7830c64d1f
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487002"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815942"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
@@ -45,7 +45,7 @@ Když kompilujete aplikace, můžete určit, že se má spustit v operačním sy
   
 - Další informace o 64bitové verzi modulu CLR v počítači Windows 64-bit, najdete v článku [středisko pro vývojáře rozhraní .NET Framework](https://go.microsoft.com/fwlink/?LinkId=37079) na webu MSDN.  
   
-- V [!INCLUDE[winsdkshort](../../includes/winsdkshort-md.md)] dokumentaci najdete v tématu [Průvodce programováním pro Windows 64-bit](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
+- V dokumentaci Windows SDK, naleznete v tématu [Průvodce programováním pro Windows 64-bit](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
   
 - Informace o tom, jak stáhnout 64bitovou verzi modulu CLR najdete v tématu [rozhraní .NET Framework Developer Center stáhne](https://go.microsoft.com/fwlink/?LinkId=50953) na webu MSDN.  
   

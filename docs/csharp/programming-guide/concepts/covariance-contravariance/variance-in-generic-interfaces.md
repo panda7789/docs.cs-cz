@@ -1,13 +1,13 @@
 ---
 title: Odchylky obecných rozhraní (C#)
-ms.date: 04/10/2019
+ms.date: 06/06/2019
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
-ms.openlocfilehash: 5874a39a57f85695bedc3d1ffa61adf19fcdbe37
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a2d0bcc049d62978930b4e5cdef7920349e3b894
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702474"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815958"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Odchylky obecných rozhraní (C#)
 
@@ -31,9 +31,9 @@ Rovnou začít tématem rozhraní .NET Framework 4, jsou následující rozhran�
 
 Od verze rozhraní .NET Framework 4.5, jsou následující rozhraní variant:
 
-- <xref:System.Collections.Generic.IReadOnlyList%601> (T je kontravariantní.)
+- <xref:System.Collections.Generic.IReadOnlyList%601> (T je kovariantní)
 
-- <xref:System.Collections.Generic.IReadOnlyCollection%601> (T je kontravariantní.)
+- <xref:System.Collections.Generic.IReadOnlyCollection%601> (T je kovariantní)
 
 Kovariance povoluje metoda může mít více odvozený návratový typ, než je definován parametr obecného typu rozhraní. K ilustraci této funkce kovariance, vezměte v úvahu těmito obecnými rozhraními: `IEnumerable<Object>` a `IEnumerable<String>`. `IEnumerable<String>` Rozhraní nedědí `IEnumerable<Object>` rozhraní. Ale `String` typ dědit `Object` typ a v některých případech můžete chtít přiřadit objekty z těchto rozhraní k sobě navzájem. To je ukázáno v následujícím příkladu kódu.
 
