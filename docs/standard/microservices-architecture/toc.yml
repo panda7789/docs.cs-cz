@@ -60,8 +60,6 @@
           href: architect-microservice-container-applications/resilient-high-availability-microservices.md
         - name: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
           href: architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md
-        - name: Použití platformy Azure Service Fabric
-          href: architect-microservice-container-applications/using-azure-service-fabric.md
     - name: Proces vývoje aplikací založených na Dockeru
       href: docker-application-development-process/index.md
       items:
