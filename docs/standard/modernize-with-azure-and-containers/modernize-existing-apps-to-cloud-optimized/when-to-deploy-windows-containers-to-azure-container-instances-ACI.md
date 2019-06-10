@@ -2,12 +2,12 @@
 title: Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 ms.date: 04/29/2018
-ms.openlocfilehash: 9bfa0688d07bd04964a1b28f688f125b5bcd2299
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3b6ae1ced9c4e01f5ab400e2575947a396064ebd
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638927"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758591"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
 
@@ -36,4 +36,4 @@ Stručně řečeno s ACI můžete vyvíjet aplikace rychle bez správu virtuáln
 
 > [!div class="step-by-step"]
 > [Předchozí](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
-> [další](when-to-deploy-windows-containers-to-service-fabric.md)
+> [další](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

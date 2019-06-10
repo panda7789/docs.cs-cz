@@ -4,12 +4,12 @@ description: Zjistěte, jak pochopit, jak analyzovat data špiček anomálií a 
 ms.date: 05/29/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d31765aa4ff2a0be9c4f140f33de1f5678fc7612
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: e092aea66ca9f439cf97c1ebee83097def0f520b
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423933"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758806"
 ---
 # <a name="tutorial-use-mlnet-for-product-sales-anomaly-detection"></a>Kurz: Použití ML.NET pro detekci anomálií prodejní produktu 
 
@@ -373,4 +373,4 @@ V tomto kurzu jste se naučili:
 
 Projděte si úložišti GitHub s ukázkami Machine Learning a prozkoumejte ukázkový spotřebu energie pro detekci anomálií.
 > [!div class="nextstepaction"]
-> [úložiště GitHub DotNet/machinelearning – ukázky](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/TimeSeries_PowerAnomalyDetection)
+> [úložiště GitHub DotNet/machinelearning – ukázky](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings)

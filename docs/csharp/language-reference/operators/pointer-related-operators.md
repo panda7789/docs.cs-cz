@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 012e4fe9b8ee49f3b6b7240ac4ccb21dba70a8a9
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 6196cb52cb1b42b3354bc7f8836a171397d0af1e
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882659"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758097"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Ukazatel související s operátory (C# odkaz)
 
@@ -46,11 +46,11 @@ Informace o typy ukazatelů, naleznete v tématu [typy ukazatelů](../../program
 
 Unární `&` operátor vrátí adresu svého operandu:
 
-[!code-csharp[address of local](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
+[!code-csharp[address of local](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
 
 Operand `&` operator musí být pevná proměnná. *Oprava* proměnné jsou proměnné, které se nacházejí v umístění úložiště, které operace nemá vliv [systému uvolňování paměti](../../../standard/garbage-collection/index.md). V předchozím příkladu, místní proměnná `number` je pevná proměnná, protože se nachází v zásobníku. Proměnné, které se nacházejí v umístění úložiště, které mohou být ovlivněny systému uvolňování paměti (například přemístění) se nazývají *přesouvatelný* proměnné. Pole objektů a prvky pole jsou příkladem přesouvatelný proměnné. Pokud "Opravit" nebo "připnout", můžete získat adresu přesouvatelný proměnné s [oprava](../keywords/fixed-statement.md) příkazu. Získané adresa je platná jenom po dobu trvání `fixed` blok příkazů. Následující příklad ukazuje způsob použití `fixed` příkazu a `&` operátor:
 
-[!code-csharp[address of fixed](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
+[!code-csharp[address of fixed](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
 
 Nelze získat adresu konstanta nebo hodnota.
 
@@ -62,7 +62,7 @@ Binární soubor `&` operátor výpočetní prostředí [logický operátor AND]
 
 Unární operátor dereference ukazatele `*` získá proměnné, na kterou operand ukazuje. Je také známý jako operátor zrušení odkazu. Operand `*` operator musí být typu ukazatele.
 
-[!code-csharp[pointer indirection](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#PointerIndirection)]
+[!code-csharp[pointer indirection](~/samples/csharp/language-reference/operators/PointerOperators.cs#PointerIndirection)]
 
 Nelze použít `*` operátoru ve výrazu typu `void*`.
 
@@ -84,7 +84,7 @@ je ekvivalentem
 
 Následující příklad ukazuje použití `->` operátor:
 
-[!code-csharp[pointer member access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#MemberAccess)]
+[!code-csharp[pointer member access](~/samples/csharp/language-reference/operators/PointerOperators.cs#MemberAccess)]
 
 Nelze použít `->` operátoru ve výrazu typu `void*`.
 
@@ -94,7 +94,7 @@ Pro výraz `p` typu ukazatel, ukazatel přístup k prvkům ve tvaru `p[n]` se vy
 
 Následující příklad ukazuje, jak přistupovat k prvkům pole pomocí ukazatele a `[]` operátor:
 
-[!code-csharp[pointer element access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
+[!code-csharp[pointer element access](~/samples/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
 
 V příkladu se používá [ `stackalloc` operátor](../keywords/stackalloc.md) přidělení bloku paměti na zásobníku.
 
@@ -128,7 +128,7 @@ Ukazatele `p` typu `T*` a výraz `n` implicitně převést na typ `int`, `uint`,
 
 Následující příklad ukazuje použití `+` operátorem pomocí ukazatele:
 
-[!code-csharp[pointer addition](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddNumber)]
+[!code-csharp[pointer addition](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddNumber)]
 
 ### <a name="pointer-subtraction"></a>Odečtení ukazatele
 
@@ -136,7 +136,7 @@ Pro dva ukazatele `p1` a `p2` typu `T*`, výraz `p1 - p2` tvoří rozdíl mezi a
 
 Následující příklad ukazuje odečtení ukazatele:
 
-[!code-csharp[pointer subtraction](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#SubtractPointers)]
+[!code-csharp[pointer subtraction](~/samples/csharp/language-reference/operators/PointerOperators.cs#SubtractPointers)]
 
 ### <a name="pointer-increment-and-decrement"></a>Ukazatel přírůstek a snížení
 
@@ -146,7 +146,7 @@ Oba operátory jsou podporovány ve dvou formách: přípony (`p++` a `p--`) a p
 
 Následující příklad ukazuje chování operátory zvýšení přípony a předpony:
 
-[!code-csharp[pointer increment](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#Increment)]
+[!code-csharp[pointer increment](~/samples/csharp/language-reference/operators/PointerOperators.cs#Increment)]
 
 ## <a name="pointer-comparison-operators"></a>Operátory porovnání ukazatele
 

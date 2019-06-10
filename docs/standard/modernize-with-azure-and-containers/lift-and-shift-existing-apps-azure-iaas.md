@@ -2,12 +2,12 @@
 title: Zvedněte a shift existujících aplikací .NET do Azure IaaS (infrastruktura připravených pro Cloud)
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows.
 ms.date: 04/28/2018
-ms.openlocfilehash: 24e413ad82742067b2fee6cd3a7a99e6f0f87b0a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: cda316ad01a58f26661395c804547de04e20d052
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65643710"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758863"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Zvedněte a shift existujících aplikací .NET do Azure IaaS (infrastruktura připravených pro Cloud)
 
@@ -39,7 +39,7 @@ Následující části popisují aplikace optimalizované pro Cloud, většinou 
 
 Pokud je vaším cílem je jednoduše přesun stávajících aplikací do cloudu, nejprve identifikování existujících aplikací, které nepotřebuje podstatné změny ke spuštění ve službě Azure App Service. Tyto aplikace by měla být první kandidáty pro Cloud optimalizovaný. 
 
-Pak pro aplikace, která stále nelze přesunout do kontejnery Windows a PaaS, jako je App Service nebo orchestrátorů, jako je Azure Service Fabric, migrace do jednoduchého prostý virtuálních počítačích (IaaS). 
+Pak pro aplikace, která stále nelze přesunout do kontejnery Windows a PaaS, jako je App Service nebo orchestrátorů, jako jsou služby Azure Kubernetes Service migrovat do jednoduchého prostý virtuálních počítačích (IaaS). 
 
 Ale mějte na paměti, že správně konfiguraci, zabezpečení a správu virtuálních počítačů vyžaduje mnohem více času a znalosti v oboru IT ve srovnání s použitím služby PaaS v Azure. Pokud uvažujete o Azure Virtual Machines, ujistěte se, že vzít v úvahu náročnost průběžné údržby vyžaduje opravu, aktualizovat a spravovat prostředí virtuálních počítačů. Azure Virtual Machines je IaaS.
 

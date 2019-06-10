@@ -2,12 +2,12 @@
 title: Nasazení existujících aplikací .NET jako kontejnery Windows
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Nasazení existujících aplikací .NET jako kontejnery Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 77d10867573765a7e86a9827825e1313de7a3035
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ba9af3fc3a5bf285830bb873fa6a5da8390dc6b4
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65643742"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758845"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -153,7 +153,6 @@ Produkty v podpůrných kontejnery služby Azure, které jsou ve stejnou dobu v�
 
 - **Azure App Service**
 - **Azure Kubernetes Service (AKS a ACS)**
-- **Azure Service Fabric** 
 - **Azure Batch** 
 
 Azure Container Registry je vysoce škálovatelná kontejneru registru hostované v Azure, které můžete použít ze všech předchozích produktů při registrací a nasazením vlastního kontejneru obrázků.

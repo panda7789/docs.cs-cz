@@ -2,12 +2,12 @@
 title: Technologie Microsoft v aplikace optimalizované pro Cloud
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Technologie Microsoft v aplikace optimalizované pro Cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: ebdbc7bb3a5f51f8408b69a5e13f03f424eae242
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 915aa99d2331c5b9c46eabef3335fb809baa9370
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639032"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758631"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologie Microsoft v aplikace optimalizované pro cloud
 
@@ -17,7 +17,7 @@ Následující seznam popisuje nástroje, technologie a řešení, které jsou r
 
 - **Modul runtime**: Tato vrstva nabízí prostředí pro spuštění aplikace. Pokud používáte kontejnery, tuto vrstvu obvykle je na základě [modul Docker](https://docs.docker.com/engine/); běží na hostiteli systému Linux nebo na hostitelích s Windows. ([Kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/) jsou podporované od verze Windows serveru 2016. Kontejnery Windows je nejlepší volbou pro existující aplikace .NET Framework, které běží na Windows).
 
-- **Spravované cloudové**: Když zvolíte možnost spravovaného cloudu, můžete vyhnout nákladům a správa a podpora základního oprav operačního systému virtuálních počítačích, infrastruktury a konfiguraci sítě. Pokud budete chtít migrovat pomocí IaaS, budete muset pro všechny tyto úlohy a související náklady. V spravované cloudové možnosti spravovat jenom aplikace a služby, které vyvíjíte. Poskytovatel cloudové služby obvykle spravuje všechno ostatní. Příklady spravované cloudové služby v Azure [Azure SQL Database](https://azure.microsoft.com/services/sql-database), [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [služby Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), [služby Azure Storage](https://azure.microsoft.com/services/storage/), [– Azure Database for MySQL](https://azure.microsoft.com/services/mysql/), [– Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/), [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)a spravovat výpočetních služeb, jako je [škálování virtuálního počítače Nastaví](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/), [služby Azure App Service](https://azure.microsoft.com/services/app-service/), a [Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/).
+- **Spravované cloudové**: Když zvolíte možnost spravovaného cloudu, můžete vyhnout nákladům a správa a podpora základního oprav operačního systému virtuálních počítačích, infrastruktury a konfiguraci sítě. Pokud budete chtít migrovat pomocí IaaS, budete muset pro všechny tyto úlohy a související náklady. V spravované cloudové možnosti spravovat jenom aplikace a služby, které vyvíjíte. Poskytovatel cloudové služby obvykle spravuje všechno ostatní. Příklady spravované cloudové služby v Azure [Azure SQL Database](https://azure.microsoft.com/services/sql-database), [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [služby Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), [služby Azure Storage](https://azure.microsoft.com/services/storage/), [– Azure Database for MySQL](https://azure.microsoft.com/services/mysql/), [– Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/), [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)a spravovat výpočetních služeb, jako je [škálování virtuálního počítače Nastaví](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [služby Azure App Service](https://azure.microsoft.com/services/app-service/), a [Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/).
 
 - **Vývoj aplikací**: Při sestavování aplikace, které běží v kontejnerech, můžete vybrat z mnoha jazyků. Tato příručka se zaměřuje na [.NET](https://www.microsoft.com/net), ale můžete vyvíjet aplikace založené na kontejnerech s použitím jiných jazycích, jako je Java nebo Node.js, Python, Spring, nebo se vrátit.
 
@@ -27,7 +27,7 @@ Následující seznam popisuje nástroje, technologie a řešení, které jsou r
 
 - **Životní cyklus aplikace**: [Služby Azure DevOps](https://azure.microsoft.com/services/devops/) a další nástroje, jako je Jenkins, jsou sestavené automatizační servery, které vám pomohou implementovat kanálů CI/CD, včetně produktu release management.
 
-Další části této kapitole a souvisejících návodů, konkrétně zaměřit podrobnosti o modulu runtime vrstvy (kontejnery Windows). Návod popisuje způsoby, kterými můžete nasadit kontejnery Windows ve Windows serveru 2016 (a novějších verzích) virtuálních počítačů a Azure Container Instances. Věnuje se také pokročilejší platformy PaaS, jako je Azure App Service a orchestrátor, jako je Azure Service Fabric a službě Azure Kubernetes.
+Další části této kapitole a souvisejících návodů, konkrétně zaměřit podrobnosti o modulu runtime vrstvy (kontejnery Windows). Návod popisuje způsoby, kterými můžete nasadit kontejnery Windows ve Windows serveru 2016 (a novějších verzích) virtuálních počítačů a Azure Container Instances. Zahrnuje také pokročilé platformy PaaS, jako je Azure App Service a orchestrátor, jako je Azure Kubernetes Service.
 
 ## <a name="monolithic-applications-can-be-cloud-optimized"></a>Monolitické aplikace *můžete* být optimalizované pro Cloud
 

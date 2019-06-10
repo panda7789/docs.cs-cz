@@ -2,12 +2,12 @@
 title: Důvody pro modernizovat existující aplikace .NET pro aplikace optimalizované pro Cloud
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Důvody pro modernizovat existující aplikace .NET pro aplikace optimalizované pro Cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: e09d8066e883aaef55408336e3817158e2c14be6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5aa9828f65f76138461c18711fe03bdbe6a70ffd
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639063"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758742"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovat existující aplikace .NET pro aplikace optimalizované pro Cloud
 
@@ -27,7 +27,7 @@ Vaše aplikace je optimalizované pro Cloud při může v agile způsobem vyvíj
 
 Klíč je *flexibilitu*. Nelze odeslat s flexibilitou, není-li snížit na absolutním minimu každý nasazení na produkční problémy a chyby prostředí pro vývoj/testování. Kontejnery (konkrétně Dockeru, jako de facto standardem) a spravované služby byly navrženy speciálně pro tento účel.
 
-Pro dosažení flexibility, musíte také automatizované procesy DevOps, které jsou založeny na kanály CI/CD, které vydané škálovatelné platformy v cloudu. CI/CD platformy (jako je Azure DevOps Services nebo Jenkinse), které nasazujete, škálovatelné a odolné cloudové platformy (jako je Azure App Service, Azure Service Fabric nebo Azure Kubernetes Service) jsou klíčové technologie pro zajištění pružnosti v cloudu.
+Pro dosažení flexibility, musíte také automatizované procesy DevOps, které jsou založeny na kanály CI/CD, které vydané škálovatelné platformy v cloudu. CI/CD platformy (jako je Azure DevOps Services nebo Jenkinse), které nasazujete, škálovatelné a odolné cloudové platformy (jako je Azure App Service nebo Azure Kubernetes Service) jsou klíčové technologie pro zajištění pružnosti v cloudu.
 
 Následující seznam popisuje hlavní principy nebo postupy pro aplikace optimalizované pro Cloud. Mějte na paměti, přijímat všechny nebo pouze některé z těchto zásad v rámci postupného nebo přírůstkové přístupu:
 

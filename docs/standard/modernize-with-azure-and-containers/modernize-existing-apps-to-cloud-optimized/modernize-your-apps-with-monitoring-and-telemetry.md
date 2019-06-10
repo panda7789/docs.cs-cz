@@ -2,12 +2,12 @@
 title: Modernizace aplikací pomocí monitorování a telemetrie
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Modernizace aplikací pomocí monitorování a telemetrie
 ms.date: 04/30/2018
-ms.openlocfilehash: 94196365e6ed93839b28ed3b375e75a9119ae12d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5bffb336234f63dca150acc9ef31f9efa2e3937b
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65643678"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758619"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -38,8 +38,6 @@ Můžete používat Log Analytics na portálu OMS nebo webu Azure portal, který
 - DC/OS
 
 - Kubernetes
-
-- Service Fabric
 
 - Red Hat OpenShift
 
@@ -88,10 +86,6 @@ Obrázek 4 – 11 znázorňuje vztahy mezi různými hostitelích kontejnerů a 
 - **Co je Operations Management Suite (OMS)?**
 
 <https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview>
-
-- **Monitorování kontejnerů Windows serveru v Service Fabric pomocí OMS**
-
-<https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver>
 
 >[!div class="step-by-step"]
 >[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)

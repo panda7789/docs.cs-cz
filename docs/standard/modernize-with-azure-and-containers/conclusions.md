@@ -2,12 +2,12 @@
 title: Závěry
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows | závěry
 ms.date: 10/26/2017
-ms.openlocfilehash: c6f56e312c052f3ea87e62d36a1ae6846a4b8735
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c5d4a3d504e7d62f74cf74e7b3f53f44f4b9b152
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65643767"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758874"
 ---
 # <a name="conclusions"></a>Závěry
 
@@ -15,7 +15,7 @@ ms.locfileid: "65643767"
 
 - Kontejner Dockeru se standardní jednotkou nasazení pro všechny serverové aplikace nebo služba.
 
-- Pro produkční prostředí měli byste použít k hostování škálovatelných aplikací založených na kontejnerech Windows orchestrátoru (jako je Service Fabric nebo Kubernetes).
+- Pro produkční prostředí měli byste použít k hostování škálovatelných aplikací založených na kontejnerech Windows orchestrátoru (jako je Kubernetes).
 
 - Virtuální počítače Azure hostování kontejnerů jsou rychlý a jednoduchý způsob, jak vytvořit malých vývojových/testovacích prostředí v cloudu.
 

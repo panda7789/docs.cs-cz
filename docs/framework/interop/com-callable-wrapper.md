@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 942ba933126da291e072270318a5657953ddcdb8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a658a9f706a53697b341463b443c5145a727b4b9
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643604"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758249"
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 
@@ -186,7 +186,7 @@ Automaticky generované duální rozhraní může být vhodné ve výjimečných
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Ujistěte se, že jsou všechna oznámení událostí modelu COM s pozdní vazbou.
 
-Ve výchozím nastavení informace o typu modelu COM se vloží přímo do spravovaných sestavení, která eliminuje potřebu primárního sestavení interop (PIA). Jeden z omezení vložené informace o typu je však, že volání časné vazby vtable nepodporuje doručování oznámení událostí modelu COM, ale podporuje pouze s pozdní vazbou `IDispatch::Invoke` volání.
+Ve výchozím nastavení informace o typu modelu COM se vloží přímo do spravovaných sestavení, která eliminuje potřebu primárního sestavení interop (PIA). Jeden z omezení vložené informace o typu je však, že doručování oznámení událostí modelu COM nepodporuje volání časné vazby vtable, ale podporuje pouze s pozdní vazbou `IDispatch::Invoke` volání.
 
 Pokud vaše aplikace vyžaduje volání časné vazby na metody rozhraní události modelu COM, můžete nastavit **Embed Interop Types** v sadě Visual Studio k `true`, nebo obsahovat následující element v souboru projektu:
 

@@ -2,12 +2,12 @@
 title: Kdy nasadit kontejnery Windows do Azure Container Service (Kubernetes)
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Kdy nasadit kontejnery Windows do Azure Container Service (Kubernetes)
 ms.date: 04/30/2018
-ms.openlocfilehash: 921767b52f2b0d80f2d31d972b65ac7551d2f7c5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 903082deba635dd0dfc22d0186fbc589f8d05b92
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65643562"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758564"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-service-that-is-kubernetes"></a>Kdy nasadit kontejnery Windows do Azure Container Service (Kubernetes)
 
@@ -22,5 +22,5 @@ Například v Kubernetes, podpora kontejnerů je nativní (prvotřídní občany
 Důležitá poznámka: Evolved a "Další PaaS" verze služby ACS (Azure Container Service) pro Kubernetes je AKS (služby Azure Kubernetes Service), ale kontejnerů Windows se ještě nepodporují od 2. čtvrtletí 2018, ale bude brzy podporovat.
 
 >[!div class="step-by-step"]
->[Předchozí](when-to-deploy-windows-containers-to-service-fabric.md)
+>[Předchozí](when-to-deploy-windows-containers-to-azure-container-instances-ACI.md)
 >[další](choosing-azure-compute-options-for-container-based-applications.md)

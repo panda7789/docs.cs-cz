@@ -2,12 +2,12 @@
 title: Návody a přehled technických začátků
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows | Návody a technický přehled Začínáme
 ms.date: 04/28/2018
-ms.openlocfilehash: f5c1ca2b78d27b275845ada72d252450761f5091
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0b0dbae999e31150a55368d669f718eea0925d51
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638971"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758782"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a přehled technických začátků
 
@@ -30,8 +30,6 @@ Každá z následujících návodech používá nové ukázkové eShopLegacy a e
 - **Nasazení aplikace založené na kontejnery Windows na virtuálních počítačích Azure**
 
 - **Nasazení aplikací na základě kontejnerů Windows v Kubernetes ve službě Azure Container Service**
-
-- **Nasazení aplikace založené na kontejnery Windows do Azure Service Fabric**
 
 ## <a name="walkthrough-1-tour-of-eshop-legacy-apps"></a>Návod 1: Prohlídka eShop starší verze aplikací
 
@@ -119,7 +117,7 @@ Existují výhody používání monolitické aplikace v kontejneru. Nejprve vytv
 
 Další výhodou je, že vývojáři spuštěním aplikace v prostředí konzistentní vzhledem k aplikacím, které poskytuje kontejnery Windows. Problémy, které se zobrazují pouze u některých verzí můžete okamžitě, nanese místo zpřístupnění v přípravném nebo produkčním prostředí. Rozdíly ve vývojovém prostředí, které používají členové vývojového týmu méně důležitá, když aplikace běží v kontejnerech.
 
-Kontejnerizované aplikace také mít plošší křivky horizontální navýšení kapacity. Kontejnerizovaných aplikací umožňují další aplikace a instance služby (podle kontejnerů) virtuálního počítače nebo fyzického počítače, ve srovnání s nasazení aplikace pravidelně na počítač. Výsledkem je vyšší hustota a méně požadované prostředky, zejména v případě, že používáte orchestrátorů, jako je Kubernetes nebo Service Fabric.
+Kontejnerizované aplikace také mít plošší křivky horizontální navýšení kapacity. Kontejnerizovaných aplikací umožňují další aplikace a instance služby (podle kontejnerů) virtuálního počítače nebo fyzického počítače, ve srovnání s nasazení aplikace pravidelně na počítač. Výsledkem je vyšší hustota a méně požadované prostředky, zejména v případě, že používáte orchestrátorů, jako je Kubernetes.
 
 Kontejnerizace v situacích, ideální, nevyžaduje změny kódu aplikace (C\#). Ve většině případů stačí Docker nasazení metadat souborů (soubory Dockerfile a Docker Compose soubory).
 
@@ -210,7 +208,7 @@ Služba Azure Container Instances usnadňuje vytváření a správu kontejnerů 
 
 ### <a name="considerations"></a>Požadavky
 
-Nasazování kontejnerů Windows s buď úplné rozhraní .NET Framework / technologie ASP.NET nebo SQL serveru do Azure Container Instances (ACI) není úplně tak rychlý jako při nasazování na regulární hostitele Docker (např. Windows Server 2016 s kontejnery Windows), protože image Dockeru, musí být stažení (načtený z registru Dockeru) pokaždé, když a i když je mnohem levnější než udržování vašeho vlastního hostitele docker (trvale online jsou výrazně velké velikosti image kontejneru SQL (15.1 GB) a image kontejneru ASP.NET (13.9 GB) Windows Server 2016 s virtuálním Počítačem kontejnery Windows v Azure) nemluvě celý orchestrator, jako je Kubernetes v Azure (/ služby AKS ACS) nebo Azure Service Fabric, které jsou na druhé straně skvělou možností pro nasazení v produkčním prostředí.
+Nasazování kontejnerů Windows s buď úplné rozhraní .NET Framework / technologie ASP.NET nebo SQL serveru do Azure Container Instances (ACI) není úplně tak rychlý jako při nasazování na regulární hostitele Docker (např. Windows Server 2016 s kontejnery Windows), protože image Dockeru, musí být stažení (načtený z registru Dockeru) pokaždé, když a i když je mnohem levnější než udržování vašeho vlastního hostitele docker (trvale online jsou výrazně velké velikosti image kontejneru SQL (15.1 GB) a image kontejneru ASP.NET (13.9 GB) Windows Server 2016 s virtuálním Počítačem kontejnery Windows v Azure) nemluvě celý orchestrator, jako je Kubernetes v Azure (AKS), který je na druhé straně skvělou volbou pro nasazení v produkčním prostředí.
 
 Jako hlavní uzavření pomocí služby Azure Container Instances je velice přesvědčivý argument možnost pro scénáře vývoje/testování a pro kanály CI/CD.
 
@@ -279,80 +277,6 @@ S využitím Kubernetes můžete průběh vývojáře od přemýšlení o fyzick
 ## <a name="next-steps"></a>Další kroky
 
 Tento obsah podrobnější zkoumání na Wiki úložiště GitHub: <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)>
-
-## <a name="walkthrough-6-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>Návod 6: Nasazení aplikace založené na kontejnery Windows do Azure Service Fabric
-
-### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
-
-Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
-
-<https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD)>
-
-### <a name="overview"></a>Přehled
-
-Aplikace založené na kontejnery Windows rychle musí používat platformy, přesunutí ještě více pryč z virtuálních počítačů IaaS. To je potřeba provést snadno dosáhnout vysoké škálovatelnosti a lépe automatizované škálovatelnost a přináší značné vylepšení v automatické nasazení a správy verzí. Pomocí Azure Service Fabric, která je k dispozici v cloudu Azure, ale také k dispozici pro použití v místním, orchestrator nebo dokonce i v různých veřejného cloudu, můžete dosáhnout těchto cílů.
-
-### <a name="goals"></a>Cíle
-
-Cílem tohoto návodu je naučit se nasazovat aplikace založené na Windows kontejnerů do clusteru Service Fabric v Azure. Nasazení do Service Fabric úplně od začátku je dvoustupňový proces:
-
-1. Nasazení clusteru Service Fabric do Azure (nebo do jiného prostředí).
-
-2. Nasazení aplikace a související prostředky do clusteru Service Fabric.
-
-### <a name="scenarios"></a>Scénáře
-
-#### <a name="scenario-a-deploy-directly-to-a-service-fabric-cluster-from-a-dev-environment"></a>Scénář A: Nasadit do clusteru Service Fabric z vývojového prostředí
-
-![Nasadit do clusteru Service Fabric z vývojového prostředí](./media/image5-9.png)
-
-> **Obrázek 5 až 9.** Nasadit do clusteru Service Fabric z vývojového prostředí
-
-### <a name="scenario-b-deploy-to-a-service-fabric-cluster-from-cicd-pipelines-in-azure-devops-services"></a>Scénář B: Nasazení do clusteru Service Fabric z kanálů CI/CD ve službách Azure DevOps
-
-![Nasazení do clusteru Service Fabric z kanálů CI/CD ve službách Azure DevOps](./media/image5-10.png)
-
-**Obrázek 5 – 10.** Nasazení do clusteru Service Fabric z kanálů CI/CD ve službách Azure DevOps
-
-## <a name="benefits"></a>Výhody
-
-Výhody nasazení do clusteru v Service Fabric jsou podobné výhody používání Kubernetes. Jedním z rozdílů, ale je, že Service Fabric je vyspělejší produkčním prostředí pro aplikace Windows ve srovnání s Kubernetes, který je ve fázi beta pro kontejnery Windows v Kubernetes verze 1.9 (prosinec 2017). Kubernetes je vyspělejší prostředí pro Linux.
-
-Hlavní výhodou použití Azure Service Fabric je, že dostanete prostředí připravené pro produkční prostředí, ve kterém můžete škálovat aplikace založená na počet instancí kontejneru chcete použít (vnitřní škálovatelnost v existujících uzlů) a podle počtu uzly nebo virtuální počítače v clusteru (globální škálovatelnost clusteru).
-
-Azure Service Fabric nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Můžete použít Service Fabric cluster v Azure, nebo ji nainstalovat lokálně ve vašem vlastním datovém centru. Můžete nainstalovat i cluster Service Fabric v jiný cloud, jako je třeba [Amazon AWS](https://blogs.msdn.microsoft.com/azureservicefabric/2017/05/18/tutorial-how-to-create-a-service-fabric-standalone-cluster-with-aws-ec2-instances/).
-
-S využitím Service Fabric můžete průběh vývojáře od přemýšlení o fyzické a virtuální počítače k plánování zaměřené na kontejner infrastruktury, která usnadňuje následující funkce, mimo jiné:
-
-- Aplikace založené na několik kontejnerů.
-
-- Replikace container instances a automatické horizontální škálování.
-
-- Pojmenování a zjišťování (například interní DNS).
-
-- Vyrovnávání zatížení.
-
-- Aktualizace se zajištěním provozu.
-
-- Distribuce tajných kódů.
-
-- Kontroluje se stav aplikace.
-
-Tyto možnosti jsou výhradně v Service Fabric (ve srovnání se jiných orchestrátorů):
-
-- Funkce stavové služby, prostřednictvím aplikačního modelu Reliable Services.
-
-- Model objektů actor, prostřednictvím aplikačního modelu Reliable Actors.
-
-- Nasazení úplné kost procesy, kromě kontejnery Windows nebo Linux.
-
-- Pokročilé kumulativní aktualizace a kontroly stavu.
-
-### <a name="next-steps"></a>Další kroky
-
-Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
-
-<https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD)>
 
 > [!div class="step-by-step"]
 > [Předchozí](lift-and-shift-existing-apps-devops/migrate-to-hybrid-cloud-scenarios.md)
