@@ -3,12 +3,12 @@ title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Získejte přehled o nové funkce ve verzi 7.0 C# jazyka.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 942a126ae026897d608c9fb077fc5f10ff73c110
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9b4569f31211afc69efb1b853723fded9329ae41
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753056"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815969"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
@@ -222,7 +222,7 @@ Změna metody na výrazu vozidlo člena je [binární kompatibilní změnu](vers
 
 ## <a name="throw-expressions"></a>Výrazy throw
 
-V jazyce C# `throw` vždy bylo příkazu. Protože `throw` je příkaz, není výraz bylo C# konstrukce, které nelze použít. Tyto uvedeny podmíněné výrazy, null slučovací výrazy a některé výrazy lambda. Přidání členů s výrazem v těle přidá více míst kde `throw` výrazů může být užitečné. Aby mohla zapisovat některý z těchto konstruktorů, C# 7.0 zavádí *vyvolání výrazů*.
+V jazyce C# `throw` vždy bylo příkazu. Protože `throw` je příkaz, není výraz bylo C# konstrukce, které nelze použít. Tyto uvedeny podmíněné výrazy, null slučovací výrazy a některé výrazy lambda. Přidání členů s výrazem v těle přidá více míst kde `throw` výrazů může být užitečné. Aby mohla zapisovat některý z těchto konstruktorů C# 7.0 zavádí [ *vyvolání výrazů*](../language-reference/keywords/throw.md#the-throw-expression).
 
 Toto přidání je snazší psát další kód založené na výrazu. Není nutné další příkazy pro kontrolu chyb.
 
@@ -241,7 +241,7 @@ Toto vylepšení je zvláště užitečná pro autory knihoven, aby se vyhnul p�
 
 ## <a name="numeric-literal-syntax-improvements"></a>Vylepšení číselný literál syntaxe
 
-Číselné konstanty misreading může znesnadnit pochopení kódu při čtení poprvé. Bitové masky nebo jiné symbolické hodnoty jsou náchylné k neporozumění. C#7.0 obsahuje dvě nové funkce pro zápis čísla způsobem nejvíce čitelné pro zamýšlené použití: *binární literály:*, a *oddělovače číslic:*.
+Číselné konstanty misreading může znesnadnit pochopení kódu při čtení poprvé. Bitové masky nebo jiné symbolické hodnoty jsou náchylné k neporozumění. C#7.0 obsahuje dvě nové funkce pro zápis čísla způsobem nejvíce čitelné pro zamýšlené použití: *binární literály:* , a *oddělovače číslic:* .
 
 Pro situace, při vytváření bitové masky, nebo když se binární vyjádření čísla je nejvíce čitelné kód zápis tohoto čísla v binárním souboru:
 
