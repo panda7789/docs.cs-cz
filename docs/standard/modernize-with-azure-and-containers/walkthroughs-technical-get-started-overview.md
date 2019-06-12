@@ -2,12 +2,12 @@
 title: Návody a přehled technických začátků
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows | Návody a technický přehled Začínáme
 ms.date: 04/28/2018
-ms.openlocfilehash: 0b0dbae999e31150a55368d669f718eea0925d51
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 1ae6f3c1e739184356b97fa96e74bab402bf1d2a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758782"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832952"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a přehled technických začátků
 
@@ -132,7 +132,7 @@ Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
 ### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
 
-Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup: <https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)>
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup: <https://github.com/dotnet-architecture/eShopModernizing/wiki/06.-Deploying-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)>
 
 ### <a name="overview"></a>Přehled
 
@@ -178,7 +178,7 @@ I když se dají nasadit kontejnery Windows pro místní Windows Server 2016 vir
 
 Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
-<https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)>
+<https://github.com/dotnet-architecture/eShopModernizing/wiki/06.-Deploying-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)>
 
 ## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-azure-container-instances-aci"></a>Návod 4: Nasazovat aplikace založené na kontejnery Windows do služby Azure Container Instances (ACI)
 
@@ -216,7 +216,7 @@ Jako hlavní uzavření pomocí služby Azure Container Instances je velice pře
 
 Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)TBD)
+[https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
 
 ## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>Návod 5: Nasazení aplikací na základě kontejnerů Windows v Kubernetes ve službě Azure Container Service
 
@@ -224,7 +224,7 @@ Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
 Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
 
-<https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)>
+<https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
 ### <a name="overview"></a>Přehled
 
@@ -276,7 +276,35 @@ S využitím Kubernetes můžete průběh vývojáře od přemýšlení o fyzick
 
 ## <a name="next-steps"></a>Další kroky
 
-Tento obsah podrobnější zkoumání na Wiki úložiště GitHub: <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)>
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub: <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
+
+## <a name="walkthrough-6-deploy-your-windows-containers-based-apps-to-azure-app-service-for-containers"></a>Návod 6: Nasazení aplikace založené na kontejnery Windows do Azure App Service pro kontejnery
+
+### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
+
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
+
+<https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
+
+### <a name="overview"></a>Přehled
+
+Jednoduché kontejnerizované aplikace pomocí kontejnerů Windows je možné snadno nasadit do služby Azure App Service pro kontejnery. Toto je doporučený postup pro většinu aplikací založených na kontejnerech Windows.
+
+### <a name="goals"></a>Cíle
+
+Cílem tohoto návodu je naučit se nasazovat aplikace založené na kontejneru Windows do Azure App Service pro kontejnery z registru (Docker Hubu nebo služby Azure Container Registry).
+
+### <a name="scenario"></a>Scénář
+
+![Nasazení aplikace založené na kontejnerech Windows do Azure App Service pro kontejnery](./media/image5-11.png)
+
+### <a name="benefits"></a>Výhody
+
+Nasazení do služby Azure App Service pro kontejnery nabízí výhody kontejnerů spárovat s výhodami Azure App Service nabízí PaaS. Služby app service je možné snadno škálovat vertikální i horizontální a dá se k automatickému škálování s cílem splnit měnící požadavky. Aktualizací je možné provést s nulovými výpadky a konfiguraci průběžného nasazování z registru se snadno konfigurovat také.
+
+## <a name="next-steps"></a>Další kroky
+
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub: <https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 
 > [!div class="step-by-step"]
 > [Předchozí](lift-and-shift-existing-apps-devops/migrate-to-hybrid-cloud-scenarios.md)

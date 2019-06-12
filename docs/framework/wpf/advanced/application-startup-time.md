@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: b3dcd46f1158814b836c7491cf1ed3ac468122ad
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 321aad14d17d6ef6fe0b7c112f8f694dd1c767d6
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689338"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832689"
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
 Množství času, který je požadován pro spuštění aplikace WPF může značně lišit. Toto téma popisuje různé postupy pro zkrácení doby spuštění vnímaná, ve skutečnosti pro aplikace Windows Presentation Foundation (WPF).  
@@ -24,7 +24,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
  Horké spuštění nastane, pokud většina těchto stránek pro hlavní komponenty společného jazykového modulu runtime (CLR) jsou už načtené v paměti, což šetří čas přístupu nákladné disku. To je důvod, proč spravované aplikace spouští rychleji, když je spuštěna jednou.  
   
 ## <a name="implement-a-splash-screen"></a>Implementace úvodní obrazovky  
- V případech, kde je důležité, nevyhnutelné zpoždění mezi spuštěním aplikace a zobrazení první uživatelského rozhraní, optimalizujte vnímaná spuštění pomocí *úvodní obrazovka*. Tento přístup téměř okamžitě zobrazí obrázek po spuštění aplikace uživatelem. Když je připravený k zobrazení jeho první uživatelského rozhraní aplikace, zmenšuje se na úvodní obrazovce. Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], můžete použít <xref:System.Windows.SplashScreen> třídu pro implementaci úvodní obrazovky. Další informace najdete v tématu [přidání úvodní obrazovky do aplikace WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ V případech, kde je důležité, nevyhnutelné zpoždění mezi spuštěním aplikace a zobrazení první uživatelského rozhraní, optimalizujte vnímaná spuštění pomocí *úvodní obrazovka*. Tento přístup téměř okamžitě zobrazí obrázek po spuštění aplikace uživatelem. Když je připravený k zobrazení jeho první uživatelského rozhraní aplikace, zmenšuje se na úvodní obrazovce. Počínaje rozhraním .NET Framework 3.5 SP1, můžete použít <xref:System.Windows.SplashScreen> třídu pro implementaci úvodní obrazovky. Další informace najdete v tématu [přidání úvodní obrazovky do aplikace WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
  Můžete také implementovat vlastní úvodní obrazovky pomocí nativní grafické Win32. Zobrazit vaši implementaci před <xref:System.Windows.Application.Run%2A> metoda je volána.  
   

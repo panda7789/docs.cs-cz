@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfc55bcd97a6c1d68d4ce900b19ace7356d6ee92
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
-ms.translationtype: MT
+ms.openlocfilehash: e72d093dd02f4a67386f58af5df40247c66dc378
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378573"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832800"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -100,7 +100,7 @@ Textový soubor vytvářených *Ildasm.exe* lze použít jako vstup pro nástroj
 > [!NOTE]
 > Momentálně nelze tuto techniku použít se soubory PE obsahujícími vložený nativní kód (například PE soubory vytvořené jazykem Visual C++).  
 
-Chcete-li zobrazit metadata a zpětně přeložený kód libovolného existujícího souboru PE v hierarchickém stromovém zobrazení, lze použít výchozí grafické uživatelské rozhraní nástroje IL Disassembler. Chcete-li použít grafické uživatelské rozhraní, zadejte **ildasm** příkazového řádku bez zadání *PEfilename* argument nebo jakýchkoli možností. Z **souboru** nabídky, se můžete dostat přenositelného Spustitelného souboru, který chcete načíst do *Ildasm.exe*. Chcete-li uložit metadata a zpětně přeložený kód pro vybrané PE, vyberte **výpisu paměti** příkaz **souboru** nabídky. Uložte hierarchické stromové zobrazení pouze, vyberte **vypsat stromové zobrazení** příkaz **souboru** nabídky. Podrobné pokyny k načítání souboru do *Ildasm.exe* a interpretaci výstupu, podívejte se *Ildasm.exe* kurz, umístěný ve složce Samples, která se dodává s [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].
+Chcete-li zobrazit metadata a zpětně přeložený kód libovolného existujícího souboru PE v hierarchickém stromovém zobrazení, lze použít výchozí grafické uživatelské rozhraní nástroje IL Disassembler. Chcete-li použít grafické uživatelské rozhraní, zadejte **ildasm** příkazového řádku bez zadání *PEfilename* argument nebo jakýchkoli možností. Z **souboru** nabídky, se můžete dostat přenositelného Spustitelného souboru, který chcete načíst do *Ildasm.exe*. Chcete-li uložit metadata a zpětně přeložený kód pro vybrané PE, vyberte **výpisu paměti** příkaz **souboru** nabídky. Uložte hierarchické stromové zobrazení pouze, vyberte **vypsat stromové zobrazení** příkaz **souboru** nabídky. Podrobné pokyny k načítání souboru do *Ildasm.exe* a interpretaci výstupu, podívejte se *Ildasm.exe* kurz, umístěný ve složce Samples, která se dodává s Windows Software Development Kit (SDK ).
 
 Pokud zadáte *Ildasm.exe* s *PEfilename* argument, který obsahuje vložené prostředky, nástroj vytvoří několik výstupních souborů: textový soubor obsahující kód IL a pro každý vložený spravovaný prostředek, soubor .resources vytvořený za použití názvu prostředku z metadat. Pokud je součástí nespravovaný prostředek *PEfilename*, soubor .res je vytvořen pomocí názvu souboru určeného pro výstup IL **/output** možnost.
 

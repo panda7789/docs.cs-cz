@@ -2,12 +2,12 @@
 title: Pravidla formátování kódu F#
 description: Přečtěte si pokyny pro formátování F# kódu.
 ms.date: 02/08/2019
-ms.openlocfilehash: bfec950395312eac7e837abf8694a4381d5ca82f
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 8be5337d3f593c7e5a2f32cb7231cb7f759fb509
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816177"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833908"
 ---
 # <a name="f-code-formatting-guidelines"></a>Pravidla formátování kódu F#
 
@@ -290,12 +290,13 @@ x ^^^ y // Bitwise xor, also for working with “flags” enumeration
 
 ### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Použijte předponu syntaxi pro obecné typy (`Foo<T>`) před syntaxe přípony (`T Foo`)
 
-F#dědí obě přípony ML styl pojmenování obecných typů (například `int list`) stejně jako předpona .NET stylu (například `list<int>`). Preferovat stylu .NET, s výjimkou čtyři konkrétní typy:
+F#dědí obě přípony ML styl pojmenování obecných typů (například `int list`) stejně jako předpona .NET stylu (například `list<int>`). Preferovat stylu .NET, s výjimkou pět konkrétní typy:
 
 1. Pro F# seznamy, použijte příponový tvar: `int list` spíše než `list<int>`.
 2. Pro F# možnosti použít příponový tvar: `int option` spíše než `option<int>`.
-3. Pro F# pole, použijte syntaxi název `int[]` spíše než `int array` nebo `array<int>`.
-4. Odkazové buňky pomocí `int ref` spíše než `ref<int>` nebo `Ref<int>`.
+3. Pro F# hodnotu možnosti, použijte příponový tvar: `int voption` spíše než `voption<int>`.
+4. Pro F# pole, použijte syntaxi název `int[]` spíše než `int array` nebo `array<int>`.
+5. Odkazové buňky pomocí `int ref` spíše než `ref<int>` nebo `Ref<int>`.
 
 Pro všechny ostatní typy použijte prefixová podoba.
 

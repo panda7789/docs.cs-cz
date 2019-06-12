@@ -3,12 +3,12 @@ title: Postup instalace nástroje ML.NET rozhraní příkazového řádku (CLI)
 description: Přehled a instalace nástroje ML.NET rozhraní příkazového řádku (CLI).
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: 9560aa846a1aefabadbd7d4faf8bd306ba72e0de
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 4888acd10570318ef53dc4b1a5a4ff5d8dc0c99b
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557862"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832923"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Postup instalace nástroje ML.NET rozhraní příkazového řádku (CLI)
 
@@ -34,7 +34,7 @@ Rozhraní příkazového řádku ML.NET je nainstalována jako jakékoli jiné d
 Následující příklad ukazuje, jak nainstalovat rozhraní příkazového řádku ML.NET výchozí umístění kanál NuGet:
 
 ```console
-> dotnet tool install -g mlnet
+dotnet tool install -g mlnet
 ```
 
 Pokud nástroj nejde nainstalovat, (tj. Pokud není k dispozici na výchozím nastavení informačního kanálu NuGet), zobrazí se chybové zprávy. Zkontrolujte, že se kontroluje informační kanály, které jste očekávali.
@@ -49,7 +49,7 @@ Tool 'mlnet' (version 'X.X.X') was successfully installed.
 Můžete potvrdit, že instalace proběhla úspěšně tak, že zadáte následující příkaz:
 
 ```console
-> mlnet
+mlnet
 ```
 
 Měli byste vidět nápovědy pro příkazy dostupné pro nástroj mlnet například příkaz "Automatické – train".
@@ -59,13 +59,13 @@ Měli byste vidět nápovědy pro příkazy dostupné pro nástroj mlnet napří
 Pokud se snažíte nainstalovat předběžné verzi nebo konkrétní verzi nástroje, můžete zadat [framework](../../standard/frameworks.md) v následujícím formátu:
 
 ```console
-> dotnet tool install -g mlnet --framework <FRAMEWORK>
+dotnet tool install -g mlnet --framework <FRAMEWORK>
 ```
 
 Můžete také zkontrolovat, pokud je tak, že zadáte následující příkaz správně nainstalován balíček:
 
 ```console
-> dotnet tool list -g
+dotnet tool list -g
 ```
 
 ## <a name="uninstall-the-cli-package"></a>Odinstalovat balíček rozhraní příkazového řádku
@@ -73,7 +73,7 @@ Můžete také zkontrolovat, pokud je tak, že zadáte následující příkaz s
 Zadejte následující příkaz pro odinstalaci balíčku z místního počítače:
 
 ```console
-> dotnet tool uninstall mlnet -g
+dotnet tool uninstall mlnet -g
 ```
 
 ## <a name="update-the-cli-package"></a>Aktualizovat balíček rozhraní příkazového řádku
@@ -81,7 +81,7 @@ Zadejte následující příkaz pro odinstalaci balíčku z místního počíta�
 Zadejte následující příkaz k aktualizaci balíčku z místního počítače:
 
 ```console
-> dotnet tool update -g mlnet
+dotnet tool update -g mlnet
 ```
 
 ## <a name="set-up-cli-suggestions-tab-based-auto-completion"></a>Nastavení rozhraní příkazového řádku návrhy (založené na kartě Automatické dokončování)
@@ -101,7 +101,7 @@ Na počítači, kde byste chtěli povolit dokončení budete muset udělat dvě 
 1. Nainstalujte `dotnet-suggest` globální nástroj spuštěním následujícího příkazu:
 
     ```console
-    > dotnet tool install dotnet-suggest -g
+    dotnet tool install dotnet-suggest -g
     ```
 
 2. Přidáte skript odpovídající překrytí k vašemu profilu prostředí. Budete muset vytvořit prostředí soubor profilu. Skript překrytí bude předávat dokončení požadavků z vašeho prostředí `dotnet-suggest` nástroj, který deleguje na příslušné `System.CommandLine`– na základě aplikace.
@@ -111,7 +111,7 @@ Na počítači, kde byste chtěli povolit dokončení budete muset udělat dvě 
     * Pro PowerShell, přidejte obsah [dotnet navrhnout shim.ps1](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.ps1) k vašemu profilu prostředí PowerShell. Můžete najít očekávanou cestou k vašemu profilu prostředí PowerShell spuštěním následujícího příkazu v konzole:
 
     ```console
-    > echo $profile
+    echo $profile
     ``` 
 
 (Pro další prostředí [vyhledejte](https://github.com/dotnet/System.CommandLine/issues?q=is%3Aissue+is%3Aopen+label%3A%22shell+suggestion%22) nebo otevřete [problém](https://github.com/dotnet/System.CommandLine/issues).)

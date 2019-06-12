@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31c43607a710316696a9765feb6f36b7676f906f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eb055285af7365536f7e1ad7c7d9290e51be50db
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593634"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832866"
 ---
 # <a name="delay-signing-an-assembly"></a>Zpoždění podepsání sestavení
 Organizace může mít úzce strážených pár klíčů, že vývojáři nebudou mít přístup k každý den. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezen pouze několika jednotlivcům. Při vývoji podepisují sestavení silnými názvy, každé sestavení této cílové sestavení silným názvem odkazy obsahuje token veřejný klíč slouží k pojmenování cílové sestavení silným názvem. To vyžaduje veřejný klíč k dispozici během procesu vývoje.  
@@ -28,7 +28,7 @@ Organizace může mít úzce strážených pár klíčů, že vývojáři nebudo
   
  Následující kroky popisují postup odložení sestavení:  
   
-1. Získáte část s veřejným klíčem z dvojice klíčů z organizace, která provede konečnou podepisování. Tento klíč je obvykle ve formě souboru .snk, které je možné vytvořit [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) poskytované [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+1. Získáte část s veřejným klíčem z dvojice klíčů z organizace, která provede konečnou podepisování. Tento klíč je obvykle ve formě souboru .snk, které je možné vytvořit [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) k dispozici ve Windows Software Development Kit (SDK).  
   
 2. Přidat poznámku zdrojového kódu pro sestavení pomocí dvou vlastních atributů z <xref:System.Reflection>:  
   

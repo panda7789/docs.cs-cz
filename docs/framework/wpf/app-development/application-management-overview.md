@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: c4629b18a207f1146f97327088fabf5f85a31892
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c36de23a6a49e684330fc0f47fc46bd86c55e767
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623319"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834070"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vztahuje na aplikace implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídy pro vytváření a správu aplikací.  
@@ -127,7 +127,7 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 
 <a name="Splash_Screen"></a>   
 ### <a name="splash-screen"></a>Úvodní obrazovka  
- Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], zadáte image, který se má použít v okně spuštění nebo *úvodní obrazovka*. <xref:System.Windows.SplashScreen> Třída usnadňuje zobrazení úvodní okno při načítání vaší aplikace. <xref:System.Windows.SplashScreen> Okno se vytvoří a zobrazí před <xref:System.Windows.Application.Run%2A> je volána. Další informace najdete v tématu [dobu spuštění aplikace](../advanced/application-startup-time.md) a [přidání úvodní obrazovky do aplikace WPF](how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ Počínaje rozhraním .NET Framework 3.5 SP1, můžete zadat obrázek, který se použije v okně spuštění nebo *úvodní obrazovka*. <xref:System.Windows.SplashScreen> Třída usnadňuje zobrazení úvodní okno při načítání vaší aplikace. <xref:System.Windows.SplashScreen> Okno se vytvoří a zobrazí před <xref:System.Windows.Application.Run%2A> je volána. Další informace najdete v tématu [dobu spuštění aplikace](../advanced/application-startup-time.md) a [přidání úvodní obrazovky do aplikace WPF](how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
 <a name="Starting_an_Application"></a>   
 ### <a name="starting-an-application"></a>Spuštění aplikace  

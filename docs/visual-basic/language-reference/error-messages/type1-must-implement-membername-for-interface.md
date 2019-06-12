@@ -1,5 +1,5 @@
 ---
-title: <type1>"<typename>musí implementovat<membername>'pro rozhraní'<interfacename>.
+title: <type1>'<typename>musí implementovat<membername>'pro rozhraní'<interfacename>.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30154
@@ -14,8 +14,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61792090"
 ---
-# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<membername > "rozhraní"\<interfacename > "
-"\<typename >' musí implementovat '\<membername >" rozhraní "\<interfacename >'. Implementující vlastnost musí mít odpovídající 'ReadOnly' / specifikátory 'Jen pro zápis'.  
+# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<membername > 'rozhraní'\<interfacename > '
+'\<typename >' musí implementovat '\<membername >' rozhraní '\<interfacename >'. Implementující vlastnost musí mít odpovídající 'ReadOnly' / specifikátory 'Jen pro zápis'.  
   
  Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje proceduru, vlastnost nebo událost definované rozhraní. Musíte implementovat každého člena rozhraní.  
   

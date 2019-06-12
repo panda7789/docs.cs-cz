@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b967e6441ae3f3d43e5a6276cfcf79e3c44f74cf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d69fd06f4048667a05ddbfec571067c16f9e86a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613977"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833722"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledává a vazby k sestavením, které tvoří vaši aplikaci. Ve výchozím nastavení modul runtime pokusí vytvořit vazbu s přesnou verzi sestavení, na kterou byla aplikace vytvořena s. Toto výchozí chování můžete přepsat pomocí nastavení konfiguračního souboru.  
@@ -24,7 +24,7 @@ Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte poch
  Modul common language runtime provádí několik kroků při pokusu o nalezení sestavení a přeložit odkaz na sestavení. Každý krok je vysvětlené v následujících částech. Zjišťování termín se často používá při popisu, jak modul runtime vyhledává sestavení; odkazuje na sadu heuristik používaná k nalezení sestavení na základě jeho názvu a jazykovou verzi.  
   
 > [!NOTE]
->  V souboru protokolu pomocí můžete zobrazit informace o vazbě [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), které je součástí [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+>  V souboru protokolu pomocí můžete zobrazit informace o vazbě [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), která je zahrnutá ve Windows Software Development Kit (SDK).  
   
 ## <a name="initiating-the-bind"></a>Zahajuje se vazba  
  Proces vyhledávání a vytvoření vazby na sestavení začíná, když modul runtime pokusí přeložit odkaz na jiné sestavení. Tento odkaz může být statická nebo dynamická. Záznamy kompilátoru statické odkazy v metadatech sestavení manifestu v okamžiku sestavení. Dynamické odkazy jsou vytvořeny v reálném čase v důsledku volání různých metod, jako například <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>.  

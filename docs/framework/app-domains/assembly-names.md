@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6bdd27511de18c6cb119ddbf8621c43606c82ad4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36993a13ed085f59fd6002f33e7884bdb1b5db8d
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675075"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832894"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat aplikace. Sestavení se silným názvem je plně kvalifikovaný název, který obsahuje název sestavení, jazykové verze, veřejného klíče a číslo verze. To se často označuje jako zobrazovaný název a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  
@@ -45,7 +45,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 ```  
   
 > [!NOTE]
->  Modul runtime považuje za názvy sestavení velkých a malých písmen při vytváření vazby na sestavení, ale zachová v názvu sestavení se používá jakoukoli velikost písmen. Několik nástrojů [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] zpracování názvy sestavení jako malá a velká písmena. Nejlepších výsledků dosáhnete spravujte názvy sestavení, jako by byly malá a velká písmena.  
+>  Modul runtime považuje za názvy sestavení velkých a malých písmen při vytváření vazby na sestavení, ale zachová v názvu sestavení se používá jakoukoli velikost písmen. Několik nástrojů ve Windows Software Development Kit (SDK) zpracování názvy sestavení jako malá a velká písmena. Nejlepších výsledků dosáhnete spravujte názvy sestavení, jako by byly malá a velká písmena.  
   
 ## <a name="naming-application-components"></a>Pojmenování součásti aplikace  
  Modul runtime nebere v úvahu názvu souboru při určování identity sestavení. Identitu sestavení, který se skládá z názvu sestavení, verzi, jazykovou verzi a silným názvem, musí být jasný modulu runtime.  

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2fa95755142b5ea3999cca127c868bc878da516e
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 78a601e8b2da4fda0951c1d4f7b565753f0ca03a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378585"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833892"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -104,7 +104,7 @@ Chcete-li toto kombinované použití *Ildasm.exe* a *Ilasm.exe* co nejpřesněj
 > [!NOTE]
 > *Ildasm.exe* pracuje pouze se soubory na disku. Nepracuje se soubory nainstalovanými do globální mezipaměti sestavení.
 
-Další informace o gramatice jazyka IL, najdete v souboru asmparse.Grammar sady [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].
+Další informace o gramatice jazyka IL naleznete v souboru asmparse.Grammar sady ve Windows Software Development Kit (SDK).
 
 ## <a name="version-information"></a>Informace o verzi
 
@@ -137,7 +137,7 @@ Od verze rozhraní .NET Framework 4.5, můžete zadat libovolný zařazovací ob
         Test(object A_1) cil managed
 ```
 
-Další informace o gramatice jazyka IL, najdete v souboru asmparse.Grammar sady [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].
+Další informace o gramatice jazyka IL naleznete v souboru asmparse.Grammar sady ve Windows Software Development Kit (SDK).
 
 ## <a name="examples"></a>Příklady
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2ae9470020449719ccb9760fef992898674ba696
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 858d651523ac6196aa2dcad008ea53674eb01b04
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593631"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832844"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
 Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje mezipaměť kódu celého stroje názvem do globální mezipaměti sestavení. Global Assembly Cache ukládá sestavení speciálně určené ke sdílení více aplikacemi v počítači.  
@@ -31,7 +31,7 @@ Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje 
   
 - Pomocí instalačního programu navržené pro práci s globální pamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení.  
   
-- Použijte nástroj pro vývojáře, volá se, [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), k dispozici ve [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+- Použijte nástroj pro vývojáře, volá se, [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), k dispozici ve Windows Software Development Kit (SDK).  
   
     > [!NOTE]
     >  Ve scénářích nasazení použijte instalační služby systému Windows pro instalaci sestavení do globální mezipaměti sestavení. Použijte nástroj Global Assembly Cache pouze ve vývojové scénáře, protože neposkytuje počítání odkazů sestavení a další funkce, které poskytuje při použití Instalační služby systému Windows.  

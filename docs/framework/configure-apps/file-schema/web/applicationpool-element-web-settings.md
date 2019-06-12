@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: f0486e9faf70e7d5d147cfef996edcdaa8846963
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 629eb482768e4ed2b3d70ee3d27157b502eeb72b
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456292"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832725"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool > – Element (nastavení webu)
 Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
@@ -70,7 +70,7 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
   
 - [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] běží v integrovaném režimu.  
   
-- Aplikace používá [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] nebo novější.  
+- Aplikace používá rozhraní .NET Framework 3.5 SP1 nebo novější.  
   
  Hodnoty v tomto příkladu jsou výchozí hodnoty.  
   

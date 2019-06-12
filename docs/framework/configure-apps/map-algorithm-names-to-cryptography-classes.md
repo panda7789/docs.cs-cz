@@ -7,15 +7,15 @@ helpviewer_keywords:
 - cryptographic algorithms
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-ms.openlocfilehash: 9e4154923b2bb0abfe48e7a530497c3d5bf28d91
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c76f80273d37f838ca52efd3b8f8c028b76a4d30
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583734"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832686"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>Mapování názvů algoritmů na třídy šifrování
-Existují čtyři způsoby Vývojář můžete vytvořit pomocí objektu kryptografie [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:  
+Existují čtyři způsoby Vývojář můžete vytvořit objekt cryptography pomocí Windows Software Development Kit (SDK):  
   
 - Vytvoření objektu pomocí **nové** operátor.  
   
@@ -25,7 +25,7 @@ Existují čtyři způsoby Vývojář můžete vytvořit pomocí objektu kryptog
   
 - Vytvoření objektu, který implementuje třídu kryptografické algoritmy (například symetrický blokových šifrách) voláním **vytvořit** metodu na abstraktní třídu pro daný typ algoritmus (například <xref:System.Security.Cryptography.SymmetricAlgorithm>).  
   
- Předpokládejme například, že si vývojář chce vypočítá hodnotu hash SHA1 sadu bajtů. <xref:System.Security.Cryptography> Obor názvů obsahuje dvě implementace algoritmus SHA1, jedna implementace čistě spravovaná a ten, který zabaluje rozhraní CryptoAPI. Vývojář můžete zvolit pro vytvoření instance na konkrétní implementace SHA1 (například <xref:System.Security.Cryptography.SHA1Managed>) voláním **nové** operátor. Pokud však není důležité, která třída načte modul common language runtime, za předpokladu, třída implementuje algoritmus hash SHA1, Vývojář můžete vytvořit objekt voláním <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> metody. Tato metoda volá **System.Security.Cryptography.CryptoConfig.CreateFromName("System.Security.Cryptography.SHA1")**, které musí vracet implementace algoritmu hash SHA1.  
+ Předpokládejme například, že si vývojář chce vypočítá hodnotu hash SHA1 sadu bajtů. <xref:System.Security.Cryptography> Obor názvů obsahuje dvě implementace algoritmus SHA1, jedna implementace čistě spravovaná a ten, který zabaluje rozhraní CryptoAPI. Vývojář můžete zvolit pro vytvoření instance na konkrétní implementace SHA1 (například <xref:System.Security.Cryptography.SHA1Managed>) voláním **nové** operátor. Pokud však není důležité, která třída načte modul common language runtime, za předpokladu, třída implementuje algoritmus hash SHA1, Vývojář můžete vytvořit objekt voláním <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> metody. Tato metoda volá **System.Security.Cryptography.CryptoConfig.CreateFromName("System.Security.Cryptography.SHA1")** , které musí vracet implementace algoritmu hash SHA1.  
   
  Můžete také volat Vývojář **System.Security.Cryptography.CryptoConfig.CreateFromName("SHA1")** proto, že ve výchozím nastavení, konfigurace kryptografie zahrnuje krátké názvy algoritmů dodáváno v rozhraní .NET Framework.  
   
@@ -34,7 +34,7 @@ Existují čtyři způsoby Vývojář můžete vytvořit pomocí objektu kryptog
 ## <a name="mapping-algorithm-names-in-configuration-files"></a>Mapování názvů algoritmů v konfiguračních souborech  
  Ve výchozím nastavení, vrátí modul runtime <xref:System.Security.Cryptography.SHA1CryptoServiceProvider> objekt pro všechny čtyři scénáře. Správce počítače však můžete změnit typ objektu, který vrátí metody v posledních dvou případech. K tomu je nutné mapovat algoritmus popisný název pro třídu, kterou chcete použít v konfiguračním souboru počítače (Machine.config).  
   
- Následující příklad ukazuje postup při konfiguraci modulu runtime, aby **System.Security.Cryptography.SHA1.Create**, **System.Security.CryptoConfig.CreateFromName("SHA1")**, a  **System.Security.Cryptography.HashAlgorithm.Create** vrátit `MySHA1HashClass` objektu.  
+ Následující příklad ukazuje postup při konfiguraci modulu runtime, aby **System.Security.Cryptography.SHA1.Create**, **System.Security.CryptoConfig.CreateFromName("SHA1")** , a  **System.Security.Cryptography.HashAlgorithm.Create** vrátit `MySHA1HashClass` objektu.  
   
 ```xml  
 <configuration>  

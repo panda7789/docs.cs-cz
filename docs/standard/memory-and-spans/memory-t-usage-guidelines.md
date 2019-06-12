@@ -1,17 +1,17 @@
 ---
-title: Paměť<T> a rozpětí<T> pokyny k používání
+title: Pokyny k používání Memory<T> a Span<T>
 ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 728f360d2e8f93ebdf2b17fec39477b95ed11357
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 380c0eef137eb5142c30e63f5446f5d60723087a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063278"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834046"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Paměť\<T > a rozpětí\<T > Pokyny k používání
 
@@ -138,7 +138,7 @@ Ve skutečnosti Pokud spojili jsme toto pravidlo a pravidlo č. 1, můžeme udě
 void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 ```
 
-`DisplayBufferToConsole` Metoda nyní funguje s prakticky všem typ vyrovnávací paměti, který si dokážete představit: `T[]`, přidělit úložiště [stackalloc](~/docs/csharp/language-reference/keywords/stackalloc.md), a tak dále. Dokonce můžete předat <xref:System.String> přímo do ní!
+`DisplayBufferToConsole` Metoda nyní funguje s prakticky všem typ vyrovnávací paměti, který si dokážete představit: `T[]`, přidělit úložiště [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md), a tak dále. Dokonce můžete předat <xref:System.String> přímo do ní!
 
 **Pravidlo #3: Pokud vaše metoda přijímá paměti\<T > a vrátí `void`, nesmí používat paměť\<T > po vrácení metodu instance.**
 

@@ -6,17 +6,17 @@ helpviewer_keywords:
 - marshaling data, COM interop
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 807e514fac7d33cdacac3a48a37c7aa8dd92ef9c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d16f94e8b85a1bedb8b7791c2b7fcaf6d154ba1b
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648643"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833528"
 ---
 # <a name="marshaling-data-with-com-interop"></a>Zařazování dat se spoluprací COM
 Komunikace s objekty COM poskytuje podporu pro používání objektů modelu COM ze spravovaného kódu i vystavení spravované objekty do modelu COM. Podpora zařazování dat do a z modelu COM je rozsáhlý a téměř vždy poskytuje správné chování zařazování.  
   
- [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] Obsahuje následující nástroje vzájemné spolupráce COM:  
+ Windows Software Development Kit (SDK) obsahuje následující nástroje vzájemné spolupráce COM:  
   
 - [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md), která převede knihovnu typů modelu COM pro definiční sestavení. Z tohoto sestavení zprostředkovatele komunikace s objekty zařazování služby generuje obálky, které provádějí data zařazování mezi spravovanými a nespravovanými paměti.  
   

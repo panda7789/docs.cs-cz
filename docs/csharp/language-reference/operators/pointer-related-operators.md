@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 6196cb52cb1b42b3354bc7f8836a171397d0af1e
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
-ms.translationtype: MT
+ms.openlocfilehash: 0cc104c7246763ee32866fe5233b9774253a2888
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758097"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833141"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Ukazatel související s operátory (C# odkaz)
 
@@ -96,7 +96,7 @@ Následující příklad ukazuje, jak přistupovat k prvkům pole pomocí ukazat
 
 [!code-csharp[pointer element access](~/samples/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
 
-V příkladu se používá [ `stackalloc` operátor](../keywords/stackalloc.md) přidělení bloku paměti na zásobníku.
+V příkladu se používá [ `stackalloc` operátor](stackalloc.md) přidělení bloku paměti na zásobníku.
 
 > [!NOTE]
 > Operátor přístupu k elementu ukazatel není celočíselných vyhledávat chyby.
@@ -193,5 +193,5 @@ Další informace najdete v následující částech [ C# specifikace jazyka](~/
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [`unsafe` Klíčové slovo](../keywords/unsafe.md)
 - [`fixed` Klíčové slovo](../keywords/fixed-statement.md)
-- [`stackalloc` – Operátor](../keywords/stackalloc.md)
+- [`stackalloc` – Operátor](stackalloc.md)
 - [`sizeof` – Operátor](../keywords/sizeof.md)

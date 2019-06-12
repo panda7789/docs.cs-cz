@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c806366e8f80e9fd770b45a5f1154d388ac49ab
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: fd1773b184b9ea39b83b91c139acb09658beae11
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489663"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832824"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 
@@ -233,7 +233,7 @@ Předkompilování sestavení programem Ngen.exe může zvýšit rychlost spušt
 Pevné vazby mohou ovlivnit rychlost spuštění, protože všechny bitové kopie pevně svázané s hlavním sestavením aplikace musí být načteny najednou.
 
 > [!NOTE]
-> Před [!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)], byste měli umístit komponenty sdílené se silným názvem do globální mezipaměti sestavení, protože zavaděč provádí ověřování navíc sestavení se silným názvem, které nejsou v globální mezipaměti sestavení, čímž jsou všechna zlepšení času spuštění získaná použitím nativních bitových kopií. Optimalizace, které byly zavedeny v [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] tato ověřování.
+> Před rozhraní .NET Framework 3.5 Service Pack 1 byste měli umístit sdílené se silným názvem součásti v globální mezipaměti sestavení, protože zavaděč sestavení se silným názvem, které nejsou v globální mezipaměti sestavení, čímž provádí ověřování navíc všechna zlepšení času spuštění získaná použitím nativních bitových kopií. Optimalizace představené v rozhraní .NET Framework 3.5 SP1 odebrat tato ověřování.
 
 <a name="UsageSummary"></a>
 

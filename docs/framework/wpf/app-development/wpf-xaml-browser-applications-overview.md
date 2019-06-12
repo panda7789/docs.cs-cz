@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: d536d141d1ac7126c5a3339f75ba374d3e071806
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 286ec3c67e296eb49776e0f2882954c75c53eed8
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591409"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833978"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -182,7 +182,7 @@ ms.locfileid: "64591409"
 ## <a name="xbap-start-time-performance-considerations"></a>Faktory ovlivňující výkon XBAP počáteční čas  
  Důležitou součástí výkonu XBAP, který je jeho spuštění. Pokud XBAP, který je první aplikaci WPF se načíst, *studený start* čas může být deset sekund nebo více. Je to proto, že na stránce Průběh vykreslením ve WPF, a CLR a WPF musí být studeného spouštěná a zobrazte aplikaci.  
   
- Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], počáteční čas XBAP, který je zmírněna tím, že zobrazuje stránku nespravované průběh v rané fázi cyklus nasazení. Na stránce Průběh téměř okamžitě se zobrazí po spuštění aplikace, protože je zobrazený nativní kód hostování a zobrazena ve formátu HTML.  
+ Spuštění v rozhraní .NET Framework 3.5 SP1, počáteční čas XBAP, který je zmírněna tím, že zobrazuje stránku nespravované průběh v rané fázi cyklus nasazení. Na stránce Průběh téměř okamžitě se zobrazí po spuštění aplikace, protože je zobrazený nativní kód hostování a zobrazena ve formátu HTML.  
   
  Kromě toho lepší souběžnosti pořadí stahování ClickOnce zlepšuje čas zahájení až deset procent. Po ClickOnce soubory ke stažení a ověří spustí aktualizovat manifesty spustí stahování aplikací a indikátor průběhu.  
   

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2cfebe19-7436-49f1-bd99-3c4019f0b676
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a91890435b1c2b5b955875f52de86249c2ee79df
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a3b516e43c07666f4b52e67f85cb567ab310f020
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607825"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832921"
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>Sestavení v modulu CLR (Common Language Runtime)
 Sestavení jsou stavební bloky aplikací rozhraní .NET Framework. Tvoří základní jednotku nasazení, správy verzí, opětovného použití, rozsahu platnosti při aktivaci a oprávnění zabezpečení. Sestavení je kolekce typů a prostředků, které jsou vytvořeny tak, aby vzájemně spolupracovaly a tvořily logickou jednotku funkčnosti. Sestavení poskytuje modulu CLR (Common Language Runtime) informace, které požaduje pro zjištění typu implementace. V modulu runtime neexistuje typ mimo kontext sestavení.  
@@ -42,7 +42,7 @@ Sestavení jsou stavební bloky aplikací rozhraní .NET Framework. Tvoří zák
   
  Sestavení mohou být statická nebo dynamická. Statická sestavení mohou zahrnovat typy rozhraní .NET Framework (rozhraní a třídy) i prostředky pro sestavení (rastrové obrázky, soubory JPEG, soubory prostředků atd.). Statická sestavení jsou uložena na disku v přenosných spustitelných souborech (PE). Rozhraní .NET Framework můžete použít také k vytváření dynamických sestavení, která jsou spouštěna přímo z paměti a před spuštěním nejsou uložena na disk. Na disk můžete dynamická sestavení uložit až poté, co jsou spuštěna.  
   
- Existuje několik způsobů vytváření sestavení. Můžete použít vývojářské nástroje, jako je Visual Studio, který jste použili v minulosti k vytvoření souborů .dll nebo .exe. Také je možné použít nástroje, které poskytuje rozhraní [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] k vytváření sestavení s moduly vytvořenými v jiných vývojových prostředích. Modul common language runtime rozhraní API, můžete použít také jako <xref:System.Reflection.Emit?displayProperty=nameWithType>, k vytváření dynamických sestavení.  
+ Existuje několik způsobů vytváření sestavení. Můžete použít vývojářské nástroje, jako je Visual Studio, který jste použili v minulosti k vytvoření souborů .dll nebo .exe. Můžete použít nástroje poskytované ve Windows Software Development Kit (SDK) k vytvoření sestavení s moduly vytvořenými v jiných vývojových prostředích. Modul common language runtime rozhraní API, můžete použít také jako <xref:System.Reflection.Emit?displayProperty=nameWithType>, k vytváření dynamických sestavení.  
   
 ## <a name="related-topics"></a>Související témata  
   

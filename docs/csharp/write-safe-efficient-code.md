@@ -3,12 +3,12 @@ title: Zápis bezpečný a účinný C# kódu
 description: Poslední vylepšení C# jazyk umožňují také napsat bezpečného kódu s možností ověření, že výkon bylo dřív přidružené nezabezpečený kód.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 259ce0b9405dfd74adf51a9cc046ffe3f08d242f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 73ad7a84d2ad47f0e0242825d250247ffb39928e
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753898"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832948"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu
 
@@ -189,7 +189,7 @@ Zobrazí se ukázkový program, který ukazuje, rozdíly ve výkonu pomocí [Ben
 
 Funkce související jazyk je možnost deklarovat hodnotový typ, který musí být omezen na blok zásobníku jeden. Toto omezení umožňuje kompilátoru provést několik optimalizací. Byl primární motivace pro tuto funkci <xref:System.Span%601> a související struktury. Vylepšení výkonu z těchto vylepšení dosáhnete pomocí nové a aktualizované rozhraní API pro .NET, které usnadňují používání <xref:System.Span%601> typu.
 
-Máte podobné požadavky na práci s pamětí, které jsou vytvořené pomocí [ `stackalloc` ](language-reference/keywords/stackalloc.md) nebo při použití paměti z vzájemné spolupráce rozhraní API. Můžete definovat vlastní `ref struct` typy pro tyto potřeby.
+Máte podobné požadavky na práci s pamětí, které jsou vytvořené pomocí [ `stackalloc` ](language-reference/operators/stackalloc.md) nebo při použití paměti z vzájemné spolupráce rozhraní API. Můžete definovat vlastní `ref struct` typy pro tyto potřeby.
 
 ## <a name="readonly-ref-struct-type"></a>`readonly ref struct` Typ
 

@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: fb14e195-fea5-4561-b9a8-60a67283edb9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ceaa3ea9d9140c6b5df45f067558da2de80b8dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ad78c9a277af23eebe357ef986ea59d16bb444e
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643820"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833739"
 ---
 # <a name="run-net-framework-11-apps-on-windows-8-windows-81-or-windows-10"></a>Spouštění aplikací využívajících .NET Framework 1.1 v systému Windows 8, Windows 8.1 nebo Windows 10
 
-Rozhraní .NET Framework 1.1 není podporován [!INCLUDE[win8](../../../includes/win8-md.md)], [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)], nebo operační systémy Windows 10. V některých případech se rozhraní .NET Framework 1.1 je určeno pro spouštění aplikace podle potřeby. V takových případech by kontaktovat svého nezávislého dodavatele softwaru (ISV), aby upgradovali na spuštění v aplikaci [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] nebo vyšší verze. Další informace najdete v tématu [migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md).
+Rozhraní .NET Framework 1.1 není podporován [!INCLUDE[win8](../../../includes/win8-md.md)], [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)], nebo operační systémy Windows 10. V některých případech se rozhraní .NET Framework 1.1 je určeno pro spouštění aplikace podle potřeby. V takových případech by kontaktovat svého nezávislého dodavatele softwaru (ISV), aby upgradovali na spuštění v rozhraní .NET Framework 3.5 SP1 nebo novější verze aplikace. Další informace najdete v tématu [migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md).
 
 ## <a name="install-the-net-framework-11-from-a-cd-or-download-center"></a>Instalace rozhraní .NET Framework 1.1 z disku CD nebo stažení softwaru
 

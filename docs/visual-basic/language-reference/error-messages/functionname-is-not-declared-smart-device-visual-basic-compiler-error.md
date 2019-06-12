@@ -1,5 +1,5 @@
 ---
-title: "\"<functionname>' není deklarována (inteligentního zařízení Visual Basic chyba kompilátoru)"
+title: "'<functionname>' není deklarována (inteligentního zařízení Visual Basic chyba kompilátoru)"
 ms.date: 07/20/2015
 f1_keywords:
 - bc30766
@@ -14,7 +14,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64662076"
 ---
-# <a name="functionname-is-not-declared-smart-devicevisual-basic-compiler-error"></a>"\<functionname >' není deklarována (inteligentního zařízení/jazyka Visual Basic chyba kompilátoru)
+# <a name="functionname-is-not-declared-smart-devicevisual-basic-compiler-error"></a>'\<functionname >' není deklarována (inteligentního zařízení/jazyka Visual Basic chyba kompilátoru)
 <`functionname`> není deklarován. Funkce pro vstupně-výstupních operací souborů jsou běžně k dispozici v `Microsoft.VisualBasic` obor názvů, ale cílové verzi rozhraní .NET Compact Framework je nepodporuje.  
   
  **ID chyby:** BC30766  

@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3a8b6c37df398b7273bfcf082def572d4d0e7d87
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8e544976b0b801b08af238b2aeb36b5611154379
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634531"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832903"
 ---
 # <a name="creating-assemblies"></a>Vytváření sestavení
 
-Můžete vytvořit jeden soubor nebo vícesouborové sestavení pomocí rozhraní IDE, jako je Visual Studio, nebo poskytovaný kompilátory a nástroje [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. Nejjednodušší sestavení je jeden soubor, který má jednoduchý název a je načteno do domény jednu aplikaci. Toto sestavení nemůže být odkazován jiná sestavení mimo adresář aplikace a nejdou dělit kontrolu verze. Chcete-li odinstalovat aplikaci, kterou tvoří sestavení, jednoduše odstranit adresář, ve kterém se nachází. Pro mnoho vývojářů sestavení s těmito funkcemi je vše, co je potřeba k nasazení aplikace.
+Můžete vytvořit jeden soubor nebo vícesouborové sestavení pomocí rozhraní IDE, jako je Visual Studio, nebo kompilátory a nástroje, které jsou k dispozici ve Windows Software Development Kit (SDK). Nejjednodušší sestavení je jeden soubor, který má jednoduchý název a je načteno do domény jednu aplikaci. Toto sestavení nemůže být odkazován jiná sestavení mimo adresář aplikace a nejdou dělit kontrolu verze. Chcete-li odinstalovat aplikaci, kterou tvoří sestavení, jednoduše odstranit adresář, ve kterém se nachází. Pro mnoho vývojářů sestavení s těmito funkcemi je vše, co je potřeba k nasazení aplikace.
 
 Vytvořit vícesouborové sestavení z několika modulů kódu a souborů prostředků. Můžete také vytvořit sestavení, které může sdílet více aplikací. Sdílená sestavení musí mít silný název a je možné nasadit v globální mezipaměti sestavení.
 

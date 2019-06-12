@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fdbbc169999a9faa2ac1c33c8573e51b76899b74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6933aa5ee253f78806aba401749256934f490126
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032433"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833598"
 ---
 # <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
 
@@ -49,7 +49,7 @@ Následující informace o spravované typy, že chtějí začlenit ve svých ap
 
 - Zahrnutí knihovny typů
 
-  Většina typů vyžadují knihovny typů při používané aplikace modelu COM. Můžete generovat knihovnu typů nebo mají vývojáři COM provedení této úlohy. [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] Poskytuje následující možnosti pro vytváření knihovny typů:
+  Většina typů vyžadují knihovny typů při používané aplikace modelu COM. Můžete generovat knihovnu typů nebo mají vývojáři COM provedení této úlohy. Windows Software Development Kit (SDK) poskytuje následující možnosti pro vytváření knihovny typů:
 
   - [Exportér knihovny typů](#cpconpackagingassemblyforcomanchor1)
 

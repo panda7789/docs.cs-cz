@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0c56018c61e5566043fb2b9ba8bbee042093f12
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 7214fa0342d0946044861c4e375c7797ad6a06b1
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758149"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833764"
 ---
 # <a name="runtime-profiling"></a>Běhová profilace
 Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj nebo nasazení. Tato část se týká vývojáři a správci systému, kteří chtějí získat informace o výkonu aplikace.  
   
 ## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Sledování výkonu pomocí sledování výkonu (Perfmon.exe)  
- Sledování výkonu je nejjednodušší nástroje pro použití Chcete-li Profilovat aplikaci rozhraní .NET Framework. Sledování výkonu graficky představuje data v rozhraní .NET Framework čítačů výkonu, které jsou součástí common language runtime a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. Tyto čítače umožňuje monitorovat vše od správy paměti na výkon kompilátor just-in-time (JIT). Upozorní vás, o prostředcích vaše aplikace využívá, což je nepřímé zlomek výkonu vaší aplikace. Tyto čítače slouží k pochopení, jak vaše aplikace funguje interně.  
+ Sledování výkonu je nejjednodušší nástroje pro použití Chcete-li Profilovat aplikaci rozhraní .NET Framework. Sledování výkonu graficky představuje data v rozhraní .NET Framework čítačů výkonu, které jsou součástí common language runtime a Windows Software Development Kit (SDK). Tyto čítače umožňuje monitorovat vše od správy paměti na výkon kompilátor just-in-time (JIT). Upozorní vás, o prostředcích vaše aplikace využívá, což je nepřímé zlomek výkonu vaší aplikace. Tyto čítače slouží k pochopení, jak vaše aplikace funguje interně.  
   
 #### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Ke spuštění Perfmon.exe ve Windows Vista a novějších verzích  
   

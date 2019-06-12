@@ -236,8 +236,6 @@
               href: keywords/sizeof.md
             - name: typeof
               href: keywords/typeof.md
-            - name: stackalloc
-              href: keywords/stackalloc.md
             - name: nameof
               href: keywords/nameof.md
         - name: Klíčová slova převodu
@@ -367,6 +365,8 @@
           displayName: null-coalescing
         - name: => – operátor
           href: operators/lambda-operator.md
+        - name: stackalloc
+          href: operators/stackalloc.md
         - name: true a false – operátory
           href: operators/true-false-operators.md
     - name: 'Speciální znaky jazyka C#'

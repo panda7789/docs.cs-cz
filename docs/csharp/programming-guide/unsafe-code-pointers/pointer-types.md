@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 7f04cfbac72008332a429c4e0ad8bd3f4e60cc83
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3183f8434dd8a6bc8182e2257d0ab3c7e7c014c4
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880330"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833442"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -82,7 +82,7 @@ V následující tabulce je uveden seznam operátorů a příkazů, které moh
 |`++` a `--`|Zvýší a sníží ukazatele.|
 |`+` a `-`|Provádí aritmetické operace ukazatele.|
 |`==`, `!=`, `<`, `>`, `<=`, a `>=`|Porovnává ukazatele.|
-|[`stackalloc` – Operátor](../../language-reference/keywords/stackalloc.md)|Přidělí paměť v zásobníku.|
+|[`stackalloc` – Operátor](../../language-reference/operators/stackalloc.md)|Přidělí paměť v zásobníku.|
 |[`fixed` – Příkaz](../../language-reference/keywords/fixed-statement.md)|Dočasně pevně stanoví proměnnou tak, aby bylo možné vyhledat její adresu.|
 
 Další informace o ukazatel související operátory, naleznete v tématu [ukazatel související s operátory](../../language-reference/operators/pointer-related-operators.md).

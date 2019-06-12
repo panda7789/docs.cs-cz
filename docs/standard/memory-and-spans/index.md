@@ -9,18 +9,18 @@ helpviewer_keywords:
 - pipeline processing
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 76a5c32660c8a08ef34c40f8f4ee9430e5ead5c8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0ada6003cd6d1cd19036c42a3d0d976e18568f3a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644280"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833963"
 ---
 # <a name="memory--and-span-related-types"></a>Typy související s pamětí a rozpětí
 
 Počínaje .NET Core 2.1, .NET obsahuje několik vzájemně souvisejících typů, které reprezentují souvislé, silného typu oblast libovolného paměti. Zde jsou některé z nich:
 
-- <xref:System.Span%601?displayProperty=nameWithType>, typ, který se používá pro přístup k oblasti souvislé paměti. A <xref:System.Span%601> instance může být se opírá o pole typu `T`, <xref:System.String>, vyrovnávací paměť přidělena pomocí [stackalloc](~/docs/csharp/language-reference/keywords/stackalloc.md), nebo ukazatel nespravované paměti. Protože má přidělené v zásobníku, má několik omezení. Například nemůže být typu pole ve třídě <xref:System.Span%601>, ani rozpětí slouží v asynchronních operací.
+- <xref:System.Span%601?displayProperty=nameWithType>, typ, který se používá pro přístup k oblasti souvislé paměti. A <xref:System.Span%601> instance může být se opírá o pole typu `T`, <xref:System.String>, vyrovnávací paměť přidělena pomocí [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md), nebo ukazatel nespravované paměti. Protože má přidělené v zásobníku, má několik omezení. Například nemůže být typu pole ve třídě <xref:System.Span%601>, ani rozpětí slouží v asynchronních operací.
 
 - <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, neměnné verzi <xref:System.Span%601> struktury.
 

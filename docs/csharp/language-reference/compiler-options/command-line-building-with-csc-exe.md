@@ -5,12 +5,12 @@ helpviewer_keywords:
 - builds [C#]
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
-ms.openlocfilehash: 68f0c12d173587e8efc0fe283617b5805c6f7eae
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 0ebc4fa3029e16c5ee89da7d9af8b89924b2c4dc
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877028"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833363"
 ---
 # <a name="command-line-build-with-cscexe"></a>Sestavení z příkazového řádku s csc.exe
 Kompilátor jazyka C# můžete vyvolat zadáním názvu její spustitelný soubor (*csc.exe*) z příkazového řádku.
@@ -19,11 +19,11 @@ Pokud používáte **Developer Command Prompt pro sadu Visual Studio** okna, vš
 
 Pokud používáte standardního okna příkazového řádku, je nutné upravit cestu k, abyste mohli vyvolat *csc.exe* z libovolného adresáře v počítači. Je také nutné spustit *vsvars32.bat* nastavit příslušné proměnné prostředí pro podporu sestavení příkazového řádku. Další informace o *vsvars32.bat*, včetně pokynů pro vyhledání a spusťte ho, naleznete v tématu [jak: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
 
-Pokud pracujete na počítači, který má pouze [!INCLUDE[winsdklong](~/includes/winsdklong-md.md)], můžete použít kompilátor jazyka C# na **příkazový řádek sady SDK**, které můžete otevřít z **Microsoft .NET Framework SDK** nabídky.
+Pokud pracujete na počítači, který má jenom Windows Software Development Kit (SDK), můžete použít C# kompilátoru na **příkazový řádek sady SDK**, které můžete otevřít z **Microsoft .NET Framework SDK**nabídky.
 
 Pomocí nástroje MSBuild můžete také programově vytvářet programy jazyka C#. Další informace najdete v tématu [MSBuild](/visualstudio/msbuild/msbuild).
 
-*Csc.exe* spustitelný soubor je obvykle umístěn ve Microsoft.NET\Framework\\*\<verze >* ve složce *Windows* adresář. Umístění, kde se může lišit v závislosti na přesnou konfiguraci určitého počítače. Pokud více než jednu verzi rozhraní .NET Framework je nainstalována v počítači, zjistíte více verzí tohoto souboru. Další informace o těchto zařízení najdete v tématu [postupy: zjištění nainstalovaných verzí rozhraní .NET Framework](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
+*Csc.exe* spustitelný soubor je obvykle umístěn ve Microsoft.NET\Framework\\ *\<verze >* ve složce *Windows* adresář. Umístění, kde se může lišit v závislosti na přesnou konfiguraci určitého počítače. Pokud více než jednu verzi rozhraní .NET Framework je nainstalována v počítači, zjistíte více verzí tohoto souboru. Další informace o těchto zařízení najdete v tématu [postupy: zjištění nainstalovaných verzí rozhraní .NET Framework](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
 
 > [!TIP]
 >  Při vytváření projektu pomocí rozhraní IDE sady Visual Studio můžete zobrazit **csc** příkazu a jeho kompilátoru přidružené možností v **výstup** okna. Chcete-li zobrazit tyto informace, postupujte podle pokynů v [jak: Zobrazení, ukládání a konfigurace souborů protokolu sestavení](/visualstudio/ide/how-to-view-save-and-configure-build-log-files#to-change-the-amount-of-information-included-in-the-build-log) změnit úroveň podrobností dat protokolu do **normální** nebo **podrobné**. Po opětovném sestavení projektu, hledání **výstup** okně **csc** najít vyvolání kompilátor jazyka C#.
@@ -93,7 +93,7 @@ csc -target:library -out:Something.xyz *.cs
 ```
 
 ## <a name="differences-between-c-compiler-and-c-compiler-output"></a>Rozdíly mezi kompilátor jazyka C# a výstup kompilátoru C++
-Neexistují žádné objektu (*.obj*) soubory vytvořené v důsledku volání kompilátor jazyka C#; výstupní soubory jsou vytvořeny přímo. V důsledku toho nemusí kompilátor jazyka C# propojovacího programu.
+Neexistují žádné objektu ( *.obj*) soubory vytvořené v důsledku volání kompilátor jazyka C#; výstupní soubory jsou vytvořeny přímo. V důsledku toho nemusí kompilátor jazyka C# propojovacího programu.
 
 ## <a name="see-also"></a>Viz také:
 

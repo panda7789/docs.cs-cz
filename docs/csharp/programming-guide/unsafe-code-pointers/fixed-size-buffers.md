@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 7c83b4819975f63c6fc19e5c4783603f37d2a885
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5bfd9f3f559e4780b910a2e5a3430b08a2183ee3
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708922"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833504"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
@@ -40,7 +40,7 @@ Předchozí příklad ukazuje `fixed` pole bez Připnutí, které je k dispozici
 Další běžné pevnou velikost pole je [bool](../../language-reference/keywords/bool.md) pole. Prvky v `bool` pole jsou vždy jeden bajt velikosti. `bool` pole nejsou vhodné pro vytvoření bitové pole nebo vyrovnávací paměti.
 
 > [!NOTE]
-> S výjimkou paměti vytvořené využitím [stackalloc](../../language-reference/keywords/stackalloc.md), kompilátor jazyka C# a common language runtime (CLR) nebude provádět žádné bezpečnostní kontroly přetečení vyrovnávací paměti. Stejně jako u všech nebezpečný kód, buďte opatrní.
+> S výjimkou paměti vytvořené využitím [stackalloc](../../language-reference/operators/stackalloc.md), kompilátor jazyka C# a common language runtime (CLR) nebude provádět žádné bezpečnostní kontroly přetečení vyrovnávací paměti. Stejně jako u všech nebezpečný kód, buďte opatrní.
 
 Nezabezpečené vyrovnávací paměti se liší od pravidelných polí následujícími způsoby:
 

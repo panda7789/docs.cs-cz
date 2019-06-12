@@ -1,5 +1,5 @@
 ---
-title: Identifikátor URI oboru názvů XML "<uri>' lze připojit pouze k 'xmlns'
+title: Identifikátor URI oboru názvů XML '<uri>' lze připojit pouze k 'xmlns'
 ms.date: 07/20/2015
 f1_keywords:
 - bc31183

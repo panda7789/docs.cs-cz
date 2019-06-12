@@ -40,12 +40,12 @@ helpviewer_keywords:
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 10ed899f1eda3b7fcaa95391b9af6dddb5c94560
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b46404ee791855301611c1d883f26514b9b9d2f
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949224"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833805"
 ---
 # <a name="reliability-best-practices"></a>Spolehlivost – doporučené postupy
 
@@ -265,7 +265,7 @@ Finalizační metody musí být bez potíže se synchronizací. Nepoužívat sta
 
 ### <a name="avoid-unmanaged-memory-if-possible"></a>Pokud je to možné vyhnout nespravované paměti
 
-Nespravované paměti může uniknout stejně jako popisovač operačního systému.  Pokud je to možné, zkuste použít paměti na zásobníku pomocí [stackalloc](~/docs/csharp/language-reference/keywords/stackalloc.md) nebo připojených spravovaný objekt, jako [fixed Statement](~/docs/csharp/language-reference/keywords/fixed-statement.md) nebo <xref:System.Runtime.InteropServices.GCHandle> pomocí byte [].  <xref:System.GC> Nakonec tyto vyčistí.  Pokud však je třeba přiřadit nespravovanou paměť, zvažte použití třídy, která je odvozena z <xref:System.Runtime.InteropServices.SafeHandle> zabalit přidělení paměti.
+Nespravované paměti může uniknout stejně jako popisovač operačního systému. Pokud je to možné, zkuste použít paměti na zásobníku pomocí [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md) nebo připojených spravovaný objekt, jako [fixed Statement](~/docs/csharp/language-reference/keywords/fixed-statement.md) nebo <xref:System.Runtime.InteropServices.GCHandle> pomocí byte []. <xref:System.GC> Nakonec tyto vyčistí. Pokud však je třeba přiřadit nespravovanou paměť, zvažte použití třídy, která je odvozena z <xref:System.Runtime.InteropServices.SafeHandle> zabalit přidělení paměti.
 
 Všimněte si, že aspoň jeden případ kde <xref:System.Runtime.InteropServices.SafeHandle> není dostatečný.  Pro volání metody COM, které přidělit nebo uvolnit paměť, je běžné, že jedna knihovna DLL pro přidělení paměti prostřednictvím `CoTaskMemAlloc` pak jiné knihovně DLL se uvolní, tato paměť se `CoTaskMemFree`.  Pomocí <xref:System.Runtime.InteropServices.SafeHandle> v těchto umístěních by nevhodný vzhledem k tomu, že se pokusí spojit životnost nespravované paměti k době života <xref:System.Runtime.InteropServices.SafeHandle> namísto povolení druhý ovládací prvek knihovna DLL životnost paměť.
 

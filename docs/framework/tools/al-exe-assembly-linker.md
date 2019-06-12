@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b947aefae4924a70c394626ace5a5abe1ebf546f
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 87fcf4221dc5b334c6e9342c2aaac04a417a9f46
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816161"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832777"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 
@@ -108,7 +108,7 @@ V následující tabulce jsou uvedeny chyby vygenerované nástrojem *Al.exe*.
 |al1015|Nepovedlo se najít soubor alinkui.dll zprávy<br /><br /> *Al.exe* vyžaduje *Alinkui.dll*. Ujistěte se, že tento soubor je na vaší cestě. V případě potřeby, zkopírujte ho z disku CD produktu.|
 |al1016|Nebyly určeny žádné platné vstupní soubory<br /><br /> *Al.exe* vyžaduje jeden nebo více vstupních souborů, které neobsahují informace o sestavení.|
 |al1017|Nebyl zadán žádný název cílového souboru<br /><br /> Požadovaný **/out** možnost zadání názvu cílového souboru nebyl nalezen.|
-|al1018|Požadovaný soubor 'file' nelze načíst.<br /><br /> Některé soubory DLL nelze načíst. Přeinstalujte Visual Studio nebo [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].|
+|al1018|Požadovaný soubor 'file' nelze načíst.<br /><br /> Některé soubory DLL nelze načíst. Přeinstalujte Visual Studio nebo sady Windows Software Development Kit (SDK).|
 |al1019|Metadat selhání při vytváření sestavení – důvod<br /><br /> Generování sestavení byla přerušena z důvodu zadané. Například k této chybě dochází, pokud soubor, který zadáte **/win32res** možnost nebyla nalezena.|
 |al1020|Zahrnuté sestavení 'file'<br /><br /> Byl zadán vstupní soubor, který obsahoval sestavení. *Al.exe* vstupních souborů. nemůže obsahovat sestavení.|
 |al1021|'nastavení': přepsání předchozí nastavení<br /><br /> Modul měl hodnotu pro konkrétní nastavení, může být přiřazena skrze vlastní atributy, které byla přepsána s hodnotou předaným pomocí *Al.exe* možnost příkazového řádku.|
