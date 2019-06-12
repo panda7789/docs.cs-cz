@@ -1,5 +1,5 @@
 ---
-title: = > – Operátor - C# odkaz
+title: = > – operátor - C# odkaz
 ms.custom: seodec18
 ms.date: 01/22/2019
 f1_keywords:
@@ -8,52 +8,52 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 4c075cedb3cf479f53409f3b0acf4463fc3d7a03
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: a7fea9810cb02269278638ec71cd106463b029e9
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758210"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025025"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="7a5e3-102">= > – operátor (C# odkaz)</span><span class="sxs-lookup"><span data-stu-id="7a5e3-102">=> operator (C# Reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="d0bc5-102">= > – operátor (C# odkaz)</span><span class="sxs-lookup"><span data-stu-id="d0bc5-102">=> operator (C# reference)</span></span>
 
-<span data-ttu-id="7a5e3-103">`=>` Token je podporován ve dvou formách: jako operátor lambda a jako oddělovač názvu členu a implementace členu v definici tělo výrazu.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-103">The `=>` token is supported in two forms: as the lambda operator and as a separator of a member name and the member implementation in an expression body definition.</span></span>
+<span data-ttu-id="d0bc5-103">`=>` Token je podporován ve dvou formách: jako operátor lambda a jako oddělovač názvu členu a implementace členu v definici tělo výrazu.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-103">The `=>` token is supported in two forms: as the lambda operator and as a separator of a member name and the member implementation in an expression body definition.</span></span>
 
-## <a name="lambda-operator"></a><span data-ttu-id="7a5e3-104">Lambda – operátor</span><span class="sxs-lookup"><span data-stu-id="7a5e3-104">Lambda operator</span></span>
+## <a name="lambda-operator"></a><span data-ttu-id="d0bc5-104">Lambda – operátor</span><span class="sxs-lookup"><span data-stu-id="d0bc5-104">Lambda operator</span></span>
 
-<span data-ttu-id="7a5e3-105">V [výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md), operátor lambda `=>` odděluje vstupních proměnných na levé straně od hlavní část výrazu lambda na pravé straně.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-105">In [lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md), the lambda operator `=>` separates the input variables on the left side from the lambda body on the right side.</span></span>
+<span data-ttu-id="d0bc5-105">V [výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md), operátor lambda `=>` odděluje vstupních proměnných na levé straně od hlavní část výrazu lambda na pravé straně.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-105">In [lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md), the lambda operator `=>` separates the input variables on the left side from the lambda body on the right side.</span></span>
 
-<span data-ttu-id="7a5e3-106">V následujícím příkladu [LINQ](../../programming-guide/concepts/linq/index.md) funkce pomocí syntaxe metody k předvedení použití lambda výrazů:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-106">The following example uses the [LINQ](../../programming-guide/concepts/linq/index.md) feature with method syntax to demonstrate the usage of lambda expressions:</span></span>
+<span data-ttu-id="d0bc5-106">V následujícím příkladu [LINQ](../../programming-guide/concepts/linq/index.md) funkce pomocí syntaxe metody k předvedení použití lambda výrazů:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-106">The following example uses the [LINQ](../../programming-guide/concepts/linq/index.md) feature with method syntax to demonstrate the usage of lambda expressions:</span></span>
 
 [!code-csharp-interactive[infer types of input variables](~/samples/csharp/language-reference/operators/LambdaOperator.cs#InferredTypes)]
 
-<span data-ttu-id="7a5e3-107">Vstupních proměnných, výrazů lambda jsou silného typu v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-107">Input variables of lambda expressions are strongly typed at compile time.</span></span> <span data-ttu-id="7a5e3-108">Když kompilátor může odvodit typ vstupních proměnných, stejně jako v předchozím příkladu, můžete vynechat deklarace typů.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-108">When the compiler can infer the types of input variables, like in the preceding example, you may omit type declarations.</span></span> <span data-ttu-id="7a5e3-109">Pokud je třeba zadat typ vstupních proměnných, je nutné použít pro každou proměnnou, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-109">If you need to specify the type of input variables, you must do that for each variable, as the following example shows:</span></span>
+<span data-ttu-id="d0bc5-107">Vstupních proměnných, výrazů lambda jsou silného typu v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-107">Input variables of lambda expressions are strongly typed at compile time.</span></span> <span data-ttu-id="d0bc5-108">Když kompilátor může odvodit typ vstupních proměnných, stejně jako v předchozím příkladu, můžete vynechat deklarace typů.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-108">When the compiler can infer the types of input variables, like in the preceding example, you may omit type declarations.</span></span> <span data-ttu-id="d0bc5-109">Pokud je třeba zadat typ vstupních proměnných, je nutné použít pro každou proměnnou, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-109">If you need to specify the type of input variables, you must do that for each variable, as the following example shows:</span></span>
 
 [!code-csharp-interactive[specify types of input variables](~/samples/csharp/language-reference/operators/LambdaOperator.cs#ExplicitTypes)]
 
-<span data-ttu-id="7a5e3-110">Následující příklad ukazuje, jak definovat výraz lambda bez vstupních proměnných:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-110">The following example shows how to define a lambda expression without input variables:</span></span>
+<span data-ttu-id="d0bc5-110">Následující příklad ukazuje, jak definovat výraz lambda bez vstupních proměnných:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-110">The following example shows how to define a lambda expression without input variables:</span></span>
 
 [!code-csharp-interactive[without input variables](~/samples/csharp/language-reference/operators/LambdaOperator.cs#WithoutInput)]
 
-<span data-ttu-id="7a5e3-111">Další informace najdete v tématu [výrazy Lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="7a5e3-111">For more information, see [Lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>
+<span data-ttu-id="d0bc5-111">Další informace najdete v tématu [výrazy Lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="d0bc5-111">For more information, see [Lambda expressions](../../programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>
 
-## <a name="expression-body-definition"></a><span data-ttu-id="7a5e3-112">Definice textu výrazu</span><span class="sxs-lookup"><span data-stu-id="7a5e3-112">Expression body definition</span></span>
+## <a name="expression-body-definition"></a><span data-ttu-id="d0bc5-112">Definice textu výrazu</span><span class="sxs-lookup"><span data-stu-id="d0bc5-112">Expression body definition</span></span>
 
-<span data-ttu-id="7a5e3-113">Definice těla výrazu má následující obecnou syntaxi:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-113">An expression body definition has the following general syntax:</span></span>
+<span data-ttu-id="d0bc5-113">Definice těla výrazu má následující obecnou syntaxi:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-113">An expression body definition has the following general syntax:</span></span>
 
 ```csharp
 member => expression;
 ```
 
-<span data-ttu-id="7a5e3-114">kde *výraz* je platný výraz.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-114">where *expression* is a valid expression.</span></span> <span data-ttu-id="7a5e3-115">Všimněte si, že *výraz* může být *výrazu příkazu* pouze pokud je člen návratový typ je `void`, nebo pokud je člen konstruktoru, finalizační metodu nebo vlastnost `set` přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-115">Note that *expression* can be a *statement expression* only if the member's return type is `void`, or if the member is a constructor, a finalizer, or a property `set` accessor.</span></span>
+<span data-ttu-id="d0bc5-114">kde *výraz* je platný výraz.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-114">where *expression* is a valid expression.</span></span> <span data-ttu-id="d0bc5-115">Všimněte si, že *výraz* může být *výrazu příkazu* pouze pokud je člen návratový typ je `void`, nebo pokud je člen konstruktoru, finalizační metodu nebo vlastnost `set` přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-115">Note that *expression* can be a *statement expression* only if the member's return type is `void`, or if the member is a constructor, a finalizer, or a property `set` accessor.</span></span>
 
-<span data-ttu-id="7a5e3-116">Následující příklad ukazuje definici tělo výrazu pro `Person.ToString` metody:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-116">The following example shows an expression body definition for a `Person.ToString` method:</span></span>
+<span data-ttu-id="d0bc5-116">Následující příklad ukazuje definici tělo výrazu pro `Person.ToString` metody:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-116">The following example shows an expression body definition for a `Person.ToString` method:</span></span>
 
 ```csharp
 public override string ToString() => $"{fname} {lname}".Trim();
 ```
 
-<span data-ttu-id="7a5e3-117">Je zkrácená verze následující definici metody:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-117">It's a shorthand version of the following method definition:</span></span>
+<span data-ttu-id="d0bc5-117">Je zkrácená verze následující definici metody:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-117">It's a shorthand version of the following method definition:</span></span>
 
 ```csharp
 public override string ToString()
@@ -62,22 +62,21 @@ public override string ToString()
 }
 ```
 
-<span data-ttu-id="7a5e3-118">Definice těla výrazu pro metody a vlastnosti jen pro čtení jsou podporovány od verze C# 6.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-118">Expression body definitions for methods and read-only properties are supported starting with C# 6.</span></span> <span data-ttu-id="7a5e3-119">Definice těla výrazu pro konstruktory, finalizační metody, přistupující objekty vlastnosti a indexery jsou podporovány od verze C# 7.0.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-119">Expression body definitions for constructors, finalizers, property accessors, and indexers are supported starting with C# 7.0.</span></span>
+<span data-ttu-id="d0bc5-118">Definice těla výrazu pro metody a vlastnosti jen pro čtení jsou podporovány od verze C# 6.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-118">Expression body definitions for methods and read-only properties are supported starting with C# 6.</span></span> <span data-ttu-id="d0bc5-119">Definice těla výrazu pro konstruktory, finalizační metody, přistupující objekty vlastnosti a indexery jsou podporovány od verze C# 7.0.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-119">Expression body definitions for constructors, finalizers, property accessors, and indexers are supported starting with C# 7.0.</span></span>
 
-<span data-ttu-id="7a5e3-120">Další informace najdete v tématu [členové tvoření](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span><span class="sxs-lookup"><span data-stu-id="7a5e3-120">For more information, see [Expression-bodied members](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span></span>
+<span data-ttu-id="d0bc5-120">Další informace najdete v tématu [členové tvoření](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span><span class="sxs-lookup"><span data-stu-id="d0bc5-120">For more information, see [Expression-bodied members](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span></span>
 
-## <a name="operator-overloadability"></a><span data-ttu-id="7a5e3-121">Overloadability – operátor</span><span class="sxs-lookup"><span data-stu-id="7a5e3-121">Operator overloadability</span></span>
+## <a name="operator-overloadability"></a><span data-ttu-id="d0bc5-121">Overloadability – operátor</span><span class="sxs-lookup"><span data-stu-id="d0bc5-121">Operator overloadability</span></span>
 
-<span data-ttu-id="7a5e3-122">`=>` Operátor nelze přetížit.</span><span class="sxs-lookup"><span data-stu-id="7a5e3-122">The `=>` operator cannot be overloaded.</span></span>
+<span data-ttu-id="d0bc5-122">`=>` Operátor nelze přetížit.</span><span class="sxs-lookup"><span data-stu-id="d0bc5-122">The `=>` operator cannot be overloaded.</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="7a5e3-123">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7a5e3-123">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="d0bc5-123">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d0bc5-123">C# language specification</span></span>
 
-<span data-ttu-id="7a5e3-124">Další informace najdete v tématu [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="7a5e3-124">For more information, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](../language-specification/index.md).</span></span>
+<span data-ttu-id="d0bc5-124">Další informace najdete v tématu [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="d0bc5-124">For more information, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](../language-specification/index.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7a5e3-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7a5e3-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d0bc5-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d0bc5-125">See also</span></span>
 
-- [<span data-ttu-id="7a5e3-126">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7a5e3-126">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="7a5e3-127">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="7a5e3-127">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="7a5e3-128">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7a5e3-128">C# Operators</span></span>](index.md)
-- [<span data-ttu-id="7a5e3-129">Výrazy lambda</span><span class="sxs-lookup"><span data-stu-id="7a5e3-129">Lambda expressions</span></span>](../../programming-guide/statements-expressions-operators/lambda-expressions.md)
-- [<span data-ttu-id="7a5e3-130">Členové tvoření výrazy</span><span class="sxs-lookup"><span data-stu-id="7a5e3-130">Expression-bodied members</span></span>](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)
+- [<span data-ttu-id="d0bc5-126">C#referenční dokumentace</span><span class="sxs-lookup"><span data-stu-id="d0bc5-126">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="d0bc5-127">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d0bc5-127">C# operators</span></span>](index.md)
+- [<span data-ttu-id="d0bc5-128">Výrazy lambda</span><span class="sxs-lookup"><span data-stu-id="d0bc5-128">Lambda expressions</span></span>](../../programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [<span data-ttu-id="d0bc5-129">Členové tvoření výrazy</span><span class="sxs-lookup"><span data-stu-id="d0bc5-129">Expression-bodied members</span></span>](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)
