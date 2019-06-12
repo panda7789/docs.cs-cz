@@ -14,12 +14,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 2c99065dacbf391e94c97092336f5dda3adda5b0
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 14e62d53fca16212fae374b2627d1e96cbbca6ac
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66815979"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025316"
 ---
 # <a name="-and--operators-c-reference"></a>+ a operátory += (C# odkaz)
 
@@ -79,13 +79,11 @@ Další informace najdete v tématu [unární operátor plus](~/_csharplang/spec
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Interpolace řetězců](../tokens/interpolated.md)
 - [Postupy: řetězení více řetězců](../../how-to/concatenate-multiple-strings.md)
 - [Delegáti](../../programming-guide/delegates/index.md)
 - [Události](../../programming-guide/events/index.md)
-- [Zaškrtnuto a nezaškrtnuto](../keywords/checked-and-unchecked.md)
 - [Aritmetické operátory](arithmetic-operators.md)
 - [– operátory a operátory-=](subtraction-operator.md)

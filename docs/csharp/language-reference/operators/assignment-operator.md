@@ -1,5 +1,5 @@
 ---
-title: = – Operátor - C# odkaz
+title: = – operátor - C# odkaz
 ms.custom: seodec18
 ms.date: 11/26/2018
 f1_keywords:
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 85182acb84ea79cb00a9edb315c3954f440305f4
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 6b8f67f32287b18a9e4ac8f0fa822f6ca4919e7f
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758364"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025262"
 ---
-# <a name="-operator-c-reference"></a>= – operátor (Referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>= – operátor (C# odkaz)
 
 Operátor přiřazení `=` hodnota jeho operandu pravé přiřadí proměnné, [vlastnost](../../programming-guide/classes-and-structs/properties.md), nebo [indexer](../../../csharp/programming-guide/indexers/index.md) element Dal jeho levý operand. Výsledkem výrazu přiřazení je hodnota přiřazená k levý operand. Typ operandu pravé musí být stejný jako typ levý operand nebo implicitně převeditelné na ni.
 
@@ -54,7 +54,6 @@ Další informace najdete v tématu [jednoduché přiřazení](~/_csharplang/spe
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [ref keyword](../keywords/ref.md)

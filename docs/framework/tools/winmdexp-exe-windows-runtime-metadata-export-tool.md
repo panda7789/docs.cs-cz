@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a00828eba91e4fea41e8b6a6da8953fc399387e3
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 01cdcbb93fde0d2d2f1c800613d9709da0d695f6
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378499"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67026013"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
-[!INCLUDE[wrt](../../../includes/wrt-md.md)] Metadata Export Tool (Winmdexp.exe) převede modul rozhraní .NET Framework na soubor, který obsahuje [!INCLUDE[wrt](../../../includes/wrt-md.md)] metadat. Přestože sestavení rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] soubory metadat použít stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že sestavení rozhraní .NET Framework nejsou automaticky použitelná jako [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty . Proces přeměny modulu rozhraní .NET Framework do [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty se označuje jako *export*. V rozhraní .NET Framework 4.5 a rozhraní .NET Framework 4.5.1 výsledný soubor Windows metadata (.winmd) obsahuje metadata i implementaci.  
+Windows Runtime Metadata Export Tool (Winmdexp.exe) převede modulu rozhraní .NET Framework na soubor, který obsahuje metadata prostředí Windows Runtime. Přestože sestavení rozhraní .NET Framework a soubory metadat Windows Runtime používají stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že sestavení rozhraní .NET Framework nejsou automaticky použitelná jako komponenty Windows Runtime . Proces přeměny modulu rozhraní .NET Framework do komponenty prostředí Windows Runtime se nazývá *export*. V rozhraní .NET Framework 4.5 a rozhraní .NET Framework 4.5.1 výsledný soubor Windows metadata (.winmd) obsahuje metadata i implementaci.  
   
- Při použití  **[!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty** šablonu, která je umístěna ve složce **Windows Store** pro C# a Visual Basic v sadě Visual Studio 2013 nebo Visual Studio 2012, je cílem kompilátoru soubor .winmdobj, a následný krok sestavení zavolá Winmdexp.exe exportu souboru .winmdobj do souboru .winmd. Toto je doporučený způsob sestavení [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty. Jestliže chcete mít lepší kontrolu nad procesem sestavení, než jakou poskytuje sada Visual Studio, použijte přímo nástroj Winmdexp.exe.  
+ Při použití **součást prostředí Windows Runtime** šablonu, která je umístěna ve složce **Windows Store** pro C# a Visual Basic v sadě Visual Studio 2013 nebo Visual Studio 2012, je cílem kompilátoru je .winmdobj soubor a následný krok sestavení zavolá Winmdexp.exe exportu souboru .winmdobj do souboru .winmd. Toto je doporučený způsob sestavení komponenty prostředí Windows Runtime. Jestliže chcete mít lepší kontrolu nad procesem sestavení, než jakou poskytuje sada Visual Studio, použijte přímo nástroj Winmdexp.exe.  
   
  Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
@@ -46,9 +46,9 @@ winmdexp [options] winmdmodule
 |**@** `responsefile`|Určuje soubor odpovědí (.rsp) obsahující možnosti (a volitelně `winmdmodule`). Každý řádek v `responsefile` by měl obsahovat jeden argument nebo parametr.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nástroj Winmdexp.exe není určen pro převod libovolného sestavení rozhraní .NET Framework na soubor .winmd. Vyžaduje modul zkompilovaný pomocí `/target:winmdobj` možnost a další omezení platí. Nejdůležitější z těchto omezení je, že všechny typy, které jsou vystaveny na povrchu API sestavení musí být [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy. Další informace najdete v tématu "Deklarace typů součástí prostředí Windows Runtime" v článku [vytváření komponent Windows Runtime v jazyce C# a Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313) Windows Dev Center.  
+ Nástroj Winmdexp.exe není určen pro převod libovolného sestavení rozhraní .NET Framework na soubor .winmd. Vyžaduje modul zkompilovaný pomocí `/target:winmdobj` možnost a další omezení platí. Nejdůležitější z těchto omezení je, že všechny typy, které jsou vystaveny na povrchu API sestavení musí být typy Windows Runtime. Další informace najdete v tématu "Deklarace typů součástí prostředí Windows Runtime" v článku [vytváření komponent Windows Runtime v jazyce C# a Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313) Windows Dev Center.  
   
- Při psaní [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace nebo [!INCLUDE[wrt](../../../includes/wrt-md.md)] součástí s použitím jazyka C# nebo Visual Basic, rozhraní .NET Framework poskytuje podporu pro programování v jazyce [!INCLUDE[wrt](../../../includes/wrt-md.md)] přirozenější. Tento postup je popsán v článku [podpory pro Windows Store aplikací využívajících .NET Framework a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). V procesu, některé běžně používané [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy jsou mapovány na typy rozhraní .NET Framework. Winmdexp.exe Tento proces obrací a vytváří povrch rozhraní API využívající odpovídající [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy. Například typy, které jsou zhotoveny z <xref:System.Collections.Generic.IList%601> mapy rozhraní pro typy, které jsou zhotoveny z [!INCLUDE[wrt](../../../includes/wrt-md.md)] [IVector\<T >](https://go.microsoft.com/fwlink/p/?LinkId=251132)rozhraní.  
+ Při psaní [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace nebo součásti prostředí Windows Runtime s C# nebo Visual Basic, rozhraní .NET Framework poskytuje podporu pro programování s modulem Windows Runtime další přirozený. Tento postup je popsán v článku [podpory pro Windows Store aplikací využívajících .NET Framework a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). V procesu jsou některé běžně používané typy Windows Runtime mapovány na typy rozhraní .NET Framework. Winmdexp.exe Tento proces obrací a vytváří povrch rozhraní API využívající odpovídající typy Windows Runtime. Například typy, které jsou zhotoveny z <xref:System.Collections.Generic.IList%601> mapy rozhraní pro typy, které jsou zhotoveny z modulu Windows Runtime[IVector\<T >](https://go.microsoft.com/fwlink/p/?LinkId=251132)rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 

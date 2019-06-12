@@ -1,5 +1,5 @@
 ---
-title: '?: Operator - C# odkaz'
+title: '?: – operátor - C# odkaz'
 ms.custom: seodec18
 ms.date: 11/20/2018
 f1_keywords:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: ae3039df2c1260211f4c7ec3e813db1d0c6cd42b
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 2717505a0a09b9ac1c6ad43153c52771c13f7b5c
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66815932"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025199"
 ---
-# <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>?: – operátor (C# odkaz)
 
 Podmiňovací operátor `?:`, běžně označované jako Ternární podmiňovací operátor vyhodnocuje logický výraz a vrátí výsledek vyhodnocení výrazu jeden ze dvou výrazů v závislosti na tom, jestli logický výraz vyhodnocen jako `true` nebo `false`. Počínaje C# 7.2, [ref podmíněný výraz](#conditional-ref-expression) vrátí odkaz na výsledek jednoho ze dvou výrazů.
 
@@ -90,8 +90,7 @@ Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [if-else – příkaz](../keywords/if-else.md)
 - [?. a? operátory]](member-access-operators.md#null-conditional-operators--and-)

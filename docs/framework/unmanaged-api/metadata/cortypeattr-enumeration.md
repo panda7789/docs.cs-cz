@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 43e7c973ee22350f26b4f86bcc8b4c4c727291ef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f65c2f74ec5efda027d90b3ffda9a5da5c239122
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045185"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025727"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr – výčet
 Obsahuje hodnoty, které označují typ metadat.  
@@ -100,7 +100,7 @@ typedef enum CorTypeAttr {
 |`tdSpecialName`|Určuje, že název třídy je speciální. Její název popisuje jak.|  
 |`tdImport`|Určuje, že typ je importovat.|  
 |`tdSerializable`|Určuje, že typ je serializovatelný.|  
-|`tdWindowsRuntime`|Určuje, jestli je tento typ [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.|  
+|`tdWindowsRuntime`|Určuje, že tento typ je typ Windows Runtime.|  
 |`tdStringFormatMask`|Získá informace o tom, jak jsou řetězce kódování a ve formátu.|  
 |`tdAnsiClass`|Určuje, že tento typ interpretuje LPTSTR jako ANSI.|  
 |`tdUnicodeClass`|Určuje, že tento typ interpretuje LPTSTR znakové sady Unicode.|  

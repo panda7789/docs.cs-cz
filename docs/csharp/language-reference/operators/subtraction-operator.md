@@ -13,12 +13,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: aae10f8b03a16e55f0b26981f17585c8790e00c1
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 8e93b1d66a375f1f0af104e2a5dd6dfcbb39428d
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816080"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024911"
 ---
 # <a name="--and---operators-c-reference"></a>– operátory a operátory-= (C# odkaz)
 
@@ -80,11 +80,9 @@ Další informace najdete v tématu [unární operátor minus](~/_csharplang/spe
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Delegáti](../../programming-guide/delegates/index.md)
 - [Události](../../programming-guide/events/index.md)
-- [Zaškrtnuto a nezaškrtnuto](../keywords/checked-and-unchecked.md)
 - [Aritmetické operátory](arithmetic-operators.md)
 - [+ a operátory +=](addition-operator.md)

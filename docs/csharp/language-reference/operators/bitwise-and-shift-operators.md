@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: bf42a53a89676f457d3d2df8d193a83299c3e4cc
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 4a495fb5ce353bcb4f7ccda975dfc74ba711db79
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758367"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025236"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Bitový operátor a operátory posunutí (C# odkaz)
 
@@ -194,7 +194,6 @@ Další informace najdete v následující částech [ C# specifikace jazyka](~/
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Logická logické operátory](boolean-logical-operators.md)

@@ -1,19 +1,19 @@
 ---
-title: Použijte v případě detekce anomálií prodejní ML.NET
-description: Zjistěte, jak pochopit, jak analyzovat data špiček anomálií a body přijmout vhodná opatření změny pomocí ML.NET v případě detekce anomálií prodejní produktu.
-ms.date: 05/29/2019
+title: 'Kurz: Zjišťovat anomálie v produktu prodeje'
+description: Zjistěte, jak sestavit aplikaci detekce anomálií na prodejní data produktu. Tento kurz vytvoří aplikace konzoly .NET Core using C# v aplikaci Visual Studio 2019.
+ms.date: 06/11/2019
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: e092aea66ca9f439cf97c1ebee83097def0f520b
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.custom: mvc, title-hack-0612
+ms.openlocfilehash: 6ea5adf79a17bb10ddea676eaea483c2cf627d82
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758806"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67026046"
 ---
-# <a name="tutorial-use-mlnet-for-product-sales-anomaly-detection"></a>Kurz: Použití ML.NET pro detekci anomálií prodejní produktu 
+# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Kurz: Zjišťovat anomálie v prodejích s ML.NET
 
-Tento ukázkový kurz ukazuje použití ML.NET zjišťovat anomálie v produktu daty z prodeje přijmout vhodná opatření prostřednictvím aplikace konzoly .NET Core using C# v aplikaci Visual Studio 2019. 
+Zjistěte, jak sestavit aplikaci detekce anomálií na prodejní data produktu. Tento kurz vytvoří aplikace konzoly .NET Core using C# v sadě Visual Studio.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: d881a75e95bc3c3eef1df651b380210ff51ea3ce
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 8563662a4408d0425e92b960301311ce5d423f9d
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877510"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025748"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
 Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný modelu používané technologie ASP.NET a webových služeb ASP.NET Web services (ASMX).  
@@ -34,7 +34,7 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
   
 - Jako je ASP.NET služby WCF hostované v technologii ASP.NET využít výhod ASP.NET model sdíleného hostingu kde více aplikací jsou umístěny v běžné pracovní proces pro hustota lepší využití serverových a škálovatelnost.  
   
-- Služby WCF hostované v IIS použít stejný model dynamická kompilace jako [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)], což zjednodušuje vývoj a nasazení hostovaných služeb.  
+- Služby WCF hostované ve službě IIS pomocí stejného modelu dynamická kompilace jako ASP.NET 2.0, která zjednodušuje vývoj a nasazení hostovaných služeb.  
   
  Když se rozhodujete hostovat služby WCF v IIS, je důležité si pamatovat, že služba IIS 5.1 a [!INCLUDE[iis601](../../../../includes/iis601-md.md)] jsou omezené pouze komunikaci pomocí protokolu HTTP. Další informace o výběru hostitelské prostředí najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
   

@@ -1,5 +1,5 @@
 ---
-title: Operátory jazyka C#
+title: C#Operators – C# odkaz
 ms.date: 04/30/2019
 f1_keywords:
 - cs.operators
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: c6b83779a630c6d797968d79635793e229751f93
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
-ms.translationtype: HT
+ms.openlocfilehash: 98f73ed958f8b43cd4fea700a478cf3337ea68db
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833276"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025132"
 ---
-# <a name="c-operators"></a>Operátory jazyka C#
+# <a name="c-operators-c-reference"></a>C#operátory (C# odkaz)
 
 C#poskytuje řadu předdefinovaných operátory podporovaných předdefinovaných typů. Například [aritmetické operátory](arithmetic-operators.md) provádění aritmetických operací s operandy předdefinovaných číselných typů a [logické logické operátory](boolean-logical-operators.md) provádí logické operace s [bool ](../keywords/bool.md) operandy.
 
@@ -221,8 +221,6 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C#](../../index.md)
+- [C#referenční dokumentace](../index.md)
+- [Operátory](../../programming-guide/statements-expressions-operators/operators.md)
 - [Přetížitelné operátory](../../programming-guide/statements-expressions-operators/overloadable-operators.md)
-- [Klíčová slova jazyka C#](../keywords/index.md)

@@ -6,12 +6,12 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: eeacd7628a11c87c8d21c7b18687892105374587
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
-ms.translationtype: HT
+ms.openlocfilehash: 3be4e827e75e4e26a34d9ed70423af5aa317e7fb
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834100"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025003"
 ---
 # <a name="stackalloc-operator-c-reference"></a>operátor stackalloc (C# odkaz)
 
@@ -19,11 +19,11 @@ ms.locfileid: "66834100"
 
 Můžete přiřadit výsledek `stackalloc` operátor proměnné jednu z následujících typů:
 
-- Počínaje C# 7.2, <xref:System.Span%601?displayName=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayName=nameWithType>, jak je vidět v následujícím příkladu:
+- Počínaje C# 7.2, <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, jak je vidět v následujícím příkladu:
 
   [!code-csharp[stackalloc span](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToSpan)]
 
-  Není nutné používat `unsafe` kontextu při přiřazování zásobníku přidělený blok paměti k <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601> proměnné.
+  Není nutné používat [nebezpečné](../keywords/unsafe.md) kontextu při přiřazování zásobníku přidělený blok paměti k <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601> proměnné.
 
   Při práci s těmito typy, můžete použít `stackalloc` výrazu v [podmíněného](conditional-operator.md) nebo výrazy přiřazení, jak ukazuje následující příklad:
 
@@ -36,7 +36,7 @@ Můžete přiřadit výsledek `stackalloc` operátor proměnné jednu z následu
 
   [!code-csharp[stackalloc pointer](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToPointer)]
 
-  Jak ukazuje předchozí příklad, musíte použít [nebezpečné](../keywords/unsafe.md) kontextu při práci s typy ukazatelů.
+  Jak ukazuje předchozí příklad, musíte použít `unsafe` kontextu při práci s typy ukazatelů.
 
 Obsah nově přidělenou paměť není definován. Počínaje C# 7.3, můžete použít syntaxi inicializátoru pole definovat obsah nově přidělenou paměť. Následující příklad ukazuje různé způsoby, jak to udělat:
 

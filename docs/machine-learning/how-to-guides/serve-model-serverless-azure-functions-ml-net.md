@@ -1,16 +1,16 @@
 ---
 title: Nasazení modelu do Azure Functions
 description: Poskytování ML.NET mínění analýzy modelu strojového učení pro predikci přes internet pomocí služby Azure Functions
-ms.date: 05/03/2019
+ms.date: 06/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 9e62d8826227aed07451387cc733d27094327f99
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7df7a6f9fcc5a4702171e1aac4b6b67e0c343748
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645094"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025976"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Nasazení modelu do Azure Functions
 
@@ -22,6 +22,7 @@ Zjistěte, jak nasadit předem vytrénovaných ML.NET model strojového učení 
 ## <a name="prerequisites"></a>Požadavky
 
 - [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) úlohy "Vývoj pro různé platformy .NET Core" a "Vývoj pro Azure" nainstalované.
+- Microsoft.NET.Sdk.Functions 1.0.28+ verze balíčku NuGet.
 - [Nástroje Azure Functions](/azure/azure-functions/functions-develop-vs#check-your-tools-version)
 - Powershell
 - Předem natrénovaných modelů. Použití [kurz analýza mínění ML.NET](../tutorials/sentiment-analysis.md) sestavovat vlastní model nebo stáhněte si tuto aplikaci [model machine learning analýzy předem vytrénovaných mínění](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip)
@@ -29,7 +30,7 @@ Zjistěte, jak nasadit předem vytrénovaných ML.NET model strojového učení 
 ## <a name="create-azure-functions-project"></a>Vytvoření projektu Azure Functions
 
 1. Otevřete Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V **nový projekt** dialogového okna, vyberte **Visual C#**  uzel, za nímž následuje **cloudu** uzlu. Vyberte **Azure Functions** šablony projektu. V **název** textového pole zadejte "SentimentAnalysisFunctionsApp" a pak vyberte **OK** tlačítko.
-1. V **nový projekt** dialogového okna, otevřete rozevírací seznam nahoře možnosti projektu a vyberte **Azure Functions v2 (.NET Core)**. Vyberte **triggeru Http** projektu a pak vyberte **OK** tlačítko.
+1. V **nový projekt** dialogového okna, otevřete rozevírací seznam nahoře možnosti projektu a vyberte **Azure Functions v2 (.NET Core)** . Vyberte **triggeru Http** projektu a pak vyberte **OK** tlačítko.
 1. Vytvořte adresář *MLModels* ve vašem projektu a uložit model:
 
     V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **novou složku**. Zadejte "MLModels" a stiskněte Enter.
@@ -38,9 +39,17 @@ Zjistěte, jak nasadit předem vytrénovaných ML.NET model strojového učení 
 
     V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.ML**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
 
+1. Nainstalujte **balíček NuGet Microsoft.Azure.Functions.Extensions**:
+
+    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.Azure.Functions.Extensions**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
+
 1. Nainstalujte **balíček NuGet Microsoft.Extensions.ML**:
 
     V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.Extensions.ML**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
+
+1. Aktualizace **balíček NuGet Microsoft.NET.Sdk.Functions** verzi 1.0.28:
+
+    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu nainstalováno, vyhledejte **Microsoft.NET.Sdk.Functions**, vyberte v seznamu vyberte 1.0.28 nebo později z rozevíracího seznamu verze tento balíček a vyberte **aktualizace**  tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
 
 ## <a name="add-pre-trained-model-to-project"></a>Přidání předem vytrénovaných modelu do projektu
 
@@ -174,28 +183,6 @@ Na vysoké úrovni tento kód inicializuje objekty a služby automaticky, pokud 
 
 > [!WARNING]
 > [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečné pro vlákna. Pro lepší výkon a bezpečný přístup z více vláken, použijte `PredictionEnginePool` službu, která vytvoří [ `ObjectPool` ](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) z `PredictionEngine` objekty při použití aplikace. 
-
-## <a name="register-startup-as-an-azure-functions-extension"></a>Zaregistrujte se při spuštění jako rozšíření Azure Functions
-
-Chcete-li použít `Startup` ve vaší aplikaci, budete muset zaregistrovat jako rozšíření Azure Functions. Vytvořte nový soubor s názvem *extensions.json* ve vašem projektu, pokud ještě neexistuje.
-
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **přidat** > **nová položka**.
-1. V **nová položka** dialogového okna, vyberte **Visual C#**  uzel, za nímž následuje **webové** uzlu. Vyberte **soubor Json** možnost. V **název** textového pole zadejte "extensions.json" a pak vyberte **OK** tlačítko.
-
-    *Extensions.json* soubor se otevře v editoru kódu. Přidejte následující obsah, který se *extensions.json*:
-    
-    ```json
-    {
-      "extensions": [
-        {
-          "name": "Startup",
-          "typename": "SentimentAnalysisFunctionsApp.Startup, SentimentAnalysisFunctionsApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-        }
-      ]
-    }
-    ```
-
-1. V Průzkumníku řešení klikněte pravým tlačítkem na váš *extensions.json* a vyberte možnost **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
 
 ## <a name="load-the-model-into-the-function"></a>Načíst model do funkce
 

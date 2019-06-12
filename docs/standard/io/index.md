@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a8d95a347237b15dfa55586bb15fe605bd5c7a94
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3b3dcc3b96e12f89508f4d2708c5ab083516dba
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947118"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025497"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 
@@ -147,7 +147,7 @@ Zobrazit [izolované úložiště](isolated-storage.md).
 
 Některé důležité rozdíly při používání vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace:
 
-- Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v <xref:Windows.Storage?displayProperty=nameWithType> obor názvů [!INCLUDE[wrt](../../../includes/wrt-md.md)], jako například <xref:Windows.Storage.StorageFile> a <xref:Windows.Storage.StorageFolder>.
+- Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v <xref:Windows.Storage?displayProperty=nameWithType> obor názvů modulu Windows Runtime, jako například <xref:Windows.Storage.StorageFile> a <xref:Windows.Storage.StorageFolder>.
 
 - Izolované úložiště není k dispozici. Místo toho použijte [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).
 

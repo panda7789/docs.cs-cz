@@ -2,12 +2,12 @@
 title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 99ed9ce5304717073057f6712a2b96d910d43bea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a41615ab096f3aa4f1ee94defd775248d0df4d2e
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858313"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025730"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -41,7 +41,7 @@ Proces instalace rozhraní .NET Framework automaticky zaregistruje WCF se služb
 
 ## <a name="create-a-new-iis-application-or-reuse-an-existing-aspnet-application"></a>Vytvoření nové aplikace služby IIS nebo znovu použít stávající aplikaci ASP.NET
 
-Služby WCF hostované v IIS se musí nacházet v rámci aplikace služby IIS. Můžete vytvořit novou aplikaci služby IIS pro hostování služeb WCF výhradně. Alternativně můžete nasazení služby WCF do existující aplikace, který je hostitelem již [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] obsahu (jako jsou stránky ASPX a webových služeb ASP.NET s [ASMX]). Další informace o těchto možnostech najdete v článku "hostování WCF – souběžně s rozhraním ASP.NET" a "Hostování služby WCF v režim kompatibility ASP.NET" oddíly v [služby WCF a ASP.NET](wcf-services-and-aspnet.md).
+Služby WCF hostované v IIS se musí nacházet v rámci aplikace služby IIS. Můžete vytvořit novou aplikaci služby IIS pro hostování služeb WCF výhradně. Alternativně můžete nasazení služby WCF do existující aplikace, která je již hostování technologie ASP.NET 2.0 obsahu (jako jsou stránky ASPX a webových služeb ASP.NET s [ASMX]). Další informace o těchto možnostech najdete v článku "hostování WCF – souběžně s rozhraním ASP.NET" a "Hostování služby WCF v režim kompatibility ASP.NET" oddíly v [služby WCF a ASP.NET](wcf-services-and-aspnet.md).
 
 Všimněte si, že [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a novějších verzích pravidelně restartovat izolovaných objektově orientované programování aplikací. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71,582 minut. Toto restartování je zakázat. Další informace o této vlastnosti naleznete v tématu [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
 
@@ -65,7 +65,7 @@ Další informace o syntaxi hledání souborů .svc najdete v tématu [ \@Servic
 
 ## <a name="deploy-the-service-implementation-to-the-iis-application"></a>Nasazení implementace služby do aplikace služby IIS
 
-Služby WCF hostované v IIS použít stejný model dynamická kompilace jako [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]. Stejně jako u technologie ASP.NET, můžete nasadit implementační kód služby WCF hostované v IIS několika způsoby na různých místech, následujícím způsobem:
+Služby WCF hostované ve službě IIS pomocí stejného modelu dynamická kompilace jako technologii ASP.NET 2.0. Stejně jako u technologie ASP.NET, můžete nasadit implementační kód služby WCF hostované v IIS několika způsoby na různých místech, následujícím způsobem:
 
 - Jak předkompilované dll soubor umístěn v globální mezipaměti sestavení (GAC) nebo v adresáři \bin aplikace. Předkompilovaný binární soubory nejsou aktualizovány, dokud je nasadit novou verzi knihovny tříd.
 
@@ -73,7 +73,7 @@ Služby WCF hostované v IIS použít stejný model dynamická kompilace jako [!
 
 - Jak je umístěn nezkompilované kód přímo v souboru SVC. Implementace kódu může být také umístěny vložený v souboru SVC služby, po \@direktivě ServiceHost. Všechny změny vloženého kódu způsobit recyklaci a znovu zkompilovat při příští žádosti o přijetí.
 
-Další informace o [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] kompilace model, najdete v článku [kompilace ASP.NET: Přehled](https://go.microsoft.com/fwlink/?LinkId=94773).
+Další informace o modelu kompilace ASP.NET 2.0 najdete v tématu [kompilace ASP.NET: Přehled](https://go.microsoft.com/fwlink/?LinkId=94773).
 
 ## <a name="configure-the-wcf-service"></a>Konfigurace služby WCF
 

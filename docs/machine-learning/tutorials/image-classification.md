@@ -1,21 +1,19 @@
 ---
-title: 'Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow'
-description: Objevte, jak vytvářet třídění ML.NET vlastní image ve TensorFlow přenos učení scénář klasifikace obrázků opětovným použitím předem natrénovaných modelů TensorFlow.
-ms.date: 05/06/2019
+title: 'Kurz: Třídění image obsloužených TensorFlow - learningu'
+description: Zjistěte, jak přeučování TensorFlow model klasifikace obrázků s využitím learningu a ML.NET. Původní model se trénuje klasifikovat jednotlivých obrázků. Po přetrénování, nový model slouží k uspořádání obrázků do kategorií.
+ms.date: 06/12/2019
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: e248c5ae73281ed6cd492592ba4a51791db75aa2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.custom: mvc, title-hack-0612
+ms.openlocfilehash: 2ad9e71f572cb694897fd12ecbb15da069afe338
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593431"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67026080"
 ---
-# <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow
+# <a name="tutorial-retrain-a-tensorflow-image-classifier-with-transfer-learning-and-mlnet"></a>Kurz: Přeučování klasifikátor TensorFlow image s learningu a ML.NET
 
-Tento ukázkový kurz ukazuje, jak můžete používat již trénovaného třídění Image `TensorFlow` modelu k vytvoření nového vlastního modelu pro klasifikaci obrázků do několika kategorií.
-
-Co když můžete znovu použít model, který již byl před vyškolit tak, aby podobný problém vyřešit a přeučování všechny nebo některé z vrstev tento model, aby byl váš problém vyřešit? Opětovné použití součást již trénovaného modelu vytvoříte nový model Tato technika se nazývá [přenos learning](https://en.wikipedia.org/wiki/Transfer_learning).
+Zjistěte, jak přeučování s využitím learningu a ML.NET model TensorFlow classificaton pomocí bitové kopie. Původní model se trénuje klasifikovat jednotlivých obrázků. Po přetrénování, nový model slouží k uspořádání obrázků do kategorií. 
 
 Školení [klasifikace obrázků](https://en.wikipedia.org/wiki/Outline_of_object_recognition) model úplně od začátku vyžaduje nastavení miliony parametry, spoustu s popiskem trénovacích dat a velké množství výpočetních prostředků (vzdálené stovky hodin GPU). Přestože není tak účinné jako trénujete model pro vlastní úplně od začátku, learningu vám umožní místní tento proces při práci s tisíci imagí a miliony označené obrázky a poměrně rychle vytvářet vlastní model (za hodinu na počítači bez GPU).
 
@@ -24,6 +22,10 @@ V tomto kurzu se naučíte:
 > * Pochopení problému
 > * Opakovaně používat a vyladit předem natrénovaných modelů
 > * Klasifikace obrázků
+
+## <a name="what-is-transfer-learning"></a>Co je přenos učení?
+
+Co když můžete znovu použít model, který již byl před vyškolit tak, aby podobný problém vyřešit a přeučování všechny nebo některé z vrstev tento model, aby byl váš problém vyřešit? Opětovné použití součást již trénovaného modelu vytvoříte nový model Tato technika se nazývá [přenos learning](https://en.wikipedia.org/wiki/Transfer_learning).
 
 ## <a name="image-classification-sample-overview"></a>Přehled ukázky klasifikace obrázků
 

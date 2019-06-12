@@ -25,12 +25,12 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: de0715a2ac946fa47f0d83ac8569595e622f0b97
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 763682f1e4a6ee6d4235d9b9d53ac58db106bac4
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758080"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024927"
 ---
 # <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# odkaz)
 
@@ -164,7 +164,6 @@ Další informace najdete v následující částech [ C# specifikace jazyka](~/
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [?? (operátoru nulového sjednocení)](null-coalescing-operator.md)

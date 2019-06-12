@@ -8,14 +8,14 @@ helpviewer_keywords:
 - null-coalescing operator [C#]
 - ?? operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 8ca97261b348b7813ab179abbc1f2c5f535966a1
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: a19b5558da36ffb11dabd1b9bec419a3623a0f17
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816005"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024990"
 ---
-# <a name="-operator-c-reference"></a>?? operator (Referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>?? – operátor (C# odkaz)
 
 Operátoru nulového sjednocení `??` vrací hodnotu svého operandu vlevo, pokud není `null`; v opačném případě zpracovával pravý operand vyhodnotí a vrátí její výsledek. `??` Operátor nevyhodnocuje jeho zpracovával pravý operand, pokud levý operand je vyhodnocen jako nenulové.
 
@@ -59,8 +59,7 @@ Další informace najdete v tématu [null operátor sloučení](~/_csharplang/sp
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
 - [?. a? operátory]](member-access-operators.md#null-conditional-operators--and-)
 - [?: – operátor](conditional-operator.md)

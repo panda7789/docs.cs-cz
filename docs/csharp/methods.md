@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 54657fb8ed4c0935c7c21fad333c7a62b42aec2e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0decc563fdcf068c0b9dc88a55b2bd6f4e3657cd
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688264"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025091"
 ---
 # <a name="methods"></a>Metody
 
@@ -144,9 +144,9 @@ Volající lze poté vyvolat metodu v jednom ze tří způsobů:
 - Předáním čárkou oddělený seznam jednotlivé argumenty příslušného typu metody.
 - Tak, že neposkytnete argument pole parametrů.
 
-Následující příklad definuje metodu s názvem `DoStringOperation` , který provádí operace řetězců určené její první parametr `StringOperation` člena výčtu. Řetězce, na kterých je k provedení této operace jsou určené pole parametrů. `Main` Metoda ukazuje všechny tři způsoby volání metody. Všimněte si, že metoda označené `params` – klíčové slovo musí být připravena ke zpracování případu, ve kterém není zadaný žádný argument pro parametr pole, tak, aby její hodnota je `null`.
+Následující příklad definuje metodu s názvem `GetVowels` , která vrací všemi samohláskami z pole parametrů. `Main` Metoda ukazuje všechny tři způsoby volání metody. Volající není nutné zadat všechny argumenty pro parametry, které zahrnují `params` modifikátor. V takovém případě je parametr `null`.
 
-[!code-csharp[csSnippets.Methods#106](../../samples/snippets/csharp/concepts/methods/byref108.cs#108)]
+[!code-csharp[csSnippets.Methods#75](~/samples/snippets/csharp/concepts/methods/params75.cs#75)]
 
 <a name="optional"></a>
 

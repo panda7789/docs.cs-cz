@@ -2,16 +2,16 @@
 title: Podporované scénáře nasazení – WCF
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 986459e14206f073686474f5d65845ce682e1270
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 7b508f53365c1b4b90e2883ddb9d5f2a71c7e814
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881050"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025634"
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 
-Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená pro splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru, sdíleného WCF splňuje požadavky na internetovém měřítku poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] oprávnění na úrovni Medium Trust nastavit z bezpečnostních důvodů. Na straně klienta WCF částečným vztahem důvěryhodnosti podpory je navržená pro splnění požadavků nasazení technologií, jako [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]vaší aplikace prohlížeče XAML technologie, která jim umožňují bezproblémové a zabezpečené nasazení aplikací klasické pracovní plochy z nedůvěryhodné weby.
+Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená pro splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru WCF splňuje požadavky na sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v rámci technologie ASP.NET 2.0 úrovni Medium Trust oprávnění nastavit z bezpečnostních důvodů internetovém měřítku. Na straně klienta WCF částečným vztahem důvěryhodnosti podpory je navržená pro splnění požadavků nasazení technologií, jako [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]vaší aplikace prohlížeče XAML technologie, která jim umožňují bezproblémové a zabezpečené nasazení aplikací klasické pracovní plochy z nedůvěryhodné weby.
 
 ## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění
 
@@ -27,7 +27,7 @@ Další informace o funkcích podporovaných v těchto sad oprávnění najdete 
 
 ## <a name="partial-trust-on-the-server"></a>Částečné důvěryhodnosti na serveru
 
-Mnoho poskytovatelů obchodní aplikace ASP.NET Web hostitelské služby stanoví, že aplikace spuštěné na jejich serverech běží v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] úrovni Medium Trust sadu oprávnění. Služby WCF můžete spustit v těchto prostředích, pokud používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <xref:System.ServiceModel.WSHttpBinding> se zabezpečením na úrovni přenosu.
+Mnoho poskytovatelů obchodní aplikace ASP.NET Web hostitelské služby stanoví, že aplikace běžící na jejich serverech spustit v sadě ASP.NET 2.0 úrovni Medium Trust oprávnění. Služby WCF můžete spustit v těchto prostředích, pokud používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <xref:System.ServiceModel.WSHttpBinding> se zabezpečením na úrovni přenosu.
 
 WCF služby spuštěné na úrovni Medium Trust hostitelská prostředí se mohou chovat i jako střední vrstvy služby odesíláním zpráv na jiné servery v reakci na požadavky klientů. Střední vrstvy scénáře na serveru jsou podporovány, pokud hostitelské prostředí udělil aplikace odpovídající <xref:System.Net.WebPermission> provádět požadavky na odchozích k požadovanému serveru.
 

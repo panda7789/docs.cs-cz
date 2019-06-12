@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e72d093dd02f4a67386f58af5df40247c66dc378
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
-ms.translationtype: HT
+ms.openlocfilehash: 2239b73eb8418d469085ad72b8a28093146a1f6b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832800"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025966"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -53,7 +53,7 @@ K dispozici pro následující další možnosti *.exe*, *.dll*, a *.winmd* soub
 |**/linenum**|Zahrne odkazy do původních zdrojových řádků.|
 |**/nobar**|Potlačí místní okno indikátoru průběhu zpětného překladu.|
 |**/noca**|Potlačí výstup vlastních atributů.|
-|**/project**|Zobrazí metadata tak, jak se spravovaným kódem, místo tak, jak se zobrazuje v nativní [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Pokud `PEfilename` není metadat Windows ( *.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/project**|Zobrazí metadata, která se zobrazí tak, jak se spravovaným kódem, místo tak, jak ho v nativním modulu Windows Runtime. Pokud `PEfilename` není metadat Windows ( *.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Zpětně přeloží pouze veřejné typy a členy. Ekvivalentní **/visibility:PUB**.|
 |**/quoteallnames**|Vloží všechny názvy do jednoduchých uvozovek.|
 |**/raweh**|Zobrazí klauzule zpracování výjimek v nezpracovaném tvaru.|

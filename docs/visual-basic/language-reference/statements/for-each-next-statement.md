@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For Each...Next statements
 - iteration
 ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
-ms.openlocfilehash: ecde6ca8d3a95e356c5b1389ba95c4ad72b68d45
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5c2332b7371ec4ac7b5cfc0681466536d49bb7be
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623895"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67026073"
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů pro každý prvek v kolekci.  
@@ -49,7 +49,7 @@ Next [ element ]
 |Termín|Definice|  
 |---|---|  
 |`element`|Vyžaduje `For Each` příkazu. Volitelné v `Next` příkazu. Proměnná. Použít k iteraci prvků kolekce.|  
-|`datatype`|Požadováno pokud `element` již není deklarován. Datový typ `element`.|  
+|`datatype`|Nepovinné, pokud [ `Option Infer` ](option-infer-statement.md) (výchozí nastavení) nebo `element` je již deklarován; vyžaduje se, pokud `Option Infer` je vypnuté a `element` již není deklarován. Datový typ `element`.|  
 |`group`|Povinný parametr. Proměnná typu, který je typ kolekce nebo objekt. Odkazuje na kolekci, nad niž `statements` se bude opakovat.|  
 |`statements`|Volitelné. Jeden nebo více příkazů mezi `For Each` a `Next` , která spustí pro každou položku v `group`.|  
 |`Continue For`|Volitelné. Přenese ovládací prvek na začátku `For Each` smyčky.|  
@@ -113,8 +113,8 @@ Next [ element ]
  Když `For Each`...`Next` příkaz spustí, Visual Basic vyhodnocuje kolekce pouze jednou, než na začátku cyklu. Pokud se změní vaše blok příkazů `element` nebo `group`, tyto změny nemají vliv na iteraci smyčky.  
   
  Pokud všechny prvky v kolekci se postupně přiřadily `element`, `For Each` smyčky zastaví a řídit předá následující příkaz `Next` příkazu.  
-  
- Pokud `element` nebyla deklarována mimo tuto smyčku, musíte ji deklarovat v `For Each` příkazu. Je možné deklarovat typ `element` explicitně pomocí `As` příkazu, nebo se můžete spolehnout na odvození typu na typ přiřadit. V obou případech se rozsah `element` tělo smyčky. Nelze však deklarovat `element` mimo a uvnitř smyčky.  
+ 
+Pokud [Option Infer](option-infer-statement.md) je na (výchozí nastavení), Visual Basic kompilátor může odvodit typ dat `element`. Pokud má hodnotu off a `element` nebyla deklarována mimo smyčku, musíte ji deklarovat v `For Each` příkazu. Chcete-li deklarovat datový typ `element` explicitně, použijte `As` klauzuli. Pokud je mimo definovaný datový typ prvku `For Each`... `Next` konstrukce, jeho rozsah je tělo smyčky. Všimněte si, že nelze deklarovat `element` mimo a uvnitř smyčky.
   
  Volitelně můžete zadat `element` v `Next` příkazu. To zlepšuje čitelnost programu, zejména v případě, že budete mít člověk vnořené `For Each` smyčky. Musíte zadat stejnou proměnnou jako ten, který se zobrazí v odpovídající `For Each` příkazu.  
   
@@ -124,7 +124,7 @@ Next [ element ]
   
  Pokud váš kód závisí na kolekci v určitém pořadí, procházení `For Each`... `Next` smyčky není nejlepší volbou, pokud si nejste jisti charakteristiky objekt enumerator poskytuje kolekci. Pořadí procházení není určeno jazyka Visual Basic, ale podle <xref:System.Collections.IEnumerator.MoveNext%2A> metodu objektu enumerátor. Proto nebude možné předpovědět, které elementu kolekce, je první má být vrácen v `element`, nebo které je kdy má být vrácen po daného elementu. Můžete dosáhnout pomocí různých smyčce struktura, například spolehlivější výsledky `For`... `Next` nebo `Do`... `Loop`.  
   
- Datový typ `element` musí být takový, datový typ prvků `group` lze převést na ni.  
+Modul runtime musí být schopen převést elementy v `group` k `element`. [`Option Strict`] Příkaz určuje, zda jsou povoleny i rozšíření a zúžení převodů (`Option Strict` je vypnuté, jeho výchozí hodnota), nebo zda jsou povoleny pouze rozšiřující převody (`Option Strict` zapnutý). Další informace najdete v tématu [Zužujících převodů](#narrowing-conversions).
   
  Datový typ `group` musí být typ odkazu, který odkazuje na kolekci nebo pole, která je vyčíslitelná. Nejčastěji to znamená, že `group` odkazuje na objekt, který implementuje <xref:System.Collections.IEnumerable> rozhraní `System.Collections` oboru názvů nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní `System.Collections.Generic` oboru názvů. `System.Collections.IEnumerable` definuje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metodu, která vrací objekt enumerátoru pro kolekci. Implementuje objekt enumerator `System.Collections.IEnumerator` rozhraní `System.Collections` obor názvů a zpřístupňuje <xref:System.Collections.IEnumerator.Current%2A> vlastnost a <xref:System.Collections.IEnumerator.Reset%2A> a <xref:System.Collections.IEnumerator.MoveNext%2A> metody. Jazyk Visual Basic používá tyto k procházení kolekce.  
   

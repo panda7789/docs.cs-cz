@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eca4b66a3f7c1a96bb06827dde477f34cb904ba3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 43bfec471fbcfc481e178f6610e0318e9538ee34
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61906240"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025769"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags – výčet
 Obsahuje hodnoty, které popisují metadata u sestavení.  
@@ -76,7 +76,7 @@ typedef enum CorAssemblyFlags {
 |`afRetargetable`|Označuje, že sestavení můžete v době běhu změněn na cíl sestavení z jiného vydavatele.|  
 |`afContentType_Mask`|Maska, která popisuje typ obsahu.|  
 |`afContentType_Default`|Určuje výchozí typ obsahu.|  
-|`afContentType_WindowsRuntime`|Označuje, [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typ obsahu.|  
+|`afContentType_WindowsRuntime`|Určuje typ obsahu modulu Windows Runtime.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

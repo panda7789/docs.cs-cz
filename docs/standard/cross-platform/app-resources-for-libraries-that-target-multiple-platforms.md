@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6c3e9e58a8cfe5f18aba2e8db56f84d089cc49df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c95c77d0b2e2b68750891431822e2637e5e88f9
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62055014"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025574"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) projektu typu zajistit, že prostředky v knihovnách tříd můžete přistupovat z více platforem. Tento typ projektu je k dispozici v sadě Visual Studio 2012 a cílí na přenosné podmnožiny knihovny tříd rozhraní .NET Framework. Použití [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] zajistí, že vaše knihovna přístupná z aplikací klasické pracovní plochy, aplikace Silverlight, Windows Phone apps, a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.
@@ -47,9 +47,9 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 ## <a name="the-includenetportableincludesnet-portable-mdmd-and-windows-store-apps"></a>[!INCLUDE[net_portable](../../../includes/net-portable-md.md)] a aplikace pro Windows Store
  [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projekty uchovávat prostředky v souborech .resx, které jsou potom kompilovány do souborů .resources a vložit do hlavního sestavení nebo satelitního sestavení v době kompilace. [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, na druhé straně vyžadují prostředky k uložení souborů .resw, které jsou potom kompilovány do souboru prostředků (PRI) index jeden balíček. Navzdory formátu souborů vašeho [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] bude fungovat v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.
 
- Chcete-li využívat knihovnu tříd z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci, přidejte na ni odkaz v projektu aplikace Windows Store. Visual Studio se transparentně extrahuje prostředky z vašeho sestavení do souboru .resw a použít ho ke generování souboru PRI, ze kterého [!INCLUDE[wrt](../../../includes/wrt-md.md)] dokáže extrahovat prostředky. V době běhu [!INCLUDE[wrt](../../../includes/wrt-md.md)] spustí kód v vaše [!INCLUDE[net_portable](../../../includes/net-portable-md.md)], ale získává vaše přenosné knihovny tříd prostředků ze souboru PRI.
+ Chcete-li využívat knihovnu tříd z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci, přidejte na ni odkaz v projektu aplikace Windows Store. Visual Studio transparentně extrahuje prostředky z vašeho sestavení do souboru .resw a používá je ke generování souboru PRI, ze kterého modul Runtime Windows dokáže extrahovat prostředky. V době běhu modulu Windows Runtime spustí kód ve vašich [!INCLUDE[net_portable](../../../includes/net-portable-md.md)], ale získává vaše přenosné knihovny tříd prostředků ze souboru PRI.
 
- Pokud vaše [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projekt obsahuje lokalizované prostředky, je použít model střed a paprsek je nasadit stejně jako u knihovny aplikace klasické pracovní plochy. Chcete-li využívat hlavní soubor prostředků a všechny lokalizované soubory prostředků ve vaší [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci, přidejte odkaz na hlavní sestavení. V době kompilace sada Visual Studio extrahuje prostředky z hlavního souboru prostředků a všechny lokalizované soubory prostředků do samostatných souborů .resw. Poté kompiluje soubory .resw do jednoho PRI souboru, který [!INCLUDE[wrt](../../../includes/wrt-md.md)] přistupuje za běhu.
+ Pokud vaše [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projekt obsahuje lokalizované prostředky, je použít model střed a paprsek je nasadit stejně jako u knihovny aplikace klasické pracovní plochy. Chcete-li využívat hlavní soubor prostředků a všechny lokalizované soubory prostředků ve vaší [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci, přidejte odkaz na hlavní sestavení. V době kompilace sada Visual Studio extrahuje prostředky z hlavního souboru prostředků a všechny lokalizované soubory prostředků do samostatných souborů .resw. Poté kompiluje soubory .resw do jednoho souboru PRI, který přistupuje k prostředí Windows Runtime v době běhu.
 
 <a name="NonLoc"></a>
 ## <a name="example-non-localized-includenetportableincludesnet-portable-mdmd"></a>Příklad: Nelokalizovaný [!INCLUDE[net_portable](../../../includes/net-portable-md.md)]
@@ -63,7 +63,7 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 |HiredLength|12|
 |ID|ID|
 |ID.Length|12|
-|Název|Název|
+|Name|Name|
 |NameLength|25|
 |Název|Databáze zaměstnanců|
 
@@ -91,7 +91,7 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 |Nástup|Date embauché|
 |HiredLength|16|
 |ID|ID|
-|Název|Nom|
+|Name|Nom|
 |Název|Base de données des employés|
 
  Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z aplikace v režimu konzoly. Vyžaduje přidání odkazu na soubor UILIbrary.dll do projektu aplikace konzoly.

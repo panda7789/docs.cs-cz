@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: b7240295f154277e722f38e99beb221c1c4d9a34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 77ecab9738afd7ff5cfd4f8ef0cd0e49a302eb27
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675713"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025409"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -24,7 +24,7 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  Ukazuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../csharp/language-reference/keywords/async.md) a [await](../csharp/language-reference/keywords/await.md).  
   
  [Vytvoření komponenty Windows Runtime v jazyce C# nebo Visual Basic a volání komponenty z jazyka JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)  
- Ukazuje, jak vytvořit [!INCLUDE[wrt](~/includes/wrt-md.md)] zadejte, zabalíte ji do [!INCLUDE[wrt](~/includes/wrt-md.md)] komponenty a poté zavolá komponentu z [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] aplikaci, která je vytvořená pro Windows pomocí jazyka JavaScript.  
+ Ukazuje, jak vytvořit typ Windows Runtime, zabalíte ji komponenty prostředí Windows Runtime a poté zavolejte komponentu z [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] aplikaci, která je vytvořená pro Windows pomocí jazyka JavaScript.  
   
  [Programování pro Office (C# a Visual Basic)](../csharp/programming-guide/interop/walkthrough-office-programming.md)  
  Ukazuje, jak vytvořit Excelový sešit a dokument aplikace Word s použitím jazyka C# a Visual Basic.  

@@ -27,12 +27,12 @@ helpviewer_keywords:
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac253e5ff294360fff89e9746ca3038b4e1ee75c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3273b8babe44a48d6952620e4331cba4f22b6e9
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751111"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67026027"
 ---
 # <a name="formatting-types-in-net"></a>Typy formátování v .NET
 
@@ -123,7 +123,7 @@ Každý typ, který je odvozen z <xref:System.Object?displayProperty=nameWithTyp
 [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]
 
 > [!WARNING]
-> Od verze [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[wrt](../../../includes/wrt-md.md)] zahrnuje <xref:Windows.Foundation.IStringable> rozhraní s jedinou metodu [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A), která poskytuje výchozí podporu formátování. Doporučujeme však, že se spravovanými typy neimplementují `IStringable` rozhraní. Další informace najdete v tématu " [!INCLUDE[wrt](../../../includes/wrt-md.md)] a `IStringable` rozhraní" v části <xref:System.Object.ToString%2A?displayProperty=nameWithType> referenční stránce.
+> Od verze [!INCLUDE[win81](../../../includes/win81-md.md)], obsahuje modul Windows Runtime <xref:Windows.Foundation.IStringable> rozhraní s jedinou metodu [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A), která poskytuje výchozí podporu formátování. Doporučujeme však, že se spravovanými typy neimplementují `IStringable` rozhraní. Další informace najdete v tématu "Windows Runtime a `IStringable` rozhraní" v části <xref:System.Object.ToString%2A?displayProperty=nameWithType> referenční stránce.
 
 Protože všechny typy jiné než rozhraní jsou odvozeny z <xref:System.Object>, tato funkce je automaticky poskytnuta vlastním třídám nebo strukturám. Však nabízí funkce ve výchozím nastavení `ToString` metoda, je omezený: I když se identifikuje typ, není schopna poskytnout žádné informace o instanci typu. Chcete-li poskytnout řetězcovou reprezentaci objektu, který obsahuje informace o tomto objektu, je nutné přepsat `ToString` metody.
 
