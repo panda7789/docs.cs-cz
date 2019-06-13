@@ -24,8 +24,6 @@
           href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md
         - name: Kdy nasadit kontejnery Windows do Windows Container Instances (ACI)
           href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-container-instances-ACI.md
-        - name: Kdy nasadit kontejnery Windows do Service Fabricu
-          href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-service-fabric.md
         - name: Kdy nasadit kontejnery Windows do Azure Container Service (ACS-Kubernetes)
           href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md
         - name: Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
