@@ -17,8 +17,8 @@
       href: tutorials/predict-prices.md
     - name: Kategorizace datových sady Iris flower (clustering K-Means)
       href: tutorials/iris-clustering.md
-    - name: Řešení pro doporučování videí (faktorizace matice)
-      href: tutorials/movie-recommmendation.md
+    - name: Doporučování videí (faktorizace matice)
+      href: tutorials/movie-recommendation.md
     - name: Klasifikace obrázků (přenos učení)
       href: tutorials/image-classification.md
     - name: Analýza prodeje produktu (detekce anomálií)
