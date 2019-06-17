@@ -3,10 +3,10 @@ title: Monitorování kontejnerizovaných aplikačních služeb
 description: Přečtěte si některé klíčové aspekty monitorování kontejneru architektury
 ms.date: 02/15/2019
 ms.openlocfilehash: e14553d510751d8a75020a1b6beb9fd7bc29596e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65641225"
 ---
 # <a name="monitor-containerized-application-services"></a>Monitorování kontejnerizovaných aplikačních služeb

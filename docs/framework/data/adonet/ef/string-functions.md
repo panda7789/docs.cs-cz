@@ -2,12 +2,12 @@
 title: Funkce řetězce
 ms.date: 03/30/2017
 ms.assetid: 338f0c26-8aee-43eb-bd1a-ec0849a376b9
-ms.openlocfilehash: 6da257cad90232426c71221dfd9d418265479bbe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3eb70151628e32f6ad0a87be8ff0cd071ae89235
+ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879113"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041607"
 ---
 # <a name="string-functions"></a>Funkce řetězce
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje `String` funkce, které provádějí operace na vstup `String` a vraťte se `String` nebo výsledek číselnou hodnotu. Tyto funkce jsou v oboru názvů systému SQL Server, která je k dispozici, když použijete SqlClient. Vlastnost oboru názvů poskytovatele umožňuje zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce Entity Framework.  
@@ -27,7 +27,7 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje `Strin
 |`NCHAR(expression)`|Vrátí Unicode `String` s kódem zadané celé číslo, jak jsou definovány standardem Unicode.<br /><br /> **Argumenty**<br /><br /> `expression`: `Int32`.<br /><br /> **Návratová hodnota**<br /><br /> Znakové sady Unicode `String`.<br /><br /> **Příklad**<br /><br /> `SqlServer.NCHAR(65)`|  
 |`PATINDEX('%pattern%', expression)`|Vrátí počáteční pozici prvního výskytu vzoru v zadané `String` výrazu.<br /><br /> **Argumenty**<br /><br /> `'%pattern%'`: ASCII nebo Unicode `String` typu. Můžete použít zástupné znaky; však musí být znak % před a po vzoru (s výjimkou vyhledá první nebo poslední znaky).<br /><br /> `expression`: ASCII nebo Unicode `String` k vyhledání zadanému vzoru.<br /><br /> **Návratová hodnota**<br /><br /> `Int32`.<br /><br /> **Příklad**<br /><br /> `SqlServer.PATINDEX('abc', 'ab')`|  
 |`QUOTENAME('char_string' [, 'quote_char'])`|Vrátí Unicode `String` s oddělovači přidat – tak se vstupním řetězcem platný SQL Server 2005 oddělených identifikátor.<br /><br /> **Argumenty**<br /><br /> `char_string`: Znakové sady Unicode `String`.<br /><br /> `quote_char`: Jeden znak řetězec, který se použije jako oddělovač. Může být jednoduché uvozovky ('), levou nebo pravou závorku ([]) nebo dvojité uvozovky ("). Pokud `quote_char` není zadán, jsou použity závorky.<br /><br /> **Návratová hodnota**<br /><br /> Znakové sady Unicode `String`.<br /><br /> **Příklad**<br /><br /> `SqlServer.QUOTENAME('abc[]def')`|  
-|`REPLACE(expression1, expression2, expression3)`|Výraz znaků se opakuje pro zadaného počtu opakování.<br /><br /> **Argumenty**<br /><br /> `expression1`: Řetězcový výraz, který chcete prohledat. string_expression1 mohou být typu řetězec ASCII nebo Unicode.<br /><br /> `expression2`: Podřetězec nalezen. string_expression2 mohou být typu řetězec ASCII nebo Unicode.<br /><br /> `expression3`; Náhradní řetězec. string_expression3 mohou být typu řetězec ASCII nebo Unicode.<br /><br /> **Příklad**<br /><br /> `SqlServer.REPLACE('aabbcc', 'bc', 'zz')`|  
+|`REPLACE(expression1, expression2, expression3)`|Nahradí znak výraz jiný výraz znaků.<br /><br /> **Argumenty**<br /><br /> `expression1`: Řetězcový výraz, který chcete prohledat. `expression1` může být typu Unicode nebo řetězec ASCII.<br /><br /> `expression2`: Podřetězec nalezen. `expression2` může být typu Unicode nebo řetězec ASCII.<br /><br /> `expression3`; Náhradní řetězec. `expression3` může být typu Unicode nebo řetězec ASCII.<br /><br /> **Příklad**<br /><br /> `SqlServer.REPLACE('aabbcc', 'bc', 'zz')`|  
 |`REPLICATE(char_expression, int_expression)`|Výraz znaků se opakuje pro zadaného počtu opakování.<br /><br /> **Argumenty**<br /><br /> `char_expression`: Kódování Unicode a ASCII `String` typu.<br /><br /> `int_expression`: `Int64` (není podporováno v systému SQL Server 2000) nebo `Int32`.<br /><br /> **Návratová hodnota**<br /><br /> Kódování Unicode a ASCII `String` typu.<br /><br /> **Příklad**<br /><br /> `SqlServer.REPLICATE('aa',2)`|  
 |`REVERSE(expression)`|Vrátí řetězec ASCII a Unicode s jeho pozice znaku obrácené vstupního řetězce.<br /><br /> **Argumenty**<br /><br /> `expression`: Kódování Unicode a ASCII `String` typu.<br /><br /> **Návratová hodnota**<br /><br /> Kódování Unicode a ASCII `String` typu.<br /><br /> **Příklad**<br /><br /> `SqlServer.REVERSE('abcd')`|  
 |`RIGHT(char_expression, count)`|Vrátí část reprezentující správný řetězec znaků se zadaný počet znaků.<br /><br /> **Argumenty**<br /><br /> `char_expression`: Typ kódování Unicode nebo řetězec ASCII. Můžete explicitně převést character_expression pomocí funkce PŘETYPOVÁNÍ.<br /><br /> `count`: `Int64` (Nevrací se v systému SQL Server 2000) nebo `Int32` typ, který určuje, kolik znaků character_expression bude vrácen.<br /><br /> **Návratová hodnota**<br /><br /> ASCII `String` typu.<br /><br /> **Příklad**<br /><br /> `SqlServer.RIGHT('SQL Server', 6)`|  

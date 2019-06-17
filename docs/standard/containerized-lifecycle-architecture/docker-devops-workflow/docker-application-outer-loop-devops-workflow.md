@@ -3,10 +3,10 @@ title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 description: Přečtěte si postup, "Vnější smyčka" pracovní postup DevOps
 ms.date: 02/15/2019
 ms.openlocfilehash: e7a82d2e5a5d503e5efbe9ac8242b163baab1286
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66195622"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru

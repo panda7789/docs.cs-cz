@@ -2,12 +2,12 @@
 title: Typy kolekcí F#
 description: Další informace o F# typy kolekcí a jak se liší od typy kolekcí v rozhraní .NET Framework.
 ms.date: 05/16/2016
-ms.openlocfilehash: a3cfc3f06582c31a79dce43b583eca39f69ddf1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b370d850deaacc961dff9515ffa8c20634af4ed6
+ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996811"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041721"
 ---
 # <a name="f-collection-types"></a>Typy kolekcí F#
 
@@ -31,7 +31,7 @@ Následující tabulka ukazuje F# typy kolekcí.
 
 Tato část porovnává funkce, které jsou k dispozici na F# typy kolekcí. Je zadaný výpočetní složitost funkce, kde N je velikost první kolekce, a M je velikost druhá kolekce, pokud existuje. Pomlčkou (-) označuje, že tato funkce není dostupná pro kolekci. Sekvence se vyhodnocují laxně, funkce, jako je například Seq.distinct může být O(1) vzhledem k tomu, že se vrátí okamžitě, ale stále ovlivňuje výkon pořadí při výčtu.
 
-|Funkce|Pole|Seznam|Pořadí|Mapa|Nastavit|Popis|
+|Funkce|Pole|Seznam|Sequence|Mapa|Nastavit|Popis|
 |--------|-----|----|--------|---|---|-----------|
 |Připojení|O(M)|O(N)|O(N)|-|-|Vrátí novou kolekci, která obsahuje elementy první kolekce, za nímž následuje elementy druhé kolekci.|
 |add|-|-|-|O (protokolu N)|O (protokolu N)|Vrátí novou kolekci s elementem přidán.|
@@ -50,7 +50,7 @@ Tato část porovnává funkce, které jsou k dispozici na F# typy kolekcí. Je 
 |countby –|-|-|O(N)|-|-|Funkce generování klíče se vztahuje na každý prvek pořadí a vrátí sekvenci, která poskytuje jedinečné klíče a jejich počet výskytů v původní sekvenci.|
 |copy|O(N)|-|O(N)|-|-|Kopíruje kolekci.|
 |vytvoření|O(N)|-|-|-|-|Vytvoří pole celé prvky, které jsou všechny původně předané hodnoty.|
-|zpoždění|-|-|O(1)|-|-|Vrátí sekvenci, která je vytvořená z daného zpožděné specifikaci pořadí.|
+|delay|-|-|O(1)|-|-|Vrátí sekvenci, která je vytvořená z daného zpožděné specifikaci pořadí.|
 |rozdíl|-|-|-|-|O (M &#42; protokolu N)|Vrátí novou sadu, kdy elementy druhé sadě odebrány z první sady.|
 |DISTINCT|||O(1)&AMP;#42;|||Vrátí sekvenci, která neobsahuje žádné duplicitní položky podle obecného porovnání rovnosti a hodnotu hash na položky. Pokud element dojde k více než jednou v sekvenci, novější výskytů se zahodí.|
 |distinctby –|||O(1)&AMP;#42;|||Vrátí sekvenci, která neobsahuje žádné duplicitní položky podle obecného porovnání rovnosti a hodnotu hash na klíče, které vrátí danou funkci generování klíče. Pokud element dojde k více než jednou v sekvenci, novější výskytů se zahodí.|
@@ -83,6 +83,7 @@ Tato část porovnává funkce, které jsou k dispozici na F# typy kolekcí. Je 
 |iteri –|O(N)|O(N)|O(N)|-|-|Použije danou funkci na každý prvek kolekce. Celé číslo, který je předán funkci označuje index prvku.|
 |iteri2|O(N)|O(N)|-|-|-|Použije danou funkci na dvojici prvků, které jsou vykreslovány vedle z odpovídajících indexů ve dvou polích. Celé číslo, který je předán funkci označuje index prvků. Dvě pole musí mít stejnou délku.|
 |iter2|O(N)|O(N)|O(N)|-|-|Použije danou funkci na dvojici prvků, které jsou vykreslovány vedle z odpovídajících indexů ve dvou polích. Dvě pole musí mít stejnou délku.|
+|poslední|O(1)|O(N)|O(N)|-|-|Vrátí poslední položku v kolekci použít.|
 |length|O(1)|O(N)|O(N)|-|-|Vrátí počet prvků v kolekci.|
 |map|O(N)|O(N)|O(1)|-|-|Sestaví kolekci, jehož prvky jsou výsledkem použití dané funkce na každý prvek pole.|
 |map2 –|O(N)|O(N)|O(1)|-|-|Sestaví kolekci, jehož prvky jsou výsledkem použití dané funkce na odpovídající prvky dvou kolekcí ukládání. Dvě vstupní pole musí mít stejnou délku.|
@@ -120,7 +121,7 @@ Tato část porovnává funkce, které jsou k dispozici na F# typy kolekcí. Je 
 |sortinplaceby –|Průměr O (protokolu N N)<br /><br />Nejhorším případě O(N^2)|-|-|-|-|Seřadí prvky pole podle mutace na místě a pomocí zadané projekce pro klíče. Prvky jsou porovnány pomocí [porovnání](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c).|
 |sortInPlaceWith|Průměr O (protokolu N N)<br /><br />Nejhorším případě O(N^2)|-|-|-|-|Seřadí prvky pole mutace na místě a pomocí funkce porovnání daného jako pořadí.|
 |sortwith –|Průměr O (protokolu N N)<br /><br />Nejhorším případě O(N^2)|O (protokolu N N)|-|-|-|Seřadí prvky kolekce, pomocí funkce porovnání daného jako pořadí a vrátí novou kolekci.|
-|Sub|O(N)|-|-|-|-|Sestavení obsahující daný dílčí sadu, která je zadána počáteční index a délka pole.|
+|sub|O(N)|-|-|-|-|Sestavení obsahující daný dílčí sadu, která je zadána počáteční index a délka pole.|
 |Součet|O(N)|O(N)|O(N)|-|-|Vrátí součet položek v kolekci.|
 |sumBy|O(N)|O(N)|O(N)|-|-|Vrátí součet výsledky, které jsou generovány použitím funkce na každý prvek kolekce.|
 |Funkce Tail|-|O(1)|-|-|-|Vrátí seznam bez jeho první prvek.|

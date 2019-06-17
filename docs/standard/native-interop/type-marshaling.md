@@ -4,12 +4,12 @@ description: Zjistěte, jak .NET zařazuje vaše typy pro nativní reprezentace.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: cb18a7607a3d99907401543b4d37995a956a3920
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2cb8898b52b4b4afba1184a886e16c9f7f68f03a
+ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065465"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041782"
 ---
 # <a name="type-marshaling"></a>Zařazování typů
 
@@ -79,6 +79,20 @@ Některé typy mohou být zařazována pouze jako parametry a ne jako pole. Tyto
 | `System.Runtime.InteropServices.HandleRef` | `void*` |
 
 Pokud tyto výchozí hodnoty neprovádějte přesně to, co chcete, můžete přizpůsobit, jak zařadit parametry. [Zařazování parametru](customize-parameter-marshaling.md) článek vás provede přizpůsobení jak různé typy parametrů, jsou zařazeny procházení.
+
+## <a name="default-marshaling-in-com-scenarios"></a>Výchozí zařazování ve scénářích modelu COM
+
+Při volání metod na objekty modelu COM v rozhraní .NET, modul .NET runtime změní výchozí pravidla tak aby odpovídala sémantiky společné COM zařazování. Následující tabulka uvádí pravidla, která moduly .NET runtime používá ve scénářích COM:
+
+| Typ formátu .NET | Nativní typ (volání metody COM) |
+|-----------|--------------------------------|
+| `bool`    | `VARIANT_BOOL`                 |
+| `StringBuilder` | `LPWSTR`                 |
+| `string`  | `BSTR`                         |
+| Typy delegátů | `_Delegate*` v rozhraní .NET Framework. Nepovolené v .NET Core. |
+| `System.Drawing.Color` | `OLECOLOR`        |
+| Pole .NET | `SAFEARRAY`                   |
+| `string[]` | `SAFEARRAY` z `BSTR`s        |
 
 ## <a name="marshaling-classes-and-structs"></a>Zařazování tříd a struktur
 

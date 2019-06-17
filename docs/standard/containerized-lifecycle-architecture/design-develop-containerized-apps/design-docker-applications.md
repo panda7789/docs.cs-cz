@@ -3,10 +3,10 @@ title: Návrh aplikací Dockeru
 description: Tady najít odkaz na podrobné příručce k architektuře mikroslužeb, protože se na téma, který není podrobně popsané v této příručce.
 ms.date: 02/15/2019
 ms.openlocfilehash: 535b6cefb7371014527032972ec27ebfe4b67ebc
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644679"
 ---
 # <a name="design-docker-applications"></a>Návrh aplikací Dockeru

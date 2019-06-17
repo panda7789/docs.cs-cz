@@ -3,10 +3,10 @@ title: Běžné zásady návrhu kontejneru
 description: Přečtěte si základní princip návrhu dobré kontejneru, je, že kontejner byste neměli hostit pouze jeden proces.
 ms.date: 02/15/2019
 ms.openlocfilehash: 69f3ff6c9303f0c4082695d861a8c90031295b6a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644800"
 ---
 # <a name="common-container-design-principles"></a>Běžné zásady návrhu kontejneru

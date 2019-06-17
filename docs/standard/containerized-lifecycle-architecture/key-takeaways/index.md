@@ -3,10 +3,10 @@ title: Základní poznatky
 description: Zkontrolujte stěžejní pro průvodce.
 ms.date: 02/15/2019
 ms.openlocfilehash: d28739a87e5c7c7e6c9304c36e1ec2a73cf0d0db
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644708"
 ---
 # <a name="key-takeaways"></a>Základní poznatky

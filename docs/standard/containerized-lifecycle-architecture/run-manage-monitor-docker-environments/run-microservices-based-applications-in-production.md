@@ -3,10 +3,10 @@ title: Spuštění složených aplikací a aplikací založených na mikroslužb
 description: Poznejte klíčové komponenty pro spouštění kontejnerových aplikací v produkčním prostředí
 ms.date: 02/15/2019
 ms.openlocfilehash: 69df3d39a00b91cbe59c96e5fcab841a60943bcc
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644965"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spuštění složených aplikací a aplikací založených na mikroslužbách v produkčních prostředích

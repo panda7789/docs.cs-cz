@@ -3,10 +3,10 @@ title: Cesta k moderním aplikacím založeným na kontejnerech
 description: Vysvětlení, že Docker, kontejnery a architekturu Mikroslužeb nejsou poskytovat řešení univerzální velikosti. Tady najdete některé odkazy, které vám pomohou určit.
 ms.date: 11/23/2018
 ms.openlocfilehash: bd5a53ec557b7dd90733a93d0cb03f19e3bc2940
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65641243"
 ---
 # <a name="road-to-modern-applications-based-on-containers"></a>Cesta k moderním aplikacím založeným na kontejnerech

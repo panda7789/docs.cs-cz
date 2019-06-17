@@ -3,10 +3,10 @@ title: Terminologie Dockeru
 description: Přečtěte si některé základní terminologii, která byla použita každý den, při práci s Dockerem.
 ms.date: 02/15/2019
 ms.openlocfilehash: c352bf7235e8a3dc2d52bbbfe4390863fff9991f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644751"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
@@ -27,21 +27,21 @@ Tato část uvádí termíny a definice, měli byste se seznámit s před získ�
 
 **Vícefázových sestavení**: Je funkce, od Dockeru 17.05 nebo vyšší, pomáhá omezit velikost finální bitové kopie. V několika větách vícefázových sestavení používáte, třeba velký základní image obsahující sadu SDK pro kompilaci a publikování aplikace a pak pomocí složky pro publikování s malé pouze modul runtime základní image, k vytvoření mnohem menší finální bitové kopie
 
-**Úložišti (úložišti)**: Kolekce související imagí Dockeru, označené značkou, který označuje verzi image. Některá úložiště obsahovat více variant konkrétní image, jako je například obrázek (těžší), sady SDK obsahující bitovou kopii obsahující pouze moduly runtime (světlejší), atd. Tyto varianty, mohou být označeny značky. Jediné úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image.
+**Úložišti (úložišti)** : Kolekce související imagí Dockeru, označené značkou, který označuje verzi image. Některá úložiště obsahovat více variant konkrétní image, jako je například obrázek (těžší), sady SDK obsahující bitovou kopii obsahující pouze moduly runtime (světlejší), atd. Tyto varianty, mohou být označeny značky. Jediné úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image.
 
 **Registru**: Služba, která poskytuje přístup k úložištím. Je výchozím nastavení registru pro největší veřejné image [Docker Hubu](https://hub.docker.com/) (vlastněné Dockeru jako organizace). Registru obvykle obsahuje úložiště z několika týmů. Podniky mají často privátních registrů k ukládání a správě imagí, které jste vytvořili. Služba Azure Container Registry je další příklad.
 
-**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM mcr.microsoft.com/dotnet/core/sdk:2.2`** z registru ve skutečnosti získá **`2.2-nanoserver-1709`**, **`2.2-nanoserver-1803`**, **`2.2-nanoserver-1809`** nebo **`2.2-stretch`**, v závislosti na operačním systému a verze se spuštěným Dockerem.
+**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM mcr.microsoft.com/dotnet/core/sdk:2.2`** z registru ve skutečnosti získá **`2.2-nanoserver-1709`** , **`2.2-nanoserver-1803`** , **`2.2-nanoserver-1809`** nebo **`2.2-stretch`** , v závislosti na operačním systému a verze se spuštěným Dockerem.
 
 **Docker Hubu**: Veřejného registru k nahrání imagí a práci s nimi. Docker Hubu poskytuje Docker hostování image, veřejných nebo privátních registrů, aktivačních procedur sestavení a webhooky a integraci s z Githubu nebo Bitbucketu.
 
 **Azure Container Registry**: Prostředek veřejné pro práci s imagí Dockeru a jeho komponent v Azure. To poskytuje registr, která je blízko svá nasazení v Azure díky tomu kontrolu přístupu, aby bylo možné používat skupiny Azure Active Directory a oprávnění.
 
-**Docker Trusted Registry (DTR)**: Služba registru Dockeru (od Dockeru), která může být nainstalovaný místně, takže umístěná kdekoli v rámci organizace datové centrum a síť. Je vhodné pro privátních imagí, které se mají spravovat v rámci podniku. Docker Trusted Registry je součástí produktu Docker Datacenter. Další informace najdete v tématu [Docker Trusted Registry (DTR)](https://docs.docker.com/docker-trusted-registry/overview/).
+**Docker Trusted Registry (DTR)** : Služba registru Dockeru (od Dockeru), která může být nainstalovaný místně, takže umístěná kdekoli v rámci organizace datové centrum a síť. Je vhodné pro privátních imagí, které se mají spravovat v rámci podniku. Docker Trusted Registry je součástí produktu Docker Datacenter. Další informace najdete v tématu [Docker Trusted Registry (DTR)](https://docs.docker.com/docker-trusted-registry/overview/).
 
-**Docker Community Edition (CE)**: Nástroje pro vývoj pro Windows a macOS pro sestavování, spouštění a testování kontejnery místně. Docker CE pro Windows poskytuje vývojové prostředí pro kontejnery Windows i Linux. Je na základě hostitele linuxového Dockeru na Windows [Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization) virtuálního počítače. Hostitel pro kontejnery Windows je přímo založena na Windows. Docker CE for Mac je založená na platformě Apple hypervisoru a [xhyve hypervisoru](https://github.com/mist64/xhyve), který poskytuje linuxového Dockeru hostitele virtuálního počítače na Mac OS X. Docker CE pro Windows a pro Mac nahradí nástrojů Dockeru, který byl založen na Oracle VirtualBox.
+**Docker Community Edition (CE)** : Nástroje pro vývoj pro Windows a macOS pro sestavování, spouštění a testování kontejnery místně. Docker CE pro Windows poskytuje vývojové prostředí pro kontejnery Windows i Linux. Je na základě hostitele linuxového Dockeru na Windows [Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization) virtuálního počítače. Hostitel pro kontejnery Windows je přímo založena na Windows. Docker CE for Mac je založená na platformě Apple hypervisoru a [xhyve hypervisoru](https://github.com/mist64/xhyve), který poskytuje linuxového Dockeru hostitele virtuálního počítače na Mac OS X. Docker CE pro Windows a pro Mac nahradí nástrojů Dockeru, který byl založen na Oracle VirtualBox.
 
-**Docker Enterprise Edition (EE)**: Verzi celého podniku nástroje Dockeru pro vývoj pro Linux a Windows.
+**Docker Enterprise Edition (EE)** : Verzi celého podniku nástroje Dockeru pro vývoj pro Linux a Windows.
 
 **Compose**: Nástroj pro příkazový řádek a YAML soubor formátu s metadaty pro definování a spouštění vícekontejnerových aplikací. Můžete definovat jednu aplikaci založené na více bitových kopií s nejméně jeden soubor .yml, které mohou přepsat hodnoty v závislosti na prostředí. Po vytvoření definice, můžete nasadit celý vícekontejnerové aplikace pomocí jediného příkazu (docker-compose up), která vytvoří kontejner na image na hostitele Dockeru.
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 16776e83c8bae6cc82329a8f709fd9d1d7cab145
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 63a3ee099d4256a4bc800f74615fca8eaec2a77f
+ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634345"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67135685"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce můžete provádět následující akce:  
@@ -187,7 +187,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zach
   
  kde *name1* je aktuální skupiny (nepovinné), *name2* je dříve definované skupiny, a *dílčí výraz* je libovolný platný vzor regulárního výrazu. Odstraní definici vyrovnávací skupiny definici *name2* a uloží interval mezi *name2* a *name1* v *name1*. Pokud ne *name2* skupina je definována, provided ke shodě. Protože odstranění posledního definice *name2* ukáže předchozí definici *name2*, tento konstruktor umožňuje používat zásobníku zachycení pro skupinu *name2* jako čítače pro udržování přehledu o vnořené konstrukce, jako je například závorek nebo levé a pravé závorky.  
   
- Definici vyrovnávací skupiny používá *name2* jako zásobník. Počáteční znak každé vnořené konstrukce, nachází ve skupině a v jeho <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> kolekce. Pokud je nalezena shoda s koncový znak, jeho odpovídající počáteční znak je odebrán ze skupiny a <xref:System.Text.RegularExpressions.Group.Captures%2A> kolekce se sníží o jedna. Po počátečních a koncových znaků všechny vnořené konstrukce, *name1* je prázdný.  
+ Definici vyrovnávací skupiny používá *name2* jako zásobník. Počáteční znak každé vnořené konstrukce, nachází ve skupině a v jeho <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> kolekce. Pokud je nalezena shoda s koncový znak, jeho odpovídající počáteční znak je odebrán ze skupiny a <xref:System.Text.RegularExpressions.Group.Captures%2A> kolekce se sníží o jedna. Po počátečních a koncových znaků všechny vnořené konstrukce, *name2* je prázdný.  
   
 > [!NOTE]
 >  Po úpravě regulární výraz v následujícím příkladu použít odpovídající otevírání a zavírání znak vnořeném konstruktoru, slouží ke zpracování nejvíce vnořené konstruktorů, jako jsou matematické výrazy nebo řádků kódu programu, které zahrnují více volání vnořených metod.  

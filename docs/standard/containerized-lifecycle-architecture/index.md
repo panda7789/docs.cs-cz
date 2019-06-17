@@ -3,10 +3,10 @@ title: Úvod ke kontejnerům a Dockeru
 description: Získejte základní přehled o hlavní výhody použití Dockeru.
 ms.date: 02/15/2019
 ms.openlocfilehash: a03c67ed4fbc55c84e69fba5b7978863c8305e00
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644958"
 ---
 # <a name="introduction-to-containers-and-docker"></a>Úvod ke kontejnerům a Dockeru

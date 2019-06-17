@@ -3,10 +3,10 @@ title: Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft
 description: Pojďme si do úlohy pro vývoj a návrh v Dockeru aplikace životního cyklu.
 ms.date: 02/15/2019
 ms.openlocfilehash: ad7f635feab21cd6e6b31c0b5d43fb2598ffa16c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65641135"
 ---
 # <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft Azure

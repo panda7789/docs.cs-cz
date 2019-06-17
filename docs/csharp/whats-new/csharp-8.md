@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: dd4aca99a19134ed3ffff859c9c9554d4d480816
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: e2f3c4f2385873d37c3b125e526913c30d848932
+ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557151"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041598"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -327,7 +327,7 @@ int M()
 
 A `struct` deklarované s `ref` modifikátor nemusí implementovat jakékoli rozhraní a proto nemůže implementovat <xref:System.IDisposable>. Proto aby `ref struct` odstraněn, musí mít k dispozici přístup `void Dispose()` metoda. To platí i pro `readonly ref struct` deklarace.
 
-## <a name="nullable-reference-types"></a>Typy s možnou hodnotou Null odkazů
+## <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
 V kontextu poznámky s možnou hodnotou Null, všechny proměnné typu odkazu se považuje za **nonnullable odkazový typ**. Pokud chcete určit, že proměnná může mít hodnotu null, musí připojit k názvu typu `?` deklarovat jako proměnnou **typ s možnou hodnotou Null odkazu**.
 
@@ -381,7 +381,7 @@ Tato podpora jazyka spoléhá na dva nové typy a dvou nových operátorů.
 
 Začněme s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` Index je stejný jako `sequence[0]`. `^0` Index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]` nepodporuje. Pro libovolný počet `n`, index `^n` je stejný jako `sequence.Length - n`.
 
-Určuje oblast *start* a *koncové* rozsahu. Rozsahy jsou výhradní, to znamená *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
+Určuje oblast *start* a *koncové* rozsahu. Začátek rozsahu je také zahrnuto a konec rozsahu je exkluzivní, to znamená *start* je součástí rozsahu ale *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
 
 Podívejme se na několik příkladů. Vezměte v úvahu následující pole označena s jeho index od samého začátku a konci:
 

@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET C
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e145e65e22c955bd547b67de545b883fb0fb3bc2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 674dc2d12cb8f65753730e187e13fc5e522ff6b3
+ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593412"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67135695"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza sentimentu komentářů k webu pomocí binární klasifikace ML.NET
 
@@ -46,7 +46,7 @@ Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/
 ## <a name="prepare-your-data"></a>Příprava dat
 
 > [!NOTE]
-> Datové sady pro účely tohoto kurzu jsou ze "From skupiny na jednotlivé popisky pomocí podrobné funkce" Kotzias et. al,. Konference KDD 2015 a hostované v UCI Machine Learning úložiště – Dua, D. a Karra Taniskidou, E. (2017). UCI strojového učení úložiště [http://archive.ics.uci.edu/ml]. Irvine, certifikační Autorita: University of California, z informací o škole a počítačových věd.
+> Datové sady pro účely tohoto kurzu jsou ze "From skupiny na jednotlivé popisky pomocí podrobné funkce" Kotzias et. al,. Konference KDD 2015 a hostované v UCI Machine Learning úložiště – Dua, D. a Karra Taniskidou, E. (2017). UCI strojového učení úložiště [http://archive.ics.uci.edu/ml ]. Irvine, certifikační Autorita: University of California, z informací o škole a počítačových věd.
 
 1. Stáhněte si [soubor ZIP datové sady UCI subjektivního hodnocení s popiskem věty](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho.
 
@@ -276,13 +276,13 @@ Použijte následující kód k zobrazení metriky:
 
     [!code-csharp[CallUseModelWithSingleItem](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithSingleItem "Call the UseModelWithSingleItem method")]
 
-3. Přidejte následující kód k vytvoření jako první řádek `Predict()` metody:
+3. Přidejte následující kód k vytvoření jako první řádek `UseModelWithSingleItem()` metody:
 
     [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreatePredictionEngine1 "Create the PredictionEngine")]
 
     [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je vhodné rozhraní API, což vám umožní předat a pak proveďte predikcí na jednu instanci data.
 
-4. Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict()` metodu tak, že vytvoříte instanci `SentimentData`:
+4. Přidejte komentář k otestování trénovaného modelu předpovědi v `UseModelWithSingleItem()` metodu tak, že vytvoříte instanci `SentimentData`:
 
     [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssue1 "Create test data for single prediction")]
 

@@ -3,10 +3,10 @@ title: Pracovní postup DevOps aplikací Dockeru pomocí nástrojů Microsoft
 description: Kontejnerizované životní cyklus aplikace Dockeru s pracovním postupem platformy Microsoft a nástrojů DevOps s nástroji Microsoft
 ms.date: 02/15/2019
 ms.openlocfilehash: 6b138301a7e6794ce0a7b15957684b3b73e9f89f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644830"
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Pracovní postup DevOps aplikací Dockeru pomocí nástrojů Microsoft

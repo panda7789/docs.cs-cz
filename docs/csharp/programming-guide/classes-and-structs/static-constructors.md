@@ -6,38 +6,58 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 110d83caad0c588fa899a4129897784e9c74aab8
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 9cf977be84a4d3098e009d5a58d0c12ad2000e92
+ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881918"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67135649"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor slouží k inicializaci žádný [statické](../../../csharp/language-reference/keywords/static.md) data, nebo k provedení konkrétní akce, kterou je potřeba provést pouze jednou. Je volána automaticky před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy.  
   
  [!code-csharp[csProgGuideObjects#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#14)]  
-  
- Statické konstruktory mají následující vlastnosti:  
+ 
+## <a name="remarks"></a>Poznámky
+Statické konstruktory mají následující vlastnosti:  
   
 - Statický konstruktor není trvat modifikátory přístupu nebo mít parametry.  
+
+- Třídy nebo struktury může mít pouze jeden statický konstruktor.
+
+- Statické konstruktory nelze zděděné nebo přetížené.
+
+- Statický konstruktor nelze volat přímo a je určená jenom k volání modulem common language runtime (CLR). Vyvolá se automaticky.
+
+- Uživatel nemá žádnou kontrolu na při spouštění statický konstruktor se v programu.
   
-- Statický konstruktor je automaticky volána k inicializaci [třídy](../../../csharp/language-reference/keywords/class.md) před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy. Všimněte si, že když uživatel vyvolá statickou metodu přiřazená události nebo delegáta, a ne v případě, že je přiřazen název statického konstruktoru typu.
+- Statický konstruktor je automaticky volána k inicializaci [třídy](../../../csharp/language-reference/keywords/class.md) před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy. Statický konstruktor se spustit před spuštěním konstruktoru instance. Všimněte si, že když uživatel vyvolá statickou metodu přiřazená události nebo delegáta, a ne v případě, že je přiřazen název statického konstruktoru typu. Pokud je proměnná inicializátory statické pole v třídě statický konstruktor, budou provedeny v textové pořadí, v jakém jsou uvedeny v deklaraci třídy bezprostředně před provedením statický konstruktor.
+
+- Pokud statický konstruktor k inicializaci statických polí nezadáte, všechny statické pole jsou inicializovány na výchozí hodnoty, jak je uvedeno v [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). 
   
-- Statický konstruktor nelze volat přímo.  
-  
-- Uživatel nemá žádnou kontrolu na při spouštění statický konstruktor se v programu.  
-  
+- Pokud statický konstruktor vyvolá výjimku, modul runtime nebude volat podruhé a typ zůstanou neinicializované po dobu životnosti domény aplikace, ve kterém je spuštěna aplikace. Nejčastěji <xref:System.TypeInitializationException> je vyvolána výjimka, pokud statický konstruktor nemůže vytvořit instanci typu, nebo ke kterým dochází neošetřené výjimce v rámci statický konstruktor. Implicitní statické konstruktory, které nejsou explicitně definovány ve zdrojovém kódu řešení problémů může vyžadovat, aby kontroly kódu (IL intermediate language).
+
+- Zabrání přidání přítomnost statického konstruktoru <xref:System.Reflection.TypeAttributes.BeforeFieldInit> atribut type. To omezuje optimalizace běhu programu.
+
+- Pole deklarované jako `static readonly` se dá přiřadit jenom jako součást její deklarace nebo ve statickém konstruktoru. Když explicitní statický konstruktor není vyžadována, inicializujte statické pole na deklarace, nikoli statický konstruktor pro lepší optimalizace běhu programu.
+
+> [!Note]
+> I když není přímo přístupný, musí být zdokumentována přítomnost explicitní statický konstruktor pro účely pomoci s řešení potíží s výjimkami inicializace.
+
+### <a name="usage"></a>Použití
+
 - Typické použití statických konstruktorů je při třídu používá soubor protokolu a konstruktor se používá k zápisu položky do tohoto souboru.  
-  
 - Statické konstruktory jsou také užitečné při vytváření obálkových tříd pro nespravovaný kód, konstruktor může volat `LoadLibrary` metody.  
-  
-- Pokud statický konstruktor vyvolá výjimku, modul runtime nebude volat podruhé a typ zůstanou neinicializované po dobu životnosti domény aplikace, ve kterém je spuštěna aplikace.  
-  
-## <a name="example"></a>Příklad  
+
+- Statické konstruktory jsou také vhodné místo pro vynutit kontroly za běhu na parametr typu, který nelze zaregistrovat v době kompilace prostřednictvím omezení (omezení parametru typu).
+
+## <a name="example"></a>Příklad
  V tomto příkladu třída `Bus` má statický konstruktor. Při první instance `Bus` je vytvořen (`bus1`), je vyvolána statický konstruktor k inicializaci třídy. Ukázkový výstup ověřuje, že statický konstruktor spouští jenom jednou, i když dvě instance `Bus` jsou vytvořeny, a že běží před spuštěním konstruktoru instance.  
   
- [!code-csharp[csProgGuideObjects#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#15)]  
+ [!code-csharp[csProgGuideObjects#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#15)]
+ 
+## <a name="c-language-specification"></a>specifikace jazyka C#
+Další informace najdete v tématu [statické konstruktory](~/_csharplang/spec/classes.md#static-constructors) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Viz také:
 
@@ -46,3 +66,5 @@ Statický konstruktor slouží k inicializaci žádný [statické](../../../csha
 - [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
 - [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+- [Pokyny pro návrh konstruktoru](../../../docs/standard/design-guidelines/constructor.md#type-constructor-guidelines)
+- [Upozornění zabezpečení – CA2121: Statické konstruktory by měly být privátní](https://docs.microsoft.com/en-us/visualstudio/code-quality/ca2121-static-constructors-should-be-private)

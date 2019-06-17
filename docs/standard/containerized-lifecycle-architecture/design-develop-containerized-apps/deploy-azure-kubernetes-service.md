@@ -3,10 +3,10 @@ title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou šk
 description: Zjistěte, jak nasadit aplikaci pomocí služby Azure Kubernetes Service.
 ms.date: 02/15/2019
 ms.openlocfilehash: 88e76b4b0a3686f4227a6aee1b7fbd2bfe55fdcc
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644660"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>Nasazení do služby Azure Kubernetes Service (AKS)

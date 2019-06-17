@@ -807,6 +807,10 @@
               href: fsharp/language-reference/generics/statically-resolved-type-parameters.md
         - name: Záznamy
           href: fsharp/language-reference/records.md
+        - name: Anonymní záznamy
+          href: fsharp/language-reference/anonymous-records.md
+        - name: Kopírování a aktualizace výrazů záznamů
+          href: fsharp/language-reference/copy-and-update-record-expressions.md
         - name: Rozlišovaná sjednocení
           href: fsharp/language-reference/discriminated-unions.md
         - name: Výčty
@@ -854,8 +858,6 @@
           href: fsharp/language-reference/delegates.md
         - name: Objektové výrazy
           href: fsharp/language-reference/object-expressions.md
-        - name: Kopírování a aktualizace výrazů záznamů
-          href: fsharp/language-reference/copy-and-update-record-expressions.md
         - name: Přetypování a převody
           href: fsharp/language-reference/casting-and-conversions.md
         - name: Řízení přístupu
@@ -2243,7 +2245,7 @@
               href: visual-basic/language-reference/error-messages/xml-literals-and-xml-properties-are-not-supported-in-embedded-code-in-aspnet.md
             - name: Identifikátor URI názvového prostoru XML '<uri>' je možné svázat jenom s xmlns.
               href: visual-basic/language-reference/error-messages/xml-namespace-uri-uri-can-be-bound-only-to-xmlns.md
-    - name: Odkaz
+    - name: Referenční informace
       href: visual-basic/reference/index.md
       items:
         - name: Kompilátor příkazového řádku

@@ -3,10 +3,10 @@ title: Registry, image a kontejnery Dockeru
 description: Další klíčovou roli, že registry přehrát celkové Docker způsobem nasazení aplikace.
 ms.date: 02/15/2019
 ms.openlocfilehash: 7becadc3de16d96f8d6f167cf49c6cdd3bcc0d32
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65641332"
 ---
 # <a name="docker-containers-images-and-registries"></a>Registry, image a kontejnery Dockeru

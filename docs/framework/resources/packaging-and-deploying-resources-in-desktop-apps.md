@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19f1d3d1d94db885938a5da3f3b66c8e554205b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d636496599d4419518ce53c956c83f6ae175aa8
+ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792844"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67135662"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Zabalení a nasazení prostředků v aplikacích .NET
 
@@ -55,7 +55,7 @@ Existuje několik výhod tohoto modelu:
 
 ## <a name="resource-naming-conventions"></a>Zásady vytváření názvů prostředků
 
-Když vytvoříte balíček prostředků vaší aplikace, je nutné pojmenovat pomocí zásady vytváření názvů prostředků, které se očekává, že modul common language runtime. Modul runtime identifikuje prostředek podle názvu jazykové verze. Jednotlivé jazykové verze je uveden jedinečný název, který je obvykle kombinací názvu dvě písmena, malá písmena jazykové verze přidružený jazyk a v případě potřeby dvě písmena, velká písmena subkulturu název přidružené zemi nebo oblast. Název subkultury následuje název jazykové verze, které jsou odděleny spojovníkem (-). Mezi příklady patří ja-JP pro japonštinu, jako používá se v Japonsku je en US pro angličtinu, jak je slyšet ve Spojených státech, de-DE pro němčinu jako používaný v Německu nebo de AT pro němčinu jako používaný v Rakousko. Zobrazit [Reference k rozhraní API národní jazykové podpory (NLS)](https://go.microsoft.com/fwlink/?LinkId=200048) na globální Centrum pro vývojáře Go pro úplný seznam všech názvech jazykových verzí.
+Když vytvoříte balíček prostředků vaší aplikace, je nutné pojmenovat pomocí zásady vytváření názvů prostředků, které se očekává, že modul common language runtime. Modul runtime identifikuje prostředek podle názvu jazykové verze. Jednotlivé jazykové verze je uveden jedinečný název, který je obvykle kombinací názvu dvě písmena, malá písmena jazykové verze přidružený jazyk a v případě potřeby dvě písmena, velká písmena subkulturu název přidružené zemi nebo oblast. Název subkultury následuje název jazykové verze, které jsou odděleny spojovníkem (-). Mezi příklady patří ja-JP pro japonštinu, jako používá se v Japonsku je en US pro angličtinu, jak je slyšet ve Spojených státech, de-DE pro němčinu jako používaný v Německu nebo de AT pro němčinu jako používaný v Rakousko. Najdete v článku **značku jazyka** sloupec v [seznam názvů jazyk a oblast nepodporuje Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Názvech jazykových verzí postupujte podle standardu definované [BCP 47](https://tools.ietf.org/html/bcp47).
 
 > [!NOTE]
 > Informace o vytváření souborů prostředků naleznete v tématu [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md) a [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).
