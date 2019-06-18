@@ -2,18 +2,18 @@
 title: Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Mikroslužby jsou modulární a umožňují nezávislé nasazení služby. Kontejnery dockeru (pro systémy Linux a Windows) zjednodušit nasazování a testování seskupí služby a jeho závislosti do jedné jednotky, které je potom spouštět v izolovaném prostředí.
 ms.date: 01/07/2019
-ms.openlocfilehash: f1abeca8bb7eba615545a88862b20b2711b218fd
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: fe69dcec58ae1d1eed23a49fadbee378ec129990
+ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690632"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152010"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET
 
 ![Titulní knihy](./media/cover-small.png)
 
-**EDICE v2.2.00** – aktualizováno, aby ASP.NET Core 2.2
+**EDICE v2.2** – aktualizováno, aby ASP.NET Core 2.2
 
 Tato příručka slouží jako úvod k vývoji aplikací založených na mikroslužbách a správu kontejnerů. Tento článek popisuje kontrol architektonického návrhu a implementace přístupy pomocí .NET Core a kontejnery Dockeru. 
 
@@ -162,7 +162,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2018 by Microsoft Corporation
+Copyright © 2019 by Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat nebo v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 

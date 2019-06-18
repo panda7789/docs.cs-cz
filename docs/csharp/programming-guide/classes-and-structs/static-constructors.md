@@ -6,12 +6,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 9cf977be84a4d3098e009d5a58d0c12ad2000e92
-ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
+ms.openlocfilehash: 43434b08d7eecde2a35ee3822d36c6da3a700c20
+ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67135649"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67151969"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor slouží k inicializaci žádný [statické](../../../csharp/language-reference/keywords/static.md) data, nebo k provedení konkrétní akce, kterou je potřeba provést pouze jednou. Je volána automaticky před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy.  
@@ -66,5 +66,5 @@ Další informace najdete v tématu [statické konstruktory](~/_csharplang/spec/
 - [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
 - [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
-- [Pokyny pro návrh konstruktoru](../../../docs/standard/design-guidelines/constructor.md#type-constructor-guidelines)
+- [Pokyny pro návrh konstruktoru](../../../standard/design-guidelines/constructor.md#type-constructor-guidelines)
 - [Upozornění zabezpečení – CA2121: Statické konstruktory by měly být privátní](https://docs.microsoft.com/en-us/visualstudio/code-quality/ca2121-static-constructors-should-be-private)

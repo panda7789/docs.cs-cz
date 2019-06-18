@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: e2f3c4f2385873d37c3b125e526913c30d848932
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: 99056c9cd330c0c3ae6c63239989a2e9e9dc496c
+ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041598"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67151982"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -381,7 +381,7 @@ Tato podpora jazyka spoléhá na dva nové typy a dvou nových operátorů.
 
 Začněme s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` Index je stejný jako `sequence[0]`. `^0` Index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]` nepodporuje. Pro libovolný počet `n`, index `^n` je stejný jako `sequence.Length - n`.
 
-Určuje oblast *start* a *koncové* rozsahu. Začátek rozsahu je také zahrnuto a konec rozsahu je exkluzivní, to znamená *start* je součástí rozsahu ale *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
+Určuje oblast *start* a *koncové* rozsahu. Začátek rozsahu je také zahrnuto, ale je exkluzivní, což znamená konec rozsahu *start* je součástí rozsahu ale *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
 
 Podívejme se na několik příkladů. Vezměte v úvahu následující pole označena s jeho index od samého začátku a konci:
 

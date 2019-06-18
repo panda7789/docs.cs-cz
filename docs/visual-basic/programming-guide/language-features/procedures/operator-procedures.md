@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-ms.openlocfilehash: cafc742474d6f7b46fbfb73374a59a350812a2a5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d62c3480db56b5cbf22c1f3f6ff59ab220a48b09
+ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639104"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152040"
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
 Procedury operátoru je řada příkazů jazyka Visual Basic, které definují chování standardní – operátor (například `*`, `<>`, nebo `And`) na třídy nebo struktury, které jste definovali. To se také nazývá *přetížení operátoru*.  
@@ -43,13 +43,15 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe pro deklaraci procedury operátora vypadá takto:  
+ 
+ ```vb 
+ Public Shared [Widening | Narrowing] Operator operatorsymbol ( operand1 [,  operand2 ]) As datatype  
   
- `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*  
+ ' Statements of the operator procedure.
   
- `' Statements of the operator procedure.`  
-  
- `End Operator`  
-  
+ End Operator
+ ```
+ 
  Můžete použít `Widening` nebo `Narrowing` – klíčové slovo pouze v typu operátoru převodu. Symbol operátoru je vždy [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) pro operátor převodu typu.  
   
  Deklarace dvou operandů k definování binárním operátorem a deklarujte jeden operand unárního operátoru, včetně typu operátoru převodu definovat. Všechny operandy musí být deklarován `ByVal`.  
@@ -68,7 +70,7 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
   
  `Dim testStruct As`  *%{structurename/*  
   
- `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*  `10`  
+ `Dim testNewStruct As`  *%{structurename/* `= testStruct`*operatorsymbol*  `10`  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
  Následující strukturu uloží hodnotu se znaménkem 128-bit jako základní části nejvyšším a nižšího řádu. Definuje `+` operátor přidejte dva `veryLong` hodnoty a generovat výsledném `veryLong` hodnotu.  
