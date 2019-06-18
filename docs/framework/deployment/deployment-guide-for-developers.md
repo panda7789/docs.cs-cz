@@ -8,19 +8,19 @@ helpviewer_keywords:
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4deea506a616a3578261cb85f4d4dd1369f5718e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 179170c0cafc67027012d2306281eb2cd1d967a4
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873913"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170662"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat všechny verze rozhraní .NET Framework z rozhraní .NET Framework 4.5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s aplikacemi.
 
 Odkazy ke stažení najdete v části [Distribuovatelné balíčky](#redistributable-packages). Distribuovatelné balíčky a jazykové sady si můžete stáhnout také z tyto stránky Microsoft Download Center:
 
-- 4.8 rozhraní .NET framework pro všechny operační systémy ([Webová instalační služba](http://go.microsoft.com/fwlink/?LinkId=2085155) nebo [offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631))
+- 4\.8 rozhraní .NET framework pro všechny operační systémy ([Webová instalační služba](http://go.microsoft.com/fwlink/?LinkId=2085155) nebo [offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631))
 
 - Rozhraní .NET framework 4.7.2 pro všechny operační systémy ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=863262) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=863265))
 
@@ -53,7 +53,7 @@ Odkazy ke stažení najdete v části [Distribuovatelné balíčky](#redistribut
 
 - Musí mít oprávnění správce k instalaci rozhraní .NET Framework 4.5 a jeho verze.
 
-- Rozhraní .NET framework 4.5 je součástí [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže není nutné nasazovat s vaší aplikací v těchto operačních systémech. Podobně je součástí rozhraní .NET Framework 4.5.1 [!INCLUDE[win81](../../../includes/win81-md.md)] a Windows Server 2012 R2. Všechny operační systémy není součástí rozhraní .NET framework 4.5.2. Rozhraní .NET framework 4.6 je součástí systému Windows 10 a rozhraní .NET Framework 4.6.1 je součástí systému Windows 10. listopadu aktualizace rozhraní .NET Framework 4.6.2 je součástí systému Windows 10 Anniversary Update.  Rozhraní .NET framework 4.7 je součástí systému Windows 10 Creators Update, rozhraní .NET Framework 4.7.1 je součástí Windows 10 Fall Creators Update a rozhraní .NET Framework 4.7.2 je součástí systému Windows 10. října 2018 Update a Windows 10. dubna 2018 aktualizace. 4.8 rozhraní .NET framework je součástí systému Windows 10. května 2019 aktualizovat. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
+- Rozhraní .NET framework 4.5 je součástí [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže není nutné nasazovat s vaší aplikací v těchto operačních systémech. Podobně je součástí rozhraní .NET Framework 4.5.1 [!INCLUDE[win81](../../../includes/win81-md.md)] a Windows Server 2012 R2. Všechny operační systémy není součástí rozhraní .NET framework 4.5.2. Rozhraní .NET framework 4.6 je součástí systému Windows 10 a rozhraní .NET Framework 4.6.1 je součástí systému Windows 10. listopadu aktualizace rozhraní .NET Framework 4.6.2 je součástí systému Windows 10 Anniversary Update.  Rozhraní .NET framework 4.7 je součástí systému Windows 10 Creators Update, rozhraní .NET Framework 4.7.1 je součástí Windows 10 Fall Creators Update a rozhraní .NET Framework 4.7.2 je součástí systému Windows 10. října 2018 Update a Windows 10. dubna 2018 aktualizace. 4\.8 rozhraní .NET framework je součástí systému Windows 10. května 2019 aktualizovat. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
 
 - Od verze rozhraní .NET Framework 4.5, můžou uživatelé zobrazit seznam spuštěných aplikací rozhraní .NET Framework během instalace a snadno je zavřít. To může pomoci zabránit restartování systému způsobenému instalací rozhraní .NET Framework. Zobrazit [omezení restartů systému](../../../docs/framework/deployment/reducing-system-restarts.md).
 
@@ -267,10 +267,12 @@ Instalační program rozhraní .NET Framework zapíše klíče registru, když s
 > [!IMPORTANT]
 > Hodnota by měla vyhledávat **větší než nebo rovna hodnotě** hodnotu klíčového slova verze při pokusu o zjištění, zda je k dispozici na konkrétní verzi.
 
+[!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
+
 |Version|Hodnota DWORD verze|
 |-------------|--------------------------------|
-|4.8 rozhraní .NET framework nainstalované ve Windows 10. 2019 aktualizovat|528040|
-|4.8 rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. 2019 aktualizovat|528049|
+|4\.8 rozhraní .NET framework nainstalované ve Windows 10. 2019 aktualizovat|528040|
+|4\.8 rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. 2019 aktualizovat|528049|
 |Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. dubna 2018 Update a Windows Server verze 1803|461808|
 |Rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. dubna 2018 4.7.2 Update a Windows Server verze 1803. Jedná se o Windows 10. října 2018 aktualizovat. |461814|
 |Rozhraní .NET framework 4.7.1 nainstalovat na Windows 10 Fall Creators Update a na Windows Server verze 1709|461308|
@@ -392,7 +394,7 @@ V následující tabulce jsou uvedeny možnosti, které můžete zahrnout při �
 |Možnost|Popis|
 |------------|-----------------|
 |**/CEIPConsent**|Přepíše výchozí chování a odešle anonymní zpětné vazby společnosti Microsoft pro zlepšení průběhu budoucích nasazení. Tato možnost se dá použít jenom v případě, že instalační program zobrazí výzvu k souhlasu a uživatel udělí oprávnění Odeslat anonymní zpětnou vazbu společnosti Microsoft.|
-|**chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace jsou odeslány společnosti Microsoft jako zpětná vazba k vylepšení budoucích nasazení prostředí.<br /><br /> Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Lucerne Publishing"**. Příklad řetězeného balíčku naleznete v tématu [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
+|**chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace jsou odeslány společnosti Microsoft jako zpětná vazba k vylepšení budoucích nasazení prostředí.<br /><br /> Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Lucerne Publishing"** . Příklad řetězeného balíčku naleznete v tématu [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
 |**/LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykové sady určené pomocí `LCID` a vynutí zobrazení uživatelského rozhraní, který má být zobrazen v daném jazyce, není-li nastaven tichý režim.<br /><br /> U webového instalátoru tato možnost řetězí – instaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalátorem.|
 |**/ log** `file`&#124; `folder`|Určuje umístění souboru protokolu. Výchozí hodnota je dočasná složka pro proces a výchozí název souboru je založen na balíčku. Pokud je přípona .txt, vytvoří se textový protokol je vytvořen. Pokud zadáte jiné nebo žádné rozšíření, je vytvořen protokol ve formátu HTML.|
 |**/msioptions**|Určuje možnosti, které mají být předány položkám .msi a .msp; Příklad: `/msioptions "PROPERTY1='Value'"`.|

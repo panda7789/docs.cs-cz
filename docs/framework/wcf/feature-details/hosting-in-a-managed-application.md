@@ -2,12 +2,12 @@
 title: Hostování ve spravované aplikaci
 ms.date: 03/30/2017
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
-ms.openlocfilehash: c1f4d91994ba44407ff5c93dbd34aa0bdef9332b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1895f6622f7c528979badd741f5994970bbd1a8c
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591732"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169792"
 ---
 # <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
 Služby Windows Communication Foundation (WCF) je možné hostovat v libovolné aplikace rozhraní .NET Framework. Služba s vlastním hostováním je flexibilní možnost hostování, protože vyžaduje minimálně infrastrukturu pro nasazení. Je však také nejméně robustní možnost hostování, protože spravovaných aplikací se neposkytuje pokročilé hostování a funkcím pro správu Další možnosti hostování ve službě WCF, jako jsou služby Internet Information Services (IIS) a Windows.  
@@ -22,7 +22,7 @@ Služby Windows Communication Foundation (WCF) je možné hostovat v libovolné 
  Běžné scénáře, které s vlastním hostováním umožňuje jsou WCF služby spuštěné v konzolové aplikace. Hostování služby WCF v konzolové aplikaci je obvykle vhodné ve vývojové fázi služby. Díky tomu je snadné ladění, snadno získat informace o trasování z a zjistěte, co se děje v rámci aplikace a snadno přesouvat jejich zkopírováním do nového umístění.  
   
 ## <a name="rich-client-applications"></a>Aplikace plně funkčního klienta  
- Další běžné scénáře, které s vlastním hostováním umožňuje jsou plně funkčního klienta aplikace, například algoritmů založených na Windows Presentation Foundation (WPF) nebo Windows Forms (WinForms). Tato možnost hostování také usnadňuje aplikacemi rich client, jako například [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] a WinForms aplikace komunikovat s vnějším světem. Například klient spolupráci peer-to-peer, která používá [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pro jeho uživatelské rozhraní a také hostuje službu WCF, která umožňuje dalším klientům připojit se k němu a sdílení informací.  
+ Další běžné scénáře, které s vlastním hostováním umožňuje jsou plně funkčního klienta aplikace, například algoritmů založených na Windows Presentation Foundation (WPF) nebo Windows Forms (WinForms). Tato možnost hostování také usnadňuje aplikacemi rich client, jako jsou třeba aplikace WPF a WinForms komunikovat s vnějším světem. Například nastavení spolupráci peer-to-peer klienta, který používá pro jeho uživatelské rozhraní WPF a také hostuje službu WCF, která umožňuje dalším klientům připojit se k němu a sdílení informací.  
   
 ## <a name="see-also"></a>Viz také:
 

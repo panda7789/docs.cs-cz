@@ -6,16 +6,16 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 18e737ec1f6c6f76ff882d48ad311a45ba7b756b
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: a9e1f1fafcee4723c4aed37a0473c0f75512e11a
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456737"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169863"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu dynamic (C# Programming Guide)
 
-[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] zavádí nový typ `dynamic`. Typ je statický typ, ale objekt typu `dynamic` obchází kontroly statického typu. Ve většině případů funguje jako má typ `object`. V době kompilace, element, který je zadán jako `dynamic` se předpokládá, že podporují všechny operace. Proto je nemusíte mít obavy o tom, zda objekt získává svou hodnotu z rozhraní API modelu COM, z dynamického jazyka, jako je IronPython, z HTML Document Object Model (DOM), z reflexe nebo z někde jinde v programu. Nicméně pokud kód není platný, jsou zachyceny chyby za běhu.
+C#4 zavádí nový typ `dynamic`. Typ je statický typ, ale objekt typu `dynamic` obchází kontroly statického typu. Ve většině případů funguje jako má typ `object`. V době kompilace, element, který je zadán jako `dynamic` se předpokládá, že podporují všechny operace. Proto je nemusíte mít obavy o tom, zda objekt získává svou hodnotu z rozhraní API modelu COM, z dynamického jazyka, jako je IronPython, z HTML Document Object Model (DOM), z reflexe nebo z někde jinde v programu. Nicméně pokud kód není platný, jsou zachyceny chyby za běhu.
 
 Například pokud metodu instance `exampleMethod1` v následujícím kódu má pouze jeden parametr, který kompilátor rozpozná první volání metody, `ec.exampleMethod1(10, 4)`, není platný, protože obsahuje dva argumenty. Volání způsobí chybu kompilátoru. Druhé volání metody, `dynamic_ec.exampleMethod1(10, 4)`, není kompilátor kontrolovat, protože typ `dynamic_ec` je `dynamic`. Proto je hlášena žádná chyba kompilátoru. Nicméně chyby neuvozuje Všimněte si, že po neomezenou dobu. Je zachycena v době běhu a způsobí, že výjimka za běhu.
 
@@ -64,7 +64,7 @@ Dynamické jazykovým modulem runtime (DLR) je nová rozhraní API v rozhraní .
 
 ## <a name="com-interop"></a>zprostředkovatel komunikace s objekty COM
 
-[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] obsahuje několik funkcí, které vylepšují prostředí spolupráce se rozhraní API modelu COM, jako je například rozhraní API automatizace sady Office. Mezi vylepšení patří použití `dynamic` typ a [pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md).
+C#4 obsahuje několik funkcí, které vylepšují prostředí spolupráce se rozhraní API modelu COM, jako je například rozhraní API automatizace sady Office. Mezi vylepšení patří použití `dynamic` typ a [pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md).
 
 Mnoho metod modelu COM povolit variace v typy argumentů a návratový typ podle určení typů jako `object`. To je nezbytné explicitní přetypování hodnoty tak, aby zajistěte ve spolupráci se silnými typy proměnných v jazyce C#. Pokud kompilujete pomocí [/Link (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/link-compiler-option.md) možnost zavedení `dynamic` typ umožňuje přistupovat ke všem výskytů `object` v signaturách modelu COM jako by byly typu `dynamic`a tím současně aby se předešlo velkou část přetypování. Například následující příkazy kontrastu, jak získat přístup k buňku v tabulce s Microsoft Office Excel `dynamic` typ a bez `dynamic` typu.
 

@@ -2,12 +2,12 @@
 title: Rozšiřitelnost mřížky vlastností – ukázky WF
 ms.date: 03/30/2017
 ms.assetid: 3530c3a3-756d-4712-9f10-fb2897414d3a
-ms.openlocfilehash: d22b6e21fbf2d5deb4d47fce683553378e990000
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 1cc8b8b34d6236e263f95439da84994e35d627ed
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637686"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170356"
 ---
 # <a name="property-grid-extensibility"></a>Rozšiřitelnost mřížky vlastností
 
@@ -69,7 +69,7 @@ Ukázka editoru dialogového okna ukazuje následující:
 
 1. Umožňuje vytvořit typ, který je odvozen z <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor>.
 
-2. Nastaví <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> hodnotu v konstruktoru s [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] datové šablony. To je možné vytvořit v XAML, ale v této ukázce, tím se vytvoří v kódu.
+2. Nastaví <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> hodnotu v konstruktoru s WPF datové šablony. To je možné vytvořit v XAML, ale v této ukázce, tím se vytvoří v kódu.
 
 3. Šablony má kontext dat objektu <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> vykreslen v mřížce vlastností položky. V následujícím kódu, poté vytvoří vazbu `Value` vlastnost. Je důležité zahrnout také <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> poskytnout tlačítka, které vyvolá dialogové okno v FilePickerEditor.cs.
 

@@ -6,14 +6,14 @@ helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: 4e0eb53a44a6348d0f5154a0a08222da90985864
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6887f6977511224a2a5c867e69df306e3bc2cc25
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672117"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169889"
 ---
-# <a name="how-to-safely-cast-by-using-pattern-matching-is-and-as-operators"></a>Postupy: bezpečné přetypování pomocí porovnávání vzorů je a jako operátory
+# <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>Postupy: bezpečné vícesměrového vysílání pomocí porovnávání vzorů a je a jako operátory
 
 Protože objekty jsou polymorfní, je možné pro proměnné typu základní třídy pro uložení odvozený [typ](../programming-guide/types/index.md). Pro přístup ke členům instance odvozeného typu, je potřeba [přetypování](../programming-guide/types/casting-and-type-conversions.md) hodnotu zpět na odvozeného typu. Však přetypování vytvoří riziko vyvolání <xref:System.InvalidCastException>. Jazyk C# poskytuje [porovnávání vzorů](../pattern-matching.md) příkazy, které provést přetypování podmíněně jenom v případě, že proběhne úspěšně. C# obsahuje také [je](../language-reference/keywords/is.md) a [jako](../language-reference/keywords/as.md) operátory, který testuje, jestli je hodnota určitého typu.
 

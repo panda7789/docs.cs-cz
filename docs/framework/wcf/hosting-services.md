@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 4641c1c63a4f3c13cefb573dacf4e88b5d63077e
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 2d926fb3f630d2a1af00242f94ddcb3c2dc284df
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881188"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170058"
 ---
 # <a name="hosting-services"></a>Služby hostování
 Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí za běhu, která ho vytvoří a řídí jeho kontextu a životnosti. Služby Windows Communication Foundation (WCF) slouží ke spouštění v jakýkoli proces Windows, že podporuje spravovaného kódu.  
@@ -23,7 +23,7 @@ Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí
 #### <a name="self-hosting-in-a-managed-application"></a>Samoobslužné hostování ve spravované aplikaci  
  Služby WCF je možné hostovat v žádné spravované aplikace. To je nejflexibilnější možností, protože vyžaduje minimálně infrastrukturu pro nasazení. Kód služby do spravované aplikace kódu pro vložení a pak vytvořte a spusťte instanci <xref:System.ServiceModel.ServiceHost> aby tato služba k dispozici. Další informace najdete v tématu [jak: Hostování služby WCF ve spravované aplikaci](../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).  
   
- Tato možnost povolí dvě běžné scénáře: WCF služby spuštěné v konzolových aplikací a aplikacemi rich client například algoritmů založených na Windows Presentation Foundation (WPF) nebo Windows Forms (WinForms). Hostování služby WCF v konzolové aplikaci je obvykle vhodné v průběhu fáze vývoje aplikace. Díky tomu je snadné ladění, snadno získat informace o trasování z a zjistěte, co se děje v rámci aplikace a snadno přesouvat jejich zkopírováním do nového umístění. Tato možnost hostování také usnadňuje aplikacemi rich client, jako například [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] a WinForms aplikace komunikovat s vnějším světem. Například klient spolupráci peer-to-peer, která používá [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] pro jeho uživatelské rozhraní a také hostuje službu WCF, která umožňuje dalším klientům připojit se k němu a sdílení informací.  
+ Tato možnost povolí dvě běžné scénáře: WCF služby spuštěné v konzolových aplikací a aplikacemi rich client například algoritmů založených na Windows Presentation Foundation (WPF) nebo Windows Forms (WinForms). Hostování služby WCF v konzolové aplikaci je obvykle vhodné v průběhu fáze vývoje aplikace. Díky tomu je snadné ladění, snadno získat informace o trasování z a zjistěte, co se děje v rámci aplikace a snadno přesouvat jejich zkopírováním do nového umístění. Tato možnost hostování také usnadňuje aplikacemi rich client, jako jsou třeba aplikace WPF a WinForms komunikovat s vnějším světem. Například nastavení spolupráci peer-to-peer klienta, který používá pro jeho uživatelské rozhraní WPF a také hostuje službu WCF, která umožňuje dalším klientům připojit se k němu a sdílení informací.  
   
 #### <a name="managed-windows-services"></a>Služby spravované Windows  
  Tato možnost hostování se skládá z registraci domény aplikace (AppDomain), který je hostitelem služby WCF je spravovaná služba Windows (dříve označované jako služby NT) tak, že doba platnosti procesu služby se řídí správce řízení služeb (SCM) Služby Windows. Jako možnost samoobslužné hostování tento typ hostitelské prostředí vyžaduje, aby hostování kódu je zapsán jako součást aplikace. Služba je implementováno jako služby Windows a služby WCF by ji zdědit <xref:System.ServiceProcess.ServiceBase> třídy a také ze WCF služby rozhraní kontraktu. <xref:System.ServiceModel.ServiceHost> Se pak vytvoří a otevře v rámci překryté <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> metoda a zavření v rámci překryté <xref:System.ServiceProcess.ServiceBase.OnStop> metoda. Instalační třída, která dědí z <xref:System.Configuration.Install.Installer> musí zprostředkovatel také implementovat umožníte aplikaci nainstalovat jako službu Windows pomocí nástroje Installutil.exe. Další informace najdete v tématu [jak: Hostování služby WCF ve spravované Windows Service](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md). Scénář umožněné spravované služby Windows možnost hostování je dlouho běžící služby WCF hostované mimo službu IIS v zabezpečeném prostředí, která aktivuje zpráva není. Doba platnosti služby je místo toho řídí operační systém. Tato možnost hostování je k dispozici ve všech verzích Windows.  
@@ -43,7 +43,7 @@ Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí
   
 |Hostitelské prostředí|Obvyklé scénáře|Mezi klíčové výhody a omezení|  
 |-------------------------|----------------------|----------------------------------|  
-|Spravované aplikace ("v místním prostředí")|-Konzolové aplikace použít během vývoje.<br />– Formuláře Windows bohaté a [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] klientským aplikacím přístup ke službám.|-Flexibilní.<br />-Snadné nasazení.<br />-Není podnikové řešení pro služby.|  
+|Spravované aplikace ("v místním prostředí")|-Konzolové aplikace použít během vývoje.<br />– Formuláře Windows bohaté a klientské aplikace WPF přístup ke službám.|-Flexibilní.<br />-Snadné nasazení.<br />-Není podnikové řešení pro služby.|  
 |Služby Windows (dříve známé jako služby NT)|– Dlouhodobé služby WCF hostované mimo službu IIS.|– Doba platnosti procesu služba řídí operační systém není aktivována zpráva.<br />-Podporovány všemi verzemi Windows.<br />– Zabezpečené prostředí.|  
 |IIS 5.1, [!INCLUDE[iis601](../../../includes/iis601-md.md)]|– Spouštění služby WCF vedle sebe s obsahem ASP.NET na Internetu pomocí protokolu HTTP.|– Recyklace procesu.<br />-Nečinnosti vypnutí.<br />-Zpracování monitorování stavu.<br />-Založenou na zprávách aktivace.<br />-Pouze protokolu HTTP.|  
 |Aktivační služba procesů Windows (WAS)|– Spouštění služby WCF bez instalace služby IIS na Internetu s použitím různé přenosové protokoly.|-Služby IIS se nevyžaduje.<br />– Recyklace procesu.<br />-Nečinnosti vypnutí.<br />-Zpracování monitorování stavu.<br />-Založenou na zprávách aktivace.<br />-Funguje přes protokol HTTP, TCP, pojmenované kanály a služby MSMQ.|  

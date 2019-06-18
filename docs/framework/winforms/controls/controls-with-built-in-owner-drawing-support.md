@@ -8,12 +8,12 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-ms.openlocfilehash: df3a61dae9ad926f56da4e9d15e0e8b8c6f1c8a3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c053c14bb06d1bb28c7b7e6652ccc6e41af9c4e5
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648251"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170609"
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
 Vykreslení ve Windows Forms, který je také označován jako vlastní kreslení, vlastníka je postup pro změnu vizuálního vzhledu některé ovládací prvky.  
@@ -46,7 +46,7 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
 - <xref:System.Windows.Forms.TabControl>  
   
- Vlastník kreslení pouze v podporují následující ovládací prvky [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]:  
+ Následující ovládací prvky podporují pouze v rozhraní .NET Framework 2.0 kreslení vlastníka:  
   
 - <xref:System.Windows.Forms.ToolTip>  
   
@@ -54,7 +54,7 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
 - <xref:System.Windows.Forms.TreeView>  
   
- Následující ovládací prvky podporují kreslení vlastníka a jsou novinkou [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]:  
+ Následující ovládací prvky podporují kreslení vlastníka a jsou nové v rozhraní .NET Framework 2.0:  
   
 - <xref:System.Windows.Forms.DataGridView>  
   

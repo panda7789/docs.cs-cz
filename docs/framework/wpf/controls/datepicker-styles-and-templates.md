@@ -9,12 +9,12 @@ helpviewer_keywords:
 - styles [WPF], DatePicker
 - states [WPF], DatePicker
 ms.assetid: c430a657-692f-44bd-a549-2341f92d6115
-ms.openlocfilehash: 5c8e199dd7123e1490c8a836a62ffea158797eb8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 013076fdac8666b974fdf0ce9b09740197031c15
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912246"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170543"
 ---
 # <a name="datepicker-styles-and-templates"></a>DatePicker – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DatePicker> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
@@ -62,8 +62,8 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DatePicke
 |Horní mezí|WatermarkStates|Ovládací prvek zobrazí počáteční text.  <xref:System.Windows.Controls.Primitives.DatePickerTextBox> Je ve stavu, když uživatel zadat text nebo vybral datum.|  
 |Unwatermarked|WatermarkStates|Uživatel zadá text do <xref:System.Windows.Controls.Primitives.DatePickerTextBox> nebo vybrané datum v <xref:System.Windows.Controls.DatePicker>.|  
 |Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` a ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` a ovládací prvek nemá fokus.|  
   
 ## <a name="datepicker-controltemplate-example"></a>Příklad DatePicker ControlTemplate  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.DatePicker> ovládacího prvku.  

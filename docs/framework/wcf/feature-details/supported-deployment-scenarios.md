@@ -2,16 +2,16 @@
 title: Podporované scénáře nasazení – WCF
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 7b508f53365c1b4b90e2883ddb9d5f2a71c7e814
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 2da55176cbfe618b332f2df210e3e1c0516b17ae
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025634"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170039"
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 
-Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená pro splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru WCF splňuje požadavky na sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v rámci technologie ASP.NET 2.0 úrovni Medium Trust oprávnění nastavit z bezpečnostních důvodů internetovém měřítku. Na straně klienta WCF částečným vztahem důvěryhodnosti podpory je navržená pro splnění požadavků nasazení technologií, jako [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]vaší aplikace prohlížeče XAML technologie, která jim umožňují bezproblémové a zabezpečené nasazení aplikací klasické pracovní plochy z nedůvěryhodné weby.
+Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená pro splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru WCF splňuje požadavky na sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v rámci technologie ASP.NET 2.0 úrovni Medium Trust oprávnění nastavit z bezpečnostních důvodů internetovém měřítku. Na straně klienta WCF částečným vztahem důvěryhodnosti podpory je navržená pro splnění požadavků nasazení technologií, jako [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo technologii WPF na aplikace prohlížeče XAML, která jim umožňují bezproblémové a zabezpečené nasazení desktopové aplikace z nedůvěryhodné weby.
 
 ## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění
 
@@ -39,7 +39,7 @@ Další informace najdete v tématu [jak: Použití střední důvěryhodnosti v
 
 ## <a name="partial-trust-on-the-client"></a>Částečné důvěryhodnosti na straně klienta
 
-Při stahování a spouštění kódu z nedůvěryhodné weby na Internetu, musí být přijata určité bezpečnostní opatření. Obě [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) a [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]XAML aplikace prohlížeče (XBAP) ujistěte se, technologie využití částečným vztahem důvěryhodnosti udělit omezená oprávnění (zóny Internet) nedůvěryhodného kódu.
+Při stahování a spouštění kódu z nedůvěryhodné weby na Internetu, musí být přijata určité bezpečnostní opatření. Obě [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) a pro WPF XAML aplikace prohlížeče (XBAP) ujistěte se, technologie využívání částečným vztahem důvěryhodnosti udělit omezená oprávnění (zóny Internet) nedůvěryhodného kódu.
 
 WCF slouží ke komunikaci se vzdálenými servery z v rámci částečně důvěryhodné aplikace nasazené buď [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo XBAP. Zahrnuje sadu oprávnění zóny Internet <xref:System.Net.WebPermission> původního hostitele, který umožňuje tyto aplikace ke komunikaci s jejich zdrojový server pomocí kteréhokoli z podporovaných vazby WCF je popsáno v [Kompatibilita funkce částečné důvěryhodnosti ](partial-trust-feature-compatibility.md).
 

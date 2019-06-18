@@ -7,12 +7,12 @@ helpviewer_keywords:
 - flicker [Windows Forms], reducing in Windows Forms
 - buffering [Windows Forms], double buffering
 ms.assetid: dc484e33-7101-4e4b-ada5-d3c96155fbcd
-ms.openlocfilehash: ac6c9b7f2cc1fea86a75eaaf4a2dde1ea60e4f40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b22336221c7bdda3c9dd7adf23308a2b0bad450
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777153"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169911"
 ---
 # <a name="using-double-buffering"></a>Použití dvojitého ukládání do vyrovnávací paměti
 Grafiky s dvojitou vyrovnávací pamětí můžete použít k omezení blikání v aplikacích, které obsahují komplexní Malování operace. Rozhraní .NET Framework obsahuje integrovanou podporu dvojité ukládání do vyrovnávací paměti nebo můžete spravovat a ruční zobrazení grafiky.  
@@ -31,11 +31,9 @@ Grafiky s dvojitou vyrovnávací pamětí můžete použít k omezení blikání
  Ukazuje, jak pro vykreslení grafiky s dvojitou vyrovnávací pamětí.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Control.SetStyle%2A> ,  
- Metoda ovládací prvek, který umožňuje dvojité ukládání do vyrovnávací paměti.  
+ <xref:System.Windows.Forms.Control.SetStyle%2A> Metoda ovládací prvek, který umožňuje dvojité ukládání do vyrovnávací paměti.  
   
- <xref:System.Drawing.BufferedGraphicsContext> ,  
- Poskytuje metody pro vytváření grafické vyrovnávací paměti.  
+ <xref:System.Drawing.BufferedGraphicsContext> Poskytuje metody pro vytváření grafické vyrovnávací paměti.  
   
  <xref:System.Drawing.BufferedGraphicsManager>  
  Poskytuje přístup ke kontextu grafiky uložené do vyrovnávací paměti pro doménu aplikace.

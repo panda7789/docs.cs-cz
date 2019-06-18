@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 594f97d47d87d846ba27fc192096005e94587dd1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 80f0b97d38b17740916ea5407b78f298aa42604b
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608280"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169856"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Návod: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
@@ -37,7 +37,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 2. Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
-3. V **nainstalované šablony** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#**, rozbalte **Office**a potom klikněte na verzi rok Produktu Office.  
+3. V **nainstalované šablony** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#** , rozbalte **Office**a potom klikněte na verzi rok Produktu Office.  
   
 4. V **šablony** podokně klikněte na tlačítko **Excel \<verze > Add-in**.  
   
@@ -93,7 +93,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
      V této metodě se používají dvě nové funkce C#. Obě tyto funkce již existují v jazyce Visual Basic.  
   
-    - Metoda [přidat](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) má *volitelný parametr* pro určení konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že v předchozím příkladu je odeslán žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
+    - Metoda [přidat](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) má *volitelný parametr* pro určení konkrétní šablonu. Volitelné parametry, které jsou nové v C# 4, umožňují argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že v předchozím příkladu je odeslán žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
   
          Další informace najdete v tématu [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
   

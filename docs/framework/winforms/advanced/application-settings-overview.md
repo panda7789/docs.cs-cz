@@ -8,19 +8,19 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: 49c7ceb431e9ab59b47e3b8b912e2881aeeef6c2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5e70b9c16c3af46b72ea8f8745806c7ebf849e2f
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583562"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169986"
 ---
 # <a name="application-settings-overview"></a>Přehled nastavení aplikace
 Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace i vaše uživatele.  
   
  Funkce nastavení aplikace Windows Forms umožňuje snadno vytvářet, ukládat a spravovat vlastní aplikace a preference uživatelů v klientském počítači. S nastavením aplikace Windows Forms lze uložit pouze data aplikací, například databázové připojovací řetězce, ale také uživatelská data, jako je například uživatelova aplikace. Pomocí sady Visual Studio nebo vlastní spravovaný kód, můžete vytvořit nové nastavení, přečtěte si je z a zapisovat na disku a svázat ho s vlastnostmi formuláře a ověřit nastavení data před načítání a ukládání.  
   
- Nastavení aplikace umožňuje vývojářům pro uložení stavu ve svých aplikacích pomocí velmi málo vlastního kódu a je náhradou za dynamické vlastnosti v předchozích verzích rozhraní .NET Framework. Nastavení aplikace obsahuje mnoho vylepšení přes dynamické vlastnosti, které jsou jen pro čtení, s pozdní vazbou a vyžadovat další vlastní programování. Dynamické vlastnosti třídy mají byla zachována ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)], ale jsou právě třídy prostředí, které dynamicky balí třídy nastavení aplikace.  
+ Nastavení aplikace umožňuje vývojářům pro uložení stavu ve svých aplikacích pomocí velmi málo vlastního kódu a je náhradou za dynamické vlastnosti v předchozích verzích rozhraní .NET Framework. Nastavení aplikace obsahuje mnoho vylepšení přes dynamické vlastnosti, které jsou jen pro čtení, s pozdní vazbou a vyžadovat další vlastní programování. Dynamické vlastnosti třídy nebyly zachovány v rozhraní .NET Framework 2.0, ale jsou právě třídy prostředí, které dynamicky balí třídy nastavení aplikace.  
   
 ## <a name="what-are-application-settings"></a>Co jsou nastavení aplikace?  
  Vaše aplikace Windows Forms se často vyžadují data, která jsou kritická pro spuštění aplikace, ale který nechcete zahrnout přímo v kódu vaší aplikace. Pokud vaše aplikace používá webovou službu nebo databázový server, můžete k ukládání příslušných informací v samostatném souboru, takže můžete v budoucnu ho změnit bez opětovné kompilace. Podobně vaše aplikace můžou vyžadovat ukládání dat, která je specifická pro aktuálního uživatele. Většina aplikací, například má uživatelské předvolby, přizpůsobte vzhled a chování aplikace.  

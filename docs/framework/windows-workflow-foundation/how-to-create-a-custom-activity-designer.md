@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření vlastního návrháře aktivity'
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-ms.openlocfilehash: e455d00ebd128c37eacb19df0e7f864505df04e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c6d2ae695a04c85ade6ae4da0b812f4043fa2f6
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945649"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170671"
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Postupy: Vytvoření vlastního návrháře aktivity
 
@@ -17,7 +17,7 @@ Vlastní návrháři aktivit obvykle dědí <xref:System.Activities.Presentation
 
 <xref:System.Activities.Presentation.ActivityDesigner> pomocí dvou ovládacích prvků pomocné rutiny, <xref:System.Activities.Presentation.WorkflowItemPresenter> a <xref:System.Activities.Presentation.WorkflowItemsPresenter> zjednodušit vývoj vlastní návrháři aktivit. Společné funkce, jako jsou přetahování podřízených prvků, odstranění, výběru a přidání těchto podřízených elementů, které zpracovávají. <xref:System.Activities.Presentation.WorkflowItemPresenter> Umožňuje jeden podřízený prvek uživatelského rozhraní uvnitř, poskytuje "rozevírací věci", je při <xref:System.Activities.Presentation.WorkflowItemsPresenter> může poskytovat podporu více prvků uživatelského rozhraní, včetně další funkce, jako jsou řazení, přesouvání, odstraňování a přidávání podřízených elementů.
 
-Další klíčovou součástí scénáře, který potřebuje zvýraznění v implementaci vlastního návrháře aktivit se týká způsobu, ve kterém jsou úpravy visual vázané pomocí [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] datové vazby k instanci uložených v paměti co jsme se v návrháři pro úpravy. Toho lze dosáhnout stromu položku modelu, který zodpovídá také pro povolení oznámení o změně a sledování události, jako jsou změny ve stavu.
+Další klíčovou součástí scénáře, který potřebuje zvýraznění v implementaci vlastního návrháře aktivit se vztahuje na způsob, ve které jsou vázány vizuální úpravy pomocí datové vazby WPF na instanci uložených v paměti co jsme upravujete v návrháři. Toho lze dosáhnout stromu položku modelu, který zodpovídá také pro povolení oznámení o změně a sledování události, jako jsou změny ve stavu.
 
 Toto téma popisuje dva postupy.
 

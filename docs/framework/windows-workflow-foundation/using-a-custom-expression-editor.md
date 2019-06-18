@@ -2,12 +2,12 @@
 title: Použití editoru vlastních výrazů
 ms.date: 03/30/2017
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-ms.openlocfilehash: 9d73134c3f17fad618d26f335d89fdab2d99dbdf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7bbd855595bc67f0e2837afd4876ac3690cac776
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650919"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169971"
 ---
 # <a name="using-a-custom-expression-editor"></a>Použití editoru vlastních výrazů
 Chcete-li zadat výraz bohatší nebo jednodušší prostředí pro úpravy je možné implementovat editoru vlastních výrazů. Existuje několik scénářů, ve kterých můžete chtít pomocí Editoru vlastních výrazů:  
@@ -222,7 +222,7 @@ namespace MyExpressionEditorService
 ```  
   
 ### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a>Publikování editoru vlastních výrazů v rámci projektu WPF  
- Tady je kód, který ukazuje, jak opětovným hostováním má Návrhář [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace a jak vytvářet a publikovat `MyEditorService` služby. Před použitím tohoto kódu, přidejte odkaz na projekt knihovny MyExpressionEditorService z projektu, který obsahuje avalon2 aplikace.  
+ Tady je kód, který ukazuje, jak opětovným hostováním návrháře v aplikaci WPF a jak vytvářet a publikovat `MyEditorService` služby. Před použitím tohoto kódu, přidejte odkaz na projekt knihovny MyExpressionEditorService z projektu, který obsahuje avalon2 aplikace.  
   
 ```  
 using System.Windows;  

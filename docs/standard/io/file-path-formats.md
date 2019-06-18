@@ -1,6 +1,6 @@
 ---
 title: Formáty cesty k souborům v systémech Windows
-ms.date: 06/28/2018
+ms.date: 06/06/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -11,12 +11,12 @@ helpviewer_keywords:
 - path formats, Windows
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ecaae9e1af359ead1c15a9e431eac21e41040efe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75261bc44b938432c9c22b90dc4db30ca00d630b
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61752292"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170731"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formáty cesty k souborům v systémech Windows
 
@@ -30,7 +30,7 @@ Standardní cesta systému DOS se může skládat ze tří komponent:
 - Název adresáře. [Znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje podadresáře v rámci hierarchie vnořené adresářů.
 - Volitelný název souboru. [Znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje cestu k souboru a název souboru.
 
-Pokud jsou k dispozici všechny tři komponenty, je absolutní cesta. Pokud je zadán žádný svazku nebo písmeno jednotky a názvy adresářů začne adresářem [znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>), cesta je relativní od kořenové aktuální jednotku. V opačném případě cesta je relativní vzhledem k aktuálnímu adresáři. V následující tabulce jsou uvedeny některé možné adresáře a cesty k souborům.
+Pokud jsou k dispozici všechny tři komponenty, je absolutní cesta. Pokud je zadán žádný svazku nebo písmeno jednotky a název adresáře začíná [znakem oddělovače adresářů](<xref:System.IO.Path.DirectorySeparatorChar>), cesta je relativní od kořenové aktuální jednotku. V opačném případě cesta je relativní vzhledem k aktuálnímu adresáři. V následující tabulce jsou uvedeny některé možné adresáře a cesty k souborům.
 
 |Cesta  |Popis  |
 | -- | -- |
@@ -76,6 +76,11 @@ Operační systém Windows obsahuje jednotné objektový model, který odkazuje 
 `\\.\C:\Test\Foo.txt`  
 `\\?\C:\Test\Foo.txt`
 
+Kromě identifikace disku podle jeho písmeno jednotky, můžete identifikovat pomocí jeho identifikátoru GUID svazku. To má podobu:
+
+`\\.\Volume{b75e2c83-0000-0000-0000-602f00000000}\Test\Foo.txt`
+`\\?\Volume{b75e2c83-0000-0000-0000-602f00000000}\Test\Foo.txt`
+
 > [!NOTE]
 > Syntaxe cesty zařízení DOS je podporovaná v implementace .NET běžící na Windows od verze 1.1 rozhraní .NET Core a .NET Framework 4.6.2.
 
@@ -85,8 +90,8 @@ Cesta systému DOS zařízení se skládá z následujících součástí:
 
    > [!NOTE]
    > `\\?\` Je podporována ve všech verzích .NET Core a .NET Framework, od verze 4.6.2.
-   
-- Symbolický odkaz na objekt "real" zařízení (v tomto případě C:).
+
+- Symbolický odkaz na objekt "real" zařízení (v případě název jednotky C:) nebo svazek {b75e2c83-0000-0000-0000-602f00000000} v případě identifikátoru GUID svazku.
 
    První segment cesty zařízení DOS po specifikátoru cesta zařízení identifikuje svazku nebo jednotce. (Například `\\?\C:\` a `\\.\BootPartition\`.)
 
@@ -95,7 +100,7 @@ Cesta systému DOS zařízení se skládá z následujících součástí:
   `\\.\UNC\Server\Share\Test\Foo.txt`  
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    Pro zařízení UNC, část server a sdílet je formulářů svazku. Například v `\\?\server1\e:\utilities\\filecomparer\`, část server a sdílet je server1\utilities. To je důležité při volání metody, jako <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> relativní directory segmenty; se nikdy možné přejít po svazku. 
+    Pro zařízení UNC tvoří část sdílené složky serveru/svazek. Například v `\\?\server1\e:\utilities\\filecomparer\`, část server a sdílet je server1\utilities. To je důležité při volání metody, jako <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> relativní directory segmenty; se nikdy možné přejít po svazku. 
 
 Podle definice jsou plně kvalifikované cesty zařízení DOS. Relativní directory segmentů (`.` a `..`) nejsou povoleny. Aktuální adresáře nikdy odsouhlasit jejich využití.
 

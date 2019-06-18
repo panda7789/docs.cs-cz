@@ -2,17 +2,17 @@
 title: 'Úkol 2: Hostování Návrháře postupu provádění'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: cce90c6b7f5edfaf960415f0a5d0787f8eee526b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 553a02732e08fa148ffdee250df0305deb8e63b7
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665288"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169987"
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Úkol 2: Hostování Návrháře postupu provádění
 Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  
   
- Postup konfiguruje **mřížky** ovládací prvek, který obsahuje Návrhář, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> , který obsahuje výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje metadata návrháře k poskytování Podpora návrhářů pro všechny vestavěné aktivity a hostitele [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace.  
+ Postup konfiguruje **mřížky** ovládací prvek, který obsahuje Návrhář, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> , který obsahuje výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje metadata návrháře k poskytování Podpora návrhářů pro všechny vestavěné aktivity a hostitele [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v aplikaci WPF.  
   
 ### <a name="to-host-the-workflow-designer"></a>K hostování návrháře postupu provádění  
   
@@ -22,7 +22,7 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
   
 3. Nastavte název tabulky tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **hlavního okna MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".  
   
-4. V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnosti otevřít **Editor kolekce** dialogové okno.  
+4. V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami ( **...** ) vedle položky `ColumnDefinitions` vlastnosti otevřít **Editor kolekce** dialogové okno.  
   
 5. V **Editor kolekce** dialogové okno, klikněte na tlačítko **přidat** tlačítko třikrát pro vložení tři sloupce do požadovaného rozložení. První sloupec bude obsahovat **nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec bude použit pro vlastnost inspector.  
   

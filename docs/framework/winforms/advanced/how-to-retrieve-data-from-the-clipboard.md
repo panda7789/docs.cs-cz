@@ -8,19 +8,19 @@ helpviewer_keywords:
 - pasting Clipboard data
 - Clipboard [Windows Forms], retrieving data
 ms.assetid: 99612537-2c8a-449f-aab5-2b3b28d656e7
-ms.openlocfilehash: e8f77a4fd1047598d51c2e0932d9c1309a305a86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e29e71974abda3e6e57d22d9faef28e386ebeefd
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62003922"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169906"
 ---
 # <a name="how-to-retrieve-data-from-the-clipboard"></a>Postupy: Načtení dat ze schránky
 <xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které vám umožní pracovat s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránky jako dočasné úložiště pro data. Například textové procesory použít schránky během operací vyjmutí a vložení. Schránka je také užitečné pro přenos informací z jedné aplikace do jiného.  
   
  Některé aplikace ukládat data do schránky k navýšení tohoto počtu dalších aplikací, které mohou potenciálně používat data ve více formátech. Formát schránky není řetězec, který určuje formát. Aplikace, která používá formát identifikované můžete načíst přidružená data do schránky. <xref:System.Windows.Forms.DataFormats> Třída poskytující předdefinovaný formát názvy používat. Můžete také použít vlastní názvy ve formátu nebo použijte typ objektu jako jeho formát. Informace o přidávání dat do schránky, naleznete v tématu [jak: Přidání dat do schránky](how-to-add-data-to-the-clipboard.md).  
   
- Pokud chcete zjistit, zda schránky obsahuje data v určitém formátu, použijte jednu z `Contains` *formátu* metody nebo <xref:System.Windows.Forms.Clipboard.GetData%2A> metody. K načtení dat ze schránky, použijte jednu z `Get` *formátu* metody nebo <xref:System.Windows.Forms.Clipboard.GetData%2A> metody. Tyto metody jsou novinkou [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  
+ Pokud chcete zjistit, zda schránky obsahuje data v určitém formátu, použijte jednu z `Contains` *formátu* metody nebo <xref:System.Windows.Forms.Clipboard.GetData%2A> metody. K načtení dat ze schránky, použijte jednu z `Get` *formátu* metody nebo <xref:System.Windows.Forms.Clipboard.GetData%2A> metody. Tyto metody jsou nové v rozhraní .NET Framework 2.0.  
   
  Pro přístup k datům ze schránky pomocí verzí starší než [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)], použijte <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> metoda a volat metody vráceného <xref:System.Windows.Forms.IDataObject>. Pokud chcete zjistit, jestli konkrétní formát je k dispozici v vráceného objektu, například volání <xref:System.Windows.Forms.IDataObject.GetDataPresent%2A> metody.  
   
@@ -31,14 +31,14 @@ ms.locfileid: "62003922"
   
 ### <a name="to-retrieve-data-from-the-clipboard-in-a-single-common-format"></a>K načtení dat ze schránky v jedné, běžné formátu  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>, <xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>, <xref:System.Windows.Forms.Clipboard.GetImage%2A>, nebo <xref:System.Windows.Forms.Clipboard.GetText%2A> metody. Volitelně můžete použít odpovídající `Contains` *formátu* metody, abyste mohli zjistit, jestli je k dispozici v určitém formátu data. Tyto metody jsou k dispozici pouze v [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  
+1. Použití <xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>, <xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>, <xref:System.Windows.Forms.Clipboard.GetImage%2A>, nebo <xref:System.Windows.Forms.Clipboard.GetText%2A> metody. Volitelně můžete použít odpovídající `Contains` *formátu* metody, abyste mohli zjistit, jestli je k dispozici v určitém formátu data. Tyto metody jsou k dispozici pouze v rozhraní .NET Framework 2.0.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#2)]
      [!code-vb[System.Windows.Forms.Clipboard#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#2)]  
   
 ### <a name="to-retrieve-data-from-the-clipboard-in-a-custom-format"></a>K načtení dat ze schránky ve vlastním formátu  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.GetData%2A> metodu s názvem vlastního formátu. Tato metoda je k dispozici pouze v [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  
+1. Použití <xref:System.Windows.Forms.Clipboard.GetData%2A> metodu s názvem vlastního formátu. Tato metoda je k dispozici pouze v rozhraní .NET Framework 2.0.  
   
      Můžete také použít předdefinovaný formát názvů s <xref:System.Windows.Forms.Clipboard.SetData%2A> metody. Další informace naleznete v tématu <xref:System.Windows.Forms.DataFormats>.  
   

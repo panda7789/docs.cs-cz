@@ -5,16 +5,16 @@ ms.technology: dotnet-standard
 ms.assetid: 369850e9-004a-45d2-b5c3-5060d9135adb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e9b8c41602ed180b491ca55816fadf28d6cecd3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 70b22dbc3facdf0e36dea64074fc8284b9b18a67
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586500"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170906"
 ---
 # <a name="xslt-transformations-over-different-stores"></a>Transformace XSLT v různých úložištích
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+>  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralé v rozhraní .NET Framework 2.0. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
   
  ADO.NET a třídy XML v rozhraní .NET Framework poskytují jednotný programovací model pro přístup k datům. Tato data je vyjádřena jako data XML, což je text oddělený podle klíčových slov, a relační data, která je tabulkách sestávajících z řádků a sloupců. Kód XML v rozhraní .NET Framework přečte XML data z jakékoli datový proud do uzel stromů XML Document Object Model (DOM), kde data je možné programově přistupovat, zatímco ADO.NET poskytuje způsob, jak přistupovat k a manipulaci s relačními daty v rámci <xref:System.Data.DataSet> objektu.  
   

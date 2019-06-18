@@ -2,12 +2,12 @@
 title: Úkolu asynchronní programovací Model (TAP) pomocí modifikátoru async a operátoru await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 002a64cf7f692ffa0cfb5de94cdfc4421d8656bf
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 6e8f5c91bec158ae46b95597d90aaf3a6ab811d3
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025478"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170324"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 
@@ -127,7 +127,7 @@ Nejdůležitějším principem, který je třeba pochopit v asynchronním progra
      Proto `AccessTheWebAsync` používá operátor await k pozastavení jeho průběhu a výnosu z ovládacího prvku v metodě, která volá `AccessTheWebAsync`. `AccessTheWebAsync` Vrátí `Task<int>` volajícímu. Úloha představuje slib vyrábět celé číslo výsledku, který má délku staženého řetězce.
 
     > [!NOTE]
-    > Pokud `GetStringAsync` (a tedy `getStringTask`) nedokončí, před `AccessTheWebAsync` čeká na jeho ovládací prvek zůstane v `AccessTheWebAsync`. Prostředky na zastavení a vrácení k `AccessTheWebAsync` by byly ztraceny, pokud volaný asynchronní proces (`getStringTask`) již dokončen a `AccessTheWebSync` nebude muset čekat na konečný výsledek.
+    > Pokud `GetStringAsync` (a tedy `getStringTask`) nedokončí, před `AccessTheWebAsync` čeká na jeho ovládací prvek zůstane v `AccessTheWebAsync`. Prostředky na zastavení a vrácení k `AccessTheWebAsync` by byly ztraceny, pokud volaný asynchronní proces (`getStringTask`) již dokončen a `AccessTheWebAsync` nebude muset čekat na konečný výsledek.
 
      Uvnitř volajícího (v tomto případě obslužná rutina události) bude vzor zpracování pokračovat. Volající může provádět další operace, které nejsou závislé na výsledku `AccessTheWebAsync` před čeká na výsledek, nebo volající může použít funkci await okamžitě.   Obslužná rutina události čeká na všesměrově `AccessTheWebAsync`, a `AccessTheWebAsync` čeká `GetStringAsync`.
 

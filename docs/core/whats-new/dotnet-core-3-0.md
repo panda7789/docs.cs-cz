@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 05/06/2019
-ms.openlocfilehash: f7dc95a9f0b652f1509720fb987cbdb88f64e78c
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 369c74d2d8e82f157de0eec4294a5ee50542292b
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689249"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169789"
 ---
 # <a name="whats-new-in-net-core-30-preview-5"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 5)
 
@@ -20,10 +20,11 @@ Tento článek popisuje, co je nového v .NET Core 3.0 (prostřednictvím ve ver
 
 Přidává podporu pro .NET core 3.0 C# 8.0. Důrazně doporučujeme používat nejnovější verze sady Visual Studio. 2019 Update 1 Preview nebo VSCode s příponou OmniSharp.
 
-[Stáhnout a začít pracovat s .NET Core 3.0 ve verzi Preview 5](https://aka.ms/netcore3download) teď na Windows, Mac a Linux.
+[Stáhnout a začít pracovat s .NET Core 3.0 ve verzi Preview 6](https://aka.ms/netcore3download) teď na Windows, Mac a Linux.
 
 Další informace o jednotlivých verzí preview najdete v následující oznámení:
 
+- [.NET core 3.0 ve verzi Preview 6 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-6/)
 - [.NET core 3.0 ve verzi Preview 5 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-5/)
 - [.NET core 3.0 ve verzi Preview 4 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
 - [.NET core 3.0 ve verzi Preview 3 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
@@ -112,6 +113,34 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 
 Další informace o publikování jednoho souboru, najdete v článku [dokumentu návrh například položky bundler jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).
 
+## <a name="assembly-linking"></a>Propojování sestavení
+
+.NET core 3.0 SDK obsahuje nástroj, který můžete zmenšit velikost aplikací tak, že analýza IL a ořezávání nevyužité sestavení.
+
+Samostatná aplikace patří vše potřebné pro spuštění kódu, bez nutnosti .NET být nainstalovaný na hostitelském počítači. Ale v mnoha případech aplikace vyžaduje pouze malou podmnožinu rozhraní pro funkci a další nepoužité knihovny nebylo možné odebrat.
+
+.NET core teď zahrnuje nastavení, které budou používat [IL linkeru](https://github.com/mono/linker) nástroj pro skenování IL vaší aplikace. Tento nástroj rozpozná, jaký kód je povinný a potom ořízne nepoužité knihovny. Tento nástroj může výrazně snížit velikost některé aplikace pro nasazení.
+
+Chcete povolit Tenhle nástroj `<PublishTrimmed>` nastavení ve vašem projektu a publikování samostatnou aplikaci:
+
+```xml
+<PropertyGroup>
+  <PublishTrimmed>true</PublishTrimmed>
+</PropertyGroup>
+```
+
+```console
+dotnet publish -r <rid> -c Release
+```
+
+Například volání základní "hello world" nové konzoly šablony projektu, který je součástí, při publikování, velikost přibližně 70 MB. S použitím `<PublishTrimmed>`, zmenšení velikosti na přibližně 30 MB.
+
+Je důležité vzít v úvahu, že aplikace nebo rozhraní (včetně ASP.NET Core a WPF), které používají reflexi nebo související dynamické funkce se často přerušit, když oříznut. Tato rozbití dochází, protože nebude vědět o toto dynamické chování linkeru a nemůže určit typy rozhraní framework, které jsou požadovány pro účely reflexe. Je potřeba vědět tento scénář lze nakonfigurovat nástroj IL Linker.
+
+Nad všemi jinak nezapomeňte otestovat vaši aplikaci po oříznutí.
+
+Další informace o nástroji IL Linkeru, naleznete v tématu [dokumentaci](https://aka.ms/dotnet-illink) , případně přejděte [mono/linkeru]( https://github.com/mono/linker) úložiště.
+
 ## <a name="tiered-compilation"></a>Vrstvené kompilace
 
 [Vrstvené kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím s .NET Core 3.0. Tato funkce umožňuje modulu runtime více Adaptivně kompilátor za běhu (JIT) umožňuje dosahovat vyšších výkonů.
@@ -131,6 +160,38 @@ Chcete-li zcela zakázat TC, použijte následující nastavení v souboru proje
 ```xml
 <TieredCompilation>false</TieredCompilation>
 ```
+
+## <a name="readytorun-images"></a>ReadyToRun imagí
+
+Spuštění aplikace .NET Core můžete zlepšit kompilaci vaším sestavením aplikace jako formát ReadyToRun (R2R). R2R je forma kompilace ahead of time (AOT).
+
+Binární soubory R2R zlepšit výkon při spuštění snížením množství práce, kompilátor just-in-time (JIT) se musí provést jako zatížení vašich aplikací. Binární soubory obsahují podobné nativního kódu ve srovnání s co by vytvořila kompilátor JIT.
+
+R2R binární soubory jsou větší, protože obsahují i kód (IL intermediate language), který je stále potřeba pro některé scénáře a nativní verzi stejný kód. R2R je k dispozici pouze při publikování, který cílí modulu runtime specifické prostředí (RID), jako je Linux x64 nebo Windows x64 samostatnou aplikaci.
+
+Chcete-li kompilovat aplikaci jako R2R, přidejte `<PublishReadyToRun>` nastavení:
+
+```xml
+<PropertyGroup>
+  <PublishReadyToRun>true</PublishReadyToRun>
+</PropertyGroup>
+```
+
+Publikování samostatnou aplikaci. Třeba tento příkaz vytvoří samostatnou aplikaci pro 64bitové verzi systému Windows:
+
+```console
+dotnet publish -c Release -r win-x64 --self-contained true
+```
+
+### <a name="cross-platformarchitecture-restrictions"></a>Pro různé platformy/architektura omezení
+
+Kompilátor ReadyToRun v současné době nepodporuje cílí na různé. Je nutné kompilovat na daném cíli. Například pokud chcete R2R imagí Windows x64, musíte ke spuštění příkazu Publikovat v tomto prostředí.
+
+Která cílí na různé výjimky:
+
+- Windows x64 lze použít ke kompilaci Windows ARM32, ARM64 a x86 bitové kopie.
+- Windows x86 lze použít ke kompilaci Windows ARM32 Image.
+- Linux x64 lze použít ke kompilaci imagí Linuxu ARM32 a ARM64.
 
 ## <a name="build-copies-dependencies"></a>Vytvoření kopie závislosti
 
@@ -362,9 +423,19 @@ Windows nabízí bohaté nativní rozhraní API v podobě bez stromové struktur
 
 ## <a name="http2-support"></a>Podpora HTTP/2
 
-<xref:System.Net.Http.HttpClient?displayProperty=nameWithType> Typů podporuje protokol HTTP/2. Podpora je momentálně zakázané, ale je možné zapnout voláním `AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);` před použitím <xref:System.Net.Http.HttpClient>. Podpora HTTP/2 můžete povolit také tak, že nastavíte `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2SUPPORT` proměnnou prostředí, aby `true` před spuštěním vaší aplikace.
+<xref:System.Net.Http.HttpClient?displayProperty=nameWithType> Typů podporuje protokol HTTP/2. Pokud je povolená HTTP/2, verzi protokolu HTTP se vyjedná přes protokol TLS/ALPN a HTTP/2 se používá v případě, že rozhodne ho použít server.
 
-Pokud je povolená HTTP/2, verzi protokolu HTTP se vyjedná přes protokol TLS/ALPN a HTTP/2 bude použit pouze, pokud server rozhodne ho použít.
+Výchozím protokolem zůstane HTTP/1.1, ale HTTP/2 je možné povolit dvěma různými způsoby. Nejprve můžete nastavit zprávy s požadavkem HTTP používat HTTP/2:
+
+[!CODE-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
+
+Za druhé, můžete změnit <xref:System.Net.Http.HttpClient> používat HTTP/2 ve výchozím nastavení:
+
+[!CODE-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
+
+V mnoha případech Když vyvíjíte aplikaci, budete chtít použít nezašifrované připojení. Pokud víte, že cílový koncový bod se pomocí protokolu HTTP/2, můžete zapnout nezašifrované připojení HTTP/2. Můžete zapnout ho tak, že nastavíte `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` proměnnou prostředí, aby `1` nebo tím, že v rámci aplikace:
+
+[!CODE-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
 ## <a name="tls-13--openssl-111-on-linux"></a>TLS verze 1.3 & OpenSSL 1.1.1 v Linuxu
 

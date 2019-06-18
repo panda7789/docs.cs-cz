@@ -8,12 +8,12 @@ metadata:
   ms.date: 03/20/2019
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 1b1de22769c86f75684f41635287a73558d1d15a
-  ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+  ms.openlocfilehash: 7cec35e0749ea0b38162244171459f311d27cb25
+  ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/28/2019
-  ms.locfileid: "64750378"
+  ms.lasthandoff: 06/18/2019
+  ms.locfileid: "67170228"
 items:
 - durationInMinutes: 1
   content: >
@@ -202,7 +202,7 @@ items:
     Pokud chcete upravit vráceného odkazu, je potřeba přidat `ref` modifikátoru deklarace lokální proměnné a před volání `Find` při vrácená hodnota je odkaz vytvořit odkaz proměnnou. Upravte testovací kód v prohlížeči tak, aby odpovídala následující:
 
 
-    [!code-csharp[EverythingByValue](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#TestByValue "test code for return object by reference")]
+    [!code-csharp[TestByRef](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#TestByRef "test code for return object by reference")]
 
 
     Nyní, druhý `WriteLine` příkaz v předchozím příkladu vytiskne hodnotu `24`, označující, že byla změněna úložiště v matici. Lokální proměnná jsou deklarované v rámci `ref` modifikátor který bude trvat `ref` vrátit. Je nutné inicializovat `ref` proměnné při deklaraci; nelze rozdělit deklaraci a inicializaci.

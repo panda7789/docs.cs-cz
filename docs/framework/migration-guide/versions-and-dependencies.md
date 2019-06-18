@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ad78c37dda00e0b52ec8e84b8c996ee3dca09a5
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 342c570bff89d4c03780cdc280199c722b53890a
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378672"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170467"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Rozhraní .NET framework verze a závislosti
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  
@@ -27,7 +27,9 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
  Zobrazit [požadavky na systém](../../../docs/framework/get-started/system-requirements.md) úplný seznam podporovaných operačních systémů. Soubory ke stažení, najdete v části [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md). Určení, jaké verze rozhraní .NET Framework jsou nainstalovány v počítači, naleznete v tématu [jak: Zjištění nainstalovaných verzí rozhraní .NET Framework](how-to-determine-which-versions-are-installed.md).  
   
  V tabulce, verze rozhraní .NET Framework, které jsou nainstalované verze operačních systémů označené ✓ v **součástí / se dá nainstalovat na Windows** a **součástí nebo může být nainstalovaný na Windows serveru**sloupce musí být [povolené v Ovládacích panelech](../../../docs/framework/install/dotnet-35-windows-10.md) (pro Windows) nebo povolit pomocí Správce serveru (pro Windows Server).  
-  
+
+[!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
+ 
 |Verze rozhraní .NET Framework|Verze CLR|Součástí<br /> Visual Studio<br/>verze|✓ Součástí<br />+ Je možné nainstalovat na<br />Windows|✓ Součástí<br />+ Je možné nainstalovat na<br />Windows Server|K určení nainstalované verze rozhraní .NET|  
 |----------------------------|-----------------|--------------|---------------------------------------|----------------------------------------------------|-----------------------------------------------------------|-----------------------------------------| 
 |4.8<br/><br/>[Nové funkce](../whats-new/index.md#whats-new-in-net-framework-48)<br/><br/>[Nového v usnadnění](../whats-new/whats-new-in-accessibility.md#whats-new-in-accessibility-in-net-framework-48)<br /><br >[Zpráva k vydání verze](https://github.com/Microsoft/dotnet/tree/master/releases/net48/README.md)|4| | Aktualizace 10. května 2019 ✓<br/><br/> + 10. října 2018 Update (verze 1809) <br/> + 10. dubna 2018 Update (verze 1803) <br/> + 10 fall Creators Update (verze 1709) <br/> + 10 Creators Update (verze 1703) <br/> + 10 anniversary Update (verze 1607) <br/> + 8.1 <br/> +7 | + Windows Server 2019<br/> Windows Server verze 1809 <br/> Windows Server verze 1803 <br/> + 2016 <br/> + 2012 R2 <br/> + 2012 <br/> + 2008 R2 SP1 |Použití `Release` DWORD:<br/><br/> -528040 (Windows 10. května 2019 aktualizace) <br/> -528049 (všechny ostatní operační systém verze) <br/><br/> (viz [pokyny](how-to-determine-which-versions-are-installed.md))|
