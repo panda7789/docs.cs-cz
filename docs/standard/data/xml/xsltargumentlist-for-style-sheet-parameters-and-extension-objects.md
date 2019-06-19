@@ -8,56 +8,56 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 11cf0b694d75836ad903edeafc79a55ec4612b45
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 2c9a3b43f81f00a7b6a3a0b3a8e1c102aafe0c0e
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586462"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170947"
 ---
-# <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a><span data-ttu-id="8891c-102">XsltArgumentList pro parametry šablon stylů a objektů rozšíření</span><span class="sxs-lookup"><span data-stu-id="8891c-102">XsltArgumentList for Style Sheet Parameters and Extension Objects</span></span>
-<span data-ttu-id="8891c-103"><xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT.</span><span class="sxs-lookup"><span data-stu-id="8891c-103">The <xref:System.Xml.Xsl.XsltArgumentList> class contains Extensible Stylesheet Language for Transformations (XSLT) parameters and XSLT extension objects.</span></span> <span data-ttu-id="8891c-104">Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="8891c-104">When passed into the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method, these parameters and extension objects can be invoked from style sheets.</span></span>  
+# <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a><span data-ttu-id="b042c-102">XsltArgumentList pro parametry šablon stylů a objektů rozšíření</span><span class="sxs-lookup"><span data-stu-id="b042c-102">XsltArgumentList for Style Sheet Parameters and Extension Objects</span></span>
+<span data-ttu-id="b042c-103"><xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT.</span><span class="sxs-lookup"><span data-stu-id="b042c-103">The <xref:System.Xml.Xsl.XsltArgumentList> class contains Extensible Stylesheet Language for Transformations (XSLT) parameters and XSLT extension objects.</span></span> <span data-ttu-id="b042c-104">Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="b042c-104">When passed into the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method, these parameters and extension objects can be invoked from style sheets.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="8891c-105"><xref:System.Xml.Xsl.XslTransform> a <xref:System.Xml.Xsl.XsltArgumentList> třídy jsou zastaralé v [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8891c-105">The <xref:System.Xml.Xsl.XslTransform> and <xref:System.Xml.Xsl.XsltArgumentList> classes are obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="8891c-106">Můžete provádět pomocí transformace XSLT <xref:System.Xml.Xsl.XslCompiledTransform> třídy.</span><span class="sxs-lookup"><span data-stu-id="8891c-106">You can perform XSLT transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="8891c-107">Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.</span><span class="sxs-lookup"><span data-stu-id="8891c-107">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
+>  <span data-ttu-id="b042c-105"><xref:System.Xml.Xsl.XslTransform> a <xref:System.Xml.Xsl.XsltArgumentList> třídy jsou zastaralé v rozhraní .NET Framework 2.0.</span><span class="sxs-lookup"><span data-stu-id="b042c-105">The <xref:System.Xml.Xsl.XslTransform> and <xref:System.Xml.Xsl.XsltArgumentList> classes are obsolete in the .NET Framework 2.0.</span></span> <span data-ttu-id="b042c-106">Můžete provádět pomocí transformace XSLT <xref:System.Xml.Xsl.XslCompiledTransform> třídy.</span><span class="sxs-lookup"><span data-stu-id="b042c-106">You can perform XSLT transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="b042c-107">Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.</span><span class="sxs-lookup"><span data-stu-id="b042c-107">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
   
- <span data-ttu-id="8891c-108"><xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje parametry XSLT a objekty rozšíření XSLT.</span><span class="sxs-lookup"><span data-stu-id="8891c-108">The <xref:System.Xml.Xsl.XsltArgumentList> class contains XSLT parameters and XSLT extension objects.</span></span> <span data-ttu-id="8891c-109">Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="8891c-109">When passed into the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method, these parameters and extension objects can be invoked from style sheets.</span></span>  
+ <span data-ttu-id="b042c-108"><xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje parametry XSLT a objekty rozšíření XSLT.</span><span class="sxs-lookup"><span data-stu-id="b042c-108">The <xref:System.Xml.Xsl.XsltArgumentList> class contains XSLT parameters and XSLT extension objects.</span></span> <span data-ttu-id="b042c-109">Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="b042c-109">When passed into the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method, these parameters and extension objects can be invoked from style sheets.</span></span>  
   
- <span data-ttu-id="8891c-110">Následují výhody pro předávání objektů, spíše než pomocí vloženého skriptu:</span><span class="sxs-lookup"><span data-stu-id="8891c-110">The following are advantages to passing an object rather than using an embedded script:</span></span>  
+ <span data-ttu-id="b042c-110">Následují výhody pro předávání objektů, spíše než pomocí vloženého skriptu:</span><span class="sxs-lookup"><span data-stu-id="b042c-110">The following are advantages to passing an object rather than using an embedded script:</span></span>  
   
-- <span data-ttu-id="8891c-111">Poskytuje lepší zapouzdření a opakované použití tříd.</span><span class="sxs-lookup"><span data-stu-id="8891c-111">Provides better encapsulation and reuse of classes.</span></span>  
+- <span data-ttu-id="b042c-111">Poskytuje lepší zapouzdření a opakované použití tříd.</span><span class="sxs-lookup"><span data-stu-id="b042c-111">Provides better encapsulation and reuse of classes.</span></span>  
   
-- <span data-ttu-id="8891c-112">Povoluje stylů, aby bylo menší a jednodušší údržbu.</span><span class="sxs-lookup"><span data-stu-id="8891c-112">Allows style sheets to be smaller and more maintainable.</span></span>  
+- <span data-ttu-id="b042c-112">Povoluje stylů, aby bylo menší a jednodušší údržbu.</span><span class="sxs-lookup"><span data-stu-id="b042c-112">Allows style sheets to be smaller and more maintainable.</span></span>  
   
-- <span data-ttu-id="8891c-113">Podporuje volání metody u třídy, které patří do oborů názvů, než jsou definované v rámci sady podporované <xref:System> obory názvů.</span><span class="sxs-lookup"><span data-stu-id="8891c-113">Supports calling methods on classes belonging to namespaces other than those defined within the set of supported <xref:System> namespaces.</span></span>  
+- <span data-ttu-id="b042c-113">Podporuje volání metody u třídy, které patří do oborů názvů, než jsou definované v rámci sady podporované <xref:System> obory názvů.</span><span class="sxs-lookup"><span data-stu-id="b042c-113">Supports calling methods on classes belonging to namespaces other than those defined within the set of supported <xref:System> namespaces.</span></span>  
   
-- <span data-ttu-id="8891c-114">Podporuje předávání výsledků fragmenty stromu s použitím šablony stylů <xref:System.Xml.XPath.XPathNodeIterator>.</span><span class="sxs-lookup"><span data-stu-id="8891c-114">Supports passing result tree fragments to the style sheet with the use of the <xref:System.Xml.XPath.XPathNodeIterator>.</span></span>  
+- <span data-ttu-id="b042c-114">Podporuje předávání výsledků fragmenty stromu s použitím šablony stylů <xref:System.Xml.XPath.XPathNodeIterator>.</span><span class="sxs-lookup"><span data-stu-id="b042c-114">Supports passing result tree fragments to the style sheet with the use of the <xref:System.Xml.XPath.XPathNodeIterator>.</span></span>  
   
-## <a name="xslt-style-sheet-parameters"></a><span data-ttu-id="8891c-115">Parametry list Styl XSLT</span><span class="sxs-lookup"><span data-stu-id="8891c-115">XSLT Style Sheet Parameters</span></span>  
- <span data-ttu-id="8891c-116">Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8891c-116">XSLT parameters are added to the <xref:System.Xml.Xsl.XsltArgumentList> using the <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> method.</span></span> <span data-ttu-id="8891c-117">Úplný název a obor názvů identifikátoru URI (Uniform Resource) jsou spojeny s parametrem objektu v daném čase.</span><span class="sxs-lookup"><span data-stu-id="8891c-117">A qualified name and namespace Uniform Resource Identifier (URI) are associated with the parameter object at that time.</span></span>  
+## <a name="xslt-style-sheet-parameters"></a><span data-ttu-id="b042c-115">Parametry list Styl XSLT</span><span class="sxs-lookup"><span data-stu-id="b042c-115">XSLT Style Sheet Parameters</span></span>  
+ <span data-ttu-id="b042c-116">Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="b042c-116">XSLT parameters are added to the <xref:System.Xml.Xsl.XsltArgumentList> using the <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> method.</span></span> <span data-ttu-id="b042c-117">Úplný název a obor názvů identifikátoru URI (Uniform Resource) jsou spojeny s parametrem objektu v daném čase.</span><span class="sxs-lookup"><span data-stu-id="b042c-117">A qualified name and namespace Uniform Resource Identifier (URI) are associated with the parameter object at that time.</span></span>  
   
- <span data-ttu-id="8891c-118">Parametr objektu by měl odpovídat typu World Wide Web Consortium (W3C).</span><span class="sxs-lookup"><span data-stu-id="8891c-118">The parameter object should correspond to a World Wide Web Consortium (W3C) type.</span></span> <span data-ttu-id="8891c-119">Následující tabulka uvádí odpovídající typy W3C odpovídající třídy rozhraní .NET Framework (typ), a určuje, zda je typ W3C jazyk XML Path (XPath) nebo XSLT.</span><span class="sxs-lookup"><span data-stu-id="8891c-119">The following table shows the corresponding W3C types, the equivalent .NET Framework classes (type), and whether the W3C type is an XML Path Language (XPath) type or XSLT type.</span></span>  
+ <span data-ttu-id="b042c-118">Parametr objektu by měl odpovídat typu World Wide Web Consortium (W3C).</span><span class="sxs-lookup"><span data-stu-id="b042c-118">The parameter object should correspond to a World Wide Web Consortium (W3C) type.</span></span> <span data-ttu-id="b042c-119">Následující tabulka uvádí odpovídající typy W3C odpovídající třídy rozhraní .NET Framework (typ), a určuje, zda je typ W3C jazyk XML Path (XPath) nebo XSLT.</span><span class="sxs-lookup"><span data-stu-id="b042c-119">The following table shows the corresponding W3C types, the equivalent .NET Framework classes (type), and whether the W3C type is an XML Path Language (XPath) type or XSLT type.</span></span>  
   
-|<span data-ttu-id="8891c-120">Typ W3C</span><span class="sxs-lookup"><span data-stu-id="8891c-120">W3C Type</span></span>|<span data-ttu-id="8891c-121">Ekvivalentní třída rozhraní .NET Framework (typ)</span><span class="sxs-lookup"><span data-stu-id="8891c-121">Equivalent .NET Framework class (type)</span></span>|<span data-ttu-id="8891c-122">Výraz XPath typ nebo typ XSLT</span><span class="sxs-lookup"><span data-stu-id="8891c-122">XPath type or XSLT type</span></span>|  
+|<span data-ttu-id="b042c-120">Typ W3C</span><span class="sxs-lookup"><span data-stu-id="b042c-120">W3C Type</span></span>|<span data-ttu-id="b042c-121">Ekvivalentní třída rozhraní .NET Framework (typ)</span><span class="sxs-lookup"><span data-stu-id="b042c-121">Equivalent .NET Framework class (type)</span></span>|<span data-ttu-id="b042c-122">Výraz XPath typ nebo typ XSLT</span><span class="sxs-lookup"><span data-stu-id="b042c-122">XPath type or XSLT type</span></span>|  
 |--------------|----------------------------------------------|-----------------------------|  
-|<span data-ttu-id="8891c-123">String</span><span class="sxs-lookup"><span data-stu-id="8891c-123">String</span></span>|<span data-ttu-id="8891c-124">System.String</span><span class="sxs-lookup"><span data-stu-id="8891c-124">System.String</span></span>|<span data-ttu-id="8891c-125">XPath</span><span class="sxs-lookup"><span data-stu-id="8891c-125">XPath</span></span>|  
-|<span data-ttu-id="8891c-126">Boolean</span><span class="sxs-lookup"><span data-stu-id="8891c-126">Boolean</span></span>|<span data-ttu-id="8891c-127">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="8891c-127">System.Boolean</span></span>|<span data-ttu-id="8891c-128">XPath</span><span class="sxs-lookup"><span data-stu-id="8891c-128">XPath</span></span>|  
-|<span data-ttu-id="8891c-129">Číslo</span><span class="sxs-lookup"><span data-stu-id="8891c-129">Number</span></span>|<span data-ttu-id="8891c-130">System.Double</span><span class="sxs-lookup"><span data-stu-id="8891c-130">System.Double</span></span>|<span data-ttu-id="8891c-131">XPath</span><span class="sxs-lookup"><span data-stu-id="8891c-131">XPath</span></span>|  
-|<span data-ttu-id="8891c-132">Fragment stromu výsledek</span><span class="sxs-lookup"><span data-stu-id="8891c-132">Result Tree Fragment</span></span>|<span data-ttu-id="8891c-133">System.Xml.XPath.XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="8891c-133">System.Xml.XPath.XPathNavigator</span></span>|<span data-ttu-id="8891c-134">XSLT</span><span class="sxs-lookup"><span data-stu-id="8891c-134">XSLT</span></span>|  
-|<span data-ttu-id="8891c-135">Sada uzlů.</span><span class="sxs-lookup"><span data-stu-id="8891c-135">Node Set</span></span>|<span data-ttu-id="8891c-136">System.Xml.XPath.XPathNodeIterator</span><span class="sxs-lookup"><span data-stu-id="8891c-136">System.Xml.XPath.XPathNodeIterator</span></span>|<span data-ttu-id="8891c-137">XPath</span><span class="sxs-lookup"><span data-stu-id="8891c-137">XPath</span></span>|  
+|<span data-ttu-id="b042c-123">String</span><span class="sxs-lookup"><span data-stu-id="b042c-123">String</span></span>|<span data-ttu-id="b042c-124">System.String</span><span class="sxs-lookup"><span data-stu-id="b042c-124">System.String</span></span>|<span data-ttu-id="b042c-125">XPath</span><span class="sxs-lookup"><span data-stu-id="b042c-125">XPath</span></span>|  
+|<span data-ttu-id="b042c-126">Boolean</span><span class="sxs-lookup"><span data-stu-id="b042c-126">Boolean</span></span>|<span data-ttu-id="b042c-127">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="b042c-127">System.Boolean</span></span>|<span data-ttu-id="b042c-128">XPath</span><span class="sxs-lookup"><span data-stu-id="b042c-128">XPath</span></span>|  
+|<span data-ttu-id="b042c-129">Číslo</span><span class="sxs-lookup"><span data-stu-id="b042c-129">Number</span></span>|<span data-ttu-id="b042c-130">System.Double</span><span class="sxs-lookup"><span data-stu-id="b042c-130">System.Double</span></span>|<span data-ttu-id="b042c-131">XPath</span><span class="sxs-lookup"><span data-stu-id="b042c-131">XPath</span></span>|  
+|<span data-ttu-id="b042c-132">Fragment stromu výsledek</span><span class="sxs-lookup"><span data-stu-id="b042c-132">Result Tree Fragment</span></span>|<span data-ttu-id="b042c-133">System.Xml.XPath.XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="b042c-133">System.Xml.XPath.XPathNavigator</span></span>|<span data-ttu-id="b042c-134">XSLT</span><span class="sxs-lookup"><span data-stu-id="b042c-134">XSLT</span></span>|  
+|<span data-ttu-id="b042c-135">Sada uzlů.</span><span class="sxs-lookup"><span data-stu-id="b042c-135">Node Set</span></span>|<span data-ttu-id="b042c-136">System.Xml.XPath.XPathNodeIterator</span><span class="sxs-lookup"><span data-stu-id="b042c-136">System.Xml.XPath.XPathNodeIterator</span></span>|<span data-ttu-id="b042c-137">XPath</span><span class="sxs-lookup"><span data-stu-id="b042c-137">XPath</span></span>|  
   
- <span data-ttu-id="8891c-138">Pokud parametr objektu není jeden z výše uvedených tříd, je vynucena na dvojitou hodnotu nebo řetězec, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="8891c-138">If the parameter object is not one of the above classes, it is forced to either a Double or String, as appropriate.</span></span> <span data-ttu-id="8891c-139">Int16, UInt16, Int32, UInt32, Int64, UInt64, jednou a desetinných typy jsou vynutit na dvojitou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8891c-139">Int16, UInt16, Int32, UInt32, Int64, UInt64, Single and Decimal types are forced to a Double.</span></span> <span data-ttu-id="8891c-140">Všechny ostatní typy jsou vynuceně na řetězec pomocí `ToString` metody.</span><span class="sxs-lookup"><span data-stu-id="8891c-140">All other types are forced to a String using the `ToString` method.</span></span>  
+ <span data-ttu-id="b042c-138">Pokud parametr objektu není jeden z výše uvedených tříd, je vynucena na dvojitou hodnotu nebo řetězec, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="b042c-138">If the parameter object is not one of the above classes, it is forced to either a Double or String, as appropriate.</span></span> <span data-ttu-id="b042c-139">Int16, UInt16, Int32, UInt32, Int64, UInt64, jednou a desetinných typy jsou vynutit na dvojitou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="b042c-139">Int16, UInt16, Int32, UInt32, Int64, UInt64, Single and Decimal types are forced to a Double.</span></span> <span data-ttu-id="b042c-140">Všechny ostatní typy jsou vynuceně na řetězec pomocí `ToString` metody.</span><span class="sxs-lookup"><span data-stu-id="b042c-140">All other types are forced to a String using the `ToString` method.</span></span>  
   
-#### <a name="to-use-the-xslt-parameter-the-user-needs-to-do-the-following"></a><span data-ttu-id="8891c-141">Pokud chcete použít parametr XSLT, uživatel musí provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="8891c-141">To use the XSLT parameter, the user needs to do the following:</span></span>  
+#### <a name="to-use-the-xslt-parameter-the-user-needs-to-do-the-following"></a><span data-ttu-id="b042c-141">Pokud chcete použít parametr XSLT, uživatel musí provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="b042c-141">To use the XSLT parameter, the user needs to do the following:</span></span>  
   
-1. <span data-ttu-id="8891c-142">Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.</span><span class="sxs-lookup"><span data-stu-id="8891c-142">Create an <xref:System.Xml.Xsl.XsltArgumentList> and add the objects using <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.</span></span>  
+1. <span data-ttu-id="b042c-142">Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.</span><span class="sxs-lookup"><span data-stu-id="b042c-142">Create an <xref:System.Xml.Xsl.XsltArgumentList> and add the objects using <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.</span></span>  
   
-2. <span data-ttu-id="8891c-143">Parametry volání z šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="8891c-143">Call the parameters from the style sheet.</span></span>  
+2. <span data-ttu-id="b042c-143">Parametry volání z šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="b042c-143">Call the parameters from the style sheet.</span></span>  
   
-3. <span data-ttu-id="8891c-144">Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8891c-144">Pass the <xref:System.Xml.Xsl.XsltArgumentList> to the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method.</span></span>  
+3. <span data-ttu-id="b042c-144">Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="b042c-144">Pass the <xref:System.Xml.Xsl.XsltArgumentList> to the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method.</span></span>  
   
-### <a name="example"></a><span data-ttu-id="8891c-145">Příklad</span><span class="sxs-lookup"><span data-stu-id="8891c-145">Example</span></span>  
- <span data-ttu-id="8891c-146">V následujícím příkladu <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu pro vytvoření parametr pro uložení data počítané slevy.</span><span class="sxs-lookup"><span data-stu-id="8891c-146">The following example uses the <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> method to create a parameter to hold a calculated discount date.</span></span> <span data-ttu-id="8891c-147">Slevy se počítá na 20 dní od data objednávky.</span><span class="sxs-lookup"><span data-stu-id="8891c-147">The discount date is calculated to be 20 days from the order date.</span></span>  
+### <a name="example"></a><span data-ttu-id="b042c-145">Příklad</span><span class="sxs-lookup"><span data-stu-id="b042c-145">Example</span></span>  
+ <span data-ttu-id="b042c-146">V následujícím příkladu <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu pro vytvoření parametr pro uložení data počítané slevy.</span><span class="sxs-lookup"><span data-stu-id="b042c-146">The following example uses the <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> method to create a parameter to hold a calculated discount date.</span></span> <span data-ttu-id="b042c-147">Slevy se počítá na 20 dní od data objednávky.</span><span class="sxs-lookup"><span data-stu-id="b042c-147">The discount date is calculated to be 20 days from the order date.</span></span>  
   
 ```vb  
 Imports System  
@@ -139,8 +139,8 @@ public class Sample
 }  
 ```  
   
-### <a name="input"></a><span data-ttu-id="8891c-148">Vstup</span><span class="sxs-lookup"><span data-stu-id="8891c-148">Input</span></span>  
- <span data-ttu-id="8891c-149">order.xml</span><span class="sxs-lookup"><span data-stu-id="8891c-149">order.xml</span></span>  
+### <a name="input"></a><span data-ttu-id="b042c-148">Vstup</span><span class="sxs-lookup"><span data-stu-id="b042c-148">Input</span></span>  
+ <span data-ttu-id="b042c-149">order.xml</span><span class="sxs-lookup"><span data-stu-id="b042c-149">order.xml</span></span>  
   
 ```xml  
 <!--Represents a customer order-->  
@@ -156,7 +156,7 @@ public class Sample
 </order>  
 ```  
   
- <span data-ttu-id="8891c-150">discount.xsl</span><span class="sxs-lookup"><span data-stu-id="8891c-150">discount.xsl</span></span>  
+ <span data-ttu-id="b042c-150">discount.xsl</span><span class="sxs-lookup"><span data-stu-id="b042c-150">discount.xsl</span></span>  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  
@@ -171,7 +171,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a><span data-ttu-id="8891c-151">Výstup</span><span class="sxs-lookup"><span data-stu-id="8891c-151">Output</span></span>  
+### <a name="output"></a><span data-ttu-id="b042c-151">Výstup</span><span class="sxs-lookup"><span data-stu-id="b042c-151">Output</span></span>  
   
 ```xml  
 <order>  
@@ -180,25 +180,25 @@ public class Sample
 </order>  
 ```  
   
-## <a name="xslt-extension-objects"></a><span data-ttu-id="8891c-152">Objekty rozšíření XSLT</span><span class="sxs-lookup"><span data-stu-id="8891c-152">XSLT Extension Objects</span></span>  
- <span data-ttu-id="8891c-153">Objekty rozšíření XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8891c-153">XSLT extension objects are added to the <xref:System.Xml.Xsl.XsltArgumentList> using the <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> method.</span></span> <span data-ttu-id="8891c-154">Úplný název a identifikátor URI oboru názvů jsou přidruženy k rozšíření objektu v daném čase.</span><span class="sxs-lookup"><span data-stu-id="8891c-154">A qualified name and namespace URI are associated with the extension object at that time.</span></span>  
+## <a name="xslt-extension-objects"></a><span data-ttu-id="b042c-152">Objekty rozšíření XSLT</span><span class="sxs-lookup"><span data-stu-id="b042c-152">XSLT Extension Objects</span></span>  
+ <span data-ttu-id="b042c-153">Objekty rozšíření XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="b042c-153">XSLT extension objects are added to the <xref:System.Xml.Xsl.XsltArgumentList> using the <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> method.</span></span> <span data-ttu-id="b042c-154">Úplný název a identifikátor URI oboru názvů jsou přidruženy k rozšíření objektu v daném čase.</span><span class="sxs-lookup"><span data-stu-id="b042c-154">A qualified name and namespace URI are associated with the extension object at that time.</span></span>  
   
- <span data-ttu-id="8891c-155">Když je objekt přidán, volající <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> v zásadách zabezpečení musí být plně důvěryhodné.</span><span class="sxs-lookup"><span data-stu-id="8891c-155">When an object is added, the caller of the <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> must be fully trusted in the security policy.</span></span> <span data-ttu-id="8891c-156">Pokud je částečně důvěryhodné volající, přidání se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="8891c-156">If the caller is semi-trusted, the addition will fail.</span></span>  
+ <span data-ttu-id="b042c-155">Když je objekt přidán, volající <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> v zásadách zabezpečení musí být plně důvěryhodné.</span><span class="sxs-lookup"><span data-stu-id="b042c-155">When an object is added, the caller of the <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> must be fully trusted in the security policy.</span></span> <span data-ttu-id="b042c-156">Pokud je částečně důvěryhodné volající, přidání se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="b042c-156">If the caller is semi-trusted, the addition will fail.</span></span>  
   
- <span data-ttu-id="8891c-157">I když je objekt úspěšně přidán, není zaručeno, že bude úspěšné provedení příkazu.</span><span class="sxs-lookup"><span data-stu-id="8891c-157">Though an object is added successfully, it does not guarantee that the execution will be successful.</span></span> <span data-ttu-id="8891c-158">Když <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je volána, oprávnění se počítají proti důkazu v <xref:System.Xml.Xsl.XslTransform.Load%2A> čas a aby sada oprávnění přiřazený k transformaci celý proces.</span><span class="sxs-lookup"><span data-stu-id="8891c-158">When the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is called, permissions are calculated against the evidence provided at <xref:System.Xml.Xsl.XslTransform.Load%2A> time, and that permission set is assigned to the entire transformation process.</span></span> <span data-ttu-id="8891c-159">Pokud se objekt rozšíření se pokusí spustit akci, která vyžaduje oprávnění nebyla nalezena v sadě, je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="8891c-159">If an extension object attempts to initiate an action that requires permissions not found in the set, an exception is thrown.</span></span>  
+ <span data-ttu-id="b042c-157">I když je objekt úspěšně přidán, není zaručeno, že bude úspěšné provedení příkazu.</span><span class="sxs-lookup"><span data-stu-id="b042c-157">Though an object is added successfully, it does not guarantee that the execution will be successful.</span></span> <span data-ttu-id="b042c-158">Když <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je volána, oprávnění se počítají proti důkazu v <xref:System.Xml.Xsl.XslTransform.Load%2A> čas a aby sada oprávnění přiřazený k transformaci celý proces.</span><span class="sxs-lookup"><span data-stu-id="b042c-158">When the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is called, permissions are calculated against the evidence provided at <xref:System.Xml.Xsl.XslTransform.Load%2A> time, and that permission set is assigned to the entire transformation process.</span></span> <span data-ttu-id="b042c-159">Pokud se objekt rozšíření se pokusí spustit akci, která vyžaduje oprávnění nebyla nalezena v sadě, je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="b042c-159">If an extension object attempts to initiate an action that requires permissions not found in the set, an exception is thrown.</span></span>  
   
- <span data-ttu-id="8891c-160">Datové typy vrácených objektů rozšíření jsou jedním ze čtyř typů základní XPath dat sady číslo, řetězec, logická hodnota a uzel.</span><span class="sxs-lookup"><span data-stu-id="8891c-160">The data types returned from extension objects are one of the four basic XPath data types of number, string, Boolean, and node set.</span></span>  
+ <span data-ttu-id="b042c-160">Datové typy vrácených objektů rozšíření jsou jedním ze čtyř typů základní XPath dat sady číslo, řetězec, logická hodnota a uzel.</span><span class="sxs-lookup"><span data-stu-id="b042c-160">The data types returned from extension objects are one of the four basic XPath data types of number, string, Boolean, and node set.</span></span>  
   
-#### <a name="to-use-the-xslt-extension-object-the-user-needs-to-do-the-following"></a><span data-ttu-id="8891c-161">Chcete-li použít objekt rozšíření XSLT, uživatel musí provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="8891c-161">To use the XSLT extension object, the user needs to do the following:</span></span>  
+#### <a name="to-use-the-xslt-extension-object-the-user-needs-to-do-the-following"></a><span data-ttu-id="b042c-161">Chcete-li použít objekt rozšíření XSLT, uživatel musí provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="b042c-161">To use the XSLT extension object, the user needs to do the following:</span></span>  
   
-1. <span data-ttu-id="8891c-162">Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.</span><span class="sxs-lookup"><span data-stu-id="8891c-162">Create an <xref:System.Xml.Xsl.XsltArgumentList> and add the extension object using <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.</span></span>  
+1. <span data-ttu-id="b042c-162">Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.</span><span class="sxs-lookup"><span data-stu-id="b042c-162">Create an <xref:System.Xml.Xsl.XsltArgumentList> and add the extension object using <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.</span></span>  
   
-2. <span data-ttu-id="8891c-163">Vyvolejte objekt rozšíření ze šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="8891c-163">Invoke the extension object from the style sheet.</span></span>  
+2. <span data-ttu-id="b042c-163">Vyvolejte objekt rozšíření ze šablony stylů.</span><span class="sxs-lookup"><span data-stu-id="b042c-163">Invoke the extension object from the style sheet.</span></span>  
   
-3. <span data-ttu-id="8891c-164">Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8891c-164">Pass the <xref:System.Xml.Xsl.XsltArgumentList> to the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method.</span></span>  
+3. <span data-ttu-id="b042c-164">Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="b042c-164">Pass the <xref:System.Xml.Xsl.XsltArgumentList> to the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method.</span></span>  
   
-### <a name="example"></a><span data-ttu-id="8891c-165">Příklad</span><span class="sxs-lookup"><span data-stu-id="8891c-165">Example</span></span>  
- <span data-ttu-id="8891c-166">Následující příklad vypočítá obvod kruhu uveden jeho radius.</span><span class="sxs-lookup"><span data-stu-id="8891c-166">The following example calculates the circumference of a circle given its radius.</span></span>  
+### <a name="example"></a><span data-ttu-id="b042c-165">Příklad</span><span class="sxs-lookup"><span data-stu-id="b042c-165">Example</span></span>  
+ <span data-ttu-id="b042c-166">Následující příklad vypočítá obvod kruhu uveden jeho radius.</span><span class="sxs-lookup"><span data-stu-id="b042c-166">The following example calculates the circumference of a circle given its radius.</span></span>  
   
 ```vb  
 Imports System  
@@ -307,8 +307,8 @@ public class Sample
 }  
 ```  
   
-### <a name="input"></a><span data-ttu-id="8891c-167">Vstup</span><span class="sxs-lookup"><span data-stu-id="8891c-167">Input</span></span>  
- <span data-ttu-id="8891c-168">Number.XML</span><span class="sxs-lookup"><span data-stu-id="8891c-168">number.xml</span></span>  
+### <a name="input"></a><span data-ttu-id="b042c-167">Vstup</span><span class="sxs-lookup"><span data-stu-id="b042c-167">Input</span></span>  
+ <span data-ttu-id="b042c-168">Number.XML</span><span class="sxs-lookup"><span data-stu-id="b042c-168">number.xml</span></span>  
   
 ```xml  
 <?xml version='1.0'?>  
@@ -322,7 +322,7 @@ public class Sample
 </data>    
 ```  
   
- <span data-ttu-id="8891c-169">Circle.xsl</span><span class="sxs-lookup"><span data-stu-id="8891c-169">circle.xsl</span></span>  
+ <span data-ttu-id="b042c-169">Circle.xsl</span><span class="sxs-lookup"><span data-stu-id="b042c-169">circle.xsl</span></span>  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -343,7 +343,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a><span data-ttu-id="8891c-170">Výstup</span><span class="sxs-lookup"><span data-stu-id="8891c-170">Output</span></span>  
+### <a name="output"></a><span data-ttu-id="b042c-170">Výstup</span><span class="sxs-lookup"><span data-stu-id="b042c-170">Output</span></span>  
  `<circles xmlns:myObj="urn:myObj">`  
   
  `<circle>`  
@@ -364,6 +364,6 @@ public class Sample
   
  `</circles>`  
   
-## <a name="see-also"></a><span data-ttu-id="8891c-171">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8891c-171">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b042c-171">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b042c-171">See also</span></span>
 
-- [<span data-ttu-id="8891c-172">Třída XslTransform implementuje procesor XSLT</span><span class="sxs-lookup"><span data-stu-id="8891c-172">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [<span data-ttu-id="b042c-172">Třída XslTransform implementuje procesor XSLT</span><span class="sxs-lookup"><span data-stu-id="b042c-172">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
