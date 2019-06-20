@@ -5,12 +5,12 @@ description: Informace o instalaci rozhraní .NET Framework v systému Windows 8
 author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: 27a5c46a711914b32f8c934a33f5897d8ad7a6b8
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: a81569b8475d6d9990d628121766a4c34c5df396
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052701"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267931"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Instalace rozhraní .NET Framework v systému Windows 8 a Windows Server 2012
 
@@ -23,9 +23,9 @@ Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které po
 ## <a name="net-framework-48"></a>.NET Framework 4.8
 
 > [!div class="button"]
-> [Stáhnout rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Stáhnout rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
-4.8 rozhraní .NET Framework je podporováno ve Windows serveru 2012. Není podporován v systému Windows 8.
+4\.8 rozhraní .NET Framework je podporováno ve Windows serveru 2012. Není podporován v systému Windows 8.
 
 [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) je možné ke spouštění aplikací vytvořených pro rozhraní .NET Framework 4.0 nebo novější.
 

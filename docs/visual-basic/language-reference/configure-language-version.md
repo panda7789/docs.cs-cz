@@ -2,12 +2,12 @@
 title: Vyberte verzi jazyka Visual Basic
 description: Nakonfigurujte kompilátor provést ověření syntaxe pomocí specifické verzi kompilátoru.
 ms.date: 05/24/2018
-ms.openlocfilehash: 3b6d8055dbf64f2a5c38f46b6d66794fc48a1cea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4768d59a37d168b2883396f1dea4d0c1a0ff4ca7
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797030"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268263"
 ---
 # <a name="select-the-visual-basic-language-version"></a>Vyberte verzi jazyka Visual Basic
 
@@ -33,7 +33,7 @@ Můžete nastavit jazykovou verzi vašeho **.vbproj** souboru. Přidejte násled
 
 Hodnota `latest` používá nejnovější dílčí verzi jazyka Visual Basic. Platné hodnoty jsou:
 
-|Hodnota|Význam|
+|Value|Význam|
 |------------|-------------|
 |default|Kompilátor přijímá všechny platné syntaxe jazyka z nejnovější hlavní verzi, která může podporovat.|
 |9|Kompilátor přijímá pouze syntaxi, která je zahrnuta v jazyce Visual Basic 9.0 nebo nižší.|
@@ -44,6 +44,7 @@ Hodnota `latest` používá nejnovější dílčí verzi jazyka Visual Basic. Pl
 |15|Kompilátor přijímá pouze syntaxi, která je zahrnuta v jazyce Visual Basic 15.0 nebo nižší.|
 |15.3|Kompilátor přijímá pouze syntaxi, která je zahrnuta v jazyce Visual Basic 15.3 nebo nižší.|
 |15.5|Kompilátor přijímá pouze syntaxi, která je zahrnuta v jazyce Visual Basic 15.5 nebo nižší.|
+|15.8|Kompilátor přijímá pouze syntaxi, která je zahrnuta v jazyce Visual Basic 15.8 nebo nižší.|
 |nejnovější|Kompilátor přijímá všechny platné syntaxe jazyka, který může podporovat.|
 
 Speciální řetězce `default` a `latest` přeložit na nejnovější hlavní a dílčí jazykové verze nainstalovaná v počítači sestavení, v uvedeném pořadí.

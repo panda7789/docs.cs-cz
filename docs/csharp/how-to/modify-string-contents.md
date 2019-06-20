@@ -3,12 +3,12 @@ title: 'Postupy: Změna obsahu řetězce - C# Průvodce'
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 48be71f35634222dd9898199f004ea1190b62f35
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2cc1166d98a6cc07e0827a138cecb09c0530b899
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672351"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267758"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Postupy: Změna obsahu řetězce v jazyce C\#
 
@@ -67,7 +67,7 @@ Následující příklad ukazuje, jak nahradit sady znaků v řetězci. Nejprve,
 Pomocí **nebezpečné** kódu, můžete upravit řetězec "místo" po jejím vytvoření. Nezabezpečený kód vynechá řadu funkcí .NET určená k minimalizaci určité typy chyb v kódu. Je třeba použít nezabezpečený kód upravit řetězec na místě, protože třída string je navržena jako **neměnné** typu. Po jeho vytvoření, jeho hodnota se nezmění. Nezabezpečený kód neodpovídá této vlastnosti přístupu a úpravou paměť používanou `string` bez použití normální `string` metody.
 Následující příklad je k dispozici pro těchto výjimečných případech, ve které chcete upravit řetězce v místě použití nezabezpečeného kódu. Tento příklad ukazuje způsob použití `fixed` – klíčové slovo. `fixed` – Klíčové slovo zabraňuje systému uvolňování paměti (GC) získat přechodem na objekt řetězce v paměti, zatímco kód přistupuje k paměťově pomocí nebezpečné ukazatele. Ukazuje také jeden možný vedlejším účinkem nebezpečné operace s řetězci, který je výsledkem způsobu, jakým kompilátor jazyka C# interně uchovává řetězce (učně). Obecně byste neměli používat tuto techniku, pokud to není nezbytně nutné. Další informace najdete v článcích na [nebezpečné](../language-reference/keywords/unsafe.md) a [oprava](../language-reference/keywords/fixed-statement.md). Referenční dokumentace rozhraní API pro <xref:System.String.Intern%2A> obsahuje informace o interning řetězce.
 
-[!code-csharp-interactive[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+[!code-csharp[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
 
 Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 

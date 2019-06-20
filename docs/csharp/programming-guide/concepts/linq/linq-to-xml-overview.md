@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: a9435027a7487af96227fdc7a0eae6f511d82b23
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 6a7d681b52bbc6ce515e2202f3f448ce4ba79ced
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484344"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267963"
 ---
 # <a name="linq-to-xml-overview-c"></a>Přehled LINQ to XML (C#)
 
@@ -116,7 +116,7 @@ new XElement("Contacts",
 );
 ```
 
-Další informace najdete v tématu [vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md).
+Další informace najdete v tématu [vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees-linq-to-xml-2.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: 333bfb539fc375fd8f2dd170a187002fcf81ea2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b945edca8bd739e6f122ed8b3e950508ecc28510
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649762"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268162"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Možnosti kompilátoru jazyka Visual Basic uvedené podle kategorie
 Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alternativu ke kompilaci programů z v rámci integrovaného vývojového prostředí (IDE) sady Visual Studio. Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazené podle kategorie funkcí.  
@@ -39,7 +39,7 @@ Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alterna
 |---|---|  
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Zpracuje komentáře dokumentace do souboru XML.|  
 |[-deterministic](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Způsobí, že kompilátor do výstupního sestavení, jejichž binární obsah je identické napříč kompilace Pokud vstupů jsou stejné.|
-|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].|  
+|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Nastaví kompilátoru cílit na .NET Compact Framework.|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Určuje výstupní soubor.|  
 |[-refonly](refonly-compiler-option.md)|Vypíše referenční sestavení.|
 |[-refout](refout-compiler-option.md)|Určuje výstupní cestu k referenčnímu sestavení.|

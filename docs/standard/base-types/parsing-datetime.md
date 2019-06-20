@@ -16,12 +16,12 @@ helpviewer_keywords:
 - time strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 413a04d6ccdfff4b9cbf937821683ab7f7b37361
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4217221cc5199b9d8904be1ca3073878378b4e9
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765957"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268182"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v .NET
 
@@ -65,14 +65,14 @@ Následující příklad ukazuje použití <xref:System.DateTime.Parse%2A?displa
 
 Můžete také explicitně definovat jazykovou verzi, jejíž úmluvy formátování se používají při analýze řetězce. Můžete určit jeden ze standardních <xref:System.Globalization.DateTimeFormatInfo> objektů vrácených podle <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> vlastnost. Následující příklad používá k analýze německé řetězce do poskytovatele formátu <xref:System.DateTime>. Vytvoří <xref:System.Globalization.CultureInfo> představující `de-DE` jazykovou verzi. Že `CultureInfo` objekt zajistí úspěšné analýzy tento konkrétní řetězec. To vylučuje jakékoli nastavení <xref:System.Threading.Thread.CurrentCulture> z <xref:System.Threading.Thread.CurrentThread>.  
   
-[!code-csharp-interactive[Parsing.DateAndTime#2](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#2)]
+[!code-csharp[Parsing.DateAndTime#2](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#2)]
 [!code-vb[Parsing.DateAndTime#2](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#2)]
 
 Nicméně i když můžete použít přetížení <xref:System.DateTime.Parse%2A> metodu pro určení vlastních poskytovatelů formátu, metoda nepodporuje analýzu nestandardní formáty. Chcete-li analyzovat datum a čas vyjádřený nestandardní formát, použijte <xref:System.DateTime.ParseExact%2A> metoda místo.  
 
 <a name="styles-example"></a>V následujícím příkladu <xref:System.Globalization.DateTimeStyles> výčet k určení, že aktuální informace o datu a času nepřidávat <xref:System.DateTime> pro Nespecifikovaná pole.  
 
-[!code-csharp-interactive[Parsing.DateAndTime#3](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#3)]
+[!code-csharp[Parsing.DateAndTime#3](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#3)]
 [!code-vb[Parsing.DateAndTime#3](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#3)]
  
 ## <a name="parseexact"></a>ParseExact
@@ -81,7 +81,7 @@ Nicméně i když můžete použít přetížení <xref:System.DateTime.Parse%2A
 
 V následujícím příkladu <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> metodě se předává objekt string analyzovat, za nímž následuje specifikátoru formátu, za nímž následuje <xref:System.Globalization.CultureInfo> objektu. To <xref:System.DateTime.ParseExact%2A> metoda analyzovat pouze řetězce, které mají tvar dlouhého data v `en-US` jazykovou verzi.  
 
-[!code-csharp-interactive[Parsing.DateAndTime#4](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#4)]
+[!code-csharp[Parsing.DateAndTime#4](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#4)]
 [!code-vb[Parsing.DateAndTime#4](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#4)]
 
 Každé přetížení <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.ParseExact%2A> metod má také <xref:System.IFormatProvider> parametr, který poskytuje informace specifické jazykové verze o formátování řetězce. To <xref:System.IFormatProvider> je objekt <xref:System.Globalization.CultureInfo> objekt, který reprezentuje standardní jazykové verze nebo <xref:System.Globalization.DateTimeFormatInfo> objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> vlastnost.  <xref:System.DateTime.ParseExact%2A> také používá další řetězec nebo pole argument řetězce, který definuje jeden nebo více vlastní datum a čas formátů.  

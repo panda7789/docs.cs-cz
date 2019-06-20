@@ -5,12 +5,12 @@ helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: cacda830a2501dcd127248955848d207d80bbe2c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f8afece073076b9ae94faaba8477f2a13e11b295
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636970"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268084"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 
@@ -48,7 +48,7 @@ Během tohoto mechanismu je dostatečné pro většinu účelů, kde z následuj
 
 - Není kompatibilní s novější správci rozložení nepředchází funkce rozhraní .NET Framework verze 2.0, jako například <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel>.
 
-- Nepodporovalo škálování přímo na rozlišení obrazovky, která je nutná pro kompatibilitu na základě [!INCLUDE[compact](../../../includes/compact-md.md)].
+- Nepodporovalo škálování podle rozlišení, která je nutná pro kompatibilitu na rozhraní .NET Compact Framework.
 
 I když tento mechanismus je zachováno v rozhraní .NET Framework verze 2.0 pro zachování zpětné kompatibility, to bylo nahrazeno robustnější mechanismus škálování je popsáno dále. V důsledku toho <xref:System.Windows.Forms.Form.AutoScale%2A>, <xref:System.Windows.Forms.Form.ApplyAutoScaling%2A>, <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A>a některé <xref:System.Windows.Forms.Control.Scale%2A> přetížení jsou označeny jako zastaralé.
 
@@ -63,7 +63,7 @@ Rozhraní .NET Framework verze 2.0 surmounts z předchozích omezení zavedením
 
 - <xref:System.Windows.Forms.Control> Třída také obsahuje několik nových členů, které mohla účastnit škálování a podporovat smíšené škálování ve stejném formuláři. Konkrétně <xref:System.Windows.Forms.Control.Scale%2A>, <xref:System.Windows.Forms.Control.ScaleChildren%2A>, a <xref:System.Windows.Forms.Control.GetScaledBounds%2A> členy podporují škálování.
 
-- Pro škálování na základě rozlišení obrazovky byla přidána podpora k doplnění podpory písma systému, podle definice <xref:System.Windows.Forms.AutoScaleMode> výčtu. Tento režim je kompatibilní s automatického škálování nepodporuje [!INCLUDE[compact](../../../includes/compact-md.md)] povolení je snazší migrace aplikací.
+- Pro škálování na základě rozlišení obrazovky byla přidána podpora k doplnění podpory písma systému, podle definice <xref:System.Windows.Forms.AutoScaleMode> výčtu. Tento režim je kompatibilní s automatického škálování nepodporuje rozhraní .NET Compact Framework umožňuje snazší migrace aplikací.
 
 - Kompatibilita s správci rozložení, jako <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel> byla přidána k implementaci automatického škálování.
 

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - WithEvents keyword [Visual Basic]
 ms.assetid: 19d461f5-d72f-4de9-8c1d-0a6650316990
-ms.openlocfilehash: 41d38dcb3f44ccda19253adcd39401b0ac8dfb02
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e8a8fb571fa65228f3a0acec1f902d21eb9bfe04
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647665"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268306"
 ---
 # <a name="withevents-visual-basic"></a>WithEvents (Visual Basic)
 Určuje, že nejméně jedna deklarovaná členská proměnná odkazuje na instanci třídy, která může vyvolat události.  
@@ -31,6 +31,12 @@ Určuje, že nejméně jedna deklarovaná členská proměnná odkazuje na insta
 - **Typy elementů.** Je třeba deklarovat `WithEvents` proměnné na proměnné objektu tak, aby může přijmout třídu instance. Však nelze deklarovat jako `Object`. Je třeba je deklarovat jako konkrétní třídy, která může vyvolat události.  
   
  `WithEvents` Modifikátor lze použít v tomto kontextu: [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ 
+## <a name="example"></a>Příklad
+
+```VB
+Dim WithEvents app As Application
+```
   
 ## <a name="see-also"></a>Viz také:
 

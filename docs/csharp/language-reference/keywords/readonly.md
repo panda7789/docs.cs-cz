@@ -8,18 +8,24 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: c7f3b1b1525277bf948070c9121d151f9f520127
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3d18a52068b17b4a4259200754819dd43e28a03
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660850"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267642"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
 `readonly` – Klíčové slovo je modifikátor, který je možné ve třech kontextech:
 
-- V [pole deklarace](#readonly-field-example), `readonly` označuje, že přiřazení pro pole může probíhat jenom jako součást deklarace nebo v konstruktoru ve stejné třídě.
+- V [pole deklarace](#readonly-field-example), `readonly` označuje, že přiřazení pro pole může probíhat jenom jako součást deklarace nebo v konstruktoru ve stejné třídě. Pole jen pro čtení může být přiřazena a přiřadit více než jednou v rámci deklarace pole a konstruktor. A `readonly` pole nelze přiřadit po ukončení konstruktoru nezachová. Který má vliv na jiné typy hodnot a odkazové typy:
+- Protože hodnotové typy přímo obsahovat svá data, pole, která je `readonly` hodnotový typ je neměnný. 
+- Protože typy odkazů obsahovat odkaz na svá data, pole, to je `readonly` musí typ odkazu vždy odkazovat na stejný objekt. Tento objekt je neměnný. `readonly` Modifikátor zabraňuje teď nahrazuje jinou instanci typu odkazu pole. Modifikátor však nezabraňuje data instance pole nebylo možné měnit pomocí pole jen pro čtení.
+
+> [!WARNING]
+> Externě viditelný typ, který obsahuje externě viditelné pole jen pro čtení, který je proměnlivý odkazový typ může být ohrožení zabezpečení a můžou aktivovat upozornění [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : "Nedeklarujte čtení proměnlivé odkazové typy pouze."
+
 - V [ `readonly struct` definice](#readonly-struct-example), `readonly` znamená, že `struct` je neměnný.
 - V [ `ref readonly` metoda návratový](#ref-readonly-return-example), `readonly` modifikátor označuje, že metoda vrátí odkaz a zápisu nejsou povoleny na tento odkaz.
 
@@ -55,7 +61,9 @@ Kontexty konstruktoru jsou také pouze kontextech, ve kterých je možné předa
 
 V předchozím příkladu, pokud použijete příkaz jako v následujícím příkladu:
 
-`p2.y = 66;        // Error`
+```csharp
+p2.y = 66;        // Error
+```
 
 Zobrazí se chybová zpráva kompilátoru:
 
@@ -88,7 +96,7 @@ Přidání pole nejsou označeny `readonly` vygeneruje Chyba kompilátoru `CS834
 `readonly` Modifikátor `ref return` označuje, že výsledný odkaz nelze upravit. Následující příklad vrátí odkaz na počátku. Používá `readonly` modifikátor označuje, že volající nelze měnit původu:
 
 [!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyReturn)]
-Typ vrácený nemusí být `readonly struct`. Libovolný typ, který může být vrácen `ref` může být vrácen `ref readonly`
+Typ vrácený nemusí být `readonly struct`. Libovolný typ, který může být vrácen `ref` může být vrácen `ref readonly`.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

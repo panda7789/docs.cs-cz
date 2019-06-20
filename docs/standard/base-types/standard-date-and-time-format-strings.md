@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6939efa608f4887dfdb00abe8292bec841929440
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ddf4b84d44abb353cb9a5e025291690fb14b9461
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664640"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267913"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Formátovací řetězec data a času, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako vlastní data a času formátovací řetězec; Další informace najdete v tématu [vlastní data a řetězce formátu časových](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:  
@@ -85,14 +85,14 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
 |Řetězec standardního formátu|Definovaný vlastností DateTimeFormatInfo.InvariantInfo|Řetězec vlastního formátu|  
 |----------------------------|----------------------------------------------------------|--------------------------|  
-|"O" nebo "o"|Žádné|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|  
+|"O" nebo "o"|Žádný|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|  
 |"R" nebo "r"|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>|ddd, dd MMM yyyy HH':'mm':'ss 'GMT'|  
 |"s"|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>|yyyy'-'MM'-'dd'T'HH':'mm':'ss|  
 |"u"|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>|yyyy'-'MM'-'dd HH':'mm':'ss'Z'|  
   
  Standardní formátovací řetězce můžete také použít při operacích analýzy pomocí <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType> metody, které vyžadují vstupní řetězec tak, aby přesně odpovídal určitému vzoru k úspěšnému provedení operace analýzy. Mnoho řetězců standardního formátu je namapováno na několik řetězců vlastního formátu. Hodnotu data a času lze tedy vyjádřit v celé řadě formátů a operace analýzy i tak proběhne úspěšně. Můžete určit vlastní formátovací řetězec nebo řetězce, které odpovídají standardní formátovací řetězec voláním <xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%28System.Char%29?displayProperty=nameWithType> metody. Následující příklad zobrazí řetězce vlastního formátu, které mapují řetězec standardního formátu "d" (vzor krátkého formátu data).  
   
- [!code-csharp-interactive[Formatting.DateAndTime.Standard#17](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/stdandparsing1.cs#17)]
+ [!code-csharp[Formatting.DateAndTime.Standard#17](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/stdandparsing1.cs#17)]
  [!code-vb[Formatting.DateAndTime.Standard#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/stdandparsing1.vb#17)]  
   
  Následující oddíly popisují standardní specifikátory formátu pro <xref:System.DateTime> a <xref:System.DateTimeOffset> hodnoty.  
@@ -261,7 +261,7 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
  Následující příklad používá specifikátor formátu "o" k zobrazení řadu <xref:System.DateTime> hodnoty a <xref:System.DateTimeOffset> hodnotu v rámci systému v USA Tichomořské časové pásmo.  
   
- [!code-csharp-interactive[Formatting.DateAndTime.Standard#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/o1.cs#8)]
+ [!code-csharp[Formatting.DateAndTime.Standard#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/o1.cs#8)]
  [!code-vb[Formatting.DateAndTime.Standard#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/o1.vb#8)]  
   
  Následující příklad používá specifikátor formátu "o" pro vytvoření naformátovaného řetězce a potom obnoví původní hodnoty data a času voláním datum a čas `Parse` metody.  

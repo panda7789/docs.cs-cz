@@ -9,16 +9,16 @@ helpviewer_keywords:
 - netcf compiler option [Visual Basic]
 - /netcf compiler option [Visual Basic]
 ms.assetid: db7cfa59-c315-401c-a59b-0daf355343d6
-ms.openlocfilehash: b64c55b73a9c835ded0d7c81ff36329b8d6a8bc9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 028fa148d0e5622648a5fdfff1789c3d0bfde057
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586544"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268278"
 ---
 # <a name="-netcf"></a>-netcf
 
-Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].
+Nastaví kompilátoru cílit na .NET Compact Framework.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,7 +28,7 @@ Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].
 
 ## <a name="remarks"></a>Poznámky
 
-`-netcf` Možnost způsobí, že kompilátor jazyka Visual Basic k cíli [!INCLUDE[Compact](~/includes/compact-md.md)] místo úplné rozhraní .NET Framework. Funkce jazyka, které je k dispozici pouze v úplné rozhraní .NET Framework je zakázáno.
+`-netcf` Možnost způsobí, že kompilátor jazyka Visual Basic cílit na .NET Compact Framework než úplné rozhraní .NET Framework. Funkce jazyka, které je k dispozici pouze v úplné rozhraní .NET Framework je zakázáno.
 
 `-netcf` Možnost je určena pro použití s [- sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md). Funkce jazyka zakázal `-netcf` jsou stejné funkce jazyka, není k dispozici v souborech cílem `-sdkpath`.
 
@@ -85,7 +85,7 @@ Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].
 
 ## <a name="example"></a>Příklad
 
-Následující kód zkompiluje `Myfile.vb` s [!INCLUDE[Compact](~/includes/compact-md.md)], použití verze knihovny mscorlib.dll a Microsoft.VisualBasic.dll součástí výchozí instalační adresář [!INCLUDE[Compact](~/includes/compact-md.md)] na jednotce C:. Obvykle byste použili nejnovější verzi [!INCLUDE[Compact](~/includes/compact-md.md)].
+Následující kód zkompiluje `Myfile.vb` s rozhraním .NET Compact Framework, použití verze knihovny mscorlib.dll a Microsoft.VisualBasic.dll najde v adresáři výchozí instalace rozhraní .NET Compact Framework na jednotce C:. Obvykle byste použili nejnovější verzi rozhraní .NET Compact Framework.
 
 ```console
 vbc -netcf -sdkpath:"c:\Program Files\Microsoft Visual Studio .NET 2003\CompactFrameworkSDK\v1.0.5000\Windows CE " myfile.vb

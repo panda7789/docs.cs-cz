@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: 60ee4b8c5ac3a572fd352140c968a8ec8f3a084a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3e5bb96357293c42d4bd2161756260fd849cc099
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632976"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267793"
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 
@@ -30,7 +30,7 @@ yield break;
 
 Můžete použít `yield return` příkaz vrátit vždy jeden prvek v čase.
 
-Metodu iterátoru spotřebujete pomocí [foreach](foreach-in.md) příkaz nebo dotaz LINQ. Každá iterace `foreach` smyčky zavolá metodu iterátoru. Když `yield return` je v metodě iterátoru dosažen příkaz `expression` dochází, a je zachováno aktuální umístění v kódu. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.
+S použitím může zpracovat sekvenci vrácenou z metody iterátoru [foreach](foreach-in.md) příkaz nebo dotaz LINQ. Každá iterace `foreach` smyčky zavolá metodu iterátoru. Když `yield return` je v metodě iterátoru dosažen příkaz `expression` dochází, a je zachováno aktuální umístění v kódu. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.
 
 Můžete použít `yield break` příkaz do konce iterace.
 
@@ -52,7 +52,7 @@ Není možné zahrnout `yield return` nebo `yield break` příkaz v metodách, k
 
 - Metody, které obsahují nebezpečné bloky. Další informace najdete v tématu [nebezpečné](unsafe.md).
 
-## <a name="exception-handling"></a>Zpracování výjimek
+## <a name="exception-handling"></a>Ošetření výjimek
 
 A `yield return` příkaz nelze umístit do bloku try-catch. A `yield return` příkaz lze umístit do bloku try příkazu try-finally.
 

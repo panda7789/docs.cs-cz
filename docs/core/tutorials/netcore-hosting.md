@@ -4,12 +4,12 @@ description: Zjistěte, jak hostitele modulu runtime .NET Core z nativního kód
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 0ebd5b1532af77c082a2d8cd6508a83e969b325e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5b783bf7a5da55a3b5dada8ed024069f5fe3d3ba
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587043"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267859"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Vytvořit vlastního hostitele řídit modul .NET runtime z nativního kódu .NET Core
 
@@ -26,19 +26,61 @@ Protože jsou hostitelé nativních aplikací, v tomto kurzu se bude vztahovat v
 Můžete také jednoduchou aplikaci .NET Core testování hostitele, takže byste měli nainstalovat [.NET Core SDK](https://www.microsoft.com/net/core) a [sestavení malou testovací aplikaci .NET Core](../../core/tutorials/with-visual-studio.md) (například aplikace "Hello World"). Vytvoření nové šablony projektu .NET Core console "Zdravím svět" aplikace je dostačující.
 
 ## <a name="hosting-apis"></a>Rozhraní API pro hostování
-Existují dva různých rozhraní API, které lze použít k hostiteli .NET Core. Tento dokument (spolu s přidruženými [ukázky](https://github.com/dotnet/samples/tree/master/core/hosting)) zahrnují obě možnosti.
+Existují tři různých rozhraní API, které lze použít k hostiteli .NET Core. Tento dokument (spolu s přidruženými [ukázky](https://github.com/dotnet/samples/tree/master/core/hosting)) zahrnují všechny možnosti.
 
-* Preferovanou metodu hostování modulu runtime .NET Core je [CoreClrHost.h](https://github.com/dotnet/coreclr/blob/master/src/coreclr/hosts/inc/coreclrhost.h) rozhraní API. Toto rozhraní API poskytuje funkce pro snadné spuštění a zastavení modulu runtime a volání spravovaného kódu (buď spuštěním spravované exe nebo voláním statické metody spravované).
+* Preferovanou metodu hostování modulu runtime .NET Core v rozhraní .NET Core 3.0 a vyšší je `nethost` a `hostfxr` knihoven rozhraní API. Tyto vstupní body zpracování složitosti vyhledání a nastavení rutime pro inicializaci a umožnit spuštění spravované aplikace i volání do spravovaného statickou metodu.
+* Preferovanou metodu hostování modulu runtime .NET Core než .NET Core 3.0 je [CoreClrHost.h](https://github.com/dotnet/coreclr/blob/master/src/coreclr/hosts/inc/coreclrhost.h) rozhraní API. Toto rozhraní API poskytuje funkce pro snadné spuštění a zastavení modulu runtime a volání spravovaného kódu (buď spuštěním spravované exe nebo voláním statické metody spravované).
 * .NET core je rovněž možné hostovat s `ICLRRuntimeHost4` rozhraní v [mscoree.h](https://github.com/dotnet/coreclr/blob/master/src/pal/prebuilt/inc/mscoree.h). Toto rozhraní API se stále týká delší než CoreClrHost.h, takže jste viděli starší hostitelů pomocí jej. Stále funguje a umožňuje větší kontrolu nad hostitelský proces než CoreClrHost. Pro většinu scénářů ale CoreClrHost.h upřednostňována nyní z důvodu jeho jednodušší rozhraní API.
 
 ## <a name="sample-hosts"></a>Ukázka hostitele
 [Ukázka hostitele](https://github.com/dotnet/samples/tree/master/core/hosting) demonstrace kroků uvedených v následujících kurzech jsou k dispozici v úložišti dotnet/samples GitHub. Komentáře v ukázkách jasně přidružit očíslovaných kroků v těchto kurzech kde se provádí v ukázce. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Mějte na paměti, že hostitelé vzorku jsou určené pro výukové účely, proto jsou jasno kontroly chyb a jsou navrženy pro zvýraznění čitelnost přes efektivitu. Další ukázky skutečných hostitele jsou k dispozici v [dotnet/coreclr](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts) úložiště. [CoreRun hostitele](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/corerun) a [hostitele systému Unix CoreRun](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/unixcorerun), zejména, jsou vhodné pro obecné účely hostitele studovat po přečtení těchto ukázkách jednodušší.
+Mějte na paměti, že hostitelé vzorku jsou určené pro výukové účely, proto jsou jasno kontroly chyb a jsou navrženy pro zvýraznění čitelnost přes efektivitu.
+
+## <a name="create-a-host-using-nethosth-and-hostfxrh"></a>Vytvoření hostitele pomocí NetHost.h a HostFxr.h
+
+Následující kroky podrobně popisují, jak používat `nethost` a `hostfxr` knihovny, které chcete spustit modul runtime .NET Core v nativní aplikaci a volání do spravovaného statickou metodu. [Ukázka](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithHostFxr) používá `nethost` hlavičky a knihovny nainstalované pomocí sady .NET SDK a kopie [ `coreclr_delegates.h` ](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/coreclr_delegates.h) a [ `hostfxr.h` ](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) souborů z doručené pošty [dotnet/core-setup](https://github.com/dotnet/core-setup) úložiště.
+
+### <a name="step-1---load-hostfxr-and-get-exported-hosting-functions"></a>Krok 1 – HostFxr zatížení a získat exportované funkce pro hostování
+
+`nethost` Knihovna poskytuje `get_hostfxr_path` funkce pro hledání `hostfxr` knihovny. `hostfxr` Knihovna poskytuje funkce pro hostování modulu runtime .NET Core. Úplný seznam funkcí najdete v [ `hostfxr.h` ](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) a [nativní hostingové dokumentu návrhu](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). Použijte následující ukázku a v tomto kurzu:
+* `hostfxr_initialize_for_runtime_config`: Inicializuje kontext hostitele a připraví pro inicializaci modulu runtime .NET Core pomocí konfigurace zadaného modulu runtime.
+* `hostfxr_get_runtime_delegate`: Načte delegáta, pro funkce modulu runtime.
+* `hostfxr_close`: Ukončí kontext hostitele.
+
+`hostfxr` Knihovny se našlo se pomocí `get_hostfxr_path`. Je pak načten a jeho exporty budou načteny.
+
+[!code-cpp[HostFxrHost#LoadHostFxr](~/samples/core/hosting/HostWithHostFxr/src/NativeHost/nativehost.cpp#LoadHostFxr)]
+
+### <a name="step-2---initialize-and-start-the-net-core-runtime"></a>Krok 2: Inicializace a začít s .NET Core runtime
+
+`hostfxr_initialize_for_runtime_config` a `hostfxr_get_runtime_delegate` funkce inicializaci a spuštění modulu runtime .NET Core pomocí konfigurace modulu runtime pro spravované součásti, které se načtou. `hostfxr_get_runtime_delegate` Funkce slouží k získání runtime delegáta, který umožňuje načtení spravovaného sestavení a získání ukazatele na funkci na statickou metodu v sestavení.
+
+[!code-cpp[HostFxrHost#Initialize](~/samples/core/hosting/HostWithHostFxr/src/NativeHost/nativehost.cpp#Initialize)]
+
+### <a name="step-3---load-managed-assembly-and-get-function-pointer-to-a-managed-method"></a>Krok 3: načtení spravovaného sestavení a ukazatel na funkci get na spravované – metoda
+
+Modul runtime delegáta je volána k načtení spravovaného sestavení a získání ukazatele na funkci spravované metodě. Delegát vyžaduje cesta k sestavení, název typu a název metody jako vstupy a vrátí ukazatel na funkci, která slouží k volání spravované metody.
+
+[!code-cpp[HostFxrHost#LoadAndGet](~/samples/core/hosting/HostWithHostFxr/src/NativeHost/nativehost.cpp#LoadAndGet)]
+
+Předáním `nullptr` jako delegát název typu při volání metody delegáta modulu runtime, ukázka používá výchozí podpis pro spravované metody:
+```C#
+public delegate int ComponentEntryPoint(IntPtr args, int sizeBytes);
+```
+Jiný podpis je možné tak, že zadáte název delegáta typu při volání metody delegáta modulu runtime.
+
+### <a name="step-4---run-managed-code"></a>Krok 4 – spuštění spravovaného kódu.
+
+Nativní hostitele, můžou teď volání spravované metody a předávat požadované parametry.
+
+[!code-cpp[HostFxrHost#CallManaged](~/samples/core/hosting/HostWithHostFxr/src/NativeHost/nativehost.cpp#CallManaged)]
 
 ## <a name="create-a-host-using-coreclrhosth"></a>Vytvoření hostitele pomocí CoreClrHost.h
 
 Následující kroky podrobně popisují použití rozhraní API CoreClrHost.h spustit modul runtime .NET Core v nativní aplikaci a volání do spravovaného statickou metodu. Fragmenty kódu v tomto dokumentu pomocí některá rozhraní API specifické pro Windows, ale [úplnou ukázku hostitele](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithCoreClrHost) ukazuje Windows i Linuxem cesty kódu.
+
+[Hostitele systému Unix CoreRun](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/unixcorerun) ukazuje mnohem složitější, skutečná příklad hostování pomocí coreclrhost.h.
 
 ### <a name="step-1---find-and-load-coreclr"></a>Krok 1 – vyhledání a načtení CoreCLR
 
@@ -119,6 +161,8 @@ CoreCLR nepodporuje opětovnou inicializaci nebo uvolnění. Nevolejte `coreclr_
 ## <a name="create-a-host-using-mscoreeh"></a>Vytvoření hostitele pomocí Mscoree.h
 
 Jak už bylo zmíněno dříve, CoreClrHost.h je teď preferovanou metodu hostování modulu runtime .NET Core. `ICLRRuntimeHost4` Rozhraní je stále možné, ale pokud CoreClrHost.h rozhraní nejsou dostatečná (podle potřeby nestandardní spuštění příznaky jsou například nebo potřeby AppDomainManager pro výchozí doménu). Tyto pokyny vás provedou s .NET Core pomocí mscoree.h hostování.
+
+[CoreRun hostitele](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/corerun) ukazuje mnohem složitější, skutečná příklad hostování pomocí mscoree.h.
 
 ### <a name="a-note-about-mscoreeh"></a>Poznámka k mscoree.h
 `ICLRRuntimeHost4` Hostitelského rozhraní je definováno v .NET Core [MSCOREE. IDL](https://github.com/dotnet/coreclr/blob/master/src/inc/MSCOREE.IDL). Hlavička verze tohoto souboru (mscoree.h), které hostitele bude muset odkazovat, je vytvořen prostřednictvím MIDL při [.NET Core runtime](https://github.com/dotnet/coreclr/) je vytvořená. Pokud nechcete sestavení modulu runtime .NET Core, mscoree.h je také k dispozici [předem sestavených záhlaví](https://github.com/dotnet/coreclr/tree/master/src/pal/prebuilt/inc) v úložišti dotnet/coreclr. [Pokyny týkající se sestavení modulu runtime .NET Core](https://github.com/dotnet/coreclr#building-the-repository) najdete ve svém úložišti Githubu.

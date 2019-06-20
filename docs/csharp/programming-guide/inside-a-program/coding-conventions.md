@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 013d1d61e221e079fe68a6c6c7af5d6d5087b592
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a37109ab2712ea824baab95ca0b175cfa82aab3a
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608206"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267902"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Převody kódování C# (Průvodce programováním v C#)
  Konvence kódování slouží k následujícím účelům:  
@@ -27,7 +27,7 @@ ms.locfileid: "64608206"
 
  Pokyny v tomto tématu se používá společnost Microsoft pro vývoj ukázky a dokumentaci.  
   
-## <a name="naming-conventions"></a>Zásady vytváření názvů  
+## <a name="naming-conventions"></a>Konvence vytváření názvů  
   
 - V krátké příklady, které neobsahují [direktiv using](../../../csharp/language-reference/keywords/using-directive.md), použijte kvalifikaci oboru názvů. Pokud víte, že je ve výchozím nastavení v projektu importován oboru názvů, není nutné k plnému určení názvů z daného oboru názvů. Kvalifikované názvy může být přerušeno za tečku (.) Pokud jsou příliš dlouhé pro jeden řádek, jak je znázorněno v následujícím příkladu.  
   
@@ -99,7 +99,7 @@ ms.locfileid: "64608206"
   
      Následující příklad používá implicitní psát `for` příkazu.  
   
-     [!code-csharp[csProgGuideCodingConventions#11](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#11)]  
+     [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
   
      Následující příklad používá implicitní psát `foreach` příkazu.  
   

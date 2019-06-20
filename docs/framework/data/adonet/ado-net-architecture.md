@@ -2,18 +2,18 @@
 title: Architektura ADO.NET
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-ms.openlocfilehash: 13f65d0a2daf3b477a9b29c4de84fb359c946201
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 282f18cc7d379dffc410a0c62dc3b3e66e0a44f6
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877252"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267966"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat tradičně spoléhalo především v rámci modelu založeného na připojení, dvě vrstvy. Zpracování dat stále používá vícevrstvé architektury, programátoři přepnutí na odpojeném přístup k poskytování lepšího škálování pro své aplikace.  
   
 ## <a name="adonet-components"></a>ADO.NET Components  
- Dvě hlavní součásti [!INCLUDE[ado_orcas_long](../../../../includes/ado-orcas-long-md.md)] pro přístup k a manipulaci s daty jsou zprostředkovatele dat .NET Framework a <xref:System.Data.DataSet>.  
+ Zprostředkovatelé dat .NET Framework jsou dvě hlavní součásti ADO.NET pro přístup k a manipulaci s daty a <xref:System.Data.DataSet>.  
   
 ### <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET Framework  
  Zprostředkovatelé dat .NET Framework jsou komponenty, které byly výslovně navrženy pro manipulaci s daty a rychlé, pouze vpřed, jen pro čtení přístup k datům. `Connection` Objekt, který poskytuje připojení ke zdroji dat. `Command` Objekt umožňuje přístup k příkazům databázi vrátit data, upravovat data, spuštění uložené procedury a odeslat nebo načíst informace o parametrech. `DataReader` Poskytuje vysoce výkonné datové proudy dat z datového zdroje. Nakonec `DataAdapter` představuje spojení mezi `DataSet` objektu a zdrojem dat. `DataAdapter` Používá `Command` objekty pro spuštění příkazů SQL ve zdroji dat pro obě zatížení `DataSet` s daty a sloučení změn provedených pro data v `DataSet` zpět do zdroje dat. Další informace najdete v tématu [zprostředkovatelé dat .NET Framework](../../../../docs/framework/data/adonet/data-providers.md) a [načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md).  

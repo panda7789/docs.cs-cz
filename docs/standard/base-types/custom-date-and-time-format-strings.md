@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 90e9dbbd43751412c25dd5ca4dae2d503139db69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b4d7cd61a771f1c9658b5bc98ec85259da1c77f9
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634550"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268227"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Řetězce formátu vlastní data a času
 
@@ -41,7 +41,7 @@ Vlastní datum a čas formátu řetězce lze použít s oběma <xref:System.Date
 
 V operacích analýzy vlastní datum a čas formátovací řetězce lze použít s <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>, a <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> metody. Tyto metody vyžadují, že vstupní řetězec odpovídá přesně určitému vzoru operace analýzy úspěšná. Následující příklad ukazuje volání <xref:System.DateTimeOffset.ParseExact%28System.String%2CSystem.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metoda analyzovat datum, které musí obsahovat den, měsíc a rok dvěma číslicemi.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#18](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/custandparsing1.cs#18)]
+[!code-csharp[Formatting.DateAndTime.Custom#18](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/custandparsing1.cs#18)]
 [!code-vb[Formatting.DateAndTime.Custom#18](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/custandparsing1.vb#18)]
 
 Následující tabulka popisuje specifikátory vlastního formátu data a času a zobrazuje výsledný řetězec, který je vytvořen jednotlivými specifikátory formátu. Ve výchozím nastavení odráží výsledný řetězec konvence formátování jazykové verze en-US. Pokud konkrétní specifikátor formátu vytváří lokalizovaný výsledný řetězec, je v příkladu rovněž uvedena jazyková verze, na kterou se výsledný řetězec vztahuje. Další informace o používání vlastní datum a čas formátovací řetězce najdete v článku [poznámky](#notes) oddílu.
@@ -509,7 +509,7 @@ Při operaci parsování, rok dvěma číslicemi, který je analyzován pomocí 
 
 Následující příklad obsahuje specifikátor vlastního formátu "yy" v řetězci vlastního formátu.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
+[!code-csharp[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
 [Zpět k tabulce](#table)
@@ -638,7 +638,7 @@ Všechny ostatní znaky jsou vždy interpretováno jako literální znak a v rá
 
 Následující příklad zahrnuje literálními znaky "PST" (pro Tichomořský běžný čas) a "Guthria" (Tichomoří (letní čas)) představuje místní časové pásmo v řetězci formátu. Všimněte si, že řetězec obsahuje ve výsledném řetězci, a že řetězec, který obsahuje řetězec zóně Místní čas také analyzuje úspěšně.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx1.cs#20)]
+[!code-csharp[Formatting.DateAndTime.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx1.cs#20)]
 [!code-vb[Formatting.DateAndTime.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx1.vb#20)]
 
 Existují dva způsoby, jak určit, že znaky mají je interpretován jako literální znaky a ne jako vyhrazené znaky, tak, aby mohly být zahrnuty do výsledného řetězce a úspěšně parsováno ve vstupním řetězci:
@@ -647,12 +647,12 @@ Existují dva způsoby, jak určit, že znaky mají je interpretován jako liter
 
 Následující příklad obsahuje literálními znaky "pst" (pro Tichomořský běžný čas) představující místního časového pásma ve formátovacím řetězci. Vzhledem k tomu, že jsou řetězce vlastního formátu "s" i "t", oba znaky musí být uvozen řídicími znaky, je interpretován jako literální znak.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#21](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx2.cs#21)]
+[!code-csharp[Formatting.DateAndTime.Custom#21](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx2.cs#21)]
 [!code-vb[Formatting.DateAndTime.Custom#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx2.vb#21)]
 
 - Ve kterém je obsažená celý řetězec v uvozovkách nebo apostrofy. Následující příklad je podobný předchozímu, s tím rozdílem, že "pst" je uzavřena v uvozovkách k označení, že celý oddělený řetězec by měl být interpretován jako literální znak.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
+[!code-csharp[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
 [!code-vb[Formatting.DateAndTime.Custom#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
 
 ## <a name="notes"></a>Poznámky
