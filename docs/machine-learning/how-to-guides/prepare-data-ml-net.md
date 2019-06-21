@@ -5,12 +5,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 05/03/2019
 ms.custom: mvc, how-to
-ms.openlocfilehash: 461a00c6ecc1d9a8b9caaca79f9d7905d2bb7528
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: abf43260a438c9b1febffc77cf39e7328e0377ee
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063459"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268245"
 ---
 # <a name="prepare-data"></a>Příprava dat
 
@@ -124,7 +124,7 @@ HomeData[] homeDataList = new HomeData[]
 };
 ```
 
-Normalizovat data pomocí maximálních normalizace [ `NormalizeMinMax` ](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) metody.
+Normalizaci lze použít pro sloupce s jednu číselnou hodnotu, jakož i vektorů. Normalizovat data v `Price` sloupce pomocí maximálních normalizace s [ `NormalizeMinMax` ](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) metody.
 
 ```csharp
 // Define min-max estimator
@@ -298,7 +298,7 @@ Jako příklad použijeme první položka, tady je podrobný popis výsledky vyt
 |--|--|--|
 |1. NormalizeText | Převede všechna písmena na malá písmena ve výchozím nastavení | To je dobrý produktu
 |2. TokenizeWords | Rozdělí řetězec do jednotlivých slov | ["Tento", "je", "";"Dobrá","produkt"]
-|3. RemoveDefaultStopWords | Odebere stopword jako *je* a *a*. | ["good","product"]
+|3. RemoveDefaultStopWords | Odebere stopword jako *je* *a*. | ["good","product"]
 |4. MapValueToKey | Mapuje hodnoty klíče (kategorie) na základě vstupních dat |  [1,2]
 |5. ProduceNGrams | Transformuje text do sekvence po sobě jdoucích slov | [1,1,1,0,0]
 |6. NormalizeLpNorm | Vstupy škálování podle jejich lp norm | [ 0.577350529, 0.577350529, 0.577350529, 0, 0 ]
