@@ -1,24 +1,24 @@
 ---
 title: Ujistěte se, předpovědi s trénovaného modelu
 description: Naučte se vytvářet predikce na trénovaného modelu
-ms.date: 05/03/2019
+ms.date: 06/20/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: dac3b3bfa68776975a2e5e762f46db16e39d61fb
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: ef2b22ff220d1fce1ec43f26c7d51f7e551e038d
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066175"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307401"
 ---
-# <a name="make-predictions-with-a-trained-model"></a><span data-ttu-id="06399-103">Ujistěte se, předpovědi s trénovaného modelu</span><span class="sxs-lookup"><span data-stu-id="06399-103">Make predictions with a trained model</span></span>
+# <a name="make-predictions-with-a-trained-model"></a><span data-ttu-id="1bc90-103">Ujistěte se, předpovědi s trénovaného modelu</span><span class="sxs-lookup"><span data-stu-id="1bc90-103">Make predictions with a trained model</span></span>
 
-<span data-ttu-id="06399-104">Další informace o použití trénovaný model k predikci</span><span class="sxs-lookup"><span data-stu-id="06399-104">Learn how to use a trained model to make predictions</span></span>
+<span data-ttu-id="1bc90-104">Další informace o použití trénovaný model k predikci</span><span class="sxs-lookup"><span data-stu-id="1bc90-104">Learn how to use a trained model to make predictions</span></span>
 
-## <a name="create-data-models"></a><span data-ttu-id="06399-105">Vytvoření datových modelů</span><span class="sxs-lookup"><span data-stu-id="06399-105">Create data models</span></span>
+## <a name="create-data-models"></a><span data-ttu-id="1bc90-105">Vytvoření datových modelů</span><span class="sxs-lookup"><span data-stu-id="1bc90-105">Create data models</span></span>
 
-### <a name="input-data"></a><span data-ttu-id="06399-106">Vstupní data</span><span class="sxs-lookup"><span data-stu-id="06399-106">Input data</span></span>
+### <a name="input-data"></a><span data-ttu-id="1bc90-106">Vstupní data</span><span class="sxs-lookup"><span data-stu-id="1bc90-106">Input data</span></span>
 
 ```csharp
 public class HousingData
@@ -36,11 +36,11 @@ public class HousingData
 }
 ```
 
-### <a name="output-data"></a><span data-ttu-id="06399-107">Výstupní data</span><span class="sxs-lookup"><span data-stu-id="06399-107">Output data</span></span>
+### <a name="output-data"></a><span data-ttu-id="1bc90-107">Výstupní data</span><span class="sxs-lookup"><span data-stu-id="1bc90-107">Output data</span></span>
 
-<span data-ttu-id="06399-108">Podobně jako `Features` a `Label` vstupní sloupec názvy, ML.NET má výchozí názvy pro předpovězené hodnoty sloupce produkované modelu.</span><span class="sxs-lookup"><span data-stu-id="06399-108">Like the `Features` and `Label` input column names, ML.NET has default names for the predicted value columns produced by a model.</span></span> <span data-ttu-id="06399-109">V závislosti na úloze název se může lišit.</span><span class="sxs-lookup"><span data-stu-id="06399-109">Depending on the task the name may differ.</span></span>
+<span data-ttu-id="1bc90-108">Podobně jako `Features` a `Label` vstupní sloupec názvy, ML.NET má výchozí názvy pro předpovězené hodnoty sloupce produkované modelu.</span><span class="sxs-lookup"><span data-stu-id="1bc90-108">Like the `Features` and `Label` input column names, ML.NET has default names for the predicted value columns produced by a model.</span></span> <span data-ttu-id="1bc90-109">V závislosti na úloze název se může lišit.</span><span class="sxs-lookup"><span data-stu-id="1bc90-109">Depending on the task the name may differ.</span></span>
 
-<span data-ttu-id="06399-110">Protože algoritmus použitý v této ukázce se algoritmus lineární regrese, je výchozí název výstupního sloupce `Score` který je definován [ `ColumnName` ](xref:Microsoft.ML.Data.ColumnNameAttribute) atribut na `PredictedPrice` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="06399-110">Because the algorithm used in this sample is a linear regression algorithm, the default name of the output column is `Score` which is defined by the [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) attribute on the `PredictedPrice` property.</span></span>
+<span data-ttu-id="1bc90-110">Protože algoritmus použitý v této ukázce se algoritmus lineární regrese, je výchozí název výstupního sloupce `Score` který je definován [ `ColumnName` ](xref:Microsoft.ML.Data.ColumnNameAttribute) atribut na `PredictedPrice` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="1bc90-110">Because the algorithm used in this sample is a linear regression algorithm, the default name of the output column is `Score` which is defined by the [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) attribute on the `PredictedPrice` property.</span></span>
 
 ```csharp
 class HousingPrediction : HousingData
@@ -50,11 +50,11 @@ class HousingPrediction : HousingData
 }
 ```
 
-<span data-ttu-id="06399-111">`HousingPrediction` Datový model dědí z `HousingData` snadno vizualizovat původní vstupní data společně s výstupem generovaných modelu.</span><span class="sxs-lookup"><span data-stu-id="06399-111">The `HousingPrediction` data model inherits from `HousingData` to make it easy to visualize the original input data along with the output generated by the model.</span></span>  
+<span data-ttu-id="1bc90-111">`HousingPrediction` Datový model dědí z `HousingData` snadno vizualizovat původní vstupní data společně s výstupem generovaných modelu.</span><span class="sxs-lookup"><span data-stu-id="1bc90-111">The `HousingPrediction` data model inherits from `HousingData` to make it easy to visualize the original input data along with the output generated by the model.</span></span>  
 
-## <a name="set-up-a-prediction-pipeline"></a><span data-ttu-id="06399-112">Nastavení kanálu predikcí</span><span class="sxs-lookup"><span data-stu-id="06399-112">Set up a prediction pipeline</span></span>
+## <a name="set-up-a-prediction-pipeline"></a><span data-ttu-id="1bc90-112">Nastavení kanálu predikcí</span><span class="sxs-lookup"><span data-stu-id="1bc90-112">Set up a prediction pipeline</span></span>
 
-<span data-ttu-id="06399-113">Určuje, zda provedení jedné nebo predikcí služby batch, do predikce. kanál musí být načtena do aplikace.</span><span class="sxs-lookup"><span data-stu-id="06399-113">Whether making a single or batch prediction, the prediction pipeline needs to be loaded into the application.</span></span> <span data-ttu-id="06399-114">Tento kanál obsahuje transformace předběžného zpracování dat i trénovaného modelu.</span><span class="sxs-lookup"><span data-stu-id="06399-114">This pipeline contains both the data pre-processing transformations as well as the trained model.</span></span> <span data-ttu-id="06399-115">Následující fragment kódu načte kanálu předpovědi ze souboru s názvem `model.zip`.</span><span class="sxs-lookup"><span data-stu-id="06399-115">The code snippet below loads the prediction pipeline from a file named `model.zip`.</span></span>
+<span data-ttu-id="1bc90-113">Určuje, zda provedení jedné nebo predikcí služby batch, do predikce. kanál musí být načtena do aplikace.</span><span class="sxs-lookup"><span data-stu-id="1bc90-113">Whether making a single or batch prediction, the prediction pipeline needs to be loaded into the application.</span></span> <span data-ttu-id="1bc90-114">Tento kanál obsahuje transformace předběžného zpracování dat i trénovaného modelu.</span><span class="sxs-lookup"><span data-stu-id="1bc90-114">This pipeline contains both the data pre-processing transformations as well as the trained model.</span></span> <span data-ttu-id="1bc90-115">Následující fragment kódu načte kanálu předpovědi ze souboru s názvem `model.zip`.</span><span class="sxs-lookup"><span data-stu-id="1bc90-115">The code snippet below loads the prediction pipeline from a file named `model.zip`.</span></span>
 
 ```csharp
 //Create MLContext 
@@ -65,16 +65,16 @@ DataViewSchema predictionPipelineSchema;
 ITransformer predictionPipeline = mlContext.Model.Load("model.zip", out predictionPipelineSchema);
 ```
 
-## <a name="single-prediction"></a><span data-ttu-id="06399-116">Jeden predikcí</span><span class="sxs-lookup"><span data-stu-id="06399-116">Single prediction</span></span>
+## <a name="single-prediction"></a><span data-ttu-id="1bc90-116">Jeden predikcí</span><span class="sxs-lookup"><span data-stu-id="1bc90-116">Single prediction</span></span>
 
-<span data-ttu-id="06399-117">Chcete-li jeden predikcí, vytvořte [ `PredictionEngine` ](xref:Microsoft.ML.PredictionEngine%602) pomocí kanálu načíst předpovědi.</span><span class="sxs-lookup"><span data-stu-id="06399-117">To make a single prediction, create a [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) using the loaded prediction pipeline.</span></span>
+<span data-ttu-id="1bc90-117">Chcete-li jeden predikcí, vytvořte [ `PredictionEngine` ](xref:Microsoft.ML.PredictionEngine%602) pomocí kanálu načíst předpovědi.</span><span class="sxs-lookup"><span data-stu-id="1bc90-117">To make a single prediction, create a [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) using the loaded prediction pipeline.</span></span>
 
 ```csharp
 // Create PredictionEngines
 PredictionEngine<HousingData, HousingPrediction> predictionEngine = mlContext.Model.CreatePredictionEngine<HousingData, HousingPrediction>(predictionPipeline);
 ```
 
-<span data-ttu-id="06399-118">Potom použijte [ `Predict` ](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) metoda a předejte jí vstupní data jako parametr.</span><span class="sxs-lookup"><span data-stu-id="06399-118">Then, use the [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) method and pass in your input data as a parameter.</span></span> <span data-ttu-id="06399-119">Všimněte si, že při použití [ `Predict` ](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) metoda nevyžaduje, aby vstupem bude [ `IDataView` ](xref:Microsoft.ML.IDataView)).</span><span class="sxs-lookup"><span data-stu-id="06399-119">Notice that using the [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) method does not require the input to be an [`IDataView`](xref:Microsoft.ML.IDataView)).</span></span> <span data-ttu-id="06399-120">Je to proto, že jednoduše internalizes manipulaci s typem vstupních dat, můžete předat objekt typu vstupní data.</span><span class="sxs-lookup"><span data-stu-id="06399-120">This is because it conveniently internalizes the input data type manipulation so you can pass in an object of the input data type.</span></span> <span data-ttu-id="06399-121">Kromě toho od `CurrentPrice` je cíl nebo popisek se snažíte předpovědět pomocí nových dat, se předpokládá, že neexistuje žádná hodnota pro něj v tuto chvíli.</span><span class="sxs-lookup"><span data-stu-id="06399-121">Additionally, since `CurrentPrice` is the target or label you're trying to predict using new data, it's assumed there is no value for it at the moment.</span></span>
+<span data-ttu-id="1bc90-118">Potom použijte [ `Predict` ](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) metoda a předejte jí vstupní data jako parametr.</span><span class="sxs-lookup"><span data-stu-id="1bc90-118">Then, use the [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) method and pass in your input data as a parameter.</span></span> <span data-ttu-id="1bc90-119">Všimněte si, že při použití [ `Predict` ](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) metoda nevyžaduje, aby vstupem bude [ `IDataView` ](xref:Microsoft.ML.IDataView)).</span><span class="sxs-lookup"><span data-stu-id="1bc90-119">Notice that using the [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) method does not require the input to be an [`IDataView`](xref:Microsoft.ML.IDataView)).</span></span> <span data-ttu-id="1bc90-120">Je to proto, že jednoduše internalizes manipulaci s typem vstupních dat, můžete předat objekt typu vstupní data.</span><span class="sxs-lookup"><span data-stu-id="1bc90-120">This is because it conveniently internalizes the input data type manipulation so you can pass in an object of the input data type.</span></span> <span data-ttu-id="1bc90-121">Kromě toho od `CurrentPrice` je cíl nebo popisek se snažíte předpovědět pomocí nových dat, se předpokládá, že neexistuje žádná hodnota pro něj v tuto chvíli.</span><span class="sxs-lookup"><span data-stu-id="1bc90-121">Additionally, since `CurrentPrice` is the target or label you're trying to predict using new data, it's assumed there is no value for it at the moment.</span></span>
 
 ```csharp
 // Input Data
@@ -88,11 +88,11 @@ HousingData inputData = new HousingData
 HousingPrediction prediction = predictionEngine.Predict(inputData);
 ```
 
-<span data-ttu-id="06399-122">Pokud přistupujete `Score` vlastnost `prediction` objekt, měli byste získat hodnotu podobný `150079`.</span><span class="sxs-lookup"><span data-stu-id="06399-122">If you access the `Score` property of the `prediction` object, you should get a value similar to `150079`.</span></span>
+<span data-ttu-id="1bc90-122">Pokud přistupujete `Score` vlastnost `prediction` objekt, měli byste získat hodnotu podobný `150079`.</span><span class="sxs-lookup"><span data-stu-id="1bc90-122">If you access the `Score` property of the `prediction` object, you should get a value similar to `150079`.</span></span>
 
-## <a name="batch-prediction"></a><span data-ttu-id="06399-123">Predikce služby batch</span><span class="sxs-lookup"><span data-stu-id="06399-123">Batch prediction</span></span>
+## <a name="batch-prediction"></a><span data-ttu-id="1bc90-123">Predikce služby batch</span><span class="sxs-lookup"><span data-stu-id="1bc90-123">Batch prediction</span></span>
 
-<span data-ttu-id="06399-124">Daný následující data, načtení do [ `IDataView` ](xref:Microsoft.ML.IDataView).</span><span class="sxs-lookup"><span data-stu-id="06399-124">Given the following data, load it into an [`IDataView`](xref:Microsoft.ML.IDataView).</span></span> <span data-ttu-id="06399-125">Protože `CurrentPrice` je cíl nebo popisek se snažíte předpovědět pomocí nových dat, se předpokládá, že neexistuje žádná hodnota pro něj v tuto chvíli.</span><span class="sxs-lookup"><span data-stu-id="06399-125">Because `CurrentPrice` is the target or label you're trying to predict using new data, it's assumed there is no value for it at the moment.</span></span>
+<span data-ttu-id="1bc90-124">Daný následující data, načtení do [ `IDataView` ](xref:Microsoft.ML.IDataView).</span><span class="sxs-lookup"><span data-stu-id="1bc90-124">Given the following data, load it into an [`IDataView`](xref:Microsoft.ML.IDataView).</span></span> <span data-ttu-id="1bc90-125">V tomto případě, název [ `IDataView` ](xref:Microsoft.ML.IDataView) je `inputData`.</span><span class="sxs-lookup"><span data-stu-id="1bc90-125">In this case, the name of the [`IDataView`](xref:Microsoft.ML.IDataView) is `inputData`.</span></span> <span data-ttu-id="1bc90-126">Protože `CurrentPrice` je cíl nebo popisek se snažíte předpovědět pomocí nových dat, se předpokládá, že neexistuje žádná hodnota pro něj v tuto chvíli.</span><span class="sxs-lookup"><span data-stu-id="1bc90-126">Because `CurrentPrice` is the target or label you're trying to predict using new data, it's assumed there is no value for it at the moment.</span></span>
 
 ```csharp
 // Actual data
@@ -116,24 +116,24 @@ HousingData[] housingData = new HousingData[]
 };
 ```
 
-<span data-ttu-id="06399-126">Potom použijte [ `Transform` ](xref:Microsoft.ML.ITransformer.Transform*) metody pro použití transformace dat a generovat předpovědi.</span><span class="sxs-lookup"><span data-stu-id="06399-126">Then, use the [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) method to apply the data transformations and generate predictions.</span></span>
+<span data-ttu-id="1bc90-127">Potom použijte [ `Transform` ](xref:Microsoft.ML.ITransformer.Transform*) metody pro použití transformace dat a generovat předpovědi.</span><span class="sxs-lookup"><span data-stu-id="1bc90-127">Then, use the [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) method to apply the data transformations and generate predictions.</span></span>
 
 ```csharp
 // Predicted Data
 IDataView predictions = predictionPipeline.Transform(inputData);
 ```
 
-<span data-ttu-id="06399-127">Zkontrolujte predikované hodnoty pomocí [ `GetColumn` ](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) metody.</span><span class="sxs-lookup"><span data-stu-id="06399-127">Inspect the predicted values by using the [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) method.</span></span>
+<span data-ttu-id="1bc90-128">Zkontrolujte predikované hodnoty pomocí [ `GetColumn` ](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) metody.</span><span class="sxs-lookup"><span data-stu-id="1bc90-128">Inspect the predicted values by using the [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) method.</span></span>
 
 ```csharp
 // Get Predictions
 float[] scoreColumn = predictions.GetColumn<float>("Score").ToArray();
 ```
 
-<span data-ttu-id="06399-128">Predikované hodnoty ve sloupci skóre by měl vypadat nějak takto:</span><span class="sxs-lookup"><span data-stu-id="06399-128">The predicted values in the score column should look like the following:</span></span>
+<span data-ttu-id="1bc90-129">Predikované hodnoty ve sloupci skóre by měl vypadat nějak takto:</span><span class="sxs-lookup"><span data-stu-id="1bc90-129">The predicted values in the score column should look like the following:</span></span>
 
-| <span data-ttu-id="06399-129">Zjišťování</span><span class="sxs-lookup"><span data-stu-id="06399-129">Observation</span></span> | <span data-ttu-id="06399-130">Předpověď</span><span class="sxs-lookup"><span data-stu-id="06399-130">Prediction</span></span> |
+| <span data-ttu-id="1bc90-130">Zjišťování</span><span class="sxs-lookup"><span data-stu-id="1bc90-130">Observation</span></span> | <span data-ttu-id="1bc90-131">Předpověď</span><span class="sxs-lookup"><span data-stu-id="1bc90-131">Prediction</span></span> |
 |---|---|
-| <span data-ttu-id="06399-131">1</span><span class="sxs-lookup"><span data-stu-id="06399-131">1</span></span> | <span data-ttu-id="06399-132">144638.2</span><span class="sxs-lookup"><span data-stu-id="06399-132">144638.2</span></span> |
-| <span data-ttu-id="06399-133">2</span><span class="sxs-lookup"><span data-stu-id="06399-133">2</span></span> | <span data-ttu-id="06399-134">150079.4</span><span class="sxs-lookup"><span data-stu-id="06399-134">150079.4</span></span> |
-| <span data-ttu-id="06399-135">3</span><span class="sxs-lookup"><span data-stu-id="06399-135">3</span></span> | <span data-ttu-id="06399-136">107789.8</span><span class="sxs-lookup"><span data-stu-id="06399-136">107789.8</span></span> |
+| <span data-ttu-id="1bc90-132">1</span><span class="sxs-lookup"><span data-stu-id="1bc90-132">1</span></span> | <span data-ttu-id="1bc90-133">144638.2</span><span class="sxs-lookup"><span data-stu-id="1bc90-133">144638.2</span></span> |
+| <span data-ttu-id="1bc90-134">2</span><span class="sxs-lookup"><span data-stu-id="1bc90-134">2</span></span> | <span data-ttu-id="1bc90-135">150079.4</span><span class="sxs-lookup"><span data-stu-id="1bc90-135">150079.4</span></span> |
+| <span data-ttu-id="1bc90-136">3</span><span class="sxs-lookup"><span data-stu-id="1bc90-136">3</span></span> | <span data-ttu-id="1bc90-137">107789.8</span><span class="sxs-lookup"><span data-stu-id="1bc90-137">107789.8</span></span> |
