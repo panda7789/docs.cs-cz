@@ -6,12 +6,12 @@ f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: be60593ea5339db700140a6c7fb3fbd17af92912
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 349cbf4e918d97a5a2a5c1e873d7fa114be8e2db
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063795"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306625"
 ---
 # <a name="nameof-c-reference"></a>nameof (referenční dokumentace jazyka C#)
 
@@ -151,4 +151,4 @@ Další informace najdete v tématu [výrazy Nameof](~/_csharplang/spec/expressi
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [typeof](../../../csharp/language-reference/keywords/typeof.md)
+- [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator)

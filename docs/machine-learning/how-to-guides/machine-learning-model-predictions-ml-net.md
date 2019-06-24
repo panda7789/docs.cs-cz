@@ -1,16 +1,16 @@
 ---
 title: Ujistěte se, předpovědi s trénovaného modelu
 description: Naučte se vytvářet predikce na trénovaného modelu
-ms.date: 05/03/2019
+ms.date: 06/20/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: dac3b3bfa68776975a2e5e762f46db16e39d61fb
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: ef2b22ff220d1fce1ec43f26c7d51f7e551e038d
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65066175"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307401"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>Ujistěte se, předpovědi s trénovaného modelu
 
@@ -92,7 +92,7 @@ Pokud přistupujete `Score` vlastnost `prediction` objekt, měli byste získat h
 
 ## <a name="batch-prediction"></a>Predikce služby batch
 
-Daný následující data, načtení do [ `IDataView` ](xref:Microsoft.ML.IDataView). Protože `CurrentPrice` je cíl nebo popisek se snažíte předpovědět pomocí nových dat, se předpokládá, že neexistuje žádná hodnota pro něj v tuto chvíli.
+Daný následující data, načtení do [ `IDataView` ](xref:Microsoft.ML.IDataView). V tomto případě, název [ `IDataView` ](xref:Microsoft.ML.IDataView) je `inputData`. Protože `CurrentPrice` je cíl nebo popisek se snažíte předpovědět pomocí nových dat, se předpokládá, že neexistuje žádná hodnota pro něj v tuto chvíli.
 
 ```csharp
 // Actual data

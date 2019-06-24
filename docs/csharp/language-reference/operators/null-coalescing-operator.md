@@ -33,7 +33,7 @@ a ?? (b ?? c)
 
 `??` Operátor může být užitečné v následujících scénářích:
 
-- Ve výrazech s [podmíněné operátory s null?. a?] ](member-access-operators.md#null-conditional-operators--and-), můžete poskytnout alternativní výraz k vyhodnocení v případě, že je výsledek výrazu s operacemi null podmíněného operátoru nulového sjednocení `null`:
+- Ve výrazech s [podmíněné operátory s null?. a ?[]](member-access-operators.md#null-conditional-operators--and-), můžete poskytnout alternativní výraz k vyhodnocení v případě, že je výsledek výrazu s operacemi null podmíněného operátoru nulového sjednocení `null`:
 
   [!code-csharp-interactive[with null-conditional](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullConditional)]
 
@@ -61,5 +61,5 @@ Další informace najdete v tématu [null operátor sloučení](~/_csharplang/sp
 
 - [C#referenční dokumentace](../index.md)
 - [Operátory jazyka C#](index.md)
-- [?. a? operátory]](member-access-operators.md#null-conditional-operators--and-)
+- [?. a ?[] operátory](member-access-operators.md#null-conditional-operators--and-)
 - [?: – operátor](conditional-operator.md)

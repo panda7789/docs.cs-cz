@@ -4,12 +4,12 @@ description: Zjistěte, jak hostitele modulu runtime .NET Core z nativního kód
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5b783bf7a5da55a3b5dada8ed024069f5fe3d3ba
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 6cddb6fa7dcd7a7d050749c26249f1f5d876322d
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267859"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306194"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Vytvořit vlastního hostitele řídit modul .NET runtime z nativního kódu .NET Core
 
@@ -65,9 +65,11 @@ Modul runtime delegáta je volána k načtení spravovaného sestavení a získ�
 [!code-cpp[HostFxrHost#LoadAndGet](~/samples/core/hosting/HostWithHostFxr/src/NativeHost/nativehost.cpp#LoadAndGet)]
 
 Předáním `nullptr` jako delegát název typu při volání metody delegáta modulu runtime, ukázka používá výchozí podpis pro spravované metody:
-```C#
+
+```csharp
 public delegate int ComponentEntryPoint(IntPtr args, int sizeBytes);
 ```
+
 Jiný podpis je možné tak, že zadáte název delegáta typu při volání metody delegáta modulu runtime.
 
 ### <a name="step-4---run-managed-code"></a>Krok 4 – spuštění spravovaného kódu.

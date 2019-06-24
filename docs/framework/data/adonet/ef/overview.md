@@ -2,12 +2,12 @@
 title: Přehled Entity Framework
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: c79055adc2be12a5806fe5e8ff129b6ecd3d76f5
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: e6c96326991c6f883ad670393bb5c2691f8ad29e
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880023"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307346"
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 
@@ -39,7 +39,7 @@ Mapování a model úložiště můžete změnit podle potřeby a bez nutnosti z
 ## <a name="map-objects-to-data"></a>Map – objekty k datům
  Objektově orientované programování představuje výzvu pro interakci s dat úložných systémů. I když organizace třídy často zrcadlí uspořádání tabulek relační databáze, přizpůsobit není ideální. Více normalizované tabulky často odpovídají jedné třídy a vztahy mezi třídami jsou často reprezentované jinak než jsou reprezentovány relace mezi tabulkami. Například k reprezentaci zákazníka pro prodejní objednávky `Order` použít vlastnost, která obsahuje odkaz na instanci třídy `Customer` třídy, při `Order` řádek tabulky v databázi obsahuje sloupec cizího klíče (nebo sadu sloupců) s hodnotou, která odpovídá hodnoty primárního klíče `Customer` tabulky. A `Customer` třída může mít vlastnost s názvem `Orders` , který obsahuje kolekci instancí `Order` třídy, zatímco `Customer` nemá srovnatelné sloupec tabulky v databázi. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Vývojářům poskytuje flexibilitu představují relace tímto způsobem, nebo lépe modelování vztahů, jako jsou reprezentovány v databázi.
 
- Existující řešení jste se pokusili překonání tohoto rozdílu, která se často nazývá "vzniklé vzájemné napětí nesoulad", pouze mapování objektově orientované třídy a vlastnosti do relační tabulky a sloupce. Namísto využití této tradiční přístup [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] mapuje relačních tabulek, sloupců a omezení cizího klíče v logických modelů entit a vztahů v konceptuálních modelech. Díky tomu větší flexibilitu v definování objektů a optimalizaci logického modelu. [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] Nástroje generovat extensible datových tříd na základě koncepčního modelu. Tyto třídy jsou částečné třídy, které je možné rozšířit pomocí další členy, které vývojář přidá. Ve výchozím nastavení třídy, které jsou generovány pro konkrétní konceptuálního modelu odvození ze základních tříd, které poskytují služby pro materializaci entity jako objekty a sledování a ukládají se změny. Vývojáři mohou pomocí těchto tříd pro práci s entitami a relacemi jako objekty související s pomocí přidružení. Vývojáři mohli také upravovat třídy, které jsou generovány pro koncepční model. Další informace najdete v tématu [práce s objekty](../../../../../docs/framework/data/adonet/ef/working-with-objects.md).
+ Existující řešení jste se pokusili překonání tohoto rozdílu, která se často nazývá "vzniklé vzájemné napětí nesoulad", pouze mapování objektově orientované třídy a vlastnosti do relační tabulky a sloupce. Namísto využití této tradiční přístup [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] mapuje relačních tabulek, sloupců a omezení cizího klíče v logických modelů entit a vztahů v konceptuálních modelech. Díky tomu větší flexibilitu v definování objektů a optimalizaci logického modelu. Nástroje modelu Entity Data Model generovat extensible datových tříd na základě koncepčního modelu. Tyto třídy jsou částečné třídy, které je možné rozšířit pomocí další členy, které vývojář přidá. Ve výchozím nastavení třídy, které jsou generovány pro konkrétní konceptuálního modelu odvození ze základních tříd, které poskytují služby pro materializaci entity jako objekty a sledování a ukládají se změny. Vývojáři mohou pomocí těchto tříd pro práci s entitami a relacemi jako objekty související s pomocí přidružení. Vývojáři mohli také upravovat třídy, které jsou generovány pro koncepční model. Další informace najdete v tématu [práce s objekty](../../../../../docs/framework/data/adonet/ef/working-with-objects.md).
 
 ## <a name="access-and-change-entity-data"></a>Přístup a změny dat entity
 
@@ -47,7 +47,7 @@ Víc než jenom další řešení objektově relační mapování [!INCLUDE[adon
 
 - [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]. Poskytuje podporu Language-Integrated Query (LINQ) pro dotazování na typy entit, které jsou definované v konceptuálním modelu. Další informace najdete v tématu [technologii LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).
 
-- [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Nezávislý na úložišti dialekt SQL, který pracuje přímo s entitami v konceptuálním modelu, které podporují [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] koncepty. [!INCLUDE[esql](../../../../../includes/esql-md.md)] se používá současně s dotazy objektu a dotazy, které jsou spouštěny pomocí zprostředkovatel EntityClient. Další informace najdete v tématu [přehled Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md).
+- [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialekt SQL, který pracuje přímo s entitami v konceptuálním modelu a koncepty modelu Entity Data Model, který podporuje nezávislý na úložišti. [!INCLUDE[esql](../../../../../includes/esql-md.md)] se používá současně s dotazy objektu a dotazy, které jsou spouštěny pomocí zprostředkovatel EntityClient. Další informace najdete v tématu [přehled Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md).
 
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje zprostředkovatel EntityClient data. Tento zprostředkovatel spravuje připojení, překládá dotazy entity do dotazy specifická pro zdroj dat a vrátí čtecí modul dat, který [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] používá sloučit entity data do objektů. Když materializace objektů není vyžadována, zprostředkovatel EntityClient lze také jako standardní zprostředkovatele dat ADO.NET povolením spouštět [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazuje a využívat čtecí modul vrácený dat jen pro čtení. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).
 
@@ -55,7 +55,7 @@ Následující diagram znázorňuje, [!INCLUDE[adonet_ef](../../../../../include
 
 ![Diagram architektury entity Framework](../../../../../docs/framework/data/adonet/ef/media/wd-efarchdiagram.gif "wd_EFArchDiagram")
 
-[!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] Nástroje můžete vygenerovat třídu odvozenou z `System.Data.Objects.ObjectContext` nebo `System.Data.Entity.DbContext` , který představuje kontejner entit v konceptuálním modelu. Tento objekt kontextu poskytuje funkce pro sledování změn a správu identit, souběžnost a vztahy. Tato třída také poskytuje `SaveChanges` metody, která zapisuje operace vložení, aktualizace a odstranění ke zdroji dat. Jako jsou dotazy se změny provedou buď příkazy automaticky generovány v systému nebo uložené procedury, které jsou určeny vývojáře.
+Nástroje Entity Data Model můžete vygenerovat třídu odvozenou z `System.Data.Objects.ObjectContext` nebo `System.Data.Entity.DbContext` , který představuje kontejner entit v konceptuálním modelu. Tento objekt kontextu poskytuje funkce pro sledování změn a správu identit, souběžnost a vztahy. Tato třída také poskytuje `SaveChanges` metody, která zapisuje operace vložení, aktualizace a odstranění ke zdroji dat. Jako jsou dotazy se změny provedou buď příkazy automaticky generovány v systému nebo uložené procedury, které jsou určeny vývojáře.
 
 ## <a name="data-providers"></a>Zprostředkovatelé dat
 

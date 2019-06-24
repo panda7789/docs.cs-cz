@@ -10,12 +10,12 @@ helpviewer_keywords:
 - types [C#], explicit numeric conversions
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
-ms.openlocfilehash: 90691ae0d9de35831b7b3119493e4e9cd81720e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 22482a8f55cdb53f9826fbcc850992e20b7a8feb
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661721"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306620"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>Tabulka explicitních číselných převodů (referenční dokumentace jazyka C#)
 
@@ -66,10 +66,9 @@ V následující tabulce jsou uvedeny předdefinované explicitní převody mezi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#referenční dokumentace](../index.md)
 - [Přetypování a převody typu](../../programming-guide/types/casting-and-type-conversions.md)
-- [() – operátor](../operators/invocation-operator.md)
+- [() – operátor](../operators/type-testing-and-conversion-operators.md#cast-operator-)
 - [Tabulka celočíselných typů](integral-types-table.md)
 - [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)

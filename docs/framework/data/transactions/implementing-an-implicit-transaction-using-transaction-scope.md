@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49d1706a-1e0c-4c85-9704-75c908372eb9
-ms.openlocfilehash: e9e5e09bdde82c7b818fd47275bdbfeda5850682
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f45019ccc54056371954965e105e309fd41d9ffd
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645759"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306219"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakce s využitím oboru transakcí
 <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
@@ -124,7 +124,9 @@ using(TransactionScope scope1 = new TransactionScope())
  Příklad ukazuje bloku kódu, bez jakékoli okolí transakce vytváření nového oboru (`scope1`) s <xref:System.Transactions.TransactionScopeOption.Required>. Rozsah `scope1` je kořenového oboru, který ji vytvoří novou transakci (transakce A) a usnadňuje transakce A okolí transakce. `Scope1` poté vytvoří tři více objektů s jiným <xref:System.Transactions.TransactionScopeOption> hodnotu. Můžete například `scope2` je vytvořen s <xref:System.Transactions.TransactionScopeOption.Required>, a vzhledem k tomu, že existuje okolí transakce, spojení první transakce vytvořené `scope1`. Všimněte si, že `scope3` kořenového oboru novou transakci a že je `scope4` nemá žádné okolí transakce.  
   
  I když ve výchozím nastavení a většinu běžně používá hodnotu <xref:System.Transactions.TransactionScopeOption> je <xref:System.Transactions.TransactionScopeOption.Required>, všechny ostatní hodnoty, má své jedinečné účel.  
-  
+
+### <a name="non-transactional-code-inside-a-transaction-scope"></a>Transakční mimo kód uvnitř oboru transakcí
+
  <xref:System.Transactions.TransactionScopeOption.Suppress> je užitečné, když chcete zachovat prováděných části kódu a nechcete, aby na zrušení okolí transakce, pokud se nezdaří operace. Například když chcete provádět protokolování nebo auditovat operace, nebo když chcete publikovat události odběratelům bez ohledu na tom, zda váš okolí potvrzení nebo přerušení transakce. Tato hodnota slouží k mít část s kódem netransakční v rámci oboru transakcí, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  

@@ -5,12 +5,12 @@ ms.date: 06/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to, title-hack-0612
-ms.openlocfilehash: b7799d19f5ad51ce509cc6872d9053cad1158552
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: d93353a3503ba67bde5fb61dc88f45d26e2f4306
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025590"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307447"
 ---
 # <a name="train-and-evaluate-a-model"></a>Trénování a vyhodnocení modelu
 
@@ -115,7 +115,7 @@ IEstimator<ITransformer> dataPrepEstimator =
 // Create data prep transformer
 ITransformer dataPrepTransformer = dataPrepEstimator.Fit(trainData);
 
-// Apply tranforms to training data
+// Apply transforms to training data
 IDataView transformedTrainingData = dataPrepTransformer.Transform(trainData);
 ```
 
@@ -136,7 +136,7 @@ var UserDefinedColumnSdcaEstimator = mlContext.Regression.Trainers.Sdca(labelCol
 Jakmile jsou data předem zpracovaných, použijte [ `Fit` ](xref:Microsoft.ML.Trainers.TrainerEstimatorBase`2.Fit*) metodu pro trénování modelu strojového učení s [ `StochasticDualCoordinateAscent` ](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) regresní algoritmus.
 
 ```csharp
-// Define StochasticDualCoodrinateAscent regression algorithm estimator
+// Define StochasticDualCoordinateAscent regression algorithm estimator
 var sdcaEstimator = mlContext.Regression.Trainers.Sdca();
 
 // Build machine learning model
@@ -159,7 +159,7 @@ var trainedModelParameters = trainedModel.Model as LinearRegressionModelParamete
 Pomoc při výběru nejvýkonnějšího modelu, je nutné vyhodnotit její výkon na testovací data. Použití [ `Evaluate` ](xref:Microsoft.ML.RegressionCatalog.Evaluate*) metoda měření různé metriky pro trénovaného modelu.
 
 > [!NOTE]
-> `Evaluate` Metoda vytvoří různých metrik v závislosti na počítač, který byl learning úloha byla provedena. Další informace najdete [ `Microsoft.ML.Data` dokumentace k rozhraní API](xref:Microsoft.ML.Data) a hledejte tříd, které obsahují `Metrics` v názvu. 
+> `Evaluate` Metoda vytváří různé požadované metriky v závislosti na počítač, který byl provést úlohu učení. Další informace najdete [ `Microsoft.ML.Data` dokumentace k rozhraní API](xref:Microsoft.ML.Data) a hledejte tříd, které obsahují `Metrics` v názvu. 
 
 ```csharp
 // Measure trained model performance

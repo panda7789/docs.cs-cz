@@ -2,12 +2,12 @@
 title: Terminologie Entity Framework
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-ms.openlocfilehash: f78545102823b19cc65b100f2b270ae71c1bd077
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 53a6888d0b32cfeb73e7254dc0778274fe6cd0eb
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877486"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306342"
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
 Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Jsou uvedeny odkazy na související témata, kde je k dispozici další informace.  
@@ -27,7 +27,7 @@ Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet
 |souběžnost|Proces, který umožňuje více uživatelům pro přístup a změnu sdílená data ve stejnou dobu. Ve výchozím nastavení [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] implementuje model optimistického řízení souběžnosti.|  
 |směr|Odkazuje na asymetrické povaze některá přidružení. Směr zadán s parametrem `FromRole` a `ToRole` atributy `NavigationProperty` nebo `ReferentialConstraint` element ve schématu.<br /><br /> Další informace najdete v tématu [Element NavigationProperty (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#navigationproperty-element-csdl) a [navigační vlastnost](../../../../../docs/framework/data/adonet/navigation-property.md).|  
 |Předběžné načítání|Proces načítání konkrétní sadu souvisejících objektů spolu s objekty, které byly výslovně požadovány v dotazu.|  
-|soubor EDMX|Soubor XML, který obsahuje koncepční model (v CSDL), model úložiště (v SSDL) a mapování mezi nimi (v MSL). Soubor .edmx vytvoří [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] nástroje. Další informace najdete v tématu [edmx soubor přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).|  
+|soubor EDMX|Soubor XML, který obsahuje koncepční model (v CSDL), model úložiště (v SSDL) a mapování mezi nimi (v MSL). Soubor .edmx vytvoří nástroje Entity Data Model. Další informace najdete v tématu [edmx soubor přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).|  
 |end|Zúčastněná entita v přidružení.<br /><br /> Další informace najdete v tématu [elementu End (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#end-element-csdl) a [end přidružení](../../../../../docs/framework/data/adonet/association-end.md).|  
 |entita|Koncept v doméně aplikace, ze kterého datový typ je definován.<br /><br /> Další informace najdete v tématu [Element EntityType (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#entitytype-element-csdl) a [typ entity](../../../../../docs/framework/data/adonet/entity-type.md).|  
 |EntityClient|Zprostředkovatele dat ADO.NET nezávislý na úložišti, který obsahuje třídy, jako například `EntityConnection`, `EntityCommand`, a `EntityDataReader`. Funguje s [!INCLUDE[esql](../../../../../includes/esql-md.md)] a připojí k úložišti konkrétního zprostředkovatele dat ADO.NET, například `SqlClient`.<br /><br /> Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).|  

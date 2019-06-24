@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 98f73ed958f8b43cd4fea700a478cf3337ea68db
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 99cf5b42700779a3eb48eb6452365056f5fa89ba
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025132"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306571"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# odkaz)
 
@@ -53,7 +53,7 @@ Jedná se o nejvyšší priorita operátorů.
 
 [nové](../keywords/new-operator.md) – typ vytváření instancí.
 
-[typeof](../keywords/typeof.md) – vrátí <xref:System.Type> objekt představující operand.
+[typeof](type-testing-and-conversion-operators.md#typeof-operator) – vrátí <xref:System.Type> objekt představující operand.
 
 [checked](../keywords/checked.md) – umožňuje pro celočíselné operace kontroly přetečení.
 
@@ -87,7 +87,7 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [--x](arithmetic-operators.md#decrement-operator---) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x je jeden méně (obvykle odečte 1 na celé číslo).
 
-[(T) x](invocation-operator.md) – typ přetypování.
+[(T) x](type-testing-and-conversion-operators.md#cast-operator-) – typ přetypování.
 
 [operátor await](../keywords/await.md) – čeká `Task`.
 
@@ -137,9 +137,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [x > = y](comparison-operators.md#greater-than-or-equal-operator-) – větší než nebo rovna hodnotě.
 
-[je](../keywords/is.md) – typ kompatibility. Vrátí true, pokud vyhodnocený levý operand může být převeden na typ určený v pravý operand (statického typu).
+[je](type-testing-and-conversion-operators.md#is-operator) – typ kompatibility. Vrátí `true` Pokud vyhodnocený levý operand může být převeden na typ určený pravého operandu.
 
-[jako](../keywords/as.md) – převod typu. Vrátí levý operand přetypování na typ určený pravý operand (statického typu), ale `as` vrátí `null` kde `(T)x` by vyvolat výjimku.
+[jako](type-testing-and-conversion-operators.md#as-operator) – převod typu. Vrátí levý operand přetypování na typ určený pravý operand, ale `as` vrátí `null` kde `(T)x` by vyvolat výjimku.
 
 ## <a name="equality-operators"></a>Operátory rovnosti
 

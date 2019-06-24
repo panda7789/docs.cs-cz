@@ -1,18 +1,18 @@
 ---
 title: = – operátor - C# odkaz
 ms.custom: seodec18
-ms.date: 11/26/2018
+ms.date: 06/21/2019
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 6b8f67f32287b18a9e4ac8f0fa822f6ca4919e7f
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: ef9c9bab5c1cebb06edf934254507180e2197349
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025262"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306568"
 ---
 # <a name="-operator-c-reference"></a>= – operátor (C# odkaz)
 
@@ -30,19 +30,37 @@ je vyhodnocen jako
 a = (b = c)
 ```
 
-Následující příklad ukazuje použití operátoru přiřazení k přiřazení hodnot k místní proměnné, vlastnosti a elementu indexeru:
+Následující příklad ukazuje použití operátoru přiřazení s místní proměnná, vlastnost a indexer elementu jako jeho operand na levé straně:
 
-[!code-csharp-interactive[assignment operator](~/samples/csharp/language-reference/operators/AssignmentExamples.cs#Assignments)]
+[!code-csharp-interactive[simple assignment](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
 
 ## <a name="ref-assignment-operator"></a>operátoru přiřazení odkazu
 
 Počínaje C# 7.3, můžete pomocí operátoru přiřazení odkazu `= ref` přiřazení [lokální proměnná podle odkazu](../keywords/ref.md#ref-locals) nebo [lokální proměnná podle odkazu jen pro čtení](../keywords/ref.md#ref-readonly-locals) proměnné. Následující příklad ukazuje použití operátoru přiřazení odkazu:
 
-[!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentExamples.cs#RefAssignment)]
+[!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
-V případě operátoru přiřazení odkazu typ levého operandu a pravý operand musí být stejné.
+V případě operátoru přiřazení odkazu typ i jeho operandy musí být stejné.
 
-Další informace najdete v tématu [Poznámka návrh funkce](../../../../_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
+Další informace najdete v tématu [Poznámka návrh funkce](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
+
+## <a name="compound-assignment"></a>Složené přiřazení
+
+Pro binární operátor `op`, výraz složeného přiřazení formuláře
+
+```csharp
+x op= y
+```
+
+je ekvivalentem
+
+```csharp
+x = x op y
+```
+
+s tím rozdílem, že `x` se jenom vyhodnotí jednou.
+
+Složené přiřazení podporuje [aritmetické](arithmetic-operators.md#compound-assignment), [logický datový typ Boolean](boolean-logical-operators.md#compound-assignment), a [bitové logické a shift](bitwise-and-shift-operators.md#compound-assignment) operátory.
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
@@ -50,7 +68,7 @@ Uživatelem definovaný typ nejde přetížit operátor přiřazení. Uživatele
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [jednoduché přiřazení](~/_csharplang/spec/expressions.md#simple-assignment) část [ C# specifikace jazyka](../language-specification/index.md).
+Další informace najdete v tématu [operátory přiřazení](~/_csharplang/spec/expressions.md#assignment-operators) část [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET C
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 674dc2d12cb8f65753730e187e13fc5e522ff6b3
-ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
+ms.openlocfilehash: a766d95c62fd3a89e3291e1ab803f5222fac46ea
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67135695"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306171"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza sentimentu komentářů k webu pomocí binární klasifikace ML.NET
 
@@ -41,7 +41,7 @@ Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/
 
 3. Nainstalujte **balíček NuGet Microsoft.ML**:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku a pak vyberte **Procházet** kartu. Vyhledejte **Microsoft.ML**, vyberte balíček a pak vyberte **nainstalovat** tlačítko. Pokračovat v instalaci souhlasí s licenční podmínky pro balíček, který si zvolíte. Totéž proveďte pro **Microsoft.ML.FastTree** balíček NuGet.
+    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku a pak vyberte **Procházet** kartu. Vyhledejte **Microsoft.ML**, vyberte balíček a pak vyberte **nainstalovat** tlačítko. Pokračujte s instalací souhlasit s licenčními podmínkami pro balíček, který zvolíte. Totéž proveďte pro **Microsoft.ML.FastTree** balíček NuGet.
 
 ## <a name="prepare-your-data"></a>Příprava dat
 

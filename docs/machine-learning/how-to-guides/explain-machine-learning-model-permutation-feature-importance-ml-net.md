@@ -5,12 +5,12 @@ ms.date: 05/02/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 51ef4b55b1518381881e57d83fd43f8ec7f786c6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 1037a1f1c21ef2c9b9a87a070a7d2003c1e76eb4
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645062"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307374"
 ---
 # <a name="explain-model-predictions-using-permutation-feature-importance"></a>Vysvětlují modelu predikce na základě důležitosti funkce permutaci
 
@@ -175,4 +175,4 @@ NearWater           |   0.000203
 PercentPopulationLivingBelowPoverty|    0.000031
 ToxicWasteLevels    |   -0.000019
 
-A podívejte se na pět nejdůležitější funkce pro tuto datovou sadu, cena house předpovídané pomocí tohoto modelu je ovlivněno umístění v blízkosti dálnice, studenty, vyučující poměr školy v oblasti, blízkosti hlavní zaměstnání centra, sazba daně vlastnost a Průměrný počet místnosti na domovské stránce.
+Podívali se do na pět nejdůležitější funkce pro tuto datovou sadu, cena house předpovídané pomocí tohoto modelu je ovlivněno umístění v blízkosti dálnice, studenty, vyučující poměr školy v oblasti, blízkosti hlavní zaměstnání centra, sazba daně vlastnost a Průměrný počet místnosti na domovské stránce.

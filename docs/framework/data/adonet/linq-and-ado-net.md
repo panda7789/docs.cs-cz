@@ -2,12 +2,12 @@
 title: LINQ a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: bfd5bb845917f9ca8ba3b154a51a946b610ca571
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a23e152d4688e840f4665e9c8d77835acb683564
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489817"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307323"
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy musí používat dva (nebo více) programovacích jazyků: jazyka vysoké úrovně pro obchodní logiku a prezentační vrstvy (jako je vizuál C# nebo Visual Basic) a dotazovací jazyk pro interakci s databází (například příkazů jazyka Transact-SQL) . To vyžaduje vývojář bude zdatní v několika jazycích, aby byl Efektivní a zároveň způsobí, že jazyk neshody ve vývojovém prostředí. Aplikace, která používá data přístup k rozhraní API při spuštění dotazu proti databázi například určuje dotaz jako řetězcový literál s použitím uvozovek. Tento řetězec dotazu bez číst kompilátoru a nepovolenou chyby, jako je například neplatnou syntaxi nebo zda skutečně existují sloupce nebo řádky, na které odkazuje. Neexistuje žádný typ kontroly parametrů dotazu a ne `IntelliSense` buď podporují.  
@@ -16,7 +16,7 @@ V současné době celá řada vývojářů firmy musí používat dva (nebo ví
   
  Přenos dat z tabulek SQL do objektů v paměti je často zdlouhavé a náchylné k chybě. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] Poskytovatele implementované [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] převede zdrojová data do <xref:System.Collections.IEnumerable>– na základě kolekcí objektů. Programátor vždy zobrazí data jako <xref:System.Collections.IEnumerable> kolekce, jak při dotazování a při aktualizaci. Úplné `IntelliSense` podpora se poskytuje pro psaní dotazů vůči těchto kolekcí.  
   
- Existují tři samostatné ADO.NET [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] technologie: [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)]. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje širší, optimalizované dotazování <xref:System.Data.DataSet> a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] umožňuje přímo dotazovat schémata databáze systému SQL Server, a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)] umožňuje dotazování [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)].  
+ Existují tři samostatné ADO.NET [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] technologie: [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)]. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje širší, optimalizované dotazování <xref:System.Data.DataSet> a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] umožňuje přímo dotazovat schémata databáze systému SQL Server, a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)] umožňuje dotazování Entity Data Model.  
   
  Následující obrázek poskytuje základní informace o tom, jak technologie ADO.NET, LINQ souvisí vysoké úrovně programovacích jazyků a zdroje dat LINQ povolena.  
   
@@ -35,9 +35,9 @@ V současné době celá řada vývojářů firmy musí používat dva (nebo ví
  S [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], vývojářům psát kód přímo proti schématu úložiště pomocí stejných [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] programovací model jako kolekce v paměti a <xref:System.Data.DataSet>, kromě jiných zdrojů dat, jako je například XML. Další informace najdete v tématu [technologie LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md).  
   
 ## <a name="linq-to-entities"></a>LINQ to Entities  
- Většina aplikací jsou aktuálně zapsaných nad rámec relačních databází. V určitém okamžiku tyto aplikace potřebovat pro interakci s daty reprezentovány ve formě relační. Databázová schémata nejsou vždy ideální pro vytváření aplikací a konceptuálních modelů aplikace nejsou stejné jako logických modelů z databází. [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] Je koncepční datový model, který slouží k modelování dat v určité doméně tak, aby aplikace můžete pracovat s daty jako objekty. Zobrazit [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) Další informace.  
+ Většina aplikací jsou aktuálně zapsaných nad rámec relačních databází. V určitém okamžiku tyto aplikace potřebovat pro interakci s daty reprezentovány ve formě relační. Databázová schémata nejsou vždy ideální pro vytváření aplikací a konceptuálních modelů aplikace nejsou stejné jako logických modelů z databází. Datový Model Entity je koncepční datový model, který slouží k modelování dat v určité doméně tak, aby aplikace můžete pracovat s daty jako objekty. Zobrazit [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) Další informace.  
   
- Až [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)], je přístupný relačních dat jako objektů v prostředí .NET. Tím je objekt vrstvy ideální cíl pro [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] podporu umožňující vývojářům formulovali dotazy na databázi z jazyk používaný k vytváření obchodní logiku. Tato schopnost je známá jako [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)]. Zobrazit [technologii LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md) Další informace.  
+ Prostřednictvím modelu Entity Data Model je přístupný relačních dat jako objektů v prostředí .NET. Tím je objekt vrstvy ideální cíl pro [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] podporu umožňující vývojářům formulovali dotazy na databázi z jazyk používaný k vytváření obchodní logiku. Tato schopnost je známá jako [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)]. Zobrazit [technologii LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md) Další informace.  
   
 ## <a name="see-also"></a>Viz také:
 

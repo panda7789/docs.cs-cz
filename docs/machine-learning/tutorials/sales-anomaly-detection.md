@@ -4,12 +4,12 @@ description: Zjistěte, jak sestavit aplikaci detekce anomálií na prodejní da
 ms.date: 06/11/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 6ea5adf79a17bb10ddea676eaea483c2cf627d82
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 3e3e368ed3bcb35e7e2c8bdf08abe71afd4ae87c
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67026046"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306229"
 ---
 # <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Kurz: Zjišťovat anomálie v prodejích s ML.NET
 
@@ -62,7 +62,7 @@ V následující tabulce je náhled dat z vašich \*souboru CSV:
 
 |Měsíc  |ProductSales |
 |-------|-------------|
-|1. leden  |    271      |
+|1\. leden  |    271      |
 |2 – leden  |    150.9    |
 |.....  |    .....    |
 |1 – únor  |    199.3    |
@@ -157,7 +157,7 @@ Přidejte následující volání `DetectSpike()`metody jako další řádek kó
 `DetectSpike()` Metoda spustí následující úlohy:
 
 * Trénovat modelu.
-* Detekuje na základě na historická data o prodeji provozní špičky.
+* Detekuje na základě historických dat prodejní provozní špičky.
 * Zobrazí výsledky.
 
 Vytvořte `DetectSpike()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:

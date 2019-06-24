@@ -6,12 +6,12 @@ ms.date: 05/01/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
-ms.openlocfilehash: e6654718f174c9d8b628b05d85d74952c222eb66
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 39e454d67f60280c6a43e3b80d788d873345ab77
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452725"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307379"
 ---
 # <a name="automated-machine-learning-with-mlnet"></a>Automatizované strojového učení s ML.NET
 
@@ -28,4 +28,4 @@ Automatizované ML je aktuálně omezená, machine Learning [úlohy](resources/t
 Existují tři způsoby, jak používat automatizované ML:
 1. Na příkazovém řádku se [ML.NET rozhraní příkazového řádku](automate-training-with-cli.md)
 1. Prostřednictvím aplikace se [automatizované ML API](how-to-guides/how-to-use-the-automl-api.md)
-1. S grafickým uživatelským rozhraním se Tvůrce modelu ML.NET
+1. S grafickým uživatelským rozhraním, pomocí Tvůrce modelu ML.NET

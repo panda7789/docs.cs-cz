@@ -2,12 +2,12 @@
 title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: ebcfec475d20492f5ce1f971163544d9faa52223
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8b34336871d599b72e548e2db90487c17377ba66
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613767"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307181"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  
@@ -42,7 +42,7 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
 ## <a name="expression-not-queryable"></a>Výraz není dotazovatelné  
  Pokud se zobrazí "výraz [výrazu] není dotazovatelné; chybí vám odkaz na sestavení?" Chyba, ujistěte se, že z následujících akcí:  
   
-- Vaše aplikace cílí [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)].  
+- Vaše aplikace cílí na rozhraní .NET Compact Framework 3.5.  
   
 - Budete mít odkaz na `System.Core.dll` a `System.Data.Linq.dll`.  
   

@@ -2,12 +2,12 @@
 title: NAVIGATE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: f107f29d-005f-4e39-a898-17f163abb1d0
-ms.openlocfilehash: 993c07b824d30c89773c5cfea90c7c194c6b3869
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ce88cecf210d8b3cf541fe7e870e19a59e344ec
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760412"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307326"
 ---
 # <a name="navigate-entity-sql"></a>NAVIGATE (Entity SQL)
 
@@ -35,7 +35,7 @@ Pokud Kardinalita do konce je 1, bude návratovou hodnotou `Ref<T>`. Pokud se Ka
 
 ## <a name="remarks"></a>Poznámky
 
-Relace jsou prvotřídní konstrukce v [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] (EDM). Vztah lze navázat mezi dva nebo více typů entit a uživatelé mohou přejít přes vztah konce (entita). `from` a `to` jsou podmíněně volitelné, pokud nedochází k nejednoznačnosti v překlad v rámci relace.
+Relace jsou prvotřídní konstrukce v modelu Entity Data Model (EDM). Vztah lze navázat mezi dva nebo více typů entit a uživatelé mohou přejít přes vztah konce (entita). `from` a `to` jsou podmíněně volitelné, pokud nedochází k nejednoznačnosti v překlad v rámci relace.
 
 NAVIGOVAT je platný v prostoru O a C.
 

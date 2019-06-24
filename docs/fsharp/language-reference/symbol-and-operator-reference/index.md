@@ -2,12 +2,12 @@
 title: Referenční dokumentace symbolů a operátorů
 description: Další informace o symbolů a operátorů, které se používají v F# programovací jazyk.
 ms.date: 02/11/2019
-ms.openlocfilehash: 0ea8337a9055c8df639fe6abdb6c79445d189d64
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 14ea7a66f7e9a79d24b62a4aa0564eecb891ee1a
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490813"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306190"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
@@ -47,7 +47,7 @@ Následující tabulka popisuje symboly použité v F# jazyka, obsahuje odkazy n
 |`+?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Přidá levé a pravé straně, když pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
 |`,`|[Řazené kolekce členů](../tuples.md)|<ul><li>Odděluje prvky řazené kolekce členů, nebo parametr typu.<br /></li></ul>|
 |`-`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Pokud se použije jako binární operátor odečte od levého okraje pravé straně.<br /></li><li>Pokud se použije jako unární operátor provádí operaci negace.<br /></li></ul>|
-|`-`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Odečte od levého okraje pravé straně po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
+|`-?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Odečte od levého okraje pravé straně po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
 |`->`|[Funkce](../functions/index.md)<br /><br />[Výrazy shody](../match-expressions.md)|<ul><li>Ve funkci typy, vymezuje argumenty a návratové hodnoty.<br /></li><li>Výsledkem výrazu (ve výrazech pořadí); ekvivalentní `yield` – klíčové slovo.<br /></li><li>Použít ve výrazech porovnání<br /></li></ul>|
 |`.`|[Členové](../members/index.md)<br /><br />[Primitivní typy](../primitive-types.md)|<ul><li>Zpřístupňuje člen a odděluje jednotlivé názvy v plně kvalifikovaném názvu.<br /></li><li>Určuje desetinné čárky v plovoucí desetinnou čárkou.<br /></li></ul>|
 |`..`|[Smyčky: `for...in` Výraz](../loops-for-in-expression.md)|<ul><li>Určuje rozsah.<br /></li></ul>|

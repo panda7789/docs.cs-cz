@@ -6,16 +6,16 @@ helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: bb6b39c645d49554214a8a013cc849fe0ebcb40a
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 2e81628930afaca62a8614df8ca0f458238c23d6
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267708"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306350"
 ---
 # <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>Postupy: bezpečné vícesměrového vysílání pomocí porovnávání vzorů a je a jako operátory
 
-Protože objekty jsou polymorfní, je možné pro proměnné typu základní třídy pro uložení odvozený [typ](../programming-guide/types/index.md). Pro přístup ke členům instance odvozeného typu, je potřeba [přetypování](../programming-guide/types/casting-and-type-conversions.md) hodnotu zpět na odvozeného typu. Však přetypování vytvoří riziko vyvolání <xref:System.InvalidCastException>. Jazyk C# poskytuje [porovnávání vzorů](../pattern-matching.md) příkazy, které provést přetypování podmíněně jenom v případě, že proběhne úspěšně. C# obsahuje také [je](../language-reference/keywords/is.md) a [jako](../language-reference/keywords/as.md) operátory, který testuje, jestli je hodnota určitého typu.
+Protože objekty jsou polymorfní, je možné pro proměnné typu základní třídy pro uložení odvozený [typ](../programming-guide/types/index.md). Pro přístup ke členům instance odvozeného typu, je potřeba [přetypování](../programming-guide/types/casting-and-type-conversions.md) hodnotu zpět na odvozeného typu. Však přetypování vytvoří riziko vyvolání <xref:System.InvalidCastException>. Jazyk C# poskytuje [porovnávání vzorů](../pattern-matching.md) příkazy, které provést přetypování podmíněně jenom v případě, že proběhne úspěšně. C# obsahuje také [je](../language-reference/operators/type-testing-and-conversion-operators.md#is-operator) a [jako](../language-reference/operators/type-testing-and-conversion-operators.md#as-operator) operátory, který testuje, jestli je hodnota určitého typu.
 
 Následující kód ukazuje porovnávání vzorů `is` příkazu. Obsahuje metody, které testují argumentu metody k určení, pokud je jedním z možných sadu odvozené typy:
 

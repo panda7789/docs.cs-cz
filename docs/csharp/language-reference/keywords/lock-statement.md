@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 6bf53cba73c4d7331b2a1c68bf7187c13281d844
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c7d5d4ef7d812e186813cd08f9e4e2adf2ab1a58
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633450"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306658"
 ---
 # <a name="lock-statement-c-reference"></a>Lock – příkaz (referenční dokumentace jazyka C#)
 
@@ -54,7 +54,7 @@ Nelze použít [await](await.md) – klíčové slovo v textu `lock` příkazu.
 Při synchronizaci přístupu vláken ke sdíleným prostředkům uzamčení na instanci vyhrazené objektu (například `private readonly object balanceLock = new object();`) nebo do jiné instance, která pravděpodobně nebude používat jako objekt zámek nesouvisejících částí kódu. Vyhněte se použití stejné instance objektu zámku pro různé sdílené prostředky, protože může dojít k zablokování nebo lock kolize. Konkrétně se vyhněte se použití následujících jako objekty zámku:
 
 - `this`, jak ho můžou používat volající jako zámek.
-- <xref:System.Type> instance, jako ty, může získat službou [typeof](typeof.md) operátor nebo reflexe.
+- <xref:System.Type> instance, jako ty, může získat službou [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) operátor nebo reflexe.
 - řetězec instance, včetně řetězcové literály, protože ty můžou být [internovány](/dotnet/api/system.string.intern#remarks).
 
 ## <a name="example"></a>Příklad

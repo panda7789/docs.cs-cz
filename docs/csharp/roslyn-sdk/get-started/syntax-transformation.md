@@ -3,12 +3,12 @@ title: Začínáme s syntaxe transformace (rozhraní Roslyn API)
 description: Úvod do procházení, dotazování a procházení stromu syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 3ca6ba19f84366b4e1f74ac4a0dea1edef3cee05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbd56f445a9f06b530a7d094b06f60e6123788da
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675893"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306920"
 ---
 # <a name="get-started-with-syntax-transformation"></a>Začínáme s syntaxe transformace
 
@@ -30,7 +30,7 @@ Zvolte jednu ze dvou strategií pro syntaxe transformace. **Metody pro vytváře
 
 První transformace syntaxe ukazuje metody pro vytváření objektů. Chystáte se nahradit `using System.Collections;` příkazem `using System.Collections.Generic;` příkazu. Tento příklad ukazuje, jak vytvořit <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> objektů pomocí <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody pro vytváření objektů. Pro každý typ z **uzel**, **token**, nebo **triviální prvek** je metoda factory, který vytvoří instanci daného typu. Při vytváření stromu syntaxe vytváření uzly hierarchicky způsobem zdola nahoru. Potom budete transformace existující program nahrazujete stávající uzly s větve, které jste vytvořili.
 
-Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#** > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na **OK**.
+Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#**  > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na **OK**.
 
 Tento projekt používá <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody k vytvoření třídy <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> představující `System.Collections.Generic` oboru názvů.
 
@@ -63,7 +63,7 @@ Spusťte program znovu, abyste viděli, že jste při vytváření stromu pro k�
 
 ### <a name="create-a-modified-tree"></a>Vytvořte upravenou stromu
 
-Začlenění stromu syntaxe. malé, který obsahuje jeden příkaz. Rozhraní API k vytvoření nové uzly jsou správná volba pro vytvoření jednotlivé příkazy nebo jiných malých blocích kódu. Ale pokud chcete sestavit větší bloky kódu, byste měli použít metody, které nahradí uzly nebo vložit uzlů do stávající strom. Mějte na paměti, že jsou neměnné stromu syntaxe. **Syntaxe API** neposkytuje žádný mechanismus pro úpravu existující stromu syntaxe. Po vytvoření. Místo toho poskytuje metody, které vytvářejí nové stromové struktury podle změn do existující aplikace. `With*` metody jsou definované v konkrétních tříd, které jsou odvozeny z <xref:Microsoft.CodeAnalysis.SyntaxNode> nebo v rozšiřující metody deklarované v <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions> třídy. Tyto metody vytvoří nový uzel s použitím změn na stávající uzel podřízené vlastnosti. Kromě toho <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> metody rozšíření lze použít k nahrazení potomka uzlu v podstrom. Tato metoda také aktualizuje nadřazené tak, aby odkazoval na nově vytvořený podřízenou položku a opakuje tento postup se celý strom - tento proces se označuje jako _re spining_ stromu.
+Začlenění stromu syntaxe. malé, který obsahuje jeden příkaz. Rozhraní API k vytvoření nové uzly jsou správná volba pro vytvoření jednotlivé příkazy nebo jiných malých blocích kódu. Ale pokud chcete sestavit větší bloky kódu, byste měli použít metody, které nahradí uzly nebo vložit uzlů do stávající strom. Mějte na paměti, že jsou neměnné stromu syntaxe. **Syntaxe API** neposkytuje žádný mechanismus pro úpravu existující stromu syntaxe. Po vytvoření. Místo toho poskytuje metody, které vytvářejí nové stromové struktury podle změn do existující aplikace. `With*` metody jsou definované v konkrétních tříd, které jsou odvozeny z <xref:Microsoft.CodeAnalysis.SyntaxNode> nebo v rozšiřující metody deklarované v <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions> třídy. Tyto metody vytvoří nový uzel s použitím změn na stávající uzel podřízené vlastnosti. Kromě toho <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> metody rozšíření lze použít k nahrazení potomka uzlu v podstrom. Tato metoda také aktualizuje nadřazené tak, aby odkazoval na nově vytvořený podřízenou položku a opakuje tento postup se celý strom - tento proces se označuje jako _znovu na otáčejících_ stromu.
 
 Dalším krokem je vytvoření stromu, který představuje celou (malé) program a potom ho změnit. Přidejte následující kód do začátku `Program` třídy:
 
@@ -94,7 +94,7 @@ Spusťte program znovu. Tentokrát stromu nyní správně importuje `System.Coll
 
 `With*` a <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> metody poskytují pohodlný způsob, jak transformovat jednotlivých větvích stromu syntaxe. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> Třída provádí více transformací ve stromu syntaxe. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> Třída je podtřídou třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor%601?displayProperty=nameWithType>. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> Platí pro konkrétní typ transformace <xref:Microsoft.CodeAnalysis.SyntaxNode>. Transformace můžete aplikovat více typů <xref:Microsoft.CodeAnalysis.SyntaxNode> objekty bez ohledu na to jsou uvedeny ve stromu syntaxe. Druhý projekt v tomto rychlém startu se vytvoří příkazového řádku refaktoring, který odebere explicitní typy v místní deklarace proměnných, které by bylo možné použít kdekoli, který odvození typu.
 
-Vytvoření nového jazyka C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, klikněte pravým tlačítkem myši `SyntaxTransformationQuickStart` uzel řešení. Zvolte **přidat** > **nový projekt** zobrazíte **dialogu Nový projekt**. V části **Visual C#** > **rozšiřitelnost**, zvolte **samostatný nástroj pro analýzu kódu**. Pojmenujte svůj projekt `TransformationCS` a klikněte na tlačítko OK.
+Vytvoření nového jazyka C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, klikněte pravým tlačítkem myši `SyntaxTransformationQuickStart` uzel řešení. Zvolte **přidat** > **nový projekt** zobrazíte **dialogu Nový projekt**. V části **Visual C#**  > **rozšiřitelnost**, zvolte **samostatný nástroj pro analýzu kódu**. Pojmenujte svůj projekt `TransformationCS` a klikněte na tlačítko OK.
 
 Prvním krokem je vytvoření třídy, která je odvozena z <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> provádět transformaci. Přidejte nový soubor třídy do projektu. V sadě Visual Studio, zvolte **projektu** > **přidat třídu...** . V **přidat novou položku** typ dialogu `TypeInferenceRewriter.cs` jako název souboru.
 
@@ -112,7 +112,7 @@ Přidejte následující kód, chcete-li deklarovat soukromé pole jen pro čten
 
 Přepsat <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> metody:
 
-```C#
+```csharp
 public override SyntaxNode VisitLocalDeclarationStatement(LocalDeclarationStatementSyntax node)
 {
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 43434b08d7eecde2a35ee3822d36c6da3a700c20
-ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
+ms.openlocfilehash: f053a74fcb87971506b83ca8ca2076517ddddf56
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151969"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307108"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor slouží k inicializaci žádný [statické](../../../csharp/language-reference/keywords/static.md) data, nebo k provedení konkrétní akce, kterou je potřeba provést pouze jednou. Je volána automaticky před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy.  
@@ -35,7 +35,7 @@ Statické konstruktory mají následující vlastnosti:
 
 - Pokud statický konstruktor k inicializaci statických polí nezadáte, všechny statické pole jsou inicializovány na výchozí hodnoty, jak je uvedeno v [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). 
   
-- Pokud statický konstruktor vyvolá výjimku, modul runtime nebude volat podruhé a typ zůstanou neinicializované po dobu životnosti domény aplikace, ve kterém je spuštěna aplikace. Nejčastěji <xref:System.TypeInitializationException> je vyvolána výjimka, pokud statický konstruktor nemůže vytvořit instanci typu, nebo ke kterým dochází neošetřené výjimce v rámci statický konstruktor. Implicitní statické konstruktory, které nejsou explicitně definovány ve zdrojovém kódu řešení problémů může vyžadovat, aby kontroly kódu (IL intermediate language).
+- Pokud statický konstruktor vyvolá výjimku, modul runtime nebude volat podruhé a typ zůstanou neinicializované po dobu životnosti domény aplikace, ve kterém je spuštěna aplikace. Nejčastěji <xref:System.TypeInitializationException> je vyvolána výjimka, pokud statický konstruktor nemůže vytvořit instanci typu nebo pro neošetřené výjimky, ke kterým dochází v rámci statický konstruktor. Implicitní statické konstruktory, které nejsou explicitně definovány ve zdrojovém kódu řešení problémů může vyžadovat, aby kontroly kódu (IL intermediate language).
 
 - Zabrání přidání přítomnost statického konstruktoru <xref:System.Reflection.TypeAttributes.BeforeFieldInit> atribut type. To omezuje optimalizace běhu programu.
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 79a8d378f69ced0bc22926b066e76dc515b06559
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 04f31748fd53fe3281102fcadcc1e56ea3cc1109
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65210443"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307093"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
@@ -134,7 +134,7 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
 |`Switch.UseLegacyAccessibilityFeatures`|Ovládací prvky, zda funkce usnadnění je k dispozici od verze rozhraní .NET Framework 4.7.1 jsou zapnutá nebo vypnutá. | .NET Framework 4.7.1 |
 |`Switch.UseLegacyAccessibilityFeatures.2`|Určuje, zda funkce usnadnění v rozhraní .NET Framework 4.7.2 k dispozici jsou povolené ovládacích prvků (`false`) nebo je zakázaný (`true`). Pokud `true`, `Switch.UseLegacyAccessibilityFeatures` musí také být `true` povolit funkce usnadnění v rozhraní .NET Framework 4.7.1.|.NET Framework 4.7.2|
 |`Switch.UseLegacyAccessibilityFeatures.3`|Určuje, zda funkce pro usnadnění přístupu zavedena v rozhraní .NET Framework 4.8 jsou povolené ovládacích prvků (`false`) nebo je zakázaný (`true`). Pokud `true`, `Switch.UseLegacyAccessibilityFeatures` a `Switch.UseLegacyAccessibilityFeatures.2` musí také být `true`.|.NET Framework 4.8|
-|`Switch.UseLegacyToolTipDisplay`|Ovládací prvky, jestli jsou popisy displaed, když uživatel najede myší do myší na ovládací prvek WPF (`true`), nebo zda jsou zobrazeny na fokus klávesnice a pomocí klávesové zkratky (`false`, výchozí chování). Pro aplikace běžící na rozhraní .NET Framework 4.8 ale bude cílit předchozích verzích rozhraní .NET Framework, povolíte i klávesnice fokus a místní klíč podpora vyžaduje, aby `Switch.UseLegacyAccessibilityFeatures`, `Switch.UseLegacyAccessibilityFeatures.2`, a `Switch.UseLegacyAccessibilityFeatures.3` všechny být nastaveny na `false`.|.NET Framework 4.8|
+|`Switch.UseLegacyToolTipDisplay`|Ovládací prvky, zda popisy tlačítek se zobrazí, když uživatel najede myší do myší na ovládací prvek WPF (`true`), nebo zda jsou zobrazeny na fokus klávesnice a pomocí klávesové zkratky (`false`, výchozí chování). Pro aplikace běžící na rozhraní .NET Framework 4.8 ale bude cílit předchozích verzích rozhraní .NET Framework, povolíte i klávesnice fokus a místní klíč podpora vyžaduje, aby `Switch.UseLegacyAccessibilityFeatures`, `Switch.UseLegacyAccessibilityFeatures.2`, a `Switch.UseLegacyAccessibilityFeatures.3` všechny být nastaveny na `false`.|.NET Framework 4.8|
 |`System.Xml.`<br /><br /> `IgnoreEmptyKeySequences`|Určuje, zda jsou ignorovány prázdná pořadí klíčů v složených klíčů pomocí ověření schématu XSD. Další informace najdete v tématu [omezení rizik: Ověření schématu XML](../../../migration-guide/mitigation-xml-schema-validation.md).|.NET Framework 4.6|  
   
 > [!NOTE]
