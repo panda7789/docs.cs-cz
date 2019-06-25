@@ -89,7 +89,7 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
 1. Na příkazovém řádku zadejte následující příkaz:  
   
-     **Gacutil /i***publisherPolicyAssemblyFile*  
+     **Gacutil /i** *publisherPolicyAssemblyFile*  
   
      Následující příkaz přidá `policy.1.0.myAssembly.dll` do globální mezipaměti sestavení.  
   

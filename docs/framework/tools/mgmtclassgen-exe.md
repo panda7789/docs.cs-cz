@@ -36,13 +36,13 @@ WMIClass [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/l***jazyka*|Určuje jazyk, ve kterém chcete vygenerovat spravovanou třídu s časnou vazbou. Můžete zadat **CS** (C#; výchozí), **VB** (Visual Basic), **MC** (C++), nebo **JS** (JScript) jako argument jazyku.|  
+|**/l** *jazyka*|Určuje jazyk, ve kterém chcete vygenerovat spravovanou třídu s časnou vazbou. Můžete zadat **CS** (C#; výchozí), **VB** (Visual Basic), **MC** (C++), nebo **JS** (JScript) jako argument jazyku.|  
 |**/m***počítače*|Určuje počítač, na kterém je uložena třída WMI a ke kterému je třeba se připojit. Výchozí hodnotou je místní počítač.|  
-|**/n***cesta*|Určuje cestu k oboru názvů služby WMI, který obsahuje třídu WMI. Pokud tuto možnost nezadáte, nástroj vygeneruje kód pro *WMIClass* ve výchozím **Root\cimv2** oboru názvů.|  
-|**/o***classnamespace*|Určuje obor názvů .NET, ve kterém chcete vygenerovat spravovanou třídu kódů. Pokud tuto možnost nezadáte, nástroj vygeneruje obor názvů pomocí oboru názvů WMI a předpony schématu. Předpona schématu je část názvu třídy před podtržítkem. Třeba **Win32_OperatingSystem** třídy v **Root\cimv2** obor názvů, nástroj vygeneruje třídu v **ROOT. CIMV2. Win32**.|  
-|**/p***filepath*|Určuje cestu k souboru, do kterého chcete uložit vygenerovaný kód. Pokud tuto možnost nezadáte, nástroj vytvoří soubor v aktuálním adresáři. Názvy tříd a soubor, ve kterém generuje pomocí třídy *WMIClass* argument. Název třídy a souboru jsou stejné jako název *WMIClass.* Pokud *WMIClass* obsahuje podtržítko, nástroj použije část názvu třídy za podtržítkem. Například pokud *WMIClass* název je ve formátu **Win32_LogicalDisk**, vygenerovaná třída a soubor má název "logicaldisk". Pokud soubor již existuje, nástroj přepíše existující soubor.|  
-|**/pW***heslo*|Určuje heslo pro použití při přihlášení k počítači určenému **/m** možnost.|  
-|**/u***uživatelské jméno*|Určuje uživatelské jméno pro použití při přihlášení k počítači určenému **/m** možnost.|  
+|**/n** *cesta*|Určuje cestu k oboru názvů služby WMI, který obsahuje třídu WMI. Pokud tuto možnost nezadáte, nástroj vygeneruje kód pro *WMIClass* ve výchozím **Root\cimv2** oboru názvů.|  
+|**/o** *classnamespace*|Určuje obor názvů .NET, ve kterém chcete vygenerovat spravovanou třídu kódů. Pokud tuto možnost nezadáte, nástroj vygeneruje obor názvů pomocí oboru názvů WMI a předpony schématu. Předpona schématu je část názvu třídy před podtržítkem. Třeba **Win32_OperatingSystem** třídy v **Root\cimv2** obor názvů, nástroj vygeneruje třídu v **ROOT. CIMV2. Win32**.|  
+|**/p** *filepath*|Určuje cestu k souboru, do kterého chcete uložit vygenerovaný kód. Pokud tuto možnost nezadáte, nástroj vytvoří soubor v aktuálním adresáři. Názvy tříd a soubor, ve kterém generuje pomocí třídy *WMIClass* argument. Název třídy a souboru jsou stejné jako název *WMIClass.* Pokud *WMIClass* obsahuje podtržítko, nástroj použije část názvu třídy za podtržítkem. Například pokud *WMIClass* název je ve formátu **Win32_LogicalDisk**, vygenerovaná třída a soubor má název "logicaldisk". Pokud soubor již existuje, nástroj přepíše existující soubor.|  
+|**/pW** *heslo*|Určuje heslo pro použití při přihlášení k počítači určenému **/m** možnost.|  
+|**/u** *uživatelské jméno*|Určuje uživatelské jméno pro použití při přihlášení k počítači určenému **/m** možnost.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
