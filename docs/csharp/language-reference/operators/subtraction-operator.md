@@ -13,12 +13,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: 8e93b1d66a375f1f0af104e2a5dd6dfcbb39428d
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 7c9863134cb2a12072954bb283c7828abece3adb
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67024911"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347914"
 ---
 # <a name="--and---operators-c-reference"></a>– operátory a operátory-= (C# odkaz)
 
@@ -30,17 +30,17 @@ Informace o aritmetické operace `-` operátoru, najdete v článku [Unární pl
 
 Pro operandy stejného [delegovat](../keywords/delegate.md) typ, `-` operátor vrátí instanci delegáta, který se vypočítává takto:
 
-- Pokud jsou oba operandy jinou hodnotu než null a vyvolání seznam druhého operandu je správné souvislých podseznam seznamu vyvolání prvního operandu, je výsledek operace nový seznam volání, která se získá tak, že odeberete položky druhého operandu od vyvolání seznamu prvního operandu. Pokud je druhý operand seznamu odpovídá několika dílčích souvislých v seznamu je první operand, odeberou se pouze odpovídající podseznam úplně vpravo. Pokud je odebrání výsledkem je seznam prázdný, výsledkem je `null`.
+- Pokud jsou oba operandy jinou hodnotu než null a vyvolání seznamu zpracovával pravý operand je správné souvislých podseznam seznamu vyvolání levý operand, výsledek operace se nový seznam volání, která se získá tak, že odeberete zpracovával pravý operand položky ze seznamu vyvolání levý operand. Pokud operand pravé strany seznamu odpovídá několika dílčích souvislých v seznamu levý operand, je odebrán pouze odpovídající podseznam úplně vpravo. Pokud je odebrání výsledkem je seznam prázdný, výsledkem je `null`.
 
   [!code-csharp-interactive[delegate removal](~/samples/csharp/language-reference/operators/SubtractionOperator.cs#DelegateRemoval)]
 
-- Pokud seznamu vyvolání druhého operandu není správné souvislých podseznam seznamu vyvolání prvního operandu, je výsledek operace prvním operandem. Například odebráním delegáta, který není součástí vícesměrového vysílání delegáta neprovede žádnou akci a výsledkem beze změny vícesměrového vysílání delegáta.
+- Pokud seznam vyvolání zpracovával pravý operand není správné souvislých podseznam seznamu vyvolání levý operand, výsledek operace je levý operand. Například odebráním delegáta, který není součástí vícesměrového vysílání delegáta neprovede žádnou akci a výsledkem beze změny vícesměrového vysílání delegáta.
 
   [!code-csharp-interactive[delegate removal with no effect](~/samples/csharp/language-reference/operators/SubtractionOperator.cs#DelegateRemovalNoChange)]
 
   Předchozí příklad ukazuje také, že během delegáta instance odebrání delegátů jsou porovnány. Například delegáty, které jsou vytvářeny ze zkušební verze identických [výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nejsou stejné. Další informace o delegáta rovnosti, najdete v článku [delegovat operátory rovnosti](~/_csharplang/spec/expressions.md#delegate-equality-operators) část [ C# specifikace jazyka](../language-specification/index.md).
 
-- Pokud je první operand `null`, je výsledek operace `null`. Pokud je druhý operand `null`, výsledkem operace je prvním operandem.
+- Pokud je levý operand `null`, je výsledek operace `null`. Pokud je operand pravé strany `null`, výsledkem operace je levý operand.
 
   [!code-csharp-interactive[delegate removal and null](~/samples/csharp/language-reference/operators/SubtractionOperator.cs#DelegateRemovalAndNull)]
 

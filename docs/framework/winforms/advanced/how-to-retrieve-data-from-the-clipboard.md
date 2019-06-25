@@ -8,12 +8,12 @@ helpviewer_keywords:
 - pasting Clipboard data
 - Clipboard [Windows Forms], retrieving data
 ms.assetid: 99612537-2c8a-449f-aab5-2b3b28d656e7
-ms.openlocfilehash: e29e71974abda3e6e57d22d9faef28e386ebeefd
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 868afc36f08571d16285d0df52f6d1cad8c9c7a6
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169906"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348203"
 ---
 # <a name="how-to-retrieve-data-from-the-clipboard"></a>Postupy: Načtení dat ze schránky
 <xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které vám umožní pracovat s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránky jako dočasné úložiště pro data. Například textové procesory použít schránky během operací vyjmutí a vložení. Schránka je také užitečné pro přenos informací z jedné aplikace do jiného.  
@@ -22,7 +22,7 @@ ms.locfileid: "67169906"
   
  Pokud chcete zjistit, zda schránky obsahuje data v určitém formátu, použijte jednu z `Contains` *formátu* metody nebo <xref:System.Windows.Forms.Clipboard.GetData%2A> metody. K načtení dat ze schránky, použijte jednu z `Get` *formátu* metody nebo <xref:System.Windows.Forms.Clipboard.GetData%2A> metody. Tyto metody jsou nové v rozhraní .NET Framework 2.0.  
   
- Pro přístup k datům ze schránky pomocí verzí starší než [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)], použijte <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> metoda a volat metody vráceného <xref:System.Windows.Forms.IDataObject>. Pokud chcete zjistit, jestli konkrétní formát je k dispozici v vráceného objektu, například volání <xref:System.Windows.Forms.IDataObject.GetDataPresent%2A> metody.  
+ Pro přístup k datům ze schránky pomocí verze starší než .NET Framework 2.0, použijte <xref:System.Windows.Forms.Clipboard.GetDataObject%2A?displayProperty=nameWithType> metoda a volat metody vráceného <xref:System.Windows.Forms.IDataObject>. Pokud chcete zjistit, jestli konkrétní formát je k dispozici v vráceného objektu, například volání <xref:System.Windows.Forms.IDataObject.GetDataPresent%2A> metody.  
   
 > [!NOTE]
 >  Všechny aplikace pro systém Windows sdílení schránky. Obsah, proto se mohou změnit po přepnutí na jinou aplikaci.  
@@ -49,7 +49,7 @@ ms.locfileid: "67169906"
   
 ### <a name="to-retrieve-data-from-the-clipboard-in-multiple-formats"></a>K načtení dat ze schránky ve více formátech  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> metody. Musíte použít tuto metodu pro načtení dat ze schránky na verze starší než [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].  
+1. Použití <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> metody. Tato metoda musí používat k načtení dat ze schránky u verzí dřívějších než rozhraní .NET Framework 2.0.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.Clipboard#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#4)]  

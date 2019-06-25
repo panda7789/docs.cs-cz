@@ -2,12 +2,12 @@
 title: Aktivace instance
 ms.date: 03/30/2017
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
-ms.openlocfilehash: 088722ba19a1f38e8a341e34a8344963021f1113
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5e0d5a91a0f0ccc02d13ef96c3470da1942cc520
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348248"
 ---
 # <a name="instance-activation"></a>Aktivace instance
 Store Instance pracovního postupu SQL spouští interní úlohy, která pravidelně probudí a instance pracovních postupů spustitelných nebo aktivovatelné zjistí databáze trvalosti. Pokud najde instance pracovního postupu spustitelný, upozorní hostitele pracovního postupu, které podporují aktivaci instance. Pokud v úložišti instancí najde instanci aktivovatelné pracovního postupu, upozorní obecný hostitele, který aktivuje hostitele pracovního postupu, která pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  
@@ -35,7 +35,7 @@ Store Instance pracovního postupu SQL spouští interní úlohy, která pravide
 ## <a name="generic-hosts"></a>Obecný hostitele  
  Obecný hostitel je hostitel s hodnotou vlastnosti metadat **WorkflowServiceType** pro obecný hostitele je nastavena na **WorkflowServiceType.Any** k označení, že dokáže zpracovat jakýkoli typ pracovního postupu. Obecný hostitele má XName parametr s názvem **ActivationType**.  
   
- V současné době Store Instance pracovního postupu SQL podporuje obecné hostitele s hodnotou ActivationType parametrem nastaveným na **WAS**. Pokud ActivationType není nastaven na služba WAS, vyvolá Store Instance pracovního postupu SQL <xref:System.Runtime.DurableInstancing.InstancePersistenceException>. Služba správy pracovního postupu, který se dodává s [!INCLUDE[dublin](../../../includes/dublin-md.md)] je obecný hostitele, který má typ aktivace nastavený na **WAS**.  
+ V současné době Store Instance pracovního postupu SQL podporuje obecné hostitele s hodnotou ActivationType parametrem nastaveným na **WAS**. Pokud ActivationType není nastaven na služba WAS, vyvolá Store Instance pracovního postupu SQL <xref:System.Runtime.DurableInstancing.InstancePersistenceException>. Služba správy pracovního postupu, který se dodává s funkce hostování služby Windows Server AppFabric je obecný hostitele, který má typ aktivace nastavený na **WAS**.  
   
  Pro aktivaci WAS obecný hostitel vyžaduje sadu parametrů aktivace pro odvození adresu koncového bodu, ve kterém můžete aktivovat nové hostitele. Parametry aktivace pro aktivaci WAS jsou název lokality, cesta k aplikaci vzhledem k webu a cestu ke službě vzhledem k aplikaci. Store Instance pracovního postupu SQL ukládá tyto parametry aktivace během provádění <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>.  
   

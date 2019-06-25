@@ -6,17 +6,17 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 6a014309829d7dbd477a7ae4a658b84a3f35d91f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84583f96ab8493ff05a4e80dcc843eff1cc7a5ef
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710118"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347590"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Obecné typy a reflexe (Průvodce programováním v C#)
 Protože Common Language Runtime (CLR) má přístup k informacím o obecného typu v době běhu, můžete získat informace o obecných typů v stejným způsobem jako u neobecné typy reflexe. Další informace najdete v tématu [obecné typy v čase spuštění](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
   
- V [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] několik nových členů jsou přidány do <xref:System.Type> třídy umožňující běhových informací pro obecné typy. Další informace o tom, jak používat tyto metody a vlastnosti těchto tříd naleznete v dokumentaci. <xref:System.Reflection.Emit> Obor názvů obsahuje také nové členy, které podporují obecných typů. Zobrazit [jak: Definování obecného typu pomocí reflexe generování](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
+ V rozhraní .NET Framework 2.0, jsou přidány několik nových členů do <xref:System.Type> třídy umožňující běhových informací pro obecné typy. Další informace o tom, jak používat tyto metody a vlastnosti těchto tříd naleznete v dokumentaci. <xref:System.Reflection.Emit> Obor názvů obsahuje také nové členy, které podporují obecných typů. Zobrazit [jak: Definování obecného typu pomocí reflexe generování](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
   
  Seznam neutrálních podmínek pro výrazy použité v obecné reflexi naleznete v tématu <xref:System.Type.IsGenericType%2A> vlastnosti.  
   

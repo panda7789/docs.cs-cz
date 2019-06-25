@@ -2,12 +2,12 @@
 title: Co je nového v C# 7.1
 description: Přehled nových funkcí v C# 7.1.
 ms.date: 04/09/2019
-ms.openlocfilehash: 4b7bd96e428f990b2db91a4cfd45da01dc133aac
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: a95111b6f217a2ca5c520c2d4d70efa0e23742f9
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347606"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7.1
 
@@ -29,6 +29,13 @@ Nové funkce jazyků v této verzi jsou:
 A konečně, má kompilátor dvě možnosti `-refout` a `-refonly` ovládacího prvku [odkazovat na generování sestavení](#reference-assembly-generation).
 
 Chcete-li používat nejnovější funkce ve verzi bod, je potřeba [konfigurace verze jazyka kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi.
+
+Zbývající část tohoto článku poskytuje přehled o jednotlivých funkcí. Pro jednotlivé funkce dozvíte zdůvodnění. Dozvíte syntaxe. Můžete prozkoumat tyto funkce v prostředí pomocí `dotnet try` globální nástroje:
+
+1. Nainstalujte [dotnet – zkuste](https://github.com/dotnet/try/blob/master/README.md#setup) globální nástroj.
+1. Klonování [dotnet/try-samples](https://github.com/dotnet/try-samples) úložiště.
+1. Nastavit aktuální adresář *csharp7* podadresář pro *try-samples* úložiště.
+1. Spusťte `dotnet try`.
 
 ## <a name="async-main"></a>Asynchronní funkce main
 

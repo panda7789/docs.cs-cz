@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.3
 description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: aca5c1b82253c02eccf24af1e5c45d0203d0b1b8
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 4e45893be671b707efbde352eef04fa92af94954
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832714"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347409"
 ---
 # <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 
@@ -34,7 +34,13 @@ Nové možnosti kompilátoru jsou:
 - `-publicsign` Chcete-li povolit, Open Source Software (OSS) podepisování sestavení.
 - `-pathmap` Chcete-li zadat mapování pro adresáře zdrojových souborů.
 
-Zbývající část tohoto článku poskytuje podrobnosti a odkazy na další informace o každé vylepšení.
+Zbývající část tohoto článku poskytuje podrobnosti a odkazy na další informace o každé vylepšení. Můžete prozkoumat tyto funkce v prostředí pomocí `dotnet try` globální nástroje:
+
+1. Nainstalujte [dotnet – zkuste](https://github.com/dotnet/try/blob/master/README.md#setup) globální nástroj.
+1. Klonování [dotnet/try-samples](https://github.com/dotnet/try-samples) úložiště.
+1. Nastavit aktuální adresář *csharp7* podadresář pro *try-samples* úložiště.
+1. Spusťte `dotnet try`.
+
 
 ## <a name="enabling-more-efficient-safe-code"></a>Povolení efektivnější bezpečný kód
 

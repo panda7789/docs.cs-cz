@@ -6,19 +6,21 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: be4d7e5cf4d2f7c117766858dbba9c7c59c74b73
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 5f3e7b831f701145caa1a4fb50f6bb1a4ece4103
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267680"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347759"
 ---
 # <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Postupy: Implementace lehké třídy s automaticky implementovanými vlastnostmi (C# Průvodce programováním v)
 Tento příklad ukazuje, jak vytvořit neměnné lehké třídy, která slouží pouze k zapouzdření sadu automaticky implementované vlastnosti. Použijte tento druh konstrukce místo struktury, pokud musíte použít odkazové sémantiky typu.  
   
- Neměnné vlastnosti můžete nastavit dvěma způsoby.  Lze deklarovat [nastavit](../../../csharp/language-reference/keywords/set.md) přístupového objektu bude [privátní](../../../csharp/language-reference/keywords/private.md).  Vlastnost je pouze nastavitelné v rámci typu, ale je neměnný spotřebitelům.  Můžete místo toho deklarovat pouze [získat](../../../csharp/language-reference/keywords/get.md) přístupový objekt, takže je vlastnost neměnné všude s výjimkou v konstruktoru typu.  
-  
- Pokud deklarujete privátní `set` přístupový objekt, nelze použít inicializátor objektu k inicializaci vlastnosti. Je nutné použít konstruktor nebo výrobní metoda.  
+ Neměnné vlastnosti můžete provést dvěma způsoby:
+  - Lze deklarovat [nastavit](../../../csharp/language-reference/keywords/set.md) přístupového objektu bude [privátní](../../../csharp/language-reference/keywords/private.md).  Vlastnost je pouze nastavitelné v rámci typu, ale je neměnný spotřebitelům.  
+    
+    Pokud deklarujete privátní `set` přístupový objekt, nelze použít inicializátor objektu k inicializaci vlastnosti. Je nutné použít konstruktor nebo výrobní metoda.  
+  - Je možné deklarovat pouze [získat](../../../csharp/language-reference/keywords/get.md) přístupový objekt, takže je vlastnost neměnné všude s výjimkou v konstruktoru typu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje dva způsoby, jak implementovat neměnné třídy, která má automaticky implementované vlastnosti. Jednotlivé možnosti přinesou deklaruje jednu z vlastností s privátní `set` a jedna z vlastností s `get` pouze.  První třídy používá konstruktor pouze k inicializaci vlastností a druhá třída používá statický objekt pro vytváření metodu, která volá konstruktor.  

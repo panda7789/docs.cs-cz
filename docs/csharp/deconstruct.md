@@ -1,20 +1,20 @@
 ---
-title: Dekonstrukce řazených kolekcí členů a ostatními typy
+title: Dekonstrukce řazených kolekcí členů a dalších typů
 description: Zjistěte, jak dekonstruovat řazených kolekcí členů a dalších typů.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 6c24c1ec04bdd7ce7ee2061c2551652e26a28cf9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d7c5946f5df8a94bf8b54c10f33234b40338a622
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348152"
 ---
-# <a name="deconstructing-tuples-and-other-types"></a>Dekonstrukce řazených kolekcí členů a ostatními typy
+# <a name="deconstructing-tuples-and-other-types"></a>Dekonstrukce řazených kolekcí členů a dalších typů
 
-Řazená kolekce členů poskytuje odlehčené způsob, jak načíst několik hodnot z volání metody. Ale po načtení řazené kolekce členů je potřeba zpracovat jeho jednotlivé prvky. Na základě prvek po prvku je to náročná, jak ukazuje následující příklad. `QueryCityData` Metoda vrátí hodnotu 3-n-tice a každý z jeho prvků je přiřazená k proměnné v samostatné operaci.
+Řazená kolekce členů poskytuje jednoduchý způsob, jak načíst několik hodnot z volání metody. Ale po načtení řazené kolekce členů je potřeba zpracovat jeho jednotlivé prvky. Na základě prvek po prvku je to náročná, jak ukazuje následující příklad. `QueryCityData` Metoda vrátí hodnotu 3-n-tice a každý z jeho prvků je přiřazená k proměnné v samostatné operaci.
 
 [!code-csharp[WithoutDeconstruction](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple1.cs)]
 

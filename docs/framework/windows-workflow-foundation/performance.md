@@ -2,12 +2,12 @@
 title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 701e05301e82537aa6119ab3ec894483daee41f3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 51cd5b248789c85ab06073f1bb41a83e5f97c139
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592544"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348540"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 
@@ -31,7 +31,7 @@ ms.locfileid: "65592544"
 ### <a name="wf-runtime"></a>Modul Runtime pracovního postupu
  V jádru služby [!INCLUDE[wf1](../../../includes/wf1-md.md)] modul runtime je asynchronní plánovače, který řídí spuštění aktivity v pracovním postupu. Poskytuje výkonný, předvídatelný spouštěcí prostředí pro aktivity. Prostředí má dobře definované smlouvy pro spuštění, pokračování, dokončování, zrušení, výjimky a předvídatelné modelu vláken.
 
- Porovnání WF3 má modul runtime WF4 efektivnější plánovače. Využívá stejné fondu vláken vstupně-výstupních operací, který se používá pro službu WCF, což je velmi efektivní při provádění dávkových pracovních položek. Fronty plánovače interní pracovní položky je optimalizovaná pro nejběžnější vzory využití. Modul runtime WF4 také spravuje stavy provádění tak velmi nenáročné s minimálními synchronizace a zpracování logiku, zatímco WF3 závisí na události zobrazené – registrace a vyvolání provádět komplexní synchronizace pro přechodů mezi stavy událostí.
+ Porovnání WF3 má modul runtime WF4 efektivnější plánovače. Využívá stejné fondu vláken vstupně-výstupních operací, který se používá pro službu WCF, což je velmi efektivní při provádění dávkových pracovních položek. Fronty plánovače interní pracovní položky je optimalizovaná pro nejběžnější vzory využití. Modul runtime WF4 také spravuje stav spuštění v jednoduchý způsob, jak s minimálními synchronizace a zpracování logiku, zatímco WF3 závisí na události zobrazené – registrace a vyvolání provádět komplexní synchronizace pro přechodů mezi stavy událostí.
 
 ### <a name="data-storage-and-flow"></a>Úložiště dat a toku
  V WF3, data spojená s aktivitou modelováním pomocí vlastnosti závislosti daným typem implementováno <xref:System.Windows.DependencyProperty>. Vzor závislostí vlastnost byla zavedena ve Windows Presentation Foundation (WPF). Obecně platí tento vzor je velmi flexibilní podporu jednoduché datové vazby a další funkce uživatelského rozhraní. Vzor ale vyžaduje vlastnosti, které mají být definovány jako statické pole v definici pracovního postupu. Pokaždé, když [!INCLUDE[wf1](../../../includes/wf1-md.md)] runtime Nastaví nebo získá hodnoty vlastností, zahrnuje logiku silně váha vyhledávání.
@@ -43,12 +43,12 @@ ms.locfileid: "65592544"
 ### <a name="control-flow"></a>Tok řízení
  Stejně jako v jakémkoli programovacím jazyce a [!INCLUDE[wf1](../../../includes/wf1-md.md)] poskytuje podporu pro ovládací prvek toky pro definice pracovního postupu pomocí Představujeme sadu aktivity toku řízení pro sekvencování, využívat konstruktory cyklů, větvení a jiné vzory. V WF3, když se stejná aktivita je nutné znovu spustit, nový <xref:System.Workflow.ComponentModel.ActivityExecutionContext> se vytvoří a aktivity naklonování prostřednictvím náročné serializace a deserializace logiky na základě <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Výkon pro toky iterativní ovládací prvek je obvykle mnohem pomalejší než provádí sekvenci aktivit.
 
- WF4 zpracovává to úplně jinak. Přijímá šablona aktivity, vytvoří nový objekt vlastnosti ActivityInstance a přidá ji do fronty plánovače. Tento celý proces pouze zahrnuje explicitní vytváření objektů a je velmi zjednodušené.
+ WF4 zpracovává to úplně jinak. Přijímá šablona aktivity, vytvoří nový objekt vlastnosti ActivityInstance a přidá ji do fronty plánovače. Tento celý proces pouze zahrnuje explicitní vytváření objektů a je velmi jednoduché.
 
 ### <a name="asynchronous-programming"></a>Asynchronní programování
  Aplikace obvykle mají lepší výkon a škálovatelnost s asynchronním programování pro dlouho běžící blokující operace, jako jsou vstupně-výstupních operací nebo distribuované výpočetní operace. Poskytuje asynchronní podporu prostřednictvím základní aktivity typů WF4 <xref:System.Activities.AsyncCodeActivity>, <xref:System.Activities.AsyncCodeActivity%601>. Modul runtime nativně podporuje asynchronní aktivity a proto můžou automaticky vložit instanci no-persist zóny během nezpracovaný asynchronní práce. Vlastní aktivity lze odvodit z těchto typů provádět asynchronní práce bez podržení Plánovač vlákna pracovního postupu a blokuje veškeré aktivity, které může být možné spouštět paralelně.
 
-### <a name="messaging"></a>Zasílání zpráv
+### <a name="messaging"></a>Messaging
  WF3 měl původně velmi omezenou podporu zasílání zpráv prostřednictvím externí události nebo webové služby volání. V rozhraní .NET 3.5, může být pracovní postupy implementovaná jako klienti WCF nebo vystavený jako služba WCF services přes <xref:System.Workflow.Activities.SendActivity> a <xref:System.Workflow.Activities.ReceiveActivity>. V WF4 koncept zasílání zpráv programování založené na pracovních postupech je dále posílena Díky těsné integraci logiku pro zasílání zpráv do pracovního postupu WCF.
 
  Kanál zpracování jednotné zasílání zpráv, které jsou součástí WCF v rozhraní .NET 4 pomáhá WF4 služby mají výrazně lepší výkon a škálovatelnost než WF3. WF4 také podporuje bohatší zasílání zpráv programování, které lze modelovat složité vzorce výměny zpráv (MEPs). Vývojáři můžete použít buď zadaný servisní smlouvy dosáhnout snadné programování nebo netypové servisní smlouvy můžete dosáhnout lepšího výkonu bez nutnosti platit náklady na serializaci. Ukládání do mezipaměti podporu prostřednictvím kanálů na straně klienta <xref:System.ServiceModel.Activities.SendMessageChannelCache> třídy v WF4 pomáhá vývojářům vestavět rychlé aplikace s minimálním úsilím. Další informace najdete v tématu [změna úrovní sdílení mezipaměti pro aktivity odesílání](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).
@@ -432,7 +432,7 @@ public class Workflow1 : Activity
 
  Monitorování stavu zhruba má 3 % dopad na propustnost.  Náklady na základní profil je přibližně 8 %.
 
-## <a name="interop"></a>Zprostředkovatel komunikace s objekty
+## <a name="interop"></a>Zprostředkovatel komunikace
  WF4 je téměř dokončena přepisování [!INCLUDE[wf1](../../../includes/wf1-md.md)] a proto nejsou přímo kompatibilní s WF4 WF3 pracovních postupů a aktivit.  Mnoho zákazníků, které již v rané fázi přijetím modelu Windows Workflow Foundation, bude mít pro WF3 třetí strany ani interní definice pracovního postupu a vlastní aktivity.  Jedním ze způsobů pro usnadnění přechodu na WF4 je použití aktivity spolupráce, který můžete spustit WF3 aktivitám v pracovním postupu WF4.  Dále je doporučeno <xref:System.Activities.Statements.Interop> aktivity použít pouze v případě potřeby. Další informace o migraci na WF4 podívejte [pokyny k migraci WF4](https://go.microsoft.com/fwlink/?LinkID=153313).
 
 ### <a name="environment-setup"></a>Nastavení prostředí

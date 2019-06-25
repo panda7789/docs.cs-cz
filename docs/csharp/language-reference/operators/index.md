@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 99cf5b42700779a3eb48eb6452365056f5fa89ba
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: fecfe8473a33be1a777fc5dde80c292f940e0d41
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347862"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# odkaz)
 
@@ -171,13 +171,13 @@ Tento operátor má vyšší prioritu než v další části a nižší prioritu
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-) – logickým operátorem a. Pokud je první operand vyhodnocen na hodnotu false, pak C# není vyhodnocen Druhý operand.
+[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-) – logickým operátorem a. Pokud `x` vyhodnotí jako `false`, pak `y` , nebude hodnocen.
 
 ## <a name="conditional-or-operator"></a>Podmiňovací operátor OR
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) – logický operátor OR. Pokud je první operand vyhodnocen na hodnotu true, pak C# není vyhodnocen Druhý operand.
+[x &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) – logický operátor OR. Pokud `x` vyhodnotí jako `true`, pak `y` , nebude hodnocen.
 
 ## <a name="null-coalescing-operator"></a>Operátoru nulového sjednocení
 

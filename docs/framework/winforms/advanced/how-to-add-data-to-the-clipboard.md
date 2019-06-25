@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], copying data to
 - data [Windows Forms], copying to Clipboard
 ms.assetid: 25152454-0e78-40a9-8a9e-a2a5a274e517
-ms.openlocfilehash: 4d035dd6611909c9a6b67662d17f80057dc33386
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 06ce64de5e2a6b4aa299b9ad9c41982b7c1924c7
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348280"
 ---
 # <a name="how-to-add-data-to-the-clipboard"></a>Postupy: Přidání dat do schránky
 <xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které vám umožní pracovat s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránky jako dočasné úložiště pro data. Například textové procesory použít schránky během operací vyjmutí a vložení. Schránka je také užitečné pro přenos dat z jedné aplikace do jiné.  
@@ -53,7 +53,7 @@ ms.locfileid: "67169953"
   
 ### <a name="to-add-data-to-the-clipboard-in-multiple-formats"></a>Chcete-li přidat data do schránky ve více formátech  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> metoda a předejte jí <xref:System.Windows.Forms.DataObject> , který obsahuje vaše data. Musíte použít tuto metodu můžete přidat do schránky ve verzích starších než [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].  
+1. Použití <xref:System.Windows.Forms.Clipboard.SetDataObject%2A?displayProperty=nameWithType> metoda a předejte jí <xref:System.Windows.Forms.DataObject> , který obsahuje vaše data. Tato metoda musíte použít k přidání dat do schránky u verzí dřívějších než rozhraní .NET Framework 2.0.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.Clipboard#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#4)]  

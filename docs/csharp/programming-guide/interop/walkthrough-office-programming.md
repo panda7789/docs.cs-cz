@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 80f0b97d38b17740916ea5407b78f298aa42604b
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 47a388caecf3164f3b76db91f7c70f39f7b0f659
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347651"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Návod: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
@@ -27,7 +27,6 @@ Tento názorný postup ukazuje tyto funkce v rámci programování pro Office, a
 
 Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalována v počítači k dokončení tohoto návodu.  
   
- Pokud používáte operační systém, který je starší než [!INCLUDE[windowsver](~/includes/windowsver-md.md)], ujistěte se, že [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] je nainstalována.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -115,7 +114,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
 
      [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]  
   
-     Tyto doplňky ukazují další funkce v jazyce C#: považuje `Object` jako v případě, že mají typ vrácené hodnoty z hostitelů modelu COM, jako je například Office [dynamické](../../../csharp/language-reference/keywords/dynamic.md). K tomu dojde automaticky při **Embed Interop Types** je nastavena na výchozí hodnotu, `True`, nebo ekvivalentně, když sestavení odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru. Typ `dynamic` umožňuje pozdní vazby již k dispozici v jazyce Visual Basic a zabraňuje explicitní přetypování nutné Visual C# 2008 a starší verze jazyka.  
+     Tyto doplňky ukazují další funkce v jazyce C#: považuje `Object` jako v případě, že mají typ vrácené hodnoty z hostitelů modelu COM, jako je například Office [dynamické](../../../csharp/language-reference/keywords/dynamic.md). K tomu dojde automaticky při **Embed Interop Types** je nastavena na výchozí hodnotu, `True`, nebo ekvivalentně, když sestavení odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru. Typ `dynamic` umožňuje pozdní vazby již k dispozici v jazyce Visual Basic a zabraňuje explicitní přetypování vyžaduje C# 3.0 a starší verze jazyka.  
   
      Například `excelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) metody. Bez `dynamic`, musíte přetypovat vrácený objekt `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.  
   

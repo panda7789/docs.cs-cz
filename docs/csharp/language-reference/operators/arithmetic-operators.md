@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: af3f7a9379aa8ac12ef8c12abc99a0ded9188eb8
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 9293071744ff104c91d5fb9b62fffd1ec51a53c4
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347953"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
@@ -97,7 +97,7 @@ Unární `*` operátor je [operátor dereference ukazatele](pointer-related-oper
 
 ## <a name="division-operator-"></a>Operátor dělení /
 
-Operátor dělení `/` rozděluje svůj první operand tak svým druhým operandem.
+Operátor dělení `/` rozděluje jeho levý operand podle jeho operand pravé strany.
 
 ### <a name="integer-division"></a>Celočíselné dělení
 
@@ -119,11 +119,11 @@ Pokud jeden z operandů je `decimal`, může být jiný operand ani `float` ani 
 
 ## <a name="remainder-operator-"></a>Zbývající % – operátor
 
-Operátor zbytku `%` vypočítá zbytek po dělení svůj první operand tak svým druhým operandem.
+Operátor zbytku `%` vypočítá zbytek po dělení jeho levý operand podle jeho operand pravé strany.
 
 ### <a name="integer-remainder"></a>Zbývající celé číslo
   
-Pro operandy typy celých čísel, výsledek `a % b` hodnota vytvořil `a - (a / b) * b`. Znaménko nenulové zbývající je stejný jako první operand, jako v následujícím příkladu:
+Pro operandy typy celých čísel, výsledek `a % b` hodnota vytvořil `a - (a / b) * b`. Znaménko nenulové zbytek je stejný jako levý operand, jako v následujícím příkladu:
 
 [!code-csharp-interactive[integer remainder](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#IntegerRemainder)]
 
@@ -157,7 +157,7 @@ Můžete také použít `+` operátoru pro zřetězení a delegátem kombinaci �
 
 ## <a name="subtraction-operator--"></a>Operátor odčítání-
 
-Operátor odčítání `-` odečte jeho druhého operandu od jeho prvního operandu:
+Operátor odčítání `-` odečte jeho zpracovával pravý operand z jeho operand na levé straně:
 
 [!code-csharp-interactive[subtraction operator](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#Subtraction)]
 

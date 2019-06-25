@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 010077cd95a9cf6bd7d4c22a54abc02b167755e8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8af6d7d91efef81569e6f783352ec89d260cdd13
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347604"
 ---
 # <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET (C# Průvodce programováním v)
 Následující postup ukazuje, jak přidat události, které mají tvar standardní rozhraní .NET Framework do vaší třídy a struktury. Všechny události v knihovně tříd rozhraní .NET Framework jsou založeny na <xref:System.EventHandler> delegovat, která je definovaná následujícím způsobem:  
@@ -20,7 +20,7 @@ public delegate void EventHandler(object sender, EventArgs e);
 ```  
   
 > [!NOTE]
->  [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] Představuje obecné verzi tohoto delegáta <xref:System.EventHandler%601>. Následující příklady ukazují, jak použít obě verze.  
+>  Rozhraní .NET Framework 2.0 představuje obecné verzi tohoto delegáta <xref:System.EventHandler%601>. Následující příklady ukazují, jak použít obě verze.  
   
  I když události ve třídách, které definujete, může být založené na libovolný platný delegát i delegáty, které vrací hodnotu, se obecně doporučuje základní události v rozhraní .NET Framework model s použitím <xref:System.EventHandler>, jak je znázorněno v následujícím příkladu.  
   

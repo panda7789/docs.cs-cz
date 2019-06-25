@@ -4,17 +4,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - file I/O classes
 ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
-ms.openlocfilehash: 2fdbeb2b77e88f144bc541d01ee2e904f8a84678
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f9d898756b6b17ae69d1af7dd747c20a26d88417
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348004"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)
 Následující tabulky uvádějí třídy běžně používané pro soubor rozhraní .NET Framework vstupně-výstupních operací zařazených do kategorií do souboru vstupně-výstupních tříd, použitý k vytvoření datových proudů třídy a třídy používané pro čtení a zápis do datových proudů.  
   
- K zadání [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] dokumentaci a najít ucelenější seznam najdete v článku [– přehled knihovny tříd](../../../../standard/class-library-overview.md).  
+Ucelenější seznam najdete v tématu [– přehled knihovny tříd](../../../../standard/class-library-overview.md).  
   
 ## <a name="basic-io-classes-for-files-drives-and-directories"></a>Základní vstupně-výstupních tříd pro soubory, disky a adresáře  
  Následující tabulka uvádí a popisuje hlavní třídy používané pro soubor vstupně-výstupních operací.  

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: 7d8a6b7f5bf83719f96009c301867056da755822
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 0e6edf9bcc0954bf06e76b238b2bb07dea040a9c
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347898"
 ---
 # <a name="comparison-operators-c-reference"></a>Operátory porovnání (C# odkaz)
 
@@ -39,25 +39,25 @@ Výčtové typy také podporují operátory porovnání. Pro operandy stejného 
 
 ## <a name="less-than-operator-"></a>Operátor menší než \<
 
-`<` Operátor vrátí `true` Pokud svůj první operand je menší než svým druhým operandem, `false` jinak:
+`<` Operátor vrátí `true` pokud jeho levý operand je menší než jeho zpracovával pravý operand `false` jinak:
 
 [!code-csharp-interactive[less than example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#Less)]
 
 ## <a name="greater-than-operator-"></a>Operátor větší než >
 
-`>` Operátor vrátí `true` Pokud svůj první operand je větší než jeho druhým operandem, `false` jinak:
+`>` Operátor vrátí `true` pokud jeho levý operand je větší než jeho zpracovával pravý operand `false` jinak:
 
 [!code-csharp-interactive[greater than example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#Greater)]
 
 ## <a name="less-than-or-equal-operator-"></a>Menší než nebo rovno – operátor \<=
 
-`<=` Operátor vrátí `true` Pokud svůj první operand je menší nebo rovna svým druhým operandem, `false` jinak:
+`<=` Operátor vrátí `true` pokud jeho levý operand je menší nebo rovna zpracovával pravý operand, `false` jinak:
 
 [!code-csharp-interactive[less than or equal example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#LessOrEqual)]
 
 ## <a name="greater-than-or-equal-operator-"></a>Operátor větší než nebo rovna > =
 
-`>=` Operátor vrátí `true` Pokud svůj první operand je větší než nebo rovna hodnotě svým druhým operandem, `false` jinak:
+`>=` Operátor vrátí `true` pokud jeho levý operand je větší než nebo rovna hodnotě zpracovával pravý operand, `false` jinak:
 
 [!code-csharp-interactive[greater than or equal example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#GreaterOrEqual)]
 

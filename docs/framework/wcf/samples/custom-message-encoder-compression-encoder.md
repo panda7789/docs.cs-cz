@@ -2,12 +2,12 @@
 title: 'Vlastní kodér zpráv: Kompresní kodér'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 6ada1cdeee02eb747f9f85abc9c99602d5f26b72
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 32ca96987a86c04c227f8bb0d680f647898dfccf
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348431"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Vlastní kodér zpráv: Kompresní kodér
 Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows Communication Foundation (WCF).  
@@ -222,7 +222,7 @@ binding.Namespace = "http://tempuri.org/bindings";
   
  To může být dostatečné pro většinu scénářů uživatelů, podpora soubor konfigurace je velmi důležité, pokud má být hostované webové služby. Pro podporu scénáři hostování webových, je třeba vytvořit obslužnou rutinu vlastní konfigurace na Povolit vlastní prvek vazby na umožňovat konfiguraci do souboru.  
   
- Můžete vytvářet obslužné rutiny konfiguračního pro element vazby na konfigurační systém poskytované [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Obslužné rutiny konfiguračního elementu vazby musí být odvozen od <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> třídy. `BindingElementType` Vlastnost se používá k informování konfigurační systém typ elementu vazby k vytvoření této části. Všechny aspekty `BindingElement` , může být sada by měly být vystaveny jako vlastnosti <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> odvozené třídy. <xref:System.Configuration.ConfigurationPropertyAttribute> Je použít jako pomůcku při mapování atributů elementu konfigurace vlastností a nastavení výchozí hodnoty, pokud jsou chybějící atributy. Po hodnoty z konfigurace jsou načítány a použity k vlastnostem, <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> metoda je volána, který převede na konkrétní instance elementu vazby vlastnosti. <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> Metoda se používá pro převod vlastnosti na <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> do hodnoty, které mají být nastaven pro element vazby newlycreated odvozené třídy.  
+ Můžete vytvářet obslužné rutiny konfiguračního prvku vazby na konfigurační systém. Obslužné rutiny konfiguračního elementu vazby musí být odvozen od <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> třídy. <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.BindingElementType?displayProperty=nameWithType> Informuje systém konfigurace typ elementu vazby k vytvoření této části. Všechny aspekty `BindingElement` , může být sada by měly být vystaveny jako vlastnosti <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> odvozené třídy. <xref:System.Configuration.ConfigurationPropertyAttribute> Pomáhá při mapování atributů elementu konfigurace vlastností a nastavení výchozí hodnoty, pokud jsou chybějící atributy. Po hodnoty z konfigurace jsou načítány a použity k vlastnostem, <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A?displayProperty=nameWithType> metoda je volána, který převede na konkrétní instance elementu vazby vlastnosti. <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A?displayProperty=nameWithType> Metoda se používá pro převod vlastnosti na <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> odvozené třídy do hodnoty, které mají být nastaven pro element nově vytvořená vazba.  
   
  Následující ukázkový kód ukazuje implementaci `GZipMessageEncodingElement`.  
   

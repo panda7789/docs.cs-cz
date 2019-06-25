@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 4a669b4eefeeb91c0835dc41a1c8736aacf0e14f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a2d0f5f740186d3dd7483408f88d612711f57575
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348472"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 
@@ -52,7 +52,7 @@ Když vyvíjíte aplikaci, která se spustí v částečném vztahu důvěryhodn
 
 Pokud budete požadovat volitelné oprávnění, musí zpracovat výjimky zabezpečení, které budou generovány, pokud aplikace provádí akci, která vyžaduje oprávnění nebyla udělena. Odpovídající zpracování <xref:System.Security.SecurityException> zajistí, že vaše aplikace může i nadále fungovat. Aplikace může výjimku použít k určení, zda by měla funkce deaktivuje pro daného uživatele. Například můžete zakázat aplikaci **Uložit** možnost nabídky, pokud není uděleno oprávnění požadovaný soubor.
 
-Někdy je těžké vědět, pokud máte s prohlašovanou příslušná oprávnění. Volání metody, která vypadá neškodného na povrchu, například může přístup k systému souborů v určitém okamžiku během jejího provádění. Pokud nezvolíte nasazení aplikace s požadovanými oprávněními, se může otestovat bez problémů při ladění na vašem počítači, ale selhat při nasazení. Oba [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] sady SDK a sady Visual Studio 2005 obsahovat nástroje pro výpočet oprávnění aplikace potřebuje: příkaz MT.exe čára a vlastnost Calculate Permissions sady Visual Studio, v uvedeném pořadí.
+Někdy je těžké vědět, pokud máte s prohlašovanou příslušná oprávnění. Volání metody, která vypadá neškodného na povrchu, například může přístup k systému souborů v určitém okamžiku během jejího provádění. Pokud nezvolíte nasazení aplikace s požadovanými oprávněními, se může otestovat bez problémů při ladění na vašem počítači, ale selhat při nasazení. Sada SDK rozhraní .NET Framework 2.0 i Visual Studio 2005 obsahovat nástroje pro výpočet oprávnění aplikace potřebuje: příkaz MT.exe čára a vlastnost Calculate Permissions sady Visual Studio, v uvedeném pořadí.
 
 Následující témata popisují další funkce zabezpečení Windows Forms.
 
@@ -77,7 +77,7 @@ Následující tabulka popisuje tyto technologie.
 
 Technologii, kterou zvolíte, závisí na prostředí pro nasazení. Další informace najdete v tématu [Výběr strategie nasazení ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Ve výchozím nastavení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace nasazené pomocí nástroje Visual Studio nebo [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] nástroje sady SDK (Mage.exe a MageUI.exe) jsou nakonfigurovány na spuštění v klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. To lze provést pomocí sady Visual Studio nebo [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] sady SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe najdete v návodu: Nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
+Ve výchozím nastavení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace nasazené pomocí sady Visual Studio nebo nástroje .NET Framework SDK (Mage.exe a MageUI.exe) jsou nakonfigurovány na spuštění v klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. Můžete to provedete pomocí sady Visual Studio nebo rozhraní .NET Framework SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe najdete v návodu: Nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
 Další informace o aspektech zabezpečení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] a zvýšení úrovně oprávnění, najdete v článku [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Další informace o nasazení důvěryhodných aplikací najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).
 

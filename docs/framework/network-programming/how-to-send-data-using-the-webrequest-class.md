@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: 3878a94debc7066cb8ace3b119d95d3b76d91610
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2dcc9e70f51c3c96cbc3af238fed21021ff7ae2c
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642500"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347358"
 ---
 # <a name="how-to-send-data-by-using-the-webrequest-class"></a>Postupy: Odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webovou stránku. 
@@ -31,7 +31,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     ```  
   
     > [!NOTE]
-    > Rozhraní .NET Framework poskytuje konkrétní třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy pro identifikátory URI, které začínají *http:*, *https:*, *ftp:* , a *souboru:*.
+    > Rozhraní .NET Framework poskytuje konkrétní třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy pro identifikátory URI, které začínají *http:* , *https:* , *ftp:* , a *souboru:* .
     Pokud je potřeba sada nebo čtení vlastnosti specifické pro protokol, musíte přetypovat vaše <xref:System.Net.WebRequest> nebo <xref:System.Net.WebResponse> objektu na typ object specifický pro protokol. Další informace najdete v tématu [programování připojitelných protokolů](programming-pluggable-protocols.md). 
   
 2. Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu. Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:
@@ -80,8 +80,8 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     Stream dataStream = request.GetRequestStream();  
     ```  
   
-    ```vb  
-    Stream dataStream = request.GetRequestStream()  
+    ```vb
+    Dim dataStream As Stream = request.GetRequestStream()  
     ```  
   
 7. Zapsat data do <xref:System.IO.Stream> vrácený `GetRequestStream` metody. Příklad:
@@ -148,7 +148,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
   
 ## <a name="example"></a>Příklad  
   
-Následující příklad kódu ukazuje, jak odesílat data do webového serveru a tato data číst v odpovědi:  
+Následující příklad ukazuje, jak odesílat data do webového serveru a tato data číst v odpovědi:  
 
 [!code-csharp[SendDataUsingWebRequest](../../../samples/snippets/csharp/VS_Snippets_Network/SendDataUsingWebRequest/cs/WebRequestPostExample.cs)]
 [!code-vb[SendDataUsingWebRequest](../../../samples/snippets/visualbasic/VS_Snippets_Network/SendDataUsingWebRequest/vb/WebRequestPostExample.vb)]

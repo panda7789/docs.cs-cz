@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 434a88e305f833a5a95bb62835b5badd4a2c4949
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 4579e00bdaf89b4cf5d0da24a343fb5070609863
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347318"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
 Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsoft intermediate language (MSIL), každý s vlastní problémy se zabezpečením:  
@@ -151,7 +151,7 @@ Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsof
  A konečně rozhraní .NET Framework 2.0 SP1 zavádí anonymně hostované metody.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Získání informací o typech a členech  
- Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], žádná oprávnění nejsou vyžadována k získání informací o neveřejným typům a členům. Reflexe slouží k získání informací potřebných k emitování dynamické metody. Například <xref:System.Reflection.MethodInfo> objekty se používají ke generování volání metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak. Další informace najdete v tématu [Security Considerations for Reflection](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
+ Od verze rozhraní .NET Framework 2.0, žádná oprávnění nejsou vyžadována k získání informací o neveřejným typům a členům. Reflexe slouží k získání informací potřebných k emitování dynamické metody. Například <xref:System.Reflection.MethodInfo> objekty se používají ke generování volání metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak. Další informace najdete v tématu [Security Considerations for Reflection](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
   
 ## <a name="see-also"></a>Viz také:
 

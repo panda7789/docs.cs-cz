@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 4a495fb5ce353bcb4f7ccda975dfc74ba711db79
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 1f98435aba6994aaca76127cc20b5ffa29df455f
+ms.sourcegitcommit: d9c4808739c8c606957dd0964d952b98ea7b6533
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349775"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Bitový operátor a operátory posunutí (C# odkaz)
 
@@ -60,39 +60,39 @@ Můžete také použít `~` symbol finalizační metody deklarovat. Další info
 
 ## <a name="left-shift-operator-"></a>Operátor posunutí doleva \<\<
 
-`<<` Operátor posune jeho prvního operandu vlevo o počet bitů, které jsou určené svým druhým operandem.
+`<<` Operátor posune jeho levý operand doleva o počet bitů, které jsou určené jeho operand pravé strany.
 
 Operace levého posunutí zahodí implikovaný bitů, které jsou mimo rozsah typu výsledku a nastaví nižšího řádu prázdný bitové pozice na nulu, jako v následujícím příkladu:
 
 [!code-csharp-interactive[left shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LeftShift)]
 
-Protože operátory posunutí jsou určená jenom pro `int`, `uint`, `long`, a `ulong` obsahuje typy, výsledek operace vždy alespoň 32 bitů. Pokud je první operand je jiný celočíselný typ (`sbyte`, `byte`, `short`, `ushort`, nebo `char`), jeho hodnota je převedena na `int` typu, jak ukazuje následující příklad:
+Protože operátory posunutí jsou určená jenom pro `int`, `uint`, `long`, a `ulong` obsahuje typy, výsledek operace vždy alespoň 32 bitů. Pokud levý operand je jiný celočíselný typ (`sbyte`, `byte`, `short`, `ushort`, nebo `char`), jeho hodnota je převedena na `int` typu, jak ukazuje následující příklad:
 
 [!code-csharp-interactive[left shift with promotion](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LeftShiftPromoted)]
 
-Informace o druhý operand `<<` operátor definuje počet posunů naleznete v tématu [Shift počet operátory posunutí](#shift-count-of-the-shift-operators) oddílu.
+Informace o tom, pravém operand `<<` operátor definuje počet posunů naleznete v tématu [Shift počet operátory posunutí](#shift-count-of-the-shift-operators) oddílu.
 
 ## <a name="right-shift-operator-"></a>Operátor pravého posunutí >>
 
-`>>` Svůj první operand operátoru přímo posune počet bitů, které jsou určené svým druhým operandem.
+`>>` Jeho levý operand operátoru přímo posune počet bitů, které jsou určené jeho zpracovával pravý operand.
 
 Operace pravého posunutí zahodí bity nižšího řádu jako v následujícím příkladu:
 
 [!code-csharp-interactive[right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#RightShift)]
 
-Nejvyšším prázdný bitové pozice jsou nastaveny na základě typu prvního operandu následujícím způsobem:
+Nejvyšším prázdný bitové pozice jsou nastavena na základě typu levý operand následujícím způsobem:
 
-- Pokud je první operand je typu [int](../keywords/int.md) nebo [dlouhé](../keywords/long.md), operátor pravého posunutí provádí *aritmetické* shift: hodnota nejvýznamnější bit (bit znaménka) prvního operand je postoupena do nejvyšším prázdný bitové pozice. To znamená, implikovaný prázdný bitové pozice nastavení na hodnotu nula, pokud je první operand je nastaven na nezáporné a nastavit na jednu, pokud je záporné.
+- Pokud levý operand je typu [int](../keywords/int.md) nebo [dlouhé](../keywords/long.md), operátor pravého posunutí provádí *aritmetické* shift: hodnota nejvýznamnější bit (bit znaménka) Levý operand je postoupena do nejvyšším prázdný bitové pozice. To znamená, implikovaný prázdný bitové pozice jsou nastaveny na nulu pokud levý operand je nastaven na nezáporné a nastavit na jednu, pokud je záporné.
 
   [!code-csharp-interactive[arithmetic right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
 
-- Pokud je první operand je typu [uint](../keywords/uint.md) nebo [ulong](../keywords/ulong.md), operátor pravého posunutí provádí *logické* shift: nejvyšším prázdný bitové pozice jsou vždy nastaveny na hodnotu nula.
+- Pokud levý operand je typu [uint](../keywords/uint.md) nebo [ulong](../keywords/ulong.md), operátor pravého posunutí provádí *logické* shift: nejvyšším prázdný bitové pozice jsou vždy nastaveny na hodnotu nula.
 
   [!code-csharp-interactive[logical right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LogicalRightShift)]
 
-Informace o druhý operand `>>` operátor definuje počet posunů naleznete v tématu [Shift počet operátory posunutí](#shift-count-of-the-shift-operators) oddílu.
+Informace o tom, pravém operand `>>` operátor definuje počet posunů naleznete v tématu [Shift počet operátory posunutí](#shift-count-of-the-shift-operators) oddílu.
 
-## <a name="logical-and-operator-amp"></a>Logický operátor AND &amp;
+## <a name="logical-and-operator-"></a> Logický operátor AND &amp;
 
 `&` Vypočítá bitové logické AND jeho operandy operátoru:
 
@@ -158,13 +158,13 @@ Pro úplný seznam C# operátory seřazené podle úrovně priority, naleznete v
 
 ## <a name="shift-count-of-the-shift-operators"></a>Počet posunů operátorů posunutí
 
-Pro operátory posunutí `<<` a `>>`, musí být typu druhého operandu [int](../keywords/int.md) nebo typ, který má [předdefinované implicitní převod čísla](../keywords/implicit-numeric-conversions-table.md) k `int`.
+Pro operátory posunutí `<<` a `>>`, musí být typu zpracovával pravý operand [int](../keywords/int.md) nebo typ, který má [předdefinované implicitní převod čísla](../keywords/implicit-numeric-conversions-table.md) k `int`.
 
 Pro `x << count` a `x >> count` výrazy, počet skutečné posunutí závisí na typu `x` následujícím způsobem:
 
-- Pokud typ `x` je [int](../keywords/int.md) nebo [uint](../keywords/uint.md), počet posunů je definován nižšího řádu *pět* bits druhého operandu. To znamená, že počet posunů je vypočítán z `count & 0x1F` (nebo `count & 0b_1_1111`).
+- Pokud typ `x` je [int](../keywords/int.md) nebo [uint](../keywords/uint.md), počet posunů je definován nižšího řádu *pět* bits operand pravé strany. To znamená, že počet posunů je vypočítán z `count & 0x1F` (nebo `count & 0b_1_1111`).
 
-- Pokud typ `x` je [dlouhé](../keywords/long.md) nebo [ulong](../keywords/ulong.md), počet posunů je definován nižšího řádu *šest* bits druhého operandu. To znamená, že počet posunů je vypočítán z `count & 0x3F` (nebo `count & 0b_11_1111`).
+- Pokud typ `x` je [dlouhé](../keywords/long.md) nebo [ulong](../keywords/ulong.md), počet posunů je definován nižšího řádu *šest* bits operand pravé strany. To znamená, že počet posunů je vypočítán z `count & 0x3F` (nebo `count & 0b_11_1111`).
 
 Následující příklad ukazuje toto chování:
 
@@ -180,7 +180,7 @@ Obvykle použijete bitové logické operátory s typem výčtu, která je defino
 
 Uživatelem definovaný typ může [přetížení](../keywords/operator.md) `~`, `<<`, `>>`, `&`, `|`, a `^` operátory. Pokud je binární operátor přetížen, je také implicitně přetížené odpovídající operátor složeného přiřazení. Uživatelem definovaný typ nejde explicitně přetížit operátor složeného přiřazení.
 
-Pokud uživatelský typ `T` přetížení `<<` nebo `>>` operátoru musí být typu prvního operandu `T` a musí být typu druhého operandu `int`.
+Pokud uživatelský typ `T` přetížení `<<` nebo `>>` operátoru musí být typu levý operand `T` a musí být typu zpracovával pravý operand `int`.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

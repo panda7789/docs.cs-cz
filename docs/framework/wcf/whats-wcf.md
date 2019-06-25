@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 6e51b93d53e1ad65b2f19f81de8833e83bfb18c1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 13108e86d76b0d806eddf71b2f7e50337ca0afba
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348311"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je architektura určená k vytváření aplikací orientovaných na služby. Pomocí technologie WCF, můžete odeslat data jako asynchronní zprávy z jeden koncový bod služby do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupnými službami hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncový bod může být klient služby, který vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo slova jako XML, nebo komplexního, jako binární datový proud. Několik ukázkových scénářů patří:
@@ -92,7 +92,7 @@ Microsoft BizTalk Server R2 také využívá jako komunikační technologie WCF.
 
 Microsoft Silverlight je platforma pro vytváření interoperabilních, bohatých webových aplikací, které umožňují vývojářům vytvářet weby náročné na média (například streamování videa). Od verze 2, doplnil Silverlight WCF technologií komunikace, jak připojit aplikace Silverlight do koncových bodů WCF.
 
-[!INCLUDE[dublin](../../../includes/dublin-md.md)] Aplikační server je vytvořená speciálně pro nasazení a správu aplikací, které používají WCF pro komunikaci. [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] Zahrnuje bohaté možnosti nástrojů a konfigurace vytvořené speciálně pro aplikace pro práci s WCF.
+Hostování funkcí služby Windows Server AppFabric aplikačního serveru jsou vytvořené speciálně pro nasazení a správu aplikací, které používají WCF pro komunikaci. [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] Zahrnuje bohaté možnosti nástrojů a konfigurace vytvořené speciálně pro aplikace pro práci s WCF.
 
 ## <a name="see-also"></a>Viz také:
 

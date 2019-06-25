@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 6ab898c93086e477bf4384b4d6c725fbdc8fe761
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: d1f43a5b7a539c89a753d168fbf0e05ca4118f58
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879150"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347987"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -54,7 +54,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 ## <a name="displaying-and-manipulating-data"></a>Zobrazení a manipulace s daty  
  Mnoho aplikací se musí zobrazovat data z databáze nebo soubor XML, webové služby XML nebo jiný zdroj dat. Windows Forms poskytuje flexibilní ovládací prvek volána <xref:System.Windows.Forms.DataGridView> ovládací prvek pro vykreslení takové tabulková data v tradiční řádků a sloupců formátu tak, aby každá část data zabírá vlastní buňku. Pomocí <xref:System.Windows.Forms.DataGridView> můžete přizpůsobit vzhled jednotlivé buňky, uzamknout libovolného řádků a sloupců na místě a zobrazit komplexní ovládací prvky do buněk, kromě jiných funkcí.  
   
- Připojení ke zdrojům dat přes síť je jednoduchou úlohou s inteligentní klienti Windows Forms. <xref:System.Windows.Forms.BindingSource> Komponentu, nově ve Windows Forms v sadě Visual Studio 2005 a [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)], představuje připojení ke zdroji dat a poskytuje metody pro vazby dat k ovládacím prvkům, přejděte na další a předchozí záznamy, Hromadná úprava záznamů a ukládání změny zpět do původního zdroje. <xref:System.Windows.Forms.BindingNavigator> Řízení poskytuje jednoduché rozhraní průběhu <xref:System.Windows.Forms.BindingSource> komponentu uživatelům přecházení mezi záznamy.  
+ Připojení ke zdrojům dat přes síť je jednoduchou úlohou s inteligentní klienti Windows Forms. <xref:System.Windows.Forms.BindingSource> Komponenty nově ve Windows Forms v sadě Visual Studio 2005 a rozhraní .NET Framework 2.0, představuje připojení ke zdroji dat a poskytuje metody pro vytvoření vazby dat k ovládacím prvkům, přechodu na záznamy předchozí a další Hromadná úprava záznamů, a ukládají se změny zpět do původního zdroje. <xref:System.Windows.Forms.BindingNavigator> Řízení poskytuje jednoduché rozhraní průběhu <xref:System.Windows.Forms.BindingSource> komponentu uživatelům přecházení mezi záznamy.  
   
 ### <a name="data-bound-controls"></a>Ovládací prvky vázané daty  
  Můžete vytvořit ovládací prvky vázané na data snadno pomocí okna zdrojů dat, který obsahuje zdroje dat, jako je například databází, webových služeb a objektů ve vašem projektu. Můžete vytvořit ovládací prvky vázané na data přetažením položek z tohoto okna do formuláře v projektu. Vám může také vytvořte datovou vazbu existujících ovládacích prvků na data přetažením objektů z okna zdroje dat na existující ovládací prvky.  

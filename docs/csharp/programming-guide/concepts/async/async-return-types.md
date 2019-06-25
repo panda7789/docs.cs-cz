@@ -2,12 +2,12 @@
 title: Asynchronní návratové typy (C#)
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: 327168e3ac77ab1ed7c9841d592781c704839660
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca429db9b3ad81555df3c7e02d8827136734e26c
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599786"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347744"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
 Asynchronní metody může mít tyto návratové typy:
@@ -73,7 +73,7 @@ Od verze C# 7.0, asynchronní metoda může vrátit libovolný typ, který má k
  
 Protože <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> jsou typy odkazů, přidělení paměti v kritickém pro výkon cesty, zejména pokud dojde k přidělení v těsné smyčky může nepříznivě ovlivnit výkon. Podpora zobecněný návratové typy znamená, že se můžete vrátit zjednodušené hodnotový typ místo typu odkazu, aby se zabránilo další paměť přidělení. 
 
-Poskytuje rozhraní .NET <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> strukturu jako implementace odlehčené zobecněný hodnoty vracející úlohy. Použít <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> typu, je nutné přidat `System.Threading.Tasks.Extensions` do svého projektu balíček NuGet. V následujícím příkladu <xref:System.Threading.Tasks.ValueTask%601> struktury k načtení hodnoty dvou dice postupně. 
+Poskytuje rozhraní .NET <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> strukturu jako nenáročné implementace hodnotu zobecněný vracející úlohy. Použít <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> typu, je nutné přidat `System.Threading.Tasks.Extensions` do svého projektu balíček NuGet. V následujícím příkladu <xref:System.Threading.Tasks.ValueTask%601> struktury k načtení hodnoty dvou dice postupně. 
   
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - user controls [Windows Forms], painting
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a5b178ba-610e-46c4-a6c0-509c0886a744
-ms.openlocfilehash: 4dbccfc881e777309394aed9711a93b8a25315be
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 558600c9256f205598288f9e20d38cb94608c920
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592603"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348476"
 ---
 # <a name="rendering-controls-with-visual-styles"></a>Vykreslování ovládacích prvků s vizuálními styly
 Rozhraní .NET Framework poskytuje podporu pro vykreslení ovládacích prvků a jiných uživatelů Windows pomocí vizuálních stylů v operačních systémech, které je podporují prvky rozhraní (UI). Toto téma popisuje několik úrovní podpory v rozhraní .NET Framework pro vykreslování a další prvky uživatelského rozhraní s aktuálním vizuálním stylem operačního systému.  
@@ -23,7 +23,7 @@ Rozhraní .NET Framework poskytuje podporu pro vykreslení ovládacích prvků a
 ## <a name="rendering-classes-for-common-controls"></a>Třídy vykreslování pro běžné ovládací prvky  
  Vykreslení ovládacího prvku se vztahuje k vykreslení ovládacího prvku uživatelského rozhraní. <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů poskytuje <xref:System.Windows.Forms.ControlPaint> ovládací prvky Windows Forms třídy pro vykreslování některé běžné. Tato třída však kreslení ovládacích prvků v klasického stylu Windows, který může být obtížné udržovat konzistentní prostředí uživatelského rozhraní při kreslení vlastních ovládacích prvků v aplikacích s vizuálními styly povoleny.  
   
- [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] Zahrnuje třídy v <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů, který vykreslování části a stavy běžných ovládacích prvků s vizuálními styly. Každá z těchto tříd obsahuje `static` metody pro vykreslení ovládacího prvku nebo části ovládacího prvku v určitém stavu s aktuálním vizuálním stylem operačního systému.  
+ Obsahuje třídy v rozhraní .NET Framework 2.0 <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů, který vykreslování části a stavy běžných ovládacích prvků s vizuálními styly. Každá z těchto tříd obsahuje `static` metody pro vykreslení ovládacího prvku nebo části ovládacího prvku v určitém stavu s aktuálním vizuálním stylem operačního systému.  
   
  Některé z těchto tříd jsou navržené k vykreslení související ovládací prvek bez ohledu na to, zda jsou k dispozici vizuální styly. Pokud jsou povolené vizuální styly, pak členy třídy bude nakreslete související s vizuálními styly; Pokud je vizuální styly jsou zakázané, pak členy třídy bude nakreslete ovládací prvek v klasické Windows. Tyto třídy zahrnují:  
   

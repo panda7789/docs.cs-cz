@@ -4,26 +4,26 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: e78616acc56e75dd06445f7a569ab94e65e20cc0
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8449fe048cc9149e8e8cf02f27f131c0d90d6984
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592228"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348197"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  
   
 ## <a name="what-a-binding-defines"></a>Co definuje vazbu  
- Informace v vazbu může být velmi základní nebo velmi složité. Základní vazby určuje pouze přenosový protokol (například HTTP), který se použije pro připojení ke koncovému bodu. Obecně platí informace, které obsahuje vazbu o tom, jak připojit ke koncovému bodu spadá do jedné z těchto kategorií.  
+ Informace v vazbu může být velmi základní nebo velmi složité. Základní vazby určuje pouze přenosový protokol (například HTTP), který se použije pro připojení ke koncovému bodu. Obecně platí informace, které obsahuje vazbu o tom, jak připojit ke koncovému bodu spadá do jedné z následujících kategorií:  
   
- Protokoly  
+ **Protokoly**  
  Určuje mechanismus zabezpečení, který se používá: funkce spolehlivé zasílání zpráv nebo nastavení toku kontextu transakce.  
   
- Kódování  
+ **Kódování**  
  Určuje kódování zpráv (například text nebo binární).  
   
- Přenos  
+ **Přenos**  
  Určuje základní přenos protokol, který použít (například protokol TCP nebo HTTP).  
   
 ## <a name="the-elements-of-a-binding"></a>Prvky vazby  

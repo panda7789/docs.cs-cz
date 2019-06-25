@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 37fe329026c16043abb20f8a9f030d877469951d
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 809c88d519cb75f42c1ac00a18e19097c01fd084
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025227"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347937"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logická logické operátory (C# odkaz)
 
@@ -45,7 +45,7 @@ Následující operátory provádí logické operace s [bool](../keywords/bool.m
 
 - Unární [ `!` (Logická negace)](#logical-negation-operator-) operátor.
 - Binární [ `&` (logický operátor a)](#logical-and-operator-), [ `|` (logický operátor nebo)](#logical-or-operator-), a [ `^` (logické XOR)](#logical-exclusive-or-operator-) operátory. Tyto operátory jsou vždy vyhodnoceny oba operandy.
-- Binární [ `&&` (logický operátor podmíněného AND)](#conditional-logical-and-operator-) a [ `||` (logický operátor podmíněného OR)](#conditional-logical-or-operator-) operátory. Tyto operátory vyhodnocení druhého operandu, pouze pokud je nutné.
+- Binární [ `&&` (logický operátor podmíněného AND)](#conditional-logical-and-operator-) a [ `||` (logický operátor podmíněného OR)](#conditional-logical-or-operator-) operátory. Tyto operátory vyhodnotit operand pravé strany pouze v případě potřeby.
 
 Pro operandy [integrální](../keywords/integral-types-table.md) typy, `&`, `|`, a `^` operátory provádějí operace bitový logický. Další informace najdete v tématu [operátory bitové a shift](bitwise-and-shift-operators.md).
 
@@ -59,13 +59,13 @@ Pro operandy [integrální](../keywords/integral-types-table.md) typy, `&`, `|`,
 
 `&` Operátor vypočítá logický operátor AND operandů. Výsledek `x & y` je `true` Pokud mají oba `x` a `y` vyhodnotit `true`. V opačném případě je výsledek `false`.
 
-`&` Operátor vyhodnotí oba operandy i v případě, že první operand vyhodnocen jako `false`tak, aby výsledek musí být `false` bez ohledu na hodnotu druhého operandu.
+`&` Operátor vyhodnotí oba operandy i v případě, že levý operand je vyhodnocen jako `false`tak, aby výsledek musí být `false` bez ohledu na hodnotu operandu pravé.
 
-V následujícím příkladu, druhý operand `&` operátor je volání metody, která se provádí bez ohledu na hodnotu prvního operandu:
+V následujícím příkladu, pravém operand `&` volání metody, která se provádí bez ohledu na hodnotu levý operand je operátor:
 
 [!code-csharp-interactive[logical AND](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#And)]
 
-[Podmíněné logického operátoru AND](#conditional-logical-and-operator-) `&&` také vypočítá logický operátor a jeho operandy, ale nebude vyhodnocení druhého operandu, jestli je první operand vyhodnocen jako `false`.
+[Podmíněné logického operátoru AND](#conditional-logical-and-operator-) `&&` také vypočítá logický operátor a jeho operandy, ale nevyhodnocuje zpracovával pravý operand, je-li levý operand je vyhodnocen jako `false`.
 
 Pro operandy integrální typy `&` operátor výpočetní prostředí [bitové logické AND](bitwise-and-shift-operators.md#logical-and-operator-) z operandů. Unární `&` operátor je [operátoru address-of](pointer-related-operators.md#address-of-operator-).
 
@@ -81,21 +81,21 @@ Pro operandy integrální typy `^` operátor výpočetní prostředí [logický 
 
 `|` Operátor vypočítá logický operátor OR operandů. Výsledek `x | y` je `true` Pokud `x` nebo `y` vyhodnotí jako `true`. V opačném případě je výsledek `false`.
 
-`|` Operátor vyhodnotí oba operandy i v případě, že první operand vyhodnocen jako `true`tak, aby výsledek musí být `true` bez ohledu na hodnotu druhého operandu.
+`|` Operátor vyhodnotí oba operandy i v případě, že levý operand je vyhodnocen jako `true`tak, aby výsledek musí být `true` bez ohledu na hodnotu operandu pravé.
 
-V následujícím příkladu, druhý operand `|` operátor je volání metody, která se provádí bez ohledu na hodnotu prvního operandu:
+V následujícím příkladu, pravém operand `|` volání metody, která se provádí bez ohledu na hodnotu levý operand je operátor:
 
 [!code-csharp-interactive[logical OR](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Or)]
 
-[Podmíněné logického operátoru OR](#conditional-logical-or-operator-) `||` také vypočítá logický operátor OR jeho operandy, ale nebude vyhodnocení druhého operandu, jestli je první operand vyhodnocen jako `true`.
+[Podmíněné logického operátoru OR](#conditional-logical-or-operator-) `||` také vypočítá logický operátor OR jeho operandy, ale nevyhodnocuje zpracovával pravý operand, je-li levý operand je vyhodnocen jako `true`.
 
 Pro operandy integrální typy `|` operátor výpočetní prostředí [bitové logické OR](bitwise-and-shift-operators.md#logical-or-operator-) z operandů.
 
 ## <a name="conditional-logical-and-operator-ampamp"></a>Podmíněné logického operátoru AND &amp;&amp;
 
-Podmíněné logického operátoru AND `&&`, označované také jako "krátký cyklus" logického operátoru AND, vypočítá logický operátor AND operandů. Výsledek `x && y` je `true` Pokud mají oba `x` a `y` vyhodnotit `true`. V opačném případě je výsledek `false`. Pokud je první operand vyhodnocen jako `false`, není vyhodnocen Druhý operand.
+Podmíněné logického operátoru AND `&&`, označované také jako "krátký cyklus" logického operátoru AND, vypočítá logický operátor AND operandů. Výsledek `x && y` je `true` Pokud mají oba `x` a `y` vyhodnotit `true`. V opačném případě je výsledek `false`. Pokud `x` vyhodnotí jako `false`, `y` , nebude hodnocen.
 
-V následujícím příkladu, druhý operand `&&` operátor je volání metody, které se neprovádí, pokud je první operand vyhodnocen jako `false`:
+V následujícím příkladu, pravém operand `&&` operátor je volání metody, které se neprovádí, pokud je levý operand vyhodnocen jako `false`:
 
 [!code-csharp-interactive[conditional logical AND](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#ConditionalAnd)]
 
@@ -103,9 +103,9 @@ V následujícím příkladu, druhý operand `&&` operátor je volání metody, 
 
 ## <a name="conditional-logical-or-operator-"></a>Podmíněné logického operátoru OR ||
 
-Podmíněné logického operátoru OR `||`, označované také jako "krátký cyklus" logického operátoru OR, vypočítá logický operátor OR operandů. Výsledek `x || y` je `true` Pokud `x` nebo `y` vyhodnotí jako `true`. V opačném případě je výsledek `false`. Pokud je první operand vyhodnocen jako `true`, není vyhodnocen Druhý operand.
+Podmíněné logického operátoru OR `||`, označované také jako "krátký cyklus" logického operátoru OR, vypočítá logický operátor OR operandů. Výsledek `x || y` je `true` Pokud `x` nebo `y` vyhodnotí jako `true`. V opačném případě je výsledek `false`. Pokud `x` vyhodnotí jako `true`, `y` , nebude hodnocen.
 
-V následujícím příkladu, druhý operand `||` operátor je volání metody, které se neprovádí, pokud je první operand vyhodnocen jako `true`:
+V následujícím příkladu, pravém operand `||` operátor je volání metody, které se neprovádí, pokud je levý operand vyhodnocen jako `true`:
 
 [!code-csharp-interactive[conditional logical OR](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#ConditionalOr)]
 

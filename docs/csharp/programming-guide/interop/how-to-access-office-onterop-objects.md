@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 76bd9d9bce8e41605b96e979c2a39ea15e1d15ad
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 9163bfa98d85a3268e154321d1aa6e55783a50f9
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347638"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
 Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní API Office. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předání argumentů do parametrů odkazu v metodách modelu COM, jako by byly parametry s hodnotou.  
@@ -24,7 +24,6 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
  K dokončení tohoto návodu, musíte mít aplikaci Microsoft Office Excel 2007 a Microsoft Office Word 2007 nebo novější verze, v počítači nainstalována.  
   
- Pokud používáte operační systém, který je starší než [!INCLUDE[windowsver](~/includes/windowsver-md.md)], ujistěte se, že [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] je nainstalována.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -114,13 +113,13 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      Vložit metodu `CreateIconInWordDoc`, k dispozici dále v tomto kroku do `Program` třídy. `CreateIconInWordDoc` pojmenované a nepovinné argumenty používá ke snížení složitosti volání metody <xref:Microsoft.Office.Interop.Word.Documents.Add%2A> a <xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>. Tato volání začlenit dvě další nové vlastnosti představené v C# 4, které zjednodušují volání metody COM, které mají odkazovat na parametry. Nejprve můžete poslat argumenty parametrů odkazu jako by byly parametry s hodnotou. To znamená můžete odeslat hodnoty přímo, bez vytváření proměnných pro každý odkaz na parametr. Kompilátor generuje dočasné proměnné pro uložení hodnoty argumentů a zahodí proměnné při návratu z volání. Za druhé, můžete vynechat `ref` – klíčové slovo v seznamu argumentů.  
   
-     `Add` Metoda má čtyři parametry odkazu, z nichž všechny jsou volitelné. V C# 4 nebo novější verze, pokud chcete použít výchozí hodnoty, můžete vynechat argumenty pro některé nebo všechny parametry. V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] a starší verze pro každý parametr je třeba zadat argument a argument musí být proměnná, protože parametry jsou parametry odkazů.  
+     `Add` Metoda má čtyři parametry odkazu, z nichž všechny jsou volitelné. V C# 4.0 a novější verze, pokud chcete použít výchozí hodnoty, můžete vynechat argumenty pro některé nebo všechny parametry. V C# 3.0 a starší verze pro každý parametr je třeba zadat argument a argument musí být proměnná, protože parametry jsou parametry odkazů.  
   
-     `PasteSpecial` Metoda vloží obsah schránky. Metoda má sedm parametrů odkazu, z nichž všechny jsou volitelné. Následující kód určuje argumenty pro dva z nich: `Link`, chcete-li vytvořit odkaz na zdroj obsah schránky a `DisplayAsIcon`, aby se zobrazil na odkaz jako ikona. V C# 4, můžete použít pojmenované argumenty pro tyto dvě a ostatní vynechat. I když jsou parametry odkazů, není potřeba použít `ref` – klíčové slovo, nebo k vytvoření proměnné k odeslání jako argumenty. Hodnoty můžete odeslat přímo. V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] a starší verze, je nutné odeslat argumentů proměnných pro každý odkaz na parametr.  
+     `PasteSpecial` Metoda vloží obsah schránky. Metoda má sedm parametrů odkazu, z nichž všechny jsou volitelné. Následující kód určuje argumenty pro dva z nich: `Link`, chcete-li vytvořit odkaz na zdroj obsah schránky a `DisplayAsIcon`, aby se zobrazil na odkaz jako ikona. V C# 4.0 a novější verze, můžete použít pojmenované argumenty pro tyto dvě a ostatní vynechat. I když jsou parametry odkazů, není potřeba použít `ref` – klíčové slovo, nebo k vytvoření proměnné k odeslání jako argumenty. Hodnoty můžete odeslat přímo. V C# 3.0 a starší verze, je nutné zadat argumentů proměnných pro každý odkaz na parametr.  
   
      [!code-csharp[csProgGuideOfficeHowTo#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#9)]  
   
-     V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] nebo starší verze jazyka následující složitější kód je povinný.  
+     V C# 3.0 a starší verze jazyka následující složitější kód je povinný.  
   
      [!code-csharp[csProgGuideOfficeHowTo#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#10)]  
   
@@ -164,7 +163,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 2. Stisknutím kláves CTRL + F5 k zobrazení výsledku. Další formáty jsou uvedeny v <xref:Microsoft.Office.Interop.Excel.XlRangeAutoFormat> výčtu.  
   
-3. Porovnání příkazu v kroku 1 s následujícím kódem, který ukazuje argumenty, které jsou nezbytné [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] nebo starší verze.  
+3. Porovnání příkazu v kroku 1 s následujícím kódem, který ukazuje argumenty, které jsou nezbytné C# 3.0 a starší verze.  
   
      [!code-csharp[csProgGuideOfficeHowTo#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#17)]  
   

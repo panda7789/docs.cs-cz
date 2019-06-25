@@ -12,12 +12,12 @@ helpviewer_keywords:
 - 2-D graphics [WPF]
 - images [WPF], optimizing performance
 ms.assetid: e335601e-28c8-4d64-ba27-778fffd55f72
-ms.openlocfilehash: 1869a5c274b3308e718ca550e8e43ff6a72d4b5d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 25803bd772832cd22e855f530d10a3f3639c180c
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611855"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348447"
 ---
 # <a name="optimizing-performance-2d-graphics-and-imaging"></a>Optimalizace výkonu: 2D grafika a obrázky
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje širokou škálu 2D grafika a funkce pro zpracování obrázků lze optimalizovat pro potřeby vaší aplikace. Toto téma obsahuje informace o optimalizaci výkonu v těchto oblastech.  
@@ -52,7 +52,7 @@ ms.locfileid: "64611855"
   
 <a name="StreamGeometry_Objects"></a>   
 ## <a name="streamgeometry-objects"></a>Streamgeometry – objekty  
- <xref:System.Windows.Media.StreamGeometry> Objektu je odlehčené alternativou k <xref:System.Windows.Media.PathGeometry> pro vytvoření geometrické tvary. Použití <xref:System.Windows.Media.StreamGeometry> když potřebujete komplexní geometrie popisují. <xref:System.Windows.Media.StreamGeometry> je optimalizovaný pro zpracování mnoho <xref:System.Windows.Media.PathGeometry> objektů a vrací lepší výsledky při ve srovnání s použitím mnoho jednotlivých <xref:System.Windows.Media.PathGeometry> objekty.  
+ <xref:System.Windows.Media.StreamGeometry> Objektu je zjednodušené alternativou k <xref:System.Windows.Media.PathGeometry> pro vytvoření geometrické tvary. Použití <xref:System.Windows.Media.StreamGeometry> když potřebujete komplexní geometrie popisují. <xref:System.Windows.Media.StreamGeometry> je optimalizovaný pro zpracování mnoho <xref:System.Windows.Media.PathGeometry> objektů a vrací lepší výsledky při ve srovnání s použitím mnoho jednotlivých <xref:System.Windows.Media.PathGeometry> objekty.  
   
  Následující příklad používá syntaxi atributů k vytvoření trojúhelníkové <xref:System.Windows.Media.StreamGeometry> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   

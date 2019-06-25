@@ -4,16 +4,16 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: 146e9c2360cea153d2f487769d5b983516861e8d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16934232e1e202f1b100680a5101332aa622f2cc
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663294"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348492"
 ---
 # <a name="tuples-visual-basic"></a>Řazené kolekce členů (Visual Basic)
 
-Počínaje rokem 2017 jazyka Visual Basic, jazyka Visual Basic nabízí vestavěnou podporu pro řazené kolekce členů, díky vytváření řazených kolekcí členů a přístupu k prvkům jednodušší řazených kolekcí členů. Řazená kolekce členů je odlehčené datová struktura, která má určitý počet a pořadí hodnot. Při vytváření instance řazené kolekce členů, můžete definovat počtu a typu dat každé hodnoty (nebo element). Například 2 řazené kolekce členů (nebo dvojice) obsahuje dva elementy. Může být první `Boolean` hodnoty, zatímco druhá je `String`. Protože řazených kolekcí členů usnadňují uložení více hodnot v jednom objektu, často se používají jako jednoduchý způsob, jak vrátit více hodnot z metody.
+Počínaje rokem 2017 jazyka Visual Basic, jazyka Visual Basic nabízí vestavěnou podporu pro řazené kolekce členů, díky vytváření řazených kolekcí členů a přístupu k prvkům jednodušší řazených kolekcí členů. Řazená kolekce členů je zjednodušené datová struktura, která má určitý počet a pořadí hodnot. Při vytváření instance řazené kolekce členů, můžete definovat počtu a typu dat každé hodnoty (nebo element). Například 2 řazené kolekce členů (nebo dvojice) obsahuje dva elementy. Může být první `Boolean` hodnoty, zatímco druhá je `String`. Protože řazených kolekcí členů usnadňují uložení více hodnot v jednom objektu, často se používají jako jednoduchý způsob, jak vrátit více hodnot z metody.
 
 > [!IMPORTANT]
 > Podpora řazené kolekce členů vyžaduje <xref:System.ValueTuple> typu. Pokud není nainstalované rozhraní .NET Framework 4.7, je nutné přidat balíček NuGet `System.ValueTuple`, která je dostupná v galerii NuGet. Bez tohoto balíčku můžete obdržet chybu kompilace podobný "Předdefinovaný typ 'ValueTuple(Of,,,)' není definován ani importován."

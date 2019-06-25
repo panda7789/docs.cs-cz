@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: 99056c9cd330c0c3ae6c63239989a2e9e9dc496c
-ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
+ms.openlocfilehash: 9d66d76d6d565d24e27fd021ec2c2c17db74789a
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151982"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347330"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -30,7 +30,12 @@ Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již.
 > [!NOTE]
 > Tento článek byl naposledy aktualizován pro C# 8.0 ve verzi preview 5.
 
-Zbývající část tohoto článku stručně popisuje tyto funkce. Pokud podrobné články jsou k dispozici, jsou k dispozici odkazy na tyto kurzy a přehledy.
+Zbývající část tohoto článku stručně popisuje tyto funkce. Pokud podrobné články jsou k dispozici, jsou k dispozici odkazy na tyto kurzy a přehledy. Můžete prozkoumat tyto funkce v prostředí pomocí `dotnet try` globální nástroje:
+
+1. Nainstalujte [dotnet – zkuste](https://github.com/dotnet/try/blob/master/README.md#setup) globální nástroj.
+1. Klonování [dotnet/try-samples](https://github.com/dotnet/try-samples) úložiště.
+1. Nastavit aktuální adresář *csharp8* podadresář pro *try-samples* úložiště.
+1. Spusťte `dotnet try`.
 
 ## <a name="readonly-members"></a>Členy jen pro čtení
 
