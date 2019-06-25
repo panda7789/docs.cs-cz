@@ -21,10 +21,10 @@ ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6381747bc998f73b374442fcb15e025ca15795d
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/24/2019
 ms.locfileid: "65589522"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
@@ -59,8 +59,8 @@ Následující příklad používá regulární výraz k ověření, že je řet
 |`(?("")("".+?(?<!\\)""@)`|Pokud je první znak uvozovky, porovná počáteční uvozovky následované alespoň jedním výskyt libovolný znak, následovaný koncovými uvozovkami. Koncovými uvozovkami nesmí být předchází znak zpětného lomítka (\\). `(?<!` je začátek kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou. Řetězec by měl končit zavináčem zavináč (@).|  
 |<code>&#124;(([0-9a-z]</code>|Pokud prvním znakem není znak uvozovek, porovná libovolný znak abecedy od až z nebo A až Z (porovnání velká a malá písmena), nebo jakémukoli číselnému znaku od 0 do 9.|  
 |`(\.(?!\.))`|Pokud další znakem je tečka, spárujte ji. Pokud není období, hledejte další znak a pokračuje v porovnávání. `(?!\.)` je kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou, který bránil zobrazení dvou po sobě jdoucí tečky v místní části e-mailovou adresu.|  
-|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}&#124;~\w]</code>| Pokud následující znak není tečka, odpovídá jakémukoli znaku slova nebo některý z následujících znaků:-! #$% ' * +=? ^\`{}&#124;~.|  
-|<code>((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^\`{}&#124;~\w])*</code>| Srovnejte vzor alternace (tečku následovanou bez období nebo jeden z počtu znaků) nulakrát nebo vícekrát.|  
+|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}&#124;~\w]</code>|Pokud následující znak není tečka, odpovídá jakémukoli znaku slova nebo některý z následujících znaků:-! #$% ' * +=? ^\`{}&#124;~.|  
+|<code>((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^\`{}&#124;~\w])*</code>|Srovnejte vzor alternace (tečku následovanou bez období nebo jeden z počtu znaků) nulakrát nebo vícekrát.|  
 |`@`|Shoda znak @.|  
 |`(?<=[0-9a-z])`|Pokračuje v porovnávání, pokud znak, který předchází znak @ je A až Z, a až z nebo 0 až 9. `(?<=[0-9a-z])` Konstrukce definuje kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou.|  
 |`(?(\[)`|Zkontrolujte, zda znak, který následuje po @ je levá hranatá závorka.|  
