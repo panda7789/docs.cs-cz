@@ -1,7 +1,0 @@
-- name: 'Speciální znaky v jazyce C#'
-  href: index.md
-  items:
-    - name: $ – interpolace řetězců
-      href: interpolated.md
-    - name: '@ – doslovný identifikátor'
-      href: verbatim.md
