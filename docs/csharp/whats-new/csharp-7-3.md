@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.3
 description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: 4e45893be671b707efbde352eef04fa92af94954
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 768070ead2b180d5f4491ac87be6c248c39e9944
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347409"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397783"
 ---
 # <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 
@@ -40,7 +40,6 @@ Zbývající část tohoto článku poskytuje podrobnosti a odkazy na další in
 1. Klonování [dotnet/try-samples](https://github.com/dotnet/try-samples) úložiště.
 1. Nastavit aktuální adresář *csharp7* podadresář pro *try-samples* úložiště.
 1. Spusťte `dotnet try`.
-
 
 ## <a name="enabling-more-efficient-safe-code"></a>Povolení efektivnější bezpečný kód
 

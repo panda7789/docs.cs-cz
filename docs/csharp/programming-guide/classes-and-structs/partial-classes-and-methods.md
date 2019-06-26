@@ -7,12 +7,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 0d54101badab297457e8d8ecf277898fc6908779
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a0cf7c3b6024f75196abed5fdb7d18a058c58db
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61682287"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398386"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 
@@ -105,7 +105,7 @@ Existuje několik pravidel dodržovat při práci s definicí částečné tří
 
   - base – třída
 
-  - [nové](../../../csharp/language-reference/keywords/new.md) modifikátor (vnořené částí)
+  - [nové](../../../csharp/language-reference/keywords/new-modifier.md) modifikátor (vnořené částí)
 
   - Obecná omezení
 

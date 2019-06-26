@@ -4,12 +4,12 @@ description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďu
 author: richlander
 ms.date: 06/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: 85cceab08fc6e4108a5b951c8b67c1ad5a28f6bb
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 40d9f3f698f513306e087753b4c33d09e8df0046
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377507"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397760"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 
@@ -102,7 +102,7 @@ Další datové sady jsou odeslány pomocí standardní formát adresy URL. Nahr
 
 ## <a name="license"></a>Licence
 
-Je distribuce Microsoftu .NET Core licenci [licenční podmínky pro Software společnosti Microsoft: Knihovna .NET Mirosoft](https://aka.ms/dotnet-core-eula). Podrobnosti o shromažďování dat a zpracování najdete v části s názvem "Data".
+Je distribuce Microsoftu .NET Core licenci [licenční podmínky pro Software společnosti Microsoft: Knihovna rozhraní Microsoft .NET](https://aka.ms/dotnet-core-eula). Podrobnosti o shromažďování dat a zpracování najdete v části s názvem "Data".
 
 [Balíčky .NET NuGet](https://www.nuget.org/profiles/dotnetframework) používají stejné licence, ale nepovolí telemetrie (naleznete v tématu [oboru](#scope)).
 

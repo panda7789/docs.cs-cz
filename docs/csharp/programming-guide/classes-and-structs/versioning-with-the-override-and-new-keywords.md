@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: ec6040081d44a389bd42bb50cdd81ac0634abf91
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b5097df8ee559f11bc29c12570e938965e6a9a5
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583129"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398077"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp/language-reference/keywords/base.md) a odvozené třídy v jiných knihovnách můžete vyvíjet a udržovat zpětnou kompatibilitu. To znamená, například, že zavedení nového člena v základní třídě [třída](../../../csharp/language-reference/keywords/class.md) se stejným názvem jako člena v odvozené třídě je plně podporován v jazyce C# a nevede k neočekávanému chování. Také znamená, že třída musí explicitně uvést, zda metoda je určena k přepsání zděděné metody nebo určuje, zda je metoda novou metodu, která skrývá podobně pojmenovaných zděděné metody.  
@@ -20,7 +20,7 @@ Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp
   
 - Metoda základní třídy musí být definován [virtuální](../../../csharp/language-reference/keywords/virtual.md).  
   
-- Pokud metoda v odvozené třídě není předcházen [nové](../../../csharp/language-reference/keywords/new.md) nebo [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova, kompilátor vygeneruje upozornění a metodu se bude chovat jako `new` – klíčové slovo nebyly nalezeny.  
+- Pokud metoda v odvozené třídě není předcházen [nové](../../../csharp/language-reference/keywords/new-modifier.md) nebo [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova, kompilátor vygeneruje upozornění a metodu se bude chovat jako `new` – klíčové slovo nebyly nalezeny.  
   
 - Pokud je metoda v odvozené třídě začínající `new` – klíčové slovo, metoda je definována jako nezávislé na metodu v základní třídě.  
   

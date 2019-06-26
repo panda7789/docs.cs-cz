@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], compiler-generated
 ms.assetid: 53b52f97-b366-4ed7-b05b-9eb78096b7f9
-ms.openlocfilehash: 15a42b8fb23aed024fede726d0b5fb731d8272f8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 28e6ba0c20948aa769a1517c664db80b5beb6b68
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680451"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398034"
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>Výjimky generované kompilátorem (Průvodce programováním v C#)
 Některé výjimky jsou vyvolány automaticky modulem CLR rozhraní .NET Framework common language runtime (CLR), když dojde k selhání základních operací. Tyto výjimky a jejich chybové podmínky jsou uvedeny v následující tabulce.  
@@ -23,7 +23,7 @@ Některé výjimky jsou vyvolány automaticky modulem CLR rozhraní .NET Framewo
 |<xref:System.IndexOutOfRangeException>|Vyvolána, když je proveden pokus o indexu pole, pokud je index menší než nula nebo mimo hranice pole.|  
 |<xref:System.InvalidCastException>|Vyvolána, když selže explicitní převod z typu základní rozhraní nebo odvozeného typu za běhu.|  
 |<xref:System.NullReferenceException>|Vyvolána, jestliže se pokusíte odkazovat na objekt, jehož hodnota je [null](../../../csharp/language-reference/keywords/null.md).|  
-|<xref:System.OutOfMemoryException>|Při pokusu o přidělení paměti pomocí [nové](../../../csharp/language-reference/keywords/new-operator.md) operátor selže. To znamená, že byly vyčerpány paměť dostupnou pro modul common language runtime.|  
+|<xref:System.OutOfMemoryException>|Při pokusu o přidělení paměti pomocí [nové](../../../csharp/language-reference/operators/new-operator.md) operátor selže. To znamená, že byly vyčerpány paměť dostupnou pro modul common language runtime.|  
 |<xref:System.OverflowException>|Vyvolána, když v aritmetické operace `checked` kontextu přetečení.|  
 |<xref:System.StackOverflowException>|Vyvolána, když se vyčerpá zásobníku spouštění tak, že příliš mnoho volání metody čekající; obvykle označuje velmi podrobné nebo nekonečné rekurzi.|  
 |<xref:System.TypeInitializationException>|Vyvolána, když statický konstruktor vyvolá výjimku a žádné kompatibilní `catch` existuje klauzule má zachytit.|  

@@ -6,12 +6,12 @@ ms.date: 10/04/2018
 dev_langs:
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: 2c8a6b86dd66b13faa242f94cf11cb940986fbd0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf8a81241c93a6eeecf04052aba57750774aa050
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665556"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397509"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Testování pomocí příkazu dotnet test a NUnit knihovny jazyka Visual Basic .NET Core
 
@@ -58,7 +58,7 @@ Namespace Prime.Services
 End Namespace
 ```
 
-Vraťte do adresáře *jednotky – testování – vb použití stest* adresáře. Spusťte následující příkaz pro přidání do řešení projekt knihovny tříd:
+Vraťte do adresáře *jednotky – testování – vb použití mstest* adresáře. Spusťte následující příkaz pro přidání do řešení projekt knihovny tříd:
 
 ```console
 dotnet sln add .\PrimeService\PrimeService.vbproj

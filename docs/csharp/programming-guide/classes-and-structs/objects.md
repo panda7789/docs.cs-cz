@@ -6,23 +6,23 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: de44f0c416de798fb42fba93e30ec6aa6ed0208d
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1ba179c23d9b0e526cdc0dd436ca545377a0db81
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585980"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398418"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako matrice, který určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která byla přidělena a nakonfigurovány podle podrobný plán. Program může vytvořit mnoho objektů stejné třídy. Objekty se také označují jako instance a mohou být uloženy v pojmenované proměnné nebo v poli nebo kolekci. Klientský kód je kód, který používá tyto proměnné pro volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované jako je C# typický program se skládá z více objektů dynamicky interakci.  
   
 > [!NOTE]
->  Statické typy chovat jinak než jak je popsán tady. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+> Statické typy chovat jinak než jak je popsán tady. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
   
 ## <a name="struct-instances-vs-class-instances"></a>Struktura instance vs. Instance třídy  
  Vzhledem k tomu, že třídy jsou odkazové typy, proměnné objektu třídy obsahuje odkaz na adresu objektu na spravované haldě. Pokud se první objekt, který je přiřazen druhému objektu stejného typu, pak obě proměnné odkazovat na objekt na této adrese. Tento bod je podrobněji popsány dále v tomto tématu.  
   
- Instance třídy se vytvářejí pomocí [operátor new](../../../csharp/language-reference/keywords/new-operator.md). V následujícím příkladu `Person` je typ a `person1` a `person 2` instance ani objekty daného typu.  
+ Instance třídy se vytvářejí pomocí [operátor new](../../../csharp/language-reference/operators/new-operator.md). V následujícím příkladu `Person` je typ a `person1` a `person 2` instance ani objekty daného typu.  
   
  [!code-csharp[csProgGuideStatements#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#30)]  
   
@@ -33,7 +33,7 @@ Definice třídy nebo struktury je jako matrice, který určuje, co můžete dě
  Paměť pro obě `p1` a `p2` přidělené v zásobníku vlákna. Tuto paměť je uvolněn spolu se tento typ nebo metoda, ve kterém je deklarována. Toto je jedním z důvodů, proč strukturách kopírují na přiřazení. Naopak paměti přidělené pro instanci třídy, je automaticky uvolňovaného (uvolněna z paměti) modul common language runtime při všech odkazů na objekt nepřejdou mimo rozsah. Není možné nedeterministicky zničit objekt třídy jako můžete v jazyce C++. Další informace o uvolňování paměti v rozhraní .NET Framework najdete v tématu [uvolňování](../../../standard/garbage-collection/index.md).  
   
 > [!NOTE]
->  V modulu common language runtime je vysoce optimalizovaných přidělování a navracení zpět paměti na spravované haldě. Ve většině případů není žádný velký rozdíl náklady na výkon spojeným s přidělováním instance třídy v haldě a přidělování struktury instance v zásobníku.  
+> V modulu common language runtime je vysoce optimalizovaných přidělování a navracení zpět paměti na spravované haldě. Ve většině případů není žádný velký rozdíl náklady na výkon spojeným s přidělováním instance třídy v haldě a přidělování struktury instance v zásobníku.
   
 ## <a name="object-identity-vs-value-equality"></a>Objekt Identity vs. Hodnota rovnosti  
  Když porovnáte dva objekty z hlediska rovnosti, musí nejprve rozlišit, jestli chcete zjistit, jestli dvě proměnné, které představují stejný objekt v paměti nebo zda jsou ekvivalentní hodnoty jedné nebo více z jejich polí. Pokud je máte v úmyslu porovnat hodnoty, musíte zvážit, zda jsou objekty instance typů hodnot (struktury) nebo typy odkazů (tříd, delegátů, pole).  
@@ -68,5 +68,5 @@ Definice třídy nebo struktury je jako matrice, který určuje, co můžete dě
 - [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
 - [class](../../../csharp/language-reference/keywords/class.md)
 - [struct](../../../csharp/language-reference/keywords/struct.md)
-- [new – operátor](../../../csharp/language-reference/keywords/new-operator.md)
+- [new – operátor](../../../csharp/language-reference/operators/new-operator.md)
 - [Obecný systém typů](../../../standard/base-types/common-type-system.md)

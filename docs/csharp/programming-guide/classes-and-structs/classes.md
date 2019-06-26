@@ -7,17 +7,17 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 4cea68e76c17e5393ab7213f457c0875cdc5b53b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad19099242a3bedbb7283219dfd7733db13231ec
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651880"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398594"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 
 ## <a name="reference-types"></a>Odkazové typy  
-Typ, který je definován jako [třídy](../../../csharp/language-reference/keywords/class.md) je *odkazovat na typ*. V době běhu při deklarování proměnné typu odkazu proměnná obsahuje hodnotu [null](../../../csharp/language-reference/keywords/null.md) dokud explicitně nevytvoříte instanci třídy pomocí [nové](../../../csharp/language-reference/keywords/new.md) operátor nebo jí nepřiřadíte objekt kompatibilní typ, který byl možná vytvořen jinde, jak je znázorněno v následujícím příkladu:
+Typ, který je definován jako [třídy](../../../csharp/language-reference/keywords/class.md) je *odkazovat na typ*. V době běhu při deklarování proměnné typu odkazu proměnná obsahuje hodnotu [null](../../../csharp/language-reference/keywords/null.md) dokud explicitně nevytvoříte instanci třídy pomocí [nové](../../../csharp/language-reference/operators/new-operator.md) operátor nebo jí nepřiřadíte objekt kompatibilní typ, který byl možná vytvořen jinde, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 //Declaring an object of type MyClass.
@@ -47,7 +47,7 @@ Při vytvoření objektu je dostatečná paměť je přidělena na spravované h
 
 Přestože se někdy používají Zaměnitelně, třídy a objekt jsou různé věci. Třída definuje typ objektu, ale není samotného objektu. Objekt je konkrétní entity podle třídy a jsou někdy označovány jako instance třídy.  
   
- Objekty mohou být vytvořeny pomocí [nové](../../language-reference/keywords/new.md) – klíčové slovo, za nímž následuje název třídy, která objekt bude založen na, tímto způsobem:  
+ Objekty mohou být vytvořeny pomocí [nové](../../language-reference/operators/new-operator.md) – klíčové slovo, za nímž následuje název třídy, která objekt bude založen na, tímto způsobem:  
 
  ```csharp
  Customer object1 = new Customer();

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 9bce692c767169536d762a36ea2b9343655680c7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a7cd450fbc2e0a5acd32675ab2c6b46dc2c92757
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583074"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398371"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  
@@ -54,7 +54,7 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
  Virtuální metody a vlastnosti umožňují odvozené třídy pro rozšíření bez nutnosti použít implementaci základní třídy metody základní třídy. Další informace najdete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md). Rozhraní obsahuje jiný způsob, jak definovat metodu nebo sadu metod, jejichž implementace je ponecháno na odvozené třídy. Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>Skrytí členy základní třídy s novými členy  
- Pokud chcete vaše odvozené člen mají stejný název jako členem v základní třídě, ale nechcete, aby ho účastnit virtuální volání, můžete použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo. `new` – Klíčové slovo je umístěn před návratovým typem, který se nahrazuje člena třídy. Následující kód představuje příklad:  
+ Pokud chcete vaše odvozené člen mají stejný název jako členem v základní třídě, ale nechcete, aby ho účastnit virtuální volání, můžete použít [nové](../../../csharp/language-reference/keywords/new-modifier.md) – klíčové slovo. `new` – Klíčové slovo je umístěn před návratovým typem, který se nahrazuje člena třídy. Následující kód představuje příklad:  
   
  [!code-csharp[csProgGuideInheritance#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#18)]  
   

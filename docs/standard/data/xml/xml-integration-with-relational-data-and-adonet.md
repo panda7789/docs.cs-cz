@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 93b414eea5849ed020b521fcd5e5d5f5d194c35f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6c37e494431eae9d17f442b2c32dea5f0b4bcf2b
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589806"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397791"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Integrace XML s relačními daty a ADO.NET
 **XmlDataDocument** třída je odvozená třída **XmlDocument**a obsahuje XML data. Výhodou **XmlDataDocument** je, že umožňuje most mezi relačních a hierarchických dat. Je **XmlDocument** , který může být vázaný na **datovou sadu** a obě třídy se mohou synchronizovat změny pro data obsažená ve dvou tříd. **XmlDocument** , který je vázán na **datovou sadu** umožňuje XML k integraci s relačními daty a není nutné mít data reprezentována jako buď XML nebo v relačním formátu. Můžete mít obojí a nesmí být omezeny na jednoho znázornění dat.  
@@ -45,7 +45,7 @@ ms.locfileid: "64589806"
   
  Pokud načtení a zápis XML přímo do a z celkového počtu **datovou sadu** řeší všechny vaše požadavky, naleznete v tématu [načtení datové sady z XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápisu datové sady jako dat XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
   
- Pokud načítání **datovou sadu** ze **XmlDataDocument** řeší všechny vaše požadavky, naleznete v tématu [synchronizace Datasetwith dokumentu XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
+ Pokud načítání **datovou sadu** ze **XmlDataDocument** řeší všechny vaše požadavky, naleznete v tématu [synchronizace datové sady s dokumentem XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
   
 ## <a name="see-also"></a>Viz také:
 

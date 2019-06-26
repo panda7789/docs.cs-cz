@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 57781dd5a988435778587636cc458256b966446c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e193d6a51c3d4f1d81e3b74b1474d0e7cdcfca53
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61678501"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398115"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -24,7 +24,7 @@ ms.locfileid: "61678501"
   
  [!code-csharp[csProgGuideStrings#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#1)]  
   
- Všimněte si, že je velmi riskantní používat [nové](../../../csharp/language-reference/keywords/new-operator.md) operátoru pro vytvoření objektu řetězce s výjimkou při inicializaci řetězce bez pole znaků.  
+ Všimněte si, že je velmi riskantní používat [nové](../../../csharp/language-reference/operators/new-operator.md) operátoru pro vytvoření objektu řetězce s výjimkou při inicializaci řetězce bez pole znaků.  
   
  Inicializuje řetězec s <xref:System.String.Empty> konstantní hodnoty pro vytvoření nového <xref:System.String> objektu, jehož řetězec o nulové délce. Řetězec literálu reprezentaci řetězce s nulovou délkou je "". Pomocí inicializace řetězců s <xref:System.String.Empty> hodnotu místo [null](../../../csharp/language-reference/keywords/null.md), můžete snížit riziko <xref:System.NullReferenceException> ke kterým dochází. Použití statické <xref:System.String.IsNullOrEmpty%28System.String%29> metodu k ověření hodnotu řetězce, než se pokusíte k němu přistupovat.  
   

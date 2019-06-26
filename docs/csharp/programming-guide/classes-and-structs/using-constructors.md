@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: 1f47459fc5002118d94cc8d389f35c18fa2c611a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14ff272fe940c265dc8984d6b20985bb2d2ba12d
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703280"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398254"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
+
 Při [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá konstruktoru. Konstruktory mají stejný název jako třídy nebo struktury a obvykle inicializují datové členy nového objektu.  
   
- V následujícím příkladu třída s názvem `Taxi` je definován pomocí jednoduchého konstruktoru. Tato třída je pak vytvořena s [nové](../../../csharp/language-reference/keywords/new.md) operátor. `Taxi` Konstruktor vyvolá `new` je operátor ihned po paměti přidělené pro nový objekt.  
+ V následujícím příkladu třída s názvem `Taxi` je definován pomocí jednoduchého konstruktoru. Tato třída je pak vytvořena s [nové](../../../csharp/language-reference/operators/new-operator.md) operátor. `Taxi` Konstruktor vyvolá `new` je operátor ihned po paměti přidělené pro nový objekt.  
   
  [!code-csharp[csProgGuideObjects#53](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#53)]  
   

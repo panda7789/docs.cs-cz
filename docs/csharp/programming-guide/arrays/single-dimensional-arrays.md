@@ -6,12 +6,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: 719e4463806c9c7e8b5407f2494c3b548ffa43e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d221cb9071a2c58f9d7068d5a43dd3a750ba716b
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61684026"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398563"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 
@@ -19,7 +19,7 @@ Je možné deklarovat jednorozměrné pole pět celých čísel, jak je znázorn
   
  [!code-csharp[csProgGuideArrays#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#4)]  
   
- Toto pole obsahuje prvky z `array[0]` k `array[4]`. [Nové](../../../csharp/language-reference/keywords/new.md) operátor se používá k vytvoření pole a inicializaci prvků pole na výchozí hodnoty. V tomto příkladu jsou všechny prvky pole inicializovány na nulu.  
+ Toto pole obsahuje prvky z `array[0]` k `array[4]`. [Nové](../../../csharp/language-reference/operators/new-operator.md) operátor se používá k vytvoření pole a inicializaci prvků pole na výchozí hodnoty. V tomto příkladu jsou všechny prvky pole inicializovány na nulu.  
   
  Pole, která ukládá prvků řetězce mohou být deklarovány stejným způsobem. Příklad:  
   

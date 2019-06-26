@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 0e0ba1602468d1bcc38985c78e1af5e4d2a5912c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4d1acc758f0121e7450351c63538fd47f28ef732
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586080"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398054"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
 `struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, že rozhraní .NET Framework obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "Coords" místo.  
@@ -19,8 +19,8 @@ ms.locfileid: "65586080"
   
  Jedná se o chybu, chcete-li definovat výchozí (bezparametrový) konstruktor pro struktury. Je také k chybě inicializace pole instance v těle struktury. Členy struktury zvenku přístupný lze inicializovat pouze pomocí konstruktoru s parametry, implicitní konstruktor bez parametrů, [objektu inicializátoru](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md), nebo přístupem k členy jednotlivě po struktury je deklaraci. Žádné soukromé nebo jinak nedostupná členy výhradně vyžadují použití konstruktory.
   
- Když vytvoříte pomocí objektu struktury [nové](../../../csharp/language-reference/keywords/new.md) operátoru, se vytvoří a odpovídající konstruktor se nazývá podle [podpis konstruktoru](../../../csharp/programming-guide/classes-and-structs/constructors.md#constructor-syntax). Na rozdíl od tříd, struktur dá vytvořit instance bez použití `new` operátor. V takovém případě není žádná volání konstruktoru, díky přidělení efektivnější. Však zůstanou nepřiřazené pole a objektu nelze použít, dokud všechna pole jsou inicializovány. To zahrnuje neschopnost získání nebo nastavení hodnot vlastností.
- 
+ Když vytvoříte pomocí objektu struktury [nové](../../../csharp/language-reference/operators/new-operator.md) operátoru, se vytvoří a odpovídající konstruktor se nazývá podle [podpis konstruktoru](../../../csharp/programming-guide/classes-and-structs/constructors.md#constructor-syntax). Na rozdíl od tříd, struktur dá vytvořit instance bez použití `new` operátor. V takovém případě není žádná volání konstruktoru, díky přidělení efektivnější. Však zůstanou nepřiřazené pole a objektu nelze použít, dokud všechna pole jsou inicializovány. To zahrnuje neschopnost získání nebo nastavení hodnot vlastností.
+
  Pokud vytvoříte instanci objektu struktury pomocí výchozí, konstruktor bez parametrů, všichni členové jsou přiřazeny podle jejich [výchozí hodnoty](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md).
   
  Při zápisu konstruktor s parametry pro strukturu, je nutné explicitně inicializovat všechny členy. jinak zůstanou nepřiřazené jednoho nebo více členů a struktury nelze použít, vytváření Chyba kompilátoru CS0171.  

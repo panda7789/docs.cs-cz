@@ -1,20 +1,20 @@
 ---
 title: Trénování a vyhodnocení modelu
-description: Zjistěte, jak vytvářet modely strojového učení, extrahovat zjištěná parametry a měření výkonu s ML.NET. I když tato ukázka trénovat regresní model, koncepty platí v celé většinou ostatní algoritmy.
-ms.date: 06/11/2019
+description: Zjistěte, jak vytvářet modely strojového učení, shromažďovat metriky a měřit výkon s ML.NET. Model strojového učení identifikuje vzorů v rámci trénovacích dat do vytvářet predikce na nová data.
+ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to, title-hack-0612
-ms.openlocfilehash: d93353a3503ba67bde5fb61dc88f45d26e2f4306
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.custom: mvc, how-to, title-hack-0625
+ms.openlocfilehash: 61cdaf693c417d02da95d1d79ab30eb2d30a057b
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307447"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397645"
 ---
 # <a name="train-and-evaluate-a-model"></a>Trénování a vyhodnocení modelu
 
-Zjistěte, jak vytvářet modely strojového učení, extrahovat zjištěná parametry a měření výkonu s ML.NET. I když tato ukázka trénovat regresní model, koncepty platí v celé většinou ostatní algoritmy.
+Zjistěte, jak vytvářet modely strojového učení, shromažďovat metriky a měřit výkon s ML.NET. I když tato ukázka trénovat regresní model, koncepty platí v celé většinou ostatní algoritmy.
 
 ## <a name="split-data-for-training-and-testing"></a>Rozdělení dat pro trénování a testování
 

@@ -1,20 +1,20 @@
 ---
-title: Natrénování a vyhodnocení modelu strojového učení pomocí křížového ověření
-description: Zjistěte, jak trénovat a vyhodnocovat u nich model strojového učení pomocí křížového ověření
-ms.date: 05/03/2019
+title: Trénování modelu strojového učení pomocí křížového ověření
+description: Zjistěte, jak můžete vytvářet robustnější modely strojového učení v ML.NET křížového ověření. Křížové ověření je školení a model hodnocení technika, která rozdělí data do několika oddílů a trénovat více algoritmy v těchto oddílech.
+ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc,how-to
-ms.openlocfilehash: a06711ca83ea545adc7292cf6d8173f006fdb94d
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.custom: mvc,how-to,title-hack-0625
+ms.openlocfilehash: c68c2b61054f59f03b4743ec30a694e94086ebab
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557833"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397650"
 ---
-# <a name="train-and-evaluate-a-machine-learning-model-using-cross-validation"></a>Natrénování a vyhodnocení modelu strojového učení pomocí křížového ověření
+# <a name="train-a-machine-learning-model-using-cross-validation"></a>Trénování modelu strojového učení pomocí křížového ověření
 
-Zjistěte, jak můžete vytvářet robustnější modely strojového učení v ML.NET křížového ověření. 
+Zjistěte, jak použijete k natrénování robustnější modely machine learning v ML.NET křížového ověření. 
 
 Křížové ověření je školení a model hodnocení technika, která rozdělí data do několika oddílů a trénovat více algoritmy v těchto oddílech. Tento postup zlepšuje odolnost modelu tím, že se data z procesu trénování. Kromě vylepšení výkonu na neviditelný pozorování, v prostředí omezené dat může být efektivní nástroj pro trénování modelů s menší datové sady.
 
@@ -93,7 +93,7 @@ var cvResults = mlContext.Regression.CrossValidate(transformedData, sdcaEstimato
 
 Výsledek je uložen v `cvResults` je kolekce [ `CrossValidationResult` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) objekty. Tento objekt obsahuje trénovaného modelu, stejně jako metriky, které jsou obě přístupné formuláře [ `Model` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) a [ `Metrics` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics) vlastnosti v uvedeném pořadí. V této ukázce `Model` vlastnost je typu [ `ITransformer` ](xref:Microsoft.ML.ITransformer) a `Metrics` vlastnost je typu [ `RegressionMetrics` ](xref:Microsoft.ML.Data.RegressionMetrics). 
 
-## <a name="extract-metrics"></a>Extrahovat metriky
+## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
 Metriky pro různé trénované modely přístupné prostřednictvím `Metrics` vlastnost jednotlivých [ `CrossValidationResult` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) objektu. V takovém případě [spolehlivosti R metrika](https://en.wikipedia.org/wiki/Coefficient_of_determination) se často a ukládají v proměnné `rSquared`. 
 
@@ -103,11 +103,7 @@ IEnumerable<double> rSquared =
         .Select(fold => fold.Metrics.RSquared);
 ```
 
-Je-li si prohlédnout obsah `rSquared` proměnné, výstup by měl být pět hodnoty v rozsahu od 0-1, kde blíže 1 znamená, že nejlepší.
-
-## <a name="select-the-best-performing-model"></a>Výběr nejvýkonnějšího modelu
-
-Použití metrik, jako je spolehlivosti R, vyberte modelů z nejlepších nejhorší provádění. Vyberte hlavní model k predikci nebo provádět další operace s.
+Je-li si prohlédnout obsah `rSquared` proměnné, výstup by měl být pět hodnoty v rozsahu od 0-1, kde blíže 1 znamená, že nejlepší. Použití metrik, jako je spolehlivosti R, vyberte modelů z nejlepších nejhorší provádění. Vyberte hlavní model k predikci nebo provádět další operace s.
 
 ```csharp
 // Select all models

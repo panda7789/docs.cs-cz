@@ -1,18 +1,18 @@
 ---
-title: Načtení dat
-description: Načtení datového souboru a Streamovat data do ML.NET
-ms.date: 05/03/2019
-ms.custom: mvc,how-to
-ms.openlocfilehash: 6edcc92b610e2e1f5e21c371b9f0aefd0b216d31
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+title: Načtení dat ze souborů a dalších zdrojů
+description: Tento návod ukazuje, jak načíst data pro zpracování a školení do ML.NET. Jsou data původně uložená v souborech nebo jiných zdrojů dat, jako jsou databáze, JSON, XML nebo kolekce v paměti.
+ms.date: 06/25/2019
+ms.custom: mvc,how-to, title-hack-0625
+ms.openlocfilehash: fafbe3fed9e3f0b509eda4f9d8967965bde19767
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063648"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397748"
 ---
-# <a name="load-data-from-file-and-in-memory-sources"></a>Načtení dat ze zdroje souborů a v paměti
+# <a name="load-data-from-files-and-other-sources"></a>Načtení dat ze souborů a dalších zdrojů
 
-Tento návod ukazuje, jak načíst data pro zpracování a školení do ML.NET. Jsou data původně uložená v souborech nebo zdroje dat v reálném čase nebo datové proudy.
+Tento návod ukazuje, jak načíst data pro zpracování a školení do ML.NET. Jsou data původně uložená v souborech nebo jiných zdrojů dat, jako jsou databáze, JSON, XML nebo kolekce v paměti.
 
 ## <a name="create-the-data-model"></a>Vytvoření datového modelu
 
@@ -102,16 +102,15 @@ TextLoader textLoader = mlContext.Data.CreateTextLoader<HousingData>(separatorCh
 IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubFolder2/1.txt");
 ```
 
-## <a name="load-data-from-a-streaming-source"></a>Načtení dat z datových proudů zdroje
+## <a name="load-data-from-other-sources"></a>Načtení dat z jiných zdrojů
 
-Kromě načítají se data uložená na disku, ML.NET podporuje načítání dat z různých datových proudů zdrojů, které patří, ale nejsou omezeni na:
+Kromě načítání dat, které jsou uloženy v souborech, ML.NET podporuje načítání dat ze zdroje, které patří, ale nejsou omezeni na:
 
 - Kolekce v paměti
 - JSON/XML
 - Databáze
 
-> [!IMPORTANT]
-> Všimněte si, že při práci se streamováním zdroje ML.NET očekává, že vstupem bude ve formuláři kolekci v paměti. Proto při práci se zdroji, jako je JSON nebo XML, ujistěte se, že pro zobrazení dat v kolekci v paměti.
+Všimněte si, že při práci se streamováním zdroje ML.NET očekává, že vstupem bude ve formuláři kolekci v paměti. Proto při práci se zdroji, jako je JSON nebo XML, ujistěte se, že pro zobrazení dat v kolekci v paměti.
 
 Daný následující kolekce v paměti:
 

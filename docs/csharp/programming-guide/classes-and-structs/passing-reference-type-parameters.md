@@ -6,12 +6,12 @@ helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-ms.openlocfilehash: 34e3370b0f6d28160be3ad9d918c110fc93f51fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1b2aae49fbea138646b5f325919246238b2401ae
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703449"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398360"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Předávání parametrů typu odkazu (Průvodce programováním v C#)
 Proměnné [odkazovat na typ](../../../csharp/language-reference/keywords/reference-types.md) neobsahuje data přímo; obsahuje odkaz na svoje data. Při předávání parametrů typu odkazu podle hodnoty, je možné změnit data patřící do odkazovaný objekt, jako je například hodnota člena třídy. Nelze však změnit hodnotu referenční samotné; například nelze použít stejný odkaz přidělit paměť pro nový objekt a jeho zachovat mimo metodu. Chcete-li to mohli udělat, předejte parametr pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Pro zjednodušení následující příklady používají `ref`.  
@@ -21,7 +21,7 @@ Proměnné [odkazovat na typ](../../../csharp/language-reference/keywords/refere
   
  [!code-csharp[csProgGuideParameters#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#7)]  
   
- V předchozím příkladu je pole, `arr`, což je typ odkazu, se předá metodě bez `ref` parametru. V takovém případě kopii odkaz, který odkazuje na `arr`, je předán metodě. Výstup ukazuje, že je možné pro metodu, chcete-li změnit obsah prvku pole, v tomto případě z `1` k `888`. Ale přidělování novou část paměti pomocí [nové](../../../csharp/language-reference/keywords/new.md) operátor uvnitř `Change` metoda provádí proměnné `pArray` odkazovat na nové pole. Díky tomu se změny po, která nebude mít vliv na původní pole `arr`, který je vytvořen uvnitř `Main`. Ve skutečnosti se vytvoří dvě pole v tomto příkladu ho uvnitř `Main` a jeden `Change` metoda.  
+ V předchozím příkladu je pole, `arr`, což je typ odkazu, se předá metodě bez `ref` parametru. V takovém případě kopii odkaz, který odkazuje na `arr`, je předán metodě. Výstup ukazuje, že je možné pro metodu, chcete-li změnit obsah prvku pole, v tomto případě z `1` k `888`. Ale přidělování novou část paměti pomocí [nové](../../../csharp/language-reference/operators/new-operator.md) operátor uvnitř `Change` metoda provádí proměnné `pArray` odkazovat na nové pole. Díky tomu se změny po, která nebude mít vliv na původní pole `arr`, který je vytvořen uvnitř `Main`. Ve skutečnosti se vytvoří dvě pole v tomto příkladu ho uvnitř `Main` a jeden `Change` metoda.  
   
 ## <a name="passing-reference-types-by-reference"></a>Typy odkazů předávání odkazem.  
  Následující příklad je stejný jako předchozí příklad, s výjimkou, že `ref` – klíčové slovo se přidá do hlavičky metody a volání. Všechny změny, které se provedou v metodě vliv na původní proměnné ve volání programu.  

@@ -5,12 +5,12 @@ author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
 ms.custom: seodec18
-ms.openlocfilehash: 4f6e1bb9a03a8f98052ec7bc911f22c288df6fe0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c396be926d743b672cb4611dc5569ecb48b09fec
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665485"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397489"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s MSTest a .NET Core
 
@@ -58,7 +58,7 @@ Dále vytvořte *PrimeService.Tests* adresáře. Zobrazí následující osnova 
     /PrimeService.Tests
 ```
 
-Ujistěte se, *PrimeService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new mstest` ](../tools/dotnet-new.md). Nový příkaz dotnet vytvoří projekt testů, který používá MStest jako knihovna testu. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *PrimeServiceTests.csproj* souboru:
+Ujistěte se, *PrimeService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new mstest` ](../tools/dotnet-new.md). Nový příkaz dotnet vytvoří projekt testů, který používá MSTest jako knihovna testu. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *PrimeServiceTests.csproj* souboru:
 
 ```xml
 <ItemGroup>

@@ -3,12 +3,12 @@ title: Příkaz automaticky trénování v nástroji příkazového řádku ML.N
 description: Přehled ukázky a referenční informace pro příkaz automaticky trénování v nástroji ML.NET rozhraní příkazového řádku.
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: ce5994f392c492e80676b9e65ce54fe010cf03ab
-ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
+ms.openlocfilehash: 73bae0165af76226152de322d2951086646a1a1d
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66722610"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397665"
 ---
 # <a name="the-auto-train-command-in-mlnet-cli"></a>Příkaz "automaticky – train" v rozhraní příkazového řádku ML.NET
 
@@ -44,7 +44,7 @@ Příklad použití na příkazovém řádku:
 
 První dva prostředky lze použít přímo v aplikacích s koncovým uživatelem (webové aplikace ASP.NET Core, služby, aplikace klasické pracovní plochy, atd.) k následné predikci s generovanou modelu ML.
 
-Třetí asset školení kód ukazuje, jaký kód ML.NET API rozhraní příkazového řádku použil tak moct trénovat vygenerovaný model, takže si můžete zjistit, jaké konkrétní trainer/algoritmus a hyper-paramenters byly vybrány tak, že rozhraní příkazového řádku a modul ML.NET AutoML.
+Třetí asset školení kód ukazuje, jaký kód ML.NET API rozhraní příkazového řádku použil tak moct trénovat vygenerovaný model, takže si můžete zjistit, jaké konkrétní trainer/algoritmus a hyperparametrů byly vybrány tak, že rozhraní příkazového řádku a modul ML.NET AutoML.
 
 ## <a name="the-auto-train-command-uses-the-automl-engine"></a>Příkaz "automaticky – train" používá modul AutoML
 
