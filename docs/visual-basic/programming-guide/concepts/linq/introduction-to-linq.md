@@ -2,12 +2,12 @@
 title: Úvod do LINQ (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: 95c1d99604ba9f87e34b5bb423d42bf97c0cd29e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7c42cf73dce91bfb4da1b886613635532460f0e6
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648801"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402414"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>Úvod do LINQ (Visual Basic)
 Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framework verze 3.5 této přemostění mezery mezi řadě objekty a světě orientovaném na data.  
@@ -20,7 +20,7 @@ Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framew
   
  Na následujícím obrázku ze sady Visual Studio zobrazuje částečně dokončeno LINQ dotaz na databázi systému SQL Server v jazyce C# a Visual Basic s úplným typem kontrolu a podporu technologie IntelliSense.  
   
- ![Diagram tohoto shwos dotazů LINQ s podporou technologie Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
+ ![Diagram, který ukazuje dotaz LINQ s podporou technologie Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
   
 ## <a name="next-steps"></a>Další kroky  
  Další informace o dotazech technologie LINQ, začněte tím, že se seznamovat s některé základní pojmy v části Začínáme [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md), a pak si můžete přečíst dokumentaci k technologie LINQ, ve kterém jsou chtěli byste:  

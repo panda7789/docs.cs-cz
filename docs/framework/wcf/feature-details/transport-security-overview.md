@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 04526e8aea09b412de4d3a94f17938b02ad6527b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 450d10c0356a8c22741275e2c1e1a842c1fd4627
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990794"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402055"
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závisí na vazby a přenosu používána. Například při použití <xref:System.ServiceModel.WSHttpBinding> třídy, je přenos protokolu HTTP a hlavní mechanismus pro zabezpečení přenosu je vrstva SSL (Secure Sockets) přes protokol HTTP, říká protokolu HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenosu používána vazeb poskytovaných systémem WCF.  
@@ -47,19 +47,19 @@ Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závi
  Následující části popisují další typy přihlašovacích údajů klienta.  
   
 #### <a name="basic"></a>Základní  
- To odpovídá metodu základního ověřování ve službě IIS. Při použití tohoto režimu, musí se nakonfigurovat server služby IIS Windows uživatelské účty a příslušná oprávnění systému souborů NTFS. Další informace o [!INCLUDE[iis601](../../../../includes/iis601-md.md)], naleznete v tématu [povolení základního ověřování a konfigurace název sféry](https://go.microsoft.com/fwlink/?LinkId=88592). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Nakonfigurujte základní ověřování](https://go.microsoft.com/fwlink/?LinkId=88593).  
+ To odpovídá metodu základního ověřování ve službě IIS. Při použití tohoto režimu, musí se nakonfigurovat server služby IIS Windows uživatelské účty a příslušná oprávnění systému souborů NTFS. Další informace o službě IIS 6.0, naleznete v tématu [povolení základního ověřování a konfigurace název sféry](https://go.microsoft.com/fwlink/?LinkId=88592). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Nakonfigurujte základní ověřování](https://go.microsoft.com/fwlink/?LinkId=88593).  
   
 #### <a name="certificate"></a>Certifikát  
- Služba IIS má možnost, aby klienti k přihlášení pomocí certifikátu. Tato funkce také umožňuje službě IIS mapování klientského certifikátu pro účet Windows. Další informace o [!INCLUDE[iis601](../../../../includes/iis601-md.md)], naleznete v tématu [povolení klientských certifikátů ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88594). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88595).  
+ Služba IIS má možnost, aby klienti k přihlášení pomocí certifikátu. Tato funkce také umožňuje službě IIS mapování klientského certifikátu pro účet Windows. Další informace o službě IIS 6.0, naleznete v tématu [povolení klientských certifikátů ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88594). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88595).  
   
 #### <a name="digest"></a>ověřování algoritmem Digest  
- Ověřování hodnotou hash se podobá základní ověřování, ale nabízí výhodu v podobě odesílání přihlašovací údaje jako hodnotu hash, nikoli ve formátu prostého textu. Další informace o [!INCLUDE[iis601](../../../../includes/iis601-md.md)], naleznete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkID=88443). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkId=88596).  
+ Ověřování hodnotou hash se podobá základní ověřování, ale nabízí výhodu v podobě odesílání přihlašovací údaje jako hodnotu hash, nikoli ve formátu prostého textu. Další informace o službě IIS 6.0, naleznete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkID=88443). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkId=88596).  
   
 #### <a name="windows"></a>Windows  
- To odpovídá integrované ověřování Windows služby IIS. Pokud nastavíte tuto hodnotu, serveru také by měl existovat v doméně Windows, která používá protokol Kerberos jako řadič domény. Pokud server není v doméně s podporou protokolu Kerberos nebo pokud systému Kerberos nezdaří, můžete použít hodnoty NT LAN Manager (NTLM) popsané v další části. Další informace o [!INCLUDE[iis601](../../../../includes/iis601-md.md)], naleznete v tématu [integrované ověřování Windows ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88597). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88595).  
+ To odpovídá integrované ověřování Windows služby IIS. Pokud nastavíte tuto hodnotu, serveru také by měl existovat v doméně Windows, která používá protokol Kerberos jako řadič domény. Pokud server není v doméně s podporou protokolu Kerberos nebo pokud systému Kerberos nezdaří, můžete použít hodnoty NT LAN Manager (NTLM) popsané v další části. Další informace o službě IIS 6.0, naleznete v tématu [integrované ověřování Windows ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88597). Další informace o [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88595).  
   
 #### <a name="ntlm"></a>NTLM  
- To umožňuje, aby server pro ověřování pomocí protokolu NTLM, pokud protokol Kerberos nezdaří. Další informace o konfiguraci služby IIS v [!INCLUDE[iis601](../../../../includes/iis601-md.md)], naleznete v tématu [vynucení ověřování protokolem NTLM](https://go.microsoft.com/fwlink/?LinkId=88598). Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], ověřování Windows zahrnuje ověřování protokolem NTLM. Další informace najdete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=88595).  
+ To umožňuje, aby server pro ověřování pomocí protokolu NTLM, pokud protokol Kerberos nezdaří. Další informace o konfiguraci služby IIS ve službě IIS 6.0, naleznete v tématu [vynucení ověřování protokolem NTLM](https://go.microsoft.com/fwlink/?LinkId=88598). Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], ověřování Windows zahrnuje ověřování protokolem NTLM. Další informace najdete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=88595).  
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
  <xref:System.ServiceModel.WSHttpBinding> Třídy je navržena pro spolupráci se službami, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu je vrstva SSL (Secure Sockets) prostřednictvím protokolu HTTP nebo HTTPS. Chcete-li vytvořit aplikaci WCF, která používá protokol SSL, pomocí služby IIS pro hostování aplikace. Při vytváření aplikace v místním prostředí, můžete také použijte nástroj HttpCfg.exe k vytvoření vazby certifikátu X.509 na konkrétní port na počítači. Číslo portu je zadaný jako součást aplikace WCF jako adresy koncového bodu. Když používáte režim přenosu, adresu koncového bodu musí obsahovat protokol HTTPS nebo bude vyvolána výjimka za běhu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  

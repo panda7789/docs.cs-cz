@@ -2,12 +2,12 @@
 title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: b5167e61bd825ce56905149237dae05ebb44b134
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cc95634745aa0c0246cf139d19e0777fde7e1aba
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613310"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402172"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby Windows (dříve označovaná jako služba systému Windows NT) najdete postup, model zvlášť vhodné pro aplikace, které musí být aktivní ve spustitelném souboru dlouho běžící a nezobrazují žádné formulář, uživatelského rozhraní. Životnosti procesu Windows service aplikaci spravuje správce řízení služeb (SCM), který umožňuje spuštění, zastavení a pozastavení aplikace služby Windows. Můžete nakonfigurovat procesů služeb Windows na automatické spuštění při spuštění počítače, takže vhodný hostitelské prostředí pro aplikace "always on". Další informace o aplikacích pro službu Windows najdete v tématu [aplikace služby Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -20,7 +20,7 @@ Služby Windows (dříve označovaná jako služba systému Windows NT) najdete 
   
 - Proces, který je hostitelem vaší aplikace musí zůstat spuštěné po spuštění. Po zahájení procesu služby Windows zůstane spuštěný, není-li explicitně vypnutí správce serveru pomocí Správce řízení služeb. Aplikace hostované službou IIS nebo WAS může spuštění a zastavení dynamicky optimální využití systémových prostředků. Aplikace, které vyžadují explicitní kontrolu nad životnost jejich hostitelský proces byste používat služby Windows namísto služby IIS nebo WAS.  
   
-- Služby WCF, musíte spustit na Windows Server 2003 a použít přenosy jiné než HTTP. V systému Windows Server 2003 [!INCLUDE[iis601](../../../../includes/iis601-md.md)] hostitelského prostředí je omezen na pouze komunikaci pomocí protokolu HTTP. Aplikace služby Windows se nevztahují tato omezení a můžete použít libovolný přenos WCF podporuje, včetně net.tcp, net.pipe a net.msmq.  
+- Služby WCF, musíte spustit na Windows Server 2003 a použít přenosy jiné než HTTP. V systému Windows Server 2003 je omezen na pouze komunikaci pomocí protokolu HTTP služby IIS 6.0 hostitelského prostředí. Aplikace služby Windows se nevztahují tato omezení a můžete použít libovolný přenos WCF podporuje, včetně net.tcp, net.pipe a net.msmq.  
   
 ### <a name="to-host-wcf-inside-of-a-windows-service-application"></a>K hostování WCF v rámci aplikace služby Windows  
   

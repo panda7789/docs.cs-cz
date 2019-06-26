@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: 166f8a99a3556664f5f3701c94aa8593ac7ebe32
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: a0252493ffd251b8d760927345c71e2f5ef55aaa
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422079"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401510"
 ---
 # <a name="for-c-reference"></a>for (referenční dokumentace jazyka C#)
 
@@ -51,7 +51,7 @@ Příkazy v *inicializátor* oddílu jsou spouštěny pouze jednou, před vstupe
 
   - Přidání předpony nebo přípony [snížení](../operators/arithmetic-operators.md#decrement-operator---) výraz, jako například `--i` nebo `i--`
 
-  - Vytvoření objektu pomocí [nové](new-operator.md) – klíčové slovo
+  - Vytvoření objektu pomocí [nové](../operators/new-operator.md) – operátor
 
   - [operátor await](await.md) výraz
 
@@ -83,7 +83,7 @@ i < 5
 
 - Přidání předpony nebo přípony [snížení](../operators/arithmetic-operators.md#decrement-operator---) výraz, jako například `--i` nebo `i--`
 
-- Vytvoření objektu pomocí [nové](new-operator.md) – klíčové slovo
+- Vytvoření objektu pomocí [nové](../operators/new-operator.md) – operátor
 
 - [operátor await](await.md) výraz
 

@@ -25,12 +25,12 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: b6bca26cc05a13e1384c4fc9642264f65b159ff7
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 4f1d79497f255f52a87dce44f1b5b8709adfada7
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306543"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401471"
 ---
 # <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# odkaz)
 
@@ -141,7 +141,7 @@ Následující příklad ukazuje, jak volat metodu, s nebo bez argumentů a vyvo
 
 [!code-csharp-interactive[invocation with ()](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Invocation)]
 
-Můžete také použít závorky, při vyvolání [konstruktor](../../programming-guide/classes-and-structs/constructors.md) s [ `new` ](../keywords/new-operator.md) operátor.
+Můžete také použít závorky, při vyvolání [konstruktor](../../programming-guide/classes-and-structs/constructors.md) s [ `new` ](new-operator.md) operátor.
 
 ### <a name="other-usages-of-"></a>Další využití)
 

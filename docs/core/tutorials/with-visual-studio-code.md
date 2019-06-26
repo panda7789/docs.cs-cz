@@ -1,17 +1,17 @@
 ---
-title: Začínáme s C# a Visual Studio Code
+title: Začínáme s jazykem C# a nástrojem Visual Studio Code
 description: Zjistěte, jak vytvářet a ladit vaši první aplikaci .NET Core v jazyce C# pomocí nástroje Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7ea2aed3b340b7ae7a6dcd83df30f9453380af15
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1268a943d7cbf1033531a6c51f42c6fd672eaed3
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750867"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401842"
 ---
-# <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s C# a Visual Studio Code
+# <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
 .NET core nabízí rychlou modulární platformu pro vytváření aplikací, které běží ve Windows, Linuxu a macOS. Získání výkonné prostředí s plnou podporu pro C# IntelliSense (inteligentního dokončování kódu) pro úpravy a ladění pomocí Visual Studio Code s rozšířením C#.
 
@@ -56,7 +56,7 @@ Pusťme se do práce s jednoduchý program "Hello World" v rozhraní .NET Core:
 
 Můžete také zhlédnout krátké Výukové video o další pomoc instalační program na [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS), nebo [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Ladit
+## <a name="debug"></a>Ladění
 
 1. Otevřít *Program.cs* kliknutím na ni. Při prvním otevření souboru C# v sadě Visual Studio Code [OmniSharp](https://www.omnisharp.net/) načte v editoru.
 
@@ -68,7 +68,7 @@ Můžete také zhlédnout krátké Výukové video o další pomoc instalační 
 
 3. Chcete-li otevřít zobrazení ladění, klikněte na ikonu ladění v nabídce na levé straně.
 
-    ![Otevřete kartu ladění ve Visual Studio Codee](media/with-visual-studio-code/open-debug-tab.png)
+    ![Otevřete kartu ladění ve Visual Studio Code](media/with-visual-studio-code/open-debug-tab.png)
 
 4. Vyhledejte na zelenou šipku v horní části podokna. Ujistěte se, že má rozevíracího seznamu vedle něj `.NET Core Launch (console)` vybrané.
 
@@ -88,7 +88,7 @@ Můžete také zhlédnout krátké Výukové video o další pomoc instalační 
 > [!TIP]
 > Další informace a řešení potíží s tipy k ladění rozhraní .NET Core s OmniSharp ve Visual Studio Code najdete v tématu [pokyny pro nastavení ladicího programu .NET Core](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
-## <a name="add-a-class"></a>Přidat třídu
+## <a name="add-a-class"></a>Přidání třídy
 
 1. Vyberte a přidejte nové třídy, klikněte pravým tlačítkem v Průzkumníku VSCode **nový soubor**. To přidá nový soubor do složky, otevřeného ve VSCode.
 2. Název souboru `MyClass.cs`. Musíte ji uložit `.cs` rozšíření na straně, chcete-li rozpoznán jako soubor csharp.

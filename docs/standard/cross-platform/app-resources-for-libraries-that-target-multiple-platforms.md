@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2c95c77d0b2e2b68750891431822e2637e5e88f9
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: ba4546397adcfcf6142b41482f574cf86607a6b9
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025574"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402118"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) projektu typu zajistit, že prostředky v knihovnách tříd můžete přistupovat z více platforem. Tento typ projektu je k dispozici v sadě Visual Studio 2012 a cílí na přenosné podmnožiny knihovny tříd rozhraní .NET Framework. Použití [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] zajistí, že vaše knihovna přístupná z aplikací klasické pracovní plochy, aplikace Silverlight, Windows Phone apps, a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.
@@ -72,12 +72,12 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
  [!code-csharp[Conceptual.Resources.Portable#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/uilibrary.cs#1)]
  [!code-vb[Conceptual.Resources.Portable#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/uilibrary.vb#1)]
 
- Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z aplikace v režimu konzoly. Vyžaduje přidání odkazu na soubor UILIbrary.dll do projektu aplikace konzoly.
+ Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z aplikace v režimu konzoly. Vyžaduje přidání odkazu na soubor UILibrary.dll do projektu aplikace konzoly.
 
  [!code-csharp[Conceptual.Resources.Portable#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/program.cs#2)]
  [!code-vb[Conceptual.Resources.Portable#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/module1.vb#2)]
 
- Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Vyžaduje přidání odkazu na soubor UILIbrary.dll do projektu aplikace pro Windows Store.
+ Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Vyžaduje přidání odkazu na soubor UILibrary.dll do projektu aplikace Windows Store.
 
  [!code-csharp[Conceptual.Resources.PortableMetro#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetro/cs/blankpage.xaml.cs#1)]
 
@@ -94,12 +94,12 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 |Name|Nom|
 |Název|Base de données des employés|
 
- Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z aplikace v režimu konzoly. Vyžaduje přidání odkazu na soubor UILIbrary.dll do projektu aplikace konzoly.
+ Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z aplikace v režimu konzoly. Vyžaduje přidání odkazu na soubor UILibrary.dll do projektu aplikace konzoly.
 
  [!code-csharp[Conceptual.Resources.Portable#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/program2.cs#3)]
  [!code-vb[Conceptual.Resources.Portable#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/module2.vb#3)]
 
- Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Vyžaduje přidání odkazu na soubor UILIbrary.dll do projektu aplikace pro Windows Store. Používá statickou `ApplicationLanguages.PrimaryLanguageOverride` vlastnosti chcete nastavit aplikaci upřednostňovaného jazyka na francouzštinu.
+ Následující kód ukazuje, jak `UILibrary` třídy a jejím prostředkům můžete přistupovat z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Vyžaduje přidání odkazu na soubor UILibrary.dll do projektu aplikace Windows Store. Používá statickou `ApplicationLanguages.PrimaryLanguageOverride` vlastnosti chcete nastavit aplikaci upřednostňovaného jazyka na francouzštinu.
 
  [!code-csharp[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetroloc/cs/blankpage.xaml.cs#1)]
  [!code-vb[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portablemetroloc/vb/blankpage.xaml.vb#1)]  

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: 4d5fe4c92f0d456942219bc3f7014f09a005aa5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 611e8df29b37efd880ee1d19515697d899e4fa7e
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048290"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402148"
 ---
 # <a name="choosing-a-transport"></a>Volba přenosu
 Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jsou zahrnuté ve Windows Communication Foundation (WCF): HTTP, TCP a pojmenované kanály. Zahrnuje také WCF přenosu služby Řízení front zpráv (MSMQ), ale tento dokument nepopisuje služby Řízení front zpráv.  
@@ -53,7 +53,7 @@ Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jso
 |Atribut|Popis|Dána přenosy|  
 |---------------|-----------------|------------------------|  
 |Diagnostika|Diagnostika umožňují automaticky detekovat potíže s připojením k přenosu. Všechny přenosy podporují schopnost posílání informací zpět selhání, který popisuje připojení. WCF nezahrnuje diagnostické nástroje pro zkoumání problémů se sítí.|Žádné|  
-|Hostování|Všechny koncové body WCF musí být hostovaný uvnitř aplikace. [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a starší podporují pouze hostitelské aplikace, které používají přenos pomocí protokolu HTTP. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], podpora bude přidána pro hostování všechny přenosy WCF, včetně TCP a pojmenované kanály. Další informace najdete v tématu [hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) a [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
+|Hostování|Všechny koncové body WCF musí být hostovaný uvnitř aplikace. Verze služby IIS 6.0 a starší podporují jenom hostování aplikací, které používají přenos pomocí protokolu HTTP. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], podpora bude přidána pro hostování všechny přenosy WCF, včetně TCP a pojmenované kanály. Další informace najdete v tématu [hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) a [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
 |Kontrola|Kontrola je schopnost extrahování a zpracování informací od zpráv během přenosu. Protokol HTTP odděluje směrování a ovládací prvek informace z dat, což usnadňuje vytváření buildů, které kontrolovat a analyzovat zprávy. Přenosy, které se dají snadno ke kontrole, budete možná muset méně výpočetní výkon v síťových zařízení. Úroveň zabezpečení používá dopady, zda zprávy můžete prozkoumat.|HTTP|  
 |Latence|Latence je minimální množství dobu potřebnou k provedení výměny zpráv. Všechny síťové operace mají vyšší nebo nižší latenci v závislosti na výběru přenosu. Duplexní nebo jednosměrnou komunikaci pomocí přenosu, jehož vzoru výměny zpráv nativní je požadavek odpověď, jako je například HTTP, může způsobit další latence kvůli vynucené korelace zprávy. V takovém případě zvažte použití přenosu, jehož vzoru výměny zpráv nativní je duplexní, jako je například TCP.|TCP, Named<br /><br /> Kanál|  
 |Dosah|Dosah přenos odráží, jak podporující přenos je na propojení s jinými systémy. Pojmenovaný kanál přenosu má velmi malé dosah; můžete připojit jenom na služby spuštěné na stejném počítači. Přenosy TCP nebo HTTP mají vynikající dosah a umožňuje pronikat branami některé konfigurace překladu adres a brány firewall. Další informace najdete v tématu [práce s NAT a brány firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md).|HTTP, TCP|  

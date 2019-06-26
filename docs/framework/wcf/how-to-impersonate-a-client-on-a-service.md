@@ -9,18 +9,18 @@ helpviewer_keywords:
 - impersonation
 - WCF, security
 ms.assetid: 431db851-a75b-4009-9fe2-247243d810d3
-ms.openlocfilehash: 1e6e0597f40f32df17d435cb959b246b3b7872fa
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3dd40efe27687b048984c4592db0d3787d061eeb
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881091"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402323"
 ---
 # <a name="how-to-impersonate-a-client-on-a-service"></a>Postupy: Zosobnění klienta ve službě
 Zosobnění klienta ve službě Windows Communication Foundation (WCF) umožňuje službě a provádět akce jménem klienta. Pro akce v souladu s přístup ovládacího prvku seznam (ACL) kontroly, jako je například přístup k adresářů a souborů na počítači nebo přístup k databázi serveru SQL Server že je kontrola seznamu ACL pro uživatelský účet klienta. Toto téma popisuje základní kroky potřebné k povolení klientům v doméně Windows nastavte úroveň zosobnění klienta. Funkční příklad tohoto objektu, najdete v části [zosobnění klienta](../../../docs/framework/wcf/samples/impersonating-the-client.md). Další informace o zosobnění klienta najdete v tématu [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 > [!NOTE]
->  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (to znamená `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace pomocí stavového tokenů kontextu zabezpečení. WinForms nebo konzolové aplikace obvykle běží pod aktuálně přihlášený účet tak, aby ve výchozím nastavení se můžou zosobnit účet. Když klienta je ale stránky ASP.NET a této stránce je hostovaná v [!INCLUDE[iis601](../../../includes/iis601-md.md)] nebo IIS 7.0, pak klient spouštěna `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací pomocí bezstavové token kontextu zabezpečení. Nicméně pokud je klient stránky technologie ASP.NET a zabezpečené relace pomocí stavového tokenů kontextu zabezpečení se používají, nelze zosobnit klienta. Další informace o používání stavové tokenů kontextu zabezpečení v zabezpečené relaci, najdete v části [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (to znamená `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace pomocí stavového tokenů kontextu zabezpečení. WinForms nebo konzolové aplikace obvykle běží pod aktuálně přihlášený účet tak, aby ve výchozím nastavení se můžou zosobnit účet. Ale při klienta je stránka technologie ASP.NET a této stránce je hostované v IIS 6.0 a IIS 7.0, pak klient spuštěn pod `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací pomocí bezstavové token kontextu zabezpečení. Nicméně pokud je klient stránky technologie ASP.NET a zabezpečené relace pomocí stavového tokenů kontextu zabezpečení se používají, nelze zosobnit klienta. Další informace o používání stavové tokenů kontextu zabezpečení v zabezpečené relaci, najdete v části [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
 ### <a name="to-enable-impersonation-of-a-client-from-a-cached-windows-token-on-a-service"></a>Chcete-li povolit zosobnění klienta z Windows token v mezipaměti ve službě  
   

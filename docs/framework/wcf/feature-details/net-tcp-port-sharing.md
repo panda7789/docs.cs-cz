@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: 8eb0a2a5b8b6edad17477e1fd65f72b540a8a674
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 4d7f28c692c7eb3527a851c6456473afc20a9aeb
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960045"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402468"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťový protokol (net.tcp://) pro vysoce výkonné komunikaci. WCF také zavádí nové součásti systému, služba Net.TCP Port Sharing umožňující portů net.tcp sdílet mezi více procesy uživatele.  
@@ -22,7 +22,7 @@ Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťov
   
  HTTP. SYS modelu, ve kterém je provoz k různým aplikacím HTTP multiplexní do jednoho portu TCP se stal standard na platformě Windows. Nabízí společný bod ovládacího prvku pro brány firewall správci zároveň umožní vývojářům aplikací, chcete-li minimalizovat náklady na nasazení vytváření nových aplikací, které můžete provést pomocí sítě.  
   
- Možnost sdílení portů ve více aplikacích HTTP byla dlouhou dobu funkce Internetové informační služby (IIS). Bylo ale jenom se zavedením HTTP. SYS (režimu jádra protokolu naslouchací proces protokolu HTTP) s [!INCLUDE[iis601](../../../../includes/iis601-md.md)] , který tato infrastruktura se plně zobecněn. Platná, protokolu HTTP. SYS umožňuje sdílení portů TCP, který je vyhrazený pro přenosy pomocí protokolu HTTP procesů libovolného uživatele. Tato funkce umožňuje mnoho aplikací HTTP existovat vedle sebe na stejný fyzický počítač v samostatné, izolovaných procesech při sdílení síťové infrastruktury vyžaduje odesílat a přijímat provoz přes TCP port 80. Služba sdílení portů Net.TCP umožňuje stejný typ portu pro net.tcp aplikace pro sdílení obsahu.  
+ Možnost sdílení portů ve více aplikacích HTTP byla dlouhou dobu funkce Internetové informační služby (IIS). Bylo ale jenom se zavedením HTTP. SYS (režimu jádra protokolu naslouchací proces protokolu HTTP) se službou IIS 6.0, že byla tato infrastruktura plně zobecněný. Platná, protokolu HTTP. SYS umožňuje sdílení portů TCP, který je vyhrazený pro přenosy pomocí protokolu HTTP procesů libovolného uživatele. Tato funkce umožňuje mnoho aplikací HTTP existovat vedle sebe na stejný fyzický počítač v samostatné, izolovaných procesech při sdílení síťové infrastruktury vyžaduje odesílat a přijímat provoz přes TCP port 80. Služba sdílení portů Net.TCP umožňuje stejný typ portu pro net.tcp aplikace pro sdílení obsahu.  
   
 ## <a name="port-sharing-architecture"></a>Architektura sdílení portu  
  Architektura sdílení portů ve službě WCF má tři hlavní komponenty:  

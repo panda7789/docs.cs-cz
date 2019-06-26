@@ -5,16 +5,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: 3a642996da8f0126e59e21d3553a7d8ba73dab23
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 675369936b9f90620b03365104255a622855fa9f
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422677"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401789"
 ---
 # <a name="new-modifier-c-reference"></a>New – modifikátor (referenční dokumentace jazyka C#)
 
 Při použití jako modifikátoru deklarace `new` – klíčové slovo explicitně skryje člena, který je zděděn ze základní třídy. Při skrytí zděděného člena, odvozená verze člena nahradí verzi základní třídy. Ačkoli můžete skrýt členy, bez použití `new` modifikátor, zobrazí se upozornění kompilátoru. Pokud používáte `new` pro explicitní skrytí člena, potlačí toto upozornění.
+
+Můžete také použít `new` – klíčové slovo do [vytvořit instanci typu](../operators/new-operator.md) nebo stejně jako [omezení obecného typu](../keywords/new-constraint.md).
 
 Chcete-li skrýt zděděného člena, deklarujte ho v odvozené třídě pomocí stejného názvu členu a upravte jej pomocí `new` – klíčové slovo. Příklad:
 
@@ -24,7 +26,7 @@ V tomto příkladu `BaseC.Invoke` je skryt `DerivedC.Invoke`. Pole `x` nemá vli
 
 Skrytí názvu prostřednictvím dědičnosti má jednu z následujících forem:
 
-- Obecně konstanta, pole, vlastnost nebo typ, který se používá ve třídě nebo struktuře skryje všechny členy základní třídy, které sdílejí její název.  Existují zvláštní případy.  Například, pokud deklarujete novou položku s názvem `N` mít typ, který není nevyvolatelný a základní typ deklaruje `N` na metodu, nové pole neskryje základní deklaraci v syntaxi vyvolání.  Zobrazit [specifikace jazyka C# 5.0](https://www.microsoft.com/download/details.aspx?id=7029) podrobnosti (viz oddíl "Člen vyhledávání" v části "Expressions").
+- Obecně konstanta, pole, vlastnost nebo typ, který se používá ve třídě nebo struktuře skryje všechny členy základní třídy, které sdílejí její název. Existují zvláštní případy. Například, pokud deklarujete novou položku s názvem `N` mít typ, který není nevyvolatelný a základní typ deklaruje `N` na metodu, nové pole neskryje základní deklaraci v syntaxi vyvolání. Další informace najdete v tématu [člen vyhledávání](~/_csharplang/spec/expressions.md#member-lookup) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 - Metody zavedené ve třídě nebo struktuře skryjí vlastnosti polí a typů, které sdílejí tento název v základní třídě. Skryje také všechny metody základní třídy, které mají stejnou signaturu.
 
@@ -48,13 +50,13 @@ V tomto příkladu vnořené třídy skryjí třídu, která má stejný název 
 
 Pokud odeberete `new` modifikátor, program bude stále kompilace a spuštění, ale zobrazí se následující upozornění:
 
-```
+```text
 The keyword new is required on 'MyDerivedC.x' because it hides inherited member 'MyBaseC.x'.
 ```
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v tématu [new – modifikátor](~/_csharplang/spec/classes.md#the-new-modifier) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 

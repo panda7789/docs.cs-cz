@@ -2,12 +2,12 @@
 title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: 85b8efadca03de71fd98b0f0d1bf5aeb47fe76be
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: bb60330aeedfe4b16a2a53d644e79a4a16636afa
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878596"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402439"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
@@ -16,7 +16,7 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
  Implementace WCF umožňuje služby jako knihovnu DLL, která je nasazena k adresáři \bin sady webovou aplikaci že můžete znovu použít službu mimo model webové aplikace, například v testovacím prostředí, která nemusí mít nasazený Internetové informační služby (IIS).  
   
 ## <a name="service-hosts-in-iis-hosted-applications"></a>Obsluha hostitelů v aplikace hostované v IIS  
- Nepoužívejte imperativní rozhraní API hostování na vlastním serveru k vytvoření nové služby hostitele tohoto naslouchání na síťové přenosy, které jsou nativně podporovány službou IIS hostitelské prostředí (například [!INCLUDE[iis601](../../../../includes/iis601-md.md)] hostovat TCP služby, protože komunikaci TCP nativně nepodporuje [!INCLUDE[iis601](../../../../includes/iis601-md.md)]). Tento přístup nedoporučuje. Obsluha hostitelů vytvořené imperativně nejsou známy v rámci služby IIS hostitelského prostředí. Kritický bod je, že zpracování provádí imperativně vytvořené služby nepočítá službou IIS při určování, zda je hostování fondu aplikací nečinný. Výsledkem je, že aplikace, které mají tyto hostitele imperativně vytvořené služby IIS hostitelské prostředí, které normálně agresivně uvolní hostitelské procesy služby IIS.  
+ K vytvoření nové služby hostitele tohoto naslouchání na síťové přenosy nativně nepodporuje hostitelské prostředí IIS nepoužívejte imperativní rozhraní API hostování na vlastním serveru (například služby IIS 6.0 do hostitele TCP služeb, protože komunikaci TCP nepodporuje nativně ve službě IIS 6.0). Tento přístup nedoporučuje. Obsluha hostitelů vytvořené imperativně nejsou známy v rámci služby IIS hostitelského prostředí. Kritický bod je, že zpracování provádí imperativně vytvořené služby nepočítá službou IIS při určování, zda je hostování fondu aplikací nečinný. Výsledkem je, že aplikace, které mají tyto hostitele imperativně vytvořené služby IIS hostitelské prostředí, které normálně agresivně uvolní hostitelské procesy služby IIS.  
   
 ## <a name="uris-and-iis-hosted-endpoints"></a>Identifikátory URI a hostované v IIS koncových bodů  
  Koncové body služby hostované v IIS musí být nakonfigurovaný pomocí relativní Uniform Resource Identifier (identifikátory URI), není absolutní adresy. Zaručí se tak, že adresa koncového bodu spadá do sady adresy URI, které patří do hostitelské aplikace a zajišťuje, že se aktivace založená na zprávách stane dle očekávání.  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: af3eab1c2453f37aa5bd881dc9804d7504c89298
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: afefb1f7bebb66a915074e8f231e73962a1b0ab0
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422117"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401451"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
 
@@ -88,9 +88,9 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-Použití [nové](new.md) operátor volá konstruktor určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).
+Použití [nové](../operators/new-operator.md) operátor volá konstruktor určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).
 
-Pomocí uživatelem definované typy [nové](new.md) vyvolat konstruktor bez parametrů. Například následující příkaz volá konstruktor bez parametrů `Point` struktury:
+Pomocí uživatelem definované typy [nové](../operators/new-operator.md) vyvolat konstruktor bez parametrů. Například následující příkaz volá konstruktor bez parametrů `Point` struktury:
 
 ```csharp
 Point p = new Point(); // Invoke parameterless constructor for the struct.
@@ -98,7 +98,7 @@ Point p = new Point(); // Invoke parameterless constructor for the struct.
 
 Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.
 
-Další informace o `new` operátoru, naleznete v tématu [nové](new.md).
+Další informace o `new` operátoru, naleznete v tématu [nové](../operators/new-operator.md).
 
 Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](formatting-numeric-results-table.md).
 

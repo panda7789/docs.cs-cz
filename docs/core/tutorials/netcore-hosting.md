@@ -4,12 +4,12 @@ description: Zjistěte, jak hostitele modulu runtime .NET Core z nativního kód
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6cddb6fa7dcd7a7d050749c26249f1f5d876322d
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: d3bdaacd4be776e0e9fff01698cca360ea4c9c6d
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306194"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402027"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Vytvořit vlastního hostitele řídit modul .NET runtime z nativního kódu .NET Core
 
@@ -28,7 +28,7 @@ Můžete také jednoduchou aplikaci .NET Core testování hostitele, takže byst
 ## <a name="hosting-apis"></a>Rozhraní API pro hostování
 Existují tři různých rozhraní API, které lze použít k hostiteli .NET Core. Tento dokument (spolu s přidruženými [ukázky](https://github.com/dotnet/samples/tree/master/core/hosting)) zahrnují všechny možnosti.
 
-* Preferovanou metodu hostování modulu runtime .NET Core v rozhraní .NET Core 3.0 a vyšší je `nethost` a `hostfxr` knihoven rozhraní API. Tyto vstupní body zpracování složitosti vyhledání a nastavení rutime pro inicializaci a umožnit spuštění spravované aplikace i volání do spravovaného statickou metodu.
+* Preferovanou metodu hostování modulu runtime .NET Core v rozhraní .NET Core 3.0 a vyšší je `nethost` a `hostfxr` knihoven rozhraní API. Tyto vstupní body zpracování složitosti vyhledání a nastavení modulu runtime pro inicializaci a umožnit spuštění spravované aplikace i volání do spravovaného statickou metodu.
 * Preferovanou metodu hostování modulu runtime .NET Core než .NET Core 3.0 je [CoreClrHost.h](https://github.com/dotnet/coreclr/blob/master/src/coreclr/hosts/inc/coreclrhost.h) rozhraní API. Toto rozhraní API poskytuje funkce pro snadné spuštění a zastavení modulu runtime a volání spravovaného kódu (buď spuštěním spravované exe nebo voláním statické metody spravované).
 * .NET core je rovněž možné hostovat s `ICLRRuntimeHost4` rozhraní v [mscoree.h](https://github.com/dotnet/coreclr/blob/master/src/pal/prebuilt/inc/mscoree.h). Toto rozhraní API se stále týká delší než CoreClrHost.h, takže jste viděli starší hostitelů pomocí jej. Stále funguje a umožňuje větší kontrolu nad hostitelský proces než CoreClrHost. Pro většinu scénářů ale CoreClrHost.h upřednostňována nyní z důvodu jeho jednodušší rozhraní API.
 

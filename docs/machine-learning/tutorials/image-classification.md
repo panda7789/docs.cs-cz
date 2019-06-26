@@ -4,16 +4,16 @@ description: Zjistěte, jak přeučování TensorFlow model klasifikace obrázk�
 ms.date: 06/12/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 2ad9e71f572cb694897fd12ecbb15da069afe338
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 62a926795ce34a8c1639f1d42ebbb34b53dc67ad
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67026080"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401741"
 ---
 # <a name="tutorial-retrain-a-tensorflow-image-classifier-with-transfer-learning-and-mlnet"></a>Kurz: Přeučování klasifikátor TensorFlow image s learningu a ML.NET
 
-Zjistěte, jak přeučování s využitím learningu a ML.NET model TensorFlow classificaton pomocí bitové kopie. Původní model se trénuje klasifikovat jednotlivých obrázků. Po přetrénování, nový model slouží k uspořádání obrázků do kategorií. 
+Zjistěte, jak přeučování TensorFlow model klasifikace obrázků s využitím learningu a ML.NET. Původní model se trénuje klasifikovat jednotlivých obrázků. Po přetrénování, nový model slouží k uspořádání obrázků do kategorií. 
 
 Školení [klasifikace obrázků](https://en.wikipedia.org/wiki/Outline_of_object_recognition) model úplně od začátku vyžaduje nastavení miliony parametry, spoustu s popiskem trénovacích dat a velké množství výpočetních prostředků (vzdálené stovky hodin GPU). Přestože není tak účinné jako trénujete model pro vlastní úplně od začátku, learningu vám umožní místní tento proces při práci s tisíci imagí a miliony označené obrázky a poměrně rychle vytvářet vlastní model (za hodinu na počítači bez GPU).
 

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 50243f148f37f5f33f0c69ddd896549e7aea9462
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 03d6ed19ef01be7712ff2fdde0c1be2a6673e64f
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025116"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401434"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Ukazatel související s operátory (C# odkaz)
 
@@ -42,7 +42,7 @@ Informace o typy ukazatelů, naleznete v tématu [typy ukazatelů](../../program
 > [!NOTE]
 > Všechny operace s ukazateli vyžaduje [nebezpečné](../keywords/unsafe.md) kontextu. Kód, který obsahuje nebezpečné bloky musí být kompilována s [ `-unsafe` ](../compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.
 
-## <a name="address-of-operator-amp"></a>Operátor address-of &amp;
+## <a name="address-of-operator-"></a> Operátor address-of &amp;
 
 Unární `&` operátor vrátí adresu svého operandu:
 

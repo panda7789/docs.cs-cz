@@ -2,12 +2,12 @@
 title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: a41615ab096f3aa4f1ee94defd775248d0df4d2e
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 4c46a7ac0482e0f9c969505b87558d240bb1391e
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025730"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402302"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -43,7 +43,7 @@ Proces instalace rozhraní .NET Framework automaticky zaregistruje WCF se služb
 
 Služby WCF hostované v IIS se musí nacházet v rámci aplikace služby IIS. Můžete vytvořit novou aplikaci služby IIS pro hostování služeb WCF výhradně. Alternativně můžete nasazení služby WCF do existující aplikace, která je již hostování technologie ASP.NET 2.0 obsahu (jako jsou stránky ASPX a webových služeb ASP.NET s [ASMX]). Další informace o těchto možnostech najdete v článku "hostování WCF – souběžně s rozhraním ASP.NET" a "Hostování služby WCF v režim kompatibility ASP.NET" oddíly v [služby WCF a ASP.NET](wcf-services-and-aspnet.md).
 
-Všimněte si, že [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a novějších verzích pravidelně restartovat izolovaných objektově orientované programování aplikací. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71,582 minut. Toto restartování je zakázat. Další informace o této vlastnosti naleznete v tématu [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
+Všimněte si, že služba IIS 6.0 a pozdějších verzí pravidelně restartovat izolovaných objektově orientované programování aplikací. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71,582 minut. Toto restartování je zakázat. Další informace o této vlastnosti naleznete v tématu [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
 
 ## <a name="create-an-svc-file-for-the-wcf-service"></a>Vytvoření souboru .svc pro služby WCF
 
@@ -103,7 +103,7 @@ Musíte vždycky použít relativní koncového bodu adresy koncových bodů slu
 
 ### <a name="available-transports"></a>K dispozici přenosy
 
-Služby WCF hostované v IIS 5.1 a [!INCLUDE[iis601](../../../../includes/iis601-md.md)] jsou omezeny na používání komunikace na základě protokolu HTTP. Na těchto platformách IIS konfigurace hostovanou službu, která používá vazbu jiným protokolem než HTTP způsobí chybu při aktivaci služby. Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], podporovaných přenosů zahrnují HTTP, Net.TCP, Net.Pipe, Net.MSMQ a msmq.formatname pro zpětné kompatibilitě se stávajícími aplikacemi služby MSMQ.
+Služby WCF hostované v IIS 5.1 a IIS 6.0 jsou omezeny na používání komunikace na základě protokolu HTTP. Na těchto platformách IIS konfigurace hostovanou službu, která používá vazbu jiným protokolem než HTTP způsobí chybu při aktivaci služby. Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], podporovaných přenosů zahrnují HTTP, Net.TCP, Net.Pipe, Net.MSMQ a msmq.formatname pro zpětné kompatibilitě se stávajícími aplikacemi služby MSMQ.
 
 ### <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 

@@ -1,22 +1,22 @@
 ---
-title: Zkontrolovat hodnoty dočasných dat během zpracování ML.NET
-description: Zjistěte, jak zkontrolovat hodnoty skutečné dočasných dat během ML.NET strojového učení zpracování kanálu
-ms.date: 04/29/2019
+title: Kontrola dočasných dat během zpracování ML.NET
+description: Zjistěte, jak kontrolovat dočasných dat během ML.NET strojového učení kanálu načítání, zpracování a kroky ML.NET cvičení modelu.
+ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
-ms.openlocfilehash: 06c4a473841db62a10dfc24025f842df7ae2c583
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.custom: mvc, how-to, title-hack-0625
+ms.openlocfilehash: d6ddeb523fb229eb0ebc9c2f22809312060e4266
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063521"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402391"
 ---
-# <a name="inspect-intermediate-data-values-during-processing"></a>Zkontrolovat hodnoty dočasných dat během zpracování
+# <a name="inspect-intermediate-data-during-processing"></a>Kontrola dočasných dat během zpracování
 
-Zjistěte, jak zkontrolovat hodnoty během zpracování a kroky školení v ML.NET načítání.
+Zjistěte, jak kontrolovat dočasných dat během načítání, zpracování a kroky trénování modelu v ML.NET. Dočasných dat je výstup každou z fází strojového učení kanálu.
 
-Data, jako je ten reprezentované níže, který je načten do [ `IDataView` ](xref:Microsoft.ML.IDataView) můžete prozkoumat v ML.NET různými způsoby.
+Dočasných dat, jako je ten reprezentované níže, který je načten do [ `IDataView` ](xref:Microsoft.ML.IDataView) můžete prozkoumat v ML.NET různými způsoby.
  
 ```csharp
 HousingData[] housingData = new HousingData[]
@@ -62,9 +62,9 @@ HousingData[] housingData = new HousingData[]
 
 ## <a name="convert-idataview-to-ienumerable"></a>Převést na typ IEnumerable IDataView
 
-Jedním z nejrychleji způsobů ke kontrole hodnoty [ `IDataView` ](xref:Microsoft.ML.IDataView) je převeďte ho na [ `IEnumerable` ](xref:System.Collections.Generic.IEnumerable%601). Převést [ `IDataView` ](xref:Microsoft.ML.IDataView) k [ `IEnumerable` ](xref:System.Collections.Generic.IEnumerable%601) použít [ `CreateEnumerable` ](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) metoda. 
+Jedním z nejrychleji způsobů ke kontrole [ `IDataView` ](xref:Microsoft.ML.IDataView) je převeďte ho na [ `IEnumerable` ](xref:System.Collections.Generic.IEnumerable%601). Převést [ `IDataView` ](xref:Microsoft.ML.IDataView) k [ `IEnumerable` ](xref:System.Collections.Generic.IEnumerable%601) použít [ `CreateEnumerable` ](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) metoda. 
 
-K zajištění optimálního výkonu nastavte hodnotu `reuseRowObject` k `true`. Tím se laxně vyplňte na stejný objekt s daty na aktuálním řádku, jak se vyhodnocuje na rozdíl od vytvoření nového objektu pro každý řádek v datové sadě.
+Chcete-li optimalizovat výkon, nastavte `reuseRowObject` k `true`. Tím se laxně vyplňte na stejný objekt s daty na aktuálním řádku, jak se vyhodnocuje na rozdíl od vytvoření nového objektu pro každý řádek v datové sadě.
 
 ```csharp
 // Create an IEnumerable of HousingData objects from IDataView
@@ -78,6 +78,8 @@ foreach (HousingData row in housingDataEnumerable)
     Console.WriteLine(row.Size);
 }
 ```
+
+## <a name="accessing-specific-indices-with-ienumerable"></a>Přístup k určité indexy s IEnumerable
 
 Pokud potřebujete jenom přístup k část dat nebo konkrétní indexy, použijte [ `CreateEnumerable` ](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) a nastavit `reuseRowObject` pro parametr `false` tak, že je vytvořen nový objekt pro každou z požadovaných řádků v datové sadě. Poté převeďte [ `IEnumerable` ](xref:System.Collections.Generic.IEnumerable%601) pole nebo seznamu.
 

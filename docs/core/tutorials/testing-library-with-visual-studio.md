@@ -8,14 +8,14 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: 352599d60a42a034b3d6647b1fe8f1cbf2f4572d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32593465c1a161aa1293b7b233539fa930c7e1d8
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647845"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402211"
 ---
-# <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Test knihovny .NET Standard s .NET Core v sadě Visual Studio 2017
+# <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny .NET Standard pomocí platformy .NET Core v sadě Visual Studio 2017
 
 V [vytvářet knihovny .NET Standard s C# a .NET Core v sadě Visual Studio 2017](library-with-visual-studio.md) nebo [sestavení .NET standardní knihovny jazyka Visual Basic a .NET Core v sadě Visual Studio 2017](vb-library-with-visual-studio.md), vytvoříte jednoduchou třídu Knihovna, která přidá metodu rozšíření k <xref:System.String> třídy. Teď vytvoříte test jednotky a ujistit se, že pracuje podle očekávání. Přidáte projektu jednotkového testu k řešení, které jste vytvořili v předchozím článku.
 
@@ -68,7 +68,7 @@ Chcete-li vytvořit projekt testování částí, postupujte takto:
 
    Zdrojový kód vytvořený pomocí šablony testu jednotek provede následující akce:
 
-   * Importy oboru názvů [Microsoft.VisualStudio.TestTools.UnitTesting]<xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=namewithType> obor názvů, který obsahuje typy používané pro testování částí.
+   * Importuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType> obor názvů, který obsahuje typy používané pro testování částí.
 
    * Se vztahuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute>) atribut `UnitTest1` třídy. Každý testovací metody ve třídě testu označené <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atribut provádí automaticky při spuštění testu jednotek.
 

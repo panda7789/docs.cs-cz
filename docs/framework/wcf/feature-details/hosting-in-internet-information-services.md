@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: 8563662a4408d0425e92b960301311ce5d423f9d
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: f9acadcb594005d7c7eadffcddad3649a3aefc29
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025748"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402192"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
 Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný modelu používané technologie ASP.NET a webových služeb ASP.NET Web services (ASMX).  
@@ -19,9 +19,9 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
   
 - Služba IIS 5.1 na [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]. Toto prostředí je užitečné pro návrh a vývoj aplikace hostované službou IIS, které později nasazených v serverovém operačním systému, jako [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
   
-- [!INCLUDE[iis601](../../../../includes/iis601-md.md)] na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. [!INCLUDE[iis601](../../../../includes/iis601-md.md)] poskytuje pokročilé zpracování model, který nabízí lepší škálovatelnost, spolehlivost a izolace aplikací. Toto prostředí je vhodná pro produkční nasazení služby WCF, které používají komunikaci pomocí protokolu HTTP výhradně.  
+- Služba IIS 6.0 na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Služba IIS 6.0 poskytuje model pokročilé proces, který nabízí lepší škálovatelnost, spolehlivost a izolace aplikací. Toto prostředí je vhodná pro produkční nasazení služby WCF, které používají komunikaci pomocí protokolu HTTP výhradně.  
   
-- Služba IIS 7.0 na [!INCLUDE[wv](../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../includes/lserver-md.md)]. Služba IIS 7.0 obsahuje stejný model pokročilé zpracování jako [!INCLUDE[iis601](../../../../includes/iis601-md.md)], ale používá služby Aktivace procesu Windows (WAS) umožňuje aktivaci a síťovou komunikaci přes jiné protokoly než HTTP. Toto prostředí je vhodný pro vývoj služeb WCF, které komunikují přes všechny síťové protokoly podporované službou WCF (včetně protokolu HTTP, net.tcp, net.pipe a net.msmq). Další informace o WAS najdete v tématu [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
+- Služba IIS 7.0 na [!INCLUDE[wv](../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../includes/lserver-md.md)]. Služba IIS 7.0 poskytuje stejný model pokročilé zpracování jako služby IIS 6.0, ale pomocí služby Aktivace procesu Windows (WAS) umožňuje aktivaci a síťovou komunikaci přes jiné protokoly než HTTP. Toto prostředí je vhodný pro vývoj služeb WCF, které komunikují přes všechny síťové protokoly podporované službou WCF (včetně protokolu HTTP, net.tcp, net.pipe a net.msmq). Další informace o WAS najdete v tématu [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
   
 - [Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496) funguje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] a Windows WAS Process Activation Service () k poskytování bohatých aplikací hostitelské prostředí služby NET4 WCF a WF. Mezi tyto výhody patří správa životního cyklu procesu, proces recykluje, sdílené hostování, rychlou ochranu, osamocení procesu, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495).  
   
@@ -36,7 +36,7 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
   
 - Služby WCF hostované ve službě IIS pomocí stejného modelu dynamická kompilace jako ASP.NET 2.0, která zjednodušuje vývoj a nasazení hostovaných služeb.  
   
- Když se rozhodujete hostovat služby WCF v IIS, je důležité si pamatovat, že služba IIS 5.1 a [!INCLUDE[iis601](../../../../includes/iis601-md.md)] jsou omezené pouze komunikaci pomocí protokolu HTTP. Další informace o výběru hostitelské prostředí najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
+ Když se rozhodujete hostovat služby WCF v IIS, je dobré si uvědomit, že služba IIS 5.1 a 6.0 omezeny pouze komunikaci pomocí protokolu HTTP. Další informace o výběru hostitelské prostředí najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
   
 ## <a name="deploying-an-iis-hosted-wcf-service"></a>Nasazení služby WCF hostované IIS  
  Vývoj a nasazení služby WCF hostované IIS se skládá z následujících úloh:  

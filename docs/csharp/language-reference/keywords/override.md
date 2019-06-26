@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-ms.openlocfilehash: 6a8e79da3897e867fa3becab5fcfc70afe72e614
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cedce26373c49d33ee17602b621f71ef6732d145
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660993"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401548"
 ---
 # <a name="override-c-reference"></a>override (Referenční dokumentace jazyka C#)
 
@@ -56,5 +56,5 @@ Tento příklad definuje základní třídu s názvem `Employee`a odvozená tř�
 - [Modifikátory](modifiers.md)
 - [abstract](abstract.md)
 - [virtual](virtual.md)
-- [new](new.md)
+- [Nový (modifikátor)](new-modifier.md)
 - [Polymorfismus](../../programming-guide/classes-and-structs/polymorphism.md)

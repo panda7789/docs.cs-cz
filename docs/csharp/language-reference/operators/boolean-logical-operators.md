@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 809c88d519cb75f42c1ac00a18e19097c01fd084
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 261c3fa2cc2f94e2a3f76a8a41982c21183e973a
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347937"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401367"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logická logické operátory (C# odkaz)
 
@@ -55,7 +55,7 @@ Pro operandy [integrální](../keywords/integral-types-table.md) typy, `&`, `|`,
 
 [!code-csharp-interactive[logical negation](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Negation)]
 
-## <a name="logical-and-operator-amp"></a>Logický operátor AND &amp;
+## <a name="logical-and-operator-"></a> Logický operátor AND &amp;
 
 `&` Operátor vypočítá logický operátor AND operandů. Výsledek `x & y` je `true` Pokud mají oba `x` a `y` vyhodnotit `true`. V opačném případě je výsledek `false`.
 
@@ -91,7 +91,7 @@ V následujícím příkladu, pravém operand `|` volání metody, která se pro
 
 Pro operandy integrální typy `|` operátor výpočetní prostředí [bitové logické OR](bitwise-and-shift-operators.md#logical-or-operator-) z operandů.
 
-## <a name="conditional-logical-and-operator-ampamp"></a>Podmíněné logického operátoru AND &amp;&amp;
+## <a name="conditional-logical-and-operator-"></a> Podmíněné logického operátoru AND &amp;&amp;
 
 Podmíněné logického operátoru AND `&&`, označované také jako "krátký cyklus" logického operátoru AND, vypočítá logický operátor AND operandů. Výsledek `x && y` je `true` Pokud mají oba `x` a `y` vyhodnotit `true`. V opačném případě je výsledek `false`. Pokud `x` vyhodnotí jako `false`, `y` , nebude hodnocen.
 

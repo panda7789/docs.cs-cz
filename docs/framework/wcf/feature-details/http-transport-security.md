@@ -2,12 +2,12 @@
 title: Zabezpečení přenosu HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: ab099302df93ce7d01c2730df88240265411bc8d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 386c24a9b51be56bf5a8195123e573cfced6392f
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587673"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402308"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace vrstvy SSL (Secure Sockets). SSL se často používá na Internetu k ověření služby ke klientovi a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje připojení SSL a jak je implementován ve Windows Communication Foundation (WCF).  
@@ -43,9 +43,9 @@ Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace
  Konfigurace certifikátů pro použití s [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=88595).  
   
 #### <a name="iis-60"></a>Internetová informační služba 6.0  
- Chcete-li nastavit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [konfigurace Secure Sockets Layer](https://go.microsoft.com/fwlink/?LinkId=88601).  
+ Nastavení služby IIS 6.0 jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [konfigurace Secure Sockets Layer](https://go.microsoft.com/fwlink/?LinkId=88601).  
   
- Konfigurace certifikátů pro použití s [!INCLUDE[iis601](../../../../includes/iis601-md.md)], naleznete v tématu [Certificates_IIS_SP1_Ops](https://go.microsoft.com/fwlink/?LinkId=88602).  
+ Pokud chcete nakonfigurovat certifikáty pro použití se službou IIS 6.0, naleznete v tématu [Certificates_IIS_SP1_Ops](https://go.microsoft.com/fwlink/?LinkId=88602).  
   
 ### <a name="using-httpcfg-for-ssl"></a>Pomocí HttpCfg pro protokol SSL  
  Při vytváření aplikace v místním prostředí WCF, stáhněte si nástroj HttpCfg.exe, k dispozici na [webu podpory nástroje systému Windows XP Service Pack 2](https://go.microsoft.com/fwlink/?LinkId=29002).  
