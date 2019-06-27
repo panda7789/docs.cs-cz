@@ -1,18 +1,18 @@
 ---
-title: Příprava dat
+title: Příprava dat pro vytvoření modelu
 description: Další informace o použití transformace v ML.NET k manipulaci a připravit data pro další zpracování nebo model vytváření.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 05/03/2019
-ms.custom: mvc, how-to
-ms.openlocfilehash: abf43260a438c9b1febffc77cf39e7328e0377ee
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.date: 06/25/2019
+ms.custom: mvc, how-to, title-hack-0625
+ms.openlocfilehash: 4b7d5a09044e49f1b57b8276b893e0fc962a3be2
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268245"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397723"
 ---
-# <a name="prepare-data"></a>Příprava dat
+# <a name="prepare-data-for-building-a-model"></a>Příprava dat pro vytvoření modelu
 
 Další informace o použití ML.NET připravit data pro další zpracování nebo vytváření modelu.
 
