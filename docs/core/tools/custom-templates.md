@@ -3,12 +3,12 @@ title: Vlastních šablon pro dotnet nové
 description: Další informace o vlastních šablon pro jakýkoli druh projektu .NET nebo soubory.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: d7e9c549ff132deb4682ba81ab5ff354d6cc1522
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 738c6b07f77bdbf6fd946253f95c8691e4172f31
+ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169634"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410352"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastních šablon pro dotnet nové
 
@@ -100,7 +100,7 @@ Vlastní šablony, jsou vybavené [balíčku dotnet](dotnet-pack.md) příkazu a
 01. `<PackageType>` Nastavení přidán a nastavit na `Template`.
 01. `<PackageVersion>` Přidán a nastaven na platné nastavení [číslo verze NuGet](/nuget/reference/package-versioning).
 01. `<PackageId>` Nastavení přidán a nastavit na jedinečný identifikátor. Tento identifikátor slouží k odinstalaci šablonovaný balíček a používá NuGet informační kanály k registraci šablonovaný balíček.
-01. Nastavení obecných metadat by měla být nastavena: `<Title>`, `<Authors>`, `<Description>`, a `<Tags>`.
+01. Nastavení obecných metadat by měla být nastavena: `<Title>`, `<Authors>`, `<Description>`, a `<PackageTags>`.
 01. `<TargetFramework>` Nastavení musí být nastaveno, i když se nepoužije binární soubor vytvořený pomocí šablony procesu. V následujícím příkladu je nastavena `netstandard2.0`.
 
 Šablonovaný balíček ve formě *.nupkg* balíčku NuGet, vyžaduje uložení všechny šablony v *obsah* složky v rámci balíčku. Existuje několik dalších nastavení pro přidání do *.csproj* soubor a zkontrolujte, že generované *.nupkg* je možné nainstalovat jako šablonovaný balíček:
@@ -125,7 +125,7 @@ Tady je příklad *.csproj* souboru, který následuje všechny výše uvedené 
     <Title>AdatumCorporation Templates</Title>
     <Authors>Me</Authors>
     <Description>Templates to use when creating an application for Adatum Corporation.</Description>
-    <Tags>dotnet-new;templates;contoso</Tags>
+    <PackageTags>dotnet-new;templates;contoso</PackageTags>
     <TargetFramework>netstandard2.0</TargetFramework>
 
     <IncludeContentInPack>true</IncludeContentInPack>

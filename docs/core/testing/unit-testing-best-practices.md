@@ -5,12 +5,12 @@ author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7f4699b5277c5feeac4d9116ac85e096247aa748
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2787f43645250dbaf7a67aa7b7158372cf624be5
+ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648656"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410381"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Testování osvědčených postupů pomocí .NET Core a .NET Standard
 
@@ -283,7 +283,7 @@ Jedním z principů testování částí je, že musí mít úplnou kontrolu nad
 ```csharp
 public int GetDiscountedPrice(int price)
 {
-    if(DateTime.Now == DayOfWeek.Tuesday) 
+    if(DateTime.Now.DayOfWeek == DayOfWeek.Tuesday) 
     {
         return price / 2;
     }

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: 2c53dc315496d40b77e0bf0880c713ce3d3b4241
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8008feb91a72353a74a647cf79bcecbf7023f962
+ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614567"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410561"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data nad tím, které aplikace funguje a zpřístupňuje funkci ke zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy, jako je panel nabídek, panelů nástrojů a stavové řádky. Aplikace nejsou v netriviálních může také zobrazit další okna provést následující kroky:  
@@ -84,7 +84,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 >  <xref:Microsoft.Win32.OpenFileDialog> je možné bezpečně načíst názvy souborů aplikací spuštěných s částečnou důvěryhodností (viz [zabezpečení](../security-wpf.md)).  
   
 <a name="Save_File_Dialog"></a>   
-### <a name="save-file-dialog-box"></a>Soubor dialogové okno Uložit  
+### <a name="save-file-dialog-box"></a>dialogové okno Uložení souboru  
  Uložení souboru dialogovém okně je znázorněno na následujícím obrázku používá funkci pro uložení souboru načíst název soubor, který chcete uložit.  
   
  ![Uložit jako dialogové okno zobrazuje umístění pro uložení souboru.](./media/dialog-boxes-overview/save-file-dialog-box.png)  
@@ -97,91 +97,87 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
  Další informace o uložení souboru dialogové okno, najdete v článku <xref:Microsoft.Win32.SaveFileDialog?displayProperty=nameWithType>.  
   
 <a name="Print_Dialog"></a>   
-### <a name="print-dialog-box"></a>Dialogové okno Tisk  
- Do dialogového okna Tisk pole, je znázorněno na následujícím obrázku, používá funkce tisku vyberte a nakonfigurujte tiskárny, uživatele chcete vytisknout data.  
+### <a name="print-dialog-box"></a>Tisk – dialogové okno
+
+Do dialogového okna Tisk pole, je znázorněno na následujícím obrázku, používá funkce tisku vyberte a nakonfigurujte tiskárny, uživatele chcete vytisknout data.  
   
- ![Snímek obrazovky ukazující dialogové okno Tisk.](./media/dialog-boxes-overview/print-data-dialog-box.png)  
+![Snímek obrazovky ukazující dialogové okno Tisk.](./media/dialog-boxes-overview/print-data-dialog-box.png)  
   
- Běžné dialogového okna Tisk pole je implementovaný jako <xref:System.Windows.Controls.PrintDialog> třídy a je umístěn v <xref:System.Windows.Controls> oboru názvů. Následující kód ukazuje, jak vytvářet, konfigurovat a zobrazit jednu.  
+Běžné dialogového okna Tisk pole je implementovaný jako <xref:System.Windows.Controls.PrintDialog> třídy a je umístěn v <xref:System.Windows.Controls> oboru názvů. Následující kód ukazuje, jak vytvářet, konfigurovat a zobrazit jednu.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#PrintDialogBoxCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#printdialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#PrintDialogBoxCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#printdialogboxcodebehind)]  
   
- Další informace o dialogovém okně tisku, naleznete v tématu <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>. Pro podrobnou diskuzi o tisk ve [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], naleznete v tématu [přehled tisku](../advanced/printing-overview.md).  
+ Další informace o dialogovém okně tisku, naleznete v tématu <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>. Podrobnou diskuzi o tisk v subsystému WPF naleznete v tématu [přehled tisku](../advanced/printing-overview.md).  
   
 <a name="Custom_Dialog_Boxes"></a>   
-## <a name="custom-dialog-boxes"></a>Vlastní dialogová okna  
- Společná dialogová okna jsou užitečné a by měl použít, pokud je to možné, že nepodporují požadavky dialogová okna specifického pro doménu. V těchto případech je potřeba vytvořit vlastní dialogová okna. Jak uvidíme, je dialogové okno s zvláštní chování. <xref:System.Windows.Window> implementuje tyto chování a v důsledku toho použijete <xref:System.Windows.Window> k vytvoření vlastní modální a nemodální dialogová okna.  
+## <a name="custom-dialog-boxes"></a>Vlastní dialogová okna
+
+Společná dialogová okna jsou užitečné a by měl použít, pokud je to možné, že nepodporují požadavky dialogová okna specifického pro doménu. V těchto případech je potřeba vytvořit vlastní dialogová okna. Jak uvidíme, je dialogové okno s zvláštní chování. <xref:System.Windows.Window> implementuje tyto chování a v důsledku toho použijete <xref:System.Windows.Window> k vytvoření vlastní modální a nemodální dialogová okna.  
   
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
-### <a name="creating-a-modal-custom-dialog-box"></a>Vytvoření modálního dialogového okna vlastní  
- Toto téma ukazuje, jak používat <xref:System.Windows.Window> pro vytvoření pole implementace typické modální dialogové okno, pomocí `Margins` dialogové okno s ukázkovým (naleznete v tématu [dialogové okno pole ukázka](https://go.microsoft.com/fwlink/?LinkID=159984)). `Margins` Dialogové okno se zobrazí na následujícím obrázku.  
+### <a name="creating-a-modal-custom-dialog-box"></a>Vytvoření modálního dialogového okna vlastní
+
+Toto téma ukazuje, jak používat <xref:System.Windows.Window> pro vytvoření pole implementace typické modální dialogové okno, pomocí `Margins` dialogové okno s ukázkovým (naleznete v tématu [dialogové okno pole ukázka](https://go.microsoft.com/fwlink/?LinkID=159984)). `Margins` Dialogové okno se zobrazí na následujícím obrázku.  
   
  ![Dialogové okno okraje s pole k definování levý okraj, horní okraj, pravý okraj a dolní okraj.](./media/dialog-boxes-overview/margin-size-dialog-box.png)  
   
-#### <a name="configuring-a-modal-dialog-box"></a>Konfigurace modální dialogové okno  
- Uživatelské rozhraní pro typické dialogové okno obsahuje následující:  
+#### <a name="configuring-a-modal-dialog-box"></a>Konfigurace modální dialogové okno
+
+Uživatelské rozhraní pro typické dialogové okno obsahuje následující:  
   
 - Různé ovládací prvky, které jsou nutné shromáždit požadovaná data.  
   
-- Zobrazení **OK** tlačítko, že uživatelé klikněte na tlačítko pro dialogové okno zavřete, vraťte se na funkci a pokračovat ve zpracování.  
+- **OK** tlačítko, že uživatelé klikněte na tlačítko pro dialogové okno zavřete, vraťte se na funkci a pokračovat ve zpracování.  
   
-- Zobrazení **zrušit** tlačítko, které uživatelé kliknou na dialogové okno zavřít a zastavit funkce z další zpracování.  
+- A **zrušit** tlačítko, které uživatelé kliknou na dialogové okno zavřít a zastavit funkce z další zpracování.  
   
-- Zobrazení **Zavřít** tlačítko v záhlaví programu.  
+- A **Zavřít** tlačítko v záhlaví programu.  
   
-- Zobrazuje ikonu.  
+- Ikona.  
   
-- Zobrazuje **minimalizovat**, **Maximalizovat**, a **obnovení** tlačítka.  
+- **Minimalizovat**, **Maximalizovat**, a **obnovení** tlačítka.  
   
-- Zobrazení **systému** chcete minimalizovat, maximalizovat, obnovení a zavřete dialogové okno, v nabídce.  
+- A **systému** chcete minimalizovat, maximalizovat, obnovení a zavřete dialogové okno, v nabídce.  
   
-- Otevřete výše a v centru okna, které se otevřelo dialogové okno.  
+- Na pozici výše a to ve střední části okna, které se otevřelo dialogové okno.  
   
-- Dialogová okna by měl být umožňující změnu velikosti, kde je to možné, zabránit dialogových oken příliš malé a uživateli poskytnout užitečné výchozí velikost, je potřeba nastavit výchozí a minimální dimenzí v uvedeném pořadí.  
+- Možnost změnit velikost, kde je to možné, zabránit dialogových oken příliš malé a uživateli poskytnout užitečné výchozí velikost. Tomu je potřeba nastavit výchozí a minimální dimenze.  
   
-- Stisknutím klávesy ESC by měl být nakonfigurovaný jako klávesové zkratky, které způsobí, že **zrušit** tlačítka se aktivovala. Toho dosáhnete pomocí nastavení <xref:System.Windows.Controls.Button.IsCancel%2A> vlastnost **zrušit** tlačítko `true`.  
+- Klávesu ESC, jako klávesovou zkratku, která způsobí, že **zrušit** tlačítka se aktivovala. To provedete tak, že nastavíte <xref:System.Windows.Controls.Button.IsCancel%2A> vlastnost **zrušit** tlačítko `true`.  
   
-- Stisknutím klávesy ENTER (nebo RETURN) by měl být nakonfigurovaný jako klávesové zkratky, které způsobí, že **OK** tlačítka se aktivovala. Toho dosáhnete pomocí nastavení <xref:System.Windows.Controls.Button.IsDefault%2A> vlastnost **OK** tlačítko `true`.  
+- Klávesu ENTER (nebo RETURN) jako klávesové zkratky, které způsobí, že **OK** tlačítka se aktivovala. To provedete tak, že nastavíte <xref:System.Windows.Controls.Button.IsDefault%2A> vlastnost **OK** tlačítko `true`.  
   
- Následující kód ukazuje tuto konfiguraci.  
+Následující kód ukazuje tuto konfiguraci.  
   
- [!code-xaml[DialogBoxSample#MarginsDialogBoxMainBitsMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogboxmainbitsmarkup1)]  
-[!code-xaml[DialogBoxSample#MarginsDialogBoxMainBitsMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogboxmainbitsmarkup2)]  
+[!code-xaml[MarginsDialogBox XAML file](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml?range=1-16,106-112)]  
+
+[!code-csharp[MarginsDialogBox C# code-behind](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-12,67-68)]
+[!code-vb[MarginsDialogBox VB code-behind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-11,61-62)]  
   
- [!code-csharp[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxmainbitscodebehind1)]
- [!code-vb[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxmainbitscodebehind1)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxmainbitscodebehind2)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxmainbitscodebehind2)]  
+Uživatelské prostředí pro dialogové okno se také rozšiřuje na řádku nabídek, které se otevře dialogové okno. Při spuštění funkce, která vyžaduje interakci uživatele prostřednictvím dialogového okna před pokračováním funkci položku nabídky položky nabídky pro funkci bude mít tři tečky v záhlaví, jak je znázorněno zde.  
   
- Uživatelské prostředí pro dialogové okno se také rozšiřuje na řádku nabídek, které se otevře dialogové okno. Při spuštění funkce, která vyžaduje interakci uživatele prostřednictvím dialogového okna před pokračováním funkci položku nabídky položky nabídky pro funkci bude mít tři tečky v záhlaví, jak je znázorněno zde.  
+[!code-xaml[Menu bar of MainWindow.Xaml file](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#L26-L27)]  
   
- [!code-xaml[DialogBoxSample#MainWindowMarginsDialogBoxMenuItemMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#mainwindowmarginsdialogboxmenuitemmarkup1)]  
-[!code-xaml[DialogBoxSample#MainWindowMarginsDialogBoxMenuItemMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#mainwindowmarginsdialogboxmenuitemmarkup2)]  
+Při spuštění funkce, která se zobrazí dialogové okno, které nevyžaduje zásah uživatele, jako je například dialogové okno informací o aplikaci položky nabídky se třemi tečkami nevyžaduje.  
   
- Při spuštění funkce, která se zobrazí dialogové okno, které nevyžaduje zásah uživatele, jako je například dialogové okno informací o aplikaci položky nabídky se třemi tečkami nevyžaduje.  
+#### <a name="opening-a-modal-dialog-box"></a>Otevírání modální dialogové okno
+
+Dialogové okno se obvykle zobrazí v důsledku výběru položky nabídky, kterou uživatel k provedení doménově specifické funkce, jako je nastavení okrajů dokumentu v textovém editoru. Zobrazuje jako dialogové okno je podobný zobrazující normálního okna, i když se vyžaduje další dialogové okno konfigurace specifické pro pole. Celý proces vytvoření instance, konfigurace a otevřete dialogové okno se zobrazí v následujícím kódu.  
   
-#### <a name="opening-a-modal-dialog-box"></a>Otevírání modální dialogové okno  
- Dialogové okno se obvykle zobrazí v důsledku výběru položky nabídky, kterou uživatel k provedení doménově specifické funkce, jako je nastavení okrajů dokumentu v textovém editoru. Zobrazuje jako dialogové okno je podobný zobrazující normálního okna, i když se vyžaduje další dialogové okno konfigurace specifické pro pole. Celý proces vytvoření instance, konfigurace a otevřete dialogové okno se zobrazí v následujícím kódu.  
-  
- [!code-csharp[DialogBoxSample#OpenMarginsDialogCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogcodebehind1)]
- [!code-vb[DialogBoxSample#OpenMarginsDialogCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogcodebehind1)]  
-[!code-csharp[DialogBoxSample#OpenMarginsDialogCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogcodebehind2)]
-[!code-vb[DialogBoxSample#OpenMarginsDialogCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogcodebehind2)]  
-[!code-csharp[DialogBoxSample#OpenMarginsDialogCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogcodebehind3)]
-[!code-vb[DialogBoxSample#OpenMarginsDialogCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogcodebehind3)]  
-[!code-csharp[DialogBoxSample#OpenMarginsDialogCODEBEHIND4](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogcodebehind4)]
-[!code-vb[DialogBoxSample#OpenMarginsDialogCODEBEHIND4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogcodebehind4)]  
-  
- Tady je kód předávání informací výchozí (aktuální okraje) dialogové okno. Také se nastaví <xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType> vlastnost s odkazem na okně, které se zobrazuje dialogové okno. Obecně byste měli nastavit vlastníka pro dialogové okno k poskytování okno stavu chování, které jsou společné pro všechny dialogová okna (viz [přehled WPF Windows](wpf-windows-overview.md) Další informace).  
-  
+[!code-csharp[Opening a modal dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-11,78-88,193-195)]
+[!code-vb[Opening a modal dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,58-67,130-132)]  
+
+Tady kód předá informace výchozí (aktuální okraje) do dialogového okna. Také nastaví <xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType> vlastnost s odkazem na okně, které se zobrazuje dialogové okno. Obecně byste měli nastavit vlastníka pro dialogové okno k poskytování okno stavu chování, které jsou společné pro všechny dialogová okna (viz [přehled WPF Windows](wpf-windows-overview.md) Další informace).
+
 > [!NOTE]
->  Musíte zadat vlastníka pro podporu [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] automatizace pro dialogová okna (viz [Přehled automatizace uživatelského rozhraní](../../ui-automation/ui-automation-overview.md)).  
+> Musíte zadat vlastníka pro podporu automatizace uživatelského rozhraní (UI) pro dialogová okna (viz [Přehled automatizace uživatelského rozhraní](../../ui-automation/ui-automation-overview.md)).
+
+Po dokončení konfigurace dialogové okno se modálně zobrazí při volání <xref:System.Windows.Window.ShowDialog%2A> metody.  
   
- Po dokončení konfigurace dialogové okno se modálně zobrazí při volání <xref:System.Windows.Window.ShowDialog%2A> metody.  
-  
-#### <a name="validating-user-provided-data"></a>Ověřování dat uživatelem zadaný  
- Když se otevře dialogové okno a uživatel zadá požadovaná data, dialogové okno zodpovídá za to, že zadaná data nejsou platná z následujících důvodů:  
+#### <a name="validating-user-provided-data"></a>Ověřování dat uživatelem zadaný
+
+Když se otevře dialogové okno a uživatel zadá požadovaná data, dialogové okno zodpovídá za to, že zadaná data nejsou platná z následujících důvodů:  
   
 - Z hlediska zabezpečení by měl být ověřen veškerý vstup.  
   
@@ -190,144 +186,112 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 - Z pohledu uživatelské prostředí dialogové okno můžete uživatelům pomoci tím, že zobrazuje data, která jste zadali, není platný.  
   
 - Z hlediska výkonu ověřování dat v vícevrstvou aplikaci můžete snížit počet výměn mezi klientem a aplikačních vrstev, zejména pokud se aplikace skládají z webové služby nebo databáze na serveru.  
+
+K ověření vázaného ovládacího prvku v objektu WPF, musíte definovat ověřovací pravidlo a přidružte jej k vazbě. Ověřovací pravidlo představuje vlastní třídu, která je odvozena z <xref:System.Windows.Controls.ValidationRule>. Následující příklad ukazuje ověřovací pravidlo `MarginValidationRule`, která zkontroluje, vázaná hodnota <xref:System.Double> a je v rámci zadaného rozsahu.  
+
+[!code-csharp[Margin validation rules](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginValidationRule.cs)]
+[!code-vb[Margin validation rules](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginValidationRule.vb)]  
+
+V tomto kódu je implementovat logiku ověření ověřovací pravidlo tak, že přepíšete <xref:System.Windows.Controls.ValidationRule.Validate%2A> metodu, která ověří data a vrátí odpovídající <xref:System.Windows.Controls.ValidationResult>.  
+
+Ověřovací pravidlo přidružit vázaného ovládacího prvku, použijte následující kód.  
   
- K ověření vázaného ovládacího prvku v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], budete muset definovat ověřovací pravidlo a přidružte jej k vazbě. Ověřovací pravidlo představuje vlastní třídu, která je odvozena z <xref:System.Windows.Controls.ValidationRule>. Následující příklad ukazuje ověřovací pravidlo `MarginValidationRule`, která zkontroluje, vázaná hodnota <xref:System.Double> a je v rámci zadaného rozsahu.  
+[!code-xaml[Associating a validation rule with a control](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml?range=1-16,57-68,111-112)]
+
+Po přidružení ověřovací pravidlo WPF ji automaticky použít při zadávání dat do vázaného ovládacího prvku. Ovládací prvek obsahuje neplatná data, WPF zobrazí červené ohraničení kolem neplatný ovládací prvek, jak je znázorněno na následujícím obrázku.  
   
- [!code-csharp[DialogBoxSample#MarginValidationRuleCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginValidationRule.cs#marginvalidationrulecode)]
- [!code-vb[DialogBoxSample#MarginValidationRuleCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginValidationRule.vb#marginvalidationrulecode)]  
+![Dialogové okno okraje červené ohraničení kolem hodnoty Neplatný levý okraj.](./media/dialog-boxes-overview/invalid-left-margin-dialog.png)  
+
+WPF neomezuje uživatele na neplatný ovládací prvek, dokud zadali platná data. Toto je správné chování pro dialogové okno; Uživatel by měl být schopní vyznat volně ovládacích prvků v dialogovém okně, jestli data jsou platná. To ale znamená může uživatel zadat neplatná data a stiskněte klávesu **OK** tlačítko. Z tohoto důvodu je váš kód také potřeba ověřit všechny ovládací prvky v dialogovém okně když **OK** stisknutí tlačítka pomocí manipulace <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
- V tomto kódu je implementovat logiku ověření ověřovací pravidlo tak, že přepíšete <xref:System.Windows.Controls.ValidationRule.Validate%2A> metodu, která ověří data a vrátí odpovídající <xref:System.Windows.Controls.ValidationResult>.  
+[!code-csharp[Validating all controls in a dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-8,26-29,33-68)]
+[!code-vb[Validating all controls in a dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-8,27-29,33-62)]  
+
+Tento kód vytvoří výčet všech objektů závislost na okno a jestli je některý neplatný (vrácené <xref:System.Windows.Controls.Validation.GetHasError%2A>, neplatný ovládací prvek získá fokus, `IsValid` vrátí metoda `false`, a v okně je považován za neplatný.  
   
- Ověřovací pravidlo přidružit vázaného ovládacího prvku, použijte následující kód.  
+Jakmile dialogového okna je platný, může bezpečně zavřít a vrátit. Jako součást procesu vratky musí vrátit výsledek volání funkce.  
   
- [!code-xaml[DialogBoxSample#MarginsValidationMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup1)]  
-[!code-xaml[DialogBoxSample#MarginsValidationMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup2)]  
-[!code-xaml[DialogBoxSample#MarginsValidationMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup3)]  
+#### <a name="setting-the-modal-dialog-result"></a>Nastavení výsledku modální dialogové okno
+
+Otevření dialogového okna pole pomocí <xref:System.Windows.Window.ShowDialog%2A> je v podstatě jako volání metody: kód, který otevře dialogové okno pole pomocí <xref:System.Windows.Window.ShowDialog%2A> počká <xref:System.Windows.Window.ShowDialog%2A> vrátí. Když <xref:System.Windows.Window.ShowDialog%2A> vrátí, kód, který volá musí rozhodnout, jestli chcete pokračovat ve zpracování nebo zastaví zpracovávání, podle toho, jestli uživatel stiskl **OK** tlačítko nebo **zrušit** tlačítko. Pro usnadnění tohoto rozhodnutí, musí vracet výběru uživatele jako dialogové okno <xref:System.Boolean> hodnotu, která je vrácena z <xref:System.Windows.Window.ShowDialog%2A> metody.  
+
+Když **OK** po kliknutí na tlačítko, <xref:System.Windows.Window.ShowDialog%2A> by měla vrátit `true`. Toho dosáhnete pomocí nastavení <xref:System.Windows.Window.DialogResult%2A> pole vlastnost dialogového okna, kdy **OK** po kliknutí na tlačítko.  
+
+[!code-csharp[Responding to the OK button](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-8,25-27,32-33,67-68)]
+[!code-vb[Responding to the OK button](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-8,27,31-33,61-62)]  
+
+Poznámka: Toto nastavení <xref:System.Windows.Window.DialogResult%2A> vlastnost zároveň způsobí, že okno zavřete automaticky, ve kterém nebude potřeba explicitně volat <xref:System.Windows.Window.Close%2A>.  
   
- Po přidružení, ověřovací pravidlo [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] automaticky použije se při zadávání dat do vázaného ovládacího prvku. Když ovládací prvek obsahuje neplatná data [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] červené ohraničení kolem neplatný ovládací prvek se zobrazí, jak je znázorněno na následujícím obrázku.  
+Když **zrušit** po kliknutí na tlačítko, <xref:System.Windows.Window.ShowDialog%2A> by měla vrátit `false`, což také vyžaduje, aby nastavení <xref:System.Windows.Window.DialogResult%2A> vlastnost.  
   
- ![Dialogové okno okraje červené ohraničení kolem hodnoty Neplatný levý okraj.](./media/dialog-boxes-overview/invalid-left-margin-dialog.png)  
+[!code-csharp[Responding to the Cancel button](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-8,19-24,67-68)]
+[!code-vb[Responding to the Cancel button](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-8,22-25,61-62)]  
+
+Když tlačítka <xref:System.Windows.Controls.Button.IsCancel%2A> je nastavena na `true` a uživatel stiskne buď **zrušit** tlačítko nebo klávesy ESC <xref:System.Windows.Window.DialogResult%2A> se automaticky nastaví na `false`. Následující kód má stejný účinek jako předchozí kód, aniž by bylo nutné zpracovat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] neomezuje uživatele na neplatný ovládací prvek, dokud zadali platná data. Toto je správné chování pro dialogové okno; Uživatel by měl být schopní vyznat volně ovládacích prvků v dialogovém okně, jestli data jsou platná. To ale znamená může uživatel zadat neplatná data a stiskněte klávesu **OK** tlačítko. Z tohoto důvodu je váš kód také potřeba ověřit všechny ovládací prvky v dialogovém okně když **OK** stisknutí tlačítka pomocí manipulace <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
-  
- [!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind1)]
- [!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind1)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind2)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind2)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind3)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind3)]  
-  
- Tento kód vytvoří výčet všech objektů závislost na okno a jestli je některý neplatný (vrácené <xref:System.Windows.Controls.Validation.GetHasError%2A>, neplatný ovládací prvek získá fokus, `IsValid` vrátí metoda `false`, a v okně je považován za neplatný.  
-  
- Jakmile dialogového okna je platný, může bezpečně zavřít a vrátit. Jako součást procesu vratky musí vrátit výsledek volání funkce.  
-  
-#### <a name="setting-the-modal-dialog-result"></a>Nastavení výsledku modální dialogové okno  
- Otevření dialogového okna pole pomocí <xref:System.Windows.Window.ShowDialog%2A> je v podstatě jako volání metody: kód, který otevře dialogové okno pole pomocí <xref:System.Windows.Window.ShowDialog%2A> počká <xref:System.Windows.Window.ShowDialog%2A> vrátí. Když <xref:System.Windows.Window.ShowDialog%2A> vrátí, kód, který volá musí rozhodnout, jestli chcete pokračovat ve zpracování nebo zastaví zpracovávání, podle toho, jestli uživatel stiskl **OK** tlačítko nebo **zrušit** tlačítko. Pro usnadnění tohoto rozhodnutí, musí vracet výběru uživatele jako dialogové okno <xref:System.Boolean> hodnotu, která je vrácena z <xref:System.Windows.Window.ShowDialog%2A> metody.  
-  
- Když **OK** po kliknutí na tlačítko, <xref:System.Windows.Window.ShowDialog%2A> by měla vrátit `true`. Toho dosáhnete pomocí nastavení <xref:System.Windows.Window.DialogResult%2A> pole vlastnost dialogového okna, kdy **OK** po kliknutí na tlačítko.  
-  
- [!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind1)]
- [!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind1)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind2)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind2)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind3)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind3)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND4](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind4)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind4)]  
-  
- Poznámka: Toto nastavení <xref:System.Windows.Window.DialogResult%2A> vlastnost zároveň způsobí, že okno zavřete automaticky, ve kterém nebude potřeba explicitně volat <xref:System.Windows.Window.Close%2A>.  
-  
- Když **zrušit** po kliknutí na tlačítko, <xref:System.Windows.Window.ShowDialog%2A> by měla vrátit `false`, což také vyžaduje, aby nastavení <xref:System.Windows.Window.DialogResult%2A> vlastnost.  
-  
- [!code-csharp[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxcancelresultsetcodebehind1)]
- [!code-vb[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxcancelresultsetcodebehind1)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxcancelresultsetcodebehind2)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxcancelresultsetcodebehind2)]  
-[!code-csharp[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxcancelresultsetcodebehind3)]
-[!code-vb[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxcancelresultsetcodebehind3)]  
-  
- Když tlačítka <xref:System.Windows.Controls.Button.IsCancel%2A> je nastavena na `true` a uživatel stiskne buď **zrušit** tlačítko nebo klávesy ESC <xref:System.Windows.Window.DialogResult%2A> se automaticky nastaví na `false`. Následující kód má stejný účinek jako předchozí kód, aniž by bylo nutné zpracovat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
-  
- [!code-xaml[DialogBoxSample#MarginsDialogDefaultCancelMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogdefaultcancelmarkup)]  
-  
- Dialogové okno se automaticky vrátí `false` když uživatel stiskne klávesu **Zavřít** tlačítko v záhlaví nebo zvolí **Zavřít** položku nabídky z **systému** nabídky.  
-  
+[!code-xaml[Markup instead of handling the Click event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#L109-L109)]  
+
+Dialogové okno se automaticky vrátí `false` když uživatel stiskne klávesu **Zavřít** tlačítko v záhlaví nebo zvolí **Zavřít** položku nabídky z **systému** nabídky.  
+
 #### <a name="processing-data-returned-from-a-modal-dialog-box"></a>Zpracování dat vrácených z modální dialogové okno  
- Když <xref:System.Windows.Window.DialogResult%2A> nastavená funkce, která se otevře dialogové okno, můžete získat výsledku dialogového okna zkontrolováním <xref:System.Windows.Window.DialogResult%2A> vlastnost při <xref:System.Windows.Window.ShowDialog%2A> vrátí.  
+
+Když <xref:System.Windows.Window.DialogResult%2A> nastavená funkce, která se otevře dialogové okno, můžete získat výsledku dialogového okna zkontrolováním <xref:System.Windows.Window.DialogResult%2A> vlastnost při <xref:System.Windows.Window.ShowDialog%2A> vrátí.  
   
- [!code-csharp[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogprocessreturncodebehind1)]
- [!code-vb[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogprocessreturncodebehind1)]  
-[!code-csharp[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogprocessreturncodebehind2)]
-[!code-vb[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogprocessreturncodebehind2)]  
-[!code-csharp[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogprocessreturncodebehind3)]
-[!code-vb[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogprocessreturncodebehind3)]  
-[!code-csharp[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND4](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogprocessreturncodebehind4)]
-[!code-vb[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogprocessreturncodebehind4)]  
-  
- Pokud je výsledek dialogu `true`, funkce, která používá jako hromádka načíst a zpracovat data zadaná uživatelem.  
+[!code-csharp[Processing data returned from the modal dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-10,77-79,89-96,194-195)]
+[!code-vb[Processing data returned from the modal dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,58,69-73,131-132)]
+
+Pokud je výsledek dialogu `true`, funkce, která používá jako hromádka načíst a zpracovat data zadaná uživatelem.  
   
 > [!NOTE]
->  Po <xref:System.Windows.Window.ShowDialog%2A> vrátila, nelze znovu otevřít dialogové okno. Místo toho budete muset vytvořit novou instanci.  
-  
- Pokud je výsledek dialogu `false`, funkce by měla končit zpracování odpovídajícím způsobem.  
+> Po <xref:System.Windows.Window.ShowDialog%2A> vrátila, nelze znovu otevřít dialogové okno. Místo toho budete muset vytvořit novou instanci.
+
+Pokud je výsledek dialogu `false`, funkce by měla končit zpracování odpovídajícím způsobem.  
   
 <a name="Creating_a_Modeless_Custom_Dialog_Box"></a>   
-### <a name="creating-a-modeless-custom-dialog-box"></a>Vytvoření nemodálního dialogového okna vlastní  
- Nemodálního dialogového okna, například dialogového okna Najít, které je znázorněno na následujícím obrázku má stejné základní vzhled jako modální dialogové.  
+### <a name="creating-a-modeless-custom-dialog-box"></a>Vytvoření nemodálního dialogového okna vlastní
+
+Nemodálního dialogového okna, například dialogového okna Najít, které je znázorněno na následujícím obrázku má stejné základní vzhled jako modální dialogové.  
+
+![Snímek obrazovky ukazující dialogové okno hledání.](./media/dialog-boxes-overview/find-modeless-dialog-box.png)  
+
+Chování je však poněkud lišit, a jak je popsáno v následujících částech.  
   
- ![Snímek obrazovky ukazující dialogové okno hledání.](./media/dialog-boxes-overview/find-modeless-dialog-box.png)  
+#### <a name="opening-a-modeless-dialog-box"></a>Otevřete dialogové okno nemodální
+
+Nemodální dialogové okno se otevře pomocí volání <xref:System.Windows.Window.Show%2A> metody.  
+
+[!code-xaml[XAML to define a modeless dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#L21-L22)]  
+ 
+[!code-csharp[Opening a modeless dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-10,65-76,194-195)]
+[!code-vb[Openng a modeless dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,18-23,131,132)]  
+
+Na rozdíl od <xref:System.Windows.Window.ShowDialog%2A>, <xref:System.Windows.Window.Show%2A> vrátí hodnotu okamžitě. V důsledku toho okna volání nelze zjistit, když nemodální dialogové okno se zavře a proto neví, kdy se mají vyhledávat výsledku dialogového okna nebo získání dat z dialogového okna pro další zpracování. Místo toho dialogové okno je potřeba vytvořit alternativní způsob vrátit data do okna pro zpracování volání.  
   
- Chování je však poněkud lišit, a jak je popsáno v následujících částech.  
+#### <a name="processing-data-returned-from-a-modeless-dialog-box"></a>Zpracování data vrácená z nemodálního dialogového okna  
+
+V tomto příkladu `FindDialogBox` může vrátit výsledky do hlavního okna, v závislosti na text vyhledávaná bez všechny konkrétní frekvence hledání jeden nebo více. Stejně jako modální dialogové okno, může vrátit nemodální dialogové okno výsledků za použití vlastností. V okně, který vlastní dialogových oken však musí vědět, kdy se má zjišťovat tyto vlastnosti. Jedním ze způsobů, aby to bylo se pro dialogové okno pro implementaci událost, která je vyvolána pokaždé, když se text nachází. `FindDialogBox` implementuje `TextFoundEvent` pro tento účel, který první vyžaduje delegáta.  
+
+[!code-csharp[The TextFoundEventHandler delegate](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/TextFoundEventHandler.cs)]
+[!code-vb[The TextFoundEventHandler delegate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/TextFoundEventHandler.vb)]  
+
+Použití `TextFoundEventHandler` delegovat, `FindDialogBox` implementuje `TextFoundEvent`.
   
-#### <a name="opening-a-modeless-dialog-box"></a>Otevřete dialogové okno nemodální  
- Nemodální dialogové okno se otevře pomocí volání <xref:System.Windows.Window.Show%2A> metody.  
+[!code-csharp[The TextFound event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs?range=1-17,125-126)]
+[!code-vb[The TextFound event](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb?range=1-15,102-103)]
+
+V důsledku toho `Find` může vyvolat událost, když se nenajde výsledek hledání.  
   
- [!code-xaml[DialogBoxSample#OpenFindDialogMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#openfinddialogmarkup1)]  
-  
- [!code-csharp[DialogBoxSample#OpenFindDialogCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogcodebehind1)]
- [!code-vb[DialogBoxSample#OpenFindDialogCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogcodebehind1)]  
-[!code-csharp[DialogBoxSample#OpenFindDialogCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogcodebehind2)]
-[!code-vb[DialogBoxSample#OpenFindDialogCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogcodebehind2)]  
-[!code-csharp[DialogBoxSample#OpenFindDialogCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogcodebehind3)]
-[!code-vb[DialogBoxSample#OpenFindDialogCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogcodebehind3)]  
-  
- Na rozdíl od <xref:System.Windows.Window.ShowDialog%2A>, <xref:System.Windows.Window.Show%2A> vrátí hodnotu okamžitě. V důsledku toho okna volání nelze zjistit, když nemodální dialogové okno se zavře a proto neví, kdy se mají vyhledávat výsledku dialogového okna nebo získání dat z dialogového okna pro další zpracování. Místo toho dialogové okno je potřeba vytvořit alternativní způsob vrátit data do okna pro zpracování volání.  
-  
-#### <a name="processing-data-returned-from-a-modeless-dialog-box"></a>Zpracování Data vrácená z nemodálního dialogového okna  
- V tomto příkladu `FindDialogBox` může vrátit výsledky do hlavního okna, v závislosti na text vyhledávaná bez všechny konkrétní frekvence hledání jeden nebo více. Stejně jako modální dialogové okno, může vrátit nemodální dialogové okno výsledků za použití vlastností. V okně, který vlastní dialogových oken však musí vědět, kdy se má zjišťovat tyto vlastnosti. Jedním ze způsobů, aby to bylo se pro dialogové okno pro implementaci událost, která je vyvolána pokaždé, když se text nachází. `FindDialogBox` implementuje `TextFoundEvent` pro tento účel, který první vyžaduje delegáta.  
-  
- [!code-csharp[DialogBoxSample#TextFoundEventHandlerCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/TextFoundEventHandler.cs#textfoundeventhandlercode)]
- [!code-vb[DialogBoxSample#TextFoundEventHandlerCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/TextFoundEventHandler.vb#textfoundeventhandlercode)]  
-  
- Použití `TextFoundEventHandler` delegovat, `FindDialogBox` implementuje `TextFoundEvent`.  
-  
- [!code-csharp[DialogBoxSample#TextFoundEventCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventcodebehind1)]
- [!code-vb[DialogBoxSample#TextFoundEventCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventcodebehind1)]  
-[!code-csharp[DialogBoxSample#TextFoundEventCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventcodebehind2)]
-[!code-vb[DialogBoxSample#TextFoundEventCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventcodebehind2)]  
-  
- V důsledku toho `Find` může vyvolat událost, když se nenajde výsledek hledání.  
-  
- [!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind1)]
- [!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind1)]  
-[!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind2)]
-[!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind2)]  
-[!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind3)]
-[!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind3)]  
-[!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND4](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind4)]
-[!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind4)]  
-[!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND5](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind5)]
-[!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind5)]  
-  
- Okno vlastníka pak musí zaregistrovat ve službě a zpracování této události.  
-  
- [!code-csharp[DialogBoxSample#OpenFindDialogResultCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogresultcodebehind1)]
- [!code-vb[DialogBoxSample#OpenFindDialogResultCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogresultcodebehind1)]  
-[!code-csharp[DialogBoxSample#OpenFindDialogResultCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogresultcodebehind2)]
-[!code-vb[DialogBoxSample#OpenFindDialogResultCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogresultcodebehind2)]  
-  
-#### <a name="closing-a-modeless-dialog-box"></a>Zavření nemodální dialogové okno  
- Protože <xref:System.Windows.Window.DialogResult%2A> nemusí být nastaven, nemodální dialogové okno můžete zavřít pomocí systému poskytují mechanismy, které patří:  
+[!code-csharp[Raising the TextFound event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs?range=1-9,50-52,91-94,124-127)]
+[!code-vb[Raising the TextFound event](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb?range=1-9,15,60-64,102-103)]  
+
+Okno vlastníka pak musí zaregistrovat ve službě a zpracování této události.
+
+[!code-csharp[Registering and handling the event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-10,184-195)]
+[!code-vb[Registering and handling the event](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,126-132)]  
+
+#### <a name="closing-a-modeless-dialog-box"></a>Zavření nemodální dialogové okno
+
+Protože <xref:System.Windows.Window.DialogResult%2A> nemusí být nastaven, nemodální dialogové okno můžete zavřít pomocí systému poskytují mechanismy, které patří:  
   
 - Kliknutím **Zavřít** tlačítko v záhlaví programu.  
   
@@ -335,15 +299,12 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
   
 - Výběr **Zavřít** z **systému** nabídky.  
   
- Alternativně může váš kód volat <xref:System.Windows.Window.Close%2A> při **Zavřít** po kliknutí na tlačítko.  
-  
- [!code-csharp[DialogBoxSample#FindDialogCloseCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#finddialogclosecodebehind1)]
- [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind1)]  
-[!code-csharp[DialogBoxSample#FindDialogCloseCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#finddialogclosecodebehind2)]
-[!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind2)]  
-  
+Alternativně může váš kód volat <xref:System.Windows.Window.Close%2A> při **Zavřít** po kliknutí na tlačítko.  
+
+[!code-csharp[Calling the Close method](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs?range=1-9,119-126)]
+[!code-vb[Calling the Close method](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb?range=1-9,99-103)]  
+
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled prvku Popup](../controls/popup-overview.md)
 - [Dialogové okno pole vzorku](https://go.microsoft.com/fwlink/?LinkID=159984)
-- [Ukázka ovládacího prvku ColorPicker vlastní](https://go.microsoft.com/fwlink/?LinkID=159977)

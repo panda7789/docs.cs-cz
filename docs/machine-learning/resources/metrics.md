@@ -3,12 +3,12 @@ title: Metriky ML.NET
 description: Principy, která se používají k vyhodnocení výkonu modelu ML.NET
 ms.date: 04/29/2019
 author: natke
-ms.openlocfilehash: ca5bc795a9d9ff4fe1035d2ec0672f1f7c21fe0b
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 45176902a195906e7b5cffd24fc9da839406ad9d
+ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397596"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410513"
 ---
 # <a name="model-evaluation-metrics-in-mlnet"></a>Model metrik v ML.NET
 
@@ -54,8 +54,8 @@ Další informace o klasifikaci roc metrik najdete v následujících článcíc
 
 | Metriky   |      Popis      |  Hledat |
 |-----------|-----------------------|-----------|
-| **Spolehlivosti R** |  [Plánovaná (R2)](https://en.wikipedia.org/wiki/Coefficient_of_determination), nebo *koeficient spolehlivosti* představuje výkon prediktivní model jako hodnotu mezi -inf a 1,00. 1,00 znamená, že se skvěle hodí, a přizpůsobit můžou být arbitrarly nízký, proto skóre, které mohou být záporná. Skóre 0,00 znamená, že model je opakovaně uhodnout očekávanou hodnotou pro popisek. R2 měří jak blízko skutečné testovací datové hodnoty jsou předpovězeným hodnotám. | **Blíže k 1,00, lepší kvalitu**. Ale někdy nízké hodnoty spolehlivosti (například 0,50) může být zcela normální nebo dostatečné pro váš scénář a vysoké spolehlivosti R hodnoty nejsou vždy dobré a dávejte pozor. |
-| **Absolutní ztráty** |  [Absolutní ztrátu](https://en.wikipedia.org/wiki/Mean_absolute_error) nebo *střední absolutní chyba (MAE)* měří jak blízko předpovědi se skutečné výsledky. Je průměrem všechny chyby modelu, kde je chyba modelu absolutní vzdálenost mezi předpokládané popisek hodnotu a hodnotu správný popisek. Tato chyba predikcí se počítá pro každý záznam testovací datové sady. Nakonec se počítá střední hodnoty pro všechny nahrané absolutních chyb.| **Blíže k 0,00, lepší kvality.** Všimněte si, že střední absolutní chyba používá stejné měřítko jako data měří (není normalizovány na konkrétní rozsah). Absolutní ztráty, Squared ztráty a ztráty RMS jde použít jenom k porovnání mezi modely pro stejné datové sadě nebo datovou sadu s distribuce hodnoty podobné popisek. |
+| **Spolehlivosti R** |  [Plánovaná (R2)](https://en.wikipedia.org/wiki/Coefficient_of_determination), nebo *koeficient spolehlivosti* představuje výkon prediktivní model jako hodnotu mezi -inf a 1,00. 1,00 znamená, že se skvěle hodí, a přizpůsobit může být libovolně nízká, takže skóre může být záporné. Skóre 0,00 znamená, že model je opakovaně uhodnout očekávanou hodnotou pro popisek. R2 měří jak blízko skutečné testovací datové hodnoty jsou předpovězeným hodnotám. | **Blíže k 1,00, lepší kvalitu**. Ale někdy nízké hodnoty spolehlivosti (například 0,50) může být zcela normální nebo dostatečné pro váš scénář a vysoké spolehlivosti R hodnoty nejsou vždy dobré a dávejte pozor. |
+| **Absolutní ztráty** |  [Absolutní ztrátu](https://en.wikipedia.org/wiki/Mean_absolute_error) nebo *střední absolutní chyba (MAE)* měří jak blízko předpovědi se skutečné výsledky. Je průměrem všechny chyby modelu, kde je chyba modelu absolutní vzdálenost mezi předpokládané popisek hodnotu a hodnotu správný popisek. Tato chyba predikcí se počítá pro každý záznam testovací datové sady. Nakonec se počítá střední hodnoty pro všechny nahrané absolutních chyb.| **Blíže k 0,00, lepší kvality.** Všimněte si, že střední absolutní chyba používá stejné měřítko jako data měří (není normalizovány na konkrétní rozsah). Absolutní ztráty, Squared ztráty a ztráty RMS jde použít jenom k porovnání mezi modely pro stejné datové sadě nebo datová sada se podobá distribuce hodnoty popisku. |
 | **Spolehlivosti ztráty** |  [Squared ztrátu](https://en.wikipedia.org/wiki/Mean_squared_error) nebo *znamenat chyba spolehlivosti (MSE)* , označované také jako *znamenat spolehlivosti odchylka (program MSD)* , zjistíte, jak blízko řádku regrese do sady testů datových hodnot. Dělá to tak, že trvá daleko od bodů na regresní přímky (Tyto vzdálenosti se chyby E) a jejich umocnění na druhou. Umocňování poskytuje větší váhu k větší rozdíly. | Vždy je záporná, a **hodnoty blíže k 0,00 jsou lepší**. V závislosti na vašich dat může být možné získat velmi malou hodnotu pro střední kvadratické chyby.|
 | **RMS-loss** |  [RMS při ztrátě](https://en.wikipedia.org/wiki/Root-mean-square_deviation) nebo *kořenové znamenat spolehlivosti chyby (RMSE)* (také nazývané *kořenové směrodatná odchylka, RMSD*), měří rozdíl mezi hodnotami předpovídané pomocí modelu a hodnotami ve skutečnosti zjištěnými z prostředí, které je právě modelovat. Ztráta RMS je odmocninu Squared ztráty a má stejné jednotky jako popisek, podobně jako absolutní ztrát v případě, že poskytuje větší váhu větší rozdíly. Průměrná kvadratická chyba se běžně používá v klimatologie, Prognózování a regresní analýzy ověřit výsledky. | Vždy je záporná, a **hodnoty blíže k 0,00 jsou lepší**. RMSD je míra přesnost porovnání Prognózování chyby z různých modelů pro konkrétní datové sady a není mezi datovými sadami, protože je závislé na škálování.|
 
