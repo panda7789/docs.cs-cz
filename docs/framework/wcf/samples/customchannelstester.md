@@ -2,41 +2,41 @@
 title: CustomChannelsTester
 ms.date: 03/30/2017
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-ms.openlocfilehash: dbd10d1bd08529d11e86c3d9296e68264564a21d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1517a2eb73da778c9b84ff857f4b8ad2b4334498
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650150"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425009"
 ---
-# <a name="customchannelstester"></a><span data-ttu-id="7d96f-102">CustomChannelsTester</span><span class="sxs-lookup"><span data-stu-id="7d96f-102">CustomChannelsTester</span></span>
-<span data-ttu-id="7d96f-103">`CustomChannelsTester` Je nástroj, který můžete použít k otestování implementace vaší vlastní kanál s pomocí sady předdefinovaných servisní smlouvy.</span><span class="sxs-lookup"><span data-stu-id="7d96f-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="7d96f-104">Můžete vybrat sadu kontrakty služeb a předat nástroji pomocí souboru XML.</span><span class="sxs-lookup"><span data-stu-id="7d96f-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="7d96f-105">Nástroj poté vygeneruje službu a klienta, která zpracovává vaše implementace vlastního kanálu při výměně zpráv.</span><span class="sxs-lookup"><span data-stu-id="7d96f-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
+# <a name="customchannelstester"></a><span data-ttu-id="13c75-102">CustomChannelsTester</span><span class="sxs-lookup"><span data-stu-id="13c75-102">CustomChannelsTester</span></span>
+<span data-ttu-id="13c75-103">`CustomChannelsTester` Je nástroj, který můžete použít k otestování implementace vaší vlastní kanál s pomocí sady předdefinovaných servisní smlouvy.</span><span class="sxs-lookup"><span data-stu-id="13c75-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="13c75-104">Můžete vybrat sadu kontrakty služeb a předat nástroji pomocí souboru XML.</span><span class="sxs-lookup"><span data-stu-id="13c75-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="13c75-105">Nástroj poté vygeneruje službu a klienta, která zpracovává vaše implementace vlastního kanálu při výměně zpráv.</span><span class="sxs-lookup"><span data-stu-id="13c75-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
   
-### <a name="to-build-the-tool"></a><span data-ttu-id="7d96f-106">K sestavení nástroj</span><span class="sxs-lookup"><span data-stu-id="7d96f-106">To build the tool</span></span>  
+### <a name="to-build-the-tool"></a><span data-ttu-id="13c75-106">K sestavení nástroj</span><span class="sxs-lookup"><span data-stu-id="13c75-106">To build the tool</span></span>  
   
-1. <span data-ttu-id="7d96f-107">Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7d96f-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+1. <span data-ttu-id="13c75-107">Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="13c75-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2. <span data-ttu-id="7d96f-108">Sestavování řešení se vytvoří tři soubory: CustomChannelsTester.exe TestSpec.xml a SampleRun.cmd.</span><span class="sxs-lookup"><span data-stu-id="7d96f-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="7d96f-109">Ukázka příkazového řádku, který ukazuje, jak tento nástroj použijte k testování má soubor SampleRun.cmd [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.</span><span class="sxs-lookup"><span data-stu-id="7d96f-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
+2. <span data-ttu-id="13c75-108">Sestavování řešení se vytvoří tři soubory: CustomChannelsTester.exe TestSpec.xml a SampleRun.cmd.</span><span class="sxs-lookup"><span data-stu-id="13c75-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="13c75-109">Ukázka příkazového řádku, který ukazuje, jak tento nástroj použijte k testování má soubor SampleRun.cmd [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.</span><span class="sxs-lookup"><span data-stu-id="13c75-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
   
-### <a name="to-run-the-tool"></a><span data-ttu-id="7d96f-110">Chcete-li spustit nástroj</span><span class="sxs-lookup"><span data-stu-id="7d96f-110">To run the tool</span></span>  
+### <a name="to-run-the-tool"></a><span data-ttu-id="13c75-110">Chcete-li spustit nástroj</span><span class="sxs-lookup"><span data-stu-id="13c75-110">To run the tool</span></span>  
   
-- <span data-ttu-id="7d96f-111">Na příkazovém řádku zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="7d96f-111">At the command prompt type the following command:</span></span>  
+- <span data-ttu-id="13c75-111">Na příkazovém řádku zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="13c75-111">At the command prompt type the following command:</span></span>  
   
     ```  
     CustomChannelsTester.exe /binding:YourCustomBindngName /dll:TheAssemblyWhereThisTypeisDefined /testspec:XmlFileNameWhichContainsTestOptions  
     ```  
   
-     <span data-ttu-id="7d96f-112">Použití `/binding` možnost je vyžadována.</span><span class="sxs-lookup"><span data-stu-id="7d96f-112">Using the `/binding` option is required.</span></span>  
+     <span data-ttu-id="13c75-112">Použití `/binding` možnost je vyžadována.</span><span class="sxs-lookup"><span data-stu-id="13c75-112">Using the `/binding` option is required.</span></span>  
   
-     <span data-ttu-id="7d96f-113">`/dll` Pokud "vazba" není k dispozici ve Windows Communication Foundation (WCF) vazeb poskytovaných systémem je povinný.</span><span class="sxs-lookup"><span data-stu-id="7d96f-113">`/dll` is required if "binding" is not a system-provided binding provided by Windows Communication Foundation (WCF).</span></span>  
+     <span data-ttu-id="13c75-113">`/dll` Pokud "vazba" není k dispozici ve Windows Communication Foundation (WCF) vazeb poskytovaných systémem je povinný.</span><span class="sxs-lookup"><span data-stu-id="13c75-113">`/dll` is required if "binding" is not a system-provided binding provided by Windows Communication Foundation (WCF).</span></span>  
   
-     <span data-ttu-id="7d96f-114">`/testspec` je volitelný.</span><span class="sxs-lookup"><span data-stu-id="7d96f-114">`/testspec` is optional.</span></span>  
+     <span data-ttu-id="13c75-114">`/testspec` je volitelný.</span><span class="sxs-lookup"><span data-stu-id="13c75-114">`/testspec` is optional.</span></span>  
   
-     <span data-ttu-id="7d96f-115">Tím se vytvoří serverem a klienty na základě specifikací testu a vazby.</span><span class="sxs-lookup"><span data-stu-id="7d96f-115">This creates server and clients based on the test specifications and the binding.</span></span>  
+     <span data-ttu-id="13c75-115">Tím se vytvoří serverem a klienty na základě specifikací testu a vazby.</span><span class="sxs-lookup"><span data-stu-id="13c75-115">This creates server and clients based on the test specifications and the binding.</span></span>  
   
-     <span data-ttu-id="7d96f-116">Spustí klienta a serveru a vrátí výsledky.</span><span class="sxs-lookup"><span data-stu-id="7d96f-116">Executes the client and server and returns the results.</span></span>  
+     <span data-ttu-id="13c75-116">Spustí klienta a serveru a vrátí výsledky.</span><span class="sxs-lookup"><span data-stu-id="13c75-116">Executes the client and server and returns the results.</span></span>  
   
-     <span data-ttu-id="7d96f-117">Následuje ukázkový soubor XML pro popis testu specifikace (testspec.xml):</span><span class="sxs-lookup"><span data-stu-id="7d96f-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
+     <span data-ttu-id="13c75-117">Následuje ukázkový soubor XML pro popis testu specifikace (testspec.xml):</span><span class="sxs-lookup"><span data-stu-id="13c75-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
   
     ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"   
@@ -55,7 +55,7 @@ ms.locfileid: "64650150"
         <ServerName>ReplaceThisWithTheServerMachineName</ServerName>  
     <!-- Port Number - Optional-->  
         <Port>8000</Port>  
-    <!--URI for the callBack address for the CLient. The client will receive the messages from the server on this address in case of a CallBack Contract-->  
+    <!--URI for the callBack address for the client. The client will receive the messages from the server on this address in case of a CallBack Contract-->  
         <ClientCallBackAddress/>      
     <!-- Duration (in sec) after the server has started, it times out - optional(default = 300sec) -->  
         <ServerTimeout>300</ServerTimeout>  
