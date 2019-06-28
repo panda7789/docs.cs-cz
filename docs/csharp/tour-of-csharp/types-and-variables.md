@@ -3,12 +3,12 @@ title: C#Typy a proměnné – připravuje C# jazyka
 description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 5623b4a1e85508ea7206df2c73b7aaffcbc3fbb1
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: a3f31eca296265c1e7f0c14a9540e267a2165ec1
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881983"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423443"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -55,7 +55,7 @@ Následující text uvádí přehled C#na systém typů.
 [DelegateTypes]: ../language-reference/keywords/delegate.md
 [ArrayTypes]: ../programming-guide/arrays/index.md
 
-Další informace o typech čísel najdete v tématu [integrální typy tabulky](../language-reference/keywords/integral-types-table.md) a [Tabulka typů s plovoucí desetinnou čárkou](../language-reference/keywords/floating-point-types-table.md).
+Další informace o typech čísel najdete v tématu [integrální typy](../language-reference/builtin-types/integral-numeric-types.md) a [Tabulka typů s plovoucí desetinnou čárkou](../language-reference/keywords/floating-point-types-table.md).
 
 C#společnosti `bool` typ se používá k reprezentaci logické hodnoty – hodnoty, které jsou buď `true` nebo `false`.
 

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, font scheme changes
 ms.assetid: 4db27702-22e7-43bf-a07d-9a004549853c
-ms.openlocfilehash: 6aad851770fb886de5d5c00b544ac6eac2857e42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9fd7f99b35730cf867bfad5da24bc3f223e9a0f8
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801852"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425337"
 ---
 # <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms
 V operačních systémech Windows uživatel může změnit nastavení systémová písma a ujistěte se zobrazí výchozí písmo větší nebo menší. Změna těchto písmo nastavení je velmi důležité pro uživatele, kteří jsou slabozraké a vyžadují větší typ čtení textu na obrazovce. Můžete upravit aplikaci Windows Forms k reagovat na tyto změny zvýšením nebo snížením velikosti formuláře a veškerý text při každé změně schématu písem. Pokud chcete formuláře dynamicky přizpůsobí změny velikosti písma, můžete přidat kód do formuláře.  
@@ -62,7 +62,7 @@ V operačních systémech Windows uživatel může změnit nastavení systémov�
  [!code-csharp[WinFormsAutoScaling#1](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#1)]
  [!code-vb[WinFormsAutoScaling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#1)]  
   
- Constructer v tomto příkladu kód obsahuje volání `InitializeComponent`, který je definován při vytváření nového projektu Windows Forms v sadě Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
+ Konstruktor v tomto příkladu kód obsahuje volání `InitializeComponent`, který je definován při vytváření nového projektu Windows Forms v sadě Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
   
 ## <a name="see-also"></a>Viz také:
 

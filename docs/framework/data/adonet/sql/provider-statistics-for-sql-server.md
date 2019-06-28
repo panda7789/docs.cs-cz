@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: b2b63719149c21eba493b3d8f2fc65309515bb0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de05a8783fa957c459006e3ec27d9e8668e7226c
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646006"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422646"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Statistiky zprostředkovatelů na SQL Serveru
 Od verze rozhraní .NET Framework verze 2.0, zprostředkovatele dat .NET Framework pro SQL Server podporuje běhové statistiky. Je nutné povolit statistiky tak, že nastavíte <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> vlastnost <xref:System.Data.SqlClient.SqlConnection> objektu `True` po máte platné připojení objekt vytvořený. Po statistiky jsou povolené, můžete zkontrolovat je jako "snímku v čase" načtením <xref:System.Collections.IDictionary> odkazovat prostřednictvím <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu. Můžete zobrazit výčet prostřednictvím seznamu jako sada položek slovníku dvojice název/hodnota. Tyto páry název/hodnota Neseřazený. Kdykoli můžete volat <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objekt resetovat počítadla. Pokud statistiky shromažďování není povolený, výjimka se nevygeneroval. Kromě toho pokud <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> je volána bez <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> s byla nejdříve volána, jsou hodnoty získané počáteční hodnoty pro každou položku. Pokud povolíte statistiky, spusťte aplikaci na dobu a potom zakázat statistiky, hodnoty získané bude odpovídat hodnotám shromážděných až do chvíle, kdy byly zakázány statistiky. Na jednotlivá připojení jsou všechny statistické hodnoty shromážděné.  
@@ -114,7 +114,7 @@ Module Module1
   
   Function GetConnectionString() As String  
     ' To avoid storing the connection string in your code,  
-    ' you can retrive it from a configuration file.  
+    ' you can retrieve it from a configuration file.  
     Return "Data Source=localhost;Integrated Security=SSPI;" & _  
       "Initial Catalog=AdventureWorks"  
   End Function  
@@ -192,7 +192,7 @@ namespace CS_Stats_Console_GetValue
     private static string GetConnectionString()  
     {  
       // To avoid storing the connection string in your code,  
-      // you can retrive it from a configuration file.  
+      // you can retrieve it from a configuration file.  
       return "Data Source=localhost;Integrated Security=SSPI;" +   
         "Initial Catalog=AdventureWorks";  
     }  
@@ -261,7 +261,7 @@ Module Module1
   
   Function GetConnectionString() As String  
     ' To avoid storing the connection string in your code,  
-    ' you can retrive it from a configuration file.  
+    ' you can retrieve it from a configuration file.  
     Return "Data Source=localhost;Integrated Security=SSPI;" & _  
       "Initial Catalog=AdventureWorks"  
   End Function  
@@ -330,7 +330,7 @@ namespace CS_Stats_Console_GetAll
     private static string GetConnectionString()  
     {  
       // To avoid storing the connection string in your code,  
-      // you can retrive it from a configuration file.  
+      // you can retrieve it from a configuration file.  
       return "Data Source=localhost;Integrated Security=SSPI;" +   
         "Initial Catalog=AdventureWorks";  
     }  

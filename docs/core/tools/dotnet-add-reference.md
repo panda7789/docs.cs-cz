@@ -1,13 +1,13 @@
 ---
 title: DotNet – přidat odkaz na – příkaz
 description: Příkaz dotnet add příkaz odkaz poskytuje vhodnou možnost pro přidání odkazů typu projekt na projekt.
-ms.date: 04/24/2019
-ms.openlocfilehash: e90f95527d4f14c7851ccd8d30201daaaaefa2ae
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 6e0ca40e701b62dcc18147f9de83cafa6aa2f50f
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631942"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422008"
 ---
 # <a name="dotnet-add-reference"></a>DotNet – přidat odkaz
 
@@ -23,7 +23,7 @@ ms.locfileid: "65631942"
 
 ## <a name="synopsis"></a>Souhrn
 
-`dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
+`dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help] [--interactive]`
 
 ## <a name="description"></a>Popis
 
@@ -56,6 +56,10 @@ ms.locfileid: "65631942"
 * **`-f|--framework <FRAMEWORK>`**
 
   Přidá odkazy na projekt jenom při cílení na konkrétní [framework](../../standard/frameworks.md).
+
+* **`--interactive`**
+
+  Povoluje příkazu zastavit a počkat na vstup uživatele nebo akci (třeba k dokončení ověřování). Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
 
 ## <a name="examples"></a>Příklady
 

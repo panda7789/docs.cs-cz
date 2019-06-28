@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a4a2f59ee81ac7884050f588d9bd437977490e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1cc4b691763c1aff4bacc2935a0a6cf32c880180
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032789"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422620"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
 Modul common language runtime poskytuje objekty modelu COM přes proxy server volá obálka volatelná za běhu (RCW). I když objekt RCW se zdá být běžný objekt pro klienty .NET, jeho primární funkce je zařadit volání mezi klient .NET a COM objekty.  
@@ -24,7 +24,7 @@ Modul common language runtime poskytuje objekty modelu COM přes proxy server vo
 
 Následující obrázek znázorňuje proces pro získání přístupu k objektům modelu COM pomocí obálka volatelná za běhu:
 
- ![Proces pro přístup k modelu COM objekty throug RCW.](./media/runtime-callable-wrapper/runtime-callable-wrapper.gif)  
+ ![Proces pro získání přístupu k objektům modelu COM prostřednictvím RCW.](./media/runtime-callable-wrapper/runtime-callable-wrapper.gif)  
 
  Používání metadat odvozený z knihovny typů, modul runtime vytvoří volaný objekt modelu COM a obálku pro daný objekt. Každý objekt RCW udržuje mezipaměť ukazatele rozhraní na objekt COM, se zabalí a uvolní svůj odkaz na objekt modelu COM, pokud objekt RCW je už nepotřebujete. Modul runtime provádí uvolňování paměti RCW.  
   
@@ -47,7 +47,7 @@ Následující obrázek znázorňuje proces pro získání přístupu k objektů
 |---------------|-----------------|  
 |**IDispatch**|Pozdní vazba modelu COM objektů prostřednictvím reflexe.|  
 |**IErrorInfo**|Poskytuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro třídy .NET).|  
-|**IProvideClassInfo**|Pokud je objekt modelu COM zabalené implementuje **iprovideclassinfo –**, Objekt RCW extrahuje informace o typu z tohoto rozhraní poskytovat lepší typu identitu.|  
+|**IProvideClassInfo**|Pokud je objekt modelu COM zabalené implementuje **iprovideclassinfo –** , Objekt RCW extrahuje informace o typu z tohoto rozhraní poskytovat lepší typu identitu.|  
 |**IUnknown**|Pro objekt identit, převod typu a správa životního cyklu:<br /><br /> – Identity objekt<br />     Modul runtime rozlišuje mezi objekty modelu COM porovnáním hodnoty **IUnknown** rozhraní pro každý objekt.<br />– Vynucení typ<br />     Objekt RCW rozpozná zjišťování dynamického typu prováděné **QueryInterface** metody.<br />-Správa životního cyklu<br />     Použití **QueryInterface** metody RCW získá a uchovává odkaz na objekt v nespravované dlouho, dokud modul runtime provádí uvolňování paměti na obálku, který uvolní nespravované objektu.|  
   
  Objekt RCW volitelně využívá rozhraní uvedené v následující tabulce, které jsou zveřejněné v objektu, který ho zalamoval.  

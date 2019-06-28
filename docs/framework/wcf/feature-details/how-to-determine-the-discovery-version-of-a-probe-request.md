@@ -2,26 +2,27 @@
 title: 'Postupy: Určení verze zjišťování zkušebního požadavku'
 ms.date: 03/30/2017
 ms.assetid: b3c4e2e2-2957-4074-ae6a-776a5ca84278
-ms.openlocfilehash: 6bd112be311eb9397ad89801be5358d67c7499fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8fbc3936278a5c6f403f48b59390c69c64378004
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773175"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425271"
 ---
 # <a name="how-todetermine-the-discovery-version-of-a-probe-request"></a>Postupy: Určení verze zjišťování zkušebního požadavku
-Proxy zjišťování může vystavit několik koncových bodů zjišťování pomocí zjišťování různých verzí. Když vícesměrového vysílání UDP dorazí požadavek testu na proxy serveru proxy server by měl odpovědět vícesměrovou zprávu. Pokud to chcete udělat byste museli znát verze zjišťování požadavku.  
-  
-### <a name="to-determine-the-discovery-version-of-a-probe-request"></a>K určení verze zjišťování zkušebního požadavku  
-  
-1. V metodě, která bude reagovat na požadavek testu (například <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A>) pomocí statické <xref:System.ServiceModel.OperationContext.Current%2A> vlastnost k vyhledání <xref:System.ServiceModel.Discovery.DiscoveryOperationContextExtension> jak je znázorněno v následujícím kódu.  
-  
-    ```  
-    DiscoveryOperationContextExtension doce = OperationContext.Current.Extensions.Find<DiscoveryOperationContextExtension>();  
-    // Access the discovery version from the DiscoveryOperationContextExtension  
-    doce.DiscoveryVersion;  
-    ```  
-  
+
+Proxy zjišťování může vystavit několik koncových bodů zjišťování pomocí zjišťování různých verzí. Když vícesměrového vysílání UDP požadavek testu dorazí na proxy server, proxy server by měl odpovědět vícesměrovou zprávu. Pokud to chcete udělat, byste mít znát verze zjišťování požadavku.
+
+## <a name="to-determine-the-discovery-version-of-a-probe-request"></a>K určení verze zjišťování zkušebního požadavku
+
+V metodě, která bude reagovat na požadavek testu (například <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A?displayProperty=nameWithType>) pomocí statické <xref:System.ServiceModel.OperationContext.Current%2A?displayProperty=nameWithType> vlastnost k vyhledání <xref:System.ServiceModel.Discovery.DiscoveryOperationContextExtension>, jak je znázorněno v následujícím kódu.
+
+```csharp
+DiscoveryOperationContextExtension doce = OperationContext.Current.Extensions.Find<DiscoveryOperationContextExtension>();
+// Access the discovery version from the DiscoveryOperationContextExtension
+doce.DiscoveryVersion;
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion%2A>

@@ -2,12 +2,12 @@
 title: 'Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace'
 ms.date: 03/30/2017
 ms.assetid: f49664d9-e9e0-425c-a259-93f0a569d01b
-ms.openlocfilehash: 5e1146806ce631eb5e6795f5d12267138d54785c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 09bbb11c58992f0fabcb822f5f3d88fef273bea9
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592838"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425275"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace
 Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte podle předchozí doporučení, jakož i následující doporučení.  
@@ -65,20 +65,20 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
   
 ```csharp  
 [Serializable]  
-[XmlRoot(  
-     Namespace="ExplicitNamespace", IsNullable=true)]  
-    public partial class AnticipatedException {  
-  
-     private string anticipatedExceptionInformationField;  
-  
-     public string AnticipatedExceptionInformation {  
-      get {  
-          return this.anticipatedExceptionInformationField;  
-          }  
-      set {  
-          this.anticipatedExceptionInformationField = value;  
-          }  
-     }  
+[XmlRoot(Namespace="ExplicitNamespace", IsNullable=true)]  
+public partial class AnticipatedException 
+{ 
+    private string anticipatedExceptionInformationField;  
+
+    public string AnticipatedExceptionInformation 
+    {  
+        get {   
+            return this.anticipatedExceptionInformationField;  
+        }  
+        set {  
+            this.anticipatedExceptionInformationField = value;  
+        }  
+    }  
 }  
 ```  
   
@@ -104,7 +104,7 @@ public XmlNode ToXML()
  Třídy pak umožňuje zadejte podrobnosti pro explicitně vyvolána <xref:System.Web.Services.Protocols.SoapException> instancí:  
   
 ```csharp  
-AnctipatedException exception = new AnticipatedException();  
+AnticipatedException exception = new AnticipatedException();  
 exception.AnticipatedExceptionInformation = "…";  
 throw new SoapException(  
      "Fault occurred",  

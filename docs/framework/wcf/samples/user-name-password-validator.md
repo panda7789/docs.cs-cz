@@ -2,12 +2,12 @@
 title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: ee0e0e85389ecba39c140f383f57be95f15ae879
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 16e5f854dbe76150945145c0ce81d0d5fa4ac0d0
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662371"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67421816"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy se žádná z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikaci. například když páry uživatelského jména a hesla ukládají v některé externí úložiště, například do databáze. Tento příklad ukazuje služba, která má vlastní validátor, který kontroluje dvě dvojice konkrétního uživatelského jména a hesla. Klient používá k ověření ve službě dvojici uživatelského jména a hesla.
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor.
 
 - Server byl ověřovaný pomocí certifikátu X.509 serveru.
 
- Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding` , která ve výchozím nastavení používá ověřování uživatelským jménem WS Securityand. Určuje chování služby `Custom` režimu pro ověřování klienta páry uživatelského jména a hesla společně s typem třídy program pro ověření. Také určuje chování serveru pomocí certifikátu `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
+ Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding` , která ve výchozím nastavení používá ověřování WS-Security a uživatelské jméno. Určuje chování služby `Custom` režimu pro ověřování klienta páry uživatelského jména a hesla společně s typem třídy program pro ověření. Také určuje chování serveru pomocí certifikátu `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
 
 ```xml
 <system.serviceModel>

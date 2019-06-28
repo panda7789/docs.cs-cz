@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-ms.openlocfilehash: 3ac8b2260e5da1e91c167e3e9ef91039deb983b2
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 0dfb2469ac3f497a40a3008c9933977947685979
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380244"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425506"
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Práce s víc verzemi současně ve třídě WorkflowServiceHost
 <xref:System.ServiceModel.Activities.WorkflowServiceHost> Správy verzí vedle sebe zavedena v rozhraní .NET Framework 4.5 poskytuje možnost hostování několika verzí služby pracovního postupu v jednom koncovém bodu. Vedle sebe funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu jsou vytvořené pomocí novou definici pracovního postupu při spuštění úplné pomocí existující definici instance služby pracovního postupu. Toto téma obsahuje přehled používání vedle sebe provádění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
@@ -82,7 +82,7 @@ End With
 >  To je užitečné, pokud služba byl zpočátku bez nasadit <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> nakonfigurované, a vytvoří aktualizovanou verzi.  
   
 ### <a name="adding-a-new-version-to-a-web-hosted-workflow-service"></a>Přidává se nová verze služby hostované webového pracovního postupu  
- Prvním krokem při konfiguraci nové verze služby pracovních postupů v hostované webové služby je vytvoření nové složky v `App_Code` složku, která má stejný název jako soubor služby. Pokud služby `xamlx` soubor `MortgageWorkflow.xamlx`, pak musí mít název složky `MortgageWorkflow`. Umístěte kopii původní službě `xamlx` souboru do této složky a přejmenujte jej na nový název, jako například `MortgageWorkflowV1.xamlx`. Proveďte požadované změny pro primární služby, aktualizujte její <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>a poté nasaďte službu. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> byla aktualizována <xref:System.Activities.WorkflowIdentity.Name%2A> z `MortageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `2.0.0.0`.  
+ Prvním krokem při konfiguraci nové verze služby pracovních postupů v hostované webové služby je vytvoření nové složky v `App_Code` složku, která má stejný název jako soubor služby. Pokud služby `xamlx` soubor `MortgageWorkflow.xamlx`, pak musí mít název složky `MortgageWorkflow`. Umístěte kopii původní službě `xamlx` souboru do této složky a přejmenujte jej na nový název, jako například `MortgageWorkflowV1.xamlx`. Proveďte požadované změny pro primární služby, aktualizujte její <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>a poté nasaďte službu. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> byla aktualizována <xref:System.Activities.WorkflowIdentity.Name%2A> z `MortgageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `2.0.0.0`.  
   
  ![Snímek obrazovky s identitou DefinitionIdentity identita WorkflowIdentity.](./media/side-by-side-versioning-in-workflowservicehost/definitionidentity-workflowidentity.bmp)  
   

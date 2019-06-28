@@ -10,12 +10,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: cd989b47c87ef32371b45650d531bd8cbeb85032
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 2aee15443172e753846574806565f7804f1716d1
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306954"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423681"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typu (C# Programming Guide)
 
@@ -38,7 +38,7 @@ i = "Hello"; // error CS0029: Cannot implicitly convert type 'string' to 'int'
   
 ## <a name="implicit-conversions"></a>Implicitní převody
 
- Pro předdefinované číselné typy implicitní převod může vzít v úvahu hodnota, která má být uložen se vejde do proměnné bez zkrácen nebo zaokrouhleno. Například proměnná typu [dlouhé](../../../csharp/language-reference/keywords/long.md) (64bitové celé číslo) můžete ukládat některá hodnota, která [int](../../../csharp/language-reference/keywords/int.md) (32bitové celé číslo) můžete ukládat. V následujícím příkladu kompilátor implicitně převede hodnotu `num` na pravé straně na typ `long` před ji přiřadíte `bigNum`.  
+ Pro předdefinované číselné typy implicitní převod může vzít v úvahu hodnota, která má být uložen se vejde do proměnné bez zkrácen nebo zaokrouhleno. Pro integrální typy to znamená, že se že rozsah zdrojového typu je správný podmnožinou rozsahu pro cílový typ. Například proměnná typu [dlouhé](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) (64bitové celé číslo) můžete ukládat některá hodnota, která [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) (32bitové celé číslo) můžete ukládat. V následujícím příkladu kompilátor implicitně převede hodnotu `num` na pravé straně na typ `long` před ji přiřadíte `bigNum`.  
   
  [!code-csharp[csProgGuideTypes#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#34)]  
   
@@ -53,7 +53,7 @@ Base b = d; // Always OK.
   
 ## <a name="explicit-conversions"></a>Explicitní převody
 
- Nicméně, pokud převod nelze provést bez rizika ztráty informací, kompilátor vyžaduje, abyste provedli explicitní převod, která je volána *přetypování*. Přetypování je způsob, jak explicitně informuje kompilátor, že máte v úmyslu provést převod a že jste si vědomi, že může dojít ke ztrátě dat. K provedení přetypování, zadejte, která jsou přetypování na typ v závorkách před hodnota nebo proměnná, která má být převeden. Následující program přetypování [double](../../../csharp/language-reference/keywords/double.md) do [int](../../../csharp/language-reference/keywords/int.md). Program nebude kompilovat bez přetypování.  
+ Nicméně, pokud převod nelze provést bez rizika ztráty informací, kompilátor vyžaduje, abyste provedli explicitní převod, která je volána *přetypování*. Přetypování je způsob, jak explicitně informuje kompilátor, že máte v úmyslu provést převod a že jste si vědomi, že může dojít ke ztrátě dat. K provedení přetypování, zadejte, která jsou přetypování na typ v závorkách před hodnota nebo proměnná, která má být převeden. Následující program přetypování [double](../../../csharp/language-reference/keywords/double.md) do [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md). Program nebude kompilovat bez přetypování.  
   
  [!code-csharp[csProgGuideTypes#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#2)]  
   

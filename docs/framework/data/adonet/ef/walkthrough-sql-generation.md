@@ -2,12 +2,12 @@
 title: 'Návod: Generování SQL'
 ms.date: 03/30/2017
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
-ms.openlocfilehash: 380ab80a577fa103c33328047cd24cce6be5cb6e
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 5d8723c6a6d1ab12a2ba1f0f2f7cd5e09e82bfad
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690345"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422764"
 ---
 # <a name="walkthrough-sql-generation"></a>Návod: Generování SQL
 
@@ -128,7 +128,7 @@ Správný vstup se zpracovává stejně jako s levým vstupem. Stav po přečten
 
 ![Diagram](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")
 
-Další "false" je posunuto v zásobníku IsParentAJoin a podmínky spojení Var(Extent1). ID kategorie == Var(Extent2). ID kategorie se zpracovává. Var(Extenent1) je přeložen na \<symbol_Extent1 > po vyhledání názvu v tabulce symbolů. Protože instance je přeložit na jednoduché Symbol, jako výsledek zpracování Var(Extent1). ID kategorie, SqlBuilder s \<symbol1 >. " ID kategorie"je vrácena. Podobně se zpracovává druhé straně porovnání a výsledek hostujících podmínka spojení je připojena k SelectStatement1 a hodnota, kterou "false" je odebrán ze zásobníku IsParentAJoin klauzule FROM.
+Další "false" je posunuto v zásobníku IsParentAJoin a podmínky spojení Var(Extent1). ID kategorie == Var(Extent2). ID kategorie se zpracovává. Var(Extent1) je přeložen na \<symbol_Extent1 > po vyhledání názvu v tabulce symbolů. Protože instance je přeložit na jednoduché Symbol, jako výsledek zpracování Var(Extent1). ID kategorie, SqlBuilder s \<symbol1 >. " ID kategorie"je vrácena. Podobně se zpracovává druhé straně porovnání a výsledek hostujících podmínka spojení je připojena k SelectStatement1 a hodnota, kterou "false" je odebrán ze zásobníku IsParentAJoin klauzule FROM.
 
 Díky tomu Join1 zcela byla zpracována a obor je odebrán z tabulky symbolů.
 

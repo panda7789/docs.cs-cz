@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 37e12c499b19d196dd695e1e2970d750f4dc9b0e
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: a7db79185d4445c68adda214d10be6d31f6ed9e0
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402430"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425116"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je architektura určená k vytváření aplikací orientovaných na služby. Pomocí technologie WCF, můžete odeslat data jako asynchronní zprávy z jeden koncový bod služby do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupnými službami hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncový bod může být klient služby, který vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo slova jako XML, nebo komplexního, jako binární datový proud. Několik ukázkových scénářů patří:
@@ -72,7 +72,7 @@ WCF zahrnuje následující sady funkcí. Další informace najdete v tématu [p
 
 - **Transakce**
 
-     WCF také podporuje transakce použitím jednoho ze tří modelů transakce: WS-AtomicTtransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. Další informace o transakci, najdete v článku podpory ve službě WCF [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
+     WCF také podporuje transakce použitím jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. Další informace o transakci, najdete v článku podpory ve službě WCF [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
 
 - **AJAX a podpora REST**
 

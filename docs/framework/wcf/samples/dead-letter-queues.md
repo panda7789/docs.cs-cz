@@ -2,12 +2,12 @@
 title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 8b3ed5447441622d800cff6147f81fcd9a59c88f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 59e2344d2bd6a9de3396f7d6d878182333138ff3
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650134"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425487"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tento příklad ukazuje, jak pro zpracování a zpracování zpráv, které selhaly doručování. Je založen na [nepodporuje transakce vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) vzorku. Tento příklad používá `netMsmqBinding` vazby. Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.
@@ -156,7 +156,7 @@ class Client
 ```csharp
 public void SubmitPurchaseOrder(PurchaseOrder po)
 {
-    Console.WriteLine("Submitting purchase order did not succed ", po);
+    Console.WriteLine("Submitting purchase order did not succeed ", po);
     MsmqMessageProperty mqProp =
                   OperationContext.Current.IncomingMessageProperties[
                   MsmqMessageProperty.Name] as MsmqMessageProperty;

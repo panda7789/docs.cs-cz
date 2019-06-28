@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], protocols
 ms.assetid: 57ffcbea-807c-4e43-a41c-44b3db8ed2af
-ms.openlocfilehash: 9993a7ecb61d9a45d88162fdef488e79b155540c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6212fd911bd5b255347459a1b5a7b2f46e31963e
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586852"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425089"
 ---
 # <a name="security-protocols"></a>Protokoly zabezpečení
 Protokoly webových služeb zabezpečení poskytují webové služby bezpečnostní mechanismy, které pokrývají všechny stávající Podnikové zasílání zpráv požadavků na zabezpečení. Tato část popisuje podrobnosti Windows Communication Foundation (WCF) (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro protokoly zabezpečení následujících webových služeb.  
@@ -55,7 +55,7 @@ Protokoly webových služeb zabezpečení poskytují webové služby bezpečnost
 |Protokol Kerberos|Windows|Windows|Message|  
 |Třídy IssuedToken|Federované|Federované|Message|  
 |SspiNegotiated|Windows Sspi Negotiated|Windows Sspi Negotiated|Message|  
-|AnonymousForSslNegotiated|Žádné|X509, TLS-Nego|Message|  
+|AnonymousForSslNegotiated|Žádný|X509, TLS-Nego|Message|  
 |UserNameForSslNegotiated|Uživatelské jméno/heslo|X509, TLS-Nego|Message|  
 |MutualSslNegotiated|X509|X509, TLS-Nego|Message|  
 |IssuedTokenForSslNegotiated|Federované|X509, TLS-Nego|Message|  
@@ -131,7 +131,7 @@ Protokoly webových služeb zabezpečení poskytují webové služby bezpečnost
  WCF podporuje tokenu SAML WSS profily 1.0 a 1.1 pro tokeny SAML verze 1.1. Je možné provádět další verze tokenu SAML formátů.  
   
 ### <a name="15-security-context-token"></a>1.5 Token kontextu zabezpečení  
- WCF podporuje zabezpečení kontextu Token (SCT) počínaje WS SecureCoversation. SCT se používá k reprezentování kontextu zabezpečení podle SecureConversation stejně jako binární vyjednávání protokoly TLS a SSPI, je popsáno níže.  
+ WCF podporuje zabezpečení kontextu Token (SCT) počínaje WS-SecureConversation. SCT se používá k reprezentování kontextu zabezpečení podle SecureConversation stejně jako binární vyjednávání protokoly TLS a SSPI, je popsáno níže.  
   
 ## <a name="2-common-message-security-parameters"></a>2. Společné parametry zabezpečení zpráv  
   

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 9c56a301a1ceda65dc285060daee0e78d12d828f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fb68487746a7dc9cec1d1473b445bccc7b2b23c2
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606176"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424880"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby Zabezpečené používají režim zabezpečených zpráv. Klient a služba se ověří pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).
@@ -43,7 +43,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
-### <a name="configuration"></a>Konfigurace  
+### <a name="configuration"></a>Konfiguraci  
  Následující konfigurace je možné použít místo kódu.  
   
 ```xml  
@@ -65,7 +65,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
                name="ServiceModel.Calculator">  
         <endpoint address="http://localhost/Calculator"   
                   binding="wsHttpBinding"  
-                  bindingConfiguration="MessageAndCerficiateClient"   
+                  bindingConfiguration="MessageAndCertificateClient"   
                   name="SecuredByClientCertificate"  
                   contract="ServiceModel.ICalculator" />  
       </service>  
@@ -100,7 +100,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
-### <a name="configuration"></a>Konfigurace  
+### <a name="configuration"></a>Konfiguraci  
  Určuje následující konfiguraci klientského certifikátu pomocí chování koncového bodu. Další informace o certifikátech najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Kód také pomocí <`identity`> element k určení systému DNS (Domain Name) identity očekávané serveru. Další informace o identitě najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ```xml  

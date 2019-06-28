@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8a9c9072c5565cf322bbf6a913255542fb46cb93
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: b7284975d717bdecc4127e09fe04163e8fd0d243
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378556"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424754"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -51,7 +51,7 @@ Rozhraní .NET Framework 4.8 si můžete stáhnout z následujícího umístěn�
 
 - [Offline instalační program rozhraní .NET Framework 4.8](https://go.microsoft.com/fwlink/?linkid=2088631)
 
-4.8 rozhraní .NET framework lze nainstalovat na Windows 10, Windows 8.1, Windows 7 SP1 a odpovídající serverových platforem od Windows serveru 2008 R2 SP1. 4.8 rozhraní .NET Framework můžete nainstalovat pomocí instalačního programu webové nebo offline instalační program. Doporučený postup pro většinu uživatelů je použít webovou Instalační službu.
+4\.8 rozhraní .NET framework lze nainstalovat na Windows 10, Windows 8.1, Windows 7 SP1 a odpovídající serverových platforem od Windows serveru 2008 R2 SP1. 4\.8 rozhraní .NET Framework můžete nainstalovat pomocí instalačního programu webové nebo offline instalační program. Doporučený postup pro většinu uživatelů je použít webovou Instalační službu.
 
 Můžete cílit na .NET Framework 4.8 v sadě Visual Studio 2012 nebo novější pomocí instalace [rozhraní .NET Framework 4.8 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=2085167).
 
@@ -563,7 +563,7 @@ public class StaticResourceResolvedEventArgs : EventArgs
 ```
 
 ```vb
-Public Class StaticResourceResolvedEvcentArgs : Inherits EventArgs
+Public Class StaticResourceResolvedEventArgs : Inherits EventArgs
    Public ReadOnly Property TargetObject As Object
    Public ReadOnly Property TargetProperty As Object
    Public ReadOnly Property ResourceDictionary As ResourceDictionary
@@ -845,7 +845,7 @@ End Class
 
 Potom můžete vytvořit soubor prostředků DataAnnotation.Localization.fr.resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizované chybové zprávy. Soubor musí být nalezen v `App.LocalResources` složky. Například následující je klíč a její hodnotu v lokalizovaných francouzština (fr) jazyka chybová zpráva:
 
-| Name                                 | Hodnota                                     |
+| Name                                 | Value                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | La note doit être comprise entre 1 et 10. |
 
@@ -1182,7 +1182,7 @@ V předchozích verzích rozhraní .NET Framework nemůže aplikace WPF optimali
 
 Pro podporu poslední růst počtu vysokých hodnot DPI a DPI hybridní prostředí pro aplikace WPF, WPF v rozhraní .NET Framework 4.6.2 umožňuje sledování na sledování. Zobrazit [ukázky a příručka pro vývojáře](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) na Githubu pro další informace o tom, jak povolit aplikaci WPF se nastavení DPI podle monitoru.
 
-V předchozích verzích rozhraní .NET Framework jsou aplikace WPF systému – rozpoznání nastavení DPI. Jinými slovy uživatelského rozhraní aplikace se škálovat podle operačního systému podle potřeby, v závislosti na DPI monitorování, na kterém je vykreslen aplikace. , 
+V předchozích verzích rozhraní .NET Framework jsou aplikace WPF systému – rozpoznání nastavení DPI. Jinými slovy uživatelského rozhraní aplikace se škálovat podle operačního systému podle potřeby, v závislosti na DPI monitorování, na kterém je vykreslen aplikace. ,
 
 Pro aplikace běžící pod .NET Framework 4.6.2, můžete zakázat přidáním příkazu konfigurace k DPI za monitorování změn v aplikacích WPF [ \<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) část konfigurace aplikací souboru následujícím způsobem:
 
@@ -1832,7 +1832,7 @@ U souborů PDB pro Ngen můžete vytvořit NGen souboru PDB, který obsahuje map
 
     ```vb
     <System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name:="FullTrust")>
-    public Function PromoteAndEnlistDurable(GresourceManagerIdentifier As Guid,
+    public Function PromoteAndEnlistDurable(resourceManagerIdentifier As Guid,
                                             promotableNotification As IPromotableSinglePhaseNotification,
                                             enlistmentNotification As ISinglePhaseNotification,
                                             enlistmentOptions As EnlistmentOptions) As Enlistment

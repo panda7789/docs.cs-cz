@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 796dbb012426cdaea7828afeea4fba15f57095c6
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 65a7fbb2ef8fd24e80b4ccf979a7f3fc7cf19934
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398100"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423645"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -39,12 +39,12 @@ Informace uložené v typu může patřit také následující:
 
 - Typy operací, které jsou povoleny.
 
-Kompilátor používá informace o typu, abyste měli jistotu, že jsou všechny operace, které jsou prováděny ve vašem kódu *bezpečnost typů*. Například, pokud deklarujete proměnnou typu [int](../../../csharp/language-reference/keywords/int.md), kompilátor umožňuje také použít proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace na proměnnou typu [bool](../../../csharp/language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:
+Kompilátor používá informace o typu, abyste měli jistotu, že jsou všechny operace, které jsou prováděny ve vašem kódu *bezpečnost typů*. Například, pokud deklarujete proměnnou typu [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md), kompilátor umožňuje také použít proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace na proměnnou typu [bool](../../../csharp/language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csProgGuideTypes#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#42)]
 
 > [!NOTE]
-> Vývojáře v C a C++, Všimněte si, že v jazyce C#, [bool](../../../csharp/language-reference/keywords/bool.md) není převoditelná na [int](../../../csharp/language-reference/keywords/int.md).
+> Vývojáře v C a C++, Všimněte si, že v jazyce C#, [bool](../../../csharp/language-reference/keywords/bool.md) není převoditelná na [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md).
 
 Kompilátor vloží informace o typu do spustitelného souboru jako metadata. Common language runtime (CLR) používá tato metadata za běhu, aby byla dále podpořena bezpečnost typů, při přidělování a uvolňování paměti.
 
@@ -54,11 +54,11 @@ Pokud deklarujete proměnnou nebo konstantní v programu, musíte buď určit je
 
 [!code-csharp[csProgGuideTypes#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#36)]
 
-Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Následující podpis představuje metodu, která vyžaduje [int](../../../csharp/language-reference/keywords/int.md) jako vstupní argument a vrátí řetězec:
+Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Následující podpis představuje metodu, která vyžaduje [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) jako vstupní argument a vrátí řetězec:
 
 [!code-csharp[csProgGuideTypes#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#35)]
 
-Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](../../../csharp/language-reference/keywords/int.md) a přiřadit mu hodnotu typu Boolean [true](../../../csharp/language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.
+Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) a přiřadit mu hodnotu typu Boolean [true](../../../csharp/language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.
 
 Další informace najdete v tématu [přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md).
 
@@ -74,7 +74,7 @@ Můžete použít [struktura](../../../csharp/language-reference/keywords/struct
 
 Je důležité porozumět dvěma základním principům systému typu v rozhraní .NET:
 
-- Podporuje princip dědičnosti. Typy lze odvodit z jiných typů nazývaných *základní typy*. Odvozený typ zdědí (s určitými omezeními) metody, vlastnosti a ostatní členy základního typu. Základní typ lze odvozovat z některých jiných typů, ve kterém případě odvozený typ dědí členy obou základních typů v hierarchii dědičnosti. Všechny typy včetně předdefinovaných číselných typů, jako například <xref:System.Int32?displayProperty=nameWithType> (C# – klíčové slovo: [int](../../../csharp/language-reference/keywords/int.md)), jsou odvozeny výsledku z jednoho základního typu, které jsou <xref:System.Object?displayProperty=nameWithType> (C# – klíčové slovo: [objekt](../../../csharp/language-reference/keywords/object.md)). Tato hierarchie jednotného typu se nazývá [obecný systém typů](../../../standard/base-types/common-type-system.md) (CTS). Další informace o dědičnosti v C# najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).
+- Podporuje princip dědičnosti. Typy lze odvodit z jiných typů nazývaných *základní typy*. Odvozený typ zdědí (s určitými omezeními) metody, vlastnosti a ostatní členy základního typu. Základní typ lze odvozovat z některých jiných typů, ve kterém případě odvozený typ dědí členy obou základních typů v hierarchii dědičnosti. Všechny typy včetně předdefinovaných číselných typů, jako například <xref:System.Int32?displayProperty=nameWithType> (C# – klíčové slovo: [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)), jsou odvozeny výsledku z jednoho základního typu, které jsou <xref:System.Object?displayProperty=nameWithType> (C# – klíčové slovo: [objekt](../../../csharp/language-reference/keywords/object.md)). Tato hierarchie jednotného typu se nazývá [obecný systém typů](../../../standard/base-types/common-type-system.md) (CTS). Další informace o dědičnosti v C# najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).
 
 - Každý typ v CTS je definována buď jako *typ hodnoty* nebo *odkazovat na typ*. To zahrnuje všechny vlastní typy v knihovně tříd rozhraní .NET a také vlastní uživatelem definované typy. Typy, které definujete pomocí [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo jsou typy hodnot; předdefinované číselné typy jsou `structs`. Typy, které definujete pomocí [třídy](../../../csharp/language-reference/keywords/class.md) – klíčové slovo jsou referenční typy. Typy odkazů a typy hodnot mají jiná pravidla pro kompilaci a jiné chování za běhu.
 
@@ -205,4 +205,4 @@ Další informace naleznete v následujících tématech:
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)
-- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)
+- [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)

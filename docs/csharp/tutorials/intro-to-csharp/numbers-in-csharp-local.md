@@ -3,12 +3,12 @@ title: Čísla v C# – Úvod do C# kurz
 description: Přečtěte si C# prozkoumáním číselné typy, vlastnosti a metody.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 1b09a65b42395bfa1caf9e564120d3df1f3f1ed5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 65b31c29fa9662619f92efb7977577f12d23fb30
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675569"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423426"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Zpracování čísel s plovoucí desetinnou čárkou a integrální bod v jazyce C\#
 
@@ -320,7 +320,7 @@ Dokončili jste "čísla v C#" rychlý start. Můžete pokračovat [větve a smy
 
 Další informace o číslech v jazyce C# v následujících tématech:
 
-- [Tabulka celočíselných typů](../../language-reference/keywords/integral-types-table.md)
+- [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)
 - [Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/keywords/floating-point-types-table.md)
 - [Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)
 - [Tabulka implicitních číselných převodů](../../language-reference/keywords/implicit-numeric-conversions-table.md)

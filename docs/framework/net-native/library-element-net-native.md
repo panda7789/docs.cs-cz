@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eda4f8d3819af05b022e0633d6883cca940f67e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce001ed25d7704301d7f809887a445e3492e93fc
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866851"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422540"
 ---
 # <a name="library-element-net-native"></a>\<Knihovna > – Element (.NET Native)
 Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.  
@@ -58,7 +58,7 @@ Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k d
   
  `<Library>` Prvek slouží jako kontejner pro definování prvky programu, jejichž metadat je potřeba za běhu; tento element není vyjádření zásad. V době kompilace, kompilačních nástrojů hledání pouze v knihovně, které jsou určené `<Library>` – element pro prvky programu identifikován jeho podřízené prvky. Naproti tomu kompilátoru nástroje hledání všech knihoven, včetně.NET Framework základní knihovny, pro prvky programu identifikovaný podřízených elementů [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) elementu.  
   
- `<Library>` direktivy může podmíněně využít. Pokud název `<Library>` prvek začíná a končí s hvězdičkou (\*), `<Library>` – direktiva má vliv pouze v případě, že sestavení určena v rozsahu mezi hvězdičky odkazuje aplikaci. Například následující direktivy modulu runtime platí jenom v případě, že Utillities.dll sestavení odkazuje aplikaci.  
+ `<Library>` direktivy může podmíněně využít. Pokud název `<Library>` prvek začíná a končí s hvězdičkou (\*), `<Library>` – direktiva má vliv pouze v případě, že sestavení určena v rozsahu mezi hvězdičky odkazuje aplikaci. Například následující direktivy modulu runtime platí jenom v případě, že Utilities.dll sestavení odkazuje aplikaci.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

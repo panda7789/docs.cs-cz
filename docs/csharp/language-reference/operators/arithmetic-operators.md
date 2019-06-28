@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 9293071744ff104c91d5fb9b62fffd1ec51a53c4
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 155ce5ce4673008a61b4231a3aaee5a40ad9ead6
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347953"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423993"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
@@ -41,7 +41,7 @@ Následující operátory provádění aritmetických operací s číselnými ty
 - Unární [ `++` (přírůstek)](#increment-operator-), [ `--` (snížení)](#decrement-operator---), [ `+` (plus)](#unary-plus-and-minus-operators), a [ `-` (minus)](#unary-plus-and-minus-operators) operátory
 - Binární [ `*` (násobení)](#multiplication-operator-), [ `/` (dělení)](#division-operator-), [ `%` (zbytek)](#remainder-operator-), [ `+` () Přidání)](#addition-operator-), a [ `-` (odčítání)](#subtraction-operator--) operátory
 
-Tyto operátory podporují všechny [integrální](../keywords/integral-types-table.md) a [s plovoucí desetinnou čárkou](../keywords/floating-point-types-table.md) číselné typy.
+Tyto operátory podporují všechny [integrální](../builtin-types/integral-numeric-types.md) a [s plovoucí desetinnou čárkou](../keywords/floating-point-types-table.md) číselné typy.
 
 ## <a name="increment-operator-"></a>Operátor Inkrementace ++
 
@@ -85,7 +85,7 @@ Unární `+` operátor vrátí hodnotu svého operandu. Unární `-` operátor v
 
 [!code-csharp-interactive[unary plus and minus](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#UnaryPlusAndMinus)]
 
-Unární `-` operátor nepodporuje [ulong](../keywords/ulong.md) typu.
+Unární `-` operátor nepodporuje [ulong](../builtin-types/integral-numeric-types.md) typu.
 
 ## <a name="multiplication-operator-"></a>Operátor násobení *
 

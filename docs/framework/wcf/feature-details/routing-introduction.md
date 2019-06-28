@@ -2,19 +2,19 @@
 title: Směrování – úvod
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: 41545d0340ae222e427d1e6d428ed1e3f7b4fa76
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 478c9aa6563cab4ba7769c56d7084c8716c43c58
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912482"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425371"
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který je schopen směrování zpráv na základě obsahu zpráv. Ve službě Směrování můžete vytvořit komplexní logiku směrování, která umožňuje implementovat scénáře, jako je služba agregace, Správa verzí služby, priority směrování a směrování vícesměrového vysílání. Směrovací služba taky poskytuje chyba zpracování, který umožňuje nastavení seznamů zálohování koncových bodů, do které se odešlou zprávy, pokud dojde k chybě při odesílání na cílové primární koncový bod.  
   
  Toto téma je určené pro ty novým uživatelům služby Směrování a pokrývá základní konfiguraci a který je hostitelem služby směrování.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
  Směrovací služba je implementovaná jako služba WCF, který zpřístupňuje jeden nebo více koncových bodů služby, které přijímají zprávy z klientských aplikací a směrování zpráv do cílové koncové body. Poskytuje služby <xref:System.ServiceModel.Routing.RoutingBehavior>, který se použije ke koncovým bodům služby určeného službou. Toto chování slouží ke konfiguraci různých aspektů jak služba funguje. Pro usnadnění konfigurace, pokud je používán konfigurační soubor, parametry jsou určeny na **chování RoutingBehavior**. Ve scénářích založený na kódu, tyto parametry by se zadal jako součást <xref:System.ServiceModel.Routing.RoutingConfiguration> objektu, který je pak možné předat do **chování RoutingBehavior**.  
   
  Při spouštění, přidá toto chování <xref:System.ServiceModel.Routing.SoapProcessingBehavior>, který se používá k provedení protokolu SOAP zpracování zpráv do koncových bodů klienta. To umožňuje službě směrování přenosu zpráv do koncových bodů, které vyžadují jinou **MessageVersion** než byla přijata zpráva přes koncový bod. **Chování RoutingBehavior** také zaregistruje rozšíření služby, <xref:System.ServiceModel.Routing.RoutingExtension>, který představuje bod usnadnění pro úpravu konfigurace služby směrování v době běhu.  
@@ -250,7 +250,7 @@ rc.SoapProcessingEnabled = false;
 ### <a name="dynamic-configuration"></a>Dynamickou konfiguraci  
  Při přidání dalších klientských koncových bodů, nebo třeba upravit filtry, které se používají ke směrování zpráv, potřebujete způsob, jak aktualizovat konfiguraci dynamicky za běhu, aby se zabránilo přerušení služby aktuálně příjem zpráv pomocí koncových bodů Služba směrování. Úprava konfiguračního souboru nebo kód hostitelskou aplikaci nestačí vždy, protože některé z metod vyžaduje provedení recyklace aplikace, což by mohlo dojít k potenciální ztrátě všechny zprávy momentálně v provozu a má větší potenciál pro výpadku, zatímco Čekání na službu restartovat.  
   
- Upravit lze pouze **konfigurace RoutingConfiguration** prostřednictvím kódu programu. Zatímco služba může počáteční konfiguraci pomocí konfiguračního souboru, můžete upravovat konfiguraci za běhu pouze tak, že vytváří nový **RoutingConfigution** a předejte ji jako parametr, který se <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> – metoda vystavené <xref:System.ServiceModel.Routing.RoutingExtension> služby rozšíření. Všechny zprávy aktuálně při přenosu i nadále možné směrovat pomocí předchozí konfigurace, při zprávy přijaté po volání **ApplyConfiguration** používat nové nakonfigurování. Následující příklad ukazuje vytvoření instance služby Směrování a následně úpravou konfigurace.  
+ Upravit lze pouze **konfigurace RoutingConfiguration** prostřednictvím kódu programu. Zatímco služba může počáteční konfiguraci pomocí konfiguračního souboru, můžete upravovat konfiguraci za běhu pouze tak, že vytváří nový **konfigurace RoutingConfiguration** a předejte ji jako parametr, který se <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> – metoda vystavené <xref:System.ServiceModel.Routing.RoutingExtension> služby rozšíření. Všechny zprávy aktuálně při přenosu i nadále možné směrovat pomocí předchozí konfigurace, při zprávy přijaté po volání **ApplyConfiguration** používat nové nakonfigurování. Následující příklad ukazuje vytvoření instance služby Směrování a následně úpravou konfigurace.  
   
 ```csharp  
 RoutingConfiguration routingConfig = new RoutingConfiguration();  
@@ -280,7 +280,7 @@ routerHost.routerHost.Extensions.Find<RoutingExtension>().ApplyConfiguration(rc2
 >  Otevřít pomocí předchozí konfiguraci relace pokračovat pomocí předchozí konfigurace. Nová konfigurace se používá pouze pomocí nové relace.  
   
 ## <a name="error-handling"></a>Zpracování chyb  
- Pokud existuje <xref:System.ServiceModel.CommunicationException> dochází při pokusu o odeslání zprávy, zkuste místo pro zpracování chyb. Tyto výjimky obvykle signalizují, že došlo k potížím při pokusu o komunikaci s koncovým bodem definované klienta, například <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException>, nebo <xref:System.ServiceModel.CommunicationObjectFaultedException>. Zpracování – kód chyby: také zachytit a pokus opakujte při odesílání <xref:System.TimeoutException> dojde, což je další běžné výjimku, která není odvozena od **communicationexception –**.  
+ Pokud existuje <xref:System.ServiceModel.CommunicationException> dochází při pokusu o odeslání zprávy, zkuste místo pro zpracování chyb. Tyto výjimky obvykle signalizují, že došlo k potížím při pokusu o komunikaci s koncovým bodem definované klienta, například <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException>, nebo <xref:System.ServiceModel.CommunicationObjectFaultedException>. Zpracování – kód chyby: také zachytit a pokus opakujte při odesílání <xref:System.TimeoutException> dojde, což je další běžné výjimku, která není odvozena od **communicationexception –** .  
   
  Při jedné z předchozí výjimky, směrovací služba převezme služby při selhání do seznamu zálohy koncových bodů. Pokud všechny koncové body zálohování neúspěšné a zobrazí se selháním komunikace nebo pokud koncový bod vrací výjimku, která indikuje selhání v rámci cílové služby, směrovací služba vrátí chybu do klientské aplikace.  
   

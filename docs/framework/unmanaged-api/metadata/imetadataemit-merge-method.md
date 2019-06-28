@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 179cfc5c0725934e21d7b89a2f8d4c934b049f78
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 65dbfd526110be5b9b3348fb677fbde7301e4038
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106051"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424652"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge – metoda
 Přidá do seznamu oborů, která se má sloučit zadané importované oboru.  
@@ -44,7 +44,7 @@ HRESULT Merge (
  `pIMap`  
  [in] Ukazatel [imaptoken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) objekt, který určuje, token přemapovat.  
   
- `pHandleer`  
+ `pHandler`  
  [in] Ukazatel [IUnknown](/cpp/atl/iunknown) objekt, který určuje chyby.  
   
 ## <a name="remarks"></a>Poznámky  

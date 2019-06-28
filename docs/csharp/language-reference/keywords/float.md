@@ -9,18 +9,18 @@ helpviewer_keywords:
 - float keyword [C#]
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
-ms.openlocfilehash: 6bf8043b97d23fdb91ca5798ed46cdea783bad7e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db0139f2000c1bc2c5a13a3a542164201e73f0fb
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661656"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424214"
 ---
 # <a name="float-c-reference"></a>float (Referenční dokumentace jazyka C#)
 
 `float` – Klíčové slovo znamená jednoduchý typ, který ukládá 32bitové hodnoty s plovoucí desetinnou čárkou. V následující tabulce jsou uvedeny přesnosti a rozsahu pro `float` typu.
 
-|Type|Přibližný rozsah|Přesnost|Typ formátu .NET|  
+|type|Přibližný rozsah|Přesnost|Typ formátu .NET|  
 |----------|-----------------------|---------------|-------------------------|  
 |`float`|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|<xref:System.Single?displayProperty=nameWithType>|  
 
@@ -56,7 +56,7 @@ Další informace o těchto hodnotách naleznete v části Standard IEEE pro bin
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu [int](int.md), [krátký](short.md)a `float` jsou zahrnuty v matematickém výrazu dává `float` výsledek. (Nezapomeňte, že `float` je alias pro <xref:System.Single?displayProperty=nameWithType> typu.) Všimněte si, že neexistuje žádná [double](double.md) ve výrazu.
+V následujícím příkladu [int](../builtin-types/integral-numeric-types.md), [krátký](../builtin-types/integral-numeric-types.md)a `float` jsou zahrnuty v matematickém výrazu dává `float` výsledek. (Nezapomeňte, že `float` je alias pro <xref:System.Single?displayProperty=nameWithType> typu.) Všimněte si, že neexistuje žádná [double](double.md) ve výrazu.
 
 [!code-csharp[csrefKeywordsTypes#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#13)]
 
@@ -71,7 +71,7 @@ V následujícím příkladu [int](int.md), [krátký](short.md)a `float` jsou z
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Přetypování a převody typů](../../programming-guide/types/casting-and-type-conversions.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Tabulka celočíselných typů](integral-types-table.md)
+- [Celočíselné typy](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)
 - [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)

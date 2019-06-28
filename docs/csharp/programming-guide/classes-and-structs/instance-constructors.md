@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: b4257cfa1f50ebd9ce821fff2a0bfa15fae4ac2f
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: a5ed331c6b2960a56d7ab0d7812cb3a687ccfdd5
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398440"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423764"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory instancí (Průvodce programováním v C#)
 
@@ -32,7 +32,7 @@ Konstruktory instancí se používají k vytváření a inicializace žádné pr
   
  [!code-csharp[csProgGuideObjects#77](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#77)]  
   
- Pokud třída nemá konstruktor, konstruktor není automaticky vygenerován a výchozí hodnoty se používají k inicializaci pole objektů. Například [int](../../../csharp/language-reference/keywords/int.md) je inicializován na hodnotu 0. Další informace o výchozí hodnoty, najdete v části [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Proto protože `Coords` třída konstruktor inicializuje všechny datové členy na hodnotu nula, je možné odebrat úplně beze změny, jak funguje třídy. V příkladu 1 dále v tomto tématu poskytuje kompletní příklad použití více konstruktorů a příklad o automaticky generovaný konstruktor je k dispozici v příkladu 2.  
+ Pokud třída nemá konstruktor, konstruktor není automaticky vygenerován a výchozí hodnoty se používají k inicializaci pole objektů. Například [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) je inicializován na hodnotu 0. Další informace o výchozí hodnoty, najdete v části [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Proto protože `Coords` třída konstruktor inicializuje všechny datové členy na hodnotu nula, je možné odebrat úplně beze změny, jak funguje třídy. V příkladu 1 dále v tomto tématu poskytuje kompletní příklad použití více konstruktorů a příklad o automaticky generovaný konstruktor je k dispozici v příkladu 2.  
   
  Konstruktory instancí lze také volat konstruktor instance základní třídy. Konstruktor třídy lze vyvolat konstruktor základní třídy pomocí inicializátoru, následujícím způsobem:  
   

@@ -2,12 +2,12 @@
 title: <connectionPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-ms.openlocfilehash: b1ff302a46605cb78fe567a63f66723ed757f147
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e56bb5c9e485559d712281a51e79f54c9661b5a
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704307"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423138"
 ---
 # <a name="connectionpoolsettings"></a>\<connectionPoolSettings>
 Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.  
@@ -24,7 +24,7 @@ Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.
 ```xml  
 <connectionPoolSettings groupName="String"
                         idleTimeout="TimeSpan"
-                        maxOutboundConnectionsPerEndpopint="Integer" />
+                        maxOutboundConnectionsPerEndpoint="Integer" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-ms.openlocfilehash: f05ba1ee4e926f9f4c1b6427ecc60b41b45b06e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c3efe1dbea355e8bc00ef44e08efcc9d0e0bdca
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661448"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424169"
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
 
@@ -21,20 +21,20 @@ V následující tabulce jsou uvedeny předdefinované implicitní převody mezi
   
 |From|Chcete-li|  
 |----------|--------|  
-|[sbyte](sbyte.md)|`short`, `int`, `long`, `float`, `double`, nebo `decimal`|  
-|[byte](byte.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[sbyte](../builtin-types/integral-numeric-types.md)|`short`, `int`, `long`, `float`, `double`, nebo `decimal`|  
+|[byte](../builtin-types/integral-numeric-types.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
 |[char](char.md)|`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[short](short.md)|`int`, `long`, `float`, `double`, nebo `decimal`|  
-|[ushort](ushort.md)|`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[int](int.md)|`long`, `float`, `double`, nebo `decimal`|  
-|[uint](uint.md)|`long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[long](long.md)|`float`, `double`, nebo `decimal`|  
-|[ulong](ulong.md)|`float`, `double`, nebo `decimal`|  
+|[short](../builtin-types/integral-numeric-types.md)|`int`, `long`, `float`, `double`, nebo `decimal`|  
+|[ushort](../builtin-types/integral-numeric-types.md)|`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[int](../builtin-types/integral-numeric-types.md)|`long`, `float`, `double`, nebo `decimal`|  
+|[uint](../builtin-types/integral-numeric-types.md)|`long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[long](../builtin-types/integral-numeric-types.md)|`float`, `double`, nebo `decimal`|  
+|[ulong](../builtin-types/integral-numeric-types.md)|`float`, `double`, nebo `decimal`|  
 |[float](float.md)|`double`|  
   
 ## <a name="remarks"></a>Poznámky  
 
-- Žádné [celočíselného typu](integral-types-table.md) implicitně převést na libovolný [s plovoucí desetinnou čárkou typu](floating-point-types-table.md).
+- Žádné [celočíselného typu](../builtin-types/integral-numeric-types.md) implicitně převést na libovolný [s plovoucí desetinnou čárkou typu](floating-point-types-table.md).
 
 - Přesnost, ale nikoli velikost může být ztraceno v převody z `int`, `uint`, `long`, nebo `ulong` k `float` a z `long` nebo `ulong` k `double`.  
   
@@ -57,7 +57,7 @@ Další informace o implicitních převodů, najdete v článku [implicitních p
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Tabulka celočíselných typů](integral-types-table.md)
+- [Celočíselné typy](../builtin-types/integral-numeric-types.md)
 - [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)

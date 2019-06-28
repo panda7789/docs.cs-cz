@@ -2,12 +2,12 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: 10a2c568f14c3f3c1818fd8b3240279b798777b8
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 1ca0f2ed4c2ab900191165d100848811e5436c3c
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063802"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425410"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící pracovní postup služby může spuštění pro dlouhou dobu. V určitém okamžiku může přejít pracovního postupu nečinnosti čekání na určité další informace. V takovém případě pracovního postupu se ukládají do databáze SQL a bude odebrán z paměti. Jakmile je k dispozici další informace o instanci pracovního postupu je načten do paměti a pokračuje v provádění.  V tomto scénáři při implementaci velmi zjednodušený pořadí systému.  Klient odešle zprávu počáteční spouštění pořadí služby pracovního postupu. Vrátí ID objednávky do klienta. V tomto okamžiku Služba pracovního postupu je čekání na další zprávu od klienta a přejde do stavu nečinnosti a se ukládají do databáze SQL serveru.  Když klient odešle na další zprávu pro objednávky položku, služba pracovního postupu je načten do paměti a ukončí zpracování objednávky. Ve vzorovém kódu vrátí řetězec s informacemi o tom, že položka se přidala pořadí. Vzorový kód neměl být reálné aplikaci technologie, ale spíše jednoduchý příklad, který znázorňuje dlouhodobé služby pracovního postupu. Toto téma předpokládá, že víte, jak vytvořit řešení a projekty Visual Studio 2012.
@@ -105,7 +105,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 
     2. Vyberte **Receive** aktivity a nastavte vlastnosti zobrazené na následujícím obrázku:
 
-         ![Nastavit vlastnosti aktivita Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "nastavit vlastnosti aktivity Receive.")
+         ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "nastavit vlastnosti aktivity Receive.")
          
          > [!NOTE]
          >  Nezapomeňte změnit **ServiceContractName** pole `../IAddItem`.

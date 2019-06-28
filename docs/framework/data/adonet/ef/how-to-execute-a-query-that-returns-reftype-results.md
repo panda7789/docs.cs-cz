@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7dbbfbcd-93f5-4546-9dbf-e5fa290b69fa
-ms.openlocfilehash: f3f1e11d3211140abb02733de4b5b46ac93cf769
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6924cac18775737cee73a0505a9635123c11e77d
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607940"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422683"
 ---
 # <a name="how-to-execute-a-query-that-returns-reftype-results"></a>Postupy: Provedení dotazu, který vrátí výsledky typu RefType
 Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand> objekt a jak načíst <xref:System.Data.Metadata.Edm.RefType> výsledky s použitím <xref:System.Data.EntityClient.EntityDataReader>.  
@@ -25,7 +25,7 @@ Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xr
      [!code-vb[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#namespaces)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad spustí dotaz, který vrátí <xref:System.Data.Metadata.Edm.RefType> výsledky. Pokud je předat jako argument pro následující dotaz `ExectueRefTypeQuery` funkce, funkce vrátí odkaz na entitu:  
+ Tento příklad spustí dotaz, který vrátí <xref:System.Data.Metadata.Edm.RefType> výsledky. Pokud je předat jako argument pro následující dotaz `ExecuteRefTypeQuery` funkce, funkce vrátí odkaz na entitu:  
   
  [!code-csharp[DP EntityServices Concepts 2#REF2](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#ref2)]  
   

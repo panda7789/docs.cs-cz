@@ -2,12 +2,12 @@
 title: CustomChannelsTester
 ms.date: 03/30/2017
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-ms.openlocfilehash: dbd10d1bd08529d11e86c3d9296e68264564a21d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1517a2eb73da778c9b84ff857f4b8ad2b4334498
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650150"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425009"
 ---
 # <a name="customchannelstester"></a>CustomChannelsTester
 `CustomChannelsTester` Je nástroj, který můžete použít k otestování implementace vaší vlastní kanál s pomocí sady předdefinovaných servisní smlouvy. Můžete vybrat sadu kontrakty služeb a předat nástroji pomocí souboru XML. Nástroj poté vygeneruje službu a klienta, která zpracovává vaše implementace vlastního kanálu při výměně zpráv.  
@@ -55,7 +55,7 @@ ms.locfileid: "64650150"
         <ServerName>ReplaceThisWithTheServerMachineName</ServerName>  
     <!-- Port Number - Optional-->  
         <Port>8000</Port>  
-    <!--URI for the callBack address for the CLient. The client will receive the messages from the server on this address in case of a CallBack Contract-->  
+    <!--URI for the callBack address for the client. The client will receive the messages from the server on this address in case of a CallBack Contract-->  
         <ClientCallBackAddress/>      
     <!-- Duration (in sec) after the server has started, it times out - optional(default = 300sec) -->  
         <ServerTimeout>300</ServerTimeout>  

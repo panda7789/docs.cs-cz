@@ -29,16 +29,16 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 1f98435aba6994aaca76127cc20b5ffa29df455f
-ms.sourcegitcommit: d9c4808739c8c606957dd0964d952b98ea7b6533
+ms.openlocfilehash: 8068ec09f0c7d05d6d711e4e7a607b6183727b41
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67349775"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424001"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Bitový operátor a operátory posunutí (C# odkaz)
 
-Následující operátory provádějí operace bitový nebo shift operací s operandy [celočíselných typů](../keywords/integral-types-table.md):
+Následující operátory provádějí operace bitový nebo shift operací s operandy [celočíselných typů](../builtin-types/integral-numeric-types.md):
 
 - Unární [ `~` (bitový doplněk)](#bitwise-complement-operator-) – operátor
 - Binární [ `<<` (levý shift)](#left-shift-operator-) a [ `>>` (posunutí doprava)](#right-shift-operator-) operátory posunutí
@@ -82,11 +82,11 @@ Operace pravého posunutí zahodí bity nižšího řádu jako v následujícím
 
 Nejvyšším prázdný bitové pozice jsou nastavena na základě typu levý operand následujícím způsobem:
 
-- Pokud levý operand je typu [int](../keywords/int.md) nebo [dlouhé](../keywords/long.md), operátor pravého posunutí provádí *aritmetické* shift: hodnota nejvýznamnější bit (bit znaménka) Levý operand je postoupena do nejvyšším prázdný bitové pozice. To znamená, implikovaný prázdný bitové pozice jsou nastaveny na nulu pokud levý operand je nastaven na nezáporné a nastavit na jednu, pokud je záporné.
+- Pokud levý operand je typu [int](../builtin-types/integral-numeric-types.md) nebo [dlouhé](../builtin-types/integral-numeric-types.md), operátor pravého posunutí provádí *aritmetické* shift: hodnota nejvýznamnější bit (bit znaménka) Levý operand je postoupena do nejvyšším prázdný bitové pozice. To znamená, implikovaný prázdný bitové pozice jsou nastaveny na nulu pokud levý operand je nastaven na nezáporné a nastavit na jednu, pokud je záporné.
 
   [!code-csharp-interactive[arithmetic right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
 
-- Pokud levý operand je typu [uint](../keywords/uint.md) nebo [ulong](../keywords/ulong.md), operátor pravého posunutí provádí *logické* shift: nejvyšším prázdný bitové pozice jsou vždy nastaveny na hodnotu nula.
+- Pokud levý operand je typu [uint](../builtin-types/integral-numeric-types.md) nebo [ulong](../builtin-types/integral-numeric-types.md), operátor pravého posunutí provádí *logické* shift: nejvyšším prázdný bitové pozice jsou vždy nastaveny na hodnotu nula.
 
   [!code-csharp-interactive[logical right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LogicalRightShift)]
 
@@ -158,13 +158,13 @@ Pro úplný seznam C# operátory seřazené podle úrovně priority, naleznete v
 
 ## <a name="shift-count-of-the-shift-operators"></a>Počet posunů operátorů posunutí
 
-Pro operátory posunutí `<<` a `>>`, musí být typu zpracovával pravý operand [int](../keywords/int.md) nebo typ, který má [předdefinované implicitní převod čísla](../keywords/implicit-numeric-conversions-table.md) k `int`.
+Pro operátory posunutí `<<` a `>>`, musí být typu zpracovával pravý operand [int](../builtin-types/integral-numeric-types.md) nebo typ, který má [předdefinované implicitní převod čísla](../keywords/implicit-numeric-conversions-table.md) k `int`.
 
 Pro `x << count` a `x >> count` výrazy, počet skutečné posunutí závisí na typu `x` následujícím způsobem:
 
-- Pokud typ `x` je [int](../keywords/int.md) nebo [uint](../keywords/uint.md), počet posunů je definován nižšího řádu *pět* bits operand pravé strany. To znamená, že počet posunů je vypočítán z `count & 0x1F` (nebo `count & 0b_1_1111`).
+- Pokud typ `x` je [int](../builtin-types/integral-numeric-types.md) nebo [uint](../builtin-types/integral-numeric-types.md), počet posunů je definován nižšího řádu *pět* bits operand pravé strany. To znamená, že počet posunů je vypočítán z `count & 0x1F` (nebo `count & 0b_1_1111`).
 
-- Pokud typ `x` je [dlouhé](../keywords/long.md) nebo [ulong](../keywords/ulong.md), počet posunů je definován nižšího řádu *šest* bits operand pravé strany. To znamená, že počet posunů je vypočítán z `count & 0x3F` (nebo `count & 0b_11_1111`).
+- Pokud typ `x` je [dlouhé](../builtin-types/integral-numeric-types.md) nebo [ulong](../builtin-types/integral-numeric-types.md), počet posunů je definován nižšího řádu *šest* bits operand pravé strany. To znamená, že počet posunů je vypočítán z `count & 0x3F` (nebo `count & 0b_11_1111`).
 
 Následující příklad ukazuje toto chování:
 

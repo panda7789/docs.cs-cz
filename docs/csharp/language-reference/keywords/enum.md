@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 768d8da320022a686f2ecfe5222880eccacee7dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6af1f7f23447f9f1379ac6d223e198a4a2ea5645
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661799"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424243"
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 
@@ -35,13 +35,12 @@ enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 
 V tomto výčtu řadu prvků, musí spustit z `1` místo `0`. Nicméně se doporučuje včetně konstantu, která má hodnotu 0. Další informace najdete v tématu [výčtové typy](../../programming-guide/enumeration-types.md).
 
-Každý typ výčtu se základní typ, který může být libovolný integrální typ kromě [char](char.md). Výchozí základní typ výčtu prvků je [int](int.md). Chcete-li deklarovat výčet jiného celočíselného typu, například [bajtů](byte.md), použijte dvojtečku za identifikátorem a potom podle typu, jak je znázorněno v následujícím příkladu.
+Každý typ výčtu se základní typ, který může být kterýkoli [integrální číselný typ](../builtin-types/integral-numeric-types.md). [Char](char.md) typ nemůže být nadřízený typ výčtu. Výchozí základní typ výčtu prvků je [int](../builtin-types/integral-numeric-types.md). Chcete-li deklarovat výčet jiného celočíselného typu, například [bajtů](../builtin-types/integral-numeric-types.md), použijte dvojtečku za identifikátorem a potom podle typu, jak je znázorněno v následujícím příkladu.
 
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 ```
 
-Seznam schválených typy výčtu [byte](byte.md), [sbyte](sbyte.md), [short](short.md), [ushort](ushort.md), [int](int.md), [uint](uint.md), [long](long.md), nebo [ulong](ulong.md).
 
 Proměnná typu výčtu lze přiřadit jakoukoli hodnotu v rozsahu podkladový typ; hodnoty nejsou omezené na pojmenované konstanty.
 
@@ -50,7 +49,7 @@ Výchozí hodnota `enum E` je hodnotu vytvořenou testovaným výraz `(E)0`.
 > [!NOTE]
 > Enumerátor nemůže obsahovat prázdné znaky v názvu.
 
-Základní typ Určuje, kolik úložiště je alokováno pro každý čítač. Explicitní přetypování je však potřeba převést z `enum` typ celočíselného typu. Například následující příkaz přiřadí enumerátor `Sun` na proměnnou typu [int](int.md) pomocí přetypování pro převod z `enum` k `int`.
+Základní typ Určuje, kolik úložiště je alokováno pro každý čítač. Explicitní přetypování je však potřeba převést z `enum` typ celočíselného typu. Například následující příkaz přiřadí enumerátor `Sun` na proměnnou typu [int](../builtin-types/integral-numeric-types.md) pomocí přetypování pro převod z `enum` k `int`.
 
 ```csharp
 int x = (int)Day.Sun;
@@ -101,7 +100,7 @@ Pokud odeberete `Flags`, v příkladu se zobrazí následující hodnoty:
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Výčtové typy](../../programming-guide/enumeration-types.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Tabulka celočíselných typů](integral-types-table.md)
+- [Celočíselné typy](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)
 - [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)

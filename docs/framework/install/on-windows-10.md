@@ -5,12 +5,12 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 69c647e57dead3b4f61bb45202c6b039099f0499
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 13ccdafc00f7a43d456126e3ec3afc1ae5897564
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052177"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422670"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace rozhraní .NET Framework v systému Windows 10 a Windows Server 2016 nebo novější
 
@@ -22,7 +22,7 @@ Vám může objevit na této stránce po pokusu o spuštění aplikace a zobrazu
 
 ## <a name="net-framework-48"></a>.NET Framework 4.8
 
-4.8 rozhraní .NET Framework je součástí:
+4\.8 rozhraní .NET Framework je součástí:
 
 * [Windows 10. května 2019 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
@@ -34,7 +34,7 @@ Vám může objevit na této stránce po pokusu o spuštění aplikace a zobrazu
 Můžete nainstalovat [rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) na:
 
 * Windows 10. října 2018 Update (verze 1809)
-* Windows 10. dubna 2018 Updae (verze 1803)
+* Windows 10. dubna 2018 Update (verze 1803)
 * Windows 10 Fall Creators Update (verze 1709)
 * Windows 10 Creators Update (verze 1703)
 * Windows 10 Anniversary Update (verze 1607)
@@ -43,7 +43,7 @@ Můžete nainstalovat [rozhraní .NET Framework 4.8](https://dotnet.microsoft.co
 * Windows Server, version 1803
 * Windows Server 2016
 
-4.8 rozhraní .NET Framework není podporovaná:
+4\.8 rozhraní .NET Framework není podporovaná:
 
 * Windows 10 1507
 * Windows 10 1511

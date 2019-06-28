@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 261c3fa2cc2f94e2a3f76a8a41982c21183e973a
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 60907eb1bbfeb1daa9d9a74733387c4771accb45
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401367"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423978"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logická logické operátory (C# odkaz)
 
@@ -47,7 +47,7 @@ Následující operátory provádí logické operace s [bool](../keywords/bool.m
 - Binární [ `&` (logický operátor a)](#logical-and-operator-), [ `|` (logický operátor nebo)](#logical-or-operator-), a [ `^` (logické XOR)](#logical-exclusive-or-operator-) operátory. Tyto operátory jsou vždy vyhodnoceny oba operandy.
 - Binární [ `&&` (logický operátor podmíněného AND)](#conditional-logical-and-operator-) a [ `||` (logický operátor podmíněného OR)](#conditional-logical-or-operator-) operátory. Tyto operátory vyhodnotit operand pravé strany pouze v případě potřeby.
 
-Pro operandy [integrální](../keywords/integral-types-table.md) typy, `&`, `|`, a `^` operátory provádějí operace bitový logický. Další informace najdete v tématu [operátory bitové a shift](bitwise-and-shift-operators.md).
+Pro operandy [integrální](../builtin-types/integral-numeric-types.md) typy, `&`, `|`, a `^` operátory provádějí operace bitový logický. Další informace najdete v tématu [operátory bitové a shift](bitwise-and-shift-operators.md).
 
 ## <a name="logical-negation-operator-"></a>Logický operátor negace!
 

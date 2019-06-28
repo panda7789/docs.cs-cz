@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 82cecb42ebe9353073cca9fd2de7d8dc9f368b10
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 19d9752e1c7cfbc0a7c85e7cf8053c09c5baca7a
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348502"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425582"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v usnadnění přístupu v rozhraní .NET Framework
 
@@ -55,7 +55,7 @@ Vaše aplikace využívat vylepšení přístupnosti v rozhraní .NET Framework 
 ```xml
 <runtime>
     <!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true|false;key2=true|false  -->
-    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3" />
+    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false" />
 </runtime>
 ```
 

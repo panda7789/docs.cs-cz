@@ -2,12 +2,12 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 12981e970706c5fc1d954c237309f12c85320c75
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ae4bf22f452035d10ecba6bcf93bf580ab7f5f8
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617374"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422162"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenos ve službě WCF, pomocí architektura kanálů a osvědčených postupů WCF. Postup vytvoření vlastní přenosu jsou následující:  
@@ -446,7 +446,7 @@ Press <ENTER> to terminate the service and exit...
  Znovu vygenerovat kód klienta a konfigurace pomocí Svcutil.exe, spusťte aplikaci služby a pak spusťte následující Svcutil.exe z kořenového adresáře vzorku.  
   
 ```console
-svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
+svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
 ```  
   
  Všimněte si, že Svcutil.exe negeneruje pro konfiguraci rozšíření vazby `SampleProfileUdpBinding`, takže je třeba přidat ji ručně.  

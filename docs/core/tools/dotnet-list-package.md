@@ -1,15 +1,15 @@
 ---
 title: příkaz DotNet seznamu balíčků
 description: Příkaz "balíčku dotnet seznamu" poskytuje vhodnou možnost zobrazíte odkazy na balíčky pro projekt nebo řešení.
-ms.date: 04/09/2019
-ms.openlocfilehash: 88ef3302a955eadc4167384312e4eb721dd496fb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 98cc456fff02364310cec98f0282700f7697f07e
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631767"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67421957"
 ---
-# <a name="dotnet-list-package"></a>DotNet seznamu balíčků
+# <a name="dotnet-list-package"></a>dotnet list package
 
 [!INCLUDE [topic-appliesto-net-core-22plus](../../../includes/topic-appliesto-net-core-22plus.md)]
 
@@ -20,8 +20,8 @@ ms.locfileid: "65631767"
 ## <a name="synopsis"></a>Souhrn
 
 ```
-dotnet list [<PROJECT | SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
-   [--include-prerelease] [--include-transitive] [--outdated] [--source]
+dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
+   [--include-prerelease] [--include-transitive] [--interactive] [--outdated] [--source]
 dotnet list package [-h|--help]
 ```
 
@@ -104,6 +104,10 @@ Soubor projektu nebo řešení se má operace provést. Pokud není zadán, př�
 * **`--include-transitive`**
 
   Zobrazí seznam tranzitivní balíčků, kromě nejvyšší úrovně balíčky. Při zadání této možnosti, získání seznamu balíčků, které závisí nejvyšší úrovni balíčky.
+
+* **`--interactive`**
+
+  Povoluje příkazu zastavit a počkat na vstup uživatele nebo akce. Například k dokončení ověřování. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
 
 * **`--outdated`**
 

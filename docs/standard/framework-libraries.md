@@ -1,19 +1,19 @@
 ---
-title: Knihovny rozhraní
+title: Knihovny architektury
 description: Zjistěte, jak knihoven poskytuje implementaci pro mnoho konkrétní aplikace a obecné typy, algoritmy a funkce nástroj.
 author: richlander
 ms.author: ronpet
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: 3e4fed8ddde007eb9ce233eea942d6c052f0f2c4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1e825efcb2a352c823391fb0dad3d566189da001
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615178"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425541"
 ---
-# <a name="framework-libraries"></a>Knihovny rozhraní
+# <a name="framework-libraries"></a>Knihovny architektury
 
 .NET má obsáhlém standardní sadu knihoven tříd, označované jako knihovny základních tříd (základní nastavení) nebo knihovny tříd rozhraní framework (úplná sada). Tyto knihovny poskytují implementace pro mnoho konkrétní aplikace a obecné typy, algoritmy a funkce nástroje. Knihovny pro komerční i komunitní postaveny knihovny tříd rozhraní, poskytuje snadno použitelný předem připravená knihovny pro celou sadu výpočetních úloh.
 
@@ -28,11 +28,11 @@ BCL poskytuje nejvíce základní typy a funkce nástroje a jsou základní vše
 .NET obsahuje sadu primitivní typy, které se používají (na různých úrovních) ve všech aplikacích. Tyto typy obsahovat data, jako jsou čísla, řetězce, bajtů a libovolné objekty. C# Jazyk obsahuje klíčová slova pro tyto typy. Sadu ukázkových těchto typů je uvedený níže, s odpovídající C# klíčová slova.
 
 * <xref:System.Object?displayProperty=nameWithType> ([objekt](../csharp/language-reference/keywords/object.md)) – systém typů ultimate základní třídy v CLR. Je kořenem hierarchie typu.
-* <xref:System.Int16?displayProperty=nameWithType> ([krátký](../csharp/language-reference/keywords/short.md)) – typ celé číslo se znaménkem A 16 bitů. Bez znaménka <xref:System.UInt16> také existuje.
-* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md)) – typ celé číslo se znaménkem A 32-bit. Bez znaménka [UInt32](../csharp/language-reference/keywords/uint.md) také existuje.
+* <xref:System.Int16?displayProperty=nameWithType> ([krátký](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – typ celé číslo se znaménkem A 16 bitů. Bez znaménka <xref:System.UInt16> také existuje.
+* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – typ celé číslo se znaménkem A 32-bit. Bez znaménka [UInt32](../csharp/language-reference/builtin-types/integral-numeric-types.md) také existuje.
 * <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)) – typ s plovoucí desetinnou čárkou A 32-bit.
 * <xref:System.Decimal?displayProperty=nameWithType> ([desítkové](../csharp/language-reference/keywords/decimal.md)) – typ desetinné čárky A 128 bitů.
-* <xref:System.Byte?displayProperty=nameWithType> ([bajtů](../csharp/language-reference/keywords/byte.md))-8bitové celé číslo bez znaménka představující bajt paměti.
+* <xref:System.Byte?displayProperty=nameWithType> ([bajtů](../csharp/language-reference/builtin-types/integral-numeric-types.md))-8bitové celé číslo bez znaménka představující bajt paměti.
 * <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md))-logický typ, který představuje `true` nebo `false`.
 * <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md))-číselného typu A 16-bit, který představuje znak Unicode.
 * <xref:System.String?displayProperty=nameWithType> ([řetězec](../csharp/language-reference/keywords/string.md)) – představuje posloupnost znaků. Jiné než `char[]`, ale umožňuje indexování do jednotlivých `char` v `string`.

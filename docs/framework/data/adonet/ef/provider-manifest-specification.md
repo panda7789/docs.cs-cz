@@ -2,12 +2,12 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 0f3eaa73a26c3f8519e1c168ab2e2968ed4ab28d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9ae528105119241e05be5182db418312c4120112
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641167"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422722"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
@@ -83,9 +83,9 @@ Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporuj�
  Manifest zprostředkovatele je načten zavaděč Store Metadata (StoreItemCollection), s použitím dat uložit připojení nebo token manifestu zprostředkovatele.  
   
 #### <a name="using-a-data-store-connection"></a>Data Store připojení  
- Při ukládání dat je k dispozici připojení, volejte DbProvderServices.GetProviderManifestToken vrátí token, který se předá metodě GetProviderManifest, které vrací DbProviderManifest. Tato metoda deleguje se do poskytovatele provádění GetDbProviderManifestToken.  
+ Po připojení úložiště dat je k dispozici, volání <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> vrátit token, který je předán <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A> metodu, která vrací <xref:System.Data.Common.DbProviderManifest>. Tato metoda deleguje prováděním poskytovatele `GetDbProviderManifestToken`.  
   
-```  
+```csharp
 public string GetProviderManifestToken(DbConnection connection);  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
 ```  
@@ -273,7 +273,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Name|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
-|Type|String|Ano|není k dispozici|Typ EDM parametru.|  
+|type|String|Ano|není k dispozici|Typ EDM parametru.|  
 |Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -v<br />-out<br />– vstup|  
   
 ##### <a name="namespace-attribute"></a>Atribut Namespace  

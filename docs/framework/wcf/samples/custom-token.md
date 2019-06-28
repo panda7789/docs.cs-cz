@@ -2,12 +2,12 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 862b4b26295ef3e90064b27ecd753e9b541471a7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 11b89f6d4f2800f079ba6576801b39c85324f6e0
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650218"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425072"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -251,7 +251,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 
  V této ukázce používáme zprostředkovatele tokenu pouze na klienta a ověřovací data tokenu pouze na služby, protože chceme, aby přenášet platební karty token pouze ve směru klient služba.
 
- Funkce na straně klienta se nachází v `CreditCardClientCrendentials`, `CreditCardClientCredentialsSecurityTokenManager` a `CreditCardTokenProvider` třídy.
+ Funkce na straně klienta se nachází v `CreditCardClientCredentials`, `CreditCardClientCredentialsSecurityTokenManager` a `CreditCardTokenProvider` třídy.
 
  Ve službě, se funkce nachází v `CreditCardServiceCredentials`, `CreditCardServiceCredentialsSecurityTokenManager`, `CreditCardTokenAuthenticator` a `CreditCardTokenAuthorizationPolicy` třídy.
 

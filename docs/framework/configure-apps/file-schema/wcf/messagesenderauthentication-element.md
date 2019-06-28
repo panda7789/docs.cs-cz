@@ -2,12 +2,12 @@
 title: <messageSenderAuthentication> – element
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
-ms.openlocfilehash: 410fffd541926b9a2e75c04d26a2a1e08a262939
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 804c280bcdb0fecc87f71121b7d95b5fd0268de9
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764085"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423126"
 ---
 # <a name="messagesenderauthentication-element"></a>\<messageSenderAuthentication > – element
 Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.  
@@ -38,10 +38,10 @@ Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|customCertificateValidatorType|Typ a sestavení používané pro ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastavena na `Custom`.|  
-|certifcateValidationMode|Určuje jeden ze tří režimů používaných pro ověření pověření. Pokud hodnotu `Custom`, o `customCertificateValidator` musí být rovněž dodán.|  
-|revocationMode|Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (CRL).|  
-|trustedStoreLocation|Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště.|  
+|`customCertificateValidatorType`|Typ a sestavení používané pro ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastavena na `Custom`.|  
+|`certificateValidationMode`|Určuje jeden ze tří režimů používaných pro ověření pověření. Pokud hodnotu `Custom`, o `customCertificateValidator` musí být rovněž dodán.|  
+|`revocationMode`|Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (CRL).|  
+|`trustedStoreLocation`|Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště.|  
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType Attribute  
   
@@ -51,7 +51,7 @@ Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Výčet|Volitelné. Jeden z následujících hodnot: `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust`, `Custom`. Výchozí hodnota je `ChainTrust`. Výchozí hodnota je `ChainTrust`.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
@@ -63,7 +63,7 @@ Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`. Výchozí hodnota je `CurrentUser`.|  
   

@@ -2,12 +2,12 @@
 title: Změna úrovní sdílení mezipaměti pro aktivity odesílání
 ms.date: 03/30/2017
 ms.assetid: 03926a64-753d-460e-ac06-2a4ff8e1bbf5
-ms.openlocfilehash: 1561d053dc04bbea18f4d6cb43399c2c625d5da1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 079eb037f074155aec3ad5473480bbf5d4d341b2
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614854"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425159"
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Změna úrovní sdílení mezipaměti pro aktivity odesílání
 <xref:System.ServiceModel.Activities.SendMessageChannelCache> Rozšíření umožňuje do mezipaměti sdílení úrovně, nastavení mezipaměti kanálu objekt pro vytváření, přizpůsobení a nastavení kanálu do mezipaměti pro pracovní postupy, které odesílání zpráv do koncových bodů služby pomocí <xref:System.ServiceModel.Activities.Send> zasílání zpráv aktivity. Tyto pracovní postupy jsou obvykle pracovní postupy klienta, ale mohou být také služby pracovního postupu, které jsou hostovány v <xref:System.ServiceModel.WorkflowServiceHost>. Obsahuje objekt pro vytváření mezipaměti kanálu mezipaměti <xref:System.ServiceModel.ChannelFactory%601> objekty. Kanál mezipaměti obsahuje uložený v mezipaměti kanály.  
@@ -150,7 +150,7 @@ SendMessageChannelCache customChannelCacheExtension =
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- V služby hostované pracovního postupu můžete určit nastavení objekt pro vytváření mezipaměti a kanál mezipaměti v konfiguračním souboru aplikace. Chcete-li to provést, přidejte chování služby, který obsahuje nastavení mezipaměti pro objekt pro vytváření a kanál mezipaměti a ke službě Toto chování služby. Následující příklad ukazuje obsah, který obsahuje konfigurační soubor `MyChannelCacheBehavior` služeb chování s nastavením vlastní objekt pro vytváření mezipaměti a kanál mezipaměti. Toto chování služby se přidá do této služby prostřednictvím `behaviorConfiguarion` atribut.  
+ V služby hostované pracovního postupu můžete určit nastavení objekt pro vytváření mezipaměti a kanál mezipaměti v konfiguračním souboru aplikace. Chcete-li to provést, přidejte chování služby, který obsahuje nastavení mezipaměti pro objekt pro vytváření a kanál mezipaměti a ke službě Toto chování služby. Následující příklad ukazuje obsah, který obsahuje konfigurační soubor `MyChannelCacheBehavior` služeb chování s nastavením vlastní objekt pro vytváření mezipaměti a kanál mezipaměti. Toto chování služby se přidá do této služby prostřednictvím `behaviorConfiguration` atribut.  
   
 ```xml  
 <configuration>    

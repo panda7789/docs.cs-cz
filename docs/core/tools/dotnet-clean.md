@@ -1,15 +1,15 @@
 ---
 title: čištění příkaz DotNet
 description: Příkaz dotnet clean odstraní aktuální adresář.
-ms.date: 04/14/2019
-ms.openlocfilehash: fa19f1b041e4031082f928135395a5f06ce702e9
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 36630c046ff8f1ad8d513b4e64cfb74a8625776b
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631822"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422022"
 ---
-# <a name="dotnet-clean"></a>DotNet čisté
+# <a name="dotnet-clean"></a>dotnet clean
 
 **Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
 
@@ -24,7 +24,8 @@ ms.locfileid: "65631822"
 ## <a name="synopsis"></a>Souhrn
 
 ```
-dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] [-o|--output] [-r|--runtime] [-v|--verbosity]
+dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] 
+    [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
 
@@ -55,6 +56,10 @@ Nástroj MSBuild projekt nebo řešení pro čištění. Pokud není zadán soub
 * **`--interactive`**
 
   Povoluje příkazu zastavit a počkat na vstup uživatele nebo akce. Například k dokončení ověřování. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+
+* **`--nologo`**
+
+  Nezobrazí úvodní nápis a zprávu o autorských právech. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 

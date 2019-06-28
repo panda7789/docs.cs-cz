@@ -3,12 +3,12 @@ title: <factorySettings>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 202aad17-1b8b-4c87-ad57-4ca5de18ed35
-ms.openlocfilehash: d8e87799962638ac6514ebb31bbc9e209b39c98d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ee874d4f92ee398dc9752d3c1d1f22610b17097
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790166"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422914"
 ---
 # <a name="factorysettings"></a>\<factorySettings >
 Určuje nastavení mezipaměti objekt pro vytváření kanálu.  
@@ -64,7 +64,7 @@ Určuje nastavení mezipaměti objekt pro vytváření kanálu.
  Další informace o tom, jak změnit výchozí mezipaměti sdílení úrovně a nastavení mezipaměti pro objekt pro vytváření kanálů a mezipaměti kanálu najdete v tématu [změna úrovní sdílení mezipaměti pro aktivity odesílání](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).  
   
 ## <a name="example"></a>Příklad  
- V služby hostované pracovního postupu můžete určit nastavení objekt pro vytváření mezipaměti a kanál mezipaměti v konfiguračním souboru aplikace. Chcete-li to provést, přidejte chování služby, který obsahuje nastavení mezipaměti pro objekt pro vytváření a kanál mezipaměti a ke službě Toto chování služby. Následující příklad ukazuje obsah, který obsahuje konfigurační soubor **MyChannelCacheBehavior** služeb chování s nastavením vlastní objekt pro vytváření mezipaměti a kanál mezipaměti. Toto chování služby se přidá do této služby prostřednictvím **behaviorConfiguarion** atribut.  
+ V služby hostované pracovního postupu můžete určit nastavení objekt pro vytváření mezipaměti a kanál mezipaměti v konfiguračním souboru aplikace. Chcete-li to provést, přidejte chování služby, který obsahuje nastavení mezipaměti pro objekt pro vytváření a kanál mezipaměti a ke službě Toto chování služby. Následující příklad ukazuje obsah, který obsahuje konfigurační soubor `MyChannelCacheBehavior` služeb chování s nastavením vlastní objekt pro vytváření mezipaměti a kanál mezipaměti. Toto chování služby se přidá do této služby prostřednictvím `behaviorConfiguration` atribut.  
   
 ```xml  
 <configuration>    

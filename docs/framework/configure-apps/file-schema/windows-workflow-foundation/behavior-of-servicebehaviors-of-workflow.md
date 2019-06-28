@@ -3,12 +3,12 @@ title: <behavior> z <serviceBehaviors> pracovního postupu
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
-ms.openlocfilehash: 09bd54f4a7d56dc1215b1acd36ff131ba4cba12c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 99f98cba96ed924069ee14e1459e073ca88cd2b0
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790309"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422973"
 ---
 # <a name="behavior-of-servicebehaviors-of-workflow"></a>\<chování > z \<serviceBehaviors > pracovního postupu
 **Chování** element obsahuje nastavení pro chování služby kolekce. Každý chování je indexované podle jeho **název**. Služeb můžete propojit s každou chování prostřednictvím pomocí tento název **behaviorConfiguration** atribut [ \<koncový bod >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) elementu. To umožňuje koncové body sdílení obvyklé chování konfigurace bez předefinování nastavení.  
@@ -36,7 +36,7 @@ ms.locfileid: "61790309"
                            maxItemsInCache="Integer" />
         </sendMessageChannelCache>
         <sqlWorkflowInstanceStore connectionStringName="String" 
-                                  honstLockRenewalPeriod="TimeSpan" 
+                                  hostLockRenewalPeriod="TimeSpan" 
                                   instanceCompletionAction="DeleteNothing/DeleteAll" 
                                   instanceEncodingAction="None/GZip" 
                                   instanceLockedExceptionAction="NoRetry/BasicRetry/AggressiveRetry" 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 960394bd61f9e9163fe93c4324bf708d50ec3e08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5257d1d677246cdd6d826cd71ed3ffe116d2a4a6
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660603"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424128"
 ---
 # <a name="switch-c-reference"></a>Přepnout (referenční dokumentace jazyka C#)
 
@@ -46,7 +46,7 @@ V C# 6 a starší, výrazu shody musí být výraz, který vrací hodnotu z těc
 - [char](char.md).
 - [řetězec](string.md).
 - [bool](bool.md).
-- integrální hodnotu, například [int](int.md) nebo [dlouhé](long.md).
+- integrální hodnotu, například [int](../builtin-types/integral-numeric-types.md) nebo [dlouhé](../builtin-types/integral-numeric-types.md).
 - [výčtu](enum.md) hodnotu.
 
 Od verze C# 7.0, výrazu shody může být libovolný výraz jinou hodnotu než null.
@@ -121,7 +121,7 @@ Konstantní vzorek testuje, jestli výrazu shody rovná zadané – konstanta. S
 kde *konstantní* je hodnota pro testování. *konstantní* může být následující konstantní výrazy:
 
 - A [bool](bool.md) literálu, buď `true` nebo `false`.
-- Všech integrálového konstantní, například [int](int.md), [dlouhé](long.md), nebo [bajtů](byte.md).
+- Všech integrálového konstantní, například [int](../builtin-types/integral-numeric-types.md), [dlouhé](../builtin-types/integral-numeric-types.md), nebo [bajtů](../builtin-types/integral-numeric-types.md).
 - Název deklarovanou `const` proměnné.
 - Konstanta výčtu.
 - A [char](char.md) literálu.

@@ -1,7 +1,7 @@
 ---
 title: Operátory rovnosti - C# odkaz
-description: Další informace o C# operátory porovnání rovnosti.
-ms.date: 03/28/2019
+description: Další informace o C# operátory porovnání rovnosti a C# zadejte rovnosti.
+ms.date: 06/26/2019
 author: pkulikov
 f1_keywords:
 - ==_CSharpKeyword
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: f60d62d1823a8bd06b0417638719a81e95d7438b
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 72e790dc008857a48602c92c9236588c531b64f9
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267698"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423930"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnosti (C# odkaz)
 
@@ -60,6 +60,18 @@ Dvě jiných než `string` operandy typu odkaz jsou stejné, až si do stejného
 [!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
 
 Jak ukazuje příklad, uživatelem definované referenční typy podporu `==` operátor ve výchozím nastavení. Však můžete přetížit typ definovaný uživatelem odkazu `==` operátor. Pokud typ odkazu přetížení `==` operátoru, použijte <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> metodu ke kontrole, pokud dva odkazy tohoto typu odkazují na stejný objekt.
+
+## <a name="delegate-equality"></a>Delegát rovnosti
+
+Dvě [delegovat](../../programming-guide/delegates/index.md) operandy stejného typu modulu runtime jsou stejné, pokud jsou obě z nich `null` nebo jejich vyvolání seznamy se stejnou délkou a mají stejné položky v každé pozici:
+
+[!code-csharp-interactive[delegate equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#DelegateEquality)]
+
+Další informace najdete v tématu [delegovat operátory rovnosti](~/_csharplang/spec/expressions.md#delegate-equality-operators) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+
+Delegáty, které jsou vytvářeny ze zkušební verze sémanticky identických [výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nejsou stejné, jako v následujícím příkladu:
+
+[!code-csharp-interactive[from identical lambdas](~/samples/csharp/language-reference/operators/EqualityOperators.cs#IdenticalLambdas)]
 
 ## <a name="inequality-operator-"></a>Operátor nerovnosti! =
 

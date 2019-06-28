@@ -2,12 +2,12 @@
 title: Element <peerAuthentication>
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-ms.openlocfilehash: 1e99f6d117604f9ba2672972a4b09e7fe9f96792
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6aa11c50ef950a8a9d902a0fb77fdf301d18f7cb
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783370"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423046"
 ---
 # <a name="peerauthentication-element"></a>\<peerAuthentication > – Element
 Určuje možnosti ověřování klientů peer-to-peer.  
@@ -39,7 +39,7 @@ Určuje možnosti ověřování klientů peer-to-peer.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`customCertificateValidatorType`|Volitelný řetězec. Typ a sestavení používané pro ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastavena na `Custom`.|  
-|`certifcateValidationMode`|Volitelný výčet. Určuje jeden ze tří režimů používaných pro ověření pověření. Pokud hodnotu `Custom`, o `customCertificateValidator` musí být rovněž dodán. Výchozí hodnota je `ChainTrust`.|  
+|`certificateValidationMode`|Volitelný výčet. Určuje jeden ze tří režimů používaných pro ověření pověření. Pokud hodnotu `Custom`, o `customCertificateValidator` musí být rovněž dodán. Výchozí hodnota je `ChainTrust`.|  
 |`revocationMode`|Volitelný výčet. Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (CRL). Výchozí hodnota je `Online`.|  
 |`trustedStoreLocation`|Volitelný výčet. Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště. Výchozí hodnota je `CurrentUser`.|  
   
@@ -63,7 +63,7 @@ Určuje možnosti ověřování klientů peer-to-peer.
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`.|  
   

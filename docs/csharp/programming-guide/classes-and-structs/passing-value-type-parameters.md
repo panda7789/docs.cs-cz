@@ -6,12 +6,12 @@ helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-ms.openlocfilehash: 0c9d8c33715b4baf11bfac05cd4881d1475f8844
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ba693948bce91fa80f0c6cd73f2d5fc537e5f900
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703514"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423739"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Předávání parametrů typu hodnoty (Průvodce programováním v C#)
 A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) proměnná obsahuje jeho data přímo jako nikoli [typu odkazu](../../../csharp/language-reference/keywords/reference-types.md) proměnnou, která obsahuje odkaz na svoje data. Předání hodnotou proměnné typu hodnoty metodě znamená předání kopii proměnné metodě. Žádné změny k parametru, které se provedou uvnitř metody nemají žádný vliv na původní data uložená v proměnné argumentu. Pokud chcete volané metody, chcete-li změnit hodnotu argumentu, musíte jí předat odkazem, pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také použít [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md) – klíčové slovo předávání pomocí odkazu, aby kopie při zajištění, že se nezmění hodnotu parametru hodnoty. Pro zjednodušení následující příklady používají `ref`.  
@@ -28,7 +28,7 @@ A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) prom
   
  [!code-csharp[csProgGuideParameters#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#4)]  
   
- V tomto příkladu není hodnota `n` , který je předán; místo toho odkaz na `n` je předán. Parametr `x` není [int](../../../csharp/language-reference/keywords/int.md); je odkaz na `int`, v tomto případě odkaz na `n`. Proto když `x` je spolehlivosti uvnitř metody, co skutečně je druhou je co `x` odkazuje, `n`.  
+ V tomto příkladu není hodnota `n` , který je předán; místo toho odkaz na `n` je předán. Parametr `x` není [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md); je odkaz na `int`, v tomto případě odkaz na `n`. Proto když `x` je spolehlivosti uvnitř metody, co skutečně je druhou je co `x` odkazuje, `n`.  
   
 ## <a name="swapping-value-types"></a>Vzájemná záměna typy hodnot  
  Běžným příkladem změny hodnot argumentů je metoda odkládacího souboru, můžete předat metodě k dispozici dvě proměnné, kde Metoda Zamění jejich obsah. Argumenty musí předat metodě prohození podle odkazu. V opačném případě prohození místních kopií parametry uvnitř metody a nedošlo k žádné změně ve volání metody. Následující příklad zaměňuje celočíselné hodnoty.  

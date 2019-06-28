@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Network Resources
 - WebRequest class, asynchronous access
 ms.assetid: 735d3fce-f80c-437f-b02c-5c47f5739674
-ms.openlocfilehash: 66cacfbb031a531190a8cc5eafdb3e375609ee1e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf5c603dfc6668f8378ba7997df543889b733482
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647307"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422446"
 ---
 # <a name="making-asynchronous-requests"></a>Vytváření asynchronních žádostí
 <xref:System.Net> Třídy pomocí rozhraní .NET Framework standardní asynchronní programovací model pro asynchronní přístup k internetovým prostředkům. <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody <xref:System.Net.WebRequest> třídy zahájení a dokončení asynchronní požadavky na internetové prostředky.  
@@ -272,7 +272,7 @@ Class ClientGetAsync
        Dim resp As HttpWebResponse = _  
            CType(req.EndGetResponse(ar), HttpWebResponse)  
   
-       ' Start reading data from the respons stream.  
+       ' Start reading data from the response stream.  
        Dim ResponseStream As Stream = resp.GetResponseStream()  
   
        ' Store the reponse stream in RequestState to read  

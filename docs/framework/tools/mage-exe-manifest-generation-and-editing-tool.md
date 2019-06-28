@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: 2109c764d0143a843f75fc0c14cc0d09550efd85
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 549eca835b2161429668a2ee340a71dfae658524
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877578"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422359"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 
@@ -57,7 +57,7 @@ V následující tabulce jsou uvedeny možnosti podporované `-New` a `-Update` 
 |**-if - IconFile**  `filePath`||Manifesty aplikací.|Určí úplnou cestu k souboru ikony .ICO. Tato ikona se zobrazuje vedle názvu aplikace v nabídce Start a v jejím záznamu v ovládacím panelu Přidat nebo odebrat programy. Není-li zadána žádná ikona, je použita ikona výchozí.|
 |**-ip, -IncludeProviderURL**  `url`|true|Manifesty nasazení.|Označuje, zda manifest nasazení zahrnuje hodnotu umístění aktualizace nastavenou **- ProviderURL**.|
 |**-i,-instalace** `willInstall`|true|Manifesty nasazení.|Označuje, zda by aplikace ClickOnce měla být nainstalována na místní počítač nebo spuštěna z webu. Instalace aplikace jí umožňuje mít zástupce v Windows **Start** nabídky. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pokud zadáte **- MinVersion** možnost a uživatel má verzi nižší než **- MinVersion** nainstalované, vynutí aplikaci pro instalaci, bez ohledu na hodnotu, kterou předat **– Nainstalujte**.<br /><br /> Tento parametr nelze použít s **- BrowserHosted** možnost. Pokus zadat obě možnosti pro stejný manifest vyústí v chybu.|
-|**-kc, -KeyContainer** `name`||Všechny typy souborů.|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CyproProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
+|**-kc, -KeyContainer** `name`||Všechny typy souborů.|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CryptoProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
 |**-mv - MinVersion**  `[version]`|Verze uvedená v manifestu nasazení ClickOnce tak jak jsou určené **– verze** příznak.|Manifesty nasazení.|Minimální verze aplikace, kterou uživatel může spustit. Tento příznak učiní pojmenovanou verzi aplikace požadovanou aktualizací. Vydáte-li verzi produktu s aktualizací proti narušující změně nebo závažné bezpečnostní chybě, lze pomocí tohoto příznaku určit, že aktualizace musí být nainstalována a že uživatel nemůže nadále používat dřívější verze.<br /><br /> `version` má stejnou sémantiku jako argument **– verze** příznak.|
 |**-n, – název** `nameString`|Nasazení|Všechny typy souborů.|Název použitý pro identifikaci aplikace. Technologie ClickOnce použije tento název k identifikaci aplikace v **Start** nabídce (Pokud je aplikace nakonfigurována k instalaci) a v dialogových oknech zvýšení oprávnění. **Poznámka:**  Pokud aktualizujete existující manifest a nezadáte s touto možností název vydavatele *Mage.exe* aktualizuje manifest názvem organizace definovaným v počítači. Chcete-li použít jiný název, použijte tuto možnost a zadejte požadovaný název vydavatele.|
 |**-pwd, -Password** `passwd`||Všechny typy souborů.|Heslo použité pro podepsání manifestu digitálním certifikátem. Je potřeba použít ve spojení s **- CertFile** možnost.|
@@ -81,7 +81,7 @@ V následující tabulce jsou uvedeny možnosti podporované `-Sign` příkaz, k
 |**-cf, -CertFile** `filePath`|Určí umístění digitálního certifikátu pro podpis manifestu. Tato možnost se dá použít ve spojení s **– heslo** pokud certifikátu vyžaduje heslo pro soubory Personal Information Exchange (PFX). Od verze rozhraní .NET Framework 4.7, pokud soubor neobsahuje privátní klíč, kombinaci **- CryptoProvider** a **- KeyContainer** možnosti je povinný.<br/><br/>Od verze rozhraní .NET Framework 4.6.2, *Mage.exe* manifesty znaménka s CNG, jakož i CAPI certifikáty.|
 |**-ch, -CertHash** `hashSignature`|Hodnota hash digitálního certifikátu uloženého v úložišti osobních certifikátů klientského počítače. Ta odpovídá vlastnosti kryptografického otisku digitálního certifikátu zobrazeného v Konzole certifikátů systému Windows.<br /><br /> `hashSignature` může být buď velká nebo malá písmena a může být zadán buď jako jeden řetězec, nebo kryptografický otisk odděleny mezer a kryptografický otisk uzavřený do uvozovek, jehož každý.|
 **-csp, -CryptoProvider** `provider-name`|Určuje název zprostředkovatele kryptografických služeb (CSP), který obsahuje kontejner soukromého klíče. Tato možnost vyžaduje **- KeyContainer** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
-|**-kc, -KeyContainer** `name`|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CyproProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
+|**-kc, -KeyContainer** `name`|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CryptoProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
 |**-pwd, -Password** `passwd`|Heslo použité pro podepsání manifestu digitálním certifikátem. Je potřeba použít ve spojení s **- CertFile** možnost.|
 |**-t, -ToFile** `filePath`|Určí výstupní cestu vytvořeného nebo upraveného souboru.|
 
@@ -214,7 +214,7 @@ mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>
 Následující příklad podepíše existující manifest nasazení pomocí digitálního certifikátu a privátního klíče v aktuálním pracovním adresáři.
 
 ```console
-mage -Sign deploy.application -CertFile cert.pfx -KeyContainer keyfile.snk -CryptoProvider "Microsoft Enghanced Cryptographic Provider v1.0"
+mage -Sign deploy.application -CertFile cert.pfx -KeyContainer keyfile.snk -CryptoProvider "Microsoft Enhanced Cryptographic Provider v1.0"
 ```
 
 ## <a name="see-also"></a>Viz také:

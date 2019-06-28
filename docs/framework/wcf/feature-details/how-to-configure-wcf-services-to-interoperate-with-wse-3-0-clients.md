@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 0f38c4a0-49a6-437c-bdde-ad1d138d3c4a
-ms.openlocfilehash: 1c5a5e4e92eedb21e3405370e59344d3b861d1dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5034744059e7ed87d4f8b41c6ae89d1af1bf0f56
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619165"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425392"
 ---
 # <a name="how-to-configure-wcf-services-to-interoperate-with-wse-30-clients"></a>Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0
 Služby Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 3.0 rozšíření webové služby pro klienty Microsoft .NET (Najít), když služby WCF, které jsou nakonfigurovány pro použití verzi specifikace WS-Addressing ze srpna 2004.  
@@ -24,7 +24,7 @@ Služby Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
   
     3. Zadejte režim ověřování a verzi specifikace WS-Security, které se používají k zabezpečení zprávy, které jsou kompatibilní s WSE 3.0, tak, že přidáte podřízený [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) k [ \<vazby >](../../../../docs/framework/misc/binding.md).  
   
-         Chcete-li nastavit režim ověřování, nastavte `authenicationMode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Režim ověřování je zhruba ekvivalentní kontrolní výraz na klíč zabezpečení ve službě WSE 3.0. Následující tabulka mapuje na klíč zabezpečení kontrolní výrazy ve WSE 3.0 režimy ověřování ve službě WCF.  
+         Chcete-li nastavit režim ověřování, nastavte `authenticationMode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Režim ověřování je zhruba ekvivalentní kontrolní výraz na klíč zabezpečení ve službě WSE 3.0. Následující tabulka mapuje na klíč zabezpečení kontrolní výrazy ve WSE 3.0 režimy ověřování ve službě WCF.  
   
         |Režim ověřování WCF|Kontrolní výraz WSE 3.0 na klíč zabezpečení|  
         |-----------------------------|----------------------------------------|  

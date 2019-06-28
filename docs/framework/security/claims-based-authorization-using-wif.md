@@ -3,12 +3,12 @@ title: Autorizace deklarovaných identit pomocí WIF
 ms.date: 03/30/2017
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
 author: BrucePerlerMS
-ms.openlocfilehash: 0c99053610c8df9b6825c773a09cb1330d1e22f4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9d20f8fbce916a038fc8224492a4077e1978ed8c
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650454"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422371"
 ---
 # <a name="claims-based-authorization-using-wif"></a>Autorizace deklarovaných identit pomocí WIF
 V aplikaci předávající strany autorizace určuje, k jakým prostředkům má ověřená identita povolen přístup a jaké operace s těmito prostředky smí provádět. Nesprávná nebo slabá autorizace může vést k úniku informací nebo neoprávněným úpravám dat. Toto téma popisuje, jak webové aplikace a služby technologie ASP.NET pracující s deklaracemi mohou implementovat autorizaci s použitím technologie Windows Identity Foundation (WIF) a služby tokenů zabezpečení (STS), jako je například Služba řízení přístupu Microsoft Azure (ACS).  
@@ -23,13 +23,13 @@ V aplikaci předávající strany autorizace určuje, k jakým prostředkům m
  RBAC představuje přístup k autorizaci, v rámci něhož aplikace spravuje a vynucuje uživatelská oprávnění na základě rolí uživatelů. Má-li uživatel roli, která je vyžadována k provedení určité akce, je mu udělen přístup. V opačném případě je přístup odepřen.  
   
 ### <a name="iprincipalisinrole-method"></a>Metoda IPrincipal.IsInRole  
- Chcete-li v deklaracemi implementovat přístup RBAC, použijte **IsInRole()** metoda ve **IPrinicpal** rozhraní, stejně jako v jiných deklaracemi identity aplikace. Existuje několik způsobů použití **IsInRole()** metody:  
+ Chcete-li v deklaracemi implementovat přístup RBAC, použijte **IsInRole()** metoda ve **IPrincipal** rozhraní, stejně jako v jiných deklaracemi identity aplikace. Existuje několik způsobů použití **IsInRole()** metody:  
   
-- Explicitně pomocí volání **IPrincipal.IsInRole("Administrator")**. Při použití tohoto přístupu je výsledkem logická hodnota, kterou můžete používat v podmíněných příkazech. Toto volání lze používat kdekoli v kódu.  
+- Explicitně pomocí volání **IPrincipal.IsInRole("Administrator")** . Při použití tohoto přístupu je výsledkem logická hodnota, kterou můžete používat v podmíněných příkazech. Toto volání lze používat kdekoli v kódu.  
   
-- Pomocí požadavku zabezpečení **PrincipalPermission.Demand()**. Při použití tohoto přístupu je výsledkem výjimka, pokud není požadavek splněn. Tento přístup můžete zapracovat do své strategie pro zpracování výjimek. Je vyvolání výjimky mnohem nákladnější z hlediska výkonu ve srovnání s vrací datový typ Boolean. Tento přístup lze používat kdekoli v kódu.  
+- Pomocí požadavku zabezpečení **PrincipalPermission.Demand()** . Při použití tohoto přístupu je výsledkem výjimka, pokud není požadavek splněn. Tento přístup můžete zapracovat do své strategie pro zpracování výjimek. Je vyvolání výjimky mnohem nákladnější z hlediska výkonu ve srovnání s vrací datový typ Boolean. Tento přístup lze používat kdekoli v kódu.  
   
-- Pomocí deklarativních atributů **[PrincipalPermission (SecurityAction.Demand, Role = "Správce")]**. Tento přístup se nazývá deklarativní, protože slouží pro úpravu metody. Nelze jej používat v blocích kódu uvnitř implementace metody. Výsledkem je výjimka, pokud není požadavek splněn. Musíte ji zohlednit ve své strategii zpracování výjimek.  
+- Pomocí deklarativních atributů **[PrincipalPermission (SecurityAction.Demand, Role = "Správce")]** . Tento přístup se nazývá deklarativní, protože slouží pro úpravu metody. Nelze jej používat v blocích kódu uvnitř implementace metody. Výsledkem je výjimka, pokud není požadavek splněn. Musíte ji zohlednit ve své strategii zpracování výjimek.  
   
 - Použitím autorizace adres URL, pomocí  **\<autorizace >** tématu **web.config**. Tento přístup je vhodný, pokud autorizaci řídíte na úrovni adres URL. Ze všech dříve zmíněných přístupů se jedná o způsob použití na nejméně podrobné úrovni. Výhodou tohoto přístupu je, že se změny provádějí v konfiguračním souboru, což znamená, že je možné změny využívat bez nutnosti kompilace kódu.  
   
