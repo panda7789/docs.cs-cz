@@ -2,12 +2,12 @@
 title: 'Přenos: Ukázka vlastních transakcí přes UDP'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: 8a7b0c4e9ea73fa952710f2b415082b56062dad0
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: ec6499a8e69c8512c33297ac4477eaafc397d78f
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483098"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425531"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Přenos: Ukázka vlastních transakcí přes UDP
 Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázku ve Windows Communication Foundation (WCF)[rozšiřitelnost přenosů](../../../../docs/framework/wcf/samples/transport-extensibility.md). Rozšiřuje podporu toku transakcí vlastní ukázku přenos UDP a demonstruje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> vlastnost.  
@@ -234,7 +234,7 @@ if (transaction != null)
 9. Znovu vygenerovat kód klienta a konfigurace pomocí Svcutil.exe, spusťte aplikaci služby a pak spusťte následující příkaz Svcutil.exe z kořenového adresáře vzorku.  
   
     ```  
-    svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
+    svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
     ```  
   
 10. Všimněte si, že Svcutil.exe negeneruje pro konfiguraci rozšíření vazby `sampleProfileUdpBinding`; je třeba přidat ji ručně.  

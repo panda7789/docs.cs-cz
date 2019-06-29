@@ -7,15 +7,15 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: dcba1651c736b58b2c95bac21f086c46417629df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 626fce590ba08bbdabf27ac33287a0b46b592f9c
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61678384"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423619"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu (C# Průvodce programováním v)
-Chcete-li zjistit, zda je řetězec reprezentaci platná zadané číselného typu, použijte statické `TryParse` metodu, která je implementována všechny primitivní číselné typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak zjistit, jestli "108" je platný [int](../../../csharp/language-reference/keywords/int.md).  
+Chcete-li zjistit, zda je řetězec reprezentaci platná zadané číselného typu, použijte statické `TryParse` metodu, která je implementována všechny primitivní číselné typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak zjistit, jestli "108" je platný [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md).  
   
 ```  
 int i = 0;   

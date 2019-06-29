@@ -8,12 +8,12 @@ helpviewer_keywords:
 - strings [C#], converting hexadecimal strings
 - hexadecimal strings [C#]
 ms.assetid: 7115c49f-7d1d-40c3-8bd9-aae0cc1d46b6
-ms.openlocfilehash: 99d30d6c2b50569312ff2d732a34020ab29ce81c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 046a406c32cd2ad0649cf88381a9e121f7566fe5
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595062"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423513"
 ---
 # <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>Postupy: Převod mezi hexadecimálními řetězci a číselnými typy (C# Průvodce programováním v)
 Tyto příklady ukazují, jak provádět následující úlohy:  
@@ -22,11 +22,11 @@ Tyto příklady ukazují, jak provádět následující úlohy:
   
 - Získat [char](../../../csharp/language-reference/keywords/char.md) odpovídající každé hodnotě v je možné šestnáctkový řetězec.  
   
-- Převést šestnáctkové `string` do [int](../../../csharp/language-reference/keywords/int.md).  
+- Převést šestnáctkové `string` do [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md).  
   
 - Převést šestnáctkové `string` k [float](../../../csharp/language-reference/keywords/float.md).  
   
-- Převést [bajtů](../../../csharp/language-reference/keywords/byte.md) pole, které chcete hexadecimální `string`.  
+- Převést [bajtů](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) pole, které chcete hexadecimální `string`.  
   
 ## <a name="example"></a>Příklad  
  Šestnáctková hodnota každý znak v tomto příkladu je výstupem `string`. Nejprve analyzuje `string` na pole znaků. Potom volá <xref:System.Convert.ToInt32%28System.Char%29> na jednotlivé znaky získat číselnou hodnotu. A konečně, formátuje číslo jako její šestnáctkové vyjádření v `string`.  
@@ -34,7 +34,7 @@ Tyto příklady ukazují, jak provádět následující úlohy:
  [!code-csharp[csProgGuideTypes#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#30)]  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu analyzuje `string` z šestnáctkové hodnoty a uloží znak, který odpovídá každé šestnáctková hodnota. Nejprve se volá [rozdělit (Char\[\])](xref:System.String.Split(System.Char[])) metodu k získání jednotlivých šestnáctkové hodnoty jako individuální uživatel `string` v poli. Potom volá <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> převést na šestnáctkovou hodnotu Desítková hodnota reprezentovaná jako [int](../../../csharp/language-reference/keywords/int.md). Ukazuje dva různé způsoby, získat znak, který odpovídá této kód znaku. První způsob využívá <xref:System.Char.ConvertFromUtf32%28System.Int32%29>, která vrací odpovídající argument typu celé číslo jako znak `string`. Druhý způsob spočívá explicitní přetypování `int` k [char](../../../csharp/language-reference/keywords/char.md).  
+ V tomto příkladu analyzuje `string` z šestnáctkové hodnoty a uloží znak, který odpovídá každé šestnáctková hodnota. Nejprve se volá [rozdělit (Char\[\])](xref:System.String.Split(System.Char[])) metodu k získání jednotlivých šestnáctkové hodnoty jako individuální uživatel `string` v poli. Potom volá <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> převést na šestnáctkovou hodnotu Desítková hodnota reprezentovaná jako [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md). Ukazuje dva různé způsoby, získat znak, který odpovídá této kód znaku. První způsob využívá <xref:System.Char.ConvertFromUtf32%28System.Int32%29>, která vrací odpovídající argument typu celé číslo jako znak `string`. Druhý způsob spočívá explicitní přetypování `int` k [char](../../../csharp/language-reference/keywords/char.md).  
   
  [!code-csharp[csProgGuideTypes#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#31)]  
   
@@ -49,7 +49,7 @@ Tyto příklady ukazují, jak provádět následující úlohy:
  [!code-csharp[csProgGuideTypes#39](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#39)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak převést [bajtů](../../../csharp/language-reference/keywords/byte.md) pole je možné šestnáctkový řetězec s použitím <xref:System.BitConverter?displayProperty=nameWithType> třídy.  
+ Následující příklad ukazuje, jak převést [bajtů](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) pole je možné šestnáctkový řetězec s použitím <xref:System.BitConverter?displayProperty=nameWithType> třídy.  
   
  [!code-csharp[csProgGuideTypes#38](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#38)]  
   

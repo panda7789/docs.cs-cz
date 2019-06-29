@@ -2,12 +2,12 @@
 title: Podpora tokenů
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: 6257499b22506359c4a23ce7c11655c00c22ef62
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fba9a44342da5b064897b3ab81f34fa39498d379
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650961"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425449"
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
 Ukázka podporuje tokeny ukazuje, jak přidat další tokeny na zprávu, která používá WS-Security. V příkladu přidá token zabezpečení Binární X.509 kromě token zabezpečení uživatelské jméno. Token je předán do záhlaví zprávy WS-Security z klienta ke službě a část zprávy jsou podepsány pomocí soukromého klíče přidružené k tokenu zabezpečení X.509 prokázat získáním certifikát X.509 příjemci. To je užitečné v případě, když je potřeba mít více deklarací identity přidružené k zprávy na ověřování nebo autorizaci odesílatele. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -156,7 +156,7 @@ public class EchoService : IEchoService
             }
             else if (claimSet is X509CertificateClaimSet)
             {
-                // Try to find an X500DisinguishedName claim. This will
+                // Try to find an X500DistinguishedName claim. This will
                 // have been generated from the client certificate.
                 X500DistinguishedName tmpDistinguishedName;
                 if (TryGetClaimValue<X500DistinguishedName>(claimSet,
@@ -329,7 +329,7 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
         }
         else if (claimSet is X509CertificateClaimSet)
          {
-            //Try to find an X500DisinguishedName claim.
+            //Try to find an X500DistinguishedName claim.
             //This will have been generated from the client
             //certificate.
             X500DistinguishedName tmpDistinguishedName;

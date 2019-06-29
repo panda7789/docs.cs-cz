@@ -2,12 +2,12 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 18095845db094f0911578816e6bacdb7f3776156
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 83c100459ca5cf522b9040a807008e66e1a5c9d8
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664775"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425426"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpečením pomocí služby Windows Communication Foundation (WCF):  
@@ -37,7 +37,7 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
  Tento příklad ukazuje, jak řízení protokolování ze známých identifikovatelné osobní údaje (PII) v protokolech trasování a zprávy, jako je například uživatelské jméno a heslo. Ve výchozím nastavení je zakázáno přihlášení známého PII, ale v některých situacích může být důležité při ladění aplikace protokolování identifikovatelné osobní údaje. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kromě toho tato ukázka používá trasování a protokolování zpráv. Další informace najdete v tématu [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) vzorku.  
   
 ## <a name="encrypting-configuration-file-elements"></a>Šifrování souboru elementy konfigurace  
- Z bezpečnostních důvodů ve sdíleném prostředí hostování webů může být žádoucí šifrovat určité konfigurační prvky, jako jsou databázové připojovací řetězce, které mohou obsahovat citlivé informace. Prvek konfigurace je možné zašifrovat pomocí aspnet_regiis.exe nástroj nachází ve složce % například WINDIR%\Micrsoft.NET\Framework\v4.0.20728 rozhraní .NET Framework.  
+ Z bezpečnostních důvodů ve sdíleném prostředí hostování webů může být žádoucí šifrovat určité konfigurační prvky, jako jsou databázové připojovací řetězce, které mohou obsahovat citlivé informace. Prvek konfigurace je možné zašifrovat pomocí aspnet_regiis.exe nástroj nachází ve složce % například WINDIR%\Microsoft.NET\Framework\v4.0.20728 rozhraní .NET Framework.  
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>K šifrování hodnoty v oddíle appSettings souboru Web.config pro ukázku  
   

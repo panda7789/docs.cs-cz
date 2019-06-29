@@ -3,12 +3,12 @@ title: Model deklarovaných identit
 ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
-ms.openlocfilehash: 8560c7fd1969cfed6e43e2982fb69313c45c9405
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b7cafa727251c28b79615a37adce4effe6885392
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650465"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422411"
 ---
 # <a name="claims-based-identity-model"></a>Model deklarovaných identit
 Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Deklarace může být jméno uživatele, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
@@ -58,7 +58,7 @@ Při vytváření aplikací pracujících s deklaracemi je identita uživatele 
  Když vytváříte aplikaci, která se spoléhá na deklarace, vytváříte aplikaci předávající strany. Synonyma pro předávající Stranu patří "s deklaracemi identity aplikace" a "aplikace nezaložené na deklaracích". Předávající stranou mohou být webové aplikace i webové služby. Aplikace předávající strany používá tokeny vystavené službou STS a extrahuje z tokenů deklarace, které používá pro úkoly související s identitami. Technologie WIF nabízí funkce, které pomáhají vytvářet aplikace předávající strany.  
   
 ### <a name="standards"></a>Standardy  
- Pro zajištění vzájemné funkční spolupráce používá předešlý scénář několik standardů WS-*. Zásady jsou načítány s použitím standardu WS-MetadataExchange a samotná struktura zásad musí odpovídat specifikaci WS-Policy. Služba STS zveřejňuje koncové body implementující specifikaci WS-Trust, která popisuje, jak žádat o tokeny zabezpečení a jak je přijímat. Většina služeb STS dnes vystavuje tokeny, které jsou formátovány pomocí jazyka SAML (Security Assertion Markup Langauge). Jazyk SAML je slovník XML s podporou v celém odvětví, který umožňuje reprezentovat deklarace tak, aby byla zajištěna vzájemná funkční spolupráce. V případě používání více platforem také umožňuje komunikovat se službou STS na zcela jiné platformě a dosáhnout jednotného přihlašování napříč všemi aplikacemi bez ohledu na platformu.  
+ Pro zajištění vzájemné funkční spolupráce používá předešlý scénář několik standardů WS-*. Zásady jsou načítány s použitím standardu WS-MetadataExchange a samotná struktura zásad musí odpovídat specifikaci WS-Policy. Služba STS zveřejňuje koncové body implementující specifikaci WS-Trust, která popisuje, jak žádat o tokeny zabezpečení a jak je přijímat. Většina služeb STS dnes vystavuje tokeny ve formátu s zabezpečení kontrolního výrazu SAML (Markup Language). Jazyk SAML je slovník XML s podporou v celém odvětví, který umožňuje reprezentovat deklarace tak, aby byla zajištěna vzájemná funkční spolupráce. V případě používání více platforem také umožňuje komunikovat se službou STS na zcela jiné platformě a dosáhnout jednotného přihlašování napříč všemi aplikacemi bez ohledu na platformu.  
   
 ### <a name="browser-based-applications"></a>Aplikace využívající prohlížeč  
  Model deklarovaných identit nemusejí používat jen inteligentní klienti. Mohou ho používat i aplikace využívající prohlížeč (označované také jako pasivní klienti). Způsob fungování popisuje následující scénář.  

@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0f6f6fa8afe2e4aaea6e9f2b96329542b7fe5292
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b78b770417b9599719ea219041a9fd6adaf5a84
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607699"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423413"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
 <a name="top"></a> Při sestavování sestavení, můžete zadat sadu oprávnění, která vyžaduje sestavení ke spuštění. Legitimace vychází, zda jsou určitá oprávnění udělit nebo nebyla udělena na sestavení.  
@@ -31,7 +31,7 @@ ms.locfileid: "64607699"
   
 - Vstupní legitimace se sloučí s legitimací shromážděné zavaděč, chcete-li vytvořit finální sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load**, **Assembly.LoadFrom**, a **Activator.CreateInstance**.  
   
-- Vstupní legitimace se používá beze změny jako výsledná sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load(byte[])** a **AppDomain.DefineDynamicAssembly()**.  
+- Vstupní legitimace se používá beze změny jako výsledná sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load(byte[])** a **AppDomain.DefineDynamicAssembly()** .  
   
  Volitelné oprávnění lze udělit pomocí [zásady zabezpečení](../../../docs/framework/misc/code-access-security-basics.md) nastavit v počítači, ve kterém se spustí sestavení. Pokud chcete svůj kód pro zpracování všechny potenciální výjimky zabezpečení, můžete provést jednu z následujících:  
   
@@ -53,7 +53,7 @@ ms.locfileid: "64607699"
   
  Žádná úroveň vztahu důvěryhodnosti není přidružená silným názvem, díky čemuž je [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) důležité. Dva podpisový nástroje vyžadují, aby vydavatel prokáže svoji identitu autoritu třetí strany a získat certifikát. Tento certifikát bude poté vložen do souboru a můžou používat Správce rozhodnout, zda důvěřovat pravosti kódu.  
   
- Můžete udělit silného názvu a digitální podpis vytvořený pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) na sestavení, nebo můžete použít buď samostatně. Dva nástroje pro podepisování se můžete přihlásit pouze jeden soubor najednou. Vícesouborové sestavení podepsat soubor, který obsahuje manifest sestavení. Silný název je uložen v souboru, který obsahuje manifest sestavení, ale signatura vytvořena pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) je uložen v vyhrazené místo v souboru (PE portable executable), který obsahuje manifest sestavení. Podepisování sestavení pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) lze použít (s nebo bez silného názvu) Pokud již máte důvěryhodnost hierarchie, která závisí na[SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) vygeneruje podpisy, nebo když vaše zásady používá pouze část klíče a nekontroluje řetěz certifikátů.  
+ Můžete udělit silného názvu a digitální podpis vytvořený pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) na sestavení, nebo můžete použít buď samostatně. Dva nástroje pro podepisování se můžete přihlásit pouze jeden soubor najednou. Vícesouborové sestavení podepsat soubor, který obsahuje manifest sestavení. Silný název je uložen v souboru, který obsahuje manifest sestavení, ale signatura vytvořena pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) je uložen v vyhrazené místo v souboru (PE portable executable), který obsahuje manifest sestavení. Podepisování sestavení pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) lze použít (s nebo bez silného názvu) Pokud již máte důvěryhodnost hierarchie, která závisí na [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) vygeneruje podpisy, nebo když vaše zásady používá pouze část klíče a nekontroluje řetěz certifikátů.  
   
 > [!NOTE]
 >  Při použití silným názvem a podpisem podpisový nástroj na sestavení, silný název musí být nejprve přiřazena.  

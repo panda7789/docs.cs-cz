@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-ms.openlocfilehash: 50e11e8547c2887ace677d2c86dcf055326ff9a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f4d6bb4eb698e4afbda6571ba382e828a5f836a4
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61661812"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424265"
 ---
 # <a name="double-c-reference"></a>double (Referenční dokumentace jazyka C#)
 
 `double` – Klíčové slovo znamená jednoduchý typ, který ukládá 64bitové hodnoty s plovoucí desetinnou čárkou. V následující tabulce jsou uvedeny přesnosti a rozsahu pro `double` typu.
 
-|Type|Přibližný rozsah|Přesnost|Typ formátu .NET|
+|type|Přibližný rozsah|Přesnost|Typ formátu .NET|
 |----------|-----------------------|---------------|-------------------------|
 |`double`|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|~ 15-17 číslic|<xref:System.Double?displayProperty=nameWithType>|
 
@@ -53,7 +53,7 @@ Další informace o těchto hodnotách naleznete v části Standard IEEE pro bin
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu [int](../../../csharp/language-reference/keywords/int.md), [krátký](../../../csharp/language-reference/keywords/short.md), [float](../../../csharp/language-reference/keywords/float.md)a `double` přidají dohromady `double` výsledek.
+V následujícím příkladu [int](../builtin-types/integral-numeric-types.md), [krátký](../../../csharp/language-reference/builtin-types/integral-numeric-types.md), [float](../../../csharp/language-reference/keywords/float.md)a `double` přidají dohromady `double` výsledek.
 
 [!code-csharp[csrefKeywordsTypes#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#9)]
 

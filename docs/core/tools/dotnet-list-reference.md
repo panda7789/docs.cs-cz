@@ -1,17 +1,21 @@
 ---
 title: příkaz DotNet seznamu odkaz
 description: Příkaz dotnet seznamu odkaz nabízí pohodlný parametr pro seznam odkazů typu projekt na projekt.
-ms.date: 12/03/2018
-ms.openlocfilehash: c0b88c4a0af4469d7ddc9e0a9368bb1b2d9d20b6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 1f87ff89997cdaa6d0095a4db9f28a2e7cb7e6a9
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632411"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67421833"
 ---
-# <a name="dotnet-list-reference"></a>referenční seznam DotNet
+# <a name="dotnet-list-reference"></a>dotnet list reference
 
+**Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -19,7 +23,7 @@ ms.locfileid: "65632411"
 
 ## <a name="synopsis"></a>Souhrn
 
-`dotnet list [<PROJECT>] reference [-h|--help]`
+`dotnet list [<PROJECT>|<SOLUTION>] reference [-h|--help]`
 
 ## <a name="description"></a>Popis
 
@@ -27,9 +31,9 @@ ms.locfileid: "65632411"
 
 ## <a name="arguments"></a>Arguments
 
-* **`PROJECT`**
+* **`PROJECT | SOLUTION`**
 
-  Určuje soubor projektu má použít pro zobrazení seznamu odkazů. Pokud není zadán, příkaz vyhledá v aktuálním adresáři souboru projektu.
+  Určuje soubor projektu nebo řešení má použít pro zobrazení seznamu odkazů. Pokud není zadán, příkaz vyhledá v aktuálním adresáři souboru projektu.
 
 ## <a name="options"></a>Možnosti
 

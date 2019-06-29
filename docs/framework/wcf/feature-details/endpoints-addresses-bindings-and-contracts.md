@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], endpoints
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-ms.openlocfilehash: 3d345cfa3169e22e7c5e85cd1c7d11c2feef4f5f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d224535bb266d0a3673359388c6c211103df7374
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665964"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424850"
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, které nabízí služba WCF.  
@@ -61,7 +61,7 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
   
      Další informace o definování kontraktu, naleznete v tématu [navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md).  
   
-- Chování: Chování koncového bodu můžete použít k úpravě místní chování koncového bodu služby. Chování koncového bodu dosáhnout účastí průběhu sestavování WCFruntime. Příklad chování koncového bodu je <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnost, která vám umožní určit jinou adresu naslouchání, než adresu SOAP nebo webové služby WSDL (Description Language). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
+- Chování: Chování koncového bodu můžete použít k úpravě místní chování koncového bodu služby. Chování koncového bodu dosáhnout účastí průběhu sestavování modul runtime WCF. Příklad chování koncového bodu je <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnost, která vám umožní určit jinou adresu naslouchání, než adresu SOAP nebo webové služby WSDL (Description Language). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
   
 ## <a name="defining-endpoints"></a>Definování koncových bodů  
  Můžete zadat koncový bod služby buď imperativně promocí kódu nebo deklarativně prostřednictvím konfigurace. Další informace najdete v tématu [jak: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) a [jak: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  

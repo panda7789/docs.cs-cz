@@ -3,12 +3,12 @@ title: Základní typy – průvodce v C#
 description: Další informace o základní typy (číselné, řetězce a objektu) ve všech aplikacích jazyka C#
 ms.date: 10/10/2016
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 3619e1dc9a82c7f120680c198c327252744444b4
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: c719177b6099104681f590b550014d9a67f3f3ba
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422095"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424460"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnných a hodnot
 
@@ -28,12 +28,12 @@ Informace uložené v typu může patřit také následující:
   
 - Typy operací, které jsou povoleny.  
   
-Kompilátor používá informace o typu, abyste měli jistotu, že jsou všechny operace, které jsou prováděny ve vašem kódu *bezpečnost typů*. Například, pokud deklarujete proměnnou typu [int](language-reference/keywords/int.md), kompilátor umožňuje také použít proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace na proměnnou typu [bool](language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:  
+Kompilátor používá informace o typu, abyste měli jistotu, že jsou všechny operace, které jsou prováděny ve vašem kódu *bezpečnost typů*. Například, pokud deklarujete proměnnou typu [int](language-reference/builtin-types/integral-numeric-types.md), kompilátor umožňuje také použít proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace na proměnnou typu [bool](language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:  
   
 [!code-csharp[Type Safety](../../samples/snippets/csharp/concepts/basic-types/type-safety.cs)]  
   
 > [!NOTE]  
-> Vývojáře v C a C++, Všimněte si, že v jazyce C#, [bool](language-reference/keywords/bool.md) není převoditelná na [int](language-reference/keywords/int.md).  
+> Vývojáře v C a C++, Všimněte si, že v jazyce C#, [bool](language-reference/keywords/bool.md) není převoditelná na [int](language-reference/builtin-types/integral-numeric-types.md).  
   
 Kompilátor vloží informace o typu do spustitelného souboru jako metadata. Common language runtime (CLR) používá tato metadata za běhu, aby byla dále podpořena bezpečnost typů, při přidělování a uvolňování paměti.  
 
@@ -43,11 +43,11 @@ Pokud deklarujete proměnnou nebo konstantní v programu, musíte buď určit je
   
 [!code-csharp[Variable Declaration](../../samples/snippets/csharp/concepts/basic-types/variable-declaration.cs)]  
   
-Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Následující podpis představuje metodu, která vyžaduje [int](language-reference/keywords/int.md) jako vstupní argument a vrátí řetězec:  
+Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Následující podpis představuje metodu, která vyžaduje [int](language-reference/builtin-types/integral-numeric-types.md) jako vstupní argument a vrátí řetězec:  
   
 [!code-csharp[Method Signature](../../samples/snippets/csharp/concepts/basic-types/method-signature.cs)]  
   
-Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](language-reference/keywords/int.md) a přiřadit mu hodnotu typu Boolean [true](language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.
+Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](language-reference/builtin-types/integral-numeric-types.md) a přiřadit mu hodnotu typu Boolean [true](language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.
 
 Další informace najdete v tématu [přetypování a převody typu](programming-guide/types/casting-and-type-conversions.md).
 

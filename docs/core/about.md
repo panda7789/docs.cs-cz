@@ -3,12 +3,12 @@ title: O platformě .NET Core
 description: Další informace o .NET Core.
 author: richlander
 ms.date: 08/01/2018
-ms.openlocfilehash: fb6088bcadcdc9c28699446df035b899485c406d
-ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
+ms.openlocfilehash: d81c6ad15c12d7bb1e866aef3bd1e799d5b62cde
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003761"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67421875"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -30,7 +30,7 @@ C#, Visual Basic a F# jazyky je možné psát aplikace a knihovny pro .NET Core.
 
 .NET core zveřejňuje rozhraní API pro většinu scénářů, postupujte podle několik z nich:
 
-- Primitivní typy, jako například [bool](../csharp/language-reference/keywords/bool.md) a [int](../csharp/language-reference/keywords/int.md).
+- Primitivní typy, jako například [bool](../csharp/language-reference/keywords/bool.md) a [int](../csharp/language-reference/builtin-types/integral-numeric-types.md).
 - Kolekce, jako například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Nástroj pro typy, jako například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Datové typy, jako například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
