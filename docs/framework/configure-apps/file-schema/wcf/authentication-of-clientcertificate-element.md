@@ -2,12 +2,12 @@
 title: <authentication> z <clientCertificate> – Element
 ms.date: 03/30/2017
 ms.assetid: 4a55eea2-1826-4026-b911-b7cc9e9c8bfe
-ms.openlocfilehash: e232cde8f6838de734e37aeee3f52cd7f7e7502d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2cbc850331dc6bf76c352f975fda834a309564c6
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701330"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423241"
 ---
 # <a name="authentication-of-clientcertificate-element"></a>\<ověřování > z \<clientCertificate > – Element
 Určuje chování ověřování pro klientské certifikáty používané službou.  
@@ -41,7 +41,7 @@ Určuje chování ověřování pro klientské certifikáty používané službo
 |customCertificateValidatorType|Volitelný řetězec. Typ a sestavení používané pro ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastavena na `Custom`.|  
 |certificateValidationMode|Volitelný výčet. Určuje jeden z režimů pro ověření pověření. Tento atribut je <xref:System.ServiceModel.Security.X509CertificateValidationMode> typu. Pokud hodnotu <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom?displayProperty=nameWithType>, o `customCertificateValidator` musí být rovněž dodán. Výchozí hodnota je <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust?displayProperty=nameWithType>.|  
 |includeWindowsGroups|Nepovinný datový typ Boolean. Určuje, pokud jsou skupiny Windows zahrnuty v kontextu zabezpečení. Nastavení tohoto atributu na `true` má dopad na výkon, protože výsledkem rozšíření celé skupiny. Tento atribut nastavte na `false` Pokud není potřeba vytvořit seznam skupin uživatel patří.|  
-|mapClientCertificateToWindowsAcccount|Datový typ Boolean. Určuje, zda klient je možné mapovat na Windows identity pomocí certifikátu. K tomu musí být povolené služby Active Directory.|  
+|mapClientCertificateToWindowsAccount|Datový typ Boolean. Určuje, zda klient je možné mapovat na Windows identity pomocí certifikátu. K tomu musí být povolené služby Active Directory.|  
 |revocationMode|Volitelný výčet. Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (RCL). Výchozí hodnota je `Online`. Tato hodnota se ignoruje při použití zabezpečení přenosu HTTP.|  
 |trustedStoreLocation|Volitelný výčet. Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště. Výchozí hodnota je `CurrentUser`.|  
   
@@ -53,7 +53,7 @@ Určuje chování ověřování pro klientské certifikáty používané službo
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: NONE, PeerTrust, ChainTrust, PeerOrChainTrust, vlastní.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
@@ -65,7 +65,7 @@ Určuje chování ověřování pro klientské certifikáty používané službo
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`.|  
   

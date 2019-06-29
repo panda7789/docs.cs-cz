@@ -2,12 +2,12 @@
 title: Zpracování výjimek a chyb
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: f2042bac30ee84530c0da9c30193919dfb99a608
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e99ef5721791af229c68a958e4840a0703d34ac9
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655003"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424947"
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
 Výjimky se používají k předání chyby místně v rámci služby nebo implementace klienta. Chyby, na druhé straně, se používají k předání chyby přes hranice služeb, jako například ze serveru klientovi nebo naopak. Kromě chyb přenosové kanály často používají mechanismy specifické pro přenos komunikace chyb na úrovni přenosu. Například přenos pomocí protokolu HTTP používá stavové kódy, jako je například 404 ke komunikaci neexistující adresa URL koncového bodu (neexistuje žádný koncový bod má být zaslán zpět chybu). Tento dokument se skládá z tři oddíly, které poskytují pokyny pro autory vlastního kanálu. První část obsahuje pokyny k kdy a jak definovat a vyvolávat výjimky. Druhá část obsahuje pokyny týkající se vytváření a využívání chyb. Třetí část vysvětluje, jak poskytnout informace o trasování pro řešení potíží s běžící aplikací uživatele vlastního kanálu.  
@@ -286,7 +286,7 @@ public override bool OnTryCreateException(
  Pro konkrétní chyby podmínky, které mají odlišné obnovení scénáře, vezměte v úvahu definování odvozenou třídu `ProtocolException`.  
   
 ### <a name="mustunderstand-processing"></a>Zpracování MustUnderstand  
- SOAP definuje obecné chyby pro signalizaci, že požadovaná hlavička nebyla srozumitelné pro příjemce. Tato porucha se označuje jako `mustUnderstand` selhání. Ve službě WCF, vlastních kanálů nikdy nevygeneruje `mustUnderstand` chyb. Místo toho dispečer WCF, která se nachází v horní části zásobníku komunikace WCF, zkontroluje, který všechny hlavičky, které byly označeny jako MustUndestand = true byly srozumitelné pro základní zásobníku. Pokud některý se nerozpoznaly, `mustUnderstand` selhání je vygenerována v daném okamžiku. (Uživatel může rozhodnout pro vypnutí to `mustUnderstand` zpracování a je aplikace přijímat všechny hlavičky zprávy. In that Case aplikace zodpovídá za `mustUnderstand` zpracování.) Vygenerovaný selhání obsahuje hlavičku NotUnderstood, který obsahuje názvy všech záhlaví s MustUnderstand = true, který se nerozpoznaly.  
+ SOAP definuje obecné chyby pro signalizaci, že požadovaná hlavička nebyla srozumitelné pro příjemce. Tato porucha se označuje jako `mustUnderstand` selhání. Ve službě WCF, vlastních kanálů nikdy nevygeneruje `mustUnderstand` chyb. Místo toho dispečer WCF, která se nachází v horní části zásobníku komunikace WCF, zkontroluje, který všechny hlavičky, které byly označeny jako MustUnderstand = true byly srozumitelné pro základní zásobníku. Pokud některý se nerozpoznaly, `mustUnderstand` selhání je vygenerována v daném okamžiku. (Uživatel může rozhodnout pro vypnutí to `mustUnderstand` zpracování a je aplikace přijímat všechny hlavičky zprávy. In that Case aplikace zodpovídá za `mustUnderstand` zpracování.) Vygenerovaný selhání obsahuje hlavičku NotUnderstood, který obsahuje názvy všech záhlaví s MustUnderstand = true, který se nerozpoznaly.  
   
  Pokud váš kanál protokolu odesílá vlastní hlavičku s MustUnderstand = true a přijímá `mustUnderstand` selhání, se musí zjistit, zda je záhlaví je odeslat z důvodu tohoto selhání. Existují dva členy na `MessageFault` třídu, která jsou užitečné pro toto:  
   
