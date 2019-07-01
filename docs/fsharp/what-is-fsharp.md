@@ -1,13 +1,13 @@
 ---
-title: Co jeF#
+title: Co je F#
 description: Další informace o tom, co F# programovací jazyk je a co F# programování je stejná jako. Další informace o bohaté datové typy, funkce a jak jsou zapadají.
 ms.date: 08/03/2018
-ms.openlocfilehash: 9d5b0de9828aa91857d3961bf7d40c02c344adaa
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: fc4f4db771c43a4ec08cc9d3a247cf1f38e60457
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641576"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486835"
 ---
 # <a name="what-is-f"></a>Co je F\#
 
@@ -100,7 +100,7 @@ F#funkce jsou také první třídy, což znamená, mohou být předány jako par
 F#obsahuje plnou podporu pro objekty, které jsou užitečné datové typy, pokud chcete kombinovat data a funkce. F#funkce se používají k práci s objekty.
 
 ```fsharp
-type Set<[<EqualityConditionOn>] ‘T when ‘T: comparison>(elements: seq<'T>) =
+type Set<[<EqualityConditionOn>] 'T when 'T: comparison>(elements: seq<'T>) =
     member s.IsEmpty = // Implementation elided
     member s.Contains (value) =// Implementation elided
     member s.Add (value) = // Implementation elided

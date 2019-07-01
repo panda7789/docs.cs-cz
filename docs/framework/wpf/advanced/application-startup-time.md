@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: 321aad14d17d6ef6fe0b7c112f8f694dd1c767d6
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 8bdd70a6eaea8aff196e2156d88460a6d24b5d3f
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832689"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487178"
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
 Množství času, který je požadován pro spuštění aplikace WPF může značně lišit. Toto téma popisuje různé postupy pro zkrácení doby spuštění vnímaná, ve skutečnosti pro aplikace Windows Presentation Foundation (WPF).  
@@ -65,7 +65,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
  S moduly lineární Ngen a JIT může mít nejhorší vliv. Toto je vzhledem k tomu mscorjit.dll musí být načten, když kompilátor JIT pracuje na vašem kódu, mnoho stránek v obrázků Ngen musí nadřazenosti a podřízenosti kompilátor JIT čtení metadat na sestavení.  
   
 ### <a name="ngen-and-clickonce"></a>Ngen a ClickOnce  
- Způsob, jak máte v úmyslu nasadit vaše aplikace provést také rozdíl v okamžiku načtení. [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] nasazení aplikace nepodporuje Ngen. Pokud se rozhodnete použít Ngen.exe pro vaši aplikaci, budete muset použít jiný mechanismus nasazení, jako je například Instalační služby systému Windows.  
+ Způsob, jak máte v úmyslu nasadit vaše aplikace provést také rozdíl v okamžiku načtení. Nasazení aplikace ClickOnce nepodporuje Ngen. Pokud se rozhodnete použít Ngen.exe pro vaši aplikaci, budete muset použít jiný mechanismus nasazení, jako je například Instalační služby systému Windows.  
   
  Další informace najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../tools/ngen-exe-native-image-generator.md).  
   
@@ -112,9 +112,9 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
  Pokud je nutné použít <xref:System.Xml.Serialization.XmlSerializer> třídy, které můžete dosáhnout lepší výkon Pokud předběžně generovat sestavení serializace.  
   
 ## <a name="configure-clickonce-to-check-for-updates-after-startup"></a>Konfigurace technologie ClickOnce pro kontrolu aktualizací po spuštění  
- Pokud vaše aplikace používá [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], vyhněte se přístup k síti při spuštění tím, že nakonfigurujete [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] ke kontrole lokality nasazení aktualizací po spuštění aplikace.  
+ Pokud vaše aplikace používá ClickOnce, vyhněte se přístup k síti při spuštění tím, že nakonfigurujete ClickOnce ke kontrole lokality nasazení aktualizací po spuštění aplikace.  
   
- Pokud používáte model aplikace (XBAP) prohlížeče XAML, mějte na paměti, která [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] i v případě, XBAP, který je již v zkontroluje web pro nasazení aktualizací [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] mezipaměti. Další informace najdete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment).  
+ Pokud používáte model aplikace (XBAP) prohlížeče XAML, mějte na paměti, že kontroluje ClickOnce lokality nasazení aktualizací i v případě, XBAP, který je již v mezipaměti ClickOnce. Další informace najdete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 ## <a name="configure-the-presentationfontcache-service-to-start-automatically"></a>Automaticky konfigurovat službu PresentationFontCache Start  
  První aplikace WPF pro spuštění po restartování je služba PresentationFontCache. Služba ukládá do mezipaměti systémových písem, zlepšuje písma přístup a celkový výkon. Je další režií při spouštění služby a v některých prostředích řízené, zvažte možnost nakonfigurovat automatické spouštění, při restartování služby.  

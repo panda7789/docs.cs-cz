@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 029e4983ef270bb5272ad0bf541ee34febd9399c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3f303583b1cff785ab0020e616fee58ef02a1c58
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920049"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487044"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 
@@ -50,7 +50,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
 |**Podepsat při uložení**|Při uložení změn vyžaduje podepsání souboru.|  
-|**Použít výchozí podpisový certifikát**|Použije klíč zadaný **soubor certifikátu** textové pole pro podepsání všech souborů. Tím se eliminují podepsání, který se obvykle zobrazuje při ukládání souboru a **podepsat při uložení** zaškrtnuto. Použít na tři tečky (**...** ) vedle **soubor certifikátu** textového pole a vyberte soubor klíče.|  
+|**Použít výchozí podpisový certifikát**|Použije klíč zadaný **soubor certifikátu** textové pole pro podepsání všech souborů. Tím se eliminují podepsání, který se obvykle zobrazuje při ukládání souboru a **podepsat při uložení** zaškrtnuto. Použít na tři tečky ( **...** ) vedle **soubor certifikátu** textového pole a vyberte soubor klíče.|  
 |Algoritmus Digest|Určí algoritmus, jímž budou generovány přehledy závislostí. Hodnotou musí být „sha256RSA“ nebo „sha1RSA“. Použije SHA1 jako výchozí. Tato hodnota je použita v aplikaci i v manifestech nasazení. Pokud uživatel při ukládání manifestu zadá certifikát, použije se algoritmus v tomto certifikátu k vygenerování přehledu závislostí.|  
   
 ## <a name="signing-options-dialog-box"></a>Dialogové okno Možnosti podpisu  
@@ -63,7 +63,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Podepsat pomocí souboru certifikátu**|Podepíše manifest digitálním certifikátem uloženým v systému souborů.|  
 |**File**|Poskytuje prostor pro zadání cesty k souboru .pfx představujícímu certifikát.|  
 |**...**|Otevře se **zvolit soubor** dialogové okno pro výběr existujícího souboru .pfx.|  
-|**Nové**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech použitých certifikátů pro podepisování [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v článku [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).|  
+|**Nové**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech použitých certifikátů pro podepisování nasazení ClickOnce naleznete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Heslo**|Poskytuje prostor pro zadání hesla použitého k podepisování certifikátů. Pokud není použito, může být ponecháno prázdné.|  
 |**Podepsání pomocí uloženého certifikátu**|Zobrazí seznam s vlastním výběrem digitálních certifikátů uložených v úložišti certifikátů počítače.|  
 |**Identifikátor URI TimeStamping**|Zobrazí adresu Uniform Resource Locator (URI) služby digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepisovat v případě, že digitální certifikát vyprší ještě před nasazením další verze aplikace. Další informace najdete v tématu [Windows Členové programu kořenového certifikátu](https://go.microsoft.com/fwlink/?LinkId=159000) a [ClickOnce and Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
@@ -116,7 +116,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Adresář aplikace**|Adresář, ve kterém jsou umístěny soubory aplikace. Použijte symbol tří teček (**...** ) tlačítko a vyberte adresář.|  
+|**Adresář aplikace**|Adresář, ve kterém jsou umístěny soubory aplikace. Použijte symbol tří teček ( **...** ) tlačítko a vyberte adresář.|  
 |**Naplnění**|Přidá všechny soubory v adresáři aplikace a jeho podadresářích do manifestu aplikace. Pokud MageUI.exe najde v adresáři jeden spustitelný soubor, automaticky označí to jako vstupní bod, což je soubor nejdřív nespustí při spuštění aplikace ClickOnce na straně klienta.|  
 |**Soubory aplikace**|Obsahuje seznam všech souborů v aplikaci. Každý soubor má tři upravitelné atributy, které jsou popsány níže.|  
 |**Typ souboru**|Typ souboru může být jednu ze čtyř hodnot:<br /><br /> -Žádný.<br />-Vstupní bod. Primární spustitelný soubor aplikace. Pouze jeden spustitelný soubor může být označený jako vstupní bod.<br />-Datový soubor. Soubor, jako je například soubor XML, poskytující data aplikaci.<br />-Soubor ikony. Aplikace, jako například se zobrazí ikona na ploše nebo v horním rohu okna aplikace.|  
@@ -139,7 +139,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Název**|Určuje identifikační informace o tomto nasazení.|  
 |**Popis**|Určuje vydavatele, produkt a podporu informace.|  
 |**Možnosti nasazení**|Určuje další informace o nasazení, jako je například typ aplikace a počáteční umístění.|  
-|**Možnosti aktualizace**|Určuje, jak často [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] by měla vyhledávat aktualizace aplikace.|  
+|**Možnosti aktualizace**|Určuje, jak často má technologie ClickOnce aktualizace aplikace.|  
 |**Odkaz na aplikaci**|Určuje manifest aplikace pro toto nasazení.|  
   
 ### <a name="name-tab"></a>Název karty  
@@ -167,9 +167,9 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |----------------|-----------------|  
 |**Typ aplikace**|Volitelné. Určuje, jestli tato aplikace sám nainstalovat na klientský počítač (**nainstalovat místně**), spustí online (**pouze Online**), nebo je aplikace WPF, která běží v prohlížeči (**prohlížeče WPF Aplikace**). Výchozí hodnota je **nainstalovat místně**.|  
 |**Počáteční umístění**|Volitelné. Adresa URL, ze kterého by ve skutečnosti spuštění aplikace. Užitečné při nasazování aplikace z disku CD, který by měl aktualizovat přímo z webu.|  
-|**Zahrnutí do manifestu počáteční umístění (ProviderURL)**|Volitelné. Určuje adresu URL, která [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] prozkoumá aktualizací aplikace.|  
-|**Po instalaci automaticky, spusťte aplikaci**|Povinný parametr. Určuje, že [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace by měl spustit okamžitě po počáteční instalaci z adresy URL. Výchozí hodnota je, že je zaškrtnuto zaškrtávací políčko.|  
-|**Povolit parametry adresy URL, které se mají předat aplikaci**|Povinný parametr. Povoluje přenos dat parametru [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace pomocí řetězce dotazu připojí k adrese URL manifestu nasazení. Výchozí hodnota je, že je zrušeno zaškrtnutí políčka.|  
+|**Zahrnutí do manifestu počáteční umístění (ProviderURL)**|Volitelné. Určuje adresu URL, na které technologie ClickOnce vyhledá aktualizace aplikace.|  
+|**Po instalaci automaticky, spusťte aplikaci**|Povinný parametr. Určuje, že by aplikace ClickOnce spouštět ihned po počáteční instalaci z adresy URL. Výchozí hodnota je, že je zaškrtnuto zaškrtávací políčko.|  
+|**Povolit parametry adresy URL, které se mají předat aplikaci**|Povinný parametr. Povoluje přenos dat parametru do aplikace ClickOnce pomocí řetězce dotazu připojí k adrese URL manifestu nasazení. Výchozí hodnota je, že je zrušeno zaškrtnutí políčka.|  
 |**Použít příponu .deploy souborů**|Povinný parametr. Pokud je vybráno, všechny soubory v manifestu aplikace musí mít příponu .deploy odstraní. Výchozí hodnota je, že je zrušeno zaškrtnutí políčka.|  
   
 ### <a name="update-options-tab"></a>Aktualizovat kartu Možnosti  
@@ -177,9 +177,9 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Tato aplikace by měla vyhledávat aktualizace**|Určuje, zda [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] by měla vyhledávat aktualizace aplikace. Pokud toto políčko není zaškrtnuto, aplikace nebude kontrolovat aktualizace, pokud ho aktualizujete programově pomocí rozhraní API v <xref:System.Deployment.Application> oboru názvů.|  
+|**Tato aplikace by měla vyhledávat aktualizace**|Určuje, zda má technologie ClickOnce aktualizace aplikace. Pokud toto políčko není zaškrtnuto, aplikace nebude kontrolovat aktualizace, pokud ho aktualizujete programově pomocí rozhraní API v <xref:System.Deployment.Application> oboru názvů.|  
 |**Zvolte, pokud by měla aplikace vyhledávat aktualizace**|Poskytuje dvě možnosti pro kontroly aktualizací:<br /><br /> -   **Před spuštěním aplikace**. Kontrola aktualizací se provádí před spuštění aplikace.<br />-   **Po spuštění aplikace**. Kontrola aktualizací začíná, jakmile byla inicializována hlavního formuláře aplikace a spustí při příštím spuštění aplikace.|  
-|**Četnost kontroly aktualizací**|Určuje, jak často [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] by měla vyhledávat aktualizace:<br /><br /> -   **Zkontrolovat při každém spuštění aplikace**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] provede kontrolu aktualizace pokaždé, když uživatel otevře aplikaci.<br />-   **Zkontrolujte každé**: Vyberte časový interval a jednotka (hodiny, dny nebo týdny), která musí uplynout před vyhledávají se aktualizace.|  
+|**Četnost kontroly aktualizací**|Určuje, jak často má technologie ClickOnce aktualizace:<br /><br /> -   **Zkontrolovat při každém spuštění aplikace**. ClickOnce – provede kontrolu aktualizace pokaždé, když uživatel otevře aplikaci.<br />-   **Zkontrolujte každé**: Vyberte časový interval a jednotka (hodiny, dny nebo týdny), která musí uplynout před vyhledávají se aktualizace.|  
 |**Zadejte minimální požadovanou verzi této aplikace**|Volitelné. Určuje, že konkrétní verzi aplikace požadovanou instalaci, bránit uživatelům v práci se starší verzí.|  
 |**Verze**|Požadováno pokud **zadat minimální požadovanou verzi této aplikace** zaškrtávací políčko je zaškrtnuto. Číslo verze musí být ve tvaru *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
   

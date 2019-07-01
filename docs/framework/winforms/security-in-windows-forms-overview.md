@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: a2d0f5f740186d3dd7483408f88d612711f57575
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 471ed75a922ab8a7df18f2e4a3ccd89ede171248
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348472"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487265"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 
@@ -21,7 +21,7 @@ Před vydáním rozhraní .NET Framework všechny kód spuštěný v počítači
 
 Rozhraní .NET Framework představuje infrastrukturu zabezpečení přístupu kódu, který umožňuje rozlišit oprávnění nebo práva, která má kód ze práva, která má uživatel. Ve výchozím nastavení můžete spustit v jaké se označuje jako částečné důvěryhodnosti pouze kód pocházející z Internetu a intranetu. Aplikace pro řadu omezení Predmety částečným vztahem důvěryhodnosti: mimo jiné aplikace je omezen přístup na místní pevný disk a nespravovaný kód nelze spustit. Určuje prostředky, které kód je povolen přístup na základě identity, že kód rozhraní .NET Framework: kdy a odkud, zda má [sestavení se silným názvem](../app-domains/strong-named-assemblies.md), ať už je podepsaný certifikát, a tak dále.
 
-[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] technologie, které můžete použít k nasazení aplikace Windows Forms, pomáhá zjednodušit vývoj aplikací, které běží v částečném vztahu důvěryhodnosti, v režimu plné důvěryhodnosti nebo v částečném vztahu důvěryhodnosti se zvýšenými oprávněními. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] poskytuje funkce, jako je zvýšení úrovně oprávnění a nasazení důvěryhodné aplikace tak, aby vaše aplikace může požadovat úplný vztah důvěryhodnosti nebo zvýšenou úroveň oprávnění z místního uživatele zodpovědně.
+Technologie ClickOnce, které můžete použít k nasazení aplikace Windows Forms, pomáhá zjednodušit vývoj aplikací, které běží v částečném vztahu důvěryhodnosti, v režimu plné důvěryhodnosti nebo v částečném vztahu důvěryhodnosti se zvýšenými oprávněními. ClickOnce poskytuje funkce, jako je zvýšení úrovně oprávnění a nasazení důvěryhodné aplikace tak, aby vaše aplikace může požadovat úplný vztah důvěryhodnosti nebo zvýšenou úroveň oprávnění z místního uživatele zodpovědně.
 
 ## <a name="understanding-security-in-the-net-framework"></a>Principy zabezpečení v rozhraní .NET Framework
 
@@ -34,7 +34,7 @@ Pokud uživatel spustit spustitelný soubor Windows Forms přímo z webového se
 >
 > Výchozí oprávnění udělené v každé z těchto sad oprávnění jsou uvedeny v [výchozí zásady zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/03kwzyfc(v=vs.100)) tématu. V závislosti na oprávněních, které aplikace obdrží je buď běží správně nebo vygeneruje výjimka zabezpečení.
 >
-> Mnoho aplikací Windows Forms bude možné nasadit s použitím [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]. Nástroje pro generování [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení mají výchozí hodnoty zabezpečení, než co byl popsán výše. Další informace najdete v tématu následující diskuse.
+> Mnoho aplikací Windows Forms se nasadí pomocí technologie ClickOnce. Nástroje pro generování nasazení ClickOnce mají výchozí hodnoty zabezpečení než co byl popsán výše. Další informace najdete v tématu následující diskuse.
 
 Skutečná oprávnění udělená aplikaci může lišit od výchozí hodnoty, protože zásady zabezpečení lze upravovat. To znamená, že vaše aplikace může mít oprávnění v jednom počítači, ale v jiné ne.
 
@@ -64,9 +64,9 @@ Následující témata popisují další funkce zabezpečení Windows Forms.
 
 ### <a name="deploying-an-application-with-the-appropriate-permissions"></a>Nasazení aplikace s příslušnými oprávněními
 
-Nejběžnější způsob nasazení aplikace Windows Forms ke klientskému počítači je s [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], technologie nasazení, která popisuje všechny součásti, které vaše aplikace potřebuje ke spuštění. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] soubory XML používá volá manifesty popisují sestavení a souborů, které tvoří vaši aplikaci a také oprávnění vaše aplikace vyžaduje.
+Nejběžnější způsob nasazení aplikace Windows Forms ke klientskému počítači je pomocí ClickOnce, technologie nasazení, která popisuje všechny součásti, které vaše aplikace potřebuje ke spuštění. Soubory XML manifestů technologie ClickOnce popisující sestavení a souborů, které tvoří vaši aplikaci a také oprávnění vaše aplikace vyžaduje.
 
-[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] má dvě technologie pro požadování zvýšenou úroveň oprávnění na klientském počítači. Spolehněte se na používání certifikátů Authenticode obou technologií. Certifikáty pomáhají poskytovat záruku toho některé na uživatele, že aplikace pochází z důvěryhodného zdroje.
+ClickOnce je technologie pro požadování zvýšenou úroveň oprávnění na klientském počítači. Spolehněte se na používání certifikátů Authenticode obou technologií. Certifikáty pomáhají poskytovat záruku toho některé na uživatele, že aplikace pochází z důvěryhodného zdroje.
 
 Následující tabulka popisuje tyto technologie.
 
@@ -77,9 +77,9 @@ Následující tabulka popisuje tyto technologie.
 
 Technologii, kterou zvolíte, závisí na prostředí pro nasazení. Další informace najdete v tématu [Výběr strategie nasazení ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Ve výchozím nastavení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace nasazené pomocí sady Visual Studio nebo nástroje .NET Framework SDK (Mage.exe a MageUI.exe) jsou nakonfigurovány na spuštění v klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. Můžete to provedete pomocí sady Visual Studio nebo rozhraní .NET Framework SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe najdete v návodu: Nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
+Ve výchozím nastavení aplikace ClickOnce, které jsou nasazeny pomocí sady Visual Studio nebo nástroje .NET Framework SDK (Mage.exe a MageUI.exe) jsou nakonfigurované ke spuštění na klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. Můžete to provedete pomocí sady Visual Studio nebo rozhraní .NET Framework SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe najdete v návodu: Nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
-Další informace o aspektech zabezpečení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] a zvýšení úrovně oprávnění, najdete v článku [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Další informace o nasazení důvěryhodných aplikací najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).
+Další informace o aspektech zabezpečení ClickOnce a zvýšení úrovně oprávnění najdete v tématu [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Další informace o nasazení důvěryhodných aplikací najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).
 
 ### <a name="testing-the-application"></a>Testování aplikace
 

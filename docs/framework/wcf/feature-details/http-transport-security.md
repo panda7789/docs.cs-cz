@@ -2,12 +2,12 @@
 title: Zabezpečení přenosu HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 386c24a9b51be56bf5a8195123e573cfced6392f
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 456df42848c009dcf42022ac674a1d27e5b33972
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402308"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487020"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace vrstvy SSL (Secure Sockets). SSL se často používá na Internetu k ověření služby ke klientovi a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje připojení SSL a jak je implementován ve Windows Communication Foundation (WCF).  
@@ -38,9 +38,9 @@ Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace
 ### <a name="using-iis-for-transport-security"></a>Pomocí služby IIS pro zabezpečení přenosu  
   
 #### <a name="iis-70"></a>Internetová informační služba 7,0  
- Chcete-li nastavit [!INCLUDE[iisver](../../../../includes/iisver-md.md)] jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [IIS 7.0 Beta: Konfigurace zabezpečeného Sockets Layer ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88600).  
+ Nastavení služby IIS 7.0 jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [konfigurace Secure Sockets Layer ve službě IIS 7.0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771438(v=ws.10)).  
   
- Konfigurace certifikátů pro použití s [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=88595).  
+Pokud chcete nakonfigurovat certifikáty pro použití se službou IIS 7.0, naleznete v tématu [konfigurace certifikátů serveru ve službě IIS 7.0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
   
 #### <a name="iis-60"></a>Internetová informační služba 6.0  
  Nastavení služby IIS 6.0 jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [konfigurace Secure Sockets Layer](https://go.microsoft.com/fwlink/?LinkId=88601).  

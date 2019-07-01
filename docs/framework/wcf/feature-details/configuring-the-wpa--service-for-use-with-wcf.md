@@ -2,12 +2,12 @@
 title: Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 9fead93fcb8982f4f69af5d4bb401aa731bf887f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7ab62bda5e579bcd80a7403d9af3a7e7f9836647
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654567"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487008"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služby, které nekomunikují přes protokol HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
@@ -23,7 +23,7 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
 ## <a name="configuring-a-site-with-non-http-bindings"></a>Konfigurace sítě s vazbami jiným protokolem než HTTP  
  Pro použití vazby jiným protokolem než HTTP s WAS, musí přidat vazbu webu do konfigurace WAS. Konfigurace úložiště pro WAS je soubor applicationHost.config umístěný v adresáři %windir%\system32\inetsrv\config. Tato konfigurace úložiště je sdílen WAS a IIS 7.0.  
   
- soubor applicationHost.config je textový soubor XML, který lze otevřít v libovolném standardního textového editoru (například Poznámkový blok). Ale [!INCLUDE[iisver](../../../../includes/iisver-md.md)] preferovaný způsob, jak přidat vazby webu jiným protokolem než HTTP je nástroj příkazového řádku konfigurace (appcmd.exe).  
+ soubor applicationHost.config je textový soubor XML, který lze otevřít v libovolném standardního textového editoru (například Poznámkový blok). Nástroj příkazového řádku konfigurace služby IIS 7.0 (appcmd.exe) je však preferovaný způsob, jak přidat vazby webu jiným protokolem než HTTP.  
   
  Následující příkaz přidá vazbu webu net.tcp výchozí webový server pomocí appcmd.exe (Tento příkaz je zadat jako jeden řádek).  
   

@@ -2,12 +2,12 @@
 title: Přehled modelu webového programování HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: a5438857114fba890aac78565ef128bfc5ea95f0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d4908eb75324d4316ea615d1a0acc286750752e7
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613042"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487720"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 Model programování webových služeb HTTP Windows Communication Foundation (WCF) poskytuje základní prvky, které jsou potřebné k sestavení služeb webových služeb HTTP s použitím technologie WCF. WEBOVÝCH služeb HTTP WCF services jsou navržené tak přístup k nejširší škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  
@@ -101,7 +101,7 @@ interface ICustomer
 ## <a name="uritemplate-query-string-parameters-and-urls"></a>Parametry řetězce dotazu UriTemplate a adresy URL  
  Styl webové služby lze volat z webového prohlížeče zadáním adresy URL, který je přidružený k operaci služby. Tyto operace služby může trvat parametrů řetězce dotazu, které musí být zadán ve formátu řetězce v rámci adresy URL. V následující tabulce jsou uvedeny typy, které mohou být předány v rámci adresy URL a formát používaný.  
   
-|Type|Formát|  
+|type|Formát|  
 |----------|------------|  
 |<xref:System.Byte>|0 - 255|  
 |<xref:System.SByte>|-128 - 127|  
@@ -138,7 +138,7 @@ interface ICustomer
  [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] poskytuje podporu pro data JSON (AJAX) a také informační kanály syndikace (včetně ATOM a RSS). Další informace o těchto funkcích najdete v tématu [WCF Web HTTP formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md) a [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md).  
   
 ## <a name="wcf-web-http-programming-model-and-security"></a>Zabezpečení a modelu programování webových služeb HTTP WCF  
- Protože model programování webových služeb HTTP WCF nepodporuje WS-* protokoly, je jediný způsob, jak zabezpečit službu WCF WEB HTTP pro vystavení služby přes protokol HTTPS pomocí protokolu SSL. Další informace o nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
+ Protože model programování webových služeb HTTP WCF nepodporuje WS-* protokoly, je jediný způsob, jak zabezpečit službu WCF WEB HTTP pro vystavení služby přes protokol HTTPS pomocí protokolu SSL. Další informace o nastavení protokolu SSL se službou IIS 7.0, naleznete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>Řešení potíží s WCF WEB HTTP programovací Model  
  Při volání webových služeb HTTP WCF services pomocí <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> k vytvoření kanálu, <xref:System.ServiceModel.Description.WebHttpBehavior> používá <xref:System.ServiceModel.EndpointAddress> nastavit i když soubor konfigurace jiný <xref:System.ServiceModel.EndpointAddress> je předána <xref:System.ServiceModel.Channels.ChannelFactoryBase%601>.  

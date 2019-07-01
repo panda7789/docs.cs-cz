@@ -2,12 +2,12 @@
 title: Programovací objektový model WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-ms.openlocfilehash: f8bda6292506b64057dee006fa59b7723fa406b2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2401a8a051ed4dcd386c7794a2197672709ea423
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648400"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487696"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>Programovací objektový model WCF Web HTTP
 HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Windows Communication Foundation (WCF) Web prostřednictvím základních požadavků protokolu HTTP bez nutnosti SOAP. HTTP programovacího modelu WCF WEB je postavený na existující model rozšiřitelnosti WCF. Definuje následující třídy:  
@@ -97,7 +97,7 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
  Nepoužívá založený na protokolu SOAP zprávy HTTP programovacího modelu WCF WEB a proto nepodporuje WS-* protokoly. Ale můžete zpřístupnit stejný kontrakt ve dvou různých koncový bod: jeden pomocí protokolu SOAP a jiné ne pomocí protokolu SOAP. Zobrazit [jak: Zveřejnění kontraktu klientům SOAP a webovým klientům](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) příklad.  
   
 ## <a name="security"></a>Zabezpečení  
- Protože HTTP programovacího modelu WCF WEB nepodporuje WS-* protokolů je jediný způsob, jak zabezpečit webová služba založená na protokolu HTTP programovacího modelu WCF WEB k vystavení služby pomocí protokolu SSL. Další informace o nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] naleznete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
+ Protože HTTP programovacího modelu WCF WEB nepodporuje WS-* protokolů je jediný způsob, jak zabezpečit webová služba založená na protokolu HTTP programovacího modelu WCF WEB k vystavení služby pomocí protokolu SSL. Další informace o nastavení protokolu SSL se službou IIS 7.0 naleznete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="see-also"></a>Viz také:
 

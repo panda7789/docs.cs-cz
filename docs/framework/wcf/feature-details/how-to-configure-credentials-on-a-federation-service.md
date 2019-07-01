@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-ms.openlocfilehash: 4200918057a32d077dbc44f48057f8e886d87a44
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7b09578bf39a081b1bed83614cff755f234f8e45
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624512"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487091"
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Postupy: Konfigurace pověření ve službě Federation Service
 Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se skládá z následujících hlavních kroků:  
@@ -28,7 +28,7 @@ Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se 
   
 1. Použití <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A> vlastnost <xref:System.ServiceModel.Description.ServiceCredentials> třídy vrátit odkaz na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> instance. Vlastnost přistupuje z <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost <xref:System.ServiceModel.ServiceHostBase> třídy.  
   
-2. Nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowUntrustedRsaIssuers%2A> vlastnost `true` Pokud samostatně vydané tokeny [!INCLUDE[infocard](../../../../includes/infocard-md.md)] karty jsou k ověření. Výchozí hodnota je `false`.  
+2. Nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowUntrustedRsaIssuers%2A> vlastnost `true` samostatně vydané tokeny, jako je například služba CardSpace karty mají-li ověřit. Výchozí hodnota je `false`.  
   
 3. Naplnění kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost s instancí <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy. Jednotlivé instance představují vystavitele, ze kterého bude služba ověřovat tokeny.  
   
@@ -47,7 +47,7 @@ Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se 
   
 1. Vytvoření `<issuedTokenAuthentication>` jako podřízený element <`serviceCredentials`> element.  
   
-2. Nastavte `allowUntrustedRsaIssuers` atribut `<issuedTokenAuthentication>` elementu `true` Pokud vystavený token, jako například ověřování [!INCLUDE[infocard](../../../../includes/infocard-md.md)] karty.  
+2. Nastavte `allowUntrustedRsaIssuers` atribut `<issuedTokenAuthentication>` elementu `true` Pokud ověřování vystavený token, jako je karta CardSpace.  
   
 3. Vytvoření `<knownCertificates>` element jako podřízený objekt `<issuedTokenAuthentication>` elementu.  
   

@@ -2,12 +2,12 @@
 title: Výjimky IdentityModel
 ms.date: 03/30/2017
 ms.assetid: 4ef34497-8ff5-4621-b773-7731cc721231
-ms.openlocfilehash: ee0b5537a415e1ea53c653ae8e8485e94cc713fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b8af2620b6179ce4cff59d7f9871377f06ffe5f
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998514"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486671"
 ---
 # <a name="identitymodel-exceptions"></a>Výjimky IdentityModel
 Toto téma obsahuje seznam generovaných IdentityModel všechny výjimky.  
@@ -100,11 +100,11 @@ Toto téma obsahuje seznam generovaných IdentityModel všechny výjimky.
 |SAMLAssertionMissingMajorVersionAttributeOnRead|Hodnota MajorVersion pro čtený výraz SamlAssertion chybí nebo její délka je 0.|  
 |SamlAttributeClaimRightShouldBePossessProperty|Tento konstruktor SamlAttribute vyžaduje, že vpravo od deklarace identity mají hodnotu System.IdentityModel.Claims.Rights.PossessProperty.|  
 |AuthorizationPolicyEvaluated|S konkrétním id není vyhodnocováno.|  
-|SAMLUnableToLoadCondtions|\<Conditions > element nebylo možné načíst.|  
+|SAMLUnableToLoadCondtions<!-- the misspelling here is deliberate. -->|\<Conditions > element nebylo možné načíst.|  
 |AESKeyLengthNotSupported|Klíč konkrétní bits se nepodporuje. Pouze 128, 192 a 256 bitů klíče jsou podporovány.|  
 |UserNameCannotBeEmpty|Uživatelské jméno nemůže být prázdný.|  
 |AlgorithmAndPublicKeyMisMatch|Zadaný algoritmus a veřejný klíč se neshodují.|  
-|SAMLUnableToLoadCondtion|\<Conditions > element nebylo možné načíst.|  
+|SAMLUnableToLoadCondtion<!-- the misspelling here is deliberate. -->|\<Conditions > element nebylo možné načíst.|  
 |SamlAssertionMissingSigningCredentials|Ve výrazu SamlAssertion nebyly nastaveny přihlašovací údaje SigningCredentials. Výrazy SamlAssertion musí být podepsané, nastavte prosím platné přihlašovací údaje SigningCredentials ve výrazu SamlAssertion, aby bylo možné pokračovat.|  
 |SspiPayloadNotEncrypted|Binární data nebyla zašifrována s kontextem zabezpečení SSPI.|  
 |SAMLAuthorizationDecisionShouldHaveOneActionOnRead|Třída SamlAuthorizationDecisionStatement, který je čten neobsahuje žádnou SamlAction.|  

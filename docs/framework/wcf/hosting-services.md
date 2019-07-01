@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: db7ca2690fc7b76d3e843a4ed51ef356890ab9eb
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: b1a0a07876e9cc111e8c5eef56f208d7bf2cb49f
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402397"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487701"
 ---
 # <a name="hosting-services"></a>Služby hostování
 Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí za běhu, která ho vytvoří a řídí jeho kontextu a životnosti. Služby Windows Communication Foundation (WCF) slouží ke spouštění v jakýkoli proces Windows, že podporuje spravovaného kódu.  
@@ -34,7 +34,7 @@ Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí
  Všimněte si, že služby hostované v IIS lze použít pouze přenos pomocí protokolu HTTP. Jeho implementace v IIS 5.1 přináší určitá omezení v [!INCLUDE[wxp](../../../includes/wxp-md.md)]. Poskytuje pro služby WCF, služba IIS 5.1 na aktivaci založenou na zprávách [!INCLUDE[wxp](../../../includes/wxp-md.md)] blokuje jakékoli jiné v místním prostředí služby WCF ve stejném počítači z přes port 80 pro komunikaci. Služby WCF můžete spustit ve stejném procesu fondu/pracovního procesu domény aplikace/aplikace jako ostatní aplikace, když jsou hostované službou IIS 6.0 na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Ale protože zásobníku režimu jádra protokolu HTTP (HTTP.sys) používat, WCF a IIS 6.0, IIS 6.0 můžete sdílet port 80 s další v místním prostředí služby WCF, které jsou spuštěné ve stejném počítači, na rozdíl od služba IIS 5.1.  
   
 #### <a name="windows-process-activation-service-was"></a>Aktivační služba procesů Windows (WAS)  
- Aktivační služba procesů Windows (WAS) je nový mechanismus procesu aktivace pro [!INCLUDE[lserver](../../../includes/lserver-md.md)] , který je k dispozici také na [!INCLUDE[wv](../../../includes/wv-md.md)]. Zachová známý model procesu služby IIS 6.0 (fondy aplikací a aktivaci založenou na zprávách procesu) a hostování funkcí (třeba rychlou ochranu, monitorování stavu a recyklaci), ale eliminuje závislost na HTTP z aktivace Architektura. [!INCLUDE[iisver](../../../includes/iisver-md.md)] používá WAS provést aktivaci na základě zpráv přes protokol HTTP. Další součásti WCF také pružný WAS k poskytování aktivaci založenou na zprávách přes protokoly, které podporuje WCF, jako je například TCP, MSMQ a pojmenované kanály. Díky tomu, že aplikace, které používají komunikační protokoly používat funkce služby IIS jako je například recyklace procesů, rychlé selhání ochrany a společné konfigurační systém, které byly k dispozici pro aplikace založené na protokolu HTTP.  
+ Aktivační služba procesů Windows (WAS) je nový mechanismus procesu aktivace pro [!INCLUDE[lserver](../../../includes/lserver-md.md)] , který je k dispozici také na [!INCLUDE[wv](../../../includes/wv-md.md)]. Zachová známý model procesu služby IIS 6.0 (fondy aplikací a aktivaci založenou na zprávách procesu) a hostování funkcí (třeba rychlou ochranu, monitorování stavu a recyklaci), ale eliminuje závislost na HTTP z aktivace Architektura. Služba IIS 7.0 používá WAS provést aktivaci na základě zpráv přes protokol HTTP. Další součásti WCF také pružný WAS k poskytování aktivaci založenou na zprávách přes protokoly, které podporuje WCF, jako je například TCP, MSMQ a pojmenované kanály. Díky tomu, že aplikace, které používají komunikační protokoly používat funkce služby IIS jako je například recyklace procesů, rychlé selhání ochrany a společné konfigurační systém, které byly k dispozici pro aplikace založené na protokolu HTTP.  
   
  Vyžaduje tato možnost hostování, který byl být správně nakonfigurovaný, ale nevyžaduje psaní jakéhokoli hostování kódu jako součást aplikace. Hostování se další informace o tom, jak konfigurovat, najdete v části [jak: Hostování služby WCF ve WAS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
   

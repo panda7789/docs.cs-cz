@@ -1,13 +1,13 @@
 ---
 title: Řetězce
 description: Zjistěte, jak F# typ "řetězec" představuje neměnné text jako posloupnost znaků Unicode.
-ms.date: 05/16/2016
-ms.openlocfilehash: c2fda4d936abab5bc3f4653613991a7f5471d81d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/28/2019
+ms.openlocfilehash: 8bd7a65a8d8e9e6a2d3930cd1fc9e800342d9a18
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642084"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487774"
 ---
 # <a name="strings"></a>Řetězce
 
@@ -29,7 +29,7 @@ ms.locfileid: "65642084"
 |Zpětné lomítko|`\\`|
 |Znak uvozovek|`\"`|
 |Apostrof|`\'`|
-|znak Unicode|`\uXXXX` nebo `\UXXXX` (kde `X` označuje šestnáctková číslice)|
+|znak Unicode|`\uXXXX` (UTF-16) nebo `\U00XXXXXX` (UTF-32) (kde `X` označuje šestnáctková číslice)|
 
 Předchází-li symbolem @, je literál doslovný řetězec. To znamená, že jsou ignorovány všechny řídicí sekvence, s tím rozdílem, že jsou dva znaky uvozovek interpretován jako znak jeden znak uvozovek.
 

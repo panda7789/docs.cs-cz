@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: f9acadcb594005d7c7eadffcddad3649a3aefc29
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 3940d8436ba5441d4e884879213a7a782214cb05
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402192"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486753"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
 Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný modelu používané technologie ASP.NET a webových služeb ASP.NET Web services (ASMX).  
@@ -23,7 +23,7 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
   
 - Služba IIS 7.0 na [!INCLUDE[wv](../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../includes/lserver-md.md)]. Služba IIS 7.0 poskytuje stejný model pokročilé zpracování jako služby IIS 6.0, ale pomocí služby Aktivace procesu Windows (WAS) umožňuje aktivaci a síťovou komunikaci přes jiné protokoly než HTTP. Toto prostředí je vhodný pro vývoj služeb WCF, které komunikují přes všechny síťové protokoly podporované službou WCF (včetně protokolu HTTP, net.tcp, net.pipe a net.msmq). Další informace o WAS najdete v tématu [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
   
-- [Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496) funguje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] a Windows WAS Process Activation Service () k poskytování bohatých aplikací hostitelské prostředí služby NET4 WCF a WF. Mezi tyto výhody patří správa životního cyklu procesu, proces recykluje, sdílené hostování, rychlou ochranu, osamocení procesu, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495).  
+- [Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496) funguje s IIS 7.0 a Windows Process Activation Service (WAS), k poskytování bohatých aplikací hostitelské prostředí služby NET4 WCF a WF. Mezi tyto výhody patří správa životního cyklu procesu, proces recykluje, sdílené hostování, rychlou ochranu, osamocení procesu, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495).  
   
 ## <a name="benefits-of-iis-hosting"></a>Výhody hostování IIS  
  Hostování služby WCF v IIS má několik výhod:  

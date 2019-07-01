@@ -2,12 +2,12 @@
 title: Chování zabezpečení ve WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: 53d8fedb5f562dfbc4aec566f8d0c442b255e1c9
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 378edb6ddd7a66249a0c7548a3d9465475f670a8
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424682"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487752"
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 Ve Windows Communication Foundation (WCF), chování změnit chování za běhu na úrovni služby, nebo na úrovni koncového bodu. (Další informace o chování obecné naleznete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* povolit kontrolu nad přihlašovacími údaji, ověřování, autorizace a auditování protokoly. Můžete použít chování programování nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcemi zabezpečení:  
@@ -87,7 +87,7 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
  Další informace o používání tento prvek konfigurace, najdete v části [jak: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
 #### <a name="allowing-anonymous-cardspace-users"></a>Povolení služby CardSpace anonymní uživatelé  
- Nastavení `AllowUntrustedRsaIssuers` atribut `<IssuedTokenAuthentication>` elementu `true` explicitně povoluje libovolného klienta předložit vystavený token podepsán pomocí libovolného pár klíče RSA. Vystavitel je *nedůvěryhodné* vzhledem k tomu, že klíč nemá žádná data vystavitele s ním spojená. A [!INCLUDE[infocard](../../../../includes/infocard-md.md)] uživatel může vytvořit samostatně vydané karty, která zahrnuje svým zadaná deklarací identity. Tuto možnost používejte s opatrností. Pokud chcete používat tuto funkci, přemýšlejte veřejný klíč RSA zabezpečenějším heslem, které by měla být uložena v databázi spolu s uživatelským jménem. Před povolením přístupu klientů ke službě, ověření klienta zobrazí veřejný klíč RSA porovnáním se souborem veřejného klíče uložené pro zobrazené uživatelské jméno. Předpokládá se, že jste zavedli proces registrace, kterým uživatelé mohou zaregistrovat svá uživatelská jména a přidružit samostatně vydané veřejné klíče RSA.  
+ Nastavení `AllowUntrustedRsaIssuers` atribut `<IssuedTokenAuthentication>` elementu `true` explicitně povoluje libovolného klienta předložit vystavený token podepsán pomocí libovolného pár klíče RSA. Vystavitel je *nedůvěryhodné* vzhledem k tomu, že klíč nemá žádná data vystavitele s ním spojená. Služba CardSpace uživatel může vytvořit samostatně vydané karty, která zahrnuje svým zadaná deklarací identity. Tuto možnost používejte s opatrností. Pokud chcete používat tuto funkci, přemýšlejte veřejný klíč RSA zabezpečenějším heslem, které by měla být uložena v databázi spolu s uživatelským jménem. Před povolením přístupu klientů ke službě, ověření klienta zobrazí veřejný klíč RSA porovnáním se souborem veřejného klíče uložené pro zobrazené uživatelské jméno. Předpokládá se, že jste zavedli proces registrace, kterým uživatelé mohou zaregistrovat svá uživatelská jména a přidružit samostatně vydané veřejné klíče RSA.  
   
 ## <a name="client-credentials"></a>Přihlašovací údaje klienta  
  Přihlašovací údaje pro klienta se používají k ověření klienta ke službám v případech, kdy je vyžaduje vzájemné ověřování. V části můžete použít k určení certifikáty služby pro scénáře, kde klient musí zabezpečené zprávy do služby pomocí certifikátu služby.  

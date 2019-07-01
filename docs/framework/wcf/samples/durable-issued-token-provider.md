@@ -2,18 +2,18 @@
 title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: b7f204fcb2c1b72a73e091ecf37c2921f7575516
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bfe8f8bb8c3775760bc69031e338a156d690ab25
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650083"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487604"
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.  
   
 ## <a name="discussion"></a>Diskuse  
- Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů pro zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. Součástí WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
+ Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů pro zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s poskytovatelem token CardSpace. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
 - Pokud máte úložiště přihlašovacích údajů, které nelze použít předdefinovaný poskytovatel tokenů.  
   

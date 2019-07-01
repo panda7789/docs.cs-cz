@@ -5,12 +5,12 @@ helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-ms.openlocfilehash: 70ed0fe9191c18e88198871319b3c3ee3c0b4ab4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c4feb52cbefe7e3f8bab7f90568b231302b77372
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626975"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486865"
 ---
 # <a name="distributed-application-security"></a>Zabezpečení distribuované aplikace
 Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní oblasti funkčnosti: přenos zabezpečení, řízení přístupu a auditování. Zabezpečení přenosu poskytuje integritu, šifrování a ověřování. Zabezpečení přenosu poskytuje jednu z následujících: zabezpečení, zabezpečení zprávy přenosu nebo `TransportWithMessageCredential`.  
@@ -80,7 +80,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
 |Windows|Umožňuje výměny zpráv SOAP dojde za ověřený kontext přihlašovacích údajů Windows. Vybrat si z protokolu Kerberos nebo NTLM jako ověřovací služba používá mechanismus vyjednávání SSPI.|  
 |Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s pověření uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelským jménem, například generování podpis nebo šifrovat data. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  
-|[!INCLUDE[infocard](../../../../includes/infocard-md.md)]|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí [!INCLUDE[infocard](../../../../includes/infocard-md.md)].|  
+|CardSpace|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí CardSpace.|  
   
 ### <a name="programming-credentials"></a>Programování přihlašovacích údajů  
  Pro každý typ přihlašovacích údajů klienta umožňuje programovacího modelu WCF zadání hodnot přihlašovacích údajů a přihlašovacích údajů validátory pomocí chování služby a chování kanálu.  

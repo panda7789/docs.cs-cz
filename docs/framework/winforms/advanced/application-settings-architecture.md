@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: a049bbe22d29f02acbc7889bb5d5010ec44f9d15
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 717abc8f54669a5ca814a61827a0865215204e1b
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876225"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487357"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
@@ -109,16 +109,16 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
  Pokud se rozhodnete implementovat vlastní třídu nastavení, můžete použít <xref:System.Configuration.SettingsSerializeAsAttribute> k označení nastavení buď pomocí binární nebo vlastní serializace <xref:System.Configuration.SettingsSerializeAs> výčtu. Další informace o vytváření vlastních nastavení třídy v kódu, naleznete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
   
 ### <a name="settings-file-locations"></a>Umístění souboru nastavení  
- Umístění `app`. exe.config a *uživatele*souborech .config se liší v závislosti na tom, jak se aplikace nainstaluje. Pro aplikace založené na formulářích Windows zkopírovat do místního počítače `app`. exe.config se bude nacházet ve stejném adresáři jako základní adresář aplikace hlavní spustitelný soubor, a *uživatele*.config se bude nacházet v umístění určeného proměnnou <xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A?displayProperty=nameWithType> vlastnost. Pro aplikace nainstalované prostřednictvím [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], oba tyto soubory se bude nacházet v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat pod %InstallRoot%\Documents a nastavení\\*uživatelské jméno*\Local nastavení.  
+ Umístění `app`. exe.config a *uživatele*souborech .config se liší v závislosti na tom, jak se aplikace nainstaluje. Pro aplikace založené na formulářích Windows zkopírovat do místního počítače `app`. exe.config se bude nacházet ve stejném adresáři jako základní adresář aplikace hlavní spustitelný soubor, a *uživatele*.config se bude nacházet v umístění určeného proměnnou <xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A?displayProperty=nameWithType> vlastnost. Pro aplikace nainstalované pomocí ClickOnce, oba tyto soubory budou umístěné v adresáři ClickOnce Data pod %InstallRoot%\Documents a nastavení\\*uživatelské jméno*\Local nastavení.  
   
- Umístění úložiště těchto souborů se mírně liší, pokud uživatel má povolen cestovní profily, díky čemuž by uživatelé k definování různých Windows a nastavení aplikace, když uživatel používá jiné počítače v rámci domény. V takovém případě obě [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace a bez-[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace budou mít jejich `app`. exe.config a *uživatele*.config soubory uložené v části Nastavení a %InstallRoot%\Documents\\ *uživatelské jméno*\Application Data.  
+ Umístění úložiště těchto souborů se mírně liší, pokud uživatel má povolen cestovní profily, díky čemuž by uživatelé k definování různých Windows a nastavení aplikace, když uživatel používá jiné počítače v rámci domény. V takovém případě bude mít aplikace ClickOnce a aplikací bez ClickOnce jejich `app`. exe.config a *uživatele*.config soubory uložené v části Nastavení a %InstallRoot%\Documents\\  *uživatelské jméno*\Application Data.  
   
- Další informace o tom, jak funguje funkce nastavení aplikace s novou technologií nasazení najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings). Další informace o [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat, naleznete v tématu [Accessing Local and Remote Data in ClickOnce Applications](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications).  
+ Další informace o tom, jak funguje funkce nastavení aplikace s novou technologií nasazení najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings). Další informace o adresáři dat ClickOnce, naleznete v tématu [Accessing Local and Remote Data in ClickOnce Applications](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications).  
   
 ## <a name="application-settings-and-security"></a>Nastavení aplikace a zabezpečení  
  Nastavení aplikace jsou navrženy pro práci v částečném vztahu důvěryhodnosti, prostředí s omezeným přístupem, které je výchozí nastavení pro aplikace Windows Forms hostovaná přes Internet nebo intranet. K použití nastavení aplikace se ve výchozím nastavení jsou požadována žádná zvláštní oprávnění nad rámec částečným vztahem důvěryhodnosti.  
   
- Při použití nastavení aplikace v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace, `user`soubor .config je uložený v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] datový adresář. Velikost aplikace `user`soubor .config nesmí překročit kvóta adresáře data nastavením [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)]. Další informace najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings).  
+ Při nastavení aplikace se používají v aplikaci ClickOnce, `user`.config soubor je uložen v adresáři dat ClickOnce. Velikost aplikace `user`soubor .config nesmí překročit data adresáře kvótu nastavenou aplikací ClickOnce. Další informace najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings).  
   
 ## <a name="custom-settings-providers"></a>Vlastní nastavení zprostředkovatelů  
  V nastavení aplikace architektury, je volné párování mezi nastavení aplikace obálkovou třídu odvozenou z <xref:System.Configuration.ApplicationSettingsBase>, a související nastavení zprostředkovatele nebo zprostředkovatele, odvozený z <xref:System.Configuration.SettingsProvider>. Toto přidružení je definována pouze <xref:System.Configuration.SettingsProviderAttribute> použitý pro obálkovou třídu nebo jeho jednotlivé vlastnosti. Pokud nastavení poskytovatele není explicitně zadán, výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, se používá. V důsledku toho tato architektura podporuje vytváření a používání vlastních nastavení zprostředkovatele.  

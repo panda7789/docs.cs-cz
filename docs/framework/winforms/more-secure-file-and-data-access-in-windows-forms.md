@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: c804a0a751969377c292613fdae8cc19b266ffa9
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 8ad64ddcb25aa7037e30ad0618d16d654d9855d6
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834065"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487253"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 Rozhraní .NET Framework používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
@@ -26,7 +26,7 @@ Rozhraní .NET Framework používá oprávnění k ochraně prostředkům a dat�
  Pokud narazíte na omezení zabezpečení, máte dvě možnosti: uplatnit oprávnění (za předpokladu, že bylo uděleno pro vaši aplikaci) nebo verze operačního systému funkce napsané pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s souboru, database a přístup k registru z aplikací, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
   
 > [!NOTE]
->  Ve výchozím nastavení nástroje, které generují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení ve výchozím nastavení tato nasazení žádající plné důvěryhodnosti z počítače, na kterých se používají. Pokud se rozhodnete, že chcete výhody vyššího zabezpečení provozu v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení v sadě Visual Studio nebo jedním z nástrojů Windows Software Development Kit (SDK) (Mage.exe nebo MageUI.exe). Další informace o Windows Forms – zabezpečení a o tom, jak určit, příslušné úrovně důvěryhodnosti pro vaši aplikaci najdete v tématu [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md).  
+>  Ve výchozím nastavení nástroje, které generují nasazení ClickOnce ve výchozím nastavení tato nasazení s vyžádáním plné důvěryhodnosti z počítače, na kterých se používají. Pokud se rozhodnete, že chcete výhody vyššího zabezpečení provozu v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení v sadě Visual Studio nebo jedním z nástrojů Windows Software Development Kit (SDK) (Mage.exe nebo MageUI.exe). Další informace o Windows Forms – zabezpečení a o tom, jak určit, příslušné úrovně důvěryhodnosti pro vaši aplikaci najdete v tématu [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Přístup k souborům  
  <xref:System.Security.Permissions.FileIOPermission> Třídy ovládacích prvků přístupu souborů a složek v rozhraní .NET Framework. Ve výchozím nastavení, systém zabezpečení nejsou udělena <xref:System.Security.Permissions.FileIOPermission> do prostředí částečným vztahem důvěryhodnosti, jako je místní intranet a Internet zóny. Aplikace, která vyžaduje přístup k souborům lze však i nadále fungovat v těchto prostředích je-li upravit návrh aplikace nebo použít různé metody pro přístup k souborům. Ve výchozím nastavení zóny místního intranetu je uděleno právo mít stejný přístup k serveru a stejný přístup adresáře pro připojení zpět k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení zóně Internet, je pouze uděleno právo na zpětné připojení k původnímu serveru.  

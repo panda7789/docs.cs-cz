@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: d6dea344d5af24ba2f5bb4aa4064a4f876408380
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 0946e123e10fbad7357c9be356287e5e87b271d2
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423885"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486938"
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Útok DoS nastane, pokud je systém zahltil tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu.  
@@ -67,7 +67,7 @@ ms.locfileid: "66423885"
  Ve výjimečných případech, kdy certifikát X.509, který obsahuje několik názvů subjektu alternativní a autorizaci pomocí v alternativním názvu subjektu, může dojít k selhání autorizace.  
   
 ## <a name="protect-configuration-files-with-acls"></a>Chránit konfigurační soubory společně se seznamy ACL  
- Povinné a nepovinné deklarace identity můžete zadat v kódu a konfigurační soubory pro [!INCLUDE[infocard](../../../../includes/infocard-md.md)] vydané tokeny. Výsledkem je odpovídající elementy probíhá emitovány v `RequestSecurityToken` zprávy odeslané bezpečnostní token služby. Útočník můžete upravit kódu nebo konfigurace odebrat požadované nebo nepovinné deklarace identity, potenciálně získávání služby tokenů zabezpečení k vydání tokenu, který neumožňuje přístup k cílové službě.  
+ Můžete určit požadovaných a volitelných deklarací v kódu a konfigurační soubory pro tokeny vydané služby CardSpace. Výsledkem je odpovídající elementy probíhá emitovány v `RequestSecurityToken` zprávy odeslané bezpečnostní token služby. Útočník můžete upravit kódu nebo konfigurace odebrat požadované nebo nepovinné deklarace identity, potenciálně získávání služby tokenů zabezpečení k vydání tokenu, který neumožňuje přístup k cílové službě.  
   
  Zmírnit: Vyžadovat přístup k počítači a upravte konfigurační soubor. Řízení přístupu pomocí souboru seznamy ACL pro konfigurační soubory zabezpečení. WCF vyžaduje, aby kód v adresáři aplikace nebo v globální mezipaměti sestavení předtím, než bude možné takový kód, který se má načíst z konfigurace. Pro zabezpečení adresáře, použijte seznamy ACL adresáře.  
   

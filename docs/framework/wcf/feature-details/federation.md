@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-ms.openlocfilehash: 376448502b7b9c7002213be5c3437849a3868166
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 295e4bd5eca58bc190b31fd96e79f97678e381a4
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425038"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486774"
 ---
 # <a name="federation"></a>Federace
 Toto téma nabízí stručný přehled konceptů zabezpečení. Popisuje také podporu Windows Communication Foundation (WCF) pro nasazení architektury zabezpečení. Ukázková aplikace, které ukazuje, federace, naleznete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
@@ -224,7 +224,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
   
  ![Federace](../../../../docs/framework/wcf/feature-details/media/sts-b.gif "STS_B")  
   
- Podobně jako služba tokenů zabezpečení B, A Služba tokenů zabezpečení je také webovou službu, která vydává tokeny zabezpečení a poskytuje jeden koncový bod pro tento účel. Ale používá jinou vazbou (`wsHttpBinding`) a vyžaduje, aby uživatelé k dispozici platný [!INCLUDE[infocard](../../../../includes/infocard-md.md)] s `emailAddress` deklarací identity. V odpovědi, vystavuje tokeny SAML s `userAuthenticated` deklarací identity. To je určeno deklarativně v konfiguraci služby.  
+ Podobně jako služba tokenů zabezpečení B, A Služba tokenů zabezpečení je také webovou službu, která vydává tokeny zabezpečení a poskytuje jeden koncový bod pro tento účel. Ale používá jinou vazbou (`wsHttpBinding`) a vyžaduje, aby uživatelé k dispozici platný CardSpace s `emailAddress` deklarací identity. V odpovědi, vystavuje tokeny SAML s `userAuthenticated` deklarací identity. To je určeno deklarativně v konfiguraci služby.  
   
 ```xml  
 <system.serviceModel>  

@@ -1,13 +1,13 @@
 ---
 title: Literály
 description: Seznamte se s typy literálu v F# programovací jazyk.
-ms.date: 06/08/2019
-ms.openlocfilehash: 93329cd868ff7a2daaffa1b87ba838bbbc98015c
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.date: 06/28/2019
+ms.openlocfilehash: 53647d8cbc2a59527a50e122bc1abc6055c1fce5
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816229"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487785"
 ---
 # <a name="literals"></a>Literály
 
@@ -20,7 +20,7 @@ Toto téma obsahuje tabulku, která ukazuje, jak určit typ literály v F#.
 
 Následující tabulka uvádí typy literálu v F#. Znaky, které představují číslice v šestnáctkové soustavě nerozlišují; znaky, které označují typ rozlišují malá a velká písmena.
 
-|Type|Popis|Přípona nebo předpona|Příklady|
+|type|Popis|Přípona nebo předpona|Příklady|
 |----|-----------|----------------|--------|
 |sbyte|8bitové celé číslo se znaménkem|y|`86y`<br /><br />`0b00000101y`|
 |byte|přirozené číslo bez znaménka 8 bitů|UY|`86uy`<br /><br />`0b00000101uy`|
@@ -69,7 +69,7 @@ let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 
 ## <a name="remarks"></a>Poznámky
 
-Řetězce Unicode mohou obsahovat explicitní kódování, kterou lze zadat pomocí `\u` 16bitové šestnáctkové nebo UTF-32 kódování, kterou lze zadat pomocí `\U` za nímž následuje 32-bit šestnáctkový kód, který představuje Unicode náhradní pár.
+Řetězce Unicode mohou obsahovat explicitní kódování, kterou lze zadat pomocí `\u` následovaný 16bitové šestnáctkové (0000 - FFFF), nebo UTF-32 kódování, kterou lze zadat pomocí `\U` za nímž následuje 32-bit šestnáctkový kód, který představuje libovolný bod kódu Unicode (00000000 - 00010FFFF).
 
 Použití jiných operátorů bitového jiných než `|||` není povolený.
 

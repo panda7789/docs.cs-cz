@@ -5,18 +5,18 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: 629eb482768e4ed2b3d70ee3d27157b502eeb72b
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: d6c931ec904e9a7e58d5b747c74898208863b8e9
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832725"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486723"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool > – Element (nastavení webu)
-Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
+Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikace ASP.NET ve službě IIS 7.0 nebo novější verze běží v integrovaném režimu.  
   
 > [!IMPORTANT]
->  Tento element a funkci podporuje fungovat, pouze pokud je hostitelem aplikace technologie ASP.NET [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze.  
+>  Tento element a funkci podporuje fungovat, pouze pokud je vaše aplikace ASP.NET hostované na IIS 7.0 nebo novější verze.  
   
  \<Konfigurace >  
 \<System.Web > – Element (nastavení webu)  
@@ -52,12 +52,12 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
 |[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace o způsobu interakce ASP.NET s hostitelskou aplikací.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace elementu vám umožní nakonfigurovat jak ASP.NET spravuje vláken a fronty požadavků, když je aplikace hostovaná ve fondu aplikací služby IIS. Je-li spustit služby IIS 6 nebo spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] v klasickém režimu nebo v režimu ISAPI, tato nastavení jsou ignorovány.  
+ Když spustíte v integrovaném režimu služby IIS 7.0 nebo novější verze, tato kombinace elementu vám umožní nakonfigurovat jak ASP.NET spravuje vláken a fronty požadavků, když je aplikace hostovaná ve fondu aplikací služby IIS. Pokud spustíte IIS 6 nebo spuštění služby IIS 7.0 v klasickém režimu nebo v režimu ISAPI, tato nastavení budou ignorovány.  
   
  `applicationPool` Nastavení platí pro všechny fondy aplikací, které běží na konkrétní verzi rozhraní .NET Framework. Nastavení jsou obsaženy v souboru aspnet.config. Existuje verze tohoto souboru pro verze 2.0, 4.0 rozhraní .NET Framework. (Verze 3.0 a 3.5 rozhraní .NET Framework sdílet s verzí 2.0 Soubor aspnet.config.)  
   
 > [!IMPORTANT]
->  Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] na [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný aspnet.config souboru pro každý fond aplikací. Díky tomu můžete přizpůsobit výkonu vláken pro každý fond aplikací.  
+>  Při spuštění služby IIS 7.0 [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný aspnet.config souboru pro každý fond aplikací. Díky tomu můžete přizpůsobit výkonu vláken pro každý fond aplikací.  
   
  Pro `maxConcurrentRequestsPerCPU` nastavení, ve výchozím nastavení "5000" v rozhraní .NET Framework 4 efektivně vypne omezování žádostí, které je řízen pomocí technologie ASP.NET, pokud máte ve skutečnosti 5000 nebo více požadavků na CPU. Ve výchozím nastavení závisí na modulu CLR-fondu vláken k automatické správě souběžnosti jeden procesor a místo toho. Aplikace, které usnadňují používání příliš často používá asynchronní zpracování požadavků, nebo jež mají velký počet požadavků dlouhotrvající blokován v síti vstupně-výstupních operací, bude využít zvýšenou výchozí limit v rozhraní .NET Framework 4. Nastavení `maxConcurrentRequestsPerCPU` na nulovou vypne použití spravovaných vláken pro zpracování požadavků ASP.NET. Pokud je aplikace spuštěna ve fondu aplikací služby IIS, požadavky zůstat ve vlákně vstupně-výstupních operací služby IIS a proto se omezuje souběžnosti vláken nastavením služby IIS.  
   
@@ -66,9 +66,9 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak nakonfigurovat chování v celém procesu ASP.NET v souboru aspnet.config za následujících okolností:  
   
-- Aplikace je hostována v [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] fondu aplikací.  
+- Aplikace je hostována ve fondu aplikací služby IIS 7.0.  
   
-- [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] běží v integrovaném režimu.  
+- V integrovaném režimu je spuštěna služba IIS 7.0.  
   
 - Aplikace používá rozhraní .NET Framework 3.5 SP1 nebo novější.  
   

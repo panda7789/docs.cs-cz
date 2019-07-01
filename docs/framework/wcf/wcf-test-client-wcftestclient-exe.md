@@ -2,12 +2,12 @@
 title: WCF Test Client (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: ee40ca7a07729cac284ef8c634d63d673be3fbd0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9044dc2479e8e0a31a6152321231ee1936b74351
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613081"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487450"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) je nástroj grafického uživatelského rozhraní, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazovat odpovědi, které služba odesílá zpět. Poskytuje bezproblémové službu testování prostředí v kombinaci s hostitel služby WCF.  
@@ -154,7 +154,7 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
   
 - Transakce.  
   
-- Zabezpečení: [!INCLUDE[infocard](../../../includes/infocard-md.md)] , certifikátu a uživatelského jména a hesla.  
+- Zabezpečení: Služba CardSpace, certifikátu a uživatelského jména a hesla.  
   
 - Vazby: Wsfederationbinding – všechny kontextu vazby a vazbu Https, WebHttpbinding (podpora zprávu odpovědi Json).  
   

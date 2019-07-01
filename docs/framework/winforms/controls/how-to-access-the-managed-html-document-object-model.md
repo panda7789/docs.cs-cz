@@ -8,12 +8,12 @@ helpviewer_keywords:
 - HTML DOM [Windows Forms], accessing
 - managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
-ms.openlocfilehash: 0374e63191f5f81891a0c7c78c5e739ac5ec7984
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2a195dc6583d5a0a72bd08b66f8933f4002e879a
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624163"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487277"
 ---
 # <a name="how-to-access-the-managed-html-document-object-model"></a>Postupy: Přístup k modelu spravovaného objektu dokumentu HTML
 Spravované HTML Document Object Model (DOM) se můžete dostat ze dvou typů aplikací:  
@@ -43,7 +43,7 @@ Spravované HTML Document Object Model (DOM) se můžete dostat ze dvou typů ap
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
   
-1. Vaše aplikace nebo <xref:System.Windows.Forms.UserControl> vyžaduje úplný vztah důvěryhodnosti pro přístup ke spravované HTML DOM Pokud nasazujete aplikaci Windows Forms pomocí [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], můžete požádat o zvýšení úrovně oprávnění nebo Trusted Application Deployment úplný vztah důvěryhodnosti, viz [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications) podrobnosti.  
+1. Vaše aplikace nebo <xref:System.Windows.Forms.UserControl> vyžaduje úplný vztah důvěryhodnosti pro přístup ke spravované HTML DOM Pokud nasazujete aplikace Windows Forms pomocí technologie ClickOnce, můžete požádat o zvýšení úrovně oprávnění nebo Trusted Application Deployment; úplný vztah důvěryhodnosti. Zobrazit [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications) podrobnosti.  
   
 ## <a name="see-also"></a>Viz také:
 

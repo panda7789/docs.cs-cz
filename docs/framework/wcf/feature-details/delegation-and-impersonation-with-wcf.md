@@ -8,12 +8,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: b9dd02724b8c2a9e4f50ecd61d822d5f1a478eee
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 13e58339e55b2071e4c1979de6c4e130fe4c9e32
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402341"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486951"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [jak: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -57,7 +57,7 @@ ms.locfileid: "67402341"
  V rozsahu, do které může služba zosobnit klienta závisí na oprávnění, která obsahuje účet služby při pokusu zosobnění, typ používá zosobnění a případně rozsah zosobnění, které je povoleno klienta.  
   
 > [!NOTE]
->  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace s stavové kontext zabezpečení tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Když klient je však stránky technologie ASP.NET a této stránce je hostovaná ve službě IIS 6.0 nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], a poté spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací použijte token kontextu zabezpečení bezstavové (SCT). Nicméně pokud klient je stránka technologie ASP.NET a zabezpečené relace pomocí stavového SCTs se používají, nelze zosobnit klienta. Další informace o používání stavové SCTs v zabezpečené relaci v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace s stavové kontext zabezpečení tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Ale při klienta je stránka technologie ASP.NET a této stránce je hostované v IIS 6.0 a IIS 7.0, pak klient spuštěn pod `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací použijte token kontextu zabezpečení bezstavové (SCT). Nicméně pokud klient je stránka technologie ASP.NET a zabezpečené relace pomocí stavového SCTs se používají, nelze zosobnit klienta. Další informace o používání stavové SCTs v zabezpečené relaci v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
 ## <a name="impersonation-in-a-service-method-declarative-model"></a>Zosobnění v metodě služby: Deklarativní Model  
  Většina scénářů zosobnění zahrnovat spouštění metody služby v rámci volajícího. Zosobnění funkce, která usnadňuje to udělat tak, že umožňuje uživateli zadat požadavek zosobnění v poskytuje WCF <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. V následujícím kódu, infrastruktura WCF zosobňuje volající před spuštěním `Hello` metody. Žádný pokus o přístup k prostředkům nativní uvnitř `Hello` metoda úspěšné pouze v případě, že seznam řízení přístupu (ACL) prostředku umožňuje volajícímu přístup k oprávnění. Chcete-li povolit zosobnění, nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost na jednu z <xref:System.ServiceModel.ImpersonationOption> hodnot výčtu, buď <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu.  

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: eeac535eac95b19889d0d8d74115bcddc3a15224
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: af40660d1af0a88710c4b53009474847cece6deb
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402342"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486643"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují tento hostitel služby Windows Communication Foundation (WCF) aplikace. Model zpracování služby WAS zobecňuje procesní model IIS 6.0 pro HTTP server odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelském prostředí, který podporuje aktivaci založenou na zprávách a nabízí schopnost hostovat velký počet aplikací na daném počítači.  
@@ -25,10 +25,7 @@ Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovn�
 - Centralizované aplikace konfigurace a správa.  
   
 - Umožňuje aplikacím využívat výhod procesní model IIS bez nutnosti nasazení nároky úplnou instalaci služby IIS.  
-  
- Další informace o funkcích WAS najdete v tématu [IIS 7.0 Beta: Správu služby IIS 7.0 webu](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
-  
- [Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496) funguje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] a Windows WAS Process Activation Service () k poskytování bohatých aplikací hostitelské prostředí služby NET4 WCF a WF. Mezi tyto výhody patří správa životního cyklu procesu, proces recykluje, sdílené hostování, rychlou ochranu, osamocení procesu, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495).  
+[Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496) funguje s IIS 7.0 a Windows Process Activation Service (WAS), k poskytování bohatých aplikací hostitelské prostředí služby NET4 WCF a WF. Mezi tyto výhody patří správa životního cyklu procesu, proces recykluje, sdílené hostování, rychlou ochranu, osamocení procesu, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495).  
   
 ## <a name="elements-of-the-was-addressing-model"></a>Prvky WAS adresování modelu  
  Aplikace mají adres identifikátor URI (Uniform Resource), které jsou jednotky kódu, jejichž životní cyklus a spuštění prostředí jsou spravovány serverem. Může být jedna instance serveru WAS domácí pro spoustu různých aplikací. Servery uspořádání aplikací do skupin nazývaných *lokality*. V rámci lokality jsou hierarchické způsobem, který odráží strukturu identifikátorů URI, který bude sloužit jako jejich externí adresy uspořádané aplikací.  

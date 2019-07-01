@@ -2,12 +2,12 @@
 title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 4c46a7ac0482e0f9c969505b87558d240bb1391e
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: fcfad4c6cd7ffb0bf1233bab842b57a10bcc7f87
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402302"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486918"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -103,7 +103,7 @@ Musíte vždycky použít relativní koncového bodu adresy koncových bodů slu
 
 ### <a name="available-transports"></a>K dispozici přenosy
 
-Služby WCF hostované v IIS 5.1 a IIS 6.0 jsou omezeny na používání komunikace na základě protokolu HTTP. Na těchto platformách IIS konfigurace hostovanou službu, která používá vazbu jiným protokolem než HTTP způsobí chybu při aktivaci služby. Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], podporovaných přenosů zahrnují HTTP, Net.TCP, Net.Pipe, Net.MSMQ a msmq.formatname pro zpětné kompatibilitě se stávajícími aplikacemi služby MSMQ.
+Služby WCF hostované v IIS 5.1 a IIS 6.0 jsou omezeny na používání komunikace na základě protokolu HTTP. Na těchto platformách IIS konfigurace hostovanou službu, která používá vazbu jiným protokolem než HTTP způsobí chybu při aktivaci služby. Pro službu IIS 7.0 podporovaných přenosů zahrnují HTTP, Net.TCP, Net.Pipe, Net.MSMQ a msmq.formatname pro zpětné kompatibilitě se stávajícími aplikacemi služby MSMQ.
 
 ### <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 

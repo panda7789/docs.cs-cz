@@ -9,12 +9,12 @@ helpviewer_keywords:
 - frames [Windows Forms], accessing
 - DOM [Windows Forms], accessing frames in managed HTML
 ms.assetid: cdeeaa22-0be4-4bbf-9a75-4ddc79199f8d
-ms.openlocfilehash: 9a02a912c170bfc4d997f1d8a0fe4f4d5bedb147
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5a9864184e92c3c6bbcf6a613fd1092238181a93
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665812"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487303"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>Přístup k rámcům v modelu spravovaného objektu dokumentu HTML
 Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo windows, které může obsahovat vlastní odlišné dokumentů HTML. Pomocí snímků usnadňuje vytvoření stránky HTML, ve kterých zůstat statický, jako je například navigační panel, jeden nebo více kusů stránky, zatímco jiné rámce neustále měnit jejich obsah.  
@@ -36,7 +36,7 @@ Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo wind
 ## <a name="frames-and-security"></a>Rámce a zabezpečení  
  Přístup k snímků je složité fakt, že spravovaný model HTML DOM implementuje bezpečnostní opatření, označované jako *mezi rámci skriptovací zabezpečení*. Pokud dokument obsahuje `FRAMESET` s dvěma nebo více `FRAME`s v různých doménách, tyto `FRAME`s nemůžou komunikovat mezi sebou. Jinými slovy `FRAME` , zobrazí obsah z webu nelze přístup k informacím o `FRAME` , který je hostitelem lokality třetích stran, jako `http://www.adatum.com/`. Se implementuje toto zabezpečení na úrovni <xref:System.Windows.Forms.HtmlWindow> třídy. Obecné informace můžete získat informace o `FRAME` hostování jiný web, jako je například její adresu URL, ale nelze získat přístup k jeho <xref:System.Windows.Forms.HtmlWindow.Document%2A> nebo změna velikosti či umístění jeho hostování `FRAME` nebo `IFRAME`.  
   
- Toto pravidlo platí také pro windows, které můžete otevřít pomocí <xref:System.Windows.Forms.HtmlWindow.Open%2A> a <xref:System.Windows.Forms.HtmlWindow.OpenNew%2A> metody. Pokud je okno otevření v jiné doméně než stránky hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebudete moci přesunout okno nebo zkontrolovat jeho obsah. Tato omezení se vynucují také, pokud použijete <xref:System.Windows.Forms.WebBrowser> ovládací prvek pro zobrazení webové stránky, která se liší od webu použít k nasazení aplikace založené na formulářích Windows. Pokud používáte [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] technologie nasazení k instalaci aplikace z webu a použít <xref:System.Windows.Forms.WebBrowser> k zobrazení webu B, nebudete mít k datům přístup k webu B.  
+ Toto pravidlo platí také pro windows, které můžete otevřít pomocí <xref:System.Windows.Forms.HtmlWindow.Open%2A> a <xref:System.Windows.Forms.HtmlWindow.OpenNew%2A> metody. Pokud je okno otevření v jiné doméně než stránky hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebudete moci přesunout okno nebo zkontrolovat jeho obsah. Tato omezení se vynucují také, pokud použijete <xref:System.Windows.Forms.WebBrowser> ovládací prvek pro zobrazení webové stránky, která se liší od webu použít k nasazení aplikace založené na formulářích Windows. Pokud používáte k instalaci aplikace z webu A nasazení technologie ClickOnce a použijete <xref:System.Windows.Forms.WebBrowser> k zobrazení webu B, nebudete mít k datům přístup k webu B.  
   
 ## <a name="see-also"></a>Viz také:
 

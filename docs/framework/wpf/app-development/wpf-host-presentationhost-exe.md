@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF Host application [WPF]
 - PresentationHost.exe
 ms.assetid: 3215bfa1-722c-4ac8-a7c5-bdd02d30afbd
-ms.openlocfilehash: cdd2b451324b1a0edd7aa76494da72623b8326ad
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 543076c3b00bf7946111df4c18d8c71928ce7ee2
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591267"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487328"
 ---
 # <a name="wpf-host-presentationhostexe"></a>Hostitel WPF (PresentationHost.exe)
 Hostitel Windows Presentation Foundation (WPF) (PresentationHost.exe) je aplikace, která umožňuje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace zajistit také jejich hostování v kompatibilní prohlížečů (včetně [!INCLUDE[TLA#tla_ie6](../../../../includes/tlasharptla-ie6-md.md)] a novější). Ve výchozím nastavení, je Windows Presentation Foundation (WPF) hostitele zaregistrovaný jako prostředí a [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] obslužné rutiny pro hostované v prohlížeči [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obsah, který obsahuje:  
@@ -41,7 +41,7 @@ Hostitel Windows Presentation Foundation (WPF) (PresentationHost.exe) je aplikac
 |-debugSecurityZoneURL \<url>|Použít s [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] hodnotě k označení PresentationHost.exe, aplikace by měl ladit, jako kdyby byly nasazeny z určeného [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)]. Určuje zónu nasazení i webovou stránku původu.|  
 |-vkládání|Vyžadovány rozhraním OLE. Pokud `-event` nebo `-debug` jsou parametr zadán, není potřeba zadávat `-embedding` parametr, protože tento parametr je nastaven interně.|  
 |-události \<eventname >|Otevřete událost s tímto názvem a dají signál, jakmile je inicializována a jste připravení hostitele PresentationHost.exe [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obsah. PresentationHost.exe bude ukončen. Pokud došlo k chybě při otevírání události, například když ji dosud nebyla vytvořena.|  
-|-launchApplication \<url >|Spouští samostatný [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] ze zadané adresy URL aplikace. [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] a jsou použity zásady zabezpečení rozhraní WinINet týkající se aplikací .NET.|  
+|-launchApplication \<url >|Spuštění samostatné aplikace ClickOnce ze zadané adresy URL. [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] a jsou použity zásady zabezpečení rozhraní WinINet týkající se aplikací .NET.|  
   
 ## <a name="scenarios"></a>Scénáře  
   

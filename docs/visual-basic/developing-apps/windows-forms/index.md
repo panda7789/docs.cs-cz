@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: d1f43a5b7a539c89a753d168fbf0e05ca4118f58
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: dd3385d6459199d56f74abfb1b8e0e218a2adf78
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347987"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487788"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -71,19 +71,19 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 |Použití okna zdroje dat|[Návod: Zobrazení dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
- Jakmile jste napsali vaší aplikace, musíte odeslat uživatelům tak, že můžete nainstalovat a spustit ve svých počítačích klienta. Použití [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, můžete nasadit aplikace z Visual Studia pomocí pár kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] spravuje všechny elementy a závislosti v aplikaci a zajišťuje, že je aplikace správně nainstalován na klientském počítači.  
+ Jakmile jste napsali vaší aplikace, musíte odeslat uživatelům tak, že můžete nainstalovat a spustit ve svých počítačích klienta. Pomocí technologie ClickOnce, můžete nasadit aplikace z Visual Studia pomocí pár kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. ClickOnce spravuje všechny elementy a závislosti v aplikaci a zajišťuje, že je aplikace správně nainstalován na klientském počítači.  
   
- [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] aplikace může být nakonfigurována na spustit, jenom když je uživatel se připojil k síti, nebo obě online i offline. Pokud určíte, že aplikace by měla podporovat operace vypnutí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] přidá odkaz na vaši aplikaci v uživatele **Start** nabídky, tak, aby uživatel může otevřít bez pomocí adresy URL.  
+ Aplikace ClickOnce může být nakonfigurována na spustit, jenom když je uživatel se připojil k síti, nebo obě online i offline. Pokud určíte, že aplikace musí podporovat operace vypnutí, technologie ClickOnce přidá odkaz na vaši aplikaci v uživatele **Start** nabídky, tak, aby uživatel může otevřít bez pomocí adresy URL.  
   
- Když aktualizujete aplikaci, můžete publikovat nový manifest nasazení a novou kopii aplikace na webovém serveru. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] zjistí, že je k dispozici aktualizace a upgraduje instalaci uživatele. bez nutnosti programování se vyžaduje k aktualizaci staré sestavení.  
+ Když aktualizujete aplikaci, můžete publikovat nový manifest nasazení a novou kopii aplikace na webovém serveru. ClickOnce zjistí, že je k dispozici aktualizace a upgraduje instalaci uživatele. bez nutnosti programování se vyžaduje k aktualizaci staré sestavení.  
   
- Úplné Úvod k [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)], naleznete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment). Podrobné informace o použití těchto funkcí naleznete v následujících tématech nápovědy:  
+ Úplné Úvod do technologie ClickOnce, naleznete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment). Podrobné informace o použití těchto funkcí naleznete v následujících tématech nápovědy:  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Nasazení aplikace pomocí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
-|Aktualizace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] nasazení|[Postupy: Správa aktualizací aplikace ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
-|Správa zabezpečení se [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
+|Nasazení aplikace pomocí ClickOnce|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|ClickOnce – nasazení aktualizace|[Postupy: Správa aktualizací aplikace ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
+|Správa zabezpečení s ClickOnce|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ## <a name="other-controls-and-features"></a>Další ovládací prvky a funkce  
  Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úkoly, rychlý a snadný, jako třeba podporu pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho Windows Forms závisí na systému robustní zabezpečení rozhraní .NET Framework, můžete vydat bezpečnější aplikací pro vaše zákazníky.  

@@ -2,12 +2,12 @@
 title: Vlastní hostitel služby
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: d2eebd502fa02d01ac86cf88f336b72829a6116f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c2a1fc1b398a3a9efcd0c824ca041a790448dd3
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990662"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487646"
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
 Tato ukázka předvádí, jak používat vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> třídy pro úpravu chování za běhu služby. Tento přístup poskytuje opakovaně použitelné alternativu ke konfiguraci velkým množstvím služeb v běžným způsobem. Ukázka také ukazuje, jak používat <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu použít vlastní hostitel služby v prostředí hostování internetové informační služby (IIS) nebo Windows Process Activation Service (WAS).  
@@ -168,11 +168,11 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
   
 2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Po řešení je sestavený Build, spusťte Setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
+3. Po řešení je sestavený Build, spusťte Setup.bat nastavení ServiceModelSamples aplikace ve službě IIS 7.0. Adresář ServiceModelSamples by se měl objevit jako aplikace služby IIS 7.0.  
   
 4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5. Chcete-li odebrat [!INCLUDE[iisver](../../../../includes/iisver-md.md)] běhu Cleanup.bat aplikace.  
+5. Pokud chcete odebrat aplikace služby IIS 7.0, spusťte Cleanup.bat.  
   
 ## <a name="see-also"></a>Viz také:
 

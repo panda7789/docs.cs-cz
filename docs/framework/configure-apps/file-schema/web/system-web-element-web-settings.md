@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: 687398e47ad95e3234c29571eeeac0c9d2d83a39
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: b9a43c5f5141e364ab9aac1cfdff577a8fb8a161
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832788"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486681"
 ---
 # <a name="systemweb-element-web-settings"></a>\<System.Web > – Element (nastavení webu)
 Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování technologie ASP.NET.  
@@ -47,7 +47,7 @@ Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování 
 |[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikace rozhraní .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
- `system.web` Elementu a jeho podřízené `applicationPool` element byly přidány do rozhraní .NET Framework od verze rozhraní .NET Framework 3.5 SP1. Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace elementu vám umožní nakonfigurovat jak spravuje vláken ASP.NET a jak se zařadí do fronty žádostí při technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v režimu Classic nebo rozhraní ISAPI, tato nastavení ignorují.  
+ `system.web` Elementu a jeho podřízené `applicationPool` element byly přidány do rozhraní .NET Framework od verze rozhraní .NET Framework 3.5 SP1. Když spustíte v integrovaném režimu služby IIS 7.0 nebo novější verze, tato kombinace elementu vám umožní nakonfigurovat jak spravuje vláken ASP.NET a jak se zařadí do fronty žádostí při technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Pokud spustíte v režimu Classic nebo ISAPI služby IIS 7.0 nebo novější verze, tato nastavení budou ignorovány.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak konfigurovat chování v celém procesu ASP.NET v souboru aspnet.config technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Příklad předpokládá, že služba IIS pracuje v integrovaného režimu a že aplikace používá rozhraní .NET Framework 3.5 SP1 nebo novější. K tomuto chování nedojde ve verzích rozhraní .NET Framework starší než .NET Framework 3.5 SP1. Hodnoty v tomto příkladu jsou výchozí hodnoty.  
