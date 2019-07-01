@@ -80,6 +80,14 @@
   items:
     - name: Přehled
       href: automl-overview.md
+    - name: Model Builder
+      items:
+        - name: Co je Model Builder?
+          href: automate-training-with-model-builder.md
+        - name: Instalace nástroje Model Builder
+          href: how-to-guides/install-model-builder.md
+        - name: Předpovídání cen pomocí nástroje Model Builder
+          href: tutorials/predict-prices-with-model-builder.md
     - name: Rozhraní příkazového řádku ML.NET
       items:
         - name: Instalace rozhraní příkazového řádku

@@ -194,6 +194,12 @@
           href: core/whats-new/dotnet-core-2-1.md
         - name: Co je nového v .NET Core 2.0
           href: core/whats-new/dotnet-core-2-0.md
+    - name: Kompatibilita aplikací
+      items:
+        - name: Vyhodnocení změn způsobujících chyby
+          href: core/compatibility/index.md
+        - name: Kategorie změn způsobujících chyby
+          href: core/compatibility/categories.md
     - name: Kurzy
       href: core/tutorials/index.md
       items:
@@ -2245,7 +2251,7 @@
               href: visual-basic/language-reference/error-messages/xml-literals-and-xml-properties-are-not-supported-in-embedded-code-in-aspnet.md
             - name: Identifikátor URI názvového prostoru XML '<uri>' je možné svázat jenom s xmlns.
               href: visual-basic/language-reference/error-messages/xml-namespace-uri-uri-can-be-bound-only-to-xmlns.md
-    - name: Referenční informace
+    - name: Odkaz
       href: visual-basic/reference/index.md
       items:
         - name: Kompilátor příkazového řádku
