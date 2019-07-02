@@ -7,17 +7,17 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: daf4ef0032ef8bfcce02ec925cc957abdecb3643
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: f3671b7071cc30f5fae0dbd85677987f441d846f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910703"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505990"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů v jazyce Visual Basic
 Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů. Návod ukazuje, jak vytvořit dotazy v seznamu objektů Student, jak spouštět dotazy a způsobech jejich změny. Dotazy obsahovat několik funkcí, včetně anonymních typů, inicializátory objektů a odvození místního typu.  
   
- Po dokončení tohoto návodu budete připraveni přejít ukázky a dokumentaci pro konkrétní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele, které vás zajímají. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelé zahrnují [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)], a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+ Po dokončení tohoto návodu budete připraveni přejít ukázky a dokumentaci pro konkrétní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele, které vás zajímají. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelé zahrnují [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], LINQ to DataSet, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
 ## <a name="create-a-project"></a>Vytvoření projektu  
   

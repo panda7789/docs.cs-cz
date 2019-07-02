@@ -9,17 +9,17 @@ helpviewer_keywords:
 - custom colors [Windows Forms], creating with color remap table
 - color remap tables [Windows Forms], using
 ms.assetid: 977df1ce-8665-42d4-9fb1-ef7f0ff63419
-ms.openlocfilehash: bff5e3585804e027f2d0e78e5ea525f933a351a5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 360ec30563ee5001d784dc7c4ccdb50563867c29
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593185"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505761"
 ---
 # <a name="how-to-use-a-color-remap-table"></a>Postupy: Použití tabulky přemapování barev
 Přemapování je proces převodu barvy v bitovou kopii podle tabulky přemapování barev. Tabulky přemapování barev je pole <xref:System.Drawing.Imaging.ColorMap> objekty. Každý <xref:System.Drawing.Imaging.ColorMap> objekt pole má <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> vlastnost a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost.  
   
- Když [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] nakreslí obrázek, každý pixel na obrázku je ve srovnání s poli staré barvy. Pokud jeden bod barva odpovídá stará barva, jeho barva se změní na odpovídající novou barvu. Barvy se změní pouze pro vykreslování – hodnoty barev samotné (uložené v <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objektu) se nezmění.  
+ Když rozhraní GDI + kreslení obrázku, každý pixel na obrázku se porovnává se pole staré barvy. Pokud jeden bod barva odpovídá stará barva, jeho barva se změní na odpovídající novou barvu. Barvy se změní pouze pro vykreslování – hodnoty barev samotné (uložené v <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objektu) se nezmění.  
   
  Chcete-li nakreslit změnu mapování bitové kopie, inicializovat pole <xref:System.Drawing.Imaging.ColorMap> objekty. Předejte toto pole na <xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objektu a pak předejte <xref:System.Drawing.Imaging.ImageAttributes> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
   

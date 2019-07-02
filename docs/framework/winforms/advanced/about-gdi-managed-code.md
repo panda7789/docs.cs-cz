@@ -6,19 +6,19 @@ helpviewer_keywords:
 - GDI+
 - graphics [Windows Forms], GDI+
 ms.assetid: a98a76ab-e455-49c9-891c-0491ac932f2c
-ms.openlocfilehash: 4c7632933e29a59c1db46f84360e271f27edf8b8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 73d1759aec3abe2e3e9c371f949cf051930d103c
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65588613"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506125"
 ---
 # <a name="about-gdi-managed-code"></a>Informace o spravovaném kódu GDI+
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je část, která poskytuje dvojrozměrná vektorová grafika, obrázky a typografie operačního systému Windows. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] zlepšuje na [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (grafiky zařízení rozhraní zahrnuté v dřívějších verzích Windows) tak, že přidáte nové funkce a optimalizace existujících funkcí.  
+Rozhraní GDI + je část, která poskytuje dvojrozměrná vektorová grafika, obrázky a typografie operačního systému Windows. Rozhraní GDI + zlepšuje v rozhraní GDI (Graphics Device Interface zahrnutá v dřívějších verzích Windows) tak, že přidáte nové funkce a optimalizace existujících funkcí.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Spravovaná třída rozhraní (sadu obálky) je součástí rozhraní .NET Framework, prostředí pro vytváření, nasazování a spouštění webových služeb XML a další aplikace.  
+ Rozhraní GDI + spravované třídy rozhraní (sadu obálky) je součástí rozhraní .NET Framework, prostředí pro vytváření, nasazování a spouštění webových služeb XML a další aplikace.  
   
- Tato část obsahuje informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API pro programátory pomocí spravovaného kódu.  
+ Tato část poskytuje informace o rozhraní API pro programátory pomocí spravovaného kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Čáry, křivky a obrazce](lines-curves-and-shapes.md)  
@@ -28,7 +28,7 @@ ms.locfileid: "65588613"
  Tento článek popisuje typ bitové kopie, které jsou k dispozici a jak pracovat s nimi.  
   
  [Systém souřadnic a transformace](coordinate-systems-and-transformations.md)  
- Popisuje, jak transformovat grafika [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ Popisuje, jak transformovat grafiky pomocí GDI +.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  

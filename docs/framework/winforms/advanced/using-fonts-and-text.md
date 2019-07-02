@@ -8,37 +8,37 @@ helpviewer_keywords:
 - fonts [Windows Forms], using in Windows Forms
 - strings [Windows Forms], drawing in Windows Forms
 ms.assetid: d43640f3-da94-4df2-a29d-a9d021a1c069
-ms.openlocfilehash: c9fe16752223203806c7d3828f632aad0cab0c28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73a4af5fe7367e777fcb83af8c84c09be91e5b1e
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769416"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505120"
 ---
 # <a name="using-fonts-and-text"></a>Použití písem a textu
-Existuje několik tříd, které nabízí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] a [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] pro kreslení textu ve Windows Forms. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Graphics> Třídy víme o několika <xref:System.Drawing.Graphics.DrawString%2A> metody, které vám umožňují určit různé funkce textu, jako je poloha, ohraničující obdélník, písma a formát. Kromě toho můžete kreslit a měření text s [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] pomocí statické <xref:System.Windows.Forms.TextRenderer.DrawText%2A> a <xref:System.Windows.Forms.TextRenderer.MeasureText%2A> metody nabízené `TextRenderer` třídy. [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] Metody lze také zadat umístění, písma a formát. Můžete použít buď [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] nebo [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pro vykreslování textu; však [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] obecně nabízí vyšší výkon a přesnější měření text. Zahrnout další třídy, které přispívají k vykreslování textu `FontFamily`, `Font`, <xref:System.Drawing.StringFormat>, a `TextFormatFlags`.  
+Existuje několik tříd, které nabízí rozhraní GDI + a GDI pro kreslení textu ve Windows Forms. Rozhraní GDI + <xref:System.Drawing.Graphics> třídy víme o několika <xref:System.Drawing.Graphics.DrawString%2A> metody, které vám umožňují určit různé funkce textu, jako je poloha, ohraničující obdélník, písma a formát. Kromě toho můžete kreslit a měření textu pomocí GDI pomocí statické <xref:System.Windows.Forms.TextRenderer.DrawText%2A> a <xref:System.Windows.Forms.TextRenderer.MeasureText%2A> metody nabízené `TextRenderer` třídy. Metody rozhraní GDI také umožňují zadat umístění, písma a formát. Pro vykreslování textu; můžete vybrat GDI nebo rozhraní GDI + rozhraní GDI však obvykle nabízí lepší výkon a přesnější měření text. Zahrnout další třídy, které přispívají k vykreslování textu `FontFamily`, `Font`, <xref:System.Drawing.StringFormat>, a `TextFormatFlags`.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vytváření rodin písem a písem](how-to-construct-font-families-and-fonts.md)  
  Ukazuje, jak vytvořit `Font` a `FontFamily` objekty.  
   
  [Postupy: Kreslení textu v určeném umístění](how-to-draw-text-at-a-specified-location.md)  
- Popisuje, jak kreslení textu v určitých umístění pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] a [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)].  
+ Popisuje způsob vykreslení textu na určité místo pomocí GDI + a GDI.  
   
  [Postupy: Kreslení zalomeného textu do obdélníku](how-to-draw-wrapped-text-in-a-rectangle.md)  
- Vysvětluje, jak kreslení textu v obdélníku pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] a [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)].  
+ Vysvětluje, jak kreslení textu v obdélníku pomocí GDI + a GDI.  
   
  [Postupy: Kreslení textu pomocí GDI](how-to-draw-text-with-gdi.md)  
- Ukazuje, jak používat [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] pro kreslení textu.  
+ Ukazuje, jak se pro kreslení textu pomocí GDI.  
   
  [Postupy: Zarovnání vykresleného textu](how-to-align-drawn-text.md)  
- Ukazuje, jak formátovat [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] a [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] text.  
+ Ukazuje, jak formátovat text rozhraní GDI + a GDI.  
   
  [Postupy: Vytvoření svislého textu](how-to-create-vertical-text.md)  
- Popisuje, jak kreslení svisle zarovnané textu pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ Popisuje, jak kreslení svisle zarovnané textu pomocí GDI +.  
   
  [Postupy: Nastavení zarážek v kresleném textu](how-to-set-tab-stops-in-drawn-text.md)  
- Ukazuje, jak kreslení textu pomocí zarážek s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ Ukazuje jak kreslení textu pomocí tabulátoru pomocí GDI +.  
   
  [Postupy: Výčet instalovaných písem](how-to-enumerate-installed-fonts.md)  
  Vysvětluje, jak zobrazit jména instalovaných písem.  

@@ -2,12 +2,12 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: 0fafa786805a14d9adc3523a5eb876e7e5b0e9c5
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: f0b8e4918844da08ab48525836878b6a21230891
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489877"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504513"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 ADO.NET Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -66,7 +66,7 @@ ADO.NET Entity Framework poskytuje několik výhod do stávající aplikace. Jed
 
   [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje řadu stejné funkce poskytované datové sady, včetně stálost v paměti, řešení change tracking, datové vazby a serializaci objektů jako XML data. Další informace najdete v tématu [práce s objekty](../../../../../docs/framework/data/adonet/ef/working-with-objects.md).  
   
-  Pokud [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] neposkytuje funkce pro datové sady, které vaše aplikace vyžaduje, můžete stále využití výhod dotazů LINQ s použitím [!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)]. Další informace najdete v tématu [LINQ to DataSet](../../../../../docs/framework/data/adonet/linq-to-dataset.md).  
+  Pokud [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] neposkytuje funkce pro datové sady, které vaše aplikace vyžaduje, můžete stále využití výhod dotazů LINQ s využitím jazyka LINQ k datové sadě. Další informace najdete v tématu [LINQ to DataSet](../../../../../docs/framework/data/adonet/linq-to-dataset.md).  
   
 ## <a name="considerations-for-applications-that-bind-data-to-controls"></a>Důležité informace týkající se aplikací, které vytvoření vazby dat k ovládacím prvkům  
  Rozhraní .NET Framework umožňuje zapouzdření dat ve zdroji dat, jako je například datovou sadu nebo ovládací prvek zdroje dat ASP.NET a chcete tyto ovládací prvky dat připojit prvky uživatelského rozhraní. Následující seznam popisuje důležité informace týkající se vytvoření vazby ovládacích prvků k datům Entity Framework.  

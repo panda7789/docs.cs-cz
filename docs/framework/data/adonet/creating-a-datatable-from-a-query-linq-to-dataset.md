@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: b25de14267bc31ad0ac5e3f51d4cd964b5a0535f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88abd0e5b7f56702c7a7009842253d3ca552d01f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607333"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504199"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytvoření datové tabulky z dotazu (LINQ to DataSet)
 Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. Když prováděly operace s daty, nové <xref:System.Data.DataTable> se sloučí zpět do zdroje <xref:System.Data.DataTable>.  
   
  <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda používá následující proces vytvoření <xref:System.Data.DataTable> z dotazu:  
   
-1. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda duplicity <xref:System.Data.DataTable> ze zdrojové tabulky ( <xref:System.Data.DataTable> objekt, který implementuje <xref:System.Linq.IQueryable%601> rozhraní). <xref:System.Collections.IEnumerable> Zdroj má obvykle pochází z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] výraz nebo metodu dotazu.  
+1. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda duplicity <xref:System.Data.DataTable> ze zdrojové tabulky ( <xref:System.Data.DataTable> objekt, který implementuje <xref:System.Linq.IQueryable%601> rozhraní). <xref:System.Collections.IEnumerable> Zdroj má obecně pochází z LINQ dotaz výraz nebo metoda datové sady.  
   
 2. Schéma klonované <xref:System.Data.DataTable> je sestaven z prvního sloupce ve výčtu <xref:System.Data.DataRow> objektu ve zdrojové tabulce a název klonovaného tabulky je název zdrojové tabulky obsahující slovo "dotazování" připojenou k němu.  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-ms.openlocfilehash: 92aaeabfc12e964ac294fbd69998c4671fc8763c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e3c48aec830cdc3ccceb8683f93e3a99ee6364e2
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582603"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506194"
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
 Základní kroky pro přepsání jakékoli události definované v rozhraní .NET Framework jsou shodné a jsou shrnuty v následujícím seznamu.  
@@ -82,7 +82,7 @@ public class PaintEventArgs : EventArgs {
 }  
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> je obdélník, který se má namalovat a <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost odkazuje na <xref:System.Drawing.Graphics> objektu. Třídy v <xref:System.Drawing?displayProperty=nameWithType> obor názvů jsou spravované třídy, které poskytují přístup k funkci [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], nové grafické knihovny Windows. <xref:System.Drawing.Graphics> Objekt má metody pro kreslení body, řetězce, řádky, oblouky, symbol tří teček a mnoho dalších tvarů.  
+ <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> je obdélník, který se má namalovat a <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost odkazuje na <xref:System.Drawing.Graphics> objektu. Třídy v <xref:System.Drawing?displayProperty=nameWithType> obor názvů jsou spravované třídy, které poskytují přístup k funkci rozhraní GDI +, nové grafické knihovny Windows. <xref:System.Drawing.Graphics> Objekt má metody pro kreslení body, řetězce, řádky, oblouky, symbol tří teček a mnoho dalších tvarů.  
   
  Ovládací prvek vyvolá jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metoda pokaždé, když je potřeba změnit jeho vizuální zobrazení. Tato metoda vyvolá zase <xref:System.Windows.Forms.Control.Paint> událostí.  
   

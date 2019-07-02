@@ -11,26 +11,26 @@ helpviewer_keywords:
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1a8c2b6ca9701f5eec4a8f43eaae531a0cfc18c1
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: b53be90764c6537fb27cb1b5ed781a68e69effa0
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377722"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504673"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) implementovat vzor Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
- MVVM je vzorek aplikace, který izoluje uživatelského rozhraní ze základní obchodní logiku. Můžete implementovat modelu a zobrazení tříd modelu v [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu v sadě Visual Studio 2012 a pak vytvořte zobrazení, která jsou přizpůsobená pro různé platformy. Tento přístup umožňuje zapisovat data model a obchodní logiky pouze jednou a použít tento kód v rozhraní .NET Framework, Silverlight, Windows Phone a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, jak je znázorněno na následujícím obrázku.
+ MVVM je vzorek aplikace, který izoluje uživatelského rozhraní ze základní obchodní logiku. Můžete implementovat modelu a zobrazení tříd modelu v projektu knihovny přenosných tříd v sadě Visual Studio 2012 a pak vytvořte zobrazení, která jsou přizpůsobená pro různé platformy. Tento přístup umožňuje zapisovat data model a obchodní logiky pouze jednou a použít tento kód v rozhraní .NET Framework, Silverlight, Windows Phone a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, jak je znázorněno na následujícím obrázku.
 
  ![Ukazuje přenosné knihovny tříd s modelem MVVM sdílení sestavení napříč platformami.](./media/using-portable-class-library-with-model-view-view-model/mvvm-share-assemblies-across-platforms.png)
 
- Toto téma neposkytuje obecné informace o vzoru MVVM. Nabízí informace o tom, jak používat [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] implementovat MVVM. Další informace o MVVM, najdete v článku [MVVM rychlém startu pomocí knihovny 5.0 modulu Prism pro WPF](https://docs.microsoft.com/previous-versions/msp-n-p/gg430857(v=pandp.40)).
+ Toto téma neposkytuje obecné informace o vzoru MVVM. Obsahuje jenom informace o používání knihovny přenosných tříd pro implementaci MVVM. Další informace o MVVM, najdete v článku [MVVM rychlém startu pomocí knihovny 5.0 modulu Prism pro WPF](https://docs.microsoft.com/previous-versions/msp-n-p/gg430857(v=pandp.40)).
 
 ## <a name="classes-that-support-mvvm"></a>Třídy, které podporují MVVM
- Při cílení rozhraní .NET Framework 4.5, [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], Silverlight nebo Windows Phone 7.5 pro vaše [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu, jsou k dispozici pro implementaci vzoru MVVM následující třídy:
+ Při cílení rozhraní .NET Framework 4.5, [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], Silverlight nebo Windows Phone 7.5 projektu přenosné knihovny tříd jsou k dispozici pro implementaci vzoru MVVM následující třídy:
 
 - <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType> Třída
 
@@ -55,17 +55,17 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 - Všechny třídy v <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType> obor názvů
 
 ## <a name="implementing-mvvm"></a>Implementace MVVM
- K implementaci MVVM, obvykle vytvoříte model a model v zobrazení [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu, protože [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] nepřenositelný projekt nemůže odkazovat na projekt. Model a model zobrazení může být ve stejném projektu nebo v samostatné projekty. Pokud používáte samostatné projekty, přidejte odkaz z projektu zobrazení modelu do projektu s modelem.
+ K implementaci MVVM, obvykle vytvoříte model a model zobrazení v projektu knihovny přenosných tříd, protože nemůže odkazovat na knihovny přenosných tříd projektu nepřenositelný projekt. Model a model zobrazení může být ve stejném projektu nebo v samostatné projekty. Pokud používáte samostatné projekty, přidejte odkaz z projektu zobrazení modelu do projektu s modelem.
 
  Po kompilaci modelu a zobrazit projekty modelu, můžete odkazovat na tato sestavení v aplikaci, která obsahuje zobrazení. Pokud zobrazení pracuje pouze s model zobrazení, stačí odkazovat na sestavení, který obsahuje model zobrazení.
 
 ### <a name="model"></a>Model
- Následující příklad ukazuje zjednodušený model třídu, která může být umístěn v [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu.
+ Následující příklad ukazuje zjednodušený model třídu, která může být umístěn v projektu knihovny přenosných tříd.
 
  [!code-csharp[PortableClassLibraryMVVM#1](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customer.cs#1)]
  [!code-vb[PortableClassLibraryMVVM#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customer.vb#1)]
 
- Následující příklad ukazuje jednoduchý způsob, jak naplnit, načíst a aktualizovat data v [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] projektu. V reálné aplikaci byste načíst data ze zdroje, jako je například služba Windows Communication Foundation (WCF).
+ Následující příklad ukazuje jednoduchý způsob, jak naplnit, načíst a aktualizovat data v projektu knihovny přenosných tříd. V reálné aplikaci byste načíst data ze zdroje, jako je například služba Windows Communication Foundation (WCF).
 
  [!code-csharp[PortableClassLibraryMVVM#2](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customerrepository.cs#2)]
  [!code-vb[PortableClassLibraryMVVM#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerrepository.vb#2)]

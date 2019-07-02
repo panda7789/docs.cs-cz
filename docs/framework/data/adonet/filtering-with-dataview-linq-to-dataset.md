@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
-ms.openlocfilehash: b41b95ba06f031dc45c0267432d0d6afb7f3a7d9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1af8863dd22b5ebb3a2c87009b9c51d5ec25bb89
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645693"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504843"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrování se zobrazením dat (LINQ to DataSet)
 Možnost filtrovat data s využitím určitých kritérií a potom prezentovat data do klienta prostřednictvím ovládacího prvku uživatelského rozhraní je důležitou součástí datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak filtrovat data a vrácení podmnožin řádky dat meeting konkrétního filtrovací kritéria. Kromě podle řetězce možnosti filtrování <xref:System.Data.DataView> také nabízí možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem komplexnější a efektivní filtrování operací než filtrování založené na řetězci.  
   
  Existují dva způsoby, jak pomocí filtrování dat <xref:System.Data.DataView>:  
   
-- Vytvoření <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazování umístění, kde se klauzule.  
+- Vytvoření <xref:System.Data.DataView> z dotazu LINQ to DataSet umístění, kde se klauzule.  
   
 - Použít existující, založené na řetězci filtrování možností <xref:System.Data.DataView>.  
   
 ## <a name="creating-dataview-from-a-query-with-filtering-information"></a>Vytváření zobrazení dat z dotazu s informacemi o filtrování  
- A <xref:System.Data.DataView> objekt můžete vytvořit z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. Pokud tento dotaz obsahuje `Where` klauzule <xref:System.Data.DataView> vytvořené pomocí filtrování informace z dotazu. Výraz v `Where` klauzule slouží k určení, které řádky dat se zahrnou <xref:System.Data.DataView>, a slouží jako základ pro filtr.  
+ A <xref:System.Data.DataView> objekt můžete vytvořit z LINQ k datové sadě dotazu. Pokud tento dotaz obsahuje `Where` klauzule <xref:System.Data.DataView> vytvořené pomocí filtrování informace z dotazu. Výraz v `Where` klauzule slouží k určení, které řádky dat se zahrnou <xref:System.Data.DataView>, a slouží jako základ pro filtr.  
   
  Filtry založené na výrazu nabízejí výkonnější a složité filtrování než jednodušší filtry založené na řetězci. Filtry založené na řetězci a založené na výrazu se vzájemně vylučují. Při řetězec podle <xref:System.Data.DataView.RowFilter%2A> se nastaví po <xref:System.Data.DataView> je vytvořený z dotazu, výraz na základě filtru odvodit z dotazu je zrušeno.  
   
@@ -59,14 +59,14 @@ Možnost filtrovat data s využitím určitých kritérií a potom prezentovat d
  [!code-vb[DP DataView Samples#SoundEx](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#soundex)]  
   
 ## <a name="using-the-rowfilter-property"></a>Pomocí vlastnosti RowFilter  
- Existující založené na řetězci filtrování funkce <xref:System.Data.DataView> stále probíhá [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Další informace o založené na řetězci <xref:System.Data.DataView.RowFilter%2A> filtrování, najdete v článku [řazení a filtrování dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
+ Existující založené na řetězci filtrování funkce <xref:System.Data.DataView> stále funguje v technologii LINQ to DataSet kontextu. Další informace o založené na řetězci <xref:System.Data.DataView.RowFilter%2A> filtrování, najdete v článku [řazení a filtrování dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
   
  Následující příklad vytvoří <xref:System.Data.DataView> z tabulky Kontakt a poté nastaví <xref:System.Data.DataView.RowFilter%2A> vlastnost vrátí řádky, kde je "Zhu" příjmení kontaktu:  
   
  [!code-csharp[DP DataView Samples#LDVRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvrowfilter)]
  [!code-vb[DP DataView Samples#LDVRowFilter](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvrowfilter)]  
   
- Po <xref:System.Data.DataView> byl vytvořen z <xref:System.Data.DataTable> nebo [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu, můžete použít <xref:System.Data.DataView.RowFilter%2A> vlastnosti a určit tak podmnožiny řádků podle jejich hodnoty sloupce. Filtry založené na řetězci a založené na výrazu se vzájemně vylučují. Nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnost vymaže odvodit z výrazu filtru [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu a výraz filtru nelze obnovit.  
+ Po <xref:System.Data.DataView> byl vytvořen z <xref:System.Data.DataTable> nebo dotazu LINQ to DataSet, můžete použít <xref:System.Data.DataView.RowFilter%2A> vlastnosti a určit tak podmnožiny řádků podle jejich hodnoty sloupce. Filtry založené na řetězci a založené na výrazu se vzájemně vylučují. Nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnost vymaže výraz filtru odvodit z LINQ k datové sadě dotazu a nelze jej obnovit výraz filtru.  
   
  [!code-csharp[DP DataView Samples#LDVFromQueryWhereSetRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromquerywheresetrowfilter)]
  [!code-vb[DP DataView Samples#LDVFromQueryWhereSetRowFilter](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvfromquerywheresetrowfilter)]  

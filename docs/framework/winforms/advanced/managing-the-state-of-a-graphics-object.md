@@ -8,15 +8,15 @@ helpviewer_keywords:
 - graphics [Windows Forms], managing state
 - graphics [Windows Forms], clipping
 ms.assetid: 6207cad1-7a34-4bd6-bfc1-db823ca7a73e
-ms.openlocfilehash: be5042e62da6a9a8afd51af08b85dbe16d8eaac0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ce645133af35271fe1de969621907c53183d9a54
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623611"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505591"
 ---
 # <a name="managing-the-state-of-a-graphics-object"></a>Správa stavu grafického objektu
-<xref:System.Drawing.Graphics> Třída je srdcem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. Chcete-li nakreslit nic, můžete získat <xref:System.Drawing.Graphics> objektu, vlastností a volat jeho metody <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, <xref:System.Drawing.Graphics.DrawString%2A>a podobně).  
+<xref:System.Drawing.Graphics> Třída je základem rozhraní GDI +. Chcete-li nakreslit nic, můžete získat <xref:System.Drawing.Graphics> objektu, vlastností a volat jeho metody <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, <xref:System.Drawing.Graphics.DrawString%2A>a podobně).  
   
  Následující příklad volá <xref:System.Drawing.Graphics.DrawRectangle%2A> metodu <xref:System.Drawing.Graphics> objektu. První argument předaný metodě <xref:System.Drawing.Graphics.DrawRectangle%2A> je metoda <xref:System.Drawing.Pen> objektu.  
   

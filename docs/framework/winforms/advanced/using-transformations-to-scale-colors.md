@@ -8,12 +8,12 @@ helpviewer_keywords:
 - transformations [Windows Forms], for scaling colors
 - colors [Windows Forms], scaling
 ms.assetid: df23c887-7fd6-4b15-ad94-e30b5bd4b849
-ms.openlocfilehash: 9c8f2392137d04f56096120cec64b60c42c47419
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 81c0ddf5b937d604559a9eb1a8b598885546c97f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791142"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504962"
 ---
 # <a name="using-transformations-to-scale-colors"></a>Použití transformací pro škálování barev
 Transformace měřítka vynásobí jeden nebo více součástí čtyři barvy podle čísla. V následující tabulce jsou uvedeny položek matice barev, které představují škálování.  
@@ -35,7 +35,7 @@ Transformace měřítka vynásobí jeden nebo více součástí čtyři barvy po
   
  ![Snímek obrazovky, který porovnává barvy původní a měřítkem.](./media/using-transformations-to-scale-colors/four-bar-scale-one-color.png)  
   
- Následující tabulka uvádí vektory barvu pro čtyři pruhy před a po modré škálování. Všimněte si, že hodnota modré ve čtvrtém pruhu barev absolvovanou z 0,8 0.6. Důvodem je, že [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] zachová pouze desetinná část výsledku. Například (2)(0.8) = 1.6, a zlomkovou část 1.6 je 0.6. Ponechá pouze zlomkové části zajistí, že výsledek je vždy v intervalu [0, 1].  
+ Následující tabulka uvádí vektory barvu pro čtyři pruhy před a po modré škálování. Všimněte si, že hodnota modré ve čtvrtém pruhu barev absolvovanou z 0,8 0.6. To je proto, že rozhraní GDI + uchovává zlomkovou část výsledku. Například (2)(0.8) = 1.6, a zlomkovou část 1.6 je 0.6. Ponechá pouze zlomkové části zajistí, že výsledek je vždy v intervalu [0, 1].  
   
 |Původní|Škálovat|  
 |--------------|------------|  

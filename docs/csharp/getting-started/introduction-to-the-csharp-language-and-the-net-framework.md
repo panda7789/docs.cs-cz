@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: bd2efcd28a8349ef07873adb5eaa69784e61d482
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 361a6669d5d638bbb39bc646607cce212bbb3bfa
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585936"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504029"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -54,7 +54,7 @@ C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umož
 
  C#programy běží na rozhraní .NET Framework, součásti systému Windows, která obsahuje virtuální systém spouštění volá common language runtime (CLR) a ucelenou sadu knihoven tříd. CLR představuje komerční implementaci Microsoft common language infrastructure (CLI), mezinárodního standardu, který je základem pro vytváření, provádění a vývoj prostředí, ve kterých jazyky a knihovny fungují společně bez problémů.  
   
- Zdrojového kódu napsaného v jazyce C# je zkompilován intermediate language (IL), který odpovídá specifikaci CLI. Kód IL a prostředky, například rastrové obrázky a řetězce, jsou uloženy na disku do spustitelného souboru nazývaného jako sestavení, obvykle s příponou .exe nebo .dll. Sestavení obsahuje manifest, který poskytuje informace o typech sestavení, verzi, jazykovou verzi a požadavky na zabezpečení.  
+ Zdrojový kód napsaný C# je zkompilován [zprostředkující jazyk (IL)](../../standard/managed-code.md) , který odpovídá specifikaci CLI. Kód IL a prostředky, například rastrové obrázky a řetězce, jsou uloženy na disku do spustitelného souboru nazývaného jako sestavení, obvykle s příponou .exe nebo .dll. Sestavení obsahuje manifest, který poskytuje informace o typech sestavení, verzi, jazykovou verzi a požadavky na zabezpečení.  
   
  Když je spuštěn program C#, je načten do CLR, který může mít různé akce na základě informací v manifestu sestavení. Potom Pokud jsou splněny požadavky na zabezpečení, modul CLR provede pouze v time (JIT) kompilaci kódu IL převod na nativních strojové instrukce. CLR také poskytuje jiné služby související s automatickým uvolňování paměti, zpracování výjimek a správu prostředků. Kód, který je proveden součástí CLR je někdy označovány jako "spravovaný kód" na rozdíl od "nespravovaného kódu", který je kompilován do nativního strojového jazyka, který se zaměřuje na konkrétní systém. Následující diagram znázorňuje vztahy během kompilace a za běhu jazyka C# souborů se zdrojovým kódem, knihovny tříd rozhraní .NET Framework, sestavení, a CLR.  
   

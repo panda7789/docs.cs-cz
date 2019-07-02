@@ -6,15 +6,15 @@ helpviewer_keywords:
 - graphics [Windows Forms], transformations
 - matrix transformations
 ms.assetid: 9fef7451-bddf-4c68-9350-400d1f1f25a3
-ms.openlocfilehash: 5093bfa6bc4051c1c6cf3ca059831b0cbe137ef0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d267253a1a75117f986790d1e0002a3607944577
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755763"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506050"
 ---
 # <a name="coordinate-systems-and-transformations"></a>Systém souřadnic a transformace
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje Světové transformace a transformace stránky, takže můžete transformovat (Otočit, škálování, překlad a tak dále) můžete kreslit položky. Dvě transformace také umožňují práci v řadě souřadnicových systémů.  
+Rozhraní GDI + poskytuje Světové transformace a transformace stránky, které můžete transformovat (Otočit, škálování, překlad a tak dále) můžete kreslit položky. Dvě transformace také umožňují práci v řadě souřadnicových systémů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Typy souřadnicových systémů](types-of-coordinate-systems.md)  

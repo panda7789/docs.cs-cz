@@ -6,19 +6,19 @@ helpviewer_keywords:
 - graphics [Windows Forms], using in Windows Forms
 - graphics [Windows Forms], managed classes
 ms.assetid: e6d1a42d-2100-46aa-97e6-a5ddc0baaae5
-ms.openlocfilehash: 86f6b3fff1937694f4b7890249e36d5e12b769dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1b6811e1412e1dc5b0731810f159bac633cd1eb2
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766165"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505032"
 ---
 # <a name="using-managed-graphics-classes"></a>Použití spravovaných grafických tříd
-Následující témata popisují způsob použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API v rámci spravované třídy.  
+Následující témata popisují způsob použití rozhraní API v rámci spravované třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)  
- Popisuje, jak provádět základní úlohy s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ Popisuje, jak provádět základní úlohy pomocí GDI +.  
   
  [Kreslení čar a obrazců pomocí pera](using-a-pen-to-draw-lines-and-shapes.md)  
  Ukazuje, jak vytvořit pero a použít ho k vykreslení širokou škálu čar a obrazců.  

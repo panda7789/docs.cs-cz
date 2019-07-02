@@ -8,17 +8,17 @@ helpviewer_keywords:
 - metadata [Windows Forms], property item
 - metadata [Windows Forms], reading image
 ms.assetid: 72ec0b31-0be7-444a-9575-1dbcb864e0be
-ms.openlocfilehash: 3266724503960b8b45cd134dfa5b007a58d578fa
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 6c02f7e5744828fd8eddc88be8d7da28f3bc2a2a
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169817"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505774"
 ---
 # <a name="how-to-read-image-metadata"></a>Postupy: Čtení metadat obrázku
-Některé soubory obrázku obsahují metadata, která si můžete přečíst určit funkce bitové kopie. Digitální fotografie může například obsahovat metadata, která si můžete přečíst k určení značku a model fotoaparátu/kamery, používá k zachycení bitové kopie. S [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]existující metadata mohou číst a můžete je zapsat také nová metadata do souborů obrázků.  
+Některé soubory obrázku obsahují metadata, která si můžete přečíst určit funkce bitové kopie. Digitální fotografie může například obsahovat metadata, která si můžete přečíst k určení značku a model fotoaparátu/kamery, používá k zachycení bitové kopie. Pomocí GDI + existující metadata mohou číst a můžete je zapsat také nová metadata do souborů obrázků.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] ukládá jednotlivé část metadata <xref:System.Drawing.Imaging.PropertyItem> objektu. Si můžete přečíst <xref:System.Drawing.Image.PropertyItems%2A> vlastnost <xref:System.Drawing.Image> objektu k načtení všechna metadata ze souboru. <xref:System.Drawing.Image.PropertyItems%2A> Vlastnost vrací pole <xref:System.Drawing.Imaging.PropertyItem> objekty.  
+ Rozhraní GDI + ukládá jednotlivé část metadata <xref:System.Drawing.Imaging.PropertyItem> objektu. Si můžete přečíst <xref:System.Drawing.Image.PropertyItems%2A> vlastnost <xref:System.Drawing.Image> objektu k načtení všechna metadata ze souboru. <xref:System.Drawing.Image.PropertyItems%2A> Vlastnost vrací pole <xref:System.Drawing.Imaging.PropertyItem> objekty.  
   
  A <xref:System.Drawing.Imaging.PropertyItem> objekt má následující čtyři vlastnosti: `Id`, `Value`, `Len`, a `Type`.  
   
@@ -29,13 +29,13 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
 |-----------------------|-----------------|  
 |0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|Název bitové kopie<br /><br /> Výrobce OEM<br /><br /> Model zařízení<br /><br /> ExifDTOriginal<br /><br /> Chcete zkrátit dobu expozice EXIF<br /><br /> Tabulka světlosti<br /><br /> Chrominance tabulky|  
   
-## <a name="value"></a>Hodnota  
+## <a name="value"></a>Value  
  Pole hodnot. Formát hodnoty je určeno <xref:System.Drawing.Imaging.PropertyItem.Type%2A> vlastnost.  
   
 ## <a name="len"></a>Délka  
  Délka (v bajtech) pole hodnot, na které odkazují <xref:System.Drawing.Imaging.PropertyItem.Value%2A> vlastnost.  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  Datový typ hodnoty v poli na které odkazují `Value` vlastnost. Formáty indikován `Type` v následující tabulce jsou uvedeny hodnoty vlastností  
   
 |Číselná hodnota|Popis|  

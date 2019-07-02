@@ -16,12 +16,12 @@ helpviewer_keywords:
 - transformations [Windows Forms], translation
 - affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-ms.openlocfilehash: c87be8eaf715e373da75dd8f91889b0e396dba0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ceaad7b4bb5a70a890d261e39bc608becb388c17
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967463"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505634"
 ---
 # <a name="matrix-representation-of-transformations"></a>Maticové znázornění transformací
 Matici m x n je sadu čísel, které jsou uspořádány do milionů řádků a sloupců n. Následující obrázek znázorňuje několik matice.  
@@ -66,7 +66,7 @@ Matici m x n je sadu čísel, které jsou uspořádány do milionů řádků a s
   
  ![Transformations](./media/aboutgdip05-art10.gif "AboutGdip05_art10")  
   
- V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] afinní transformace v může ukládat <xref:System.Drawing.Drawing2D.Matrix> objektu. Třetí sloupec matrice, který představuje afinní transformace je vždy (0, 0, 1), zadejte pouze šest čísla v prvních dvou sloupcích při vytváření <xref:System.Drawing.Drawing2D.Matrix> objektu. Příkaz `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` vytvoří matice je vidět na předchozím obrázku.  
+ V rozhraní GDI + uložíte afinní transformace v <xref:System.Drawing.Drawing2D.Matrix> objektu. Třetí sloupec matrice, který představuje afinní transformace je vždy (0, 0, 1), zadejte pouze šest čísla v prvních dvou sloupcích při vytváření <xref:System.Drawing.Drawing2D.Matrix> objektu. Příkaz `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` vytvoří matice je vidět na předchozím obrázku.  
   
 ## <a name="composite-transformations"></a>Kompozitní transformace  
  Kompozitní transformace je sekvence transformací, jeden za nímž následuje druhé. Vezměte v úvahu matice a transformace v následujícím seznamu:  
