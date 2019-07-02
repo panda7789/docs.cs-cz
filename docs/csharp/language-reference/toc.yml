@@ -8,7 +8,7 @@
       items:
         - name: Přehled
           href: keywords/index.md
-        - name: Typy
+        - name: Předdefinované typy
           items:
             - name: Typy hodnot
               items:
@@ -16,8 +16,9 @@
                   href: keywords/value-types.md
                 - name: bool
                   href: keywords/bool.md
-                - name: byte
-                  href: keywords/byte.md
+                - name: Celočíselné typy
+                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer'
+                  href: builtin-types/integral-numeric-types.md
                 - name: char
                   href: keywords/char.md
                 - name: decimal
@@ -28,22 +29,8 @@
                   href: keywords/enum.md
                 - name: float
                   href: keywords/float.md
-                - name: int
-                  href: keywords/int.md
-                - name: long
-                  href: keywords/long.md
-                - name: sbyte
-                  href: keywords/sbyte.md
-                - name: short
-                  href: keywords/short.md
                 - name: struct
                   href: keywords/struct.md
-                - name: uint
-                  href: keywords/uint.md
-                - name: ulong
-                  href: keywords/ulong.md
-                - name: ushort
-                  href: keywords/ushort.md
             - name: Typy odkazů
               items:
                 - name: Funkce odkazových typů
@@ -68,8 +55,6 @@
               items:
                 - name: Tabulka předdefinovaných typů
                   href: keywords/built-in-types-table.md
-                - name: Tabulka celočíselných typů
-                  href: keywords/integral-types-table.md
                 - name: "Tabulka typů s\_plovoucí desetinnou čárkou"
                   href: keywords/floating-point-types-table.md
                 - name: Tabulka typů hodnot
@@ -116,9 +101,11 @@
               href: keywords/event.md
             - name: extern
               href: keywords/extern.md
-            - name: in (generický modifikátor)
+            - name: in (obecný modifikátor)
               href: keywords/in-generic-modifier.md
-            - name: out (generický modifikátor)
+            - name: new (modifikátor členů)
+              href: keywords/new-modifier.md
+            - name: out (obecný modifikátor)
               href: keywords/out-generic-modifier.md
             - name: override
               href: keywords/override.md
@@ -218,20 +205,16 @@
           items:
             - name: is
               href: keywords/is.md
+        - name: Klíčová slova omezení obecných typů
+          items:
+            - name: nové omezení
+              href: keywords/new-constraint.md
+            - name: kde
+              href: keywords/where-generic-type-constraint.md
         - name: Klíčová slova operátorů
           items:
             - name: await
               href: keywords/await.md
-            - name: new
-              items:
-                - name: 'new – operátor, modifikátor a omezení'
-                  href: keywords/new.md
-                - name: new – operátor
-                  href: keywords/new-operator.md
-                - name: new – modifikátor
-                  href: keywords/new-modifier.md
-                - name: new – omezení
-                  href: keywords/new-constraint.md
             - name: sizeof
               href: keywords/sizeof.md
             - name: nameof
@@ -280,8 +263,6 @@
               href: keywords/set.md
             - name: when (podmínka filtru)
               href: keywords/when.md
-            - name: where (omezení obecného typu)
-              href: keywords/where-generic-type-constraint.md
             - name: value
               href: keywords/value.md
             - name: yield
@@ -367,6 +348,8 @@
         - name: ':: – operátor'
           href: operators/namespace-alias-qualifer.md
           displayName: namespace alias qualifier
+        - name: new – operátor
+          href: operators/new-operator.md
         - name: Operátor stackalloc
           href: operators/stackalloc.md
         - name: true a false – operátory

@@ -302,8 +302,9 @@
     - name: Přehled sady .NET Core SDK
       href: core/sdk.md
     - name: Nástroje CLI platformy .NET Core
-      href: core/tools/index.md
       items:
+        - name: Přehled CLI platformy .NET Core
+          href: core/tools/index.md
         - name: Telemetrie
           href: core/tools/telemetry.md
         - name: Globální nástroje
@@ -311,6 +312,8 @@
           items:
             - name: Vytvoření globálního nástroje
               href: core/tools/global-tools-how-to-create.md
+        - name: Přístup se zvýšenými oprávněními
+          href: core/tools/elevated-access.md
         - name: Model rozšíření
           href: core/tools/extensibility.md
         - name: Průběžná integrace
@@ -530,8 +533,6 @@
                   href: csharp/tutorials/intro-to-csharp/introduction-to-classes.md
         - name: 'Prozkoumání C# 6'
           href: csharp/tutorials/exploration/csharp-6.yml
-        - name: 'Prozkoumání C# 7.0'
-          href: csharp/tutorials/exploration/csharp-7.yml
         - name: Prozkoumání interpolace řetězců – interaktivní
           href: csharp/tutorials/exploration/interpolated-strings.yml
         - name: Prozkoumání interpolace řetězců – ve vašem prostředí
