@@ -2,12 +2,12 @@
 title: Aktivace pojmenovaného kanálu
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: 3e6084e8334eddc16b115cc1199819c6ab637666
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a7d940d6be56160945ca0f8697361314af96bc0b
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051842"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487542"
 ---
 # <a name="namedpipe-activation"></a>Aktivace pojmenovaného kanálu
 
@@ -159,7 +159,7 @@ Press <ENTER> to terminate client.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
 
-1. Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalována. [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je vyžadován pro aktivaci WAS.
+1. Ujistěte se, že služba IIS 7.0 je nainstalována. Služba IIS 7.0 je vyžadováno pro aktivaci WAS.
 
 2. Ujistěte se dá provést [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 

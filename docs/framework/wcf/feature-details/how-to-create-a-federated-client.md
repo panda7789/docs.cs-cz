@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-ms.openlocfilehash: 19ffe7e3fb0de9b377279d9cd274f998a104c6b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8de673fae16da8189589e20b6d9a66b96e1823ba
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047812"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487109"
 ---
 # <a name="how-to-create-a-federated-client"></a>Postupy: Vytvoření federovaného klienta
 Ve Windows Communication Foundation (WCF), vytvoření klienta pro *Federovaná služba* zahrnuje tři hlavní kroky:  
@@ -39,7 +39,7 @@ Ve Windows Communication Foundation (WCF), vytvoření klienta pro *Federovaná 
   
 4. Prozkoumejte všechny další [ \<issuedTokenParameters >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md) elementů v rámci komentářem out <`alternativeIssuedTokenParameters`> element. Při použití nástroje Svcutil.exe k federované službě nebo všechny služby tokenu zabezpečení zprostředkující nezadávejte adresu vystavitele, ale místo toho zadat adresu metadat služby tokenů zabezpečení, který zpřístupňuje generovat konfigurace pro federované služby více koncových bodů, výsledný konfigurační soubor odkazuje na první koncový bod. Další koncové body jsou v konfiguračním souboru jako komentovaná <`alternativeIssuedTokenParameters`> elementy.  
   
-     Určete, zda některá z těchto <`issuedTokenParameters`> je vhodnější než ten, který je již v konfiguraci. Například možná dáte přednost klient k ověření Windows pomocí služby tokenů zabezpečení [!INCLUDE[infocard](../../../../includes/infocard-md.md)] token místo páru jméno/heslo uživatele.  
+     Určete, zda některá z těchto <`issuedTokenParameters`> je vhodnější než ten, který je již v konfiguraci. Například klient možná dáte přednost ověřování do služby tokenu zabezpečení pomocí služby Windows CardSpace token spíše než páru jméno/heslo uživatele.  
   
     > [!NOTE]
     >  Pokud několik služeb tokenů zabezpečení musí procházet před komunikaci se službou, je možné pro token služby zprostředkující zabezpečení můžete směrovat klienta do služby tokenu zabezpečení nesprávné. Proto se ujistěte se, že koncový bod pro služby tokenů zabezpečení v [ \<issuedTokenParameters >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md) je služba tokenů zabezpečení očekávané a není token služby neznámý zabezpečení.  

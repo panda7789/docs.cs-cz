@@ -2,12 +2,12 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 925148c4bd084f843f125ab9e851a5404bbe4b89
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 43d6cde7a9342b57933cd3e7475bd4412da86d92
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664823"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487561"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation Service (), které se načítají z fronty zpráv. Tento příklad používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) vzorku. Služby v tomto případě je hostované webové aplikace a klient je v místním prostředí a vypíše do konzoly sledovat stav nákupní objednávky odeslané.  
@@ -215,7 +215,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1. Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná, jak je vyžadováno pro aktivaci WAS.  
+1. Ujistěte se, že je nainstalována služba IIS 7.0, jak je vyžadováno pro aktivaci WAS.  
   
 2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:  
   
@@ -249,7 +249,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Pro zjednodušení následující kroky jsou implementovány v dávkovém souboru volá AddMsmqSiteBinding.cmd nachází v adresáři ukázkové.  
   
-    1. Kvůli podpoře aktivace net.msmq, musíte ji nejdřív svázat výchozí webový server net.msmq protokolu. To lze provést pomocí appcmd.exe, která se instaluje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] sada nástrojů pro správu. Z příkazového řádku se zvýšenými oprávněními (správce) spusťte následující příkaz.  
+    1. Kvůli podpoře aktivace net.msmq, musíte ji nejdřív svázat výchozí webový server net.msmq protokolu. To lze provést pomocí appcmd.exe, která se instaluje s sada nástrojů pro správu služby IIS 7.0. Z příkazového řádku se zvýšenými oprávněními (správce) spusťte následující příkaz.  
   
         ```console  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   

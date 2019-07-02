@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 12296fbd503a7e9f1866f407964a5e223d1afadd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 58dcfacba302ef3b85a8bc7b24b17f2435115594
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650336"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486652"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
@@ -202,7 +202,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 ## <a name="transport-credentials-in-bindings"></a>Přihlašovací údaje přenosu ve vazbách  
  V následující tabulce jsou uvedeny typy přihlašovacích údajů klienta, která je k dispozici při použití buď `BasicHttpBinding` nebo `WSHttpBinding` v režimu zabezpečení přenosu.  
   
-|Type|Popis|  
+|type|Popis|  
 |----------|-----------------|  
 |Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na <https://go.microsoft.com/fwlink/?LinkId=84023>.|  
@@ -210,12 +210,12 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 |NTLM|NT LAN Manager (NTLM) authentication.|  
 |Windows|Ověřování Windows.|  
 |Certifikát|Ověřování provádí pomocí certifikátu.|  
-|Třídy IssuedToken|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí tokenem vydaným službou tokenů zabezpečení nebo pomocí [!INCLUDE[infocard](../../../../includes/infocard-md.md)]. Další informace najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|Třídy IssuedToken|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí tokenem vydaným službou tokenů zabezpečení nebo služba CardSpace nerozumí. Další informace najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ### <a name="message-client-credentials-in-bindings"></a>Přihlašovací údaje klienta zprávy ve vazbách  
  Následující tabulka uvádí typy přihlašovacích údajů klienta, která je k dispozici při použití vazby v režimu zabezpečení zpráv.  
   
-|Type|Popis|  
+|type|Popis|  
 |----------|-----------------|  
 |Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
 |Windows|Umožňuje výměny zpráv SOAP podle ověřený kontext přihlašovacích údajů Windows.|  
