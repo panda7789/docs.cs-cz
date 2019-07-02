@@ -6,12 +6,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], painting
 - user controls [Windows Forms], painting
 ms.assetid: a09dbf76-0966-4cbf-a66a-2083ba98e068
-ms.openlocfilehash: ec9002ffa4a7e2c82f59d52344764a01afe4c568
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14abac5678bfffa3cdb61307fd3cb54681c82a99
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011481"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506093"
 ---
 # <a name="custom-control-painting-and-rendering"></a>Malování a vykreslování vlastního ovládacího prvku
 Vlastní vykreslování ovládacích prvků je jednou z mnoha složité úkoly snadné rozhraním .NET Framework. Při vytváření vlastního ovládacího prvku, máte celou řadu možností týkající se vzhled grafického ovládacího prvku. Vytváříte-li ovládací prvek, který dědí z `Control`, je nutné zadat kód, který umožňuje ovládacího prvku k vykreslení jeho grafickou reprezentaci. Pokud vytváříte uživatelský ovládací prvek děděním z `UserControl`, nebo dědí z jednoho z ovládacích prvků Windows Forms, mohou přepsat standardní grafické vyjádření a poskytují grafického kódu. Pokud chcete poskytnout vlastní vykreslování pro základní ovládací prvky `UserControl` vytváříte, vaše možnosti omezenější, ale přesto umožňuje širokou škálu grafické možnosti pro ovládací prvky a aplikace.  
@@ -47,7 +47,7 @@ Vlastní vykreslování ovládacích prvků je jednou z mnoha složité úkoly s
   
 ## <a name="related-sections"></a>Související oddíly  
  [Postupy: Vytváření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md)  
- Zavádí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] grafické funkce z Visual Studio perspektivy a poskytuje odkazy na další informace.  
+ Představuje grafické funkce rozhraní GDI + z hlediska sady Visual Studio a nabízí odkazy na další informace.  
   
  [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)  
  Popisuje typy vlastních ovládacích prvků, které můžete vytvářet.

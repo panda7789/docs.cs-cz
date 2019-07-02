@@ -8,19 +8,19 @@ helpviewer_keywords:
 - image colors [Windows Forms], transforming
 - color matrices [Windows Forms], using
 ms.assetid: 44df4556-a433-49c0-ac0f-9a12063a5860
-ms.openlocfilehash: 9cff13cabb0cd496ee4e628664e4b92bd9e60808
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2df74e022b842f7e5c9ff80f6aeddfce51af5eab
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063718"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505799"
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>Postupy: Použití matice barev k transformaci jedné barvy
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty ukládání barvu každého obrazového bodu jako 32bitová čísla: 8 bity pro červená, zelená, modrá a alfa. Každý ze čtyř komponent je číslo od 0 do 255, kde 0 představuje žádné intenzity a 255 představující plné intenzity. Hodnota alfa Určuje průhlednost barvy: 0 je zcela transparentní, a je úplně neprůhledná 255.  
+Poskytuje rozhraní GDI + <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty ukládání barvu každého obrazového bodu jako 32bitová čísla: 8 bity pro červená, zelená, modrá a alfa. Každý ze čtyř komponent je číslo od 0 do 255, kde 0 představuje žádné intenzity a 255 představující plné intenzity. Hodnota alfa Určuje průhlednost barvy: 0 je zcela transparentní, a je úplně neprůhledná 255.  
   
  Barva vektor je 4-n-tice formuláře (červená, zelená, modrá, alfa). Například vektor barvy (0, 255, 0, 255) představuje neprůhledné barvu nemá žádné červená a modrá, ale má zelená při plné intenzity.  
   
- Jiné konvence pro zastoupení barvy používá číslo 1 pro plné intenzity. Pomocí této konvenci, barva je popsáno v předchozím odstavci by být reprezentována vektor (0, 1, 0, 1). [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá konvenci 1 jako plné intenzity při provádění transformace barev.  
+ Jiné konvence pro zastoupení barvy používá číslo 1 pro plné intenzity. Pomocí této konvenci, barva je popsáno v předchozím odstavci by být reprezentována vektor (0, 1, 0, 1). Rozhraní GDI + používá konvence 1 jako plné intenzity při provádění transformace barev.  
   
  Lineární transformace (otočení, škálování a podobně) můžete použít barvu vektory vynásobením vektory barva podle matice 4 x 4. Matice 4 x 4 však nelze používat pro překlad (nelineárních). Pokud chcete přidat fiktivní páté souřadnice (například číslo 1) ke každému barva vektorů, můžete použít libovolnou kombinaci lineární transformace a překlady matice 5 × 5. Transformace skládající se z lineární transformace, za nímž následuje překlad se nazývá afinní transformace.  
   

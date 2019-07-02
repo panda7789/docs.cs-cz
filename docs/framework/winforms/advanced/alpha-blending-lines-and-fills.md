@@ -11,15 +11,15 @@ helpviewer_keywords:
 - alpha blending [Windows Forms], using with fills
 - shapes [Windows Forms], adding transparency
 ms.assetid: 5440f48c-3ac9-44c3-b170-c1c110bdbab8
-ms.openlocfilehash: 7a8286fb741effaf668b87e90da04f79d1490de2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 66061341ee6539e2172c537a0b2a6ec9ff87565c
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960937"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506120"
 ---
 # <a name="alpha-blending-lines-and-fills"></a>Alfa míchání čar a výplní
-V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je hodnota 32 bitů s 8 bity pro alfa, červené, zelené a modré barvu. Určuje hodnotu alfa průhlednost barvy – v rozsahu, do které jsou prolnuty barva barvou pozadí. Hodnoty alfa v rozmezí 0 až 255, kde 0 představuje plně průhlednou barvu, a 255 představuje barvu úplně neprůhledné.  
+V rozhraní GDI + je barva hodnotu 32 bitů s 8 bity pro platformu alpha, červené, zelené a modré. Určuje hodnotu alfa průhlednost barvy – v rozsahu, do které jsou prolnuty barva barvou pozadí. Hodnoty alfa v rozmezí 0 až 255, kde 0 představuje plně průhlednou barvu, a 255 představuje barvu úplně neprůhledné.  
   
  Alfa míchání je – obrazový prolnutí data o barvách zdroj a na pozadí. Všechny tři komponenty (červená, zelená, modrá) barvu daného zdroje jsou prolnuty pomocí odpovídající komponenty barvu pozadí podle následující vzorec:  
   

@@ -2,12 +2,12 @@
 title: Datové sady ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
-ms.openlocfilehash: 29aba76731c4170c8af3c913a06e78e89ce3a08d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: da6fb7bbe82e37787615518fa74a0d84bf95758f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877226"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504271"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET
 <xref:System.Data.DataSet> Centrální podporuje odpojen, je objekt distribuovaných scénářích data pomocí ADO.NET. **Datovou sadu** rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat je. Je možné s několika a odlišných zdrojů dat, s daty XML nebo ke správě dat místní aplikace. **Datovou sadu** představuje ucelenou sadu dat, včetně souvisejících tabulek, omezení a relace mezi tabulkami. Je vidět na následujícím obrázku **datovou sadu** objektový model.  
@@ -41,7 +41,7 @@ Model objektu DataSet
  **Datovou sadu**, **DataTable**, a **DataColumn** mají **ExtendedProperties** vlastnost. **ExtendedProperties** je **PropertyCollection třídy DirectoryEntry** umístění vlastní informace, například příkaz SELECT, který se použil k vygenerování sadu výsledků dotazu nebo při generování data. **ExtendedProperties** přetrvává shromažďování informací o schématu pro **datovou sadu**.  
   
 ## <a name="linq-to-dataset"></a>LINQ na DataSet  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje integrovaný jazyk dotazování funkce pro odpojené data uložená v datové sadě. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] používá standardní [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] syntaxe a poskytuje kontrola syntaxe v době kompilace, psát statické a podporu technologie IntelliSense při použití integrovaného vývojového prostředí sady Visual Studio.  
+ Technologie LINQ to DataSet poskytuje integrovaný jazyk dotazování určené pro odpojené data uložená v datové sadě. Technologie LINQ to DataSet používá standardní [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] syntaxe a poskytuje kontrola syntaxe v době kompilace, psát statické a podporu technologie IntelliSense při použití integrovaného vývojového prostředí sady Visual Studio.  
   
  Další informace najdete v tématu [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md).  
   

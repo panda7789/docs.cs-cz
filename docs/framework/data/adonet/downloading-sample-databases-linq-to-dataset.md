@@ -2,15 +2,15 @@
 title: Stažení ukázkových databází (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: eb42a7af-d410-4b7f-b4a8-13c72ce6fd09
-ms.openlocfilehash: 1ef5a5ceac6a7f819551f6221b63197786ab4f09
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 340ccd1e0e2d415fe60721775bd39acf9db00f85
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606895"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504510"
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>Stažení ukázkových databází (LINQ to DataSet)
-Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentaci použít ukázkovou databází AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu společnosti Microsoft ke stažení. Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace ke službě použít jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bez poplatků, může také sloužit jako úložiště dat místo SQL serveru.  
+Ukázky a návody v technologii LINQ to DataSet dokumentaci použít ukázkovou databází AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu společnosti Microsoft ke stažení. Ukázky a návody v technologii LINQ to DataSet dokumentaci používat jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bez poplatků, může také sloužit jako úložiště dat místo SQL serveru.  
   
 ## <a name="downloading-and-installing-the-adventureworks-database"></a>Stažení a instalace databáze AdventureWorks  
   
@@ -63,7 +63,7 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
      Pokud jste nainstalovali tyto soubory na jinou jednotku nebo adresář, musí cesty odpovídajícím způsobem upravit, ještě před spuštěním `sp_attach_db` uložené procedury.  
   
 ## <a name="downloading-sql-server-express-edition"></a>Stahuje se SQL Server Express Edition  
- Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] část používat jako úložiště dat serveru SQL Server 2005, ale můžete upravit tak, aby místo toho použít SQL Server Express Edition. SQL Server Express Edition je k dispozici bez poplatků a je možné znovu distribuovat ji s aplikacemi. Pokud používáte Visual Studio, SQL Server Express Edition je součástí verze Pro a vyšší.  
+ Ukázky a návody v technologii LINQ to DataSet části používat jako úložiště dat serveru SQL Server 2005, ale můžete upravit tak, aby místo toho použít SQL Server Express Edition. SQL Server Express Edition je k dispozici bez poplatků a je možné znovu distribuovat ji s aplikacemi. Pokud používáte Visual Studio, SQL Server Express Edition je součástí verze Pro a vyšší.  
   
 #### <a name="to-download-and-install-sql-server-express-edition"></a>Stáhněte si a nainstalujte SQL Server Express Edition  
   

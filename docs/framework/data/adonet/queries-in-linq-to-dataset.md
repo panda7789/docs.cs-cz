@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: deb8f4396700086627aaef35ead7f15f38d9320c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f8fabd38ec49070bc588196b38ec64942feab93f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583865"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504706"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ to DataSet
 Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce, jako je například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu, vždy pracujete s programovacích objektech.  
   
  A [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu operace se skládá ze tří akcí: získání datového zdroje nebo zdrojů, vytvořte dotaz a spusťte dotaz.  
   
- Zdroje dat, které implementují <xref:System.Collections.Generic.IEnumerable%601> obecné rozhraní může být dotázán pomocí [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]. Volání <xref:System.Data.DataTableExtensions.AsEnumerable%2A> na <xref:System.Data.DataTable> vrátí objekt, který implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, které slouží jako zdroj dat pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy.  
+ Zdroje dat, které implementují <xref:System.Collections.Generic.IEnumerable%601> obecné rozhraní může být dotázán pomocí [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]. Volání <xref:System.Data.DataTableExtensions.AsEnumerable%2A> na <xref:System.Data.DataTable> vrátí objekt, který implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, které slouží jako zdroj dat pro funkci LINQ do datové sady dotazů.  
   
  V dotazu je zadat přesně informace, které chcete načíst ze zdroje dat. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupeny a tvarovány dříve, než se vrátí. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)], dotaz je uložen v proměnné. Pokud dotaz byl navržen k vrácení sekvence hodnot, proměnná dotazu sama musí být typu výčtu. Tato proměnná dotazu neprovede žádnou akci a nevrátí žádná data; ukládá pouze informace o dotazu. Po vytvoření dotazu je třeba spustit tento dotaz pro načtení žádná data.  
   
@@ -26,7 +26,7 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
  Na rozdíl od odložené dotazy, které vracejí posloupnost hodnot, jsou dotazy, které vracejí hodnotu singleton spuštěna ihned. Tady je několik příkladů dotazů singleton <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Average%2A>, a <xref:System.Linq.Enumerable.First%2A>. Provádějí se okamžitě vzhledem k tomu, že výsledky dotazu jsou nutné k výpočtu jednoznačný výsledek. Například pokud chcete zjistit průměr z výsledků dotazu dotaz musí provést tak, aby průměrované funkce obsahuje vstupní data pro práci s. Můžete také použít <xref:System.Linq.Enumerable.ToList%2A> nebo <xref:System.Linq.Enumerable.ToArray%2A> metod v dotazu, chcete-li vynutit okamžité spuštění dotazu, který nevytváří hodnotu singleton. Tyto postupy, chcete-li vynutit okamžité spuštění může být užitečné, pokud chcete výsledky dotazu do mezipaměti.
   
 ## <a name="queries"></a>Dotazy  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy se dají formulovat ve dvou různých syntaxí: výraz syntaxe využívající dotazy a syntaxe dotazů založených na volání metody.  
+ Se dají formulovat technologie LINQ to DataSet dotazy ve dvou různých syntaxí: výraz syntaxe využívající dotazy a syntaxe dotazů založených na volání metody.  
   
 ### <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu  
  Výrazy dotazu představují dotaz deklarativní syntaxe. Tato syntaxe umožňuje vývojářům psát dotazy v jazyce C# nebo Visual Basic v ve formátu podobném SQL. Pomocí syntaxe výrazu dotazu, můžete provádět, dokonce i složité filtrování, řazení a seskupení operací u zdrojů dat s minimem kódu. Další informace najdete v tématu [LINQ – výrazy dotazů](../../../csharp/linq/index.md#query-expression-overview) a [základní operace dotazů (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
@@ -39,7 +39,7 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
  [!code-vb[DP LINQ to DataSet Examples#SelectSimple1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#selectsimple1)]  
   
 ### <a name="method-based-query-syntax"></a>Syntaxe dotazů založených na volání metody  
- Jiným způsobem formulovat [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazů je pomocí dotazů založených na volání metody. Syntaxe dotazů založených na volání metody je posloupnost volání přímé metody [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] metody operátoru předávání výrazy lambda jako parametry. Další informace najdete v tématu [výrazy Lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ Druhý způsob formulovat LINQ dotazy na datové sady je pomocí dotazů založených na volání metody. Syntaxe dotazů založených na volání metody je posloupnost volání přímé metody [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] metody operátoru předávání výrazy lambda jako parametry. Další informace najdete v tématu [výrazy Lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
  Tento příklad používá <xref:System.Linq.Enumerable.Select%2A> vrátit všechny řádky z `Product` a zobrazení názvů produktů.  
   

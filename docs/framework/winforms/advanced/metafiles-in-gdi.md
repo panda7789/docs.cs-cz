@@ -9,18 +9,18 @@ helpviewer_keywords:
 - GDI+, metafiles
 - metafiles
 ms.assetid: 51da872c-c783-440f-8bf6-1e580a966c31
-ms.openlocfilehash: f46c24b699aa49db2bc4b8467ce96a125602acec
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df54289722cf12bad840722c6eafdaa43279a5dc
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645743"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504582"
 ---
 # <a name="metafiles-in-gdi"></a>Metasoubory v rozhraní GDI+
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Imaging.Metafile> třídy, aby mohli zaznamenat a zobrazení metasouborů. Metasoubor zkratka bitovou kopii vektoru je obrázek, který se ukládá jako posloupnost kreslení příkazy a nastavení. Příkazy a nastavení popsané v <xref:System.Drawing.Imaging.Metafile> objektu lze uložit v paměti nebo uložit do souboru nebo datového proudu.  
+Poskytuje rozhraní GDI + <xref:System.Drawing.Imaging.Metafile> třídy, aby mohli zaznamenat a zobrazení metasouborů. Metasoubor zkratka bitovou kopii vektoru je obrázek, který se ukládá jako posloupnost kreslení příkazy a nastavení. Příkazy a nastavení popsané v <xref:System.Drawing.Imaging.Metafile> objektu lze uložit v paměti nebo uložit do souboru nebo datového proudu.  
   
 ## <a name="metafile-formats"></a>Formáty metasoubor  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete zobrazit metasoubory, které jsou uložené v následujících formátech:  
+ Rozhraní GDI + můžete zobrazení metasouborů uložené v následujících formátech:  
   
 - Windows Metafile (WMF)  
   
@@ -28,9 +28,9 @@ ms.locfileid: "64645743"
   
 - EMF+  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete zaznamenat metasoubory v EMF a EMF + formáty, ale není ve formátu WMF.  
+ Rozhraní GDI + můžete zaznamenat metasoubory v EMF a EMF + formáty, ale není ve formátu WMF.  
   
- EMF + je rozšíření EMF umožňující [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] záznamy mají být uloženy. Existují dvě varianty EMF + formát: EMF + pouze a EMF + duální. EMF + pouze metasoubory obsahovat pouze [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] záznamy. Tyto soubory lze zobrazit v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] , ale ne za [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]. Metasoubory EMF + duální obsahovat [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] a [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] záznamy. Každý [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] záznam ve dvou EMF + metasoubor se páruje s oblastí alternativu [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] záznamu. Tyto soubory lze zobrazit v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] nebo [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)].  
+ EMF + je rozšíření EMF, která umožňuje rozhraní GDI + záznamy mají být uloženy. Existují dvě varianty EMF + formát: EMF + pouze a EMF + duální. EMF + pouze metasoubory obsahuje pouze záznamy rozhraní GDI +. Takové metasoubory lze zobrazit pomocí GDI +, ale ne GDI. Metasoubory EMF + duální obsahovat rozhraní GDI + a GDI záznamů. Každý záznam rozhraní GDI + duální EMF + metasoubor je spárovaná s alternativní záznam GDI. Takové metasoubory lze zobrazit pomocí GDI + nebo GDI.  
   
  Následující příklad zobrazuje metasoubor dříve uložený jako soubor. Zobrazí se tento metasoubor pomocí jeho levého horního rohu na (100, 100).  
   

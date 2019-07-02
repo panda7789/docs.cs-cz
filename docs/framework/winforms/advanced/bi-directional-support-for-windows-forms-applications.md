@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, bi-directional support
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2811674ad8d870062e3a0c67dbd21e6550f6c48d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d69de3265fa0954f640c8a2f08ba85c106320f3e
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655669"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506226"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Visual Studio můžete vytvářet aplikace pro systém Windows, které podporují obousměrné (vpravo zprava doleva) jazyků, jako je arabština nebo hebrejština. To zahrnuje standardní formuláře, dialogová okna, formuláře MDI a ovládací prvky, které můžete pracovat s tyto formy – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
@@ -82,7 +82,7 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
  Windows Forms podporu kódování Unicode, takže může obsahovat libovolný znak, nastavte při vytváření aplikace obousměrné. Ale ne všechny ovládací prvky Windows Forms podporuje kódování Unicode na všech platformách. Další informace najdete v tématu [kódování a globalizace Windows Forms](encoding-and-windows-forms-globalization.md).  
   
 ## <a name="gdi"></a>GDI+  
- Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pro kreslení textu pomocí pořadí čtení zprava doleva. <xref:System.Drawing.Graphics.DrawString%2A> Podporuje metodu, která slouží k vykreslení textu, `StringFormat` parametr, který lze nastavit na <xref:System.Drawing.StringFormatFlags.DirectionRightToLeft> člena <xref:System.Drawing.StringFormatFlags> výčet, aby bylo možné reverse bod počátek pro text.  
+ Vám pomůže rozhraní GDI + kreslení textu pomocí pořadí čtení zprava doleva. <xref:System.Drawing.Graphics.DrawString%2A> Podporuje metodu, která slouží k vykreslení textu, `StringFormat` parametr, který lze nastavit na <xref:System.Drawing.StringFormatFlags.DirectionRightToLeft> člena <xref:System.Drawing.StringFormatFlags> výčet, aby bylo možné reverse bod počátek pro text.  
   
 ## <a name="common-dialog-boxes"></a>Společná dialogová okna  
  V rámci ovládacího prvku Windows jsou systémové nástroje jako je například dialogovém okně Otevřít soubor. Elementy jazyka dědí z operačního systému. Pokud používáte verzi Windows pomocí nastavení správný jazyk, budou tyto dialogy s obousměrných jazycích fungovat správně.  

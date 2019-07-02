@@ -20,12 +20,12 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-ms.openlocfilehash: f41585ba8816e0b1894a9f01163191848ae391e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e678195e96aea881777c44ab14bb2e56aef015bb
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663917"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505296"
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků
 Rastrový obrázek je pole bitů, které určují barvu každého obrazového bodu obdélníkové pole v pixelech. Počet bitů věnovaný jednotlivých obrazových bodů určuje počet barev, které lze přiřadit k obrazového bodu. Například pokud každý pixel, je reprezentována 4 bitů, daný pixelů může se mu přiřadit jednu z 16 různé barvy (2 ^ 4 = 16). Následující tabulka ukazuje několik příkladů počet barev, které lze přiřadit k pixelu vyjádřena daný počet bitů.  
@@ -53,7 +53,7 @@ Rastrový obrázek je pole bitů, které určují barvu každého obrazového bo
  ![Bitmap sample](./media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
   
 ## <a name="graphics-file-formats"></a>Formáty souborů grafiky  
- Existuje mnoho standardní formáty pro ukládání bitmap ve soubory na disku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] podporuje grafiky souboru formáty popsané v následujících odstavcích.  
+ Existuje mnoho standardní formáty pro ukládání bitmap ve soubory na disku. Rozhraní GDI + podporuje grafiky souboru formáty popsané v následujících odstavcích.  
   
 ### <a name="bmp"></a>BMP  
  BMP je standardní formát, který se používá k ukládání imagí nezávislých na zařízení a nezávisle na aplikaci ve Windows. Počet bitů na pixel (1, 4, 8, 15, 24, 32 nebo 64) pro daný soubor BMP je zadat v hlavičce souboru. Soubory BMP s 24 bitů na pixel jsou běžné. Soubory BMP nejsou obvykle komprimované a proto se dobře nehodí pro přenos přes Internet.  

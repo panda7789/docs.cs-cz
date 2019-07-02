@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b74bcf8-3f87-449f-bff7-6bcb0d69d212
-ms.openlocfilehash: 00b0773ba66ad8e0acfdccb37964030a9cacff52
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 87a2f6853136b4b3e622968327bde01c9862bfdf
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664165"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504628"
 ---
 # <a name="single-table-queries-linq-to-dataset"></a>Dotazy na jednu tabulku (LINQ to DataSet)
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] dotazy fungují u zdrojů dat, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. <xref:System.Data.DataTable> Třída neimplementuje buď rozhraní, takže je třeba zavolat <xref:System.Data.DataTableExtensions.AsEnumerable%2A> metodu, pokud chcete použít <xref:System.Data.DataTable> jako zdroj v `From` klauzuli [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu.  
@@ -20,7 +20,7 @@ ms.locfileid: "61664165"
  [!code-csharp[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where1)]  
  [!code-vb[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where1)] 
   
- Místní proměnná dotazu je inicializován pomocí výrazu dotazu, které působí na jeden nebo více zdrojů informace s použitím jednoho nebo více operátorů dotazu, buď z operátory standardního dotazu, nebo v případě [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], operátory, které jsou specifické pro <xref:System.Data.DataSet>třídy. Výraz dotazu v předchozím příkladu používá dva operátory standardního dotazu: `Where` a `Select`.  
+ Místní proměnná dotazu je inicializován pomocí výrazu dotazu, které působí na jeden nebo více zdrojů informace s použitím jednoho nebo více operátorů dotazu, buď z operátory standardního dotazu, nebo v případě LINQ k datové sadě, operátory, které jsou specifické pro <xref:System.Data.DataSet>třídy. Výraz dotazu v předchozím příkladu používá dva operátory standardního dotazu: `Where` a `Select`.  
   
  `Where` Klauzule filtry pořadí na základě podmínky, v tomto případě, že `OnlineOrderFlag` je nastavena na `true`. `Select` Operátor přiděluje a vrací vyčíslitelný objekt, který zachycuje argumentů předaný operátoru. V tomto nad příkladu se vytvoří anonymního typu s tři vlastnosti: `SalesOrderID`, `OrderDate`, a `SalesOrderNumber`. Hodnoty tyto tři vlastnosti jsou nastaveny na hodnoty `SalesOrderID`, `OrderDate`, a `SalesOrderNumber` sloupce z `SalesOrderHeader` tabulky.  
   

@@ -1,17 +1,17 @@
 ---
 title: Řetězce - C# Průvodce programováním
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 06/27/2019
 helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: e193d6a51c3d4f1d81e3b74b1474d0e7cdcfca53
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 668b3b927ac059acf160f5d96e8fbc614f57ddff
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398115"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503997"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -62,13 +62,16 @@ ms.locfileid: "67398115"
 |\n|Nový řádek|0x000A|  
 |\r|Návrat na začátek řádku|0x000D|  
 |\t|Horizontální tabulátor|0x0009|  
-|\U|Řídicí sekvence Unicode pro náhradní páry.|\Unnnnnnnn|  
-|\u|řídicí sekvence Unicode|\u0041 = "A"|  
+|\U|Řídicí sekvence Unicode (UTF-32)|`\U00nnnnnn` (například `\U0001F47D` = "&#x1F47D;")|  
+|\u|Řídicí sekvence Unicode (UTF-16)|`\unnnn` (například `\u0041` = "A")|  
 |\v|Vertikální tabulátor|0x000B|  
-|\x|Řídicí sekvence Unicode podobný "\u" s výjimkou s proměnnou délkou.|\x0041 nebo \x41 = "A"|  
+|\x|Řídicí sekvence Unicode podobný "\u" s výjimkou s proměnnou délkou.|`\x0041` nebo `\x41` = "A"|  
+  
+> [!WARNING]
+>  Při použití `\x` řídicí sekvence a určení nižší než 4 číslic v šestnáctkové soustavě, pokud jsou znaky, které bezprostředně následují řídicí sekvenci platné hexadecimální číslice (například 0-9, A-F a a-f), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je bod kódu U + 00A1. Ale pokud následující znak je "A" nebo "a", pak řídicí sekvence se místo toho interpretovat jako `\xA1A` a vytvářet "&#x0A1A;", což je bod kódu U + 0A1A. V takovém případě zadáte všechny 4 číslic v šestnáctkové soustavě (třeba `\x00A1` ), nebude moct všechny možné špatného.  
   
 > [!NOTE]
->  V době kompilace doslovném řetězci jsou převedeny na běžné řetězce s stejné řídicí sekvence. Proto pokud doslovný řetězec zobrazení v okně kukátko ladicího programu, zobrazí se řídicí znaky, které byly přidány pomocí kompilátoru, ne verbatim verzi ze zdrojového kódu. Například doslovném řetězci @"C:\files.txt" se zobrazí v okně kukátko jako "C:\\\files.txt".  
+>  V době kompilace doslovném řetězci jsou převedeny na běžné řetězce s stejné řídicí sekvence. Proto pokud doslovný řetězec zobrazení v okně kukátko ladicího programu, zobrazí se řídicí znaky, které byly přidány pomocí kompilátoru, ne verbatim verzi ze zdrojového kódu. Například doslovném řetězci `@"C:\files.txt"` se zobrazí v okně kukátko jako "C:\\\files.txt".  
   
 ## <a name="format-strings"></a>Formátovací řetězce  
  Formátovací řetězec je řetězec, jehož obsah se určují dynamicky za běhu. Formátovací řetězce jsou vytvořeny vložením *interpolovaných výrazů* nebo zástupné symboly ve složených závorkách v rámci řetězce. Vše uvnitř složených závorek (`{...}`) bude vyhodnocena na hodnotu a výstup jako formátovaný řetězec za běhu. Existují dvě metody k vytvoření řetězce formátu: řetězec interpolace a složené formátování.

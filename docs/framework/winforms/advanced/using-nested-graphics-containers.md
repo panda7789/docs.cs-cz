@@ -9,15 +9,15 @@ helpviewer_keywords:
 - graphics [Windows Forms], clipping
 - graphics [Windows Forms], transformations in nested objects
 ms.assetid: a0d9f178-43a4-4323-bb5a-d3e3f77ae6c1
-ms.openlocfilehash: 6bbf7918ccff184e597204b35aa005ab17d8d8af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4533fbba62c36714f55cd8bd55fde7a1c8f6c9e6
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766266"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505054"
 ---
 # <a name="using-nested-graphics-containers"></a>Použití vnořených grafických kontejnerů
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje kontejnery, které vám umožní dočasně nahradit nebo rozšířit části stavu v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner zavoláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k formulářů vnořeného kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být párována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  
+Rozhraní GDI + poskytuje kontejnery, které vám umožní dočasně nahradit nebo rozšířit části stavu v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner zavoláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k formulářů vnořeného kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být párována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  
   
 ## <a name="transformations-in-nested-containers"></a>Transformace ve vnořené kontejnery  
  Následující příklad vytvoří <xref:System.Drawing.Graphics> objektů a kontejnerů, které <xref:System.Drawing.Graphics> objektu. Světové transformace <xref:System.Drawing.Graphics> objektu se překlad 100 jednotek ve směru osy x a 80 jednotek ve směru osy y. Světové transformace kontejneru je otočení kolem osy 30stupňů. Kód provádí volání `DrawRectangle(pen, -60, -30, 120, 60)` dvakrát. První volání <xref:System.Drawing.Graphics.DrawRectangle%2A> uvnitř kontejneru; to znamená, že volání spadá do rozsahu volání <xref:System.Drawing.Graphics.BeginContainer%2A> a <xref:System.Drawing.Graphics.EndContainer%2A>. Druhé volání <xref:System.Drawing.Graphics.DrawRectangle%2A> je po volání <xref:System.Drawing.Graphics.EndContainer%2A>.  

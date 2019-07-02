@@ -6,15 +6,15 @@ helpviewer_keywords:
 - shapes [Windows Forms], filling
 - brushes
 ms.assetid: bf8f7fff-5a90-41e8-9051-494449fb2844
-ms.openlocfilehash: 95112321794359dc282749b94fd9061305b42c23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb8112076bf0b835b558a9f88ae2ff59bdb8476d
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926942"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505185"
 ---
 # <a name="using-a-brush-to-fill-shapes"></a>Použití štětce k vyplnění obrazců
-A [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Brush> objektu se používá k vyplnění vnitřku zavřeného tvaru. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] definuje několik stylů výplně: plnou barvu, nesouvislého vzoru, textury a barev přechodu.  
+Rozhraní GDI + <xref:System.Drawing.Brush> objektu se používá k vyplnění vnitřku zavřeného tvaru. Rozhraní GDI + definuje několik stylů výplně: plnou barvu, nesouvislého vzoru, textury a barev přechodu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vyplnění obrazce plnou barvou](how-to-fill-a-shape-with-a-solid-color.md)  

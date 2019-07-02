@@ -15,15 +15,15 @@ helpviewer_keywords:
 - coordinate systems
 - transformations [Windows Forms], world
 ms.assetid: c61ff50a-eb1d-4e6c-83cd-f7e9764cfa9f
-ms.openlocfilehash: 765df4bcd3cef83e624ad8b11676696b95f7d035
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 24079f24bdae5fefd785a20dda9b29a190fb4068
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792340"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505261"
 ---
 # <a name="types-of-coordinate-systems"></a>Typy souřadnicových systémů
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá tři souřadnicových prostorech: world, stránky a zařízení. Světové souřadnice jsou souřadnice používají k modelování zvláštního grafického světa a souřadnice, které můžete předat do metody v rozhraní .NET Framework. Souřadnice stránky najdete souřadnicový systém používá povrchem výkresu, jako je například formulář nebo ovládací prvek. Souřadnice zařízení jsou souřadnice použít fyzické zařízení, které je cílem vykreslování, jako je obrazovka nebo list papíru. Když nastavíte volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v souřadnicového prostoru světa. Před [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete na obrazovce nakreslí čáru, souřadnice předávání sekvence transformací. Jedna transformace, volá Světové transformace převede Světové souřadnice na souřadnice stránky, a jinou transformaci, volá transformace stránky převede souřadnice stránky na souřadnice zařízení.  
+Rozhraní GDI + používá tři souřadnicových prostorech: world, stránky a zařízení. Světové souřadnice jsou souřadnice používají k modelování zvláštního grafického světa a souřadnice, které můžete předat do metody v rozhraní .NET Framework. Souřadnice stránky najdete souřadnicový systém používá povrchem výkresu, jako je například formulář nebo ovládací prvek. Souřadnice zařízení jsou souřadnice použít fyzické zařízení, které je cílem vykreslování, jako je obrazovka nebo list papíru. Když nastavíte volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v souřadnicového prostoru světa. Než rozhraní GDI + lze nakreslit řádku na obrazovce, souřadnice předávání sekvence transformací. Jedna transformace, volá Světové transformace převede Světové souřadnice na souřadnice stránky, a jinou transformaci, volá transformace stránky převede souřadnice stránky na souřadnice zařízení.  
   
 ## <a name="transforms-and-coordinate-systems"></a>Transformace a souřadnicových systémů  
  Předpokládejme, že budete chtít pracovat s souřadnicový systém, který má původ v těle klientské oblasti spíše než levém horním rohu. Řekněme například, že chcete, aby původu 100 pixelů od levého okraje oblasti klienta a 50 pixelů od horního okraje oblasti klienta. Následující obrázek znázorňuje souřadnicový systém.  

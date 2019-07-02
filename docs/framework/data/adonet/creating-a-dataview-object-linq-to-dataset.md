@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76057508-e12d-4779-a707-06a4c2568acf
-ms.openlocfilehash: 7baf358d9cdabe8cadf6b297a1d0d63d64282525
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bd39b40864703b6bb24c2cc6590787562f3f4f98
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583533"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504149"
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ to DataSet)
-Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Můžete vytvořit <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz nad <xref:System.Data.DataTable>, nebo si můžete vytvořit z typovaného nebo netypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není přímo constructible v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu.  
+Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v technologii LINQ to DataSet kontextu. Můžete vytvořit <xref:System.Data.DataView> z technologie LINQ to DataSet dotaz nad <xref:System.Data.DataTable>, nebo si můžete vytvořit z typovaného nebo netypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není přímo constructible v technologii LINQ to DataSet kontextu.  
   
  Po <xref:System.Data.DataView> byl vytvořen, můžete svázat ovládací prvek uživatelského rozhraní ve formulářové aplikaci Windows nebo aplikace ASP.NET, nebo změnit filtrování a řazení nastavení.  
   
@@ -22,7 +22,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[li
  Další informace o filtrování a řazení ovládacími <xref:System.Data.DataView>, naleznete v tématu [filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md) a [řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md).  
   
 ## <a name="creating-dataview-from-a-linq-to-dataset-query"></a>Vytváření zobrazení dat z LINQ k datové sadě dotazu  
- A <xref:System.Data.DataView> objekt můžete vytvořit z výsledků [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz, kde jsou výsledky projekci <xref:System.Data.DataRow> objekty. Nově vytvořený <xref:System.Data.DataView> dědí filtrování a řazení informace z dotazu je vytvořen z.  
+ A <xref:System.Data.DataView> objekt může být vytvořen z výsledků LINQ k datové sadě dotazu, kde jsou výsledky projekci <xref:System.Data.DataRow> objekty. Nově vytvořený <xref:System.Data.DataView> dědí filtrování a řazení informace z dotazu je vytvořen z.  
   
 > [!NOTE]
 >  Výrazy použité pro filtrování a řazení ve většině případů by neměl mít vedlejší účinky a musí být deterministický. Výrazů nesmí obsahovat žádný logiku, která závisí na stanovený počet spuštění, řazení a filtrování operací může být spuštěn libovolný počet pokusů.  
@@ -45,18 +45,18 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[li
   
 - <xref:System.Data.EnumerableRowCollectionExtensions.Where%2A>  
   
- Všimněte si, že <xref:System.Data.DataView> je vytvořený z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz <xref:System.Data.EnumerableRowCollectionExtensions.Select%2A> metoda musí být finální metodou volána v dotazu. To je ukázáno v následujícím příkladu, který vytvoří <xref:System.Data.DataView> online objednávek, seřazené podle dlužná částka:  
+ Všimněte si, že <xref:System.Data.DataView> je vytvořený z LINQ k datové sadě dotazu <xref:System.Data.EnumerableRowCollectionExtensions.Select%2A> metoda musí být finální metodou volána v dotazu. To je ukázáno v následujícím příkladu, který vytvoří <xref:System.Data.DataView> online objednávek, seřazené podle dlužná částka:  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquery1)]
  [!code-vb[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquery1)]  
   
- Můžete také použít řetězec podle <xref:System.Data.DataView.RowFilter%2A> a <xref:System.Data.DataView.Sort%2A> vlastností pro filtrování a řazení <xref:System.Data.DataView> po vytvoření z dotazu. Všimněte si, že touto akcí vymažete, řazení a filtrování informací zděděno z dotazu. Následující příklad vytvoří <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz, který filtruje podle příjmení, které začínají na ". Založené na řetězci <xref:System.Data.DataView.Sort%2A> je nastavena na řazení podle příjmení ve vzestupném pořadí a pak křestní jména v sestupném pořadí:  
+ Můžete také použít řetězec podle <xref:System.Data.DataView.RowFilter%2A> a <xref:System.Data.DataView.Sort%2A> vlastností pro filtrování a řazení <xref:System.Data.DataView> po vytvoření z dotazu. Všimněte si, že touto akcí vymažete, řazení a filtrování informací zděděno z dotazu. Následující příklad vytvoří <xref:System.Data.DataView> z technologie LINQ to DataSet dotaz, který filtruje podle příjmení, které začínají na ". Založené na řetězci <xref:System.Data.DataView.Sort%2A> je nastavena na řazení podle příjmení ve vzestupném pořadí a pak křestní jména v sestupném pořadí:  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquerystringsort)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquerystringsort)]  
   
 ## <a name="creating-a-dataview-from-a-datatable"></a>Vytvoření zobrazení dat z objektu DataTable  
- Kromě vytváří z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu, <xref:System.Data.DataView> objekt můžete vytvořit z <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTableExtensions.AsDataView%2A> metoda.  
+ Kromě vytváří z LINQ k datové sadě dotazu <xref:System.Data.DataView> objekt můžete vytvořit z <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTableExtensions.AsDataView%2A> metoda.  
   
  Následující příklad vytvoří <xref:System.Data.DataView> z podrobnosti prodejní objednávky tabulky a nastaví jej jako zdroj dat <xref:System.Windows.Forms.BindingSource> objektu. Tento objekt funguje jako proxy pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   

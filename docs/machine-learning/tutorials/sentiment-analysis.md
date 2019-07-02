@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET C
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: a766d95c62fd3a89e3291e1ab803f5222fac46ea
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 833aeeb045ef1fd7bb0e6dbd2236bc3d9da2e8fc
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306171"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506160"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza sentimentu komentářů k webu pomocí binární klasifikace ML.NET
 
@@ -93,12 +93,16 @@ Třída vstupní datová sada `SentimentData`, má `string` pro komentáře uži
 |WOW... Miluju toto místo.              |    1     |
 |Služba se velmi výzvy.              |    1     |
 
-`SentimentPrediction` je třída předpovědi používá po cvičení modelu. Dědí z `SentimentData` pro zobrazení `SentimentText` s předpovědí. `SentimentPrediction` má jeden datový typ boolean (`Sentiment`) a `PredictedLabel` `ColumnName` atribut. `Label` Slouží k vytvoření a trénování modelu a jeho rozdělení na testovací datové použít také k vyhodnocení modelu. `PredictedLabel` Se používá při předpovědi a vyhodnocení. Pro vyhodnocení se používají trénovací data, předpovězeným hodnotám a model.
+`SentimentPrediction` je třída předpovědi používá po cvičení modelu. Dědí z `SentimentData` tak, aby vstupní `SentimentText` lze zobrazit společně s předpovědi výstup. `Prediction` Je logická hodnota, která tento model předpovídá, pokud je zadán s nový vstup `SentimentText`.
 
-[MLContext třídy](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ML.NET. Inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně `DBContext` v Entity Framework.
+Třídy výstupu `SentimentPrediction` obsahuje dvě vlastnosti, která se počítá podle modelu: `Score` -základního skóre počítá podle modelu, a `Probability` -skóre kalibrován pravděpodobnosti, že má pozitivní zabarvení textu.
+
+Pro účely tohoto kurzu je nejdůležitější vlastnost `Prediction`.
 
 ## <a name="load-the-data"></a>Načtení dat
 Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.ML.IDataView). `IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové). Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu.
+
+[MLContext třídy](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ML.NET. Inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně `DBContext` v Entity Framework.
 
 Příprava aplikace a pak načíst data:
 

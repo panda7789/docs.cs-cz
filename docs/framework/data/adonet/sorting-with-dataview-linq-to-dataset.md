@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
-ms.openlocfilehash: dda7d4c376fd2cf447c676d77eae824d62144887
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4d000fd392b653f294a1d749f769f4e3bde5110d
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649591"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504277"
 ---
 # <a name="sorting-with-dataview-linq-to-dataset"></a>Řazení se zobrazením dat (LINQ to DataSet)
 Možnost řadit data podle určitých kritérií a potom prezentovat data do klienta prostřednictvím ovládacího prvku uživatelského rozhraní je důležitou součástí datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak řadit data a vrátí řádky dat, které jsou seřazené podle konkrétní kritéria řazení. Kromě jeho založené na řetězci možnosti, řazení <xref:System.Data.DataView> také umožňuje používat [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] výrazy řazení kritérií. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem komplexnější a výkonné operace řazení než založené na řetězci řazení. Toto téma popisuje oba přístupy k řazení pomocí <xref:System.Data.DataView>.  
   
 ## <a name="creating-dataview-from-a-query-with-sorting-information"></a>Vytváření zobrazení dat z dotazu s řazením informace  
- A <xref:System.Data.DataView> objekt můžete vytvořit z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. Pokud tento dotaz obsahuje <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.OrderByDescending%2A>, <xref:System.Linq.Enumerable.ThenBy%2A>, nebo <xref:System.Linq.Enumerable.ThenByDescending%2A> výrazy v těchto klauzulí jsou použity jako základ pro řazení dat v klauzuli <xref:System.Data.DataView>. Například, pokud dotaz obsahuje `Order By…`a `Then By…` klauzule, výsledná <xref:System.Data.DataView> by order oba sloupce zadaná data.  
+ A <xref:System.Data.DataView> objekt můžete vytvořit z LINQ k datové sadě dotazu. Pokud tento dotaz obsahuje <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.OrderByDescending%2A>, <xref:System.Linq.Enumerable.ThenBy%2A>, nebo <xref:System.Linq.Enumerable.ThenByDescending%2A> výrazy v těchto klauzulí jsou použity jako základ pro řazení dat v klauzuli <xref:System.Data.DataView>. Například, pokud dotaz obsahuje `Order By…`a `Then By…` klauzule, výsledná <xref:System.Data.DataView> by order oba sloupce zadaná data.  
   
  Řazení podle výrazu nabízí výkonnější a komplexní řazení než založené na řetězci řazení jednodušší. Všimněte si, že založených na řetězec a výraz řazení se vzájemně vylučují. Pokud založené na řetězci <xref:System.Data.DataView.Sort%2A> se nastaví po <xref:System.Data.DataView> je vytvořen z dotazu, založené na výrazu filtru odvodit z dotazu je vymazána a nelze jej obnovit.  
   
- Index <xref:System.Data.DataView> tvoříme tak i v případě <xref:System.Data.DataView> se vytvoří a při řazení nebo filtrování informace změněny. Získání nejlepšího výkonu dosáhnete zadáním kritérií pro řazení [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz, který <xref:System.Data.DataView> je vytvořený z a místo abyste upravili řazení informace později. Další informace najdete v tématu [výkon zobrazení dat](../../../../docs/framework/data/adonet/dataview-performance.md).  
+ Index <xref:System.Data.DataView> tvoříme tak i v případě <xref:System.Data.DataView> se vytvoří a při řazení nebo filtrování informace změněny. Získání nejlepšího výkonu dosáhnete zadáním řazení kritéria v technologii LINQ to DataSet dotaz, který <xref:System.Data.DataView> je vytvořený z a místo abyste upravili řazení informace později. Další informace najdete v tématu [výkon zobrazení dat](../../../../docs/framework/data/adonet/dataview-performance.md).  
   
 > [!NOTE]
 >  Výrazy použité pro řazení ve většině případů by neměl mít vedlejší účinky a musí být deterministický. Výrazů nesmí obsahovat žádný logiku, která závisí na stanovený počet spuštění, protože operace řazení může být spuštěn libovolný počet pokusů.  
@@ -44,7 +44,7 @@ Možnost řadit data podle určitých kritérií a potom prezentovat data do kli
  [!code-vb[DP DataView Samples#CreateLDVFromQueryOrderByThenBy](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromqueryorderbythenby)]  
   
 ## <a name="using-the-string-based-sort-property"></a>Pomocí vlastnosti založené na řetězci řazení  
- Založené na řetězci řazení funkce <xref:System.Data.DataView> stále funguje s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Po <xref:System.Data.DataView> byl vytvořen z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu, můžete použít <xref:System.Data.DataView.Sort%2A> vlastnost pro nastavení řazení na <xref:System.Data.DataView>.  
+ Založené na řetězci řazení funkce <xref:System.Data.DataView> stále funguje s dotazy LINQ k datové sadě. Po <xref:System.Data.DataView> byl vytvořen z dotazu LINQ to DataSet, můžete použít <xref:System.Data.DataView.Sort%2A> vlastnost pro nastavení řazení na <xref:System.Data.DataView>.  
   
  Založené na řetězci a založené na výrazu funkce řazení se vzájemně vylučují. Nastavení <xref:System.Data.DataView.Sort%2A> vlastnost vymaže výrazu podle řazení zděděno z dotazu, který <xref:System.Data.DataView> byl vytvořen z.  
   

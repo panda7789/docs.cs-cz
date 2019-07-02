@@ -2,12 +2,12 @@
 title: Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: bd7e462b-583b-4395-9c36-45aa9e61072c
-ms.openlocfilehash: 030ef4549bc820cab66d33fa81c205158c09fff9
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 0d8810da424b0759dcfba882efe462514a14145a
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67026095"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505965"
 ---
 # <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)
 
@@ -39,7 +39,7 @@ Asynchronní přístup přidává ekvivalent automatického přenosu do seznamu 
 
 ## <a name="BKMK_HowtoWriteanAsyncMethod"></a> Je snazší psát asynchronní metody
 
-[Asynchronní](../../../../visual-basic/language-reference/modifiers/async.md) a [Await](../../../../visual-basic/language-reference/modifiers/async.md) základem asynchronního programování jsou klíčová slova v jazyce Visual Basic. Pomocí těchto dvou klíčových slov můžete použít zdroje v rozhraní .NET Framework nebo prostředí Windows Runtime k vytvoření asynchronní metody téměř stejně snadno, jako vytváříte synchronní metody. Asynchronní metody, které definujete pomocí `Async` a `Await` jsou označovány jako asynchronní metody.
+[Asynchronní](../../../../visual-basic/language-reference/modifiers/async.md) a [Await](../../../../visual-basic/language-reference/operators/await-operator.md) základem asynchronního programování jsou klíčová slova v jazyce Visual Basic. Pomocí těchto dvou klíčových slov můžete použít zdroje v rozhraní .NET Framework nebo prostředí Windows Runtime k vytvoření asynchronní metody téměř stejně snadno, jako vytváříte synchronní metody. Asynchronní metody, které definujete pomocí `Async` a `Await` jsou označovány jako asynchronní metody.
 
 Následující příklad ukazuje asynchronní metodu. Téměř vše v rámci kódu by vám mělo být zcela známé. Komentáře volají funkce, které jste přidali při tvorbě asynchronie.
 

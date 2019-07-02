@@ -5,15 +5,15 @@ helpviewer_keywords:
 - examples [Windows Forms], regions
 - regions [Windows Forms], using
 ms.assetid: 7809295b-870f-4107-a8b5-8386c298acd5
-ms.openlocfilehash: ec11b8c7d2eeb153eb4a8c8772fef24977310e13
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c881cec3aa6fd8ab528b1ae6f5b7e2920ba51f90
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791102"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505025"
 ---
 # <a name="using-regions"></a>Použití oblastí
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region> Třída umožňuje definovat vlastní obrazce. Tvar může být vytvořena řádky, mnohoúhelníků a křivky.  
+Rozhraní GDI + <xref:System.Drawing.Region> třída umožňuje definovat vlastní obrazce. Tvar může být vytvořena řádky, mnohoúhelníků a křivky.  
   
  Dvě běžné použití oblastech jsou spuštění, testování a oříznutí. Testování přístupů je určení, zda v určité oblasti obrazovky označeného kliknutím myši. Výstřižek se omezení kreslení v určité oblasti.  
   

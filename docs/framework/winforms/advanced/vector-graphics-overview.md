@@ -9,15 +9,15 @@ helpviewer_keywords:
 - coordinate systems
 - graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
-ms.openlocfilehash: 9c854d8742e50a7136455da72a239623fb0c0d91
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 64bec47a186b08298a49c6f188795d1b51d234eb
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639748"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505250"
 ---
 # <a name="vector-graphics-overview"></a>Přehled vektorové grafiky
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Nakreslí na systém souřadnic řádky, obdélníky a ostatním tvarům. Můžete si vybrat z celé řady souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu se osy x, přejdete na pravé straně a osy y směřující dolů. Je pixel je jednotka měření ve výchozím nastavení systém souřadnic.  
+Rozhraní GDI + kreslení čáry, obdélníků a ostatním tvarům na systém souřadnic. Můžete si vybrat z celé řady souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu se osy x, přejdete na pravé straně a osy y směřující dolů. Je pixel je jednotka měření ve výchozím nastavení systém souřadnic.  
   
 ## <a name="the-building-blocks-of-gdi"></a>Stavební bloky rozhraní GDI +  
  ![Vector graphic](./media/aboutgdip02-art01.gif "AboutGdip02_Art01")  
@@ -26,11 +26,11 @@ ms.locfileid: "64639748"
   
  ![Vector graphic](./media/aboutgdip02-art02.gif "AboutGdip02_Art02")  
   
- Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení čáry, obdélníku či křivku, poskytují některé základní informace o položka, která má být vykreslen. Například můžete zadat jeden řádek tím, že poskytuje dva body a určíte tím, že poskytuje bod, výšku a šířku obdélníku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funguje ve spojení s ovladač zobrazení k určení, které pixelech musí být nastavená zobrazit čáry, křivky nebo obdélník. Následující obrázek znázorňuje pixelů, které jsou zapnuté zobrazíte řádek z bodu (4, 2) pro bod (12, 8).  
+ Použijete GDI + kreslení čáry, obdélníku či křivku, je třeba zadat určité klíčové informace o položka, která má být vykreslen. Například můžete zadat jeden řádek tím, že poskytuje dva body a určíte tím, že poskytuje bod, výšku a šířku obdélníku. Rozhraní GDI + funguje ve spojení s ovladač zobrazení k určení, které pixelech musí být nastavená zobrazit čáry, křivky nebo obdélník. Následující obrázek znázorňuje pixelů, které jsou zapnuté zobrazíte řádek z bodu (4, 2) pro bod (12, 8).  
   
  ![Vector graphic](./media/aboutgdip02-art03.gif "AboutGdip02_Art03")  
   
- V průběhu času určité základní stavební bloky ukázaly být zvláště užitečná pro vytváření dvojrozměrné obrázků. Tyto stavební bloky, které jsou podporovány produktem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], jsou uvedeny v následujícím seznamu:  
+ V průběhu času určité základní stavební bloky ukázaly být zvláště užitečná pro vytváření dvojrozměrné obrázků. V následujícím seznamu jsou uvedeny tyto stavební bloky, které jsou podporovány v rozhraní GDI +:  
   
 - řádky  
   
@@ -47,7 +47,7 @@ ms.locfileid: "64639748"
 - Bézierovy křivky  
   
 ## <a name="methods-for-drawing-with-a-graphics-object"></a>Metody pro vykreslování s objektem grafiky  
- <xref:System.Drawing.Graphics> Třídy v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje následující metody pro vytvoření položky v předchozím seznamu: <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawRectangle%2A>, <xref:System.Drawing.Graphics.DrawEllipse%2A>, <xref:System.Drawing.Graphics.DrawPolygon%2A>, <xref:System.Drawing.Graphics.DrawArc%2A>, <xref:System.Drawing.Graphics.DrawCurve%2A> (pro základní křivky vyhlazení), a <xref:System.Drawing.Graphics.DrawBezier%2A>. Každá z těchto metod je přetížena. To znamená jednotlivé metody podporují několik různých parametr seznamů. Například jeden varianta <xref:System.Drawing.Graphics.DrawLine%2A> metoda přijímá <xref:System.Drawing.Pen> objektu a čtyř celých čísel při další variantou <xref:System.Drawing.Graphics.DrawLine%2A> metoda přijímá <xref:System.Drawing.Pen> objektu a dva <xref:System.Drawing.Point> objekty.  
+ <xref:System.Drawing.Graphics> Třídu v rozhraní GDI + poskytuje následující metody pro vytvoření položky v předchozím seznamu: <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawRectangle%2A>, <xref:System.Drawing.Graphics.DrawEllipse%2A>, <xref:System.Drawing.Graphics.DrawPolygon%2A>, <xref:System.Drawing.Graphics.DrawArc%2A>, <xref:System.Drawing.Graphics.DrawCurve%2A> (pro základní křivky vyhlazení) a <xref:System.Drawing.Graphics.DrawBezier%2A>. Každá z těchto metod je přetížena. To znamená jednotlivé metody podporují několik různých parametr seznamů. Například jeden varianta <xref:System.Drawing.Graphics.DrawLine%2A> metoda přijímá <xref:System.Drawing.Pen> objektu a čtyř celých čísel při další variantou <xref:System.Drawing.Graphics.DrawLine%2A> metoda přijímá <xref:System.Drawing.Pen> objektu a dva <xref:System.Drawing.Point> objekty.  
   
  Metody pro kreslení Bézierovy křivky, řádky a obdélníky mají množném čísle doprovodná metody, které nakreslit několik položek v jednom volání: <xref:System.Drawing.Graphics.DrawLines%2A>, <xref:System.Drawing.Graphics.DrawRectangles%2A>, a <xref:System.Drawing.Graphics.DrawBeziers%2A>. Navíc <xref:System.Drawing.Graphics.DrawCurve%2A> metoda má metodu doprovodné <xref:System.Drawing.Graphics.DrawClosedCurve%2A>, že bod křivky koncový bod křivky propojíte s počáteční zavře.  
   

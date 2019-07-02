@@ -5,17 +5,17 @@ helpviewer_keywords:
 - image encoders [Windows Forms], using
 - image decoders [Windows Forms], using
 ms.assetid: 0e838ea1-4e7e-4334-b882-ab25df607b8b
-ms.openlocfilehash: e56bc20eb55d694d19b25d9e94e5c9d9e3952628
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8cd66f3ce3da462867da9e23c38b3f6d877c058c
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666446"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505087"
 ---
 # <a name="using-image-encoders-and-decoders-in-managed-gdi"></a>Použití kodérů a dekodérů ve spravovaném GDI+
-<xref:System.Drawing> Obor názvů poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. S použitím kodérů v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], můžete zaznamenat bitové kopie z paměti na disk. S použitím dekódovací moduly obrázku v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], můžete načíst obrázky z disku do paměti. Kodér převádí data do <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objektu do souboru ve formátu určený disk. Dekodér převádí data v souboru na disku na formát vyžadované <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty.  
+<xref:System.Drawing> Obor názvů poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. S použitím kodérů obrázků v GDI +, můžete napsat imagí z paměti na disk. Pomocí dekódovací moduly obrázku v GDI + můžete načíst obrázky z disku do paměti. Kodér převádí data do <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objektu do souboru ve formátu určený disk. Dekodér převádí data v souboru na disku na formát vyžadované <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] má integrovanou kodérů a dekodérů, které podporují následující typy souborů:  
+ Rozhraní GDI + má integrované kodérů a dekodérů, které podporují následující typy souborů:  
   
 - BMP  
   
@@ -27,7 +27,7 @@ ms.locfileid: "64666446"
   
 - TIFF  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] obsahuje také integrované dekodérů, které podporují následující typy souborů:  
+ Rozhraní GDI + je také integrované dekodérů, které podporují následující typy souborů:  
   
 - WMF  
   

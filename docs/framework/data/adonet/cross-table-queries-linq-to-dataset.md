@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6819a16f-8656-41af-a54d-dfec0cb66366
-ms.openlocfilehash: e974f643fd1515b701d2e81048725b88055b57dc
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: ed860b60add288899ac6f97429b2f01577ee392a
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489568"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504065"
 ---
 # <a name="cross-table-queries-linq-to-dataset"></a>Dotazy na křížovou tabulku (LINQ to DataSet)
-Kromě dotazování jedné tabulky, můžete také provádět dotazy na křížovou tabulku v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. To se provádí pomocí *spojení*. Je přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat, jako je například produkt nebo se obraťte na ID spojení Vztahy mezi objekty v objektově orientované programování, jsou relativně snadno vyhledávat, protože každý objekt má člena, který odkazuje na jiný objekt. V tabulkách externí databáze ale navigace v relacích není tak přímočaré. Databázové tabulky neobsahují integrované vztahy. V těchto případech můžete použít operace spojení tak, aby odpovídaly prvky z každého zdroje. Například s ohledem dvou tabulek, které obsahují informace o produktu a informace o prodeji, můžete použít operaci join tak, aby odpovídaly informace o prodeji a produktů pro stejnou prodejní objednávku.  
+Kromě dotazování jedné tabulky, můžete také provádět dotazy na křížovou tabulku v technologii LINQ to DataSet. To se provádí pomocí *spojení*. Je přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat, jako je například produkt nebo se obraťte na ID spojení Vztahy mezi objekty v objektově orientované programování, jsou relativně snadno vyhledávat, protože každý objekt má člena, který odkazuje na jiný objekt. V tabulkách externí databáze ale navigace v relacích není tak přímočaré. Databázové tabulky neobsahují integrované vztahy. V těchto případech můžete použít operace spojení tak, aby odpovídaly prvky z každého zdroje. Například s ohledem dvou tabulek, které obsahují informace o produktu a informace o prodeji, můžete použít operaci join tak, aby odpovídaly informace o prodeji a produktů pro stejnou prodejní objednávku.  
   
  [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] Framework obsahuje dva operátory, spojení <xref:System.Linq.Enumerable.Join%2A> a <xref:System.Linq.Enumerable.GroupJoin%2A>. Tyto operátory provádějí *operátorem*: to znamená, spojení, které odpovídají do dvou datových zdrojů, pouze při jejich klíče rovnají. (Oproti tomu příkazů jazyka Transact-SQL podporuje operátory spojení jiné než `equals`, například `less than` operátor.)  
   

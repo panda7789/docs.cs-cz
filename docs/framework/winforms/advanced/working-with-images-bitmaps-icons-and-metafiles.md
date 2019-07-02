@@ -9,15 +9,15 @@ helpviewer_keywords:
 - images [Windows Forms], working with
 - examples [Windows Forms], metafiles
 ms.assetid: a626d701-bd99-4fd8-b92f-7b8f794e042b
-ms.openlocfilehash: 61d534f8299c920f656abe4280cc3ea5e609c0b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c778018a2d78fbec67a3bf41b5cbaa8e4bfb606
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011915"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504855"
 ---
 # <a name="working-with-images-bitmaps-icons-and-metafiles"></a>Práce s obrázky, rastrovými obrázky, ikonami a metasoubory
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje `Bitmap` tříd pro práci s rastrové obrázky a `Metafile` tříd pro práci s imagemi vektoru. `Bitmap` a `Metafile` obě třídy dědí `Image` třídy.  
+Poskytuje rozhraní GDI + `Bitmap` tříd pro práci s rastrové obrázky a `Metafile` tříd pro práci s imagemi vektoru. `Bitmap` a `Metafile` obě třídy dědí `Image` třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Nakreslení existujícího rastrového obrázku na obrazovku](how-to-draw-an-existing-bitmap-to-the-screen.md)  

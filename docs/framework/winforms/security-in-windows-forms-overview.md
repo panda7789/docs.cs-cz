@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 471ed75a922ab8a7df18f2e4a3ccd89ede171248
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 88301663a78bb7d6f31c23bb03409ca44a2e55a9
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487265"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506165"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 
@@ -77,7 +77,7 @@ Následující tabulka popisuje tyto technologie.
 
 Technologii, kterou zvolíte, závisí na prostředí pro nasazení. Další informace najdete v tématu [Výběr strategie nasazení ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Ve výchozím nastavení aplikace ClickOnce, které jsou nasazeny pomocí sady Visual Studio nebo nástroje .NET Framework SDK (Mage.exe a MageUI.exe) jsou nakonfigurované ke spuštění na klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. Můžete to provedete pomocí sady Visual Studio nebo rozhraní .NET Framework SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe najdete v návodu: Nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
+Ve výchozím nastavení aplikace ClickOnce, které jsou nasazeny pomocí sady Visual Studio nebo nástroje .NET Framework SDK (Mage.exe a MageUI.exe) jsou nakonfigurované ke spuštění na klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. Můžete to provedete pomocí sady Visual Studio nebo rozhraní .NET Framework SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe, naleznete v tématu [názorný postup: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application).  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
 Další informace o aspektech zabezpečení ClickOnce a zvýšení úrovně oprávnění najdete v tématu [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Další informace o nasazení důvěryhodných aplikací najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).
 

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - antialiasing [Windows Forms], smoothing modes
 - GDI+, antialiasing
 ms.assetid: 810da1a4-c136-4abf-88df-68e49efdd8d4
-ms.openlocfilehash: cbc9033f18f1ab255862c8f8e2891aa9b68cf8d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 871c5cb3cd9356f677633acb04fe82021a9787c5
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961073"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506148"
 ---
 # <a name="antialiasing-with-lines-and-curves"></a>Vyhlazení u čar a křivek
-Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] nakreslení čáry, zadáte počáteční bod a koncový bod řádku, ale není potřeba poskytovat žádné informace o jednotlivých pixelech na řádku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funguje ve spojení s ovladač zobrazení k určení, které pixelů zapne k zobrazení řádku v konkrétní zobrazení zařízení.  
+Když použijete GDI + nakreslení čáry, zadáte počáteční bod a koncový bod řádku, ale nemáte zadejte informace o jednotlivých pixelech na řádku. Rozhraní GDI + funguje ve spojení s ovladač zobrazení k určení, které pixelů zapne k zobrazení řádku v konkrétní zobrazení zařízení.  
   
 ## <a name="aliasing"></a>Vyhlazení  
  Vezměte v úvahu přímo červená čára, která přejde z bodu (4, 2) na bod (16, 10). Předpokládejme souřadnicový systém má původu v levém horním rohu a zda je jednotka měření je pixel. Taky se předpokládá, že osa x odkazuje na pravé straně a osy y body dolů. Následující obrázek znázorňuje zvětšeným zobrazením červené čáry vykreslen na barevné pozadí.  

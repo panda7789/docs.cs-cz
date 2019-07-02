@@ -17,15 +17,15 @@ helpviewer_keywords:
 - examples [Windows Forms], GDI+
 - lines [Windows Forms], dashed
 ms.assetid: 30b25aae-e3eb-4479-bdb8-187cf651fc84
-ms.openlocfilehash: 84752773c0b56d9684dc31620d463d4ddccf9dad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 06d2351ffa7d7f009d7b049f4689df7038b4d202
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641396"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505348"
 ---
 # <a name="pens-lines-and-rectangles-in-gdi"></a>Pera, čáry a obdélníky v GDI+
-Kreslení čar pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je potřeba vytvořit <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje metody, které se dělají kreslení, a <xref:System.Drawing.Pen> ukládá atributy, jako je barva čáry, šířku a stylu.  
+Kreslení čar pomocí GDI + je potřeba vytvořit <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje metody, které se dělají kreslení, a <xref:System.Drawing.Pen> ukládá atributy, jako je barva čáry, šířku a stylu.  
   
 ## <a name="drawing-a-line"></a>Vykreslení čáry  
  Chcete-li nakreslit čáru, zavolejte <xref:System.Drawing.Graphics.DrawLine%2A> metodu <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Pen> Objekt je předán jako argumenty, které mají <xref:System.Drawing.Graphics.DrawLine%2A> metody. Následující příklad nakreslí čáru z bodu (4, 2) pro bod (12, 6):  
@@ -55,7 +55,7 @@ Kreslení čar pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdipl
  ![Lines](./media/aboutgdip02-art04.gif "Aboutgdip02_art04")  
   
 ## <a name="drawing-a-rectangle"></a>Vykreslení obdélníku  
- Kreslení obdélníků pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je nějak nakreslení čáry. Chcete-li nakreslit obdélník, je nutné <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje <xref:System.Drawing.Graphics.DrawRectangle%2A> metody a <xref:System.Drawing.Pen> ukládá atributy, jako je například šířku čáry a barvu. <xref:System.Drawing.Pen> Objekt je předán jako argumenty, které mají <xref:System.Drawing.Graphics.DrawRectangle%2A> metody. Kreslení obdélníku s jeho levého horního rohu v následujícím příkladu (100, 50), 80 šířku a výšku 40:  
+ Kreslení obdélníků pomocí GDI + je nějak nakreslení čáry. Chcete-li nakreslit obdélník, je nutné <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje <xref:System.Drawing.Graphics.DrawRectangle%2A> metody a <xref:System.Drawing.Pen> ukládá atributy, jako je například šířku čáry a barvu. <xref:System.Drawing.Pen> Objekt je předán jako argumenty, které mají <xref:System.Drawing.Graphics.DrawRectangle%2A> metody. Kreslení obdélníku s jeho levého horního rohu v následujícím příkladu (100, 50), 80 šířku a výšku 40:  
   
  [!code-csharp[LinesCurvesAndShapes#45](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#45)]
  [!code-vb[LinesCurvesAndShapes#45](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#45)]  

@@ -7,18 +7,18 @@ dev_langs:
 helpviewer_keywords:
 - transformations [Windows Forms], order significance
 ms.assetid: 37d5f9dc-a5cf-4475-aa5d-34d714e808a9
-ms.openlocfilehash: 4a65e588984241affea3083810b4901266480ea4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08927ebaa460e19e558dce22f39c13c31f0e49d0
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747456"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504904"
 ---
 # <a name="why-transformation-order-is-significant"></a>Proč je důležité pořadí transformace
 Jediný <xref:System.Drawing.Drawing2D.Matrix> objekt uložit jednu transformaci nebo posloupnost transformace. Druhá možnost se nazývá kompozitní transformace. Matice kompozitní transformace vynásobením matice jednotlivé transformace.  
   
 ## <a name="composite-transform-examples"></a>Příklady kompozitní transformace  
- V kompozitní transformace je důležité pořadí jednotlivých transformace. Například pokud nejprve otočit, pak škálovat, pak se překlad, můžete získat jiné výsledky než pokud nejprve přeložit, pak otočit a potom vertikálně. V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], kompozitní transformace jsou vytvořeny zleva doprava. Pokud S R jsou a T škálování, otočení a překladu matic v uvedeném pořadí, pak produktu SRT aplikace (v uvedeném pořadí) matice kompozitní transformace, která se škáluje první, potom otočí, pak se přeloží. Matice vytvářených produktu SRT aplikace se liší od matice vytvářených TRS produktu.  
+ V kompozitní transformace je důležité pořadí jednotlivých transformace. Například pokud nejprve otočit, pak škálovat, pak se překlad, můžete získat jiné výsledky než pokud nejprve přeložit, pak otočit a potom vertikálně. V rozhraní GDI + jsou sestaveny kompozitní transformace zleva doprava. Pokud S R jsou a T škálování, otočení a překladu matic v uvedeném pořadí, pak produktu SRT aplikace (v uvedeném pořadí) matice kompozitní transformace, která se škáluje první, potom otočí, pak se přeloží. Matice vytvářených produktu SRT aplikace se liší od matice vytvářených TRS produktu.  
   
  Jeden z důvodů, proč je důležité pořadí je, že transformací například rotace a změnu měřítka hotovi s ohledem na počátku systém souřadnic. Škálování, které jsou zaměřeny na počátek objekt vytvoří jiné výsledky než škálování objekt, který byl přesunut mimo původu. Podobně otáčení objektu, které jsou zaměřeny na počátek vytvoří jiné výsledky než otáčení objektu, který byl přesunut mimo původu.  
   

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 72e790dc008857a48602c92c9236588c531b64f9
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: cd14b51daee12e8de18586b262bdf2928bffbdc2
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423930"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504004"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnosti (C# odkaz)
 
@@ -45,6 +45,14 @@ Uživatelem definované [struktura](../keywords/struct.md) typy se nepodporují 
 
 Počínaje C# 7.3, `==` a `!=` operátory jsou podporovány C# [řazených kolekcí členů](../../tuples.md). Další informace najdete v tématu [rovnosti a n-tice](../../tuples.md#equality-and-tuples) část [ C# typy řazené kolekce členů](../../tuples.md) článku.
 
+### <a name="reference-types-equality"></a>Referenční rovnost typy
+
+Ve výchozím nastavení jsou stejné, pokud odkazují na stejný objekt dva operandy typu odkazu:
+
+[!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
+
+Jak ukazuje příklad, uživatelem definované referenční typy podporu `==` operátor ve výchozím nastavení. Však můžete přetížit typem odkazu `==` operátor. Pokud typ odkazu přetížení `==` operátoru, použijte <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> metodu ke kontrole, pokud dva odkazy tohoto typu odkazují na stejný objekt.
+
 ### <a name="string-equality"></a>Rovnosti řetězce
 
 Dvě [řetězec](../keywords/string.md) operandy jsou stejné, pokud jsou obě z nich `null` nebo obě instance řetězce se stejnou délkou a mají stejné znaky v každé pozici znaku:
@@ -53,15 +61,7 @@ Dvě [řetězec](../keywords/string.md) operandy jsou stejné, pokud jsou obě z
 
 Je to velká a malá písmena ordinálního porovnání. Další informace o porovnávání řetězců naleznete v tématu [porovnávání řetězců v C# ](../../how-to/compare-strings.md).
 
-### <a name="reference-types-equality"></a>Referenční rovnost typy
-
-Dvě jiných než `string` operandy typu odkaz jsou stejné, až si do stejného objektu:
-
-[!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
-
-Jak ukazuje příklad, uživatelem definované referenční typy podporu `==` operátor ve výchozím nastavení. Však můžete přetížit typ definovaný uživatelem odkazu `==` operátor. Pokud typ odkazu přetížení `==` operátoru, použijte <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> metodu ke kontrole, pokud dva odkazy tohoto typu odkazují na stejný objekt.
-
-## <a name="delegate-equality"></a>Delegát rovnosti
+### <a name="delegate-equality"></a>Delegát rovnosti
 
 Dvě [delegovat](../../programming-guide/delegates/index.md) operandy stejného typu modulu runtime jsou stejné, pokud jsou obě z nich `null` nebo jejich vyvolání seznamy se stejnou délkou a mají stejné položky v každé pozici:
 

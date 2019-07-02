@@ -8,15 +8,15 @@ helpviewer_keywords:
 - font families [Windows Forms], constructing
 - fonts [Windows Forms], constructing
 ms.assetid: d3a4a223-9492-4b54-9afd-db1c31c3cefd
-ms.openlocfilehash: d3c4b5b4293b62cfec0f8471f90be673854e9009
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 2d609525858c7a8ff77c0b86900b4fc7d6b4e39a
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590358"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505943"
 ---
 # <a name="how-to-construct-font-families-and-fonts"></a>Postupy: Vytváření rodin písem a písem
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] písma se stejný druh písma šifry, ale různé styly seskupí do rodiny písem. Řada Arial písmo obsahuje například následující písma:  
+Rozhraní GDI + seskupí písma se stejný druh písma šifry, ale různé styly do rodiny písem. Řada Arial písmo obsahuje například následující písma:  
   
 - Arial standardní  
   
@@ -26,7 +26,7 @@ ms.locfileid: "65590358"
   
 - Arial tučná kurzíva  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá čtyři styly formuláře rodin: pravidelných, tučné, kurzíva a Tučná kurzíva. Přídavných jmen, jako *zúžit* a *zaokrouhlí* nejsou považovány za styly; místo toho jsou součástí název rodiny. Arial úzký například je rodina písem s následující členy:  
+ Rozhraní GDI + používá čtyři styly formuláře rodin: pravidelných, tučné, kurzíva a Tučná kurzíva. Přídavných jmen, jako *zúžit* a *zaokrouhlí* nejsou považovány za styly; místo toho jsou součástí název rodiny. Arial úzký například je rodina písem s následující členy:  
   
 - Arial úzký standardní  
   
@@ -36,7 +36,7 @@ ms.locfileid: "65590358"
   
 - Arial úzký tučná kurzíva  
   
- Předtím, než můžete kreslení textu pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je potřeba vytvořit <xref:System.Drawing.FontFamily> objektu a <xref:System.Drawing.Font> objektu. <xref:System.Drawing.FontFamily> Objekt Určuje řez písma (například Arial) a <xref:System.Drawing.Font> objekt určuje velikost, styl a jednotky.  
+ Než můžete kreslení textu pomocí GDI +, je potřeba vytvořit <xref:System.Drawing.FontFamily> objektu a <xref:System.Drawing.Font> objektu. <xref:System.Drawing.FontFamily> Objekt Určuje řez písma (například Arial) a <xref:System.Drawing.Font> objekt určuje velikost, styl a jednotky.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří regulárních styl Arial písmo o velikosti 16 pixelů. V následujícím kódu, první argument předaný metodě <xref:System.Drawing.Font.%23ctor%2A> konstruktor je <xref:System.Drawing.FontFamily> objektu. Druhý argument určuje velikost písma měřenou v jednotkách identifikovaný čtvrtý argument. Třetí argument určuje styl.  

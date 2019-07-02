@@ -10,12 +10,12 @@ helpviewer_keywords:
 - curves [Windows Forms], drawing
 - curves
 ms.assetid: 08d2cc9a-dc9d-4eed-bcbb-2c8e2ca5d3ae
-ms.openlocfilehash: 33a8954296a7e63637ad5e210fb30fba1a3fdd53
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 06afdc4549f7c3c9b0636e5c7052dcca87a153f1
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641447"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505451"
 ---
 # <a name="open-and-closed-curves-in-gdi"></a>Otevřené a uzavřené křivky v GDI+
 Následující obrázek znázorňuje dvě křivek: jeden otevřít a jeden zavřené.  
@@ -23,7 +23,7 @@ Následující obrázek znázorňuje dvě křivek: jeden otevřít a jeden zavř
  ![Otevřené a uzavřené křivky](./media/aboutgdip02-art24.gif "Aboutgdip02_art24")  
   
 ## <a name="managed-interface-for-curves"></a>Použití spravovaného rozhraní křivky  
- Uzavřené křivky mají vnitřním a proto může být vyplněny štětce. <xref:System.Drawing.Graphics> Třídy v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje následující metody pro vyplnění uzavřených obrazců a křivek: <xref:System.Drawing.Graphics.FillRectangle%2A>, <xref:System.Drawing.Graphics.FillEllipse%2A>, <xref:System.Drawing.Graphics.FillPie%2A>, <xref:System.Drawing.Graphics.FillPolygon%2A>, <xref:System.Drawing.Graphics.FillClosedCurve%2A>, <xref:System.Drawing.Graphics.FillPath%2A>, a <xref:System.Drawing.Graphics.FillRegion%2A>. Pokaždé, když se bude volat jednu z těchto metod, je nutné předat jednoho z typů konkrétní štětce (<xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, nebo <xref:System.Drawing.Drawing2D.PathGradientBrush>) jako argument.  
+ Uzavřené křivky mají vnitřním a proto může být vyplněny štětce. <xref:System.Drawing.Graphics> Třídu v rozhraní GDI + poskytuje následující metody pro vyplnění uzavřených obrazců a křivek: <xref:System.Drawing.Graphics.FillRectangle%2A>, <xref:System.Drawing.Graphics.FillEllipse%2A>, <xref:System.Drawing.Graphics.FillPie%2A>, <xref:System.Drawing.Graphics.FillPolygon%2A>, <xref:System.Drawing.Graphics.FillClosedCurve%2A>, <xref:System.Drawing.Graphics.FillPath%2A>, a <xref:System.Drawing.Graphics.FillRegion%2A>. Pokaždé, když se bude volat jednu z těchto metod, je nutné předat jednoho z typů konkrétní štětce (<xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, nebo <xref:System.Drawing.Drawing2D.PathGradientBrush>) jako argument.  
   
  <xref:System.Drawing.Graphics.FillPie%2A> Metody, který je k <xref:System.Drawing.Graphics.DrawArc%2A> metody. Stejně jako <xref:System.Drawing.Graphics.DrawArc%2A> metoda vykreslí část osnovy elipsy, <xref:System.Drawing.Graphics.FillPie%2A> metoda vyplní část vnitřní elipsu. V následujícím příkladu Nakreslí oblouk a vyplní odpovídající část vnitřní elipsy:  
   

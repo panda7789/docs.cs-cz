@@ -7,15 +7,15 @@ helpviewer_keywords:
 - examples [Windows Forms], graphics
 - drawing
 ms.assetid: eb0f6d6f-9e52-4167-9592-ff4b82fb5869
-ms.openlocfilehash: f19a0e87c140a3fde8c43acc546ae11ea3b62d33
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b2a330324085f1a73418cd535f83f2b73e9721c0
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747684"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503943"
 ---
 # <a name="getting-started-with-graphics-programming"></a>Začínáme s programováním grafiky
-Tato část ukazuje, jak začít používat [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] v aplikaci Windows Forms. Následující témata ukazují, jak dokončit několik [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] úlohy, jako je vykreslování a následně tvary a text.  
+Tato část ukazuje, jak začít používat rozhraní GDI + v aplikaci Windows Forms. Následující témata ukazují, jak provést několik úloh rozhraní GDI + například kreslení a plnění tvary a text.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vytváření grafických objektů pro kreslení](how-to-create-graphics-objects-for-drawing.md)  

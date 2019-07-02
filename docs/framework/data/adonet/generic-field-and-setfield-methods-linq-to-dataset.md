@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
-ms.openlocfilehash: 9a2913de6534612455c14858f6baffea8ef78976
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 1b2c7434543bb2574c59eaec126a621121dd7cef
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347479"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504795"
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a metody SetField (LINQ to DataSet)
-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje rozšiřující metody, které <xref:System.Data.DataRow> třídy pro přístup k hodnoty ve sloupcích: <xref:System.Data.DataRowExtensions.Field%2A> – metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value?displayProperty=nameWithType> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] používá <xref:System.Nullable> a <xref:System.Nullable%601> typy. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste přetypovat vrácený objekt do příslušného typu. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně kontrola hodnot null protože vrací <xref:System.DBNull.Value?displayProperty=nameWithType> a implicitně přetypování na jiný typ vyvolá <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A?displayProperty=nameWithType> metoda nebyl použit ke kontrole hodnot null, bude vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value?displayProperty=nameWithType> a pokusili přetypovat na <xref:System.String>.  
+Poskytuje rozšiřující metody pro LINQ k datové sadě <xref:System.Data.DataRow> třídy pro přístup k hodnoty ve sloupcích: <xref:System.Data.DataRowExtensions.Field%2A> – metoda a <xref:System.Data.DataRowExtensions.SetField%2A> – metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value?displayProperty=nameWithType> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] používá <xref:System.Nullable> a <xref:System.Nullable%601> typy. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste přetypovat vrácený objekt do příslušného typu. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně kontrola hodnot null protože vrací <xref:System.DBNull.Value?displayProperty=nameWithType> a implicitně přetypování na jiný typ vyvolá <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A?displayProperty=nameWithType> metoda nebyl použit ke kontrole hodnot null, bude vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value?displayProperty=nameWithType> a pokusili přetypovat na <xref:System.String>.  
   
  [!code-csharp[DP LINQ to DataSet Examples#WhereIsNull](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#whereisnull)]
  [!code-vb[DP LINQ to DataSet Examples#WhereIsNull](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#whereisnull)]  
