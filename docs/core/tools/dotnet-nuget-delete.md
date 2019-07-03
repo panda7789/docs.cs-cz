@@ -2,17 +2,21 @@
 title: příkaz DotNet nuget delete
 description: Příkaz dotnet-nuget-delete Odstraní nebo unlists balíčku ze serveru.
 author: karann-msft
-ms.date: 12/04/2018
-ms.openlocfilehash: e1362413aa6458674518d68340634741994b34a3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 0b2ba64b70bae5e06f213457e30fedeca26a9819
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632048"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539256"
 ---
-# <a name="dotnet-nuget-delete"></a>DotNet nuget delete
+# <a name="dotnet-nuget-delete"></a>dotnet nuget delete
 
+**Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -20,23 +24,11 @@ ms.locfileid: "65632048"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```
 dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [--interactive] [-k|--api-key] [--no-service-endpoint]
     [--non-interactive] [-s|--source]
 dotnet nuget delete [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```
-dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [-k|--api-key] [--non-interactive]
-    [-s|--source]
-dotnet nuget delete [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Popis
 
@@ -53,8 +45,6 @@ dotnet nuget delete [-h|--help]
   Verze balíčku, který se odstranit.
 
 ## <a name="options"></a>Možnosti
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`--force-english-output`**
 
@@ -83,30 +73,6 @@ dotnet nuget delete [-h|--help]
 * **`-s|--source <SOURCE>`**
 
   Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`--force-english-output`**
-
-  Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
-
-* **`-h|--help`**
-
-  Vytiskne krátký nápovědy pro příkaz.
-
-* **`-k|--api-key <API_KEY>`**
-
-  Klíč rozhraní API pro server.
-
-* **`--non-interactive`**
-
-  Není výzvu k zadání uživatele o vstup ani potvrzení.
-
-* **`-s|--source <SOURCE>`**
-
-  Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
-
----
 
 ## <a name="examples"></a>Příklady
 

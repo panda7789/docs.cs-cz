@@ -2,12 +2,12 @@
 title: LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: 570d6a60e4f34e89e758b505353a083b959d9def
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8a69d74966b99d78b4a7addaa4323d61d82ce8d5
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630720"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539776"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 Technologie LINQ to Entities poskytuje podporu Language-Integrated Query (LINQ), který vývojářům umožňuje psát dotazy proti konceptuálního modelu Entity Framework pomocí jazyka Visual Basic nebo Visual C#. Dotazy na Entity Framework jsou reprezentovány dotazy ve stromové struktuře příkaz, které se spustí s do kontextu objektu. Technologie LINQ to Entities převede dotazů LINQ (Language Integrated) dotazy s příkazem strom dotazů, spustí dotazy na Entity Framework a vrátí objekty, které můžete použít Entity Framework a LINQ. Proces pro vytváření a spouštění technologie LINQ to Entities dotazu je následující:  
@@ -47,7 +47,7 @@ Technologie LINQ to Entities poskytuje podporu Language-Integrated Query (LINQ),
   
  Informace o volání metody CLR zpřístupněných kanonické funkce ve zdroji dat, naleznete v tématu [metoda CLR pro mapování kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md).  
   
- Informace o tom, jak volat canonical, databáze a vlastní funkce v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, naleznete v tématu [volání funkcí v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md).  
+ Informace o tom, jak volání canonical, databáze a vlastní funkce z v rámci LINQ dotazy entit najdete v tématu [volání funkcí v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md).  
   
 ## <a name="query-execution"></a>Provádění dotazů  
  Po vytvoření LINQ dotaz tímto uživatelem, je převedena na reprezentaci, jež je kompatibilní s rozhraním Entity Framework (ve formě stromů příkazů), který se potom provede na zdroj dat. V době spuštění dotazu jsou vyhodnoceny všechny výrazy dotazů (nebo součásti dotazu) na straně klienta nebo na serveru. To zahrnuje výrazy, které se používají v materializace výsledek nebo projekce entity. Další informace najdete v tématu [provádění dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md). Informace o tom, jak zlepšit výkon dotazu kompilace jednou a pak ho spustíte několikrát s různými parametry najdete v tématu [zkompilován dotazy (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  

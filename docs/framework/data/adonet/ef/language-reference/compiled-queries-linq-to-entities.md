@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
-ms.openlocfilehash: f3ba6bfd0f83270bc6b9e980fe92f6630c90ad49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3f24fb335169c2b38ce945377bc4e64a47fe9d5
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785343"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539910"
 ---
 # <a name="compiled-queries--linq-to-entities"></a>Kompilované dotazy (LINQ to Entities)
 Až budete mít aplikaci, která spustí dotazy strukturálně podobně jako v mnoha případech v Entity Framework, můžete často zvýšit výkon kompilaci dotazu jednou a spustíte ji několikrát s různými parametry. Například aplikace může mít k načtení všech zákazníků v konkrétním městě; Město je uživatel zadá za běhu ve formuláři. Technologie LINQ to Entities podporuje používání kompilované dotazy pro tento účel.  
@@ -19,7 +19,7 @@ Až budete mít aplikaci, která spustí dotazy strukturálně podobně jako v m
   
  <xref:System.Data.Objects.CompiledQuery> Třída poskytuje kompilace a ukládání do mezipaměti dotazů pro opakované použití. Koncepčně, tato třída obsahuje <xref:System.Data.Objects.CompiledQuery>společnosti `Compile` metodu s několik přetížení. Volání `Compile` metodu pro vytvoření nového delegáta k reprezentaci kompilovaném dotazu. `Compile` Metody, opatřeného <xref:System.Data.Objects.ObjectContext> a hodnoty parametrů, vrátí delegáta, který vytváří některé výsledek (například <xref:System.Linq.IQueryable%601> instance). Dotaz zkompiluje jednou během prvního spuštění. Možnosti sloučení v době kompilace nastaven pro dotaz není možné později změnit. Jakmile je zkompilován dotaz lze zadat pouze primitivní typy parametrů, ale nelze nahradit části dotazu, který by změna generovaného SQL. Další informace najdete v tématu [možnosti sloučení Entity Framework a kompilaci dotazů](https://go.microsoft.com/fwlink/?LinkId=199591)  
   
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] Výrazu dotazu, který <xref:System.Data.Objects.CompiledQuery>společnosti `Compile` je metoda zkompiluje reprezentované pomocí jedné z obecného `Func` delegátů, jako například <xref:System.Func%605>. Maximálně lze zapouzdřit výrazu dotazu `ObjectContext` parametr, návratový parametr a 16 parametry dotazu. Pokud požadujete víc než 16 parametry dotazu, můžete vytvořit strukturu, jejíž vlastnosti představují parametry dotazu. Pak můžete použít vlastnosti na struktuře ve výrazu dotazu po nastavení vlastnosti.  
+ Výraz LINQ to Entities dotazu, který <xref:System.Data.Objects.CompiledQuery>společnosti `Compile` je metoda zkompiluje reprezentované pomocí jedné z obecného `Func` delegátů, jako například <xref:System.Func%605>. Maximálně lze zapouzdřit výrazu dotazu `ObjectContext` parametr, návratový parametr a 16 parametry dotazu. Pokud požadujete víc než 16 parametry dotazu, můžete vytvořit strukturu, jejíž vlastnosti představují parametry dotazu. Pak můžete použít vlastnosti na struktuře ve výrazu dotazu po nastavení vlastnosti.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu zkompiluje a potom vyvolá dotaz, který přijímá <xref:System.Decimal> vstupní parametr a vrátí sekvenci objednávek, ve kterém je celková částka větší než nebo rovna hodnotě $200,00:  

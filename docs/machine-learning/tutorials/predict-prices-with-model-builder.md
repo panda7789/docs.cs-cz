@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: db9788e3065a0f2f21d712b2d4826efea2d8a829
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: d9a6f193d877fc1a679b7a3cafd7491e021cb2ad
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410653"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539625"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Předvídání cen prostřednictvím regrese s Tvůrce modelu
 
@@ -51,7 +51,7 @@ Seznam požadavků a pokyny k instalaci, přejděte [Tvůrce modelu Průvodce in
 
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši *taxislužby. tarif train.csv* a vyberte možnost **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
 
-Každý řádek `taxi-fare-train.csv` datová sada obsahuje podrobné informace o cesty taxislužby. 
+Každý řádek `taxi-fare-train.csv` datová sada obsahuje podrobné informace o cesty taxislužby.
 
 1. Otevřít **taxislužby. tarif train.csv** datové sady
 
@@ -102,7 +102,7 @@ Objem dat úměrné čas potřebný k natrénování modelu. Vyberte odpovídaj�
 V průběhu procesu trénování průběh data se zobrazí v `Progress` část krok trénování.
 
 - Stav se zobrazí stav dokončení procesu trénování.
-- Největší přesností zobrazí přesnost nejvýkonnějšího modelu zatím objevila Tvůrce modelu. Vyšší přesnost znamená, že model více správně předpovědět na testovací data. 
+- Největší přesností zobrazí přesnost nejvýkonnějšího modelu zatím objevila Tvůrce modelu. Vyšší přesnost znamená, že model více správně předpovědět na testovací data.
 - Nejlepší algoritmus zobrazí název algoritmu nejlépe provádí provést zatím objevila Tvůrce modelu.
 - Poslední algoritmus zobrazí název algoritmu Tvůrce modelu naposledy použité pro trénování modelu.
 
@@ -122,8 +122,8 @@ Dva projekty budou vytvořeny v důsledku procesu trénování.
 - TaxiFarePredictionML.Model: .NET Standard knihovny tříd obsahující datové modely, které definujete schéma vstupní a výstupní modelování dat, jakož i trvalou verzí nejvýkonnějšího modelu během cvičení.
 
 1. V části kódu nástroj Tvůrce modelu vyberte **přidány projekty** přidat projekty do řešení.
-1. V Průzkumníku řešení klikněte pravým tlačítkem myši *TaxiFarePrediction* projektu. Vyberte **Přidat > existující položku**. Soubor typu z rozevíracího seznamu vyberte `All Files`, přejděte *TaxiFarePredictionML.Model* projekt adresář a zaškrtnout možnost `MLModel.zip` souboru. Klikněte pravým tlačítkem na naposledy přidané `MLModel.zip` a vyberte možnost *vlastnosti*. Kopírovat do výstupního adresáře možnosti, vyberte *kopírovat, pokud je novější* z rozevíracího seznamu.
-1. Klikněte pravým tlačítkem na *TaxiFarePrediction* projektu. Potom **Přidat > odkaz**. Zvolte **projektů > řešení** uzlu a ze seznamu, zkontrolujte *TaxiFarePredictionML.Model* projektu a vyberte OK.
+2. V Průzkumníku řešení klikněte pravým tlačítkem myši *TaxiFarePrediction* projektu. Vyberte **Přidat > existující položku**. Soubor typu z rozevíracího seznamu vyberte `All Files`, přejděte *TaxiFarePredictionML.Model* projekt adresář a zaškrtnout možnost `MLModel.zip` souboru. Klikněte pravým tlačítkem na naposledy přidané `MLModel.zip` a vyberte možnost *vlastnosti*. Kopírovat do výstupního adresáře možnosti, vyberte *kopírovat, pokud je novější* z rozevíracího seznamu.
+3. Klikněte pravým tlačítkem na *TaxiFarePrediction* projektu. Potom **Přidat > odkaz**. Zvolte **projektů > řešení** uzlu a ze seznamu, zkontrolujte *TaxiFarePredictionML.Model* projektu a vyberte OK.
 
 4. Otevřít *Program.cs* soubor *TaxiFarePrediction* projektu.
 5. Přidejte následující příkazy using:

@@ -2,12 +2,12 @@
 title: Terminologie Entity Framework
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-ms.openlocfilehash: 53a6888d0b32cfeb73e7254dc0778274fe6cd0eb
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: bc3712628d308629208af893e8fdee16cbba1e93
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306342"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539879"
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
 Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Jsou uvedeny odkazy na související témata, kde je k dispozici další informace.  
@@ -44,7 +44,7 @@ Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet
 |Nezávislé přidružení|Přidružení mezi entitami, které jsou reprezentovány a sledovat nezávislý objekt.|  
 |klíč|Atribut typu entity, která určuje vlastnosti, které nebo set vlastnosti slouží k identifikaci jedinečné instance typu entity. V objektové vrstvě podle <xref:System.Data.EntityKey> třídy.<br /><br /> Další informace najdete v tématu [Key – Element (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#key-element-csdl) a [klíč entity](../../../../../docs/framework/data/adonet/entity-key.md).|  
 |Opožděné načtení|Pokud objekty jsou vrácena dotazem, nejsou načteny související objekty ve stejnou dobu. Místo toho se načtou automaticky při přístupu k navigační vlastnost.|  
-|[!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]|Syntaxe dotazu, který definuje sadu operátorů dotazu, které umožňují procházení, filtrování a promítání operací přímé, deklarativní způsobem v jazyce Visual C# a Visual Basic.<br /><br /> Další informace najdete v tématu [technologii LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).|  
+|LINQ to Entities|Syntaxe dotazu, který definuje sadu operátorů dotazu, které umožňují procházení, filtrování a promítání operací přímé, deklarativní způsobem v jazyce Visual C# a Visual Basic.<br /><br /> Další informace najdete v tématu [technologii LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).|  
 |mapování|Specifikace srovnávací mezi položkami v konceptuálním modelu a položky v modelu úložiště.<br /><br /> Další informace najdete v tématu [specifikace MSL](../../../../../docs/framework/data/adonet/ef/language-reference/msl-specification.md).|  
 |soubor .msl|Soubor XML, který obsahuje mapování mezi Koncepční model a model úložiště, vyjádřené v MSL.|  
 |Mapping Specification Language (MSL)|Založený na formátu XML jazyka, který se používá k mapování položek definovaných v konceptuálním modelu na položky v modelu úložiště.<br /><br /> Další informace najdete v tématu [specifikace MSL](../../../../../docs/framework/data/adonet/ef/language-reference/msl-specification.md).|  

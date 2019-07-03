@@ -2,12 +2,12 @@
 title: LINQ a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: 16b06549573bc79378539cf7f5ccdcb60c812e81
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 9c517b3efca8cd2b41782858ef1e18e3cba76c1b
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504465"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539411"
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy musí používat dva (nebo více) programovacích jazyků: jazyka vysoké úrovně pro obchodní logiku a prezentační vrstvy (jako je vizuál C# nebo Visual Basic) a dotazovací jazyk pro interakci s databází (například příkazů jazyka Transact-SQL) . To vyžaduje vývojář bude zdatní v několika jazycích, aby byl Efektivní a zároveň způsobí, že jazyk neshody ve vývojovém prostředí. Aplikace, která používá data přístup k rozhraní API při spuštění dotazu proti databázi například určuje dotaz jako řetězcový literál s použitím uvozovek. Tento řetězec dotazu bez číst kompilátoru a nepovolenou chyby, jako je například neplatnou syntaxi nebo zda skutečně existují sloupce nebo řádky, na které odkazuje. Neexistuje žádný typ kontroly parametrů dotazu a ne `IntelliSense` buď podporují.  
@@ -16,7 +16,7 @@ V současné době celá řada vývojářů firmy musí používat dva (nebo ví
   
  Přenos dat z tabulek SQL do objektů v paměti je často zdlouhavé a náchylné k chybě. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] Implementaci technologií LINQ to DataSet poskytovatele a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] převede zdrojová data do <xref:System.Collections.IEnumerable>– na základě kolekcí objektů. Programátor vždy zobrazí data jako <xref:System.Collections.IEnumerable> kolekce, jak při dotazování a při aktualizaci. Úplné `IntelliSense` podpora se poskytuje pro psaní dotazů vůči těchto kolekcí.  
   
- Existují tři samostatné ADO.NET [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] technologií: LINQ to DataSet, [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)]. Technologie LINQ to DataSet poskytuje širší, optimalizované dotazování <xref:System.Data.DataSet> a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] umožňuje přímo dotazovat schémata databáze systému SQL Server, a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)] umožňuje dotazování Entity Data Model.  
+ Existují tři samostatné ADO.NET [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] technologií: LINQ to DataSet, [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)]a LINQ to Entities. Technologie LINQ to DataSet poskytuje širší, optimalizované dotazování <xref:System.Data.DataSet> a [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] umožňuje zadat dotaz přímo schémata databáze systému SQL Server a LINQ to Entities umožňuje dotazování Entity Data Model.  
   
  Následující obrázek poskytuje základní informace o tom, jak technologie ADO.NET, LINQ souvisí vysoké úrovně programovacích jazyků a zdroje dat LINQ povolena.  
   
@@ -24,7 +24,7 @@ V současné době celá řada vývojářů firmy musí používat dva (nebo ví
   
  Další informace o dotazech technologie LINQ, naleznete v tématu [Language Integrated Query (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md).
   
- Následující části obsahují další informace o jazyku LINQ k datové sadě, [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)], a [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)].  
+ Následující části obsahují další informace o jazyku LINQ k datové sadě, [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)]a LINQ to Entities.  
   
 ## <a name="linq-to-dataset"></a>LINQ na DataSet  
  <xref:System.Data.DataSet> Je klíčovým prvkem odpojené programovací model, který je založený na ADO.NET a velmi často používá. Technologie LINQ to DataSet umožňuje vývojářům vytvářet bohatších možností dotazování <xref:System.Data.DataSet> pomocí stejný mechanismus možností formulování dotazu, který je k dispozici pro mnoha dalším datovým zdrojům. Další informace najdete v tématu [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md).  
@@ -37,7 +37,7 @@ V současné době celá řada vývojářů firmy musí používat dva (nebo ví
 ## <a name="linq-to-entities"></a>LINQ to Entities  
  Většina aplikací jsou aktuálně zapsaných nad rámec relačních databází. V určitém okamžiku tyto aplikace potřebovat pro interakci s daty reprezentovány ve formě relační. Databázová schémata nejsou vždy ideální pro vytváření aplikací a konceptuálních modelů aplikace nejsou stejné jako logických modelů z databází. Datový Model Entity je koncepční datový model, který slouží k modelování dat v určité doméně tak, aby aplikace můžete pracovat s daty jako objekty. Zobrazit [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) Další informace.  
   
- Prostřednictvím modelu Entity Data Model je přístupný relačních dat jako objektů v prostředí .NET. Tím je objekt vrstvy ideální cíl pro [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] podporu umožňující vývojářům formulovali dotazy na databázi z jazyk používaný k vytváření obchodní logiku. Tato schopnost je známá jako [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)]. Zobrazit [technologii LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md) Další informace.  
+ Prostřednictvím modelu Entity Data Model je přístupný relačních dat jako objektů v prostředí .NET. Tím je objekt vrstvy ideální cíl pro [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] podporu umožňující vývojářům formulovali dotazy na databázi z jazyk používaný k vytváření obchodní logiku. Tato schopnost je známá jako LINQ to Entities. Zobrazit [technologii LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md) Další informace.  
   
 ## <a name="see-also"></a>Viz také:
 

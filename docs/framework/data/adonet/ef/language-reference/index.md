@@ -2,15 +2,15 @@
 title: Referenční dokumentace jazyka Entity SQL
 ms.date: 03/30/2017
 ms.assetid: bb07282c-161d-47e8-856d-b2374ba18181
-ms.openlocfilehash: 158240678eec7eb4699263c4febe9b6991196e11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32e70c67bb36df167f7a6fbc8f2a855d63ed815a
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613649"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539487"
 ---
 # <a name="entity-sql-language-reference"></a>Referenční dokumentace jazyka Entity SQL
-Tato část obsahuje podrobnou dokumentaci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)]a modelování a mapování jazyky používané [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
+Tato část obsahuje podrobnou dokumentaci LINQ to Entities, [!INCLUDE[esql](../../../../../../includes/esql-md.md)]a modelování a mapování jazyky používané [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Specifikace CSDL, SSDL a MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)  

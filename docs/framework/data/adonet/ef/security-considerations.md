@@ -2,12 +2,12 @@
 title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 66f8a9217a007ed1faf975638dfa8148e2f1c5ba
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: cf42787d7cc67d80f43a08b5fa71161fee20f5c3
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307305"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539836"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -100,9 +100,9 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
      [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy přijímají parametry všude, že se přijímají literály. Parametrizované dotazy byste měli použít místo vloženého literály z externí agenta přímo do dotazu. Měli byste také zvážit použití [metody Tvůrce dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100)) bezpečně vytvořit Entity SQL.  
   
-- [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] útoky prostřednictvím injektáže:  
+- Technologie LINQ to Entities útoky prostřednictvím injektáže:  
   
-     I když sestavení dotazu je možné v [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)], se provádí prostřednictvím rozhraní API objektu modelu. Na rozdíl od [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy, [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] dotazy nejsou skládá pomocí zacházení s řetězci nebo zřetězení a nejsou náchylný k tradiční útoky prostřednictvím injektáže SQL.  
+     I když sestavení dotazu je možné v technologii LINQ to Entities, se provádí prostřednictvím rozhraní API objektu modelu. Na rozdíl od [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy, dotazech LINQ to Entities nejsou skládá pomocí zacházení s řetězci nebo zřetězení a nejsou náchylný k tradiční útoky prostřednictvím injektáže SQL.  
   
 #### <a name="prevent-very-large-result-sets"></a>Zabraňte velmi velké množství výsledků.  
  Výsledek velmi velké sady může způsobit, že systém klienta pro vypnutí klient je provádění operací, které spotřebovávají prostředky přímo úměrná velikosti sady výsledků dotazu. Velké množství výsledků neočekávaně může dojít za následujících podmínek:  
@@ -113,7 +113,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
 - Ve vnořené [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy.  
   
- Při přijímání vstupu uživatele, musíte se ujistit, že vstup nemůže způsobit sad výsledků dotazu se větší, než co může systém zpracovat. Můžete také použít <xref:System.Linq.Queryable.Take%2A> metoda [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] nebo [LIMIT](../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md) operátor v [!INCLUDE[esql](../../../../../includes/esql-md.md)] omezení velikosti sady výsledků dotazu.  
+ Při přijímání vstupu uživatele, musíte se ujistit, že vstup nemůže způsobit sad výsledků dotazu se větší, než co může systém zpracovat. Můžete také použít <xref:System.Linq.Queryable.Take%2A> metoda v technologii LINQ to Entities nebo [LIMIT](../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md) operátor v [!INCLUDE[esql](../../../../../includes/esql-md.md)] omezení velikosti sady výsledků dotazu.  
   
 #### <a name="avoid-returning-iqueryable-results-when-exposing-methods-to-potentially-untrusted-callers"></a>Vyhněte se vrací typ IQueryable výsledky při zpřístupňuje metody pro potenciálně nedůvěryhodných volajících.  
  Vyhněte se vracení <xref:System.Linq.IQueryable%601> typy z metod, které jsou vystaveny potenciálně nedůvěryhodných volajících z následujících důvodů:  

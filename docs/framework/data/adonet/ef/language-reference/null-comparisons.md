@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
-ms.openlocfilehash: f3bbb55ec65df1af776779682d307a67034e34b3
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 5862506960ae1e763baebee5d990df83f92cc784
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489897"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539726"
 ---
 # <a name="null-comparisons"></a>Porovnávání s hodnotou Null
-A `null` hodnota ve zdroji dat znamená, že hodnota neznámý. V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, můžete zkontrolovat hodnoty null, tak že určité výpočtů nebo porovnání se provádí pouze u řádků, které mají platný nebo není null, data. Sémantika s hodnotou null CLR, ale může lišit od sémantika s hodnotou null zdroj dat. Většina databází použijte verzi s hodnotou tři logiku ke zpracování porovnávání s hodnotou null. To znamená, že porovnání proti hodnota null není vyhodnocen na `true` nebo `false`, je vyhodnocen jako `unknown`. Často je jím implementace ANSI hodnoty Null, ale není to vždy.  
+A `null` hodnota ve zdroji dat znamená, že hodnota neznámý. V dotazech LINQ to Entities můžete zkontrolovat hodnoty null tak, aby určité výpočtů nebo porovnání se provádí pouze u řádků, které se mají data platný nebo není null. Sémantika s hodnotou null CLR, ale může lišit od sémantika s hodnotou null zdroj dat. Většina databází použijte verzi s hodnotou tři logiku ke zpracování porovnávání s hodnotou null. To znamená, že porovnání proti hodnota null není vyhodnocen na `true` nebo `false`, je vyhodnocen jako `unknown`. Často je jím implementace ANSI hodnoty Null, ale není to vždy.  
   
  Ve výchozím nastavení v systému SQL Server porovnání null. je rovno null, vrátí hodnotu null. V následujícím příkladu, řádky kde `ShipDate` je null jsou vyloučeny ze sady výsledků a příkazu jazyka Transact-SQL by vrátil 0 řádků.  
   
@@ -44,7 +44,7 @@ WHERE h.ShipDate IS Null
  [!code-vb[DP L2E Conceptual Examples#CastResultsIsNull](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#castresultsisnull)]  
   
 ## <a name="passing-null-collections-to-aggregate-functions"></a>Předání kolekcí Null pro agregační funkce  
- V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], při předání kolekce, která podporuje `IQueryable` agregační funkce, jsou agregační operace prováděny v databázi. Mohou existovat rozdíly ve výsledcích dotazu, který se provádí v paměti a dotaz, který byl proveden v databázi. Pomocí dotazu v paměti Pokud neexistují žádné odpovídající položky, dotaz vrátí hodnotu 0. V databázi, stejný dotaz vrací `null`. Pokud `null` LINQ agregační funkce je předána hodnota, bude vyvolána výjimka. Tak, aby přijímal možné `null` hodnoty, přetypujte typy a vlastnosti typů, které se zobrazí výsledky dotazu na typy s možnou hodnotou Null.  
+ V technologii LINQ to Entities, při předání kolekce, která podporuje `IQueryable` agregační funkce, jsou agregační operace prováděny v databázi. Mohou existovat rozdíly ve výsledcích dotazu, který se provádí v paměti a dotaz, který byl proveden v databázi. Pomocí dotazu v paměti Pokud neexistují žádné odpovídající položky, dotaz vrátí hodnotu 0. V databázi, stejný dotaz vrací `null`. Pokud `null` LINQ agregační funkce je předána hodnota, bude vyvolána výjimka. Tak, aby přijímal možné `null` hodnoty, přetypujte typy a vlastnosti typů, které se zobrazí výsledky dotazu na typy s možnou hodnotou Null.  
   
 ## <a name="see-also"></a>Viz také:
 

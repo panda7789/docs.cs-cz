@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: bcd7b699-4e50-4523-8c33-2f54a103d94e
-ms.openlocfilehash: 98dbb0185de88c6fd69c6daf1540e997c14cc9e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 165fb1524daa781c29037bf1c9cb2b3013504177
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641419"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539746"
 ---
 # <a name="query-results"></a>Výsledky dotazu
-Po [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu je převést na stromy příkazů a spuštěn, výsledky dotazu jsou obvykle vráceny jako jeden z následujících akcí:  
+Po LINQ to Entities dotazu je převést na stromy příkazů a spuštěn, výsledky dotazu jsou obvykle vráceny jako jeden z následujících akcí:  
   
 - Kolekce nulu nebo více objektů zadané entity nebo projekce komplexních typů v konceptuálním modelu.  
   

@@ -1,20 +1,18 @@
 ---
 title: Vyberte verzi .NET Core, která se má použít
 description: Zjistěte, jak .NET Core automaticky vyhledá a vybere verze modulu runtime pro váš program. Kromě toho tento článek vás naučí, jak vynutit konkrétní verzi.
-author: billwagner
-ms.author: wiwagn
-ms.date: 06/27/2018
+author: thraka
+ms.author: adegeo
+ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3e9a60221a5769d124bcc137d9401367a7713abb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ec22acf33884a5da0062b6e7aaded5dd4a0c665
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646915"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539305"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core používat
-
-[!INCLUDE [topic-appliesto-net-core-2plus](../../../includes/topic-appliesto-net-core-2plus.md)]
 
 Tento článek vysvětluje zásady slouží k výběru verze nástroje .NET Core, sady SDK a modulu runtime. Tyto zásady umožňují rovnováhu mezi spouštění aplikací pomocí zadané verze a povolení usnadňují upgradu pro vývojáře a počítačích koncových uživatelů. Tyto zásady provést následující akce:
 
@@ -87,19 +85,20 @@ Hostitel vybere nejnovější verze opravy na počítači nainstalovaný. Např�
 
 Pokud nejsou přípustné `2.0.*` nalezena verze nový `2.*` je použita verze. Například, pokud jste zadali `netcoreapp2.0` a pouze `2.1.0` je nainstalovaný, spuštění aplikace pomocí `2.1.0` modulu runtime. Toto chování se označuje jako "podverze vpřed." Nižší verze také nebude považovat za. Pokud je nainstalován žádný přijatelný modul runtime, aplikace se nespustí.
 
-Několik příkladů použití ukazují chování:
+Několik příkladů použití ukazují chování, pokud je cílem 2.0:
 
-- 2.0.4 je povinný. 2.0.5 je nejvyšší nainstalovaná verze opravy. 2.0.5 se používá.
-- 2.0.4 je povinný. 2.0 č. * nainstalovaných verzí rozhraní. 1.1.1 je nejvyšší modul runtime nainstalovaný. Zobrazí se chybová zpráva.
-- 2.0.4 je povinný. 2.0.0 je nejvyšší verze instalované. Zobrazí se chybová zpráva.
-- 2.0.4 je povinný. 2.0 č. * nainstalovaných verzí rozhraní. 2.2.2 je nainstalovaná nejvyšší modul runtime verze 2.x. 2.2.2 se používá.
-- 2.0.4 je povinný. Žádné verze 2.x nainstalují. 3.0.0 (je nainstalovaná není aktuálně dostupná verze). Zobrazí se chybová zpráva.
+- je zadán 2.0. 2.0.5 je nejvyšší nainstalovaná verze opravy. 2.0.5 se používá.
+- je zadán 2.0. 2\.0 č. * nainstalovaných verzí rozhraní. 1.1.1 je nejvyšší modul runtime nainstalovaný. Zobrazí se chybová zpráva.
+- je zadán 2.0. 2\.0 č. * nainstalovaných verzí rozhraní. 2.2.2 je nainstalovaná nejvyšší modul runtime verze 2.x. 2.2.2 se používá.
+- je zadán 2.0. Žádné verze 2.x nainstalují. 3.0.0 je nainstalovaný. Zobrazí se chybová zpráva.
 
 Podverze vpřed má jeden vedlejší efekt, který může mít vliv na koncové uživatele. Vezměte v úvahu následující scénář:
 
-- 2.0.4 je povinný. 2.0 č. * nainstalovaných verzí rozhraní. 2.2.2 je nainstalovaný. 2.2.2 se používá.
-- 2.0.5 je novější. pro následující aplikace spustí, ne 2.2.2 použije 2.0.5. Nejnovější opravy požadovaný dílčí verze je upřednostňována před vyšší podverze.
-- Je možné, že 2.0.5 a 2.2.2 chovají odlišně, zejména pro scénáře, jako jsou serializace binární data.
+1. Aplikace určuje, že je požadována 2.0.
+2. Při spuštění, verze 2.0. * není nainstalovaná, ale 2.2.2 je. Verze 2.2.2 se použije.
+3. Později uživatel nainstaluje 2.0.5 a spustí aplikaci znovu spustit, se teď dá 2.0.5.
+
+Je možné, že 2.0.5 a 2.2.2 chovají odlišně, zejména pro scénáře, jako jsou serializace binární data.
 
 ## <a name="self-contained-deployments-include-the-selected-runtime"></a>Samostatná nasazení zahrnovat vybraný modul runtime
 

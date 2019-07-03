@@ -1,15 +1,15 @@
 ---
 title: Kontejnerizace aplikace pomocí Docker kurz
 description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s Dockerem.
-ms.date: 04/10/2019
+ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 2ea9e9bc2614e62fe6ec0d59e39d42c2e32a80a1
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 6a1d366aceecdf4bd22a04f823aa6805060f8069
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051804"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539180"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace aplikace .NET Core
 
@@ -29,16 +29,16 @@ Rozumíte budete Docker, kontejner sestavení a nasazení úlohy pro aplikace .N
 
 Nainstalujte následující požadavky:
 
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download)\
+* [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download)\
 Pokud máte nainstalovaný .NET Core, použijte `dotnet --info` příkaz k určení SDK, které používáte.
 
-- [Docker Community Edition](https://www.docker.com/products/docker-desktop)
+* [Docker Community Edition](https://www.docker.com/products/docker-desktop)
 
-- Dočasné pracovní adresář *soubor Dockerfile* a ukázkovou aplikaci .NET Core.
+* Dočasnou pracovní složku pro *soubor Dockerfile* a ukázkovou aplikaci .NET Core. V tomto kurzu se název `docker-working` slouží jako pracovní složku.
 
 ### <a name="use-sdk-version-22"></a>Použití sady SDK verze 2.2
 
-Pokud používáte sadu SDK, která je novější, jako je 3.0, ujistěte se, že, že vaše aplikace bude muset používat sady SDK 2.2. Vytvořte soubor s názvem `global.json` v pracovním adresáři a vložte následující kód json:
+Pokud používáte sadu SDK, která je novější, jako je 3.0, ujistěte se, že, že vaše aplikace bude muset používat sady SDK 2.2. Vytvořte soubor s názvem `global.json` v pracovní složce a vložte následující kód json:
 
 ```json
 {
@@ -48,17 +48,34 @@ Pokud používáte sadu SDK, která je novější, jako je 3.0, ujistěte se, ž
 }
 ```
 
-Soubor uložte. Vynutí přítomnost souboru .NET Core na použití pro všechny verze 2.2 `dotnet` příkaz volat z tohoto adresáře a nižší.
+Soubor uložte. Vynutí přítomnost souboru .NET Core na použití pro všechny verze 2.2 `dotnet` příkaz volat z této složky a nižší.
 
 ## <a name="create-net-core-app"></a>Vytvoření .NET Core aplikace
 
-Je nutné aplikaci .NET Core, který se spustí kontejner Dockeru. Otevřete terminál, vytvořte pracovní adresář a zadejte ji. V pracovním adresáři spusťte následující příkaz pro vytvoření nového projektu v podadresáři s názvem aplikace:
+Je nutné aplikaci .NET Core, který se spustí kontejner Dockeru. Otevřete terminál, vytvořte pracovní složky, pokud jste to ještě neudělali a zadejte ji. V pracovní složce spusťte následující příkaz pro vytvoření nového projektu v podadresáři s názvem aplikace:
 
 ```console
 dotnet new console -o app -n myapp
 ```
 
-Že příkaz vytvoří nový adresář s názvem *aplikace* a vygeneruje aplikace "Hello World". Otestováním této aplikaci, můžete zjistit, co to dělá. Zadejte *aplikace* adresáře a spusťte příkaz `dotnet run`. Se zobrazí následující výstup:
+Strom složek bude vypadat nějak takto:
+
+```console
+docker-working
+│   global.json
+│
+└───app
+    │   myapp.csproj
+    │   Program.cs
+    │
+    └───obj
+            myapp.csproj.nuget.cache
+            myapp.csproj.nuget.g.props
+            myapp.csproj.nuget.g.targets
+            project.assets.json
+```
+
+`dotnet new` Příkaz vytvoří novou složku s názvem *aplikace* a vygeneruje aplikace "Hello World". Zadejte *aplikace* složky a spusťte tento příkaz `dotnet run`. Se zobrazí následující výstup:
 
 ```console
 > dotnet run
@@ -120,25 +137,25 @@ Counter: 4
 Pokud předáte číslo na příkazovém řádku do aplikace, bude se pouze počítat až, který částka a poté ukončete. Vyzkoušejte si to s `dotnet run -- 5` počet na 5.
 
 > [!NOTE]
-> Žádné parametry po `--` jsou předány do vaší aplikace.
+> Žádné parametry po `--` nejsou předán `dotnet run` příkazů a místo toho jsou předány do vaší aplikace.
 
 ## <a name="publish-net-core-app"></a>Publikování .NET Core aplikace
 
-Abyste mohli přidat aplikaci .NET Core do image Dockeru, publikujte ho. Kontejner spustí publikovanou verzi aplikace při spuštění.
+Abyste mohli přidat aplikaci .NET Core do image Dockeru, publikujte ho. Chcete, aby se zajistilo, že se kontejner spustí publikovanou verzi aplikace při spuštění.
 
-Z pracovního adresáře, zadejte **aplikace** adresář se v příkladu zdrojový kód a spusťte následující příkaz:
+Z pracovní složky, zadejte **aplikace** složku s příkladem zdrojového kódu a spusťte následující příkaz:
 
 ```console
 dotnet publish -c Release
 ```
 
-Tento příkaz zkompiluje aplikaci tak, aby **publikovat** složky ve výstupní složce vaší aplikace. Cesta k **publikovat** by měla být složka z pracovního adresáře `.\app\bin\Release\netcoreapp2.2\publish\`
+Tento příkaz zkompiluje aplikaci tak, aby **publikovat** složky. Cesta k **publikovat** by měla být složka z pracovní složky `.\app\bin\Release\netcoreapp2.2\publish\`
 
-Získat výpis složky publikování a ověřte, zda **myapp.dll** byl vytvořen. Z **aplikace** adresáře, spusťte následující příkazy:
+Získat výpis složky publikování a ověřte, zda **myapp.dll** byl vytvořen. Z **aplikace** složky, spusťte následující příkazy:
 
 ```console
 > dir bin\Release\netcoreapp2.2\publish
- Directory of C:\path-to-working-dir\app\bin\Release\netcoreapp2.2\publish
+ Directory of C:\docker-working\app\bin\Release\netcoreapp2.2\publish
 
 04/05/2019  11:00 AM    <DIR>          .
 04/05/2019  11:00 AM    <DIR>          ..
@@ -149,15 +166,15 @@ Získat výpis složky publikování a ověřte, zda **myapp.dll** byl vytvořen
 ```
 
 ```bash
-me@DESKTOP:/path-to-working-dir/app$ ls bin/Release/netcoreapp2.2/publish
+me@DESKTOP:/docker-working/app$ ls bin/Release/netcoreapp2.2/publish
 myapp.deps.json  myapp.dll  myapp.pdb  myapp.runtimeconfig.json
 ```
 
-V terminálu přejděte do adresáře do pracovního adresáře.
-
 ## <a name="create-the-dockerfile"></a>Vytvoření souboru Dockerfile
 
-*Soubor Dockerfile* soubor je používán `docker build` příkaz pro vytvoření image kontejneru. Tento soubor je soubor ve formátu prostého textu s názvem *soubor Dockerfile* , který nemá žádné rozšíření. Vytvořte soubor s názvem *soubor Dockerfile* ve svém pracovním adresáři a otevřete ho v textovém editoru. Jako první řádek souboru přidejte následující příkaz:
+*Soubor Dockerfile* soubor je používán `docker build` příkaz pro vytvoření image kontejneru. Tento soubor je soubor ve formátu prostého textu s názvem *soubor Dockerfile* , který nemá žádné rozšíření.
+
+V terminálu přejděte na adresář pro pracovní složky, kterou jste vytvořili na začátku nahoru. Vytvořte soubor s názvem *soubor Dockerfile* ve své pracovní složce a otevřete ho v textovém editoru. Jako první řádek souboru přidejte následující příkaz:
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/core/runtime:2.2
@@ -165,7 +182,30 @@ FROM mcr.microsoft.com/dotnet/core/runtime:2.2
 
 `FROM` Příkaz říká Dockeru stáhnout image označit **2.2** z **mcr.microsoft.com/dotnet/core/runtime** úložiště. Ujistěte se, že o přijetí změn na .NET Core runtime, který se shoduje s cílem sady SDK modulu runtime. Například aplikace vytvořené v předchozí části používá .NET Core 2.2 SDK a vytvořili aplikaci, na který .NET Core 2.2. Takže základní image podle *soubor Dockerfile* je označené **2.2**.
 
-Uložte soubor. Z terminálu spusťte `docker build -t myimage .` a zpracovávat každý řádek v Dockeru *soubor Dockerfile*. `.` v `docker build` příkaz říká dockeru použití aktuální adresář k nalezení *soubor Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **myimage** , která odkazuje na této bitové kopie. Po dokončení tohoto příkazu Spustit `docker images` zobrazíte seznam imagí, které jsou nainstalovány:
+Uložit *soubor Dockerfile* souboru. Struktura adresářů pracovní složky by měl vypadat nějak takto. Některé z hlubší úrovně soubory a složky byly snížili pro úsporu místa v následujícím článku:
+
+```console
+docker-working
+│   Dockerfile
+│   global.json
+│
+└───app
+    │   myapp.csproj
+    │   Program.cs
+    │
+    ├───bin
+    │   └───Release
+    │       └───netcoreapp2.2
+    │           └───publish
+    │                   myapp.deps.json
+    │                   myapp.dll
+    │                   myapp.pdb
+    │                   myapp.runtimeconfig.json
+    │
+    └───obj
+```
+
+Z terminálu spusťte `docker build -t myimage -f Dockerfile .` a zpracovávat každý řádek v Dockeru *soubor Dockerfile*. `.` v `docker build` příkaz říká dockeru použití aktuální složku k vyhledání *soubor Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **myimage** , která odkazuje na této bitové kopie. Po dokončení tohoto příkazu Spustit `docker images` zobrazíte seznam imagí, které jsou nainstalovány:
 
 ```console
 > docker images
@@ -186,10 +226,10 @@ ENTRYPOINT ["dotnet", "app/myapp.dll"]
 
 Další příkaz `ENTRYPOINT`, říká dockeru konfigurace kontejner pro spuštění jako spustitelný soubor. Při spuštění kontejneru, `ENTRYPOINT` příkaz spustí. Až příkaz skončí, automaticky zastaví kontejner.
 
-Uložte soubor. Z terminálu spusťte `docker build -t myimage .` a po dokončení příkazu, který, spusťte `docker images`.
+Z terminálu spusťte `docker build -t myimage -f Dockerfile .` a po dokončení příkazu, který, spusťte `docker images`.
 
 ```console
-> docker build -t myimage .
+> docker build -t myimage -f Dockerfile .
 Sending build context to Docker daemon  819.7kB
 Step 1/3 : FROM mcr.microsoft.com/dotnet/core/runtime:2.2
  ---> d51bb4452469

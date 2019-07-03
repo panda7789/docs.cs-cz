@@ -4,12 +4,12 @@ description: Zjistěte, jak přeučování TensorFlow model klasifikace obrázk�
 ms.date: 06/12/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 62a926795ce34a8c1639f1d42ebbb34b53dc67ad
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 9344d0757e140995dfd9ce7d1a355910a81c6d31
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401741"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539853"
 ---
 # <a name="tutorial-retrain-a-tensorflow-image-classifier-with-transfer-learning-and-mlnet"></a>Kurz: Přeučování klasifikátor TensorFlow image s learningu a ML.NET
 
@@ -31,11 +31,11 @@ Co když můžete znovu použít model, který již byl před vyškolit tak, aby
 
 Ukázka je konzolová aplikace, která používá ML.NET k sestavení třídění image opětovným použitím předem vytrénovaných model pro klasifikaci obrázků s menším objemem trénovací data.
 
-Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF) úložiště.
+Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF) úložiště. Všimněte si, že ve výchozím nastavení, zaměřuje .NET konfigurace projektu pro účely tohoto kurzu .NET core 2.2.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
+* [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované. 
 
 * Balíček Nuget Microsoft.ML 1.0.0
 * Balíček Nuget Microsoft.ML.ImageAnalytics 1.0.0

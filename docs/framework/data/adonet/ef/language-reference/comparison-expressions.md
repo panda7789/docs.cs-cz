@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
-ms.openlocfilehash: a37e7e3d0759cb3cf17d2b4cbd3dd2e4877ff6c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b0d7e668526fd71943513db2fc3c076c8bd3bad
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785395"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539932"
 ---
 # <a name="comparison-expressions"></a>Výrazy porovnání
-Výrazu porovnání kontroluje, zda je konstantní hodnota, hodnota vlastnosti nebo výsledek metody stejné, není rovno, větší než nebo menší než jiná hodnota. Pokud je konkrétní porovnání není platný pro [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], bude vyvolána výjimka. Všechny porovnání implicitní a explicitní, vyžadují, že jsou všechny součásti ve zdroji dat srovnatelné. Porovnání výrazů jsou často používána ve `Where` klauzule pro omezení výsledků dotazu.  
+Výrazu porovnání kontroluje, zda je konstantní hodnota, hodnota vlastnosti nebo výsledek metody stejné, není rovno, větší než nebo menší než jiná hodnota. Pokud je konkrétní porovnání není platný pro funkci LINQ to Entities, bude vyvolána výjimka. Všechny porovnání implicitní a explicitní, vyžadují, že jsou všechny součásti ve zdroji dat srovnatelné. Porovnání výrazů jsou často používána ve `Where` klauzule pro omezení výsledků dotazu.  
   
  Následující příklad v syntaxe výrazu dotazu ukazuje dotaz, který vrátí výsledky, kde se rovná "SO43663" číslo prodejní objednávky:  
   
@@ -40,7 +40,7 @@ Výrazu porovnání kontroluje, zda je konstantní hodnota, hodnota vlastnosti n
  [!code-csharp[DP L2E Conceptual Examples#ConstantExpression](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#constantexpression)]
  [!code-vb[DP L2E Conceptual Examples#ConstantExpression](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#constantexpression)]  
   
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] nepodporuje použití třídy uživatelů jako konstanta. Však odkaz na vlastnost ve třídě uživatele je považován za konstantu a bude převeden na příkaz konstantní výraz stromu a ve zdroji dat.  
+ Technologie LINQ to Entities nepodporuje použití třídy uživatelů jako konstanta. Však odkaz na vlastnost ve třídě uživatele je považován za konstantu a bude převeden na příkaz konstantní výraz stromu a ve zdroji dat.  
   
  [!code-csharp[DP L2E Conceptual Examples#MyClass](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#myclass)]
  [!code-vb[DP L2E Conceptual Examples#MyClass](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#myclass)]  

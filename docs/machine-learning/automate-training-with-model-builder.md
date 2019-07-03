@@ -4,16 +4,16 @@ description: Jak automaticky trénování modelu strojového učení pomocí Tv�
 author: natke
 ms.date: 06/26/2019
 ms.custom: overview
-ms.openlocfilehash: 6f5bbe3c389e3ca42550a48ef3e6edbc963ac2e9
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: 6049db79753986544de18faebfd047aa190af153
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410656"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539785"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co je Tvůrce modelu a jak to funguje?
 
-Tvůrce modelu ML.NET je snadno pochopitelné grafické sady Visual Studio rozšíření vytvářet, trénovat a nasazovat vlastní modely strojového učení. 
+Tvůrce modelu ML.NET je snadno pochopitelné grafické sady Visual Studio rozšíření vytvářet, trénovat a nasazovat vlastní modely strojového učení.
 
 Tvůrce modelu pomocí automatizovaných strojového učení (AutoML) a prozkoumejte algoritmů různých strojového učení a nastavení vám pomůžou najít ten, který nejlépe vyhovuje vaší situaci.
 
@@ -52,7 +52,7 @@ Binární klasifikace se používá ke kategorizaci dat do dvou tříd (Ano/Ne; 
 - Je podvodné transakci platební karty? (zjišťování možných podvodů)
 
 Pokud vaše situace vyžaduje zařazení do dvou kategorií, tuto šablonu můžete použít s vlastním datovou sadou.
- 
+
 #### <a name="issue-classification-multiclass-classification"></a>Klasifikace problémů (vícetřídová klasifikace)
 
 Klasifikace problému lze použít ke kategorizaci dopadům na zákazníky zpětnou vazbu (například na Githubu) pomocí problém názvu a popisu. Je příkladem úloha klasifikace víc tříd.
@@ -142,10 +142,10 @@ Můžete zadat čas školení. Obecně platí školení delší dobu vytváří 
 Velikost datové sady  | Typ datové sady       | Střední Čas k trénování
 ------------- | ------------------ | --------------
 0 - 10 Mb     | Číselné a Text   | 10 sekund
-10 - 100 Mb   | Číselné a Text   | 10 minut 
-100 – 500 mb  | Číselné a Text   | 30 min 
-500 - 1 Gb    | Číselné a Text   | 60 min 
-1 Gb+         | Číselné a Text   | 3 hodiny + 
+10 - 100 Mb   | Číselné a Text   | 10 minut
+100 – 500 mb  | Číselné a Text   | 30 min
+500 - 1 Gb    | Číselné a Text   | 60 min
+1 Gb+         | Číselné a Text   | 3 hodiny +
 
 Přesný čas pro učení také závisí na:
 
@@ -160,13 +160,13 @@ Tvůrce modelu je testovaná pro škálování s datovou sadou 1 TB, ale vytvá�
 
 Hodnocení je proces použití trénovaný model pro predikci s novými daty testu a pak měření jak kvalitní predikcí se.
 
-Tvůrce modelu rozdělí trénovacích dat do trénovací sady a testovací sady. Trénovacích dat (80 %) slouží k natrénování modelu a testovacích dat (20 %) se nachází zpět k vyhodnocení modelu.  Metriky pro vyhodnocení, závisí na úkolu ML. Další informace najdete v tématu [model metrik](resources/metrics.md).  
+Tvůrce modelu rozdělí trénovacích dat do trénovací sady a testovací sady. Trénovacích dat (80 %) slouží k natrénování modelu a testovacích dat (20 %) se nachází zpět k vyhodnocení modelu.  Metriky pro vyhodnocení, závisí na úkolu ML. Další informace najdete v tématu [model metrik](resources/metrics.md).
 
 ### <a name="sentiment-analysis-binary-classification"></a>Analýza zabarvení (binární klasifikace)
 
 Je výchozí metriku pro binární klasifikaci problémy **přesnost**. Přesnost definuje poměr správné předpovědi, které váš model odešle přes testovací datové sady. **Blíže na 100 %, tím lepší je**.
 
-Jiných metrik reportovaných, jako je AUC (oblasti pod křivkou), která měří true kladné rychlost vs. míru falešně pozitivních výsledků, musí být větší než 0,50 pro modely jako přijatelné. 
+Jiných metrik reportovaných, jako je AUC (oblasti pod křivkou), která měří true kladné rychlost vs. míru falešně pozitivních výsledků, musí být větší než 0,50 pro modely jako přijatelné.
 
 Další metriky, jako je F1 skóre je možné řídit rovnováhu mezi přesnosti (poměr správné předpovědí na celkové předpovědi této třídy) a spojené s vracením (podíl správné předpovědí na celkové skuteční členové této třídy).
 
@@ -176,15 +176,14 @@ Metrika výchozí klasifikace víc tříd problémů **micro přesnost**. **Blí
 
 Problémy, kde se data rozdělená na více tříd existují dva druhy přesnost:
 
-- Micro přesnost: zlomek předpovědi, které jsou správné napříč všemi instancemi. Ve scénáři klasifikace problému je přesnost micro podíl příchozí problémy, které přiřadit ke kategorii správné. 
+- Micro přesnost: zlomek předpovědi, které jsou správné napříč všemi instancemi. Ve scénáři klasifikace problému je přesnost micro podíl příchozí problémy, které přiřadit ke kategorii správné.
 - Přesnost – makro: průměrná přesnost na úrovni třídy. Ve scénáři klasifikace problému se měří přesnost pro každou kategorii a potom přesností kategorie zprůměrovány. Pro tuto metriku jsou uvedeny všechny třídy stejnou váhu. Nemusíte zajistit dokonalou vyvážené datových sad (pokud existují stejný počet příklady jednotlivých kategorií), micro přesnosti a správnosti – makro jsou stejné.
-
 
 ### <a name="price-prediction-regression"></a>Předpověď ceny (regrese)
 
 Je výchozí metriku pro regresní problémy **RSquared**. 1 je nejlepší možnou hodnotou. Bližší RSquared je 1, tím větší je váš model.
 
-Jiných metrik reportovaných, jako je například výpadek absolutní, spolehlivosti ztráty, a ztrátě RMS lze použít k pochopení vašeho modelu a porovná ho s jinými regresní modely. 
+Jiných metrik reportovaných, jako je například výpadek absolutní, spolehlivosti ztráty, a ztrátě RMS lze použít k pochopení vašeho modelu a porovná ho s jinými regresní modely.
 
 ## <a name="improve"></a>Zlepšení
 
@@ -192,7 +191,7 @@ Pokud hodnotíte modelu výkon není tak dobré, jako je třeba chcete, můžete
 
 * Připravte na delší časové období. Další čas, modul automatizované machine learning vyzkoušet další algoritmy a nastavení.
 
-* Přidejte další data. Objem dat někdy není dostatečná k trénování vysoce kvalitní model strojového učení. 
+* Přidejte další data. Objem dat někdy není dostatečná k trénování vysoce kvalitní model strojového učení.
 
 * Zajistit rovnováhu mezi daty. Pro úlohy klasifikace Ujistěte se, že cvičnou sadou je vyvažují mezi kategorií. Například, pokud máte čtyři třídy 100 příklady školení a dvě první třídy (značky 1 a značky 2) se používají pro 90 záznamy, ale další dvě (značky 3 a tag4) se používají pouze na zbývajících 10 záznamů, nedostatku dat může způsobit, že má corr je velmi obtížné váš model ectly předpovědět značky 3 a tag4.
 

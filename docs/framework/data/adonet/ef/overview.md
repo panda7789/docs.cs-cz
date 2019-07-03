@@ -2,12 +2,12 @@
 title: Přehled Entity Framework
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: e6c96326991c6f883ad670393bb5c2691f8ad29e
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 498d0478dc94048a69c393151d3ff8a752706e1c
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307346"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539470"
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 
@@ -45,7 +45,7 @@ Mapování a model úložiště můžete změnit podle potřeby a bez nutnosti z
 
 Víc než jenom další řešení objektově relační mapování [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] spočívá v podstatě umožňuje aplikacím získávat přístup a měnit data, která je reprezentována jako entit a vztahů v konceptuálním modelu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Přeložit objekt dotazy na typy entit, které jsou reprezentovány v konceptuálním modelu na dotazy specifická pro zdroj dat na základě informací v modelu a souborů mapování. Výsledky dotazu jsou materializovaného do objektů, které [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] spravuje. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nabízí tyto způsoby pro dotazování Koncepční model a vrátí objekty:
 
-- [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]. Poskytuje podporu Language-Integrated Query (LINQ) pro dotazování na typy entit, které jsou definované v konceptuálním modelu. Další informace najdete v tématu [technologii LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).
+- Technologie LINQ to Entities. Poskytuje podporu Language-Integrated Query (LINQ) pro dotazování na typy entit, které jsou definované v konceptuálním modelu. Další informace najdete v tématu [technologii LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).
 
 - [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialekt SQL, který pracuje přímo s entitami v konceptuálním modelu a koncepty modelu Entity Data Model, který podporuje nezávislý na úložišti. [!INCLUDE[esql](../../../../../includes/esql-md.md)] se používá současně s dotazy objektu a dotazy, které jsou spouštěny pomocí zprostředkovatel EntityClient. Další informace najdete v tématu [přehled Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md).
 

@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 06/14/2019
-ms.openlocfilehash: bb100ea064585235768ecb46781eb830c7dae0c6
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: a808a35876df8d2f6cee3c240c606b7bd979e9ee
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401961"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539277"
 ---
 # <a name="whats-new-in-net-core-30-preview-6"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 6)
 
@@ -107,6 +107,15 @@ Během `dotnet build` nebo `dotnet publish`, je vytvořen spustitelný soubor, k
 
 Chcete-li publikovat do jednoho souboru spustitelný soubor, nastavte `PublishSingleFile` ve vašem projektu nebo na příkazovém řádku se `dotnet publish` příkaz:
 
+```xml
+<PropertyGroup>
+  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+  <PublishSingleFile>true</PublishSingleFile>
+</PropertyGroup>
+```
+
+-nebo-
+
 ```console
 dotnet publish -r win10-x64 /p:PublishSingleFile=true
 ```
@@ -121,7 +130,7 @@ Samostatná aplikace patří vše potřebné pro spuštění kódu, bez nutnosti
 
 .NET core teď zahrnuje nastavení, které budou používat [IL linkeru](https://github.com/mono/linker) nástroj pro skenování IL vaší aplikace. Tento nástroj rozpozná, jaký kód je povinný a potom ořízne nepoužité knihovny. Tento nástroj může výrazně snížit velikost některé aplikace pro nasazení.
 
-Chcete povolit Tenhle nástroj `<PublishTrimmed>` nastavení ve vašem projektu a publikování samostatnou aplikaci:
+Pokud chcete povolit Tenhle nástroj, přidejte `<PublishTrimmed>` nastavení ve vašem projektu a publikování samostatnou aplikaci:
 
 ```xml
 <PropertyGroup>

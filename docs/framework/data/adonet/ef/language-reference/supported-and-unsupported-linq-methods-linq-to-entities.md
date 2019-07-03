@@ -2,18 +2,18 @@
 title: Podporované a nepodporované metody LINQ (LINQ to Entities)
 ms.date: 03/30/2017
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
-ms.openlocfilehash: 74b3973f931fa6f0d1f5b380833b8d5e5566563b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 338069b5139999a046d1b1b10a8eac4acb1d9e06
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797680"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539439"
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Podporované a nepodporované metody LINQ (LINQ to Entities)
-Tato část obsahuje informace o standardních dotazovacích operátorů Language-Integrated Query (LINQ), které jsou podporované nebo nepodporované v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Řada operátorů standardního dotazu LINQ má přetížené verze, která přebírá celočíselný argument. Argument typu celé číslo odpovídá index založený na nule v sekvenci, která je provozována, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto přetížené verze operátory standardního dotazu LINQ nejsou podporovány a pokus o jejich použití vyvolá výjimku.  
+Tato část obsahuje informace o standardních dotazovacích operátorů Language-Integrated Query (LINQ), které jsou podporované nebo nepodporované v technologii LINQ na dotazy na entity. Řada operátorů standardního dotazu LINQ má přetížené verze, která přebírá celočíselný argument. Argument typu celé číslo odpovídá index založený na nule v sekvenci, která je provozována, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto přetížené verze operátory standardního dotazu LINQ nejsou podporovány a pokus o jejich použití vyvolá výjimku.  
   
 ## <a name="projection-and-restriction-methods"></a>Projekce a metody omezení  
- Většina metod LINQ projekce a omezení jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, s výjimkou těch, které přijímají poziční argument. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované metody projekce a omezení.  
+ Většina metod LINQ projekce a omezení jsou podporovány v technologii LINQ na dotazy na entity, s výjimkou těch, které přijímají poziční argument. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované metody projekce a omezení.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -27,7 +27,7 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.Where%2A>|Není podporováno|`Function Where(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Integer, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Where<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, int, bool>> predicate )`|  
   
 ## <a name="join-methods"></a>Připojte se k metody  
- Metody LINQ spojení jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], s výjimkou těch, které přijímají `IEqualityComparer` protože porovnávání nelze přeložit na zdroj dat. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované spojení metody.  
+ Metody LINQ spojení jsou podporovány v technologii LINQ to Entities, s výjimkou těch, které přijímají `IEqualityComparer` vzhledem k tomu, že do zdroje dat nelze přeložit porovnávání. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované spojení metody.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -37,7 +37,7 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.Join%2A>|Nepodporováno|`Function Join(Of TOuter, TInner, TKey, TResult) ( _ outer As IQueryable(Of TOuter), _ inner As IEnumerable(Of TInner), _ outerKeySelector As Expression(Of Func(Of TOuter, TKey)), _ innerKeySelector As Expression(Of Func(Of TInner, TKey)), _ resultSelector As Expression(Of Func(Of TOuter, TInner, TResult)), _ comparer As IEqualityComparer(Of TKey) _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> Join\<TOuter, TInner, TKey, TResult>( this IQueryable<TOuter> outer, IEnumerable<TInner> inner, Expression<Func\<TOuter, TKey>> outerKeySelector, Expression<Func\<TInner, TKey>> innerKeySelector, Expression<Func\<TOuter, TInner, TResult>> resultSelector, IEqualityComparer<TKey> comparer )`|  
   
 ## <a name="set-methods"></a>Metody Set  
- Většina sady LINQ metody jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, s výjimkou těch, které používají <xref:System.Collections.Generic.EqualityComparer%601>. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované sady metod.  
+ Většina metod LINQ sady podporují v technologii LINQ dotazy na entity, s výjimkou těch, které používají <xref:System.Collections.Generic.EqualityComparer%601>. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované sady metod.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -59,7 +59,7 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.Union%2A>|Není podporováno|`Function Union(Of TSource) ( _ source1 As IQueryable(Of TSource), _ source2 As IEnumerable(Of TSource), _ comparer As IEqualityComparer(Of TSource) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Union<TSource>( this IQueryable<TSource> source1, IEnumerable<TSource> source2, IEqualityComparer<TSource> comparer )`|  
   
 ## <a name="ordering-methods"></a>Metody řazení  
- Většina LINQ řazení metody jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], s výjimkou těch, které přijímají <xref:System.Collections.Generic.IComparer%601>, protože ke zdroji dat nelze přeložit porovnávání. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované metody řazení.  
+ Většina LINQ řazení metody jsou podporovány v technologii LINQ to Entities, s výjimkou těch, které přijímají <xref:System.Collections.Generic.IComparer%601>, protože ke zdroji dat nelze přeložit porovnávání. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované metody řazení.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -74,7 +74,7 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.Reverse%2A>|Není podporováno|`Function Reverse(Of TSource) ( _ source As IQueryable(Of TSource) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Reverse<TSource>( this IQueryable<TSource> source )`|  
   
 ## <a name="grouping-methods"></a>Seskupení metody  
- Většina metod LINQ seskupení jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], s výjimkou těch, které přijímají <xref:System.Collections.Generic.IEqualityComparer%601>, protože ke zdroji dat nelze přeložit porovnávání. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované seskupení metody.  
+ Většina metod LINQ seskupení jsou podporovány v technologii LINQ to Entities, s výjimkou těch, které přijímají <xref:System.Collections.Generic.IEqualityComparer%601>, protože ke zdroji dat nelze přeložit porovnávání. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované seskupení metody.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -88,7 +88,7 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.GroupBy%2A>|Není podporováno|`Function GroupBy(Of TSource, TKey, TElement, TResult) ( _ source As IQueryable(Of TSource), _ keySelector As Expression(Of Func(Of TSource, TKey)), _ elementSelector As Expression(Of Func(Of TSource, TElement)), _ resultSelector As Expression(Of Func(Of TKey, IEnumerable(Of TElement), TResult)), _ comparer As IEqualityComparer(Of TKey) _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> GroupBy<TSource, TKey, TElement, TResult>( this IQueryable<TSource> source, Expression<Func<TSource, TKey>> keySelector, Expression<Func<TSource, TElement>> elementSelector, Expression<Func<TKey, IEnumerable<TElement>, TResult>> resultSelector, IEqualityComparer<TKey> comparer )`|  
   
 ## <a name="aggregate-methods"></a>Agregační metody  
- Většina agregační metod, které přijímají primitivní datové typy jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované metody agregační.  
+ Většina agregační metod, které přijímají primitivní datové typy jsou v technologii LINQ to Entities podporovány. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované metody agregační.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -153,7 +153,7 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.OfType%2A>|Podporované pro <xref:System.Data.Metadata.Edm.EntityType>|`Function OfType(Of TResult) ( _ source As IQueryable _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> OfType<TResult>( this IQueryable source )`|  
   
 ## <a name="paging-methods"></a>Stránkovací metody  
- Počet stránkovací metody LINQ nepodporuje [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované stránkovací metody.  
+ Počet LINQ stránkovací metody nejsou podporovány v technologii LINQ na dotazy na entity. Další informace najdete v tématu [standardní operátory dotazu v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). V následující tabulce jsou uvedeny podporované a nepodporované stránkovací metody.  
   
 |Metoda|Podpora|Signatura funkce jazyka Visual Basic|Podpis metody jazyka C#|  
 |------------|-------------|-------------------------------------|--------------------------|  

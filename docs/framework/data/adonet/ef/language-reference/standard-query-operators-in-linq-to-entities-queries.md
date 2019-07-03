@@ -2,24 +2,24 @@
 title: Standardní operátory dotazů LINQ to Entities
 ms.date: 08/21/2018
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
-ms.openlocfilehash: 5c666bad40d0e433ee5f8d2b1155e881d7042a85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f2661f1b492ff8f2ed18c7b396326562050ca45b
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797719"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539447"
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Standardní operátory dotazů LINQ to Entities
 V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupeny a tvarovány dříve, než se vrátí. LINQ poskytuje sadu metod standardního dotazu, které můžete použít v dotazu. Většina z těchto metod pracovat v pořadí; v tomto kontextu, sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkce standardních dotazovacích operátorů dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé z více často používaných standardních dotazovacích operátorů mít vyhrazené klíčové slovo syntaxe tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je lépe čitelný, jiný způsob, jak vyjádřit dotaz než ekvivalentní založených na volání metody. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace. Seznam standardních operátorů dotazu, které mají klauzule výrazu dotazu ekvivalentní najdete v tématu [přehled standardních operátorů dotazu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120)).  
   
- Operátory standardního dotazu nejsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Další informace najdete v tématu [podporované a nepodporované metody LINQ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md). Toto téma obsahuje informace o standardních operátorů pro dotazování, které jsou specifické pro [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Další informace o známých problémech v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, naleznete v tématu [známé problémy a aspekty u LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md).  
+ Ne všechny operátory standardního dotazu jsou podporovány v technologii LINQ dotazy na entity. Další informace najdete v tématu [podporované a nepodporované metody LINQ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md). Toto téma obsahuje informace o standardních operátorů pro dotazování, které jsou specifické pro technologii LINQ to Entities. Další informace o známých problémech v technologii LINQ na dotazy na entity, naleznete v tématu [známé problémy a aspekty u LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md).  
   
 ## <a name="projection-and-filtering-methods"></a>Projekce a filtrování metody  
  *Projekce* odkazuje na transformaci prvků do požadované podoby sady výsledků. Například můžete promítnout podmnožinu vlastností je třeba z každého objektu ve výsledku nastavit, můžete vlastnosti projektu a provádění matematických výpočtů na něj nebo můžete promítnout celý objekt ze sady výsledků. Projekce metody jsou `Select` a `SelectMany`.  
   
  *Filtrování* odkazuje na operaci omezení sady výsledků do obsahovat pouze prvky, které odpovídají zadané podmínce. Metody filtrování je `Where`.  
   
- Většina přetížení metod filtrování a promítání jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], s výjimkou těch, které přijímají poziční argument.  
+ Většina přetížení metod filtrování a promítání jsou podporovány v technologii LINQ to Entities, s výjimkou těch, které přijímají poziční argument.  
   
 ## <a name="join-methods"></a>Připojte se k metody  
  Připojení je důležité operace v dotazech, které se zaměřují zdrojů dat, které nemají žádné lze procházet vztahy mezi sebou. Spojení dvou datových zdrojů je přidružení objektů v jednom zdroji dat s objekty v jiném zdroji dat, které sdílejí společný atribut nebo vlastnost. Metody spojení jsou `Join` a `GroupJoin`.  
@@ -29,7 +29,7 @@ V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete
 ## <a name="set-methods"></a>Metody Set  
  Množinové operace LINQ jsou operace dotazů, které založit jejich sad výsledků dotazu na přítomnosti nebo nepřítomnosti ekvivalentních prvků v rámci stejného nebo v jiné kolekci (nebo set). Metody set jsou `All`, `Any`, `Concat`, `Contains`, `DefaultIfEmpty`, `Distinct`, `EqualAll`, `Except`, `Intersect`, a `Union`.  
   
- Většina přetížení metody set jsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], i když existují určité rozdíly v chování ve srovnání s LINQ to Objects. Ale nastavené metody, které používají <xref:System.Collections.Generic.IEqualityComparer%601> nepodporuje, protože ke zdroji dat nelze přeložit porovnávání.  
+ Většina přetížení metody set jsou podporovány v technologii LINQ to Entities, i když existují určité rozdíly v chování ve srovnání s LINQ to Objects. Ale nastavené metody, které používají <xref:System.Collections.Generic.IEqualityComparer%601> nepodporuje, protože ke zdroji dat nelze přeložit porovnávání.  
   
 ## <a name="ordering-methods"></a>Metody řazení  
  Řazení a řazení, odkazuje na řazení elementů je sada výsledků dotazu na základě jednoho nebo více atributů. Zadáním více než jedno kritérium řazení je možné zrušit vazby v rámci skupiny.  

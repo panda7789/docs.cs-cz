@@ -2,17 +2,21 @@
 title: příkaz DotNet nuget nabízených oznámení
 description: Příkaz dotnet nuget nabízených odešle balíček na server a publikuje ji.
 author: karann-msft
-ms.date: 12/04/2018
-ms.openlocfilehash: 7382cb93da3d7ed68f5731b3996c735c3f1461e4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 4d5efa94c6a4494158aea447be98256d2a307cd6
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631719"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539135"
 ---
-# <a name="dotnet-nuget-push"></a>DotNet nuget push
+# <a name="dotnet-nuget-push"></a>dotnet nuget push
 
+**Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -20,23 +24,11 @@ ms.locfileid: "65631719"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
     [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```
-dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
-    [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
-dotnet nuget push [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Popis
 
@@ -49,8 +41,6 @@ dotnet nuget push [-h|--help]
   Určuje cestu souboru pro balíček, který má být vložena.
 
 ## <a name="options"></a>Možnosti
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`-d|--disable-buffering`**
 
@@ -96,46 +86,6 @@ Vytiskne krátký nápovědy pro příkaz.
 
   Určuje časový limit pro odesílání na server v řádu sekund. Výchozí hodnota je 300 sekund (5 minut). Zadání 0 (nula sekund) použije výchozí hodnotu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`-d|--disable-buffering`**
-
-  Zakáže ukládání do vyrovnávací paměti při odesílání na server HTTP (S) ke snížení využití paměti.
-
-* **`--force-english-output`**
-
-  Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
-
-* **`-h|--help`**
-
-  Vytiskne krátký nápovědy pro příkaz.
-
-* **`-k|--api-key <API_KEY>`**
-
-  Klíč rozhraní API pro server.
-
-* **`-n|--no-symbols`**
-
-  Nelze vložit symboly (i když je k dispozici).
-
-* **`-s|--source <SOURCE>`**
-
-  Určuje adresu URL serveru. Tato možnost je vyžadována, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
-
-* **`-sk|--symbol-api-key <API_KEY>`**
-
-  Klíč rozhraní API pro server symbolů.
-
-* **`-ss|--symbol-source <SOURCE>`**
-
-  Určuje adresu URL serveru symbolů.
-
-* **`-t|--timeout <TIMEOUT>`**
-
-  Určuje časový limit pro odesílání na server v řádu sekund. Výchozí hodnota je 300 sekund (5 minut). Zadání 0 (nula sekund) použije výchozí hodnotu.
-
----
-
 ## <a name="examples"></a>Příklady
 
 * Nabízených oznámení *foo.nupkg* nabízených oznámení na výchozí zdroj určení klíče rozhraní API:
@@ -173,3 +123,7 @@ Vytiskne krátký nápovědy pro příkaz.
   ```console
   dotnet nuget push *.nupkg
   ```
+  
+  > [!NOTE]
+  > Pokud tento příkaz nefunguje, může být z důvodu chyb, které existovaly ve starších verzích sady SDK (sady SDK .NET Core 2.1 a starší verze).
+  > Tento problém můžete upgradovat vaše verze sady SDK nebo místo toho spuštěním následujícího příkazu: `dotnet nuget push **/*.nupkg`

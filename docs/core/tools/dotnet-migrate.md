@@ -1,21 +1,28 @@
 ---
 title: DotNet migrate příkaz
 description: Dotnet migrate příkaz migruje projektu a všechny jeho závislosti.
-ms.date: 05/25/2018
-ms.openlocfilehash: 861cd2cb982c6f41baf00a2cbd7e04b26816af76
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 3304f666d15d9188cdae76a401747d91791f817f
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631954"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539388"
 ---
-# <a name="dotnet-migrate"></a>DotNet migrate
+# <a name="dotnet-migrate"></a>dotnet migrate
 
+**Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
-`dotnet migrate` -Migruje projektu .NET Core 2 ve verzi Preview do projektu .NET Core SDK 1.0.
+`dotnet migrate` -Migruje do projektu .NET Core SDK – vizuální styl projektu .NET Core 2 ve verzi Preview.
+
+> [!NOTE]
+> `dotnet migrate` Odebere ze sady SDK .NET Core 3.0 v další vydané verzi preview.
 
 ## <a name="synopsis"></a>Souhrn
 
@@ -26,7 +33,7 @@ dotnet migrate [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet migrate` Příkaz migraci platné ve verzi Preview 2 *project.json*– na základě projektu platný .NET Core SDK 1.0 *csproj* projektu.
+`dotnet migrate` Příkaz migraci platné ve verzi Preview 2 *project.json*– na základě projektu platný sady SDK .NET Core – styl *csproj* projektu.
 
 Ve výchozím nastavení příkaz migruje kořenového projektu a všechny odkazy projektu, které obsahuje projekt kořenové. Toto chování je zakázáno použití `--skip-project-references` možnost za běhu.
 
