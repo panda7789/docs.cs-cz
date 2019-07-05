@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 6af1f7f23447f9f1379ac6d223e198a4a2ea5645
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 57043963640f3c384b1e1a9aa7aeb65114689e9f
+ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424243"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569537"
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 
-`enum` – Klíčové slovo se používá k deklaraci výčtu, odlišný typ, který se skládá ze sady pojmenovaných konstant označovaného jako seznam výčtu.  
+`enum` – Klíčové slovo se používá k deklaraci výčtu, odlišný typ, který se skládá ze sady pojmenovaných konstant označovaného jako seznam výčtu.
 
 Obvykle je vhodné definovat výčet přímo v rámci oboru názvů tak, aby všechny třídy v oboru názvů můžete přistupovat pomocí stejné usnadnění. Výčet však také může být vnořena v rámci třídy nebo struktury.
 
@@ -40,7 +40,6 @@ Každý typ výčtu se základní typ, který může být kterýkoli [integráln
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 ```
-
 
 Proměnná typu výčtu lze přiřadit jakoukoli hodnotu v rozsahu podkladový typ; hodnoty nejsou omezené na pojmenované konstanty.
 

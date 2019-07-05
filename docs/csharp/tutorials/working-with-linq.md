@@ -3,12 +3,12 @@ title: Práce s jazykem LINQ
 description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, Zapsat metody pro použití v dotazech LINQ a rozlišovat mezi nemůžou dočkat, až a opožděné vyhodnocení.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: e51fb166ccba793f9f2aa9d11a109280bf8eea93
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: cc9ff83b1db2972f12cc55eaf32a686a1e6f7f4c
+ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486995"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569551"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
@@ -267,6 +267,14 @@ Mějte na paměti, že jsme generována z původního balíčku pomocí dotazu L
 Ve vaší `Extensions.cs` soubor, zadejte nebo zkopírujte následující metody. Tato metoda rozšíření vytvoří nový soubor s názvem `debug.log` v adresáři projektu a záznamů je právě prováděna jaký dotaz do souboru protokolu. Tato metoda rozšíření může být přidán k jakýkoli dotaz k označení, že dotaz proveden.
 
 [!CODE-csharp[LogQuery](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
+
+Zobrazí se červená vlnovka pod `File`, což znamená, ho neexistuje. To nebude kompilovat, protože kompilátor nebude vědět, co `File` je. Chcete-li tento problém vyřešit, ujistěte se, že přidáte následující řádek kódu v rámci na prvním řádku v `Extensions.cs`:
+
+```csharp
+using System.IO;
+```
+
+To by mělo vyřešit problém, a červenou chybovou zmizí.
 
 V dalším kroku instrumentace definici každého dotazu s zprávu protokolu:
 

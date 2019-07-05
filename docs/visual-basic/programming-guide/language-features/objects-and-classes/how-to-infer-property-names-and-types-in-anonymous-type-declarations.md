@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [Visual Basic], inferring property names and types
 - inferring property types [Visual Basic]
 ms.assetid: 7c748b22-913f-4d9d-b747-6b7bf296a0bc
-ms.openlocfilehash: 2f923bd7069e29eeb20cbc77cef02c8378917d4f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aba8c37059cfc58fdffda55bcf1c485b61c3d249
+ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665406"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569489"
 ---
 # <a name="how-to-infer-property-names-and-types-in-anonymous-type-declarations-visual-basic"></a>Postupy: Odvození názvů vlastnosti a typů v deklaracích anonymního typu (Visual Basic)
 Anonymní typy umožňují žádný mechanismus pro datové typy vlastností přímo zadáním. Typy všech vlastností jsou odvozeny. V následujícím příkladu, typy `Name` a `Price` jsou odvozeny z hodnoty, které se používají k inicializaci je přímo.  
@@ -43,10 +43,11 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
      Výsledný typ pro `anon` by mít jednu vlastnost `Book`, typu <xref:System.Collections.IEnumerable>(XElement z).  
   
 - Z funkce, která nemá žádné parametry, jako například `SomeFunction` v následujícím příkladu.  
-  
-     `Dim sc As New SomeClass`  
-  
-     `Dim anon1 = New With {Key sc.SomeFunction()}`  
+
+  ```vb
+     Dim sc As New SomeClass
+     Dim anon1 = New With {Key sc.SomeFunction()}
+  ```
   
      Proměnná `anon2` v následujícím kódu je anonymní typ, který má jednu vlastnost s názvem znak `First`. Tento kód zobrazí písmeno "E", písmeno, kterou vrátí funkce <xref:System.Linq.Enumerable.First%2A>.  
   
@@ -57,20 +58,22 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
 #### <a name="name-inference-will-fail-in-many-circumstances-including-the-following"></a>Název odvození se nezdaří v mnoha případech platí, včetně následujících:  
   
 - Odvození je odvozena z volání metody, konstruktor nebo parametrizovanou vlastnost, která vyžaduje argumenty. Předchozí deklarace této třídy `anon1` selže, pokud `someFunction` má jeden nebo více argumentů.  
-  
-     `' Not valid.`  
-  
-     `' Dim anon3 = New With {Key sc.someFunction(someArg)}`  
-  
+
+    ```vb
+    ' Not valid.
+    ' Dim anon3 = New With {Key sc.someFunction(someArg)}
+    ```
+    
      Přiřazení na nový název vlastnosti byl problém vyřešen.  
-  
-     `' Valid.`  
-  
-     `Dim anon4 = New With {Key .FunResult = sc.someFunction(someArg)}`  
-  
+
+    ```vb
+    ' Valid.
+    Dim anon4 = New With {Key .FunResult = sc.someFunction(someArg)}
+    ```
+
 - Odvození je odvozena z složitý výraz.  
   
-    ```  
+    ```vb  
     Dim aString As String = "Act "  
     ' Not valid.  
     ' Dim label = New With {Key aString & "IV"}  
@@ -81,41 +84,43 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
      [!code-vb[VbVbalrAnonymousTypes#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#14)]  
   
 - Odvození pro více vlastností vytvoří dva nebo více vlastností, které mají stejný název. Odkazující zpět na deklarace v předchozích příkladech, vás není možné vypsat obě `product.Name` a `car1.Name` jako vlastnosti anonymního typu. Důvodem je, že by být odvozené identifikátor pro každou z těchto `Name`.  
-  
-     `' Not valid.`  
-  
-     `' Dim anon5 = New With {Key product.Name, Key car1.Name}`  
-  
+
+     ```vb
+     ' Not valid.
+     ' Dim anon5 = New With {Key product.Name, Key car1.Name}
+     ```
+     
      Tento problém lze vyřešit přiřazení hodnoty k vlastnosti odlišné názvy.  
   
      [!code-vb[VbVbalrAnonymousTypes#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#36)]  
   
      Všimněte si, že změny v případě, že (změny se mezi velkými a malými písmeny) Nedovolte, aby byly dva názvy distinct.  
-  
-     `Dim price = 0`  
-  
-     `' Not valid, because Price and price are the same name.`  
-  
-     `' Dim anon7 = New With {Key product.Price, Key price}`  
+
+     ```vb
+     Dim price = 0
+     ' Not valid, because Price and price are the same name.
+     ' Dim anon7 = New With {Key product.Price, Key price}
+     ```
   
 - Počáteční typ a hodnotu jednu vlastnost závisí na jiné vlastnosti, která zatím nebyl určen. Například `.IDName = .LastName` není platný v deklaraci anonymního typu není-li `.LastName` již byl inicializován.  
-  
-     `' Not valid.`  
-  
-     `' Dim anon8 = New With {Key .IDName = .LastName, Key .LastName = "Jones"}`  
-  
+
+     ```vb
+     ' Not valid.
+     ' Dim anon8 = New With {Key .IDName = .LastName, Key .LastName = "Jones"}
+     ```
+     
      V tomto příkladu můžete opravit problém přehozením pořadí, ve kterém jsou deklarovány vlastnosti.  
   
      [!code-vb[VbVbalrAnonymousTypes#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#15)]  
   
 - Název vlastnosti anonymního typu je stejný jako název člena <xref:System.Object>. Například následující deklaraci selže, protože `Equals` je metoda <xref:System.Object>.  
   
-     `' Not valid.`  
-  
-     `' Dim relationsLabels1 = New With {Key .Equals = "equals", Key .Greater = _`  
-  
-     `'                       "greater than", Key .Less = "less than"}`  
-  
+     ```vb
+     ' Not valid.
+     ' Dim relationsLabels1 = New With {Key .Equals = "equals", Key .Greater = _
+     '                       "greater than", Key .Less = "less than"}
+     ```
+     
      Problém můžete vyřešit tak, že změníte název vlastnosti:  
   
      [!code-vb[VbVbalrAnonymousTypes#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#16)]  

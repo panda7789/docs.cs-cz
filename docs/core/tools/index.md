@@ -3,12 +3,12 @@ title: Nástroje .NET core rozhraní příkazového řádku (CLI)
 description: Přehled funkcí a nástrojů pro .NET Core rozhraní příkazového řádku (CLI).
 ms.date: 08/14/2017
 ms.custom: seodec18
-ms.openlocfilehash: e174867ce06e573fc85579183df0196d8276fb37
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ff96023dd0b161271e146f7a7e69924c9db9e769
+ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647421"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569520"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Nástroje .NET core rozhraní příkazového řádku (CLI)
 
@@ -99,7 +99,7 @@ Rozhraní příkazového řádku přijme model rozšiřitelnosti, pomocí který
 
 ## <a name="command-structure"></a>Příkaz struktura
 
-Struktura příkazu rozhraní příkazového řádku se skládá z [ovladače ("dotnet")](#driver), [příkazu (nebo "akce")](#command-verb)a případně příkaz [argumenty](#arguments) a [možnosti](#options). Zobrazí tento model většinu operací rozhraní příkazového řádku, jako je vytváření nových konzolovou aplikaci a spuštění z příkazového řádku jako následující příkazy, zobrazit při spuštění z adresáře s názvem *my_app*:
+Struktura příkazu rozhraní příkazového řádku se skládá z [ovladače ("dotnet")](#driver), [příkaz](#command)a případně příkaz [argumenty](#arguments) a [možnosti](#options). Zobrazí tento model většinu operací rozhraní příkazového řádku, jako je vytváření nových konzolovou aplikaci a spuštění z příkazového řádku jako následující příkazy, zobrazit při spuštění z adresáře s názvem *my_app*:
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
@@ -134,9 +134,9 @@ Když zadáte příkaz k ovladači, `dotnet.exe` zahájí proces spuštění př
 
 Nejprve ovladač Určuje verzi sady SDK používat. Pokud není žádný ["global.json"](global-json.md), se používá nejnovější verzi sady SDK k dispozici. To může být buď ve verzi preview nebo stabilní verze, v závislosti na tom, co je to nejnovější na počítači.  Jakmile se určí verzi sady SDK, vykoná příkaz.
 
-### <a name="command-verb"></a>Příkaz ("operace")
+### <a name="command"></a>Příkaz
 
-Příkaz (nebo "akce") je jednoduše příkaz, který provede akci. Například `dotnet build` sestaví váš kód. `dotnet publish` publikuje váš kód. Příkazy jsou implementovány jako konzolovou aplikaci pomocí `dotnet {verb}` konvence.
+Příkaz provede akci. Například `dotnet build` sestavuje kód. `dotnet publish` publikuje kód. Příkazy jsou implementovány jako konzolovou aplikaci pomocí `dotnet {command}` konvence.
 
 ### <a name="arguments"></a>Arguments
 
@@ -148,7 +148,7 @@ Možnosti, které můžete předat do příkazového řádku jsou možnosti k vy
 
 ## <a name="migration-from-projectjson"></a>Migrace z project.json
 
-Pokud jste použili ve verzi Preview 2 nástroje k vytvoření *project.json*-podle projektů, naleznete [dotnet migrate](dotnet-migrate.md) informace o migraci vašeho projektu nástroje MSBuild /*.csproj*pomocí verze nástroje. Pro .NET Core projekty vytvořené před verzí nástroje ve verzi Preview 2, buď ručně aktualizovat projekt následující pokyny v [migrace z DNX na .NET Core CLI (project.json)](../migration/from-dnx.md) a pak použijte `dotnet migrate` nebo přímo upgradovat. vaše projekty.
+Pokud jste použili ve verzi Preview 2 nástroje k vytvoření *project.json*-podle projektů, naleznete [dotnet migrate](dotnet-migrate.md) informace o migraci vašeho projektu nástroje MSBuild / *.csproj*pomocí verze nástroje. Pro .NET Core projekty vytvořené před verzí nástroje ve verzi Preview 2, buď ručně aktualizovat projekt následující pokyny v [migrace z DNX na .NET Core CLI (project.json)](../migration/from-dnx.md) a pak použijte `dotnet migrate` nebo přímo upgradovat. vaše projekty.
 
 ## <a name="see-also"></a>Viz také:
 
