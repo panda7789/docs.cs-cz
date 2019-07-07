@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: 5b6668e20e4d69b7d6bdf3e6283574f1b974ef54
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: d354a1e899e6ea72ac1e65634e5cc1267d41fb07
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423972"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609903"
 ---
 # <a name="comparison-operators-c-reference"></a>Operátory porovnání (C# odkaz)
 
@@ -63,7 +63,7 @@ Výčtové typy také podporují operátory porovnání. Pro operandy stejného 
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
-Uživatelem definovaný typ může [přetížení](../keywords/operator.md) `<`, `>`, `<=`, a `>=` operátory.
+Uživatelem definovaný typ může [přetížení](operator-overloading.md) `<`, `>`, `<=`, a `>=` operátory.
 
 Pokud typ jednoho z přetížení `<` nebo `>` operátory, ho musíte přetížení obě `<` a `>`. Pokud typ jednoho z přetížení `<=` nebo `>=` operátory, ho musíte přetížení obě `<=` a `>=`.
 

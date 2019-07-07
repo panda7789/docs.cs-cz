@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: f4a6e6c2a63e58c40e0cca9c67b12d1f65af0d2e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 697a3dff663b333ce97e05783df6b163692b5d9e
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053142"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610342"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentation Foundation (WPF). Zabírá většinu hlavních subsystémy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje způsob, jakým interagují. Je také podrobné informace o některých volby provedené architektů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -62,7 +62,7 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
   
 <a name="System_Windows_Media_Visual"></a>   
 ## <a name="systemwindowsmediavisual"></a>System.Windows.Media.Visual  
- Se systémem definované dalším krokem je stále pixelů na obrazovce. <xref:System.Windows.Media.Visual> Poskytuje třídy pro vytváření strom vizuální objekty, každá volitelně obsahuje pokyny k vykreslení a metadata o tom, jak vykreslit tyto pokyny (oříznutí, transformace, atd.). <xref:System.Windows.Media.Visual> je navržený jako velmi jednoduchý a flexibilní, takže většinu funkcí mít žádné veřejné [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] vystavení a často využívají chráněný zpětného volání funkce.  
+ Se systémem definované dalším krokem je stále pixelů na obrazovce. <xref:System.Windows.Media.Visual> Poskytuje třídy pro vytváření strom vizuální objekty, každá volitelně obsahuje pokyny k vykreslení a metadata o tom, jak vykreslit tyto pokyny (oříznutí, transformace, atd.). <xref:System.Windows.Media.Visual> byla navržena jako velmi jednoduchý a flexibilní, takže většinu funkcí sady žádné veřejné rozhraní API vystavení a často využívají chráněný zpětného volání funkce.  
   
  <xref:System.Windows.Media.Visual> je vstupním bodem k opravdu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] složení systému. <xref:System.Windows.Media.Visual> bod připojení mezi těmito dvěma podsystémy spravovanou [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] a nespravovaných milcore.  
   
@@ -112,7 +112,7 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
   
  Primární zavedené zásady <xref:System.Windows.FrameworkElement> spočívá v rozložení aplikace. <xref:System.Windows.FrameworkElement> navazuje na rozložení základní kontrakt zavedené <xref:System.Windows.UIElement> a přidá rozeznávání rozložení slotu"", které usnadňují autorům rozložení mají konzistentní sadu vlastností řízené sémantiku rozložení. Vlastnosti, jako je <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>, <xref:System.Windows.FrameworkElement.MinWidth%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A> (to jsou některé) poskytují všechny součásti odvozený od <xref:System.Windows.FrameworkElement> konzistentní chování uvnitř kontejnerů rozložení.  
   
- <xref:System.Windows.FrameworkElement> poskytuje také snazší [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] vystavení mnoho funkcí najít v jednotlivých vrstvách core [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Například <xref:System.Windows.FrameworkElement> poskytuje přímý přístup k animace prostřednictvím <xref:System.Windows.FrameworkElement.BeginStoryboard%2A> metody. A <xref:System.Windows.Media.Animation.Storyboard> poskytuje způsob, jak skriptu animací několik proti sadu vlastností.  
+ <xref:System.Windows.FrameworkElement> poskytuje také snazší vystavení rozhraní API pro mnoho funkcí v základní vrstvy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Například <xref:System.Windows.FrameworkElement> poskytuje přímý přístup k animace prostřednictvím <xref:System.Windows.FrameworkElement.BeginStoryboard%2A> metody. A <xref:System.Windows.Media.Animation.Storyboard> poskytuje způsob, jak skriptu animací několik proti sadu vlastností.  
   
  Dvě nejdůležitější věci, které <xref:System.Windows.FrameworkElement> zavádí se styly a datové vazby.  
   

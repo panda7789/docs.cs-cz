@@ -17,12 +17,12 @@ helpviewer_keywords:
 - events [WPF], suppressing
 - bubbling events [WPF]
 ms.assetid: 5e745508-4861-4b48-b5f6-5fc7ce5289d2
-ms.openlocfilehash: 8cce3d1effa163c35cd219a6a52504b0f4d98c73
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a1004ce10baf6293c4c93efc61b91b3b6361377f
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598658"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610375"
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>Označení směrovaných událostí jako zpracovaných a zpracování tříd
 Obslužné rutiny pro směrovanou událost můžete označit události zpracovávají v rámci data události. Zpracování události zkrátí efektivní trasy. Třídy zpracování je programovací koncept, který podporuje směrovaných událostí. Třída obslužné rutiny má možnost zpracování konkrétní směrované události na úrovni třída s obslužnou rutinou, která je volána před všechny instance obslužné rutiny na jakoukoli instanci třídy.  
@@ -49,7 +49,7 @@ Obslužné rutiny pro směrovanou událost můžete označit události zpracová
   
 <a name="Class_Handlers_and_Instance_Handlers"></a>   
 ## <a name="class-handlers-and-instance-handlers"></a>Obslužné rutiny třídy a Instance obslužné rutiny  
- Směrované události vezměte v úvahu dva různé typy naslouchacích procesů k této události: třídy naslouchacích procesů a naslouchací procesy instance. Naslouchací procesy tříd neexistuje, protože typy volali konkrétní <xref:System.Windows.EventManager> [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] ,<xref:System.Windows.EventManager.RegisterClassHandler%2A>, v jejich statického konstruktoru nebo mají přepsat virtuální metodu obslužné rutiny třídy ze základní třída prvku. Naslouchací procesy instance jsou instancí určité třídy/elementy kde připojen jeden nebo více obslužných rutin pro směrovanou událost voláním <xref:System.Windows.UIElement.AddHandler%2A>. Existující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] směrovaných událostí volání <xref:System.Windows.UIElement.AddHandler%2A> jako součást [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] přidat událost obálky{} a odebrat{} implementace události, což je také jak jednoduché [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mechanismus připojení obslužné rutiny událostí prostřednictvím syntaxe atributu je povolená. Proto i jednoduché [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] využití nakonec odpovídá <xref:System.Windows.UIElement.AddHandler%2A> volání.  
+ Směrované události vezměte v úvahu dva různé typy naslouchacích procesů k této události: třídy naslouchacích procesů a naslouchací procesy instance. Naslouchací procesy tříd neexistuje, protože typy volali konkrétní <xref:System.Windows.EventManager> rozhraní API,<xref:System.Windows.EventManager.RegisterClassHandler%2A>, v jejich statického konstruktoru nebo mají přepsat virtuální metodu obslužné rutiny třídy ze základní třída prvku. Naslouchací procesy instance jsou instancí určité třídy/elementy kde připojen jeden nebo více obslužných rutin pro směrovanou událost voláním <xref:System.Windows.UIElement.AddHandler%2A>. Existující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] směrovaných událostí volání <xref:System.Windows.UIElement.AddHandler%2A> jako součást [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] přidat událost obálky{} a odebrat{} implementace události, což je také jak jednoduché [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mechanismus připojení obslužné rutiny událostí prostřednictvím syntaxe atributu je povolená. Proto i jednoduché [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] využití nakonec odpovídá <xref:System.Windows.UIElement.AddHandler%2A> volání.  
   
  Zaregistrovala se obslužná rutina implementace kontroluje elementů v rámci vizuálního stromu. Obslužné rutiny jsou potenciálně vyvolala během postupu v pořadí, ve kterém je vlastní typ strategie směrování pro směrovanou událost. Šíření směrovaných událostí se například nejprve vyvolat tyto obslužné rutiny, které jsou připojeny k stejného elementu, který vyvolal směrované události. Potom směrované události "bublinu" a další nadřazeného elementu a tak dále, dokud nenastane elementu kořenové aplikace.  
   

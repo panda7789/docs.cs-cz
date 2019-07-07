@@ -24,31 +24,31 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 6aae66de973c357b4b87578221a169bf750739fb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 47d892db8418b44fffeec870e56b49d5f986b563
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599020"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610481"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
 
 <a name="input_api"></a>
 ## <a name="input-api"></a>Vstupní rozhraní API
- Primární vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] expozice se nachází na základní element třídy: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>.  Další informace o základní prvky, naleznete v tématu [přehled základních elementů](base-elements-overview.md).  Tyto třídy nakonfigurovánu vstupní události související s stisknutí kláves, tlačítka myši, kolečka myši, pohybu myši, fokus správy a zachycení myši, pár. Tak, že vstup [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na základní prvky, místo považuje všechny vstupní události jako služba, vstupní architektura umožňuje použít jako zdroj podle určitého objektu v uživatelském rozhraní a pro podporu schématu směrování událostí, kterým vstupní události více než jeden element má příležitost pro zpracování vstupních událostí. Mnoho vstupní události mají dvojice událostí spojených s nimi.  Například je přidružený klíč událost vypnutí <xref:System.Windows.Input.Keyboard.KeyDown> a <xref:System.Windows.Input.Keyboard.PreviewKeyDown> události.  Rozdíl v těchto událostí je v tom, jak se směrují do cílového elementu.  Tunelové propojení událostí ve verzi Preview dolů stromem prvků z kořenový element do cílového elementu.  Šíření událostí vyvolat z cílového elementu do kořenového elementu.  Směrování událostí ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je podrobněji dále v tomto přehledu a v [směrovat Přehled událostí](routed-events-overview.md).
+ Primární vstupní zpřístupňování rozhraní API se nachází na základní element třídy: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>.  Další informace o základní prvky, naleznete v tématu [přehled základních elementů](base-elements-overview.md).  Tyto třídy nakonfigurovánu vstupní události související s stisknutí kláves, tlačítka myši, kolečka myši, pohybu myši, fokus správy a zachycení myši, pár. Uvedení rozhraní API pro vstup na základní prvky, spíše než považuje všechny vstupní události jako služba, vstupní architektura umožňuje použít jako zdroj podle určitého objektu v uživatelském rozhraní a pro podporu schématu směrování událostí, kterým má více než jeden prvek opp vstupní události ortunity zpracovat vstupní události. Mnoho vstupní události mají dvojice událostí spojených s nimi.  Například je přidružený klíč událost vypnutí <xref:System.Windows.Input.Keyboard.KeyDown> a <xref:System.Windows.Input.Keyboard.PreviewKeyDown> události.  Rozdíl v těchto událostí je v tom, jak se směrují do cílového elementu.  Tunelové propojení událostí ve verzi Preview dolů stromem prvků z kořenový element do cílového elementu.  Šíření událostí vyvolat z cílového elementu do kořenového elementu.  Směrování událostí ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je podrobněji dále v tomto přehledu a v [směrovat Přehled událostí](routed-events-overview.md).
 
 ### <a name="keyboard-and-mouse-classes"></a>Klávesnice a myši třídy
- Kromě vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] u tříd base element <xref:System.Windows.Input.Keyboard> třídy a <xref:System.Windows.Input.Mouse> třídy poskytují další [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] pro práci s klávesnicí a myší vstup.
+ Kromě zadání rozhraní API na základní element třídy <xref:System.Windows.Input.Keyboard> třídy a <xref:System.Windows.Input.Mouse> třídy poskytují další rozhraní API pro práci s klávesnicí a myší vstup.
 
- Příklady vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na <xref:System.Windows.Input.Keyboard> třídy jsou <xref:System.Windows.Input.Keyboard.Modifiers%2A> vlastnost, která vrací <xref:System.Windows.Input.ModifierKeys> aktuálně stisknutí a <xref:System.Windows.Input.Keyboard.IsKeyDown%2A> metoda, která určuje, zda je zadaný klíč se stiskne.
+ Příklady vstupu rozhraní API na <xref:System.Windows.Input.Keyboard> třídy jsou <xref:System.Windows.Input.Keyboard.Modifiers%2A> vlastnost, která vrací <xref:System.Windows.Input.ModifierKeys> aktuálně stisknutí a <xref:System.Windows.Input.Keyboard.IsKeyDown%2A> metoda, která určuje, zda je zadaný klíč se stiskne.
 
  Následující příklad používá <xref:System.Windows.Input.Keyboard.GetKeyStates%2A> metodu k určení, zda <xref:System.Windows.Input.Key> je ve stavu dolů.
 
  [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardgetkeystates)]
  [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardgetkeystates)]
 
- Příklady vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na <xref:System.Windows.Input.Mouse> třídy jsou <xref:System.Windows.Input.Mouse.MiddleButton%2A>, která získá stav prostřední tlačítko myši, a <xref:System.Windows.Input.Mouse.DirectlyOver%2A>, který získá prvek ukazatel myši nad je aktuálně.
+ Příklady vstupu rozhraní API na <xref:System.Windows.Input.Mouse> třídy jsou <xref:System.Windows.Input.Mouse.MiddleButton%2A>, která získá stav prostřední tlačítko myši, a <xref:System.Windows.Input.Mouse.DirectlyOver%2A>, který získá prvek ukazatel myši nad je aktuálně.
 
  Následující příklad určuje, zda <xref:System.Windows.Input.Mouse.LeftButton%2A> myši probíhá <xref:System.Windows.Input.MouseButtonState.Pressed> stavu.
 
@@ -58,7 +58,7 @@ ms.locfileid: "64599020"
  <xref:System.Windows.Input.Mouse> a <xref:System.Windows.Input.Keyboard> třídy jsou podrobně popsané v další uvedených v tomto přehledu.
 
 ### <a name="stylus-input"></a>Vstup pomocí pera
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je integrovaná podpora <xref:System.Windows.Input.Stylus>.  <xref:System.Windows.Input.Stylus> Pera vstup provedené pomocí oblíbených [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)].  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace lze považovat za stylus myši pomocí myši [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], ale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje abstrakce zařízení stylus, která používají model podobný klávesnici a myš.  Všechny související stylus [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] obsahovat slovo "Stylus".
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je integrovaná podpora <xref:System.Windows.Input.Stylus>.  <xref:System.Windows.Input.Stylus> Pera vstup provedené pomocí oblíbených [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)].  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace lze považovat za stylus myši pomocí myši rozhraní API, ale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje abstrakce zařízení stylus, která používají model podobný klávesnici a myš.  Všechny související stylus [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] obsahovat slovo "Stylus".
 
  Vzhledem k tomu stylus může fungovat jako myš, aplikace, které podporují pouze vstup z myši může stále získat určitou úroveň podpory stylus automaticky. Pokud se stylus slouží takovým způsobem, aplikace je příležitost pro zpracování události odpovídající stylus a poté zpracuje odpovídající událost myši. Kromě toho jsou vyšší úrovně služeb, jako je vstupu inkoustu také k dispozici prostřednictvím abstrakce stylus zařízení.  Další informace o inkoustu jako vstup, naleznete v tématu [Začínáme s rukopisem](getting-started-with-ink.md).
 
@@ -350,7 +350,7 @@ ms.locfileid: "64599020"
 
 <a name="mouse_position"></a>
 ## <a name="mouse-position"></a>Pozice myši
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] obsahuje užitečné informace z hlediska souřadnicových prostorech.  Například koordinaci `(0,0)` souřadnice levého horního, ale levou horní které element ve stromové struktuře? Prvek, který je cílem vstupní? Prvek, který jste připojili vaše obslužná rutina události? Nebo něco jiného? Aby nedocházelo k záměně, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] vyžaduje zadání vašeho referenčním rámcem při práci s souřadnice získaných myši. <xref:System.Windows.Input.Mouse.GetPosition%2A> Metoda vrátí souřadnic ukazatele myši relativně vzhledem k zadanému prvku.
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vstupní rozhraní API poskytuje užitečné informace z hlediska souřadnicových prostorech.  Například koordinaci `(0,0)` souřadnice levého horního, ale levou horní které element ve stromové struktuře? Prvek, který je cílem vstupní? Prvek, který jste připojili vaše obslužná rutina události? Nebo něco jiného? Aby nedocházelo k záměně, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní rozhraní API vyžaduje zadání vašeho referenčním rámcem při práci s souřadnice získaných pomocí myši. <xref:System.Windows.Input.Mouse.GetPosition%2A> Metoda vrátí souřadnic ukazatele myši relativně vzhledem k zadanému prvku.
 
 <a name="mouse_capture"></a>
 ## <a name="mouse-capture"></a>Zachycení myši

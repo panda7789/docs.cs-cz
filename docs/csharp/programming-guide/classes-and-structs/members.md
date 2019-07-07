@@ -6,14 +6,15 @@ helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-ms.openlocfilehash: 9497eb265251f4f8affd5e2c6c7e6ed401263984
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: affe2752712bfd40516861abf84bdee11528168c
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646134"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609493"
 ---
 # <a name="members-c-programming-guide"></a>Členové (Průvodce programováním v C#)
+
 Třídy a struktury mají členy, které zastupují jejich data a chování. Členy třídy zahrnují všechny členy deklarované ve třídě spolu se všemi členy (s výjimkou konstruktorů a finalizační metody) deklarovanými ve všech třídách v její hierarchii dědičnosti. Soukromé členy základních tříd jsou zděděné, ale nejsou přístupné z odvozených tříd.  
   
  Následující tabulka uvádí seznam typů členů, které mohou třídy nebo struktury obsahovat:  
@@ -25,7 +26,7 @@ Třídy a struktury mají členy, které zastupují jejich data a chování. Čl
 |[Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)|Vlastnosti jsou metody ve třídě, které jsou přístupné, jako kdyby byly poli v dané třídě. Vlastnost může poskytovat ochranu pro pole třídy před změnou bez vědomí objektu.|  
 |[Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)|Metody definují akce, které mohou třídy provádět. Metody mohou přijímat parametry, které poskytují vstupní data, a mohou prostřednictvím parametrů vracet data. Metody mohou také vrátit hodnotu přímo, bez použití parametru.|  
 |[Události](../../../csharp/programming-guide/events/index.md)|Události poskytují upozorňování na různé události, jako například kliknutí na tlačítko nebo úspěšné dokončení metody, jiným objektům. Události jsou definovány a spouštěny pomocí delegátů.|  
-|[Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|Přetížené operátory jsou považovány za členy třídy. Pokud přetížíte operátor, definujete ho jako veřejnou statickou metodu ve třídě. Předdefinované operátory (`+`, `*`, `<` atd.) nejsou považovány za členy. Další informace najdete v tématu [přetížitelné operátory](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md).|  
+|[Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|Přetížené operátory jsou považovány za členy typu. Pokud přetížíte operátor, definujete ho jako veřejnou statickou metodu typu. Další informace najdete v tématu [přetížení operátoru](../../../csharp/language-reference/operators/operator-overloading.md).|  
 |[Indexery](../../../csharp/programming-guide/indexers/index.md)|Indexery povolují objektu indexování způsobem podobným polím.|  
 |[Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)|Konstruktory jsou metody, které jsou volány při prvním vytvoření objektu. Často se používají k inicializaci dat objektu.|  
 |[Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)|Finalizační metody se v jazyce C# jen velmi zřídka používají. Jsou to metody, které jsou volány spouštěcím modulem modulu runtime, když má být objekt odstraněn z paměti. Používají se obvykle k zajištění, aby veškeré prostředky, které musí být uvolněny, byly zpracovány správným způsobem.|  
@@ -44,4 +45,3 @@ Třídy a struktury mají členy, které zastupují jejich data a chování. Čl
 - [Události](../../../csharp/programming-guide/events/index.md)
 - [Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)
 - [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)
-- [Přetížitelné operátory](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)

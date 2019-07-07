@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-ms.openlocfilehash: 01122991e99e41259c3b83a38eba002734d749ee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6a47f5a93cb161c9a87df25403cc86247619cd81
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655529"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610535"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Podkladový kód a kód XAML v subsystému WPF
 <a name="introduction"></a> Použití modelu Code-behind je pojem používaný pro kód, který je spojen s objekty definovanými značkami při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka není kompilována značka. Toto téma popisuje požadavky pro použití modelu code-behind i mechanismus alternativní vloženého kódu pro kód v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
@@ -56,7 +56,7 @@ ms.locfileid: "64655529"
   
 <a name="Inline_Code_Limitations"></a>   
 ## <a name="inline-code-limitations"></a>Omezení vloženého kódu  
- Měli byste zvážit vyloučení nebo omezení využití vloženého kódu. Z hlediska architekturu a kódování filozofií udržování oddělení mezi značky a modelu code-behind udržuje role návrháři a vývojáři mnohem více jedinečných. Na další odborné úrovni, může být není vhodný pro zápis, kód, který napíšete pro vložený kód protože jsou vždy zápisu do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] generované částečné třídy a mohou používat pouze výchozí mapování názvového prostoru XML. Protože nemůžete přidat `using` příkazy, které musí plnému řadu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] volání, které jste provedli. Výchozí hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mapování obsahují nejvíce, ale ne všechny [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obory názvů, které se nacházejí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení; bude mít k plnému určení volání k typům a členům obsažené v jiných oborech názvů CLR. Také nelze definovat nic nad rámec částečné třídy v vloženého kódu a všechny entity kód uživatele, který odkazujete, musí existovat jako členové nebo proměnné v rámci vygenerovanou dílčí třídu. Další programovací funkcí, například makra nebo `#ifdef` před globální proměnné a proměnné sestavení nejsou k dispozici. Další informace najdete v tématu [x: Code vnitřního typu XAML](../../xaml-services/x-code-intrinsic-xaml-type.md).  
+ Měli byste zvážit vyloučení nebo omezení využití vloženého kódu. Z hlediska architekturu a kódování filozofií udržování oddělení mezi značky a modelu code-behind udržuje role návrháři a vývojáři mnohem více jedinečných. Na další odborné úrovni, může být není vhodný pro zápis, kód, který napíšete pro vložený kód protože jsou vždy zápisu do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] generované částečné třídy a mohou používat pouze výchozí mapování názvového prostoru XML. Protože nemůžete přidat `using` příkazy, plně musíte v mnoha volání rozhraní API, které jste provedli. Výchozí hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mapování obsahují nejvíce, ale ne všechny [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obory názvů, které se nacházejí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení; bude mít k plnému určení volání k typům a členům obsažené v jiných oborech názvů CLR. Také nelze definovat nic nad rámec částečné třídy v vloženého kódu a všechny entity kód uživatele, který odkazujete, musí existovat jako členové nebo proměnné v rámci vygenerovanou dílčí třídu. Další programovací funkcí, například makra nebo `#ifdef` před globální proměnné a proměnné sestavení nejsou k dispozici. Další informace najdete v tématu [x: Code vnitřního typu XAML](../../xaml-services/x-code-intrinsic-xaml-type.md).  
   
 ## <a name="see-also"></a>Viz také:
 

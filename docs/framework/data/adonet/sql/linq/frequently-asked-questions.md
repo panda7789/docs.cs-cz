@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 05ba633415f782d5edea7028c1b82b8031428576
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 68d4215129cf4481beb2d8561c1569b3049a287e
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878231"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610587"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -132,9 +132,9 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ```  
   
 ## <a name="errors-using-sql-compact-35"></a>Chyby pomocí SQL Compact 3,5  
- Otázka: Při přetahování tabulek z celkového počtu se zobrazí chyba [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] databáze.  
+ Otázka: Můžu dojde k chybě při přetahování tabulek z databáze serveru SQL Server Compact 3.5.  
   
- A. [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)], i když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] neodpovídá modulu runtime. V takovém případě musíte vytvořit vlastní entity třídy a přidejte příslušné atributy.  
+ A. [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje SQL Server Compact 3.5, i když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] neodpovídá modulu runtime. V takovém případě musíte vytvořit vlastní entity třídy a přidejte příslušné atributy.  
   
 ## <a name="errors-in-inheritance-relationships"></a>Chyby ve vztazích dědičnosti  
  Otázka: Můžu použít tvar dědičnosti sady nástrojů v [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] připojit dvěma entitami, ale nemůžu dojde k chybám.  
@@ -144,7 +144,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="provider-model"></a>Model poskytovatele  
  Otázka: Je k dispozici modelem veřejného poskytovatele?  
   
- A. Je k dispozici žádný model veřejného poskytovatele. V tuto chvíli [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje SQL Server a [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] pouze.  
+ A. Je k dispozici žádný model veřejného poskytovatele. V tuto chvíli [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje pouze systém SQL Server a SQL Server Compact 3.5.  
   
 ## <a name="sql-injection-attacks"></a>Útoky prostřednictvím injektáže SQL  
  Otázka: Jak je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] chránit před útoky prostřednictvím injektáže SQL?  

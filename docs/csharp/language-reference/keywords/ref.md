@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 1faebe2ce1a59798621888e3a518900234720be5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b45a24e719a03d052c88b5afd64bbe13eb0793e
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660837"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610056"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -138,7 +138,7 @@ Cílem vedení `ref struct` zadejte jako proměnnou přidělený na zásobník z
 
 - Nelze pole `ref struct`. Nelze přiřadit `ref struct` typ proměnné typu `object`, `dynamic`, nebo libovolný typ rozhraní.
 - `ref struct` typy nemůžou implementovat rozhraní.
-- Nelze deklarovat `ref struct` jako člen třídy nebo struktury normální.
+- Nelze deklarovat `ref struct` jako pole členem třídy nebo struktury normální. To zahrnuje deklarace automaticky implementovaná vlastnost, která vytvoří pole zálohování generovaný kompilátorem. 
 - Nelze deklarovat lokální proměnné, které jsou `ref struct` typy v asynchronních metodách. Můžete je deklarovat v synchronní metody, které vracejí <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> nebo `Task`– typy, jako je.
 - Nelze deklarovat `ref struct` lokální proměnné iterátory.
 - Nelze zachytit `ref struct` proměnné ve výrazech lambda nebo místní funkce.

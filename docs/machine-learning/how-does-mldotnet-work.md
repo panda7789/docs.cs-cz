@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 58e79cf0b017d65644f25250d05d252b5635c21e
-ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
+ms.openlocfilehash: 06085091a13ad76dcd554cfe637bcc151bbb8476
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152008"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610183"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -164,16 +164,19 @@ V této části jsme projít architektury vzory ML.NET. Pokud jste vývojáři .
 Aplikace ML.NET začíná <xref:Microsoft.ML.MLContext> objektu. Tento objekt typu singleton obsahuje **katalogy**. Katalog je objekt pro vytváření dat, načítání a transformace, školitelé a součástí modelu operace ukládání. Každý objekt katalogu má metody k vytvoření různých typů komponent:
 
 ||||
-|-|-|-|
-|Ukládání a načítání dat||<xref:Microsoft.ML.DataOperationsCatalog>|
-|Příprava dat||<xref:Microsoft.ML.TransformsCatalog>|
-|Trénování algoritmů|Binární klasifikace|<xref:Microsoft.ML.BinaryClassificationCatalog>|
-||Klasifikace víc tříd|<xref:Microsoft.ML.MulticlassClassificationCatalog>|
-||Detekce anomálií|<xref:Microsoft.ML.AnomalyDetectionCatalog>|
-||Hodnocení|<xref:Microsoft.ML.RankingCatalog>|
-||Regrese|<xref:Microsoft.ML.RegressionCatalog>|
-||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|
-|Využití modelu ||<xref:Microsoft.ML.ModelOperationsCatalog>|
+|-|-|-|-|
+|Ukládání a načítání dat||<xref:Microsoft.ML.DataOperationsCatalog>||
+|Příprava dat||<xref:Microsoft.ML.TransformsCatalog>||
+|Trénování algoritmů|Binární klasifikace|<xref:Microsoft.ML.BinaryClassificationCatalog>||
+||Klasifikace víc tříd|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
+||Detekce anomálií|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
+||Vytváření clusterů|<xref:Microsoft.ML.ClusteringCatalog>||
+||Prognózování|<xref:Microsoft.ML.Forecasting>||
+||Hodnocení|<xref:Microsoft.ML.RankingCatalog>||
+||Regrese|<xref:Microsoft.ML.RegressionCatalog>||
+||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat Microsoft.ML.Recommender|
+||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat Microsoft.ML.TimeSeries|
+|Využití modelu ||<xref:Microsoft.ML.ModelOperationsCatalog>||
 
 Můžete přejít do metod vytváření v každé z výše uvedených kategoriích. Pomocí sady Visual Studio, katalogy zobrazí prostřednictvím technologie IntelliSense.
 

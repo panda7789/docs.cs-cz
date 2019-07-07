@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: f82fd9803512dbd2466c4d0b49142e2c553d578a
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 2090c58369ed3c7bda5df1342291001d9550d48d
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380234"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610461"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají Windows Presentation Foundation (WPF) mají nové bohatou tisku a tisk rozhraní API pro správu systému. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskovém systému jsou také k dispozici pro vývojáře vytvářející [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáře, kteří používají nespravovaný kód. V jádru služby tato nová funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku.  
@@ -31,7 +31,7 @@ Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří použ
 ## <a name="about-xps"></a>O XPS  
  XPS je ve formátu elektronických dokumentů, formát souboru pro zařazování a jazyk pro popis stránky. Je ve formátu otevřít dokument, který používá [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)], [!INCLUDE[TLA#tla_opc](../../../../includes/tlasharptla-opc-md.md)]a další oborové standardy pro vytváření multiplatformních dokumentů. XPS zjednodušuje proces, podle kterého digitální dokumenty jsou vytvořené sdílené, vytisknout, zobrazit a archivovat. Další informace o XPS, naleznete v tématu [dokumenty XPS](/windows/desktop/printdocs/documents).  
   
- Několik postupů pro tisk na základě XPS obsahu pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je ukázán v [programově tisk souborů XPS z](how-to-programmatically-print-xps-files.md). Možná bude užitečné odkazují tyto ukázky během kontroly obsahu obsažené v tomto tématu. (Vývojáři nespravovaného kódu by měla najdete v dokumentaci [MXDC_ESCAPE funkce](/windows/desktop/printdocs/mxdc-escape). Musíte použít Windows Forms vývojáři [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] v <xref:System.Drawing.Printing> obor názvů, který nepodporuje kompletní [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku, ale podporuje cesta tisku GDI XPS hybridní. Zobrazit **architektura cesta tisku** níže.)  
+ Několik postupů pro tisk na základě XPS obsahu pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je ukázán v [programově tisk souborů XPS z](how-to-programmatically-print-xps-files.md). Možná bude užitečné odkazují tyto ukázky během kontroly obsahu obsažené v tomto tématu. (Vývojáři nespravovaného kódu by měla najdete v dokumentaci [MXDC_ESCAPE funkce](/windows/desktop/printdocs/mxdc-escape). Windows Forms musí vývojáři v rozhraní API <xref:System.Drawing.Printing> obor názvů, který nepodporuje kompletní [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku, ale podporuje cesta tisku GDI XPS hybridní. Zobrazit **architektura cesta tisku** níže.)  
   
 <a name="XPS_print_path_intro"></a>   
 ## <a name="xps-print-path"></a>Cesta tisku XPS  
@@ -51,7 +51,7 @@ Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří použ
   
 - Standardní XPS formát.  
   
- Pro základní scénáře, tisku a jednoduché a intuitivní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] je k dispozici s jedním vstupním bodem pro odeslání uživatelského rozhraní, konfigurace a úlohy. Pro pokročilé scénáře, přidá se další podporu pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] přizpůsobení (nebo vůbec žádné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vůbec), synchronní nebo asynchronní tisku a tisk funkcí služby batch. V obou variantách nabízí podpora tisku v režimu plné nebo částečné důvěryhodnosti.  
+ Pro základní scénáře, tisku jednoduchý a intuitivní rozhraní API je k dispozici s jedním vstupním bodem pro odeslání uživatelského rozhraní, konfigurace a úlohy. Pro pokročilé scénáře, přidá se další podporu pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] přizpůsobení (nebo vůbec žádné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vůbec), synchronní nebo asynchronní tisku a tisk funkcí služby batch. V obou variantách nabízí podpora tisku v režimu plné nebo částečné důvěryhodnosti.  
   
  XPS byla navržena s rozšíření v úvahu. S použitím rozhraní rozšiřitelnosti, funkce a možnosti můžete přidat do XPS modulární způsobem. Rozšíření funkce:  
   
@@ -75,7 +75,7 @@ Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří použ
  <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> Řízení poskytuje jeden vstupní bod pro [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], konfigurace a odeslání úlohy XPS. Informace o tom, jak vytvořit instanci a pomocí ovládacího prvku, naleznete v tématu [vyvolání dialogového okna Tisk](how-to-invoke-a-print-dialog.md).  
   
 ### <a name="advanced-xps-printing"></a>Pokročilé XPS tisku  
- Pro přístup k úplné sadě XPS funkce, pokročilé tisk [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] musí být použita. Několik relevantní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou popsány podrobněji níže. Cesta tisku pro úplný seznam XPS [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], najdete v článku <xref:System.Windows.Xps> a <xref:System.Printing> odkazy na obor názvů.  
+ Pro přístup k kompletní sadu funkcí XPS, musí využívat pokročilé tisku rozhraní API. Několik relevantní rozhraní API jsou popsány podrobněji níže. Cesta tisku pro úplný seznam XPS [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], najdete v článku <xref:System.Windows.Xps> a <xref:System.Printing> odkazy na obor názvů.  
   
 #### <a name="printticket-and-printcapabilities"></a>Funkce PrintTicket a printcapabilities –  
  <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintCapabilities> třídy jsou základem pro pokročilé funkce XPS. Oba typy objektů jsou [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] ve formátu struktury tisk objektově orientovaný funkcí, jako je třeba kolace oboustranný tisk, připojování, atd. Tyto struktury jsou definovaná pomocí schématu rozhraní tisku. A <xref:System.Printing.PrintTicket> tiskárnu dává pokyn, jak zpracovávat tiskové úlohy. <xref:System.Printing.PrintCapabilities> Třída definuje možnosti tiskárny. Pomocí dotazu na možnosti tiskárny <xref:System.Printing.PrintTicket> je možné vytvořit, že přijímá naplno využít tiskárny na podporované funkce. Podobně se lze vyvarovat nepodporované funkce.  

@@ -21,21 +21,21 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: 6cb389cd0458d1c9e7af94586c394764f01e4bab
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b84a2e4c3cf4126a6efa7edaf868080dbc48b859
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665190"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610381"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] umožňuje vývojářům zobrazit, transformaci a formátu Image.  
 
 <a name="_wpfImaging"></a>   
 ## <a name="wpf-imaging-component"></a>Součást zpracování obrázků WPF  
- [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] poskytuje významná vylepšení imaging možnosti v rámci [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]. Byly dříve spolehlivé po Imaging možnosti, jako například zobrazení rastrový obrázek nebo pomocí image na běžný ovládací prvek [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] nebo [!INCLUDE[TLA#tla_gdiplus](../../../../includes/tlasharptla-gdiplus-md.md)] knihovny. Tyto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] poskytuje základní funkce pro zpracování obrázků, ale chybějící funkce, jako je podpora kodek rozšíření a podporu image velmi přesné. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] slouží k překonání nedostatky z [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] a [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] a zadejte novou sadu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] k zobrazení a používání imagí v rámci vašich aplikací.  
+ [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] poskytuje významná vylepšení imaging možnosti v rámci [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]. Byly dříve spolehlivé po Imaging možnosti, jako například zobrazení rastrový obrázek nebo pomocí image na běžný ovládací prvek [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] nebo [!INCLUDE[TLA#tla_gdiplus](../../../../includes/tlasharptla-gdiplus-md.md)] knihovny. Tato rozhraní API poskytuje základní funkce, ale chybějící funkce, jako je podporu podle kodeku rozšíření a věrného image pro zpracování obrázků. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] slouží k překonání nedostatky z [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] a [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] a zadejte novou sadu rozhraní API pro zobrazení a použití imagí v rámci vašich aplikací.  
   
- Existují dva způsoby přístupu k [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], spravované a nespravované součásti. Nespravované součásti poskytuje následující funkce.  
+ Existují dva způsoby přístupu k [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] rozhraní API, komponentu spravované a nespravované součásti. Nespravované součásti poskytuje následující funkce.  
   
 - Model rozšiřitelnosti pro nové nebo speciální obrázků ve formátu.  
   
@@ -51,9 +51,9 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
   
 - Spravovaná komponenta využívá nespravované infrastruktura, která poskytuje bezproblémovou integraci imagí s jinými [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkce, jako [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a grafiky. Spravované součásti taky další výhody z Windows Presentation Foundation (WPF) pro zpracování obrázků kodek model rozšiřitelnosti umožňující automatické rozpoznávání nové formátů obrázku v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
- Většina spravovanou [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou umístěny v <xref:System.Windows.Media.Imaging?displayProperty=nameWithType> obor názvů, i když některé důležité typy, jako <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.ImageDrawing> jsou umístěny v <xref:System.Windows.Media?displayProperty=nameWithType> obor názvů a <xref:System.Windows.Controls.Image> se nachází v <xref:System.Windows.Controls?displayProperty=nameWithType> oboru názvů.  
+ Většina spravovanou [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] rozhraní API jsou umístěny v <xref:System.Windows.Media.Imaging?displayProperty=nameWithType> obor názvů, i když některé důležité typy, jako <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.ImageDrawing> jsou umístěny v <xref:System.Windows.Media?displayProperty=nameWithType> obor názvů a <xref:System.Windows.Controls.Image> se nachází v <xref:System.Windows.Controls?displayProperty=nameWithType> obor názvů.  
   
- Toto téma obsahuje další informace o spravované součásti. Další informace o nespravovanou [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] najdete v článku [nespravované součásti Imaging Component WPF](/windows/desktop/wic/-wic-lh) dokumentaci.  
+ Toto téma obsahuje další informace o spravované součásti. Další informace o nespravované rozhraní API najdete v [nespravované součásti Imaging Component WPF](/windows/desktop/wic/-wic-lh) dokumentaci.  
   
 <a name="_imageformats"></a>   
 ## <a name="wpf-image-formats"></a>WPF formátů obrázku  
@@ -167,7 +167,7 @@ Různá nastavení stretch
   
  Přístup k metadatům je poskytována prostřednictvím <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapSource> objektu. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> Vrátí <xref:System.Windows.Media.Imaging.BitmapMetadata> objekt, který zahrnuje všechny metadat obsažených imagí. Tato data mohou být v jedné metadata schématu nebo kombinaci různých režimů. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] podporuje následující schémata metadata obrázků: [!INCLUDE[TLA#tla_exif](../../../../includes/tlasharptla-exif-md.md)], tEXt (PNG textová Data), [!INCLUDE[TLA#tla_ifd](../../../../includes/tlasharptla-ifd-md.md)], [!INCLUDE[TLA#tla_iptc](../../../../includes/tlasharptla-iptc-md.md)], a [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)].  
   
- Aby bylo možné zjednodušit proces načítání metadat, <xref:System.Windows.Media.Imaging.BitmapMetadata> poskytuje několik pojmenované vlastnosti, které mohou být snadno přístupné, jako <xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>, <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A>, a <xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>. Mnohé z těchto pojmenované vlastnosti také umožňuje zápis metadat. Čtečka metadat pro dotaz poskytuje další podporu pro čtení metadat. <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> Metoda se používá k načtení čtečku metadat dotazu zadáním řetězce dotazu *"/ app1/exif /"*. V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> slouží k získání uložených v textu *"/ Text/popis"* umístění.  
+ Aby bylo možné zjednodušit proces načítání metadat, <xref:System.Windows.Media.Imaging.BitmapMetadata> poskytuje několik pojmenované vlastnosti, které mohou být snadno přístupné, jako <xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>, <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A>, a <xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>. Mnohé z těchto pojmenované vlastnosti také umožňuje zápis metadat. Čtečka metadat pro dotaz poskytuje další podporu pro čtení metadat. <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> Metoda se používá k načtení čtečku metadat dotazu zadáním řetězce dotazu *"/ app1/exif /"* . V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> slouží k získání uložených v textu *"/ Text/popis"* umístění.  
   
  [!code-cpp[BitmapMetadata#GetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#getquery)]
  [!code-csharp[BitmapMetadata#GetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#getquery)]
@@ -183,7 +183,7 @@ Různá nastavení stretch
 ## <a name="codec-extensibility"></a>Kodek rozšiřitelnosti  
  Základní funkce [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] je model rozšiřitelnosti kodeky nový obrázek. Tato nespravovaná rozhraní povolit kodek vývojářům integrovat kodeky [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tak může automaticky využívat nové image formáty [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
- Pro ukázku rozšiřitelnosti [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], najdete v článku [Win32 ukázka kodek](https://go.microsoft.com/fwlink/?LinkID=160052). Tento příklad ukazuje, jak vytvořit dekodér a kodér formátu vlastní image.  
+ Ukázku rozšiřitelnost rozhraní API najdete v tématu [Win32 ukázka kodek](https://go.microsoft.com/fwlink/?LinkID=160052). Tento příklad ukazuje, jak vytvořit dekodér a kodér formátu vlastní image.  
   
 > [!NOTE]
 >  Kodek musí být digitálně podepsané, systém ho.  

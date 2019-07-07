@@ -15,12 +15,12 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: 7712ed02d20d692842267464a645bfc93ca8fd73
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 326900087f755b6c92d9ebb77dad36e5880fd2c0
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063896"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610451"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrovaných událostí, popisuje, jak směrované události jsou směrovány stromové struktuře prvků, shrnuje, jak zpracování směrované události a seznámíte s vytvořením vlastní směrované události.
@@ -98,7 +98,7 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Kde stát výkonné směrovaných událostí je, pokud použijete některou z navrhovaných scénářích: definování běžné obslužné rutiny na společný kořen skládání vlastní ovládací prvek nebo definuje vlastní třídu vlastního ovládacího prvku.  
   
- Naslouchacích procesů směrovaných událostí a směrovaných událostí zdrojů není potřeba sdílet společný událost ve své hierarchii. Žádné <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> může být naslouchací proces událostí pro všechny směrované události. Proto můžete použít úplnou sadu směrovaných událostí, které jsou k dispozici v rámci pracovní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] nastavit jako konceptuální "rozhraní" kterým různorodých prvky v aplikaci si mohou vyměňovat informace o události. Tento koncept "rozhraní" pro směrované události platí zejména pro vstupní události.  
+ Naslouchacích procesů směrovaných událostí a směrovaných událostí zdrojů není potřeba sdílet společný událost ve své hierarchii. Žádné <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> může být naslouchací proces událostí pro všechny směrované události. Proto můžete použít úplnou sadu směrovaných událostí, které jsou k dispozici v rámci pracovní rozhraní API, nastavte jako konceptuální "rozhraní" kterým různorodých prvky v aplikaci si mohou vyměňovat informace o události. Tento koncept "rozhraní" pro směrované události platí zejména pro vstupní události.  
   
  Směrované události lze také komunikovat přes strom prvku vzhledem k tomu, že se data události pro událost perpetuated na každý prvek v této trase. Jeden element něco v datech událostí může změnit, a tato změna by být k dispozici na další prvek v trase.  
   

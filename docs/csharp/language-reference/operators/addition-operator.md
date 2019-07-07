@@ -14,12 +14,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 258adc45fc6874cca5829479eef1196ebea1e300
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 41355dbadd566648b45d825cdd6515bfc6d411aa
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347977"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610042"
 ---
 # <a name="-and--operators-c-reference"></a>+ a operátory += (C# odkaz)
 
@@ -71,7 +71,7 @@ Můžete také použít `+=` operátor zadat metodu obslužné rutiny události,
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
-Uživatelem definovaný typ může [přetížení](../keywords/operator.md) `+` operátor. Když do binárního souboru `+` je operátor přetížen, `+=` je také implicitně přetížený operátor. Uživatelem definovaný typ nejde přetížit explicitně `+=` operátor.
+Uživatelem definovaný typ může [přetížení](operator-overloading.md) `+` operátor. Když do binárního souboru `+` je operátor přetížen, `+=` je také implicitně přetížený operátor. Uživatelem definovaný typ nejde přetížit explicitně `+=` operátor.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

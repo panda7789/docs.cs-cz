@@ -1,13 +1,13 @@
 ---
 title: Řetězce
 description: Zjistěte, jak F# typ "řetězec" představuje neměnné text jako posloupnost znaků Unicode.
-ms.date: 06/28/2019
-ms.openlocfilehash: 8bd7a65a8d8e9e6a2d3930cd1fc9e800342d9a18
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.date: 07/05/2019
+ms.openlocfilehash: b252aef7d7e6e299df8282407198714971e80cd5
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487774"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610167"
 ---
 # <a name="strings"></a>Řetězce
 
@@ -22,14 +22,26 @@ ms.locfileid: "67487774"
 
 |Znak|Řídicí sekvence|
 |---------|---------------|
+|Výstrahy|`\a`|
 |Backspace|`\b`|
+|Posun strany|`\f`|
 |nový řádek|`\n`|
 |Návrat na začátek řádku|`\r`|
 |Karta|`\t`|
+|Vertikální tabulátor|`\v`|
 |Zpětné lomítko|`\\`|
 |Znak uvozovek|`\"`|
 |Apostrof|`\'`|
-|znak Unicode|`\uXXXX` (UTF-16) nebo `\U00XXXXXX` (UTF-32) (kde `X` označuje šestnáctková číslice)|
+|znak Unicode|`\DDD` (kde `D` označuje desítkové číslice; rozsah 000 - 255; například `\231` = "ç")|
+|znak Unicode|`\xHH` (kde `H` označuje šestnáctková číslice; rozsahu 00 - FF; například `\xE7` = "ç")|
+|znak Unicode|`\uHHHH` (UTF-16) (kde `H` označuje šestnáctková číslice; rozsah 0000 - FFFF;  například `\u00E7` = "ç")|
+|znak Unicode|`\U00HHHHHH` (UTF-32) (kde `H` označuje šestnáctková číslice; rozsah 000000 - 10FFFF.;  například `\U0001F47D` = "👽")|
+
+> [!IMPORTANT]
+> `\DDD` Řídicí sekvence je desítkový zápis, nikoli osmičkové soustavě stejně jako v většina jiných jazycích. Proto číslic `8` a `9` jsou platné a sekvencí `\032` představuje mezery (U + 0020), zatímco by tento stejný bod kódu v osmičkové soustavě `\040`.
+
+> [!NOTE]
+> Je omezené na rozsah 0 – 255 (0xFF) `\DDD` a `\x` řídicí sekvence jsou účinně [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Code_page_layout) znaková sada, protože odpovídající prvních 256 kódové body sady Unicode.
 
 Předchází-li symbolem @, je literál doslovný řetězec. To znamená, že jsou ignorovány všechny řídicí sekvence, s tím rozdílem, že jsou dva znaky uvozovek interpretován jako znak jeden znak uvozovek.
 

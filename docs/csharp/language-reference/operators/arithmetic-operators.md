@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 155ce5ce4673008a61b4231a3aaee5a40ad9ead6
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 4108583a5f97d1349fb54c335d55252352ea4883
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423993"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609997"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
@@ -243,7 +243,7 @@ Další informace najdete v části poznámky v [System.Double](/dotnet/api/syst
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
-Uživatelem definovaný typ může [přetížení](../keywords/operator.md) unární (`++`, `--`, `+`, a `-`) a binární (`*`, `/`, `%`, `+`a `-`) aritmetické operátory. Pokud je binární operátor přetížen, je také implicitně přetížené odpovídající operátor složeného přiřazení. Uživatelem definovaný typ nejde explicitně přetížit operátor složeného přiřazení.
+Uživatelem definovaný typ může [přetížení](operator-overloading.md) unární (`++`, `--`, `+`, a `-`) a binární (`*`, `/`, `%`, `+`a `-`) aritmetické operátory. Pokud je binární operátor přetížen, je také implicitně přetížené odpovídající operátor složeného přiřazení. Uživatelem definovaný typ nejde explicitně přetížit operátor složeného přiřazení.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

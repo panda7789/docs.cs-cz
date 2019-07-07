@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: 280557a5098c513111557f52d835b20d9a2eeb62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab93a5bae3c83bcce8fa46800ef759d8a2a7f858
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876877"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610556"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 
@@ -198,7 +198,7 @@ Další informace o mapování pro tyto typy data a času systému SQL Server na
 
 ## <a name="sql-server-2000-support"></a>SQL Server 2000 Support
 
-Následující [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] omezení (ve srovnání s [!INCLUDE[sqprsqext](../../../../../../includes/sqprsqext-md.md)]) ovlivnit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.
+Následující [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] ovlivnit omezení (ve srovnání se Microsoft SQL Server 2005) [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.
 
 ### <a name="cross-apply-and-outer-apply-operators"></a>Křížové použití a vnější použít operátory
 
@@ -208,7 +208,7 @@ Tyto operátory nejsou k dispozici v [!INCLUDE[ss2k](../../../../../../includes/
 
 ### <a name="text--ntext"></a>text / ntext
 
-Datové typy `text`  /  `ntext` nelze použít v určité operace dotazů vůči `varchar(max)`  /  `nvarchar(max)`, které jsou podporovány [!INCLUDE[sqprsqext](../../../../../../includes/sqprsqext-md.md)].
+Datové typy `text`  /  `ntext` nelze použít v určité operace dotazů vůči `varchar(max)`  /  `nvarchar(max)`, které podporuje Microsoft SQL Server 2005.
 
 Žádné řešení, protože je k dispozici pro toto omezení. Konkrétně byste měli nelze použít `Distinct()` na některý z výsledků, který obsahuje členy, které jsou mapovány na `text` nebo `ntext` sloupce.
 
