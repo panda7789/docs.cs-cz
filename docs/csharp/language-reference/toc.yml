@@ -225,8 +225,6 @@
               href: keywords/explicit.md
             - name: implicit
               href: keywords/implicit.md
-            - name: – operátor
-              href: keywords/operator.md
         - name: Klíčová slova přístupu
           items:
             - name: base
@@ -354,6 +352,8 @@
           href: operators/stackalloc.md
         - name: true a false – operátory
           href: operators/true-false-operators.md
+        - name: Přetěžování operátoru
+          href: operators/operator-overloading.md
     - name: 'Speciální znaky jazyka C#'
       items:
         - name: Přehled
