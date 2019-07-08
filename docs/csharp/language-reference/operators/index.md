@@ -18,18 +18,18 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 7d8ee9be8f399bca0aace61d344b19094c9518b0
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 0cd0a06dc919ecf11f1a3d343fe8ff023a5f8524
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401469"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609916"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# odkaz)
 
 C#poskytuje řadu předdefinovaných operátory podporovaných předdefinovaných typů. Například [aritmetické operátory](arithmetic-operators.md) provádění aritmetických operací s operandy předdefinovaných číselných typů a [logické logické operátory](boolean-logical-operators.md) provádí logické operace s [bool ](../keywords/bool.md) operandy.
 
-Uživatelem definovaný typ může přetížit některé operátory definovat odpovídající chování pro operandy typu. Další informace najdete v tématu [operátor](../keywords/operator.md) článku – klíčové slovo.
+Uživatelem definovaný typ může přetížit některé operátory definovat odpovídající chování pro operandy typu. Další informace najdete v tématu [přetížení operátoru](operator-overloading.md).
 
 Následující části seznamu C# operátory od nejvyšší prioritu, takže nejnižší. Operátory v jednotlivých částech sdílet stejnou úrovní priority.
 
@@ -223,4 +223,3 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 - [C#referenční dokumentace](../index.md)
 - [Operátory](../../programming-guide/statements-expressions-operators/operators.md)
-- [Přetížitelné operátory](../../programming-guide/statements-expressions-operators/overloadable-operators.md)
