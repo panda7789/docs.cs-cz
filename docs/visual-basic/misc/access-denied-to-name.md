@@ -1,5 +1,5 @@
 ---
-title: Přístup odepřen "<name>.
+title: Přístup odepřen '<name>'.
 ms.date: 07/20/2015
 ms.assetid: 196c7286-4833-41d9-bbcb-f64c17eb2a59
 ms.openlocfilehash: e8dd0835735a2467820c2e2c98f4fd9d80f0b49e

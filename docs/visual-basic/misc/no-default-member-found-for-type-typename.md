@@ -1,5 +1,5 @@
 ---
-title: Pro typ se nenašly žádné výchozí člen "<typename>.
+title: Pro typ se nenašly žádné výchozí člen '<typename>'.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_NoDefaultMemberFound1
