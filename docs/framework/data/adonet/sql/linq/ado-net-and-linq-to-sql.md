@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
-ms.openlocfilehash: 4f2f9fa1cb1be421be57ae0671573150871ebd1d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 6a6e057b45c1305a889ce4ed915b437a29ab2794
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880471"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662069"
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET a LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí rodiny ADO.NET technologií. Je založen na služby poskytované podle modelu poskytovatele ADO.NET. Proto můžete kombinovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kódu se stávajícími aplikacemi ADO.NET a migrovat aktuální řešení ADO.NET [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Následující obrázek poskytuje podrobný pohled vztahu.  
@@ -36,7 +36,7 @@ ms.locfileid: "65880471"
  [!code-csharp[DLinqAdoNet#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqAdoNet/cs/Program.cs#2)]
  [!code-vb[DLinqAdoNet#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqAdoNet/vb/Module1.vb#2)]  
   
- Tento přístup nelze použít pro všechny databáze. Například SqlClient připojení nelze povýšit systému transakcích, když bude fungovat s [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] serveru. Místo toho automaticky nezvládnou úplné, distribuované transakci pokaždé, když vidí oboru transakce se používají.  
+ Tento přístup nelze použít pro všechny databáze. Například SqlClient připojení nelze zvýšit úroveň transakce systému při funguje na serveru SQL Server 2000. Místo toho automaticky nezvládnou úplné, distribuované transakci pokaždé, když vidí oboru transakce se používají.  
   
 ## <a name="direct-sql-commands"></a>Příkazy jazyka SQL s přímým přístupem  
  V některých případech může nastat situace, kdy schopnost <xref:System.Data.Linq.DataContext> dotazování a odesílání není dostatečná pro specializované úlohu chcete provést změny. V těchto případech můžete použít <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> metodu vydávat příkazy SQL na databázi a proveďte převod na objekty výsledků dotazu.  

@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Transforms [WPF], about Transforms
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
-ms.openlocfilehash: 7f5fad56d00e9a7e33843222a81593a90bf7e733
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 28d990bc2ea043fa1770054877148f1f09acefd0
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651907"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662633"
 ---
 # <a name="transforms-overview"></a>Přehled transformace
-Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> třídy otočit, škálování, přesuňte (přeložit) a zkosení <xref:System.Windows.FrameworkElement> objekty.  
+Toto téma popisuje, jak použijte 2 D <xref:System.Windows.Media.Transform> třídy otočit, škálování, přesuňte (přeložit) a zkosení <xref:System.Windows.FrameworkElement> objekty.  
 
 <a name="whatIsATransformSection"></a>   
 ## <a name="what-is-a-transform"></a>Co je transformace?  
@@ -45,7 +45,7 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
   
 <a name="transformClassesSection"></a>   
 ## <a name="transform-classes"></a>Třídy transformace  
- Windows Presentation Foundation (WPF) poskytuje následující [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> třídy pro běžné operace transformace:  
+ Windows Presentation Foundation (WPF) poskytuje následující 2D <xref:System.Windows.Media.Transform> třídy pro běžné operace transformace:  
   
 |Třída|Popis|Příklad|Obrázek|  
 |-----------|-----------------|-------------|------------------|  
@@ -61,13 +61,13 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
 |<xref:System.Windows.Media.TransformGroup>|Skupiny více <xref:System.Windows.Media.TransformGroup> objekty do jednoho <xref:System.Windows.Media.Transform> , lze následně použít k transformaci vlastnosti.|[Použití několika transformací na objekt](how-to-apply-multiple-transforms-to-an-object.md)|  
 |<xref:System.Windows.Media.MatrixTransform>|Vytvoří vlastní transformace, které nejsou součástí druhé <xref:System.Windows.Media.Transform> třídy. Při použití <xref:System.Windows.Media.MatrixTransform>, pracovat s matice přímo.|[Vytvoření vlastních transformací pomocí MatrixTransform](how-to-use-a-matrixtransform-to-create-custom-transforms.md)|  
   
- Windows Presentation Foundation (WPF) poskytuje také [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] transformace. Další informace najdete v tématu <xref:System.Windows.Media.Media3D.Transform3D> třídy.  
+ Windows Presentation Foundation (WPF) poskytuje také 3D transformace. Další informace najdete v tématu <xref:System.Windows.Media.Media3D.Transform3D> třídy.  
   
 <a name="transformationproperties"></a>   
 ## <a name="common-transformation-properties"></a>Společné vlastnosti transformace  
  Jedním ze způsobů transformace objektu je deklarovat odpovídající <xref:System.Windows.Media.Transform> typ a použijte ji pro vlastnost transformace objektu. Různé typy objektů mají různé typy vlastnosti transformace. Následující tabulka uvádí několik běžně používané typy Windows Presentation Foundation (WPF) a jejich vlastnosti transformace.  
   
-|Type|Vlastnosti transformace|  
+|type|Vlastnosti transformace|  
 |----------|-------------------------------|  
 |<xref:System.Windows.Media.Brush>|<xref:System.Windows.Media.Brush.Transform%2A>, <xref:System.Windows.Media.Brush.RelativeTransform%2A>|  
 |<xref:System.Windows.Media.ContainerVisual>|<xref:System.Windows.Media.ContainerVisual.Transform%2A>|  

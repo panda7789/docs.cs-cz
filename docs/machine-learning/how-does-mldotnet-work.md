@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 06085091a13ad76dcd554cfe637bcc151bbb8476
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 30e96d85ecc04332bc5e6c8f57badd000f729904
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610183"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660640"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -163,7 +163,7 @@ V této části jsme projít architektury vzory ML.NET. Pokud jste vývojáři .
 
 Aplikace ML.NET začíná <xref:Microsoft.ML.MLContext> objektu. Tento objekt typu singleton obsahuje **katalogy**. Katalog je objekt pro vytváření dat, načítání a transformace, školitelé a součástí modelu operace ukládání. Každý objekt katalogu má metody k vytvoření různých typů komponent:
 
-||||
+|||||
 |-|-|-|-|
 |Ukládání a načítání dat||<xref:Microsoft.ML.DataOperationsCatalog>||
 |Příprava dat||<xref:Microsoft.ML.TransformsCatalog>||
@@ -171,11 +171,11 @@ Aplikace ML.NET začíná <xref:Microsoft.ML.MLContext> objektu. Tento objekt ty
 ||Klasifikace víc tříd|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
 ||Detekce anomálií|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
 ||Vytváření clusterů|<xref:Microsoft.ML.ClusteringCatalog>||
-||Prognózování|<xref:Microsoft.ML.Forecasting>||
+||Prognózování|<xref:Microsoft.ML.ForecastingCatalog>||
 ||Hodnocení|<xref:Microsoft.ML.RankingCatalog>||
 ||Regrese|<xref:Microsoft.ML.RegressionCatalog>||
-||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat Microsoft.ML.Recommender|
-||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat Microsoft.ML.TimeSeries|
+||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat `Microsoft.ML.Recommender` balíček NuGet|
+||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat `Microsoft.ML.TimeSeries` balíček NuGet|
 |Využití modelu ||<xref:Microsoft.ML.ModelOperationsCatalog>||
 
 Můžete přejít do metod vytváření v každé z výše uvedených kategoriích. Pomocí sady Visual Studio, katalogy zobrazí prostřednictvím technologie IntelliSense.

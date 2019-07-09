@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1f773b6f7d0b8b4e0b8647b7086d8782d1afbb93
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: c026174e881768af245860d1b719184dc47f1798
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690528"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663989"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 
@@ -207,19 +207,19 @@ Obě strany (Alice a Bob) použít k zajištění integrity zprávy funkce hash.
 
 - Alice odesílá do zprávy ve formátu prostého textu a hodnotu hash zprávy (digitální podpis). Bob obdrží hashuje zprávu a porovnává jeho hodnotu hash pro hodnotu hash, který obdržel od Alice. Pokud jsou hodnoty hash stejné, zpráva nebyla změněna. Pokud hodnoty nejsou shodné, zprávy byl změněn po ho napsal Alice.
 
-    Tato metoda však nevytváří pravosti odesílatele. Kdokoli na nich může zosobnit Alice a Bob odešlete zprávu. Můžou použít stejný algoritmus hash a podepisování jejich zpráva a všechno, co můžete určit Bob je, že zpráva odpovídá jeho podpis. Toto je jedna podoba útok man-in-the-middle. Další informace najdete v tématu [kryptografické služby nové generace (CNG) zabezpečené komunikace příklad](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
+  Tato metoda však nevytváří pravosti odesílatele. Kdokoli na nich může zosobnit Alice a Bob odešlete zprávu. Můžou použít stejný algoritmus hash a podepisování jejich zpráva a všechno, co můžete určit Bob je, že zpráva odpovídá jeho podpis. Toto je jedna podoba útok man-in-the-middle. Další informace najdete v tématu [kryptografické služby nové generace (CNG) zabezpečené komunikace příklad](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
 
 - Alice odešle zprávu ve formátu prostého textu Bob přes nezabezpečený kanál veřejné. Odešle hodnotu hash zprávy uživateli přes zabezpečený kanál privátní. Bob obdrží zprávu ve formátu prostého textu, rozdělí a porovná součet hash soukromě výměně hodnotou hash. Pokud se klíče hash shodují, Bob ví dvě věci:
 
-    - Zpráva nebyla změněna.
+  - Zpráva nebyla změněna.
 
-    - Odesílatel zprávy (Alice) je platná.
+  - Odesílatel zprávy (Alice) je platná.
 
-    Pro tento systém fungovat musí skrýt Alice ze všech stran, s výjimkou Bob její původní hodnotu hash.
+  Pro tento systém fungovat musí skrýt Alice ze všech stran, s výjimkou Bob její původní hodnotu hash.
 
 - Alice odešle zprávu ve formátu prostého textu Bob přes nezabezpečený kanál veřejné a umístí hodnotu hash zprávy na svůj veřejně přístupný webový server.
 
-    Tato metoda zabraňuje v manipulaci se zprávami tak, že všem uživatelům zabrání změně hodnoty hash. I když každý lze číst zprávy a jeho hodnotu hash, hodnota hash může změnit pouze Alice. Útočník, který chce zosobnit Alice potřeboval by přístup k webovému serveru Alice.
+  Tato metoda zabraňuje v manipulaci se zprávami tak, že všem uživatelům zabrání změně hodnoty hash. I když každý lze číst zprávy a jeho hodnotu hash, hodnota hash může změnit pouze Alice. Útočník, který chce zosobnit Alice potřeboval by přístup k webovému serveru Alice.
 
 Žádná z předchozích metod zabrání někdo čtení zprávy od Alice, protože se přenáší ve formátu prostého textu. Úplné zabezpečení zpravidla vyžaduje, aby digitální podpisy (podepisování zpráv) a šifrování.
 

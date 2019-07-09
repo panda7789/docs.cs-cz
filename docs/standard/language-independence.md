@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 79b74090a5a443c944df94f9df1c3f4d283df02f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: af266a551a194f55bc4951a8bdb0e9af6f823663
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946978"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663008"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
@@ -29,35 +29,35 @@ V tomto článku:
 
 * [Pravidla dodržování předpisů se specifikací CLS](#cls-compliance-rules)
 
-    * [Typy a signatury členů typu](#types-and-type-member-signatures)
+  * [Typy a signatury členů typu](#types-and-type-member-signatures)
 
-    * [Zásady vytváření názvů](#naming-conventions)
+  * [Zásady vytváření názvů](#naming-conventions)
 
-    * [Převod typů](#type-conversion)
+  * [Převod typů](#type-conversion)
 
-    * [Pole](#arrays)
+  * [Pole](#arrays)
 
-    * [Rozhraní](#interfaces)
+  * [Rozhraní](#interfaces)
 
-    * [Výčty](#enumerations)
+  * [Výčty](#enumerations)
 
-    * [Typy členů obecně](#type-members-in-general)
+  * [Typy členů obecně](#type-members-in-general)
 
-    * [Usnadnění přístupu člena](#member-accessibility)
+  * [Usnadnění přístupu člena](#member-accessibility)
 
-    * [Obecné typy a členy](#generic-types-and-members)
+  * [Obecné typy a členy](#generic-types-and-members)
 
-    * [Konstruktory](#constructors)
+  * [Konstruktory](#constructors)
 
-    * [Vlastnosti](#properties)
+  * [Vlastnosti](#properties)
 
-    * [Události](#events)
+  * [Události](#events)
 
-    * [Overloads](#overloads)
+  * [Overloads](#overloads)
 
-    * [Výjimky](#exceptions)
+  * [Výjimky](#exceptions)
 
-    * [Atributy](#attributes)
+  * [Atributy](#attributes)
 
 * [Atribut CLSCompliantAttribute](#the-clscompliantattribute-attribute)
 
@@ -1307,11 +1307,11 @@ Výčty odpovídající specifikaci CLS musí postupovat podle těchto pravidel:
 
 * Existují dva typy výčtů:
 
-    * Výčet, který představuje sadu vzájemně se vylučujících pojmenovaných celočíselných hodnot. Tento typ výčtu se vyznačuje nepřítomností z [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
+  * Výčet, který představuje sadu vzájemně se vylučujících pojmenovaných celočíselných hodnot. Tento typ výčtu se vyznačuje nepřítomností z [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
 
-    * Výčet, který představuje sadu bitových příznaků, které lze kombinovat a generovat tak nepojmenovanou hodnotu. Tento typ výčtu se vyznačuje přítomnost [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
+  * Výčet, který představuje sadu bitových příznaků, které lze kombinovat a generovat tak nepojmenovanou hodnotu. Tento typ výčtu se vyznačuje přítomnost [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
 
- Další informace najdete v tématu v dokumentaci [výčtu](xref:System.Enum) struktury.
+Další informace najdete v tématu v dokumentaci [výčtu](xref:System.Enum) struktury.
 
 * Hodnota výčtu není omezena na rozsah zadaných hodnot. Jinými slovy rozsah hodnot ve výčtu je oblast jeho základní hodnoty. Můžete použít `Enum.IsDefined` metodou ke zjištění, zda zadaná hodnota je člen výčtu.
 

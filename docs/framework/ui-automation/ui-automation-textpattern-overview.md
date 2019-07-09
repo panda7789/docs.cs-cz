@@ -6,12 +6,12 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: 41787927-df1f-4f4a-aba3-641662854fc4
-ms.openlocfilehash: d35e5b5127f335eac04caa8ee95749f45cb870bf
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: c7b30a854667a122ff30ec4a8e4855902489087f
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674000"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660783"
 ---
 # <a name="ui-automation-textpattern-overview"></a>Přehled prvku TextPattern automatizace uživatelského rozhraní
 
@@ -41,7 +41,7 @@ Stručně řečeno, můžete použít dostupné technologie, které vyžadují p
 
 ## <a name="control-types"></a>Typy ovládacích prvků
 
-#### <a name="text"></a>Text
+### <a name="text"></a>Text
 
 Ovládací prvek textu je základní prvek představující část textu na obrazovce.
 
@@ -50,14 +50,14 @@ Ovládací prvek textového samostatné může sloužit jako popisek nebo static
 > [!NOTE]
 > Textových ovládacích prvků se nemusí zobrazit v zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu (viz [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)). Je to proto textových ovládacích prvků se často zobrazují jiného ovládacího prvku pomocí vlastnosti Name. Například text, který se používá k označení ovládacího prvku pro úpravy je přístupný prostřednictvím vlastnosti název ovládacích prvků pro úpravy. Vzhledem k tomu, že je ovládací prvek pro úpravy v zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, není nutné pro text elementu samotného v tomto zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu. Pouze text, který se zobrazí v zobrazení obsahu je text, který není nadbytečné informace. Díky všechny technologie pro usnadnění rychle vyfiltrovat pouze na řadu informací jejich uživatelé potřebují.
 
-#### <a name="edit"></a>Upravit
+### <a name="edit"></a>Upravit
 
 Upravte ovládací prvky povolit uživatelům zobrazení a úprava jeden řádek textu.
 
 > [!NOTE]
 > Jeden řádek textu může obtékat v některých scénářích rozložení.
 
-#### <a name="document"></a>Dokument
+### <a name="document"></a>Dokument
 
 Ovládacích prvků dokumentu může uživatel procházet a získávání informací z více stránek textu.
 
@@ -93,8 +93,10 @@ A <xref:System.Windows.Automation.TextPattern> zprostředkovatele musí podporov
 |`System.Windows.Automation.TextPatternIdentifiers Class`|Obsahuje hodnoty, které jsou použity jako identifikátory pro poskytovatele textu (viz <xref:System.Windows.Automation.TextPatternIdentifiers>).|
 
 <a name="Security"></a>
+
 ## <a name="security"></a>Zabezpečení
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Architektura je navržená s ohledem na bezpečnost (viz [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md)). TextPattern třídy je popsáno v tomto přehledu ale vyžadovat některé specifické aspekty zabezpečení.
+
+[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Architektura je navržená s ohledem na bezpečnost (viz [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md)). TextPattern třídy je popsáno v tomto přehledu ale vyžadovat některé specifické aspekty zabezpečení.
 
 - [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] poskytovatelé text zadat jen pro čtení rozhraní a neposkytuje možnost měnit existující text v ovládacím prvku.
 
@@ -104,9 +106,9 @@ A <xref:System.Windows.Automation.TextPattern> zprostředkovatele musí podporov
 
 - Jeden z nejvýznamnějších změn v zabezpečení pro [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] je široce označovány jako "Zabezpečené Input" zahrnující technologie, jako je nejnižší úrovní oprávnění (nebo omezené) uživatelské účty (LUA) a uživatelského rozhraní oprávnění úroveň izolace (UIPI).
 
-    - UIPI brání jeden program od řízení nebo monitorování druhého další "privilegovaných" program, prevence útoků zprávy okna procesy, které falšují vstup uživatele.
+  - UIPI brání jeden program od řízení nebo monitorování druhého další "privilegovaných" program, prevence útoků zprávy okna procesy, které falšují vstup uživatele.
 
-    - LUA nastavuje omezení oprávnění aplikací spuštěných uživatelů ve skupině Administrators. Aplikace nemusí mít oprávnění správce, ale místo toho spustí s nejmenší možná oprávnění. V důsledku toho může být určitá omezení prosazuje LUA scénáře. Zkrácení (včetně TextPattern řetězce), kde může být potřeba omezit velikost řetězce načítají z aplikací na úrovni správce, nejsou vynucené přidělení paměti pro bod zakázání aplikace zejména řetězce.
+  - LUA nastavuje omezení oprávnění aplikací spuštěných uživatelů ve skupině Administrators. Aplikace nemusí mít oprávnění správce, ale místo toho spustí s nejmenší možná oprávnění. V důsledku toho může být určitá omezení prosazuje LUA scénáře. Zkrácení (včetně TextPattern řetězce), kde může být potřeba omezit velikost řetězce načítají z aplikací na úrovni správce, nejsou vynucené přidělení paměti pro bod zakázání aplikace zejména řetězce.
 
 <a name="Performance"></a>
 
@@ -120,19 +122,25 @@ Jeden taktika pro zlepšení výkonu je zajistit, klienti automatizace uživatel
 
 ## <a name="textpattern-terminology"></a>TextPattern terminologie
 
-**Atribut** formátování charakteristiku rozsah textu (například <xref:System.Windows.Automation.TextPattern.IsItalicAttribute> nebo <xref:System.Windows.Automation.TextPattern.FontNameAttribute>).
+**Atribut**\
+Formátování charakteristiku rozsah textu (například <xref:System.Windows.Automation.TextPattern.IsItalicAttribute> nebo <xref:System.Windows.Automation.TextPattern.FontNameAttribute>).
 
-**Rozsah degenerovanou dimenzi** degenerovanou rozsah je rozsah textu znaku nula nebo prázdná. Pro účely TextPattern vzoru ovládacích prvků považuje textový kurzor (nebo stříšku systému) degenerovanou rozsahu. Pokud není vybraný žádný text, <xref:System.Windows.Automation.TextPattern.GetSelection%2A> vracel degenerovanou rozsahu na pozici kurzoru text a <xref:System.Windows.Automation.TextPattern.RangeFromPoint%2A> vracel degenerovanou rozsahu jako svůj výchozí koncový bod. <xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> a <xref:System.Windows.Automation.TextPattern.GetVisibleRanges%2A> může vracet degenerovanou rozsahy poskytovatele textu nelze nalézt žádné oblasti textu, které odpovídají dané podmínce. Tento rozsah degenerovanou může sloužit jako výchozí koncový bod v rámci poskytovatele textu. <xref:System.Windows.Automation.Text.TextPatternRange.FindText%2A> a <xref:System.Windows.Automation.Text.TextPatternRange.FindAttribute%2A> vrácen nulový odkaz (`Nothing` v aplikaci Microsoft Visual Basic .NET) aby nedocházelo k záměnám s celou zjištěných oproti degenerovanou rozsahu.
+**Rozsah degenerovanou dimenzi**\
+Degenerovanou rozsah je rozsah textu znaku nula nebo prázdná. Pro účely TextPattern vzoru ovládacích prvků považuje textový kurzor (nebo stříšku systému) degenerovanou rozsahu. Pokud není vybraný žádný text, <xref:System.Windows.Automation.TextPattern.GetSelection%2A> vracel degenerovanou rozsahu na pozici kurzoru text a <xref:System.Windows.Automation.TextPattern.RangeFromPoint%2A> vracel degenerovanou rozsahu jako svůj výchozí koncový bod. <xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> a <xref:System.Windows.Automation.TextPattern.GetVisibleRanges%2A> může vracet degenerovanou rozsahy poskytovatele textu nelze nalézt žádné oblasti textu, které odpovídají dané podmínce. Tento rozsah degenerovanou může sloužit jako výchozí koncový bod v rámci poskytovatele textu. <xref:System.Windows.Automation.Text.TextPatternRange.FindText%2A> a <xref:System.Windows.Automation.Text.TextPatternRange.FindAttribute%2A> vrácen nulový odkaz (`Nothing` v aplikaci Microsoft Visual Basic .NET) aby nedocházelo k záměnám s celou zjištěných oproti degenerovanou rozsahu.
 
-**Vložený objekt** existují dva typy vložené objekty v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] textový model. Skládají se z textového obsahu prvky, jako jsou hypertextové odkazy nebo tabulky a ovládací prvky jako obrázky a tlačítka. Další informace najdete v tématu [přístup vložené objekty pomocí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md).
+**Vložený objekt**\
+Existují dva typy vložené objekty v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] textový model. Skládají se z textového obsahu prvky, jako jsou hypertextové odkazy nebo tabulky a ovládací prvky jako obrázky a tlačítka. Další informace najdete v tématu [přístup vložené objekty pomocí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md).
 
-**Koncový bod** absolutní <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> nebo <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> bod rozsah textu v rámci zásobník textu.
+**Koncový bod**\
+Absolutní <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> nebo <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> bod rozsah textu v rámci zásobník textu.
 
 ![Výčty TextPatternRangeEndpoint &#40;počáteční a koncové&#41;. ](../../../docs/framework/ui-automation/media/uia-textpattern-endpoints.PNG "UIA_TextPattern_Endpoints") následující obrázek znázorňuje sadu počátečního a koncového bodu.
 
-**TextRange** reprezentace rozpětí textu, počáteční a koncový bod v zásobník textu, včetně všech přidružených atributů a funkce.
+**TextRange**\
+Reprezentuje rozpětí textu, počáteční a koncový bod v zásobník textu, včetně všech přidružených atributů a funkce.
 
-<xref:System.Windows.Automation.Text.TextUnit> Předdefinované jednotka text (znak, word, řádku nebo odstavce) použitý pro navigaci v logických segmentů rozsah textu.
+<xref:System.Windows.Automation.Text.TextUnit>\
+Předdefinované jednotka text (znak, word, řádku nebo odstavce) použitý pro navigaci v logických segmentů rozsah textu.
 
 ## <a name="see-also"></a>Viz také:
 

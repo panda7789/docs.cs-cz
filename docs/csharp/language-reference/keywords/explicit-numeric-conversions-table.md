@@ -10,12 +10,12 @@ helpviewer_keywords:
 - types [C#], explicit numeric conversions
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
-ms.openlocfilehash: 24f7401538eb1eeb675e6c3de265688780d6b91a
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: d1533872850a953a38800aaeac85b9e6e565d374
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424200"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661367"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>Tabulka explicitních číselných převodů (referenční dokumentace jazyka C#)
 
@@ -32,9 +32,9 @@ V následující tabulce jsou uvedeny předdefinované explicitní převody mezi
 |[long](../builtin-types/integral-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `ulong`, nebo `char`|  
 |[ulong](../builtin-types/integral-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, nebo `char`|  
 |[char](char.md)|`sbyte`, `byte`, nebo `short`|  
-|[float](float.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, nebo `decimal`|  
-|[double](double.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`,or `decimal`|  
-|[decimal](decimal.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, nebo `double`|  
+|[float](../builtin-types/floating-point-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, nebo `decimal`|  
+|[double](../builtin-types/floating-point-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`,or `decimal`|  
+|[decimal](../builtin-types/floating-point-numeric-types.md)|`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, nebo `double`|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -70,6 +70,6 @@ V následující tabulce jsou uvedeny předdefinované explicitní převody mezi
 - [Přetypování a převody typu](../../programming-guide/types/casting-and-type-conversions.md)
 - [() – operátor](../operators/type-testing-and-conversion-operators.md#cast-operator-)
 - [Celočíselné typy](../builtin-types/integral-numeric-types.md)
-- [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
+- [Tabulka typů s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)

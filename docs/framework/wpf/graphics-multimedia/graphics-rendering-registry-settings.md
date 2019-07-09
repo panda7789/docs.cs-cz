@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 616c74ccd787d9acdcb2a3bbe281c2f43bb49c2e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1c61aa333c428e5cb811a5d19469516cbb813e3
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762706"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663161"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavení registru, které ovlivňují vykreslování grafiky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -33,7 +33,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
 |Nastavení|Popis|  
 |-------------|-----------------|  
 |**Zakázat možnost hardwarové akcelerace**|Určuje, zda by měla být povolená hardwarová akcelerace.|  
-|**Maximální hodnota Multisample**|Určuje, do jaké míry multisampling pro vyhlazení [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] obsah.|  
+|**Maximální hodnota Multisample**|Určuje úroveň multisampling vyhlazení 3D obsahu.|  
 |**Vyžaduje ovladačem grafické karty data nastavení**|Určuje, zda systém zakáže hardwarovou akceleraci ovladače vydané před listopadem 2004.|  
 |**Pomocí možnosti odkaz rasterizéru**|Určuje, zda [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používejte rasterizéru referenčního.|  
   
@@ -57,9 +57,9 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- **Maximální hodnota multisample** umožňuje nastavit maximální dobu, vyhlazení z [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] obsah. Pomocí této úrovni můžete zakázat [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] antialiasingu v [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] nebo ji povolit v [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)].  
+ **Maximální hodnota multisample** umožňuje nastavit maximální dobu, vyhlazení 3D obsahu. Pomocí této úrovni můžete zakázat 3D antialiasingu v [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] nebo ji povolit v [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)].  
   
- **Maximální hodnota multisample** je hodnota DWORD rozsahu od 0 do 16. Hodnota 0 určuje, že by mělo být zakázáno multisample vyhlazení 3D obsahu a hodnotu 16, pokusí se použít až 16 x multisample vyhlazení, pokud nepodporuje grafické karty. Mějte na paměti, že nastavení této hodnoty klíče registru na počítačích s ovladači XPDM způsobí aplikací použít velké množství paměti další videa, snížit výkon [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] vykreslování a má potenciál způsobit chyby vykreslování a problémy se stabilitou.  
+ **Maximální hodnota multisample** je hodnota DWORD rozsahu od 0 do 16. Hodnota 0 určuje, že by mělo být zakázáno multisample vyhlazení 3D obsahu a hodnotu 16, pokusí se použít až 16 x multisample vyhlazení, pokud nepodporuje grafické karty. Mějte na paměti, že nastavení této hodnoty klíče registru na počítačích s ovladači XPDM způsobí aplikací použít velké množství paměti další videa, snížit výkon 3D vykreslování a má potenciál docházet k chybám vykreslení a stability problémy.  
   
  Pokud není nastaven tento klíč registru, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výchozí hodnota je 0 XPDM ovladače a 4 pro WDDM ovladače.  
   

@@ -2,12 +2,12 @@
 title: Eskalace správy transakcí
 ms.date: 03/30/2017
 ms.assetid: 1e96331e-31b6-4272-bbbd-29ed1e110460
-ms.openlocfilehash: 1e40244e1f6b5ffd7b52584a5da121d1203f8376
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df2597d6fcce7fbd51f6f17bd42469cb7fcf3fdf
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630574"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662465"
 ---
 # <a name="transaction-management-escalation"></a>Eskalace správy transakcí
 Windows je hostitelem sadu služeb a moduly, které společně tvoří transakcí správce. Transakce řízení eskalace popisuje proces migrace transakcí z jednoho z komponenty správce transakcí.  
@@ -25,7 +25,7 @@ Windows je hostitelem sadu služeb a moduly, které společně tvoří transakc�
   
 - Nejméně jeden trvalý prostředek, který nepodporuje jednofázové oznámení je uveden v transakci.  
   
-- Nejméně dva trvalý prostředky, které podporují jednofázové oznámení jsou v transakci zapsán. Můžete například uvedení jednoho připojení s [!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] nezpůsobí transakce má být povýšen. Však kdykoli otevřít druhé připojení k [!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] databázi k zařazení, které způsobuje, že databáze <xref:System.Transactions> infrastruktury zjistí, že je druhý trvalý prostředek v transakci a eskaluje ho MSDTC transakce.  
+- Nejméně dva trvalý prostředky, které podporují jednofázové oznámení jsou v transakci zapsán. Například uvedení jednoho připojení s SQL Server 2005 nezpůsobí transakce má být povýšen. Však kdykoli otevřít druhé připojení k databázi systému SQL Server 2005 způsobuje, že databáze k zařazení, <xref:System.Transactions> infrastruktury zjistí, že je druhý trvalý prostředek v transakci a eskaluje ho MSDTC transakce.  
   
 - Požadavek na "zařazování" různé aplikační domény nebo jiný proces transakce je vyvolána. Můžete například serializace objektu transakce v rámci hranice domény aplikace. Objekt transakce je zařazené hodnotou, což znamená, že jakýkoliv pokus o ji předejte hranice domény aplikace (i ve stejném procesu) má za následek serializace objektu transakce. Objekty transakce můžete předat tím, že zavoláte na vzdálené metody, která přebírá <xref:System.Transactions.Transaction> jako parametr nebo vám může pokusu o přístup k vzdálené transakční obsluhovaná komponenty. Toto serializuje objekt transakce a má za následek eskalaci jako při serializován transakcí v rámci domény aplikace. Že distribuovaná a místní správce transakcí již není dostatečné.  
   

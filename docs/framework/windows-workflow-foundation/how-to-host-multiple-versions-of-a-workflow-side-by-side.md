@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09c575df-e0a3-4f3b-9e01-a7ac59d65287
-ms.openlocfilehash: 061a8c7b73903b763de27e614e9b3067777afe58
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85792aea8a72ffc0c9b579473332756c6ca3bb47
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64756026"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663841"
 ---
 # <a name="how-to-host-multiple-versions-of-a-workflow-side-by-side"></a>Postupy: Hostování několika verzí pracovního postupu současně
 
@@ -27,11 +27,11 @@ V tomto kroku kurzu `WriteLine` aktivitám v pracovním postupu jsou upraveny pr
 
 - [Chcete-li aktualizovat pracovní postupy](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateWorkflows)
 
-    - [Na aktualizaci pracovního postupu stavový stroj StateMachine](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateStateMachine)
+  - [Na aktualizaci pracovního postupu stavový stroj StateMachine](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateStateMachine)
 
-    - [Na aktualizaci pracovního postupu vývojového diagramu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateFlowchart)
+  - [Na aktualizaci pracovního postupu vývojového diagramu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateFlowchart)
 
-    - [Chcete-li aktualizovat sekvenčního pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateSequential)
+  - [Chcete-li aktualizovat sekvenčního pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateSequential)
 
 - [Chcete-li aktualizovat WorkflowVersionMap zahrnovat předchozí verze pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateWorkflowVersionMap)
 
@@ -68,7 +68,7 @@ V tomto kroku kurzu `WriteLine` aktivitám v pracovním postupu jsou upraveny pr
 
 ### <a name="BKMK_UpdateWorkflows"></a> Chcete-li aktualizovat pracovní postupy
 
- V této části se aktualizují definice pracovního postupu. Dva `WriteLine` aktivity, které váš názor na odhad uživatele jsou aktualizované a nový `WriteLine` je aktivita přidána, která poskytuje další informace o hry po uhodnout číslo.
+V této části se aktualizují definice pracovního postupu. Dva `WriteLine` aktivity, které váš názor na odhad uživatele jsou aktualizované a nový `WriteLine` je aktivita přidána, která poskytuje další informace o hry po uhodnout číslo.
 
 #### <a name="BKMK_UpdateStateMachine"></a> Na aktualizaci pracovního postupu stavový stroj StateMachine
 

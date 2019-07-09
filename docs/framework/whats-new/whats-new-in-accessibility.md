@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19d9752e1c7cfbc0a7c85e7cf8053c09c5baca7a
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: da73df97524b9e394fac795daf14a3f0fb1f4e3d
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425582"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661376"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v usnadnění přístupu v rozhraní .NET Framework
 
@@ -257,39 +257,39 @@ Od verze rozhraní .NET Framework 4.8, WPF zpřístupňuje tyto dvě vlastnosti 
 
 - Pomocí vlastnosti závislosti.
 
-   WPF přidá dva nové vlastnosti závislosti <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType>. Vývojáři mohou využít k nastavení jejich hodnot XAML:
+  WPF přidá dva nové vlastnosti závislosti <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType>. Vývojáři mohou využít k nastavení jejich hodnot XAML:
 
-   ```xaml
-   <Button AutomationProperties.SizeOfSet="3"
-     AutomationProperties.PositionInSet="1">Button 1</Button>
+  ```xaml
+  <Button AutomationProperties.SizeOfSet="3"
+    AutomationProperties.PositionInSet="1">Button 1</Button>
 
-   <Button AutomationProperties.SizeOfSet="3"
-     AutomationProperties.PositionInSet="2">Button 2</Button>
+  <Button AutomationProperties.SizeOfSet="3"
+    AutomationProperties.PositionInSet="2">Button 2</Button>
 
-   <Button AutomationProperties.SizeOfSet="3"
-     AutomationProperties.PositionInSet="3">Button 3</Button>
-   ```
+  <Button AutomationProperties.SizeOfSet="3"
+    AutomationProperties.PositionInSet="3">Button 3</Button>
+  ```
 
 - Tak, že přepíšete AutomationPeer virtuální metody.
 
-   <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> a <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore> virtuální metody byl přidán do třídy AutomationPeer. Vývojář můžete zadat hodnoty pro `SizeOfSet` a `PositionInSet` tak, že přepíšete těchto metod, jak je znázorněno v následujícím příkladu:
+  <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> a <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore> virtuální metody byl přidán do třídy AutomationPeer. Vývojář můžete zadat hodnoty pro `SizeOfSet` a `PositionInSet` tak, že přepíšete těchto metod, jak je znázorněno v následujícím příkladu:
 
-   ```csharp
-   public class MyButtonAutomationPeer : ButtonAutomationPeer
-   {
-      protected override int GetSizeOfSetCore()
-      {
-         // Call into your own logic to provide a value for SizeOfSet
-         return CalculateSizeOfSet();
-      }
+  ```csharp
+  public class MyButtonAutomationPeer : ButtonAutomationPeer
+  {
+    protected override int GetSizeOfSetCore()
+    {
+        // Call into your own logic to provide a value for SizeOfSet
+        return CalculateSizeOfSet();
+    }
 
-      protected override int GetPositionInSetCore()
-      {
-         // Call into your own logic to provide a value for PositionInSet
-         return CalculatePositionInSet();
-      }
-   }
-   ```
+    protected override int GetPositionInSetCore()
+    {
+        // Call into your own logic to provide a value for PositionInSet
+        return CalculatePositionInSet();
+    }
+  }
+  ```
 
 Kromě toho položky v <xref:System.Windows.Controls.ItemsControl> instancí zadejte hodnotu pro tyto vlastnosti automaticky bez další akce od vývojáře. Pokud <xref:System.Windows.Controls.ItemsControl> je seskupeny, kolekci skupin je reprezentována jako sada a každá skupina se přitom počítá jako samostatné sady s každou položku v rámci této skupiny poskytování jeho pozice v této skupině, jakož i velikost skupiny. Automatické hodnoty nejsou ovlivněny virtualizace. I v případě, že není realizované položku, se stále počítá směrem k celkové velikosti sady a má vliv na pozici v sadě položek na stejné úrovni.
 
@@ -447,10 +447,10 @@ Pro podporu živé oblastí, jsme přidali následující rozhraní API k použi
 
 - <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType> Výčet, který definuje následující možné **LiveSetting** hodnoty:
 
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>. Element neodešle oznámení, pokud došlo ke změně obsahu aktivní oblast.
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>. Element odešle-interruptive oznámení, pokud došlo ke změně obsahu aktivní oblast.
+  - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>. Element neodešle oznámení, pokud došlo ke změně obsahu aktivní oblast.
+  - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>. Element odešle-interruptive oznámení, pokud došlo ke změně obsahu aktivní oblast.
 
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=nameWithType>. Element odešle interruptive oznámení, pokud došlo ke změně obsahu aktivní oblast.
+  - <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=nameWithType>. Element odešle interruptive oznámení, pokud došlo ke změně obsahu aktivní oblast.
 
 Můžete vytvořit LiveRegion nastavením **AutomationProperties.LiveSetting** vlastnosti prvku, která vás zajímá, jak je znázorněno v následujícím příkladu:
 
@@ -478,81 +478,81 @@ Od verze rozhraní .NET Framework 4.7.1, vylepšení ve vysokém kontrastu byly 
 
 - <xref:System.Windows.Controls.Expander> Ovládací prvek
 
-    Visual pro zaměření <xref:System.Windows.Controls.Expander> je nyní ovládací prvek viditelný. Vizuály klávesnice pro <xref:System.Windows.Controls.ComboBox>,<xref:System.Windows.Controls.ListBox>, a <xref:System.Windows.Controls.RadioButton> ovládací prvky jsou také viditelné. Příklad:
+  Visual pro zaměření <xref:System.Windows.Controls.Expander> je nyní ovládací prvek viditelný. Vizuály klávesnice pro <xref:System.Windows.Controls.ComboBox>,<xref:System.Windows.Controls.ListBox>, a <xref:System.Windows.Controls.RadioButton> ovládací prvky jsou také viditelné. Příklad:
 
-    Před: 
+  Před: 
 
-    ![Rozšíření – ovládací prvek s fokusem před vylepšení přístupnosti](media/expander-before.png)
+  ![Rozšíření – ovládací prvek s fokusem před vylepšení přístupnosti](media/expander-before.png)
 
-    Po: 
+  Po: 
 
-    ![Rozšíření – ovládací prvek s fokusem po vylepšení přístupnosti](media/expander-after.png)
+  ![Rozšíření – ovládací prvek s fokusem po vylepšení přístupnosti](media/expander-after.png)
 
 - <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> ovládacích prvků
 
-    Text <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> ovládacích prvků je teď snazší zjistit při výběru v vysokokontrastních motivech. Příklad:
+  Text <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> ovládacích prvků je teď snazší zjistit při výběru v vysokokontrastních motivech. Příklad:
 
-    Před: 
+  Před: 
 
-    ![Vysoký kontrast – přepínač s fokusem před vylepšení přístupnosti](media/radio-button-before.png)
+  ![Vysoký kontrast – přepínač s fokusem před vylepšení přístupnosti](media/radio-button-before.png)
 
-    Po: 
+  Po: 
 
-    ![Vysoký kontrast – přepínač s fokusem po vylepšení přístupnosti](media/radio-button-after.png)
+  ![Vysoký kontrast – přepínač s fokusem po vylepšení přístupnosti](media/radio-button-after.png)
 
 - <xref:System.Windows.Controls.ComboBox> Ovládací prvek
 
-    Od verze rozhraní .NET Framework 4.7.1, ohraničení zakázané <xref:System.Windows.Controls.ComboBox> ovládací prvek se stejnou barvu jako neaktivního textu. Příklad:
+  Od verze rozhraní .NET Framework 4.7.1, ohraničení zakázané <xref:System.Windows.Controls.ComboBox> ovládací prvek se stejnou barvu jako neaktivního textu. Příklad:
 
-    Před: 
+  Před: 
 
-     ![Pole se seznamem zakázané ohraničení a text před vylepšení přístupnosti](media/combo-disabled-before.png)
+  ![Pole se seznamem zakázané ohraničení a text před vylepšení přístupnosti](media/combo-disabled-before.png)
 
-    Po:   
+  Po:   
 
-     ![Pole se seznamem zakázané ohraničení a text po vylepšení přístupnosti](media/combo-disabled-after.png)
+  ![Pole se seznamem zakázané ohraničení a text po vylepšení přístupnosti](media/combo-disabled-after.png)
 
-    Kromě toho tlačítka zakázáno a zaměřují se používají Barva motivu správné.
+  Kromě toho tlačítka zakázáno a zaměřují se používají Barva motivu správné.
 
-    Před:
+  Před:
 
-    ![Tlačítko barvy motivu před vylepšení přístupnosti](media/button-themes-before.png) 
+  ![Tlačítko barvy motivu před vylepšení přístupnosti](media/button-themes-before.png) 
 
-    Po: 
+  Po: 
 
-    ![Tlačítko barvy motivu po vylepšení přístupnosti](media/button-themes-after.png) 
+  ![Tlačítko barvy motivu po vylepšení přístupnosti](media/button-themes-after.png) 
 
-    Nakonec v rozhraní .NET Framework 4.7 a předchozími verzemi, nastavení <xref:System.Windows.Controls.ComboBox> stylu ovládacího prvku na `Toolbar.ComboBoxStyleKey` způsobila na šipku rozevíracího seznamu byla neviditelná. Tento problém vyřešen, od verze rozhraní .NET Framework 4.7.1. Příklad:
+  Nakonec v rozhraní .NET Framework 4.7 a předchozími verzemi, nastavení <xref:System.Windows.Controls.ComboBox> stylu ovládacího prvku na `Toolbar.ComboBoxStyleKey` způsobila na šipku rozevíracího seznamu byla neviditelná. Tento problém vyřešen, od verze rozhraní .NET Framework 4.7.1. Příklad:
 
-    Před: 
+  Před: 
 
-    ![Toolbar.ComboBoxStyleKey před vylepšení přístupnosti](media/comboboxstylekey-before.png) 
+  ![Toolbar.ComboBoxStyleKey před vylepšení přístupnosti](media/comboboxstylekey-before.png) 
 
-    Po: 
+  Po: 
 
-    ![Toolbar.ComboBoxStyleKey po vylepšení přístupnosti](media/comboboxstylekey-after.png) 
+  ![Toolbar.ComboBoxStyleKey po vylepšení přístupnosti](media/comboboxstylekey-after.png) 
 
 - <xref:System.Windows.Controls.DataGrid> Ovládací prvek
 
-    Od verze rozhraní .NET Framework 4.7.1, šipku indikátor řazení v <xref:System.Windows.Controls.DataGrid> řídí teď používá opravte barvy motivu. Příklad:
+  Od verze rozhraní .NET Framework 4.7.1, šipku indikátor řazení v <xref:System.Windows.Controls.DataGrid> řídí teď používá opravte barvy motivu. Příklad:
 
-    Před: 
+  Před: 
 
-    ![Šipka řazení před vylepšení přístupnosti](media/sort-indicator-before.png) 
+  ![Šipka řazení před vylepšení přístupnosti](media/sort-indicator-before.png) 
 
-    Po:   
+  Po:   
 
-    ![Řazení šipka po vylepšení přístupnosti](media/sort-indicator-after.png) 
+  ![Řazení šipka po vylepšení přístupnosti](media/sort-indicator-after.png) 
 
-    Kromě toho v rozhraní .NET Framework 4.7 a dřívějších verzích výchozí styl odkaz změnit k nesprávné barvě po pozastavení ukazatele myši v režimu vysokého kontrastu. Tento problém nevyřeší, od verze rozhraní .NET Framework 4.7.1. Obdobně <xref:System.Windows.Controls.DataGrid> sloupce zaškrtávací políčko používá očekávané barvy pro zpětnou vazbu fokus klávesnice, která je od verze rozhraní .NET Framework 4.7.1.
+  Kromě toho v rozhraní .NET Framework 4.7 a dřívějších verzích výchozí styl odkaz změnit k nesprávné barvě po pozastavení ukazatele myši v režimu vysokého kontrastu. Tento problém nevyřeší, od verze rozhraní .NET Framework 4.7.1. Obdobně <xref:System.Windows.Controls.DataGrid> sloupce zaškrtávací políčko používá očekávané barvy pro zpětnou vazbu fokus klávesnice, která je od verze rozhraní .NET Framework 4.7.1.
 
-    Před: 
+  Před: 
 
-    ![DataGrid – výchozí odkaz styl před vylepšení přístupnosti](media/default-link-style-before.png) 
+  ![DataGrid – výchozí odkaz styl před vylepšení přístupnosti](media/default-link-style-before.png) 
 
-    Po:    
+  Po:    
 
-    ![DataGrid – výchozí odkaz styl po vylepšení přístupnosti](media/default-link-style-after.png) 
+  ![DataGrid – výchozí odkaz styl po vylepšení přístupnosti](media/default-link-style-after.png) 
 
 Další informace o vylepšení přístupnosti WPF v rozhraní .NET Framework 4.7.1 najdete v tématu [vylepšení přístupnosti v subsystému WPF](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf).
 
@@ -581,13 +581,13 @@ Mezi příklady vysoký kontrast – změny patří:
 
 - Neaktivní text je lépe čitelný. Příklad:
 
-    Před:
+  Před:
 
-    ![Neaktivní text před vylepšení přístupnosti](media/wf-disabled-before.png) 
+  ![Neaktivní text před vylepšení přístupnosti](media/wf-disabled-before.png) 
 
-    Po:
+  Po:
 
-    ![Neaktivní text po vylepšení přístupnosti](media/wf-disabled-after.png) 
+  ![Neaktivní text po vylepšení přístupnosti](media/wf-disabled-after.png) 
 
 - Vysoký kontrast – vylepšení v dialogovém okně výjimky vlákna.
 

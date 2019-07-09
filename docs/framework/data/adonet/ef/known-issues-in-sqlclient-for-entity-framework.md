@@ -2,12 +2,12 @@
 title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 5c500a61a00914df7b106b7e89485921123e56ec
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 8cadb234ffc0f00049edd0c09475031eeec275df
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489535"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662260"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
 Tato část popisuje známé problémy související s zprostředkovatele dat .NET Framework pro SQL Server (SqlClient).  
@@ -21,7 +21,7 @@ Tato část popisuje známé problémy související s zprostředkovatele dat .N
  Pokud non -`null` předanou jako první argument a 0 je předána jako druhý argument `RIGHT(nvarchar(max)`, 0`)` nebo `RIGHT(varchar(max)`, 0`)`, `NULL` místo bude vrácena hodnota `empty` řetězec.  
   
 ## <a name="cross-and-outer-apply-operators"></a>RŮZNÉ a vnější použít operátory  
- RŮZNÉ a operátoru OUTER APPLY operátory byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)]. V některých případech může být vytvoření kanálu dotazu příkaz jazyka Transact-SQL, který obsahuje operátory CROSS APPLY a/nebo operátoru OUTER APPLY. Protože někteří poskytovatelé back-end, včetně verze SQL serveru starší než [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], nepodporují tyto operátory, tyto dotazy se nedá spustit na těchto zprostředkovatelů back-endu.  
+ RŮZNÉ a operátoru OUTER APPLY operátory byly zavedeny v systému SQL Server 2005. V některých případech může být vytvoření kanálu dotazu příkaz jazyka Transact-SQL, který obsahuje operátory CROSS APPLY a/nebo operátoru OUTER APPLY. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí systému SQL Server starších než SQL Server 2005 nepodporuje tyto operátory, tyto dotazy se nedá spustit na těchto zprostředkovatelů back-endu.  
   
  Následují některé typické scénáře, které by mohly vést k přítomnost CROSS APPLY a/nebo operátoru OUTER APPLY operátory v dotazu výstup:  
   
@@ -36,7 +36,7 @@ Tato část popisuje známé problémy související s zprostředkovatele dat .N
 - Vytvořit dotaz, který má DEREF přes konstrukci REF.  
   
 ## <a name="skip-operator"></a>Operátor SKIP  
- Pokud používáte [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)], pomocí přeskočit s klauzulí ORDER BY v neklíčových sloupců může vrátit nesprávné výsledky. Větší než zadaný počet řádků se možná přeskočí, pokud neklíčový sloupec v sobě obsahuje duplicitní data. Je to kvůli jak SKIP je přeložen pro [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]. Například následující dotaz, více než pět řádků možná přeskočí, pokud `E.NonKeyColumn` obsahují duplicitní hodnoty:  
+ Pokud používáte SQL Server 2000, pomocí přeskočit s klauzulí ORDER BY v neklíčových sloupců může vrátit nesprávné výsledky. Větší než zadaný počet řádků se možná přeskočí, pokud neklíčový sloupec v sobě obsahuje duplicitní data. To je způsobeno jak SKIP je přeložen pro SQL Server 2000. Například následující dotaz, více než pět řádků možná přeskočí, pokud `E.NonKeyColumn` obsahují duplicitní hodnoty:  
   
 ```  
 SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L  

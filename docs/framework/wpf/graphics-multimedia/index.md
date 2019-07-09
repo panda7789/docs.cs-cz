@@ -12,12 +12,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 58ee58577b9ff71112103abb4d33c8b85d3c806f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a770bcbbc8ac553c55e9dda5097abec8790182e5
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786089"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663734"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 
@@ -59,7 +59,7 @@ WPF obsahuje podporu pro vysoce kvalitní 2D grafika. Funkce zahrnuje štětce, 
 
 ### <a name="2-d-shapes"></a>2D obrazce
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu běžně používané, vykreslované uživatelem vektoru [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] tvary, třeba obdélníky a symbol tří teček, které ukazuje následující obrázek.
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu běžně používaných, vykreslované uživatelem vektoru 2D tvary, třeba obdélníky a symbol tří teček, které ukazuje následující obrázek.
 
 ![Diagram znázorňující tři tečky a obdélníky.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
 
@@ -101,7 +101,7 @@ Další informace najdete v tématu [tvary a základní kresby v přehledu WPF](
 
 ### <a name="2-d-geometries"></a>2D geometrie
 
-Když [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] obrazce, která [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje nestačí, můžete použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podpora geometrie a cesty k vytvoření vlastní. Následující obrázek ukazuje, jak můžete pomocí geometrie vytvoření tvarů, jako kreslicího štětce a další Galerie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] elementy.
+Když 2 D obrazce, která [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje nestačí, můžete použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podpora geometrie a cesty k vytvoření vlastní. Následující obrázek ukazuje, jak můžete pomocí geometrie vytvoření tvarů, jako kreslicího štětce a další Galerie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] elementy.
 
 ![Snímek obrazovky ukazující, jak můžete geometrie pro vytvoření tvarů.](./media/index/use-geometries-create-shapes.png)
 
@@ -109,7 +109,7 @@ Další informace najdete v tématu [přehled geometrie](geometry-overview.md). 
 
 ### <a name="2-d-effects"></a>2D efekty
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] třídy, které vám umožní vytvořit různé účinky. [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] Možnosti vykreslování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, rastrových obrázků, kreseb a videa; a s nimi manipulovat s použitím otočení, škálování a zkosení. Následující obrázek poskytuje příklad mnoho efektů, můžete dosáhnout použitím [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] stopy.
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu třídy 2D, které vám umožní vytvořit různé účinky. Možnosti vykreslování 2D [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, rastrových obrázků, kreseb a videa; a s nimi manipulovat s použitím otočení, škálování a zkosení. Následující obrázek poskytuje příklad mnoho efektů, můžete dosáhnout použitím [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] stopy.
 
 ![Ilustrace znázorňující různých štětců WPF a Malování prvky.](./media/index/brushes-paint-elements.png)
 
@@ -119,7 +119,7 @@ Další informace najdete v tématu [přehled štětců WPF](wpf-brushes-overvie
 
 ## <a name="3-d-rendering"></a>3D vykreslování
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje sadu [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] možnosti vykreslování, které se integrují s [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafické podpory v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvářet zajímavější rozložení, aby [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], dat a jejich vizualizace. Na jednom konci spektra [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Umožňuje vykreslit [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] bitové kopie na povrchy [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] tvary, které ukazuje následující obrázek.
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje sadu možnosti 3D vykreslování, které se integrují s podporou 2D grafika v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvářet zajímavější rozložení, aby [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], dat a jejich vizualizace. Na jednom konci spektra [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslení obrázků 2D na povrchy tvarů 3D, které ukazuje následující obrázek.
 
 ![Snímek obrazovky zobrazující tvarů 3D s různé textury vzorku.](./media/index/visual-three-dimensional-shape.png)
 

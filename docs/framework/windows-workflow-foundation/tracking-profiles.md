@@ -2,12 +2,12 @@
 title: Sledování profilů
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-ms.openlocfilehash: c934ec9fd0524506577ab4457a2ec194d4d0cba7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a643cf37bbb3e72baefb434249aa54b386060627
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589932"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660926"
 ---
 # <a name="tracking-profiles"></a>Sledování profilů
 
@@ -63,9 +63,9 @@ Sledování záznamy jsou filtrovány pomocí režim viditelnosti v rámci profi
 
 Viditelnost dva režimy určené `implementationVisibility` atributu v profilu sledování `RootScope` a `All`. Použití `RootScope` režimu potlačí na sledování záznamy aktivity, které tvoří implementaci aktivity v případě, kdy složené aktivity není kořenem pracovního postupu. Z toho vyplývá, že když aktivita, která je implementována pomocí další aktivity se přidá do pracovního postupu a `implementationVisibility` nastavíte RootScope, jsou sledovány pouze nejvyšší úrovně aktivity v rámci složené aktivity. Pokud aktivita je kořenového pracovního postupu, je provádění aktivity pracovního postupu pro aktivity, které tvoří implementaci jsou emitovány samostatně a sledování záznamů. Všechny režimu povoluje všechny záznamy sledování, aby byly vypuštěny kořenové aktivity a všechny složené aktivity.
 
-Předpokládejme například, že *MyActivity* je složená aktivita, jejíž implementace obsahuje dvě aktivity *aktivity "activity1"* a *"activity2"*. Když je tato aktivita přidána do pracovního postupu a je povoleno sledování pomocí profilu sledování s `implementationVisibility` nastavena na `RootScope`, jsou vydávány sledování záznamů pouze pro *MyActivity*. Nicméně jsou emitovány žádné záznamy pro aktivity *aktivity "activity1"* a *"activity2"*.
+Předpokládejme například, že *MyActivity* je složená aktivita, jejíž implementace obsahuje dvě aktivity *aktivity "activity1"* a *"activity2"* . Když je tato aktivita přidána do pracovního postupu a je povoleno sledování pomocí profilu sledování s `implementationVisibility` nastavena na `RootScope`, jsou vydávány sledování záznamů pouze pro *MyActivity*. Nicméně jsou emitovány žádné záznamy pro aktivity *aktivity "activity1"* a *"activity2"* .
 
-Ale pokud `implementationVisibility` atribut profilu sledování je nastavený na `All`, pak jsou vydávány sledování záznamů nejen *MyActivity*, ale také pro aktivity *aktivity "activity1"* a  *"Activity2"*.
+Ale pokud `implementationVisibility` atribut profilu sledování je nastavený na `All`, pak jsou vydávány sledování záznamů nejen *MyActivity*, ale také pro aktivity *aktivity "activity1"* a  *"Activity2"* .
 
 `implementationVisibility` Příznak platí pro následující typy záznamů sledování:
 
@@ -112,199 +112,199 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
 
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery> – Můžete tak sledovat změny životního cyklu instance pracovního postupu jako dříve-jsme vám ukázali `Started` a `Completed`. <xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>
 
-    Stavy, které se můžete přihlásit k odběru jsou uvedeny v <xref:System.Activities.Tracking.WorkflowInstanceStates> třídy.
+  Stavy, které se můžete přihlásit k odběru jsou uvedeny v <xref:System.Activities.Tracking.WorkflowInstanceStates> třídy.
 
-    Konfigurace nebo kódu používá k odběru na úrovni instance sledování záznamů pro pracovní postup `Started` pomocí stav instance <xref:System.Activities.Tracking.WorkflowInstanceQuery> je znázorněno v následujícím příkladu.
+  Konfigurace nebo kódu používá k odběru na úrovni instance sledování záznamů pro pracovní postup `Started` pomocí stav instance <xref:System.Activities.Tracking.WorkflowInstanceQuery> je znázorněno v následujícím příkladu.
 
-    ```xml
-    <workflowInstanceQueries>
-        <workflowInstanceQuery>
-          <states>
-            <state name="Started"/>
-          </states>
-        </workflowInstanceQuery>
-    </workflowInstanceQueries>
-    ```
+  ```xml
+  <workflowInstanceQueries>
+      <workflowInstanceQuery>
+        <states>
+          <state name="Started"/>
+        </states>
+      </workflowInstanceQuery>
+  </workflowInstanceQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new WorkflowInstanceQuery()
-            {
-                States = { WorkflowInstanceStates.Started}
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new WorkflowInstanceQuery()
+          {
+              States = { WorkflowInstanceStates.Started}
+          }
+      }
+  };
+  ```
 
 - <xref:System.Activities.Tracking.ActivityStateQuery> – Tuto možnost použijte sledování změn životního cyklu aktivit, které tvoří instance pracovního postupu. Můžete například sledovat, pokaždé, když dokončí "Odeslat E-Mail" aktivity v rámci instance pracovního postupu. Tento dotaz je nezbytné pro <xref:System.Activities.Tracking.TrackingParticipant> přihlásit k odběru <xref:System.Activities.Tracking.ActivityStateRecord> objekty. Dostupné stavy přihlásit k odběru jsou uvedeny v <xref:System.Activities.Tracking.ActivityStates>.
 
-    Konfigurace a kód používá k registraci záznamů o sledování stavu aktivity, které používají <xref:System.Activities.Tracking.ActivityStateQuery> pro `SendEmailActivity` aktivity je znázorněno v následujícím příkladu.
+  Konfigurace a kód používá k registraci záznamů o sledování stavu aktivity, které používají <xref:System.Activities.Tracking.ActivityStateQuery> pro `SendEmailActivity` aktivity je znázorněno v následujícím příkladu.
 
-    ```xml
-    <activityStateQueries>
-      <activityStateQuery activityName="SendEmailActivity">
-        <states>
-          <state name="Closed"/>
-        </states>
-      </activityStateQuery>
-    </activityStateQueries>
-    ```
+  ```xml
+  <activityStateQueries>
+    <activityStateQuery activityName="SendEmailActivity">
+      <states>
+        <state name="Closed"/>
+      </states>
+    </activityStateQuery>
+  </activityStateQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new ActivityStateQuery()
-            {
-                ActivityName = "SendEmailActivity",
-                States = { ActivityStates.Closed }
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new ActivityStateQuery()
+          {
+              ActivityName = "SendEmailActivity",
+              States = { ActivityStates.Closed }
+          }
+      }
+  };
+  ```
 
-    > [!NOTE]
-    > Pokud více activityStateQuery elementy mají stejný název, stavy v posledním elementu se používají v profilu sledování.
+  > [!NOTE]
+  > Pokud více activityStateQuery elementy mají stejný název, stavy v posledním elementu se používají v profilu sledování.
 
 - <xref:System.Activities.Tracking.ActivityScheduledQuery> – Tento dotaz můžete ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený. Dotaz, je nezbytné pro <xref:System.Activities.Tracking.TrackingParticipant> přihlásit k odběru <xref:System.Activities.Tracking.ActivityScheduledRecord> objekty.
 
-    Konfigurace a kód používaný k přihlásit k odběru záznamů související s `SendEmailActivity` podřízená aktivita naplánované pomocí <xref:System.Activities.Tracking.ActivityScheduledQuery> je znázorněno v následujícím příkladu.
+  Konfigurace a kód používaný k přihlásit k odběru záznamů související s `SendEmailActivity` podřízená aktivita naplánované pomocí <xref:System.Activities.Tracking.ActivityScheduledQuery> je znázorněno v následujícím příkladu.
 
-    ```xml
-    <activityScheduledQueries>
-      <activityScheduledQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
-     </activityScheduledQueries>
-    ```
+  ```xml
+  <activityScheduledQueries>
+    <activityScheduledQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
+  </activityScheduledQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new ActivityScheduledQuery()
-            {
-                ActivityName = "ProcessNotificationsActivity",
-                ChildActivityName = "SendEmailActivity"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new ActivityScheduledQuery()
+          {
+              ActivityName = "ProcessNotificationsActivity",
+              ChildActivityName = "SendEmailActivity"
+          }
+      }
+  };
+  ```
 
 - <xref:System.Activities.Tracking.FaultPropagationQuery> – Použijte to ke sledování zpracování chyb, ke kterým dochází v rámci aktivity. Dotaz, je nezbytné pro <xref:System.Activities.Tracking.TrackingParticipant> přihlásit k odběru <xref:System.Activities.Tracking.FaultPropagationRecord> objekty.
 
-    Konfigurace a kód používaný k přihlásit k odběru záznamů související s pomocí šíření chyb <xref:System.Activities.Tracking.FaultPropagationQuery> je znázorněno v následujícím příkladu.
+  Konfigurace a kód používaný k přihlásit k odběru záznamů související s pomocí šíření chyb <xref:System.Activities.Tracking.FaultPropagationQuery> je znázorněno v následujícím příkladu.
 
-    ```xml
-    <faultPropagationQueries>
-      <faultPropagationQuery faultSourceActivityName="SendEmailActivity" faultHandlerActivityName="NotificationsFaultHandler" />
-    </faultPropagationQueries>
-    ```
+  ```xml
+  <faultPropagationQueries>
+    <faultPropagationQuery faultSourceActivityName="SendEmailActivity" faultHandlerActivityName="NotificationsFaultHandler" />
+  </faultPropagationQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new FaultPropagationQuery()
-            {
-                FaultSourceActivityName = "SendEmailActivity",
-                FaultHandlerActivityName = "NotificationsFaultHandler"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new FaultPropagationQuery()
+          {
+              FaultSourceActivityName = "SendEmailActivity",
+              FaultHandlerActivityName = "NotificationsFaultHandler"
+          }
+      }
+  };
+  ```
 
 - <xref:System.Activities.Tracking.CancelRequestedQuery> – Použijte to ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz, je nezbytné pro <xref:System.Activities.Tracking.TrackingParticipant> přihlásit k odběru <xref:System.Activities.Tracking.CancelRequestedRecord> objekty.
 
-    Konfigurace a kód používaný k přihlásit k odběru záznamů týkající se použití aktivity zrušení <xref:System.Activities.Tracking.CancelRequestedQuery> je znázorněno v následujícím příkladu.
+  Konfigurace a kód používaný k přihlásit k odběru záznamů týkající se použití aktivity zrušení <xref:System.Activities.Tracking.CancelRequestedQuery> je znázorněno v následujícím příkladu.
 
-    ```xml
-    <cancelRequestedQueries>
-      <cancelRequestedQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
-    </cancelRequestedQueries>
-    ```
+  ```xml
+  <cancelRequestedQueries>
+    <cancelRequestedQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
+  </cancelRequestedQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new CancelRequestedQuery()
-            {
-                ActivityName = "ProcessNotificationsActivity",
-                ChildActivityName = "SendEmailActivity"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new CancelRequestedQuery()
+          {
+              ActivityName = "ProcessNotificationsActivity",
+              ChildActivityName = "SendEmailActivity"
+          }
+      }
+  };
+  ```
 
 - <xref:System.Activities.Tracking.CustomTrackingQuery> – Tuto možnost použijte sledování událostí, které definujete své kód aktivity. Dotaz, je nezbytné pro <xref:System.Activities.Tracking.TrackingParticipant> přihlásit k odběru <xref:System.Activities.Tracking.CustomTrackingRecord> objekty.
 
-    Konfigurace a kód používaný k přihlásit k odběru záznamů související s vlastní sledování záznamů pomocí <xref:System.Activities.Tracking.CustomTrackingQuery> je znázorněno v následujícím příkladu.
+  Konfigurace a kód používaný k přihlásit k odběru záznamů související s vlastní sledování záznamů pomocí <xref:System.Activities.Tracking.CustomTrackingQuery> je znázorněno v následujícím příkladu.
 
-    ```xml
-    <customTrackingQueries>
-      <customTrackingQuery name="EmailAddress" activityName="SendEmailActivity" />
-    </customTrackingQueries>
-    ```
+  ```xml
+  <customTrackingQueries>
+    <customTrackingQuery name="EmailAddress" activityName="SendEmailActivity" />
+  </customTrackingQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new CustomTrackingQuery()
-            {
-                Name = "EmailAddress",
-                ActivityName = "SendEmailActivity"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new CustomTrackingQuery()
+          {
+              Name = "EmailAddress",
+              ActivityName = "SendEmailActivity"
+          }
+      }
+  };
+  ```
 
 - <xref:System.Activities.Tracking.BookmarkResumptionQuery> – Použijte to ke sledování obnovení záložku v instanci pracovního postupu. Tento dotaz je nezbytné pro <xref:System.Activities.Tracking.TrackingParticipant> přihlásit k odběru <xref:System.Activities.Tracking.BookmarkResumptionRecord> objekty.
 
-    Konfigurace a kód používaný k přihlásit k odběru záznamů týkající se použití obnovení záložku <xref:System.Activities.Tracking.BookmarkResumptionQuery> je znázorněno v následujícím příkladu.
+  Konfigurace a kód používaný k přihlásit k odběru záznamů týkající se použití obnovení záložku <xref:System.Activities.Tracking.BookmarkResumptionQuery> je znázorněno v následujícím příkladu.
 
-    ```xml
-    <bookmarkResumptionQueries>
-      <bookmarkResumptionQuery name="SentEmailBookmark" />
-    </bookmarkResumptionQueries>
-    ```
+  ```xml
+  <bookmarkResumptionQueries>
+    <bookmarkResumptionQuery name="SentEmailBookmark" />
+  </bookmarkResumptionQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new BookmarkResumptionQuery()
-            {
-                Name = "sentEmailBookmark"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new BookmarkResumptionQuery()
+          {
+              Name = "sentEmailBookmark"
+          }
+      }
+  };
+  ```
 
 ### <a name="annotations"></a>Poznámky
 
@@ -352,38 +352,38 @@ Tady jsou některé běžné příklady sledování profilů.
 
 - Profil sledování získat záznamy instance pracovního postupu a chyb.
 
-```xml
-<trackingProfile name="Instance and Fault Records">
-  <workflow activityDefinitionId="*">
-    <workflowInstanceQueries>
-      <workflowInstanceQuery>
-        <states>
-          <state name="*" />
-        </states>
-      </workflowInstanceQuery>
-    </workflowInstanceQueries>
-    <activityStateQueries>
-      <activityStateQuery activityName="*">
-        <states>
-          <state name="Faulted"/>
-        </states>
-      </activityStateQuery>
-    </activityStateQueries>
-  </workflow>
-</trackingProfile>
-```
+  ```xml
+  <trackingProfile name="Instance and Fault Records">
+    <workflow activityDefinitionId="*">
+      <workflowInstanceQueries>
+        <workflowInstanceQuery>
+          <states>
+            <state name="*" />
+          </states>
+        </workflowInstanceQuery>
+      </workflowInstanceQueries>
+      <activityStateQueries>
+        <activityStateQuery activityName="*">
+          <states>
+            <state name="Faulted"/>
+          </states>
+        </activityStateQuery>
+      </activityStateQueries>
+    </workflow>
+  </trackingProfile>
+  ```
 
-1. Profil sledování získat všechny vlastní sledování záznamů.
+- Profil sledování získat všechny vlastní sledování záznamů.
 
-```xml
-<trackingProfile name="Instance_And_Custom_Records">
-  <workflow activityDefinitionId="*">
-    <customTrackingQueries>
-      <customTrackingQuery name="*" activityName="*" />
-    </customTrackingQueries>
-  </workflow>
-</trackingProfile>
-```
+  ```xml
+  <trackingProfile name="Instance_And_Custom_Records">
+    <workflow activityDefinitionId="*">
+      <customTrackingQueries>
+        <customTrackingQuery name="*" activityName="*" />
+      </customTrackingQueries>
+    </workflow>
+  </trackingProfile>
+  ```
 
 ## <a name="see-also"></a>Viz také:
 

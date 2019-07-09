@@ -2,12 +2,12 @@
 title: Z (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
-ms.openlocfilehash: 36e3059869ed048bd7c5294c4f5f5407288610b2
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 69a6af868ace384a63d08d705c395b58a173ca8e
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489938"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662158"
 ---
 # <a name="from-entity-sql"></a>Z (Entity SQL)
 Určuje kolekci používané [vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) příkazy.  
@@ -96,7 +96,7 @@ LOB.Customers
 >  Na rozdíl od není nutné pro explicitní unnest krok v příkazů jazyka Transact-SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 > [!NOTE]
->  `CROSS` a `OUTER APPLY` operátory byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)]. V některých případech může být kanálu dotazu jazyka Transact-SQL, který obsahuje `CROSS APPLY` a/nebo `OUTER APPLY` operátory. Protože někteří poskytovatelé back-end, včetně verze SQL serveru starší než [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)], nepodporují tyto operátory, tyto dotazy se nedá spustit na těchto zprostředkovatelů back-endu.  
+>  `CROSS` a `OUTER APPLY` operátory byly zavedeny v systému SQL Server 2005. V některých případech může být kanálu dotazu jazyka Transact-SQL, který obsahuje `CROSS APPLY` a/nebo `OUTER APPLY` operátory. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí systému SQL Server starších než SQL Server 2005 nepodporuje tyto operátory, tyto dotazy se nedá spustit na těchto zprostředkovatelů back-endu.  
 >   
 >  Některé typické scénáře, které by mohly vést k výskytu `CROSS APPLY` a/nebo `OUTER APPLY` operátory v dotazu výstupu jsou následující: korelační poddotaz s stránkování; AnyElement přes korelační poddotaz nebo kolekci vytvořenou testovaným navigace; LINQ dotazy, které používají metody, které přijímají elementu selektoru; seskupení dotaz, ve kterém `CROSS APPLY` nebo `OUTER APPLY` jsou explicitně zadány; dotaz, který má `DEREF` vytvořit přes `REF` vytvořit.  
   

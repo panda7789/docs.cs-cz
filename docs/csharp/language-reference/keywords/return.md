@@ -9,12 +9,12 @@ helpviewer_keywords:
 - return statement [C#]
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
-ms.openlocfilehash: 3e89f2f854d1f66ca2d7bf1cfa5a507c267798f8
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: a845ce257bf7f0cf0e64d6815b2278f6cec946e7
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422726"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661618"
 ---
 # <a name="return-c-reference"></a>return (Referenční dokumentace jazyka C#)
 
@@ -24,7 +24,7 @@ ms.locfileid: "66422726"
 
 ## <a name="example"></a>Příklad
 
- V následujícím příkladu metoda `CalculateArea()` vrátí lokální proměnná `area` jako [double](double.md) hodnotu.
+ V následujícím příkladu metoda `CalculateArea()` vrátí lokální proměnná `area` jako `double` hodnotu.
 
 [!code-csharp[csrefKeywordsJump#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#6)]  
 

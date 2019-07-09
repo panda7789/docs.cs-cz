@@ -2,12 +2,12 @@
 title: SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 9a5d6d39-d955-43a5-a5c2-931c239398f1
-ms.openlocfilehash: d81499961e7e47bba3b2594ddddd192c87a4a936
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8933a975c075407066bff97672f1b82f125bb47
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879112"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662108"
 ---
 # <a name="sqlclient-for-the-entity-framework"></a>SqlClient pro Entity Framework
 Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlClient), která umožňuje rozhraní Entity Framework pracovat prostřednictvím systému Microsoft SQL Server.  
@@ -20,7 +20,7 @@ Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlCl
 ## <a name="providermanifesttoken-schema-attribute"></a>Atribut ProviderManifestToken schématu  
  `ProviderManifestToken` je povinný atribut `Schema` prvek SSDL. Tento token se používá k načtení manifestu zprostředkovatele pro scénáře v režimu offline. Další informace o `ProviderManifestToken` atributu naleznete v tématu [Element schématu (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl).  
   
- SqlClient slouží jako zprostředkovatel dat pro různé verze systému SQL Server. Tyto verze mají různé možnosti. Například [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] nepodporuje `varchar(max)` a `nvarchar(max)` typy, které byly představeny s nástrojem [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].  
+ SqlClient slouží jako zprostředkovatel dat pro různé verze systému SQL Server. Tyto verze mají různé možnosti. Například SQL Server 2000 nepodporuje `varchar(max)` a `nvarchar(max)` typy, které byly představeny s nástrojem SQL Server 2005.  
   
  SqlClient vytváří a přijímá následující tokeny manifestu zprostředkovatele pro různé verze systému SQL Server.  
   

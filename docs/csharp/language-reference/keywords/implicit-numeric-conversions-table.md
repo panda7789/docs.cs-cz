@@ -8,12 +8,12 @@ helpviewer_keywords:
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-ms.openlocfilehash: 9c3efe1dbea355e8bc00ef44e08efcc9d0e0bdca
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 516505ccacfd2a8a5c275b0de033e1316fa06d3a
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424169"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661346"
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
 
@@ -30,11 +30,11 @@ V následující tabulce jsou uvedeny předdefinované implicitní převody mezi
 |[uint](../builtin-types/integral-numeric-types.md)|`long`, `ulong`, `float`, `double`, nebo `decimal`|  
 |[long](../builtin-types/integral-numeric-types.md)|`float`, `double`, nebo `decimal`|  
 |[ulong](../builtin-types/integral-numeric-types.md)|`float`, `double`, nebo `decimal`|  
-|[float](float.md)|`double`|  
+|[float](../builtin-types/floating-point-numeric-types.md)|`double`|  
   
 ## <a name="remarks"></a>Poznámky  
 
-- Žádné [celočíselného typu](../builtin-types/integral-numeric-types.md) implicitně převést na libovolný [s plovoucí desetinnou čárkou typu](floating-point-types-table.md).
+- Žádné [celočíselného typu](../builtin-types/integral-numeric-types.md) implicitně převést na libovolný [s plovoucí desetinnou čárkou typu](../builtin-types/floating-point-numeric-types.md).
 
 - Přesnost, ale nikoli velikost může být ztraceno v převody z `int`, `uint`, `long`, nebo `ulong` k `float` a z `long` nebo `ulong` k `double`.  
   
@@ -58,7 +58,7 @@ Další informace o implicitních převodů, najdete v článku [implicitních p
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Celočíselné typy](../builtin-types/integral-numeric-types.md)
-- [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
+- [Tabulka typů s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)
 - [Přetypování a převody typu](../../programming-guide/types/casting-and-type-conversions.md)

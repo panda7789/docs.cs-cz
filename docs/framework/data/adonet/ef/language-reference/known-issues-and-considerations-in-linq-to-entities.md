@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: e84319c60534c3ecf154c3f58973bcc429a73842
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: d7d87a3e95cf66efb91b71f6ff3c7c9bb1fbb311
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539827"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662152"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Známé problémy a aspekty u LINQ to Entities
 Tato část obsahuje informace o známých problémech s dotazy LINQ na dotazy na entity.  
@@ -35,7 +35,7 @@ Tato část obsahuje informace o známých problémech s dotazy LINQ na dotazy n
   
 <a name="OrderingInfoLost"></a>   
 ## <a name="ordering-information-lost"></a>Informace o ztrátě objednávce  
- Projekce sloupce do anonymního typu způsobí, že pořadí informace, které ztraceno v nějaké dotazy, které jsou spouštěny proti [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)] databáze nastavená na úroveň kompatibility "80".  Proběhne, když název sloupce v seznamu order by odpovídá názvu sloupce v modulu pro výběr, jak je znázorněno v následujícím příkladu:  
+ Projekce sloupce do anonymního typu způsobí, že pořadí informace, které ztraceno v nějaké dotazy, které jsou vykonávány na databázi systému SQL Server 2005 nastavené na úroveň kompatibility "80".  Proběhne, když název sloupce v seznamu order by odpovídá názvu sloupce v modulu pro výběr, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt543840)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt543840)]  

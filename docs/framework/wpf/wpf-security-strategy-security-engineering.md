@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: 9123d59709b483c72ab49652bda1e547430fa33d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c28fc87a71a1262ed5b3a6a04f615efc58e685ab
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663252"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663349"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpečný kód. Je klíčovým prvkem Trustworthy Computing iniciativa zaměřená [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Je technický postup, který se používá ve spojení s standardní technického procesu usnadňuje poskytování zabezpečeného kódu. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Sestává z deset fází, které kombinují osvědčené postupy s oblast, measurability a další strukturu, včetně:  
@@ -71,13 +71,13 @@ Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpe�
   
 - **Předpona/nástroje Prefast**: Zjistí ohrožení zabezpečení a běžné problémy se zabezpečením v nespravovaném kódu, jako je například přetečení vyrovnávací paměti, problémy řetězec formátu a kontroly chyb.  
   
-- **Rozhraní API zakázané**: Hledání zdrojového kódu k identifikaci nechtěné funkcí, které jsou dobře známé pro způsobuje problémy se zabezpečením, jako například `strcpy`. Jakmile jej rozpoznáte, tyto funkce jsou nahrazeny alternativy, které jsou lepší zabezpečení.  
+- **Rozhraní API zakázané**: Hledání zdrojového kódu k identifikaci nechtěné funkcí, které jsou dobře známé pro způsobuje problémy se zabezpečením, jako například `strcpy`. Jakmile jej rozpoznáte, tyto funkce jsou nahrazeny alternativy, které jsou bezpečnější.  
   
 <a name="techniques"></a>   
 ### <a name="testing-techniques"></a>Metody testování  
  [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] využíváte různé metody, které zahrnují testování zabezpečení:  
   
-- **Testování Whitebox**: Testeři zobrazení zdrojového kódu a začnete vytvářet testy před zneužitím  
+- **Testování Whitebox**: Testeři zobrazení zdrojového kódu a následně vytvořit testy před zneužitím.
   
 - **Testování Blackbox**: Testeři zkusit zjistit, že zneužije zabezpečení tím, že kontroluje rozhraní API a funkce a poté k útoku na produktu.  
   

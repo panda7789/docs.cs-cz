@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 9907811a43f408020e2ee76621d4975a53945570
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: fd865f2a9c4a6d2c17f79a21866103a2db982e5f
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424035"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661592"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
 
@@ -41,7 +41,7 @@ Každý hodnotový typ má implicitní konstruktor bez parametrů, která inicia
 *Jednoduché typy* představují sadu předdefinovaných struktury typy poskytované C# a zahrnuje následující typy:
 
 - [Integrální typy](../builtin-types/integral-numeric-types.md): číselné typy celých čísel a [char](char.md) typu
-- [Typy s plovoucí desetinnou čárkou](floating-point-types-table.md)
+- [Typy s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md)
 - [bool](bool.md)
 
 Jednoduché typy jsou označeny pomocí klíčových slov, ale tato klíčová slova jsou pouze aliasy pro typy předdefinované struktury v <xref:System> oboru názvů. Například [int](../builtin-types/integral-numeric-types.md) je alias pro <xref:System.Int32?displayProperty=nameWithType>. Úplný seznam aliasů naleznete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).
@@ -93,7 +93,7 @@ Použití [nové](../operators/new-operator.md) operátor volá konstruktor urč
 Pomocí uživatelem definované typy [nové](../operators/new-operator.md) vyvolat konstruktor bez parametrů. Například následující příkaz volá konstruktor bez parametrů `Point` struktury:
 
 ```csharp
-Point p = new Point(); // Invoke parameterless constructor for the struct.
+var p = new Point(); // Invoke parameterless constructor for the struct.
 ```
 
 Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.

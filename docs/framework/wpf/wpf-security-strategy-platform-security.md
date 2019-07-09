@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 6372f9cb4c332eb77cd70a9b0786eff005216516
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f99a9f38d5fbb62732f157720ee544042e346469
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642887"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663568"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -132,7 +132,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 - **LocalIntranet**. Pro spuštění z aplikace **místní Intranet** zóny. Podmnožinu oprávnění jsou udělena a zajistit tak střední přístup k prostředkům, klientský počítač, včetně izolovaného úložiště, neomezený přístup k uživatelskému rozhraní, dialogová okna neomezený souboru, omezené reflexe, omezený přístup k proměnným prostředí. Nejsou k dispozici oprávnění u důležitých prostředků jako registru.  
   
-- **Internet**. Pro spuštění z aplikace **Internet** nebo **Důvěryhodné servery** zóny. Podmnožina oprávnění jsou udělena zadaný omezený přístup k prostředkům, klientský počítač, včetně izolované úložiště souboru otevřete pouze a omezené uživatelského rozhraní. Toto oprávnění v podstatě nastaví izoluje aplikace od klientského počítače.  
+- **Internet**. Pro spuštění z aplikace **Internet** nebo **Důvěryhodné servery** zóny. Podmnožina oprávnění jsou udělena zadaný omezený přístup k prostředkům, klientský počítač, včetně izolované úložiště souboru otevřete pouze a omezené uživatelského rozhraní. Toto oprávnění nastavena v podstatě izoluje aplikace od klientského počítače.  
   
  Označený z aplikace **nedůvěryhodné weby** zóny jsou udělena žádná oprávnění podle [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] vůbec. V důsledku toho sada předdefinovaných oprávnění neexistuje pro ně.  
   
@@ -149,7 +149,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Chcete-li to provést [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], základní [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód musí být spuštěn víc funkcí než je k dispozici k volání [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], včetně:  
   
-- Vytváření popisovač okna (hWnd) pro vykreslování  
+- Vytváření popisovač okna (HWND) pro vykreslování  
   
 - Odeslání zprávy  
   
@@ -157,7 +157,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Z zabezpečení by katastrofickými pohledu, umožňuje přímý přístup k jakémukoli z těchto operací z aplikace v izolovaném prostoru.  
   
- Naštěstí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] určeného tuto situaci lze vyřešit tím, že tyto operace provádět s vyššími oprávněními jménem aplikace v izolovaném prostoru. Při všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] operace jsou porovnávána s omezenými oprávněními zabezpečení zóně Internet domény aplikace [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (stejně jako u jiných knihovnách system) je udělena sada oprávnění, která zahrnuje všechna možná oprávnění  
+ Naštěstí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] určeného tuto situaci lze vyřešit tím, že tyto operace provádět s vyššími oprávněními jménem aplikace v izolovaném prostoru. Při všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] operace jsou porovnávána s omezenými oprávněními zabezpečení zóně Internet domény aplikace [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (stejně jako u jiných knihovnách system) je udělena sada oprávnění, která zahrnuje všechna možná oprávnění.
   
  To vyžaduje, aby [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] obdrží zvýšená oprávnění, a brání tato oprávnění se řídí sada oprávnění Internetu zóny host domény aplikace.  
   
@@ -174,7 +174,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
  [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] je komplexní nasazení technologie, která je součástí rozhraní .NET Framework a integruje se s [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (viz [ClickOnce zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment) podrobné informace). Samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace můžete nasadit s využitím [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)], zatímco aplikace hostované prohlížečem musí být nasazeny s [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)].  
   
- Aplikace nasazené pomocí [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] jsou uvedeny další vrstvu zabezpečení [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]; v podstatě [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] nasazené aplikace požádat o oprávnění, která potřebují. Jsou poskytovány pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze kterého je aplikace nasazená. Díky snížení sadu oprávnění pouze na ty, které jsou potřeba, i když jsou nižší než zadané ve spuštění zóny sadu oprávnění, je počet prostředků, které má aplikace přístup k snížit na úplném. V důsledku toho pokud aplikace je zachycena, se snižuje potenciál pro poškození do klientského počítače.  
+ Aplikace nasazené pomocí [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] jsou uvedeny další vrstvu zabezpečení [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]; v podstatě [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] nasazené aplikace požádat o oprávnění, která potřebují. Jsou poskytovány pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze kterého je aplikace nasazená. Snížením sadu oprávnění pouze na ty, které jsou potřeba, i když jsou menší než uvedené poskytnuté aplikací zóny spouštěcí oprávnění nastavit, počet prostředků, že aplikace má přístup k je omezená na úplném. V důsledku toho pokud aplikace je zachycena, se snižuje potenciál pro poškození do klientského počítače.  
   
 <a name="Security_Critical_Methodology"></a>   
 ### <a name="security-critical-methodology"></a>Metodologie kritické pro zabezpečení  
@@ -208,7 +208,6 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 ## <a name="see-also"></a>Viz také:
 
-- [Principy zabezpečení v Microsoft Internet Explorer 6 ve Windows XP s aktualizací SP2](https://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)
 - [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [Zabezpečení](security-wpf.md)
 - [Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)

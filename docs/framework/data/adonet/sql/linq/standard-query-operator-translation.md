@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: ab93a5bae3c83bcce8fa46800ef759d8a2a7f858
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 1bba36579fce4fe78289ccb986073280b531420a
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610556"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661878"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 
@@ -198,13 +198,13 @@ Další informace o mapování pro tyto typy data a času systému SQL Server na
 
 ## <a name="sql-server-2000-support"></a>SQL Server 2000 Support
 
-Následující [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] ovlivnit omezení (ve srovnání se Microsoft SQL Server 2005) [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.
+Vliv na následující omezení systému SQL Server 2000 (ve srovnání se Microsoft SQL Server 2005) [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.
 
 ### <a name="cross-apply-and-outer-apply-operators"></a>Křížové použití a vnější použít operátory
 
-Tyto operátory nejsou k dispozici v [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)]. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se pokusí řadu přepisů pro jejich nahrazení odpovídající spojení.
+Tyto operátory nejsou k dispozici v systému SQL Server 2000. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se pokusí řadu přepisů pro jejich nahrazení odpovídající spojení.
 
-`Cross Apply` a `Outer Apply` jsou generovány pro navigaci vztah. Sadu dotazů, pro které je možné takové přepisů není dobře definováno. Z tohoto důvodu minimální sadu dotazů, které je podporováno pro [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] je sada, která nezahrnuje vztah navigace.
+`Cross Apply` a `Outer Apply` jsou generovány pro navigaci vztah. Sadu dotazů, pro které je možné takové přepisů není dobře definováno. Z tohoto důvodu minimální sadu dotazů, který je podporován pro SQL Server 2000 je sada, která nezahrnuje vztah navigace.
 
 ### <a name="text--ntext"></a>text / ntext
 
@@ -214,11 +214,11 @@ Datové typy `text`  /  `ntext` nelze použít v určité operace dotazů vůči
 
 ### <a name="behavior-triggered-by-nested-queries"></a>Chování aktivuje vnořené dotazy
 
-[!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] (prostřednictvím SP4) má vazač některá specifika, které jsou aktivovány vnořené dotazy. Sadu dotazů SQL, který spouští tyto specifika není dobře definováno. Z tohoto důvodu nelze definovat sadu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy, které může způsobit, že výjimky serveru SQL Server.
+SQL Server 2000 (prostřednictvím SP4) vazače má některá specifika, které jsou aktivovány vnořené dotazy. Sadu dotazů SQL, který spouští tyto specifika není dobře definováno. Z tohoto důvodu nelze definovat sadu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy, které může způsobit, že výjimky serveru SQL Server.
 
 ### <a name="skip-and-take-operators"></a>Přeskočit a převzít operátory
 
-<xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, když se používají v dotazech proti [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)]. Další informace najdete v tématu "Přeskočit a převzít výjimky v systému SQL Server 2000" položka v [Poradce při potížích s](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).
+<xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, když se používají v dotazech pro SQL Server 2000. Další informace najdete v tématu "Přeskočit a převzít výjimky v systému SQL Server 2000" položka v [Poradce při potížích s](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).
 
 ## <a name="object-materialization"></a>Materializace objektů
 

@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: e93c33ae29268c3968ccb59739e899966ae4339d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 06d2b576e70afb904683ca1a182c6e061faabf79
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628241"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663830"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC testování aplikace
 
@@ -30,7 +30,7 @@ Testy jednotek, tím, že fakt, že se test pouze jednu jednotku kódu, nemá ž
 
 ### <a name="integration-tests"></a>Integrační testy
 
-I když je vhodné k zapouzdření kódu, který komunikuje s infrastruktury, jako jsou databáze nebo souborové systémy, budete mít stále některé tento kód a budete pravděpodobně chtít otestovat. Kromě toho byste měli ověřit, že váš kód vrstvy pracovat jako očekáváte, že když jsou zcela přeložit závislostí aplikace. To odpovídá testů integrace. Integrační testy mají být pomalejší a obtížnější než testování částí, nastavit, protože jsou často závislé na vnější závislosti a infrastrukturou. Proto byste se měli vyhnout testování věcí, které by mohly být testy s testy jednotek v testech integrace. Pokud daný scénář můžete otestovat pomocí testování částí, měli byste otestovat pomocí testování částí. Pokud není možné, zvažte použití o test integrace.
+I když je vhodné k zapouzdření kódu, který komunikuje s infrastruktury, jako jsou databáze nebo souborové systémy, budete mít stále některé tento kód a budete pravděpodobně chtít otestovat. Kromě toho byste měli ověřit, že váš kód vrstvy pracovat jako očekáváte, že když jsou zcela přeložit závislostí aplikace. To odpovídá testů integrace. Integrační testy mají být pomalejší a obtížnější než testování částí, nastavit, protože jsou často závislé na vnější závislosti a infrastrukturou. Proto byste se měli vyhnout testování věcí, které by mohly být testovány s testy jednotek v testech integrace. Pokud daný scénář můžete otestovat pomocí testování částí, měli byste otestovat pomocí testování částí. Pokud není možné, zvažte použití o test integrace.
 
 Integrační testy se mají často mnohem složitější nastavení a jejich vyřazování z provozu postupy než testování částí. Například o test integrace, který odkazuje na databázi aplikace skutečný potřebovat způsob, jak vrátit databázi do známého stavu před jednotlivých testovacích běhů. Jak se přidávají nové testy a schéma databáze produkční vyvíjí, tyto testovací skripty bodech zvětšit velikost a složitost. V mnoha velkých systémů je nepraktické spustit úplné sady testů integrace na vývojářské pracovní stanice před vrácením se změnami do správy sdílených zdrojů. V těchto případech se může spustit testy integrace na serveru sestavení.
 

@@ -6,12 +6,12 @@ ms.author: ronpet
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: 1e825efcb2a352c823391fb0dad3d566189da001
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 494ac194fe8dc9554c6e0d1d87ba2ed613d1d16b
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425541"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663230"
 ---
 # <a name="framework-libraries"></a>Knihovny architektury
 
@@ -30,8 +30,8 @@ BCL poskytuje nejvíce základní typy a funkce nástroje a jsou základní vše
 * <xref:System.Object?displayProperty=nameWithType> ([objekt](../csharp/language-reference/keywords/object.md)) – systém typů ultimate základní třídy v CLR. Je kořenem hierarchie typu.
 * <xref:System.Int16?displayProperty=nameWithType> ([krátký](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – typ celé číslo se znaménkem A 16 bitů. Bez znaménka <xref:System.UInt16> také existuje.
 * <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – typ celé číslo se znaménkem A 32-bit. Bez znaménka [UInt32](../csharp/language-reference/builtin-types/integral-numeric-types.md) také existuje.
-* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)) – typ s plovoucí desetinnou čárkou A 32-bit.
-* <xref:System.Decimal?displayProperty=nameWithType> ([desítkové](../csharp/language-reference/keywords/decimal.md)) – typ desetinné čárky A 128 bitů.
+* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – typ s plovoucí desetinnou čárkou A 32-bit.
+* <xref:System.Decimal?displayProperty=nameWithType> ([desítkové](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – typ desetinné čárky A 128 bitů.
 * <xref:System.Byte?displayProperty=nameWithType> ([bajtů](../csharp/language-reference/builtin-types/integral-numeric-types.md))-8bitové celé číslo bez znaménka představující bajt paměti.
 * <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md))-logický typ, který představuje `true` nebo `false`.
 * <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md))-číselného typu A 16-bit, který představuje znak Unicode.

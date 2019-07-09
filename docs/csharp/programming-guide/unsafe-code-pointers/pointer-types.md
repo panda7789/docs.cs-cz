@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 81e9a86c4761b329918bf04023dea42d2e1ad6f5
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 59846affb1eea5bd9d6a80c623eab5e3aa9db87c
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423518"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661084"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -24,10 +24,10 @@ void* identifier; //allowed but not recommended
 Typ určený před `*` na ukazatel typu nazývá **referenční typ**. Některé z následujících typů může být typu referenční:
 
 - Libovolný integrální typ: [sbyte](../../language-reference/builtin-types/integral-numeric-types.md), [bajtů](../../language-reference/builtin-types/integral-numeric-types.md), [krátký](../../language-reference/builtin-types/integral-numeric-types.md), [ushort](../../language-reference/builtin-types/integral-numeric-types.md), [int](../../language-reference/builtin-types/integral-numeric-types.md), [uint](../../language-reference/builtin-types/integral-numeric-types.md), [dlouhé](../../language-reference/builtin-types/integral-numeric-types.md), [ulong](../../language-reference/builtin-types/integral-numeric-types.md).
-- Libovolný typ s plovoucí desetinnou čárkou: [float](../../language-reference/keywords/float.md), [double](../../language-reference/keywords/double.md).
+- Libovolný typ s plovoucí desetinnou čárkou: [float](../../language-reference/builtin-types/floating-point-numeric-types.md), [double](../../language-reference/builtin-types/floating-point-numeric-types.md).
 - [Char](../../language-reference/keywords/char.md).
 - [BOOL](../../language-reference/keywords/bool.md).
-- [desetinné](../../language-reference/keywords/decimal.md).
+- [desetinné](../../language-reference/builtin-types/floating-point-numeric-types.md).
 - Žádné [výčtu](../../language-reference/keywords/enum.md) typu.
 - Jakýkoli typ ukazatele. Díky tomu výrazy, jako `void**`.
 - Jakýkoli typ struktury definované uživatelem, který obsahuje pouze pole nespravovaných typů.

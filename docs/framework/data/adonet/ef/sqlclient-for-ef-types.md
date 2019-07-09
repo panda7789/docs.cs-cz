@@ -2,17 +2,17 @@
 title: SqlClient pro typy Entity Framework
 ms.date: 03/30/2017
 ms.assetid: f2a95ead-c845-4e97-9fb3-04b444f7ed81
-ms.openlocfilehash: eb12bde1e319fde5adf20ad6cd54f8776aeda31d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e3abe86128670656bfb2607b8531c9ceb0e4134
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879161"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662117"
 ---
 # <a name="sqlclient-for-entity-frameworktypes"></a>SqlClient pro typy Entity Framework
 Zprostředkovatel dat .NET Framework pro soubor manifestu zprostředkovatele SQL Server (SqlClient) obsahuje seznam primitivní typy zprostředkovatele omezující vlastnosti pro každý typ mapování mezi koncepční a primitivní typy modelů úložiště a propagační akce a převod pravidla mezi koncepční a úložiště primitivní typy modelu.  
   
- Následující tabulka popisuje typy pro SQL Server 2008, [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], a [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] databází a jak tyto typy mapovány na koncepční model typy. Některé nové typy byly zavedeny v novějších verzích systému SQL Server nejsou podporovány ve starších verzích systému SQL Server. Tyto typy jsou uvedené v následující tabulce.  
+ Následující tabulka popisuje typy pro databáze systému SQL Server 2008, SQL Server 2005 a SQL Server 2000 a jak se tyto typy mapovány na typy konceptuálních modelů. Některé nové typy byly zavedeny v novějších verzích systému SQL Server nejsou podporovány ve starších verzích systému SQL Server. Tyto typy jsou uvedené v následující tabulce.  
   
 |Typ zprostředkovatele<br /><br /> name|Typ zprostředkovatele<br /><br /> atributy|`EDMSimpleType`<br /><br /> name|Charakteristiky|  
 |----------------------------|----------------------------------|------------------------------|------------|  
@@ -29,7 +29,7 @@ Zprostředkovatel dat .NET Framework pro soubor manifestu zprostředkovatele SQL
 |`money`|není k dispozici|`Edm.Decimal`|Přesnost:<br /><br /> – Výchozí hodnota: 19<br /><br /> -Konstantní: Pravda<br /><br /> Škálování:<br /><br /> – Výchozí hodnota: 4<br /><br /> -Konstantní: Pravda|  
 |`binary`|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 8000<br /><br /> – Výchozí hodnota: 8000<br /><br /> -Konstantní: False<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda|  
 |`varbinary`|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 8000<br /><br /> – Výchozí hodnota: 8000<br /><br /> -Konstantní: False<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
-|`varbinary(max)`<br /><br /> Poznámka: Tento typ není podporován v [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Výchozí hodnota: 214748364780<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
+|`varbinary(max)`<br /><br /> Poznámka: Tento typ není podporován v systému SQL Server 2000.|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Výchozí hodnota: 214748364780<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
 |`image`|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Výchozí hodnota: 2147483647<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
 |`timestamp`|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Výchozí hodnota: 8<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda|  
 |`rowversion`|není k dispozici|`Edm.Binary`|MaxLength:<br /><br /> – Výchozí hodnota: 8<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda|  
@@ -39,8 +39,8 @@ Zprostředkovatel dat .NET Framework pro soubor manifestu zprostředkovatele SQL
 |`time`<br /><br /> Poznámka: Tento typ není podporován v systému SQL Server 2005 a SQL Server 2000.|není k dispozici|`Edm.Time`|Přesnost:<br /><br /> – Výchozí hodnota: 7<br /><br /> -Konstantní: False|  
 |`datetime2`<br /><br /> Poznámka: Tento typ není podporován v systému SQL Server 2005 a SQL Server 2000.|není k dispozici|`Edm.DateTime`|Přesnost:<br /><br /> – Výchozí hodnota: 7<br /><br /> -Konstantní: False|  
 |`datetimeoffset`<br /><br /> Poznámka: Tento typ není podporován v systému SQL Server 2005 a SQL Server 2000.|není k dispozici|`Edm.DateTimeOffset`|Přesnost:<br /><br /> – Výchozí hodnota: 7<br /><br /> -Konstantní: False|  
-|`nvarchar`<br /><br /> Poznámka: Tento typ není podporován v [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 4000<br /><br /> – Výchozí hodnota: 4000<br /><br /> -Konstantní: False<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
-|`varchar`<br /><br /> Poznámka: Tento typ není podporován v [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 8000<br /><br /> – Výchozí hodnota: 8000<br /><br /> -Konstantní: False<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
+|`nvarchar`<br /><br /> Poznámka: Tento typ není podporován v systému SQL Server 2000.|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 4000<br /><br /> – Výchozí hodnota: 4000<br /><br /> -Konstantní: False<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
+|`varchar`<br /><br /> Poznámka: Tento typ není podporován v systému SQL Server 2000.|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 8000<br /><br /> – Výchozí hodnota: 8000<br /><br /> -Konstantní: False<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  
 |`char`|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 8000<br /><br /> – Výchozí hodnota: 8000<br /><br /> -Konstantní: False<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda|  
 |`nchar`|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Minimálně: 1<br /><br /> -Maximum: 4000<br /><br /> – Výchozí hodnota: 4000<br /><br /> -Konstantní: False<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: Pravda<br /><br /> -Konstantní: Pravda|  
 |`varchar`(`max`)|není k dispozici|`Edm.String`|MaxLength:<br /><br /> – Výchozí hodnota: 2147483647<br /><br /> -Konstantní: Pravda<br /><br /> Unicode:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda<br /><br /> FixedLength:<br /><br /> – Výchozí hodnota: False<br /><br /> -Konstantní: Pravda|  

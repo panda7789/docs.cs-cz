@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: 403b0125e6b1966d201c891448ad25ec83f42be5
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: b28981196490e249d053ecd1704f6ba978585520
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881924"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662856"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Návrháři vlastního skládání – místo pro položky pracovních postupů
 
@@ -45,7 +45,7 @@ Kód pro tento příklad ukazuje následující:
   - <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> je šablonu, která je možné poskytnout určit rozložení položek v kolekci. V takovém případě se používá panel vodorovné zásobníku.
 
   Tento následující příklad kódu ukazuje to.
-  
+
   ```xaml
   <sad:WorkflowItemsPresenter HintText="Drop Activities Here"
                                 Items="{Binding Path=ModelItem.Branches}">
@@ -64,7 +64,7 @@ Kód pro tento příklad ukazuje následující:
 
 - Provedení sdružení `DesignerAttribute` k `Parallel` typu a potom výstup hlášené atributy.
 
-    - Nejprve zaregistrujte všechny výchozí návrháře.
+  - Nejprve zaregistrujte všechny výchozí návrháře.
 
     Tady je příklad kódu.
 
@@ -82,7 +82,7 @@ Kód pro tento příklad ukazuje následující:
     RegisterCustomMetadata()
     ```
 
-    - Potom přepsat paralelní v `RegisterCustomMetadata` metody.
+  - Potom přepsat paralelní v `RegisterCustomMetadata` metody.
 
     Následující kód ukazuje to v C# a Visual Basic.
 

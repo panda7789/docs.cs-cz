@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
-ms.openlocfilehash: bedb6df564e4301ec8009992ec0ec5c51de729e0
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: e0f2c6300f8dccb8cc316527af9c75f6a40ff2df
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910814"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661900"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrácení nebo přeskočení prvků v posloupnosti
 Použití <xref:System.Linq.Queryable.Take%2A> operátor potom přeskočit zbývající a vrátí daný počet prvků v sekvenci.  
@@ -49,9 +49,9 @@ Použití <xref:System.Linq.Queryable.Take%2A> operátor potom přeskočit zbýv
  Z důvodu omezení na pořadí v SQL [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se pokusí přesunout řazení v argumentu <xref:System.Linq.Queryable.Take%2A> nebo <xref:System.Linq.Queryable.Skip%2A> operátor má výsledek operátoru.  
   
 > [!NOTE]
->  Překlad se liší pro [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] a [!INCLUDE[sqprsqlong](../../../../../../includes/sqprsqlong-md.md)]. Pokud budete chtít použít <xref:System.Linq.Queryable.Skip%2A> pomocí dotazu jakékoli složitosti, [!INCLUDE[sqprsqlong](../../../../../../includes/sqprsqlong-md.md)].  
+>  Překlad se liší pro SQL Server 2000 a SQL Server 2005. Pokud budete chtít použít <xref:System.Linq.Queryable.Skip%2A> pomocí dotazu jakékoli složitosti, SQL Server 2005.  
   
- Vezměte v úvahu následující [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotázat [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)]:  
+ Vezměte v úvahu následující [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotaz pro SQL Server 2000:  
   
  [!code-csharp[DLinqQueryExamples#19](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#19)]
  [!code-vb[DLinqQueryExamples#19](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#19)]  

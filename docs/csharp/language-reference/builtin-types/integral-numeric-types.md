@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: bde0b7cea52951cd72bde6cfd7d8f1c7dbcb8f46
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 141475c4d92278be02d6a832a93cd8553a4bcbd8
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425585"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661128"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# odkaz)
 
@@ -118,8 +118,16 @@ Pro převod jedné celočíselného typu na jiný celočíselný typ při implic
 
 - [C#Specifikace jazyka - integrální typy](~/_csharplang/spec/types.md#integral-types)
 - [C#referenční dokumentace](../index.md)
-- [Tabulka typů s plovoucí desetinnou čárkou](../keywords/floating-point-types-table.md)
+- [Typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
 - [Tabulka výchozích hodnot](../keywords/default-values-table.md)
 - [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
 - [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)
+- <xref:System.Byte?displayProperty=nameWithType>
+- <xref:System.SByte?displayProperty=nameWithType>
+- <xref:System.Int16?displayProperty=nameWithType>
+- <xref:System.UInt16?displayProperty=nameWithType>
+- <xref:System.Int32?displayProperty=nameWithType>
+- <xref:System.UInt32?displayProperty=nameWithType>
+- <xref:System.Int64?displayProperty=nameWithType>
+- <xref:System.UInt64?displayProperty=nameWithType>

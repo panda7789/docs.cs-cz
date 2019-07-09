@@ -2,12 +2,12 @@
 title: Řetězce
 description: Zjistěte, jak F# typ "řetězec" představuje neměnné text jako posloupnost znaků Unicode.
 ms.date: 07/05/2019
-ms.openlocfilehash: b252aef7d7e6e299df8282407198714971e80cd5
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: ec895723cc6d21a701a27b5d70d053bb681ce2b3
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610167"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660599"
 ---
 # <a name="strings"></a>Řetězce
 
@@ -32,7 +32,7 @@ ms.locfileid: "67610167"
 |Zpětné lomítko|`\\`|
 |Znak uvozovek|`\"`|
 |Apostrof|`\'`|
-|znak Unicode|`\DDD` (kde `D` označuje desítkové číslice; rozsah 000 - 255; například `\231` = "ç")|
+|znak Unicode|`\DDD` (kde `D` označuje desítkové číslice; rozsah 000 - 255, například `\231` = "ç")|
 |znak Unicode|`\xHH` (kde `H` označuje šestnáctková číslice; rozsahu 00 - FF; například `\xE7` = "ç")|
 |znak Unicode|`\uHHHH` (UTF-16) (kde `H` označuje šestnáctková číslice; rozsah 0000 - FFFF;  například `\u00E7` = "ç")|
 |znak Unicode|`\U00HHHHHH` (UTF-32) (kde `H` označuje šestnáctková číslice; rozsah 000000 - 10FFFF.;  například `\U0001F47D` = "👽")|

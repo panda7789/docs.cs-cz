@@ -2,12 +2,12 @@
 title: Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 ms.date: 03/30/2017
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-ms.openlocfilehash: e5d249514ecad7507235bb8bd354c80bdc17c5dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b0e26f0b76ee56d06c426cd3c11b169a74b1896
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857582"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663372"
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 
@@ -151,22 +151,22 @@ Tady je seznam důležitých rozdílů mezi použitím nástrojů <xref:System.R
 
 - <xref:System.Xml.Serialization.XmlSerializer> a atributy <xref:System.Xml.Serialization> obor názvů jsou navržené tak, aby bylo možné mapovat typy rozhraní .NET Framework na libovolný platný typ definovaný ve schématu XML a tak poskytovat velmi přesnou kontrolu nad zastoupení typu ve formátu XML. <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> poskytují velmi málo kontrolu nad zastoupení typu ve formátu XML. Můžete nastavit jenom obory názvů a názvů používaných ke znázornění typu a jeho pole nebo vlastnosti v souboru XML a pořadí, ve kterém polí a vlastností zobrazí v kódu XML:
 
-    ```csharp
-    [DataContract(
-    Namespace="urn:Contoso:2006:January:29",
-    Name="LineItem")]
-    public class LineItem
-    {
-         [DataMember(Name="ItemNumber",IsRequired=true,Order=0)]
-         public string itemNumber;
-         [DataMember(Name="Quantity",IsRequired=false,Order = 1)]
-         public decimal quantity;
-         [DataMember(Name="Price",IsRequired=false,Order = 2)]
-         public decimal unitPrice;
-    }
-    ```
+  ```csharp
+  [DataContract(
+  Namespace="urn:Contoso:2006:January:29",
+  Name="LineItem")]
+  public class LineItem
+  {
+        [DataMember(Name="ItemNumber",IsRequired=true,Order=0)]
+        public string itemNumber;
+        [DataMember(Name="Quantity",IsRequired=false,Order = 1)]
+        public decimal quantity;
+        [DataMember(Name="Price",IsRequired=false,Order = 2)]
+        public decimal unitPrice;
+  }
+  ```
 
-    Všechno ostatní o struktuře XML, který představuje typ formátu .NET je určeno <xref:System.Runtime.Serialization.DataContractSerializer>.
+  Všechno ostatní o struktuře XML, který představuje typ formátu .NET je určeno <xref:System.Runtime.Serialization.DataContractSerializer>.
 
 - Tím, že není velkou kontrolu nad jak je typem a nelze je reprezentovat ve formátu XML, stane vysoce předvídatelné pro procesu serializace <xref:System.Runtime.Serialization.DataContractSerializer>a tím usnadňuje optimalizaci. Praktické výhodou návrh <xref:System.Runtime.Serialization.DataContractSerializer> je lepší výkon, přibližně deset procent lepší výkon.
 
@@ -180,9 +180,9 @@ Tady je seznam důležitých rozdílů mezi použitím nástrojů <xref:System.R
 
 - <xref:System.Runtime.Serialization.DataContractSerializer> Zahrnuje některé podpory pro správu verzí:
 
-    - <xref:System.Runtime.Serialization.DataMemberAttribute> Má <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost, která je možné přiřadit hodnotu false pro členy, které jsou přidány do nové verze kontraktu dat, které nebyly k dispozici v dřívějších verzích, a tím umožní aplikace s touto novou verzí smlouvy bude nelze zpracovat starší verze.
+  - <xref:System.Runtime.Serialization.DataMemberAttribute> Má <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost, která je možné přiřadit hodnotu false pro členy, které jsou přidány do nové verze kontraktu dat, které nebyly k dispozici v dřívějších verzích, a tím umožní aplikace s touto novou verzí smlouvy bude nelze zpracovat starší verze.
 
-    - Tím, že implementace kontraktu dat <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní, jeden můžete povolit <xref:System.Runtime.Serialization.DataContractSerializer> předat členy definované v novějších verzích kontraktu dat prostřednictvím aplikací s předchozími verzemi smlouvy.
+  - Tím, že implementace kontraktu dat <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní, jeden můžete povolit <xref:System.Runtime.Serialization.DataContractSerializer> předat členy definované v novějších verzích kontraktu dat prostřednictvím aplikací s předchozími verzemi smlouvy.
 
 Bez ohledu na některé rozdíly, XML, do kterého <xref:System.Xml.Serialization.XmlSerializer> serializuje typu ve výchozím nastavení je sémanticky shodná s XML, do kterého <xref:System.Runtime.Serialization.DataContractSerializer> serializuje typu podle oboru názvů XML není výslovně uveden. Následující třídy, která má atributy pro použití s nástrojem serializátory, je přeložit na sémanticky identické XML pomocí <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Runtime.Serialization.DataContractAttribute>:
 
@@ -293,7 +293,7 @@ Dalším krokem je spojit adresu a vazbu s typem služby. Který se obvykle prov
 
 Vazba určuje sadu protokolů pro komunikaci s aplikací. V následující tabulce jsou uvedeny vazeb poskytovaných systémem, které představují běžné možnosti.
 
-|Název|Účel|
+|Name|Účel|
 |----------|-------------|
 |BasicHttpBinding|Interoperabilita s Web services a klienti podporující WS-BasicProfile 1.1 a 1.0 profil základní zabezpečení.|
 |WSHttpBinding|Interoperabilita s Web services a klienti podporující WS-* protokolů přes protokol HTTP.|
@@ -346,9 +346,9 @@ K hostování služby IIS 5.1, 6.0 nebo v rámci WAS, použijte následující k
 
 4. Zkopírujte konfigurační soubor do virtuálního adresáře a pojmenujte ho souboru Web.config.
 
- Aplikace je přístupná pak pomocí adresy URL služby souborů v kořenovém adresáři aplikace.
+Aplikace je přístupná pak pomocí adresy URL služby souborů v kořenovém adresáři aplikace.
 
- K hostování služby WCF v rámci aplikace .NET, kompilovat typ služby do aplikace odkazuje sestavení knihovny tříd a aplikací na hostitele služby pomocí programu <xref:System.ServiceModel.ServiceHost> třídy. Následuje příklad základní programování vyžaduje:
+K hostování služby WCF v rámci aplikace .NET, kompilovat typ služby do aplikace odkazuje sestavení knihovny tříd a aplikací na hostitele služby pomocí programu <xref:System.ServiceModel.ServiceHost> třídy. Následuje příklad základní programování vyžaduje:
 
 ```csharp
 string httpBaseAddress = "http://www.contoso.com:8000/";

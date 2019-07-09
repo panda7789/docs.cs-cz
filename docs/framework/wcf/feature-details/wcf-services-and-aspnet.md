@@ -2,12 +2,12 @@
 title: Služby WCF a ASP.NET
 ms.date: 03/30/2017
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
-ms.openlocfilehash: ef772a360ea53c2b5f177ed88ad14c4a1e1277ef
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d42787492b00b8e0a5a732d641947fec61b5ff96
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637559"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663685"
 ---
 # <a name="wcf-services-and-aspnet"></a>Služby WCF a ASP.NET
 
@@ -29,15 +29,15 @@ Výsledky vedle sebe modelu jsou následující:
 
 - V doméně AppDomain funkce, které jsou implementovány modulem HTTP runtime použít obsah ASP.NET, ale ne WCF. Mnoho funkcí specifické platformy aplikace ASP.NET se nevztahují na služby WCF hostované v doméně AppDomain, která obsahuje obsahu ASP.NET. Mezi tyto funkce patří:
 
-    - HttpContext: <xref:System.Web.HttpContext.Current%2A> je vždy `null` při přístupu z v rámci služby WCF. Místo nich se používá <xref:System.ServiceModel.Channels.RequestContext>.
+  - HttpContext: <xref:System.Web.HttpContext.Current%2A> je vždy `null` při přístupu z v rámci služby WCF. Místo nich se používá <xref:System.ServiceModel.Channels.RequestContext>.
 
-    - Autorizace na základě souboru: Model zabezpečení WCF neumožňuje použití do souboru .svc služby při rozhodování o tom, jestli žádost o služby je autorizovaný seznam řízení přístupu (ACL).
+  - Autorizace na základě souboru: Model zabezpečení WCF neumožňuje použití do souboru .svc služby při rozhodování o tom, jestli žádost o služby je autorizovaný seznam řízení přístupu (ACL).
 
-    - Autorizace adres URL podle konfigurace: Obdobně model zabezpečení WCF nedrží se žádná pravidla ověřování na základě adresy URL zadaná v jeho System.Web \<autorizace > konfiguračního prvku. Tato nastavení jsou ignorovány požadavkům WCF, pokud se služba nachází v prostoru adresy URL zabezpečuje ASP. Autorizačních pravidel adres URL vaší sítě.
+  - Autorizace adres URL podle konfigurace: Obdobně model zabezpečení WCF nedrží se žádná pravidla ověřování na základě adresy URL zadaná v jeho System.Web \<autorizace > konfiguračního prvku. Tato nastavení jsou ignorovány požadavkům WCF, pokud se služba nachází v prostoru adresy URL zabezpečuje ASP. Autorizačních pravidel adres URL vaší sítě.
 
-    - Rozšiřitelnost HttpModule: Infrastruktury hostování WCF zachycuje WCF při požadavků <xref:System.Web.HttpApplication.PostAuthenticateRequest> nevrací zpracování do kanálu HTTP technologie ASP.NET a je vyvolána událost. Moduly, které jsou naprogramovány tak, aby zachytávat žádosti v pozdějších fázích kanálu není zachytávat žádosti WCF.
+  - Rozšiřitelnost HttpModule: Infrastruktury hostování WCF zachycuje WCF při požadavků <xref:System.Web.HttpApplication.PostAuthenticateRequest> nevrací zpracování do kanálu HTTP technologie ASP.NET a je vyvolána událost. Moduly, které jsou naprogramovány tak, aby zachytávat žádosti v pozdějších fázích kanálu není zachytávat žádosti WCF.
 
-    - Zosobnění technologie ASP.NET: Ve výchozím nastavení, WCF požaduje vždy spustí jako identita, procesu služby IIS i v případě, že technologie ASP.NET je nastavit pro povolení zosobnění pomocí vaší System.Web \<identity impersonate = "true" / > Možnosti konfigurace.
+  - Zosobnění technologie ASP.NET: Ve výchozím nastavení, WCF požaduje vždy spustí jako identita, procesu služby IIS i v případě, že technologie ASP.NET je nastavit pro povolení zosobnění pomocí vaší System.Web \<identity impersonate = "true" / > Možnosti konfigurace.
 
 Tato omezení platí pouze pro služby WCF hostované v IIS aplikace. Chování obsahu ASP.NET nemá vliv na přítomnost WCF.
 

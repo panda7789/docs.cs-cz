@@ -2,12 +2,12 @@
 title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: 8b34336871d599b72e548e2db90487c17377ba66
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: c09871abcdfb9243b5170386ffe79012c9c3f71d
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307181"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661865"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  
@@ -57,7 +57,7 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
 ## <a name="skip-and-take-exceptions-in-sql-server-2000"></a>Přeskočit a převzít výjimky v systému SQL Server 2000  
  Je nutné použít identity členy (<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>) při použití <xref:System.Linq.Queryable.Take%2A> nebo <xref:System.Linq.Queryable.Skip%2A> databázi systému SQL Server 2000. Dotaz musí být před jedné tabulky (to znamená, nikoli spojení) nebo <xref:System.Linq.Queryable.Distinct%2A>, <xref:System.Linq.Queryable.Except%2A>, <xref:System.Linq.Queryable.Intersect%2A>, nebo <xref:System.Linq.Queryable.Union%2A> operace a nesmějí obsahovat <xref:System.Linq.Queryable.Concat%2A> operace. Další informace najdete v části "Podpora serveru SQL Server 2000" v [standardní překladu – operátor dotazu](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md).  
   
- Tento požadavek se nedá použít u [!INCLUDE[sqprsqlong](../../../../../../includes/sqprsqlong-md.md)].  
+ Tento požadavek se nevztahuje na systém SQL Server 2005.  
   
 ## <a name="groupby-invalidoperationexception"></a>GroupBy InvalidOperationException  
  Tato výjimka se vyvolá, když má hodnotu null ve sloupci Hodnota <xref:System.Linq.Enumerable.GroupBy%2A> dotaz, který se seskupí podle `boolean` výraz, například `group x by (Phone==@phone)`. Protože je výraz `boolean`, klíč odvozena jako `boolean`, nikoli `nullable` `boolean`. Pokud přeloženou porovnání vytvoří s hodnotou null, je proveden pokus o přiřazení `nullable` `boolean` k `boolean`, a je vyvolána výjimka.  
