@@ -8,26 +8,26 @@ ms.topic: reference
 helpviewer_keywords:
 - expression trees
 - debugview
-ms.openlocfilehash: c42aacba9039b4a7807fc6084e548b84ef7be5f9
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: ba695fc808108c49a4eee3c70a305b24c91769d8
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423707"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661719"
 ---
-# <a name="debugview-syntax"></a><span data-ttu-id="686b6-103">`DebugView` Syntaxe</span><span class="sxs-lookup"><span data-stu-id="686b6-103">`DebugView` syntax</span></span>
+# <a name="debugview-syntax"></a><span data-ttu-id="1305b-103">`DebugView` Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1305b-103">`DebugView` syntax</span></span>
 
-<span data-ttu-id="686b6-104">`DebugView` (K dispozici pouze při ladění) obsahuje řetězec vykreslování stromů výrazů.</span><span class="sxs-lookup"><span data-stu-id="686b6-104">The `DebugView` property (available only when debugging) provides a string rendering of expression trees.</span></span> <span data-ttu-id="686b6-105">Většina syntaxe je celkem jasné, abyste pochopili; zvláštní případy jsou popsány v následujících částech.</span><span class="sxs-lookup"><span data-stu-id="686b6-105">Most of the syntax is fairly straightforward to understand; the special cases are described in the following sections.</span></span>
+<span data-ttu-id="1305b-104">`DebugView` (K dispozici pouze při ladění) obsahuje řetězec vykreslování stromů výrazů.</span><span class="sxs-lookup"><span data-stu-id="1305b-104">The `DebugView` property (available only when debugging) provides a string rendering of expression trees.</span></span> <span data-ttu-id="1305b-105">Většina syntaxe je celkem jasné, abyste pochopili; zvláštní případy jsou popsány v následujících částech.</span><span class="sxs-lookup"><span data-stu-id="1305b-105">Most of the syntax is fairly straightforward to understand; the special cases are described in the following sections.</span></span>
 
-<span data-ttu-id="686b6-106">Každý příklad následuje blok komentáře, který obsahuje `DebugView`.</span><span class="sxs-lookup"><span data-stu-id="686b6-106">Each example is followed by a block comment, containing the `DebugView`.</span></span>
+<span data-ttu-id="1305b-106">Každý příklad následuje blok komentáře, který obsahuje `DebugView`.</span><span class="sxs-lookup"><span data-stu-id="1305b-106">Each example is followed by a block comment, containing the `DebugView`.</span></span>
 
-## <a name="parameterexpression"></a><span data-ttu-id="686b6-107">Výraz ParameterExpression</span><span class="sxs-lookup"><span data-stu-id="686b6-107">ParameterExpression</span></span>
+## <a name="parameterexpression"></a><span data-ttu-id="1305b-107">Výraz ParameterExpression</span><span class="sxs-lookup"><span data-stu-id="1305b-107">ParameterExpression</span></span>
 
-<span data-ttu-id="686b6-108"><xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> se zobrazují názvy proměnných `$` symbolu na počátku.</span><span class="sxs-lookup"><span data-stu-id="686b6-108"><xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> variable names are displayed with a `$` symbol at the beginning.</span></span>
+<span data-ttu-id="1305b-108"><xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> se zobrazují názvy proměnných `$` symbolu na počátku.</span><span class="sxs-lookup"><span data-stu-id="1305b-108"><xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> variable names are displayed with a `$` symbol at the beginning.</span></span>
 
-<span data-ttu-id="686b6-109">Pokud parametr nemá název, je přiřazen automaticky vygenerovaný název, jako například `$var1` nebo `$var2`.</span><span class="sxs-lookup"><span data-stu-id="686b6-109">If a parameter does not have a name, it is assigned an automatically generated name, such as `$var1` or `$var2`.</span></span>
+<span data-ttu-id="1305b-109">Pokud parametr nemá název, je přiřazen automaticky vygenerovaný název, jako například `$var1` nebo `$var2`.</span><span class="sxs-lookup"><span data-stu-id="1305b-109">If a parameter does not have a name, it is assigned an automatically generated name, such as `$var1` or `$var2`.</span></span>
 
-### <a name="examples"></a><span data-ttu-id="686b6-110">Příklady</span><span class="sxs-lookup"><span data-stu-id="686b6-110">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="1305b-110">Příklady</span><span class="sxs-lookup"><span data-stu-id="1305b-110">Examples</span></span>
 
 ```csharp
 ParameterExpression numParam =  Expression.Parameter(typeof(int), "num");
@@ -41,22 +41,22 @@ ParameterExpression numParam =  Expression.Parameter(typeof(int));
 */
 ```
 
-## <a name="constantexpression"></a><span data-ttu-id="686b6-111">ConstantExpression</span><span class="sxs-lookup"><span data-stu-id="686b6-111">ConstantExpression</span></span>
+## <a name="constantexpression"></a><span data-ttu-id="1305b-111">ConstantExpression</span><span class="sxs-lookup"><span data-stu-id="1305b-111">ConstantExpression</span></span>
 
-<span data-ttu-id="686b6-112">Pro <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objekty, které představují celočíselných hodnot, řetězce a `null`, zobrazí se hodnota konstanty.</span><span class="sxs-lookup"><span data-stu-id="686b6-112">For <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objects that represent integer values, strings, and `null`, the value of the constant is displayed.</span></span>
+<span data-ttu-id="1305b-112">Pro <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objekty, které představují celočíselných hodnot, řetězce a `null`, zobrazí se hodnota konstanty.</span><span class="sxs-lookup"><span data-stu-id="1305b-112">For <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objects that represent integer values, strings, and `null`, the value of the constant is displayed.</span></span>
 
-<span data-ttu-id="686b6-113">Pro číselné typy, které mají standardní přípony jako literály jazyka C# se přidá přípona k hodnotě.</span><span class="sxs-lookup"><span data-stu-id="686b6-113">For numeric types that have standard suffixes as C# literals, the suffix is added to the value.</span></span> <span data-ttu-id="686b6-114">V následující tabulce jsou uvedeny přípony spojené s různé číselné typy.</span><span class="sxs-lookup"><span data-stu-id="686b6-114">The following table shows the suffixes associated with various numeric types.</span></span>
+<span data-ttu-id="1305b-113">Pro číselné typy, které mají standardní přípony jako literály jazyka C# se přidá přípona k hodnotě.</span><span class="sxs-lookup"><span data-stu-id="1305b-113">For numeric types that have standard suffixes as C# literals, the suffix is added to the value.</span></span> <span data-ttu-id="1305b-114">V následující tabulce jsou uvedeny přípony spojené s různé číselné typy.</span><span class="sxs-lookup"><span data-stu-id="1305b-114">The following table shows the suffixes associated with various numeric types.</span></span>
 
-| <span data-ttu-id="686b6-115">type</span><span class="sxs-lookup"><span data-stu-id="686b6-115">Type</span></span> | <span data-ttu-id="686b6-116">Klíčové slovo</span><span class="sxs-lookup"><span data-stu-id="686b6-116">Keyword</span></span> | <span data-ttu-id="686b6-117">Přípona</span><span class="sxs-lookup"><span data-stu-id="686b6-117">Suffix</span></span> |
+| <span data-ttu-id="1305b-115">type</span><span class="sxs-lookup"><span data-stu-id="1305b-115">Type</span></span> | <span data-ttu-id="1305b-116">Klíčové slovo</span><span class="sxs-lookup"><span data-stu-id="1305b-116">Keyword</span></span> | <span data-ttu-id="1305b-117">Přípona</span><span class="sxs-lookup"><span data-stu-id="1305b-117">Suffix</span></span> |
 |--|--|--|
-| <xref:System.UInt32?displayProperty=nameWithType> | [<span data-ttu-id="686b6-118">uint</span><span class="sxs-lookup"><span data-stu-id="686b6-118">uint</span></span>](../../../language-reference/builtin-types/integral-numeric-types.md) | <span data-ttu-id="686b6-119">U</span><span class="sxs-lookup"><span data-stu-id="686b6-119">U</span></span> |
-| <xref:System.Int64?displayProperty=nameWithType> | [<span data-ttu-id="686b6-120">long</span><span class="sxs-lookup"><span data-stu-id="686b6-120">long</span></span>](../../../language-reference/builtin-types/integral-numeric-types.md) | <span data-ttu-id="686b6-121">L</span><span class="sxs-lookup"><span data-stu-id="686b6-121">L</span></span> |
-| <xref:System.UInt64?displayProperty=nameWithType> | [<span data-ttu-id="686b6-122">ulong</span><span class="sxs-lookup"><span data-stu-id="686b6-122">ulong</span></span>](../../../language-reference/builtin-types/integral-numeric-types.md) | <span data-ttu-id="686b6-123">UL</span><span class="sxs-lookup"><span data-stu-id="686b6-123">UL</span></span> |
-| <xref:System.Double?displayProperty=nameWithType> | [<span data-ttu-id="686b6-124">double</span><span class="sxs-lookup"><span data-stu-id="686b6-124">double</span></span>](../../../language-reference/keywords/double.md) | <span data-ttu-id="686b6-125">D</span><span class="sxs-lookup"><span data-stu-id="686b6-125">D</span></span> |
-| <xref:System.Single?displayProperty=nameWithType> | [<span data-ttu-id="686b6-126">float</span><span class="sxs-lookup"><span data-stu-id="686b6-126">float</span></span>](../../../language-reference/keywords/float.md) | <span data-ttu-id="686b6-127">F</span><span class="sxs-lookup"><span data-stu-id="686b6-127">F</span></span> |
-| <xref:System.Decimal?displayProperty=nameWithType> | [<span data-ttu-id="686b6-128">decimal</span><span class="sxs-lookup"><span data-stu-id="686b6-128">decimal</span></span>](../../../language-reference/keywords/decimal.md) | <span data-ttu-id="686b6-129">M</span><span class="sxs-lookup"><span data-stu-id="686b6-129">M</span></span> |
+| <xref:System.UInt32?displayProperty=nameWithType> | [<span data-ttu-id="1305b-118">uint</span><span class="sxs-lookup"><span data-stu-id="1305b-118">uint</span></span>](../../../language-reference/builtin-types/integral-numeric-types.md) | <span data-ttu-id="1305b-119">U</span><span class="sxs-lookup"><span data-stu-id="1305b-119">U</span></span> |
+| <xref:System.Int64?displayProperty=nameWithType> | [<span data-ttu-id="1305b-120">long</span><span class="sxs-lookup"><span data-stu-id="1305b-120">long</span></span>](../../../language-reference/builtin-types/integral-numeric-types.md) | <span data-ttu-id="1305b-121">L</span><span class="sxs-lookup"><span data-stu-id="1305b-121">L</span></span> |
+| <xref:System.UInt64?displayProperty=nameWithType> | [<span data-ttu-id="1305b-122">ulong</span><span class="sxs-lookup"><span data-stu-id="1305b-122">ulong</span></span>](../../../language-reference/builtin-types/integral-numeric-types.md) | <span data-ttu-id="1305b-123">UL</span><span class="sxs-lookup"><span data-stu-id="1305b-123">UL</span></span> |
+| <xref:System.Double?displayProperty=nameWithType> | [<span data-ttu-id="1305b-124">double</span><span class="sxs-lookup"><span data-stu-id="1305b-124">double</span></span>](../../../language-reference/builtin-types/floating-point-numeric-types.md) | <span data-ttu-id="1305b-125">D</span><span class="sxs-lookup"><span data-stu-id="1305b-125">D</span></span> |
+| <xref:System.Single?displayProperty=nameWithType> | [<span data-ttu-id="1305b-126">float</span><span class="sxs-lookup"><span data-stu-id="1305b-126">float</span></span>](../../../language-reference/builtin-types/floating-point-numeric-types.md) | <span data-ttu-id="1305b-127">F</span><span class="sxs-lookup"><span data-stu-id="1305b-127">F</span></span> |
+| <xref:System.Decimal?displayProperty=nameWithType> | [<span data-ttu-id="1305b-128">decimal</span><span class="sxs-lookup"><span data-stu-id="1305b-128">decimal</span></span>](../../../language-reference/builtin-types/floating-point-numeric-types.md) | <span data-ttu-id="1305b-129">M</span><span class="sxs-lookup"><span data-stu-id="1305b-129">M</span></span> |
 
-### <a name="examples"></a><span data-ttu-id="686b6-130">Příklady</span><span class="sxs-lookup"><span data-stu-id="686b6-130">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="1305b-130">Příklady</span><span class="sxs-lookup"><span data-stu-id="1305b-130">Examples</span></span>
 
 ```csharp
 int num = 10;
@@ -72,11 +72,11 @@ ConstantExpression expr = Expression.Constant(num);
 */
 ```
 
-## <a name="blockexpression"></a><span data-ttu-id="686b6-131">BlockExpression</span><span class="sxs-lookup"><span data-stu-id="686b6-131">BlockExpression</span></span>
+## <a name="blockexpression"></a><span data-ttu-id="1305b-131">BlockExpression</span><span class="sxs-lookup"><span data-stu-id="1305b-131">BlockExpression</span></span>
 
-<span data-ttu-id="686b6-132">Pokud typ <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> objektu se liší od typu posledního výrazu v bloku, zobrazí se typ v lomených závorkách (`<` a `>`).</span><span class="sxs-lookup"><span data-stu-id="686b6-132">If the type of a <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> object differs from the type of the last expression in the block, the type is displayed within angle brackets (`<` and `>`).</span></span> <span data-ttu-id="686b6-133">V opačném případě typu <xref:System.Linq.Expressions.BlockExpression> objekt se nezobrazuje.</span><span class="sxs-lookup"><span data-stu-id="686b6-133">Otherwise, the type of the <xref:System.Linq.Expressions.BlockExpression> object is not displayed.</span></span>
+<span data-ttu-id="1305b-132">Pokud typ <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> objektu se liší od typu posledního výrazu v bloku, zobrazí se typ v lomených závorkách (`<` a `>`).</span><span class="sxs-lookup"><span data-stu-id="1305b-132">If the type of a <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> object differs from the type of the last expression in the block, the type is displayed within angle brackets (`<` and `>`).</span></span> <span data-ttu-id="1305b-133">V opačném případě typu <xref:System.Linq.Expressions.BlockExpression> objekt se nezobrazuje.</span><span class="sxs-lookup"><span data-stu-id="1305b-133">Otherwise, the type of the <xref:System.Linq.Expressions.BlockExpression> object is not displayed.</span></span>
 
-### <a name="examples"></a><span data-ttu-id="686b6-134">Příklady</span><span class="sxs-lookup"><span data-stu-id="686b6-134">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="1305b-134">Příklady</span><span class="sxs-lookup"><span data-stu-id="1305b-134">Examples</span></span>
 
 ```csharp
 BlockExpression block = Expression.Block(Expression.Constant("test"));
@@ -94,13 +94,13 @@ BlockExpression block =  Expression.Block(typeof(Object), Expression.Constant("t
 */
 ```
 
-## <a name="lambdaexpression"></a><span data-ttu-id="686b6-135">LambdaExpression</span><span class="sxs-lookup"><span data-stu-id="686b6-135">LambdaExpression</span></span>
+## <a name="lambdaexpression"></a><span data-ttu-id="1305b-135">LambdaExpression</span><span class="sxs-lookup"><span data-stu-id="1305b-135">LambdaExpression</span></span>
 
-<span data-ttu-id="686b6-136"><xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objekty se zobrazí spolu s jejich typy delegátů.</span><span class="sxs-lookup"><span data-stu-id="686b6-136"><xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objects are displayed together with their delegate types.</span></span>
+<span data-ttu-id="1305b-136"><xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objekty se zobrazí spolu s jejich typy delegátů.</span><span class="sxs-lookup"><span data-stu-id="1305b-136"><xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objects are displayed together with their delegate types.</span></span>
 
-<span data-ttu-id="686b6-137">Pokud výraz lambda nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Lambda1` nebo `#Lambda2`.</span><span class="sxs-lookup"><span data-stu-id="686b6-137">If a lambda expression does not have a name, it is assigned an automatically generated name, such as `#Lambda1` or `#Lambda2`.</span></span>
+<span data-ttu-id="1305b-137">Pokud výraz lambda nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Lambda1` nebo `#Lambda2`.</span><span class="sxs-lookup"><span data-stu-id="1305b-137">If a lambda expression does not have a name, it is assigned an automatically generated name, such as `#Lambda1` or `#Lambda2`.</span></span>
 
-### <a name="examples"></a><span data-ttu-id="686b6-138">Příklady</span><span class="sxs-lookup"><span data-stu-id="686b6-138">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="1305b-138">Příklady</span><span class="sxs-lookup"><span data-stu-id="1305b-138">Examples</span></span>
 
 ```csharp
 LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1));
@@ -118,15 +118,15 @@ LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1), 
 */
 ```
 
-## <a name="labelexpression"></a><span data-ttu-id="686b6-139">LabelExpression</span><span class="sxs-lookup"><span data-stu-id="686b6-139">LabelExpression</span></span>
+## <a name="labelexpression"></a><span data-ttu-id="1305b-139">LabelExpression</span><span class="sxs-lookup"><span data-stu-id="1305b-139">LabelExpression</span></span>
 
-<span data-ttu-id="686b6-140">Pokud chcete zadat výchozí hodnotu pro <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> objektu, zobrazí se tato hodnota před <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> objektu.</span><span class="sxs-lookup"><span data-stu-id="686b6-140">If you specify a default value for the <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> object, this value is displayed before the <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> object.</span></span>
+<span data-ttu-id="1305b-140">Pokud chcete zadat výchozí hodnotu pro <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> objektu, zobrazí se tato hodnota před <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> objektu.</span><span class="sxs-lookup"><span data-stu-id="1305b-140">If you specify a default value for the <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> object, this value is displayed before the <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> object.</span></span>
 
-<span data-ttu-id="686b6-141">`.Label` Token označuje začátek popisek.</span><span class="sxs-lookup"><span data-stu-id="686b6-141">The `.Label` token indicates the start of the label.</span></span> <span data-ttu-id="686b6-142">`.LabelTarget` Určuje cílové cíl, který chcete přejít na token.</span><span class="sxs-lookup"><span data-stu-id="686b6-142">The `.LabelTarget` token indicates the destination of the target to jump to.</span></span>
+<span data-ttu-id="1305b-141">`.Label` Token označuje začátek popisek.</span><span class="sxs-lookup"><span data-stu-id="1305b-141">The `.Label` token indicates the start of the label.</span></span> <span data-ttu-id="1305b-142">`.LabelTarget` Určuje cílové cíl, který chcete přejít na token.</span><span class="sxs-lookup"><span data-stu-id="1305b-142">The `.LabelTarget` token indicates the destination of the target to jump to.</span></span>
 
-<span data-ttu-id="686b6-143">Pokud popisek nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Label1` nebo `#Label2`.</span><span class="sxs-lookup"><span data-stu-id="686b6-143">If a label does not have a name, it is assigned an automatically generated name, such as `#Label1` or `#Label2`.</span></span>
+<span data-ttu-id="1305b-143">Pokud popisek nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Label1` nebo `#Label2`.</span><span class="sxs-lookup"><span data-stu-id="1305b-143">If a label does not have a name, it is assigned an automatically generated name, such as `#Label1` or `#Label2`.</span></span>
 
-### <a name="examples"></a><span data-ttu-id="686b6-144">Příklady</span><span class="sxs-lookup"><span data-stu-id="686b6-144">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="1305b-144">Příklady</span><span class="sxs-lookup"><span data-stu-id="1305b-144">Examples</span></span>
 
 ```csharp
 LabelTarget target = Expression.Label(typeof(int), "SampleLabel");
@@ -157,11 +157,11 @@ BlockExpression block = Expression.Block(
 */
 ```
 
-## <a name="checked-operators"></a><span data-ttu-id="686b6-145">Checked operátory</span><span class="sxs-lookup"><span data-stu-id="686b6-145">Checked Operators</span></span>
+## <a name="checked-operators"></a><span data-ttu-id="1305b-145">Checked operátory</span><span class="sxs-lookup"><span data-stu-id="1305b-145">Checked Operators</span></span>
 
-<span data-ttu-id="686b6-146">Checked operátory jsou zobrazovány `#` symbol před operátor.</span><span class="sxs-lookup"><span data-stu-id="686b6-146">Checked operators are displayed with the `#` symbol in front of the operator.</span></span> <span data-ttu-id="686b6-147">Například operátor checked sčítání se zobrazí jako `#+`.</span><span class="sxs-lookup"><span data-stu-id="686b6-147">For example, the checked addition operator is displayed as `#+`.</span></span>
+<span data-ttu-id="1305b-146">Checked operátory jsou zobrazovány `#` symbol před operátor.</span><span class="sxs-lookup"><span data-stu-id="1305b-146">Checked operators are displayed with the `#` symbol in front of the operator.</span></span> <span data-ttu-id="1305b-147">Například operátor checked sčítání se zobrazí jako `#+`.</span><span class="sxs-lookup"><span data-stu-id="1305b-147">For example, the checked addition operator is displayed as `#+`.</span></span>
 
-### <a name="examples"></a><span data-ttu-id="686b6-148">Příklady</span><span class="sxs-lookup"><span data-stu-id="686b6-148">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="1305b-148">Příklady</span><span class="sxs-lookup"><span data-stu-id="1305b-148">Examples</span></span>
 
 ```csharp
 Expression expr = Expression.AddChecked( Expression.Constant(1), Expression.Constant(2));

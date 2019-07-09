@@ -7,36 +7,36 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 4f091835-28d1-498c-b660-9b3acf34ed13
-ms.openlocfilehash: 1f78d2f0ff8887ca5cf1cd1129fb946d2224246d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9689e3c42010b7de641bee47af34e6888c415ed9
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020280"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663958"
 ---
-# <a name="3-d-graphics-how-to-topics"></a><span data-ttu-id="f868c-102">Postupy: Témata 3D grafiky</span><span class="sxs-lookup"><span data-stu-id="f868c-102">3-D Graphics How-to Topics</span></span>
-<span data-ttu-id="f868c-103">Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] grafiky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="f868c-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] graphics in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
+# <a name="3-d-graphics-how-to-topics"></a><span data-ttu-id="a5786-102">Postupy: Témata 3D grafiky</span><span class="sxs-lookup"><span data-stu-id="a5786-102">3-D Graphics How-to Topics</span></span>
+<span data-ttu-id="a5786-103">Témata v této části ukazují, jak používat 3D grafiky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="a5786-103">The topics in this section demonstrate how to use 3-D graphics in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f868c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f868c-104">In This Section</span></span>  
- [<span data-ttu-id="f868c-105">Vytvoření 3D scény</span><span class="sxs-lookup"><span data-stu-id="f868c-105">Create a 3-D Scene</span></span>](how-to-create-a-3-d-scene.md)  
- [<span data-ttu-id="f868c-106">Použití kresby na 3D model</span><span class="sxs-lookup"><span data-stu-id="f868c-106">Apply a Drawing to a 3-D Model</span></span>](how-to-apply-a-drawing-to-a-3-d-model.md)  
- [<span data-ttu-id="f868c-107">Použití materiálu na přední a zadní část 3D objektu</span><span class="sxs-lookup"><span data-stu-id="f868c-107">Apply Material to the Front and Back of a 3-D Object</span></span>](how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
- [<span data-ttu-id="f868c-108">Použití vyzařujícího materiálu na 3D objekt</span><span class="sxs-lookup"><span data-stu-id="f868c-108">Apply Emissive Material to a 3-D Object</span></span>](how-to-apply-emissive-material-to-a-3-d-object.md)  
- [<span data-ttu-id="f868c-109">Transformace měřítka 3D modelu</span><span class="sxs-lookup"><span data-stu-id="f868c-109">Transform the Scale of a 3-D Model</span></span>](how-to-transform-the-scale-of-a-3-d-model.md)  
- [<span data-ttu-id="f868c-110">Použití několika transformací na 3D model</span><span class="sxs-lookup"><span data-stu-id="f868c-110">Apply Multiple Transformations to a 3-D Model</span></span>](how-to-apply-multiple-transformations-to-a-3-d-model.md)  
- [<span data-ttu-id="f868c-111">Animace 3D posunutí</span><span class="sxs-lookup"><span data-stu-id="f868c-111">Animate 3-D Translations</span></span>](how-to-animate-3-d-translations.md)  
- [<span data-ttu-id="f868c-112">Animace trojrozměrného otočení pomocí scénářů</span><span class="sxs-lookup"><span data-stu-id="f868c-112">Animate a 3-D Rotation Using Storyboards</span></span>](how-to-animate-a-3-d-rotation-using-storyboards.md)  
- [<span data-ttu-id="f868c-113">Animace trojrozměrného otočení pomocí Rotation3DAnimation</span><span class="sxs-lookup"><span data-stu-id="f868c-113">Animate a 3-D Rotation Using Rotation3DAnimation</span></span>](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
- [<span data-ttu-id="f868c-114">Animace 3D otočení pomocí kvaternionů</span><span class="sxs-lookup"><span data-stu-id="f868c-114">Animate a 3-D Rotation Using Quaternions</span></span>](how-to-animate-a-3-d-rotation-using-quaternions.md)  
- [<span data-ttu-id="f868c-115">Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="f868c-115">Animate a 3-D Rotation Using Key Frames (Rotation3DAnimationUsingKeyFrames)</span></span>](how-to-animate-a-3-d-rotation-using-key-frames.md)  
- [<span data-ttu-id="f868c-116">Animace trojrozměrné rotace pomocí klíčových snímků (QuaternionAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="f868c-116">Animate a 3-D Rotation Using Key Frames (QuaternionAnimationUsingKeyFrames)</span></span>](animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
- [<span data-ttu-id="f868c-117">Animace umístění a směrování kamery ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="f868c-117">Animate Camera Position and Direction in a 3D Scene</span></span>](how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
- [<span data-ttu-id="f868c-118">Animace umístění a směrování kamery pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f868c-118">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)  
- [<span data-ttu-id="f868c-119">Animace vlastností materiálu ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="f868c-119">Animate Material Properties in a 3-D Scene</span></span>](how-to-animate-material-properties-in-a-3-d-scene.md)  
- [<span data-ttu-id="f868c-120">Ověření pozice v objektu Viewport3D</span><span class="sxs-lookup"><span data-stu-id="f868c-120">Hit Test in a Viewport3D</span></span>](how-to-hit-test-in-a-viewport3d.md)  
- [<span data-ttu-id="f868c-121">Testování struktur Point4D na rovnost a nerovnost</span><span class="sxs-lookup"><span data-stu-id="f868c-121">Test Point4D structures for equality and inequality</span></span>](how-to-test-point4d-structures-for-equality-and-inequality.md)  
+## <a name="in-this-section"></a><span data-ttu-id="a5786-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a5786-104">In This Section</span></span>  
+ [<span data-ttu-id="a5786-105">Vytvoření 3D scény</span><span class="sxs-lookup"><span data-stu-id="a5786-105">Create a 3-D Scene</span></span>](how-to-create-a-3-d-scene.md)  
+ [<span data-ttu-id="a5786-106">Použití kresby na 3D model</span><span class="sxs-lookup"><span data-stu-id="a5786-106">Apply a Drawing to a 3-D Model</span></span>](how-to-apply-a-drawing-to-a-3-d-model.md)  
+ [<span data-ttu-id="a5786-107">Použití materiálu na přední a zadní část 3D objektu</span><span class="sxs-lookup"><span data-stu-id="a5786-107">Apply Material to the Front and Back of a 3-D Object</span></span>](how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
+ [<span data-ttu-id="a5786-108">Použití vyzařujícího materiálu na 3D objekt</span><span class="sxs-lookup"><span data-stu-id="a5786-108">Apply Emissive Material to a 3-D Object</span></span>](how-to-apply-emissive-material-to-a-3-d-object.md)  
+ [<span data-ttu-id="a5786-109">Transformace měřítka 3D modelu</span><span class="sxs-lookup"><span data-stu-id="a5786-109">Transform the Scale of a 3-D Model</span></span>](how-to-transform-the-scale-of-a-3-d-model.md)  
+ [<span data-ttu-id="a5786-110">Použití několika transformací na 3D model</span><span class="sxs-lookup"><span data-stu-id="a5786-110">Apply Multiple Transformations to a 3-D Model</span></span>](how-to-apply-multiple-transformations-to-a-3-d-model.md)  
+ [<span data-ttu-id="a5786-111">Animace 3D posunutí</span><span class="sxs-lookup"><span data-stu-id="a5786-111">Animate 3-D Translations</span></span>](how-to-animate-3-d-translations.md)  
+ [<span data-ttu-id="a5786-112">Animace trojrozměrného otočení pomocí scénářů</span><span class="sxs-lookup"><span data-stu-id="a5786-112">Animate a 3-D Rotation Using Storyboards</span></span>](how-to-animate-a-3-d-rotation-using-storyboards.md)  
+ [<span data-ttu-id="a5786-113">Animace trojrozměrného otočení pomocí Rotation3DAnimation</span><span class="sxs-lookup"><span data-stu-id="a5786-113">Animate a 3-D Rotation Using Rotation3DAnimation</span></span>](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
+ [<span data-ttu-id="a5786-114">Animace 3D otočení pomocí kvaternionů</span><span class="sxs-lookup"><span data-stu-id="a5786-114">Animate a 3-D Rotation Using Quaternions</span></span>](how-to-animate-a-3-d-rotation-using-quaternions.md)  
+ [<span data-ttu-id="a5786-115">Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="a5786-115">Animate a 3-D Rotation Using Key Frames (Rotation3DAnimationUsingKeyFrames)</span></span>](how-to-animate-a-3-d-rotation-using-key-frames.md)  
+ [<span data-ttu-id="a5786-116">Animace trojrozměrné rotace pomocí klíčových snímků (QuaternionAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="a5786-116">Animate a 3-D Rotation Using Key Frames (QuaternionAnimationUsingKeyFrames)</span></span>](animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
+ [<span data-ttu-id="a5786-117">Animace umístění a směrování kamery ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="a5786-117">Animate Camera Position and Direction in a 3D Scene</span></span>](how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
+ [<span data-ttu-id="a5786-118">Animace umístění a směrování kamery pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="a5786-118">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)  
+ [<span data-ttu-id="a5786-119">Animace vlastností materiálu ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="a5786-119">Animate Material Properties in a 3-D Scene</span></span>](how-to-animate-material-properties-in-a-3-d-scene.md)  
+ [<span data-ttu-id="a5786-120">Ověření pozice v objektu Viewport3D</span><span class="sxs-lookup"><span data-stu-id="a5786-120">Hit Test in a Viewport3D</span></span>](how-to-hit-test-in-a-viewport3d.md)  
+ [<span data-ttu-id="a5786-121">Testování struktur Point4D na rovnost a nerovnost</span><span class="sxs-lookup"><span data-stu-id="a5786-121">Test Point4D structures for equality and inequality</span></span>](how-to-test-point4d-structures-for-equality-and-inequality.md)  
   
-## <a name="reference"></a><span data-ttu-id="f868c-122">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f868c-122">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="a5786-122">Odkaz</span><span class="sxs-lookup"><span data-stu-id="a5786-122">Reference</span></span>  
  <xref:System.Windows.Controls.Viewport3D>  
   
  <xref:System.Windows.Media.Media3D.PerspectiveCamera>  
@@ -45,5 +45,5 @@ ms.locfileid: "62020280"
   
  <xref:System.Windows.Media.Media3D.Material>  
   
-## <a name="related-sections"></a><span data-ttu-id="f868c-123">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f868c-123">Related Sections</span></span>  
- [<span data-ttu-id="f868c-124">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="f868c-124">Graphics and Multimedia</span></span>](index.md)
+## <a name="related-sections"></a><span data-ttu-id="a5786-123">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a5786-123">Related Sections</span></span>  
+ [<span data-ttu-id="a5786-124">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="a5786-124">Graphics and Multimedia</span></span>](index.md)

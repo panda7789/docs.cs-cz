@@ -9,25 +9,25 @@ helpviewer_keywords:
 - clipping regions defined [WPF]
 - hit-test objects [WPF]
 ms.assetid: 47ad531d-a4da-4e99-b12e-1de710c32493
-ms.openlocfilehash: 57e32d3e56c3f319f7ee8aa58020d37e46a6454d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e98575b2569ebc20a5421de54bc13fb14cb3cdac
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762262"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663150"
 ---
-# <a name="geometries"></a><span data-ttu-id="051a1-102">Geometrie</span><span class="sxs-lookup"><span data-stu-id="051a1-102">Geometries</span></span>
-<span data-ttu-id="051a1-103"><xref:System.Windows.Media.Geometry> univerzální třída, která se použije k vykreslení [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] grafiky, objekty spuštění testu a definování oblastí oříznutí</span><span class="sxs-lookup"><span data-stu-id="051a1-103"><xref:System.Windows.Media.Geometry> is a versatile class, used to render [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] graphics, hit-test objects, and define clipping regions</span></span>  
+# <a name="geometries"></a><span data-ttu-id="634c6-102">Geometrie</span><span class="sxs-lookup"><span data-stu-id="634c6-102">Geometries</span></span>
+<span data-ttu-id="634c6-103"><xref:System.Windows.Media.Geometry> univerzální třída, používá k vykreslení 2D grafika, objekty spuštění testu a definování oblastí oříznutí</span><span class="sxs-lookup"><span data-stu-id="634c6-103"><xref:System.Windows.Media.Geometry> is a versatile class, used to render 2-D graphics, hit-test objects, and define clipping regions</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="051a1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="051a1-104">In This Section</span></span>  
- [<span data-ttu-id="051a1-105">Syntaxe značek cesty</span><span class="sxs-lookup"><span data-stu-id="051a1-105">Path Markup Syntax</span></span>](path-markup-syntax.md)  
- [<span data-ttu-id="051a1-106">Přehled geometrie</span><span class="sxs-lookup"><span data-stu-id="051a1-106">Geometry Overview</span></span>](geometry-overview.md)  
- [<span data-ttu-id="051a1-107">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="051a1-107">How-to Topics</span></span>](geometries-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="634c6-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="634c6-104">In This Section</span></span>  
+ [<span data-ttu-id="634c6-105">Syntaxe značek cesty</span><span class="sxs-lookup"><span data-stu-id="634c6-105">Path Markup Syntax</span></span>](path-markup-syntax.md)  
+ [<span data-ttu-id="634c6-106">Přehled geometrie</span><span class="sxs-lookup"><span data-stu-id="634c6-106">Geometry Overview</span></span>](geometry-overview.md)  
+ [<span data-ttu-id="634c6-107">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="634c6-107">How-to Topics</span></span>](geometries-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="051a1-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="051a1-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="634c6-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="634c6-108">See also</span></span>
 
 - <xref:System.Windows.Media.Brushes>
 - <xref:System.Windows.Shapes.Shape>
-- [<span data-ttu-id="051a1-109">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="051a1-109">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [<span data-ttu-id="051a1-110">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="051a1-110">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)
-- [<span data-ttu-id="051a1-111">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="051a1-111">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="634c6-109">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="634c6-109">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [<span data-ttu-id="634c6-110">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="634c6-110">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)
+- [<span data-ttu-id="634c6-111">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="634c6-111">Graphics and Multimedia</span></span>](index.md)
