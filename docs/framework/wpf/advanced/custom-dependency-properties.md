@@ -14,28 +14,31 @@ helpviewer_keywords:
 - wrappers [WPF], implementing
 - dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
-ms.openlocfilehash: 4ef97af17893fa7a4e85d09e989539f7f5b32a36
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 27554d7e0a7e980d240e0609fe0561c2138f0aa1
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627367"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67664062"
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 
 Toto téma popisuje důvody, které [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojáře aplikací a autoři komponenty může být vhodné vytvořit vlastnost vlastní závislosti a popisuje implementaci, jakož i některé možnosti implementace, které může zlepšit výkon, Použitelnost nebo všestrannost vlastnost.
 
 <a name="prerequisites"></a>
+
 ## <a name="prerequisites"></a>Požadavky
 
 Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](dependency-properties-overview.md) tématu. Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a vědět, jak psát [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.
 
 <a name="whatis"></a>
+
 ## <a name="what-is-a-dependency-property"></a>Co je vlastnost závislosti?
 
 Můžete povolit, co by jinak byly [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost pro podporu používání stylů pro vytváření datových vazeb, dědičnosti, animace a výchozí hodnoty implementací jako vlastnost závislosti. Závislé vlastnosti jsou vlastnosti, které jsou registrované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému voláním <xref:System.Windows.DependencyProperty.Register%2A> – metoda (nebo <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>), a které se zálohují na <xref:System.Windows.DependencyProperty> identifikátor pole. Vlastnosti závislostí lze použít pouze <xref:System.Windows.DependencyObject> typy, ale <xref:System.Windows.DependencyObject> je poměrně vysoké [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídy hierarchie, takže většina tříd k dispozici v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] může podporovat vlastnosti závislosti. Další informace o vlastnosti závislosti a některé terminologie a konvencemi použitými pro popis v tomto [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)], naleznete v tématu [přehled vlastností závislosti](dependency-properties-overview.md).
 
 <a name="example_dp"></a>
+
 ## <a name="examples-of-dependency-properties"></a>Příklady vlastností závislosti
 
 Příkladem vlastnosti závislosti, které jsou implementovány v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídy zahrnují <xref:System.Windows.Controls.Control.Background%2A> vlastnost, <xref:System.Windows.FrameworkElement.Width%2A> vlastnost a <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost mezi mnoha dalších. Každá vlastnost závislosti vystavené třídy má odpovídající veřejné statické pole typu <xref:System.Windows.DependencyProperty> zveřejněné na stejné třídy. Toto je identifikátor pro vlastnost závislosti. Tento identifikátor má název, pomocí konvence: název vlastnosti závislostí s řetězcem `Property` připojí k němu. Například odpovídající <xref:System.Windows.DependencyProperty> identifikátor pole <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Controls.Control.BackgroundProperty>. Identifikátor ukládá informace o vlastnosti závislosti, jako byl zaregistrován a tento identifikátor se pak použije později pro další operace, které zahrnují vlastnost závislosti, jako je například volání <xref:System.Windows.DependencyObject.SetValue%2A>.
@@ -43,6 +46,7 @@ Příkladem vlastnosti závislosti, které jsou implementovány v [!INCLUDE[TLA2
 Jak je uvedeno v [přehled vlastností závislosti](dependency-properties-overview.md), všechny vlastnosti závislostí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (s výjimkou nejvíce připojené vlastnosti) jsou také [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnosti z důvodu implementace "zabezpečenou obálku". Proto z kódu, můžete získat nebo nastavit vlastnosti závislosti voláním [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] přístupové objekty, které definují obálkami stejným způsobem, že použijete jiné [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnosti. Jako příjemce vlastnosti zavedené závislosti, nepoužíváte obvykle <xref:System.Windows.DependencyObject> metody <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>, které jsou spojovací bod do základního vlastnost systému. Místo toho stávající implementaci [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] mít vlastnosti již volána <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> v rámci `get` a `set` implementace Obálka vlastnosti odpovídajícím způsobem pomocí pole identifikátoru . Pokud implementujete vlastní závislost vlastnost sami, pak je bude být definování obálku podobným způsobem.
 
 <a name="backing_with_dp"></a>
+
 ## <a name="when-should-you-implement-a-dependency-property"></a>Pokud je implementace vlastnosti závislosti?
 
 Pokud implementujete vlastnost ve třídě, tak dlouho, dokud vaše třída odvozena z <xref:System.Windows.DependencyObject>, máte možnost zálohovat vaše vlastnost s <xref:System.Windows.DependencyProperty> identifikátor a tím k němu vlastnost závislosti. S vaší vlastnost, vlastnost závislosti není vždy nutné nebo vhodné a bude záviset na požadavcích scénáře. V některých případech je odpovídající typickou techniku zálohovat vaše vlastnost s privátní pole. Ale měli byste implementovat vaše vlastnost jako vlastnost závislosti pokaždé, když chcete, aby vaše vlastnost pro podporu jeden nebo více z následujících [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] možnosti:
@@ -66,6 +70,7 @@ Pokud implementujete vlastnost ve třídě, tak dlouho, dokud vaše třída odvo
 Při zkoumání těchto scénářů, měli byste také zvážit, zda můžete dosáhnout váš scénář přepsání metadat existující vlastnost závislosti, nikoli implementací úplně novou vlastnost. Určuje, zda je praktické přepis metadat závisí na vašem scénáři a jak tento scénář připomíná implementace v existujícím [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídy a vlastnosti závislosti. Další informace o přepsání metadat na existující vlastnosti najdete v tématu [Metadata vlastností závislosti](dependency-property-metadata.md).
 
 <a name="checklist"></a>
+
 ## <a name="checklist-for-defining-a-dependency-property"></a>Kontrolní seznam pro definování vlastnost závislosti
 
 Definovat vlastnosti závislosti se skládá ze čtyř různých koncepty. Tyto koncepty nejsou nutně striktní příklady kroků, protože některé z nich skončit se kombinovat jako jeden řádek kódu v implementaci:
@@ -79,6 +84,7 @@ Definovat vlastnosti závislosti se skládá ze čtyř různých koncepty. Tyto 
 - Definování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "zabezpečenou obálku" vlastnost, jejíž název odpovídá názvu vlastnosti závislosti. Implementace [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "zabezpečenou obálku" vlastnost `get` a `set` přístupové objekty pro připojení k vlastnost závislosti, která zálohuje ho.
 
 <a name="registering"></a>
+
 ### <a name="registering-the-property-with-the-property-system"></a>Vlastnosti registrace v systému vlastností
 
 Aby vaše vlastnost jako vlastnost závislosti musí zaregistrovat tuto vlastnost do tabulky udržuje v systému vlastností a poskytněte jedinečný identifikátor, který se používá jako kvalifikátor pro pozdější operace vlastností systému. Tyto operace může být interní operace nebo váš vlastní kód volání systému vlastností [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. K registraci vlastnost zavoláte <xref:System.Windows.DependencyProperty.Register%2A> metoda v těle vaší třídy (uvnitř třídy, ale mimo všechny definice členů). Identifikátor pole také poskytuje <xref:System.Windows.DependencyProperty.Register%2A> volání metody, jako návratovou hodnotu. Z důvodu, který <xref:System.Windows.DependencyProperty.Register%2A> se provádí volání mimo jiný člen je definice, protože tuto hodnotu použijete přiřadit a vytvořit `public` `static` `readonly` pole typu <xref:System.Windows.DependencyProperty> jako součást vaší třídy. Toto pole bude identifikátor pro vaše vlastnost závislosti.
@@ -87,6 +93,7 @@ Aby vaše vlastnost jako vlastnost závislosti musí zaregistrovat tuto vlastnos
 [!code-vb[WPFAquariumSln#RegisterAG](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerag)]
 
 <a name="nameconventions"></a>
+
 ### <a name="dependency-property-name-conventions"></a>Konvence název vlastnosti závislosti
 
 Jsou zavedené zásady vytváření názvů týkající se vlastnosti závislosti, které je třeba provést ve všech ale výjimečných okolností.
@@ -99,6 +106,7 @@ Při vytváření identifikátor pole název tohoto pole podle názvu vlastnosti
 > Definování vlastnosti závislosti do těla třídy je obvyklá implementace, ale je také možné definovat vlastnosti závislosti v statický konstruktor třídy. Tento přístup může mít smysl, pokud potřebujete více než jeden řádek kódu k inicializaci vlastnosti závislosti.
 
 <a name="wrapper1"></a>
+
 ### <a name="implementing-the-wrapper"></a>Implementace zabezpečenou "obálku"
 
 Implementace obálky by měly volat <xref:System.Windows.DependencyObject.GetValue%2A> v `get` implementaci a <xref:System.Windows.DependencyObject.SetValue%2A> v `set` (původní volání registrace a pole jsou zde uvedená implementace příliš pro přehlednost).
@@ -119,6 +127,7 @@ Znovu podle konvence, název vlastnosti obálky musí být stejný jako název z
 - Aktuální provádění [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zavaděč zcela vynechá obálkami a spoléhá na zásady vytváření názvů při zpracování hodnot atributů. Další informace najdete v tématu [vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md).
 
 <a name="metadata"></a>
+
 ### <a name="property-metadata-for-a-new-dependency-property"></a>Metadata vlastností pro novou vlastnost závislosti
 
 Při registraci vlastnost závislosti registrace prostřednictvím systému vlastnost vytvoří objekt metadat, který uchovává vlastnost charakteristiky. Mnohé z těchto vlastností mají výchozí hodnoty, které jsou nastaveny, pokud je vlastnost zaregistrován u jednoduchého podpisy <xref:System.Windows.DependencyProperty.Register%2A>. Další podpisy <xref:System.Windows.DependencyProperty.Register%2A> vám umožňují určit metadata, která chcete, aby při registraci vlastnost. Nejběžnější metadata pro vlastnosti závislosti se jim dát výchozí hodnotu, která je použita pro nové instance, které používají vlastnost.
@@ -131,13 +140,13 @@ Pro <xref:System.Windows.FrameworkPropertyMetadata>, můžete také zadat metada
 
 - Pokud vlastnost (nebo změny v jeho hodnotu) má vliv [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], a konkrétně ovlivní způsob, jakým by měl systém rozložení velikost nebo vykreslit prvek na stránce nastavit jeden nebo více z následujících příznaků: <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure>, <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange>, <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender>.
 
-    - <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure> Označuje, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslování, ve kterém obsahujícího objektu může vyžadovat víc nebo míň místa v rámci nadřazené. Například vlastnost "Šířka" by měl mít tento příznak nastaven.
+  - <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure> Označuje, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslování, ve kterém obsahujícího objektu může vyžadovat víc nebo míň místa v rámci nadřazené. Například vlastnost "Šířka" by měl mít tento příznak nastaven.
 
-    - <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange> Označuje, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslování, které obvykle nevyžaduje změnu ve vyhrazené místo, ale značí to, že se změnila pozice v rámci oboru. Například vlastnost "Zarovnání" by měl mít tento příznak nastaven.
+  - <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange> Označuje, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslování, které obvykle nevyžaduje změnu ve vyhrazené místo, ale značí to, že se změnila pozice v rámci oboru. Například vlastnost "Zarovnání" by měl mít tento příznak nastaven.
 
-    - <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender> Označuje, že některé další došlo ke změně, která nebude mít vliv na rozložení a míry, ale vyžaduje další vykreslování. Příkladem může být vlastnost, která změní barvu existujícího prvku, jako je například "Pozadí".
+  - <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender> Označuje, že některé další došlo ke změně, která nebude mít vliv na rozložení a míry, ale vyžaduje další vykreslování. Příkladem může být vlastnost, která změní barvu existujícího prvku, jako je například "Pozadí".
 
-    - Tyto příznaky jsou často používá jako protokol v metadatech pro vaše vlastní implementace přepsání vlastnosti systému nebo rozložení zpětných volání. Například můžete mít <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> zpětné volání, které bude volat <xref:System.Windows.UIElement.InvalidateArrange%2A> pokud nějaká vlastnost instance změna hodnoty určité sestavy a má <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> jako `true` ve svých metadatech.
+  - Tyto příznaky jsou často používá jako protokol v metadatech pro vaše vlastní implementace přepsání vlastnosti systému nebo rozložení zpětných volání. Například můžete mít <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> zpětné volání, které bude volat <xref:System.Windows.UIElement.InvalidateArrange%2A> pokud nějaká vlastnost instance změna hodnoty určité sestavy a má <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> jako `true` ve svých metadatech.
 
 - Některé vlastnosti může mít vliv na vykreslování vlastnosti nadřazeného nadřazeného elementu, způsoby nenabízející změny ve výše uvedené požadované velikosti. Příkladem je <xref:System.Windows.Documents.Paragraph.MinOrphanLines%2A> vlastnost použít v modelu dokument toku, kde můžete změny vlastnosti měnit celkovou vykreslování plovoucí dokument, který obsahuje odstavce. Použití <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentArrange> nebo <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentMeasure> k identifikaci obdobné případy v vlastní vlastnosti.
 
@@ -150,21 +159,25 @@ Pro <xref:System.Windows.FrameworkPropertyMetadata>, můžete také zadat metada
 - Nastavte <xref:System.Windows.FrameworkPropertyMetadataOptions.Journal> příznak označující, pokud vaše vlastnost závislosti by měly být zjištěna nebo používané službami záznamu do deníku navigace. Příkladem je <xref:System.Windows.Controls.Primitives.Selector.SelectedIndex%2A> vlastnost; jakékoli položky vybrané ve výběru ovládací prvek by měl nastavit jako trvalý, když přejde do historie záznamu do deníku.
 
 <a name="RODP"></a>
+
 ## <a name="read-only-dependency-properties"></a>Vlastnosti závislosti jen pro čtení
 
 Můžete definovat vlastnosti závislosti, která je jen pro čtení. Scénáře pro proč může definovat vaše vlastnost jen pro čtení jsou však poněkud liší, jako je postup pro registraci v systému vlastností a zveřejnění identifikátoru. Další informace najdete v tématu [vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md).
 
 <a name="CTDP"></a>
+
 ## <a name="collection-type-dependency-properties"></a>Vlastnosti závislostí typu kolekce
 
 Vlastnosti závislostí typu kolekce mají některé další implementace problémy vzít v úvahu. Podrobnosti najdete v tématu [vlastnosti závislostí typu kolekce](collection-type-dependency-properties.md).
 
 <a name="SecurityC"></a>
+
 ## <a name="dependency-property-security-considerations"></a>Aspekty zabezpečení vlastností závislosti
 
 Vlastnosti závislosti by měl být deklarován jako veřejné vlastnosti. Pole identifikátoru vlastnosti závislosti by měl být deklarován jako veřejné statické pole. I v případě, že při pokusu deklarovat jiných úrovních přístupu (například chráněné), vlastnost závislosti vždy přistupuje prostřednictvím identifikátor v kombinaci s vlastností systému [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Z důvodu stanovení vytváření sestav, nebo hodnota metadat potenciálně přístupný i chráněné identifikátor pole [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , které jsou součástí vlastností systému, jako například <xref:System.Windows.LocalValueEnumerator>. Další informace najdete v tématu [zabezpečení vlastností závislosti](dependency-property-security.md).
 
 <a name="DPCtor"></a>
+
 ## <a name="dependency-properties-and-class-constructors"></a>Vlastnosti závislostí a konstruktor třídy
 
 Je zásadně ve spravovaném kódu programování (často vynucuje sada nástrojů pro analýzu kódu jako je například FxCop), které třídy konstruktory by neměl volat virtuální metody. Je to proto, že konstruktory lze volat jako základní inicializace konstruktoru odvozené třídy, a zadáte virtuální metodu pomocí konstruktoru mohou nastat za stavu neúplná inicializace vytváří instanci objektu. Když odvozujete z jiné třídy, která už je odvozena z <xref:System.Windows.DependencyObject>, je třeba si uvědomit, že samotný systém vlastnosti volání a interně poskytuje virtuální metody. Tyto virtuální metody jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systémových služeb. Přepsání metody umožňuje odvozené třídy se účastnit stanovení hodnotu. Aby se zabránilo problémům s inicializace za běhu, by neměl nastavíte závislost hodnoty vlastností v rámci konstruktory tříd, pokud podle vzoru velmi konkrétní konstruktor. Podrobnosti najdete v tématu [bezpečné zabezpečené vzory konstruktoru pro DependencyObjects](safe-constructor-patterns-for-dependencyobjects.md).
