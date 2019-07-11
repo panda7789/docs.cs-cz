@@ -17,53 +17,53 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1d069446ecb0b630870f0d2c9c4bdc23232c40c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2cc587edf763a352501a0d9097bdab2c54658d98
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991884"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67762840"
 ---
-# <a name="icorprofilerinfogetcodeinfo-method"></a><span data-ttu-id="2379e-102">ICorProfilerInfo::GetCodeInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="2379e-102">ICorProfilerInfo::GetCodeInfo Method</span></span>
-<span data-ttu-id="2379e-103">Vrátí rozsah nativního kódu přidružené k ID zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="2379e-103">Gets the extent of native code associated with the specified function ID.</span></span>  
+# <a name="icorprofilerinfogetcodeinfo-method"></a><span data-ttu-id="5238d-102">ICorProfilerInfo::GetCodeInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="5238d-102">ICorProfilerInfo::GetCodeInfo Method</span></span>
+<span data-ttu-id="5238d-103">Vrátí rozsah nativního kódu přidružené k ID zadanou funkci.</span><span class="sxs-lookup"><span data-stu-id="5238d-103">Gets the extent of native code associated with the specified function ID.</span></span>  
   
- <span data-ttu-id="2379e-104">Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="2379e-104">This method is obsolete.</span></span> <span data-ttu-id="2379e-105">Použití [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="2379e-105">Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.</span></span>  
+ <span data-ttu-id="5238d-104">Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="5238d-104">This method is obsolete.</span></span> <span data-ttu-id="5238d-105">Použití [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="5238d-105">Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2379e-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2379e-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5238d-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5238d-106">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetCodeInfo(  
     [in]  FunctionID functionId,  
     [out] LPCBYTE    *pStart,  
     [out] ULONG      *pcSize);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2379e-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="2379e-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5238d-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="5238d-107">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="2379e-108">[in] ID funkce, ke kterému je přidružen nativní kód.</span><span class="sxs-lookup"><span data-stu-id="2379e-108">[in] The ID of the function with which the native code is associated.</span></span>  
+ <span data-ttu-id="5238d-108">[in] ID funkce, ke kterému je přidružen nativní kód.</span><span class="sxs-lookup"><span data-stu-id="5238d-108">[in] The ID of the function with which the native code is associated.</span></span>  
   
  `pStart`  
- <span data-ttu-id="2379e-109">[out] Ukazatel na pole bajtů, které tvoří nativního kódu funkce.</span><span class="sxs-lookup"><span data-stu-id="2379e-109">[out] A pointer to an array of bytes that compose the native code of the function.</span></span>  
+ <span data-ttu-id="5238d-109">[out] Ukazatel na pole bajtů, které tvoří nativního kódu funkce.</span><span class="sxs-lookup"><span data-stu-id="5238d-109">[out] A pointer to an array of bytes that compose the native code of the function.</span></span>  
   
  `pcSize`  
- <span data-ttu-id="2379e-110">[out] Ukazatel na celé číslo, které určuje velikost v bajtech nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="2379e-110">[out] A pointer to an integer that specifies the size, in bytes, of the native code.</span></span>  
+ <span data-ttu-id="5238d-110">[out] Ukazatel na celé číslo, které určuje velikost v bajtech nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="5238d-110">[out] A pointer to an integer that specifies the size, in bytes, of the native code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2379e-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2379e-111">Remarks</span></span>  
- <span data-ttu-id="2379e-112">Za účelem optimalizace výkonu modulu runtime v rozhraní .NET Framework verze 2.0 rozdělí předkompilované nativního kódu funkce do několika oblastí.</span><span class="sxs-lookup"><span data-stu-id="2379e-112">To optimize performance, the runtime in the .NET Framework version 2.0 splits the precompiled, native code of a function into multiple regions.</span></span> <span data-ttu-id="2379e-113">V důsledku toho `GetCodeInfo` metoda je zastaralé v rozhraní .NET Framework 2.0, protože není schopen zpracovat rozsah nativního kódu funkce.</span><span class="sxs-lookup"><span data-stu-id="2379e-113">Consequently, the `GetCodeInfo` method is obsolete in the .NET Framework 2.0 because it is unable to handle the extent of a function's native code.</span></span> <span data-ttu-id="2379e-114">Profilovací programy by měl přepnout na použití obecnější `ICorProfilerInfo2::GetCodeInfo2` metoda místo.</span><span class="sxs-lookup"><span data-stu-id="2379e-114">Profilers should switch to using the more general `ICorProfilerInfo2::GetCodeInfo2` method instead.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5238d-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5238d-111">Remarks</span></span>  
+ <span data-ttu-id="5238d-112">Za účelem optimalizace výkonu modulu runtime v rozhraní .NET Framework verze 2.0 rozdělí předkompilované nativního kódu funkce do několika oblastí.</span><span class="sxs-lookup"><span data-stu-id="5238d-112">To optimize performance, the runtime in the .NET Framework version 2.0 splits the precompiled, native code of a function into multiple regions.</span></span> <span data-ttu-id="5238d-113">V důsledku toho `GetCodeInfo` metoda je zastaralé v rozhraní .NET Framework 2.0, protože není schopen zpracovat rozsah nativního kódu funkce.</span><span class="sxs-lookup"><span data-stu-id="5238d-113">Consequently, the `GetCodeInfo` method is obsolete in the .NET Framework 2.0 because it is unable to handle the extent of a function's native code.</span></span> <span data-ttu-id="5238d-114">Profilovací programy by měl přepnout na použití obecnější `ICorProfilerInfo2::GetCodeInfo2` metoda místo.</span><span class="sxs-lookup"><span data-stu-id="5238d-114">Profilers should switch to using the more general `ICorProfilerInfo2::GetCodeInfo2` method instead.</span></span>  
   
- <span data-ttu-id="2379e-115">Tato funkce využívá volající – přidělené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="2379e-115">This function uses caller-allocated buffers.</span></span>  
+ <span data-ttu-id="5238d-115">Tato funkce využívá volající – přidělené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="5238d-115">This function uses caller-allocated buffers.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2379e-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2379e-116">Requirements</span></span>  
- <span data-ttu-id="2379e-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2379e-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5238d-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5238d-116">Requirements</span></span>  
+ <span data-ttu-id="5238d-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5238d-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2379e-118">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="2379e-118">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="5238d-118">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="5238d-118">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="2379e-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2379e-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="5238d-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5238d-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2379e-120">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="2379e-120">**.NET Framework Versions:** 1.0</span></span>  
+ <span data-ttu-id="5238d-120">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="5238d-120">**.NET Framework Versions:** 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2379e-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2379e-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5238d-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5238d-121">See also</span></span>
 
-- [<span data-ttu-id="2379e-122">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2379e-122">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="2379e-123">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="2379e-123">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [<span data-ttu-id="2379e-124">Profilace</span><span class="sxs-lookup"><span data-stu-id="2379e-124">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [<span data-ttu-id="5238d-122">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5238d-122">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="5238d-123">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="5238d-123">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="5238d-124">Profilace</span><span class="sxs-lookup"><span data-stu-id="5238d-124">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)

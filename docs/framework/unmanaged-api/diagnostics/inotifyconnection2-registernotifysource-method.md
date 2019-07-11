@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9dac5ae2f0f77c7b6d2dbd7f908f3552823735b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d3c0d833208c91c548ea993bb6aa32e36e1f358
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940423"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776633"
 ---
-# <a name="inotifyconnection2registernotifysource-method"></a><span data-ttu-id="5e764-102">INotifyConnection2::RegisterNotifySource – metoda</span><span class="sxs-lookup"><span data-stu-id="5e764-102">INotifyConnection2::RegisterNotifySource Method</span></span>
-<span data-ttu-id="5e764-103">Nainstaluje zdroj zadaného oznámení.</span><span class="sxs-lookup"><span data-stu-id="5e764-103">Installs a specified notification source.</span></span>  
+# <a name="inotifyconnection2registernotifysource-method"></a><span data-ttu-id="ed142-102">INotifyConnection2::RegisterNotifySource – metoda</span><span class="sxs-lookup"><span data-stu-id="ed142-102">INotifyConnection2::RegisterNotifySource Method</span></span>
+<span data-ttu-id="ed142-103">Nainstaluje zdroj zadaného oznámení.</span><span class="sxs-lookup"><span data-stu-id="ed142-103">Installs a specified notification source.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5e764-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5e764-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ed142-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ed142-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT RegisterNotifySource  
 (  
     [in]  INotifySource2*  in_pNotifySource,  
@@ -37,22 +37,22 @@ HRESULT RegisterNotifySource
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5e764-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5e764-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ed142-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ed142-105">Parameters</span></span>  
  `in_pNotifySource`  
- <span data-ttu-id="5e764-106">[in] Určuje objekt, který chcete použít jako zdroj pro oznámení.</span><span class="sxs-lookup"><span data-stu-id="5e764-106">[in] Specifies the object to be used as the notification source.</span></span>  
+ <span data-ttu-id="ed142-106">[in] Určuje objekt, který chcete použít jako zdroj pro oznámení.</span><span class="sxs-lookup"><span data-stu-id="ed142-106">[in] Specifies the object to be used as the notification source.</span></span>  
   
  `out_ppNotifySink`  
- <span data-ttu-id="5e764-107">[out] Přijímá objekt, který chcete použít jako jímka oznámení.</span><span class="sxs-lookup"><span data-stu-id="5e764-107">[out] Receives the object to be used as the notification sink.</span></span>  
+ <span data-ttu-id="ed142-107">[out] Přijímá objekt, který chcete použít jako jímka oznámení.</span><span class="sxs-lookup"><span data-stu-id="ed142-107">[out] Receives the object to be used as the notification sink.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="5e764-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5e764-108">Return Value</span></span>  
- <span data-ttu-id="5e764-109">S_OK, pokud metoda uspěje.</span><span class="sxs-lookup"><span data-stu-id="5e764-109">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ed142-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ed142-108">Return Value</span></span>  
+ <span data-ttu-id="ed142-109">S_OK, pokud metoda uspěje.</span><span class="sxs-lookup"><span data-stu-id="ed142-109">S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5e764-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5e764-110">Requirements</span></span>  
- <span data-ttu-id="5e764-111">**Záhlaví:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="5e764-111">**Header:** ProtocolNotify2.idl</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ed142-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ed142-110">Requirements</span></span>  
+ <span data-ttu-id="ed142-111">**Záhlaví:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="ed142-111">**Header:** ProtocolNotify2.idl</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e764-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5e764-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ed142-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ed142-112">See also</span></span>
 
-- [<span data-ttu-id="5e764-113">INotifyConnection2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e764-113">INotifyConnection2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
-- [<span data-ttu-id="5e764-114">INotifySource2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e764-114">INotifySource2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [<span data-ttu-id="5e764-115">INotifySink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e764-115">INotifySink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [<span data-ttu-id="5e764-116">UnregisterNotifySource – metoda</span><span class="sxs-lookup"><span data-stu-id="5e764-116">UnregisterNotifySource Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-unregisternotifysource-method.md)
+- [<span data-ttu-id="ed142-113">INotifyConnection2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ed142-113">INotifyConnection2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [<span data-ttu-id="ed142-114">INotifySource2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ed142-114">INotifySource2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
+- [<span data-ttu-id="ed142-115">INotifySink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ed142-115">INotifySink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [<span data-ttu-id="ed142-116">UnregisterNotifySource – metoda</span><span class="sxs-lookup"><span data-stu-id="ed142-116">UnregisterNotifySource Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-unregisternotifysource-method.md)

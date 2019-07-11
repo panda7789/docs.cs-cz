@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3f244d256d3af104d1d0c65769e82a87d6de046e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f7c5378490dce93599086819ee6fc806c707aa2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62043913"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777503"
 ---
-# <a name="imetadataemitdefinesecurityattributeset-method"></a><span data-ttu-id="13f59-102">IMetaDataEmit::DefineSecurityAttributeSet – metoda</span><span class="sxs-lookup"><span data-stu-id="13f59-102">IMetaDataEmit::DefineSecurityAttributeSet Method</span></span>
-<span data-ttu-id="13f59-103">Vytvoří sadu oprávnění zabezpečení k připojení k objekt odkazovaný zadaným parametrem zadaného tokenu.</span><span class="sxs-lookup"><span data-stu-id="13f59-103">Creates a set of security permissions to attach to the object referenced by the specified token.</span></span>  
+# <a name="imetadataemitdefinesecurityattributeset-method"></a><span data-ttu-id="40cd9-102">IMetaDataEmit::DefineSecurityAttributeSet – metoda</span><span class="sxs-lookup"><span data-stu-id="40cd9-102">IMetaDataEmit::DefineSecurityAttributeSet Method</span></span>
+<span data-ttu-id="40cd9-103">Vytvoří sadu oprávnění zabezpečení k připojení k objekt odkazovaný zadaným parametrem zadaného tokenu.</span><span class="sxs-lookup"><span data-stu-id="40cd9-103">Creates a set of security permissions to attach to the object referenced by the specified token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="13f59-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13f59-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="40cd9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="40cd9-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT DefineSecurityAttributeSet (   
     [in]  mdToken       tkObj,   
     [in]  COR_SECATTR   rSecAttrs[],   
@@ -38,29 +38,29 @@ HRESULT DefineSecurityAttributeSet (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="13f59-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="13f59-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="40cd9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="40cd9-105">Parameters</span></span>  
  `tkObj`  
- <span data-ttu-id="13f59-106">[in] Token, ke kterému je připojený informace o zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="13f59-106">[in] The token to which the security information is attached.</span></span>  
+ <span data-ttu-id="40cd9-106">[in] Token, ke kterému je připojený informace o zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="40cd9-106">[in] The token to which the security information is attached.</span></span>  
   
  `rSecAttrs`  
- <span data-ttu-id="13f59-107">[in] Pole `COR_SECATTR` struktury.</span><span class="sxs-lookup"><span data-stu-id="13f59-107">[in] An array of `COR_SECATTR` structures.</span></span>  
+ <span data-ttu-id="40cd9-107">[in] Pole `COR_SECATTR` struktury.</span><span class="sxs-lookup"><span data-stu-id="40cd9-107">[in] An array of `COR_SECATTR` structures.</span></span>  
   
  `cSecAttrs`  
- <span data-ttu-id="13f59-108">[in] Počet prvků v `rSecAttrs`.</span><span class="sxs-lookup"><span data-stu-id="13f59-108">[in] The number of elements in `rSecAttrs`.</span></span>  
+ <span data-ttu-id="40cd9-108">[in] Počet prvků v `rSecAttrs`.</span><span class="sxs-lookup"><span data-stu-id="40cd9-108">[in] The number of elements in `rSecAttrs`.</span></span>  
   
  `pulErrorAttr`  
- <span data-ttu-id="13f59-109">[out] Jestliže metoda selže, určuje index v `rSecAttrs` elementu, který způsobil problém.</span><span class="sxs-lookup"><span data-stu-id="13f59-109">[out] If the method fails, specifies the index in `rSecAttrs` of the element that caused the problem.</span></span>  
+ <span data-ttu-id="40cd9-109">[out] Jestliže metoda selže, určuje index v `rSecAttrs` elementu, který způsobil problém.</span><span class="sxs-lookup"><span data-stu-id="40cd9-109">[out] If the method fails, specifies the index in `rSecAttrs` of the element that caused the problem.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="13f59-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="13f59-110">Requirements</span></span>  
- <span data-ttu-id="13f59-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="13f59-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="40cd9-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="40cd9-110">Requirements</span></span>  
+ <span data-ttu-id="40cd9-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="40cd9-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="13f59-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="13f59-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="40cd9-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="40cd9-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="13f59-113">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="13f59-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="40cd9-113">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="40cd9-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="13f59-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="13f59-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="40cd9-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="40cd9-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="13f59-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="13f59-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="40cd9-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40cd9-115">See also</span></span>
 
-- [<span data-ttu-id="13f59-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="13f59-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="13f59-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="13f59-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="40cd9-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="40cd9-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="40cd9-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="40cd9-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

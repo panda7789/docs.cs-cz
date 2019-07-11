@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0c5dabd4145098941e9e8a7e36fa3215c26713d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c56b0168df6e4aee69b5d3e5fbbe027ca2c8974a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771875"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778452"
 ---
-# <a name="createassemblyenum-function"></a><span data-ttu-id="6fd03-102">CreateAssemblyEnum – funkce</span><span class="sxs-lookup"><span data-stu-id="6fd03-102">CreateAssemblyEnum Function</span></span>
-<span data-ttu-id="6fd03-103">Získá ukazatel [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) instanci, která můžete vytvořit výčet objektů v sestavení se zadaným [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md).</span><span class="sxs-lookup"><span data-stu-id="6fd03-103">Gets a pointer to an [IAssemblyEnum](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) instance that can enumerate the objects in the assembly with the specified [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md).</span></span>  
+# <a name="createassemblyenum-function"></a><span data-ttu-id="e35c1-102">CreateAssemblyEnum – funkce</span><span class="sxs-lookup"><span data-stu-id="e35c1-102">CreateAssemblyEnum Function</span></span>
+<span data-ttu-id="e35c1-103">Získá ukazatel [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) instanci, která můžete vytvořit výčet objektů v sestavení se zadaným [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md).</span><span class="sxs-lookup"><span data-stu-id="e35c1-103">Gets a pointer to an [IAssemblyEnum](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) instance that can enumerate the objects in the assembly with the specified [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6fd03-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6fd03-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e35c1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e35c1-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT CreateAssemblyEnum (  
     [out] IAssemblyEnum  **pEnum,  
     [in]  IUnknown       *pUnkReserved,  
@@ -40,36 +40,36 @@ HRESULT CreateAssemblyEnum (
  );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="6fd03-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6fd03-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e35c1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e35c1-105">Parameters</span></span>  
  `pEnum`  
- <span data-ttu-id="6fd03-106">[out] Ukazatel na umístění v paměti, který obsahuje požadované `IAssemblyEnum` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="6fd03-106">[out] Pointer to a memory location that contains the requested `IAssemblyEnum` pointer.</span></span>  
+ <span data-ttu-id="e35c1-106">[out] Ukazatel na umístění v paměti, který obsahuje požadované `IAssemblyEnum` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="e35c1-106">[out] Pointer to a memory location that contains the requested `IAssemblyEnum` pointer.</span></span>  
   
  `pUnkReserved`  
- <span data-ttu-id="6fd03-107">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="6fd03-107">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="6fd03-108">`pUnkReserved` musí být referencí s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="6fd03-108">`pUnkReserved` must be a null reference.</span></span>  
+ <span data-ttu-id="e35c1-107">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="e35c1-107">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="e35c1-108">`pUnkReserved` musí být referencí s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="e35c1-108">`pUnkReserved` must be a null reference.</span></span>  
   
  `pName`  
- <span data-ttu-id="6fd03-109">[in] `IAssemblyName` Požadovaná sestavení.</span><span class="sxs-lookup"><span data-stu-id="6fd03-109">[in] The `IAssemblyName` of the requested assembly.</span></span> <span data-ttu-id="6fd03-110">Tento název se používá k filtrování výčtu.</span><span class="sxs-lookup"><span data-stu-id="6fd03-110">This name is used to filter the enumeration.</span></span> <span data-ttu-id="6fd03-111">Může mít hodnotu null pro všechna sestavení v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="6fd03-111">It can be null to enumerate all assemblies in the global assembly cache.</span></span>  
+ <span data-ttu-id="e35c1-109">[in] `IAssemblyName` Požadovaná sestavení.</span><span class="sxs-lookup"><span data-stu-id="e35c1-109">[in] The `IAssemblyName` of the requested assembly.</span></span> <span data-ttu-id="e35c1-110">Tento název se používá k filtrování výčtu.</span><span class="sxs-lookup"><span data-stu-id="e35c1-110">This name is used to filter the enumeration.</span></span> <span data-ttu-id="e35c1-111">Může mít hodnotu null pro všechna sestavení v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="e35c1-111">It can be null to enumerate all assemblies in the global assembly cache.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="6fd03-112">[in] Příznaky pro úpravu chování čítače výčtu.</span><span class="sxs-lookup"><span data-stu-id="6fd03-112">[in] Flags for modifying the enumerator's behavior.</span></span> <span data-ttu-id="6fd03-113">Tento parametr obsahuje přesně jeden bit z [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="6fd03-113">This parameter contains exactly one bit from the [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) enumeration.</span></span>  
+ <span data-ttu-id="e35c1-112">[in] Příznaky pro úpravu chování čítače výčtu.</span><span class="sxs-lookup"><span data-stu-id="e35c1-112">[in] Flags for modifying the enumerator's behavior.</span></span> <span data-ttu-id="e35c1-113">Tento parametr obsahuje přesně jeden bit z [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="e35c1-113">This parameter contains exactly one bit from the [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) enumeration.</span></span>  
   
  `pvReserved`  
- <span data-ttu-id="6fd03-114">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="6fd03-114">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="6fd03-115">`pvReserved` musí být referencí s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="6fd03-115">`pvReserved` must be a null reference.</span></span>  
+ <span data-ttu-id="e35c1-114">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="e35c1-114">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="e35c1-115">`pvReserved` musí být referencí s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="e35c1-115">`pvReserved` must be a null reference.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6fd03-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6fd03-116">Remarks</span></span>  
- <span data-ttu-id="6fd03-117">`dwFlags` Parametr obsahuje přesně jeden bit z `ASM_CACHE_FLAGS` výčtu.</span><span class="sxs-lookup"><span data-stu-id="6fd03-117">The `dwFlags` parameter contains exactly one bit from the `ASM_CACHE_FLAGS` enumeration.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e35c1-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e35c1-116">Remarks</span></span>  
+ <span data-ttu-id="e35c1-117">`dwFlags` Parametr obsahuje přesně jeden bit z `ASM_CACHE_FLAGS` výčtu.</span><span class="sxs-lookup"><span data-stu-id="e35c1-117">The `dwFlags` parameter contains exactly one bit from the `ASM_CACHE_FLAGS` enumeration.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6fd03-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6fd03-118">Requirements</span></span>  
- <span data-ttu-id="6fd03-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6fd03-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e35c1-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e35c1-118">Requirements</span></span>  
+ <span data-ttu-id="e35c1-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e35c1-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6fd03-120">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="6fd03-120">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="e35c1-120">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="e35c1-120">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="6fd03-121">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="6fd03-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="e35c1-121">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e35c1-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="6fd03-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6fd03-122">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="e35c1-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e35c1-122">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6fd03-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6fd03-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e35c1-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e35c1-123">See also</span></span>
 
-- [<span data-ttu-id="6fd03-124">IAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6fd03-124">IAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
-- [<span data-ttu-id="6fd03-125">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6fd03-125">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [<span data-ttu-id="6fd03-126">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="6fd03-126">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="e35c1-124">IAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e35c1-124">IAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
+- [<span data-ttu-id="e35c1-125">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e35c1-125">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [<span data-ttu-id="e35c1-126">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="e35c1-126">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)

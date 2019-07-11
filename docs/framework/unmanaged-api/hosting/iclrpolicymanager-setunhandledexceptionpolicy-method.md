@@ -17,54 +17,54 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f988084310b920907bb7f212e7d40ca0d1c91db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab00ccd85481f1c6d37e1132e0ecab5e0e86be90
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638538"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67768873"
 ---
-# <a name="iclrpolicymanagersetunhandledexceptionpolicy-method"></a><span data-ttu-id="e1d96-102">ICLRPolicyManager::SetUnhandledExceptionPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="e1d96-102">ICLRPolicyManager::SetUnhandledExceptionPolicy Method</span></span>
-<span data-ttu-id="e1d96-103">Určuje chování modulu common language runtime (CLR), když dojde k neošetřené výjimce.</span><span class="sxs-lookup"><span data-stu-id="e1d96-103">Specifies the behavior of the common language runtime (CLR) when an unhandled exception occurs.</span></span>  
+# <a name="iclrpolicymanagersetunhandledexceptionpolicy-method"></a><span data-ttu-id="da2ba-102">ICLRPolicyManager::SetUnhandledExceptionPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="da2ba-102">ICLRPolicyManager::SetUnhandledExceptionPolicy Method</span></span>
+<span data-ttu-id="da2ba-103">Určuje chování modulu common language runtime (CLR), když dojde k neošetřené výjimce.</span><span class="sxs-lookup"><span data-stu-id="da2ba-103">Specifies the behavior of the common language runtime (CLR) when an unhandled exception occurs.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e1d96-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e1d96-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="da2ba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="da2ba-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT SetUnhandledExceptionPolicy (  
     [in] EClrUnhandledExceptionPolicy policy  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e1d96-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e1d96-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="da2ba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="da2ba-105">Parameters</span></span>  
  `policy`  
- <span data-ttu-id="e1d96-106">[in] Jeden z [eclrunhandledexception –](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md) hodnoty, která udává, zda je nastaven chování modulu CLR nebo hostitele.</span><span class="sxs-lookup"><span data-stu-id="e1d96-106">[in] One of the [EClrUnhandledException](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md) values, indicating whether the behavior is set by the CLR or the host.</span></span>  
+ <span data-ttu-id="da2ba-106">[in] Jeden z [eclrunhandledexception –](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md) hodnoty, která udává, zda je nastaven chování modulu CLR nebo hostitele.</span><span class="sxs-lookup"><span data-stu-id="da2ba-106">[in] One of the [EClrUnhandledException](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md) values, indicating whether the behavior is set by the CLR or the host.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="e1d96-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e1d96-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="da2ba-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="da2ba-107">Return Value</span></span>  
   
-|<span data-ttu-id="e1d96-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="e1d96-108">HRESULT</span></span>|<span data-ttu-id="e1d96-109">Popis</span><span class="sxs-lookup"><span data-stu-id="e1d96-109">Description</span></span>|  
+|<span data-ttu-id="da2ba-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="da2ba-108">HRESULT</span></span>|<span data-ttu-id="da2ba-109">Popis</span><span class="sxs-lookup"><span data-stu-id="da2ba-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="e1d96-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="e1d96-110">S_OK</span></span>|<span data-ttu-id="e1d96-111">`SetUnhandledExceptionPolicy` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="e1d96-111">`SetUnhandledExceptionPolicy` returned successfully.</span></span>|  
-|<span data-ttu-id="e1d96-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="e1d96-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="e1d96-113">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="e1d96-113">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="e1d96-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="e1d96-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="e1d96-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="e1d96-115">The call timed out.</span></span>|  
-|<span data-ttu-id="e1d96-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="e1d96-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="e1d96-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="e1d96-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="e1d96-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="e1d96-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="e1d96-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="e1d96-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="e1d96-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="e1d96-120">E_FAIL</span></span>|<span data-ttu-id="e1d96-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="e1d96-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="e1d96-122">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="e1d96-122">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="e1d96-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="e1d96-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="da2ba-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="da2ba-110">S_OK</span></span>|<span data-ttu-id="da2ba-111">`SetUnhandledExceptionPolicy` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="da2ba-111">`SetUnhandledExceptionPolicy` returned successfully.</span></span>|  
+|<span data-ttu-id="da2ba-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="da2ba-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="da2ba-113">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="da2ba-113">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="da2ba-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="da2ba-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="da2ba-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="da2ba-115">The call timed out.</span></span>|  
+|<span data-ttu-id="da2ba-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="da2ba-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="da2ba-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="da2ba-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="da2ba-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="da2ba-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="da2ba-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="da2ba-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="da2ba-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="da2ba-120">E_FAIL</span></span>|<span data-ttu-id="da2ba-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="da2ba-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="da2ba-122">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="da2ba-122">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="da2ba-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="da2ba-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e1d96-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e1d96-124">Remarks</span></span>  
- <span data-ttu-id="e1d96-125">Ve výchozím nastavení je poslední obslužnou rutinu pro všechny neošetřené výjimky modulu CLR a její výchozí chování je dovolí procesu.</span><span class="sxs-lookup"><span data-stu-id="e1d96-125">By default, the CLR is the final handler for all unhandled exceptions, and its default behavior is to tear down the process.</span></span> <span data-ttu-id="e1d96-126">Hostitel toto chování můžete změnit tak, že nastavíte `policy` hodnota, která má eHostDeterminedPolicy.</span><span class="sxs-lookup"><span data-stu-id="e1d96-126">The host can change this behavior by setting the `policy` value to eHostDeterminedPolicy.</span></span> <span data-ttu-id="e1d96-127">Tato hodnota umožňuje hostiteli implementovat vlastní výchozí chování, stejně jako u starších verzí modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="e1d96-127">This value allows the host to implement its own default behavior, as with earlier versions of the CLR.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="da2ba-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="da2ba-124">Remarks</span></span>  
+ <span data-ttu-id="da2ba-125">Ve výchozím nastavení je poslední obslužnou rutinu pro všechny neošetřené výjimky modulu CLR a její výchozí chování je dovolí procesu.</span><span class="sxs-lookup"><span data-stu-id="da2ba-125">By default, the CLR is the final handler for all unhandled exceptions, and its default behavior is to tear down the process.</span></span> <span data-ttu-id="da2ba-126">Hostitel toto chování můžete změnit tak, že nastavíte `policy` hodnota, která má eHostDeterminedPolicy.</span><span class="sxs-lookup"><span data-stu-id="da2ba-126">The host can change this behavior by setting the `policy` value to eHostDeterminedPolicy.</span></span> <span data-ttu-id="da2ba-127">Tato hodnota umožňuje hostiteli implementovat vlastní výchozí chování, stejně jako u starších verzí modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="da2ba-127">This value allows the host to implement its own default behavior, as with earlier versions of the CLR.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e1d96-128">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e1d96-128">Requirements</span></span>  
- <span data-ttu-id="e1d96-129">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e1d96-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="da2ba-128">Požadavky</span><span class="sxs-lookup"><span data-stu-id="da2ba-128">Requirements</span></span>  
+ <span data-ttu-id="da2ba-129">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="da2ba-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e1d96-130">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e1d96-130">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="da2ba-130">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="da2ba-130">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="e1d96-131">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e1d96-131">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="da2ba-131">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="da2ba-131">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="e1d96-132">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e1d96-132">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="da2ba-132">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="da2ba-132">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e1d96-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1d96-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da2ba-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="da2ba-133">See also</span></span>
 
-- [<span data-ttu-id="e1d96-134">EClrUnhandledException – výčet</span><span class="sxs-lookup"><span data-stu-id="e1d96-134">EClrUnhandledException Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md)
-- [<span data-ttu-id="e1d96-135">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1d96-135">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [<span data-ttu-id="e1d96-136">ICLRPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1d96-136">ICLRPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
-- [<span data-ttu-id="e1d96-137">IHostPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1d96-137">IHostPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)
+- [<span data-ttu-id="da2ba-134">EClrUnhandledException – výčet</span><span class="sxs-lookup"><span data-stu-id="da2ba-134">EClrUnhandledException Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclrunhandledexception-enumeration.md)
+- [<span data-ttu-id="da2ba-135">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da2ba-135">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [<span data-ttu-id="da2ba-136">ICLRPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da2ba-136">ICLRPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
+- [<span data-ttu-id="da2ba-137">IHostPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da2ba-137">IHostPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)

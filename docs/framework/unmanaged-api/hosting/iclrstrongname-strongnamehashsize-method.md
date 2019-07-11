@@ -17,44 +17,44 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 91b84a980e8a670b8e8b2970cfc96ddd6f4c33b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 058ff84ad9d56ce1ce2defd50c20ce50e1d791a6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704073"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747931"
 ---
-# <a name="iclrstrongnamestrongnamehashsize-method"></a><span data-ttu-id="b94ba-102">ICLRStrongName::StrongNameHashSize – metoda</span><span class="sxs-lookup"><span data-stu-id="b94ba-102">ICLRStrongName::StrongNameHashSize Method</span></span>
-<span data-ttu-id="b94ba-103">Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.</span><span class="sxs-lookup"><span data-stu-id="b94ba-103">Gets the buffer size required for a hash, using the specified hash algorithm.</span></span>  
+# <a name="iclrstrongnamestrongnamehashsize-method"></a><span data-ttu-id="95df4-102">ICLRStrongName::StrongNameHashSize – metoda</span><span class="sxs-lookup"><span data-stu-id="95df4-102">ICLRStrongName::StrongNameHashSize Method</span></span>
+<span data-ttu-id="95df4-103">Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.</span><span class="sxs-lookup"><span data-stu-id="95df4-103">Gets the buffer size required for a hash, using the specified hash algorithm.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b94ba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b94ba-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="95df4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="95df4-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT StrongNameHashSize (  
     [in]  ULONG   ulHashAlg,  
     [out] DWORD   *pcbSize  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b94ba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b94ba-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="95df4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="95df4-105">Parameters</span></span>  
  `ulHashAlg`  
- <span data-ttu-id="b94ba-106">[in] Hashovací algoritmus, který slouží k výpočtu velikosti vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="b94ba-106">[in] The hash algorithm used to compute the buffer size.</span></span>  
+ <span data-ttu-id="95df4-106">[in] Hashovací algoritmus, který slouží k výpočtu velikosti vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="95df4-106">[in] The hash algorithm used to compute the buffer size.</span></span>  
   
  `pcbSize`  
- <span data-ttu-id="b94ba-107">[out] Velikost vrácené vyrovnávací paměti v bajtech.</span><span class="sxs-lookup"><span data-stu-id="b94ba-107">[out] The returned buffer size, in bytes.</span></span>  
+ <span data-ttu-id="95df4-107">[out] Velikost vrácené vyrovnávací paměti v bajtech.</span><span class="sxs-lookup"><span data-stu-id="95df4-107">[out] The returned buffer size, in bytes.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b94ba-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b94ba-108">Return Value</span></span>  
- <span data-ttu-id="b94ba-109">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="b94ba-109">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="95df4-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="95df4-108">Return Value</span></span>  
+ <span data-ttu-id="95df4-109">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="95df4-109">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b94ba-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b94ba-110">Requirements</span></span>  
- <span data-ttu-id="b94ba-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b94ba-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="95df4-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="95df4-110">Requirements</span></span>  
+ <span data-ttu-id="95df4-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="95df4-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b94ba-112">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="b94ba-112">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="95df4-112">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="95df4-112">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="b94ba-113">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b94ba-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="95df4-113">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="95df4-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="b94ba-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b94ba-114">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="95df4-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="95df4-114">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b94ba-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b94ba-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95df4-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="95df4-115">See also</span></span>
 
-- [<span data-ttu-id="b94ba-116">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b94ba-116">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [<span data-ttu-id="95df4-116">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="95df4-116">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

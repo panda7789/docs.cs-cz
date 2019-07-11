@@ -17,62 +17,62 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7c80b85171ac9dab270a267cf2dd33a9f1c23d60
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 20c7d6a1fd9c1f75f43e42ece59b7fbabd150564
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650302"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765494"
 ---
-# <a name="iclrruntimeinfogetversionstring-method"></a><span data-ttu-id="cb600-102">ICLRRuntimeInfo::GetVersionString – metoda</span><span class="sxs-lookup"><span data-stu-id="cb600-102">ICLRRuntimeInfo::GetVersionString Method</span></span>
-<span data-ttu-id="cb600-103">Získá common language runtime (CLR) informace o verzi přidružené danou [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="cb600-103">Gets common language runtime (CLR) version information associated with a given [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface.</span></span>  
+# <a name="iclrruntimeinfogetversionstring-method"></a><span data-ttu-id="4ad0e-102">ICLRRuntimeInfo::GetVersionString – metoda</span><span class="sxs-lookup"><span data-stu-id="4ad0e-102">ICLRRuntimeInfo::GetVersionString Method</span></span>
+<span data-ttu-id="4ad0e-103">Získá common language runtime (CLR) informace o verzi přidružené danou [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-103">Gets common language runtime (CLR) version information associated with a given [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface.</span></span>  
   
- <span data-ttu-id="cb600-104">Tato metoda nahrazuje následující funkce:</span><span class="sxs-lookup"><span data-stu-id="cb600-104">This method supersedes the following functions:</span></span>  
+ <span data-ttu-id="4ad0e-104">Tato metoda nahrazuje následující funkce:</span><span class="sxs-lookup"><span data-stu-id="4ad0e-104">This method supersedes the following functions:</span></span>  
   
-- [<span data-ttu-id="cb600-105">GetRequestedRuntimeInfo</span><span class="sxs-lookup"><span data-stu-id="cb600-105">GetRequestedRuntimeInfo</span></span>](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
+- [<span data-ttu-id="4ad0e-105">GetRequestedRuntimeInfo</span><span class="sxs-lookup"><span data-stu-id="4ad0e-105">GetRequestedRuntimeInfo</span></span>](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
   
-- [<span data-ttu-id="cb600-106">GetRequestedRuntimeVersion</span><span class="sxs-lookup"><span data-stu-id="cb600-106">GetRequestedRuntimeVersion</span></span>](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
+- [<span data-ttu-id="4ad0e-106">GetRequestedRuntimeVersion</span><span class="sxs-lookup"><span data-stu-id="4ad0e-106">GetRequestedRuntimeVersion</span></span>](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
   
-## <a name="syntax"></a><span data-ttu-id="cb600-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cb600-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4ad0e-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ad0e-107">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetVersionString(  
     [out, size_is(*pcchBuffer)] LPWSTR pwzBuffer,  
     [in, out]  DWORD *pcchBuffer);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="cb600-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="cb600-108">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4ad0e-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="4ad0e-108">Parameters</span></span>  
  `pwzBuffer`  
- <span data-ttu-id="cb600-109">[out] Kompilace rozhraní .NET Framework verze ve formátu "v*A*. *B*[. *X*] ".</span><span class="sxs-lookup"><span data-stu-id="cb600-109">[out] The .NET Framework compilation version in the format "v*A*.*B*[.*X*]".</span></span> <span data-ttu-id="cb600-110">*A*, *B*, a *X* jsou desetinná čísla, která odpovídá hlavní verze, podverze a číslo sestavení.</span><span class="sxs-lookup"><span data-stu-id="cb600-110">*A*, *B*, and *X* are decimal numbers that correspond to the major version, the minor version, and the build number.</span></span> <span data-ttu-id="cb600-111">*X* je volitelný.</span><span class="sxs-lookup"><span data-stu-id="cb600-111">*X* is optional.</span></span> <span data-ttu-id="cb600-112">Pokud *X* není k dispozici není žádné koncové tečky.</span><span class="sxs-lookup"><span data-stu-id="cb600-112">If *X* is not present, there is no trailing period.</span></span>  
+ <span data-ttu-id="4ad0e-109">[out] Kompilace rozhraní .NET Framework verze ve formátu "v*A*. *B*[. *X*] ".</span><span class="sxs-lookup"><span data-stu-id="4ad0e-109">[out] The .NET Framework compilation version in the format "v*A*.*B*[.*X*]".</span></span> <span data-ttu-id="4ad0e-110">*A*, *B*, a *X* jsou desetinná čísla, která odpovídá hlavní verze, podverze a číslo sestavení.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-110">*A*, *B*, and *X* are decimal numbers that correspond to the major version, the minor version, and the build number.</span></span> <span data-ttu-id="4ad0e-111">*X* je volitelný.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-111">*X* is optional.</span></span> <span data-ttu-id="4ad0e-112">Pokud *X* není k dispozici není žádné koncové tečky.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-112">If *X* is not present, there is no trailing period.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="cb600-113">Tento parametr musí odpovídat názvu adresáře pro verzi rozhraní .NET Framework, jak se zobrazí v části C:\Windows\Microsoft.NET\Framework.</span><span class="sxs-lookup"><span data-stu-id="cb600-113">This parameter must match the directory name for the .NET Framework version, as it appears under C:\Windows\Microsoft.NET\Framework.</span></span>  
+>  <span data-ttu-id="4ad0e-113">Tento parametr musí odpovídat názvu adresáře pro verzi rozhraní .NET Framework, jak se zobrazí v části C:\Windows\Microsoft.NET\Framework.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-113">This parameter must match the directory name for the .NET Framework version, as it appears under C:\Windows\Microsoft.NET\Framework.</span></span>  
   
- <span data-ttu-id="cb600-114">Příklad hodnoty jsou "v1.0.3705", "v1.1.4322", "v2.0.50727" a "v4.0. *x*", kde *x* závisí na číslo sestavení nainstalována.</span><span class="sxs-lookup"><span data-stu-id="cb600-114">Example values are "v1.0.3705", "v1.1.4322", "v2.0.50727", and "v4.0.*x*", where *x* depends on the build number installed.</span></span> <span data-ttu-id="cb600-115">Všimněte si, že předpona "v" je povinný.</span><span class="sxs-lookup"><span data-stu-id="cb600-115">Note that the "v" prefix is mandatory.</span></span>  
+ <span data-ttu-id="4ad0e-114">Příklad hodnoty jsou "v1.0.3705", "v1.1.4322", "v2.0.50727" a "v4.0. *x*", kde *x* závisí na číslo sestavení nainstalována.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-114">Example values are "v1.0.3705", "v1.1.4322", "v2.0.50727", and "v4.0.*x*", where *x* depends on the build number installed.</span></span> <span data-ttu-id="4ad0e-115">Všimněte si, že předpona "v" je povinný.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-115">Note that the "v" prefix is mandatory.</span></span>  
   
  `pchBuffer`  
- <span data-ttu-id="cb600-116">[out v] Určuje velikost `pwzBuffer` , aby přetečení vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="cb600-116">[in, out] Specifies the size of `pwzBuffer` to avoid buffer overruns.</span></span> <span data-ttu-id="cb600-117">Pokud `pwzBuffer` je `null`, `pchBuffer` vrátí velikost požadované `pwzBuffer` povolit předběžné přidělování.</span><span class="sxs-lookup"><span data-stu-id="cb600-117">If `pwzBuffer` is `null`, `pchBuffer` returns the required size of `pwzBuffer` to allow preallocation.</span></span>  
+ <span data-ttu-id="4ad0e-116">[out v] Určuje velikost `pwzBuffer` , aby přetečení vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-116">[in, out] Specifies the size of `pwzBuffer` to avoid buffer overruns.</span></span> <span data-ttu-id="4ad0e-117">Pokud `pwzBuffer` je `null`, `pchBuffer` vrátí velikost požadované `pwzBuffer` povolit předběžné přidělování.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-117">If `pwzBuffer` is `null`, `pchBuffer` returns the required size of `pwzBuffer` to allow preallocation.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="cb600-118">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="cb600-118">Return Value</span></span>  
- <span data-ttu-id="cb600-119">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="cb600-119">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="4ad0e-118">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4ad0e-118">Return Value</span></span>  
+ <span data-ttu-id="4ad0e-119">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-119">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="cb600-120">HRESULT</span><span class="sxs-lookup"><span data-stu-id="cb600-120">HRESULT</span></span>|<span data-ttu-id="cb600-121">Popis</span><span class="sxs-lookup"><span data-stu-id="cb600-121">Description</span></span>|  
+|<span data-ttu-id="4ad0e-120">HRESULT</span><span class="sxs-lookup"><span data-stu-id="4ad0e-120">HRESULT</span></span>|<span data-ttu-id="4ad0e-121">Popis</span><span class="sxs-lookup"><span data-stu-id="4ad0e-121">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="cb600-122">S_OK</span><span class="sxs-lookup"><span data-stu-id="cb600-122">S_OK</span></span>|<span data-ttu-id="cb600-123">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="cb600-123">The method completed successfully.</span></span>|  
-|<span data-ttu-id="cb600-124">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="cb600-124">E_POINTER</span></span>|<span data-ttu-id="cb600-125">`pwzBuffer` nebo `pchBuffer` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="cb600-125">`pwzBuffer` or `pchBuffer` is null.</span></span>|  
+|<span data-ttu-id="4ad0e-122">S_OK</span><span class="sxs-lookup"><span data-stu-id="4ad0e-122">S_OK</span></span>|<span data-ttu-id="4ad0e-123">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-123">The method completed successfully.</span></span>|  
+|<span data-ttu-id="4ad0e-124">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="4ad0e-124">E_POINTER</span></span>|<span data-ttu-id="4ad0e-125">`pwzBuffer` nebo `pchBuffer` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="4ad0e-125">`pwzBuffer` or `pchBuffer` is null.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="cb600-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cb600-126">Requirements</span></span>  
- <span data-ttu-id="cb600-127">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cb600-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4ad0e-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4ad0e-126">Requirements</span></span>  
+ <span data-ttu-id="4ad0e-127">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4ad0e-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cb600-128">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="cb600-128">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="4ad0e-128">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="4ad0e-128">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="cb600-129">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="cb600-129">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="4ad0e-129">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4ad0e-129">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="cb600-130">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cb600-130">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="4ad0e-130">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4ad0e-130">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cb600-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb600-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4ad0e-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4ad0e-131">See also</span></span>
 
-- [<span data-ttu-id="cb600-132">ICLRRuntimeInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cb600-132">ICLRRuntimeInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [<span data-ttu-id="cb600-133">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="cb600-133">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [<span data-ttu-id="cb600-134">Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5</span><span class="sxs-lookup"><span data-stu-id="cb600-134">CLR Hosting Interfaces Added in the .NET Framework 4 and 4.5</span></span>](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)
-- [<span data-ttu-id="cb600-135">Hostování</span><span class="sxs-lookup"><span data-stu-id="cb600-135">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [<span data-ttu-id="4ad0e-132">ICLRRuntimeInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4ad0e-132">ICLRRuntimeInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [<span data-ttu-id="4ad0e-133">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="4ad0e-133">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="4ad0e-134">Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5</span><span class="sxs-lookup"><span data-stu-id="4ad0e-134">CLR Hosting Interfaces Added in the .NET Framework 4 and 4.5</span></span>](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)
+- [<span data-ttu-id="4ad0e-135">Hostování</span><span class="sxs-lookup"><span data-stu-id="4ad0e-135">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)

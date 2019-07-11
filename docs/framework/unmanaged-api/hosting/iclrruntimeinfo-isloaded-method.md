@@ -17,63 +17,63 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 156906a84013148a4afe3d0687e8d136ca819c8a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d7eafd9c3c9eeb14e53643bed09309ca8d3b5855
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584404"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67748425"
 ---
-# <a name="iclrruntimeinfoisloaded-method"></a><span data-ttu-id="5e31d-102">ICLRRuntimeInfo::IsLoaded – metoda</span><span class="sxs-lookup"><span data-stu-id="5e31d-102">ICLRRuntimeInfo::IsLoaded Method</span></span>
-<span data-ttu-id="5e31d-103">Určuje, zda modul CLR (CLR) přidružené k [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní je načten do procesu.</span><span class="sxs-lookup"><span data-stu-id="5e31d-103">Indicates whether the common language runtime (CLR) associated with the [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface is loaded into a process.</span></span> <span data-ttu-id="5e31d-104">Modul runtime je možné načíst bez také spuštění.</span><span class="sxs-lookup"><span data-stu-id="5e31d-104">A runtime can be loaded without also being started.</span></span>  
+# <a name="iclrruntimeinfoisloaded-method"></a><span data-ttu-id="329e2-102">ICLRRuntimeInfo::IsLoaded – metoda</span><span class="sxs-lookup"><span data-stu-id="329e2-102">ICLRRuntimeInfo::IsLoaded Method</span></span>
+<span data-ttu-id="329e2-103">Určuje, zda modul CLR (CLR) přidružené k [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní je načten do procesu.</span><span class="sxs-lookup"><span data-stu-id="329e2-103">Indicates whether the common language runtime (CLR) associated with the [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface is loaded into a process.</span></span> <span data-ttu-id="329e2-104">Modul runtime je možné načíst bez také spuštění.</span><span class="sxs-lookup"><span data-stu-id="329e2-104">A runtime can be loaded without also being started.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5e31d-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5e31d-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="329e2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="329e2-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT IsLoaded(  
 [in]  HANDLE hndProcess,  
 [out, retval] BOOL *pbLoaded);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5e31d-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="5e31d-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="329e2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="329e2-106">Parameters</span></span>  
  `hndProcess`  
- <span data-ttu-id="5e31d-107">[in] Popisovač procesu.</span><span class="sxs-lookup"><span data-stu-id="5e31d-107">[in] A handle to the process.</span></span>  
+ <span data-ttu-id="329e2-107">[in] Popisovač procesu.</span><span class="sxs-lookup"><span data-stu-id="329e2-107">[in] A handle to the process.</span></span>  
   
  `pbLoaded`  
- <span data-ttu-id="5e31d-108">[out] `true` Pokud CLR je načten do procesu; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="5e31d-108">[out] `true` if the CLR is loaded into the process; otherwise, `false`.</span></span>  
+ <span data-ttu-id="329e2-108">[out] `true` Pokud CLR je načten do procesu; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="329e2-108">[out] `true` if the CLR is loaded into the process; otherwise, `false`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="5e31d-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5e31d-109">Return Value</span></span>  
- <span data-ttu-id="5e31d-110">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="5e31d-110">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="329e2-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="329e2-109">Return Value</span></span>  
+ <span data-ttu-id="329e2-110">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="329e2-110">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="5e31d-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="5e31d-111">HRESULT</span></span>|<span data-ttu-id="5e31d-112">Popis</span><span class="sxs-lookup"><span data-stu-id="5e31d-112">Description</span></span>|  
+|<span data-ttu-id="329e2-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="329e2-111">HRESULT</span></span>|<span data-ttu-id="329e2-112">Popis</span><span class="sxs-lookup"><span data-stu-id="329e2-112">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="5e31d-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="5e31d-113">S_OK</span></span>|<span data-ttu-id="5e31d-114">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="5e31d-114">The method completed successfully.</span></span>|  
-|<span data-ttu-id="5e31d-115">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="5e31d-115">E_POINTER</span></span>|<span data-ttu-id="5e31d-116">`pbLoaded` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="5e31d-116">`pbLoaded` is null.</span></span>|  
+|<span data-ttu-id="329e2-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="329e2-113">S_OK</span></span>|<span data-ttu-id="329e2-114">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="329e2-114">The method completed successfully.</span></span>|  
+|<span data-ttu-id="329e2-115">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="329e2-115">E_POINTER</span></span>|<span data-ttu-id="329e2-116">`pbLoaded` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="329e2-116">`pbLoaded` is null.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="5e31d-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5e31d-117">Remarks</span></span>  
- <span data-ttu-id="5e31d-118">Tato metoda je zpětně kompatibilní s následující funkce a rozhraní:</span><span class="sxs-lookup"><span data-stu-id="5e31d-118">This method is backward-compatible with the following functions and interfaces:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="329e2-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="329e2-117">Remarks</span></span>  
+ <span data-ttu-id="329e2-118">Tato metoda je zpětně kompatibilní s následující funkce a rozhraní:</span><span class="sxs-lookup"><span data-stu-id="329e2-118">This method is backward-compatible with the following functions and interfaces:</span></span>  
   
-- <span data-ttu-id="5e31d-119">[Icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) rozhraní (v rozhraní .NET Framework verze 1 hostujícího rozhraní API).</span><span class="sxs-lookup"><span data-stu-id="5e31d-119">[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) interface (in the .NET Framework version 1 hosting API).</span></span>  
+- <span data-ttu-id="329e2-119">[Icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) rozhraní (v rozhraní .NET Framework verze 1 hostujícího rozhraní API).</span><span class="sxs-lookup"><span data-stu-id="329e2-119">[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) interface (in the .NET Framework version 1 hosting API).</span></span>  
   
-- <span data-ttu-id="5e31d-120">[Iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní (v rozhraní .NET Framework 2.0 hostování rozhraní API).</span><span class="sxs-lookup"><span data-stu-id="5e31d-120">[ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) interface (in the .NET Framework 2.0 hosting API).</span></span>  
+- <span data-ttu-id="329e2-120">[Iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní (v rozhraní .NET Framework 2.0 hostování rozhraní API).</span><span class="sxs-lookup"><span data-stu-id="329e2-120">[ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) interface (in the .NET Framework 2.0 hosting API).</span></span>  
   
-- <span data-ttu-id="5e31d-121">Zastaralé `CorBindTo*` funkcí (viz [zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) v rozhraní .NET Framework 2.0, který je hostitelem rozhraní API).</span><span class="sxs-lookup"><span data-stu-id="5e31d-121">Deprecated `CorBindTo*` functions (see [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) in the .NET Framework 2.0 hosting API).</span></span>  
+- <span data-ttu-id="329e2-121">Zastaralé `CorBindTo*` funkcí (viz [zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) v rozhraní .NET Framework 2.0, který je hostitelem rozhraní API).</span><span class="sxs-lookup"><span data-stu-id="329e2-121">Deprecated `CorBindTo*` functions (see [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) in the .NET Framework 2.0 hosting API).</span></span>  
   
- <span data-ttu-id="5e31d-122">Hostitel může volat jeden z zastaralá `CorBindTo*` funkce, jako [corbindtoruntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) funkce k vytvoření instance konkrétní verzi modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="5e31d-122">A host may call one of the deprecated `CorBindTo*` functions, such as the [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) function, to instantiate a specific version of the CLR.</span></span> <span data-ttu-id="5e31d-123">Hostitel pak lze volat [iclrmetahost::getruntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-getruntime-method.md) – metoda a zadejte číslo verze získání [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="5e31d-123">The host could then call the [ICLRMetaHost::GetRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-getruntime-method.md) method and specify the same version number to obtain a [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface.</span></span>  
+ <span data-ttu-id="329e2-122">Hostitel může volat jeden z zastaralá `CorBindTo*` funkce, jako [corbindtoruntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) funkce k vytvoření instance konkrétní verzi modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="329e2-122">A host may call one of the deprecated `CorBindTo*` functions, such as the [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) function, to instantiate a specific version of the CLR.</span></span> <span data-ttu-id="329e2-123">Hostitel pak lze volat [iclrmetahost::getruntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-getruntime-method.md) – metoda a zadejte číslo verze získání [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="329e2-123">The host could then call the [ICLRMetaHost::GetRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-getruntime-method.md) method and specify the same version number to obtain a [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface.</span></span>  
   
- <span data-ttu-id="5e31d-124">Hostitel pak volá-li `IsLoaded` metodu na vrácený [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, `pbLoaded` vrátí `true`; v opačném případě vrátí `false`.</span><span class="sxs-lookup"><span data-stu-id="5e31d-124">If the host then calls the `IsLoaded` method on the returned [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface, `pbLoaded` returns `true`; otherwise, it returns `false`.</span></span>  
+ <span data-ttu-id="329e2-124">Hostitel pak volá-li `IsLoaded` metodu na vrácený [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, `pbLoaded` vrátí `true`; v opačném případě vrátí `false`.</span><span class="sxs-lookup"><span data-stu-id="329e2-124">If the host then calls the `IsLoaded` method on the returned [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface, `pbLoaded` returns `true`; otherwise, it returns `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5e31d-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5e31d-125">Requirements</span></span>  
- <span data-ttu-id="5e31d-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5e31d-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="329e2-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="329e2-125">Requirements</span></span>  
+ <span data-ttu-id="329e2-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="329e2-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5e31d-127">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="5e31d-127">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="329e2-127">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="329e2-127">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="5e31d-128">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5e31d-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="329e2-128">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="329e2-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="5e31d-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5e31d-129">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="329e2-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="329e2-129">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e31d-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5e31d-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="329e2-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="329e2-130">See also</span></span>
 
-- [<span data-ttu-id="5e31d-131">ICLRRuntimeInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e31d-131">ICLRRuntimeInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [<span data-ttu-id="5e31d-132">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="5e31d-132">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [<span data-ttu-id="5e31d-133">Hostování</span><span class="sxs-lookup"><span data-stu-id="5e31d-133">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [<span data-ttu-id="329e2-131">ICLRRuntimeInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="329e2-131">ICLRRuntimeInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [<span data-ttu-id="329e2-132">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="329e2-132">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="329e2-133">Hostování</span><span class="sxs-lookup"><span data-stu-id="329e2-133">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
