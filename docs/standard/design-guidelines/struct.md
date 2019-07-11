@@ -12,19 +12,19 @@ helpviewer_keywords:
 - structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
 author: KrzysztofCwalina
-ms.openlocfilehash: cc5b8d7effda31b0236477b217bccf5cf2137f8c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e787c5b34848a561b43c3457341673f11cc2bd00
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650138"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775543"
 ---
 # <a name="struct-design"></a>Návrh struktury
 Typ hodnoty pro obecné účely se nejčastěji označuje jako struktury, jeho klíčové slovo C#. Tato část obsahuje pokyny pro návrh obecné struktury.  
   
- **X DO NOT** zadejte výchozí konstruktor pro struktury.  
+ **X neměňte** poskytovat konstruktor bez parametrů pro strukturu.  
   
- Za toto pravidlo umožňuje pole struktur, který se má vytvořit bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si, že C# nepovoluje struktury mají výchozí konstruktory.  
+ Za toto pravidlo umožňuje pole struktur, který se má vytvořit bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si, že C# neumožňuje struktury mít konstruktor bez parametrů.  
   
  **X DO NOT** definování typů měnitelný hodnotu.  
   

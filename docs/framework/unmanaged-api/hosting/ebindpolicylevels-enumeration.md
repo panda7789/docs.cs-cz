@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b8f2b08662e719a3308a62ab5b60f5dc490f2a6a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e61acbb15844c5ddfc8b7aa98c41bb18c6e9ade5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985670"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67769756"
 ---
 # <a name="ebindpolicylevels-enumeration"></a>EBindPolicyLevels – výčet
 Poskytuje příznaků, které určují úroveň, kde nastavení nebo změna zásady sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum {  
     ePolicyLevelNone         = 0x0,  
     ePolicyLevelRetargetable = 0x1,  

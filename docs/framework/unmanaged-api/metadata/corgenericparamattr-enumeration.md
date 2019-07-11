@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0aa9b84c9e16811f799a3cd2ad096508db3f7d34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 981829500e499be05a8de7c1ffb4683429a903e6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045784"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781850"
 ---
 # <a name="corgenericparamattr-enumeration"></a>CorGenericParamAttr – výčet
 Obsahuje hodnoty, které popisují <xref:System.Type> parametry pro obecné typy, jako používá ve volání [imetadataemit2::definegenericparam –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorGenericParamAttr {  
   
     gpVarianceMask                     =   0x0003,  

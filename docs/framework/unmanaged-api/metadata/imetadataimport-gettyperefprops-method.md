@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 808c48bb0c516c51f39a8424acf49869b1bc9208
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4d8829c9cb2818eafe98809c9a0d5fd8109d076
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777478"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778818"
 ---
 # <a name="imetadataimportgettyperefprops-method"></a>IMetaDataImport::GetTypeRefProps – metoda
 Získá metadata přidružená k <xref:System.Type> odkazuje zadaný token TypeRef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetTypeRefProps (  
    [in]  mdTypeRef   tr,  
    [out] mdToken     *ptkResolutionScope,  

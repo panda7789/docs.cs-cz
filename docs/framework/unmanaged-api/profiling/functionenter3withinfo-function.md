@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1ec24952b91f5d959c1ac0bb50e2bbe4b94002b3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cf16563e6d5fef3a743e802166173004a857dd0e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586802"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67745831"
 ---
 # <a name="functionenter3withinfo-function"></a>FunctionEnter3WithInfo – funkce
 Oznámí profileru, že ovládací prvek je předáván funkci a poskytuje popisovač, který lze předat [icorprofilerinfo3::getfunctionenter3info – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md) načíst zásobník snímků a funkce argumenty.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 void __stdcall FunctionEnter3WithInfo(  
                [in] FunctionIDOrClientID functionIDOrClientID,  
                [in] COR_PRF_ELT_INFO eltInfo);  

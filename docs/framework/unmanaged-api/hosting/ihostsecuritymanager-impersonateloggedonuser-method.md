@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ebf9ad72f7a1b0dd7ac54afa104089182f122ef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c276fc560474ff41afd0e93173d87a76a17a1323
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61984279"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781009"
 ---
 # <a name="ihostsecuritymanagerimpersonateloggedonuser-method"></a>IHostSecurityManager::ImpersonateLoggedOnUser – metoda
 Požadavky, který kód spuštěn pomocí pověření aktuální identitu uživatele.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ImpersonateLoggedOnUser (  
     [in] HANDLE hToken  
 );  

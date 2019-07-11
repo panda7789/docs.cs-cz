@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7b18474aeaa79224de5371df3ff0cac5ed9bf4ff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e1ace501bf5de741ea110fe4d3bb4bc44843bf8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61994277"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760533"
 ---
 # <a name="icordebugsteppersteprange-method"></a>ICorDebugStepper::StepRange – metoda
 Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a vrátit se dosáhne kódu za poslední zadaný rozsah.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT StepRange (  
     [in] BOOL     bStepIn,  
     [in, size_is(cRangeCount)] COR_DEBUG_STEP_RANGE ranges[],  

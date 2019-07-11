@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9b3de70e6bdecba6370174ee825d2dec7c14270e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37ba54665dbd8d10c7e7aac9a0692c8882fb5209
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61935678"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67767298"
 ---
 # <a name="ihostmanualeventreset-method"></a>IHostManualEvent::Reset – metoda
 Obnoví aktuální [ihostmanualevent –](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md) instance do nesignálového stavu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Reset ();  
 ```  
   

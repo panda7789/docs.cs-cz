@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 88cd08b4290739808079bc8ecb713a5c5ea96584
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1baee71b5b8575f51eb54fbc8a037a5dddd24500
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777894"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782528"
 ---
 # <a name="imetadataimportfindfield-method"></a>IMetaDataImport::FindField – metoda
 Získá ukazatel FieldDef token pro pole, který je uzavřen parametrem <xref:System.Type> a, který má zadaný název a metadata podpis.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT FindField (  
    [in]  mdTypeDef         td,  
    [in]  LPCWSTR           szName,  

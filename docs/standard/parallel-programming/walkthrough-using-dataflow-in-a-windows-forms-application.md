@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0c9447e53a874da856eb59932ec3871a9a1371d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f4f8e25edb7d61e21406a5f7719f6dc98f686a9e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654417"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755048"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Návod: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -41,7 +41,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
 ## <a name="creating-the-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
  Tato část popisuje, jak vytvořit základní aplikaci Windows Forms a přidání ovládacích prvků do hlavního formuláře.  
   
-#### <a name="to-create-the-windows-forms-application"></a>Chcete-li vytvořit Windows Forms aplikace  
+### <a name="to-create-the-windows-forms-application"></a>Chcete-li vytvořit Windows Forms aplikace  
   
 1. V sadě Visual Studio, vytvořit Visual C# nebo Visual Basic **formulářová aplikace Windows** projektu. V tomto dokumentu má projekt název `CompositeImages`.  
   
@@ -57,7 +57,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
 ## <a name="creating-the-dataflow-network"></a>Vytvoření sítě toku dat  
  Tato část popisuje postup vytvoření sítě toku dat, který provádí zpracování obrázků.  
   
-#### <a name="to-create-the-dataflow-network"></a>Pokud chcete vytvořit síť toku dat  
+### <a name="to-create-the-dataflow-network"></a>Pokud chcete vytvořit síť toku dat  
   
 1. Do projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
   
@@ -86,7 +86,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
  Následující tabulka popisuje členy v síti.  
   
-|Člen|Type|Popis|  
+|Člen|type|Popis|  
 |------------|----------|-----------------|  
 |`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Přijímá jako vstup cestu ke složce a vytvoří kolekci <xref:System.Drawing.Bitmap> objekty jako výstup.|  
 |`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Vezme kolekci <xref:System.Drawing.Bitmap> objekty jako vstup a vytvoří složené rastrového obrázku jako výstup.|  
@@ -107,7 +107,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Připojení sítě toku dat v uživatelském rozhraní  
  Tato část popisuje, jak připojit síť toku dat v uživatelském rozhraní. Vytvoření složeného image a zrušení operace inicializována z **vybrat složku** a **zrušit** tlačítka. Když uživatel zvolí jednu z těchto tlačítek, vyvolání příslušné akce v asynchronním režimu.  
   
-#### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>K připojení sítě toku dat v uživatelském rozhraní  
+### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>K připojení sítě toku dat v uživatelském rozhraní  
   
 1. V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **vybrat složku** tlačítko.  
   

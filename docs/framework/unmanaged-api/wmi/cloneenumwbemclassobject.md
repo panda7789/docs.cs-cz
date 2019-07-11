@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f7b384bb24cbf7ab7379949fd85a22121a1310e3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ab660769a49cf12b129cb7f44b8378053a231f8c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636872"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761623"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>Funkce CloneEnumWbemClassObject
 Vytvoří kopii logické tohoto čítače, zachovat své aktuální pozici ve výčtu.
@@ -30,7 +30,7 @@ Vytvoří kopii logické tohoto čítače, zachovat své aktuální pozici ve v�
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT CloneEnumWbemClassObject (
    [out] IEnumWbemClassObject**  ppEnum, 
    [in] DWORD                    authLevel,
@@ -68,7 +68,7 @@ HRESULT CloneEnumWbemClassObject (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |

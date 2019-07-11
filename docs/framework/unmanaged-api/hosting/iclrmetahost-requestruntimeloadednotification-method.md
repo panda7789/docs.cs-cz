@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 87afb19736a484d24bde56cc34854dcd26c6b53b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7e7c1de620979b387e969f4b8c9f17f493e7bcb8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755694"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776546"
 ---
 # <a name="iclrmetahostrequestruntimeloadednotification-method"></a>ICLRMetaHost::RequestRuntimeLoadedNotification – metoda
 Poskytuje funkce zpětného volání, která je zaručeně volán při společné jazykové verzi modulu runtime (CLR) je prvním načtení, ale ještě nebyl spuštěn. Tato metoda nahrazuje [lockclrversion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT RequestRuntimeLoadedNotification (  
     [in] RuntimeLoadedCallbackFnPtr pCallbackFunction);  
 ```  
@@ -57,7 +57,7 @@ HRESULT RequestRuntimeLoadedNotification (
   
  Funkce zpětného volání obsahuje následující prototyp:  
   
-```  
+```cpp  
 typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(  
                      ICLRRuntimeInfo *pRuntimeInfo,  
                      CallbackThreadSetFnPtr pfnCallbackThreadSet,  
@@ -68,13 +68,13 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
   
 - `pfnCallbackThreadSet`:  
   
-    ```  
+    ```cpp  
     typedef HRESULT (__stdcall *CallbackThreadSetFnPtr)();  
     ```  
   
 - `pfnCallbackThreadUnset`:  
   
-    ```  
+    ```cpp  
     typedef HRESULT (__stdcall *CallbackThreadUnsetFnPtr)();  
     ```  
   

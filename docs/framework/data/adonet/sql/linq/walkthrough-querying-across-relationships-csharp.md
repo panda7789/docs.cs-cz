@@ -2,12 +2,12 @@
 title: 'Návod: Dotazování napříč relacemi (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: d9233bc7501544fff04c1c9eae215bd981fa4bd0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f36f618cfcb82847f6763641ee64565dcdedd919
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618030"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742645"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Návod: Dotazování napříč relacemi (C#)
 Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
@@ -31,7 +31,7 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
 ## <a name="mapping-relationships-across-tables"></a>Mapování relací mezi tabulkami  
  Po `Customer` definici třídy, vytvořte `Order` definici třídy, která obsahuje následující kód, což znamená, že `Order.Customer` souvisí jako cizí klíč k `Customer.CustomerID`.  
   
-#### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat pořadí třída entity  
+### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat pořadí třída entity  
   
 - Zadejte nebo vložte následující kód za `Customer` třídy:  
   
@@ -40,7 +40,7 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
 ## <a name="annotating-the-customer-class"></a>Zadávání poznámek ke třídě zákazníka  
  V tomto kroku přidáte poznámky `Customer` třídy k jeho vztah k označení `Order` třídy. (Toto přidání není nezbytně nutné, protože definováním relace v obou směrech je dostatečná pro vytvoření odkazu. Ale přidání tato poznámka umožňují snadno procházet objekty v obou směrech.)  
   
-#### <a name="to-annotate-the-customer-class"></a>K přidání poznámek ke třídě zákazníka  
+### <a name="to-annotate-the-customer-class"></a>K přidání poznámek ke třídě zákazníka  
   
 - Zadejte nebo vložte následující kód do `Customer` třídy:  
   
@@ -49,7 +49,7 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
 ## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Vytvoření a spuštění dotazu v relaci Zákazník objednávky  
  Teď umožňuje přistupovat k `Order` objekty přímo `Customer` objektů, nebo v opačném pořadí. Není nutné explicitně *spojení* mezi zákazníci a objednávky.  
   
-#### <a name="to-access-order-objects-by-using-customer-objects"></a>Pro přístup k objektům pořadí pomocí objektů zákazníka  
+### <a name="to-access-order-objects-by-using-customer-objects"></a>Pro přístup k objektům pořadí pomocí objektů zákazníka  
   
 1. Upravit `Main` metoda zadáním nebo vložením následujícího kódu do metody:  
   
@@ -67,7 +67,7 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
   
  V následujících krocích vytvoříte `Customers` jako tabulku silného typu, který se mapuje na tabulku Customers v databázi.  
   
-#### <a name="to-strongly-type-the-datacontext-object"></a>Chcete-li silného typu DataContext object  
+### <a name="to-strongly-type-the-datacontext-object"></a>Chcete-li silného typu DataContext object  
   
 1. Přidejte následující kód nad `Customer` deklarace třídy.  
   

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7238edb35e7fd69c0161adbc3b80b122575bbf75
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: f13a07be13294cc408cd381bef6eec1f9095365f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690307"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742459"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Reflection emit používá stejné rozhraní API v plné nebo částečné důvěryhodnosti, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodným kódem. Navíc reflexe obsahuje funkci, anonymně hostované dynamické metody, který je určen pro použití s částečnou důvěryhodností a sestaveními transparentní pro zabezpečení.  
@@ -57,7 +57,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
   
  Následující postup vytvoří doménu aplikace v izolovaném prostoru, na kterém běží váš kód s částečnou důvěryhodností pro otestování scénářů, ve kterých emitovaný kód může přistupovat pouze k veřejným členů veřejných typů. Následující postup ukazuje, jak přidat <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>do testování scénářů, ve kterých emitovaný kód může přistupovat neveřejným typům a členům v sestaveních, která jsou udělena stejná nebo nižší oprávnění.  
   
-##### <a name="to-create-an-application-domain-with-partial-trust"></a>Vytvoření domény aplikace s částečnou důvěryhodností  
+#### <a name="to-create-an-application-domain-with-partial-trust"></a>Vytvoření domény aplikace s částečnou důvěryhodností  
   
 1. Vytvořte sadu oprávnění pro udělení sestavením v doméně aplikace v izolovaném prostoru. V takovém případě se používá sada oprávnění ze zóny Internet.  
   
@@ -87,7 +87,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
 > [!NOTE]
 >  Pro zabránění zvýšení úrovně oprávnění, informace o zásobníku pro emitující sestavení je součástí anonymně hostované dynamické metody jsou vytvořeny. Při vyvolání metody, jsou zkontrolovány informace o zásobníku. Anonymně hostovaná dynamická metoda, která je vyvolána z plně důvěryhodného kódu je tedy stále omezena na úroveň důvěryhodnosti emitujícího sestavení.  
   
-##### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Vytvoření domény aplikace s částečnou důvěryhodností plus RMA  
+#### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Vytvoření domény aplikace s částečnou důvěryhodností plus RMA  
   
 1. Vytvořte nový <xref:System.Security.Permissions.ReflectionPermission> objektu <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> (RMA) a použijte <xref:System.Security.PermissionSet.SetPermission%2A?displayProperty=nameWithType> metodu pro přidání do sady udělení oprávnění.  
   

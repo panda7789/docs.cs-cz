@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8b96957467b0acb100f7eea137b3294a60e208a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ac5cc8633881749bdc167e1b3925a83f7adf3b3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000191"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760300"
 ---
 # <a name="qualifiersetnext-function"></a>QualifierSet_Next function
 Načte další kvalifikátor ve výčtu, který spustil pomocí volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.   
@@ -30,7 +30,7 @@ Načte další kvalifikátor ve výčtu, který spustil pomocí volání [Qualif
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT QualifierSet_Next (
    [in] int                  vFunc, 
    [in] IWbemQualifierSet*   ptr, 
@@ -65,7 +65,7 @@ HRESULT QualifierSet_Next (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Volající nezavolalo [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md). |

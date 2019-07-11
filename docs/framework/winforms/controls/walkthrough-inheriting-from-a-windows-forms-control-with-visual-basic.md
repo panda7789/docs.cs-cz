@@ -10,12 +10,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-ms.openlocfilehash: b606de4b7cf4648fdc7ada3c1f6faec81342d02c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bcd65f231ab0e05da0ec152b05878233558f2cd9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792181"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772059"
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu
 Pomocí jazyka Visual Basic, můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti je možné vytvořit ovládací prvky, které zachovat všechny vlastní funkce standardní ovládací prvky Windows Forms, ale také začlenit vlastní funkce. V tomto návodu vytvoříte jednoduchý volá zděděný ovládací prvek `ValueButton`. Toto tlačítko bude funkce dědit ze standardních formulářů Windows <xref:System.Windows.Forms.Button> řídit a bude vystavovat vlastní vlastnost s názvem `ButtonValue`.  
@@ -26,7 +26,7 @@ Pomocí jazyka Visual Basic, můžete vytvořit výkonné vlastní ovládací pr
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Když vytvoříte nový projekt, zadejte jeho název nastavit kořenový obor názvů, název sestavení a název projektu a ujistěte se, že součást výchozí bude v správný obor názvů.  
   
-#### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a>Chcete-li vytvořit ValueButtonLib Knihovna ovládacích prvků a ovládací prvek ValueButton  
+### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a>Chcete-li vytvořit ValueButtonLib Knihovna ovládacích prvků a ovládací prvek ValueButton  
   
 1. Na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu** otevřete **nový projekt** dialogové okno.  
   
@@ -54,7 +54,7 @@ Pomocí jazyka Visual Basic, můžete vytvořit výkonné vlastní ovládací pr
 ## <a name="adding-a-property-to-your-inherited-control"></a>Přidání vlastnosti do zděděný ovládací prvek  
  Je to možné užívání zděděný ovládací prvky Windows Forms je vytváření ovládacích prvků, které jsou stejné ve vzhledu a chování (vzhled a chování) pro standardní ovládací prvky Windows Forms, ale vystavovat vlastní vlastnosti. V této části přidáte vlastnost s názvem `ButtonValue` do ovládacího prvku.  
   
-#### <a name="to-add-the-value-property"></a>Chcete-li přidat vlastnost Value  
+### <a name="to-add-the-value-property"></a>Chcete-li přidat vlastnost Value  
   
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **ValueButton.vb**a potom klikněte na tlačítko **zobrazit kód** z místní nabídky.  
   
@@ -84,13 +84,13 @@ Pomocí jazyka Visual Basic, můžete vytvořit výkonné vlastní ovládací pr
 ## <a name="testing-your-control"></a>Testování ovládacího prvku  
  Ovládací prvky nejsou samostatné projekty; musí být uložen v kontejneru. Pokud chcete otestovat ovládacího prvku, je nutné zadat testovací projekt, ke spuštění v. Musíte také zajistit ovládacího prvku přístupné pro testovací projekt sestavením (kompilace) ji. V této části bude sestavení ovládacího prvku a otestovat ho ve formuláři Windows.  
   
-#### <a name="to-build-your-control"></a>K sestavení ovládacího prvku  
+### <a name="to-build-your-control"></a>K sestavení ovládacího prvku  
   
 1. Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
   
      Sestavení by měl být úspěšný bez chyby kompilátoru nebo upozornění.  
   
-#### <a name="to-create-a-test-project"></a>Chcete-li vytvořit projekt testů  
+### <a name="to-create-a-test-project"></a>Chcete-li vytvořit projekt testů  
   
 1. Na **souboru** nabídky, přejděte k **přidat** a potom klikněte na tlačítko **nový projekt** otevřít **přidat nový projekt** dialogové okno.  
   
@@ -108,7 +108,7 @@ Pomocí jazyka Visual Basic, můžete vytvořit výkonné vlastní ovládací pr
   
 8. V **Průzkumníku řešení** klikněte pravým tlačítkem na **testovací** a vyberte **sestavení**.  
   
-#### <a name="to-add-your-control-to-the-form"></a>Chcete-li přidat ovládací prvek do formuláře  
+### <a name="to-add-your-control-to-the-form"></a>Chcete-li přidat ovládací prvek do formuláře  
   
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.vb** a zvolte **Návrhář zobrazení** z místní nabídky.  
   

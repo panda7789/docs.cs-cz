@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59565b28991f6d61ff2c6c77540eace92461aa89
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: dcf63000de549b42d92ba157a7e550ac605bbfcd
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490180"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67768389"
 ---
 # <a name="lpoverlappedcompletionroutine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci
 Odkazuje na funkci, která upozorňuje hostitele, pokud překrytí (tj, asynchronní) vstupně-výstupních operací na zařízení byla dokončena.  
@@ -30,7 +30,7 @@ Odkazuje na funkci, která upozorňuje hostitele, pokud překrytí (tj, asynchro
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (  
     [in] DWORD  dwErrorCode,  
     [in] DWORD  dwNumberOfBytesTransfered,  

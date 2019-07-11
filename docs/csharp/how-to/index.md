@@ -2,12 +2,12 @@
 title: Jak článků (Průvodce v C#)
 description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: 062ce64f4f369ae70074fd81f39b60de29e4d7d2
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 011e2a8208e647fb2df2ea2e949bfe2d2274eb37
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609250"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744274"
 ---
 # <a name="how-to-c"></a>Jak (C#)
 
@@ -66,7 +66,7 @@ Budete muset převést objekt na jiný typ.
 - [Převést pole bajtů na typ int](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md).
 - [Převod řetězce na číslo](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
 - [Použít porovnávání vzorů, `as` a `is` operátory bezpečně přetypovat na jiný typ](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
-- [Definovat operátory převodu pro `struct` typy](../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md).
+- [Definice vlastního typu převody](../language-reference/operators/user-defined-conversion-operators.md).
 - [Určení, zda je typ s možnou hodnotou Null typu](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
 - [Převod mezi typy hodnot s povolenou hodnotou Null a Null](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-type-to-an-underlying-type).
 

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 953a3123b00280484dd71965c34119e8eeacaf47
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cd420f0f166b0b17e5fbaf08d6bedd6651188b1c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623775"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778751"
 ---
 # <a name="iassemblycacheinstallassembly-method"></a>IAssemblyCache::InstallAssembly – metoda
 Nainstaluje zadané sestavení v globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT InstallAssembly (  
     [in] DWORD dwFlags,  
     [in] LPCWSTR pszManifestFilePath,  

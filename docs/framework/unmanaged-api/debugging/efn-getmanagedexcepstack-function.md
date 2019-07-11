@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e201b9a350c030da59e2b6ed27f84f570c8e621
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61f4e057a487462feb385ca0e3ca977fdd165f56
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698379"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739093"
 ---
-# <a name="efngetmanagedexcepstack-function"></a>_EFN_GetManagedExcepStack – funkce
+# <a name="efngetmanagedexcepstack-function"></a>\_EFN\_GetManagedExcepStack Function
 Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT _EFN_GetManagedExcepStack(  
     [in]  PDEBUG_CLIENT Client,  
     [in]  ULONG64       StackObjAddr,  

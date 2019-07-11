@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a1b189b79a02f04b7f795ff2524441f12b053cec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 45089d1b64264e000c07603808f0c5fb1263b042
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61984630"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776573"
 ---
 # <a name="iclrmetahost-interface"></a>ICLRMetaHost – rozhraní
 Poskytuje metody, které vrátí konkrétní verzi modulu common language runtime (CLR) podle její číslo verze, seznam všech nainstalovaných CLRs, vypsat všechny moduly runtime, která jsou načtena do určeného procesu, zjistit verzi modulu CLR použitou pro kompilaci sestavení, ukončit proces vypnutí čistý modul runtime a načítání starší verze rozhraní API.  
@@ -41,7 +41,7 @@ Poskytuje metody, které vrátí konkrétní verzi modulu common language runtim
 ## <a name="remarks"></a>Poznámky  
  Jediný způsob, jak získat instanci toto rozhraní je voláním [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) funkce takto:  
   
-```  
+```cpp  
 ICLRMetaHost *pMetaHost = NULL;  
 HRESULT hr = CLRCreateInstance(CLSID_CLRMetaHost,  
                    IID_ICLRMetaHost, (LPVOID*)&pMetaHost);  

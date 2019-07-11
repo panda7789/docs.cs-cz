@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 48650a370f7d15724e20850e9d3b47dc8215f960
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e5120b5fddf621d6f4c684c4c432fda4f5c0117
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989492"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67745253"
 ---
 # <a name="icordebugchaingetreason-method"></a>ICorDebugChain::GetReason – metoda
 Získá důvod genesis tento řetěz volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetReason (  
     [out] CorDebugChainReason *pReason  
 );  

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44a84b03c85cc1332c07ffbaf53187b7f01d0236
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47f92122eddf3cc8e6aec19d75fd2a95f76e9973
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609045"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746706"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
 Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času. 
@@ -30,7 +30,7 @@ Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát n
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 int FormatFromRawValue (
    [in] uint                    dwCounterType, 
    [in] uint                    dwFormat, 
@@ -49,7 +49,7 @@ int FormatFromRawValue (
 `dwFormat`\
 [in] Formát, do které chcete převést hrubá data. Může být jeden z následujících hodnot:
 
-|Konstanta  |Hodnota  |Popis |
+|Konstanta  |Value  |Popis |
 |---------|---------|---------|
 | `PDH_FMT_DOUBLE` |0x00000200 | Vrátí počítanou hodnotu jako hodnotu s plovoucí desetinnou dvojitou přesností. | 
 | `PDH_FMT_LARGE` | 0x00000400 | Počítané hodnoty lze vrátíte jako 64bitové celé číslo. |
@@ -57,7 +57,7 @@ int FormatFromRawValue (
 
 Použijte některou z předchozích hodnot mohou být sloučeny pomocí operátoru OR s jedním z následujících příznaků škálování:
 
-|Konstanta  |Value  |Popis |
+|Konstanta  |Hodnota  |Popis |
 |---------|---------|---------|
 | `PDH_FMT_NOSCALE` | 0x00001000 | Nevztahují se čítač faktory měřítka. |
 | `PDH_FMT_1000` | 0x00002000 | Vynásobte konečnou hodnotu 1000. | 

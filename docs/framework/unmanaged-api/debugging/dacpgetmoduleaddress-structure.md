@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: cbea6c0562c68ae5d18247dc97bc53eb9dfbfd7e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 145b06f89b45b165b9d6329a4c16ac5739406113
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965925"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739193"
 ---
 # <a name="dacpgetmoduleaddress-structure"></a>Struktura DacpGetModuleAddress
 
@@ -30,7 +30,7 @@ Definuje kontejner pro žádost o adresu modulu.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 struct DacpGetModuleAddress
 {
     CLRDATA_ADDRESS ModulePtr;
@@ -55,7 +55,7 @@ Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví n
 
 ## <a name="requirements"></a>Požadavky
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
+**Záhlaví:** Žádný  
 **Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 

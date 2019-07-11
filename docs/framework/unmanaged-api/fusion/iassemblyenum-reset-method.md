@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0300165f33bfb3d5b4f05917f516feb26f0b5ec8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 075f952e6d5b3e863ca720bb206f33471809d09e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697586"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67754091"
 ---
 # <a name="iassemblyenumreset-method"></a>IAssemblyEnum::Reset – metoda
 To obnoví [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) objektu na jeho výchozí pozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Reset (  
     void  
 );  

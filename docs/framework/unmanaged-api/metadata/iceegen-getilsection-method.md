@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1cff5b7fadf4345b7a1d09911dc7061adc925e7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8bddb782e13b4e7400c7e4a8128dc333efc8141d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992612"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746176"
 ---
 # <a name="iceegengetilsection-method"></a>ICeeGen::GetIlSection – metoda
 Získá části základu kódu IL odkazuje Zadaný popisovač.  
@@ -31,7 +31,7 @@ Získá části základu kódu IL odkazuje Zadaný popisovač.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetIlSection (  
     [in] HCEESECTION  *section  
 );  

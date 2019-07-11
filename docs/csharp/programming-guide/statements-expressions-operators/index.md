@@ -10,12 +10,12 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: 2f7505051cce3aee99e6b6ea88a6a94498926214
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 7073ddc50b47ff239e8b310c0a5a1fbd84504133
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609634"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743877"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 
@@ -32,12 +32,6 @@ Kód jazyka C#, která se skládá z aplikace se skládá z příkazů tvořené
 - [Operátory](operators.md)
 
 - [Anonymní funkce](anonymous-functions.md)
-
-- [Operátory převodu](conversion-operators.md)
-
-  - [Použití operátorů převodu](using-conversion-operators.md)
-
-  - [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](how-to-implement-user-defined-conversions-between-structs.md)
 
 - [Porovnání rovnosti](equality-comparisons.md)
 

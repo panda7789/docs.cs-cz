@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37710fbb7acc50b80d7acebe4194b019c0b64660
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 398c48bfd30020efdb57861991c9541d412d3e0d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61994848"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67763431"
 ---
 # <a name="icordebugmodulegetmetadatainterface-method"></a>ICorDebugModule::GetMetaDataInterface – metoda
 Získá objekt rozhraní metadat, který slouží k přezkoumání metadat pro modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMetaDataInterface (  
     [in] REFIID      riid,  
     [out] IUnknown **ppObj  

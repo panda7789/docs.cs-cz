@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4af328c537fbc3b64eb1a2ac3df3a4e4224789e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f823f660efee2d53bc1f6fa50d8878f496417379
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996018"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752272"
 ---
 # <a name="icordebugenumgetcount-method"></a>ICorDebugEnum::GetCount – metoda
 Získá počet položek ve výčtu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetCount (  
     [out] ULONG *pcelt  
 );  

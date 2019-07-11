@@ -2,12 +2,12 @@
 title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: c09871abcdfb9243b5170386ffe79012c9c3f71d
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 697432dce5f7698a8b4eabde3586bb4f77fd62de
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661865"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742747"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  
@@ -26,7 +26,7 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
  Chcete-li zadat název vstupního souboru, přidejte název souboru do příkazového řádku jako vstupní soubor. Včetně názvu souboru do připojovacího řetězce (pomocí **/conn** možnost) se nepodporuje. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="class-library-projects"></a>Projekty knihovny tříd  
- [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Vytvoří připojovací řetězec v `app.config` souboru projektu. V projektech knihoven tříd `app.config` soubor nepoužívá. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá připojovací řetězec k dispozici v souborech návrhu. Změna hodnoty v `app.config` nezmění databázi, do kterého vaše aplikace připojuje.  
+ Návrhář relací objektů vytvoří připojovací řetězec v `app.config` souboru projektu. V projektech knihoven tříd `app.config` soubor nepoužívá. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá připojovací řetězec k dispozici v souborech návrhu. Změna hodnoty v `app.config` nezmění databázi, do kterého vaše aplikace připojuje.  
   
 ## <a name="cascade-delete"></a>Kaskádové odstranění  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje ani rozpoznat kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, která má omezení u ní, musíte udělat jednu z následujících akcí:  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 538def39-8399-46fb-b02d-60ede4e050af
-ms.openlocfilehash: 5a20253e7164dabc22529d2238e9e85610d83706
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0637a2f32140081d310abf5f7254b526edc69fc6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624701"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743228"
 ---
 # <a name="how-to-map-database-relationships"></a>Postupy: Mapování databázových relací
 Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relace mezi daty, které budou vždy stejné. V ukázkové databázi Northwind třeba protože zákazníkům obvykle zadávat objednávky, není vždy relace v modelu mezi zákazníky a jejich objednávky.  
@@ -39,7 +39,7 @@ Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relac
  V následujícím příkladu 1 n `Customer` třída obsahuje vlastnosti, která deklaruje vztah mezi zákazníky a jejich objednávky.  `Orders` Vlastnost je typu <xref:System.Data.Linq.EntitySet%601>. Tento typ označuje, že je tento vztah jeden mnoho (jednoho zákazníka na velké množství objednávek). <xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A> Vlastnost se používá k popisu, jak se provádí toto přidružení, konkrétně tak, že zadáte název vlastnosti ve třídě související k porovnání s touto verzí. V tomto příkladu `CustomerID` se porovnává vlastnost, stejně jako databázi *spojení* by porovnání hodnotě sloupce.  
   
 > [!NOTE]
->  Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vytvoření přidružení mezi třídami.  
+>  Pokud používáte Visual Studio, můžete k vytvoření přidružení mezi třídami Návrhář relací objektů.  
   
  [!code-csharp[DlinqCustomize#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#3)]
  [!code-vb[DlinqCustomize#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#3)]  

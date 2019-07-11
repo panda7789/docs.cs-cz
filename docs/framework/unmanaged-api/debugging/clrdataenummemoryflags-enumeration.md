@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80ea3afef4aee51760e3a2ce6a2b895bca4a6ec5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5787f9f143e99ab30879ddcf8168b0e840b2fb4e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961353"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740980"
 ---
 # <a name="clrdataenummemoryflags-enumeration"></a>CLRDataEnumMemoryFlags – výčet
 Označuje volání, které oblasti paměti [iclrdataenummemoryregions::enummemoryregions –](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) metoda by měla obsahovat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CLRDataEnumMemoryFlags {  
     CLRDATA_ENUM_MEM_DEFAULT  = 0x0,  
     CLRDATA_ENUM_MEM_MINI     = CLRDATA_ENUM_MEM_DEFAULT,  

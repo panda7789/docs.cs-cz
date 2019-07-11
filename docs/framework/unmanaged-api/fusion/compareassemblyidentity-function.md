@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f0bbc2a63f0324db50008637827eb63125ee5813
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 55d4e936c8b732e4cc4a60df8c11b37c86c4a415
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662952"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778490"
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity – funkce
 Porovná dvě identit sestavení pro určení, zda jsou ekvivalentní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 STDAPI CompareAssemblyIdentity (  
     [in]  LPCWSTR                  pwzAssemblyIdentity1,  
     [in]  BOOL                     fUnified1,  

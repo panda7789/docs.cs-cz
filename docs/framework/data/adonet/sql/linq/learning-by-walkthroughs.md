@@ -2,18 +2,18 @@
 title: Učení podle návodů
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: d5c8457bc1e484d3c7c2b57225261a3ef74023d1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e6b5f77d6d918ae1402074c9c3037ccadec8ac02
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64582909"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743029"
 ---
 # <a name="learning-by-walkthroughs"></a>Učení podle návodů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace poskytuje několik návody. Toto téma řeší některé problémy obecného průvodce (včetně Poradce při potížích) a obsahuje odkazy na několik základní návody pro získání informací o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
 > [!NOTE]
->  Názorné postupy v této části Začínáme se službou můžete zpřístupnit základního kódu, který podporuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie. V praxi, budete obvykle používat [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] projekty Windows Forms k implementaci a vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací. [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] Dokumentace poskytuje příklady a názorné postupy pro tento účel.  
+>  Názorné postupy v této části Začínáme se službou můžete zpřístupnit základního kódu, který podporuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie. V praxi, budete obvykle používat projekty Návrhář relací objektů a Windows Forms k implementaci vašeho [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací. Dokumentace O/R Designer poskytuje příklady a názorné postupy pro tento účel.  
   
 ## <a name="getting-started-walkthroughs"></a>Začínáme se službou názorné postupy  
  V této části jsou k dispozici několik návody. Tyto kurzy vycházejí z ukázkové databáze Northwind a prezentovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] funkce mírného tempem s minimálními složitosti.  

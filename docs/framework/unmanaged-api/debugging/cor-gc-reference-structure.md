@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 848765a4ea9657020bd84e476f992ae69750dda9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 61a9cad9d0ce807d62c811e77402b8cc6d8c6905
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617689"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740693"
 ---
 # <a name="corgcreference-structure"></a>COR_GC_REFERENCE – struktura
 Obsahuje informace o objektu, který má být uvolněna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _COR_GC_REFERENCE {  
     ICorDebugAppDomain *domain;   
     ICorDebugValue *location;  

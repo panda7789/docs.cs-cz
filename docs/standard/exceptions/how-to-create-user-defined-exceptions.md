@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dca313fad896ac1c8eac37c853657bea44a8b777
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 42860f549877436f43bfdc20fb3abde91d36101d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970921"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783195"
 ---
 # <a name="how-to-create-user-defined-exceptions"></a>Jak vytvořit uživatelsky definovaných výjimek
 

@@ -2,12 +2,12 @@
 title: 'Návod: Použití jen uložených procedur (C#)'
 ms.date: 03/30/2017
 ms.assetid: ecde4bf2-fa4d-4252-b5e4-96a46b9e097d
-ms.openlocfilehash: f4c34252f7d92985dac94663c85d3cca0dc58ab3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f16cbdc1d22e7ec08237c0f13db9499ee2f9194f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655116"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742548"
 ---
 # <a name="walkthrough-using-only-stored-procedures-c"></a>Návod: Použití jen uložených procedur (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům spuštěním uložené procedury pouze. Tento přístup se často používá ve správci databází a omezit způsob přístupu k úložišti dat.  
@@ -17,7 +17,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
  Pro účely tohoto názorného postupu budete používat dvě metody, které byly namapovány na uložené procedury v ukázkové databázi Northwind: CustOrdersDetail a CustOrderHist. Mapování nastane, když spustíte nástroj příkazového řádku SqlMetal k vygenerování C# souboru. Další informace najdete v části požadavky později v tomto názorném postupu.  
   
- Tento názorný postup nevyžaduje [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]. Vývojáři, kteří používají Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] k implementaci funkcionality uloženou proceduru. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Tento názorný postup nevyžaduje Návrhář relací objektů. Vývojáři, kteří používají Visual Studio můžete také O/R Designer k implementaci funkcionality uloženou proceduru. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -112,7 +112,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-set-up-the-user-interface"></a>Nastavení uživatelského rozhraní  
   
-1. Vraťte se Windows Forms Designer (**Form1.cs[Design]**).  
+1. Vraťte se Windows Forms Designer (**Form1.cs[Design]** ).  
   
 2. Na **zobrazení** nabídky, klikněte na tlačítko **nástrojů**.  
   
@@ -127,9 +127,9 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 4. Klikněte pravým tlačítkem na **label1**a potom klikněte na tlačítko **vlastnosti**.  
   
-5. Změnit **Text** vlastnost z **label1** k **zadejte OrderID:**.  
+5. Změnit **Text** vlastnost z **label1** k **zadejte OrderID:** .  
   
-6. Stejně jako u **label2**, změnit **Text** vlastnost z **label2** k **zadejte ID zákazníka:**.  
+6. Stejně jako u **label2**, změnit **Text** vlastnost z **label2** k **zadejte ID zákazníka:** .  
   
 7. Stejným způsobem, změnit **Text** vlastnost **button1** k **OrderDetails**.  
   

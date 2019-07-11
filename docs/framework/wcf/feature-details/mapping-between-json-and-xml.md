@@ -2,12 +2,12 @@
 title: Mapování mezi JSON a XML
 ms.date: 03/30/2017
 ms.assetid: 22ee1f52-c708-4024-bbf0-572e0dae64af
-ms.openlocfilehash: ef5eaac8fc75149ac518ce322808a84bbab5506b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9049e622803396126890d4c88b9fee2a100f17c5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636438"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747737"
 ---
 # <a name="mapping-between-json-and-xml"></a>Mapování mezi JSON a XML
 Čtečky a zapisovače vytvářených <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML nad obsahem objektu zápis JSON (JavaScript). JSON zašifruje data pomocí některé podsady literálů objektů jazyka JavaScript. Čtečky a zapisovače vytvářených tento objekt pro vytváření se také používají při obsah JSON se odeslaný nebo přijatý aplikací Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.
@@ -38,7 +38,7 @@ Přečtěte si tento dokument JSON pomocí jedné z čtečky už jsme zmínili, 
 Kromě toho pokud zprávu JSON v příkladu přijme službou WCF a přihlášení, zobrazí se fragment XML v předchozím protokolu.
 
 ## <a name="mapping-between-json-and-the-xml-infoset"></a>Mapování mezi JSON a XML informační sadu
-Formálně, mapování je mezi JSON, jak je popsáno v [RFC 4627](https://go.microsoft.com/fwlink/?LinkId=98808) (s výjimkou určitá omezení volný a některé další omezení, přidá) a XML informační sada (a nikoli textovou XML) jako je popsáno v [informace XML Nastavte](https://go.microsoft.com/fwlink/?LinkId=98809) . V tomto tématu pro definice *informačních položek* a polí v [hranaté závorky].
+Formálně, mapování je mezi JSON, jak je popsáno v [RFC 4627](https://go.microsoft.com/fwlink/?LinkId=98808) (s výjimkou určitá omezení volný a některé další omezení, přidá) a XML informační sada (a nikoli textovou XML) jako je popsáno v [informace XML Nastavte](https://go.microsoft.com/fwlink/?LinkId=98809). V tomto tématu pro definice *informačních položek* a polí v [hranaté závorky].
 
 Prázdný dokument JSON se mapuje na prázdný dokument XML a prázdný dokument XML, mapuje na prázdný dokument JSON. Na XML na JSON mapování nejsou povoleny mezery před a koncové prázdné znaky po dokumentu.
 
@@ -48,7 +48,7 @@ Příklad: V následujícím dokumentu:
 
 ```xml
 <?xml version="1.0"?>
-<root type="number">42</root>`
+<root type="number">42</root>
 ```
 
 A následující element:
@@ -141,8 +141,8 @@ Kořenový Element JSON a vnitřní elementy atribut typu JSON definuje mapován
 |`number`|1 nebo více CIIs|JSON `number` (RFC JSON, část 2.4), případně obklopený prázdné znaky. Každý znak v kombinaci číslo nebo prázdný znak je znak, který odpovídá [kód znaku] z CÍ.<br /><br /> Příklad: Následující prvek mapuje na JSON fragment.<br /><br /> `<root type="number">    42</root>`<br /><br /> JSON fragment je 42<br /><br /> (Prázdné znaky se zachovají).|
 |`boolean`|4 nebo 5 CIIs (který odpovídá `true` nebo `false`), případně ohraničený další CIIs prázdné znaky.|CÍ posloupnost, která odpovídá řetězci "true" je namapována na literál `true`, a CÍ posloupnost, která odpovídá řetězci "false" je namapována na literál `false`. Mezery kolem se zachovají.<br /><br /> Příklad: Následující prvek mapuje na JSON fragment.<br /><br /> `<root type="boolean"> false</root>`<br /><br /> JSON fragment je `false`.|
 |`null`|Není povoleno.|Literál `null`. Ve formátu JSON pro mapování XML `null` může být uzavřeny do prázdné znaky ("ws" v části 2), která není mapována na XML.<br /><br /> Příklad: Následující prvek mapuje na JSON fragment.<br /><br /> `<root type="null"/>`<br /><br /> or<br /><br /> `<root type="null"></root>`<br /><br /> :<br /><br /> Fragment JSON v obou případech je `Null`.|
-|`object`|0 nebo více EIIs.|A `begin-object` (levé složené závorky) jako v části 2.2 JSON RFC, za nímž následuje člen záznam pro každou EII jak je popsáno dále. Pokud existuje více než jeden EII, jsou mezi záznamů člena hodnota oddělovače (čárkami). To vše je následován end – objekt (pravá složená závorka).<br /><br /> Příklad: Následující prvek mapuje na JSON fragment.<br /><br /> `<root type="object">`<br /><br /> `<type1 type="string">aaa\</type1>`<br /><br /> `<type2 type="string">bbb\</type2>`<br /><br /> `</root >`<br /><br /> JSON fragment je `{"type1":"aaa","type2":"bbb"}`.<br /><br /> Pokud je k dispozici na XML na JSON mapování atribut Typ kontraktu dat, je vložen další záznam člena na začátku. Jeho název je [místní název] atributu typu kontraktu dat. ("\_\_typu"), a její hodnota je atribut uživatele [Normalizovaná hodnota]. Naopak v JSON pro mapování XML, pokud je název prvního člena záznamu [místní název] atribut Typ kontraktu dat (tedy "\_\_typu"), odpovídající atribut Typ kontraktu dat je k dispozici v mapovaných XML, ale odpovídající EII není k dispozici. Všimněte si, že tento člen záznam musí objevit jako první v objektu JSON pro tento speciální mapování použít. To představuje odklon od obvykle zpracování JSON, ve kterém není důležité pořadí záznamů člena.<br /><br /> Příklad:<br /><br /> Následující fragment JSON se mapuje na XML.<br /><br /> `{"__type":"Person","name":"John"}`<br /><br /> XML je následující kód.<br /><br /> `<root type="object" __type="Person">   <name type="string">John</name> </root>`<br /><br /> Všimněte si, že \_ \_typ AII je k dispozici, ale neexistuje žádná \_ \_zadejte EII.<br /><br /> Nicméně pokud je obrácený pořadí v kódu JSON jako uvedené v následujícím příkladu.<br /><br /> {"name": "John","\_\_typu": "Osoba"}<br /><br /> Se zobrazí odpovídající kód XML.<br /><br /> `<root type="object">   <name type="string">John</name>   <__type type="string">Person</__type> </root>`<br /><br /> To znamená \__typ přestane jako obvykle mají zvláštní význam a mapuje EII AII není.<br /><br /> Uvozovací znaky/unescaping pravidla pro AII uživatele [Normalizovaná hodnota] při mapování na hodnotu JSON jsou stejné jako u řetězce JSON zadaný v "string" řádku této tabulky.<br /><br /> Příklad:<br /><br /> `<root type="object" __type="\abc" />`<br /><br /> v předchozím příkladu lze mapovat na následující JSON.<br /><br /> `{"__type":"\\abc"}`<br /><br /> Na XML na JSON mapování, nesmí být prvním EII společnosti [místní název] "\_\_typ".<br /><br /> Prázdné znaky (`ws`) nikdy vygenerovaný na XML na JSON mapování objektů a ignorován pro mapování XML na JSON.<br /><br /> Příklad: Následující fragment JSON se mapuje na XML element.<br /><br /> `{ "ccc" : "aaa", "ddd" :"bbb"}`<br /><br /> XML element je znázorněno v následujícím kódu.<br /><br /> `<root type="object">    <ccc type="string">aaa</ccc>    <ddd type="string">bbb</bar> </root >`|
-|pole|0 nebo více EIIs|Begin – pole s (levá hranatá závorka) jako v části 2.3 JSON RFC, za nímž následuje záznam pole pro každý EII jak je popsáno dále. Pokud existuje více než jeden EII, jsou mezi záznamy pole Hodnota oddělovače (čárkami). To vše je následován end pole.<br /><br /> Příklad: Následující element XML se mapuje na JSON fragment.<br /><br /> `<root type="array"/>    <item type="string">aaa</item>    <item type="string">bbb</item> </root >`<br /><br /> JSON fragment je ["aaa", "bbb"]<br /><br /> Prázdné znaky (`ws`) nikdy vygenerovaný na XML na JSON mapování polí a ignorován pro mapování XML na JSON.<br /><br /> Příklad: JSON fragment.<br /><br />`["aaa", "bbb"]`<br /><br /> Element XML, který se mapuje na.<br /><br /> `<root type="array"/>    <item type="string">aaa</item>    <item type="string">bbb</item> </root >`|
+|`object`|0 nebo více EIIs.|A `begin-object` (levé složené závorky) jako v části 2.2 JSON RFC, za nímž následuje člen záznam pro každou EII jak je popsáno dále. Pokud existuje více než jeden EII, jsou mezi záznamů člena hodnota oddělovače (čárkami). To vše je následován end – objekt (pravá složená závorka).<br /><br /> Příklad: Následující prvek mapuje na JSON fragment.<br /><br /> `<root type="object">`<br /><br /> `<type1 type="string">aaa\</type1>`<br /><br /> `<type2 type="string">bbb\</type2>`<br /><br /> `</root >`<br /><br /> JSON fragment je `{"type1":"aaa","type2":"bbb"}`.<br /><br /> Pokud je k dispozici na XML na JSON mapování atribut Typ kontraktu dat, je vložen další záznam člena na začátku. Jeho název je [místní název] atributu typu kontraktu dat. ("\_\_typu"), a její hodnota je atribut uživatele [Normalizovaná hodnota]. Naopak v JSON pro mapování XML, pokud je název prvního člena záznamu [místní název] atribut Typ kontraktu dat (tedy "\_\_typu"), odpovídající atribut Typ kontraktu dat je k dispozici v mapovaných XML, ale odpovídající EII není k dispozici. Všimněte si, že tento člen záznam musí objevit jako první v objektu JSON pro tento speciální mapování použít. To představuje odklon od obvykle zpracování JSON, ve kterém není důležité pořadí záznamů člena.<br /><br /> Příklad:<br /><br /> Následující fragment JSON se mapuje na XML.<br /><br /> `{"__type":"Person","name":"John"}`<br /><br /> XML je následující kód.<br /><br /> `<root type="object" __type="Person">   <name type="string">John</name> </root>`<br /><br /> Všimněte si, že \_ \_typ AII je k dispozici, ale neexistuje žádná \_ \_zadejte EII.<br /><br /> Nicméně pokud je obrácený pořadí v kódu JSON jako uvedené v následujícím příkladu.<br /><br /> `{"name":"John","\_\_type":"Person"}`<br /><br /> Se zobrazí odpovídající kód XML.<br /><br /> `<root type="object">   <name type="string">John</name>   <__type type="string">Person</__type> </root>`<br /><br /> To znamená \__typ přestane jako obvykle mají zvláštní význam a mapuje EII AII není.<br /><br /> Uvozovací znaky/unescaping pravidla pro AII uživatele [Normalizovaná hodnota] při mapování na hodnotu JSON jsou stejné jako u řetězce JSON zadaný v "string" řádku této tabulky.<br /><br /> Příklad:<br /><br /> `<root type="object" __type="\abc" />`<br /><br /> v předchozím příkladu lze mapovat na následující JSON.<br /><br /> `{"__type":"\\abc"}`<br /><br /> Na XML na JSON mapování, nesmí být prvním EII společnosti [místní název] "\_\_typ".<br /><br /> Prázdné znaky (`ws`) nikdy vygenerovaný na XML na JSON mapování objektů a ignorován pro mapování XML na JSON.<br /><br /> Příklad: Následující fragment JSON se mapuje na XML element.<br /><br /> `{ "ccc" : "aaa", "ddd" :"bbb"}`<br /><br /> XML element je znázorněno v následujícím kódu.<br /><br /> `<root type="object">    <ccc type="string">aaa</ccc>    <ddd type="string">bbb</bar> </root >`|
+|pole|0 nebo více EIIs|Begin – pole s (levá hranatá závorka) jako v části 2.3 JSON RFC, za nímž následuje záznam pole pro každý EII jak je popsáno dále. Pokud existuje více než jeden EII, jsou mezi záznamy pole Hodnota oddělovače (čárkami). To vše je následován end pole.<br /><br /> Příklad: Následující element XML se mapuje na JSON fragment.<br /><br /> `<root type="array"/>    <item type="string">aaa</item>    <item type="string">bbb</item> </root >`<br /><br /> JSON fragment je `["aaa","bbb"]`<br /><br /> Prázdné znaky (`ws`) nikdy vygenerovaný na XML na JSON mapování polí a ignorován pro mapování XML na JSON.<br /><br /> Příklad: JSON fragment.<br /><br />`["aaa", "bbb"]`<br /><br /> Element XML, který se mapuje na.<br /><br /> `<root type="array"/>    <item type="string">aaa</item>    <item type="string">bbb</item> </root >`|
 
 Člen záznamy vypadat takto:
 
@@ -150,15 +150,17 @@ Kořenový Element JSON a vnitřní elementy atribut typu JSON definuje mapován
 
 Příklad: Následující prvek mapuje na JSON fragment.
 
-`<root type="object"/>`
-
-`<myLocalName type="string">aaa</myLocalName>`
-
-`</root >`
+```xml
+<root type="object"/>
+<myLocalName type="string">aaa</myLocalName>
+</root >
+```
 
 Zobrazí se následující fragment ve formátu JSON.
 
-`{"myLocalName":"aaa"}`
+```json
+{"myLocalName":"aaa"}
+```
 
 - V XML na JSON mapování jsou uvozeny řídicími znaky, které musí být uvozena ve formátu JSON znaky a ostatní nejsou uvozeny zpětným lomítkem. Znak "/", i když není znak, který musí být uvozeny řídicími znaky, není uvozeno uvozovacím znakem přesto (nemusí být uvozena ve formátu JSON pro mapování XML). To je potřeba k podpoře technologie ASP.NET AJAX formát `DateTime` data ve formátu JSON.
 
@@ -181,7 +183,9 @@ Příklad: Následující prvek mapuje na JSON fragment.
 
 Následující fragment JSON se mapuje na.
 
-`{"myLocalName1":"myValue1","myLocalName2":2,"myLocalName3":{"myNestedName1":true,"myNestedName2":null}}`
+```json
+{"myLocalName1":"myValue1","myLocalName2":2,"myLocalName3":{"myNestedName1":true,"myNestedName2":null}}
+```
 
 > [!NOTE]
 > V předchozím mapování neexistuje žádný krok kódování XML. Proto WCF podporuje pouze dokumenty JSON, ve kterém jsou všechny znaky v názvech klíčů znaky platné v názvech elementů XML. Například dokument JSON {"<": "a"} nepodporuje, protože < není platný název elementu XML.
@@ -208,7 +212,9 @@ Příklad: Následující prvek mapuje na JSON fragment.
 
 Tady je JSON fragment.
 
-`["myValue1",2,[true,null]]`
+```json
+["myValue1",2,[true,null]]
+```
 
 ## <a name="see-also"></a>Viz také:
 

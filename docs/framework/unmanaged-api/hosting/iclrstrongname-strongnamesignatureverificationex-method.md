@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b36e1d34b874f47f1edb0e1ffe3dc2fe2d87ddcc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32d6f3040cbb2070433ad5e3b6117d4b0b212656
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787930"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765871"
 ---
 # <a name="iclrstrongnamestrongnamesignatureverificationex-method"></a>ICLRStrongName::StrongNameSignatureVerificationEx – metoda
 Získá hodnotu, která určuje, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT StrongNameSignatureVerificationEx (  
     [in]  LPCWSTR   wszFilePath,  
     [in]  BOOLEAN   fForceVerification,  

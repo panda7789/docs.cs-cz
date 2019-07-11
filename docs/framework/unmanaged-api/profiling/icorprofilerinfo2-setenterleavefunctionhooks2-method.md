@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9f95a404ce7124a76ee527cdc70ccccf103838b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31766fed66368c044b188b5a58452a5e264a25cb
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763175"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782199"
 ---
 # <a name="icorprofilerinfo2setenterleavefunctionhooks2-method"></a>ICorProfilerInfo2::SetEnterLeaveFunctionHooks2 – metoda
 Určuje funkce implementované profileru mají být volány v aktualizované verze "zadejte", "ponechte" a "tailcall" háky spravované funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetEnterLeaveFunctionHooks2(  
     [in] FunctionEnter2    *pFuncEnter,  
     [in] FunctionLeave2    *pFuncLeave,  

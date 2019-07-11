@@ -2,12 +2,12 @@
 title: Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Prozkoumejte podrobnosti implementace pro trvalost vrstvě infrastruktury pomocí Entity Framework Core.
 ms.date: 10/08/2018
-ms.openlocfilehash: c6b0a022dfecb24c479a0fd3c84dbde719a390a8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7e3480999b115ac13f8d7ebcaed826b407aa7637
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639527"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778054"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
 
@@ -21,7 +21,7 @@ Entity Framework (EF) Core je odlehčený, rozšiřitelné, a multiplatformní v
 
 Úvod do EF Core je již k dispozici v dokumentaci společnosti Microsoft, tady jednoduše poskytujeme odkazy k těmto informacím.
 
-#### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další zdroje
 
 - **Entity Framework Core** \
   [https://docs.microsoft.com/ef/core/](/ef/core/)
@@ -230,7 +230,7 @@ builder.RegisterType<OrderRepository>()
 
 Všimněte si, že pomocí typu singleton životnost úložiště, které může způsobit vážné souběžnosti problémy Pokud váš kontext databáze je nastavena na obor (InstancePerLifetimeScope) životnost (výchozí doba života pro DBContext).
 
-#### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další zdroje
 
 - **Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
@@ -447,7 +447,7 @@ Kromě zapouzdření logiku filtrování, specifikace určit tvar dat, který se
 
 Ale nedoporučujeme vrátit IQueryable z úložiště, je naprosto bez problémů se dají použít v rámci tohoto úložiště k vytvoření sady výsledků. Zobrazí se tento přístup používá se v seznamu výše uvedené, metody, která používá přechodných výrazů IQueryable k vytvoření dotazu na seznam zahrnuje před provedením dotazu s kritérii pro specifikaci na posledním řádku.
 
-#### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další zdroje
 
 - **Mapování tabulek** \
   [https://docs.microsoft.com/ef/core/modeling/relational/tables](/ef/core/modeling/relational/tables)

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ead1c1a91b910e7cfbb09f17ba823fc7a77ce0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76c852ac81126895ea3a2e1b40473722c8445201
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609006"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746554"
 ---
 # <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType function
 Získá typ objektu apartment, ve kterém je spuštěn volající.   
@@ -30,7 +30,7 @@ Získá typ objektu apartment, ve kterém je spuštěn volající.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetCurrentApartmentType (
    [in] int                   vFunc, 
    [in] IComThreadingInfo*    ptr, 
@@ -51,7 +51,7 @@ HRESULT GetCurrentApartmentType (
 
 ## <a name="return-value"></a>Návratová hodnota
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `S_OK` | 0 | Funkce, která byla úspěšně dokončena. |
 | `E_FAIL` | 0x80000008 | Volající není prováděna v komplexu. |

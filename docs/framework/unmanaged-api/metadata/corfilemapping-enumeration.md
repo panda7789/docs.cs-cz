@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3056836d289383161f9fa538c3c6349f88b6ba6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 719f0522cc43625a4d6cc8afa838d869e47b40d1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61905733"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781839"
 ---
 # <a name="corfilemapping-enumeration"></a>CorFileMapping – výčet
 Obsahuje hodnoty, které popisují typ souboru mapování, která je vrácena z volání [imetadatainfo::getfilemapping –](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorFileMapping {  
   
     fmFlat                  =   0x0000,  

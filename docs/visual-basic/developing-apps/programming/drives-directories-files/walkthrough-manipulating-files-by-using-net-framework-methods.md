@@ -15,12 +15,12 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: f3fecf521ca4a9397bacffbb084c4107af97f5b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc96baaff3b70fcb32e19e2ce08bdb0187c86c01
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013930"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783204"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.StreamReader> třídy, zkontrolujte, pokud je přístupu k souboru, hledání řetězce v rámci souboru pro čtení s instancí <xref:System.IO.StreamReader> třídy a zápis do souboru pomocí <xref:System.IO.StreamWriter> třídy.  
@@ -30,7 +30,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
 ## <a name="creating-the-application"></a>Vytvoření aplikace  
  Spusťte sadu Visual Studio a začněte projektu tak, že vytvoříte formuláře, který může uživatel použít k zápisu do určeného souboru.  
   
-#### <a name="to-create-the-project"></a>Vytvoření projektu  
+### <a name="to-create-the-project"></a>Vytvoření projektu  
   
 1. Na **souboru** nabídce vyberte možnost **nový projekt**.  
   
@@ -51,7 +51,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
 ## <a name="writing-to-the-file"></a>Při zápisu do souboru  
  Chcete-li přidat možnost zapisovat do souboru pomocí aplikace, použijte <xref:System.IO.StreamWriter> třídy. <xref:System.IO.StreamWriter> je navržená pro výstup znaků v určitém kódování, že <xref:System.IO.Stream> třídy je navržená pro bajtový vstup a výstup. Použití <xref:System.IO.StreamWriter> pro řádky informace do standardního textového souboru. Další informace o <xref:System.IO.StreamWriter> najdete v tématu <xref:System.IO.StreamWriter>.  
   
-#### <a name="to-add-writing-functionality"></a>Chcete-li přidat funkce zápisu  
+### <a name="to-add-writing-functionality"></a>Chcete-li přidat funkce zápisu  
   
 1. Z **zobrazení** nabídce zvolte **kód** otevřete Editor kódu.  
   
@@ -96,7 +96,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
 |<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**|`GetEntries`<br /><br /> **Získání položky**|  
 |<xref:System.Windows.Forms.ComboBox>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`PickEntries`<br /><br /> **Vyberte položku**<br /><br /> `False`|  
   
-#### <a name="to-populate-the-combo-box"></a>K naplnění pole se seznamem  
+### <a name="to-populate-the-combo-box"></a>K naplnění pole se seznamem  
   
 1. `PickEntries` <xref:System.Windows.Forms.ComboBox> Slouží k zobrazení kalendářních dat, na kterých uživatel odešle jednotlivých položek, takže uživatel může vybrat položku z konkrétní datum. Vytvoření <xref:System.Windows.Forms.Control.Click> obslužnou rutinu události `GetEntries` tlačítko a přidejte následující kód.  
   
@@ -104,7 +104,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
   
 2. K testování kódu, stiskněte klávesu F5 a který aplikaci zkompiluje a potom klikněte na tlačítko **najít položky**. Klikněte na šipku rozevíracího seznamu v <xref:System.Windows.Forms.ComboBox> zobrazíte vstupní data.  
   
-#### <a name="to-choose-and-display-individual-entries"></a>Vybrat a zobrazit jednotlivé položky  
+### <a name="to-choose-and-display-individual-entries"></a>Vybrat a zobrazit jednotlivé položky  
   
 1. Vytvoření <xref:System.Windows.Forms.Control.Click> obslužné rutiny události pro `Display` tlačítko a přidejte následující kód.  
   
@@ -123,7 +123,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
 |<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`EditEntry`<br /><br /> **Upravit položku**<br /><br /> `False`|  
 |<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`SubmitEdit`<br /><br /> **Odeslání úpravy**<br /><br /> `False`|  
   
-#### <a name="to-enable-deletion-and-modification-of-entries"></a>Chcete-li povolit odstraňování a úpravy záznamů  
+### <a name="to-enable-deletion-and-modification-of-entries"></a>Chcete-li povolit odstraňování a úpravy záznamů  
   
 1. Přidejte následující kód, který `Display` tlačítka <xref:System.Windows.Forms.Control.Click> události, poté, co `DisplayEntry.Text = ReadString`.  
   

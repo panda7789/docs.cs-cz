@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 16001c4af2bcd8aa8d5fff6b06fa8c275bc24cb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e50421dc15dd30f1811dbe5ebef2ff2f7a0a9483
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61597475"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755824"
 ---
 # <a name="icorprofilercallbackinitialize-method"></a>ICorProfilerCallback::Initialize – metoda
 Volá se, aby inicializaci profileru kód při každém spuštění nové aplikace common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Initialize(  
     [in] IUnknown     *pICorProfilerInfoUnk);  
 ```  

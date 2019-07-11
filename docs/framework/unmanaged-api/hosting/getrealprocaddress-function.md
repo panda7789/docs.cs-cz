@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 40cd5b6298012ef4dc21987a2a2dbe95c02a0ff2
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 0027514392dfbb93ab4189eb7c66a380fb77c1ae
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490362"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778154"
 ---
 # <a name="getrealprocaddress-function"></a>GetRealProcAddress – funkce
 Získá adresu zadané funkce, která je exportována z poslední instalované verzi modulu common language runtime (CLR).  
@@ -30,7 +30,7 @@ Získá adresu zadané funkce, která je exportována z poslední instalované v
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetRealProcAddress (  
     [in]  LPCSTR  pwszProcName,   
     [out] VOID  **ppv  

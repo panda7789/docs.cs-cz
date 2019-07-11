@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: f99a9f38d5fbb62732f157720ee544042e346469
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 5b40302d93ce1bfc378b86210ed7bb54732d294b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663568"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67756768"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -140,14 +140,14 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  ![Diagram zobrazující průběh sady oprávnění certifikační Autority.](./media/wpf-security-strategy-platform-security/code-access-security-permissions-relationship.png)  
   
- Omezení internetové zóny zabezpečení sandboxu stejnou měrou vztahují na jakýkoli kód, který [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] importuje z knihovny systému, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Tím se zajistí, že každý bit kód je uzamčený, i [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Bohužel, abyste mohli provést, [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] potřebuje ke spuštění funkce, které vyžadují více oprávnění než ty, které zajišťuje sandboxu zabezpečení zóně Internet.  
+ Omezení sandboxu zabezpečení zóně Internet stejnou měrou vztahují na jakýkoli kód, který XBAP, který importuje z knihovny systému, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Tím se zajistí, že každý bit kód je uzamčený, i [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Aby bylo možné provést, bohužel XBAP potřebuje ke spuštění funkce, které vyžadují více oprávnění než ty, které zajišťuje sandboxu zabezpečení zóně Internet.  
   
- Vezměte v úvahu [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] aplikaci, která zahrnuje následující stránka:  
+ Vezměte v úvahu aplikace XBAP, který obsahuje následující stránka:  
   
  [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
  [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
   
- Chcete-li to provést [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], základní [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód musí být spuštěn víc funkcí než je k dispozici k volání [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], včetně:  
+ K provedení této XBAP, základní [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód musí být spuštěn víc funkcí než je k dispozici k volání XBAP, včetně:  
   
 - Vytváření popisovač okna (HWND) pro vykreslování  
   
@@ -157,7 +157,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Z zabezpečení by katastrofickými pohledu, umožňuje přímý přístup k jakémukoli z těchto operací z aplikace v izolovaném prostoru.  
   
- Naštěstí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] určeného tuto situaci lze vyřešit tím, že tyto operace provádět s vyššími oprávněními jménem aplikace v izolovaném prostoru. Při všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] operace jsou porovnávána s omezenými oprávněními zabezpečení zóně Internet domény aplikace [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (stejně jako u jiných knihovnách system) je udělena sada oprávnění, která zahrnuje všechna možná oprávnění.
+ Naštěstí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] určeného tuto situaci lze vyřešit tím, že tyto operace provádět s vyššími oprávněními jménem aplikace v izolovaném prostoru. Při všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] operace jsou porovnávána s omezenými oprávněními zabezpečení zóně Internet domény aplikace XBAP, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (stejně jako u jiných knihovnách system) je udělena sada oprávnění, která zahrnuje všechna oprávnění je to možné.
   
  To vyžaduje, aby [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] obdrží zvýšená oprávnění, a brání tato oprávnění se řídí sada oprávnění Internetu zóny host domény aplikace.  
   
@@ -166,7 +166,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
  [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
  [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
   
- **Assert** v podstatě brání neomezená oprávnění vyžadované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] z jsou omezené na základě Internetu zóna oprávnění [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)].  
+ **Assert** v podstatě brání neomezená oprávnění vyžadované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] z jsou omezené na základě Internetu zóna oprávnění XBAP.  
   
  Z hlediska platformy [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zodpovídá za použití **Assert** správně; kvůli nesprávnému použití **Assert** může povolit škodlivý kód ke zvýšení oprávnění. V důsledku toho je pak potřeba volat pouze **Assert** v případě potřeby, a zajistit, že izolovaného prostoru omezení zůstávají beze změn. Například otevřete náhodných souborů v izolovaném prostoru kód není povoleno, ale je povoleno ji používat. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Umožňuje v izolovaném prostoru aplikacím používat funkce písmo voláním **Assert**a pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] číst soubory, které jsou známé tak, aby obsahovala těchto písmo jménem aplikace v izolovaném prostoru.  
   
@@ -178,11 +178,11 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 <a name="Security_Critical_Methodology"></a>   
 ### <a name="security-critical-methodology"></a>Metodologie kritické pro zabezpečení  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Kód, který používá oprávnění k povolení izolovaném prostoru zóny Internetu [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] aplikace musí uchovávat na nejvyšší možné stupeň auditování zabezpečení a řízení. Pro usnadnění tohoto požadavku, rozhraní .NET Framework poskytuje novou podporu pro správu kód, který má oprávnění. Konkrétně [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] umožňuje identifikovat kód, který má oprávnění a označte ji pomocí <xref:System.Security.SecurityCriticalAttribute>; jakýkoli kód není označené <xref:System.Security.SecurityCriticalAttribute> stane *transparentní* použití této metody. Naopak spravovaného kódu, který není označen atributem <xref:System.Security.SecurityCriticalAttribute> je zabráněno zvyšování oprávnění.  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Kód, který používá oprávnění a povolit sandboxu zóny Internetu pro aplikace XBAP, který musí uchovávat na nejvyšší možné stupeň auditování zabezpečení a řízení. Pro usnadnění tohoto požadavku, rozhraní .NET Framework poskytuje novou podporu pro správu kód, který má oprávnění. Konkrétně [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] umožňuje identifikovat kód, který má oprávnění a označte ji pomocí <xref:System.Security.SecurityCriticalAttribute>; jakýkoli kód není označené <xref:System.Security.SecurityCriticalAttribute> stane *transparentní* použití této metody. Naopak spravovaného kódu, který není označen atributem <xref:System.Security.SecurityCriticalAttribute> je zabráněno zvyšování oprávnění.  
   
  Kritické pro zabezpečení metodologie umožňuje uspořádání [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód, který má oprávnění do *kritické pro zabezpečení jádra*, pokračujte zbývajícími je transparentní. Izolace kritické pro zabezpečení kódu umožňuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] inženýrský tým zaměřit další bezpečnostní analýzy a zdrojový ovládací prvek na kritické pro zabezpečení jádra nenabízející postupy standard zabezpečení (viz [strategie zabezpečení WPF – Engineering zabezpečení](wpf-security-strategy-security-engineering.md)).  
   
- Všimněte si, že rozhraní .NET Framework umožňuje důvěryhodného kódu k rozšíření [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] izolovaného prostoru zóny Internetu tím, že vývojářům umožňuje psát spravovaná sestavení, které jsou označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasadili pro uživatele globální mezipaměti sestavení (GAC). Označení sestavení APTCA je operace vysoce citlivé a zabezpečení, protože povoluje libovolný kód k volání tohoto sestavení, včetně škodlivý kód z Internetu. Extrémně opatrní a osvědčené postupy a musí být při tomto postupu uživatele musíte se rozhodnout důvěřovat softwaru v pořadí, aby byl nainstalován.  
+ Všimněte si, že rozhraní .NET Framework umožňuje důvěryhodného kódu k rozšíření izolovaného prostoru zóny Internetu XBAP, který umožňuje vývojářům umožňuje psát spravovaná sestavení, které jsou označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasadili pro uživatele globální mezipaměti sestavení (GAC). Označení sestavení APTCA je operace vysoce citlivé a zabezpečení, protože povoluje libovolný kód k volání tohoto sestavení, včetně škodlivý kód z Internetu. Extrémně opatrní a osvědčené postupy a musí být při tomto postupu uživatele musíte se rozhodnout důvěřovat softwaru v pořadí, aby byl nainstalován.  
   
 <a name="Microsoft_Internet_Explorer_Security"></a>   
 ## <a name="microsoft-internet-explorer-security"></a>Microsoft Internet Explorer Security  

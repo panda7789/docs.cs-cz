@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f2e2fd6f46a430424e6010adbe0662b5bd3db7ea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 246e6572deefaf4546afe6fb5326ecc2286215a5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622662"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766807"
 ---
 # <a name="weak-references"></a>Slabé odkazy
 Systému uvolňování paměti nelze shromáždit objektu používá aplikace, zatímco kód aplikace může dosáhnout tohoto objektu. Aplikace se říká, že mají silného odkazu na objekt.  
@@ -35,7 +35,7 @@ Systému uvolňování paměti nelze shromáždit objektu používá aplikace, z
   
 - Krátké  
   
-     Cíl krátké nestálý odkaz stane `null` při objektu je uvolněn systémem uvolňování paměti. Slabý odkaz je samotný objekt spravovaný a je časovač uvolněn z paměti stejně jako jakýkoli jiný spravovaný objekt.  Krátký nestálý odkaz je výchozí konstruktor pro <xref:System.WeakReference>.  
+     Cíl krátké nestálý odkaz stane `null` při objektu je uvolněn systémem uvolňování paměti. Slabý odkaz je samotný objekt spravovaný a je časovač uvolněn z paměti stejně jako jakýkoli jiný spravovaný objekt.  Krátký nestálý odkaz je konstruktor bez parametrů <xref:System.WeakReference>.  
   
 - Dlouhé  
   

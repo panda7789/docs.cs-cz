@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 5e3a6714489e2051a09b5855ab9f911ef2f57450
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: adfd563e19389642ac0ed0a3cef4aae8a32fa466
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632289"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67767184"
 ---
 # <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged Method
 
@@ -28,7 +28,7 @@ Upozorní ICorDebug kanálu, že je vzdálený ladicí program procesu pokračov
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT ProcessStateChanged(
     [in] CorDebugStateChange change
 );
@@ -47,7 +47,7 @@ Zadaná metoda je součástí `ICorDebugProcess4` rozhraní a odpovídá čtvrt�
 
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
- **Záhlaví:** Žádné
+ **Záhlaví:** Žádný
 
  **Knihovna:** Žádný
  

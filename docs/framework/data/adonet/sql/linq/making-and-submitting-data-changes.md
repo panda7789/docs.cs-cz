@@ -2,12 +2,12 @@
 title: Vytvoření a odeslání změn dat
 ms.date: 03/30/2017
 ms.assetid: d68c2dc3-99b3-49ab-b547-2ca5b386429a
-ms.openlocfilehash: c9d319727a750fbd3e2a186c28e79b20200c6bd0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 23dc45c990763e69b41608f6c3ec15a8db17bf23
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903341"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743005"
 ---
 # <a name="making-and-submitting-data-changes"></a>Vytvoření a odeslání změn dat
 Témata v této části popisují postup vytvoření a přenášejí změny na databázi a způsobu řešení konfliktů optimistického řízení souběžnosti.  
@@ -15,7 +15,7 @@ Témata v této části popisují postup vytvoření a přenášejí změny na d
 > [!NOTE]
 >  Můžete přepsat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] výchozí metody pro `Insert`, `Update`, a `Delete` databázové operace. Další informace najdete v tématu [přizpůsobení Insert, Update a operace odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md).  
 >   
->  Pomocí sady Visual Studio mohou vývojáři [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vývoji uložené procedury k tomuto účelu.  
+>  Vývojáři, kteří používají Visual Studio můžete použít Návrháře relací objektů pro vývoj uložené procedury k tomuto účelu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vložení řádků do databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-insert-rows-into-the-database.md)  

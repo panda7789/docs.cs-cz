@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 7d127476e37b9eefa9ddc13d26991145b6245b45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74ff7196ce17807b98a975687a524041f15a7f5b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62019557"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775898"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -50,7 +50,7 @@ Použití zásady čistého inverzi závislost umožňuje A volání metod na ab
 
 ### <a name="explicit-dependencies"></a>Explicitní závislosti.
 
-**Metody a třídy explicitně vyžadují žádné spolupracující objekty, které potřebují, aby bylo možné správně fungovat.** Konstruktor třídy poskytují příležitost pro třídy k identifikaci věci, které musí být v platném stavu a správně fungovat. Při definování třídy, která vytvořen a názvem, ale která bude pouze fungovat správně, pokud některé součásti globální nebo infrastruktury jsou na místě, se tyto třídy *nepoctivý* s klienty. Kontrakt konstruktor sděluje, že klienta, který potřebuje pouze věci zadané (pravděpodobně nic, pokud třída používá pouze výchozí konstruktor), ale pak za běhu, který ukazuje objekt opravdu potřebujete něco jiného.
+**Metody a třídy explicitně vyžadují žádné spolupracující objekty, které potřebují, aby bylo možné správně fungovat.** Konstruktor třídy poskytují příležitost pro třídy k identifikaci věci, které musí být v platném stavu a správně fungovat. Při definování třídy, která vytvořen a názvem, ale která bude pouze fungovat správně, pokud některé součásti globální nebo infrastruktury jsou na místě, se tyto třídy *nepoctivý* s klienty. Kontrakt konstruktor sděluje, že klienta, který potřebuje pouze věci zadané (pravděpodobně nic, pokud třída používá pouze konstruktor bez parametrů), ale pak za běhu, který ukazuje objekt opravdu potřebujete něco jiného.
 
 Podle principu explicitní závislosti jsou ještě upřímná s klienty o to, co chtějí, aby bylo možné funkci třídy a metody. Díky tomu váš kód více samoobslužných dokumentace a smlouvy přívětivější, psaní kódu, protože uživatelé budou přicházet do vztahu důvěryhodnosti, který tak dlouho, dokud poskytují toho, co vyžaduje ve formě – metoda nebo parametry konstruktoru, objekty, které pracují se bude chovat. správně za běhu.
 
@@ -85,7 +85,7 @@ Mezi příklady narušení této zásady patří:
 
 - Třídy za samotné ukládání (například záznam Active vzor).
 
-- Vyžaduje výchozí konstruktor.
+- Požadovaný konstruktor bez parametrů.
 
 - Vlastnosti vyžadující virtual – klíčové slovo.
 

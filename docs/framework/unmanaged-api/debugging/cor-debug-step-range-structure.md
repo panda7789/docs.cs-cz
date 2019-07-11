@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57d7c3256d7b52a4e55dbb5bc420b0438983d2f2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8bda8079cff8f5e8fafade03a02c3dfe8798c5ca
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609526"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740769"
 ---
 # <a name="cordebugsteprange-structure"></a>COR_DEBUG_STEP_RANGE – struktura
 Obsahuje informace o posunu pro celou řadu kódu.  
@@ -30,7 +30,7 @@ Obsahuje informace o posunu pro celou řadu kódu.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct {  
     ULONG32 startOffset;  
     ULONG32 endOffset;  

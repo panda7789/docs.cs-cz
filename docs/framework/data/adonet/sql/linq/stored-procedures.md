@@ -2,17 +2,17 @@
 title: Uložené procedury
 ms.date: 03/30/2017
 ms.assetid: 4d23dd7a-a85f-44ff-a717-af7d0950c0fc
-ms.openlocfilehash: 9201965192f300de62679c1e5be75cf98a24e700
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b06dc19aa8b767da6a1c6b00bd5b465465db6060
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917940"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742846"
 ---
 # <a name="stored-procedures"></a>Uložené procedury
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] metody v objektovém modelu používá k reprezentaci uložené procedury v databázi. Určíte jako uložené procedury pro metody s použitím <xref:System.Data.Linq.Mapping.FunctionAttribute> atribut a v případě potřeby <xref:System.Data.Linq.Mapping.ParameterAttribute> atribut. Další informace najdete v tématu [The LINQ to SQL objektový Model](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md).  
   
- Obvykle byste použili vývojářům používajícím Visual Studio [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] mapě uložených procedur. Témata v této části ukazují, jak formulář a volat tyto metody ve své aplikaci psát kód sami.  
+ Vývojáři, kteří používají Visual Studio by obvykle pomocí Návrháře relací objektů mapě uložených procedur. Témata v této části ukazují, jak formulář a volat tyto metody ve své aplikaci psát kód sami.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vrácení sad řádků](../../../../../../docs/framework/data/adonet/sql/linq/how-to-return-rowsets.md)  

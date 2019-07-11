@@ -16,18 +16,18 @@ helpviewer_keywords:
 ms.assetid: c197dfc9-a453-4226-898d-37a16638056e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd6a5d710f4b42ae8d1bedb535abface7a053cbf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 52ec268df38a12dfe7dac469eed9901d7c0646a1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654390"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67769603"
 ---
 # <a name="generating-keys-for-encryption-and-decryption"></a>Generování klíčů pro šifrování a dešifrování
 Vytváření a správa klíčů je důležitou součástí procesu šifrování. Symetrické algoritmy vyžadují vytvoření klíče a inicializačního vektoru (IV). Klíč musí být udržen v tajnosti před kýmkoli, kdo by neměl data dešifrovat. Vektor IV nemusí být tajný, ale měli byste jej pro jednotlivé relace změnit. Asymetrické algoritmy vyžadují vytvoření veřejného klíče a soukromého klíče. Veřejný klíč se může zveřejnit všem uživatelům, zatímco soukromý klíč smí být znám pouze osobě, která bude dešifrovat data zašifrovaná pomocí veřejného klíče. V této části je popsán způsob vytváření a správy klíčů pro symetrické i asymetrické algoritmy.  
   
 ## <a name="symmetric-keys"></a>Symetrické klíče  
- Třídy pro symetrické šifrování poskytované rozhraním .NET Framework vyžadují klíč a nový inicializační vektor (IV) k šifrování a dešifrování dat. Kdykoli vytvoříte novou instanci některé ze spravovaných symetrických kryptografických tříd pomocí výchozího konstruktoru, automaticky se vytvoří nový klíč a vektor IV. Jakákoli osoba s oprávněním k dešifrování dat musí mít stejný klíč a vektor IV a použít stejný algoritmus. Obecně lze říci, že nový klíč a vektor IV by měly být vytvořeny pro každou relaci a klíč ani vektor IV by neměly být ukládány pro používání v pozdější relaci.  
+ Třídy pro symetrické šifrování poskytované rozhraním .NET Framework vyžadují klíč a nový inicializační vektor (IV) k šifrování a dešifrování dat. Kdykoli vytvoříte novou instanci některé ze spravovaných symetrických kryptografických tříd pomocí konstruktoru bez parametrů, se automaticky vytvoří nový klíč a vektor IV. Jakákoli osoba s oprávněním k dešifrování dat musí mít stejný klíč a vektor IV a použít stejný algoritmus. Obecně lze říci, že nový klíč a vektor IV by měly být vytvořeny pro každou relaci a klíč ani vektor IV by neměly být ukládány pro používání v pozdější relaci.  
   
  Ke sdělení symetrického klíče a vektoru IV vzdálené straně je obvykle třeba zašifrovat symetrický klíč pomocí asymetrického šifrování. Odesílání klíče v nezabezpečené síti bez šifrování je velmi nebezpečné, jelikož jakákoli osoba, která klíč a vektor IV zachytí, může data dešifrovat. Další informace o výměně dat s využitím šifrování naleznete v tématu [vytváření šifrovacích schémat](../../../docs/standard/security/creating-a-cryptographic-scheme.md).  
   
@@ -60,7 +60,7 @@ tdes.GenerateKey();
  Po spuštění předchozího kódu jsou klíč a vektor IV generovány při nové instance **TripleDESCryptoServiceProvider** tvoří. Další klíč a vektor IV se vytvoří, pokud **GenerateKey** a **GenerateIV** metody jsou volány.  
   
 ## <a name="asymmetric-keys"></a>Asymetrické klíče  
- Rozhraní .NET Framework poskytuje třídy <xref:System.Security.Cryptography.RSACryptoServiceProvider> a <xref:System.Security.Cryptography.DSACryptoServiceProvider> pro asymetrické šifrování. Tyto třídy vytvoří pár veřejného/soukromého klíče při vytváření nové instance pomocí výchozího konstruktoru. Asymetrické klíče mohou být buď uloženy pro použití ve více relacích, nebo generovány pouze pro jednu relaci. Zatímco veřejný klíč může být zpřístupněn veřejně, soukromý klíč by měl být přísně chráněný.  
+ Rozhraní .NET Framework poskytuje třídy <xref:System.Security.Cryptography.RSACryptoServiceProvider> a <xref:System.Security.Cryptography.DSACryptoServiceProvider> pro asymetrické šifrování. Tyto třídy vytvoří pár veřejného a privátního klíče, pokud použijete konstruktor bez parametrů k vytvoření nové instance. Asymetrické klíče mohou být buď uloženy pro použití ve více relacích, nebo generovány pouze pro jednu relaci. Zatímco veřejný klíč může být zpřístupněn veřejně, soukromý klíč by měl být přísně chráněný.  
   
  Pár veřejného/soukromého klíče je generován při každém vytvoření nové instance třídy asymetrického algoritmu. Po vytvoření nové instance třídy může být informace o klíči extrahována pomocí jedné ze dvou metod:  
   

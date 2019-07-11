@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 41d96c6d2024dbc3cab669f2dba2f99faef89f4b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8737885015055994bff3f6066bccb551f19f74f4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701291"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777318"
 ---
 # <a name="isymunmanagedwritergetdebuginfo-method"></a>ISymUnmanagedWriter::GetDebugInfo – metoda
 Vrací informace nezbytné pro kompilátor zapsat záznam adresáře ladění přenosný spustitelný soubor hlavičky souboru (PE). Zapisovač symbol vyplní všechna pole s výjimkou `TimeDateStamp` a `PointerToRawData`. (Kompilátor je zodpovědný za nastavení těchto dvou polích odpovídajícím způsobem.)  
@@ -31,7 +31,7 @@ Vrací informace nezbytné pro kompilátor zapsat záznam adresáře ladění p�
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetDebugInfo(  
     [in, out] IMAGE_DEBUG_DIRECTORY *pIDD,  
     [in]  DWORD cData,  

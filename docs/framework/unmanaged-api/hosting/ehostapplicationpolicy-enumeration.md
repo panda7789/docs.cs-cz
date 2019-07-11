@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b3fb71686c3d708de7a2cc71f65a32c22e52f26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7626ccd827accea380f990ef1f7bc92ea6cb0fc1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796068"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755758"
 ---
 # <a name="ehostapplicationpolicy-enumeration"></a>EHostApplicationPolicy – výčet
 Určuje, jak upravit [ihostassemblymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) rozhraní objektu. Tento výčet je zastaralý.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum _HostApplicationPolicy {  
     HOST_APPLICATION_BINDING_POLICY = 1  
 } EHostApplicationPolicy;  

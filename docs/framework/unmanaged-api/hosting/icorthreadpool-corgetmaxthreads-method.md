@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbf5c02972a8331b3dd5e35ffcc4213e094e532d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3699a761dfffa9a78e1acb5ea2a775a1386a9401
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700095"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751157"
 ---
 # <a name="icorthreadpoolcorgetmaxthreads-method"></a>ICorThreadpool::CorGetMaxThreads – metoda
 Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CorGetMaxThreads (  
     [out] DWORD *MaxWorkerThreads,  
     [out] DWORD *MaxIOCompletionThreads  

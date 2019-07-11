@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dc6581fc21b975ff5f50db62a571881606765c54
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: b42c7ed5614f5f436559ce4af462ff16896a89c0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076591"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746151"
 ---
 # <a name="iceegengetimaptokeniface-method"></a>ICeeGen::GetIMapTokenIface – metoda
 Získá rozhraní odkazuje zadaný token.  
@@ -31,7 +31,7 @@ Získá rozhraní odkazuje zadaný token.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetIMapTokenIface (  
     [in, out] IUnknown   **pIMapToken  
 );  

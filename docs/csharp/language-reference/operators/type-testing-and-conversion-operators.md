@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 4468bc86634ad97f2dfbdb5f842eb5206f957a79
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: a9e5139e6d650aa6935bff934ca25502fdc14775
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307511"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744070"
 ---
 # <a name="type-testing-and-conversion-operators-c-reference"></a>Typové zkoušky a převod operátorů (C# odkaz)
 
@@ -109,7 +109,7 @@ Následující příklad ukazuje explicitní převody číselné a odkaz:
 
 [!code-csharp-interactive[cast expression](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#Cast)]
 
-Informace o podporovaných explicitní převody, naleznete v tématu [explicitních převodů](~/_csharplang/spec/conversions.md#explicit-conversions) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md). Informace o tom, jak definovat vlastní typ explicitní nebo implicitní převod, najdete v článku [explicitní](../keywords/explicit.md) nebo [implicitní](../keywords/implicit.md) – klíčové slovo článku.
+Informace o podporovaných explicitní převody, naleznete v tématu [explicitních převodů](~/_csharplang/spec/conversions.md#explicit-conversions) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md). Informace o tom, jak definovat vlastní typ explicitní nebo implicitní převod, naleznete v tématu [uživatelsky definovaný převod operátorů](user-defined-conversion-operators.md).
 
 ### <a name="other-usages-of-"></a>Další využití)
 
@@ -139,7 +139,7 @@ Použití `typeof` operátor ke kontrole, pokud modul runtime typu výsledku vý
 
 `is`, `as`, A `typeof` nejsou přetížitelné operátory.
 
-Uživatelem definovaný typ nejde přetížit `()` operátoru, ale můžete definovat vlastní typ převody, které může provádět výraz přetypování. Další informace najdete v tématu [explicitní](../keywords/explicit.md) a [implicitní](../keywords/implicit.md) články – klíčové slovo.
+Uživatelem definovaný typ nejde přetížit `()` operátoru, ale můžete definovat vlastní typ převody, které může provádět výraz přetypování. Další informace najdete v tématu [uživatelsky definovaný převod operátorů](user-defined-conversion-operators.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

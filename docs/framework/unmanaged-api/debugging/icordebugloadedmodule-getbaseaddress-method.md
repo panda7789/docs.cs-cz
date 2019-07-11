@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: 7c036772-d58a-47f1-a5fa-31779898ef0d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e84d6deca0cd09cc547636007208c70ab91c1ab1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: adb01b8aa57bf3ed928578d15e0859b9ac73bc7d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946279"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67759935"
 ---
 # <a name="icordebugloadedmodulegetbaseaddress-method"></a>Metoda ICorDebugLoadedModule::GetBaseAddress
 Získá základní adresu načteného modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetBaseAddress(  
    [out] CORDB_ADDRESS *pAddress  
 );  

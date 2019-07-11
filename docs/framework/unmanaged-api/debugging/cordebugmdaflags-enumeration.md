@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 732523935eec62bffbc15705bc93c97f14c90064
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bf9f7f3d3419efc9e1dc7d75fc7272432c0cf5d0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792714"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739690"
 ---
 # <a name="cordebugmdaflags-enumeration"></a>CorDebugMDAFlags – výčet
 Určuje stav vláken, ve kterém se spustí Pomocník spravovaného ladění (MDA).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorDebugMDAFlags {  
     MDA_FLAG_SLIP = 0x2  
 } CorDebugMDAFlags;  

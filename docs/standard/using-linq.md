@@ -4,14 +4,17 @@ description: Zjistěte, jak LINQ poskytuje možnosti dotazování úrovni jazyka
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
+dev_langs:
+- csharp
+- vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 9b80ab37c883978a116417ebd6cb001c75f0c071
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 78a448349dd9a669aa921fbee22732f29704a9f9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661932"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783233"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
 

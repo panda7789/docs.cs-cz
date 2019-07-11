@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 567dc3942f79b6bfd29338b9103083aa64e66451
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97079b824dbd0e056374af4173e49304babd6c32
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965894"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739129"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData – struktura
 
@@ -30,7 +30,7 @@ Definuje přenos vyrovnávací paměť pro informace o modulu runtime metody.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 struct DacpMethodDescData
 {
     int             bHasNativeCode;

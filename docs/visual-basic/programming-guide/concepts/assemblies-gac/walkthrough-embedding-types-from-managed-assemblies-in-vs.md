@@ -2,12 +2,12 @@
 title: 'Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
-ms.openlocfilehash: 18f22a771ab7279f177fe39d8c372a8517056890
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c0de529a0005c9dbaf1f8d0f25957b217280e31
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754827"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67753019"
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)
 
@@ -51,7 +51,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 ## <a name="creating-an-interface"></a>Vytvoření rozhraní
 
-#### <a name="to-create-the-type-equivalence-interface-project"></a>Vytvoření projektu rozhraní rovnocennosti typu
+### <a name="to-create-the-type-equivalence-interface-project"></a>Vytvoření projektu rozhraní rovnocennosti typu
 
 1. V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.
 
@@ -61,7 +61,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 4. Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cesta platná umístění na vašem vývojovém počítači, jako je třeba `C:\TypeEquivalenceSample`. Toto umístění se taky použije v pozdějším kroku v tomto názorném postupu.
 
-5. Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na **OK**.
+5. Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >** . V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na **OK**.
 
 6. Otevřete soubor ISampleInterface.vb. Přidejte následující kód do souboru třídy ISampleInterface k vytvoření ISampleInterface rozhraní.
 
@@ -96,7 +96,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 ## <a name="creating-a-runtime-class"></a>Vytvoření třídy modulu Runtime
 
-#### <a name="to-create-the-type-equivalence-runtime-project"></a>Vytvoření projektu typu ekvivalence modulu runtime
+### <a name="to-create-the-type-equivalence-runtime-project"></a>Vytvoření projektu typu ekvivalence modulu runtime
 
 1. V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.
 
@@ -106,7 +106,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 4. Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cestu do stejného umístění, například použít v projektu TypeEquivalenceInterface `C:\TypeEquivalenceSample`.
 
-5. Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na **OK**.
+5. Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >** . V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na **OK**.
 
 6. Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **přidat odkaz**. Klikněte na tlačítko **Procházet** kartu a přejděte do složky cesta pro výstup. Vyberte soubor TypeEquivalenceInterface.dll a klikněte na tlačítko **OK**.
 
@@ -142,7 +142,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 ## <a name="creating-a-client-project"></a>Vytvoření projektu klienta
 
-#### <a name="to-create-the-type-equivalence-client-project"></a>Vytvoření projektu klienta rovnocennosti typu
+### <a name="to-create-the-type-equivalence-client-project"></a>Vytvoření projektu klienta rovnocennosti typu
 
 1. V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.
 
@@ -181,7 +181,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 ## <a name="modifying-the-interface"></a>Úprava rozhraní
 
-#### <a name="to-modify-the-interface"></a>Chcete-li změnit rozhraní
+### <a name="to-modify-the-interface"></a>Chcete-li změnit rozhraní
 
 1. V sadě Visual Studio na **souboru** nabídky, přejděte k **otevřít**a potom klikněte na tlačítko **projekt či řešení**.
 
@@ -201,7 +201,7 @@ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání i
 
 ## <a name="modifying-the-runtime-class"></a>Úprava třídy modulu Runtime
 
-#### <a name="to-modify-the-runtime-class"></a>Chcete-li změnit třídy modulu runtime
+### <a name="to-modify-the-runtime-class"></a>Chcete-li změnit třídy modulu runtime
 
 1. V sadě Visual Studio na **souboru** nabídky, přejděte k **otevřít**a potom klikněte na tlačítko **projekt či řešení**.
 

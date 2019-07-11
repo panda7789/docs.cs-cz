@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 515d434e8d8f1c99cf5052ef9a2f1e098f6021b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9920627ed193e9741d65fddfc54f325cb1d3758c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61915262"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761057"
 ---
 # <a name="icordebugmanagedcallback2functionremapcomplete-method"></a>ICorDebugManagedCallback2::FunctionRemapComplete – metoda
 Upozorní ladicího programu, že spuštění kódu se přepnulo na novou verzi funkce se upravila.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT FunctionRemapComplete (  
     [in] ICorDebugAppDomain   *pAppDomain,  
     [in] ICorDebugThread      *pThread,  

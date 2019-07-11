@@ -2,15 +2,15 @@
 title: Průvodce programováním
 ms.date: 03/30/2017
 ms.assetid: ed1012d4-3ff2-4877-af27-93125c4180ea
-ms.openlocfilehash: 102d2ecba162e19258b707c1c902c29b0a7f2f02
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: c63fbedc1cf7484943614c50e7dd7554a2ddea0e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490046"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742936"
 ---
 # <a name="programming-guide"></a>Průvodce programováním
-Tato část obsahuje informace o tom, jak vytvořit a používat vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model. Pokud používáte Visual Studio, můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] provádět spoustu těchto stejných úkolů.  
+Tato část obsahuje informace o tom, jak vytvořit a používat vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model. Pokud používáte Visual Studio, můžete také použít Návrhář relací objektů provádět spoustu těchto stejných úkolů.  
   
  Můžete také prohledat Microsoft Docs pro specifické problémy a se můžete zapojit [LINQ fórum](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete diskutovat o složitějších tématech podrobně s odborníky. Nakonec [technologie LINQ to SQL: .NET Language-Integrated dotazu pro relační Data](https://go.microsoft.com/fwlink/?LinkId=93205) dokument white paper o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, s příklady kódu jazyka Visual Basic a C#.  
   

@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f546d7707c40f7f26a46177ae972a988e54e1e45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ab86277956469e558d20cea81174a7fdcc0020b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965825"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739334"
 ---
 # <a name="createcordbobject-function"></a>CreateCordbObject – funkce
 Vytvoří rozhraní ladicího programu ([ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)), která poskytuje funkce pro vytvoření instance spravované ladicí relace na vzdálený proces.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CordbCreateObject (  
        [in]  int         iDebuggerVersion,   
        [out] IUnknown**  ppCordb  

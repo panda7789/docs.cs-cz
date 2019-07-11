@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ae31506d4ba34bf262f49bc2321c6cfcd30f1b60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e2e6a4624403dcab30bdb7b6d3af0226204cac0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782691"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744642"
 ---
 # <a name="icordebugremotetarget-interface"></a>ICorDebugRemoteTarget – rozhraní
 Poskytuje metody, které umožňují vývojářům ladit aplikace programu Silverlight v prostředí common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 interface ICorDebugRemoteTarget  : IUnknown  
 {  
     HRESULT GetHostName (  

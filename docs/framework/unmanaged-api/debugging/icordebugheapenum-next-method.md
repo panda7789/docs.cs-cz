@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bd993eb26f26818117a20d376c3331f88c46b26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aef821c10b8b44e54967245aaab3956c16ea15b0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780887"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67757382"
 ---
 # <a name="icordebugheapenumnext-method"></a>ICorDebugHeapEnum::Next – metoda
 Získá zadaný počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které obsahují informace o objektech na spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Next(  
     [in] ULONG celt,    [out, size_is(celt), length_is(*pceltFetched)] COR_HEAPOBJECT  objects[],   
     [out] ULONG *pceltFetched  
@@ -40,7 +40,7 @@ HRESULT Next(
  celt  
  [in] Počet objektů, které se mají načíst.  
   
-  – objekty  
+ – objekty  
  [out] Pole ukazatelů, každý z nich odkazuje [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekt, který poskytuje informace o objektu na spravované haldě.  
   
  pceltFetched  

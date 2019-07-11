@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a50a799c625c647aa275994bc92738b8a4267eec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fbed34f53ff43ca7887a58b3c879eaa74703da3e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782717"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744745"
 ---
 # <a name="icordebugremote-interface"></a>ICorDebugRemote – rozhraní
 Umožňuje spustit nebo připojit spravovaný ladicí program ke vzdálenému cílovému procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 interface ICorDebugRemote : IUnknown  
 {  
     HRESULT CreateProcessEx  

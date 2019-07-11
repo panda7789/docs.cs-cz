@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: a0398d18f9568754231082d63b4c6a2c865d8c6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40ab90a3218d4309cda709004a191e9440fe505d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775262"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67769584"
 ---
 # <a name="ixclrdataprocessenummodule-method"></a>IXCLRDataProcess::EnumModule – metoda
 
@@ -30,7 +30,7 @@ Vytvoří výčet modulů tohoto procesu.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT EnumModule(
     [in, out] CLRDATA_ENUM  *handle,
     [out] IXCLRDataModule  **mod
@@ -52,7 +52,7 @@ Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 25 pozic
 ## <a name="requirements"></a>Požadavky
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
+**Záhlaví:** Žádné  
 **Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 

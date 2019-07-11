@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8f0a9b9c149c86b4d9121275aa858dfdc0cdbac7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a5039117c649943a1f05a91ecccf22eb4230e5e7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61905915"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776373"
 ---
 # <a name="assemblymetadata-structure"></a>ASSEMBLYMETADATA – struktura
 Obsahuje informace o odkazovaném sestavení, včetně jeho verze a jeho úroveň podpory pro národní prostředí, procesory a operační systémy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct {  
     USHORT  usMajorVersion;  
     USHORT  usMinorVersion;  

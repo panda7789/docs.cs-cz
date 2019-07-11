@@ -2,21 +2,21 @@
 title: Vytvoření objektového modelu
 ms.date: 03/30/2017
 ms.assetid: 27afce86-9b1d-45fb-8e0b-636bf671a236
-ms.openlocfilehash: 7724d6e75b350e5c57f090d42ef1f49c4d3593b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f1a0d035f2b11f33a9899ededd876155d45de3c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032438"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743586"
 ---
 # <a name="creating-the-object-model"></a>Vytvoření objektového modelu
 Můžete vytvořit objektový model z existující databáze a použití modelu ve svém výchozím stavu. Můžete také upravit mnoho aspektů modelu a jeho chování.  
   
- Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] vytvoření objektového modelu.  
+ Pokud používáte Visual Studio, můžete vytvořit objektový model Návrhář relací objektů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Generování objektového modelu v jazyce Visual Basic neboC#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
- Popisuje, jak pomocí nástroje příkazového řádku SQLMetal. Také obsahuje odkaz [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro uživatele sady Visual Studio  
+ Popisuje, jak pomocí nástroje příkazového řádku SQLMetal. Také obsahuje odkaz na Návrhář relací objektů pro uživatele sady Visual Studio  
   
  [Postupy: Generování objektového modelu jako externího souboru](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
  Popisuje, jak generovat soubor mapování externí namísto použití založených na atributech mapování.  

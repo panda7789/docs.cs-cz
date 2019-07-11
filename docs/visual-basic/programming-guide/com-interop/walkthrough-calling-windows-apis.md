@@ -11,12 +11,12 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-ms.openlocfilehash: 70914d63773c6a94ad92cf6301a8e2bc1368e7a1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d2dc80ec689f3e9fd2f36c36c3847ec4e5d1a576
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592706"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783147"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API Windows (Visual Basic)
 Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete využít k provádění úkolů, když je obtížné je napsat ekvivalentní postupy. Například Windows poskytuje funkci s názvem `FlashWindowEx` , který umožňuje provádět alternativní mezi světlé a tmavé odstínů v záhlaví okna aplikace.  
@@ -32,7 +32,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
 ## <a name="api-calls-using-declare"></a>Volání rozhraní API pomocí deklarace  
  Nejběžnější způsob volání rozhraní API Windows je použití `Declare` příkazu.  
   
-#### <a name="to-declare-a-dll-procedure"></a>Chcete-li deklarovat proceduru knihovny DLL  
+### <a name="to-declare-a-dll-procedure"></a>Chcete-li deklarovat proceduru knihovny DLL  
   
 1. Určení názvu funkce, do které chcete volat, a navíc jeho argumenty, typy argumentů a vrátí hodnotu, jakož i název a umístění knihovny DLL, která ji obsahuje.  
   
@@ -69,7 +69,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
 #### <a name="windows-api-constants"></a>Konstanty Windows API  
  Některé argumenty jsou kombinací konstanty. Například `MessageBox` přebírá celočíselný argument volat rozhraní API v tomto návodu `Typ` , která určuje, jak se zobrazí okno se zprávou. Můžete určit číselnou hodnotu z následujících konstant prozkoumáním `#define` příkazy v souboru WINUSER. Číselné hodnoty obecně zobrazují v šestnáctkovém formátu, takže můžete chtít použití kalkulačky a přidejte je převod na desetinnou hodnotu. Například, pokud je potřeba sloučit konstanty pro styl vykřičník `MB_ICONEXCLAMATION` 0x00000030 a Ano/žádný styl `MB_YESNO` 0x00000004, můžete přidat čísla a získat výsledek 0x00000034 nebo 52 decimal. I když používáte desítkové výsledek přímo, je lepší deklarovat tyto hodnoty jako konstanty ve vaší aplikaci a jejich kombinací pomocí `Or` operátor.  
   
-###### <a name="to-declare-constants-for-windows-api-calls"></a>Chcete-li deklarovat konstanty pro volání Windows API  
+##### <a name="to-declare-constants-for-windows-api-calls"></a>Chcete-li deklarovat konstanty pro volání Windows API  
   
 1. V dokumentaci pro funkci Windows, ke kterému se připojujete. Určuje název konstanty, které používá a název souboru .h, který obsahuje číselné hodnoty pro tyto konstanty.  
   
@@ -94,7 +94,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
 #### <a name="data-marshaling"></a>Zařazování dat  
  Visual Basic automaticky převede datové typy parametrů a návratové hodnoty pro volání Windows API, ale můžete použít `MarshalAs` atribut s ohledem na nespravované datové typy, které se očekává, že rozhraní API. Další informace o zařazování spolupráce naleznete v tématu [zařazování Interop](../../../framework/interop/interop-marshaling.md).  
   
-###### <a name="to-use-declare-and-marshalas-in-an-api-call"></a>Používání Declare a MarshalAs ve volání rozhraní API  
+##### <a name="to-use-declare-and-marshalas-in-an-api-call"></a>Používání Declare a MarshalAs ve volání rozhraní API  
   
 1. Určení názvu funkce, kterou chcete k volání a argumenty, datové typy a návratovou hodnotu.  
   
@@ -111,7 +111,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
  Můžete použít `DllImport` s rozhraním API Windows pro většinu volání jako volání odkazuje na sdílený (říká se jim *statické*) metody. Nelze použít metody, které vyžadují instance třídy. Na rozdíl od `Declare` příkazů `DllImport` volání nelze použít `MarshalAs` atribut.  
   
-#### <a name="to-call-a-windows-api-using-the-dllimport-attribute"></a>Pro volání Windows API pomocí atributu DllImport  
+### <a name="to-call-a-windows-api-using-the-dllimport-attribute"></a>Pro volání Windows API pomocí atributu DllImport  
   
 1. Kliknutím otevřete nový projekt aplikace Windows **nový** na **souboru** nabídky a pak levým na **projektu**. Zobrazí se dialogové okno **Nový projekt**.  
   

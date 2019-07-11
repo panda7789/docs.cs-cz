@@ -3,15 +3,15 @@ title: 'Kurz: Doporučené video – sestavení factorization matice'
 description: V tomto kurzu se dozvíte, jak sestavit doporučené video s ML.NET v konzolovou aplikaci .NET Core. Kroky používají C# a Visual Studio 2019.
 author: briacht
 ms.author: johalex
-ms.date: 05/06/2019
+ms.date: 07/09/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 512c8d663835da77c05fb24926ff85c56afd11ca
-ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
+ms.openlocfilehash: bf04f5a098bd2c378a2b73d7684eb74e16feb728
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66725504"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779050"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Kurz: Vytváření video doporučení pomocí matice factorizaton ML.NET
 
@@ -56,7 +56,7 @@ Existuje několik způsobů, jak přistupovat ke doporučení problémy, třeba 
 
 3. Nainstalujte **Microsoft.ML** a **Microsoft.ML.Recommender** balíčky NuGet:
 
-    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte **1.0.0** balíčků v seznamu a vyberte  **Nainstalujte** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.Recommender v0.12.0**.
+    V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte balíček, v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.Recommender**.
 
 4. Přidejte následující `using` příkazů v horní části vašeho *Program.cs* souboru:
 
@@ -350,7 +350,7 @@ Použití modelu k následné predikci aplikace koncového uživatele, musíte n
 Vytvořte `SaveModel()` metoda, hned za `UseModelForSinglePrediction()` metodu, pomocí následujícího kódu:
 
 ```csharp
-public static void SaveModel(MLContext mlContext, ITransformer model)
+public static void SaveModel(MLContext mlContext, DataViewSchema trainingDataViewSchema, ITransformer model)
 {
 
 }
@@ -461,7 +461,7 @@ Jeden běžný problém při spolupráci filtrování je problém úplné spušt
 
 V tomto kurzu používá data jsou odvozena z [datovou sadu MovieLens](http://files.grouplens.org/datasets/movielens/).
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste se naučili:
 
