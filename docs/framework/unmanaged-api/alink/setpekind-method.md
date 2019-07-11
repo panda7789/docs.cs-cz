@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dec04fa267c61798a3340e9d1e18150b812e9eaf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8fc581904351443f4368a68a653fd39b3548999a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949003"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741426"
 ---
-# <a name="setpekind-method"></a><span data-ttu-id="1525e-102">SetPEKind – metoda</span><span class="sxs-lookup"><span data-stu-id="1525e-102">SetPEKind Method</span></span>
-<span data-ttu-id="1525e-103">Určuje specifické pro počítač nebo počítač bez ohledu na typ přenosný spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="1525e-103">Determines the portable executable type, either machine-specific or machine-agnostic.</span></span>  
+# <a name="setpekind-method"></a><span data-ttu-id="cc4c3-102">SetPEKind – metoda</span><span class="sxs-lookup"><span data-stu-id="cc4c3-102">SetPEKind Method</span></span>
+<span data-ttu-id="cc4c3-103">Určuje specifické pro počítač nebo počítač bez ohledu na typ přenosný spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-103">Determines the portable executable type, either machine-specific or machine-agnostic.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1525e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1525e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cc4c3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cc4c3-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT SetPEKind(  
     mdAssembly AssemblyID,  
     mdToken FileToken,  
@@ -37,28 +37,28 @@ HRESULT SetPEKind(
 ) PURE;   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1525e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1525e-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="cc4c3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cc4c3-105">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="1525e-106">ID sestavení.</span><span class="sxs-lookup"><span data-stu-id="1525e-106">ID of the assembly.</span></span>  
+ <span data-ttu-id="cc4c3-106">ID sestavení.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-106">ID of the assembly.</span></span>  
   
  `FileToken`  
- <span data-ttu-id="1525e-107">Token souboru, pro který má být nastavena typu PE.</span><span class="sxs-lookup"><span data-stu-id="1525e-107">Token of file for which the PE type is to be set.</span></span> <span data-ttu-id="1525e-108">Může mít hodnotu NULL, pokud `AssemblyID` neznamená odvázat netmodule.</span><span class="sxs-lookup"><span data-stu-id="1525e-108">Can be NULL if `AssemblyID` does not indicate an unbound netmodule.</span></span>  
+ <span data-ttu-id="cc4c3-107">Token souboru, pro který má být nastavena typu PE.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-107">Token of file for which the PE type is to be set.</span></span> <span data-ttu-id="cc4c3-108">Může mít hodnotu NULL, pokud `AssemblyID` neznamená odvázat netmodule.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-108">Can be NULL if `AssemblyID` does not indicate an unbound netmodule.</span></span>  
   
  `dwPEKind`  
- <span data-ttu-id="1525e-109">Typ systému PE, je určeno [corpekind – výčet](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md).</span><span class="sxs-lookup"><span data-stu-id="1525e-109">The type of PE, as indicated by the [CorPEKind Enumeration](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md).</span></span>  
+ <span data-ttu-id="cc4c3-109">Typ systému PE, je určeno [corpekind – výčet](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md).</span><span class="sxs-lookup"><span data-stu-id="cc4c3-109">The type of PE, as indicated by the [CorPEKind Enumeration](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md).</span></span>  
   
  `dwMachine`  
- <span data-ttu-id="1525e-110">Architektury cílového počítače, jak je uvedeno v hlavičce NT.</span><span class="sxs-lookup"><span data-stu-id="1525e-110">The target machine architecture, as indicated in the NT header.</span></span>  
+ <span data-ttu-id="cc4c3-110">Architektury cílového počítače, jak je uvedeno v hlavičce NT.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-110">The target machine architecture, as indicated in the NT header.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="1525e-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="1525e-111">Return Value</span></span>  
- <span data-ttu-id="1525e-112">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="1525e-112">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="cc4c3-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="cc4c3-111">Return Value</span></span>  
+ <span data-ttu-id="cc4c3-112">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-112">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1525e-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1525e-113">Requirements</span></span>  
- <span data-ttu-id="1525e-114">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="1525e-114">Requires alink.h.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cc4c3-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cc4c3-113">Requirements</span></span>  
+ <span data-ttu-id="cc4c3-114">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="cc4c3-114">Requires alink.h.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1525e-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1525e-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cc4c3-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cc4c3-115">See also</span></span>
 
-- [<span data-ttu-id="1525e-116">GetPEKind – metoda</span><span class="sxs-lookup"><span data-stu-id="1525e-116">GetPEKind Method</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md)
-- [<span data-ttu-id="1525e-117">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1525e-117">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="1525e-118">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1525e-118">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="1525e-119">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="1525e-119">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="cc4c3-116">GetPEKind – metoda</span><span class="sxs-lookup"><span data-stu-id="cc4c3-116">GetPEKind Method</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md)
+- [<span data-ttu-id="cc4c3-117">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cc4c3-117">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [<span data-ttu-id="cc4c3-118">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cc4c3-118">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [<span data-ttu-id="cc4c3-119">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="cc4c3-119">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
