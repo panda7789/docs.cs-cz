@@ -2,17 +2,17 @@
 title: Typické postupy použití LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
-ms.openlocfilehash: 0c472fcac0e664e17c1869ba7ffc61ed2b802e8e
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: cbcd8099fd085d0198e5ba77ee0a3e86c1ca70d0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063012"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742788"
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>Typické postupy použití LINQ to SQL
 K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace, podle postupu popsaného dále v tomto tématu. Všimněte si, že mnoho kroků jsou volitelné. Je velmi je to možné, že můžete použít objektový model ve svém výchozím stavu.  
   
- Pro velmi rychlý start, použijte [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] vytvoření objektového modelu a pusťte se do programování vaše dotazy.  
+ Pro velmi rychlý start použijte Návrhář relací objektů vytvoření objektového modelu a pusťte se do programování vaše dotazy.  
   
 ## <a name="creating-the-object-model"></a>Vytvoření objektového modelu  
  Prvním krokem je vytvoření objektového modelu z metadat stávající relační databáze. Objektový model představuje databázi podle programovacím jazyce vývojáře. Další informace najdete v tématu [The LINQ to SQL objektový Model](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md).  
@@ -20,17 +20,17 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
 ### <a name="1-select-a-tool-to-create-the-model"></a>1. Vyberte nástroj k vytváření modelu.  
  Tři nástroje jsou k dispozici pro vytváření modelu.  
   
-- Na [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
+- Návrhář relací objektů  
   
      Tento návrhář poskytuje bohaté možnosti uživatelského rozhraní pro vytvoření modelu objektu z existující databáze. Tento nástroj je součástí rozhraní IDE sady Visual Studio a je nejvhodnější pro malé a střední databáze.  
   
 - Nástroje pro generování kódu SQLMetal  
   
-     Tento nástroj příkazového řádku poskytuje mírně odlišnou sadu možností [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]. Modelování velkých databází se nejlépe provádí pomocí tohoto nástroje. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+     Tento nástroj příkazového řádku poskytuje mírně odlišnou sadu možností z Návrháře relací objektů. Modelování velkých databází se nejlépe provádí pomocí tohoto nástroje. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 - Editor kódu  
   
-     Můžete napsat vlastní kód pomocí editoru kódu sady Visual Studio nebo jiného editoru. Tento přístup, což může být náchylná k chybám, pokud máte existující databázi a můžete použít buď nedoporučujeme [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] nebo nástroji SQLMetal. Editor kódu však může být velmi cennou pomůckou pro upřesnění nebo upravovat kód, který již vytvořených pomocí jiných nástrojů. Další informace najdete v tématu [jak: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md).  
+     Můžete napsat vlastní kód pomocí editoru kódu sady Visual Studio nebo jiného editoru. Tento přístup, což může být náchylná k chybám, pokud máte existující databázi a můžete použít Návrháře relací objektů nebo nástroji SQLMetal nedoporučujeme. Editor kódu však může být velmi cennou pomůckou pro upřesnění nebo upravovat kód, který již vytvořených pomocí jiných nástrojů. Další informace najdete v tématu [jak: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md).  
   
 ### <a name="2-select-the-kind-of-code-you-want-to-generate"></a>2. Vyberte typ kódu, který chcete vygenerovat.  
   
@@ -43,14 +43,14 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
      Pomocí tohoto přístupu můžete zachovat metadata mapování z kódu aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
     > [!NOTE]
-    >  [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] Nepodporuje generování externí soubory mapování. Musíte použít nástroj SQLMetal k implementaci této funkce.  
+    >  O/R Designer nepodporuje generování externí soubory mapování. Musíte použít nástroj SQLMetal k implementaci této funkce.  
   
 - Souboru DBML, kterou můžete upravit před generováním konečný kód souboru.  
   
      Jde o pokročilou funkci.  
   
 ### <a name="3-refine-the-code-file-to-reflect-the-needs-of-your-application"></a>3. Upravit soubor kódu tak, aby odrážely potřebám vaší aplikace.  
- K tomuto účelu můžete použít buď [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] nebo editoru kódu.  
+ K tomuto účelu můžete použít Návrháře relací objektů nebo editoru kódu.  
   
 ## <a name="using-the-object-model"></a>Použití objektového modelu  
  Následující obrázek znázorňuje vztah mezi vývojáři a data ve scénáři dvouvrstvé. Další scénáře, naleznete v tématu [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md).  

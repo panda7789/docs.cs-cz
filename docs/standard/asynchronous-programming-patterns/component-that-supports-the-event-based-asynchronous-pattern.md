@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: 85e7f10643c57837cf0b66613825241db94c0065
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 5171b9b9878331069e354eeb17ad57ca9bd594a8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423873"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67773662"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -53,14 +53,14 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="creating-the-component"></a>Vytvoření komponenty  
  Prvním krokem je vytvoření Komponenta, která bude implementovat asynchronní vzor založený na událostech.  
   
-#### <a name="to-create-the-component"></a>Chcete-li vytvořit komponentu  
+### <a name="to-create-the-component"></a>Chcete-li vytvořit komponentu  
   
 - Vytvořte třídu s názvem `PrimeNumberCalculator` , která dědí z <xref:System.ComponentModel.Component>.  
   
 ## <a name="defining-public-asynchronous-events-and-delegates"></a>Definování veřejné asynchronní události a delegáti  
  Vaše komponenta komunikuje s klienty, kteří používají události. _MethodName_**dokončeno** klientů pro dokončení asynchronní úlohu, upozornění na událost a _MethodName_**ProgressChanged**událost informuje klienty pokroku asynchronní úlohu.  
   
-#### <a name="to-define-asynchronous-events-for-clients-of-your-component"></a>Chcete-li definovat asynchronní události pro klienty komponenty:  
+### <a name="to-define-asynchronous-events-for-clients-of-your-component"></a>Chcete-li definovat asynchronní události pro klienty komponenty:  
   
 1. Import <xref:System.Threading?displayProperty=nameWithType> a <xref:System.Collections.Specialized?displayProperty=nameWithType> obory názvů v horní části souboru.  
   
@@ -85,7 +85,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
-#### <a name="to-test-your-component"></a>Chcete-li otestovat  
+### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
 - Zkompilujte komponentu.  
   
@@ -101,7 +101,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="defining-private-delegates"></a>Definování privátní delegátů  
  Asynchronní aspektů `PrimeNumberCalculator` komponenty jsou implementována interně označované jako speciální delegátem <xref:System.Threading.SendOrPostCallback>. A <xref:System.Threading.SendOrPostCallback> představuje metodu zpětného volání, která se spustí na <xref:System.Threading.ThreadPool> vlákna. Metoda zpětného volání musí mít podpis, který přijímá jeden parametr typu <xref:System.Object>, což znamená, že bude nutné předat stav mezi Delegáti v obálkovou třídu. Další informace naleznete v tématu <xref:System.Threading.SendOrPostCallback>.  
   
-#### <a name="to-implement-your-components-internal-asynchronous-behavior"></a>K implementaci interní asynchronní chování komponenty:  
+### <a name="to-implement-your-components-internal-asynchronous-behavior"></a>K implementaci interní asynchronní chování komponenty:  
   
 1. Deklarace a vytvořit <xref:System.Threading.SendOrPostCallback> delegátů v `PrimeNumberCalculator` třídy. Vytvořte <xref:System.Threading.SendOrPostCallback> objekty v metodě nástroj nazývají `InitializeDelegates`.  
   
@@ -132,7 +132,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="implementing-public-events"></a>Implementace veřejné události  
  Součásti, které implementují asynchronního vzoru založeného na událostech komunikaci s klienty, kteří používají události. Tyto události jsou vyvolány na řádné vlákna ve spolupráci <xref:System.ComponentModel.AsyncOperation> třídy.  
   
-#### <a name="to-raise-events-to-your-components-clients"></a>Chcete-li vyvolat události klientům komponenty:  
+### <a name="to-raise-events-to-your-components-clients"></a>Chcete-li vyvolat události klientům komponenty:  
   
 1. Implementujte veřejné události pro hlášení klientům. Budete potřebovat události vytváření sestav průběhu a jeden pro dokončení generování sestav.  
   
@@ -146,7 +146,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
  `CompletionMethod` Podpisu musí mít všechny stavy nezbytné k popisu výsledek asynchronní operace. Obsahuje stav pro číslo, které testoval této konkrétní asynchronní operace, zda je číslo prime a hodnota jeho první dělitel nesplnění Prvočíslo. Také obsahuje stav popisující jakoukoliv výjimku, k níž došlo, a <xref:System.ComponentModel.AsyncOperation> odpovídající této konkrétní úlohy.  
   
-#### <a name="to-complete-an-asynchronous-operation"></a>K dokončení asynchronní operace:  
+### <a name="to-complete-an-asynchronous-operation"></a>K dokončení asynchronní operace:  
   
 - Implementace metody dokončení. Trvá, šest parametry, které používá k naplnění `CalculatePrimeCompletedEventArgs` , který je vrácen do klienta prostřednictvím klienta `CalculatePrimeCompletedEventHandler`. Odebere token ID úkolu klienta z vnitřní kolekce a ukončení asynchronní operace životního cyklu voláním <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>. <xref:System.ComponentModel.AsyncOperation> Zařazuje volání vlákna nebo kontextu, který je vhodný pro aplikačního modelu.  
   
@@ -156,7 +156,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
-#### <a name="to-test-your-component"></a>Chcete-li otestovat  
+### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
 - Zkompilujte komponentu.  
   
@@ -178,7 +178,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 > [!NOTE]
 >  Vykazování průběhu je implementována v `BuildPrimeNumberList` metody. Rychlé počítačích `ProgressChanged` události mohou být vyvolány rychle po sobě. Vlákna klienta, na kterém jsou tyto události vyvolány, musí být schopen tuto situaci. Kód uživatelského rozhraní může být docházet zprávy a schopen čelit, což vede k zablokování. Uživatelské rozhraní příklad, který zpracovává této situaci, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
-#### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>Spustit asynchronně výpočtu prime číslo:  
+### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>Spustit asynchronně výpočtu prime číslo:  
   
 1. Implementace `TaskCanceled` metody nástrojů. To ověří kolekce dobu života úlohy pro Identifikátor dané úlohy a vrátí `true` Pokud se nenajde ID úkolu.  
   
@@ -210,7 +210,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
-#### <a name="to-test-your-component"></a>Chcete-li otestovat  
+### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
 - Zkompilujte komponentu.  
   
@@ -221,7 +221,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
  Zrušit konkrétní nevyřízenou operaci voláním <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> na jeho odpovídající <xref:System.ComponentModel.AsyncOperation>. Ukončí se tato operace a následných volání jeho <xref:System.ComponentModel.AsyncOperation> vyvolá výjimku.  
   
-#### <a name="to-implement-start-and-cancel-functionality"></a>K implementaci úvodní a zrušit funkce:  
+### <a name="to-implement-start-and-cancel-functionality"></a>K implementaci úvodní a zrušit funkce:  
   
 1. Implementace `CalculatePrimeAsync` metody. Ujistěte se, že token dodaná klientem (ID úlohy) je jedinečný s ohledem všechny tokeny, které představuje aktuálně probíhající úlohy. Pokud klient předá token nejedinečné `CalculatePrimeAsync` vyvolá výjimku. V opačném případě token se přidá do kolekce ID úkolu.  
   
@@ -236,7 +236,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 ## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
-#### <a name="to-test-your-component"></a>Chcete-li otestovat  
+### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
 - Zkompilujte komponentu.  
   

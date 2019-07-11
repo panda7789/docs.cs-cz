@@ -2,12 +2,12 @@
 title: SQL Server Compact a LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 59022359-a5a2-4c42-9a6a-5c0259c3ad17
-ms.openlocfilehash: a0cb45b31f7134264068297f54013f49b35f669d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5fa8f8ba2b0c5bdb92ad507bd48839a26837ba41
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651204"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742862"
 ---
 # <a name="sql-server-compact-and-linq-to-sql"></a>SQL Server Compact a LINQ to SQL
 SQL Server Compact je výchozí databáze nainstalován se sadou Visual Studio. Další informace najdete v tématu [pomocí SQL Server Compact (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/aa983321(v=vs.110)).  
@@ -27,7 +27,7 @@ SQL Server Compact je výchozí databáze nainstalován se sadou Visual Studio. 
   
 - [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Modulu runtime a nástroje příkazového řádku SQLMetal podporu systému SQL Server Compact.  
   
-- [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje SQL Server Compact.  
+- Návrhář relací objektů nepodporuje SQL Server Compact.  
   
 ## <a name="feature-set"></a>Sada funkcí  
  SQL Server Compact sada funkcí je mnohem jednodušší než sadě funkcí systému SQL Server následujícími způsoby, které můžou ovlivnit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace:  

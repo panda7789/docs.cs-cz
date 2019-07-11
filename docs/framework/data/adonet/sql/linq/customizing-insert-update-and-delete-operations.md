@@ -2,18 +2,18 @@
 title: Přizpůsobení operací vložení, aktualizace a odstranění
 ms.date: 03/30/2017
 ms.assetid: 07eef055-8f6c-414d-850e-d323ff946cd0
-ms.openlocfilehash: b4578a030300872bf4e0bab30b8daf12544be0cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 114447fd45806e567b4fde8e9e74138c096bff07
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032766"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743568"
 ---
 # <a name="customizing-insert-update-and-delete-operations"></a>Přizpůsobení operací vložení, aktualizace a odstranění
 Ve výchozím nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generuje dynamické SQL implementovat vložit, číst, aktualizovat a odstraňovat operace. V praxi však obvykle přizpůsobíte aplikaci tak, aby vyhovovala vašim obchodním potřebám.  
   
 > [!NOTE]
->  Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] přizpůsobení vložit, aktualizovat a odstranit některé akce.  
+>  Pokud používáte Visual Studio, můžete použít Návrháře relací objektů přizpůsobení vložení, aktualizace a odstranění akce.  
   
  Témata v této části popisuje techniky, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje pro přizpůsobení vkládání, čtení, aktualizace a odstranění operací ve vaší aplikaci.  
   

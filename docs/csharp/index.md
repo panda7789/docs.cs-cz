@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: fee2aad90485d3d06f1730d5937fd4e1240b4801
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 0bf9fe8124578ba9bd192e10d517e3b0df7e5982
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65064036"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744262"
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
@@ -35,7 +35,7 @@ Existuje několik oddílů v příručce jazyka C#. Můžete číst je popořad�
 * [Začínáme](getting-started/index.md)
   * Tato část popisuje, co potřebujete k instalaci pro C# prostředí pro vývoj na preferované platformě. Dalších tématech v této části popisují, jak vytvořit svůj první program C# v různých prostředích podporované.
 
-* [Úvod do C# kurzy](tutorials/intro-to-csharp/index.md):
+* [Úvod do C# kurzy](tutorials/intro-to-csharp/index.md)
   * Úvod do C# představuje interaktivní kurzy pro úplně vývojáře a prozkoumat další kurzy C# jazyka v prohlížeči pomocí rozhraní pro čtení-Eval-Print smyčky (REPL). Po dokončení interaktivní lekcí, můžete zlepšit své znalosti kódování ocení stejné lekce na svém počítači.
 
 * [Kurzy](tutorials/index.md)

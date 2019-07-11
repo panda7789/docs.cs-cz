@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 074cca51cee2b0227e1d124f1d40a2ffc31e3c85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e478cb89821ce8666f1746e752e06d2caa3ad2bb
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697352"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751589"
 ---
 # <a name="identityattributeblob-structure"></a>IDENTITY_ATTRIBUTE_BLOB – struktura
 Obsahuje informace o jediný atribut v sestavení a se skládá ze tří `DWORD`s. Každý `DWORD` je posun do vyrovnávací paměti znak vytvářených `CurrentIntoBuffer` metodu [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) rozhraní  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _IDENTITY_ATTRIBUTE_BLOB {  
     DWORD  ofsNamespace;  
     DWORD  ofsName;  
@@ -57,7 +57,7 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
   
 4. Volání `CurrentIntoBuffer` metodu `IEnumIDENTITY_ATTRIBUTE` rozhraní. Tato metoda zkopíruje atributy `Namespace`, `Name`, a `Value` do vyrovnávací paměti pro znaky. Budou k dispozici ve třech posuny do těchto řetězců `IDENTITY_ATTRIBUTE_BLOB` struktury.  
   
-```  
+```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
   
 #include "stdafx.h"  

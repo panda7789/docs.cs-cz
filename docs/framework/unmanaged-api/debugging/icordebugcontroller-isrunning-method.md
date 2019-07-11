@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5eae9e14bcd0ca430f03a873818246896438463
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 99dbe5c5da5b8c169e34aa29afca507cc6624f0f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749264"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67748788"
 ---
 # <a name="icordebugcontrollerisrunning-method"></a>ICorDebugController::IsRunning – metoda
 Získá hodnotu, která označuje, zda vlákna v procesu jsou aktuálně spuštěna bez omezení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT IsRunning (  
     [out] BOOL *pbRunning  
 );  

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f423c37ca264c4f23aca3736a72164f5d13bdca3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8480e2d6817d0367e89542c0e6c89cd26183dd5e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026758"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67774897"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
 Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Zkompilované šablony stylů je pak možné předat přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. Podepsaná sestavení s xsltc.exe nelze generovat.  
@@ -37,7 +37,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`/debug[`+&#124;-`]`|Určuje, jestli se má generovat ladicí informace.<br /><br /> Určení `+` nebo `/debug`, způsobí, že kompilátor generovat ladicí informace a vložit ho do souboru databáze (PDB) programu. Název generovaného souboru PDB je `assemblyName`.pdb.<br /><br /> Určení `-`, který je v platnosti, pokud nezadáte `/debug`, způsobí, že žádné informace o ladění, který se má vytvořit. Maloobchodní sestavení je generováno. **Poznámka:**  Kompilace v režimu ladění může ovlivnit výkon XSLT pouze výrazně.|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |`/nologo`|Potlačí zprávu o autorských právech kompilátoru ze zobrazení.|  
-|`/platform:``string`|Určuje sestavení můžete spustit na platformách. Následující část popisuje hodnoty platné platformy:<br /><br /> `x86` kompiluje sestavení ke spuštění v 32bitové, které je kompatibilní x86 common language runtime<br /><br /> `x64` kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.<br /><br /> [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítači, který má [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] procesoru.<br /><br /> `anycpu` Kompiluje sestavení pro spouštěn na libovolné platformě. Toto nastavení je výchozí.|  
+|`/platform:``string`|Určuje sestavení můžete spustit na platformách. Následující část popisuje hodnoty platné platformy:<br /><br /> `x86` kompiluje sestavení ke spuštění v 32bitové, které je kompatibilní x86 common language runtime<br /><br /> `x64` kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.<br /><br /> Itanium kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítač s procesorem Itanium.<br /><br /> `anycpu` Kompiluje sestavení pro spouštěn na libovolné platformě. Toto nastavení je výchozí.|  
 |`/out:``assemblyName`|Určuje název sestavení, které je výstup. Název sestavení použije výchozí název hlavní šablony stylů nebo první šablony stylů, pokud jsou k dispozici více šablony stylů.<br /><br /> Pokud šablona stylů obsahuje skripty, skripty se uloží do samostatného sestavení. Názvy sestavení skriptu se generují z názvu hlavní sestavení. Například pokud jste zadali pro název vašeho sestavení CustOrders.dll, první skript sestavení je pojmenováno CustOrders_Script1.dll.|  
 |`/settings:``document+-, script+-, DTD+-,`|Určuje, jestli se má povolit `document()` funkce XSLT skriptu nebo dokumentu typ definice (DTD) v šabloně stylů.<br /><br /> Výchozí chování zakáže podporu pro DTD, `document()` funkce a skriptování.|  
 |`@``file`|Umožňuje určit soubor obsahující možnosti kompilátoru.|  

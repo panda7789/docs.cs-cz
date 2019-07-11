@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: 216de8f70e0ad6856bf5d708347a7e5f852fe4c6
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: dd2968f7ab528fa07ef0c5af85f2a7f07147a76e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591564"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755164"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objekty a třídy v jazyce Visual Basic
 
@@ -28,7 +28,7 @@ Informace o tom vztah mezi objektem a své třídy, si můžete Představte řez
 
 Objekt musíte vytvořit předtím, než může přistupovat k jejím členům.
 
-#### <a name="to-create-an-object-from-a-class"></a>Chcete-li vytvořit objekt ze třídy
+### <a name="to-create-an-object-from-a-class"></a>Chcete-li vytvořit objekt ze třídy
 
 1. Určení, z které třídy, kterou chcete vytvořit objekt.
 
@@ -135,7 +135,7 @@ Když vytvoříte objekt ze třídy, výsledkem je instance této třídy. Člen
 
 #### <a name="accessing-nonshared-members"></a>Přístup k nesdílené členy
 
-###### <a name="to-access-a-nonshared-member-of-an-object"></a>Pro přístup k nesdílené člen objektu
+##### <a name="to-access-a-nonshared-member-of-an-object"></a>Pro přístup k nesdílené člen objektu
 
 1. Ujistěte se, že objekt byl vytvořen ze své třídy a přiřazen do proměnné objektu.
 
@@ -151,7 +151,7 @@ Když vytvoříte objekt ze třídy, výsledkem je instance této třídy. Člen
 
 #### <a name="accessing-shared-members"></a>Přístup ke sdílené členy
 
-###### <a name="to-access-a-shared-member-of-an-object"></a>Pro přístup ke sdílenému členu objektu
+##### <a name="to-access-a-shared-member-of-an-object"></a>Pro přístup ke sdílenému členu objektu
 
 - Postupujte podle názvu třídy s *operátor přístup člena* (`.`) a potom název člena. Vždy byste měli přistupovat k `Shared` člen objektu přímo prostřednictvím názvu třídy.
 
@@ -204,7 +204,7 @@ Když jsou třídy odvozeny z více základních tříd, jejich se říká, že 
 
 V následujícím příkladu předpokládejme, že chcete definovat zvláštní druh <xref:System.Windows.Forms.Button> , že funguje jako normální <xref:System.Windows.Forms.Button> , ale také zpřístupní metodu, která obrací barvy popředí a pozadí.
 
-##### <a name="to-define-a-class-is-derived-from-an-already-existing-class"></a>Definování třídy je odvozen z již existující třídu
+#### <a name="to-define-a-class-is-derived-from-an-already-existing-class"></a>Definování třídy je odvozen z již existující třídu
 
 1. Použití [Class – příkaz](../../../../visual-basic/language-reference/statements/class-statement.md) definování třídy, ze kterého chcete vytvořit objekt potřebujete.
 
@@ -239,7 +239,7 @@ V následujícím příkladu předpokládejme, že chcete definovat zvláštní 
 
 Odvozené třídy dědí členy třídy, které jsou založené na, vám umožňuje přidat složitost, jak budete v hierarchii tříd. Další informace najdete v tématu [základní informace o dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).
 
-#### <a name="compiling-the-code"></a>Kompilování kódu
+### <a name="compiling-the-code"></a>Kompilování kódu
 
 Ujistěte se, že kompilátor může přistupovat k třídě, ze kterého máte v úmyslu odvozovat nové třídy. To může znamenat plně kvalifikováním názvu, jako v předchozím příkladu, nebo při identifikaci svůj obor názvů v [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Pokud je třída v jiném projektu, můžete potřebovat přidat odkaz na tento projekt. Další informace najdete v tématu [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project).
 

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 536e3323f68c6ea0f1cd8c0aec9b48b952349387
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85f3ec6c2e0e452d3410437a7ec7cd45eb38cd5a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586935"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779852"
 ---
 # <a name="icorprofilerinfo3getthreadstaticaddress2-method"></a>ICorProfilerInfo3::GetThreadStaticAddress2 – metoda
 Získá adresu zadané pole vlákna, která je v rámci zadaného vlákna a domény aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetThreadStaticAddress2(  
                 [in] ClassID classId,  
                 [in] mdFieldDef fieldToken,  

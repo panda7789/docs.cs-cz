@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 924b3580f066b199cce1add71cfd0aed7e6a509f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4e8237d2841863c73989c34a46da61033e111ba
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672676"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765440"
 ---
 # <a name="itypenamebuildertostring-method"></a>ITypeNameBuilder::ToString – metoda
 Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ToString (  
     [out, retval] BSTR* pszStringRepresentation  
 );  

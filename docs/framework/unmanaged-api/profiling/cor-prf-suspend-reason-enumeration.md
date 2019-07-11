@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 21533b5173bcd91d0c944fbde4eafc9817de8315
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e084bc957eca9474078ed5ca3aef0276361dbe1b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61598984"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67745537"
 ---
 # <a name="corprfsuspendreason-enumeration"></a>COR_PRF_SUSPEND_REASON – výčet
 Označuje, že je pozastavený, modul runtime důvod.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum {  
     COR_PRF_SUSPEND_OTHER                   = 0x00,  
     COR_PRF_SUSPEND_FOR_GC                  = 0x01,  

@@ -2,18 +2,18 @@
 title: N-vrstvé nastavení LINQ to SQL s webovými službami
 ms.date: 03/30/2017
 ms.assetid: 9cb10eb8-957f-4beb-a271-5f682016fed2
-ms.openlocfilehash: 7b13a0cd77925423a12c093b1b5ac9b63ad7e019
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4fafaa60dd75def98b486e18faa5bd3ecd1d6315
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033532"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743050"
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>N-vrstvé nastavení LINQ to SQL s webovými službami
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je navržená speciálně pro použití ve střední vrstvě. v vrstvy přístupu k datům volně spárované (DAL), jako jsou webové služby. Pokud prezentační vrstvy je webová stránka ASP.NET, pak můžete použít <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru pro správu přenosu dat mezi uživatelského rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstva není stránky ASP.NET, pak střední vrstvy a prezentační vrstvou musí provést další úkony ke správě serializace a deserializace dat.  
   
 ## <a name="setting-up-linq-to-sql-on-the-middle-tier"></a>Nastavení technologie LINQ to SQL ve střední vrstvě.  
- Ve webové služby nebo n vrstvá aplikace střední vrstvy obsahuje kontext dat a tříd entit. Tyto třídy můžete vytvořit ručně nebo pomocí obou SQLMetal.exe nebo [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] jako jinde popsaných v dokumentaci. V době návrhu máte možnost provést serializovatelné třídy entit. Další informace najdete v tématu [jak: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Další možností je vytvořit samostatnou sadu tříd, které provádí zapouzdření data, která mají být serializován a potom projekt do těchto Serializovatelné typy po vrácení dat ve vaší [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy.  
+ Ve webové služby nebo n vrstvá aplikace střední vrstvy obsahuje kontext dat a tříd entit. Tyto třídy můžete vytvořit ručně nebo pomocí SQLMetal.exe nebo Návrhář relací objektů, jako jinde popsaných v dokumentaci. V době návrhu máte možnost provést serializovatelné třídy entit. Další informace najdete v tématu [jak: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Další možností je vytvořit samostatnou sadu tříd, které provádí zapouzdření data, která mají být serializován a potom projekt do těchto Serializovatelné typy po vrácení dat ve vaší [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy.  
   
  Potom definujte rozhraní s metodami, které klienti budou volat pro načtení, vložení a aktualizovat data. Metody rozhraní zabalit vaše [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy. Pro zpracování volání vzdálené metody a serializace dat můžete použít jakýkoli druh mechanismu serializace. Jediným požadavkem je, že pokud máte cyklické nebo obousměrné relace v objektovém modelu, jako je například, že mezi zákazníci a objednávky v objektovém modelu standardní Northwind pak musíte použít serializátor, která ho podporuje. Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> podporuje obousměrné relace, ale XmlSerializer, který se používá s WCF Web services nepodporuje. Pokud vyberete použití XmlSerializer, pak musí zajistíte, že objektový model nemá žádné cyklické relace.  
   

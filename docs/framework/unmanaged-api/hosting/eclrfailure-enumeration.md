@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb19f950122f7b0db66830e9ed5dff44ccd370c2
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 5f3e39d94996f14f1ae6593b9adaa5db3ef674c5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490433"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67769663"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure – výčet
 Popisuje sadu selhání, pro které hostitele může nastavit akce zásad.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum {  
     FAIL_NonCriticalResource,  
     FAIL_CriticalResource,  

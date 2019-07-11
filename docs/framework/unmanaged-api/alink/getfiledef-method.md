@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9153c9b3735e265d59ba072f747c92434c95d9ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a51e8c83d0949f68a41f6a4e10396adbc4f3c9c1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789867"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741887"
 ---
 # <a name="getfiledef-method"></a>GetFileDef – metoda
 Získá skutečný FileDef tokenu používaného v metadatech (na rozdíl od token přiřadil ALink).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetFileDef(  
     mdAssembly AssemblyID,  
     mdFile TargetFile,  

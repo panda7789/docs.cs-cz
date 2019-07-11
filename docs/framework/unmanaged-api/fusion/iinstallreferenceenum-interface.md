@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 35faeb69e864a428dc40394ad89a7d50b95bbcab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5781254b508887f2e76f6ca0eca6a2830ada172b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757661"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67774013"
 ---
 # <a name="iinstallreferenceenum-interface"></a>IInstallReferenceEnum – rozhraní
 Představuje enumerátor pro odkazovaná sestavení nainstalována v globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 interface IInstallReferenceEnum : IUnknown {  
     HRESULT GetNextInstallReferenceItem (  
         [out] IInstallReferenceItem **ppRefItem,  

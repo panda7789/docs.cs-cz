@@ -4,12 +4,12 @@ description: Další informace o způsobech, ve kterém pokouší zachovat kompa
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/10/2019
-ms.openlocfilehash: b58edd9ff0bd56b12b861162cc92d484a3b36c8b
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: c68a19b8b98a98bb9c64f5b9fa60b378935e6e93
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307499"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736555"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Vyzkoušejte nejnovější změny v rozhraní .NET Core
 
@@ -107,7 +107,7 @@ Změny v této kategorii *upravit* veřejnou oblast typu. Většina změn v tét
 
 - **✔️ Přidáním konstruktoru do třídy, spolu s výchozí (bezparametrový) konstruktor, pokud třída již dříve měli žádné konstruktory**
 
-   Ale přidáním konstruktoru do třídy, které dříve měly žádné konstruktory *bez* přidání výchozí konstruktor není povoleno.
+   Ale přidáním konstruktoru do třídy, které dříve měly žádné konstruktory *bez* přidání konstruktor bez parametrů není povoleno.
 
 - **✔️ Změna člena z [abstraktní](../../csharp/language-reference/keywords/abstract.md) k [virtuální](../../csharp/language-reference/keywords/virtual.md)**
 
@@ -174,7 +174,7 @@ Změny v této kategorii *upravit* veřejnou oblast typu. Většina změn v tét
 
   Tím je prolomen existující klienti, kteří byly vázána na předchozí přetížení. Například pokud třída má jednu verzi metody, která přijímá <xref:System.UInt32>, stávající příjemce se úspěšně vytvořit vazbu tohoto přetížení při předávání <xref:System.Int32> hodnotu. Ale pokud přidáte přetížení, která přijímá <xref:System.Int32>při opětovné kompilaci nebo pomocí pozdní vazby, kompilátor nyní vytvoří vazbu nové přetížení. Pokud různé chování vyplývá, je to zásadní změnu.
 
-- **❌ Přidáním konstruktoru do třídy, které dříve měly žádný konstruktor bez přidání výchozí konstruktor**
+- **❌ Přidáním konstruktoru do třídy, které dříve měly žádný konstruktor bez přidání konstruktor bez parametrů**
 
 - **❌️ Přidání [jen pro čtení](../../csharp/language-reference/keywords/readonly.md) na pole**
 

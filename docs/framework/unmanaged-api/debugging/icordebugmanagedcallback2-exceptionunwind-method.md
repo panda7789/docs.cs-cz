@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: faba9631e85ac84ff1517b64e9a3f5567ee7c9dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 875125185e9af74b85a833d04539403f81badf8f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995030"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761508"
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind – metoda
 Poskytuje stavu oznámení během procesu odvíjení výjimky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ExceptionUnwind (  
     [in] ICorDebugAppDomain                  *pAppDomain,  
     [in] ICorDebugThread                     *pThread,  

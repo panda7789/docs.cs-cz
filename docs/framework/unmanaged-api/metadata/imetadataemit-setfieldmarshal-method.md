@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 82675af85f049aeb288b3dcc18f222c0387a37b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a55a8575a3f8ae04bcc4a148b588cd2361f81cf6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050100"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751493"
 ---
 # <a name="imetadataemitsetfieldmarshal-method"></a>IMetaDataEmit::SetFieldMarshal – metoda
 Nastaví PInvoke zařazovací informace pro parametr pole, metoda návratový nebo metoda odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetFieldMarshal (  
     [in]  mdToken          tk,   
     [in]  PCCOR_SIGNATURE  pvNativeType,   

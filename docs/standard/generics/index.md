@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e13689e0c8324781b86ae7b9568cb441a31ec70
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: c4f59bdb0537ab6ce404ed0623c40f9f3b31598d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423952"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766821"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 
@@ -83,7 +83,7 @@ ms.locfileid: "66423952"
   
 - *Kovariance* a *kontravariance* obecného typu parametry umožňují používat konstruované obecné typy, jejichž typ argumenty jsou více odvozeného (kovariance) nebo méně odvozené (kontravariance) než cílový vytvořen Zadejte. Kovariance a kontravariance se souhrnně označují jako *variance*. Další informace najdete v tématu [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
-- *Omezení* omezení jsou umístěny v parametrech obecného typu. Například může být omezen na typy, které implementují parametr typu <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> obecná rozhraní, ujistěte se, že lze provést řazení instance daného typu. Lze také omezit parametry typu pro typy, které mají určité základní třídy, které mají výchozí konstruktor, nebo které jsou odkazové typy nebo typy hodnot. Uživatelé obecný typ nelze nahradit argumenty typu, které nesplňují omezení.  
+- *Omezení* omezení jsou umístěny v parametrech obecného typu. Například může být omezen na typy, které implementují parametr typu <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> obecná rozhraní, ujistěte se, že lze provést řazení instance daného typu. Lze také omezit parametry typu pro typy, které mají určité základní třídy, které mají konstruktor bez parametrů nebo které jsou odkazové typy nebo typy hodnot. Uživatelé obecný typ nelze nahradit argumenty typu, které nesplňují omezení.  
   
 - A *definice obecné metody* představuje metodu se dvěma seznamy parametrů: seznam parametrů obecného typu a seznam formálních parametrů. Parametry typu se může zobrazit jako návratový typ nebo typy formálních parametrů, jak ukazuje následující kód.  
   
@@ -175,7 +175,7 @@ ms.locfileid: "66423952"
 |[Přehled obecných typů ve Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkci obecných typů pro uživatele jazyka C++, jaký je rozdíl mezi obecnými typy a šablony.|  
   
 <a name="reference"></a>   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  

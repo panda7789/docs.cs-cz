@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
-ms.openlocfilehash: ff2b2f6575c82f3769823431ec6363775bf9d698
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ff6f8b58e01c86ae1c1e2e1533b1997ba2eb6b0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616071"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742890"
 ---
 # <a name="serialization"></a>Serializace
 Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] možnosti serializace. Odstavců, které následují poskytují informace o tom, jak přidat serializace při generování kódu v době návrhu a chování za běhu serializace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] třídy.  
   
  Můžete přidat serializačního kódu v době návrhu jeden z následujících metod:  
   
-- V [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], změnit **režim serializace** vlastnost **jednosměrný**.  
+- Návrhář relací objektů, změňte **režim serializace** vlastnost **jednosměrný**.  
   
 - Na příkazovém řádku SQLMetal přidejte **/serialization** možnost. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   

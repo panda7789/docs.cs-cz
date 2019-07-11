@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: c92b112262aa2bede03bddc1396947b5fdfd6286
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: cd256250021436e611142de11c3625a21aeec814
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629992"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67764739"
 ---
 # <a name="isosdacinterfacegetmethoddescptrfromip-method"></a>ISOSDacInterface::GetMethodDescPtrFromIP – metoda
 
@@ -30,7 +30,7 @@ Načte ukazatel MethodDesc odpovídající metodu obsahující uvedené instrukc
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT GetMethodDescPtrFromIP(
     CLRDATA_ADDRESS ip,
     CLRDATA_ADDRESS * ppMD
@@ -53,7 +53,7 @@ Zadaná metoda je součástí [ `ISOSDacInterface` rozhraní](isosdacinterface-i
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
 **Záhlaví:** Žádný  
-**Knihovna:** Žádný  
+**Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:

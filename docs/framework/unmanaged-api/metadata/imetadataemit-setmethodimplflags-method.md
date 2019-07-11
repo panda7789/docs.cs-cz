@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 28c0aa37bdcae2a09a4d53f920efd3ffe7117bd3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a437ff11114ea8d577b2fc3b81cd981cebb8c8d6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992456"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751063"
 ---
 # <a name="imetadataemitsetmethodimplflags-method"></a>IMetaDataEmit::SetMethodImplFlags – metoda
 Nastaví nebo aktualizuje podpis metadat implementace zděděné metody, na který odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetMethodImplFlags (   
     [in]  mdMethodDef   md,   
     [in]  DWORD         dwImplFlags   

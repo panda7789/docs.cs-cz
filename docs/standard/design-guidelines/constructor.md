@@ -9,23 +9,23 @@ helpviewer_keywords:
 - type constructors
 - virtual members
 - constructors, types
-- default constructors
+- parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
 author: KrzysztofCwalina
-ms.openlocfilehash: 68192e3b75a120c73b82c34005d4dee650540bf3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 074aa391b71257584a01171e95da7472354cdc2c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925460"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746773"
 ---
 # <a name="constructor-design"></a>Návrh konstruktoru
 Existují dva typy konstruktorů: Zadejte konstruktory a konstruktory instancí.  
   
  Konstruktory typu jsou statické a jsou provozované CLR předtím, než se typ používá. Konstruktory instancí spustí, když je vytvořena instance typu.  
   
- Konstruktory typu nelze provést žádné parametry. Konstruktory instancí může. Konstruktory instancí, které nechcete provést žádné parametry jsou často nazývány výchozí konstruktory.  
+ Konstruktory typu nelze provést žádné parametry. Konstruktory instancí může. Konstruktory instancí, které nechcete provést žádné parametry jsou často nazývány konstruktory bez parametrů.  
   
  Konstruktory jsou nejvíce přirozený způsob, jak vytvořit instance typu. Většina vývojářů hledání, který se pokusí použít konstruktor před považují za alternativní způsoby vytváření instancí (například metody pro vytváření objektů).  
   
@@ -49,15 +49,15 @@ Existují dva typy konstruktorů: Zadejte konstruktory a konstruktory instancí.
   
  **✓ DO** vyvolat výjimky z konstruktory instancí, podle potřeby.  
   
- **✓ DO** explicitně deklarovat veřejný výchozí konstruktor ve třídách, pokud je potřeba takový konstruktor.  
+ **PROVEĎTE ✓** explicitně deklarovat konstruktor public bez parametrů ve třídách, pokud takový konstruktor je povinný.  
   
- Pokud se u typu není explicitně deklarovat žádné konstruktory, řadu jazyků (jako je C#) automaticky přidá veřejný výchozí konstruktor. (Abstraktní třídy získat chráněný konstruktor.)  
+ Pokud není deklarujete explicitně žádné konstruktory typu, řadu jiných jazyků (jako například C#) automaticky přidá veřejný konstruktor bez parametrů. (Abstraktní třídy získat chráněný konstruktor.)  
   
- Přidávání do parametrizovaného konstruktoru třídy zabrání kompilátoru přidávání výchozího konstruktoru. Často způsobuje náhodného nejnovější změny.  
+ Přidávání do parametrizovaného konstruktoru třídy zabrání přidání konstruktor bez parametrů kompilátoru. Často způsobuje náhodného nejnovější změny.  
   
- **X AVOID** explicitně na struktury definování výchozí konstruktory.  
+ **X nepoužívejte** na struktury explicitně definovat konstruktory bez parametrů.  
   
- To umožňuje vytvoření pole rychleji, protože pokud výchozí konstruktor není definován, nemá pro spuštění na každé pozici pole. Všimněte si, že mnoho kompilátorů, včetně C#, Nepovolit struktury z tohoto důvodu mít konstruktor bez parametrů.  
+ To umožňuje vytvoření pole rychleji, protože pokud není definován konstruktor bez parametrů, nemá pro spuštění na každé pozici pole. Všimněte si, že mnoho kompilátorů, včetně C#, Nepovolit struktury z tohoto důvodu mít konstruktor bez parametrů.  
   
  **X AVOID** volání virtuální členové objektu uvnitř jeho konstruktoru.  
   

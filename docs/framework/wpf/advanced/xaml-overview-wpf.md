@@ -19,12 +19,12 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: f03d9481a2af3edebe83df5b1b725b7290d30d00
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: e0d277eb039c1fb1668f292d83ab9e7dbe4be70e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457538"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67762320"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotného je větší než konceptu jazyka [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -208,7 +208,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Provádění jeho procesoru XAML obsahuje infrastrukturu, která má povědomí o WPF sestavení core. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Se ví, že základní sestavení obsahují typy, které podporují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mapování na výchozí obor názvů XAML. To zajišťuje konfiguraci, která je součástí vašeho sestavení projektu soubor a WPF sestavení a systémy projektů. Proto deklarace výchozí obor názvů XAML jako výchozí `xmlns` je vše, co je nezbytné, aby se odkazy na prvky XAML, které pocházejí z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení.  
   
 ### <a name="the-x-prefix"></a>Předpona x:  
- V předchozím příkladu kořenový element, předpona `x:` byl použit k mapování oboru názvů XAML [!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)], což je vyhrazený obor názvů XAML, který podporuje jazyk XAML vytvoří. To `x:` předpona se používá pro tento obor názvů XAML v šablonách projektů, příklady a dokumentaci v rámci tohoto mapování [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Obor názvů XAML pro jazyk XAML obsahovat několik programovací konstrukce, které se často používají ve vaší XAML. Tady je seznam nejčastěji používaných `x:` předpony programovací konstrukce, které budete používat:  
+ V předchozím příkladu kořenový element, předpona `x:` byl použit k mapování oboru názvů XAML [!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)], což je vyhrazený obor názvů XAML, který podporuje jazyk XAML vytvoří. To `x:` předpona se používá pro tento obor názvů XAML v šablonách projektů, příklady a dokumentaci v rámci tohoto mapování [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Obor názvů XAML pro jazyk XAML obsahuje několik programovací konstrukce, které se často používají ve vaší XAML. Tady je seznam nejčastěji používaných `x:` předpony programovací konstrukce, které budete používat:  
   
 - [x: Key](../../xaml-services/x-key-directive.md): Nastaví jedinečný klíč pro každý zdroj v <xref:System.Windows.ResourceDictionary> (nebo podobné slovníku koncepty v jiných rozhraní). `x:Key` pravděpodobně bude účet 90 % `x:` použití, zobrazí se v typické aplikaci WPF kódu.  
   
