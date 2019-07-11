@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 49784a0eba0458a7b9ddbcd58cbe1a187c3c779a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9fb1dff80fccc920540d370797441b3a019d766c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61905824"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780913"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets – výčet
 Určuje prvky aplikace, na kterých je platný pro použití atributu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorAttributeTargets  
 {  
     catAssembly            = 0x0001,  

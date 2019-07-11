@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3ed8b85475dc7327c1aac6f920aba627215e27c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b68624b962ed610dbeecd3e4cead769ab1400f4a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965799"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739211"
 ---
 # <a name="createversionstringfrommodule-function"></a>CreateVersionStringFromModule – funkce
 Vytvoří řetězec verze z společná cesta modulu runtime (CLR) jazyka v cílovém procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CreateVersionStringFromModule (  
     [in]  DWORD      pidDebuggee,  
     [in]  LPCWSTR    szModuleName,  

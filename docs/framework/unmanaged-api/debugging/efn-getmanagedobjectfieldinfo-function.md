@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e7d031d4a4f4e67134f4b88f3e3ff47316ce3b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1de0b3b05d38c1fec38b9436c653973dfaa4136
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698332"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739010"
 ---
-# <a name="efngetmanagedobjectfieldinfo-function"></a>_EFN_GetManagedObjectFieldInfo – funkce
+# <a name="efngetmanagedobjectfieldinfo-function"></a>\_EFN\_GetManagedObjectFieldInfo Function
 Získá posun od začátku objekt pole a hodnota pole pomocí ukazatele zadaného objektu a název pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT _EFN_GetManagedObjectFieldInfo(  
     [in]  PDEBUG_CLIENT Client,  
     [in]  ULONG64       objAddr,  

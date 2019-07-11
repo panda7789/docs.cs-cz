@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81dd0c37-e2a4-4694-83b0-f2e49e693810
-ms.openlocfilehash: beb76f18a55d6e197c1c6bcfc91e3a8ef0f8119b
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: de3fc8b23bd132179fc7fb67d29010552138e3ab
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063107"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742826"
 ---
 # <a name="the-linq-to-sql-object-model"></a>Objektový model LINQ to SQL
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektový model vyjádřený v programovacím jazyce vývojáře je namapována na datový model relační databáze. Operace s daty jsou pak provedeny podle modelu objektu.  
@@ -72,7 +72,7 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektov�
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje uložených procedur a funkcí na metody pomocí <xref:System.Data.Linq.Mapping.FunctionAttribute> a <xref:System.Data.Linq.Mapping.ParameterAttribute> atributy. Metody představující uložené procedury jsou odlišeny od těch, které představují uživatelem definované funkce ve <xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A> vlastnost. Pokud je tato vlastnost nastavená na `false` (výchozí), metoda představuje uloženou proceduru. Pokud je nastavena na `true`, metoda představuje funkci databáze.  
   
 > [!NOTE]
->  Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vytvoření metody, které jsou namapované na uložených procedurách a uživatelem definované funkce.  
+>  Pokud používáte Visual Studio, můžete k vytvoření metody, které jsou namapované na uložených procedurách a uživatelem definované funkce Návrháře relací objektů.  
   
 ### <a name="example"></a>Příklad  
  [!code-csharp[DLinqObjectModel#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/northwind.cs#4)]

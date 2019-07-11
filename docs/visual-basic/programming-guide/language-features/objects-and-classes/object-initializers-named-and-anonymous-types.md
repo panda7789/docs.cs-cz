@@ -10,12 +10,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: bf608ebb36a2e8f29e8429b77e023eced67273e1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 151c2f6cbb560d83ef0fcfef518bc50cec246ca2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649777"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783240"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Inicializátory objektů: Pojmenované a anonymní typy (Visual Basic)
 Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s použitím jeden výraz. Může se použít pro vytvoření instancí typů pojmenované a anonymní typy.  
@@ -32,7 +32,7 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
  Požadavky a výsledky dvě deklarace nejsou stejné. Pro `namedCust`, `Customer` třídu, která má `Name` vlastnost musí existovat a deklarace vytvoří instanci této třídy. Pro `anonymousCust`, kompilátor definuje novou třídu, která má jednu vlastnost, řetězec s názvem `Name`a vytvoří novou instanci této třídy.  
   
 ## <a name="named-types"></a>Pojmenované typy  
- Inicializátory objektů poskytují jednoduchý způsob, jak volat konstruktor typu a pak nastavte tyto hodnoty některé nebo všechny vlastnosti v jediném příkazu. Kompilátor vyvolá odpovídajícího konstruktoru pro příkaz: výchozí konstruktor, pokud jsou uvedeny žádné argumenty, nebo do parametrizovaného konstruktoru, pokud jeden nebo více argumentů se odesílají. Potom zadané vlastnosti jsou inicializovány v pořadí, ve kterém jsou uvedeny v seznamu inicializátorů.  
+ Inicializátory objektů poskytují jednoduchý způsob, jak volat konstruktor typu a pak nastavte tyto hodnoty některé nebo všechny vlastnosti v jediném příkazu. Kompilátor vyvolá odpovídajícího konstruktoru pro příkaz: konstruktor bez parametrů, pokud jsou uvedeny žádné argumenty, nebo do parametrizovaného konstruktoru, pokud jeden nebo více argumentů se odesílají. Potom zadané vlastnosti jsou inicializovány v pořadí, ve kterém jsou uvedeny v seznamu inicializátorů.  
   
  Každý inicializace v seznamu inicializátorů se skládá z přiřazení počáteční hodnotu na člen třídy. Názvy a datové typy členů jsou určeny při je třída definovaná. V následujících příkladech `Customer` třídy musí existovat a musí obsahovat členy s názvem `Name` a `City` , který může přijmout hodnoty řetězce.  
   
@@ -42,7 +42,7 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
   
  [!code-vb[VbVbalrObjectInit#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#4)]  
   
- Každá z těchto deklarace je ekvivalentní v následujícím příkladu, který vytvoří `Customer` objektu pomocí výchozího konstruktoru a poté určí počáteční hodnoty pro `Name` a `City` vlastnosti pomocí `With` příkaz.  
+ Každá z těchto deklarace je ekvivalentní v následujícím příkladu, který vytvoří `Customer` objektu pomocí konstruktoru bez parametrů a poté určí počáteční hodnoty pro `Name` a `City` vlastnosti pomocí `With` příkaz.  
   
  [!code-vb[VbVbalrObjectInit#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#5)]  
   

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e52ef20f2b8e3937911dc37e68f8a338ab0d85d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5542cf5895bc60c5880f2f082a9c14d722e02478
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782964"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744920"
 ---
 # <a name="icordebugreferencevaluegetvalue-method"></a>ICorDebugReferenceValue::GetValue – metoda
 Získá aktuální adresu paměti odkazovaného objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetValue (  
     [out] CORDB_ADDRESS   *pValue  
 );  

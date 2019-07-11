@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cbc77195c3fe2581475d768b59993de274ac06a6
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 4083440903e6147ae645f2d6420f19160471841c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490326"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779575"
 ---
 # <a name="getrequestedruntimeversion-function"></a>GetRequestedRuntimeVersion – funkce
 Získá číslo verze common language runtime (CLR) požadované určenou aplikací. Pokud není nainstalována verze, získá nejnovější verzi, která je nainstalována před požadovanou verzí.  
@@ -31,7 +31,7 @@ Získá číslo verze common language runtime (CLR) požadované určenou aplika
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetRequestedRuntimeVersion (  
     [in]  LPWSTR  pExe,   
     [out] LPWSTR  pVersion,   

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bab625b8415183b9cf90c35cba140c4d28095805
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 187a5e673457d2d1eebb60cc1795e9885426c6d3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992443"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781957"
 ---
 # <a name="imetadataimportenummethods-method"></a>IMetaDataImport::EnumMethods – metoda
 Vytvoří výčet MethodDef tokeny představující metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT EnumMethods (  
    [in, out] HCORENUM   *phEnum,   
    [in]  mdTypeDef      cl,   

@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: aedbecc1-c33c-4fb4-8861-fdf7e1dc6b8a
-ms.openlocfilehash: 93aa679e02482e5c237c233655ee19f3bae17fd3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d9f8d15b46f6e5575bd206bf572ffda0365e58f6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032846"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743549"
 ---
 # <a name="customizing-operations-by-using-stored-procedures"></a>Přizpůsobení operací pomocí uložených procedur
 Uložených procedur představují běžný postup k přepisování výchozího chování. Příklady v tomto tématu ilustrují, jak můžete generovat obálky metody pro uložené procedury a jak vám uložené procedury lze volat přímo.  
   
- Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] přiřazení uložených procedur za účelem vložení, aktualizace a odstranění.  
+ Pokud používáte Visual Studio, můžete použít Návrháře relací objektů přiřazení uložených procedur za účelem vložení, aktualizace a odstranění.  
   
 > [!NOTE]
->  Načíst hodnoty zpět databáze vygenerovala, použijte výstupních parametrů v uložených procedurách. Pokud nemůžete použít výstupních parametrů, popište implementaci částečná metoda aniž byste museli spoléhat na přepsání generovaných [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]. Databáze vygenerovala hodnoty členů musí být nastaven na odpovídající hodnoty po `INSERT` nebo `UPDATE` operace byly úspěšně dokončeny. Další informace najdete v tématu [odpovědnosti pro vývojáře v přepisuje výchozí chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
+>  Načíst hodnoty zpět databáze vygenerovala, použijte výstupních parametrů v uložených procedurách. Pokud nemůžete použít výstupních parametrů, zápis přepsání implementace částečné metody, aniž byste museli spoléhat na vygenerovaný Návrhář relací objektů. Databáze vygenerovala hodnoty členů musí být nastaven na odpovídající hodnoty po `INSERT` nebo `UPDATE` operace byly úspěšně dokončeny. Další informace najdete v tématu [odpovědnosti pro vývojáře v přepisuje výchozí chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
   
 ## <a name="example"></a>Příklad  
   

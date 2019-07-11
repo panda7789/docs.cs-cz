@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b05ba185a9ad4ab076d29d7d609734d41677b760
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 25178b5ea27aac7229ab51a167283d955b89addc
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986047"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777260"
 ---
 # <a name="isymunmanagedwriteropenmethod-method"></a>ISymUnmanagedWriter::OpenMethod – metoda
 Otevře se metoda, do které symbol je vygenerován informace. Dané metody se změní aktuální metoda pro volání zadat body sekvence, parametry a lexikální obory. Existuje implicitní lexikální prostor kolem celou metodu. Znovu metodu, která dříve byla uzavřena vymaže všechny dříve definované symboly pro danou metodu. Najednou lze otevřít pouze jednu metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT OpenMethod(  
     [in] mdMethodDef method);  
 ```  

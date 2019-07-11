@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-ms.openlocfilehash: 63353f670528cd52f3e2927426ae715432422504
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 5c776942bced836437fdcb8aaf30faef48e3aaff
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663857"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780149"
 ---
 # <a name="animation-overview"></a>Přehled animace
 
@@ -231,10 +231,10 @@ Následující tabulka ukazuje několik běžných typů animace a některé vla
 
 |Typ vlastnosti|Odpovídající basic (od/Komu/kým) animace|Odpovídající animace klíčových snímků|Odpovídající animace cesty|Příklad použití|
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádný|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animace <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Controls.DockPanel> nebo <xref:System.Windows.FrameworkElement.Height%2A> z <xref:System.Windows.Controls.Button>.|
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animace <xref:System.Windows.Media.EllipseGeometry.Center%2A> pozici <xref:System.Windows.Media.EllipseGeometry>.|
-|<xref:System.String>|Žádné|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádný|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> z <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> z <xref:System.Windows.Controls.Button>.|
+|<xref:System.String>|Žádné|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> z <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> z <xref:System.Windows.Controls.Button>.|
 
 <a name="animationsaretimelines"></a>
 
@@ -242,7 +242,7 @@ Následující tabulka ukazuje několik běžných typů animace a některé vla
 
 Dědí všechny typy animací <xref:System.Windows.Media.Animation.Timeline> třídy; proto všechny animace jsou speciální typy časové osy. A <xref:System.Windows.Media.Animation.Timeline> definuje část času. Můžete zadat *chování časování* časové osy: jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, kolikrát je opakované a dokonce i jak rychlé uvedení postupuje pro něj.
 
-Protože je animace <xref:System.Windows.Media.Animation.Timeline>, také představuje segment čas. Animace také vypočítá výstupní hodnoty při jejich postupu ale jeho určenému segmentu čas (nebo <xref:System.Windows.Media.Animation.Timeline.Duration%2A>). Animace průběhu, nebo "hraje" aktualizuje vlastnost, která je přidružena.
+Protože je animace <xref:System.Windows.Media.Animation.Timeline>, také představuje segment čas. Animace také vypočítá výstupní hodnoty, které prochází jeho určenému segmentu čas (nebo <xref:System.Windows.Media.Animation.Timeline.Duration%2A>). Animace průběhu, nebo "hraje" aktualizuje vlastnost, která je přidružena.
 
 Jsou tři časování často používané vlastnosti <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>, a <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>.
 
@@ -321,7 +321,7 @@ Předchozí příklad ukázal, jak začít <xref:System.Windows.Media.Animation.
 [!code-csharp[animation_ovws_procedural_snip#FillBehaviorExampleRectangleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_procedural_snip/CSharp/FillBehaviorExample.cs#fillbehaviorexamplerectangleinline)]
 [!code-vb[animation_ovws_procedural_snip#FillBehaviorExampleRectangleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws_procedural_snip/visualbasic/fillbehaviorexample.vb#fillbehaviorexamplerectangleinline)]
 
-Protože jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> nebylo změněno z jeho výchozí hodnotu, která je <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, animace drží konečnou hodnotu 0, při jeho ukončení. Proto <xref:System.Windows.UIElement.Opacity%2A> z obdélník zůstane v umístění 0 po animace končí. Pokud jste nastavili <xref:System.Windows.UIElement.Opacity%2A> obdélníku s jinou hodnotou kódu se nemají žádný vliv, protože animaci je stále by to mělo dopad <xref:System.Windows.UIElement.Opacity%2A> vlastnost.
+Protože jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> nebylo změněno z jeho výchozí hodnotu, která je <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, animace obsahuje jeho konečnou hodnotu 0, při jeho ukončení. Proto <xref:System.Windows.UIElement.Opacity%2A> z obdélník zůstane v umístění 0 po animace končí. Pokud jste nastavili <xref:System.Windows.UIElement.Opacity%2A> obdélníku s jinou hodnotou kódu se nemají žádný vliv, protože animaci je stále by to mělo dopad <xref:System.Windows.UIElement.Opacity%2A> vlastnost.
 
 Jeden způsob, jak získat ovládací prvek animované vlastnosti v kódu je použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metodu a zadejte hodnotu null pro <xref:System.Windows.Media.Animation.AnimationTimeline> parametr. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](how-to-set-a-property-after-animating-it-with-a-storyboard.md).
 
@@ -372,7 +372,7 @@ Následující ukázky vám můžou pomoct vám začít přidání animace do va
 |[Přehled animace a systému časování](animation-and-timing-system-overview.md)|Popisuje, jak časování systému používá <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvářet animace.|
 |[Tipy a triky animace](animation-tips-and-tricks.md)|Obsahuje užitečné tipy pro řešení problémů s použitím animací, jako je například výkon.|
 |[Přehled vlastních animací](custom-animations-overview.md)|Popisuje, jak rozšířit systém animace pomocí klíčových snímků, třídy animace nebo zpětná volání za snímků.|
-|Přehled animace od/komu/kým|Popisuje, jak vytvořit animaci, která přechází mezi dvěma hodnotami.|
+|[Přehled animace od/komu/kým](from-to-by-animations-overview.md)|Popisuje, jak vytvořit animaci, která přechází mezi dvěma hodnotami.|
 |[Přehled animací klíčových snímků](key-frame-animations-overview.md)|Popisuje, jak vytvořit animaci s více hodnotami Cíl, včetně možnosti řídit metodu interpolace.|
 |[Funkce uvolnění](easing-functions.md)|Vysvětluje, jak použít vašich animacích získáte realistické chování, jako je například skákání matematické vzorce.|
 |[Přehled animací cesty](path-animations-overview.md)|Popisuje, jak se přesunout nebo otočit objekt komplexní cestě.|
@@ -387,7 +387,7 @@ Následující ukázky vám můžou pomoct vám začít přidání animace do va
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Reference
 
 - <xref:System.Windows.Media.Animation.Timeline>
 

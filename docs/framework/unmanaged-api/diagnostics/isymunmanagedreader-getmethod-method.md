@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ab6228866434b35525b16e97b8cba718b849dea1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 35dd8dd272ea8b4fc21cb9d7dce6899ceb836265
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993340"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776999"
 ---
 # <a name="isymunmanagedreadergetmethod-method"></a>ISymUnmanagedReader::GetMethod – metoda
 Získá metodu čtečky symbolů daný token metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMethod (  
     [in]  mdMethodDef  token,  
     [out, retval] ISymUnmanagedMethod**  pRetVal);  

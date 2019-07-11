@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - MaskedTextBox control [Windows Forms]
 ms.assetid: 779b3a12-cd74-4e58-b46e-04983bda5b2c
-ms.openlocfilehash: dd156f9e5bf6519363f66ca61687f1e9f2bfc6ab
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ac747bf46c4dd1451e58615b1ec0311d75c899e8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630429"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760475"
 ---
 # <a name="how-to-set-the-input-mask"></a>Postupy: Nastavení vstupní masky
 Maskované textové pole je vylepšené textový ovládací prvek, který podporuje deklarativní syntaxe pro přijetí nebo odmítnutí vstup uživatele. Tím, že nastavíte vlastnost maska, můžete zadat povolenou uživatelský vstup bez nutnosti jakékoli vlastní ověřovací logiky ve vaší aplikaci. Další informace najdete v části poznámky <xref:System.Windows.Forms.MaskedTextBox> třídy.  
@@ -19,7 +19,7 @@ Maskované textové pole je vylepšené textový ovládací prvek, který podpor
 ## <a name="setting-the-mask-property-manually"></a>Vlastnost maska nastavení ručně  
  Pokud jste se seznámili se znaky, které podporuje vlastnost maska, můžete ji zadat ručně. Přehled znaky, které podporuje vlastnost maska, naleznete v části poznámky <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
   
-#### <a name="to-set-the-mask-property-manually"></a>Chcete-li nastavit vlastnost maska ručně  
+### <a name="to-set-the-mask-property-manually"></a>Chcete-li nastavit vlastnost maska ručně  
   
 1. V **návrhu** zobrazení, vyberte <xref:System.Windows.Forms.MaskedTextBox>.  
   
@@ -30,7 +30,7 @@ Maskované textové pole je vylepšené textový ovládací prvek, který podpor
 ## <a name="using-the-input-mask-dialog-box"></a>Pomocí dialogového okna vstupní maska  
  Vstupní maska dialogové okno obsahuje některé předdefinované vstupní masky. Můžete také změnit předdefinované masky nebo ručně zadejte vlastní masku.  
   
-#### <a name="to-open-the-input-mask-dialog-box"></a>Chcete-li otevřít dialogové okno Vstupní maska  
+### <a name="to-open-the-input-mask-dialog-box"></a>Chcete-li otevřít dialogové okno Vstupní maska  
   
 1. V **návrhu** zobrazení, vyberte <xref:System.Windows.Forms.MaskedTextBox>.  
   
@@ -46,7 +46,7 @@ Maskované textové pole je vylepšené textový ovládací prvek, který podpor
   
      **Vstupní maska** zobrazí se dialogové okno.  
   
-#### <a name="to-use-the-input-mask-dialog-box"></a>Chcete-li pomocí dialogového okna vstupní maska  
+### <a name="to-use-the-input-mask-dialog-box"></a>Chcete-li pomocí dialogového okna vstupní maska  
   
 1. (Volitelné) Klikněte na jednu z předdefinovaných masky v seznamu.  
   

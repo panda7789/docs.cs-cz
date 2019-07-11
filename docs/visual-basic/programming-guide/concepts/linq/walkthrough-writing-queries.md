@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: f3671b7071cc30f5fae0dbd85677987f441d846f
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 55ded2f2fbd5c2c6e33627ce7fafe6bb4248d5ef
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505990"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783259"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů v jazyce Visual Basic
 Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů. Návod ukazuje, jak vytvořit dotazy v seznamu objektů Student, jak spouštět dotazy a způsobech jejich změny. Dotazy obsahovat několik funkcí, včetně anonymních typů, inicializátory objektů a odvození místního typu.  
@@ -21,7 +21,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 ## <a name="create-a-project"></a>Vytvoření projektu  
   
-#### <a name="to-create-a-console-application-project"></a>Vytvoření projektu konzolové aplikace  
+### <a name="to-create-a-console-application-project"></a>Vytvoření projektu konzolové aplikace  
   
 1. Spusťte Visual Studio.  
   
@@ -38,21 +38,21 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
 ## <a name="add-an-in-memory-data-source"></a>Přidání zdroje dat v paměti  
  Zdroj dat pro dotazy v tomto návodu je seznam `Student` objekty. Každý `Student` objekt obsahuje křestní jméno, příjmení, rok třídy a akademické pořadí v těle studentů.  
   
-#### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
+### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
   
 - Definování `Student` třídy a vytvoří seznam instancí třídy.  
   
     > [!IMPORTANT]
     >  Kód potřebný k definování `Student` třídy a vytvořit seznam použitý v tomto návodu je součástí příklady [jak: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). Můžete zkopírovat z něj a vložte ho do projektu. Nový kód nahradí kódu, které se zobrazovalo při vytváření projektu.  
   
-#### <a name="to-add-a-new-student-to-the-students-list"></a>Přidání nového studenta do seznamu studentů  
+### <a name="to-add-a-new-student-to-the-students-list"></a>Přidání nového studenta do seznamu studentů  
   
 - Podle tohoto vzoru vytvořené v `getStudents` způsob, jak přidat další instanci `Student` třídy do seznamu. Přidání studenta vás seznámí s inicializátory objektů. Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
 ## <a name="create-a-query"></a>Vytvořit dotaz  
  Při spuštění dotaz přidaný v této části vytváří seznam studentů, jehož academic pořadí umístí je do prvních deset. Vzhledem k tomu, že dotaz vybere kompletní `Student` objekt pokaždé, když, typ výsledku dotazu je `IEnumerable(Of Student)`. Nicméně dotazu obvykle není zadaný typ v definicích dotazů. Místo toho používá kompilátor odvození místního typu k určení typu. Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md). Proměnná rozsahu v dotazu, `currentStudent`, slouží jako odkaz na každé `Student` instance ve zdroji, `students`, díky přístupu k vlastnosti jednotlivých objektů v `students`.  
   
-#### <a name="to-create-a-simple-query"></a>Vytvoření jednoduchého dotazu  
+### <a name="to-create-a-simple-query"></a>Vytvoření jednoduchého dotazu  
   
 1. Najít na místo `Main` metoda projektu, který je označen následujícím způsobem:  
   
@@ -67,7 +67,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
 ## <a name="run-the-query"></a>Spuštění dotazu  
  Proměnná `studentQuery` obsahuje definici dotazu nejsou výsledky ze spuštěného dotazu. Je typické mechanismus pro spuštění dotazu `For Each` smyčky. Každý prvek ve vrácené posloupnosti je přístupné prostřednictvím proměnné iterace smyčky. Další informace o provádění dotazů, najdete v části [zápis svůj první dotaz LINQ](../../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
   
-#### <a name="to-run-the-query"></a>Spuštění dotazu  
+### <a name="to-run-the-query"></a>Spuštění dotazu  
   
 1. Přidejte následující `For Each` smyčky pod dotaz ve vašem projektu.  
   
@@ -80,7 +80,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
 ## <a name="modify-the-query"></a>Úprava dotazu  
  Je snazší dotazu výsledky kontroly, když jsou v uvedeném pořadí. Můžete řadit podle všechna dostupná pole vrácené posloupnosti.  
   
-#### <a name="to-order-the-results"></a>Řazení výsledků  
+### <a name="to-order-the-results"></a>Řazení výsledků  
   
 1. Přidejte následující `Order By` klauzule mezi `Where` příkazu a `Select` příkaz dotazu. `Order By` Klauzule bude řazení výsledků podle abecedy od A až Z, podle poslední název každého studenta.  
   
@@ -98,7 +98,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 3. Sestavte a spusťte aplikaci stisknutím kombinace kláves CTRL + F5. Poznamenejte si výsledky v okně konzoly.  
   
-#### <a name="to-introduce-a-local-identifier"></a>Zavedení lokálního identifikátoru  
+### <a name="to-introduce-a-local-identifier"></a>Zavedení lokálního identifikátoru  
   
 1. Přidejte kód v této části k zavedení lokálního identifikátoru ve výrazu dotazu. Identifikátor místní, bude obsahovat přechodný výsledek. V následujícím příkladu `name` je identifikátor, který obsahuje zřetězení student jméno a příjmení. Místní identifikátor lze použít ke zvýšení pohodlí, nebo ho můžete zvýšit výkon díky ukládání výsledků výrazu, který by jinak vypočítá více než jednou.  
   
@@ -106,7 +106,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 2. Sestavte a spusťte aplikaci stisknutím kombinace kláves CTRL + F5. Poznamenejte si výsledky v okně konzoly.  
   
-#### <a name="to-project-one-field-in-the-select-clause"></a>Projekce jednoho pole v klauzuli Select  
+### <a name="to-project-one-field-in-the-select-clause"></a>Projekce jednoho pole v klauzuli Select  
   
 1. Přidat dotaz a `For Each` smyčky v této části, chcete-li vytvořit dotaz, který vytvoří posloupnost, jehož prvky se liší od prvků ve zdroji. V následujícím příkladu, zdroj je kolekce `Student` objekty, ale pouze jednoho člena každý objekt je vrácen: křestní jméno, jejichž příjmení je Garcia studentů. Protože `currentStudent.First` není řetězcový datový typ vrácený pořadí `studentQuery3` je `IEnumerable(Of String)`, posloupnost řetězců. Jako v předchozích příkladech přiřazení datový typ pro `studentQuery3` zbývá kompilátor určit pomocí odvození místního typu.  
   
@@ -116,7 +116,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 3. Sestavte a spusťte aplikaci stisknutím kombinace kláves CTRL + F5. Poznamenejte si výsledky v okně konzoly.  
   
-#### <a name="to-create-an-anonymous-type-in-the-select-clause"></a>Vytvoření anonymního typu v klauzuli Select  
+### <a name="to-create-an-anonymous-type-in-the-select-clause"></a>Vytvoření anonymního typu v klauzuli Select  
   
 1. Přidejte kód z tohoto oddílu zobrazíte jak anonymní typy se používají v dotazech. Můžete je používat v dotazech Pokud chcete vrátit několik polí ze zdroje dat místo úplné záznamy (`currentStudent` záznamy v předchozích příkladech) neboli jednotlivých polí (`First` v předchozí části). Místo definování nový typ s názvem, který obsahuje pole, které chcete zahrnout do výsledku, určíte pole, v `Select` klauzule a kompilátor vytvoří anonymního typu s těmito poli jako její vlastnosti. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   

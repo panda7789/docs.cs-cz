@@ -19,12 +19,12 @@ ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: fdd7eef0994ca9c7b0533b6497d76a4720dd1f64
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e916d7d335bcdeff64393a25ab697748209d147c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634640"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782636"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravovány v modulu common language runtime a také je důležitou součástí modulu runtime podpory mezi jazykové integrace. Obecný systém typů provádí následující funkce:  
@@ -86,7 +86,7 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
  Členy třídy, které nemají implementaci se nazývají abstraktní členy. Třída, která má jeden nebo více abstraktních členů je sama o sobě abstraktní; Nelze vytvořit nové instance. Některé jazyky, které se zaměřují na modul runtime umožňují označit třídu jako abstraktní i v případě, že žádný z jejích členů není abstraktní. Můžete použít abstraktní třídu, pokud chcete zapouzdřit základní sadu funkcí, kterou odvozené třídy mohou dědit nebo v případě potřeby přepsat. Třídy, které nejsou abstraktní jsou označovány jako konkrétní třídy.  
   
- Třída může implementovat libovolný počet rozhraní, ale může dědit pouze z jediné základní třídy kromě <xref:System.Object?displayProperty=nameWithType>, z všechny třídy dědí implicitně. Všechny třídy musí mít alespoň jeden konstruktor, který inicializuje nové instance třídy. Pokud konstruktor explicitně nedefinujete, většina kompilátorů automaticky poskytne výchozí konstruktor (bez parametrů).  
+ Třída může implementovat libovolný počet rozhraní, ale může dědit pouze z jediné základní třídy kromě <xref:System.Object?displayProperty=nameWithType>, z všechny třídy dědí implicitně. Všechny třídy musí mít alespoň jeden konstruktor, který inicializuje nové instance třídy. Pokud konstruktor explicitně nedefinujete, většina kompilátorů automaticky poskytne konstruktor bez parametrů.  
   
 <a name="Structures"></a>   
 ### <a name="structures"></a>Struktury  
@@ -273,9 +273,9 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
 ### <a name="constructors"></a>Konstruktory  
  Konstruktor je zvláštní druh metody, která vytváří nové instance třídy nebo struktury. Stejně jako jakákoli jiná metoda konstruktor může obsahovat parametry; ale konstruktory nemají žádnou návratovou hodnotu (to znamená, že vrací `void`).  
   
- Pokud zdrojový kód třídy explicitně nedefinuje konstruktor, kompilátor obsahuje výchozí konstruktor (bez parametrů). Nicméně pokud zdrojový kód třídy definuje pouze konstruktor s parametry, kompilátory jazyků Visual Basic a C# negenerují tento konstruktor bez parametrů.  
+ Pokud zdrojový kód třídy explicitně nedefinuje konstruktor, kompilátor obsahuje konstruktor bez parametrů. Nicméně pokud zdrojový kód třídy definuje pouze konstruktor s parametry, kompilátory jazyků Visual Basic a C# negenerují tento konstruktor bez parametrů.  
   
- Pokud zdrojový kód struktury definuje konstruktory, musí být parametrizovány; struktura nemůže definovat výchozí konstruktor (bez parametrů) a kompilátory negenerují bezparametrické konstruktory pro struktury nebo jiné hodnotové typy. Všechny hodnotové typy mají implicitní výchozí konstruktor. Tento konstruktor je implementován modulem common language runtime a inicializuje všechny položky struktury na jejich výchozí hodnoty.  
+ Pokud zdrojový kód struktury definuje konstruktory, musí být parametrizovány; struktura nemůže definovat konstruktor bez parametrů a kompilátory negenerují bezparametrické konstruktory pro struktury nebo jiné hodnotové typy. Všechny hodnotové typy mají implicitní konstruktor bez parametrů. Tento konstruktor je implementován modulem common language runtime a inicializuje všechny položky struktury na jejich výchozí hodnoty.  
   
 <a name="Events"></a>   
 ### <a name="events"></a>Události  
