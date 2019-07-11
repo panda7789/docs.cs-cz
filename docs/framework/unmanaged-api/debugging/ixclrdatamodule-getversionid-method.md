@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 6ec18bcf079c7687df4ac9b7c5db23b84383c517
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5bd84f784ea92e7b2ce2465e64972dc84e16a16c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632299"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744703"
 ---
 # <a name="ixclrdatamodulegetversionid-method"></a>IXCLRDataModule::GetVersionId – metoda
 
@@ -30,7 +30,7 @@ Získá identifikátor verze modulu.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT GetVersionId(
     [out] GUID* vid
 );
@@ -49,7 +49,7 @@ Zadaná metoda je součástí `IXCLRDataModule` rozhraní a odpovídá 40 pozice
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
 **Záhlaví:** Žádné  
-**Knihovna:** Žádné  
+**Knihovna:** Žádný  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:

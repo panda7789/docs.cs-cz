@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59d785178f5c97dcd8e3911a2e51b4cc12f6a70f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cfb39183b7ed1db749ef8ae93475576c78f36fca
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697956"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778688"
 ---
 # <a name="iassemblycacheitemabortitem-method"></a>IAssemblyCacheItem::AbortItem – metoda
 Umožňuje sestavení v globální mezipaměti sestavení před jejich provedl operace čištění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT AbortItem ();  
 ```  
   
