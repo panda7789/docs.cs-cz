@@ -17,40 +17,40 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: db1b19c1499f7e8a126933b4d0635a0ab73e72a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a73232fb9327880f0038097d71698ddf8bf005e3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763272"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779905"
 ---
-# <a name="icorconfigurationadddebuggerspecialthread-method"></a><span data-ttu-id="428cd-102">ICorConfiguration::AddDebuggerSpecialThread – metoda</span><span class="sxs-lookup"><span data-stu-id="428cd-102">ICorConfiguration::AddDebuggerSpecialThread Method</span></span>
-<span data-ttu-id="428cd-103">Ladění služeb označuje, že konkrétní vlákno by měla být povolena má pokračovat provedením zatímco ladicí program zastavuje během scénáře ladění spravované nebo nespravované aplikace.</span><span class="sxs-lookup"><span data-stu-id="428cd-103">Indicates to the debugging services that a particular thread should be allowed to continue executing while the debugger has an application stopped during managed or unmanaged debugging scenarios.</span></span>  
+# <a name="icorconfigurationadddebuggerspecialthread-method"></a><span data-ttu-id="1900d-102">ICorConfiguration::AddDebuggerSpecialThread – metoda</span><span class="sxs-lookup"><span data-stu-id="1900d-102">ICorConfiguration::AddDebuggerSpecialThread Method</span></span>
+<span data-ttu-id="1900d-103">Ladění služeb označuje, že konkrétní vlákno by měla být povolena má pokračovat provedením zatímco ladicí program zastavuje během scénáře ladění spravované nebo nespravované aplikace.</span><span class="sxs-lookup"><span data-stu-id="1900d-103">Indicates to the debugging services that a particular thread should be allowed to continue executing while the debugger has an application stopped during managed or unmanaged debugging scenarios.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="428cd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="428cd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1900d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1900d-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT AddDebuggerSpecialThread (  
     [in] DWORD dwSpecialThreadId  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="428cd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="428cd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1900d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1900d-105">Parameters</span></span>  
  `dwSpecialThreadId`  
- <span data-ttu-id="428cd-106">[in] ID vlákna, která by měla bude moct pokračovat v provádění.</span><span class="sxs-lookup"><span data-stu-id="428cd-106">[in] The ID of the thread that should be allowed to continue executing.</span></span>  
+ <span data-ttu-id="1900d-106">[in] ID vlákna, která by měla bude moct pokračovat v provádění.</span><span class="sxs-lookup"><span data-stu-id="1900d-106">[in] The ID of the thread that should be allowed to continue executing.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="428cd-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="428cd-107">Remarks</span></span>  
- <span data-ttu-id="428cd-108">Zadané vlákno nebude moci spouštět spravovaný kód nebo zadejte modul runtime žádným způsobem.</span><span class="sxs-lookup"><span data-stu-id="428cd-108">The specified thread will not be allowed to run managed code or enter the runtime in any way.</span></span> <span data-ttu-id="428cd-109">Příkladem takových vlákno může být vlákno v procesu pro podporu ladicí programy starší verzi skriptu.</span><span class="sxs-lookup"><span data-stu-id="428cd-109">An example of such a thread would be an in-process thread to support legacy script debuggers.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1900d-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1900d-107">Remarks</span></span>  
+ <span data-ttu-id="1900d-108">Zadané vlákno nebude moci spouštět spravovaný kód nebo zadejte modul runtime žádným způsobem.</span><span class="sxs-lookup"><span data-stu-id="1900d-108">The specified thread will not be allowed to run managed code or enter the runtime in any way.</span></span> <span data-ttu-id="1900d-109">Příkladem takových vlákno může být vlákno v procesu pro podporu ladicí programy starší verzi skriptu.</span><span class="sxs-lookup"><span data-stu-id="1900d-109">An example of such a thread would be an in-process thread to support legacy script debuggers.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="428cd-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="428cd-110">Requirements</span></span>  
- <span data-ttu-id="428cd-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="428cd-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1900d-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1900d-110">Requirements</span></span>  
+ <span data-ttu-id="1900d-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1900d-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="428cd-112">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="428cd-112">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="1900d-112">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="1900d-112">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="428cd-113">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="428cd-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="1900d-113">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1900d-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="428cd-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="428cd-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1900d-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1900d-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="428cd-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="428cd-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1900d-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1900d-115">See also</span></span>
 
-- [<span data-ttu-id="428cd-116">ICorConfiguration – rozhraní</span><span class="sxs-lookup"><span data-stu-id="428cd-116">ICorConfiguration Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)
+- [<span data-ttu-id="1900d-116">ICorConfiguration – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1900d-116">ICorConfiguration Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)

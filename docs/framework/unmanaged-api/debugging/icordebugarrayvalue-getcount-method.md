@@ -17,33 +17,33 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d00c04f3719d6fb340541d3301d4dc4a3f95ca40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e45f49d17a5b71abfb58ff8c0126abad49322c5b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645718"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67737594"
 ---
-# <a name="icordebugarrayvaluegetcount-method"></a><span data-ttu-id="e5aa9-102">ICorDebugArrayValue::GetCount – metoda</span><span class="sxs-lookup"><span data-stu-id="e5aa9-102">ICorDebugArrayValue::GetCount Method</span></span>
-<span data-ttu-id="e5aa9-103">Získá celkový počet prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="e5aa9-103">Gets the total number of elements in the array.</span></span>  
+# <a name="icordebugarrayvaluegetcount-method"></a><span data-ttu-id="c34c9-102">ICorDebugArrayValue::GetCount – metoda</span><span class="sxs-lookup"><span data-stu-id="c34c9-102">ICorDebugArrayValue::GetCount Method</span></span>
+<span data-ttu-id="c34c9-103">Získá celkový počet prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="c34c9-103">Gets the total number of elements in the array.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e5aa9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e5aa9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c34c9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c34c9-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetCount (  
     [out] ULONG32 *pnCount  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e5aa9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e5aa9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c34c9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c34c9-105">Parameters</span></span>  
  `pnCount`  
- <span data-ttu-id="e5aa9-106">[out] Ukazatel na celkový počet prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="e5aa9-106">[out] A pointer to the total number of elements in the array.</span></span>  
+ <span data-ttu-id="c34c9-106">[out] Ukazatel na celkový počet prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="c34c9-106">[out] A pointer to the total number of elements in the array.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e5aa9-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e5aa9-107">Requirements</span></span>  
- <span data-ttu-id="e5aa9-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e5aa9-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c34c9-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c34c9-107">Requirements</span></span>  
+ <span data-ttu-id="c34c9-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c34c9-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e5aa9-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e5aa9-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c34c9-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c34c9-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e5aa9-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e5aa9-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c34c9-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c34c9-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e5aa9-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e5aa9-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="c34c9-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c34c9-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

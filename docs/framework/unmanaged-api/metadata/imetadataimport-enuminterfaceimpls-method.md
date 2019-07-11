@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f6e4be2e05c573ec93cc23c8dd6eccc834b8b848
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d0f94949cdc82cdecd52f003f3400c43014fabf
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992339"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780465"
 ---
-# <a name="imetadataimportenuminterfaceimpls-method"></a><span data-ttu-id="d3a82-102">IMetaDataImport::EnumInterfaceImpls – metoda</span><span class="sxs-lookup"><span data-stu-id="d3a82-102">IMetaDataImport::EnumInterfaceImpls Method</span></span>
-<span data-ttu-id="d3a82-103">Vytvoří výčet všech rozhraní implementované zadanou `TypeDef`.</span><span class="sxs-lookup"><span data-stu-id="d3a82-103">Enumerates all interfaces implemented by the specified `TypeDef`.</span></span> 
+# <a name="imetadataimportenuminterfaceimpls-method"></a><span data-ttu-id="cc6df-102">IMetaDataImport::EnumInterfaceImpls – metoda</span><span class="sxs-lookup"><span data-stu-id="cc6df-102">IMetaDataImport::EnumInterfaceImpls Method</span></span>
+<span data-ttu-id="cc6df-103">Vytvoří výčet všech rozhraní implementované zadanou `TypeDef`.</span><span class="sxs-lookup"><span data-stu-id="cc6df-103">Enumerates all interfaces implemented by the specified `TypeDef`.</span></span> 
   
-## <a name="syntax"></a><span data-ttu-id="d3a82-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d3a82-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cc6df-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cc6df-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT EnumInterfaceImpls (  
    [in, out]  HCORENUM       *phEnum,   
    [in]   mdTypeDef          td,  
@@ -39,43 +39,43 @@ HRESULT EnumInterfaceImpls (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d3a82-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d3a82-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="cc6df-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cc6df-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="d3a82-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="d3a82-106">[in, out] A pointer to the enumerator.</span></span>  
+ <span data-ttu-id="cc6df-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="cc6df-106">[in, out] A pointer to the enumerator.</span></span>  
   
  `td`  
- <span data-ttu-id="d3a82-107">[in] Token TypeDef, jehož MethodDef tokeny představující implementace rozhraní jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="d3a82-107">[in] The token of the TypeDef whose MethodDef tokens representing interface implementations are to be enumerated.</span></span>  
+ <span data-ttu-id="cc6df-107">[in] Token TypeDef, jehož MethodDef tokeny představující implementace rozhraní jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="cc6df-107">[in] The token of the TypeDef whose MethodDef tokens representing interface implementations are to be enumerated.</span></span>  
   
  `rImpls`  
- <span data-ttu-id="d3a82-108">[out] Pole pro ukládání tokenů MethodDef.</span><span class="sxs-lookup"><span data-stu-id="d3a82-108">[out] The array used to store the MethodDef tokens.</span></span>  
+ <span data-ttu-id="cc6df-108">[out] Pole pro ukládání tokenů MethodDef.</span><span class="sxs-lookup"><span data-stu-id="cc6df-108">[out] The array used to store the MethodDef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="d3a82-109">[in] Maximální velikost `rImpls` pole.</span><span class="sxs-lookup"><span data-stu-id="d3a82-109">[in] The maximum size of the `rImpls` array.</span></span>  
+ <span data-ttu-id="cc6df-109">[in] Maximální velikost `rImpls` pole.</span><span class="sxs-lookup"><span data-stu-id="cc6df-109">[in] The maximum size of the `rImpls` array.</span></span>  
   
  `pcImpls`  
- <span data-ttu-id="d3a82-110">[out] Skutečný počet tokenů vrátil v `rImpls`.</span><span class="sxs-lookup"><span data-stu-id="d3a82-110">[out] The actual number of tokens returned in `rImpls`.</span></span>  
+ <span data-ttu-id="cc6df-110">[out] Skutečný počet tokenů vrátil v `rImpls`.</span><span class="sxs-lookup"><span data-stu-id="cc6df-110">[out] The actual number of tokens returned in `rImpls`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d3a82-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d3a82-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="cc6df-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="cc6df-111">Return Value</span></span>  
   
-|<span data-ttu-id="d3a82-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="d3a82-112">HRESULT</span></span>|<span data-ttu-id="d3a82-113">Popis</span><span class="sxs-lookup"><span data-stu-id="d3a82-113">Description</span></span>|  
+|<span data-ttu-id="cc6df-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="cc6df-112">HRESULT</span></span>|<span data-ttu-id="cc6df-113">Popis</span><span class="sxs-lookup"><span data-stu-id="cc6df-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="d3a82-114">`EnumInterfaceImpls` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="d3a82-114">`EnumInterfaceImpls` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="d3a82-115">Neexistují žádné tokeny MethodDef k vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="d3a82-115">There are no MethodDef tokens to enumerate.</span></span> <span data-ttu-id="d3a82-116">V takovém případě `pcImpls` je nastavena na hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="d3a82-116">In that case, `pcImpls` is set to zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="cc6df-114">`EnumInterfaceImpls` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="cc6df-114">`EnumInterfaceImpls` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="cc6df-115">Neexistují žádné tokeny MethodDef k vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="cc6df-115">There are no MethodDef tokens to enumerate.</span></span> <span data-ttu-id="cc6df-116">V takovém případě `pcImpls` je nastavena na hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="cc6df-116">In that case, `pcImpls` is set to zero.</span></span>|  
 
-## <a name="remarks"></a><span data-ttu-id="d3a82-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d3a82-117">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="cc6df-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cc6df-117">Remarks</span></span>
 
-<span data-ttu-id="d3a82-118">Vrátí kolekci výčtu `mdInterfaceImpl` tokeny pro každé rozhraní implementované zadanou `TypeDef`.</span><span class="sxs-lookup"><span data-stu-id="d3a82-118">The enumeration returns a collection of `mdInterfaceImpl` tokens for each interface implemented by the specified `TypeDef`.</span></span> <span data-ttu-id="d3a82-119">Rozhraní tokeny jsou vráceny v pořadí, které byly zadány rozhraní (prostřednictvím `DefineTypeDef` nebo `SetTypeDefProps`).</span><span class="sxs-lookup"><span data-stu-id="d3a82-119">Interface tokens are returned in the order the interfaces were specified (through `DefineTypeDef` or `SetTypeDefProps`).</span></span> <span data-ttu-id="d3a82-120">Vlastnosti vráceného `mdInterfaceImpl` tokeny, může být dotázán pomocí [getinterfaceimplprops –](imetadataimport-getinterfaceimplprops-method.md).</span><span class="sxs-lookup"><span data-stu-id="d3a82-120">Properties of the returned `mdInterfaceImpl` tokens can be queried using [GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).</span></span>
+<span data-ttu-id="cc6df-118">Vrátí kolekci výčtu `mdInterfaceImpl` tokeny pro každé rozhraní implementované zadanou `TypeDef`.</span><span class="sxs-lookup"><span data-stu-id="cc6df-118">The enumeration returns a collection of `mdInterfaceImpl` tokens for each interface implemented by the specified `TypeDef`.</span></span> <span data-ttu-id="cc6df-119">Rozhraní tokeny jsou vráceny v pořadí, které byly zadány rozhraní (prostřednictvím `DefineTypeDef` nebo `SetTypeDefProps`).</span><span class="sxs-lookup"><span data-stu-id="cc6df-119">Interface tokens are returned in the order the interfaces were specified (through `DefineTypeDef` or `SetTypeDefProps`).</span></span> <span data-ttu-id="cc6df-120">Vlastnosti vráceného `mdInterfaceImpl` tokeny, může být dotázán pomocí [getinterfaceimplprops –](imetadataimport-getinterfaceimplprops-method.md).</span><span class="sxs-lookup"><span data-stu-id="cc6df-120">Properties of the returned `mdInterfaceImpl` tokens can be queried using [GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).</span></span>
   
-## <a name="requirements"></a><span data-ttu-id="d3a82-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d3a82-121">Requirements</span></span>  
- <span data-ttu-id="d3a82-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d3a82-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cc6df-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cc6df-121">Requirements</span></span>  
+ <span data-ttu-id="cc6df-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cc6df-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d3a82-123">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="d3a82-123">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="cc6df-123">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="cc6df-123">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="d3a82-124">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d3a82-124">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="cc6df-124">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="cc6df-124">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="d3a82-125">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d3a82-125">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="cc6df-125">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cc6df-125">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d3a82-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d3a82-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cc6df-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cc6df-126">See also</span></span>
 
-- [<span data-ttu-id="d3a82-127">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d3a82-127">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="d3a82-128">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d3a82-128">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="cc6df-127">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cc6df-127">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="cc6df-128">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cc6df-128">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

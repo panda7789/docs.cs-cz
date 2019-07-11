@@ -17,38 +17,38 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d22e61d28e0fbf06fa1cfe9e9ac18a534726f01d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b9a73df0b73eb5043103479b7452fedc84b02819
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62042450"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781557"
 ---
-# <a name="imetadatatablesgetblobheapsize-method"></a><span data-ttu-id="f3b02-102">IMetaDataTables::GetBlobHeapSize – metoda</span><span class="sxs-lookup"><span data-stu-id="f3b02-102">IMetaDataTables::GetBlobHeapSize Method</span></span>
-<span data-ttu-id="f3b02-103">Získá velikost v bajtech haldy binárních rozsáhlých objektů (BLOB).</span><span class="sxs-lookup"><span data-stu-id="f3b02-103">Gets the size, in bytes, of the binary large object (BLOB) heap.</span></span>  
+# <a name="imetadatatablesgetblobheapsize-method"></a><span data-ttu-id="efd2b-102">IMetaDataTables::GetBlobHeapSize – metoda</span><span class="sxs-lookup"><span data-stu-id="efd2b-102">IMetaDataTables::GetBlobHeapSize Method</span></span>
+<span data-ttu-id="efd2b-103">Získá velikost v bajtech haldy binárních rozsáhlých objektů (BLOB).</span><span class="sxs-lookup"><span data-stu-id="efd2b-103">Gets the size, in bytes, of the binary large object (BLOB) heap.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f3b02-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f3b02-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="efd2b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="efd2b-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetBlobHeapSize (  
     [out] ULONG     *pcbBlobs  
 );   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f3b02-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f3b02-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="efd2b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="efd2b-105">Parameters</span></span>  
  `pcbBlobs`  
- <span data-ttu-id="f3b02-106">[out] Ukazatel na velikost v bajtech binárního rozsáhlého objektu haldy.</span><span class="sxs-lookup"><span data-stu-id="f3b02-106">[out] A pointer to the size, in bytes, of the BLOB heap.</span></span>  
+ <span data-ttu-id="efd2b-106">[out] Ukazatel na velikost v bajtech binárního rozsáhlého objektu haldy.</span><span class="sxs-lookup"><span data-stu-id="efd2b-106">[out] A pointer to the size, in bytes, of the BLOB heap.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f3b02-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f3b02-107">Requirements</span></span>  
- <span data-ttu-id="f3b02-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f3b02-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="efd2b-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="efd2b-107">Requirements</span></span>  
+ <span data-ttu-id="efd2b-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="efd2b-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f3b02-109">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f3b02-109">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="efd2b-109">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="efd2b-109">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f3b02-110">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f3b02-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="efd2b-110">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="efd2b-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="f3b02-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f3b02-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="efd2b-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="efd2b-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f3b02-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f3b02-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="efd2b-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="efd2b-112">See also</span></span>
 
-- [<span data-ttu-id="f3b02-113">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f3b02-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [<span data-ttu-id="f3b02-114">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f3b02-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [<span data-ttu-id="efd2b-113">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="efd2b-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [<span data-ttu-id="efd2b-114">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="efd2b-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
