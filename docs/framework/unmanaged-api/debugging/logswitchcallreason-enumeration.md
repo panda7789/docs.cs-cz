@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7eadb595eb62b4f1a9dcc888225cbb7454119c7c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 894f74f12de7ed0754dcca34eacb815efc33c766
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986541"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752583"
 ---
-# <a name="logswitchcallreason-enumeration"></a><span data-ttu-id="b0c1a-102">LogSwitchCallReason – výčet</span><span class="sxs-lookup"><span data-stu-id="b0c1a-102">LogSwitchCallReason Enumeration</span></span>
-<span data-ttu-id="b0c1a-103">Určuje operaci, která byla provedena na přepínači ladění a trasování.</span><span class="sxs-lookup"><span data-stu-id="b0c1a-103">Indicates the operation that was performed on a debugging/tracing switch.</span></span>  
+# <a name="logswitchcallreason-enumeration"></a><span data-ttu-id="9931c-102">LogSwitchCallReason – výčet</span><span class="sxs-lookup"><span data-stu-id="9931c-102">LogSwitchCallReason Enumeration</span></span>
+<span data-ttu-id="9931c-103">Určuje operaci, která byla provedena na přepínači ladění a trasování.</span><span class="sxs-lookup"><span data-stu-id="9931c-103">Indicates the operation that was performed on a debugging/tracing switch.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b0c1a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b0c1a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9931c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9931c-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef enum LogSwitchCallReason {  
     SWITCH_CREATE,  
     SWITCH_MODIFY,  
@@ -36,23 +36,23 @@ typedef enum LogSwitchCallReason {
 } LogSwitchCallReason;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="b0c1a-105">Členové</span><span class="sxs-lookup"><span data-stu-id="b0c1a-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="9931c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="9931c-105">Members</span></span>  
   
-|<span data-ttu-id="b0c1a-106">Člen</span><span class="sxs-lookup"><span data-stu-id="b0c1a-106">Member</span></span>|<span data-ttu-id="b0c1a-107">Popis</span><span class="sxs-lookup"><span data-stu-id="b0c1a-107">Description</span></span>|  
+|<span data-ttu-id="9931c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="9931c-106">Member</span></span>|<span data-ttu-id="9931c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="9931c-107">Description</span></span>|  
 |------------|-----------------|  
-|`SWITCH_CREATE`|<span data-ttu-id="b0c1a-108">Ladění a trasování přepínače byl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="b0c1a-108">A debugging/tracing switch was created.</span></span>|  
-|`SWITCH_MODIFY`|<span data-ttu-id="b0c1a-109">Ladění a trasování přepínače byla změněna.</span><span class="sxs-lookup"><span data-stu-id="b0c1a-109">A debugging/tracing switch was modified.</span></span>|  
-|`SWITCH_DELETE`|<span data-ttu-id="b0c1a-110">Ladění a trasování přepínače byl odstraněn.</span><span class="sxs-lookup"><span data-stu-id="b0c1a-110">A debugging/tracing switch was deleted.</span></span>|  
+|`SWITCH_CREATE`|<span data-ttu-id="9931c-108">Ladění a trasování přepínače byl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="9931c-108">A debugging/tracing switch was created.</span></span>|  
+|`SWITCH_MODIFY`|<span data-ttu-id="9931c-109">Ladění a trasování přepínače byla změněna.</span><span class="sxs-lookup"><span data-stu-id="9931c-109">A debugging/tracing switch was modified.</span></span>|  
+|`SWITCH_DELETE`|<span data-ttu-id="9931c-110">Ladění a trasování přepínače byl odstraněn.</span><span class="sxs-lookup"><span data-stu-id="9931c-110">A debugging/tracing switch was deleted.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="b0c1a-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b0c1a-111">Requirements</span></span>  
- <span data-ttu-id="b0c1a-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b0c1a-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9931c-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9931c-111">Requirements</span></span>  
+ <span data-ttu-id="9931c-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9931c-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b0c1a-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b0c1a-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="9931c-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="9931c-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b0c1a-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b0c1a-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="9931c-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9931c-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b0c1a-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b0c1a-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="9931c-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9931c-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b0c1a-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b0c1a-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9931c-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9931c-116">See also</span></span>
 
-- [<span data-ttu-id="b0c1a-117">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="b0c1a-117">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [<span data-ttu-id="9931c-117">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="9931c-117">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

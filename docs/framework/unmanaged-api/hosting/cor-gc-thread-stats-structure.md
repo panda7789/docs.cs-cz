@@ -16,45 +16,45 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f60a4b56270318a05d0e5a480fdb56eb45593d5e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3f56ceca5269ebffb29908c63e698ce794027d8a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696719"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67768060"
 ---
-# <a name="corgcthreadstats-structure"></a><span data-ttu-id="05fde-102">COR_GC_THREAD_STATS – struktura</span><span class="sxs-lookup"><span data-stu-id="05fde-102">COR_GC_THREAD_STATS Structure</span></span>
-<span data-ttu-id="05fde-103">Obsahuje vlákno statistiky týkající se uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="05fde-103">Contains per-thread statistics pertaining to garbage collection.</span></span>  
+# <a name="corgcthreadstats-structure"></a><span data-ttu-id="023d6-102">COR_GC_THREAD_STATS – struktura</span><span class="sxs-lookup"><span data-stu-id="023d6-102">COR_GC_THREAD_STATS Structure</span></span>
+<span data-ttu-id="023d6-103">Obsahuje vlákno statistiky týkající se uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="023d6-103">Contains per-thread statistics pertaining to garbage collection.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="05fde-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="05fde-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="023d6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="023d6-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef struct _COR_GC_THREAD_STATS {  
     ULONGLONG  PerThreadAllocation;   
     ULONG      Flags;   
 } COR_GC_THREAD_STATS;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="05fde-105">Členové</span><span class="sxs-lookup"><span data-stu-id="05fde-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="023d6-105">Členové</span><span class="sxs-lookup"><span data-stu-id="023d6-105">Members</span></span>  
   
-|<span data-ttu-id="05fde-106">Člen</span><span class="sxs-lookup"><span data-stu-id="05fde-106">Member</span></span>|<span data-ttu-id="05fde-107">Popis</span><span class="sxs-lookup"><span data-stu-id="05fde-107">Description</span></span>|  
+|<span data-ttu-id="023d6-106">Člen</span><span class="sxs-lookup"><span data-stu-id="023d6-106">Member</span></span>|<span data-ttu-id="023d6-107">Popis</span><span class="sxs-lookup"><span data-stu-id="023d6-107">Description</span></span>|  
 |------------|-----------------|  
-|`PerThreadAllocation`|<span data-ttu-id="05fde-108">Počet bajtů paměti přidělené ve vlákně, které souvisí s aktuálním `COR_GC_THREAD_STATS` instance.</span><span class="sxs-lookup"><span data-stu-id="05fde-108">The number of bytes of memory allocated on the thread that is associated with the current `COR_GC_THREAD_STATS` instance.</span></span> <span data-ttu-id="05fde-109">Toto číslo se vymaže na nulu pokaždé, když dojde k uvolnění paměti generace nula.</span><span class="sxs-lookup"><span data-stu-id="05fde-109">This number is cleared to zero each time a generation-zero garbage collection occurs.</span></span>|  
-|`Flags`|<span data-ttu-id="05fde-110">Počet bajtů povýšen na vyšší generaci uvolňování paměti na poslední.</span><span class="sxs-lookup"><span data-stu-id="05fde-110">The number of bytes promoted to a higher generation at the most recent garbage collection.</span></span>|  
+|`PerThreadAllocation`|<span data-ttu-id="023d6-108">Počet bajtů paměti přidělené ve vlákně, které souvisí s aktuálním `COR_GC_THREAD_STATS` instance.</span><span class="sxs-lookup"><span data-stu-id="023d6-108">The number of bytes of memory allocated on the thread that is associated with the current `COR_GC_THREAD_STATS` instance.</span></span> <span data-ttu-id="023d6-109">Toto číslo se vymaže na nulu pokaždé, když dojde k uvolnění paměti generace nula.</span><span class="sxs-lookup"><span data-stu-id="023d6-109">This number is cleared to zero each time a generation-zero garbage collection occurs.</span></span>|  
+|`Flags`|<span data-ttu-id="023d6-110">Počet bajtů povýšen na vyšší generaci uvolňování paměti na poslední.</span><span class="sxs-lookup"><span data-stu-id="023d6-110">The number of bytes promoted to a higher generation at the most recent garbage collection.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="05fde-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="05fde-111">Remarks</span></span>  
- <span data-ttu-id="05fde-112">[Iclrtask::getmemstats –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) trvá výstupní parametr typu `COR_GC_THREAD_STATS`.</span><span class="sxs-lookup"><span data-stu-id="05fde-112">[ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) takes an output parameter of type `COR_GC_THREAD_STATS`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="023d6-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="023d6-111">Remarks</span></span>  
+ <span data-ttu-id="023d6-112">[Iclrtask::getmemstats –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) trvá výstupní parametr typu `COR_GC_THREAD_STATS`.</span><span class="sxs-lookup"><span data-stu-id="023d6-112">[ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) takes an output parameter of type `COR_GC_THREAD_STATS`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="05fde-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="05fde-113">Requirements</span></span>  
- <span data-ttu-id="05fde-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="05fde-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="023d6-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="023d6-113">Requirements</span></span>  
+ <span data-ttu-id="023d6-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="023d6-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="05fde-115">**Záhlaví:** GCHost.idl</span><span class="sxs-lookup"><span data-stu-id="05fde-115">**Header:** GCHost.idl</span></span>  
+ <span data-ttu-id="023d6-115">**Záhlaví:** GCHost.idl</span><span class="sxs-lookup"><span data-stu-id="023d6-115">**Header:** GCHost.idl</span></span>  
   
- <span data-ttu-id="05fde-116">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="05fde-116">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="023d6-116">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="023d6-116">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="05fde-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="05fde-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="023d6-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="023d6-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="05fde-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="05fde-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="023d6-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="023d6-118">See also</span></span>
 
-- [<span data-ttu-id="05fde-119">Struktury pro hostování</span><span class="sxs-lookup"><span data-stu-id="05fde-119">Hosting Structures</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
-- [<span data-ttu-id="05fde-120">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="05fde-120">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [<span data-ttu-id="023d6-119">Struktury pro hostování</span><span class="sxs-lookup"><span data-stu-id="023d6-119">Hosting Structures</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [<span data-ttu-id="023d6-120">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="023d6-120">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)

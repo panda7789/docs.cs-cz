@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 056d1ac0ffd3ad7fa7cb1f86ae13331ac38b3eff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ff6bde5009e834bfca156fe4d3ad16da53ded85
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775645"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742382"
 ---
-# <a name="addfile-method"></a><span data-ttu-id="4e36f-102">AddFile – metoda</span><span class="sxs-lookup"><span data-stu-id="4e36f-102">AddFile Method</span></span>
-<span data-ttu-id="4e36f-103">Přidá soubory do sestavení.</span><span class="sxs-lookup"><span data-stu-id="4e36f-103">Adds files to the assembly.</span></span> <span data-ttu-id="4e36f-104">Lze použít také k vytvoření nevázaného moduly.</span><span class="sxs-lookup"><span data-stu-id="4e36f-104">Can also be used to create unbound modules.</span></span>  
+# <a name="addfile-method"></a><span data-ttu-id="d944a-102">AddFile – metoda</span><span class="sxs-lookup"><span data-stu-id="d944a-102">AddFile Method</span></span>
+<span data-ttu-id="d944a-103">Přidá soubory do sestavení.</span><span class="sxs-lookup"><span data-stu-id="d944a-103">Adds files to the assembly.</span></span> <span data-ttu-id="d944a-104">Lze použít také k vytvoření nevázaného moduly.</span><span class="sxs-lookup"><span data-stu-id="d944a-104">Can also be used to create unbound modules.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4e36f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4e36f-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d944a-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d944a-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT AddFile(  
     mdAssembly      AssemblyID,  
     LPCWSTR         pszFilename,  
@@ -39,30 +39,30 @@ HRESULT AddFile(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="4e36f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="4e36f-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d944a-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d944a-106">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="4e36f-107">Jedinečné ID sestavení potřeba rozšířit.</span><span class="sxs-lookup"><span data-stu-id="4e36f-107">Unique ID of the assembly to be augmented.</span></span>  
+ <span data-ttu-id="d944a-107">Jedinečné ID sestavení potřeba rozšířit.</span><span class="sxs-lookup"><span data-stu-id="d944a-107">Unique ID of the assembly to be augmented.</span></span>  
   
  `pszFilename`  
- <span data-ttu-id="4e36f-108">Plně kvalifikovaný název souboru má být přidána.</span><span class="sxs-lookup"><span data-stu-id="4e36f-108">Fully qualified name of file to be added.</span></span>  
+ <span data-ttu-id="d944a-108">Plně kvalifikovaný název souboru má být přidána.</span><span class="sxs-lookup"><span data-stu-id="d944a-108">Fully qualified name of file to be added.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="4e36f-109">COM + FileDef označí jako `ffContainsNoMetaData` a `ffWriteable`.</span><span class="sxs-lookup"><span data-stu-id="4e36f-109">COM+ FileDef flags such as `ffContainsNoMetaData` and `ffWriteable`.</span></span> <span data-ttu-id="4e36f-110">`dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).</span><span class="sxs-lookup"><span data-stu-id="4e36f-110">`dwFlags` is passed to [DefineFile Method](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).</span></span>  
+ <span data-ttu-id="d944a-109">COM + FileDef označí jako `ffContainsNoMetaData` a `ffWriteable`.</span><span class="sxs-lookup"><span data-stu-id="d944a-109">COM+ FileDef flags such as `ffContainsNoMetaData` and `ffWriteable`.</span></span> <span data-ttu-id="d944a-110">`dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).</span><span class="sxs-lookup"><span data-stu-id="d944a-110">`dwFlags` is passed to [DefineFile Method](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).</span></span>  
   
  `pEmitter`  
- <span data-ttu-id="4e36f-111">[Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní použít ke generování metadat, v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="4e36f-111">[IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) interface to be used to emit metadata, if necessary.</span></span>  
+ <span data-ttu-id="d944a-111">[Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní použít ke generování metadat, v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="d944a-111">[IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) interface to be used to emit metadata, if necessary.</span></span>  
   
  `pFileToken`  
- <span data-ttu-id="4e36f-112">Ukazatel na kam se má jedinečné ID přidaný soubor uložit.</span><span class="sxs-lookup"><span data-stu-id="4e36f-112">Pointer to where the unique ID of the added file will be stored.</span></span>  
+ <span data-ttu-id="d944a-112">Ukazatel na kam se má jedinečné ID přidaný soubor uložit.</span><span class="sxs-lookup"><span data-stu-id="d944a-112">Pointer to where the unique ID of the added file will be stored.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="4e36f-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4e36f-113">Return Value</span></span>  
- <span data-ttu-id="4e36f-114">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="4e36f-114">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d944a-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d944a-113">Return Value</span></span>  
+ <span data-ttu-id="d944a-114">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="d944a-114">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4e36f-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4e36f-115">Requirements</span></span>  
- <span data-ttu-id="4e36f-116">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="4e36f-116">Requires alink.h.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d944a-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d944a-115">Requirements</span></span>  
+ <span data-ttu-id="d944a-116">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="d944a-116">Requires alink.h.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4e36f-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4e36f-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d944a-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d944a-117">See also</span></span>
 
-- [<span data-ttu-id="4e36f-118">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4e36f-118">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="4e36f-119">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4e36f-119">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="4e36f-120">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="4e36f-120">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="d944a-118">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d944a-118">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [<span data-ttu-id="d944a-119">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d944a-119">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [<span data-ttu-id="d944a-120">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="d944a-120">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

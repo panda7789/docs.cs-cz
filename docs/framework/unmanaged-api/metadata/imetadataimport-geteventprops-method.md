@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 138be940c6a03fc58e488e344455946bdb832bab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c87f2212c761dc31a75addabca6970c5497aa2a0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777790"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782420"
 ---
-# <a name="imetadataimportgeteventprops-method"></a><span data-ttu-id="bc66a-102">IMetaDataImport::GetEventProps – metoda</span><span class="sxs-lookup"><span data-stu-id="bc66a-102">IMetaDataImport::GetEventProps Method</span></span>
-<span data-ttu-id="bc66a-103">Získá informace metadat pro událost reprezentována token zadané události, včetně deklarující typ, přidat a odebrat metody pro delegáty a všechny příznaky a další související data.</span><span class="sxs-lookup"><span data-stu-id="bc66a-103">Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.</span></span>  
+# <a name="imetadataimportgeteventprops-method"></a><span data-ttu-id="86500-102">IMetaDataImport::GetEventProps – metoda</span><span class="sxs-lookup"><span data-stu-id="86500-102">IMetaDataImport::GetEventProps Method</span></span>
+<span data-ttu-id="86500-103">Získá informace metadat pro událost reprezentována token zadané události, včetně deklarující typ, přidat a odebrat metody pro delegáty a všechny příznaky a další související data.</span><span class="sxs-lookup"><span data-stu-id="86500-103">Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="bc66a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc66a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="86500-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="86500-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetEventProps (  
    [in]  mdEvent       ev,  
    [out] mdTypeDef     *pClass,   
@@ -47,53 +47,53 @@ HRESULT GetEventProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="bc66a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bc66a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="86500-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="86500-105">Parameters</span></span>  
  `ev`  
- <span data-ttu-id="bc66a-106">[in] Událost metadat token reprezentující události se získat metadata pro.</span><span class="sxs-lookup"><span data-stu-id="bc66a-106">[in] The event metadata token representing the event to get metadata for.</span></span>  
+ <span data-ttu-id="86500-106">[in] Událost metadat token reprezentující události se získat metadata pro.</span><span class="sxs-lookup"><span data-stu-id="86500-106">[in] The event metadata token representing the event to get metadata for.</span></span>  
   
  `pClass`  
- <span data-ttu-id="bc66a-107">[out] Ukazatel na token TypeDef představující třídu, která deklaruje událost.</span><span class="sxs-lookup"><span data-stu-id="bc66a-107">[out] A pointer to the TypeDef token representing the class that declares the event.</span></span>  
+ <span data-ttu-id="86500-107">[out] Ukazatel na token TypeDef představující třídu, která deklaruje událost.</span><span class="sxs-lookup"><span data-stu-id="86500-107">[out] A pointer to the TypeDef token representing the class that declares the event.</span></span>  
   
  `szEvent`  
- <span data-ttu-id="bc66a-108">[out] Název události odkazuje `ev`.</span><span class="sxs-lookup"><span data-stu-id="bc66a-108">[out] The name of the event referenced by `ev`.</span></span>  
+ <span data-ttu-id="86500-108">[out] Název události odkazuje `ev`.</span><span class="sxs-lookup"><span data-stu-id="86500-108">[out] The name of the event referenced by `ev`.</span></span>  
   
  `pchEvent`  
- <span data-ttu-id="bc66a-109">[in] Požadovaná délka širokých znaků `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="bc66a-109">[in] The requested length in wide characters of `szEvent`.</span></span>  
+ <span data-ttu-id="86500-109">[in] Požadovaná délka širokých znaků `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="86500-109">[in] The requested length in wide characters of `szEvent`.</span></span>  
   
  `pdwEventFlags`  
- <span data-ttu-id="bc66a-110">[out] Vrácená délka v širokých znaků `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="bc66a-110">[out] The returned length in wide characters of `szEvent`.</span></span>  
+ <span data-ttu-id="86500-110">[out] Vrácená délka v širokých znaků `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="86500-110">[out] The returned length in wide characters of `szEvent`.</span></span>  
   
  `ptkEventType`  
- <span data-ttu-id="bc66a-111">[out] Ukazatel Odkaz TypeRef nebo TypeDef metadat token představující <xref:System.Delegate> typ události.</span><span class="sxs-lookup"><span data-stu-id="bc66a-111">[out] A pointer to a TypeRef or TypeDef metadata token representing the <xref:System.Delegate> type of the event.</span></span>  
+ <span data-ttu-id="86500-111">[out] Ukazatel Odkaz TypeRef nebo TypeDef metadat token představující <xref:System.Delegate> typ události.</span><span class="sxs-lookup"><span data-stu-id="86500-111">[out] A pointer to a TypeRef or TypeDef metadata token representing the <xref:System.Delegate> type of the event.</span></span>  
   
  `pmdAddOn`  
- <span data-ttu-id="bc66a-112">[out] Ukazatel na token metadat reprezentující metodu, která přidá obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="bc66a-112">[out] A pointer to the metadata token representing the method that adds handlers for the event.</span></span>  
+ <span data-ttu-id="86500-112">[out] Ukazatel na token metadat reprezentující metodu, která přidá obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="86500-112">[out] A pointer to the metadata token representing the method that adds handlers for the event.</span></span>  
   
  `pmdRemoveOn`  
- <span data-ttu-id="bc66a-113">[out] Ukazatel na token metadat reprezentující metodu, která odebere obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="bc66a-113">[out] A pointer to the metadata token representing the method that removes handlers for the event.</span></span>  
+ <span data-ttu-id="86500-113">[out] Ukazatel na token metadat reprezentující metodu, která odebere obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="86500-113">[out] A pointer to the metadata token representing the method that removes handlers for the event.</span></span>  
   
  `pmdFire`  
- <span data-ttu-id="bc66a-114">[out] Ukazatel na token metadat reprezentující metodu, která vyvolává událost.</span><span class="sxs-lookup"><span data-stu-id="bc66a-114">[out] A pointer to the metadata token representing the method that raises the event.</span></span>  
+ <span data-ttu-id="86500-114">[out] Ukazatel na token metadat reprezentující metodu, která vyvolává událost.</span><span class="sxs-lookup"><span data-stu-id="86500-114">[out] A pointer to the metadata token representing the method that raises the event.</span></span>  
   
  `rmdOtherMethod`  
- <span data-ttu-id="bc66a-115">[out] Pole ukazatelů token jiným metodám přidružený k události.</span><span class="sxs-lookup"><span data-stu-id="bc66a-115">[out] An array of token pointers to other methods associated with the event.</span></span>  
+ <span data-ttu-id="86500-115">[out] Pole ukazatelů token jiným metodám přidružený k události.</span><span class="sxs-lookup"><span data-stu-id="86500-115">[out] An array of token pointers to other methods associated with the event.</span></span>  
   
  `cMax`  
- <span data-ttu-id="bc66a-116">[in] Maximální velikost `rmdOtherMethod` pole.</span><span class="sxs-lookup"><span data-stu-id="bc66a-116">[in] The maximum size of the `rmdOtherMethod` array.</span></span>  
+ <span data-ttu-id="86500-116">[in] Maximální velikost `rmdOtherMethod` pole.</span><span class="sxs-lookup"><span data-stu-id="86500-116">[in] The maximum size of the `rmdOtherMethod` array.</span></span>  
   
  `pcOtherMethod`  
- <span data-ttu-id="bc66a-117">[out] Počet tokenů vrátil v `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="bc66a-117">[out] The number of tokens returned in `rmdOtherMethod`.</span></span>  
+ <span data-ttu-id="86500-117">[out] Počet tokenů vrátil v `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="86500-117">[out] The number of tokens returned in `rmdOtherMethod`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="bc66a-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bc66a-118">Requirements</span></span>  
- <span data-ttu-id="bc66a-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bc66a-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="86500-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="86500-118">Requirements</span></span>  
+ <span data-ttu-id="86500-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="86500-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="bc66a-120">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="bc66a-120">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="86500-120">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="86500-120">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="bc66a-121">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="bc66a-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="86500-121">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="86500-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="bc66a-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bc66a-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="86500-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="86500-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bc66a-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc66a-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="86500-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="86500-123">See also</span></span>
 
-- [<span data-ttu-id="bc66a-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bc66a-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="bc66a-125">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bc66a-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="86500-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="86500-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="86500-125">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="86500-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

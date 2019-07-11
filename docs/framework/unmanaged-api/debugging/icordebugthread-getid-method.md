@@ -17,36 +17,36 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8eef616d51febd1b919e0a1936406551f441b98c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11e21e913e4749705ba6c7f91016be21b4de1712
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61987100"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67769965"
 ---
-# <a name="icordebugthreadgetid-method"></a><span data-ttu-id="52410-102">ICorDebugThread::GetID – metoda</span><span class="sxs-lookup"><span data-stu-id="52410-102">ICorDebugThread::GetID Method</span></span>
-<span data-ttu-id="52410-103">Získá identifikátor aktuálního operačního systému active část této ICorDebugThread.</span><span class="sxs-lookup"><span data-stu-id="52410-103">Gets the current operating system identifier of the active part of this ICorDebugThread.</span></span>  
+# <a name="icordebugthreadgetid-method"></a><span data-ttu-id="84077-102">ICorDebugThread::GetID – metoda</span><span class="sxs-lookup"><span data-stu-id="84077-102">ICorDebugThread::GetID Method</span></span>
+<span data-ttu-id="84077-103">Získá identifikátor aktuálního operačního systému active část této ICorDebugThread.</span><span class="sxs-lookup"><span data-stu-id="84077-103">Gets the current operating system identifier of the active part of this ICorDebugThread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="52410-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="52410-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="84077-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="84077-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetID (  
     [out] DWORD *pdwThreadId  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="52410-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="52410-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="84077-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="84077-105">Parameters</span></span>  
  `pdwThreadId`  
- <span data-ttu-id="52410-106">[out] Identifikátor vlákna.</span><span class="sxs-lookup"><span data-stu-id="52410-106">[out] The identifier of the thread.</span></span>  
+ <span data-ttu-id="84077-106">[out] Identifikátor vlákna.</span><span class="sxs-lookup"><span data-stu-id="84077-106">[out] The identifier of the thread.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="52410-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="52410-107">Remarks</span></span>  
- <span data-ttu-id="52410-108">Identifikátor operační systém by mohl změnit během spuštění procesu a může mít jinou hodnotu pro různé části vlákna.</span><span class="sxs-lookup"><span data-stu-id="52410-108">The operating system identifier can potentially change during execution of a process, and can be a different value for different parts of the thread.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="84077-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="84077-107">Remarks</span></span>  
+ <span data-ttu-id="84077-108">Identifikátor operační systém by mohl změnit během spuštění procesu a může mít jinou hodnotu pro různé části vlákna.</span><span class="sxs-lookup"><span data-stu-id="84077-108">The operating system identifier can potentially change during execution of a process, and can be a different value for different parts of the thread.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="52410-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="52410-109">Requirements</span></span>  
- <span data-ttu-id="52410-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="52410-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="84077-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="84077-109">Requirements</span></span>  
+ <span data-ttu-id="84077-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="84077-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="52410-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="52410-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="84077-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="84077-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="52410-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="52410-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="84077-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="84077-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="52410-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="52410-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="84077-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="84077-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a3a5a5bb26912c87cdf37ba0d8f0cee1cf1ffa97
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2cccb862a0dfd16eb0bbfe557e3c35373cd7e7b8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609565"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740818"
 ---
-# <a name="corarraylayout-structure"></a><span data-ttu-id="5c7fd-102">COR_ARRAY_LAYOUT – struktura</span><span class="sxs-lookup"><span data-stu-id="5c7fd-102">COR_ARRAY_LAYOUT Structure</span></span>
-<span data-ttu-id="5c7fd-103">Poskytuje informace o rozložení objektu array v paměti.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-103">Provides information about the layout of an array object in memory.</span></span>  
+# <a name="corarraylayout-structure"></a><span data-ttu-id="8c31d-102">COR_ARRAY_LAYOUT – struktura</span><span class="sxs-lookup"><span data-stu-id="8c31d-102">COR_ARRAY_LAYOUT Structure</span></span>
+<span data-ttu-id="8c31d-103">Poskytuje informace o rozložení objektu array v paměti.</span><span class="sxs-lookup"><span data-stu-id="8c31d-103">Provides information about the layout of an array object in memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5c7fd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5c7fd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8c31d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8c31d-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef struct COR_ARRAY_LAYOUT {  
     COR_TYPEID componentID;  
     CorElementType componentType;  
@@ -41,34 +41,34 @@ typedef struct COR_ARRAY_LAYOUT {
 } COR_ARRAY_LAYOUT;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="5c7fd-105">Členové</span><span class="sxs-lookup"><span data-stu-id="5c7fd-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="8c31d-105">Členové</span><span class="sxs-lookup"><span data-stu-id="8c31d-105">Members</span></span>  
   
-|<span data-ttu-id="5c7fd-106">Člen</span><span class="sxs-lookup"><span data-stu-id="5c7fd-106">Member</span></span>|<span data-ttu-id="5c7fd-107">Popis</span><span class="sxs-lookup"><span data-stu-id="5c7fd-107">Description</span></span>|  
+|<span data-ttu-id="8c31d-106">Člen</span><span class="sxs-lookup"><span data-stu-id="8c31d-106">Member</span></span>|<span data-ttu-id="8c31d-107">Popis</span><span class="sxs-lookup"><span data-stu-id="8c31d-107">Description</span></span>|  
 |------------|-----------------|  
-|`componentID`|<span data-ttu-id="5c7fd-108">Identifikátor typu objektů, které obsahuje pole.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-108">The identifier of the type of objects that the array contains.</span></span>|  
-|`componentType`|<span data-ttu-id="5c7fd-109">Corelementtype – hodnotu výčtu, která určuje, zda je součást odkaz kolekce uvolnění paměti, hodnotová třída nebo jednoduchého typu.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-109">A CorElementType enumeration value that indicates whether the component is a garbage collection reference, a value class, or a primitive.</span></span>|  
-|`firstElementOffset`|<span data-ttu-id="5c7fd-110">Posun na první prvek v poli.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-110">The offset to the first element in the array.</span></span>|  
-|`elementSize`|<span data-ttu-id="5c7fd-111">Velikost jednotlivých prvků.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-111">The size of each element.</span></span>|  
-|`countOffset`|<span data-ttu-id="5c7fd-112">Posun do počtu prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-112">The offset to the number of elements in the array.</span></span>|  
-|`rankSize`|<span data-ttu-id="5c7fd-113">Velikost pořadí, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-113">The size of the rank, in bytes.</span></span>|  
-|`numRanks`|<span data-ttu-id="5c7fd-114">Číslo pořadí v poli.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-114">The number of ranks in the array.</span></span>|  
-|`rankOffset`|<span data-ttu-id="5c7fd-115">Posun, ve kterém je pořadí spuštění.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-115">The offset at which the ranks start.</span></span>|  
+|`componentID`|<span data-ttu-id="8c31d-108">Identifikátor typu objektů, které obsahuje pole.</span><span class="sxs-lookup"><span data-stu-id="8c31d-108">The identifier of the type of objects that the array contains.</span></span>|  
+|`componentType`|<span data-ttu-id="8c31d-109">Corelementtype – hodnotu výčtu, která určuje, zda je součást odkaz kolekce uvolnění paměti, hodnotová třída nebo jednoduchého typu.</span><span class="sxs-lookup"><span data-stu-id="8c31d-109">A CorElementType enumeration value that indicates whether the component is a garbage collection reference, a value class, or a primitive.</span></span>|  
+|`firstElementOffset`|<span data-ttu-id="8c31d-110">Posun na první prvek v poli.</span><span class="sxs-lookup"><span data-stu-id="8c31d-110">The offset to the first element in the array.</span></span>|  
+|`elementSize`|<span data-ttu-id="8c31d-111">Velikost jednotlivých prvků.</span><span class="sxs-lookup"><span data-stu-id="8c31d-111">The size of each element.</span></span>|  
+|`countOffset`|<span data-ttu-id="8c31d-112">Posun do počtu prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="8c31d-112">The offset to the number of elements in the array.</span></span>|  
+|`rankSize`|<span data-ttu-id="8c31d-113">Velikost pořadí, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="8c31d-113">The size of the rank, in bytes.</span></span>|  
+|`numRanks`|<span data-ttu-id="8c31d-114">Číslo pořadí v poli.</span><span class="sxs-lookup"><span data-stu-id="8c31d-114">The number of ranks in the array.</span></span>|  
+|`rankOffset`|<span data-ttu-id="8c31d-115">Posun, ve kterém je pořadí spuštění.</span><span class="sxs-lookup"><span data-stu-id="8c31d-115">The offset at which the ranks start.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="5c7fd-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5c7fd-116">Remarks</span></span>  
- <span data-ttu-id="5c7fd-117">`rankSize` Pole určuje velikost pořadí v vícerozměrné pole.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-117">The `rankSize` field specifies the size of a rank in a multi-dimensional array.</span></span> <span data-ttu-id="5c7fd-118">Je přesné pro také jednorozměrná pole.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-118">It is accurate for single-dimensional arrays as well.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="8c31d-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8c31d-116">Remarks</span></span>  
+ <span data-ttu-id="8c31d-117">`rankSize` Pole určuje velikost pořadí v vícerozměrné pole.</span><span class="sxs-lookup"><span data-stu-id="8c31d-117">The `rankSize` field specifies the size of a rank in a multi-dimensional array.</span></span> <span data-ttu-id="8c31d-118">Je přesné pro také jednorozměrná pole.</span><span class="sxs-lookup"><span data-stu-id="8c31d-118">It is accurate for single-dimensional arrays as well.</span></span>  
   
- <span data-ttu-id="5c7fd-119">Hodnota `numRanks` 1 pro jednorozměrné pole a `N` pro vícerozměrná pole `N` dimenze.</span><span class="sxs-lookup"><span data-stu-id="5c7fd-119">The value of `numRanks` is 1 for a single-dimensional array and `N` for a multi-dimensional array of `N` dimensions.</span></span>  
+ <span data-ttu-id="8c31d-119">Hodnota `numRanks` 1 pro jednorozměrné pole a `N` pro vícerozměrná pole `N` dimenze.</span><span class="sxs-lookup"><span data-stu-id="8c31d-119">The value of `numRanks` is 1 for a single-dimensional array and `N` for a multi-dimensional array of `N` dimensions.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5c7fd-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5c7fd-120">Requirements</span></span>  
- <span data-ttu-id="5c7fd-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5c7fd-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8c31d-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8c31d-120">Requirements</span></span>  
+ <span data-ttu-id="8c31d-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8c31d-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5c7fd-122">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="5c7fd-122">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="8c31d-122">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="8c31d-122">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="5c7fd-123">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5c7fd-123">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="8c31d-123">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="8c31d-123">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="5c7fd-124">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5c7fd-124">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="8c31d-124">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8c31d-124">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5c7fd-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5c7fd-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8c31d-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8c31d-125">See also</span></span>
 
-- [<span data-ttu-id="5c7fd-126">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="5c7fd-126">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [<span data-ttu-id="5c7fd-127">Ladění</span><span class="sxs-lookup"><span data-stu-id="5c7fd-127">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="8c31d-126">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="8c31d-126">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [<span data-ttu-id="8c31d-127">Ladění</span><span class="sxs-lookup"><span data-stu-id="8c31d-127">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

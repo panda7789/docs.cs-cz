@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5409d1b89ba3e50c4ae17ed5aa6bf063cf6c93cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5898f2f0900b0bbe392d4dbaa8fc1db5e0e45c9e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046030"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67767004"
 ---
-# <a name="cordeclsecurity-enumeration"></a><span data-ttu-id="bdf41-102">CorDeclSecurity – výčet</span><span class="sxs-lookup"><span data-stu-id="bdf41-102">CorDeclSecurity Enumeration</span></span>
-<span data-ttu-id="bdf41-103">Určuje akce zabezpečení, které je možné provádět pomocí deklarativní zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="bdf41-103">Specifies the security actions that can be performed using declarative security.</span></span>  
+# <a name="cordeclsecurity-enumeration"></a><span data-ttu-id="4de02-102">CorDeclSecurity – výčet</span><span class="sxs-lookup"><span data-stu-id="4de02-102">CorDeclSecurity Enumeration</span></span>
+<span data-ttu-id="4de02-103">Určuje akce zabezpečení, které je možné provádět pomocí deklarativní zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="4de02-103">Specifies the security actions that can be performed using declarative security.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="bdf41-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bdf41-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4de02-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4de02-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef enum CorDeclSecurity {  
   
     dclActionMask               =   0x001f,  
@@ -56,39 +56,39 @@ typedef enum CorDeclSecurity {
 } CorDeclSecurity;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="bdf41-105">Členové</span><span class="sxs-lookup"><span data-stu-id="bdf41-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="4de02-105">Členové</span><span class="sxs-lookup"><span data-stu-id="4de02-105">Members</span></span>  
   
-|<span data-ttu-id="bdf41-106">Člen</span><span class="sxs-lookup"><span data-stu-id="bdf41-106">Member</span></span>|<span data-ttu-id="bdf41-107">Popis</span><span class="sxs-lookup"><span data-stu-id="bdf41-107">Description</span></span>|  
+|<span data-ttu-id="4de02-106">Člen</span><span class="sxs-lookup"><span data-stu-id="4de02-106">Member</span></span>|<span data-ttu-id="4de02-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4de02-107">Description</span></span>|  
 |------------|-----------------|  
-|`dclActionMask`|<span data-ttu-id="bdf41-108">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-108">Reserved.</span></span>|  
-|`dclActionNil`|<span data-ttu-id="bdf41-109">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-109">Reserved.</span></span>|  
-|`dclRequest`|<span data-ttu-id="bdf41-110">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-110">Reserved.</span></span>|  
-|`dclDemand`|<span data-ttu-id="bdf41-111">Všichni volající v zásobníku volání vyšší se vyžadují bylo uděleno oprávnění zadané pomocí aktuálního objektu oprávnění.</span><span class="sxs-lookup"><span data-stu-id="bdf41-111">All callers higher in the call stack are required to have been granted the permission specified by the current permission object.</span></span>|  
-|`dclAssert`|<span data-ttu-id="bdf41-112">Volající kód může přístup k prostředku označeném identifikátorem aktuálního objektu oprávnění, i v případě, že volajících výše v zásobníku byla udělena oprávnění pro přístup k prostředku</span><span class="sxs-lookup"><span data-stu-id="bdf41-112">The calling code can access the resource identified by the current permission object, even if callers higher in the stack have not been granted permission to access the resource</span></span>|  
-|`dclDeny`|<span data-ttu-id="bdf41-113">Možnost přístupu k prostředku zadaného parametrem aktuálního objektu oprávnění je odepřen volající, i v případě, že bylo uděleno oprávnění k přístupu.</span><span class="sxs-lookup"><span data-stu-id="bdf41-113">The ability to access the resource specified by the current permission object is denied to callers, even if they have been granted permission to access it.</span></span>|  
-|`dclPermitOnly`|<span data-ttu-id="bdf41-114">Pouze prostředků zadaných pomocí tohoto oprávnění objektu je možný i v případě, že kód bylo uděleno oprávnění pro přístup k dalším prostředkům.</span><span class="sxs-lookup"><span data-stu-id="bdf41-114">Only the resources specified by this permission object can be accessed, even if the code has been granted permission to access other resources.</span></span>|  
-|`dclLinktimeCheck`|<span data-ttu-id="bdf41-115">Okamžitého volajícího je nutné bylo uděleno oprávnění k zadané pro dané časové období.</span><span class="sxs-lookup"><span data-stu-id="bdf41-115">The immediate caller is required to have been granted the specified permission for a given period of time.</span></span>|  
-|`dclInheritanceCheck`|<span data-ttu-id="bdf41-116">Odvozená třída dědí jiné třídy nebo přepsání metody je potřeba zadané oprávnění udělil.</span><span class="sxs-lookup"><span data-stu-id="bdf41-116">The derived class inheriting another class or overriding a method is required to have been granted the specified permission.</span></span>|  
-|`dclRequestMinimum`|<span data-ttu-id="bdf41-117">Volající mohl požadovat pro minimální oprávnění potřebná pro spuštění kódu.</span><span class="sxs-lookup"><span data-stu-id="bdf41-117">The caller can request for the minimum permissions required for code to run.</span></span> <span data-ttu-id="bdf41-118">Tato akce jde použít jenom v rámci oboru sestavení.</span><span class="sxs-lookup"><span data-stu-id="bdf41-118">This action can only be used within the scope of the assembly.</span></span>|  
-|`dclRequestOptional`|<span data-ttu-id="bdf41-119">Volající mohl požadovat další oprávnění, které jsou volitelné (není vyžadované ke spuštění).</span><span class="sxs-lookup"><span data-stu-id="bdf41-119">The caller can request for additional permissions that are optional (not required to run).</span></span> <span data-ttu-id="bdf41-120">Tento požadavek implicitně odmítá všechny další oprávnění, která nejsou výslovně požadována.</span><span class="sxs-lookup"><span data-stu-id="bdf41-120">This request implicitly refuses all other permissions not specifically requested.</span></span> <span data-ttu-id="bdf41-121">Tato akce jde použít jenom v rámci oboru sestavení.</span><span class="sxs-lookup"><span data-stu-id="bdf41-121">This action can only be used within the scope of the assembly.</span></span>|  
-|`dclRequestRefuse`|<span data-ttu-id="bdf41-122">Volajícího žádost o oprávnění, která může být potenciálně nebezpečného nebudou udělena.</span><span class="sxs-lookup"><span data-stu-id="bdf41-122">The caller's request for permissions that might be misused will not be granted.</span></span> <span data-ttu-id="bdf41-123">Tato akce jde použít jenom v rámci oboru sestavení.</span><span class="sxs-lookup"><span data-stu-id="bdf41-123">This action can only be used within the scope of the assembly.</span></span>|  
-|`dclPrejitGrant`|<span data-ttu-id="bdf41-124">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-124">Reserved.</span></span>|  
-|`dclPrejitDenied`|<span data-ttu-id="bdf41-125">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-125">Reserved.</span></span>|  
-|`dclNonCasDemand`|<span data-ttu-id="bdf41-126">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-126">Reserved.</span></span>|  
-|`dclNonCasLinkDemand`|<span data-ttu-id="bdf41-127">Okamžitého volajícího je nutné k zadané oprávnění udělil.</span><span class="sxs-lookup"><span data-stu-id="bdf41-127">The immediate caller is required to have been granted the specified permission.</span></span>|  
-|`dclNonCasInheritance`|<span data-ttu-id="bdf41-128">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-128">Reserved.</span></span>|  
-|`dclLinkDemandChoice`|<span data-ttu-id="bdf41-129">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-129">Reserved.</span></span>|  
-|`dclInheritanceDemandChoice`|<span data-ttu-id="bdf41-130">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-130">Reserved.</span></span>|  
-|`dclDemandChoice`|<span data-ttu-id="bdf41-131">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-131">Reserved.</span></span>|  
-|`dclMaximumValue`|<span data-ttu-id="bdf41-132">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="bdf41-132">Reserved.</span></span>|  
+|`dclActionMask`|<span data-ttu-id="4de02-108">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-108">Reserved.</span></span>|  
+|`dclActionNil`|<span data-ttu-id="4de02-109">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-109">Reserved.</span></span>|  
+|`dclRequest`|<span data-ttu-id="4de02-110">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-110">Reserved.</span></span>|  
+|`dclDemand`|<span data-ttu-id="4de02-111">Všichni volající v zásobníku volání vyšší se vyžadují bylo uděleno oprávnění zadané pomocí aktuálního objektu oprávnění.</span><span class="sxs-lookup"><span data-stu-id="4de02-111">All callers higher in the call stack are required to have been granted the permission specified by the current permission object.</span></span>|  
+|`dclAssert`|<span data-ttu-id="4de02-112">Volající kód může přístup k prostředku označeném identifikátorem aktuálního objektu oprávnění, i v případě, že volajících výše v zásobníku byla udělena oprávnění pro přístup k prostředku</span><span class="sxs-lookup"><span data-stu-id="4de02-112">The calling code can access the resource identified by the current permission object, even if callers higher in the stack have not been granted permission to access the resource</span></span>|  
+|`dclDeny`|<span data-ttu-id="4de02-113">Možnost přístupu k prostředku zadaného parametrem aktuálního objektu oprávnění je odepřen volající, i v případě, že bylo uděleno oprávnění k přístupu.</span><span class="sxs-lookup"><span data-stu-id="4de02-113">The ability to access the resource specified by the current permission object is denied to callers, even if they have been granted permission to access it.</span></span>|  
+|`dclPermitOnly`|<span data-ttu-id="4de02-114">Pouze prostředků zadaných pomocí tohoto oprávnění objektu je možný i v případě, že kód bylo uděleno oprávnění pro přístup k dalším prostředkům.</span><span class="sxs-lookup"><span data-stu-id="4de02-114">Only the resources specified by this permission object can be accessed, even if the code has been granted permission to access other resources.</span></span>|  
+|`dclLinktimeCheck`|<span data-ttu-id="4de02-115">Okamžitého volajícího je nutné bylo uděleno oprávnění k zadané pro dané časové období.</span><span class="sxs-lookup"><span data-stu-id="4de02-115">The immediate caller is required to have been granted the specified permission for a given period of time.</span></span>|  
+|`dclInheritanceCheck`|<span data-ttu-id="4de02-116">Odvozená třída dědí jiné třídy nebo přepsání metody je potřeba zadané oprávnění udělil.</span><span class="sxs-lookup"><span data-stu-id="4de02-116">The derived class inheriting another class or overriding a method is required to have been granted the specified permission.</span></span>|  
+|`dclRequestMinimum`|<span data-ttu-id="4de02-117">Volající mohl požadovat pro minimální oprávnění potřebná pro spuštění kódu.</span><span class="sxs-lookup"><span data-stu-id="4de02-117">The caller can request for the minimum permissions required for code to run.</span></span> <span data-ttu-id="4de02-118">Tato akce jde použít jenom v rámci oboru sestavení.</span><span class="sxs-lookup"><span data-stu-id="4de02-118">This action can only be used within the scope of the assembly.</span></span>|  
+|`dclRequestOptional`|<span data-ttu-id="4de02-119">Volající mohl požadovat další oprávnění, které jsou volitelné (není vyžadované ke spuštění).</span><span class="sxs-lookup"><span data-stu-id="4de02-119">The caller can request for additional permissions that are optional (not required to run).</span></span> <span data-ttu-id="4de02-120">Tento požadavek implicitně odmítá všechny další oprávnění, která nejsou výslovně požadována.</span><span class="sxs-lookup"><span data-stu-id="4de02-120">This request implicitly refuses all other permissions not specifically requested.</span></span> <span data-ttu-id="4de02-121">Tato akce jde použít jenom v rámci oboru sestavení.</span><span class="sxs-lookup"><span data-stu-id="4de02-121">This action can only be used within the scope of the assembly.</span></span>|  
+|`dclRequestRefuse`|<span data-ttu-id="4de02-122">Volajícího žádost o oprávnění, která může být potenciálně nebezpečného nebudou udělena.</span><span class="sxs-lookup"><span data-stu-id="4de02-122">The caller's request for permissions that might be misused will not be granted.</span></span> <span data-ttu-id="4de02-123">Tato akce jde použít jenom v rámci oboru sestavení.</span><span class="sxs-lookup"><span data-stu-id="4de02-123">This action can only be used within the scope of the assembly.</span></span>|  
+|`dclPrejitGrant`|<span data-ttu-id="4de02-124">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-124">Reserved.</span></span>|  
+|`dclPrejitDenied`|<span data-ttu-id="4de02-125">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-125">Reserved.</span></span>|  
+|`dclNonCasDemand`|<span data-ttu-id="4de02-126">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-126">Reserved.</span></span>|  
+|`dclNonCasLinkDemand`|<span data-ttu-id="4de02-127">Okamžitého volajícího je nutné k zadané oprávnění udělil.</span><span class="sxs-lookup"><span data-stu-id="4de02-127">The immediate caller is required to have been granted the specified permission.</span></span>|  
+|`dclNonCasInheritance`|<span data-ttu-id="4de02-128">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-128">Reserved.</span></span>|  
+|`dclLinkDemandChoice`|<span data-ttu-id="4de02-129">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-129">Reserved.</span></span>|  
+|`dclInheritanceDemandChoice`|<span data-ttu-id="4de02-130">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-130">Reserved.</span></span>|  
+|`dclDemandChoice`|<span data-ttu-id="4de02-131">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-131">Reserved.</span></span>|  
+|`dclMaximumValue`|<span data-ttu-id="4de02-132">Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="4de02-132">Reserved.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="bdf41-133">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bdf41-133">Requirements</span></span>  
- <span data-ttu-id="bdf41-134">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bdf41-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4de02-133">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4de02-133">Requirements</span></span>  
+ <span data-ttu-id="4de02-134">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4de02-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="bdf41-135">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="bdf41-135">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="4de02-135">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="4de02-135">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="bdf41-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bdf41-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="4de02-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4de02-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bdf41-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bdf41-137">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4de02-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4de02-137">See also</span></span>
 
-- [<span data-ttu-id="bdf41-138">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="bdf41-138">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="4de02-138">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="4de02-138">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ba3ea7fe7b0182971899066f2cee63804fddbd1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb7500c1c9d09cffd0c1f3365b2a7cf939f78531
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985098"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67773416"
 ---
-# <a name="iclrassemblyidentitymanagergetreferencedassembliesfromfile-method"></a><span data-ttu-id="76aed-102">ICLRAssemblyIdentityManager::GetReferencedAssembliesFromFile – metoda</span><span class="sxs-lookup"><span data-stu-id="76aed-102">ICLRAssemblyIdentityManager::GetReferencedAssembliesFromFile Method</span></span>
-<span data-ttu-id="76aed-103">Získá [iclrreferenceassemblyenum –](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) instance, která obsahuje seznam sestavení odkazovaných sestavení v cestě zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="76aed-103">Gets an [ICLRReferenceAssemblyEnum](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) instance that contains a list of assemblies referenced by the assembly at the specified file path.</span></span>  
+# <a name="iclrassemblyidentitymanagergetreferencedassembliesfromfile-method"></a><span data-ttu-id="de902-102">ICLRAssemblyIdentityManager::GetReferencedAssembliesFromFile – metoda</span><span class="sxs-lookup"><span data-stu-id="de902-102">ICLRAssemblyIdentityManager::GetReferencedAssembliesFromFile Method</span></span>
+<span data-ttu-id="de902-103">Získá [iclrreferenceassemblyenum –](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) instance, která obsahuje seznam sestavení odkazovaných sestavení v cestě zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="de902-103">Gets an [ICLRReferenceAssemblyEnum](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) instance that contains a list of assemblies referenced by the assembly at the specified file path.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="76aed-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="76aed-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="de902-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="de902-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetReferencedAssembliesFromFile (  
     [in]  LPCWSTR pwzFilePath,  
     [in]  DWORD   dwFlags,  
@@ -38,44 +38,44 @@ HRESULT GetReferencedAssembliesFromFile (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="76aed-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="76aed-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="de902-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="de902-105">Parameters</span></span>  
  `pwzFilePath`  
- <span data-ttu-id="76aed-106">[in] Cesta k sestavení, který se má vyhodnotit.</span><span class="sxs-lookup"><span data-stu-id="76aed-106">[in] The path to the assembly to be evaluated.</span></span>  
+ <span data-ttu-id="de902-106">[in] Cesta k sestavení, který se má vyhodnotit.</span><span class="sxs-lookup"><span data-stu-id="de902-106">[in] The path to the assembly to be evaluated.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="76aed-107">[in] K dispozici pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="76aed-107">[in] Provided for future extensibility.</span></span> <span data-ttu-id="76aed-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je hodnota, která podporuje aktuální verzi modulu common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="76aed-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT is the only value that the current version of the common language runtime (CLR) supports.</span></span>  
+ <span data-ttu-id="de902-107">[in] K dispozici pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="de902-107">[in] Provided for future extensibility.</span></span> <span data-ttu-id="de902-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je hodnota, která podporuje aktuální verzi modulu common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="de902-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT is the only value that the current version of the common language runtime (CLR) supports.</span></span>  
   
  `pExcludeAssembliesList`  
- <span data-ttu-id="76aed-109">[in] Ukazatel [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) objekt, který reprezentuje sestavení, která má být vyloučen z `ppReferenceEnum`.</span><span class="sxs-lookup"><span data-stu-id="76aed-109">[in] A pointer to an [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) object that represents assemblies that should be excluded from `ppReferenceEnum`.</span></span>  
+ <span data-ttu-id="de902-109">[in] Ukazatel [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) objekt, který reprezentuje sestavení, která má být vyloučen z `ppReferenceEnum`.</span><span class="sxs-lookup"><span data-stu-id="de902-109">[in] A pointer to an [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) object that represents assemblies that should be excluded from `ppReferenceEnum`.</span></span>  
   
  `ppReferenceEnum`  
- <span data-ttu-id="76aed-110">[out] Ukazatel na adresu `ICLRReferenceAssemblyEnum` objekt, který obsahuje data identity sestavení pro sestavení odkazuje sestavení v `pwzFilePath`, s výjimkou sestavení reprezentována `pExcludeAssembliesList`.</span><span class="sxs-lookup"><span data-stu-id="76aed-110">[out] A pointer to the address of an `ICLRReferenceAssemblyEnum` object that contains assembly identity data for the assemblies referenced by the assembly at `pwzFilePath`, excluding the assemblies represented by `pExcludeAssembliesList`.</span></span>  
+ <span data-ttu-id="de902-110">[out] Ukazatel na adresu `ICLRReferenceAssemblyEnum` objekt, který obsahuje data identity sestavení pro sestavení odkazuje sestavení v `pwzFilePath`, s výjimkou sestavení reprezentována `pExcludeAssembliesList`.</span><span class="sxs-lookup"><span data-stu-id="de902-110">[out] A pointer to the address of an `ICLRReferenceAssemblyEnum` object that contains assembly identity data for the assemblies referenced by the assembly at `pwzFilePath`, excluding the assemblies represented by `pExcludeAssembliesList`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="76aed-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="76aed-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="de902-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="de902-111">Return Value</span></span>  
   
-|<span data-ttu-id="76aed-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="76aed-112">HRESULT</span></span>|<span data-ttu-id="76aed-113">Popis</span><span class="sxs-lookup"><span data-stu-id="76aed-113">Description</span></span>|  
+|<span data-ttu-id="de902-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="de902-112">HRESULT</span></span>|<span data-ttu-id="de902-113">Popis</span><span class="sxs-lookup"><span data-stu-id="de902-113">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="76aed-114">S_OK</span><span class="sxs-lookup"><span data-stu-id="76aed-114">S_OK</span></span>|<span data-ttu-id="76aed-115">Metoda vrátila úspěšně.</span><span class="sxs-lookup"><span data-stu-id="76aed-115">The method returned successfully.</span></span>|  
-|<span data-ttu-id="76aed-116">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="76aed-116">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="76aed-117">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="76aed-117">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="76aed-118">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="76aed-118">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="76aed-119">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="76aed-119">The call timed out.</span></span>|  
-|<span data-ttu-id="76aed-120">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="76aed-120">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="76aed-121">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="76aed-121">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="76aed-122">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="76aed-122">HOST_E_ABANDONED</span></span>|<span data-ttu-id="76aed-123">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="76aed-123">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="76aed-124">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="76aed-124">E_FAIL</span></span>|<span data-ttu-id="76aed-125">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="76aed-125">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="76aed-126">Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="76aed-126">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="76aed-127">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="76aed-127">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="de902-114">S_OK</span><span class="sxs-lookup"><span data-stu-id="de902-114">S_OK</span></span>|<span data-ttu-id="de902-115">Metoda vrátila úspěšně.</span><span class="sxs-lookup"><span data-stu-id="de902-115">The method returned successfully.</span></span>|  
+|<span data-ttu-id="de902-116">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="de902-116">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="de902-117">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="de902-117">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="de902-118">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="de902-118">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="de902-119">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="de902-119">The call timed out.</span></span>|  
+|<span data-ttu-id="de902-120">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="de902-120">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="de902-121">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="de902-121">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="de902-122">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="de902-122">HOST_E_ABANDONED</span></span>|<span data-ttu-id="de902-123">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="de902-123">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="de902-124">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="de902-124">E_FAIL</span></span>|<span data-ttu-id="de902-125">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="de902-125">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="de902-126">Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="de902-126">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="de902-127">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="de902-127">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="76aed-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="76aed-128">Remarks</span></span>  
- <span data-ttu-id="76aed-129">Volající můžete zvolit ze seznamu vrácených celé sady odkazy na známé sestavení.</span><span class="sxs-lookup"><span data-stu-id="76aed-129">The caller can choose to exclude a set of known assembly references from the returned list.</span></span> <span data-ttu-id="76aed-130">Tato sada je definována `pExcludeAssembliesList` parametru.</span><span class="sxs-lookup"><span data-stu-id="76aed-130">This set is defined by the `pExcludeAssembliesList` parameter.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="de902-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="de902-128">Remarks</span></span>  
+ <span data-ttu-id="de902-129">Volající můžete zvolit ze seznamu vrácených celé sady odkazy na známé sestavení.</span><span class="sxs-lookup"><span data-stu-id="de902-129">The caller can choose to exclude a set of known assembly references from the returned list.</span></span> <span data-ttu-id="de902-130">Tato sada je definována `pExcludeAssembliesList` parametru.</span><span class="sxs-lookup"><span data-stu-id="de902-130">This set is defined by the `pExcludeAssembliesList` parameter.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="76aed-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="76aed-131">Requirements</span></span>  
- <span data-ttu-id="76aed-132">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="76aed-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="de902-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="de902-131">Requirements</span></span>  
+ <span data-ttu-id="de902-132">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="de902-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="76aed-133">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="76aed-133">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="de902-133">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="de902-133">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="76aed-134">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="76aed-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="de902-134">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="de902-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="76aed-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="76aed-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="de902-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="de902-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="76aed-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76aed-136">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="de902-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="de902-136">See also</span></span>
 
-- [<span data-ttu-id="76aed-137">ICLRAssemblyIdentityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="76aed-137">ICLRAssemblyIdentityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [<span data-ttu-id="76aed-138">ICLRAssemblyReferenceList – rozhraní</span><span class="sxs-lookup"><span data-stu-id="76aed-138">ICLRAssemblyReferenceList Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [<span data-ttu-id="76aed-139">ICLRReferenceAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="76aed-139">ICLRReferenceAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [<span data-ttu-id="de902-137">ICLRAssemblyIdentityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="de902-137">ICLRAssemblyIdentityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
+- [<span data-ttu-id="de902-138">ICLRAssemblyReferenceList – rozhraní</span><span class="sxs-lookup"><span data-stu-id="de902-138">ICLRAssemblyReferenceList Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
+- [<span data-ttu-id="de902-139">ICLRReferenceAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="de902-139">ICLRReferenceAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)

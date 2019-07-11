@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3361212f9a7f7ff0739e8544419a2b67abc8f457
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34335321207e98a518ff3e0fdb5ea1dc3ac68b75
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044730"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776262"
 ---
-# <a name="imetadataassemblyemitsetassemblyprops-method"></a><span data-ttu-id="def88-102">IMetaDataAssemblyEmit::SetAssemblyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="def88-102">IMetaDataAssemblyEmit::SetAssemblyProps Method</span></span>
-<span data-ttu-id="def88-103">Upraví zadaný `Assembly` struktury metadat.</span><span class="sxs-lookup"><span data-stu-id="def88-103">Modifies the specified `Assembly` metadata structure.</span></span>  
+# <a name="imetadataassemblyemitsetassemblyprops-method"></a><span data-ttu-id="c3d15-102">IMetaDataAssemblyEmit::SetAssemblyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="c3d15-102">IMetaDataAssemblyEmit::SetAssemblyProps Method</span></span>
+<span data-ttu-id="c3d15-103">Upraví zadaný `Assembly` struktury metadat.</span><span class="sxs-lookup"><span data-stu-id="c3d15-103">Modifies the specified `Assembly` metadata structure.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="def88-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="def88-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c3d15-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c3d15-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT SetAssemblyProps (  
     [in] mdAssembly               pma,  
     [in] const void               *pbPublicKey,  
@@ -41,40 +41,40 @@ HRESULT SetAssemblyProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="def88-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="def88-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c3d15-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c3d15-105">Parameters</span></span>  
  `pma`  
- <span data-ttu-id="def88-106">[in] Token metadat, který určuje `Assembly` struktury metadat má být upraven.</span><span class="sxs-lookup"><span data-stu-id="def88-106">[in] The metadata token that specifies the `Assembly` metadata structure to be modified.</span></span>  
+ <span data-ttu-id="c3d15-106">[in] Token metadat, který určuje `Assembly` struktury metadat má být upraven.</span><span class="sxs-lookup"><span data-stu-id="c3d15-106">[in] The metadata token that specifies the `Assembly` metadata structure to be modified.</span></span>  
   
  `pbPublicKey`  
- <span data-ttu-id="def88-107">[in] Ukazatel na veřejný klíč sestavení vydavatele.</span><span class="sxs-lookup"><span data-stu-id="def88-107">[in] A pointer to the public key of the publisher of the assembly.</span></span>  
+ <span data-ttu-id="c3d15-107">[in] Ukazatel na veřejný klíč sestavení vydavatele.</span><span class="sxs-lookup"><span data-stu-id="c3d15-107">[in] A pointer to the public key of the publisher of the assembly.</span></span>  
   
  `cbPublicKey`  
- <span data-ttu-id="def88-108">[in] Velikost v bajtech `pbPublicKey`.</span><span class="sxs-lookup"><span data-stu-id="def88-108">[in] The size in bytes of `pbPublicKey`.</span></span>  
+ <span data-ttu-id="c3d15-108">[in] Velikost v bajtech `pbPublicKey`.</span><span class="sxs-lookup"><span data-stu-id="c3d15-108">[in] The size in bytes of `pbPublicKey`.</span></span>  
   
  `ulHashAlgId`  
- <span data-ttu-id="def88-109">[in] Identifikátor algoritmu hash používá k vytvoření hodnoty hash souborů sestavení.</span><span class="sxs-lookup"><span data-stu-id="def88-109">[in] The identifier for the hash algorithm used to hash the assembly files.</span></span>  
+ <span data-ttu-id="c3d15-109">[in] Identifikátor algoritmu hash používá k vytvoření hodnoty hash souborů sestavení.</span><span class="sxs-lookup"><span data-stu-id="c3d15-109">[in] The identifier for the hash algorithm used to hash the assembly files.</span></span>  
   
  `szName`  
- <span data-ttu-id="def88-110">[in] Uživatelsky čitelná textová název sestavení.</span><span class="sxs-lookup"><span data-stu-id="def88-110">[in] The human-readable text name of the assembly.</span></span>  
+ <span data-ttu-id="c3d15-110">[in] Uživatelsky čitelná textová název sestavení.</span><span class="sxs-lookup"><span data-stu-id="c3d15-110">[in] The human-readable text name of the assembly.</span></span>  
   
  `pMetaData`  
- <span data-ttu-id="def88-111">[in] Ukazatel na assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="def88-111">[in] A pointer to the ASSEMBLYMETADATA that contains version, platform, and locale information for the assembly.</span></span>  
+ <span data-ttu-id="c3d15-111">[in] Ukazatel na assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="c3d15-111">[in] A pointer to the ASSEMBLYMETADATA that contains version, platform, and locale information for the assembly.</span></span>  
   
  `dwAssemblyFlags`  
- <span data-ttu-id="def88-112">[in] Bitová kombinace hodnot [assemblyflags –](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) hodnoty, které určují různé atributy sestavení.</span><span class="sxs-lookup"><span data-stu-id="def88-112">[in] A bitwise combination of [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) values that specify various attributes of the assembly.</span></span>  
+ <span data-ttu-id="c3d15-112">[in] Bitová kombinace hodnot [assemblyflags –](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) hodnoty, které určují různé atributy sestavení.</span><span class="sxs-lookup"><span data-stu-id="c3d15-112">[in] A bitwise combination of [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) values that specify various attributes of the assembly.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="def88-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="def88-113">Remarks</span></span>  
- <span data-ttu-id="def88-114">K vytvoření `Assembly` struktury metadat, použijte [imetadataassemblyemit::defineassembly –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="def88-114">To create an `Assembly` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c3d15-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c3d15-113">Remarks</span></span>  
+ <span data-ttu-id="c3d15-114">K vytvoření `Assembly` struktury metadat, použijte [imetadataassemblyemit::defineassembly –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="c3d15-114">To create an `Assembly` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="def88-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="def88-115">Requirements</span></span>  
- <span data-ttu-id="def88-116">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="def88-116">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c3d15-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c3d15-115">Requirements</span></span>  
+ <span data-ttu-id="c3d15-116">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c3d15-116">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="def88-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="def88-117">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="c3d15-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c3d15-117">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="def88-118">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="def88-118">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="c3d15-118">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c3d15-118">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="def88-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="def88-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c3d15-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c3d15-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="def88-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="def88-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3d15-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3d15-120">See also</span></span>
 
-- [<span data-ttu-id="def88-121">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="def88-121">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="c3d15-121">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c3d15-121">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

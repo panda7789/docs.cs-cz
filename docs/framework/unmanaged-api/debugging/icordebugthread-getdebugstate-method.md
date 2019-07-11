@@ -17,36 +17,36 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68df19120f2e0b45e73f9d5e137afc8a5e7ac513
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0baabbb736365b138d1754e68070207b4310bf57
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61987152"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67762456"
 ---
-# <a name="icordebugthreadgetdebugstate-method"></a><span data-ttu-id="593ab-102">ICorDebugThread::GetDebugState – metoda</span><span class="sxs-lookup"><span data-stu-id="593ab-102">ICorDebugThread::GetDebugState Method</span></span>
-<span data-ttu-id="593ab-103">Získá aktuální stav ladění tohoto objektu ICorDebugThread.</span><span class="sxs-lookup"><span data-stu-id="593ab-103">Gets the current debug state of this ICorDebugThread object.</span></span>  
+# <a name="icordebugthreadgetdebugstate-method"></a><span data-ttu-id="54ef5-102">ICorDebugThread::GetDebugState – metoda</span><span class="sxs-lookup"><span data-stu-id="54ef5-102">ICorDebugThread::GetDebugState Method</span></span>
+<span data-ttu-id="54ef5-103">Získá aktuální stav ladění tohoto objektu ICorDebugThread.</span><span class="sxs-lookup"><span data-stu-id="54ef5-103">Gets the current debug state of this ICorDebugThread object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="593ab-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="593ab-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="54ef5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="54ef5-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetDebugState (  
     [out] CorDebugThreadState   *pState  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="593ab-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="593ab-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="54ef5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="54ef5-105">Parameters</span></span>  
  `pState`  
- <span data-ttu-id="593ab-106">[out] Ukazatel na bitová kombinace hodnot cordebugthreadstate – výčet popisující aktuální stav ladění tohoto vlákna.</span><span class="sxs-lookup"><span data-stu-id="593ab-106">[out] A pointer to a bitwise combination of CorDebugThreadState enumeration values that describes the current debug state of this thread.</span></span>  
+ <span data-ttu-id="54ef5-106">[out] Ukazatel na bitová kombinace hodnot cordebugthreadstate – výčet popisující aktuální stav ladění tohoto vlákna.</span><span class="sxs-lookup"><span data-stu-id="54ef5-106">[out] A pointer to a bitwise combination of CorDebugThreadState enumeration values that describes the current debug state of this thread.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="593ab-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="593ab-107">Remarks</span></span>  
- <span data-ttu-id="593ab-108">Pokud je aktuálně zastavený proces, `pState` představuje stav ladění, která by existovala pro toto vlákno, pokud proces pokračuje, nikoli skutečné aktuální stav tohoto vlákna.</span><span class="sxs-lookup"><span data-stu-id="593ab-108">If the process is currently stopped, `pState` represents the debug state that would exist for this thread if the process were to be continued, not the actual current state of this thread.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="54ef5-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="54ef5-107">Remarks</span></span>  
+ <span data-ttu-id="54ef5-108">Pokud je aktuálně zastavený proces, `pState` představuje stav ladění, která by existovala pro toto vlákno, pokud proces pokračuje, nikoli skutečné aktuální stav tohoto vlákna.</span><span class="sxs-lookup"><span data-stu-id="54ef5-108">If the process is currently stopped, `pState` represents the debug state that would exist for this thread if the process were to be continued, not the actual current state of this thread.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="593ab-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="593ab-109">Requirements</span></span>  
- <span data-ttu-id="593ab-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="593ab-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="54ef5-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54ef5-109">Requirements</span></span>  
+ <span data-ttu-id="54ef5-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="54ef5-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="593ab-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="593ab-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="54ef5-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="54ef5-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="593ab-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="593ab-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="54ef5-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="54ef5-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="593ab-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="593ab-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="54ef5-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="54ef5-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

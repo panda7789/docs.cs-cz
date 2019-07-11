@@ -17,31 +17,31 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7d9239ccfe8ce08e5b50b762a6fede11ab8a439b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ebdf0dd2457cd10e31ff71c32b1c09d0e014431
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61994487"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765997"
 ---
-# <a name="icordebugprocessgetid-method"></a><span data-ttu-id="e1ae7-102">ICorDebugProcess::GetID – metoda</span><span class="sxs-lookup"><span data-stu-id="e1ae7-102">ICorDebugProcess::GetID Method</span></span>
-<span data-ttu-id="e1ae7-103">Získá ID operačního systému (OS) procesu.</span><span class="sxs-lookup"><span data-stu-id="e1ae7-103">Gets the operating system (OS) ID of the process.</span></span>  
+# <a name="icordebugprocessgetid-method"></a><span data-ttu-id="719bd-102">ICorDebugProcess::GetID – metoda</span><span class="sxs-lookup"><span data-stu-id="719bd-102">ICorDebugProcess::GetID Method</span></span>
+<span data-ttu-id="719bd-103">Získá ID operačního systému (OS) procesu.</span><span class="sxs-lookup"><span data-stu-id="719bd-103">Gets the operating system (OS) ID of the process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e1ae7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e1ae7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="719bd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="719bd-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetID([out] DWORD *pdwProcessId);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e1ae7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e1ae7-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="719bd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="719bd-105">Parameters</span></span>  
  `pdwProcessId`  
- <span data-ttu-id="e1ae7-106">[out] Jedinečné ID procesu.</span><span class="sxs-lookup"><span data-stu-id="e1ae7-106">[out] The unique ID of the process.</span></span>  
+ <span data-ttu-id="719bd-106">[out] Jedinečné ID procesu.</span><span class="sxs-lookup"><span data-stu-id="719bd-106">[out] The unique ID of the process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e1ae7-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e1ae7-107">Requirements</span></span>  
- <span data-ttu-id="e1ae7-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e1ae7-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="719bd-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="719bd-107">Requirements</span></span>  
+ <span data-ttu-id="719bd-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="719bd-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e1ae7-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e1ae7-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="719bd-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="719bd-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e1ae7-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e1ae7-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="719bd-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="719bd-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e1ae7-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e1ae7-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="719bd-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="719bd-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

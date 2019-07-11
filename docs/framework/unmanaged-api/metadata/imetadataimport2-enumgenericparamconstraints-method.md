@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f66b0145dbaece7292d2ccad169a97fbb10b6d11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ba9d7f8873d15a7cab2b9893feb8563dfc971b0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61959572"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778758"
 ---
-# <a name="imetadataimport2enumgenericparamconstraints-method"></a><span data-ttu-id="a4800-102">IMetaDataImport2::EnumGenericParamConstraints – metoda</span><span class="sxs-lookup"><span data-stu-id="a4800-102">IMetaDataImport2::EnumGenericParamConstraints Method</span></span>
-<span data-ttu-id="a4800-103">Získá enumerátor pro celou řadu omezeních obecných parametrů, které jsou přidružené k obecný parametr reprezentována zadaného tokenu.</span><span class="sxs-lookup"><span data-stu-id="a4800-103">Gets an enumerator for an array of generic parameter constraints associated with the generic parameter represented by the specified token.</span></span>  
+# <a name="imetadataimport2enumgenericparamconstraints-method"></a><span data-ttu-id="add04-102">IMetaDataImport2::EnumGenericParamConstraints – metoda</span><span class="sxs-lookup"><span data-stu-id="add04-102">IMetaDataImport2::EnumGenericParamConstraints Method</span></span>
+<span data-ttu-id="add04-103">Získá enumerátor pro celou řadu omezeních obecných parametrů, které jsou přidružené k obecný parametr reprezentována zadaného tokenu.</span><span class="sxs-lookup"><span data-stu-id="add04-103">Gets an enumerator for an array of generic parameter constraints associated with the generic parameter represented by the specified token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a4800-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a4800-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="add04-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="add04-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT EnumGenericParamConstraints (  
     [in, out] HCORENUM                *phEnum,  
     [in]  mdGenericParam              tk,  
@@ -39,39 +39,39 @@ HRESULT EnumGenericParamConstraints (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a4800-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a4800-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="add04-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="add04-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="a4800-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="a4800-106">[in, out] A pointer to the enumerator.</span></span>  
+ <span data-ttu-id="add04-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="add04-106">[in, out] A pointer to the enumerator.</span></span>  
   
  `tk`  
- <span data-ttu-id="a4800-107">[in]   Token, který představuje obecný parametr, jehož omezení jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="a4800-107">[in]   A token that represents the generic parameter whose constraints are to be enumerated.</span></span>  
+ <span data-ttu-id="add04-107">[in]   Token, který představuje obecný parametr, jehož omezení jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="add04-107">[in]   A token that represents the generic parameter whose constraints are to be enumerated.</span></span>  
   
  `rGenericParamConstraints`  
- <span data-ttu-id="a4800-108">[out] Pole omezeních obecných parametrů k vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="a4800-108">[out] The array of generic parameter constraints to enumerate.</span></span>  
+ <span data-ttu-id="add04-108">[out] Pole omezeních obecných parametrů k vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="add04-108">[out] The array of generic parameter constraints to enumerate.</span></span>  
   
  `cMax`  
- <span data-ttu-id="a4800-109">[in]   Maximální požadovaný počet tokenů, které mají být umístěny `rGenericParamConstraints`.</span><span class="sxs-lookup"><span data-stu-id="a4800-109">[in]   The requested maximum number of tokens to place in `rGenericParamConstraints`.</span></span>  
+ <span data-ttu-id="add04-109">[in]   Maximální požadovaný počet tokenů, které mají být umístěny `rGenericParamConstraints`.</span><span class="sxs-lookup"><span data-stu-id="add04-109">[in]   The requested maximum number of tokens to place in `rGenericParamConstraints`.</span></span>  
   
  `pcGenericParamConstraints`  
- <span data-ttu-id="a4800-110">[out] Ukazatel na počet tokenů umístěny do `rGenericParamConstraints`.</span><span class="sxs-lookup"><span data-stu-id="a4800-110">[out] A pointer to the number of tokens placed in `rGenericParamConstraints`.</span></span>  
+ <span data-ttu-id="add04-110">[out] Ukazatel na počet tokenů umístěny do `rGenericParamConstraints`.</span><span class="sxs-lookup"><span data-stu-id="add04-110">[out] A pointer to the number of tokens placed in `rGenericParamConstraints`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a4800-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a4800-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="add04-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="add04-111">Return Value</span></span>  
   
-|<span data-ttu-id="a4800-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="a4800-112">HRESULT</span></span>|<span data-ttu-id="a4800-113">Popis</span><span class="sxs-lookup"><span data-stu-id="a4800-113">Description</span></span>|  
+|<span data-ttu-id="add04-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="add04-112">HRESULT</span></span>|<span data-ttu-id="add04-113">Popis</span><span class="sxs-lookup"><span data-stu-id="add04-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="a4800-114">`EnumGenericParameterConstraints` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="a4800-114">`EnumGenericParameterConstraints` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="a4800-115">`phEnum` nemá žádné elementy člena.</span><span class="sxs-lookup"><span data-stu-id="a4800-115">`phEnum` has no member elements.</span></span> <span data-ttu-id="a4800-116">V takovém případě `pcGenericParameterConstraints` je nastavena na hodnotu 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="a4800-116">In this case, `pcGenericParameterConstraints` is set to 0 (zero).</span></span>|  
+|`S_OK`|<span data-ttu-id="add04-114">`EnumGenericParameterConstraints` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="add04-114">`EnumGenericParameterConstraints` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="add04-115">`phEnum` nemá žádné elementy člena.</span><span class="sxs-lookup"><span data-stu-id="add04-115">`phEnum` has no member elements.</span></span> <span data-ttu-id="add04-116">V takovém případě `pcGenericParameterConstraints` je nastavena na hodnotu 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="add04-116">In this case, `pcGenericParameterConstraints` is set to 0 (zero).</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="a4800-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a4800-117">Requirements</span></span>  
- <span data-ttu-id="a4800-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a4800-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="add04-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="add04-117">Requirements</span></span>  
+ <span data-ttu-id="add04-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="add04-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a4800-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="a4800-119">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="add04-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="add04-119">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="a4800-120">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a4800-120">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="add04-120">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="add04-120">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="a4800-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a4800-121">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="add04-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="add04-121">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a4800-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a4800-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="add04-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="add04-122">See also</span></span>
 
-- [<span data-ttu-id="a4800-123">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a4800-123">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [<span data-ttu-id="a4800-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a4800-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="add04-123">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="add04-123">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="add04-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="add04-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

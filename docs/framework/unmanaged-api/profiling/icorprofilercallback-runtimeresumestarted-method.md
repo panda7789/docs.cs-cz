@@ -17,32 +17,32 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2b163d41280c8ea49554cecb845c4be757f55dfc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5fcc9d19a400e23d98a997d051c26af1c1084a3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921976"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783027"
 ---
-# <a name="icorprofilercallbackruntimeresumestarted-method"></a><span data-ttu-id="ee1fd-102">ICorProfilerCallback::RuntimeResumeStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="ee1fd-102">ICorProfilerCallback::RuntimeResumeStarted Method</span></span>
-<span data-ttu-id="ee1fd-103">Oznámí profileru, že modul runtime obnovuje všemi vlákny za běhu.</span><span class="sxs-lookup"><span data-stu-id="ee1fd-103">Notifies the profiler that the runtime is resuming all run-time threads.</span></span>  
+# <a name="icorprofilercallbackruntimeresumestarted-method"></a><span data-ttu-id="859db-102">ICorProfilerCallback::RuntimeResumeStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="859db-102">ICorProfilerCallback::RuntimeResumeStarted Method</span></span>
+<span data-ttu-id="859db-103">Oznámí profileru, že modul runtime obnovuje všemi vlákny za běhu.</span><span class="sxs-lookup"><span data-stu-id="859db-103">Notifies the profiler that the runtime is resuming all run-time threads.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ee1fd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ee1fd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="859db-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="859db-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT RuntimeResumeStarted();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="ee1fd-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ee1fd-105">Requirements</span></span>  
- <span data-ttu-id="ee1fd-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ee1fd-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="859db-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="859db-105">Requirements</span></span>  
+ <span data-ttu-id="859db-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="859db-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ee1fd-107">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="ee1fd-107">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="859db-107">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="859db-107">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="ee1fd-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ee1fd-108">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="859db-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="859db-108">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ee1fd-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ee1fd-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="859db-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="859db-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ee1fd-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ee1fd-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="859db-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="859db-110">See also</span></span>
 
-- [<span data-ttu-id="ee1fd-111">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ee1fd-111">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="ee1fd-112">RuntimeResumeFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="ee1fd-112">RuntimeResumeFinished Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumefinished-method.md)
+- [<span data-ttu-id="859db-111">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="859db-111">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="859db-112">RuntimeResumeFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="859db-112">RuntimeResumeFinished Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumefinished-method.md)

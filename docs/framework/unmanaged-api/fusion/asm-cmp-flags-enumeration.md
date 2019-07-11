@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a37355365f337527bbc9254cae6e6f3d3f2f604
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 28157d2ed223d89af4b4314035e7c03d572be7b8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914733"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778563"
 ---
-# <a name="asmcmpflags-enumeration"></a><span data-ttu-id="91e18-102">ASM_CMP_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="91e18-102">ASM_CMP_FLAGS Enumeration</span></span>
-<span data-ttu-id="91e18-103">Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, dvě sestavení, který se má porovnat pomocí [iassemblyname::isequal –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="91e18-103">Indicates the version, build, culture, signature, and so on, of two assemblies to be compared by the [IAssemblyName::IsEqual](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) method.</span></span>  
+# <a name="asmcmpflags-enumeration"></a><span data-ttu-id="32fba-102">ASM_CMP_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="32fba-102">ASM_CMP_FLAGS Enumeration</span></span>
+<span data-ttu-id="32fba-103">Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, dvě sestavení, který se má porovnat pomocí [iassemblyname::isequal –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="32fba-103">Indicates the version, build, culture, signature, and so on, of two assemblies to be compared by the [IAssemblyName::IsEqual](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="91e18-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="91e18-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="32fba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="32fba-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef enum {  
   
     ASM_CMPF_NAME                   = 0x1,  
@@ -67,16 +67,16 @@ typedef enum {
 } ASM_CMP_FLAGS;  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="91e18-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="91e18-105">Requirements</span></span>  
- <span data-ttu-id="91e18-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="91e18-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="32fba-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="32fba-105">Requirements</span></span>  
+ <span data-ttu-id="32fba-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="32fba-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="91e18-107">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="91e18-107">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="32fba-107">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="32fba-107">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="91e18-108">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="91e18-108">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="32fba-108">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="32fba-108">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="91e18-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="91e18-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="32fba-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="32fba-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="91e18-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91e18-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="32fba-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="32fba-110">See also</span></span>
 
-- [<span data-ttu-id="91e18-111">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="91e18-111">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [<span data-ttu-id="91e18-112">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="91e18-112">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [<span data-ttu-id="32fba-111">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32fba-111">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [<span data-ttu-id="32fba-112">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="32fba-112">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)

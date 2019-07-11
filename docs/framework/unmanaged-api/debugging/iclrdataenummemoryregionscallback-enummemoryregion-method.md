@@ -17,46 +17,46 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85b1c5455cb2008a352461d6b506e43fcef48d17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5c03b7010418f75aff984102d7fa4fb089c4d59
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698236"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67738819"
 ---
-# <a name="iclrdataenummemoryregionscallbackenummemoryregion-method"></a><span data-ttu-id="af1dc-102">ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion – metoda</span><span class="sxs-lookup"><span data-stu-id="af1dc-102">ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion Method</span></span>
-<span data-ttu-id="af1dc-103">Volané [iclrdataenummemoryregions::enummemoryregions –](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) k poskytnutí zprávy ladicímu programu výsledek pokusu o výčet určité oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="af1dc-103">Called by [ICLRDataEnumMemoryRegions::EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) to report to the debugger the result of an attempt to enumerate a specified region of memory.</span></span>  
+# <a name="iclrdataenummemoryregionscallbackenummemoryregion-method"></a><span data-ttu-id="7dca5-102">ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion – metoda</span><span class="sxs-lookup"><span data-stu-id="7dca5-102">ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion Method</span></span>
+<span data-ttu-id="7dca5-103">Volané [iclrdataenummemoryregions::enummemoryregions –](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) k poskytnutí zprávy ladicímu programu výsledek pokusu o výčet určité oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="7dca5-103">Called by [ICLRDataEnumMemoryRegions::EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) to report to the debugger the result of an attempt to enumerate a specified region of memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="af1dc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af1dc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7dca5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7dca5-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT EnumMemoryRegion (  
     [in] CLRDATA_ADDRESS  address,  
     [in] ULONG32          size  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="af1dc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="af1dc-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7dca5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7dca5-105">Parameters</span></span>  
  `address`  
- <span data-ttu-id="af1dc-106">[in] Počáteční adresa, která byla pro provedení výčtu oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="af1dc-106">[in] The starting address of the memory region that was to be enumerated.</span></span>  
+ <span data-ttu-id="7dca5-106">[in] Počáteční adresa, která byla pro provedení výčtu oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="7dca5-106">[in] The starting address of the memory region that was to be enumerated.</span></span>  
   
  `size`  
- <span data-ttu-id="af1dc-107">[in] Velikost v bajtech, oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="af1dc-107">[in] The size, in bytes, of the memory region.</span></span>  
+ <span data-ttu-id="7dca5-107">[in] Velikost v bajtech, oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="7dca5-107">[in] The size, in bytes, of the memory region.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="af1dc-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="af1dc-108">Remarks</span></span>  
- <span data-ttu-id="af1dc-109">`ICLRDataEnumMemoryRegions::EnumMemoryRegions` Metoda zavolá tato metoda zpětného volání po každém pokusu o výčet oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="af1dc-109">The `ICLRDataEnumMemoryRegions::EnumMemoryRegions` method will call this callback method after each attempt to enumerate a memory region.</span></span> <span data-ttu-id="af1dc-110">Výčet pokračovat i v případě, že tato metoda vrátí hodnotu HRESULT označující selhání.</span><span class="sxs-lookup"><span data-stu-id="af1dc-110">The enumeration will continue even if this method returns an HRESULT indicating failure.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7dca5-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7dca5-108">Remarks</span></span>  
+ <span data-ttu-id="7dca5-109">`ICLRDataEnumMemoryRegions::EnumMemoryRegions` Metoda zavolá tato metoda zpětného volání po každém pokusu o výčet oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="7dca5-109">The `ICLRDataEnumMemoryRegions::EnumMemoryRegions` method will call this callback method after each attempt to enumerate a memory region.</span></span> <span data-ttu-id="7dca5-110">Výčet pokračovat i v případě, že tato metoda vrátí hodnotu HRESULT označující selhání.</span><span class="sxs-lookup"><span data-stu-id="7dca5-110">The enumeration will continue even if this method returns an HRESULT indicating failure.</span></span>  
   
- <span data-ttu-id="af1dc-111">Oblasti hlášených toto zpětné volání může být duplicitní nebo překrývající se oblasti.</span><span class="sxs-lookup"><span data-stu-id="af1dc-111">Regions reported by this callback may be duplicates or overlapping regions.</span></span>  
+ <span data-ttu-id="7dca5-111">Oblasti hlášených toto zpětné volání může být duplicitní nebo překrývající se oblasti.</span><span class="sxs-lookup"><span data-stu-id="7dca5-111">Regions reported by this callback may be duplicates or overlapping regions.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="af1dc-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="af1dc-112">Requirements</span></span>  
- <span data-ttu-id="af1dc-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="af1dc-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7dca5-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7dca5-112">Requirements</span></span>  
+ <span data-ttu-id="7dca5-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7dca5-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="af1dc-114">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="af1dc-114">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="7dca5-114">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="7dca5-114">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="af1dc-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="af1dc-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="7dca5-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7dca5-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="af1dc-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="af1dc-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="7dca5-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7dca5-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="af1dc-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="af1dc-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7dca5-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7dca5-117">See also</span></span>
 
-- [<span data-ttu-id="af1dc-118">ICLRDataEnumMemoryRegionsCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="af1dc-118">ICLRDataEnumMemoryRegionsCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md)
+- [<span data-ttu-id="7dca5-118">ICLRDataEnumMemoryRegionsCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7dca5-118">ICLRDataEnumMemoryRegionsCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md)

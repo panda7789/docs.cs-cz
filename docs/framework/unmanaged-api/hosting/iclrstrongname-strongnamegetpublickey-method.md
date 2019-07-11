@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2acade14f9d30ca7bf0d098d6f58c80a367f621c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1d98ada710771029e92ae2a942105e361a6ac7c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795938"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747974"
 ---
-# <a name="iclrstrongnamestrongnamegetpublickey-method"></a><span data-ttu-id="4e04c-102">ICLRStrongName::StrongNameGetPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="4e04c-102">ICLRStrongName::StrongNameGetPublicKey Method</span></span>
-<span data-ttu-id="4e04c-103">Získá veřejný klíč z dvojice veřejného/soukromého klíče.</span><span class="sxs-lookup"><span data-stu-id="4e04c-103">Gets the public key from a public/private key pair.</span></span> <span data-ttu-id="4e04c-104">Pár klíčů může být zadán buď jako název kontejneru klíčů ve zprostředkovateli kryptografických služeb (CSP), nebo jako nezpracovaný kolekce bajtů.</span><span class="sxs-lookup"><span data-stu-id="4e04c-104">The key pair can be supplied either as a key container name within a cryptographic service provider (CSP) or as a raw collection of bytes.</span></span>  
+# <a name="iclrstrongnamestrongnamegetpublickey-method"></a><span data-ttu-id="35d04-102">ICLRStrongName::StrongNameGetPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="35d04-102">ICLRStrongName::StrongNameGetPublicKey Method</span></span>
+<span data-ttu-id="35d04-103">Získá veřejný klíč z dvojice veřejného/soukromého klíče.</span><span class="sxs-lookup"><span data-stu-id="35d04-103">Gets the public key from a public/private key pair.</span></span> <span data-ttu-id="35d04-104">Pár klíčů může být zadán buď jako název kontejneru klíčů ve zprostředkovateli kryptografických služeb (CSP), nebo jako nezpracovaný kolekce bajtů.</span><span class="sxs-lookup"><span data-stu-id="35d04-104">The key pair can be supplied either as a key container name within a cryptographic service provider (CSP) or as a raw collection of bytes.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4e04c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4e04c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="35d04-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="35d04-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT StrongNameGetPublicKey (   
     [in]  LPCWSTR   szKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
@@ -39,43 +39,43 @@ HRESULT StrongNameGetPublicKey (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="4e04c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="4e04c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="35d04-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="35d04-106">Parameters</span></span>  
  `szKeyContainer`  
- <span data-ttu-id="4e04c-107">[in] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="4e04c-107">[in] The name of the key container that contains the public/private key pair.</span></span> <span data-ttu-id="4e04c-108">Pokud `pbKeyBlob` má hodnotu null, `szKeyContainer` musíte zadat platný kontejner ve zprostředkovateli CSP.</span><span class="sxs-lookup"><span data-stu-id="4e04c-108">If `pbKeyBlob` is null, `szKeyContainer` must specify a valid container within the CSP.</span></span> <span data-ttu-id="4e04c-109">V takovém případě [iclrstrongname::strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md) metoda extrahuje veřejný klíč z páru klíčů ukládat do kontejneru.</span><span class="sxs-lookup"><span data-stu-id="4e04c-109">In this case, the [ICLRStrongName::StrongNameGetPublicKey](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md) method extracts the public key from the key pair stored in the container.</span></span>  
+ <span data-ttu-id="35d04-107">[in] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="35d04-107">[in] The name of the key container that contains the public/private key pair.</span></span> <span data-ttu-id="35d04-108">Pokud `pbKeyBlob` má hodnotu null, `szKeyContainer` musíte zadat platný kontejner ve zprostředkovateli CSP.</span><span class="sxs-lookup"><span data-stu-id="35d04-108">If `pbKeyBlob` is null, `szKeyContainer` must specify a valid container within the CSP.</span></span> <span data-ttu-id="35d04-109">V takovém případě [iclrstrongname::strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md) metoda extrahuje veřejný klíč z páru klíčů ukládat do kontejneru.</span><span class="sxs-lookup"><span data-stu-id="35d04-109">In this case, the [ICLRStrongName::StrongNameGetPublicKey](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md) method extracts the public key from the key pair stored in the container.</span></span>  
   
- <span data-ttu-id="4e04c-110">Pokud `pbKeyBlob` nemá hodnotu null, pár klíčů se předpokládá, že mají být obsažena v klíče binární velkých objektů (BLOB).</span><span class="sxs-lookup"><span data-stu-id="4e04c-110">If `pbKeyBlob` is not null, the key pair is assumed to be contained in the key binary large object (BLOB).</span></span>  
+ <span data-ttu-id="35d04-110">Pokud `pbKeyBlob` nemá hodnotu null, pár klíčů se předpokládá, že mají být obsažena v klíče binární velkých objektů (BLOB).</span><span class="sxs-lookup"><span data-stu-id="35d04-110">If `pbKeyBlob` is not null, the key pair is assumed to be contained in the key binary large object (BLOB).</span></span>  
   
- <span data-ttu-id="4e04c-111">Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů.</span><span class="sxs-lookup"><span data-stu-id="4e04c-111">The keys must be 1024-bit Rivest-Shamir-Adleman (RSA) signing keys.</span></span> <span data-ttu-id="4e04c-112">Jiné typy klíčů jsou v tuto chvíli nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="4e04c-112">No other types of keys are supported at this time.</span></span>  
+ <span data-ttu-id="35d04-111">Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů.</span><span class="sxs-lookup"><span data-stu-id="35d04-111">The keys must be 1024-bit Rivest-Shamir-Adleman (RSA) signing keys.</span></span> <span data-ttu-id="35d04-112">Jiné typy klíčů jsou v tuto chvíli nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="35d04-112">No other types of keys are supported at this time.</span></span>  
   
  `pbKeyBlob`  
- <span data-ttu-id="4e04c-113">[in] Ukazatel na pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="4e04c-113">[in] A pointer to the public/private key pair.</span></span> <span data-ttu-id="4e04c-114">Tento pár je ve formátu vytvořené Win32 `CryptExportKey` funkce.</span><span class="sxs-lookup"><span data-stu-id="4e04c-114">This pair is in the format created by the Win32 `CryptExportKey` function.</span></span> <span data-ttu-id="4e04c-115">Pokud `pbKeyBlob` je null, použije kontejneru klíčů určeném parametrem `szKeyContainer` se předpokládá, že obsahuje pár klíčů.</span><span class="sxs-lookup"><span data-stu-id="4e04c-115">If `pbKeyBlob` is null, the key container specified by `szKeyContainer` is assumed to contain the key pair.</span></span>  
+ <span data-ttu-id="35d04-113">[in] Ukazatel na pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="35d04-113">[in] A pointer to the public/private key pair.</span></span> <span data-ttu-id="35d04-114">Tento pár je ve formátu vytvořené Win32 `CryptExportKey` funkce.</span><span class="sxs-lookup"><span data-stu-id="35d04-114">This pair is in the format created by the Win32 `CryptExportKey` function.</span></span> <span data-ttu-id="35d04-115">Pokud `pbKeyBlob` je null, použije kontejneru klíčů určeném parametrem `szKeyContainer` se předpokládá, že obsahuje pár klíčů.</span><span class="sxs-lookup"><span data-stu-id="35d04-115">If `pbKeyBlob` is null, the key container specified by `szKeyContainer` is assumed to contain the key pair.</span></span>  
   
  `cbKeyBlob`  
- <span data-ttu-id="4e04c-116">[in] Velikost v bajtech, z `pbKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="4e04c-116">[in] The size, in bytes, of `pbKeyBlob`.</span></span>  
+ <span data-ttu-id="35d04-116">[in] Velikost v bajtech, z `pbKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="35d04-116">[in] The size, in bytes, of `pbKeyBlob`.</span></span>  
   
  `ppbPublicKeyBlob`  
- <span data-ttu-id="4e04c-117">[out] Vrácené veřejného klíče objektu BLOB.</span><span class="sxs-lookup"><span data-stu-id="4e04c-117">[out] The returned public key BLOB.</span></span> <span data-ttu-id="4e04c-118">`ppbPublicKeyBlob` Parametr je přidělí modul common language runtime a vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="4e04c-118">The `ppbPublicKeyBlob` parameter is allocated by the common language runtime and returned to the caller.</span></span> <span data-ttu-id="4e04c-119">Volající musí uvolnit paměť pomocí [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="4e04c-119">The caller must free the memory by using the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method.</span></span>  
+ <span data-ttu-id="35d04-117">[out] Vrácené veřejného klíče objektu BLOB.</span><span class="sxs-lookup"><span data-stu-id="35d04-117">[out] The returned public key BLOB.</span></span> <span data-ttu-id="35d04-118">`ppbPublicKeyBlob` Parametr je přidělí modul common language runtime a vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="35d04-118">The `ppbPublicKeyBlob` parameter is allocated by the common language runtime and returned to the caller.</span></span> <span data-ttu-id="35d04-119">Volající musí uvolnit paměť pomocí [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="35d04-119">The caller must free the memory by using the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method.</span></span>  
   
  `pcbPublicKeyBlob`  
- <span data-ttu-id="4e04c-120">[out] Velikost veřejného klíče vráceného objektu BLOB.</span><span class="sxs-lookup"><span data-stu-id="4e04c-120">[out] The size of the returned public key BLOB.</span></span>  
+ <span data-ttu-id="35d04-120">[out] Velikost veřejného klíče vráceného objektu BLOB.</span><span class="sxs-lookup"><span data-stu-id="35d04-120">[out] The size of the returned public key BLOB.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="4e04c-121">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4e04c-121">Return Value</span></span>  
- <span data-ttu-id="4e04c-122">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="4e04c-122">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="35d04-121">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="35d04-121">Return Value</span></span>  
+ <span data-ttu-id="35d04-122">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="35d04-122">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4e04c-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4e04c-123">Remarks</span></span>  
- <span data-ttu-id="4e04c-124">Veřejný klíč je součástí [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) struktury.</span><span class="sxs-lookup"><span data-stu-id="4e04c-124">The public key is contained in a [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) structure.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="35d04-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="35d04-123">Remarks</span></span>  
+ <span data-ttu-id="35d04-124">Veřejný klíč je součástí [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) struktury.</span><span class="sxs-lookup"><span data-stu-id="35d04-124">The public key is contained in a [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) structure.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4e04c-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4e04c-125">Requirements</span></span>  
- <span data-ttu-id="4e04c-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4e04c-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="35d04-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="35d04-125">Requirements</span></span>  
+ <span data-ttu-id="35d04-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="35d04-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4e04c-127">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="4e04c-127">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="35d04-127">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="35d04-127">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="4e04c-128">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4e04c-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="35d04-128">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="35d04-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="4e04c-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4e04c-129">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="35d04-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="35d04-129">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4e04c-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4e04c-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35d04-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="35d04-130">See also</span></span>
 
-- [<span data-ttu-id="4e04c-131">StrongNameTokenFromPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="4e04c-131">StrongNameTokenFromPublicKey Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
-- [<span data-ttu-id="4e04c-132">PublicKeyBlob – struktura</span><span class="sxs-lookup"><span data-stu-id="4e04c-132">PublicKeyBlob Structure</span></span>](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
-- [<span data-ttu-id="4e04c-133">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4e04c-133">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [<span data-ttu-id="35d04-131">StrongNameTokenFromPublicKey – metoda</span><span class="sxs-lookup"><span data-stu-id="35d04-131">StrongNameTokenFromPublicKey Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
+- [<span data-ttu-id="35d04-132">PublicKeyBlob – struktura</span><span class="sxs-lookup"><span data-stu-id="35d04-132">PublicKeyBlob Structure</span></span>](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
+- [<span data-ttu-id="35d04-133">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="35d04-133">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

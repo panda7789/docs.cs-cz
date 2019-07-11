@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5cd6b74ce2871cfafc0dc2260be3f758f6a28704
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f182dad17e28cc5d19393bb4e13d747e34249fb
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777855"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782479"
 ---
-# <a name="imetadataimportfindtypedefbyname-method"></a><span data-ttu-id="8a901-102">IMetaDataImport::FindTypeDefByName – metoda</span><span class="sxs-lookup"><span data-stu-id="8a901-102">IMetaDataImport::FindTypeDefByName Method</span></span>
-<span data-ttu-id="8a901-103">Získá ukazatel na TypeDef metadata token pro <xref:System.Type> se zadaným názvem.</span><span class="sxs-lookup"><span data-stu-id="8a901-103">Gets a pointer to the TypeDef metadata token for the <xref:System.Type> with the specified name.</span></span>  
+# <a name="imetadataimportfindtypedefbyname-method"></a><span data-ttu-id="407ee-102">IMetaDataImport::FindTypeDefByName – metoda</span><span class="sxs-lookup"><span data-stu-id="407ee-102">IMetaDataImport::FindTypeDefByName Method</span></span>
+<span data-ttu-id="407ee-103">Získá ukazatel na TypeDef metadata token pro <xref:System.Type> se zadaným názvem.</span><span class="sxs-lookup"><span data-stu-id="407ee-103">Gets a pointer to the TypeDef metadata token for the <xref:System.Type> with the specified name.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8a901-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8a901-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="407ee-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="407ee-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT FindTypeDefByName  
    [in]  LPCWSTR       szTypeDef,  
    [in]  mdToken       tkEnclosingClass,  
@@ -37,26 +37,26 @@ HRESULT FindTypeDefByName
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8a901-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8a901-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="407ee-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="407ee-105">Parameters</span></span>  
  `szTypeDef`  
- <span data-ttu-id="8a901-106">[in] Název typu, pro které chcete získat token TypeDef.</span><span class="sxs-lookup"><span data-stu-id="8a901-106">[in] The name of the type for which to get the TypeDef token.</span></span>  
+ <span data-ttu-id="407ee-106">[in] Název typu, pro které chcete získat token TypeDef.</span><span class="sxs-lookup"><span data-stu-id="407ee-106">[in] The name of the type for which to get the TypeDef token.</span></span>  
   
  `tkEnclosingClass`  
- <span data-ttu-id="8a901-107">[in] Token TypeDef nebo TypeRef představující nadřazené třídy.</span><span class="sxs-lookup"><span data-stu-id="8a901-107">[in] A TypeDef or TypeRef token representing the enclosing class.</span></span> <span data-ttu-id="8a901-108">Pokud hledaný typ není vnořené třídy, nastavte tuto hodnotu na hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="8a901-108">If the type to find is not a nested class, set this value to NULL.</span></span>  
+ <span data-ttu-id="407ee-107">[in] Token TypeDef nebo TypeRef představující nadřazené třídy.</span><span class="sxs-lookup"><span data-stu-id="407ee-107">[in] A TypeDef or TypeRef token representing the enclosing class.</span></span> <span data-ttu-id="407ee-108">Pokud hledaný typ není vnořené třídy, nastavte tuto hodnotu na hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="407ee-108">If the type to find is not a nested class, set this value to NULL.</span></span>  
   
  `ptd`  
- <span data-ttu-id="8a901-109">[out] Ukazatel na odpovídající token TypeDef.</span><span class="sxs-lookup"><span data-stu-id="8a901-109">[out] A pointer to the matching TypeDef token.</span></span>  
+ <span data-ttu-id="407ee-109">[out] Ukazatel na odpovídající token TypeDef.</span><span class="sxs-lookup"><span data-stu-id="407ee-109">[out] A pointer to the matching TypeDef token.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8a901-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8a901-110">Requirements</span></span>  
- <span data-ttu-id="8a901-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8a901-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="407ee-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="407ee-110">Requirements</span></span>  
+ <span data-ttu-id="407ee-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="407ee-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8a901-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="8a901-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="407ee-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="407ee-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="8a901-113">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="8a901-113">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="407ee-113">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="407ee-113">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="8a901-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8a901-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="407ee-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="407ee-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8a901-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8a901-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="407ee-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="407ee-115">See also</span></span>
 
-- [<span data-ttu-id="8a901-116">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8a901-116">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="8a901-117">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8a901-117">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="407ee-116">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="407ee-116">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="407ee-117">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="407ee-117">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

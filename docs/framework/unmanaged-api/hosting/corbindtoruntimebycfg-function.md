@@ -16,21 +16,21 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 07d2f08792b6fdea28bd56045de8da30ab552a4f
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a8f5e9a909a752dd8dc70bfc1c683b4611715f31
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490582"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67767973"
 ---
-# <a name="corbindtoruntimebycfg-function"></a><span data-ttu-id="bae6d-102">CorBindToRuntimeByCfg – funkce</span><span class="sxs-lookup"><span data-stu-id="bae6d-102">CorBindToRuntimeByCfg Function</span></span>
-<span data-ttu-id="bae6d-103">Načte modul CLR (CLR) do procesu pomocí informací o verzi, která je pro čtení ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="bae6d-103">Loads the common language runtime (CLR) into a process by using version information that is read from an XML file.</span></span>  
+# <a name="corbindtoruntimebycfg-function"></a><span data-ttu-id="64346-102">CorBindToRuntimeByCfg – funkce</span><span class="sxs-lookup"><span data-stu-id="64346-102">CorBindToRuntimeByCfg Function</span></span>
+<span data-ttu-id="64346-103">Načte modul CLR (CLR) do procesu pomocí informací o verzi, která je pro čtení ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="64346-103">Loads the common language runtime (CLR) into a process by using version information that is read from an XML file.</span></span>  
   
- <span data-ttu-id="bae6d-104">Tato funkce se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="bae6d-104">This function has been deprecated in the .NET Framework 4.</span></span>  
+ <span data-ttu-id="64346-104">Tato funkce se již nepoužívá v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="64346-104">This function has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="bae6d-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bae6d-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="64346-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="64346-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT CorBindToRuntimeByCfg (  
     [in]  IStream     *pCfgStream,  
     [in]  DWORD        reserved,  
@@ -41,42 +41,42 @@ HRESULT CorBindToRuntimeByCfg (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="bae6d-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="bae6d-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="64346-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="64346-106">Parameters</span></span>  
  `pCfgStream`  
- <span data-ttu-id="bae6d-107">[in] Ukazatel `IStream` objekt, který přečte soubor XML.</span><span class="sxs-lookup"><span data-stu-id="bae6d-107">[in] A pointer to an `IStream` object that reads the XML file.</span></span>  
+ <span data-ttu-id="64346-107">[in] Ukazatel `IStream` objekt, který přečte soubor XML.</span><span class="sxs-lookup"><span data-stu-id="64346-107">[in] A pointer to an `IStream` object that reads the XML file.</span></span>  
   
  `reserved`  
- <span data-ttu-id="bae6d-108">[in] Vyhrazeno pro budoucí použití.</span><span class="sxs-lookup"><span data-stu-id="bae6d-108">[in] Reserved for future use.</span></span> <span data-ttu-id="bae6d-109">Použít jako hodnotu 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="bae6d-109">Use 0 (zero) as value.</span></span>  
+ <span data-ttu-id="64346-108">[in] Vyhrazeno pro budoucí použití.</span><span class="sxs-lookup"><span data-stu-id="64346-108">[in] Reserved for future use.</span></span> <span data-ttu-id="64346-109">Použít jako hodnotu 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="64346-109">Use 0 (zero) as value.</span></span>  
   
  `startupFlags`  
- <span data-ttu-id="bae6d-110">[in] Hodnota [startup_flags –](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčet, který určuje chování při spuštění modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="bae6d-110">[in] A value of the [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) enumeration that specifies the startup behavior of the CLR.</span></span>  
+ <span data-ttu-id="64346-110">[in] Hodnota [startup_flags –](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčet, který určuje chování při spuštění modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="64346-110">[in] A value of the [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) enumeration that specifies the startup behavior of the CLR.</span></span>  
   
  `rclsid`  
- <span data-ttu-id="bae6d-111">[in] `CLSID` Třídy typu coclass, která implementuje [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bae6d-111">[in] The `CLSID` of the coclass that implements either the [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) or the [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) interface.</span></span> <span data-ttu-id="bae6d-112">Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.</span><span class="sxs-lookup"><span data-stu-id="bae6d-112">Supported values are CLSID_CorRuntimeHost or CLSID_CLRRuntimeHost.</span></span>  
+ <span data-ttu-id="64346-111">[in] `CLSID` Třídy typu coclass, která implementuje [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="64346-111">[in] The `CLSID` of the coclass that implements either the [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) or the [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) interface.</span></span> <span data-ttu-id="64346-112">Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.</span><span class="sxs-lookup"><span data-stu-id="64346-112">Supported values are CLSID_CorRuntimeHost or CLSID_CLRRuntimeHost.</span></span>  
   
  `riid`  
- <span data-ttu-id="bae6d-113">[in] `IID` Buď `ICorRuntimeHost` nebo `ICLRRuntimeHost` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bae6d-113">[in] The `IID` of either the `ICorRuntimeHost` or the `ICLRRuntimeHost` interface.</span></span> <span data-ttu-id="bae6d-114">Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.</span><span class="sxs-lookup"><span data-stu-id="bae6d-114">Supported values are IID_ICorRuntimeHost or IID_ICLRRuntimeHost.</span></span>  
+ <span data-ttu-id="64346-113">[in] `IID` Buď `ICorRuntimeHost` nebo `ICLRRuntimeHost` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="64346-113">[in] The `IID` of either the `ICorRuntimeHost` or the `ICLRRuntimeHost` interface.</span></span> <span data-ttu-id="64346-114">Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.</span><span class="sxs-lookup"><span data-stu-id="64346-114">Supported values are IID_ICorRuntimeHost or IID_ICLRRuntimeHost.</span></span>  
   
  `ppv`  
- <span data-ttu-id="bae6d-115">[out] Ukazatel na adresu vrácené rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bae6d-115">[out] A pointer to the address of the returned interface.</span></span>  
+ <span data-ttu-id="64346-115">[out] Ukazatel na adresu vrácené rozhraní.</span><span class="sxs-lookup"><span data-stu-id="64346-115">[out] A pointer to the address of the returned interface.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="bae6d-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bae6d-116">Remarks</span></span>  
- <span data-ttu-id="bae6d-117">Formát souboru XML je Modelováno podle konfiguračního souboru standardní aplikace.</span><span class="sxs-lookup"><span data-stu-id="bae6d-117">The format of the XML file is modeled after the standard application configuration file.</span></span> <span data-ttu-id="bae6d-118">Další informace o souborech XML, naleznete v tématu [schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="bae6d-118">For more information about XML files, see [Configuration File Schema](../../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="64346-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="64346-116">Remarks</span></span>  
+ <span data-ttu-id="64346-117">Formát souboru XML je Modelováno podle konfiguračního souboru standardní aplikace.</span><span class="sxs-lookup"><span data-stu-id="64346-117">The format of the XML file is modeled after the standard application configuration file.</span></span> <span data-ttu-id="64346-118">Další informace o souborech XML, naleznete v tématu [schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="64346-118">For more information about XML files, see [Configuration File Schema](../../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="bae6d-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bae6d-119">Requirements</span></span>  
- <span data-ttu-id="bae6d-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bae6d-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="64346-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="64346-119">Requirements</span></span>  
+ <span data-ttu-id="64346-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="64346-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="bae6d-121">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="bae6d-121">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="64346-121">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="64346-121">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="bae6d-122">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="bae6d-122">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="64346-122">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="64346-122">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="bae6d-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bae6d-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="64346-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="64346-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bae6d-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bae6d-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="64346-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="64346-124">See also</span></span>
 
-- [<span data-ttu-id="bae6d-125">CorBindToCurrentRuntime – funkce</span><span class="sxs-lookup"><span data-stu-id="bae6d-125">CorBindToCurrentRuntime Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)
-- [<span data-ttu-id="bae6d-126">CorBindToRuntime – funkce</span><span class="sxs-lookup"><span data-stu-id="bae6d-126">CorBindToRuntime Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md)
-- [<span data-ttu-id="bae6d-127">CorBindToRuntimeEx – funkce</span><span class="sxs-lookup"><span data-stu-id="bae6d-127">CorBindToRuntimeEx Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)
-- [<span data-ttu-id="bae6d-128">CorBindToRuntimeHost – funkce</span><span class="sxs-lookup"><span data-stu-id="bae6d-128">CorBindToRuntimeHost Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md)
-- [<span data-ttu-id="bae6d-129">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bae6d-129">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
-- [<span data-ttu-id="bae6d-130">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="bae6d-130">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="64346-125">CorBindToCurrentRuntime – funkce</span><span class="sxs-lookup"><span data-stu-id="64346-125">CorBindToCurrentRuntime Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)
+- [<span data-ttu-id="64346-126">CorBindToRuntime – funkce</span><span class="sxs-lookup"><span data-stu-id="64346-126">CorBindToRuntime Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md)
+- [<span data-ttu-id="64346-127">CorBindToRuntimeEx – funkce</span><span class="sxs-lookup"><span data-stu-id="64346-127">CorBindToRuntimeEx Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)
+- [<span data-ttu-id="64346-128">CorBindToRuntimeHost – funkce</span><span class="sxs-lookup"><span data-stu-id="64346-128">CorBindToRuntimeHost Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md)
+- [<span data-ttu-id="64346-129">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="64346-129">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [<span data-ttu-id="64346-130">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="64346-130">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

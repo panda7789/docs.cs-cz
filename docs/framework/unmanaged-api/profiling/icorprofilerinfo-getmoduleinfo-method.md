@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69db53c03d68e30507ff3ab2b11b663970d59af0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ceca2133068d3ed011b9499024d127a3dd9279ed
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049593"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782775"
 ---
-# <a name="icorprofilerinfogetmoduleinfo-method"></a><span data-ttu-id="764b4-102">ICorProfilerInfo::GetModuleInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="764b4-102">ICorProfilerInfo::GetModuleInfo Method</span></span>
-<span data-ttu-id="764b4-103">Dané ID modulu vrátí název souboru modulu a ID modulu nadřazené sestavení.</span><span class="sxs-lookup"><span data-stu-id="764b4-103">Given a module ID, returns the file name of the module and the ID of the module's parent assembly.</span></span>  
+# <a name="icorprofilerinfogetmoduleinfo-method"></a><span data-ttu-id="4a469-102">ICorProfilerInfo::GetModuleInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="4a469-102">ICorProfilerInfo::GetModuleInfo Method</span></span>
+<span data-ttu-id="4a469-103">Dané ID modulu vrátí název souboru modulu a ID modulu nadřazené sestavení.</span><span class="sxs-lookup"><span data-stu-id="4a469-103">Given a module ID, returns the file name of the module and the ID of the module's parent assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="764b4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="764b4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4a469-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4a469-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetModuleInfo(  
     [in]  ModuleID   moduleId,  
     [out] LPCBYTE    *ppBaseLoadAddress,  
@@ -40,46 +40,46 @@ HRESULT GetModuleInfo(
     [out] AssemblyID *pAssemblyId);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="764b4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="764b4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4a469-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4a469-105">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="764b4-106">[in] ID modulu, pro kterou budou načteny informace.</span><span class="sxs-lookup"><span data-stu-id="764b4-106">[in] The ID of the module for which information will be retrieved.</span></span>  
+ <span data-ttu-id="4a469-106">[in] ID modulu, pro kterou budou načteny informace.</span><span class="sxs-lookup"><span data-stu-id="4a469-106">[in] The ID of the module for which information will be retrieved.</span></span>  
   
  `ppBaseLoadAddress`  
- <span data-ttu-id="764b4-107">[out] Základní adresa, načtení modulu.</span><span class="sxs-lookup"><span data-stu-id="764b4-107">[out] The base address at which the module is loaded.</span></span>  
+ <span data-ttu-id="4a469-107">[out] Základní adresa, načtení modulu.</span><span class="sxs-lookup"><span data-stu-id="4a469-107">[out] The base address at which the module is loaded.</span></span>  
   
  `cchName`  
- <span data-ttu-id="764b4-108">[in] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="764b4-108">[in] The length, in characters, of the `szName` return buffer.</span></span>  
+ <span data-ttu-id="4a469-108">[in] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="4a469-108">[in] The length, in characters, of the `szName` return buffer.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="764b4-109">[out] Celkový počet znaků z modulů název souboru, který je vrácen ukazatel.</span><span class="sxs-lookup"><span data-stu-id="764b4-109">[out] A pointer to the total character length of the module's file name that is returned.</span></span>  
+ <span data-ttu-id="4a469-109">[out] Celkový počet znaků z modulů název souboru, který je vrácen ukazatel.</span><span class="sxs-lookup"><span data-stu-id="4a469-109">[out] A pointer to the total character length of the module's file name that is returned.</span></span>  
   
  `szName`  
- <span data-ttu-id="764b4-110">[out] Pokud volající širokého znaku vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="764b4-110">[out] A caller-provided wide character buffer.</span></span> <span data-ttu-id="764b4-111">Po návratu metody obsahuje tuto vyrovnávací paměť názvu souboru modulu.</span><span class="sxs-lookup"><span data-stu-id="764b4-111">When the method returns, this buffer contains the file name of the module.</span></span>  
+ <span data-ttu-id="4a469-110">[out] Pokud volající širokého znaku vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="4a469-110">[out] A caller-provided wide character buffer.</span></span> <span data-ttu-id="4a469-111">Po návratu metody obsahuje tuto vyrovnávací paměť názvu souboru modulu.</span><span class="sxs-lookup"><span data-stu-id="4a469-111">When the method returns, this buffer contains the file name of the module.</span></span>  
   
  `pAssemblyId`  
- <span data-ttu-id="764b4-112">[out] Ukazatel na ID nadřazeného sestavení modulu.</span><span class="sxs-lookup"><span data-stu-id="764b4-112">[out] A pointer to the ID of the module's parent assembly.</span></span>  
+ <span data-ttu-id="4a469-112">[out] Ukazatel na ID nadřazeného sestavení modulu.</span><span class="sxs-lookup"><span data-stu-id="4a469-112">[out] A pointer to the ID of the module's parent assembly.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="764b4-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="764b4-113">Remarks</span></span>  
- <span data-ttu-id="764b4-114">Pro dynamické moduly `szName` parametru je prázdný řetězec a je základní adresa 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="764b4-114">For dynamic modules, the `szName` parameter is an empty string, and the base address is 0 (zero).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4a469-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4a469-113">Remarks</span></span>  
+ <span data-ttu-id="4a469-114">Pro dynamické moduly `szName` parametru je prázdný řetězec a je základní adresa 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="4a469-114">For dynamic modules, the `szName` parameter is an empty string, and the base address is 0 (zero).</span></span>  
   
- <span data-ttu-id="764b4-115">I když `GetModuleInfo` metoda může být volána jako ID modulu existuje, ID nadřazeného sestavení nebude k dispozici, dokud profiler obdrží [icorprofilercallback::moduleattachedtoassembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="764b4-115">Although the `GetModuleInfo` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.</span></span>  
+ <span data-ttu-id="4a469-115">I když `GetModuleInfo` metoda může být volána jako ID modulu existuje, ID nadřazeného sestavení nebude k dispozici, dokud profiler obdrží [icorprofilercallback::moduleattachedtoassembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="4a469-115">Although the `GetModuleInfo` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.</span></span>  
   
- <span data-ttu-id="764b4-116">Když `GetModuleInfo` vrátí, musíte ověřit, že `szName` vyrovnávací paměť je dostatečně velký, aby obsahovat úplný název souboru modulu.</span><span class="sxs-lookup"><span data-stu-id="764b4-116">When `GetModuleInfo` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module.</span></span> <span data-ttu-id="764b4-117">K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru.</span><span class="sxs-lookup"><span data-stu-id="764b4-117">To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter.</span></span> <span data-ttu-id="764b4-118">Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetModuleInfo` znovu.</span><span class="sxs-lookup"><span data-stu-id="764b4-118">If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo` again.</span></span>  
+ <span data-ttu-id="4a469-116">Když `GetModuleInfo` vrátí, musíte ověřit, že `szName` vyrovnávací paměť je dostatečně velký, aby obsahovat úplný název souboru modulu.</span><span class="sxs-lookup"><span data-stu-id="4a469-116">When `GetModuleInfo` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module.</span></span> <span data-ttu-id="4a469-117">K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru.</span><span class="sxs-lookup"><span data-stu-id="4a469-117">To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter.</span></span> <span data-ttu-id="4a469-118">Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetModuleInfo` znovu.</span><span class="sxs-lookup"><span data-stu-id="4a469-118">If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo` again.</span></span>  
   
- <span data-ttu-id="764b4-119">Alternativně můžete nejprve volat `GetModuleInfo` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="764b4-119">Alternatively, you can first call `GetModuleInfo` with a zero-length `szName` buffer to obtain the correct buffer size.</span></span> <span data-ttu-id="764b4-120">Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcchName` a volat `GetModuleInfo` znovu.</span><span class="sxs-lookup"><span data-stu-id="764b4-120">You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo` again.</span></span>  
+ <span data-ttu-id="4a469-119">Alternativně můžete nejprve volat `GetModuleInfo` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="4a469-119">Alternatively, you can first call `GetModuleInfo` with a zero-length `szName` buffer to obtain the correct buffer size.</span></span> <span data-ttu-id="4a469-120">Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcchName` a volat `GetModuleInfo` znovu.</span><span class="sxs-lookup"><span data-stu-id="4a469-120">You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo` again.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="764b4-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="764b4-121">Requirements</span></span>  
- <span data-ttu-id="764b4-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="764b4-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4a469-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4a469-121">Requirements</span></span>  
+ <span data-ttu-id="4a469-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4a469-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="764b4-123">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="764b4-123">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="4a469-123">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="4a469-123">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="764b4-124">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="764b4-124">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="4a469-124">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4a469-124">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="764b4-125">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="764b4-125">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4a469-125">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4a469-125">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="764b4-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="764b4-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4a469-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a469-126">See also</span></span>
 
-- [<span data-ttu-id="764b4-127">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="764b4-127">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="764b4-128">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="764b4-128">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [<span data-ttu-id="764b4-129">Profilace</span><span class="sxs-lookup"><span data-stu-id="764b4-129">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
-- [<span data-ttu-id="764b4-130">GetModuleInfo2 – metoda</span><span class="sxs-lookup"><span data-stu-id="764b4-130">GetModuleInfo2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md)
+- [<span data-ttu-id="4a469-127">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4a469-127">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="4a469-128">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="4a469-128">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="4a469-129">Profilace</span><span class="sxs-lookup"><span data-stu-id="4a469-129">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [<span data-ttu-id="4a469-130">GetModuleInfo2 – metoda</span><span class="sxs-lookup"><span data-stu-id="4a469-130">GetModuleInfo2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md)
