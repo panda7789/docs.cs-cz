@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5e36cb91c3ef741badb04b54e2b62158ecf6ced1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b09ccfdb33c9853ed97005461f2288f1e7e6fd1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045627"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781751"
 ---
-# <a name="cormethodsemanticsattr-enumeration"></a><span data-ttu-id="89f9f-102">CorMethodSemanticsAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="89f9f-102">CorMethodSemanticsAttr Enumeration</span></span>
-<span data-ttu-id="89f9f-103">Obsahuje hodnoty, které popisují vztah mezi metodu a přidružené vlastnosti nebo události.</span><span class="sxs-lookup"><span data-stu-id="89f9f-103">Contains values that describe the relationship between a method and an associated property or event.</span></span>  
+# <a name="cormethodsemanticsattr-enumeration"></a><span data-ttu-id="63156-102">CorMethodSemanticsAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="63156-102">CorMethodSemanticsAttr Enumeration</span></span>
+<span data-ttu-id="63156-103">Obsahuje hodnoty, které popisují vztah mezi metodu a přidružené vlastnosti nebo události.</span><span class="sxs-lookup"><span data-stu-id="63156-103">Contains values that describe the relationship between a method and an associated property or event.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="89f9f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="89f9f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="63156-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="63156-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef enum CorMethodSemanticsAttr {  
   
     msSetter    =   0x0001,  
@@ -41,24 +41,24 @@ typedef enum CorMethodSemanticsAttr {
 } CorMethodSemanticsAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="89f9f-105">Členové</span><span class="sxs-lookup"><span data-stu-id="89f9f-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="63156-105">Členové</span><span class="sxs-lookup"><span data-stu-id="63156-105">Members</span></span>  
   
-|<span data-ttu-id="89f9f-106">Člen</span><span class="sxs-lookup"><span data-stu-id="89f9f-106">Member</span></span>|<span data-ttu-id="89f9f-107">Popis</span><span class="sxs-lookup"><span data-stu-id="89f9f-107">Description</span></span>|  
+|<span data-ttu-id="63156-106">Člen</span><span class="sxs-lookup"><span data-stu-id="63156-106">Member</span></span>|<span data-ttu-id="63156-107">Popis</span><span class="sxs-lookup"><span data-stu-id="63156-107">Description</span></span>|  
 |------------|-----------------|  
-|`msSetter`|<span data-ttu-id="89f9f-108">Určuje, že metoda je `set` přistupujícího objektu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="89f9f-108">Specifies that the method is a `set` accessor for a property.</span></span>|  
-|`msGetter`|<span data-ttu-id="89f9f-109">Určuje, že metoda je `get` přistupujícího objektu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="89f9f-109">Specifies that the method is a `get` accessor for a property.</span></span>|  
-|`msOther`|<span data-ttu-id="89f9f-110">Určuje, že tato metoda má vztah k vlastnosti nebo události než ty, které jsou zde definovány.</span><span class="sxs-lookup"><span data-stu-id="89f9f-110">Specifies that the method has a relationship to a property or an event other than those defined here.</span></span>|  
-|`msAddOn`|<span data-ttu-id="89f9f-111">Určuje, že metoda přidá metody obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="89f9f-111">Specifies that the method adds handler methods for an event.</span></span>|  
-|`msRemoveOn`|<span data-ttu-id="89f9f-112">Určuje, že metoda odebere metody obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="89f9f-112">Specifies that the method removes handler methods for an event.</span></span>|  
-|`msFire`|<span data-ttu-id="89f9f-113">Určuje, že metoda vyvolá událost.</span><span class="sxs-lookup"><span data-stu-id="89f9f-113">Specifies that the method raises an event.</span></span>|  
+|`msSetter`|<span data-ttu-id="63156-108">Určuje, že metoda je `set` přistupujícího objektu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="63156-108">Specifies that the method is a `set` accessor for a property.</span></span>|  
+|`msGetter`|<span data-ttu-id="63156-109">Určuje, že metoda je `get` přistupujícího objektu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="63156-109">Specifies that the method is a `get` accessor for a property.</span></span>|  
+|`msOther`|<span data-ttu-id="63156-110">Určuje, že tato metoda má vztah k vlastnosti nebo události než ty, které jsou zde definovány.</span><span class="sxs-lookup"><span data-stu-id="63156-110">Specifies that the method has a relationship to a property or an event other than those defined here.</span></span>|  
+|`msAddOn`|<span data-ttu-id="63156-111">Určuje, že metoda přidá metody obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="63156-111">Specifies that the method adds handler methods for an event.</span></span>|  
+|`msRemoveOn`|<span data-ttu-id="63156-112">Určuje, že metoda odebere metody obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="63156-112">Specifies that the method removes handler methods for an event.</span></span>|  
+|`msFire`|<span data-ttu-id="63156-113">Určuje, že metoda vyvolá událost.</span><span class="sxs-lookup"><span data-stu-id="63156-113">Specifies that the method raises an event.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="89f9f-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="89f9f-114">Requirements</span></span>  
- <span data-ttu-id="89f9f-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="89f9f-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="63156-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="63156-114">Requirements</span></span>  
+ <span data-ttu-id="63156-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="63156-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="89f9f-116">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="89f9f-116">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="63156-116">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="63156-116">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="89f9f-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="89f9f-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="63156-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="63156-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="89f9f-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="89f9f-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="63156-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="63156-118">See also</span></span>
 
-- [<span data-ttu-id="89f9f-119">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="89f9f-119">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="63156-119">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="63156-119">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

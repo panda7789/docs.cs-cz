@@ -17,56 +17,56 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5c7866e0ecc62f037284a5329cb5785be90088f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c933389e1398d294d79f82a69a609a77aa820f3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61984617"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779823"
 ---
-# <a name="iclrmemorynotificationcallbackonmemorynotification-method"></a><span data-ttu-id="d74ab-102">ICLRMemoryNotificationCallback::OnMemoryNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="d74ab-102">ICLRMemoryNotificationCallback::OnMemoryNotification Method</span></span>
-<span data-ttu-id="d74ab-103">Zatížení paměti v počítači upozorní common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="d74ab-103">Notifies the common language runtime (CLR) of the memory load on the computer.</span></span>  
+# <a name="iclrmemorynotificationcallbackonmemorynotification-method"></a><span data-ttu-id="008a4-102">ICLRMemoryNotificationCallback::OnMemoryNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="008a4-102">ICLRMemoryNotificationCallback::OnMemoryNotification Method</span></span>
+<span data-ttu-id="008a4-103">Zatížení paměti v počítači upozorní common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="008a4-103">Notifies the common language runtime (CLR) of the memory load on the computer.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d74ab-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d74ab-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="008a4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="008a4-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT OnMemoryNotification (  
     [in] EMemoryAvailable eMemoryAvailable  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d74ab-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d74ab-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="008a4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="008a4-105">Parameters</span></span>  
  `eMemoryAvailable`  
- <span data-ttu-id="d74ab-106">[in] Jeden z [ememoryavailable –](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md) hodnoty, která přetížení paměti v počítači je právě se registruje.</span><span class="sxs-lookup"><span data-stu-id="d74ab-106">[in] One of the [EMemoryAvailable](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md) values, indicating the memory pressure the computer is currently experiencing.</span></span>  
+ <span data-ttu-id="008a4-106">[in] Jeden z [ememoryavailable –](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md) hodnoty, která přetížení paměti v počítači je právě se registruje.</span><span class="sxs-lookup"><span data-stu-id="008a4-106">[in] One of the [EMemoryAvailable](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md) values, indicating the memory pressure the computer is currently experiencing.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d74ab-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d74ab-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="008a4-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="008a4-107">Return Value</span></span>  
   
-|<span data-ttu-id="d74ab-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="d74ab-108">HRESULT</span></span>|<span data-ttu-id="d74ab-109">Popis</span><span class="sxs-lookup"><span data-stu-id="d74ab-109">Description</span></span>|  
+|<span data-ttu-id="008a4-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="008a4-108">HRESULT</span></span>|<span data-ttu-id="008a4-109">Popis</span><span class="sxs-lookup"><span data-stu-id="008a4-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="d74ab-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="d74ab-110">S_OK</span></span>|<span data-ttu-id="d74ab-111">`OnMemoryNotification` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="d74ab-111">`OnMemoryNotification` returned successfully.</span></span>|  
-|<span data-ttu-id="d74ab-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="d74ab-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="d74ab-113">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="d74ab-113">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="d74ab-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="d74ab-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="d74ab-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="d74ab-115">The call timed out.</span></span>|  
-|<span data-ttu-id="d74ab-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="d74ab-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="d74ab-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="d74ab-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="d74ab-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="d74ab-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="d74ab-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="d74ab-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="d74ab-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="d74ab-120">E_FAIL</span></span>|<span data-ttu-id="d74ab-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="d74ab-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="d74ab-122">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="d74ab-122">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="d74ab-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="d74ab-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="008a4-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="008a4-110">S_OK</span></span>|<span data-ttu-id="008a4-111">`OnMemoryNotification` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="008a4-111">`OnMemoryNotification` returned successfully.</span></span>|  
+|<span data-ttu-id="008a4-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="008a4-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="008a4-113">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="008a4-113">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="008a4-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="008a4-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="008a4-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="008a4-115">The call timed out.</span></span>|  
+|<span data-ttu-id="008a4-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="008a4-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="008a4-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="008a4-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="008a4-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="008a4-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="008a4-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="008a4-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="008a4-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="008a4-120">E_FAIL</span></span>|<span data-ttu-id="008a4-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="008a4-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="008a4-122">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="008a4-122">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="008a4-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="008a4-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="d74ab-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d74ab-124">Remarks</span></span>  
- <span data-ttu-id="d74ab-125">Zaregistruje zpětné volání, aby modul CLR `OnMemoryNotification` pomocí volání [ihostmemorymanager::registermemorynotificationcallback –](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="d74ab-125">The CLR registers a callback to `OnMemoryNotification` by using a call to the [IHostMemoryManager::RegisterMemoryNotificationCallback](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md) method.</span></span> <span data-ttu-id="d74ab-126">Modul runtime používá informace vrácené při zpětném volání další paměť uvolnit, když hostitele hlásí, že prostředky jsou spuštěné nízké paměti.</span><span class="sxs-lookup"><span data-stu-id="d74ab-126">The runtime uses the information returned in the callback to free additional memory when the host reports that memory resources are running low.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="008a4-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="008a4-124">Remarks</span></span>  
+ <span data-ttu-id="008a4-125">Zaregistruje zpětné volání, aby modul CLR `OnMemoryNotification` pomocí volání [ihostmemorymanager::registermemorynotificationcallback –](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="008a4-125">The CLR registers a callback to `OnMemoryNotification` by using a call to the [IHostMemoryManager::RegisterMemoryNotificationCallback](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md) method.</span></span> <span data-ttu-id="008a4-126">Modul runtime používá informace vrácené při zpětném volání další paměť uvolnit, když hostitele hlásí, že prostředky jsou spuštěné nízké paměti.</span><span class="sxs-lookup"><span data-stu-id="008a4-126">The runtime uses the information returned in the callback to free additional memory when the host reports that memory resources are running low.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="d74ab-127">Volání `OnMemoryNotification` není nikdy blokována.</span><span class="sxs-lookup"><span data-stu-id="d74ab-127">Calls to `OnMemoryNotification` never block.</span></span> <span data-ttu-id="d74ab-128">Vždy vrátí okamžitě.</span><span class="sxs-lookup"><span data-stu-id="d74ab-128">They always return immediately.</span></span>  
+>  <span data-ttu-id="008a4-127">Volání `OnMemoryNotification` není nikdy blokována.</span><span class="sxs-lookup"><span data-stu-id="008a4-127">Calls to `OnMemoryNotification` never block.</span></span> <span data-ttu-id="008a4-128">Vždy vrátí okamžitě.</span><span class="sxs-lookup"><span data-stu-id="008a4-128">They always return immediately.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d74ab-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d74ab-129">Requirements</span></span>  
- <span data-ttu-id="d74ab-130">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d74ab-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="008a4-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="008a4-129">Requirements</span></span>  
+ <span data-ttu-id="008a4-130">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="008a4-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d74ab-131">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="d74ab-131">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="008a4-131">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="008a4-131">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="d74ab-132">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d74ab-132">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="008a4-132">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="008a4-132">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="d74ab-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d74ab-133">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="008a4-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="008a4-133">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d74ab-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d74ab-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="008a4-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="008a4-134">See also</span></span>
 
-- [<span data-ttu-id="d74ab-135">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d74ab-135">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
-- [<span data-ttu-id="d74ab-136">RegisterMemoryNotificationCallback – metoda</span><span class="sxs-lookup"><span data-stu-id="d74ab-136">RegisterMemoryNotificationCallback Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)
-- [<span data-ttu-id="d74ab-137">ICLRMemoryNotificationCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d74ab-137">ICLRMemoryNotificationCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-interface.md)
+- [<span data-ttu-id="008a4-135">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="008a4-135">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [<span data-ttu-id="008a4-136">RegisterMemoryNotificationCallback – metoda</span><span class="sxs-lookup"><span data-stu-id="008a4-136">RegisterMemoryNotificationCallback Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)
+- [<span data-ttu-id="008a4-137">ICLRMemoryNotificationCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="008a4-137">ICLRMemoryNotificationCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-interface.md)

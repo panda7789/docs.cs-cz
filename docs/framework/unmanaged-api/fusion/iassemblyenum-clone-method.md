@@ -17,35 +17,35 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3a16717de7c109261e73f3a41fa07e9c0d86ee72
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d288f4ccf91567224546df1a3309a411590a5a12
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697448"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779026"
 ---
-# <a name="iassemblyenumclone-method"></a><span data-ttu-id="3087d-102">IAssemblyEnum::Clone – metoda</span><span class="sxs-lookup"><span data-stu-id="3087d-102">IAssemblyEnum::Clone Method</span></span>
-<span data-ttu-id="3087d-103">Vytvoří Mělkou kopii to [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="3087d-103">Creates a shallow copy of this [IAssemblyEnum](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) object.</span></span>  
+# <a name="iassemblyenumclone-method"></a><span data-ttu-id="58db6-102">IAssemblyEnum::Clone – metoda</span><span class="sxs-lookup"><span data-stu-id="58db6-102">IAssemblyEnum::Clone Method</span></span>
+<span data-ttu-id="58db6-103">Vytvoří Mělkou kopii to [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="58db6-103">Creates a shallow copy of this [IAssemblyEnum](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3087d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3087d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="58db6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="58db6-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT Clone (  
     [out] IAssemblyEnum   **ppEnum  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3087d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3087d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="58db6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="58db6-105">Parameters</span></span>  
  `ppEnum`  
- <span data-ttu-id="3087d-106">[out] Ukazatel na kopii.</span><span class="sxs-lookup"><span data-stu-id="3087d-106">[out] A pointer to the copy.</span></span>  
+ <span data-ttu-id="58db6-106">[out] Ukazatel na kopii.</span><span class="sxs-lookup"><span data-stu-id="58db6-106">[out] A pointer to the copy.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3087d-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3087d-107">Requirements</span></span>  
- <span data-ttu-id="3087d-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3087d-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="58db6-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="58db6-107">Requirements</span></span>  
+ <span data-ttu-id="58db6-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="58db6-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3087d-109">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="3087d-109">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="58db6-109">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="58db6-109">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="3087d-110">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3087d-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="58db6-110">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="58db6-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3087d-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3087d-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="58db6-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="58db6-111">See also</span></span>
 
-- [<span data-ttu-id="3087d-112">IAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3087d-112">IAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
+- [<span data-ttu-id="58db6-112">IAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="58db6-112">IAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
