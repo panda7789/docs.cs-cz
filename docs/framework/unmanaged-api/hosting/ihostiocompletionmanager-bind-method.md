@@ -17,58 +17,58 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3fa87026e0d4c93da782be15bef98afa9a0e4dfd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d73b8b635be78472374668bbcc36541616705651
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61984357"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736545"
 ---
-# <a name="ihostiocompletionmanagerbind-method"></a><span data-ttu-id="ec2c5-102">IHostIoCompletionManager::Bind – metoda</span><span class="sxs-lookup"><span data-stu-id="ec2c5-102">IHostIoCompletionManager::Bind Method</span></span>
-<span data-ttu-id="ec2c5-103">Vytvoří vazbu určený port dokončení vstupně-výstupních operací, který byl vytvořen v dřívějším volání [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).</span><span class="sxs-lookup"><span data-stu-id="ec2c5-103">Binds the specified handle to an I/O completion port that has been created by an earlier call to [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).</span></span>  
+# <a name="ihostiocompletionmanagerbind-method"></a><span data-ttu-id="70570-102">IHostIoCompletionManager::Bind – metoda</span><span class="sxs-lookup"><span data-stu-id="70570-102">IHostIoCompletionManager::Bind Method</span></span>
+<span data-ttu-id="70570-103">Vytvoří vazbu určený port dokončení vstupně-výstupních operací, který byl vytvořen v dřívějším volání [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).</span><span class="sxs-lookup"><span data-stu-id="70570-103">Binds the specified handle to an I/O completion port that has been created by an earlier call to [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ec2c5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ec2c5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70570-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70570-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT Bind (  
     [in] HANDLE hPort,  
     [in] HANDLE hHandle  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ec2c5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ec2c5-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="70570-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="70570-105">Parameters</span></span>  
  `hPort`  
- <span data-ttu-id="ec2c5-106">[in] Port dokončení vstupně-výstupních operací, ke kterému se vytvořit vazbu `hHandle`.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-106">[in] The I/O completion port to which to bind `hHandle`.</span></span> <span data-ttu-id="ec2c5-107">Pokud hodnota `hPort` má hodnotu null, `hHandle` je vázán na výchozí port dokončení vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-107">If the value of `hPort` is null, `hHandle` is bound to the default I/O completion port.</span></span>  
+ <span data-ttu-id="70570-106">[in] Port dokončení vstupně-výstupních operací, ke kterému se vytvořit vazbu `hHandle`.</span><span class="sxs-lookup"><span data-stu-id="70570-106">[in] The I/O completion port to which to bind `hHandle`.</span></span> <span data-ttu-id="70570-107">Pokud hodnota `hPort` má hodnotu null, `hHandle` je vázán na výchozí port dokončení vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="70570-107">If the value of `hPort` is null, `hHandle` is bound to the default I/O completion port.</span></span>  
   
  `hHandle`  
- <span data-ttu-id="ec2c5-108">[in] Popisovač operačního systému vytvořit vazbu na `hPort`.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-108">[in] The operating system handle to bind to `hPort`.</span></span>  
+ <span data-ttu-id="70570-108">[in] Popisovač operačního systému vytvořit vazbu na `hPort`.</span><span class="sxs-lookup"><span data-stu-id="70570-108">[in] The operating system handle to bind to `hPort`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="ec2c5-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ec2c5-109">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="70570-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="70570-109">Return Value</span></span>  
   
-|<span data-ttu-id="ec2c5-110">HRESULT</span><span class="sxs-lookup"><span data-stu-id="ec2c5-110">HRESULT</span></span>|<span data-ttu-id="ec2c5-111">Popis</span><span class="sxs-lookup"><span data-stu-id="ec2c5-111">Description</span></span>|  
+|<span data-ttu-id="70570-110">HRESULT</span><span class="sxs-lookup"><span data-stu-id="70570-110">HRESULT</span></span>|<span data-ttu-id="70570-111">Popis</span><span class="sxs-lookup"><span data-stu-id="70570-111">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="ec2c5-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="ec2c5-112">S_OK</span></span>|<span data-ttu-id="ec2c5-113">`Bind` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-113">`Bind` returned successfully.</span></span>|  
-|<span data-ttu-id="ec2c5-114">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="ec2c5-114">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="ec2c5-115">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-115">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="ec2c5-116">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="ec2c5-116">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="ec2c5-117">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-117">The call timed out.</span></span>|  
-|<span data-ttu-id="ec2c5-118">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="ec2c5-118">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="ec2c5-119">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-119">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="ec2c5-120">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="ec2c5-120">HOST_E_ABANDONED</span></span>|<span data-ttu-id="ec2c5-121">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-121">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="ec2c5-122">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="ec2c5-122">E_FAIL</span></span>|<span data-ttu-id="ec2c5-123">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-123">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="ec2c5-124">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-124">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="ec2c5-125">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-125">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="70570-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="70570-112">S_OK</span></span>|<span data-ttu-id="70570-113">`Bind` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="70570-113">`Bind` returned successfully.</span></span>|  
+|<span data-ttu-id="70570-114">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="70570-114">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="70570-115">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="70570-115">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="70570-116">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="70570-116">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="70570-117">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="70570-117">The call timed out.</span></span>|  
+|<span data-ttu-id="70570-118">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="70570-118">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="70570-119">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="70570-119">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="70570-120">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="70570-120">HOST_E_ABANDONED</span></span>|<span data-ttu-id="70570-121">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="70570-121">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="70570-122">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="70570-122">E_FAIL</span></span>|<span data-ttu-id="70570-123">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="70570-123">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="70570-124">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="70570-124">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="70570-125">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="70570-125">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="ec2c5-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ec2c5-126">Remarks</span></span>  
- <span data-ttu-id="ec2c5-127">Port dokončení vstupně-výstupních operací je vytvořena pomocí volání `CreateIoCompletionPort`.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-127">An I/O completion port is created by using a call to `CreateIoCompletionPort`.</span></span> <span data-ttu-id="ec2c5-128">Volání CLR `Bind` svázat popisovač na daný port.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-128">The CLR calls `Bind` to bind a handle to that port.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="70570-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="70570-126">Remarks</span></span>  
+ <span data-ttu-id="70570-127">Port dokončení vstupně-výstupních operací je vytvořena pomocí volání `CreateIoCompletionPort`.</span><span class="sxs-lookup"><span data-stu-id="70570-127">An I/O completion port is created by using a call to `CreateIoCompletionPort`.</span></span> <span data-ttu-id="70570-128">Volání CLR `Bind` svázat popisovač na daný port.</span><span class="sxs-lookup"><span data-stu-id="70570-128">The CLR calls `Bind` to bind a handle to that port.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="ec2c5-129">Po dokončení se požadavek na vstupně-výstupních operací, musí volat hostitele [iclriocompletionmanager::onComplete –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="ec2c5-129">When an I/O request completes, the host must call the [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) method.</span></span>  
+>  <span data-ttu-id="70570-129">Po dokončení se požadavek na vstupně-výstupních operací, musí volat hostitele [iclriocompletionmanager::onComplete –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="70570-129">When an I/O request completes, the host must call the [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ec2c5-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ec2c5-130">Requirements</span></span>  
- <span data-ttu-id="ec2c5-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ec2c5-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70570-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70570-130">Requirements</span></span>  
+ <span data-ttu-id="70570-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="70570-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ec2c5-132">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="ec2c5-132">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="70570-132">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="70570-132">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="ec2c5-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ec2c5-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="70570-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="70570-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="ec2c5-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ec2c5-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="70570-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="70570-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ec2c5-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ec2c5-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70570-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70570-135">See also</span></span>
 
-- [<span data-ttu-id="ec2c5-136">ICLRIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ec2c5-136">ICLRIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
+- [<span data-ttu-id="70570-136">ICLRIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70570-136">ICLRIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)

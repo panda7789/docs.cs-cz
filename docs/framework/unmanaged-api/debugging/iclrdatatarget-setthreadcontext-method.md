@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3f98ab65512a380ebd4dc0ecd50e36f94a6d6b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: edd70dd4cfc2e26b30ee0deec79b7d126d1f76a1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698028"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67738587"
 ---
-# <a name="iclrdatatargetsetthreadcontext-method"></a><span data-ttu-id="12087-102">ICLRDataTarget::SetThreadContext – metoda</span><span class="sxs-lookup"><span data-stu-id="12087-102">ICLRDataTarget::SetThreadContext Method</span></span>
-<span data-ttu-id="12087-103">Nastaví aktuální kontext ze zadaného vlákna v cílovém procesu.</span><span class="sxs-lookup"><span data-stu-id="12087-103">Sets the current context of the specified thread in the target process.</span></span> <span data-ttu-id="12087-104">Tato metoda je volána službami common language runtime (CLR) přístup k datům.</span><span class="sxs-lookup"><span data-stu-id="12087-104">This method is called by the common language runtime (CLR) data access services.</span></span>  
+# <a name="iclrdatatargetsetthreadcontext-method"></a><span data-ttu-id="42267-102">ICLRDataTarget::SetThreadContext – metoda</span><span class="sxs-lookup"><span data-stu-id="42267-102">ICLRDataTarget::SetThreadContext Method</span></span>
+<span data-ttu-id="42267-103">Nastaví aktuální kontext ze zadaného vlákna v cílovém procesu.</span><span class="sxs-lookup"><span data-stu-id="42267-103">Sets the current context of the specified thread in the target process.</span></span> <span data-ttu-id="42267-104">Tato metoda je volána službami common language runtime (CLR) přístup k datům.</span><span class="sxs-lookup"><span data-stu-id="42267-104">This method is called by the common language runtime (CLR) data access services.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="12087-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="12087-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="42267-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="42267-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT SetThreadContext (  
     [in] ULONG32            threadID,  
     [in] ULONG32            contextSize,  
@@ -38,30 +38,30 @@ HRESULT SetThreadContext (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="12087-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="12087-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="42267-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="42267-106">Parameters</span></span>  
  `threadID`  
- <span data-ttu-id="12087-107">[in] Operační systém identifikátor vlákna v cílovém procesu.</span><span class="sxs-lookup"><span data-stu-id="12087-107">[in] The operating system identifier of a thread in the target process.</span></span>  
+ <span data-ttu-id="42267-107">[in] Operační systém identifikátor vlákna v cílovém procesu.</span><span class="sxs-lookup"><span data-stu-id="42267-107">[in] The operating system identifier of a thread in the target process.</span></span>  
   
  `contextSize`  
- <span data-ttu-id="12087-108">[in] Velikost kontext.</span><span class="sxs-lookup"><span data-stu-id="12087-108">[in] The size of the context.</span></span>  
+ <span data-ttu-id="42267-108">[in] Velikost kontext.</span><span class="sxs-lookup"><span data-stu-id="42267-108">[in] The size of the context.</span></span>  
   
  `context`  
- <span data-ttu-id="12087-109">[in] Ukazatel do vyrovnávací paměti, který obsahuje kontext.</span><span class="sxs-lookup"><span data-stu-id="12087-109">[in] Pointer to a buffer containing the context.</span></span>  
+ <span data-ttu-id="42267-109">[in] Ukazatel do vyrovnávací paměti, který obsahuje kontext.</span><span class="sxs-lookup"><span data-stu-id="42267-109">[in] Pointer to a buffer containing the context.</span></span>  
   
- <span data-ttu-id="12087-110">Data v `context` vyrovnávací paměť bude ve formátu Win32 `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="12087-110">The data in the `context` buffer will be in the format of the Win32 `CONTEXT` structure.</span></span> <span data-ttu-id="12087-111">Kontext určuje data registru specifické pro procesor, takže definice Win32 `CONTEXT` struktura závisí na architektuře procesoru.</span><span class="sxs-lookup"><span data-stu-id="12087-111">The context specifies processor-specific register data, so the definition of the Win32 `CONTEXT` structure depends on the processor's architecture.</span></span> <span data-ttu-id="12087-112">Najdete v souboru WinNT.h hlavičkový soubor pro definici Win32 `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="12087-112">Refer to the WinNT.h header file for the definition of the Win32 `CONTEXT` structure.</span></span>  
+ <span data-ttu-id="42267-110">Data v `context` vyrovnávací paměť bude ve formátu Win32 `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="42267-110">The data in the `context` buffer will be in the format of the Win32 `CONTEXT` structure.</span></span> <span data-ttu-id="42267-111">Kontext určuje data registru specifické pro procesor, takže definice Win32 `CONTEXT` struktura závisí na architektuře procesoru.</span><span class="sxs-lookup"><span data-stu-id="42267-111">The context specifies processor-specific register data, so the definition of the Win32 `CONTEXT` structure depends on the processor's architecture.</span></span> <span data-ttu-id="42267-112">Najdete v souboru WinNT.h hlavičkový soubor pro definici Win32 `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="42267-112">Refer to the WinNT.h header file for the definition of the Win32 `CONTEXT` structure.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="12087-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="12087-113">Remarks</span></span>  
- <span data-ttu-id="12087-114">Tato metoda je implementováno tvůrci ladění aplikace.</span><span class="sxs-lookup"><span data-stu-id="12087-114">This method is implemented by the writer of the debugging application.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="42267-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="42267-113">Remarks</span></span>  
+ <span data-ttu-id="42267-114">Tato metoda je implementováno tvůrci ladění aplikace.</span><span class="sxs-lookup"><span data-stu-id="42267-114">This method is implemented by the writer of the debugging application.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="12087-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="12087-115">Requirements</span></span>  
- <span data-ttu-id="12087-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="12087-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="42267-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="42267-115">Requirements</span></span>  
+ <span data-ttu-id="42267-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="42267-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="12087-117">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="12087-117">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="42267-117">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="42267-117">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="12087-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="12087-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="42267-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="42267-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="12087-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="12087-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="42267-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="42267-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="12087-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="12087-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="42267-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="42267-120">See also</span></span>
 
-- [<span data-ttu-id="12087-121">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="12087-121">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [<span data-ttu-id="42267-121">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="42267-121">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

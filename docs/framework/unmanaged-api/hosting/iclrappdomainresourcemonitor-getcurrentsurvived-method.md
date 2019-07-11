@@ -17,60 +17,60 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 408ef5419fbc2081d25ad442986ec8155bcb4c62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10df17f2f21928ab89c65be7fd07afe81c468a07
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985189"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766554"
 ---
-# <a name="iclrappdomainresourcemonitorgetcurrentsurvived-method"></a><span data-ttu-id="c7124-102">ICLRAppDomainResourceMonitor::GetCurrentSurvived – metoda</span><span class="sxs-lookup"><span data-stu-id="c7124-102">ICLRAppDomainResourceMonitor::GetCurrentSurvived Method</span></span>
-<span data-ttu-id="c7124-103">Získá počet bajtů, které zůstat naživu při poslední úplné blokující uvolňování paměti a, který je odkazováno dle aktuální domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="c7124-103">Gets the number of bytes that survived the last full, blocking garbage collection and that are referenced by the current application domain.</span></span>  
+# <a name="iclrappdomainresourcemonitorgetcurrentsurvived-method"></a><span data-ttu-id="84469-102">ICLRAppDomainResourceMonitor::GetCurrentSurvived – metoda</span><span class="sxs-lookup"><span data-stu-id="84469-102">ICLRAppDomainResourceMonitor::GetCurrentSurvived Method</span></span>
+<span data-ttu-id="84469-103">Získá počet bajtů, které zůstat naživu při poslední úplné blokující uvolňování paměti a, který je odkazováno dle aktuální domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="84469-103">Gets the number of bytes that survived the last full, blocking garbage collection and that are referenced by the current application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c7124-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c7124-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="84469-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="84469-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT STDMETHODCALLTYPE GetCurrentSurvived(  
              [in]  DWORD dwAppDomainId,  
              [out] ULONGLONG *pAppDomainBytesSurvived,  
              [out] ULONGLONG *pTotalBytesSurvived);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c7124-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c7124-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="84469-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="84469-105">Parameters</span></span>  
  `dwAppDomainId`  
- <span data-ttu-id="c7124-106">[in] ID domény požadované aplikace.</span><span class="sxs-lookup"><span data-stu-id="c7124-106">[in] The ID of the requested application domain.</span></span>  
+ <span data-ttu-id="84469-106">[in] ID domény požadované aplikace.</span><span class="sxs-lookup"><span data-stu-id="84469-106">[in] The ID of the requested application domain.</span></span>  
   
  `pAppDomainBytesSurvived`  
- <span data-ttu-id="c7124-107">[out] Ukazatel na počet bajtů, které zůstat naživu po poslední uvolnění paměti, které jsou uloženy v této doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="c7124-107">[out] A pointer to the number of bytes that survived after the last garbage collection that are held by this application domain.</span></span> <span data-ttu-id="c7124-108">Toto číslo po celé kolekce, je přesné a úplné.</span><span class="sxs-lookup"><span data-stu-id="c7124-108">After a full collection, this number is accurate and complete.</span></span> <span data-ttu-id="c7124-109">Toto číslo je po dočasné kolekce, potenciálně neúplné.</span><span class="sxs-lookup"><span data-stu-id="c7124-109">After an ephemeral collection, this number is potentially incomplete.</span></span> <span data-ttu-id="c7124-110">Tento parametr může být `null`.</span><span class="sxs-lookup"><span data-stu-id="c7124-110">This parameter can be `null`.</span></span>  
+ <span data-ttu-id="84469-107">[out] Ukazatel na počet bajtů, které zůstat naživu po poslední uvolnění paměti, které jsou uloženy v této doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="84469-107">[out] A pointer to the number of bytes that survived after the last garbage collection that are held by this application domain.</span></span> <span data-ttu-id="84469-108">Toto číslo po celé kolekce, je přesné a úplné.</span><span class="sxs-lookup"><span data-stu-id="84469-108">After a full collection, this number is accurate and complete.</span></span> <span data-ttu-id="84469-109">Toto číslo je po dočasné kolekce, potenciálně neúplné.</span><span class="sxs-lookup"><span data-stu-id="84469-109">After an ephemeral collection, this number is potentially incomplete.</span></span> <span data-ttu-id="84469-110">Tento parametr může být `null`.</span><span class="sxs-lookup"><span data-stu-id="84469-110">This parameter can be `null`.</span></span>  
   
  `pRuntimeBytesSurvived`  
- <span data-ttu-id="c7124-111">[out] Ukazatel na celkový počet bajtů, které zůstat naživu z posledního kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="c7124-111">[out] A pointer to the total number of bytes that survived from the last garbage collection.</span></span> <span data-ttu-id="c7124-112">Po celé kolekce toto číslo představuje počet bajtů, které jsou uloženy ve spravované haldy.</span><span class="sxs-lookup"><span data-stu-id="c7124-112">After a full collection, this number represents the number of the bytes that are held in managed heaps.</span></span> <span data-ttu-id="c7124-113">Po dočasné kolekce toto číslo představuje počet bajtů, které jsou uloženy v dočasné generace.</span><span class="sxs-lookup"><span data-stu-id="c7124-113">After an ephemeral collection, this number represents the number of bytes that are held live in ephemeral generations.</span></span> <span data-ttu-id="c7124-114">Tento parametr může být `null`.</span><span class="sxs-lookup"><span data-stu-id="c7124-114">This parameter can be `null`.</span></span>  
+ <span data-ttu-id="84469-111">[out] Ukazatel na celkový počet bajtů, které zůstat naživu z posledního kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="84469-111">[out] A pointer to the total number of bytes that survived from the last garbage collection.</span></span> <span data-ttu-id="84469-112">Po celé kolekce toto číslo představuje počet bajtů, které jsou uloženy ve spravované haldy.</span><span class="sxs-lookup"><span data-stu-id="84469-112">After a full collection, this number represents the number of the bytes that are held in managed heaps.</span></span> <span data-ttu-id="84469-113">Po dočasné kolekce toto číslo představuje počet bajtů, které jsou uloženy v dočasné generace.</span><span class="sxs-lookup"><span data-stu-id="84469-113">After an ephemeral collection, this number represents the number of bytes that are held live in ephemeral generations.</span></span> <span data-ttu-id="84469-114">Tento parametr může být `null`.</span><span class="sxs-lookup"><span data-stu-id="84469-114">This parameter can be `null`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="c7124-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c7124-115">Return Value</span></span>  
- <span data-ttu-id="c7124-116">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="c7124-116">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="84469-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="84469-115">Return Value</span></span>  
+ <span data-ttu-id="84469-116">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="84469-116">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="c7124-117">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c7124-117">HRESULT</span></span>|<span data-ttu-id="c7124-118">Popis</span><span class="sxs-lookup"><span data-stu-id="c7124-118">Description</span></span>|  
+|<span data-ttu-id="84469-117">HRESULT</span><span class="sxs-lookup"><span data-stu-id="84469-117">HRESULT</span></span>|<span data-ttu-id="84469-118">Popis</span><span class="sxs-lookup"><span data-stu-id="84469-118">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="c7124-119">S_OK</span><span class="sxs-lookup"><span data-stu-id="c7124-119">S_OK</span></span>|<span data-ttu-id="c7124-120">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="c7124-120">The method completed successfully.</span></span>|  
-|<span data-ttu-id="c7124-121">COR_E_APPDOMAINUNLOADED</span><span class="sxs-lookup"><span data-stu-id="c7124-121">COR_E_APPDOMAINUNLOADED</span></span>|<span data-ttu-id="c7124-122">Aplikační domény byl odpojen nebo neexistuje.</span><span class="sxs-lookup"><span data-stu-id="c7124-122">The application domain has been unloaded or does not exist.</span></span>|  
+|<span data-ttu-id="84469-119">S_OK</span><span class="sxs-lookup"><span data-stu-id="84469-119">S_OK</span></span>|<span data-ttu-id="84469-120">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="84469-120">The method completed successfully.</span></span>|  
+|<span data-ttu-id="84469-121">COR_E_APPDOMAINUNLOADED</span><span class="sxs-lookup"><span data-stu-id="84469-121">COR_E_APPDOMAINUNLOADED</span></span>|<span data-ttu-id="84469-122">Aplikační domény byl odpojen nebo neexistuje.</span><span class="sxs-lookup"><span data-stu-id="84469-122">The application domain has been unloaded or does not exist.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="c7124-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c7124-123">Remarks</span></span>  
- <span data-ttu-id="c7124-124">Statistiky jsou aktualizovány pouze po úplné blokující uvolňování paměti; To znamená, že dojde k kolekci, která obsahuje všechny generace, která ukončí aplikaci při shromažďování.</span><span class="sxs-lookup"><span data-stu-id="c7124-124">Statistics are updated only after a full, blocking garbage collection; that is, a collection that includes all generations and that stops the application while collection occurs.</span></span> <span data-ttu-id="c7124-125">Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody provede úplné blokující kolekce.</span><span class="sxs-lookup"><span data-stu-id="c7124-125">For example, the <xref:System.GC.Collect?displayProperty=nameWithType> method overload performs a full, blocking collection.</span></span> <span data-ttu-id="c7124-126">Souběžné uvolňování paměti probíhá na pozadí a nedochází k blokování aplikace.</span><span class="sxs-lookup"><span data-stu-id="c7124-126">Concurrent garbage collection occurs in the background and does not block the application.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="84469-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="84469-123">Remarks</span></span>  
+ <span data-ttu-id="84469-124">Statistiky jsou aktualizovány pouze po úplné blokující uvolňování paměti; To znamená, že dojde k kolekci, která obsahuje všechny generace, která ukončí aplikaci při shromažďování.</span><span class="sxs-lookup"><span data-stu-id="84469-124">Statistics are updated only after a full, blocking garbage collection; that is, a collection that includes all generations and that stops the application while collection occurs.</span></span> <span data-ttu-id="84469-125">Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody provede úplné blokující kolekce.</span><span class="sxs-lookup"><span data-stu-id="84469-125">For example, the <xref:System.GC.Collect?displayProperty=nameWithType> method overload performs a full, blocking collection.</span></span> <span data-ttu-id="84469-126">Souběžné uvolňování paměti probíhá na pozadí a nedochází k blokování aplikace.</span><span class="sxs-lookup"><span data-stu-id="84469-126">Concurrent garbage collection occurs in the background and does not block the application.</span></span>  
   
- <span data-ttu-id="c7124-127">`GetCurrentSurvived` Metoda odpovídá nespravované spravované <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="c7124-127">The `GetCurrentSurvived` method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> property.</span></span>  
+ <span data-ttu-id="84469-127">`GetCurrentSurvived` Metoda odpovídá nespravované spravované <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="84469-127">The `GetCurrentSurvived` method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> property.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c7124-128">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c7124-128">Requirements</span></span>  
- <span data-ttu-id="c7124-129">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c7124-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="84469-128">Požadavky</span><span class="sxs-lookup"><span data-stu-id="84469-128">Requirements</span></span>  
+ <span data-ttu-id="84469-129">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="84469-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c7124-130">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="c7124-130">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="84469-130">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="84469-130">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="c7124-131">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c7124-131">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="84469-131">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="84469-131">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="c7124-132">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c7124-132">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="84469-132">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="84469-132">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c7124-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c7124-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="84469-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="84469-133">See also</span></span>
 
-- [<span data-ttu-id="c7124-134">ICLRAppDomainResourceMonitor – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c7124-134">ICLRAppDomainResourceMonitor Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
-- [<span data-ttu-id="c7124-135">Sledování prostředků domény aplikace</span><span class="sxs-lookup"><span data-stu-id="c7124-135">Application Domain Resource Monitoring</span></span>](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)
-- [<span data-ttu-id="c7124-136">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="c7124-136">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [<span data-ttu-id="c7124-137">Hostování</span><span class="sxs-lookup"><span data-stu-id="c7124-137">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [<span data-ttu-id="84469-134">ICLRAppDomainResourceMonitor – rozhraní</span><span class="sxs-lookup"><span data-stu-id="84469-134">ICLRAppDomainResourceMonitor Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
+- [<span data-ttu-id="84469-135">Sledování prostředků domény aplikace</span><span class="sxs-lookup"><span data-stu-id="84469-135">Application Domain Resource Monitoring</span></span>](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)
+- [<span data-ttu-id="84469-136">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="84469-136">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="84469-137">Hostování</span><span class="sxs-lookup"><span data-stu-id="84469-137">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)

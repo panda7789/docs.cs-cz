@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1c32dcfe5d00e1d35f7c63aa98a33d26f6b179c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 62c44d0c3bd2e931b1708abb48bc9c854431419f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152682"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751146"
 ---
-# <a name="imetadataassemblyimportenumexportedtypes-method"></a><span data-ttu-id="b96a2-102">IMetaDataAssemblyImport::EnumExportedTypes – metoda</span><span class="sxs-lookup"><span data-stu-id="b96a2-102">IMetaDataAssemblyImport::EnumExportedTypes Method</span></span>
-<span data-ttu-id="b96a2-103">Vytvoří výčet exportované typy odkazované v manifestu sestavení v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="b96a2-103">Enumerates the exported types referenced in the assembly manifest in the current metadata scope.</span></span>  
+# <a name="imetadataassemblyimportenumexportedtypes-method"></a><span data-ttu-id="38d66-102">IMetaDataAssemblyImport::EnumExportedTypes – metoda</span><span class="sxs-lookup"><span data-stu-id="38d66-102">IMetaDataAssemblyImport::EnumExportedTypes Method</span></span>
+<span data-ttu-id="38d66-103">Vytvoří výčet exportované typy odkazované v manifestu sestavení v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="38d66-103">Enumerates the exported types referenced in the assembly manifest in the current metadata scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b96a2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b96a2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="38d66-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="38d66-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT EnumExportedTypes (  
     [in, out] HCORENUM     *phEnum,   
     [out] mdExportedType   rExportedTypes[],   
@@ -38,35 +38,35 @@ HRESULT EnumExportedTypes (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b96a2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b96a2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="38d66-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="38d66-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="b96a2-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="b96a2-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="b96a2-107">Musí se jednat s hodnotou null hodnotu v případě `EnumExportedTypes` je metoda volána poprvé.</span><span class="sxs-lookup"><span data-stu-id="b96a2-107">This must be a null value when the `EnumExportedTypes` method is called for the first time.</span></span>  
+ <span data-ttu-id="38d66-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="38d66-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="38d66-107">Musí se jednat s hodnotou null hodnotu v případě `EnumExportedTypes` je metoda volána poprvé.</span><span class="sxs-lookup"><span data-stu-id="38d66-107">This must be a null value when the `EnumExportedTypes` method is called for the first time.</span></span>  
   
  `rExportedTypes`  
- <span data-ttu-id="b96a2-108">[out] Výčet `mdExportedType` tokeny metadat.</span><span class="sxs-lookup"><span data-stu-id="b96a2-108">[out] The enumeration of `mdExportedType` metadata tokens.</span></span>  
+ <span data-ttu-id="38d66-108">[out] Výčet `mdExportedType` tokeny metadat.</span><span class="sxs-lookup"><span data-stu-id="38d66-108">[out] The enumeration of `mdExportedType` metadata tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="b96a2-109">[in] Maximální počet `mdExportedType` tokeny, které je možné umístit `rExportedTypes` pole.</span><span class="sxs-lookup"><span data-stu-id="b96a2-109">[in] The maximum number of `mdExportedType` tokens that can be placed in the `rExportedTypes` array.</span></span>  
+ <span data-ttu-id="38d66-109">[in] Maximální počet `mdExportedType` tokeny, které je možné umístit `rExportedTypes` pole.</span><span class="sxs-lookup"><span data-stu-id="38d66-109">[in] The maximum number of `mdExportedType` tokens that can be placed in the `rExportedTypes` array.</span></span>  
   
  `pcTokens`  
- <span data-ttu-id="b96a2-110">[out] Počet `mdExportedType` tokeny ve skutečnosti umístěny do `rExportedTypes`.</span><span class="sxs-lookup"><span data-stu-id="b96a2-110">[out] The number of `mdExportedType` tokens actually placed in `rExportedTypes`.</span></span>  
+ <span data-ttu-id="38d66-110">[out] Počet `mdExportedType` tokeny ve skutečnosti umístěny do `rExportedTypes`.</span><span class="sxs-lookup"><span data-stu-id="38d66-110">[out] The number of `mdExportedType` tokens actually placed in `rExportedTypes`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b96a2-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b96a2-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="38d66-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="38d66-111">Return Value</span></span>  
   
-|<span data-ttu-id="b96a2-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="b96a2-112">HRESULT</span></span>|<span data-ttu-id="b96a2-113">Popis</span><span class="sxs-lookup"><span data-stu-id="b96a2-113">Description</span></span>|  
+|<span data-ttu-id="38d66-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="38d66-112">HRESULT</span></span>|<span data-ttu-id="38d66-113">Popis</span><span class="sxs-lookup"><span data-stu-id="38d66-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="b96a2-114">`EnumExportedTypes` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="b96a2-114">`EnumExportedTypes` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="b96a2-115">Neexistují žádné tokeny se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="b96a2-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="b96a2-116">V takovém případě `pcTokens` je nastavena na hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="b96a2-116">In this case, `pcTokens` is set to zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="38d66-114">`EnumExportedTypes` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="38d66-114">`EnumExportedTypes` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="38d66-115">Neexistují žádné tokeny se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="38d66-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="38d66-116">V takovém případě `pcTokens` je nastavena na hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="38d66-116">In this case, `pcTokens` is set to zero.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="b96a2-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b96a2-117">Requirements</span></span>  
- <span data-ttu-id="b96a2-118">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b96a2-118">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="38d66-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="38d66-117">Requirements</span></span>  
+ <span data-ttu-id="38d66-118">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="38d66-118">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b96a2-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b96a2-119">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="38d66-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="38d66-119">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="b96a2-120">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b96a2-120">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="38d66-120">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="38d66-120">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="b96a2-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b96a2-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="38d66-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="38d66-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b96a2-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b96a2-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="38d66-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="38d66-122">See also</span></span>
 
-- [<span data-ttu-id="b96a2-123">IMetaDataAssemblyImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b96a2-123">IMetaDataAssemblyImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [<span data-ttu-id="38d66-123">IMetaDataAssemblyImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="38d66-123">IMetaDataAssemblyImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

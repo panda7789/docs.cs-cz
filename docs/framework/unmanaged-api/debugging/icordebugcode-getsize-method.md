@@ -17,35 +17,35 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 678b7fbd595b1238b7025c22b0ed80b02ed4becd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 52ba9d5bac5e772d721d38e4e8a7ba6757d0ae2e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750202"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747500"
 ---
-# <a name="icordebugcodegetsize-method"></a><span data-ttu-id="fa79c-102">ICorDebugCode::GetSize – metoda</span><span class="sxs-lookup"><span data-stu-id="fa79c-102">ICorDebugCode::GetSize Method</span></span>
-<span data-ttu-id="fa79c-103">Získá velikost v bajtech binárního kódu představovaného podle této "ICorDebugCode".</span><span class="sxs-lookup"><span data-stu-id="fa79c-103">Gets the size, in bytes, of the binary code represented by this "ICorDebugCode".</span></span>  
+# <a name="icordebugcodegetsize-method"></a><span data-ttu-id="eb048-102">ICorDebugCode::GetSize – metoda</span><span class="sxs-lookup"><span data-stu-id="eb048-102">ICorDebugCode::GetSize Method</span></span>
+<span data-ttu-id="eb048-103">Získá velikost v bajtech binárního kódu představovaného podle této "ICorDebugCode".</span><span class="sxs-lookup"><span data-stu-id="eb048-103">Gets the size, in bytes, of the binary code represented by this "ICorDebugCode".</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fa79c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fa79c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="eb048-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eb048-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetSize (  
     [out] ULONG32    *pcBytes  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="fa79c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fa79c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="eb048-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="eb048-105">Parameters</span></span>  
  `pcBytes`  
- <span data-ttu-id="fa79c-106">[out] Ukazatel na velikost v bajtech binárního souboru kódu, který tato `ICorDebugCode` objekt představuje.</span><span class="sxs-lookup"><span data-stu-id="fa79c-106">[out] A pointer to the size, in bytes, of the binary code that this `ICorDebugCode` object represents.</span></span>  
+ <span data-ttu-id="eb048-106">[out] Ukazatel na velikost v bajtech binárního souboru kódu, který tato `ICorDebugCode` objekt představuje.</span><span class="sxs-lookup"><span data-stu-id="eb048-106">[out] A pointer to the size, in bytes, of the binary code that this `ICorDebugCode` object represents.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fa79c-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fa79c-107">Requirements</span></span>  
- <span data-ttu-id="fa79c-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fa79c-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="eb048-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eb048-107">Requirements</span></span>  
+ <span data-ttu-id="eb048-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eb048-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fa79c-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="fa79c-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="eb048-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="eb048-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="fa79c-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fa79c-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="eb048-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="eb048-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="fa79c-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fa79c-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="eb048-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eb048-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fa79c-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fa79c-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eb048-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eb048-112">See also</span></span>
