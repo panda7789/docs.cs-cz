@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83dec9b6ed3b1e538e0f1b7d13a33b8bdbc1cf54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcf32c4b27324ccc54eabbb248e8c9906cf693b6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777725"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782364"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps – metoda
 Získá informace uložené v metadatech pro definici zadaného člena, včetně názvu, binární podpis a relativní virtuální adresu, <xref:System.Type> odkazuje token metadat zadaného člena. Toto je jednoduchý Pomocná metoda: Pokud *mb* typu MethodDef, pak je **getmethodprops –** se nazývá; Pokud *mb* FieldDef, pak je **getfieldprops –** je volána. Informace najdete v těchto jiných metod podrobnosti. 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMemberProps (  
    [in]  mdToken           mb,   
    [out] mdTypeDef         *pClass,  

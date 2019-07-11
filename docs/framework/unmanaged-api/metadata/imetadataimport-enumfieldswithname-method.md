@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cf624695136a9397937f05b28dec18493c8e12d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 71a2c7a61d573c1e17d0e8fefcd34d60e05ed3c5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62042702"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780473"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName – metoda
 Vytvoří výčet FieldDef tokeny zadaného typu se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT EnumFieldsWithName (  
    [in, out] HCORENUM    *phEnum,   
    [in]  mdTypeDef       cl,   

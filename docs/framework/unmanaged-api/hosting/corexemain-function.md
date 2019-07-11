@@ -19,19 +19,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b7407db297a827004c851b904b2da8652778cb08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f97e90e3953a01f07d77e604628fbdb79eb9efa0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756413"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779174"
 ---
 # <a name="corexemain-function"></a>_CorExeMain – funkce
 Inicializuje modul CLR (CLR), vyhledá spravovaný vstupní bod v záhlaví spustitelného sestavení modulu CLR a zahájí vykonávání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 __int32 STDMETHODCALLTYPE _CorExeMain ();  
 ```  
   

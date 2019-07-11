@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9869efee18549c3d0c8b9ee9ca27cf31c1ccf452
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6916e6344fe5c112b216ca753c372fa73a4d5af5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050139"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777711"
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption – metoda
 Nastaví zadanou možnost dané hodnotě pro aktuální obor metadat. Možnost řídí, jak se zpracovává volání na aktuální metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetOption (  
     [in] REFGUID optionId,   
     [in] const VARIANT *pValue  

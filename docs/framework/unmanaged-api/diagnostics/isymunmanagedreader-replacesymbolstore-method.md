@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 34d93c6956ff391e4d8726d8e45265c96947ad4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 525ec4828fb942aeb447940ea68a523cd7c69140
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986398"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736737"
 ---
 # <a name="isymunmanagedreaderreplacesymbolstore-method"></a>ISymUnmanagedReader::ReplaceSymbolStore – metoda
 Nahradí existující úložiště symbolů do úložiště symbolů delta. Tato metoda je podobný [updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) metody, s tím rozdílem, že daný delta funguje jako o úplné nahrazení spíše než aktualizace.  
@@ -32,7 +32,7 @@ Nahradí existující úložiště symbolů do úložiště symbolů delta. Tato
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ReplaceSymbolStore (  
     [in] const WCHAR *filename,  
     [in] IStream *pIStream);  

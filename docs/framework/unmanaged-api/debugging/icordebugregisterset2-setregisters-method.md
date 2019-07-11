@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4cd4f7e1b0737672f33bdd7fec4f7953e20593f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e11e7eb477d938d3ccba352ef357d927af966bc
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782808"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67770654"
 ---
 # <a name="icordebugregisterset2setregisters-method"></a>ICorDebugRegisterSet2::SetRegisters – metoda
 `SetRegisters` není implementováno v rozhraní .NET Framework verze 2.0. Nevolejte tuto metodu.  
@@ -32,7 +32,7 @@ ms.locfileid: "61782808"
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetRegisters (  
     [in] ULONG32 maskCount,  
     [in, size_is(maskCount)] BYTE mask[],  

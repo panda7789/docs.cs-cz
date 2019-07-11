@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60b6d9c302cd3af9f41e5a8dce62d7eb268c4198
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a9eb9bb1e4abeb98d8d0ba2b052612d918c45f22
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961171"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741082"
 ---
 # <a name="closeclrenumeration-function"></a>CloseCLREnumeration – funkce
 Zavře žádné platný common language runtime (CLR) pokračovat po spuštění události nachází v poli popisovačů vrácený [enumerateclrs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md)a uvolní paměť pro cestu pole popisovač a řetězce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CloseCLREnumeration (  
     [in]  DWORD      pHandleArray,  
     [in]  LPWSTR**   pStringArray,  

@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bc36468a2016822e884ec3a36a23c75477a00a2d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1e7bbac17d9a9ae191a5ad6d69b52a806383562
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045380"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781602"
 ---
 # <a name="corsavesize-enumeration"></a>CorSaveSize – výčet
 Obsahuje hodnoty určující úroveň přesnosti se vyžaduje při dotazování na velikost uložení operace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorSaveSize {  
     cssAccurate                = 0x0000,   
     cssQuick                   = 0x0001,   

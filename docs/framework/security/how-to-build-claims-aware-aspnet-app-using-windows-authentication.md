@@ -3,12 +3,12 @@ title: 'Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřo
 ms.date: 03/30/2017
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
 author: BrucePerlerMS
-ms.openlocfilehash: 039fccde55dd48571e38f064f68b16480b65cb44
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9b58a4066538441a48bc6646f364e846a25cc8c8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650409"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742508"
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním Windows
 ## <a name="applies-to"></a>Platí pro  
@@ -56,7 +56,7 @@ ms.locfileid: "64650409"
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
+### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
 1. Spusťte sadu Visual Studio a pak klikněte na **souboru**, **nový**a potom **projektu**.  
   
@@ -72,7 +72,7 @@ ms.locfileid: "64650409"
 ## <a name="step-2--configure-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
  V tomto kroku přidáte položku konfigurace pro *Web.config* konfigurační soubor a upravit *Default.aspx* deklarací souboru chcete zobrazit informace o účtu.  
   
-#### <a name="to-configure-aspnet-application-for-claims-using-windows-authentication"></a>Ke konfiguraci aplikace ASP.NET pro deklarace identity pomocí ověřování Windows  
+### <a name="to-configure-aspnet-application-for-claims-using-windows-authentication"></a>Ke konfiguraci aplikace ASP.NET pro deklarace identity pomocí ověřování Windows  
   
 1. V **TestApp** projektu *Default.aspx* souboru, nahraďte existující kód následujícím kódem:  
   
@@ -136,6 +136,6 @@ ms.locfileid: "64650409"
 ## <a name="step-3--test-your-solution"></a>Krok 3 – Otestování řešení  
  V tomto kroku otestujte aplikaci webových formulářů ASP.NET a ověřte, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování Windows.  
   
-#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>K testování aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
+### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>K testování aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
   
 1. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Mělo by se zobrazit s *Default.aspx*, a název účtu Windows (včetně názvu domény) už mají zobrazit jako ověřený uživatel v horní části stránky. Na stránce obsahu by měl obsahovat tabulku se deklarace identity načíst z vašeho účtu Windows.

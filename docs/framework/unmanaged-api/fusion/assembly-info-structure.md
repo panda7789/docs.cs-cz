@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bae19ec18c54eccc7aa54d2d3a006f36ba8ab762
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 219a92c0a105cc43e0c2af7d93868cac12f2e4e4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985956"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778520"
 ---
 # <a name="assemblyinfo-structure"></a>ASSEMBLY_INFO – struktura
 Obsahuje informace o sestavení, který je zaregistrován v globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _ASSEMBLY_INFO {  
     ULONG           cbAssemblyInfo;  
     DWORD           dwAssemblyFlags;  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 726ac0e23f739f451e1a0ab66c4c36aa6edbe569
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b9a36e094689696b746fcf7f10c282a1b0d9c570
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934092"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777835"
 ---
 # <a name="isymunmanagedwriterdefinedocument-method"></a>ISymUnmanagedWriter::DefineDocument – metoda
 Definuje zdrojový dokument. Identifikátory GUID jsou k dispozici pro známé jazyky, dodavatele a typů dokumentů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT DefineDocument(  
     [in]  const WCHAR  *url,  
     [in]  const GUID   *language,  

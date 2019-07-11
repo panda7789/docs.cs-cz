@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d35231e4c36639722635796891056a8902b95940
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf6deb4d1420e7b58e1edc7741b683beb591ca5e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645176"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782105"
 ---
 # <a name="imetadatatablesgetuserstringheapsize-method"></a>IMetaDataTables::GetUserStringHeapSize – metoda
 Získá velikost v bajtech, řetězec haldy uživatele.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetUserStringHeapSize (  
     [out] ULONG   *pcbBlobs  
 );  

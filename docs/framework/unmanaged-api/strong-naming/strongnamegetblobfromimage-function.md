@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b136e1fa480e53bcacfd9ea832d1dc4d1bd69f74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b076c39ccf40ca5b613cab94ecc75716158d97a9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000295"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780126"
 ---
 # <a name="strongnamegetblobfromimage-function"></a>StrongNameGetBlobFromImage – funkce
 Získá binární vyjádření této bitové kopie sestavení na adrese zadaná paměťová.  
@@ -30,7 +30,7 @@ Získá binární vyjádření této bitové kopie sestavení na adrese zadaná 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 BOOLEAN StrongNameGetBlobFromImage (  
     [in]  BYTE        *pbBase,  
     [in]  DWORD       dwLength,  

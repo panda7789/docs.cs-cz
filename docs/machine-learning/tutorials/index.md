@@ -2,13 +2,13 @@
 title: Kurzy ML.NET
 description: Prozkoumání ML.NET kurzů se naučíte vytvářet vlastní řešení AI a integrovat je do vašich aplikací .NET.
 ms.custom: seodec18
-ms.date: 04/05/2019
-ms.openlocfilehash: 4530e62a0ac8991f6ece37a0ad9909a4c4d08fe7
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.date: 07/08/2019
+ms.openlocfilehash: 16311a892f9b1da5d6de10f52bec2ad9410966b7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401663"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777966"
 ---
 # <a name="mlnet-tutorials"></a>Kurzy ML.NET 
 
@@ -20,6 +20,7 @@ V následujících kurzech umožňují porozumět způsobu použití [ML.NET](..
 - [Iris clustering](iris-clustering.md): ukazuje, jak použít **clustering** úloh pomocí ML.NET.
 - [Doporučení](movie-recommendation.md): generovat film **doporučení** na základě předchozího hodnocení uživatele
 - [Klasifikace obrázků](image-classification.md): ukazuje, jak přeučování existující model TensorFlow k vytvoření vlastní image třídění pomocí ML.NET.
+- [Detekce anomálií](sales-anomaly-detection.md): ukazuje, jak sestavit aplikaci detekce anomálií pro analýzu prodejní data produktu.
 
 ## <a name="next-steps"></a>Další kroky
 

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0ce1d8c0074f62d35e16465b368269e233a713b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d672cf2375a5354c48608b3e4156867ba406992a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993522"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765012"
 ---
 # <a name="icorpublishenumclone-method"></a>ICorPublishEnum::Clone – metoda
 Vytvoří kopii tohoto [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Clone (  
     [out] ICorPublishEnum   **ppEnum  
 );  

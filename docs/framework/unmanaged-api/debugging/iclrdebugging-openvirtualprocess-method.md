@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d530f37c979a1ecddf2cb3895234aab2f7556b88
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 4c460bc644017f32fdb96d35e5f42981ac09f825
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489628"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67738380"
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess – metoda
 Získá icordebugprocess – rozhraní, která odpovídá common language runtime (CLR) modulu načtené v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT OpenVirtualProcess(  
     [in] ULONG64 moduleBaseAddress,  
     [in] IUnknown * pDataTarget,  

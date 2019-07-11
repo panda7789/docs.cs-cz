@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 752a7e5233d8b1d88b49be450972fc964f82d2c4
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 1453b781f9466f7832e57140db04fedceedb5568
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690656"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775520"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
@@ -80,7 +80,7 @@ Při vlastní výjimky je nezbytné, pojmenujte ji odpovídajícím způsobem a 
 
 ## <a name="include-three-constructors-in-custom-exception-classes"></a>Zahrnout tři konstruktory ve třídách vlastní výjimky
 
-Použijte aspoň tři běžné konstruktory při vytváření vlastních tříd výjimek: výchozí konstruktor, konstruktor, který přijímá řetězcovou zprávu a konstruktor, který přijímá řetězcovou zprávu a vnitřní výjimku.
+Použijte aspoň tři běžné konstruktory při vytváření vlastních tříd výjimek: konstruktor bez parametrů, konstruktor, který přijímá řetězcovou zprávu a konstruktor, který přijímá řetězcovou zprávu a vnitřní výjimku.
 
 * <xref:System.Exception.%23ctor>, který používá výchozí hodnoty.
 

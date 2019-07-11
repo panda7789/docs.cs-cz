@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 736e537a3f773acbd61dbad013b8dfb7cc429076
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d2ed9ba4b580b8f64fc05dbb429742442a36acf5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666020"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67757460"
 ---
 # <a name="strongnamekeygenex-function"></a>StrongNameKeyGenEx – funkce
 Generuje nový pár veřejného a privátního klíče se zadanou velikost klíče pro použití silným názvem.  
@@ -30,7 +30,7 @@ Generuje nový pár veřejného a privátního klíče se zadanou velikost klí�
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 BOOLEAN StrongNameKeyGenEx (  
     [in]  LPCWSTR   wszKeyContainer,  
     [in]  DWORD     dwFlags,  

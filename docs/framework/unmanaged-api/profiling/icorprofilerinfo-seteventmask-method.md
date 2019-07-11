@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 122a621552b49f476f219216ac0a52011c1542ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f3f61caf0f4993c49d2956a37068aa826c4ac29
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61860929"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772109"
 ---
 # <a name="icorprofilerinfoseteventmask-method"></a>ICorProfilerInfo::SetEventMask – metoda
 Nastaví hodnotu, která určuje typy událostí, pro které profileru chce obdržet oznámení z common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetEventMask(  
     [in] DWORD dwEvents);  
 ```  

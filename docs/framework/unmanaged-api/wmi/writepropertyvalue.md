@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a98103367f497b18f9b8fbd61a37abf9816b8356
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47120ff9de9e6e4802c5aea990841b235cd6c74c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62040401"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783057"
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue – funkce
 Zapíše zadaný počet bajtů na vlastnost identifikovaný popisovač vlastnosti.
@@ -30,7 +30,7 @@ Zapíše zadaný počet bajtů na vlastnost identifikovaný popisovač vlastnost
     
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT WritePropertyValue (
    [in] int                  vFunc, 
    [in] IWbemObjectAccess*   ptr, 
@@ -61,7 +61,7 @@ HRESULT WritePropertyValue (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | Došlo k neshodě typů. |

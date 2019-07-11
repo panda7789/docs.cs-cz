@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 15b42bb72975fad4c1830a961f83d9e3065d055b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d8bc90cc07c2390cc83860b8009a3705f927e80
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939812"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776662"
 ---
 # <a name="isymunmanageddocumentgeturl-method"></a>ISymUnmanagedDocument::GetURL – metoda
 Vrátí adresu uniform resource locator (URL) pro tento dokument.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetURL(  
     [in]  ULONG32  cchUrl,  
     [out] ULONG32  *pcchUrl,  
