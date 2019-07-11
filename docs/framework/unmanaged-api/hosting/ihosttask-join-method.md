@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4373fc4e8a4c414c40e8d3c5547b5998b9300348
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e88b7bd647fe46ba98e4396d1836293647f2faa4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789516"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67764419"
 ---
 # <a name="ihosttaskjoin-method"></a>IHostTask::Join – metoda
 Blokuje volající úlohou, dokud není úloha reprezentované aktuální [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance dokončení, o zadaný časový interval uplyne, nebo [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) je volána.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Join (  
     [in] DWORD milliseconds,  
     [in] DWORD option  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 73645265821d5854776e412f8eb0f33b36db00d1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 54abcd357c6f26f54432b39bfcb4a0d63afabfe4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698171"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67738724"
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize – metoda
 Získá velikost v bajtech, typu ukazatele, který používá cílového procesu. Tato metoda je volána službami common language runtime přístup k datům.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetPointerSize (  
     [out] ULONG32     *pointerSize  
 );  

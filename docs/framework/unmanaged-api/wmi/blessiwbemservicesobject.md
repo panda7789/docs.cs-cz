@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d28497c637a40d7e2659b18868124ea898397f92
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b7f24606e3b021b0df5bdbaab795e4f672f724fa
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636910"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761711"
 ---
 # <a name="blessiwbemservicesobject-function"></a>Funkce BlessIWbemServicesObject
 Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu. 
@@ -30,7 +30,7 @@ Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbe
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT BlessIWbemServicesObject (
    [in] IUnknown* pIUnknown,
    [in] BSTR strUser, 
@@ -65,7 +65,7 @@ HRESULT BlessIWbemServicesObject (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0x80070057 | Jeden nebo více argumentů nejsou platné. |
 | `E_POINTER` | 0x80004003 | `pIWbemServices` je `null`. | 

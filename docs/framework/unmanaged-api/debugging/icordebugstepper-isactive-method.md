@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d4166b63e0bb0ae276c48abb961e381809cc9792
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9dde27f74ac59d033b6e25fba1dbb8e52c4b91af
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763747"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760673"
 ---
 # <a name="icordebugstepperisactive-method"></a>ICorDebugStepper::IsActive – metoda
 Získá hodnotu určující, zda tento icordebugstepper – právě probíhá krok.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT IsActive (  
     [out] BOOL   *pbActive  
 );  

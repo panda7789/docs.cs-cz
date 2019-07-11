@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d084c3065bc23d45173a094bbfa9cc4c62cd4133
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34922a56dbe43d12207fcf55e9e73847dfad29dc
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786253"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67757497"
 ---
 # <a name="imetadatafilterunmarkall-method"></a>IMetaDataFilter::UnmarkAll – metoda
 Odstraní značky zpracování ze všech tokenů v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT UnmarkAll ();  
 ```  
   

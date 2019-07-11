@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-ms.openlocfilehash: 22db347afb45b981602d5a92516271f75b8e4359
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 270b0f2123a20787a8e75d40f56a675c55824243
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648683"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742561"
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Návod: Použití jen uložených procedur (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům pomocí uložených procedur komponentami TableAdapter pouze. Tento přístup se často používá ve správci databází a omezit způsob přístupu k úložišti dat.  
@@ -19,7 +19,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
  Pro účely tohoto názorného postupu budete používat dvě metody, které byly namapovány na uložené procedury v ukázkové databázi Northwind: CustOrdersDetail a CustOrderHist. Mapování nastane, když spustíte nástroj příkazového řádku SqlMetal generuje soubor jazyka Visual Basic. Další informace najdete v části požadavky později v tomto názorném postupu.  
   
- Tento názorný postup nevyžaduje [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]. Vývojáři, kteří používají Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] k implementaci funkcionality uloženou proceduru. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Tento názorný postup nevyžaduje Návrhář relací objektů. Vývojáři, kteří používají Visual Studio můžete také O/R Designer k implementaci funkcionality uloženou proceduru. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -60,7 +60,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření LINQ to SQL řešení  
  V této první úloze vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
   
-#### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
+### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
   
 1. V sadě Visual Studio **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
   
@@ -77,7 +77,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-the-linq-to-sql-assembly-reference"></a>Přidání LINQ na odkaz na sestavení SQL  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Sestavení není součástí standardní šablony aplikace Windows Forms. Budete muset přidat sestavení sami, jak je popsáno v následujících krocích:  
   
-#### <a name="to-add-systemdatalinqdll"></a>To add System.Data.Linq.dll  
+### <a name="to-add-systemdatalinqdll"></a>To add System.Data.Linq.dll  
   
 1. V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory**.  
   
@@ -90,7 +90,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-the-northwind-code-file-to-the-project"></a>Přidání souboru Northwind kódu do projektu  
  Tento krok předpokládá, že jste použili nástroj SqlMetal ke generování souboru kódu z ukázkové databáze Northwind. Další informace najdete v oddílu požadavky dříve v tomto návodu.  
   
-#### <a name="to-add-the-northwind-code-file-to-the-project"></a>Chcete-li přidat soubor kódu northwind do projektu  
+### <a name="to-add-the-northwind-code-file-to-the-project"></a>Chcete-li přidat soubor kódu northwind do projektu  
   
 1. Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
   
@@ -101,7 +101,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="creating-a-database-connection"></a>Vytváří se připojení k databázi  
  V tomto kroku definujete připojení k ukázkové databázi Northwind. Tento návod používá jako cestu "c:\linqtest3\northwnd.mdf".  
   
-#### <a name="to-create-the-database-connection"></a>Chcete-li vytvořit připojení k databázi  
+### <a name="to-create-the-database-connection"></a>Chcete-li vytvořit připojení k databázi  
   
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.vb**a potom klikněte na tlačítko **zobrazit kód**.  
   
@@ -114,9 +114,9 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="setting-up-the-user-interface"></a>Nastavení uživatelského rozhraní  
  V této úloze vytvoříte rozhraní tak, aby uživatelé můžou spouštět uložené procedury pro přístup k datům v databázi. V aplikaci, kterou vyvíjíte s tímto názorným postupem můžou uživatelé k datům v databázi pouze pomocí uložených procedur, které jsou vloženy do aplikace.  
   
-#### <a name="to-set-up-the-user-interface"></a>Nastavení uživatelského rozhraní  
+### <a name="to-set-up-the-user-interface"></a>Nastavení uživatelského rozhraní  
   
-1. Vraťte se Windows Forms Designer (**Form1.vb[Design]**).  
+1. Vraťte se Windows Forms Designer (**Form1.vb[Design]** ).  
   
 2. Na **zobrazení** nabídky, klikněte na tlačítko **nástrojů**.  
   
@@ -131,9 +131,9 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 4. Klikněte pravým tlačítkem na **Label1**a potom klikněte na tlačítko **vlastnosti**.  
   
-5. Změnit **Text** vlastnost z **Label1** k **zadejte OrderID:**.  
+5. Změnit **Text** vlastnost z **Label1** k **zadejte OrderID:** .  
   
-6. Stejně jako u **Label2**, změnit **Text** vlastnost z **Label2** k **zadejte ID zákazníka:**.  
+6. Stejně jako u **Label2**, změnit **Text** vlastnost z **Label2** k **zadejte ID zákazníka:** .  
   
 7. Stejným způsobem, změnit **Text** vlastnost **Button1** k **OrderDetails**.  
   
@@ -141,7 +141,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
      Ovládací prvky tlačítka rozšíříte tak, aby veškerý text.  
   
-#### <a name="to-handle-button-clicks"></a>Pro zpracování kliknutí na tlačítko  
+### <a name="to-handle-button-clicks"></a>Pro zpracování kliknutí na tlačítko  
   
 1. Dvakrát klikněte na panel **OrderDetails** na **Form1** vytvořit `Button1` obslužná rutina události a otevřete editor kódu.  
   
@@ -158,7 +158,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="testing-the-application"></a>Testování aplikace  
  Nyní je čas k testování aplikace. Všimněte si, že váš kontakt s úložišti dat je omezená na libovolné akce může trvat dvě uložené procedury. Tyto akce jsou vrátit produkty zahrnuté pro všechny orderID, které zadáte, nebo vrátit historie produktů seřazených pro jakékoli CustomerID zadáte.  
   
-#### <a name="to-test-the-application"></a>Testování aplikace  
+### <a name="to-test-the-application"></a>Testování aplikace  
   
 1. Stisknutím klávesy F5 spusťte ladění.  
   

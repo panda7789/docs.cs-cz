@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c54b2af6e7a200db89bfd7335868a629d7a886fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76fbbb3f924f610b604586dca78cab344217b544
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61724093"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739460"
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState – výčet
 Určuje stav uživatele vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorDebugUserState {  
     USER_STOP_REQUESTED     =  0x01,  
     USER_SUSPEND_REQUESTED  =  0x02,  

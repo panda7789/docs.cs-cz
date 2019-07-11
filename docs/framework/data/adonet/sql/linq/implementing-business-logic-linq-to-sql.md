@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: 3dcc6f763acfff076bb03076a17e3a8f8916267c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9456340834c06e87f977cd784a37f7436523d29e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033563"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743122"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Provádění obchodní logiky (LINQ to SQL)
 Termín "obchodní logiky" v tomto tématu se odkazuje na všechny vlastní pravidla nebo ověřovací testy, které můžete použít pro data předtím, než je vložena, aktualizována nebo odstraněna z databáze. Obchodní logiky se také někdy označuje jako "obchodní pravidla" nebo "logiku domény." V n vrstvá aplikace obvykle slouží jako logické vrstvy tak, aby jej můžete upravit nezávisle na prezentační vrstva a vrstva přístupu k datům. Obchodní logika může vyvolávat vrstvy přístupu k datům před nebo za všechny aktualizace, vložení nebo odstranění dat v databázi.  
@@ -18,14 +18,14 @@ Termín "obchodní logiky" v tomto tématu se odkazuje na všechny vlastní prav
  Obchodní logika může být stejně snadné jako ověřování schématu, abyste měli jistotu, že typ pole je kompatibilní s typem sloupce tabulky. Nebo může sestávat z několika objektů, které libovolně složité interagovali. Pravidla mohou být implementovány jako uložené procedury v databázi nebo objektů v paměti. Nicméně se implementuje obchodní logiku, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umožňuje použít částečné třídy a částečné metody k oddělení obchodní logiku z kód přístupu k datům.  
   
 ## <a name="how-linq-to-sql-invokes-your-business-logic"></a>Jak vyvolá obchodní logiku v LINQ to SQL  
- Když vygenerujete třídu entity v době návrhu ručně nebo pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo SQLMetal, je definován jako částečné třídy. To znamená, že v samostatném souboru kódu, můžete definovat jiné části třídy entity, která obsahuje vaše vlastní obchodní logiky. V době kompilace jsou dvě části sloučeny do jediné třídy. Ale pokud máte k opětovnému vytvoření tříd entit pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo SQLMetal, můžete tak učinit a vaše část třídy se nezmění.  
+ Při generování třídu entity v době návrhu ručně nebo pomocí Návrháře relací objektů nebo SQLMetal je definován jako částečné třídy. To znamená, že v samostatném souboru kódu, můžete definovat jiné části třídy entity, která obsahuje vaše vlastní obchodní logiky. V době kompilace jsou dvě části sloučeny do jediné třídy. Ale pokud máte k opětovnému vytvoření tříd entit pomocí Návrháře relací objektů nebo SQLMetal, můžete tak učinit a vaše část třídy se nezmění.  
   
  Částečné třídy, které definují entity a <xref:System.Data.Linq.DataContext> obsahovat částečné metody. Toto jsou body rozšiřitelnosti, které vám umožní použít obchodní logiku, před a za jakékoli update, insert nebo delete pro entity nebo vlastnosti entity. Částečné metody můžete představit jako události za kompilace. Generátor kódu definuje podpis metody a volání metody get a nastavte přistupující objekty vlastnosti `DataContext` konstruktoru a v některých případech na pozadí při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána. Ale pokud nejsou implementovat konkrétní částečnou metodu, pak všechny odkazy a definice se odeberou v době kompilace.  
   
  V implementaci definici, který píšete v souboru samostatného kódu můžete provést vyžádáním libovolnou vlastní logiku. Samotný dílčí třídu můžete použít jako vrstva vaší domény, nebo můžete volat z implementující definice částečné metody do samostatného objekt nebo objekty. V obou případech obchodní logiky je čistě oddělená od data přístupový kód a kód prezentační vrstvy.  
   
 ## <a name="a-closer-look-at-the-extensibility-points"></a>Bližší pohled na body rozšiřitelnosti  
- Následující příklad ukazuje část kód vygenerovaný [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro `DataContext` třídu, která má dvě tabulky: `Customers` a `Orders`. Všimněte si, že Insert, Update a Delete metody jsou definovány pro každou tabulku ve třídě.  
+ Následující příklad ukazuje část kód vygenerovaný Návrhář relací objektů pro `DataContext` třídu, která má dvě tabulky: `Customers` a `Orders`. Všimněte si, že Insert, Update a Delete metody jsou definovány pro každou tabulku ve třídě.  
   
 ```vb  
 Partial Public Class Northwnd  

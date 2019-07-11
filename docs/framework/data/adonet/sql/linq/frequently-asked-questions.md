@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 68d4215129cf4481beb2d8561c1569b3049a287e
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 07801ee7bfbb32540880cdc8599e5b69797b09f9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610587"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743536"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -53,7 +53,7 @@ V dalších částech odpovědět některé běžné problémy, které se mohou 
  A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje několik nástrojů pro zkontrolujete kód SQL, který generuje. Jednou z vašich nejdůležitějších je <xref:System.Data.Linq.DataContext.Log%2A>. Další informace najdete v tématu [podporu ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md).  
   
 ## <a name="unexpected-stored-procedure-results"></a>Uložená procedura neočekávané výsledky  
- Otázka: Mám uložené procedury, vrácená hodnota je vypočítána `MAX()`. Při přetahování uložené procedury, která [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] surface, vrácená hodnota není správný.  
+ Otázka: Mám uložené procedury, vrácená hodnota je vypočítána `MAX()`. Při přetahování uloženou proceduru na plochu návrháře relací objektů, návratová hodnota není správná.  
   
  A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návratové hodnoty generovaných databází pomocí uložených procedur dvěma způsoby:  
   
@@ -107,7 +107,7 @@ V dalších částech odpovědět některé běžné problémy, které se mohou 
 ## <a name="multiple-dbml-files"></a>Více soubory DBML  
  Otázka: Pokud mám více DBML soubory, které sdílejí společné některé tabulky, obdržím chybu kompilátoru.  
   
- A. Nastavte **kontextu Namespace** a **Entity Namespace** vlastnosti z [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] na hodnotu odlišné pro každého souboru DBML. Tento přístup se eliminují kolizí název nebo obor názvů.  
+ A. Nastavte **kontextu Namespace** a **Entity Namespace** vlastnosti na hodnotu odlišné pro každého souboru DBML z Návrháře relací objektů. Tento přístup se eliminují kolizí název nebo obor názvů.  
   
 ## <a name="avoiding-explicit-setting-of-database-generated-values-on-insert-or-update"></a>Jak se vyhnout explicitní nastavení hodnot generovaných databází na Insert nebo Update  
  Otázka: Budu mít databázové tabulce `DateCreated` sloupec, který se výchozí hodnota je SQL `Getdate()`. Při pokusu vložit nový záznam s použitím [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], získá hodnotu `NULL`. Byste očekávali ji nastavit na výchozí databáze  
@@ -134,10 +134,10 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="errors-using-sql-compact-35"></a>Chyby pomocí SQL Compact 3,5  
  Otázka: Můžu dojde k chybě při přetahování tabulek z databáze serveru SQL Server Compact 3.5.  
   
- A. [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje SQL Server Compact 3.5, i když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] neodpovídá modulu runtime. V takovém případě musíte vytvořit vlastní entity třídy a přidejte příslušné atributy.  
+ A. Návrhář relací objektů nepodporuje SQL Server Compact 3.5, i když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] neodpovídá modulu runtime. V takovém případě musíte vytvořit vlastní entity třídy a přidejte příslušné atributy.  
   
 ## <a name="errors-in-inheritance-relationships"></a>Chyby ve vztazích dědičnosti  
- Otázka: Můžu použít tvar dědičnosti sady nástrojů v [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] připojit dvěma entitami, ale nemůžu dojde k chybám.  
+ Otázka: Použít tvar dědičnosti sady nástrojů v Návrháři relací objektů pro připojení dvě entity, ale došlo k chybám.  
   
  A. Vytvoření relace není dostatečně. Je třeba zadat informace, jako je například sloupec diskriminátoru, hodnota diskriminátoru základní třídy a odvozené třídy hodnota diskriminátoru.  
   
@@ -163,7 +163,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 3. Zkontrolujte výchozí <xref:System.Data.Linq.Mapping.UpdateCheck> hodnotu (<xref:System.Data.Linq.Mapping.UpdateCheck.Never>) pro určení, která je správnou hodnotu pro vaši aplikaci.  
   
     > [!CAUTION]
-    >  Pokud používáte [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] v sadě Visual Studio, se můžou přepsat vaše změny.  
+    >  Pokud používáte Návrháře relací objektů v sadě Visual Studio, může přepsat vaše změny.  
   
 ## <a name="aptca"></a>APTCA  
  Otázka: Je System.Data.Linq označené k použití částečně důvěryhodným kódem?  

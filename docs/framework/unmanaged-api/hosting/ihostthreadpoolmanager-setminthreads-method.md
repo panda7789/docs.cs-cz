@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e290f20feacc59944bb1cafded327f4316ab88d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c79f18c1deec4183a5a736c5acf88e9a1fd8021
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046212"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67749089"
 ---
 # <a name="ihostthreadpoolmanagersetminthreads-method"></a>IHostThreadPoolManager::SetMinThreads – metoda
 Nastaví minimální počet nečinných vláken, které hostitele, musíte mít v předvídání požadavků.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetMinThreads (  
     [in] DWORD MinThreads  
 );  

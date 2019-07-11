@@ -2,15 +2,15 @@
 title: Generování kódu v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 6565655cdb3222a8c9fa7e7759bac09d57ee269b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fbc70669b9c03b59468f4f6a67c1f73432883193
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903276"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743610"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Generování kódu v LINQ to SQL
-Můžete generovat kód pro reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroj příkazového řádku SQLMetal. V obou případech se generování kódu začátku do konce dochází ve třech fázích:  
+Můžete generovat kód pro reprezentaci databáze pomocí Návrháře relací objektů nebo nástroj příkazového řádku SQLMetal. V obou případech se generování kódu začátku do konce dochází ve třech fázích:  
   
 1. *Extraktor* extrahuje informace o schématu z databáze a znovu sestaví informace do souboru DBML ve formátu XML.  
   
@@ -18,7 +18,7 @@ Můžete generovat kód pro reprezentaci databáze pomocí [!INCLUDE[vs_ordesign
   
 3. Pokud se zdá, že žádné chyby ověření, je soubor předaná generátoru kódu.  
   
- Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojáři, kteří používají Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro generování kódu. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojářům používajícím Visual Studio můžete také použít Návrhář relací objektů pro generování kódu. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="dbml-extractor"></a>Extraktor  
  Je Extraktor [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] součást, která přijímá metadata databáze jako vstup a vytvoří jako výstup souboru DBML.  

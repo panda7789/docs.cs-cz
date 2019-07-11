@@ -7,17 +7,17 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: 775c40cbb62272f913297d5a58914a0c82c5a7d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 850e20fe8b5b6bfd392c80c87950a81a1a8a5c24
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780832"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755208"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>Postupy: Deklarace objektu pomocí inicializátoru objektu (Visual Basic)
 Inicializátory objektů umožňují deklarovat a vytvoří instanci třídy v jediném příkazu. Kromě toho můžete inicializovat jednoho nebo více členů instance ve stejnou dobu bez vyvolání konstruktoru s parametry.  
   
- Použijete-li vytvořit instanci typu s názvem inicializátoru objektu, je zavolán výchozí konstruktor pro třídu, za nímž následuje inicializace členů určené ve vámi určeném pořadí.  
+ Použijete-li vytvořit instanci typu s názvem inicializátoru objektu, se nazývá konstruktor pro třídu, za nímž následuje inicializace členů určené ve vámi určeném pořadí.  
   
  Následující postup ukazuje, jak vytvořit instanci `Student` třídy třemi různými způsoby. Třída má křestní jméno, příjmení a vlastnosti třídy rok, mimo jiné. Všechny tři deklarace vytvoří novou instanci třídy `Student`, s vlastností `First` nastavena na "Michael", vlastnost `Last` nastavená na "Tucker" a všechny ostatní členové nastavená na výchozí hodnoty. Výsledek deklaraci v postupu je ekvivalentní v následujícím příkladu, který nepoužívá inicializátoru objektu.  
   

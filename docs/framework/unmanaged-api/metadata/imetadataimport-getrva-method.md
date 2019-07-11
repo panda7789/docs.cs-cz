@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 96c013cd3e45e4ede0cbc9f42bf511a2eb3fc12d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d305aa59c1b9e9e1225b30f12e36fc689d584db1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777549"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778882"
 ---
 # <a name="imetadataimportgetrva-method"></a>IMetaDataImport::GetRVA – metoda
 Získá relativní virtuální adresu (RVA) a příznaky implementace metody nebo pole reprezentována zadaného tokenu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetRVA (  
    [in]  mdToken     tk,   
    [out] ULONG       *pulCodeRVA,   

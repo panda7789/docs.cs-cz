@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cac790ebbf25ee3095db293ba90612be37fff9b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e46118e97a4b888a16f12cf6705d2b7e67bbf7ec
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609227"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740357"
 ---
 # <a name="cordebugchainreason-enumeration"></a>CorDebugChainReason – výčet
 Označuje důvod nebo důvodů, proč inicializační řetězec volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorDebugChainReason {  
     CHAIN_NONE              = 0x000,  
     CHAIN_CLASS_INIT        = 0x001,  

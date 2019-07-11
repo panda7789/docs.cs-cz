@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb970d31fb5158adc7dbcbb7cc0175cc91c83c8c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de1646cdbc11369b43a821d8b762879d1df7ed2e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698041"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751532"
 ---
 # <a name="identityattribute-structure"></a>IDENTITY_ATTRIBUTE – struktura
 Obsahuje informace o atributu metadata o [idefinitionidentity –](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _IDENTITY_ATTRIBUTE {  
     LPCWSTR  pszNamespace;  
     LPCWSTR  pszName;  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 26a43a4f-83c9-4732-806d-bb23aad0ff6b
-ms.openlocfilehash: 6a25ea5fe80da1fed16f44fd3243ebea4d64069f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa3690ae74869f5dc0fbaa8d824d4aebca8ce724
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902886"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743066"
 ---
 # <a name="insert-update-and-delete-operations"></a>Operace vložení, aktualizace a odstranění
 Provedete `Insert`, `Update`, a `Delete` operace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přidáním, změně a odebrání objekty v objektovém modelu. Ve výchozím nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přeloží své akce pro SQL a odeslání změn do databáze.  
@@ -30,7 +30,7 @@ Provedete `Insert`, `Update`, a `Delete` operace v [!INCLUDE[vbtecdlinq](../../.
 > [!NOTE]
 >  Toto chování můžete přepsat pomocí vlastních vlastní logiku, obvykle prostřednictvím uložené procedury. Další informace najdete v tématu [odpovědnosti pro vývojáře v přepisuje výchozí chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
 >   
->  Pomocí sady Visual Studio mohou vývojáři [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vývoji uložené procedury pro tento účel.  
+>  Vývojáři, kteří používají Visual Studio můžete použít Návrháře relací objektů na vývoj uložené procedury pro tento účel.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9cdbc2234519c0dba1a5004246492e7609ea2b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb95c11900b84b78a3f862bcb73f0700aaabeeaa
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61597892"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755977"
 ---
 # <a name="icorprofilercallbackexceptionthrown-method"></a>ICorProfilerCallback::ExceptionThrown – metoda
 Oznámí profileru, že byla vyvolána výjimka.  
@@ -32,7 +32,7 @@ Oznámí profileru, že byla vyvolána výjimka.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ExceptionThrown(  
     [in] ObjectID thrownObjectId);  
 ```  

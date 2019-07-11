@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da5b640093184e10ef9e3b895ce2328969a45ac9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3e4095e0af13149a852ca055aa6a5e1e2d6848a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696337"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67753408"
 ---
 # <a name="ihostsyncmanagercreaterwlockreaderevent-method"></a>IHostSyncManager::CreateRWLockReaderEvent – metoda
 Vytvoří objekt ruční obnovení události pro implementaci zámku čtecího modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CreateRWLockReaderEvent (  
     [in]  BOOL bInitialState,  
     [in]  SIZE_T cookie,  

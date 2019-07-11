@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 141475c4d92278be02d6a832a93cd8553a4bcbd8
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 0a1ed01d9e6cb86ea177e8b947627f9dc02eedae
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661128"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744214"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# odkaz)
 
@@ -76,14 +76,14 @@ var binaryLiteral = 0b_0010_1010;
 
 Desítkové literály nevyžadují jakoukoli předponu. `x` Nebo `X` označuje, že předpona *šestnáctkové literál*. `b` Nebo `B` označuje, že předpona *binární literál*. Deklarace `binaryLiteral` demonstruje použití `_` jako *oddělovač číslic*. Oddělovač číslic jde použít s všechny číselné literály. Binární literály a oddělovače číslic `_` podporuje workflowy C# 7.0.
 
-## <a name="literal-suffixes"></a>Přípony literálu 
+### <a name="literal-suffixes"></a>Přípony literálu 
 
-`l` Nebo `L` příponu Určuje, že by měl být celočíselný literál `long` typu. `ul` Nebo `UL` Určuje příponu `ulong` typu. Pokud `L` přípona se používá na literál, který je větší než 9,223,372,036,854,775,807 (maximální hodnota `long`), hodnota převedená na `ulong` typu. Pokud se překročí Hodnota reprezentovaná celočíselného literálu <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, chybu kompilátoru [CS1021](../../misc/cs1021.md) vyvolá. 
+`l` Nebo `L` příponu Určuje, že by měl být celočíselný literál `long` typu. `ul` Nebo `UL` Určuje příponu `ulong` typu. Pokud `L` přípona se používá na literál, který je větší než 9,223,372,036,854,775,807 (maximální hodnota `long`), hodnota převedená na `ulong` typu. Pokud se překročí Hodnota reprezentovaná celočíselný literál <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, Chyba kompilátoru [CS1021](../../misc/cs1021.md) vyvolá. 
 
 > [!NOTE]
 > Malé písmeno "l" můžete použít jako příponu. Nicméně tím se vygeneruje upozornění kompilátoru protože písmeno "l" je snadno zaměnitelná s číslicí "1". Pro přehlednost použijte "L".
 
-## <a name="type-of-an-integral-literal"></a>Typ celočíselný literál
+### <a name="type-of-an-integral-literal"></a>Typ celočíselný literál
 
 Pokud celočíselného literálu bez přípony, jeho typ je první z těchto typů, ve kterých může být reprezentována jeho hodnotu:
 

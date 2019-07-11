@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 26df40297d080d1ccc9464f7b09e7731f135e270
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4e8b1a76bcc56424e61991d36c94c5f2dfab8aa
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989232"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67745615"
 ---
 # <a name="icordebugchainenumnext-method"></a>ICorDebugChainEnum::Next – metoda
 Získá zadaný počet instancí icordebugchain – z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Next (  
     [in] ULONG  celt,  
     [out, size_is(celt), length_is(*pceltFetched)]  

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d6de2a5ff4d2743c7aca2e46b3af848138c15fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 46ef53acdfa06b0c2be9d2aa55e89ce8fa34dfb0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917355"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761735"
 ---
 # <a name="beginenumeration-function"></a>Funkce BeginEnumeration
 Začíná výčet dostupné metody pro objekt.  
@@ -30,7 +30,7 @@ Začíná výčet dostupné metody pro objekt.
     
 ## <a name="syntax"></a>Syntaxe  
   
-``` 
+```cpp 
 HRESULT BeginMethodEnumeration (
    [in] int               vFunc, 
    [in] IWbemClassObject* ptr, 
