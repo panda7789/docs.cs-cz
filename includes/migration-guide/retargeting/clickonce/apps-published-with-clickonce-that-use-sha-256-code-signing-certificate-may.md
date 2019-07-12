@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bc56a3437e16e5d2c9679847bf3a3035b9e34286
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd4e387f798b3f93f3eabccb5357399fbe5a4fc1
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379812"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804555"
 ---
 ### <a name="apps-published-with-clickonce-that-use-a-sha-256-code-signing-certificate-may-fail-on-windows-2003"></a>Mohou být neúspěšné aplikacím publikovaným pomocí ClickOnce, které používají certifikát pro podpis kódu SHA-256, Windows 2003
 
@@ -14,4 +14,5 @@ ms.locfileid: "66379812"
 |Doporučení|Tato změna podepisování ClickOnce spustitelný soubor má vliv pouze systémy Windows Server 2003; vyžadují, aby byla instalace KB 938397. Zavádí změnu v hodnotě podepisování manifest pomocí algoritmu SHA-256, i když aplikace cílí na rozhraní .NET Framework 4.0 nebo dřívější verze závislosti modulu runtime v rozhraní .NET Framework 4.5 nebo novější verze.|
 |Scope|Edge|
 |Version|4.5|
-|Type|Změna cílení|
+|type|Změna cílení|
+

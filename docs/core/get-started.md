@@ -4,18 +4,18 @@ description: Najděte si materiály pro další informace o vytváření aplikac
 author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
-ms.openlocfilehash: 2ec7f57250db8779552305b2ee69cbcf1db55d0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b111d464b83f3bc6a4a0da86678c5364bf4a9537
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614155"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802303"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
 Tento článek obsahuje informace o zahájení práce s .NET Core. .NET core je nainstalovat ve Windows, Linuxu a macOS. Můžete kód ve svém oblíbeném textovém editoru a vytvářet multiplatformní knihovny a aplikace. 
 
-Pokud si nejste jisti, co je .NET Core nebo toho, jak souvisí jiné technologie .NET, začínat [co je .NET](https://www.microsoft.com/net/learn/dotnet/what-is-dotnet) Přehled. Jednoduše řečeno, .NET Core je open source, napříč platformami implementace .NET.
+Pokud si nejste jisti, co je .NET Core nebo toho, jak souvisí jiné technologie .NET, začínat [co je .NET](https://www.microsoft.com/net/learn/dotnet/what-is-dotnet) Přehled. Jednoduše řečeno, .NET Core je open source, více platforem implementace rozhraní .NET.
 
 ## <a name="create-an-application"></a>Vytvoření aplikace
 
@@ -34,7 +34,7 @@ Byste měli vidět následující výstup:
 Hello World!
 ```
 
-Blahopřejeme! Vytvoříte jednoduchou aplikaci .NET Core. Můžete také použít [Visual Studio Code](tutorials/with-visual-studio-code.md), [Visual Studio 2017](tutorials/with-visual-studio.md) (jenom Windows), nebo [Visual Studio for Mac](tutorials/using-on-mac-vs.md) (macOS pouze), chcete-li vytvořit aplikaci .NET Core.
+Blahopřejeme! Vytvoříte jednoduchou aplikaci .NET Core. Můžete také použít [Visual Studio Code](tutorials/with-visual-studio-code.md), [sady Visual Studio](tutorials/with-visual-studio.md) (jenom Windows), nebo [Visual Studio for Mac](tutorials/using-on-mac-vs.md) (macOS pouze), chcete-li vytvořit aplikaci .NET Core.
 
 ## <a name="tutorials"></a>Kurzy
 

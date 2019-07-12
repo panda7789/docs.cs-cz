@@ -6,12 +6,12 @@ helpviewer_keywords:
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-ms.openlocfilehash: 0e5e2252225c824dfbc9d799b29a16ab6206eb3c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1137052c13571cf31fdf98512f2fe62533387e80
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630667"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802248"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "64630667"
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytuje jednotný objektový model, který umožňuje všem [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] architektury vystavit funkčnost komplexní a funkčně bohaté přístupné a snadno automatizované způsobem.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] byl vyvinut jako nástupce k [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)]. [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] je existující architekturu navržené pro poskytování řešení pro zpřístupnění ovládací prvky a aplikace. [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] díky automatizaci testů v úvahu nebyl navržen, i když se rozvinul tuto roli z důvodu velmi podobné požadavky na usnadnění přístupu a automatizace. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], kromě toho, že přesnější řešení pro usnadnění přístupu, je také určená speciálně k zajištění robustní funkce pro automatické testování. Například [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] spoléhá na jedno rozhraní i zveřejnit informace o uživatelském rozhraní a shromažďovat informace vyžadované na produkty; [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odděluje dva modely.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] byl vyvinut jako následníka pro Microsoft Active Accessibility. Active Accessibility je existující architekturu navržené pro poskytování řešení pro zpřístupnění ovládací prvky a aplikace. Active Accessibility nebyl navržen s automatizací testů v úvahu i v případě, že se rozvinul tuto roli z důvodu velmi podobné požadavky na usnadnění přístupu a automatizace. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], kromě toho, že přesnější řešení pro usnadnění přístupu, je také určená speciálně k zajištění robustní funkce pro automatické testování. Například Active Accessibility spoléhá na jedno rozhraní i zveřejnit informace o uživatelském rozhraní a shromažďovat informace vyžadované na produkty; [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odděluje dva modely.  
   
  Zprostředkovatel i klientů je potřeba implementovat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] mohla být užitečná jako nástroj automatizovaného testu. Zprostředkovatelé automatizace uživatelského rozhraní jsou aplikace, jako je Microsoft Word, Excel, a na základě jiné aplikace třetí strany nebo ovládací prvky [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] operačního systému. Klienti automatizace uživatelského rozhraní zahrnovat automatizované testovací skripty a technologie pro usnadnění aplikace.  
   
@@ -105,7 +105,7 @@ ms.locfileid: "64630667"
   
 - Je Inspect.exe [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)] aplikaci, která slouží ke shromažďování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace pro poskytovatele a klient vývoj a ladění. Je součástí Inspect.exe [!INCLUDE[TLA#tla_winfxsdk](../../../includes/tlasharptla-winfxsdk-md.md)].  
   
-- Zpřístupňuje MSAABridge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace, které [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů. Hlavním cílem přemostění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] k [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] je, aby byl existující [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů možnost pracovat s libovolné architektury, která se má implementovat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+- Zpřístupňuje MSAABridge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] informace Active Accessibility klientům. Hlavním cílem přemostění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Active Accessibility je existující klienti Active Accessibility umožnit komunikovat pomocí libovolné architektury, která se má implementovat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Security"></a>   
 ## <a name="security"></a>Zabezpečení  

@@ -1,16 +1,17 @@
 ---
-ms.openlocfilehash: c8329fbaed68fde3a63a5c589896ffcdf64b1766
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad2f7bf981d56e06ec726942f1fd37dff6b5b09c
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665600"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802617"
 ---
 ### <a name="performance-improvement-in-automation-tree-for-grouping-itemscontrols"></a>Zlepšení výkonu ve stromu automatizace pro seskupení ItemsControls
 
 |   |   |
 |---|---|
 |Podrobnosti|Vyšší výkon zkuste znovu sestavit stromu automatizace <xref:System.Windows.Controls.ItemsControl>, jako je například ListBox nebo ovládacího prvku DataGrid, ve kterém je povolené seskupování.|
-|Rozsah|Hlavní|
+|Scope|Hlavní|
 |Version|4.8|
-|Type|Modul runtime|
+|type|Modul runtime|
+

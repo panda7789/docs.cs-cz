@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: cdd0331ee8ffc664e9fbe04bd1494f1f7d714464
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b83d9c972dbdadb721bae8b7d616c94a0c1c831f
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663384"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804747"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkce dokumentu, které umožňují vytvářet a věrného obsah, který je navržena jako snadno používaná a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentů.  
@@ -39,7 +39,9 @@ ms.locfileid: "64663384"
   
 <a name="flow_document"></a>   
 ### <a name="flow-document-controls"></a>Ovládací prvky toků dokumentu  
- **Poznámka:** Podrobnější informace o toku dokumentu funkcí a postupů pro jejich vytváření najdete v článku [přehled toku dokumentů](flow-document-overview.md).  
+
+> [!NOTE]
+>  Podrobnější informace o toku dokumentu funkcí a postupů pro jejich vytváření najdete v článku [přehled toku dokumentů](flow-document-overview.md).  
   
  Zobrazení obsahu toku dokumentu se podporuje tři prvky: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   

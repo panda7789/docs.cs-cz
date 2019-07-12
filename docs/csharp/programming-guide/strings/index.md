@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 668b3b927ac059acf160f5d96e8fbc614f57ddff
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 21ada083f69b0acf49490b331c5a416361a2ee84
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503997"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802306"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -62,10 +62,10 @@ ms.locfileid: "67503997"
 |\n|Nový řádek|0x000A|  
 |\r|Návrat na začátek řádku|0x000D|  
 |\t|Horizontální tabulátor|0x0009|  
-|\U|Řídicí sekvence Unicode (UTF-32)|`\U00nnnnnn` (například `\U0001F47D` = "&#x1F47D;")|  
-|\u|Řídicí sekvence Unicode (UTF-16)|`\unnnn` (například `\u0041` = "A")|  
 |\v|Vertikální tabulátor|0x000B|  
-|\x|Řídicí sekvence Unicode podobný "\u" s výjimkou s proměnnou délkou.|`\x0041` nebo `\x41` = "A"|  
+|\u|Řídicí sekvence Unicode (UTF-16)|`\uHHHH` (rozsah: 0000 - FFFF; Příklad: `\u00E7` = "ç")|  
+|\U|Řídicí sekvence Unicode (UTF-32)|`\U00HHHHHH` (rozsah: 000000 - 10FFFF.; Příklad: `\U0001F47D` = "&#x1F47D;")|  
+|\x|Řídicí sekvence Unicode, podobně jako "\u" s výjimkou s proměnnou délkou|`\xH[H][H][H]` (rozsah: 0 – FFFF; Příklad: `\x00E7` nebo `\x0E7` nebo `\xE7` = "ç")|  
   
 > [!WARNING]
 >  Při použití `\x` řídicí sekvence a určení nižší než 4 číslic v šestnáctkové soustavě, pokud jsou znaky, které bezprostředně následují řídicí sekvenci platné hexadecimální číslice (například 0-9, A-F a a-f), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je bod kódu U + 00A1. Ale pokud následující znak je "A" nebo "a", pak řídicí sekvence se místo toho interpretovat jako `\xA1A` a vytvářet "&#x0A1A;", což je bod kódu U + 0A1A. V takovém případě zadáte všechny 4 číslic v šestnáctkové soustavě (třeba `\x00A1` ), nebude moct všechny možné špatného.  

@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 06d2b576e70afb904683ca1a182c6e061faabf79
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 941c73f9a8b7b4c4336adfaec45775feec738f51
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663830"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804723"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC testování aplikace
 
@@ -34,7 +34,7 @@ I když je vhodné k zapouzdření kódu, který komunikuje s infrastruktury, ja
 
 Integrační testy se mají často mnohem složitější nastavení a jejich vyřazování z provozu postupy než testování částí. Například o test integrace, který odkazuje na databázi aplikace skutečný potřebovat způsob, jak vrátit databázi do známého stavu před jednotlivých testovacích běhů. Jak se přidávají nové testy a schéma databáze produkční vyvíjí, tyto testovací skripty bodech zvětšit velikost a složitost. V mnoha velkých systémů je nepraktické spustit úplné sady testů integrace na vývojářské pracovní stanice před vrácením se změnami do správy sdílených zdrojů. V těchto případech se může spustit testy integrace na serveru sestavení.
 
-Implementace třídy LocalFileImageService implementuje logiku pro načítání a vrátí počet bajtů soubor obrázku z konkrétní složky zadané id:
+`LocalFileImageService` Implementace třída implementuje logiku pro načítání a vrátí počet bajtů soubor obrázku z konkrétní složky zadané id:
 
 ```csharp
 public class LocalFileImageService : IImageService
@@ -147,7 +147,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Testování tato metoda provádí složité s přímým přístupem je závislá na System.IO.File, kterou používá ke čtení ze systému souborů. Toto chování zajistit funguje podle očekávání, ale to skutečné souborech se o test integrace můžete otestovat. Je vhodné poznamenat, nejde jednotku testování této metody směrování – uvidíte, jak na to používat funkční testy za chvíli.
+Testování tato metoda provádí složité s přímým přístupem je závislá na `System.IO.File`, kterou používá ke čtení ze systému souborů. Toto chování zajistit funguje podle očekávání, ale to skutečné souborech se o test integrace můžete otestovat. Je vhodné poznamenat, nejde jednotku testování této metody směrování – uvidíte, jak na to používat funkční testy za chvíli.
 
 Pokud nelze přímo Jednotkový test chování systému souborů a nelze otestovat trasu, co má k testování? Po refaktoring provádět testování částí je to možné, může také zjistit některé testovací případy a chybějící chování, jako je zpracování chyb. Co metodu dělat, když nebyl nalezen soubor? Co to dělat? V tomto příkladu refaktorovaný metoda vypadá například takto:
 
@@ -175,7 +175,7 @@ Ve většině případů budete chtít použít obslužné rutiny globálních v
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Aplikace ASP.NET Core pro testování integrace
 
-Většinu testů integrace do svých aplikací ASP.NET Core by měl testování služeb a jiné implementace typy definované v projektu infrastruktury. Funkční testy, které spustit pro vaše aplikace spuštěná v hostiteli testů je nejlepší způsob, jak otestovat, že váš projekt ASP.NET Core MVC nepracuje správně. Příklad o test integrace třídy datového přístupu se zobrazí v části Testování integrace dříve v této kapitole.
+Většinu testů integrace do svých aplikací ASP.NET Core by měl testování služeb a jiné implementace typy definované v projektu infrastruktury. Například může [testování, že byl úspěšně aktualizace a načítání dat, který očekáváte, že EF Core](https://docs.microsoft.com/ef/core/miscellaneous/testing/) z tříd pro přístup k vaší dat umístěných v projektu infrastruktury. Funkční testy, které spustit pro vaše aplikace spuštěná v hostiteli testů je nejlepší způsob, jak otestovat, že váš projekt ASP.NET Core MVC nepracuje správně.
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Funkční testování aplikací ASP.NET Core
 
@@ -308,6 +308,15 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 ```
 
 Tato funkční testování vykonává úplné ASP.NET Core MVC / zásobníku aplikace Razor Pages, včetně middleware, filtry, vazače, atd., které mohou být na místě. Ověřuje, že danou trasou ("/") vrátí stavový kód úspěchu očekávané a výstupu protokolu HTML. Provádí se bez nastavování skutečné webový server a proto zabraňuje velkou část brittleness, který používá skutečné webového serveru pro účely testování můžete vyzkoušet (například problémy s nastavením brány firewall). Funkční testy, které spustily TestServer jsou obvykle nižší než integraci a testy jednotek, ale jsou mnohem rychleji než testy, které se spustí v síti k serveru webového testu. Abyste používali funkční testy k zajištění, že zásobník front-endu vaší aplikace funguje podle očekávání. Tyto testy jsou zvláště užitečné při najít duplicity ve vašich kontrolerech nebo stránky a adresy duplicity přidáním filtrů. V ideálním případě by tento refaktoring nedojde ke změně chování aplikace a sadu funkční testy se ověří, že jde o tento případ.
+
+> ### <a name="references--test-aspnet-core-mvc-apps"></a>Odkazy – testovací ASP.NET Core MVC aplikace
+>
+> - **Testování v ASP.NET Core**  
+>   <https://docs.microsoft.com/aspnet/core/testing/>
+> - **Konvence pojmenování testu jednotek**  
+>   <https://ardalis.com/unit-test-naming-convention>
+> - **Testování EF Core**  
+>   <https://docs.microsoft.com/ef/core/miscellaneous/testing/>
 
 >[!div class="step-by-step"]
 >[Předchozí](work-with-data-in-asp-net-core-apps.md)

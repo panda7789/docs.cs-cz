@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 06cbc82f3636c4063b445a0ccbe871e0be1dd847
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02700c75152c32ebee3a0898de1e322ddf9b6e17
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032393"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802234"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "62032393"
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahuje všechny funkce v [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)], a [!INCLUDE[TLA2#tla_winnetsvrfam](../../../includes/tla2sharptla-winnetsvrfam-md.md)].  
   
- Zprostředkovatelé automatizace uživatelského rozhraní nabízí některé podporu pro [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] klientské aplikace, prostřednictvím integrovaná služba přemostění Datacenter.  
+ Zprostředkovatelé automatizace uživatelského rozhraní nabízí některé podporu pro Microsoft Active Accessibility klientské aplikace pomocí integrované služby přemostění Datacenter.  
   
 <a name="Providers_and_Clients"></a>   
 ## <a name="providers-and-clients"></a>Poskytovatelé a klientů  
@@ -43,7 +43,7 @@ ms.locfileid: "62032393"
   
  Z pohledu vývojáře softwaru, existují dva způsoby použití [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]: vytvoření podpory pro vlastní ovládací prvky (pomocí rozhraní API poskytovatele) a vytváření aplikací, které používají [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] core ke komunikaci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementy (s použitím rozhraní API klienta). V závislosti na vaší fokus by měla odkazovat na různé části dokumentace. Můžete další informace o konceptech a získat praktické znalosti postupy v následujících částech.  
   
-|Sekce|Odborník na danou|Cílová skupina|  
+|Section|Odborník na danou|Cílová skupina|  
 |-------------|--------------------|--------------|  
 |[Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md) (v této části)|Široký přehled konceptů.|Všechny.|  
 |[Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code.md)|Přehledy a postupy: témata vám pomůžou používat rozhraní API poskytovatele.|Vývojáři ovládacího prvku.|  
