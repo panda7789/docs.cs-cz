@@ -6,12 +6,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: 9e3f0941d2fd92b8657d2d9df5b050e7793eb1d1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 02d77dfeb7a00292639131cad72cff7e079704c5
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647214"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802227"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]
@@ -23,7 +23,7 @@ ms.locfileid: "64647214"
   
  Nicméně starší ovládací prvky, jako například sítě na [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] proveďte nemají přímou podporu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Tyto ovládací prvky jsou místo toho obsluhuje zprostředkovatelů, které existují v procesu klientů a získat informace o ovládacích prvcích pomocí komunikace mezi procesy, například při sledování zpráv systému windows do a z ovládacích prvků. Tyto zprostředkovatele na straně klienta jsou někdy označovány jako proxy servery.  
   
- [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] zprostředkovatelé pro úroveň standard poskytuje [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládacích prvků Windows Forms. Kromě toho poskytuje částečné použití náhradní lokality poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro libovolný ovládací prvek, který není obsluhuje jiného zprostředkovatele na straně serveru nebo proxy, ale nemá [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] implementace. Tito poskytovatelé jsou automaticky načíst a dostupné pro klientské aplikace.  
+ [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] zprostředkovatelé pro úroveň standard poskytuje [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládacích prvků Windows Forms. Kromě toho poskytuje částečné použití náhradní lokality poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro libovolný ovládací prvek, který není obsluhuje jiného zprostředkovatele na straně serveru nebo proxy, ale má Microsoft Active Accessibility implementace. Tito poskytovatelé jsou automaticky načíst a dostupné pro klientské aplikace.  
   
  Další informace o podpoře pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládacích prvků Windows Forms, naleznete v tématu [uživatelského rozhraní podporu automatizace pro standardní ovládací prvky](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).  
   

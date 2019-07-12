@@ -214,12 +214,6 @@
               href: keywords/sizeof.md
             - name: nameof
               href: keywords/nameof.md
-        - name: Klíčová slova převodu
-          items:
-            - name: explicit
-              href: keywords/explicit.md
-            - name: implicit
-              href: keywords/implicit.md
         - name: Klíčová slova přístupu
           items:
             - name: base
@@ -317,6 +311,9 @@
         - name: Operátory pro testování typů a operátory převodu
           href: operators/type-testing-and-conversion-operators.md
           displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), cast'
+        - name: Operátory převodu definované uživatelem
+          href: operators/user-defined-conversion-operators.md
+          displayName: 'implicit, explicit'
         - name: Operátory související s ukazatelem
           href: operators/pointer-related-operators.md
           displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'
