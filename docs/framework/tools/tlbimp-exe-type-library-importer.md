@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 314977cb55d9c927ddf96a9279ebb83d8f69e936
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f9741944dcf8a5fcc05c169a1c3c3f679902474
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61919448"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859685"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (importér knihovny typů)
 Nástroj Type Library Importer převádí definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime. Výstupem nástroje Tlbimp.exe je binární soubor (sestavení) obsahující metadata modulu runtime pro typy definované v rámci původní knihovny typů. Tento soubor s nástroji můžete zkontrolovat, jako [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -43,7 +43,7 @@ tlbimp tlbFile [options]
 |**/asmversion:** *číslo_verze*|Určuje číslo verze vytvářeného sestavení. Zadejte *číslo_verze* ve formátu *major.minor.build.revision*.|  
 |**/ Company:** `companyinformation`|Přidá informace o společnosti do výstupního sestavení.|  
 |**/Copyright:** `copyrightinformation`|Přidá informace o autorských právech do výstupního sestavení. Tyto informace můžete zobrazit v **vlastnosti souboru** dialogové okno pro sestavení.|  
-|**/delaysign**|Říká nástroji Tlbimp.exe, aby podepsal výsledné sestavení se silným názvem pomocí zpožděného podepisování. Tuto možnost musíte zadat buď **/keycontainer:**, **/keyfile:**, nebo **/publickey:** možnost. Další informace o procesu zpožděného podepisování naleznete v tématu [zpožděné podepisování sestavení](../app-domains/delay-sign-assembly.md).|  
+|**/delaysign**|Říká nástroji Tlbimp.exe, aby podepsal výsledné sestavení se silným názvem pomocí zpožděného podepisování. Tuto možnost musíte zadat buď **/keycontainer:** , **/keyfile:** , nebo **/publickey:** možnost. Další informace o procesu zpožděného podepisování naleznete v tématu [zpožděné podepisování sestavení](../app-domains/delay-sign-assembly.md).|  
 |**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ keycontainer:** *containername*|Podepisuje výsledné sestavení se silným názvem pomocí dvojice veřejného/soukromého klíče nacházející v kontejneru klíčů určeném parametrem *containername*.|  
 |**/ keyfile:** *název souboru*|Podepisuje výsledné sestavení se silným názvem pomocí vydavatele dvojice oficiálního veřejného/soukromého klíče v *filename*.|  
@@ -55,7 +55,7 @@ tlbimp tlbFile [options]
 |**/ primární**|Vytvoří primární sestavení zprostředkovatele komunikace pro zadanou knihovnu typů. Do sestavení jsou vloženy informace o tom, že toto sestavení vytvořil vydavatel knihovny typů. Zadáním primárního sestavení zprostředkovatele komunikace odlišíte sestavení vydavatele od ostatních sestavení vytvořených z knihovny typů používající nástroj Tlbimp.exe. Byste měli používat jenom **/primary** možnost, pokud jste vydavatel knihovny typů, kterou importujete pomocí Tlbimp.exe. Všimněte si, že primární sestavení zprostředkovatele komunikace s musíte podepsat [silným názvem](../app-domains/strong-named-assemblies.md). Další informace najdete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
 |**/Product:** `productinformation`|Přidá informace o produktu do výstupního sestavení. Tyto informace můžete zobrazit v **vlastnosti souboru** dialogové okno pro sestavení.|  
 |**/ProductVersion:** `productversioninformation`|Přidá informace o verzi produktu do výstupního sestavení. Neexistují žádná omezení formátu. Tyto informace můžete zobrazit v **vlastnosti souboru** dialogové okno pro sestavení.|  
-|**/publicKey:** *název souboru*|Určuje soubor obsahující veřejný klíč pro použití k podepsání výsledného sestavení. Pokud zadáte **/keyfile:** nebo **/keycontainer:** možnost místo **/publickey:**, Tlbimp.exe vygeneruje veřejný klíč z dvojice veřejného/soukromého klíče, součástí **/keyfile:** nebo **/keycontainer:**. **/Publickey:** možnost podporuje testovací klíč a scénáře se zpožděným podepisováním. Soubor má formát generovaný nástrojem Sn.exe. Další informace najdete v tématu **-p** – možnost nástroje Sn.exe v [nástroj Strong Name (Sn.exe)](sn-exe-strong-name-tool.md).|  
+|**/publicKey:** *název souboru*|Určuje soubor obsahující veřejný klíč pro použití k podepsání výsledného sestavení. Pokud zadáte **/keyfile:** nebo **/keycontainer:** možnost místo **/publickey:** , Tlbimp.exe vygeneruje veřejný klíč z dvojice veřejného/soukromého klíče, součástí **/keyfile:** nebo **/keycontainer:** . **/Publickey:** možnost podporuje testovací klíč a scénáře se zpožděným podepisováním. Soubor má formát generovaný nástrojem Sn.exe. Další informace najdete v tématu **-p** – možnost nástroje Sn.exe v [nástroj Strong Name (Sn.exe)](sn-exe-strong-name-tool.md).|  
 |**/ reference:** *název souboru*|Určuje soubor sestavení, který se má použít při řešení odkazů na typy definované mimo aktuální knihovnu typů. Pokud nezadáte **/reference** možnost, Tlbimp.exe automaticky rekurzivně importuje všechny externí knihovny typů, se importovaná knihovna typů odkazů. Pokud zadáte **/reference** možnost, nástroj se pokusí přeložit externí typy v odkazovaných sestaveních, než importuje další knihovny typů.|  
 |**/silence:** `warningnumber`|Potlačí zobrazení konkrétního upozornění. Tento parametr nelze použít s **/silent**.|  
 |**/ silent**|Potlačí zobrazování zpráv o úspěšném dokončení. Tento parametr nelze použít s **/nečinnosti**.|  
@@ -78,8 +78,10 @@ tlbimp tlbFile [options]
   
  Často je užitečné nebo nutné moci přiřadit [silných názvů](../app-domains/strong-named-assemblies.md) na sestavení. Proto nástroj Tlbimp.exe obsahuje možnosti pro poskytnutí informací nezbytných k vytvoření sestavení se silným názvem. Oba **/keyfile:** a **/keycontainer:** možnosti podepsat sestavení se silnými názvy. Je tedy logické zadat vždy pouze jednu z těchto možností.  
   
- Můžete zadat více odkazů na sestavení s použitím **/reference** možnost více než jednou.  
-  
+ Můžete zadat více odkazů na sestavení s použitím **/reference** možnost více než jednou.
+ 
+ Kvůli způsobu, ve kterém Tlbimp.exe generuje sestavení, není možné změnit cíl sestavení na jiný `mscorlib` verze. Například pokud vyžadujete pro generování sestavení, který cílí na rozhraní .NET Framework 2.0, Tlbimp.exe dodávána s prostředím rozhraní .NET Framework 2.0/3.0/3.5 použita sada SDK. Aby bylo možné cílit na rozhraní .NET Framework 4.x, Tlbimp.exe součástí rozhraní .NET Framework 4.x SDK by měla sloužit.
+ 
  ID prostředku lze volitelně připojit k souboru knihovny typů při importu knihovny typů z modulu obsahujícího více knihoven typů. Nástroj Tlbimp.exe je schopen najít tento soubor pouze v případě, že se nachází v aktuálním adresáři, nebo pokud zadáte úplnou cestu. Podívejte se na příklad dále v tomto tématu.  
   
 ## <a name="examples"></a>Příklady  

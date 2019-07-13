@@ -2,12 +2,12 @@
 title: Jak článků (Průvodce v C#)
 description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: 011e2a8208e647fb2df2ea2e949bfe2d2274eb37
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 63410d687bd09f95a5ce7ce9304f2281b2f8d334
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744274"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859537"
 ---
 # <a name="how-to-c"></a>Jak (C#)
 
@@ -98,7 +98,6 @@ Události poskytují mechanismus pro publikování nebo přihlášení k odběru
 - [Implementace události deklarované v rozhraních](../programming-guide/events/how-to-implement-interface-events.md).
 - [Pokud váš kód publikuje události v souladu s pokyny pro rozhraní .NET Framework](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).
 - [Vyvolávání událostí definovaných v základní třídy z odvozené třídy](../programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md).
-- [Store instancí událostí ve slovníku](../programming-guide/events/how-to-use-a-dictionary-to-store-event-instances.md).
 - [Implementace vlastních přístupových objektů událostí](../programming-guide/events/how-to-implement-custom-event-accessors.md).
 
 ## <a name="linq-practices"></a>Postupy pro LINQ

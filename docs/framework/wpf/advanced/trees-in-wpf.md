@@ -6,12 +6,12 @@ helpviewer_keywords:
 - element tree [WPF]
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
-ms.openlocfilehash: f9b507c874dfe0ab3feca19e7fcf79df5af93e10
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14ab9b5b36eee607679ee95423c2af912ed02310
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774995"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860006"
 ---
 # <a name="trees-in-wpf"></a>Stromy v subsystému WPF
 V mnoha technologií prvky a součásti jsou uspořádány do stromové struktury, ve kterém vývojáři přímo manipulace s uzly objektu ve stromové struktuře ovlivnit vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jak definovat vztahy mezi prvky programu také používá několik metaphors stromové struktury. Ve většině případů vývojáře WPF může vytvářet aplikace v kódu nebo definovat části aplikace v XAML při koncepčně uvažovat objekt stromu jedná, ale bude volání konkrétní rozhraní API nebo použijte konkrétní značky, které udělají Ano spíše než některé obecné strom manipulaci s objekty rozhraní API jako je například můžete použít v XML modelu DOM. Poskytuje dvě třídy pomocné rutiny, které poskytují metafora strom, WPF <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>. Podmínky vizuální strom a Logická stromová struktura používají také v dokumentaci k WPF vzhledem k tomu, že tyto stejné struktury jsou užitečné pro pochopení chování některé klíčové funkce WPF. Toto téma definuje, co představují vizuální strom a Logická stromová struktura, pojednává o tom, jak takové stromů souvisí celkovou stromu koncept objektu a zavádí <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>s.  
@@ -51,7 +51,7 @@ V mnoha technologií prvky a součásti jsou uspořádány do stromové struktur
   
 <a name="override_logical_tree"></a>   
 ### <a name="overriding-the-logical-tree"></a>Přepsání logického stromu  
- Autoři pokročilé ovládací prvek můžete tak, že přepíšete několik přetížení logického stromu [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , které definují, jak obecný objekt nebo model obsahu přidá nebo odebere objektů v rámci logického stromu. Příklad toho, jak přetížení logického stromu, naleznete v tématu [přetížení logického stromu](how-to-override-the-logical-tree.md).  
+ Autoři pokročilé ovládací prvek lze přetížení logického stromu tak, že přepíšete několik rozhraní API, které definují, jak obecný objekt nebo model obsahu přidá nebo odebere objektů v rámci logického stromu. Příklad toho, jak přetížení logického stromu, naleznete v tématu [přetížení logického stromu](how-to-override-the-logical-tree.md).  
   
 <a name="pvi"></a>   
 ### <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti  

@@ -9,12 +9,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 78a448349dd9a669aa921fbee22732f29704a9f9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ee2ef57385d7fb0a396a1c08110fd810e6b0abd
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783233"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67857106"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
 
@@ -334,6 +334,22 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 }
 ```
 
+```vb
+<System.Runtime.CompilerServices.Extension()> 
+Public Function PublicInstancePropertiesEqual(Of T As Class)(self As T, [to] As T, ParamArray ignore As String()) As Boolean
+    If self Is Nothing OrElse [to] Is Nothing Then
+        Return self Is [to]
+    End If
+
+    ' Selects the properties which have unequal values into a sequence of those properties.
+    Dim unequalProperties = From [property] In GetType(T).GetProperties(BindingFlags.Public Or BindingFlags.Instance) 
+                            Where Not ignore.Contains([property].Name)
+                            Let selfValue = [property].GetValue(self, Nothing)
+                            Let toValue = [property].GetValue([to], Nothing)
+                            Where Not Equals(selfValue, toValue) Select [property]
+    Return Not unequalProperties.Any()
+End Function
+```
 
 ## <a name="plinq"></a>PLINQ
 

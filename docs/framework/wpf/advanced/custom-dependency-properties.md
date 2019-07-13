@@ -14,12 +14,12 @@ helpviewer_keywords:
 - wrappers [WPF], implementing
 - dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
-ms.openlocfilehash: 27554d7e0a7e980d240e0609fe0561c2138f0aa1
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 659497543d40c8eda18b55b4d98feac976c5abf5
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664062"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860248"
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 
@@ -87,7 +87,7 @@ Definovat vlastnosti závislosti se skládá ze čtyř různých koncepty. Tyto 
 
 ### <a name="registering-the-property-with-the-property-system"></a>Vlastnosti registrace v systému vlastností
 
-Aby vaše vlastnost jako vlastnost závislosti musí zaregistrovat tuto vlastnost do tabulky udržuje v systému vlastností a poskytněte jedinečný identifikátor, který se používá jako kvalifikátor pro pozdější operace vlastností systému. Tyto operace může být interní operace nebo váš vlastní kód volání systému vlastností [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. K registraci vlastnost zavoláte <xref:System.Windows.DependencyProperty.Register%2A> metoda v těle vaší třídy (uvnitř třídy, ale mimo všechny definice členů). Identifikátor pole také poskytuje <xref:System.Windows.DependencyProperty.Register%2A> volání metody, jako návratovou hodnotu. Z důvodu, který <xref:System.Windows.DependencyProperty.Register%2A> se provádí volání mimo jiný člen je definice, protože tuto hodnotu použijete přiřadit a vytvořit `public` `static` `readonly` pole typu <xref:System.Windows.DependencyProperty> jako součást vaší třídy. Toto pole bude identifikátor pro vaše vlastnost závislosti.
+Aby vaše vlastnost jako vlastnost závislosti musí zaregistrovat tuto vlastnost do tabulky udržuje v systému vlastností a poskytněte jedinečný identifikátor, který se používá jako kvalifikátor pro pozdější operace vlastností systému. Tyto operace může být interní operace nebo váš vlastní kód volání rozhraní API systému vlastností. K registraci vlastnost zavoláte <xref:System.Windows.DependencyProperty.Register%2A> metoda v těle vaší třídy (uvnitř třídy, ale mimo všechny definice členů). Identifikátor pole také poskytuje <xref:System.Windows.DependencyProperty.Register%2A> volání metody, jako návratovou hodnotu. Z důvodu, který <xref:System.Windows.DependencyProperty.Register%2A> se provádí volání mimo jiný člen je definice, protože tuto hodnotu použijete přiřadit a vytvořit `public` `static` `readonly` pole typu <xref:System.Windows.DependencyProperty> jako součást vaší třídy. Toto pole bude identifikátor pro vaše vlastnost závislosti.
 
 [!code-csharp[WPFAquariumSln#RegisterAG](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerag)]
 [!code-vb[WPFAquariumSln#RegisterAG](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerag)]
@@ -174,7 +174,7 @@ Vlastnosti závislostí typu kolekce mají některé další implementace probl�
 
 ## <a name="dependency-property-security-considerations"></a>Aspekty zabezpečení vlastností závislosti
 
-Vlastnosti závislosti by měl být deklarován jako veřejné vlastnosti. Pole identifikátoru vlastnosti závislosti by měl být deklarován jako veřejné statické pole. I v případě, že při pokusu deklarovat jiných úrovních přístupu (například chráněné), vlastnost závislosti vždy přistupuje prostřednictvím identifikátor v kombinaci s vlastností systému [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Z důvodu stanovení vytváření sestav, nebo hodnota metadat potenciálně přístupný i chráněné identifikátor pole [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , které jsou součástí vlastností systému, jako například <xref:System.Windows.LocalValueEnumerator>. Další informace najdete v tématu [zabezpečení vlastností závislosti](dependency-property-security.md).
+Vlastnosti závislosti by měl být deklarován jako veřejné vlastnosti. Pole identifikátoru vlastnosti závislosti by měl být deklarován jako veřejné statické pole. I v případě, že při pokusu deklarovat jiných úrovních přístupu (například chráněné), vlastnost závislosti vždy přistupuje prostřednictvím identifikátor v kombinaci s vlastností systému rozhraní API. Z důvodu metadata vytváření sestav, nebo hodnotu stanovení rozhraní API, která jsou součástí vlastnosti systému, jako například potenciálně přístupný i chráněné identifikátor pole <xref:System.Windows.LocalValueEnumerator>. Další informace najdete v tématu [zabezpečení vlastností závislosti](dependency-property-security.md).
 
 <a name="DPCtor"></a>
 

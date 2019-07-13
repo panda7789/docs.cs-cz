@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: 2090c58369ed3c7bda5df1342291001d9550d48d
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: acfc252708bf8be7abacb1adc2968122501315a0
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610461"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860201"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají Windows Presentation Foundation (WPF) mají nové bohatou tisku a tisk rozhraní API pro správu systému. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskovém systému jsou také k dispozici pro vývojáře vytvářející [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáře, kteří používají nespravovaný kód. V jádru služby tato nová funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku.  
@@ -75,7 +75,7 @@ Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří použ
  <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> Řízení poskytuje jeden vstupní bod pro [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], konfigurace a odeslání úlohy XPS. Informace o tom, jak vytvořit instanci a pomocí ovládacího prvku, naleznete v tématu [vyvolání dialogového okna Tisk](how-to-invoke-a-print-dialog.md).  
   
 ### <a name="advanced-xps-printing"></a>Pokročilé XPS tisku  
- Pro přístup k kompletní sadu funkcí XPS, musí využívat pokročilé tisku rozhraní API. Několik relevantní rozhraní API jsou popsány podrobněji níže. Cesta tisku pro úplný seznam XPS [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], najdete v článku <xref:System.Windows.Xps> a <xref:System.Printing> odkazy na obor názvů.  
+ Pro přístup k kompletní sadu funkcí XPS, musí využívat pokročilé tisku rozhraní API. Několik relevantní rozhraní API jsou popsány podrobněji níže. Úplný seznam cesta tisku XPS rozhraní API, najdete v článku <xref:System.Windows.Xps> a <xref:System.Printing> odkazy na obor názvů.  
   
 #### <a name="printticket-and-printcapabilities"></a>Funkce PrintTicket a printcapabilities –  
  <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintCapabilities> třídy jsou základem pro pokročilé funkce XPS. Oba typy objektů jsou [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] ve formátu struktury tisk objektově orientovaný funkcí, jako je třeba kolace oboustranný tisk, připojování, atd. Tyto struktury jsou definovaná pomocí schématu rozhraní tisku. A <xref:System.Printing.PrintTicket> tiskárnu dává pokyn, jak zpracovávat tiskové úlohy. <xref:System.Printing.PrintCapabilities> Třída definuje možnosti tiskárny. Pomocí dotazu na možnosti tiskárny <xref:System.Printing.PrintTicket> je možné vytvořit, že přijímá naplno využít tiskárny na podporované funkce. Podobně se lze vyvarovat nepodporované funkce.  
@@ -87,7 +87,7 @@ Pomocí rozhraní Microsoft .NET Framework aplikace vývojářům, kteří použ
  [!code-vb[xpscreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
   
 #### <a name="printserver-and-printqueue"></a>PrintServer a tisková fronta  
- <xref:System.Printing.PrintServer> Třída představuje síť tiskového serveru a <xref:System.Printing.PrintQueue> třída reprezentuje tiskárnu a výstupní fronty úloh s ním spojená. Společně tyto [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] umožňují pokročilé funkce správy serveru tiskových úloh. A <xref:System.Printing.PrintServer>, nebo jednu z odvozených tříd, se používá ke správě <xref:System.Printing.PrintQueue>. <xref:System.Printing.PrintQueue.AddJob%2A> Metody slouží k vložení nové tiskové úlohy do fronty.  
+ <xref:System.Printing.PrintServer> Třída představuje síť tiskového serveru a <xref:System.Printing.PrintQueue> třída reprezentuje tiskárnu a výstupní fronty úloh s ním spojená. Tato rozhraní API společně umožňují pokročilé funkce správy serveru tiskových úloh. A <xref:System.Printing.PrintServer>, nebo jednu z odvozených tříd, se používá ke správě <xref:System.Printing.PrintQueue>. <xref:System.Printing.PrintQueue.AddJob%2A> Metody slouží k vložení nové tiskové úlohy do fronty.  
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Printing.LocalPrintServer> a přístup k jeho výchozí <xref:System.Printing.PrintQueue> pomocí kódu.  
   

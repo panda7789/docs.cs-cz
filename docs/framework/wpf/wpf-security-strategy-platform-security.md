@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 5b40302d93ce1bfc378b86210ed7bb54732d294b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d7b76365178c78d2b20b9541d5e52a605158a77
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756768"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859818"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -196,11 +196,11 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 - Mnoho dialogy zabezpečení v některé webové servery.  
   
- V některých případech se nedůvěryhodné weby mistranslation: přimět uživatele pomocí zfalšování instalace [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] nebo opakovaně zobrazení [!INCLUDE[TLA#tla_actx](../../../includes/tlasharptla-actx-md.md)] instalace dialogové okno, i když je zrušena uživatelem. Pomocí následujících postupů, je možné, že mají byla nalákaní velký počet uživatelů, rozhodování o nízký, z kterých vzniklo s instalací aplikace spyware.  
+ V některých případech se nedůvěryhodné weby mistranslation: přimět uživatele pomocí zfalšování instalace [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] nebo opakovaně zobrazující instalaci Microsoft ActiveX dialogovému oknu, i když je zrušena uživatelem. Pomocí následujících postupů, je možné, že mají byla nalákaní velký počet uživatelů, rozhodování o nízký, z kterých vzniklo s instalací aplikace spyware.  
   
  [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] obsahuje několik funkcí pro zmírnění těchto typů problémů, které se točí kolem koncepce zahájení uživatelem. [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] rozpozná, pokud uživatel klikne na odkaz nebo stránky prvek před akci, která se označuje jako *zahájení uživatelem*a zpracovává jinak než při podobné akce místo toho aktivaci pomocí skriptu na stránce. Jako příklad [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] zahrnuje **blokování automaticky otevíraných oken** , který detekuje, když uživatel klikne na tlačítko před stránce vytvoření automaticky otevírané okno. Díky tomu [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] povolit automaticky otevíraná okna nejvíce neškodného zároveň je možné zabránit automaticky otevíraná okna, které uživatelé požádat o ani vhodné. Blokované automaticky otevíraná okna jsou zachycena v rámci nové **informační panel**, který umožňuje uživateli ručně přepsat blok a zobrazit automaticky otevírané okno.  
   
- Stejnou logiku zahájení uživatelem platí také pro **otevřít**/**Uložit** výzvy zabezpečení. [!INCLUDE[TLA2#tla_actx](../../../includes/tla2sharptla-actx-md.md)] dialogová okna instalace jsou vždy zachycena v informačním panelu pokud představují upgradu z dřív nainstalovaného ovládacího prvku. Tyto míry se dá uživatelům a bezpečnější více řízené uživatelské prostředí vzhledem k tomu, aby byla chráněná před weby, které obtěžování je nainstalovat nežádoucí software nebo škodlivý software.  
+ Stejnou logiku zahájení uživatelem platí také pro **otevřít**/**Uložit** výzvy zabezpečení. Dialogová okna instalace ActiveX jsou vždy zachycena v informačním panelu pokud představují upgradu z dřív nainstalovaného ovládacího prvku. Tyto míry se dá uživatelům a bezpečnější více řízené uživatelské prostředí vzhledem k tomu, aby byla chráněná před weby, které obtěžování je nainstalovat nežádoucí software nebo škodlivý software.  
   
  Tyto funkce také zákazníkům, kteří používají ochranu [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] a přejděte do webové stránky, které zajistí, aby stáhněte a nainstalujte [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací. Zejména je to proto [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] nabízí lepší výkon, která organizacím snižuje riziko pro uživatele k instalaci škodlivých aktivit nebo devious aplikací bez ohledu na to, jakou technologii byl použit k sestavení, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Přidá do tyto ochrany s použitím [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] k usnadnění stahování své aplikace přes Internet. Protože [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] spustit v sandboxu Internet zóny zabezpečení, může být spuštěn bez problémů. Na druhou stranu, samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace vyžadují úplný vztah důvěryhodnosti k provedení. V případě těchto aplikací [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] se zobrazí dialogové okno zabezpečení během procesu spuštění oznámit využívání vaší aplikace dodatečné požadavky na zabezpečení. Však to musí být uživatelem iniciované, se také řídí logiky iniciované uživatelem a může být zrušen.  
   

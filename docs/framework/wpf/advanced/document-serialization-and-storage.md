@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: a1a3d422ea4d9766e6a9f8dda079c3739be4a626
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: b60b3964ff8e1b1f05b6c0820c63ec06d9ea0f4c
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663668"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859658"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 
@@ -23,7 +23,7 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
 
 V ideálním případě je proces serializaci a deserializaci dokumentu z a potom zpět do paměti pro aplikace transparentní.  Aplikace volá serializátor "write" metody uložte dokument, zatímco deserializátor "číst" metoda přistupuje k úložišti dat a obnoví původní instance v paměti.  Určitý formát, který jsou data uložená v nehrají důležitou obecně aplikace, stejně jako jako serializace a deserializace proces znovu vytvoří dokument zpět na původní podobě.
 
-Aplikace často poskytují více možností serializace, které uživateli umožňují uložit dokumenty do různých média nebo do jiného formátu.  Aplikace může například nabízejí možnosti "Uložit jako" ukládání dokumentu na disku, databáze nebo webové službě.  Podobně může uchovávat různé serializátory dokumentu v různých formátech, jako v HTML, formátu RTF, XML, XPS, nebo můžete také do jiného formátu.  Serializace do aplikace, definuje rozhraní, který izoluje podrobnosti paměťovému médiu v rámci implementace každé konkrétní serializátor.  Kromě přínosů zapouzdření podrobnosti o úložišti, rozhraní .NET Framework <xref:System.Windows.Documents.Serialization> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] poskytují několik dalších důležitých funkcí.
+Aplikace často poskytují více možností serializace, které uživateli umožňují uložit dokumenty do různých média nebo do jiného formátu.  Aplikace může například nabízejí možnosti "Uložit jako" ukládání dokumentu na disku, databáze nebo webové službě.  Podobně může uchovávat různé serializátory dokumentu v různých formátech, jako v HTML, formátu RTF, XML, XPS, nebo můžete také do jiného formátu.  Serializace do aplikace, definuje rozhraní, který izoluje podrobnosti paměťovému médiu v rámci implementace každé konkrétní serializátor.  Kromě přínosů zapouzdření podrobnosti o úložišti, rozhraní .NET Framework <xref:System.Windows.Documents.Serialization> API poskytují několik dalších důležitých funkcí.
 
 ### <a name="features-of-net-framework-30-document-serializers"></a>Funkce rozhraní .NET Framework 3.0 dokumentu Serializátorů
 

@@ -5,15 +5,15 @@ helpviewer_keywords:
 - metadata [WPF], framework properties
 - framework property metadata [WPF]
 ms.assetid: 9962f380-b885-4b61-a62e-457397083fea
-ms.openlocfilehash: f0385280cf01502a5b2786541c3d959fca24d239
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 81c1941ffd95afb01dcb6ebda2634832a91cd876
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912445"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859850"
 ---
 # <a name="framework-property-metadata"></a>Metadata vlastnosti rozhraní .NET Framework
-Možnosti metadata vlastnosti architektury jsou hlášeny pro vlastnosti považuje za na rozhraní WPF v úrovni elementů objektu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektury. Obecně znamená označení úrovni rozhraní WPF této funkce, jako je vykreslování, datové vazby, a vlastnost systému upřesnění jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a spustitelné soubory. Metadata vlastnosti architektury je dotazován tyto systémy určit vlastnosti specifické pro funkce vlastností konkrétní elementu.  
+Možnosti metadata vlastnosti architektury jsou hlášeny pro vlastnosti považuje za na rozhraní WPF v úrovni elementů objektu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektury. Obecně znamená označení úrovni rozhraní WPF této funkce, jako je vykreslování, datové vazby, a vlastnost systému upřesnění jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace rozhraní API a spustitelné soubory. Metadata vlastnosti architektury je dotazován tyto systémy určit vlastnosti specifické pro funkce vlastností konkrétní elementu.  
 
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
@@ -32,7 +32,7 @@ Možnosti metadata vlastnosti architektury jsou hlášeny pro vlastnosti považu
     > [!NOTE]
     >  Termín "dědí" v kontextu znamená hodnoty vlastnosti jako specifický pro vlastnosti závislosti; To znamená, že může být z podřízených prvků dědit z nadřazených prvků hodnota vlastnosti skutečné závislosti z důvodu funkce úrovni rozhraní WPF [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému vlastností. To nemá nic společného přímo pomocí spravovaného kódu dědičnosti typů a členů prostřednictvím odvozené typy. Podrobnosti najdete v tématu [dědičnost hodnoty vlastnosti](property-value-inheritance.md).  
   
-- Generování sestav vazby vlastností dat (<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>, <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>). Ve výchozím nastavení podporují vlastnosti závislosti v rámci datové vazby, chování jednosměrné vazby. Vytváření datových vazeb může zakázat, pokud žádné scénáře nebyly tak (protože jsou určeny jako flexibilní a rozšiřitelné, nejsou k dispozici mnoho příkladů takových vlastnosti ve výchozím [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]). Můžete například nastavit vazbu mít obousměrný výchozí hodnoty pro vlastnosti, které spojovat ovládací prvek chování mezi její část součásti (<xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> je příkladem) nebo kde Obousměrná vazba je běžné a očekávané scénář pro uživatele (<xref:System.Windows.Controls.TextBox.Text%2A> je příklad). Změna metadata související s vazby dat ovlivňuje pouze výchozí; na základě neumožňující vazbu, že výchozí lze kdykoli změnit. Podrobné informace o režimech vazby a vazby v obecné, naleznete v tématu [Data Binding Overview](../data/data-binding-overview.md).  
+- Generování sestav vazby vlastností dat (<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>, <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>). Ve výchozím nastavení podporují vlastnosti závislosti v rámci datové vazby, chování jednosměrné vazby. Vytváření datových vazeb může zakázat, pokud žádné scénáře nebyly tak (protože jsou určeny jako flexibilní a rozšiřitelné, nejsou k dispozici mnoho příkladů takových vlastnosti ve výchozím [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní API). Můžete například nastavit vazbu mít obousměrný výchozí hodnoty pro vlastnosti, které spojovat ovládací prvek chování mezi její část součásti (<xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> je příkladem) nebo kde Obousměrná vazba je běžné a očekávané scénář pro uživatele (<xref:System.Windows.Controls.TextBox.Text%2A> je příklad). Změna metadata související s vazby dat ovlivňuje pouze výchozí; na základě neumožňující vazbu, že výchozí lze kdykoli změnit. Podrobné informace o režimech vazby a vazby v obecné, naleznete v tématu [Data Binding Overview](../data/data-binding-overview.md).  
   
 - Vytváření sestav, zda má být vlastnosti deníku aplikace nebo služby, které podporují záznamu do deníku (<xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>). Obecné elementy záznamu do deníku není ve výchozím nastavení povolené, ale selektivně je povolený pro některé uživatele, vstupní ovládací prvky. Tato vlastnost je určena ke čtení záznamu do deníku služby včetně [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění záznamu do deníku a se obvykle nastavuje pouze na uživatelské ovládací prvky, jako je například volby uživatele v rámci seznamy, které by měl být zachován po kroky navigace. Informace o deníku, naleznete v tématu [Přehled navigace](../app-development/navigation-overview.md).  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - metadata [WPF], for dependency properties
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
-ms.openlocfilehash: a4b2edce76bc5ab97e644ec8dbdf045931e87786
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 66628e8cc1e56bff2227721d6f6b3e511be7453e
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663435"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860062"
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Vlastnost systém zahrnuje metadata vytváření sestav systém, který jde nad rámec co může být nahlášené o vlastnosti prostřednictvím reflexe a Obecné [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] charakteristiky. Metadata pro vlastnost závislosti lze také přiřadit jednoznačně podle třídy, která definuje vlastnost závislosti, můžete změnit, pokud vlastnost závislosti je přidána do jiné třídy a může být explicitně přepsáno všechny odvozené třídy, které dědí Vlastnost závislosti z definující základní třídy.  
@@ -44,7 +44,7 @@ ms.locfileid: "64663435"
 ## <a name="when-to-override-metadata-when-to-derive-a-class"></a>Když pro přepis metadat, kdy se má odvodit třídu  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vlastnost systém stal možnosti pro změnu některé vlastnosti Vlastnosti závislostí bez nutnosti jejich být zcela znovu implementovaná. Toho dosahuje tak, že vytváří jinou instanci metadat vlastností pro vlastnost závislosti, protože existuje u určitého typu. Mějte na paměti, že nejvíce existující vlastnosti závislosti nejsou virtuální vlastnosti, takže přesněji řečeno "pokaždé znova implementovány" je na zděděné třídy může provést pouze stínováním existujícího člena.  
   
- Pokud tento scénář se pokoušíte povolit pro vlastnost závislosti na typu nelze provést úpravou vlastností vlastností existujícího závislosti, může pak být potřebné k vytvoření odvozené třídy a potom deklarovat vlastnost vlastní závislost v odvozené třídě. Vlastnost vlastní závislosti chová stejně jako vlastnosti závislosti definované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. Další podrobnosti o vlastní vlastnosti závislosti najdete v tématu [vlastní vlastnosti závislosti](custom-dependency-properties.md).  
+ Pokud tento scénář se pokoušíte povolit pro vlastnost závislosti na typu nelze provést úpravou vlastností vlastností existujícího závislosti, může pak být potřebné k vytvoření odvozené třídy a potom deklarovat vlastnost vlastní závislost v odvozené třídě. Vlastnost vlastní závislosti chová stejně jako vlastnosti závislosti definované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní API. Další podrobnosti o vlastní vlastnosti závislosti najdete v tématu [vlastní vlastnosti závislosti](custom-dependency-properties.md).  
   
  Jeden významné charakteristiky, které nelze přepsat vlastnost závislosti je její typ hodnoty. Pokud se dědí vlastnost závislosti, approximate chování budete potřebovat, ale vyžadují jiný typ, budete muset implementovat vlastní závislost vlastnost a možná vlastnosti prostřednictvím převodu typu nebo jiné propojení implementace na vaše vlastní třídy. Kromě toho nelze nahradit stávající <xref:System.Windows.ValidateValueCallback>, protože tato zpětné volání existuje v samotné pole registrace a není v rozsahu jeho metadata.  
   
@@ -58,7 +58,7 @@ ms.locfileid: "64663435"
 ### <a name="overriding-metadata"></a>Přepsání metadat  
  Účelem přepsání metadat je primárně, takže budete mít příležitost změnit různé chování odvozených metadat, které jsou použity pro vlastnost závislosti na typu existuje. Důvody jsou vysvětlené podrobněji [metadat](#dp_metadata_contents) oddílu. Další informace včetně některé příklady kódu naleznete v tématu [přepsání metadat pro vlastnost závislosti](how-to-override-metadata-for-a-dependency-property.md).  
   
- Metadata vlastnosti může být zadán pro vlastnost závislosti během volání registrace (<xref:System.Windows.DependencyProperty.Register%2A>). Ale v mnoha případech můžete chtít poskytnout metadata specifická pro typ pro třídu, když dědí vlastnosti závislosti. Toto lze provést zavoláním <xref:System.Windows.DependencyProperty.OverrideMetadata%2A> metody.  Příklad z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], <xref:System.Windows.FrameworkElement> třída je typ, který se poprvé registruje <xref:System.Windows.UIElement.Focusable%2A> vlastnost závislosti. Ale <xref:System.Windows.Controls.Control> třída přepíše metadata pro vlastnost závislosti definovat vlastní počáteční výchozí hodnotu, změna z `false` k `true`a jinak znovu použije původní <xref:System.Windows.UIElement.Focusable%2A> implementace.  
+ Metadata vlastnosti může být zadán pro vlastnost závislosti během volání registrace (<xref:System.Windows.DependencyProperty.Register%2A>). Ale v mnoha případech můžete chtít poskytnout metadata specifická pro typ pro třídu, když dědí vlastnosti závislosti. Toto lze provést zavoláním <xref:System.Windows.DependencyProperty.OverrideMetadata%2A> metody.  Příklad z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní API, <xref:System.Windows.FrameworkElement> třída je typ, který se poprvé registruje <xref:System.Windows.UIElement.Focusable%2A> vlastnost závislosti. Ale <xref:System.Windows.Controls.Control> třída přepíše metadata pro vlastnost závislosti definovat vlastní počáteční výchozí hodnotu, změna z `false` k `true`a jinak znovu použije původní <xref:System.Windows.UIElement.Focusable%2A> implementace.  
   
  Při přepsání metadat vlastnosti rozdílná metadata jsou sloučené nebo nahradit.  
   

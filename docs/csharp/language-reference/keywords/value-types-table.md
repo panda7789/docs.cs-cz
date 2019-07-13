@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: 81f85ce60f423cad8aecccad8f97e90897ba86db
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 2e2897ff647140b58b3a1812e153a44a6fcdaef7
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661603"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859563"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (referenční dokumentace jazyka C#)
 
@@ -23,7 +23,6 @@ Následující tabulka ukazuje C# typů hodnot:
 |[bool](bool.md)|Boolean||
 |`byte`|Bez znaménka, číselné hodnoty a [integrální](../builtin-types/integral-numeric-types.md)||
 |[char](char.md)|Bez znaménka, číselné hodnoty a [integrální](../builtin-types/integral-numeric-types.md)
-)||
 |`decimal`|Numeric, [floating-point](../builtin-types/floating-point-numeric-types.md)|M nebo m|
 |`double`|Numeric, [floating-point](../builtin-types/floating-point-numeric-types.md)|D nebo d|
 |[enum](enum.md)|Výčet||

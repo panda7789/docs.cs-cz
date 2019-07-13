@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 443ea9ad56d13d26191231104ce3998b2691fc34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 483710281feafdf97cfef9b72a67af035dcf0efa
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052934"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860163"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislosti
 
@@ -78,7 +78,7 @@ Získání hodnoty vlastnosti je také v podstatě volání implementace "zabezp
 [!code-csharp[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyget)]
  [!code-vb[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyget)]
 
-Můžete také volat v systému vlastností [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> přímo. To není obvykle nutné Pokud pomocí existujících vlastností (obálkami jsou pohodlnější a poskytují lepší vystavení vlastnosti pro nástroje pro vývojáře), ale volání [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] přímo je vhodné pro určité scénáře.
+Můžete také volat rozhraní API systému vlastnost <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> přímo. To není obvykle nutné Pokud používáte existující vlastnosti (obálkami jsou pohodlnější a poskytují lepší vystavení vlastnosti pro nástroje pro vývojáře), ale přímého volání rozhraní API je vhodné pro určité scénáře.
 
 Vlastnosti můžete také nastavit v XAML a pak přistupuje později v kódu pomocí modelu code-behind. Podrobnosti najdete v tématu [použití modelu Code-Behind a XAML v subsystému WPF](code-behind-and-xaml-in-wpf.md).
 
@@ -113,7 +113,7 @@ Tento konkrétní prostředek se odkazuje jako [– rozšíření značek Dynami
 > [!NOTE]
 > Prostředky jsou považovány za místní hodnoty, což znamená, že pokud nastavíte jinou místní hodnotu, budou zmenšovat odkaz na prostředek. Další informace najdete v tématu [Priorita hodnot závislých vlastností](dependency-property-value-precedence.md).
 
-### <a name="data-binding"></a>Vytváření datových vazeb
+### <a name="data-binding"></a>Datová vazba
 Vlastnosti závislosti můžete vytvořit odkaz na hodnotu prostřednictvím datové vazby. Datové vazby funguje pomocí syntaxe rozšíření konkrétní značek v XAML, nebo <xref:System.Windows.Data.Binding> objekt v kódu. Pomocí datové vazby, je hodnota určení konečné vlastnost odložena až do běhu, po kterém se získá hodnota ze zdroje dat.
 
 Následující příklad nastaví <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost <xref:System.Windows.Controls.Button>, použít vazbu deklarované v XAML. Vazba používá objekt context zděděná data a <xref:System.Windows.Data.XmlDataProvider> zdroje dat (nezobrazení). Vazba, samotný určuje vlastnost požadovaný zdroj podle <xref:System.Windows.Data.Binding.XPath%2A> v rámci datového zdroje.

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - value inheritance [WPF]
 - properties [WPF], value inheritance
 ms.assetid: d7c338f9-f2bf-48ed-832c-7be58ac390e4
-ms.openlocfilehash: 48543d2cfc11fc33dff6239cdfd7bfcd946e986a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c5547955a1d5d20938e3896406631da0fae0c5d
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61981913"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860049"
 ---
 # <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
 Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností. Dědičnost hodnoty vlastnosti umožňuje podřízené prvky ve stromové struktuře prvků, které mají získat hodnoty konkrétní vlastnosti od nadřízené prvky, jak je nastavit kdekoli v nejbližší nadřazený element dědí tuto hodnotu. Nadřazený element může také získali jeho hodnotu prostřednictvím dědičnost hodnoty vlastnosti, tak systému recurses potenciálně až po kořen stránky. Dědičnost hodnoty vlastnosti není výchozí chování systému vlastnosti; Vlastnost musí navázat s nastavením konkrétní metadat způsobí tuto vlastnost k zahájení dědičnost hodnoty vlastnosti na podřízené prvky.  
@@ -22,7 +22,7 @@ Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../.
   
 <a name="Practical_Applications_of_Property_Value_Inheritance"></a>   
 ## <a name="practical-applications-of-property-value-inheritance"></a>Dědičnost hodnoty vlastnosti v praxi  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Zahrnují několik vlastností, které mají povolené dědičnosti vlastností. Scénář pro tyto bývá, že zahrnují vlastnosti kdy je vhodné, že vlastnost nastavit pouze jednou na stránku, ale pokud tuto vlastnost je také členem jedné ze tříd base element a proto by existovat taky na většinu podřízených elementů. Například <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastností ovládacích prvků směru tok obsahu by mělo být uvedené a uspořádány na stránce. Obvykle je vhodné koncept toku textu konzistentně zpracovávat v celém všechny podřízené prvky. Směr toku byly z nějakého důvodu obnovení v určité úrovně stromu element uživatelem nebo akce prostředí, by měl obvykle obnovit v průběhu. Když <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost je k dědění, hodnota musí být pouze nastavit nebo obnovit jednou na úrovni ve stromu elementů, která zahrnuje potřebám prezentaci jednotlivých stránek v aplikaci. Tímto způsobem bude dědit i počáteční výchozí hodnotu. Model dědičnosti hodnotu vlastnosti stále umožňuje jednotlivým prvkům resetovat hodnotu výjimečných případech, kdy s kombinaci směry toku je úmyslné.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Rozhraní API obsahovat několik vlastností, které mají povolené dědičnosti vlastností. Scénář pro tyto bývá, že zahrnují vlastnosti kdy je vhodné, že vlastnost nastavit pouze jednou na stránku, ale pokud tuto vlastnost je také členem jedné ze tříd base element a proto by existovat taky na většinu podřízených elementů. Například <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastností ovládacích prvků směru tok obsahu by mělo být uvedené a uspořádány na stránce. Obvykle je vhodné koncept toku textu konzistentně zpracovávat v celém všechny podřízené prvky. Směr toku byly z nějakého důvodu obnovení v určité úrovně stromu element uživatelem nebo akce prostředí, by měl obvykle obnovit v průběhu. Když <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost je k dědění, hodnota musí být pouze nastavit nebo obnovit jednou na úrovni ve stromu elementů, která zahrnuje potřebám prezentaci jednotlivých stránek v aplikaci. Tímto způsobem bude dědit i počáteční výchozí hodnotu. Model dědičnosti hodnotu vlastnosti stále umožňuje jednotlivým prvkům resetovat hodnotu výjimečných případech, kdy s kombinaci směry toku je úmyslné.  
   
 <a name="Making_a_Custom_Property_Inheritable"></a>   
 ## <a name="making-a-custom-property-inheritable"></a>Vytváření vlastních vlastností odvoditelný  

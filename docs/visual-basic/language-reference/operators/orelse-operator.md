@@ -11,19 +11,19 @@ helpviewer_keywords:
 - short-circuit evaluation
 - OrElse operator [Visual Basic]
 ms.assetid: 253803d8-05b0-47d7-b213-abd222847779
-ms.openlocfilehash: 28d1481b71979936bb16a2ecfb1140d85a674ef7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02be78c8f2b7529f1fb0e46e9fe610a3c66b0652
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054988"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860145"
 ---
 # <a name="orelse-operator-visual-basic"></a>OrElse – operátor (Visual Basic)
 Provede zkrácenou inkluzivní logickou disjunkci dvou výrazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb
 result = expression1 OrElse expression2  
 ```  
   
@@ -49,7 +49,8 @@ result = expression1 OrElse expression2
 |`False`|`False`|`False`|  
   
 ## <a name="data-types"></a>Datové typy  
- `OrElse` Operátor je určená jenom pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic převede operandem tak, aby `Boolean` a provádí operaci, která je zcela v `Boolean`. Pokud přiřadíte číselného typu výsledku, ho z Visual Basic převede `Boolean` k danému typu. To by mohla vést k neočekávanému chování. Například `5 OrElse 12` výsledkem `–1` při převodu na `Integer`.  
+ `OrElse` Operátor je určená jenom pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic převede operandem tak, aby `Boolean` před vyhodnocením výrazu. Pokud přiřadíte číselného typu výsledku, ho z Visual Basic převede `Boolean` k danému typu tak, aby `False` stane `0` a `True` stane `-1`.
+Další informace najdete v tématu [logická převody typu](../data-types/boolean-data-type.md#type-conversions)
   
 ## <a name="overloading"></a>Přetížení  
  [Nebo operátor](../../../visual-basic/language-reference/operators/or-operator.md) a [IsTrue operátor](../../../visual-basic/language-reference/operators/istrue-operator.md) může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jejich chování při operand má typ této třídy nebo struktury. Přetížení `Or` a `IsTrue` operátory má vliv na chování `OrElse` operátor. Pokud váš kód používá `OrElse` v třídě nebo struktuře, která přetížení `Or` a `IsTrue`, je nutné pochopit jejich Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  

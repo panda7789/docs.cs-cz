@@ -8,15 +8,15 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-ms.openlocfilehash: f19186380b0cbc71cdd64013ca5e49361ba26cda
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0181093de1c40889110ab7eae75a3847a17845a9
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778378"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859939"
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Návod: Hostování ovládacího prvku ActiveX ve WPF
-Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] ovládacích prvků v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na. Tento návod ukazuje, jak můžete hostovat [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] jako ovládací prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.
+Chcete-li umožňují lepší interakci s prohlížeči, můžete použít ovládacími prvky ActiveX v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na. Tento návod ukazuje, jak můžete hostovat [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] jako ovládací prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.
 
  Úlohy v tomto návodu zahrnují:
 
@@ -26,7 +26,7 @@ Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#t
 
 - Hostování ovládacího prvku ActiveX na stránce WPF.
 
- Po dokončení tohoto návodu budete rozumět použití [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] ovládacích prvků v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na.
+ Po dokončení tohoto návodu budete rozumět použití ovládacími prvky ActiveX v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na.
 
 ## <a name="prerequisites"></a>Požadavky
  K dokončení tohoto návodu budete potřebovat následující komponenty:
@@ -60,7 +60,7 @@ Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#t
 9. Pokud se zobrazí výzva k přejmenování všech odkazů, klikněte na tlačítko **Ano**.
 
 ## <a name="creating-the-activex-control"></a>Vytvoření ovládacího prvku ActiveX
- [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] automaticky generuje <xref:System.Windows.Forms.AxHost> obálkovou třídu pro [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] řídit, kdy je ovládací prvek přidán na návrhovou plochu. Následujícím postupem vytvoříte spravované sestavení s názvem AxInterop.WMPLib.dll.
+ [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] automaticky generuje <xref:System.Windows.Forms.AxHost> obálkovou třídu pro ovládací prvek Microsoft ActiveX, když je ovládací prvek přidán na návrhovou plochu. Následujícím postupem vytvoříte spravované sestavení s názvem AxInterop.WMPLib.dll.
 
 ### <a name="to-create-the-activex-control"></a>Vytvoření ovládacího prvku ActiveX
 
@@ -76,7 +76,7 @@ Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#t
 
 ### <a name="to-host-the-activex-control"></a>K hostování ovládacího prvku ActiveX
 
-1. HostingAxInWpf projektu přidejte odkaz na generované [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] sestavení vzájemná funkční spolupráce.
+1. V projektu HostingAxInWpf přidáte odkaz do generovaného sestavení, vzájemná funkční spolupráce ActiveX.
 
      Toto sestavení je s názvem AxInterop.WMPLib.dll a byl přidán do složky ladění projektu WmpAxLib při importu ovládací prvek programu Windows Media Player.
 

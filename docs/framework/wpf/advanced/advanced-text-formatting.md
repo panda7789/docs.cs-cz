@@ -9,15 +9,15 @@ helpviewer_keywords:
 - text [WPF]
 - typography [WPF], text formatting
 ms.assetid: f0a7986e-f5b2-485c-a27d-f8e922022212
-ms.openlocfilehash: ef07e1acd250ceeb7c0e30f8a78dd8d7b196fdcd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ed6dd33efd5fdc5e2c61df4173bec5cc2f0d807
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655541"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859687"
 ---
 # <a name="advanced-text-formatting"></a>Upřesněné formátování textu
-Windows Presentation Foundation (WPF) poskytuje robustní sadu [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Controls.TextBlock>zadejte nejběžnější a obecné použití prvků pro textové prezentaci. Kreslení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, prostředkem pro zahrnutí do kreslení formátovaného textu. Nanejvýš pokročilé úrovni členství, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování k řízení všech aspektů text prezentací, jako jsou Správa úložiště text, správa formátování textových spuštění a správa vložený objekt rozšiřitelné textu.  
+Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]rozhraní API, jako například <xref:System.Windows.Controls.TextBlock>zadejte nejběžnější a obecné použití prvků pro textové prezentaci. Rozhraní API, jako například kreslení <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, prostředkem pro zahrnutí do kreslení formátovaného textu. Nanejvýš pokročilé úrovni členství, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování k řízení všech aspektů text prezentací, jako jsou Správa úložiště text, správa formátování textových spuštění a správa vložený objekt rozšiřitelné textu.  
   
  Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu. Zaměřuje se na implementace klienta a použití [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu.  
   
@@ -26,7 +26,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu [!INCLUDE[TLA#tla
 
 <a name="prereq"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že máte zkušenosti s vyšší úrovní [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] použit pro textové prezentaci. Většina uživatelských scénářích nebude vyžadovat formátování textu pokročilé [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] popsané v tomto tématu. Úvod do různých text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], naleznete v tématu [dokumenty v platformě WPF](documents-in-wpf.md).  
+ Toto téma předpokládá, že máte zkušenosti s vyšší úroveň API používaná pro textové prezentaci. Většina scénářů uživatele nebude vyžaduje pokročilé formátování rozhraní API popsané v tomto tématu. Úvod k jiným textovým rozhraní API, najdete v článku [dokumenty v platformě WPF](documents-in-wpf.md).  
   
 <a name="section1"></a>   
 ## <a name="advanced-text-formatting"></a>Upřesněné formátování textu  

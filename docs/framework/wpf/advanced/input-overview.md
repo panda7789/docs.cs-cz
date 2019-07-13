@@ -24,12 +24,12 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 47d892db8418b44fffeec870e56b49d5f986b563
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 5835cfb633451025ed32c2a26228e33a1b24473e
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610481"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67857055"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
@@ -58,7 +58,7 @@ ms.locfileid: "67610481"
  <xref:System.Windows.Input.Mouse> a <xref:System.Windows.Input.Keyboard> třídy jsou podrobně popsané v další uvedených v tomto přehledu.
 
 ### <a name="stylus-input"></a>Vstup pomocí pera
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je integrovaná podpora <xref:System.Windows.Input.Stylus>.  <xref:System.Windows.Input.Stylus> Pera vstup provedené pomocí oblíbených [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)].  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace lze považovat za stylus myši pomocí myši rozhraní API, ale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje abstrakce zařízení stylus, která používají model podobný klávesnici a myš.  Všechny související stylus [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] obsahovat slovo "Stylus".
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je integrovaná podpora <xref:System.Windows.Input.Stylus>.  <xref:System.Windows.Input.Stylus> Pera vstup provedené pomocí oblíbených [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)].  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace lze považovat za stylus myši pomocí myši rozhraní API, ale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje abstrakce zařízení stylus, která používají model podobný klávesnici a myš.  Všechna rozhraní API související s stylus obsahovat slovo "Stylus".
 
  Vzhledem k tomu stylus může fungovat jako myš, aplikace, které podporují pouze vstup z myši může stále získat určitou úroveň podpory stylus automaticky. Pokud se stylus slouží takovým způsobem, aplikace je příležitost pro zpracování události odpovídající stylus a poté zpracuje odpovídající událost myši. Kromě toho jsou vyšší úrovně služeb, jako je vstupu inkoustu také k dispozici prostřednictvím abstrakce stylus zařízení.  Další informace o inkoustu jako vstup, naleznete v tématu [Začínáme s rukopisem](getting-started-with-ink.md).
 
@@ -354,7 +354,7 @@ ms.locfileid: "67610481"
 
 <a name="mouse_capture"></a>
 ## <a name="mouse-capture"></a>Zachycení myši
- Zařízení myši výslovně uložení modální charakteristiku označované jako zachycení myši. Zachycení myši slouží k udržování přechodný stav vstupní při zahájení operace přetažení myší, aby další operace, které zahrnují o nominálních na obrazovce pozice ukazatele myši nedojde nutně. Při přetažení nemůže uživatel kliknout bez přerušení přetažení myší, díky nevhodný většina mouseover pomůcky, dokud je držen zachycení myši přetáhněte původním umístění. Poskytuje vstupní systém [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , které můžete určit stav zachycení myši, stejně jako [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , která vynutí zachycení myši konkrétní elementu nebo vymazat stav zachycení myši. Další informace o operací přetažení myší, naleznete v tématu [vyřadit přehled a přetáhněte](drag-and-drop-overview.md).
+ Zařízení myši výslovně uložení modální charakteristiku označované jako zachycení myši. Zachycení myši slouží k udržování přechodný stav vstupní při zahájení operace přetažení myší, aby další operace, které zahrnují o nominálních na obrazovce pozice ukazatele myši nedojde nutně. Při přetažení nemůže uživatel kliknout bez přerušení přetažení myší, díky nevhodný většina mouseover pomůcky, dokud je držen zachycení myši přetáhněte původním umístění. Vstupní systém zpřístupňuje rozhraní API, která můžete zjistit stav zachycení myši, jakož i rozhraní API, která můžete vynutit zachycení myši na konkrétní elementu nebo vymazat stav zachycení myši. Další informace o operací přetažení myší, naleznete v tématu [vyřadit přehled a přetáhněte](drag-and-drop-overview.md).
 
 <a name="commands"></a>
 ## <a name="commands"></a>Příkazy

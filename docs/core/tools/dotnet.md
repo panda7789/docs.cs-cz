@@ -2,18 +2,18 @@
 title: příkaz DotNet
 description: Další informace o příkazu dotnet (obecný ovladač pro nástroje .NET Core CLI) a jeho použití.
 ms.date: 06/04/2018
-ms.openlocfilehash: 5278adf44d12e428cdeacf1d475377ce9155c314
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2134bf8ed66157619499b027f01d39e03e84411f
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648526"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859556"
 ---
 # <a name="dotnet-command"></a>příkaz DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet` – Nástroj pro správu zdrojového kódu .NET a binární soubory.
 
@@ -230,7 +230,7 @@ Vytiskne na verzi .NET Core SDK používá.
 
 ---
 
-### <a name="project-references"></a>Odkazy na projekt
+### <a name="project-references"></a>Odkazy na projekty
 
 Příkaz | Funkce
 --- | ---
@@ -304,7 +304,7 @@ Spustit aplikaci knihovny DLL, jako například `myapp.dll`:
 
 `DOTNET_PACKAGES`
 
-Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%HOME%\NuGet\Packages` na Windows.
+Složka globálních balíčků. Pokud není nastavená, použije se výchozí `~/.nuget/packages` v systému Unix nebo `%userprofile%\.nuget\packages` na Windows.
 
 `DOTNET_SERVICING`
 
@@ -326,7 +326,7 @@ Zakáže podverze Posunutí vpřed, pokud nastavit `0`. Další informace najdet
 
 `DOTNET_PACKAGES`
 
-Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%HOME%\NuGet\Packages` na Windows.
+Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%userprofile%\.nuget\packages` na Windows.
 
 `DOTNET_SERVICING`
 
@@ -344,7 +344,7 @@ Určuje, zda modul runtime .NET Core, sdílené architektuře nebo sady SDK jsou
 
 `DOTNET_PACKAGES`
 
-Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%HOME%\NuGet\Packages` na Windows.
+Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%userprofile%\.nuget\packages` na Windows.
 
 `DOTNET_SERVICING`
 

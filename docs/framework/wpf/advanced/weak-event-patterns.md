@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: 0c5bae64fbbeddedd905e5df0b5789542e29f2f1
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 61e7f6d29cf9275004238ca776d5af9bf027004f
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833934"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859913"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdrojům událostí nebude ve spolupráci s objektem naslouchací proces, který připojuje ke zdroji obslužné rutiny. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí návrhový vzor, který je možné tento problém vyřešit tak, že třída vyhrazený správce poskytuje pro určité události a implementace rozhraní pro naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabý vzor událostí*.  
@@ -21,7 +21,7 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdroj
   
  Tento postup vytvoří silného odkazu ze zdroje události do event listener. Obvykle připojení obslužnou rutinu události pro naslouchací proces způsobí, že naslouchací proces má dobu života objektu, který ovlivňuje dobu života objektu zdroje (Pokud obslužná rutina události je výslovně odebrali). Ale v některých případech může být vhodné doba života objektu naslouchacího procesu pro řídit pomocí dalších faktorů, jako například, jestli aktuálně patří do vizuálního stromu, aplikace a ne životnost zdroje. Pokaždé, když se doba života objektu zdroje se rozpíná za dobu života objektu naslouchacího procesu, vzor normální událost povede k nevrácení paměti: naslouchací proces je udržována nehledě déle, než bylo zamýšleno.  
   
- Slabý vzor událostí je navržená pro vyřešení tohoto problému nevracení paměti. Pokaždé, když se naslouchací proces potřebuje k registraci na událost, ale naslouchací proces nezná explicitně při zrušení registrace je možné slabý vzor událostí. Slabý vzor událostí je také možné pokaždé, když se doba života objektu zdroje překračuje dobu života objektu užitečné naslouchacího procesu. (V tomto případě *užitečné* se určuje podle vás.) Slabý vzor událostí umožňuje naslouchací proces, zaregistrujte se a přijímat události bez ovlivnění vlastnosti doby života objektu naslouchacího procesu žádným způsobem. V důsledku toho implicitní odkaz ze zdroje nezjišťuje, zda naslouchací proces má nárok na uvolňování paměti. Odkaz je slabý odkaz, tedy pojmenování slabý vzor událostí a související [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Naslouchací proces může být uvolňování paměti shromažďovaným nebo jinak zničeny a zdroji můžete pokračovat bez zachování utvořit obslužná rutina odkazy na nyní zničení objektu.  
+ Slabý vzor událostí je navržená pro vyřešení tohoto problému nevracení paměti. Pokaždé, když se naslouchací proces potřebuje k registraci na událost, ale naslouchací proces nezná explicitně při zrušení registrace je možné slabý vzor událostí. Slabý vzor událostí je také možné pokaždé, když se doba života objektu zdroje překračuje dobu života objektu užitečné naslouchacího procesu. (V tomto případě *užitečné* se určuje podle vás.) Slabý vzor událostí umožňuje naslouchací proces, zaregistrujte se a přijímat události bez ovlivnění vlastnosti doby života objektu naslouchacího procesu žádným způsobem. V důsledku toho implicitní odkaz ze zdroje nezjišťuje, zda naslouchací proces má nárok na uvolňování paměti. Odkaz je slabý odkaz, tedy pojmenování slabý vzor událostí a souvisejících rozhraní API. Naslouchací proces může být uvolňování paměti shromažďovaným nebo jinak zničeny a zdroji můžete pokračovat bez zachování utvořit obslužná rutina odkazy na nyní zničení objektu.  
   
 ## <a name="who-should-implement-the-weak-event-pattern"></a>Kdo by měly implementovat vzor slabých událostí?  
  Implementace vzoru slabých událostí je zajímavé hlavně pro autory ovládacího prvku. Jako autor ovládací prvek jsou do značné míry zodpovědná za chování a členství ve skupině ovládacího prvku a dopad, který má u aplikací, ve kterých je vložen. To zahrnuje řízení chování doba života objektu, zejména zpracování problém nevracení paměti popsané.  

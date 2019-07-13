@@ -1,17 +1,18 @@
 ---
-ms.openlocfilehash: 4a31310551cea4250275843da3eae927bad23840
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b021de74509b6d9ba77678d3105e0f7bb406f79d
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665366"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67856994"
 ---
 ### <a name="dataannotationsdatatypeattributedisableregex-app-setting-is-on-by-default-in-net-framework-472"></a>nastavení aplikace, které "dataAnnotations:dataTypeAttribute:disableRegEx" je ve výchozím v rozhraní .NET Framework 4.7.2
 
 |   |   |
 |---|---|
 |Podrobnosti|V rozhraní .NET Framework 4.6.1, nastavení aplikace (<code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code>) byl zaveden, který umožňuje uživatelům zakázat použití regulárních výrazů v atributech typu dat (například <xref:System.ComponentModel.DataAnnotations.EmailAddressAttribute?displayProperty=nameWithType>, <xref:System.ComponentModel.DataAnnotations.UrlAttribute?displayProperty=nameWithType>, a <xref:System.ComponentModel.DataAnnotations.PhoneAttribute?displayProperty=nameWithType>). To pomáhá snížit ohrožení zabezpečení, jako je například vyhnout možnosti útoku DOS pomocí konkrétní regulární výrazy.<br/>V rozhraní .NET Framework 4.6.1, tato nastavení aplikace zakážete použití regulárního výrazu bylo nastavené na <code>false</code> ve výchozím nastavení. Rovnou začít tématem rozhraní .NET Framework 4.7.2, tato konfigurace přepínač nastavený na <code>true</code> ve výchozím nastavení k dalšímu snížení zabezpečení ohrožení zabezpečení pro webové aplikace, které jsou cíleny na rozhraní .NET Framework 4.7.2 a vyšší.|
-|Doporučení|Pokud zjistíte, že regulární výrazy ve webové aplikaci po upgradu na rozhraní .NET Framework 4.7.2 nefungují, můžete aktualizovat hodnotu <code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code> nastavení <code>false</code> se vrátit k předchozí chování.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;appsettings&gt;&#13;&#10;...&#13;&#10;&lt;add key=&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot; value=&quot;false&quot;/&gt;&#13;&#10;...&#13;&#10;&lt;/appsettings&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
+|Doporučení|Pokud zjistíte, že regulární výrazy ve webové aplikaci po upgradu na rozhraní .NET Framework 4.7.2 nefungují, můžete aktualizovat hodnotu <code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code> nastavení <code>false</code> se vrátit k předchozí chování.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;appSettings&gt;&#13;&#10;...&#13;&#10;&lt;add key=&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot; value=&quot;false&quot;/&gt;&#13;&#10;...&#13;&#10;&lt;/appSettings&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
+|Scope|Vedlejší|
 |Version|4.7.2|
-|Type|Modul runtime|
+|type|Modul runtime|
+

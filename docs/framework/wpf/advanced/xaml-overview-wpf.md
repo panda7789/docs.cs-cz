@@ -19,12 +19,12 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: e0d277eb039c1fb1668f292d83ab9e7dbe4be70e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a067be444624ecffd8ab150f20740814dd9ee341
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762320"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859971"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotného je větší než konceptu jazyka [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -301,7 +301,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
 <a name="base_classes_and_xaml"></a>   
 ## <a name="base-types-and-xaml"></a>Základní typy a XAML  
- Základní WPF XAML a její obor názvů XAML je kolekce typů, které odpovídají [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektů včetně elementy značek pro XAML. Ale ne všechny třídy lze mapovat na elementy. Abstraktní třídy, jako například <xref:System.Windows.Controls.Primitives.ButtonBase>, a používají se pro dědičnosti v určité neabstraktní základní třídy [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty modelu. Základní třídy, včetně těch abstraktní, jsou stále potřeba vývoje XAML, protože jednotlivých konkrétních prvků XAML dědí členy z některé základní třídy v hierarchii. Často tyto členy obsahují vlastnosti, které můžete nastavit jako atributy elementu nebo události, které mohou být zpracovány. <xref:System.Windows.FrameworkElement> je konkrétní základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na úrovni rozhraní WPF. Při navrhování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], budete používat různé tvar, panely, dekoratér nebo třídy ovládacích prvků, které všechny odvozené z <xref:System.Windows.FrameworkElement>. Související základní třídu, <xref:System.Windows.FrameworkContentElement>, podporuje dokumentově orientované prvky, které fungují dobře pro prezentaci rozložení tok pomocí [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , která záměrně zrcadlit [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] v <xref:System.Windows.FrameworkElement>. Kombinace atributů na úrovni prvku a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektový model poskytuje sadu společných vlastností, které jsou nastavitelná při čekání na nejvíce konkrétní prvky XAML, bez ohledu na konkrétní elementu XAML a jeho nadřízeného typu.  
+ Základní WPF XAML a její obor názvů XAML je kolekce typů, které odpovídají [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektů včetně elementy značek pro XAML. Ale ne všechny třídy lze mapovat na elementy. Abstraktní třídy, jako například <xref:System.Windows.Controls.Primitives.ButtonBase>, a používají se pro dědičnosti v určité neabstraktní základní třídy [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty modelu. Základní třídy, včetně těch abstraktní, jsou stále potřeba vývoje XAML, protože jednotlivých konkrétních prvků XAML dědí členy z některé základní třídy v hierarchii. Často tyto členy obsahují vlastnosti, které můžete nastavit jako atributy elementu nebo události, které mohou být zpracovány. <xref:System.Windows.FrameworkElement> je konkrétní základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na úrovni rozhraní WPF. Při navrhování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], budete používat různé tvar, panely, dekoratér nebo třídy ovládacích prvků, které všechny odvozené z <xref:System.Windows.FrameworkElement>. Související základní třídu, <xref:System.Windows.FrameworkContentElement>, podporuje dokumentově orientované prvky, které fungují dobře u toku rozložení prezentace, pomocí rozhraní API, která záměrně zrcadlí rozhraní API v <xref:System.Windows.FrameworkElement>. Kombinace atributů na úrovni prvku a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektový model poskytuje sadu společných vlastností, které jsou nastavitelná při čekání na nejvíce konkrétní prvky XAML, bez ohledu na konkrétní elementu XAML a jeho nadřízeného typu.  
   
 <a name="xaml_security"></a>   
 ## <a name="xaml-security"></a>Zabezpečení XAML  

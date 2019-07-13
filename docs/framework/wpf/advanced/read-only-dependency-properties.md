@@ -5,12 +5,12 @@ helpviewer_keywords:
 - dependency properties [WPF], read-only
 - read-only dependency properties [WPF]
 ms.assetid: f23d6ec9-3780-4c09-a2ff-b2f0a2deddf1
-ms.openlocfilehash: 327897d50bd23a739d015a4151459d9d4a6fc1a0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e74f7c2790a73211bcc8e6f13dcf2dfdc02e678b
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611797"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859981"
 ---
 # <a name="read-only-dependency-properties"></a>Vlastnosti závislosti jen pro čtení
 Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existující vlastnosti závislosti jen pro čtení a scénáře a postupy pro vytvoření vlastnosti vlastní závislosti jen pro čtení.  
@@ -37,7 +37,7 @@ Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existujíc�
   
 - Objekt vrácený rutinou registrace jen pro čtení je <xref:System.Windows.DependencyPropertyKey> spíše než <xref:System.Windows.DependencyProperty>. Stále byste měli uložit toto pole jako člen, ale obvykle by usnadňují veřejného člena typu.  
   
- Jakýkoli soukromé pole nebo hodnotu, kterou jste zálohování vaší vlastnosti závislosti jen pro čtení samozřejmě může být plně zapisovat pomocí libovolné logiky rozhodnete. Nejjednodušší způsob, jak nastavit vlastnost původně nebo jako součást logiky modulu runtime je však používat systém vlastnost [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], namísto obcházení systému vlastností a nastavení privátní pomocné pole přímo. Zejména je podpis <xref:System.Windows.DependencyObject.SetValue%2A> , který přijímá parametr typu <xref:System.Windows.DependencyPropertyKey>. Jak a kde nastavíte hodnotu prostřednictvím kódu programu v rámci vaší aplikace logiky bude mít vliv na způsob nastavení přístupu na <xref:System.Windows.DependencyPropertyKey> vytvoří při první registraci vlastnost závislosti. Pokud zpracovat tuto logiku vše v rámci třídy vám může usnadnit privátní, nebo pokud chcete, aby nastavení z dalších částí sestavení, může ji nastavit interní. Jedním z přístupů je volat <xref:System.Windows.DependencyObject.SetValue%2A> v rámci třídy obslužná rutina události relevantní události, která informuje o tom, kterou je potřeba změnit hodnotu vlastnosti uloženou instanci třídy. Další možností je spojovat vlastnosti závislosti pomocí spárované <xref:System.Windows.PropertyChangedCallback> a <xref:System.Windows.CoerceValueCallback> zpětná volání jako součást těchto vlastností metadat během registrace.  
+ Jakýkoli soukromé pole nebo hodnotu, kterou jste zálohování vaší vlastnosti závislosti jen pro čtení samozřejmě může být plně zapisovat pomocí libovolné logiky rozhodnete. Nejjednodušší způsob, jak nastavit vlastnost původně nebo jako součást logiky modulu runtime je však použití rozhraní API pro vlastnost systému spíše než obcházení systému vlastností a nastavení privátní pomocné pole přímo. Zejména je podpis <xref:System.Windows.DependencyObject.SetValue%2A> , který přijímá parametr typu <xref:System.Windows.DependencyPropertyKey>. Jak a kde nastavíte hodnotu prostřednictvím kódu programu v rámci vaší aplikace logiky bude mít vliv na způsob nastavení přístupu na <xref:System.Windows.DependencyPropertyKey> vytvoří při první registraci vlastnost závislosti. Pokud zpracovat tuto logiku vše v rámci třídy vám může usnadnit privátní, nebo pokud chcete, aby nastavení z dalších částí sestavení, může ji nastavit interní. Jedním z přístupů je volat <xref:System.Windows.DependencyObject.SetValue%2A> v rámci třídy obslužná rutina události relevantní události, která informuje o tom, kterou je potřeba změnit hodnotu vlastnosti uloženou instanci třídy. Další možností je spojovat vlastnosti závislosti pomocí spárované <xref:System.Windows.PropertyChangedCallback> a <xref:System.Windows.CoerceValueCallback> zpětná volání jako součást těchto vlastností metadat během registrace.  
   
  Protože <xref:System.Windows.DependencyPropertyKey> je privátní a se nerozšíří vlastnost systému mimo váš kód, vlastnosti závislosti jen pro čtení má lepší než vlastnost závislosti pro čtení a zápis nastavení zabezpečení. Pro vlastnost závislosti pro čtení i zápis je explicitně nebo implicitně veřejné pole identifikační a proto je široce nastavitelnou vlastnost. Další podrobnosti najdete v části [zabezpečení vlastností závislosti](dependency-property-security.md).  
   

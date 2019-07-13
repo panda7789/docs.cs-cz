@@ -11,19 +11,19 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - short-circuit evaluation
 ms.assetid: bbc15191-b374-495b-9b8f-7b8c2f4388eb
-ms.openlocfilehash: 3876fd9c32d486b8ebecc9ee2428486a687a1624
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1cb4d372d3ac228f29c6fa45f124796e5dfb6709
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608312"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859889"
 ---
 # <a name="andalso-operator-visual-basic"></a>AndAlso – operátor (Visual Basic)
 Provede zkrácenou logickou konjunkci dvou výrazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb
 result = expression1 AndAlso expression2  
 ```  
   
@@ -47,7 +47,8 @@ result = expression1 AndAlso expression2
 |`False`|(nevyhodnoceno)|`False`|  
   
 ## <a name="data-types"></a>Datové typy  
- `AndAlso` Operátor je určená jenom pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic převede operandem tak, aby `Boolean` a provádí operaci, která je zcela v `Boolean`. Pokud přiřadíte číselného typu výsledku, ho z Visual Basic převede `Boolean` k danému typu. To by mohla vést k neočekávanému chování. Například `5 AndAlso 12` výsledkem `–1` při převodu na `Integer`.  
+ `AndAlso` Operátor je určená jenom pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic převede operandem tak, aby `Boolean` před vyhodnocením výrazu. Pokud přiřadíte číselného typu výsledku, ho z Visual Basic převede `Boolean` k danému typu tak, aby `False` stane `0` a `True` stane `-1`.
+Další informace najdete v tématu [logická převody typu](../data-types/boolean-data-type.md#type-conversions)
   
 ## <a name="overloading"></a>Přetížení  
  [Operátoru](../../../visual-basic/language-reference/operators/and-operator.md) a [IsFalse operátor](../../../visual-basic/language-reference/operators/isfalse-operator.md) může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jejich chování při operand má typ, který třídy nebo struktury. Přetížení `And` a `IsFalse` operátory má vliv na chování `AndAlso` operátor. Pokud váš kód používá `AndAlso` v třídě nebo struktuře, která přetížení `And` a `IsFalse`, je nutné pochopit jejich Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  

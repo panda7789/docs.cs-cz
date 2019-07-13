@@ -10,12 +10,12 @@ helpviewer_keywords:
 - elements [WPF], initializing
 - initializing elements [WPF]
 ms.assetid: 7b8dfc9b-46ac-4ce8-b7bb-035734d688b7
-ms.openlocfilehash: b0032492a9403660e91980f5e968b519a4306589
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 4f8ee4b31c135595770338831c23d8a0f419e8cd
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610485"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67857014"
 ---
 # <a name="initialization-for-object-elements-not-in-an-object-tree"></a>Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů
 Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] inicializace odkládat procesů, které se zpravidla spoléhají na tento prvek připojení logického stromu nebo vizuálního stromu. Toto téma popisuje kroky, které mohou být nezbytné, aby se inicializovat element, který není připojený k buď stromu.  
@@ -33,7 +33,7 @@ Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-
  Pokud element vlastnosti na je <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> odvozené třídy, pak můžete volat třída verzích <xref:System.Windows.FrameworkElement.BeginInit%2A> a <xref:System.Windows.FrameworkElement.EndInit%2A> místo přetypování na <xref:System.ComponentModel.ISupportInitialize>.  
   
 ### <a name="sample-code"></a>Vzorový kód  
- V následujícím příkladu je ukázkový kód pro konzolovou aplikaci, která používá vykreslování [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> samostatných [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru pro ilustraci správné umístění <xref:System.Windows.FrameworkElement.BeginInit%2A> a <xref:System.Windows.FrameworkElement.EndInit%2A> kolem další volání rozhraní API, které upravují vlastnosti, které ovlivňují vykreslování.  
+ V následujícím příkladu je ukázkový kód pro konzolovou aplikaci, která používá rozhraní API pro vykreslování a <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> samostatných [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru pro ilustraci správné umístění <xref:System.Windows.FrameworkElement.BeginInit%2A> a <xref:System.Windows.FrameworkElement.EndInit%2A> kolem další volání rozhraní API, které upravit vlastnosti, které vliv na vykreslování.  
   
  Tento příklad znázorňuje pouze hlavní funkci. Funkce `Rasterize` a `Save` (není vidět) jsou funkcí nástroje, které se postará o zpracování obrázků a vstupně-výstupních operací.  
   

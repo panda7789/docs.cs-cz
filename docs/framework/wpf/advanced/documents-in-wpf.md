@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: b83d9c972dbdadb721bae8b7d616c94a0c1c831f
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 020ea101ae38b9be854398a55ddd31e67b9fda35
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67804747"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859669"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkce dokumentu, které umožňují vytvářet a věrného obsah, který je navržena jako snadno používaná a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentů.  
@@ -59,7 +59,7 @@ ms.locfileid: "67804747"
   
 <a name="packaging"></a>   
 ## <a name="document-packaging"></a>Balení dokumentů  
- <xref:System.IO.Packaging> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] Poskytují efektivní způsob, jak uspořádat data aplikací, obsah dokumentu a související prostředky v jeden kontejner, který se snadno přístup, přenosných a snadno distribuovat. Příkladem je soubor ZIP <xref:System.IO.Packaging.Package> typ schopný obsahující více objektů jako jeden celek. Balení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] poskytnutí výchozí <xref:System.IO.Packaging.ZipPackage> implementace určená pomocí standardu Open Packaging Conventions s architekturou souboru XML a ZIP. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Balení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] se dají jednoduše vytvořit balíčky a k ukládání a přístup k objektům v nich. Objekt uložený v <xref:System.IO.Packaging.Package> se označuje jako <xref:System.IO.Packaging.PackagePart> ("součást"). Balíčky mohou zahrnovat také digitální certifikáty podepsané držitelem, které lze použít k identifikaci odesílatel požadavku dostane informaci část a ověřit, že nebyly upraveny obsahu balíčku.  Balíčky také zahrnout <xref:System.IO.Packaging.PackageRelationship> funkce, která umožňuje dodatečné informace, které se přidal do balíčku nebo ve spojení s konkrétní části beze změny ve skutečnosti obsah existujícího částí.  Balíček služby také podporu [!INCLUDE[TLA#tla_rm](../../../../includes/tlasharptla-rm-md.md)].  
+ <xref:System.IO.Packaging> API poskytují efektivní způsob, jak uspořádat data aplikací, obsah dokumentu a související prostředky v jeden kontejner, který se snadno přístup, přenosných a snadno distribuovat. Příkladem je soubor ZIP <xref:System.IO.Packaging.Package> typ schopný obsahující více objektů jako jeden celek. Balení rozhraní API pro poskytnutí výchozí <xref:System.IO.Packaging.ZipPackage> implementace určená pomocí standardu Open Packaging Conventions s architekturou souboru XML a ZIP. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Balení rozhraní API usnadňují vytváření balíčků a k ukládání a přístup k objektům v nich. Objekt uložený v <xref:System.IO.Packaging.Package> se označuje jako <xref:System.IO.Packaging.PackagePart> ("součást"). Balíčky mohou zahrnovat také digitální certifikáty podepsané držitelem, které lze použít k identifikaci odesílatel požadavku dostane informaci část a ověřit, že nebyly upraveny obsahu balíčku.  Balíčky také zahrnout <xref:System.IO.Packaging.PackageRelationship> funkce, která umožňuje dodatečné informace, které se přidal do balíčku nebo ve spojení s konkrétní části beze změny ve skutečnosti obsah existujícího částí.  Balíček služby také podporu [!INCLUDE[TLA#tla_rm](../../../../includes/tlasharptla-rm-md.md)].  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Architektura balíčku slouží jako základ pro počet klíčových technologií:  
   
@@ -71,7 +71,7 @@ ms.locfileid: "67804747"
   
  Založené na rozhraní API pro balení <xref:System.Windows.Xps.Packaging.XpsDocument> je navržená speciálně pro ukládání [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] oprava obsah dokumentů. <xref:System.Windows.Xps.Packaging.XpsDocument> Se samostatným dokumentem, který lze otevřít v prohlížeči se zobrazí v <xref:System.Windows.Controls.DocumentViewer> ovládacího prvku, směrovat do zařazování tisku nebo přímo do výstupu [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny.  
   
- Následující části obsahují další informace o <xref:System.IO.Packaging.Package> a <xref:System.Windows.Xps.Packaging.XpsDocument> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ Následující části obsahují další informace o <xref:System.IO.Packaging.Package> a <xref:System.Windows.Xps.Packaging.XpsDocument> opatřeného rozhraní API [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
 <a name="packages"></a>   
 ### <a name="package-components"></a>Balení komponent  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: f902d6a92f9d982dc00c3446f7b516c372f1a30e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 346cfccd076866e9c321974aaa8c8ddd367a17ea
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662046"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859579"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 Použití `async` modifikátor určit, že je metoda, [výraz lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), nebo [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) je asynchronní. Pokud použijete tento modifikátor na metodu nebo výraz, to se označuje jako *asynchronní metoda*. Následující příklad definuje asynchronní metodu s názvem `ExampleMethodAsync`: 
@@ -70,7 +70,7 @@ Asynchronní metoda může mít tyto návratové typy:
 
 - <xref:System.Threading.Tasks.Task>
 - <xref:System.Threading.Tasks.Task%601>
-- [void](../../../csharp/language-reference/keywords/void.md), která by měla sloužit pouze pro obslužné rutiny událostí.
+- [void](../../../csharp/language-reference/keywords/void.md). `async void` metody se obecně nedoporučují pro kód než obslužné rutiny událostí, protože volající nemůže `await` tyto metody a musí implementovat mechanismus různé zprávy o úspěšném dokončení nebo chybové stavy.
 - Od verze C# 7.0, libovolný typ, který má k dispozici přístup `GetAwaiter` metody. `System.Threading.Tasks.ValueTask<TResult>` Typ je jeden takový implementace. Je k dispozici přidáním balíčku NuGet `System.Threading.Tasks.Extensions`. 
 
 Asynchronní metoda nemůže deklarovat všechny [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md), [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ani použít ji [odkazovat na návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md), ale může volat metody které mají tyto parametry.  

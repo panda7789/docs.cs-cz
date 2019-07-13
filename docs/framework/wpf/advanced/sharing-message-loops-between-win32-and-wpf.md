@@ -7,12 +7,12 @@ helpviewer_keywords:
 - sharing message loops [WPF]
 - interoperability [WPF], Win32
 ms.assetid: 39ee888c-e5ec-41c8-b11f-7b851a554442
-ms.openlocfilehash: d2fe63ed4bdefc91e4847af799747219bd7b4a76
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 31efc6e514682502e91487565869285dad22cab0
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611729"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860012"
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a>Sdílení smyčky zpráv mezi systémem Win32 a platformou WPF
 Toto téma popisuje, jak implementovat smyčky zpráv pro součinnost s produktem [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], buď pomocí existující zprávu vystavení smyčky v <xref:System.Windows.Threading.Dispatcher> nebo vytvořením smyčku samostatné na [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] součinnosti kódu vedle sebe.  
@@ -20,7 +20,7 @@ Toto téma popisuje, jak implementovat smyčky zpráv pro součinnost s produkte
 ## <a name="componentdispatcher-and-the-message-loop"></a>ComponentDispatcher a smyčky zpráv  
  Běžné scénáře pro podporu události vzájemná spolupráce grafického subsystému a klávesnice je implementace <xref:System.Windows.Interop.IKeyboardInputSink>, nebo jsou podtřídami tříd, které již implementují <xref:System.Windows.Interop.IKeyboardInputSink>, jako například <xref:System.Windows.Interop.HwndSource> nebo <xref:System.Windows.Interop.HwndHost>. Podpora klávesnice jímky nezabývá všechny možné zpráva smyčky potřeby, může být při odesílání a příjem zprávy přes součinnosti hranice. Abychom formalizujte architektura smyčky zpráv aplikace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje <xref:System.Windows.Interop.ComponentDispatcher> třídu, která definuje jednoduchý protokol pro smyčku zpráv dodržovat.  
   
- <xref:System.Windows.Interop.ComponentDispatcher> je statická třída, která zveřejňuje několik členů. Oboru každé metody je implicitně svázána do volajícího vlákna. Smyčky zpráv musí volat některé z nich [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] v kritické dobu (jak jsou definovány v další části).  
+ <xref:System.Windows.Interop.ComponentDispatcher> je statická třída, která zveřejňuje několik členů. Oboru každé metody je implicitně svázána do volajícího vlákna. Smyčky zpráv, musí volat některé z těchto rozhraní API v kritické dobu (jak jsou definovány v další části).  
   
  <xref:System.Windows.Interop.ComponentDispatcher> poskytuje události, které může naslouchat další součásti (například prvek klávesnice). <xref:System.Windows.Threading.Dispatcher> Třídy volání všechny příslušné <xref:System.Windows.Interop.ComponentDispatcher> metody v příslušné pořadí. Pokud implementujete vlastní smyčky zpráv, váš kód je zodpovědná za volání <xref:System.Windows.Interop.ComponentDispatcher> metody podobným způsobem.  
   

@@ -11,15 +11,15 @@ helpviewer_keywords:
 - remotely surveying printer status [WPF]
 - status [WPF], printers [WPF], surveying remotely
 ms.assetid: d6324759-8292-4c23-9584-9c708887dc94
-ms.openlocfilehash: da2576696b514dca882636125cfb3e31a82d7f6e
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 4140152079b93e3c0a3d5fcda0e1b2c6f9fb89a4
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878199"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859866"
 ---
 # <a name="how-to-remotely-survey-the-status-of-printers"></a>Postupy: Vzdálený průzkum stavu tiskáren
-V každém okamžiku u středně velkých a velkých společností může být více tiskárny, které nejsou práce z důvodu zaseknutý papír nebo jsou mimo papír nebo jiné problematické situaci. Bohaté sadě vlastností tiskárny v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé zjišťování stavu tiskárny.  
+V každém okamžiku u středně velkých a velkých společností může být více tiskárny, které nejsou práce z důvodu zaseknutý papír nebo jsou mimo papír nebo jiné problematické situaci. Bohatou sadu vlastností tiskárny, které jsou zveřejněné v rozhraní API z Microsoft .NET Framework poskytují způsob pro provádění rychlé zjišťování stavu tiskárny.  
   
 ## <a name="example"></a>Příklad  
  Hlavní kroky pro vytvoření tento druh nástroj jsou následující.  

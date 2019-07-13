@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: 2d263ac09cb4c9196b0d584dd5cf71182be01adc
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0373d9150349dc24653270600a317b0d41b945b1
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584380"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859645"
 ---
 # <a name="events-c-programming-guide"></a>Události (Průvodce programováním v C#)
 Události umožňují [třída](../../../csharp/language-reference/keywords/class.md) nebo objektům upozornit ostatní třídy nebo objektů, dojde-li něco, které vás zajímají. Třída, která odesílá (nebo *vyvolá*) události je volána *vydavatele* a třídy, které přijímají (nebo *zpracování*) události se nazývají *předplatitele* .  
@@ -44,8 +44,6 @@ Události umožňují [třída](../../../csharp/language-reference/keywords/clas
 - [Postupy: Vyvolávání událostí třídy Base v odvozených třídách](../../../csharp/programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)  
   
 - [Postupy:  Implementace událostí rozhraní](../../../csharp/programming-guide/events/how-to-implement-interface-events.md)  
-  
-- [Postupy: Použití slovníku k Store instancí událostí](../../../csharp/programming-guide/events/how-to-use-a-dictionary-to-store-event-instances.md)  
   
 - [Postupy: Implementace vlastních přístupových objektů událostí](../../../csharp/programming-guide/events/how-to-implement-custom-event-accessors.md)  
   

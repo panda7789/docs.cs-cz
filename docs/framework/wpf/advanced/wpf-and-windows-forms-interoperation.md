@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability [WPF], Windows Forms
 - hybrid control [WPF interoperability]
 ms.assetid: 9e8aa6b6-112c-4579-98d1-c974917df499
-ms.openlocfilehash: 6b8fcfb6b2795b1b41b5292a3d2c61ecd017f173
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b2e0ee85a7edd07e7372b04c3a26a06416fb39d9
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662267"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859871"
 ---
 # <a name="wpf-and-windows-forms-interoperation"></a>Vzájemná spolupráce subsystémů WPF a Windows Forms
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] představovat dvě různé architektury pro vytvoření rozhraní aplikací. <xref:System.Windows.Forms.Integration?displayProperty=nameWithType> Obor názvů obsahuje třídy, které umožňují běžné scénáře vzájemné spolupráce. Jsou dvě klíčové třídy, které implementují součinnosti možnosti <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost>. Toto téma popisuje, jaké součinnosti scénáře jsou podporovány a jaké scénáře nejsou podporovány.  
@@ -35,7 +35,7 @@ ms.locfileid: "64662267"
   
 - To může být hostitelem hlavního/podrobného formuláře pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hlavní a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podrobnosti.  
   
-- Může hostovat jeden nebo více [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] ovládacích prvků.  
+- To může být hostitelem jedné nebo více ovládacích prvků ActiveX.  
   
 - To může hostovat jeden nebo více složených ovládacích prvků.  
   

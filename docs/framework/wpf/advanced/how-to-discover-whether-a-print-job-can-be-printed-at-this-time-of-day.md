@@ -10,19 +10,19 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: c68e6a69553f2cb14eb442c31e5138009f3c8411
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ee38caedc5d5a29d2221d6e5a6bf6cf74617bf8c
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619447"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859723"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají počáteční a koncový čas vlastnosti, které je možné nastavit, aby byly k dispozici v určitých časech den. Tato funkce je možné, například pro rezervaci tiskárny pro výhradní použití určitých oddělení po 17: 00. Toto oddělení by měla mít jinou frontu tiskárny, než jiných oddělení údržby použít. Fronta jiných oddělení se nastavuje nedostupnost po 17: 00, zatímco fronty pro dána oddělení může být nastaven na být vždy k dispozici.  
   
  Navíc je možné nastavit tiskové úlohy, sami bude tisknutelný pouze v rámci dané rozpětí času.  
   
- <xref:System.Printing.PrintQueue> a <xref:System.Printing.PrintSystemJobInfo> třídy zpřístupněná [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework umožňují vzdálené kontroly, zda danou tiskovou úlohu můžete tisknout do dané fronty v současné době.  
+ <xref:System.Printing.PrintQueue> a <xref:System.Printing.PrintSystemJobInfo> třídy v rozhraní API pro Microsoft .NET Framework umožňují vzdálené kontroly, zda danou tiskovou úlohu můžete tisknout do dané fronty v současné době.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad je ukázka, můžete diagnostikovat problémy s tiskovou úlohou.  
@@ -54,7 +54,7 @@ Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají poč�
  Dvě přetížení **ReportAvailabilityAtThisTime** metody jsou stejné s výjimkou předaný k nim, takže pouze typ <xref:System.Printing.PrintQueue> verze je uveden níže.  
   
 > [!NOTE]
->  Fakt, že metody jsou stejné s výjimkou typu vyvolá na otázku, proč vzorku nevytváří žádné obecné metody **ReportAvailabilityAtThisTime\<T >**. Důvodem je, že tato metoda by mohl být omezeny na třídu, která má **StartTimeOfDay** a **UntilTimeOfDay** vlastnosti, které volá metodu, ale obecná metoda může být pouze omezené na jednotné třídy a třídy pouze společné pro <xref:System.Printing.PrintQueue> a <xref:System.Printing.PrintSystemJobInfo> v dědičnosti je strom <xref:System.Printing.PrintSystemObject> která nemá žádné takové vlastnosti.  
+>  Fakt, že metody jsou stejné s výjimkou typu vyvolá na otázku, proč vzorku nevytváří žádné obecné metody **ReportAvailabilityAtThisTime\<T >** . Důvodem je, že tato metoda by mohl být omezeny na třídu, která má **StartTimeOfDay** a **UntilTimeOfDay** vlastnosti, které volá metodu, ale obecná metoda může být pouze omezené na jednotné třídy a třídy pouze společné pro <xref:System.Printing.PrintQueue> a <xref:System.Printing.PrintSystemJobInfo> v dědičnosti je strom <xref:System.Printing.PrintSystemObject> která nemá žádné takové vlastnosti.  
   
  **ReportAvailabilityAtThisTime** – metoda (uvedené v následujícím příkladu kódu) začíná inicializace <xref:System.Boolean> proměnnou sentinel `true`. Se resetuje na `false`, pokud není k dispozici do fronty.  
   

@@ -10,15 +10,15 @@ helpviewer_keywords:
 - print jobs [WPF], troubleshooting
 - print jobs [WPF], diagnosing problems
 ms.assetid: b081a170-84c6-48f9-a487-5766a8d58a82
-ms.openlocfilehash: c9da2e1daff23ef9ba39d8b5d53cb3be67f35a27
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: d64e77b7fc6862eead3cb7e791b3a8f68ac52713
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878208"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859735"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Postupy: Diagnostika problematické tiskové úlohy
-Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohaté sadě vlastností tiskovou úlohu v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé vzdálené diagnostiky tiskových úloh.  
+Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohatou sadu vlastností tiskové úlohy, které jsou zveřejněné v rozhraní API z Microsoft .NET Framework poskytují způsob pro provádění rychlé vzdálené diagnostiky tiskových úloh.  
   
 ## <a name="example"></a>Příklad  
  Hlavní kroky pro vytvoření tento druh nástroj jsou následující.  

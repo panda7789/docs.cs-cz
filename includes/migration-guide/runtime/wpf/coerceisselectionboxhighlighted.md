@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d9e1cd8d346a48fafc89367bddf923167a620889
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7cdd4ae030dfe9f1bc383092e041fd1f0739212
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764430"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67857511"
 ---
 ### <a name="coerceisselectionboxhighlighted"></a>CoerceIsSelectionBoxHighlighted
 
@@ -12,7 +12,8 @@ ms.locfileid: "61764430"
 |---|---|
 |Podrobnosti|Určité pořadí akce zahrnující <xref:System.Windows.Controls.ComboBox?displayProperty=name> a zdrojem dat může vést k <xref:System.NullReferenceException?displayProperty=name>.|
 |Doporučení|Pokud je to možné upgradujte na rozhraní .NET Framework 4.6.2.|
-|Rozsah|Vedlejší|
+|Scope|Vedlejší|
 |Version|4.6|
-|Type|Modul runtime|
+|type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.ComboBox.IsSelectionBoxHighlighted?displayProperty=nameWithType></li></ul>|
+

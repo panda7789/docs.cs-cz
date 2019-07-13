@@ -7,15 +7,15 @@ helpviewer_keywords:
 - Panel control [WPF], how-to topics
 - controls [WPF], Panel
 ms.assetid: 28d8faf2-490c-4e17-a447-df25a66f6679
-ms.openlocfilehash: a0cb1e0b569fb69adf1e474ca3666d5e387274ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 45a5b67edeea46a29e5c2fc3aea86d34fa4f5e7a
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770679"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860064"
 ---
 # <a name="panel-how-to-topics"></a>Témata panelu postupů
-Témata v této části popisují způsob použití <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  
+Témata v této části popisují způsob použití <xref:System.Windows.Controls.Panel> elementu a související rozhraní API.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vytvoření vlastního elementu panelu](how-to-create-a-custom-panel-element.md)  
@@ -23,7 +23,7 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
  [Nastavení vlastností výšky elementu](how-to-set-the-height-properties-of-an-element.md)  
  [Nastavení vlastností šířky elementu](how-to-set-the-width-properties-of-an-element.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
