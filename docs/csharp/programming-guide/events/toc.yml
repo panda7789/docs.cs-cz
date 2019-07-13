@@ -9,7 +9,5 @@
       href: how-to-raise-base-class-events-in-derived-classes.md
     - name: 'Postupy: Implementace událostí rozhraní'
       href: how-to-implement-interface-events.md
-    - name: 'Postupy: Použití slovníku k ukládání instancí událostí'
-      href: how-to-use-a-dictionary-to-store-event-instances.md
     - name: 'Postupy: Implementace vlastních přístupových objektů událostí'
       href: how-to-implement-custom-event-accessors.md
