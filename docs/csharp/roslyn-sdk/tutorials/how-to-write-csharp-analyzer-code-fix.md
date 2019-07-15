@@ -3,12 +3,12 @@ title: 'Kurz: Zápis první opravu analyzátoru a kódu'
 description: Tento kurz obsahuje podrobné pokyny k sestavení analyzátor a oprava kódu pomocí sady SDK kompilátoru .NET (Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 1a4280741650b41174f93c4403008ee3522adbe6
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 45529a72e3c64a573bfc043fe44da29caed1a0c4
+ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452703"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870552"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis první opravu analyzátoru a kódu
 
@@ -18,9 +18,10 @@ V tomto kurzu prozkoumáte vytváření **analyzátor** a je v doprovodné **opr
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017](https://www.visualstudio.com/downloads)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
+* [Visual Studio 2019](https://www.visualstudio.com/downloads)
 
-Budete muset nainstalovat **sada SDK platformy kompilátoru .NET**:
+Budete muset nainstalovat **sada SDK platformy kompilátoru .NET** prostřednictvím instalačního Visual Studio:
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
@@ -51,7 +52,7 @@ Console.WriteLine(x);
 Součástí analýzy k určení, zda proměnné může být změněna na konstantní vyžadující syntaktické analýzy, konstantní analýzy inicializačního výrazu a analýzy datového toku k zajištění, že proměnná je nikdy zapsána do. Na platformě kompilátoru .NET poskytuje rozhraní API, která usnadňují provádění této analýzy. Prvním krokem je vytvoření nového jazyka C# **analyzátor s opravu kódu** projektu.
 
 * V sadě Visual Studio, zvolte **soubor > Nový > projekt...**  zobrazíte dialogové okno Nový projekt.
-* V části **Visual C# > rozšíření**, zvolte **Analyzátor se oprava kódu (.NET Standard)**.
+* V části **Visual C# > rozšíření**, zvolte **Analyzátor se oprava kódu (.NET Standard)** .
 * Pojmenujte svůj projekt "**MakeConst**" a klikněte na tlačítko OK.
 
 Vytvoří analyzátor s šablonou opravu kódu tři projekty: jeden obsahuje analyzer a oprava kódu, projekt testování částí je druhý a třetí je projekt VSIX. Výchozí spouštěný projekt je projekt VSIX. Stisknutím klávesy **F5** ke spuštění projektu VSIX. Otevře se druhá instance sady Visual Studio, který byl načten nový analyzátor.

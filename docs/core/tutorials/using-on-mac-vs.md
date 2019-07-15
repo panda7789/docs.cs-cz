@@ -2,14 +2,14 @@
 title: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 description: Toto téma vás provede vytvořením jednoduchou konzolovou aplikaci pomocí sady Visual Studio pro Mac a .NET Core.
 author: mairaw
-ms.date: 06/12/2017
+ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4467842c0b65ea536cc26601981d9fcc2bc68f2d
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: a6d58d2a54ce9742542a3f7e5c9378be89b8f89a
+ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300054"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870516"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -24,21 +24,25 @@ Visual Studio for Mac obsahuje plně vybavené integrované vývojové prostřed
 
 Najdete v článku [předpoklady pro .NET Core v počítačích Mac](../../core/macos-prerequisites.md) tématu.
 
+Zkontrolujte, [podpora platformy .NET Core](https://docs.microsoft.com/visualstudio/mac/net-core-support?view=vsmac-2019) návod vám pomůže zajistit, že používáte podporovanou verzi .NET Core.
+
 ## <a name="get-started"></a>Začínáme
 
 Pokud jste již nainstalovali požadované součásti a sady Visual Studio pro Mac, přeskočte tuto část a přejděte k [vytvoření projektu](#creating-a-project). Postupujte podle těchto kroků nainstalujte požadované součásti a sady Visual Studio pro Mac:
 
-Stáhněte si [Visual Studio for Mac installer](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace zadáte možnost nainstalujte si Xamarin, technologie pro vývoj multiplatformních mobilních aplikací. Instalace Xamarinu a jeho souvisejících součástí je nepovinné pro vývoj v .NET Core. Návod, jak Visual Studio for Mac instalační proces, naleznete v tématu [Visual Studio for Mac dokumentaci](/visualstudio/mac/). Po dokončení instalace spusťte Visual Studio pro Mac integrovaného vývojového prostředí.
+Stáhněte si [Visual Studio for Mac installer](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace vyberte možnost instalace .NET Core. Už jste zadali možnost nainstalujte si Xamarin, technologie pro vývoj multiplatformních mobilních aplikací. Instalace Xamarinu a jeho souvisejících součástí je nepovinné pro vývoj v .NET Core. Návod, jak Visual Studio for Mac instalační proces, naleznete v tématu [Visual Studio for Mac dokumentaci](/visualstudio/mac/). Po dokončení instalace spusťte Visual Studio pro Mac integrovaného vývojového prostředí.
 
 ## <a name="creating-a-project"></a>Vytvoření projektu
 
-1. Vyberte **nový projekt** na úvodní obrazovce.
+1. Vyberte **nové** v okně Start.
 
-   ![Tlačítko Nový projekt v sadě Visual Studio pro Mac úvodní obrazovka](./media/using-on-mac-vs/visual-studio-mac-new-project.png)
+   ![Tlačítko Nová v sadě Visual Studio pro Mac úvodní obrazovku](./media/using-on-mac-vs/visual-studio-mac-new-project.png)
 
 1. V **nový projekt** dialogového okna, vyberte **aplikace** pod **.NET Core** uzlu. Vyberte **konzolovou aplikaci** šablony následovaný **Další**.
 
    ![Nový seznam šablon projektu](./media/using-on-mac-vs/visual-studio-mac-new-dialog.png)
+
+1. Pokud máte více než jednu verzi .NET Core nainstalovaná, vyberte cílový rámec pro projekt.
 
 1. Zadejte "HelloWorld" **název projektu**. Vyberte **Vytvořit**.
 
@@ -50,7 +54,7 @@ Stáhněte si [Visual Studio for Mac installer](https://visualstudio.microsoft.c
 
 ## <a name="run-the-application"></a>Spuštění aplikace
 
-Spusťte aplikaci pomocí režimu ladění <kbd>F5</kbd> nebo v režimu pro vydávání pomocí <kbd>CTRL</kbd>+<kbd>F5</kbd>.
+Spusťte aplikaci v režimu ladění pomocí ⌘ ↵ (příkaz + enter) nebo v režimu vydání pomocí ⌥ ⌘ ↵ (možnost + příkaz + enter).
 
 ![V podokně výstup aplikace se zobrazí Hello World!](./media/using-on-mac-vs/visual-studio-mac-output.png)
 

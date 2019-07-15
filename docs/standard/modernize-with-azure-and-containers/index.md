@@ -2,12 +2,12 @@
 title: Modernizujte stávající .NET aplikací s Azure Cloud a kontejnerů Windows (verze 2.)
 description: Zjistěte, jak přenést a podržte klávesu shift a modernizace stávajících aplikací do cloudu Azure a kontejnery s tuto elektronickou příručku.
 ms.date: 04/28/2018
-ms.openlocfilehash: 79e06c64867a7e1bb6c5d7da718886a713cb3c4c
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 4e632fcfbb8904a9def3fdad992286055c5df4f0
+ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834013"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870600"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows (verze 2.)
 
@@ -98,7 +98,7 @@ Tabulka 1-1 popisuje hlavní výhody a důvodů pro volbu každý migrace nebo m
 | **Výhody**|
 | <li>Žádná změna architektury, nové kódu <li> Minimálním úsilí pro rychlé migrace <li> Nejméně společným faktorem podporované v Azure <li> Zaručuje základní dostupnosti <li> Po přesunu do cloudu, je jednodušší modernizovat ještě víc | <li> Žádná změna architektury <li> Změny minimální kódu/konfigurace <li> Vylepšené nasazení a flexibilita DevOps uvolnit z důvodu kontejnery <li> Vyšší hustotu a nižší náklady na nasazení <li> Přenositelnost aplikací a závislostí <li> Flexibilita hostitele cíle: Přístupy k PaaS nebo IaaS | <li> Návrhář pro cloud, získáte nejlepší výhody z cloudu, ale je potřeba nový kód <li> Mikroslužby cloudově nativních postupů <li> Moderní aplikace, odolné cloudové hyperškálovatelném <li> Plně spravované služby <li> Optimalizováno pro škálování <li> Optimalizovaný pro flexibilitu autonomní podsystémem <li> Založená na nasazení a nástroji DevOps |
 | **Výzvy** |
-| <li> Menší hodnota cloudu, než shift v provozních výdajů nebo zavírání datových centrech <li> Trochu spravuje: Žádný operační systém nebo middleware oprav; použít řešení infrastruktury, jako jsou Puppet, Terraformu nebo Spinnaker | <li> Uzavření do kontejneru se na další krok v Křivka osvojování znalostí pro vývojáře a IT oddělení <li> Kanály DevOps a CI/CD je obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem| <li> Vyžaduje rearchitecture pro architektury mikroslužeb a nativních aplikací pro cloud a obvykle vyžaduje významné kódu refaktoringu nebo přepsání při modernizaci (zvýšená času a prostředků) <li> Kanály DevOps a CI/CD je obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem|
+| <li> Menší hodnota cloudu, než shift v provozních výdajů nebo zavírání datových centrech <li> Trochu spravuje: Žádný operační systém nebo middleware oprav; použít řešení infrastruktury, jako jsou Puppet, Terraformu nebo Spinnaker | <li> Uzavření do kontejneru se na další krok v Křivka osvojování znalostí pro vývojáře a IT oddělení <li> DevOps a kanálů CI/CD jsou obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem| <li> Vyžaduje rearchitecture pro architektury mikroslužeb a nativních aplikací pro cloud a obvykle vyžaduje významné kódu refaktoringu nebo přepsání při modernizaci (zvýšená času a prostředků)|
 > **Tabulka 1-1.** Výhody i výzvy cest modernizaci stávajících aplikací .NET a služeb
 
 ### <a name="key-technologies-and-architectures-by-maturity-level"></a>Klíčové technologie a architektury podle úrovně vyspělosti

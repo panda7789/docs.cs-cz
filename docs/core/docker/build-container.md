@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 16edb129be679179450c485ced2586cea9ed9763
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: cb9a53520c513d96b9b1656ad64d55cf8aea1f08
+ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609301"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870429"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace aplikace .NET Core
 
@@ -177,7 +177,7 @@ myapp.deps.json  myapp.dll  myapp.pdb  myapp.runtimeconfig.json
 V terminálu přejděte na adresář pro pracovní složky, kterou jste vytvořili na začátku nahoru. Vytvořte soubor s názvem *soubor Dockerfile* ve své pracovní složce a otevřete ho v textovém editoru. Jako první řádek souboru přidejte následující příkaz:
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2
 ```
 
 `FROM` Příkaz říká Dockeru stáhnout image označit **2.2** z **mcr.microsoft.com/dotnet/core/runtime** úložiště. Ujistěte se, že o přijetí změn na .NET Core runtime, který se shoduje s cílem sady SDK modulu runtime. Například aplikace vytvořené v předchozí části používá .NET Core 2.2 SDK a vytvořili aplikaci, na který .NET Core 2.2. Takže základní image podle *soubor Dockerfile* je označené **2.2**.
@@ -205,7 +205,13 @@ docker-working
     └───obj
 ```
 
-Z terminálu spusťte `docker build -t myimage -f Dockerfile .` a zpracovávat každý řádek v Dockeru *soubor Dockerfile*. `.` v `docker build` příkaz říká dockeru použití aktuální složku k vyhledání *soubor Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **myimage** , která odkazuje na této bitové kopie. Po dokončení tohoto příkazu Spustit `docker images` zobrazíte seznam imagí, které jsou nainstalovány:
+Z terminálu spusťte následující příkaz:
+
+```console
+docker build -t myimage -f Dockerfile .
+```
+
+Docker bude zpracovávat každý řádek v *soubor Dockerfile*. `.` v `docker build` příkaz říká Dockeru použití aktuální složku k vyhledání *soubor Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **myimage** , která odkazuje na této bitové kopie. Po dokončení tohoto příkazu Spustit `docker images` zobrazíte seznam imagí, které jsou nainstalovány:
 
 ```console
 > docker images
@@ -224,7 +230,7 @@ ENTRYPOINT ["dotnet", "app/myapp.dll"]
 
 `COPY` Příkaz sděluje kopírování zadané složky na vašem počítači do složky v kontejneru Dockeru. V tomto příkladu **publikovat** složky je zkopírován do složky s názvem **aplikace** v kontejneru.
 
-Další příkaz `ENTRYPOINT`, říká dockeru konfigurace kontejner pro spuštění jako spustitelný soubor. Při spuštění kontejneru, `ENTRYPOINT` příkaz spustí. Až příkaz skončí, automaticky zastaví kontejner.
+Další příkaz `ENTRYPOINT`, říká Dockeru konfigurace kontejner pro spuštění jako spustitelný soubor. Při spuštění kontejneru, `ENTRYPOINT` příkaz spustí. Až příkaz skončí, automaticky zastaví kontejner.
 
 Z terminálu spusťte `docker build -t myimage -f Dockerfile .` a po dokončení příkazu, který, spusťte `docker images`.
 
@@ -447,7 +453,7 @@ Použití `docker images` příkazu zobrazte seznam imagí, které jsou nainstal
 > [!NOTE]
 > Soubory bitových kopií může být velký. Obvykle by odeberte dočasné kontejnery, které jste vytvořili při testování a vývoj vaší aplikace. Obvykle byste mít základní Image s modulem runtime nainstalovat, pokud máte v úmyslu na vytváření další Image podle tohoto modulu runtime.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 * [Projděte si kurz ASP.NET Core Mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
 * [Projděte si služby Azure, které podporují kontejnery.](https://azure.microsoft.com/overview/containers/)
