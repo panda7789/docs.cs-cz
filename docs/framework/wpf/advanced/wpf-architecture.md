@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 697a3dff663b333ce97e05783df6b163692b5d9e
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 2fa2e039d73d079b6dacc9326c64fc2015eecc49
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610342"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238488"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentation Foundation (WPF). Zabírá většinu hlavních subsystémy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje způsob, jakým interagují. Je také podrobné informace o některých volby provedené architektů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -64,7 +64,7 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
 ## <a name="systemwindowsmediavisual"></a>System.Windows.Media.Visual  
  Se systémem definované dalším krokem je stále pixelů na obrazovce. <xref:System.Windows.Media.Visual> Poskytuje třídy pro vytváření strom vizuální objekty, každá volitelně obsahuje pokyny k vykreslení a metadata o tom, jak vykreslit tyto pokyny (oříznutí, transformace, atd.). <xref:System.Windows.Media.Visual> byla navržena jako velmi jednoduchý a flexibilní, takže většinu funkcí sady žádné veřejné rozhraní API vystavení a často využívají chráněný zpětného volání funkce.  
   
- <xref:System.Windows.Media.Visual> je vstupním bodem k opravdu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] složení systému. <xref:System.Windows.Media.Visual> bod připojení mezi těmito dvěma podsystémy spravovanou [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] a nespravovaných milcore.  
+ <xref:System.Windows.Media.Visual> je vstupním bodem k opravdu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] složení systému. <xref:System.Windows.Media.Visual> je bodu připojení mezi tyto dva subsystémy, rozhraní API pro spravované a nespravované milcore.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Zobrazí data podle procházení spravuje milcore nespravované datové struktury. Tyto struktury nazývaných složení uzly, které představují hierarchické zobrazení stromu s vykreslování pokynů v každém uzlu. Tento strom znázorněné na obrázku níže, pravé straně přístupný jenom přes protokol zasílání zpráv.  
   

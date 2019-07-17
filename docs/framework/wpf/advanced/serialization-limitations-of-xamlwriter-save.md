@@ -6,15 +6,15 @@ helpviewer_keywords:
 - limitations of XamlWriter.Save
 - serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
-ms.openlocfilehash: bf752a5bd05d8a0601f3c1dcd53ab856315c0b84
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f743f3de505904854be8aab59e9d3ad14ee64581
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611765"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238623"
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>Omezení serializace XamlWriter.Save
-[!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> Slouží k serializaci obsahu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace jako [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Existují však některé důležité omezení v co přesně je serializována. Tato omezení a některé obecné aspekty jsou popsány v tomto tématu.  
+Rozhraní API <xref:System.Windows.Markup.XamlWriter.Save%2A> slouží k serializaci obsahu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace jako [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Existují však některé důležité omezení v co přesně je serializována. Tato omezení a některé obecné aspekty jsou popsány v tomto tématu.  
 
 <a name="Run_Time__Not_Design_Time_Representation"></a>   
 ## <a name="run-time-not-design-time-representation"></a>Za běhu, ne návrhu zastupování  

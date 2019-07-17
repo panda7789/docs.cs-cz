@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 100b34941b045619c7424921f9315e679f173a60
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: a58ea1a16824cf4a1407221dfb0123efa79e48f9
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67859036"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235683"
 ---
 ### <a name="aspnet-accessibility-improvements-in-net-framework-471"></a>Vylepšení přístupnosti technologie ASP.NET v rozhraní .NET Framework 4.7.1
 
@@ -15,4 +15,3 @@ ms.locfileid: "67859036"
 |Scope|Vedlejší|
 |Version|4.7.1|
 |type|Změna cílení|
-

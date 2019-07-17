@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 02700c75152c32ebee3a0898de1e322ddf9b6e17
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: a914f2c54e5e5b368533b686b1926f7f7ef2e12a
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67802234"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68237327"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -36,7 +36,7 @@ ms.locfileid: "67802234"
   
 |Součást|Popis|  
 |---------------|-----------------|  
-|Zprostředkovatel [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)] (UIAutomationProvider.dll a UIAutomationTypes.dll)|Sada definic rozhraní, které jsou implementované ve zprostředkovateli automatizace uživatelského rozhraní, objekty, které poskytují informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementy a reagovat na vstup prostřednictvím kódu programu.|  
+|Zprostředkovatel rozhraní API (UIAutomationProvider.dll a UIAutomationTypes.dll)|Sada definic rozhraní, které jsou implementované ve zprostředkovateli automatizace uživatelského rozhraní, objekty, které poskytují informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementy a reagovat na vstup prostřednictvím kódu programu.|  
 |Klientské rozhraní API (UIAutomationClient.dll a UIAutomationTypes.dll)|Sadu typů pro spravovaný kód, který umožňuje automatizaci uživatelského rozhraní klientských aplikací získat informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a posílat vstupu pro ovládací prvky.|  
 |UiAutomationCore.dll|Základní kód (říká se jim [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] core), který zpracovává vnitřní komunikaci mezi klienty a poskytovatelů.|  
 |UIAutomationClientsideProviders.dll|Sada zprostředkovatelů automatizace uživatelského rozhraní pro standardní ovládací prvky starší verze. ([!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky mají nativní podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].) Tato podpora je automaticky dostupný pro klientské aplikace.|  

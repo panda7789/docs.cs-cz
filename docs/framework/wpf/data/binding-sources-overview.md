@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: fe5cb97b4802c2b638a4b218a27da05468dc50fb
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 99f01983a575e9c6f96fdb66590e9d762eb882f7
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505559"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238440"
 ---
 # <a name="binding-sources-overview"></a>Přehled zdrojů připojení
 V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z. Toto téma popisuje typy objektů, které můžete použít jako zdroj vazby.  
@@ -24,7 +24,7 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
 |--------------------|-----------------|  
 |[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] Objekty|Můžete vázat na veřejné vlastnosti, dílčí vlastnosti, jakož i indexery žádné [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objektu. Modul vazby používá [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] reflexi k získání hodnot vlastností. Můžete také objekty, které implementují <xref:System.ComponentModel.ICustomTypeDescriptor> nebo jste registrovaný <xref:System.ComponentModel.TypeDescriptionProvider> fungovat i pro vazby.<br /><br /> Další informace o tom, jak implementovat třídu, který může sloužit jako zdroj vazby najdete v tématu [implementaci třídy pro zdroj vazby](#classes) dále v tomto tématu.|  
 |dynamické objekty|Můžete vázat na dostupné vlastnostmi a indexery objekt, který implementuje <xref:System.Dynamic.IDynamicMetaObjectProvider> rozhraní. Pokud přistupujete můžete členské v kódu, můžete svázat do něj. Například, pokud dynamický objekt umožňuje přístup ke členu v kódu prostřednictvím `someObjet.AProperty`, můžete svázat do ní nastavením cesta vazby `AProperty`.|  
-|[!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] Objekty|Lze svázat objekty technologie ADO.NET, například <xref:System.Data.DataTable>. ADO.NET <xref:System.Data.DataView> implementuje <xref:System.ComponentModel.IBindingList> rozhraní, které poskytuje oznámení o změnách, které naslouchá vazby.|  
+|Objekty technologie ADO.NET|Lze svázat objekty technologie ADO.NET, například <xref:System.Data.DataTable>. ADO.NET <xref:System.Data.DataView> implementuje <xref:System.ComponentModel.IBindingList> rozhraní, které poskytuje oznámení o změnách, které naslouchá vazby.|  
 |[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] Objekty|Můžete svázat a spustit `XPath` dotazuje na <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>, nebo <xref:System.Xml.XmlElement>. Pohodlný způsob, jak přistupovat k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data, která je zdrojem vazby v kódu, je použít <xref:System.Windows.Data.XmlDataProvider> objektu. Další informace najdete v tématu [svázání dat XML pomocí XMLDataProvider a dotazů XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Také lze svázat <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>, nebo připojení k výsledkům dotazů, spusťte na tyto typy objektů pomocí LINQ to XML. Pohodlný způsob, jak používat technologie LINQ to XML pro přístup k datům XML, který je zdrojem vazby v kódu je použít <xref:System.Windows.Data.ObjectDataProvider> objektu. Další informace najdete v tématu [připojení k XDocument, XElement nebo LINQ pro výsledky XML dotazu](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
 |<xref:System.Windows.DependencyObject> Objekty|Mohl vytvořit vazbu k vlastnosti závislosti žádné <xref:System.Windows.DependencyObject>. Příklad najdete v tématu [vazby vlastností dvou ovládacích](how-to-bind-the-properties-of-two-controls.md).|  
   

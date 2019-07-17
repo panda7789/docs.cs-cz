@@ -2,12 +2,12 @@
 title: C#Správa verzí jazyka - C# Průvodce
 description: Další informace o tom, jak C# jazykové verze je určena na základě vašeho projektu a jiné hodnoty lze upravit ručně ji.
 ms.date: 07/10/2019
-ms.openlocfilehash: 2d593ca0588f291c61cdf52fbc1eb60a1f3f7ecb
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: e35fdf2bcdb1a31b752c760f3f6df59232e498a4
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859601"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68236099"
 ---
 # <a name="c-language-versioning"></a>C#Správa verzí jazyka
 
@@ -34,7 +34,7 @@ Pokud je nutné zadat vaše C# verze explicitně, lze provést několika způsob
 
 - Ručně upravit vaše [soubor projektu](#edit-the-project-file).
 - Nastavit jazykovou verzi [pro více projektů v podadresáři](#configure-multiple-projects).
-- Konfigurace [ `-langversion` – možnost kompilátoru](#set-the-langversion-compiler-option).
+- Konfigurace [ `-langversion` – možnost kompilátoru](compiler-options/langversion-compiler-option.md)
 
 ### <a name="edit-the-project-file"></a>Úprava souboru projektu
 

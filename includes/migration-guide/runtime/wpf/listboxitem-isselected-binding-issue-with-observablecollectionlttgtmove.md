@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 778b6973b0a08e89471f9a4aa31a077da2d30c16
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 44cb833fc93caaa79000147421e1c013f755b9cb
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67858399"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238023"
 ---
 ### <a name="listboxitem-isselected-binding-issue-with-observablecollectionlttgtmove"></a>IsSelected objektu ListBoxItem vazby problém s kolekci ObservableCollection&lt;T&gt;. Přesunutí
 
@@ -16,4 +16,3 @@ ms.locfileid: "67858399"
 |Version|4.5|
 |type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Collections.ObjectModel.ObservableCollection%601.Move(System.Int32,System.Int32)?displayProperty=nameWithType></li><li><xref:System.Collections.ObjectModel.ObservableCollection%601.MoveItem(System.Int32,System.Int32)?displayProperty=nameWithType></li></ul>|
-

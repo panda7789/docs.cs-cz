@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: 1c3316fa88d3024af4e81072cbe64c13cfbdb18e
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 11c872767b5e3595da1fb4982d3b12e0fc77db98
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610285"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238593"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
 
@@ -30,7 +30,7 @@ Následující obrázek ukazuje skleněného rámečku do adresa aplikace Intern
 
 ![Snímek obrazovky zobrazující skleněného rámečku rozšířené za panelu Adresa aplikace Internet Explorer 7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Rozšíření skleněného rámečku na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, přístupu k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba. Následující příklad kódu funguje (pinvoke) pro vyvolání platformy pro dvě rozhraní API, které jsou potřeba splnit pro rozšíření rámce do klientské oblasti. Každá z těchto rozhraní API jsou deklarovány ve třídě volá **NonClientRegionAPI**.
+Rozšíření skleněného rámečku na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, je potřeba přístup k nespravované rozhraní API. Následující příklad kódu funguje (pinvoke) pro vyvolání platformy pro dvě rozhraní API, které jsou potřeba splnit pro rozšíření rámce do klientské oblasti. Každá z těchto rozhraní API jsou deklarovány ve třídě volá **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]

@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: cb9a53520c513d96b9b1656ad64d55cf8aea1f08
-ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
+ms.openlocfilehash: 8c50fb20a6a2273b17825b83b1a94d9abd2c158a
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67870429"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235710"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace aplikace .NET Core
 
@@ -29,7 +29,7 @@ Rozumíte budete Docker, kontejner sestavení a nasazení úlohy pro aplikace .N
 
 Nainstalujte následující požadavky:
 
-* [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download)\
+* [.NET core 2.2 SDK](https://dotnet.microsoft.com/download)\
 Pokud máte nainstalovaný .NET Core, použijte `dotnet --info` příkaz k určení SDK, které používáte.
 
 * [Docker Community Edition](https://www.docker.com/products/docker-desktop)
@@ -247,7 +247,6 @@ Removing intermediate container f34da5c18e7c
  ---> ddcc6646461b
 Successfully built ddcc6646461b
 Successfully tagged myimage:latest
-
 
 > docker images
 REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE

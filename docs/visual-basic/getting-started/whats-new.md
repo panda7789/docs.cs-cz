@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 5b1547f596a0ff1c52a402f90457dced6ef604a0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49c39e12aa67b1f36fc46c21f5d2b23223b3264d
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797018"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238640"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -174,7 +174,7 @@ Další informace najdete v tématu [referenční vrátit hodnoty](../programmin
 
 ## <a name="visual-basic-14"></a>Visual Basic 14
 
-[Nameof](../../csharp/language-reference/keywords/nameof.md)
+[Nameof](../../csharp/language-reference/operators/nameof.md)
 
 Bez pevného kódování řetězec můžete získat název nekvalifikované řetězce na typ nebo člena pro použití v chybové zprávě.  Díky tomu váš kód zůstane správné refaktoringu.  Tato funkce je také užitečné pro zapojování model-view-controller MVC odkazy a vyvolává události změněné vlastnosti.
 

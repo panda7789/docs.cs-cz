@@ -3,19 +3,19 @@ title: Předvídání cen prostřednictvím regrese s Tvůrce modelu
 description: Tento kurz ukazuje, jak sestavit pomocí Tvůrce modelu ML.NET k předvídání cen, konkrétně tarify taxislužby města New York regresní model.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 06/26/2019
+ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d9a6f193d877fc1a679b7a3cafd7491e021cb2ad
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: d8c901a10c91c8a6c16ca59516b633a99785ebac
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539625"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238571"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Předvídání cen prostřednictvím regrese s Tvůrce modelu
 
-Další informace o použití Tvůrce modelu ML.NET k sestavení [regresní model](../resources/glossary.md#regression) předpovídat ceny.  Konzolové aplikace .NET, který v tomto kurzu vyvinete předpovídá podle historických dat. tarif taxislužby města New York tarify taxislužby.
+Další informace o použití Tvůrce modelu ML.NET sestavit regrese model() předpovídat ceny.  Konzolové aplikace .NET, který v tomto kurzu vyvinete předpovídá podle historických dat. tarif taxislužby města New York tarify taxislužby.
 
 Šablonu predikce ceny Tvůrce modelu lze použít pro jakýkoli scénář vyžaduje hodnotu číselné předpovědi. Ukázkové scénáře zahrnují: organizace predikce ceny, předpověď poptávky a prognózy prodeje.
 
@@ -39,16 +39,18 @@ Seznam požadavků a pokyny k instalaci, přejděte [Tvůrce modelu Průvodce in
 
 1. Vytvoření **konzolovou aplikaci .NET Core** nazývá "TaxiFarePrediction".
 
-1. Nainstalujte **Microsoft.ML** balíček NuGet:
-
-    V **Průzkumníka řešení**, klikněte pravým tlačítkem myši *TaxiFarePrediction* projektu a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte balíček, v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
-
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
 1. Vytvořte adresář *Data* ve vašem projektu a ukládat soubory datové sady.
 
-1. Stáhněte si [taxislužby. tarif train.csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-train.csv) dat nastavit a uložit ho. tím *Data* složky, které jste vytvořili v předchozím kroku. Tato datová sada se používá k natrénování a vyhodnocení modelu strojového učení. Tato datová sada je původně z [sady dat o jízdách taxislužby TLC NYC](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml).
+1. Sada dat používá k natrénování a vyhodnocení modelů strojového učení je původně cesty taxíkem TLC NYC datové sady. 
 
+    Stáhnout sady dat, přejděte [odkaz ke stažení taxislužby. tarif train.csv](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/taxi-fare-train.csv). 
+    
+    Když se stránka načte, klikněte pravým tlačítkem kamkoli na stránku a vyberte **uložit jako**. 
+    
+    Použití **uložit jako dialogové okno** k uložení souboru v *Data* složky, které jste vytvořili v předchozím kroku. 
+    
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši *taxislužby. tarif train.csv* a vyberte možnost **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
 
 Každý řádek `taxi-fare-train.csv` datová sada obsahuje podrobné informace o cesty taxislužby.
@@ -60,7 +62,7 @@ Každý řádek `taxi-fare-train.csv` datová sada obsahuje podrobné informace 
     * **vendor_id:** ID dodavatele taxislužby je funkce.
     * **rate_code:** Typ kursu cesty taxíkem je funkce.
     * **passenger_count:** Počet cestujících na cestě je funkce.
-    * **trip_time_in_secs:** Dobu trvání cesty. Chcete předpovědět tarif cesty před dokončením cesty. V daném okamžiku by trvalo chvíli si nejste jisti, jak dlouho o jízdách. Proto doba jízdy není funkce a budete vylučte tento sloupec z modelu.
+    * **trip_time_in_secs:** Dobu trvání cesty. 
     * **trip_distance:** Vzdálenost cesty je funkce.
     * **payment_type:** Způsob platby (hotovosti nebo kreditní karta) je funkce.
     * **fare_amount:** Celkový počet taxislužby tarif placené je popisek.
@@ -69,14 +71,14 @@ Každý řádek `taxi-fare-train.csv` datová sada obsahuje podrobné informace 
 
 ## <a name="choose-a-scenario"></a>Zvolte scénář
 
-K natrénování modelu, musíte vybrat ze seznamu dostupných strojového učení scénáře, které poskytuje tvůrce modelu. V takovém případě je scénář `Price Prediction`. Rozsáhlejší seznam najdete [Tvůrce modelu přehledovém článku](../automate-training-with-model-builder.md#scenarios).
+K natrénování modelu, musíte vybrat ze seznamu dostupných strojového učení scénáře, které poskytuje tvůrce modelu. V takovém případě je scénář `Price Prediction`. 
 
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši *TaxiFarePrediction* projektu a vyberte **přidat** > **Machine Learning**.
 1. V kroku scénář nástroj Tvůrce modelu, vyberte *predikce ceny* scénář.
 
 ## <a name="load-the-data"></a>Načtení dat
 
-Tvůrce modelu přijme data ze dvou zdrojů, databáze SQL serveru nebo souboru csv nebo tsv místního souboru. Další informace o požadavky na formát dat, navštivte následující [odkaz](../how-to-guides/install-model-builder.md#limitations).
+Tvůrce modelu přijme data ze dvou zdrojů, databáze SQL serveru nebo místní soubor ve formátu csv, tsv. 
 
 1. V kroku data nástroj Tvůrce modelu, vyberte *souboru* z rozevíracího seznamu datového zdroje.
 1. Vyberte tlačítko vedle *vyberte soubor* textové pole a použití Průzkumníka souborů a procházet a vybrat *taxislužby. tarif test.csv* v *Data* adresáře
@@ -90,9 +92,9 @@ Objem dat úměrné čas potřebný k natrénování modelu. Vyberte odpovídaj�
 
 \* Velikost datové sady  | Typ datové sady       | Střední Čas k trénování *
 ------------- | ------------------ | --------------
-0 - 10 Mb     | Číselné a Text   | 10 sekund
-10 - 100 Mb   | Číselné a Text   | 10 minut
-100 – 500 mb  | Číselné a Text   | 30 min
+0 – 10 mb     | Číselné a Text   | 10 sekund
+10 – 100 mb   | Číselné a Text   | 10 minut
+100 – 500 mb  | Číselné a Text   | 30 minut
 500 - 1 Gb    | Číselné a Text   | 60 min
 1 Gb+         | Číselné a Text   | 3 hodiny +
 
@@ -110,23 +112,23 @@ Po dokončení školení přejděte ke kroku vyhodnotit.
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Výsledek kroku školení bude jeden model, který měl nejlepší výkon. V kroku vyhodnotit nástroj Tvůrce modelu, bude obsahovat výstupní sekce algoritmus používaný serverem nejvýkonnějšího modelu v *nejlepší Model* položka společně s metrikami v *nejlepší kvalita modelu (RSquared)* . Kromě toho souhrnnou tabulku obsahující pěti hlavních modelů a jejich metriky. Navštivte následující odkaz na další informace o [vyhodnocení modelu metriky](https://docs.microsoft.com/dotnet/machine-learning/resources/metrics).
+Výsledek kroku školení bude jeden model, který měl nejlepší výkon. V kroku vyhodnotit nástroj Tvůrce modelu, bude obsahovat výstupní sekce algoritmus používaný serverem nejvýkonnějšího modelu v *nejlepší Model* položka společně s metrikami v *nejlepší kvalita modelu (RSquared)* . Kromě toho souhrnnou tabulku obsahující pěti hlavních modelů a jejich metriky. 
 
-Pokud si nejste spokojeni s metriky přesnosti, zvýšit množství času pro trénování modelu nebo používat další data jsou některé snadných způsobů, jak vyzkoušet a zlepšit přesnost modelu.
+Pokud si nejste spokojeni s metriky přesnosti, zvýšit množství času pro trénování modelu nebo používat další data jsou některé snadných způsobů, jak vyzkoušet a zlepšit přesnost modelu. V opačném případě přejděte ke kroku kódu. 
 
-## <a name="use-the-model-for-predictions"></a>Použít model pro předpovědi
+## <a name="add-the-code-to-make-predictions"></a>Přidejte kód k vytvoření predikcí
 
 Dva projekty budou vytvořeny v důsledku procesu trénování.
 
-- TaxiFarePredictionML.ConsoleApp: Aplikace konzoly .NET, která obsahuje kód modelu školení a spotřebu.
+- TaxiFarePredictionML.ConsoleApp: Aplikace konzoly .NET Core obsahující kód modelu školení a využití.
 - TaxiFarePredictionML.Model: .NET Standard knihovny tříd obsahující datové modely, které definujete schéma vstupní a výstupní modelování dat, jakož i trvalou verzí nejvýkonnějšího modelu během cvičení.
 
-1. V části kódu nástroj Tvůrce modelu vyberte **přidány projekty** přidat projekty do řešení.
-2. V Průzkumníku řešení klikněte pravým tlačítkem myši *TaxiFarePrediction* projektu. Vyberte **Přidat > existující položku**. Soubor typu z rozevíracího seznamu vyberte `All Files`, přejděte *TaxiFarePredictionML.Model* projekt adresář a zaškrtnout možnost `MLModel.zip` souboru. Klikněte pravým tlačítkem na naposledy přidané `MLModel.zip` a vyberte možnost *vlastnosti*. Kopírovat do výstupního adresáře možnosti, vyberte *kopírovat, pokud je novější* z rozevíracího seznamu.
-3. Klikněte pravým tlačítkem na *TaxiFarePrediction* projektu. Potom **Přidat > odkaz**. Zvolte **projektů > řešení** uzlu a ze seznamu, zkontrolujte *TaxiFarePredictionML.Model* projektu a vyberte OK.
 
-4. Otevřít *Program.cs* soubor *TaxiFarePrediction* projektu.
-5. Přidejte následující příkazy using:
+1. V kroku kód nástroj Tvůrce modelu, vyberte **přidat projekty** pro automaticky generované projekty do řešení přidat.
+1. Klikněte pravým tlačítkem na *TaxiFarePrediction* projektu. Potom **Přidat > odkaz**. Zvolte **projektů > řešení** uzlu a ze seznamu, zkontrolujte *TaxiFarePredictionML.Model* projektu a vyberte OK.
+1. Otevřít *Program.cs* soubor *TaxiFarePrediction* projektu.
+1. Přidejte následující příkazy using tak, aby odkazovaly *Microsoft.ML* balíčku NuGet a *TaxiFarePredictionML.Model* projektu:
+
 
     ```csharp
     using System;
@@ -134,7 +136,7 @@ Dva projekty budou vytvořeny v důsledku procesu trénování.
     using TaxiFarePredictionML.Model.DataModels;
     ```
 
-6. Přidat `ConsumeModel` metodu `Program` třídy. `ConsumeModel` Vytvoří `PredictionEngine` na základě modelu generovaných Tvůrce Model k predikci na nová data a je vytisknout na konzole.
+1. Přidat `ConsumeModel` metodu `Program` třídy. 
 
     ```csharp
     static ModelOutput ConsumeModel(ModelInput input)
@@ -154,7 +156,9 @@ Dva projekty budou vytvořeny v důsledku procesu trénování.
     }
     ```
 
-7. Přidejte následující kód, který `Main` metoda a spusťte aplikaci.
+    `ConsumeModel` Se načíst trénovaného modelu, vytvořit [ `PredictionEngine` ](xref:Microsoft.ML.PredictionEngine%602) modelu a jeho použití k vytvoření predikcí nová data.
+
+7. K předpovědím na nová data pomocí modelu, vytvořte novou instanci třídy `ModelInput` třídy a použít `ConsumeModel` metody. Všimněte si, že velikost tarif není součástí vstupu. Je to proto, že model bude generovat předpovědi pro něj. Přidejte následující kód, který `Main` metoda a spuštění aplikace
 
     ```csharp
     // Create sample data
@@ -195,9 +199,12 @@ V tomto kurzu jste se naučili:
 > * Vyhodnocení modelu
 > * Použít model pro předpovědi
 
-Přejděte k některé z některého z těchto článků se naučíte, jak model nasadit.
+### <a name="additional-resources"></a>Další prostředky
 
-> [!div class="nextstepaction"]
-> [Nasazení modelu do služby Azure Functions](../how-to-guides/serve-model-serverless-azure-functions-ml-net.md)
-> [!div class="nextstepaction"]
-> [Nasazení modelu pro webové rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md)
+Další informace o tématech uvedených v tomto kurzu, najdete na následujících odkazech:
+
+- [Scénáře Tvůrce modelu](../automate-training-with-model-builder.md#scenarios)
+- [Formáty dat tvůrce modelu](../automate-training-with-model-builder.md#data-formats)
+- [Regrese](../resources/glossary.md#regression)
+- [Regresní Model metriky](../resources/metrics.md#metrics-for-regression)
+- [Cesty taxíkem TLC NYC datové sady](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml)

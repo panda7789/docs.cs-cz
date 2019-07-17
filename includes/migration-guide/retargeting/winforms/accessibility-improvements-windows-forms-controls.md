@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 03687b56d05d2b3b9e1ecadd75b83fd48156b7fe
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: aa0859e70389fda3bc7bb304de4979c54467f2c0
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67858940"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235691"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls"></a>Vylepšení přístupnosti v ovládacích prvcích Windows Forms
 
@@ -16,4 +16,3 @@ ms.locfileid: "67858940"
 |Version|4.7.1|
 |type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Forms.ToolStripDropDownButton.CreateAccessibilityInstance?displayProperty=nameWithType></li><li><xref:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject.Name?displayProperty=nameWithType></li><li>[MonthCalendar.AccessibilityObject](xref:System.Windows.Forms.Control.AccessibilityObject)</li></ul>|
-

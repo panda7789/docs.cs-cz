@@ -9,12 +9,12 @@ helpviewer_keywords:
 - unfreezing Freezable objects [WPF]
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-ms.openlocfilehash: 79c539bd0117c712670601b7498c490fca76090e
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: b2ef3c3dbbfbcef08f58c47948f76cb2c238b48a
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610523"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238530"
 ---
 # <a name="freezable-objects-overview"></a>Přehled zablokovatelných objektů
 Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.Freezable> objekty, které mají speciální funkcí, které může pomoct zlepšit výkon aplikace. Příklady zablokovatelných objektů: štětce, pera, transformace, geometrie a animace.  
@@ -148,7 +148,7 @@ mc:Ignorable="PresentationOptions"
   
  Také musí odpovídat následujícím pravidlům pro přístup k a zápis do datových členů, které nejsou vlastnosti závislosti:  
   
-- Na začátku žádné [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] , který čte vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.ReadPreamble%2A> metody.  
+- Na začátku jakéhokoli rozhraní API, který čte vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.ReadPreamble%2A> metody.  
   
 - Na začátku jakéhokoli rozhraní API, která zapisuje vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.WritePreamble%2A> metody. (Když jste volat <xref:System.Windows.Freezable.WritePreamble%2A> v rozhraní API, není nutné provést další volání do <xref:System.Windows.Freezable.ReadPreamble%2A> Pokud načtete vlastnost bez závislosti datové členy.)  
   

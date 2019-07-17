@@ -9,12 +9,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-ms.openlocfilehash: d40d1636b510fcfe667ab3e728d1688ce38641d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 13812fa5429bbe33341e51e4b3be14fbbcb361cb
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611947"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238454"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimalizace výkonu: Využití výhod hardwaru
 Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má dvě vykreslování kanály, hardware a software. Toto téma obsahuje informace o těchto kanálech vykreslování můžete rozhodovat o optimalizaci výkonu vašich aplikací.  
@@ -30,7 +30,7 @@ Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../include
 ### <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky  
  Může být velmi obtížné odhadnout, vaše aplikace poběží na konfiguraci hardwaru. Můžete však chtít zvažte návrh, který umožňuje vaší aplikaci bez problémů přepínač funkce při spuštění na jiný hardware, tak, aby ho využívat všech výhod každou konfiguraci jiný hardware.  
   
- Chcete-li toho dosáhnout [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje funkce určující grafické možnosti systému v době běhu. Grafické možnosti se určuje podle kategorizace grafická karta jako jeden ze tří vykreslování funkce úrovně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] , který umožňuje aplikaci k dotazování na úrovni funkce vykreslování. Aplikace pak můžou cesty odlišný kód za běhu v závislosti na úrovni vykreslování podporovaný hardware.  
+ Chcete-li toho dosáhnout [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje funkce určující grafické možnosti systému v době běhu. Grafické možnosti se určuje podle kategorizace grafická karta jako jeden ze tří vykreslování funkce úrovně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zpřístupňuje rozhraní API, které umožňuje aplikaci k dotazování na úrovni funkce vykreslování. Aplikace pak můžou cesty odlišný kód za běhu v závislosti na úrovni vykreslování podporovaný hardware.  
   
  Funkce, že mají největší dopad na úrovně vrstvy vykreslování grafiky hardware patří:  
   

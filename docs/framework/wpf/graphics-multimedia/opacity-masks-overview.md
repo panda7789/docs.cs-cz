@@ -6,12 +6,12 @@ helpviewer_keywords:
 - masks [WPF], opacity
 - opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
-ms.openlocfilehash: 3ee02eca9719f4ffa3ee0c165ad2541c9ffd085e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7554471d8b812b60e0b1aeb6dd3096b542ca44d6
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625260"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238408"
 ---
 # <a name="opacity-masks-overview"></a>Přehled masek krytí
 Masky krytí umožňují vytvářet elementu nebo vizuální části transparentní nebo částečně transparentní. Vytvoření masky krytí, můžete použít <xref:System.Windows.Media.Brush> k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec mapován na prvek nebo vizuální a hodnotu neprůhlednosti každý pixel štětce se používá k určení výsledného krytí pixel odpovídající element nebo visual.  
@@ -69,15 +69,15 @@ Příklad maskování neprůhlednosti objektu DrawingBrush
 ## <a name="specifying-gradient-stops-for-an-opacity-mask"></a>Zadání masky krytí Přechodové zarážky  
  V předchozím příkladu se barva definovaných systémem <xref:System.Windows.Media.Colors.Black%2A> slouží jako počáteční barva přechodu. Protože všechny barvy v <xref:System.Windows.Media.Colors> třídy, s výjimkou <xref:System.Windows.Media.Colors.Transparent%2A>, jsou zcela neprůhledný, lze jednoduše definovat počáteční barvu barevného přechodu neprůhlednosti masky.  
   
- Pro větší kontrolu nad hodnoty alfa při definování masky krytí, můžete zadat alfa kanál barvy s použitím [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] šestnáctkové soustavě v kódu nebo použití <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metody.  
+ Pro větší kontrolu nad hodnoty alfa při definování masky krytí, můžete zadat alfa kanál barvy v kódu pomocí ARGB šestnáctkové soustavě nebo <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metody.  
   
 <a name="argbsyntax"></a>   
 ### <a name="specifying-color-opacity-in-xaml"></a>Určení barvy krytí v "XAML"  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivé barvy. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxi:  
+ V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], se používá k určení krytí jednotlivé barvy ARGB šestnáctkové soustavě. Šestnáctkové soustavě ARGB používá následující syntaxi:  
   
  `#` **aa** *rrggbb*  
   
- *Aa* v předchozí řádek představuje dvěma číslicemi šestnáctková hodnota používá k určení krytí barvu. *Rr*, *gg*, a *bb* každý představují dvě číslice šestnáctková hodnota používá k určení množství červené, zelené a modré v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A – F. nejmenší hodnota je 0 a F je nejvyšší. Alfa hodnotu 00 určuje barvu, která je zcela transparentní, zatímco alfa hodnotu FF vytvoří barvu, která je úplně neprůhledná.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápisu se používá k určení dvěma barvami. První je úplně neprůhledná, zatímco druhá je dokonale transparentní.  
+ *Aa* v předchozí řádek představuje dvěma číslicemi šestnáctková hodnota používá k určení krytí barvu. *Rr*, *gg*, a *bb* každý představují dvě číslice šestnáctková hodnota používá k určení množství červené, zelené a modré v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A – F. nejmenší hodnota je 0 a F je nejvyšší. Alfa hodnotu 00 určuje barvu, která je zcela transparentní, zatímco alfa hodnotu FF vytvoří barvu, která je úplně neprůhledná.  V následujícím příkladu šestnáctkové soustavě ARGB slouží k určení dvěma barvami. První je úplně neprůhledná, zatímco druhá je dokonale transparentní.  
   
  [!code-xaml[OpacityMasksSnippet#AARRGGBBValueonOpacityMask](~/samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  
   

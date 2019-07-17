@@ -32,35 +32,40 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 0a1ed01d9e6cb86ea177e8b947627f9dc02eedae
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dfb1298abaff0cfe8eae7536f94511a30012a4a9
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744214"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68236079"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# odkaz)
 
-**Integrální číselné typy** jsou podmnožinou **jednoduché typy** a mohou být inicializovány pomocí [ *literály*](#integral-literals). Typy hodnot jsou také všechny celočíselné typy.
+**Integrální číselné typy** jsou podmnožinou **jednoduché typy** a mohou být inicializovány pomocí [ *literály*](#integral-literals). Typy hodnot jsou také všechny celočíselné typy. Všechny integrální číselné typy. podpora [aritmetické](../operators/arithmetic-operators.md), [bitový logický](../operators/bitwise-and-shift-operators.md), [porovnání a rovnost](../operators/equality-operators.md) operátory.
 
-Všechny integrální číselné typy. podpora [aritmetické](../operators/arithmetic-operators.md), [bitový logický](../operators/bitwise-and-shift-operators.md), [porovnání a rovnost](../operators/equality-operators.md) operátory.
+## <a name="characteristics-of-the-integral-types"></a>Vlastnosti celočíselných typů
 
-## <a name="sizes-and-ranges"></a>Velikosti a oblasti
+C#podporuje následující předdefinované integrální typy:
 
-V následující tabulce jsou uvedeny velikosti a rozsah celočíselných typů:
+|C#typ nebo klíčové slovo|Rozsah|Velikost|Typ formátu .NET|
+|----------|-----------|----------|-------------|
+|`sbyte`|-128 až 127|8bitové celé číslo se znaménkem|<xref:System.SByte?displayProperty=nameWithType>|
+|`byte`|0 až 255|Celé číslo bez znaménka 8 bitů|<xref:System.Byte?displayProperty=nameWithType>|
+|`short`|-32 768 do 32 767|16bitové celé číslo se znaménkem|<xref:System.Int16?displayProperty=nameWithType>|
+|`ushort`|0 až 65 535|Celé číslo bez znaménka 16 bitů|<xref:System.UInt16?displayProperty=nameWithType>|
+|`int`|-2 147 483 648 do 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|
+|`uint`|0 do 4 294 967 295|Nepodepsané 32bitové celé číslo|<xref:System.UInt32?displayProperty=nameWithType>|
+|`long`|-9,223,372,036,854,775,808 k 9,223,372,036,854,775,807|64bitové celé číslo se znaménkem|<xref:System.Int64?displayProperty=nameWithType>|
+|`ulong`|0 na 18,446,744,073,709,551,615|64-bit znaménka.|<xref:System.UInt64?displayProperty=nameWithType>|
 
-|type|Rozsah|Velikost|  
-|----------|-----------|----------|  
-|`sbyte`|-128 až 127|8bitové celé číslo se znaménkem|  
-|`byte`|0 až 255|Celé číslo bez znaménka 8 bitů|  
-|`short`|-32 768 do 32 767|16bitové celé číslo se znaménkem|  
-|`ushort`|0 až 65 535|Celé číslo bez znaménka 16 bitů|  
-|`int`|-2 147 483 648 do 2 147 483 647|32bitové celé číslo se znaménkem|  
-|`uint`|0 do 4 294 967 295|Nepodepsané 32bitové celé číslo|  
-|`long`|-9,223,372,036,854,775,808 k 9,223,372,036,854,775,807|64bitové celé číslo se znaménkem|  
-|`ulong`|0 na 18,446,744,073,709,551,615|64-bit znaménka.|  
+V předchozí tabulce každý C# – klíčové slovo typ ve sloupci nejvíce vlevo je alias pro odpovídající typ formátu .NET. Jsou zaměnitelné. Například následující deklarace deklarování proměnných stejného typu:
 
-Výchozí hodnota pro všechny celočíselné typy je `0`. Každá z celočíselných typů obsahuje konstanty s názvem `MinValue` a `MaxValue` pro minimální a maximální hodnotu daného typu.
+```csharp
+int a = 123;
+System.Int32 b = 123;
+```
+
+Výchozí hodnota každý integrální typ je nula, `0`. Každý z celočíselných typů má `MinValue` a `MaxValue` konstanty, minimální a maximální hodnotu daného typu.
 
 Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> strukturu představující celé číslo se znaménkem s žádná horní nebo dolní meze.
 
@@ -76,7 +81,7 @@ var binaryLiteral = 0b_0010_1010;
 
 Desítkové literály nevyžadují jakoukoli předponu. `x` Nebo `X` označuje, že předpona *šestnáctkové literál*. `b` Nebo `B` označuje, že předpona *binární literál*. Deklarace `binaryLiteral` demonstruje použití `_` jako *oddělovač číslic*. Oddělovač číslic jde použít s všechny číselné literály. Binární literály a oddělovače číslic `_` podporuje workflowy C# 7.0.
 
-### <a name="literal-suffixes"></a>Přípony literálu 
+### <a name="literal-suffixes"></a>Přípony literálu
 
 `l` Nebo `L` příponu Určuje, že by měl být celočíselný literál `long` typu. `ul` Nebo `UL` Určuje příponu `ulong` typu. Pokud `L` přípona se používá na literál, který je větší než 9,223,372,036,854,775,807 (maximální hodnota `long`), hodnota převedená na `ulong` typu. Pokud se překročí Hodnota reprezentovaná celočíselný literál <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, Chyba kompilátoru [CS1021](../../misc/cs1021.md) vyvolá. 
 
@@ -123,11 +128,3 @@ Pro převod jedné celočíselného typu na jiný celočíselný typ při implic
 - [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
 - [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)
-- <xref:System.Byte?displayProperty=nameWithType>
-- <xref:System.SByte?displayProperty=nameWithType>
-- <xref:System.Int16?displayProperty=nameWithType>
-- <xref:System.UInt16?displayProperty=nameWithType>
-- <xref:System.Int32?displayProperty=nameWithType>
-- <xref:System.UInt32?displayProperty=nameWithType>
-- <xref:System.Int64?displayProperty=nameWithType>
-- <xref:System.UInt64?displayProperty=nameWithType>

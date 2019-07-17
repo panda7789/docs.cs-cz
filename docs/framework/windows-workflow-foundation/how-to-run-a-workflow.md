@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: c47e1ba89179b38055244c01507318836c899fda
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a7784f37c9e8009adc3735974a6fb0423f24ea37
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637523"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238518"
 ---
 # <a name="how-to-run-a-workflow"></a>Postupy: Spuštění pracovního postupu
 Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started a popisuje, jak vytvořit hostitele pracovního postupu a spustit pracovní postup definovaný v předchozím [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md) tématu.
@@ -30,7 +30,7 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
     > [!TIP]
     >  Pokud **Průzkumníka řešení** okno nezobrazí, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.
 
-3. V **nainstalováno** uzlu, vyberte **Visual C#**, **pracovního postupu** (nebo **jazyka Visual Basic**, **pracovního postupu**).
+3. V **nainstalováno** uzlu, vyberte **Visual C#** , **pracovního postupu** (nebo **jazyka Visual Basic**, **pracovního postupu**).
 
     > [!NOTE]
     >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.
@@ -51,13 +51,13 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
      Protože tento projekt byl vytvořen pomocí **Konzolová aplikace pracovního postupu** šablony, **Program.cs** nebo **Module1.vb** obsahuje následující základní pracovní postup hostování kód.
 
     ```vb
-    ' Create and cache the workflow definition
-    Activity workflow1 = new Workflow1()
+    ' Create and cache the workflow definition.
+    Dim workflow1 As Activity = New Workflow1()
     WorkflowInvoker.Invoke(workflow1)
     ```
 
     ```csharp
-    // Create and cache the workflow definition
+    // Create and cache the workflow definition.
     Activity workflow1 = new Workflow1();
     WorkflowInvoker.Invoke(workflow1);
     ```

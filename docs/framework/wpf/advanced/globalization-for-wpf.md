@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: bfd901d10fe3158c1c5cb32c3a75f3bc15efd0ba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 46e7d9caf0bdf0be25a4ac76e96fe04d0e131ed1
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64640942"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238578"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma popisuje problémy, které byste měli vědět při zápisu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací prvky, které jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.
@@ -105,17 +105,17 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
 - Telugština
 
-- Thaana
+- Thána
 
 - Thajština *
 
 - Tibetské
 
- * V této verzi zobrazení a úpravy thajský textu je podporovány. dělení slov není.
+ \* V této verzi zobrazení a úpravy thajský textu je podporovány. dělení slov není.
 
  Následující skripty se momentálně nepodporují:
 
-- Khmer
+- Khmerština
 
 - Korejské staré písmo
 
@@ -156,7 +156,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
 <a name="building_localizable_apps"></a>
 ### <a name="building-localizable-applications"></a>Vytváření lokalizovatelných aplikacích
- Lokalizace znamená přizpůsobení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro různé jazykové verze. Chcete-li [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizovatelný vývojáři potřebují k vývoji všechny lokalizovatelné prostředky do sestavení prostředků aplikace. Sestavení prostředků je lokalizován do různých jazycích a modelu code-behind používá správu prostředků [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] načíst. Jeden ze souborů požadovaných pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace je soubor projektu (souborů .proj). Všechny prostředky, které používáte ve vaší aplikaci by měla být zahrnuty v souboru projektu. Ze souboru .csproj následující příklad ukazuje, jak to provést.
+ Lokalizace znamená přizpůsobení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro různé jazykové verze. Chcete-li [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizovatelný vývojáři potřebují k vývoji všechny lokalizovatelné prostředky do sestavení prostředků aplikace. Sestavení prostředků je lokalizován do různých jazycích a modelu code-behind používá rozhraní API pro správu prostředků k načtení. Jeden ze souborů požadovaných pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace je soubor projektu (souborů .proj). Všechny prostředky, které používáte ve vaší aplikaci by měla být zahrnuty v souboru projektu. Ze souboru .csproj následující příklad ukazuje, jak to provést.
 
 ```xml
 <Resource Include="data\picture1.jpg"/>

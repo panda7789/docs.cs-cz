@@ -9,12 +9,12 @@ helpviewer_keywords:
 - brushes [WPF], painting with gradients
 - painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-ms.openlocfilehash: 4e004b624c331375501c5f48d2566a664b734d3b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ba8127d5be24a9fdcccf0bebcc08e5699d98033
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649985"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238391"
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>Přehled malování plnými barvami a přechody
 Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty pro malování plnými barvami, lineární přechody a radiálními přechody.  
@@ -31,7 +31,7 @@ Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
   
-- Zvolte barvu z palety barev 32-bit zadáním množství červené, zelené a modré zkombinovat do jedné plnou barvu.  Formát pro zadávání barvu z palety 32 bitů je "*#rrggbb*", kde *rr* je dvoumístné šestnáctkové číslo určující relativní červené, *gg* Určuje dobu, zelenou a *bb* určuje množství modrá.  Kromě toho lze zadat barvu jako "#*aarrggbb*" kde *aa* Určuje *alfa* hodnotu nebo průhlednost barvy. Tento přístup umožňuje vytvářet barvy, které jsou částečně transparentní.  V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na hodnotu red úplně neprůhledné pomocí šestnáctkové soustavě.  
+- Zvolte barvu z palety barev 32-bit zadáním množství červené, zelené a modré zkombinovat do jedné plnou barvu.  Formát pro zadávání barvu z palety 32 bitů je " *#rrggbb*", kde *rr* je dvoumístné šestnáctkové číslo určující relativní červené, *gg* Určuje dobu, zelenou a *bb* určuje množství modrá.  Kromě toho lze zadat barvu jako "#*aarrggbb*" kde *aa* Určuje *alfa* hodnotu nebo průhlednost barvy. Tento přístup umožňuje vytvářet barvy, které jsou částečně transparentní.  V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na hodnotu red úplně neprůhledné pomocí šestnáctkové soustavě.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
   
@@ -142,15 +142,15 @@ RadialGradientBrushes s různými nastaveními GradientOrigin, System Center, Ra
   
 <a name="specifyinggradientcolors"></a>   
 ## <a name="specifying-transparent-or-partially-transparent-gradient-stops"></a>Určení průhledného nebo částečně Přechodové zarážky  
- Protože Přechodové zarážky se neposkytuje na vlastnost krytí, je nutné zadat alfa kanál barvy s použitím [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] šestnáctkové soustavě v kódu nebo použití <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metodu pro vytvoření Přechodové zarážky, které jsou průhledného nebo částečně. Následující části popisují, jak vytvořit částečně transparentní Přechodové zarážky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu.  
+ Protože Přechodové zarážky se neposkytuje na vlastnost krytí, je nutné zadat alfa kanál pomocí ARGB šestnáctkové soustavě v kódu nebo použití barev <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metodu pro vytvoření Přechodové zarážky, které jsou průhledného nebo částečně. Následující části popisují, jak vytvořit částečně transparentní Přechodové zarážky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu.  
   
 <a name="argbsyntax"></a>   
 ### <a name="specifying-color-opacity-in-xaml"></a>Určení barvy krytí v "XAML"  
- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivé barvy. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxi:  
+ V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], se používá k určení krytí jednotlivé barvy ARGB šestnáctkové soustavě. Šestnáctkové soustavě ARGB používá následující syntaxi:  
   
  `#` **aa** *rrggbb*  
   
- *Aa* v předchozí řádek představuje dvěma číslicemi šestnáctková hodnota používá k určení krytí barvu. *Rr*, *gg*, a *bb* každý představují dvě číslice šestnáctková hodnota používá k určení množství červené, zelené a modré v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A – F. nejmenší hodnota je 0 a F je nejvyšší. Alfa hodnotu 00 určuje barvu, která je zcela transparentní, zatímco alfa hodnotu FF vytvoří barvu, která je úplně neprůhledná.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápisu se používá k určení dvěma barvami. První je částečně transparentní (má hodnotu alfa x20), zatímco druhá je úplně neprůhledná.  
+ *Aa* v předchozí řádek představuje dvěma číslicemi šestnáctková hodnota používá k určení krytí barvu. *Rr*, *gg*, a *bb* každý představují dvě číslice šestnáctková hodnota používá k určení množství červené, zelené a modré v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A – F. nejmenší hodnota je 0 a F je nejvyšší. Alfa hodnotu 00 určuje barvu, která je zcela transparentní, zatímco alfa hodnotu FF vytvoří barvu, která je úplně neprůhledná.  V následujícím příkladu šestnáctkové soustavě ARGB slouží k určení dvěma barvami. První je částečně transparentní (má hodnotu alfa x20), zatímco druhá je úplně neprůhledná.  
   
  [!code-xaml[GradientBrushExamples_snip#TransparentGradientStopExample1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientStopsExample.xaml#transparentgradientstopexample1xaml)]  
   

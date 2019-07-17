@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 122741d13294c8b137ce48e28f0aa39c6e36265a
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 824d75585efd40937c1a48376ec7862cba1a8fa3
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67859130"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235496"
 ---
 ### <a name="nullreferenceexception-in-exception-handling-code-from-imagesourceconverterconvertfrom"></a>NullReferenceException v kódu z ImageSourceConverter.ConvertFrom pro zpracování výjimek
 
@@ -16,4 +16,3 @@ ms.locfileid: "67859130"
 |Version|4.7|
 |type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Media.ImageSourceConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)?displayProperty=nameWithType></li></ul>|
-

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-ms.openlocfilehash: 4ea417b2a922574eb92a07aa845c360f6e843f17
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7d5ff09bb9cc8da45f44cf6fe952411e7cd3f4c4
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663403"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238545"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a> Toto téma vysvětluje, jak fungování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje prioritu, ve které aspekty vlastnost systému použít na platnou hodnotu vlastnosti.  
@@ -43,7 +43,7 @@ ms.locfileid: "64663403"
   
 2. **Aktivní animace, nebo animací pomocí chování blokování.** Pokud chcete mít žádný efekt praktické, musí být animace vlastnosti moct mají přednost před základní hodnoty (unanimated) i v případě, že tato hodnota byla nastavena místně. Podrobnosti najdete v tématu [vynucení, animace a základní hodnotu](#animations) dále v tomto tématu.  
   
-3. **Místní hodnota.** Místní hodnota může být nastaveno prostřednictvím pohodlí vlastnost "zabezpečenou obálku", což také odpovídá nastavení jako atribut nebo vlastnost element v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nebo voláním <xref:System.Windows.DependencyObject.SetValue%2A> [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] pomocí vlastnosti konkrétní instance. Pokud nastavíte hodnotu místní pomocí vazby nebo prostředek, tyto každý působit v prioritu jako kdyby byla nastavena hodnotu s přímým přístupem.  
+3. **Místní hodnota.** Místní hodnota může být nastaveno prostřednictvím pohodlí vlastnost "zabezpečenou obálku", což také odpovídá nastavení jako atribut nebo vlastnost element v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nebo voláním <xref:System.Windows.DependencyObject.SetValue%2A> pomocí vlastnosti konkrétní instanci rozhraní API. Pokud nastavíte hodnotu místní pomocí vazby nebo prostředek, tyto každý působit v prioritu jako kdyby byla nastavena hodnotu s přímým přístupem.  
   
 4. **Vlastnosti šablony TemplatedParent.** Element má <xref:System.Windows.FrameworkElement.TemplatedParent%2A> Pokud byl vytvořen jako součást šablony ( <xref:System.Windows.Controls.ControlTemplate> nebo <xref:System.Windows.DataTemplate>). Podrobnosti o tom, kdy se to používá, najdete v části [TemplatedParent](#templatedparent) dále v tomto tématu. V rámci šablony platí následující priority:  
   

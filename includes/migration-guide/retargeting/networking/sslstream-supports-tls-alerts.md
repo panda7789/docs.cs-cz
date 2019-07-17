@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 640af1f9814b31ad0b431a8317244a94250a65cc
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 136ffc9305de79679ac9d254c026ecb0debc7c52
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67859091"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235557"
 ---
 ### <a name="sslstream-supports-tls-alerts"></a>SslStream podporuje protokol TLS výstrah
 
@@ -16,4 +16,3 @@ ms.locfileid: "67859091"
 |Version|4.7|
 |type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Net.Security.SslStream?displayProperty=nameWithType></li><li><xref:System.Net.WebRequest?displayProperty=nameWithType></li><li><xref:System.Net.HttpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.FtpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType></li><li><xref:System.Net.Http?displayProperty=nameWithType></li></ul>|
-

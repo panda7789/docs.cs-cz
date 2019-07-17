@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 22c67c687f5581c181acc4aeab8910c4467fd424
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: a14395895c6be586c862d1b49aa6bf6669e4203a
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67858455"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238008"
 ---
 ### <a name="calling-itemsrefresh-on-a-wpf-listbox-listview-or-datagrid-with-items-selected-can-cause-duplicate-items-to-appear-in-the-element"></a>Volání Items.Refresh WPF ListBox, ListView nebo prvek DataGrid s vybraných položek může způsobit duplicitní položky se zobrazí v elementu
 
@@ -16,4 +16,3 @@ ms.locfileid: "67858455"
 |Version|4.5|
 |type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Data.CollectionView.Refresh?displayProperty=nameWithType></li></ul>|
-
