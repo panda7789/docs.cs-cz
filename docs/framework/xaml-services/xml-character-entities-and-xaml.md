@@ -51,7 +51,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
 |< (méně – než znak)|\&lt;|Musí být použito pro hodnotu atributu, ale \< je přijatelné za obsah elementu co nejdelší > ho neřídí.|  
 |"(dvojité uvozovky)|\&quot;|Musí být použito pro hodnotu atributu, ale dvojité uvozovky (") je přijatelná obsahu elementu. Všimněte si, že mohou být uzavřeny hodnoty atributů jednoduché uvozovky (') nebo dvojité uvozovky ("); libovolný znak jako první se objeví definuje skříň hodnotu atributu a alternativní nabídky je pak možné jako literál v rámci hodnoty.|  
 |"(jednoduché uvozovky)|\&Očekávaný|Musí být použito pro hodnotu atributu, ale jednoduché uvozovky (') je přijatelná obsahu elementu. Všimněte si, že mohou být uzavřeny hodnoty atributů jednoduché uvozovky (') nebo dvojité uvozovky ("); libovolný znak jako první se objeví definuje skříň hodnotu atributu a alternativní nabídky je pak možné jako literál v rámci hodnoty.|  
-|(mapování číselný znak)|&#*[číslo]* ; nebo & #x2713 *[hex]*;|XAML podporuje mapování číselný znak do kódování, které je aktivní.|  
+|(mapování číselný znak)|&# *[číslo]* ; nebo &#x *[hex]* ;|XAML podporuje mapování číselný znak do kódování, které je aktivní.|  
 |(pevná mezera)|&\#160; (za předpokladu, že kódování UTF-8)|Pro tok elementů dokumentu, ani prvků, které trvat text, například WPF <xref:System.Windows.Controls.TextBox>, nejsou pevných mezer normalizovat mimo kód, dokonce i pro `xml:space="default"`. (Další informace najdete v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).)|  
   
 <a name="xml_comment_format"></a>   
