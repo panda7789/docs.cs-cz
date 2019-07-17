@@ -34,16 +34,11 @@
                   href: keywords/reference-types.md
                 - name: třída
                   href: keywords/class.md
-                - name: delegát
-                  href: keywords/delegate.md
-                - name: dynamické odkazy
-                  href: keywords/dynamic.md
+                - name: Předdefinované odkazové typy
+                  displayName: 'object, delegate, dynamic, string'
+                  href: builtin-types/reference-types.md
                 - name: rozhraní
                   href: keywords/interface.md
-                - name: odkazy objektů
-                  href: keywords/object.md
-                - name: odkazy řetězců
-                  href: keywords/string.md
             - name: void
               href: keywords/void.md
             - name: var

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - text [WPF]
 - typography [WPF], text formatting
 ms.assetid: f0a7986e-f5b2-485c-a27d-f8e922022212
-ms.openlocfilehash: 4ed6dd33efd5fdc5e2c61df4173bec5cc2f0d807
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 0d3b44007524f502d8393d1dc1834142090a7a15
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859687"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238658"
 ---
 # <a name="advanced-text-formatting"></a>Upřesněné formátování textu
 Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]rozhraní API, jako například <xref:System.Windows.Controls.TextBlock>zadejte nejběžnější a obecné použití prvků pro textové prezentaci. Rozhraní API, jako například kreslení <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, prostředkem pro zahrnutí do kreslení formátovaného textu. Nanejvýš pokročilé úrovni členství, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování k řízení všech aspektů text prezentací, jako jsou Správa úložiště text, správa formátování textových spuštění a správa vložený objekt rozšiřitelné textu.  
@@ -38,7 +38,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
 ## <a name="using-the-text-formatter"></a>Použití formátování textu  
  <xref:System.Windows.Media.TextFormatting.TextFormatter> je [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu motoru a poskytuje služby pro formátování a rozdělení řádky textu. Formátování textu dokáže zpracovat jiným textovým formátování a styly odstavec a zahrnuje podporu pro mezinárodní text rozložení.  
   
- Na rozdíl od tradičních text [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)], <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje přes sadu metod zpětného volání klienta rozložení textu. Vyžaduje od klienta tyto metody v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
+ Na rozdíl od tradičních text API <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje přes sadu metod zpětného volání klienta rozložení textu. Vyžaduje od klienta tyto metody v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
  ![Diagram klienta rozložení textu a objektu TextFormatter](./media/advanced-text-formatting/text-layout-textformatter-interaction.png)  
   
@@ -67,7 +67,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
   
  V následující tabulce jsou uvedeny některé z předdefinovaných <xref:System.Windows.Media.TextFormatting.TextRun> objekty.  
   
-|TextRun Type|Použití|  
+|Typ TextRun|Použití|  
 |------------------|-----------|  
 |<xref:System.Windows.Media.TextFormatting.TextCharacters>|Specializované text spustit slouží k předání reprezentace znaku glyfy formátování textu.|  
 |<xref:System.Windows.Media.TextFormatting.TextEmbeddedObject>|Spusťte slouží k poskytování obsahu v které měření, testování průchodu specializované text a vykreslování se provádí jako celek, jako je například tlačítko nebo obrázek v textu.|  
