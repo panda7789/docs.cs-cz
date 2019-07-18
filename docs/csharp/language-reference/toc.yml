@@ -207,8 +207,6 @@
               href: keywords/await.md
             - name: sizeof
               href: keywords/sizeof.md
-            - name: nameof
-              href: keywords/nameof.md
         - name: Klíčová slova přístupu
           items:
             - name: base
@@ -333,6 +331,8 @@
         - name: ':: – operátor'
           href: operators/namespace-alias-qualifer.md
           displayName: namespace alias qualifier
+        - name: nameof – operátor
+          href: operators/nameof.md
         - name: new – operátor
           href: operators/new-operator.md
         - name: Operátor stackalloc
