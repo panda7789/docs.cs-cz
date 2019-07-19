@@ -1,166 +1,166 @@
 ---
-title: 'Kurz: Zjišťovat anomálie v produktu prodeje'
-description: Zjistěte, jak sestavit aplikaci detekce anomálií na prodejní data produktu. Tento kurz vytvoří aplikace konzoly .NET Core using C# v aplikaci Visual Studio 2019.
-ms.date: 06/11/2019
+title: 'Kurz: Detekovat anomálie v prodeji produktů'
+description: Naučte se, jak vytvořit aplikaci pro detekci anomálií pro prodejní data produktu. Tento kurz vytvoří konzolovou aplikaci .NET Core pomocí C# sady Visual Studio 2019.
+ms.date: 07/17/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 3e3e368ed3bcb35e7e2c8bdf08abe71afd4ae87c
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: e87034733b048153202bc11ab94ed7605749f60c
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306229"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331685"
 ---
-# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Kurz: Zjišťovat anomálie v prodejích s ML.NET
+# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Kurz: Detekce anomálií v prodeji produktů pomocí ML.NET
 
-Zjistěte, jak sestavit aplikaci detekce anomálií na prodejní data produktu. Tento kurz vytvoří aplikace konzoly .NET Core using C# v sadě Visual Studio.
+Naučte se, jak vytvořit aplikaci pro detekci anomálií pro prodejní data produktu. Tento kurz vytvoří konzolovou aplikaci .NET Core pomocí C# sady Visual Studio.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 > * Načtení dat
-> * Trénování modelu pro detekci anomálií ve špičce
-> * Detekovat anomálie ve špičce pomocí trénovaného modelu
-> * Trénování modelu pro změnu bodu pro detekci anomálií
-> * Detekovat anomálie bodu změnu s trénovaného modelu
+> * Vyškolit model pro detekci anomálií špičky
+> * Zjištění anomálií špičky pomocí trained model
+> * Výuka modelu pro detekci anomálií bodů změn
+> * Zjištění anomálií bodů změn pomocí trained model
 
-Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection) úložiště.
+Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection) .
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
+* [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 
-* [Datová sada sales.csv produktu](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)
+* [Datová sada Product-Sales. csv](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)
 
 >[!NOTE]
-> Formátování dat v `product-sales.csv` je založena na této datové sadě "Šampón prodej přes tří let" původně zdrojem je DataMarket a k dispozici podle času řady dat knihovny (TSDL), Autor Rob Hyndman. Datová sada "Šampón prodeje za období tří let" licencovaného v rámci programu Open License DataMarket výchozí.
+> Formát dat v `product-sales.csv` nástroji je založen na datové sadě "šampon Sales" za tříleté období "původně nacházejícím z datového trhu a poskytovaných pomocí TSDL (Time Series data Library), které vytvořila Rob Hyndman. "Nemožnost prodeje za tři roky v rámci" datové sady ", která je licencovaná na základě výchozího Open License pro datamarketo.
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Vytvoření **konzolovou aplikaci .NET Core** nazývá "ProductSalesAnomalyDetection".
+1. Vytvořte **konzolovou aplikaci .NET Core** nazvanou "ProductSalesAnomalyDetection".
 
-2. Vytvořte adresář *Data* ve vašem projektu a uložte soubory datové sady.
+2. Vytvořte v projektu adresář s názvem *data* a uložte soubory sady dat.
 
-3. Nainstalujte **balíček NuGet Microsoft.ML**:
+3. Nainstalujte **balíček NuGet Microsoft.ml**:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.ML**, vyberte **v1.0.0** balíčků v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené. Opakujte tyto kroky pro **Microsoft.ML.TimeSeries v0.12.0**.
+    V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet, vyhledejte **Microsoft.ml**, vyberte balíček v **1.0.0** v seznamu a klikněte na tlačítko **nainstalovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** . Opakujte tyto kroky pro **Microsoft. ml. časové řady v 0.12.0**.
 
-4. Přidejte následující `using` příkazů v horní části vašeho *Program.cs* souboru:
+4. Do horní části `using` souboru *program.cs* přidejte následující příkazy:
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddUsings "Add necessary usings")]
 
-### <a name="download-your-data"></a>Stáhněte si vaše data
+### <a name="download-your-data"></a>Stažení dat
 
-1. Stáhnout datovou sadu a uložit ho. tím *Data* dříve vytvořená složka:
+1. Stáhněte si datovou sadu a uložte ji do složky *dat* , kterou jste vytvořili dříve:
 
-   * Klikněte pravým tlačítkem na [ *produktu sales.csv* ](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv) a vyberte možnost "Uložit jako odkaz (neboli na cílový)..."
+   * Klikněte pravým tlačítkem na [*Product-Sales. csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv) a vyberte Uložit odkaz (nebo cíl) jako...
 
-     Ujistěte se, že buď uložit \*soubor .csv *Data* složky, nebo poté, co jste jej uložili jinde, přesunout \*soubor .csv *Data* složky.
+     Ujistěte se, \*že soubor. csv buď uložíte do složky *dat* , nebo když ho uložíte \*jinam, přesuňte soubor. CSV do složky *data* .
 
-2. V Průzkumníku řešení klikněte pravým tlačítkem myši \*soubor .csv a vyberte **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
+2. V Průzkumník řešení klikněte pravým tlačítkem na \*soubor. csv a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
-V následující tabulce je náhled dat z vašich \*souboru CSV:
+Následující tabulka je náhled dat ze \*souboru. CSV:
 
-|Měsíc  |ProductSales |
+|Měsíčně  |ProductSales |
 |-------|-------------|
-|1\. leden  |    271      |
-|2 – leden  |    150.9    |
+|1 – leden  |    271      |
+|2 – leden  |    150,9    |
 |.....  |    .....    |
-|1 – únor  |    199.3    |
+|1 – únor  |    199,3    |
 |.....  |    .....    |
 
-### <a name="create-classes-and-define-paths"></a>Vytváření tříd a definovat cesty
+### <a name="create-classes-and-define-paths"></a>Vytváření tříd a definování cest
 
-Dále definujte vstupní třídy datovou strukturu.
+Dále definujte svou datovou strukturu vstupní třídy.
 
-Přidejte novou třídu do projektu:
+Přidejte do projektu novou třídu:
 
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **Přidat > Nová položka**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat > Nová položka**.
 
-2. V **dialogové okno Přidat novou položku**vyberte **třídy** a změnit **název** pole *ProductSalesData.cs*. Vyberte **přidat** tlačítko.
+2. V **dialogovém okně Přidat novou položku**vyberte **třída** a změňte pole **název** na *ProductSalesData.cs*. Pak vyberte tlačítko **Přidat** .
 
-*ProductSalesData.cs* soubor se otevře v editoru kódu. Přidejte následující `using` příkaz do horní části *ProductSalesData.cs*:
+V editoru kódu se otevře soubor *ProductSalesData.cs* . Do horní části `using` *ProductSalesData.cs*přidejte následující příkaz:
 
 ```csharp
 using Microsoft.ML.Data;
 ```
 
-Odeberte stávající definice třídy a přidejte následující kód, který má dvě třídy `ProductSalesData` a `ProductSalesPrediction`, možnosti *ProductSalesData.cs* souboru:
+Odeberte existující definici třídy a přidejte následující kód, který má dvě třídy `ProductSalesData` a `ProductSalesPrediction`, do souboru *ProductSalesData.cs* :
 
 [!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/ProductSalesData.cs#DeclareTypes "Declare data record types")]
 
-`ProductSalesData` Určuje třídu vstupní data. [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) atribut určuje, jaké sloupce (podle index sloupce) v datové sadě se mají načíst. 
+`ProductSalesData`Určuje vstupní datovou třídu. Atribut [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) určuje, které sloupce (podle indexu sloupce) v datové sadě by měly být načteny. 
 
-Přidejte následující další `using` příkazy k hornímu okraji *Program.cs* souboru:
+Do horní části souboru `using` *program.cs* přidejte následující dodatečné příkazy:
 
 [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddUsings "Add necessary usings")]
 
-Je potřeba vytvořit dvě globální pole pro uložení naposledy stažené datovou sadu cesta k souboru a cesta k souboru uloženého modelu:
+Je potřeba vytvořit dvě globální pole, která budou uchovávat nedávno staženou cestu k souboru datové sady a uloženou cestu k souboru modelu:
 
-* `_dataPath` obsahuje cestu k datové sadě využívají k tréninku modelu.
-* `_docsize` soubor datové sady obsahuje několik záznamů. Budete využit k výpočtu `pvalueHistoryLength`.
+* `_dataPath`má cestu k datové sadě, která se používá ke výukě modelu.
+* `_docsize`obsahuje počet záznamů v souboru datové sady. Použijete ho k výpočtu `pvalueHistoryLength`.
 
-Přidejte následující kód na řádku vpravo nahoře `Main` metoda zadat tyto cesty:
+Přidejte následující kód na řádek přímo nad `Main` metodu pro určení těchto cest:
 
 [!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
-[MLContext třídy](xref:Microsoft.ML.MLContext) je výchozí bod pro všechny operace ML.NET a inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně `DBContext` v Entity Framework.
+[Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializace `mlContext` vytvoří nové prostředí ml.NET, které lze sdílet napříč objekty pracovního postupu vytváření modelů. Je podobný, koncepčně, na `DBContext` v Entity Framework.
 
-### <a name="initialize-variables-in-main"></a>Inicializace proměnné ve funkci Main
+### <a name="initialize-variables-in-main"></a>Inicializovat proměnné v Main
 
-Nahradit `Console.WriteLine("Hello World!")` řádku v `Main` metoda následujícím kódem, jak deklarovat a inicializovat `mlContext` proměnné:
+Nahraďte `Main` `mlContext` řádek v metodě následujícím kódem pro deklaraci a inicializaci proměnné: `Console.WriteLine("Hello World!")`
 
 [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateMLContext "Create the ML Context")]
 
 ### <a name="load-the-data"></a>Načtení dat
 
-Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.ML.IDataView). `IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové). Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu. Přidejte následující kód jako další řádek `Main()` metody:
+Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.IDataView). `IDataView`je flexibilní a efektivní způsob, jak popsat tabulková data (číselná a text). Data je možné načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do `IDataView` objektu. Jako další řádek `Main()` metody přidejte následující kód:
 
 [!code-csharp[LoadData](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#LoadData "loading dataset")]
 
-[LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a přečte v souboru. Přijímá proměnné cesty dat a vrátí `IDataView`.
+[LoadFromTextFile ()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte data v souboru. Převezme proměnné cesty k datům a vrátí `IDataView`.
 
-## <a name="ml-task---time-series-anomaly-detection"></a>Úloha ML – čas detekce anomálií řady 
+## <a name="ml-task---time-series-anomaly-detection"></a>Detekce anomálií v ML úlohy – časová řada 
 
-Detekce anomálií příznaky neočekávaná nebo neobvyklá událostí nebo chování. Poskytuje možné místo pro vyhledání problémů a pomáhá odpovědět na otázku "Je tato divně?".
+Detekce anomálií příznaky neočekávaná nebo neobvyklá událostí nebo chování. Dává v tom, kde hledat problémy a pomáhá zodpovědět otázku "je to divné?".
 
-![Je to divné](./media/sales-anomaly-detection/anomalydetection.png)
+![Je toto divné](./media/sales-anomaly-detection/anomalydetection.png)
 
-Detekce anomálií je proces zjišťování dat časových řad odlehlé hodnoty; odkazuje na daný vstupní časovou řadu, kde chování není očekávaným, nebo "divné".
+Detekce anomálií je proces zjišťování nezaložených dat časových řad. body v dané vstupní časové řadě, kde chování není očekávané, nebo "divné".
 
-To může být užitečné v mnoha způsoby. Příklad:
+To může být užitečné v mnoha různých ohledech. Příklad:
 
-Pokud máte automobilu, můžete chtít vědět: Je tento olej měřidla čtení normální nebo mít nevracení?
-Pokud monitorujete spotřebu energie, byste měli vědět: Je k dispozici kvůli výpadku?
+Pokud máte auto, možná budete chtít znát: Je tento měřič olivového oleje běžný nebo mám netěsné?
+Pokud sledujete spotřebu energie, měli byste si být vědomi: Dochází k výpadku?
 
-Existují dva typy anomálií řady čas, které lze zjistit: 
+Existují dva typy anomálií časových řad, které je možné zjistit: 
 
-* **Špičky** označují dočasné nárůstům neobvyklé chování v systému. 
+* **Špičky** označují dočasné shluky chování neobvyklé v systému. 
 
-* **Body změny** označuje začátek trvalé změny časem v systému. 
+* **Body změny** označují začátek trvalých změn v průběhu času v systému. 
 
-V ML.NET, identifikátor IID zásobníku zjišťování nebo detekce změn bodu IID algoritmy jsou vhodné pro [nezávislé a stejně jako distribuovaných datových sad](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables). 
+V ML.NET jsou algoritmy detekce špičky IID nebo identifikátory identifikátoru IID pro nezávislou [a identickou distribuovanou](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables)datovou sadu vhodné. 
 
-Budete analyzuje stejný produkt prodejní data, zjistit provozní špičky a změnit body. Model procesu sestavovat a vzdělávání je stejný pro zjišťování zásobníku a detekce změn bod; Hlavní rozdíl je použitý algoritmus konkrétní zjišťování.
+Budete analyzovat stejná prodejní data produktu za účelem detekce Špičk a změn bodů. Proces vytváření a školicích modelů je stejný pro detekci špičky a detekci bodu změny; Hlavním rozdílem je konkrétní použitý algoritmus detekce.
 
-## <a name="spike-detection"></a>Detekce zásobníku 
+## <a name="spike-detection"></a>Detekce špičky 
 
-Cílem zásobníku detekce je k identifikaci i s náhlými ještě dočasné nárůsty zatížení, které výrazně se liší od většinou časových řad dat hodnoty. Je důležité pro detekci těchto výjimečných podezřelé položky, události nebo pozorování minimalizaci včas. Následující postup slouží ke zjištění různých anomálie, jako: výpadky, kybernetických útoků nebo virální webového obsahu. Na následujícím obrázku je příklad špičky v datové sadě řady čas:
+Cílem detekce špičky je identifikovat náhlé ještě dočasné shluky, které se významně liší od většiny hodnot dat časových řad. Je důležité detekovat tyto podezřelé výjimečné položky, události nebo pozorování včas, aby byly minimalizovány. K detekci nejrůznějších anomálií, jako jsou výpadky, internetoví útoky nebo virové webovému obsahu, se dá použít následující přístup. Následující obrázek je příkladem špičky v datové sadě časových řad:
 
 ![SpikeDetection](./media/sales-anomaly-detection/SpikeDetection.png)
 
-### <a name="create-the-detectspike-method"></a>Vytvoření DetectSpike() – metoda
+### <a name="create-the-detectspike-method"></a>Vytvoření metody DetectSpike ()
 
-Přidejte následující volání `DetectSpike()`metody jako další řádek kódu v `Main()` metody:
+Do metody přidejte následující volání `DetectSpike()`metody jako další řádek kódu `Main()` v metodě:
 
 [!code-csharp[CallDetectSpike](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CallDetectSpike)]
 
-`DetectSpike()` Metoda spustí následující úlohy:
+`DetectSpike()` Metoda provádí následující úlohy:
 
-* Trénovat modelu.
-* Detekuje na základě historických dat prodejní provozní špičky.
+* Navlakuje model.
+* Detekuje špičky na základě historických dat o prodeji.
 * Zobrazí výsledky.
 
-Vytvořte `DetectSpike()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:
+Vytvořte metodu hned `Main()` za metodou pomocí následujícího kódu: `DetectSpike()`
 
 ```csharp
 static void DetectSpike(MLContext mlContext, int docSize, IDataView productSales)
@@ -169,45 +169,45 @@ static void DetectSpike(MLContext mlContext, int docSize, IDataView productSales
 }
 ```
 
-Použití [IidSpikeEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidSpikeEstimator) pro trénování modelu pro zjišťování (špičky). Přidejte ji tak `DetectChangepoint()` metodu s následujícím kódem:
+Pomocí [IidSpikeEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidSpikeEstimator) můžete vyškolit model pro detekci špičky. Přidejte ho do `DetectSpike()` metody s následujícím kódem:
 
 [!code-csharp[AddSpikeTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddSpikeTrainer)]
 
-Přizpůsobení modelu, který má `productSales` data přidáním následujícího kódu jako další řádek kódu v `DetectSpike()` metody:
+Přizpůsobit model `productSales` datům přidáním následujícího jako další řádek kódu `DetectSpike()` v metodě:
 
 [!code-csharp[TrainModel1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TrainModel1)]
 
-[Fit()](xref:Microsoft.ML.Data.TrivialEstimator%601.Fit%2A) metoda trénovat modelu transformace datové sady a aplikováním školení.
+Metoda [přizpůsobení () nasadí](xref:Microsoft.ML.Data.TrivialEstimator%601.Fit%2A) váš model pomocí transformace datové sady a použití školení.
 
-Přidejte následující řádek kódu, který umožňuje transformovat `productSales` data jako další řádek v `DetectSpike()` metody:
+Přidejte následující řádek kódu pro transformaci `productSales` dat jako další řádek `DetectSpike()` v metodě:
 
 [!code-csharp[TransformData1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TransformData1)]
 
-Předchozí kód používá [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metoda k následné predikci pro více poskytuje vstupní řádky z datové sady testů.
+Předchozí kód používá metodu [Transform ()](xref:Microsoft.ML.ITransformer.Transform%2A) k vytvoření předpovědi pro více zadaných vstupních řádků testovací sady dat.
 
-Převést vaše `transformedData` do silného typu `IEnumerable` pro snadnější zobrazení pomocí [CreateEnumerable()](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) metodu s následujícím kódem:
+Pro snazší zobrazení pomocí metody [CreateEnumerable ()](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) s následujícím kódem převeďte dosilnéhotypu.`transformedData` `IEnumerable`
 
 [!code-csharp[CreateEnumerable1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateEnumerable1)]
 
-Vytvořit řádek záhlaví zobrazení pomocí následující <xref:System.Console.WriteLine?displayProperty=nameWithType> kódu:
+Pomocí následujícího <xref:System.Console.WriteLine?displayProperty=nameWithType> kódu vytvořte řádek záhlaví zobrazení:
 
 [!code-csharp[DisplayHeader1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayHeader1)]
 
-Ve výsledcích zjišťování zásobníku budete zobrazovat následující informace:
+Ve výsledcích detekce špičky zobrazíte následující informace:
 
-* `Alert` označuje zásobníku upozornění pro daný datový bod.
+* `Alert`Označuje upozornění špičky pro daný datový bod.
 
-* `Score` je `ProductSales` hodnotu pro daný datový bod v datové sadě.
+* `Score``ProductSales` je hodnota pro daný datový bod v datové sadě.
 
-* `P-Value` "P" jsou zahrnovaného pravděpodobnosti. To znamená, jaká je pravděpodobnost tento datový bod je anomálie. 
+* `P-Value`"P" představuje pravděpodobnost. To označuje, jak pravděpodobná je tento datový bod anomálií. 
 
-Použijte následující kód k iteraci v rámci `predictions` `IEnumerable` a zobrazit výsledky:
+Použijte následující kód k iterování `predictions` `IEnumerable` a zobrazení výsledků:
 
 [!code-csharp[DisplayResults1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayResults1)]
 
-## <a name="spike-detection-results"></a>Výsledky vyhledávání (špičky)
+## <a name="spike-detection-results"></a>Výsledky detekce špičky
 
-Výsledky by měl vypadat přibližně takto. Během zpracování zprávy se zobrazují. Může se zobrazit upozornění nebo zpracování zpráv. Ty se odebraly z následujících výsledků pro přehlednost.
+Výsledky by měly vypadat podobně jako následující. Během zpracování se zobrazí zprávy. Můžou se zobrazovat upozornění nebo zpracovávat zprávy. Tyto výsledky byly z důvodu srozumitelnosti odebrány z následujících výsledků.
 
 ```console
 Detect temporary changes in pattern
@@ -252,25 +252,25 @@ Alert   Score   P-Value
 0       651.90  0.14
 ```
 
-## <a name="change-point-detection"></a>Změna bodu zjišťování
+## <a name="change-point-detection"></a>Detekce bodu změny
 
-`Change points` jsou trvalé změny v řady čas události datového proudu distribuci hodnot, jako jsou změny na úrovni a trendy. Trvalé změny naposledy mnohem delší než `spikes` a může znamenat katastrofické události. `Change points` se obvykle nezobrazí pouhým okem, ale můžete zjistit ve vašich datech pomocí přístupů například následující metodu.  Na následujícím obrázku je příklad bodu detekce změn:
+`Change points`jsou trvalé změny v průběhu distribuce hodnot datového proudu událostí, jako jsou například změny úrovně a trendy. Tyto trvalé změny jsou poslední mnohem delší `spikes` než a mohly označovat závažné události. `Change points`nejsou obvykle viditelné pro holé oči, ale lze je zjistit ve vašich datech pomocí přístupů, jako je například v následující metodě.  Následující obrázek je příkladem detekce bodu změny:
 
 ![ChangePointDetection](./media/sales-anomaly-detection/ChangePointDetection.png)
 
-### <a name="create-the-detectchangepoint-method"></a>Vytvoření DetectChangepoint() – metoda
+### <a name="create-the-detectchangepoint-method"></a>Vytvoření metody DetectChangepoint ()
 
-Přidejte následující volání `DetectChangepoint()`metody jako další řádek kódu v `Main()` metody:
+Do metody přidejte následující volání `DetectChangepoint()`metody jako další řádek kódu `Main()` v metodě:
 
 [!code-csharp[CallDetectChangepoint](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CallDetectChangepoint)]
 
-`DetectChangepoint()` Metoda spustí následující úlohy:
+`DetectChangepoint()` Metoda provádí následující úlohy:
 
-* Trénovat modelu.
-* Zjistí změnu body na základě historických dat prodeje.
+* Navlakuje model.
+* Detekuje body změn na základě historických dat o prodeji.
 * Zobrazí výsledky.
 
-Vytvořte `DetectChangepoint()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:
+Vytvořte metodu hned `Main()` za metodou pomocí následujícího kódu: `DetectChangepoint()`
 
 ```csharp
 static void DetectChangepoint(MLContext mlContext, int docSize, IDataView productSales)
@@ -279,40 +279,40 @@ static void DetectChangepoint(MLContext mlContext, int docSize, IDataView produc
 }
 ```
 
-[IidChangePointEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidChangePointEstimator) se používá pro trénování modelu pro změnu bodu zjišťování. Přidejte ji tak `DetectChangepoint()` metodu s následujícím kódem:
+[IidChangePointEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidChangePointEstimator) se používá ke školení modelu pro detekci bodu změny. Přidejte ho do `DetectChangepoint()` metody s následujícím kódem:
 
 [!code-csharp[AddChangepointTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddChangepointTrainer)]
 
-Stejně jako dříve, podle modelu, který má `productSales` data přidáním následujícího kódu jako další řádek kódu v `DetectChangePoint()` metody:
+Jak jste předtím pracovali, přizpůsobte `productSales` jim data přidáním následujícího jako další řádek kódu `DetectChangePoint()` v metodě:
 
 [!code-csharp[TrainModel2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TrainModel2)]
 
-Použití `Transform()` metody k transformaci `Training` data přidáním následujícího kódu do `DetectChangePoint()`:
+Použijte metodu pro `Training` transformaci dat přidáním následujícího kódu do `DetectChangePoint()`: `Transform()`
 
 [!code-csharp[TransformData2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TransformData2)]
 
-Stejně jako dříve, převést vaše `transformedData` do silného typu `IEnumerable` pro snadnější zobrazení pomocí `CreateEnumerable()`metodu s následujícím kódem:
+Jak jste předtím pracovali, převeďte `transformedData` na silně typované `IEnumerable` `CreateEnumerable()`pro snazší zobrazení pomocí metody s následujícím kódem:
 
 [!code-csharp[CreateEnumerable2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateEnumerable2)]
 
-Vytvořit záhlaví zobrazení jako na další řádek v následujícím kódem `DetectChangePoint()` metody:
+Vytvořte záhlaví zobrazení s následujícím kódem jako další řádek v `DetectChangePoint()` metodě:
 
 [!code-csharp[DisplayHeader2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayHeader2)]
 
-Ve výsledcích zjišťování změn bodu budete zobrazovat následující informace:
+Ve výsledcích detekce bodů změny se zobrazí následující informace:
 
-* `Alert` označuje změnit bod oznámení pro daný datový bod.
-* `Score` je `ProductSales` hodnotu pro daný datový bod v datové sadě.
-* `P-Value` "P" jsou zahrnovaného pravděpodobnosti. To znamená, jaká je pravděpodobnost tento datový bod je anomálie. 
-* `Martingale value` se používá k identifikaci, jak je "divně" datový bod, v závislosti na sekvenci hodnot P.  
+* `Alert`Označuje upozornění na změnu bodu pro daný datový bod.
+* `Score``ProductSales` je hodnota pro daný datový bod v datové sadě.
+* `P-Value`"P" představuje pravděpodobnost. To označuje, jak pravděpodobná je tento datový bod anomálií. 
+* `Martingale value`slouží k identifikaci způsobu, jakým je "divné" a datovým bodem "na základě sekvence hodnot P.  
 
-Iterovat přes `predictions` `IEnumerable` a zobrazit výsledky s následujícím kódem:
+Iterujte pomocí `predictions` `IEnumerable` a zobrazte výsledky s následujícím kódem:
 
 [!code-csharp[DisplayResults2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayResults2)]
 
-## <a name="change-point-detection-results"></a>Změna bodu zjišťování výsledky
+## <a name="change-point-detection-results"></a>Výsledky detekce bodu změny
 
-Výsledky by měl vypadat přibližně takto. Během zpracování zprávy se zobrazují. Může se zobrazit upozornění nebo zpracování zpráv. Ty se odebraly z následujících výsledků pro přehlednost.
+Výsledky by měly vypadat podobně jako následující. Během zpracování se zobrazí zprávy. Můžou se zobrazovat upozornění nebo zpracovávat zprávy. Tyto výsledky byly z důvodu srozumitelnosti odebrány z následujících výsledků.
 
 ```console
 Detect Persistent changes in pattern
@@ -357,20 +357,20 @@ Alert   Score   P-Value Martingale value
 0       651.90  0.14    0.09
 ```
 
-Blahopřejeme! Jste teď úspěšně sestaven modelů strojového učení pro zjišťování provozní špičky a změnit bod anomálie v prodejní data.
+Blahopřejeme! Teď jste úspěšně vytvořili modely strojového učení pro zjišťování špiček a anomálií bodů změn v prodejních datech.
 
-Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection) úložiště.
+Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection) .
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 > * Načtení dat
-> * Trénování modelu pro detekci anomálií ve špičce
-> * Detekovat anomálie ve špičce pomocí trénovaného modelu
-> * Trénování modelu pro změnu bodu pro detekci anomálií
-> * Detekovat anomálie bodu změnu s režimem trénovaného
+> * Vyškolit model pro detekci anomálií špičky
+> * Zjištění anomálií špičky pomocí trained model
+> * Výuka modelu pro detekci anomálií bodů změn
+> * Detekovat anomálie bodů změny v proškolených režimech
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-Projděte si úložišti GitHub s ukázkami Machine Learning a prozkoumejte ukázkový spotřebu energie pro detekci anomálií.
+Podívejte se na úložiště GitHub Samples Machine Learning a prozkoumejte ukázku detekce anomálií spotřeby energie.
 > [!div class="nextstepaction"]
-> [úložiště GitHub DotNet/machinelearning – ukázky](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings)
+> [dotnet/machinelearning-Samples – úložiště GitHub](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings)

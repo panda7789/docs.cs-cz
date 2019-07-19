@@ -1,45 +1,45 @@
 ---
-title: Co je nového v C# 8.0 – C# Průvodce
-description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 5.
+title: Co je nového v C# 8,0 – C# příručka
+description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: 962829b68c5d02c3a7e563a00d391c4698024d47
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 7c37d63e5fc412352b27f2362a1ca102b5c0c040
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397775"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331395"
 ---
-# <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
+# <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
-Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již. 
+Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již. 
 
-- [Členy jen pro čtení](#readonly-members)
-- [Výchozí členy rozhraní](#default-interface-members)
-- [Porovnávání vzorů vylepšení](#more-patterns-in-more-places):
-  * [Přepnout výrazy](#switch-expressions)
-  * [Vlastnost vzory](#property-patterns)
+- [Členové jen pro čtení](#readonly-members)
+- [Výchozí členové rozhraní](#default-interface-members)
+- [Vylepšení porovnávání vzorů](#more-patterns-in-more-places):
+  * [Výrazy Switch](#switch-expressions)
+  * [Vzory vlastností](#property-patterns)
   * [Vzory řazené kolekce členů](#tuple-patterns)
   * [Poziční vzory](#positional-patterns)
-- [Pomocí deklarace](#using-declarations)
-- [Statická lokální funkce](#static-local-functions)
-- [Struktury ref uvolnitelné](#disposable-ref-structs)
+- [Používání deklarací](#using-declarations)
+- [Statické místní funkce](#static-local-functions)
+- [Struktury odkazů na jedno použití](#disposable-ref-structs)
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
-- [Asynchronní datové proudy](#asynchronous-streams)
+- [Asynchronní proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
 
 > [!NOTE]
-> Tento článek byl naposledy aktualizován pro C# 8.0 ve verzi preview 5.
+> Tento článek byl naposledy aktualizován na C# verzi 8,0 Preview 5.
 
-Zbývající část tohoto článku stručně popisuje tyto funkce. Pokud podrobné články jsou k dispozici, jsou k dispozici odkazy na tyto kurzy a přehledy. Můžete prozkoumat tyto funkce v prostředí pomocí `dotnet try` globální nástroje:
+Zbývající část tohoto článku stručně popisuje tyto funkce. Kde jsou k dispozici podrobné články, jsou uvedeny odkazy na tyto kurzy a přehledy. Pomocí `dotnet try` globálního nástroje můžete prozkoumat tyto funkce ve vašem prostředí:
 
-1. Nainstalujte [dotnet – zkuste](https://github.com/dotnet/try/blob/master/README.md#setup) globální nástroj.
-1. Klonování [dotnet/try-samples](https://github.com/dotnet/try-samples) úložiště.
-1. Nastavit aktuální adresář *csharp8* podadresář pro *try-samples* úložiště.
+1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
+1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
+1. Nastavte aktuální adresář do podadresáře *csharp8* pro úložiště *Try-Samples* .
 1. Spusťte `dotnet try`.
 
-## <a name="readonly-members"></a>Členy jen pro čtení
+## <a name="readonly-members"></a>Členové jen pro čtení
 
-Můžete použít `readonly` modifikátor k libovolnému členovi struktury. Znamená to, že člen neprovede žádné změny stavu. Je podrobnější než použití `readonly` modifikátor `struct` deklarace.  Vezměte v úvahu následující proměnlivé struktury:
+Můžete použít `readonly` modifikátor na libovolný člen struktury. Indikuje, že člen nemění stav. Je lépe podrobnější než použití `readonly` modifikátoru `struct` na deklaraci.  Vezměte v úvahu následující proměnlivou strukturu:
 
 ```csharp
 public struct Point
@@ -53,26 +53,26 @@ public struct Point
 }
 ```
 
-Většina struktury, jako jsou `ToString()` metoda neprovede žádné změny stavu. Který může znamenat tak, že přidáte `readonly` modifikátoru deklarace `ToString()`:
+Podobně jako u `ToString()` většiny struktur metoda nemění stav. Můžete určit, že přidáním `readonly` modifikátoru k `ToString()`deklaraci:
 
 ```csharp
 public readonly override string ToString() =>
     $"({X}, {Y}) is {Distance} from the origin";
 ```
 
-Předchozí změny generuje upozornění kompilátoru, protože `ToString` přistupuje `Distance` vlastnost, která není označena `readonly`:
+Předchozí změna vygeneruje upozornění kompilátoru, protože `ToString` přistupuje k `Distance` vlastnosti, která není označena jako `readonly`:
 
 ```console
 warning CS8656: Call to non-readonly member 'Point.Distance.get' from a 'readonly' member results in an implicit copy of 'this'
 ```
 
-Kompilátor vás upozorní, když je potřeba vytvořit obranná kopie.  `Distance` Vlastnost nedojde ke změně stavu, takže toto upozornění můžete vyřešit tak, že přidáte `readonly` modifikátoru deklarace:
+Kompilátor vás upozorní, když potřebuje vytvořit obrannou linií kopii.  Vlastnost nezmění stav, takže můžete toto upozornění opravit `readonly` přidáním modifikátoru k deklaraci: `Distance`
 
 ```csharp
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Všimněte si, že `readonly` Modifikátor je nezbytné na vlastnost jen pro čtení. Kompilátor nepředpokládá `get` přistupující objekty neprovádějte žádné změny stavu, je třeba deklarovat `readonly` explicitně. Kompilátor vynucuje pravidla, která `readonly` členy neprovádějte žádné změny stavu. Následující metoda nebude kompilovat, dokud neodeberete `readonly` modifikátor:
+Všimněte si, `readonly` že modifikátor je nutný pro vlastnost, která je jen pro čtení. Kompilátor nepředpokládá `get` , že přistupující objekty nemění stav. musíte deklarovat `readonly` explicitně. Kompilátor vynutilo pravidlo, které `readonly` členové nemění stav. Následující metoda nebude zkompilována, dokud neodeberete `readonly` modifikátor:
 
 ```csharp
 public readonly void Translate(int xOffset, int yOffset)
@@ -82,25 +82,25 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-Tato funkce vám umožní zadat máte v úmyslu návrhu tak, aby kompilátor může vynutit a ujistěte se, optimalizace podle tohoto záměru.
+Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit a na základě tohoto záměru provádět optimalizace.
 
-## <a name="default-interface-members"></a>Výchozí členy rozhraní
+## <a name="default-interface-members"></a>Výchozí členové rozhraní
 
-Teď můžete přidat členy do rozhraní a poskytnout implementaci pro ty členy. Této funkci jazyka umožňuje autorům rozhraní API přidat metody do rozhraní v pozdějších verzích bez narušení zdroje nebo binární kompatibilitu s existující implementace rozhraní. Existujících implementací *dědit* výchozí implementaci. Tato funkce také umožňuje C# pro spolupráci s rozhraní API, která cílí na Android nebo Swift, které podporují podobné funkce. Výchozí členy rozhraní také povolit scénáře podobné funkci jazyka "vlastnosti".
+Nyní můžete přidat členy do rozhraní a poskytnout implementaci pro tyto členy. Tato funkce jazyka umožňuje autorům rozhraní API přidávat metody do rozhraní v pozdějších verzích bez narušení zdrojové nebo binární kompatibility se stávajícími implementacemi tohoto rozhraní. Stávající implementace *dědí* výchozí implementaci. Tato funkce také umožňuje C# vzájemnou spolupráci s rozhraními API, která cílí na Android nebo SWIFT, což podporuje podobné funkce. Výchozí členové rozhraní také umožňují scénáře podobně jako funkce jazyka "vlastnosti".
 
-Výchozí členy rozhraní ovlivňuje mnoho scénářů a prvky jazyka. Naše první kurz se zabývá [aktualizace pomocí výchozí implementace rozhraní](../tutorials/default-interface-members-versions.md). Další kurzy a referenční aktualizace se chystají v čase pro obecné verze.
+Výchozí členové rozhraní mají vliv na mnoho scénářů a prvků jazyka. Náš první kurz popisuje [aktualizaci rozhraní s výchozími implementacemi](../tutorials/default-interface-members-versions.md). Další kurzy a referenční aktualizace jsou k disčase pro obecné vydání.
 
 ## <a name="more-patterns-in-more-places"></a>Další vzory na více místech
 
-**Porovnávání vzorů** poskytuje nástroje k zajištění funkce závislé na tvar v souvisejících, ale různé druhy dat. C#7.0 vytvořit pomocí syntaxe pro typ vzory a konstantní vzory [ `is` ](../language-reference/keywords/is.md) výraz a [ `switch` ](../language-reference/keywords/switch.md) příkazu. Tyto funkce jsou reprezentovány první nezávazně postup směrem k podpoře programovací modely, kde data a funkce live od sebe. Jak se v oboru blíží další mikroslužby a další cloudové architektury, jsou potřeba další nástroje jazyka.
+**Porovnávání vzorů** poskytuje nástrojům poskytování funkcionality závislé na tvaru v rámci souvisejících, ale různých druhů dat. C#7,0 představil Syntax pro vzory typů a konstantní vzorce pomocí [`is`](../language-reference/keywords/is.md) výrazu [`switch`](../language-reference/keywords/switch.md) a příkazu. Tyto funkce představovaly první nezávazné kroky směrem k podpoře programovacích paradigmat, ve kterých jsou data a funkce živě oddělené. Vzhledem k tomu, že se odvětví pohybuje k většímu mikroslužbám a dalším cloudovým architekturám, jsou potřeba jiné jazykové nástroje.
 
-C#8.0 rozšiřuje tento slovník tak další vzorek výrazy můžete použít na více místech ve vašem kódu. Pokud vaše data a funkce jsou oddělené vezměte v úvahu tyto funkce. Vezměte v úvahu porovnávání vzorů při algoritmy závisí na skutečnost než objekt typu modulu runtime. Tyto postupy zadejte jiný způsob, jak vyjádřit návrhy.
+C#8,0 rozšíří tento slovník, takže můžete použít více výrazů vzoru ve více místech kódu. Tyto funkce zvažte, když jsou vaše data a funkce oddělené. Zvažte porovnávání vzorů, pokud jsou algoritmy závislé na jiném faktě, než je typ modulu runtime objektu. Tyto techniky poskytují jiný způsob, jak vyjádřit návrhy.
 
-Kromě nové vzory v nových místech C# 8.0 přidá **rekurzivní vzory**. Výsledek výrazu jakékoli vzor je výraz. Rekurzivní vzor je jednoduše vzor výraz použitý pro výstup jiný výraz vzoru.
+Kromě nových vzorů na nových místech C# 8,0 přidává **rekurzivní vzory**. Výsledek jakéhokoli výrazu vzoru je výraz. Rekurzivní vzorek je pouze výraz vzoru aplikovaný na výstup jiného výrazu vzoru.
 
-### <a name="switch-expressions"></a>Přepnout výrazy
+### <a name="switch-expressions"></a>výrazy Switch
 
-Často [ `switch` ](../language-reference/keywords/switch.md) příkaz vytvoří hodnotu ve všech jeho `case` bloky. **Přepnout výrazy** vám umožní používat stručnější syntaxi výrazu. Existují méně opakované `case` a `break` klíčová slova a méně složených závorek.  Jako příklad vezměte v úvahu následující výčtového typu, který obsahuje seznam barvy rainbow:
+Příkaz často v každém z jeho `case` bloků vytvoří hodnotu. [`switch`](../language-reference/keywords/switch.md) **Výrazy Switch** umožňují použít stručnější syntaxi výrazů. K dispozici jsou `case` méně `break` opakující se a klíčová slova a méně složené závorky.  Podívejte se například na následující výčet, který obsahuje seznam barev duha:
 
 ```csharp
 public enum Rainbow
@@ -115,7 +115,7 @@ public enum Rainbow
 }
 ```
 
-Pokud vaše aplikace definované `RGBColor` typ, který je vytvořen z `R`, `G` a `B` součásti, můžete převést `Rainbow` hodnotu na jeho hodnoty RGB pomocí následující metody, který obsahuje výraz přepínače:
+Pokud vaše aplikace definovala `RGBColor` typ, který je vytvořen z `R`rozhraní `G` , `B` a, mohli byste převést `Rainbow` hodnotu na její hodnoty RGB pomocí následující metody, která obsahuje výraz Switch:
 
 ```csharp
 public static RGBColor FromRainbow(Rainbow colorBand) =>
@@ -132,14 +132,14 @@ public static RGBColor FromRainbow(Rainbow colorBand) =>
     };
 ```
 
-Existuje několik vylepšení syntaxe tady:
+Tady je několik vylepšení syntaxe:
 
-- Proměnná byla zaslána před `switch` – klíčové slovo. Jiné pořadí vizuálně usnadňuje rozlišit výraz přepínače z příkazu switch.
-- `case` a `:` prvky jsou nahrazeny `=>`. Je stručnějším a intuitivní.
-- `default` Případ je nahrazen `_` zahodit.
-- Subjekty jsou výrazy, nikoli příkazy.
+- Proměnná se nachází před `switch` klíčovým slovem. V jiném pořadí je vizuálně snadné odlišit výraz přepínače od příkazu switch.
+- Prvky `case` `=>`a `:` jsou nahrazeny. Je výstižnější a intuitivní.
+- Případ je nahrazen `_`zahozením. `default`
+- Tělo jsou výrazy, nikoli příkazy.
 
-Oproti, který odpovídá kódu pomocí klasického `switch` – příkaz:
+Kontrast se stejným kódem pomocí příkazu Classic `switch` :
 
 ```csharp
 public static RGBColor FromRainbowClassic(Rainbow colorBand)
@@ -166,9 +166,9 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 }
 ```
 
-### <a name="property-patterns"></a>Vlastnost vzory
+### <a name="property-patterns"></a>Vzory vlastností
 
-**Vlastnost vzor** umožňuje tak, aby odpovídala na vlastnosti objektu prověřit. Vezměte v úvahu elektronického obchodování webu, který musí vypočítat na základě adresy odběratele DPH. Výpočet není základní působnosti `Address` třídy. Se změní v čase, pravděpodobně častěji než změny formátu adresy. Množství DPH závisí `State` vlastnost adresy. Následující metoda používá vzor pro vlastnost pro výpočet DPH z adresy a cena:
+**Vzor vlastnosti** umožňuje porovnávat vlastnosti objektu, který je zkontrolován. Vezměte v úvahu web elektronického obchodování, který musí počítat DPH na základě adresy kupujícího. Toto výpočtu není základní zodpovědností `Address` třídy. Změní se v průběhu času, nejspíš častěji než změny formátu adresy. Částka DPH závisí na `State` vlastnosti adresy. Následující metoda používá vzorek vlastností k výpočtu DPH z adresy a ceny:
 
 ```csharp
 public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
@@ -182,11 +182,11 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
     };
 ```
 
-Porovnávání vzorů vytvoří stručnější syntaxe pro vyjádření tento algoritmus.
+Porovnávání vzorů vytvoří stručnou syntaxi pro vyjádření tohoto algoritmu.
 
 ### <a name="tuple-patterns"></a>Vzory řazené kolekce členů
 
-Některé algoritmy závisí na více vstupů. **Vzory řazené kolekce členů** bylo možné přepnout na základě více hodnot, vyjádřené jako [řazené kolekce členů](../tuples.md).  Následující kód ukazuje výraz přepínače hry *rock, dokument, nůžek*:
+Některé algoritmy závisí na více vstupech. **Vzorce řazené kolekce členů** umožňují přepínat na základě více hodnot vyjádřených jako [řazené kolekce členů](../tuples.md).  Následující kód ukazuje výraz přepínače pro herní *rock, papír, nůžky*:
 
 ```csharp
 public static string RockPaperScissors(string first, string second)
@@ -202,11 +202,11 @@ public static string RockPaperScissors(string first, string second)
     };
 ```
 
-Zprávy určit vítěze. Případ zahození představuje tři kombinace pro vazby nebo další textovými vstupy.
+Zprávy indikují vítěze. Případ zahození představuje tři kombinace pro vazby nebo jiné textové vstupy.
 
 ### <a name="positional-patterns"></a>Poziční vzory
 
-Některé typy zahrnují `Deconstruct` metodu, která do proměnných diskrétního deconstructs její vlastnosti. Když `Deconstruct` metoda je přístupná, můžete použít **poziční vzory** ke kontrole vlastností objektu a použijte tyto vlastnosti pro vzor.  Vezměte v úvahu následující `Point` třídu, která zahrnuje `Deconstruct` metodu pro vytvoření proměnné diskrétního pro `X` a `Y`:
+Některé typy obsahují `Deconstruct` metodu, která dekonstruuje své vlastnosti do diskrétních proměnných. Když je metoda přístupná, můžete použít **poziční vzory** pro kontrolu vlastností objektu a použít tyto vlastnosti pro vzor. `Deconstruct`  Vezměte v úvahu `Point` následující třídu, která `Deconstruct` obsahuje metodu pro vytvoření diskrétních `X` proměnných `Y`pro a:
 
 ```csharp
 public class Point
@@ -221,7 +221,7 @@ public class Point
 }
 ```
 
-Kromě toho zvažte následující výčtového typu, který představuje různé pozic kvadrantu:
+Navíc zvažte následující výčet, který představuje různé pozice kvadrantu:
 
 ```csharp
 public enum Quadrant
@@ -236,7 +236,7 @@ public enum Quadrant
 }
 ```
 
-Používá následující metodu **poziční vzor** k extrakci hodnot z `x` a `y`. Potom použije `when` klauzule určit `Quadrant` bodu:
+Následující metoda používá **poziční vzor** k extrakci hodnot `x` a `y`. Pak pomocí `when` klauzule `Quadrant` určíte bod:
 
 ```csharp
 static Quadrant GetQuadrant(Point point) => point switch
@@ -251,13 +251,13 @@ static Quadrant GetQuadrant(Point point) => point switch
 };
 ```
 
-Vzor zrušení v předchozím přepínače odpovídá při buď `x` nebo `y` je 0, ale ne obojí. Výraz přepínače musíte vytvořit hodnotu nebo vyvolat výjimku. Výraz přepínače vyvolá výjimku, pokud neodpovídá žádná případů. Kompilátor vygeneruje upozornění za vás, pokud jste ve výrazu přepínače nepokrývají všechny možné případy.
+Vzor zahození v předchozím přepínači odpovídá, `x` Pokud `y` buď nebo je 0, ale ne obojí. Výraz přepínače musí buď vytvořit hodnotu, nebo vyvolat výjimku. Pokud žádný z případů neodpovídá, výraz přepínače vyvolá výjimku. Kompilátor vygeneruje upozornění, pokud nepokrýváte všechny možné případy ve výrazu přepínače.
 
-Můžete prozkoumat porovnávání vzorů postupy v tomto [Upřesnit kurz o porovnávání vzorů](../tutorials/pattern-matching.md).
+Techniky porovnávání vzorů můžete prozkoumat v tomto [pokročilém kurzu o porovnávání vzorů](../tutorials/pattern-matching.md).
 
-## <a name="using-declarations"></a>Pomocí deklarace
+## <a name="using-declarations"></a>používání deklarací
 
-A **using – deklarace** deklaraci proměnné předchází `using` – klíčové slovo. To sděluje kompilátoru, že by mělo být uvolněno deklarované proměnné na konci nadřazeném oboru. Zvažte například následující kód, který zapisuje do textového souboru:
+**Deklarace using** je deklarace proměnné před `using` klíčovým slovem. Dává kompilátoru pokyn, že proměnná, která má být deklarována, by měla být uvolněna na konci ohraničujícího oboru. Zvažte například následující kód, který zapisuje textový soubor:
 
 ```csharp
 static void WriteLinesToFile(IEnumerable<string> lines)
@@ -275,7 +275,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-V předchozím příkladu je soubor odstraněn po dosažení pravou složenou závorku v případě metody. Který je koncem objektu oboru, ve kterém `file` je deklarována. Předchozí kód je ekvivalentní následujícímu kódu pomocí klasického [příkazy using](../language-reference/keywords/using-statement.md) – příkaz:
+V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky pro metodu. To je konec oboru, ve kterém `file` je deklarováno. Předchozí kód je ekvivalentní následujícímu kódu pomocí příkazu Classic [using](../language-reference/keywords/using-statement.md) :
 
 ```csharp
 static void WriteLinesToFile(IEnumerable<string> lines)
@@ -294,15 +294,15 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-V předchozím příkladu je soubor uvolněno při přidružené pravou složenou závorku `using` je dosažen příkaz.
+V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky přidružené `using` k příkazu.
 
-V obou případech platí, kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v pomocí příkazu není na jedno použití.
+V obou případech kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v příkazu Using není na jedno použití.
 
-## <a name="static-local-functions"></a>Statická lokální funkce
+## <a name="static-local-functions"></a>Statické místní funkce
 
-Teď můžete přidávat `static` modifikátor lokální funkce zajistit, že místní funkce nezachytí (referenční dokumentace) všechny proměnné v ohraničujícím oboru. Tím se vygeneruje `CS8421`, "statické lokální funkce nesmí obsahovat odkaz na \<proměnná >." 
+Nyní můžete přidat `static` modifikátor k místním funkcím, aby se zajistilo, že lokální funkce nebude zachytit (odkaz) jakékoli proměnné z ohraničujícího oboru. Tím se vygeneruje `CS8421`"statická místní funkce nemůže obsahovat odkaz na \<proměnnou >." 
 
-Uvažujme následující kód. Lokální funkce `LocalFunction` přistupuje k proměnné `y`, které jsou deklarovány v ohraničujícím oboru (metoda `M`). Proto `LocalFunction` se nedá deklarovat pomocí `static` modifikátor:
+Vezměte v úvahu následující kód. Místní funkce `LocalFunction` přistupuje k proměnné `y`deklarované v ohraničujícím oboru (metoda `M`). Proto nelze deklarovat s `static`modifikátorem: `LocalFunction`
 
 ```csharp
 int M()
@@ -315,7 +315,7 @@ int M()
 }
 ```
 
-Následující kód obsahuje statické lokální funkce. Může být statická, protože nemá přístup k žádné proměnné v ohraničujícím oboru:
+Následující kód obsahuje statickou místní funkci. Může být statický, protože nemá přístup k žádným proměnným v ohraničujícím oboru:
 
 ```csharp
 int M()
@@ -328,29 +328,29 @@ int M()
 }
 ```
 
-## <a name="disposable-ref-structs"></a>Struktury ref uvolnitelné
+## <a name="disposable-ref-structs"></a>Struktury odkazů na jedno použití
 
-A `struct` deklarované s `ref` modifikátor nemusí implementovat jakékoli rozhraní a proto nemůže implementovat <xref:System.IDisposable>. Proto aby `ref struct` odstraněn, musí mít k dispozici přístup `void Dispose()` metoda. To platí i pro `readonly ref struct` deklarace.
+Deklarace s modifikátorem nesmí implementovat žádná rozhraní, a proto nemůže implementovat <xref:System.IDisposable>. `struct` `ref` Proto aby `ref struct` bylo možné odstranit, musí mít přístupnou `void Dispose()` metodu. To platí i pro `readonly ref struct` deklarace.
 
 ## <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
-V kontextu poznámky s možnou hodnotou Null, všechny proměnné typu odkazu se považuje za **nonnullable odkazový typ**. Pokud chcete určit, že proměnná může mít hodnotu null, musí připojit k názvu typu `?` deklarovat jako proměnnou **typ s možnou hodnotou Null odkazu**.
+V kontextu anotace s možnou hodnotou null je jakákoli proměnná typu odkazu považována za **typ odkazu**, který není null. Pokud chcete označit, že proměnná může mít hodnotu null, je nutné připojit název `?` typu k deklaraci proměnné jako **typ odkazu s možnou hodnotou null**.
 
-Pro typy odkazů nemá kompilátor používá k zajištění, že místní proměnné jsou inicializovány na hodnotu než null při deklaraci analýzy toku. Pole musí být inicializován během konstrukce. Kompilátor generuje upozornění, pokud proměnná není nastavená voláním kterýkoli z konstruktorů k dispozici nebo inicializátor. Kromě toho nemá odkazové typy nelze přiřadit hodnotu, která může mít hodnotu null.
+Pro nehodnotový odkazový typ kompilátor používá analýzu toků k zajištění, že lokální proměnné jsou inicializovány na hodnotu, která není null, je-li deklarována. Pole musí být inicializována během konstrukce. Kompilátor vygeneruje upozornění, pokud proměnná není nastavena voláním žádné z dostupných konstruktorů nebo inicializátorem. Kromě toho nemůžete přiřadit typy odkazů, které mohou mít hodnotu null.
 
-Typy odkazů s možnou hodnotou Null nejsou kontrola nejsou přiřazen nebo inicializován na hodnotu null. Však kompilátor používá k zajištění, že všechny proměnné typu odkazu s možnou hodnotou null je porovnány s hodnotou null, předtím, než má získat přístup nebo přiřazený k typu odkazu nonnullable analýzy toku.
+Typy odkazů s možnou hodnotou null nejsou kontrolovány, aby se zajistilo, že nejsou přiřazeny nebo inicializovány Kompilátor však používá analýzu toků k zajištění toho, aby byla jakákoli proměnná typu odkazu s možnou hodnotou null zkontrolována před tím, než bude k dispozici nebo přiřazena k neprázdnému typu odkazu.
 
-Další informace o funkci v přehledu [typy s možnou hodnotou Null odkazů](../nullable-references.md). Vyzkoušejte si to sami v nové aplikaci v tomto [kurzu typy s možnou hodnotou Null reference](../tutorials/nullable-reference-types.md). Seznamte se s kroky při migraci z existujícího základu kódu, aby použití typů s povolenou hodnotou Null odkazu v [migrace aplikace pro použití s možnou hodnotou NULL referenční typy kurzu](../tutorials/upgrade-to-nullable-references.md).
+Další informace o této funkci najdete v přehledu [typů odkazů s možnou hodnotou null](../nullable-references.md). Zkuste to sami v nové aplikaci v tomto [kurzu odkazové typy s možnou hodnotou null](../tutorials/nullable-reference-types.md). Přečtěte si o krocích k migraci existujícího základu kódu, aby bylo možné používat v [migraci aplikace na použití typů odkazů s možnou hodnotou null v kurzu](../tutorials/upgrade-to-nullable-references.md).
 
-## <a name="asynchronous-streams"></a>Asynchronní datové proudy
+## <a name="asynchronous-streams"></a>Asynchronní proudy
 
-Počínaje C# 8.0, lze vytvářet a využívat datové proudy asynchronně. Metodu vracející asynchronní datový proud má tři vlastnosti:
+Počínaje C# 8,0 můžete proudy vytvářet a spotřebovávat asynchronně. Metoda, která vrací asynchronní datový proud má tři vlastnosti:
 
-1. Je deklarována s `async` modifikátor.
+1. Je deklarována s `async` modifikátorem.
 1. Vrátí <xref:System.Collections.Generic.IAsyncEnumerable%601>.
-1. Metoda obsahuje `yield return` příkazy vrátit po sobě jdoucí prvky v asynchronního datového proudu.
+1. Metoda obsahuje `yield return` příkazy pro vrácení po sobě jdoucích prvků v asynchronním datovém proudu.
 
-Použití asynchronního datového proudu je potřeba přidat `await` – klíčové slovo před `foreach` – klíčové slovo při výčtu prvky datového proudu. Přidání `await` – klíčové slovo vyžaduje metodu, která vytvoří výčet asynchronního datového proudu deklarován s `async` modifikátor a návratový typ povolené pro `async` metoda. Obvykle to znamená, že vrácení <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Může být <xref:System.Threading.Tasks.ValueTask> nebo <xref:System.Threading.Tasks.ValueTask%601>. Metoda může současně využívají a produkují asynchronní datový proud, což znamená, že by měla vrátit <xref:System.Collections.Generic.IAsyncEnumerable%601>. Následující kód generuje sekvenci od 0 do 19 čekání na 100 ms mezi generování každé číslo:
+Spotřebovávání asynchronního datového proudu vyžaduje, abyste `await` `foreach` před klíčovým slovem při vytváření výčtu prvků v datovém proudu přidali klíčové slovo. Přidání klíčového slova vyžaduje metodu, která vytvoří výčet asynchronního datového proudu, který má `async` být deklarován s modifikátorem a vrátí typ povolený pro `async` metodu. `await` Obvykle to znamená, že <xref:System.Threading.Tasks.Task> vrací <xref:System.Threading.Tasks.Task%601>nebo. Může to být <xref:System.Threading.Tasks.ValueTask> také nebo <xref:System.Threading.Tasks.ValueTask%601>. Metoda může spotřebovávat a vytvořit asynchronní datový proud, což znamená, že by vrátilo <xref:System.Collections.Generic.IAsyncEnumerable%601>. Následující kód vygeneruje sekvenci od 0 do 19, čekání 100 MS mezi vygenerováním každého čísla:
 
 ```csharp
 public static async System.Collections.Generic.IAsyncEnumerable<int> GenerateSequence()
@@ -363,7 +363,7 @@ public static async System.Collections.Generic.IAsyncEnumerable<int> GenerateSeq
 }
 ```
 
-By výčet pomocí pořadí `await foreach` – příkaz:
+Vyčíslení sekvence pomocí `await foreach` příkazu:
 
 ```csharp
 await foreach (var number in GenerateSequence())
@@ -372,23 +372,23 @@ await foreach (var number in GenerateSequence())
 }
 ```
 
-Můžete zkusit asynchronními datovými proudy sami v našem kurzu [vytváření a používání asynchronních streamů](../tutorials/generate-consume-asynchronous-stream.md).
+Asynchronní streamy si můžete vyzkoušet sami v našem kurzu [vytváření a využívání asynchronních datových proudů](../tutorials/generate-consume-asynchronous-stream.md).
 
 ## <a name="indices-and-ranges"></a>Indexy a rozsahy
 
-Rozsahy a indexy poskytují stručné syntaxe pro zadání podrozsahů v poli, <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>.
+Rozsahy a indexy poskytují stručnou syntaxi pro určení dílčích rozsahů v poli, <xref:System.Span%601>nebo. <xref:System.ReadOnlySpan%601>
 
-Tato podpora jazyka spoléhá na dva nové typy a dvou nových operátorů.
-- <xref:System.Index?displayProperty=nameWithType> představuje index na sekvenci.
-- `^` Operátor, který určuje, že je index vzhledem ke konci sekvence.
-- <xref:System.Range?displayProperty=nameWithType> představuje rozsah dílčí sekvenci.
-- Operátor rozsahu (`..`), který určuje začátek a konec rozsahu, jako je operandy.
+Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory.
+- <xref:System.Index?displayProperty=nameWithType>představuje index do sekvence.
+- `^` Operátor, který určuje, že index je relativní ke konci sekvence.
+- <xref:System.Range?displayProperty=nameWithType>představuje dílčí rozsah sekvence.
+- Operátor Range (`..`), který určuje začátek a konec rozsahu jako jeho operandy.
 
-Začněme s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` Index je stejný jako `sequence[0]`. `^0` Index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]` nepodporuje. Pro libovolný počet `n`, index `^n` je stejný jako `sequence.Length - n`.
+Pojďme začít s pravidly pro indexy. Zvažte pole `sequence`. Index je stejný jako `sequence[0]`. `0` Index je stejný jako `sequence[sequence.Length]`. `^0` Všimněte si `sequence[^0]` , že vyvolá výjimku, stejně jako `sequence[sequence.Length]` . Pro jakékoli číslo `n`je index `^n` stejný jako `sequence.Length - n`.
 
-Určuje oblast *start* a *koncové* rozsahu. Začátek rozsahu je také zahrnuto, ale je exkluzivní, což znamená konec rozsahu *start* je součástí rozsahu ale *end* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celou oblast, stejně jako `[0..sequence.Length]` představuje celou oblast. 
+Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnut v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah. 
 
-Podívejme se na několik příkladů. Vezměte v úvahu následující pole označena s jeho index od samého začátku a konci:
+Pojďme se podívat na několik příkladů. Vezměte v úvahu následující pole s poznámkou s jeho indexem od začátku do konce:
 
 ```csharp
 var words = new string[]
@@ -406,26 +406,26 @@ var words = new string[]
 };              // 9 (or words.Length) ^0
 ```
 
-Můžete načíst poslední slovo s `^1` indexu:
+Poslední slovo můžete načíst s `^1` indexem:
 
 ```csharp
 Console.WriteLine($"The last word is {words[^1]}");
 // writes "dog"
 ```
 
-Následující kód vytvoří podrozsahu s slova "rychlé", "brown" a "fox". Zahrnuje `words[1]` prostřednictvím `words[3]`. Element `words[4]` není v rozsahu.
+Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` .`words[3]` Element `words[4]` není v rozsahu.
 
 ```csharp
 var quickBrownFox = words[1..4];
 ```
 
-Následující kód vytvoří podrozsahu "opožděné" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncová hodnota `words[^0]` nezahrnuje:
+Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a .`words[^1]` Koncový index `words[^0]` není zahrnutý:
 
 ```csharp
 var lazyDog = words[^2..^0];
 ```
 
-Následující příklady vytváří rozsahy, které jsou otevřené skončila pro zahájení a ukončení:
+V následujících příkladech jsou vytvořeny rozsahy, které jsou otevřeny pro začátek, konec nebo obojí:
 
 ```csharp
 var allWords = words[..]; // contains "The" through "dog".
@@ -433,16 +433,16 @@ var firstPhrase = words[..4]; // contains "The" through "fox"
 var lastPhrase = words[6..]; // contains "the", "lazy" and "dog"
 ```
 
-Rozsahy můžete také deklarovat jako proměnné:
+Rozsahy můžete deklarovat také jako proměnné:
 
 ```csharp
 Range phrase = 1..4;
 ```
 
-Rozsah je pak možné uvnitř `[` a `]` znaků:
+Rozsah lze použít `[` v rámci znaků a `]` :
 
 ```csharp
 var text = words[phrase];
 ```
 
-Další informace o indexy a rozsahy můžete prozkoumat v tomto kurzu na [indexy a rozsahy adres](../tutorials/ranges-indexes.md).
+Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).

@@ -22,28 +22,30 @@ helpviewer_keywords:
 ms.assetid: aa87cb7f-e608-4a81-948b-c9b8a1225783
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 15fd79a1289bd54b81db551abbdfcd63deef3e24
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 862d520073dde1b935510bc7c68782c1204c6111
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795249"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331649"
 ---
 # <a name="cryptographic-signatures"></a>Kryptografické podpisy
 
-<a name="top"></a> Šifrování digitálních podpisů zajistit integritu dat použít algoritmy pro veřejné klíče. Při podpisu dat pomocí digitálního podpisu někomu jinému můžete ověřit podpis a můžete prokázat, že data pochází od vás a nebyl změněn po jste zaregistrovali. Další informace o digitálních podpisů najdete v tématu [šifrovacím službám](../../../docs/standard/security/cryptographic-services.md).
+<a name="top"></a>Kryptografické digitální podpisy využívají algoritmy veřejného klíče k zajištění integrity dat. Když podepisujete data digitálním podpisem, někdo jiný může podpis ověřit a může prokázat, že data pocházejí z vás a že se po jejím podepsání nezměnila. Další informace o digitálních podpisech najdete v tématu [kryptografické služby](../../../docs/standard/security/cryptographic-services.md).
 
-Toto téma vysvětluje, jak vytvořit a ověřit pomocí tříd v digitální podpisy <xref:System.Security.Cryptography?displayProperty=nameWithType> oboru názvů.
+Toto téma vysvětluje, jak vygenerovat a ověřit digitální podpisy pomocí tříd v <xref:System.Security.Cryptography?displayProperty=nameWithType> oboru názvů.
 
 - [Generování podpisů](#generate)
 
-- [Ověření podpisů](#verify)
+- [Ověřování podpisů](#verify)
 
 <a name="generate"></a>
 
 ## <a name="generating-signatures"></a>Generování podpisů
 
-Digitální podpisy jsou obvykle použity na hodnoty hash, jež reprezentují data větší. Následující příklad se týká digitální podpis hodnotu hash. První, novou instanci třídy <xref:System.Security.Cryptography.RSACryptoServiceProvider> ke generování dvojice veřejného/soukromého klíče je vytvořená třída. Dále <xref:System.Security.Cryptography.RSACryptoServiceProvider> je předán do nové instance <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> třídy. Toto převede privátní klíč, aby <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>, která ve skutečnosti provádí digitální podpis. Předtím, než hodnota hash se můžete přihlásit, je nutné zadat hashovací algoritmus k použití. Tento příklad používá algoritmus SHA1. Nakonec <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A> metoda je volána k provedení podpisu.
+Digitální podpisy jsou obvykle aplikovány na hodnoty hash, které představují větší data. Následující příklad aplikuje digitální podpis na hodnotu hash. Nejprve se vytvoří nová instance <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy, která vygeneruje pár veřejného a privátního klíče. Dále je předána do nové instance <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> třídy. <xref:System.Security.Cryptography.RSACryptoServiceProvider> Tím se privátní klíč přenáší do <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>, který skutečně provádí digitální podepisování. Než budete moci podepsat kód hash, je nutné zadat algoritmus hash, který se má použít. V tomto příkladu se používá algoritmus SHA1. Nakonec je volána metoda pro provedení podepisování. <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A>
+
+Microsoft doporučuje SHA256 nebo lepší kvůli kolizi problémů se SHA1.
 
 ```vb
 Imports System
@@ -107,29 +109,29 @@ class Class1
 
 ### <a name="signing-xml-files"></a>Podepisování souborů XML
 
-Rozhraní .NET Framework poskytuje <xref:System.Security.Cryptography.Xml> obor názvů, který vám umožní přihlásit XML. Podpis XML je důležité, pokud chcete ověřit, že kód XML pocházejí z určitého zdroje. Například pokud používáte službu akcií, která používá XML, můžete ověřit zdroj dat XML, pokud je podepsáno.
+.NET Framework poskytuje <xref:System.Security.Cryptography.Xml> obor názvů, který umožňuje podepisování XML. Podepisování XML je důležité, pokud chcete ověřit, že soubor XML pochází z určitého zdroje. Pokud například používáte burzovní službu, která používá XML, můžete ověřit zdroj XML, pokud je podepsaný.
 
-Postupujte podle třídy v tomto oboru názvů [syntaxe XML – podpis a doporučení zpracování](https://www.w3.org/TR/xmldsig-core/) z World Wide Web Consortium.
+Třídy v tomto oboru názvů následují [syntax XML-Signature a zpracovává doporučení](https://www.w3.org/TR/xmldsig-core/) od konsorcium World Wide Web.
 
 [Zpět na začátek](#top)
 
 <a name="verify"></a>
 
-## <a name="verifying-signatures"></a>Ověření podpisů
+## <a name="verifying-signatures"></a>Ověřování podpisů
 
-Pokud chcete ověřit, že data byla podepsána konkrétní osobou, musíte mít následující informace:
+Chcete-li ověřit, zda byla data podepsána konkrétní stranou, je nutné mít následující informace:
 
-- Veřejný klíč ze strany, který podepsal data.
+- Veřejný klíč strany, která podepsala data.
 
 - Digitální podpis.
 
 - Data, která byla podepsána.
 
-- Hashovací algoritmus používaný podpisu.
+- Algoritmus hash používaný podepsáním.
 
-Ověření podpisu podepsány <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> třídy, použijte <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> třídy. <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> Třída musí být zadaný veřejný klíč podpisu. Budete potřebovat hodnoty modulo a exponent zadat veřejný klíč. (Strany, který vygeneroval pár veřejného a privátního klíče by měla poskytnout tyto hodnoty.) Nejprve vytvořte <xref:System.Security.Cryptography.RSACryptoServiceProvider> objekt pro uložení veřejný klíč, který ověří podpis a následně inicializujete <xref:System.Security.Cryptography.RSAParameters> strukturu pro operace modulo a exponent hodnoty, které určují veřejný klíč.
+Chcete-li ověřit podpis podepsaný <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> třídou, <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> použijte třídu. <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> Třídě musí být dodán veřejný klíč podepsaného. K určení veřejného klíče budete potřebovat hodnoty zbytku a exponentu. (Strana, která vygenerovala pár veřejného a privátního klíče, by měla poskytnout tyto hodnoty.) Nejprve vytvořte <xref:System.Security.Cryptography.RSACryptoServiceProvider> objekt, který bude obsahovat veřejný klíč, který ověří podpis, a poté <xref:System.Security.Cryptography.RSAParameters> inicializuje strukturu na hodnoty modulu a exponentu, které určují veřejný klíč.
 
-Následující kód ukazuje vytvoření objektu <xref:System.Security.Cryptography.RSAParameters> struktury. `Modulus` Je nastavena na hodnotu pole bajtů s názvem `modulusData` a `Exponent` je nastavena na hodnotu pole bajtů s názvem `exponentData`.
+Následující kód ukazuje vytvoření <xref:System.Security.Cryptography.RSAParameters> struktury. Vlastnost je nastavena na hodnotu s názvem `modulusData` bajtového pole a `Exponent` vlastnost je nastavena na hodnotu s názvem `exponentData`bajtového pole. `Modulus`
 
 ```vb
 Dim rsaKeyInfo As RSAParameters
@@ -143,9 +145,9 @@ rsaKeyInfo.Modulus = modulusData;
 rsaKeyInfo.Exponent = exponentData;
 ```
 
-Po vytvoření <xref:System.Security.Cryptography.RSAParameters> objektu, můžete inicializovat novou instanci třídy <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy hodnotám zadaným v <xref:System.Security.Cryptography.RSAParameters>. <xref:System.Security.Cryptography.RSACryptoServiceProvider> Je předán konstruktoru <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> pro přenos klíče.
+Po vytvoření <xref:System.Security.Cryptography.RSAParameters> objektu můžete inicializovat novou instanci <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy na hodnoty, které jsou zadány v <xref:System.Security.Cryptography.RSAParameters>. Je zase předán do konstruktoru <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> pro přenos klíče. <xref:System.Security.Cryptography.RSACryptoServiceProvider>
 
-Tento proces je znázorněn v následujícím příkladu. V tomto příkladu `hashValue` a `signedHashValue` jsou pole bajtů poskytované Vzdálená strana. Vzdálená strana podepsala `hashValue` použití algoritmů SHA1, vytváření digitálního podpisu `signedHashValue`. <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType> Metoda ověří, že digitální podpis je platný a se použil k podepsání `hashValue`.
+Následující příklad znázorňuje tento proces. V tomto příkladu `hashValue` `signedHashValue` jsou pole bajtů poskytnuté vzdálenou stranou. Vzdálená strana podepsala certifikát `hashValue` pomocí algoritmu SHA1 a vytvořil digitální podpis. `signedHashValue` Metoda ověřuje, zda je digitální podpis platný a byl použit k `hashValue`podepsání. <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType>
 
 ```vb
 Dim rsa As New RSACryptoServiceProvider()
@@ -174,7 +176,7 @@ else
 }
 ```
 
-Tento fragment kódu se zobrazí "`The signature is valid`" Pokud podpis je platný a "`The signature is not valid`" Pokud není.
+Tento fragment kódu zobrazí "`The signature is valid`", pokud je podpis platný a "`The signature is not valid`", pokud není.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,33 +1,33 @@
 ---
-title: Použití modifikátoru Async pro přístup k souborům (C#)
+title: Použití Async pro přístup k souborůmC#()
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: 34ce05bd1270877aa3c626292e8b2464a23fad0c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6ca47157575ef4569a43f334dae4f99a1986a7ce
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583438"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68330947"
 ---
-# <a name="using-async-for-file-access-c"></a>Použití modifikátoru Async pro přístup k souborům (C#)
-Můžete použít funkci async pro přístup k souborům. Pomocí asynchronní funkce může volat do asynchronní metody bez pomocí zpětných volání a rozdělení kódu mezi více metodách a výrazech lambda. Aby synchronního kódu asynchronní, stačí volání asynchronní metody namísto synchronní metody a do kódu přidat několik klíčových slov.  
+# <a name="using-async-for-file-access-c"></a>Použití Async pro přístup k souborůmC#()
+K přístupu k souborům můžete použít funkci Async. Pomocí asynchronní funkce můžete zavolat do asynchronních metod bez použití zpětných volání nebo rozdělení kódu napříč více metodami nebo lambda výrazy. Chcete-li synchronní asynchronní kód, stačí zavolat asynchronní metodu namísto synchronní metody a přidat k kódu několik klíčových slov.  
   
- Můžete zvážit následující důvody pro přidání asynchronii volání přístup k souboru:  
+ Při přidávání asynchronii do volání přístupu k souborům můžete zvážit následující důvody:  
   
-- Asynchronie urychluje uživatelského rozhraní aplikace odezvu vzhledem k tomu, že vlákno uživatelského rozhraní, který se spustí operace můžete provádět jinou práci. Pokud vlákno uživatelského rozhraní musí být spuštěn kód, který trvá moc dlouho (například více než 50 MS), uživatelské rozhraní může zablokovat až do dokončení vstupy/výstupy a znovu zpracovávat klávesnice a myš události vstupu a jiné vlákno uživatelského rozhraní.  
+- Asynchronii umožňuje aplikacím uživatelského rozhraní lépe reagovat, protože vlákno uživatelského rozhraní, které spouští operaci, může provádět i jinou práci. Pokud vlákno uživatelského rozhraní musí spustit kód, který trvá dlouhou dobu (například více než 50 milisekund), může uživatelské rozhraní zablokovat až do dokončení vstupně-výstupních operací a vlákno uživatelského rozhraní může znovu zpracovat vstupy klávesnice a myši a další události.  
   
-- Asynchronie zlepšuje škálovatelnost technologie ASP.NET a jiných serverových aplikací tím, že snižuje potřebu vlákna. Pokud aplikace používá vyhrazeném vlákně na odpověď a jsou právě tisíc požadavky zpracovávány současně, nejsou potřeba tisíc vlákna. Asynchronních operací často není nutné používat vlákno při čekání. Na konci stručně používají existující vlákno dokončení vstupně-výstupních operací.  
+- Asynchronii zlepšuje škálovatelnost ASP.NET a dalších serverových aplikací tím, že snižuje nutnost vláken. Pokud aplikace používá vyhrazené vlákno na reakci a tisíce požadavků jsou zpracovávány současně, je zapotřebí tisíce vláken. Asynchronní operace často nepotřebují použít vlákno během čekání. Na konci se krátce používají existující vlákna dokončení v/v.  
   
-- Latence operace přístupu k souboru může být velmi nízkou pod aktuální podmínky, ale latence může výrazně zlepšit v budoucnu. Soubor může například přesunout na server, který je po celém světě.  
+- Latence operace přístupu k souboru může být v rámci současných podmínek velmi nízká, ale latence může výrazně zvýšit i v budoucnu. Soubor může být například přesunut na server, který je na celém světě.  
   
-- Přidaný režijní náklady na použití asynchronní funkce je malý.  
+- Přidaná režie použití asynchronní funkce je malá.  
   
-- Asynchronní úlohy můžete snadno spouštět paralelně.  
+- Asynchronní úlohy lze snadno spustit paralelně.  
   
 ## <a name="running-the-examples"></a>Spuštění příkladů  
- Pro spuštění příkladů v tomto tématu, můžete vytvořit **aplikace WPF** nebo **formulářová aplikace Windows** a pak přidejte **tlačítko**. Na tlačítku `Click` události, přidejte volání metody první v obou příkladech.  
+ Chcete-li spustit příklady v tomto tématu, můžete vytvořit **aplikaci WPF** nebo **aplikaci model Windows Forms** a pak přidat **tlačítko**. V `Click` události tlačítka přidejte do prvního příkladu volání první metody.  
   
- V následujících příkladech, patří `using` příkazy.  
+ V následujících příkladech zahrňte následující `using` příkazy.  
   
 ```csharp  
 using System;  
@@ -38,16 +38,16 @@ using System.Text;
 using System.Threading.Tasks;  
 ```  
   
-## <a name="use-of-the-filestream-class"></a>Použijte datový proud souboru třídy  
- V příkladech v tomto tématu <xref:System.IO.FileStream> třídu, která má možnost, která způsobí, že asynchronní vstupně-výstupních operací na úrovni operačního systému. Pomocí této možnosti byste se vyhnout blokování vlákna fondu vláken v mnoha případech. Chcete-li povolit tuto možnost, zadejte `useAsync=true` nebo `options=FileOptions.Asynchronous` argument ve volání konstruktoru.  
+## <a name="use-of-the-filestream-class"></a>Použití třídy FileStream  
+ Příklady v tomto tématu používají <xref:System.IO.FileStream> třídu, která má možnost, která způsobuje asynchronní vstupně-výstupní operace na úrovni operačního systému. Pomocí této možnosti se můžete vyhnout blokování vlákna fondu vláken v mnoha případech. Chcete-li povolit tuto možnost, zadejte `useAsync=true` argument `options=FileOptions.Asynchronous` nebo ve volání konstruktoru.  
   
- Tuto možnost s nelze použít <xref:System.IO.StreamReader> a <xref:System.IO.StreamWriter> Pokud otevřít přímo zadáním cesty k souboru. Ale můžete použít tuto možnost, pokud jim poskytujete <xref:System.IO.Stream> , který <xref:System.IO.FileStream> třídy otevřít. Všimněte si, že byla zahájena asynchronní volání jsou rychlejší v uživatelském rozhraní aplikace i v případě, že vláken fondu vláken se zablokuje, protože vlákno uživatelského rozhraní není blokována během čekání.  
+ Tuto možnost nemůžete použít <xref:System.IO.StreamReader> s <xref:System.IO.StreamWriter> a, pokud je otevřete přímo zadáním cesty k souboru. Tuto možnost však můžete použít <xref:System.IO.Stream> <xref:System.IO.FileStream> , pokud jim poskytnete třídu, kterou otevřela. Všimněte si, že asynchronní volání jsou rychlejší v aplikacích uživatelského rozhraní i v případě, že je vlákno nevláken blokované, protože během čekání není zablokované vlákno uživatelského rozhraní.  
   
 ## <a name="writing-text"></a>Zápis textu  
- Následující příklad zapíše text do souboru. V každé await příkaz, metoda se okamžitě ukončí. Po dokončení vstupně-výstupní operace souboru se bude pokračovat na příkazu následujícímu příkazu await metodu. Všimněte si, že modifikátor async je v definici metody, které pomocí příkazu await.  
+ Následující příklad zapisuje text do souboru. V každém příkazu await se metoda okamžitě ukončí. Po dokončení vstupně-výstupních operací se metoda obnoví v příkazu, který následuje po příkazu await. Všimněte si, že modifikátor Async je v definici metod, které používají příkaz await.  
   
 ```csharp  
-public async void ProcessWrite()  
+public async Task ProcessWriteAsync()  
 {  
     string filePath = @"temp2.txt";  
     string text = "Hello World\r\n";  
@@ -68,20 +68,20 @@ private async Task WriteTextAsync(string filePath, string text)
 }  
 ```  
   
- Původní příklad obsahuje příkaz `await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);`, což je snížení následující dva příkazy:  
+ Původní příklad obsahuje příkaz `await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);`, který je kontraktem následujících dvou příkazů:  
   
 ```csharp  
 Task theTask = sourceStream.WriteAsync(encodedText, 0, encodedText.Length);  
 await theTask;  
 ```  
   
- První příkaz vrátí úkol a způsobí, že při zpracování souboru ke spuštění. Druhý příkaz s await způsobí, že metoda okamžitě ukončit a vrátit jiný úkol. Po dokončení zpracování později souborů, spuštění se vrátí k příkazu, který následuje await. Další informace najdete v tématu [tok řízení v asynchronních programech (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
+ První příkaz vrátí úlohu a způsobí, že se zpracování souboru spustí. Druhý příkaz s operátorem await způsobí, že metoda okamžitě ukončí a vrátí jiný úkol. Po dokončení zpracování souboru se spuštění vrátí do příkazu, který následuje za operátorem await. Další informace najdete v tématu [tok řízení v části Async Programs (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
   
 ## <a name="reading-text"></a>Čtení textu  
- Následující příklad přečte text ze souboru. Text je uložená do vyrovnávací paměti a v takovém případě se umístí do <xref:System.Text.StringBuilder>. Na rozdíl od předchozího příkladu, vytvoří hodnocení await hodnotu. <xref:System.IO.Stream.ReadAsync%2A> Metoda vrátí hodnotu <xref:System.Threading.Tasks.Task> \< <xref:System.Int32>>, takže vytváří hodnocení await `Int32` hodnotu (`numRead`) po dokončení operace. Další informace najdete v tématu [Async Return Types (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+ Následující příklad přečte text ze souboru. Text je uložen do vyrovnávací paměti a v tomto případě je umístěn do <xref:System.Text.StringBuilder>. Na rozdíl od předchozího příkladu vyhodnocení await vytvoří hodnotu. `Int32` `numRead`Metoda <xref:System.IO.Stream.ReadAsync%2A> vrací>,takže<xref:System.Threading.Tasks.Task>vyhodnocení metody await vytvoří hodnotu () po dokončení operace. \< <xref:System.Int32> Další informace naleznete v tématu [Async Return TypesC#()](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
   
 ```csharp  
-public async void ProcessRead()  
+public async Task ProcessReadAsync()  
 {  
     string filePath = @"temp2.txt";  
   
@@ -124,15 +124,15 @@ private async Task<string> ReadTextAsync(string filePath)
 }  
 ```  
   
-## <a name="parallel-asynchronous-io"></a>Paralelní asynchronní vstupně-výstupních operací  
- Následující příklad ukazuje paralelní zpracování napsáním 10 textové soubory. Pro každý soubor <xref:System.IO.Stream.WriteAsync%2A> metoda vrátí úlohu, která se pak přidá do seznamu úkolů. `await Task.WhenAll(tasks);` Příkaz ukončí metodu a obnoví v rámci metody při zpracování souboru Dokončit pro všechny úlohy.  
+## <a name="parallel-asynchronous-io"></a>Paralelní asynchronní vstupně-výstupní operace  
+ Následující příklad znázorňuje paralelní zpracování zápisem 10 textových souborů. Pro každý soubor <xref:System.IO.Stream.WriteAsync%2A> metoda vrátí úkol, který je poté přidán do seznamu úkolů. `await Task.WhenAll(tasks);` Příkaz ukončí metodu a pokračuje v rámci metody, když je zpracování souborů dokončeno pro všechny úlohy.  
   
- V příkladu zavře všechna <xref:System.IO.FileStream> instance `finally` blokovat po dokončení úlohy. Pokud každý `FileStream` místo toho byl vytvořen v `using` příkazu `FileStream` může zrušit, před dokončením úkolu.  
+ Příklad zavře všechny <xref:System.IO.FileStream> instance `finally` v bloku po dokončení úkolů. Pokud byl `FileStream` každý z nich vytvořen `using` v příkazu, `FileStream` může být odstraněn před dokončením úkolu.  
   
- Všimněte si, že všechny zvýšení výkonu je téměř zcela v paralelní zpracování a není asynchronní zpracování. Výhody asynchronie je, že nebude vytížit více vláken a že není vytížit vlákně uživatelského rozhraní.  
+ Všimněte si, že veškeré zvýšení výkonu je prakticky zcela úplné od paralelního zpracování, nikoli z asynchronního zpracování. Výhody asynchronii jsou, že neodkazují na více vláken a že nevyužívají vlákno uživatelského rozhraní.  
   
 ```csharp  
-public async void ProcessWriteMult()  
+public async Task ProcessWriteMultAsync()  
 {  
     string folder = @"tempfolder\";  
     List<Task> tasks = new List<Task>();  
@@ -172,10 +172,10 @@ public async void ProcessWriteMult()
 }  
 ```  
   
- Při použití <xref:System.IO.Stream.WriteAsync%2A> a <xref:System.IO.Stream.ReadAsync%2A> metody, můžete zadat <xref:System.Threading.CancellationToken>, který můžete použít pro zrušení operace uprostřed datového proudu. Další informace najdete v tématu [Fine-Tuning asynchronní aplikace (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) a [zrušení ve spravovaných vláknech](../../../../standard/threading/cancellation-in-managed-threads.md).  
+ Při použití <xref:System.IO.Stream.WriteAsync%2A> metod a <xref:System.IO.Stream.ReadAsync%2A> můžete zadat <xref:System.Threading.CancellationToken>, které můžete použít k zrušení operace střední-Stream. Další informace najdete v tématu [jemné vyladění asynchronní aplikace (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) a [zrušení ve spravovaných vláknech](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
-- [Asynchronní návratové typy (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
-- [Tok řízení v asynchronních programech (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)
+- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](../../../../csharp/programming-guide/concepts/async/index.md)
+- [Asynchronní návratové typyC#()](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
+- [Řízení toku v asynchronních programechC#()](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)

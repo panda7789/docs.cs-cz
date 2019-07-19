@@ -5,122 +5,122 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 6dca154dc6ff560fe589ea56ee49d761a2622fe9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca00b4a0450539741719f5f5a56d241e4bebfcc2
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614557"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331715"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
-Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být nasazeny. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologie nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma nabízí stručný přehled této technologie každého nasazení, a jak se používají ve spojení s požadavky na nasazení každého [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typu aplikace.  
+Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, závisí na typu aplikace. V tomto tématu najdete stručný přehled jednotlivých technologií nasazení a jejich použití ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typů aplikací.  
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologie nasazení  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik nasazení technologií, včetně:  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení, včetně:  
   
 - Nasazení XCopy.  
   
-- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] nasazení.  
+- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]prostředí.  
   
-- [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] nasazení.  
+- [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)]prostředí.  
   
 <a name="XCopy_Deployment"></a>   
 ### <a name="xcopy-deployment"></a>Nasazení XCopy  
- Nasazení XCopy odkazuje na použití příkazu XCopy příkazového řádku programu ke kopírování souborů z jednoho umístění do druhého. Nasazení XCopy je vhodný v následujících případech:  
+ XCopy nasazování odkazuje na použití programu příkazového řádku XCopy ke kopírování souborů z jednoho umístění do druhého. Nasazení XCopy je vhodné za následujících okolností:  
   
-- Je samostatná aplikace. Nemusí se k aktualizaci klienta ke spuštění.  
+- Aplikace je samostatná. Není nutné aktualizovat klienta, aby běžel.  
   
-- Soubory aplikace musí přesunout z jednoho umístění do druhého, například z umístění sestavení (místního disku, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílené složky a tak dále) do umístění pro publikování (webové stránky, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílené složky a tak dále).  
+- Soubory aplikace musí být přesunuty z jednoho umístění do druhého, například z umístění sestavení (místní disk, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílená složka a tak dále) do umístění pro publikování (web, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] sdílená složka a tak dále).  
   
-- Aplikace nevyžaduje, aby prostředí integrace (zástupce v nabídce Start, ikony na ploše a tak dále).  
+- Aplikace nevyžaduje integraci prostředí (zástupce v nabídce Start, ikona pracovní plochy atd.).  
   
- I když je vhodné pro scénáře nasazení jednoduchého příkazu XCopy, je omezen při složitější možnosti nasazení jsou požadovány. Zejména pomocí příkazu XCopy často zahrnuje režii při vytváření, provádění a údržbě skriptů pro správu nasazení tak robustní. Kromě toho XCopy nepodporuje správu verzí, odinstalace nebo vrácení zpět.  
+ I když je příkaz XCopy vhodný pro jednoduché scénáře nasazení, je omezen, pokud jsou požadovány složitější možnosti nasazení. Konkrétně použití příkazu XCopy často vystává režii při vytváření, spouštění a údržbě skriptů pro správu nasazení robustním způsobem. Kromě toho XCopy nepodporuje správu verzí, odinstalaci ani vrácení změn.  
   
 <a name="Windows_Installer"></a>   
 ### <a name="windows-installer"></a>Instalační služba systému Windows  
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] umožňuje aplikacím, aby se zabalil jako samostatné spustitelné soubory, které můžete snadno distribuovat do klientů a spustit. Kromě toho [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] se instaluje s [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a umožňuje integraci s plochou, v nabídce Start a programy v Ovládacích panelech.  
+ [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]umožňuje, aby se aplikace zabalené jako samostatné spustitelné soubory, které je možné snadno distribuovat klientům a spustit. Kromě toho [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] se instaluje s [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a umožňuje integraci s desktopem, nabídkou Start a ovládacími panely programu.  
   
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] zjednodušuje instalace a odinstalace aplikací, ale neposkytuje funkce pro zajištění, že jsou pořád aktuální z hlediska správy verzí nainstalovaných aplikací.  
+ [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]zjednodušuje instalaci a odinstalaci aplikací, ale neposkytuje vybavení pro zajištění aktuálnosti nainstalovaných aplikací z hlediska správy verzí.  
   
- Další informace o Instalační službě systému Windows najdete v tématu [nasazení Instalační služby systému Windows](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+ Další informace o Instalační služba systému Windows najdete v tématu [nasazení Instalační služba systému Windows](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] umožňuje nasazení webových aplikací pro jiné webové aplikace. Aplikace jsou publikovaná a nasadit z webu nebo serverů. I když [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nepodporuje celý rozsah klientské funkce, které [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]-nainstalované aplikace, podporuje podmnožinu, která obsahuje následující:  
+ [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)]povoluje nasazení aplikace webového stylu pro jiné než webové aplikace. Aplikace se publikují na webové nebo souborové servery a nasazují se z nich. I [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] když nepodporuje celou škálu funkcí klienta, které [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]instalují aplikace do, podporuje podmnožinu, která zahrnuje následující:  
   
-- Integrace se v nabídce Start a programy v Ovládacích panelech.  
+- Integrace pomocí nabídky Start a ovládacích panelů programy.  
   
-- Správa verzí, vrácení zpět a odinstalaci.  
+- Správa verzí, vrácení zpět a odinstalace.  
   
-- Online instalace režim, ve kterém vždy spustí aplikaci z umístění nasazení.  
+- Online režim instalace, který vždy spustí aplikaci z umístění nasazení.  
   
-- Automatické aktualizace, pokud se vydávají nové verze.  
+- Automatické aktualizace při vydání nových verzí.  
   
 - Registrace přípon souborů.  
   
- Další informace o [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)], naleznete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment).  
+ Další informace o [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)]najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 <a name="Deploying_WPF_Applications"></a>   
 ## <a name="deploying-wpf-applications"></a>Nasazení aplikací WPF  
- O možnostech nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Z hlediska nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] má tři typy významných aplikací:  
+ Možnosti nasazení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci závisí na typu aplikace. Z perspektivy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nasazení má tři významné typy aplikací:  
   
 - Samostatné aplikace.  
   
-- Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikací.  
+- Aplikace jenom [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením.  
   
 - [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
   
 <a name="Deploying_Standalone_Applications"></a>   
-### <a name="deploying-standalone-applications"></a>Nasazení samostatné aplikace  
- Samostatné aplikace jsou nasazeny pomocí buď [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti ke spuštění. Úplný vztah důvěryhodnosti je automaticky udělena pro samostatné aplikace, které jsou nasazeny pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Samostatné aplikace, které jsou nasazeny pomocí [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nejsou automaticky udělena úplná důvěryhodnost. Místo toho [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] zobrazí dialogové okno s upozorněním, že uživatelé musí přijmout před instalací je samostatná aplikace zabezpečení. Pokud přijat, samostatné aplikace je nainstalovaná a udělena úplná důvěryhodnost. Pokud ne, není nainstalovaná samostatné aplikace.  
+### <a name="deploying-standalone-applications"></a>Nasazení samostatných aplikací  
+ Samostatné aplikace jsou nasazeny buď [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], nebo. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro samostatné aplikace, které jsou nasazené pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], se automaticky udělí úplný vztah důvěryhodnosti. Samostatné aplikace, které jsou nasazeny pomocí [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] , nejsou automaticky uděleny úplný vztah důvěryhodnosti. Místo toho před instalací samostatné aplikace zobrazídialogovéoknoupozorněnízabezpečení,kterémusíuživatelépřijmout.[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] V případě přijetí se samostatná aplikace nainstaluje a udělí Plná důvěra. V takovém případě není samostatná aplikace nainstalována.  
   
 <a name="Deploying_Markup_Only_XAML_Applications"></a>   
-### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací pouze značky XAML  
- Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky jsou obvykle publikované na webové servery, jako je třeba [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] stránky a lze ji zobrazit pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]. Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky spustit v sandboxu částečným vztahem důvěryhodnosti zabezpečení s nakonfigurovanými omezeními, které jsou definovány sada oprávnění Internetu zóny. To poskytuje ekvivalentní karanténě k [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]– na základě webové aplikace.  
+### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze s označením  
+ Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením jsou obvykle publikovány na webové servery [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] , například stránky a lze je zobrazit [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]pomocí nástroje. Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením jsou spouštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internetu. To poskytuje ekvivalentní webové aplikace založené na [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]karanténě zabezpečení.  
   
- Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] naleznete v tématu [zabezpečení](../security-wpf.md).  
+ Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace najdete v tématu [zabezpečení](../security-wpf.md).  
   
- Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky lze nainstalovat do místního systému souborů pomocí obou příkazu XCopy nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Tyto stránky lze zobrazit pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] nebo Průzkumníka Windows.  
+ Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením lze nainstalovat do místního systému souborů pomocí příkazu xcopy nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Tyto stránky lze zobrazit pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] aplikace nebo Průzkumníka Windows.  
   
- Další informace o XAML najdete v tématu [přehled XAML (WPF)](../advanced/xaml-overview-wpf.md).  
+ Další informace o XAML naleznete v tématu [XAML Overview (WPF)](../advanced/xaml-overview-wpf.md).  
   
 <a name="Deploying_XAML_Browser_Applications"></a>   
-### <a name="deploying-xaml-browser-applications"></a>Nasazení aplikace prohlížeče XAML  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou kompilované aplikace, které vyžadují následující tři soubory k nasazení:  
+### <a name="deploying-xaml-browser-applications"></a>Nasazení aplikací prohlížeče XAML  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]jsou kompilované aplikace, které vyžadují nasazení následujících tří souborů:  
   
-- *ApplicationName*.exe: Sestavení spustitelný soubor aplikace.  
+- *ApplicationName*.exe: Spustitelný soubor aplikace sestavení  
   
-- *ApplicationName*.xbap: Manifest nasazení.  
+- *ApplicationName*. XBAP: Manifest nasazení.  
   
-- *ApplicationName*.exe.manifest: Manifest aplikace.  
+- *ApplicationName*.exe.manifest: Manifest aplikace  
   
 > [!NOTE]
->  Další informace o manifesty nasazení a aplikace, najdete v části [sestavení aplikace WPF](building-a-wpf-application-wpf.md).  
+>  Další informace o nasazení a manifestech aplikací naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
   
- Tyto soubory jsou vytvářeny při [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je vytvořená. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Například pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou obvykle vydávané na webový server a prohlížet pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].  
+ Tyto soubory jsou vytvářeny, [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] když je sestavena. Další informace najdete v tématu [jak: Vytvořte nový projekt](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))aplikace WPF Browser. Podobně jako [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]stránky pouze s označením jsouobvyklepublikoványnawebovémserveruazobrazoványpomocí.[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] je možné nasadit na klienty některou z metod nasazení. Nicméně [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] je doporučeno, protože poskytuje následující možnosti:  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]dá se nasadit do klientů pomocí kterékoli z technik nasazení. Doporučuje se [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] však, protože poskytuje následující možnosti:  
   
-1. Automatické aktualizace, když se publikuje novou verzi.  
+1. Automatické aktualizace, když je publikována nová verze.  
   
-2. Zvýšení úrovně oprávnění pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] s úplným vztahem důvěryhodnosti.  
+2. Oprávnění ke zvýšení oprávnění pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] provoz s úplným vztahem důvěryhodnosti.  
   
- ClickOnce publikuje ve výchozím nastavení aplikace soubory s příponu .deploy odstraní. To může být problematické, ale je možné zakázat. Další informace najdete v tématu [serveru a problémy s konfigurací klienta v nasazeních ClickOnce](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).  
+ Ve výchozím nastavení ClickOnce publikuje soubory aplikace s příponou. deploy. Může to být problematické, ale je možné ho zakázat. Další informace najdete v tématu [problémy s konfigurací serveru a klienta v nasazeních ClickOnce](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).  
   
- Další informace o nasazení [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)], naleznete v tématu [přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
+ Další informace o nasazení [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]naleznete v tématu [Přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
- Ke spuštění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, musí být na klientovi nainstalované rozhraní Microsoft .NET Framework. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] automaticky zjišťuje, zda klienti jsou instalováni pomocí rozhraní .NET Framework při [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] se při zobrazení aplikace hostované prohlížečem. Pokud není nainstalované rozhraní .NET Framework, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] vyzve uživatele k jeho instalaci.  
+ Aby bylo možné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci spustit, musí být na klientovi nainstalována aplikace Microsoft .NET Framework. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] , když jsou prohlíženy aplikace hostované v prohlížeči. Pokud .NET Framework není nainstalován, vyzve uživatele [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] , aby si ho nainstalovali.  
   
- Chcete-li zjistit, jestli je nainstalované rozhraní .NET Framework, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] zahrnuje aplikaci zaváděcí nástroj, který je registrovaný jako na náhradní řešení [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] obslužné rutiny souborů obsahu s těmito příponami: .xaml, XPS, .xbap a .application. Pokud přejdete na tyto typy souborů a na klientovi není nainstalované rozhraní .NET Framework, zaváděcí nástroj aplikace požádá o oprávnění k jeho instalaci. Pokud není k dispozici oprávnění, se nainstaluje rozhraní .NET Framework ani aplikace.  
+ Chcete-li zjistit, zda je .NET Framework [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nainstalován, zahrnuje aplikaci zaváděcího nástroje, která je registrována jako záložní [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] obslužná rutina pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
   
- Pokud je povoleno, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] stáhne a nainstaluje s použitím rozhraní .NET Framework [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)]. Po úspěšné instalaci rozhraní .NET Framework je původně požadované soubor otevřít v novém okně prohlížeče.  
+ Pokud je udělené oprávnění [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] , stáhne a nainstaluje .NET Framework pomocí Microsoft Background Intelligent Transfer Service (BITS). Po úspěšné instalaci .NET Framework se původně požadovaný soubor otevře v novém okně prohlížeče.  
   
- Automatické zjišťování rozhraní .NET framework je k dispozici na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)], a [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] klienti, kteří mají [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] nebo novější.  
+ .NET Framework automatické rozpoznávání jsou k dispozici [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]v [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)]systémech, [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] a klientů, [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] kteří mají nainstalovaný nebo novější.  
   
- Další informace najdete v tématu [nasazení rozhraní .NET Framework a aplikace](../../deployment/index.md).  
+ Další informace najdete v tématu [nasazení .NET Framework a aplikací](../../deployment/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 

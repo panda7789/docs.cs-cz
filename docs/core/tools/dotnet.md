@@ -1,32 +1,32 @@
 ---
-title: příkaz DotNet
-description: Další informace o příkazu dotnet (obecný ovladač pro nástroje .NET Core CLI) a jeho použití.
+title: dotnet – příkaz
+description: Přečtěte si o příkazu dotnet (obecný ovladač pro .NET Core CLI nástroje) a jeho využití.
 ms.date: 06/04/2018
-ms.openlocfilehash: 2134bf8ed66157619499b027f01d39e03e84411f
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: e1571bea1594b492427bdf5b3a7959733459c54e
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859556"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331021"
 ---
-# <a name="dotnet-command"></a>příkaz DotNet
+# <a name="dotnet-command"></a>dotnet – příkaz
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Name
 
-`dotnet` – Nástroj pro správu zdrojového kódu .NET a binární soubory.
+`dotnet`– Nástroj pro správu zdrojového kódu a binárních souborů .NET.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
@@ -44,130 +44,130 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 ## <a name="description"></a>Popis
 
-`dotnet` je nástroj pro správu zdrojového kódu .NET a binární soubory. Uvádí příkazy, které provádějí konkrétní úlohy, jako například [ `dotnet build` ](dotnet-build.md) a [ `dotnet run` ](dotnet-run.md). Každý příkaz definuje vlastní argumenty. Typ `--help` po každém z nich pro přístup k stručný dokumentace nápovědy.
+`dotnet`je nástroj pro správu zdrojového kódu a binárních souborů .NET. Zpřístupňuje příkazy, které provádějí konkrétní úkoly, [`dotnet build`](dotnet-build.md) jako například a. [`dotnet run`](dotnet-run.md) Každý příkaz definuje své vlastní argumenty. Typ `--help` za každým příkazem pro přístup k krátké dokumentaci k nápovědě.
 
-`dotnet` je možné ke spouštění aplikací, tak, že zadáte aplikaci knihovny DLL, jako například `dotnet myapp.dll`. Zobrazit [nasazení aplikace .NET Core](../deploying/index.md) pro další informace o možnosti nasazení.
+`dotnet`lze použít ke spouštění aplikací zadáním knihovny DLL aplikace, například `dotnet myapp.dll`. Další informace o možnostech nasazení najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md) .
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `--additional-deps <PATH>`
 
-Cesta k dalším *deps.json* souboru.
+Cesta k dalšímu souboru *. DEPS. JSON* .
 
 `--additionalprobingpath <PATH>`
 
-Cestu, která obsahuje testování zásad a sestavení testu.
+Cesta obsahující zásady a sestavení pro zjišťování k testování
 
 `-d|--diagnostics`
 
-Umožňuje diagnostický výstup.
+Povolí výstup diagnostiky.
 
 `--fx-version <VERSION>`
 
-Verze modulu runtime .NET Core se použije ke spuštění aplikace.
+Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
 
 `-h|--help`
 
-Dokumentace pro zadaný příkaz, například vytiskne `dotnet build --help`. `dotnet --help` Vypíše seznam dostupných příkazů.
+Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help`vytiskne seznam dostupných příkazů.
 
 `--info`
 
-Vytiskne podrobné informace o instalaci .NET Core a prostředí počítače, jako je například aktuální operační systém a verze .NET Core SHA potvrzení.
+Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí, jako je aktuální operační systém, a potvrzení SHA verze .NET Core.
 
 `--list-runtimes`
 
-Zobrazuje nainstalované moduly runtime .NET Core.
+Zobrazí nainstalované moduly runtime .NET Core.
 
 `--list-sdks`
 
-Zobrazí nainstalovaný .NET Core SDK.
+Zobrazí nainstalované sady SDK .NET Core.
 
 `--roll-forward-on-no-candidate-fx <N>`
 
-Definuje chování, pokud není k dispozici požadované sdílené architektuře. `N` může být:
-* `0` – Zakažte dopředné posunutí i podverze.
-* `1` -Posunout vpřed vedlejší verze aktualizace, ale ne hlavní verze. Toto je výchozí chování.
-* `2` -Posunout vpřed na vedlejší a hlavní verze.
+Definuje chování v případě, že požadovaná sdílená architektura není k dispozici. `N` může být:
+* `0`– Zakažte u sebe i menší verzi.
+* `1`– Navýšení se dopředá na podverzi, ale ne na hlavní verzi. Toto je výchozí chování.
+* `2`– Posunutí posunu k dílčím a hlavním verzím
 
- Další informace najdete v tématu [posunout vpřed](../whats-new/dotnet-core-2-1.md#roll-forward).
+ Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Nepodporované ve každý příkaz; Zobrazit stránka konkrétní příkaz k určení, zda tato možnost je k dispozici.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
 
 `--version`
 
-Vytiskne na verzi .NET Core SDK používá.
+Vytiskne verzi .NET Core SDK, která se používá.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `--additional-deps <PATH>`
 
-Cesta k dalším *deps.json* souboru.
+Cesta k dalšímu souboru *. DEPS. JSON* .
 
 `--additionalprobingpath <PATH>`
 
-Cestu, která obsahuje testování zásad a sestavení testu.
+Cesta obsahující zásady a sestavení pro zjišťování k testování
 
 `-d|--diagnostics`
 
-Umožňuje diagnostický výstup.
+Povolí výstup diagnostiky.
 
 `--fx-version <VERSION>`
 
-Verze modulu runtime .NET Core se použije ke spuštění aplikace.
+Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
 
 `-h|--help`
 
-Dokumentace pro zadaný příkaz, například vytiskne `dotnet build --help`. `dotnet --help` Vypíše seznam dostupných příkazů.
+Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help`vytiskne seznam dostupných příkazů.
 
 `--info`
 
-Vytiskne podrobné informace o instalaci .NET Core a prostředí počítače, jako je například aktuální operační systém a verze .NET Core SHA potvrzení.
+Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí, jako je aktuální operační systém, a potvrzení SHA verze .NET Core.
 
 `--roll-forward-on-no-candidate-fx`
 
- Zakáže podverze Posunutí vpřed, pokud nastavit `0`. Další informace najdete v tématu [posunout vpřed](../whats-new/dotnet-core-2-1.md#roll-forward).
+ Zakáže posunutí dílčí verze, pokud je nastaveno `0`na. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Nepodporované ve každý příkaz; Zobrazit stránka konkrétní příkaz k určení, zda tato možnost je k dispozici.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
 
 `--version`
 
-Vytiskne na verzi .NET Core SDK používá.
+Vytiskne verzi .NET Core SDK, která se používá.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `--additionalprobingpath <PATH>`
 
-Cestu, která obsahuje testování zásad a sestavení testu.
+Cesta obsahující zásady a sestavení pro zjišťování k testování
 
 `-d|--diagnostics`
 
-Umožňuje diagnostický výstup.
+Povolí výstup diagnostiky.
 
 `--fx-version <VERSION>`
 
-Verze modulu runtime .NET Core se použije ke spuštění aplikace.
+Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
 
 `-h|--help`
 
-Dokumentace pro zadaný příkaz, například vytiskne `dotnet build --help`. `dotnet --help` Vypíše seznam dostupných příkazů.
+Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help`vytiskne seznam dostupných příkazů.
 
 `--info`
 
-Vytiskne podrobné informace o instalaci .NET Core a prostředí počítače, jako je například aktuální operační systém a verze .NET Core SHA potvrzení.
+Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí, jako je aktuální operační systém, a potvrzení SHA verze .NET Core.
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Nepodporované ve každý příkaz; Zobrazit stránka konkrétní příkaz k určení, zda tato možnost je k dispozici.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
 
 `--version`
 
-Vytiskne na verzi .NET Core SDK používá.
+Vytiskne verzi .NET Core SDK, která se používá.
 
 ---
 
@@ -175,58 +175,58 @@ Vytiskne na verzi .NET Core SDK používá.
 
 ### <a name="general"></a>Obecné
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 | Příkaz                                       | Funkce                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
-| [dotnet build](dotnet-build.md)               | Sestavení aplikace .NET Core.                                     |
-| [dotnet build-server](dotnet-build-server.md) | Komunikuje se servery pro spuštění sestavení.                          |
-| [dotnet clean](dotnet-clean.md)               | Čištění výstupy sestavení.                                                |
-| [dotnet help](dotnet-help.md)                 | Zobrazí podrobnější online dokumentaci pro příkaz.           |
-| [dotnet migrate](dotnet-migrate.md)           | Migruje platný projekt ve verzi Preview 2 na projekt .NET Core SDK 1.0.  |
-| [dotnet msbuild](dotnet-msbuild.md)           | Poskytuje přístup k příkazovému řádku nástroje MSBuild.                        |
-| [dotnet new](dotnet-new.md)                   | Inicializuje C# nebo F# projektu pro danou šablonu.                |
-| [dotnet pack](dotnet-pack.md)                 | Vytvoří balíček NuGet kódu.                               |
-| [dotnet publish](dotnet-publish.md)           | Publikuje závisí na architektuře nebo samostatné aplikaci .NET. |
+| [dotnet build](dotnet-build.md)               | Vytvoří aplikaci .NET Core.                                     |
+| [dotnet build-server](dotnet-build-server.md) | Komunikuje se servery spuštěnými sestavením.                          |
+| [dotnet clean](dotnet-clean.md)               | Vyčistit výstupy sestavení.                                                |
+| [dotnet help](dotnet-help.md)                 | Zobrazí podrobnější dokumentaci pro příkaz online.           |
+| [dotnet migrate](dotnet-migrate.md)           | Migruje platný projekt verze Preview 2 na projekt .NET Core SDK 1,0.  |
+| [dotnet msbuild](dotnet-msbuild.md)           | Poskytuje přístup k příkazovému řádku MSBuild.                        |
+| [dotnet new](dotnet-new.md)                   | Inicializuje projekt C# nebo F# pro danou šablonu.                |
+| [dotnet pack](dotnet-pack.md)                 | Vytvoří balíček NuGet vašeho kódu.                               |
+| [dotnet publish](dotnet-publish.md)           | Publikuje aplikaci závislou na rozhraní .NET Framework nebo samostatnou aplikaci. |
 | [dotnet restore](dotnet-restore.md)           | Obnoví závislosti pro danou aplikaci.                  |
-| [dotnet run](dotnet-run.md)                   | Spuštění aplikace ze zdroje.                                   |
+| [dotnet run](dotnet-run.md)                   | Spustí aplikaci ze zdroje.                                   |
 | [dotnet run](dotnet-sln.md)                   | Možnosti pro přidání, odebrání a výpis projektů v souboru řešení.       |
-| [dotnet restore](dotnet-store.md)               | Sestavení se ukládá do úložiště balíčků modulu runtime.                     |
-| [dotnet test](dotnet-test.md)                 | Spustí testy pomocí nástroje test runner.                                     |
+| [dotnet restore](dotnet-store.md)               | Ukládá sestavení do úložiště balíčků modulu runtime.                     |
+| [dotnet test](dotnet-test.md)                 | Spustí testy pomocí nástroje Test Runner.                                     |
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
-| [dotnet build](dotnet-build.md)     | Sestavení aplikace .NET Core.                                     |
-| [dotnet clean](dotnet-clean.md)     | Čištění výstupy sestavení.                                              |
-| [dotnet help](dotnet-help.md)       | Zobrazí podrobnější online dokumentaci pro příkaz.           |
-| [dotnet migrate](dotnet-migrate.md) | Migruje platný projekt ve verzi Preview 2 na projekt .NET Core SDK 1.0.  |
-| [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k příkazovému řádku nástroje MSBuild.                        |
-| [dotnet new](dotnet-new.md)         | Inicializuje C# nebo F# projektu pro danou šablonu.                |
-| [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
-| [dotnet publish](dotnet-publish.md) | Publikuje závisí na architektuře nebo samostatné aplikaci .NET. |
+| [dotnet build](dotnet-build.md)     | Vytvoří aplikaci .NET Core.                                     |
+| [dotnet clean](dotnet-clean.md)     | Vyčistit výstupy sestavení.                                              |
+| [dotnet help](dotnet-help.md)       | Zobrazí podrobnější dokumentaci pro příkaz online.           |
+| [dotnet migrate](dotnet-migrate.md) | Migruje platný projekt verze Preview 2 na projekt .NET Core SDK 1,0.  |
+| [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k příkazovému řádku MSBuild.                        |
+| [dotnet new](dotnet-new.md)         | Inicializuje projekt C# nebo F# pro danou šablonu.                |
+| [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet vašeho kódu.                               |
+| [dotnet publish](dotnet-publish.md) | Publikuje aplikaci závislou na rozhraní .NET Framework nebo samostatnou aplikaci. |
 | [dotnet restore](dotnet-restore.md) | Obnoví závislosti pro danou aplikaci.                  |
-| [dotnet run](dotnet-run.md)         | Spuštění aplikace ze zdroje.                                   |
+| [dotnet run](dotnet-run.md)         | Spustí aplikaci ze zdroje.                                   |
 | [dotnet run](dotnet-sln.md)         | Možnosti pro přidání, odebrání a výpis projektů v souboru řešení.       |
-| [dotnet restore](dotnet-store.md)     | Sestavení se ukládá do úložiště balíčků modulu runtime.                     |
-| [dotnet test](dotnet-test.md)       | Spustí testy pomocí nástroje test runner.                                     |
+| [dotnet restore](dotnet-store.md)     | Ukládá sestavení do úložiště balíčků modulu runtime.                     |
+| [dotnet test](dotnet-test.md)       | Spustí testy pomocí nástroje Test Runner.                                     |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
-| [dotnet build](dotnet-build.md)     | Sestavení aplikace .NET Core.                                     |
-| [dotnet clean](dotnet-clean.md)     | Čištění výstupy sestavení.                                              |
-| [dotnet migrate](dotnet-migrate.md) | Migruje platný projekt ve verzi Preview 2 na projekt .NET Core SDK 1.0.  |
-| [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k příkazovému řádku nástroje MSBuild.                        |
-| [dotnet new](dotnet-new.md)         | Inicializuje C# nebo F# projektu pro danou šablonu.                |
-| [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
-| [dotnet publish](dotnet-publish.md) | Publikuje závisí na architektuře nebo samostatné aplikaci .NET. |
+| [dotnet build](dotnet-build.md)     | Vytvoří aplikaci .NET Core.                                     |
+| [dotnet clean](dotnet-clean.md)     | Vyčistit výstupy sestavení.                                              |
+| [dotnet migrate](dotnet-migrate.md) | Migruje platný projekt verze Preview 2 na projekt .NET Core SDK 1,0.  |
+| [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k příkazovému řádku MSBuild.                        |
+| [dotnet new](dotnet-new.md)         | Inicializuje projekt C# nebo F# pro danou šablonu.                |
+| [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet vašeho kódu.                               |
+| [dotnet publish](dotnet-publish.md) | Publikuje aplikaci závislou na rozhraní .NET Framework nebo samostatnou aplikaci. |
 | [dotnet restore](dotnet-restore.md) | Obnoví závislosti pro danou aplikaci.                  |
-| [dotnet run](dotnet-run.md)         | Spuštění aplikace ze zdroje.                                   |
+| [dotnet run](dotnet-run.md)         | Spustí aplikaci ze zdroje.                                   |
 | [dotnet run](dotnet-sln.md)         | Možnosti pro přidání, odebrání a výpis projektů v souboru řešení.       |
-| [dotnet test](dotnet-test.md)       | Spustí testy pomocí nástroje test runner.                                     |
+| [dotnet test](dotnet-test.md)       | Spustí testy pomocí nástroje Test Runner.                                     |
 
 ---
 
@@ -235,7 +235,7 @@ Vytiskne na verzi .NET Core SDK používá.
 Příkaz | Funkce
 --- | ---
 [dotnet add reference](dotnet-add-reference.md) | Přidá odkaz na projekt.
-[dotnet list reference](dotnet-list-reference.md) | Obsahuje odkazy na projekt.
+[dotnet list reference](dotnet-list-reference.md) | Vypíše odkazy na projekt.
 [dotnet remove reference](dotnet-remove-reference.md) | Odebere odkaz na projekt.
 
 ### <a name="nuget-packages"></a>Balíčky NuGet
@@ -245,38 +245,38 @@ Příkaz | Funkce
 [dotnet add package](dotnet-add-package.md) | Přidá balíček NuGet.
 [dotnet remove package](dotnet-remove-package.md) | Odebere balíček NuGet.
 
-### <a name="nuget-commands"></a>Příkazy pro balíčky NuGet
+### <a name="nuget-commands"></a>Příkazy NuGet
 
 Příkaz | Funkce
 --- | ---
-[dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo unlists balíčku ze serveru.
-[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo vypíše místní prostředky NuGet, třeba mezipaměť požadavku http, dočasná mezipaměť nebo celý počítač globální složku balíčků.
-[dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje ji.
+[dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo zruší výpis balíčku ze serveru.
+[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo vypíše místní prostředky NuGet, jako je mezipaměť požadavků HTTP, dočasná mezipaměť nebo složka globálních balíčků v celém počítači.
+[dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje ho.
 
-### <a name="global-tools-commands"></a>Globální příkazy nástroje
+### <a name="global-tools-commands"></a>Příkazy globálních nástrojů
 
-[Globální nástroje .NET core](global-tools.md) jsou k dispozici od verze rozhraní .NET Core SDK 2.1.300:
+K dispozici jsou [globální nástroje .NET Core](global-tools.md) od .NET Core SDK 2.1.300:
 
 Příkaz | Funkce
 --- | ---
-[dotnet tool install](dotnet-tool-install.md) | Globální nástroj nainstaluje na svém počítači.
-[dotnet tool list](dotnet-tool-list.md) | Vypíše všechny globální nástroje aktuálně nainstalované ve výchozím adresáři na svém počítači nebo v zadané cestě.
-[dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstaluje nástroj globální z vašeho počítače.
-[dotnet tool update](dotnet-tool-update.md) | Aktualizuje nástroj globální na svém počítači.
+[dotnet tool install](dotnet-tool-install.md) | Nainstaluje na váš počítač globální nástroj.
+[dotnet tool list](dotnet-tool-list.md) | Zobrazí seznam všech globálních nástrojů, které jsou aktuálně nainstalované ve výchozím adresáři na vašem počítači nebo v zadané cestě.
+[dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstaluje z počítače globální nástroj.
+[dotnet tool update](dotnet-tool-update.md) | Aktualizuje na svém počítači globální nástroj.
 
 ### <a name="additional-tools"></a>Další nástroje
 
-Počínaje řadou nástrojů, které byly k dispozici pouze v jednotlivých projektů pomocí sady .NET Core SDK 2.1.300, `DotnetCliToolReference` jsou teď k dispozici jako součást sady .NET Core SDK. Tyto nástroje jsou uvedeny v následující tabulce:
+Počínaje .NET Core SDK 2.1.300 je teď k dispozici několik nástrojů, které byly k dispozici pouze pro jednotlivé `DotnetCliToolReference` projekty pomocí, jako součást .NET Core SDK. Tyto nástroje jsou uvedené v následující tabulce:
 
 | Nástroj                                              | Funkce                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| dev-certs                                         | Vytváří a spravuje certifikáty vývoje.                |
-| [EF](/ef/core/miscellaneous/cli/dotnet)           | Nástroje příkazového řádku Entity Framework Core.                    |
-| sql-cache                                         | Nástroje příkazového řádku systému SQL Server mezipaměti.                         |
-| [user-secrets](/aspnet/core/security/app-secrets) | Slouží ke správě tajných kódů uživatelů vývoje.                            |
-| [Sledování](/aspnet/core/tutorials/dotnet-watch)      | Spustí se soubor sledování, které se spustí příkaz, když se změní soubory. |
+| vývoj – certifikáty                                         | Vytvoří a spravuje vývojové certifikáty.                |
+| [EF](/ef/core/miscellaneous/cli/dotnet)           | Entity Framework Core nástroje příkazového řádku.                    |
+| sql-cache                                         | Nástroje příkazového řádku pro SQL Server cache                         |
+| [uživatel – tajné klíče](/aspnet/core/security/app-secrets) | Spravuje tajné klíče uživatele.                            |
+| [sledovací](/aspnet/core/tutorials/dotnet-watch)      | Spustí sledovací proces souborů, který spustí příkaz, když se soubory změní. |
 
-Další informace o jednotlivých nástrojích, zadejte `dotnet <tool-name> --help`.
+Další informace o jednotlivých nástrojích získáte tak `dotnet <tool-name> --help`, že zadáte.
 
 ## <a name="examples"></a>Příklady
 
@@ -284,74 +284,74 @@ Vytvoří novou konzolovou aplikaci .NET Core:
 
 `dotnet new console`
 
-Obnovte závislosti pro dané aplikace:
+Obnovit závislosti pro danou aplikaci:
 
 `dotnet restore`
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Sestavení projektu a jeho závislosti v daném adresáři:
+Sestavení projektu a jeho závislostí v daném adresáři:
 
 `dotnet build`
 
-Spustit aplikaci knihovny DLL, jako například `myapp.dll`:
+Spusťte knihovnu DLL aplikace, například `myapp.dll`:
 
 `dotnet myapp.dll`
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `DOTNET_PACKAGES`
 
-Složka globálních balíčků. Pokud není nastavená, použije se výchozí `~/.nuget/packages` v systému Unix nebo `%userprofile%\.nuget\packages` na Windows.
+Složka globálních balíčků. Pokud není nastavená, použije se `~/.nuget/packages` ve výchozím nastavení `%userprofile%\.nuget\packages` v systému UNIX nebo Windows.
 
 `DOTNET_SERVICING`
 
-Určuje umístění index údržby pro použití sdílené hostitele při načítání modulu runtime.
+Určuje umístění indexu údržby používaného sdíleným hostitelem při načítání modulu runtime.
 
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-Určuje, zda data o využití nástroje .NET Core je shromažďovat a odesílat do Microsoftu. Nastavte na `true` odhlásit funkce telemetrie (hodnoty `true`, `1`, nebo `yes` přijetí). V opačném případě nastavte na `false` do funkce telemetrie (hodnoty `false`, `0`, nebo `no` přijetí). Pokud není nastavený, výchozí hodnota je `false` a funkce telemetrie je aktivní.
+Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
 
 `DOTNET_MULTILEVEL_LOOKUP`
 
-Určuje, zda modul runtime .NET Core, sdílené architektuře nebo sady SDK jsou vyřešené z globálního místa. Pokud není nastavená, použije se výchozí `true`. Nastavte na `false` se vyřešit z globálního místa a mají izolované instalace .NET Core (hodnoty `0` nebo `false` jsou přijímány). Další informace o víceúrovňových vyhledávání najdete v tématu [víceúrovňovými SharedFX vyhledávání](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastaven, použije se výchozí `true`hodnota. Nastavte na hodnotu neřešitelné z globálního umístění a používejte izolované instalace rozhraní .NET Core ( `0` hodnoty `false` nebo jsou přijatelné). `false` Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
 `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX`
 
-Zakáže podverze Posunutí vpřed, pokud nastavit `0`. Další informace najdete v tématu [posunout vpřed](../whats-new/dotnet-core-2-1.md#roll-forward).
+Zakáže posunutí dílčí verze, pokud je nastaveno `0`na. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `DOTNET_PACKAGES`
 
-Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%userprofile%\.nuget\packages` na Windows.
+Mezipaměť primárního balíčku. Pokud není nastavená, použije se `$HOME/.nuget/packages` ve výchozím nastavení `%userprofile%\.nuget\packages` v systému UNIX nebo Windows.
 
 `DOTNET_SERVICING`
 
-Určuje umístění index údržby pro použití sdílené hostitele při načítání modulu runtime.
+Určuje umístění indexu údržby používaného sdíleným hostitelem při načítání modulu runtime.
 
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-Určuje, zda data o využití nástroje .NET Core je shromažďovat a odesílat do Microsoftu. Nastavte na `true` odhlásit funkce telemetrie (hodnoty `true`, `1`, nebo `yes` přijetí). V opačném případě nastavte na `false` do funkce telemetrie (hodnoty `false`, `0`, nebo `no` přijetí). Pokud není nastavený, výchozí hodnota je `false` a funkce telemetrie je aktivní.
+Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
 
 `DOTNET_MULTILEVEL_LOOKUP`
 
-Určuje, zda modul runtime .NET Core, sdílené architektuře nebo sady SDK jsou vyřešené z globálního místa. Pokud není nastavená, použije se výchozí `true`. Nastavte na `false` se vyřešit z globálního místa a mají izolované instalace .NET Core (hodnoty `0` nebo `false` jsou přijímány). Další informace o víceúrovňových vyhledávání najdete v tématu [víceúrovňovými SharedFX vyhledávání](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastaven, použije se výchozí `true`hodnota. Nastavte na hodnotu neřešitelné z globálního umístění a používejte izolované instalace rozhraní .NET Core ( `0` hodnoty `false` nebo jsou přijatelné). `false` Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `DOTNET_PACKAGES`
 
-Primární balíček mezipaměti. Pokud není nastavená, použije se výchozí `$HOME/.nuget/packages` v systému Unix nebo `%userprofile%\.nuget\packages` na Windows.
+Mezipaměť primárního balíčku. Pokud není nastavená, použije se `$HOME/.nuget/packages` ve výchozím nastavení `%userprofile%\.nuget\packages` v systému UNIX nebo Windows.
 
 `DOTNET_SERVICING`
 
-Určuje umístění index údržby pro použití sdílené hostitele při načítání modulu runtime.
+Určuje umístění indexu údržby používaného sdíleným hostitelem při načítání modulu runtime.
 
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-Určuje, zda data o využití nástroje .NET Core je shromažďovat a odesílat do Microsoftu. Nastavte na `true` odhlásit funkce telemetrie (hodnoty `true`, `1`, nebo `yes` přijetí). V opačném případě nastavte na `false` do funkce telemetrie (hodnoty `false`, `0`, nebo `no` přijetí). Pokud není nastavený, výchozí hodnota je `false` a funkce telemetrie je aktivní.
+Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
 
 ---

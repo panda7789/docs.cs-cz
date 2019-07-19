@@ -1,17 +1,17 @@
 ---
-title: příkaz DotNet sestavení
-description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislosti.
+title: dotnet – příkaz sestavení
+description: Příkaz dotnet Build vytvoří projekt a všechny jeho závislosti.
 ms.date: 04/24/2019
-ms.openlocfilehash: df264fe830259832e5c75db9fd71230ba70a9f18
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: db2c859529d3dd21d2cd43445419b99a4256b42e
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959190"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331058"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
-**Tento článek se týká: ✓** .NET Core 1.x sady SDK a novějších verzích
+**Tento článek se týká: ✓** .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -19,9 +19,9 @@ ms.locfileid: "65959190"
 
 ## <a name="name"></a>Name
 
-`dotnet build` -Sestavení projektu a všechny jeho závislosti.
+`dotnet build`– Sestavení projektu a všech jeho závislostí.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
 ```
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
@@ -32,15 +32,15 @@ dotnet build [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet build` Příkaz sestaví projekt a jeho závislosti do sady binární soubory. Binární soubory zahrnují projektu kódu v souborech Intermediate Language (IL) s *.dll* rozšíření a symbol soubory používané pro ladění v sadě *PDB* rozšíření. Soubor JSON závislosti (*\*. deps.json*) je vytvořen, který obsahuje seznam závislostí aplikace. A  *\*. runtimeconfig.json* je vytvořen soubor, který určuje sdílený modul runtime a jeho verze pro aplikaci.
+`dotnet build` Příkaz vytvoří projekt a jeho závislosti do sady binárních souborů. Binární soubory obsahují kód projektu v souborech IL (Intermediate Language) s příponou *. dll* a soubory symbolů používané pro ladění s příponou *. pdb* . Vytvoří se soubor JSON závislosti ( *. DEPS. JSON*), který obsahuje seznam závislostí aplikace. Je vytvořen soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime a jeho verzi aplikace.
 
-Obsahuje-li projekt závislostí třetích stran, jako jsou knihovny z Nugetu, že vyřešit z mezipaměti NuGet a nejsou k dispozici s sestavení výstupu projektu. Skutečností, součin `dotnet build` není připravené k převedení do jiného počítače ke spuštění. To se liší od chování rozhraní .NET Framework ve které vytváření spustitelného souboru projektu (aplikace) vytvoří výstup, který je spustitelný na libovolný počítač, ve kterém je nainstalováno rozhraní .NET Framework. Pokud chcete, aby fungují na podobném principu s .NET Core, budete muset použít [dotnet publikovat](dotnet-publish.md) příkazu. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+Pokud má projekt závislosti třetích stran, jako jsou knihovny z NuGet, jsou vyřešeny z mezipaměti NuGet a nejsou k dispozici s vytvořeným výstupem projektu. V takovém případě produkt `dotnet build` není připravený k přenosu na jiný počítač ke spuštění. To je v kontrastu s chováním .NET Framework, při které sestavení spustitelného projektu (aplikace) vytvoří výstup, který je spustitelný na jakémkoli počítači, kde je nainstalován .NET Framework. Chcete-li mít rozhraní .NET Core podobné prostředí, je nutné použít příkaz [dotnet Publish](dotnet-publish.md) . Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
 
-Vytváření vyžaduje *project.assets.json* soubor, který obsahuje seznam závislostí vaší aplikace. Soubor je vytvořen při [ `dotnet restore` ](dotnet-restore.md) provádí. Bez souboru prostředků v místě nelze nástrojů vyřešit referenční sestavení, což má za následek chyby. S .NET Core 1.x SDK potřebné ke spuštění explicitně `dotnet restore` dřív, než spustíte `dotnet build`. Počínaje .NET Core 2.0 SDK `dotnet restore` se implicitně spouští při spuštění `dotnet build`. Pokud chcete zakázat implicitní obnovení při spuštění příkazu k sestavení, lze předat `--no-restore` možnost.
+Sestavování vyžaduje soubor *Project. assets. JSON* , který obsahuje závislosti vaší aplikace. Soubor se vytvoří při [`dotnet restore`](dotnet-restore.md) spuštění. Bez zavedeného souboru prostředků nemůže nástroj překládat referenční sestavení, což má za následek chyby. Pomocí sady .NET Core 1. x SDK jste museli explicitně spustit `dotnet restore` před spuštěním. `dotnet build` Počínaje verzí .NET Core 2,0 SDK se `dotnet restore` při spuštění `dotnet build`spouští implicitně. Pokud chcete zakázat implicitní obnovení při spuštění příkazu Build, můžete předat `--no-restore` možnost.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
-Určuje, zda je projekt spustitelné nebo ne je určeno `<OutputType>` vlastnost v souboru projektu. Následující příklad ukazuje projekt, který vytvoří spustitelný kód:
+Zda je projekt spustitelný nebo není určen `<OutputType>` vlastností v souboru projektu. Následující příklad ukazuje projekt, který vytváří spustitelný kód:
 
 ```xml
 <PropertyGroup>
@@ -48,21 +48,21 @@ Určuje, zda je projekt spustitelné nebo ne je určeno `<OutputType>` vlastnost
 </PropertyGroup>
 ```
 
-K vytvoření knihovny vynechat, nechte `<OutputType>` vlastnost. Hlavní rozdíl v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nelze ho provést.
+Chcete-li vytvořit knihovnu, vynechejte `<OutputType>` vlastnost. Hlavním rozdílem v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nemůže být provedena.
 
 ### <a name="msbuild"></a>MSBuild
 
-`dotnet build` používá MSBuild k sestavení projektu, takže podporuje paralelní i přírůstkové sestavení. Další informace najdete v tématu [přírůstková sestavení](/visualstudio/msbuild/incremental-builds).
+`dotnet build`pomocí nástroje MSBuild sestaví projekt, takže podporuje paralelní i přírůstkové sestavení. Další informace naleznete v tématu [přírůstkové sestavení](/visualstudio/msbuild/incremental-builds).
 
-Kromě jeho možností `dotnet build` příkaz přijímá MSBuild možnosti, jako například `-p` pro nastavení vlastnosti nebo `-l` k definování protokolovač. Další informace o těchto možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference). Nebo můžete použít také [dotnet msbuild](dotnet-msbuild.md) příkazu.
+Kromě možností `dotnet build` příkaz akceptuje možnosti nástroje MSBuild, `-p` například pro nastavení vlastností nebo `-l` pro definování protokolovacího nástroje. Další informace o těchto možnostech naleznete v tématu Referenční dokumentace k [příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). Případně můžete použít také příkaz [dotnet MSBuild](dotnet-msbuild.md) .
 
-Spuštění `dotnet build` je ekvivalentní `dotnet msbuild -restore -target:Build`.
+Spuštění `dotnet build` je`dotnet msbuild -restore -target:Build`ekvivalentní.
 
 ## <a name="arguments"></a>Arguments
 
 `PROJECT | SOLUTION`
 
-Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projektu nebo řešení, MSBuild vyhledá aktuální pracovní adresář pro soubor, který má příponu souboru, který končí *proj* nebo *sln* a použije tento soubor.
+Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor projektu nebo řešení, nástroj MSBuild vyhledá v aktuálním pracovním adresáři soubor s příponou souboru, který končí buď *proj* nebo *sln* , a použije tento soubor.
 
 ## <a name="options"></a>Možnosti
 
@@ -72,79 +72,79 @@ Soubor projektu nebo řešení pro sestavení. Pokud není zadán soubor projekt
 
 * **`-f|--framework <FRAMEWORK>`**
 
-  Zkompiluje pro konkrétní [framework](../../standard/frameworks.md). Rozhraní musí být definován v [soubor projektu](csproj.md).
+  Zkompiluje pro konkrétní [rozhraní](../../standard/frameworks.md). Rozhraní musí být definováno v [souboru projektu](csproj.md).
 
 * **`--force`**
 
-  Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné. Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru. Tato možnost je k dispozici, protože .NET Core 2.0 SDK.
+  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* . K dispozici od verze .NET Core 2,0 SDK.
 
 * **`-h|--help`**
 
-  Vytiskne krátký nápovědy pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 * **`--interactive`**
 
-  Povoluje příkazu zastavit a počkat na vstup uživatele nebo akce. Například k dokončení ověřování. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+  Umožňuje zastavení příkazu zastavit a počkat na vstup nebo akci uživatele. Například k dokončení ověřování. K dispozici od verze .NET Core 3,0 SDK.
 
 * **`--no-dependencies`**
 
-  Pouze sestavení projektu zadaný kořenový a ignoruje odkazy typu projekt projekt (P2P).
+  Ignoruje odkazy z projektu na projekt (P2P) a sestavuje pouze zadaný kořenový projekt.
 
 * **`--no-incremental`**
 
-  Označí sestavení jako problematické pro přírůstkové sestavení. Tento příznak vypne přírůstková kompilace a vynutí opětovné čisté sestavení grafu závislostí projektu.
+  Označí sestavení jako nebezpečná pro přírůstkové sestavení. Tento příznak vypne přírůstkovou kompilaci a vynutí čisté opětovné sestavení grafu závislostí projektu.
 
 * **`--no-logo`**
 
-  Nezobrazí úvodní nápis a zprávu o autorských právech. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+  Nezobrazuje úvodní nápis nebo zprávu o autorských právech. K dispozici od verze .NET Core 3,0 SDK.
 
 * **`--no-restore`**
 
-  Neprovede implicitní obnovení během sestavování. Tato možnost je k dispozici, protože .NET Core 2.0 SDK.
+  Během sestavování neprovede implicitní obnovení. K dispozici od verze .NET Core 2,0 SDK.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, do kterého chcete sestavené binární soubory. Budete také muset definovat `--framework` při zadání této možnosti. Pokud není zadán, výchozí cesta je `./bin/<configuration>/<framework>/`.
+  Adresář, do kterého se umístí sestavené binární soubory. Musíte definovat `--framework` i když zadáte tuto možnost. Pokud není zadaný, použije se výchozí cesta `./bin/<configuration>/<framework>/`.
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Určuje cílový modul runtime. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).
+  Určuje cílový modul runtime. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `minimal`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Výchozí hodnota je `minimal`.
 
 * **`--version-suffix <VERSION_SUFFIX>`**
 
-  Nastaví hodnotu vlastnosti `$(VersionSuffix)` vlastnost použít při vytváření projektu. Toto funguje, pouze pokud `$(Version)` není nastavena vlastnost. Potom `$(Version)` je nastavena na `$(VersionPrefix)` v kombinaci s `$(VersionSuffix)`, oddělená spojovníkem.
+  Nastaví hodnotu `$(VersionSuffix)` vlastnosti, která má být použita při sestavování projektu. To funguje pouze v případě `$(Version)` , že vlastnost není nastavena. Pak je nastaven `$(VersionPrefix)` na kombinaci s `$(VersionSuffix)`oddělovačem odděleným pomlčkou. `$(Version)`
 
 ## <a name="examples"></a>Příklady
 
-* Sestavení projektu a jeho závislosti:
+* Sestavení projektu a jeho závislostí:
 
   ```console
   dotnet build
   ```
 
-* Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:
+* Sestavení projektu a jeho závislostí pomocí konfigurace vydané verze:
 
   ```console
   dotnet build --configuration Release
   ```
 
-* Sestavení projektu a jeho závislosti pro konkrétní prostředí runtime (v tomto příkladu Ubuntu 18.04):
+* Sestavení projektu a jeho závislostí pro určitý modul runtime (v tomto příkladu Ubuntu 18,04):
 
   ```console
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
-* Sestavte projekt a použít zadaný zdroj balíčku NuGet během operace obnovení (.NET Core 2.0 SDK a novější):
+* Sestavit projekt a použít zadaný zdroj balíčku NuGet během operace obnovení (.NET Core 2,0 SDK a novější verze):
 
   ```console
   dotnet build --source c:\packages\mypackages
   ```
 
-* Sestavení projektu a verzi 1.2.3.4 nastavit jako parametr sestavení pomocí `-p` [– možnost nástroje MSBuild](#msbuild):
+* Sestavte projekt a nastavte parametr Version 1.2.3.4 jako parametr sestavení pomocí `-p` [Možnosti MSBuild](#msbuild):
 
   ```console
   dotnet build -p:Version=1.2.3.4

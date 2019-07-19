@@ -2,99 +2,101 @@
 title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-ms.openlocfilehash: 6f93fa37c6f1d6a0d7396c7f9ea5e97b44d1dc92
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a8a7e9422679927636ae2dc9b6a2ab34202ee74c
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603524"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331516"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
-Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který můžete použít k zabezpečení zprávy odeslané do fronty.  
+Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), které můžete použít k zabezpečení zpráv odesílaných do fronty.  
   
 > [!NOTE]
->  Před čtením prostřednictvím tohoto tématu, se doporučuje, abyste si přečetli [koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
+>  Než si přečtete toto téma, doporučujeme, abyste si přečetli [koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
   
- Následující obrázek poskytuje koncepční model komunikaci ve frontě pomocí Windows Communication Foundation (WCF). Tento obrázek a terminologie používá k popisu koncepty zabezpečení přenosu.  
+ Následující ilustrace poskytuje koncepční model komunikace ve frontě pomocí Windows Communication Foundation (WCF). Tato ilustrace a terminologie slouží k vysvětlení konceptů zabezpečení přenosu.  
   
- ![Ve frontě diagramu aplikace](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
+ ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distribuované – fronta – obrázek")  
   
- Při odesílání zpráv zařazených do fronty pomocí technologie WCF s <xref:System.ServiceModel.NetMsmqBinding>, zprávy WCF je připojen jako text zprávy služby MSMQ. Zabezpečení přenosu zabezpečí celou zprávu služby MSMQ (záhlaví zpráv MSMQ nebo vlastnosti a text zprávy). Protože je text zprávy služby MSMQ, pomocí zabezpečení přenosu také zabezpečuje zprávy WCF.  
+ Při posílání zpráv ve frontě pomocí <xref:System.ServiceModel.NetMsmqBinding>WCF s, je zpráva WCF připojená jako tělo zprávy služby MSMQ. Zabezpečení přenosu zabezpečuje celou zprávu služby MSMQ (záhlaví zpráv služby MSMQ nebo vlastnosti a tělo zprávy). Vzhledem k tomu, že se jedná o tělo zprávy služby MSMQ, používá zabezpečení přenosu také zprávu WCF.  
   
- Klíčovým konceptem za zabezpečení přenosu je, že klient musí splňovat požadavky na zabezpečení, zobrazí se zpráva do cílové fronty. To je rozdíl oproti zabezpečení zpráv, ve kterém je zpráva zabezpečena pro aplikaci, která bude přijímat zprávy.  
+ Klíčovým konceptem zabezpečení přenosu je, že klient musí splňovat požadavky na zabezpečení a získat tak zprávu do cílové fronty. To je na rozdíl od zabezpečení zpráv, kde je zpráva zabezpečená pro aplikaci, která zprávu přijímá.  
   
- Pomocí zabezpečení přenosu <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ovlivňuje, jak jsou zabezpečené zprávy MSMQ během přenosu mezi fronty přenosu a cílová fronta tam, kde zabezpečené zahrnuje:  
+ Zabezpečení přenosu pomocí <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ovlivňuje způsob, jakým jsou zprávy MSMQ zabezpečeny během přenosu mezi frontou přenosů a cílovou frontou, kde zabezpečení implikuje:  
   
-- Podepisování zpráv tak, aby byl nemanipulovalo.  
+- Podpis zprávy, aby se zajistilo, že není úmyslně poškozen.  
   
-- Zpráva, která má zajistěte, aby úmyslně viděli nebo šifrování. Toto je doporučená, ale volitelné.  
+- Šifrování zprávy, aby se zajistilo, že se nedá zobrazit ani úmyslně neoprávněně. Toto doporučení je doporučené, ale nepovinné.  
   
-- Správce front cílový označující, odesílatel zprávy pro popírání odpovědnosti.  
+- Cílový správce fronty, který identifikuje odesílatele zprávy pro Neodmítnutí.  
   
- Služby MSMQ nezávisle na ověřování, cílová fronta má seznam řízení přístupu (ACL), chcete-li zkontrolovat, zda klient má oprávnění k odeslání zprávy do cílové fronty. Přijímající aplikace je také kontroluje oprávnění přijímat zprávy z cílové fronty.  
+ V případě služby MSMQ, která nezávisí na ověřování, má cílová fronta seznam řízení přístupu (ACL), který kontroluje, zda má klient oprávnění Odeslat zprávu do cílové fronty. U přijímající aplikace je také zaškrtnuto oprávnění k přijetí zprávy z cílové fronty.  
   
-## <a name="wcf-msmq-transport-security-properties"></a>WCF MSMQ Transport Security Properties  
- Zabezpečení Windows používaný službou MSMQ pro ověřování. Identifikátor zabezpečení Windows (SID) používá k identifikaci klienta a služby Active Directory jako certifikační autorita používá při ověřování klienta. To vyžaduje služba MSMQ nainstalovaná s integrací služby Active Directory. SID domény Windows, protože se používají k identifikaci klienta tato možnost zabezpečení je jenom smysluplné když klient a služba jsou součástí stejné domény Windows.  
+## <a name="wcf-msmq-transport-security-properties"></a>WCF – vlastnosti zabezpečení přenosu MSMQ  
+ Služba MSMQ používá pro ověřování zabezpečení systému Windows. Pomocí identifikátoru zabezpečení systému Windows (SID) identifikuje klienta a při ověřování klienta používá adresářovou službu Active Directory jako certifikační autoritu. K tomu je potřeba nainstalovat službu MSMQ s integrací služby Active Directory. Vzhledem k tomu, že se k identifikaci klienta používá identifikátor SID domény Windows, je tato možnost zabezpečení smysluplná jenom v případě, že je klient i služba součástí stejné domény systému Windows.  
   
- MSMQ také nabízí možnost připojit certifikát se zpráva, která není zaregistrované v Active Directory. V tomto případě zajišťuje, že zpráva byla podepsána pomocí certifikátu, který připojené.  
+ Služba MSMQ taky umožňuje připojit certifikát se zprávou, která není zaregistrovaná ve službě Active Directory. V takovém případě zajišťuje, aby byla zpráva podepsána pomocí připojeného certifikátu.  
   
- WCF poskytuje jako součást zabezpečení přenosu služby MSMQ obě tyto možnosti a jejich klíče kontingenční tabulky pro zabezpečení přenosu.  
+ Služba WCF poskytuje obě tyto možnosti jako součást zabezpečení přenosu ve službě MSMQ a jsou klíčem pro zabezpečení přenosu.  
   
- Zabezpečení přenosu je ve výchozím nastavení zapnutá.  
+ Ve výchozím nastavení je zabezpečení přenosu zapnuté.  
   
- Zadaný tyto základy, v následujících částech vlastnosti zabezpečení přenosu podrobností součástí <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>.  
+ Následující části obsahují podrobné informace o vlastnostech transportního zabezpečení, které jsou součástí <xref:System.ServiceModel.NetMsmqBinding> sady <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>a.  
   
-#### <a name="msmq-authentication-mode"></a>Režim ověřování služby MSMQ  
- <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> Určuje, jestli se má použít zabezpečení domény Windows nebo externího zabezpečení na základě certifikátů k zabezpečení zprávy. V obou režimech ověřování používá kanál zařazených do fronty přenosu WCF `CertificateValidationMode` zadaná v konfiguraci služby. Určuje režim ověřování certifikátu mechanismus, který se používá ke kontrole platnosti certifikátu.  
+#### <a name="msmq-authentication-mode"></a>Režim ověřování MSMQ  
+ <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> Určí, zda se má zabezpečit zpráva pomocí zabezpečení domény systému Windows nebo externího zabezpečení založeného na certifikátech. V obou režimech ověřování používá `CertificateValidationMode` transportní kanál zařazený do fronty WCF zadaný v konfiguraci služby. Režim ověřování certifikátu určuje mechanismus, který slouží ke kontrole platnosti certifikátu.  
   
- Pokud je zapnuté zabezpečení přenosu, ve výchozím nastavení je <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.  
+ Když je zapnuté zabezpečení přenosu, výchozí nastavení je <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.  
   
-#### <a name="windows-domain-authentication-mode"></a>Režim ověřování domény Windows  
- Na výběr mezi používáním zabezpečení Windows vyžaduje integrace služby Active Directory. <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> je výchozí režim zabezpečení transport. Když toto nastavení je nastaveno, kanál WCF připojí identifikátoru Windows SID zprávy služby MSMQ a používá svůj vnitřní certifikát získaný ze služby Active Directory. Tento vnitřní certifikát používaný službou MSMQ pro zabezpečení zprávy. Správce fronty používá službu Active Directory pro vyhledávání a nalezení odpovídajícího certifikátu ověřování klienta a ověří, že identifikátor SID také odpovídající jazyku klienta. Tento krok ověření se provede, pokud certifikát, buď generováno interně v případě třídy `WindowsDomain` režim ověřování nebo externě generované v případě třídy `Certificate` režim ověřování je připojen ke zprávě, i když je cílová fronta Neoznačeno jako vyžadující ověřování.  
+#### <a name="windows-domain-authentication-mode"></a>Režim ověřování domény systému Windows  
+ Možnost použití zabezpečení systému Windows vyžaduje integraci služby Active Directory. <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>je výchozím režimem zabezpečení přenosu. Pokud je tato nastavení nastavena, kanál WCF připojí ke zprávě služby MSMQ identifikátor Windows SID a použije svůj vnitřní certifikát získaný ze služby Active Directory. Služba MSMQ používá tento interní certifikát k zabezpečení zprávy. Příjmový správce fronty používá službu Active Directory k vyhledávání a hledání odpovídajícího certifikátu pro ověření klienta a kontroluje, zda identifikátor SID odpovídá také tomuto klientovi. Tento krok ověřování se spustí, pokud je certifikát, který se buď interně vygeneroval v případě `WindowsDomain` režimu ověřování nebo externě generovaný v `Certificate` případě režimu ověřování, připojený ke zprávě i v případě, že cílová fronta je není označen jako vyžadování ověřování.  
   
 > [!NOTE]
->  Při vytváření fronty, můžete označit fronty jako ověřený fronty k označení, že fronta vyžaduje ověřování klientů v odesílání zpráv do fronty. Tím se zajistí, že jsou přijaty žádné neověřené zprávy ve frontě.  
+>  Při vytváření fronty můžete označit frontu jako ověřenou frontu a označit tak, že fronta vyžaduje ověření klienta odesílajícího zprávy do fronty. Tím se zajistí, že ve frontě nebudou přijaty žádné neověřené zprávy.  
   
- Připojil se k němu identifikátor SID zprávy se také používá ke kontrole proti cílové fronty ACL, ujistěte se, že klient má oprávnění k odesílání zpráv do fronty.  
+ Identifikátor SID připojený ke zprávě se také používá ke kontrole seznamu ACL cílové fronty, aby bylo zajištěno, že klient bude mít oprávnění odesílat zprávy do fronty.  
   
 #### <a name="certificate-authentication-mode"></a>Režim ověřování certifikátu  
- Volba režimu ověřování certifikátu nevyžaduje, aby integrace služby Active Directory. Ve skutečnosti v některých případech, například když je služba MSMQ nainstalovaná v režimu pracovní skupiny (bez integrace služby Active Directory) nebo pomocí protokol spolehlivého zasílání zpráv SOAP (SRMP) při přenosu protokolu pro odesílání zpráv do fronty, pouze <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> funguje.  
+ Volba použití režimu ověřování certifikátů nevyžaduje integraci služby Active Directory. V některých případech, například když je služba MSMQ nainstalována v režimu pracovní skupiny (bez integrace služby Active Directory) nebo při odesílání zpráv do fronty pomocí protokolu přenosu protokolu SOAP Reliable Messaging Protocol (SRMP), funguje pouze <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> funkce.  
   
- Při odesílání zprávy WCF s <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>, kanál WCF se nepřipojí Windows SID zprávy služby MSMQ. V důsledku toho cílová fronta ACL musí povolovat `Anonymous` přístup uživatelů k odeslání do fronty. Správce fronty kontroluje, zda zprávy služby MSMQ byla podepsána pomocí certifikátu, ale neprovede žádné ověřování.  
+ Při odesílání zprávy WCF pomocí <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>kanálu WCF nepřipojí ke zprávě služby MSMQ identifikátor zabezpečení systému Windows. V takovém případě musí seznam ACL cílové fronty umožňovat `Anonymous` uživateli přístup k odeslání do fronty. Správce přijímací fronty ověří, zda byla zpráva služby MSMQ podepsána certifikátem, ale neprovede žádné ověření.  
   
- Certifikát s jeho deklarace identity a informací o identitě vložené <xref:System.ServiceModel.ServiceSecurityContext> kanálu zařazených do fronty přenosu WCF. Služby můžete použít tyto informace k provedení vlastní ověřování odesílatele.  
+ Certifikát s jeho deklaracemi a informacemi o identitě vyplní <xref:System.ServiceModel.ServiceSecurityContext> transportní kanál WCF ve frontě. Služba může tyto informace použít k provedení vlastního ověření odesílatele.  
   
-### <a name="msmq-protection-level"></a>Úroveň ochrany služby MSMQ  
- Úroveň ochrany Určuje, jak chránit zprávy služby MSMQ, ujistěte se, že není manipulováno. Je zadán v <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> vlastnost. Výchozí hodnota je <xref:System.Net.Security.ProtectionLevel.Sign>.  
+### <a name="msmq-protection-level"></a>Úroveň ochrany MSMQ  
+ Úroveň ochrany určuje, jak chránit zprávu služby MSMQ, aby se zajistilo, že není úmyslně poškozena. Je určena ve <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> vlastnosti. Výchozí hodnota je <xref:System.Net.Security.ProtectionLevel.Sign>.  
   
-#### <a name="sign-protection-level"></a>Úroveň ochrany přihlášení  
- Zprávy služby MSMQ je podepsaná pomocí certifikátu, který interně vygenerovanému, při použití `WindowsDomain` režim ověřování, nebo externě generovaného certifikát při použití `Certificate` režim ověřování.  
+#### <a name="sign-protection-level"></a>Úroveň ochrany při podepisování  
+ Zpráva služby MSMQ je podepsána pomocí vnitřně generovaného certifikátu `WindowsDomain` při použití režimu ověřování nebo externě vygenerovaného `Certificate` certifikátu při použití režimu ověřování.  
   
-#### <a name="sign-and-encrypt-protection-level"></a>Podepisování a šifrování úroveň ochrany  
- Zprávy služby MSMQ je podepsaná pomocí certifikátu, který interně vygenerovanému, při použití `WindowsDomain` režim ověřování nebo externě vygenerovaný certifikát při použití `Certificate` režim ověřování.  
+#### <a name="sign-and-encrypt-protection-level"></a>Úroveň ochrany podepsat a šifrovat  
+ Zpráva služby MSMQ je podepsána pomocí vnitřně generovaného certifikátu `WindowsDomain` při použití režimu ověřování nebo externě vygenerovaného certifikátu při použití `Certificate` režimu ověřování.  
   
- Kromě podepsání zprávy zprávy služby MSMQ zašifrovaná pomocí veřejného klíče certifikátu získané ze služby Active Directory, který patří do Správce fronty, který je hostitelem cílové fronty. Odesílání správce fronty zajistí, že je při přenosu zašifrované zprávy služby MSMQ. Správce fronty dešifruje zprávy služby MSMQ pomocí soukromého klíče jeho vnitřní certifikát a uloží zprávu ve frontě (Pokud se ověří a autorizuje) ve formátu prostého textu.  
+ Kromě podepisování zprávy je zpráva služby MSMQ zašifrovaná pomocí veřejného klíče certifikátu získaného ze služby Active Directory, která patří k přijímacímu Správci front, který hostuje cílovou frontu. Správce odesílající fronty zajišťuje, aby zpráva MSMQ byla při přenosu zašifrovaná. Správce fronty příjmu dešifruje zprávu služby MSMQ pomocí privátního klíče jeho interního certifikátu a uloží zprávu do fronty (Pokud je to ověřeno a autorizováno) ve formě prostého textu.  
   
 > [!NOTE]
->  Pro šifrování zprávy, je vyžadován přístup k Active Directory (`UseActiveDirectory` vlastnost <xref:System.ServiceModel.NetMsmqBinding> musí být nastaveno na `true`) a je možné s oběma <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> a <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.  
+>  Chcete-li zašifrovat zprávu, je požadován přístup ke`UseActiveDirectory` službě Active <xref:System.ServiceModel.NetMsmqBinding> Directory (vlastnost musí `true`být nastavena na hodnotu) a lze <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> ji <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>použít s oběma i.  
   
 #### <a name="none-protection-level"></a>Žádná úroveň ochrany  
- To je implicitní při <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> je nastavena na <xref:System.Net.Security.ProtectionLevel.None>. Nemůže to být platná hodnota pro jiné režimy ověřování.  
+ To je implicitní, pokud <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> je nastavena na <xref:System.Net.Security.ProtectionLevel.None>. Nejedná se o platnou hodnotu pro žádné jiné režimy ověřování.  
   
 > [!NOTE]
->  Pokud zprávy služby MSMQ se znaménkem, MSMQ zkontroluje, zda zpráva je podepsané připojené certifikátem (interní nebo externí) bez ohledu na stav fronty, tedy ověřeného fronty, nebo ne.  
+>  Pokud je zpráva služby MSMQ podepsaná, služba MSMQ ověří, zda je zpráva podepsána připojeným certifikátem (interní nebo externí) nezávisle na stavu fronty, tj. v ověřované frontě.  
   
-### <a name="msmq-encryption-algorithm"></a>Algoritmus šifrování služby MSMQ  
- Šifrovací algoritmus Určuje algoritmus použitý k šifrování zprávy služby MSMQ na lince. Tato vlastnost se používá jenom v případě <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> je nastavena na <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
+### <a name="msmq-encryption-algorithm"></a>Šifrovací algoritmus služby MSMQ  
+ Šifrovací algoritmus Určuje algoritmus, který se použije k šifrování zprávy služby MSMQ na lince. Tato vlastnost se používá pouze v <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> případě, že <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>je nastavena na.  
   
- Jsou podporované algoritmy `RC4Stream` a `AES` a výchozí hodnota je `RC4Stream`.  
+ Podporované algoritmy jsou `RC4Stream` a `AES` a výchozí hodnota je `RC4Stream`.  
   
- Můžete použít `AES` algoritmus pouze v případě, že má odesílatel služby MSMQ 4.0 nainstalované. Cílová fronta kromě toho musí být také hostovány na MSMQ 4.0.  
+ `AES` Algoritmus lze použít pouze v případě, že je v počítači nainstalováno rozhraní MSMQ 4,0. Kromě toho musí být cílová fronta taky hostovaná ve službě MSMQ 4,0.  
   
-### <a name="msmq-hash-algorithm"></a>Algoritmus Hash MSMQ  
- Určuje algoritmus hash algoritmus použitý k vytvoření digitální podpis zprávy služby MSMQ. Správce fronty Tento stejný algoritmus používá k ověření zprávy služby MSMQ. Tato vlastnost se používá jenom v případě <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> je nastavena na <xref:System.Net.Security.ProtectionLevel.Sign> nebo <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
+### <a name="msmq-hash-algorithm"></a>Algoritmus hash služby MSMQ  
+ Algoritmus hash určuje algoritmus použitý k vytvoření digitálního podpisu zprávy služby MSMQ. Správce fronty příjmu používá stejný algoritmus k ověření zprávy služby MSMQ. Tato vlastnost se používá pouze v <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> případě, že <xref:System.Net.Security.ProtectionLevel.Sign> je <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>nastavena na nebo.  
   
- Jsou podporované algoritmy `MD5`, `SHA1`, `SHA256`, a `SHA512`. Výchozí hodnota je `SHA1`.  
+ Podporované algoritmy jsou `MD5`, `SHA1`, `SHA256`a. `SHA512` Výchozí hodnota je `SHA1`.
+
+ Microsoft doporučuje SHA256 nebo lepší vzhledem k problémům s kolize MD5/SHA1.
   
 ## <a name="see-also"></a>Viz také:
 

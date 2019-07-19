@@ -13,25 +13,25 @@ helpviewer_keywords:
 - BMP decoding [WPF]
 - decoding image formats [WPF]
 ms.assetid: feb5ef27-28ac-40ab-bfc2-e0456990d32c
-ms.openlocfilehash: b7d5ace8aead864cb69a9e696a3f1f925e232600
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d3520a1b1913fe68fedb0ea9d76cc138ed661c4
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947638"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331727"
 ---
 # <a name="how-to-encode-and-decode-a-bmp-image"></a>Postupy: Kódování a dekódování obrázku BMP
-Následující příklady ukazují, jak kódovat a dekódovat [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)] image pomocí konkrétní <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> a <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> objekty.  
+Následující příklady znázorňují, jak dekódovat a kódovat rastrovou obrázek (BMP) pomocí konkrétních <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> objektů <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> a.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak se dekódovat [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image pomocí <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> z <xref:System.Uri>.  
+ Tento příklad ukazuje, jak dekódovat obrázek bmp pomocí typu <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> <xref:System.Uri>z.  
   
  [!code-cpp[BmpBitmapDecoderEncoder#5](~/samples/snippets/cpp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CPP/anotherfile.cpp#5)]
  [!code-csharp[BmpBitmapDecoderEncoder#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CSharp/BitmapFrame.cs#5)]
  [!code-vb[BmpBitmapDecoderEncoder#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/VB/BitmapFrame.vb#5)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak kódovat <xref:System.Windows.Media.Imaging.BitmapSource> do [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image pomocí <xref:System.Windows.Media.Imaging.BmpBitmapEncoder>.  
+ Tento příklad ukazuje, jak zakódovat <xref:System.Windows.Media.Imaging.BitmapSource> do obrázku BMP <xref:System.Windows.Media.Imaging.BmpBitmapEncoder>pomocí.  
   
  [!code-cpp[BmpBitmapDecoderEncoder#4](~/samples/snippets/cpp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CPP/anotherfile.cpp#4)]
  [!code-csharp[BmpBitmapDecoderEncoder#4](~/samples/snippets/csharp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CSharp/BitmapFrame.cs#4)]

@@ -1,38 +1,38 @@
 ---
-title: Vytvoření aplikace .NET Core s moduly plug-in
-description: Zjistěte, jak vytvořit aplikaci .NET Core, která podporuje moduly plug-in.
+title: Vytvoření aplikace .NET Core pomocí modulů plug-in
+description: Naučte se, jak vytvořit aplikaci .NET Core, která podporuje moduly plug-in.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/28/2019
-ms.openlocfilehash: a9431ee28c7df21a8688f845be20e062eca21887
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 308fd2f853261e87da71892c42e17e36984d1978
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647226"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68330977"
 ---
-# <a name="create-a-net-core-application-with-plugins"></a>Vytvoření aplikace .NET Core s moduly plug-in
+# <a name="create-a-net-core-application-with-plugins"></a>Vytvoření aplikace .NET Core pomocí modulů plug-in
 
-V tomto kurzu se dozvíte, jak do:
+V tomto kurzu se dozvíte, jak:
 
-- Strukturování projektu pro podporu modulů plug-in.
-- Vytvoření vlastní <xref:System.Runtime.Loader.AssemblyLoadContext> načtení modulu plug-in.
-- Použití `System.Runtime.Loader.AssemblyDependencyResolver` typ povolit moduly plug-in k závislostmi.
-- Autor moduly plug-in, který je možné snadno nasadit pomocí pouhé kopírování artefaktů sestavení.
+- Vytvořte strukturu projektu pro podporu modulů plug-in.
+- Vytvořte vlastní <xref:System.Runtime.Loader.AssemblyLoadContext> , který načte jednotlivé modul plug-in.
+- `System.Runtime.Loader.AssemblyDependencyResolver` Typ použijte, pokud chcete, aby moduly plug-in měly závislosti.
+- Vytváření modulů plug-in, které lze snadno nasadit pouhým zkopírováním artefaktů sestavení.
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Nainstalujte [sady SDK .NET Core 3.0 ve verzi Preview 2](https://www.microsoft.com/net/core) nebo novější verze.
+- Nainstalujte [sadu SDK .NET Core 3,0 Preview 2](https://www.microsoft.com/net/core) nebo novější verzi.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
 Prvním krokem je vytvoření aplikace:
 
 1. Vytvořte novou složku a v této složce spusťte `dotnet new console -o AppWithPlugin`. 
-2. Chcete-li sestavení projektu jednodušší, vytvořte soubor řešení sady Visual Studio. Spustit `dotnet new sln` ve stejné složce. 
-3. Spustit `dotnet sln add AppWithPlugin/AppWithPlugin.csproj` přidat do řešení projekt aplikace.
+2. Aby bylo možné sestavit projekt snadněji, vytvořte soubor řešení sady Visual Studio. Spusťte `dotnet new sln` ve stejné složce. 
+3. Spusťte `dotnet sln add AppWithPlugin/AppWithPlugin.csproj` aplikaci a přidejte do řešení projekt aplikace.
 
-Nyní jsme můžete vyplnit kostra naši aplikaci. Nahraďte kód v *AppWithPlugin/Program.cs* souboru následujícím kódem:
+Teď můžeme vyplnit kostru naší aplikace. Nahraďte kód v souboru *AppWithPlugin/program. cs* následujícím kódem:
 
 ```csharp
 using PluginBase;
@@ -85,19 +85,19 @@ namespace AppWithPlugin
 
 ```
 
-## <a name="create-the-plugin-interfaces"></a>Vytvoření modulu plug-in rozhraní
+## <a name="create-the-plugin-interfaces"></a>Vytvoření rozhraní modulů plug-in
 
-Dalším krokem při sestavování aplikace s moduly plug-in definuje rozhraní, které moduly plug-in je nutné implementovat. Doporučujeme, abyste vytvořili knihovnu tříd, který obsahuje všechny typy, které budete používat pro komunikaci mezi aplikací a moduly plug-in. Můžeme vám umožňuje publikovat rozhraní modulu plug-in jako balíček není přitom nutné dodávat celou aplikaci.
+Dalším krokem při sestavování aplikace pomocí modulů plug-in je definování rozhraní, které moduly plug-in potřebují k implementaci. Doporučujeme vytvořit knihovnu tříd, která obsahuje všechny typy, které plánujete použít pro komunikaci mezi aplikací a moduly plug-in. Tato divize vám umožní publikovat rozhraní modulu plug-in jako balíček bez nutnosti dodávat celou aplikaci.
 
-V kořenové složce projektu, spusťte `dotnet new classlib -o PluginBase`. Také spustit `dotnet sln add PluginBase/PluginBase.csproj` přidání projektu do souboru řešení. Odstranit `PluginBase/Class1.cs` souboru a vytvořte nový soubor v `PluginBase` složku s názvem `ICommand.cs` s následující definice rozhraní:
+V kořenové složce projektu spusťte `dotnet new classlib -o PluginBase`. Také spusťte příkaz `dotnet sln add PluginBase/PluginBase.csproj` pro přidání projektu do souboru řešení. Odstraňte soubor a `PluginBase` ve složce s názvem `ICommand.cs` pomocí následující definice rozhraní vytvořte nový soubor: `PluginBase/Class1.cs`
 
 [!code-csharp[the-plugin-interface](~/samples/core/extensions/AppWithPlugin/PluginBase/ICommand.cs)]
 
-To `ICommand` rozhraní je rozhraní, že všechny moduly plug-in implementovat.
+Toto `ICommand` rozhraní je rozhraní, které budou všechny moduly plug-in implementovat.
 
-Teď, když `ICommand` rozhraní je definováno, může být vyplněno projekt aplikace o něco víc. Přidat odkaz z `AppWithPlugin` projektu `PluginBase` projekt se `dotnet add AppWithPlugin\AppWithPlugin.csproj reference PluginBase\PluginBase.csproj` příkazů z kořenové složky.
+Teď, `ICommand` když je rozhraní definované, může být projekt aplikace vyplněný o něco dalšího. Přidejte odkaz z `AppWithPlugin` projektu `PluginBase` do projektu pomocí `dotnet add AppWithPlugin\AppWithPlugin.csproj reference PluginBase\PluginBase.csproj` příkazu z kořenové složky.
 
-Nahradit `// Load commands from plugins` komentář pomocí následujícího fragmentu kódu, který umožňuje načíst pluginy ze zadané cesty k souborům:
+Nahraďte `// Load commands from plugins` komentář následujícím fragmentem kódu, aby mohl načíst moduly plug-in z daných cest k souborům:
 
 ```csharp
 string[] pluginPaths = new string[]
@@ -112,7 +112,7 @@ IEnumerable<ICommand> commands = pluginPaths.SelectMany(pluginPath =>
 }).ToList();
 ```
 
-Potom nahraďte `// Output the loaded commands` komentáře následujícím fragmentem kódu:
+Pak nahraďte `// Output the loaded commands` komentář následujícím fragmentem kódu:
 
 ```csharp
 foreach (ICommand command in commands)
@@ -121,7 +121,7 @@ foreach (ICommand command in commands)
 }
 ```
 
-Nahradit `// Execute the command with the name passed as an argument` komentáře následujícím fragmentem kódu:
+Nahraďte `// Execute the command with the name passed as an argument` komentář následujícím fragmentem kódu:
 
 ```csharp
 ICommand command = commands.FirstOrDefault(c => c.Name == commandName);
@@ -134,7 +134,7 @@ if (command == null)
 command.Execute();
 ```
 
-A nakonec statické metody pro přidání `Program` třídu s názvem `LoadPlugin` a `CreateCommands`, jak je znázorněno zde:
+A nakonec přidejte statické metody do `Program` třídy s názvem `LoadPlugin` a `CreateCommands`, jak je znázorněno zde:
 
 ```csharp
 static Assembly LoadPlugin(string relativePath)
@@ -169,15 +169,15 @@ static IEnumerable<ICommand> CreateCommands(Assembly assembly)
 }
 ```
 
-## <a name="load-plugins"></a>Načítání modulů plug-in
+## <a name="load-plugins"></a>Načtení modulů plug-in
 
-Nyní můžete načíst a vytvořit instanci příkazy ze sestavení načíst modul plug-in aplikace správně, ale je stále nelze načíst sestavení modulu plug-in. Vytvořte soubor s názvem *PluginLoadContext.cs* v *AppWithPlugin* složka s následujícím obsahem:
+Aplikace nyní může správně načíst a vytvořit instanci příkazů z načtených sestavení modulu plug-in, ale stále nemůže načíst sestavení modulu plug-in. Ve složce *AppWithPlugin* vytvořte soubor s názvem *PluginLoadContext.cs* s následujícím obsahem:
 
 [!code-csharp[loading-plugins](~/samples/core/extensions/AppWithPlugin/AppWithPlugin/PluginLoadContext.cs)]
 
-`PluginLoadContext` Typ je odvozen od <xref:System.Runtime.Loader.AssemblyLoadContext>. `AssemblyLoadContext` Typ je speciální typ v modulu runtime, která umožňuje vývojářům izolovat načtená sestavení do různých skupin, ujistěte se, že verze sestavení nejsou v konfliktu. Kromě toho vlastní `AssemblyLoadContext` můžete změnit výchozí chování a načítat sestavení z různých cest. `PluginLoadContext` Používá instanci `AssemblyDependencyResolver` typu zavedeného do .NET Core 3.0 k překladu názvů sestavení na cesty. `AssemblyDependencyResolver` Objekt je vytvořen s cestou k knihovny tříd .NET. Přeloží sestavení a nativních knihoven na jejich relativní cesty na základě *deps.json* soubor pro knihovnu tříd, jejichž cesty byl předán `AssemblyDependencyResolver` konstruktoru. Vlastní `AssemblyLoadContext` umožňuje mají svoje vlastní závislosti modulů plug-in a `AssemblyDependencyResolver` usnadňuje správně načíst závislosti.
+Typ je odvozen z <xref:System.Runtime.Loader.AssemblyLoadContext>. `PluginLoadContext` `AssemblyLoadContext` Typ je speciální typ v modulu runtime, který umožňuje vývojářům izolovat načtená sestavení do různých skupin, aby se zajistilo, že verze sestavení nejsou v konfliktu. Kromě toho může vlastní `AssemblyLoadContext` možnost zvolit různé cesty pro načtení sestavení a přepsat výchozí chování. `PluginLoadContext` Používá instanci`AssemblyDependencyResolver` typu představenou v .NET Core 3,0 k překladu názvů sestavení na cesty. `AssemblyDependencyResolver` Objekt je vytvořen s cestou k knihovně tříd .NET. Překládá sestavení a nativní knihovny na jejich relativní cesty založené na souboru *. DEPS. JSON* pro knihovnu tříd, jejíž cesta byla předána `AssemblyDependencyResolver` konstruktoru. Vlastní `AssemblyLoadContext` moduly plug-in umožňují používat vlastní závislosti `AssemblyDependencyResolver` a usnadňuje správné načtení závislostí.
 
-Teď, když `AppWithPlugin` projekt má `PluginLoadContext` zadejte, aktualizujte `Program.LoadPlugin` metoda spolu s následujícím textem:
+Teď, `AppWithPlugin` když `PluginLoadContext` má projekt typ, aktualizujte `Program.LoadPlugin` metodu s následujícím textem:
 
 ```csharp
 static Assembly LoadPlugin(string relativePath)
@@ -197,19 +197,19 @@ static Assembly LoadPlugin(string relativePath)
 }
 ```
 
-Pomocí jiného `PluginLoadContext` instance pro každý modul plug-in, moduly plug-in může mít různé nebo dokonce konfliktní závislosti bez problému.
+Při použití jiné `PluginLoadContext` instance pro každý modul plug-in můžou mít moduly plug-in různé nebo dokonce konfliktní závislosti bez problémů.
 
-## <a name="create-a-simple-plugin-with-no-dependencies"></a>Vytvořte jednoduchý modul plug-in bez závislostí
+## <a name="create-a-simple-plugin-with-no-dependencies"></a>Vytvoření jednoduchého modulu plug-in bez závislostí
 
-Zpět v kořenové složce postupujte takto:
+Zpět v kořenové složce proveďte následující kroky:
 
-1. Spustit `dotnet new classlib -o HelloPlugin` vytvoříte nový projekt knihovny tříd s názvem `HelloPlugin`.
-2. Spustit `dotnet sln add HelloPlugin/HelloPlugin.csproj` přidat projekt tak, aby `AppWithPlugin` řešení. 
-3. Nahradit *HelloPlugin/Class1.cs* soubor se soubor s názvem *HelloCommand.cs* s následujícím obsahem:
+1. Spusťte `dotnet new classlib -o HelloPlugin` , chcete-li vytvořit nový projekt knihovny `HelloPlugin`tříd s názvem.
+2. Spusťte `dotnet sln add HelloPlugin/HelloPlugin.csproj` , chcete-li přidat projekt `AppWithPlugin` do řešení. 
+3. Soubor *HelloPlugin/Class1. cs* nahraďte souborem s názvem *HelloCommand.cs* s následujícím obsahem:
 
 [!code-csharp[the-hello-plugin](~/samples/core/extensions/AppWithPlugin/HelloPlugin/HelloCommand.cs)]
 
-Nyní, otevřete *HelloPlugin.csproj* souboru. By měl vypadat nějak takto:
+Nyní otevřete soubor *HelloPlugin. csproj* . Měl by vypadat nějak takto:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -222,7 +222,7 @@ Nyní, otevřete *HelloPlugin.csproj* souboru. By měl vypadat nějak takto:
 
 ```
 
-Mezi `<Project>` značky, přidejte následující prvky:
+V mezi `<Project>` značkami přidejte následující prvky:
 
 ```xml
 <ItemGroup>
@@ -232,23 +232,23 @@ Mezi `<Project>` značky, přidejte následující prvky:
 </ItemGroup>
 ```
 
-`<Private>false</Private>` Element je velmi důležité. To říká MSBuild k nekopíruje *PluginBase.dll* do výstupního adresáře pro HelloPlugin. Pokud *PluginBase.dll* se nachází v adresáři výstupu sestavení `PluginLoadContext` se najít sestavení existuje a načtěte ho po načtení *HelloPlugin.dll* sestavení. V tomto okamžiku `HelloPlugin.HelloCommand` typ implementuje `ICommand` rozhraní z *PluginBase.dll* v adresáři výstupu `HelloPlugin` projekt není `ICommand` rozhraní, který je načten do Výchozí kontext načtení. Vzhledem k tomu, že modul runtime považuje tyto dva typy různých typů z různých sestavení `AppWithPlugin.Program.CreateCommands` metoda nenajde příkazy. V důsledku toho `<Private>false</Private>` metadat pro se vyžaduje odkaz na sestavení obsahující rozhraní modulu plug-in.
+`<Private>false</Private>` Element je velmi důležitý. Nástroj MSBuild nezkopíruje *PluginBase. dll* do výstupního adresáře pro HelloPlugin. Pokud se ve výstupním adresáři nachází sestavení *PluginBase. dll* , aplikace `PluginLoadContext` nalezne sestavení a načte ho při načtení sestavení *HelloPlugin. dll* . V tomto `HelloPlugin.HelloCommand` okamžiku typ bude `ICommand` implementovat rozhraní z *knihovny PluginBase. dll* ve výstupním `HelloPlugin` `ICommand` adresáři projektu, nikoli rozhraní, které je načteno do výchozího kontextu načtení. Vzhledem k tomu, že modul runtime tyto dva typy považuje za různé typy `AppWithPlugin.Program.CreateCommands` z různých sestavení, metoda tyto příkazy nenajde. Výsledkem je, že `<Private>false</Private>` metadata jsou vyžadována pro odkaz na sestavení obsahující rozhraní modulů plug-in.
 
-Teď, když `HelloPlugin` dokončení projektu, by měl aktualizujeme `AppWithPlugin` projekt tak, aby věděli, kde `HelloPlugin` najdete modulu plug-in. Po `// Paths to plugins to load` komentář, přidání `@"HelloPlugin\bin\Debug\netcoreapp3.0\HelloPlugin.dll"` jako prvek sady `pluginPaths` pole.
+Teď, `HelloPlugin` když je projekt hotový, měl by `AppWithPlugin` projekt aktualizovat, aby věděli, `HelloPlugin` kde se modul plug-in našel. Za komentář přidejte `@"HelloPlugin\bin\Debug\netcoreapp3.0\HelloPlugin.dll"` jako prvek pole.`pluginPaths` `// Paths to plugins to load`
 
-## <a name="create-a-plugin-with-library-dependencies"></a>Vytvořit modul plug-in s závislé položky knihoven
+## <a name="create-a-plugin-with-library-dependencies"></a>Vytvoření modulu plug-in se závislostmi knihovny
 
-Téměř všechny moduly plug-in jsou složitější než jednoduché "Hello World" a mnoha modulů plug-in mají závislosti na dalších knihovnách. `JsonPlugin` a `OldJson` modulu plug-in projekty v ukázce zobrazit dva příklady moduly plug-in s závislosti balíčku NuGet na `Newtonsoft.Json`. Soubory projektu samy nemají žádné speciální informace pro projektové odkazy a (po přidání modulu plug-in cesty k `pluginPaths` pole) na moduly plug-in spuštění, i v případě, že spuštění v rámci stejné AppWithPlugin aplikace. Ale tyto projekty nekopírovat odkazovaná sestavení do výstupního adresáře, aby sestavení musí být na počítači uživatele pro moduly plug-in pro práci. Existují dva způsoby, jak tento problém vyřešit. První možností je použít `dotnet publish` příkaz pro publikování knihovny tříd. Případně pokud budete chtít použít výstup `dotnet build` pro váš modul plug-in, můžete přidat `<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>` vlastnost mezi `<PropertyGroup>` značky v souboru modulu plug-in projektu. Zobrazit `XcopyablePlugin` projekt modulu plug-in pro příklad.
+Téměř všechny moduly plug-in jsou složitější než jednoduché "Hello World" a mnohé moduly plug-in mají závislosti na jiných knihovnách. Projekty modulů `OldJson` plug-in `Newtonsoft.Json`avukázce znázorňují dva příklady modulů plug-in s závislostmi balíčku NuGet v. `JsonPlugin` Samotné soubory projektu neobsahují žádné zvláštní informace pro odkazy na projekt a (po přidání cest modulu plug-in do `pluginPaths` pole) jsou moduly plug-in spouštěny dokonale, i když je spustíte ve stejném provedení aplikace AppWithPlugin. Tyto projekty však nekopírují odkazovaná sestavení do jejich výstupního adresáře, takže sestavení musí být přítomna v počítači uživatele, aby mohly fungovat moduly plug-in. Existují dva způsoby, jak tento problém obejít. První možností je použít `dotnet publish` příkaz pro publikování knihovny tříd. Případně, pokud chcete mít možnost použít výstup `dotnet build` pro modul plug-in, můžete `<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>` přidat vlastnost mezi `<PropertyGroup>` značkami v souboru projektu modulu plug-in. Příklad najdete v projektu moduluplug-in.`XcopyablePlugin`
 
-## <a name="other-plugin-examples-in-the-sample"></a>Další příklady modul plug-in v ukázce
+## <a name="other-plugin-examples-in-the-sample"></a>Další příklady modulů plug-in v ukázce
 
-Úplný zdrojový kód pro účely tohoto kurzu můžete najít v [úložišti dotnet/samples](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin). Je hotová ukázka obsahuje několik příkladů scénářů `AssemblyDependencyResolver` chování. Například `AssemblyDependencyResolver` objektu můžete také vyřešit nativních knihoven, jakož i lokalizovaná satelitní sestavení v balíčcích NuGet. `UVPlugin` a `FrenchPlugin` v úložišti ukázek ukazují tyto scénáře.
+Úplný zdrojový kód pro tento kurz najdete v [úložišti dotnet/Samples](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin). Hotová ukázka obsahuje několik dalších příkladů `AssemblyDependencyResolver` chování. Například `AssemblyDependencyResolver` objekt může také překládat nativní knihovny a také lokalizovaná satelitní sestavení obsažená v balíčcích NuGet. Tyto scénáře `FrenchPlugin` předvádí avúložištiukázek.`UVPlugin`
 
-## <a name="how-to-reference-a-plugin-interface-assembly-defined-in-a-nuget-package"></a>Způsob vytvoření odkazu na sestavení rozhraní modulu plug-in definovaných v balíčku NuGet
+## <a name="how-to-reference-a-plugin-interface-assembly-defined-in-a-nuget-package"></a>Postup odkazu na sestavení rozhraní modulu plug-in definované v balíčku NuGet
 
-Řekněme, že je aplikace A, který má modul plug-in rozhraní definované v balíček NuGet s názvem `A.PluginBase`. Jak můžete odkázat na balíček správně v projektu pro modul plug-in? Pro projektové odkazy pomocí `<Private>false</Private>` metadat na `ProjectReference` element v souboru projektu zabránily knihovny dll byly zkopírovány na výstupu.
+Řekněme, že existuje aplikace, která má rozhraní modulu plug-in definované v balíčku NuGet s názvem `A.PluginBase`. Jak v projektu modulu plug-in správně odkazovat na balíček? V případě odkazů na projekt, `<Private>false</Private>` použití metadat `ProjectReference` na elementu v souboru projektu zabránilo zkopírování knihovny DLL do výstupu.
 
-Chcete-li správně odkazovat `A.PluginBase` balíčku, kterou chcete změnit `<PackageReference>` element v souboru projektu následující:
+Pro správné odkazování `A.PluginBase` na balíček chcete `<PackageReference>` změnit prvek v souboru projektu na následující:
 
 ```xml
 <PackageReference Include="A.PluginBase" Version="1.0.0">
@@ -256,8 +256,8 @@ Chcete-li správně odkazovat `A.PluginBase` balíčku, kterou chcete změnit `<
 </PackageReference>
 ```
 
-Díky tomu `A.PluginBase` sestavení jsou zkopírovány do výstupního adresáře vašeho modulu plug-in a zajistí, že váš modul plug-in použije příslušné verzi `A.PluginBase`.
+To brání `A.PluginBase` zkopírování sestavení do výstupního adresáře vašeho modulu plug-in a zajistí, že bude modul plug-in používat `A.PluginBase`verzi.
 
-## <a name="plugin-target-framework-recommendations"></a>Modul plug-in cílové rozhraní framework doporučení
+## <a name="plugin-target-framework-recommendations"></a>Doporučení pro cílové rozhraní modulu plug-in
 
-Vzhledem k tomu používá načítání závislost modulu plug-in *deps.json* souboru, je gotcha související se modul plug-in cílovou architekturu. Konkrétně váš moduly plug-in zaměřit modulu runtime, jako je .NET Core 3.0 místo verze .NET Standard. `deps.json` Soubor se generuje založená na platformě pro které projekt cílí, a protože mnoho balíčků kompatibilním s technologií .NET Standard dodávat referenční sestavení pro sestavení proti sestavení .NET Standard a implementaci pro konkrétní moduly runtime, `deps.json` možná není správně sestavení implementace viz nebo ji může vzít .NET Standard verzi sestavení namísto očekáváte, že verze .NET Core.
+Vzhledem k tomu, že načítání závislostí modulu plug-in používá soubor *. DEPS. JSON* , existuje gotcha související s cílovým rozhraním modulu plug-in. Moduly plug-in by konkrétně měly cílit na modul runtime, jako je .NET Core 3,0, namísto verze .NET Standard. Soubor *. DEPS. JSON* je vygenerován na základě toho, na které architektuře je projekt cílen, a vzhledem k tomu, že mnoho balíčků kompatibilních s .NET Standard dodává referenční sestavení pro sestavení .NET Standard a implementační sestavení pro konkrétní moduly runtime, *. DEPS. JSON* nemusí správně zobrazovat implementační sestavení nebo může místo očekávané verze .NET Core použít .NET Standard verzi sestavení.
