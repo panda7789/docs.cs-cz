@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 786c2937a3f413170665c39464dc2c94417008ad
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 546feb6f3c4515ceecdb5b5afa14c0fc99ab7020
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331367"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363911"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (C# Průvodce programováním)
 
@@ -41,8 +41,6 @@ Nebo ho můžete předat přímo jako argument metody:
 [!code-csharp-interactive[lambda is argument](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 
 Použijete-li syntaxi založenou na metodě pro <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> volání metody <xref:System.Linq.Enumerable?displayProperty=nameWithType> ve třídě (stejně jako v LINQ to Objects a LINQ to XML), parametr je typ <xref:System.Func%602?displayProperty=nameWithType>delegáta. Výraz lambda je nejvhodnějším způsobem vytvoření tohoto delegátu. Při volání <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> metody <xref:System.Linq.Queryable?displayProperty=nameWithType> ve třídě (stejně jako v LINQ to SQL) je typ parametru typ [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>)stromu výrazu. Výraz lambda je opět pouze velmi stručným způsobem vytvoření tohoto stromu výrazu. Výrazy lambda umožňují, `Select` aby volání vypadaly podobně, i když ve skutečnosti typ objektu vytvořeného z výrazu lambda je jiný.
-
-Všechna omezení, která platí pro [anonymní metody](anonymous-methods.md) , platí také pro výrazy lambda.
   
 ## <a name="expression-lambdas"></a>Výrazy lambda výrazu
 
@@ -82,7 +80,7 @@ Text příkazové lambdy může obsahovat libovolný počet příkazů. V praxi
 
 [!code-csharp-interactive[statement lambda](~/samples/snippets/csharp/programming-guide/lambda-expressions/ExpressionAndStatementLambdas.cs#StatementLambda)]
 
-Příkazové lambdy nelze stejně jako anonymní metody používat k vytvoření stromů výrazu.
+Výrazy lambda příkazu nejde použít k vytváření stromů výrazů.
   
 ## <a name="async-lambdas"></a>Asynchronní výrazy lambda
 
@@ -198,7 +196,7 @@ Všimněte si, že lambda výrazy samy nemají typ, protože společný typ syst
 
 ## <a name="capture-of-outer-variables-and-variable-scope-in-lambda-expressions"></a>Zachycení vnějších proměnných a rozsahu proměnné ve výrazech lambda
 
-Výrazy lambda mohou odkazovat na *vnější proměnné* (viz [anonymní metody](anonymous-methods.md)), které jsou v oboru v metodě definující výraz lambda nebo v rozsahu v typu, který obsahuje výraz lambda. Proměnné, které jsou zachyceny tímto způsobem, jsou uloženy pro použití ve výrazu lambda i v případě, že proměnné by jinak přesáhly rozsah platnosti a bylo by vynuceno uvolnění paměti. Vnější proměnná musí být jednoznačně přiřazena dříve, než může být upotřebena ve výrazu lambda. Následující příklad znázorňuje tato pravidla:
+Výrazy lambda mohou odkazovat na *vnější proměnné*. Toto jsou proměnné, které jsou v oboru v metodě definující výraz lambda nebo v rozsahu typu, který obsahuje výraz lambda. Proměnné, které jsou zachyceny tímto způsobem, jsou uloženy pro použití ve výrazu lambda i v případě, že proměnné by jinak přesáhly rozsah platnosti a bylo by vynuceno uvolnění paměti. Vnější proměnná musí být jednoznačně přiřazena dříve, než může být upotřebena ve výrazu lambda. Následující příklad znázorňuje tato pravidla:
 
 [!code-csharp[variable scope](~/samples/snippets/csharp/programming-guide/lambda-expressions/VariableScopeWithLambdas.cs#VariableScope)]
 
@@ -226,7 +224,6 @@ Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/s
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [LINQ (jazykově integrovaný dotaz)](../concepts/linq/index.md)
-- [Anonymní metody](anonymous-methods.md)
 - [Stromy výrazů](../concepts/expression-trees/index.md)
 - [Místní funkce ve srovnání s lambda výrazy](../../local-functions-vs-lambdas.md)
 - [Implicitně typované výrazy lambda](../../implicitly-typed-lambda-expressions.md)

@@ -7,71 +7,71 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0e34785fce3cd88bfe4fe4b075ba34b8d22bff4
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: e10b6fd7df003de739b57bbb3e17deb46215763f
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469658"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364002"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
-Obálky objektu modelu COM (Component) můžete vytvořit pomocí funkce sady Visual Studio 2005 nebo rozhraní .NET Framework nástroje Tlbimp.exe a Regasm.exe. Obě metody vygenerovat dva typy COM – obálky:
+Obálky modelu COM (Component Object Model) můžete vytvořit pomocí funkcí sady Visual Studio 2005 nebo nástrojů .NET Framework nástroje Tlbimp. exe a Regasm. exe. Obě metody generují dva typy wrapperů COM:
 
-- A [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objekt modelu COM ve spravovaném kódu.
+- Běhová obálka, která se má [volat](../../../docs/framework/interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objektu COM ve spravovaném kódu.
 
-- A [obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md) s se požadovaná nastavení registru pro spuštění spravovaného objektu v nativní aplikaci.
+- Obálka s možnostmi [modelu COM](../../../docs/framework/interop/com-callable-wrapper.md) s požadovaným nastavením registru pro spuštění spravovaného objektu v nativní aplikaci.
 
-V sadě Visual Studio 2005 můžete přidat obálky COM jako odkaz na svůj projekt.
+V aplikaci Visual Studio 2005 můžete přidat obálku COM jako odkaz na projekt.
 
-## <a name="wrap-com-objects-in-a-managed-application"></a>Objekty COM zabalte ve spravované aplikaci
+## <a name="wrap-com-objects-in-a-managed-application"></a>Zabalení objektů COM ve spravované aplikaci
 
-### <a name="to-create-a-runtime-callable-wrapper-using-visual-studio"></a>Chcete-li vytvořit obálka volatelná za běhu pomocí sady Visual Studio
+### <a name="to-create-a-runtime-callable-wrapper-using-visual-studio"></a>Vytvoření obálky s požadovanou metodou spuštění pomocí sady Visual Studio
 
 1. Otevřete projekt pro spravovanou aplikaci.
 
-2. Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.
+2. V nabídce **projekt** klikněte na příkaz **Zobrazit všechny soubory**.
 
-3. Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.
+3. V nabídce **projekt** klikněte na příkaz **Přidat odkaz**.
 
-4. V dialogovém okně Přidat odkaz na tlačítko **COM** kartu, vyberte komponentu, kterou chcete použít a klikněte na tlačítko **OK**.
+4. V dialogovém okně Přidat odkaz klikněte na kartu **com** , vyberte komponentu, kterou chcete použít, a klikněte na tlačítko **OK**.
 
-     V **Průzkumníka řešení**, mějte na paměti, že komponenty modelu COM je přidán do složky odkazy ve vašem projektu.
+     V **Průzkumník řešení**si všimněte, že komponenta modelu COM je přidána do složky odkazy v projektu.
 
-Teď můžete psát kód pro přístup k objektu COM. Můžete začít deklarováním objektu, například pomocí `Imports` příkaz v jazyce Visual Basic nebo `Using` příkaz pro C#.
+Nyní můžete napsat kód pro přístup k objektu COM. Můžete začít deklarováním objektu, například pomocí `Imports` příkazu pro Visual Basic `Using` nebo příkazu pro. C#
 
 > [!NOTE]
-> Pokud chcete program komponenty Microsoft Office, nejdřív nainstalovat [Microsoft Office Primary Interop Assemblies](https://go.microsoft.com/fwlink/?LinkId=50479) (PIA) z webu Microsoft Download Center. V kroku 4, vyberte nejnovější verzi k dispozici produktu Office, jako například chcete objekt knihovny **Microsoft Word 11.0 objekt knihovny**.  
+> Pokud chcete programovat součásti systém Microsoft Office komponenty, nejprve nainstalujte [systém Microsoft Office primární spolupráce sestavení](https://go.microsoft.com/fwlink/?LinkId=50479) (PIA) z webu Microsoft Download Center. V kroku 4 vyberte nejnovější verzi knihovny objektů, kterou chcete použít pro požadovaný produkt Office, například **knihovnu objektů Microsoft Word 11,0**.  
   
-### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Chcete-li vytvořit obálka volatelná za běhu pomocí rozhraní .NET Framework – nástroje  
+### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Vytvoření obálky s požadovanou metodou spuštění pomocí .NET Frameworkch nástrojů  
   
-- Spustit [Tlbimp.exe (Importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) nástroj.  
+- Spusťte nástroj [Tlbimp. exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) .  
   
- Tento nástroj vytvoří sestavení, který obsahuje metadat v době běhu pro typy definované v původní knihovně typů.  
+ Tento nástroj vytvoří sestavení, které obsahuje metadata modulu runtime pro typy definované v původní knihovně typů.  
   
-## <a name="wrap-managed-objects-in-a-native-application"></a>Uveďte spravované objekty v nativní aplikaci  
+## <a name="wrap-managed-objects-in-a-native-application"></a>Zabalení spravovaných objektů v nativní aplikaci  
   
-### <a name="to-create-a-com-callable-wrapper-using-visual-studio"></a>Chcete-li vytvořit obálka volatelná aplikacemi COM pomocí sady Visual Studio  
+### <a name="to-create-a-com-callable-wrapper-using-visual-studio"></a>Vytvoření obálky s požadovanou metodou COM pomocí sady Visual Studio  
   
-1. Vytvořte projekt knihovny tříd pro spravované třídy, které chcete spouštět v nativním kódu. Třída musí mít výchozí konstruktor.  
+1. Vytvořte projekt knihovny tříd pro spravovanou třídu, kterou chcete spustit v nativním kódu. Třída musí mít konstruktor bez parametrů.  
   
-     Ověřte, že máte číslo úplné verze složené ze čtyř částí pro vaše sestavení v souboru AssemblyInfo. Toto číslo je vyžadován pro zachování verzí v registru Windows. Další informace o číslech verzí najdete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md).  
+     Ověřte, zda máte pro sestavení v souboru AssemblyInfo celé číslo verze se čtyřmi částmi. Toto číslo je vyžadováno pro údržbu správy verzí v registru systému Windows. Další informace o číslech verzí najdete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md).  
   
-2. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
+2. V nabídce **projekt** klikněte na příkaz **vlastnosti**.  
   
-3. Klikněte na tlačítko **kompilaci** kartu.  
+3. Klikněte na kartu **kompilovat** .  
   
-4. Vyberte **zaregistrovat pro interoperabilitu COM** zaškrtávací políčko.  
+4. Zaškrtněte políčko **zaregistrovat pro zprostředkovatele komunikace s objekty COM** .  
   
- Při vytváření projektu pro zprostředkovatele komunikace s objekty COM se automaticky registruje sestavení. Pokud vytváříte nativní aplikace v sadě Visual Studio 2005, můžete kliknutím na použít sestavení **přidat odkaz** na **projektu** nabídky.  
+ Při sestavování projektu je sestavení automaticky registrováno pro zprostředkovatele komunikace s objekty COM. Pokud vytváříte nativní aplikaci v aplikaci Visual Studio 2005, můžete použít sestavení kliknutím na **Přidat odkaz** v nabídce **projekt** .  
   
-### <a name="to-create-a-com-callable-wrapper-using-net-framework-tools"></a>Chcete-li vytvořit obálka volatelná aplikacemi COM pomocí rozhraní .NET Framework – nástroje  
+### <a name="to-create-a-com-callable-wrapper-using-net-framework-tools"></a>Vytvoření obálky s požadovanou metodou COM pomocí .NET Frameworkch nástrojů  
   
-Spustit [Regasm.exe (Nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) nástroj.  
+Spusťte nástroj [Regasm. exe (Nástroj pro registraci sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) .  
   
-Tento nástroj načte metadata sestavení a přidá nezbytné položky registru. Klienti modelu COM v důsledku toho můžete vytvořit třídy rozhraní .NET Framework transparentně. Sestavení můžete použít, jako by šlo nativních tříd modelu COM.  
+Tento nástroj přečte metadata sestavení a přidá nezbytné položky do registru. V důsledku toho mohou klienti modelu COM vytvářet .NET Framework třídy transparentně. Můžete použít sestavení, jako by šlo o nativní třídu COM.  
   
-Můžete spustit Regasm.exe na sestavení se nenachází v žádné adresáře a spusťte [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) ji přesunout do globální mezipaměti sestavení. Přesun sestavení nedojde k zneplatnění umístění položky registru, protože globální mezipaměti sestavení je vždy zkontrolován, pokud se sestavení nenajde jinde.  
+Můžete spustit nástroj Regasm. exe pro sestavení nacházející se v jakémkoli adresáři a poté spustit nástroj [Gacutil. exe (nástroj Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) , aby jej bylo možné přesunout do globální mezipaměti sestavení (GAC). Přesunutí sestavení neověřuje položky registru umístění, protože globální mezipaměť sestavení (GAC) je vždy zkoumána v případě, že sestavení není nalezeno jinde.  
   
 ## <a name="see-also"></a>Viz také:
 

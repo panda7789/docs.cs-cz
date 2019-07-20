@@ -1,5 +1,5 @@
 ---
-title: Hodnota typu – C# odkaz
+title: Typy hodnot – C# referenční informace
 ms.custom: seodec18
 ms.date: 11/26/2018
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: fd865f2a9c4a6d2c17f79a21866103a2db982e5f
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 72771ee494b6be7142ce3f9bec43dcb8aa8a8401
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661592"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363081"
 ---
-# <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
+# <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
 
 Existují dva druhy typů hodnot:
 
@@ -26,87 +26,87 @@ Existují dva druhy typů hodnot:
 
 ## <a name="main-features-of-value-types"></a>Hlavní funkce typů hodnot
 
-Proměnné hodnotového typu obsahuje hodnotu typu. Například proměnná `int` typ může obsahovat hodnotu `42`. Tím se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu, označované také jako objekt. Když přiřadí novou hodnotu do proměnné typu hodnoty, tato hodnota je zkopírována. Když se přiřadí novou hodnotu do proměnné typu odkazu, odkaz je zkopírován, nikoli samotného objektu.
+Proměnná typu hodnoty obsahuje hodnotu typu. Například proměnná `int` typu může obsahovat hodnotu `42`. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu, označovanou také jako objekt. Pokud přiřadíte novou hodnotu proměnné typu hodnoty, je tato hodnota zkopírována. Pokud přiřadíte novou hodnotu proměnné typu odkazu, je odkaz zkopírován, nikoli samotný objekt.
 
-Všechny hodnotové typy jsou implicitně odvozena z <xref:System.ValueType?displayProperty=nameWithType>.
+Všechny typy hodnot jsou implicitně odvozeny z <xref:System.ValueType?displayProperty=nameWithType>.
 
-Na rozdíl od v případě typů odkazu nelze odvodit nový typ z typu hodnoty. Nicméně, jako jsou typy odkazů, struktury mohou implementovat rozhraní.
+Na rozdíl od typů odkazů nemůžete odvodit nový typ z hodnotového typu. Nicméně, podobně jako typy odkazů, struktury mohou implementovat rozhraní.
 
-Hodnoty typových proměnných nesmí být `null` ve výchozím nastavení. Ale proměnné k odpovídající položce [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md) může být `null`.
+Proměnné typu hodnoty nemůžou `null` být ve výchozím nastavení. Proměnné odpovídajícího typu s možnou [hodnotou null](../../../csharp/programming-guide/nullable-types/index.md) ale mohou `null`být.
 
-Každý hodnotový typ má implicitní konstruktor bez parametrů, která inicializuje výchozí hodnota tohoto typu. Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](default-values-table.md).
+Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializuje výchozí hodnotu tohoto typu. Informace o výchozích hodnotách hodnotových typů najdete v [tabulce s výchozími hodnotami](default-values-table.md).
 
 ## <a name="simple-types"></a>Jednoduché typy
 
-*Jednoduché typy* představují sadu předdefinovaných struktury typy poskytované C# a zahrnuje následující typy:
+*Jednoduché typy* jsou množinou předdefinovaných typů struktury poskytovaných C# a tvořené následujícími typy:
 
-- [Integrální typy](../builtin-types/integral-numeric-types.md): číselné typy celých čísel a [char](char.md) typu
+- [Integrální typy](../builtin-types/integral-numeric-types.md): číselné typy integer a typ [znaku](char.md)
 - [Typy s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md)
 - [bool](bool.md)
 
-Jednoduché typy jsou označeny pomocí klíčových slov, ale tato klíčová slova jsou pouze aliasy pro typy předdefinované struktury v <xref:System> oboru názvů. Například [int](../builtin-types/integral-numeric-types.md) je alias pro <xref:System.Int32?displayProperty=nameWithType>. Úplný seznam aliasů naleznete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).
+Jednoduché typy jsou identifikovány pomocí klíčových slov, ale tato klíčová slova jsou jednoduše aliasy pro předdefinované <xref:System> typy struktury v oboru názvů. Například [int](../builtin-types/integral-numeric-types.md) je alias <xref:System.Int32?displayProperty=nameWithType>. Úplný seznam aliasů najdete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).
 
-Jednoduché typy liší od jiné typy struct, že umožňují některé další operace:
+Jednoduché typy se liší od jiných typů struktury v tom, že umožňují určité další operace:
 
-- Jednoduché typy může být inicializována pomocí literálů. Například `'A'` je literál typu `char` a `2001` je literál typu `int`.
+- Jednoduché typy lze inicializovat pomocí literálů. Například je literál `'A'` `char` `int`typu, který je literálem typu. `2001`
 
-- Je možné deklarovat konstanty jednoduché typy s [const](const.md) – klíčové slovo. Není možné mít konstanty jiné typy struct.
+- Můžete deklarovat konstanty jednoduchých typů pomocí klíčového slova [const](const.md) . Není možné mít konstanty jiných typů struktury.
 
-- Výrazy konstant, jehož operandy jsou všechny jednoduchý typ konstanty, jsou vyhodnocovány v době kompilace.
+- Výrazy konstant, jejichž operandy jsou všechny jednoduché konstanty typu, jsou vyhodnocovány v době kompilace.
 
-Další informace najdete v tématu [jednoduché typy](~/_csharplang/spec/types.md#simple-types) část [ C# specifikace jazyka](../language-specification/index.md).
+Další informace naleznete v části [jednoduché typy](~/_csharplang/spec/types.md#simple-types) [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="initializing-value-types"></a>Inicializace typů hodnot
 
-Lokální proměnné v jazyce C# musí být inicializován před jejich použití. Například může prohlásit místní proměnné bez inicializace jako v následujícím příkladu:
+Místní proměnné v C# nástroji musí být před použitím inicializovány. Například je možné deklarovat místní proměnnou bez inicializace jako v následujícím příkladu:
 
 ```csharp
 int myInt;
 ```
 
-Nelze ji použít předtím, než ji inicializovat. Můžete inicializovat pomocí následujícího příkazu:
+Nemůžete ho použít před inicializací. Můžete ji inicializovat pomocí následujícího příkazu:
 
 ```csharp
 myInt = new int();  // Invoke parameterless constructor for int type.
 ```
 
-Tento příkaz je ekvivalentem následujícího příkazu:
+Tento příkaz je ekvivalentní následujícímu příkazu:
 
 ```csharp
 myInt = 0;         // Assign an initial value, 0 in this example.
 ```
 
-Můžete samozřejmě máte deklaraci a inicializaci ve stejném příkazu jako v následujících příkladech:
+Můžete samozřejmě mít deklaraci a inicializaci ve stejném příkazu jako v následujících příkladech:
 
 ```csharp
 int myInt = new int();
 ```
 
-– nebo –
+ani
 
 ```csharp
 int myInt = 0;
 ```
 
-Použití [nové](../operators/new-operator.md) operátor volá konstruktor určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).
+Použití operátoru [New](../operators/new-operator.md) volá konstruktor bez parametrů konkrétního typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřadí hodnotu `0` k. `myInt` Další informace o hodnotách, které jsou přiřazeny voláním konstruktorů bez parametrů, naleznete v [tabulce Default Values](default-values-table.md).
 
-Pomocí uživatelem definované typy [nové](../operators/new-operator.md) vyvolat konstruktor bez parametrů. Například následující příkaz volá konstruktor bez parametrů `Point` struktury:
+S uživatelsky definovanými typy použijte [Nový](../operators/new-operator.md) k vyvolání konstruktoru bez parametrů. Například následující příkaz vyvolá konstruktor `Point` bez parametrů struktury:
 
 ```csharp
 var p = new Point(); // Invoke parameterless constructor for the struct.
 ```
 
-Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.
+Po tomto volání se struktura považuje za jednoznačně přiřazenou; To znamená, že všichni její členové jsou inicializováni na jejich výchozí hodnoty.
 
-Další informace o `new` operátoru, naleznete v tématu [nové](../operators/new-operator.md).
+Další informace o `new` operátoru naleznete v tématu [New](../operators/new-operator.md).
 
-Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](formatting-numeric-results-table.md).
+Informace o formátování výstupu číselných typů najdete v tématu [formátování tabulky číselných výsledků](formatting-numeric-results-table.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Typy](types.md)
 - [Odkazové typy](reference-types.md)
-- [Typy s možnou hodnotou Null](../../programming-guide/nullable-types/index.md)
+- [Typy s možnou hodnotou null](../../programming-guide/nullable-types/index.md)

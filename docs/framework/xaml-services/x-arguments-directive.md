@@ -6,17 +6,17 @@ helpviewer_keywords:
 - Arguments directive in XAML [XAML Services]
 - XAML [XAML Services], x:Arguments directive
 ms.assetid: 87cc10b0-b610-4025-b6b0-ab27ca27c92e
-ms.openlocfilehash: a87542513ffeeec7efc526d4218f921d1b7579a1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5bcd629e306169c1f7a61a316d76203827a2d0fe
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61953956"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364264"
 ---
 # <a name="xarguments-directive"></a>x:Arguments – direktiva
-Argumenty vytváření balíčků pro deklaraci jiného než výchozího konstruktoru objektu prvku v XAML nebo pro deklaraci objektu factory metody.  
+Argumenty konstrukce balíčků pro deklaraci elementu objektu konstruktoru bez parametrů v jazyce XAML nebo pro deklaraci objektu metody Factory.  
   
-## <a name="xaml-element-usage-nondefault-constructor"></a>Použití elementu XAML (jiný než výchozí konstruktor)  
+## <a name="xaml-element-usage-nonparameterless-constructor"></a>Použití prvku XAML (konstruktor bez parametrů)  
   
 ```  
 <object ...>  
@@ -26,7 +26,7 @@ Argumenty vytváření balíčků pro deklaraci jiného než výchozího konstru
 </object>  
 ```  
   
-## <a name="xaml-element-usage-factory-method"></a>Použití elementu XAML (výrobní metoda)  
+## <a name="xaml-element-usage-factory-method"></a>Použití elementu XAML (metoda Factory)  
   
 ```  
 <object x:FactoryMethod="methodName"...>  
@@ -40,29 +40,29 @@ Argumenty vytváření balíčků pro deklaraci jiného než výchozího konstru
   
 |||  
 |-|-|  
-|`oneOrMoreObjectElements`|Jeden nebo více elementů objektu, které určují argumenty, které mají být předány jiné než výchozí konstruktor nebo výrobní metoda zálohování.<br /><br /> Typické použití je použití inicializace textu v rámci elementů objektu určit skutečný argument hodnoty. Viz část o příklady.<br /><br /> Je důležité pořadí prvků. Typy XAML v pořadí musí odpovídají typům a zadejte pořadí přetížení základní konstruktor nebo výrobní metoda.|  
-|`methodName`|Název metoda factory, který by měl zpracovat žádné `x:Arguments` argumenty.|  
+|`oneOrMoreObjectElements`|Jeden nebo více prvků objektu, které určují argumenty, které mají být předány do back-konstruktoru bez parametrů nebo metody Factory.<br /><br /> Typické použití je použití inicializačního textu v rámci prvků objektu k určení skutečných hodnot argumentů. Viz část příklady.<br /><br /> Pořadí prvků je významné. Typy XAML v pořadí musí odpovídat typům a pořadím typu konstruktoru zálohování nebo přetížení metody výroby.|  
+|`methodName`|Název metody objektu pro vytváření, která by měla zpracovat `x:Arguments` jakékoli argumenty.|  
   
 ## <a name="dependencies"></a>Závislosti  
- `x:FactoryMethod` můžete upravit rozsah a chování kde `x:Arguments` platí.  
+ `x:FactoryMethod`může upravit rozsah a chování, kde `x:Arguments` platí.  
   
- Pokud ne `x:FactoryMethod` není zadána, `x:Arguments` se vztahuje na alternativní podpisy (jiné než výchozí) Základní konstruktory.  
+ Pokud není zadán, `x:Arguments` platí pro alternativní (nevýchozí) podpisy záložních konstruktorů. `x:FactoryMethod`  
   
- Pokud `x:FactoryMethod` není zadána, `x:Arguments` platí pro přetíženou metodu s názvem.  
+ Pokud `x:FactoryMethod` je zadáno, `x:Arguments` platí pro přetížení pojmenované metody.  
   
 ## <a name="remarks"></a>Poznámky  
- XAML 2006 můžete podporovat jiné než výchozí inicializace prostřednictvím inicializace text. Praktické aplikace inicializaci text konstrukce postup je však omezená. Inicializace text je považován za jeden řetězec textu; proto pouze přidá funkce pro inicializaci jediný parametr Pokud je definován konvertor typu pro konstrukce chování, které mohou analyzovat položky vlastních informací a vlastních oddělovačů z řetězce. Textový řetězec do objektu logiky je také potenciálně daný analyzátor XAML nativní výchozí konvertor typu pro zpracování primitivních elementů než řetězce true.  
+ XAML 2006 může podporovat nevýchozí inicializaci prostřednictvím inicializačního textu. Praktické použití techniky konstrukce inicializačního textu je však omezené. Inicializační text je považován za jeden textový řetězec; Proto přidává pouze schopnost pro inicializaci jednoho parametru, pokud není definován konvertor typu pro chování konstrukce, které může analyzovat vlastní položky informací a vlastní oddělovače z řetězce. Také textový řetězec do logiky objektu je potenciálně pro zpracování primitivních primitivních typů, které jsou jiné než skutečný řetězec, zadán z nativního převaděče pro kódování XAML.  
   
- `x:Arguments` Využití XAML není použití elementu vlastnosti v typické smysl, protože direktiv značek neodkazuje na typ obsahující objekt elementu. Je třeba více podobají jiné direktivy `x:Code` kde element demarks rozsahu, ve kterém kód by měl být interpretován jako jiné než výchozí hodnota pro podřízený obsah. V takovém případě komunikuje se informace o typů argumentů, které analyzátory XAML používají k určení signatury metody, které objekt pro vytváření konkrétního konstruktoru typu každého prvku objektu XAML `x:Arguments` využití se pokouší odkazovat.  
+ Použití `x:Arguments` jazyka XAML není použití prvku vlastností v typickém smyslu, protože označení direktivy neodkazuje na objekt obsahující typ elementu. Je více podobají na jiné direktivy, jako `x:Code` například, kde element označuje rozsah, ve kterém by měly být značky interpretovány jako jiné než výchozí pro podřízený obsah. V tomto případě typ XAML každého prvku objektu komunikuje informace o typech argumentů, které jsou používány analyzátory jazyka XAML k určení, které konkrétní konstruktory výrobní metody signatury `x:Arguments` se o použití pokouší odkazovat.  
   
- `x:Arguments` pro element objektu při konstrukci musí předcházet před všechny ostatní elementy vlastnosti, obsah, vnitřní text nebo inicializace řetězce elementu objektu. Elementů objektu v rámci `x:Arguments` mohou obsahovat atributy a inicializace řetězce, jak je od typu XAML a jeho základní konstruktor nebo výrobní metoda. Pro objekt nebo argumenty můžete zadat vlastní typy XAML nebo XAML, které jsou jinak mimo výchozí obor názvů XAML pomocí odkazu na zavedených předponu mapování.  
+ `x:Arguments`pro konstruovaný prvek objektu musí předcházet libovolné jiné prvky vlastností, obsah, vnitřní text nebo inicializační řetězce elementu Object. Prvky objektu v rámci `x:Arguments` mohou zahrnovat atributy a inicializační řetězce, jak je povoleno tímto typem XAML a jeho záložní konstruktor nebo výrobní metoda. Pro objekt nebo argumenty můžete zadat vlastní typy XAML nebo XAML, které jsou jinak mimo výchozí obor názvů XAML odkazem na zavedená mapování předpon.  
   
- XAML procesorů použijte následující pokyny k určení, jak jsou argumenty zadané v `x:Arguments` by měla sloužit k vytvoření objektu. Pokud `x:FactoryMethod` není zadán, bude porovnána informace do zadaného `x:FactoryMethod` (Všimněte si, že hodnota `x:FactoryMethod` je název metody, a metodu s názvem může mít přetížení. Pokud `x:FactoryMethod` není zadán, informace se porovnává se sadu všechna přetížení veřejný konstruktor objektu. Logika zpracování XAML poté porovnává počet parametrů a vybere přetížení s odpovídající Arita. Pokud existuje více než jedna shoda, by měl procesoru XAML porovnat typy parametrů na základě typů XAML prvky zadaného objektu. Pokud je stále více než jedna shoda, XAML procesoru chování není definováno. Pokud `x:FactoryMethod` je zadán, ale metoda nemůže být vyřešen, procesor XAML by měla vyvolat výjimku.  
+ Procesory XAML používají následující pokyny k určení toho, jak by měly `x:Arguments` být použity argumenty určené v pro vytvoření objektu. Je `x:FactoryMethod` -li parametr zadán, jsou informace porovnány `x:FactoryMethod` se zadaným ( `x:FactoryMethod` Všimněte si, že hodnota je název metody a pojmenovaná metoda může mít přetížení. Není `x:FactoryMethod` -li parametr zadán, jsou informace porovnány se sadou všech přetížení veřejného konstruktoru objektu. Logika zpracování XAML pak porovná počet parametrů a vybere přetížení se stejnou aritou. Pokud existuje více než jedna shoda, by měl procesor XAML porovnat typy parametrů založené na typech XAML zadaných prvků objektu. Pokud je stále více než jedna shoda, chování procesoru XAML není definováno. `x:FactoryMethod` Pokud je zadán, ale metodu nelze vyřešit, procesor XAML by měl vyvolat výjimku.  
   
- Použití atributu XAML `<x:Arguments>string</x:Arguments>` je technicky možný. Však získáte žádné možnosti nad rámec běžné co může udělat jinak inicializace text a typ převaděče a pomocí této syntaxe není záměr návrh funkce XAML 2009 objekt pro vytváření metody.  
+ Použití `<x:Arguments>string</x:Arguments>` atributu XAML je technicky možné. To však neposkytuje žádné možnosti nad rámec toho, co by bylo možné provést jinak prostřednictvím inicializačního textu a převaděčů typů, a použití této syntaxe není záměrem návrhu funkcí rozhraní XAML 2009 pro vytváření.  
   
 ## <a name="examples"></a>Příklady  
- Následující příklad ukazuje jiného než výchozího konstruktoru podpis a poté využití XAML `x:Arguments` , který přistupuje k podpisu.  
+ Následující příklad ukazuje signaturu konstruktoru bez parametrů, pak použití jazyka XAML pro `x:Arguments` přístup k tomuto podpisu.  
   
 ```csharp  
 public class Food {  
@@ -84,7 +84,7 @@ public class Food {
 </my:Food>  
 ```  
   
- Následující příklad ukazuje podpis metody cílový objekt pro vytváření a používání XAML `x:Arguments` , který přistupuje k podpisu.  
+ Následující příklad ukazuje cílový podpis metody výroby, potom použití `x:Arguments` XAML, který přistupuje k tomuto podpisu.  
   
 ```csharp  
 public Food TryLookupFood(string name)  

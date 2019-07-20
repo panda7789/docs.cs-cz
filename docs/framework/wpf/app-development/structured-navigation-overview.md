@@ -7,52 +7,52 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 287bb3a30776cfd8d30a93cce3e3bb04f32733c3
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 8760c847d9e73fdff9f10f0dfa55a6c674021667
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663741"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364184"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 
-Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.
+Obsah, který může být hostován pomocí [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] <xref:System.Windows.Controls.Frame>, a, nebo <xref:System.Windows.Navigation.NavigationWindow> , se skládá ze stránek, které mohou být identifikovány [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] balíčkem a přechodem na hypertextové odkazy. Struktura stránek a způsoby, kterými se dají přejít, jak jsou definované hypertextovými odkazy, se označují jako navigační topologie. Taková topologie vyhovuje nejrůznějším typům aplikací, zejména k procházení dokumentů. Pro takové aplikace může uživatel přecházet z jedné stránky na jinou stránku, aniž by museli mít žádné informace o druhé straně.
 
-Jiné druhy aplikací však mít stránek, které je potřeba vědět, kdy byla přešli mezi. Zvažte například aplikaci lidských zdrojů, která má jednu stránku, chcete-li vypsat všechny zaměstnance v organizaci – na stránce "Seznamu zaměstnanci". Tato stránka může také umožňují uživatelům přidat nového zaměstnance kliknutím na hypertextový odkaz. Po kliknutí na stránce přejde na stránku "Přidat Employee" shromažďování podrobnosti nového zaměstnance a vrátit na stránku "Seznamu zaměstnanci" k vytvoření nového zaměstnance a aktualizaci seznamu. Tento styl navigace je podobný voláním metody k nějakým způsobem zpracovat a vrátí hodnotu, která se nazývá strukturované programování. V důsledku toho se nazývá tento styl navigace *strukturovaná navigace*.
+Jiné typy aplikací však mají stránky, které potřebují znát, pokud byly přecházení mezi nimi. Představte si například aplikaci lidských zdrojů, která má jednu stránku k vypsání všech zaměstnanců v organizaci – na stránce "vypsat zaměstnance". Tato stránka může také uživatelům dovolit přidat nového zaměstnance kliknutím na hypertextový odkaz. Po kliknutí na stránku přejdete na stránku přidat zaměstnance, kde zjistíte podrobnosti o novém zaměstnanci a vrátíte je na stránku "seznam zaměstnanců". vytvoří se nový zaměstnanec a seznam se aktualizuje. Tento styl navigace je podobný volání metody pro provedení nějakého zpracování a vrácení hodnoty, která se označuje jako strukturované programování. V takovém případě se tento styl navigace označuje jako *strukturovaná navigace*.
 
-<xref:System.Windows.Controls.Page> Třída neimplementuje podporu pro strukturované navigace. Místo toho <xref:System.Windows.Navigation.PageFunction%601> třída odvozena z <xref:System.Windows.Controls.Page> a rozšiřuje základní konstrukcí, vyžaduje se pro strukturované navigace. Toto téma ukazuje, jak vytvořit strukturované navigace pomocí <xref:System.Windows.Navigation.PageFunction%601>.
+<xref:System.Windows.Controls.Page> Třída neimplementuje podporu strukturované navigace. Místo toho <xref:System.Windows.Controls.Page> je <xref:System.Windows.Navigation.PageFunction%601> Třída odvozena z a rozšiřuje ji základními konstrukcemi vyžadovanými pro strukturované navigace. V tomto tématu se dozvíte, jak vytvořit <xref:System.Windows.Navigation.PageFunction%601>strukturovanou navigaci pomocí.
 
 <a name="Structured_Navigation"></a>
 
-## <a name="structured-navigation"></a>Strukturované navigace
+## <a name="structured-navigation"></a>Strukturovaná navigace
 
-Při jedné stránce volá jiné stránky v strukturované navigace, se vyžadují některé nebo všechny z následujících chování:
+Když jedna stránka zavolá jinou stránku ve strukturované navigaci, vyžadují se některé nebo všechna následující chování:
 
-- Stránce volání přejde na stránce volané, volitelně předávání parametrů vyžadovaných názvem stránky.
+- Volající stránka přejde na volanou stránku a volitelně předává parametry vyžadované volanou stránkou.
 
-- Stránce volaná po dokončení uživatele na stránce volání vrátí konkrétně na stránku pro volání Volitelně:
+- Volaná stránka: když uživatel dokončí používání volající stránky, vrátí se konkrétně na volající stránku, volitelně:
 
-  - Vrací informace o stavu, který popisuje, jak stránce volání bylo dokončeno (například, zda uživatel stiskne tlačítko OK nebo tlačítko Storno).
+  - Vracení informací o stavu, které popisují, jak byla volající stránka dokončena (například zda uživatel stiskne tlačítko OK nebo tlačítko Storno).
 
-  - Vrací data, která byla shromážděna z uživatele (například podrobnosti nového zaměstnance).
+  - Vrácení dat, která byla shromážděna uživatelem (například Podrobnosti o novém zaměstnanci).
 
-- Po návratu volání stránky na stránku volané stránce volané Odebereme z historii navigace k izolaci jeden výskyt stránku volané z jiného.
+- Když se volající stránka vrátí na volanou stránku, volaná stránka je odebrána z historie navigace a izoluje jednu instanci pojmenované stránky od druhé.
 
-Těchto projevů je znázorněn ve na následujícím obrázku:
+Toto chování je znázorněno na následujícím obrázku:
 
-![Snímek obrazovky znázorňuje tok mezi volajícím a volané stránky.](./media/structured-navigation-overview/flow-between-calling-page-called-page.png)
+![Snímek obrazovky znázorňující tok mezi volající stránkou a volanou stránkou.](./media/structured-navigation-overview/flow-between-calling-page-called-page.png)
 
-Tyto chování můžete implementovat pomocí <xref:System.Windows.Navigation.PageFunction%601> jako názvem stránky.
+Toto chování můžete implementovat pomocí <xref:System.Windows.Navigation.PageFunction%601> jako volané stránky.
 
 <a name="Structured_Navigation_with_PageFunction"></a>
 
-## <a name="structured-navigation-with-pagefunction"></a>Strukturovaná navigace pomocí funkce PageFunction
+## <a name="structured-navigation-with-pagefunction"></a>Strukturovaná navigace pomocí PageFunction
 
-Toto téma ukazuje, jak implementovat základní mechanismy strukturované navigace zahrnující jediného <xref:System.Windows.Navigation.PageFunction%601>. V této ukázce <xref:System.Windows.Controls.Page> volání <xref:System.Windows.Navigation.PageFunction%601> zobrazíte <xref:System.String> hodnotu od uživatele a vrátí jej.
+Toto téma ukazuje, jak implementovat základní mechanismy strukturované navigace zahrnující jednu <xref:System.Windows.Navigation.PageFunction%601>z nich. V této ukázce <xref:System.Windows.Controls.Page> volání a <xref:System.Windows.Navigation.PageFunction%601> získá <xref:System.String> hodnotu od uživatele a vrátí ji.
 
-### <a name="creating-a-calling-page"></a>Vytvoření volání funkce stránky
+### <a name="creating-a-calling-page"></a>Vytvoření volající stránky
 
-Na stránce, která volá <xref:System.Windows.Navigation.PageFunction%601> může být buď <xref:System.Windows.Controls.Page> nebo <xref:System.Windows.Navigation.PageFunction%601>. V tomto příkladu je <xref:System.Windows.Controls.Page>, jak je znázorněno v následujícím kódu.
+Stránka, která volá <xref:System.Windows.Navigation.PageFunction%601> , může být <xref:System.Windows.Controls.Page> buď nebo <xref:System.Windows.Navigation.PageFunction%601>. V tomto příkladu je to <xref:System.Windows.Controls.Page>, jak je znázorněno v následujícím kódu.
 
 [!code-xaml[StructuredNavigationSample#CallingPageDefaultMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml#callingpagedefaultmarkup1)]
 [!code-xaml[StructuredNavigationSample#CallingPageDefaultMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml#callingpagedefaultmarkup2)]
@@ -64,9 +64,9 @@ Na stránce, která volá <xref:System.Windows.Navigation.PageFunction%601> mů�
 [!code-csharp[StructuredNavigationSample#CallingPageDefaultCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml.cs#callingpagedefaultcodebehind3)]
 [!code-vb[StructuredNavigationSample#CallingPageDefaultCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CallingPage.xaml.vb#callingpagedefaultcodebehind3)]
 
-### <a name="creating-a-page-function-to-call"></a>Vytváření pro volání funkce stránky
+### <a name="creating-a-page-function-to-call"></a>Vytvoření funkce stránky pro volání
 
-Protože volání stránku použijte ke shromažďování a vrátit data od uživatele, názvem stránky <xref:System.Windows.Navigation.PageFunction%601> je implementovaný jako obecné třídy, jehož argument typu Určuje typ hodnoty, která vrátí názvem stránky. Následující kód ukazuje počáteční implementace souboru s názvem stránky, můžete použít <xref:System.Windows.Navigation.PageFunction%601>, který vrátí hodnotu <xref:System.String>.
+Vzhledem k tomu, že volající stránka může použít volanou stránku ke shromáždění a vrácení dat od <xref:System.Windows.Navigation.PageFunction%601> uživatele, je implementována jako obecná třída, jejíž argument typu Určuje typ hodnoty, která volaná stránka vrátí. Následující kód ukazuje počáteční implementaci volané stránky pomocí <xref:System.Windows.Navigation.PageFunction%601>metody, která <xref:System.String>vrací.
 
 [!code-xaml[StructuredNavigationSample#CalledPageFunctionMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml#calledpagefunctionmarkup)]
 
@@ -75,9 +75,9 @@ Protože volání stránku použijte ke shromažďování a vrátit data od uži
 [!code-csharp[StructuredNavigationSample#CalledPageFunctionCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#calledpagefunctioncodebehind2)]
 [!code-vb[StructuredNavigationSample#CalledPageFunctionCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#calledpagefunctioncodebehind2)]
 
-Deklarace <xref:System.Windows.Navigation.PageFunction%601> je podobná deklaraci <xref:System.Windows.Controls.Page> přidání argumentů typu. Jak je vidět z příkladu kódu, zadejte argumenty jsou určené v i [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kód, pomocí `x:TypeArguments` atribut a kódu, pomocí syntaxe standardní obecný typ argumentu.
+Deklarace <xref:System.Windows.Navigation.PageFunction%601> je podobná deklaraci a <xref:System.Windows.Controls.Page> s přidáním argumentů typu. Jak vidíte z příkladu kódu, argumenty typu jsou zadány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu s `x:TypeArguments` použitím atributu a kódu na pozadí pomocí standardní syntaxe argumentu obecného typu.
 
-Není nutné používat pouze třídy rozhraní .NET Framework jako argumenty typu. A <xref:System.Windows.Navigation.PageFunction%601> mohl nazývat shromažďovat data specifického pro doménu, která je abstrahovaný jako vlastního typu. Následující kód ukazuje, jak použít jako argument typu pro vlastní typ <xref:System.Windows.Navigation.PageFunction%601>.
+Nemusíte používat pouze .NET Framework třídy jako argumenty typu. <xref:System.Windows.Navigation.PageFunction%601> Mohl by být volán pro shromažďování dat specifických pro doménu, která jsou abstrakce jako vlastní typ. Následující kód ukazuje, jak použít vlastní typ jako argument typu pro <xref:System.Windows.Navigation.PageFunction%601>.
 
 [!code-csharp[CustomTypePageFunctionSnippets#CustomTypeCODE1](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomTypePageFunctionSnippets/CSharp/CustomType.cs#customtypecode1)]
 [!code-vb[CustomTypePageFunctionSnippets#CustomTypeCODE1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomTypePageFunctionSnippets/VisualBasic/CustomType.vb#customtypecode1)]
@@ -92,15 +92,15 @@ Není nutné používat pouze třídy rozhraní .NET Framework jako argumenty ty
 [!code-csharp[CustomTypePageFunctionSnippets#CustomTypePageFunctionCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomTypePageFunctionSnippets/CSharp/CustomTypePageFunction.xaml.cs#customtypepagefunctioncodebehind2)]
 [!code-vb[CustomTypePageFunctionSnippets#CustomTypePageFunctionCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomTypePageFunctionSnippets/VisualBasic/CustomTypePageFunction.xaml.vb#customtypepagefunctioncodebehind2)]
 
-Argumenty typu pro <xref:System.Windows.Navigation.PageFunction%601> poskytují základ pro komunikaci mezi stránku volající a volané stránky, které jsou popsány v následujících částech.
+Argumenty typu pro <xref:System.Windows.Navigation.PageFunction%601> poskytnutí základu pro komunikaci mezi volající stránkou a volanou stránkou, která je popsána v následujících částech.
 
-Jak uvidíte, typ, který je označen deklarace <xref:System.Windows.Navigation.PageFunction%601> hraje důležitou roli při vracení dat z <xref:System.Windows.Navigation.PageFunction%601> na stránku pro volání.
+Jak vidíte, typ, který je identifikován deklarací <xref:System.Windows.Navigation.PageFunction%601> , hraje důležitou roli při vracení dat z a <xref:System.Windows.Navigation.PageFunction%601> na volající stránku.
 
-### <a name="calling-a-pagefunction-and-passing-parameters"></a>Třída PageFunction volání a předávání parametrů
+### <a name="calling-a-pagefunction-and-passing-parameters"></a>Volání PageFunction a předávání parametrů
 
-Volání na stránce, volání stránku vytvořit instanci názvem stránky a přejít k němu pomocí <xref:System.Windows.Navigation.NavigationService.Navigate%2A> metody. To umožňuje, aby volající stránka počáteční data předat názvem stránky, například výchozí hodnoty pro shromážděné volané stránkou.
+Chcete-li zavolat stránku, musí volající strana vytvořit instanci pojmenované stránky a přejít na ni pomocí <xref:System.Windows.Navigation.NavigationService.Navigate%2A> metody. Tato možnost umožňuje volající stránce předat počáteční data na volanou stránku, například výchozí hodnoty pro data shromažďovaná pomocí volané stránky.
 
-Následující kód ukazuje názvem stránky pomocí jiného než výchozího konstruktoru pro příjem parametrů z volající stránky.
+Následující kód ukazuje volanou stránku s konstruktorem bez parametrů pro příjem parametrů z volající stránky.
 
 [!code-csharp[StructuredNavigationSample#AcceptsInitialDataCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#acceptsinitialdatacodebehind1)]
 [!code-vb[StructuredNavigationSample#AcceptsInitialDataCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#acceptsinitialdatacodebehind1)]
@@ -111,7 +111,7 @@ Následující kód ukazuje názvem stránky pomocí jiného než výchozího ko
 [!code-csharp[StructuredNavigationSample#AcceptsInitialDataCODEBEHIND4](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#acceptsinitialdatacodebehind4)]
 [!code-vb[StructuredNavigationSample#AcceptsInitialDataCODEBEHIND4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#acceptsinitialdatacodebehind4)]
 
-Následující kód ukazuje volání zpracování stránky <xref:System.Windows.Documents.Hyperlink.Click> událost <xref:System.Windows.Documents.Hyperlink> instanci volané stránku a předat ji počáteční řetězcovou hodnotu.
+Následující kód ukazuje volající stránku, <xref:System.Windows.Documents.Hyperlink.Click> <xref:System.Windows.Documents.Hyperlink> která zpracovává událost pro vytvoření instance pojmenované stránky a předání počáteční hodnoty řetězce.
 
 [!code-xaml[StructuredNavigationSample#PassingDataMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml#passingdatamarkup2)]
 [!code-csharp[StructuredNavigationSample#PassingDataCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml.cs#passingdatacodebehind1)]
@@ -121,63 +121,63 @@ Následující kód ukazuje volání zpracování stránky <xref:System.Windows.
 [!code-csharp[StructuredNavigationSample#PassingDataCODEBEHIND3](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml.cs#passingdatacodebehind3)]
 [!code-vb[StructuredNavigationSample#PassingDataCODEBEHIND3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CallingPage.xaml.vb#passingdatacodebehind3)]
 
-Můžete se nevyžadují pro předání parametrů do volané stránky. Místo toho může postupujte takto:
+Na volanou stránku není nutné předávat parametry. Místo toho můžete provést následující akce:
 
-- Na stránce volání:
+- Z volající stránky:
 
-  1. Vytvořit instanci s názvem <xref:System.Windows.Navigation.PageFunction%601> pomocí výchozího konstruktoru.
+  1. Vytvoří instanci s názvem <xref:System.Windows.Navigation.PageFunction%601> s použitím konstruktoru bez parametrů.
 
-  2. Parametry v Store <xref:System.Windows.Application.Properties%2A>.
+  2. Uložte parametry do <xref:System.Windows.Application.Properties%2A>.
 
-  3. Přejděte do volaného <xref:System.Windows.Navigation.PageFunction%601>.
+  3. Přejděte k volanému <xref:System.Windows.Navigation.PageFunction%601>.
 
-- Z s názvem <xref:System.Windows.Navigation.PageFunction%601>:
+- Z volaného <xref:System.Windows.Navigation.PageFunction%601>:
 
-  - Načtení a použití parametry uložené v <xref:System.Windows.Application.Properties%2A>.
+  - Načte a použije parametry uložené v <xref:System.Windows.Application.Properties%2A>.
 
-Ale jak uvidíte krátce, stále potřebovat použijete kód instanci a přejděte na stránku volaná ke shromažďování dat vrácených názvem stránky. Z tohoto důvodu <xref:System.Windows.Navigation.PageFunction%601> musí uchovávat zachování připojení; jinak vrátí hodnotu, při příštím přejdete na <xref:System.Windows.Navigation.PageFunction%601>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvoří instanci <xref:System.Windows.Navigation.PageFunction%601> pomocí výchozího konstruktoru.
+Ale jak vidíte za chvíli, budete potřebovat použít kód pro vytvoření instance a přejít na volanou stránku, kde můžete shromažďovat data vrácená volanou stránkou. Z <xref:System.Windows.Navigation.PageFunction%601> tohoto důvodu musí být nutné zachovat aktivní. v opačném případě při příštím přechodu na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozhraní <xref:System.Windows.Navigation.PageFunction%601>vytvoří instance <xref:System.Windows.Navigation.PageFunction%601> pomocí konstruktoru bez parametrů.
 
-Před názvem stránky můžete vrátit, ale je potřeba vrátit data, která je možné načíst podle volání stránky.
+Před vrácením volané stránky však musí vracet data, která lze načíst volající stránkou.
 
-### <a name="returning-task-result-and-task-data-from-a-task-to-a-calling-page"></a>Vrátí výsledek úlohy a úkolů Data z úlohy k volání funkce stránky
+### <a name="returning-task-result-and-task-data-from-a-task-to-a-calling-page"></a>Vrácení výsledku úkolu a dat úkolu z úkolu na volající stránku
 
-Po dokončení volané stránce uživatel označeny v tomto příkladu stisknutím tlačítka OK ani Storno, volaná stránka potřebám vrátit. Protože volání stránky volané stránka používá ke shromažďování dat od uživatele, volání stránka vyžaduje dva typy informací:
+Jakmile uživatel dokončí používání pojmenované stránky, které jsou v tomto příkladu označeny tlačítky OK nebo Storno, je nutné, aby volaná stránka vrátila hodnotu. Vzhledem k tomu, že volající stránka použila volaný stránku ke shromáždění dat od uživatele, volající stránka vyžaduje dva typy informací:
 
-1. Určuje, zda uživatel zrušil názvem stránky (stisknutím klávesy na tlačítko OK nebo na tlačítko Storno v tomto příkladu). To umožňuje, aby volající stránka k určení, jestli se má zpracovat data, která stránce volání shromážděných od uživatele.
+1. Určuje, zda uživatel zrušil volanou stránku (stisknutím tlačítka OK nebo tlačítkem zrušit v tomto příkladu). To umožňuje volající stránce určit, jestli se mají zpracovávat data, která volající stránka shromáždila od uživatele.
 
-2. Data zadaná uživatelem.
+2. Data, která byla poskytnuta uživatelem.
 
-K vrácení informací, <xref:System.Windows.Navigation.PageFunction%601> implementuje <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> metody. Následující kód ukazuje, jak ji volat.
+Chcete-li vrátit <xref:System.Windows.Navigation.PageFunction%601> informace, <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> implementuje metodu. Následující kód ukazuje, jak ho zavolat.
 
 [!code-csharp[StructuredNavigationSample#ReturnCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#returncodebehind1)]
 [!code-vb[StructuredNavigationSample#ReturnCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#returncodebehind1)]
 [!code-csharp[StructuredNavigationSample#ReturnCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#returncodebehind2)]
 [!code-vb[StructuredNavigationSample#ReturnCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#returncodebehind2)]
 
-V tomto příkladu, pokud uživatel stiskne tlačítko Storno, hodnota `null` se vrátí na původní stránku. Pokud místo toho stisknutí tlačítka OK, je vrácena hodnota řetězce zadaná uživatelem. <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> je `protected virtual` metodu, která volání vrátit data na stránku pro volání. Vaše data musí být zabalené v instanci obecného <xref:System.Windows.Navigation.ReturnEventArgs%601> typ, jehož argument typu Určuje typ hodnoty, které <xref:System.Windows.Navigation.ReturnEventArgs%601.Result%2A> vrátí. Tímto způsobem, když deklarujete <xref:System.Windows.Navigation.PageFunction%601> s argumentem určitého typu jsou oznamující, že <xref:System.Windows.Navigation.PageFunction%601> vrátí instanci typu, který je určený argumentem typu. V tomto příkladu argument typu a v důsledku toho návratová hodnota je typu <xref:System.String>.
+Pokud uživatel v tomto příkladu stiskne tlačítko Storno, vrátí se na volající stránku hodnota `null` . Pokud se místo toho stiskne tlačítko OK, vrátí se hodnota řetězce zadaná uživatelem. <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A>`protected virtual` je metoda, kterou zavoláte, chcete-li vrátit data na volající stránku. Vaše data musí být zabalena do instance obecného <xref:System.Windows.Navigation.ReturnEventArgs%601> typu, jejíž argument typ Určuje typ hodnoty, která <xref:System.Windows.Navigation.ReturnEventArgs%601.Result%2A> se vrátí. Tímto způsobem, pokud deklarujete <xref:System.Windows.Navigation.PageFunction%601> s konkrétním argumentem typu, zjistíte, že a <xref:System.Windows.Navigation.PageFunction%601> vrátí instanci typu, který je určen argumentem typu. V tomto příkladu je argument typu a následně návratová hodnota typu <xref:System.String>.
 
-Když <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> je volána, volajícího stránka potřebám nějaký způsob přijímá návratovou hodnotu <xref:System.Windows.Navigation.PageFunction%601>. Z tohoto důvodu <xref:System.Windows.Navigation.PageFunction%601> implementuje <xref:System.Windows.Navigation.PageFunction%601.Return> událost pro stránky, které zpracovávají volání. Když <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> se nazývá <xref:System.Windows.Navigation.PageFunction%601.Return> se vyvolá, aby volající stránky můžete zaregistrovat pomocí <xref:System.Windows.Navigation.PageFunction%601.Return> pro příjem oznámení.
+Když <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> je volána, volající stránka potřebuje nějaký způsob, jak přijmout návratovou hodnotu <xref:System.Windows.Navigation.PageFunction%601>. Z tohoto důvodu <xref:System.Windows.Navigation.PageFunction%601.Return> implementuje <xref:System.Windows.Navigation.PageFunction%601> událost pro volání stránek, které mají být zpracovány. Při <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> volání je vyvolána <xref:System.Windows.Navigation.PageFunction%601.Return> , aby se volající stránka mohla zaregistrovat s <xref:System.Windows.Navigation.PageFunction%601.Return> pro příjem oznámení.
 
 [!code-csharp[StructuredNavigationSample#ProcessResultCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml.cs#processresultcodebehind1)]
 [!code-vb[StructuredNavigationSample#ProcessResultCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CallingPage.xaml.vb#processresultcodebehind1)]
 [!code-csharp[StructuredNavigationSample#ProcessResultCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CallingPage.xaml.cs#processresultcodebehind2)]
 [!code-vb[StructuredNavigationSample#ProcessResultCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CallingPage.xaml.vb#processresultcodebehind2)]
 
-### <a name="removing-task-pages-when-a-task-completes"></a>Odebrání stránky úloh po dokončení úkolu
+### <a name="removing-task-pages-when-a-task-completes"></a>Odebrání stránek úloh po dokončení úkolu
 
-Vrátí stránku volané a uživatel nebyl zrušit názvem stránky, volání stránky bude zpracovávat data, která byla zadaná uživatelem a vráceny také ze stránky s názvem. Získání dat tímto způsobem je obvykle aktivitu izolované; Po návratu názvem stránky, na stránce volání je třeba můžete vytvořit a přejít na novou stránku volání zaznamenat další data.
+Když se volaná stránka vrátí a uživatel nezrušil volanou stránku, volající stránka zpracuje data poskytnutá uživatelem a také vrátila z volané stránky. Získání dat tímto způsobem je obvykle izolovaná aktivita; Po návratu volané stránky musí volající stránka vytvořit novou volající stránku a přejít na ni a zachytit další data.
 
-Nicméně pokud volaná stránka je odebrána z deníku, bude uživatel moci přejít zpět na předchozí instanci volání stránky. Jestli <xref:System.Windows.Navigation.PageFunction%601> se uchovávají v deníku závisí <xref:System.Windows.Navigation.PageFunctionBase.RemoveFromJournal%2A> vlastnost. Ve výchozím nastavení, je funkce stránky automaticky odebrány při <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> se nevolá, protože <xref:System.Windows.Navigation.PageFunctionBase.RemoveFromJournal%2A> je nastavena na `true`. Aby funkce stránky v historii navigace po <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> je volána, nastavte <xref:System.Windows.Navigation.PageFunctionBase.RemoveFromJournal%2A> k `false`.
+Pokud se ale z deníku neodebere volaná stránka, uživatel bude moct přejít zpátky na předchozí instanci volající stránky. Zda je v deníku uchována <xref:System.Windows.Navigation.PageFunctionBase.RemoveFromJournal%2A> vlastnost, je určena vlastností. <xref:System.Windows.Navigation.PageFunction%601> Ve výchozím nastavení je funkce stránky při <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> volání automaticky odebrána, protože <xref:System.Windows.Navigation.PageFunctionBase.RemoveFromJournal%2A> je nastavena na `true`. Chcete-li zachovat funkci stránky v historii navigace <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> po volání funkce, <xref:System.Windows.Navigation.PageFunctionBase.RemoveFromJournal%2A> nastavte `false`na.
 
 <a name="Other_Types_of_Structured_Navigation"></a>
 
-## <a name="other-types-of-structured-navigation"></a>Jiné druhy strukturované navigace
+## <a name="other-types-of-structured-navigation"></a>Jiné typy strukturované navigace
 
-Toto téma ukazuje nejzákladnější použití <xref:System.Windows.Navigation.PageFunction%601> pro podporu volání nebo vracet strukturovaná navigace. Tyto základy vám poskytuje možnost vytvářet složitější typy strukturované navigace.
+Toto téma znázorňuje základní použití nástroje pro podporu strukturované <xref:System.Windows.Navigation.PageFunction%601> navigace typu volání nebo vrácení. Tato základ vám umožní vytvořit komplexnější typy strukturované navigace.
 
-Například někdy více stránek nevyžadovala volání stránky shromažďovat dostatek dat od uživatele nebo k provádění úkolu. Použití více stránek se označuje jako "wizard".
+Například někdy je vyžadováno více stránek volající stránky, aby bylo možné shromáždit dostatek dat od uživatele nebo provést úlohu. Použití více stránek je označováno jako "Průvodce".
 
-V ostatních případech aplikace mohou mít topologie komplexních navigace, které jsou závislé na strukturované navigace efektivně pracovat. Další informace najdete v tématu [přehled topologií navigace](navigation-topologies-overview.md).
+V ostatních případech můžou aplikace mít složité navigační topologie, které jsou závislé na strukturované navigaci, aby fungovaly efektivně. Další informace najdete v tématu [Přehled topologií navigace](navigation-topologies-overview.md).
 
 ## <a name="see-also"></a>Viz také:
 

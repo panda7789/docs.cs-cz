@@ -8,17 +8,17 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: ce08dadb0fb7b986c0573b1514f9ecbbe2961c3a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5947808cd137fc4cd280ac683a3e9a14b0d4644d
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674568"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363873"
 ---
-# <a name="defaultproxy-element-network-settings"></a>\<defaultProxy > – Element (nastavení sítě)
-Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).  
+# <a name="defaultproxy-element-network-settings"></a>\<defaultProxy – element > (nastavení sítě)
+Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<defaultProxy>  
   
@@ -41,33 +41,33 @@ Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|`enabled`|Určuje, zda se používá webový proxy server. Výchozí hodnota je `true`.|  
-|`useDefaultCredentials`|Určuje, zda výchozí přihlašovací údaje pro tohoto hostitele se používají pro přístup webový proxy server. Výchozí hodnota je `false`.|  
+|`enabled`|Určuje, zda je použit webový proxy server. Výchozí hodnota je `true`.|  
+|`useDefaultCredentials`|Určuje, jestli se pro přístup k webovému proxy serveru používají výchozí přihlašovací údaje pro tohoto hostitele. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
-|[module](../../../../../docs/framework/configure-apps/file-schema/network/module-element-network-settings.md)|Přidá nový modul proxy serveru do aplikace.|  
+|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
+|[module](../../../../../docs/framework/configure-apps/file-schema/network/module-element-network-settings.md)|Přidá do aplikace nový modul proxy.|  
 |[proxy](../../../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md)|Definuje proxy server.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud defaultProxy – element je prázdný, použije se nastavení proxy serveru z aplikace Internet Explorer. Toto chování se liší od verze 1.1 rozhraní .NET Framework.  
+ Pokud je Element defaultProxy prázdný, použije se nastavení proxy z Internet Exploreru. Toto chování se liší od verze 1,1 .NET Framework.  
   
- Pokud je vyvolána výjimka [modulu](../../../../../docs/framework/configure-apps/file-schema/network/module-element-network-settings.md) prvek určuje neveřejný typ, typ není odvozený od <xref:System.Net.IWebProxy> došlo k výjimce z výchozího konstruktoru tohoto objektu třídy, nebo došlo k výjimce při načítání systému zadat výchozí proxy server. <xref:System.Exception.InnerException%2A> Vlastnosti výjimky by měl mít další informace o hlavní příčinu chyby.  
+ Výjimka je vyvolána, pokud prvek [modulu](../../../../../docs/framework/configure-apps/file-schema/network/module-element-network-settings.md) určuje typ, který není veřejný, typ není odvozen od <xref:System.Net.IWebProxy> třídy, došlo k výjimce z konstruktoru bez parametrů tohoto objektu, nebo došlo k výjimce při načítání výchozí proxy server zadaný systémem. <xref:System.Exception.InnerException%2A> Vlastnost výjimky by měla obsahovat další informace o hlavní příčině chyby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá výchozí hodnoty z proxy serveru aplikace Internet Explorer, určuje adresu proxy serveru a obchází proxy pro místní přístup a contoso.com.  
+ Následující příklad používá výchozí hodnoty z proxy serveru aplikace Internet Explorer, určuje adresu proxy serveru a obchází proxy server pro místní přístup a contoso.com.  
   
 ```xml  
 <configuration>  

@@ -1,20 +1,20 @@
 ---
-title: Delegáti - C# Průvodce programováním
+title: Delegáti C# – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: faab42a7a2f7dda12f32a65890b795abfe0d11ca
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 62785753cf0eb11965f93e517d6a784081b41a13
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608719"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363808"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegáti (Průvodce programováním v C#)
-A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody se seznamem konkrétních parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
+[Delegát](../../../csharp/language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
   
  Delegáty se používají pro předávání metod jako argumentů jiným metodám. Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. Můžete vytvořit vlastní metodu a konkrétní třída, jako je ovládací prvek Windows, může volat vaši metodu, pokud dojde k určité události. Následující příklad znázorňuje deklaraci delegátu.  
   
@@ -30,7 +30,7 @@ A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, k
 ## <a name="delegates-overview"></a>Přehled delegátů  
  Delegáty mají následující vlastnosti:  
   
-- Delegáti jsou podobné na ukazatele funkcí jazyka C++, ale delegáti jsou plně objektově orientované a na rozdíl od C++ ukazatelů na členské funkce, delegáti zapouzdřit instance objektu a metody.
+- Delegáti jsou podobní ukazatelům C++ funkce, ale Delegáti jsou plně objektově orientované a na C++ rozdíl od ukazatelů na členské funkce, delegáty zapouzdřují instanci objektu i metodu.
   
 - Delegáty umožňují předávání metod jako parametrů.  
   
@@ -38,34 +38,32 @@ A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, k
   
 - Delegáty lze zřetězit; například je možné volat větší počet metod v rámci jediné události.  
   
-- Metody nemusí přesně odpovídat typu delegátu. Další informace najdete v tématu [použití odchylky v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).  
+- Metody nemusí přesně odpovídat typu delegátu. Další informace naleznete v tématu [použití variance v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).  
   
-- C# verze 2.0 byl zaveden koncept [anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md), které umožňují bloky kódu mají být předány jako parametrů, namísto samostatně definované metody. Verze 3.0 jazyka C# představila výrazy lambda jako přesnější způsob psaní bloků vloženého kódu. Anonymní metody i výrazy lambda (v určitých kontextech) se kompilují na typy delegátů. Tyto funkce se souhrnně označují jako anonymní funkce. Další informace o výrazech lambda naleznete v tématu [anonymní funkce](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md).  
+- C#verze 2,0 představila koncept [anonymních metod](../../../csharp/language-reference/operators/delegate-operator.md), které umožňují, aby byly bloky kódu předány jako parametry namísto samostatně definované metody. Verze 3.0 jazyka C# představila výrazy lambda jako přesnější způsob psaní bloků vloženého kódu. Anonymní metody i výrazy lambda (v určitých kontextech) se kompilují na typy delegátů. Tyto funkce se souhrnně označují jako anonymní funkce. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 - [Použití delegátů](../../../csharp/programming-guide/delegates/using-delegates.md)  
   
-- [Použití delegátů namísto rozhraní (C# Programming Guide)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
+- [Kdy použít delegáty namísto rozhraní (C# Průvodce programováním)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
 - [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
   
-- [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
-  
 - [Použití odchylek v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Postupy: Kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)  
+- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)  
   
-- [Postupy: Deklarování, vytváření instancí a použití delegáta](../../../csharp/programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md)  
+- [Postupy: Deklarace, vytvoření instance a použití delegáta](../../../csharp/programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md)  
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [delegáti](~/_csharplang/spec/delegates.md) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [Delegáti](~/_csharplang/spec/delegates.md) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="featured-book-chapters"></a>Doporučené kapitoly knihy  
- [Delegáty, události a výrazy Lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [ C# 3.0 Cookbook, Third Edition: Víc než 250 řešení pro C# 3.0 programmers](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+ [Delegáti, události a výrazy lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [ C# 3,0 kuchařka, třetí vydání: Více než 250 řešení pro C# 3,0 programátory](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
   
- [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) v [učení C# 3.0: Hlavní základní informace o C# 3.0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
+ [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) [ve C# studiu 3,0: Hlavní základy C# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
   
 ## <a name="see-also"></a>Viz také:
 

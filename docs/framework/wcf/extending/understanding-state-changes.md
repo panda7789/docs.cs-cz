@@ -2,160 +2,160 @@
 title: Principy změn stavů
 ms.date: 03/30/2017
 ms.assetid: a79ed2aa-e49a-47a8-845a-c9f436ec9987
-ms.openlocfilehash: 858da2a88c17920910c05966bb3b211d754fb278
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 549620ee5317e68735b392ce35b73c92f2474eab
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424768"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363943"
 ---
 # <a name="understanding-state-changes"></a>Principy změn stavů
-Toto téma popisuje stavy a přechody, které mají kanály, typy používané struktura kanálu stavům a způsobu jejich implementace.  
+Toto téma popisuje stavy a přechody, které kanály obsahují, typy používané ke strukturování stavů kanálů a jejich implementaci.  
   
-## <a name="state-machines-and-channels"></a>Stav počítače a kanály  
- Objekty, které pracují s komunikací, například soketů, obvykle k dispozici stavový počítač, jehož přechodů mezi stavy týkají přidělování prostředků sítě, přičemž nebo přijímá připojení, zavření připojení a komunikace se ukončuje. Stavový počítač kanál poskytuje jednotné model stavů objekt komunikace, který abstrahuje základní implementaci tohoto objektu. <xref:System.ServiceModel.ICommunicationObject> Rozhraní poskytuje sadu státy, metody přechod stavu a událostí změny stavu. Všechny kanály, objekty pro vytváření kanálů a moduly pro naslouchání kanálů můžete implementovat počítač stav kanálu.  
+## <a name="state-machines-and-channels"></a>Stavové počítače a kanály  
+ Objekty, které se zabývají komunikací, například sokety, obvykle prezentují Stavový počítač, jehož přechody stavu se vztahují k přidělování síťových prostředků, vytváření nebo přijímání připojení, zavírání připojení a ukončení komunikace. Stavový počítač kanálu poskytuje jednotný model stavů komunikačního objektu, který vyabstrakce základní implementaci tohoto objektu. <xref:System.ServiceModel.ICommunicationObject> Rozhraní poskytuje sadu stavů, metody přechodu stavu a události přechodu stavu. Všechny kanály, továrny kanálů a naslouchací procesy kanálu implementují Stavový počítač kanálu.  
   
- Události uzavřeno, zavřete, Faulted, otevřeno a otevírání signál pozorovatel externí po přechod stavu.  
+ Po přechodu stavu dojde k zavření, zavření, chybě, otevření a otevření signálu externí pozorovatel.  
   
- Metody Abort, zavřít a otevřete (a jejich ekvivalenty asynchronní) způsobit, že přechodů mezi stavy.  
+ Metody přeruší, zavřou a otevřou (a jejich asynchronní ekvivalenty) způsobují přechody stavu.  
   
- Vlastnost state vrátí aktuální stav souladu s definicemi <xref:System.ServiceModel.CommunicationState>:  
+ Vlastnost State vrátí aktuální stav definovaný pomocí <xref:System.ServiceModel.CommunicationState>:  
   
-## <a name="icommunicationobject-communicationobject-and-states-and-state-transition"></a>Objekt ICommunicationObject, v objektu CommunicationObject a stavy a přechod stavu  
- <xref:System.ServiceModel.ICommunicationObject> Spustí ve stavu vytvořen, kde lze nastavit jeho různé vlastnosti. Jednou ve stavu otevřen objekt je použitelná pro odesílání a příjem zpráv, ale její vlastnosti jsou považován za neměnitelný. Jakmile se ve stavu zavírání objektu můžete už zpracovat nové odeslání nebo přijímat požadavky, ale existujících žádostí mít příležitost dobře se až do dokončení je dosaženo zavřít časového limitu.  Pokud došlo k neopravitelné chybě, objekt přechází do chybovém stavu, ve kterém může být zkontrolovány informace o této chybě a nakonec uzavřen. Když v uzavřeném stavu objektu v podstatě dosáhla koncový stav stavového stroje. Jednou objektu přechodů z jednoho stavu do dalšího neprochází zpět do předchozího stavu.  
+## <a name="icommunicationobject-communicationobject-and-states-and-state-transition"></a>Objekt ICommunicationObject, CommunicationObject a stavy a přechody stavu  
+ <xref:System.ServiceModel.ICommunicationObject> Spustí se ve stavu Created, ve kterém je možné nakonfigurovat jeho různé vlastnosti. Jednou v otevřeném stavu lze objekt použít pro odesílání a příjem zpráv, ale jeho vlastnosti jsou považovány za neměnné. V konečném stavu nemůže objekt nadále zpracovávat nové žádosti o odeslání nebo přijetí, ale existující požadavky mohou být dokončeny až do dosažení časového limitu ukončení.  Pokud dojde k neopravitelné chybě, objekt přejde do chybového stavu, kde je možné zkontrolovat informace o chybě a nakonec uzavřít. V případě, že je v zavřeném stavu, je objekt v zásadě dosaženo na konci stavového počítače. Jakmile se objekt přehraje z jednoho stavu na další, nevrátí se do předchozího stavu.  
   
- Následující obrázek ukazuje, <xref:System.ServiceModel.ICommunicationObject> stavy a přechody stavu. Přechodů mezi stavy, může být způsobeno volání jedné ze tří metod: Přerušit, otevřít nebo zavřít. Může být také způsobeno voláním metod specifický pro implementaci. Přechod do stavu chyba může nastat v důsledku chyb při otevírání nebo po nutnosti otevřít objekt komunikace.  
+ Následující diagram znázorňuje <xref:System.ServiceModel.ICommunicationObject> stavy a přechody stavu. Přechody stavu mohou být způsobeny voláním jedné ze tří metod: Přerušit, otevřít nebo zavřít. Mohou být také způsobeny voláním jiných metod specifických pro implementaci. Přechod na chybový stav může nastat v důsledku chyb při otevírání nebo po otevření objektu komunikace.  
   
- Každý <xref:System.ServiceModel.ICommunicationObject> spustí ve stavu vytvořen. V tomto stavu můžete aplikaci nakonfigurovat objektu nastavením jeho vlastností. Jakmile je objekt v jiném stavu než vytvořeno, je považován za neměnitelný.  
+ Každé <xref:System.ServiceModel.ICommunicationObject> začíná ve stavu Created (vytvořeno). V tomto stavu může aplikace nakonfigurovat objekt nastavením jeho vlastností. Jakmile je objekt v jiném než vytvořeném stavu, je považován za neproměnlivý.  
   
  ![Přechod stavu kanálu](../../../../docs/framework/wcf/extending/media/channelstatetranitionshighleveldiagram.gif "ChannelStateTranitionsHighLevelDiagram")  
-Obrázek 1. Objekt ICommunicationObject stavového stroje.  
+Obrázek 1. Stavový počítač objekt ICommunicationObject.  
   
- Windows Communication Foundation (WCF) poskytuje abstraktní základní třídu s názvem <xref:System.ServiceModel.Channels.CommunicationObject> , který implementuje <xref:System.ServiceModel.ICommunicationObject> a stav stavového stroje kanálu. Na následujícím obrázku je upravený stav diagram, který je specifický pro <xref:System.ServiceModel.Channels.CommunicationObject>. Kromě <xref:System.ServiceModel.ICommunicationObject> stavový počítač zobrazuje den, kdy další <xref:System.ServiceModel.Channels.CommunicationObject> jsou metody vyvolány.  
+ Windows Communication Foundation (WCF) poskytuje abstraktní základní třídu s názvem <xref:System.ServiceModel.Channels.CommunicationObject> , která <xref:System.ServiceModel.ICommunicationObject> implementuje a Stavový počítač kanálu. Následující obrázek je upravený diagram stavu, který je specifický pro <xref:System.ServiceModel.Channels.CommunicationObject>. Kromě <xref:System.ServiceModel.ICommunicationObject> stavového počítače ukazuje časování při vyvolání dalších <xref:System.ServiceModel.Channels.CommunicationObject> metod.  
   
- ![Stav změny](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure5statetransitionsdetailsc.gif "wcfc_WCFChannelsigure5StateTransitionsDetailsc")  
-Obrázek 2. V objektu CommunicationObject implementace stavového stroje objekt ICommunicationObject včetně volání na události a chráněné metody.  
+ ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure5statetransitionsdetailsc.gif "wcfc_WCFChannelsigure5StateTransitionsDetailsc")  
+Obrázek 2. Implementace CommunicationObject stavového počítače objekt ICommunicationObject, včetně volání událostí a chráněných metod.  
   
-### <a name="icommunicationobject-events"></a>Objekt ICommunicationObject události  
- <xref:System.ServiceModel.Channels.CommunicationObject> poskytuje pět události definované <xref:System.ServiceModel.ICommunicationObject>. Tyto události jsou navržené pro kód pomocí objektu komunikace upozornit přechodů mezi stavy. Jak je znázorněno na obrázku 2 výše, každý po aktivuje událost jednou stav objektu přechází do stavu s názvem události. Všechny události pět jsou `EventHandler` typ, který je definován jako:  
+### <a name="icommunicationobject-events"></a>Události objekt ICommunicationObject  
+ <xref:System.ServiceModel.Channels.CommunicationObject>zpřístupňuje pět událostí definovaných pomocí <xref:System.ServiceModel.ICommunicationObject>. Tyto události jsou navržené pro kód pomocí objektu komunikace, který bude upozorněn na přechody stavu. Jak je znázorněno na obrázku 2 výše, každá událost je aktivována jednou po přechodu stavu objektu do stavu s názvem událost. Všechny pět událostí `EventHandler` je typu, který je definován jako:  
   
  `public delegate void EventHandler(object sender, EventArgs e);`  
   
- V <xref:System.ServiceModel.Channels.CommunicationObject> implementace, odesílatel je buď <xref:System.ServiceModel.Channels.CommunicationObject> samotné nebo cokoli, co byla předána jako odesílatele, aby <xref:System.ServiceModel.Channels.CommunicationObject> konstruktoru (Pokud byl použit tento přetížení konstruktoru). Parametr EventArgs `e`, je vždy `EventArgs.Empty`.  
+ V implementaci je odesílatel <xref:System.ServiceModel.Channels.CommunicationObject> buď sám, nebo cokoli bylo předáno <xref:System.ServiceModel.Channels.CommunicationObject> jako odesilatel do konstruktoru (pokud bylo použito přetížení konstruktoru). <xref:System.ServiceModel.Channels.CommunicationObject> Parametr EventArgs, `e`, je vždy `EventArgs.Empty`.  
   
-### <a name="derived-object-callbacks"></a>Zpětná volání objektu  
- Kromě pěti události <xref:System.ServiceModel.Channels.CommunicationObject> deklaruje osm chráněné virtuální metody, které jsou navržené tak, objekt odvozené zpětné volání, před a po přechodu stavu.  
+### <a name="derived-object-callbacks"></a>Odvozená zpětná volání objektů  
+ Kromě pěti událostí <xref:System.ServiceModel.Channels.CommunicationObject> deklaruje osm chráněných virtuálních metod navržených tak, aby bylo možné volat odvozený objekt zpět před a po probíhají přechody stavu.  
   
- <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> metody mají tři takové spojené s každou z nich zpětná volání. Například odpovídající <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> je <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A?displayProperty=nameWithType>, a <xref:System.ServiceModel.Channels.CommunicationObject.OnOpened%2A?displayProperty=nameWithType>. Přidružené <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> jsou <xref:System.ServiceModel.Channels.CommunicationObject.OnClose%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.Channels.CommunicationObject.OnClosing%2A?displayProperty=nameWithType>, a <xref:System.ServiceModel.Channels.CommunicationObject.OnClosed%2A?displayProperty=nameWithType> metody.  
+ Metody <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> a<xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> mají tři taková zpětná volání, která jsou spojena s každým z nich. Například odpovídající <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> jsou <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A?displayProperty=nameWithType>a. <xref:System.ServiceModel.Channels.CommunicationObject.OnOpened%2A?displayProperty=nameWithType> Přidruženo k <xref:System.ServiceModel.Channels.CommunicationObject.OnClose%2A?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.CommunicationObject.OnClosing%2A?displayProperty=nameWithType>jsou metody, a <xref:System.ServiceModel.Channels.CommunicationObject.OnClosed%2A?displayProperty=nameWithType>. <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType>  
   
- Podobně platí <xref:System.ServiceModel.Channels.CommunicationObject.Abort%2A?displayProperty=nameWithType> metoda má odpovídající <xref:System.ServiceModel.Channels.CommunicationObject.OnAbort%2A?displayProperty=nameWithType>.  
+ Podobně má <xref:System.ServiceModel.Channels.CommunicationObject.OnAbort%2A?displayProperty=nameWithType>metoda odpovídající. <xref:System.ServiceModel.Channels.CommunicationObject.Abort%2A?displayProperty=nameWithType>  
   
- Zatímco <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.Channels.CommunicationObject.OnClose%2A?displayProperty=nameWithType>, a <xref:System.ServiceModel.Channels.CommunicationObject.OnAbort%2A?displayProperty=nameWithType> nemají výchozí implementaci, další zpětná volání nemají výchozí implementace, která je nezbytná pro správnosti stavu počítače. Pokud je přepsat tyto metody nezapomeňte volat základní implementaci nebo správně nahradit.  
+ I <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A?displayProperty=nameWithType>když <xref:System.ServiceModel.Channels.CommunicationObject.OnClose%2A?displayProperty=nameWithType>, a<xref:System.ServiceModel.Channels.CommunicationObject.OnAbort%2A?displayProperty=nameWithType> nemají žádnou výchozí implementaci, ostatní zpětná volání mají výchozí implementaci, která je nezbytná pro správnost stavového počítače. Pokud přepíšete tyto metody, ujistěte se, že jste volali základní implementaci nebo ji správně nahradili.  
   
- <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.Channels.CommunicationObject.OnClosing%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.CommunicationObject.OnFaulted%2A?displayProperty=nameWithType> vyvolat odpovídající <xref:System.ServiceModel.Channels.CommunicationObject.Opening?displayProperty=nameWithType>, <xref:System.ServiceModel.Channels.CommunicationObject.Closing?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.CommunicationObject.Faulted?displayProperty=nameWithType> události. <xref:System.ServiceModel.Channels.CommunicationObject.OnOpened%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.CommunicationObject.OnClosed%2A?displayProperty=nameWithType> nastavte stav objektu otevřen a uzavřené v uvedeném pořadí potom aktivuje odpovídající <xref:System.ServiceModel.Channels.CommunicationObject.Opened?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.CommunicationObject.Closed?displayProperty=nameWithType> události.  
+ <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType><xref:System.ServiceModel.Channels.CommunicationObject.OnClosing%2A?displayProperty=nameWithType> a vyvolatodpovídající<xref:System.ServiceModel.Channels.CommunicationObject.Opening?displayProperty=nameWithType>události a .<xref:System.ServiceModel.Channels.CommunicationObject.Faulted?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.CommunicationObject.OnFaulted%2A?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.CommunicationObject.Closing?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.CommunicationObject.OnOpened%2A?displayProperty=nameWithType>a <xref:System.ServiceModel.Channels.CommunicationObject.OnClosed%2A?displayProperty=nameWithType> nastavte stav objektu na otevřeno a uzavřeno, potom spusťte odpovídající <xref:System.ServiceModel.Channels.CommunicationObject.Opened?displayProperty=nameWithType> události a <xref:System.ServiceModel.Channels.CommunicationObject.Closed?displayProperty=nameWithType> .  
   
-### <a name="state-transition-methods"></a>Metody přechod stavu  
- <xref:System.ServiceModel.Channels.CommunicationObject> poskytuje implementace Abort, zavřete a otevřete. Také poskytuje metodu selhání, což způsobí, že stav přechod do stavu chyba. Obrázek 2 ukazuje <xref:System.ServiceModel.ICommunicationObject> stavového stroje s každý přechod označené metodu, která způsobí, že (bez popisku přechody stane uvnitř implementace metody, která způsobila poslední označených přechod).  
+### <a name="state-transition-methods"></a>Metody přechodu stavu  
+ <xref:System.ServiceModel.Channels.CommunicationObject>poskytuje implementace přerušení, zavření a otevření. Poskytuje také metodu selhání, která způsobuje přechod stavu do chybového stavu. Obrázek 2 ukazuje <xref:System.ServiceModel.ICommunicationObject> Stavový počítač s každým přechodem označeným metodou, která způsobí, že se přechody provedou v rámci implementace metody, která způsobila poslední přechod popisku.  
   
 > [!NOTE]
->  Všechny <xref:System.ServiceModel.Channels.CommunicationObject> implementace komunikace stavu, získá nebo nastaví jsou synchronizovány vlákna.  
+>  Všechny <xref:System.ServiceModel.Channels.CommunicationObject> implementace Get/Sets stavu komunikace jsou synchronizovány vláknem.  
   
  Konstruktor  
   
- <xref:System.ServiceModel.Channels.CommunicationObject> poskytuje tři konstruktory, které ponechte objekt ve stavu vytvořen. Konstruktory jsou definovány jako:  
+ <xref:System.ServiceModel.Channels.CommunicationObject>poskytuje tři konstruktory, z nichž všechny opustí objekt ve stavu Created. Konstruktory jsou definovány takto:  
   
- První konstruktor je výchozí konstruktor, který se delegoval přetížení konstruktoru, který přebírá objekt:  
+ První konstruktor je konstruktor bez parametrů, který deleguje přetížení konstruktoru, který přebírá objekt:  
   
  `protected CommunicationObject() : this(new object()) { … }`  
   
- Konstruktor, který přijímá objekt tento parametr používá jako objekt uzamčení při synchronizaci přístup ke stavu objektu komunikace:  
+ Konstruktor, který přebírá objekt, používá tento parametr jako objekt, který se má uzamknout při synchronizaci přístupu ke stavu objektu komunikace:  
   
  `protected CommunicationObject(object mutex) { … }`  
   
- A konečně, třetí konstruktor přijímá další parametr, který se používá jako argument odesílatele při <xref:System.ServiceModel.ICommunicationObject> jsou vyvolávány události.  
+ Nakonec třetí konstruktor přebírá další parametr, který se používá jako argument Sender při <xref:System.ServiceModel.ICommunicationObject> vyvolání události.  
   
  `protected CommunicationObject(object mutex, object eventSender) { … }`  
   
- Předchozí dva konstruktory nastavte odesílatel na to.  
+ Předchozí dva konstruktory nastavili odesílatele na this.  
   
  Open – metoda  
   
- Předběžné podmínky: Stav se vytvoří.  
+ Předběžná podmínka Stav je vytvořen.  
   
- Podmínka po: Stav je otevřen nebo Faulted. Může vyvolat výjimku.  
+ Po stavu: Stav je otevřen nebo došlo k chybě. Může vyvolat výjimku.  
   
- Metoda Open() se pokusí otevřít objekt komunikace a nastavit stav na otevřen. Pokud dojde k chybě, nastaví na chybovém stavu.  
+ Metoda Open () se pokusí otevřít objekt komunikace a nastavit stav na otevřeno. Pokud dojde k chybě, nastaví se stav na chyba.  
   
- Metoda nejprve zkontroluje, že se vytvořil aktuální stav. Pokud je aktuální stav otevírání nebo otevření vyvolá <xref:System.InvalidOperationException>. Pokud jeho aktuální stav je uzavírací nebo Uzavřeno, vyvolá výjimku <xref:System.ServiceModel.CommunicationObjectAbortedException> Pokud byl ukončen objekt a <xref:System.ObjectDisposedException> jinak. Pokud došlo k chybě v aktuální stav, vyvolá výjimku <xref:System.ServiceModel.CommunicationObjectFaultedException>.  
+ Metoda nejprve zkontroluje, zda je aktuální stav vytvořen. Pokud je aktuální stav otevřený nebo otevřený, vyvolá <xref:System.InvalidOperationException>. Pokud je aktuální stav uzavřen nebo zavřen, vyvolá výjimku <xref:System.ServiceModel.CommunicationObjectAbortedException> , pokud byl objekt ukončen a <xref:System.ObjectDisposedException> jinak. Pokud dojde k chybě aktuálního stavu, vyvolá <xref:System.ServiceModel.CommunicationObjectFaultedException>.  
   
- Potom nastaví stav otevírací a volá OnOpening() (která vyvolává událost otevření), OnOpen() a OnOpened() v uvedeném pořadí. OnOpened() nastaví stav otevřen a vyvolává událost otevřen. Pokud některý z těchto vyvolá výjimku (Otevřít) volá Fault() a umožní bublinu výjimka. Následující diagram znázorňuje otevřeného procesu podrobněji.  
+ Poté nastaví stav na otevírání a volání při otevření () (což vyvolává událost otevření), událost otevření () a otevřené () v tomto pořadí. Open () nastaví stav na otevřeno a vyvolá otevřenou událost. Pokud některý z těchto vyvolání vyvolá výjimku, příkaz Open () volá chybu () a umožňuje bublinu výjimky. Následující diagram znázorňuje otevření procesu podrobněji.  
   
- ![Stav změny](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigurecoopenflowchartf.gif "wcfc_WCFChannelsigureCOOpenFlowChartf")  
-Přepište metodu při otevření a implementovat vlastní otevřít logiku, jako je otevření objektu vnitřní komunikace.  
+ ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigurecoopenflowchartf.gif "wcfc_WCFChannelsigureCOOpenFlowChartf")  
+Přepište metodu Open pro implementaci vlastní otevřené logiky, jako je například otevření objektu vnitřní komunikace.  
   
  Close – metoda  
   
- Předběžné podmínky: Žádné  
+ Předběžná podmínka Žádné  
   
- Podmínka po: Stav je zavřený. Může vyvolat výjimku.  
+ Po stavu: Stav je uzavřeno. Může vyvolat výjimku.  
   
- Metoda Close() lze volat vždycky. Pokusí se obvykle zavření objektu. Pokud dojde k chybě, ukončí na objekt. Metoda provede, když se zavírá aktuální stav nebo Uzavřeno. Jinak nastaví stav zavření. Pokud se původní stav byl vytvořen, otevření nebo Faulted, zavolá Abort() (viz následující diagram). Pokud byl otevřen původního stavu, volá OnClosing() (která vyvolává událost pravou), OnClose() a OnClosed() v uvedeném pořadí. Pokud některý z těchto vyvolá výjimku (Zavřít) volá Abort() a umožňuje bublinu výjimka. OnClosed() nastaví stavu na Uzavřeno a vyvolá zavřeném ovladači události. Následující diagram znázorňuje uzavření zpracovat podrobněji.  
+ Metodu Close () lze volat v jakémkoli stavu. Pokusí se objekt zavřít normálně. Pokud dojde k chybě, dojde k ukončení objektu. Metoda neprovede nic, pokud je aktuální stav uzavřený nebo zavřený. V opačném případě nastaví stav na Zavřít. Pokud byl původní stav vytvořen, otevírání nebo chyba, volá funkci Abort () (viz následující diagram). Pokud byl původní stav otevřen, volání příkazu "Close ()" (což vyvolává událost ukončení), "Close" () a "Closed" () v tomto pořadí. Pokud některý z těchto vyvolá výjimku, volání Close () volá Abort () a umožňuje bublinu výjimky nahoru. -Closeed () nastaví stav na uzavřeno a vyvolá uzavřenou událost. Následující diagram znázorňuje proces zavření podrobněji.  
   
- ![Stav změny](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsguire7ico-closeflowchartc.gif "wcfc_WCFChannelsguire7ICO CloseFlowChartc")  
-Potlačí metodu při zavření k implementaci vlastní logiky zavřít, například zavření objektu vnitřní komunikace. Všechny řádné zavření logiku, která může blokovat pro dlouhou dobu (například čekání na druhé straně reagovat) by měla být implementována v OnClose(), protože má parametr časového limitu, a proto není volána jako součást Abort().  
+ ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsguire7ico-closeflowchartc.gif "wcfc_WCFChannelsguire7ICO – CloseFlowChartc")  
+Přepište metodu Close pro implementaci vlastní logiky ukončení, jako je například zavření objektu vnitřní komunikace. Veškerá plynulá uzavírací logika, která může být zablokovaná dlouhou dobu (například čekání na druhou stranu reakce), by měla být implementována v operaci Close (), protože má parametr timeout a protože není volána jako součást přerušení ().  
   
  Přerušení  
   
- Předběžné podmínky: Žádné  
-Podmínka po: Stav je zavřený. Může vyvolat výjimku.  
+ Předběžná podmínka Žádné  
+Po stavu: Stav je uzavřeno. Může vyvolat výjimku.  
   
- Metoda Abort() nemá žádný účinek, pokud jeho aktuální stav je uzavřený nebo pokud objekt byl ukončen před (například může být tím, že Abort() provádění na jiné vlákno). Jinak nastaví stav uzavírací a volá OnClosing() (která vyvolává událost pravou), OnAbort() a OnClosed() v tomto pořadí (nevolá onclose – vzhledem k tomu, že objekt se ukončuje, není ukončen). OnClosed() nastaví stavu na Uzavřeno a vyvolá zavřeném ovladači události. Pokud některý z těchto vyvolat výjimku, je znovu vyvolána volajícímu přerušení. Implementace OnClosing(), OnClosed() a OnAbort() by neměla blokovat (třeba na vstup/výstup). Následující diagram znázorňuje proces zrušení podrobněji.  
+ Metoda Abort () nedělá nic, pokud je aktuální stav uzavřen nebo pokud byl objekt ukončen dříve (například může mít přerušení () prováděné v jiném vlákně). V opačném případě nastaví stav na zavírání a volání metody "Close" () (která vyvolává uzavírací událost), operace "Abort () a" uzavřeno "() v tomto pořadí () v tomto pořadí (nevolá funkci Close, protože objekt je právě ukončován, nikoli uzavřený). -Closeed () nastaví stav na uzavřeno a vyvolá uzavřenou událost. Pokud některý z těchto výjimek vyvolá výjimku, je znovu vyvolána volajícímu přerušení. Implementace příkazového začátku (), Closeed () a Abort () by neměly blokovat (například při vstupu/výstupu). Následující diagram znázorňuje proces přerušení podrobněji.  
   
- ![Stav změny](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure8ico-abortflowchartc.gif "wcfc_WCFChannelsigure8ICO AbortFlowChartc")  
-Přepsání metody OnAbort implementovat vlastní ukončit logiku, jako je objekt vnitřní komunikace se ukončuje.  
+ ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure8ico-abortflowchartc.gif "wcfc_WCFChannelsigure8ICO – AbortFlowChartc")  
+Přepište metodu-Abort pro implementaci vlastní logiky ukončení, jako je například ukončení objektu vnitřní komunikace.  
   
- Selhání  
+ Indikován  
   
- Metoda selhání je specifické pro <xref:System.ServiceModel.Channels.CommunicationObject> a nejsou součástí <xref:System.ServiceModel.ICommunicationObject> rozhraní. Je tu zahrnuté pro úplnost.  
+ Metoda Fault je specifická pro <xref:System.ServiceModel.Channels.CommunicationObject> a není součástí <xref:System.ServiceModel.ICommunicationObject> rozhraní. Je zde obsažena pro úplnost.  
   
- Předběžné podmínky: Žádné  
+ Předběžná podmínka Žádné  
   
- Podmínka po: Stav je došlo k chybě. Může vyvolat výjimku.  
+ Po stavu: Stav je chybný. Může vyvolat výjimku.  
   
- Metoda Fault() nemá žádný účinek, pokud jeho aktuální stav je chybný nebo Uzavřeno. Jinak nastaví stav Faulted a volání OnFaulted(), která vyvolává událost Faulted. Pokud dojde k výjimce OnFaulted je znovu vyvolána.  
+ Metoda Fault () nedělá nic, pokud je aktuální stav chybný nebo uzavřený. V opačném případě nastaví stav na chyba a volání došlo k chybě (), což vyvolá událost s chybou. Pokud došlo k chybě, vyvolá výjimku, která je znovu vyvolána.  
   
-### <a name="throwifxxx-methods"></a>ThrowIfXxx metody  
- V objektu CommunicationObject má tři chráněné metody, které lze použít k vyvolání výjimky, pokud je objekt v určitém stavu.  
+### <a name="throwifxxx-methods"></a>Metody ThrowIfXxx  
+ CommunicationObject má tři chráněné metody, které lze použít k vyvolání výjimek, je-li objekt v určitém stavu.  
   
- <xref:System.ServiceModel.Channels.CommunicationObject.ThrowIfDisposed%2A> vyvolá výjimku, pokud stav není uzavírací, Uzavřeno nebo Faulted.  
+ <xref:System.ServiceModel.Channels.CommunicationObject.ThrowIfDisposed%2A>vyvolá výjimku, pokud se stav zavírá, uzavírá nebo má chybný.  
   
- <xref:System.ServiceModel.Channels.CommunicationObject.ThrowIfDisposedOrImmutable%2A> vyvolá výjimku, pokud stav není vytvořena.  
+ <xref:System.ServiceModel.Channels.CommunicationObject.ThrowIfDisposedOrImmutable%2A>vyvolá výjimku, pokud stav není vytvořen.  
   
- <xref:System.ServiceModel.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen%2A> vyvolá výjimku, pokud stav není otevřený.  
+ <xref:System.ServiceModel.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen%2A>vyvolá výjimku, pokud stav není otevřen.  
   
- Výjimky vyvolané závisí na stavu. V následující tabulce jsou uvedeny různé stavy a odpovídající typ výjimky vyvolané volání ThrowIfXxx, vyvolá se v tomto stavu.  
+ Vyvolané výjimky závisí na stavu. V následující tabulce jsou uvedeny různé stavy a odpovídající typ výjimky vyvolaný voláním ThrowIfXxx, který tento stav vyvolá.  
   
-|Stav|Byla volána přerušit?|Výjimka|  
+|Stav|Volala se přerušení?|Výjimka|  
 |-----------|----------------------------|---------------|  
 |Vytvořeno|Není k dispozici|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
-|Otevření|Není k dispozici|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
+|Zahájil|Není k dispozici|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
 |Otevřít|Není k dispozici|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
 |zavírání|Ano|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType>|  
 |zavírání|Ne|<xref:System.ObjectDisposedException?displayProperty=nameWithType>|  
-|Zavřeno|Ano|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType> v případě, že objekt zavřel předchozí a explicitní volání přerušení. Zavřít při volání objektu a <xref:System.ObjectDisposedException?displayProperty=nameWithType> je vyvolána výjimka.|  
+|Zavřeno|Ano|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType>v případě, že objekt byl zavřen předchozím a explicitním voláním metody Abort. Pokud zavoláte zavřít u objektu <xref:System.ObjectDisposedException?displayProperty=nameWithType> , je vyvolána výjimka.|  
 |Zavřeno|Ne|<xref:System.ObjectDisposedException?displayProperty=nameWithType>|  
-|Došlo k chybě|Není k dispozici|<xref:System.ServiceModel.CommunicationObjectFaultedException?displayProperty=nameWithType>|  
+|Došlo chybě|Není k dispozici|<xref:System.ServiceModel.CommunicationObjectFaultedException?displayProperty=nameWithType>|  
   
 ### <a name="timeouts"></a>Vypršení časových limitů  
- Několik metod, které jsme probírali přijímají parametry časového limitu. Toto jsou zavřít, Open (některých přetížení a asynchronní verze), při zavření a při otevření. Tyto metody umožňují delších operací (například blokuje na vstupu/výstupu při uzavřením dolů připojení), parametr časového limitu označuje, jak dlouho tyto operace může trvat před přerušení. Implementace některého z těchto metod používejte zadaný časový limit pro Ujistěte se, že se vrátí volajícímu v tomto časovém limitu. Implementace dalších metodách, které nepřebírají vypršení časového limitu nejsou určená pro zdlouhavé operace a by neměla blokovat na vstupu a výstupu.  
+ Některé z metod, které jsme provzali, přijímá parametry časového limitu. Jedná se o zavřít, otevřít (určitá přetížení a asynchronní verze), uzavřít a otevřít. Tyto metody jsou navržené tak, aby umožňovaly zdlouhavé operace (například blokování vstupu/výstupu při řádném ukončení připojení), takže parametr timeout označuje, jak dlouho můžou tyto operace trvat, než se přeruší. Implementace kterékoli z těchto metod by měly použít poskytnutou hodnotu časového limitu, aby se zajistilo, že se vrátí volajícímu v daném časovém limitu. Implementace jiných metod, které nevezmou časový limit, nejsou navrženy pro zdlouhavé operace a neměly by být zablokované na vstupu a výstupu.  
   
- Výjimky jsou Open() a Close() přetížení, které nepřebírají vypršení časového limitu. Toto použijte výchozí hodnotu časového limitu poskytnutých odvozené třídy. <xref:System.ServiceModel.Channels.CommunicationObject> zpřístupňuje dvě chráněné abstraktních a vlastností s názvem <xref:System.ServiceModel.Channels.CommunicationObject.DefaultCloseTimeout%2A> a <xref:System.ServiceModel.Channels.CommunicationObject.DefaultOpenTimeout%2A> definován jako:  
+ Výjimkou jsou přetížení Open () a Close (), které nevyžadují časový limit. Používají výchozí hodnotu časového limitu poskytnutou odvozenou třídou. <xref:System.ServiceModel.Channels.CommunicationObject>zpřístupňuje dvě chráněné abstraktní vlastnosti <xref:System.ServiceModel.Channels.CommunicationObject.DefaultCloseTimeout%2A> s <xref:System.ServiceModel.Channels.CommunicationObject.DefaultOpenTimeout%2A> názvem a definované jako:  
   
  `protected abstract TimeSpan DefaultCloseTimeout { get; }`  
   
  `protected abstract TimeSpan DefaultOpenTimeout { get; }`  
   
- Odvozená třída implementuje tyto vlastnosti k poskytnutí výchozí časový limit pro Open() a Close() přetížení, které se nedají zadat hodnotu časového limitu. Potom implementace Open() a Close() delegovat na přetížení přijímající vypršení časového limitu předáním výchozí hodnotu časového limitu, například:  
+ Odvozená třída implementuje tyto vlastnosti, aby poskytovala výchozí časový limit pro přetížení Open () a Close (), která nevyužívají hodnotu časového limitu. Implementací () a Close () implementací přenese delegáta, který má časový limit k předání hodnoty výchozí časový limit, například:  
   
  `public void Open()`  
   
@@ -166,4 +166,4 @@ Přepsání metody OnAbort implementovat vlastní ukončit logiku, jako je objek
  `}`  
   
 #### <a name="idefaultcommunicationtimeouts"></a>IDefaultCommunicationTimeouts  
- Toto rozhraní má čtyři vlastnosti jen pro čtení pro poskytnutí výchozí hodnoty časového limitu pro otevření, odesílání, příjem a zavřete. Každá implementace je odpovědný za získání výchozí hodnoty v příslušné jakýmkoli způsobem. Pro zjednodušení <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase> výchozí tyto hodnoty na 1 minutu.
+ Toto rozhraní obsahuje čtyři vlastnosti jen pro čtení pro poskytování výchozích hodnot časového limitu pro možnosti otevřít, odeslat, přijmout a zavřít. Každá implementace zodpovídá za získání výchozích hodnot jakýmkoli způsobem. Jako pohodlí <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase> výchozí hodnoty 1 minuty.

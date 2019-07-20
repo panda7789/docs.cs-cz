@@ -6,34 +6,34 @@ helpviewer_keywords:
 - dependency objects [WPF], constructor patterns
 - FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
-ms.openlocfilehash: ba8b0a48b2b75a9191553392d5ec0a1f66575807
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9dffe06d340c7256ba8af687e30d90d51746ebe1
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053506"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364243"
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
-Obecně platí konstruktor třídy neměli volat zpětná volání, jako je například virtuální metody nebo delegátů, protože konstruktory lze volat jako základní inicializace konstruktory odvozené třídy. Zadání virtuálního může být provedeno stavu neúplná inicializace libovolný daný objekt. Však samotný systém vlastnost volá a zpřístupňuje zpětná volání interně jako součást v systému vlastností závislostí. Jednoduché operace jako nastavení hodnoty vlastnosti závislostí s <xref:System.Windows.DependencyObject.SetValue%2A> volání může potenciálně zahrnout zpětné volání někde v určení. Z tohoto důvodu byste měli být opatrní při nastavení hodnoty vlastností v těle konstruktoru, který může být problematické, pokud se typ používá jako základní třída závislostí. Neexistuje konkrétní vzor pro implementování <xref:System.Windows.DependencyObject> konstruktory, které předchází konkrétní problémy se stavy vlastnost závislostí a přináší zpětná volání, které jsou zde uvedeny.  
+Obecně konstruktory třídy by neměly volat zpětná volání, jako jsou virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializaci konstruktorů pro odvozenou třídu. Vstup do virtuální sítě může být proveden v neúplném stavu inicializace libovolného daného objektu. Systém vlastností však volá a zpřístupňuje zpětná volání interně jako součást systému vlastností závislosti. Jednoduchá operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> voláním potenciálně zahrnuje zpětné volání někde v rámci určení. Z tohoto důvodu byste měli být opatrní při nastavování hodnot vlastností závislosti v těle konstruktoru, což může být problematické, pokud je typ použit jako základní třída. Existuje konkrétní vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktorů, které zabraňují konkrétním problémům se stavy vlastností závislosti a podpostupům zpětného volání, která jsou popsána zde.  
 
 <a name="Property_System_Virtual_Methods"></a>   
-## <a name="property-system-virtual-methods"></a>Virtuální metody vlastností systému  
- Následující virtuální metody nebo zpětná volání jsou potenciálně volány během výpočty z <xref:System.Windows.DependencyObject.SetValue%2A> volání, která nastaví hodnotu vlastnosti závislosti: <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.PropertyChangedCallback>, <xref:System.Windows.CoerceValueCallback>, <xref:System.Windows.DependencyObject.OnPropertyChanged%2A>. Každá z těchto virtuální metody nebo zpětná volání slouží konkrétní účel rozšíření všestrannost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systém a závislosti vlastnosti. Další informace o tom, jak pomocí těchto virtuálních funkcí: můžete přizpůsobit stanovení hodnotu vlastnosti, naleznete v tématu [vlastnost závislosti zpětné volání a ověření](dependency-property-callbacks-and-validation.md).  
+## <a name="property-system-virtual-methods"></a>Virtuální metody systému vlastností  
+ Následující virtuální metody nebo zpětná volání jsou <xref:System.Windows.DependencyObject.SetValue%2A> potenciálně volány během výpočtů volání, které nastaví hodnotu vlastnosti závislosti: <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.PropertyChangedCallback>, <xref:System.Windows.CoerceValueCallback>, <xref:System.Windows.DependencyObject.OnPropertyChanged%2A>. Každá z těchto virtuálních metod nebo zpětných volání slouží k určitému účelu při rozšiřování univerzálnosti [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastností systému vlastností a závislostí. Další informace o tom, jak tyto virtuální funkce použít k přizpůsobení hodnoty vlastnosti, najdete v tématu [zpětná volání vlastností závislosti a ověřování](dependency-property-callbacks-and-validation.md).  
   
-### <a name="fxcop-rule-enforcement-vs-property-system-virtuals"></a>Vynucení pravidel FXCop vs. Vlastnost systému virtuálních funkcí:  
- Pokud používáte nástroj Microsoft FXCop jako součást procesu sestavení a buď odvozovat z některých [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] volání konstruktoru základní třídy rozhraní framework nebo implementovat vlastní vlastnosti závislosti v odvozených třídách, může dojít konkrétní Porušení pravidla FXCop. Název řetězce pro toto porušení je:  
+### <a name="fxcop-rule-enforcement-vs-property-system-virtuals"></a>Vynucování pravidel FXCop vs. Virtuální systémy vlastností  
+ Použijete-li nástroj Microsoft FXCop jako součást procesu sestavení a buď Odvozujete z určitých [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tříd rozhraní, které volají základní konstruktor, nebo implementujete vlastní vlastnosti závislosti na odvozených třídách, může dojít ke konkrétnímu Porušení pravidla FXCop. Řetězec názvu pro toto porušení je:  
   
  `DoNotCallOverridableMethodsInConstructors`  
   
- Toto je pravidlo, které je součástí výchozí sady pro FXCop veřejné pravidel. Co toto pravidlo může být vytváření sestav je trasování prostřednictvím systému vlastnost závislosti, které nakonec volání virtuální metody systému vlastnost závislosti. Porušení tohoto pravidla může nadále zobrazovat i po provedení vzory doporučené konstruktoru popsané v tomto tématu, můžete potřebovat k zakázání nebo potlačení tímto pravidlem ve vaší konfiguraci sady pravidel FXCop.  
+ Toto je pravidlo, které je součástí výchozí veřejné sady pravidel pro FXCop. To, co toto pravidlo může vytvářet, je trasování prostřednictvím systému vlastností závislosti, který nakonec volá virtuální metodu systémové vlastnosti závislosti. Toto porušení pravidla se může dál zobrazovat, i když následují Doporučené vzory konstruktoru popsané v tomto tématu, takže možná budete muset toto pravidlo v konfiguraci sady pravidel FXCop zakázat nebo potlačit.  
   
-### <a name="most-issues-come-from-deriving-classes-not-using-existing-classes"></a>Většinu problémů pocházejí z odvozená třídy bez použití existujících tříd  
- Problémy hlášené tímto pravidlem dojít, když je třída, která můžete implementovat virtuální metody v jeho pořadí konstrukce pak odvozen z. Pokud zapečeťte třídu, nebo jinak vědět nebo vynutit, nebude vaše třída odvozena od, na základě aspektů je zde vysvětleno a na vás nemusí vztahovat problémy, které opodstatněny pravidlo FXCop. Nicméně pokud autorizujete třídy tak, že jsou určeny pro použití jako základní třídy pro instanci Pokud při vytváření šablony, nebo knihovna rozšíření ovládacích prvků, postupujte podle vzorů zde doporučeného pro konstruktory.  
+### <a name="most-issues-come-from-deriving-classes-not-using-existing-classes"></a>Většina problémů pochází z odvození tříd, nepoužívá se stávající třídy.  
+ Problémy nahlášené tímto pravidlem nastávají, když třída, kterou implementujete s virtuálními metodami v její sekvenci konstrukce, je pak odvozena z. Pokud svou třídu zapečetete nebo jinak znáte nebo vynutili, že vaše třída nebude odvozena z, zde popsané aspekty a problémy, které pravidlo FXCop, neplatí pro vás. Pokud však vytváříte třídy takovým způsobem, že jsou určeny pro použití jako základní třídy, například pokud vytváříte šablony nebo sadu rozbalitelné knihovny ovládacích prvků, měli byste postupovat podle vzorů, které jsou zde doporučeny pro konstruktory.  
   
-### <a name="default-constructors-must-initialize-all-values-requested-by-callbacks"></a>Výchozí konstruktory musí inicializovat všechny hodnoty požadoval zpětná volání  
- U členů instancí, které používají třídy přepsání nebo zpětná volání (zpětná volání ze seznamu v části Vlastnosti systému virtuálních funkcí:) musí být inicializován ve výchozí konstruktor třídy, i když některé z těchto hodnot se sestavil "real" hodnoty prostřednictvím Parametry jiný než výchozí konstruktory.  
+### <a name="default-constructors-must-initialize-all-values-requested-by-callbacks"></a>Výchozí konstruktory musí inicializovat všechny hodnoty požadované pomocí zpětných volání.  
+ Všechny členy instance, které jsou používány přepisy nebo zpětnými voláními třídy (zpětná volání ze seznamu v sekci virtuals System), musí být inicializovány v konstruktoru bez parametrů třídy, i když některé z těchto hodnot jsou vyplněny hodnotami "reálného" prostřednictvím parametry konstruktorů bez parametrů.  
   
- Následující příklad kódu (a další příklady) je pseudo -C# příklad poruší toto pravidlo a vysvětluje problému:  
+ Následující příklad kódu (a další příklady) je pseudoC# příklad, který porušuje toto pravidlo a vysvětluje problém:  
   
 ```  
 public class MyClass : DependencyObject  
@@ -60,16 +60,16 @@ public class MyClass : DependencyObject
 }  
 ```  
   
- Když kód aplikace volá `new MyClass(objectvalue)`, volá výchozí konstruktor a základní třídy konstruktory. Potom nastaví `Property1 = object1`, která volá metodu virtuální `OnPropertyChanged` na vlastnící `MyClass` <xref:System.Windows.DependencyObject>.  Přepsání odkazuje na `_myList`, která dosud nebyla inicializována.  
+ Když volá `new MyClass(objectvalue)`kód aplikace, volá konstruktor bez parametrů a konstruktory základní třídy. Pak nastaví `Property1 = object1`, který volá virtuální metodu `OnPropertyChanged` na vlastnící `MyClass`. <xref:System.Windows.DependencyObject>  Přepsání odkazuje na `_myList`, které ještě nebylo inicializováno.  
   
- Abyste měli jistotu, že zpětná volání používat jenom jiné vlastnosti závislosti, a že každé takové vlastnost závislosti zavedené výchozí hodnotu jako součást jeho registrované metadata je jedním ze způsobů, abyste se těmto problémům.  
+ Jedním ze způsobů, jak se těmto problémům vyhnout, je zajistit, že zpětná volání používají pouze jiné vlastnosti závislosti a že každá taková vlastnost závislosti má jako součást svých registrovaných metadat výchozí hodnotu.  
   
 <a name="Safe_Constructor_Patterns"></a>   
-## <a name="safe-constructor-patterns"></a>Zabezpečené vzory konstruktoru  
- Zamezit neúplná inicializace Pokud vaše třída se používá jako základní třída, postupujte podle těchto vzorců:  
+## <a name="safe-constructor-patterns"></a>Vzor bezpečných konstruktorů  
+ Chcete-li se vyhnout rizikům neúplné inicializace, pokud je třída použita jako základní třída, postupujte podle těchto vzorů:  
   
-#### <a name="default-constructors-calling-base-initialization"></a>Výchozí konstruktory základního inicializace volání  
- Tyto konstruktory volání základní výchozí implementace:  
+#### <a name="parameterless-constructors-calling-base-initialization"></a>Konstruktory bez parametrů volají základní inicializaci  
+ Implementujte tyto konstruktory, které volají základní výchozí hodnoty:  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -80,8 +80,8 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### <a name="non-default-convenience-constructors-not-matching-any-base-signatures"></a>Konstruktory jiné než výchozí (pohodlí), neodpovídá žádné základní podpisy  
- Pokud tyto konstruktory pomocí parametrů můžete nastavit vlastnosti závislostí při inicializaci, nejprve zavolat vlastní výchozí konstruktor třídy pro inicializaci a pak pomocí parametrů můžete nastavit vlastnosti závislosti. Toto může buď být definované třídě vlastnosti závislosti nebo závislosti vlastnosti zděděné ze základní třídy, ale v obou případech používají následující vzor:  
+#### <a name="non-default-convenience-constructors-not-matching-any-base-signatures"></a>Nevýchozí (pohodlí) konstruktory, které neodpovídají žádným základním podpisům  
+ Pokud tyto konstruktory používají parametry pro nastavení vlastností závislosti při inicializaci, nejprve zavolejte vlastní konstruktor bez parametrů třídy pro inicializaci a poté pomocí parametrů nastavte vlastnosti závislosti. Můžou to být buď vlastnosti závislosti definované vaší třídou, nebo vlastnosti závislosti zděděné ze základních tříd, ale v obou případech použijte následující vzor:  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -93,8 +93,8 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### <a name="non-default-convenience-constructors-which-do-match-base-signatures"></a>Jiné než výchozí (pohodlí) konstruktory, které odpovídají základní podpisy  
- Místo volat konstruktor základní třídy pomocí stejné Parametrizace, znovu zavolejte vlastní třídu výchozí konstruktor. Nevolejte základní inicializátor; Místo toho byste měli volat `this()`. Pak pomocí předaných parametrů jako hodnoty pro nastavení vlastnosti důležité opakovat původní chování konstruktoru. Použití původní základní konstruktor dokumentaci pokyny k určení vlastností, které konkrétní parametry jsou určené pro nastavení:  
+#### <a name="non-default-convenience-constructors-which-do-match-base-signatures"></a>Nevýchozí (pohodlí) konstruktory, které odpovídají základním podpisům  
+ Namísto volání základního konstruktoru se stejným Parametrizace znovu zavolejte vlastní konstruktor bez parametrů. Nevolejte základní inicializátor; místo toho byste měli `this()`volat. Pak znovu vytvořte původní chování konstruktoru pomocí předaných parametrů jako hodnot pro nastavení příslušných vlastností. V dokumentaci k základnímu konstruktoru použijte pokyny k určení vlastností, které jsou určeny k nastavení pro konkrétní parametry:  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -106,11 +106,11 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### <a name="must-match-all-signatures"></a>Musí odpovídat všechny podpisy  
- V případech, kdy základní typ má více podpisů musí odpovídat záměrně všechny možné podpisy s implementací konstruktoru vlastní, která používá doporučená vzor volání výchozího konstruktoru třídy před nastavením další vlastnosti.  
+#### <a name="must-match-all-signatures"></a>Musí odpovídat všem podpisům  
+ V případech, kde má základní typ více signatur, je nutné záměrně porovnat všechny možné podpisy s implementací konstruktoru vlastní, která používá doporučený vzor volání konstruktoru bez parametrů třídy před dalším nastavením. vlastnosti.  
   
-#### <a name="setting-dependency-properties-with-setvalue"></a>Nastavení vlastností závislostí s SetValue  
- Tyto stejné vzory se dají použít, pokud nastavíte vlastnost, která bez obálku pro vlastnost nastavení pohodlí a nastavte hodnoty s <xref:System.Windows.DependencyObject.SetValue%2A>. Vaše volání <xref:System.Windows.DependencyObject.SetValue%2A> této předávat parametry konstruktoru byste také zavolat třídy výchozí konstruktor pro inicializaci.  
+#### <a name="setting-dependency-properties-with-setvalue"></a>Nastavení vlastností závislosti pomocí NastavitHodnotu  
+ Tyto stejné vzory platí v případě, že nastavujete vlastnost, která nemá obálku pro usnadnění nastavení vlastností, a nastavíte hodnoty <xref:System.Windows.DependencyObject.SetValue%2A>pomocí. Volání <xref:System.Windows.DependencyObject.SetValue%2A> tohoto konstruktoru Pass by měla také volat konstruktor bez parametrů třídy pro inicializaci.  
   
 ## <a name="see-also"></a>Viz také:
 

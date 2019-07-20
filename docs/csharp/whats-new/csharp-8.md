@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: 7c37d63e5fc412352b27f2362a1ca102b5c0c040
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: bf67baba926effd012ae01d3d802ba921e41ad5a
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331395"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363893"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -265,7 +265,6 @@ static void WriteLinesToFile(IEnumerable<string> lines)
     using var file = new System.IO.StreamWriter("WriteLines2.txt");
     foreach (string line in lines)
     {
-        // If the line doesn't contain the word 'Second', write the line to the file.
         if (!line.Contains("Second"))
         {
             file.WriteLine(line);
@@ -275,7 +274,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky pro metodu. To je konec oboru, ve kterém `file` je deklarováno. Předchozí kód je ekvivalentní následujícímu kódu pomocí příkazu Classic [using](../language-reference/keywords/using-statement.md) :
+V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky pro metodu. To je konec oboru, ve kterém `file` je deklarováno. Předchozí kód je ekvivalentní následujícímu kódu, který používá [příkaz Classic using](../language-reference/keywords/using-statement.md):
 
 ```csharp
 static void WriteLinesToFile(IEnumerable<string> lines)
@@ -284,7 +283,6 @@ static void WriteLinesToFile(IEnumerable<string> lines)
     {
         foreach (string line in lines)
         {
-            // If the line doesn't contain the word 'Second', write the line to the file.
             if (!line.Contains("Second"))
             {
                 file.WriteLine(line);
@@ -296,7 +294,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 
 V předchozím příkladu je soubor zlikvidován při dosažení uzavírací závorky přidružené `using` k příkazu.
 
-V obou případech kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v příkazu Using není na jedno použití.
+V obou případech kompilátor vygeneruje volání `Dispose()`. Kompilátor vygeneruje chybu, pokud výraz v `using` příkazu není jednorázově.
 
 ## <a name="static-local-functions"></a>Statické místní funkce
 

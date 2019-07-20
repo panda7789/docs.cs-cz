@@ -2,71 +2,78 @@
 title: Připojovací řetězce v ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: 3b7cb0ab061da8364a9fecc3868ba9aaf7501577
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 02fe8d984f1287673477bb142b3f9626e248898e
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881164"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363746"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
-Připojovací řetězec obsahuje informace o inicializaci, která je předána jako parametr od poskytovatele dat ke zdroji dat. Zprostředkovatel dat přijímá jako hodnotu připojovacího řetězce <xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType> vlastnost. Zprostředkovatel analyzuje připojovací řetězec a zajistí, že je syntaxe správná a že jsou podporované klíčová slova. Pak bude <xref:System.Data.Common.DbConnection.Open?displayProperty=nameWithType> metoda předává parametry analyzovaný připojení ke zdroji dat. Zdroj dat provádí další ověřování a naváže připojení.
+Připojovací řetězec obsahuje inicializační informace, které jsou předány jako parametr od poskytovatele dat ke zdroji dat. Zprostředkovatel dat přijímá připojovací řetězec jako hodnotu <xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType> vlastnosti. Zprostředkovatel analyzuje připojovací řetězec a ověří, zda je syntaxe správná a zda jsou klíčová slova podporována. <xref:System.Data.Common.DbConnection.Open?displayProperty=nameWithType> Pak metoda předá analyzovaným parametrům připojení ke zdroji dat. Zdroj dat provádí další ověření a naváže připojení.
 
 ## <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 
-Připojovací řetězec se středníkem oddělený seznam dvojic klíč/hodnota parametru:
+Připojovací řetězec je seznam dvojic parametrů klíč/hodnota oddělených středníkem:
 
 ```
 keyword1=value; keyword2=value;
 ```
 
-Klíčová slova nerozlišují malá a velká písmena. Hodnoty, ale mohou být velká a malá písmena, v závislosti na zdroji dat. Klíčová slova a hodnoty mohou obsahovat [prázdné znaky](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Počáteční a koncové mezery bude ignorován v klíčových slov a nekotované hodnoty.
+V klíčových slovech se nerozlišují malá a velká písmena. V závislosti na zdroji dat ale můžou v nich být rozlišována velká a malá písmena. Klíčová slova a hodnoty mohou obsahovat [prázdné znaky](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Úvodní a koncové prázdné znaky jsou ignorovány v klíčových slovech a hodnotách v uvozovkách.
 
-Obsahuje-li hodnota středník, [řídící znaky Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters), nebo úvodní a koncové prázdné znaky, musí být uzavřen v jednoduchých nebo dvojitých uvozovek. Příklad:
+Pokud hodnota obsahuje středník, [řídicí znaky sady Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters)nebo úvodní nebo koncové prázdné znaky, musí být uzavřeny v jednoduchých nebo dvojitých uvozovkách. Příklad:
 
 ```
 Keyword=" whitespace  ";
 Keyword='special;character';
 ```
 
-Nadřazené znak nedojde v rámci hodnoty, který ji obklopuje. Proto můžou být uzavřená hodnotu obsahující jednoduchých uvozovek pouze do dvojitých uvozovek a naopak:
+Ohraničující znak se nesmí nacházet v rámci hodnoty, kterou obklopuje. Proto lze hodnotu obsahující jednoduché uvozovky uzavřít pouze do dvojitých uvozovek a naopak:
 
 ```
 Keyword='double"quotation;mark';
 Keyword="single'quotation;mark";
 ```
 
-Uvozovky sami, stejně jako znaménko rovná se nevyžadují, aby uvozovací znaky, takže následující připojovací řetězce jsou platné:
+Ohraničující znak můžete také vložit pomocí dvou z nich dohromady:
+
+```
+Keyword="double""quotation";
+Keyword='single''quotation';
+```
+
+Citace samotné a stejně jako znaménko rovná se nevyžadují uvozovací znaky, takže jsou platné následující připojovací řetězce:
 
 ```
 Keyword=no "escaping" 'required';
 Keyword=a=b=c
 ```
 
-Protože každá hodnota je pro čtení do další středníkem nebo konec řetězce, je hodnota v druhém příkladu `a=b=c`, a poslední středník je volitelné.
+Vzhledem k tomu, že každá hodnota je čtena do následujícího středníku nebo konce řetězce, hodnota v druhém příkladu `a=b=c`je a poslední středník je nepovinný.
 
-Všechny řetězce připojení sdílet stejnou základní syntaxi popsané výše. Sada rozpoznaný klíčová slova závisí na poskytovateli, ale a průběžně vyvíjel let ze starší rozhraní API, jako *ODBC*. *Rozhraní .NET Framework* zprostředkovatel dat pro *systému SQL Server* (`SqlClient`) podporuje mnoho klíčových slov z starší rozhraní API, ale je obecně flexibilnější a přijímá synonyma pro spoustu běžných připojovací řetězec klíčová slova.
+Všechny připojovací řetězce sdílejí stejnou základní syntaxi popsanou výše. Sada rozpoznaných klíčových slov závisí na poskytovateli, ale na těchto letech se vyvinula z dřívějších rozhraní API, jako je například *ODBC*. Zprostředkovatel dat *.NET Framework* pro *SQL Server* (`SqlClient`) podporuje mnoho klíčových slov ze starších rozhraní API, ale je obecně flexibilnější a přijímá synonyma pro mnoho běžných klíčových slov řetězce připojení.
 
-Překlepů mohou způsobit chyby. Například `Integrated Security=true` je platný, ale `IntegratedSecurity=true` způsobí chybu.
+Psaní chyb může způsobit chyby. Například `Integrated Security=true` je platný, ale `IntegratedSecurity=true` způsobí chybu.
 
-Připojovací řetězce s ručně vytvořeným za běhu z neověřený vstup uživatele je ohrožen útoky prostřednictvím injektáže řetězec a by mohly ohrozit zabezpečení ve zdroji dat. K řešení těchto problémů *ADO.NET* 2.0 zavedl [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md) pro každou *rozhraní .NET Framework* poskytovatele dat služeb. Tyto tvůrci připojovacích řetězců vystavit parametry jako vlastnosti silného typu a bude možné ověřit připojovací řetězec před odesláním do zdroje dat.
+Připojovací řetězce konstruované ručně v době spuštění z neověřeného vstupu uživatele jsou zranitelné vůči útokům prostřednictvím injektáže řetězce a ohrožení zabezpečení ve zdroji dat. Pro řešení těchto problémů zavedlo *ADO.NET* 2,0 [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md) pro každého poskytovatele dat *.NET Framework* . Tyto tvůrci připojovacích řetězců zpřístupňují parametry jako vlastnosti silného typu a umožňují ověření připojovacího řetězce před jeho odesláním do zdroje dat.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)\
-Popisuje způsob použití `ConnectionStringBuilder` třídy sestavit platný připojovací řetězce v běhu.
+Ukazuje, jak použít `ConnectionStringBuilder` třídy pro vytvoření platných připojovacích řetězců za běhu.
 
 [Připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)\
-Ukazuje, jak k ukládání a načítání připojovacích řetězců v konfiguračních souborech.
+Ukazuje, jak ukládat a načítat připojovací řetězce v konfiguračních souborech.
 
 [Syntaxe připojovacího řetězce](../../../../docs/framework/data/adonet/connection-string-syntax.md)\
-Popisuje postup konfigurace specifickým pro zprostředkovatele připojovací řetězce pro `SqlClient`, `OracleClient`, `OleDb`, a `Odbc`.
+Popisuje postup konfigurace připojovacích řetězců specifických pro konkrétní poskytovatele `SqlClient`pro `OracleClient`, `OleDb`, a `Odbc`.
 
 [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)\
-Ukazuje postupy ochrany osobních údajů pro připojení ke zdroji dat.
+Ukazuje techniky ochrany informací používaných pro připojení ke zdroji dat.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Připojení ke zdroji dat](/cpp/data/odbc/connecting-to-a-data-source)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

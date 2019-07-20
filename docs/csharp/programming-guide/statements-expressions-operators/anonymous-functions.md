@@ -1,5 +1,5 @@
 ---
-title: Anonymní funkce - C# Průvodce programováním
+title: Anonymní funkce – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,34 +7,30 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: 338f4b34a5de84d4ce2eb9e0bd6f4c9ebe360fa4
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4d266584e1867a512e4b61e8839fe948aafb007f
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584278"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363925"
 ---
-# <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
-Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kdykoli se očekává typ delegáta. Slouží k inicializaci pojmenovaný delegát nebo předat místo pojmenovaný delegát typu jako parametr metody.  
-  
- Existují dva druhy anonymní funkce, které jsou jednotlivě podrobněji popsána v následujících tématech:  
-  
-- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
-  
-- [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
-  
-    > [!NOTE]
-    >  Výrazy lambda mohou být vázány na stromy výrazů a také na delegáty.  
-  
+# <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (C# Průvodce programováním)
+
+Anonymní funkce je "vložený" příkaz nebo výraz, který lze použít všude, kde je očekáván typ delegáta. Můžete ji použít k inicializaci pojmenovaného delegáta nebo ho předat místo pojmenovaného typu delegáta jako parametr metody.
+
+Můžete použít [výraz lambda](lambda-expressions.md) nebo [anonymní metodu](../../language-reference/operators/delegate-operator.md) pro vytvoření anonymní funkce. Doporučujeme použít výrazy lambda, protože poskytují výstižnější a výrazný způsob psaní vloženého kódu. Na rozdíl od anonymních metod lze některé typy výrazů lambda převést na typy stromu výrazů.
+
 ## <a name="the-evolution-of-delegates-in-c"></a>Vývoj delegátů v jazyce C\#
- V jazyce C# 1.0 vytvořeného instanci delegáta explicitně inicializuje s metodu, která byla definována kdekoli v kódu. 2.0 C# představila koncept anonymní metody jako způsob, jak zapsat vložený nepojmenovaný výkazu bloků, které mohou být provedeny v vyvolání delegáta. C# 3.0 představila výrazy lambda, které jsou v principu podobná anonymní metody, ale výrazová a stručné. Tyto dvě funkce se souhrnně nazývají *anonymní funkce*. Obecně platí aplikací určených pro verzi 3.5 a novější rozhraní .NET Framework by měl použití výrazů lambda.  
+
+ V C# 1,0 jste vytvořili instanci delegáta explicitně inicializací s metodou, která byla definována jinde v kódu. C#2,0 představil koncept anonymních metod jako způsob zápisu nepojmenovaných bloků vložených příkazů, které mohou být provedeny při volání delegáta. C#3,0 zavedly lambda výrazy, které jsou podobné v konceptu anonymním metodám, ale častěji a stručnější. Tyto dvě funkce se společně nazývají *anonymní funkce*. Obecně platí, že aplikace, které cílí na verzi 3,5 a novější .NET Framework, by měly používat lambda výrazy.  
   
- Následující příklad ukazuje vývoj vytvoření delegáta z 1.0 C# do jazyka C# 3.0:  
+ Následující příklad ukazuje vývoj vytvoření delegáta z C# 1,0 na C# 3,0:  
   
  [!code-csharp[csProgGuideLINQ#65](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#65)]  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Viz také:
 

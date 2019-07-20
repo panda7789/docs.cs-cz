@@ -6,34 +6,34 @@ helpviewer_keywords:
 - Microsoft Annotations Framework [WPF]
 - documents [WPF], annotations
 ms.assetid: a893442b-e220-4603-bf6a-b01fefcb4b37
-ms.openlocfilehash: 503858b717ef541675b642a735289e3903b91fdc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1d11b0bb2086bb449c0ffc0ff89430a55096a28d
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777078"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364354"
 ---
 # <a name="annotations-schema"></a>Schéma poznámek
 
-Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft Framework poznámky k ukládání a načítání dat anotace uživatele.
+Toto téma popisuje definici schématu XML (XSD), kterou používá rozhraní Microsoft Annotations k ukládání a načítání dat poznámek uživatele.
 
-[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Serializuje anotace data z interního vyjádření na formátu XML.  Formát XML používaný pro tento převod je popsán [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] schéma XSD.  Schéma definuje ve formátu XML nezávislého na implementaci, který slouží k výměně anotace dat mezi aplikacemi.
+Rozhraní pro poznámky serializace data poznámek z interní reprezentace do formátu XML.  Formát XML použitý pro tento převod je popsán podle schématu XSD pro poznámky k rozhraní.  Schéma definuje formát XML nezávislý na implementaci, který lze použít k výměně dat poznámek mezi aplikacemi.
 
-[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Definici schématu XML se skládá ze dvou subschemas
+Definice schématu XML pro rozhraní poznámky se skládá ze dvou podschémat.
 
-- Poznámky Core schématu XML (základní schéma).
+- Základní schéma XML poznámky (základní schéma).
 
-- Komentáře XML základní schéma (základní schéma).
+- Základní schéma XML poznámky (základní schéma).
 
-Základní schéma definuje strukturu XML primární <xref:System.Windows.Annotations.Annotation>.  Většina XML elementů definováno ve schématu Core odpovídají typům v <xref:System.Windows.Annotations> oboru názvů.  Základní schéma poskytuje tři Rozšiřovací body, ve kterém aplikace můžete přidat svoje vlastní data XML.  Zahrnout tyto Rozšiřovací body <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>nebo "Obsah".  (Obsahu prvky jsou k dispozici ve formě <xref:System.Xml.XmlElement> seznamu.)
+Základní schéma definuje primární strukturu XML pro <xref:System.Windows.Annotations.Annotation>.  Většina elementů XML definovaných ve schématu Core odpovídá typům v <xref:System.Windows.Annotations> oboru názvů.  Základní schéma zveřejňuje tři Rozšiřovací body, kde aplikace mohou přidávat vlastní data XML.  Mezi tyto body rozšíření patří <xref:System.Windows.Annotations.Annotation.Authors%2A>" <xref:System.Windows.Annotations.ContentLocatorPart>," a "obsah".  (Prvky obsahu jsou k dispozici ve formě <xref:System.Xml.XmlElement> seznamu.)
 
-Definuje rozšíření pro základní schéma popsaných v tomto tématu <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a obsah typů, které jsou zahrnuty v počáteční verzi Windows Presentation Foundation (WPF).
+Základní schéma popsané v tomto tématu definuje rozšíření pro <xref:System.Windows.Annotations.Annotation.Authors%2A>typy obsahu, <xref:System.Windows.Annotations.ContentLocatorPart>a, které jsou součástí počáteční verze Windows Presentation Foundation (WPF).
 
 <a name="CoreSchema"></a>
 
-## <a name="annotations-xml-core-schema"></a>Schéma XML Core poznámek
+## <a name="annotations-xml-core-schema"></a>Poznámky ke schématu XML Core
 
-Schéma poznámek XML Core definuje strukturu XML, který se používá k ukládání <xref:System.Windows.Annotations.Annotation> objekty.
+Základní schéma XML poznámky definuje strukturu XML, která se používá k ukládání <xref:System.Windows.Annotations.Annotation> objektů.
 
 ```xml
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
@@ -185,9 +185,9 @@ Schéma poznámek XML Core definuje strukturu XML, který se používá k uklád
 
 <a name="BaseSchema"></a>
 
-## <a name="annotations-xml-base-schema"></a>Základní schéma XML poznámek
+## <a name="annotations-xml-base-schema"></a>Základní schéma XML poznámky
 
-Základní schéma definuje strukturu XML pro tři abstraktní elementů definováno ve schématu Core – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, a <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.
+Základní schéma definuje strukturu XML pro tři abstraktní prvky definované v základním schématu – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.
 
 ```xml
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
@@ -498,9 +498,9 @@ Základní schéma definuje strukturu XML pro tři abstraktní elementů definov
 
 <a name="SampleXML"></a>
 
-## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a>Ukázkový soubor XML vytvořené metodou XmlStreamStore poznámky
+## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a>Ukázka XML vytvořeného pomocí poznámek XmlStreamStore
 
-XML, který následuje zobrazí výstup anotací <xref:System.Windows.Annotations.Storage.XmlStreamStore> a organizaci, který obsahuje tři anotace – zvýraznění textu rychlé – poznámky a stonek ink-note ukázkový soubor.
+Následující kód XML zobrazuje výstup poznámek <xref:System.Windows.Annotations.Storage.XmlStreamStore> a organizaci ukázkového souboru, který obsahuje tři poznámky – zvýraznění, text v rychlé poznámce a inkoustové poznámky.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -12,48 +12,48 @@ helpviewer_keywords:
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a3de327001f987b6c35d547b7cf3cbe7feeac49
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ed8525cad7dd56fe026070786b0f0cf51c0fec2d
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648528"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363974"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
-Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači se během nasazení, vytvářet soubory manifestu Win32 – vizuální styl v době návrhu, které obsahují informace o aktivaci a vazby. Tyto soubory manifestu, spíše než klíče registru, směrovat aktivační objekt.  
+Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači během nasazení vytvoříte v době návrhu soubory manifestu ve stylu Win32, které obsahují informace o vazbách a aktivaci. Tyto soubory manifestu, nikoli klíče registru, nasměrují aktivaci objektu.  
   
- Pomocí aktivace bez registrace pro vaše sestavení místo registrace během nasazení nabízí dvě výhody:  
+ Použití aktivace bez registrace pro vaše sestavení místo jejich registrace během nasazení nabízí dvě výhody:  
   
-- Můžete určit, kterou verzi knihovny DLL je aktivován, když je více než jedna verze nainstalovány v počítači.  
+- Můžete řídit, která verze knihovny DLL je aktivována, pokud je v počítači nainstalována více než jedna verze.  
   
-- Koncoví uživatelé mohou používat příkazu XCOPY nebo FTP kopírovat aplikaci do příslušného adresáře v počítači. Aplikace se dá spustit pak z tohoto adresáře.  
+- Koncoví uživatelé můžou pomocí příkazu XCOPY nebo FTP zkopírovat aplikaci do příslušného adresáře na svém počítači. Aplikaci lze následně spustit z tohoto adresáře.  
   
- Tato část popisuje dva typy manifesty potřeba pro spolupráci s COM bez registrace: manifesty aplikace a komponenty. Tyto manifestů jsou soubory formátu XML. Manifest aplikace, který je vytvořen vývojář aplikací, obsahuje metadata popisující sestavení a závislosti sestavení. Manifest součásti vytvořený vývojářem komponenty obsahuje informace, jinak se nachází v registru Windows.  
+ Tato část popisuje dva typy manifestů, které jsou potřeba pro zprostředkovatele komunikace s objekty COM bez registrace: manifesty aplikací a komponent. Tyto manifesty jsou soubory XML. Manifest aplikace, který je vytvořen vývojářem aplikace, obsahuje metadata, která popisují sestavení a závislosti sestavení. Manifest komponenty vytvořený vývojářem komponent obsahuje informace, které jsou v registru systému Windows jiné.  
   
-### <a name="requirements-for-registration-free-com-interop"></a>Požadavky pro spolupráci s COM bez registrace  
+### <a name="requirements-for-registration-free-com-interop"></a>Požadavky na zprostředkovatele komunikace s objekty COM bez registrace  
   
-1. Podpora pro spolupráci s COM bez registrace se mírně liší v závislosti na typu sestavení knihovny; Konkrétně, určuje, zda je nespravované (COM-souběžně) nebo spravované sestavení (. NET-based). V následující tabulce jsou uvedeny operační systém a požadavky na verzi rozhraní .NET Framework pro každý typ sestavení.  
+1. Podpora komunikace s objekty COM bez registrace se mírně liší v závislosti na typu sestavení knihovny; konkrétně bez ohledu na to, zda je sestavení nespravované (souběžně) nebo spravované (. Založené na síti. V následující tabulce jsou uvedeny požadavky na operační systém a .NET Framework verze pro každý typ sestavení.  
   
     |Typ sestavení|Operační systém|Verze rozhraní .NET Framework|  
     |-------------------|----------------------|----------------------------|  
-    |COM –-vedle sebe|Microsoft Windows XP|Není nutné.|  
-    |. Na základě NET|Windows XP s aktualizací SP2|.NET Framework verze 1.1 nebo novější.|  
+    |COM vedle sebe|Microsoft Windows XP|Není nutné.|  
+    |. Založený na síti|Windows XP s aktualizací SP2|Rozhraní .NET Framework verze 1,1 nebo novější.|  
   
-     Řady Windows Server 2003 také podporuje interoperabilitu COM bez registrace pro. Na základě NET sestavení.  
+     Řada Windows Server 2003 také podporuje zprostředkovatele komunikace COM bez registrace pro. Sestavení založená na síti.  
   
-     Pro. Na základě NET třídě může být kompatibilní s aktivace registru z modelu COM, třídě musí mít výchozí konstruktor a musí být veřejné.  
+     Pro. Třída založená na síti, která bude kompatibilní s aktivací bez registru z modelu COM, musí mít konstruktor bez parametrů a musí být veřejná.  
   
-### <a name="configuring-com-components-for-registration-free-activation"></a>Konfigurace komponent COM pro aktivaci bez registrace  
+### <a name="configuring-com-components-for-registration-free-activation"></a>Konfigurace komponent modelu COM pro aktivaci bez registrace  
   
-1. Pro komponenty modelu COM pro podílet na aktivaci bez registrace musí být nasazený jako sestavení vedle sebe. Nespravované sestavení jsou sestavení vedle sebe.  Další informace najdete v tématu [sestavení vedle sebe](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
+1. Aby komponenta modelu COM mohla být součástí aktivace bez registrace, musí být nasazena jako souběžné sestavení. Souběžná sestavení jsou nespravovaná sestavení.  Další informace najdete v tématu [použití souběžných sestavení](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
   
-     Použít sestavení vedle sebe modelu COM,. Vývojář aplikace založené na NET musí poskytnout manifest aplikace, který obsahuje informace o vazbě a aktivace. Operační systém Windows XP obsahuje integrovanou podporu pro nespravované sestavení vedle sebe. Modul runtime modelu COM podporuje operační systém, prohledá manifest aplikace pro informace o aktivaci při komponenty, aktivuje se nenachází v registru.  
+     Chcete-li použít sestavení souběžně na straně modelu COM,. Vývojář aplikací založených na síti musí poskytovat manifest aplikace, který obsahuje informace o vazbě a aktivaci. Podpora nespravovaných sestavení souběžně na straně je integrovaná do operačního systému Windows XP. Modul runtime COM podporovaný operačním systémem vyhledá v manifestu aplikace informace o aktivaci, když je součást aktivovaná v registru.  
   
-     Aktivace bez registrace je volitelný pro komponenty modelu COM, které jsou nainstalované na Windows XP. Podrobné pokyny pro přidání sestavení vedle sebe do aplikace najdete v tématu [sestavení vedle sebe](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
+     Aktivace bez registrace je volitelná pro komponenty modelu COM nainstalované v systému Windows XP. Podrobné pokyny týkající se přidání souběžného sestavení do aplikace najdete v tématu [použití souběžných sestavení](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
   
     > [!NOTE]
-    >  Vedle sebe spuštění je funkce rozhraní .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a komponent, které používají verzi modulu runtime, spustit současně na stejném počítači. Spuštění vedle sebe a sestavení vedle sebe jsou různé mechanismy pro zajištění funkcí vedle sebe.  
+    >  Souběžné spouštění je funkce .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a komponent, které používají verzi modulu runtime, pro spuštění ve stejném počítači současně. Souběžné spouštění a souběžná sestavení jsou různými mechanismy pro poskytování funkcí vedle sebe.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Konfigurace Bezregistrační aktivace komponent COM založené na platformě .NET](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)
+- [Postupy: Konfigurace komponent COM na bázi .NET Framework pro aktivaci bez registrace](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)

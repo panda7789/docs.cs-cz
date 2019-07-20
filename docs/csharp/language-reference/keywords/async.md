@@ -1,5 +1,5 @@
 ---
-title: Async – C# odkaz
+title: asynchronní C# odkaz
 ms.custom: seodec18
 ms.date: 05/22/2017
 f1_keywords:
@@ -9,15 +9,16 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 346cfccd076866e9c321974aaa8c8ddd367a17ea
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 3bf71bbe0e3f4e14f140f5a1b98a662ceaaea419
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859579"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68362992"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
-Použití `async` modifikátor určit, že je metoda, [výraz lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), nebo [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) je asynchronní. Pokud použijete tento modifikátor na metodu nebo výraz, to se označuje jako *asynchronní metoda*. Následující příklad definuje asynchronní metodu s názvem `ExampleMethodAsync`: 
+
+Použijte modifikátor k určení toho, že metoda, [výraz lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)nebo [anonymní metoda](../../../csharp/language-reference/operators/delegate-operator.md) je asynchronní. `async` Použijete-li tento modifikátor na metodu nebo výraz, je označována jako *asynchronní metoda*. Následující příklad definuje asynchronní metodu s názvem `ExampleMethodAsync`:
   
 ```csharp  
 public async Task<int> ExampleMethodAsync()  
@@ -25,23 +26,23 @@ public async Task<int> ExampleMethodAsync()
     // . . . .  
 }  
 ```  
- 
-Pokud začínáte s asynchronním programováním nebo není srozumitelný použití asynchronní metody `await` – klíčové slovo provádět potenciálně dlouhotrvající práci bez blokování vlákna volajícího, přečtěte si úvod v kapitole [Asynchronous Programming with Async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md). Následující kód se nachází uvnitř a volá asynchronní metodu <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> metody: 
+
+Pokud začínáte s asynchronním programováním nebo nerozumíte, jak asynchronní metoda používá `await` klíčové slovo pro potenciálně dlouhodobě spuštěnou práci bez blokování vlákna volajícího, přečtěte si Úvod do [asynchronního programování s použitím modifikátoru Async a očekává](../../../csharp/programming-guide/concepts/async/index.md)se. Následující kód byl nalezen v asynchronní metodě a volá <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> metodu: 
   
 ```csharp  
 string contents = await httpClient.GetStringAsync(requestUrl);  
 ```  
   
-Asynchronní metoda pracuje synchronně, dokud nedosáhne svého prvního `await` výrazu, v tomto okamžiku je metoda pozastavena, dokud není dokončen očekávaný úkol. Během této doby se ovládací prvek vrátí volajícímu metody, stejně jako v příkladu v následující části.  
+Asynchronní metoda běží synchronně, dokud nedosáhne svého prvního `await` výrazu, v tomto okamžiku je metoda pozastavena, dokud není dokončen očekávaný úkol. Během této doby se ovládací prvek vrátí volajícímu metody, stejně jako v příkladu v následující části.  
   
-Pokud metoda, která `async` upraví – klíčové slovo neobsahuje `await` výraz nebo příkaz, metoda je provedena synchronně. Upozornění kompilátoru vás upozorní na jakékoli asynchronní metody, které neobsahují slovo `await` příkazy, protože tato situace může značit chybu. Zobrazit [upozornění kompilátoru (úroveň 1) CS4014](../../../csharp/language-reference/compiler-messages/cs4014.md).  
+Pokud metoda, kterou `async` klíčové slovo upravuje `await` , neobsahuje výraz nebo příkaz, metoda se provede synchronně. Upozornění kompilátoru vás upozorní na jakékoli asynchronní metody, které neobsahují `await` příkazy, protože tato situace může znamenat chybu. Viz [Upozornění kompilátoru (úroveň 1) CS4014](../../../csharp/language-reference/compiler-messages/cs4014.md).  
   
- `async` – Klíčové slovo je kontextové, v tom, že je klíčové slovo pouze v případě, že upravuje metodu, výraz lambda nebo anonymní metodu. Ve všech ostatních kontextech je interpretováno jako identifikátor.  
+ `async` Klíčové slovo je kontextové v tom, že se jedná o klíčové slovo pouze v případě, že upravuje metodu, výraz lambda nebo anonymní metodu. Ve všech ostatních kontextech je interpretováno jako identifikátor.  
   
 ## <a name="example"></a>Příklad  
-Následující příklad ukazuje strukturu a tok řízení mezi asynchronním ovladačem událostí, `StartButton_Click`a asynchronní metody, `ExampleMethodAsync`. Výsledkem asynchronní metody je počet znaků na webové stránce. Kód je vhodný pro aplikaci Windows Presentation Foundation (WPF) nebo aplikace Windows Store, který vytvoříte v sadě Visual Studio; Podívejte se v komentářích ke kódu pro nastavení aplikace.  
+Následující příklad ukazuje strukturu a tok řízení mezi obslužnou rutinou asynchronní události, `StartButton_Click`a asynchronní `ExampleMethodAsync`metodou. Výsledek z asynchronní metody je počet znaků webové stránky. Kód je vhodný pro aplikaci Windows Presentation Foundation (WPF) nebo aplikaci pro Windows Store, kterou vytvoříte v aplikaci Visual Studio; Podívejte se na komentáře ke kódu pro nastavení aplikace.  
 
-Tento kód lze spustit v sadě Visual Studio jako aplikace Windows Presentation Foundation (WPF) nebo aplikaci Windows Store. Je třeba ovládacího prvku tlačítko s názvem `StartButton` a ovládacího prvku textového pole s názvem `ResultsTextBox`. Nezapomeňte nastavit názvy a obslužné rutiny, abyste měli vypadat přibližně takto:  
+Tento kód můžete spustit v aplikaci Visual Studio jako aplikaci Windows Presentation Foundation (WPF) nebo aplikace pro Windows Store. Potřebujete ovládací prvek tlačítko s názvem `StartButton` a ovládací prvek TextBox s `ResultsTextBox`názvem. Nezapomeňte nastavit názvy a obslužné rutiny tak, abyste měli něco podobného:  
 
 ```xaml
 <Button Content="Button" HorizontalAlignment="Left" Margin="88,77,0,0" VerticalAlignment="Top" Width="75"  
@@ -50,42 +51,42 @@ Tento kód lze spustit v sadě Visual Studio jako aplikace Windows Presentation 
          Text="&lt;Enter a URL&gt;" VerticalAlignment="Top" Width="310" Name="ResultsTextBox"/>  
 ```
   
-Chcete-li spustit kód jako aplikaci WPF:  
+Spuštění kódu jako aplikace WPF:  
 
-- Vložte tento kód do `MainWindow` třídy v MainWindow.xaml.cs.  
-- Přidejte odkaz na System.Net.Http.  
-- Přidat `using` směrnice pro System.Net.Http.  
+- Vložte tento kód do `MainWindow` třídy v MainWindow.XAML.cs.  
+- Přidejte odkaz na System .NET. http.  
+- `using` Přidejte direktivu pro System .NET. http.  
   
-Chcete-li spustit kód jako aplikaci Windows Store:  
-- Vložte tento kód do `MainPage` třídy v MainPage.xaml.cs.  
-- Přidání direktivy using pro System.Net.Http a System.Threading.Tasks.  
+Spuštění kódu jako aplikace pro Windows Store:  
+- Vložte tento kód do `MainPage` třídy v MainPage.XAML.cs.  
+- Přidejte direktivy using pro System .NET. http a System. Threading. Tasks.  
   
 [!code-csharp[wpf-async](../../../../samples/snippets/csharp/language-reference/keywords/async/wpf/mainwindow.xaml.cs#1)]
   
 > [!IMPORTANT]
->  Další informace o úkolech a kódu, který se spustí při čekání na úlohy, naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md). Úplný příklad WPF používající podobné prvky, naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+>  Další informace o úlohách a kódu, který se spouští při čekání na úlohu, naleznete v tématu [asynchronní programování s modifikátorem Async a await](../../../csharp/programming-guide/concepts/async/index.md). Úplný příklad WPF, který používá podobné prvky, naleznete v [tématu Návod: Přístup k webu pomocí modifikátoru Async a](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)operátoru await  
   
 ## <a name="return-types"></a>Návratové typy  
-Asynchronní metoda může mít tyto návratové typy:
+Asynchronní metoda může mít následující návratové typy:
 
 - <xref:System.Threading.Tasks.Task>
 - <xref:System.Threading.Tasks.Task%601>
-- [void](../../../csharp/language-reference/keywords/void.md). `async void` metody se obecně nedoporučují pro kód než obslužné rutiny událostí, protože volající nemůže `await` tyto metody a musí implementovat mechanismus různé zprávy o úspěšném dokončení nebo chybové stavy.
-- Od verze C# 7.0, libovolný typ, který má k dispozici přístup `GetAwaiter` metody. `System.Threading.Tasks.ValueTask<TResult>` Typ je jeden takový implementace. Je k dispozici přidáním balíčku NuGet `System.Threading.Tasks.Extensions`. 
+- [void](../../../csharp/language-reference/keywords/void.md). `async void`metody se obecně nedoporučují pro jiný kód než obslužné rutiny událostí, protože `await` volající nemůžou tyto metody a musí implementovat jiný mechanismus, aby hlásili úspěšné dokončení nebo chybové stavy.
+- Počínaje C# 7,0, jakýkoli typ, který má přístupnou `GetAwaiter` metodu. `System.Threading.Tasks.ValueTask<TResult>` Typ představuje jednu takovou implementaci. Je k dispozici přidáním balíčku `System.Threading.Tasks.Extensions`NuGet. 
 
-Asynchronní metoda nemůže deklarovat všechny [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md), [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ani použít ji [odkazovat na návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md), ale může volat metody které mají tyto parametry.  
+Asynchronní metoda nemůže deklarovat jakýkoli parametr [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md), [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) , ani nemůže mít [odkazovou návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md), ale může volat metody, které mají tyto parametry.  
   
-Zadáte `Task<TResult>` jako návratový typ asynchronní metody Pokud [vrátit](../../../csharp/language-reference/keywords/return.md) příkaz metody určuje operand typu `TResult`. Použijete `Task` Pokud není vrácena žádná smysluplná hodnota po dokončení metody. To znamená, volání metody vrací `Task`, ale když `Task` dokončení jakékoli `await` výraz, který čeká na `Task` vyhodnotí jako `void`.  
+Zadáte `Task<TResult>` jako návratový typ asynchronní metody, pokud příkaz [return](../../../csharp/language-reference/keywords/return.md) metody určuje operand typu `TResult`. Použijete `Task` , pokud není vrácena žádná smysluplná hodnota po dokončení metody. To znamená, `Task`že volání metody vrátí, ale `Task` po dokončení je libovolný `await` výraz `void`, který čeká `Task` na vyhodnotit.  
   
-Můžete použít `void` především k definování obslužných rutin událostí, kde je požadován návratový typ. Volající `void`-asynchronní metody vracející ni nemohou čekat a zaznamenat tak výjimky, které metoda vyvolá.  
+Pro definování obslužných rutin událostí, které vyžadují návratový typ, použijte `void` primárně návratový typ. Volající `void`asynchronní metody vracející výjimku nemůže očekávat a zachytit výjimky, které metoda vyvolá.  
 
-Počínaje C# 7.0, vrátí jiný typ, obvykle hodnota typu, který má `GetAwaiter` metoda minimalizovat přidělení paměti v kritickém pro výkon části kódu. 
+Počínaje C# 7,0 vrátíte jiný typ, obvykle hodnotový typ, který má `GetAwaiter` metodu pro minimalizaci přidělení paměti v částech v kódu kritickém pro výkon. 
 
-Další informace a příklady najdete v tématu [Async Return Types](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+Další informace a příklady naleznete v tématu [Async Return Types](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
 - [await](../../../csharp/language-reference/keywords/await.md)
-- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/index.md)

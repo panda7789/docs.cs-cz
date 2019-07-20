@@ -1,5 +1,5 @@
 ---
-title: YIELD kontextové klíčové slovo - C# odkaz
+title: kontextové klíčové slovo yield C# – referenční informace
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: 3e5bb96357293c42d4bd2161756260fd849cc099
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 0d2c3f67715b9b2161a6c908576ac9f964ff13d6
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267793"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363127"
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 
-Při použití `yield` [kontextové klíčové slovo](index.md#contextual-keywords) v příkazu, dáváte tak najevo, metoda, operátor nebo `get` přístupový objekt, ve kterém se zobrazí, je iterátor. Pomocí `yield` k definování iterátor už není nutné explicitní extra třídy (třídy, která definuje stav výčtu, viz <xref:System.Collections.Generic.IEnumerator%601> příklad) při implementaci <xref:System.Collections.IEnumerable> a <xref:System.Collections.IEnumerator> vzor pro vlastní shromažďování Zadejte.
+Při použití `yield` [klíčového slova kontextové](index.md#contextual-keywords) v příkazu označíte, že metoda, operátor nebo `get` přistupující objekt, ve kterém se zobrazí, je iterátor. Použití `yield` k definování iterátoru odstraní nutnost explicitní třídy navíc (třída, která obsahuje stav pro výčet, viz <xref:System.Collections.Generic.IEnumerator%601> příklad <xref:System.Collections.IEnumerable> ) při implementaci vzor a <xref:System.Collections.IEnumerator> pro vlastní kolekci. textový.
 
-Následující příklad ukazuje dvě formy `yield` příkazu.
+Následující příklad ukazuje dva formy `yield` příkazu.
 
 ```csharp
 yield return <expression>;
@@ -28,41 +28,41 @@ yield break;
 
 ## <a name="remarks"></a>Poznámky
 
-Můžete použít `yield return` příkaz vrátit vždy jeden prvek v čase.
+Použijete `yield return` příkaz k vrácení každého prvku v jednom okamžiku.
 
-S použitím může zpracovat sekvenci vrácenou z metody iterátoru [foreach](foreach-in.md) příkaz nebo dotaz LINQ. Každá iterace `foreach` smyčky zavolá metodu iterátoru. Když `yield return` je v metodě iterátoru dosažen příkaz `expression` dochází, a je zachováno aktuální umístění v kódu. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.
+Sekvenci vrácenou metodou iterátoru lze spotřebovat pomocí příkazu [foreach](foreach-in.md) nebo dotazu LINQ. Každá iterace `foreach` smyčky volá metodu iterátoru. Je-li v metodě iterátoru dosaženo `expression` příkazu,jevrácenoaaktuálníumístěnívkódujeuchováno.`yield return` Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.
 
-Můžete použít `yield break` příkaz do konce iterace.
+K ukončení iterace `yield break` můžete použít příkaz.
 
 Další informace o iterátorech naleznete v tématu [iterátory](../../iterators.md).
 
-## <a name="iterator-methods-and-get-accessors"></a>Iterátory a přístupové objekty get
+## <a name="iterator-methods-and-get-accessors"></a>Metody iterátoru a přistupující objekty get
 
 Deklarace iterátoru musí splňovat následující požadavky:
 
-- Návratový typ musí být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.
+- Návratový typ musí <xref:System.Collections.IEnumerable>být, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>nebo <xref:System.Collections.Generic.IEnumerator%601>.
 
-- Deklarace nemůže mít žádnou [v](in-parameter-modifier.md) [ref](ref.md) nebo [si](out-parameter-modifier.md) parametry.
+- Deklarace nemůže [mít žádné parametry](in-parameter-modifier.md) [ref](ref.md) nebo [out](out-parameter-modifier.md) .
 
-`yield` Typ iterátoru, který vrací <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.IEnumerator> je `object`.  Pokud iterátor vrátí <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.Generic.IEnumerator%601>, musí existovat implicitní převod z typu výrazu v `yield return` příkazu parametr obecného typu.
+Typ iterátoru, který vrací <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.IEnumerator> je `object`. `yield`  Pokud iterátor vrátí <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.Generic.IEnumerator%601>, musí být implicitní převod z typu výrazu v `yield return` příkazu na parametr obecného typu.
 
-Není možné zahrnout `yield return` nebo `yield break` příkaz v metodách, které mají následující vlastnosti:
+Nemůžete zahrnout `yield return` příkaz `yield break` ani do:
 
-- Anonymní metody. Další informace najdete v tématu [anonymní metody](../../programming-guide/statements-expressions-operators/anonymous-methods.md).
+- [Lambda výrazy](../../programming-guide/statements-expressions-operators/lambda-expressions.md) a [anonymní metody](../operators/delegate-operator.md).
 
-- Metody, které obsahují nebezpečné bloky. Další informace najdete v tématu [nebezpečné](unsafe.md).
+- Metody, které obsahují nebezpečné bloky. Další informace najdete v tématu [unsafe](unsafe.md).
 
 ## <a name="exception-handling"></a>Ošetření výjimek
 
-A `yield return` příkaz nelze umístit do bloku try-catch. A `yield return` příkaz lze umístit do bloku try příkazu try-finally.
+`yield return` Příkaz se nemůže nacházet v bloku try-catch. `yield return` Příkaz lze umístit do bloku try příkazu try-finally.
 
-A `yield break` příkaz lze umístit do bloku try nebo catch bloku, ale ne bloku finally.
+`yield break` Příkaz se může nacházet v bloku try nebo bloku catch, ale ne v bloku finally.
 
-Pokud `foreach` text (mimo metodu iterátoru) vyvolá výjimku, `finally` je proveden blok v metodě iterátoru.
+Pokud tělo (mimo metodu iterátoru) vyvolá výjimku `finally` , je spuštěn blok v metodě iterátoru. `foreach`
 
 ## <a name="technical-implementation"></a>Technická implementace
 
-V následujícím kódu vrátí `IEnumerable<string>` z metody iterátoru a poté iteruje skrz příslušné prvky.
+Následující kód vrátí `IEnumerable<string>` z metody iterátoru a pak projde jeho prvky.
 
 ```csharp
 IEnumerable<string> elements = MyIteratorMethod();
@@ -72,15 +72,15 @@ foreach (string element in elements)
 }
 ```
 
-Volání `MyIteratorMethod` neprovede tělo metody. Místo toho volání vrátí `IEnumerable<string>` do `elements` proměnné.
+Volání `MyIteratorMethod` nespustí tělo metody. Místo toho volání vrátí `IEnumerable<string>` `elements` do proměnné.
 
-Při iteraci `foreach` smyčky, <xref:System.Collections.IEnumerator.MoveNext%2A> metoda je volána pro `elements`. Toto volání provádí tělo `MyIteratorMethod` až do další `yield return` je dosažen příkaz. Výraz vrácený příkazem `yield return` příkaz určuje nejen hodnotu `element` proměnné k využití v těle smyčky, ale také <xref:System.Collections.Generic.IEnumerator%601.Current%2A> vlastnost `elements`, což je `IEnumerable<string>`.
+V iteraci `foreach` smyčky <xref:System.Collections.IEnumerator.MoveNext%2A> je metoda volána pro `elements`. Toto volání provede tělo `MyIteratorMethod` až do dosažení dalšího `yield return` příkazu. Výraz `yield return` vrácený příkazem určuje nejen hodnotu `element` proměnné pro spotřebu v těle <xref:System.Collections.Generic.IEnumerator%601.Current%2A> smyčky, ale také vlastnost objektu `elements`, což je `IEnumerable<string>`.
 
-Na každé další iteraci `foreach` smyčky, tělo iterátoru pokračuje odkud zastaví se opět tehdy, když se dosáhne `yield return` příkazu. `foreach` Smyčka dokončena, jakmile konce metody iterátoru nebo `yield break` je dosažen příkaz.
+Při každém následném opakování `foreach` smyčky pokračuje provádění textu iterátoru z místa, kde bylo ponecháno, opětovné zastavení při `yield return` dosažení příkazu. Smyčka skončí po dosažení konce metody iterátoru `yield break` nebo příkazu. `foreach`
 
 ## <a name="example"></a>Příklad
 
-Následující příklad obsahuje `yield return` , který se nachází uvnitř `for` smyčky. Každá iterace `foreach` tělo s příkazy v `Main` metoda vytvoří volání `Power` funkce iterátoru. Každé volání funkce iterátoru pokračuje do dalšího provedení příkazu `yield return` prohlášení, které nastane při další iteraci `for` smyčky.
+Následující příklad obsahuje `yield return` příkaz, který je `for` uvnitř smyčky. Každá iterace `foreach` těla příkazu `Main` v metodě `Power` vytvoří volání funkce iterátoru. Každé volání funkce iterátoru pokračuje k dalšímu provedení `yield return` příkazu, ke kterému dojde během další iterace `for` smyčky.
 
 Návratový typ metody iterátoru je <xref:System.Collections.IEnumerable>, což je typ rozhraní iterátoru. Při volání metody iterátoru je vrácen vyčíslitelný objekt, který obsahuje mocniny čísla.
 
@@ -88,7 +88,7 @@ Návratový typ metody iterátoru je <xref:System.Collections.IEnumerable>, což
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje `get` přístupovou metodu iterátoru. V tomto příkladu každá `yield return` příkazu vrátí instanci třídy definované uživatelem.
+Následující příklad ukazuje `get` přistupující objekt, který je iterátorem. V příkladu každý `yield return` příkaz vrátí instanci uživatelsky definované třídy.
 
 [!code-csharp[csrefKeywordsContextual#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#21)]
 
@@ -98,7 +98,7 @@ Následující příklad ukazuje `get` přístupovou metodu iterátoru. V tomto 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../language-reference/index.md)
+- [C#Odkaz](../../language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [foreach, in](foreach-in.md)
 - [Iterátory](../../iterators.md)

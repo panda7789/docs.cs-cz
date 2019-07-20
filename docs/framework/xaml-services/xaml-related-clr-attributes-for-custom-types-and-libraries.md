@@ -4,269 +4,269 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-ms.openlocfilehash: 0984028e0a09c9939f68ae64be8c401182b57274
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2f907d097f52f13e733713d8ad68cc2390b051ed
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622917"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364231"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
-Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou definovány pomocí rozhraní .NET Framework XAML Services. Popisuje také další atributy CLR, které jsou definovány v rozhraní .NET Framework, které mají související s XAML scénář pro aplikaci na sestavení nebo typy. Přidělování sestavení, typy nebo členy s těmito atributy CLR poskytuje typ informace o systému XAML souvisejících typů. Informace jsou poskytovány k příjemci XAML, který používá rozhraní .NET Framework XAML Services pro zpracování datový proud uzlu XAML přímo nebo prostřednictvím vyhrazené XAML čtečky a zapisovače XAML.  
+Toto téma popisuje atributy modulu CLR (Common Language Runtime), které jsou definovány pomocí .NET Framework služby XAML. Popisuje také jiné atributy CLR, které jsou definovány v .NET Framework, které mají scénář související s XAML pro aplikaci do sestavení nebo typů. Přizpůsobování sestavení, typů nebo členů pomocí těchto atributů CLR poskytuje typy informací o systému typu XAML, které souvisejí s vašimi typy. Informace jsou k dispozici libovolnému spotřebiteli XAML, který používá .NET Framework služby XAML pro zpracování datového proudu uzlu XAML přímo nebo prostřednictvím vyhrazeného čtecího modulu XAML a zapisovače XAML.  
   
-## <a name="xaml-related-clr-attributes-for-custom-types-and-custom-members"></a>Atributy CLR související s jazykem XAML pro vlastní typy a členy, vlastní  
- Pomocí atributů CLR má za následek, že používáte celkové CLR k definování typů, jinak tyto atributy nejsou k dispozici. Pokud používáte modul CLR k definování typu zálohování, může číst výchozí kontext schématu XAML používá rozhraní .NET Framework XAML Services XAML zapisovače attribution CLR prostřednictvím reflexe proti zálohování sestavení.  
+## <a name="xaml-related-clr-attributes-for-custom-types-and-custom-members"></a>Atributy CLR související s jazykem XAML pro vlastní typy a vlastní členy  
+ Použití atributů CLR znamená, že k definování typů používáte celkový CLR, jinak takové atributy nejsou k dispozici. Použijete-li modul CLR k definování typu back-Type, pak výchozí kontext schématu XAML používaný .NET Framework moduly XAML pro kódování XAML může číst prohlášení CLR prostřednictvím reflexe proti záložním sestavením.  
   
- Následující části popisují atributy související s XAML, které můžete použít pro vlastní typy nebo členy vlastní. Jednotlivé atributy CLR komunikuje informace, které jsou relevantní pro systém typů XAML. V cestě zatížení s atributy informace buď pomáhá čtečky XAML tvoří platný datový proud uzlu XAML nebo pomáhá zapisovač XAML vytvořit platný objekt grafu. V poli Uložit cestu, s atributy informace buď pomáhá čtečky XAML tvoří platný datový proud uzlu XAML, který reconstitutes informace o typu systému XAML; nebo deklaruje pomocné parametry serializace nebo požadavky na zápis XAML nebo ostatní uživatelé XAML.  
+ Následující části popisují atributy související s jazykem XAML, které lze použít na vlastní typy nebo vlastní členy. Každý atribut CLR komunikuje s informacemi, které jsou relevantní pro systém typů XAML. V cestě načtení se s atributy postaví informace buď pomocí čtečky XAML, na platný datový proud uzlu XAML, nebo pomáhá zapisovači XAML vytvořit platný graf objektů. V cestě pro uložení se atributy pomůžou považovat za čtecí modul XAML a vytvoří platný datový proud uzlu XAML, který rekládá systémové informace typu XAML. nebo deklaruje pomocné parametry nebo požadavky na serializaci pro zapisovač XAML nebo jiné příjemce XAML.  
   
 ### <a name="ambientattribute"></a>AmbientAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.AmbientAttribute>  
   
- **Platí pro:** Třída, vlastnost, nebo `get` přistupující členy, které podporují připojitelná vlastnosti.  
+ **Platí pro:** Třída, vlastnost nebo `get` členové přistupujícího objektu, kteří podporují připojitelné vlastnosti.  
   
- **Argumenty:** Žádný  
+ **Náhodné** Žádné  
   
- <xref:System.Windows.Markup.AmbientAttribute> Označuje, že vlastnost nebo všechny vlastnosti, které provést s atributy typu by měl být interpretován pod vedlejší vlastnost koncept v XAML. Okolí koncept se vztahuje jak XAML procesory určit vlastníky typ členů. Změní vlastnost ambient je vlastnost, kde se očekává, že hodnota bude k dispozici v rámci analyzátor při vytváření grafu objektů, ale v případě vyhledávání typický typ člena je pozastaven okamžité uzlu XAML nastavit vytváří.  
+ <xref:System.Windows.Markup.AmbientAttribute>označuje, že vlastnost nebo všechny vlastnosti, které přijímají typ s atributy, by měly být interpretovány v konceptu ambientních vlastností v jazyce XAML. Ambientní pojem se vztahuje na to, jak procesory XAML určují typ vlastníci členů. Ambientní vlastnost je vlastnost, kde je očekávána hodnota v kontextu analyzátoru při vytváření grafu objektů, ale v případě, že typický typ – vyhledávání členů je pozastaveno pro vytvoření okamžité sady uzlů jazyka XAML.  
   
- Ambientní koncept lze použít u připojitelná členy, které nejsou reprezentovány jako vlastnosti z hlediska jak definuje CLR attribution <xref:System.AttributeTargets>. Použití metody přidělení bude použito pouze v případě třídy `get` přístupový objekt, který podporuje připojitelná využití pro XAML.  
+ Ambientní koncept lze použít na připojitelné členy, které nejsou reprezentovány jako vlastnosti z hlediska způsobu, jakým definuje <xref:System.AttributeTargets>autor CLR. Použití metody, která se má použít, by mělo být použito pouze v `get` případě přístupového objektu, který podporuje připojitelné použití pro XAML.  
   
 ### <a name="constructorargumentattribute"></a>ConstructorArgumentAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.ConstructorArgumentAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Řetězec, který určuje název vlastnosti, která odpovídá v něm argument jediný konstruktor.  
+ **Náhodné** Řetězec, který určuje název vlastnosti, která odpovídá jednomu argumentu konstruktoru.  
   
- <xref:System.Windows.Markup.ConstructorArgumentAttribute> Určuje, že lze objekt inicializovat pomocí syntaxe jiného než výchozího konstruktoru. proto, že vlastnost se zadaným názvem poskytuje informace o vytváření. Tyto informace jsou primárně pro serializaci XAML. Další informace naleznete v tématu <xref:System.Windows.Markup.ConstructorArgumentAttribute>.  
+ <xref:System.Windows.Markup.ConstructorArgumentAttribute>Určuje, že objekt lze inicializovat pomocí syntaxe konstruktoru bez parametrů a zda vlastnost zadaného názvu dodává informace o konstrukci. Tyto informace jsou primárně určeny pro serializaci XAML. Další informace naleznete v tématu <xref:System.Windows.Markup.ConstructorArgumentAttribute>.  
   
 ### <a name="contentpropertyattribute"></a>Třída ContentPropertyAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.ContentPropertyAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Řetězec, který určuje název člena s atributy typu.  
+ **Náhodné** Řetězec, který určuje název členu typu s atributy.  
   
- <xref:System.Windows.Markup.ContentPropertyAttribute> znamená, že vlastnost pojmenovaného argumentu by měla sloužit jako vlastnost XAML pro daný typ obsahu. Vlastnost obsahu definice XAML zdědí všechny odvozené typy, které jsou přiřadit k definování typu. Definice na konkrétní odvozený typ může přepsat s použitím <xref:System.Windows.Markup.ContentPropertyAttribute> na konkrétní odvozeného typu.  
+ <xref:System.Windows.Markup.ContentPropertyAttribute>označuje, že vlastnost pojmenovaná argumentem by měla sloužit jako vlastnost obsahu XAML pro daný typ. Definice vlastnosti obsahu XAML dědí na všechny odvozené typy, které lze přiřadit k definičnímu typu. Můžete přepsat definici konkrétního odvozeného typu <xref:System.Windows.Markup.ContentPropertyAttribute> použitím pro konkrétní odvozený typ.  
   
- Pro vlastnost, která slouží jako vlastnost obsahu XAML můžete vynechat property – element pro vlastnost označování využití XAML. Obvykle stanovíte vlastnosti obsahu XAML, které podporují zjednodušené značky XAML pro modely obsahu a členství ve skupině. Protože pouze jednoho člena lze označit jako vlastnost obsahu XAML, máte někdy možnosti návrhu pro Ujistěte se, díky kterým několik kontejner vlastnosti typu by měla být určena jako vlastnost obsahu XAML. Vlastnosti kontejneru musí použít s prvky explicitní vlastnost.  
+ Pro vlastnost, která slouží jako vlastnost obsahu XAML, lze tagování elementu vlastnosti pro vlastnost vynechat v použití XAML. Obvykle určíte vlastnosti obsahu XAML, které podporují zjednodušený kód XAML pro váš obsah a modely zahrnutí. Vzhledem k tomu, že pouze jeden člen může být určen jako vlastnost obsahu XAML, někdy máte možnost navrhovat volby, které mají být určeny pro to, které z několika vlastností kontejneru typu by měly být označeny jako vlastnost obsahu XAML. Ostatní vlastnosti kontejneru musí být použity s explicitními prvky vlastností.  
   
- V datovém proudu uzlu XAML vlastnosti obsahu XAML stále vytvářejí `StartMember` a `EndMember` uzly, název vlastnosti pro použití <xref:System.Xaml.XamlMember>. Pokud chcete zjistit, zda je člen vlastnost obsahu XAML, zkontrolujte <xref:System.Xaml.XamlType> hodnotu z `StartObject` umístěte a získat výhody <xref:System.Xaml.XamlType.ContentProperty%2A>.  
+ V datovém proudu uzlu XAML stále `StartMember` vytváření a `EndMember` uzly vlastností obsahu XAML používá název vlastnosti pro <xref:System.Xaml.XamlMember>. Chcete-li zjistit, zda je členem vlastnost obsahu XAML, zkontrolujte <xref:System.Xaml.XamlType> hodnotu `StartObject` z pozice <xref:System.Xaml.XamlType.ContentProperty%2A>a získejte hodnotu.  
   
 ### <a name="contentwrapperattribute"></a>ContentWrapperAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.ContentWrapperAttribute>  
   
- **Platí pro:** Třída, konkrétně typů kolekce.  
+ **Platí pro:** Třída, konkrétně typy kolekcí.  
   
- **Argumenty:** A <xref:System.Type> , který určuje typ, který má používat jako typ obsahu obálky cizí obsahu.  
+ **Náhodné** A <xref:System.Type> určuje typ, který má být použit jako typ obálky obsahu pro cizí obsah.  
   
- <xref:System.Windows.Markup.ContentWrapperAttribute> Určuje jeden nebo více typů na přiřazené kolekce typu, který se použije při zabalení cizí obsah. Cizí obsah odkazuje na případy, kde systém omezeními typu na typ obsahu vlastnosti nezachytí všechny možné obsahu případy, které by podporují použití XAML pro vlastnícího typu. Například podporovat XAML pro obsah určitého typu může podporovat řetězce v silného typu obecného <xref:System.Collections.ObjectModel.Collection%601>. Obálky obsahu jsou užitečné při migraci stávající konvence kódu do vaší XAML koncepci Přiřaditelné hodnoty pro kolekce, jako je migrace, související s textem modely obsahu.  
+ <xref:System.Windows.Markup.ContentWrapperAttribute>Určuje jeden nebo více typů pro přidružený typ kolekce, který bude použit k zabalení cizího obsahu. Cizí obsah odkazuje na případy, kdy omezení typu systému na typ vlastnosti Content nezachycují všechny možné případy obsahu, které by použití XAML pro vlastnící typ podporovalo. Například podpora jazyka XAML pro obsah konkrétního typu může podporovat řetězce ve silně typované obecné <xref:System.Collections.ObjectModel.Collection%601>. Obálky obsahu jsou užitečné pro migraci stávajících konvencí pro psaní kódu do nejvyšší hodnoty přiřazení pro kolekce v jazyce XAML, jako je například migrace modelů obsahu souvisejících s textem.  
   
- Chcete-li zadat více než jeden typ obsahu obálky, použijte atribut více než jednou.  
+ Chcete-li zadat více než jeden typ obálky obsahu, použijte atribut několikrát.  
   
 ### <a name="dependsonattribute"></a>DependsOnAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.DependsOnAttribute>  
   
  **Platí pro:** Vlastnost  
   
- **Argumenty:** Řetězec určující název jiného člena s atributy typu.  
+ **Náhodné** Řetězec, který určuje název jiného člena typu s atributy.  
   
- <xref:System.Windows.Markup.DependsOnAttribute> Označuje, že vlastnost s atributy závisí na hodnotě jiné vlastnosti. Použití tohoto atributu na definici vlastnosti zajistí, že závislé vlastnosti jsou zpracovány nejprve v zápisu objektu XAML. Použití <xref:System.Windows.Markup.DependsOnAttribute> zadejte výjimečných případech vlastnosti na typy, kde musí být následován konkrétní pořadí analýzy pro vytvoření objektu platný.  
+ <xref:System.Windows.Markup.DependsOnAttribute>označuje, že vlastnost s atributy závisí na hodnotě jiné vlastnosti. Použití tohoto atributu na definici vlastnosti zajišťuje, aby závislé vlastnosti byly zpracovány jako první v zápisu objektu XAML. Použití lze určit výjimečné případy vlastností u typů, kde konkrétní pořadí analýzy musí následovat za účelem platného vytvoření objektu. <xref:System.Windows.Markup.DependsOnAttribute>  
   
- Můžete použít více <xref:System.Windows.Markup.DependsOnAttribute> případy definici vlastnosti.  
+ Můžete použít více <xref:System.Windows.Markup.DependsOnAttribute> případů na definici vlastnosti.  
   
 ### <a name="markupextensionreturntypeattribute"></a>MarkupExtensionReturnTypeAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>  
   
- **Platí pro:** Třída, která má být <xref:System.Windows.Markup.MarkupExtension> odvozeného typu.  
+ **Platí pro:** Třída, která by měla být <xref:System.Windows.Markup.MarkupExtension> odvozeným typem.  
   
- **Argumenty:** A <xref:System.Type> , který určuje typ nejpřesnější očekávat jako `ProvideValue` výsledek s atributy <xref:System.Windows.Markup.MarkupExtension>.  
+ **Náhodné** Který určuje nejpřesnější typ, který má `ProvideValue` <xref:System.Windows.Markup.MarkupExtension>být očekáván jako výsledek atributu. <xref:System.Type>  
   
- Další informace najdete v tématu [– rozšíření značek XAML přehled](markup-extensions-for-xaml-overview.md).  
+ Další informace naleznete v tématu [Přehled rozšíření značek pro jazyk XAML](markup-extensions-for-xaml-overview.md).  
   
 ### <a name="namescopepropertyattribute"></a>NameScopePropertyAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.NameScopePropertyAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Podporuje dvě formy autorství:  
+ **Náhodné** Podporuje dva formy přidělení:  
   
-- Řetězec, který určuje název vlastnosti v typu s atributy.  
+- Řetězec, který určuje název vlastnosti u typu s atributy.  
   
-- Řetězec, který určuje název vlastnosti a s <xref:System.Type> pro typ, který definuje vlastnost s názvem. Tento formulář slouží k určení připojitelný člen jako vlastnost namescope XAML.  
+- Řetězec, který určuje název vlastnosti, a <xref:System.Type> pro typ, který definuje pojmenovanou vlastnost. Tento formulář slouží k zadání připojeného člena jako vlastnosti namescope XAML.  
   
- <xref:System.Windows.Markup.NameScopePropertyAttribute> Určuje vlastnost, která obsahuje hodnotu namescope XAML pro třídu s atributy. Vlastnost obor namescope XAML má odkazovat na objekt, který implementuje <xref:System.Windows.Markup.INameScope> a obsahuje skutečný obor namescope XAML, ukládání a její chování.  
+ <xref:System.Windows.Markup.NameScopePropertyAttribute>Určuje vlastnost, která poskytuje hodnotu namescope XAML pro třídu s atributy. Očekává se, že vlastnost namescope XAML odkazuje na objekt, který <xref:System.Windows.Markup.INameScope> implementuje a obsahuje skutečný namescope XAML, jeho úložiště a chování.  
   
 ### <a name="runtimenamepropertyattribute"></a>RuntimeNamePropertyAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Řetězec, který určuje název vlastnosti název běhu s atributy typu.  
+ **Náhodné** Řetězec určující název vlastnosti název běhu u typu s atributy.  
   
- <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> sestavy vlastnost s atributy typu, který se mapuje XAML [x: Name – direktiva](x-name-directive.md). Vlastnost musí být typu <xref:System.String> a musí být pro čtení a zápisu.  
+ <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>oznamuje vlastnost typu s atributem, který se mapuje na direktivu [x:Name](x-name-directive.md)jazyka XAML. Vlastnost musí být typu <xref:System.String> a musí být určena pro čtení i zápis.  
   
- Definice zdědí všechny odvozené typy, které jsou přiřadit k definování typu. Definice na konkrétní odvozený typ může přepsat s použitím <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> na konkrétní odvozeného typu.  
+ Definice dědí na všechny odvozené typy, které lze přiřadit k definičnímu typu. Můžete přepsat definici konkrétního odvozeného typu <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> použitím pro konkrétní odvozený typ.  
   
 ### <a name="trimsurroundingwhitespaceattribute"></a>TrimSurroundingWhitespaceAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>  
   
  **Platí pro:** Typy  
   
- **Argumenty:** Žádné  
+ **Náhodné** Žádné  
   
- <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> platí pro konkrétní typy, které se zobrazují jako podřízené prvky v rámci prázdné místo důležité obsahu (obsah drží kolekce, která má <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>). <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> především vztahující se k uložení cesty, ale je k dispozici v systému typů XAML v cestě zatížení prozkoumáním <xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType>. Další informace najdete v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).  
+ <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>je použita na konkrétní typy, které se mohou zobrazit jako podřízené prvky v rámci významného obsahu (obsah uložený v kolekci, <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>která má). <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>je hlavně relevantní pro cestu pro uložení, ale je k dispozici v systému typů XAML v cestě zatížení prozkoumáním <xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType>. Další informace naleznete v tématu [prázdné místo zpracování v jazyce XAML](whitespace-processing-in-xaml.md).  
   
 ### <a name="typeconverterattribute"></a>TypeConverterAttribute  
  **Referenční dokumentace:**  <xref:System.ComponentModel.TypeConverterAttribute>  
   
- **Platí pro:** Třídy, vlastnosti, metody (pouze XAML platná metoda případem je `get` přístupový objekt, který podporuje připojitelný člen).  
+ **Platí pro:** Třída, vlastnost, metoda (jediný parametr, který je platný pouze v jazyce `get` XAML, je přístupový objekt, který podporuje člena, který lze připojit).  
   
- **Argumenty:** <xref:System.Type> z <xref:System.ComponentModel.TypeConverter>.  
+ **Náhodné** <xref:System.Type> z <xref:System.ComponentModel.TypeConverter>.  
   
- <xref:System.ComponentModel.TypeConverterAttribute> v XAML kontext odkazuje na vlastní <xref:System.ComponentModel.TypeConverter>. To <xref:System.ComponentModel.TypeConverter> poskytuje chování převodu typu pro vlastní typy nebo členy tohoto typu.  
+ <xref:System.ComponentModel.TypeConverterAttribute>v kontextu XAML odkazuje na vlastní <xref:System.ComponentModel.TypeConverter>. To <xref:System.ComponentModel.TypeConverter> poskytuje chování převodu typů pro vlastní typy nebo členy tohoto typu.  
   
- Můžete použít <xref:System.ComponentModel.TypeConverterAttribute> atribut pro váš typ odkazování na vaší implementace převodníku typů. Převaděče typů pro XAML můžete definovat na třídy, struktury nebo rozhraní. Není potřeba poskytovat převod typů výčtů, nativně povolen převod.  
+ Aplikujete <xref:System.ComponentModel.TypeConverterAttribute> atribut na typ a odkazuje na implementaci konvertoru typu. Můžete definovat konvertory typů pro jazyk XAML pro třídy, struktury nebo rozhraní. Pro výčty není nutné zadávat převod typu, tento převod je povolen nativně.  
   
- Váš typ převaděče měli být schopni převést z řetězce, který se používá pro atributy nebo inicializace text v kódu, do vašeho typu požadovaného cíle. Další informace najdete v tématu [TypeConverters a XAML](../wpf/advanced/typeconverters-and-xaml.md).  
+ Konvertor typu by měl být schopný převést z řetězce, který se používá pro atributy nebo inicializační text v kódu, do zamýšleného cílového typu. Další informace naleznete v tématu [TypeConverters a XAML](../wpf/advanced/typeconverters-and-xaml.md).  
   
- Nejsou implementovány všechny hodnoty typu, ale typ převaděče chování pro XAML můžete také navázat na specifickou vlastnost. V tomto případě použijete <xref:System.ComponentModel.TypeConverterAttribute> v definici vlastnosti (vnějšího definice, nikoli konkrétní `get` a `set` definic).  
+ Namísto použití na všechny hodnoty typu může být pro konkrétní vlastnost také vytvořeno chování konvertoru typu pro XAML. V takovém případě se použije <xref:System.ComponentModel.TypeConverterAttribute> na definici vlastnosti (vnější definice, nikoli na konkrétní `get` definice a `set` definice).  
   
- Je možné přiřadit typ převaděč chování pro XAML využití vlastních připojitelný člen použitím <xref:System.ComponentModel.TypeConverterAttribute> k `get` metoda přístupový objekt, který podporuje použití XAML.  
+ Chování konvertoru typu pro použití jazyka XAML vlastního přistupujícího člena lze přiřadit pomocí <xref:System.ComponentModel.TypeConverterAttribute> `get` přístupového objektu metody, který podporuje použití XAML.  
   
- Podobně jako <xref:System.ComponentModel.TypeConverter>, <xref:System.ComponentModel.TypeConverterAttribute> existoval v rozhraní .NET Framework před existenci XAML a model konvertor typu obsluhovat jiným účelům. Aby bylo možné odkazovat a využívat <xref:System.ComponentModel.TypeConverterAttribute>, musí plně kvalifikujte jej nebo poskytovat `using` příkaz pro <xref:System.ComponentModel>. Systémové sestavení je také nutné uvést ve vašem projektu.  
+ Podobně jako v .NET Framework existovaly před existencí kódu XAML a model konvertoru typu obsluhuje jiné účely. <xref:System.ComponentModel.TypeConverterAttribute> <xref:System.ComponentModel.TypeConverter> Aby bylo možné odkazovat a používat <xref:System.ComponentModel.TypeConverterAttribute>, musíte je plně kvalifikovat nebo `using` poskytnout příkaz pro <xref:System.ComponentModel>. Do projektu musíte také zahrnout systémové sestavení.  
   
 ### <a name="uidpropertyattribute"></a>UidPropertyAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.UidPropertyAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Řetězec, který odkazuje na odpovídající vlastnosti podle názvu.  
+ **Náhodné** Řetězec, který odkazuje na příslušnou vlastnost podle názvu.  
   
- Označuje vlastnost CLR třídy, že aliasy [x: Uid – direktiva](x-uid-directive.md).  
+ Určuje vlastnost CLR třídy, která je aliasem [direktivy x:UID –](x-uid-directive.md).  
   
 ### <a name="usableduringinitializationattribute"></a>UsableDuringInitializationAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.UsableDuringInitializationAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Logická hodnota. Pokud používá pro zamýšlený účel atributu, to by měl vždy být zadána jako `true`.  
+ **Náhodné** Logická hodnota. Pokud se používá pro zamýšlený účel atributu, mělo by být vždy zadáno jako `true`.  
   
- Určuje, zda tento typ je sestavena shora dolů při vytváření grafu objektu XAML. Toto je pokročilé koncept, což je pravděpodobně úzce souvisí s definice programovací model. Další informace naleznete v tématu <xref:System.Windows.Markup.UsableDuringInitializationAttribute>.  
+ Určuje, zda je tento typ během vytváření grafu objektů XAML sestaven nahoru. Toto je pokročilý koncept, který je pravděpodobně úzce spojen s definicí programovacího modelu. Další informace naleznete v tématu <xref:System.Windows.Markup.UsableDuringInitializationAttribute>.  
   
 ### <a name="valueserializerattribute"></a>ValueSerializerAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.ValueSerializerAttribute>  
   
- **Platí pro:** Třídy, vlastnosti, metody (pouze XAML platná metoda případem je `get` přístupový objekt, který podporuje připojitelný člen).  
+ **Platí pro:** Třída, vlastnost, metoda (jediný parametr, který je platný pouze v jazyce `get` XAML, je přístupový objekt, který podporuje člena, který lze připojit).  
   
- **Argumenty:** A <xref:System.Type> , který určuje hodnotu serializátoru pomocná třída pro použití při serializaci všechny vlastnosti typu s atributy, nebo s konkrétní atributy vlastnosti.  
+ **Náhodné** <xref:System.Type> Který určuje, že serializátor hodnoty podporuje třídu, která se má použít při serializaci všech vlastností typu s atributy nebo konkrétní vlastnost s atributy.  
   
- <xref:System.Windows.Markup.ValueSerializer> Určuje, který vyžaduje další stav a kontext než třída serializace hodnotu <xref:System.ComponentModel.TypeConverter> nepodporuje. <xref:System.Windows.Markup.ValueSerializer> můžou být spojené s připojitelný člen použitím <xref:System.Windows.Markup.ValueSerializerAttribute> atribut na statické `get` přístupové metody pro připojitelný člen. Hodnota serializace platí i pro výčty a struktury a rozhraní, ale ne pro delegáty.  
+ <xref:System.Windows.Markup.ValueSerializer>Určuje třídu serializace hodnoty, která vyžaduje více stavů a kontextu <xref:System.ComponentModel.TypeConverter> , než má. <xref:System.Windows.Markup.ValueSerializer>lze přidružit k připojenému členu <xref:System.Windows.Markup.ValueSerializerAttribute> použitím atributu u metody statického `get` přístupového objektu pro připojeného člena. Serializace hodnot je také platná pro výčty, rozhraní a struktury, ale ne pro delegáty.  
   
 ### <a name="whitespacesignificantcollectionattribute"></a>WhitespaceSignificantCollectionAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>  
   
- **Platí pro:** Třída, specificky typy kolekce, kteří budou hostovat smíšený obsah, kde mezery okolo objektu prvků může být důležité pro reprezentaci uživatelského rozhraní.  
+ **Platí pro:** Třída, konkrétně typy kolekcí, které jsou očekávány pro hostování smíšeného obsahu, kde prázdné znaky kolem prvků objektu mohou být významné pro reprezentaci uživatelského rozhraní.  
   
- **Argumenty:** Žádné  
+ **Náhodné** Žádné  
   
- <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> Označuje, že typ kolekce má být zpracován jako prázdné místo důležité procesorem XAML, který ovlivňuje konstrukce uzly hodnot datový proud uzlu XAML v rámci kolekce. Další informace najdete v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).  
+ <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>označuje, že typ kolekce by měl být zpracován jako prázdné místo, které je významné pro procesor XAML, což ovlivňuje konstrukci uzlů hodnot datového proudu uzlu XAML v rámci kolekce. Další informace naleznete v tématu [prázdné místo zpracování v jazyce XAML](whitespace-processing-in-xaml.md).  
   
 ### <a name="xamldeferloadattribute"></a>XamlDeferLoadAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XamlDeferLoadAttribute>  
   
  **Platí pro:** Třída, vlastnost.  
   
- **Argumenty:** Podporuje dvě attribution forms typy jako řetězce nebo typy jako <xref:System.Type>. Viz <xref:System.Windows.Markup.XamlDeferLoadAttribute>.  
+ **Náhodné** Podporuje dva typy forem přiřazení jako řetězce nebo typy jako <xref:System.Type>. Viz <xref:System.Windows.Markup.XamlDeferLoadAttribute>.  
   
- Označuje, že je třída nebo vlastnost má odloženého načtení využití pro XAML (například šablony chování) a sestavy umožňující odložení chování a jeho cílové nebo obsah typu třídy.  
+ Označuje, že třída nebo vlastnost má odložené použití načtení pro XAML (například chování šablony), a hlásí třídu, která umožňuje odložení chování a jeho cíl nebo typ obsahu.  
   
 ### <a name="xamlsetmarkupextensionattribute"></a>XamlSetMarkupExtensionAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Názvy zpětného volání.  
+ **Náhodné** Pojmenuje zpětné volání.  
   
- Označuje, že rozšíření značek můžete zadat hodnotu pro jeden nebo více vlastností třídy a odkazuje na obslužnou rutinu, která zapisovač XAML by měly volat před provedením operace set rozšíření značek jakékoli vlastnosti třídy.  
+ Označuje, že třída může použít rozšíření značek k poskytnutí hodnoty pro jednu nebo více jeho vlastností a odkazuje na obslužnou rutinu, kterou by měl před provedením operace set rozšíření značek volat modul pro zápis kódu na jakoukoliv vlastnost třídy.  
   
 ### <a name="xamlsettypeconverterattribute"></a>XamlSetTypeConverterAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XamlSetTypeConverterAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Názvy zpětného volání.  
+ **Náhodné** Pojmenuje zpětné volání.  
   
- Označuje, že třída slouží k zadání hodnoty pro jeden nebo více vlastností konvertor typu a odkazuje na obslužnou rutinu, která zapisovač XAML by měly volat před provedením operace set konvertor typu jakékoli vlastnosti třídy.  
+ Označuje, že třída může použít konvertor typu k poskytnutí hodnoty pro jednu nebo více jejích vlastností a odkazuje na obslužnou rutinu, kterou by měl zapisovač XAML volat před provedením operace sady konvertoru typu u libovolné vlastnosti třídy.  
   
 ### <a name="xmllangpropertyattribute"></a>XmlLangPropertyAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XmlLangPropertyAttribute>  
   
  **Platí pro:** Třída  
   
- **Argumenty:** Řetězec určující název vlastnosti, která má alias `xml:lang` s atributy typu.  
+ **Náhodné** Řetězec, který určuje název vlastnosti, na kterou má alias `xml:lang` přihlášený typ s atributem.  
   
- <xref:System.Windows.Markup.XmlLangPropertyAttribute> sestavy vlastnost s atributy typu, který se mapuje XML `lang` směrnice. Vlastnost není typu nutně <xref:System.String>, ale musí být přiřaditelný z řetězce (toho je možné dosáhnout přidružením konvertoru typu s typem vlastnosti nebo s konkrétní vlastnost). Vlastnost musí být pro čtení a zápisu.  
+ <xref:System.Windows.Markup.XmlLangPropertyAttribute>oznamuje vlastnost typu s atributem, který se mapuje na direktivu `lang` XML. Vlastnost není nutně typu <xref:System.String>, ale musí být přizpůsobena z řetězce (to lze provést přidružením konvertoru typu s typem vlastnosti nebo s konkrétní vlastností). Vlastnost musí být pro čtení i zápis.  
   
- Scénáře pro mapování `xml:lang` je tak, aby objektového modelu runtime měl přístup k informacím o jazyk XML určuje jazyk bez konkrétně zpracování ve službě XMLDOM.  
+ Scénář pro mapování `xml:lang` je tak, aby běhový objektový model měl přístup k informacím jazyka XML, a to bez konkrétního zpracování pomocí XMLDOM.  
   
- Definice zdědí všechny odvozené typy, které jsou přiřadit k definování typu. Definice na konkrétní odvozený typ může přepsat s použitím <xref:System.Windows.Markup.XmlLangPropertyAttribute> na konkrétní odvozený typ, i když se běžné scénáře.  
+ Definice dědí na všechny odvozené typy, které lze přiřadit k definičnímu typu. Definici pro konkrétní odvozený typ můžete přepsat použitím <xref:System.Windows.Markup.XmlLangPropertyAttribute> konkrétního odvozeného typu, přestože to je neobvyklý scénář.  
   
 ## <a name="xaml-related-clr-attributes-at-the-assembly-level"></a>Atributy CLR související s jazykem XAML na úrovni sestavení  
- Následující části popisují atributy související s XAML, které nejsou u typů nebo definice členů, ale místo toho se použijí pro sestavení. Tyto atributy se vztahují k celkovému cíli definování knihovnu, která obsahuje vlastní typy, které se použijí v XAML. Některé atributy nejsou nutně vliv datový proud uzlu XAML přímo, ale jsou předány v datovém proudu uzlu pro ostatní uživatelé používat. Příjemci informace zahrnují vybavená vývojová prostředí nebo serializace procesy, které potřebují informace oboru názvů XAML a přidružené informace předponu. XAML schématu kontextu (včetně výchozí rozhraní .NET Framework XAML Services) také použije tyto informace.  
+ Následující části popisují atributy související s jazykem XAML, které nejsou aplikovány na typy nebo definice členů, ale jsou místo toho aplikovány na sestavení. Tyto atributy jsou relevantní pro celkový cíl definování knihovny, která obsahuje vlastní typy pro použití v jazyce XAML. Některé atributy nemusí nutně ovlivnit datový proud uzlu XAML přímo, ale jsou předány v datovém proudu uzlu, aby je mohli používat jiní uživatelé. Mezi příjemce pro tyto informace patří návrhová prostředí nebo procesy serializace, které potřebují informace o oboru názvů XAML a související informace o předponě. Tyto informace používá kontext schématu XAML (včetně výchozích .NET Framework služby XAML).  
   
 ### <a name="xmlnscompatiblewithattribute"></a>XmlnsCompatibleWithAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>  
   
- **Argumenty:**  
+ **Náhodné**  
   
-- Řetězec určující identifikátor oboru názvů XAML k začlenění.  
+- Řetězec, který určuje identifikátor oboru názvů XAML pro začlenění.  
   
-- Řetězec určující identifikátor oboru názvů XAML, který může začlenění obor názvů XAML z předchozí argument.  
+- Řetězec, který určuje identifikátor oboru názvů XAML, který může začlenění obor názvů XAML z předchozího argumentu.  
   
- <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute> Určuje, že obor názvů XAML může subsumed pomocí jiného oboru názvů XAML. Obvykle je označeno subsuming oboru názvů XAML v dříve definované <xref:System.Windows.Markup.XmlnsDefinitionAttribute>. Tento postup lze použít pro správu verzí slovník jazyka XAML v knihovně a aby byl kompatibilní s dříve definované značky proti dříve označené verzí slovníku.  
+ <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>Určuje, že obor názvů XAML může být subsumed jiným oborem názvů XAML. Obor názvů XAML subsuming je obvykle uveden v dříve definovaném <xref:System.Windows.Markup.XmlnsDefinitionAttribute>typu. Tento postup lze použít pro správu verzí slovníku XAML v knihovně a pro zajištění jeho kompatibility s dříve definovaným označením ve slovníku starší verze.  
   
 ### <a name="xmlnsdefinitionattribute"></a>XmlnsDefinitionAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>  
   
- **Argumenty:**  
+ **Náhodné**  
   
-- Řetězec určující identifikátor oboru názvů XAML k definování.  
+- Řetězec, který určuje identifikátor oboru názvů jazyka XAML, který má být definován.  
   
-- Řetězec, který označuje obor názvů CLR. Obor názvů CLR by měl definovat veřejné typy v sestavení a alespoň jeden obor názvů typů CLR by měla být určený pro použití XAML.  
+- Řetězec, který má název oboru názvů CLR. Obor názvů CLR by měl definovat veřejné typy v sestavení a nejméně jeden z typů oborů názvů CLR by měl být určen pro použití v jazyce XAML.  
   
- <xref:System.Windows.Markup.XmlnsDefinitionAttribute> Určuje mapování na základě za sestavení mezi obor názvů XAML a obor názvů CLR, který se pak použije pro rozlišení typ v kontext schématu XAML a XAML objektu zapisovače.  
+ <xref:System.Windows.Markup.XmlnsDefinitionAttribute>Určuje mapování na základě sestavení mezi oborem názvů XAML a oborem názvů CLR, který je pak použit pro rozlišení typu pomocí kontextu zapisovače objektu XAML nebo kontextu schématu XAML.  
   
- Více než jeden <xref:System.Windows.Markup.XmlnsDefinitionAttribute> lze použít k sestavení. To může být provedeno pro jakoukoli kombinaci následujících důvodů:  
+ Pro sestavení lze <xref:System.Windows.Markup.XmlnsDefinitionAttribute> použít více než jeden. To může být provedeno v jakékoli kombinaci následujících důvodů:  
   
-- Návrh knihovna obsahuje více oborů názvů CLR pro logické uspořádání přístup přes rozhraní API za běhu; však chcete, aby všechny typy v těchto oborů názvů má být použitelná pro XAML pomocí odkazu na stejný obor názvů XAML. V takovém případě můžete použít několik <xref:System.Windows.Markup.XmlnsDefinitionAttribute> atributy, pomocí stejných <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnota ale jiným <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> hodnoty. To je obzvláště užitečné, pokud definujete mapování pro obor názvů XAML, který rozhraní framework vaší aplikace si klade za cíl jako výchozí obor názvů XAML v běžné použití.  
+- Návrh knihovny obsahuje několik oborů názvů CLR pro logickou organizaci přístupu běhového rozhraní API. Nicméně chcete, aby všechny typy v těchto oborech názvů byly použitelné pro XAML odkazem na stejný obor názvů XAML. V takovém případě použijete několik <xref:System.Windows.Markup.XmlnsDefinitionAttribute> atributů se stejnou <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnotou, ale s <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> různými hodnotami. To je užitečné hlavně v případě, že definujete mapování pro obor názvů jazyka XAML, který vaše architektura nebo aplikace považují za výchozí obor názvů XAML při běžném použití.  
   
-- Návrh knihovna obsahuje více oborů názvů CLR a chcete rozhodnout vědomě a záměrně rozdělení oboru názvů XAML mezi použití typů v těchto oborů názvů CLR.  
+- Návrh knihovny obsahuje několik oborů názvů CLR a v těchto oborech názvů CLR chcete mít záměrné obory názvů XAML mezi využitím typů.  
   
-- Můžete definovat obor názvů CLR v sestavení a chcete, aby byl přístupný prostřednictvím více než jeden obor názvů XAML. Tento scénář nastane, pokud podporujete více vocabularies pomocí stejného základu kódu.  
+- Definujete obor názvů CLR v sestavení a chcete, aby byl přístupný prostřednictvím více než jednoho oboru názvů XAML. K tomuto scénáři dochází, Pokud podporujete více slovníků se stejným základem kódu.  
   
-- Podpora jazyka XAML definujete v jedné nebo více oborů názvů CLR. Pro ty <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnota by měla být `http://schemas.microsoft.com/winfx/2006/xaml`.  
+- Můžete definovat podporu jazyka XAML v jednom nebo více oborech názvů CLR. Pro tyto <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnoty by měla být `http://schemas.microsoft.com/winfx/2006/xaml`hodnota.  
   
 ### <a name="xmlnsprefixattribute"></a>XmlnsPrefixAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XmlnsPrefixAttribute>  
   
- **Argumenty:**  
+ **Náhodné**  
   
-- Řetězec určující identifikátor oboru názvů XAML.  
+- Řetězec, který určuje identifikátor oboru názvů XAML.  
   
-- Řetězec, který specifikuje doporučenou předponu.  
+- Řetězec, který určuje doporučenou předponu.  
   
- <xref:System.Windows.Markup.XmlnsDefinitionAttribute> Určuje doporučené předponu pro obor názvů XAML. Předpona, která je užitečná při vytváření elementů a atributů v souboru XAML, který je serializováno modulem rozhraní .NET Framework XAML Services <xref:System.Xaml.XamlXmlWriter>, nebo když knihovnu implementace XAML komunikuje s prostředím návrhu, který má XAML funkce úprav.  
+ <xref:System.Windows.Markup.XmlnsDefinitionAttribute>Určuje doporučenou předponu, která se má použít pro obor názvů XAML. Tato předpona je užitečná při psaní prvků a atributů v souboru XAML, který je serializován pomocí služby <xref:System.Xaml.XamlXmlWriter>.NET Framework XAML, nebo když knihovna implementující XAML spolupracuje s návrhovým prostředím, které obsahuje funkce pro úpravu XAML.  
   
- Více než jeden <xref:System.Windows.Markup.XmlnsPrefixAttribute> lze použít k sestavení. To může být provedeno pro jakoukoli kombinaci následujících důvodů:  
+ Pro sestavení lze <xref:System.Windows.Markup.XmlnsPrefixAttribute> použít více než jeden. To může být provedeno v jakékoli kombinaci následujících důvodů:  
   
-- Vaše sestavení definuje typy pro více než jeden obor názvů XAML. V tomto případě byste měli definovat hodnoty jinou předponu pro každý obor názvů XAML.  
+- Sestavení definuje typy pro více než jeden obor názvů XAML. V takovém případě byste měli definovat jiné hodnoty předpony pro každý obor názvů XAML.  
   
-- Podporujete více vocabularies a použít odlišné předpony pro každý slovník a obor názvů XAML.  
+- Podporujete více slovníků a používáte různé předpony pro každý slovník a obor názvů XAML.  
   
-- Definujte podpora jazyka XAML v sestavení a nechte <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pro `http://schemas.microsoft.com/winfx/2006/xaml`. V takovém případě je obvykle by měly podporovat předponu `x`.  
+- Definujete podporu jazyka XAML v sestavení a máte <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pro. `http://schemas.microsoft.com/winfx/2006/xaml` V takovém případě byste obvykle měli propagovat předponu `x`.  
   
 > [!NOTE]
->  Rozhraní .NET framework XAML Services také definuje atributu souvisejícím s XAML <xref:System.Windows.Markup.RootNamespaceAttribute>. Tento atribut je atribut úrovně sestavení pro podpora projektových systémů a není relevantní pro vlastní typy XAML.  
+>  .NET Framework služby XAML také definují atribut <xref:System.Windows.Markup.RootNamespaceAttribute>související s jazykem XAML. Tento atribut je atribut na úrovni sestavení pro podporu systému projektu a není relevantní pro vlastní typy XAML.  
   
 ## <a name="see-also"></a>Viz také:
 

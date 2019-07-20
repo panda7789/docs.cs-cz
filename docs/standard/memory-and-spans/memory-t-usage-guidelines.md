@@ -6,30 +6,30 @@ helpviewer_keywords:
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 380c0eef137eb5142c30e63f5446f5d60723087a
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 5aa778477abf3b91e32d9cb8ffdf50baaca5f001
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834046"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68362903"
 ---
-# <a name="memoryt-and-spant-usage-guidelines"></a>Paměť\<T > a rozpětí\<T > Pokyny k používání
+# <a name="memoryt-and-spant-usage-guidelines"></a>\<>\<Paměti t > pokyny k použití
 
-.NET core obsahuje několik typů, které představují libovolné souvislých oblasti paměti. .NET core 2.0 zavedené <xref:System.Span%601> a <xref:System.ReadOnlySpan%601>, které jsou zjednodušené paměti vyrovnávacích pamětí, které mohou být se opírá o spravované nebo nespravované paměti. Protože tyto typy mohou být uloženy do zásobníku, jsou vhodná pro řadu scénářů, včetně volání asynchronní metody. .NET core 2.1 přidává několik dalších typů, včetně <xref:System.Memory%601>, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601>, a <xref:System.Buffers.MemoryPool%601>. Stejně jako <xref:System.Span%601>, <xref:System.Memory%601> a jeho souvisejících typů může být zálohovaný pamětí spravovaných i nespravovaných. Na rozdíl od <xref:System.Span%601>, <xref:System.Memory%601> se dají ukládat jenom na spravované haldě.
+.NET Core obsahuje několik typů, které reprezentují libovolnou souvislou oblast paměti. .NET Core 2,0 zavádí <xref:System.Span%601> a <xref:System.ReadOnlySpan%601>, což jsou odlehčené vyrovnávací paměti, které mohou být zajištěny spravovanou nebo nespravovanou pamětí. Vzhledem k tomu, že tyto typy mohou být uloženy pouze v zásobníku, nejsou vhodné pro různé scénáře, včetně volání asynchronní metody. .NET Core 2,1 přidává mnoho dalších typů, <xref:System.Memory%601>včetně, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601>a <xref:System.Buffers.MemoryPool%601>. Podobně jako <xref:System.Span%601>ajehosouvisející typy lze zálohovat pomocí spravované i nespravované paměti. <xref:System.Memory%601> Na rozdíl <xref:System.Span%601>od <xref:System.Memory%601> , může být uloženo na spravované haldě.
 
-Obě <xref:System.Span%601> a <xref:System.Memory%601> vyrovnávací paměti strukturovaných dat, který lze použít v kanálech. To znamená, že jsou navržené tak, že některá nebo všechna data lze efektivněji předat komponenty v kanálu, které mohl zpracovat a volitelně změňte vyrovnávací paměti. Protože <xref:System.Memory%601> a jeho souvisejících typů je přístupný podle více komponent nebo ve víc vláknech je důležité, že vývojáři postupovali podle některé standardní použití pokyny pro vytvoření robustního kódu.
+Obojí <xref:System.Span%601> i<xref:System.Memory%601> jsou vyrovnávací paměti strukturovaných dat, která lze použít v kanálech. To znamená, že jsou navržené tak, aby některá nebo všechna data mohla být efektivně předána součástem v kanálu, která je může zpracovávat a případně upravovat vyrovnávací paměť. Vzhledem <xref:System.Memory%601> k tomu, že a ke kterým souvisejícímu typu lze získat pøístup více komponent nebo více vlákny, je důležité, aby vývojáři při vytváření robustního kódu dodržovali některé standardní pokyny pro použití.
 
-## <a name="owners-consumers-and-lifetime-management"></a>Vlastníci, uživatele a správa životního cyklu
+## <a name="owners-consumers-and-lifetime-management"></a>Vlastníci, spotřebitelé a správa životního cyklu
 
-Protože vyrovnávací paměti mohou být předány kolem mezi rozhraním API, a protože vyrovnávací paměti v některých případech je přístupný z více vláken, je důležité vzít v úvahu Správa životního cyklu. Existují tři základní koncepty:
+Vzhledem k tomu, že vyrovnávací paměti lze předávat mezi rozhraními API a vzhledem k tomu, že vyrovnávací paměti mohou být někdy k dispozici z více vláken, je důležité zvážit správu životnosti. Existují tři základní koncepty:
 
-- **Vlastnictví**. Vlastník instance vyrovnávací paměti je zodpovědný za správu životního cyklu, včetně zničení vyrovnávací paměti, když se už používá. Všechny vyrovnávací paměti mají jednoho vlastníka. Obecně vlastníka je komponenta, která vytvoří vyrovnávací paměti nebo vyrovnávací paměti, který přijal od objektu factory. Lze také převést vlastnictví; **Komponenty A** můžete opustit ovládacího prvku vyrovnávací paměti pro **součást B**, v tomto okamžiku **komponenty A** může již nebudete používat vyrovnávací paměť, a **součást B**  zodpovědná za zničení vyrovnávací paměti, když se už používá.
+- **Vlastnictví**. Vlastník instance vyrovnávací paměti je zodpovědný za správu životnosti, včetně zničení vyrovnávací paměti, když se už nepoužívá. Všechny vyrovnávací paměti mají jednoho vlastníka. Obecně je vlastníkem komponenta, která vytvořila vyrovnávací paměť nebo která obdržela vyrovnávací paměť z továrny. Vlastnictví lze také přenést; **Součást-a** může opustit řízení vyrovnávací paměti pro **komponentu B**, na které **Komponenta bodu-A** již nesmí používat vyrovnávací paměť, a **Komponenta B** se stane zodpovědností za zničení vyrovnávací paměti, pokud se už nepoužívá.
 
-- **Spotřeba**. Příjemce instanci vyrovnávací paměti může používat instanci vyrovnávací paměti čtení z něj a může být zápis do něj. Vyrovnávací paměti může mít jednoho příjemce současně, pokud je k dispozici některé externí synchronizační mechanismus. Upozorňujeme, že aktivní příjemce vyrovnávací paměť není nutně vlastníka přípravné vyrovnávací paměti.
+- **Spotřeba**. Příjemce instance vyrovnávací paměti může použít instanci vyrovnávací paměti čtením z ní a případně do ní zapisovat. Vyrovnávací paměti můžou mít jednoho příjemce v čase, pokud není k dispozici nějaký mechanismus externí synchronizace. Všimněte si, že aktivní příjemce vyrovnávací paměti nemusí být nutně vlastníkem vyrovnávací paměti.
 
-- **Zapůjčení**. Zapůjčení je doba, kterou může být příjemce vyrovnávací paměti jednotlivých součástí.
+- **Zapůjčení**. Zapůjčení je doba, po kterou může určitá součást být příjemcem vyrovnávací paměti.
 
-Následující příklad kódu pseudo znázorňuje tyto tři pojmy. Zahrnuje `Main` metodu, která vytvoří instanci <xref:System.Memory%601> vyrovnávací paměti typu <xref:System.Char>, volání `WriteInt32ToBuffer` metody zapsat do vyrovnávací paměti a pak volá řetězcové vyjádření celého čísla `DisplayBufferToConsole` metodu pro zobrazení hodnoty vyrovnávací paměť.
+Následující příklad pseudo kódu znázorňuje tyto tři koncepty. Obsahuje `Main` metodu, která vytváří instanci <xref:System.Memory%601> vyrovnávací paměti typu <xref:System.Char>, volá `WriteInt32ToBuffer` metodu pro zápis řetězcové reprezentace celého čísla do vyrovnávací paměti a poté volá `DisplayBufferToConsole` metodu pro zobrazení hodnoty vyrovnávací paměť.
 
 ```csharp
 using System;
@@ -60,94 +60,94 @@ class Program
 }
 ```
 
-`Main` Metoda vytvoří vyrovnávací paměti (v tomto případě <xref:System.Span%601> instance) a proto je jeho vlastníkem. Proto `Main` zodpovídá za zničení vyrovnávací paměti, když se už používá. Dělá to pomocí volání do vyrovnávací paměti <xref:System.Span%601.Clear?displayProperty=nameWithType> metody. ( <xref:System.Span%601.Clear> Metoda tady ve skutečnosti Vymaže vyrovnávací paměti; <xref:System.Span%601> struktury ve skutečnosti nemá metodu, která odstraní vyrovnávací paměti.)
+Metoda vytvoří vyrovnávací paměť (v tomto <xref:System.Span%601> případě instance) a tedy její vlastníka. `Main` Proto zodpovídá `Main` za zničení vyrovnávací paměti, když se už nepoužívá. Provede to voláním <xref:System.Span%601.Clear?displayProperty=nameWithType> metody vyrovnávací paměti. (Tato <xref:System.Span%601.Clear> metoda ve skutečnosti vymaže paměť vyrovnávací paměti <xref:System.Span%601> ; struktura ve skutečnosti nemá metodu, která zničí vyrovnávací paměť.)
 
-Vyrovnávací paměť obsahuje dva zákazníky `WriteInt32ToBuffer` a `DisplayBufferToConsole`. Existuje pouze jeden příjemce najednou (první `WriteInt32ToBuffer`, pak `DisplayBufferToConsole`), a ani spotřebitelů vlastní vyrovnávací paměti. Všimněte si také, zda "příjemce" v tomto kontextu není implikují zobrazení jen pro čtení vyrovnávací paměti; příjemci přípravné vyrovnávací paměti obsah, upravit jako `WriteInt32ToBuffer` nedojde, pokud tento parametr zadaný zobrazení pro čtení a zápis vyrovnávací paměti.
+Vyrovnávací paměť má dva uživatele `WriteInt32ToBuffer` a. `DisplayBufferToConsole` V jednom okamžiku je k dispozici pouze jeden příjemce `WriteInt32ToBuffer`(první `DisplayBufferToConsole`, potom) a žádný z uživatelů vlastní vyrovnávací paměť. Všimněte si také, že "příjemce" v tomto kontextu neznamená zobrazení vyrovnávací paměti jen pro čtení. Uživatelé můžou upravovat obsah vyrovnávací paměti, jak `WriteInt32ToBuffer` to dělá, pokud je k dispozici zobrazení pro čtení a zápis vyrovnávací paměti.
 
-`WriteInt32ToBuffer` Metoda má zapůjčený (může spotřebovat) vyrovnávací paměť mezi začátkem volání metody a čas, metoda vrátí. Obdobně `DisplayBufferToConsole` má zapůjčený vyrovnávací paměti, zatímco je prováděna a zapůjčení se uvolní, když metoda unwinds. (Neexistuje žádné rozhraní API pro správu zapůjčení; "pronájmu" což je koncepční.)
+`WriteInt32ToBuffer` Metoda má zapůjčení (může spotřebovat) vyrovnávací paměť mezi začátkem volání metody a časem, který metoda vrátí. `DisplayBufferToConsole` Podobně má zapůjčení ve vyrovnávací paměti během jeho provádění a zapůjčení je uvolněno při zrušení metody. (K dispozici není žádné rozhraní API pro správu zapůjčených adres. "zapůjčení" je koncepční záležitost.)
 
-## <a name="memoryt-and-the-ownerconsumer-model"></a>Paměť\<T > a model vlastníka/konzumenta najdete
+## <a name="memoryt-and-the-ownerconsumer-model"></a>>\<Paměti a model vlastník/příjemce
 
-Jako [vlastníky, uživatele a správa životního cyklu](#owners-consumers-and-lifetime-management) část poznámky, vyrovnávací paměti má vždy vlastníka. .NET core podporuje dva modely vlastnictví:
+Jako poznámky k oddílům [pro vlastníky, uživatele a správu životního cyklu](#owners-consumers-and-lifetime-management) má vyrovnávací paměť vždy vlastníka. .NET Core podporuje dva modely vlastnictví:
 
-- Model, který podporuje jeden vlastnictví. Vyrovnávací paměť nemá jednoho vlastníka pro celou dobu života.
+- Model, který podporuje jediné vlastnictví. Vyrovnávací paměť má jednoho vlastníka pro celou dobu života.
 
-- Model, který podporuje převod vlastnictví. Vlastnictví vyrovnávací paměti lze přenést z jeho původní vlastníkovi (autorovi) do jiné součásti, která se pak stane zodpovědný za správu životního cyklu přípravné vyrovnávací paměti. Tento vlastník zase můžete převést vlastnictví na jiné součásti a tak dále.
+- Model, který podporuje přenos vlastnictví. Vlastnictví vyrovnávací paměti lze přenést od původního vlastníka (jeho tvůrce) do jiné součásti, která pak bude zodpovědná za správu životnosti vyrovnávací paměti. Vlastník může převést vlastnictví na jinou komponentu a tak dále.
 
-Můžete použít <xref:System.Buffers.IMemoryOwner%601?displayProperty=nameWithType> rozhraní explicitně spravovat vlastnictví vyrovnávací paměti. <xref:System.Buffers.IMemoryOwner%601> podporuje oba modely vlastnictví. Komponenta, která má <xref:System.Buffers.IMemoryOwner%601> odkaz na vlastní vyrovnávací paměti. Následující příklad používá <xref:System.Buffers.IMemoryOwner%601?> instance tak, aby odrážely vlastnictví <xref:System.Memory%601> vyrovnávací paměti.
+<xref:System.Buffers.IMemoryOwner%601?displayProperty=nameWithType> Rozhraní použijete k explicitní správě vlastnictví vyrovnávací paměti. <xref:System.Buffers.IMemoryOwner%601>podporuje oba modely vlastnictví. Komponenta, která má <xref:System.Buffers.IMemoryOwner%601> odkaz na vlastní vyrovnávací paměť. Následující příklad používá <xref:System.Buffers.IMemoryOwner%601?> instanci pro reflektování vlastnictví <xref:System.Memory%601> vyrovnávací paměti.
 
 [!code-csharp[ownership](~/samples/snippets/standard/buffers/memory-t/owner/owner.cs)]
 
-Můžeme také napsat v tomto příkladu se [ `using` ](~/docs/csharp/language-reference/keywords/using-statement.md):
+Tento příklad můžeme také zapsat pomocí [`using`](~/docs/csharp/language-reference/keywords/using-statement.md):
 
 [!code-csharp[ownership-using](~/samples/snippets/standard/buffers/memory-t/owner-using/owner-using.cs)]
 
 V tomto kódu:
 
-- `Main` Metoda obsahuje odkaz na <xref:System.Buffers.IMemoryOwner%601> instance, takže `Main` metoda je vlastníkem vyrovnávací paměti.
+- Metoda obsahuje odkaz <xref:System.Buffers.IMemoryOwner%601> na instanci, takže `Main` metoda je vlastníkem vyrovnávací paměti. `Main`
 
-- `WriteInt32ToBuffer` a `DisplayBufferToConsole` metody přijímají <xref:System.Memory%601> jako veřejné rozhraní API. Proto jsou příjemci vyrovnávací paměti. A jsou pouze použít jeden po druhém.
+- Metody `WriteInt32ToBuffer` a `DisplayBufferToConsole` akceptují<xref:System.Memory%601> jako veřejné rozhraní API. Proto jsou příjemci vyrovnávací paměti. A využívají je pouze po jednom.
 
-I když `WriteInt32ToBuffer` metoda se má zapsat hodnotu do vyrovnávací paměti, `DisplayBufferToConsole` není metoda. Tyto změny projeví na ho může přijali argument typu <xref:System.ReadOnlyMemory%601>. Další informace o <xref:System.ReadOnlyMemory%601>, naleznete v tématu [pravidlo č. 2: Použít ReadOnlySpan\<T > nebo ReadOnlyMemory\<T > Pokud vyrovnávací paměť by měl být jen pro čtení](#rule-2).
+I když je `DisplayBufferToConsole` metodaurčenaprozápishodnotydovyrovnávacípaměti`WriteInt32ToBuffer` , metoda není. Aby se to odráželo, mohl by být přijatý argument typu <xref:System.ReadOnlyMemory%601>. Další informace o <xref:System.ReadOnlyMemory%601>najdete v tématu [pravidla #2: Použijte ReadOnlySpan\<t > nebo ReadOnlyMemory\<t >, pokud by měla být vyrovnávací paměť jen](#rule-2)pro čtení.
 
-### <a name="ownerless-memoryt-instances"></a>"Ownerless" paměti\<T > instancí
+### <a name="ownerless-memoryt-instances"></a>Instance > paměti\<pro vlastní přidaný čas
 
-Můžete vytvořit <xref:System.Memory%601> instance bez použití <xref:System.Buffers.IMemoryOwner%601>. V takovém případě vlastnictví vyrovnávací paměti je implicitní namísto explicitního a pouze jednoho vlastníka model se nepodporuje. Uděláte to tak:
+Můžete vytvořit <xref:System.Memory%601> instanci bez použití <xref:System.Buffers.IMemoryOwner%601>. V takovém případě je vlastnictví vyrovnávací paměti implicitní, nikoli explicitní, a podporuje se jenom model s jedním vlastníkem. Můžete to udělat takto:
 
-- Volání jedné z <xref:System.Memory%601> konstruktory přímo, předejte `T[]`, stejně jako v následujícím příkladu.
+- Volání jednoho z <xref:System.Memory%601> konstruktorů přímo, předání `T[]`v, jak je uvedeno v následujícím příkladu.
 
-- Volání [String.AsMemory](xref:System.MemoryExtensions.AsMemory(System.String)) metodu rozšíření k vytvoření `ReadOnlyMemory<char>` instance.
+- Voláním metody rozšíření [String. AsMemory](xref:System.MemoryExtensions.AsMemory(System.String)) pro vytvoření `ReadOnlyMemory<char>` instance.
 
 [!code-csharp[ownerless-memory](~/samples/snippets/standard/buffers/memory-t/ownerless/ownerless.cs)]
 
-Metoda, která původně vytvoří <xref:System.Memory%601> instance je vlastníkem implicitní vyrovnávací paměti. Vlastnictví nelze přenést na jakoukoli jinou součástí, protože neexistuje žádný <xref:System.Buffers.IMemoryOwner%601> instance pro usnadnění převodu. (Alternativně si můžete také představit, že modul runtime systému uvolňování paměti vlastní vyrovnávací paměti a všechny metody právě využití vyrovnávací paměti.)
+Metoda, která zpočátku vytvoří <xref:System.Memory%601> instanci, je implicitní vlastník vyrovnávací paměti. Vlastnictví nelze přenést do žádné jiné součásti, protože není k dispozici žádná <xref:System.Buffers.IMemoryOwner%601> instance pro usnadnění přenosu. (Jako alternativu můžete také představovat, že systém uvolňování paměti modulu runtime vlastní vyrovnávací paměť, a všechny metody pouze využívají vyrovnávací paměť.)
 
-## <a name="usage-guidelines"></a>Pokyny k používání
+## <a name="usage-guidelines"></a>Pokyny k použití
 
-Protože bloku paměti vlastní, ale má být předán více komponent, některé z nich může pracovat současně na blok paměti konkrétní, je důležité stanovit pokyny k používání obou <xref:System.Memory%601> a <xref:System.Span%601>.  Pokyny jsou nezbytné protože:
+Vzhledem k tomu, že blok paměti je vlastněn, ale má být předán více komponentám, některé z nich mohou fungovat současně na konkrétní blok paměti, je důležité vytvořit pokyny pro použití obou <xref:System.Memory%601> i. <xref:System.Span%601>  Pokyny jsou nezbytné z těchto důvodů:
 
-- Je možné pro součást zachovat odkaz na blok paměti po její vlastník vydala.
+- Je možné, že komponenta uchovává odkaz na blok paměti poté, co ho jeho vlastník uvolnil.
 
-- Je možné pro součást ovládajících vyrovnávací paměti ve stejnou dobu, která funguje jiné součásti, v procesu došlo k poškození dat ve vyrovnávací paměti.
+- Je možné, že komponenta pracuje na vyrovnávací paměti současně s tím, že na ní jiná komponenta pracuje, v procesu poškození dat ve vyrovnávací paměti.
 
-- Zatímco povahy přidělený na zásobník <xref:System.Span%601> optimalizuje výkon a zpřístupňuje <xref:System.Span%601> upřednostňovaný typ pro provozování na blok paměti je také Predmety <xref:System.Span%601> některé hlavní omezení. Je důležité vědět, kdy se má použít <xref:System.Span%601> a kdy použít <xref:System.Memory%601>.
+- I když je vyhrazená <xref:System.Span%601> sada pro optimalizaci výkonu a dává <xref:System.Span%601> preferovaný typ pro provoz na bloku paměti, je také předmětům <xref:System.Span%601> některých hlavních omezení. Je důležité znát, kdy použít <xref:System.Span%601> a kdy <xref:System.Memory%601>použít.
 
-Toto jsou naše doporučení pro používání úspěšně <xref:System.Memory%601> a jeho souvisejících typů. Mějte na paměti tyto pokyny, které platí pro <xref:System.Memory%601> a <xref:System.Span%601> platí také pro <xref:System.ReadOnlyMemory%601> a <xref:System.ReadOnlySpan%601> Pokud jsme explicitně mějte na paměti jinak.
+Níže jsou naše doporučení pro úspěšné používání <xref:System.Memory%601> a související typy. Všimněte si, že doprovodné materiály <xref:System.Memory%601> , <xref:System.Span%601> které platí pro <xref:System.ReadOnlyMemory%601> a <xref:System.ReadOnlySpan%601> platí i pro a, pokud výslovně nepovažujeme za jinak.
 
-**Pravidlo #1: Synchronní rozhraní API, použijte Span\<T > místo v paměti\<T > jako parametr, pokud je to možné.**
+**#1 pravidla: Pokud je to možné, použijte\<pro synchronní rozhraní API > místo > paměti\<t jako parametr.**
 
-<xref:System.Span%601> nabízí větší variabilitu než <xref:System.Memory%601> a může představovat širší vyrovnávacích pamětí souvislé paměti. <xref:System.Span%601> také nabízí vyšší výkon než <xref:System.Memory%601>. Nakonec můžete použít <xref:System.Memory%601.Span?displayProperty=nameWithType> vlastnost převést <xref:System.Memory%601> instance na <xref:System.Span%601>, i když Span\<T > - na - paměti\<T > Převod není možný. Pokud vaše volající náhodou <xref:System.Memory%601> instance, budou moct volat vaše metody s atributem <xref:System.Span%601> parametry přesto.
+<xref:System.Span%601>je všestrannější než <xref:System.Memory%601> a může představovat širší škálu souvislých vyrovnávacích pamětí. <xref:System.Span%601>nabízí také lepší výkon než <xref:System.Memory%601>. Nakonec můžete <xref:System.Memory%601.Span?displayProperty=nameWithType> použít vlastnost k <xref:System.Span%601> <xref:System.Memory%601> převedení instance na a, i když převod span\<t >-to-Memory\<> není možné. Takže v případě, že se volající mají <xref:System.Memory%601> instance, budou moci volat metody s <xref:System.Span%601> parametry přesto.
 
-Pomocí parametru typu <xref:System.Span%601> místo typu <xref:System.Memory%601> také umožňuje zapisovat správná implementace metody náročné. Získáte automaticky kontroluje za kompilace, ujistěte se, že se o přístup k vyrovnávací paměti nad rámec vaše metoda zapůjčení, (více dále).
+Použití parametru typu <xref:System.Span%601> místo typu <xref:System.Memory%601> také vám pomůže napsat správnou implementaci využívající metodu. Automaticky získáte kontroly za běhu, abyste se ujistili, že se nepokoušíte o přístup k vyrovnávací paměti nad zapůjčením vaší metody (Další informace najdete později).
 
-V některých případech budete muset použít <xref:System.Memory%601> parametr namísto <xref:System.Span%601> parametr, i když jste plně synchronní. Například rozhraní API, které nejvíc potřebujete přijímá pouze <xref:System.Memory%601> argumenty. To je v pořádku, ale mějte na paměti o kompromisech při použití <xref:System.Memory%601> synchronně.
+V některých případech budete muset místo <xref:System.Memory%601> <xref:System.Span%601> parametru použít parametr, a to i v případě, že jste plně synchronně. Možná rozhraní API, které zabíráte <xref:System.Memory%601> , přijímá jenom argumenty. Je to v pořádku, ale mějte na paměti, že při použití <xref:System.Memory%601> synchronně dochází k kompromisům.
 
 <a name="rule-2" />
 
-**Pravidlo #2: Použít ReadOnlySpan\<T > nebo ReadOnlyMemory\<T > Pokud vyrovnávací paměť by měl být jen pro čtení.**
+**#2 pravidla: Použijte ReadOnlySpan\<t > nebo ReadOnlyMemory\<t >, pokud by měla být vyrovnávací paměť jen pro čtení.**
 
-V předchozích příkladech `DisplayBufferToConsole` metoda četl pouze z vyrovnávací paměti; nezmění obsah vyrovnávací paměti. Podpis metody by měl být změněn na následující.
+V předchozích příkladech `DisplayBufferToConsole` metoda načítá jenom z vyrovnávací paměti. neupravuje obsah vyrovnávací paměti. Signatura metody by se měla změnit na následující.
 
 ```csharp
 void DisplayBufferToConsole(ReadOnlyMemory<char> buffer);
 ```
 
-Ve skutečnosti Pokud spojili jsme toto pravidlo a pravidlo č. 1, můžeme udělat ještě lépe a přepíše podpis metody následujícím způsobem:
+V případě, že toto pravidlo a pravidlo kombinujeme #1, můžeme ještě lepší a přepsat signaturu metody následujícím způsobem:
 
 ```csharp
 void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 ```
 
-`DisplayBufferToConsole` Metoda nyní funguje s prakticky všem typ vyrovnávací paměti, který si dokážete představit: `T[]`, přidělit úložiště [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md), a tak dále. Dokonce můžete předat <xref:System.String> přímo do ní!
+Metoda `DisplayBufferToConsole` teď funguje s prakticky všemi typy vyrovnávací paměti, které lze `T[]`předcházet:, úložiště přidělené [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md)a tak dále. Můžete dokonce předat <xref:System.String> přímo na!
 
-**Pravidlo #3: Pokud vaše metoda přijímá paměti\<T > a vrátí `void`, nesmí používat paměť\<T > po vrácení metodu instance.**
+**#3 pravidla: Pokud vaše metoda přijímá paměť\<t > a vrátí `void`, nemusíte po návratu metody\<použít instanci > paměti t.**
 
-To se týká koncept "pronájmu", již bylo zmíněno dříve. Metody vracející hodnotu void zapůjčení <xref:System.Memory%601> instance začíná, když se zadá metodu a končí při ukončení metodu. Podívejte se na následující příklad volá `Log` ve smyčce založena na vstup z konzoly.
+To se týká konceptu zapůjčení uvedeného výše. Zapůjčení metody vracející anulování <xref:System.Memory%601> instance začíná při zadání metody a končí při ukončení metody. Vezměte v úvahu následující příklad, který `Log` volá smyčku na základě vstupu z konzoly.
 
 [!code-csharp[void-returning](~/samples/snippets/standard/buffers/memory-t/void-returning/void-returning.cs#1)]
 
-Pokud `Log` je plně synchronní metoda, tento kód se bude chovat podle očekávání, protože existuje pouze jeden příjemce aktivní instance paměti v daném okamžiku.
-Ale Představte si, že `Log` má tuto implementaci.
+Pokud `Log` je plně synchronní metodou, bude tento kód fungovat podle očekávání, protože v daném okamžiku existuje pouze jeden aktivní spotřebitel instance paměti.
+Ale představte `Log` si, že tato implementace má tuto implementaci.
 
 ```csharp
 // !!! INCORRECT IMPLEMENTATION !!!
@@ -162,29 +162,29 @@ static void Log(ReadOnlyMemory<char> message)
 }
 ```
 
-V této implementaci `Log` porušuje jeho zapůjčení, protože pořád se pokouší použít <xref:System.Memory%601> instance na pozadí po vrátila původní metodu. `Main` Metoda může mutovat vyrovnávací paměti při `Log` pokouší číst z něj, což by mohlo způsobit poškození dat.
+V této implementaci porušuje své zapůjčení, `Log` protože se stále pokouší <xref:System.Memory%601> použít instanci na pozadí po vrácení původní metody. Metoda by mohla při `Log` pokusech o čtení z ní načítat vyrovnávací paměť, což by mohlo vést k poškození dat. `Main`
 
-Chcete-li to vyřešit několika způsoby:
+Tuto chybu lze vyřešit několika způsoby:
 
-- `Log` Metoda může vrátit <xref:System.Threading.Tasks.Task> místo `void`, jako následující provádění `Log` metodu.
+- Metoda může `Log` vracet namísto ,`void`jako následující implementace metody. <xref:System.Threading.Tasks.Task> `Log`
 
    [!code-csharp[task-returning](~/samples/snippets/standard/buffers/memory-t/task-returning2/task-returning2.cs#1)]
 
-- `Log` můžete místo toho implementovat následujícím způsobem:
+- `Log`místo toho je možné implementovat následujícím způsobem:
 
    [!code-csharp[defensive-copy](~/samples/snippets/standard/buffers/memory-t/task-returning/task-returning.cs#1)]
 
-**Pravidlo #4: Pokud vaše metoda přijímá paměťově\<T > a vrátí úlohu, nesmí používat paměť\<T > instance za úkol přejde do konečného stavu.**
+**#4 pravidla: Pokud vaše metoda přijímá > paměti\<a vrátí úlohu, po přechodu úlohy do stavu terminálu není nutné použít\<instanci > paměti t.**
 
-Toto je pouze asynchronní variantu pravidlo č. 3. `Log` Metoda z předchozího příkladu je pro dosažení souladu s tímto pravidlem zapisovat následujícím způsobem:
+Toto je pouze asynchronní varianta pravidla #3. `Log` Metodu z předchozího příkladu můžete zapsat takto, aby splňovala toto pravidlo:
 
 [!code-csharp[task-returning-async](~/samples/snippets/standard/buffers/memory-t/void-returning-async/void-returning-async.cs#1)]
 
-Tady "konečného stavu" znamená, že úkol přejde do dokončeného, došlo k chybě, nebo bylo zrušeno stavu. Jinými slovy znamená, že "konečného stavu" "cokoli, co způsobilo await vyvolat nebo pokračovat v provádění."
+V tomto případě "stav terminálu" znamená, že se úloha přechází do stavu dokončeno, chyba nebo zrušeno. Jinými slovy "Terminal State" znamená "cokoli, co by způsobilo, že se očekává, že se má vyvolávat nebo pokračovat v provádění."
 
-Tento návod se vztahuje k metody, které vracejí <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask%601>, nebo podobné.
+Tento návod se vztahuje na metody, <xref:System.Threading.Tasks.Task>které <xref:System.Threading.Tasks.Task%601>vracejí <xref:System.Threading.Tasks.ValueTask%601>,, nebo podobného typu.
 
-**Pravidlo #5: Pokud váš konstruktor přijímá paměti\<T > jako parametr, metodami instance vytvořený objekt se předpokládá se, že příjemci paměti\<T > instance.**
+**#5 pravidla: Pokud konstruktor přijímá paměť\<T > jako parametr, předpokládá se, že metody instance na vytvořeném objektu budou spotřebiteli instance > paměti\<T.**
 
 Vezměte v úvahu v následujícím příkladu:
 
@@ -205,13 +205,13 @@ void PrintAllOddValues(ReadOnlyMemory<int> input)
 }
 ```
 
-Tady `OddValueExtractor` konstruktor přijímá `ReadOnlyMemory<int>` jako parametr konstruktoru, takže konstruktor samotný je příjemce `ReadOnlyMemory<int>` instance a metodami instance na vrácené hodnoty jsou také příjemci původní `ReadOnlyMemory<int>` instance. To znamená, že `TryReadNextOddValue` využívá `ReadOnlyMemory<int>` instance, i když instance není předána přímo `TryReadNextOddValue` metody.
+V `OddValueExtractor` tomto případě konstruktor `ReadOnlyMemory<int>` přijímá jako parametr konstruktoru, takže samotný konstruktor `ReadOnlyMemory<int>` je příjemcem instance a všechny metody instance vrácené hodnoty jsou také spotřebiteli originálu `ReadOnlyMemory<int>` . případě. To znamená, `TryReadNextOddValue` že `ReadOnlyMemory<int>` instance spotřebovává, i když instance `TryReadNextOddValue` není předána přímo metodě.
 
-**Pravidlo #6: Pokud máte nastavitelné paměti\<T >-typovou vlastnost (nebo metodu ekvivalentní instance) na typ, metodami instance tohoto objektu se předpokládá se, že příjemci paměti\<T > instance.**
+**#6 pravidla: Pokud máte ve svém typu nastavitelnou vlastnost > typu paměti\<T (nebo ekvivalentní metodu instance), předpokládá se, že metody instance tohoto objektu budou spotřebiteli instance > paměti\<T.**
 
-Toto je pouze typ variant pravidlo č. 5. Toto pravidlo existuje, protože vlastnost setter nebo ekvivalentní metody předpokládá, že jsou pro zaznamenání a uložení jejich vstupech tak metody instance na stejný objekt mohou využívat zaznamenaný stav.
+Toto je opravdu pouze varianta pravidla #5. Toto pravidlo existuje, protože metody setter nebo ekvivalentní metody jsou považovány za zachycení a uchování jejich vstupů, takže metody instance u stejného objektu mohou využívat zachycený stav.
 
-Následující příklad spustí toto pravidlo:
+Toto pravidlo se spustí v následujícím příkladu:
 
 ```csharp
 class Person
@@ -227,26 +227,26 @@ class Person
 }
 ```
 
-**Pravidlo #7: Pokud máte IMemoryOwner\<T > odkaz, je nutné na některé bodu dispose jeho nebo přenos vlastnictví (ale ne obojí).**
+**#7 pravidla: Pokud máte odkaz > IMemoryOwner\<T, je potřeba, abyste ho odstranili nebo přenesli jeho vlastnictví (ale ne obojí).**
 
-Protože <xref:System.Memory%601> instance může být zálohovaný pamětí spravované nebo nespravované, musí volat vlastníka <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> provést, při práci na <xref:System.Memory%601> instance je dokončena. Alternativně může vlastník přenos vlastnictví <xref:System.Buffers.IMemoryOwner%601> instance na jinou komponentu, v tomto okamžiku nabývající součást zodpovědná za volání <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> včas (podrobněji dále).
+Vzhledem k <xref:System.Memory%601> tomu, že instance může být zajištěna buď spravovanou, nebo nespravovanou pamětí <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> , musí vlastník zavolat, <xref:System.Memory%601> až bude dokončena práce na instanci. Alternativně může vlastník přenést vlastnictví <xref:System.Buffers.IMemoryOwner%601> instance na jinou komponentu. v takovém případě se součást získání bude zodpovědná za volání <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> v příslušné době (Další informace najdete později).
 
-Nepodařilo se zavolat <xref:System.Buffers.MemoryPool%601.Dispose%2A> metoda může vést k nevracení nespravované paměti nebo jiných snížení výkonu.
+Nepodaří-li <xref:System.Buffers.MemoryPool%601.Dispose%2A> se zavolat metodu, může dojít k nevrácení nespravované paměti nebo jinému snížení výkonu.
 
-Toto pravidlo platí také pro kód, který volá metody pro vytváření objektů jako <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType>. Volající se stává vlastníkem vráceného <xref:System.Buffers.IMemoryOwner%601> a je zodpovědná za uvolnění instance po dokončení.
+Toto pravidlo platí také pro kód, který volá metody objektu <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType>pro vytváření, jako je. Volající se stane vlastníkem vráceného <xref:System.Buffers.IMemoryOwner%601> a zodpovídá za odstranění instance po dokončení.
 
-**Pravidlo #8: Pokud máte IMemoryOwner\<T > parametr povrchu vaše rozhraní API, abyste přijali vlastnictví této instance.**
+**#8 pravidla: Pokud máte na ploše rozhraní\<API parametr IMemoryOwner T >, přijímáte vlastnictví této instance.**
 
-Přijímá instanci tohoto typu signalizuje, že vaše komponenta si klade za cíl převzít vlastnictví této instance. Vaše komponenta je zodpovědná za správné odstranění podle pravidlo č. 7.
+Přijetí instance tohoto typu signalizuje, že vaše komponenta zamýšlí převzít vlastnictví této instance. Vaše komponenta se bude zodpovědná za řádné vyřazení podle pravidla #7.
 
-Jakékoli součásti, která převede vlastnictví <xref:System.Buffers.IMemoryOwner%601> instance na jinou komponentu byste již nebudete používat tuto instanci po dokončení volání metody.
+Jakákoli komponenta, která přenáší vlastnictví <xref:System.Buffers.IMemoryOwner%601> instance do jiné komponenty, by již neměla používat tuto instanci po dokončení volání metody.
 
 > [!IMPORTANT]
-> Pokud váš konstruktor přijímá <xref:System.Buffers.IMemoryOwner%601> jako parametr, jeho typ by měly implementovat <xref:System.IDisposable>a vaše <xref:System.IDisposable.Dispose%2A> metoda by měla volat <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType>.
+> Pokud váš konstruktor přijímá <xref:System.Buffers.IMemoryOwner%601> jako parametr, jeho typ by měl implementovat <xref:System.IDisposable>a vaše <xref:System.IDisposable.Dispose%2A> metoda by měla volat <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType>.
 
-**Pravidlo #9: Chcete-li obtékání metodu synchronní p/invoke, vaše rozhraní API by měla přijímat rozpětí\<T > jako parametr.**
+**#9 pravidla: Pokud zabalíte synchronní metodu volání nespravovaného volání, rozhraní API by mělo\<jako parametr přijmout > s rozsahem T.**
 
-Podle pravidel č. 1 <xref:System.Span%601> je obecně správný typ má být použit pro synchronní rozhraní API. Můžete připnout <xref:System.Span%601> instance prostřednictvím [ `fixed` ](~/docs/csharp/language-reference/keywords/fixed-statement.md) – klíčové slovo, jako v následujícím příkladu.
+V souladu s pravidly #1 <xref:System.Span%601> je všeobecně správný typ, který se má použít pro synchronní rozhraní API. Instance můžete připnout <xref:System.Span%601> [`fixed`](~/docs/csharp/language-reference/keywords/fixed-statement.md) prostřednictvím klíčového slova, jak je uvedeno v následujícím příkladu.
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -267,7 +267,7 @@ public unsafe int ManagedWrapper(Span<byte> data)
 }
 ```
 
-V předchozím příkladu `pbData` může mít hodnotu null, je-li například, vstupní značka je prázdný. Pokud exportované metoda naprosto vyžaduje, aby `pbData` mít hodnotu null, i když `cbData` je 0, metody lze provést následujícím způsobem:
+V předchozím příkladu `pbData` může mít hodnotu null, pokud je například vstupní rozpětí prázdné. Pokud exportovaná metoda naprosto vyžaduje, `pbData` aby byla nenulová, `cbData` i když je hodnota 0, metoda může být implementována takto:
 
 ```csharp
 public unsafe int ManagedWrapper(Span<byte> data)
@@ -284,9 +284,9 @@ public unsafe int ManagedWrapper(Span<byte> data)
 }
 ```
 
-**Pravidlo #10: Chcete-li obtékání metody asynchronní p/invoke, vaše rozhraní API by měla přijímat paměti\<T > jako parametr.**
+**#10 pravidla: Pokud zabalíte asynchronní metodu volání metody p/Invoke, rozhraní API by mělo\<jako parametr přijímat > paměti.**
 
-Protože nelze použít [ `fixed` ](~/docs/csharp/language-reference/keywords/fixed-statement.md) – klíčové slovo v asynchronních operací, je použít <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> metodu pro Připnutí <xref:System.Memory%601> instancí, bez ohledu na typ, který představuje instanci souvislé paměti. Následující příklad ukazuje, jak pomocí tohoto rozhraní API provádět volání rozhraní asynchronní p/invoke.
+Vzhledem k tomu, že [`fixed`](~/docs/csharp/language-reference/keywords/fixed-statement.md) nelze použít klíčové slovo v rámci asynchronních <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> operací, použijte <xref:System.Memory%601> metodu pro připnutí instancí bez ohledu na druh souvislé paměti, kterou instance představuje. Následující příklad ukazuje, jak použít toto rozhraní API k provedení asynchronního volání volání nespravovaného volání.
 
 ```csharp
 using System.Runtime.InteropServices;

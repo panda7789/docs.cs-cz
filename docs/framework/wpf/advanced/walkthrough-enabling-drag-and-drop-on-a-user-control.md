@@ -8,328 +8,328 @@ helpviewer_keywords:
 - walkthrough [WPF], drag-and-drop
 - drag-and-drop [WPF], walkthrough
 ms.assetid: cc844419-1a77-4906-95d9-060d79107fc7
-ms.openlocfilehash: 7fbda381b6c60398ef89e11416cafedcf19eec65
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 80fd55be9230729cb8336be91c1d8fb4f7f3f080
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64605656"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364260"
 ---
 # <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku
 
-Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, který se můžete podílet přenos dat a přetahování v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].
+Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, který se může zúčastnit přenosu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]dat přetahováním myší.
 
-V tomto návodu vytvoříte vlastní WPF <xref:System.Windows.Controls.UserControl> , která představuje kulaté. Funkce provede na ovládacím prvku povolit přenos dat pomocí přetahování myší. Například přetažením z jednoho ovládacího prvku kruh do jiného data Barva výplně je zkopírován ze zdroje kruh k cíli. Přetažením z ovládacího prvku kruh k <xref:System.Windows.Controls.TextBox>, řetězcová reprezentace barvu výplně se zkopíruje do <xref:System.Windows.Controls.TextBox>. Také vytvoříte malou aplikaci, která obsahuje dva ovládací prvky panelu a <xref:System.Windows.Controls.TextBox> k testování funkcí a přetažení. Budete psát kód, který umožňuje panelů ke zpracování vynechaných kruh dat, která vám umožní se přesunout nebo kopírovat kruhy kolekci Children v panel jeden na druhý.
+V tomto návodu vytvoříte vlastní WPF <xref:System.Windows.Controls.UserControl> , který představuje kruhový tvar. V ovládacím prvku implementujete funkce pro povolení přenosu dat pomocí přetahování myší. Například pokud přetáhnete jeden ovládací prvek kruh do druhého, data barvy výplně se zkopírují ze zdrojového kruhu do cíle. Pokud přetáhnete z ovládacího prvku Circle do <xref:System.Windows.Controls.TextBox>, Řetězcová reprezentace barvy výplně je zkopírována <xref:System.Windows.Controls.TextBox>do. Také vytvoříte malou aplikaci, která obsahuje dva ovládací prvky panelu a a <xref:System.Windows.Controls.TextBox> k otestování funkcí přetahování myší. Napíšete kód, který panelům umožní zpracovat vyhozená data kruhů, což vám umožní přesouvat nebo kopírovat kružnice z kolekce podřízených prvků jednoho panelu na druhý.
 
 Tento návod znázorňuje následující úlohy:
 
 - Vytvořte vlastní uživatelský ovládací prvek.
 
-- Povolení nástroje Řízení uživatelských jako zdroj přetažení.
+- Povolit uživatelský ovládací prvek jako zdroj přetažení.
 
-- Povolte uživatelský ovládací prvek jako cíl přetažení.
+- Povolit uživatelský ovládací prvek jako cíl přetažení.
 
-- Povolte panel přijímat data z uživatelského ovládacího prvku vyřadit.
+- Umožňuje panelu, aby přijímal data vyřazená z uživatelského ovládacího prvku.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Visual Studio k dokončení tohoto návodu potřebujete.
+K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 
 ## <a name="create-the-application-project"></a>Vytvoření projektu aplikace
- V této části vytvoříte aplikační infrastruktury, který obsahuje hlavní stránka s dva panely a <xref:System.Windows.Controls.TextBox>.
+ V této části vytvoříte aplikační infrastrukturu, která bude obsahovat hlavní stránku se dvěma panely a <xref:System.Windows.Controls.TextBox>.
 
-1. Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `DragDropExample`. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
+1. Vytvořte nový projekt aplikace WPF v Visual Basic nebo vizuálu C# s názvem `DragDropExample`. Další informace najdete v tématu [Návod: Moje první desktopová aplikace](../getting-started/walkthrough-my-first-wpf-desktop-application.md)WPF.
 
-2. Open MainWindow.xaml.
+2. Otevřete MainWindow. XAML.
 
-3. Přidejte následující kód mezi otevírací a zavírací <xref:System.Windows.Controls.Grid> značky.
+3. Přidejte následující značku mezi otevírací a uzavírací <xref:System.Windows.Controls.Grid> značku.
 
-     Tento kód vytvoří uživatelské rozhraní pro testovací aplikace.
+     Tento kód vytvoří uživatelské rozhraní pro testovací aplikaci.
 
      [!code-xaml[DragDropWalkthrough#PanelsStep1XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#panelsstep1xaml)]
 
-## <a name="add-a-new-user-control-to-the-project"></a>Přidat nový uživatelský ovládací prvek do projektu
- V této části přidáte nový uživatelský ovládací prvek do projektu.
+## <a name="add-a-new-user-control-to-the-project"></a>Přidat do projektu nový uživatelský ovládací prvek
+ V této části přidáte do projektu nový uživatelský ovládací prvek.
 
-1. V nabídce Projekt vyberte **přidat uživatelský ovládací prvek**.
+1. V nabídce projekt vyberte **Přidat uživatelský ovládací prvek**.
 
-2. V **přidat novou položku** dialogové okno pole, změňte název na `Circle.xaml`a klikněte na tlačítko **přidat**.
+2. V dialogovém okně **Přidat novou položku** změňte název na `Circle.xaml`a klikněte na **Přidat**.
 
-     Circle.XAML a jeho použití modelu code-behind se přidá do projektu.
+     Do projektu se přidá Circle. XAML a jeho kód na pozadí.
 
-3. Otevřete Circle.xaml.
+3. Otevřete Circle. XAML.
 
      Tento soubor bude obsahovat prvky uživatelského rozhraní uživatelského ovládacího prvku.
 
-4. Přidejte následující kód do kořenového adresáře <xref:System.Windows.Controls.Grid> k vytvoření jednoduché uživatelský ovládací prvek, který má kruh jako jeho uživatelské rozhraní.
+4. Přidejte následující kód do kořenového adresáře <xref:System.Windows.Controls.Grid> pro vytvoření jednoduchého uživatelského ovládacího prvku, který má modrý kroužek jako své uživatelské rozhraní.
 
      [!code-xaml[DragDropWalkthrough#EllipseXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml#ellipsexaml)]
 
-5. Otevřete Circle.xaml.cs nebo Circle.xaml.vb.
+5. Otevřete Circle.xaml.cs nebo Circle. XAML. vb.
 
-6. V jazyce C# přidejte následující kód za výchozí konstruktor pro vytvoření kopie konstruktoru. V jazyce Visual Basic přidejte následující kód k vytvoření výchozí konstruktor a kopírovací konstruktor.
+6. V C#přidejte následující kód za konstruktor bez parametrů k vytvoření kopírovacího konstruktoru. V Visual Basic přidejte následující kód pro vytvoření konstruktoru bez parametrů a kopírovacího konstruktoru.
 
-     Aby bylo možné povolit uživatelského ovládacího prvku, které se mají zkopírovat, přidejte metodu konstruktoru kopie v souboru kódu na pozadí. Ve zjednodušené kruh uživatelského ovládacího prvku, bude pouze zkopírujte výplně a velikost uživatelského ovládacího prvku.
+     Chcete-li, aby byl uživatelský ovládací prvek zkopírován, přidejte do souboru kódu na pozadí metodu kopírovacího konstruktoru. V uživatelském ovládacím prvku zjednodušený kruh budete kopírovat pouze výplň a velikost uživatelského ovládacího prvku.
 
      [!code-csharp[DragDropWalkthrough#CopyCtor](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#copyctor)]
      [!code-vb[DragDropWalkthrough#CopyCtor](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#copyctor)]
 
-## <a name="add-the-user-control-to-the-main-window"></a>Přidat uživatelský ovládací prvek do hlavního okna
+## <a name="add-the-user-control-to-the-main-window"></a>Přidání uživatelského ovládacího prvku do hlavního okna
 
-1. Open MainWindow.xaml.
+1. Otevřete MainWindow. XAML.
 
-2. Přidejte následující XAML do otevíracího <xref:System.Windows.Window> značku k vytvoření oboru názvů XML odkaz na aktuální aplikace.
+2. Přidejte následující kód XAML do úvodní <xref:System.Windows.Window> značky a vytvořte tak odkaz na obor názvů XML na aktuální aplikaci.
 
     ```
     xmlns:local="clr-namespace:DragDropExample"
     ```
 
-3. V prvním <xref:System.Windows.Controls.StackPanel>, přidejte následující XAML vytvořit dvě instance kruh uživatelského ovládacího prvku na panelu první.
+3. V prvním <xref:System.Windows.Controls.StackPanel>panelu přidejte následující XAML pro vytvoření dvou instancí uživatelského ovládacího prvku Circle.
 
      [!code-xaml[DragDropWalkthrough#CirclesXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#circlesxaml)]
 
-     Úplné XAML pro panel vypadá takto.
+     Úplný kód XAML pro panel vypadá následovně.
 
      [!code-xaml[DragDropWalkthrough#PanelsStep2XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#panelsstep2xaml)]
 
-## <a name="implement-drag-source-events-in-the-user-control"></a>Implementace zdroje událostí přetáhněte do uživatelského ovládacího prvku
- V této části se přepíšou <xref:System.Windows.UIElement.OnMouseMove%2A> metoda a zahájení operace přetažení myší.
+## <a name="implement-drag-source-events-in-the-user-control"></a>Implementace přetáhněte zdrojové události do uživatelského ovládacího prvku
+ V této části přepíšete <xref:System.Windows.UIElement.OnMouseMove%2A> metodu a inicializujete operaci přetažení.
 
- Pokud je spuštěn přetáhněte (stisknutí tlačítka myši a přesunut ukazatel myši), bude balíček data, která mají být převedeny do <xref:System.Windows.DataObject>. V takovém případě bude ovládací prvek kruh balíček tři položky data; řetězcová reprezentace jeho barva výplně, dvojité vyjádření výšku a zkopírujte sebe sama.
+ Pokud je spuštěno přetahování (stisknuto tlačítko myši a přesun myši), zabalíte data, která chcete přenést do <xref:System.Windows.DataObject>. V tomto případě bude ovládací prvek kruh zabalit tři datové položky. Řetězcová reprezentace barvy jeho výplně, dvojitá reprezentace jeho výšky a kopie sebe sama.
 
-### <a name="to-initiate-a-drag-and-drop-operation"></a>K zahájení operace přetažení myší
+### <a name="to-initiate-a-drag-and-drop-operation"></a>Zahájení operace přetažení myší
 
-1. Otevřete Circle.xaml.cs nebo Circle.xaml.vb.
+1. Otevřete Circle.xaml.cs nebo Circle. XAML. vb.
 
-2. Přidejte následující <xref:System.Windows.UIElement.OnMouseMove%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.MouseMove> událostí.
+2. Přidejte následující <xref:System.Windows.UIElement.OnMouseMove%2A> přepsání k poskytnutí třídy <xref:System.Windows.UIElement.MouseMove> pro zpracování události.
 
      [!code-csharp[DragDropWalkthrough#OnMouseMove](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#onmousemove)]
      [!code-vb[DragDropWalkthrough#OnMouseMove](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#onmousemove)]
 
-     To <xref:System.Windows.UIElement.OnMouseMove%2A> přepsání provádí následující úlohy:
+     Toto <xref:System.Windows.UIElement.OnMouseMove%2A> přepsání provádí následující úlohy:
 
-    - Kontroluje, zda se stiskne tlačítko levé tlačítko myši, zatímco ukazatel myši pohybuje.
+    - Kontroluje, zda se při přesouvání myši stiskne levé tlačítko myši.
 
-    - Balíčky kruh dat do <xref:System.Windows.DataObject>. V tomto případě ovládací prvek kruh balíčky tři položky data; řetězcová reprezentace jeho barva výplně, dvojité vyjádření výšku a zkopírujte sebe sama.
+    - Zabalí data do kruhu do <xref:System.Windows.DataObject>. V tomto případě ovládací prvek Circle balí tři datové položky; Řetězcová reprezentace barvy jeho výplně, dvojitá reprezentace jeho výšky a kopie sebe sama.
 
-    - Volání statické <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> metoda k zahájení operace přetažení myší. Následující tři parametry předáváte <xref:System.Windows.DragDrop.DoDragDrop%2A> metody:
+    - Volá statickou <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> metodu pro zahájení operace přetažení. <xref:System.Windows.DragDrop.DoDragDrop%2A> Metodě předáte následující tři parametry:
 
-        - `dragSource` – Odkaz na tento ovládací prvek.
+        - `dragSource`– Odkaz na tento ovládací prvek.
 
-        - `data` – Tím <xref:System.Windows.DataObject> vytvořili v předchozím kódu.
+        - `data`<xref:System.Windows.DataObject> – Vytvořeno v předchozím kódu.
 
-        - `allowedEffects` – Povolené operace přetažení myší, které jsou <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
+        - `allowedEffects`– Povolené operace přetažení, které jsou <xref:System.Windows.DragDropEffects.Copy> nebo. <xref:System.Windows.DragDropEffects.Move>
 
-3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+3. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-4. Klikněte na jednu z ovládacích prvků kruh a přetáhněte ho na panely na kruh a <xref:System.Windows.Controls.TextBox>. Při přetažení přes <xref:System.Windows.Controls.TextBox>, změní se kurzor na udávajících přesun.
+4. Klikněte na jeden z ovládacích prvků kruh a přetáhněte ho na panely, druhý kruh a <xref:System.Windows.Controls.TextBox>. Při přetahování přes <xref:System.Windows.Controls.TextBox>se kurzor změní, aby označoval přesunutí.
 
-5. Při přetažení kruh přes <xref:System.Windows.Controls.TextBox>, stiskněte **Ctrl** klíč. Všimněte si, jak kurzoru se změní jeho kopii.
+5. Při přetahování kružnice <xref:System.Windows.Controls.TextBox>na stiskněte klávesu **CTRL** . Všimněte si, jak se kurzor změní, aby označoval kopii.
 
-6. Přetáhnout myší kruhu na <xref:System.Windows.Controls.TextBox>. Řetězcová reprezentace barvu kruhu se připojí <xref:System.Windows.Controls.TextBox>.
+6. Přetáhněte kruh na <xref:System.Windows.Controls.TextBox>. Řetězcová reprezentace barvy výplně kruhu je připojena k <xref:System.Windows.Controls.TextBox>.
 
-     ![Řetězcové vyjádření barvu kruhu](./media/dragdrop-colorstring.png "DragDrop_ColorString")
+     ![Řetězcová reprezentace barvy výplně kruhu](./media/dragdrop-colorstring.png "DragDrop_ColorString")
 
-Ve výchozím nastavení se kurzor změní během operace přetažení myší označíte, jaký vliv má vyřazení dat bude mít. Můžete přizpůsobit poskytnutou zpětnou vazbu pro uživatele pomocí manipulace <xref:System.Windows.UIElement.GiveFeedback> událostí a nastavení různých kurzoru.
+Ve výchozím nastavení se kurzor během operace přetažení změní, aby označoval, jaký vliv bude mít data na odstranění. Zpětnou vazbu určenou uživateli můžete přizpůsobit zpracováním <xref:System.Windows.UIElement.GiveFeedback> události a nastavením jiného kurzoru.
 
-## <a name="give-feedback-to-the-user"></a>Váš názor na uživatele
+## <a name="give-feedback-to-the-user"></a>Poskytněte uživateli zpětnou vazbu.
 
-1. Otevřete Circle.xaml.cs nebo Circle.xaml.vb.
+1. Otevřete Circle.xaml.cs nebo Circle. XAML. vb.
 
-2. Přidejte následující <xref:System.Windows.UIElement.OnGiveFeedback%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.GiveFeedback> událostí.
+2. Přidejte následující <xref:System.Windows.UIElement.OnGiveFeedback%2A> přepsání k poskytnutí třídy <xref:System.Windows.UIElement.GiveFeedback> pro zpracování události.
 
      [!code-csharp[DragDropWalkthrough#OnGiveFeedback](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#ongivefeedback)]
      [!code-vb[DragDropWalkthrough#OnGiveFeedback](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#ongivefeedback)]
 
-     To <xref:System.Windows.UIElement.OnGiveFeedback%2A> přepsání provádí následující úlohy:
+     Toto <xref:System.Windows.UIElement.OnGiveFeedback%2A> přepsání provádí následující úlohy:
 
-    - Kontroluje <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnoty nastavené v cíl přetažení <xref:System.Windows.UIElement.DragOver> obslužné rutiny události.
+    - Kontroluje hodnoty, které jsou nastaveny v obslužné rutině <xref:System.Windows.UIElement.DragOver> události cílového umístění. <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A>
 
-    - Nastaví vlastní kurzor na základě <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnotu. Kurzor má předat uživateli o jaký vliv má vyřadit data budou mít vizuální zpětnou vazbu.
+    - Nastaví vlastní kurzor na základě <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnoty. Cílem tohoto kurzoru je poskytnout vizuální zpětnou vazbu uživateli o tom, jaký vliv bude mít data přehozena.
 
-3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+3. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-4. Přetáhněte jednu kruhu určuje přes panelů na kruh a <xref:System.Windows.Controls.TextBox>. Všimněte si, že kurzory teď vlastní ukazatele, které jste zadali <xref:System.Windows.UIElement.OnGiveFeedback%2A> přepsat.
+4. Přetáhněte jeden z kruhových ovládacích prvků přes panely, druhý kruh a <xref:System.Windows.Controls.TextBox>. Všimněte si, že kurzory jsou nyní vlastními kurzory, které jste zadali <xref:System.Windows.UIElement.OnGiveFeedback%2A> v přepsání.
 
-     ![Přetáhnout myší s vlastní ukazatele](./media/dragdrop-customcursor.png "DragDrop_CustomCursor")
+     ![Přetahování pomocí vlastních kurzorů](./media/dragdrop-customcursor.png "DragDrop_CustomCursor")
 
-5. Vyberte text `green` z <xref:System.Windows.Controls.TextBox>.
+5. Vyberte text `green` <xref:System.Windows.Controls.TextBox>z.
 
-6. Přetáhněte `green` text do ovládacího prvku kruh. Všimněte si, že jsou zobrazeny kurzory výchozí udávajících účinky operace přetažení myší. Kurzor zpětná vazba je vždycky nastavený zdroj přetažení.
+6. `green` Přetáhněte text do ovládacího prvku kruh. Všimněte si, že výchozí kurzory jsou zobrazeny pro indikaci vlivu operace přetažení. Ukazatel zpětné vazby je vždy nastaven zdrojem přetažení.
 
-## <a name="implement-drop-target-events-in-the-user-control"></a>Implementace událostí cíl přetažení do uživatelského ovládacího prvku
- V této části určíte, že uživatelský ovládací prvek je cíl přetažení, přepsání metody, které umožňují uživateli ovládací prvek jako cíl přetažení a zpracovávat data, která je na něm vyřadit.
+## <a name="implement-drop-target-events-in-the-user-control"></a>Implementovat události cíle zrušení v uživatelském ovládacím prvku
+ V této části určíte, že uživatelský ovládací prvek je cílem přetažení, přepište metody, které umožňují, aby uživatelský ovládací prvek byl cílem přetažení, a zpracovávat data, která jsou na něm vyřazena.
 
-### <a name="to-enable-the-user-control-to-be-a-drop-target"></a>Chcete-li povolit uživatelský ovládací prvek jako cíl přetažení
+### <a name="to-enable-the-user-control-to-be-a-drop-target"></a>Povolení uživatelského ovládacího prvku jako cíle přetažení
 
-1. Otevřete Circle.xaml.
+1. Otevřete Circle. XAML.
 
-2. Při otevírání <xref:System.Windows.Controls.UserControl> značky, přidejte <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost a nastavte ho na `true`.
+2. V otevírací <xref:System.Windows.Controls.UserControl> značce <xref:System.Windows.UIElement.AllowDrop%2A> přidejte vlastnost a nastavte ji na `true`.
 
      [!code-xaml[DragDropWalkthrough#UCTagXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml#uctagxaml)]
 
-<xref:System.Windows.UIElement.OnDrop%2A> Metoda je volána, když <xref:System.Windows.UIElement.AllowDrop%2A> je nastavena na `true` a data ze zdroje přetáhněte přesunuta uživatelský ovládací prvek kruh. V této metodě budou zpracovávat data, která byla zahozena a použít data kruhu.
+Metoda je volána, <xref:System.Windows.UIElement.AllowDrop%2A> když je vlastnost nastavena na `true` hodnotu a data ze zdroje přetažení jsou vyřazena v uživatelském ovládacím prvku Circle. <xref:System.Windows.UIElement.OnDrop%2A> V této metodě budete zpracovávat data, která byla vyřazena, a použijí data v kruhu.
 
-### <a name="to-process-the-dropped-data"></a>Ke zpracování vynechaných dat
+### <a name="to-process-the-dropped-data"></a>Zpracování zahozených dat
 
-1. Otevřete Circle.xaml.cs nebo Circle.xaml.vb.
+1. Otevřete Circle.xaml.cs nebo Circle. XAML. vb.
 
-2. Přidejte následující <xref:System.Windows.UIElement.OnDrop%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.Drop> událostí.
+2. Přidejte následující <xref:System.Windows.UIElement.OnDrop%2A> přepsání k poskytnutí třídy <xref:System.Windows.UIElement.Drop> pro zpracování události.
 
      [!code-csharp[DragDropWalkthrough#OnDrop](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#ondrop)]
      [!code-vb[DragDropWalkthrough#OnDrop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#ondrop)]
 
-     To <xref:System.Windows.UIElement.OnDrop%2A> přepsání provádí následující úlohy:
+     Toto <xref:System.Windows.UIElement.OnDrop%2A> přepsání provádí následující úlohy:
 
-    - Používá <xref:System.Windows.DataObject.GetDataPresent%2A> metodu ke kontrole, pokud Přetahované dat obsahuje objekt řetězce.
+    - <xref:System.Windows.DataObject.GetDataPresent%2A> Používá metodu ke kontrole, zda přetažená data obsahují objekt String.
 
-    - Používá <xref:System.Windows.DataObject.GetData%2A> metody se extrahují data řetězce, pokud je k dispozici.
+    - <xref:System.Windows.DataObject.GetData%2A> Používá metodu k extrakci řetězcových dat, pokud je k dispozici.
 
-    - Používá <xref:System.Windows.Media.BrushConverter> pokusí převést řetězec, který má <xref:System.Windows.Media.Brush>.
+    - Používá k pokusu o převod řetězce <xref:System.Windows.Media.Brush>na. <xref:System.Windows.Media.BrushConverter>
 
-    - Pokud převod je úspěšný, štětce, který se vztahuje <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> , který poskytuje uživatelské rozhraní ovládacího prvku kruh.
+    - Pokud je převod úspěšný, použije štětec na <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Ellipse> z, který poskytuje uživatelské rozhraní ovládacího prvku Circle.
 
-    - Značky <xref:System.Windows.UIElement.Drop> události jako zpracování. Událost přetažení by měla označit jako ošetřenou, takže další prvky, které se zobrazí tato událost vědět, že uživatelský ovládací prvek kruh zpracovává ji.
+    - <xref:System.Windows.UIElement.Drop> Označí událost jako zpracovanou. Odkládací událost byste měli označit jako pořízenou, aby ostatní prvky, které obdrží tuto událost, věděly, že ovládací prvek kruhového uživatele ho zpracoval.
 
-3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+3. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-4. Vyberte text `green` v <xref:System.Windows.Controls.TextBox>.
+4. Vyberte text `green` v části <xref:System.Windows.Controls.TextBox>.
 
-5. Text do ovládacího prvku kruh přetáhnout. Kruh se změní z modrá na zelenou.
+5. Přetáhněte text do kruhu a pusťte ho do ovládacího prvku. Kruh se změní z modré na zelenou.
 
-     ![Převod řetězce na stopu](./media/dragdrop-dropgreentext.png "DragDrop_DropGreenText")
+     ![Převod řetězce na štětec](./media/dragdrop-dropgreentext.png "DragDrop_DropGreenText")
 
-6. Zadejte text `green` v <xref:System.Windows.Controls.TextBox>.
+6. Zadejte text `green` do pole <xref:System.Windows.Controls.TextBox>.
 
-7. Vyberte text `gre` v <xref:System.Windows.Controls.TextBox>.
+7. Vyberte text `gre` v části <xref:System.Windows.Controls.TextBox>.
 
-8. Přetáhněte do ovládacího prvku kruhu a umístěte jej. Všimněte si, že se ukazatel změní na ukazují, že rozevírací je povoleno, ale barvu kruhu se nemění, protože `gre` není platná barva.
+8. Přetáhněte ho do kruhu a pusťte ho do ovládacího prvku. Všimněte si, že se kurzor změní, aby označoval, že je povoleno zrušení, ale barva kružnice se nemění `gre` , protože není platná barva.
 
-9. Z ovládacího prvku zelený kroužek přetažením na ovládacím prvku modré kruh. Kruh se změní z modrá na zelenou. Všimněte si, že se zobrazí kurzor, který závisí na tom, zda <xref:System.Windows.Controls.TextBox> nebo kruhu je zdroji přetažení.
+9. Přetáhněte z zeleného kruhu ovládacího prvku a umístěte ukazatel myši na ovládací prvek modrého kruhu. Kruh se změní z modré na zelenou. Všimněte si, že se kurzor zobrazuje, závisí na <xref:System.Windows.Controls.TextBox> tom, zda je nebo kroužek zdrojem přetažení.
 
-Nastavení <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost `true` a zpracování dat vynechaných je vše, co je potřeba povolit element, který má být cíl přetažení. Však zajistit lepší výkon, můžete také pracovat <xref:System.Windows.UIElement.DragEnter>, <xref:System.Windows.UIElement.DragLeave>, a <xref:System.Windows.UIElement.DragOver> události. V těchto událostí můžete provést kontroly a zadejte víc uživateli předtím, než se ukončí data.
+Nastavení vlastnosti na `true` a zpracování vynechaných dat je vyžadováno pro povolení prvku jako cíle přetažení. <xref:System.Windows.UIElement.AllowDrop%2A> Chcete-li však poskytnout lepší uživatelské prostředí, měli byste také zpracovat <xref:System.Windows.UIElement.DragEnter>události, <xref:System.Windows.UIElement.DragLeave>a. <xref:System.Windows.UIElement.DragOver> V těchto událostech můžete provádět kontroly a před vyřazením dat poskytnout uživateli dodatečnou zpětnou vazbu.
 
-Když data je přetažený na ovládací prvek uživatele kruh, ovládací prvek by měl oznámení zdroji přetažení, zda může zpracovat data, která je právě přetáhli. Pokud ovládací prvek není známo, jak ke zpracování dat, by měl odmítnout rozevírací nabídku. K tomuto účelu bude zpracovávat <xref:System.Windows.UIElement.DragOver> událostí a nastavte <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost.
+Když jsou data přetažena přes uživatelský ovládací prvek kruh, ovládací prvek by měl informovat zdroj přetažení, zda může zpracovat data, která jsou přetažena. Pokud ovládací prvek neví, jak data zpracovat, měla by být zamítnuta operace drop. K tomu je potřeba zpracovat <xref:System.Windows.UIElement.DragOver> událost a <xref:System.Windows.DragEventArgs.Effects%2A> nastavit vlastnost.
 
-### <a name="to-verify-that-the-data-drop-is-allowed"></a>Chcete-li ověřit, že rozevírací dat není povolené
+### <a name="to-verify-that-the-data-drop-is-allowed"></a>Ověření, zda je povoleno ukládání dat
 
-1. Otevřete Circle.xaml.cs nebo Circle.xaml.vb.
+1. Otevřete Circle.xaml.cs nebo Circle. XAML. vb.
 
-2. Přidejte následující <xref:System.Windows.UIElement.OnDragOver%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.DragOver> událostí.
+2. Přidejte následující <xref:System.Windows.UIElement.OnDragOver%2A> přepsání k poskytnutí třídy <xref:System.Windows.UIElement.DragOver> pro zpracování události.
 
      [!code-csharp[DragDropWalkthrough#OnDragOver](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#ondragover)]
      [!code-vb[DragDropWalkthrough#OnDragOver](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#ondragover)]
 
-     To <xref:System.Windows.UIElement.OnDragOver%2A> přepsání provádí následující úlohy:
+     Toto <xref:System.Windows.UIElement.OnDragOver%2A> přepsání provádí následující úlohy:
 
-    - Nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.None>.
+    - Nastaví vlastnost na <xref:System.Windows.DragDropEffects.None>hodnotu. <xref:System.Windows.DragEventArgs.Effects%2A>
 
-    - Provádí stejné kontroly, které se provádí v <xref:System.Windows.UIElement.OnDrop%2A> metodou ke zjištění, zda uživatelský ovládací prvek kruh může zpracovávat Přetahované data.
+    - Provede stejné kontroly, které jsou provedeny v <xref:System.Windows.UIElement.OnDrop%2A> metodě k určení, zda uživatelský ovládací prvek kruh může zpracovat přetažená data.
 
-    - Pokud uživatelský ovládací prvek můžete zpracovávat data, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
+    - Pokud uživatelský ovládací prvek může zpracovat data, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost na <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
 
-3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+3. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-4. Vyberte text `gre` v <xref:System.Windows.Controls.TextBox>.
+4. Vyberte text `gre` v části <xref:System.Windows.Controls.TextBox>.
 
-5. Přetáhněte text do ovládacího prvku kruh. Všimněte si, že se kurzor změní teď označuje, že rozevírací není povolená, protože `gre` není platná barva.
+5. Přetáhněte text do ovládacího prvku kruh. Všimněte si, že kurzor se nyní změní, aby označoval, že zrušení není `gre` povoleno, protože není platná barva.
 
- Můžete dále vylepšit uživatelské prostředí s použitím operace přetažení ve verzi preview. Pro uživatelský ovládací prvek kruh, přepíše <xref:System.Windows.UIElement.OnDragEnter%2A> a <xref:System.Windows.UIElement.OnDragLeave%2A> metody. Když jsou data přetažený na ovládací prvek, aktuální pozadí <xref:System.Windows.Shapes.Shape.Fill%2A> je uložen v proměnné zástupný symbol. Pak převedena na štětce a použít na řetězec <xref:System.Windows.Shapes.Ellipse> kruhu, která poskytuje uživatelské rozhraní. Pokud data ocitne mimo kruh bez probíhá vyřazování původní <xref:System.Windows.Shapes.Shape.Fill%2A> hodnota je znovu použita v kruhu.
+ Činnost koncového uživatele můžete dále vylepšit použitím náhledu operace přetažení. Pro uživatelský ovládací prvek kruh přepíšete <xref:System.Windows.UIElement.OnDragEnter%2A> metody a. <xref:System.Windows.UIElement.OnDragLeave%2A> Když jsou data přetažena na ovládací prvek, aktuální pozadí <xref:System.Windows.Shapes.Shape.Fill%2A> je uloženo v zástupné proměnné. Řetězec se pak převede na štětec a použije se na <xref:System.Windows.Shapes.Ellipse> rozhraní, které poskytuje kolečko v uživatelském rozhraní. Pokud jsou data přetažena mimo kruh, aniž by byla vynechána, původní <xref:System.Windows.Shapes.Shape.Fill%2A> hodnota se znovu použije na kroužek.
 
-### <a name="to-preview-the-effects-of-the-drag-and-drop-operation"></a>Náhled účinky operace přetažení myší
+### <a name="to-preview-the-effects-of-the-drag-and-drop-operation"></a>Náhled efektů operace přetažení
 
-1. Otevřete Circle.xaml.cs nebo Circle.xaml.vb.
+1. Otevřete Circle.xaml.cs nebo Circle. XAML. vb.
 
-2. Ve třídě kruh deklarovat soukromé <xref:System.Windows.Media.Brush> proměnnou s názvem `_previousFill` a inicializujte ji na `null`.
+2. V kruhu třídy deklarujte privátní <xref:System.Windows.Media.Brush> proměnnou s názvem `_previousFill` a inicializujte ji na `null`.
 
      [!code-csharp[DragDropWalkthrough#Brush](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#brush)]
      [!code-vb[DragDropWalkthrough#Brush](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#brush)]
 
-3. Přidejte následující <xref:System.Windows.UIElement.OnDragEnter%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.DragEnter> událostí.
+3. Přidejte následující <xref:System.Windows.UIElement.OnDragEnter%2A> přepsání k poskytnutí třídy <xref:System.Windows.UIElement.DragEnter> pro zpracování události.
 
      [!code-csharp[DragDropWalkthrough#OnDragEnter](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#ondragenter)]
      [!code-vb[DragDropWalkthrough#OnDragEnter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#ondragenter)]
 
-     To <xref:System.Windows.UIElement.OnDragEnter%2A> přepsání provádí následující úlohy:
+     Toto <xref:System.Windows.UIElement.OnDragEnter%2A> přepsání provádí následující úlohy:
 
-    - Uloží <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost <xref:System.Windows.Shapes.Ellipse> v `_previousFill` proměnné.
+    - <xref:System.Windows.Shapes.Shape.Fill%2A> Uloží vlastnost <xref:System.Windows.Shapes.Ellipse> v proměnné.`_previousFill`
 
-    - Provádí stejné kontroly, které se provádí v <xref:System.Windows.UIElement.OnDrop%2A> metodou ke zjištění, zda data lze převést na <xref:System.Windows.Media.Brush>.
+    - Provede stejné kontroly, které jsou provedeny v <xref:System.Windows.UIElement.OnDrop%2A> metodě k určení, zda lze data převést <xref:System.Windows.Media.Brush>na.
 
-    - Pokud data je převést na platnou <xref:System.Windows.Media.Brush>, použije ho k <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse>.
+    - Pokud jsou data převedena na platná <xref:System.Windows.Media.Brush>, aplikuje ji <xref:System.Windows.Shapes.Shape.Fill%2A> na <xref:System.Windows.Shapes.Ellipse>.
 
-4. Přidejte následující <xref:System.Windows.UIElement.OnDragLeave%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.DragLeave> událostí.
+4. Přidejte následující <xref:System.Windows.UIElement.OnDragLeave%2A> přepsání k poskytnutí třídy <xref:System.Windows.UIElement.DragLeave> pro zpracování události.
 
      [!code-csharp[DragDropWalkthrough#OnDragLeave](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml.cs#ondragleave)]
      [!code-vb[DragDropWalkthrough#OnDragLeave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/Circle.xaml.vb#ondragleave)]
 
-     To <xref:System.Windows.UIElement.OnDragLeave%2A> přepsání provádí následující úlohy:
+     Toto <xref:System.Windows.UIElement.OnDragLeave%2A> přepsání provádí následující úlohy:
 
-    - Se vztahuje <xref:System.Windows.Media.Brush> uložené v `_previousFill` proměnnou <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> , který poskytuje uživatelské rozhraní uživatelského ovládacího prvku kruh.
+    - Použije uložené v `_previousFill` proměnnéna<xref:System.Windows.Shapes.Shape.Fill%2A> z ,kterýposkytujeuživatelskérozhraníuživatelskéhoovládacíhoprvkuCircle.<xref:System.Windows.Shapes.Ellipse> <xref:System.Windows.Media.Brush>
 
-5. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+5. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-6. Vyberte text `green` v <xref:System.Windows.Controls.TextBox>.
+6. Vyberte text `green` v části <xref:System.Windows.Controls.TextBox>.
 
-7. Přetáhněte text myší na ovládací prvek kruh bez zastaví. Kruh se změní z modrá na zelenou.
+7. Přetáhněte text přes ovládací prvek Circle, aniž byste ho museli přetahovat. Kruh se změní z modré na zelenou.
 
-     ![Ve verzi Preview efekty přetáhněte&#45;a&#45;operace odstranění](./media/dragdrop-previeweffects.png "DragDrop_PreviewEffects")
+     ![Náhled efektů operace přetažení&#45;&#45;](./media/dragdrop-previeweffects.png "DragDrop_PreviewEffects")
 
-8. Přetáhněte text z ovládacího prvku kruh. Kruh se změní z zelené zpět na modrou.
+8. Přetáhněte text směrem od ovládacího prvku Circle. Kruh se změní z zelené na modrou.
 
-## <a name="enable-a-panel-to-receive-dropped-data"></a>Povolit Panel přijímat vynechaných Data
+## <a name="enable-a-panel-to-receive-dropped-data"></a>Povolení panelu pro příjem zahozených dat
 
-V této části povolíte panely, které jsou hostiteli uživatelské ovládací prvky kruh tak, aby fungoval jako cíle přetažení pro Přetahované data kruh. Budete implementovat kód, který umožňuje přesunout kruh z jednoho panelu na jiný nebo vytvořit kopii ovládacího prvku kruh současným **Ctrl** klíče při přetahování kruh.
+V této části povolíte panely, které jsou hostiteli uživatelských ovládacích prvků kruh, aby fungovaly jako cíle přetažení pro přetažená data v kruhu. Budete implementovat kód, který umožňuje přesunout kruh z jednoho panelu na jiný, nebo vytvořit kopii ovládacího prvku Circle tak, že podržíte stisknutou klávesu **CTRL** při přetahování a vyřazení kružnice.
 
-1. Open MainWindow.xaml.
+1. Otevřete MainWindow. XAML.
 
-2. Jak je znázorněno v následující XAML v každém <xref:System.Windows.Controls.StackPanel> přidat obslužné rutiny pro ovládací prvky, <xref:System.Windows.UIElement.DragOver> a <xref:System.Windows.UIElement.Drop> události. Název <xref:System.Windows.UIElement.DragOver> obslužná rutina události `panel_DragOver`a pojmenujte <xref:System.Windows.UIElement.Drop> obslužná rutina události, `panel_Drop`.
+2. Jak je znázorněno v následujícím kódu XAML, v každém <xref:System.Windows.Controls.StackPanel> z ovládacích prvků přidejte obslužné rutiny <xref:System.Windows.UIElement.Drop> <xref:System.Windows.UIElement.DragOver> pro události a. Pojmenujte `panel_DragOver`obslužnou rutinu `panel_Drop` <xref:System.Windows.UIElement.Drop> <xref:System.Windows.UIElement.DragOver> události, a pojmenujte obslužnou rutinu události.
 
      [!code-xaml[DragDropWalkthrough#PanelsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml#panelsxaml)]
 
-3. Open MainWindows.xaml.cs or MainWindow.xaml.vb.
+3. Otevřete MainWindows.xaml.cs nebo MainWindow. XAML. vb.
 
-4. Přidejte následující kód <xref:System.Windows.UIElement.DragOver> obslužné rutiny události.
+4. Přidejte následující kód pro <xref:System.Windows.UIElement.DragOver> obslužnou rutinu události.
 
      [!code-csharp[DragDropWalkthrough#PanelDragOver](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml.cs#paneldragover)]
      [!code-vb[DragDropWalkthrough#PanelDragOver](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/MainWindow.xaml.vb#paneldragover)]
 
-     To <xref:System.Windows.UIElement.DragOver> obslužná rutina události provádí následující úlohy:
+     Tato <xref:System.Windows.UIElement.DragOver> obslužná rutina události provádí následující úlohy:
 
-    - Kontroluje, že Přetahované data obsahují data "Object", který byl zabalen do <xref:System.Windows.DataObject> v uživatelském ovládacím prvku kruhu a předat ve volání do <xref:System.Windows.DragDrop.DoDragDrop%2A>.
+    - Kontroluje, zda přetažená data obsahují data "Object", která byla zabalena <xref:System.Windows.DataObject> v uživatelském ovládacím prvku Circle a předaná <xref:System.Windows.DragDrop.DoDragDrop%2A>volání.
 
-    - Pokud jsou data "Objekt" k dispozici, zkontroluje, jestli **Ctrl** stisknutí klávesy.
+    - Pokud jsou k dispozici data "objekt", aplikace kontroluje, zda je stisknuta klávesa **CTRL** .
 
-    - Pokud **Ctrl** se stiskne klávesa, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Copy>. V opačném případě nastavte <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Move>.
+    - Pokud stisknete klávesu **CTRL** , nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost na <xref:System.Windows.DragDropEffects.Copy>hodnotu. V opačném případě <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost nastavte <xref:System.Windows.DragDropEffects.Move>na.
 
-5. Přidejte následující kód <xref:System.Windows.UIElement.Drop> obslužné rutiny události.
+5. Přidejte následující kód pro <xref:System.Windows.UIElement.Drop> obslužnou rutinu události.
 
      [!code-csharp[DragDropWalkthrough#PanelDrop](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml.cs#paneldrop)]
      [!code-vb[DragDropWalkthrough#PanelDrop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDropWalkthrough/VB/MainWindow.xaml.vb#paneldrop)]
 
-     To <xref:System.Windows.UIElement.Drop> obslužná rutina události provádí následující úlohy:
+     Tato <xref:System.Windows.UIElement.Drop> obslužná rutina události provádí následující úlohy:
 
-    - Kontroluje, zda <xref:System.Windows.UIElement.Drop> události již byla zpracována. Pro instanci, která kroužek ztracené kruhu na jiném obslužné rutiny <xref:System.Windows.UIElement.Drop> události, nechcete, aby panelu, který obsahuje kruhu také ji zpracovat.
+    - Kontroluje, zda <xref:System.Windows.UIElement.Drop> událost již byla zpracována. Například pokud je kroužek vyřazen na jiném kruhu, který zpracovává <xref:System.Windows.UIElement.Drop> událost, nechcete, aby byl panel, který obsahuje kroužek, také zpracován.
 
-    - Pokud <xref:System.Windows.UIElement.Drop> událostí není zpracována, zkontroluje, jestli **Ctrl** stisknutí klávesy.
+    - Pokud událost není zpracována, aplikace zkontroluje, zda je stisknuta klávesa **CTRL.** <xref:System.Windows.UIElement.Drop>
 
-    - Pokud **Ctrl** při stisknutí klávesy <xref:System.Windows.UIElement.Drop> se stane, vytvoří kopii kruhu ovládací prvek a přidat ji do <xref:System.Windows.Controls.Panel.Children%2A> kolekce <xref:System.Windows.Controls.StackPanel>.
+    - Pokud je stisknuta klávesa **CTRL** , <xref:System.Windows.UIElement.Drop> když dojde k tomu, vytvoří kopii ovládacího prvku Circle a <xref:System.Windows.Controls.Panel.Children%2A> přidá jej do kolekce <xref:System.Windows.Controls.StackPanel>.
 
-    - Pokud **Ctrl** není stisknuta klávesa, přesune kruh z <xref:System.Windows.Controls.Panel.Children%2A> kolekce jeho nadřazeného panelu <xref:System.Windows.Controls.Panel.Children%2A> kolekce, která byla vynechána na panelu.
+    - Pokud klávesu **CTRL** nestiskne, přesune kruh z <xref:System.Windows.Controls.Panel.Children%2A> kolekce svého <xref:System.Windows.Controls.Panel.Children%2A> nadřazeného panelu do kolekce panelu, ve kterém byl vyřazen.
 
-    - Sady <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost upozornit <xref:System.Windows.DragDrop.DoDragDrop%2A> metody Určuje, zda byla provedena operace přesunutí nebo kopírování.
+    - Nastaví vlastnost pro oznamování <xref:System.Windows.DragDrop.DoDragDrop%2A> metody, zda byla provedena operace přesunutí nebo kopírování. <xref:System.Windows.DragEventArgs.Effects%2A>
 
-6. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+6. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-7. Vyberte text `green` z <xref:System.Windows.Controls.TextBox>.
+7. Vyberte text `green` <xref:System.Windows.Controls.TextBox>z.
 
-8. Přetáhněte myší na ovládací prvek kruh text a umístěte jej.
+8. Přetáhněte text přes ovládací prvek kruh a umístěte ho.
 
-9. Přetáhněte ovládací prvek kruhu na levém panelu na pravém panelu a umístěte ho. Kruh se odebere z <xref:System.Windows.Controls.Panel.Children%2A> kolekce na levém panelu a přidat do podřízené kolekce pravého panelu.
+9. Přetáhněte ovládací prvek kruh z levého panelu do pravého panelu a přetáhněte ho. Kruh se odebere z <xref:System.Windows.Controls.Panel.Children%2A> kolekce levého panelu a přidá se do kolekce podřízenosti pravého panelu.
 
-10. Přetáhněte ovládací prvek kruh z panelu je v jiné panel a umístěte jej při stisknutí **Ctrl** klíč. Kruh se zkopíruje a kopie je přidána do <xref:System.Windows.Controls.Panel.Children%2A> kolekce přijímající panelu.
+10. Přetáhněte ovládací prvek Circle z panelu, na který se nachází, na jiný panel a při stisknutí klávesy **CTRL** ho umístěte. Kruh se zkopíruje a kopie se přidá do <xref:System.Windows.Controls.Panel.Children%2A> kolekce přijímacího panelu.
 
-     ![Přetažení kruh při stisknutí klávesy CTRL](./media/dragdrop-paneldrop.png "DragDrop_PanelDrop")
+     ![Přetažení kruhu při stisknutí klávesy CTRL](./media/dragdrop-paneldrop.png "DragDrop_PanelDrop")
 
 ## <a name="see-also"></a>Viz také:
 
