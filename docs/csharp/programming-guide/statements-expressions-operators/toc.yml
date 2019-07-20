@@ -19,8 +19,6 @@
           href: how-to-use-lambda-expressions-in-a-query.md
         - name: 'Postupy: Použití výrazů lambda mimo LINQ'
           href: how-to-use-lambda-expressions-outside-linq.md
-        - name: Anonymní metody
-          href: anonymous-methods.md
     - name: Výrazy s výchozími hodnotami
       href: default-value-expressions.md
     - name: Rovnost a porovnání rovnosti
