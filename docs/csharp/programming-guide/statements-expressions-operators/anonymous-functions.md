@@ -1,5 +1,5 @@
 ---
-title: Anonymní funkce - C# Průvodce programováním
+title: Anonymní funkce – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,38 +7,34 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: 338f4b34a5de84d4ce2eb9e0bd6f4c9ebe360fa4
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4d266584e1867a512e4b61e8839fe948aafb007f
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584278"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363925"
 ---
-# <a name="anonymous-functions-c-programming-guide"></a><span data-ttu-id="17878-102">Anonymní funkce (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="17878-102">Anonymous Functions (C# Programming Guide)</span></span>
-<span data-ttu-id="17878-103">Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kdykoli se očekává typ delegáta.</span><span class="sxs-lookup"><span data-stu-id="17878-103">An anonymous function is an "inline" statement or expression that can be used wherever a delegate type is expected.</span></span> <span data-ttu-id="17878-104">Slouží k inicializaci pojmenovaný delegát nebo předat místo pojmenovaný delegát typu jako parametr metody.</span><span class="sxs-lookup"><span data-stu-id="17878-104">You can use it to initialize a named delegate or pass it instead of a named delegate type as a method parameter.</span></span>  
+# <a name="anonymous-functions-c-programming-guide"></a><span data-ttu-id="cfe8b-102">Anonymní funkce (C# Průvodce programováním)</span><span class="sxs-lookup"><span data-stu-id="cfe8b-102">Anonymous functions (C# Programming Guide)</span></span>
+
+<span data-ttu-id="cfe8b-103">Anonymní funkce je "vložený" příkaz nebo výraz, který lze použít všude, kde je očekáván typ delegáta.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-103">An anonymous function is an "inline" statement or expression that can be used wherever a delegate type is expected.</span></span> <span data-ttu-id="cfe8b-104">Můžete ji použít k inicializaci pojmenovaného delegáta nebo ho předat místo pojmenovaného typu delegáta jako parametr metody.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-104">You can use it to initialize a named delegate or pass it instead of a named delegate type as a method parameter.</span></span>
+
+<span data-ttu-id="cfe8b-105">Můžete použít [výraz lambda](lambda-expressions.md) nebo [anonymní metodu](../../language-reference/operators/delegate-operator.md) pro vytvoření anonymní funkce.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-105">You can use a [lambda expression](lambda-expressions.md) or an [anonymous method](../../language-reference/operators/delegate-operator.md) to create an anonymous function.</span></span> <span data-ttu-id="cfe8b-106">Doporučujeme použít výrazy lambda, protože poskytují výstižnější a výrazný způsob psaní vloženého kódu.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-106">We recommend using lambda expressions as they provide more concise and expressive way to write inline code.</span></span> <span data-ttu-id="cfe8b-107">Na rozdíl od anonymních metod lze některé typy výrazů lambda převést na typy stromu výrazů.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-107">Unlike anonymous methods, some types of lambda expressions can be converted to the expression tree types.</span></span>
+
+## <a name="the-evolution-of-delegates-in-c"></a><span data-ttu-id="cfe8b-108">Vývoj delegátů v jazyce C\#</span><span class="sxs-lookup"><span data-stu-id="cfe8b-108">The Evolution of Delegates in C\#</span></span>
+
+ <span data-ttu-id="cfe8b-109">V C# 1,0 jste vytvořili instanci delegáta explicitně inicializací s metodou, která byla definována jinde v kódu.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-109">In C# 1.0, you created an instance of a delegate by explicitly initializing it with a method that was defined elsewhere in the code.</span></span> <span data-ttu-id="cfe8b-110">C#2,0 představil koncept anonymních metod jako způsob zápisu nepojmenovaných bloků vložených příkazů, které mohou být provedeny při volání delegáta.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-110">C# 2.0 introduced the concept of anonymous methods as a way to write unnamed inline statement blocks that can be executed in a delegate invocation.</span></span> <span data-ttu-id="cfe8b-111">C#3,0 zavedly lambda výrazy, které jsou podobné v konceptu anonymním metodám, ale častěji a stručnější.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-111">C# 3.0 introduced lambda expressions, which are similar in concept to anonymous methods but more expressive and concise.</span></span> <span data-ttu-id="cfe8b-112">Tyto dvě funkce se společně nazývají *anonymní funkce*.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-112">These two features are known collectively as *anonymous functions*.</span></span> <span data-ttu-id="cfe8b-113">Obecně platí, že aplikace, které cílí na verzi 3,5 a novější .NET Framework, by měly používat lambda výrazy.</span><span class="sxs-lookup"><span data-stu-id="cfe8b-113">In general, applications that target version 3.5 and later of the .NET Framework should use lambda expressions.</span></span>  
   
- <span data-ttu-id="17878-105">Existují dva druhy anonymní funkce, které jsou jednotlivě podrobněji popsána v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="17878-105">There are two kinds of anonymous functions, which are discussed individually in the following topics:</span></span>  
-  
-- <span data-ttu-id="17878-106">[Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="17878-106">[Lambda Expressions](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>  
-  
-- [<span data-ttu-id="17878-107">Anonymní metody</span><span class="sxs-lookup"><span data-stu-id="17878-107">Anonymous Methods</span></span>](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="17878-108">Výrazy lambda mohou být vázány na stromy výrazů a také na delegáty.</span><span class="sxs-lookup"><span data-stu-id="17878-108">Lambda expressions can be bound to expression trees and also to delegates.</span></span>  
-  
-## <a name="the-evolution-of-delegates-in-c"></a><span data-ttu-id="17878-109">Vývoj delegátů v jazyce C\#</span><span class="sxs-lookup"><span data-stu-id="17878-109">The Evolution of Delegates in C\#</span></span>
- <span data-ttu-id="17878-110">V jazyce C# 1.0 vytvořeného instanci delegáta explicitně inicializuje s metodu, která byla definována kdekoli v kódu.</span><span class="sxs-lookup"><span data-stu-id="17878-110">In C# 1.0, you created an instance of a delegate by explicitly initializing it with a method that was defined elsewhere in the code.</span></span> <span data-ttu-id="17878-111">2.0 C# představila koncept anonymní metody jako způsob, jak zapsat vložený nepojmenovaný výkazu bloků, které mohou být provedeny v vyvolání delegáta.</span><span class="sxs-lookup"><span data-stu-id="17878-111">C# 2.0 introduced the concept of anonymous methods as a way to write unnamed inline statement blocks that can be executed in a delegate invocation.</span></span> <span data-ttu-id="17878-112">C# 3.0 představila výrazy lambda, které jsou v principu podobná anonymní metody, ale výrazová a stručné.</span><span class="sxs-lookup"><span data-stu-id="17878-112">C# 3.0 introduced lambda expressions, which are similar in concept to anonymous methods but more expressive and concise.</span></span> <span data-ttu-id="17878-113">Tyto dvě funkce se souhrnně nazývají *anonymní funkce*.</span><span class="sxs-lookup"><span data-stu-id="17878-113">These two features are known collectively as *anonymous functions*.</span></span> <span data-ttu-id="17878-114">Obecně platí aplikací určených pro verzi 3.5 a novější rozhraní .NET Framework by měl použití výrazů lambda.</span><span class="sxs-lookup"><span data-stu-id="17878-114">In general, applications that target version 3.5 and later of the .NET Framework should use lambda expressions.</span></span>  
-  
- <span data-ttu-id="17878-115">Následující příklad ukazuje vývoj vytvoření delegáta z 1.0 C# do jazyka C# 3.0:</span><span class="sxs-lookup"><span data-stu-id="17878-115">The following example demonstrates the evolution of delegate creation from C# 1.0 to C# 3.0:</span></span>  
+ <span data-ttu-id="cfe8b-114">Následující příklad ukazuje vývoj vytvoření delegáta z C# 1,0 na C# 3,0:</span><span class="sxs-lookup"><span data-stu-id="cfe8b-114">The following example demonstrates the evolution of delegate creation from C# 1.0 to C# 3.0:</span></span>  
   
  [!code-csharp[csProgGuideLINQ#65](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#65)]  
   
-## <a name="c-language-specification"></a><span data-ttu-id="17878-116">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="17878-116">C# Language Specification</span></span>  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a><span data-ttu-id="17878-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17878-117">See also</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="cfe8b-115">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="cfe8b-115">C# language specification</span></span>
 
-- [<span data-ttu-id="17878-118">Příkazy, výrazy a operátory</span><span class="sxs-lookup"><span data-stu-id="17878-118">Statements, Expressions, and Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/index.md)
-- [<span data-ttu-id="17878-119">Výrazy lambda</span><span class="sxs-lookup"><span data-stu-id="17878-119">Lambda Expressions</span></span>](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
-- [<span data-ttu-id="17878-120">Delegáti</span><span class="sxs-lookup"><span data-stu-id="17878-120">Delegates</span></span>](../../../csharp/programming-guide/delegates/index.md)
-- [<span data-ttu-id="17878-121">Stromy výrazů (C#)</span><span class="sxs-lookup"><span data-stu-id="17878-121">Expression Trees (C#)</span></span>](../concepts/expression-trees/index.md)
+<span data-ttu-id="cfe8b-116">Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="cfe8b-116">For more information, see the [Anonymous function expressions](~/_csharplang/spec/expressions.md#anonymous-function-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+  
+## <a name="see-also"></a><span data-ttu-id="cfe8b-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cfe8b-117">See also</span></span>
+
+- [<span data-ttu-id="cfe8b-118">Příkazy, výrazy a operátory</span><span class="sxs-lookup"><span data-stu-id="cfe8b-118">Statements, Expressions, and Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/index.md)
+- [<span data-ttu-id="cfe8b-119">Výrazy lambda</span><span class="sxs-lookup"><span data-stu-id="cfe8b-119">Lambda Expressions</span></span>](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [<span data-ttu-id="cfe8b-120">Delegáti</span><span class="sxs-lookup"><span data-stu-id="cfe8b-120">Delegates</span></span>](../../../csharp/programming-guide/delegates/index.md)
+- [<span data-ttu-id="cfe8b-121">Stromy výrazů (C#)</span><span class="sxs-lookup"><span data-stu-id="cfe8b-121">Expression Trees (C#)</span></span>](../concepts/expression-trees/index.md)

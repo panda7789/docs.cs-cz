@@ -6,34 +6,34 @@ helpviewer_keywords:
 - Microsoft Annotations Framework [WPF]
 - documents [WPF], annotations
 ms.assetid: a893442b-e220-4603-bf6a-b01fefcb4b37
-ms.openlocfilehash: 503858b717ef541675b642a735289e3903b91fdc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1d11b0bb2086bb449c0ffc0ff89430a55096a28d
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777078"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364354"
 ---
-# <a name="annotations-schema"></a><span data-ttu-id="6caec-102">Schéma poznámek</span><span class="sxs-lookup"><span data-stu-id="6caec-102">Annotations Schema</span></span>
+# <a name="annotations-schema"></a><span data-ttu-id="cc998-102">Schéma poznámek</span><span class="sxs-lookup"><span data-stu-id="cc998-102">Annotations Schema</span></span>
 
-<span data-ttu-id="6caec-103">Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft Framework poznámky k ukládání a načítání dat anotace uživatele.</span><span class="sxs-lookup"><span data-stu-id="6caec-103">This topic describes the XML schema definition (XSD) used by the Microsoft Annotations Framework to save and retrieve user annotation data.</span></span>
+<span data-ttu-id="cc998-103">Toto téma popisuje definici schématu XML (XSD), kterou používá rozhraní Microsoft Annotations k ukládání a načítání dat poznámek uživatele.</span><span class="sxs-lookup"><span data-stu-id="cc998-103">This topic describes the XML schema definition (XSD) used by the Microsoft Annotations Framework to save and retrieve user annotation data.</span></span>
 
-<span data-ttu-id="6caec-104">[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Serializuje anotace data z interního vyjádření na formátu XML.</span><span class="sxs-lookup"><span data-stu-id="6caec-104">The [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] serializes annotation data from an internal representation to an XML format.</span></span>  <span data-ttu-id="6caec-105">Formát XML používaný pro tento převod je popsán [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] schéma XSD.</span><span class="sxs-lookup"><span data-stu-id="6caec-105">The XML format used for this conversion is described by the [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] XSD Schema.</span></span>  <span data-ttu-id="6caec-106">Schéma definuje ve formátu XML nezávislého na implementaci, který slouží k výměně anotace dat mezi aplikacemi.</span><span class="sxs-lookup"><span data-stu-id="6caec-106">The schema defines the implementation-independent XML format that can be used to exchange annotation data between applications.</span></span>
+<span data-ttu-id="cc998-104">Rozhraní pro poznámky serializace data poznámek z interní reprezentace do formátu XML.</span><span class="sxs-lookup"><span data-stu-id="cc998-104">The Annotations Framework serializes annotation data from an internal representation to an XML format.</span></span>  <span data-ttu-id="cc998-105">Formát XML použitý pro tento převod je popsán podle schématu XSD pro poznámky k rozhraní.</span><span class="sxs-lookup"><span data-stu-id="cc998-105">The XML format used for this conversion is described by the Annotations Framework XSD Schema.</span></span>  <span data-ttu-id="cc998-106">Schéma definuje formát XML nezávislý na implementaci, který lze použít k výměně dat poznámek mezi aplikacemi.</span><span class="sxs-lookup"><span data-stu-id="cc998-106">The schema defines the implementation-independent XML format that can be used to exchange annotation data between applications.</span></span>
 
-<span data-ttu-id="6caec-107">[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Definici schématu XML se skládá ze dvou subschemas</span><span class="sxs-lookup"><span data-stu-id="6caec-107">The [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] XML schema definition consists of two subschemas</span></span>
+<span data-ttu-id="cc998-107">Definice schématu XML pro rozhraní poznámky se skládá ze dvou podschémat.</span><span class="sxs-lookup"><span data-stu-id="cc998-107">The Annotations Framework XML schema definition consists of two subschemas</span></span>
 
-- <span data-ttu-id="6caec-108">Poznámky Core schématu XML (základní schéma).</span><span class="sxs-lookup"><span data-stu-id="6caec-108">The Annotations XML Core Schema (Core Schema).</span></span>
+- <span data-ttu-id="cc998-108">Základní schéma XML poznámky (základní schéma).</span><span class="sxs-lookup"><span data-stu-id="cc998-108">The Annotations XML Core Schema (Core Schema).</span></span>
 
-- <span data-ttu-id="6caec-109">Komentáře XML základní schéma (základní schéma).</span><span class="sxs-lookup"><span data-stu-id="6caec-109">The Annotations XML Base Schema (Base Schema).</span></span>
+- <span data-ttu-id="cc998-109">Základní schéma XML poznámky (základní schéma).</span><span class="sxs-lookup"><span data-stu-id="cc998-109">The Annotations XML Base Schema (Base Schema).</span></span>
 
-<span data-ttu-id="6caec-110">Základní schéma definuje strukturu XML primární <xref:System.Windows.Annotations.Annotation>.</span><span class="sxs-lookup"><span data-stu-id="6caec-110">The Core Schema defines the primary XML structure of an <xref:System.Windows.Annotations.Annotation>.</span></span>  <span data-ttu-id="6caec-111">Většina XML elementů definováno ve schématu Core odpovídají typům v <xref:System.Windows.Annotations> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="6caec-111">The majority of XML elements defined in the Core Schema correspond to types in the <xref:System.Windows.Annotations> namespace.</span></span>  <span data-ttu-id="6caec-112">Základní schéma poskytuje tři Rozšiřovací body, ve kterém aplikace můžete přidat svoje vlastní data XML.</span><span class="sxs-lookup"><span data-stu-id="6caec-112">The Core Schema exposes three extension points where applications can add their own XML data.</span></span>  <span data-ttu-id="6caec-113">Zahrnout tyto Rozšiřovací body <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>nebo "Obsah".</span><span class="sxs-lookup"><span data-stu-id="6caec-113">These extension points include the <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and "Content".</span></span>  <span data-ttu-id="6caec-114">(Obsahu prvky jsou k dispozici ve formě <xref:System.Xml.XmlElement> seznamu.)</span><span class="sxs-lookup"><span data-stu-id="6caec-114">(Content elements are provided in the form of an <xref:System.Xml.XmlElement> list.)</span></span>
+<span data-ttu-id="cc998-110">Základní schéma definuje primární strukturu XML pro <xref:System.Windows.Annotations.Annotation>.</span><span class="sxs-lookup"><span data-stu-id="cc998-110">The Core Schema defines the primary XML structure of an <xref:System.Windows.Annotations.Annotation>.</span></span>  <span data-ttu-id="cc998-111">Většina elementů XML definovaných ve schématu Core odpovídá typům v <xref:System.Windows.Annotations> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="cc998-111">The majority of XML elements defined in the Core Schema correspond to types in the <xref:System.Windows.Annotations> namespace.</span></span>  <span data-ttu-id="cc998-112">Základní schéma zveřejňuje tři Rozšiřovací body, kde aplikace mohou přidávat vlastní data XML.</span><span class="sxs-lookup"><span data-stu-id="cc998-112">The Core Schema exposes three extension points where applications can add their own XML data.</span></span>  <span data-ttu-id="cc998-113">Mezi tyto body rozšíření patří <xref:System.Windows.Annotations.Annotation.Authors%2A>" <xref:System.Windows.Annotations.ContentLocatorPart>," a "obsah".</span><span class="sxs-lookup"><span data-stu-id="cc998-113">These extension points include the <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and "Content".</span></span>  <span data-ttu-id="cc998-114">(Prvky obsahu jsou k dispozici ve formě <xref:System.Xml.XmlElement> seznamu.)</span><span class="sxs-lookup"><span data-stu-id="cc998-114">(Content elements are provided in the form of an <xref:System.Xml.XmlElement> list.)</span></span>
 
-<span data-ttu-id="6caec-115">Definuje rozšíření pro základní schéma popsaných v tomto tématu <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a obsah typů, které jsou zahrnuty v počáteční verzi Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="6caec-115">The Base Schema described in this topic defines the extensions for the <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and Content types included with the initial Windows Presentation Foundation (WPF) release.</span></span>
+<span data-ttu-id="cc998-115">Základní schéma popsané v tomto tématu definuje rozšíření pro <xref:System.Windows.Annotations.Annotation.Authors%2A>typy obsahu, <xref:System.Windows.Annotations.ContentLocatorPart>a, které jsou součástí počáteční verze Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="cc998-115">The Base Schema described in this topic defines the extensions for the <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and Content types included with the initial Windows Presentation Foundation (WPF) release.</span></span>
 
 <a name="CoreSchema"></a>
 
-## <a name="annotations-xml-core-schema"></a><span data-ttu-id="6caec-116">Schéma XML Core poznámek</span><span class="sxs-lookup"><span data-stu-id="6caec-116">Annotations XML Core Schema</span></span>
+## <a name="annotations-xml-core-schema"></a><span data-ttu-id="cc998-116">Poznámky ke schématu XML Core</span><span class="sxs-lookup"><span data-stu-id="cc998-116">Annotations XML Core Schema</span></span>
 
-<span data-ttu-id="6caec-117">Schéma poznámek XML Core definuje strukturu XML, který se používá k ukládání <xref:System.Windows.Annotations.Annotation> objekty.</span><span class="sxs-lookup"><span data-stu-id="6caec-117">The Annotations XML Core Schema defines the XML structure that is used to store <xref:System.Windows.Annotations.Annotation> objects.</span></span>
+<span data-ttu-id="cc998-117">Základní schéma XML poznámky definuje strukturu XML, která se používá k ukládání <xref:System.Windows.Annotations.Annotation> objektů.</span><span class="sxs-lookup"><span data-stu-id="cc998-117">The Annotations XML Core Schema defines the XML structure that is used to store <xref:System.Windows.Annotations.Annotation> objects.</span></span>
 
 ```xml
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
@@ -185,9 +185,9 @@ ms.locfileid: "61777078"
 
 <a name="BaseSchema"></a>
 
-## <a name="annotations-xml-base-schema"></a><span data-ttu-id="6caec-118">Základní schéma XML poznámek</span><span class="sxs-lookup"><span data-stu-id="6caec-118">Annotations XML Base Schema</span></span>
+## <a name="annotations-xml-base-schema"></a><span data-ttu-id="cc998-118">Základní schéma XML poznámky</span><span class="sxs-lookup"><span data-stu-id="cc998-118">Annotations XML Base Schema</span></span>
 
-<span data-ttu-id="6caec-119">Základní schéma definuje strukturu XML pro tři abstraktní elementů definováno ve schématu Core – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, a <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.</span><span class="sxs-lookup"><span data-stu-id="6caec-119">The Base Schema defines the XML structure for the three abstract elements defined in the Core Schema – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.</span></span>
+<span data-ttu-id="cc998-119">Základní schéma definuje strukturu XML pro tři abstraktní prvky definované v základním schématu – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.</span><span class="sxs-lookup"><span data-stu-id="cc998-119">The Base Schema defines the XML structure for the three abstract elements defined in the Core Schema – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.</span></span>
 
 ```xml
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
@@ -498,9 +498,9 @@ ms.locfileid: "61777078"
 
 <a name="SampleXML"></a>
 
-## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a><span data-ttu-id="6caec-120">Ukázkový soubor XML vytvořené metodou XmlStreamStore poznámky</span><span class="sxs-lookup"><span data-stu-id="6caec-120">Sample XML Produced by Annotations XmlStreamStore</span></span>
+## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a><span data-ttu-id="cc998-120">Ukázka XML vytvořeného pomocí poznámek XmlStreamStore</span><span class="sxs-lookup"><span data-stu-id="cc998-120">Sample XML Produced by Annotations XmlStreamStore</span></span>
 
-<span data-ttu-id="6caec-121">XML, který následuje zobrazí výstup anotací <xref:System.Windows.Annotations.Storage.XmlStreamStore> a organizaci, který obsahuje tři anotace – zvýraznění textu rychlé – poznámky a stonek ink-note ukázkový soubor.</span><span class="sxs-lookup"><span data-stu-id="6caec-121">The XML that follows shows the output of an Annotations <xref:System.Windows.Annotations.Storage.XmlStreamStore> and the organization of a sample file that contains three annotations - a highlight, a text sticky-note, and an ink stick-note.</span></span>
+<span data-ttu-id="cc998-121">Následující kód XML zobrazuje výstup poznámek <xref:System.Windows.Annotations.Storage.XmlStreamStore> a organizaci ukázkového souboru, který obsahuje tři poznámky – zvýraznění, text v rychlé poznámce a inkoustové poznámky.</span><span class="sxs-lookup"><span data-stu-id="cc998-121">The XML that follows shows the output of an Annotations <xref:System.Windows.Annotations.Storage.XmlStreamStore> and the organization of a sample file that contains three annotations - a highlight, a text sticky-note, and an ink stick-note.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -588,11 +588,11 @@ ms.locfileid: "61777078"
 </anc:Annotations>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6caec-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6caec-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cc998-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cc998-122">See also</span></span>
 
 - <xref:System.Windows.Annotations>
 - <xref:System.Windows.Annotations.Storage>
 - <xref:System.Windows.Annotations.Annotation>
 - <xref:System.Windows.Annotations.Storage.AnnotationStore>
 - <xref:System.Windows.Annotations.Storage.XmlStreamStore>
-- [<span data-ttu-id="6caec-123">Přehled poznámek</span><span class="sxs-lookup"><span data-stu-id="6caec-123">Annotations Overview</span></span>](annotations-overview.md)
+- [<span data-ttu-id="cc998-123">Přehled poznámek</span><span class="sxs-lookup"><span data-stu-id="cc998-123">Annotations Overview</span></span>](annotations-overview.md)
