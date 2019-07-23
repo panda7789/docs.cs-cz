@@ -296,6 +296,8 @@
           href: core/testing/unit-testing-published-output.md
         - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
           href: /visualstudio/test/live-unit-testing-start
+    - name: Průběžná integrace
+      href: core/tools/using-ci-with-cli.md
     - name: Správa verzí
       href: core/versions/index.md
       items:
@@ -303,86 +305,88 @@
           href: core/versions/selection.md
         - name: Odebrání zastaralých modulů runtime a sad SDK
           href: core/versions/remove-runtime-sdk-versions.md
-    - name: Katalog identifikátorů modulu runtime
+    - name: Katalog RID (Runtime Identifier)
       href: core/rid-catalog.md
     - name: Přehled sady .NET Core SDK
       href: core/sdk.md
-    - name: Nástroje CLI platformy .NET Core
+    - name: Rozhraní příkazového řádku .NET Core
       items:
-        - name: Přehled CLI platformy .NET Core
+        - name: Přehled
           href: core/tools/index.md
-        - name: Telemetrie
-          href: core/tools/telemetry.md
         - name: Globální nástroje
-          href: core/tools/global-tools.md
+          expanded: true
           items:
+            - name: Přehled
+              href: core/tools/global-tools.md
             - name: Vytvoření globálního nástroje
               href: core/tools/global-tools-how-to-create.md
         - name: Přístup se zvýšenými oprávněními
           href: core/tools/elevated-access.md
         - name: Model rozšíření
           href: core/tools/extensibility.md
-        - name: Průběžná integrace
-          href: core/tools/using-ci-with-cli.md
         - name: Vlastní šablony
           href: core/tools/custom-templates.md
         - name: Povolení dokončování pomocí TABULÁTORU
           href: core/tools/enable-tab-autocomplete.md
-        - name: dotnet
-          href: core/tools/dotnet.md
-        - name: dotnet build
-          href: core/tools/dotnet-build.md
-        - name: dotnet build-server
-          href: core/tools/dotnet-build-server.md
-        - name: dotnet clean
-          href: core/tools/dotnet-clean.md
-        - name: dotnet help
-          href: core/tools/dotnet-help.md
-        - name: dotnet migrate
-          href: core/tools/dotnet-migrate.md
-        - name: dotnet msbuild
-          href: core/tools/dotnet-msbuild.md
-        - name: dotnet new
-          href: core/tools/dotnet-new.md
-        - name: dotnet nuget
+        - name: Telemetrie
+          href: core/tools/telemetry.md
+        - name: global.json – přehled
+          href: core/tools/global-json.md
+        - name: Odkaz
           items:
-            - name: dotnet nuget delete
-              href: core/tools/dotnet-nuget-delete.md
-            - name: dotnet nuget locals
-              href: core/tools/dotnet-nuget-locals.md
-            - name: dotnet nuget push
-              href: core/tools/dotnet-nuget-push.md
-        - name: dotnet pack
-          href: core/tools/dotnet-pack.md
-        - name: dotnet publish
-          href: core/tools/dotnet-publish.md
-        - name: dotnet restore
-          href: core/tools/dotnet-restore.md
-        - name: dotnet run
-          href: core/tools/dotnet-run.md
-        - name: dotnet sln
-          href: core/tools/dotnet-sln.md
-        - name: dotnet store
-          href: core/tools/dotnet-store.md
-        - name: dotnet test
-          href: core/tools/dotnet-test.md
-        - name: dotnet tool
-          items:
-            - name: dotnet tool install
-              href: core/tools/dotnet-tool-install.md
-            - name: dotnet tool list
-              href: core/tools/dotnet-tool-list.md
-            - name: dotnet tool uninstall
-              href: core/tools/dotnet-tool-uninstall.md
-            - name: dotnet tool update
-              href: core/tools/dotnet-tool-update.md
-        - name: dotnet vstest
-          href: core/tools/dotnet-vstest.md
-        - name: dotnet-install scripts
-          href: core/tools/dotnet-install-script.md
-        - name: Příkazy pro modifikaci projektů
-          items:
-            - name: Odkazy
+            - name: dotnet
+              href: core/tools/dotnet.md
+            - name: dotnet build
+              href: core/tools/dotnet-build.md
+            - name: dotnet build-server
+              href: core/tools/dotnet-build-server.md
+            - name: dotnet clean
+              href: core/tools/dotnet-clean.md
+            - name: dotnet help
+              href: core/tools/dotnet-help.md
+            - name: dotnet migrate
+              href: core/tools/dotnet-migrate.md
+            - name: dotnet msbuild
+              href: core/tools/dotnet-msbuild.md
+            - name: dotnet new
+              href: core/tools/dotnet-new.md
+            - name: dotnet nuget
+              items:
+                - name: dotnet nuget delete
+                  href: core/tools/dotnet-nuget-delete.md
+                - name: dotnet nuget locals
+                  href: core/tools/dotnet-nuget-locals.md
+                - name: dotnet nuget push
+                  href: core/tools/dotnet-nuget-push.md
+            - name: dotnet pack
+              href: core/tools/dotnet-pack.md
+            - name: dotnet publish
+              href: core/tools/dotnet-publish.md
+            - name: dotnet restore
+              href: core/tools/dotnet-restore.md
+            - name: dotnet run
+              href: core/tools/dotnet-run.md
+            - name: dotnet sln
+              href: core/tools/dotnet-sln.md
+            - name: dotnet store
+              href: core/tools/dotnet-store.md
+            - name: dotnet test
+              href: core/tools/dotnet-test.md
+            - name: dotnet tool
+              items:
+                - name: dotnet tool install
+                  href: core/tools/dotnet-tool-install.md
+                - name: dotnet tool list
+                  href: core/tools/dotnet-tool-list.md
+                - name: dotnet tool uninstall
+                  href: core/tools/dotnet-tool-uninstall.md
+                - name: dotnet tool update
+                  href: core/tools/dotnet-tool-update.md
+            - name: dotnet vstest
+              href: core/tools/dotnet-vstest.md
+            - name: dotnet-install scripts
+              href: core/tools/dotnet-install-script.md
+            - name: Příkazy odkazu na projekt
               items:
                 - name: dotnet add reference
                   href: core/tools/dotnet-add-reference.md
@@ -390,7 +394,7 @@
                   href: core/tools/dotnet-list-reference.md
                 - name: dotnet remove reference
                   href: core/tools/dotnet-remove-reference.md
-            - name: Balíčky
+            - name: Příkazy balíčku projektu
               items:
                 - name: dotnet add package
                   href: core/tools/dotnet-add-package.md
@@ -398,8 +402,6 @@
                   href: core/tools/dotnet-list-package.md
                 - name: dotnet remove package
                   href: core/tools/dotnet-remove-package.md
-        - name: global.json
-          href: core/tools/global-json.md
     - name: Další nástroje platformy .NET Core
       href: core/additional-tools/index.md
       items:
