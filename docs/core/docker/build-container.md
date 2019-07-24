@@ -1,44 +1,44 @@
 ---
-title: Kontejnerizace aplikace pomocí Docker kurz
-description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s Dockerem.
+title: Kontejnerizace aplikace s využitím kurzu Docker
+description: V tomto kurzu se naučíte, jak kontejnerizace aplikaci .NET Core pomocí Docker.
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 8c50fb20a6a2273b17825b83b1a94d9abd2c158a
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 81b3ce2d6ebb73648d9026c92f490dcc723014f6
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68235710"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331042"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace aplikace .NET Core
 
-V tomto kurzu se naučíte, jak sestavit image Dockeru obsahující aplikaci .NET Core. Na obrázku slouží k vytvoření kontejnerů pro vaše místní vývojové prostředí, privátního cloudu nebo veřejného cloudu.
+V tomto kurzu se naučíte, jak vytvořit image Docker, která obsahuje vaši aplikaci .NET Core. Image se dá použít k vytvoření kontejnerů pro místní vývojové prostředí, privátní cloud nebo veřejný cloud.
 
 Naučíte se:
 
 > [!div class="checklist"]
-> * Vytvoření a publikování jednoduchou aplikaci .NET Core
+> * Vytvoření a publikování jednoduché aplikace .NET Core
 > * Vytvoření a konfigurace souboru Dockerfile pro .NET Core
-> * Sestavíte image Dockeru
-> * Vytvoření a spuštění kontejneru Dockeru
+> * Sestavení image Docker
+> * Vytvoření a spuštění kontejneru Docker
 
-Rozumíte budete Docker, kontejner sestavení a nasazení úlohy pro aplikace .NET Core. *Platforma Docker* používá *modul Docker* k rychlému sestavování a balíčky aplikací jako *imagí Dockeru*. Tyto Image jsou napsané v *soubor Dockerfile* formát nasazení a spuštění v kontejneru vrstvami.
+Porozumíte sestavení kontejneru Docker a nasazování úloh pro aplikaci .NET Core. *Platforma Docker* používá *modul Docker* k rychlému sestavování a zabalení aplikací jako *imagí Docker*. Tyto image jsou napsané ve formátu *souboru Dockerfile* , aby je bylo možné nasadit a spustit v vrstveném kontejneru.
 
 ## <a name="prerequisites"></a>Požadavky
 
 Nainstalujte následující požadavky:
 
-* [.NET core 2.2 SDK](https://dotnet.microsoft.com/download)\
-Pokud máte nainstalovaný .NET Core, použijte `dotnet --info` příkaz k určení SDK, které používáte.
+* [Sada .NET Core 2,2 SDK](https://dotnet.microsoft.com/download)\
+Pokud máte nainstalované rozhraní .NET Core, pomocí `dotnet --info` příkazu určete, kterou sadu SDK používáte.
 
 * [Docker Community Edition](https://www.docker.com/products/docker-desktop)
 
-* Dočasnou pracovní složku pro *soubor Dockerfile* a ukázkovou aplikaci .NET Core. V tomto kurzu se název `docker-working` slouží jako pracovní složku.
+* Dočasná pracovní složka pro *souboru Dockerfile* a ukázkovou aplikaci .NET Core. V tomto kurzu se název `docker-working` používá jako pracovní složka.
 
-### <a name="use-sdk-version-22"></a>Použití sady SDK verze 2.2
+### <a name="use-sdk-version-22"></a>Použít sadu SDK verze 2,2
 
-Pokud používáte sadu SDK, která je novější, jako je 3.0, ujistěte se, že, že vaše aplikace bude muset používat sady SDK 2.2. Vytvořte soubor s názvem `global.json` v pracovní složce a vložte následující kód json:
+Pokud používáte sadu SDK, která je novější, třeba 3,0, ujistěte se, že je aplikace nucená používat sadu SDK sady 2,2. Vytvořte v pracovní složce `global.json` soubor s názvem a vložte do něj následující kód JSON:
 
 ```json
 {
@@ -48,17 +48,17 @@ Pokud používáte sadu SDK, která je novější, jako je 3.0, ujistěte se, ž
 }
 ```
 
-Soubor uložte. Vynutí přítomnost souboru .NET Core na použití pro všechny verze 2.2 `dotnet` příkaz volat z této složky a nižší.
+Soubor uložte. Přítomnost souboru vynutí, aby rozhraní .NET Core používalo verzi 2,2 pro `dotnet` jakýkoli příkaz nazvaný z této složky a níže.
 
-## <a name="create-net-core-app"></a>Vytvoření .NET Core aplikace
+## <a name="create-net-core-app"></a>Vytvoření aplikace .NET Core
 
-Je nutné aplikaci .NET Core, který se spustí kontejner Dockeru. Otevřete terminál, vytvořte pracovní složky, pokud jste to ještě neudělali a zadejte ji. V pracovní složce spusťte následující příkaz pro vytvoření nového projektu v podadresáři s názvem aplikace:
+Potřebujete aplikaci .NET Core, kterou bude kontejner Docker spustit. Otevřete terminál, vytvořte pracovní složku, pokud jste to ještě neudělali, a zadejte ji. V pracovní složce spusťte následující příkaz, který vytvoří nový projekt v podadresáři s názvem App:
 
 ```console
 dotnet new console -o app -n myapp
 ```
 
-Strom složek bude vypadat nějak takto:
+Váš strom složek bude vypadat následovně:
 
 ```console
 docker-working
@@ -75,14 +75,14 @@ docker-working
             project.assets.json
 ```
 
-`dotnet new` Příkaz vytvoří novou složku s názvem *aplikace* a vygeneruje aplikace "Hello World". Zadejte *aplikace* složky a spusťte tento příkaz `dotnet run`. Se zobrazí následující výstup:
+Příkaz vytvoří novou složku s názvem App a vygeneruje aplikaci Hello World.  `dotnet new` Zadejte složku *aplikace* a spusťte příkaz `dotnet run`. Zobrazí se následující výstup:
 
 ```console
 > dotnet run
 Hello World!
 ```
 
-Výchozí šablona vytvoří aplikaci, která vytiskne do terminálu a pak se ukončí. Pro účely tohoto kurzu budete používat aplikaci, která smyčky po neomezenou dobu. Otevřít **Program.cs** souboru v textovém editoru. By měl nyní vypadat jako následující kód:
+Výchozí šablona vytvoří aplikaci, která se vytiskne do terminálu a pak se ukončí. V tomto kurzu použijete aplikaci, která bude mít neomezenou dobu. V textovém editoru otevřete soubor **program.cs** . V současné době by měl vypadat jako v následujícím kódu:
 
 ```csharp
 using System;
@@ -99,7 +99,7 @@ namespace myapp
 }
 ```
 
-Soubor nahraďte následující kód, který počítá každou sekundu:
+Nahraďte soubor následujícím kódem, který počítá čísla každou sekundu:
 
 ```csharp
 using System;
@@ -123,7 +123,7 @@ namespace myapp
 }
 ```
 
-Uložte soubor a testovat program znovu s `dotnet run`. Mějte na paměti, že tato aplikace běží po neomezenou dobu. Použití příkazu Storno <kbd>CTRL + C</kbd> zastavte ji. Se zobrazí následující výstup:
+Uložte soubor a otestujte program znovu pomocí `dotnet run`. Mějte na paměti, že tato aplikace bude běžet po neomezenou dobu. K zastavení použijte příkaz zrušit <kbd>CTRL + C</kbd> . Zobrazí se následující výstup:
 
 ```console
 > dotnet run
@@ -134,24 +134,24 @@ Counter: 4
 ^C
 ```
 
-Pokud předáte číslo na příkazovém řádku do aplikace, bude se pouze počítat až, který částka a poté ukončete. Vyzkoušejte si to s `dotnet run -- 5` počet na 5.
+Pokud předáte číslo do příkazového řádku do aplikace, bude se počítat jenom s touto velikostí a pak se ukončí. Zkuste to s `dotnet run -- 5` počtem až pěti.
 
 > [!NOTE]
-> Žádné parametry po `--` nejsou předán `dotnet run` příkazů a místo toho jsou předány do vaší aplikace.
+> Jakékoli parametry po `--` nejsou předány `dotnet run` do příkazu a místo toho jsou předány do aplikace.
 
-## <a name="publish-net-core-app"></a>Publikování .NET Core aplikace
+## <a name="publish-net-core-app"></a>Publikování aplikace .NET Core
 
-Abyste mohli přidat aplikaci .NET Core do image Dockeru, publikujte ho. Chcete, aby se zajistilo, že se kontejner spustí publikovanou verzi aplikace při spuštění.
+Před přidáním aplikace .NET Core do image Docker ji publikujte. Chcete se ujistit, že kontejner spouští publikovanou verzi aplikace, když je spuštěný.
 
-Z pracovní složky, zadejte **aplikace** složku s příkladem zdrojového kódu a spusťte následující příkaz:
+Z pracovní složky zadejte složku **aplikace** s příkladem zdrojového kódu a spusťte následující příkaz:
 
 ```console
 dotnet publish -c Release
 ```
 
-Tento příkaz zkompiluje aplikaci tak, aby **publikovat** složky. Cesta k **publikovat** by měla být složka z pracovní složky `.\app\bin\Release\netcoreapp2.2\publish\`
+Tento příkaz zkompiluje vaši aplikaci do složky pro **publikování** . Cesta ke složce pro **publikování** z pracovní složky by měla být`.\app\bin\Release\netcoreapp2.2\publish\`
 
-Získat výpis složky publikování a ověřte, zda **myapp.dll** byl vytvořen. Z **aplikace** složky, spusťte následující příkazy:
+Získejte výpis adresáře složky pro publikování a ověřte, zda byla vytvořena aplikace **MyApp. dll** . Ve složce **aplikace** spusťte jeden z následujících příkazů:
 
 ```console
 > dir bin\Release\netcoreapp2.2\publish
@@ -172,17 +172,17 @@ myapp.deps.json  myapp.dll  myapp.pdb  myapp.runtimeconfig.json
 
 ## <a name="create-the-dockerfile"></a>Vytvoření souboru Dockerfile
 
-*Soubor Dockerfile* soubor je používán `docker build` příkaz pro vytvoření image kontejneru. Tento soubor je soubor ve formátu prostého textu s názvem *soubor Dockerfile* , který nemá žádné rozšíření.
+Soubor *souboru Dockerfile* používá `docker build` příkaz k vytvoření image kontejneru. Tento soubor je soubor ve formátu prostého textu s názvem *souboru Dockerfile* , který nemá příponu.
 
-V terminálu přejděte na adresář pro pracovní složky, kterou jste vytvořili na začátku nahoru. Vytvořte soubor s názvem *soubor Dockerfile* ve své pracovní složce a otevřete ho v textovém editoru. Jako první řádek souboru přidejte následující příkaz:
+V terminálu přejděte v adresáři do pracovní složky, kterou jste vytvořili na začátku. Vytvořte v pracovní složce soubor s názvem *souboru Dockerfile* a otevřete ho v textovém editoru. Jako první řádek souboru přidejte následující příkaz:
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/core/runtime:2.2
 ```
 
-`FROM` Příkaz říká Dockeru stáhnout image označit **2.2** z **mcr.microsoft.com/dotnet/core/runtime** úložiště. Ujistěte se, že o přijetí změn na .NET Core runtime, který se shoduje s cílem sady SDK modulu runtime. Například aplikace vytvořené v předchozí části používá .NET Core 2.2 SDK a vytvořili aplikaci, na který .NET Core 2.2. Takže základní image podle *soubor Dockerfile* je označené **2.2**.
+Příkaz instruuje Docker, aby vyčetl obrázek s příznakem **2,2** z úložiště **MCR.Microsoft.com/dotnet/Core/Runtime.** `FROM` Ujistěte se, že vyžádáte modul runtime .NET Core, který odpovídá modulu runtime, který cílí na vaši sadu SDK. Například aplikace vytvořená v předchozí části používala sadu .NET Core 2,2 SDK a vytvořila aplikaci cílenou na rozhraní .NET Core 2,2. Základní bitová kopie, na kterou odkazuje *souboru Dockerfile* , je označená jako **2,2**.
 
-Uložit *soubor Dockerfile* souboru. Struktura adresářů pracovní složky by měl vypadat nějak takto. Některé z hlubší úrovně soubory a složky byly snížili pro úsporu místa v následujícím článku:
+Uložte soubor *souboru Dockerfile* . Adresářová struktura pracovní složky by měla vypadat takto. Některé soubory hlubší úrovně a složky byly vyjmuty, aby se ušetřilo místo v tomto článku:
 
 ```console
 docker-working
@@ -211,7 +211,7 @@ Z terminálu spusťte následující příkaz:
 docker build -t myimage -f Dockerfile .
 ```
 
-Docker bude zpracovávat každý řádek v *soubor Dockerfile*. `.` v `docker build` příkaz říká Dockeru použití aktuální složku k vyhledání *soubor Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **myimage** , která odkazuje na této bitové kopie. Po dokončení tohoto příkazu Spustit `docker images` zobrazíte seznam imagí, které jsou nainstalovány:
+Docker zpracuje každý řádek v *souboru Dockerfile*. V příkazu dá Docker pokyn k použití aktuální složky k vyhledání *souboru Dockerfile.* `.` `docker build` Tento příkaz sestaví image a vytvoří místní úložiště s názvem **MyImage** , které odkazuje na tuto image. Po dokončení tohoto příkazu spusťte `docker images` příkaz a zobrazí se seznam nainstalovaných imagí:
 
 ```console
 > docker images
@@ -220,7 +220,7 @@ mcr.microsoft.com/dotnet/core/runtime   2.2                 d51bb4452469        
 myimage                                 latest              d51bb4452469        2 days ago          314MB
 ```
 
-Všimněte si, že dvě bitové kopie sdílet stejný **ID bitové kopie** hodnotu. Hodnota je mezi obě bitové kopie, protože jediný příkaz v *soubor Dockerfile* byla na základní novou imagí v existující imagi. Přidejme dva příkazy, které *soubor Dockerfile*. Každý příkaz vytvoří novou image vrstvu s poslední příkaz představující obrázek **myimage** úložiště bude odkazovat na.
+Všimněte si, že tyto dva obrázky sdílejí stejnou hodnotu **ID obrázku** . Tato hodnota je stejná mezi oběma obrazci, protože jediný příkaz v *souboru Dockerfile* byl založen na novém obrázku na stávající imagi. Pojďme do *souboru Dockerfile*přidat dva příkazy. Každý příkaz vytvoří novou vrstvu obrázku s posledním příkazem reprezentujícím obrázek, na který bude **MyImage** úložiště odkazovat.
 
 ```dockerfile
 COPY app/bin/Release/netcoreapp2.2/publish/ app/
@@ -228,11 +228,11 @@ COPY app/bin/Release/netcoreapp2.2/publish/ app/
 ENTRYPOINT ["dotnet", "app/myapp.dll"]
 ```
 
-`COPY` Příkaz sděluje kopírování zadané složky na vašem počítači do složky v kontejneru Dockeru. V tomto příkladu **publikovat** složky je zkopírován do složky s názvem **aplikace** v kontejneru.
+`COPY` Příkaz vyzve Docker ke zkopírování zadané složky ve vašem počítači do složky v kontejneru. V tomto příkladu je složka pro **publikování** zkopírována do složky s názvem **App** v kontejneru.
 
-Další příkaz `ENTRYPOINT`, říká Dockeru konfigurace kontejner pro spuštění jako spustitelný soubor. Při spuštění kontejneru, `ENTRYPOINT` příkaz spustí. Až příkaz skončí, automaticky zastaví kontejner.
+Následující příkaz `ENTRYPOINT`instruuje Docker ke konfiguraci kontejneru tak, aby běžel jako spustitelný soubor. Po spuštění `ENTRYPOINT` kontejneru se příkaz spustí. Po ukončení tohoto příkazu se kontejner automaticky zastaví.
 
-Z terminálu spusťte `docker build -t myimage -f Dockerfile .` a po dokončení příkazu, který, spusťte `docker images`.
+V terminálu spusťte `docker build -t myimage -f Dockerfile .` příkaz a po jeho dokončení spusťte `docker images`příkaz.
 
 ```console
 > docker build -t myimage -f Dockerfile .
@@ -254,18 +254,18 @@ myimage                                 latest              ddcc6646461b        
 mcr.microsoft.com/dotnet/core/runtime   2.2                 d51bb4452469        2 days ago          314MB
 ```
 
-Každý příkaz v *soubor Dockerfile* vygenerované vrstvy a vytvoření **ID bitové kopie**. Finální **ID bitové kopie** (bude jiné) je **ddcc6646461b** a dále vytvoříte na základě této image kontejneru.
+Každý příkaz v *souboru Dockerfile* vygeneroval vrstvu a vytvořila **ID obrázku**. Konečné **ID image** (bude se lišit) bude **ddcc6646461b** a dál vytvoříte kontejner na základě tohoto obrázku.
 
 ## <a name="create-a-container"></a>Vytvoření kontejneru
 
-Teď, když máte image, která obsahuje vaši aplikaci, můžete vytvořit kontejner. Kontejner můžete vytvořit dvěma způsoby. Nejprve vytvořte nový kontejner, který je zastavená.
+Teď, když máte image, která obsahuje vaši aplikaci, můžete vytvořit kontejner. Kontejner můžete vytvořit dvěma způsoby. Nejdřív vytvořte nový kontejner, který se zastaví.
 
 ```console
 > docker create myimage
 0e8f3c2ca32ce773712a5cca38750f41259a4e54e04bdf0946087e230ad7066c
 ```
 
-`docker create` Příkaz výše vytvoří kontejner na základě **myimage** bitové kopie. Výstup tohoto příkazu se dozvíte **ID KONTEJNERU** (bude jiné) vytvořený kontejneru. Pokud chcete zobrazit seznam *všechny* kontejnery, použít `docker ps -a` příkaz:
+Výše uvedený příkaz vytvoří kontejner založený na imagi **MyImage.** `docker create` Výstup tohoto příkazu ukazuje **ID kontejneru** (bude se lišit) vytvořeného kontejneru. Chcete-li zobrazit seznam *všech* kontejnerů, použijte `docker ps -a` příkaz:
 
 ```console
 > docker ps -a
@@ -275,9 +275,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ### <a name="manage-the-container"></a>Správa kontejneru
 
-Každý kontejner je přiřazený náhodný název, který vám pomůže odkazovat na instanci kontejneru. Například kontejner, který byl automaticky vytvořen zvolili název **boring_matsumoto** (bude jiný) a tento název je možné spustit kontejner. Přepsat automatické název s konkrétní skupinu pomocí `docker create --name` parametru.
+Každému kontejneru je přiřazen náhodný název, který můžete použít k odkazování na tuto instanci kontejneru. Například kontejner, který byl vytvořen automaticky, zvolil název **boring_matsumoto** (bude jiný a tento název lze použít ke spuštění kontejneru). Automatický název přepíšete pomocí konkrétního `docker create --name` parametru.
 
-V následujícím příkladu `docker start` příkazu spusťte kontejner a pak používá `docker ps` příkazu můžete zobrazit pouze kontejnery, na kterých běží:
+Následující příklad používá `docker start` příkaz ke spuštění kontejneru a poté `docker ps` používá příkaz k zobrazení pouze kontejnerů, které jsou spuštěny:
 
 ```console
 > docker start boring_matsumoto
@@ -288,7 +288,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 0e8f3c2ca32c        myimage             "dotnet app/myapp.dll"   7 minutes ago       Up 8 seconds           boring_matsumoto
 ```
 
-Podobně platí `docker stop` příkaz zastaví kontejneru. V následujícím příkladu `docker stop` příkaz k zastavení kontejner a pak používá `docker ps` příkazu můžete zobrazit, zda jsou spuštěny žádné kontejnery.
+`docker stop` Podobně příkaz zastaví kontejner. Následující příklad používá `docker stop` příkaz k zastavení kontejneru a poté `docker ps` používá příkaz k zobrazení, že žádné kontejnery neběží.
 
 ```console
 > docker stop boring_matsumoto
@@ -298,11 +298,11 @@ boring_matsumoto
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     PORTS   NAMES
 ```
 
-### <a name="connect-to-a-container"></a>Připojte se ke kontejneru
+### <a name="connect-to-a-container"></a>Připojit ke kontejneru
 
-Po spuštění kontejneru můžete připojit k němu chcete zobrazit výstup. Použití `docker start` a `docker attach` příkazů spusťte kontejner a náhled výstupního datového proudu. V tomto příkladu <kbd>CTRL + C</kbd> příkaz slouží k oddělení spuštěný kontejner. Ve skutečnosti to může ukončit proces v kontejneru se kontejner zastaví. `--sig-proxy=false` Parametr zajišťuje, že <kbd>CTRL + C</kbd> nezpůsobí ukončení procesu v kontejneru.
+Po spuštění kontejneru se k němu můžete připojit a zobrazit výstup. Použijte příkazy `docker attach` a ke spuštění kontejneru a k prohlížení výstupního datového proudu. `docker start` V tomto příkladu se k odpojení od běžícího kontejneru používá příkaz <kbd>CTRL + C</kbd> . To může ve skutečnosti ukončit proces v kontejneru, který zastaví kontejner. Parametr zajistí, že <kbd>CTRL + C</kbd> nezastaví proces v kontejneru. `--sig-proxy=false`
 
-Chcete-li ověřit, že je stále spuštěna a počítání znovu připojte po odpojení z kontejneru.
+Po odpojení od kontejneru znovu připojte, abyste ověřili, že pořád běží a počítá se.
 
 ```console
 > docker start boring_matsumoto
@@ -321,15 +321,15 @@ Counter: 19
 ^C
 ```
 
-### <a name="delete-a-container"></a>Odstranit kontejner
+### <a name="delete-a-container"></a>Odstranění kontejneru
 
-Pro účely tohoto článku už nechcete, jenom předsazení kolem nicneděláním kontejnery. Odstraňte kontejner, který jste předtím vytvořili. Pokud je kontejner spuštěný, zastavte ho.
+Pro účely tohoto článku nechcete, aby kontejnery právě neprováděly žádné akce. Odstraňte kontejner, který jste dříve vytvořili. Pokud je kontejner spuštěný, zastavte ho.
 
 ```console
 > docker stop boring_matsumoto
 ```
 
-Následující příklad vypíše všechny kontejnery. Poté použije `docker rm` příkaz odstranit kontejner a poté ověří podruhé pro všechny spuštěné kontejnery.
+Následující příklad zobrazí seznam všech kontejnerů. Pak pomocí příkazu tento `docker rm` kontejner odstraní a pak u všech spuštěných kontejnerů zkontroluje druhou dobu.
 
 ```console
 > docker ps -a
@@ -343,9 +343,9 @@ boring_matsumoto
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     PORTS    NAMES
 ```
 
-### <a name="single-run"></a>Najednou
+### <a name="single-run"></a>Jeden běh
 
-Docker nabízí `docker run` příkaz pro vytvoření a spuštění kontejneru jako jeden příkaz. Tento příkaz se eliminuje potřeba spustit `docker create` a potom `docker start`. Můžete také nastavit tento příkaz automaticky odstranit kontejner, když se kontejner zastaví. Například použít `docker run -it --rm` provést dva kroky, nejprve aktuální terminálu automaticky použít pro připojení ke kontejneru a pak ji odebrat po dokončení kontejneru:
+Docker poskytuje `docker run` příkaz pro vytvoření a spuštění kontejneru jako jediného příkazu. Tento příkaz eliminuje nutnost spuštění `docker create` a pak. `docker start` Tento příkaz lze také nastavit tak, aby při zastavení kontejneru automaticky odstranil kontejner. Například použijte `docker run -it --rm` k provedení dvou věcí, nejdřív, automatické použití aktuálního terminálu k připojení ke kontejneru a po dokončení kontejneru ho odeberte:
 
 ```
 > docker run -it --rm myimage
@@ -357,7 +357,7 @@ Counter: 5
 ^C
 ```
 
-S `docker run -it`, <kbd>CTRL + C</kbd> příkaz zastaví proces, který je spuštěn v kontejneru, což zase zastaví kontejner. Vzhledem k tomu, `--rm` nebyl zadán parametr, kontejneru se automaticky odstraní, když se zastaví proces. Ověřte, že neexistuje:
+V `docker run -it`systému, příkaz <kbd>CTRL + C</kbd> zastaví proces, který je spuštěn v kontejneru, který zase zastaví kontejner. Vzhledem k `--rm` tomu, že byl zadán parametr, kontejner je automaticky odstraněn při zastavení procesu. Ověřte, že neexistuje:
 
 ```
 > docker ps -a
@@ -366,10 +366,10 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ### <a name="change-the-entrypoint"></a>Změnit vstupní bod
 
-`docker run` Příkaz také umožňuje upravovat `ENTRYPOINT` příkaz *soubor Dockerfile* a spusťte něco jiného, ale pouze pro tento kontejner. Například použijte následující příkaz pro spuštění `bash` nebo `cmd.exe`. Podle potřeby upravte příkaz.
+Příkaz také umožňuje `ENTRYPOINT` upravit příkaz z souboru Dockerfile a spustit něco jiného, ale pouze pro tento kontejner.  `docker run` Například použijte následující příkaz ke spuštění `bash` nebo. `cmd.exe` V případě potřeby upravte příkaz.
 
 #### <a name="windows"></a>Windows
-V tomto příkladu `ENTRYPOINT` se změní na `cmd.exe`. <kbd>CTRL + C</kbd> stisknutí ukončit proces a zastavení kontejneru.
+V tomto příkladu `ENTRYPOINT` se změní na `cmd.exe`. Stisknutím <kbd>kombinace kláves CTRL + C</kbd> ukončíte proces a zastavíte kontejner.
 
 ```console
 > docker run -it --rm --entrypoint "cmd.exe" myimage
@@ -396,7 +396,7 @@ C:\>^C
 
 #### <a name="linux"></a>Linux
 
-V tomto příkladu `ENTRYPOINT` se změní na `bash`. `quit` Po spuštění příkazu, který ukončí proces a zastavit kontejner.
+V tomto příkladu `ENTRYPOINT` se změní na `bash`. `quit` Příkaz se spustí, který ukončí proces a zastaví kontejner.
 
 ```bash
 root@user:~# docker run -it --rm --entrypoint "bash" myimage
@@ -406,21 +406,21 @@ root@8515e897c893:/# exit
 exit
 ```
 
-## <a name="essential-commands"></a>Základní příkazy
+## <a name="essential-commands"></a>Důležité příkazy
 
-Docker má mnoho různých příkazů, které se týkají, co byste chtěli provést v kontejneru a obrázky. Tyto příkazy Dockeru jsou nezbytné ke správě kontejnerů:
+Docker má mnoho různých příkazů, které pokrývají, co chcete s kontejnerem a obrázky udělat. Tyto příkazy Docker jsou zásadní pro správu vašich kontejnerů:
 
-* [sestavení dockeru](https://docs.docker.com/engine/reference/commandline/build/)
-* [docker, spusťte](https://docs.docker.com/engine/reference/commandline/run/)
-* [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
-* [docker stop](https://docs.docker.com/engine/reference/commandline/stop/)
-* [docker rm](https://docs.docker.com/engine/reference/commandline/rm/)
-* [rmi dockeru](https://docs.docker.com/engine/reference/commandline/rmi/)
-* [image dockeru](https://docs.docker.com/engine/reference/commandline/image/)
+* [sestavení Docker](https://docs.docker.com/engine/reference/commandline/build/)
+* [spuštění Docker](https://docs.docker.com/engine/reference/commandline/run/)
+* [Docker PS](https://docs.docker.com/engine/reference/commandline/ps/)
+* [zastavení Docker](https://docs.docker.com/engine/reference/commandline/stop/)
+* [Docker RM](https://docs.docker.com/engine/reference/commandline/rm/)
+* [Docker RMI](https://docs.docker.com/engine/reference/commandline/rmi/)
+* [Obrázek Docker](https://docs.docker.com/engine/reference/commandline/image/)
 
 ## <a name="clean-up-resources"></a>Vyčištění prostředků
 
-Během tohoto kurzu jste vytvořili kontejnery a obrázky. Pokud chcete, odstraňte tyto prostředky. Pomocí následujících příkazů
+V tomto kurzu jste vytvořili kontejnery a image. Pokud chcete, tyto prostředky odstraňte. Následující příkazy použijte k
 
 01. Vypsat všechny kontejnery
 
@@ -428,7 +428,7 @@ Během tohoto kurzu jste vytvořili kontejnery a obrázky. Pokud chcete, odstra�
     > docker ps -a
     ```
 
-02. Zastavte kontejnerů, které jsou spuštěny. `CONTAINER_NAME` Představuje název automaticky přiřazují do kontejneru.
+02. Zastavte kontejnery, které jsou spuštěny. `CONTAINER_NAME` Představuje název automaticky přiřazený kontejneru.
 
     ```console
     > docker stop CONTAINER_NAME
@@ -440,21 +440,21 @@ Během tohoto kurzu jste vytvořili kontejnery a obrázky. Pokud chcete, odstra�
     > docker rm CONTAINER_NAME
     ```
 
-V dalším kroku odstraňte všechny Image, které už nechcete na svém počítači. Odstranit image vytvořené vaší *soubor Dockerfile* a potom odstranit image .NET Core *soubor Dockerfile* byl založen na. Můžete použít **ID bitové kopie** nebo **úložiště: značka** řetězec ve formátu.
+Pak na počítači odstraňte všechny image, které už nechcete. Odstraňte image vytvořenou *souboru Dockerfile* a pak odstraňte image .NET Core, na které byl *souboru Dockerfile* založen. Můžete použít **ID obrázku** nebo **úložiště:** řetězec ve formátu značek.
 
 ```console
 docker rmi myimage:latest
 docker rmi mcr.microsoft.com/dotnet/core/runtime:2.2
 ```
 
-Použití `docker images` příkazu zobrazte seznam imagí, které jsou nainstalované.
+`docker images` Pomocí příkazu zobrazte seznam nainstalovaných imagí.
 
 > [!NOTE]
-> Soubory bitových kopií může být velký. Obvykle by odeberte dočasné kontejnery, které jste vytvořili při testování a vývoj vaší aplikace. Obvykle byste mít základní Image s modulem runtime nainstalovat, pokud máte v úmyslu na vytváření další Image podle tohoto modulu runtime.
+> Soubory obrázků můžou být velké. Obvykle byste odebrali dočasné kontejnery, které jste vytvořili při testování a vývoji vaší aplikace. Při plánování vytváření dalších imagí na základě tohoto modulu runtime obvykle zachováte základní image s nainstalovaným modulem runtime.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
-* [Projděte si kurz ASP.NET Core Mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
+* [Vyzkoušejte si kurz ASP.NET Core mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
 * [Projděte si služby Azure, které podporují kontejnery.](https://azure.microsoft.com/overview/containers/)
-* [Přečtěte si informace o příkazů souboru Docker.](https://docs.docker.com/engine/reference/builder/)
-* [Prozkoumejte nástroje kontejneru sady Visual Studio](/visualstudio/containers/overview)
+* [Přečtěte si o příkazech souboru Dockerfile.](https://docs.docker.com/engine/reference/builder/)
+* [Prozkoumejte nástroje kontejnerů pro Visual Studio](/visualstudio/containers/overview)

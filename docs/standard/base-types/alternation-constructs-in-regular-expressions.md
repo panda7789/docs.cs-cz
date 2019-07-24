@@ -1,6 +1,6 @@
 ---
 title: Konstrukce alternace v regulárních výrazech .NET
-description: Další informace o použití konstrukce alternace v regulárních výrazech podmíněné odpovídající.
+description: Naučte se používat konstrukce alternace pro podmíněné porovnání v regulárních výrazech.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,118 +18,118 @@ ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 756d63be456dce10ca9e95963ed25602e6f4aec1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 61f1b93d2f54923f0dfc4832a79fe35dc319d0f6
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634778"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331754"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukce alternace v regulárních výrazech
-<a name="top"></a> Konstrukce alternace upravují regulární výraz, aby buď / nebo podmíněného přiřazování nebo. .NET podporuje tři konstrukcí alternace:  
+<a name="top"></a>Konstrukce alternace upravují regulární výraz pro povolení nebo podmíněné porovnání. Rozhraní .NET podporuje tři konstrukce alternace:  
   
 - [Porovnávání vzorů s&#124;](#Either_Or)  
   
-- [Podmíněné porovnávání s (? () výraz) Ano&#124;žádné)](#Conditional_Expr)  
+- [Podmíněné porovnání s (? ( výraz) Ano&#124;ne)](#Conditional_Expr)  
   
-- [Podmíněného přiřazování na základě platný zachycené skupiny](#Conditional_Group)  
+- [Podmíněné porovnání na základě platné zachycené skupiny](#Conditional_Group)  
   
 <a name="Either_Or"></a>   
 ## <a name="pattern-matching-with-124"></a>Porovnávání vzorů s&#124;  
- Můžete použít svislá čára (`|`) znaků tak, aby odpovídaly některou z řady vzory, kde `|` odděluje každý vzorek.  
+ Znak svislé čáry (`|`) můžete použít k vyhledání jedné z řady vzorů, `|` kde znak odděluje každý vzorek.  
   
- Třída kladné znaků, jako jsou `|` znak můžete použít tak, aby odpovídaly některou z jednoho znaků. Následující příklad používá třídu kladné znaků a buď / nebo porovnávání vzorů s `|` znak vyhledáte výskyty slova "gray" nebo "šedou" v řetězci. V takovém případě `|` znak vytváří regulární výraz, který je podrobnější.  
+ Podobně jako třída pozitivního znaku, `|` lze znak použít k vyhledání jednoho z několika jednoduchých znaků. V následujícím příkladu je použita třída pozitivního znaku a buď porovnávání vzorů, nebo porovnávání `|` se znakem pro hledání výskytů slov "Gray" nebo "šedá" v řetězci. V tomto případě `|` znak vytvoří regulární výraz, který je podrobněji podrobnější.  
   
  [!code-csharp[RegularExpressions.Language.Alternation#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation1.cs#1)]
  [!code-vb[RegularExpressions.Language.Alternation#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation1.vb#1)]  
   
- Regulární výraz, který používá `|` znak, `\bgr(a|e)y\b`, je interpretován tak, jak je znázorněno v následující tabulce.  
+ Regulární výraz, který používá `|` znak, `\bgr(a|e)y\b`, je interpretován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne na hranici slova.|  
-|`gr`|Porovná znaky "gr".|  
+|`gr`|Porovnává se se znaky "GR".|  
 |<code>(a&#124;e)</code>|Porovná buď se znakem „a“, nebo s „e“.|  
-|`y\b`|Odpovídá "y", na hranici slova.|  
+|`y\b`|Porovnává s "y" na hranici slova.|  
   
- `|` Znak je také možné provést buď / nebo shodu s více znaky nebo dílčích výrazů, které může obsahovat libovolnou kombinaci znakové literály a prvky jazyka regulárních výrazů. (Znak třídy tuto funkci neposkytuje.) V následujícím příkladu `|` znaků k extrakci buď USA Sociálního pojištění USA (SSN), což je číslo 9 číslic s formátem *ddd*-*dd*-*dddd*, nebo číslu Zaměstnavatel identifikační číslo (EIN), což je číslo 9 číslic s formátem *dd*-*ddddddd*.  
+ `|` Znak lze také použít k provedení shody s více znaky nebo podvýrazy, které mohou obsahovat libovolnou kombinaci znakových literálů a prvků jazyka regulárních výrazů. (Třída znaků tuto funkci neposkytuje.) Následující příklad používá `|` znak k extrakci typu USA. Číslo sociálního pojištění (SSN), což je číslo 9 číslic ve formátu *DDD*-*DD*-*dddd*nebo USA Identifikační číslo zaměstnavatele (EIN), což je číslo 9 číslic ve formátu *DD*-*ddddddd*.  
   
  [!code-csharp[RegularExpressions.Language.Alternation#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation2.cs#2)]
  [!code-vb[RegularExpressions.Language.Alternation#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation2.vb#2)]  
   
- Regulární výraz `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` interpretována, jak je znázorněno v následující tabulce.  
+ Regulární výraz `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` je interpretován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne na hranici slova.|  
-|<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|Porovná jednu z následujících akcí: dvě desetinné číslice, za nímž následuje spojovník následovaný písmenem sedm desítkových číslic; nebo tři desítkové číslice, spojovník, dvě desetinné číslice, jiné spojovník a čtyři desítková čísla.|  
+|<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|Porovnává jednu z následujících hodnot: dvě desítkové číslice následované spojovníkem a sedmi desítkových číslic; nebo tři desítkové číslice, pomlčky, dvě desítkové číslice, další spojovník a čtyři desítkové číslice.|  
 |`\d`|Ukončí porovnání na hranici slova.|  
   
  [Zpět na začátek](#top)  
   
 <a name="Conditional_Expr"></a>   
-## <a name="conditional-matching-with-an-expression"></a>Podmíněné porovnávání s výrazem  
- Tento prvek jazyka se pokusí porovnat jednu ze dvou vzorků v závislosti na tom, zda lze porovnat počáteční vzorek. Syntaxe je:  
+## <a name="conditional-matching-with-an-expression"></a>Podmíněné porovnání s výrazem  
+ Tento prvek jazyka se pokusí vyhledat jeden ze dvou vzorů v závislosti na tom, zda se může shodovat s počátečním vzorem. Jeho syntaxe je:  
   
- `(?(` *výraz* `)` *Ano* `|` *žádné* `)`  
+ `(?(`*výraz* `)`  Ano –`|` *ne*`)`  
   
- kde *výraz* je počáteční vzor pro shodu, *Ano* je vzor splněno, pokud *výraz* je nalezena shoda, a *žádné* je volitelný Pokud odpovídající vzor *výraz* se neshoduje. Modul regulárních výrazů zachází *výraz* jako kontrolní výraz nulové šířky; to znamená, že modul regulárních výrazů nepřesouvejte vpřed v vstupního datového proudu po je vyhodnocen jako *výraz*. Proto tento konstruktor je ekvivalentní následujícímu zápisu:  
+ *výraz* WHERE je počáteční vzorek, který se má shodovat, *Ano* je vzor, který se má shodovat, pokud se *výraz* shoduje, a *ne* je volitelný vzor, který by odpovídal, pokud se *výraz* neshoduje. Modul regulárních výrazů považuje *výraz* za kontrolní výraz s nulovou šířkou; To znamená, že modul regulárních výrazů není ve vstupním datovém proudu před vyhodnocením *výrazu*. Proto je tato konstrukce ekvivalentní následujícímu:  
   
- `(?(?=` *výraz* `)` *Ano* `|` *žádné* `)`  
+ `(?(?=`*výraz* `)`  Ano –`|` *ne*`)`  
   
- kde `(?=` *výraz* `)` je konstrukce kontrolní výraz nulové šířky. (Další informace najdete v tématu [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).) Protože modul regulárních výrazů interpretuje *výraz* jako kotvu (kontrolní výraz nulové šířky), *výraz* musí být buď kontrolní výraz nulové šířky (Další informace najdete v tématu [ Kotvy vztahů](../../../docs/standard/base-types/anchors-in-regular-expressions.md)) nebo jako dílčí výraz, který je také součástí *Ano*. V opačném případě *Ano* vzor neshoduje.  
+ výraz `(?=`Where`)` je konstrukce kontrolního výrazu s nulovou šířkou. (Další informace naleznete v tématu [seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).) Vzhledem k tomu, že modul regulárních výrazů interpretuje *výraz* jako kotvu (kontrolní výraz s nulovou šířkou), musí být *výraz* buď kontrolní výraz s nulovou šířkou (Další informace naleznete v tématu [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md)) nebo dílčí výraz, který je také obsažen v *Ano*. V opačném případě nelze porovnat vzor *Ano* .  
   
 > [!NOTE]
->  Pokud *výraz*pojmenovanou nebo číslovanou zachytávající skupinu, je konstrukce alternace, je interpretován jako zachycení testu; Další informace naleznete v další části [podmíněné odpovídající založené na platné zachycené skupině](#Conditional_Group). Jinými slovy modul regulárních výrazů nepokusí tak, aby odpovídaly zachycené podřetězce, ale místo toho testy pro přítomnosti nebo nepřítomnosti skupiny.  
+>  Pokud je *výraz*pojmenovanou nebo číslovanou zachytávající skupinou, konstrukce alternace je interpretována jako test Capture; Další informace najdete v další části s podmíněným [porovnáním na základě platné skupiny zachycení](#Conditional_Group). Jinými slovy, modul regulárních výrazů se nepokusí porovnat zachycený dílčí řetězec, ale místo toho testuje přítomnost nebo nepřítomnost skupiny.  
   
- Následující příklad je podobný příkladu, který se zobrazí [buď / nebo porovnávání vzorů s &#124; ](#Either_Or) oddílu. Používá podmíněného přiřazování k určení, zda první tři znaky po hranici slova jsou dvě číslice následované spojovníkem. Pokud ano, pokusí se porovnat USA Zaměstnavatel identifikační číslo (EIN). Pokud ne, pokusí se porovnat americké Číslo sociálního pojištění (SSN).  
+ V následujícím příkladu je variace příkladu, který se zobrazí v sekci [se &#124; porovnáváním](#Either_Or) nebo vzorem. Pomocí podmíněného porovnání Určuje, zda první tři znaky po hranici slova jsou dvě číslice následované spojovníkem. Pokud jsou, pokusí se porovnat USA Identifikační číslo zaměstnavatele (EIN). Pokud tomu tak není, pokusí se porovnat americký Rodné číslo (sociální zabezpečení).  
   
  [!code-csharp[RegularExpressions.Language.Alternation#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation3.cs#3)]
  [!code-vb[RegularExpressions.Language.Alternation#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation3.vb#3)]  
   
- Vzor regulárního výrazu `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` regulárního výrazu je interpretován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne na hranici slova.|  
-|`(?(\d{2}-)`|Určení, zda následující tři znaky jsou dvě číslice následované spojovníkem.|  
-|`\d{2}-\d{7}`|Pokud předchozí vzor odpovídá, porovná dvě číslice následované spojovníkem a 7 číslicemi.|  
-|`\d{3}-\d{2}-\d{4}`|Pokud předchozí vzorek neodpovídá, porovná tři desítkové číslice, spojovník, dvě desetinné číslice, jiné spojovník a čtyři desítková čísla.|  
+|`(?(\d{2}-)`|Určí, zda následující tři znaky sestávají ze dvou číslic následovaných spojovníkem.|  
+|`\d{2}-\d{7}`|Pokud předchozí vzor souhlasí, porovná dvě číslice následované spojovníkem následovaným sedmi číslicemi.|  
+|`\d{3}-\d{2}-\d{4}`|Pokud předchozí vzor neodpovídá, porovnává tři desítkové číslice, pomlčku, dvě desítkové číslice, další spojovník a čtyři desítkové číslice.|  
 |`\b`|Porovná hranici slova.|  
   
  [Zpět na začátek](#top)  
   
 <a name="Conditional_Group"></a>   
-## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Podmíněného přiřazování na základě platný zachycené skupiny  
- Tento prvek jazyka se pokusí porovnat jednu ze dvou vzorků v závislosti na tom, jestli má odpovídá zadané zachytávající skupiny. Syntaxe je:  
+## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Podmíněné porovnání na základě platné zachycené skupiny  
+ Tento prvek jazyka se pokusí vyhledat jeden ze dvou vzorů v závislosti na tom, zda se shodoval se zadanou zachytávající skupinou. Jeho syntaxe je:  
   
- `(?(` *název* `)` *Ano* `|` *žádné* `)`  
+ `(?(`*název* `)`  Ano –`|` *ne*`)`  
   
  or  
   
- `(?(` *číslo* `)` *Ano* `|` *žádné* `)`  
+ `(?(`*číslo* `)`  Ano –`|` *ne*`)`  
   
- kde *název* je název a *číslo* je počet zachytávající skupinu, *Ano* je výraz, který se shodují, pokud *název* nebo *číslo* shoduje, a *žádné* je volitelný výraz, který splněno, pokud tomu tak není.  
+ kde *Name* je název a *číslo* je číslo zachytávající skupiny, *Ano* je výraz, který se má shodovat, pokud má *název* nebo *číslo* shodu a *ne* není volitelný výraz, který by odpovídal, pokud není.  
   
- Pokud *název* neodpovídá názvu zachytávající skupinu, která se používá ve vzoru regulárního výrazu, alternace je interpretován jako test výrazu, jak je popsáno v předchozí části. Obvykle to znamená, že *výraz* vyhodnotí jako `false`. Pokud *číslo* neodpovídá očíslovanou zachytávající skupinu, která se používá ve vzoru regulárního výrazu, vyvolá modul regulárních výrazů <xref:System.ArgumentException>.  
+ Pokud *název* neodpovídá názvu zachytávající skupiny, která je použita ve vzoru regulárního výrazu, konstrukce alternace je interpretována jako test výrazu, jak je vysvětleno v předchozí části. Obvykle to znamená, že je *výraz* vyhodnocen `false`jako. Pokud *číslo* neodpovídá očíslované zachytávající skupině, která je použita ve vzoru regulárního výrazu, modul regulárních výrazů vyvolá <xref:System.ArgumentException>.  
   
- Následující příklad je podobný příkladu, který se zobrazí [buď / nebo porovnávání vzorů s &#124; ](#Either_Or) oddílu. Používá zachytávající skupina s názvem `n2` , která obsahuje dvě číslice následované spojovníkem. Konstrukce alternace testuje, jestli tato zachytávající skupina pravá složená závorka ve vstupním řetězci. Pokud ano, bude se Alternující konstrukce pokusí se porovnat posledních 7 číslic devět číslic USA Zaměstnavatel identifikační číslo (EIN). Pokud ne, pokusí se porovnat devět číslic USA Číslo sociálního pojištění (SSN).  
+ V následujícím příkladu je variace příkladu, který se zobrazí v sekci [se &#124; porovnáváním](#Either_Or) nebo vzorem. Používá zachytávající skupinu s názvem `n2` , která se skládá ze dvou číslic následovaných spojovníkem. Konstrukce alternace testuje, zda byla tato zachytávající skupina spárována ve vstupním řetězci. Pokud má, konstrukce alternace se pokusí porovnat posledních sedm číslic v devíti číslicích. Identifikační číslo zaměstnavatele (EIN). Pokud tomu tak není, pokusí se porovnat s devíti číslicemi USA. Rodné číslo (sociální zabezpečení).  
   
  [!code-csharp[RegularExpressions.Language.Alternation#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation4.cs#4)]
  [!code-vb[RegularExpressions.Language.Alternation#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation4.vb#4)]  
   
- Vzor regulárního výrazu `\b(?<n2>\d{2}-)?(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor `\b(?<n2>\d{2}-)?(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` regulárního výrazu je interpretován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne na hranici slova.|  
-|`(?<n2>\d{2}-)?`|Porovná žádný nebo jeden výskyt dvě číslice následované spojovníkem. Název této zachytávající skupiny `n2`.|  
-|`(?(n2)`|Test, zda `n2` odpovídal ve vstupním řetězci.|  
-|`)\d{7}`|Pokud `n2` byla shoda, porovná sedm desítkových číslic.|  
-|<code>&#124;\d{3}-\d{2}-\d{4}</code>|Pokud `n2` neodpovídá, odpovídá tři desítkové číslice, spojovník, dvě desetinné číslice, jiné spojovník a čtyři desítková čísla.|  
+|`(?<n2>\d{2}-)?`|Porovná žádný nebo jeden výskyt dvou číslic následovaný spojovníkem. Pojmenujte tuto `n2`zachytávající skupinu.|  
+|`(?(n2)`|Otestuje `n2` , zda byla shodná se vstupním řetězcem.|  
+|`\d{7}`|Pokud `n2` se shodoval, porovná sedm desítkových číslic.|  
+|<code>&#124;\d{3}-\d{2}-\d{4}</code>|Pokud `n2` se neshodoval, porovná tři desítkové číslice, pomlčku, dvě desítkové číslice, další spojovník a čtyři desítkové číslice.|  
 |`\b`|Porovná hranici slova.|  
   
- Variace tohoto příkladu, který používá číslované skupiny místo pojmenovanou skupinu se zobrazí v následujícím příkladu. Jeho vzor regulárního výrazu je `\b(\d{2}-)?(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b`.  
+ V následujícím příkladu je uvedena variace tohoto příkladu, který používá očíslovanou skupinu namísto pojmenované skupiny. Jeho vzor regulárního výrazu `\b(\d{2}-)?(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b`je.  
   
  [!code-csharp[RegularExpressions.Language.Alternation#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation5.cs#5)]
  [!code-vb[RegularExpressions.Language.Alternation#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation5.vb#5)]  
