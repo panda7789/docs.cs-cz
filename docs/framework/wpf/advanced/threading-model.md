@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: ebfbb2df3e931690f2ba12f0a2ad868da0212f5d
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 2667417c5d25821f2fed2101e1d485280e171eab
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331625"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400644"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]je navržena pro ukládání vývojářů z potíží s vlákny. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojářů nebude muset psát rozhraní, které používá více než jedno vlákno. Vzhledem k tomu, že programy s více vlákny jsou složité a obtížné je ladit, měli byste se jim vyhnout v případě existence řešení s jedním vláknem.  
@@ -203,15 +203,15 @@ ms.locfileid: "68331625"
  Je možné, že `handler2` bude trvat značnou dobu zpracování této události. `handler2`může použít <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> k zahájení vnořené smyčky zpráv, která se nevrátí na hodiny. Pokud `handler2` aplikace neoznačí událost jako zpracovanou, když je tato smyčka dokončená, událost se předá do stromu, i když je to hodně staré.  
   
 ### <a name="reentrancy-and-locking"></a>Vícenásobný přístup a uzamykání  
- Blokovací mechanizmus se [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] nechová přesně jako jeden z nich, může být pravděpodobné, že vlákno ukončí operaci kompletně při požadavku na zámek. Ve skutečnosti vlákno nadále přijímá a zpracovává zprávy s vysokou prioritou. To pomáhá zabránit zablokování a dávat rozhraní s minimální odezvou, ale zavádí možnost drobných chyb.  Velká většina času, o které nepotřebujete nic vědět, ale za výjimečných okolností (obvykle zahrnující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] zprávy oken nebo komponenty modelu COM STA) to může být velmi důležité.  
+ Blokovací mechanizmus modulu CLR (Common Language Runtime) se chová přesně tak, jak je možné ho představit. může se stát, že vlákno ukončí operaci kompletně při požadavku na zámek. Ve skutečnosti vlákno nadále přijímá a zpracovává zprávy s vysokou prioritou. To pomáhá zabránit zablokování a dávat rozhraní s minimální odezvou, ale zavádí možnost drobných chyb.  Velká většina času, o které nepotřebujete nic vědět, ale za výjimečných okolností (obvykle zahrnující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] zprávy oken nebo komponenty modelu COM STA) to může být velmi důležité.  
   
  Většina rozhraní není sestavena s ohledem na bezpečnost vlákna, protože vývojáři pracují s předpokladem, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] že k přístupu nikdy nemá přístup více než jedno vlákno. V takovém případě může toto jediné vlákno provádět změny v prostředí v neočekávaných časech, což způsobuje, <xref:System.Windows.Threading.DispatcherObject> že by se měl vyřešit mechanismus vzájemného vyloučení. Vezměte v úvahu následující pseudokódu:  
   
  ![Diagram, který zobrazuje Vícenásobný přístup zřetězení.](./media/threading-model/threading-reentrancy.png "ThreadingReentrancy")  
   
- Ve většině času to je správné, ale v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] některých případech se může stát, že by takové neočekávané vícenásobný přístupy skutečně způsobily problémy. Takže v určitých klíčových [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] časech volání <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>, která mění instrukci zámku pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] toto vlákno, aby místo obvyklého [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] zámku používala zámek Vícenásobný přístup bez něj.  
+ Ve většině času to je správné, ale v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] některých případech se může stát, že by takové neočekávané vícenásobný přístupy skutečně způsobily problémy. Takže v určitých klíčových časech [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] volání <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>, která mění instrukci zámku pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] toto vlákno, aby používala zámek Vícenásobný přístup bez normálního zámku CLR.  
   
- Proč [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] tým vybírá toto chování? Musela se provádět s objekty modelu COM STA a s dokončovacím vláknem. Když je objekt uvolněn z paměti, je `Finalize` jeho metoda spuštěna ve vyhrazeném vlákně finalizační metody, nikoli [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v vlákně. V tomto případě se jedná o problém, protože objekt COM STA, který byl vytvořen [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ve vlákně, lze odstranit pouze [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ve vlákně. Má [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] ekvivalent a <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> (v tomto případě použití Win32's `SendMessage`). Pokud je ale [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno zaneprázdněno, vlákno finalizační metody je zastaveno a objekt COM STA nelze uvolnit, což způsobí závažnou nevracení paměti. [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] Takže tým vedl k tomu, aby zámky pracovaly způsobem, jakým dělají.  
+ Proč tým CLR zvolí toto chování? Musela se provádět s objekty modelu COM STA a s dokončovacím vláknem. Když je objekt uvolněn z paměti, je `Finalize` jeho metoda spuštěna ve vyhrazeném vlákně finalizační metody, nikoli [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v vlákně. V tomto případě se jedná o problém, protože objekt COM STA, který byl vytvořen [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ve vlákně, lze odstranit pouze [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ve vlákně. CLR odpovídá <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> (v tomto případě použití Win32's `SendMessage`). Pokud je ale [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno zaneprázdněno, vlákno finalizační metody je zastaveno a objekt COM STA nelze uvolnit, což způsobí závažnou nevracení paměti. Proto tým CLR provedl obtížné volání, aby zámky pracovaly způsobem, jakým dělají.  
   
  Úkolem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je zabránit neočekávanému Vícenásobný přístup, aniž byste museli znovu zavádět nevrácenou paměť, což znamená, že nebudeme zablokovat Vícenásobný přístup všude.  
   

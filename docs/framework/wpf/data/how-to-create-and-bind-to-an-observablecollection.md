@@ -8,15 +8,15 @@ helpviewer_keywords:
 - data binding [WPF], ObservableCollection class
 - notifications [WPF]
 ms.assetid: 6cf7e275-df76-41c6-a611-53b889b8fd5a
-ms.openlocfilehash: 45f8b097bfdb8d3d7994e53ea05146aa6de0fc21
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0fd851ac413b54769bf6606b2220cf38934902be
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020917"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401425"
 ---
 # <a name="how-to-create-and-bind-to-an-observablecollection"></a>Postupy: Vytvoření a vytvoření vazby ke kolekci ObservableCollection
-Tento příklad ukazuje postup vytvoření a připojení ke kolekci, která je odvozena z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je třídu kolekce, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky.  
+Tento příklad ukazuje, jak vytvořit a vytvořit vazby na kolekci, která je odvozena <xref:System.Collections.ObjectModel.ObservableCollection%601> z třídy, což je třída kolekce, která poskytuje oznámení, když se položky přidají nebo odeberou.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje implementaci `NameList` kolekce:  
@@ -104,7 +104,7 @@ Public Class PersonName
 End Class  
 ```  
   
- Můžete zpřístupnit kolekci pro vazbu stejně jako byste to udělali s jinými [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty, jak je popsáno v [zkontrolujte Data k dispozici pro vazbu v XAML](how-to-make-data-available-for-binding-in-xaml.md). Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a určete kolekci jako prostředek, jak je znázorněno zde:  
+ Kolekci lze vytvořit pro vazbu stejným způsobem jako ostatní objekty modulu CLR (Common Language Runtime), jak je popsáno v tématu [zpřístupnění dat pro vazbu v jazyce XAML](how-to-make-data-available-for-binding-in-xaml.md). Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zadat kolekci jako prostředek, jak je znázorněno zde:  
   
 ```xaml  
 <Window  
@@ -124,7 +124,7 @@ End Class
 </Window.Resources>  
 ```  
   
- Potom můžete svázat do kolekce:  
+ Pak můžete vytvořit vazby na kolekci:  
   
 ```xaml  
 <ListBox Width="200"  
@@ -133,12 +133,12 @@ End Class
          IsSynchronizedWithCurrentItem="True"/>  
 ```  
   
- Definice `NameItemTemplate` zde není zobrazen.  
+ Tady není zobrazená definice `NameItemTemplate` .  
   
 > [!NOTE]
->  Objekty v kolekci musí splňovat požadavky popsané v [Přehled zdrojů vazby](binding-sources-overview.md). Konkrétně, pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (třeba chtít vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti jako je například <xref:System.ComponentModel.INotifyPropertyChanged>rozhraní.  
+>  Objekty v kolekci musí splňovat požadavky popsané v tématu [Přehled zdrojů vazby](binding-sources-overview.md). Zejména pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> ( [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] například chcete, aby se aktualizace aktualizovaly, když se dynamicky mění vlastnosti zdrojového kódu), musíte implementovat vhodný mechanizmus oznámení změněné vlastnosti, jako je například <xref:System.ComponentModel.INotifyPropertyChanged>rozhraní.  
   
- Další informace najdete v tématu vazby do oddílu kolekce [přehled datových vazeb](data-binding-overview.md).  
+ Další informace najdete v části vazba na kolekce v tématu [Přehled datové vazby](data-binding-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 

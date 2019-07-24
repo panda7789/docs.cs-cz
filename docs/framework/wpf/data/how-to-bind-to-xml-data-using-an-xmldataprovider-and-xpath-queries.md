@@ -6,53 +6,53 @@ helpviewer_keywords:
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: 49f32ae4f358885268044cbfd785239f537940ae
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dc4fb2d5f0c48c077d2ff7ca5e5269ce5cba71e5
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609424"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400496"
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath
-Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] data s využitím <xref:System.Windows.Data.XmlDataProvider>.  
+Tento příklad ukazuje, jak vytvořit propojení [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] s daty <xref:System.Windows.Data.XmlDataProvider>pomocí.  
   
- Pomocí <xref:System.Windows.Data.XmlDataProvider>, podkladová data, která je přístupná prostřednictvím datové vazby v aplikaci může být jakékoli stromu [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] uzly. Jinými slovy <xref:System.Windows.Data.XmlDataProvider> poskytuje pohodlný způsob, jak používat jakékoli stromu [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] uzlů jako zdroj vazby.  
+ Pomocí nástroje mohou být podkladová data, ke kterým lze přistupovat prostřednictvím datové vazby ve vaší aplikaci [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] ,libovolnéstromovéstrukturyuzlů.<xref:System.Windows.Data.XmlDataProvider> Jinými slovy, <xref:System.Windows.Data.XmlDataProvider> nabízí pohodlný způsob použití jakéhokoli [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] stromu uzlů jako zdroje vazby.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu, vložení dat přímo jako [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] *datový ostrůvek* v rámci <xref:System.Windows.FrameworkElement.Resources%2A> oddílu. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] Datový ostrůvek musí být zabalené v `<x:XData>` značek a mít jeden kořenový uzel, který je vždy *inventáře* v tomto příkladu.  
+ V následujícím příkladu jsou data vložena přímo jako [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] *datový* <xref:System.Windows.FrameworkElement.Resources%2A> ostrůvek v rámci oddílu. Datový ostrůvek musí být zabalen do `<x:XData>` značek a vždy mít jeden kořenový uzel, který je v tomto příkladu *inventářem* . [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]  
   
 > [!NOTE]
->  Kořenový uzel [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data mají **xmlns** atribut, který nastaví [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] oboru názvů na prázdný řetězec. Jde o požadavek pro použití dotazy XPath, který je vložený v rámci dat ostrov [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. V tomto případě vložené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], a proto dědí ostrov data <xref:System.Windows> oboru názvů. Z toho důvodu je potřeba nastavit obor názvů prázdné, pokud chcete zabránit dotazy jazyka XPath je kvalifikován <xref:System.Windows> obor názvů, který by přesměruje dotazy.  
+>  Kořenový uzel [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] dat má [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] atribut **xmlns** , který nastaví obor názvů na prázdný řetězec. Toto je požadavek na použití dotazů XPath na datový ostrůvek, který je vložen do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. V tomto vloženém případě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] <xref:System.Windows> dědí obor názvů a tudíž datový ostrov. Z tohoto důvodu je třeba nastavit obor názvů jako prázdný, aby byly dotazy XPath v <xref:System.Windows> oboru názvů kvalifikovány, což by mělo být dotazům příliš nasměrované.  
   
  [!code-xaml[XMLDataSource#1](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
   
- Jak je znázorněno v tomto příkladu, k vytvoření jedné vazby deklaraci v syntaxi atributu musíte před speciální znaky správně. Další informace najdete v tématu [znakové entity XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
+ Jak ukazuje tento příklad, chcete-li vytvořit stejnou deklaraci vazby v syntaxi atributu, je nutné speciální znaky správně Escape. Další informace naleznete v tématu [znakové entity XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
   
- <xref:System.Windows.Controls.ListBox> Při spuštění v tomto příkladu se zobrazí následující položky. Jedná se o *název*s všech prvků v rámci *knihy* buď *akcie* hodnotu "*si*" nebo *číslo* hodnotu 3 nebo větší než nebo se rovná 8. Všimněte si, že žádné *CD* položky jsou vráceny, protože <xref:System.Windows.Data.XmlDataProvider.XPath%2A> na hodnotu set <xref:System.Windows.Data.XmlDataProvider> označuje pouze *knihy* prvky by měly být vystaveny (v podstatě nastavení filtru).  
+ V <xref:System.Windows.Controls.ListBox> případě spuštění tohoto příkladu se zobrazí následující položky. Jedná se o *název*všech prvků v knihách, které  *mají hodnotu "* *out*" nebo *číslo* hodnoty 3 nebo větší nebo rovno 8. Všimněte si,  že nejsou vráceny žádné položky CD <xref:System.Windows.Data.XmlDataProvider.XPath%2A> , protože hodnota nastavená v poli <xref:System.Windows.Data.XmlDataProvider> označuje, že by měly být vystaveny pouze prvky *Books* (v zásadě nastavení filtru).  
   
- ![Snímek obrazovky příklad XPath zobrazen titulek čtyři knihy.](./media/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries/xpath-example-listbox-details.png)  
+ ![Snímek obrazovky s příkladem XPath znázorňující název čtyř knih](./media/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries/xpath-example-listbox-details.png)  
   
- V tomto příkladu se zobrazí názvů knih, protože <xref:System.Windows.Data.Binding.XPath%2A> z <xref:System.Windows.Controls.TextBlock> vazby v <xref:System.Windows.DataTemplate> je nastavena na "*Title*". Pokud chcete zobrazit hodnotu atributu, jako *ISBN*, nastavíte, který <xref:System.Windows.Data.Binding.XPath%2A> hodnota, která se "`@ISBN`".  
+ V tomto příkladu se zobrazí názvy knih <xref:System.Windows.Data.Binding.XPath%2A> , protože <xref:System.Windows.Controls.TextBlock> vazba v <xref:System.Windows.DataTemplate> je nastavená na "*title*". Pokud chcete zobrazit hodnotu atributu, jako je například *ISBN*, nastavte tuto <xref:System.Windows.Data.Binding.XPath%2A> hodnotu na "`@ISBN`".  
   
- **XPath** vlastnosti v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XmlNode.SelectNodes metoda zpracovává. Můžete upravit **XPath** dotazů získat jiné výsledky. Tady je několik příkladů, pro <xref:System.Windows.Data.Binding.XPath%2A> dotazem na je mez <xref:System.Windows.Controls.ListBox> z předchozího příkladu:  
+ Vlastnosti **XPath** v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou zpracovávány metodou XMLNode. SelectNodes. Můžete upravit dotazy **XPath** a získat tak různé výsledky. Tady je několik příkladů <xref:System.Windows.Data.Binding.XPath%2A> dotazu na vazbu <xref:System.Windows.Controls.ListBox> z předchozího příkladu:  
   
-- `XPath="Book[1]"` Vrátí první prvek book ("XML v akci"). Všimněte si, že **XPath** indexy jsou založeny na 1, není 0.  
+- `XPath="Book[1]"`Vrátí první prvek Book ("XML v akci"). Všimněte si, že indexy **XPath** jsou založené na 1, nikoli 0.  
   
-- `XPath="Book[@*]"` Vrátí všechny knihy elementy s atributy.  
+- `XPath="Book[@*]"`Vrátí všechny prvky knihy s libovolnými atributy.  
   
-- `XPath="Book[last()-1]"` Vrátí druhou na poslední prvek book ("představení rozhraní Microsoft .NET").  
+- `XPath="Book[last()-1]"`Vrátí druhý k poslednímu prvku Book ("Představujeme Microsoft .NET").  
   
-- `XPath="*[position()>3]"` Vrátí všechny knihy elementy s výjimkou první 3.  
+- `XPath="*[position()>3]"`Vrátí všechny prvky knihy s výjimkou prvního 3.  
   
- Při spuštění **XPath** dotazování, vrátí se <xref:System.Xml.XmlNode> nebo seznam XmlNodes. <xref:System.Xml.XmlNode> je [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekt, což znamená, že můžete použít <xref:System.Windows.Data.Binding.Path%2A> vlastnost k vytvoření vazby [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti. Podívejte se na předchozí příklad znovu. Pokud zbytek v příkladu zůstane stejný a změníte <xref:System.Windows.Controls.TextBlock> vazby pro následující, se zobrazí názvy vrácené uzly XmlNodes v <xref:System.Windows.Controls.ListBox>. V takovém případě je název vrácená uzlů "*knihy*".  
+ Když spustíte dotaz **XPath** , vrátí <xref:System.Xml.XmlNode> nebo seznam XMLNodes. <xref:System.Xml.XmlNode>je objekt modulu CLR (Common Language Runtime), což znamená, že můžete použít <xref:System.Windows.Data.Binding.Path%2A> vlastnost pro vytvoření vazby k vlastnostem CLR (Common Language Runtime). Předchozí příklad zvažte znovu. Pokud zbytek příkladu zůstává stejný a měníte <xref:System.Windows.Controls.TextBlock> vazbu na následující, zobrazí se názvy vrácených XmlNode <xref:System.Windows.Controls.ListBox>v. V tomto případě je název všech vrácených uzlů "*Book*".  
   
  [!code-xaml[XmlDataSourceVariation#XmlNodePath](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSourceVariation/CS/Page1.xaml#xmlnodepath)]  
   
- V některých aplikacích mohou vkládání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] jako datový ostrůvek ve zdroji [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka může být nevhodné, protože musí být znám přesný obsah data v době kompilace. Proto se získávání dat z externího [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru je také podporována jako v následujícím příkladu:  
+ V některých aplikacích může být vkládání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] jako datový ostrůvek v rámci zdroje [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky nepohodlné, protože přesný obsah dat musí být známý v době kompilace. Proto je také podporováno získávání dat z externího [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru, jako v následujícím příkladu:  
   
  [!code-xaml[XMLDataSource2#XmlFileExample](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource2/CS/Window1.xaml#xmlfileexample)]  
   
- Pokud [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data se nachází na vzdáleném [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru byste definovali přístup k datům tak, že přiřadíte odpovídající [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] k <xref:System.Windows.Data.XmlDataProvider.Source%2A> atribut následujícím způsobem:  
+ Pokud se [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data nachází ve vzdáleném [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru, měli byste definovat přístup k datům <xref:System.Windows.Data.XmlDataProvider.Source%2A> přiřazením vhodného [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] k atributu následujícím způsobem:  
   
 ```xml  
 <XmlDataProvider x:Key="BookData" Source="http://MyUrl" XPath="Books"/>  

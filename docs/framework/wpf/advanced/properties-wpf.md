@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], properties
 - properties [WPF]
 ms.assetid: d6e0197f-f2c4-48ed-b45b-b9cdb64aab1c
-ms.openlocfilehash: 8e65e89fb0406d9d2849e0a1be4b1aa764b935ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c685a5227f4339a094ae74af4e1314d4c47f7585
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62030339"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400869"
 ---
 # <a name="properties-wpf"></a>Vlastnosti (WPF)
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí sadu služeb, které slouží k rozšíření funkčnosti [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost. Společně tyto služby jsou obvykle označovány jako vlastnost systému WPF. Vlastnost, která je založená [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje sadu služeb, které lze použít k rozšiřování funkcí vlastnosti modulu CLR (Common Language Runtime). Souhrnně se tyto služby obvykle označují jako systém vlastností WPF. Vlastnost, která je zajištěna [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] systémem vlastností, je označována jako vlastnost závislosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
@@ -35,7 +35,7 @@ ms.locfileid: "62030339"
 - [Vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)
 - [Témata s postupy](properties-how-to-topics.md)
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  

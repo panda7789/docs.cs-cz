@@ -15,15 +15,15 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: fcc5d3aa6d093f1fbf8af19c4f0c65036e1705d7
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 259db84c8ab3b9bbad809b9636ba18537dd6fe62
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364381"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400733"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
-<a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a skriptovací jazyky na straně klienta nemají přístup k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. K vykonání těchto [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] omezení spoléhá na zabezpečení přístupu kódu (CAS) i [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
+<a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a skriptovací jazyky na straně klienta nemají přístup k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. K vykonání těchto [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] omezení spoléhá na zabezpečení přístupu kódu (CAS) i ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]poskytuje širokou škálu podpory, aby bylo zajištěno, že je možné v částečném vztahu důvěryhodnosti a společně s certifikačními autoritami používat co nejvíc funkcí, a navíc poskytuje další podporu pro programování s částečným vztahem důvěryhodnosti.  
   

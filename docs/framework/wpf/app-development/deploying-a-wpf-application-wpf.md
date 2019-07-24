@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: ca00b4a0450539741719f5f5a56d241e4bebfcc2
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 4679a114f4b6d0bc2b3773d46a4dffa774d38918
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331715"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401674"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, závisí na typu aplikace. V tomto tématu najdete stručný přehled jednotlivých technologií nasazení a jejich použití ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typů aplikací.  
@@ -23,7 +23,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 - [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]prostředí.  
   
-- [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)]prostředí.  
+- Nasazení ClickOnce.  
   
 <a name="XCopy_Deployment"></a>   
 ### <a name="xcopy-deployment"></a>Nasazení XCopy  
@@ -47,7 +47,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)]povoluje nasazení aplikace webového stylu pro jiné než webové aplikace. Aplikace se publikují na webové nebo souborové servery a nasazují se z nich. I [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] když nepodporuje celou škálu funkcí klienta, které [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]instalují aplikace do, podporuje podmnožinu, která zahrnuje následující:  
+ ClickOnce umožňuje nasazení aplikace webového stylu pro jiné než webové aplikace. Aplikace se publikují na webové nebo souborové servery a nasazují se z nich. I když ClickOnce nepodporuje celou škálu funkcí klienta, které [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]instalují aplikace do, podporuje podmnožinu, která zahrnuje následující:  
   
 - Integrace pomocí nabídky Start a ovládacích panelů programy.  
   
@@ -59,7 +59,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 - Registrace přípon souborů.  
   
- Další informace o [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)]najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment).  
+ Další informace o ClickOnce najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 <a name="Deploying_WPF_Applications"></a>   
 ## <a name="deploying-wpf-applications"></a>Nasazení aplikací WPF  
@@ -73,7 +73,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Deploying_Standalone_Applications"></a>   
 ### <a name="deploying-standalone-applications"></a>Nasazení samostatných aplikací  
- Samostatné aplikace jsou nasazeny buď [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], nebo. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro samostatné aplikace, které jsou nasazené pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], se automaticky udělí úplný vztah důvěryhodnosti. Samostatné aplikace, které jsou nasazeny pomocí [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] , nejsou automaticky uděleny úplný vztah důvěryhodnosti. Místo toho před instalací samostatné aplikace zobrazídialogovéoknoupozorněnízabezpečení,kterémusíuživatelépřijmout.[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] V případě přijetí se samostatná aplikace nainstaluje a udělí Plná důvěra. V takovém případě není samostatná aplikace nainstalována.  
+ Samostatné aplikace jsou nasazeny buď pomocí ClickOnce [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], nebo. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro samostatné aplikace, které jsou nasazené pomocí [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], se automaticky udělí úplný vztah důvěryhodnosti. Samostatným aplikacím, které jsou nasazeny pomocí technologie ClickOnce, se automaticky neudělí úplný vztah důvěryhodnosti. Místo toho ClickOnce zobrazí dialogové okno upozornění zabezpečení, které uživatelé musí přijmout před instalací samostatné aplikace. V případě přijetí se samostatná aplikace nainstaluje a udělí Plná důvěra. V takovém případě není samostatná aplikace nainstalována.  
   
 <a name="Deploying_Markup_Only_XAML_Applications"></a>   
 ### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze s označením  
@@ -100,7 +100,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
  Tyto soubory jsou vytvářeny, [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] když je sestavena. Další informace najdete v tématu [jak: Vytvořte nový projekt](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))aplikace WPF Browser. Podobně jako [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]stránky pouze s označením jsouobvyklepublikoványnawebovémserveruazobrazoványpomocí.[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]dá se nasadit do klientů pomocí kterékoli z technik nasazení. Doporučuje se [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] však, protože poskytuje následující možnosti:  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]dá se nasadit do klientů pomocí kterékoli z technik nasazení. Technologie ClickOnce se však doporučuje, protože poskytuje následující možnosti:  
   
 1. Automatické aktualizace, když je publikována nová verze.  
   

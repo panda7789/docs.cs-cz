@@ -5,109 +5,109 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: 5dc8fc8c43e43691c46ad84379fe2bcb23987667
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: deebdb690a6ba831730701de2608089af2d6bdfd
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660789"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401660"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 
-<xref:System.Windows.PropertyPath> Objekt podporuje komplexní vložené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxi pro různé vlastnosti, které provést nastavení <xref:System.Windows.PropertyPath> typu jako jeho hodnotu. Toto téma dokumenty <xref:System.Windows.PropertyPath> syntaxe jako použitý pro vazbu a animace syntaxe.
+Objekt podporuje složitou vloženou [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxi pro nastavení <xref:System.Windows.PropertyPath> různých vlastností, které přijímají typ jako jejich hodnotu. <xref:System.Windows.PropertyPath> Toto téma popisuje syntaxi <xref:System.Windows.PropertyPath> , která je aplikována na syntaxe vazeb a animací.
 
 <a name="where"></a>
 
 ## <a name="where-propertypath-is-used"></a>Kde se používá PropertyPath
 
-<xref:System.Windows.PropertyPath> je běžné objekt, který se používá v několika [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkce. Bez ohledu na použití společné <xref:System.Windows.PropertyPath> k předání informací o cestě vlastnost využití pro jednotlivé oblasti funkce kde <xref:System.Windows.PropertyPath> se používá jako typ se liší. Je tedy praktičtější dokumentu syntaxe na základě podle funkcí.
+<xref:System.Windows.PropertyPath>je běžný objekt, který se používá v několika [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkcích. Navzdory použití společné <xref:System.Windows.PropertyPath> k předávání informací o cestě k vlastnostem se použití pro každou oblast funkce, <xref:System.Windows.PropertyPath> kde se používá jako typ, liší. Proto je více praktické zdokumentovat syntaxe na základě jednotlivých funkcí.
 
-Především [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá <xref:System.Windows.PropertyPath> k popisu cesty objektový model pro procházení vlastností zdroje dat objektu a k popisu cílovou cestu pro cílové animace.
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Primárně používá <xref:System.Windows.PropertyPath> k popisu cest objektů a modelů pro procházení vlastností zdroje dat objektu a popisuje cílovou cestu pro cílené animace.
 
-Některé vlastnosti stylu a šablony, jako <xref:System.Windows.Setter.Property%2A?displayProperty=nameWithType> trvat název kvalifikovaný vlastnosti, která se podobá na první pohled <xref:System.Windows.PropertyPath>. Ale to není skutečně představuje <xref:System.Windows.PropertyPath>; místo toho je kvalifikovaný *owner.property* řetězec formátu využití, který je povolen ve WPF [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru v kombinaci s konvertor typu pro <xref:System.Windows.DependencyProperty>.
+Některé vlastnosti stylu a šablony, jako <xref:System.Windows.Setter.Property%2A?displayProperty=nameWithType> je například převzetí kvalifikovaného názvu vlastnosti, který se <xref:System.Windows.PropertyPath>podobá. Nejedná se však o hodnotu <xref:System.Windows.PropertyPath>true, ale jedná se o kvalifikovaného *vlastníka.* použití formátu řetězce vlastnosti, které je povoleno [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesorem WPF v kombinaci s konvertorem <xref:System.Windows.DependencyProperty>typu pro.
 
 <a name="databinding_s"></a>
 
-## <a name="propertypath-for-objects-in-data-binding"></a>Propertypath – pro objekty v datové vazbě
+## <a name="propertypath-for-objects-in-data-binding"></a>PropertyPath pro objekty v datové vazbě
 
-Datová vazba [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce zajišťovaný cílová hodnota libovolné vlastnosti závislostí lze svázat. Zdroj datové vazby však nemusí být vlastnost závislosti; může být libovolný typ vlastnosti, který je rozpoznán zprostředkovatelem dat. Cesty vlastností slouží zejména pro <xref:System.Windows.Data.ObjectDataProvider>, který se používá pro získání zdroje připojení z [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a jejich vlastnosti.
+Vázání dat je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, která umožňuje vytvořit vazbu na cílovou hodnotu libovolné vlastnosti závislosti. Zdroj takové datové vazby ale nemusí být vlastností závislosti; může to být libovolný typ vlastnosti, který rozpozná příslušný zprostředkovatel dat. Cesty vlastností jsou zvláště používány <xref:System.Windows.Data.ObjectDataProvider>pro, který slouží k získání vazeb zdrojů z objektů CLR (Common Language Runtime) a jejich vlastností.
 
-Všimněte si, že vazba dat k [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] nepoužívá <xref:System.Windows.PropertyPath>, protože nepoužívá <xref:System.Windows.Data.Binding.Path%2A> v <xref:System.Windows.Data.Binding>. Místo toho použít <xref:System.Windows.Data.Binding.XPath%2A> a zadejte platnou syntaxi XPath do [!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)] data. <xref:System.Windows.Data.Binding.XPath%2A> je také zadán jako řetězec, ale není dokumentováno. Zobrazit [svázání dat XML pomocí XMLDataProvider a dotazů XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).
+Všimněte si, že datová [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] vazba na nepoužívá <xref:System.Windows.PropertyPath>, protože nepoužívá <xref:System.Windows.Data.Binding.Path%2A> v <xref:System.Windows.Data.Binding>. Místo toho použijete <xref:System.Windows.Data.Binding.XPath%2A> a zadáte platnou syntaxi [!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)] XPath na data. <xref:System.Windows.Data.Binding.XPath%2A>je také zadáno jako řetězec, ale zde není dokumentována; viz [vazba na data XML pomocí dotazů XmlDataProvider a XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).
 
-Klíčem k pochopení cesty vlastností v datové vazbě je, že je možné cílit na vazby na hodnotu jednotlivých vlastností nebo místo toho lze svázat vlastnosti cíle, které přijímají seznamy nebo kolekce. Pokud vytváříte vazbu kolekce, například vytvoření vazby <xref:System.Windows.Controls.ListBox> , který se rozbalí v závislosti na tom, kolik datových položek jsou v kolekci, pak vaše cesta k vlastnosti by měla odkazovat na objekt kolekce, ne z individuálních kolekce položek. Modul vazby dat bude odpovídat použít jako zdroj dat na typ cíl vazby automaticky, což vede k chování například naplnění kolekce <xref:System.Windows.Controls.ListBox> s polem položek.
+Klíč k porozumění cestám vlastností v datové vazbě je, že je možné cílit na vazbu na individuální hodnotu vlastnosti, nebo můžete vytvořit vazbu k cílovým vlastnostem, které přebírají seznamy nebo kolekce. Pokud vytváříte vazbu kolekcí, například vazba instance a <xref:System.Windows.Controls.ListBox> , která se rozbalí v závislosti na tom, kolik datových položek je v kolekci, měla by vaše cesta vlastnosti odkazovat na objekt kolekce, nikoli na jednotlivé položky kolekce. Modul datových vazeb se bude shodovat s kolekcí použitou jako zdroj dat pro typ cíle vazby automaticky, což vede k chování, jako je například naplnění a <xref:System.Windows.Controls.ListBox> s polem Items (položky).
 
 <a name="singlecurrent"></a>
 
-### <a name="single-property-on-the-immediate-object-as-data-context"></a>Jedinou vlastnost okamžité objektu jako kontext dat
+### <a name="single-property-on-the-immediate-object-as-data-context"></a>Jednoduchá vlastnost u okamžitého objektu jako datový kontext
 
 ```xml
 <Binding Path="propertyName" .../>
 ```
 
-*Vlastnost propertyName* musíte vyřešit název vlastnosti, která je v aktuálním <xref:System.Windows.FrameworkElement.DataContext%2A> pro <xref:System.Windows.Data.Binding.Path%2A> využití. Pokud vaše vazby k aktualizaci ve zdroji, tato vlastnost musí být pro čtení a zápis a zdrojový objekt musí být Měnitelná.
+vlastnost *PropertyName* musí být přeložena jako název vlastnosti, která je v aktuálním <xref:System.Windows.FrameworkElement.DataContext%2A> pro <xref:System.Windows.Data.Binding.Path%2A> použití. Pokud vaše vazba aktualizuje zdroj, musí být tato vlastnost pro čtení/zápis a zdrojový objekt musí být mutable.
 
 <a name="singleindex"></a>
 
-### <a name="single-indexer-on-the-immediate-object-as-data-context"></a>Jeden Indexer okamžitě objektu jako kontext dat
+### <a name="single-indexer-on-the-immediate-object-as-data-context"></a>Jeden indexer na bezprostředním objektu jako datový kontext
 
 ```xml
 <Binding Path="[key]" .../>
 ```
 
-`key` musí být typu index do slovníku nebo zatřiďovací tabulku nebo celočíselný index pole. Hodnotu klíče musí být typ, který je přímo umožňujících vazbu na vlastnost, kde se používá. Například zatřiďovací tabulku, která obsahuje řetězec klíče a hodnoty řetězce je možné tímto způsobem se vytvořit vazbu na Text <xref:System.Windows.Controls.TextBox>. Nebo, pokud klíč odkazuje na kolekci nebo podindex, můžete použít tuto syntaxi pro vytvoření vazby vlastnosti cílové kolekce. V opačném případě budete muset odkaz určité vlastnosti, prostřednictvím syntaxí, jako `<Binding Path="[key].propertyName" .../>`.
+`key`musí být buď zadaný index do slovníku, nebo zatřiďovací tabulka, nebo celočíselný index pole. Také hodnota klíč musí být typ, který je přímo svázán s vlastností, kde se používá. Například zatřiďovací tabulka, která obsahuje klíče řetězce a řetězcové hodnoty, může být použita tímto způsobem pro vytvoření vazby na text pro <xref:System.Windows.Controls.TextBox>. Nebo, pokud klíč odkazuje na kolekci nebo podindex, můžete použít tuto syntaxi k vytvoření vazby na vlastnost cílové kolekce. V opačném případě je nutné odkazovat na konkrétní vlastnost prostřednictvím syntaxe `<Binding Path="[key].propertyName" .../>`, jako je například.
 
-V případě potřeby, můžete zadat typ indexu. Podrobnosti k tomuto cesty indexované vlastnosti najdete v tématu <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>.
+V případě potřeby můžete zadat typ indexu. Podrobnosti o tomto aspektu cesty k indexovaným vlastnostem naleznete <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>v tématu.
 
 <a name="multipleindirect"></a>
 
-### <a name="multiple-property-indirect-property-targeting"></a>Více vlastností (nepřímé vlastnost cílení)
+### <a name="multiple-property-indirect-property-targeting"></a>Vícenásobná vlastnost (cílení na nepřímých vlastností)
 
 ```xml
 <Binding Path="propertyName.propertyName2" .../>
 ```
 
-`propertyName` musíte vyřešit název vlastnosti, která je aktuálně <xref:System.Windows.FrameworkElement.DataContext%2A>. Vlastnosti cesty `propertyName` a `propertyName2` může být jakékoli vlastnosti, které existují v relaci, kde `propertyName2` je vlastnost, která existuje na typ, který je hodnota `propertyName`.
+`propertyName`musí se vyhodnotit jako název vlastnosti, která je aktuální <xref:System.Windows.FrameworkElement.DataContext%2A>. Vlastnosti `propertyName` cesty a `propertyName2` mohou být libovolné vlastnosti, které existují v relaci, kde `propertyName2` je vlastnost, která existuje `propertyName`v typu, který je hodnotou.
 
 <a name="singleattached"></a>
 
-### <a name="single-property-attached-or-otherwise-type-qualified"></a>Jedinou vlastností, připojené nebo jinak kvalifikovaný typ
+### <a name="single-property-attached-or-otherwise-type-qualified"></a>Jedna vlastnost, připojená nebo jinak kvalifikovaný typ
 
 ```xml
 <object property="(ownerType.propertyName)" .../>
 ```
 
-Závorky označuje, že tato vlastnost v <xref:System.Windows.PropertyPath> třeba vytvořit pomocí částečné kvalifikace. Obor názvů XML lze najít typ s vhodné mapování. `ownerType` Hledání typy, které [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor má přístup, až <xref:System.Windows.Markup.XmlnsDefinitionAttribute> deklarací v každé sestavení. Většina aplikací má výchozí obor názvů XML namapované na [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)] obor názvů, takže předpona je obvykle potřeba, pouze pro vlastní typy nebo typy jinak mimo tento obor názvů.  `propertyName` Název vlastnosti stávajících se musí přeložit `ownerType`. Tato syntaxe je obvykle použita pro jednu z následujících případech:
+Kulaté závorky označují, že <xref:System.Windows.PropertyPath> by tato vlastnost měla být vytvořená pomocí částečné kvalifikace. Může použít obor názvů XML k nalezení typu s odpovídajícím mapováním. Typy prohledávání, ke kterým má <xref:System.Windows.Markup.XmlnsDefinitionAttribute> procesorpřístup,prostřednictvímdeklaracívjednotlivýchsestaveních.[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] `ownerType` Většina aplikací má výchozí obor názvů XML mapovaný na [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)] obor názvů, takže předpona je obvykle pouze pro vlastní typy nebo typy mimo tento obor názvů.  `propertyName`musí se vyhodnotit jako název vlastnosti existující v `ownerType`. Tato syntaxe se obecně používá v jednom z následujících případů:
 
-- Cesta je určena v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , který je ve stylu nebo šablony, která nemá zadaný typ cíle. Kvalifikované použití obecně není platný pro případy, než to, a protože v jiných – vizuální styl, nešablonové případech vlastnost existuje instance, není typu.
+- Cesta je určena v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , který je ve stylu nebo šabloně, která nemá zadaný cílový typ. Kvalifikované použití není obecně platné pro jiné případy než to, protože v nestylových případech nezpůsobuje, že vlastnost existuje v instanci, nikoli v typu.
 
-- Vlastnost je připojené vlastnosti.
+- Vlastnost je připojená vlastnost.
 
-- Jsou vytvoření vazby na statickou vlastnost.
+- Vytváříte vazbu na statickou vlastnost.
 
-Pro použití jako cíl scénáře vlastnost zadaná jako `propertyName` musí být <xref:System.Windows.DependencyProperty>.
+Pro použití jako cíle scénáře, vlastnost zadaná jako `propertyName` musí <xref:System.Windows.DependencyProperty>být.
 
 <a name="sourcetraversal"></a>
 
-### <a name="source-traversal-binding-to-hierarchies-of-collections"></a>Procházení zdroje (vytvoření vazby na hierarchie kolekce)
+### <a name="source-traversal-binding-to-hierarchies-of-collections"></a>Zdrojový průchod (vazba na hierarchie kolekcí)
 
 ```xml
 <object Path="propertyName/propertyNameX" .../>
 ```
 
-/ V této syntaxe slouží k navigaci v rámci zdrojového objektu hierarchických dat a více kroků na hierarchii s po sobě jdoucích / znaky jsou podporovány. Zdrojové účty procházení pro aktuální pozici ukazatele záznamu, což je určeno synchronizaci dat s uživatelským rozhraním z jeho zobrazení. Podrobnosti o vázání s objekty zdrojů hierarchických dat a koncept aktuální ukazatel záznam v datové vazbě naleznete v tématu [použití vzoru seznam-podrobnosti s hierarchickými daty](../data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md) nebo [Data Binding Overview](../data/data-binding-overview.md).
+V této syntaxi je použit k navigaci v rámci objektu hierarchického zdroje dat a je podporováno více kroků do hierarchie s následnými/znaky. Zdrojové účty pro procházení pro aktuální pozici ukazatele záznamu, která je určena synchronizací dat s uživatelským rozhraním jeho zobrazení. Podrobnosti o vazbě s objekty hierarchických zdrojů dat a koncept aktuálního ukazatele záznamu v datové vazbě najdete v tématu [použití vzoru hlavní-podrobnosti s hierarchickými daty](../data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md) nebo [přehledem datových vazeb](../data/data-binding-overview.md).
 
 > [!NOTE]
-> Na první pohled, vypadá podobně jako tato syntaxe [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)]. Skutečného [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)] výraz pro vytvoření vazby na [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] zdroj dat se nepoužívá jako <xref:System.Windows.Data.Binding.Path%2A> hodnotu a místo toho byste měli použít pro vzájemně vylučují <xref:System.Windows.Data.Binding.XPath%2A> vlastnost.
+> Tato syntaxe je napodobná [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)]. Výraz true [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)] pro vazbu [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] na zdroj dat <xref:System.Windows.Data.Binding.Path%2A> se nepoužívá jako hodnota a měl by být použit pro vzájemně exkluzivní <xref:System.Windows.Data.Binding.XPath%2A> vlastnost.
 
 ### <a name="collection-views"></a>Zobrazení kolekcí
 
-Chcete-li zobrazení s názvem kolekce, zadejte před název zobrazení kolekce znak hash (`#`).
+Chcete-li odkazovat na pojmenované zobrazení kolekce, předponu názvu zobrazení kolekce nahraďte znakem hash (`#`).
 
-### <a name="current-record-pointer"></a>Aktuální záznam ukazatele
+### <a name="current-record-pointer"></a>Ukazatel aktuálního záznamu
 
-Pokud chcete odkázat na aktuální záznam ukazatel pro zobrazení kolekce nebo scénáře vázání dat. hlavní podrobností, začněte řetězec cesty s lomítkem (`/`). Libovolnou cestu poslední lomítko procházet řízený od aktuální ukazatel záznamu.
+Chcete-li odkazovat na ukazatel aktuálního záznamu pro scénář zobrazení kolekce nebo hlavní datové vazby, spusťte řetězec cesty s lomítkem (`/`). Libovolná cesta po lomítku je proprocházena od aktuálního ukazatele záznamu.
 
-### <a name="multiple-indexers"></a>Několik indexerů
+### <a name="multiple-indexers"></a>Více indexerů
 
 ```xaml
 <object Path="[index1,index2...]" .../>
@@ -119,82 +119,82 @@ or
 <object Path="propertyName[index,index2...]" .../>
 ```
 
-Pokud daný objekt podporuje několik indexerů, lze tyto indexování v pořadí, podobně jako pole odkazující na syntaxi. U daného objektu může být aktuální kontext nebo hodnotu vlastnosti, která obsahuje více objektů indexu.
+Pokud daný objekt podporuje více indexerů, mohou být tyto indexery zadány v pořadí, podobně jako syntaxe odkazující na pole. Daný objekt může být buď aktuální kontext, nebo hodnotou vlastnosti, která obsahuje více objektů indexu.
 
-Ve výchozím nastavení jsou hodnoty indexeru typována pomocí vlastnosti základní objekt. V případě potřeby, můžete zadat typ indexu. Informace o psaní indexery, naleznete v tématu <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>.
+Ve výchozím nastavení jsou hodnoty indexeru zadány pomocí charakteristik podkladového objektu. V případě potřeby můžete zadat typ indexu. Podrobnosti o zadávání indexerů najdete v tématu <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>.
 
 <a name="mixing"></a>
 
-### <a name="mixing-syntaxes"></a>Kombinování syntaxe
+### <a name="mixing-syntaxes"></a>Kombinování syntaxí
 
-Můžete promíchaný všech syntaxe uvedené výše. Například tady je příklad, který vytvoří vlastnost cestu na barvu na konkrétní x, y `ColorGrid` vlastnost, která obsahuje pole pixel mřížky <xref:System.Windows.Media.SolidColorBrush> objekty:
+Každá z výše uvedených syntaxí se dá proložit. Například Následuje příklad, který vytvoří cestu vlastnosti k barvě v konkrétní ose x, y `ColorGrid` vlastnosti, která obsahuje <xref:System.Windows.Media.SolidColorBrush> pole s mřížkou pixelů objektů:
 
 ```xml
 <Rectangle Fill="{Binding ColorGrid[20,30].SolidColorBrushResult}" .../>
 ```
 
-### <a name="escapes-for-property-path-strings"></a>Řídicí sekvence pro vlastnosti řetězce cesty
+### <a name="escapes-for-property-path-strings"></a>Řídicí znaky pro řetězce cest vlastností
 
-Pro některé objekty obchodní můžete setkat s případem, kde řetězec cesty vlastnost vyžaduje řídicí sekvenci, aby bylo možné správně analyzovat. Nutnost řídicí by mělo být taková situace vzácná, protože řada z těchto znaků má podobné pojmenování interakce problémy v jazycích, které by obvykle slouží k definování obchodního objektu.
+U určitých obchodních objektů se můžete setkat s případem, kdy řetězec cesty vlastnosti vyžaduje řídicí sekvenci, aby bylo možné správně analyzovat. Nutnost Escape by měla být vzácná, protože mnohé z těchto znaků mají podobné problémy s interakcemi pojmenování v jazycích, které by obvykle byly použity k definování obchodního objektu.
 
-- Uvnitř indexery ([]) řídící znak stříšky (^) další znak.
+- Uvnitř indexerů ([]) znak stříšky (^) řídí další znak.
 
-- Musíte je přeskočit (s použitím entity XML) určitých znaků, které jsou pro definice jazyka XML. Použití `&` znaku "&". Použití `>` řídicí koncová značka ">".
+- Je nutné řídicí znaky (pomocí entit XML), které jsou speciální pro definici jazyka XML. Použijte `&` k Escape znaku "&". Použijte `>` k ukončení ukončovací značky ">".
 
-- Musíte je přeskočit (pomocí zpětného lomítka `\`) znaky, které jsou pro WPF XAML chování analyzátor pro zpracování rozšíření značek.
+- Je nutné řídicí znaky (pomocí zpětného lomítka `\`), které jsou specifické pro chování analyzátoru XAML WPF pro zpracování rozšíření značek.
 
-  - Zpětné lomítko (`\`) je řídicí znak samotný.
+  - Zpětné lomítko`\`() je řídicí znak sám sebe.
 
-  - Znaménko rovná se (`=`) odděluje název vlastnosti z hodnoty vlastnosti.
+  - Symbol rovná se (`=`) odděluje název vlastnosti z hodnoty vlastnosti.
 
-  - Čárka (`,`) odděluje vlastnosti.
+  - Čárka`,`() odděluje vlastnosti.
 
   - Pravá složená závorka (`}`) je koncem rozšíření značek.
 
 > [!NOTE]
-> Technicky vzato tyto řídicí sekvence fungovat pro vlastnost cestu scénáře také, ale jsou obvykle procházení objektové modely pro existující objekty WPF a uvozovací znaky by měl být zbytečné.
+> Technicky, tyto řídicí prvky fungují také pro cestu k vlastnostem scénáře, ale obvykle jste procházejí modely objektů pro existující objekty WPF a uvozovací znaky by měly být zbytečné.
 
 <a name="databinding_sa"></a>
 
-## <a name="propertypath-for-animation-targets"></a>PropertyPath animace cílů
+## <a name="propertypath-for-animation-targets"></a>PropertyPath pro cíle animace
 
-Vlastnost target animace musí být vlastnost závislosti, která přebírá buď <xref:System.Windows.Freezable> nebo primitivního typu. Cílové vlastnosti typu a konečný výsledek animovaný může však existovat na různé objekty. Pro animace cesta k vlastnosti slouží k definování připojení mezi cílový objekt animace pojmenované vlastnosti a zamýšleného cílového animace, o překračování vztahů vlastnosti objektu v hodnotách vlastnosti.
+Vlastnost target animace musí být vlastnost závislosti, která přebírá buď <xref:System.Windows.Freezable> nebo primitivního typu. Nicméně cílová vlastnost typu a vlastnost závěrečné animace může existovat v různých objektech. V případě animací se k definování propojení mezi vlastností objektu cílového objektu animace a zamýšlenou cílovou vlastností animace používá cesta k vlastnosti, a to tak, že přecházejí mezi vztahy objektů a vlastností v hodnotách vlastností.
 
 <a name="general"></a>
 
-### <a name="general-object-property-considerations-for-animations"></a>Obecné – vlastnosti objektu důležité informace týkající se animace
+### <a name="general-object-property-considerations-for-animations"></a>Obecné požadavky na vlastnosti objektu pro animace
 
-Další informace o animace koncepty, najdete v části [přehled scénářů](../graphics-multimedia/storyboards-overview.md) a [přehled animace](../graphics-multimedia/animation-overview.md).
+Další informace o konceptech animace obecně najdete v tématu [Přehled scénářů](../graphics-multimedia/storyboards-overview.md) a [Přehled animací](../graphics-multimedia/animation-overview.md).
 
-Typ hodnoty nebo animované vlastnosti musí být buď <xref:System.Windows.Freezable> typů nebo primitiv. Vlastnost, která spustí cesta se musí přeložit název vlastnosti závislosti, která existuje na zadaný <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.
+Typ hodnoty nebo vlastnost Animated musí být buď <xref:System.Windows.Freezable> typ, nebo primitivní. Vlastnost, která spustí cestu, musí být přeložena jako název vlastnosti závislosti, která existuje na zadaném <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.
 
-Kvůli podpoře klonování pro animace <xref:System.Windows.Freezable> , který je již zmrazen, objektu určeného parametrem <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> musí být <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> odvozené třídy.
+Aby <xref:System.Windows.Freezable> bylo možné podporovat klonování pro animaci již zmrazeného objektu, musí být <xref:System.Windows.FrameworkElement> objekt určený parametrem <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> nebo <xref:System.Windows.FrameworkContentElement> odvozenou třídou.
 
 <a name="singlestepanim"></a>
 
-### <a name="single-property-on-the-target-object"></a>Jedinou vlastnost cílového objektu
+### <a name="single-property-on-the-target-object"></a>Jediná vlastnost cílového objektu
 
 ```xml
 <animation Storyboard.TargetProperty="propertyName" .../>
 ```
 
-`propertyName` musíte vyřešit název vlastnosti závislosti, která existuje na zadaný <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.
+`propertyName`musí se vyhodnotit jako název vlastnosti závislosti, která existuje na zadaném <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.
 
 <a name="indirectanim"></a>
 
-### <a name="indirect-property-targeting"></a>Cílení na nepřímé vlastnost
+### <a name="indirect-property-targeting"></a>Cílení na nepřímou vlastnost
 
 ```xml
 <animation Storyboard.TargetProperty="propertyName.propertyName2" .../>
 ```
 
-`propertyName` musí být vlastnost, která je buď <xref:System.Windows.Freezable> hodnotový typ nebo primitivní, který existuje v zadané <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.
+`propertyName`musí se jednat o vlastnost, která je <xref:System.Windows.Freezable> buď typ hodnoty, nebo primitivní, které existují na zadaném <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.
 
-`propertyName2` musí být název, která existuje na objekt, který je hodnota vlastnosti závislosti `propertyName`. Jinými slovy `propertyName2` musí existovat jako vlastnost závislosti na typu, který je `propertyName` <xref:System.Windows.DependencyProperty.PropertyType%2A>.
+`propertyName2`musí se jednat o název vlastnosti závislosti, která existuje na objektu, který je hodnotou `propertyName`. Jinými slovy, `propertyName2` musí existovat jako vlastnost závislosti na typu, který `propertyName` <xref:System.Windows.DependencyProperty.PropertyType%2A>je.
 
-Nepřímé cílení animací je nutné z důvodu použité styly a šablony. Chcete-li cílit na animace, musíte <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> v cílové objektů, které se vytváří název [x: Name](../../xaml-services/x-name-directive.md) nebo <xref:System.Windows.FrameworkElement.Name%2A>. Přestože šablony a prvky stylů také může mít názvy, názvy platí pouze v rámci namescope stylu a šablon. (Pokud styly a šablony značce aplikace sdílet obory názvů, názvy nemohl být jedinečné. Styly a šablony doslova sdílejí mezi instancemi a by perpetuate duplicitní názvy.) Proto pokud jednotlivé vlastnosti elementu, který chcete animovat pochází stylu nebo šablony, budete muset spustit s instancí s názvem elementu, který není ze šablony stylů a směrovat do stylu nebo šablony vizuálního stromu můžete přejít na vlastnost chcete animovat.
+Nepřímý cíl animací je nutný z důvodu použitých stylů a šablon. Aby bylo možné cílit na animaci, potřebujete <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> objekt v cílovém objektu a tento název je vytvořen pomocí [x:Name](../../xaml-services/x-name-directive.md) nebo. <xref:System.Windows.FrameworkElement.Name%2A> I když prvky šablony a stylu také mohou mít názvy, jsou tyto názvy platné pouze v rámci namescope stylu a šablony. (Pokud se šablony a styly sdílí obory názvů WPF s označením aplikace, názvy nejdou být jedinečné. Styly a šablony jsou doslova sdílené mezi instancemi a by perpetuate duplicitní názvy.) Proto pokud jednotlivé vlastnosti prvku, který chcete animovat, pochází ze stylu nebo šablony, je nutné začít s pojmenovanou instancí elementu, která není ze šablony stylu, a poté cílit do vizuálního stromu Style nebo Template, aby byla přijata vlastnost. chcete animovat.
 
-Například <xref:System.Windows.Controls.Panel.Background%2A> vlastnost <xref:System.Windows.Controls.Panel> je kompletní <xref:System.Windows.Media.Brush> (ve skutečnosti <xref:System.Windows.Media.SolidColorBrush>), které přišly z motivu šablony. Animování <xref:System.Windows.Media.Brush> úplně, došlo by musí být BrushAnimation (pravděpodobně jeden pro každý <xref:System.Windows.Media.Brush> typu) a neexistuje žádný takový typ. Pro animaci štětce, místo toho animovat vlastnosti z konkrétní <xref:System.Windows.Media.Brush> typu. Je potřeba získat z <xref:System.Windows.Media.SolidColorBrush> k jeho <xref:System.Windows.Media.SolidColorBrush.Color%2A> použít <xref:System.Windows.Media.Animation.ColorAnimation> existuje. Cesta vlastnosti v tomto příkladu bude `Background.Color`.
+<xref:System.Windows.Controls.Panel.Background%2A> Například vlastnost <xref:System.Windows.Controls.Panel> je <xref:System.Windows.Media.SolidColorBrush>kompletní <xref:System.Windows.Media.Brush> (ve skutečnosti a), která pochází ze šablony motiv. Pro animaci <xref:System.Windows.Media.Brush> zcela musí být BrushAnimation (pravděpodobně jeden pro každý <xref:System.Windows.Media.Brush> typ) a neexistuje žádný takový typ. Pro animaci štětce můžete místo toho animovat vlastnosti určitého <xref:System.Windows.Media.Brush> typu. Musíte získat přístup ze služby <xref:System.Windows.Media.SolidColorBrush> k jejímu <xref:System.Windows.Media.SolidColorBrush.Color%2A> použití <xref:System.Windows.Media.Animation.ColorAnimation> . Cesta k vlastnosti v tomto příkladu bude `Background.Color`.
 
 <a name="attachedanim"></a>
 
@@ -204,7 +204,7 @@ Například <xref:System.Windows.Controls.Panel.Background%2A> vlastnost <xref:S
 <animation Storyboard.TargetProperty="(ownerType.propertyName)" .../>
 ```
 
-Závorky označuje, že tato vlastnost v <xref:System.Windows.PropertyPath> třeba vytvořit pomocí částečné kvalifikace. Obor názvů XML může použít k vyhledání typu. `ownerType` Hledání typy, které [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor má přístup, až <xref:System.Windows.Markup.XmlnsDefinitionAttribute> deklarací v každé sestavení. Většina aplikací má výchozí obor názvů XML namapované na [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)] obor názvů, takže předpona je obvykle potřeba, pouze pro vlastní typy nebo typy jinak mimo tento obor názvů. `propertyName` Název vlastnosti stávajících se musí přeložit `ownerType`. Vlastnost zadaná jako `propertyName` musí být <xref:System.Windows.DependencyProperty>. (Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené vlastnosti jsou implementovány jako vlastnosti závislostí, abyste tento problém je pouze z hlediska vlastní připojené vlastnosti.)
+Kulaté závorky označují, že <xref:System.Windows.PropertyPath> by tato vlastnost měla být vytvořená pomocí částečné kvalifikace. K nalezení typu může použít obor názvů XML. Typy prohledávání, ke kterým má <xref:System.Windows.Markup.XmlnsDefinitionAttribute> procesorpřístup,prostřednictvímdeklaracívjednotlivýchsestaveních.[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] `ownerType` Většina aplikací má výchozí obor názvů XML mapovaný na [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)] obor názvů, takže předpona je obvykle pouze pro vlastní typy nebo typy mimo tento obor názvů. `propertyName`musí se vyhodnotit jako název vlastnosti existující v `ownerType`. Vlastnost zadaná jako `propertyName` musí <xref:System.Windows.DependencyProperty>být. (Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené vlastnosti jsou implementovány jako vlastnosti závislosti, takže se tento problém týká pouze vlastních připojených vlastností.)
 
 <a name="indexanim"></a>
 
@@ -214,15 +214,15 @@ Závorky označuje, že tato vlastnost v <xref:System.Windows.PropertyPath> tře
 <animation Storyboard.TargetProperty="propertyName.propertyName2[index].propertyName3" .../>
 ```
 
-Většina vlastností závislostí nebo <xref:System.Windows.Freezable> nepodporují indexeru. Proto je pouze využití pro indexer v cestě animace zprostředkující pozici mezi vlastnost, která začíná pojmenované cílového řetězce a konečný výsledek animované vlastnosti. V zadané syntaxi, která je `propertyName2`. Použití indexeru pro instanci, může být nutné v případě, že vlastnost zprostředkující, jako je kolekce <xref:System.Windows.Media.TransformGroup>, v cestě vlastnosti, jako `RenderTransform.Children[1].Angle`.
+Většina vlastností nebo <xref:System.Windows.Freezable> typů závislosti nepodporuje indexer. Proto je jediné použití pro indexer v cestě animace na mezilehlém místě mezi vlastností, která spouští řetěz v pojmenovaném cíli a závěrečné vlastnosti animace. V zadané syntaxi je `propertyName2`to. Například použití indexeru může být nezbytné <xref:System.Windows.Media.TransformGroup>, pokud je zprostředkující vlastnost kolekce, jako je například, v cestě `RenderTransform.Children[1].Angle`vlastnosti, jako je například.
 
 <a name="ppincode"></a>
 
 ## <a name="propertypath-in-code"></a>PropertyPath v kódu
 
-Kód pro využití <xref:System.Windows.PropertyPath>, jak vytvořit <xref:System.Windows.PropertyPath>, najdete v tématu o <xref:System.Windows.PropertyPath>.
+Použití kódu pro <xref:System.Windows.PropertyPath>, včetně postupu <xref:System.Windows.PropertyPath>konstrukce, je dokumentováno v referenčním tématu pro <xref:System.Windows.PropertyPath>.
 
-Obecně platí <xref:System.Windows.PropertyPath> je navržen pro použití dva různé konstruktory, jeden pro použití vazby a nejjednodušší použití animace a jeden pro použití komplexní animace. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> podpis pro vazby použití, kde je objekt na řetězec. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> podpis pro jednoduchý animace cesty, kde je objekt <xref:System.Windows.DependencyProperty>. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29> podpis pro komplexní animace. Tento druhý konstruktor používá řetězec tokenu pro první parametr a pole objektů, které vyplnění pozic v řetězec tokenu k definování relace vlastnost cesty.
+Obecně <xref:System.Windows.PropertyPath> je navrženo pro použití dvou různých konstruktorů, jeden pro použití vazby a nejjednodušší použití animací a jeden pro komplexní použití animací. <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> Použijte signaturu pro použití vazby, kde je objekt řetězec. Použijte signaturu pro cesty animací s jedním krokem, kde <xref:System.Windows.DependencyProperty>je objekt. <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> <xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29> Použijte signaturu pro složité animace. Tento druhý konstruktor používá řetězec tokenu pro první parametr a pole objektů, které vyplňují pozice v řetězci tokenu pro definování vztahu cesty vlastností.
 
 ## <a name="see-also"></a>Viz také:
 

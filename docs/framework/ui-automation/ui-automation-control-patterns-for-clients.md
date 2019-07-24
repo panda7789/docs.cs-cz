@@ -5,44 +5,44 @@ helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-ms.openlocfilehash: 1b0d374c9dc3e24302a8acfbc56cd9468f41def5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2f6fccf828552fbd4102c16bde7ffbaf394b69ac
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033095"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400690"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Tento přehled zavádí vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní. Obsahuje informace o automatizaci uživatelského rozhraní klienta použití vzorů ovládacích prvků pro přístup k informacím o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
+ Tento přehled představuje vzory ovládacích prvků pro klienty automatizace uživatelského rozhraní. Obsahuje informace o tom, jak může klient automatizace uživatelského rozhraní použít vzory ovládacích prvků pro přístup k [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]informacím o.  
   
- Vzory ovládacích prvků umožňují zařadit do kategorií a ovládací prvek funkci nezávisle na typ ovládacího prvku nebo vzhled ovládacího prvku. Klienti automatizace uživatelského rozhraní můžete prozkoumat <xref:System.Windows.Automation.AutomationElement> rozhodnout, který ovládací prvek vzorce jsou podporovány lze a chování ovládacího prvku.  
+ Vzory ovládacích prvků poskytují způsob kategorizace a vystavení funkcí ovládacího prvku nezávisle na typu ovládacího prvku nebo vzhledu ovládacího prvku. Klienti automatizace uživatelského rozhraní mohou prošetřit <xref:System.Windows.Automation.AutomationElement> a zjistit, které modely ovládacích prvků jsou podporovány a které mají být zaručeny chování ovládacího prvku.  
   
- Úplný seznam vzorů ovládacích prvků, naleznete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+ Úplný seznam vzorů ovládacích prvků najdete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
   
 <a name="uiautomation_getting_control_patterns"></a>   
 ## <a name="getting-control-patterns"></a>Načítání vzorů ovládacích prvků  
- Klienti získat vzor ovládacích prvků ze <xref:System.Windows.Automation.AutomationElement> voláním buď <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A?displayProperty=nameWithType>.  
+ Klienti načítají řídicí vzor <xref:System.Windows.Automation.AutomationElement> <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A?displayProperty=nameWithType> voláním nebo <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A?displayProperty=nameWithType>.  
   
- Klienti mohou používat <xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A> metoda nebo jednotlivce `IsPatternAvailable` vlastnosti (například <xref:System.Windows.Automation.AutomationElement.IsTextPatternAvailableProperty>) Chcete-li zjistit, jestli je na podporuje model nebo skupiny vzory <xref:System.Windows.Automation.AutomationElement>. Je však mnohem efektivnější, pokusí se získat vzor ovládacích prvků a test pro `null` odkaz než zkontrolujte podporovaných vlastností a načíst vzor ovládacích prvků, protože to má za následek méně mezi procesní volání.  
+ Klienti mohou použít <xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A> metodu nebo <xref:System.Windows.Automation.AutomationElement.IsTextPatternAvailableProperty>individuální `IsPatternAvailable` vlastnost (například) k určení, zda je v prvku podporován vzor <xref:System.Windows.Automation.AutomationElement>nebo skupina vzorů. Je však efektivnější pokus o získání vzoru ovládacího prvku a testu pro `null` referenci než pro kontrolu podporovaných vlastností a načtení vzoru ovládacího prvku, protože výsledkem je menší počet volání mezi procesy.  
   
- Následující příklad ukazuje, jak získat <xref:System.Windows.Automation.TextPattern> – vzor ovládacích prvků ze <xref:System.Windows.Automation.AutomationElement>.  
+ Následující příklad ukazuje, jak získat <xref:System.Windows.Automation.TextPattern> vzor ovládacího prvku <xref:System.Windows.Automation.AutomationElement>z.  
   
  [!code-csharp[UIATextPattern_snip#1037](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1037)]  
   
 <a name="uiautomation_properties_on_control_patterns"></a>   
-## <a name="retrieving-properties-on-control-patterns"></a>Načítání vlastností na vzorů ovládacích prvků  
- Klienti mohou získat hodnoty vlastností v vzorů ovládacích prvků pomocí volání buď <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> a přetypování objekt vrácen do příslušného typu. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, viz [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+## <a name="retrieving-properties-on-control-patterns"></a>Načítání vlastností pro vzory ovládacích prvků  
+ Klienti mohou načíst hodnoty vlastností u vzorů ovládacích prvků voláním <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> a přetypováním objektu vráceného do příslušného typu. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnostech najdete v tématu [Vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
   
- Kromě `GetPropertyValue` metody, hodnoty vlastností se dají získat pomocí [!INCLUDE[TLA#tla_clr](../../../includes/tlasharptla-clr-md.md)] přístupové objekty pro přístup k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnostem vzorce.  
+ Kromě `GetPropertyValue` metod lze hodnoty vlastností načíst prostřednictvím přístupových objektů modulu CLR (Common Language Runtime) pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] přístup k vlastnostem vzoru.  
   
 <a name="uiautomation_with_variable_patterns"></a>   
-## <a name="controls-with-variable-patterns"></a>Ovládací prvky s variabilní vzorky  
- Některé typy ovládacích prvků podporují různé vzorce v závislosti na jejich stav nebo způsobem, který je používán ovládací prvek. Příklady ovládacích prvků, které mají variabilní vzorky jsou seznamy (miniatury, dlaždice, ikony, seznam, podrobnosti), [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] grafy (Pie, řádek panelu hodnotu buňky pomocí vzorce), [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)]vaší oblasti (normální, rozložení webové stránky, osnovy, rozložení při tisku, tisk dokumentů Ve verzi Preview), a [!INCLUDE[TLA#tla_wmp](../../../includes/tlasharptla-wmp-md.md)] skinů v šablonách.  
+## <a name="controls-with-variable-patterns"></a>Ovládací prvky se vzory proměnných  
+ Některé typy ovládacích prvků podporují různé vzory v závislosti na jejich stavu nebo způsobu, jakým je ovládací prvek používán. Příklady ovládacích prvků, které mohou mít proměnlivé vzorce, jsou zobrazení seznamu (miniatury, dlaždice, ikony, seznam [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] , podrobnosti), grafy (výsečové, Spojnicová, pruhová, hodnota [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)]buňky se vzorcem), oblast dokumentu (normální, rozložení na webu, osnova, rozložení tisku, tisk Preview) a [!INCLUDE[TLA#tla_wmp](../../../includes/tlasharptla-wmp-md.md)] vzhledy.  
   
- Ovládací prvky, které implementují typy vlastní ovládací prvek může mít libovolnou sadu vzorů ovládacích prvků, které jsou potřeba k reprezentaci jejich funkce.  
+ Ovládací prvky implementující vlastní typy ovládacích prvků mohou mít libovolnou sadu vzorů ovládacích prvků, které jsou nutné pro reprezentaci jejich funkcí.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -51,6 +51,6 @@ ms.locfileid: "62033095"
 - [Vyvolání ovládacího prvku s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)
 - [Zjištění stavu přepnutí zaškrtávacího políčka pomocí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/get-the-toggle-state-of-a-check-box-using-ui-automation.md)
 - [Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)
-- [Ukázka vložení prvku TextPattern textu](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
-- [TextPattern vyhledávání a výběr ukázky](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)
-- [Vlastnost InvokePattern ExpandCollapsePattern a vlastnost TogglePattern vzorku](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)
+- [Ukázka vložení textu TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
+- [Ukázka hledání a výběru TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)
+- [Ukázka InvokePattern, ExpandCollapsePattern a TogglePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)

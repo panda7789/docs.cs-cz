@@ -10,33 +10,33 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-ms.openlocfilehash: 85806ee9fb01cd2ca07697230c46a8847fdf8c6a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2f9de32eb8637e58c17aba2309eed33dcfdd42a7
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053545"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400766"
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
-Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost brání nemůže provádět záruky zabezpečení o hodnotu vlastnosti závislosti.  
+Vlastnosti závislosti by se obecně měly považovat za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností zabraňuje možnosti provádět záruky zabezpečení týkající se hodnoty vlastnosti závislosti.  
 
 <a name="AccessSecurity"></a>   
-## <a name="access-and-security-of-wrappers-and-dependency-properties"></a>Přístup a zabezpečení obálky a vlastnosti závislosti  
- Obvykle jsou implementované vlastnosti závislosti spolu s zabezpečenou "obálku" [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti, které usnadňují získání nebo nastavení vlastnosti z instance. Ale obálkami jsou ve skutečnosti jenom vhodné metody, které implementují základní <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> statické volání, které se používají při interakci s vlastnosti závislosti. Uvažujete o ho jiným způsobem, vlastnosti jsou vystaveny jako [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti, ke kterým dochází pro vlastnost závislosti spíše než soukromé pole zálohování. Mechanismy zabezpečení u obálkami není paralelní vlastnost chování systému a přístup k základní vlastnost závislosti. Uvedení požadavku zabezpečení na obálku pouze brání použití metody pohodlí, ale nezabrání volání <xref:System.Windows.DependencyObject.GetValue%2A> nebo <xref:System.Windows.DependencyObject.SetValue%2A>. Podobně uvedení chráněné nebo soukromý přístup na obálkami neposkytuje žádné efektivní zabezpečení.  
+## <a name="access-and-security-of-wrappers-and-dependency-properties"></a>Přístup k obálkám a vlastnostem závislosti a jejich zabezpečení  
+ Vlastnosti závislostí jsou obvykle implementovány spolu s vlastnostmi "Obálka" modulu CLR (Common Language Runtime), které zjednodušují získávání nebo nastavování vlastnosti z instance. Ale obálky jsou ve skutečnosti pouze pohodlnými metodami, které implementují <xref:System.Windows.DependencyObject.SetValue%2A> základní <xref:System.Windows.DependencyObject.GetValue%2A> a statické volání, která se používají při interakci s vlastnostmi závislosti. Jejich úvahou jiným způsobem se vlastnosti zveřejňují jako vlastnosti modulu CLR (Common Language Runtime), ke kterým dochází v rámci vlastnosti závislosti, nikoli pomocí soukromého pole. Mechanismy zabezpečení použité pro obálky nezpůsobují paralelní chování systémových vlastností a přístup k základní vlastnosti závislosti. Umístěním požadavku zabezpečení na obálku zabráníte použití pohodlí, ale nezabráníte voláním <xref:System.Windows.DependencyObject.GetValue%2A> metody nebo. <xref:System.Windows.DependencyObject.SetValue%2A> Podobně umístění chráněného nebo privátního přístupu na obálky neposkytuje žádné efektivní zabezpečení.  
   
- Pokud vytváříte vlastní vlastnosti závislosti, byste měli deklarovat obálkami a <xref:System.Windows.DependencyProperty> identifikátor pole jako veřejné členy, aby volající není získat zavádějící informace o úroveň přístupu true dané vlastnosti (z důvodu jeho úložiště se implementováno jako vlastnost závislosti).  
+ Pokud píšete vlastní vlastnosti závislosti, měli byste deklarovat obálky a <xref:System.Windows.DependencyProperty> pole identifikátor jako veřejné členy, aby volající neobdrželi zavádějící informace o skutečné úrovni přístupu této vlastnosti (z důvodu jejich uložení implementováno jako vlastnost závislosti.  
   
- Pro vlastnost závislosti vlastní, můžete zaregistrovat vaše vlastnost jako vlastnost závislosti jen pro čtení, a to poskytuje efektivní způsob zabránění nastavování kdokoli, který neobsahuje odkaz na vlastnost <xref:System.Windows.DependencyPropertyKey> pro tuto vlastnost. Další informace najdete v tématu [vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md).  
+ U vlastní vlastnosti závislosti můžete vlastnost zaregistrovat jako vlastnost závislosti jen pro čtení. to poskytuje efektivní způsob, jak zabránit tomu, aby se vlastnost nastavila kýmkoli, kdo nedrží odkaz na danou <xref:System.Windows.DependencyPropertyKey> vlastnost. Další informace najdete v tématu [vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md).  
   
 > [!NOTE]
->  Deklarace <xref:System.Windows.DependencyProperty> privátní pole identifikátor není je zakázané a lze případně snížit okamžitě vystavené obor názvů vlastní třídy, ale tato vlastnost by neměly být zahrnuté "privátní" ve stejném smyslu jako [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyk definice definovat úrovně přístupu, z důvodů popsaných v další části.  
+>  Deklarace pole <xref:System.Windows.DependencyProperty> identifikátoru Private není zakázaná a dá se použít k omezení okamžitě vystaveného oboru názvů vlastní třídy, ale taková vlastnost by se neměla považovat za "soukromou" ve stejném smyslu jako společný jazyk. jazykové definice modulu runtime (CLR) definují úroveň přístupu z důvodů popsaných v následující části.  
   
 <a name="PropertySystemExposure"></a>   
-## <a name="property-system-exposure-of-dependency-properties"></a>Vlastnost systému vystavení vlastností závislosti  
- Není obecně užitečné a je potenciálně matoucí, chcete-li deklarovat <xref:System.Windows.DependencyProperty> jako přístup na úrovni jiné než public. Toto nastavení úrovně přístupu někdo pouze zabraňuje tomu nebudou moct získat odkaz na instanci ze třídy deklarující. Ale existuje několik aspektů vlastnost systému, který vrátí <xref:System.Windows.DependencyProperty> jako způsob identifikace určité vlastnosti, jak existuje v instanci třídy nebo instance odvozené třídy, a tento identifikátor je stále možné používat ve <xref:System.Windows.DependencyObject.SetValue%2A> i volání Pokud je původní statické identifikátor deklarovaný jako nonpublic. Navíc <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> virtuální metody přijetí informací o libovolné existujícího závislosti vlastnosti, která se změnila hodnota. Kromě toho <xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A> metoda vrátí identifikátory pro všechny vlastnosti v instancích místně nastavené hodnotu.  
+## <a name="property-system-exposure-of-dependency-properties"></a>Stav expozice vlastností závislosti v systému vlastností  
+ Není všeobecně užitečné a je potenciálně zavádějící, k deklaraci <xref:System.Windows.DependencyProperty> jako libovolné úrovně přístupu, která je jiná než veřejná. Toto nastavení úrovně přístupu zabrání pouze někomu, aby získal odkaz na instanci z deklarované třídy. Ale existuje několik aspektů systému vlastností, které vrátí <xref:System.Windows.DependencyProperty> jako způsob určení konkrétní vlastnosti, která existuje v instanci třídy nebo odvozené třídy instance, a tento identifikátor je stále použitelné <xref:System.Windows.DependencyObject.SetValue%2A> ve volání i Pokud je původní statický identifikátor deklarován jako NonPublic. <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> Virtuální metody také přijímají informace o jakékoli existující vlastnosti závislosti, která změnila hodnotu. Kromě toho <xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A> metoda vrátí identifikátory pro jakoukoliv vlastnost u instancí s lokálně nastavenou hodnotou.  
   
-### <a name="validation-and-security"></a>Ověřování a zabezpečení  
- Použití požadavku na <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> a očekává neúspěšné ověření na vyžádání selhání zabránit nastavena vlastnost není adekvátní bezpečnostní mechanismus. Nastavit hodnotu zneplatnění vynutit prostřednictvím <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> může také potlačit škodlivý volajícím, pokud tyto volajícím jsou zpracovávána v rámci domény aplikace.  
+### <a name="validation-and-security"></a>Ověření a zabezpečení  
+ Použití požadavku na <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> a očekáváte selhání ověřování při selhání požadavku, aby se zabránilo tomu, že vlastnost není adekvátním mechanismem zabezpečení. Zrušení platnosti nastavení vyvolané pomocí <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> může být také potlačeno škodlivými volajícími, pokud jsou v doméně aplikace provozováni volající.  
   
 ## <a name="see-also"></a>Viz také:
 

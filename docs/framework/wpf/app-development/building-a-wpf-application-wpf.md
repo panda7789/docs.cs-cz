@@ -7,34 +7,34 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 8d24314290e4f385362a3369836e4d18a23cc868
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 02a86ea8d8d6b481044d6ca25d29df7edd2c73ee
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663109"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401690"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 
-Aplikace Windows Presentation Foundation (WPF) může být sestaven jako rozhraní .NET Framework spustitelné soubory (.exe), knihovny (DLL) nebo kombinaci obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.
+Aplikace Windows Presentation Foundation (WPF) mohou být sestaveny jako .NET Framework spustitelné soubory (. exe), knihovny (. dll) nebo kombinace obou typů sestavení. Toto téma ukazuje, jak sestavit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace a popisuje klíčové kroky v procesu sestavení.
 
 <a name="Building_a_WPF_Application_using_Command_Line"></a>
 
 ## <a name="building-a-wpf-application"></a>Sestavení aplikace WPF
 
-Aplikace WPF, mohou být zkompilovány následujícími způsoby:
+Aplikace WPF může být zkompilována následujícími způsoby:
 
-- Příkazový řádek. Aplikace musí obsahovat pouze kód (bez XAML) a soubor definice aplikace. Další informace najdete v tématu [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
+- Příkazový řádek. Aplikace musí obsahovat pouze kód (žádný XAML) a definiční soubor aplikace. Další informace najdete v tématu sestavování z příkazového [řádku pomocí CSc. exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo při sestavování [z příkazového řádku (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
 
-- Microsoft Build Engine (MSBuild). Kromě kód a soubory XAML musí aplikace obsahovat souboru projektu MSBuild. Další informace najdete v tématu "MSBuild".
+- Microsoft Build Engine (MSBuild). Kromě kódu a souborů XAML musí aplikace obsahovat soubor projektu MSBuild. Další informace naleznete v tématu "MSBuild".
 
-- Visual Studio. Visual Studio je integrované vývojové prostředí, které aplikace WPF pomocí nástroje MSBuild zkompiluje a obsahuje vizuálního návrháře pro vytvoření uživatelského rozhraní. Další informace najdete v tématu [zapisovat a spravovat kód pomocí sady Visual Studio](/visualstudio/ide/index-writing-code) a [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).
+- Visual Studio. Visual Studio je integrované vývojové prostředí, které kompiluje aplikace WPF pomocí nástroje MSBuild a obsahuje vizuálního návrháře pro vytváření uživatelského rozhraní. Další informace najdete v tématu [zápis a Správa kódu pomocí sady Visual Studio](/visualstudio/ide/index-writing-code) a [Návrh XAML v aplikaci Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).
 
 <a name="The_Windows_Presentation_Foundation_Build_Pipeline"></a>
 
-## <a name="wpf-build-pipeline"></a>WPF Build Pipeline
+## <a name="wpf-build-pipeline"></a>Kanál sestavení WPF
 
-Když [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] projekt se vytvořil, kombinace specifické pro jazyk a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]– jsou vyvolány určité cíle. Proces provedení tyto cíle se nazývá kanálu sestavení, a jsou klíčové kroky návodu na následujícím obrázku.
+Při sestavení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]projektu je vyvolána kombinace cílů specifických pro jazyk a. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Proces provádění těchto cílů se nazývá kanál sestavení a klíčové kroky jsou znázorněny na následujícím obrázku.
 
 ![Proces sestavení WPF](./media/wpfbuildsystem-figure1.png "WPFBuildSystem_Figure1")
 
@@ -42,41 +42,41 @@ Když [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] proj
 
 ### <a name="pre-build-initializations"></a>Inicializace před sestavením
 
-Před sestavením, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] Určuje umístění důležité nástroje a knihovny, včetně následujících:
+Před sestavením [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] nástroj určuje umístění důležitých nástrojů a knihoven, včetně následujících:
 
-- Rozhraní .NET Framework.
+- .NET Framework.
 
 - [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Adresáře.
 
-- Umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] odkazovat na sestavení.
+- Umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] referenčních sestavení.
 
-- Vlastnost cesty pro vyhledávání sestavení.
+- Vlastnost pro cesty pro vyhledávání sestavení.
 
-První místo kde [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] vyhledá sestavení je adresář sestavení odkazu (%ProgramFiles%\Reference Assemblies\Microsoft\Framework\v3.0\\). Během tohoto kroku proces sestavení také inicializuje různé vlastnosti a skupiny položek a provede všechny potřebné vyčištění práci.
+První umístění, kde [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] vyhledávání sestavení je adresář referenčního sestavení (%programfiles%\Reference Assemblies\Microsoft\Framework\v3.0\\). Během tohoto kroku proces sestavení také inicializuje různé vlastnosti a skupiny položek a provede všechny potřebné čisticí operace.
 
 <a name="Resolving_references"></a>
 
-### <a name="resolving-references"></a>Překládají se odkazy
+### <a name="resolving-references"></a>Řešení odkazů
 
-Proces sestavení vyhledá a připojí sestavení požadovaná k vytvoření projektu aplikace. Tato logika je součástí `ResolveAssemblyReference` úloh. Všechna sestavení deklarován jako `Reference` v souboru projektu jsou k dispozici k úloze spolu s informací o vyhledávací cesty a metadat na sestavení v systému už nainstalovaná. Úloha vyhledá sestavení a používá instalované sestavení metadat k filtrování tyto základní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení, které potřebují nezobrazit nahoru v manifestech výstup. To se provádí, aby nadbytečné informace v manifesty ClickOnce. Například protože knihovně PresentationFramework.dll lze považovat za zástupce aplikace založená na a pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a navíc od všech [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení existují ve stejném umístění na každém počítači, který má rozhraní .NET Framework nainstalovaný, není nutné zahrnout všechny informace o všech odkaz na sestavení rozhraní .NET Framework v manifestech.
+Proces sestavení vyhledá a vytvoří vazby sestavení potřebných k sestavení projektu aplikace. Tato logika je obsažena v `ResolveAssemblyReference` úloze. Všechna sestavení deklarovaná `Reference` jako v souboru projektu jsou k dispozici pro úlohu spolu s informacemi o cestách pro vyhledávání a metadatech na sestaveních, která jsou již v systému nainstalována. Úkol vyhledá sestavení a používá metadata nainstalovaného sestavení k vyfiltrování těch základních [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení, která se nemusí zobrazit ve výstupních manifestech. To se provádí, aby se zabránilo redundantním informacím v manifestech ClickOnce. Například vzhledem k tomu, že PresentationFramework. dll lze považovat za zástupce aplikace založené na a pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a kromě toho, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] že všechna sestavení existují ve stejném umístění na každém počítači, který má .NET Framework nainstalováno, není nutné zahrnout všechny informace o všech .NET Framework referenčních sestavení v manifestech.
 
 <a name="Markup_Compilation___Pass_1"></a>
 
-### <a name="markup-compilationpass-1"></a>Kompilace označování – průchod 1
+### <a name="markup-compilationpass-1"></a>Kompilace značek – Pass 1
 
-V tomto kroku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory jsou analyzovány a zkompilovány tak, aby modul runtime trávit čas parsování [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] a ověřením hodnoty vlastností. Zkompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je předem tokenizovaného tak, aby v době běhu, načtením by měl být mnohem rychlejší než načítání [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru.
+V tomto kroku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou soubory analyzovány a kompilovány, aby modul runtime nestrávil čas při analýze [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] a ověřování hodnot vlastností. Kompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je předem vydaný, takže jeho načtení by v době běhu mělo být mnohem rychlejší než [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] načítání souboru.
 
-Během tohoto kroku, provést následující aktivity místo každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru, který je `Page` vytvářet položky:
+Během tohoto kroku probíhají následující aktivity pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor, který `Page` je položkou sestavení:
 
-1. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Souboru je analyzovány pomocí kompilátoru značek.
+1. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Soubor je analyzován kompilátorem značek.
 
-2. Pro, který se vytvoří zkompilovanou reprezentaci [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zkopírovány do složky obj\Release.
+2. Pro tuto [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] složku se vytvoří kompilovaná reprezentace a zkopíruje se do složky obj\Release.
 
-3. CodeDOM reprezentace nové částečné třídy je vytvořili a zkopírovali do složky obj\Release.
+3. Je vytvořena reprezentace CodeDOM nové částečné třídy a zkopírována do složky obj\Release.
 
-Kromě toho je vygenerován soubor specifické pro jazyk kódu pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru. Pro stránku Page1.xaml v projektu jazyka Visual Basic, například se generuje Page1.g.vb; pro stránku Page1.xaml v projektu v jazyce C# je generována Page1.g.cs. Označuje ".g" v názvu souboru, soubor je vygenerován kód, který obsahuje deklaraci částečné třídy pro element nejvyšší úrovně označovacího souboru (například `Page` nebo `Window`). Třída je deklarována s `partial` modifikátor v jazyce C# (`Extends` v jazyce Visual Basic) k označení, existuje jiný deklaraci pro třídu jinde, obvykle v modelu code-behind souboru Page1.xaml.cs.
+Kromě toho je pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor vygenerován soubor kódu specifický pro daný jazyk. Například pro stránku Page1. XAML v projektu Visual Basic je vygenerována Page1. g. vb; pro stránku Page1. XAML v C# projektu je vygenerována Page1.g.cs. Soubor ". g" v názvu souboru označuje, že se jedná o generovaný kód, který má deklaraci částečné třídy pro element nejvyšší úrovně souboru označení (například `Page` nebo `Window`). Třída je deklarována s `partial` modifikátorem v C# (`Extends` v Visual Basic), aby označovala jinou deklaraci pro třídu jinde, obvykle v souboru kódu na pozadí Page1.XAML.cs.
 
-Částečné třídy sahá od příslušné základní třídy (například <xref:System.Windows.Controls.Page> stránky) a implementuje <xref:System.Windows.Markup.IComponentConnector?displayProperty=nameWithType> rozhraní. <xref:System.Windows.Markup.IComponentConnector> Rozhraní má metody k inicializaci součásti a propojit názvy a události na prvcích v jeho obsahu. V důsledku toho souboru generovaného kódu obsahuje implementace metody, jako je následující:
+Částečná třída sahá od příslušné základní třídy (například <xref:System.Windows.Controls.Page> pro stránku) a <xref:System.Windows.Markup.IComponentConnector?displayProperty=nameWithType> implementuje rozhraní. <xref:System.Windows.Markup.IComponentConnector> Rozhraní obsahuje metody pro inicializaci komponenty a připojení názvů a událostí k prvkům v jejím obsahu. V důsledku toho generovaný soubor kódu má implementaci metody jako následující:
 
 ```csharp
 public void InitializeComponent() {
@@ -108,83 +108,83 @@ Public Sub InitializeComponent() _
 End Sub
 ```
 
-Ve výchozím nastavení, kompilace označení běží ve stejném <xref:System.AppDomain> jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] modul. Tímto způsobem významného zvýšení výkonu. Toto chování lze přepínat pomocí `AlwaysCompileMarkupFilesInSeparateDomain` vlastnost. To má výhodu uvolnění všech referenční sestavení pomocí uvolnění jako samostatná <xref:System.AppDomain>.
+Ve výchozím nastavení se kompilace kódu spouští ve stejném <xref:System.AppDomain> stavu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] jako modul. Tím je zajištěno výrazné zvýšení výkonu. Toto chování lze zapnout pomocí `AlwaysCompileMarkupFilesInSeparateDomain` vlastnosti. To má výhodu odinstalování všech referenčních sestavení odinstalováním <xref:System.AppDomain>samostatného.
 
 <a name="Pass_2_of_Markup_Compilation"></a>
 
-### <a name="markup-compilationpass-2"></a>Kompilace označování – předání 2
+### <a name="markup-compilationpass-2"></a>Kompilace značek – Pass 2
 
-Ne všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou stránky kompilovány při průchodu 1 kompilace označení. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které jste definovali místně odkazů na typy (odkazy na typy definované v kódu jinde ve stejném projektu) jsou vyloučení z kompilace v tuto chvíli. Je to proto, že tyto místně definované typy existují pouze ve zdroji a nebyly dosud zkompilována. Aby bylo možné určit to, analyzátor používá heuristickými metodami, které zahrnují hledá položky, jako `x:Name` v souboru označení. Po nalezení takové situaci, že se kompilace souboru označení odložit, dokud již byly zkompilovány soubory kódu, a druhý kompilace označení předat procesy tyto soubory.
+Ne všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky jsou kompilovány během průchodu 1 kompilace kódu. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]soubory, které mají místně definované odkazy na typ (odkazy na typy definované v kódu jinde ve stejném projektu), jsou v tuto chvíli vyjmuty z kompilace. Důvodem je, že tyto lokálně definované typy existují pouze ve zdroji a ještě nejsou kompilovány. Chcete-li určit, analyzátor používá heuristiky, které zahrnují hledání položek `x:Name` , jako je například v souboru označení. Pokud je taková instance nalezena, je kompilace souboru označení odložena, dokud nebudou zkompilovány soubory kódu, potom druhá kompilace kódu zpracuje tyto soubory.
 
 <a name="File_Classification"></a>
 
 ### <a name="file-classification"></a>Klasifikace souborů
 
-Výstupní soubory sestavení procesů vkládání do různých skupin prostředků založené na sestavení, které aplikace se umístí do. V typické aplikaci nelokalizované, všechny datové soubory označené jako `Resource` jsou umístěné v hlavním sestavení (spustitelné nebo knihovna). Když `UICulture` je nastavena v projektu, všechny zkompilované [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory a prostředky, které výslovně označena jako specifické pro jazyk jsou umístěny v sestavení satelitních prostředků. Kromě toho všechny jazykově neutrální prostředky jsou umístěné v hlavním sestavení. V tomto kroku do procesu sestavení, který je k určení.
+Proces sestavení vloží výstupní soubory do různých skupin prostředků na základě toho, do kterého sestavení aplikace budou umístěna. V typické nemístní aplikaci jsou všechny datové soubory označené jako `Resource` umístěny do hlavního sestavení (spustitelný soubor nebo knihovna). Při `UICulture` nastavení v projektu jsou všechny zkompilované [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory a tyto prostředky konkrétně označené jako specifické pro jazyk umístěny do sestavení satelitních prostředků. Kromě toho všechny jazykové a neutrální prostředky jsou umístěny v hlavním sestavení. V tomto kroku procesu sestavení je toto určení provedeno.
 
-`ApplicationDefinition`, `Page`, A `Resource` akce sestavení v souboru projektu se dají rozšířit o `Localizable` metadata (přípustné hodnoty jsou `true` a `false`), která určuje, zda je soubor konkrétní jazyk nebo jazykově neutrální.
+`Page` `true` Akce sestavení `false`, a `Resource` v souboru`Localizable` projektu lze rozšířit s metadaty (přijatelné hodnoty jsou a), která určuje, zda je soubor specifický pro jazyk nebo `ApplicationDefinition` jazykově neutrální.
 
 <a name="Core_Compilation"></a>
 
 ### <a name="core-compilation"></a>Základní kompilace
 
-Základní kompilační krok zahrnuje kompilace kódu souborů. To je orchestrované systémem logiku v souborech jazykově specifické cíle Microsoft.CSharp.targets a Microsoft.VisualBasic.targets. V případě heuristiky zjistíte, který stačí jednom průchodu kompilátoru značky a pak hlavní sestavení je generováno. Nicméně pokud jeden nebo více [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory v projektu mají odkazy na místně definované typy, pak je vygenerován soubor dočasné .dll, aby sestavení konečné aplikace mohou být vytvořeny po dokončení překontrolovat kompilace označení.
+Základní krok kompilace zahrnuje kompilaci souborů kódu. Toto je orchestrace pomocí logiky v souborech cílů specifických pro jazyk Microsoft. CSharp. targets a Microsoft. VisualBasic. targets. Pokud heuristické metody určily, že jeden průchod překladače kódu je dostatečný, pak je vygenerováno hlavní sestavení. Nicméně pokud má jeden nebo více [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů v projektu odkazy na lokálně definované typy, pak je vygenerován dočasný soubor. dll, aby konečné sestavení aplikace bylo možné vytvořit po dokončení druhé průchodu kompilace kódu.
 
 <a name="Manifest_generation"></a>
 
 ### <a name="manifest-generation"></a>Generování manifestu
 
-Na konci procesu sestavení po sestavení aplikace a soubory obsahu jsou připravené [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] manifestů aplikace.
+Po dokončení procesu sestavení po přípravě všech sestavení aplikace a souborů obsahu jsou vytvořeny manifesty ClickOnce pro aplikaci.
 
-Soubor manifestu nasazení popisuje model nasazení: aktuální verze, chování aktualizací a identita vydavatele spolu s digitální podpis. Tento manifest slouží vytvořené správci, kteří zacházejí nasazení. Přípona souboru je .xbap (pro [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]) a .application nainstalovaných aplikací. Nejprve závisí `HostInBrowser` vlastnosti projektu a v důsledku manifest identifikuje aplikaci jako hostované v prohlížeči.
+Soubor manifestu nasazení popisuje model nasazení: aktuální verze, chování aktualizace a identitu vydavatele spolu s digitálním podpisem. Tento manifest je určený k vytváření správců, kteří zpracovávají nasazení. Přípona souboru je. XBAP (pro [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]) a. Application pro nainstalované aplikace. Předchozí je vyřízena `HostInBrowser` vlastností projektu a v důsledku toho manifest identifikuje aplikaci jako hostovanou v prohlížeči.
 
-Manifest aplikace (. soubor exe.manifest) popisuje sestavení aplikace a závislé knihovny a seznam oprávnění vyžadované aplikací. Tento soubor má být autorem aplikace pro vývojáře. Pokud chcete spustit [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] aplikace, uživatel otevře soubor manifestu nasazení vaší aplikace.
+Manifest aplikace (soubor. exe. manifest) popisuje sestavení aplikace a závislé knihovny a seznam oprávnění vyžadovaných aplikací. Tento soubor má být vytvořen vývojářem aplikace. Aby bylo možné spustit aplikaci ClickOnce, uživatel otevře soubor manifestu nasazení aplikace.
 
-Tyto soubory manifestu se vytváří vždy pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. Nainstalovaných aplikací, nejsou vytvořeny není-li `GenerateManifests` je zadána vlastnost v souboru projektu s hodnotou `true`.
+Tyto soubory manifestu jsou vždy vytvořeny pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. U nainstalovaných aplikací nejsou vytvořeny, pokud `GenerateManifests` není vlastnost určena v souboru projektu s hodnotou. `true`
 
-[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] Získejte dvě další oprávnění, kromě těchto oprávnění přiřazená uživateli typické internetové zóně aplikace: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Sestavovací systém deklaruje tato oprávnění v manifestu aplikace.
+[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]Získejte dvě další oprávnění nad rámec těchto oprávnění přiřazených k běžným aplikacím Internet Zone <xref:System.Security.Permissions.WebBrowserPermission> : <xref:System.Security.Permissions.MediaPermission>a. Systém [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení deklaruje tato oprávnění v manifestu aplikace.
 
 <a name="Incremental_Build_Support"></a>
 
-## <a name="incremental-build-support"></a>Podpora přírůstkové sestavení
+## <a name="incremental-build-support"></a>Podpora přírůstkového sestavení
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Sestavovací systém poskytuje podporu pro přírůstkové sestavení. Je poměrně inteligentní o zjišťování změny značek nebo kódu a zkompiluje jenom tyto artefakty, které jsou ovlivněny změnou. Mechanismus přírůstkového sestavení používá následující soubory:
+Systém [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení poskytuje podporu pro přírůstková sestavení. Je poměrně inteligentní informace o detekci změn provedených v kódu nebo kódu a kompiluje pouze ty artefakty, které jsou ovlivněné změnou. Mechanismus přírůstkového sestavení používá následující soubory:
 
-- $(*AssemblyName*) _MarkupCompiler.Cache soubor, abyste zachovali aktuální stav kompilátoru.
+- Soubor _MarkupCompiler. cache aplikace $ (*AssemblyName*) pro zachování aktuálního stavu kompilátoru.
 
-- $(*AssemblyName*) _MarkupCompiler.lref soubor do mezipaměti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory s odkazy na místně definované typy.
+- Soubor $ (*AssemblyName*) _MarkupCompiler. lref pro ukládání [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů s odkazy na lokálně definované typy.
 
-Následuje sadu pravidel, kterými se řídí přírůstkové sestavení:
+Následuje sada pravidel pro přírůstkové sestavení:
 
-- Soubor je nejmenší jednotka, ve kterém sestavovací systém zjistí změnu. Takže pro soubor kódu nemůže určit systém sestavení, pokud se změnil typ nebo kód byl přidán. Totéž platí pro soubory projektu.
+- Soubor je nejmenší jednotka, na které systém sestavení detekuje změnu. Pro soubor kódu tedy systém sestavení nemůže zjistit, zda byl typ změněn nebo zda byl přidán kód. Stejné uchovávají pro soubory projektu.
 
-- Mechanismus přírůstkového sestavení musí být cognizant, který [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránku definuje třídu nebo používá jiné třídy.
+- Mechanismus přírůstkového sestavení musí být společnost Cognizant, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka buď definuje třídu, nebo používá jiné třídy.
 
-- Pokud `Reference` položky přejít, a potom znovu kompilovat všechny stránky.
+- Pokud `Reference` se položky změní, znovu zkompilujte všechny stránky.
 
-- Pokud se změní soubor kódu, znovu kompilovat všechny stránky s lokálně definovaný typ reference.
+- Pokud se změní soubor kódu, Rekompilujte všechny stránky s místně definovanými odkazy na typ.
 
-- Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] změny souborů:
+- Pokud se [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] změní soubor:
 
-  - Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `Page` v projektu: Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] neobsahuje odkazy lokálně definovaný typ, můžete znovu zkompilovat, který [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] plus všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní; Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] má místní odkazy, znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní.
+  - Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `Page` v projektu: Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] neobsahuje [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokálně definované odkazy na typ, zkompilujte znovu a všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s místními odkazy; Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] má místní odkazy, Rekompilujte všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s místními odkazy.
 
-  - Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `ApplicationDefinition` v projektu: znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky (důvod: každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahuje odkaz na <xref:System.Windows.Application> typ, který se mohl změnit).
+  - Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `ApplicationDefinition` v projektu: rekompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky <xref:System.Windows.Application> (důvod: každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] má odkaz na typ, který se mohl změnit).
 
-- Pokud soubor projektu deklaruje jako definice aplikace místo souboru kódu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru:
+- Pokud soubor projektu deklaruje soubor s kódem jako definici aplikace namísto [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru:
 
-  - Zkontrolujte, zda `ApplicationClassName` změnila hodnota v souboru projektu (existuje nový typ aplikace?). Pokud ano, znovu zkompilujte celé aplikace.
+  - Zkontroluje, jestli `ApplicationClassName` se hodnota v souboru projektu nezměnila (je to nový typ aplikace?). V takovém případě znovu zkompilujte celou aplikaci.
 
-  - V opačném případě znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní.
+  - V opačném případě znovu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zkompilujte všechny stránky s místními odkazy.
 
-- Pokud se změní soubor projektu: všechny předchozí pravidla a zjistit, co je potřeba překompilovat. Změní na následující vlastnosti trigger dokončení opětovné kompilace: `AssemblyName`, `IntermediateOutputPath`, `RootNamespace`, a `HostInBrowser`.
+- Pokud se změní soubor projektu: použijte všechna předchozí pravidla a podívejte se, co je potřeba znovu zkompilovat. Změny následujících vlastností `AssemblyName`aktivují kompletní znovu zkompilování:, `IntermediateOutputPath`, `RootNamespace`a `HostInBrowser`.
 
-Následující scénáře překompilujte jsou možné:
+Je možné provést následující scénáře překompilování:
 
-- Celá aplikace je znovu zkompilovat.
+- Celá aplikace je znovu zkompilována.
 
-- Pouze ty [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které se mají místně definované odkazy na typ překompilují.
+- Znovu se [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zkompiluje pouze ty soubory, které mají místně definované odkazy na typ.
 
-- Nic přepsán (Pokud se nic v projektu nezměnilo).
+- Nic se nezkompiluje (Pokud se nic v projektu nezměnilo).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -9,17 +9,17 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: 03439a2c4a1a4de375e90d0e5121e690541e2f0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40c1a8513608728a84b6b605f9ad18603123ea2e
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61805132"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401529"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable – atribut
-Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] předpony oboru názvů v souboru označení může ignorovat. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru. `mc:Ignorable` Atribut podporuje kompatibility značek pro vlastní obor názvů mapování a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správy verzí.  
+Určuje, [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] které předpony oboru názvů, které se vyskytují v souboru označení, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] může procesor ignorovat. Atribut podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí. `mc:Ignorable`  
   
-## <a name="xaml-attribute-usage-single-prefix"></a>Použití atributu XAML (jeden předpony)  
+## <a name="xaml-attribute-usage-single-prefix"></a>Použití atributu XAML (jedna předpona)  
   
 ```  
 <object  
@@ -46,24 +46,24 @@ Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md
   
 |||  
 |-|-|  
-|*ignorablePrefix ignorablePrefix1, atd.*|Libovolný platnou předponu řetězec podle specifikace XML 1.0.|  
-|*ignorableUri*|Libovolný platný identifikátor URI pro určení oboru názvů, podle specifikace XML 1.0.|  
-|*ThisElementCanBeIgnored*|Element, který lze ignorovat [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] implementace, pokud nadřazený typ není možné přeložit.|  
+|*ignorablePrefix, ignorablePrefix1 atd.*|Libovolný platný řetězec předpony podle specifikace XML 1,0.|  
+|*ignorableUri*|Libovolný platný identifikátor URI pro určení oboru názvů podle specifikace XML 1,0.|  
+|*ThisElementCanBeIgnored*|Element, který může být ignorován [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] implementacemi procesoru, pokud nelze přeložit nadřízený typ.|  
   
 ## <a name="remarks"></a>Poznámky  
- `mc` [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] Předponu oboru názvů je předpona doporučené konvence pro použití při mapování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] oboru názvů kompatibility [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)].  
+ Předpona [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)]oborunázvůje doporučená konvence předpony, která se použije při mapování oboru názvů kompatibility. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] `mc`  
   
- Elementy nebo atributy, kde předpona názvu elementu jsou označeny jako `mc:Ignorable` nebude vyvolat chyby při zpracování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru. Pokud tento atribut nebylo možné přeložit na základní typ nebo programovací konstrukce, je tento prvek ignorován. Upozorňujeme ale, ignorované prvků může být stále generovat další chyby analýzy pro další prvek požadavky, které jsou vedlejší účinky tohoto prvku není zpracována. Například model obsahu konkrétní elementu může vyžadovat přesně jeden podřízený element, ale pokud byl zadaný podřízený element v `mc:Ignorable` předponu a zadaný podřízený element nebylo možné přeložit na typ, pak bude [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] může procesor vyvolat chyby.  
+ Prvky nebo atributy, u kterých je předpona části názvu elementu identifikována `mc:Ignorable` jako nevyvolává chyby při zpracování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesorem. Pokud tento atribut nelze přeložit na nadřízený typ nebo konstruktor programování, je tento prvek ignorován. Upozorňujeme však, že ignorované prvky mohou stále generovat další chyby analýzy pro další požadavky na prvky, které jsou vedlejšími účinky tohoto prvku nezpracovávány. Například určitý model obsahu elementu může vyžadovat přesně jeden podřízený element, ale pokud zadaný podřízený element byl v `mc:Ignorable` předponě a zadaný podřízený element nelze přeložit na typ, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pak procesor může vyvolá chybu.  
   
- `mc:Ignorable` platí jenom pro mapování názvového prostoru na identifikátor řetězce. `mc:Ignorable` neplatí pro mapování názvového prostoru do sestavení, které určují [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů a sestavení (nebo výchozí aktuální spustitelného souboru jako sestavení).  
+ `mc:Ignorable`vztahuje se pouze na mapování oboru názvů na řetězce identifikátorů. `mc:Ignorable`neplatí pro mapování oboru názvů na sestavení, která určují obor názvů CLR a sestavení (nebo výchozí hodnotu pro aktuální spustitelný soubor jako sestavení).  
   
- Při implementaci [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru, procesoru implementace nesmí vyvolat analýzu a zpracování chyb v rozlišení typů pro libovolný element nebo atribut, který je kvalifikována předponu, která je označena jako `mc:Ignorable`. Ale implementace procesoru stále může vyvolat výjimky, které jsou výsledkem sekundární nedaří načíst nebo zpracovat, jako je například dříve uvedeného příkladu jeden podřízený element elementu.  
+ Pokud implementujete [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor, implementace procesoru nesmí vyvolat analýzu nebo zpracování chyb v rozlišení typu pro libovolný element nebo atribut, který je kvalifikován předponou, která je identifikována jako `mc:Ignorable`. Ale vaše implementace procesoru stále může vyvolávat výjimky, které jsou druhotným výsledkem selhání elementu, který se nedaří načíst nebo zpracovat, jako je například příklad prvku s jedním podřízeným objektem uvedeným dříve.  
   
- Ve výchozím nastavení [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor bude ignorovat obsah v rámci elementu ignorované. Můžete však zadat atribut Další [MC: processcontent – atribut](mc-processcontent-attribute.md), trvalé zpracování obsahu v rámci elementu ignorované podle dalšího k dispozici nadřazený element.  
+ Ve výchozím nastavení [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] bude procesor ignorovat obsah v rámci ignorovaného prvku. Můžete však zadat další atribut, [MC: ProcessContent atribut](mc-processcontent-attribute.md), aby bylo možné pokračovat ve zpracování obsahu v rámci ignorovaného prvku následujícím dostupným nadřazeným elementem.  
   
- Dá se zadat více předpony v atribut, pomocí jednoho nebo více prázdných znaků jako oddělovač, například: `mc:Ignorable="ignore1 ignore2"`.  
+ V atributu lze zadat více předpon, přičemž jako oddělovač použijte jeden nebo více prázdných znaků, například: `mc:Ignorable="ignore1 ignore2"`.  
 
- [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)] Obor názvů definuje další prvky a atributy, které nejsou uvedené v této oblasti [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)]. Další informace najdete v tématu [specifikace kompatibility značek XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
+ Obor názvů definuje jiné prvky a atributy, které nejsou zdokumentovány v této oblasti [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)]. [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)] Další informace najdete v tématu [specifikace kompatibility značek XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
   
 ## <a name="see-also"></a>Viz také:
 

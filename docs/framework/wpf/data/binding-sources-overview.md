@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: 48df7083d990dde157c9b7b2a062c865954cf38a
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 9bb77146a55bae4aed17bdd3ef48eca7890d4807
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364203"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401447"
 ---
 # <a name="binding-sources-overview"></a>Přehled zdrojů připojení
 V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáváte data. Toto téma popisuje typy objektů, které lze použít jako zdroj vazby.  
@@ -22,7 +22,7 @@ V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáv
   
 |Zdroj vazby|Popis|  
 |--------------------|-----------------|  
-|[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]objekty|Můžete vytvořit vazby na veřejné vlastnosti, dílčí vlastnosti i indexery libovolného [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objektu. Modul vazby používá [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] reflexi k získání hodnot vlastností. Alternativně objekty, které <xref:System.ComponentModel.ICustomTypeDescriptor> implementují nebo mají <xref:System.ComponentModel.TypeDescriptionProvider> zaregistrované, pracují i s modulem vazby.<br /><br /> Další informace o tom, jak implementovat třídu, která může sloužit jako zdroj vazby, naleznete v části [implementace třídy pro zdroj vazby](#classes) dále v tomto tématu.|  
+|objekty modulu CLR (Common Language Runtime)|Můžete vytvořit vazby na veřejné vlastnosti, dílčí vlastnosti i indexery libovolného objektu modulu CLR (Common Language Runtime). Modul vazby používá reflexi CLR k získání hodnot vlastností. Alternativně objekty, které <xref:System.ComponentModel.ICustomTypeDescriptor> implementují nebo mají <xref:System.ComponentModel.TypeDescriptionProvider> zaregistrované, pracují i s modulem vazby.<br /><br /> Další informace o tom, jak implementovat třídu, která může sloužit jako zdroj vazby, naleznete v části [implementace třídy pro zdroj vazby](#classes) dále v tomto tématu.|  
 |dynamické objekty|Můžete vytvořit <xref:System.Dynamic.IDynamicMetaObjectProvider> propojení s dostupnými vlastnostmi a indexery objektu, který implementuje rozhraní. Pokud máte přístup ke členu v kódu, můžete k němu navazovat vazby. Například pokud dynamický objekt umožňuje přístup ke členu v kódu prostřednictvím `someObjet.AProperty`, můžete k němu vytvořit vazbu nastavením cesty vazby na. `AProperty`|  
 |Objekty ADO.NET|Můžete vytvořit propojení s objekty ADO.NET, například <xref:System.Data.DataTable>. <xref:System.Data.DataView> ADO.NET<xref:System.ComponentModel.IBindingList> implementuje rozhraní, které poskytuje oznámení o změně, pro které modul vazby naslouchá.|  
 |[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]objekty|Můžete vytvořit vazby na a spustit `XPath` dotazy <xref:System.Xml.XmlNode>na, <xref:System.Xml.XmlDocument>nebo <xref:System.Xml.XmlElement>. Pohodlný způsob, jak získat [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] přístup k datům, která jsou zdrojem vazby v kódu, je <xref:System.Windows.Data.XmlDataProvider> použití objektu. Další informace najdete v tématu [vazba na data XML pomocí dotazů XmlDataProvider a XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Můžete také vytvořit vazby na <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>nebo vytvořit vazby k výsledkům dotazů spouštěných na objektech těchto typů pomocí LINQ to XML. Pohodlný způsob, jak použít LINQ to XML k přístupu k datům XML, která jsou zdrojem vazby v kódu, je použití <xref:System.Windows.Data.ObjectDataProvider> objektu. Další informace naleznete v tématu [vazba na XDocument, XElement nebo LINQ pro výsledky dotazu XML](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
@@ -33,9 +33,9 @@ V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáv
  Můžete vytvořit vlastní zdroje vazeb. Tato část popisuje kroky, které potřebujete znát, Pokud implementujete třídu, která bude sloužit jako zdroj vazby.  
   
 ### <a name="providing-change-notifications"></a>Poskytování oznámení o změnách  
- Pokud používáte buď <xref:System.Windows.Data.BindingMode.OneWay> vazbu nebo <xref:System.Windows.Data.BindingMode.TwoWay> [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] (protože chcete aktualizovat, když se dynamicky mění vlastnosti zdroje vazby), musíte implementovat vhodný mechanismus pro oznamování změněných vlastností. Doporučený mechanismus je pro [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] dynamickou třídu nebo k <xref:System.ComponentModel.INotifyPropertyChanged> implementaci rozhraní. Další informace najdete v tématu [implementace oznámení změny vlastností](how-to-implement-property-change-notification.md).  
+ Pokud používáte buď <xref:System.Windows.Data.BindingMode.OneWay> vazbu nebo <xref:System.Windows.Data.BindingMode.TwoWay> [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] (protože chcete aktualizovat, když se dynamicky mění vlastnosti zdroje vazby), musíte implementovat vhodný mechanismus pro oznamování změněných vlastností. Doporučeným mechanismem je CLR nebo Dynamická třída k implementaci <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [implementace oznámení změny vlastností](how-to-implement-property-change-notification.md).  
   
- Vytvoříte [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] -li objekt, který neimplementuje <xref:System.ComponentModel.INotifyPropertyChanged>, je třeba uspořádat do svého vlastního systému oznámení, aby se zajistilo, že data použitá ve vazbě zůstanou aktuální. Můžete poskytnout oznámení o změnách tím, že `PropertyChanged` budete podporovat vzor každé vlastnosti, pro kterou chcete změnit oznámení. Pro podporu tohoto modelu definujete událost *PropertyName*změněné pro každou vlastnost, kde *PropertyName* je název vlastnosti. Událost vyvoláte pokaždé, když se změní vlastnost.  
+ Vytvoříte-li objekt CLR, který není implementován <xref:System.ComponentModel.INotifyPropertyChanged>, je třeba uspořádat do vlastního systému oznámení, aby se zajistilo, že data použitá ve vazbě zůstanou aktuální. Můžete poskytnout oznámení o změnách tím, že `PropertyChanged` budete podporovat vzor každé vlastnosti, pro kterou chcete změnit oznámení. Pro podporu tohoto modelu definujete událost *PropertyName*změněné pro každou vlastnost, kde *PropertyName* je název vlastnosti. Událost vyvoláte pokaždé, když se změní vlastnost.  
   
  Pokud váš zdroj vazby implementuje jeden z těchto mechanismů oznámení, k cílovým aktualizacím dochází automaticky. Pokud z nějakého důvodu váš zdroj vazby neposkytne správnou vlastnost s upozorněním na změnu, máte možnost použít <xref:System.Windows.Data.BindingExpression.UpdateTarget%2A> metodu k explicitní aktualizaci cílové vlastnosti.  
   
@@ -80,7 +80,7 @@ V datové vazbě odkazuje zdrojový objekt vazby na objekt, ze kterého získáv
   
  Tato tabulka popisuje následující důležité body týkající se požadavků oprávnění v datové vazbě:  
   
-- U [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastností datové vazby funguje tak dlouho, dokud je modul vazby schopný získat přístup k vlastnosti zdroje vazby pomocí reflexe. V opačném případě modul vazby vydá upozornění, že vlastnost nelze nalézt a používá záložní hodnotu nebo výchozí hodnotu, pokud je k dispozici.  
+- U vlastností CLR funguje vazba dat za předpokladu, že modul vazby je schopný získat přístup k vlastnosti zdroje vazby pomocí reflexe. V opačném případě modul vazby vydá upozornění, že vlastnost nelze nalézt a používá záložní hodnotu nebo výchozí hodnotu, pokud je k dispozici.  
   
 - Můžete vytvořit vazby na vlastnosti dynamických objektů, které jsou definovány v době kompilace nebo v době spuštění.  
   

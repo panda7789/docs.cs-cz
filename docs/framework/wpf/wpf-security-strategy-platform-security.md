@@ -17,194 +17,194 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 5d7b76365178c78d2b20b9541d5e52a605158a77
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 42b1596082fe3e682a6fa806412ab5837b087bf9
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859818"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400709"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
-Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
+I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, CLR a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se kombinují a [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytují silný a odolný model zabezpečení, který se pokusí vyhnout jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
   
- ![Diagram zobrazující model zabezpečení WPF.](./media/wpf-security-strategy-platform-security/windows-presentation-foundation-security.png)  
+ ![Diagram, který zobrazuje model zabezpečení WPF.](./media/wpf-security-strategy-platform-security/windows-presentation-foundation-security.png)  
   
- Zbývající část tohoto tématu jsou popsané funkce v každém z těchto úrovní, které se týkají [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zvlášť.  
+ Zbývající část tohoto tématu se zabývá funkcemi v každé z těchto vrstev, které se týkají [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] konkrétně.  
 
 <a name="Operating_System_Security"></a>   
 ## <a name="operating-system-security"></a>Zabezpečení operačního systému  
- Minimální úroveň operačního systému, který vyžaduje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] je [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)]. Jádro [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] poskytuje několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace Windows, včetně těch vytvořených pomocí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] zahrnuje funkce zabezpečení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] a jejich další rozšíření. Toto téma popisuje škálu tyto funkce zabezpečení, které jsou důležité pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], také o tom [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] integruje do nich další defense-in-depth.  
+ Minimální úroveň operačního systému, kterou vyžaduje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] Jádro [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] nástroje nabízí několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace systému Windows, včetně těch, které [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]jsou vytvořeny pomocí nástroje. [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]zahrnuje funkce [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zabezpečení a rozšiřuje je. Toto téma popisuje rozsah těchto funkcí zabezpečení, které jsou důležité pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], a také způsob, jakým [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] se integruje s nimi za účelem zajištění další ochrany.  
   
 <a name="Microsoft_Windows_XP_Service_Pack_2__SP2_"></a>   
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
- Kromě obecné kontrolu a posílení Windows, jsou k dispozici tři klíčové funkce z [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] , který se budeme zabývat v tomto tématu:  
+ Kromě obecného přezkoumání a posílení systému Windows existují tři klíčové funkce [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] , které se v tomto tématu podíváme na tyto položky:  
   
-- /GS kompilace  
+- Kompilace/GS  
   
 - [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)].  
   
-#### <a name="gs-compilation"></a>/GS kompilace  
- [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] poskytuje ochranu opětovnou kompilací mnoho core systémových knihoven, včetně všech objektů [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] závislosti, jako [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], aby mohlo včas reagovat přetečení vyrovnávací paměti. Toho dosáhnete pomocí parametru /GS kompilátoru příkazového řádku jazyka C/C++. I když přetečení vyrovnávací paměti by měla být explicitně vyhnout, /GS kompilace poskytuje příklad v obrany proti potenciální ohrožení zabezpečení, které jsou vytvořeny neúmyslně nebo záměrně – podle nich.  
+#### <a name="gs-compilation"></a>Kompilace/GS  
+ [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)]poskytuje ochranu tím, že znovu zkompiluje mnoho základních systémových knihoven, včetně všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] závislostí, jako je například CLR, které pomáhají zmírnit přetečení vyrovnávací paměti. Toho dosáhnete použitím parametru/GS s kompilátorem C/C++ Command-line. I když by se přetečení vyrovnávací paměti mělo výslovně vyhnout, kompilace/GS poskytuje příklad ochrany proti potenciálním ohrožením zabezpečení, která jsou neúmyslně nebo škodlivě vytvořená v nich.  
   
- Přetečení vyrovnávací paměti v minulosti byly příčinou mnoho bezpečnostními zesíleným zabezpečením. Pokud útočník využívá výhod chybu kódu, který umožňuje vkládání škodlivý kód, který zapíše za hranice vyrovnávací paměti dojde k přetečení vyrovnávací paměti. Díky tomu pak útočníka o zneužití procesu, ve kterém je kód spuštěn přepsáním návratovou adresu funkce způsobí spuštění kódu útočníka. Výsledkem je škodlivý kód, který se spustí libovolný kód se stejnými oprávněními jako napadenému proces.  
+ V minulosti bylo přetečení vyrovnávací paměti příčinou mnoha vysoce ovlivněných zneužití zabezpečení. K přetečení vyrovnávací paměti dojde v případě, že útočník využívá chybu zabezpečení kódu, která umožňuje vkládání škodlivého kódu, který zapisuje za hranice vyrovnávací paměti. To pak umožňuje útočníkovi napadení procesu, ve kterém je kód spuštěn, přepsáním zpáteční adresy funkce, která způsobí spuštění kódu útočníka. Výsledkem je škodlivý kód, který spouští libovolný kód se stejnými oprávněními jako napadený proces.  
   
- Na vysoké úrovni příznak /GS kompilátoru chrání proti některé potenciální přetečení vyrovnávací paměti vložením speciální zabezpečení souboru cookie k ochraně návratovou adresu funkce s místní vyrovnávací paměti řetězců. Po vrácení funkce, soubor cookie zabezpečení je ve srovnání s původní hodnotu. Pokud hodnota změnila, pravděpodobně došlo k přetečení vyrovnávací paměti a proces se ukončí s chybovou podmínku. Zastavení procesu zabrání spouštění potenciálně škodlivého kódu. Zobrazit [/GS (Kontrola zabezpečení vyrovnávací paměti)](/cpp/build/reference/gs-buffer-security-check) další podrobnosti.  
+ Na vysoké úrovni příznak kompilátoru/GS chrání proti některým potenciálním přetečení vyrovnávací paměti vložením speciálního souboru cookie zabezpečení k ochraně zpáteční adresy funkce, která má místní vyrovnávací paměti řetězců. Po návratu funkce se soubor cookie zabezpečení porovná s předchozí hodnotou. Pokud se hodnota změnila, může dojít k přetečení vyrovnávací paměti a proces se zastavil s chybovou podmínkou. Zastavení procesu zabrání spuštění potenciálně škodlivého kódu. Další podrobnosti najdete v tématu [/GS (kontroly zabezpečení vyrovnávací paměti)](/cpp/build/reference/gs-buffer-security-check) .  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] je zkompilován s příznak /GS pro přidání další vrstvy Defense za účelem [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]je zkompilován s příznakem/GS pro přidání další vrstvy obrany do [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
-#### <a name="microsoft-windows-update-enhancements"></a>Vylepšení aktualizace Microsoft Windows  
- [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)] také jsme vylepšili v [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] ke zjednodušení procesu pro stahování a instalaci aktualizací. Tyto změny výrazně zvýšit zabezpečení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zákazníků tím, že pomáhá zajistit, že jejich systémů jsou aktuální, zejména s ohledem na aktualizace zabezpečení.  
+#### <a name="microsoft-windows-update-enhancements"></a>Vylepšení Microsoft web Windows Update  
+ [!INCLUDE[TLA#tla_win_update](../../../includes/tlasharptla-win-update-md.md)]byl také vylepšen [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] pro zjednodušení procesu stahování a instalace aktualizací. Tyto změny významně zvyšují zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zákazníky tím, že pomáhají zajistit aktuálnost jejich systémů, zejména v souvislosti s aktualizacemi zabezpečení.  
   
 <a name="Windows_Vista"></a>   
 ### <a name="windows-vista"></a>Windows Vista  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] uživatelé na [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] bude mít prospěch z vylepšení další zabezpečení operačního systému, včetně "Nejnižších možných oprávnění uživatelského přístupu", kontroly integrity kódu a oprávnění izolace.  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] uživatelé se budou moci vytěžit z dalších vylepšení zabezpečení operačního systému, včetně přístupu uživatelů s minimálními oprávněními, kontroly integrity kódu a izolace oprávnění.  
   
 #### <a name="user-account-control-uac"></a>Řízení uživatelských účtů (UAC)  
- V současné době Windows uživatelé mají tendenci spustit s oprávněními správce, protože řada aplikací vyžaduje pro instalaci nebo spuštění nebo obojí. Schopnost zápis výchozí nastavení aplikace do registru není jedním z příkladů.  
+ V současné době se uživatelé systému Windows spouštějí s oprávněními správce, protože mnoho aplikací vyžaduje tyto požadavky buď k instalaci, nebo k provedení. Jedním z příkladů je možnost psát výchozí nastavení aplikace do registru.  
   
- Pomocí oprávnění správce ve skutečnosti znamená, že aplikace můžete spustit z procesů, které jsou udělena oprávnění správce. Dopad na zabezpečení tohoto je, že škodlivý kód, který napadení procesu spuštěného s oprávněními správce automaticky zdědí tato oprávnění, včetně přístupu ke důležité systémové prostředky.  
+ Spuštění s oprávněními správce ve skutečnosti znamená, že aplikace se spouštějí z procesů, kterým jsou udělena oprávnění správce. Dopad tohoto zabezpečení je takový, že veškerý škodlivý kód, který by napadený procesem spuštěným s oprávněními správce, automaticky zdědí tato oprávnění, včetně přístupu k důležitým systémovým prostředkům.  
   
- Jedním ze způsobů pro ochranu před toto ohrožení zabezpečení je ke spouštění aplikací s minimem oprávnění, které jsou požadovány. To se označuje jako Princip nejnižších oprávnění a je základní funkce [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] operačního systému. Tato funkce se nazývá řízení uživatelských účtů (UAC) a používá [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] nástroje Řízení uživatelských účtů klíčů dvěma způsoby:  
+ Jedním ze způsobů, jak chránit před touto bezpečnostní hrozbou, je spouštění aplikací s minimálním množstvím oprávnění, která jsou vyžadována. Tato funkce se označuje jako princip nejnižších oprávnění a je základní funkcí [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] operačního systému. Tato funkce se nazývá řízení uživatelských účtů (UAC) a [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] nástroj řízení uživatelských účtů používá dva klíčové způsoby:  
   
-- Spouštět většinu aplikací s oprávněními nástroje Řízení uživatelských účtů ve výchozím nastavení, i v případě, že uživatel je správcem; jenom aplikace, které je třeba oprávnění správce se spustí s oprávněními správce. Spustit s oprávněními správce, aplikace musí být explicitně označeny buď jejich aplikace manifestu nebo jako položka v zásadách zabezpečení.  
+- Spuštění většiny aplikací s oprávněními nástroje řízení uživatelských účtů ve výchozím nastavení, i když je uživatel správcem; s oprávněními správce budou spuštěny pouze aplikace, které potřebují oprávnění správce. Aby bylo možné spustit s oprávněními správce, aplikace musí být explicitně označeny buď v manifestu aplikace, nebo jako položka v zásadách zabezpečení.  
   
-- Pro zajištění kompatibility řešení, jako je virtualizace. Například mnoho aplikací pokusu o zápis do umístění s omezeným přístupem, například C:\Program Files. Pro aplikace spouští v rámci nástroje Řízení uživatelských účtů existuje umístění služby alternativní na uživatele, která nevyžaduje oprávnění správce pro zápis do. Pro aplikace běžící v rámci nástroje Řízení uživatelských účtů nástroje Řízení uživatelských účtů Virtualizuje C:\Program Files tak, že aplikace, kteří myslíte, že se zápis do něj jsou ve skutečnosti zápis do alternativního, umístění jednotlivých uživatelů. Tento druh kompatibility pracovní umožňuje operačnímu systému ke spouštění mnoho aplikací, které nelze spustit dříve v nástroji Řízení uživatelských účtů.  
+- Pro zajištění řešení kompatibility, jako je virtualizace. Mnoho aplikací se třeba pokouší zapisovat do umístění s omezeným přístupem, jako je C:\Program Files. Pro aplikace spuštěné v nástroji Řízení uživatelských účtů existuje alternativní umístění pro jednotlivé uživatele, které pro zápis do nástroje nevyžaduje oprávnění správce. Pro aplikace, které běží v nástroji Řízení uživatelských účtů, Nástroj UAC virtualizuje C:\Program Files, takže aplikace, které jsou zapsány do této služby, jsou ve skutečnosti zapsány do alternativního umístění pro jednotlivé uživatele. Tento druh práce s kompatibilitou umožňuje operačnímu systému spouštět mnoho aplikací, které se dřív nepodařilo spustit v nástroji Řízení uživatelských účtů.  
   
-#### <a name="code-integrity-checks"></a>Kontrola Integrity kódu  
- [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] zahrnuje lepší kontroly integrity kódu zabránit se vloží do systému souborů nebo do jádra v době zatížení nebo spustit škodlivý kód. To jde nad rámec Ochrana systému souborů.  
+#### <a name="code-integrity-checks"></a>Kontroly integrity kódu  
+ [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]zahrnuje hlubší kontroly integrity kódu, které vám pomůžou zabránit vkládání škodlivého kódu do systémových souborů nebo do jádra při zatížení/běhu. To překračuje ochranu systémových souborů.  
   
 <a name="Limited_Rights_Process_for_Browser_Hosted_Applications"></a>   
-### <a name="limited-rights-process-for-browser-hosted-applications"></a>Proces omezená práva pro aplikace hostované prohlížečem  
- Hostované v prohlížeči [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace jsou spouštěny v rámci sandboxu zóny Internet. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Integrace s [!INCLUDE[TLA#tla_ie](../../../includes/tlasharptla-ie-md.md)] rozšiřuje tuto ochranu s dodatečnou podporou.  
+### <a name="limited-rights-process-for-browser-hosted-applications"></a>Proces omezených práv pro aplikace hostované v prohlížeči  
+ Aplikace hostované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] v prohlížeči se spouštějí v karanténě zóny Internet Zone. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]integrace s [!INCLUDE[TLA#tla_ie](../../../includes/tlasharptla-ie-md.md)] nástrojem rozšiřuje tuto ochranu o další podporu.  
   
 #### <a name="internet-explorer-6-service-pack-2-and-internet-explorer-7-for-xp"></a>Internet Explorer 6 Service Pack 2 a Internet Explorer 7 pro XP  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] využívá zabezpečení operačního systému tím, že omezíte oprávnění procesu pro [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] další ochranu. Před hostovaná prohlížečem [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spuštění aplikace, operační systém vytvoří hostitelský proces, který odstraňuje nepotřebná oprávnění z tokenu procesu. Mezi příklady oprávnění, které jsou odebrány patří možnost vypnout počítač uživatele, zatížení ovladače a oprávnění ke čtení pro všechny soubory v počítači.  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]využije zabezpečení operačního systému tím, že omezuje oprávnění [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] procesu pro k další ochraně. Předtím, než se spustí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči, vytvoří operační systém proces hostitele, který odebere nepotřebná oprávnění z tokenu procesu. Mezi příklady odebraných oprávnění patří možnost vypnout počítač uživatele, načíst ovladače a přístup pro čtení ke všem souborům v počítači.  
   
-#### <a name="internet-explorer-7-for-vista"></a>Internet Explorer 7, Vista  
- V [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)], [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace běží v chráněném režimu. Konkrétně [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] spustit s střední úrovni integrity.  
+#### <a name="internet-explorer-7-for-vista"></a>Internet Explorer 7 pro systém Vista  
+ V aplikaci [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)]běží aplikacevchráněnémrežimu.[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Konkrétně spouštějte [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] s integritou na střední úrovni.  
   
-#### <a name="defense-in-depth-layer"></a>Vrstvy v obrany  
- Protože [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] jsou obecně v izolovaném prostoru prostřednictvím Internetu sadu oprávnění zóny, odebírání těchto oprávnění nepoškodí [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] z hlediska kompatibility. Místo toho se vytvoří další úroveň v obrany; Pokud aplikace v izolovaném prostoru je schopen zneužít jinými vrstvami a zneužití procesu, proces bude stále pouze máte omezená oprávnění.  
+#### <a name="defense-in-depth-layer"></a>Obrana – hloubková vrstva  
+ Vzhledem [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] k tomu, že jsou obecně izolovaným prostorem sady oprávnění zóny Internet, odebrání těchto [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] oprávnění neškodí z hlediska kompatibility. Místo toho je vytvořena další vrstva důkladné obrany; Pokud aplikace izolovaného prostoru (sandbox) může zneužít jiné vrstvy a převzít proces, bude mít stále omezená oprávnění.  
   
- Zobrazit [pomocí nejméně privilegovaný uživatelský účet](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29).  
+ Viz [použití účtu uživatele](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29)s nejnižšími oprávněními.  
   
 <a name="Common_Language_Runtime_Security"></a>   
-## <a name="common-language-runtime-security"></a>Zabezpečení služby Common Language Runtime  
- [!INCLUDE[TLA#tla_clr](../../../includes/tlasharptla-clr-md.md)] Nabízí řadu výhod zabezpečení klíče, které zahrnují ověření a ověření, [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]a důležité metody zabezpečení.  
+## <a name="common-language-runtime-security"></a>Zabezpečení společného jazykového modulu runtime  
+ Modul CLR (Common Language Runtime) nabízí řadu výhod zabezpečení klíčů, které zahrnují ověřování a ověřování, zabezpečení přístupu kódu (CAS) a kritickou metodologii zabezpečení.  
   
 <a name="Validation_and_Verification"></a>   
 ### <a name="validation-and-verification"></a>Ověřování a ověřování  
- Pro zajištění izolace sestavení a integritu, [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] používá proces ověření. [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] ověření zajišťuje, že sestavení jsou izolované tak jejich formát souboru Portable Executable (PE) pro adresy, které odkazují mimo sestavení. [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] ověřování také ověří integritu metadat, který je vložený v rámci sestavení.  
+ Pro zajištění izolace a integrity sestavení používá CLR proces ověřování. Ověřování CLR zajišťuje izolaci sestavení tím, že ověřuje jejich formát přenositelného spustitelného souboru (PE) pro adresy, které ukazují mimo sestavení. Ověřování CLR také ověřuje integritu metadat, která jsou vložena do sestavení.  
   
- Zajistit bezpečnost typů pomáhá zabránit běžné problémy se zabezpečením (např. vyrovnávací přetečení) a povolit sandboxing prostřednictvím podproces izolace [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] security používá koncept ověření.  
+ Za účelem zajištění bezpečnosti typů, což umožňuje zabránit běžným problémům se zabezpečením (například přetečení vyrovnávací paměti) a povolit sandboxing prostřednictvím izolovaného procesu, zabezpečení CLR používá koncept ověřování.  
   
- Spravované aplikace jsou zkompilovány do Microsoft Intermediate Language (MSIL). Při spuštění metody ve spravované aplikaci, jeho jazyka MSIL je kompilován do nativního kódu prostřednictvím kompilace za běhu (JIT). Kompilace JIT zahrnuje ověřovací proces, který používá mnoho pravidla zabezpečení a odolnosti, které zajistí, že kód není:  
+ Spravované aplikace jsou kompilovány do jazyka MSIL (Microsoft Intermediate Language). Když jsou spouštěny metody ve spravované aplikaci, je její jazyk MSIL zkompilován do nativního kódu prostřednictvím kompilace JIT (just-in-time). Kompilace JIT zahrnuje proces ověření, který se vztahuje na mnoho pravidel zabezpečení a odolnosti, které zajišťují, že kód:  
   
-- Porušují typ smlouvy  
+- Porušení kontraktů typu  
   
-- Zavést přetečení vyrovnávací paměti  
+- Zavedení přetečení vyrovnávací paměti  
   
-- Nečekaně přístup k paměti.  
+- Přístup k paměti je volně přístupný.  
   
- Spravovaný kód, který není v souladu s pravidly ověřování není povoleno provést, pokud bude považován za důvěryhodný kód.  
+ Spravovaný kód, který není v souladu s pravidly ověřování, není povoleno spustit, pokud se nepovažuje za důvěryhodný kód.  
   
- Výhodou ověřitelný kód je klíče důvod proč [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] založený na rozhraní .NET Framework. V rozsahu, který se používá ověřitelný kód, je výrazně snížili možnost zneužití možných ohrožení zabezpečení.  
+ Výhodou ověřitelného kódu je klíčovým důvodem, proč [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] se sestavení na .NET Framework. V rozsahu, ve kterém se používá ověřitelný kód, se výrazně sníží možnost zneužití možných ohrožení zabezpečení.  
   
 <a name="Code_Access_Security"></a>   
 ### <a name="code-access-security"></a>Zabezpečení přístupu kódu  
- Klientský počítač poskytuje širokou škálu prostředků, že spravovaná aplikace může mít přístup k, včetně systému souborů, registr, tiskové služby, uživatelské rozhraní, reflexe a proměnných prostředí. Spravované aplikace mohli získat přístup ke některý z prostředků v klientském počítači, musí mít oprávnění rozhraní .NET Framework. U oprávnění v [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] je podtřídou třídy <xref:System.Security.CodeAccessPermission>; [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] implementuje jednu podtřídu pro přístup k jednotlivých prostředků, které spravované aplikace.  
+ Klientský počítač zveřejňuje širokou škálu prostředků, ke kterým může mít spravovaná aplikace přístup, včetně systému souborů, registru, tiskových služeb, uživatelského rozhraní, reflexe a proměnných prostředí. Aby mohla spravovaná aplikace přistupovat ke všem prostředkům v klientském počítači, musí mít .NET Framework oprávnění k tomu. Oprávnění v certifikačních autoritách je podtřídou <xref:System.Security.CodeAccessPermission>třídy; CAS implementuje jednu podtřídu pro každý prostředek, ke kterému mají přístup spravované aplikace.  
   
- Sadu oprávnění, která spravované aplikace je [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] po jeho spuštění, provádění se označuje jako sadu oprávnění a je určena legitimací poskytovaný aplikací. Pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací, důkaz, že je k dispozici je umístění nebo oblasti, ve kterém je spuštěných aplikací. [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] identifikuje tyto oblasti:  
+ Sada oprávnění, ke kterým je spravovaná aplikace udělována CAS při spuštění, se označuje jako sada oprávnění a je určena legitimací poskytovanou aplikací. Pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace jsou poskytnuté legitimace umístění nebo zóna, ze kterých se aplikace spouští. CAS identifikuje následující zóny:  
   
-- **Tento počítač**. Aplikace spustí z klientského počítače (plně důvěryhodná).  
+- **Tento počítač**. Aplikace spouštěné z klientského počítače (plně důvěryhodné).  
   
-- **Místní Intranet**. Aplikace spustí z intranetu. (Částečně důvěryhodných).  
+- **Místní intranet**. Aplikace spouštěné z intranetu. (Poněkud důvěryhodné).  
   
-- **Internet**. Aplikace spustí ze sítě Internet. (Nejméně důvěryhodné).  
+- **Internet**. Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
   
-- **Důvěryhodné servery**. Aplikace identifikován jako důvěryhodný uživatel. (Nejméně důvěryhodné).  
+- **Důvěryhodné servery**. Aplikace identifikované uživatelem jako důvěryhodné (Nejméně důvěryhodné).  
   
-- **Nedůvěryhodné weby**. Aplikace identifikovány uživatelem, jako je nedůvěryhodný. (Nedůvěryhodné).  
+- **Nedůvěryhodné lokality**. Aplikace identifikované uživatelem jako nedůvěryhodné. (Nedůvěryhodné).  
   
- Pro každou z těchto oblastí [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] poskytuje sadu předdefinovaných oprávnění, která zahrnuje všechna oprávnění který by odpovídal úroveň vztahu důvěryhodnosti spojené s jednotlivými. Zde jsou některé z nich:  
+ Pro každou z těchto zón poskytuje CAS sadu předdefinovaných oprávnění, která zahrnuje oprávnění, která odpovídají úrovni důvěry přidružené k jednotlivým. Zde jsou některé z nich:  
   
-- **FullTrust**. Pro spuštění z aplikace **tento počítač** zóny. Všechny možné oprávnění jsou udělena.  
+- **FullTrust**. Pro aplikace spouštěné ze zóny **můj počítač** . Všechna možná oprávnění jsou udělena.  
   
-- **LocalIntranet**. Pro spuštění z aplikace **místní Intranet** zóny. Podmnožinu oprávnění jsou udělena a zajistit tak střední přístup k prostředkům, klientský počítač, včetně izolovaného úložiště, neomezený přístup k uživatelskému rozhraní, dialogová okna neomezený souboru, omezené reflexe, omezený přístup k proměnným prostředí. Nejsou k dispozici oprávnění u důležitých prostředků jako registru.  
+- **LocalIntranet**. Pro aplikace spouštěné z **místní** zóny intranetu. K poskytnutí středního přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, neomezeného přístupu k uživatelskému rozhraní, neomezených dialogových oken, omezených reflexe a omezeného přístupu k proměnným prostředí, je udělená podmnožina oprávnění. Nejsou k dispozici oprávnění pro kritické prostředky, jako je registr.  
   
-- **Internet**. Pro spuštění z aplikace **Internet** nebo **Důvěryhodné servery** zóny. Podmnožina oprávnění jsou udělena zadaný omezený přístup k prostředkům, klientský počítač, včetně izolované úložiště souboru otevřete pouze a omezené uživatelského rozhraní. Toto oprávnění nastavena v podstatě izoluje aplikace od klientského počítače.  
+- **Internet**. Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
   
- Označený z aplikace **nedůvěryhodné weby** zóny jsou udělena žádná oprávnění podle [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] vůbec. V důsledku toho sada předdefinovaných oprávnění neexistuje pro ně.  
+ Aplikacím identifikovaným jako nedůvěryhodné **servery** nejsou vůbec udělena oprávnění CAS. V důsledku toho pro ně neexistuje předdefinovaná sada oprávnění.  
   
- Následující obrázek ukazuje vztah mezi zónami, sady oprávnění, oprávnění a prostředky:  
+ Následující obrázek znázorňuje vztah mezi zónami, sadami oprávnění, oprávněními a prostředky:  
   
- ![Diagram zobrazující průběh sady oprávnění certifikační Autority.](./media/wpf-security-strategy-platform-security/code-access-security-permissions-relationship.png)  
+ ![Diagram, který zobrazuje sady oprávnění CAS.](./media/wpf-security-strategy-platform-security/code-access-security-permissions-relationship.png)  
   
- Omezení sandboxu zabezpečení zóně Internet stejnou měrou vztahují na jakýkoli kód, který XBAP, který importuje z knihovny systému, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Tím se zajistí, že každý bit kód je uzamčený, i [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Aby bylo možné provést, bohužel XBAP potřebuje ke spuštění funkce, které vyžadují více oprávnění než ty, které zajišťuje sandboxu zabezpečení zóně Internet.  
+ Omezení izolovaného prostoru zabezpečení zóny Internet Zone platí stejně jako jakýkoli kód, který XBAP importuje ze systémové knihovny, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Tím je zajištěno, že je každý bit kódu uzamčen, dokonce [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]i. Aby bylo možné spustit, aplikace XBAP potřebuje spustit funkci, která vyžaduje více oprávnění než ty, které jsou povoleny v izolovaném prostoru zabezpečení Internetové zóny.  
   
- Vezměte v úvahu aplikace XBAP, který obsahuje následující stránka:  
-  
- [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
- [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
-  
- K provedení této XBAP, základní [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód musí být spuštěn víc funkcí než je k dispozici k volání XBAP, včetně:  
-  
-- Vytváření popisovač okna (HWND) pro vykreslování  
-  
-- Odeslání zprávy  
-  
-- Načítání Tahoma písma  
-  
- Z zabezpečení by katastrofickými pohledu, umožňuje přímý přístup k jakémukoli z těchto operací z aplikace v izolovaném prostoru.  
-  
- Naštěstí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] určeného tuto situaci lze vyřešit tím, že tyto operace provádět s vyššími oprávněními jménem aplikace v izolovaném prostoru. Při všech [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] operace jsou porovnávána s omezenými oprávněními zabezpečení zóně Internet domény aplikace XBAP, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (stejně jako u jiných knihovnách system) je udělena sada oprávnění, která zahrnuje všechna oprávnění je to možné.
-  
- To vyžaduje, aby [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] obdrží zvýšená oprávnění, a brání tato oprávnění se řídí sada oprávnění Internetu zóny host domény aplikace.  
-  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] to provádí pomocí **Assert** metoda oprávnění. Následující kód ukazuje, jak to probíhá.  
+ Zvažte aplikaci XBAP, která obsahuje následující stránku:  
   
  [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
  [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
   
- **Assert** v podstatě brání neomezená oprávnění vyžadované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] z jsou omezené na základě Internetu zóna oprávnění XBAP.  
+ Aby bylo možné spustit tuto funkci XBAP [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] , musí podkladový kód spustit více funkcí, než je k dispozici pro volání funkce XBAP, včetně:  
   
- Z hlediska platformy [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zodpovídá za použití **Assert** správně; kvůli nesprávnému použití **Assert** může povolit škodlivý kód ke zvýšení oprávnění. V důsledku toho je pak potřeba volat pouze **Assert** v případě potřeby, a zajistit, že izolovaného prostoru omezení zůstávají beze změn. Například otevřete náhodných souborů v izolovaném prostoru kód není povoleno, ale je povoleno ji používat. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Umožňuje v izolovaném prostoru aplikacím používat funkce písmo voláním **Assert**a pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] číst soubory, které jsou známé tak, aby obsahovala těchto písmo jménem aplikace v izolovaném prostoru.  
+- Vytvoření popisovače okna (HWND) pro vykreslování  
+  
+- Odesílání zpráv  
+  
+- Načítání písma Tahoma  
+  
+ Z hlediska zabezpečení by byl umožněn přímý přístup k libovolné z těchto operací z aplikace v izolovaném prostoru (sandbox).  
+  
+ Naštěstí v [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] rámci této situace umožňuje, aby tyto operace byly spouštěny se zvýšenými oprávněními jménem aplikace v izolovaném prostoru (sandbox). I když [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] jsou všechny operace zkontrolovány proti omezeným oprávněním zabezpečení zóny Internet pro doménu aplikace XBAP ( [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] stejně jako ostatní systémové knihovny), je udělena sada oprávnění, která zahrnuje všechna možná oprávnění.
+  
+ To vyžaduje, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aby aplikace přijímala zvýšená oprávnění a zabránila tomu, aby se tato oprávnění řídila sadou oprávnění zóny Internet v doméně hostitelské aplikace.  
+  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]provede to pomocí metody **Assert** oprávnění. Následující kód ukazuje, jak se to stane.  
+  
+ [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
+ [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
+  
+ **Kontrolní** výraz v podstatě zabraňuje neomezeným oprávněním [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] , která vyžaduje omezení přístupu k internetové zóně pro XBAP.  
+  
+ Z perspektivy [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] platformy zodpovídá za správné použití **výrazu Assert** ; nesprávné použití **výrazu** by mohlo povolit zvýšení oprávnění pomocí škodlivého kódu. V důsledku toho je důležité volat pouze **Assert** v případě potřeby a zajistit, aby omezení izolovaného prostoru zůstala nedotčená. Například kód v izolovaném prostoru (sandbox) nesmí otevírat náhodné soubory, ale může používat písma. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]umožňuje aplikacím v izolovaném prostoru (sandbox) používat funkce písma voláním [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Assert a pro čtení souborů známých jako tato písma jménem aplikace v izolovaném prostoru (sandbox).  
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] je komplexní nasazení technologie, která je součástí rozhraní .NET Framework a integruje se s [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (viz [ClickOnce zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment) podrobné informace). Samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace můžete nasadit s využitím [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)], zatímco aplikace hostované prohlížečem musí být nasazeny s [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)].  
+ ClickOnce je komplexní technologie nasazení, která je součástí .NET Framework a integruje se s [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (podrobné informace naleznete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace lze nasadit pomocí technologie ClickOnce, zatímco aplikace hostované v prohlížeči musí být nasazeny s ClickOnce.  
   
- Aplikace nasazené pomocí [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] jsou uvedeny další vrstvu zabezpečení [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]; v podstatě [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] nasazené aplikace požádat o oprávnění, která potřebují. Jsou poskytovány pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze kterého je aplikace nasazená. Snížením sadu oprávnění pouze na ty, které jsou potřeba, i když jsou menší než uvedené poskytnuté aplikací zóny spouštěcí oprávnění nastavit, počet prostředků, že aplikace má přístup k je omezená na úplném. V důsledku toho pokud aplikace je zachycena, se snižuje potenciál pro poškození do klientského počítače.  
+ Aplikacím nasazeným pomocí technologie ClickOnce je poskytnuta další vrstva zabezpečení než zabezpečení přístupu kódu (CAS); v podstatě aplikace nasazené ClickOnce požaduje oprávnění, která potřebují. Jsou jim udělena pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze které je aplikace nasazena. Omezením sady oprávnění jenom na ty, které jsou potřeba, i když jsou menší než ta, kterou poskytuje sada oprávnění pro spouštěcí zónu. počet prostředků, ke kterým má aplikace přístup, se zkracuje na minimum. V důsledku toho, pokud dojde k narušení aplikace, je možné omezit poškození klientského počítače.  
   
 <a name="Security_Critical_Methodology"></a>   
-### <a name="security-critical-methodology"></a>Metodologie kritické pro zabezpečení  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Kód, který používá oprávnění a povolit sandboxu zóny Internetu pro aplikace XBAP, který musí uchovávat na nejvyšší možné stupeň auditování zabezpečení a řízení. Pro usnadnění tohoto požadavku, rozhraní .NET Framework poskytuje novou podporu pro správu kód, který má oprávnění. Konkrétně [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] umožňuje identifikovat kód, který má oprávnění a označte ji pomocí <xref:System.Security.SecurityCriticalAttribute>; jakýkoli kód není označené <xref:System.Security.SecurityCriticalAttribute> stane *transparentní* použití této metody. Naopak spravovaného kódu, který není označen atributem <xref:System.Security.SecurityCriticalAttribute> je zabráněno zvyšování oprávnění.  
+### <a name="security-critical-methodology"></a>Metodika kritické pro zabezpečení  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Kód, který používá oprávnění k povolení izolovaného prostoru Internet Zone pro aplikace XBAP, je nutné uchovávat v nejvyšší možné úrovni auditu zabezpečení a řízení. Pro usnadnění tohoto požadavku .NET Framework poskytuje novou podporu pro správu kódu, který zvyšuje oprávnění. Konkrétně modul CLR umožňuje identifikovat kód, který zvyšuje oprávnění a označí ho <xref:System.Security.SecurityCriticalAttribute>pomocí; jakýkoliv kód, který není <xref:System.Security.SecurityCriticalAttribute> označen jako, je *transparentní* pomocí této metodologie. Naopak spravovaný kód, který není označen příznakem, <xref:System.Security.SecurityCriticalAttribute> brání v oprávnění ke zvýšení oprávnění.  
   
- Kritické pro zabezpečení metodologie umožňuje uspořádání [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód, který má oprávnění do *kritické pro zabezpečení jádra*, pokračujte zbývajícími je transparentní. Izolace kritické pro zabezpečení kódu umožňuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] inženýrský tým zaměřit další bezpečnostní analýzy a zdrojový ovládací prvek na kritické pro zabezpečení jádra nenabízející postupy standard zabezpečení (viz [strategie zabezpečení WPF – Engineering zabezpečení](wpf-security-strategy-security-engineering.md)).  
+ Metodologie pro kritické zabezpečení umožňuje organizaci [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kódu, která zvyšuje oprávnění na *jádro kritické pro zabezpečení*a zbytek je transparentní. Izolování kódu, který je kritický pro zabezpečení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] , umožňuje technickému týmu soustředit se na další analýzu zabezpečení a správu zdrojů v jádru kritickém pro zabezpečení nad rámec standardních postupů zabezpečení (viz [strategie zabezpečení WPF – zabezpečení Inženýr](wpf-security-strategy-security-engineering.md)).  
   
- Všimněte si, že rozhraní .NET Framework umožňuje důvěryhodného kódu k rozšíření izolovaného prostoru zóny Internetu XBAP, který umožňuje vývojářům umožňuje psát spravovaná sestavení, které jsou označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasadili pro uživatele globální mezipaměti sestavení (GAC). Označení sestavení APTCA je operace vysoce citlivé a zabezpečení, protože povoluje libovolný kód k volání tohoto sestavení, včetně škodlivý kód z Internetu. Extrémně opatrní a osvědčené postupy a musí být při tomto postupu uživatele musíte se rozhodnout důvěřovat softwaru v pořadí, aby byl nainstalován.  
+ Všimněte si, že .NET Framework povoluje, aby důvěryhodný kód rozšířil rozhraní karantény Internet Zone pro XBAP tím, že umožňuje vývojářům <xref:System.Security.AllowPartiallyTrustedCallersAttribute> psát spravovaná sestavení označená pomocí (APTCA) a nasazená do globální mezipaměti sestavení (GAC) uživatele. Označení sestavení pomocí APTCA je vysoce citlivá operace zabezpečení, protože umožňuje jakémukoli volání tohoto sestavení, včetně škodlivého kódu z Internetu. Při tomto postupu se musí použít extrémní opatrnost a osvědčené postupy. aby se uživatelé museli nainstalovat, musí si vybrat, aby tento software důvěřoval.  
   
 <a name="Microsoft_Internet_Explorer_Security"></a>   
 ## <a name="microsoft-internet-explorer-security"></a>Microsoft Internet Explorer Security  
- Nad rámec omezení problémy se zabezpečením a zjednodušení konfigurace zabezpečení [!INCLUDE[TLA#tla_ie6sp2](../../../includes/tlasharptla-ie6sp2-md.md)] obsahuje několik funkcí, které zvyšují zabezpečení pro uživatele zlepšení zabezpečení [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]. Síla tyto funkce se pokusí povolit uživatelům větší kontrolu nad komfortem při jejich procházení.  
+ Kromě snížení zabezpečení a zjednodušení konfigurace [!INCLUDE[TLA#tla_ie6sp2](../../../includes/tlasharptla-ie6sp2-md.md)] zabezpečení obsahuje několik funkcí, které zlepšují zabezpečení, které zvyšují zabezpečení pro [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]uživatele. Pohyb těchto funkcí se snaží uživatelům větší kontrolu nad jejich možností procházení.  
   
- Před verzí [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)], uživatele může být v souladu s některou z následujících akcí:  
+ [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]Před nástrojem by se uživatelům mohlo vztahovat některý z následujících kroků:  
   
-- Náhodné zobrazována místní okna.  
+- Náhodně otevíraná okna.  
   
-- Přesměrování skript matoucí.  
+- Matoucí přesměrování skriptu.  
   
-- Mnoho dialogy zabezpečení v některé webové servery.  
+- Řada dialogů zabezpečení na některých webech.  
   
- V některých případech se nedůvěryhodné weby mistranslation: přimět uživatele pomocí zfalšování instalace [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] nebo opakovaně zobrazující instalaci Microsoft ActiveX dialogovému oknu, i když je zrušena uživatelem. Pomocí následujících postupů, je možné, že mají byla nalákaní velký počet uživatelů, rozhodování o nízký, z kterých vzniklo s instalací aplikace spyware.  
+ V některých případech by nedůvěryhodné weby se pokusily uživatele přimět k falšování instalace [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] nebo opakovanému zobrazení dialogového okna pro instalaci Microsoft ActiveX, i když ho uživatel mohl zrušit. Pomocí těchto postupů je možné, že velký počet uživatelů byl napadený, což vede k nedostatečným rozhodováním, což vedlo k instalaci spywarových aplikací.  
   
- [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] obsahuje několik funkcí pro zmírnění těchto typů problémů, které se točí kolem koncepce zahájení uživatelem. [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] rozpozná, pokud uživatel klikne na odkaz nebo stránky prvek před akci, která se označuje jako *zahájení uživatelem*a zpracovává jinak než při podobné akce místo toho aktivaci pomocí skriptu na stránce. Jako příklad [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] zahrnuje **blokování automaticky otevíraných oken** , který detekuje, když uživatel klikne na tlačítko před stránce vytvoření automaticky otevírané okno. Díky tomu [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] povolit automaticky otevíraná okna nejvíce neškodného zároveň je možné zabránit automaticky otevíraná okna, které uživatelé požádat o ani vhodné. Blokované automaticky otevíraná okna jsou zachycena v rámci nové **informační panel**, který umožňuje uživateli ručně přepsat blok a zobrazit automaticky otevírané okno.  
+ [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]obsahuje několik funkcí pro zmírnění těchto typů problémů, které se týkají konceptu spuštění uživatele. [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]zjistí, že uživatel klikl na odkaz nebo element stránky před akcí, která se označuje jako *iniciace uživatele*, a považuje ji za odlišnou od toho, že skript na stránce vyvolal podobnou akci. Jako příklad [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] zahrnuje **blokování automaticky otevíraných oken** , které detekuje, když uživatel klikne na tlačítko před stránkou, která vytváří automaticky otevírané okno. Díky [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] tomu je možné povolit většinu neškodného překryvných oken a zabránit tak automaticky otevíraná okna, která uživatelé nepožadují ani nechtějí. Blokovaná automaticky otevíraná okna jsou zachycena v novém **informačním panelu**, který uživateli umožňuje ručně přepsat blok a zobrazit automaticky otevírané okno.  
   
- Stejnou logiku zahájení uživatelem platí také pro **otevřít**/**Uložit** výzvy zabezpečení. Dialogová okna instalace ActiveX jsou vždy zachycena v informačním panelu pokud představují upgradu z dřív nainstalovaného ovládacího prvku. Tyto míry se dá uživatelům a bezpečnější více řízené uživatelské prostředí vzhledem k tomu, aby byla chráněná před weby, které obtěžování je nainstalovat nežádoucí software nebo škodlivý software.  
+ Pro **otevření**/**Uložit** výzvy zabezpečení se použije také stejná logika pro zahájení uživatelem. Dialogová okna pro instalaci ActiveX jsou v informačním pruhu vždy zachycena, pokud nepředstavuje upgrade z dříve nainstalovaného ovládacího prvku. Tyto míry se kombinují, aby uživatelům poskytovaly bezpečnější a lépe řízené uživatelské prostředí, protože jsou chráněné před lokalitami, které jim umožňují nainstalovat nežádoucí nebo škodlivý software.  
   
- Tyto funkce také zákazníkům, kteří používají ochranu [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] a přejděte do webové stránky, které zajistí, aby stáhněte a nainstalujte [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací. Zejména je to proto [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] nabízí lepší výkon, která organizacím snižuje riziko pro uživatele k instalaci škodlivých aktivit nebo devious aplikací bez ohledu na to, jakou technologii byl použit k sestavení, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Přidá do tyto ochrany s použitím [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] k usnadnění stahování své aplikace přes Internet. Protože [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] spustit v sandboxu Internet zóny zabezpečení, může být spuštěn bez problémů. Na druhou stranu, samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace vyžadují úplný vztah důvěryhodnosti k provedení. V případě těchto aplikací [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] se zobrazí dialogové okno zabezpečení během procesu spuštění oznámit využívání vaší aplikace dodatečné požadavky na zabezpečení. Však to musí být uživatelem iniciované, se také řídí logiky iniciované uživatelem a může být zrušen.  
+ Tyto funkce také chrání zákazníky, kteří [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] používají k procházení webů, které jim umožňují stahovat a instalovat [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace. Konkrétně je to proto [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] , že nabízí lepší uživatelské prostředí, které uživatelům omezuje možnost instalovat škodlivé nebo Devious aplikace bez ohledu na to, jaká technologie se použila k jejich sestavování, včetně. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]Přidá se k těmto ochranám pomocí ClickOnce, aby se usnadnilo stahování svých aplikací přes Internet. Vzhledem [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] k tomu, že se spustí v izolovaném prostoru zabezpečení zóny Internetu, můžou se snadno spustit. Na druhé straně samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro tyto aplikace ClickOnce zobrazí dialogové okno zabezpečení během procesu spuštění, aby upozornilo na použití dalších požadavků na zabezpečení aplikace. To ale musí být iniciované uživatelem, bude se řídit také logikou iniciované uživatelem a můžete ho zrušit.  
   
- [!INCLUDE[TLA2#tla_ie7](../../../includes/tla2sharptla-ie7-md.md)] zahrnuje a přesahuje možnosti zabezpečení [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] jako součást dlouhodobě zaměřuje na zabezpečení.  
+ [!INCLUDE[TLA2#tla_ie7](../../../includes/tla2sharptla-ie7-md.md)]zahrnuje a rozšiřuje možnosti [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] zabezpečení v rámci trvalé snahy o zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
 

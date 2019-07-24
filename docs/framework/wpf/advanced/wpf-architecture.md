@@ -16,21 +16,21 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: c214cb39bf51dad2aafe4ec0c9050f355db5b2c5
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 987e48f163d35d27f6736464d7497451cca82c0c
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331679"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400859"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje jejich interakci. Také podrobně popisuje některé z možností provedených architekty [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
 
 <a name="System_Object"></a>   
 ## <a name="systemobject"></a>System.Object  
- Primární [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] programovací model je zveřejněn prostřednictvím spravovaného kódu. Brzy ve fázi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] návrhu existovalo několik informací o tom, kde by měl být řádek vykreslen mezi spravovanými komponentami systému a nespravovanými systémy. [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] Poskytuje celou řadu funkcí, které usnadňují vývoj a robustní zvýšení produktivity (včetně správy paměti, zpracování chyb, společného systému typů atd.), ale docházejí na náklady.  
+ Primární [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] programovací model je zveřejněn prostřednictvím spravovaného kódu. Brzy ve fázi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] návrhu existovalo několik informací o tom, kde by měl být řádek vykreslen mezi spravovanými komponentami systému a nespravovanými systémy. CLR nabízí celou řadu funkcí, které zvýší produktivitu a robustní vývoj (včetně správy paměti, zpracování chyb, společného systému typů atd.), ale dostanou za cenu.  
   
- Hlavní součásti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroje jsou znázorněny na následujícím obrázku. Červené části diagramu (PresentationFramework, PresentationCore a milcore) jsou hlavní části kódu v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Z těchto, pouze jedna je nespravovanou komponentou – milcore. Milcore je zapsána v nespravovaném kódu, aby bylo [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]možné povolit úzkou integraci s. Veškeré zobrazení v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroji se provádí [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] prostřednictvím modulu, což umožňuje efektivní vykreslování hardwaru a softwaru. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]také je vyžadována přesnější kontrola nad pamětí a prováděním. Modul kompozice v milcore je extrémně citlivý na výkon a vyžaduje mnoho výhod [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] pro získání výkonu.  
+ Hlavní součásti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroje jsou znázorněny na následujícím obrázku. Červené části diagramu (PresentationFramework, PresentationCore a milcore) jsou hlavní části kódu v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Z těchto, pouze jedna je nespravovanou komponentou – milcore. Milcore je zapsána v nespravovaném kódu, aby bylo [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]možné povolit úzkou integraci s. Veškeré zobrazení v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroji se provádí [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] prostřednictvím modulu, což umožňuje efektivní vykreslování hardwaru a softwaru. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]také je vyžadována přesnější kontrola nad pamětí a prováděním. Modul kompozice v milcore je extrémně citlivý na výkon a vyžaduje mnoho výhod CLR pro získání výkonu.  
   
  ![Pozice WPF v rámci .NET Framework.](./media/wpf-architect1.PNG "wpf_architect1")  
   
@@ -44,13 +44,13 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Během fáze [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]návrhu nástroje byl cíl přesunut do jediného podprocesu provádění, ale nejedná se o nevlákenný model "spřažené". Spřažení vlákna se stane, když komponenta používá identitu vykonávajícího vlákna k uložení určitého typu stavu. Nejběžnějším formulářem je použití úložiště thread local Store (TLS) k uložení stavu. Spřažení vlákna vyžaduje, aby jednotlivé logické vlákno provádění bylo vlastněné pouze jedním fyzickým vláknem v operačním systému, což může být náročné na paměť. V tomto konci byl model vláken WPF udržován v synchronizaci s existujícím modelem vláken User32 s jedním vláknovým spuštěním s spřažením vlákna. Hlavním důvodem pro tuto spolupráci byla interoperabilita – systémy [!INCLUDE[TLA2#tla_ole2.0](../../../../includes/tla2sharptla-ole2-0-md.md)], jako je, schránka a Internet Explorer, vyžadují spuštění s jedním vláknem (STA).  
   
- Vzhledem k tom, že máte objekty s vlákny STA, potřebujete způsob, jak komunikovat mezi vlákny a ověřit, zda jste ve správném vlákně. V této části je role dispečera. Dispečer je základní systém odesílání zpráv s více frontami s více prioritami. Příklady zpráv zahrnují nezpracovaná vstupní oznámení (přesunutí myši), funkce architektury (rozložení) nebo uživatelské příkazy (spustit tuto metodu). Odvozením z <xref:System.Windows.Threading.DispatcherObject>je [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vytvoření objektu, který má chování sta, a při vytvoření bude mít ukazatel na dispečera.  
+ Vzhledem k tom, že máte objekty s vlákny STA, potřebujete způsob, jak komunikovat mezi vlákny a ověřit, zda jste ve správném vlákně. V této části je role dispečera. Dispečer je základní systém odesílání zpráv s více frontami s více prioritami. Příklady zpráv zahrnují nezpracovaná vstupní oznámení (přesunutí myši), funkce architektury (rozložení) nebo uživatelské příkazy (spustit tuto metodu). Odvozením z <xref:System.Windows.Threading.DispatcherObject>, vytvoříte objekt CLR, který má chování sta, a bude předána ukazateli na dispečera v okamžiku vytvoření.  
   
 <a name="System_Windows_DependencyObject"></a>   
 ## <a name="systemwindowsdependencyobject"></a>System.Windows.DependencyObject  
  Jedna z primárních filozofiemi architektury používaných v sestavách [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] byla preference pro vlastnosti přes metody nebo události. Vlastnosti jsou deklarativní a umožňují snadněji zadat záměr namísto akce. To také podporuje modelem řízený nebo datově řízený systém pro zobrazení obsahu uživatelského rozhraní. Tento filozofie měl zamýšlený účinek vytvoření dalších vlastností, které můžete vytvořit s cílem zajistit lepší kontrolu nad chováním aplikace.  
   
- Aby bylo možné mít více systémů řízených vlastnostmi, bohatší systém vlastností, než kolik je [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] potřeba. Jednoduchým příkladem této bohatosti je oznámení o změně. Aby bylo možné povolit oboustrannou vazbu, potřebujete obě strany vazby, aby podporovaly oznámení o změně. Aby bylo chování vázané na hodnoty vlastností, musíte být upozorněni, když se změní hodnota vlastnosti. Microsoft .NET Framework má rozhraní **INotifyPropertyChange**, které umožňuje objektu publikovat oznámení o změnách, ale je nepovinný.  
+ Aby bylo možné mít více systémů řízených vlastnostmi, bohatší systém vlastností, než který je potřebný pro CLR. Jednoduchým příkladem této bohatosti je oznámení o změně. Aby bylo možné povolit oboustrannou vazbu, potřebujete obě strany vazby, aby podporovaly oznámení o změně. Aby bylo chování vázané na hodnoty vlastností, musíte být upozorněni, když se změní hodnota vlastnosti. Microsoft .NET Framework má rozhraní **INotifyPropertyChange**, které umožňuje objektu publikovat oznámení o změnách, ale je nepovinný.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]poskytuje bohatší systém vlastností odvozený z <xref:System.Windows.DependencyObject> typu. Systém vlastností je skutečně "systém vlastností" závislosti "v tom, že sleduje závislosti mezi výrazy vlastností a automaticky znovu ověřuje hodnoty vlastností při změně závislosti. Například pokud máte vlastnost, která dědí (jako <xref:System.Windows.Controls.Control.FontSize%2A>), systém je automaticky aktualizován, pokud se změní vlastnost u nadřazené položky elementu, který dědí hodnotu.  
   
@@ -120,7 +120,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Jedním z nejzajímavějších funkcí datové vazby v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroji je zavedení šablon dat. Šablony dat umožňují deklarativní určení způsobu vizuálního zobrazení části dat. Místo vytvoření vlastního uživatelského rozhraní, které může být vázáno na data, můžete místo toho problém vyřešit a nechat data určit zobrazení, které bude vytvořeno.  
   
- Stylování je ve skutečnosti odlehčená forma datové vazby. Pomocí stylů můžete navazovat sadu vlastností ze sdílené definice na jednu nebo více instancí elementu. <xref:System.Windows.FrameworkElement.Style%2A> Styly[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] se aplikují na element buď explicitním odkazem (nastavením vlastnosti), nebo implicitně přidružením stylu k typu elementu.  
+ Stylování je ve skutečnosti odlehčená forma datové vazby. Pomocí stylů můžete navazovat sadu vlastností ze sdílené definice na jednu nebo více instancí elementu. Styly se aplikují na element buď explicitním odkazem ( <xref:System.Windows.FrameworkElement.Style%2A> nastavením vlastnosti), nebo implicitně přidružením stylu k typu CLR elementu.  
   
 <a name="System_Windows_Controls_Control"></a>   
 ## <a name="systemwindowscontrolscontrol"></a>System.Windows.Controls.Control  

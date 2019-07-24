@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ComponentResourceKey markup extension [WPF]
 - XAML [WPF], ComponentResourceKey markup extension
 ms.assetid: d6bcdbe6-61b3-40a7-b381-4e02185b5a85
-ms.openlocfilehash: 93735d12426042fd6517c10a55d1a9bd32f906bb
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: b373b33fcc962e49aa220f31e24b1484a0a8cd98
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363057"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401599"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey – rozšíření značek
 Definuje a odkazuje na klíče pro prostředky, které jsou načteny z externích sestavení. Díky tomu může vyhledávání prostředků určovat cílový typ v sestavení, nikoli explicitní slovník prostředků v sestavení nebo třídě.  
@@ -46,7 +46,7 @@ Definuje a odkazuje na klíče pro prostředky, které jsou načteny z externíc
   
 |||  
 |-|-|  
-|`targetTypeName`|Název veřejného [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] typu, který je definován v sestavení prostředků.|  
+|`targetTypeName`|Název veřejného typu modulu CLR (Common Language Runtime), který je definován v sestavení prostředků.|  
 |`targetID`|Klíč pro prostředek Při vyhledání `targetID` prostředků se bude považovat za analogku s [direktivou x:Key –](../../xaml-services/x-key-directive.md) prostředku.|  
   
 ## <a name="remarks"></a>Poznámky  

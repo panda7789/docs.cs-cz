@@ -7,123 +7,123 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-ms.openlocfilehash: 41be2862eef52a3731792096ff198e1aa629f4c0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2eacb0ff49b868f144bf35af4bb64b7d049b30cb
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655550"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401384"
 ---
 # <a name="attached-properties-overview"></a>Přehled připojených vlastností
 
-Připojená vlastnost je definován pomocí XAML koncept. Připojená vlastnost je určena pro použití jako typ globální vlastností, která je nastavitelná při čekání na libovolný objekt. V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], připojené vlastnosti se obvykle definují jako specializovaná forma vlastnost závislosti, která nemá vlastnost konvenční "zabezpečenou obálku".
+Připojená vlastnost je koncept definovaný v jazyce XAML. Připojená vlastnost je určena pro použití jako typ globální vlastnosti, která je nastavena pro libovolný objekt. V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]jsou přidružené vlastnosti obvykle definovány jako specializované formy vlastnosti závislosti, která nemá vlastnost "Obálka".
 
-## Požadované součásti <a name="prerequisites"></a>
+## Požadovaný<a name="prerequisites"></a>
 
-Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](dependency-properties-overview.md). Pokud chcete postupovat podle příkladů v tomto tématu, potřebujete také pochopit XAML a vědět, jak psát aplikace WPF.
+V tomto tématu se předpokládá, že rozumíte vlastnostem závislosti z perspektivy uživatele existujících vlastností závislosti ve [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídách a přečetli jste si [Přehled vlastností závislosti](dependency-properties-overview.md). Chcete-li postupovat podle příkladů v tomto tématu, měli byste také pochopit XAML a vědět, jak psát aplikace WPF.
 
-## Proč používat připojené vlastnosti <a name="attached_properties_usage"></a>
+## Proč použít připojené vlastnosti<a name="attached_properties_usage"></a>
 
-Jediný účel připojené vlastnosti je umožnit různé podřízené prvky, chcete-li určit jedinečné hodnoty pro vlastnost, která je ve skutečnosti definovány v nadřazeném elementu. Konkrétní aplikace tento scénář má informovat nadřazený element jak mají být uvedené v podřízených elementů [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Jedním z příkladů je <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> vlastnost. <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> Vlastnost je vytvořen jako připojené vlastnosti, protože je navržen pro nastavení u elementů, které jsou obsaženy v rámci <xref:System.Windows.Controls.DockPanel>, spíše než na <xref:System.Windows.Controls.DockPanel> samotný. <xref:System.Windows.Controls.DockPanel> Třída definuje statické <xref:System.Windows.DependencyProperty> pole s názvem <xref:System.Windows.Controls.DockPanel.DockProperty>a pak poskytuje <xref:System.Windows.Controls.DockPanel.GetDock%2A> a <xref:System.Windows.Controls.DockPanel.SetDock%2A> metody jako veřejnou přistupující objekty pro připojené vlastnosti.
+Jedním z účel připojených vlastností je povolení různých podřízených prvků pro zadání jedinečných hodnot pro vlastnost, která je ve skutečnosti definována v nadřazeném elementu. Konkrétní aplikace tohoto scénáře mají podřízené prvky, které informují nadřazený prvek, jak mají být prezentovány v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Jedním z <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> příkladů je vlastnost. Vlastnost je vytvořena jako připojená vlastnost <xref:System.Windows.Controls.DockPanel>, protože je určena k nastavení u elementů, které jsou obsaženy v rámci, nikoli <xref:System.Windows.Controls.DockPanel> samotného. <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> <xref:System.Windows.DependencyProperty> <xref:System.Windows.Controls.DockPanel.DockProperty> <xref:System.Windows.Controls.DockPanel.GetDock%2A> Třída definuje statické pole s názvem a pak poskytuje metody a <xref:System.Windows.Controls.DockPanel.SetDock%2A> jako veřejné přístupové objekty pro připojenou vlastnost. <xref:System.Windows.Controls.DockPanel>
 
-## Připojené vlastnosti v XAML <a name="attached_properties_xaml"></a>
+## Připojené vlastnosti v jazyce XAML<a name="attached_properties_xaml"></a>
 
-V XAML, nastavte připojené vlastnosti pomocí syntaxe *AttachedPropertyProvider*. *Vlastnost PropertyName*
+V jazyce XAML jste nastavili připojené vlastnosti pomocí syntaxe *AttachedPropertyProvider*. Vlastnost *PropertyName*
 
-Následuje příklad, jak můžete nastavit <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> v XAML:
+Následuje příklad, jak lze nastavit <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> v jazyce XAML:
 
 [!code-xaml[PropertiesOvwSupport#APBasicUsage](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml#apbasicusage)]
 
-Všimněte si, že využití je poněkud podobně jako statická vlastnost; vždycky odkazovat typ <xref:System.Windows.Controls.DockPanel> , která vlastní a registruje připojená vlastnost, místo odkazování na jakoukoli instanci určená názvem.
+Všimněte si, že použití je poněkud podobné statické vlastnosti; vždy odkazujete na typ <xref:System.Windows.Controls.DockPanel> , který vlastní a registruje připojenou vlastnost, a neodkazování na žádnou instanci určenou názvem.
 
-Protože připojené vlastnosti v XAML je atribut, který můžete nastavit v označení, má pouze operaci set také všechny závažnosti. Nelze získat přímo vlastnost v XAML, i když jsou některé nepřímé mechanismy pro porovnání hodnot, jako jsou triggery ve stylech (podrobnosti najdete v tématu [styly a šablony](../controls/styling-and-templating.md)).
+Vzhledem k tomu, že připojená vlastnost v jazyce XAML je atributem, který jste nastavili v kódu, má jakákoli závažnost pouze operace set. V jazyce XAML nelze přímo získat vlastnost, i když existují některé nepřímé mechanismy pro porovnávání hodnot, jako jsou například triggery v stylech (podrobnosti naleznete v tématu [stylování a šablonování](../controls/styling-and-templating.md)).
 
-### <a name="attached-property-implementation-in-wpf"></a>Připojená vlastnost implementace v subsystému WPF
+### <a name="attached-property-implementation-in-wpf"></a>Implementace připojené vlastnosti v subsystému WPF
 
-V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], většina připojené vlastnosti, které existují v WPF typy, které jsou spojené s prezentací uživatelského rozhraní jsou implementovány jako vlastnosti závislosti. Připojené vlastnosti jsou koncept XAML, zatímco vlastnosti závislosti koncept WPF. Vzhledem k tomu, že jsou vlastnosti WPF připojené vlastnosti závislosti, podporují vlastnost konceptů závislosti, jako jsou metadata vlastnosti a výchozí hodnoty z těchto vlastností metadat.
+V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]systému jsou většina připojených vlastností, které existují na typech WPF, které se vztahují k prezentaci uživatelského rozhraní, implementována jako vlastnosti závislosti. Připojené vlastnosti jsou koncept XAML, zatímco vlastnosti závislosti jsou koncept WPF. Vzhledem k tomu, že připojené vlastnosti WPF jsou vlastnosti závislosti, podporují koncepty vlastností závislosti, jako jsou metadata vlastností, a výchozí hodnoty z metadat těchto vlastností.
 
-## Jak připojených vlastností jsou používány vlastnícího typu <a name="howused"></a>
+## Jak se používají připojené vlastnosti pomocí vlastnícího typu<a name="howused"></a>
 
-I když jsou připojené vlastnosti nastavitelná při čekání na libovolný objekt, který nemusí znamenat automaticky, že nastavení vlastnosti vytvoří hmatatelnými výsledek nebo že hodnota se nikdy nepoužil jiným objektem. Obecně platí připojené vlastnosti jsou určeny tak, aby objekty z široké škály hierarchií tříd je to možné nebo logické vztahy můžete každou sestavu běžných informací o typ, který definuje připojená vlastnost. Typ, který definuje připojená vlastnost obvykle následuje jednu z těchto modelů:
+I když jsou připojené vlastnosti nastavované u libovolného objektu, který není automaticky znamenat, že nastavení vlastnosti vytvoří hmotný výsledek nebo že hodnota bude někdy použita jiným objektem. Obecně jsou určené vlastnosti určeny tak, aby objekty přicházející z široké škály možných hierarchií tříd nebo logických vztahů mohly každou sestavu tvořit společné informace o typu, který definuje připojenou vlastnost. Typ definující připojenou vlastnost obvykle následuje jeden z těchto modelů:
 
-- Typ, který definuje připojená vlastnost je navržený tak, aby může být nadřazený element prvky, které nastaví hodnoty pro připojené vlastnosti. Typ pak iteruje jeho podřízených objektů prostřednictvím proti některé stromovou strukturu objekt interní logiku, získá hodnoty a funguje na tyto hodnoty způsobem.
+- Typ, který definuje připojenou vlastnost, je navržen tak, aby mohl být nadřazeným prvkem prvků, které nastaví hodnoty pro připojenou vlastnost. Typ poté provede iteraci svých podřízených objektů prostřednictvím interní logiky proti některé struktuře stromové struktury objektů, získá hodnoty a bude nějakým způsobem pracovat na těchto hodnotách.
 
-- Typ, který definuje připojená vlastnost se použije jako podřízený element pro širokou škálu možných nadřazené elementy a modely obsahu.
+- Typ, který definuje připojenou vlastnost, bude použit jako podřízený prvek pro celou řadu možných nadřazených prvků a modelů obsahu.
 
-- Představuje typ, který definuje vlastnost připojené služby. Další typy nastavení hodnot pro připojené vlastnosti. Potom když elementu, který se nastavit vlastnost je vyhodnocen v kontextu služby, hodnoty připojené vlastnosti jsou získávány prostřednictvím interní logiku, třídy služby.
+- Typ definující připojenou vlastnost představuje službu. Další typy nastavují hodnoty pro připojenou vlastnost. Poté, když je prvek, který nastavuje vlastnost, vyhodnocen v kontextu služby, jsou hodnoty připojených vlastností získány prostřednictvím interní logiky třídy služby.
 
-### <a name="an-example-of-a-parent-defined-attached-property"></a>Příklad definován nadřazený připojené vlastnosti
+### <a name="an-example-of-a-parent-defined-attached-property"></a>Příklad vlastnosti připojené k nadřazenému elementu
 
-Nejobvyklejším scénářem, kde WPF definuje připojené vlastnosti je, pokud nadřazený element podporuje kolekci elementů podřízené a také implementuje chování kde specifika chování označené jednotlivě pro každý podřízený prvek.
+Nejběžnějším scénářem, kde WPF definuje připojenou vlastnost, je, když nadřazený prvek podporuje kolekci podřízených elementů a také implementuje chování, kde jsou konkrétního chování hlášeny jednotlivě pro každý podřízený element.
 
-<xref:System.Windows.Controls.DockPanel> definuje <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> přidružená vlastnost, a <xref:System.Windows.Controls.DockPanel> má kódu na úrovni třídy jako součást logiky jeho vykreslení (konkrétně <xref:System.Windows.Controls.DockPanel.MeasureOverride%2A> a <xref:System.Windows.Controls.DockPanel.ArrangeOverride%2A>). A <xref:System.Windows.Controls.DockPanel> instance bude vždy zkontrolujte, zda některý z jeho bezprostředně podřízené prvky nastavit hodnotu pro <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>. Pokud ano, tyto hodnoty budou vstup pro logiku vykreslování u této konkrétní podřízený element. Vnořené <xref:System.Windows.Controls.DockPanel> jednotlivých instancí zpracovávat své vlastní kolekce bezprostřední podřízený element, ale toto chování je specifický pro implementaci tím, jak <xref:System.Windows.Controls.DockPanel> procesy <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> hodnoty. Je možné teoreticky připojili vlastností, které ovlivňují prvky nad rámec bezprostřední nadřazený objekt. Pokud <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> připojená vlastnost nastavená na element, který nemá žádné <xref:System.Windows.Controls.DockPanel> nadřazený element k provedení akce, žádné chyby nebo výjimky je vyvolána. To jednoduše znamená, že byla nastavena hodnota globální vlastnosti, ale nemá žádný aktuální <xref:System.Windows.Controls.DockPanel> nadřazeného objektu, který může používat informace.
+<xref:System.Windows.Controls.DockPanel>definuje připojenou vlastnost a <xref:System.Windows.Controls.DockPanel> má kód na úrovni třídy jako součást logiky <xref:System.Windows.Controls.DockPanel.MeasureOverride%2A> vykreslování (konkrétně a <xref:System.Windows.Controls.DockPanel.ArrangeOverride%2A>). <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> Instance vždy zkontroluje, zda některý z jeho bezprostředních podřízených prvků nastavil hodnotu pro <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>. <xref:System.Windows.Controls.DockPanel> V takovém případě se tyto hodnoty stanou vstupem pro logiku vykreslování použitou pro tento konkrétní podřízený element. Vnořené <xref:System.Windows.Controls.DockPanel> instance každý z nich zachází s vlastními přímými podřízenými kolekcemi prvků, ale toto <xref:System.Windows.Controls.DockPanel> chování <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> je specifické pro zpracování hodnot. Je teoreticky možné mít připojené vlastnosti, které ovlivňují prvky přesahující bezprostřední nadřazený prvek. Pokud je <xref:System.Windows.Controls.DockPanel> připojená vlastnost nastavena u prvku, který nemá žádný nadřazený element, který by na něj pracoval, není vyvolána žádná chyba ani výjimka. <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> To jednoduše znamená, že byla nastavena globální hodnota vlastnosti, ale nemá žádnou aktuální <xref:System.Windows.Controls.DockPanel> nadřazenou položku, která by mohla tyto informace spotřebovat.
 
-## Připojené vlastnosti v kódu <a name="attached_properties_code"></a>
+## Připojené vlastnosti v kódu<a name="attached_properties_code"></a>
 
-Připojené vlastnosti v objektu WPF nemají typické [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] metody "zabezpečenou obálku" pro snadné get/set přístup. Důvodem je, že připojená vlastnost není nutně součástí [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů pro instance, kde je vlastnost nastavena. Procesor XAML musí být však můžete nastavit tyto hodnoty, když analyzovaný XAML. Pro podporu využití efektivní připojená vlastnost, typ vlastníka připojené vlastnosti musí implementovat vyhrazené přístupové metody ve formě **Get_PropertyName_** a **Set_PropertyName_**. Tyto vyhrazené přístupové metody jsou také užitečná pro získání nebo nastavení připojené vlastnosti v kódu. Připojená vlastnost z hlediska kódu je podobný pomocné pole, který má přístupové objekty metoda místo přistupující objekty vlastnosti a že zálohovací položka může existovat na libovolný objekt a nikoli museli výslovně definované.
+Připojené vlastnosti v subsystému WPF nemají typické metody "obálky" CLR pro snadný přístup get/set. Je to proto, že připojená vlastnost není nutně součástí oboru názvů CLR pro instance, kde je nastavena vlastnost. Procesor XAML však musí být schopný nastavit tyto hodnoty při analýze XAML. Pro podporu efektivního použití připojené vlastnosti musí typ vlastníka připojené vlastnosti implementovat metody vyhrazeného přístupového objektu ve formě **Get_PropertyName_** a **Set_PropertyName_** . Tyto vyhrazené přístupové metody jsou také užitečné k získání nebo nastavení připojené vlastnosti v kódu. Z hlediska kódu je připojená vlastnost podobná zálohovacímu poli, které má přístupové objekty metod namísto přistupujících objektů vlastností, a toto pole pro zálohování může existovat na jakémkoli objektu, a nikoli proto, aby bylo nutné je konkrétně definovat.
 
-Následující příklad ukazuje, jak můžete nastavit připojené vlastnosti v kódu. V tomto příkladu `myCheckBox` je instance <xref:System.Windows.Controls.CheckBox> třídy.
+Následující příklad ukazuje, jak lze nastavit připojenou vlastnost v kódu. V tomto příkladu `myCheckBox` je instancí <xref:System.Windows.Controls.CheckBox> třídy.
 
 [!code-csharp[PropertiesOvwSupport#APCode](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#apcode)]
 [!code-vb[PropertiesOvwSupport#APCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#apcode)]
 
-Podobně jako XAML malá a velká, pokud `myCheckBox` Loader již byl přidán jako podřízený prvek `myDockPanel` třetí řádek kódu na čtvrtém řádku kódu by vyvolat výjimku, ale hodnota vlastnosti nemusí pracovat <xref:System.Windows.Controls.DockPanel> nadřazené. proto by Neprovádět žádnou akci. Pouze <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> hodnota nastavená na podřízený element v kombinaci s přítomnost <xref:System.Windows.Controls.DockPanel> nadřazeného elementu způsobí efektivní chování ve vygenerované aplikaci. (V takovém případě vám může nastavte přidruženou vlastnost a potom připojit ke stromu. Nebo může připojit ke stromu potom nastavte přidruženou vlastnost. Buď akce pořadí poskytuje stejný výsledek).
+Podobně jako v případě jazyka XAML, `myCheckBox` Pokud ještě nebyl přidán jako podřízený `myDockPanel` element třetí řádek kódu, čtvrtý řádek kódu nevyvolává výjimku, ale hodnota vlastnosti nekomunikuje s <xref:System.Windows.Controls.DockPanel> nadřazeným objektem, a proto neprovede nic. Pouze hodnota nastavená u podřízeného prvku v kombinaci s přítomností <xref:System.Windows.Controls.DockPanel> nadřazeného elementu způsobí efektivní chování ve vykreslené aplikaci. <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> (V tomto případě můžete nastavit připojenou vlastnost a pak se připojit ke stromu. Nebo se můžete připojit ke stromu a potom nastavit připojenou vlastnost. Stejný výsledek poskytuje buď pořadí akcí.)
 
-## Připojená vlastnost metadat <a name="attached_properties_metadata"></a>
+## Připojená metadata vlastnosti<a name="attached_properties_metadata"></a>
 
-Při registraci vlastnost, <xref:System.Windows.FrameworkPropertyMetadata> je nastaveno k určení vlastností vlastnosti, jako je například určuje, zda vlastnost ovlivňuje vykreslování, měření a tak dále. Metadata pro připojené vlastnosti se obvykle nijak neliší od na vlastnost závislosti. Pokud je v přepsání připojená vlastnost metadat, tato hodnota se změní výchozí hodnotu implicitní připojené vlastnosti na instancích přepsáním třídy zadat výchozí hodnotu. Konkrétně se výchozí hodnota bude nahlášena, pokud některé zpracování dotazů pro hodnotu vlastnosti připojené vlastnosti prostřednictvím `Get` metodu přistupujícího objektu pro tuto vlastnost zadání instance třídy, kde zadáte metadata a hodnotu pro tento připojená vlastnost byla jinak není nastavený.
+Při registraci vlastnosti <xref:System.Windows.FrameworkPropertyMetadata> je nastavena k určení vlastností vlastnosti, například zda vlastnost ovlivňuje vykreslování, měření a tak dále. Metadata pro připojenou vlastnost se obecně neliší od vlastnosti závislosti. Pokud zadáte výchozí hodnotu v přepsání pro připojená metadata vlastnosti, tato hodnota se změní na výchozí hodnotu implicitní připojená vlastnost v instancích přepisované třídy. Konkrétně je výchozí hodnota hlášena, pokud se některé procesy dotazují na hodnotu připojené vlastnosti prostřednictvím `Get` přístupového objektu metody pro danou vlastnost, zadáním instance třídy, kde jste zadali metadata, a hodnoty pro připojená vlastnost nebyla nastavena jinak.
 
-Pokud chcete povolit dědičnost hodnoty vlastnosti na vlastnost, používejte připojené vlastnosti spíše než závislost nepřipojené vlastnosti. Podrobnosti najdete v tématu [dědičnost hodnoty vlastnosti](property-value-inheritance.md).
+Pokud chcete povolit dědění hodnoty vlastností u vlastnosti, měli byste použít připojené vlastnosti místo nepřipojených vlastností závislosti. Podrobnosti najdete v tématu [Dědičnost hodnot vlastností](property-value-inheritance.md).
 
-## Vlastní připojené vlastnosti <a name="custom"></a>
+## Vlastní připojené vlastnosti<a name="custom"></a>
 
-### Kdy vytvořit připojené vlastnosti <a name="create_attached_properties"></a>
+### Kdy vytvořit připojenou vlastnost<a name="create_attached_properties"></a>
 
-Když je důvodem pro vlastnost nastavení mechanismus k dispozici pro jiné než definující třídy třídy můžete například vytvořit připojené vlastnosti. Nejběžnější scénář je rozložení. Příkladem existující vlastnosti rozložení jsou <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Panel.ZIndex%2A?displayProperty=nameWithType>, a <xref:System.Windows.Controls.Canvas.Top%2A?displayProperty=nameWithType>. Scénáře povolené zde je, že prvky, které existuje jako podřízené prvky k řízení rozložení prvky jsou schopni express požadavkům na rozložení pro jejich nadřazených prvků rozložení jednotlivě, každé nastavení hodnoty vlastnosti, které nadřazené definované jako připojené Vlastnost.
+Můžete vytvořit připojenou vlastnost, pokud existuje důvod, že má být mechanismus nastavení vlastnosti dostupný pro jiné třídy než definující třídu. Nejběžnější scénář pro toto je rozložení. Příklady existujících vlastností rozložení jsou <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Panel.ZIndex%2A?displayProperty=nameWithType>a <xref:System.Windows.Controls.Canvas.Top%2A?displayProperty=nameWithType>. Scénář je zde povolený, protože prvky, které existují jako podřízené prvky pro prvky pro řízení rozložení, mohou vyjádřit požadavky na rozložení na své nadřazené prvky rozložení jednotlivě, přičemž každý nastaví hodnotu vlastnosti, kterou nadřazený prvek definoval jako připojený. majetek.
 
-Jiné scénáře použití připojené vlastnosti je, pokud vaše třída reprezentuje službu a chcete, aby třídy bude schopná integrovat službu více transparentně.
+Dalším scénářem použití připojené vlastnosti je, když třída reprezentuje službu a chcete, aby třídy byly schopné integrovat službu transparentně.
 
-Ještě další možností je získat podporu Návrhář WPF Visual Studio, jako například **vlastnosti** okno úpravy. Další informace najdete v tématu [Přehled vytváření ovládacího prvku](../controls/control-authoring-overview.md).
+Další možností je získat podporu návrháře WPF v aplikaci Visual Studio, jako je například úpravy okna **vlastností** . Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).
 
-Jak jsme zmínili, byste měli zaregistrovat jako připojené vlastnosti Pokud budete chtít použít dědičnost hodnoty vlastnosti.
+Jak už bylo uvedeno dříve, měli byste se zaregistrovat jako připojenou vlastnost, pokud chcete použít dědičnost hodnot vlastností.
 
-### Postup vytvoření připojené vlastnosti <a name="how_do_i_create_attached_properties"></a>
+### Vytvoření připojené vlastnosti<a name="how_do_i_create_attached_properties"></a>
 
-Pokud vaše třída definuje připojená vlastnost výhradně pro použití jiných typů, pak není nutné odvodit z třídy <xref:System.Windows.DependencyObject>. Ale musíte odvodit z <xref:System.Windows.DependencyObject> Pokud budete postupovat podle celkové model WPF s vaší připojená vlastnost také být vlastnost závislosti.
+Pokud vaše třída definuje připojenou vlastnost výhradně pro použití v jiných typech, pak třída nemusí odvozovat z <xref:System.Windows.DependencyObject>. Ale musíte odvozovat z <xref:System.Windows.DependencyObject> , pokud budete postupovat podle celkového modelu WPF, který má přiřazenou vlastnost, ale také vlastnost závislosti.
 
-Připojená vlastnost definovat jako vlastnost závislosti deklarací `public static readonly` pole typu <xref:System.Windows.DependencyProperty>. Toto pole se definují pomocí návratová hodnota <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metody. Název pole musí odpovídat názvu připojené vlastnosti, připojeným řetězcem `Property`, postupujte podle zavedené WPF vzor pojmenování identifikační pole a vlastnosti, které představují. Zprostředkovatel připojené vlastnosti musí poskytnout také statické **Get_PropertyName_** a **Set_PropertyName_** metody jako přístupové objekty pro připojené vlastnosti; Pokud tak neučiníte to povede vlastnost systém se nemůže použít připojené vlastnosti.
+Definujte připojenou vlastnost jako vlastnost závislosti deklarováním `public static readonly` pole typu. <xref:System.Windows.DependencyProperty> Toto pole definujete pomocí návratové hodnoty <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metody. Název pole musí odpovídat názvu připojené vlastnosti připojenému k řetězci `Property`, aby bylo možné postupovat podle zavedeného vzoru WPF pojmenování identifikujících polí a vlastností, které představují. Připojený zprostředkovatel vlastností musí také poskytovat statické metody **Get_PropertyName_** a **Set_PropertyName_** jako přístupové objekty pro připojenou vlastnost; Pokud se to nepovede, výsledkem bude, že systém vlastností nemůže použít vaši připojenou vlastnost.
 
 > [!NOTE]
-> Pokud vynecháte připojené vlastnosti přistupující objekt get, datové vazby na vlastnost nebude fungovat v návrhové nástroje, jako je Visual Studio a Expression Blend.
+> Vynecháte-li přistupující objekt get připojené vlastnosti, datová vazba u vlastnosti nebude fungovat v nástrojích pro návrh, jako je například Visual Studio a Blend Expression Blend.
 
-#### <a name="the-get-accessor"></a>Přístupový objekt Get
+#### <a name="the-get-accessor"></a>Přístupový objekt get
 
-Podpis pro **Get_PropertyName_** přístupový objekt musí být:
+Podpis přístupového objektu **Get_PropertyName_** musí být:
 
 `public static object GetPropertyName(object target)`
 
-- `target` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Například <xref:System.Windows.Controls.DockPanel.GetDock%2A?displayProperty=nameWithType> metoda typy parametrů jako <xref:System.Windows.UIElement>, protože připojená vlastnost je určena pouze nastavení na <xref:System.Windows.UIElement> instancí.
+- `target` Objekt může být zadán jako konkrétnější typ v implementaci. Například <xref:System.Windows.Controls.DockPanel.GetDock%2A?displayProperty=nameWithType> metoda typu <xref:System.Windows.UIElement>parametru, protože připojená vlastnost je <xref:System.Windows.UIElement> určena pouze pro instance.
 
-- Návratová hodnota se dá nastavit jako konkrétnější typ ve vaší implementaci. Například <xref:System.Windows.Controls.DockPanel.GetDock%2A> metoda typů, se jako <xref:System.Windows.Controls.Dock>, protože hodnotu lze nastavit pouze na tento výčet.
+- Návratová hodnota může být v implementaci zadána jako konkrétnější typ. Například <xref:System.Windows.Controls.DockPanel.GetDock%2A> metoda je typu <xref:System.Windows.Controls.Dock>, protože hodnota může být nastavena pouze na tento výčet.
 
-#### <a name="the-set-accessor"></a>Přístupový objekt Set
+#### <a name="the-set-accessor"></a>Přístupový objekt set
 
-Podpis pro **Set_PropertyName_** přístupový objekt musí být:
+Podpis přístupového objektu **Set_PropertyName_** musí být:
 
 `public static void SetPropertyName(object target, object value)`
 
-- `target` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Například <xref:System.Windows.Controls.DockPanel.SetDock%2A> metoda typů, se jako <xref:System.Windows.UIElement>, protože připojená vlastnost je určena pouze nastavení na <xref:System.Windows.UIElement> instancí.
+- `target` Objekt může být zadán jako konkrétnější typ v implementaci. Například <xref:System.Windows.Controls.DockPanel.SetDock%2A> metoda je typu <xref:System.Windows.UIElement>, protože připojená vlastnost je <xref:System.Windows.UIElement> určena pouze pro instance.
 
-- `value` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Například <xref:System.Windows.Controls.DockPanel.SetDock%2A> metoda typů, se jako <xref:System.Windows.Controls.Dock>, protože hodnotu lze nastavit pouze na tento výčet. Mějte na paměti, že hodnota pro tuto metodu je vstup pocházející z XAML zavaděč, pokud se setká s vaší připojená vlastnost využití připojené vlastnosti ve značce. Tento vstup je hodnota zadaná jako hodnota atributu XAML ve značkách. Proto musí být typ převodu, serializátor hodnoty nebo podpora rozšíření značek pro typ, který použijete, tak, aby příslušný typ lze vytvořit z hodnoty atributu (což v konečném důsledku je právě řetězec).
+- `value` Objekt může být zadán jako konkrétnější typ v implementaci. Například <xref:System.Windows.Controls.DockPanel.SetDock%2A> metoda je typu <xref:System.Windows.Controls.Dock>, protože hodnota může být nastavena pouze na tento výčet. Pamatujte, že hodnota pro tuto metodu je vstup pocházející z zavaděče XAML, když narazí na připojenou vlastnost v použití přidružené vlastnosti v kódu. Tento vstup je hodnota zadaná jako hodnota atributu XAML v kódu. Proto pro typ, který používáte, musí být podporován převod typu, serializátor hodnoty nebo rozšíření značek, aby příslušný typ mohl být vytvořen z hodnoty atributu (což je nakonec pouze řetězec).
 
-Následující příklad ukazuje registraci vlastnost závislosti (pomocí <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metoda), stejně jako **Get_PropertyName_** a **Set_PropertyName_** přistupující objekty. V tomto příkladu je název přidružené vlastnosti `IsBubbleSource`. Proto musí mít název přístupové objekty `GetIsBubbleSource` a `SetIsBubbleSource`.
+Následující příklad ukazuje registraci vlastnosti závislosti (pomocí <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metody) a také přístupové objekty **Get_PropertyName_** a **Set_PropertyName_** . V tomto příkladu je `IsBubbleSource`název připojené vlastnosti. Proto musí být přistupující objekty pojmenovány `GetIsBubbleSource` a `SetIsBubbleSource`.
 
 [!code-csharp[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerattachedbubbler)]
 [!code-vb[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler)]
 
-#### <a name="attached-property-attributes"></a>Atributy připojené vlastnosti
+#### <a name="attached-property-attributes"></a>Atributy připojených vlastností
 
-WPF definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] , které jsou určeny k poskytnutí informací o přidružené vlastnosti reflexe procesy a Typičtí uživatelé reflexe a vlastnost informace, jako je návrháře. Vzhledem k tomu, že připojené vlastnosti typu neomezený obor, návrháři potřebovat způsob, jak abyste se vyhnuli náročný globálním seznamem všech připojených vlastností, které jsou definovány v implementaci určitou technologii, která používá XAML. [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] Této WPF definuje pro připojené vlastnosti lze použít k určení oboru v případech, kdy daný připojené vlastnosti mají být zobrazeny v okně Vlastnosti. Zvažte také použití těchto atributů pro vlastní připojené vlastnosti. Účel a syntaxi [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] je popsaný na odpovídající odkaz stránky:
+WPF definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] , které mají poskytnout informace o připojených vlastnostech pro procesy reflexe a typickým uživatelům informací o reflexi a vlastnostech, jako jsou například návrháři. Vzhledem k tomu, že připojené vlastnosti mají typ neomezeného rozsahu, návrháři potřebují způsob, jak vyhnout zahlcení uživatelů globálním seznamem všech připojených vlastností, které jsou definovány v konkrétní implementaci technologie využívající XAML. Rozhraní [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] WPF definované pro připojené vlastnosti lze použít k určení rozsahu situací, kdy by daná připojená vlastnost měla být zobrazena v okně Vlastnosti. Můžete zvážit použití těchto atributů také pro vlastní připojené vlastnosti. Účel a syntaxe [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] je popsána na příslušných referenčních stránkách:
 
 - <xref:System.Windows.AttachedPropertyBrowsableAttribute>
 
@@ -133,13 +133,13 @@ WPF definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../incl
 
 - <xref:System.Windows.AttachedPropertyBrowsableWhenAttributePresentAttribute>
 
-## Další informace o přidružené vlastnosti <a name="more"></a>
+## Další informace o připojených vlastnostech<a name="more"></a>
 
 - Další informace o vytvoření připojené vlastnosti najdete v tématu [registrace připojené vlastnosti](how-to-register-an-attached-property.md).
 
-- Další pokročilé scénáře použití pro vlastnosti závislosti a připojených vlastností, naleznete v tématu [vlastní vlastnosti závislosti](custom-dependency-properties.md).
+- Pokročilejší scénáře použití vlastností závislosti a připojených vlastností najdete v tématu [vlastnosti vlastních závislostí](custom-dependency-properties.md).
 
-- Můžete také registrovat vlastnost jako připojené vlastnosti a jako vlastnost závislosti, ale stále pak vystavit implementace "zabezpečenou obálku". V takovém případě vlastnost lze nastavit buď na tento element nebo na libovolný element prostřednictvím XAML připojené vlastnosti syntaxe. Je například vlastnost s odpovídající scénáře pro použití, standard a připojené <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>.
+- Vlastnost můžete také zaregistrovat jako připojenou vlastnost a jako vlastnost závislosti, ale pak pořád vystavovat implementace "obálku". V tomto případě lze vlastnost nastavit buď na daném prvku, nebo na jakémkoli prvku prostřednictvím syntaxe připojené vlastnosti XAML. Příkladem vlastnosti s vhodným scénářem pro standardní i připojené použití je <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>.
 
 ## <a name="see-also"></a>Viz také:
 

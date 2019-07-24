@@ -5,71 +5,71 @@ helpviewer_keywords:
 - binding data [WPF], performance
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
-ms.openlocfilehash: ac7ca815bedf180c8a680840f585d08f7018d6ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 25c0906e9f23948476732b10b2c5fb10fe4eb55f
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773110"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401452"
 ---
 # <a name="optimizing-performance-data-binding"></a>Optimalizace výkonu: Datová vazba
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]datové vazby poskytují jednoduchý a konzistentní způsob, jak aplikace prezentovat a interagovat s daty. Prvky mohou být vázány na data z nejrůznějších zdrojů dat ve formě objektů CLR a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].  
   
- Toto téma obsahuje doporučení ohledně výkonu pro datové vazby.  
+ Toto téma poskytuje doporučení týkající se výkonu datových vazeb.  
 
 <a name="HowDataBindingReferencesAreResolved"></a>   
-## <a name="how-data-binding-references-are-resolved"></a>Jak vyřešit odkazy vazby dat  
- Před diskuze o datové vazbě problémy s výkonem, je vhodné prozkoumat jak [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] modul vazby překládá odkazy na objekty pro vazbu.  
+## <a name="how-data-binding-references-are-resolved"></a>Způsob řešení odkazů na datové vazby  
+ Než proberete problémy s výkonem datových vazeb, je vhodné prozkoumat, jak [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] modul vazby dat řeší odkazy na objekty pro vazbu.  
   
- Zdroj [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] datová vazba může být kterýkoli [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu. Můžete vytvořit vazbu na vlastnosti, dílčí vlastnosti nebo indexerů z [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu. Vazební odkazy se přeloží pomocí buď odraz rozhraní Microsoft .NET Framework nebo <xref:System.ComponentModel.ICustomTypeDescriptor>. Tady jsou tři metody pro vyřešení odkazy na objekty pro vazbu.  
+ Zdrojem [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] datové vazby může být libovolný objekt CLR. Můžete vytvořit vazby k vlastnostem, dílčím vlastnostem nebo indexerům objektu CLR. Odkazy na vazby jsou vyřešeny buď pomocí reflexe .NET Framework, <xref:System.ComponentModel.ICustomTypeDescriptor>nebo. Tady jsou tři metody pro překládání odkazů na objekty pro vazbu.  
   
- První metoda, která využívá reflexe. V takovém případě <xref:System.Reflection.PropertyInfo> objektu se používá ke zjišťování atributy vlastnosti a poskytuje přístup k vlastnosti metadat. Při použití <xref:System.ComponentModel.ICustomTypeDescriptor> rozhraní, modul vazby dat použije toto rozhraní pro přístup k hodnoty vlastností. <xref:System.ComponentModel.ICustomTypeDescriptor> Rozhraní je zvláště užitečná v případech, kde objekt nemá statickou sadu vlastností.  
+ První metoda zahrnuje použití reflexe. V tomto případě <xref:System.Reflection.PropertyInfo> se objekt používá ke zjištění atributů vlastnosti a poskytuje přístup k metadatům vlastností. Při použití <xref:System.ComponentModel.ICustomTypeDescriptor> rozhraní používá modul vazby dat toto rozhraní pro přístup k hodnotám vlastností. <xref:System.ComponentModel.ICustomTypeDescriptor> Rozhraní je zvláště užitečné v případech, kde objekt nemá statickou sadu vlastností.  
   
- Oznámení změn vlastností lze zadat buď implementací <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní nebo pomocí přidružené k oznámení o změnách <xref:System.ComponentModel.TypeDescriptor>. Upřednostňované strategie implementace oznámení změn vlastností je však použít <xref:System.ComponentModel.INotifyPropertyChanged>.  
+ Oznámení o změnách vlastností lze zadat implementací <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní nebo pomocí oznámení změn přidružených <xref:System.ComponentModel.TypeDescriptor>k. Upřednostňovaná strategie pro implementaci oznámení o změně vlastností je ale použití <xref:System.ComponentModel.INotifyPropertyChanged>.  
   
- Pokud je zdrojový objekt [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektů a vlastností zdroje je [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] modul vazby musí nejprve získat pomocí reflexe ve zdrojovém objektu <xref:System.ComponentModel.TypeDescriptor>a potom zadejte dotaz pro <xref:System.ComponentModel.PropertyDescriptor>. Tahle posloupnost reflexe operace je potenciálně velmi časově náročné z hlediska výkonu.  
+ Pokud je zdrojový objekt objekt CLR a vlastnost source je vlastnost CLR, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] musí modul vazby dat nejprve použít reflexi na zdrojovém objektu <xref:System.ComponentModel.TypeDescriptor>, aby získal <xref:System.ComponentModel.PropertyDescriptor>a pak dotaz na. Tato sekvence operací reflexe je potenciálně velmi časově náročná z hlediska výkonu.  
   
- Druhá metoda k vyřešení odkazů na objekty zahrnuje [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] zdrojový objekt, který implementuje <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a vlastnosti zdroje, který je [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost. V tomto případě modul vazby dat používá reflexi přímo na typ zdroje a získá požadovanou vlastnost. Toto není stále optimální způsob, ale stojí méně v požadavky sady než první způsob práce.  
+ Druhá metoda pro překlad odkazů na objekty zahrnuje zdrojový objekt CLR, který implementuje <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a vlastnost zdroje, která je vlastností CLR. V takovém případě modul vazby dat používá reflexi přímo na zdrojovém typu a získá požadovanou vlastnost. Nejedná se o optimální metodu, ale náklady na pracovní sadu, která je nižší než první metoda, bude levnější.  
   
- Třetí metoda k vyřešení odkazů na objekty zahrnuje zdrojový objekt, který je <xref:System.Windows.DependencyObject> a vlastnosti zdroje, který je <xref:System.Windows.DependencyProperty>. V takovém případě modul vazby dat není nutné používat reflexi. Místo toho modul vlastnost a modul vazby dat společně přeložit odkaz na vlastnost nezávisle na sobě. Toto je optimální metodu pro překlad odkazy na objekty pro vytváření datových vazeb.  
+ Třetí metoda pro překlad odkazů na objekty zahrnuje zdrojový objekt, který je <xref:System.Windows.DependencyObject> a zdrojovou vlastnost, která <xref:System.Windows.DependencyProperty>je. V takovém případě nemusí modul vazby dat používat reflexi. Místo toho modul vlastností a modul vazby dat společně vyřeší odkaz na vlastnost nezávisle. Toto je optimální metoda pro překládání odkazů na objekty používané pro datovou vazbu.  
   
- Následující tabulka porovnává rychlost vytváření datových vazeb <xref:System.Windows.Controls.TextBlock.Text%2A> vlastnost tisíc <xref:System.Windows.Controls.TextBlock> prvky pomocí těchto tří metod.  
+ Následující tabulka porovnává rychlost vázání <xref:System.Windows.Controls.TextBlock.Text%2A> dat vlastností 1000 <xref:System.Windows.Controls.TextBlock> prvků pomocí těchto tří metod.  
   
-|**Vytvoření vazby vlastnosti Text v objektech TextBlock**|**Vytvoření vazby. čas (ms)**|**Doba vykreslování – obsahuje vazbu (ms)**|  
+|**Vytvoření vazby vlastnosti text pro TextBlock**|**Čas vazby (MS)**|**Čas vykreslování – zahrnuje vazbu (MS)**|  
 |--------------------------------------------------|-----------------------------|--------------------------------------------------|  
-|Na vlastnost [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu|115|314|  
-|Na vlastnost [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt, který implementuje <xref:System.ComponentModel.INotifyPropertyChanged>|115|305|  
-|K <xref:System.Windows.DependencyProperty> z <xref:System.Windows.DependencyObject>.|90|263|  
+|Na vlastnost objektu CLR|115|314|  
+|Do vlastnosti objektu CLR, který implementuje<xref:System.ComponentModel.INotifyPropertyChanged>|115|305|  
+|K a <xref:System.Windows.DependencyProperty> <xref:System.Windows.DependencyObject>.|90|263|  
   
 <a name="Binding_to_Large_CLR_Objects"></a>   
-## <a name="binding-to-large-clr-objects"></a>Vytvoření vazby na objekty Large CLR  
- Se dopad výkonu, pokud vaše data svázat jediného [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu s tisíci vlastnosti. Minimalizujete tohoto dopadu vydělením jeden objekt do několika [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty se méně vlastností. V tabulce jsou uvedeny vazby a vykreslování časů pro vytváření datových vazeb do jediné velké [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt oproti více menší objektů.  
+## <a name="binding-to-large-clr-objects"></a>Vazba na velké objekty CLR  
+ Existuje značný dopad na výkon při vázání dat na jeden objekt CLR s tisíci vlastností. Tento dopad můžete minimalizovat tak, že jeden objekt vydělíte na více objektů CLR s menším počtem vlastností. Tabulka ukazuje dobu vazby a vykreslování pro datovou vazbu na jeden velký objekt CLR a více menších objektů.  
   
-|**Datové vazby 1000 TextBlock – objekty**|**Vytvoření vazby. čas (ms)**|**Doba vykreslování – obsahuje vazbu (ms)**|  
+|**Datové vazby 1000 TextBlock objekty**|**Čas vazby (MS)**|**Čas vykreslování – zahrnuje vazbu (MS)**|  
 |---------------------------------------------|-----------------------------|--------------------------------------------------|  
-|K [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt s vlastnostmi 1000|950|1200|  
-|Až 1000 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty s jednou vlastností|115|314|  
+|K objektu CLR s vlastností 1000|950|1200|  
+|Na 1000 objektů CLR s jednou vlastností|115|314|  
   
 <a name="Binding_to_an_ItemsSource"></a>   
-## <a name="binding-to-an-itemssource"></a>Vytvoření vazby vlastnost ItemsSource.  
- Představte si třeba situaci, ve které máte [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] <xref:System.Collections.Generic.List%601> objekt, který obsahuje seznam zaměstnanců, které chcete zobrazit v <xref:System.Windows.Controls.ListBox>. K vytvoření vztahu mezi těmito dvěma objekty, by vazby seznam zaměstnanců <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost <xref:System.Windows.Controls.ListBox>. Nicméně Předpokládejme, že máte nového zaměstnance propojení vaší skupiny. Můžete uvažovat, aby bylo možné vložit tohoto nového uživatele do vaší mez <xref:System.Windows.Controls.ListBox> hodnoty, bude jednoduše přidat tohoto uživatele do seznamu zaměstnance a očekávat tuto změnu Chcete-li rozpoznán modulem vazby dat automaticky. Tento předpoklad by prokázat false; ve skutečnosti, změny se neprojeví v <xref:System.Windows.Controls.ListBox> automaticky. Je to proto, [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] <xref:System.Collections.Generic.List%601> objekt nevyvolává automaticky změnit kolekci událostí. Pokud chcete získat <xref:System.Windows.Controls.ListBox> ke sbírání změny, bude muset znovu vytvořit seznam zaměstnanců a připojí ho k <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost <xref:System.Windows.Controls.ListBox>. Když toto řešení funguje, představuje velký výkon vliv. Pokaždé, když znovu přiřadíte <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> z <xref:System.Windows.Controls.ListBox> nový objekt, <xref:System.Windows.Controls.ListBox> nejprve vyvolá okamžitě jeho předchozí položky a znovu vygeneruje jeho celý seznam. Zvětšená dopad na výkon, pokud vaše <xref:System.Windows.Controls.ListBox> mapuje na komplexní <xref:System.Windows.DataTemplate>.  
+## <a name="binding-to-an-itemssource"></a>Vazba na ItemsSource  
+ Vezměte v úvahu scénář, ve kterém máte objekt <xref:System.Collections.Generic.List%601> CLR, který obsahuje seznam zaměstnanců, které chcete zobrazit <xref:System.Windows.Controls.ListBox>v. Chcete-li vytvořit korespondenci mezi těmito dvěma objekty, můžete vytvořit propojení seznamu zaměstnanců s <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastností. <xref:System.Windows.Controls.ListBox> Předpokládejme však, že máte nového zaměstnance, který se připojuje ke skupině. Možná si myslíte, že pokud chcete tuto novou osobu do svých vázaných <xref:System.Windows.Controls.ListBox> hodnot vložit, stačí přidat tuto osobu do seznamu zaměstnanců a očekávat tuto změnu, aby ji modul datových vazeb automaticky rozpoznal. Tento předpoklad by prokáže false; ve skutečnosti se tato změna neprojeví <xref:System.Windows.Controls.ListBox> automaticky. Důvodem je to, že <xref:System.Collections.Generic.List%601> objekt CLR nevyvolává automaticky změněné události kolekce. Aby bylo možné získat <xref:System.Windows.Controls.ListBox> změny, je nutné znovu vytvořit seznam zaměstnanců a znovu ho připojit <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> k vlastnosti <xref:System.Windows.Controls.ListBox>. I když toto řešení funguje, přináší značný dopad na výkon. Pokaždé, když znovu přiřadíte <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> <xref:System.Windows.Controls.ListBox> objekt k novému objektu <xref:System.Windows.Controls.ListBox> , první vyvolá předchozí položky a znovu vygeneruje celý seznam. Dopad na výkon je zvětšený, pokud <xref:System.Windows.Controls.ListBox> vaše mapy na komplexní <xref:System.Windows.DataTemplate>.  
   
- Velmi efektivní řešení tohoto problému je, aby seznam vašich zaměstnanců <xref:System.Collections.ObjectModel.ObservableCollection%601>. <xref:System.Collections.ObjectModel.ObservableCollection%601> Oznámení o změně, která může přijímat modul vazby dat, vyvolá objekt. Událost přidá nebo odebere položky ze <xref:System.Windows.Controls.ItemsControl> bez nutnosti znovu vygenerovat úplný seznam.  
+ Velice efektivním řešením tohoto problému je vytvořit seznam <xref:System.Collections.ObjectModel.ObservableCollection%601>zaměstnanců. <xref:System.Collections.ObjectModel.ObservableCollection%601> Objekt vyvolá oznámení o změně, které může modul datových vazeb přijmout. Událost přidá nebo odebere položku z <xref:System.Windows.Controls.ItemsControl> , aniž by bylo nutné znovu vygenerovat celý seznam.  
   
- V tabulce níže ukazuje čas potřebný k aktualizaci <xref:System.Windows.Controls.ListBox> (pomocí uživatelského rozhraní virtualizace vypnutý) při přidání jedné položky. Číslo v prvním řádku představuje uplynulý čas při [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] <xref:System.Collections.Generic.List%601> je objekt vázán na <xref:System.Windows.Controls.ListBox> elementu <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>. Číslo ve druhém řádku představuje uplynulý čas při <xref:System.Collections.ObjectModel.ObservableCollection%601> je vázán <xref:System.Windows.Controls.ListBox> elementu <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>. Poznámka: pomocí úspory spoustu času <xref:System.Collections.ObjectModel.ObservableCollection%601> strategie datové vazby.  
+ Následující tabulka ukazuje dobu potřebnou k aktualizaci <xref:System.Windows.Controls.ListBox> (při vypnutí virtualizace uživatelského rozhraní), když se přidá jedna položka. Číslo v prvním řádku představuje uplynulý čas, kdy je objekt CLR <xref:System.Collections.Generic.List%601> svázán s <xref:System.Windows.Controls.ListBox> prvkem <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>. Číslo ve druhém řádku představuje uplynulý čas, kdy <xref:System.Collections.ObjectModel.ObservableCollection%601> je svázána <xref:System.Windows.Controls.ListBox> s prvkem <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>. Všimněte si výrazné úspory času pomocí <xref:System.Collections.ObjectModel.ObservableCollection%601> strategie vázání dat.  
   
-|**Datové vazby vlastnost ItemsSource.**|**Aktualizovat dobu 1 položek (ms)**|  
+|**Vázání dat na ItemsSource**|**Aktualizovat čas pro 1 položku (MS)**|  
 |--------------------------------------|---------------------------------------|  
-|K [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] <xref:System.Collections.Generic.List%601> objektu|1656|  
-|Do <xref:System.Collections.ObjectModel.ObservableCollection%601>|20|  
+|K objektu CLR <xref:System.Collections.Generic.List%601>|1656|  
+|Do<xref:System.Collections.ObjectModel.ObservableCollection%601>|20|  
   
 <a name="Binding_IList_to_ItemsControl_not_IEnumerable"></a>   
-## <a name="bind-ilist-to-itemscontrol-not-ienumerable"></a>Svázat IList ItemsControl není typu IEnumerable  
- Pokud máte možnost volby mezi vazby <xref:System.Collections.Generic.IList%601> nebo <xref:System.Collections.IEnumerable> do <xref:System.Windows.Controls.ItemsControl> objektu, zvolte <xref:System.Collections.Generic.IList%601> objektu. Vazby <xref:System.Collections.IEnumerable> do <xref:System.Windows.Controls.ItemsControl> vynutí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoření obálku <xref:System.Collections.Generic.IList%601> objekt, což znamená, že výkon má vliv zbytečnou režii druhého objektu.  
+## <a name="bind-ilist-to-itemscontrol-not-ienumerable"></a>Vazba IList na ItemsControl, které není IEnumerable  
+ Pokud máte možnost volby mezi vazbou <xref:System.Collections.Generic.IList%601> <xref:System.Collections.IEnumerable> a nebo k <xref:System.Windows.Controls.ItemsControl> objektu, vyberte <xref:System.Collections.Generic.IList%601> objekt. Vazba <xref:System.Collections.IEnumerable> <xref:System.Collections.Generic.IList%601> na síly pro[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoření objektu obálky, což znamená, že váš výkon je ovlivněn zbytečnými nároky na druhý objekt. <xref:System.Windows.Controls.ItemsControl>  
   
 <a name="Do_not_Convert_CLR_objects_to_Xml_Just_For_Data_Binding"></a>   
-## <a name="do-not-convert-clr-objects-to-xml-just-for-data-binding"></a>Jak ne CLR převést objekty XML jenom pro datové vazby.  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Umožňuje vám data svázat [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahu; však vazba dat na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsah je pomalejší než datové vazby k [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty. Nelze převést [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt dat do formátu XML, pokud jediným účelem je určený pro vytváření datových vazeb.  
+## <a name="do-not-convert-clr-objects-to-xml-just-for-data-binding"></a>Neprovádějte převod objektů CLR do XML pouze pro datovou vazbu.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]umožňuje svázat data s [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahem. datová vazba k [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahu je však pomalejší než datová vazba s objekty CLR. Neprovádějte převod dat objektu CLR do formátu XML, je-li jediným účelem vytváření datových vazeb.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -83,4 +83,4 @@ ms.locfileid: "61773110"
 - [Text](optimizing-performance-text.md)
 - [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)
-- [Návod: Ukládání dat aplikací v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)

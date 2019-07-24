@@ -8,31 +8,31 @@ helpviewer_keywords:
 - routed events [WPF], creating
 - events [WPF], routing
 ms.assetid: b79f459a-1c3f-4045-b2d4-1659cc8eaa3c
-ms.openlocfilehash: a3850875c8ca747f8709b55f8fe721d25be24304
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cbfb88af4e35e3f090248982bb14d6b7a3a03cef
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776685"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401464"
 ---
 # <a name="how-to-create-a-custom-routed-event"></a>Postupy: Vytvoření vlastní směrované události
-Pro vaše vlastní událost, podporu směrování událostí, budete muset zaregistrovat <xref:System.Windows.RoutedEvent> pomocí <xref:System.Windows.EventManager.RegisterRoutedEvent%2A> metody. Tento příklad ukazuje základní informace o vytvoření vlastní směrované události.  
+Aby vaše vlastní událost podporovala směrování událostí, je nutné ji zaregistrovat <xref:System.Windows.RoutedEvent> <xref:System.Windows.EventManager.RegisterRoutedEvent%2A> pomocí metody. Tento příklad ukazuje základy vytvoření vlastní směrované události.  
   
 ## <a name="example"></a>Příklad  
- Jak je znázorněno v následujícím příkladu, nejprve zaregistrovat <xref:System.Windows.RoutedEvent> pomocí <xref:System.Windows.EventManager.RegisterRoutedEvent%2A> metody. Podle konvence <xref:System.Windows.RoutedEvent> statické pole Název musí končit příponou ***události***. V tomto příkladu je název události `Tap` a strategie směrování události je <xref:System.Windows.RoutingStrategy.Bubble>. Po volání registrace může poskytnout přidávat a odebírat [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] přístupových objektů událostí pro událost.  
+ Jak je znázorněno v následujícím příkladu, nejprve zaregistrujete <xref:System.Windows.RoutedEvent> <xref:System.Windows.EventManager.RegisterRoutedEvent%2A> pomocí metody. Podle konvence <xref:System.Windows.RoutedEvent> by měl název statického pole končit ***událostí***přípony. V tomto příkladu je název události `Tap` a strategie směrování události je. <xref:System.Windows.RoutingStrategy.Bubble> Po volání registrace můžete pro událost zadat doplňky pro přístup k modulům CLR (Common Language Runtime) a odebrat je.  
   
- Všimněte si, že i když se vyvolá událost prostřednictvím `OnTap` virtuální metoda v tomto konkrétním příkladu, jak vyvolat události nebo jak událost reaguje na změny závisí na požadavcích.  
+ Všimněte si, že i když se událost vyvolá prostřednictvím `OnTap` virtuální metody v tomto konkrétním příkladu, jak vyvoláte událost nebo jak vaše událost reaguje na změny, závisí na vašich potřebách.  
   
- Všimněte si také, že v tomto příkladu v podstatě implementuje celý podtřídou třídy <xref:System.Windows.Controls.Button>; tento podtřídy je vytvořen jako samostatné sestavení a pak vytvořit instanci jako vlastní třídu na samostatném [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky. Toto je pro ilustraci koncepci, že rozčleněné ovládací prvky mohou být zařazeny do stromové struktury skládá z jiných ovládacích prvků a, v takovém případě vlastní události do těchto ovládacích prvků mají stejné možnosti směrování událostí jako nativní [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nemá element.  
+ Všimněte si také, že tento příklad v podstatě implementuje celou podtřídu <xref:System.Windows.Controls.Button>třídy; tato podtřída je sestavena jako samostatné sestavení a poté vytvořena instance jako vlastní třída na samostatné [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránce. To je znázornění konceptu, který mohou být ovládací prvky podtříd vloženy do stromů složených z jiných ovládacích prvků a v této situaci mají vlastní události na těchto ovládacích prvcích stejné možnosti směrování událostí jako všechny nativní [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prvky.  
   
  [!code-csharp[RoutedEventCustom#CustomClass](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventCustom/CSharp/SDKSampleLibrary/class1.cs#customclass)]
  [!code-vb[RoutedEventCustom#CustomClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventCustom/VB/SDKSampleLibrary/Class1.vb#customclass)]  
   
  [!code-xaml[RoutedEventCustom#Page](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventCustom/CSharp/RoutedEventCustomApp/default.xaml#page)]  
   
- Tunelového propojení budou vytvořeny události, stejný způsobem, ale s <xref:System.Windows.RoutedEvent.RoutingStrategy%2A> nastavena na <xref:System.Windows.RoutingStrategy.Tunnel> při volání metody registrace. Podle konvence, tunelové propojení událostí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mají předponu slovo "Verze Preview".  
+ Události tunelového propojení jsou vytvářeny stejným způsobem, ale <xref:System.Windows.RoutedEvent.RoutingStrategy%2A> s nastavením <xref:System.Windows.RoutingStrategy.Tunnel> na při volání registrace. Podle konvence jsou události tunelu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v v předponě ve slově Preview.  
   
- Příkladem práce jak šíření událostí najdete v tématu [zpracování události směrovat](how-to-handle-a-routed-event.md).  
+ Příklad toho, jak fungují události probublávání, najdete v tématu [zpracování směrované události](how-to-handle-a-routed-event.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,21 +8,21 @@ helpviewer_keywords:
 - classes [WPF], adding as owners of dependency properties
 - dependency properties [WPF], adding classes as owners of
 ms.assetid: edcce050-0576-4edb-a31a-3f909637b452
-ms.openlocfilehash: 1b1f2b241868b02e430af82bac8e9f6a617e511b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ddc85d159b4bf81751428c13c234c5e53be8ad4
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777114"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401131"
 ---
 # <a name="how-to-add-an-owner-type-for-a-dependency-property"></a>Postupy: Přidání typu vlastníka pro vlastnost závislosti
-Tento příklad ukazuje, jak přidat třídu jako vlastníka skupiny vlastnost závislosti registrován pro jiného typu. Sytém díky tomu, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] čtečky i vlastnost systému jsou rozpoznat jako další vlastník vlastnost třídy. Volitelně můžete přidat jako vlastníka umožňuje přidávání třídě poskytnout metadata specifická pro typ.  
+Tento příklad ukazuje, jak přidat třídu jako vlastníka vlastnosti závislosti registrované pro jiný typ. Tímto způsobem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dokáže čtenář a systém vlastností rozpoznat třídu jako dalšího vlastníka vlastnosti. Přidání jako vlastníka můžete volitelně povolit přidání třídy pro zadání metadat specifických pro typ.  
   
- V následujícím příkladu `StateProperty` vlastnost registraci `MyStateControl` třídy. Třída `UnrelatedStateControl` samotný přidá jako vlastníka skupiny `StateProperty` pomocí <xref:System.Windows.DependencyProperty.AddOwner%2A> metodu, konkrétně pomocí podpisu, který umožňuje pro nová metadata pro vlastnost závislosti na přidávání typ existuje. Všimněte si, že by měly poskytnout [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] přistupující objekty vlastnosti podobně jako v příkladu je znázorněno [implementace vlastnosti závislosti](how-to-implement-a-dependency-property.md) příklad, jakož i znovu vystavit identifikátor vlastnosti závislostí ve třídě přidávaný jako vlastník.  
+ V následujícím příkladu `StateProperty` je vlastnost zaregistrována `MyStateControl` třídou. Třída `UnrelatedStateControl` přidá sebe samu jako vlastníka `StateProperty` pomocí <xref:System.Windows.DependencyProperty.AddOwner%2A> metody, konkrétně pomocí signatury, která umožňuje nová metadata pro vlastnost závislosti, protože existuje v přidávaném typu. Všimněte si, že byste měli poskytnout přístupové objekty modulu CLR (Common Language Runtime) pro vlastnost podobně jako v příkladu, který je uveden v příkladu [implementace vlastnosti závislosti](how-to-implement-a-dependency-property.md) , a také znovu vystavit identifikátor vlastnosti závislosti pro třídu, která je přidávána jako vlastník.  
   
- Bez obálky, bude vlastnost závislostí i nadále fungovat z hlediska programový přístup pomocí <xref:System.Windows.DependencyObject.GetValue%2A> nebo <xref:System.Windows.DependencyObject.SetValue%2A>. Obvykle budete chtít paralelní toto chování systému vlastností s, ale [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost obálky. Obálkami usnadňují prostřednictvím kódu programu nastavit vlastnost závislosti a umožňuje nastavit vlastnosti jako [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] atributy.  
+ Bez obálky může vlastnost Dependency i nadále pracovat z perspektivy programového přístupu pomocí <xref:System.Windows.DependencyObject.GetValue%2A> nebo. <xref:System.Windows.DependencyObject.SetValue%2A> Ale obvykle chcete, aby toto chování systému vlastností bylo paralelně paralelní s obálkami vlastností CLR. Obálky usnadňují nastavení vlastnosti závislosti programově a umožňují nastavit vlastnosti jako [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] atributy.  
   
- Jak lze přepsat výchozí metadat najdete v tématu [přepsání metadat pro vlastnost závislosti](how-to-override-metadata-for-a-dependency-property.md).  
+ Chcete-li zjistit, jak přepsat výchozí metadata, přečtěte si téma [přepis metadat pro vlastnost závislosti](how-to-override-metadata-for-a-dependency-property.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[PropertySystemEsoterics#MyStateControl](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/SDKSampleLibrary/class1.cs#mystatecontrol)]
