@@ -43,6 +43,8 @@
               href: keywords/void.md
             - name: var
               href: keywords/var.md
+            - name: Nespravované typy
+              href: builtin-types/unmanaged-types.md
             - name: Referenční tabulky pro typy
               items:
                 - name: Tabulka předdefinovaných typů
